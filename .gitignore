@@ -1,0 +1,28 @@
+# --- Environment files (secrets) ---
+.env
+.env.*
+!.env.example
+
+# --- Client raw data ---
+clients/*/inputs/
+clients/*/crawl/
+
+# --- Credential and key files ---
+*credentials*
+*secret*
+*token*.json
+*service-account*.json
+client_secret*.json
+*.pem
+*.key
+*.p12
+*.pfx
+.netrc
+.npmrc
+.pypirc
+
+# --- OS and editor clutter ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
