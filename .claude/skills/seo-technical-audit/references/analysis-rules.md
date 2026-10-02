@@ -142,9 +142,13 @@ paragraph prose serves the buyer; the H1 must work for both. Rewrites call for a
 opening and human-first copy. Headings should read as conversational and useful, not
 machine-generated.
 
-**Do not** require "the best" in a title or H1, exclude the brand from every H1, or
-impose a title/H1 formula as a universal rule. Recommend the strongest truthful variant
-for that page and state the tradeoff.
+**Titles and H1s (Paul ruling 2026-10-02, CM-020):** the Bradley formats (BB-302, BB-304,
+BB-305 — no brand in the H1) are the standard and may be cited as Bradley Methodology Rule,
+never as Platform Requirement. **"The Best" is not part of the default.** A missing
+"The Best" is **never a finding by itself**. Whether a page should carry it is decided by the
+four-condition test in `methodology/coastal-delta-addendum.md` CM-020 (demand, opportunity,
+proof, not a sensitive industry), recorded in Brand Guide Section H and the URL Decision Map.
+Never recommend changing the H1 of a page already in the top 3 for its main keyword.
 
 Any superlative or credential claim found on-page is a **truth** issue before it is an
 SEO issue. Route it to the Stage 3 client-confirmation list rather than optimizing

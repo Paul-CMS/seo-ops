@@ -49,18 +49,20 @@ denominator are wrong in a way nobody notices.
 
 ### Rendering
 If the rendered columns are systematically empty, that is **our standing configuration** —
-Screaming Frog free licence, no JavaScript rendering. Per the Agency Profile this is not a
-gap, not a defect, and not a finding.
+DataforSEO OnPage in basic mode (or the free Screaming Frog fallback), no JavaScript
+rendering. Per the Agency Profile this is not a gap, not a defect, and not a finding.
 
 The conclusion is "JS dependency unknown", never "content disappears on render". Findings
 that would rest on what Google renders are marked `Needs Evidence`.
 
-**Do not request a re-crawl with rendering enabled.** The licence does not support it, and
-asking for it every audit is the kind of repetition the Agency Profile exists to stop.
+**Do not request a re-crawl with rendering enabled.** A JavaScript-mode crawl costs ten times
+more and is Paul's call, never a default; asking for it every audit is the kind of
+repetition the Agency Profile exists to stop.
 
 ### Crawl truncation
-The free licence caps the crawl at 500 URLs. A crawl returning ~500 is partial by
-definition. Never use that count as a denominator, and never treat absence from the export
+A DataforSEO crawl stops at its `max_crawl_pages` (stop reason `limit_exceeded` in the
+crawl-config file); the free Screaming Frog fallback caps at 500 URLs. A crawl that hit its
+limit is partial by definition. Never use that count as a denominator, and never treat absence from the export
 as evidence a URL does not exist — that is the orphan trap in a different costume.
 Reconcile against the sitemap and CMS export to size the gap.
 

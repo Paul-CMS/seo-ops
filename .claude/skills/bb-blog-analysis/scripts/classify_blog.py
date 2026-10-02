@@ -18,6 +18,9 @@ Inputs (config.yaml):
   gsc:               url, impressions, clicks, position   (optional)
   analytics:         url, conversions, entrances          (optional)
   backlinks:         url, referring_domains               (optional)
+  serp_overlap:      post_url, commercial_url, query       (optional — DataforSEO ranking data
+                     showing both URLs ranking for the same query; counts as observed conflict
+                     when there is no GSC, Paul ruling CM-021)
 """
 
 import csv, os, re, sys
@@ -86,6 +89,9 @@ def main():
 
     have_gsc = bool(gsc)
     have_ga = bool(ga)
+    overlap = {}
+    for o in cfg.get("serp_overlap") or []:
+        overlap.setdefault(o["post_url"], []).append(o)
 
     # ---- Test A: entity + location overlap with a commercial page
     def test_a(p):
@@ -209,9 +215,18 @@ def main():
                         "criterion before any redirect.")
             confidence = "blocked-pending-test-B"
         if proposed == "COMPETING" and not have_gsc:
-            override = ("No GSC data — Test B cannot be evaluated. Do not redirect "
-                        "on Test A alone.")
-            confidence = "blocked-no-evidence"
+            ov = overlap.get(u)
+            if ov:
+                signals.append("A-observed: DataforSEO shows both ranking for "
+                               + "; ".join(f"'{o['query']}' with {o['commercial_url']}" for o in ov))
+                if not b_signals:
+                    override = ("No GSC — observed conflict from DataforSEO ranking overlap "
+                                "(CM-021). Run Test B mandatory criterion before any redirect.")
+                    confidence = "review"
+            else:
+                override = ("No GSC and no DataforSEO ranking overlap — no observed conflict, "
+                            "so no redirect proposal (CM-021).")
+                confidence = "blocked-no-evidence"
 
         rows.append({
             "url": u,

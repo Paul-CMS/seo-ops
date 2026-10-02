@@ -1,0 +1,12 @@
+{
+  "_about": "Cost ESTIMATES used before a call. The actual cost is read from every DataforSEO response and logged. OnPage prices are from dataforseo.com/pricing/on-page/onpage-api (checked 2026-10-02). Other entries are conservative placeholders — Paul to verify; tune here.",
+  "on_page/task_post": {"per_page": {"basic": 0.00015, "javascript": 0.0015}},
+  "serp/google/organic/live/advanced": {"per_task": 0.002},
+  "keywords_data/google_ads/search_volume/live": {"per_task": 0.075},
+  "dataforseo_labs/google/ranked_keywords/live": {"per_task": 0.01, "per_item": 0.0001},
+  "dataforseo_labs/google/keyword_overview/live": {"per_task": 0.01, "per_item": 0.0001},
+  "backlinks/summary/live": {"per_task": 0.02},
+  "backlinks/referring_domains/live": {"per_task": 0.02, "per_item": 0.00003},
+  "backlinks/backlinks/live": {"per_task": 0.02, "per_item": 0.00003},
+  "default": {"per_task": 0.05}
+}

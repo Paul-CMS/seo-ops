@@ -26,3 +26,7 @@ client_secret*.json
 Thumbs.db
 .vscode/
 .idea/
+
+# --- seo-ops runtime state ---
+.claude/state/
+*.tmp

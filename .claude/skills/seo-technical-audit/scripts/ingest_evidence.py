@@ -52,6 +52,16 @@ SIGNATURES = [
     (["source", "destination", "anchor text", "status code"],
      "screamingfrog.all_inlinks", "crawl"),
 
+    # --- DataforSEO OnPage (scripts/crawl.py) — tables Screaming Frog has no equivalent for ---
+    (["duplicated value", "pages sharing it", "address", "status code"],
+     "dataforseo.duplicate_tags", "crawl"),
+    (["address", "similar address", "similarity (0-10)"],
+     "dataforseo.duplicate_content", "crawl"),
+    (["chain id", "hop", "from url", "to url", "redirect loop"],
+     "dataforseo.redirect_chains", "crawl"),
+    (["address", "non-indexable reason"],
+     "dataforseo.non_indexable", "crawl"),
+
     # --- site auditor (overview / pages / issues / links / anchors / images / ai) ---
     (["domain", "audit date", "pages crawled", "issues count", "seo score"],
      "siteauditor.overview", "crawl"),

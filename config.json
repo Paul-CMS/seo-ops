@@ -1,0 +1,24 @@
+{
+  "dfs_confirm_threshold_usd": 2.0,
+  "git_push_after_run": true,
+  "wp_pilot_done": false,
+  "kadence_head_meta_key": null,
+  "sensitive_industries": ["chiropractic", "medical", "insurance", "legal", "financial"],
+  "practitioner_signoff_industries": ["chiropractic", "medical"],
+  "team": {
+    "decisions": "Paul",
+    "technical": "Jonie",
+    "seo": "Gwen"
+  },
+  "drive": {
+    "root_folder_name": "v3. CMS Technical SEO Audit 2026",
+    "root_folder_id": "1inIhcUodC1bPu6YBhcNvyO4Y5vZvrjT6",
+    "template_folder_name": "_CLIENT FOLDER TEMPLATE - copy per client",
+    "template_folder_id": "16nGvkPSqPqOXEs9Qy8XGoVC1pAT14D0v",
+    "resources_folder_id": "1BduPSljznxjXvGdm3eVKnwfspxMbTbH6",
+    "methodology_folder_id": "1OP-F95hCNGhwflvrKU08FjtWYbEHmzn2"
+  },
+  "blocked_tool_prefixes": {
+    "mcp__8a51fb9d-5d75-414d-a0e6-4609383d6f7f__": "Paid DataforSEO calls go through scripts/dfs.py so every cost is checked and logged. Do not use the DataforSEO connector directly."
+  }
+}

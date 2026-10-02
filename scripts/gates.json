@@ -1,0 +1,83 @@
+{
+  "_about": "Every gate a command can require. Only scripts/approve.py (run through /approve) can set one. 'met' means Approved or Approved with Conditions, and every file recorded with the approval is unchanged.",
+  "gates": {
+    "b1_entity": {
+      "label": "Block 1.1 - Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)",
+      "requires": []
+    },
+    "b1_proof_sheet_ready": {
+      "label": "Block 1.2 - Client proof sheet prepared from discovery and reviewed by Paul (ready for Paul to send)",
+      "requires": ["b1_entity"]
+    },
+    "b1_proof_sheet_returned": {
+      "label": "Block 1.3 - Client completed and returned the proof sheet",
+      "requires": ["b1_proof_sheet_ready"]
+    },
+    "b1_brand_guide": {
+      "label": "Block 1.4 - Brand Guide / business-truth record complete; proof sheet reconciled (verified facts separated from unsupported claims)",
+      "requires": ["b1_proof_sheet_returned"]
+    },
+    "b1_audit": {
+      "label": "Block 1.5 - Audit deliverables complete and approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)",
+      "requires": ["b1_entity"]
+    },
+    "block1": {
+      "label": "Block 1 - Audit findings -> page work (Paul signs)",
+      "requires": ["b1_entity", "b1_proof_sheet_ready", "b1_proof_sheet_returned", "b1_brand_guide", "b1_audit"]
+    },
+    "b2_blockers": {
+      "label": "Build - Technical blocker checklist cleared and tracking stable",
+      "requires": ["block1"]
+    },
+    "block2": {
+      "label": "Block 2 - All pages live -> link wheel",
+      "requires": ["block1"]
+    },
+    "block3": {
+      "label": "Block 3 - Link wheel verified -> schema",
+      "requires": ["block2"]
+    },
+    "block5": {
+      "label": "Block 5 - QA cleared -> release",
+      "requires": ["block3"]
+    },
+    "block4": {
+      "label": "Block 4 - Blog Decision Map approved -> redirects and blog briefs",
+      "requires": ["block5"],
+      "requires_blog_only": ["b1_entity", "bab_topics"]
+    },
+    "bab_topics": {
+      "label": "Blog Authority Builder - topic list approved (checked against service and location page FAQs)",
+      "requires": ["b1_entity"]
+    }
+  },
+  "derived": {
+    "impl_safe": {
+      "label": "Implementation gate 1 - audit approved: client-independent fixes (broken links, alt text, image URLs, sitemap, robots.txt, meta description duplicates, speed)",
+      "requires": ["b1_audit"]
+    },
+    "impl_structural": {
+      "label": "Implementation gate 2 - proof sheet reconciled + entity approved: redirects, URL/slug changes, consolidations, SEO titles and H1s",
+      "requires": ["b1_entity", "b1_brand_guide"]
+    }
+  },
+  "change_kinds": {
+    "alt_text":          {"gate": "impl_safe",       "channel": "wp_or_handoff"},
+    "image_url":         {"gate": "impl_safe",       "channel": "handoff"},
+    "broken_link":       {"gate": "impl_safe",       "channel": "handoff"},
+    "sitemap":           {"gate": "impl_safe",       "channel": "handoff"},
+    "robots_txt":        {"gate": "impl_safe",       "channel": "handoff"},
+    "speed":             {"gate": "impl_safe",       "channel": "handoff"},
+    "meta_description":  {"gate": "impl_safe",       "channel": "wp_after_pilot"},
+    "seo_title":         {"gate": "impl_structural", "channel": "wp_after_pilot"},
+    "h1":                {"gate": "impl_structural", "channel": "content"},
+    "slug":              {"gate": "impl_structural", "channel": "handoff", "always_with": "redirect"},
+    "redirect":          {"gate": "impl_structural", "channel": "handoff"},
+    "consolidation":     {"gate": "impl_structural", "channel": "handoff"},
+    "page_content":      {"gate": "page_approval",   "channel": "wp_draft"},
+    "link_table":        {"gate": "block2",          "channel": "wp_draft"},
+    "schema":            {"gate": "block3",          "channel": "wp_after_pilot"}
+  },
+  "decisions": ["approved", "approved_with_conditions", "revise", "deferred", "rejected", "blocked"],
+  "met_decisions": ["approved", "approved_with_conditions"]
+}

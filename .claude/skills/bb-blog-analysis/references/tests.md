@@ -57,9 +57,14 @@ This is a Coastal rule at PILOT status. Attribute it as ours in any client deliv
 
 ### Without Search Console data
 
-Test B cannot be evaluated. **Therefore no post may be redirected on Test A alone.** Record
-the limitation in the deliverable and leave those posts unresolved rather than acting on
-half the evidence.
+**Observed conflict (Paul ruling 2026-10-02, CM-021):** a redirect proposal needs observed
+search conflict — either Search Console data, **or DataforSEO ranking data showing the post
+and the commercial page both ranking for the same query.** Put the DataforSEO overlap in the
+config's `serp_overlap` list. With neither source, the post gets **no redirect proposal**: it
+stays unresolved and the limitation goes in the deliverable.
+
+Test B's impression/CTR signal still needs Search Console; without it, Test B rests on the
+mandatory criterion plus the other two supporting signals.
 
 ---
 

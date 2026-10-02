@@ -19,9 +19,13 @@ Before anything else, read the Agency Profile supplied with the evidence (or ask
 It states the standing crawl configuration and tool stack, and it is what stops this skill
 re-deriving the same limitations on every audit.
 
-Current standing configuration: **Screaming Frog free licence — no JavaScript rendering, no
-custom extraction, 500-URL cap.** None of these are findings. Record the configuration once
-in the evidence manifest and move on.
+In seo-ops the Agency Profile is `methodology/agency-profile.md`. Current standing
+configuration: **DataforSEO OnPage API crawl (basic mode, no JavaScript rendering), converted
+to Screaming Frog-shaped tables by `scripts/crawl.py`; free Screaming Frog (no rendering, no
+custom extraction, 500-URL cap) is the fallback.** The crawl's settings are in the
+`DFS - crawl-config` file next to the exports. None of these are findings — missing
+JavaScript-rendered data is never a finding. Record the configuration once in the evidence
+manifest and move on.
 
 ## Read first
 
