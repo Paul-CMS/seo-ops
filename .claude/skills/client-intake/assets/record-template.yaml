@@ -1,0 +1,159 @@
+# Client intake record
+# Every field: {value, source, confidence}
+# confidence: verified | found | inferred | unknown | manager_confirmed | client_confirmed
+# Fields classified "verify" or "blank" stay in Block B / Block C even when filled.
+
+meta:
+  slug: example-client
+  business_name: Example Contracting LLC
+  domain: example.com
+  prepared: 2026-09-17
+  return_by: 2026-09-24
+  manager: Paul
+  primary_msa: null
+  tier: null
+
+identity:
+  business_name: {value: null, source: null, confidence: unknown}
+  legal_name: {value: null, source: null, confidence: unknown, classification: blank}
+  dba: {value: null, source: null, confidence: unknown, classification: blank}
+  entity_type: {value: null, source: null, confidence: unknown}
+  address: {value: null, source: null, confidence: unknown}
+  address_type: {value: null, source: null, confidence: unknown}  # storefront | yard | home
+  mailing_address: {value: null, source: null, confidence: unknown}
+  additional_locations: []
+
+contact:
+  primary_phone: {value: null, source: null, confidence: unknown, tracking_number_suspected: false}
+  after_hours_phone: {value: null, source: null, confidence: unknown}
+  email: {value: null, source: null, confidence: unknown}
+  form_destination: {value: null, source: null, confidence: unknown}
+  booking_link: {value: null, source: null, confidence: unknown}
+
+hours:
+  regular: {value: null, source: null, confidence: unknown}
+  seasonal: {value: null, source: null, confidence: unknown}
+  after_hours_reality: {value: null, source: null, confidence: unknown, classification: blank}
+
+services:
+  found:
+    - name: null
+      source: null
+      status: null        # keep | dropped | added
+      want_more: false
+      want_less: false
+  gbp_only: []
+  site_only: []
+
+service_area:
+  furthest_north: {value: null, source: null, confidence: unknown}
+  furthest_south: {value: null, source: null, confidence: unknown}
+  furthest_east: {value: null, source: null, confidence: unknown}
+  furthest_west: {value: null, source: null, confidence: unknown}
+  claimed_cities: {value: null, source: null, confidence: unknown}
+  exclusions: {value: null, source: null, confidence: unknown}
+  travel_fee: {value: null, source: null, confidence: unknown}
+
+online:
+  platform: {value: null, source: null, confidence: unknown}
+  gbp_url: {value: null, source: null, confidence: unknown}
+  duplicate_listings: []
+  social: []
+  review_profiles: []
+
+# --- Block B: claims already made publicly, quoted back ---
+claims:
+  - field: founding_year
+    quoted: null            # exact wording from the source
+    source: null
+    conflict: []            # [{value, source, confidence}] when sources disagree
+  - field: license
+    quoted: null
+    source: null
+  - field: insurance
+    quoted: null
+    source: null
+  - field: certifications
+    quoted: null
+    source: null
+  - field: warranty
+    quoted: null
+    source: null
+  - field: guarantees
+    quoted: null
+    source: null
+  - field: awards
+    quoted: null
+    source: null
+  - field: team_size
+    quoted: null
+    source: null
+  - field: financing
+    quoted: null
+    source: null
+  - field: superlatives
+    quoted: null
+    source: null
+
+# --- Block C: deliberate blanks ---
+needed:
+  documents:
+    - Certificate of insurance
+    - License copies
+    - Logo files (vector if available)
+    - Photos: truck, crew, completed work
+  facts:
+    - label: "Legal entity name exactly as registered"
+    - label: "Minimum service call / trip charge"
+    - label: "What happens to a call at 7pm Saturday"
+    - label: "Payment methods accepted"
+    - label: "Any services you subcontract out"
+  positioning:
+    - "What do you do that the other shops in town don't?"
+    - "What job do you most want more of?"
+    - "What's the most common thing customers get wrong about your trade?"
+  people:
+    - name: null
+      role: null
+      photo: false
+
+access:
+  - item: Google Business Profile
+    owner: null
+    status: null          # have | requested | client_unknown | held_by_third_party
+  - item: Domain registrar
+    owner: null
+    status: null
+  - item: DNS
+    owner: null
+    status: null
+  - item: Hosting
+    owner: null
+    status: null
+  - item: CMS admin
+    owner: null
+    status: null
+  - item: Google Analytics
+    owner: null
+    status: null
+  - item: Google Search Console
+    owner: null
+    status: null
+  - item: Call tracking
+    owner: null
+    status: null
+  - item: Review platforms
+    owner: null
+    status: null
+  - item: Social accounts
+    owner: null
+    status: null
+
+# --- internal only, never rendered to the client sheet ---
+internal:
+  conflicts: []
+  claims_needing_removal: []
+  competitors: []
+  sales_call_notes: null
+  technical_findings: []
+  content_risks: []

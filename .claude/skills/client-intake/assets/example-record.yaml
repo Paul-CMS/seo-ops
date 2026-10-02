@@ -1,0 +1,137 @@
+# Worked example — a discovery pass on a fictional garage door company,
+# after the gap interview, ready to render. Shows how conflicts, quoted
+# claims and deliberate blanks look in practice.
+
+meta:
+  slug: coastal-overhead-door
+  business_name: Coastal Overhead Door
+  domain: coastaloverheaddoor.com
+  prepared: 2026-09-17
+  return_by: Friday Sept 25
+  manager: Paul
+  primary_msa: Hilton Head Island–Bluffton, SC
+  tier: 2
+
+identity:
+  business_name: {value: "Coastal Overhead Door", source: "homepage, GBP", confidence: found}
+  legal_name: {value: null, source: null, confidence: unknown, classification: blank}
+  dba: {value: null, source: null, confidence: unknown, classification: blank}
+  entity_type: {value: "LLC", source: "SC SOS", confidence: verified}
+  address: {value: "112 Buckwalter Pkwy, Bluffton SC 29910", source: "GBP", confidence: found}
+  address_type: {value: "Yard / shop — no walk-ins (inferred from GBP service-area listing)", source: "GBP listing type", confidence: inferred}
+  mailing_address: {value: "PO Box 4419, Bluffton SC 29910", source: "site footer", confidence: found}
+  additional_locations: []
+
+contact:
+  primary_phone: {value: "(843) 555-0188", source: "site header", confidence: found, tracking_number_suspected: true}
+  after_hours_phone: {value: null, source: null, confidence: unknown}
+  email: {value: "info@coastaloverheaddoor.com", source: "contact page", confidence: found}
+  form_destination: {value: null, source: null, confidence: unknown}
+  booking_link: {value: null, source: null, confidence: unknown}
+
+hours:
+  regular: {value: "Mon–Fri 7:30–5:00, Sat 8:00–12:00", source: "GBP", confidence: found}
+  seasonal: {value: null, source: null, confidence: unknown}
+  after_hours_reality: {value: null, source: null, confidence: unknown, classification: blank}
+
+services:
+  found:
+    - {name: "Garage door repair", source: "/services/repair", status: null}
+    - {name: "Spring replacement", source: "/services/springs", status: null}
+    - {name: "Opener installation", source: "/services/openers", status: null}
+    - {name: "New door installation", source: "/services/new-doors", status: null}
+    - {name: "Commercial overhead doors", source: "/commercial", status: null}
+    - {name: "Gate operators", source: "GBP services only — not on site", status: null}
+  gbp_only: ["Gate operators"]
+  site_only: ["Commercial overhead doors"]
+
+service_area:
+  furthest_north: {value: "Ridgeland", source: "site service-area page", confidence: found}
+  furthest_south: {value: "Savannah", source: "site service-area page", confidence: found}
+  furthest_east: {value: "Hilton Head Island", source: "GBP", confidence: found}
+  furthest_west: {value: "Hardeeville", source: "reviews", confidence: inferred}
+  claimed_cities: {value: "Bluffton, Hilton Head, Okatie, Hardeeville, Ridgeland, Savannah", source: "/service-areas", confidence: found}
+  exclusions: {value: null, source: null, confidence: unknown}
+  travel_fee: {value: null, source: null, confidence: unknown}
+
+online:
+  platform: {value: "WordPress (Divi)", source: "source inspection", confidence: verified}
+  gbp_url: {value: "g.page/coastal-overhead-door", source: "search", confidence: found}
+  duplicate_listings:
+    - {value: "Coastal Overhead Door & Gate — 29 Plantation Park Dr (unverified)", url: null}
+  social: ["facebook.com/coastaloverheaddoor"]
+  review_profiles: ["Google (81)", "Facebook (12)"]
+
+claims:
+  - field: founding_year
+    quoted: null
+    source: null
+    conflict:
+      - {value: "Serving the Lowcountry since 1998", source: "homepage hero", confidence: found}
+      - {value: "Opened 2004", source: "Google Business Profile", confidence: found}
+      - {value: "Registered 2011", source: "SC Secretary of State", confidence: verified}
+  - field: license
+    quoted: "Fully licensed and insured"
+    source: "footer, every page — no number given anywhere"
+  - field: warranty
+    quoted: "Lifetime warranty on all springs"
+    source: "/services/springs"
+  - field: guarantees
+    quoted: "Same-day service, guaranteed"
+    source: "homepage"
+  - field: team_size
+    quoted: "Our team of 12 technicians"
+    source: "/about"
+  - field: awards
+    quoted: "Voted Best of Bluffton 2019"
+    source: "/about — no linking source found"
+  - field: financing
+    quoted: "Financing available"
+    source: "/new-doors — no provider named"
+  - field: superlatives
+    quoted: "The Lowcountry's most trusted garage door company"
+    source: "meta description, homepage title tag"
+
+needed:
+  documents:
+    - Certificate of insurance
+    - SC contractor license — copy or number
+    - Logo files (vector if you have them)
+    - Photos — truck, crew, a few finished installs
+  facts:
+    - {label: "Legal entity name exactly as registered"}
+    - {label: "Minimum service call / trip charge"}
+    - {label: "What actually happens to a call at 7pm on a Saturday"}
+    - {label: "Payment methods accepted"}
+    - {label: "Anything on the service list you subcontract out"}
+  positioning:
+    - "What do you do that the other garage door companies around here don't?"
+    - "What job do you most want more of?"
+    - "What's the most common thing customers get wrong about garage doors?"
+  people:
+    - {name: null, role: null, photo: false}
+
+access:
+  - {item: "Google Business Profile", owner: null, status: null}
+  - {item: "Domain registrar", owner: null, status: null}
+  - {item: "Hosting", owner: null, status: null}
+  - {item: "WordPress admin", owner: null, status: null}
+  - {item: "Google Analytics", owner: null, status: null}
+  - {item: "Google Search Console", owner: null, status: null}
+  - {item: "Call tracking (number on site looks like a tracked line)", owner: null, status: null}
+  - {item: "Facebook page admin", owner: null, status: null}
+
+internal:
+  conflicts:
+    - "Founding year: 1998 / 2004 / 2011 — SOS is authoritative, but an earlier sole-prop is plausible. Ask on sheet, don't resolve."
+  claims_needing_removal:
+    - "'Most trusted' in title tag — unsubstantiated superlative"
+    - "'Voted Best of Bluffton 2019' — no source found"
+    - "'Same-day service, guaranteed' — verify before republishing"
+  competitors: []
+  sales_call_notes: "Owner mentioned wanting more new-door installs, less emergency repair."
+  technical_findings:
+    - "Header phone differs from GBP phone — likely an old agency tracking number"
+    - "Possible duplicate GBP at a former address"
+  content_risks:
+    - "If founding year is 2011, 'since 1998' appears on homepage, /about and 4 service pages"

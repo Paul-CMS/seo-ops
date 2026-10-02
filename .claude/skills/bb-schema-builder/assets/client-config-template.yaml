@@ -1,0 +1,95 @@
+# BB Schema Builder — client config
+# Every value traces to the Brand Guide. Section F is the entry gate.
+
+business:
+  name: Woodlawn Tree Service
+  alternate_name: Woodlawn Trees & Tree Care
+  url: https://woodlawntrees.com
+  telephone: "+1-304-844-0054"
+  email: matt@woodlawntrees.com
+  schema_type: HomeAndConstructionBusiness    # most specific applicable subtype
+  id_page_url: https://s3.amazonaws.com/slstacks/woodlawntrees/id.html
+  founding_date: 2012
+  description: >-
+    Professional tree trimming, removal, plant health care and arborist consulting
+    throughout Grant County, West Virginia.
+  logo: https://woodlawntrees.com/media/logo_1-medium.jpg
+  images:
+    - https://woodlawntrees.com/media/logo_1-medium.jpg
+  address:
+    streetAddress: 279 Zella Ln
+    addressLocality: Cabins
+    addressRegion: WV
+    postalCode: "26855"
+  has_map: https://maps.app.goo.gl/6fE5PE3GAEhKWG5t7
+  hours:
+    - days: [Monday, Tuesday, Wednesday, Thursday, Friday]
+      opens: "07:00"
+      closes: "17:00"
+
+corporation:
+  legal_name:                       # omit if identical to business.name
+  description: >-
+    Family-operated tree care company in Grant County, West Virginia, led by an
+    ISA Board Certified Master Arborist since 2012.
+  founder:
+    name: Matthew Schrock
+    alternate_name: Matt Schrock
+    job_title: ISA Board Certified Master Arborist
+    credential:
+      name: ISA Board Certified Master Arborist
+      identifier: PD-1052B
+
+gbp_landing_page: https://woodlawntrees.com/
+
+same_as:
+  - https://woodlawntrees.com/
+  - https://s3.amazonaws.com/slstacks/woodlawntrees/id.html
+  - https://maps.app.goo.gl/6fE5PE3GAEhKWG5t7
+
+area_served:
+  - {name: Cabins, state: West Virginia}
+  - {name: Maysville, state: West Virginia}
+  - {name: Petersburg, state: West Virginia}
+
+service_catalog_label: Tree Services
+
+service_pages:
+  - url: https://woodlawntrees.com/tree-trimming
+    title: Tree Trimming & Pruning - Grant County, West Virginia - Woodlawn Tree Service
+    meta_description: Tree trimming and pruning in Grant County, WV. Call for a free estimate.
+    service_node_name: Tree Trimming Service
+    service_type: Tree Trimming & Pruning
+    description: >-
+      Trimming and pruning focused on structural integrity, disease prevention
+      and long-term tree health.
+    image: https://woodlawntrees.com/media/ml/tree-trimming.jpg
+    pending_url_change: false
+    entities:
+      - name: Pruning
+        description: Core technique for removing dead, diseased or interfering branches on Grant County properties.
+        wikipedia: https://en.wikipedia.org/wiki/Pruning
+        wikidata: https://www.wikidata.org/wiki/Q500094
+      - name: Arboriculture
+        description: Professional field governing how trimming maintains woody plants for long-term health.
+        wikipedia: https://en.wikipedia.org/wiki/Arboriculture
+        wikidata: https://www.wikidata.org/wiki/Q127213
+
+location_pages:
+  - url: https://woodlawntrees.com/maysville
+    city: Maysville
+    state: West Virginia
+    state_abbr: WV
+    title: Woodlawn Tree Service - Tree Care - Maysville, West Virginia
+    meta_description: Tree care in Maysville, West Virginia. Serving Grant County.
+    image: https://woodlawntrees.com/media/1a/maysville-wv-xlarge.jpg
+    pending_url_change: false
+    entities:
+      - name: Maysville, West Virginia
+        description: Grant County community in the regular service area.
+        wikipedia: https://en.wikipedia.org/wiki/Maysville%2C_West_Virginia
+        wikidata: https://www.wikidata.org/wiki/Q6797997
+      - name: Grant County, West Virginia
+        description: County jurisdiction covering all service routes.
+        wikipedia: https://en.wikipedia.org/wiki/Grant_County%2C_West_Virginia
+        wikidata: https://www.wikidata.org/wiki/Q494223

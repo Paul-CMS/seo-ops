@@ -1,0 +1,26 @@
+# BB Blog Analysis — input config
+# Built from the Stage 1 crawl, GSC, analytics and backlink exports, plus the
+# approved commercial URL map.
+
+commercial_pages:
+  - {url: https://example.com/, type: homepage, entity: chiropractic, city: Appleton}
+  - {url: https://example.com/headaches-migraines/, type: service, entity: headaches migraines, city: ""}
+  - {url: https://example.com/appleton/, type: location, entity: chiropractic, city: Appleton}
+
+blog_posts:
+  - {url: https://example.com/finding-a-chiropractor-appleton-wi/, title: "Finding a Chiropractor in Appleton, WI", word_count: 312, category: Uncategorized, modified: 2019-04-02}
+  - {url: https://example.com/appleton-chiropractor-tmj/, title: "Appleton, WI Chiropractor May Help TMJ", word_count: 275, category: Uncategorized, modified: 2019-06-11}
+  - {url: https://example.com/can-a-chiropractor-help-tmj/, title: "Can a Chiropractor Help with TMJ?", word_count: 936, category: Conditions, modified: 2026-02-18}
+  - {url: https://example.com/headache-tips-appleton/, title: "Headache Tips from an Appleton, WI Chiropractic Office", word_count: 363, category: Uncategorized, modified: 2019-08-01}
+  - {url: https://example.com/what-does-an-adjustment-cost/, title: "What Does a Chiropractic Adjustment Actually Cost?", word_count: 1140, category: Patient Questions, modified: 2026-05-02}
+
+gsc:
+  - {url: https://example.com/can-a-chiropractor-help-tmj/, impressions: 4200, clicks: 61, position: 8.2}
+  - {url: https://example.com/what-does-an-adjustment-cost/, impressions: 9800, clicks: 94, position: 6.1}
+  - {url: https://example.com/appleton-chiropractor-tmj/, impressions: 210, clicks: 3, position: 22.4}
+
+analytics:
+  - {url: https://example.com/what-does-an-adjustment-cost/, conversions: 7, entrances: 890}
+
+backlinks:
+  - {url: https://example.com/can-a-chiropractor-help-tmj/, referring_domains: 3}
