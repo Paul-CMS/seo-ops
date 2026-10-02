@@ -31,13 +31,13 @@ CM-007, CM-019, CM-021, CM-022 in the Delta and addendum.
 (`scripts/handoff.py create --kind redirect`, each with reason and map ref). `/verify` after.
 
 **next post** (gate block4) — one at a time, for each protected post and consolidation
-winner: brief (`BB - <post> - <Client>`): the question it answers, why it qualified, the
+winner: brief (`PB - <post> - <Client>`): the question it answers, why it qualified, the
 commercial parent to bridge to, **required information gain** from expertise capture (run
 the expert-interview skill Mode A to draft questions for Paul to send if there is no source
 material — the writer must refuse rather than write a generic article), headings/FAQs in use
 (C3). Write by `methodology/writing-blog.md`: plan → **stop for Paul's OK** → draft →
 self-critique. Register the post (`status.py page ... --type blog`); Paul approves with
-`/approve <slug> page:<id>`; then save as `BD - <post> - <Client>`, add its headings and FAQs
+`/approve <slug> page:<id>`; then save as `PD - <post> - <Client>`, add its headings and FAQs
 to C3.
 
 **refresh** — `<Client> - Blog Refresh Schedule.md`: every protected post with a review date

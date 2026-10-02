@@ -1,8 +1,7 @@
 # AGENCY PROFILE — seo-ops
 ### Standing facts. Every agent reads this first and never re-asks what it answers.
 **Owner:** Paul · **Updated:** 2026-10-02 · Based on the Drive v3 `Resources/AGENCY-PROFILE.md`
-(24 Sept 2026) plus Paul's 2 Oct rulings. The Drive copy is not changed until Paul says so —
-his boss may still run the ChatGPT workflow from it.
+(24 Sept 2026) plus Paul's 2 Oct rulings. Claude Code is the only tool.
 
 ---
 
@@ -11,7 +10,6 @@ his boss may still run the ChatGPT workflow from it.
 | Purpose | Tool | Notes |
 |---|---|---|
 | Site crawl | **DataforSEO OnPage API, basic mode** via `/crawl` | Fallback: Screaming Frog free licence |
-| Technical audit (legacy) | Linkdominator | Evidence tag **LNKD**. Optional now |
 | Citations | **BrightLocal** citation tracker | VA uploads the CSV. Stays |
 | Local grid | **BrightLocal** for now | DataforSEO grid runs alongside on ONE client first; Paul compares before BrightLocal's grid role is dropped |
 | Backlinks | **DataforSEO** Backlinks API | |

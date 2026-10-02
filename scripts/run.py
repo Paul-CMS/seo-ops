@@ -121,9 +121,9 @@ def main():
             st = S.load(a.slug)
             reasons = []
             for g in gates:
-                ok, rs = (S.page_approved(st, g[5:]) if g.startswith("page:") else S.gate_met(st, g))
+                ok, rs = S.check(st, g)
                 if not ok:
-                    reasons.append(f"{S.label(g)} — " + ("; ".join(rs) if isinstance(rs, list) else rs))
+                    reasons.append(f"{S.label(g)} — " + "; ".join(rs))
             if reasons:
                 print(f"REFUSED — /{a.command} cannot run for {a.slug}:\n  - " + "\n  - ".join(reasons))
                 print("\nOnly Paul can set a gate, with /approve.")

@@ -1,5 +1,5 @@
 # Writing standard — informational blog posts
-### Replaces the "BB Informational Blog Writer" Gemini gem v2.0 inside seo-ops.
+### The informational writing standard used by the Blog agent.
 Used by the Blog agent for full clients and for Blog Authority Builder (blog-only) clients.
 Never in the same context as commercial writing or auditing.
 

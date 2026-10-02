@@ -18,7 +18,7 @@ LNKD change (2 Oct 2026).
 | LBCH | County hub brief | LDCH | County hub draft |
 | HB | Homepage brief | HD | Homepage draft |
 | AB | About brief | AD | About draft |
-| BB | Blog post brief *(proposed)* | BD | Blog post draft *(proposed)* |
+| PB | Blog post brief | PD | Blog post draft |
 
 Examples: `SB - Roof Repair - Red Rover Roofing` · `LD - Franklin TN - Exodus Chiropractic of Franklin`
 
@@ -51,7 +51,7 @@ acts on · `SUPERSEDED` → move to `_Archive/`.
 |---|---|---|---|
 | DFS | DataforSEO (crawl, rankings, backlinks) | GSC | Search Console |
 | SF | Screaming Frog (fallback) | GA4 | Google Analytics |
-| **LNKD** | Linkdominator (**was LD**) | CMS | WordPress export |
+| LNKD | Linkdominator — **legacy files only** (was LD); no longer used | CMS | WordPress export |
 | BL | BrightLocal | MANUAL | Built by hand |
 
 **LD means location draft only.** Old evidence files tagged `LD` are not renamed

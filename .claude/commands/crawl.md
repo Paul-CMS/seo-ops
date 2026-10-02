@@ -25,6 +25,9 @@ Follow CLAUDE.md. Defaults: domain = status.json `client.domain`, max pages 1000
    plus duplicate_titles, duplicate_descriptions, duplicate_content, redirect_chains,
    non_indexable, and the crawl-config `.md`. Upload them to Drive
    `01 - Discovery and Audit/Evidence/` (names already follow the convention) and log each upload.
-6. `run.py finish <slug> <RUN_ID> --summary "Crawled N pages, $X" --phase "Researching your website" --next "..."`
+6. Record the step: `python3 scripts/steps.py record <slug> --run <RUN_ID> S05 done --output clients/<slug>/inputs/crawl/`
+   (or `failed` / `skipped` with `--reason`). Reuse: if `steps.py fresh <slug> S05` says reuse
+   (crawled under 60 days ago), do not crawl again unless Paul asks.
+7. `run.py finish <slug> <RUN_ID> --summary "Crawled N pages, $X" --phase "Researching your website" --next "..."`
 
 Never print or commit credentials. Never call DataforSEO except through the scripts.

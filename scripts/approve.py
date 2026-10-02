@@ -33,7 +33,8 @@ def take_token(slug, target):
     if time.time() - tok.get("created", 0) > MAX_AGE:
         die("REFUSED — Paul's /approve is older than 20 minutes. Ask him to type it again.", 7)
     words = tok.get("prompt", "").lower()
-    if slug not in words or target.split(":")[-1].lower() not in words:
+    parts = [x for x in target.lower().split(":") if x not in ("page", "batch")]
+    if slug not in words or not all(x in words for x in parts):
         die(f"REFUSED — Paul's /approve did not name '{slug}' and '{target}'. "
             f"He typed: {tok.get('prompt', '')[:120]!r}", 7)
     tok["used"] = True
@@ -75,6 +76,47 @@ def main():
     if not a.decision:
         die("--decision is required")
 
+    if a.target == "site_plan" or a.target.startswith("batch:"):
+        bp = st.get("build") or die("No site plan registered yet (status.py plan ...).")
+        files = {}
+        for f in [x.strip() for x in (a.files or a.file or "").split(",") if x.strip()]:
+            if not (ROOT / f).exists():
+                die(f"File {f} not found.")
+            files[f] = sha12(ROOT / f)
+        approved = a.decision in S.GATES["met_decisions"]
+        if a.target == "site_plan":
+            if not files:
+                files[bp["site_plan"]["file"]] = sha12(ROOT / bp["site_plan"]["file"])
+            holder, key, label_ = bp["site_plan"], "approval", "site plan"
+        else:
+            _, bid, stage = (a.target.split(":") + ["", ""])[:3]
+            if stage not in ("briefs", "drafts"):
+                die("Use batch:<id>:briefs or batch:<id>:drafts")
+            b = S.batch(st, bid) or die(f"No batch {bid}.")
+            if approved:
+                ok, why = S.batch_ready(st, bid, stage)
+                if not ok:
+                    die("REFUSED — " + "; ".join(why))
+                if not files:
+                    die("Name the exact files approved (--files), one per page in the batch.")
+                if stage == "drafts" and st["client"]["sensitive"] and not a.review:
+                    die("REFUSED — sensitive client: record the human review with --review.")
+                if stage == "drafts" and st["client"]["practitioner_signoff"] and not a.practitioner:
+                    die("REFUSED — health content: record the licensed practitioner's sign-off with --practitioner.")
+            holder, key, label_ = b, stage, f"batch {bid} {stage}"
+        take_token(a.slug, a.target)
+        holder[key] = {"state": a.decision, "by": "Paul", "at": now(), "note": a.note, "files": files,
+                       "conditions": [c.strip() for c in (a.conditions or "").split(";") if c.strip()],
+                       "sensitive_review": a.review, "practitioner": a.practitioner}
+        S.save(a.slug, st)
+        append(d / "log.md", f"\n## APPROVAL · {now()} · {label_} · {a.decision} · by Paul\n"
+               + "".join(f"Approved version: {f} (sha {h})\n" for f, h in files.items())
+               + (f"Human review: {a.review}\n" if a.review else "")
+               + (f"Practitioner sign-off: {a.practitioner}\n" if a.practitioner else "")
+               + (f"Note: {a.note}\n" if a.note else ""))
+        print(git_commit(f"{a.slug}: {label_} {a.decision} by Paul"))
+        return
+
     if a.target.startswith("page:"):
         pid = a.target[5:]
         p = st["pages"].get(pid) or die(f"Page {pid} is not registered (status.py page ...).")
@@ -113,6 +155,12 @@ def main():
             if not (ROOT / f).exists():
                 die(f"File {f} not found — an approval names the exact version it approves.")
             files[f] = sha12(ROOT / f)
+    if a.decision in S.GATES["met_decisions"] and g == "b1_audit":
+        import steps
+        left = steps.missing(st)
+        if left:
+            die("REFUSED — audit steps with no outcome (Done / Skipped / Failed): "
+                + ", ".join(r["id"] for r in left) + ". See methodology/audit-steps.md.")
     if a.decision in S.GATES["met_decisions"]:
         spec = S.GATES["gates"][g]
         reqs = spec.get("requires_blog_only") if (st["client"]["type"] == "blog-only"

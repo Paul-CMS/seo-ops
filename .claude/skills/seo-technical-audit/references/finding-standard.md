@@ -67,22 +67,16 @@ rule, and the deliverable must not imply Google enforces them.
 
 ## Severity
 
-GOV-02 uses these levels without defining them. Proposed definitions below — **these
-need Paul ratification into the RULE register before v1.0**, and until then every audit
-using them records that in `decisions.md`.
+**Paul ruling 2026-10-02 — severity by Bradley impact** (see `methodology/audit-steps.md`):
 
-| Severity | Definition |
+| Severity | Means |
 |---|---|
-| **Critical** | Blocks indexing, eligibility or conversion for a revenue page, or publishes a false/legally exposed claim. Evidence is unambiguous. |
-| **High** | Materially suppresses visibility or conversion on a revenue page, or corrupts measurement such that other decisions are unsafe. |
-| **Medium** | Degrades performance or consistency, with a plausible but unquantified revenue path. |
-| **Low** | Correctness or hygiene issue with no demonstrated revenue path. |
-| **Monitor** | Not actionable now; needs a defined trigger, owner and review date. |
+| **High** | Breaks the entity model or page structure, or blocks indexing |
+| **Medium** | Weakens a page against its spec (`methodology/specs/`) |
+| **Low** | Technical hygiene — batched into one handoff |
 
-Two rules that matter more than the table: severity is assigned from **business
-consequence**, never from a tool's own severity label; and a finding on a page with no
-traffic, no conversions, no backlinks and no paid or GBP dependency is not Critical no
-matter how broken it is.
+One finding per issue, listing every affected URL. Severity never comes from a tool's own
+label. The workbook's `Priority` column carries the same value.
 
 ## Confidence
 

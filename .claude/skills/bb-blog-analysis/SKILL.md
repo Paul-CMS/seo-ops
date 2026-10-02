@@ -94,7 +94,7 @@ service page built since may now cover the ground, which moves the post to Test 
 ## Boundary
 
 Recommendations only. No redirects implemented, no content written, no posts removed. The
-skill does not write the replacement content — that is the blog writer gem, in a separate
+skill does not write the replacement content — that is the Blog agent, in a separate
 session, from a brief built off the approved map.
 
 ## Files

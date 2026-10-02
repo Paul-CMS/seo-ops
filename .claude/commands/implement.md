@@ -1,6 +1,6 @@
 ---
 description: Apply approved changes - check the live value first, skip what's done, drafts by default, VA handoffs for everything the system must not touch
-argument-hint: <slug> [safe|structural|page <page_id>|wheel|schema] [--live]
+argument-hint: <slug> [safe|structural|batch <id>|page <page_id>|wheel|schema] [--live]
 ---
 
 Arguments: $ARGUMENTS
@@ -11,14 +11,16 @@ Follow CLAUDE.md §4. Look up each change's kind in `scripts/gates.json` → `ch
 |---|---|---|
 | safe | impl_safe | broken links, alt text, image URLs, sitemap, robots.txt, meta description duplicates, speed |
 | structural | impl_structural | redirects, slugs/URL changes, consolidations, SEO titles, H1s |
-| page <id> | page:<id> | that page's approved content |
+| batch <id> | batch:<id>:drafts | every page in that batch (approved drafts) — then `status.py batch <slug> <id> --state implemented` |
+| page <id> | page:<id> | one page (blog posts, single fixes) |
 | wheel | block2 | link tables |
 | schema | block3 | schema |
 
 1. `python3 scripts/run.py start <slug> implement --gates <gates>` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse and
    say which gate is missing; exit 3 → stop and ask Paul.
 2. Build the change list from the APPROVED source only (Technical Blocker Checklist, URL
-   Decision Map, approved SD/LD file, Link Wheel Tables, validated schema). Show Paul the list
+   Decision Map, the approved batch drafts, Link Wheel Tables, validated schema). Low technical
+   findings go out together as **one** handoff. Show Paul the list
    and the channel for each item before doing anything.
 3. For each item, by channel:
    - **System (wp.py):** read the current value first (`wp.py get`). Already the new value →

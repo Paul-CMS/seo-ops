@@ -6,7 +6,7 @@
     naming.py rename-list <names.txt> --client "Client Name"     Markdown table for Paul
 
 Content:   [CODE] - [Service or Location Name] - [Client Name]        (no status, no extension)
-           SB SD LB LD LBCH LDCH HB HD AB AD BB BD
+           SB SD LB LD LBCH LDCH HB HD AB AD PB PD
 Deliverable: [Client Name] - [Artifact] - [DRAFT|REVIEW|APPROVED|SUPERSEDED].md
 Living:    [Client Name] - Brand Guide|Approval Record|Document Checklist|Handoff Log.md
 Evidence:  [Client Name] - [SF|LNKD|BL|GSC|GA4|CMS|DFS|MANUAL] - [export] - [YYYY-MM-DD].[ext]
@@ -19,7 +19,7 @@ import sys
 CODES = {"SB": "service brief", "SD": "service draft (approved content)", "LB": "location brief",
          "LD": "location draft (approved content)", "LBCH": "county hub brief", "LDCH": "county hub draft",
          "HB": "homepage brief", "HD": "homepage draft", "AB": "about brief", "AD": "about draft",
-         "BB": "blog post brief", "BD": "blog post draft"}
+         "PB": "blog post brief", "PD": "blog post draft"}
 SOURCES = ["SF", "LNKD", "BL", "GSC", "GA4", "CMS", "DFS", "MANUAL"]
 STATUSES = ["DRAFT", "REVIEW", "APPROVED", "SUPERSEDED"]
 LIVING = ["Brand Guide", "Approval Record", "Document Checklist", "Handoff Log"]

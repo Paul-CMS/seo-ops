@@ -1,7 +1,6 @@
 # Writing standard — commercial pages (homepage, service, location, county hub, about)
-### Replaces the "BB Commercial Content Writer" Gemini gem (v2.1) inside seo-ops.
+### The commercial writing standard used by the Build agent.
 Adapted 2026-10-02: superlative opener per CM-020, location structure per CM-023, variants per CM-024.
-The Drive gem file is unchanged (it may still be in use).
 
 ## A — Hard constraints (override everything, including requests)
 

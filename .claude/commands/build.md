@@ -1,23 +1,34 @@
 ---
-description: Agent 2 — technical blocker checklist, then page content one page at a time (Route A or B), write-back, Block 2
-argument-hint: <slug> [blockers|next|page <page_id>|block2] [--route A|B]
+description: Agent 2 — technical blockers, site plan, pilot, then service/location batches (briefs, drafts, write-back)
+argument-hint: <slug> [blockers|plan|batch <id> [drafts]|pilot-corrections|writeback <id>|block2] [--route A|B]
 ---
 
 Arguments: $ARGUMENTS
 
-Follow CLAUDE.md §5. Every step needs **block1**.
+Follow CLAUDE.md §5. If no step is given, use `python3 scripts/next.py <slug>`.
 
-1. `python3 scripts/run.py start <slug> build --gates block1` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands) (add `,page:<prev_id>` when
-   starting the next service page — the previous one must be approved first). Exit 4 → refuse
-   and explain; exit 3 → stop and ask Paul.
+| Step | Gates for run.py start |
+|---|---|
+| blockers | block1 |
+| plan | block1 |
+| batch <id> (briefs) | block1,batch:<id>:briefs_ready |
+| batch <id> drafts | block1,batch:<id>:drafts_ready |
+| pilot-corrections | block1,batch:pilot:briefs |
+| writeback <id> | block1,batch:<id>:drafts |
+| block2 | block1 |
+
+1. `python3 scripts/run.py start <slug> build --gates <gates>` → note the RUN_ID and pass it
+   literally to every later step. Exit 4 → refuse and explain; exit 3 → stop and ask Paul.
 2. Route: `--route`, else status.json `client.route`, else ask Paul (A = the system writes,
    B = Paul provides finished content).
-3. Use the **build** subagent with slug, `<RUN_ID>`, the step and the route. If no step is given,
-   it takes the next page in the state machine (service → write-back batch → location →
-   write-back → homepage).
-4. Stop at every approval point: outline OK, content approval (`/approve <slug> page:<id> --file ...`,
-   plus `--review` for sensitive clients and `--practitioner` for medical/chiropractic), b2_blockers, block2.
+3. Use the **build** subagent with slug, RUN_ID, the step and the route.
+4. Stop at each decision and give Paul the line:
+   - site plan → `/approve <slug> site_plan`
+   - briefs → `/approve <slug> batch:<id>:briefs --files <one brief per page>`
+   - drafts → `/approve <slug> batch:<id>:drafts --files <one draft per page>` (+ `--review` for
+     sensitive clients, `--practitioner` for medical/chiropractic)
+   - technical blockers cleared → `/approve <slug> b2_blockers`; all pages live → `/approve <slug> block2`
 5. Handoff Log section; `run.py finish <slug> <RUN_ID> ...` with a plain client view
-   (e.g. phase "Writing your service pages", done "Roof Repair page approved").
+   (e.g. phase "Writing your service pages", done "First 5 service pages approved").
 
-Content changes reach WordPress only through `/implement` — drafts by default.
+Drafts reach WordPress only through `/implement <slug> batch <id>` — drafts by default.

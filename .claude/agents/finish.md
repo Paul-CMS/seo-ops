@@ -53,7 +53,7 @@ APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skill
 3. Check findings against current rules before writing them: a missing "The Best" is a defect
    only if Brand Guide H2 says yes for that page (CM-020); service pages sharing an area
    variant is correct (CM-024).
-4. `<Client> - QA Punch-List - REVIEW.md` grouped Critical/High/Medium/Low, every line URL + fix.
+4. `<Client> - QA Punch-List - REVIEW.md` grouped High/Medium/Low (Low items as one batched handoff), every line URL + fix.
    Wait for it to clear.
 5. Acceptance sheet per page with recorded waivers (line, reason, approver). Confirm Brand
    Guide B3/C1/C2/C3 current — a skipped write-back is a release blocker.

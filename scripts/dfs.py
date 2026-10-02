@@ -81,24 +81,45 @@ def balance():
     return float(task_result(r)["result"][0]["money"]["balance"])
 
 
-def estimate(endpoint, tasks=1, items=0, pages=0, mode="basic"):
-    p = PRICES.get(endpoint, PRICES["default"])
+def price(endpoint):
+    """(price entry, confirmed?). Unknown endpoints are unconfirmed."""
+    p = PRICES.get(endpoint)
+    if not isinstance(p, dict):
+        return {}, False
+    return p, bool(p.get("confirmed"))
+
+
+def estimate(endpoint, tasks=1, items=0, pages=0, mode="basic", depth=None):
+    """Upper-bound estimate. items = expected rows returned (Labs, Backlinks).
+    depth = results requested per task (SERP: billed per 10 organic / 100 maps; reviews per 10)."""
+    p, _ = price(endpoint)
+    if not p:
+        return None
     if "per_page" in p:
         return round(pages * p["per_page"][mode], 4)
+    if "per_unit" in p:
+        units = max(1, -(-(depth or p["unit_results"]) // p["unit_results"]))
+        return round(tasks * (units * p["per_unit"] + p.get("per_task_extra_place_id", 0)), 4)
     return round(tasks * p.get("per_task", 0) + items * p.get("per_item", 0), 4)
 
 
-def spend_guard(est, confirmed):
-    """Exit 6 if the estimate exceeds the balance, 5 if it needs Paul's confirmation."""
+def spend_guard(est, confirmed, endpoint=None):
+    """Exit 6 if the estimate exceeds the balance; 5 if Paul must confirm first
+    (over the threshold, or the endpoint's price is not confirmed in dfs_prices.json)."""
     bal = balance()
     thr = float(config()["dfs_confirm_threshold_usd"])
+    _, price_ok = price(endpoint) if endpoint else ({}, True)
+    if est is None:
+        print(f"CONFIRM — no price on file for {endpoint}. Ask Paul, then re-run with --confirmed "
+              "and --estimate <USD>.")
+        sys.exit(5)
     if est > bal:
         print(f"STOP — estimated ${est:.4f} is more than the remaining DataforSEO balance "
               f"${bal:.2f}. Not starting. Tell Paul (he tops up the balance).")
         sys.exit(6)
-    if est > thr and not confirmed:
-        print(f"CONFIRM — estimated ${est:.4f} (over the ${thr:.2f} threshold). Balance ${bal:.2f}."
-              " Ask Paul, then re-run with --confirmed.")
+    if not confirmed and (est > thr or not price_ok):
+        why = f"over the ${thr:.2f} threshold" if est > thr else "this endpoint's price is not confirmed yet"
+        print(f"CONFIRM — estimated ${est:.4f} ({why}). Balance ${bal:.2f}. Ask Paul, then re-run with --confirmed.")
         sys.exit(5)
     return bal
 
@@ -114,7 +135,7 @@ def log_cost(slug, endpoint, purpose, est, actual, extra=None):
 
 
 def paid_post(slug, endpoint, payload, purpose, est, confirmed=False, extra=None):
-    spend_guard(est, confirmed)
+    spend_guard(est, confirmed, endpoint)
     resp = request(endpoint, payload)
     actual = resp.get("cost")
     log_cost(slug, endpoint, purpose, est, actual, extra)
@@ -127,6 +148,7 @@ def main():
     sub.add_parser("balance")
     s = sub.add_parser("estimate"); s.add_argument("endpoint")
     s.add_argument("--tasks", type=int, default=1); s.add_argument("--items", type=int, default=0)
+    s.add_argument("--depth", type=int)
     s = sub.add_parser("call"); s.add_argument("slug"); s.add_argument("endpoint")
     s.add_argument("--payload", required=True); s.add_argument("--purpose", required=True)
     s.add_argument("--estimate", type=float); s.add_argument("--confirmed", action="store_true")
@@ -140,13 +162,18 @@ def main():
         if a.cmd == "balance":
             print(f"DataforSEO balance: ${balance():.2f}")
         elif a.cmd == "estimate":
-            print(f"estimate ${estimate(a.endpoint, a.tasks, a.items):.4f}")
+            e = estimate(a.endpoint, a.tasks, a.items, depth=a.depth)
+            _, ok = price(a.endpoint)
+            print("no price on file — Paul must confirm" if e is None else
+                  f"estimate ${e:.4f}" + ("" if ok else " (price NOT confirmed — Paul must confirm each call)"))
         elif a.cmd == "call":
             client_dir(a.slug)
             payload = json.loads(open(a.payload).read())
             if not isinstance(payload, list):
                 payload = [payload]
-            est = a.estimate if a.estimate is not None else estimate(a.endpoint, len(payload))
+            est = a.estimate if a.estimate is not None else estimate(
+                a.endpoint, len(payload), sum(int(t.get("limit", 100)) for t in payload),
+                depth=max([int(t.get("depth", 0)) for t in payload] + [0]) or None)
             resp = paid_post(a.slug, a.endpoint, payload, a.purpose, est, a.confirmed)
             text = json.dumps(resp, indent=1)
             if a.out:
@@ -169,10 +196,16 @@ def main():
         elif a.cmd == "ledger":
             p = client_dir(a.slug) / "dfs-costs.jsonl"
             rows = [json.loads(l) for l in p.read_text().splitlines()] if p.exists() else []
+            flags = 0
             for r in rows:
-                print(f"{r['at'][:16]}  ${float(r.get('actual_usd') or 0):8.4f}  (est ${r['estimate_usd']:.4f})"
-                      f"  {r['endpoint']}  — {r['purpose']}")
+                act, est = float(r.get("actual_usd") or 0), r.get("estimate_usd")
+                off = est is not None and abs(act - est) > max(0.005, 0.25 * est)
+                flags += off
+                print(f"{r['at'][:16]}  ${act:8.4f}  (est ${est if est is not None else 0:.4f})"
+                      f"{'  <-- DIFFERS from price table' if off else ''}  {r['endpoint']}  — {r['purpose']}")
             print(f"total ${sum(float(r.get('actual_usd') or 0) for r in rows):.4f} over {len(rows)} call(s)")
+            if flags:
+                print(f"{flags} call(s) cost differently from scripts/dfs_prices.json — check the table.")
     except DfsError as e:
         die(f"DataforSEO error: {redact(e)}", 8)
 

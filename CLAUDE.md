@@ -1,7 +1,7 @@
 # seo-ops — the Coastal Marketing SOP
 
-This file **is** the SOP. It replaces the ChatGPT agents, Gemini gems and Claude handoffs with
-one Claude Code system: four subagents, eleven commands, one gate file per client, and an
+This file **is** the SOP. Claude Code is the only tool: four subagents plus a reviewer,
+twelve commands (`/next` runs whatever comes next), one gate file per client, and an
 append-only safety log. The methodology (the rules) lives in `sop-source/` and `methodology/`;
 this file is the procedure (who does what, in what order, behind which gate).
 
@@ -50,23 +50,26 @@ afterwards, the gate stops counting as met until Paul re-approves. Decisions: `a
 
 ### Full client — the order
 
-| # | Step | Command | Needs | Ends at gate (Paul) |
+| # | Step | Command | Needs | Ends at decision (Paul) |
 |---|---|---|---|---|
-| 1 | Intake, Drive folder, document checklist | `/new-client` | — | — |
-| 2 | Crawl (DataforSEO OnPage) | `/crawl` | — | — |
-| 3 | Discovery → **entity foundation** | `/discovery` | — | **b1_entity** |
-| 4 | Proof sheet (Markdown + client Google Doc) | `/discovery proof-sheet` | b1_entity | **b1_proof_sheet_ready** — then Paul sends it |
-| 5 | Audit (may run while the client has the sheet) | `/discovery audit` | b1_entity | **b1_audit** → unlocks implementation gate 1 |
-| 6 | Client returns sheet | — | b1_proof_sheet_ready | **b1_proof_sheet_returned** |
-| 7 | Reconcile → Brand Guide / business truth | `/discovery reconcile` | b1_proof_sheet_returned | **b1_brand_guide** → with b1_entity unlocks implementation gate 2 |
-| 8 | Block 1 prepared (Agent 1 never starts Agent 2) | `/discovery block1` | 1.1–1.5 | **block1** |
-| 9 | Technical blockers | `/build blockers` + `/implement` | block1 | **b2_blockers** |
-| 10 | Service pages one at a time → write-back → location pages → homepage last | `/build` | block1 | per page: **page:<id>** |
-| 11 | All pages live | `/build` | every page approved + live | **block2** |
-| 12 | Link wheel → verify | `/finish wheel` | block2 | **block3** |
-| 13 | Schema → QA crawl → punch-list → acceptance | `/finish schema`, `/finish qa` | block3 | **block5** (release) |
-| 14 | Blog Decision Map | `/blog` | block5 | **block4** |
-| 15 | Blog redirects (handoff) and rewrite briefs, one at a time | `/blog` | block4 | per post: **page:<id>** |
+| 1 | Intake, Drive folder, document checklist (S01) | `/new-client` | — | — |
+| 2 | Discovery + entity research (S02–S03), public sources | `/discovery` | — | **b1_entity** |
+| 3 | Proof sheet (S04), Markdown + client Google Doc | `/discovery proof-sheet` | b1_entity | **b1_proof_sheet_ready** — Paul sends it |
+| 4 | *While the client has the sheet:* crawl (S05), reviews, rankings, backlinks, citations, grid, GSC (S06–S11) | `/crawl`, `/discovery data` | b1_proof_sheet_ready | — |
+| 5 | Audit: entity → architecture → page conformance → technical, then fresh-context review (S12–S18) | `/discovery audit` | every step has an outcome | **b1_audit** → implementation gate 1 |
+| 6 | Client returns sheet → reconcile into the Brand Guide | `/discovery reconcile` | b1_proof_sheet_returned | **b1_brand_guide** → implementation gate 2 |
+| 7 | Block 1 (Agent 1 never starts Agent 2) | `/discovery block1` | 1.1–1.5 | **block1** |
+| 8 | Technical blockers (Low items as one handoff) | `/build blockers` + `/implement` | block1 | **b2_blockers** |
+| 9 | **Site plan** — every service and location page in one pass | `/build plan` | block1 | **site_plan** |
+| 10 | **Pilot** — 1 service + 1 location brief; corrections go into the specs | `/build batch pilot` | site_plan | **batch:pilot:briefs** |
+| 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); briefs, then drafts, then `/implement`, `/verify`, write-back | `/build batch <id>` … | pilot corrections applied | **batch:<id>:briefs**, **batch:<id>:drafts** |
+| 12 | All pages live and written back | `/build block2` | every batch written back | **block2** |
+| 13 | Link wheel → verify | `/finish wheel` | block2 | **block3** |
+| 14 | Schema → QA crawl → punch-list → acceptance | `/finish schema`, `/finish qa` | block3 | **block5** (release) |
+| 15 | Blog Decision Map → redirects (handoff) → posts | `/blog` | block5 | **block4**, then **page:<id>** per post |
+
+Every step's data is saved once per client and reused (re-run if older than 60 days).
+`/next <slug>` reads status.json and runs whatever comes next, stopping at the next decision.
 
 ### Blog-only client (Blog Authority Builder)
 
@@ -81,7 +84,7 @@ customer language.
 |---|---|---|
 | **Gate 1 · impl_safe** = b1_audit | Client-independent fixes: broken links, alt text, image URLs, sitemap, robots.txt, **meta description** duplicates, speed | Alt text via wp.py; the rest as VA handoffs |
 | **Gate 2 · impl_structural** = b1_entity + b1_brand_guide | Redirects, URL/slug changes, consolidations, **SEO titles and H1s** | Always VA handoffs (titles via wp.py only after the pilot) |
-| **page:<id>** | That page's approved content | WordPress **draft** |
+| **batch:<id>:drafts** | That batch's approved content (`page:<id>` for blog posts) | WordPress **draft** |
 | block2 / block3 | Link tables / schema | Draft / Kadence head field after the pilot |
 
 Rules enforced in the scripts as well as here:
@@ -106,9 +109,11 @@ Rules enforced in the scripts as well as here:
   against the rules (it lists issues; it never rewrites Paul's copy) → Paul's approval →
   Brand Guide write-back → handoff to the VA.
 
-One brief at a time. During the service-page batch, the next brief waits until the previous
-service page has approved content saved under its `SD` name; Brand Guide write-back for all
-service pages happens before any location brief. Homepage last.
+Build works in batches: one **site plan** for every service and location page (keyword, area
+variant, H1 decision with the "The Best" test, FAQ topics, link targets; checked across the
+site for duplicates, variant conflicts and FAQ overlap) → a **1+1 pilot** → batches of about
+5. Service batches are written back to the Brand Guide before any location batch; homepage
+and about last. Plan and batches live in status.json → `build`.
 
 **Sensitive clients** (chiropractic, medical, insurance, legal, financial — flagged at
 `/new-client`): content needs Paul's `/approve` with the human review recorded; for medical
@@ -170,8 +175,8 @@ analysis and review — Paul Exception, mitigated by fresh-context reviewer" in
 - Write real `.md` files (no Google Docs conversion). The only Google Doc the system creates
   is the proof sheet's client copy, named `- CLIENT COPY`.
 - Never rename or delete existing Drive files. Renames go on a rename list for Paul.
-- Do not touch `Resources/` (the old ChatGPT agent and gem instructions) — Paul's boss may
-  still use them. Do not mark them SUPERSEDED until Paul confirms.
+- Never use the pre-Claude-Code instruction files (old agent and writer instructions in Drive
+  `Resources/`). They are not part of this system. Do not edit, move or mark them without Paul.
 
 | Artifact | Drive location |
 |---|---|
@@ -179,7 +184,7 @@ analysis and review — Paul Exception, mitigated by fresh-context reviewer" in
 | Discovery Record, Proof Sheet, Finding Register, URL Decision Map, Recommendations, Evidence Manifest | `01 - Discovery and Audit/Deliverables/` |
 | SB/LB/HB/AB briefs, SD/LD/HD/AD approved drafts, Technical Blocker Checklist, build handoffs | `02 - Build/` |
 | Link Wheel Tables, schema, QA Punch-List, acceptance sheets | `03 - Finish/` |
-| Blog Decision Map, BB/BD, refresh schedule | `04 - Blog/` |
+| Blog Decision Map, PB/PD, refresh schedule | `04 - Blog/` |
 | Brand Guide, Approval Record (mirrored from status.json), Document Checklist, Handoff Log | client folder root |
 
 ## 9 · Money, credentials, contact

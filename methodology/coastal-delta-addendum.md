@@ -64,10 +64,10 @@ high-value outbound authority link or **one** high-value contextual anchor-text 
 needs a stated reason, is logged, and needs Paul's approval in Finish.
 
 ## CM-023 · Location page structure · EXTEND
-**Scopes:** BB-315, commercial writer gem C4 · **Status:** APPROVED (default accepted), 2026-10-02
+**Scopes:** BB-315, the former writing standard's "2–3 H2s" rule · **Status:** APPROVED (default accepted), 2026-10-02
 
 BB-315's section structure governs (services table, local context, FAQ, neighborhoods,
-Things to Do, Top Sites, sibling cities). The gem's "2–3 H2s" rule is dropped. CM-010 still
+Things to Do, Top Sites, sibling cities). The "2–3 H2s" rule is dropped. CM-010 still
 governs the word ceiling.
 
 ## CM-024 · Area variants are shared across pages · EXTEND

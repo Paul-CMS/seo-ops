@@ -5,7 +5,7 @@
 Before any analysis, locate and read:
 
 1. **Methodology and guidelines file** — root drive resources folder
-2. **Brand / truth file** — the client's NotebookLM brand source
+2. **Brand / truth file** — the client's Brand Guide (`clients/<slug>/brand-guide.md`)
 3. **Stage 0 Client Control Record** — the client's drive
 4. **Evidence folder** — the exports
 

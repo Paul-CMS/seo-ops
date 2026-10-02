@@ -15,6 +15,7 @@ Gates are NOT settable here. Only approve.py, run through /approve, can set a ga
 """
 import argparse
 import json
+import re
 import sys
 
 from lib import ROOT, client_dir, die, now, read_json, sha12, write_json, config
@@ -26,6 +27,8 @@ SETTABLE = {
     "client.drive_folder_id", "client.wp_env_prefix", "client.gbp_url",
     "client.gbp_website_url", "client.address_type", "client.notes",
 }
+MARKS = ["reconciled", "topics_written", "site_plan_written"]
+BATCH_STATES = ["planned", "briefs_written", "drafts_written", "implemented", "verified", "written_back"]
 PAGE_STATES = ["planned", "brief_written", "draft_written", "approved", "live",
                "written_back", "verified"]
 
@@ -58,6 +61,8 @@ def new_status(slug, name, domain, ctype, industry, route=None, folder=None):
         },
         "gates": {g: {"state": "pending"} for g in GATES["gates"]},
         "pages": {},
+        "build": None,
+        "audit_steps": {},
         "last_run": None,
         "spend": {"dataforseo_usd": 0.0},
         "client_view": {
@@ -122,6 +127,9 @@ def page_approved(st, page_id):
     p = st["pages"].get(page_id)
     if not p:
         return False, f"page {page_id} is not registered"
+    b = batch_of(st, page_id)
+    if b and not p.get("approval"):
+        return batch_stage_ok(st, b["id"], "drafts")
     a = p.get("approval") or {}
     if a.get("state") not in GATES["met_decisions"]:
         return False, f"page {page_id} content is not approved"
@@ -133,6 +141,112 @@ def page_approved(st, page_id):
     if f and (ROOT / f).exists() and a.get("sha") != sha12(ROOT / f):
         return False, f"page {page_id}: approved file changed after approval — re-approve"
     return True, ""
+
+
+# ------------------------------------------------------------------ build plan & batches
+KIND_ORDER = {"service": 0, "location": 1, "county": 1, "homepage": 2, "about": 2}
+
+
+def batches(st):
+    return ((st.get("build") or {}).get("batches")) or []
+
+
+def batch(st, bid):
+    return next((b for b in batches(st) if b["id"] == bid), None)
+
+
+def batch_of(st, page_id):
+    return next((b for b in batches(st) if page_id in b["pages"]), None)
+
+
+def _approval_ok(rec, label_):
+    if not rec or rec.get("state") not in GATES["met_decisions"]:
+        return False, f"{label_} is not approved"
+    for f, h in (rec.get("files") or {}).items():
+        if not (ROOT / f).exists() or sha12(ROOT / f) != h:
+            return False, f"{label_}: approved file {f} changed after approval — re-approve"
+    return True, ""
+
+
+def batch_stage_ok(st, bid, stage):
+    b = batch(st, bid)
+    if not b:
+        return False, f"batch {bid} is not in the site plan"
+    ok, why = _approval_ok(b.get(stage), f"batch {bid} {stage}")
+    if not ok:
+        return ok, why
+    if stage == "drafts":
+        a = b["drafts"]
+        if st["client"]["sensitive"] and not a.get("sensitive_review"):
+            return False, f"batch {bid}: sensitive client — human review not recorded"
+        if st["client"]["practitioner_signoff"] and not a.get("practitioner"):
+            return False, f"batch {bid}: licensed practitioner sign-off on health claims not recorded"
+    return True, ""
+
+
+def batch_ready(st, bid, stage):
+    """May work on <stage> of this batch start? Returns (ok, [reasons])."""
+    r = []
+    bp = st.get("build") or {}
+    ok, why = _approval_ok((bp.get("site_plan") or {}).get("approval"), "site plan")
+    if not ok:
+        r.append(why)
+    b = batch(st, bid)
+    if not b:
+        return False, r + [f"batch {bid} is not in the site plan"]
+    if stage == "drafts":
+        ok, why = batch_stage_ok(st, bid, "briefs")
+        if not ok:
+            r.append(why)
+    if bid != "pilot":
+        ok, why = batch_stage_ok(st, "pilot", "briefs")
+        if not ok:
+            r.append("pilot: " + why)
+        if not bp.get("pilot_corrections_applied"):
+            r.append("pilot corrections not yet applied to the specs (status.py pilot-corrections)")
+        mine = KIND_ORDER.get(b["kind"], 1)
+        for o in batches(st):
+            if o["id"] in ("pilot", bid):
+                continue
+            if KIND_ORDER.get(o["kind"], 1) < mine and o.get("state") != "written_back":
+                r.append(f"{o['kind']} batch {o['id']} must be written back to the Brand Guide first")
+    return not r, r
+
+
+def check(st, target):
+    """One entry point for every gate-like target. Returns (ok, [reasons])."""
+    if target.startswith("page:"):
+        ok, why = page_approved(st, target[5:])
+        return ok, ([] if ok else [why])
+    if target == "site_plan":
+        ok, why = _approval_ok(((st.get("build") or {}).get("site_plan") or {}).get("approval"), "site plan")
+        return ok, ([] if ok else [why])
+    if target == "pilot_corrections":
+        ok = bool((st.get("build") or {}).get("pilot_corrections_applied"))
+        return ok, ([] if ok else ["pilot corrections not yet applied to the specs"])
+    m = re.match(r"^batch:([\w-]+):(briefs|drafts)(?:_ready)?$", target)
+    if m:
+        if target.endswith("_ready"):
+            return batch_ready(st, m.group(1), m.group(2))
+        ok, why = batch_stage_ok(st, m.group(1), m.group(2))
+        return ok, ([] if ok else [why])
+    return gate_met(st, target)
+
+
+def render_build(st):
+    bp = st.get("build")
+    if not bp:
+        return "Build plan: none yet (site plan not written)."
+    sp = (bp.get("site_plan") or {})
+    ok, _ = check(st, "site_plan")
+    out = [f"Build plan: site plan {'APPROVED' if ok else 'not approved'} ({sp.get('file')})",
+           f"  pilot corrections applied: {'yes — ' + bp['pilot_corrections_applied']['note'] if bp.get('pilot_corrections_applied') else 'no'}"]
+    for b in batches(st):
+        bo, _ = batch_stage_ok(st, b["id"], "briefs")
+        do, _ = batch_stage_ok(st, b["id"], "drafts")
+        out.append(f"  [{b['id']:10}] {b['kind']:8} {b['label'][:34]:34} {len(b['pages'])} pages · "
+                   f"briefs {'OK' if bo else '--'} · drafts {'OK' if do else '--'} · {b.get('state', 'planned')}")
+    return "\n".join(out)
 
 
 # ------------------------------------------------------------------ rendering
@@ -163,6 +277,8 @@ def render_show(st):
             ok, _ = page_approved(st, pid)
             out.append(f"  {pid:30} {p.get('type', ''):9} {p.get('state', ''):13}"
                        f" approved={'yes' if ok else 'no'}  {p.get('url') or ''}")
+    out.append("")
+    out.append(render_build(st))
     lr = st.get("last_run")
     if lr:
         out.append("")
@@ -228,6 +344,13 @@ def main():
     s.add_argument("--name"); s.add_argument("--url"); s.add_argument("--state", choices=PAGE_STATES)
     s.add_argument("--file")
     s = sub.add_parser("approval-record"); s.add_argument("slug")
+    s = sub.add_parser("plan"); s.add_argument("slug"); s.add_argument("--file", required=True)
+    s.add_argument("--json", required=True)
+    s = sub.add_parser("batch"); s.add_argument("slug"); s.add_argument("batch_id")
+    s.add_argument("--state", required=True, choices=BATCH_STATES)
+    s = sub.add_parser("pilot-corrections"); s.add_argument("slug"); s.add_argument("--note", required=True)
+    s = sub.add_parser("mark"); s.add_argument("slug"); s.add_argument("name", choices=MARKS)
+    s.add_argument("--file", required=True)
     a = ap.parse_args()
 
     if a.cmd == "init":
@@ -256,12 +379,7 @@ def main():
     elif a.cmd == "require":
         reasons = []
         for g in a.gates:
-            if g.startswith("page:"):
-                ok, why = page_approved(st, g[5:])
-                if not ok:
-                    reasons.append(why)
-                continue
-            ok, rs = gate_met(st, g)
+            ok, rs = check(st, g)
             if not ok:
                 reasons.append(f"{label(g)}: " + "; ".join(rs))
         if reasons:
@@ -296,6 +414,56 @@ def main():
         save(a.slug, st); print(json.dumps({a.page_id: p}, indent=2))
     elif a.cmd == "approval-record":
         print(render_approval_record(st), end="")
+    elif a.cmd == "plan":
+        if check(st, "site_plan")[0]:
+            die("The site plan is already approved. Changing it needs Paul to re-open it (/approve <slug> site_plan --decision revise).")
+        plan = json.loads(open(a.json).read())
+        pages = {p["id"]: p for p in plan["pages"]}
+        seen = {}
+        for b in plan["batches"]:
+            for pid in b["pages"]:
+                if pid not in pages:
+                    die(f"batch {b['id']} lists unknown page {pid}")
+                if pid in seen:
+                    die(f"page {pid} is in two batches ({seen[pid]}, {b['id']})")
+                seen[pid] = b["id"]
+        missing = [pid for pid, p in pages.items() if p["type"] in KIND_ORDER and pid not in seen]
+        if missing:
+            die("pages in no batch: " + ", ".join(missing))
+        pilot = next((b for b in plan["batches"] if b["id"] == "pilot"), None)
+        if not pilot or sorted(pages[x]["type"] for x in pilot["pages"]) != ["location", "service"]:
+            die("the first batch must be 'pilot' with exactly 1 service + 1 location page")
+        for pid, p in pages.items():
+            st["pages"].setdefault(pid, {"state": "planned"}).update(
+                {k: p[k] for k in ("type", "name", "url", "group") if k in p})
+        st["build"] = {"site_plan": {"file": a.file, "approval": None},
+                       "batches": [{**{k: b[k] for k in ("id", "kind", "label", "pages")},
+                                    "state": "planned", "briefs": None, "drafts": None}
+                                   for b in plan["batches"]],
+                       "pilot_corrections_applied": None}
+        save(a.slug, st); print(render_build(st))
+    elif a.cmd == "batch":
+        b = batch(st, a.batch_id) or die(f"no batch {a.batch_id}")
+        if a.state == "briefs_written":
+            ok, why = batch_ready(st, a.batch_id, "briefs")
+            if not ok:
+                die(f"batch {a.batch_id}: " + "; ".join(why))
+        stage_needed = {"drafts_written": "briefs", "implemented": "drafts", "verified": "drafts",
+                        "written_back": "drafts"}.get(a.state)
+        if stage_needed and not batch_stage_ok(st, a.batch_id, stage_needed)[0]:
+            die(f"batch {a.batch_id}: {stage_needed} are not approved yet")
+        b["state"] = a.state
+        save(a.slug, st); print(f"batch {a.batch_id}: {a.state}")
+    elif a.cmd == "mark":
+        if not (ROOT / a.file).exists():
+            die(f"{a.file} not found — a mark needs the file that proves it")
+        st.setdefault("marks", {})[a.name] = {"file": a.file, "sha": sha12(ROOT / a.file), "at": now()}
+        save(a.slug, st); print(f"{a.name}: {a.file}")
+    elif a.cmd == "pilot-corrections":
+        if not batch_stage_ok(st, "pilot", "briefs")[0]:
+            die("the pilot briefs are not approved yet")
+        st["build"]["pilot_corrections_applied"] = {"at": now(), "note": a.note}
+        save(a.slug, st); print("pilot corrections recorded")
 
 
 if __name__ == "__main__":
