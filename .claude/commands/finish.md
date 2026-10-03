@@ -5,8 +5,8 @@ argument-hint: <slug> [wheel|schema|qa]
 
 Arguments: $ARGUMENTS
 
-Follow CLAUDE.md. If no part is given, take the next: wheel (block2 met, block3 not) →
-schema (block3 met, schema not built) → qa.
+Follow CLAUDE.md. If no part is given, use `python3 scripts/next.py <slug>`: wheel (block2 met, block3 not) →
+schema (block3 met, not marked schema_built) → qa.
 
 | Part | Gates |
 |---|---|
@@ -19,6 +19,5 @@ schema (block3 met, schema not built) → qa.
 2. Use the **finish** subagent with slug, `<RUN_ID>` and the part.
 3. Linking exceptions (one contextual link, outbound authority links — CM-022) are listed
    separately for Paul to approve; never applied without his yes.
-4. Paul's next lines: `/approve <slug> block3` after the wheel verifies; `/approve <slug> block5`
-   after QA clears.
+4. Give Paul the exact line from `next.py`: `block3` after the wheel verifies; `block5` after QA clears.
 5. Handoff Log section; `run.py finish ...` (client view e.g. "Final checks before launch").

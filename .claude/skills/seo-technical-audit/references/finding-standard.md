@@ -60,23 +60,23 @@ as platform law.
 If a claim cannot be classified, it is a Working Hypothesis. That is not a failure —
 unlabelled certainty is.
 
-**Things that are Bradley Methodology, not Platform Requirement:** one H1 per page, the
-100+ citation benchmark, semantic triplet construction, entity variant usage, GBP posting
+**Things that are Bradley Methodology, not Platform Requirement:** one H1 per page
+(RULE-002), the 100+ citation benchmark (RULE-004, CM-006), semantic triplet construction, entity variant usage, GBP posting
 cadence, internal anchor distribution targets. Each may be right; none is a platform
 rule, and the deliverable must not imply Google enforces them.
 
 ## Severity
 
-**Paul ruling 2026-10-02 — severity by Bradley impact** (see `methodology/audit-steps.md`):
+Ruling: **CM-028** (`methodology/rulings.md`). This table is the one place the scale is
+shown outside `rulings.md`; everywhere else cites CM-028.
 
 | Severity | Means |
 |---|---|
 | **High** | Breaks the entity model or page structure, or blocks indexing |
-| **Medium** | Weakens a page against its spec (`methodology/specs/`) |
+| **Medium** | Fails a check in its page spec ([`methodology/specs/`](../../../../methodology/specs/)) |
 | **Low** | Technical hygiene — batched into one handoff |
 
-One finding per issue, listing every affected URL. Severity never comes from a tool's own
-label. The workbook's `Priority` column carries the same value.
+No other levels. The workbook's `Priority` column carries the same value.
 
 ## Confidence
 
@@ -94,9 +94,11 @@ A tool's output and that same tool's second export are **not** independent sourc
 - Any finding whose supporting cross-check came back `CONTRADICTED`
 - Any finding derived solely from a tool's issue list without corroboration
 - Any finding asserting a URL is an orphan on crawl evidence alone
-- Any finding asserting cannibalization on entity or keyword overlap alone, without
-  unstable ranking URLs, split impressions/clicks, or query-level conflict
-- Any merge, redirect, delete, noindex or canonical recommendation without a completed
-  `value_dependency_check` and a `safer_alternative`
-- Any indexation-rate calculation derived from a `site:` result count
+- Any finding asserting cannibalization without the observed evidence RULE-005 / RULE-015
+  / CM-021 require
+- Any merge, redirect, delete, noindex or canonical recommendation that does not meet
+  CM-019 (else `Needs Evidence`), or lacks a completed `value_dependency_check` and a
+  `safer_alternative`
+- Any indexation-rate calculation derived from a `site:` result count (CM-008)
+- Any finding that a page lacks "The Best" (CM-020)
 - Any finding whose only evidence is a tool score

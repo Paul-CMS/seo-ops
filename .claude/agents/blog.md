@@ -8,8 +8,9 @@ checked the gates. Check `client.type` in status.json: **full** or **blog-only**
 
 ## Read first
 Agency profile · `status.py show <slug>` · Handoff Log · Brand Guide (C3, D, I) ·
-`methodology/writing-blog.md` · `.claude/skills/bb-blog-analysis/` · `.claude/skills/expert-interview/` ·
-CM-007, CM-019, CM-021, CM-022 in the Delta and addendum.
+`methodology/writing-blog.md` · `methodology/specs/blog-post.md` (a DRAFT spec stops new posts until
+Paul approves it) · `.claude/skills/bb-blog-analysis/` · `.claude/skills/expert-interview/` ·
+`methodology/rulings.md` (CM-007, CM-019, CM-021, CM-022, CM-038 link caps, CM-039 author).
 
 ## Full client
 
@@ -25,7 +26,8 @@ CM-007, CM-019, CM-021, CM-022 in the Delta and addendum.
 3. Check: no protected post redirected (Test B before Test A, CM-007 — attribute it as
    Coastal's, never as methodology); nothing marked for deletion; no redirect proposal without
    observed conflict (GSC or DataforSEO overlap, CM-021).
-4. Save `<Client> - Blog Decision Map - REVIEW.md`. Tell Paul: `/approve <slug> block4 --files <map>`.
+4. Save `<Client> - Blog Decision Map - REVIEW.md`; `status.py mark <slug> blog_map --file <map>`.
+   Tell Paul: `/approve <slug> block4`.
 
 **redirects** (gate block4) — redirect list from the **approved** map only, as a VA handoff
 (`scripts/handoff.py create --kind redirect`, each with reason and map ref). `/verify` after.
@@ -36,8 +38,9 @@ commercial parent to bridge to, **required information gain** from expertise cap
 the expert-interview skill Mode A to draft questions for Paul to send if there is no source
 material — the writer must refuse rather than write a generic article), headings/FAQs in use
 (C3). Write by `methodology/writing-blog.md`: plan → **stop for Paul's OK** → draft →
-self-critique. Register the post (`status.py page ... --type blog`); Paul approves with
-`/approve <slug> page:<id>`; then save as `PD - <post> - <Client>`, add its headings and FAQs
+self-critique (E1–E8; E6 reports every CM-038 number). Register the post:
+`status.py page <slug> <id> --type blog --name "<title>" --file <draft> --state draft_written`;
+Paul approves with `/approve <slug> page:<id>`; then save as `PD - <post> - <Client>`, add its headings and FAQs
 to C3.
 
 **refresh** — `<Client> - Blog Refresh Schedule.md`: every protected post with a review date
@@ -48,11 +51,14 @@ to C3.
 No proof sheet, no site audit, no rebuild.
 1. **intake** (after `/new-client --blog-only`): services list, city list, voice guidance,
    customer language — short, from Paul and public sources. Draft the entity foundation
-   (category, area, variants) the way Agent 1 does, and stop for `/approve <slug> b1_entity`.
+   (category, area, variants) the way Agent 1 does. Record step S03
+   (`steps.py record <slug> --run <RUN_ID> S03 done --output <file>`) and
+   `status.py mark <slug> entity_record --file <entity foundation file>`, then stop for
+   `/approve <slug> b1_entity`.
 2. **topics** (gate b1_entity): propose topics that answer real customer questions. Fetch the
    site's service and location pages and list every FAQ question and H2 on them; **reject any
-   topic that duplicates one.** Save `<Client> - Blog Topic List - REVIEW.md`. Stop for
-   `/approve <slug> bab_topics --files <list>`.
+   topic that duplicates one.** Save `<Client> - Blog Topic List - REVIEW.md`;
+   `status.py mark <slug> topics --file <list>`. Stop for `/approve <slug> bab_topics`.
 3. **next post** (gate bab_topics): one at a time, as above, from the approved list; each
    post approved with `/approve <slug> page:<id>`.
 

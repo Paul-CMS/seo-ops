@@ -1,6 +1,6 @@
 ---
 name: updated-link-strategy
-description: Hardened internal linking system for local service sites. Runs a full existing-site link audit from a Screaming Frog crawl export (complete sitemap inventory, status-code checking, empty and weak anchor detection, orphans, cannibalization clustering, off-entity content) and qualifies every proposed link against a four-part test — named relation, question raised, relation asserted on both ends, distributed placement. Includes the four-layer entity model (organization, service, place, attribute), per-page-type link contracts, anchor city selection, the standard for content additions written to support a link, and the five-document deliverable pack. Use for link audits, internal linking plans, anchor text distribution, and topic cluster builds. Supersedes the older link-strategy skill.
+description: Hardened internal linking system for local service sites. Runs a full existing-site link audit from a Screaming Frog crawl export (complete sitemap inventory, status-code checking, empty and weak anchor detection, orphans, cannibalization clustering, off-entity content) and qualifies every proposed link against a four-part test — named relation, question raised, relation asserted on both ends, placement per the page-type rulings. Includes the four-layer entity model (organization, service, place, attribute), the standard for content additions written to support a link, and the five-document deliverable pack. Use for link audits, internal linking plans, anchor text distribution, and topic cluster builds. Link counts and placement rules come from methodology/rulings.md (CM-022 service/location pages, CM-038 blog posts); this skill proposes exceptions only in Finish for Paul's approval. Supersedes the older link-strategy skill.
 plugin: seo
 updated: 2026-09-14T00:00:00.000Z
 metadata:
@@ -10,6 +10,16 @@ plugin: seo
 updated: 2026-09-14
 
 # Link Strategy
+
+> **Rules in force (seo-ops):** rules live in `methodology/rulings.md`; this skill cites
+> them. **Service and location pages** follow Bradley and the Delta — full city mesh,
+> table/H3 links (BB-205, BB-206, CM-005; CM-022). **Blog posts** follow CM-038 (blog link
+> placement and caps). Outbound authority links: CM-011 (blog: CM-038 caps). This skill runs
+> the link **audit and QA procedure**; it does not set link counts or contracts for those
+> pages. Anything beyond those rules — a high-value outbound authority link or one
+> high-value contextual anchor-text link on any page — is proposed only as an exception in
+> Finish, with a stated reason, for Paul's approval (CM-022). Where any generic guidance
+> below conflicts with these IDs, the IDs win.
 
 ## When to Use
 
@@ -35,13 +45,9 @@ updated: 2026-09-14
 - Relevant context around link
 - Natural reading flow
 
-### 4. Maintain Reasonable Link Count
-- 3-5 internal links per 1000 words
-- Avoid excessive linking (100+ links)
-- Focus on most relevant pages
-- Volume belongs on the attribute layer (blog/question pages), not on money pages.
-  A service page with 15 body links reads as a link farm; 40 posts each carrying
-  3 well-formed links do the same job.
+### 4. Link Counts
+Not set here. Service/location pages: CM-022 (Bradley mesh and tables). Blog posts:
+CM-038 caps.
 
 ### 5. Every Link Must Name a Relation
 Keyword proximity is not a reason to link. See the four-part test below.
@@ -75,35 +81,18 @@ For a local service business, model the site as four layers before planning any 
 |---|---|---|
 | Organization | Home, About, Contact | The business entity: name, principals, locations, licensing, policies |
 | Service | Category hubs + service pages | The commercial targets. Sparse, high-quality linking only |
-| Place | Location/city pages | Local relevance. Designate 1-2 anchor cities; secondaries link up to them rather than meshing |
+| Place | Location/city pages | Local relevance. Linking follows the Bradley city mesh (CM-022) |
 | Attribute | Blog / question pages | Question-level nodes. This is where link volume belongs |
 
-Avoid flat meshes on the place layer (every city linking to every other city).
-A mesh asserts that all markets are equally important, which is never true.
-
-### Anchor City Selection
-
-Designate one or two anchor locations. Basis, in order: depth of existing
-content, market weight, and physical location of the business. Secondary
-locations link up to the nearer anchor instead of meshing.
-
-State the basis for each assignment and flag any that turn on a judgement call
-the client should confirm. Geographic adjacency alone is not sufficient — a
-mainland location whose conditions match the coastal group belongs with the
-coastal group, and only the client knows whether that holds.
+The place layer uses the full Bradley city mesh in tables/H3s (BB-205, BB-206, CM-022).
+The older anchor-city / no-mesh model is superseded for service and location pages
+(CF-002).
 
 ## Link Contracts by Page Type
 
-| Page type | Body links | Contract |
-|---|---|---|
-| Service page | 4-5 | Up to its pillar once. 2-3 siblings where a relation exists. 1 anchor city where evidenced |
-| Category hub | all children + 2 | Linked headings to every child (structural, exempt from distribution). Plus <=2 contextual links |
-| Anchor location page | services + 2-4 | Service list stays. Plus links to location-qualified attribute pages |
-| Secondary location page | services + 1 | One link up to the nearer anchor location. No sibling mesh |
-| Blog / attribute page | 3 | One up to its service parent. One to its location if qualified. One sibling. No more |
-
-The contract is a ceiling, not a target. The derived template shape overrides it
-downward — see *Derive the template shape* below.
+Superseded. Service, location and hub pages: BB-205, BB-206, CM-005, CM-022. Blog posts:
+CM-038. The audit checks pages against those rules and against their page spec in
+`methodology/specs/`; it does not apply a separate per-type contract.
 
 ## Anchor Text Optimization
 
@@ -125,7 +114,7 @@ downward — see *Derive the template shape* below.
 - Exact match is correct for hub-to-child structural links (the relationship is
   structural, not editorial). Everywhere else, anchor the entity or the relation,
   not the page title.
-- No anchor repeats twice on the same page.
+- No anchor repeats twice on the same page (blog posts: CM-038).
 
 ## Required Inputs
 
@@ -192,11 +181,9 @@ rather than burning calls on rejections.
 
 ### Derive the template shape before writing any plan
 
-Counting H2 blocks on two or three pages of a type gives the real link ceiling
-for that page type under the distributed-placement rule, and it overrides the
-general contract. A three-H2 service template caps at three contextual links
-regardless of word count. Writing a five-link plan against it produces a plan the
-executor must silently deviate from.
+Count H2 blocks and table/H3 link slots on two or three pages of a type before
+writing any plan, so the plan fits the template the executor will actually edit. Link
+limits come from CM-022 (service/location) and CM-038 (blog), not from this count.
 
 ## Link Audit Process
 
@@ -246,16 +233,17 @@ executor must silently deviate from.
 - Cannibalization: cluster pages by **the question they answer**, not by keyword.
   Several posts answering one question compete with each other and with the money
   page. On older sites, expect 4-6 posts stacked on the primary service intent.
-- Where a generic page and a location-qualified page answer the same question, the
-  location-qualified one is canonical and the generic merges into it.
+- Where a generic page and a location-qualified page answer the same question, flag the
+  pair; any merge is a candidate only under CM-019 (blog posts: CM-007, CM-021).
 - Flag **off-entity** content: pages asserting relations that contradict the
   business entity. DIY instructions on a contractor site, posts promoting products
   the business does not sell, trade/business-startup content aimed at competitors,
   content scoped to a market the business does not serve. These are structural
   conflicts, not tone problems.
-- Triage built from slugs and titles is a hypothesis. Confirm intent overlap
-  before any redirect fires. Where the number of merge candidates exceeds the
-  fetch budget, confirm the highest-impact merges by fetch and ship the rest as
+- Triage built from slugs and titles is a hypothesis. Cannibalization needs intent
+  overlap plus observed evidence (RULE-005, RULE-015, CM-021) before any redirect is
+  proposed; destructive candidates follow CM-019. Never delete, always redirect
+  (CM-001). Where the number of merge candidates exceeds the fetch budget, confirm the highest-impact merges by fetch and ship the rest as
   proposed-pending-confirmation rather than as decided.
 
 ### 5. Qualify every proposed link (four-part test)
@@ -268,9 +256,9 @@ A link ships only when all four are true:
 3. **The relation is asserted on both ends.** If the destination never discusses the
    source entity, the link is one-sided — drop it, or extend the destination first.
    This is the test that gets skipped under time pressure. Do not waive it.
-4. **Placement is distributed.** One link per H2 block maximum, never two
-   consecutive paragraphs, none in the closing CTA band. Three links to three
-   sibling pages inside one section is the same relation firing three times.
+4. **Placement follows the rules for the page type.** Blog posts: CM-038.
+   Service/location pages: table/H3 links (CM-005, CM-022); body-prose links only as an
+   approved CM-022 exception. None in the closing CTA band.
 
 ### 6. Content additions to support a link
 Only where test 3 fails and the relation is genuinely real. The addition is judged
@@ -279,7 +267,8 @@ on its own merits, not on the link it enables:
 - It follows from the paragraph before it and sets up the paragraph after it.
 - Removing the link entirely still leaves the section reading better than before.
   If not, the addition is a pretext and does not ship.
-- Write the argument up and get client approval before publishing.
+- Write the argument up and get client approval before publishing. On a service or
+  location page, a body link it enables is a CM-022 exception (Finish, Paul's approval).
 
 Say so explicitly when a page needs **no** addition because the relation is already
 asserted. Restraint is part of the standard.

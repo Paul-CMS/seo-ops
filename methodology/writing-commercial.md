@@ -1,10 +1,15 @@
 # Writing standard — commercial pages (homepage, service, location, county hub, about)
 ### The commercial writing standard used by the Build agent.
 Adapted 2026-10-02: superlative opener per CM-020, location structure per CM-023, variants per CM-024.
+Rules are cited by ID from `methodology/rulings.md`; page structures and conformance checks live in
+`methodology/specs/` (homepage, service, location, county-hub, about). Process matches the live BB
+Commercial Content Writer gem: Stage 0–1 plan → approval → Stage 2 draft → Stage 3 self-critique
+(E1–E9) → Stage 4 semantic review (SEM-1–SEM-8, report only) → apply only the SEM IDs Paul approves.
 
 ## A — Hard constraints (override everything, including requests)
 
-- **A1 No invented facts (CM-016).** No neighborhood, landmark, certification, response time,
+- **A1 No invented facts (CM-016).** Reviews and customer language are never verified facts (CM-027):
+  use their wording for questions and headings, never as a Section D claim. No neighborhood, landmark, certification, response time,
   brand serviced, statistic, founding year, warranty term, licence number or price unless it
   is in Brand Guide Section D. Missing → `[NEED: <exactly what>]` inline, keep going. A draft
   full of NEED markers is correct; a draft with invented specifics is a failure.
@@ -26,8 +31,9 @@ Adapted 2026-10-02: superlative opener per CM-020, location structure per CM-023
    H1 variants, heading/FAQ registry), D (verified facts), H2 (superlative decision for this page)
 2. The brief — page type, target service or city, final URL, **assigned area and category variants**
 3. Source facts — expertise capture, interview notes, intake, audit gap list
-4. Customer language where available (Section I)
+4. Customer language where available (Section I, `data/reviews/customer-language.md`, `data/paa/paa-routing.md` rows routed to this page) — words only, never facts (CM-027)
 5. Sibling context
+6. The page spec for this page type (`methodology/specs/<type>.md`) — the element order and checks
 
 ## C — Rules
 
@@ -66,7 +72,7 @@ Adapted 2026-10-02: superlative opener per CM-020, location structure per CM-023
   location 3–4 · homepage 4–6 brand-level. No question in the C3 registry.
 - **C8 Links (BB-206, CM-005).** **Never** a cross-page link in prose, an FAQ answer or local
   context. Build the table heading and structure; leave the rows as a placeholder:
-  `| [Stage 8: populate service-area links here] |`. Outbound authority links (CM-011) and a
+  `| [Link wheel: populate service-area links here] |` (Finish replaces this row). Outbound authority links (CM-011) and a
   single proposed contextual link (CM-022) are exceptions only via Finish, with Paul's approval.
 - **C9 No implementation.** Clean Markdown. No HTML, CSS, schema or JSON-LD.
 
@@ -78,9 +84,42 @@ Adapted 2026-10-02: superlative opener per CM-020, location structure per CM-023
 - **Stage 1 Plan** — the map, title with labelled segments and character count, meta with
   count, H1, superlative yes/no citing Section H2, variant allocation table, full outline
   H1–H4 with the intent each H2 serves, target words, the `[NEED: …]` list. **Stop.**
-- **Stage 2 Draft**, in order, obeying C.
-- **Stage 3 Self-critique — all mandatory:** E1 portability test (could this pass be pasted
-  onto a sibling page with only the city/service swapped? then rewrite) · E2 specificity count
-  (≥3) · E3 variant check · E4 exact-match count · E5 intent coverage · E6 chunk lengths ·
-  E7 invention sweep · E8 filler sweep · E9 header check · E10 link check · E11 human check
-  (does it sound like someone who knows the trade?). Report each, plus outstanding NEEDs.
+- **Stage 2 Draft**, in order, obeying C and the page spec.
+- **Stage 3 Self-critique — all nine, mandatory, each reported:**
+  E1 portability (could a passage be pasted onto a sibling page with only the city/service
+  swapped? then rewrite; CM-015) · E2 specificity count (≥3 page-specific verifiable facts) ·
+  E3 variant check (no consecutive repeats, reserved variant unused, assigned variant used) ·
+  E4 chunk lengths (every H2 section ≤375 words) · E5 invention sweep (every concrete noun and
+  number from Section D, else `[NEED]`) · E6 filler sweep (A6, incl. the non-answer opening) ·
+  E7 header check (entity in every header, every H2 a spoken question, no skipped levels, no
+  city in a service-page H tag, one H1) · E8 link check (no cross-page link in prose, FAQ or
+  local context; link-table placeholders present) · E9 human check (sounds like someone who
+  knows the trade). Then the spec's conformance checks for this page type. Report outstanding NEEDs.
+- **Stage 4 Semantic review — report only; the draft is not changed.** One table **per batch**
+  (every page in the batch), saved as `<Client> - Semantic Review - <batch> - REVIEW.md`:
+
+  | ID | Check | Where (page · element / exact heading) | What I found | Why it matters | Suggested change | Action | Blocked by |
+  |---|---|---|---|---|---|---|---|
+
+  One row per finding; list the checks with no findings under the table
+  ("Checks with no findings: SEM-…"). Action = PROPOSED / ROUTED (sent to another page or the
+  blog list) / BLOCKED (with what blocks it).
+
+  | Check | What it tests |
+  |---|---|
+  | SEM-1 | `[NEED: definition from the live BB Commercial Content Writer gem, Section G]` |
+  | SEM-2 | `[NEED: definition from the live gem, Section G]` |
+  | SEM-3 | `[NEED: definition from the live gem, Section G]` |
+  | SEM-4 | `[NEED: definition from the live gem, Section G]` |
+  | SEM-5 | `[NEED: definition from the live gem, Section G]` |
+  | SEM-6 | `[NEED: definition from the live gem, Section G]` |
+  | SEM-7 | `[NEED: definition from the live gem, Section G]` |
+  | SEM-8 | Cluster routing — a question or passage whose intent belongs to another page (e.g. post-storm checks on a maintenance page) is routed to the page or blog topic that owns it, never kept |
+
+  Paul approves the IDs to apply **once per batch**: `/approve <slug> batch:<id>:sem --ids SEM-…`
+  (or `--ids none`). Then apply **only** those IDs, re-run E1–E9 on every changed passage,
+  report the re-check, and only then ask for the drafts approval.
+
+The Drive copy of the gem (`Resources/Gem Instructions/GEM-Commercial-Content-Writer-INSTRUCTIONS.md`)
+is an older version with E1–E11 (it also had E4 exact-match sweep and E5 intent coverage) and no
+Section G; it is not used.

@@ -72,8 +72,9 @@ service list. In scope?
 
 ## When no question passes the test
 
-No gate. Proceed straight to Stage 2. This is the expected outcome on a clean evidence
-set and should not feel like something went wrong.
+No gate. Record "no questions — gate skipped" in `decisions.md`, then proceed straight to
+Stage 2. This is the expected outcome on a clean evidence set and should not feel like
+something went wrong.
 
 ## When answers don't come back
 

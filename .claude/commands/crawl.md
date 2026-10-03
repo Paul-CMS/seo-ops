@@ -7,7 +7,8 @@ Arguments: $ARGUMENTS
 
 Follow CLAUDE.md. Defaults: domain = status.json `client.domain`, max pages 1000, mode basic.
 
-1. `python3 scripts/run.py start <slug> crawl` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands) — stop on exit 3 (unfinished run → ask Paul).
+1. `python3 scripts/run.py start <slug> crawl --gates client_setup` (the client must exist and
+   `/new-client` must have finished; exit 4 → refuse and say so) → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands) — stop on exit 3 (unfinished run → ask Paul).
 2. `python3 scripts/crawl.py estimate <slug> --domain <d> --max-pages <n> --mode <m>`
    - "RESUME" → an earlier crawl exists; resuming downloads its results for free. Go to step 4.
    - exit 6 → the estimate exceeds the balance: **stop**, tell Paul, finish the run with that summary.

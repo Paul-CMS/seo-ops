@@ -1,5 +1,7 @@
 # GOV-06 — Methodology Override Decisions
 
+**Consolidated into methodology/rulings.md on 2026-10-02 — rulings.md governs; this file is the historical source.**
+
 **Document ID:** GOV-06 - Methodology Override Decisions
 **Status:** DRAFT — pilot only, not approved
 **Owner:** Paul

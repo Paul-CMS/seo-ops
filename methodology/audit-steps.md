@@ -11,7 +11,7 @@ later stages. A step marked *Reusable* is re-run only if its last Done is older 
 (`steps.py fresh`), or Paul asks.
 
 **Order (Paul, 2026-10-02):** entity → architecture (URL Decision Map) → page conformance →
-technical findings. Steps S05–S09 run **while the client has the proof sheet**.
+technical findings. Steps S05–S11 and S19 run **while the client has the proof sheet**.
 
 | ID | Step | Phase | How | Outputs | Used by | Reusable |
 |---|---|---|---|---|---|---|
@@ -20,29 +20,24 @@ technical findings. Steps S05–S09 run **while the client has the proof sheet**
 | S03 | Entity research: category entity (Wikipedia), area entity (Russian Doll), variants, Wikidata URIs | Discovery | discovery-audit agent, Wikipedia/Wikidata | Brand Guide A, B, F | Entity approval; every spec | yes |
 | S04 | Proof sheet built (Markdown + client Google Doc) | Discovery | discovery-audit agent | Client Proof Sheet | Proof sheet condition | no |
 | S05 | Site crawl | Client has sheet | `/crawl` (DataforSEO OnPage, basic) | `DFS -` crawl tables + crawl-config | Architecture, conformance, technical; Evidence Manifest | yes |
-| S06 | Reviews pull: Google rating, count, recent review text | Client has sheet | DataforSEO business_data (or manual) | `DFS - reviews` | Brand Guide D (rating = "The Best" proof), I (customer language) | yes |
-| S07 | Rankings pull: ranked keywords per URL (top 100) | Client has sheet | DataforSEO Labs ranked_keywords | `DFS - ranked-keywords` | URL Decision Map (CM-019), top-3 H1 lock (CM-020) | yes |
+| S06 | Reviews pull: Google rating, count, recent review text (no reviewer names) | Client has sheet | `scripts/reviews.py` (DataforSEO Business Data) | `data/reviews/reviews.csv`, `mentions.csv`, `customer-language.md`; rating + count in status.json evidence | Brand Guide I (customer language); rating/count = "The Best" proof (CM-020, CM-027). Never Section D unless client-confirmed (CM-027) | yes |
+| S07 | Rankings + cannibalization: every ranked keyword per URL (top 100), conflict clusters, "best" variant volumes | Client has sheet | `scripts/rankings.py` (DataforSEO Labs + Google Ads volume) | `data/rankings/ranked-keywords.csv`, `url-rankings.csv`, `cannibalization.csv`, `best-variants.csv`, `rankings-summary.md` | URL Decision Map (CM-019), top-3 H1 lock and demand test (CM-020), cannibalization (RULE-005, CM-021) | yes |
 | S08 | Backlinks pull: referring domains per URL | Client has sheet | DataforSEO Backlinks | `DFS - backlinks` | URL Decision Map (CM-019) | yes |
 | S09 | Citations | Client has sheet | BrightLocal citation tracker (Gwen uploads) | `BL - citation-tracker` | Entity findings (NAP) | yes |
 | S10 | Local grid | Client has sheet | BrightLocal grid (DataforSEO alongside on the pilot client only) | `BL - local-grid` | Entity findings | yes |
 | S11 | Search Console / GA4 | Client has sheet | Client access, if any | `GSC -`, `GA4 -` | Severity, URL Decision Map | yes |
+| S19 | People Also Ask: core services × primary city + top 3 cities, capped (default 20 queries) | Client has sheet | `scripts/paa.py` (DataforSEO SERP), then the discovery-audit agent routes each question | `data/paa/paa-questions.csv`, `queries.csv`, `paa-routing.md` (intent + route: service FAQ / location FAQ / blog topic / drop; C3 duplicates dropped) | Site plan FAQ topics, briefs, Blog topic list | yes |
 | S12 | Ingest + cross-checks | Audit | seo-technical-audit `ingest_evidence.py`, `crosscheck.py` | Evidence Manifest, 00-crosschecks | Every finding | no |
 | S13 | Entity analysis: site vs Brand Guide (triple, NAP, brand search, supporting assets) | Audit | discovery-audit agent | Finding Register (entity) | Recommendations | no |
 | S14 | Architecture: every page typed, keep/merge/redirect per CM-019 | Audit | discovery-audit agent | URL Decision Map | Site plan, Build | no |
-| S15 | Page conformance: every page scored against its spec | Audit | discovery-audit agent + `methodology/specs/` | Conformance scorecard; Finding Register (page) | Site plan, Build | no |
+| S15 | Page conformance: every page scored against its spec (check IDs HP/SVC/LOC/HUB/ABT/BLG) | Audit | discovery-audit agent + `methodology/specs/<type>.md` | Conformance scorecard (results placed in the nine categories, analysis-rules.md); Finding Register (failed check = Medium, CM-028) | Site plan, Build | no |
 | S16 | Technical findings (Low batched into one handoff) | Audit | discovery-audit agent | Finding Register (technical) | Technical handoff | no |
 | S17 | Fresh-context review of Finding Register + URL Decision Map | Audit | audit-reviewer agent | Revised registers; decisions.md exception | Audit approval | no |
 | S18 | Render deliverables | Audit | discovery-audit agent | Recommendations, Evidence Manifest (with step outcomes) | Audit approval | no |
 
-## Severity (Paul, 2026-10-02 — by Bradley impact)
+## Severity
 
-| Severity | Means |
-|---|---|
-| **High** | Breaks the entity model or page structure, or blocks indexing |
-| **Medium** | Weakens a page against its spec |
-| **Low** | Technical hygiene — batched into one handoff |
-
-**One finding per issue, with all affected URLs** — never one finding per URL.
+One scale only: CM-028 in `methodology/rulings.md`, shown in `.claude/skills/seo-technical-audit/references/finding-standard.md`.
 
 ## Adding a step
 

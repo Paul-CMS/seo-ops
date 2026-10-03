@@ -20,9 +20,8 @@ locator, re-derive, **state the strongest case that it is wrong**, run the chall
 then confirm, revise (append a superseding row — never edit a row) or withdraw.
 
 Extra checks for seo-ops:
-- Severity by Bradley impact: High = breaks entity model or page structure or blocks indexing;
-  Medium = weakens a page against its spec; Low = technical hygiene. One finding per issue
-  with every affected URL — merge duplicates into one superseding row.
+- Severity per CM-028 (High / Medium = fails a spec check / Low). One finding per issue with
+  every affected URL — merge duplicates into one superseding row.
 - Every destructive recommendation meets CM-019 (all four conditions) and has a safer
   alternative — otherwise withdrawn, not downgraded.
 - No finding flags a missing "The Best" by itself (CM-020); no finding treats missing
@@ -34,6 +33,5 @@ Extra checks for seo-ops:
 Do not render the deliverables — the discovery-audit agent does that from your revised
 registers (S18).
 
-Append to `decisions.md`: "Claude performed both analysis and review — Paul Exception
-(RULE-011, CM-018), mitigated by this fresh-context review." Report counts: confirmed,
+Append to `decisions.md`: "Independent review per CM-026 (fresh-context reviewer)." Report counts: confirmed,
 revised, withdrawn.

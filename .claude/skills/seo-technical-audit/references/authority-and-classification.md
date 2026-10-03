@@ -24,10 +24,9 @@ Per the naming and document-control rules, **only documents with status `APPROVE
 finding, check its status header. `DRAFT`, `IN REVIEW`, `SUPERSEDED`, `DEPRECATED` and
 `SOURCE` documents may inform reasoning but may not be cited as the rule.
 
-The Governance area is currently flagged **NEEDS REVIEW / NON-OPERATIVE** in its
-entirety. Its registers are advisory. This matters in practice: the Rule Register is the
-clearest statement of many rules, and it is advisory until promoted. Cite the governing
-SOP for the rule and the register entry as supporting reference.
+In seo-ops the rule source is `methodology/rulings.md` (precedence: rulings > Bradley
+Standard > everything else). The Rule Register, the Coastal Delta and GOV-06 are
+consolidated there and in force; cite their IDs (CM-###, RULE-###, PROC-##).
 
 ## Interpretation rules
 
@@ -41,7 +40,7 @@ universal rule:
   review item
 - Descriptive claims about what Google does require evidence, or explicit labelling as
   practitioner observation
-- Entity overlap alone does not prove cannibalization
+- Entity overlap alone does not prove cannibalization (RULE-005)
 - Crawl verification begins with Googlebot Smartphone unless evidence requires otherwise
 
 ## Classification
@@ -76,10 +75,7 @@ Project Evidence or withdraw it.
 
 The `ext_publication_gate` column records the check: `passed`, `blocked`, or `n/a`.
 
-**Known live case:** Bradley's site-quality-score multiplier (the basis of much of the
-site-efficiency argument) is a Working Hypothesis, not documented platform behaviour. It
-is legitimate explanatory framing and it drives the right behaviour, but a consolidation
-or deletion recommendation resting on it alone fails this gate.
+**Known live case:** Bradley's site-quality-score multiplier — CM-009.
 
 ## Evidence quality
 
@@ -94,23 +90,11 @@ used — not evidence that it is correct or currently valid.
 
 ## Conflict records
 
-When a real conflict is found, write a row in `conflicts.csv` rather than resolving it
-silently or averaging the two positions. Averaging is explicitly prohibited.
-
-Procedure:
-
-1. Record both claims verbatim or as faithful summaries
-2. Identify each source, date, authority level and scope
-3. Determine whether the conflict is real, or caused by different conditions
-4. Check current official guidance where platform behaviour is involved
-5. Test against client evidence where the question is campaign-specific
-6. Write a proposed ruling with conditions, risks and affected SOPs
-7. Paul approves where the ruling changes production behaviour
-8. Add the approved ruling to the decision log
-9. Update affected SOPs; move replaced versions to Superseded
-
-A conflict found during an audit does not get resolved inside the audit. It gets
-recorded, the current production rule is followed, and the proposed ruling goes to Paul.
+Procedure: **PROC-01** (`methodology/rulings.md`). Write a row in `conflicts.csv`; never
+resolve inside the audit and never average. While recording it, also note whether the
+conflict is real or caused by different conditions, and check current official guidance
+where platform behaviour is involved or client evidence where the question is
+campaign-specific.
 
 ## Client-specific exceptions
 
@@ -118,31 +102,11 @@ A client exception identifies client, reason, duration, approver, affected stage
 **exit condition**. It does not change the global SOP unless separately approved. Record
 it in `decisions.md` and reference it from every finding it touches.
 
-## Rules currently in force
+## Rules in force
 
-From the Rule Register. Advisory status noted above; these are the operative rulings
-the audit works to.
+The rulings the audit works to are in `methodology/rulings.md` — Rule Register entries in
+section C (RULE-001–015; RULE-013 is MISSING — do not infer it), Coastal rulings in
+sections A–B. Cite the ID; do not copy rule text into findings or this skill.
 
-| Rule | Ruling |
-|---|---|
-| RULE-001 | Bradley methodology is the central analytical lens; label the authority of each claim |
-| RULE-002 | One H1 per visible page unless Paul approves a documented exception |
-| RULE-003 | Homepage and location pages lead with the brand, semantic entity-association structure |
-| RULE-004 | 100+ citations is a planning benchmark, not a Google threshold |
-| RULE-005 | **Rejected:** entity overlap alone proves cannibalization. Require overlapping intent plus observed evidence |
-| RULE-006 | Official platform guidance controls GBP eligibility and representation |
-| RULE-007 | **Rejected:** a page may be deleted or merged solely for failing an entity test. Verify demand and 12-month job/lead value |
-| RULE-008 | Geographic subdomain default — NEEDS WORK / DEFERRED. Do not recommend |
-| RULE-009 | Stages 0–3 produce recommendations only; no edits, publishing, purchases, submissions or GBP/schema/citation/link changes |
-| RULE-010 | Client confirms facts; Paul approves action, priority, risk and spend. Distinct gates |
-| RULE-011 | Every audit gets an analyst self-check **and** an independent review before release, or a recorded exception |
-| RULE-012 | The `site:` operator is directional evidence, not an index-count source |
-| RULE-014 | First citation order only after website and GBP identity/location facts are reconciled |
-| RULE-015 | Blog cannibalization requires overlapping intent plus observed search conflict |
-
-**RULE-013 is absent from the register** while GOV-02 cites RULE-001–013 as controlling.
-Flag this as a gap; do not infer what it said.
-
-**RULE-011 is the basis for the Stage 2 exception.** Claude performing both the
-self-check and the review is a departure from RULE-011 and must be recorded as an
-explicit exception on every audit, per the rule's own escape clause.
+The Stage 2 review exception is the standing ruling **CM-026** (RULE-011's exception
+clause); it is cited in `decisions.md`, not re-logged per audit.

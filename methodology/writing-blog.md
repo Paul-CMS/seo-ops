@@ -1,13 +1,15 @@
 # Writing standard — informational blog posts
 ### The informational writing standard used by the Blog agent.
 Used by the Blog agent for full clients and for Blog Authority Builder (blog-only) clients.
-Never in the same context as commercial writing or auditing.
+Never in the same context as commercial writing or auditing. Rules are cited by ID from
+`methodology/rulings.md`; the page structure and checks are in `methodology/specs/blog-post.md`.
 
 ## A — Hard constraints
 
 - **A1 No invented facts (CM-016).** No statistic, price, timeframe, code reference,
   certification, local condition or product unless it is in the brief, Brand Guide Section D
-  or the supplied source material. Missing → `[NEED: …]`.
+  or the supplied source material. Missing → `[NEED: …]`. Reviews and customer language are
+  words, never verified facts (CM-027).
 - **A2 Verifiability. A3 Attribution honesty** — no "we've seen this hundreds of times" unless
   the source material says so.
 - **A4 Never reuse** a heading, FAQ question or opening angle in the Brand Guide C3 registry —
@@ -41,12 +43,16 @@ Never in the same context as commercial writing or auditing.
   names an entity or states a real question (BB-308/309/310).
 - **C6 Information gain — the actual job:** firsthand cases, honest tradeoffs, diagnostic cues,
   local conditions, failure modes, real numbers from the source. **At least four.**
-- **C7 Commercial bridge — one block at the end (BB-704, CM-005).** Never a commercial link in
-  prose or an FAQ answer. One separated "Related services" block linking the 1–2 pages in the
-  brief. (The link-strategy skill may propose one contextual link as a CM-022 exception, for
-  Paul's approval.)
+- **C7 Links (CM-038 — supersedes the old one-block-at-the-end rule).** No links in the title,
+  the H1 or the BLUF. Otherwise placement is free (body or an end block). Caps: at most 1
+  internal link per H2 section · at most 1 internal link per ~300 words · at most 5 internal
+  links per post, of which at most 2 to commercial (service or location) pages · at most 2
+  outbound authority links. Each URL linked once per post; descriptive anchors, no repeated
+  exact-match anchors. The commercial bridge is one of the (at most 2) commercial links.
 - **C8 FAQ:** 3–5, H3, first sentence complete (40–60 words), none in the C3 registry.
-- **C9 Author:** real, named, checkable, from the Brand Guide.
+- **C9 Author (CM-039):** the company owner, unless the client states otherwise — the Brand Guide
+  author field (owner from the returned proof sheet). Never "Admin", "Staff" or the company name.
+  Owner not confirmed → `[NEED: author — owner name from the proof sheet]` and the post cannot be approved.
 - **C10 No implementation:** clean Markdown, no HTML or schema.
 
 ## D — Process
@@ -54,4 +60,6 @@ Never in the same context as commercial writing or auditing.
 Stage 1 Plan (title, meta, H1, BLUF draft, outline, word targets, planned information gain
 with sources, NEED list) → **stop for approval** → Stage 2 Draft → Stage 3 Self-critique:
 E1 information-gain count (≥4) · E2 invention sweep · E3 BLUF check · E4 sales-pitch check ·
-E5 chunk lengths · E6 link check · E7 uniqueness vs C3 / page FAQs · E8 filler sweep.
+E5 chunk lengths · E6 link check (report each CM-038 number: links in title/H1/BLUF, max per
+H2, per ~300 words, internal total, commercial total, outbound total, any URL twice) · E7
+uniqueness vs C3 / page FAQs · E8 filler sweep. Then the checks in `methodology/specs/blog-post.md`.

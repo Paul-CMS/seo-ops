@@ -11,8 +11,11 @@ Protects, by refusing direct edits:
 
 This is a guard against mistakes, not a security boundary against a determined user.
 """
+import fnmatch
 import json
+import os
 import re
+import shlex
 import sys
 from pathlib import Path
 
@@ -49,6 +52,45 @@ PROTECTED = [
     (re.compile(r"(^|/)\.env$"), ".env holds credentials. Never read, print or edit it — scripts load it themselves."),
 ]
 
+ENV_WHY = (".env holds credentials. Never read, search or list it — scripts load it themselves. "
+           "Search a subfolder, or add a glob/type filter that cannot match .env.")
+
+
+def glob_hits_env(pattern):
+    """True if a file glob could match '.env' (dotfile-aware: only patterns whose last part starts
+    with '.' or names env reach a dotfile)."""
+    base = (pattern or "").rstrip("/").split("/")[-1]
+    if not base:
+        return False
+    if ".env" in pattern and not pattern.endswith(".env.example"):
+        return True
+    return (base.startswith(".") or "env" in base) and fnmatch.fnmatch(".env", base)
+
+
+def dir_holds_env(p):
+    try:
+        d = Path(p or data.get("cwd") or ".")
+        if not d.is_absolute():
+            d = Path(data.get("cwd") or ".") / d
+        return d.is_dir() and (d / ".env").exists()
+    except Exception:
+        return False
+
+
+if tool == "Grep":
+    p = str(inp.get("path") or "")
+    g = str(inp.get("glob") or "")
+    if p.rstrip("/").endswith(".env") or (g and glob_hits_env(g)):
+        block(ENV_WHY)
+    if dir_holds_env(p) and not (g or inp.get("type")):
+        block(ENV_WHY)
+    sys.exit(0)
+
+if tool == "Glob":
+    if glob_hits_env(str(inp.get("pattern") or "")):
+        block(ENV_WHY)
+    sys.exit(0)
+
 if tool in ("Edit", "Write", "MultiEdit", "NotebookEdit", "Read"):
     fp = str(inp.get("file_path") or inp.get("notebook_path") or "")
     for rx, why in PROTECTED:
@@ -65,6 +107,27 @@ if tool == "Bash":
         and "$(" not in cmd
     if re.search(r"(^|[\s/'\"=])\.env(\s|$|['\"])", cmd):
         block(".env holds credentials. Never read or print it — scripts load it themselves.")
+    try:
+        toks = shlex.split(cmd, posix=True)
+    except ValueError:
+        toks = cmd.split()
+    for i, t in enumerate(toks):
+        if t.startswith(("-", "!")) or (i and toks[i - 1] in ("-g", "--glob", "--exclude", "--exclude-dir")):
+            continue  # an exclusion pattern, not a file glob
+        if any(ch in t for ch in "*?[") and glob_hits_env(t):
+            block(ENV_WHY)
+    segs = re.split(r"[|;&]+", cmd)
+    for seg in segs:
+        w = seg.split()
+        if not w:
+            continue
+        prog = os.path.basename(w[0])
+        if prog in ("grep", "egrep", "fgrep") and re.search(r"(^|\s)-(\w*[rR]\w*|-recursive|d\s*recurse)\b", seg) \
+                and not re.search(r"--exclude(-dir)?=?\S*env", seg):
+            block(ENV_WHY + " (recursive grep needs --exclude='.env*')")
+        if prog in ("rg", "ag", "ack") and re.search(r"(--hidden|--no-ignore|-u\b|-uu|-uuu|--unrestricted|--all-types)", seg) \
+                and not re.search(r"-g\s*'?!\.env|--glob\s*'?!\.env", seg):
+            block(ENV_WHY + " (searching hidden/ignored files needs -g '!.env')")
     if re.search(r"\.claude/(state|hooks)|approve-token", cmd):
         block("approval state and hooks are off limits.")
     if re.search(r"status\.json|log\.md|changes\.jsonl|/snapshots/", cmd) and not via_script:

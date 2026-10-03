@@ -8,8 +8,8 @@ description: "Analyze a local business blog for cannibalization and produce the 
 Classifies every post, produces the Blog Decision Map, and stops. Paul approves the map
 before any content work begins.
 
-**Never delete. Always redirect.** A redirect captures accumulated link equity and is
-reversible; a deletion is neither.
+**Never delete. Always redirect** (CM-001). Rules cited here live in
+`methodology/rulings.md`.
 
 ## Required inputs
 
@@ -17,7 +17,7 @@ reversible; a deletion is neither.
 |---|---|---|
 | Full blog post list (URL, title, word count, category, modified) | **Yes** | Cannot run |
 | Approved commercial URL map — service and location pages with their entity and city | **Yes** | Test A cannot run |
-| Search Console — impressions, clicks, position, ≥6 months | No, but | **Test B cannot be evaluated, so no post may be redirected on Test A alone.** Say so in the deliverable. |
+| Search Console — impressions, clicks, position, ≥6 months | No, but | Test B's impression/CTR signal is unavailable, and a redirect needs observed conflict from DataforSEO instead (CM-021, `serp_overlap`). Say so in the deliverable. |
 | Analytics — conversions, entrances | No | Conversion signal unavailable |
 | Backlink export — referring domains per URL | No | Equity signal unavailable |
 
@@ -46,11 +46,8 @@ page? The script ranks candidate targets rather than picking one, because a loca
 matches any post naming the city and the homepage matches almost everything. Choose the
 target yourself.
 
-**Test B — AI search gap.** Mandatory: answers a specific real question no commercial page
-covers. Plus at least one supporting signal — meaningful impressions at low CTR (the
-answer-engine signature), an assistant-shaped question (cost, troubleshooting, is-it-worth-it),
-or no better-covering competitor page. **Passing means PROTECTED: never deleted, never
-redirected, optimized in place.**
+**Test B — AI search gap** (CM-007). Mandatory criterion plus one supporting signal; passing
+means PROTECTED. Details in `references/tests.md`.
 
 **Test C — blog versus blog.** Near-duplicate subjects. Consolidate into the stronger post,
 redirect the other. Matching uses only *distinctive* tokens — the site's category and city
@@ -68,8 +65,8 @@ not what makes it competing, covering the same *question* is. The script marks a
 Test B supporting signals as `blocked-pending-test-B` and will not let it pass as a clean
 redirect.
 
-**This is a Coastal override, not Bradley's rule.** Bradley's Test A would redirect these.
-Label it as ours in any client deliverable.
+CM-007 is a Coastal PILOT override, not Bradley's rule — label it as ours in any client
+deliverable. A redirect also needs observed conflict (CM-021, RULE-015).
 
 ## Classification output
 
@@ -88,8 +85,7 @@ them before the map goes to Paul.
 The Blog Decision Map goes to Paul. **The workflow halts until approved.** Content briefs
 are generated from the approved map, not from the proposal.
 
-Protected posts get a refresh cadence — default 6 months. At each refresh, re-run Test B: a
-service page built since may now cover the ground, which moves the post to Test A.
+Protected posts are re-tested on refresh per CM-007 (every 6 months).
 
 ## Boundary
 

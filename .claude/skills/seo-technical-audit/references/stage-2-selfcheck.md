@@ -3,10 +3,12 @@
 ## Documented deviation from GOV-02
 
 GOV-02 requires a reviewer other than the finding author. In this workflow Claude
-performs both roles. **Record this as a Paul Exception in `decisions.md` on every audit.**
+performs both roles under the standing exception **CM-026**; `decisions.md` cites CM-026
+rather than logging a new exception.
 
 A same-context self-review genuinely catches less than an independent one. The
-fresh-session protocol below is a mitigation, not an equivalent.
+fresh-context protocol below (the `audit-reviewer` subagent) is the mitigation CM-026
+requires, not an equivalent.
 
 ## The fresh session
 
@@ -39,7 +41,7 @@ goes back as a revision.
 
 ## Challenge protocol
 
-For every Critical and High finding, and a representative sample of Medium and Low:
+For every High finding, and a representative sample of Medium and Low (scale: CM-028):
 
 1. Open the evidence at the locator.
 2. Re-derive the conclusion from the evidence alone.
@@ -70,10 +72,10 @@ Add three specific to this stack:
 
 ### Destructive recommendations
 
-Every merge, redirect, delete, noindex or canonical change gets the value/dependency
-check completed in the URL Decision Map — traffic, queries, conversions, leads, revenue,
-backlinks, paid use, GBP and citation dependencies, client job history — plus a safer
-alternative. Missing either, the recommendation is withdrawn, not downgraded.
+Every merge, redirect, delete, noindex or canonical change must meet CM-019 (all four
+conditions, else `Needs Evidence`) with the check completed in the URL Decision Map, plus a
+safer alternative. Missing either, the recommendation is withdrawn, not downgraded
+(CM-001). Check the publication gate (CM-009).
 
 ### Reconciliation
 
@@ -89,7 +91,7 @@ Rendered from the register. Never hand-edited.
 the small number of highest-leverage recommendations. Strengths are not decoration; an
 audit that lists only problems gets read as a sales document.
 
-**Prioritized register** — Critical / High / Medium / Low / Monitor, each with impact,
+**Prioritized register** — High / Medium / Low (CM-028), each with impact,
 effort, risk, dependency, evidence locator, owner placeholder.
 
 **URL Decision Map** — Keep / Improve / Create / Merge Candidate / Redirect Candidate /

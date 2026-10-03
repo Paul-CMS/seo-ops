@@ -1,9 +1,9 @@
 ---
 name: bb-schema-builder
-description: "Build Bradley Benner / Semantic Links JSON-LD schema for a local business site — homepage, service pages and location pages — following the BB-6xx v1.1 node sets observed in a live Bradley-built implementation. Use this for Stage 7 schema work: when schema markup, JSON-LD, structured data, LocalBusiness type, sameAs, hasMap, an ID page, entity enrichment or Wikidata references are requested for a local-business client; when someone asks which schema type a page should carry; or when existing schema needs auditing against the standard. Enforces the pre-build asset gate and refuses to emit schema for pages whose URL or content is not final. Never emits LocalBusiness on a service page or a non-GBP location page."
+description: "Build Bradley Benner / Semantic Links JSON-LD schema for a local business site — homepage, service pages and location pages — following the BB-6xx v1.1 node sets observed in a live Bradley-built implementation. Use this for Finish — schema work: when schema markup, JSON-LD, structured data, LocalBusiness type, sameAs, hasMap, an ID page, entity enrichment or Wikidata references are requested for a local-business client; when someone asks which schema type a page should carry; or when existing schema needs auditing against the standard. Enforces the pre-build asset gate and refuses to emit schema for pages whose URL or content is not final. Never emits LocalBusiness on a service page or a non-GBP location page."
 ---
 
-# BB Schema Builder — Stage 7
+# BB Schema Builder — Finish — schema
 
 Implements **BB-6xx v1.1**, derived from direct observation of a Bradley-built live
 implementation (SRC-030/031/032), not from the derived documents. Where the two disagree,

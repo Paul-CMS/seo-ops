@@ -1,63 +1,110 @@
 {
-  "_about": "Every gate a command can require. Only scripts/approve.py (run through /approve) can set one. 'met' means Approved or Approved with Conditions, and every file recorded with the approval is unchanged.",
+  "_about": "Every gate a command can require. Decisions are set only by scripts/approve.py (through Paul's /approve). 'met' means Approved or Approved with Conditions, and the files recorded with THAT approval are unchanged. An edit voids only the gate whose file changed; later gates are flagged 'upstream change' and stay open. Each decision gate names its artifact (the status.json mark that lists the files the approval covers) and its producer (the command that writes them). Conditions are checked by the scripts, never approved.",
   "gates": {
     "b1_entity": {
       "label": "Block 1.1 - Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)",
-      "requires": []
+      "plain": "the entity foundation (category, area, variants)",
+      "requires": [],
+      "artifact": "entity_record",
+      "producer": "/discovery {slug} discovery",
+      "producer_blog_only": "/blog {slug} intake"
     },
     "b1_proof_sheet_ready": {
       "label": "Block 1.2 - Client proof sheet prepared from discovery and reviewed by Paul (ready for Paul to send)",
-      "requires": ["b1_entity"]
+      "plain": "the client proof sheet (ready for you to send)",
+      "requires": ["b1_entity"],
+      "artifact": "proof_sheet",
+      "producer": "/discovery {slug} proof-sheet"
     },
     "b1_proof_sheet_returned": {
       "label": "Block 1.3 - Client completed and returned the proof sheet",
-      "requires": ["b1_proof_sheet_ready"]
+      "plain": "the client's returned proof sheet",
+      "requires": ["b1_proof_sheet_ready"],
+      "artifact": "proof_sheet_returned",
+      "producer": "/discovery {slug} sheet-returned",
+      "wait_for": "the client to return the proof sheet"
     },
     "b1_brand_guide": {
       "label": "Block 1.4 - Brand Guide / business-truth record complete; proof sheet reconciled (verified facts separated from unsupported claims)",
-      "requires": ["b1_proof_sheet_returned"]
+      "plain": "the reconciled Brand Guide",
+      "requires": ["b1_proof_sheet_returned"],
+      "artifact": "reconciled",
+      "producer": "/discovery {slug} reconcile"
     },
     "b1_audit": {
       "label": "Block 1.5 - Audit deliverables complete and approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)",
-      "requires": ["b1_entity"]
+      "plain": "the audit deliverables",
+      "requires": ["b1_entity"],
+      "artifact": "audit_deliverables",
+      "producer": "/discovery {slug} audit"
     },
     "block1": {
       "label": "Block 1 - Audit findings -> page work (Paul signs)",
-      "requires": ["b1_entity", "b1_proof_sheet_ready", "b1_proof_sheet_returned", "b1_brand_guide", "b1_audit"]
+      "plain": "the Block 1 sign-off (discovery and audit complete, start Build)",
+      "requires": ["b1_entity", "b1_proof_sheet_ready", "b1_proof_sheet_returned", "b1_brand_guide", "b1_audit"],
+      "artifact": "block1_summary",
+      "producer": "/discovery {slug} block1"
     },
     "b2_blockers": {
       "label": "Build - Technical blocker checklist cleared and tracking stable",
-      "requires": ["block1"]
+      "plain": "the technical blocker checklist (cleared)",
+      "requires": ["block1"],
+      "artifact": "blocker_checklist",
+      "producer": "/build {slug} blockers"
     },
     "block2": {
       "label": "Block 2 - All pages live -> link wheel",
-      "requires": ["block1"]
+      "plain": "all pages built and written back (start the link wheel)",
+      "requires": ["block1"],
+      "artifact": "build_summary",
+      "producer": "/build {slug} block2"
     },
     "block3": {
       "label": "Block 3 - Link wheel verified -> schema",
-      "requires": ["block2"]
+      "plain": "the link wheel (built and verified)",
+      "requires": ["block2"],
+      "artifact": "link_wheel",
+      "producer": "/finish {slug} wheel"
     },
     "block5": {
       "label": "Block 5 - QA cleared -> release",
-      "requires": ["block3"]
+      "plain": "release (schema built, QA cleared)",
+      "requires": ["block3"],
+      "artifact": "release_qa",
+      "producer": "/finish {slug} qa",
+      "before": {"mark": "schema_built", "producer": "/finish {slug} schema"}
     },
     "block4": {
       "label": "Block 4 - Blog Decision Map approved -> redirects and blog briefs",
+      "plain": "the Blog Decision Map",
       "requires": ["block5"],
-      "requires_blog_only": ["b1_entity", "bab_topics"]
+      "requires_blog_only": ["b1_entity", "bab_topics"],
+      "artifact": "blog_map",
+      "producer": "/blog {slug} map"
     },
     "bab_topics": {
       "label": "Blog Authority Builder - topic list approved (checked against service and location page FAQs)",
-      "requires": ["b1_entity"]
+      "plain": "the blog topic list",
+      "requires": ["b1_entity"],
+      "artifact": "topics",
+      "producer": "/blog {slug} topics"
+    }
+  },
+  "conditions": {
+    "client_setup": {
+      "label": "Client set up (/new-client finished)",
+      "plain": "the client has been set up with /new-client"
     }
   },
   "derived": {
     "impl_safe": {
       "label": "Implementation gate 1 - audit approved: client-independent fixes (broken links, alt text, image URLs, sitemap, robots.txt, meta description duplicates, speed)",
+      "plain": "the audit approval (safe fixes)",
       "requires": ["b1_audit"]
     },
     "impl_structural": {
       "label": "Implementation gate 2 - proof sheet reconciled + entity approved: redirects, URL/slug changes, consolidations, SEO titles and H1s",
+      "plain": "the entity foundation and the reconciled Brand Guide (structural changes)",
       "requires": ["b1_entity", "b1_brand_guide"]
     }
   },

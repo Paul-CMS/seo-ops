@@ -1,6 +1,6 @@
 # THE BRADLEY STANDARD
 ### Every rule in the Bradley Benner / Semantic Links methodology, with its reasoning and its evidence grade
-**Coastal Marketing Strategies · v1.0 DRAFT · Provenance-graded**
+**Coastal Marketing Strategies · v1.0 · APPROVED (Paul, 2026-10-02) · Provenance-graded**
 
 ---
 

@@ -1,4 +1,6 @@
 # THE COASTAL DELTA
+
+**Consolidated into methodology/rulings.md on 2026-10-02 — rulings.md governs; this file is the historical source.**
 ### Every place Coastal Marketing adds to, extends, overrides or exempts itself from the Bradley Standard
 **Coastal Marketing Strategies · v1.0 DRAFT · Companion to BB-Standard-v1.0**
 

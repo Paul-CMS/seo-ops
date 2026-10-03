@@ -41,11 +41,10 @@ If a commercial page already covers the topic, it is not a gap post — re-run T
 | Signal | What it looks like |
 |---|---|
 | Impression/CTR pattern | Meaningful impressions with low click-through — the signature of a post ranking for a real query and losing the click to an AI summary rather than to a competitor |
-| Assistant-shaped question | Something a customer would type into ChatGPT or Perplexity directly — a cost question, a troubleshooting or diagnostic question, an is-it-worth-it comparison — rather than an about-our-services post |
+| Assistant-shaped question | Something a customer would type into an AI assistant directly — a cost question, a troubleshooting or diagnostic question, an is-it-worth-it comparison — rather than an about-our-services post |
 | No better-covering competitor | The gap is not covered by competitors either, so it is a genuine market gap worth strengthening |
 
-**Mandatory plus one supporting = PROTECTED.** Never deleted, never redirected. Routed to
-optimization in place.
+**Mandatory plus one supporting = PROTECTED** (CM-007): optimized in place.
 
 ### Why this overrides Bradley
 
@@ -53,15 +52,13 @@ His Test A would redirect a post that shares an entity with a service page. The 
 is not what makes a post competing — **covering the same question is.** A post answering
 something no page answers is filling a gap, not splitting a signal.
 
-This is a Coastal rule at PILOT status. Attribute it as ours in any client deliverable.
+CM-007 is a Coastal rule at PILOT status — attribute it as ours in any client deliverable.
 
 ### Without Search Console data
 
-**Observed conflict (Paul ruling 2026-10-02, CM-021):** a redirect proposal needs observed
-search conflict — either Search Console data, **or DataforSEO ranking data showing the post
-and the commercial page both ranking for the same query.** Put the DataforSEO overlap in the
-config's `serp_overlap` list. With neither source, the post gets **no redirect proposal**: it
-stays unresolved and the limitation goes in the deliverable.
+A redirect proposal needs observed search conflict as defined in **CM-021**. Put the
+DataforSEO ranking overlap in the config's `serp_overlap` list. With neither source, the
+post stays unresolved and the limitation goes in the deliverable.
 
 Test B's impression/CTR signal still needs Search Console; without it, Test B rests on the
 mandatory criterion plus the other two supporting signals.

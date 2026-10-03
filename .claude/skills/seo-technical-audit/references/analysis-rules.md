@@ -1,10 +1,12 @@
 # Analysis Rules — Stage 1 Categories
 
-The methodology and guidelines file in the client drive governs. This file holds the
-constraints that a model gets wrong by default, drawn from GOV-02 §1–9. Where the two
-disagree, the client's methodology file wins and the disagreement goes in `decisions.md`.
+Rules live in `methodology/rulings.md` (the single rule source) and the Bradley Standard;
+this file cites their IDs and holds the procedure — what to look at and how — for each of
+GOV-02's nine categories. Where this file and `rulings.md` disagree, `rulings.md` wins and
+the disagreement goes in `decisions.md`.
 
 ## Contents
+0. Conformance scorecards (page specs)
 1. Baseline and measurement
 2. Technical and crawl
 3. Brand, entity and verified truth
@@ -17,6 +19,29 @@ disagree, the client's methodology file wins and the disagreement goes in `decis
 
 ---
 
+## 0. Conformance scorecards (page specs)
+
+Every page in the frozen URL inventory is scored against its page spec in
+`methodology/specs/<type>.md` — `homepage.md`, `service.md`, `location.md`,
+`county-hub.md`, `about.md`, `blog-post.md`. Each spec has numbered checks (e.g. `SVC-01`),
+and each check names the audit category it belongs to. Score every page against every
+check of its type; a page with no matching spec gets its page type questioned under §5.
+
+Scorecard results are reported inside the nine categories, not as a separate section:
+
+| Spec checks | Category |
+|---|---|
+| Page type, URL, hub structure | §5 Architecture |
+| Title, H1, headings, opening, body, FAQ, on-page link structure | §6 On-page |
+| `blog-post.md` checks | §7 Blog |
+| Entity / NAP | §3 Brand and entity |
+| Schema readiness | §9 Schema readiness |
+
+Severity per CM-028: a failed spec check is **Medium** unless it breaks the entity model or
+page structure (**High**). One finding per failed check, listing every page that fails it
+(not one finding per page). A missing "The Best" is never a failed check by itself
+(CM-020).
+
 ## 1. Baseline and measurement
 
 Record a baseline only where the source and window are both defined. An undefined
@@ -27,9 +52,9 @@ campaigns. A year-over-year change spanning a redesign is not evidence of anythi
 the redesign is accounted for.
 
 Validate the conversion path end to end — event firing, form delivery, phone routing,
-call attribution, thank-you pages, CRM handoff, duplicate-event risk. Broken measurement
-is usually a High finding in its own right, because it makes every other
-performance-based finding unsafe.
+call attribution, thank-you pages, CRM handoff, duplicate-event risk. Record broken
+measurement as a finding in its own right (severity per CM-028), because it makes every
+other performance-based finding unsafe.
 
 **Unknown metrics stay unknown.** Do not construct a proxy and then reason from it as
 though it were measured.
@@ -51,9 +76,8 @@ in an export are systematically empty, rendering was **disabled** — that is a 
 not evidence that content disappears on render. This distinction has produced real false
 findings; treat it as a trap, not a nicety.
 
-**`site:` results are directional discovery only.** Never calculate an indexation rate
-from the reported count. Use Search Console Page Indexing, URL Inspection samples,
-sitemaps, crawl evidence, logs and performance data.
+**`site:` results** — CM-008 / RULE-012. Measure indexation from Search Console Page
+Indexing, URL Inspection samples, sitemaps, crawl evidence, logs and performance data.
 
 **Orphan candidates require reconciliation**, not a crawl. Cross-reference crawl, XML
 sitemaps, Search Console, analytics, backlinks, GBP destinations, citations, paid
@@ -69,6 +93,8 @@ universal knowledge-graph score. Record query, location, device, date.
 
 Inventory first-party and external supporting assets; verify each references the correct
 business and location and is actually discoverable.
+
+Entity / NAP spec checks are reported here (§0).
 
 Apply the methodology file's entity-association reasoning to test whether the site
 consistently expresses who the business is, what it provides and where it operates.
@@ -113,42 +139,43 @@ test. A distinct entity does not require a page; absence from Wikipedia does not
 prohibit one.
 
 **Destructive recommendations** — merge, redirect, delete, noindex, canonical change —
-may never rest on entity overlap, template similarity, word count, index status or a low
-tool score. Before proposing any, complete the value/dependency check: organic traffic,
-queries, conversions, leads, revenue, backlinks, paid use, GBP and citation
-dependencies, and client job history. Record the check in the URL Decision Map and offer
-a safer alternative.
+follow CM-001 and CM-019: a page is a candidate only when all four CM-019 conditions hold;
+otherwise it is `Needs Evidence`. Never delete, always redirect (CM-001). Entity overlap,
+template similarity, word count, index status or a tool score never qualify a page on
+their own (RULE-007, CM-009). How: pull DataforSEO ranked keywords and referring domains
+for the URL, check it against GBP and citation destinations, and list the "no leads"
+question for client confirmation. Record the check in the URL Decision Map with a safer
+alternative. Where the client has supplied performance data, record it too (CM-030 is
+OPEN).
 
-**Cannibalization** requires overlapping intent **plus** observed evidence: unstable
-ranking URLs, split impressions or clicks, competing conversions, or query-level
-conflict. Entity overlap alone is insufficient and is the most common false positive in
-this category.
+**Cannibalization** — RULE-005, RULE-015, CM-021. Look for overlapping intent, then for
+observed evidence: GSC query/URL data, or DataforSEO showing both URLs ranking for the same
+query.
 
 City pages vs county/region hubs is decided on verified geography, service operations,
 user intent, query evidence, internal-link usability and maintenance capacity.
-Geographic subdomains are exceptional experiments requiring alternatives, success
-measures, risk review, ownership and rollback — never a default recommendation.
+Geographic subdomains: RULE-008 (deferred — do not recommend).
+
+Page-type, URL and hub-structure spec checks are reported here (§0).
 
 ## 6. On-page and content structure
 
 Audit titles, H1s, heading structure, opening paragraphs, internal anchors, conversion
 paths, duplication, claims, helpfulness and page focus.
 
-**One H1 per visible page is a house standard**, not a platform requirement. Say so in
-the deliverable.
+Title, H1, heading, opening, body, FAQ and on-page link-structure spec checks are
+reported here (§0).
+
+**One H1 per page** — RULE-002 (house standard, not platform requirement).
 
 The bot/human split: URLs, titles, headings and internal anchors express structure;
-paragraph prose serves the buyer; the H1 must work for both. Rewrites call for a BLUF
-opening and human-first copy. Headings should read as conversational and useful, not
-machine-generated.
+paragraph prose serves the buyer; the H1 must work for both. Openings: CM-003. Uniqueness:
+CM-015. Headings should read as conversational and useful, not machine-generated.
 
-**Titles and H1s (Paul ruling 2026-10-02, CM-020):** the Bradley formats (BB-302, BB-304,
-BB-305 — no brand in the H1) are the standard and may be cited as Bradley Methodology Rule,
-never as Platform Requirement. **"The Best" is not part of the default.** A missing
-"The Best" is **never a finding by itself**. Whether a page should carry it is decided by the
-four-condition test in `methodology/coastal-delta-addendum.md` CM-020 (demand, opportunity,
-proof, not a sensitive industry), recorded in Brand Guide Section H and the URL Decision Map.
-Never recommend changing the H1 of a page already in the top 3 for its main keyword.
+**Titles and H1s** — BB-302, BB-304, BB-305 (classified Bradley Methodology Rule, never
+Platform Requirement) and CM-020 for "The Best". Separator: CM-014. To apply CM-020, pull
+the DataforSEO data its conditions name and the page's current rank, and record the
+decision where CM-020 says.
 
 Any superlative or credential claim found on-page is a **truth** issue before it is an
 SEO issue. Route it to the Stage 3 client-confirmation list rather than optimizing
@@ -165,8 +192,11 @@ Stage 3.
 
 **Do not assume blogging harms local SEO**, and do not assume a subdomain is safer.
 Either claim requires observed conflict, a business purpose and migration risk analysis.
+Blog classification and protected posts: CM-007, CM-021 (run by `bb-blog-analysis`).
 
-Flag expert-interview opportunities and AI-search gaps for the content SOP rather than
+`blog-post.md` spec checks are reported here (§0).
+
+Flag expert-interview opportunities and AI-search gaps for the content step rather than
 resolving them here.
 
 ## 8. Citations, backlinks, authority
@@ -178,12 +208,11 @@ A citation tracker's discrepancy list is measured against **the tracker's stored
 which is not automatically the verified NAP. Reconcile against the Stage 0 Client
 Control Record before calling any of it an error.
 
-**100+ citations is the methodology's planning benchmark, not a Google threshold.**
-Recommend quantity only after accuracy, relevance, competition, cost and maintenance.
+**Citation and link quantity** — CM-006, RULE-004. Spend — RULE-014.
 
-No citation order occurs during the audit. The recommendation states verified NAPW,
-target location, provider options, cost and renewal, prerequisites, and the approval
-required. First order belongs to Stage 4, after discrepancies are resolved.
+No citation order occurs during the audit (RULE-009). The recommendation states verified
+NAPW, target location, provider options, cost and renewal, prerequisites, and the approval
+required.
 
 Assess anchors, topical relevance, destination distribution, referring-domain quality,
 risk, historical patterns and comparable competitors. Link quantity alone establishes
@@ -197,4 +226,5 @@ fit, duplicate or disconnected instances, URL dependencies.
 
 **Generate nothing.** No JSON-LD, no drafted markup, no code. Schema work is recommended
 only after page types, canonical URLs, organization/location relationships and content
-are approved and stable — all of which sit beyond this skill's boundary.
+are approved and stable — all of which sit beyond this skill's boundary. Schema-readiness
+spec checks are reported here (§0); the schema rules are BB-6xx v1.1 (incl. GOV-T5).

@@ -3,8 +3,8 @@ CF-001,"The Best" in H1,"Opens every service/location H1","BB-305; CM-002","Do n
 CF-002,City link mesh,"Every location links to every sibling; tables/H3","BB-205/206; CM-005","No flat city mesh; anchor cities; body links","updated-link-strategy skill",Bradley/Delta for service+location pages; link skill for blog + QA,CM-022,Paul,APPROVED,2026-10-02
 CF-003,Destructive actions without GSC,"Nothing destructive without performance data","CM-001; Agency Profile §3; GOV-06 §3","Use own local search research","Paul 2026-10-02",CM-019,CM-019,Paul,APPROVED,2026-10-02
 CF-004,Blog redirect evidence,"Entity+location overlap = competing","BB-701; bb-blog-analysis Test A","Overlap alone never proves it","RULE-005; RULE-015",CM-021,CM-021,Paul,APPROVED,2026-10-02
-CF-005,Location page H2 count,"~7 H2 sections","BB-315","2-3 H2s","Commercial writer gem C4",BB-315,CM-023,Paul,APPROVED,2026-10-02
-CF-006,Variant sharing across pages,"No two same-type pages share a variant","GOV-06 T7","Shared pool is correct; only homepage reserved","Agent 2; gem C3",Shared pool,CM-024,Paul,APPROVED,2026-10-02
+CF-005,Location page H2 count,"~7 H2 sections","BB-315","2-3 H2s","Former commercial writer standard C4",BB-315,CM-023,Paul,APPROVED,2026-10-02
+CF-006,Variant sharing across pages,"No two same-type pages share a variant","GOV-06 T7","Shared pool is correct; only homepage reserved","Agent 2; former commercial writer standard C3",Shared pool,CM-024,Paul,APPROVED,2026-10-02
 CF-007,Schema homepage graph,"WebPage root + Corporation x4","BB-601 v1.0","Two-node graph, Wikidata @id","BB-Standard-Schema-Section v1.1",v1.1,v1.1 governs (observed implementation),Paul,APPROVED,2026-10-02
 CF-008,Stage numbering,"Stage 4 = implementation","GOV-02","Stage 4-5 = service/location build","Stage SOPs / manifest",Named steps in CLAUDE.md,No numbers; named steps,Paul,APPROVED,2026-10-02
 CF-009,Rule count,"83 rules","BB-Standard; cover note","82 rules","Coastal Delta; grade totals",Noted,No action,Paul,NOTED,2026-10-02

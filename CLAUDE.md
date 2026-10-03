@@ -16,7 +16,8 @@ this file is the procedure (who does what, in what order, behind which gate).
 2. `python3 scripts/status.py show <slug>` — where the client stands, which gates are met.
 3. Read the client's Handoff Log (`clients/<slug>/handoff-log.md`, mirrored to Drive) — the
    last section says what the next step needs.
-4. Skim `methodology/lessons.md` for corrections since you last ran.
+4. Rules come from `methodology/rulings.md` (cite IDs; never restate). `methodology/lessons.md` is
+   an inbox of proposals — nothing in it is in force.
 
 ## 2 · The run protocol — no exceptions
 
@@ -43,8 +44,11 @@ knows to stop and ask.
 
 `clients/<slug>/status.json` holds every gate. **Only `/approve`, typed by Paul, sets one**
 (a hook issues a one-time token only for a real `/approve` prompt; a guard hook blocks
-direct edits). An approval names the exact file versions it approves; if a file changes
-afterwards, the gate stops counting as met until Paul re-approves. Decisions: `approved` ·
+direct edits). **Every approval names the exact files it covers** — the producing step records
+them with `status.py mark <slug> <artifact> --file …`, and approve.py refuses an approval with no
+files. If one of those files changes, **only that gate** stops counting as met; later gates stay
+open and `/resume` flags them "upstream change — check whether it affects this". Paul decides.
+`/next` prints the exact `/approve` line (with its files) at every decision. Decisions: `approved` ·
 `approved_with_conditions` (each condition becomes a blocker in the next agent's sequence) ·
 `revise` · `deferred` · `rejected` · `blocked`.
 
@@ -55,20 +59,22 @@ afterwards, the gate stops counting as met until Paul re-approves. Decisions: `a
 | 1 | Intake, Drive folder, document checklist (S01) | `/new-client` | — | — |
 | 2 | Discovery + entity research (S02–S03), public sources | `/discovery` | — | **b1_entity** |
 | 3 | Proof sheet (S04), Markdown + client Google Doc | `/discovery proof-sheet` | b1_entity | **b1_proof_sheet_ready** — Paul sends it |
-| 4 | *While the client has the sheet:* crawl (S05), reviews, rankings, backlinks, citations, grid, GSC (S06–S11) | `/crawl`, `/discovery data` | b1_proof_sheet_ready | — |
+| 4 | *While the client has the sheet:* crawl (S05), reviews → customer language, rankings + cannibalization, backlinks, citations, grid, GSC, People Also Ask (S06–S11, S19) | `/crawl`, `/discovery data` | crawl: client set up · data: b1_proof_sheet_ready | — |
 | 5 | Audit: entity → architecture → page conformance → technical, then fresh-context review (S12–S18) | `/discovery audit` | every step has an outcome | **b1_audit** → implementation gate 1 |
-| 6 | Client returns sheet → reconcile into the Brand Guide | `/discovery reconcile` | b1_proof_sheet_returned | **b1_brand_guide** → implementation gate 2 |
+| 6 | Client returns sheet → record it, reconcile into the Brand Guide | `/discovery sheet-returned`, `/discovery reconcile` | b1_proof_sheet_ready / b1_proof_sheet_returned | **b1_proof_sheet_returned**, **b1_brand_guide** → implementation gate 2 |
 | 7 | Block 1 (Agent 1 never starts Agent 2) | `/discovery block1` | 1.1–1.5 | **block1** |
 | 8 | Technical blockers (Low items as one handoff) | `/build blockers` + `/implement` | block1 | **b2_blockers** |
 | 9 | **Site plan** — every service and location page in one pass | `/build plan` | block1 | **site_plan** |
 | 10 | **Pilot** — 1 service + 1 location brief; corrections go into the specs | `/build batch pilot` | site_plan | **batch:pilot:briefs** |
-| 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); briefs, then drafts, then `/implement`, `/verify`, write-back | `/build batch <id>` … | pilot corrections applied | **batch:<id>:briefs**, **batch:<id>:drafts** |
+| 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); briefs → drafts + self-critique + **semantic review table** → apply approved SEM IDs → `/implement`, `/verify`, write-back | `/build batch <id>` [`drafts`\|`apply-sem`] … | pilot corrections applied | **batch:<id>:briefs**, **batch:<id>:sem** (SEM IDs), **batch:<id>:drafts** |
 | 12 | All pages live and written back | `/build block2` | every batch written back | **block2** |
 | 13 | Link wheel → verify | `/finish wheel` | block2 | **block3** |
 | 14 | Schema → QA crawl → punch-list → acceptance | `/finish schema`, `/finish qa` | block3 | **block5** (release) |
 | 15 | Blog Decision Map → redirects (handoff) → posts | `/blog` | block5 | **block4**, then **page:<id>** per post |
 
 Every step's data is saved once per client and reused (re-run if older than 60 days).
+An imported client (`/new-client --import`) gets its live pages as an approved baseline and a
+generated site plan; `/next` resumes at its real stage.
 `/next <slug>` reads status.json and runs whatever comes next, stopping at the next decision.
 
 ### Blog-only client (Blog Authority Builder)
@@ -109,26 +115,33 @@ Rules enforced in the scripts as well as here:
   against the rules (it lists issues; it never rewrites Paul's copy) → Paul's approval →
   Brand Guide write-back → handoff to the VA.
 
+Every page type has a spec in `methodology/specs/` (homepage, service, location, county hub,
+about, blog post): element order and numbered conformance checks. Build and the audit read them;
+a spec marked DRAFT stops building that page type until Paul approves it; pilot corrections are
+logged in the spec. Writers follow `methodology/writing-commercial.md` (E1–E9, then the Stage 4
+semantic review, one table per batch, report only; Paul approves SEM IDs once per batch) and
+`methodology/writing-blog.md` (E1–E8, CM-038 link caps, CM-039 author).
+
 Build works in batches: one **site plan** for every service and location page (keyword, area
 variant, H1 decision with the "The Best" test, FAQ topics, link targets; checked across the
 site for duplicates, variant conflicts and FAQ overlap) → a **1+1 pilot** → batches of about
 5. Service batches are written back to the Brand Guide before any location batch; homepage
 and about last. Plan and batches live in status.json → `build`.
 
-**Sensitive clients** (chiropractic, medical, insurance, legal, financial — flagged at
-`/new-client`): content needs Paul's `/approve` with the human review recorded; for medical
-and chiropractic, the client's licensed practitioner signs off on health claims and the
-approval records who. Nothing goes live without it.
+**Sensitive clients (CM-025)** — matched by category at `/new-client` (health, legal, insurance,
+financial; term lists in `config.json`); when unsure, `/new-client` asks Paul. Content needs
+Paul's `/approve` with the human review recorded; for health categories the client's licensed
+practitioner signs off on health claims and the approval records who. Nothing goes live without it.
 
 ## 6 · Methodology — what governs
 
-Authority, highest first: platform requirement → legal/truth → Paul's rulings
-(`methodology/coastal-delta-addendum.md`, CM-019+) → the Coastal Delta
-(`sop-source/Coastal-Delta-v1.0.md`, each entry's own status) → the Bradley Standard
-(`sop-source/BB-Standard-v1.0.md`, with BB-601–608 **replaced** by
-`BB-Standard-Schema-Section-v1.1.md`; woodlawntrees.com is the schema reference, schema only)
-→ GOV-06 (procedure for new conflicts). Treat the Standard and the Delta as in force despite
-their DRAFT labels. Cite rule IDs; never restate a rule as if it were new.
+**`methodology/rulings.md` > the Bradley Standard (`sop-source/BB-Standard-v1.0.md`, APPROVED, with
+BB-601–608 replaced by `BB-Standard-Schema-Section-v1.1.md`; woodlawntrees.com is the schema
+reference, schema only) > everything else.** Platform requirements and legal/truth limits bind
+every rule. rulings.md holds every Coastal ruling (CM-###), the Rule Register (RULE-###), the
+GOV-06 procedure for new conflicts (PROC-01) and the resolved Conflicts Register. Skills, agents
+and writer standards cite IDs; never restate a rule as if it were new. New proposals go to
+`methodology/lessons.md` (inbox) until Paul moves them into rulings.md.
 
 The rulings that most change daily work:
 
@@ -152,17 +165,17 @@ The rulings that most change daily work:
   step. Conflicts are recorded in `methodology/conflicts-register.csv`, never resolved inside
   the work (GOV-06 §5).
 
-A methodology correction goes in `methodology/lessons.md` with its reason, and (if it is a
-ruling) in the addendum.
+A proposed methodology correction goes in `methodology/lessons.md` (inbox) with its reason; it is
+in force only once Paul moves it into rulings.md with an ID.
 
 ## 7 · Independence
 
 Auditing and writing never share a context (CM-017, CM-018, RULE-011). The audit self-check
 runs in the **audit-reviewer** subagent, which sees only the registers, inventories, manifest,
 cross-checks and decisions — never the analysis conversation. Content QA in Finish runs in
-the Finish subagent, never the Build subagent that wrote the copy. Log "Claude performed both
-analysis and review — Paul Exception, mitigated by fresh-context reviewer" in
-`clients/<slug>/decisions.md` on every audit.
+the Finish subagent, never the Build subagent that wrote the copy. Claude doing both analysis
+and review is one standing exception (CM-026); the audit cites CM-026 in `decisions.md` rather
+than re-logging an exception each time.
 
 ## 8 · Drive
 

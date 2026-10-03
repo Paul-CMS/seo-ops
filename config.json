@@ -3,8 +3,6 @@
   "git_push_after_run": true,
   "wp_pilot_done": false,
   "kadence_head_meta_key": null,
-  "sensitive_industries": ["chiropractic", "medical", "insurance", "legal", "financial"],
-  "practitioner_signoff_industries": ["chiropractic", "medical"],
   "team": {
     "decisions": "Paul",
     "technical": "Jonie",
@@ -20,5 +18,101 @@
   },
   "blocked_tool_prefixes": {
     "mcp__8a51fb9d-5d75-414d-a0e6-4609383d6f7f__": "Paid DataforSEO calls go through scripts/dfs.py so every cost is checked and logged. Do not use the DataforSEO connector directly."
-  }
+  },
+  "sensitive_categories": {
+    "health": {
+      "practitioner_signoff": true,
+      "terms": [
+        "chiro\\w*",
+        "physical therap\\w*",
+        "physiotherap\\w*",
+        "physio",
+        "dental",
+        "dentist\\w*",
+        "dentistry",
+        "orthodont\\w*",
+        "medical",
+        "medicine",
+        "doctors?",
+        "physicians?",
+        "clinics?",
+        "healthcare",
+        "health care",
+        "mental health",
+        "counsel(l)?ing",
+        "psycholog\\w*",
+        "psychiatr\\w*",
+        "pharmac\\w*",
+        "home health",
+        "med ?spa",
+        "nursing",
+        "urgent care",
+        "optometr\\w*",
+        "podiatr\\w*",
+        "dermatolog\\w*",
+        "veterinar\\w*",
+        "vet clinic"
+      ]
+    },
+    "legal": {
+      "practitioner_signoff": false,
+      "terms": [
+        "legal",
+        "law firm",
+        "law office",
+        "lawyers?",
+        "attorneys?",
+        "solicitors?",
+        "paralegal"
+      ]
+    },
+    "insurance": {
+      "practitioner_signoff": false,
+      "terms": [
+        "insurance",
+        "insurer",
+        "insurance agency"
+      ]
+    },
+    "financial": {
+      "practitioner_signoff": false,
+      "terms": [
+        "financial",
+        "finance",
+        "accounting",
+        "accountants?",
+        "cpa",
+        "bookkeep\\w*",
+        "tax\\w*",
+        "mortgage\\w*",
+        "lending",
+        "lenders?",
+        "loans?",
+        "bank\\w*",
+        "wealth",
+        "investment\\w*",
+        "credit union",
+        "financial advis\\w*"
+      ]
+    }
+  },
+  "sensitive_unsure_hints": [
+    "health",
+    "wellness",
+    "therap\\w*",
+    "spa",
+    "aesthetic\\w*",
+    "beauty",
+    "massage",
+    "fitness",
+    "nutrition\\w*",
+    "counsel\\w*",
+    "advis\\w*",
+    "consult\\w*",
+    "senior",
+    "rehab\\w*",
+    "recovery",
+    "law",
+    "(home|senior|elder|personal|memory|child|day|hospice) care"
+  ]
 }

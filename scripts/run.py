@@ -123,10 +123,10 @@ def main():
             for g in gates:
                 ok, rs = S.check(st, g)
                 if not ok:
-                    reasons.append(f"{S.label(g)} — " + "; ".join(rs))
+                    reasons += [r for r in rs if r not in reasons]
             if reasons:
-                print(f"REFUSED — /{a.command} cannot run for {a.slug}:\n  - " + "\n  - ".join(reasons))
-                print("\nOnly Paul can set a gate, with /approve.")
+                print(f"REFUSED — /{a.command} can't run for {a.slug} yet. It needs:\n  - " + "\n  - ".join(reasons))
+                print(f"\n`python3 scripts/next.py {a.slug}` shows what to do first. Only Paul approves, with /approve.")
                 sys.exit(4)
         run_id = f"{now()[:19].replace('-', '').replace(':', '').replace('T', '-')}-{a.command}"
         append(d / "log.md", f"\n## RUN {run_id} · STARTED · /{a.command} · {now()}\n"

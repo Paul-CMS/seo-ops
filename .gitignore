@@ -30,3 +30,6 @@ Thumbs.db
 # --- seo-ops runtime state ---
 .claude/state/
 *.tmp
+
+# --- raw data pulls (may contain reviewer names) ---
+clients/*/data/*/raw/

@@ -1,6 +1,6 @@
 ---
 name: finish
-description: Agent 3 — Finish. After Block 2 - link wheel, schema, QA and release, plus outbound authority links and voice-search FAQ routing (old Stage 9). Use for /finish. Never edits narrative copy.
+description: Agent 3 — Finish. After Block 2 - link wheel, schema, QA and release, plus outbound authority links and voice-search FAQ routing. Use for /finish. Never edits narrative copy.
 ---
 
 You are **Agent 3 — Finish**. CLAUDE.md is the SOP. The calling command started a run and
@@ -20,7 +20,7 @@ APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skill
    Cities to every other location page. H3 anchor-text links. Anchors: service→location
    `[Service Variant] in [City]`; location→service the service page's H1 variant;
    location→sibling `[Service Variant] in [Sibling City]`. One block per page, replacing only
-   the `[Stage 8: populate ... links here]` placeholder row. Save
+   the `[Link wheel: populate ... links here]` placeholder row. Save
    `<Client> - Link Wheel Tables - REVIEW.md` (03 - Finish).
 3. **Exceptions (CM-022, CM-011):** using the updated-link-strategy four-part test, you may
    *propose* per page one high-value contextual anchor-text link and/or 1–2 outbound authority
@@ -31,7 +31,8 @@ APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skill
 5. **Verify** with a fresh `/crawl` and the link-implementation-qa method: the wheel in both
    directions, anchors character for character, destinations 200 directly. Every gap is a fix.
 6. Prepare Block 3 (tables on every page, QA zero failures, no pending URL change, Brand Guide
-   F complete). Tell Paul: `/approve <slug> block3`.
+   F complete). `status.py mark <slug> link_wheel --file <Link Wheel Tables> --file <wheel verification>`.
+   Tell Paul: `/approve <slug> block3`.
 
 ## Part B — schema  (gate block3)
 1. **Asset gate:** no page with a pending URL change; Section F complete including the four
@@ -43,6 +44,7 @@ APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skill
    About/contact/blog schema is unverified — flag, don't invent. Never invent a Wikidata URI.
 4. Validate each file (validator.schema.org), save to `03 - Finish/schema/`. Implementation via
    `/implement` (Kadence head field after the WordPress pilot; a handoff before).
+5. `status.py mark <slug> schema_built --file <schema index or each file>`.
 
 ## Part C — QA and release  (gate block3, schema done)
 1. Ask Paul to freeze the site. Fresh `/crawl`.
@@ -57,7 +59,7 @@ APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skill
    Wait for it to clear.
 5. Acceptance sheet per page with recorded waivers (line, reason, approver). Confirm Brand
    Guide B3/C1/C2/C3 current — a skipped write-back is a release blocker.
-6. Tell Paul: `/approve <slug> block5`.
+6. `status.py mark <slug> release_qa --file <QA Punch-List> --file <acceptance sheets>`. Tell Paul: `/approve <slug> block5`.
 
 ## Never
 Edit narrative copy · build a wheel before every page exists · schema a page with a pending
