@@ -30,52 +30,30 @@ items in one step → apply only those and re-check.
 
 1. Brand Guide — A (entity), B (assigned variant + reserved homepage variant), C (siblings,
    H1 variants, heading/FAQ registry), D (verified facts), H2 (superlative decision for this page)
-2. The brief — page type, target service or city, final URL, **assigned area and category variants**
+2. The brief — page type, target service or city, final URL, **assigned area and category variants**, the H1 decision
 3. Source facts — expertise capture, interview notes, intake, audit gap list
 4. Customer language where available (Section I, `data/reviews/customer-language.md`, `data/paa/paa-routing.md` rows routed to this page) — words only, never facts (CM-027)
 5. Sibling context
 6. The page spec for this page type (`methodology/specs/<type>.md`) — the element order and checks
 
-## C — Rules
+## C — Voice (the page's structure is in its spec — not here)
 
-- **C1 Two layers (BB-311, BB-310).** Title for the models, H1 for the human. Every section
-  reads correctly alone and names its own entities.
-- **C2 Titles (BB-301/302/303).** Homepage `Brand - GB Category - Area Entity` · Service
-  `Service Name - Brand` · Location `Brand - GB Category - City, Full State Name` · County hub
-  `Brand - GB Category - County, Full State Name` · About `About Brand - Area Category`. Brand
-  Guide separator, full state names, Title Case, one city max, **no "The Best" in any title**.
-  Never drop or swap an entity term for length. Meta description 150–160 chars, names the
-  area and at least two services, soft CTA.
-- **C3 H1 (BB-304/305).** A different variant of every entity in the title. Format
-  `[Service Variant] in [Area Variant]`. One H1, no brand. Service pages: assigned area
-  variant, never a city. Location pages: the city, no state. **Superlative opener ("The
-  Best" / "Most Trusted") only if Brand Guide H2 says yes for this page (CM-020).** "Most
-  Trusted" needs a Section D fact. Never change the H1 of a page already top 3 for its main keyword.
-- **Variant collision is vertical (CM-024):** no variant at two consecutive elements
-  (URL → title → H1 → first H2). Sharing an area variant with another service page is correct;
-  the homepage's reserved variant belongs to the homepage alone.
-- **C4 Headers (BB-306/307/308).** Every header names an entity; every H2 is sayable as a real
-  question; no city in any service page H tag; no skipped levels; no H tags in nav/footer;
-  H tags are never styling. Every H2 section under 500 tokens (~375 words) (BB-309).
-- **C5 Opening paragraph (BB-312, CM-003).** No H tag, 60–120 words, the triple in a third
-  variant set, phone and offer, unique to this page; first sentence gives the answer.
-- **C6 Body.** First sentence under each header answers it. Tables only for real comparisons,
-  lists only for real steps. **At least three concrete, page-specific, verifiable facts
-  (CM-015).** Information density, not keyword density.
-- **Page structures:** homepage BB-313 (17 sections; trust sub-items are cards, not H3s) ·
-  service BB-314 · **location BB-315 sections (CM-023)**: H1 → opening → H2 services table
-  (H3 links, no service descriptions) → H2 local context (3–5 sentences, genuinely this city)
-  → FAQ (3–4, unique to this city) → H2 neighborhoods (6–12 real) → city map → H2 Things to Do
-  → H2 Top Sites → H2 sibling cities → CTA with NAP. Under 1,000 words unless the excess is
-  genuine city substance (CM-010).
-- **C7 FAQ (BB-316).** H2 wrapper with a fresh variant pair; H3 per question in customer
-  words; first sentence of each answer is the complete answer (40–60 words). Service 4–6 ·
-  location 3–4 · homepage 4–6 brand-level. No question in the C3 registry.
-- **C8 Links (BB-206, CM-005).** **Never** a cross-page link in prose, an FAQ answer or local
-  context. Build the table heading and structure; leave the rows as a placeholder:
-  `| [Link wheel: populate service-area links here] |` (Finish replaces this row). Outbound authority links (CM-011) and a
-  single proposed contextual link (CM-022) are exceptions only via Finish, with Paul's approval.
-- **C9 No implementation.** Clean Markdown. No HTML, CSS, schema or JSON-LD.
+Every structural requirement — title and meta format, H1 format, the sections and their order,
+opening paragraph, FAQ counts, link tables, word ceilings — lives in `methodology/specs/<type>.md`
+and the common checks in `methodology/specs/README.md`. This standard covers only how to write.
+
+- **C1 Two layers (BB-311).** The title is for the models, the H1 for the human who just clicked;
+  headers declare entities, the copy between them converts.
+- **C2 Answer first (CM-003).** The opening sentence and the first sentence under every header give
+  the answer or the bottom line, not a wind-up.
+- **C3 Specific, not generic (CM-015).** Information density, not keyword density: concrete,
+  page-specific, verifiable facts from Section D. A sentence that would read the same on a
+  competitor's page or a sibling page gets rewritten.
+- **C4 Customer words.** Questions, headings and FAQ wording come from customer language (Section I,
+  routed PAA questions) where it exists — phrased the way a person would say or type it.
+- **C5 Short and plain.** Short sentences, one idea each. Every section stands alone and names its
+  own entities.
+- **C6 No implementation.** Clean Markdown. No HTML, CSS, schema or JSON-LD.
 
 ## D — Process
 

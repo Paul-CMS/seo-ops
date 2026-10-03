@@ -10,6 +10,7 @@
     run.py finish <slug> <run_id> --summary T [--handoff FILE] [--phase T] [--done T] [--waiting T] [--next T]
     run.py abort  <slug> <run_id> --reason T        only when Paul says so
     run.py check  <slug>                            exit 3 if an unfinished run exists
+    run.py steps  [<command>]                       list each step's gates and outputs (from gates.json)
 
 Exit codes: 3 unfinished run found (stop and ask Paul) · 4 gate not met · 12 the step has not
 recorded what it must produce (finish refused — record it, or Paul aborts the run).
@@ -183,7 +184,16 @@ def main():
     s = sub.add_parser("abort"); s.add_argument("slug"); s.add_argument("run_id")
     s.add_argument("--reason", required=True)
     s = sub.add_parser("check"); s.add_argument("slug")
+    s = sub.add_parser("steps"); s.add_argument("command", nargs="?")
     a = ap.parse_args()
+    if a.cmd == "steps":
+        for k, v in S.GATES["steps"].items():
+            if a.command and not (k == a.command or k.startswith(a.command + ":")):
+                continue
+            print(f"{k:26} gates: {', '.join(v['gates']) or '—'}"
+                  + (f"  (blog-only: {', '.join(v['gates_blog_only'])})" if v.get("gates_blog_only") else "")
+                  + f"\n{'':26} produces: {', '.join(v.get('produces', [])) or '—'}")
+        return
     d = client_dir(a.slug)
 
     if a.cmd == "start":

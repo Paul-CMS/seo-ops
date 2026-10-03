@@ -32,7 +32,8 @@ commit a change that fails it.** A new behaviour gets a new check in `tests/run_
 
 Every command that does work:
 
-1. **Start:** `python3 scripts/run.py start <slug> <command> [--step <step>] [--batch <id>|--page <id>]`
+1. **Start:** `python3 scripts/run.py start <slug> <command> [--step <step>] [--batch <id>|--page <id>]` —
+   it looks up the step's gates in `scripts/gates.json`; nothing else lists them.
    - exit **4** → something it needs is missing. **Refuse.** Tell Paul in plain language what is
      missing (the script's message says it) and what to do first. Never work around it.
    - exit **3** → an unfinished earlier run exists. **Stop and ask Paul**: resume it, verify
@@ -77,23 +78,25 @@ decision, printing the exact `/approve` line with its files. Refusals are in pla
 
 ### Full client — the order
 
-| # | Step | Command | Needs | Ends at decision (Paul) |
-|---|---|---|---|---|
-| 1 | Intake, Drive folder, document checklist (S01) | `/new-client` | — | condition **client_setup** |
-| 2 | Discovery + entity research (S02–S03), public sources | `/discovery` | — | **entity_approved** |
-| 3 | Proof sheet (S04), Markdown + client Google Doc | `/discovery proof-sheet` | entity_approved | **proof_sheet_approved** — Paul sends it |
-| 4 | *While the client has the sheet:* crawl (S05), reviews → customer language, rankings + cannibalization, backlinks, citations, grid, GSC, People Also Ask (S06–S11, S19) | `/crawl`, `/discovery data` | crawl: client set up · data: proof_sheet_approved | — |
-| 5 | Audit: entity → architecture → page conformance → technical, then fresh-context review (S12–S18) | `/discovery audit` | condition **audit_steps_complete** | **audit_approved** → safe fixes |
-| 6 | Client returns sheet → record it, reconcile into the Brand Guide | `/discovery sheet-returned`, `/discovery reconcile` | proof_sheet_approved / condition **proof_sheet_returned** | **brand_guide_approved** → structural changes |
-| 7 | Discovery sign-off (Agent 1 never starts Agent 2) | `/discovery signoff` | all of the above | **discovery_signed_off** |
-| 8 | Technical blockers (Low items as one handoff) | `/build blockers` + `/implement` | discovery_signed_off | **blockers_cleared** |
-| 9 | **Site plan** — every service and location page in one pass; runs side by side with step 8 (Jonie fixes the blockers meanwhile; Paul confirms **blockers_cleared** before release) | `/build plan` | discovery_signed_off | **site_plan** |
-| 10 | **Pilot** — 1 service + 1 location brief; corrections go into the specs | `/build batch pilot` | site_plan | **batch:pilot:briefs** |
+What each step needs is checked by `run.py start` from `scripts/gates.json` (`run.py steps` lists it).
+
+| # | Step | Command | Ends at |
+|---|---|---|---|
+| 1 | Intake, Drive folder, document checklist (S01) | `/new-client` | condition **client_setup** |
+| 2 | Discovery + entity research (S02–S03), public sources | `/discovery` | **entity_approved** |
+| 3 | Proof sheet (S04), Markdown + client Google Doc | `/discovery proof-sheet` | **proof_sheet_approved** — Paul sends it |
+| 4 | *While the client has the sheet:* crawl (S05), reviews → customer language, rankings + cannibalization, backlinks, citations, grid, GSC, People Also Ask (S06–S11, S19) | `/crawl`, `/discovery data` | — |
+| 5 | Audit: entity → architecture → page conformance → technical, then fresh-context review (S12–S18) | `/discovery audit` | **audit_approved** → safe fixes |
+| 6 | Client returns sheet → record it, reconcile into the Brand Guide | `/discovery sheet-returned`, `/discovery reconcile` | **brand_guide_approved** → structural changes |
+| 7 | Discovery sign-off (Agent 1 never starts Agent 2) | `/discovery signoff` | **discovery_signed_off** |
+| 8 | Technical blockers (Low items as one handoff) | `/build blockers` + `/implement` | **blockers_cleared** |
+| 9 | **Site plan** — every service and location page in one pass; runs side by side with step 8 (Jonie fixes the blockers meanwhile; Paul confirms **blockers_cleared** before release) | `/build plan` | **site_plan** |
+| 10 | **Pilot** — 1 service + 1 location brief; corrections go into the specs | `/build batch pilot` | **batch:pilot:briefs** |
 | 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); briefs → drafts + self-critique + **semantic review table** → (apply the SEM items Paul picked, re-check) → ship (WordPress drafts, verify, write-back: one run) | `/build batch <id>` [`drafts`\|`apply-sem`], `/build ship <id>` | pilot corrections applied | **batch:<id>:briefs**, **batch:<id>:drafts** (+ SEM picks) — two stops per batch |
-| 12 | All pages built and written back | — | every batch written back | condition **pages_built** (no approval) |
-| 13 | Link wheel → verify | `/finish wheel` | pages_built | **link_wheel_approved** |
-| 14 | Schema → QA crawl → punch-list → acceptance | `/finish schema`, `/finish qa` | link_wheel_approved | **release_approved** (release) |
-| 15 | Blog Decision Map → redirects (handoff) → posts | `/blog` | release_approved | **blog_map_approved**, then **page:<id>** per post |
+| 12 | All pages built and written back | — | condition **pages_built** (no approval) |
+| 13 | Link wheel → verify | `/finish wheel` | **link_wheel_approved** |
+| 14 | Schema → QA crawl → punch-list → acceptance | `/finish schema`, `/finish qa` | **release_approved** (release) |
+| 15 | Blog Decision Map → redirects (handoff) → posts | `/blog` | **blog_map_approved**, then **page:<id>** per post |
 
 Every step's data is saved once per client and reused (re-run if older than 60 days).
 An imported client (`/new-client --import`) gets its live pages as an approved baseline and a
@@ -107,14 +110,12 @@ location page FAQs (**blog_topics_approved**) → one optimized post at a time (
 proof sheet, no site audit, no rebuild. Inputs: services list, city list, voice guidance,
 customer language.
 
-## 4 · Implementation — what can change, behind which gate
+## 4 · Implementation — what can change, and how
 
-| Gate | Unlocks | Channel |
-|---|---|---|
-| **safe_fixes_allowed** = audit_approved | Client-independent fixes: broken links, alt text, image URLs, sitemap, robots.txt, **meta description** duplicates, speed | Alt text via wp.py; the rest as VA handoffs |
-| **structural_changes_allowed** = entity_approved + brand_guide_approved | Redirects, URL/slug changes, consolidations, **SEO titles and H1s** | Always VA handoffs (titles via wp.py only after the pilot) |
-| **batch:<id>:drafts** | That batch's approved content (`page:<id>` for blog posts) | WordPress **draft** |
-| pages_built / link_wheel_approved | Link tables / schema | Draft / Kadence head field after the pilot (must-use plugin `wordpress/mu-plugins/seo-ops-head-meta.php`, key set at the pilot) |
+Each change kind's gate, channel (system draft / VA handoff) and owner are in `scripts/gates.json` →
+`change_kinds`; the scripts enforce them. In short: safe fixes after the audit approval; structural
+changes (redirects, slugs, titles, H1s) after the entity and Brand Guide approvals, always as
+handoffs; page content only as WordPress drafts from approved files; link tables and schema in Finish.
 
 Rules enforced in the scripts as well as here:
 

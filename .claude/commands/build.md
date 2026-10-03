@@ -1,21 +1,14 @@
 ---
 description: Agent 2 — technical blockers, site plan, pilot, then service/location batches (briefs, drafts, semantic review, write-back)
-argument-hint: <slug> [blockers|plan|batch <id> [drafts|apply-sem]|pilot-corrections|writeback <id>] [--route A|B]
+argument-hint: <slug> [blockers|plan|batch <id> [drafts|apply-sem]|pilot-corrections|ship <id>] [--route A|B]
 ---
 
 Arguments: $ARGUMENTS
 
 Follow CLAUDE.md §5. If no step is given, use `python3 scripts/next.py <slug>`.
 
-| Step | Gates for run.py start |
-|---|---|
-| blockers | discovery_signed_off |
-| plan | discovery_signed_off |
-| batch <id> (briefs) | discovery_signed_off,batch:<id>:briefs_ready |
-| batch <id> drafts | discovery_signed_off,batch:<id>:drafts_ready |
-| batch <id> apply-sem | discovery_signed_off,batch:<id>:sem |
-| pilot-corrections | discovery_signed_off,batch:pilot:briefs |
-| writeback <id> | discovery_signed_off,batch:<id>:drafts |
+Steps: `blockers` · `plan` · `batch` (briefs; `--batch <id>`) · `drafts` (`--batch <id>`) · `apply-sem` (`--batch <id>`, only when Paul picked SEM items) · `pilot-corrections` · `ship` (`--batch <id>`).
+Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps build` lists them; `run.py start` checks them.
 
 1. `python3 scripts/run.py start <slug> build --step <step> [--batch <id>|--page <id>]` → note the RUN_ID and pass it
    literally to every later step. Exit 4 → refuse and explain; exit 3 → stop and ask Paul.
@@ -29,4 +22,4 @@ Follow CLAUDE.md §5. If no step is given, use `python3 scripts/next.py <slug>`.
 5. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> ...` with a plain client view
    (e.g. phase "Writing your service pages", done "First 5 service pages approved").
 
-Drafts reach WordPress only through `/implement <slug> batch <id>` — drafts by default.
+Drafts reach WordPress only through `/build <slug> ship <id>` — always as WordPress drafts.

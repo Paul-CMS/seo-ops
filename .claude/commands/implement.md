@@ -1,20 +1,14 @@
 ---
 description: Apply approved changes - check the live value first, skip what's done, drafts by default, VA handoffs for everything the system must not touch
-argument-hint: <slug> [safe|structural|batch <id>|page <page_id>|wheel|schema] [--live]
+argument-hint: <slug> [safe|structural|page <page_id>|wheel|schema]
 ---
 
 Arguments: $ARGUMENTS
 
-Follow CLAUDE.md §4. Look up each change's kind in `scripts/gates.json` → `change_kinds`.
+Follow CLAUDE.md §4. Each change's kind, gate, channel and owner are in `scripts/gates.json` → `change_kinds`.
 
-| Scope | Gates for run.py start | What it covers |
-|---|---|---|
-| safe | safe_fixes_allowed | broken links, alt text, image URLs, sitemap, robots.txt, meta description duplicates, speed |
-| structural | structural_changes_allowed | redirects, slugs/URL changes, consolidations, SEO titles, H1s |
-| batch <id> | batch:<id>:drafts | every page in that batch (approved drafts) — then `status.py batch <slug> <id> --state implemented` |
-| page <id> | page:<id> | one page (blog posts, single fixes) |
-| wheel | pages_built | link tables |
-| schema | link_wheel_approved | schema |
+Steps (`--step`): `safe` (broken links, alt text, image URLs, sitemap, robots.txt, meta description duplicates, speed) · `structural` (redirects, slugs/URL changes, consolidations, SEO titles, H1s) · `page` (`--page <id>`: one page — blog posts, single fixes) · `wheel` (link tables) · `schema`. Batches go out with `/build ship <id>`.
+Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps implement` lists them; `run.py start` checks them.
 
 1. `python3 scripts/run.py start <slug> implement --step <step> [--batch <id>|--page <id>]` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse and
    say which gate is missing; exit 3 → stop and ask Paul.

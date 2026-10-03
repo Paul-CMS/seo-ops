@@ -46,7 +46,7 @@ recommendations. The audit produces findings.
 - Present the entity foundation (category, area + derivation + "contains all N cities",
   variants, reserved homepage variant). Paul: `/approve <slug> entity_approved --files ...`. **Stop.**
 
-**proof-sheet** (S04) — needs entity_approved. From `templates/proof-sheet.md` and
+**proof-sheet** (S04) — From `templates/proof-sheet.md` and
 `client-intake/references/field-schema.md`: Access, Block A confirm, Block B verify (quoted,
 never guessed), Block C needs, return-by date, default, phone offer. Save the `.md` and the
 `- CLIENT COPY` Google Doc. **Never contact the client.** Record S04; `status.py mark <slug> proof_sheet --file <sheet .md>`.
@@ -84,7 +84,7 @@ always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 
 Save everything once under `clients/<slug>/` with the evidence naming convention; record every
 step's outcome.
 
-**audit** (S12–S18) — needs entity_approved; the crawl (S05) and data steps must have outcomes.
+**audit** (S12–S18) — the crawl (S05) and data steps must have outcomes.
 Run the **seo-technical-audit** skill procedure, in this order:
 1. S12 ingest + cross-checks (`ingest_evidence.py clients/<slug>/inputs/crawl <audit dir>` and
    the other inputs; `crosscheck.py`). CONTRADICTED blocks the related finding.
@@ -109,7 +109,7 @@ render the deliverables; the Evidence Manifest includes `steps.py manifest <slug
 Then `status.py mark <slug> audit_deliverables --file <Finding Register> --file <URL Decision Map> --file <Recommendations> --file <Evidence Manifest>`.
 Paul: `/approve <slug> audit_approved`.
 
-**reconcile** — needs proof_sheet_returned. Parse whatever the client returned
+**reconcile** — Parse whatever the client returned
 (`client-intake/references/proof-sheet.md` §6): `Client Confirmed` + date, keep `was:` values,
 complete the Brand Guide (Unknown/Disputed stay so), D2 unsupported claims, the content-risk
 list. An entity-relevant correction means entity_approved must be re-approved — say so.

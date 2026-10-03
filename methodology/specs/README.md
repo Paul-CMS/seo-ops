@@ -25,7 +25,9 @@ item. It does not repeat the rule text: look up the ID in the source.
   These are being merged into `methodology/rulings.md` under the same IDs, plus CM-025
   (sensitive industries), CM-026 (self-review exception), CM-027 (reviews are never verified
   facts), CM-028 (severity scale).
-- `WC-Cn` = `methodology/writing-commercial.md` rule Cn. `WB-Cn` = `methodology/writing-blog.md` rule Cn.
+- `WC-Cn` = a Coastal house standard that was rule Cn of the commercial writing standard until
+  2026-10-03; it now lives only in these specs (the writing standard keeps process and voice).
+  `WB-Cn` = `methodology/writing-blog.md` rule Cn.
 - `BG-X` = Brand Guide section X (`templates/brand-guide.md`), e.g. `BG-A2` = Section A field 2.
 
 **Precedence:** rulings (CM-xxx) > Bradley Standard (BB-xxx) > writing standards. Where a
@@ -44,6 +46,23 @@ advisory until Paul rules; an audit may report it but never above Low until then
 | **Audit (S15 conformance scorecard)** | The auditor runs section 4 against each live page: pass / fail / N/A per check. A failed check becomes a finding at the severity in "Fails as". One finding per check, listing every affected URL. |
 | **Finish QA** | Runs section 4 on the final draft plus the link placeholders (section 6) once Finish fills them. |
 | **Pilot corrections** | Paul's corrections to pilot pages are written into section 8 of the spec they change. The next batch cannot start until they are recorded (`status.py pilot-corrections`). |
+
+## Common to every commercial page (homepage, service, location, county hub, about)
+
+These apply on top of each spec's own elements and checks. Audit category §6 On-page; Medium unless noted.
+
+| Check ID | Check | Rule ID |
+|---|---|---|
+| COM-01 | Every header names an entity — no "Our Process", "Why Choose Us", "Get Started" | BB-306/307 |
+| COM-02 | Every H2 is sayable as a question a real customer would ask out loud | BB-308 |
+| COM-03 | No skipped heading levels (H2 → H3 → H4, never H2 → H4) | BB-306 |
+| COM-04 | No H tags in navigation or footer; H tags are never used for styling | BB-306 |
+| COM-05 | Every H2 section is under ~375 words (500 tokens) | BB-309 |
+| COM-06 | Every section reads correctly alone and names its own entities (no pronoun leaning on an earlier section) | BB-310, BB-311 |
+| COM-07 | First sentence under every header answers that header | CM-003 |
+| COM-08 | No variant at two consecutive elements (URL → title → H1 → first H2); the homepage's reserved variant appears nowhere else | CM-024 |
+| COM-09 | No cross-page link in body prose, an FAQ answer or local context — links live only in their tables (High if a table is missing) | BB-206, CM-005 |
+| COM-10 | Tables only for real comparisons, lists only for real steps | WC voice |
 
 ## Check IDs
 

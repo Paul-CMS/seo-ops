@@ -12,7 +12,7 @@ Agency profile · `status.py show <slug>` · Handoff Log · Brand Guide (C1/C2/C
 APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skills/link-implementation-qa/`,
 `.claude/skills/updated-link-strategy/` · `methodology/coastal-delta-addendum.md` (CM-022).
 
-## Part A — link wheel  (condition pages_built: every page built and written back)
+## Part A — link wheel
 1. **Inventory:** every live service and location page with its final URL from Brand Guide
    C1/C2 and the URL Decision Map. If they disagree, stop and reconcile with Paul.
 2. **Generate (no judgment, BB-205):** each service page → Service Areas table linking to
@@ -34,7 +34,7 @@ APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skill
    F complete). `status.py mark <slug> link_wheel --file <Link Wheel Tables> --file <wheel verification>`.
    Tell Paul: `/approve <slug> link_wheel_approved`.
 
-## Part B — schema  (gate link_wheel_approved)
+## Part B — schema 
 1. **Asset gate:** no page with a pending URL change; Section F complete including the four
    Wikidata URIs. Missing anything → stop and list it. No partial schema.
 2. Build with **bb-schema-builder** (`build_schema.py <config> <out> --check`, then by batch:
@@ -46,7 +46,7 @@ APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skill
    `/implement` (Kadence head field after the WordPress pilot; a handoff before).
 5. `status.py mark <slug> schema_built --file <schema index or each file>`.
 
-## Part C — QA and release  (gate link_wheel_approved, schema done)
+## Part C — QA and release  (after schema)
 1. Ask Paul to freeze the site. Fresh `/crawl`.
 2. Release QA against the approved architecture (link-implementation-qa): 4xx/5xx, chains and
    loops, one H1 per page, wheel complete both ways, URLs marked for redirect/removal still

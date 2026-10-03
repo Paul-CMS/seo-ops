@@ -8,11 +8,8 @@ Arguments: $ARGUMENTS
 Follow CLAUDE.md. If no part is given, use `python3 scripts/next.py <slug>`: wheel (pages_built met, link_wheel_approved not) →
 schema (link_wheel_approved met, not marked schema_built) → qa.
 
-| Part | Gates |
-|---|---|
-| wheel | pages_built |
-| schema | link_wheel_approved |
-| qa | link_wheel_approved |
+Steps: `wheel` · `schema` · `qa`.
+Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps finish` lists them; `run.py start` checks them.
 
 1. `python3 scripts/run.py start <slug> finish --step <step> [--batch <id>|--page <id>]` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse and
    explain; exit 3 → stop and ask Paul.
