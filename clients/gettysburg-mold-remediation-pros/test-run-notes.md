@@ -25,6 +25,9 @@ Rules for this run (Paul, 2026-10-03):
 | 2026-10-03 | wp-check | **The Drive connector can't overwrite a file's content.** It can only create, rename or move. "Re-upload after each run" would leave duplicates, and Drive files may not be deleted. The Drive Handoff Log/Checklist are stuck at their /new-client version. Options: Paul re-uploads by hand, a script uses the Drive API directly, or old copies move to `_Archive` on each upload. | **Fixed 2026-10-03 (Paul B):** archive-and-replace — dated name → `_Archive`, upload, both logged (`scripts/drive.py`) |
 | 2026-10-03 | new-client | The Brand Guide hasn't been mirrored to Drive yet because it's still blank. Mirror it after discovery fills Section A. | No |
 | 2026-10-03 | new-client | The 5 alt-text / 2 broken-link cap exists only in this file. Nothing in gates.json/wp.py enforces it. Proposal: a per-client `safe_fix_cap` in status.json that wp.py checks. | **Fixed 2026-10-03 (Paul D):** `status.py cap`, enforced by wp.py |
+| 2026-10-03 | discovery | The guard blocks any shell command that names a record file (handoff-log.md, writing-blog.md, …) unless it is a single `python3 scripts/…` call — even read-only `wc`/`git log` chains. Workable (one script call per command), but it costs retries. Proposal: let read-only chains through. | No |
+| 2026-10-03 | drive-mirror | Finishing the drive-mirror run regenerates the Document Checklist, so its "Generated" time is newer than the copy just uploaded. The content is the same; only the timestamp differs. | No |
+| 2026-10-03 | discovery | Discovery found the live site is Astro on Vercel, not WordPress (Q-06). The whole wp.py path, /wp-check and the Jonie Editor-user request may not apply to this client. | Not yet — it becomes one at safe fixes / build |
 
 ## Fix-round log
 
