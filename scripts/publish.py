@@ -1,0 +1,351 @@
+#!/usr/bin/env python3
+"""publish.py — approved page files → WordPress drafts → a publish handoff to Jonie.
+
+The system NEVER publishes. It generates drafts one-way from the approved SD/LD/... files (the file
+stays the source; never edit the draft by hand), and hands publishing to Jonie.
+
+    publish.py wheel  <slug>                          plan the link wheel from the site plan → build/link-wheel.json
+    publish.py drafts <slug> --run R --batch B        one WordPress draft per page in the batch + the publish handoff
+    publish.py drafts <slug> --run R --page P         the same for one approved page (a blog post: a WordPress post)
+    publish.py blocks <file>                          print the block markup a file turns into (for checking)
+    publish.py pending <slug> --run R                 link-table rows that can now be filled on published pages → handoff
+
+Approved page file format (the writer's output; methodology/specs/README.md):
+    ---
+    page_id: svc-roof-repair
+    url: https://example.com/roof-repair/
+    seo_title: Roof Repair - Brand
+    meta_description: 150–160 characters ...
+    replaces: https://example.com/old-roof-repair/      (optional; comma-separated old URLs)
+    ---
+    # H1 text
+    ...markdown body (H2/H3, paragraphs, lists, tables, FAQ)...
+    | [Link wheel: populate service-area links here] |
+
+Drafts: post title = the H1 (the theme shows it as the H1, so the content carries no second H1);
+exact slug from the URL; SEOPress title and description set on the draft; content as Gutenberg
+blocks; link-table placeholders filled from the wheel. Rows pointing at pages not yet published
+are left out (unless config "wheel_link_unpublished" is true) and handed to Jonie later as a
+link-table update once their target is live (publish.py pending).
+"""
+import argparse
+import html
+import json
+import re
+import sys
+import urllib.parse
+
+import run as R
+import status as S
+from lib import ROOT, client_dir, config, die, now, sha12
+
+PLACEHOLDER = re.compile(r"^\|\s*\[Link wheel: populate ([a-z -]+?) links here\]\s*\|\s*$", re.I)
+TABLE_KEYS = {"service-area": "service_areas", "service areas": "service_areas", "service": "services",
+              "services": "services", "sibling-city": "siblings", "sibling city": "siblings",
+              "sibling": "siblings", "related-service": "related", "related service": "related"}
+
+
+# ------------------------------------------------------------------ the approved file
+def parse(path):
+    text = (ROOT / path).read_text(encoding="utf-8")
+    m = re.match(r"^---\n(.*?)\n---\n(.*)$", text, re.S)
+    if not m:
+        die(f"{path}: no header block. Approved page files start with --- page_id / url / seo_title / "
+            "meta_description --- (methodology/specs/README.md).")
+    meta = {}
+    for line in m.group(1).splitlines():
+        if ":" in line:
+            k, v = line.split(":", 1)
+            meta[k.strip()] = v.strip()
+    for k in ("page_id", "url", "seo_title", "meta_description"):
+        if not meta.get(k):
+            die(f"{path}: header is missing {k}")
+    body = m.group(2).strip("\n")
+    h1 = re.search(r"^# (.+)$", body, re.M)
+    if not h1:
+        die(f"{path}: no H1 (# ...)")
+    meta["h1"] = h1.group(1).strip()
+    meta["body"] = body[:h1.start()] + body[h1.end():]
+    meta["replaces"] = [u.strip() for u in meta.get("replaces", "").split(",") if u.strip()]
+    return meta
+
+
+def slug_of(url):
+    path = urllib.parse.urlparse(url).path.strip("/")
+    return path.split("/")[-1] if path else ""
+
+
+# ------------------------------------------------------------------ markdown → blocks
+def inline(t):
+    t = html.escape(t, quote=False)
+    t = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", r'<a href="\2">\1</a>', t)
+    t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
+    t = re.sub(r"(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)", r"<em>\1</em>", t)
+    return t
+
+
+def table_block(rows):
+    head, body = rows[0], rows[1:]
+    th = "".join(f"<th>{inline(c)}</th>" for c in head)
+    trs = "".join("<tr>" + "".join(f"<td>{inline(c)}</td>" for c in r) + "</tr>" for r in body)
+    return ("<!-- wp:table -->\n<figure class=\"wp-block-table\"><table><thead><tr>" + th +
+            "</tr></thead><tbody>" + trs + "</tbody></table></figure>\n<!-- /wp:table -->")
+
+
+def to_blocks(body, tables=None):
+    """Markdown body → Gutenberg block markup. tables: {placeholder key: [(anchor, url), ...]}."""
+    tables = tables or {}
+    out, lines, i = [], body.split("\n"), 0
+    while i < len(lines):
+        ln = lines[i]
+        if not ln.strip():
+            i += 1; continue
+        pm = PLACEHOLDER.match(ln.strip())
+        if pm:
+            key = TABLE_KEYS.get(pm.group(1).lower().strip(), pm.group(1).lower())
+            rows = tables.get(key) or []
+            if rows:
+                out.append(table_block([["Link"]] + [[f"[{a}]({u})"] for a, u in rows]))
+            i += 1; continue
+        hm = re.match(r"^(#{2,6}) (.+)$", ln)
+        if hm:
+            lvl = len(hm.group(1))
+            out.append(f'<!-- wp:heading {{"level":{lvl}}} -->\n<h{lvl} class="wp-block-heading">'
+                       f"{inline(hm.group(2).strip())}</h{lvl}>\n<!-- /wp:heading -->")
+            i += 1; continue
+        if ln.lstrip().startswith("|"):
+            rows = []
+            while i < len(lines) and lines[i].lstrip().startswith("|"):
+                cells = [c.strip() for c in lines[i].strip().strip("|").split("|")]
+                if not all(re.fullmatch(r":?-{3,}:?", c) for c in cells):
+                    rows.append(cells)
+                i += 1
+            if rows:
+                out.append(table_block(rows))
+            continue
+        lm = re.match(r"^(\s*)([-*]|\d+\.) (.+)$", ln)
+        if lm:
+            ordered = lm.group(2)[0].isdigit()
+            items = []
+            while i < len(lines):
+                m2 = re.match(r"^\s*([-*]|\d+\.) (.+)$", lines[i])
+                if not m2:
+                    break
+                items.append(f"<li>{inline(m2.group(2).strip())}</li>"); i += 1
+            tag = "ol" if ordered else "ul"
+            attrs = ' {"ordered":true}' if ordered else ""
+            out.append(f"<!-- wp:list{attrs} -->\n<{tag} class=\"wp-block-list\">" + "".join(items) +
+                       f"</{tag}>\n<!-- /wp:list -->")
+            continue
+        para = []
+        while i < len(lines) and lines[i].strip() and not re.match(r"^(#{1,6} |\s*([-*]|\d+\.) |\s*\|)", lines[i]):
+            para.append(lines[i].strip()); i += 1
+        out.append(f"<!-- wp:paragraph -->\n<p>{inline(' '.join(para))}</p>\n<!-- /wp:paragraph -->")
+    return "\n\n".join(out)
+
+
+# ------------------------------------------------------------------ link wheel
+def site_pages(st):
+    return {pid: p for pid, p in st["pages"].items() if p.get("type") in ("service", "location", "county", "homepage", "about")}
+
+
+def plan_wheel(st):
+    """BB-205/206, CM-005: each service page → every location page; each location page → every
+    service page + every other location page. Anchors per the Finish agent's rules."""
+    pages = site_pages(st)
+    svcs = {k: p for k, p in pages.items() if p["type"] == "service"}
+    locs = {k: p for k, p in pages.items() if p["type"] in ("location", "county")}
+    main_variant = next((p.get("service_variant") for p in svcs.values() if p.get("service_variant")), None)
+    wheel = {}
+    for sid, sp in svcs.items():
+        sv = sp.get("service_variant") or sp.get("name") or sid
+        wheel[sid] = {"service_areas": [(f"{sv} in {lp.get('city') or lp.get('name') or lid}", lp.get("url"), lid)
+                                        for lid, lp in locs.items()]}
+    for lid, lp in locs.items():
+        wheel[lid] = {"services": [(sp.get("h1") or sp.get("service_variant") or sp.get("name") or sid, sp.get("url"), sid)
+                                   for sid, sp in svcs.items()],
+                      "siblings": [(f"{main_variant or 'Services'} in {op.get('city') or op.get('name') or oid}", op.get("url"), oid)
+                                   for oid, op in locs.items() if oid != lid]}
+    return wheel
+
+
+def live_or_batch(st, target, batch_pages):
+    p = st["pages"].get(target) or {}
+    return target in batch_pages or p.get("state") in ("published", "verified", "written_back") \
+        or (p.get("approval") or {}).get("baseline")
+
+
+def tables_for(st, wheel, pid, batch_pages):
+    allow_all = config().get("wheel_link_unpublished", False)
+    tables, pending = {}, []
+    for key, rows in (wheel.get(pid) or {}).items():
+        keep = []
+        for anchor, url, target in rows:
+            if not url:
+                pending.append((key, anchor, None, target)); continue
+            if allow_all or live_or_batch(st, target, batch_pages):
+                keep.append((anchor, url))
+            else:
+                pending.append((key, anchor, url, target))
+        tables[key] = keep
+    return tables, pending
+
+
+# ------------------------------------------------------------------ commands
+def cmd_wheel(a):
+    st = S.load(a.slug)
+    wheel = plan_wheel(st)
+    p = client_dir(a.slug) / "build" / "link-wheel.json"
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(wheel, indent=1))
+    print(f"link wheel planned for {len(wheel)} pages → {p.relative_to(ROOT)}")
+
+
+def load_wheel(slug):
+    p = client_dir(slug) / "build" / "link-wheel.json"
+    if not p.exists():
+        die("No link wheel yet — run publish.py wheel <slug> (it is planned from the approved site plan).")
+    return json.loads(p.read_text())
+
+
+def cmd_drafts(a):
+    import handoff
+    import wp
+    R.open_run(a.slug, a.run)
+    st = S.load(a.slug)
+    if a.page:
+        ok, why = S.page_approved(st, a.page)
+        if not ok:
+            die(f"REFUSED — {why}", 4)
+        f = (st["pages"][a.page].get("approval") or {}).get("file") or st["pages"][a.page].get("file")
+        b = {"pages": [a.page], "files": {"drafts": [f]}}
+        wheel = {}
+    else:
+        b = S.batch(st, a.batch) or die(f"no batch {a.batch}")
+        ok, why = S.batch_stage_ok(st, a.batch, "drafts")
+        if not ok:
+            die(f"REFUSED — {why}", 4)
+        wheel = load_wheel(a.slug)
+    files = [f for f in (b.get("files") or {}).get("drafts", []) if "Semantic Review" not in f]
+    by_page = {}
+    for f in files:
+        m = parse(f)
+        by_page[m["page_id"]] = (f, m)
+    missing = [p for p in b["pages"] if p not in by_page]
+    if missing:
+        die(f"approved files for pages {', '.join(missing)} not found in the batch's drafts approval")
+    rows_pub, rows_redirect, pend_all = [], [], {}
+    for pid in b["pages"]:
+        f, m = by_page[pid]
+        tables, pending = tables_for(st, wheel, pid, b["pages"])
+        content = to_blocks(m["body"], tables)
+        slug_name = slug_of(m["url"])
+        existing = None
+        try:
+            existing = wp.find(a.slug, m["url"])
+        except Exception:
+            existing = None
+        in_place = bool(existing and existing[1].get("status") == "publish" and slug_name)
+        body = {"title": m["h1"], "content": content, "status": "draft",
+                "slug": (slug_name + "-new") if in_place else slug_name}
+        ptype = "posts" if st["pages"].get(pid, {}).get("type") == "blog" else "pages"
+        d = wp.call(a.slug, f"wp/v2/{ptype}", "POST", body)
+        wp.call(a.slug, f"seopress/v1/posts/{d['id']}/title-description-metas", "PUT",
+                {"title": m["seo_title"], "description": m["meta_description"]})
+        R.log_change(a.slug, a.run, "page_content", d.get("link", ""), f"new draft {ptype[:-1]}", "(none)",
+                     f"draft id {d['id']} ({ptype}) · from {f} sha {sha12(ROOT / f)} · slug {body['slug']}",
+                     "APPLIED · draft only (not live) · generated from the approved file", ref=pid, channel="wp")
+        page = st["pages"].setdefault(pid, {})
+        placed = {TABLE_KEYS.get(x.group(1).lower().strip(), x.group(1).lower())
+                  for x in (PLACEHOLDER.match(l.strip()) for l in m["body"].split("\n")) if x}
+        page.update({"wp_id": d["id"], "wp_type": ptype, "url": m["url"], "file": f, "state": "drafted",
+                     "links_placed": [u for k, rows in tables.items() if k in placed for _, u in rows]})
+        pending = [x for x in pending if x[0] in placed]
+        how = (f"Replace the content of the live page at {m['url']} with this draft's blocks (keep that URL), "
+               "then trash the draft" if in_place else f"Publish at exactly {m['url']}")
+        rows_pub.append({"url": d.get("link", ""), "field": "publish", "old": "(draft)", "new": m["url"],
+                         "reason": how, "decision_map_ref": pid})
+        for old in m["replaces"]:
+            rows_redirect.append({"url": old, "field": "301", "old": old, "new": m["url"],
+                                  "reason": f"replaced by {pid} — do it together with the publish", "decision_map_ref": pid})
+        if pending:
+            pend_all[pid] = pending
+    S.save(a.slug, st)
+    tmp = client_dir(a.slug) / "handoffs" / f"_publish-{a.batch or a.page}.csv"
+    tmp.parent.mkdir(parents=True, exist_ok=True)
+    import csv
+    with open(tmp, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=["url", "field", "old", "new", "reason", "decision_map_ref"])
+        w.writeheader(); w.writerows(rows_pub + rows_redirect)
+    sys.argv = ["handoff.py", "create", a.slug, "--run", a.run, "--kind", "publish", "--items", str(tmp.relative_to(ROOT)),
+                "--title", f"{st['client']['name']} - Publish Handoff - " + (f"batch {a.batch}" if a.batch else a.page)]
+    handoff.main()
+    tmp.unlink()
+    st = S.load(a.slug)
+    hs = sorted((client_dir(a.slug) / "handoffs").glob("H-*-publish.csv"), key=lambda p: p.stat().st_mtime)
+    if hs and a.batch:
+        S.batch(st, a.batch)["handoff"] = hs[-1].stem
+    elif hs:
+        st["pages"][a.page]["handoff"] = hs[-1].stem
+    st.setdefault("wheel_pending", {}).update({k: v for k, v in pend_all.items()})
+    S.save(a.slug, st)
+    print(f"{len(rows_pub)} drafts created · {len(rows_redirect)} paired redirect(s) · "
+          f"{sum(len(v) for v in pend_all.values())} link row(s) waiting for their target to go live")
+
+
+def cmd_pending(a):
+    """Rows held back because their target was not live: hand to Jonie once it is."""
+    import csv
+    import handoff
+    R.open_run(a.slug, a.run)
+    st = S.load(a.slug)
+    rows, keep = [], {}
+    for pid, items in (st.get("wheel_pending") or {}).items():
+        page = st["pages"].get(pid) or {}
+        still = []
+        for key, anchor, url, target in items:
+            tp = st["pages"].get(target) or {}
+            if url and page.get("state") in ("published", "verified", "written_back") and \
+                    tp.get("state") in ("published", "verified", "written_back"):
+                rows.append({"url": page.get("url"), "field": f"link table: {key}", "old": "(row missing)",
+                             "new": f"{anchor} → {url}", "reason": "target page is now live (link wheel, BB-205)",
+                             "decision_map_ref": pid})
+            else:
+                still.append([key, anchor, url, target])
+        if still:
+            keep[pid] = still
+    if not rows:
+        print("no held link rows are ready yet"); return
+    tmp = client_dir(a.slug) / "handoffs" / "_wheel-update.csv"
+    with open(tmp, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=["url", "field", "old", "new", "reason", "decision_map_ref"])
+        w.writeheader(); w.writerows(rows)
+    sys.argv = ["handoff.py", "create", a.slug, "--run", a.run, "--kind", "link_table", "--items", str(tmp.relative_to(ROOT))]
+    handoff.main()
+    tmp.unlink()
+    st = S.load(a.slug); st["wheel_pending"] = keep; S.save(a.slug, st)
+    print(f"{len(rows)} link row(s) handed to Jonie")
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    s = sub.add_parser("wheel"); s.add_argument("slug")
+    s = sub.add_parser("drafts"); s.add_argument("slug"); s.add_argument("--run", required=True)
+    g = s.add_mutually_exclusive_group(required=True); g.add_argument("--batch"); g.add_argument("--page")
+    s = sub.add_parser("blocks"); s.add_argument("file")
+    s = sub.add_parser("pending"); s.add_argument("slug"); s.add_argument("--run", required=True)
+    a = ap.parse_args()
+    if a.cmd == "wheel":
+        cmd_wheel(a)
+    elif a.cmd == "drafts":
+        cmd_drafts(a)
+    elif a.cmd == "pending":
+        cmd_pending(a)
+    else:
+        m = parse(a.file)
+        print(to_blocks(m["body"]))
+
+
+if __name__ == "__main__":
+    main()

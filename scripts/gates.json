@@ -220,8 +220,8 @@
       "owner": "Jonie"
     },
     "link_table": {
-      "gate": "pages_built",
-      "channel": "wp_draft",
+      "gate": "discovery_signed_off",
+      "channel": "handoff",
       "owner": "Jonie"
     },
     "schema": {
@@ -248,6 +248,16 @@
       "gate": "client_setup",
       "channel": "handoff",
       "owner": "Gwen"
+    },
+    "publish": {
+      "gate": "page_approval",
+      "channel": "handoff",
+      "owner": "Jonie"
+    },
+    "navigation": {
+      "gate": "discovery_signed_off",
+      "channel": "handoff",
+      "owner": "Jonie"
     }
   },
   "decisions": [
@@ -522,8 +532,23 @@
         "batch:{batch}:drafts"
       ],
       "produces": [
-        "batch_state:{batch}:written_back"
+        "batch_state:{batch}:handed_off"
       ]
+    },
+    "build:published": {
+      "gates": [
+        "discovery_signed_off",
+        "batch:{batch}:drafts"
+      ],
+      "produces": [
+        "batch_state:{batch}:written_back|corrections_requested"
+      ]
+    },
+    "blog:publish": {
+      "gates": [
+        "page:{page}"
+      ],
+      "produces": []
     }
   }
 }

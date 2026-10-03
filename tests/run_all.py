@@ -53,7 +53,7 @@ def sh(cmd, ok=None):
 
 def check(name, cond, detail=""):
     RESULTS.append((name, bool(cond), detail))
-    print(f"  {'PASS' if cond else 'FAIL'}  {name}" + ("" if cond else f"\n        {detail[:600]}"))
+    print(f"  {'PASS' if cond else 'FAIL'}  {name}" + ("" if cond else f"\n        {str(detail)[:600]}"))
     return cond
 
 
@@ -81,6 +81,7 @@ class Agent:
     def __init__(self, slug, kind="full"):
         self.slug, self.kind, self.posts, self.errors = slug, kind, [], []
         self.sem_findings, self.fail_checks_once = {}, set()
+        self.jonie_changes_wording, self.verify_outputs = set(), []
         self.c = SB / "clients" / slug
 
     def sh(self, cmd):
@@ -157,10 +158,12 @@ class Agent:
             self.mark("blocker_checklist", self.w("build/Test Co - Technical Blocker Checklist - REVIEW.md")); self.fin(rid, "blockers")
         elif (name, sub) == ("/build", "plan"):
             rid = self.start("build", "plan")
-            plan = {"pages": [{"id": i, "type": t, "name": i} for i, t in [
-                ("svc-roof-repair", "service"), ("svc-roof-replacement", "service"), ("svc-gutters", "service"),
-                ("loc-springfield", "location"), ("hub-greene-county", "county"), ("loc-nixa", "location"),
-                ("home", "homepage"), ("about", "about")]],
+            plan = {"pages": [{"id": i, "type": t, "name": i, "url": f"https://test.example/{i}/", **x} for i, t, x in [
+                ("svc-roof-repair", "service", {"service_variant": "Roof Repair"}),
+                ("svc-roof-replacement", "service", {"service_variant": "Roof Replacement"}),
+                ("svc-gutters", "service", {"service_variant": "Gutter Installation"}),
+                ("loc-springfield", "location", {"city": "Springfield"}), ("hub-greene-county", "county", {"city": "Greene County"}),
+                ("loc-nixa", "location", {"city": "Nixa"}), ("home", "homepage", {}), ("about", "about", {})]],
                 "batches": [{"id": "pilot", "kind": "service", "label": "Pilot", "pages": ["svc-roof-repair", "loc-springfield"]},
                             {"id": "s1", "kind": "service", "label": "Roofing", "pages": ["svc-roof-replacement", "svc-gutters"]},
                             {"id": "l1", "kind": "location", "label": "Greene County", "pages": ["hub-greene-county", "loc-nixa"]},
@@ -177,13 +180,13 @@ class Agent:
                 fs = [self.w(f"build/B-{p}.md") for p in pages]
                 self.sh(f"python3 scripts/status.py batch {S} {bid} --state briefs_written --files {','.join(fs)}")
             elif stage == "drafts":
-                fs = [self.w(f"build/D-{p}.md", f"{p} draft v1\n") for p in pages]
+                fs = [self.w(f"build/D-{p}.md", page_file(p, "v1")) for p in pages]
                 sem = self.w(f"build/Test Co - Semantic Review - {bid} - REVIEW.md")
                 n = self.sem_findings.get(bid, 1)
                 self.sh(f"python3 scripts/status.py batch {S} {bid} --state drafts_written --files {','.join(fs)} "
                         f"--sem-table {shlex.quote(sem)} --sem-findings {n}")
             else:  # apply-sem
-                fs = [self.w(f"build/D-{p}.md", f"{p} draft v2 (SEM applied)\n") for p in pages]
+                fs = [self.w(f"build/D-{p}.md", page_file(p, "v2")) for p in pages]
                 if bid in self.fail_checks_once:
                     self.fail_checks_once.discard(bid)
                     self.sh(f'python3 scripts/status.py batch {S} {bid} --state sem_check_failed --files {",".join(fs)} '
@@ -196,18 +199,47 @@ class Agent:
             self.sh(f'python3 scripts/status.py pilot-corrections {S} --note "H1 tweak in specs/service.md"'); self.fin(rid, "pilot corrections")
         elif (name, sub) == ("/build", "ship"):
             bid = args[1]; rid = self.start("build", "ship", batch=bid)
-            for p in self.batch_pages(bid):
-                self.sh(f'python3 tests/fakes.py wp create-draft {S} --run {rid} --page-id {p} --title "{p}" '
-                        f'--content-file clients/{S}/build/D-{p}.md')
-            for st_ in ("implemented", "verified", "written_back"):
-                self.sh(f"python3 scripts/status.py batch {S} {bid} --state {st_}")
-            self.fin(rid, f"shipped {bid}")
+            self.sh(f"python3 tests/fakes.py publish wheel {S}")
+            self.sh(f"python3 tests/fakes.py publish drafts {S} --run {rid} --batch {bid}")
+            self.sh(f"python3 scripts/status.py batch {S} {bid} --state handed_off")
+            self.fin(rid, f"drafts + publish handoff for {bid}")
+        elif (name, sub) == ("/build", "published"):
+            bid = args[1]; rid = self.start("build", "published", batch=bid)
+            b = next(x for x in status(S)["build"]["batches"] if x["id"] == bid)
+            ret = self.c / "handoffs" / f"{b['handoff']}-returned.csv"
+            self.sh(f"python3 scripts/handoff.py ingest {S} --run {rid} --handoff {b['handoff']} --returned {ret.relative_to(SB)}")
+            code, out = sh(f"python3 tests/fakes.py verify {S} --run {rid} --batch {bid}")
+            self.verify_outputs.append(out)
+            if code == 0:
+                for pid in b["pages"]:
+                    wid = status(S)["pages"][pid]["wp_id"]
+                    _, media = sh(f"python3 tests/fakes.py wp media {S} --post {wid}")
+                    for ln in media.splitlines():
+                        m = json.loads(ln)
+                        if not m["alt"]:
+                            self.sh(f'python3 tests/fakes.py wp set-alt {S} --run {rid} --media-id {m["id"]} '
+                                    f'--alt "{pid} in Springfield, Missouri — Test Co" --expect-alt ""')
+                for st_ in ("published", "verified", "written_back"):
+                    self.sh(f"python3 scripts/status.py batch {S} {bid} --state {st_}")
+                self.sh(f"python3 tests/fakes.py publish pending {S} --run {rid}")
+            else:
+                fix = self.w(f"tmp/fix-{bid}.csv", "url,field,old,new,reason,decision_map_ref\n"
+                             + "".join(f"https://test.example/{p}/,content,live,approved file,live page differs from the approved file,{p}\n" for p in b["pages"]))
+                code2, out2 = sh(f"python3 scripts/handoff.py create {S} --run {rid} --kind publish --items {fix}")
+                hs = sorted((self.c / "handoffs").glob("H-*-publish.csv"), key=lambda p: p.stat().st_mtime)
+                self.sh(f"python3 scripts/status.py batch {S} {bid} --state corrections_requested")
+                stj = status(S); next(x for x in stj["build"]["batches"] if x["id"] == bid)["handoff"] = hs[-1].stem
+                (self.c / "status.json").write_text(json.dumps(stj, indent=2))
+            self.fin(rid, f"published check {bid}")
         elif name == "/finish":
             rid = self.start("finish", sub)
             m = {"wheel": ("link_wheel", "finish/Test Co - Link Wheel Tables - REVIEW.md"),
                  "schema": ("schema_built", "finish/schema/index.md"),
                  "qa": ("release_qa", "finish/Test Co - QA Punch-List - REVIEW.md")}[sub]
             self.mark(m[0], self.w(m[1])); self.fin(rid, f"finish {sub}")
+        elif (name, sub) == ("/blog", "publish"):
+            pid = args[1]; rid = self.start("blog", "publish", page=pid)
+            self.sh(f"python3 tests/fakes.py publish drafts {S} --run {rid} --page {pid}"); self.fin(rid, f"publish {pid}")
         elif (name, sub) == ("/blog", "map"):
             rid = self.start("blog", "map"); self.mark("blog_map", self.w("blog/Test Co - Blog Decision Map - REVIEW.md")); self.fin(rid, "map")
         elif (name, sub) == ("/blog", "intake"):
@@ -219,7 +251,9 @@ class Agent:
             rid = self.start("blog", "next")
             if not rid:
                 return True
-            pid = f"post-{len(self.posts) + 1}"; f = self.w(f"blog/PD-{pid}.md", "post\n")
+            pid = f"post-{len(self.posts) + 1}"
+            f = self.w(f"blog/PD-{pid}.md", f"---\npage_id: {pid}\nurl: https://test.example/blog/{pid}/\nseo_title: {pid} - Test Co\n"
+                       f"meta_description: About {pid}.\n---\n# Post {pid}\n\nThe answer first.\n\n## Why it matters\n\nBecause.\n")
             self.sh(f"python3 scripts/status.py page {S} {pid} --type blog --file {f} --state draft_written")
             self.posts.append(pid); self.fin(rid, f"post {pid}")
         else:
@@ -229,11 +263,60 @@ class Agent:
     def handle_wait(self, n):
         if "sheet-returned" in n["command"]:
             return self.do(n["command"])
+        if " published " in n["command"]:
+            jonie_publishes(self, n["command"].split()[-1])
+            return self.do(n["command"])
         return False
+
+
+def page_file(pid, version):
+    """An approved page file in the writer's output format (header block + markdown)."""
+    tables = {"svc": "| [Link wheel: populate service-area links here] |",
+              "loc": "| [Link wheel: populate service links here] |\n\n| [Link wheel: populate sibling-city links here] |",
+              "hub": "| [Link wheel: populate service links here] |"}.get(pid.split("-")[0], "")
+    return (f"---\npage_id: {pid}\nurl: https://test.example/{pid}/\nseo_title: {pid} - Test Co\n"
+            f"meta_description: The approved description for {pid}, naming the area and two services.\n"
+            + ("replaces: https://test.example/old-roofing/\n" if pid == "svc-roof-repair" else "")
+            + f"---\n# {pid.replace('-', ' ').title()} in Greene County\n\nThe opening answer for {pid} ({version}). "
+            f"Call today.\n\n## What does {pid} cost?\n\nCost depends on **size** and pitch.\n\n"
+            f"- Inspection\n- Repair\n\n## {pid} FAQs\n\n### How long does it take?\n\nMost jobs take one day.\n\n"
+            f"{tables}\n")
+
+
+def jonie_publishes(ag, bid):
+    """Fake Jonie: publishes each draft at its final URL, adds an image (no alt), does paired redirects,
+    returns the worksheet all 'done'. Optionally changes a sentence (to prove verify catches it)."""
+    import csv
+    wp = SB / "tests" / ".state" / "wp.json"
+    s = json.loads(wp.read_text())
+    st = status(ag.slug)
+    b = next(x for x in st["build"]["batches"] if x["id"] == bid)
+    for pid in b["pages"]:
+        p = st["pages"][pid]
+        it = s["items"][str(p["wp_id"])]
+        it["status"], it["link"] = "publish", p["url"]
+        if bid in ag.jonie_changes_wording and b.get("state") == "handed_off":
+            it["content"]["raw"] = it["content"]["raw"].replace("Call today.", "Call us today for a free quote!")
+        elif "Call us today for a free quote!" in it["content"]["raw"]:
+            it["content"]["raw"] = it["content"]["raw"].replace("Call us today for a free quote!", "Call today.")
+        mid = str(500 + p["wp_id"])
+        if mid not in s["media"]:
+            s["media"][mid] = {"id": int(mid), "source_url": f"https://test.example/img/{pid}.jpg", "alt_text": "", "post": p["wp_id"]}
+            it["content"]["raw"] += f'<img src="https://test.example/img/{pid}.jpg" alt="">'
+    hf = ag.c / "handoffs" / f"{b['handoff']}.csv"
+    rows = list(csv.DictReader(open(hf, newline="")))
+    for r_ in rows:
+        if r_["field"] == "301":
+            s["redirects"][r_["url"].rstrip("/") + "/"] = r_["new"]
+        r_["status"], r_["note"] = "done", ""
+    wp.write_text(json.dumps(s, indent=1))
+    with open(ag.c / "handoffs" / f"{b['handoff']}-returned.csv", "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
 
 
 def walkthrough(slug, kind="full", industry="roofing", max_posts=2, extra_init="", setup=None):
     """/new-client then /next until blog posts; returns (transcript, decisions, runs, agent)."""
+    (SB / "tests" / ".state" / "wp.json").unlink(missing_ok=True)   # a fresh fake WordPress per client
     sh(f'python3 scripts/status.py init {slug} --name "Test Co" --domain test.example --type {kind} '
        f'--industry {shlex.quote(industry)} --route A {extra_init}')
     ag = Agent(slug, kind)
@@ -266,6 +349,9 @@ def walkthrough(slug, kind="full", industry="roofing", max_posts=2, extra_init="
                 log.append(f"APPROVE FAILED: {out[:300]}"); break
             decisions += 1; prev = None
         else:
+            waits = log[-6:].count(log[-1])
+            if waits >= 3:
+                log.append("WAIT-LOOP"); break
             if not ag.handle_wait(n):
                 log.append("WAIT"); break
             prev = None
@@ -276,7 +362,7 @@ def walkthrough(slug, kind="full", industry="roofing", max_posts=2, extra_init="
 def t_walkthrough_full():
     log, decisions, runs, ag = walkthrough("wt-full")
     check("full client: /next reaches blog posts", log[-1] == "DONE", "\n".join(log[-6:]))
-    check("full client: no loops, no failed commands", "LOOP" not in log and not ag.errors, "\n".join(ag.errors[:3]))
+    check("full client: no loops, no failed commands", "LOOP" not in log and "WAIT-LOOP" not in log and not ag.errors, "\n".join(ag.errors[:3]))
     check("full client: every decision line was accepted as typed", not any(l.startswith("APPROVE FAILED") for l in log),
           "\n".join(l for l in log if "FAILED" in l))
     check("full client: each run stops at the next decision (no run asked twice)", decisions > 0 and runs > 0)
@@ -291,14 +377,43 @@ def t_walkthrough_full():
     i_plan = next((i for i, l in enumerate(log) if "/build wt-full plan" in l), 99)
     i_blk = next((i for i, l in enumerate(log) if "blockers_cleared" in l), -1)
     check("the site plan runs without waiting for the blockers decision", i_plan < i_blk, (i_plan, i_blk))
-    check("implement, verify and write-back are one run per batch", sum(" ship " in l for l in log) == len(stops), log)
+    check("one ship run per batch (drafts + publish handoff)", sum(" ship " in l for l in log) == len(stops), log)
+    check("one check run per batch after Jonie publishes (verify + alt text + write-back)",
+          sum(" published " in l and l.startswith("wait") for l in log) == len(stops),
+          [l for l in log if " published " in l])
+    wps = wp_state()["items"]
+    pub = [i for i in wps.values() if i["status"] == "publish" and "test.example/svc-" in i["link"]]
+    check("drafts generated from the approved files and published only by Jonie", len(pub) == 3, len(pub))
+    first = next(i for i in wps.values() if i["link"].endswith("/svc-roof-repair/"))
+    raw = first["content"]["raw"]
+    check("draft content is proper blocks (headings, paragraphs, lists, table)",
+          all(x in raw for x in ('<!-- wp:heading {"level":2} -->', "<!-- wp:paragraph -->", "<!-- wp:list -->",
+                                 "<!-- wp:table -->", '<!-- wp:heading {"level":3} -->')) and "<h1" not in raw, raw[:300])
+    check("post title is the H1; SEOPress title and meta set on the draft",
+          first["title"]["raw"].startswith("Svc Roof Repair") and
+          wp_state()["seo"][str(first["id"])]["title"] == "svc-roof-repair - Test Co")
+    check("link tables filled from the wheel (pilot location linked from the pilot service page)",
+          "https://test.example/loc-springfield/" in raw)
+    check("replaced URL: redirect paired with the publish and done by Jonie",
+          wp_state()["redirects"].get("https://test.example/old-roofing/") == "https://test.example/svc-roof-repair/")
+    media = wp_state()["media"]
+    check("alt text added to the images Jonie added (safe fix)", all(m["alt_text"] for k, m in media.items() if int(k) >= 500))
+    check("every page verified against its approved file", all("0 differ" in o for o in ag.verify_outputs), ag.verify_outputs[:2])
+    st = status("wt-full")
+    held = sum(len(v) for v in (st.get("wheel_pending") or {}).values())
+    posts = [i for i in wp_state()["items"].values() if i["type"] == "posts"]
+    check("approved blog posts go in as WordPress posts (drafts) with a publish handoff", len(posts) == 2 and
+          all(i["status"] == "draft" for i in posts), [(i["type"], i["status"]) for i in posts])
+    check("held link rows are handed to Jonie once their target is live", held == 0 and
+          any((SB / "clients/wt-full/handoffs").glob("H-*link_table.csv")), held)
     rec = SB / "clients" / "wt-full"
     check("records generated: Handoff Log, decisions, checklist, approval record",
           all((rec / f).exists() for f in ("handoff-log.md", "decisions.md", "document-checklist.md", "approval-record.md")))
     log_md = (rec / "log.md").read_text()
     check("conditions are logged when met", log_md.count("## CONDITION") >= 4, log_md.count("## CONDITION"))
     st = status("wt-full")
-    check("page states follow their batch", all(p["state"] in ("written_back", "approved") for p in st["pages"].values()),
+    check("page states follow their batch", all(p["state"] == "written_back" for p in st["pages"].values() if p.get("type") != "blog")
+          and all(p["state"] == "drafted" for p in st["pages"].values() if p.get("type") == "blog"),
           {k: v["state"] for k, v in st["pages"].items()})
 
 
@@ -315,6 +430,28 @@ def t_sem_paths():
     lm = (SB / "clients" / "wt-sem" / "log.md").read_text()
     check("the failure and the applied SEM items are logged", "SEM CHECK FAILED" in lm and "SEM APPLIED" in lm)
     check("SEM walkthrough completes", "LOOP" not in log and not ag.errors, "\n".join(log[-4:] + ag.errors[:2]))
+
+
+def t_publish_corrections():
+    def setup(ag):
+        ag.sem_findings = {"pilot": 0}
+        ag.jonie_changes_wording = {"pilot"}
+    log, decisions, runs, ag = walkthrough("wt-pub", setup=setup, max_posts=0)
+    check("verify catches a wording change Jonie made", any("1 differ" in o or "2 differ" in o for o in ag.verify_outputs),
+          ag.verify_outputs[:2])
+    rep = sorted((SB / "clients/wt-pub/handoffs").glob("verify-*.md"))
+    check("the difference is reported (verify report names the changed text)",
+          any("body text differs" in f.read_text() and "free quote" in f.read_text() for f in rep), len(rep))
+    check("a corrections handoff goes back to Jonie, then the batch passes",
+          sum(l.startswith("wait") and "published pilot" in l for l in log) == 2, [l for l in log if "published pilot" in l])
+    st = status("wt-pub")
+    check("after Jonie's correction the pilot is verified and written back",
+          next(b for b in st["build"]["batches"] if b["id"] == "pilot")["state"] == "written_back")
+    sh("python3 scripts/status.py page wt-pub svc-new --type service --url https://test.example/svc-new/ --state planned")
+    code, out = sh("python3 scripts/status.py urls wt-pub --published")
+    check("QA crawl list holds only published pages", "svc-roof-repair" in out and "svc-new" not in out, out)
+    code, out = sh("python3 tests/fakes.py wp update-content wt-pub --run x --page-id a --url https://test.example/a/ --content-file x --expect-sha x")
+    check("the system refuses to change a live page", code != 0 and "never" in out, out)
 
 
 def t_walkthrough_blog_only():
@@ -508,7 +645,7 @@ def t_finish_needs_outputs():
     check("an unknown step is refused with the list of steps", code == 2 and "build:plan" in out, out)
 
 
-SCENARIOS = [t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
+SCENARIOS = [t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive]
 
 

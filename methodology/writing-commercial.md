@@ -55,6 +55,24 @@ and the common checks in `methodology/specs/README.md`. This standard covers onl
   own entities.
 - **C6 No implementation.** Clean Markdown. No HTML, CSS, schema or JSON-LD.
 
+## Output — the approved page file
+
+Every page is delivered as one Markdown file that becomes the source of its WordPress draft
+(`scripts/publish.py` generates the draft from it, one-way):
+
+```
+---
+page_id: <id from the site plan>
+url: <final URL, full>
+seo_title: <the title>
+meta_description: <the meta description>
+replaces: <old URL(s) this page replaces, comma-separated — only if any>
+---
+# <H1>
+<body: ## / ### headings, paragraphs, lists, tables, FAQ>
+| [Link wheel: populate <service-area | service | sibling-city> links here] |
+```
+
 ## D — Process
 
 - **Stage 0 Entity & intent map.** Problems · services · questions · geography; then intents

@@ -5,6 +5,7 @@ Read (no run needed):
     wp.py get <slug> <url>                 page id, status, slug, title, SEOPress title/description
     wp.py inspect <slug> <url>             all post meta keys (pilot: find the Kadence head-code key)
     wp.py redirects <slug>                 SEOPress redirect list (for /verify)
+    wp.py media <slug> --post ID           images attached to a page/post: id, file, current alt text
 
 Write (need an open run, the right gate, and the current value to match what we expect):
     wp.py set-seo <slug> --run R --url U [--title T --expect-title OLD] [--desc D --expect-desc OLD]
@@ -12,7 +13,7 @@ Write (need an open run, the right gate, and the current value to match what we 
     wp.py create-draft <slug> --run R --page-id P --title T --content-file F [--slug-name S] [--parent N]
                           [--post-type page|post]   (default: post for blog pages, page otherwise)
     wp.py update-content <slug> --run R --page-id P --url U --content-file F --expect-sha OLD
-                          --live --backup-confirmed "ManageWP backup <time>, confirmed by Paul"
+                          (refused: the system never changes a live page — use publish.py drafts + a publish handoff)
     wp.py set-head <slug> --run R --url U --file F --expect-sha OLD        (schema into Kadence head field)
     wp.py restore <slug> --run R --change N        (used by /rollback: put the logged old value back)
 
@@ -23,7 +24,7 @@ Rules enforced here, not just in the prompts:
   - If the live value already equals the new value -> logged as SKIPPED (already done).
   - If the live value differs from the expected old value -> STOP; the page changed since
     the audit and Paul decides.
-  - Published content changes only with --live and a recorded ManageWP backup confirmation.
+  - The system never publishes or changes a live page's content: drafts only (publish.py), Jonie publishes.
 
 Credentials: WP_<PREFIX>_URL / _USER / _APP_PASSWORD in .env, prefix in status.json
 client.wp_env_prefix. Never printed.
@@ -139,6 +140,7 @@ def main():
     for n in ("get", "inspect"):
         s = sub.add_parser(n); s.add_argument("slug"); s.add_argument("url")
     s = sub.add_parser("redirects"); s.add_argument("slug")
+    s = sub.add_parser("media"); s.add_argument("slug"); s.add_argument("--post", type=int, required=True)
     s = sub.add_parser("set-seo"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s.add_argument("--url", required=True); s.add_argument("--title"); s.add_argument("--expect-title")
     s.add_argument("--desc"); s.add_argument("--expect-desc")
@@ -175,6 +177,9 @@ def main():
             print(json.dumps({"id": p["id"], "meta_keys_exposed": sorted((p.get("meta") or {}).keys()),
                               "note": "Keys not registered with show_in_rest do not appear here; the "
                                       "must-use plugin registers the Kadence head-code key once known."}, indent=1))
+        elif a.cmd == "media":
+            for md in call(a.slug, f"wp/v2/media?parent={a.post}&per_page=100&context=edit"):
+                print(json.dumps({"id": md["id"], "file": md.get("source_url"), "alt": md.get("alt_text") or ""}))
         elif a.cmd == "redirects":
             print(json.dumps(call(a.slug, "seopress/v1/redirections"), indent=1))
 
@@ -241,6 +246,8 @@ def main():
             print(f"draft {ptype} created: id {p['id']}")
 
         elif a.cmd == "update-content":
+            die("REFUSED — the system never changes or publishes a live page. New and replacement content goes in as "
+                "a WordPress draft from the approved file (publish.py drafts) and Jonie publishes it (publish handoff).")
             require(a.slug, a.run, "page_content", a.page_id)
             _, p = find(a.slug, a.url)
             if p.get("status") == "publish" and not (a.live and a.backup_confirmed):
@@ -319,6 +326,8 @@ def main():
             elif ch["kind"] in ("page_content", "schema") and ch.get("old_file"):
                 old = (ROOT / ch["old_file"]).read_text(encoding="utf-8")
                 kind, p = find(a.slug, ch["url"])
+                if ch["kind"] == "page_content" and p.get("status") == "publish":
+                    die("That page is live; the system never changes a live page. Roll it back with a handoff to Jonie.")
                 if ch["kind"] == "page_content":
                     call(a.slug, f"wp/v2/{kind}/{p['id']}", "POST", {"content": old})
                 else:

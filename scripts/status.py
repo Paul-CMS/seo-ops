@@ -38,12 +38,12 @@ SETTABLE = {
     "client.gbp_website_url", "client.address_type", "client.notes", "client.state",
 }
 BATCH_STATES = ["planned", "briefs_written", "drafts_written", "sem_applied", "sem_check_failed",
-                "implemented", "verified", "written_back"]
-PAGE_STATES = ["planned", "brief_written", "draft_written", "approved", "implemented", "live",
+                "handed_off", "corrections_requested", "published", "verified", "written_back"]
+PAGE_STATES = ["planned", "brief_written", "draft_written", "approved", "drafted", "published",
                "written_back", "verified"]
 # batch state -> the state every page in the batch moves to
 BATCH_TO_PAGE = {"briefs_written": "brief_written", "drafts_written": "draft_written",
-                 "sem_applied": "draft_written", "implemented": "implemented",
+                 "sem_applied": "draft_written", "handed_off": "drafted", "published": "published",
                  "verified": "verified", "written_back": "written_back"}
 STAGES = ["briefs", "drafts"]   # two stops per batch: briefs (outline before prose), then drafts + SEM picks
 
@@ -519,6 +519,7 @@ def main():
     s.add_argument("--name"); s.add_argument("--url"); s.add_argument("--state", choices=PAGE_STATES)
     s.add_argument("--file")
     s = sub.add_parser("approval-record"); s.add_argument("slug")
+    s = sub.add_parser("urls"); s.add_argument("slug"); s.add_argument("--published", action="store_true")
     s = sub.add_parser("plan"); s.add_argument("slug"); s.add_argument("--file", required=True)
     s.add_argument("--json", required=True)
     s = sub.add_parser("batch"); s.add_argument("slug"); s.add_argument("batch_id")
@@ -606,6 +607,11 @@ def main():
                 die("Page approval is set only through /approve.")
             p["state"] = a.state
         save(a.slug, st); print(json.dumps({a.page_id: p}, indent=2))
+    elif a.cmd == "urls":
+        live = ("published", "verified", "written_back")
+        for pid, p in st["pages"].items():
+            if p.get("url") and (not a.published or p.get("state") in live or (p.get("approval") or {}).get("baseline")):
+                print(p["url"])
     elif a.cmd == "approval-record":
         print(render_approval_record(st), end="")
     elif a.cmd == "plan":
@@ -629,7 +635,7 @@ def main():
             die("the first batch must be 'pilot' with exactly 1 service + 1 location page")
         for pid, p in pages.items():
             st["pages"].setdefault(pid, {"state": "planned"}).update(
-                {k: p[k] for k in ("type", "name", "url", "group") if k in p})
+                {k: p[k] for k in ("type", "name", "url", "group", "city", "service_variant", "h1", "replaces", "nav") if k in p})
         st["build"] = {"site_plan": {"file": a.file, "approval": None},
                        "batches": [{**{k: b[k] for k in ("id", "kind", "label", "pages")},
                                     "state": "planned", "briefs": None, "drafts": None,
@@ -645,7 +651,8 @@ def main():
             if not ok:
                 die(f"batch {a.batch_id}: " + "; ".join(why))
         stage_needed = {"drafts_written": "briefs", "sem_applied": "drafts", "sem_check_failed": "drafts",
-                        "implemented": "drafts", "verified": "drafts", "written_back": "drafts"}.get(a.state)
+                        "handed_off": "drafts", "corrections_requested": "drafts", "published": "drafts",
+                        "verified": "drafts", "written_back": "drafts"}.get(a.state)
         if stage_needed and not batch_stage_ok(st, a.batch_id, stage_needed, False)[0]:
             die(f"batch {a.batch_id}: {stage_needed} are not approved yet")
         fs = [f.strip() for f in (a.files or "").split(",") if f.strip()]

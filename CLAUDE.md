@@ -117,12 +117,22 @@ Each change kind's gate, channel (system draft / VA handoff) and owner are in `s
 changes (redirects, slugs, titles, H1s) after the entity and Brand Guide approvals, always as
 handoffs; page content only as WordPress drafts from approved files; link tables and schema in Finish.
 
+**Publishing (the system never publishes).** For every new page the system generates a WordPress
+**draft** from the approved file, one-way: exact slug, SEOPress title and meta, full content as proper
+blocks, link tables filled from the link wheel (planned from the site plan). Then one **publish
+handoff to Jonie per batch**: draft links; apply the Kadence layout and styling, add images, publish;
+change no wording, headings, title, meta or URL (unavoidable changes = `deviated` with a reason). A
+page replacing an existing URL has its redirect paired with the publish. Menu changes: handoff to
+Jonie. After Jonie marks pages published, `/verify` checks each live page against its approved file
+(URL, title, meta, H1, headings, content, links) and every difference goes to Paul; then alt text for
+the new images (safe fix). The QA crawl covers published pages only.
+
 Rules enforced in the scripts as well as here:
 
 - **Check the current value before every change; skip what is already done; stop if the live
   value is not what the audit recorded.**
-- **Drafts by default.** A published page changes only with `--live` *and* Paul's
-  confirmation of a fresh ManageWP backup, recorded in the log.
+- **Drafts only.** The system never publishes and never changes a live page's content; Jonie does,
+  from a handoff (`wp.py update-content` is refused).
 - **Handoffs go to the owner of the work** (gates.json `owner`): WordPress, technical, redirect and
   title/meta work → Jonie; citations, GBP, content review and everything else → Gwen. Redirect rows
   get `301` filled in and always use full URLs, never bare slugs.

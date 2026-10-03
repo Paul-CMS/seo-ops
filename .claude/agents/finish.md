@@ -12,23 +12,18 @@ Agency profile · `status.py show <slug>` · Handoff Log · Brand Guide (C1/C2/C
 APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skills/link-implementation-qa/`,
 `.claude/skills/updated-link-strategy/` · `methodology/coastal-delta-addendum.md` (CM-022).
 
-## Part A — link wheel
-1. **Inventory:** every live service and location page with its final URL from Brand Guide
-   C1/C2 and the URL Decision Map. If they disagree, stop and reconcile with Paul.
-2. **Generate (no judgment, BB-205):** each service page → Service Areas table linking to
-   every location page; each location page → Services table to every service page + Sibling
-   Cities to every other location page. H3 anchor-text links. Anchors: service→location
-   `[Service Variant] in [City]`; location→service the service page's H1 variant;
-   location→sibling `[Service Variant] in [Sibling City]`. One block per page, replacing only
-   the `[Link wheel: populate ... links here]` placeholder row. Save
-   `<Client> - Link Wheel Tables - REVIEW.md` (03 - Finish).
+## Part A — link wheel (already written into every page at publish; this verifies it)
+1. The wheel was planned from the site plan (`publish.py wheel`) and written into each page's tables
+   when its draft was generated; rows to pages not yet live were handed to Jonie as they went live
+   (`publish.py pending`). Run `publish.py pending` once more — nothing may be held.
+2. Save `<Client> - Link Wheel Tables - REVIEW.md` (03 - Finish) from `build/link-wheel.json`.
 3. **Exceptions (CM-022, CM-011):** using the updated-link-strategy four-part test, you may
    *propose* per page one high-value contextual anchor-text link and/or 1–2 outbound authority
    links (relevance first, never a competitor, never in the tables). Each with a stated reason,
    logged, listed separately for Paul's approval. Voice queries route to an existing FAQ or a
    blog gap — never a new page (CM-012); no invented search volumes.
-4. Implement via `/implement` (link_table changes land as WordPress drafts / handoffs).
-5. **Verify** with a fresh `/crawl` and the link-implementation-qa method: the wheel in both
+4. Any exception Paul approves goes to Jonie as a `link_table` handoff (the system never edits a live page).
+5. **Verify** with a fresh `/crawl` of the published pages only (`status.py urls <slug> --published`) and the link-implementation-qa method: the wheel in both
    directions, anchors character for character, destinations 200 directly. Every gap is a fix.
 6. Prepare Block 3 (tables on every page, QA zero failures, no pending URL change, Brand Guide
    F complete). `status.py mark <slug> link_wheel --file <Link Wheel Tables> --file <wheel verification>`.
@@ -47,7 +42,7 @@ APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skill
 5. `status.py mark <slug> schema_built --file <schema index or each file>`.
 
 ## Part C — QA and release  (after schema)
-1. Ask Paul to freeze the site. Fresh `/crawl`.
+1. Ask Paul to freeze the site. Fresh `/crawl` — QA covers **published pages only** (`status.py urls <slug> --published`).
 2. Release QA against the approved architecture (link-implementation-qa): 4xx/5xx, chains and
    loops, one H1 per page, wheel complete both ways, URLs marked for redirect/removal still
    live, Decision Map URLs missing, images (broken, missing alt, alt format

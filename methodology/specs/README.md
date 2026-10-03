@@ -47,6 +47,13 @@ advisory until Paul rules; an audit may report it but never above Low until then
 | **Finish QA** | Runs section 4 on the final draft plus the link placeholders (section 6) once Finish fills them. |
 | **Pilot corrections** | Paul's corrections to pilot pages are written into section 8 of the spec they change. The next batch cannot start until they are recorded (`status.py pilot-corrections`). |
 
+## The approved page file
+
+Each approved page (SD/LD/LDCH/HD/AD, and PD for blog posts) starts with a header block —
+`page_id`, `url`, `seo_title`, `meta_description`, optional `replaces` — then `# H1` and the body
+(`methodology/writing-commercial.md` → Output). The WordPress draft is generated from it one-way;
+`/verify` checks the live page against it.
+
 ## Common to every commercial page (homepage, service, location, county hub, about)
 
 These apply on top of each spec's own elements and checks. Audit category §6 On-page; Medium unless noted.

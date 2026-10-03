@@ -31,6 +31,7 @@ import status as S
 from lib import ROOT, client_dir, die, today
 
 KINDS = S.GATES["change_kinds"]
+HANDOFF_FILE = re.compile(r"^H-\d{4}-\d{2}-\d{2}-\d+-[a-z_]+\.csv$")   # not the VA's returned copies
 COLS = ["ref", "url", "field", "old", "new", "reason", "decision_map_ref", "status", "note"]
 
 
@@ -75,7 +76,7 @@ def main():
     d = hdir(a.slug)
 
     if a.cmd == "list":
-        for f in sorted(d.glob("H-*.csv")):
+        for f in sorted(x for x in d.glob("H-*.csv") if HANDOFF_FILE.match(x.name)):
             rows = read_csv(f)
             open_ = [r for r in rows if r["status"] not in ("done", "verified")]
             if a.open and not open_:
@@ -104,10 +105,12 @@ def main():
         items = read_csv(a.items)
         if not items:
             die("no items")
-        n = len(list(d.glob("H-*.csv"))) + 1
+        n = len([f for f in d.glob("H-*.csv") if HANDOFF_FILE.match(f.name)]) + 1
         hid = f"H-{today()}-{n:02d}-{a.kind}"
         rows = []
         for i, it in enumerate(items, 1):
+            if it.get("field") == "301" and a.kind == "publish":
+                it["url"] = full_url(it["url"], domain, i, "from URL"); it["new"] = full_url(it["new"], domain, i, "to URL")
             if a.kind in ("redirect", "slug", "consolidation") and not (it.get("reason") and it.get("decision_map_ref")):
                 die(f"row {i}: {a.kind} needs a reason and its URL Decision Map reference")
             row = {"ref": f"{hid}-{i:02d}", **{k: it.get(k, "") for k in COLS[1:7]}, "status": "issued", "note": ""}
@@ -138,6 +141,22 @@ def main():
         if a.kind in ("redirect", "slug"):
             md += ["**Redirects:** 301 only. From URL → To URL exactly as written. Use SEOPress → Redirections. "
                    "Never delete the old page.", ""]
+        if a.kind == "publish":
+            md += ["**Publishing.** Each row is a WordPress **draft** the system generated from the approved page file.",
+                   "1. Open the draft (link in `URL`). Apply the Kadence layout and styling and add the images.",
+                   "2. Publish it at **exactly** the URL in `Change to` (or, where the row says so, replace the content of the "
+                   "existing live page with the draft's blocks and keep that URL).",
+                   "3. Rows with field `301` belong to the page above them: add that redirect in SEOPress → Redirections "
+                   "**at the same time** as you publish.",
+                   "4. **Do NOT change** the wording, headings, page title, SEO title, meta description or URL. If a change "
+                   "is truly unavoidable, make it, mark the row `deviated` and say exactly what changed and why.",
+                   "When you return the worksheet, the system checks every live page against the approved file.", ""]
+        if a.kind == "link_table":
+            md += ["**Link tables.** Add each row to the named table on the live page (anchor text → URL exactly as written). "
+                   "Change nothing else on the page.", ""]
+        if a.kind == "navigation":
+            md += ["**Navigation menu.** Make each menu change exactly as listed (Appearance → Menus / Kadence header). "
+                   "Change nothing else.", ""]
         md += ["| Ref | URL | Field | Now | Change to | Why | Decision Map |", "|---|---|---|---|---|---|---|"]
         md += [f"| {r['ref']} | {r['url']} | {r['field']} | {r['old']} | {r['new']} | {r['reason']} | "
                f"{r['decision_map_ref']} |" for r in rows]

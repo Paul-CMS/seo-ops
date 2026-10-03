@@ -73,11 +73,32 @@ to the page or blog list that owns them. Re-run E1–E9 and the spec checks on e
 - Any check fails → `status.py batch <slug> <id> --state sem_check_failed --files <drafts> --note "<check, page>"`.
   The drafts go back to Paul with the failure.
 
-## Step: ship <id>   (one run, one commit)
-For the approved batch: put every page in WordPress as a **draft** (`wp.py create-draft`), verify, and
-write back to the Brand Guide (B3, C1/C2, C3 — every H2 and FAQ question) and its Drive copy. Then
-`status.py batch <slug> <id> --state implemented`, `--state verified`, `--state written_back`. Save each
-page to Drive `02 - Build/` as `SD/LD/LDCH/HD/AD - <subject> - <Client>`.
+## Step: ship <id>   (one run, one commit — the system never publishes)
+1. `python3 scripts/publish.py wheel <slug>` — plans the link wheel from the approved site plan (every
+   final URL is known).
+2. `python3 scripts/publish.py drafts <slug> --run <RUN_ID> --batch <id>` — for every page, a WordPress
+   **draft** generated one-way from its approved file: exact slug, SEOPress title and meta description,
+   content as proper blocks (heading levels, paragraphs, lists, tables, FAQ), link tables filled from the
+   wheel (rows to pages not yet live are held and handed over once their target is live). It issues
+   the **publish handoff to Jonie** for the batch: draft links + instructions (Kadence layout and
+   styling, images, publish; never change wording, headings, title, meta or URL — any unavoidable change
+   goes in the CSV as `deviated` with a reason). A page that replaces an existing URL has its 301 paired
+   with its publish row so Jonie does both at once.
+3. Menu changes for the batch's pages: `handoff.py create <slug> --run <RUN_ID> --kind navigation --items <csv>`.
+4. `status.py batch <slug> <id> --state handed_off`. Upload the handoff to Drive `02 - Build/`.
+Never edit a generated draft — change the approved file (Paul re-approves) and regenerate.
+
+## Step: published <id>   (after Jonie returns the worksheet)
+1. `handoff.py ingest <slug> --run <RUN_ID> --handoff <H-ID> --returned <csv>` — report deviations and omissions.
+2. `verify.py <slug> --run <RUN_ID> --batch <id>` — every live page against its approved file: URL, SEO
+   title, meta, H1, heading structure, body text, link-table links. **Every difference goes to Paul**
+   (quote the verify report). If any page differs: a corrections handoff to Jonie (`--kind publish`,
+   one row per page, what must match), `status.py batch <slug> <id> --state corrections_requested`, finish.
+3. All match → alt text for the images Jonie added (safe fix, CM-028 Low): `wp.py media <slug> --post <wp_id>`,
+   then `wp.py set-alt ... --expect-alt ""` with the alt format from the spec.
+4. `status.py batch <slug> <id> --state published`, `--state verified`; Brand Guide write-back (B3, C1/C2,
+   C3 — every H2 and FAQ question) and its Drive copy; `--state written_back`.
+5. `publish.py pending <slug> --run <RUN_ID>` — link rows held for pages that are now live → handoff to Jonie.
 
 ## Step: pilot-corrections
 After the pilot briefs are approved, apply every correction Paul made: to the page spec

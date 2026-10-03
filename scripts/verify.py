@@ -2,6 +2,8 @@
 """verify.py — re-check every changed page against the live site.
 
     verify.py <slug> --run R [--of RUN_ID] [--handoff H-ID] [--all]
+    verify.py <slug> --run R --batch B      every published page of a batch against its approved file
+    verify.py <slug> --run R --page P       one published page (a blog post) against its approved file
 
 Checks, per logged change:
   - system-applied SEO title / meta description -> read live via SEOPress and the public HTML
@@ -11,6 +13,10 @@ Checks, per logged change:
       seo_title / meta_description -> the public page shows the new value
       broken_link -> the page no longer links to the old URL
       everything else -> listed for a person to check (sitemap, robots.txt, speed)
+Batch mode (after Jonie publishes): for each page, the live URL answers 200 and its SEO title,
+meta description, H1, heading structure (levels and text), body text and link-table links match the
+approved file exactly. Every difference is listed for Paul. Images without alt text are listed for
+the alt-text safe fix. Exit 0 all match · 1 differences found.
 Writes clients/<slug>/handoffs/verify-<run>.md and logs PASS / FAIL for each item.
 """
 import argparse
@@ -75,13 +81,106 @@ def check(c):
     return "CHECK", "needs a person to confirm (not machine-checkable here)"
 
 
+def strip_tags(t):
+    return html.unescape(re.sub(r"<[^>]+>", "", t or "")).strip()
+
+
+def norm(t):
+    return re.sub(r"\s+", " ", re.sub(r"[*_`]|\[([^\]]+)\]\([^)]+\)", r"\1", t or "")).strip()
+
+
+def expected(meta):
+    """Headings and paragraph text the approved file says the page must show."""
+    heads, paras = [], []
+    for ln in meta["body"].split("\n"):
+        m = re.match(r"^(#{2,6}) (.+)$", ln)
+        if m:
+            heads.append((len(m.group(1)), norm(m.group(2))))
+        elif ln.strip() and not ln.lstrip().startswith(("|", "-", "*")) and not re.match(r"^\s*\d+\. ", ln):
+            paras.append(norm(ln))
+    return heads, " ".join(paras)
+
+
+def live_parts(body):
+    heads = [(int(l), norm(strip_tags(t))) for l, t in re.findall(r"<h([2-6])[^>]*>(.*?)</h\1>", body, re.S | re.I)]
+    h1 = re.search(r"<h1[^>]*>(.*?)</h1>", body, re.S | re.I)
+    paras = " ".join(norm(strip_tags(p)) for p in re.findall(r"<p[^>]*>(.*?)</p>", body, re.S | re.I))
+    links = re.findall(r'<a[^>]+href=["\']([^"\']+)["\']', body, re.I)
+    imgs = [(src, alt) for src, alt in
+            [(re.search(r'src=["\']([^"\']+)', t).group(1) if re.search(r'src=["\']([^"\']+)', t) else "",
+              (re.search(r'alt=["\']([^"\']*)', t).group(1) if re.search(r'alt=["\']([^"\']*)', t) else ""))
+             for t in re.findall(r"<img[^>]*>", body, re.I)]]
+    return norm(strip_tags(h1.group(1))) if h1 else "", heads, paras, links, imgs
+
+
+def verify_batch(a, d):
+    import publish
+    import status as S
+    st = S.load(a.slug)
+    b = S.batch(st, a.batch) if a.batch else {"pages": [a.page]}
+    if not b:
+        raise SystemExit(f"no batch {a.batch}")
+    lines = [f"# Verify — {a.slug} — {('batch ' + a.batch) if a.batch else a.page} — run {a.run}", "",
+             "Each live page against its approved file. Any difference goes to Paul.", ""]
+    fails, alt_needed = 0, []
+    for pid in b["pages"]:
+        p = st["pages"].get(pid) or {}
+        meta = publish.parse(p["file"])
+        diffs = []
+        code, _, body = fetch(meta["url"])
+        if code != 200:
+            diffs.append(f"URL {meta['url']} answers {code}")
+        else:
+            h1, heads, text, links, imgs = live_parts(body)
+            want_heads, want_text = expected(meta)
+            if page_title(body) != meta["seo_title"]:
+                diffs.append(f"SEO title is {page_title(body)!r}, approved {meta['seo_title']!r}")
+            if page_desc(body) != meta["meta_description"]:
+                diffs.append(f"meta description is {page_desc(body)!r}, approved {meta['meta_description']!r}")
+            if h1 != norm(meta["h1"]):
+                diffs.append(f"H1 is {h1!r}, approved {meta['h1']!r}")
+            live_heads = [h for h in heads if h[1] != "Link"]
+            if live_heads != want_heads:
+                missing = [h for h in want_heads if h not in live_heads]
+                extra = [h for h in live_heads if h not in want_heads]
+                diffs.append("heading structure differs" + (f"; missing {missing}" if missing else "")
+                             + (f"; not in the approved file {extra}" if extra else "")
+                             + ("; same headings in a different order or level" if not missing and not extra else ""))
+            if text != want_text:
+                wa, la = want_text.split(". "), text.split(". ")
+                first = next((i for i, (x, y) in enumerate(zip(wa, la)) if x != y), min(len(wa), len(la)))
+                diffs.append(f"body text differs from the approved file at: "
+                             f"{(la[first] if first < len(la) else '(text missing)')[:120]!r}")
+            miss_links = [u for u in p.get("links_placed", []) if u not in links]
+            if miss_links:
+                diffs.append(f"link-table links missing: {', '.join(miss_links[:6])}")
+            alt_needed += [(pid, src) for src, alt in imgs if not alt.strip()]
+        res = "FAIL" if diffs else "PASS"
+        fails += bool(diffs)
+        lines.append(f"## {pid} — {meta['url']} — {res}")
+        lines += [f"- {x}" for x in diffs] or ["- matches the approved file"]
+        lines.append("")
+        R.log_change(a.slug, a.run, "verify", meta["url"], "live vs approved file", p["file"], meta["url"],
+                     f"VERIFY {res}" + (f" — {'; '.join(diffs)[:300]}" if diffs else ""), ref=pid, channel="local")
+    if alt_needed:
+        lines += ["## Images without alt text (alt-text safe fix)", ""] + [f"- {pid}: {src}" for pid, src in alt_needed]
+    out = d / "handoffs" / f"verify-{a.run}.md"
+    out.write_text("\n".join(lines) + "\n")
+    print(f"{len(b['pages']) - fails} page(s) match · {fails} differ · {len(alt_needed)} image(s) need alt text → "
+          f"{out.relative_to(d.parent.parent)}")
+    raise SystemExit(1 if fails else 0)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("slug"); ap.add_argument("--run", required=True)
     ap.add_argument("--of"); ap.add_argument("--handoff"); ap.add_argument("--all", action="store_true")
+    ap.add_argument("--batch"); ap.add_argument("--page")
     a = ap.parse_args()
     R.open_run(a.slug, a.run)
     d = client_dir(a.slug)
+    if a.batch or a.page:
+        return verify_batch(a, d)
 
     targets = []
     for c in R.changes(a.slug, a.of if a.of else None):
@@ -90,7 +189,7 @@ def main():
         if c.get("channel") == "wp" and c["result"].startswith("APPLIED"):
             targets.append(c)
     done_refs = set()
-    for f in sorted((d / "handoffs").glob("H-*.csv")):
+    for f in sorted(x for x in (d / "handoffs").glob("H-*.csv") if not x.stem.endswith("-returned")):
         if a.handoff and f.stem != a.handoff:
             continue
         with open(f, newline="", encoding="utf-8") as fh:

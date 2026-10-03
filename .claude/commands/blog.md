@@ -1,13 +1,13 @@
 ---
 description: Agent 4 — Blog Decision Map, redirect handoffs, posts one at a time; or Blog Authority Builder for blog-only clients
-argument-hint: <slug> [map|redirects|next|refresh|intake|topics]
+argument-hint: <slug> [map|redirects|next|publish <id>|refresh|intake|topics]
 ---
 
 Arguments: $ARGUMENTS
 
 Follow CLAUDE.md. Check `client.type`.
 
-Steps — full client: `map` · `redirects` · `next` · `refresh`; blog-only client: `intake` · `topics` · `next`.
+Steps — full client: `map` · `redirects` · `next` · `publish` (`--page <id>`) · `refresh`; blog-only client: `intake` · `topics` · `next` · `publish`.
 Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps blog` lists them; `run.py start` checks them. `next` waits for the previous post's approval automatically.
 
 

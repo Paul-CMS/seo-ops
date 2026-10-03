@@ -43,6 +43,11 @@ self-critique (E1–E8; E6 reports every CM-038 number). Register the post:
 Paul approves with `/approve <slug> page:<id>`; then save as `PD - <post> - <Client>`, add its headings and FAQs
 to C3.
 
+**publish <id>** — after Paul approves a post: `publish.py drafts <slug> --run <RUN_ID> --page <id>` makes a
+WordPress **post** draft from the approved PD file (header block + markdown, like commercial pages) and
+the publish handoff to Jonie. The system never publishes. Once Jonie marks it done:
+`verify.py <slug> --run <RUN_ID> --page <id>` checks the live post against the approved file.
+
 **refresh** — `<Client> - Blog Refresh Schedule.md`: every protected post with a review date
 (default 6 months); at each refresh re-run Test B.
 
