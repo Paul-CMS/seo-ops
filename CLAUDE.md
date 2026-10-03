@@ -87,7 +87,7 @@ decision, printing the exact `/approve` line with its files. Refusals are in pla
 | 6 | Client returns sheet → record it, reconcile into the Brand Guide | `/discovery sheet-returned`, `/discovery reconcile` | proof_sheet_approved / condition **proof_sheet_returned** | **brand_guide_approved** → structural changes |
 | 7 | Discovery sign-off (Agent 1 never starts Agent 2) | `/discovery signoff` | all of the above | **discovery_signed_off** |
 | 8 | Technical blockers (Low items as one handoff) | `/build blockers` + `/implement` | discovery_signed_off | **blockers_cleared** |
-| 9 | **Site plan** — every service and location page in one pass | `/build plan` | discovery_signed_off | **site_plan** |
+| 9 | **Site plan** — every service and location page in one pass; runs side by side with step 8 (Jonie fixes the blockers meanwhile; Paul confirms **blockers_cleared** before release) | `/build plan` | discovery_signed_off | **site_plan** |
 | 10 | **Pilot** — 1 service + 1 location brief; corrections go into the specs | `/build batch pilot` | site_plan | **batch:pilot:briefs** |
 | 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); briefs → drafts + self-critique + **semantic review table** → (apply the SEM items Paul picked, re-check) → ship (WordPress drafts, verify, write-back: one run) | `/build batch <id>` [`drafts`\|`apply-sem`], `/build ship <id>` | pilot corrections applied | **batch:<id>:briefs**, **batch:<id>:drafts** (+ SEM picks) — two stops per batch |
 | 12 | All pages built and written back | — | every batch written back | condition **pages_built** (no approval) |

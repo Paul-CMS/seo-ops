@@ -288,6 +288,9 @@ def t_walkthrough_full():
             stops[bid] = stops.get(bid, 0) + 1
     check("two stops per batch (briefs, then drafts with SEM picks)", stops and all(v == 2 for v in stops.values()), stops)
     check("SEM picks are applied by a run, not a third stop", any("apply-sem" in l for l in log))
+    i_plan = next((i for i, l in enumerate(log) if "/build wt-full plan" in l), 99)
+    i_blk = next((i for i, l in enumerate(log) if "blockers_cleared" in l), -1)
+    check("the site plan runs without waiting for the blockers decision", i_plan < i_blk, (i_plan, i_blk))
     check("implement, verify and write-back are one run per batch", sum(" ship " in l for l in log) == len(stops), log)
     rec = SB / "clients" / "wt-full"
     check("records generated: Handoff Log, decisions, checklist, approval record",

@@ -74,7 +74,8 @@
       "label": "Schema built and QA cleared \u2014 release",
       "plain": "release (schema built, QA cleared)",
       "requires": [
-        "link_wheel_approved"
+        "link_wheel_approved",
+        "blockers_cleared"
       ],
       "artifact": "release_qa",
       "producer": "/finish {slug} qa",

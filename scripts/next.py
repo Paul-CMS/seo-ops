@@ -117,8 +117,11 @@ def main():
     gate_step(st, slug, "brand_guide_approved")
     gate_step(st, slug, "discovery_signed_off")
 
-    # ---- Build
-    gate_step(st, slug, "blockers_cleared")
+    # ---- Build. The technical blocker checklist and the site plan both need only the discovery
+    # sign-off and run side by side: the checklist goes to Jonie as handoffs while the plan and
+    # batches proceed; Paul confirms "blockers cleared" before release (release_approved requires it).
+    if "blocker_checklist" not in (st.get("marks") or {}) and not S._decided(st, "blockers_cleared"):
+        out("run", f"/build {slug} blockers", "technical blocker checklist (Jonie fixes these while the site plan goes ahead)")
     bp = st.get("build")
     if not bp:
         out("run", f"/build {slug} plan", "site plan for every service and location page, in one pass")
@@ -156,6 +159,7 @@ def main():
 
     # ---- Finish and blog
     gate_step(st, slug, "link_wheel_approved")
+    gate_step(st, slug, "blockers_cleared")
     gate_step(st, slug, "release_approved")
     gate_step(st, slug, "blog_map_approved")
     blog_posts(st, slug)
