@@ -64,6 +64,7 @@ def main():
         return
 
     R.open_run(a.slug, a.run)
+    dfs.run_guard(a.slug, each * len(run_qs), a.confirmed, f"People Also Ask ({len(run_qs)} queries)")
     d = client_dir(a.slug) / "data" / "paa"
     (d / "raw").mkdir(parents=True, exist_ok=True)
     seen, qlog = {}, []

@@ -9,12 +9,12 @@ Follow CLAUDE.md §4. Look up each change's kind in `scripts/gates.json` → `ch
 
 | Scope | Gates for run.py start | What it covers |
 |---|---|---|
-| safe | impl_safe | broken links, alt text, image URLs, sitemap, robots.txt, meta description duplicates, speed |
-| structural | impl_structural | redirects, slugs/URL changes, consolidations, SEO titles, H1s |
+| safe | safe_fixes_allowed | broken links, alt text, image URLs, sitemap, robots.txt, meta description duplicates, speed |
+| structural | structural_changes_allowed | redirects, slugs/URL changes, consolidations, SEO titles, H1s |
 | batch <id> | batch:<id>:drafts | every page in that batch (approved drafts) — then `status.py batch <slug> <id> --state implemented` |
 | page <id> | page:<id> | one page (blog posts, single fixes) |
-| wheel | block2 | link tables |
-| schema | block3 | schema |
+| wheel | pages_built | link tables |
+| schema | link_wheel_approved | schema |
 
 1. `python3 scripts/run.py start <slug> implement --gates <gates>` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse and
    say which gate is missing; exit 3 → stop and ask Paul.
@@ -29,7 +29,9 @@ Follow CLAUDE.md §4. Look up each change's kind in `scripts/gates.json` → `ch
      WordPress draft, never published). Titles/meta/head field only once `wp_pilot_done` is true.
    - **VA handoff (handoff.py):** redirects (always), slugs (always, with their paired
      redirect), titles/meta until the pilot, robots, sitemap, speed, image URLs, broken links.
-     `python3 scripts/handoff.py create <slug> --run <RUN_ID> --kind <k> --to Jonie|Gwen --items <csv>`.
+     `python3 scripts/handoff.py create <slug> --run <RUN_ID> --kind <k> --items <csv>` — the owner is set by
+     the kind (WordPress/technical/redirect/title-meta → Jonie, everything else → Gwen); redirect rows get
+     301 and must be full URLs.
      Upload the handoff `.md` and `.csv` to the client's Drive folder (`02 - Build/` or
      `03 - Finish/`). Paul or the VA sends; the system does not message anyone.
 4. **--live** (publishing an existing live page): first ask Paul to confirm a fresh ManageWP
@@ -37,4 +39,4 @@ Follow CLAUDE.md §4. Look up each change's kind in `scripts/gates.json` → `ch
    confirmed by Paul"`. No confirmation → no live change.
 5. When a VA returns a worksheet: `handoff.py ingest <slug> --run <RUN_ID> --handoff <H-ID> --returned <csv>`,
    report invented refs and silent omissions, then `/verify`.
-6. Handoff Log section; `run.py finish <slug> <RUN_ID> --summary "<n> applied, <n> skipped, <n> handed off, <n> stopped" ...`.
+6. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> --summary "<n> applied, <n> skipped, <n> handed off, <n> stopped" ...`.

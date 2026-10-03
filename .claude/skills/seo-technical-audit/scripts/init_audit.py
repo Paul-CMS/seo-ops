@@ -127,12 +127,12 @@ def main():
         sys.exit(1)
     slug = sys.argv[1]
     base = sys.argv[2] if len(sys.argv) > 2 and not sys.argv[2].startswith("--") \
-        else "audits"
+        else "clients"
     date = datetime.date.today().isoformat()
     if "--date" in sys.argv:
         date = sys.argv[sys.argv.index("--date") + 1]
 
-    root = os.path.join(base, slug, date)
+    root = os.path.join(base, slug, "audit", date)   # one structure: clients/<slug>/audit/<date>/
     for sub in ("inventories", "questions", "deliverables"):
         os.makedirs(os.path.join(root, sub), exist_ok=True)
 

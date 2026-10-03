@@ -13,6 +13,6 @@ Arguments: $ARGUMENTS
    still unfinished, Paul must first say to abort it (`run.py abort <slug> <run> --reason "..."`).
 4. For each automatic item, newest first: `python3 scripts/wp.py restore <slug> --run <RUN_ID> --change N`.
    It checks the live value still equals what we set; if someone changed it since, it stops.
-5. Reverse handoffs: `handoff.py create <slug> --run <RUN_ID> --kind <k> --to Jonie --items <csv>`
+5. Reverse handoffs: `handoff.py create <slug> --run <RUN_ID> --kind <k> --items <csv>` (owner set by the kind)
    (e.g. remove the redirect, restore the old slug).
 6. `run.py finish <slug> <RUN_ID> --summary "rolled back n, reverse handoffs n, stopped n"`, then `/verify`.

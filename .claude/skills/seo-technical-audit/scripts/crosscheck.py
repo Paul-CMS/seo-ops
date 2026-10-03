@@ -194,11 +194,11 @@ def check_rendering(found, out):
     if not js:
         out.append(("LIMITATION", "Rendering",
                     "No JS rendering export present. Per the Agency Profile our "
-                    "standing crawl configuration is Screaming Frog free licence with "
-                    "no JavaScript rendering, so this is expected, not a gap. Any "
-                    "finding that would depend on what Google renders is marked "
-                    "Needs Evidence. Do not recommend re-crawling with rendering — "
-                    "the licence does not support it."))
+                    "standing crawler is the DataforSEO OnPage API in basic mode (no "
+                    "JavaScript rendering; free Screaming Frog is the fallback), so this "
+                    "is expected, not a gap. Any finding that would depend on what Google "
+                    "renders is marked Needs Evidence. Do not recommend re-crawling with "
+                    "rendering unless Paul asks (JavaScript mode costs 10x)."))
         return
     _, h, rows = js[0]
     wi = col(h, "js word count %")
@@ -214,8 +214,8 @@ def check_rendering(found, out):
         if rendered_empty / len(rows) > 0.9:
             out.append(("LIMITATION", "Rendering",
                         f"Rendered columns empty on {rendered_empty}/{len(rows)} rows. "
-                        f"This is our standing configuration (Screaming Frog free "
-                        f"licence, no JavaScript rendering), NOT evidence that content "
+                        f"This is our standing configuration (DataforSEO OnPage, basic "
+                        f"mode, no JavaScript rendering), NOT evidence that content "
                         f"disappears on render and NOT a defect to report.\n"
                         f"  Consequence: JS dependency is unknown. Any finding that "
                         f"would rest on what Google renders is marked Needs Evidence.\n"

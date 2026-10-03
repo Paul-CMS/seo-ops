@@ -34,11 +34,28 @@ def extras(st):
             + (' --practitioner "<name, licence>"' if c.get("practitioner_signoff") else ""))
 
 
+def condition_step(st, slug, cond):
+    """A condition is never approved: met → move on; else run its producer or wait."""
+    ok, why = S.condition_met(st, cond)
+    if ok:
+        return
+    spec = S.GATES["conditions"][cond]
+    if spec.get("wait_for"):
+        out("wait", spec["producer"].format(slug=slug),
+            f"waiting for {spec['wait_for']} — when it arrives, run this to record it")
+    if spec.get("producer"):
+        out("run", spec["producer"].format(slug=slug), why)
+    out("wait", f"/resume {slug}", why)
+
+
 def gate_step(st, slug, gate):
-    """Emit the next action for one decision gate, or return if it is met."""
+    """Emit the next action for one decision, or return if it is met."""
     if S.gate_met(st, gate)[0]:
         return
     spec = S.GATES["gates"][gate]
+    for r in S.requires(st, gate):
+        if r in S.GATES["conditions"]:
+            condition_step(st, slug, r)
     rec = st["gates"].get(gate) or {}
     marks = st.get("marks") or {}
     if rec.get("state") in S.GATES["met_decisions"]:
@@ -52,9 +69,6 @@ def gate_step(st, slug, gate):
     if spec["artifact"] in marks:
         out("decision", f"/approve {slug} {gate} --files {q(S.mark_files(st, spec['artifact']))}",
             f"{S.plain(gate)} is ready for your approval")
-    if spec.get("wait_for"):
-        out("wait", spec["producer"].format(slug=slug),
-            f"waiting for {spec['wait_for']} — when it arrives, run this to record it")
     prod = spec.get("producer_blog_only") if st["client"]["type"] == "blog-only" else None
     out("run", (prod or spec["producer"]).format(slug=slug), f"prepare {S.plain(gate)}")
 
@@ -81,29 +95,30 @@ def main():
             "/rollback it, or abort it")
     c = st["client"]
 
+    condition_step(st, slug, "client_setup")
     if c["type"] == "blog-only":
-        gate_step(st, slug, "b1_entity")
-        gate_step(st, slug, "bab_topics")
+        gate_step(st, slug, "entity_approved")
+        gate_step(st, slug, "blog_topics_approved")
         blog_posts(st, slug)
 
-    # ---- Block 1
-    gate_step(st, slug, "b1_entity")
-    gate_step(st, slug, "b1_proof_sheet_ready")
+    # ---- Discovery and audit
+    gate_step(st, slug, "entity_approved")
+    gate_step(st, slug, "proof_sheet_approved")
     # while the client has the sheet: crawl and data steps, then the audit
-    if not S.gate_met(st, "b1_audit")[0]:
+    if not S.gate_met(st, "audit_approved")[0]:
         if "S05" not in st["audit_steps"]:
             out("run", f"/crawl {slug}", "crawl the site while the client has the proof sheet")
         data = [r["id"] for r in steps.registry() if r["phase"] == "Client has sheet" and r["id"] != "S05"]
         if any(i not in st["audit_steps"] for i in data):
             out("run", f"/discovery {slug} data",
                 "reviews, rankings, People Also Ask, backlinks, citations, grid, GSC — while the client has the sheet")
-        gate_step(st, slug, "b1_audit")
-    gate_step(st, slug, "b1_proof_sheet_returned")
-    gate_step(st, slug, "b1_brand_guide")
-    gate_step(st, slug, "block1")
+        gate_step(st, slug, "audit_approved")
+    condition_step(st, slug, "proof_sheet_returned")
+    gate_step(st, slug, "brand_guide_approved")
+    gate_step(st, slug, "discovery_signed_off")
 
     # ---- Build
-    gate_step(st, slug, "b2_blockers")
+    gate_step(st, slug, "blockers_cleared")
     bp = st.get("build")
     if not bp:
         out("run", f"/build {slug} plan", "site plan for every service and location page, in one pass")
@@ -138,12 +153,12 @@ def main():
             out("run", f"/verify {slug}", f"verify batch {bid}")
         if state == "verified":
             out("run", f"/build {slug} writeback {bid}", f"Brand Guide write-back for batch {bid}")
-    gate_step(st, slug, "block2")
+    condition_step(st, slug, "pages_built")
 
     # ---- Finish and blog
-    gate_step(st, slug, "block3")
-    gate_step(st, slug, "block5")
-    gate_step(st, slug, "block4")
+    gate_step(st, slug, "link_wheel_approved")
+    gate_step(st, slug, "release_approved")
+    gate_step(st, slug, "blog_map_approved")
     blog_posts(st, slug)
 
 

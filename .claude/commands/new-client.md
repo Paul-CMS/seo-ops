@@ -43,7 +43,9 @@ Follow CLAUDE.md. Plain language with Paul throughout.
    `{"source": "<Approval Record file>", "gates": {gate: {"state": "approved", "source": "<file + block>", "note": ...}},
      "pages": {page_id: {"type": "service|location|county|homepage|about|blog", "name": ..., "url": ..., "group": "<cluster or county>", "state": "live|draft_written|brief_written|planned"}},
      "pilot_done": true|false, "steps": {"S05": {"outcome": "done", "reason": "..."}}}`
-   mapping each **signed** Drive block to its gate (Block 1 signed → b1_* and block1;
+   mapping each **signed** Drive block to its gate (Block 1 signed → entity_approved, proof_sheet_approved, audit_approved,
+   brand_guide_approved, discovery_signed_off; the client's returned proof sheet is a condition and
+   is recorded as met from the same signed block;
    anything unsigned stays pending). Pages: every service/location/county/homepage/about page
    in the Decision Map with its state as the Drive files show. **Live pages become an approved
    baseline**; the rest are planned in batches; a site plan is generated from the pages; audit

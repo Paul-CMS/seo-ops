@@ -9,7 +9,8 @@ Read (no run needed):
 Write (need an open run, the right gate, and the current value to match what we expect):
     wp.py set-seo <slug> --run R --url U [--title T --expect-title OLD] [--desc D --expect-desc OLD]
     wp.py set-alt <slug> --run R --media-id N --alt T --expect-alt OLD
-    wp.py create-draft <slug> --run R --page-id P --title T --content-file F [--slug S] [--parent N]
+    wp.py create-draft <slug> --run R --page-id P --title T --content-file F [--slug-name S] [--parent N]
+                          [--post-type page|post]   (default: post for blog pages, page otherwise)
     wp.py update-content <slug> --run R --page-id P --url U --content-file F --expect-sha OLD
                           --live --backup-confirmed "ManageWP backup <time>, confirmed by Paul"
     wp.py set-head <slug> --run R --url U --file F --expect-sha OLD        (schema into Kadence head field)
@@ -31,6 +32,7 @@ import argparse
 import base64
 import hashlib
 import json
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -146,6 +148,7 @@ def main():
     s = sub.add_parser("create-draft"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s.add_argument("--page-id", required=True); s.add_argument("--title", required=True)
     s.add_argument("--content-file", required=True); s.add_argument("--slug-name"); s.add_argument("--parent", type=int)
+    s.add_argument("--post-type", choices=["page", "post"])
     s = sub.add_parser("update-content"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s.add_argument("--page-id", required=True); s.add_argument("--url", required=True)
     s.add_argument("--content-file", required=True); s.add_argument("--expect-sha", required=True)
@@ -224,17 +227,18 @@ def main():
 
         elif a.cmd == "create-draft":
             require(a.slug, a.run, "page_content", a.page_id)
+            ptype = a.post_type or ("post" if (S.load(a.slug)["pages"].get(a.page_id) or {}).get("type") == "blog" else "page")
             content = open(a.content_file, encoding="utf-8").read()
             body = {"title": a.title, "content": content, "status": "draft"}
             if a.slug_name:
                 body["slug"] = a.slug_name
-            if a.parent:
+            if a.parent and ptype == "page":
                 body["parent"] = a.parent
-            p = call(a.slug, "wp/v2/pages", "POST", body)
-            log(a.slug, a.run, "page_content", p.get("link", ""), "new draft page", "(none)",
-                f"draft id {p['id']} · content sha {sha(content)}", "APPLIED · draft only (not live)",
+            p = call(a.slug, f"wp/v2/{ptype}s", "POST", body)
+            log(a.slug, a.run, "page_content", p.get("link", ""), f"new draft {ptype}", "(none)",
+                f"draft id {p['id']} ({ptype}s) · content sha {sha(content)}", "APPLIED · draft only (not live)",
                 ref=a.page_id, new_file=a.content_file)
-            print(f"draft created: id {p['id']}")
+            print(f"draft {ptype} created: id {p['id']}")
 
         elif a.cmd == "update-content":
             require(a.slug, a.run, "page_content", a.page_id)
@@ -322,9 +326,15 @@ def main():
                 log(a.slug, a.run, ch["kind"], ch["url"], ch["field"], ch["new"], ch["old"],
                     f"ROLLED BACK change #{ch['n']}")
             elif ch["kind"] == "page_content":
-                kind, p = find(a.slug, ch["url"])
+                # A draft the system created: find it by its WordPress id (a draft's link is ?page_id=N,
+                # which is not a path — looking it up by URL would land on the homepage).
+                m = re.search(r"draft id (\d+) \((pages|posts)\)", ch["new"]) or re.search(r"draft id (\d+)()", ch["new"])
+                if not m:
+                    die(f"change #{a.change}: no WordPress id recorded; Paul decides how to roll it back.")
+                kind = m.group(2) or ("posts" if "post" in ch.get("field", "") else "pages")
+                p = call(a.slug, f"wp/v2/{kind}/{m.group(1)}?context=edit")
                 if p.get("status") != "draft":
-                    die("That draft has since been published; Paul decides how to roll it back.")
+                    die(f"That draft (id {m.group(1)}) has since been {p.get('status')}; Paul decides how to roll it back.")
                 call(a.slug, f"wp/v2/{kind}/{p['id']}", "DELETE")
                 log(a.slug, a.run, "page_content", ch["url"], "draft page", ch["new"], "(trashed)",
                     f"ROLLED BACK change #{ch['n']} · draft moved to WordPress trash (recoverable)")

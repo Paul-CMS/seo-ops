@@ -78,7 +78,7 @@ def classify(industry):
 def new_status(slug, name, domain, ctype, industry, route=None, folder=None, sensitive=None,
                category=None, practitioner=False):
     return {
-        "schema": 2,
+        "schema": 3,
         "client": {
             "slug": slug, "name": name, "domain": domain, "type": ctype,
             "industry": industry.lower(), "sensitive": sensitive,
@@ -133,46 +133,83 @@ def label(gate):
 
 
 def requires(st, gate):
-    spec = GATES["gates"][gate]
+    spec = GATES["gates"].get(gate) or GATES["conditions"].get(gate) or {}
     if st["client"]["type"] == "blog-only" and "requires_blog_only" in spec:
         return spec["requires_blog_only"]
-    return spec["requires"]
+    return spec.get("requires", [])
 
 
 # ------------------------------------------------------------------ conditions
 def condition_met(st, name):
+    """(ok, why) — checked from evidence, never approved."""
+    slug = st["client"]["slug"]
+    if name in (st.get("imported_conditions") or {}):
+        return True, ""
     if name == "client_setup":
-        log = path(st["client"]["slug"]).parent / "log.md"
+        log = path(slug).parent / "log.md"
         ok = log.exists() and re.search(r"^## RUN \S+-new-client\S* · FINISHED", log.read_text(), re.M)
         return bool(ok), ("" if ok else "the client has not been set up yet — run /new-client first")
+    if name == "proof_sheet_returned":
+        files = (st.get("marks") or {}).get("proof_sheet_returned", {}).get("files") or {}
+        ok = bool(files) and all((ROOT / f).exists() for f in files)
+        return ok, ("" if ok else "the client has not returned the proof sheet yet "
+                    f"(when it arrives: /discovery {slug} sheet-returned)")
+    if name == "audit_steps_complete":
+        import steps
+        left = steps.missing(st)
+        return not left, ("" if not left else "audit steps with no outcome yet: " + ", ".join(x["id"] for x in left))
+    if name == "pages_built":
+        bs = batches(st)
+        left = [b["id"] for b in bs if b.get("state") != "written_back"]
+        ok = bool(bs) and not left
+        return ok, ("" if ok else ("no site plan yet" if not bs else
+                                   "batches not yet built and written back: " + ", ".join(left)))
     return False, f"unknown condition {name}"
+
+
+def log_conditions(slug, st):
+    """Append a CONDITION line to log.md the first time each condition is met. Returns names logged."""
+    seen = st.setdefault("conditions_logged", {})
+    new = []
+    for c in GATES["conditions"]:
+        if c in seen:
+            continue
+        ok, _ = condition_met(st, c)
+        if ok:
+            seen[c] = now()
+            new.append(c)
+    if new:
+        with open(path(slug).parent / "log.md", "a", encoding="utf-8") as fh:
+            for c in new:
+                fh.write(f"\n## CONDITION · {seen[c]} · {label(c)} — met (system-verified)\n")
+        save(slug, st)
+    return new
 
 
 # ------------------------------------------------------------------ gate logic
 def _decided(st, gate):
+    if gate in GATES["conditions"]:
+        return condition_met(st, gate)[0]
     return (st["gates"].get(gate) or {}).get("state") in GATES["met_decisions"]
 
 
 def _own_ok(st, gate):
     rec = st["gates"].get(gate) or {}
     if rec.get("state") not in GATES["met_decisions"]:
-        return False, f"{plain(gate)} is not approved yet"
+        return False, f"{plain(gate)} — not approved yet"
     ok, why = files_ok(rec.get("files"))
-    return (True, "") if ok else (False, f"{plain(gate)} must be re-approved: {why}")
+    return (True, "") if ok else (False, f"{plain(gate)} must be re-approved ({why})")
 
 
 def gate_met(st, gate):
     """Return (ok, [reasons]). The gate's own files are checked; earlier gates only need their
     decision (an edit upstream is a flag, not a block)."""
-    if gate in GATES["conditions"]:
-        ok, why = condition_met(st, gate)
-        return ok, ([] if ok else [why])
     if gate in GATES["derived"]:
         reasons = []
         for r in GATES["derived"][gate]["requires"]:
             reasons += gate_met(st, r)[1]
         return not reasons, reasons
-    if gate not in GATES["gates"]:
+    if gate not in GATES["gates"] and gate not in GATES["conditions"]:
         return False, [f"unknown gate {gate}"]
     reasons = []
     seen = set()
@@ -183,9 +220,15 @@ def gate_met(st, gate):
                 continue
             seen.add(r)
             if not _decided(st, r):
-                reasons.append(f"{plain(r)} is not approved yet")
+                reasons.append(condition_met(st, r)[1] if r in GATES["conditions"]
+                               else f"{plain(r)} — not approved yet")
             walk(r)
     walk(gate)
+    if gate in GATES["conditions"]:
+        ok, why = condition_met(st, gate)
+        if not ok:
+            reasons.append(why)
+        return not reasons, reasons
     ok, why = _own_ok(st, gate)
     if not ok:
         reasons.append(why)
@@ -201,11 +244,11 @@ def upstream_changes(st, gate):
             if r in seen:
                 continue
             seen.add(r)
-            rec = st["gates"].get(r) or {}
+            rec = st["gates"].get(r) or {} if r in GATES["gates"] else {}
             if rec.get("state") in GATES["met_decisions"] and not files_ok(rec.get("files"))[0]:
                 out.append(r)
             walk(r)
-    if gate in GATES["gates"]:
+    if gate in GATES["gates"] or gate in GATES["conditions"]:
         walk(gate)
     return out
 
@@ -349,9 +392,9 @@ def render_build(st):
 # ------------------------------------------------------------------ rendering
 def visible_gates(st):
     for g in GATES["gates"]:
-        if st["client"]["type"] == "blog-only" and g not in ("b1_entity", "bab_topics", "block4"):
+        if st["client"]["type"] == "blog-only" and g not in ("entity_approved", "blog_topics_approved", "blog_map_approved"):
             continue
-        if st["client"]["type"] == "full" and g == "bab_topics":
+        if st["client"]["type"] == "full" and g == "blog_topics_approved":
             continue
         yield g
 
@@ -362,7 +405,14 @@ def render_show(st):
            + (f" · SENSITIVE ({c.get('sensitive_category')})" if c["sensitive"] else "")
            + (f" · Route {c['route']}" if c.get("route") else "")]
     out.append("")
-    out.append("Gates:")
+    out.append("Conditions (checked by the system):")
+    for g in GATES["conditions"]:
+        if st["client"]["type"] == "blog-only" and g != "client_setup":
+            continue
+        ok, why = condition_met(st, g)
+        out.append(f"  [{'MET ' if ok else '----'}] {g:24} {label(g)}" + ("" if ok else f" — {why}"))
+    out.append("")
+    out.append("Decisions (Paul, with /approve):")
     for g in visible_gates(st):
         rec = st["gates"].get(g, {})
         ok, why = gate_met(st, g)
@@ -508,6 +558,8 @@ def main():
             "and FINISHED after. Every change lists URL, old value, new value and result.\n"
             "Machine-readable mirror for /rollback: changes.jsonl.\n\n")
         (d / "changes.jsonl").write_text("")
+        import records
+        records.render(a.slug)
         print(f"created clients/{a.slug}/ (sensitive={sensitive}"
               + (f", category={cat}, practitioner sign-off={prac}" if sensitive else "") + ")")
         return
@@ -520,7 +572,7 @@ def main():
         for g in a.gates:
             ok, rs = check(st, g)
             if not ok:
-                reasons.append(f"{plain(g)}: " + "; ".join(rs))
+                reasons += [r for r in rs if r not in reasons]
         if reasons:
             print("Not yet — this needs:\n  - " + "\n  - ".join(reasons))
             print("\nOnly Paul can approve, with /approve.")

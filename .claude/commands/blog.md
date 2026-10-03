@@ -9,11 +9,11 @@ Follow CLAUDE.md. Check `client.type`.
 
 | Client | Step | Gates |
 |---|---|---|
-| full | map | block5 |
-| full | redirects, next, refresh | block4 |
+| full | map | release_approved |
+| full | redirects, next, refresh | blog_map_approved |
 | blog-only | intake | *(none)* |
-| blog-only | topics | b1_entity |
-| blog-only | next | bab_topics |
+| blog-only | topics | entity_approved |
+| blog-only | next | blog_topics_approved |
 
 Add `,page:<prev_id>` to the gates when starting the next post (the previous post must be approved).
 
@@ -21,8 +21,8 @@ Add `,page:<prev_id>` to the gates when starting the next post (the previous pos
    explain; exit 3 → stop and ask Paul.
 2. Use the **blog** subagent with slug, `<RUN_ID>` and the step. It must not share a context with
    commercial writing or auditing.
-3. Stop at every approval point and give Paul the `/approve` line (block4 for the map,
-   b1_entity and bab_topics for blog-only, page:<id> per post — sensitive clients with
+3. Stop at every approval point and give Paul the `/approve` line (blog_map_approved for the map,
+   entity_approved and blog_topics_approved for blog-only, page:<id> per post — sensitive clients with
    `--review`, medical/chiropractic with `--practitioner`).
-4. Handoff Log section; `run.py finish ...` (client view e.g. "Writing articles that answer
+4. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> ...` (client view e.g. "Writing articles that answer
    your customers' questions").

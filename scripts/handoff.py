@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 """handoff.py — VA handoffs: work the system prepares but a person carries out.
 
-    handoff.py create <slug> --run R --kind K --to Jonie|Gwen --items items.csv [--title T]
+    handoff.py create <slug> --run R --kind K --items items.csv [--title T] [--to NAME --owner-reason T]
     handoff.py ingest <slug> --run R --handoff H-ID --returned returned.csv
     handoff.py list   <slug> [--open]
 
-items.csv columns: url, field, old, new, reason, decision_map_ref
-  - kind redirect: url = from URL, new = to URL, field = 301. Every row needs a
-    decision_map_ref (its URL Decision Map entry) and a reason.
-  - kind slug: a slug change ALWAYS produces its paired 301 redirect rows automatically.
+items.csv columns: url, field, old, new, reason, decision_map_ref   (slug rows may add new_url)
+  - Owner is set by the kind (gates.json change_kinds → owner): WordPress, technical, redirect and
+    title/meta work → Jonie; citations, GBP, content review and everything else → Gwen. A
+    different --to needs --owner-reason.
+  - kind redirect: url = from URL, new = to URL; field is filled with 301. Both must be full URLs
+    (https://...). A path starting with "/" is expanded on the client's domain; a bare slug is
+    refused. Every row needs a decision_map_ref (its URL Decision Map entry) and a reason.
+  - kind slug: a slug change ALWAYS produces its paired 301 redirect row automatically, from the
+    old full URL to the new full URL (new_url, or the old URL with its last segment replaced).
 
 Each handoff becomes clients/<slug>/handoffs/<id>.md (instructions) + <id>.csv (the
 worksheet the VA returns: status done | blocked | deviated, note). Every item is logged
@@ -17,6 +22,7 @@ in the safety log. /verify checks each item after the VA marks it done.
 import argparse
 import csv
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -45,11 +51,22 @@ def write_csv(p, rows):
         w.writeheader(); w.writerows(rows)
 
 
+def full_url(v, domain, row, col):
+    v = (v or "").strip()
+    if re.match(r"^https?://", v):
+        return v
+    if v.startswith("/"):
+        return f"https://{domain}{v}"
+    die(f"row {row}: {col} '{v}' is not a full URL. Redirects always use full URLs "
+        "(https://... or a path starting with /), never a bare slug.")
+
+
 def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("create"); s.add_argument("slug"); s.add_argument("--run", required=True)
-    s.add_argument("--kind", required=True, choices=sorted(KINDS)); s.add_argument("--to", required=True)
+    s.add_argument("--kind", required=True, choices=sorted(KINDS)); s.add_argument("--to")
+    s.add_argument("--owner-reason")
     s.add_argument("--items", required=True); s.add_argument("--title")
     s = sub.add_parser("ingest"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s.add_argument("--handoff", required=True); s.add_argument("--returned", required=True)
@@ -70,6 +87,15 @@ def main():
     st = S.load(a.slug)
 
     if a.cmd == "create":
+        owner = KINDS[a.kind].get("owner", "Gwen")
+        team = set((S.config().get("team") or {}).values()) - {"Paul"}
+        if a.to and a.to not in team:
+            die(f"--to must be one of: {', '.join(sorted(team))}")
+        if a.to and a.to != owner and not a.owner_reason:
+            die(f"{a.kind} work goes to {owner} (WordPress/technical/redirect/title-meta → Jonie, everything "
+                f"else → Gwen). To send it to {a.to} instead, add --owner-reason.")
+        a.to = a.to or owner
+        domain = re.sub(r"^https?://|/$", "", st["client"]["domain"])
         gate = KINDS[a.kind]["gate"]
         if gate != "page_approval":
             ok, rs = S.gate_met(st, gate)
@@ -84,11 +110,18 @@ def main():
         for i, it in enumerate(items, 1):
             if a.kind in ("redirect", "slug", "consolidation") and not (it.get("reason") and it.get("decision_map_ref")):
                 die(f"row {i}: {a.kind} needs a reason and its URL Decision Map reference")
-            rows.append({"ref": f"{hid}-{i:02d}", **{k: it.get(k, "") for k in COLS[1:7]},
-                         "status": "issued", "note": ""})
+            row = {"ref": f"{hid}-{i:02d}", **{k: it.get(k, "") for k in COLS[1:7]}, "status": "issued", "note": ""}
+            if a.kind == "redirect":
+                row["url"] = full_url(row["url"], domain, i, "from URL")
+                row["new"] = full_url(row["new"], domain, i, "to URL")
+                row["field"] = "301"
+                row["old"] = row["old"] or row["url"]
+            rows.append(row)
             if a.kind == "slug":
-                rows.append({"ref": f"{hid}-{i:02d}R", "url": it["url"], "field": "301",
-                             "old": it["url"], "new": it["new_url"] if it.get("new_url") else it["new"],
+                old_url = full_url(it["url"], domain, i, "URL")
+                new_url = it.get("new_url") or re.sub(r"[^/]+/?$", it["new"].strip("/") + "/", old_url)
+                rows.append({"ref": f"{hid}-{i:02d}R", "url": old_url, "field": "301",
+                             "old": old_url, "new": full_url(new_url, domain, i, "new URL"),
                              "reason": f"paired redirect for slug change {hid}-{i:02d}",
                              "decision_map_ref": it.get("decision_map_ref", ""), "status": "issued", "note": ""})
         write_csv(d / f"{hid}.csv", rows)

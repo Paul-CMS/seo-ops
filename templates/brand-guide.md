@@ -12,7 +12,7 @@ publication.
 
 ---
 
-## Section A — Entity foundation  *(Paul approves: gate b1_entity)*
+## Section A — Entity foundation  *(Paul approves: gate entity_approved)*
 
 | # | Field | Value | Status |
 |---|---|---|---|

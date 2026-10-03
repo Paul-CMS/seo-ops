@@ -5,16 +5,19 @@
     run.py note   <slug> <run_id> <text>
     run.py change <slug> <run_id> --kind K --url U --field F --old V --new V --result R
                   [--old-file P] [--new-file P] [--ref REF] [--channel wp|handoff|drive|local]
-    run.py finish <slug> <run_id> --summary T [--phase T] [--done T] [--waiting T] [--next T]
+    run.py decision <slug> <run_id> --text T [--ids F-001,F-004]   a decision for decisions.md
+    run.py finish <slug> <run_id> --summary T [--handoff FILE] [--phase T] [--done T] [--waiting T] [--next T]
     run.py abort  <slug> <run_id> --reason T        only when Paul says so
     run.py check  <slug>                            exit 3 if an unfinished run exists
 
 Exit codes: 3 unfinished run found (stop and ask Paul) · 4 gate not met.
-log.md and changes.jsonl are append-only; nothing here ever rewrites them.
+log.md and changes.jsonl are append-only; nothing here ever rewrites them. finish and abort
+regenerate the readable records (records.py) and make the run's one git commit.
 """
 import argparse
 import json
 import re
+import secrets
 import shutil
 import sys
 from pathlib import Path
@@ -86,6 +89,8 @@ def main():
     s = sub.add_parser("start"); s.add_argument("slug"); s.add_argument("command")
     s.add_argument("--gates", default=""); s.add_argument("--note")
     s = sub.add_parser("note"); s.add_argument("slug"); s.add_argument("run_id"); s.add_argument("text")
+    s = sub.add_parser("decision"); s.add_argument("slug"); s.add_argument("run_id")
+    s.add_argument("--text", required=True); s.add_argument("--ids")
     s = sub.add_parser("change"); s.add_argument("slug"); s.add_argument("run_id")
     for k in ("kind", "url", "field", "result"):
         s.add_argument(f"--{k}", required=True)
@@ -96,6 +101,7 @@ def main():
     s.add_argument("--summary", required=True); s.add_argument("--phase")
     s.add_argument("--done", action="append"); s.add_argument("--waiting", action="append")
     s.add_argument("--clear-waiting", action="store_true"); s.add_argument("--next")
+    s.add_argument("--handoff", help="Markdown file with this run's Handoff Log section (templates/handoff-log.md)")
     s = sub.add_parser("abort"); s.add_argument("slug"); s.add_argument("run_id")
     s.add_argument("--reason", required=True)
     s = sub.add_parser("check"); s.add_argument("slug")
@@ -128,7 +134,8 @@ def main():
                 print(f"REFUSED — /{a.command} can't run for {a.slug} yet. It needs:\n  - " + "\n  - ".join(reasons))
                 print(f"\n`python3 scripts/next.py {a.slug}` shows what to do first. Only Paul approves, with /approve.")
                 sys.exit(4)
-        run_id = f"{now()[:19].replace('-', '').replace(':', '').replace('T', '-')}-{a.command}"
+        run_id = (f"{now()[:19].replace('-', '').replace(':', '').replace('T', '-')}-{a.command}"
+                  f"-{secrets.token_hex(2)}")
         append(d / "log.md", f"\n## RUN {run_id} · STARTED · /{a.command} · {now()}\n"
                + (f"Gates checked: {', '.join(gates)}\n" if gates else "")
                + (f"Note: {a.note}\n" if a.note else ""))
@@ -136,6 +143,11 @@ def main():
     elif a.cmd == "note":
         open_run(a.slug, a.run_id)
         append(d / "log.md", f"- NOTE {now()[11:19]} {redact(a.text)}\n")
+    elif a.cmd == "decision":
+        open_run(a.slug, a.run_id)
+        append(d / "log.md", f"- DECISION {now()[:16]} · run {a.run_id} · {redact(a.text)}"
+               + (f" · affects {a.ids}" if a.ids else "") + "\n")
+        print("decision logged")
     elif a.cmd == "change":
         n = log_change(a.slug, a.run_id, a.kind, a.url, a.field, a.old, a.new, a.result,
                        a.ref, a.channel, a.old_file, a.new_file)
@@ -143,10 +155,13 @@ def main():
     elif a.cmd == "finish":
         open_run(a.slug, a.run_id)
         ch = changes(a.slug, a.run_id)
+        cmd = re.sub(r"-[0-9a-f]{4}$", "", a.run_id.split("-", 2)[-1])
+        if a.handoff:
+            body = Path(a.handoff).read_text(encoding="utf-8").strip()
+            append(d / "log.md", f"### HANDOFF · /{cmd} · {now()[:10]} · run {a.run_id}\n{redact(body)}\n### END HANDOFF\n")
         append(d / "log.md", f"## RUN {a.run_id} · FINISHED · {now()}\n"
                f"Changes: {len(ch)} · Summary: {redact(a.summary)}\n")
         st = S.load(a.slug)
-        cmd = a.run_id.split("-", 2)[-1]
         st["last_run"] = {"run_id": a.run_id, "command": cmd, "finished": now(),
                           "result": a.summary, "changes": len(ch)}
         cv = st["client_view"]
@@ -156,10 +171,17 @@ def main():
         if a.waiting: cv["waiting_on_client"] += [x for x in a.waiting if x not in cv["waiting_on_client"]]
         if a.next: cv["next"] = a.next
         S.save(a.slug, st)
+        S.log_conditions(a.slug, st)
+        import records
+        records.render(a.slug)
+        if not a.handoff:
+            print("note: no --handoff section given — the Handoff Log has nothing from this run")
         print(git_commit(f"{a.slug}: /{cmd} finished ({len(ch)} changes)\n\n{a.summary}"))
     elif a.cmd == "abort":
         open_run(a.slug, a.run_id)
         append(d / "log.md", f"## RUN {a.run_id} · ABORTED · {now()}\nReason (Paul): {redact(a.reason)}\n")
+        import records
+        records.render(a.slug)
         print(git_commit(f"{a.slug}: run {a.run_id} aborted"))
 
 

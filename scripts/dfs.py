@@ -7,7 +7,9 @@
     dfs.py free <endpoint> [--payload file.json] [--get]      result endpoints that cost nothing
     dfs.py ledger <slug>
 
-Before any paid call: the estimate is compared with the live balance. If the estimate is
+Costs are checked per RUN, not just per call: scripts that make several calls (paa.py,
+rankings.py) call run_guard() with the whole run's estimate before the first call, and every
+paid call also counts what this run has already spent. Before any paid call: the estimate is compared with the live balance. If the estimate is
 more than the remaining balance -> exit 6 (stop and tell Paul, do not start). If it is over
 the confirmation threshold (config.json, $2) and --confirmed is absent -> exit 5 (ask Paul
 first). Every paid call is logged with estimate and actual cost to
@@ -103,9 +105,41 @@ def estimate(endpoint, tasks=1, items=0, pages=0, mode="basic", depth=None):
     return round(tasks * p.get("per_task", 0) + items * p.get("per_item", 0), 4)
 
 
-def spend_guard(est, confirmed, endpoint=None):
-    """Exit 6 if the estimate exceeds the balance; 5 if Paul must confirm first
-    (over the threshold, or the endpoint's price is not confirmed in dfs_prices.json)."""
+def current_run(slug):
+    import run as R
+    left = R.unfinished(slug)
+    return left[-1] if left else None
+
+
+def run_spent(slug, run_id):
+    p = client_dir(slug) / "dfs-costs.jsonl"
+    if not run_id or not p.exists():
+        return 0.0
+    return sum(float(json.loads(l).get("actual_usd") or 0) for l in p.read_text().splitlines()
+               if l.strip() and json.loads(l).get("run_id") == run_id)
+
+
+def run_guard(slug, total_est, confirmed, what="this run"):
+    """Whole-run check before the first call: the total estimate plus what this run already spent
+    against the balance (exit 6) and the $2 threshold (exit 5 unless Paul confirmed the total)."""
+    rid = current_run(slug)
+    spent = run_spent(slug, rid)
+    bal = balance()
+    thr = float(config()["dfs_confirm_threshold_usd"])
+    if total_est + spent > bal:
+        print(f"STOP — {what} would cost about ${total_est:.4f} (plus ${spent:.4f} already spent in this run); "
+              f"the DataforSEO balance is ${bal:.2f}. Not starting. Tell Paul (he tops up the balance).")
+        sys.exit(6)
+    if not confirmed and total_est + spent > thr:
+        print(f"CONFIRM — {what} is estimated at ${total_est:.4f} (run total ${total_est + spent:.4f}, over the "
+              f"${thr:.2f} threshold). Balance ${bal:.2f}. Ask Paul, then re-run with --confirmed.")
+        sys.exit(5)
+    return bal
+
+
+def spend_guard(est, confirmed, endpoint=None, slug=None):
+    """Exit 6 if the estimate (plus this run's spend so far) exceeds the balance; 5 if Paul must
+    confirm first (run total over the threshold, or the endpoint's price is not confirmed)."""
     bal = balance()
     thr = float(config()["dfs_confirm_threshold_usd"])
     _, price_ok = price(endpoint) if endpoint else ({}, True)
@@ -113,12 +147,14 @@ def spend_guard(est, confirmed, endpoint=None):
         print(f"CONFIRM — no price on file for {endpoint}. Ask Paul, then re-run with --confirmed "
               "and --estimate <USD>.")
         sys.exit(5)
+    spent = run_spent(slug, current_run(slug)) if slug else 0.0
     if est > bal:
         print(f"STOP — estimated ${est:.4f} is more than the remaining DataforSEO balance "
               f"${bal:.2f}. Not starting. Tell Paul (he tops up the balance).")
         sys.exit(6)
-    if not confirmed and (est > thr or not price_ok):
-        why = f"over the ${thr:.2f} threshold" if est > thr else "this endpoint's price is not confirmed yet"
+    if not confirmed and (est + spent > thr or not price_ok):
+        why = (f"run total ${est + spent:.4f} is over the ${thr:.2f} threshold" if est + spent > thr
+               else "this endpoint's price is not confirmed yet")
         print(f"CONFIRM — estimated ${est:.4f} ({why}). Balance ${bal:.2f}. Ask Paul, then re-run with --confirmed.")
         sys.exit(5)
     return bal
@@ -126,8 +162,8 @@ def spend_guard(est, confirmed, endpoint=None):
 
 def log_cost(slug, endpoint, purpose, est, actual, extra=None):
     import status as S
-    rec = {"at": now(), "endpoint": endpoint, "purpose": purpose, "estimate_usd": est,
-           "actual_usd": actual, **(extra or {})}
+    rec = {"at": now(), "run_id": current_run(slug), "endpoint": endpoint, "purpose": purpose,
+           "estimate_usd": est, "actual_usd": actual, **(extra or {})}
     append(client_dir(slug) / "dfs-costs.jsonl", json.dumps(rec) + "\n")
     st = S.load(slug)
     st["spend"]["dataforseo_usd"] = round(st["spend"].get("dataforseo_usd", 0) + float(actual or 0), 6)
@@ -135,7 +171,7 @@ def log_cost(slug, endpoint, purpose, est, actual, extra=None):
 
 
 def paid_post(slug, endpoint, payload, purpose, est, confirmed=False, extra=None):
-    spend_guard(est, confirmed, endpoint)
+    spend_guard(est, confirmed, endpoint, slug)
     resp = request(endpoint, payload)
     actual = resp.get("cost")
     log_cost(slug, endpoint, purpose, est, actual, extra)

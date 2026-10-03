@@ -30,7 +30,7 @@ Never in the same context as commercial writing or auditing. Rules are cited by 
    Without it, say so and stop; do not write a competent generic article.
 4. For full clients: confirmation the post passed the gap test (CM-007) — otherwise it should
    be redirected, not written. For blog-only clients: confirmation the topic is on the
-   approved topic list (gate `bab_topics`).
+   approved topic list (gate `blog_topics_approved`).
 
 ## C — Rules
 

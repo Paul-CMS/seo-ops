@@ -1,91 +1,76 @@
 {
-  "_about": "Every gate a command can require. Decisions are set only by scripts/approve.py (through Paul's /approve). 'met' means Approved or Approved with Conditions, and the files recorded with THAT approval are unchanged. An edit voids only the gate whose file changed; later gates are flagged 'upstream change' and stay open. Each decision gate names its artifact (the status.json mark that lists the files the approval covers) and its producer (the command that writes them). Conditions are checked by the scripts, never approved.",
+  "_about": "Every gate a command can require, named by what it means. DECISIONS ('gates') are Paul's, set only by scripts/approve.py through his /approve; 'met' means Approved or Approved with Conditions and the files recorded with THAT approval are unchanged (an edit voids only that decision; later ones are flagged 'upstream change'). CONDITIONS are facts the scripts check themselves and log in log.md the first time they are met; nobody approves them. Each decision names its artifact (the status.json mark listing the files the approval covers) and its producer (the command that writes them).",
   "gates": {
-    "b1_entity": {
-      "label": "Block 1.1 - Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)",
+    "entity_approved": {
+      "label": "Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)",
       "plain": "the entity foundation (category, area, variants)",
-      "requires": [],
+      "requires": ["client_setup"],
       "artifact": "entity_record",
       "producer": "/discovery {slug} discovery",
       "producer_blog_only": "/blog {slug} intake"
     },
-    "b1_proof_sheet_ready": {
-      "label": "Block 1.2 - Client proof sheet prepared from discovery and reviewed by Paul (ready for Paul to send)",
+    "proof_sheet_approved": {
+      "label": "Client proof sheet approved by Paul, ready for him to send",
       "plain": "the client proof sheet (ready for you to send)",
-      "requires": ["b1_entity"],
+      "requires": ["entity_approved"],
       "artifact": "proof_sheet",
       "producer": "/discovery {slug} proof-sheet"
     },
-    "b1_proof_sheet_returned": {
-      "label": "Block 1.3 - Client completed and returned the proof sheet",
-      "plain": "the client's returned proof sheet",
-      "requires": ["b1_proof_sheet_ready"],
-      "artifact": "proof_sheet_returned",
-      "producer": "/discovery {slug} sheet-returned",
-      "wait_for": "the client to return the proof sheet"
-    },
-    "b1_brand_guide": {
-      "label": "Block 1.4 - Brand Guide / business-truth record complete; proof sheet reconciled (verified facts separated from unsupported claims)",
-      "plain": "the reconciled Brand Guide",
-      "requires": ["b1_proof_sheet_returned"],
-      "artifact": "reconciled",
-      "producer": "/discovery {slug} reconcile"
-    },
-    "b1_audit": {
-      "label": "Block 1.5 - Audit deliverables complete and approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)",
+    "audit_approved": {
+      "label": "Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)",
       "plain": "the audit deliverables",
-      "requires": ["b1_entity"],
+      "requires": ["entity_approved", "audit_steps_complete"],
       "artifact": "audit_deliverables",
       "producer": "/discovery {slug} audit"
     },
-    "block1": {
-      "label": "Block 1 - Audit findings -> page work (Paul signs)",
-      "plain": "the Block 1 sign-off (discovery and audit complete, start Build)",
-      "requires": ["b1_entity", "b1_proof_sheet_ready", "b1_proof_sheet_returned", "b1_brand_guide", "b1_audit"],
-      "artifact": "block1_summary",
-      "producer": "/discovery {slug} block1"
+    "brand_guide_approved": {
+      "label": "Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)",
+      "plain": "the reconciled Brand Guide",
+      "requires": ["proof_sheet_returned"],
+      "artifact": "reconciled",
+      "producer": "/discovery {slug} reconcile"
     },
-    "b2_blockers": {
-      "label": "Build - Technical blocker checklist cleared and tracking stable",
+    "discovery_signed_off": {
+      "label": "Discovery and audit signed off — Build may start",
+      "plain": "the discovery sign-off (start Build)",
+      "requires": ["entity_approved", "proof_sheet_approved", "proof_sheet_returned", "brand_guide_approved", "audit_approved"],
+      "artifact": "discovery_summary",
+      "producer": "/discovery {slug} signoff"
+    },
+    "blockers_cleared": {
+      "label": "Technical blocker checklist cleared and tracking stable",
       "plain": "the technical blocker checklist (cleared)",
-      "requires": ["block1"],
+      "requires": ["discovery_signed_off"],
       "artifact": "blocker_checklist",
       "producer": "/build {slug} blockers"
     },
-    "block2": {
-      "label": "Block 2 - All pages live -> link wheel",
-      "plain": "all pages built and written back (start the link wheel)",
-      "requires": ["block1"],
-      "artifact": "build_summary",
-      "producer": "/build {slug} block2"
-    },
-    "block3": {
-      "label": "Block 3 - Link wheel verified -> schema",
+    "link_wheel_approved": {
+      "label": "Link wheel built and verified — schema may start",
       "plain": "the link wheel (built and verified)",
-      "requires": ["block2"],
+      "requires": ["pages_built"],
       "artifact": "link_wheel",
       "producer": "/finish {slug} wheel"
     },
-    "block5": {
-      "label": "Block 5 - QA cleared -> release",
+    "release_approved": {
+      "label": "Schema built and QA cleared — release",
       "plain": "release (schema built, QA cleared)",
-      "requires": ["block3"],
+      "requires": ["link_wheel_approved"],
       "artifact": "release_qa",
       "producer": "/finish {slug} qa",
       "before": {"mark": "schema_built", "producer": "/finish {slug} schema"}
     },
-    "block4": {
-      "label": "Block 4 - Blog Decision Map approved -> redirects and blog briefs",
+    "blog_map_approved": {
+      "label": "Blog Decision Map approved — redirects and blog briefs may start",
       "plain": "the Blog Decision Map",
-      "requires": ["block5"],
-      "requires_blog_only": ["b1_entity", "bab_topics"],
+      "requires": ["release_approved"],
+      "requires_blog_only": ["entity_approved", "blog_topics_approved"],
       "artifact": "blog_map",
       "producer": "/blog {slug} map"
     },
-    "bab_topics": {
-      "label": "Blog Authority Builder - topic list approved (checked against service and location page FAQs)",
+    "blog_topics_approved": {
+      "label": "Blog Authority Builder topic list approved (checked against service and location page FAQs)",
       "plain": "the blog topic list",
-      "requires": ["b1_entity"],
+      "requires": ["entity_approved"],
       "artifact": "topics",
       "producer": "/blog {slug} topics"
     }
@@ -93,37 +78,59 @@
   "conditions": {
     "client_setup": {
       "label": "Client set up (/new-client finished)",
-      "plain": "the client has been set up with /new-client"
+      "plain": "the client has been set up with /new-client",
+      "producer": "/new-client"
+    },
+    "proof_sheet_returned": {
+      "label": "The client returned the proof sheet (the returned sheet is recorded)",
+      "plain": "the client's returned proof sheet",
+      "requires": ["proof_sheet_approved"],
+      "producer": "/discovery {slug} sheet-returned",
+      "wait_for": "the client to return the proof sheet"
+    },
+    "audit_steps_complete": {
+      "label": "Every registered audit step has an outcome (Done / Skipped / Failed)",
+      "plain": "an outcome for every audit step",
+      "producer": "/discovery {slug} audit"
+    },
+    "pages_built": {
+      "label": "Every page in the site plan is built, verified and written back",
+      "plain": "every page built and written back",
+      "requires": ["discovery_signed_off"]
     }
   },
   "derived": {
-    "impl_safe": {
-      "label": "Implementation gate 1 - audit approved: client-independent fixes (broken links, alt text, image URLs, sitemap, robots.txt, meta description duplicates, speed)",
+    "safe_fixes_allowed": {
+      "label": "Safe fixes allowed (audit approved): broken links, alt text, image URLs, sitemap, robots.txt, meta description duplicates, speed",
       "plain": "the audit approval (safe fixes)",
-      "requires": ["b1_audit"]
+      "requires": ["audit_approved"]
     },
-    "impl_structural": {
-      "label": "Implementation gate 2 - proof sheet reconciled + entity approved: redirects, URL/slug changes, consolidations, SEO titles and H1s",
+    "structural_changes_allowed": {
+      "label": "Structural changes allowed (entity + Brand Guide approved): redirects, URL/slug changes, consolidations, SEO titles and H1s",
       "plain": "the entity foundation and the reconciled Brand Guide (structural changes)",
-      "requires": ["b1_entity", "b1_brand_guide"]
+      "requires": ["entity_approved", "brand_guide_approved"]
     }
   },
   "change_kinds": {
-    "alt_text":          {"gate": "impl_safe",       "channel": "wp_or_handoff"},
-    "image_url":         {"gate": "impl_safe",       "channel": "handoff"},
-    "broken_link":       {"gate": "impl_safe",       "channel": "handoff"},
-    "sitemap":           {"gate": "impl_safe",       "channel": "handoff"},
-    "robots_txt":        {"gate": "impl_safe",       "channel": "handoff"},
-    "speed":             {"gate": "impl_safe",       "channel": "handoff"},
-    "meta_description":  {"gate": "impl_safe",       "channel": "wp_after_pilot"},
-    "seo_title":         {"gate": "impl_structural", "channel": "wp_after_pilot"},
-    "h1":                {"gate": "impl_structural", "channel": "content"},
-    "slug":              {"gate": "impl_structural", "channel": "handoff", "always_with": "redirect"},
-    "redirect":          {"gate": "impl_structural", "channel": "handoff"},
-    "consolidation":     {"gate": "impl_structural", "channel": "handoff"},
-    "page_content":      {"gate": "page_approval",   "channel": "wp_draft"},
-    "link_table":        {"gate": "block2",          "channel": "wp_draft"},
-    "schema":            {"gate": "block3",          "channel": "wp_after_pilot"}
+    "alt_text":          {"gate": "safe_fixes_allowed",         "channel": "wp_or_handoff", "owner": "Jonie"},
+    "image_url":         {"gate": "safe_fixes_allowed",         "channel": "handoff",       "owner": "Jonie"},
+    "broken_link":       {"gate": "safe_fixes_allowed",         "channel": "handoff",       "owner": "Jonie"},
+    "sitemap":           {"gate": "safe_fixes_allowed",         "channel": "handoff",       "owner": "Jonie"},
+    "robots_txt":        {"gate": "safe_fixes_allowed",         "channel": "handoff",       "owner": "Jonie"},
+    "speed":             {"gate": "safe_fixes_allowed",         "channel": "handoff",       "owner": "Jonie"},
+    "meta_description":  {"gate": "safe_fixes_allowed",         "channel": "wp_after_pilot", "owner": "Jonie"},
+    "seo_title":         {"gate": "structural_changes_allowed", "channel": "wp_after_pilot", "owner": "Jonie"},
+    "h1":                {"gate": "structural_changes_allowed", "channel": "content",       "owner": "Jonie"},
+    "slug":              {"gate": "structural_changes_allowed", "channel": "handoff", "always_with": "redirect", "owner": "Jonie"},
+    "redirect":          {"gate": "structural_changes_allowed", "channel": "handoff",       "owner": "Jonie"},
+    "consolidation":     {"gate": "structural_changes_allowed", "channel": "handoff",       "owner": "Jonie"},
+    "page_content":      {"gate": "page_approval",              "channel": "wp_draft",      "owner": "Jonie"},
+    "link_table":        {"gate": "pages_built",                "channel": "wp_draft",      "owner": "Jonie"},
+    "schema":            {"gate": "link_wheel_approved",        "channel": "wp_after_pilot", "owner": "Jonie"},
+    "citation":          {"gate": "audit_approved",             "channel": "handoff",       "owner": "Gwen"},
+    "gbp":               {"gate": "brand_guide_approved",       "channel": "handoff",       "owner": "Gwen"},
+    "content_review":    {"gate": "audit_approved",             "channel": "handoff",       "owner": "Gwen"},
+    "other":             {"gate": "client_setup",               "channel": "handoff",       "owner": "Gwen"}
   },
   "decisions": ["approved", "approved_with_conditions", "revise", "deferred", "rejected", "blocked"],
   "met_decisions": ["approved", "approved_with_conditions"]

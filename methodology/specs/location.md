@@ -90,7 +90,7 @@
 ## 6. Links
 
 - Services table (H3 links to every service page) and sibling-cities table (every other location page): BB-205, BB-206. Never in prose, FAQ answers or local context (CM-005).
-- Leave rows as placeholders for Finish: `| [Stage 8: populate service links here] |`, `| [Stage 8: populate sibling-city links here] |` (WC-C8).
+- Leave rows as placeholders for Finish: `| [Link wheel: populate service links here] |`, `| [Link wheel: populate sibling-city links here] |` (WC-C8).
 - Outbound authority links (CM-011) and one proposed contextual link (CM-022) are exceptions only via Finish, with a stated reason, logged, Paul approves.
 
 ## 7. Sensitive-industry additions

@@ -47,6 +47,9 @@ PROTECTED = [
     (re.compile(r"(^|/)clients/[^/]+/status\.json$"), "status.json changes only through scripts/status.py, run.py and approve.py (/approve for gates)."),
     (re.compile(r"(^|/)clients/[^/]+/(log\.md|changes\.jsonl)$"), "the safety log is append-only; write to it only with scripts/run.py."),
     (re.compile(r"(^|/)clients/[^/]+/snapshots/"), "snapshots are the rollback record; scripts only."),
+    (re.compile(r"(^|/)clients/[^/]+/(handoff-log|decisions|document-checklist|approval-record)\.md$"),
+     "this record is generated from status.json and log.md (scripts/records.py). Change the source: "
+     "run.py finish --handoff, run.py decision, or /approve."),
     (re.compile(r"(^|/)\.claude/(state|hooks)/"), "approval state and hooks are off limits."),
     (re.compile(r"(^|/)\.claude/settings(\.local)?\.json$"), "hook settings are off limits."),
     (re.compile(r"(^|/)\.env$"), ".env holds credentials. Never read, print or edit it — scripts load it themselves."),
@@ -130,7 +133,7 @@ if tool == "Bash":
             block(ENV_WHY + " (searching hidden/ignored files needs -g '!.env')")
     if re.search(r"\.claude/(state|hooks)|approve-token", cmd):
         block("approval state and hooks are off limits.")
-    if re.search(r"status\.json|log\.md|changes\.jsonl|/snapshots/", cmd) and not via_script:
+    if re.search(r"status\.json|log\.md|changes\.jsonl|/snapshots/|decisions\.md|document-checklist\.md|approval-record\.md", cmd) and not via_script:
         readonly = re.match(r"^\s*(cat|head|tail|grep|wc|less|jq|ls|diff)\b", cmd) \
             and not re.search(r">|\btee\b|sed\s+-i|\brm\b|\bmv\b|\bcp\b|python", cmd)
         if not readonly:

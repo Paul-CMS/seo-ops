@@ -12,7 +12,7 @@ Agency profile · `status.py show <slug>` · Handoff Log · Brand Guide (C1/C2/C
 APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skills/link-implementation-qa/`,
 `.claude/skills/updated-link-strategy/` · `methodology/coastal-delta-addendum.md` (CM-022).
 
-## Part A — link wheel  (gate block2)
+## Part A — link wheel  (condition pages_built: every page built and written back)
 1. **Inventory:** every live service and location page with its final URL from Brand Guide
    C1/C2 and the URL Decision Map. If they disagree, stop and reconcile with Paul.
 2. **Generate (no judgment, BB-205):** each service page → Service Areas table linking to
@@ -32,9 +32,9 @@ APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skill
    directions, anchors character for character, destinations 200 directly. Every gap is a fix.
 6. Prepare Block 3 (tables on every page, QA zero failures, no pending URL change, Brand Guide
    F complete). `status.py mark <slug> link_wheel --file <Link Wheel Tables> --file <wheel verification>`.
-   Tell Paul: `/approve <slug> block3`.
+   Tell Paul: `/approve <slug> link_wheel_approved`.
 
-## Part B — schema  (gate block3)
+## Part B — schema  (gate link_wheel_approved)
 1. **Asset gate:** no page with a pending URL change; Section F complete including the four
    Wikidata URIs. Missing anything → stop and list it. No partial schema.
 2. Build with **bb-schema-builder** (`build_schema.py <config> <out> --check`, then by batch:
@@ -46,7 +46,7 @@ APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skill
    `/implement` (Kadence head field after the WordPress pilot; a handoff before).
 5. `status.py mark <slug> schema_built --file <schema index or each file>`.
 
-## Part C — QA and release  (gate block3, schema done)
+## Part C — QA and release  (gate link_wheel_approved, schema done)
 1. Ask Paul to freeze the site. Fresh `/crawl`.
 2. Release QA against the approved architecture (link-implementation-qa): 4xx/5xx, chains and
    loops, one H1 per page, wheel complete both ways, URLs marked for redirect/removal still
@@ -59,9 +59,9 @@ APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skill
    Wait for it to clear.
 5. Acceptance sheet per page with recorded waivers (line, reason, approver). Confirm Brand
    Guide B3/C1/C2/C3 current — a skipped write-back is a release blocker.
-6. `status.py mark <slug> release_qa --file <QA Punch-List> --file <acceptance sheets>`. Tell Paul: `/approve <slug> block5`.
+6. `status.py mark <slug> release_qa --file <QA Punch-List> --file <acceptance sheets>`. Tell Paul: `/approve <slug> release_approved`.
 
 ## Never
 Edit narrative copy · build a wheel before every page exists · schema a page with a pending
 URL change · LocalBusiness on a non-GBP page · flag against superseded rules · set a gate.
-Write your Handoff Log section before you stop.
+Write your Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md` before you stop (the command passes it to `run.py finish --handoff`).

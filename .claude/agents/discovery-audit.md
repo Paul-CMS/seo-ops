@@ -23,7 +23,7 @@ has no row in audit-steps.md** — say it must be registered first.
 Every approval names its files. When a step produces the thing Paul approves, record it:
 `python3 scripts/status.py mark <slug> <artifact> --file <path> [--file <path> ...]`
 (artifacts: `entity_record`, `proof_sheet`, `proof_sheet_returned`, `audit_deliverables`,
-`reconciled`, `block1_summary`). `/next` then shows Paul the exact `/approve` line.
+`reconciled`, `discovery_summary`). `/next` then shows Paul the exact `/approve` line.
 
 ## The line that matters most
 Discovery produces observations and questions — no severity, no priorities, no
@@ -44,18 +44,18 @@ recommendations. The audit produces findings.
 - Write the Discovery Record (`- REVIEW.md`) and Brand Guide A/B as proposals; upload; log.
 - Record S01–S03 with `steps.py record`, then `status.py mark <slug> entity_record --file <Discovery Record>`.
 - Present the entity foundation (category, area + derivation + "contains all N cities",
-  variants, reserved homepage variant). Paul: `/approve <slug> b1_entity --files ...`. **Stop.**
+  variants, reserved homepage variant). Paul: `/approve <slug> entity_approved --files ...`. **Stop.**
 
-**proof-sheet** (S04) — needs b1_entity. From `templates/proof-sheet.md` and
+**proof-sheet** (S04) — needs entity_approved. From `templates/proof-sheet.md` and
 `client-intake/references/field-schema.md`: Access, Block A confirm, Block B verify (quoted,
 never guessed), Block C needs, return-by date, default, phone offer. Save the `.md` and the
 `- CLIENT COPY` Google Doc. **Never contact the client.** Record S04; `status.py mark <slug> proof_sheet --file <sheet .md>`.
-Paul: `/approve <slug> b1_proof_sheet_ready`.
+Paul: `/approve <slug> proof_sheet_approved`.
 
 **sheet-returned** — when Paul says the client sent the sheet back: save it as
 `clients/<slug>/discovery/<Client> - Client Proof Sheet - RETURNED.md` (the client's answers as given,
-nothing changed) and `status.py mark <slug> proof_sheet_returned --file <it>`. Paul confirms with
-`/approve <slug> b1_proof_sheet_returned`.
+nothing changed) and `status.py mark <slug> proof_sheet_returned --file <it>`. That meets the
+**condition** `proof_sheet_returned` (the system checks the recorded file; nobody approves it).
 
 **data** (S06–S11, S19) — while the client has the sheet. Each paid script: `estimate` first, show
 Paul the cost, then `run ... --confirmed` only after his yes (over $2, or an unconfirmed price,
@@ -84,7 +84,7 @@ always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 
 Save everything once under `clients/<slug>/` with the evidence naming convention; record every
 step's outcome.
 
-**audit** (S12–S18) — needs b1_entity; the crawl (S05) and data steps must have outcomes.
+**audit** (S12–S18) — needs entity_approved; the crawl (S05) and data steps must have outcomes.
 Run the **seo-technical-audit** skill procedure, in this order:
 1. S12 ingest + cross-checks (`ingest_evidence.py clients/<slug>/inputs/crawl <audit dir>` and
    the other inputs; `crosscheck.py`). CONTRADICTED blocks the related finding.
@@ -107,19 +107,19 @@ Refuse your own output if a finding lacks an evidence locator, or the URL Decisi
 fewer rows than the site has pages. The command then runs the **audit-reviewer** (S17). S18:
 render the deliverables; the Evidence Manifest includes `steps.py manifest <slug>`.
 Then `status.py mark <slug> audit_deliverables --file <Finding Register> --file <URL Decision Map> --file <Recommendations> --file <Evidence Manifest>`.
-Paul: `/approve <slug> b1_audit`.
+Paul: `/approve <slug> audit_approved`.
 
-**reconcile** — needs b1_proof_sheet_returned. Parse whatever the client returned
+**reconcile** — needs proof_sheet_returned. Parse whatever the client returned
 (`client-intake/references/proof-sheet.md` §6): `Client Confirmed` + date, keep `was:` values,
 complete the Brand Guide (Unknown/Disputed stay so), D2 unsupported claims, the content-risk
-list. An entity-relevant correction means b1_entity must be re-approved — say so.
-`status.py mark <slug> reconciled --file clients/<slug>/brand-guide.md`. Paul: `/approve <slug> b1_brand_guide`.
+list. An entity-relevant correction means entity_approved must be re-approved — say so.
+`status.py mark <slug> reconciled --file clients/<slug>/brand-guide.md`. Paul: `/approve <slug> brand_guide_approved`.
 The owner named on the returned sheet goes in the Brand Guide author field (CM-039).
 
-**block1** — all five Block 1 gates met: the summary and client-confirmation list, saved as
-`<Client> - Block 1 Summary - REVIEW.md`; `status.py mark <slug> block1_summary --file <it>`. Paul:
-`/approve <slug> block1`. **You never start Build.**
+**signoff** — the four discovery decisions and the returned sheet are in: the summary and client-confirmation
+list, saved as `<Client> - Discovery Summary - REVIEW.md`; `status.py mark <slug> discovery_summary --file <it>`. Paul:
+`/approve <slug> discovery_signed_off`. **You never start Build.**
 
 ## Always
 File names per `methodology/naming-convention.md`; log every Drive upload; never invent a
-fact (CM-016); never set a gate; never contact the client. Write your Handoff Log section last.
+fact (CM-016); never set a gate; never contact the client. Write your Handoff Log section last, to `clients/<slug>/handoffs/run-<RUN_ID>.md` (passed to `run.py finish --handoff`).

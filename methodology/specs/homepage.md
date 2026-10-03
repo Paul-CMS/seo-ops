@@ -94,7 +94,7 @@
 ## 6. Links
 
 - Services: H3 anchor-text links in part 6 only (BB-201, BB-313 §6). Cities: the areas grid, part 13.
-- No cross-page links in prose or FAQ answers (CM-005, WC-C8). Leave link rows as placeholders for Finish: `| [Stage 8: populate service links here] |`.
+- No cross-page links in prose or FAQ answers (CM-005, WC-C8). Leave link rows as placeholders for Finish: `| [Link wheel: populate service links here] |`.
 - Outbound authority link or one contextual link: exception only, proposed with a reason, logged, Paul approves in Finish (CM-022).
 
 ## 7. Sensitive-industry additions

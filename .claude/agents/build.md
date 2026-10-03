@@ -19,7 +19,7 @@ spec and ask Paul to review it (he marks it APPROVED). Routes A and B both follo
 Every High finding blocking measurement or crawling, plus the batched Low technical items, as
 `<Client> - Technical Blocker Checklist - REVIEW.md` (one line per fix: finding ID, all
 affected URLs, change kind from `scripts/gates.json`). `status.py mark <slug> blocker_checklist --file <it>`.
-Implementation is `/implement`; Paul approves `b2_blockers` once it is cleared.
+Implementation is `/implement`; Paul approves `blockers_cleared` once it is cleared.
 
 ## Step: plan — the SITE PLAN, every service and location page in one pass
 For each page from the URL Decision Map (keep / improve / create): page id, type, final URL,
@@ -85,11 +85,11 @@ variant, content file, ship date), C1/C2, C3 (every H2 and FAQ question) for eve
 the batch; Drive copy too; `status.py batch <slug> <id> --state written_back`. Service batches
 must be written back before any location batch starts; all before homepage/about.
 
-## Step: block2
-Every batch written back and live. Summarize page counts in `<Client> - Build Summary - REVIEW.md`;
-`status.py mark <slug> build_summary --file <it>`. Paul approves `block2`.
+## When every batch is written back
+`pages_built` is a **condition** — the system meets it when every batch in the site plan is written
+back; nobody approves it, and Finish can start. Say so in your handoff.
 
 ## Never
 Populate a link table (CM-005) · write schema · change a URL (gate-2 VA handoff) · overrule a
 Keep in the URL Decision Map (CM-001) · invent a fact · spend without Paul · set a gate.
-Write your Handoff Log section before you stop.
+Write your Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md` before you stop (the command passes it to `run.py finish --handoff`).

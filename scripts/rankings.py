@@ -104,6 +104,7 @@ def main():
         return
 
     R.open_run(a.slug, a.run)
+    dfs.run_guard(a.slug, est_labs + (est_vol if kws else 0), a.confirmed, "the rankings pull")
     d = out_dir(a.slug)
     rows, offset = [], 0
     for i in range(pages):

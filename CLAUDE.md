@@ -1,8 +1,10 @@
 # seo-ops — the Coastal Marketing SOP
 
 This file **is** the SOP. Claude Code is the only tool: four subagents plus a reviewer,
-twelve commands (`/next` runs whatever comes next), one gate file per client, and an
-append-only safety log. The methodology (the rules) lives in `sop-source/` and `methodology/`;
+thirteen commands (`/next` runs whatever comes next), one status file per client, and an
+append-only safety log. status.json and log.md are the only records written; everything a
+person reads (Handoff Log, decisions summary, Document Checklist, Approval Record) is generated
+from them one-way by `scripts/records.py`. The methodology (the rules) lives in `sop-source/` and `methodology/`;
 this file is the procedure (who does what, in what order, behind which gate).
 
 **Paul decides. The system prepares, checks, logs and stops.**
@@ -14,8 +16,8 @@ this file is the procedure (who does what, in what order, behind which gate).
 1. Read `methodology/agency-profile.md`. Never re-ask anything it answers (crawler, JS
    rendering, tools, who decides what).
 2. `python3 scripts/status.py show <slug>` — where the client stands, which gates are met.
-3. Read the client's Handoff Log (`clients/<slug>/handoff-log.md`, mirrored to Drive) — the
-   last section says what the next step needs.
+3. Read the client's Handoff Log (`clients/<slug>/handoff-log.md`, generated, mirrored to Drive) —
+   the last section says what the next step needs.
 4. Rules come from `methodology/rulings.md` (cite IDs; never restate). `methodology/lessons.md` is
    an inbox of proposals — nothing in it is in force.
 
@@ -24,53 +26,67 @@ this file is the procedure (who does what, in what order, behind which gate).
 Every command that does work:
 
 1. **Start:** `python3 scripts/run.py start <slug> <command> --gates <g1,g2,...>`
-   - exit **4** → a gate is not met. **Refuse.** Tell Paul in plain language which gate and
-     what it unlocks. Never work around it.
+   - exit **4** → something it needs is missing. **Refuse.** Tell Paul in plain language what is
+     missing (the script's message says it) and what to do first. Never work around it.
    - exit **3** → an unfinished earlier run exists. **Stop and ask Paul**: resume it, verify
      it (`/verify`), roll it back (`/rollback`), or abort it (Paul's call only).
 2. **Act.** Log every change *as it happens*:
    `python3 scripts/run.py change <slug> <RUN_ID> --kind K --url U --field F --old V --new V --result R`
    (wp.py, handoff.py, verify.py and crawl.py log for you). A file written to Drive is a
    change too (`--kind drive_file --channel drive`, URL = the Drive link).
-3. **Hand off:** append this run's section to `clients/<slug>/handoff-log.md` (template in
-   `templates/handoff-log.md`) and mirror it to the Drive Handoff Log.
-4. **Finish:** `python3 scripts/run.py finish <slug> <RUN_ID> --summary "..." --phase "..." --next "..." [--done "..."] [--waiting "..."]`
-   This writes FINISHED, updates `client_view`, and **commits to git (and pushes)**.
+3. **Decisions and hand-off:** a decision during the run (Paul Exception, applied default, N/A,
+   deviation, Gate B outcome) → `run.py decision <slug> <RUN_ID> --text "..." [--ids F-001]`.
+   Write this run's Handoff Log section (template `templates/handoff-log.md`) to
+   `clients/<slug>/handoffs/run-<RUN_ID>.md` and pass it to finish. Never edit handoff-log.md,
+   decisions.md, document-checklist.md or approval-record.md — they are generated.
+4. **Finish:** `python3 scripts/run.py finish <slug> <RUN_ID> --summary "..." --handoff clients/<slug>/handoffs/run-<RUN_ID>.md --phase "..." --next "..." [--done "..."] [--waiting "..."]`
+   This writes FINISHED, logs any condition newly met, regenerates the records, updates
+   `client_view`, and makes the run's **one git commit (and push)**. Mirror the regenerated
+   Handoff Log and Approval Record to Drive.
 
 A run that stops early stays STARTED in the log on purpose — that is how the next command
 knows to stop and ask.
 
-## 3 · Gates — status.json, set only by Paul with /approve
+## 3 · Decisions and conditions
 
-`clients/<slug>/status.json` holds every gate. **Only `/approve`, typed by Paul, sets one**
-(a hook issues a one-time token only for a real `/approve` prompt; a guard hook blocks
-direct edits). **Every approval names the exact files it covers** — the producing step records
-them with `status.py mark <slug> <artifact> --file …`, and approve.py refuses an approval with no
-files. If one of those files changes, **only that gate** stops counting as met; later gates stay
-open and `/resume` flags them "upstream change — check whether it affects this". Paul decides.
-`/next` prints the exact `/approve` line (with its files) at every decision. Decisions: `approved` ·
-`approved_with_conditions` (each condition becomes a blocker in the next agent's sequence) ·
-`revise` · `deferred` · `rejected` · `blocked`.
+`scripts/gates.json` names every gate by what it means. Two kinds:
+
+- **Decisions** — Paul's, set **only by `/approve`** typed by Paul (a hook issues a one-time token
+  only for a real `/approve` prompt; a guard hook blocks direct edits). **Every approval names the
+  exact files it covers** — the producing step records them with `status.py mark <slug> <artifact>
+  --file …`; approve.py refuses an approval with no files. If one of those files changes, **only
+  that decision** stops counting; later ones stay open and `/resume` flags them "upstream change —
+  check whether it affects this". Paul decides. One `/approve` line may approve several decisions
+  at once (`/approve <slug> a b c`), each with the files its step recorded. Decision values:
+  `approved` · `approved_with_conditions` (each condition becomes a blocker in the next agent's
+  sequence) · `revise` · `deferred` · `rejected` · `blocked`.
+- **Conditions** — facts the scripts check from evidence, never approved, logged in log.md the
+  first time they are met: `client_setup` (/new-client finished), `proof_sheet_returned` (the
+  returned sheet is recorded), `audit_steps_complete` (every audit step has an outcome),
+  `pages_built` (every batch built and written back).
+
+`/next` passes every condition automatically when its evidence exists and stops at every
+decision, printing the exact `/approve` line with its files. Refusals are in plain language.
 
 ### Full client — the order
 
 | # | Step | Command | Needs | Ends at decision (Paul) |
 |---|---|---|---|---|
-| 1 | Intake, Drive folder, document checklist (S01) | `/new-client` | — | — |
-| 2 | Discovery + entity research (S02–S03), public sources | `/discovery` | — | **b1_entity** |
-| 3 | Proof sheet (S04), Markdown + client Google Doc | `/discovery proof-sheet` | b1_entity | **b1_proof_sheet_ready** — Paul sends it |
-| 4 | *While the client has the sheet:* crawl (S05), reviews → customer language, rankings + cannibalization, backlinks, citations, grid, GSC, People Also Ask (S06–S11, S19) | `/crawl`, `/discovery data` | crawl: client set up · data: b1_proof_sheet_ready | — |
-| 5 | Audit: entity → architecture → page conformance → technical, then fresh-context review (S12–S18) | `/discovery audit` | every step has an outcome | **b1_audit** → implementation gate 1 |
-| 6 | Client returns sheet → record it, reconcile into the Brand Guide | `/discovery sheet-returned`, `/discovery reconcile` | b1_proof_sheet_ready / b1_proof_sheet_returned | **b1_proof_sheet_returned**, **b1_brand_guide** → implementation gate 2 |
-| 7 | Block 1 (Agent 1 never starts Agent 2) | `/discovery block1` | 1.1–1.5 | **block1** |
-| 8 | Technical blockers (Low items as one handoff) | `/build blockers` + `/implement` | block1 | **b2_blockers** |
-| 9 | **Site plan** — every service and location page in one pass | `/build plan` | block1 | **site_plan** |
+| 1 | Intake, Drive folder, document checklist (S01) | `/new-client` | — | condition **client_setup** |
+| 2 | Discovery + entity research (S02–S03), public sources | `/discovery` | — | **entity_approved** |
+| 3 | Proof sheet (S04), Markdown + client Google Doc | `/discovery proof-sheet` | entity_approved | **proof_sheet_approved** — Paul sends it |
+| 4 | *While the client has the sheet:* crawl (S05), reviews → customer language, rankings + cannibalization, backlinks, citations, grid, GSC, People Also Ask (S06–S11, S19) | `/crawl`, `/discovery data` | crawl: client set up · data: proof_sheet_approved | — |
+| 5 | Audit: entity → architecture → page conformance → technical, then fresh-context review (S12–S18) | `/discovery audit` | condition **audit_steps_complete** | **audit_approved** → safe fixes |
+| 6 | Client returns sheet → record it, reconcile into the Brand Guide | `/discovery sheet-returned`, `/discovery reconcile` | proof_sheet_approved / condition **proof_sheet_returned** | **brand_guide_approved** → structural changes |
+| 7 | Discovery sign-off (Agent 1 never starts Agent 2) | `/discovery signoff` | all of the above | **discovery_signed_off** |
+| 8 | Technical blockers (Low items as one handoff) | `/build blockers` + `/implement` | discovery_signed_off | **blockers_cleared** |
+| 9 | **Site plan** — every service and location page in one pass | `/build plan` | discovery_signed_off | **site_plan** |
 | 10 | **Pilot** — 1 service + 1 location brief; corrections go into the specs | `/build batch pilot` | site_plan | **batch:pilot:briefs** |
 | 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); briefs → drafts + self-critique + **semantic review table** → apply approved SEM IDs → `/implement`, `/verify`, write-back | `/build batch <id>` [`drafts`\|`apply-sem`] … | pilot corrections applied | **batch:<id>:briefs**, **batch:<id>:sem** (SEM IDs), **batch:<id>:drafts** |
-| 12 | All pages live and written back | `/build block2` | every batch written back | **block2** |
-| 13 | Link wheel → verify | `/finish wheel` | block2 | **block3** |
-| 14 | Schema → QA crawl → punch-list → acceptance | `/finish schema`, `/finish qa` | block3 | **block5** (release) |
-| 15 | Blog Decision Map → redirects (handoff) → posts | `/blog` | block5 | **block4**, then **page:<id>** per post |
+| 12 | All pages built and written back | — | every batch written back | condition **pages_built** (no approval) |
+| 13 | Link wheel → verify | `/finish wheel` | pages_built | **link_wheel_approved** |
+| 14 | Schema → QA crawl → punch-list → acceptance | `/finish schema`, `/finish qa` | link_wheel_approved | **release_approved** (release) |
+| 15 | Blog Decision Map → redirects (handoff) → posts | `/blog` | release_approved | **blog_map_approved**, then **page:<id>** per post |
 
 Every step's data is saved once per client and reused (re-run if older than 60 days).
 An imported client (`/new-client --import`) gets its live pages as an approved baseline and a
@@ -79,8 +95,8 @@ generated site plan; `/next` resumes at its real stage.
 
 ### Blog-only client (Blog Authority Builder)
 
-Short intake → entity foundation (**b1_entity**) → topic list checked against the service and
-location page FAQs (**bab_topics**) → one optimized post at a time (**page:<id>** each). No
+Short intake → entity foundation (**entity_approved**) → topic list checked against the service and
+location page FAQs (**blog_topics_approved**) → one optimized post at a time (**page:<id>** each). No
 proof sheet, no site audit, no rebuild. Inputs: services list, city list, voice guidance,
 customer language.
 
@@ -88,10 +104,10 @@ customer language.
 
 | Gate | Unlocks | Channel |
 |---|---|---|
-| **Gate 1 · impl_safe** = b1_audit | Client-independent fixes: broken links, alt text, image URLs, sitemap, robots.txt, **meta description** duplicates, speed | Alt text via wp.py; the rest as VA handoffs |
-| **Gate 2 · impl_structural** = b1_entity + b1_brand_guide | Redirects, URL/slug changes, consolidations, **SEO titles and H1s** | Always VA handoffs (titles via wp.py only after the pilot) |
+| **safe_fixes_allowed** = audit_approved | Client-independent fixes: broken links, alt text, image URLs, sitemap, robots.txt, **meta description** duplicates, speed | Alt text via wp.py; the rest as VA handoffs |
+| **structural_changes_allowed** = entity_approved + brand_guide_approved | Redirects, URL/slug changes, consolidations, **SEO titles and H1s** | Always VA handoffs (titles via wp.py only after the pilot) |
 | **batch:<id>:drafts** | That batch's approved content (`page:<id>` for blog posts) | WordPress **draft** |
-| block2 / block3 | Link tables / schema | Draft / Kadence head field after the pilot |
+| pages_built / link_wheel_approved | Link tables / schema | Draft / Kadence head field after the pilot (must-use plugin `wordpress/mu-plugins/seo-ops-head-meta.php`, key set at the pilot) |
 
 Rules enforced in the scripts as well as here:
 
@@ -99,6 +115,9 @@ Rules enforced in the scripts as well as here:
   value is not what the audit recorded.**
 - **Drafts by default.** A published page changes only with `--live` *and* Paul's
   confirmation of a fresh ManageWP backup, recorded in the log.
+- **Handoffs go to the owner of the work** (gates.json `owner`): WordPress, technical, redirect and
+  title/meta work → Jonie; citations, GBP, content review and everything else → Gwen. Redirect rows
+  get `301` filled in and always use full URLs, never bare slugs.
 - **Redirects are never implemented by the system.** Every redirect is a VA handoff (from URL,
   to URL, 301, reason, URL Decision Map ref). A slug change is a URL change: it waits for gate
   2 and always comes with its redirect handoff. `/verify` checks each after the VA marks it done.
@@ -189,7 +208,9 @@ than re-logging an exception each time.
   is the proof sheet's client copy, named `- CLIENT COPY`.
 - Never rename or delete existing Drive files. Renames go on a rename list for Paul.
 - Never use the pre-Claude-Code instruction files (old agent and writer instructions in Drive
-  `Resources/`). They are not part of this system. Do not edit, move or mark them without Paul.
+  `Resources/` — Gem Instructions, Agent Instructions). They are not part of this system. They are
+  archived only through `/archive-old-instructions`: it lists them, **asks Paul file by file**, and
+  moves only the ones he says yes to into `Resources/_Archive/` (logged). Nothing else touches them.
 
 | Artifact | Drive location |
 |---|---|
@@ -203,7 +224,8 @@ than re-logging an exception each time.
 ## 9 · Money, credentials, contact
 
 - **DataforSEO:** every call through `scripts/dfs.py` / `scripts/crawl.py` (the connector is
-  blocked). Estimate first. Over **$2** → ask Paul and wait. More than the remaining balance →
+  blocked). Estimate the **whole run** first (multi-call scripts check the run total before the
+  first call; every call also counts what the run already spent). Over **$2** → ask Paul and wait. More than the remaining balance →
   **stop and tell Paul; do not start.** Every call's actual cost is logged.
 - **Credentials:** `.env` only, typed by Paul. Never read, print, paste or commit it. Scripts
   load it themselves.
@@ -219,8 +241,10 @@ clients/<slug>/
   log.md             safety log, append-only      (scripts only)
   changes.jsonl      machine copy for /rollback   (scripts only)
   snapshots/         old/new content for rollback (scripts only)
-  decisions.md       exceptions, defaults, N/As (append)
-  handoff-log.md     mirror of the Drive Handoff Log
+  decisions.md       decisions summary         (generated by records.py)
+  handoff-log.md     Handoff Log               (generated; mirrored to Drive)
+  document-checklist.md                        (generated)
+  approval-record.md Approval Record           (generated; mirrored to Drive)
   brand-guide.md     working copy of the Drive Brand Guide
   discovery/ audit/ build/ finish/ blog/ handoffs/
   inputs/            raw evidence and crawl (git-ignored)

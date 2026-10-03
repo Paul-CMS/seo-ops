@@ -26,7 +26,9 @@ TOKEN = ROOT / ".claude" / "state" / "approve-token.json"
 MAX_AGE = 20 * 60
 
 
-def take_token(slug, target):
+def take_token(slug, targets):
+    if isinstance(targets, str):
+        targets = [targets]
     tok = read_json(TOKEN)
     if not tok:
         die("REFUSED — no /approve from Paul in this session. Only Paul can approve, by typing "
@@ -36,11 +38,12 @@ def take_token(slug, target):
     if time.time() - tok.get("created", 0) > MAX_AGE:
         die("REFUSED — Paul's /approve is older than 20 minutes. Ask him to type it again.", 7)
     words = tok.get("prompt", "").lower().split()
-    if slug not in words or target.lower() not in words:
-        die(f"REFUSED — Paul's /approve did not name '{slug}' and '{target}'. "
+    missing = [t for t in targets if t.lower() not in words]
+    if slug not in words or missing:
+        die(f"REFUSED — Paul's /approve did not name '{slug}' and {', '.join(repr(t) for t in missing) or 'the client'}. "
             f"He typed: {tok.get('prompt', '')[:120]!r}", 7)
     tok["used"] = True
-    tok["used_for"] = f"{slug} {target}"
+    tok["used_for"] = f"{slug} {' '.join(targets)}"
     write_json(TOKEN, tok)
     return tok
 
@@ -69,6 +72,11 @@ def do_import(a, d, st):
             die(f"Unknown gate in proposal: {g}")
         st["gates"][g] = {**rec, "by": "Paul (import confirmed)", "at": now(),
                           "source": rec.get("source", src), "files": {}, "imported": True}
+    # A returned proof sheet is a condition; a signed Brand Guide / discovery block proves it.
+    if any(g in prop.get("gates", {}) for g in ("brand_guide_approved", "discovery_signed_off")):
+        st.setdefault("imported_conditions", {})["proof_sheet_returned"] = f"imported — {src}"
+    for c in prop.get("conditions") or []:
+        st.setdefault("imported_conditions", {})[c] = f"imported — {src}"
     live_states = {"live", "approved", "written_back", "verified", "implemented"}
     baseline, remaining = [], []
     for pid, p in prop.get("pages", {}).items():
@@ -125,7 +133,7 @@ def do_import(a, d, st):
                                                  if pilot_done else None)}
     # Audit steps done before seo-ops are recorded, so /next never sends the client back to /crawl.
     import steps
-    if st["gates"].get("b1_audit", {}).get("state") in S.GATES["met_decisions"]:
+    if st["gates"].get("audit_approved", {}).get("state") in S.GATES["met_decisions"]:
         for r in steps.registry():
             st["audit_steps"].setdefault(r["id"], {"outcome": "done", "reason": f"imported — done before seo-ops ({src})",
                                                    "outputs": [], "at": now(), "run": "import"})
@@ -137,35 +145,29 @@ def do_import(a, d, st):
            f"Gates set from {a.proposal}: {', '.join(prop.get('gates', {}))}\n"
            f"Baseline pages (already live): {len(baseline)} · remaining pages planned: {len(remaining)}\n"
            f"Site plan generated: {rel}\n")
+    S.log_conditions(a.slug, st)
+    import records
+    records.render(a.slug)
     print(git_commit(f"{a.slug}: import confirmed by Paul"))
     print(f"imported: {len(baseline)} live pages as baseline, {len(remaining)} pages planned in "
           f"{len(batches) - (1 if baseline else 0)} batch(es); site plan {rel}")
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("slug"); ap.add_argument("target")
-    ap.add_argument("--decision", choices=S.GATES["decisions"], default="approved")
-    ap.add_argument("--conditions"); ap.add_argument("--files"); ap.add_argument("--file")
-    ap.add_argument("--note"); ap.add_argument("--review"); ap.add_argument("--practitioner")
-    ap.add_argument("--proposal"); ap.add_argument("--ids")
-    a = ap.parse_args()
-    d = client_dir(a.slug)
-    st = S.load(a.slug)
+def prepare(a, st, target, multi):
+    """Check one target. Returns (apply_fn, log_text, label). Refuses (exit) on any problem,
+    before anything is written — a multi-target /approve applies all or nothing."""
     approved = a.decision in S.GATES["met_decisions"]
+    explicit = split(a.files or a.file) if not multi else []
 
-    if a.target == "import":
-        return do_import(a, d, st)
-
-    if a.target == "site_plan" or a.target.startswith("batch:"):
+    if target == "site_plan" or target.startswith("batch:"):
         bp = st.get("build") or die("No site plan registered yet (status.py plan ...).")
-        files = file_map(split(a.files or a.file))
-        if a.target == "site_plan":
+        files = file_map(explicit)
+        if target == "site_plan":
             if not files:
                 files = file_map([bp["site_plan"]["file"]])
             holder, key, label_ = bp["site_plan"], "approval", "site plan"
         else:
-            _, bid, stage = (a.target.split(":") + ["", ""])[:3]
+            _, bid, stage = (target.split(":") + ["", ""])[:3]
             if stage not in S.STAGES:
                 die("Use batch:<id>:briefs, batch:<id>:sem or batch:<id>:drafts")
             b = S.batch(st, bid) or die(f"No batch {bid}.")
@@ -174,38 +176,38 @@ def main():
             if approved:
                 ok, why = S.batch_ready(st, bid, stage)
                 if not ok:
-                    die("REFUSED — " + "; ".join(why))
+                    die(f"REFUSED ({target}) — " + "; ".join(why))
                 if not files:
-                    die(f"REFUSED — name the exact files approved (--files): for {stage}, "
+                    die(f"REFUSED ({target}) — name the exact files approved (--files): for {stage}, "
                         + ("the semantic review table." if stage == "sem" else "one per page in the batch."))
                 if stage == "sem" and not a.ids:
                     die("REFUSED — say which SEM IDs to apply (--ids SEM-1,SEM-4), or --ids none.")
                 if stage == "drafts":
                     if b.get("state") not in ("sem_applied", "implemented", "verified", "written_back"):
-                        die("REFUSED — the approved SEM changes have not been applied and re-checked yet "
-                            "(the batch must be at sem_applied).")
+                        die(f"REFUSED ({target}) — the approved SEM changes have not been applied and re-checked "
+                            "yet (the batch must be at sem_applied).")
                     if st["client"]["sensitive"] and not a.review:
                         die("REFUSED — sensitive client: record the human review with --review.")
                     if st["client"]["practitioner_signoff"] and not a.practitioner:
                         die("REFUSED — health content: record the licensed practitioner's sign-off with --practitioner.")
             holder, key, label_ = b, stage, f"batch {bid} {stage}"
-        take_token(a.slug, a.target)
-        holder[key] = {"state": a.decision, "by": "Paul", "at": now(), "note": a.note, "files": files,
-                       "conditions": [c.strip() for c in (a.conditions or "").split(";") if c.strip()],
-                       "sensitive_review": a.review, "practitioner": a.practitioner,
-                       **({"sem_ids": split(a.ids)} if a.ids else {})}
-        S.save(a.slug, st)
-        append(d / "log.md", f"\n## APPROVAL · {now()} · {label_} · {a.decision} · by Paul\n"
-               + "".join(f"Approved version: {f} (sha {h})\n" for f, h in files.items())
-               + (f"SEM IDs to apply: {a.ids}\n" if a.ids else "")
-               + (f"Human review: {a.review}\n" if a.review else "")
-               + (f"Practitioner sign-off: {a.practitioner}\n" if a.practitioner else "")
-               + (f"Note: {a.note}\n" if a.note else ""))
-        print(git_commit(f"{a.slug}: {label_} {a.decision} by Paul"))
-        return
+        rec = {"state": a.decision, "by": "Paul", "at": now(), "note": a.note, "files": files,
+               "conditions": [c.strip() for c in (a.conditions or "").split(";") if c.strip()],
+               "sensitive_review": a.review, "practitioner": a.practitioner,
+               **({"sem_ids": split(a.ids)} if a.ids and target.endswith(":sem") else {})}
 
-    if a.target.startswith("page:"):
-        pid = a.target[5:]
+        def apply():
+            holder[key] = rec
+        text = (f"\n## APPROVAL · {now()} · {label_} · {a.decision} · by Paul\n"
+                + "".join(f"Approved version: {f} (sha {h})\n" for f, h in files.items())
+                + (f"SEM IDs to apply: {a.ids}\n" if a.ids and target.endswith(":sem") else "")
+                + (f"Human review: {a.review}\n" if a.review else "")
+                + (f"Practitioner sign-off: {a.practitioner}\n" if a.practitioner else "")
+                + (f"Note: {a.note}\n" if a.note else ""))
+        return apply, text, label_
+
+    if target.startswith("page:"):
+        pid = target[5:]
         p = st["pages"].get(pid) or die(f"Page {pid} is not registered (status.py page ...).")
         if approved and st["client"]["sensitive"] and not a.review:
             die("REFUSED — sensitive client: record the human review with --review "
@@ -213,55 +215,84 @@ def main():
         if approved and st["client"]["practitioner_signoff"] and not a.practitioner:
             die("REFUSED — health content: the client's licensed practitioner must sign off on "
                 "health claims. Record who with --practitioner \"Name, licence\".")
-        f = a.file or p.get("file")
+        f = (explicit[0] if explicit else None) or p.get("file")
         if approved and not f:
-            die("REFUSED — name the draft file being approved (--file).")
+            die(f"REFUSED ({target}) — name the draft file being approved (--file).")
         if approved and not (ROOT / f).exists():
             die(f"File {f} not found.")
-        take_token(a.slug, a.target)
-        p["approval"] = {"state": a.decision, "by": "Paul", "at": now(), "note": a.note,
-                         "file": f, "sha": sha12(ROOT / f) if f and (ROOT / f).exists() else None,
-                         "sensitive_review": a.review, "practitioner": a.practitioner}
-        if approved:
-            p["state"] = "approved"
-        S.save(a.slug, st)
-        append(d / "log.md", f"\n## APPROVAL · {now()} · page {pid} · {a.decision} · by Paul\n"
-               + (f"File: {f} (sha {p['approval']['sha']})\n" if f else "")
-               + (f"Human review: {a.review}\n" if a.review else "")
-               + (f"Practitioner sign-off: {a.practitioner}\n" if a.practitioner else "")
-               + (f"Note: {a.note}\n" if a.note else ""))
-        print(git_commit(f"{a.slug}: page {pid} {a.decision} by Paul"))
-        return
+        rec = {"state": a.decision, "by": "Paul", "at": now(), "note": a.note,
+               "file": f, "sha": sha12(ROOT / f) if f and (ROOT / f).exists() else None,
+               "sensitive_review": a.review, "practitioner": a.practitioner}
 
-    g = a.target
+        def apply():
+            p["approval"] = rec
+            if approved:
+                p["state"] = "approved"
+        text = (f"\n## APPROVAL · {now()} · page {pid} · {a.decision} · by Paul\n"
+                + (f"File: {f} (sha {rec['sha']})\n" if f else "")
+                + (f"Human review: {a.review}\n" if a.review else "")
+                + (f"Practitioner sign-off: {a.practitioner}\n" if a.practitioner else "")
+                + (f"Note: {a.note}\n" if a.note else ""))
+        return apply, text, f"page {pid}"
+
+    g = target
+    if g in S.GATES["conditions"]:
+        die(f"'{g}' is a condition the system checks itself ({S.label(g)}) — nobody approves it.")
     if g not in S.GATES["gates"]:
-        die(f"Unknown gate '{g}'. Gates: {', '.join(S.GATES['gates'])}")
+        die(f"Unknown decision '{g}'. Decisions: {', '.join(S.GATES['gates'])}")
     spec = S.GATES["gates"][g]
-    files = file_map(split(a.files) or S.mark_files(st, spec.get("artifact", "")))
+    files = file_map(explicit or S.mark_files(st, spec.get("artifact", "")))
     if approved:
         if not files:
-            die(f"REFUSED — this approval must name the files it covers. Nothing is recorded for "
+            die(f"REFUSED ({g}) — this approval must name the files it covers. Nothing is recorded for "
                 f"{S.plain(g)} yet (the producing command marks them), so pass --files.")
-        if g == "b1_audit":
-            import steps
-            left = steps.missing(st)
-            if left:
-                die("REFUSED — audit steps with no outcome (Done / Skipped / Failed): "
-                    + ", ".join(r["id"] for r in left) + ". See methodology/audit-steps.md.")
         missing = [r for r in S.requires(st, g) if not S._decided(st, r)]
         if missing:
-            die("REFUSED — these come first and are not approved yet: "
-                + "; ".join(S.plain(r) for r in missing))
-    take_token(a.slug, g)
-    st["gates"][g] = {"state": a.decision, "by": "Paul", "at": now(), "note": a.note,
-                      "conditions": [c.strip() for c in (a.conditions or "").split(";") if c.strip()],
-                      "files": files}
+            die(f"REFUSED ({g}) — these come first: "
+                + "; ".join(S.condition_met(st, r)[1] if r in S.GATES["conditions"] else S.plain(r) + " — not approved yet"
+                            for r in missing))
+    rec = {"state": a.decision, "by": "Paul", "at": now(), "note": a.note,
+           "conditions": [c.strip() for c in (a.conditions or "").split(";") if c.strip()],
+           "files": files}
+
+    def apply():
+        st["gates"][g] = rec
+    text = (f"\n## APPROVAL · {now()} · {g} · {a.decision} · by Paul\n"
+            + "".join(f"Approved version: {f} (sha {h})\n" for f, h in files.items())
+            + "".join(f"Condition: {c}\n" for c in rec["conditions"])
+            + (f"Note: {a.note}\n" if a.note else ""))
+    return apply, text, g
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("slug"); ap.add_argument("targets", nargs="+")
+    ap.add_argument("--decision", choices=S.GATES["decisions"], default="approved")
+    ap.add_argument("--conditions"); ap.add_argument("--files"); ap.add_argument("--file")
+    ap.add_argument("--note"); ap.add_argument("--review"); ap.add_argument("--practitioner")
+    ap.add_argument("--proposal"); ap.add_argument("--ids")
+    a = ap.parse_args()
+    d = client_dir(a.slug)
+    st = S.load(a.slug)
+
+    if a.targets == ["import"]:
+        return do_import(a, d, st)
+    multi = len(a.targets) > 1
+    if multi and (a.files or a.file):
+        die("REFUSED — with several approvals in one line, each uses the files its step recorded; "
+            "--files is only for a single approval.")
+    prepared = [prepare(a, st, t, multi) for t in a.targets]   # all checked before anything changes
+    take_token(a.slug, a.targets)
+    for apply, _, _ in prepared:
+        apply()
     S.save(a.slug, st)
-    append(d / "log.md", f"\n## APPROVAL · {now()} · {g} · {a.decision} · by Paul\n"
-           + "".join(f"Approved version: {f} (sha {h})\n" for f, h in files.items())
-           + "".join(f"Condition: {c}\n" for c in st["gates"][g]["conditions"])
-           + (f"Note: {a.note}\n" if a.note else ""))
-    print(git_commit(f"{a.slug}: {g} {a.decision} by Paul"))
+    for _, text, _ in prepared:
+        append(d / "log.md", text)
+    S.log_conditions(a.slug, st)
+    import records
+    records.render(a.slug)
+    labels = ", ".join(lbl for _, _, lbl in prepared)
+    print(git_commit(f"{a.slug}: {labels} {a.decision} by Paul"))
 
 
 if __name__ == "__main__":

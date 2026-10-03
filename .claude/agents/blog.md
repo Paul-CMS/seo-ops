@@ -14,7 +14,7 @@ Paul approves it) · `.claude/skills/bb-blog-analysis/` · `.claude/skills/exper
 
 ## Full client
 
-**map** (gate block5) — the commercial architecture must be settled first.
+**map** (gate release_approved) — the commercial architecture must be settled first.
 1. Evidence in `04 - Blog/` per the naming convention: post list, blog crawl/sitemap, GSC (if
    any), analytics, backlinks. Without GSC, gather **DataforSEO ranking overlap** (post and
    commercial page ranking for the same query) via `scripts/dfs.py` — estimate first, ask Paul
@@ -27,12 +27,12 @@ Paul approves it) · `.claude/skills/bb-blog-analysis/` · `.claude/skills/exper
    Coastal's, never as methodology); nothing marked for deletion; no redirect proposal without
    observed conflict (GSC or DataforSEO overlap, CM-021).
 4. Save `<Client> - Blog Decision Map - REVIEW.md`; `status.py mark <slug> blog_map --file <map>`.
-   Tell Paul: `/approve <slug> block4`.
+   Tell Paul: `/approve <slug> blog_map_approved`.
 
-**redirects** (gate block4) — redirect list from the **approved** map only, as a VA handoff
+**redirects** (gate blog_map_approved) — redirect list from the **approved** map only, as a VA handoff
 (`scripts/handoff.py create --kind redirect`, each with reason and map ref). `/verify` after.
 
-**next post** (gate block4) — one at a time, for each protected post and consolidation
+**next post** (gate blog_map_approved) — one at a time, for each protected post and consolidation
 winner: brief (`PB - <post> - <Client>`): the question it answers, why it qualified, the
 commercial parent to bridge to, **required information gain** from expertise capture (run
 the expert-interview skill Mode A to draft questions for Paul to send if there is no source
@@ -54,15 +54,15 @@ No proof sheet, no site audit, no rebuild.
    (category, area, variants) the way Agent 1 does. Record step S03
    (`steps.py record <slug> --run <RUN_ID> S03 done --output <file>`) and
    `status.py mark <slug> entity_record --file <entity foundation file>`, then stop for
-   `/approve <slug> b1_entity`.
-2. **topics** (gate b1_entity): propose topics that answer real customer questions. Fetch the
+   `/approve <slug> entity_approved`.
+2. **topics** (gate entity_approved): propose topics that answer real customer questions. Fetch the
    site's service and location pages and list every FAQ question and H2 on them; **reject any
    topic that duplicates one.** Save `<Client> - Blog Topic List - REVIEW.md`;
-   `status.py mark <slug> topics --file <list>`. Stop for `/approve <slug> bab_topics`.
-3. **next post** (gate bab_topics): one at a time, as above, from the approved list; each
+   `status.py mark <slug> topics --file <list>`. Stop for `/approve <slug> blog_topics_approved`.
+3. **next post** (gate blog_topics_approved): one at a time, as above, from the approved list; each
    post approved with `/approve <slug> page:<id>`.
 
 ## Never
 Delete a post · redirect a protected post · redirect on Test A alone without observed
 conflict · classify on instinct · propose a new standalone page (CM-012) · write without source
-material · batch briefs · set a gate. Write your Handoff Log section before you stop.
+material · batch briefs · set a gate. Write your Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md` before you stop (the command passes it to `run.py finish --handoff`).

@@ -84,7 +84,7 @@
 ## 6. Links
 
 - Service-areas table: H3 anchor-text links to every location page (BB-205, BB-206). Never in prose, FAQ answers or the opening (CM-005).
-- Write and finalize the narrative first; leave rows as `| [Stage 8: populate service-area links here] |` for Finish (CM-005, WC-C8).
+- Write and finalize the narrative first; leave rows as `| [Link wheel: populate service-area links here] |` for Finish (CM-005, WC-C8).
 - Outbound authority links (CM-011) and one proposed contextual link (CM-022) are exceptions only via Finish, with a stated reason, logged, Paul approves.
 
 ## 7. Sensitive-industry additions
