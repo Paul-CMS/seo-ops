@@ -78,7 +78,7 @@ any is called an orphan.
 
 ### Citation NAP
 Tracker discrepancies are measured against the tracker's stored NAP. Reconcile against
-the Stage 0 record first — the tracker may be comparing to a stale or wrong value, in
+the Intake record first — the tracker may be comparing to a stale or wrong value, in
 which case the "discrepancy" is in the tracker.
 
 ## Inventories to build
@@ -88,8 +88,8 @@ Before analysis, and from reconciled sources:
 | Inventory | Key | Built from |
 |---|---|---|
 | URLs | normalized key | crawl + CMS + sitemap + GSC + analytics |
-| Services | service ID from Stage 0 | Stage 0 record, mapped to URLs |
-| Locations | location ID from Stage 0 | Stage 0 record, mapped to URLs and GBP |
+| Services | service ID from Intake | Intake record, mapped to URLs |
+| Locations | location ID from Intake | Intake record, mapped to URLs and GBP |
 | Conversions | event/goal | analytics, call tracking, CRM |
 | Citations | domain | citation tracker |
 | Backlinks | referring domain | backlink export |
@@ -101,6 +101,6 @@ produces findings that do not reconcile at the exit gate.
 ## Recording a tool defect
 
 A tool defect is not a site finding. It goes in `decisions.md` as a limitation, with the
-affected checks named, and into Assumptions & Limitations in the Stage 2 package. If the
+affected checks named, and into Assumptions & Limitations in the Review package. If the
 defect makes a required category unassessable, that category is `N/A` with rationale —
-which the Stage 1 exit gate requires anyway.
+which the Analysis exit gate requires anyway.

@@ -1,4 +1,4 @@
-# Stage 2 — Self-Check and Recommendations
+# Review — Self-Check and Recommendations
 
 ## Documented deviation from GOV-02
 
@@ -12,7 +12,7 @@ requires, not an equivalent.
 
 ## The fresh session
 
-Stage 2 runs in a **new conversation**, not by instructing the same session to set aside
+Review runs in a **new conversation**, not by instructing the same session to set aside
 what it knows.
 
 **Load:**
@@ -23,11 +23,11 @@ what it knows.
 - `decisions.md`
 - `questions/*` including answers
 - the methodology and brand files
-- the Stage 0 Client Control Record
+- the intake record (Client Control Record)
 
 **Do not load:**
-- the Stage 1 conversation
-- any narrative Stage 1 wrote explaining its own reasoning
+- the Analysis conversation
+- any narrative Analysis wrote explaining its own reasoning
 - draft deliverables
 
 The second list is the point. A summary explaining *why* a finding was written
@@ -36,7 +36,7 @@ evidence locator and the conclusion alone forces re-derivation, which is the clo
 available approximation of independence.
 
 This only works if `findings.csv` is self-sufficient. If a finding cannot be re-derived
-from its evidence locator, that is itself a Stage 2 finding: the row is inadequate and
+from its evidence locator, that is itself a Review finding: the row is inadequate and
 goes back as a revision.
 
 ## Challenge protocol
@@ -96,7 +96,7 @@ effort, risk, dependency, evidence locator, owner placeholder.
 
 **URL Decision Map** — Keep / Improve / Create / Merge Candidate / Redirect Candidate /
 Noindex Candidate / Remove Candidate / Needs Evidence. No action status is final before
-Stage 3.
+Client confirmation.
 
 **Measurement plan** — baseline, success indicator, source, comparison window,
 confounders, reassessment date. Findings whose measurement is broken must say so here.
@@ -106,14 +106,14 @@ unavailable revenue data, unresolved policy questions, tool defects, every appli
 default from Gate B. This section is load-bearing. An audit that hides its limitations
 is not defensible six months later.
 
-**Change preview** — what Stage 4 would consider. No executable instructions.
+**Change preview** — what Implementation would consider. No executable instructions.
 
-**Stage 3 client-confirmation list** — every question Paul routed to the client, plus
+**client-confirmation list** — every question Paul routed to the client, plus
 every on-page claim found during §6 that needs substantiation.
 
 ## Boundary
 
-Stage 2 ends at the Stage 3 boundary. Produce no schema, no drafted titles or meta
+Review ends at the client-confirmation boundary. Produce no schema, no drafted titles or meta
 descriptions, no redirect maps as executable rules, no citation orders, no content. If a
 deliverable contains something that could be pasted into a CMS and shipped,
 implementation has been smuggled in and the package fails its own exit gate.

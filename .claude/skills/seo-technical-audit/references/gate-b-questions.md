@@ -1,6 +1,6 @@
 # Gate B — The Clarification Stop
 
-Sits between Stage 1 and Stage 2. It exists so that unresolved evidence questions get
+Sits between Analysis and Review. It exists so that unresolved evidence questions get
 answered before they become recommendations — and so that everything else does **not**
 become a question.
 
@@ -43,7 +43,7 @@ The VA cannot answer business truth. Do not send them any.
 - Does this destructive recommendation get explored at all?
 
 **Outcome, when Paul cannot answer:** he marks it `cannot answer — client`. The question
-moves to the Stage 3 client-confirmation list, and every finding it blocks gets
+moves to the client-confirmation list, and every finding it blocks gets
 `client_confirmation_required = Yes` and confidence `Assumed`. The skill does not decide
 it and does not ask the client.
 
@@ -61,7 +61,7 @@ One batch per route, capped at 8 questions each. Each question states:
 
 ```
 Q3 · Paul · blocks F-014, F-015, F-022
-Commercial pest control appears on 4 service pages but not in the Stage 0
+Commercial pest control appears on 4 service pages but not in the Intake
 service list. In scope?
   Why it matters: if out of scope, three "thin service page" findings become
   "remove candidate" instead, which is a destructive recommendation.
@@ -73,7 +73,7 @@ service list. In scope?
 ## When no question passes the test
 
 No gate. Record "no questions — gate skipped" in `decisions.md`, then proceed straight to
-Stage 2. This is the expected outcome on a clean evidence set and should not feel like
+Review. This is the expected outcome on a clean evidence set and should not feel like
 something went wrong.
 
 ## When answers don't come back
@@ -87,6 +87,6 @@ to a fact. Each defaulted question produces:
 
 ## What the gate is not
 
-Not a place to ask the client anything. Not a second intake. Not a review of Stage 1's
-conclusions — that is Stage 2's job, and doing it here contaminates the fresh-session
-independence that makes Stage 2 worth running.
+Not a place to ask the client anything. Not a second intake. Not a review of Analysis's
+conclusions — that is Review's job, and doing it here contaminates the fresh-session
+independence that makes Review worth running.

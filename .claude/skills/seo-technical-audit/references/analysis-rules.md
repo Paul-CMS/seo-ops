@@ -1,4 +1,4 @@
-# Analysis Rules — Stage 1 Categories
+# Analysis Rules — Analysis Categories
 
 Rules live in `methodology/rulings.md` (the single rule source) and the Bradley Standard;
 this file cites their IDs and holds the procedure — what to look at and how — for each of
@@ -178,7 +178,7 @@ the DataforSEO data its conditions name and the page's current rank, and record 
 decision where CM-020 says.
 
 Any superlative or credential claim found on-page is a **truth** issue before it is an
-SEO issue. Route it to the Stage 3 client-confirmation list rather than optimizing
+SEO issue. Route it to the client-confirmation list rather than optimizing
 around it.
 
 ## 7. Blog and supporting content
@@ -188,7 +188,7 @@ conversions and assists, backlinks, freshness, expertise source and overlap.
 
 Classify: Keep, Improve, Consolidate Candidate, Relocate Candidate, Noindex Candidate,
 Remove Candidate, Needs Evidence. Recommendation only — no action status is final before
-Stage 3.
+Client confirmation.
 
 **Do not assume blogging harms local SEO**, and do not assume a subdomain is safer.
 Either claim requires observed conflict, a business purpose and migration risk analysis.
@@ -205,8 +205,7 @@ Verify NAPW accuracy, duplicates, ownership, provider and renewal dependencies, 
 separation, relevance, indexability, competitor context.
 
 A citation tracker's discrepancy list is measured against **the tracker's stored NAP**,
-which is not automatically the verified NAP. Reconcile against the Stage 0 Client
-Control Record before calling any of it an error.
+which is not automatically the verified NAP. Reconcile against the intake record (Client Control Record) before calling any of it an error.
 
 **Citation and link quantity** — CM-006, RULE-004. Spend — RULE-014.
 

@@ -108,5 +108,5 @@ The rulings the audit works to are in `methodology/rulings.md` — Rule Register
 section C (RULE-001–015; RULE-013 is MISSING — do not infer it), Coastal rulings in
 sections A–B. Cite the ID; do not copy rule text into findings or this skill.
 
-The Stage 2 review exception is the standing ruling **CM-026** (RULE-011's exception
+The Review review exception is the standing ruling **CM-026** (RULE-011's exception
 clause); it is cited in `decisions.md`, not re-logged per audit.

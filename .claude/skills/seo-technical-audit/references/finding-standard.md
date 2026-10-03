@@ -12,7 +12,7 @@ register exists to prevent.
 | `revision` | `1` on creation, incremented on each superseding row. |
 | `supersedes` | The `finding_id.revision` this row replaces. Append-only: never edit a prior row. |
 | `date`, `analyst`, `stage` | When, who, which stage produced it. |
-| `category` | One of the nine Stage 1 categories. |
+| `category` | One of the nine Analysis categories. |
 | `affected_entities`, `affected_urls` | Specific. "Site-wide" is not an answer unless every URL is genuinely affected. |
 | `observed_condition` | **What was observed.** No interpretation, no cause, no recommendation. |
 | `evidence_source_id` | `SRC-NNN` from the manifest. |
@@ -27,8 +27,8 @@ register exists to prevent.
 | `risk_if_acted`, `risk_if_deferred` | Both. A recommendation with no risk of acting has not been thought about. |
 | `dependencies` | Other findings, access, client confirmation, platform checks. |
 | `client_confirmation_required`, `paul_approval_required` | Yes/No. |
-| `implementation_owner` | Placeholder only — Stage 4 assigns for real. |
-| `decision_state` | Blank until Stage 3. Never set here. |
+| `implementation_owner` | Placeholder only — Implementation assigns for real. |
+| `decision_state` | Blank until Client confirmation. Never set here. |
 | `status` | `draft` / `self-checked` / `reviewed` / `superseded` / `withdrawn`. |
 
 ## Observation vs. inference vs. recommendation
@@ -54,7 +54,7 @@ as platform law.
 | **Bradley Methodology Rule** | From the Semantic Links framework | Cite the methodology file section. |
 | **Project Evidence** | Observed in this project's data | Cite the evidence locator. |
 | **Working Hypothesis** | Plausible, untested | Must be labelled as such in the deliverable. |
-| **Client Constraint** | The client's business, legal or operational limit | Cite the Stage 0 record. |
+| **Client Constraint** | The client's business, legal or operational limit | Cite the Intake record. |
 | **Paul Exception** | Overrides the above for this engagement | Must exist in `decisions.md`. |
 
 If a claim cannot be classified, it is a Working Hypothesis. That is not a failure —
@@ -67,16 +67,9 @@ rule, and the deliverable must not imply Google enforces them.
 
 ## Severity
 
-Ruling: **CM-028** (`methodology/rulings.md`). This table is the one place the scale is
-shown outside `rulings.md`; everywhere else cites CM-028.
-
-| Severity | Means |
-|---|---|
-| **High** | Breaks the entity model or page structure, or blocks indexing |
-| **Medium** | Fails a check in its page spec ([`methodology/specs/`](../../../../methodology/specs/)) |
-| **Low** | Technical hygiene — batched into one handoff |
-
-No other levels. The workbook's `Priority` column carries the same value.
+Use the one scale in **CM-028** (`methodology/rulings.md`) — it is defined there and nowhere else.
+Medium means a failed check in the page's spec (`methodology/specs/`). Severity never comes from a
+tool's own label. The workbook's `Priority` column carries the same value.
 
 ## Confidence
 

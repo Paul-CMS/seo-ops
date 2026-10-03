@@ -6,7 +6,7 @@ Before any analysis, locate and read:
 
 1. **Methodology and guidelines file** — root drive resources folder
 2. **Brand / truth file** — the client's Brand Guide (`clients/<slug>/brand-guide.md`)
-3. **Stage 0 Client Control Record** — the client's drive
+3. **intake record (Client Control Record)** — the client's drive
 4. **Evidence folder** — the exports
 
 Then state which version of each was loaded, in `README.md`.
@@ -56,7 +56,7 @@ table and halts only on genuinely fatal conditions.
 ### Halt on any of these
 
 - Methodology or guidelines file not found
-- Stage 0 record missing, or business truth not confirmed
+- Intake record missing, or business truth not confirmed
 - Crawl scope unknown or clearly partial, **when architecture is in scope**
 - Rendering mode unknown, **when the site is JS-dependent**
 
@@ -75,7 +75,7 @@ written against a crawl that ran without rendering.
 
 ### Coverage table
 
-For each of the nine Stage 1 categories, record: evidence present, source IDs, and
+For each of the nine Analysis categories, record: evidence present, source IDs, and
 whether the category can be assessed. Categories with no evidence are marked `N/A` with
 rationale **here**, at the start — not discovered missing at the exit gate.
 

@@ -71,7 +71,7 @@ always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 
   cannibalization clusters, "best" variant volumes (any US state).
 - **S08 backlinks:** referring domains per URL through `scripts/dfs.py call`.
 - **S09 citations / S10 local grid:** BrightLocal uploads from Gwen — if not there yet, record
-  `skipped` with the reason and add them to the Document Checklist.
+  `skipped` with the reason (the generated Document Checklist shows them as outstanding).
 - **S11 GSC/GA4:** only if access exists.
 - **S19 People Also Ask:** `python3 scripts/paa.py estimate|run <slug> --run <RUN_ID> --services-file
   <services.txt> --cities "<primary>,<c2>,<c3>,<c4>" --state "<State>" [--cap 20]
@@ -98,7 +98,7 @@ Run the **seo-technical-audit** skill procedure, in this order:
 5. S16 **technical** findings.
 
 **Severity:** CM-028 (High / Medium / Low only). **One finding per issue, listing every affected URL.**
-**Gate B:** after Stage 1, run the clarification stop (seo-technical-audit `gate-b-questions.md`);
+**Gate B:** after Analysis, run the clarification stop (seo-technical-audit `gate-b-questions.md`);
 record its outcome in `decisions.md` (questions raised with their routes, or "no questions — gate
 skipped") before the review. A missing "The Best"
 is never a finding by itself (CM-020); missing JavaScript-rendered data is never a finding.

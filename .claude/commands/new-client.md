@@ -23,9 +23,9 @@ Follow CLAUDE.md. Plain language with Paul throughout.
    can't create folders, say so immediately and ask Paul to copy the template by hand (right
    click → Make a copy → rename → move to the root). Record the id:
    `status.py set <slug> client.drive_folder_id <id>`.
-5. Living records from `templates/`: Brand Guide (`clients/<slug>/brand-guide.md`), Document
-   Checklist, Handoff Log (`clients/<slug>/handoff-log.md`) — upload each as a real `.md`
-   with the client name. The Approval Record is `status.py approval-record <slug>` → upload.
+5. Brand Guide from `templates/brand-guide.md` → `clients/<slug>/brand-guide.md`. The Handoff Log, Document
+   Checklist and Approval Record are generated (`scripts/records.py`) — upload each to the client folder as a
+   real `.md` with the client name, and re-upload after each run.
 6. **Intake questions for Paul** (one batch): website URL, GBP link, storefront or SAB, the
    **exact URL in the GBP Website field**, WordPress env prefix (Paul adds the Application
    Password to `.env` himself — never ask for it in chat), whether GSC/GA4 access exists.

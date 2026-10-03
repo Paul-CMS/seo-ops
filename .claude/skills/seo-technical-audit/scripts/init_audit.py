@@ -70,7 +70,7 @@ README = """# Audit — {client}
 |---|---|---|---|
 | Methodology & guidelines | | | ☐ |
 | Brand / truth file | | | ☐ |
-| Stage 0 Client Control Record | | | ☐ |
+| intake record (Client Control Record) | | | ☐ |
 | Evidence folder | | | ☐ |
 
 ## State
@@ -79,13 +79,13 @@ README = """# Audit — {client}
 |---|---|---|---|
 | Phase 0 — load & pin | not started | | |
 | Phase 0 — readiness check | not started | | |
-| Stage 1 — inventories | not started | | |
-| Stage 1 — reconciliation | not started | | |
-| Stage 1 — analysis | not started | | |
+| Analysis — inventories | not started | | |
+| Analysis — reconciliation | not started | | |
+| Analysis — analysis | not started | | |
 | Gate B — questions | not started | | |
-| Stage 2 — self-check | not started | | |
-| Stage 2 — package | not started | | |
-| Stage 3 boundary | blocked | | Not part of this skill |
+| Review — self-check | not started | | |
+| Review — package | not started | | |
+| client-confirmation boundary | blocked | | Not part of this skill |
 
 ## Blocked on
 

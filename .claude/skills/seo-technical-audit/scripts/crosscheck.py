@@ -335,7 +335,7 @@ def check_citation_nap(found, out):
         out.append(("UNVERIFIED", "Citation NAP",
                     f"Citation tracker reports discrepancies ({detail}). Each is a "
                     f"discrepancy against the tracker's stored NAP, which is not "
-                    f"automatically the verified NAP. Reconcile against the Stage 0 "
+                    f"automatically the verified NAP. Reconcile against the Intake "
                     f"Client Control Record before treating any as an error."))
 
 

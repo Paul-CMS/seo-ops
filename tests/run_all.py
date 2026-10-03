@@ -652,7 +652,25 @@ def t_finish_needs_outputs():
     check("an unknown step is refused with the list of steps", code == 2 and "build:plan" in out, out)
 
 
-SCENARIOS = [t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
+def t_repo_hygiene():
+    import re as _re
+    files = [f for f in SB.rglob("*") if f.is_file() and f.suffix in (".md", ".py", ".json")
+             and "tests" not in f.parts and "archive" not in f.parts and "sop-source" not in f.parts]
+    text = {f: f.read_text(errors="ignore") for f in files}
+    hits = lambda rx: [str(f.relative_to(SB)) for f, t in text.items() if _re.search(rx, t)]
+    check("no old gate names anywhere", not hits(r"\b(b1_entity|b1_audit|bab_topics|impl_safe|block[1-5])\b"),
+          hits(r"\b(b1_entity|b1_audit|bab_topics|impl_safe|block[1-5])\b"))
+    check("no --gates in docs (gates live only in gates.json)", not [f for f in hits(r"--gates") if f.endswith(".md")])
+    check("no 'Stage 0-4' names in the audit skill", not [f for f in hits(r"\bStage [0-4]\b") if "seo-technical-audit" in f])
+    sev = [f for f in hits(r"\|\s*\*\*High\*\*\s*\|")]
+    check("the severity scale is defined only in rulings.md", sev == ["methodology/rulings.md"], sev)
+    old = r"(?<!archive/)\b(coastal-delta-addendum\.md|rule-register\.md|conflicts-register\.csv)|templates/document-checklist|stage-2-selfcheck"
+    check("no references to archived or removed files (except their archive paths)", not hits(old), hits(old))
+    check("no Stage 7/8, Gemini or ChatGPT references in CLAUDE.md, agents or skills",
+          not [f for f in hits(r"Stage [78]\b|Gemini|ChatGPT") if f.startswith((".claude", "CLAUDE")) and "archive-old-instructions" not in f])
+
+
+SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive]
 
 

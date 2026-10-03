@@ -376,7 +376,7 @@ returned proof sheet; the writer uses that field and never a generic byline ("Ad
 
 # C. Rule Register
 
-Formerly `methodology/rule-register.md` (from the Drive register). Now in force in seo-ops;
+Formerly the Rule Register (from the Drive register; archived as `methodology/archive/rule-register.md`). Now in force in seo-ops;
 cite the RULE ID.
 
 ## RULE-001 · Bradley is the central lens
@@ -562,7 +562,7 @@ Carried by CM-014.
 
 # E. Resolved conflicts
 
-Readable copy of `methodology/conflicts-register.csv` (the CSV stays for scripts; new
+Readable copy of the former conflicts register (archived as `methodology/archive/conflicts-register.csv`; new
 conflicts follow PROC-01 and are ruled here).
 
 | ID | Topic | Resolved by | Status | Date |

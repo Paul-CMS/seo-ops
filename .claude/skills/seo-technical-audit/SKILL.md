@@ -1,12 +1,12 @@
 ---
 name: "seo-technical-audit"
-description: "Run a full Stage 1 technical and local SEO audit against a client's exports, then a Stage 2 self-check and recommendation package, following the GOV-02 Audit and Recommendations SOP. Use this whenever a technical SEO audit, site audit, crawl analysis, or audit recommendation package is requested for a local-business client; when Screaming Frog, site-auditor, citation tracker, Search Console or local grid exports need analyzing into findings; when someone mentions Stage 1, Stage 2, a finding register, a URL decision map, or an evidence manifest; or when an existing audit needs a self-check pass before it goes to the client. Produces an append-only finding register, reconciled inventories, a clarification question set routed to the VA or to Paul, and a rendered recommendation package. Stops at the Stage 3 boundary and implements nothing."
+description: "Run a full technical and local SEO audit (the Analysis step) against a client's exports, then the Review self-check and recommendation package, following the GOV-02 Audit and Recommendations SOP. Use this whenever a technical SEO audit, site audit, crawl analysis, or audit recommendation package is requested for a local-business client; when Screaming Frog, site-auditor, citation tracker, Search Console or local grid exports need analyzing into findings; when someone mentions Analysis, Review, a finding register, a URL decision map, or an evidence manifest; or when an existing audit needs a self-check pass before it goes to the client. Produces an append-only finding register, reconciled inventories, a clarification question set routed to the VA or to Paul, and a rendered recommendation package. Stops at the client-confirmation boundary and implements nothing."
 ---
 
-# Technical SEO Audit — Stages 1 and 2
+# Technical SEO Audit — Analysis and Review
 
-Implements GOV-02 Stages 1 and 2. Stage 0 is a prerequisite, not part of this skill;
-Stage 3 is the hard boundary.
+Implements GOV-02 Analysis and Review. Intake is a prerequisite, not part of this skill;
+Client confirmation is the hard boundary.
 
 **This skill diagnoses and recommends. It never implements.** No schema, no drafted
 titles or meta descriptions, no executable redirect rules, no content, no citation
@@ -37,7 +37,7 @@ manifest and move on.
 - `references/analysis-rules.md` — the nine categories, conformance scorecards, and the
   rule IDs each category cites
 - `references/gate-b-questions.md` — the clarification stop
-- `references/stage-2-selfcheck.md` — fresh-session review and package
+- `references/review-selfcheck.md` — fresh-session review and package
 
 **Rules live in `methodology/rulings.md`** (precedence: rulings > Bradley Standard >
 everything else). This skill and its references cite rule IDs (CM-###, RULE-###, BB-###)
@@ -58,8 +58,7 @@ operational rule. The Rule Register, Delta and GOV-06 are consolidated into
 
 ## Phase 0 — Load, pin, check
 
-Load the methodology and guidelines file, the brand/truth file, the Stage 0 Client
-Control Record, and the evidence folder. Record versions in `README.md`.
+Load the methodology and guidelines file, the brand/truth file, the intake record (Client Control Record), and the evidence folder. Record versions in `README.md`.
 
 **If the methodology file is not found, stop.** An audit run on general SEO knowledge
 looks identical to one run on the client's methodology and is not the same thing.
@@ -87,7 +86,7 @@ Evidence`.
 and it has already failed once: three of the four Bradley transcripts in the Source
 Library are misnamed. Never cite a source by filename without opening it.
 
-## Stage 1 — Two passes
+## Analysis — Two passes
 
 GOV-02's §1–9 is a document structure, not an execution order. Dependencies run
 differently: architecture analysis built on a URL list that the technical pass is still
@@ -120,7 +119,7 @@ Conflicts between sources go in `conflicts.csv` per PROC-01.
 
 Append-only: a correction is a new row that supersedes, never an edit in place.
 
-### Stage 1 exit gate
+### Analysis exit gate
 
 - Every category complete, or `N/A` with rationale
 - URL, service, location, GBP, citation, backlink, conversion inventories reconcile
@@ -136,14 +135,14 @@ is a row in Assumptions & Limitations, not a question.
 
 Two routes: **VA** for evidence integrity (was rendering on, was this filtered, is this
 the full set), **Paul** for scope and decisions. When Paul can't answer, he marks it
-`cannot answer — client` — it moves to the Stage 3 list and the blocked findings carry
+`cannot answer — client` — it moves to the client-confirmation list and the blocked findings carry
 `client_confirmation_required` with confidence `Assumed`. The skill never asks the client
 directly.
 
 Eight per route, one batch, each stating the finding IDs it blocks, why the answer
 changes them, a proposed default, and the consequence of that default.
 
-**If nothing passes the trigger test, there is no gate — go straight to Stage 2.** That
+**If nothing passes the trigger test, there is no gate — go straight to Review.** That
 is the expected outcome on clean evidence.
 
 If answers don't come back, proceed on the defaults, log each in `decisions.md`,
@@ -151,24 +150,24 @@ downgrade the affected findings to `Assumed`, and surface every one in Assumptio
 Limitations.
 
 **Record the Gate B outcome** (questions raised, or "no questions — gate skipped") in
-`decisions.md` before Stage 2.
+`decisions.md` before Review.
 
-## Stage 2 — Self-check and package
+## Review — Self-check and package
 
 **Run in a fresh context** (the `audit-reviewer` subagent). Load the register,
-inventories, manifest, cross-checks, decisions, answers, methodology and Stage 0 record.
-Do **not** load the Stage 1 conversation or any narrative it wrote about its own
+inventories, manifest, cross-checks, decisions, answers, methodology and Intake record.
+Do **not** load the Analysis conversation or any narrative it wrote about its own
 reasoning — that re-imports the reasoning the review exists to challenge.
 
 Claude doing both analysis and review is the standing exception **CM-026**; `decisions.md`
 cites CM-026 rather than logging a new exception.
 
 For each High finding: re-derive from the evidence, state the strongest case
-that it's wrong, then run the challenge list in `stage-2-selfcheck.md`. Confirm, revise
+that it's wrong, then run the challenge list in `review-selfcheck.md`. Confirm, revise
 by superseding row, or withdraw.
 
 Then render the package: executive summary, prioritized register, URL decision map,
-measurement plan, assumptions and limitations, change preview, Stage 3
+measurement plan, assumptions and limitations, change preview, Client confirmation
 client-confirmation list.
 
 ## Working record
@@ -219,4 +218,4 @@ These are gaps in GOV-02 v0.9 that this skill works around:
 - **RULE-013 is missing** — do not infer its content (see `rulings.md`).
 - **Independent review** is performed by Claude under the standing exception CM-026
 - **Phase 0 readiness check** is an addition to GOV-02, not in the source SOP
-- **Two-pass Stage 1 ordering** deviates from the §1–9 document order
+- **Two-pass Analysis ordering** deviates from the §1–9 document order

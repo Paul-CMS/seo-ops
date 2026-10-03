@@ -21,7 +21,7 @@ item. It does not repeat the rule text: look up the ID in the source.
   `sop-source/BB-Standard-Schema-Section-v1.1.md`, which replaces BB-601–608 of v1.0.
   BB-601–608 mean different things in the two versions, so always write the `(v1.1)` tag.
 - `CM-001`–`CM-018`: `sop-source/Coastal-Delta-v1.0.md`. `CM-019`–`CM-024`:
-  `methodology/coastal-delta-addendum.md`. `CM-038`, `CM-039` and later: `methodology/rulings.md`.
+  `methodology/rulings.md` (formerly the addendum). `CM-038`, `CM-039` and later: `methodology/rulings.md`.
   These are being merged into `methodology/rulings.md` under the same IDs, plus CM-025
   (sensitive industries), CM-026 (self-review exception), CM-027 (reviews are never verified
   facts), CM-028 (severity scale).
@@ -80,11 +80,9 @@ cite the check ID.
 
 ## Severity (CM-028)
 
-| Fails as | Use when |
-|---|---|
-| **High** | Breaks the entity model or page structure, or blocks indexing (wrong page type, missing or duplicate H1, brand in H1, wrong title entity order, city mesh table missing) |
-| **Medium** | Fails a check in its page spec. The default. |
-| **Low** | Technical hygiene |
+The scale is defined only in CM-028 (`methodology/rulings.md`). For specs: a failed check is Medium by
+default; it is High when it breaks the entity model or page structure (wrong page type, missing or
+duplicate H1, brand in the H1, wrong title entity order, missing city-mesh table); Low for hygiene.
 
 Two standing rules apply to every spec:
 - A missing "The Best" is never a failed check by itself (CM-020). The check is whether the

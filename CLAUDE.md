@@ -197,7 +197,7 @@ The rulings that most change daily work:
   pool, only the homepage's reserved variant is exclusive.
 - **No invented facts (CM-016)** — write `[NEED: …]`. Unknown/Disputed Brand Guide fields block.
 - **Discovery is not the audit.** No severity, priorities or recommendations before the audit
-  step. Conflicts are recorded in `methodology/conflicts-register.csv`, never resolved inside
+  step. Conflicts are recorded as OPEN entries in `methodology/rulings.md` (PROC-01), never resolved inside
   the work (GOV-06 §5).
 
 A proposed methodology correction goes in `methodology/lessons.md` (inbox) with its reason; it is
