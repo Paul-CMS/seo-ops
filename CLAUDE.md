@@ -20,13 +20,11 @@ commit a change that fails it.** A new behaviour gets a new check in `tests/run_
 
 ## 1 · Step zero — every command, every session
 
-1. Read `methodology/agency-profile.md`. Never re-ask anything it answers (crawler, JS
-   rendering, tools, who decides what).
-2. `python3 scripts/status.py show <slug>` — where the client stands, which gates are met.
-3. Read the client's Handoff Log (`clients/<slug>/handoff-log.md`, generated, mirrored to Drive) —
-   the last section says what the next step needs.
-4. Rules come from `methodology/rulings.md` (cite IDs; never restate). `methodology/lessons.md` is
-   an inbox of proposals — nothing in it is in force.
+1. `python3 scripts/status.py show <slug>` — where the client stands.
+2. Read **only** the files listed for the step — `run.py start` prints the list (`run.py steps <command>`
+   shows them all; scripts/gates.json → steps → reads). Nothing else is read by default.
+3. Rules come from `methodology/rulings.md` (cite IDs; never restate). `methodology/lessons.md` is an
+   inbox of proposals — nothing in it is in force.
 
 ## 2 · The run protocol — no exceptions
 

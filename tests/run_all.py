@@ -641,6 +641,13 @@ def t_finish_needs_outputs():
     for s_ in ("S01", "S02", "S03"): ag.step(rid, s_)
     code, out = sh(f'python3 scripts/run.py finish out-co {rid} --summary x')
     check("a mark from an earlier run does not count for this run", code == 12 and "before this run" in out, out)
+    g = json.loads((SB / "scripts" / "gates.json").read_text())
+    check("every step has a reading list", all(v.get("reads") for v in g["steps"].values()),
+          [k for k, v in g["steps"].items() if not v.get("reads")])
+    sh('python3 scripts/status.py init read-co --name R --domain r.example --type full --industry roofing')
+    _, out = sh("python3 scripts/run.py start read-co new-client")
+    check("run.py start prints the step's reading list, run ID last",
+          "Read for this step" in out and out.splitlines()[-1].endswith("-new-client-" + out.splitlines()[-1][-4:]), out)
     code, out = sh("python3 scripts/run.py start out-co build --step nonsense")
     check("an unknown step is refused with the list of steps", code == 2 and "build:plan" in out, out)
 

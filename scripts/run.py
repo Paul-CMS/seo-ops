@@ -190,6 +190,7 @@ def main():
         for k, v in S.GATES["steps"].items():
             if a.command and not (k == a.command or k.startswith(a.command + ":")):
                 continue
+            print(f"{k:26} reads: {' · '.join(v.get('reads', [])) or '—'}")
             print(f"{k:26} gates: {', '.join(v['gates']) or '—'}"
                   + (f"  (blog-only: {', '.join(v['gates_blog_only'])})" if v.get("gates_blog_only") else "")
                   + f"\n{'':26} produces: {', '.join(v.get('produces', [])) or '—'}")
@@ -235,7 +236,10 @@ def main():
                + f"Step: {key}" + (f" · batch {a.batch}" if a.batch else "") + "\n"
                + (f"Gates checked: {', '.join(gates)}\n" if gates else "")
                + (f"Note: {a.note}\n" if a.note else ""))
-        print(run_id)
+        rl = spec.get("reads") or []
+        if rl:
+            print("Read for this step (only these): " + " · ".join(x.replace("<slug>", a.slug) for x in rl))
+        print(run_id)   # always the last line
     elif a.cmd == "note":
         open_run(a.slug, a.run_id)
         append(d / "log.md", f"- NOTE {now()[11:19]} {redact(a.text)}\n")

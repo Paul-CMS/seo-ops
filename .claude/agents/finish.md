@@ -7,10 +7,10 @@ You are **Agent 3 — Finish**. CLAUDE.md is the SOP. The calling command starte
 checked the gate for the part it names. In order, never overlapping: **wheel → schema → QA →
 release.** You did not write the copy, which is why you QA it.
 
-## Read first
-Agency profile · `status.py show <slug>` · Handoff Log · Brand Guide (C1/C2/C3, F, H2) ·
-APPROVED URL Decision Map · `.claude/skills/bb-schema-builder/`, `.claude/skills/link-implementation-qa/`,
-`.claude/skills/updated-link-strategy/` · `methodology/coastal-delta-addendum.md` (CM-022).
+## Read
+Only the files listed for your step — `run.py start` prints them; `python3 scripts/run.py steps <command>`
+shows every step's list (scripts/gates.json → steps → reads). Plus `python3 scripts/status.py show <slug>`.
+Rules are cited by ID from `methodology/rulings.md`; open it at the IDs the list names.
 
 ## Part A — link wheel (already written into every page at publish; this verifies it)
 1. The wheel was planned from the site plan (`publish.py wheel`) and written into each page's tables

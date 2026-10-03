@@ -272,7 +272,7 @@
     "approved",
     "approved_with_conditions"
   ],
-  "_steps_about": "Every command step: the gates run.py start checks (looked up here \u2014 nowhere else), what it must produce before run.py finish will close it, and (reads) the files the agent reads for that step. {batch} and {page} come from --batch / --page; {prev_post} is the newest blog post. produces: an artifact name (a status.py mark recorded during the run), 'steps:S01,S02' (an outcome for each audit step), 'batch:{batch}:<stage>' (the batch files recorded), 'blog_post' (a new post registered with its file), 'batch_state:{batch}:a|b' (the batch reached one of those states).",
+  "_steps_about": "Every command step: the gates run.py start checks (looked up here \u2014 nowhere else), what it must produce before run.py finish will close it, and (reads) the only files the agent reads for that step (run.py start prints them). {batch} and {page} come from --batch / --page; {prev_post} is the newest blog post. produces: an artifact name (a status.py mark recorded during the run), 'steps:S01,S02' (an outcome for each audit step), 'batch:{batch}:<stage>' (the batch files recorded), 'blog_post' (a new post registered with its file), 'batch_state:{batch}:a|b' (the batch reached one of those states).",
   "artifacts": {
     "entity_record": "the Discovery Record with the entity foundation (Brand Guide A/B proposal)",
     "proof_sheet": "the client proof sheet (.md; the Google Doc client copy is separate)",
@@ -291,7 +291,12 @@
   "steps": {
     "new-client": {
       "gates": [],
-      "produces": []
+      "produces": [],
+      "reads": [
+        "templates/brand-guide.md",
+        "templates/handoff-log.md",
+        "methodology/agency-profile.md"
+      ]
     },
     "discovery:discovery": {
       "gates": [
@@ -300,6 +305,13 @@
       "produces": [
         "steps:S01,S02,S03",
         "entity_record"
+      ],
+      "reads": [
+        "methodology/agency-profile.md",
+        ".claude/skills/client-intake/references/discovery.md",
+        "templates/brand-guide.md (A, B)",
+        "sop-source/BB-Standard-v1.0.md (BB-1xx entity rules)",
+        "methodology/rulings.md (CM-016, PROC-01)"
       ]
     },
     "discovery:proof-sheet": {
@@ -309,6 +321,13 @@
       "produces": [
         "steps:S04",
         "proof_sheet"
+      ],
+      "reads": [
+        "templates/proof-sheet.md",
+        ".claude/skills/client-intake/references/field-schema.md",
+        ".claude/skills/client-intake/references/proof-sheet.md",
+        "the approved Discovery Record",
+        "clients/<slug>/brand-guide.md"
       ]
     },
     "discovery:sheet-returned": {
@@ -317,6 +336,9 @@
       ],
       "produces": [
         "proof_sheet_returned"
+      ],
+      "reads": [
+        "the client's returned sheet (save it as given)"
       ]
     },
     "discovery:data": {
@@ -325,6 +347,11 @@
       ],
       "produces": [
         "steps:S06,S07,S08,S09,S10,S11,S19"
+      ],
+      "reads": [
+        "methodology/audit-steps.md (S06\u2013S11, S19)",
+        "methodology/agency-profile.md (tools)",
+        "clients/<slug>/brand-guide.md (services, cities)"
       ]
     },
     "discovery:audit": {
@@ -334,6 +361,16 @@
       "produces": [
         "steps:S12,S13,S14,S15,S16,S17,S18",
         "audit_deliverables"
+      ],
+      "reads": [
+        "methodology/audit-steps.md",
+        ".claude/skills/seo-technical-audit/SKILL.md",
+        ".claude/skills/seo-technical-audit/references/*.md",
+        "methodology/specs/*.md",
+        "methodology/rulings.md",
+        "clients/<slug>/brand-guide.md",
+        "clients/<slug>/data/",
+        "clients/<slug>/inputs/crawl/"
       ]
     },
     "discovery:reconcile": {
@@ -342,6 +379,13 @@
       ],
       "produces": [
         "reconciled"
+      ],
+      "reads": [
+        ".claude/skills/client-intake/references/proof-sheet.md (\u00a76 reconciliation)",
+        "the returned proof sheet",
+        "clients/<slug>/brand-guide.md",
+        "templates/brand-guide.md",
+        "methodology/rulings.md (CM-016, CM-027, CM-039)"
       ]
     },
     "discovery:signoff": {
@@ -354,6 +398,11 @@
       ],
       "produces": [
         "discovery_summary"
+      ],
+      "reads": [
+        "clients/<slug>/decisions.md",
+        "clients/<slug>/document-checklist.md",
+        "the approved audit deliverables"
       ]
     },
     "crawl": {
@@ -362,6 +411,9 @@
       ],
       "produces": [
         "steps:S05"
+      ],
+      "reads": [
+        "methodology/agency-profile.md (crawl settings)"
       ]
     },
     "build:blockers": {
@@ -370,6 +422,11 @@
       ],
       "produces": [
         "blocker_checklist"
+      ],
+      "reads": [
+        "the approved Finding Register",
+        "methodology/rulings.md (CM-028)",
+        "scripts/gates.json (change_kinds)"
       ]
     },
     "build:plan": {
@@ -378,6 +435,14 @@
       ],
       "produces": [
         "site_plan"
+      ],
+      "reads": [
+        "the approved URL Decision Map, Finding Register and conformance scorecard",
+        "clients/<slug>/brand-guide.md",
+        "methodology/specs/*.md",
+        "clients/<slug>/data/rankings/ (best-variants.csv, url-rankings.csv)",
+        "clients/<slug>/data/paa/paa-routing.md",
+        "methodology/rulings.md (CM-020, CM-022, CM-024)"
       ]
     },
     "build:batch": {
@@ -387,6 +452,14 @@
       ],
       "produces": [
         "batch:{batch}:briefs"
+      ],
+      "reads": [
+        "the approved site plan",
+        "clients/<slug>/brand-guide.md",
+        "methodology/specs/<type>.md for the batch's page types",
+        "clients/<slug>/data/reviews/customer-language.md",
+        "clients/<slug>/data/paa/paa-routing.md",
+        "the audit findings for the batch's pages"
       ]
     },
     "build:drafts": {
@@ -396,6 +469,12 @@
       ],
       "produces": [
         "batch:{batch}:drafts"
+      ],
+      "reads": [
+        "the approved briefs for the batch",
+        "methodology/writing-commercial.md",
+        "methodology/specs/<type>.md + methodology/specs/README.md (common checks)",
+        "clients/<slug>/brand-guide.md (A\u2013D, H2, I)"
       ]
     },
     "build:apply-sem": {
@@ -405,6 +484,11 @@
       ],
       "produces": [
         "batch_state:{batch}:sem_applied|sem_check_failed"
+      ],
+      "reads": [
+        "the batch's semantic review table and drafts",
+        "methodology/writing-commercial.md (E1\u2013E9, Stage 4)",
+        "methodology/specs/<type>.md"
       ]
     },
     "build:pilot-corrections": {
@@ -412,45 +496,74 @@
         "discovery_signed_off",
         "batch:pilot:briefs"
       ],
-      "produces": []
+      "produces": [],
+      "reads": [
+        "Paul's notes on the pilot approvals (clients/<slug>/decisions.md, approval-record.md)",
+        "methodology/specs/<type>.md (\u00a78)",
+        "methodology/writing-commercial.md",
+        "methodology/lessons.md"
+      ]
     },
     "implement:safe": {
       "gates": [
         "safe_fixes_allowed"
       ],
-      "produces": []
+      "produces": [],
+      "reads": [
+        "the approved Finding Register / Technical Blocker Checklist",
+        "scripts/gates.json (change_kinds)"
+      ]
     },
     "implement:structural": {
       "gates": [
         "structural_changes_allowed"
       ],
-      "produces": []
+      "produces": [],
+      "reads": [
+        "the approved URL Decision Map",
+        "scripts/gates.json (change_kinds)"
+      ]
     },
     "implement:page": {
       "gates": [
         "page:{page}"
       ],
-      "produces": []
+      "produces": [],
+      "reads": [
+        "the approved page file"
+      ]
     },
     "implement:wheel": {
       "gates": [
         "pages_built"
       ],
-      "produces": []
+      "produces": [],
+      "reads": [
+        "clients/<slug>/build/link-wheel.json"
+      ]
     },
     "implement:schema": {
       "gates": [
         "link_wheel_approved"
       ],
-      "produces": []
+      "produces": [],
+      "reads": [
+        "clients/<slug>/finish/schema/"
+      ]
     },
     "verify": {
       "gates": [],
-      "produces": []
+      "produces": [],
+      "reads": [
+        "the run or handoff being verified"
+      ]
     },
     "rollback": {
       "gates": [],
-      "produces": []
+      "produces": [],
+      "reads": [
+        "the rollback plan (rollback.py plan)"
+      ]
     },
     "finish:wheel": {
       "gates": [
@@ -458,6 +571,12 @@
       ],
       "produces": [
         "link_wheel"
+      ],
+      "reads": [
+        "clients/<slug>/build/link-wheel.json",
+        ".claude/skills/updated-link-strategy/SKILL.md",
+        ".claude/skills/link-implementation-qa/SKILL.md",
+        "methodology/rulings.md (CM-011, CM-022)"
       ]
     },
     "finish:schema": {
@@ -466,6 +585,12 @@
       ],
       "produces": [
         "schema_built"
+      ],
+      "reads": [
+        ".claude/skills/bb-schema-builder/SKILL.md",
+        ".claude/skills/bb-schema-builder/references/schema-rules.md",
+        "sop-source/BB-Standard-Schema-Section-v1.1.md",
+        "clients/<slug>/brand-guide.md (F)"
       ]
     },
     "finish:qa": {
@@ -474,6 +599,13 @@
       ],
       "produces": [
         "release_qa"
+      ],
+      "reads": [
+        ".claude/skills/link-implementation-qa/SKILL.md",
+        "the approved URL Decision Map",
+        "methodology/specs/*.md (checks)",
+        "clients/<slug>/brand-guide.md (B3, C, H2)",
+        "status.py urls <slug> --published"
       ]
     },
     "blog:map": {
@@ -482,13 +614,22 @@
       ],
       "produces": [
         "blog_map"
+      ],
+      "reads": [
+        ".claude/skills/bb-blog-analysis/SKILL.md",
+        ".claude/skills/bb-blog-analysis/references/tests.md",
+        "the approved URL Decision Map",
+        "methodology/rulings.md (CM-007, CM-019, CM-021)"
       ]
     },
     "blog:redirects": {
       "gates": [
         "blog_map_approved"
       ],
-      "produces": []
+      "produces": [],
+      "reads": [
+        "the approved Blog Decision Map"
+      ]
     },
     "blog:next": {
       "gates": [
@@ -501,13 +642,24 @@
       ],
       "produces": [
         "blog_post"
+      ],
+      "reads": [
+        "methodology/writing-blog.md",
+        "methodology/specs/blog-post.md",
+        ".claude/skills/expert-interview/SKILL.md",
+        "clients/<slug>/brand-guide.md (C3, D, I, author)",
+        "methodology/rulings.md (CM-007, CM-038, CM-039)"
       ]
     },
     "blog:refresh": {
       "gates": [
         "blog_map_approved"
       ],
-      "produces": []
+      "produces": [],
+      "reads": [
+        "the Blog Refresh Schedule",
+        ".claude/skills/bb-blog-analysis/references/tests.md (Test B)"
+      ]
     },
     "blog:intake": {
       "gates": [
@@ -516,6 +668,11 @@
       "produces": [
         "steps:S03",
         "entity_record"
+      ],
+      "reads": [
+        "methodology/agency-profile.md",
+        "templates/brand-guide.md (A, B)",
+        "sop-source/BB-Standard-v1.0.md (BB-1xx entity rules)"
       ]
     },
     "blog:topics": {
@@ -524,6 +681,11 @@
       ],
       "produces": [
         "topics"
+      ],
+      "reads": [
+        "clients/<slug>/brand-guide.md",
+        "the client's live service and location pages (FAQs and H2s)",
+        "methodology/rulings.md (CM-012)"
       ]
     },
     "build:ship": {
@@ -533,6 +695,10 @@
       ],
       "produces": [
         "batch_state:{batch}:handed_off"
+      ],
+      "reads": [
+        "the approved page files for the batch",
+        "clients/<slug>/build/ site plan JSON"
       ]
     },
     "build:published": {
@@ -542,13 +708,22 @@
       ],
       "produces": [
         "batch_state:{batch}:written_back|corrections_requested"
+      ],
+      "reads": [
+        "the returned publish worksheet",
+        "the verify report",
+        "methodology/specs/<type>.md (alt-text format)",
+        "clients/<slug>/brand-guide.md (B3, C1\u2013C3)"
       ]
     },
     "blog:publish": {
       "gates": [
         "page:{page}"
       ],
-      "produces": []
+      "produces": [],
+      "reads": [
+        "the approved post file"
+      ]
     }
   }
 }

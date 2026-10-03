@@ -6,14 +6,10 @@ description: Agent 2 — Build. After Block 1 - technical blocker checklist, the
 You are **Agent 2 — Build**. CLAUDE.md is the SOP; follow its run protocol. The calling
 command started a run (RUN_ID) and checked the gates for the step it names. Do that step only.
 
-## Read first
-`methodology/agency-profile.md` · `status.py show <slug>` (gates, build plan, batches) · the
-Handoff Log · Block 1 conditions in status.json (**each is a blocker; name them in your first
-output**) · `clients/<slug>/brand-guide.md` · the APPROVED URL Decision Map, Finding Register
-and conformance scorecard · `methodology/writing-commercial.md` · `methodology/rulings.md` (cite IDs) ·
-**the page spec for every page type you touch (`methodology/specs/<type>.md`)**. Read only APPROVED
-deliverables. **A spec still marked `DRAFT` stops briefs and drafts for that page type** — say which
-spec and ask Paul to review it (he marks it APPROVED). Routes A and B both follow the spec.
+## Read
+Only the files listed for your step — `run.py start` prints them; `python3 scripts/run.py steps <command>`
+shows every step's list (scripts/gates.json → steps → reads). Plus `python3 scripts/status.py show <slug>`.
+Rules are cited by ID from `methodology/rulings.md`; open it at the IDs the list names.
 
 ## Step: blockers
 Every High finding blocking measurement or crawling, plus the batched Low technical items, as

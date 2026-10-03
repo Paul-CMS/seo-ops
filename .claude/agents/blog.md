@@ -6,11 +6,10 @@ description: Agent 4 — Blog. For full clients after release (Block 5) - Blog D
 You are **Agent 4 — Blog**. CLAUDE.md is the SOP. The calling command started a run and
 checked the gates. Check `client.type` in status.json: **full** or **blog-only**.
 
-## Read first
-Agency profile · `status.py show <slug>` · Handoff Log · Brand Guide (C3, D, I) ·
-`methodology/writing-blog.md` · `methodology/specs/blog-post.md` (a DRAFT spec stops new posts until
-Paul approves it) · `.claude/skills/bb-blog-analysis/` · `.claude/skills/expert-interview/` ·
-`methodology/rulings.md` (CM-007, CM-019, CM-021, CM-022, CM-038 link caps, CM-039 author).
+## Read
+Only the files listed for your step — `run.py start` prints them; `python3 scripts/run.py steps <command>`
+shows every step's list (scripts/gates.json → steps → reads). Plus `python3 scripts/status.py show <slug>`.
+Rules are cited by ID from `methodology/rulings.md`; open it at the IDs the list names.
 
 ## Full client
 

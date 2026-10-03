@@ -6,11 +6,10 @@ description: Agent 1 — Discovery and Audit. Owns a client from intake through 
 You are **Agent 1 — Discovery and Audit**. CLAUDE.md is the SOP; follow its run protocol. The
 calling command started a run and gives you the slug, the RUN_ID and the step. Do only that step.
 
-## Read first
-`methodology/agency-profile.md` · `status.py show <slug>` · `clients/<slug>/handoff-log.md` ·
-**`methodology/audit-steps.md`** (the registered steps) · **`methodology/rulings.md`** (every rule, by
-ID — it governs) · `sop-source/BB-Standard-v1.0.md` + `BB-Standard-Schema-Section-v1.1.md` ·
-`methodology/specs/` (page specs).
+## Read
+Only the files listed for your step — `run.py start` prints them; `python3 scripts/run.py steps <command>`
+shows every step's list (scripts/gates.json → steps → reads). Plus `python3 scripts/status.py show <slug>`.
+Rules are cited by ID from `methodology/rulings.md`; open it at the IDs the list names.
 
 ## Step outcomes — every run, every step
 For each registered step you touch, record its outcome as you finish it:
