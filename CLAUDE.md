@@ -47,8 +47,13 @@ Every command that does work:
    decisions.md, document-checklist.md or approval-record.md — they are generated.
 4. **Finish:** `python3 scripts/run.py finish <slug> <RUN_ID> --summary "..." --handoff clients/<slug>/handoffs/run-<RUN_ID>.md`
    This writes FINISHED, logs any condition newly met, regenerates the records, updates
-   the generated client view, and makes the run's **one git commit (and push)**. Mirror the regenerated
-   Handoff Log and Approval Record to Drive.
+   the generated client view, and makes the run's **one git commit (and push)**.
+5. **Mirror to Drive** (the regenerated Handoff Log, Approval Record, Document Checklist and, once
+   filled, the Brand Guide — `drive.py records <slug>`): `run.py start <slug> drive-mirror`; for each
+   file, **archive-and-replace** — rename the old Drive file with its date (`drive.py archive-name`),
+   move it into the client folder's `_Archive`, upload the new file under the original name, and log
+   both with `drive.py replaced`; then `run.py finish`. Nothing in Drive is deleted. The same
+   archive-and-replace applies to any file the system uploads again during a run.
 
 A run that stops early stays STARTED in the log on purpose — that is how the next command
 knows to stop and ask.
@@ -137,7 +142,8 @@ Rules enforced in the scripts as well as here:
   image URLs, meta descriptions) after the audit approval; structural fixes (title, keyword, social,
   meta robots, canonical, schema) after entity + Brand Guide approval **and the site's pilot**
   (`wordpress_pilot_approved`) — VA handoffs until then. SEOPress site-wide settings: read-only evidence;
-  changes are handoffs.
+  changes are handoffs. A client can carry a **safe-fix cap** per kind (`status.py cap`, set on Paul's
+  word); wp.py refuses past it until Paul raises it.
 - **Handoffs go to the owner of the work** (gates.json `owner`): WordPress, technical, redirect and
   title/meta work → Jonie; citations, GBP, content review and everything else → Gwen. Redirect rows
   get `301` filled in and always use full URLs, never bare slugs.
@@ -166,10 +172,13 @@ site for duplicates, variant conflicts and FAQ overlap) → a **1+1 pilot** → 
 5. Service batches are written back to the Brand Guide before any location batch; homepage
 and about last. Plan and batches live in status.json → `build`.
 
-**Sensitive clients (CM-025)** — matched by category at `/new-client` (health, legal, insurance,
-financial; term lists in `config.json`); when unsure, `/new-client` asks Paul. Content needs
+**Sensitive clients (CM-025, CM-040)** — matched by category at `/new-client` (health,
+health-adjacent trades, legal, insurance, financial; term lists in `config.json`). An industry
+not clearly in or out of a list → `/new-client` asks Paul, never decides. Content needs
 Paul's `/approve` with the human review recorded; for health categories the client's licensed
-practitioner signs off on health claims and the approval records who. Nothing goes live without it.
+practitioner signs off on health claims and the approval records who. Health-adjacent trades
+(mold, asbestos, radon, indoor air, water damage): health claims only with a named authoritative
+source (EPA, CDC or similar), otherwise removed; no practitioner sign-off. Nothing goes live without it.
 
 ## 6 · Methodology — what governs
 
@@ -225,7 +234,9 @@ than re-logging an exception each time.
   `[Client] - [SF|LNKD|BL|GSC|GA4|CMS|DFS|MANUAL] - [export] - [date].ext`.
 - Write real `.md` files (no Google Docs conversion). The only Google Doc the system creates
   is the proof sheet's client copy, named `- CLIENT COPY`.
-- Never rename or delete existing Drive files. Renames go on a rename list for Paul.
+- Never delete Drive files. Never rename existing files — renames go on a rename list for Paul —
+  with one exception: a file the system uploaded is replaced by archive-and-replace (§2 step 5:
+  dated name, moved into `_Archive`, logged).
 - Never use the pre-Claude-Code instruction files (old agent and writer instructions in Drive
   `Resources/` — Gem Instructions, Agent Instructions). They are not part of this system. They are
   archived only through `/archive-old-instructions`: it lists them, **asks Paul file by file**, and

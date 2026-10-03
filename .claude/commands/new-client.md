@@ -10,11 +10,14 @@ Follow CLAUDE.md. Plain language with Paul throughout.
 ## New client
 1. Work out the slug (lowercase, hyphens: "Red Rover Roofing" → `red-rover-roofing`) and type
    (`--blog-only` → blog-only, else full).
-2. Sensitive industry (CM-025) is matched by category: `python3 scripts/status.py classify "<industry>"`.
-   `yes`/`no` → use it. `unsure` (exit 9) → **ask Paul** whether it is sensitive and, if health,
-   whether health claims need a practitioner's sign-off; pass his answer as `--sensitive yes|no
-   [--practitioner yes|no]`. Paul can always override with `--sensitive`.
-   `python3 scripts/status.py init <slug> --name "<Client Name>" --domain <domain> --type <type> --industry <industry> [--sensitive yes|no] [--route A|B]`
+2. Sensitive industry (CM-025, CM-040) is matched by category: `python3 scripts/status.py classify "<industry>"`.
+   `yes`/`no` → use it. `unsure` (exit 9 — the industry is not clearly in or out of a list) →
+   **ask Paul**, never decide: which category (health, health_adjacent, legal, insurance,
+   financial) or none; pass his answer as `--category <category>|none` (`--practitioner yes|no`
+   only if he overrides the category's default). Paul can always override with `--category`.
+   `python3 scripts/status.py init <slug> --name "<Client Name>" --domain <domain> --type <type> --industry <industry> [--category <c>|none] [--route A|B]`
+   Paul's answer about an existing client: `status.py sensitivity <slug> <category>|none --run <RUN_ID>`.
+   If Paul sets a safe-fix cap for the client: `status.py cap <slug> alt_text|broken_link|… <n> --run <RUN_ID>`.
 3. `python3 scripts/run.py start <slug> new-client` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands) — every step below is a logged change.
 4. **Drive folder:** check whether `<Client Name> - TMS` already exists at the root of
    `v3. CMS Technical SEO Audit 2026` (ids in config.json). If not, create it as a copy of
@@ -25,7 +28,8 @@ Follow CLAUDE.md. Plain language with Paul throughout.
    `status.py set <slug> client.drive_folder_id <id>`.
 5. Brand Guide from `templates/brand-guide.md` → `clients/<slug>/brand-guide.md`. The Handoff Log, Document
    Checklist and Approval Record are generated (`scripts/records.py`) — upload each to the client folder as a
-   real `.md` with the client name, and re-upload after each run.
+   real `.md` with the client name (`drive.py records <slug>` lists the names) and log each upload with
+   `drive.py replaced`. After later runs they are replaced through a `drive-mirror` run (CLAUDE.md §2).
 6. **Intake questions for Paul** (one batch): website URL, GBP link, storefront or SAB, the
    **exact URL in the GBP Website field**, WordPress: Jonie creates the `seo-ops` Editor user and Application Password (wordpress/wordpress-site-setup.md §1)
    and Paul adds `WP_<SLUG>_URL / _USER / _APP_PASSWORD` to `.env` himself — never ask for them in chat; then run

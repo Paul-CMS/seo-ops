@@ -793,6 +793,15 @@
       "reads": [
         "wordpress/wordpress-site-setup.md (\u00a75 pilot)"
       ]
+    },
+    "drive-mirror": {
+      "gates": [
+        "client_setup"
+      ],
+      "produces": [],
+      "reads": [
+        "scripts/drive.py (docstring: archive-and-replace)"
+      ]
     }
   }
 }

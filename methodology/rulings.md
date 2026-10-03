@@ -29,7 +29,7 @@ recorded, no rule · `SUPERSEDED` no longer governs; follow the pointer.
 
 ## Contents
 - A. Coastal rulings (CM-001–024)
-- B. Standing rulings from the consolidation and after (CM-025 onward, incl. CM-038, CM-039)
+- B. Standing rulings from the consolidation and after (CM-025 onward, incl. CM-038–040)
 - C. Rule Register (RULE-001–015)
 - D. GOV-06 — procedure and tensions (PROC-01, PROC-02, GOV-T1–T10)
 - E. Resolved conflicts (CF-001–009)
@@ -279,13 +279,15 @@ Match by **category, not exact word**. The authoritative term list is `config.js
 - **Insurance.**
 - **Financial** — financial, finance, accounting / CPA, tax, mortgage, lending / loans,
   banking, wealth / investment.
+- **Health-adjacent trades** — mold, asbestos, radon, indoor air quality, water damage
+  (added 2026-10-03; its own rules are CM-040).
 
 Rules for a sensitive client:
 1. Nothing goes live without Paul's `/approve`, with the human review recorded.
 2. Health categories also need the client's **licensed practitioner sign-off** on health
-   claims, recorded with who signed.
+   claims, recorded with who signed. (Health-adjacent trades do not — CM-040.)
 3. "The Best" is not allowed unless Paul approves (CM-020 condition 4).
-4. When the category is unclear, `/new-client` asks Paul.
+4. When the category is unclear, `/new-client` asks Paul — see CM-040 for what "unclear" means.
 
 ## CM-026 · Self-review exception (standing)
 **ID** CM-026 · **Status** APPROVED · **Date** 2026-10-02 · **Reason** Claude performs both audit analysis and review in every audit; one standing ruling replaces re-logging the same exception each time. · **Supersedes** CM-018; the per-audit exception-logging requirement in RULE-011
@@ -371,6 +373,24 @@ states otherwise. The Brand Guide **author** field defaults to the owner named o
 returned proof sheet; the writer uses that field and never a generic byline ("Admin",
 "Staff", the company name). If the owner is not yet confirmed, the author is
 `[NEED: author — owner name from the proof sheet]` and the post cannot be approved.
+
+## CM-040 · Health-adjacent trades, and asking when an industry is unclear
+**ID** CM-040 · **Status** APPROVED · **Date** 2026-10-03 · **Reason** Mold, asbestos, radon, indoor-air and water-damage pages routinely make health claims (respiratory effects, allergies, cancer risk), but the category check classed mold remediation as not sensitive because no term matched; a "no" by default hid the question from Paul. · **Supersedes** — (extends CM-025)
+
+Decided by Paul (first client run, Gettysburg Mold Remediation Pros).
+1. **Health-adjacent trades** are a CM-025 sensitive category (`health_adjacent` in
+   `config.json`): mold, asbestos, radon, indoor air quality, water damage.
+2. **Health claims are allowed only when backed by a named authoritative source** (EPA, CDC
+   or a comparable public-health body), named in the copy. An unsourced health claim is
+   removed, not softened. The writer lists each health claim and its source in the
+   self-critique.
+3. **Pages with health claims need Paul's approval** with the human review recorded (CM-025
+   rule 1). **No practitioner sign-off** for this category.
+4. **Unclear means "not clearly in or out of a list".** The category check answers "no"
+   only for a trade on `config.json` `not_sensitive_trades`; a sensitive term means "yes";
+   anything else — including an industry matching neither list — and `/new-client` asks Paul
+   instead of deciding. Paul's answer is recorded with `status.py init --category …` or
+   `status.py sensitivity <slug> <category>|none --run <RUN_ID>` (logged as a decision).
 
 ---
 
@@ -618,6 +638,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-033–037 | reserved, unused |
 | CM-038 | APPROVED |
 | CM-039 | APPROVED |
+| CM-040 | APPROVED |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |

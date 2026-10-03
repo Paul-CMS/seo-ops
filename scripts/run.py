@@ -271,8 +271,9 @@ def main():
                f"Changes: {len(ch)} · Summary: {redact(a.summary)}\n")
         st = S.load(a.slug)
         (st.get("open_runs") or {}).pop(a.run_id, None)
-        st["last_run"] = {"run_id": a.run_id, "command": cmd, "finished": now(),
-                          "result": a.summary, "changes": len(ch)}
+        if cmd != "drive-mirror":   # a records mirror is bookkeeping; "last run" stays the real work
+            st["last_run"] = {"run_id": a.run_id, "command": cmd, "finished": now(),
+                              "result": a.summary, "changes": len(ch)}
         S.save(a.slug, st)
         S.log_conditions(a.slug, st)
         import records

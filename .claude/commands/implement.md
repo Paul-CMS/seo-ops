@@ -20,7 +20,9 @@ Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps i
    be met — `/wp-check` first):
    - **System (wp.py)** — current value first, already correct → logged SKIPPED, different from what
      the audit recorded → STOP and ask Paul:
-     - safe fixes: `wp.py set --field description`, `wp.py set-alt`, `wp.py fix-content --kind broken_link|image_url`;
+     - safe fixes: `wp.py set --field description`, `wp.py set-alt`, `wp.py fix-content --kind broken_link|image_url`.
+       A client may have a safe-fix cap (`status.py show` prints it); wp.py refuses past it — stop and tell
+       Paul how many went out, so he can check them live and raise the cap;
      - structural fixes **after the site's pilot**: `wp.py set --field title|keyword|social_title|social_description|robots|canonical`,
        `wp.py set-head` (schema). Before the pilot these refuse with "VA handoff" — hand them to Jonie.
      - **A live page:** ask Paul to confirm a fresh ManageWP backup and the time it was taken; pass
@@ -29,7 +31,8 @@ Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps i
      Decision Map ref), slugs (with their paired redirect), menus, SEOPress site-wide settings, robots.txt,
      sitemap, speed, and structural fields before the pilot.
      `python3 scripts/handoff.py create <slug> --run <RUN_ID> --kind <k> --items <csv>`. Upload the `.md`
-     and `.csv` to the client's Drive folder. Paul or the VA sends; the system messages no one.
+     and `.csv` to the client's Drive folder and log each upload (`drive.py replaced`). Paul or the VA sends;
+     the system messages no one.
 4. **The system never publishes.** New pages and posts go in as drafts with `/build <slug> ship <id>` /
    `/blog <slug> publish <id>`; Jonie publishes them.
 5. When a VA returns a worksheet: `handoff.py ingest <slug> --run <RUN_ID> --handoff <H-ID> --returned <csv>`,

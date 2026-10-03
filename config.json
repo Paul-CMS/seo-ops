@@ -13,7 +13,14 @@
     "template_folder_name": "_CLIENT FOLDER TEMPLATE - copy per client",
     "template_folder_id": "16nGvkPSqPqOXEs9Qy8XGoVC1pAT14D0v",
     "resources_folder_id": "1BduPSljznxjXvGdm3eVKnwfspxMbTbH6",
-    "methodology_folder_id": "1OP-F95hCNGhwflvrKU08FjtWYbEHmzn2"
+    "methodology_folder_id": "1OP-F95hCNGhwflvrKU08FjtWYbEHmzn2",
+    "client_archive_folder": "_Archive",
+    "mirrored_records": [
+      "Handoff Log",
+      "Approval Record",
+      "Document Checklist",
+      "Brand Guide"
+    ]
   },
   "blocked_tool_prefixes": {
     "mcp__8a51fb9d-5d75-414d-a0e6-4609383d6f7f__": "Paid DataforSEO calls go through scripts/dfs.py so every cost is checked and logged. Do not use the DataforSEO connector directly."
@@ -51,6 +58,20 @@
         "dermatolog\\w*",
         "veterinar\\w*",
         "vet clinic"
+      ]
+    },
+    "health_adjacent": {
+      "practitioner_signoff": false,
+      "health_claims": "sourced",
+      "terms": [
+        "molds?",
+        "mould",
+        "mildew",
+        "asbestos",
+        "radon",
+        "indoor air( quality)?",
+        "air quality",
+        "water damage"
       ]
     },
     "legal": {
@@ -113,5 +134,60 @@
     "recovery",
     "law",
     "(home|senior|elder|personal|memory|child|day|hospice) care"
+  ],
+  "_sensitivity_about": "CM-025 / CM-040. classify: a sensitive term → yes; an unsure hint → ask Paul; a clearly-not-sensitive trade → no; anything else → ask Paul. Sensitive terms win over the not-sensitive list.",
+  "not_sensitive_trades": [
+    "roof\\w*",
+    "plumb\\w*",
+    "hvac",
+    "heating",
+    "air conditioning",
+    "furnaces?",
+    "electric\\w*",
+    "landscap\\w*",
+    "lawn( care)?",
+    "tree (service|care|removal|trimming)",
+    "arborists?",
+    "pools?( service)?",
+    "paint\\w*",
+    "concrete",
+    "paving",
+    "asphalt",
+    "fenc\\w*",
+    "gutters?",
+    "siding",
+    "windows?",
+    "doors?",
+    "garage doors?",
+    "floor\\w*",
+    "remodel\\w*",
+    "renovation\\w*",
+    "kitchen",
+    "bath(room)?",
+    "decks?",
+    "masonry",
+    "excavat\\w*",
+    "handyman",
+    "carpet cleaning",
+    "pressure washing",
+    "power washing",
+    "window cleaning",
+    "junk removal",
+    "moving",
+    "movers",
+    "towing",
+    "auto repair",
+    "locksmiths?",
+    "garage",
+    "cabinets?",
+    "countertops?",
+    "solar",
+    "septic",
+    "drywall",
+    "insulation",
+    "general contractors?",
+    "construction",
+    "builders?",
+    "home builders?"
   ]
 }

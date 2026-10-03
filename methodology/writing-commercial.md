@@ -25,6 +25,9 @@ items in one step → apply only those and re-check.
 - **A7 Never reuse** an opening angle, heading or FAQ question that Brand Guide C3 shows on another page.
 - **Sensitive clients:** no health, legal, financial or insurance claim beyond Section D. Medical
   and chiropractic health claims are flagged `[PRACTITIONER REVIEW]` for the licensed practitioner.
+- **Health-adjacent trades (CM-040: mold, asbestos, radon, indoor air, water damage):** a health
+  claim stays only if the copy names its authoritative source (EPA, CDC or similar); otherwise
+  remove it. The self-critique lists every health claim with its source. No practitioner review.
 
 ## B — Required inputs (all; list what is missing and stop)
 

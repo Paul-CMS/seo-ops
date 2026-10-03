@@ -636,12 +636,60 @@ def t_guard():
 
 def t_sensitive():
     cases = {"roofing": "no", "chiropractor": "yes", "physical therapy": "yes", "law firm": "yes",
-             "lawn care": "no", "tax preparation": "yes", "wellness center": "unsure"}
+             "lawn care": "no", "tax preparation": "yes", "wellness center": "unsure",
+             "mold remediation": "yes", "asbestos abatement": "yes", "radon mitigation": "yes",
+             "indoor air quality testing": "yes", "water damage restoration": "yes", "dog grooming": "unsure"}
     for ind, want in cases.items():
         _, out = sh(f"python3 scripts/status.py classify {shlex.quote(ind)}")
         check(f"sensitive check: {ind} → {want}", f'"sensitive": "{want}"' in out, out)
+    _, out = sh('python3 scripts/status.py classify "mold remediation"')
+    check("mold is health-adjacent, no practitioner sign-off (CM-040)",
+          '"health_adjacent"' in out and '"practitioner_signoff": false' in out, out)
     code, out = sh('python3 scripts/status.py init w-co --name W --domain w.example --type full --industry "wellness center"')
     check("/new-client asks Paul when the category is unclear", code == 9 and "ASK PAUL" in out, out)
+    code, out = sh('python3 scripts/status.py init d-co --name D --domain d.example --type full --industry "dog grooming"')
+    check("/new-client asks Paul when an industry is on neither list (CM-040)", code == 9 and "ASK PAUL" in out, out)
+    code, out = sh('python3 scripts/status.py init d-co --name D --domain d.example --type full --industry "dog grooming" --category none')
+    check("Paul's answer (--category none) creates the client", code == 0 and not status("d-co")["client"]["sensitive"], out)
+    ag = Agent("d-co"); rid = ag.start("new-client")
+    code, out = sh(f"python3 scripts/status.py sensitivity d-co health_adjacent --run {rid}")
+    c = status("d-co")["client"]
+    check("status.py sensitivity records Paul's answer and logs it as a decision",
+          code == 0 and c["sensitive"] and c["sensitive_category"] == "health_adjacent" and not c["practitioner_signoff"]
+          and "sensitivity set to health_adjacent" in (ag.c / "log.md").read_text(), out)
+    code, out = sh("python3 scripts/status.py sensitivity d-co health_adjacent --run nope")
+    check("sensitivity needs an open run", code != 0, out)
+    ag.fin(rid, "set up")
+
+
+def t_drive():
+    sh('python3 scripts/status.py init dr-co --name "Dr Co" --domain dr.example --type full --industry roofing')
+    ag = Agent("dr-co"); rid = ag.start("new-client"); ag.fin(rid, "set up")
+    last = status("dr-co")["last_run"]["run_id"]
+    _, out = sh('python3 scripts/drive.py archive-name "Dr Co - Handoff Log.md" 2026-10-03')
+    check("archive name = old name + its date", out == "Dr Co - Handoff Log - 2026-10-03.md", out)
+    _, out = sh("python3 scripts/drive.py records dr-co")
+    check("drive.py records lists the mirrored records with their Drive names",
+          "Dr Co - Handoff Log.md" in out and "Dr Co - Approval Record.md" in out and "_Archive" in out, out)
+    code, out = sh("python3 scripts/drive.py replaced dr-co --run nope --name x.md --local clients/dr-co/handoff-log.md --new-link L")
+    check("a Drive upload outside an open run is refused", code != 0, out)
+    m = ag.start("drive-mirror")
+    code, out = sh(f'python3 scripts/drive.py replaced dr-co --run {m} --name "Dr Co - Handoff Log.md" '
+                   f'--local clients/dr-co/handoff-log.md --new-link https://drive/new '
+                   f'--archived-as "Dr Co - Handoff Log - 2026-10-03.md" --archived-link https://drive/old')
+    ch = [json.loads(l) for l in (ag.c / "changes.jsonl").read_text().splitlines() if l.strip()]
+    mine = [c for c in ch if c["run_id"] == m]
+    check("archive-and-replace logs two drive changes: archive (nothing deleted) + upload",
+          code == 0 and [c["field"] for c in mine] == ["archive", "upload"]
+          and all(c["kind"] == "drive_file" and c["channel"] == "drive" for c in mine)
+          and mine[0]["new"] == "_Archive/Dr Co - Handoff Log - 2026-10-03.md", out)
+    code, out = sh(f'python3 scripts/drive.py replaced dr-co --run {m} --name "Dr Co - Handoff Log.md" '
+                   f'--local clients/dr-co/handoff-log.md --new-link L --archived-as "Other name.md" --archived-link O')
+    check("an archive name that is not the old name + date is refused", code != 0, out)
+    before = (ag.c / "handoff-log.md").read_text()
+    sh(f'python3 scripts/run.py finish dr-co {m} --summary "Drive records mirrored"')   # no handoff section
+    check("a drive-mirror run leaves the Handoff Log and 'last run' unchanged (no re-mirror loop)",
+          (ag.c / "handoff-log.md").read_text() == before and status("dr-co")["last_run"]["run_id"] == last)
 
 
 def t_finish_needs_outputs():
@@ -782,6 +830,19 @@ def t_wordpress():
     code, out = sh(f'python3 tests/fakes.py wp fix-content wp-co --run {rid} --url https://test.example/roof-repair/ '
                    f'--kind broken_link --old "old roof repair copy" --new "roof repair copy" {LIVE}')
     check("broken link / content fix written and logged", code == 0 and "roof repair copy" in wp_state()["items"]["2"]["content"]["raw"], out)
+    code, out = sh(f"python3 scripts/status.py cap wp-co broken_link 1 --run {rid}")
+    check("Paul's safe-fix cap is recorded per client and logged",
+          code == 0 and status("wp-co")["client"]["safe_fix_cap"] == {"broken_link": 1}
+          and "safe-fix cap for broken_link set to 1" in (ag.c / "log.md").read_text(), out)
+    code, out = sh(f'python3 tests/fakes.py wp fix-content wp-co --run {rid} --url https://test.example/roof-repair/ '
+                   f'--kind broken_link --old "roof repair copy" --new "roof repair text" {LIVE}')
+    check("safe-fix cap reached → the next broken-link fix is refused, the page is untouched",
+          code == 4 and "cap reached" in out and "roof repair text" not in wp_state()["items"]["2"]["content"]["raw"], out)
+    code, out = sh(f'python3 tests/fakes.py wp fix-content wp-co --run {rid} --url https://test.example/roof-repair/ '
+                   f'--kind broken_link --old "old roof repair copy" --new "roof repair copy" {LIVE}')
+    check("at the cap, an already-correct item is still checked and skipped", code == 0 and "already correct" in out, out)
+    sh(f"python3 scripts/status.py cap wp-co broken_link none --run {rid}")
+    check("cap none removes the cap", not status("wp-co")["client"].get("safe_fix_cap"))
     ag.fin(rid, "fixes")
     # pilot: approve, then structural fields go direct
     st = status("wp-co"); st["build"] = {"site_plan": {"file": "x", "approval": {"state": "approved"}},
@@ -813,7 +874,7 @@ def t_wordpress():
 
 
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
-             t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_wordpress, t_client_view]
+             t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view]
 
 
 def main():

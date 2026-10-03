@@ -26,8 +26,9 @@ This is Paul's decision, not yours. Do not add, soften or second-guess it.
    It refuses unless this /approve came from Paul in the last 20 minutes, and it refuses gates
    whose earlier gates are not met. If it refuses because the token expired or was used, ask
    Paul to type /approve again — never try to work around it.
-5. Mirror the Approval Record to Drive: `python3 scripts/status.py approval-record <slug>` →
-   update `[Client] - Approval Record.md` in the client folder. If a deliverable was approved,
+5. Mirror the Approval Record to Drive through a `drive-mirror` run (CLAUDE.md §2: archive the old
+   `[Client] - Approval Record.md` with its date into `_Archive`, upload the new one, `drive.py replaced`
+   logs both). If a deliverable was approved,
    save the Drive copy with status `APPROVED` (a new file; the REVIEW file moves to `_Archive/`
    only if Paul agrees).
 6. Tell Paul in one or two sentences what this unlocks and the next command.

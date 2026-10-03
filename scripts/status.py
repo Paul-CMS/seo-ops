@@ -2,8 +2,12 @@
 """status.py — read and maintain clients/<slug>/status.json.
 
     status.py init <slug> --name "Client Name" --domain example.com --type full|blog-only
-                          --industry roofing [--sensitive yes|no] [--route A|B] [--drive-folder-id ID]
-    status.py classify "<industry>"                  sensitive-industry check (CM-025)
+                          --industry roofing [--category C|none | --sensitive yes|no] [--practitioner yes|no]
+                          [--route A|B] [--drive-folder-id ID]
+    status.py classify "<industry>"                  sensitive-industry check (CM-025, CM-040); exit 9 = ask Paul
+    status.py sensitivity <slug> <category>|none --run R [--practitioner yes|no]   Paul's answer, logged
+    status.py cap <slug> alt_text|broken_link|image_url|meta_description <n>|none --run R
+                                                     per-client safe-fix cap (wp.py enforces it), logged
     status.py show <slug> [--json]
     status.py require <slug> <gate> [<gate> ...]     exit 0 if met, 4 if not
     status.py set <slug> <field> <value>              non-gate fields only
@@ -28,7 +32,7 @@ import re
 import sys
 import time
 
-from lib import ROOT, client_dir, die, now, read_json, sha12, write_json, config
+from lib import ROOT, append, client_dir, die, now, read_json, sha12, write_json, config
 
 GATES = json.loads((ROOT / "scripts" / "gates.json").read_text())
 
@@ -37,6 +41,7 @@ SETTABLE = {
     "client.drive_folder_id", "client.kadence_head_meta_key", "client.gbp_url",
     "client.gbp_website_url", "client.address_type", "client.notes", "client.state",
 }
+SAFE_FIX_CAP_KINDS = ["alt_text", "broken_link", "image_url", "meta_description"]
 BATCH_STATES = ["planned", "briefs_written", "drafts_written", "sem_applied", "sem_check_failed",
                 "handed_off", "corrections_requested", "published", "verified", "written_back"]
 PAGE_STATES = ["planned", "brief_written", "draft_written", "approved", "drafted", "published",
@@ -144,7 +149,10 @@ def client_view(st):
 
 # ------------------------------------------------------------------ sensitive industries (CM-025)
 def classify(industry):
-    """('yes', category, practitioner) · ('no', None, False) · ('unsure', hint, False)."""
+    """('yes', category, practitioner) · ('no', None, False) · ('unsure', hint or None, False).
+
+    'no' only for a trade on config.json not_sensitive_trades; anything not clearly in or out of
+    a list is 'unsure', so /new-client asks Paul (CM-040)."""
     text = " " + re.sub(r"[^a-z0-9 ]+", " ", (industry or "").lower()) + " "
     cfg = config()
     for cat, spec in (cfg.get("sensitive_categories") or {}).items():
@@ -154,7 +162,21 @@ def classify(industry):
     for hint in cfg.get("sensitive_unsure_hints") or []:
         if re.search(r"\b" + hint + r"\b", text):
             return "unsure", hint, False
-    return "no", None, False
+    for trade in cfg.get("not_sensitive_trades") or []:
+        if re.search(r"\b" + trade + r"\b", text):
+            return "no", None, False
+    return "unsure", None, False
+
+
+def sensitivity_fields(category, practitioner=None):
+    """(sensitive, category, practitioner) for a category Paul named; 'none' = not sensitive."""
+    cats = config().get("sensitive_categories") or {}
+    if category in (None, "none"):
+        return False, None, False
+    if category not in cats:
+        die(f"Unknown category '{category}'. Categories: {', '.join(cats)}, none.")
+    prac = (practitioner == "yes") if practitioner else bool(cats[category].get("practitioner_signoff"))
+    return True, category, prac
 
 
 def new_status(slug, name, domain, ctype, industry, route=None, folder=None, sensitive=None,
@@ -495,6 +517,8 @@ def render_show(st):
     out = [f"{c['name']} ({c['slug']}) · {c['domain']} · {c['type']} · industry {c['industry']}"
            + (f" · SENSITIVE ({c.get('sensitive_category')})" if c["sensitive"] else "")
            + (f" · Route {c['route']}" if c.get("route") else "")]
+    if c.get("safe_fix_cap"):
+        out.append("Safe-fix cap: " + ", ".join(f"{k} {v}" for k, v in c["safe_fix_cap"].items()))
     out.append("")
     out.append("Conditions (checked by the system):")
     for g in GATES["conditions"]:
@@ -595,8 +619,12 @@ def main():
     s.add_argument("--type", choices=["full", "blog-only"], required=True)
     s.add_argument("--industry", required=True); s.add_argument("--route", choices=["A", "B"])
     s.add_argument("--drive-folder-id"); s.add_argument("--sensitive", choices=["yes", "no"])
-    s.add_argument("--practitioner", choices=["yes", "no"])
+    s.add_argument("--practitioner", choices=["yes", "no"]); s.add_argument("--category")
     s = sub.add_parser("classify"); s.add_argument("industry")
+    s = sub.add_parser("sensitivity"); s.add_argument("slug"); s.add_argument("category")
+    s.add_argument("--practitioner", choices=["yes", "no"]); s.add_argument("--run", required=True)
+    s = sub.add_parser("cap"); s.add_argument("slug"); s.add_argument("kind", choices=SAFE_FIX_CAP_KINDS)
+    s.add_argument("limit"); s.add_argument("--run", required=True)
     s = sub.add_parser("show"); s.add_argument("slug"); s.add_argument("--json", action="store_true")
     s = sub.add_parser("require"); s.add_argument("slug"); s.add_argument("gates", nargs="+")
     s = sub.add_parser("set"); s.add_argument("slug"); s.add_argument("field"); s.add_argument("value")
@@ -628,14 +656,18 @@ def main():
         if (d / "status.json").exists():
             die(f"{a.slug} already exists.")
         v, cat, prac = classify(a.industry)
-        if a.sensitive:
+        if a.category:
+            sensitive, cat, prac = sensitivity_fields(a.category, a.practitioner)
+        elif a.sensitive:
             sensitive = a.sensitive == "yes"
             cat = (cat if v == "yes" else "set by Paul") if sensitive else None
             prac = (a.practitioner == "yes") if a.practitioner else (prac if sensitive else False)
         elif v == "unsure":
-            die(f"ASK PAUL — is '{a.industry}' a sensitive industry (CM-025: health, legal, insurance, "
-                f"financial)? It mentions '{cat}'. Re-run with --sensitive yes|no "
-                "(and --practitioner yes for health claims).", 9)
+            why = (f"It mentions '{cat}'." if cat else "It is not clearly in or out of a list "
+                   "(config.json sensitive_categories / not_sensitive_trades).")
+            die(f"ASK PAUL — is '{a.industry}' a sensitive industry (CM-025, CM-040: "
+                f"{', '.join(config().get('sensitive_categories') or {})})? {why} Re-run with "
+                "--category <category>|none (--practitioner yes|no overrides the category's default).", 9)
         else:
             sensitive = v == "yes"
         for sub_ in ("discovery", "audit", "build", "finish", "blog", "handoffs",
@@ -657,6 +689,24 @@ def main():
         return
 
     st = load(a.slug)
+    if a.cmd in ("sensitivity", "cap"):   # Paul's answers in chat, recorded as decisions in the open run
+        import run as R
+        R.open_run(a.slug, a.run)
+        if a.cmd == "sensitivity":
+            sensitive, cat, prac = sensitivity_fields(a.category, a.practitioner)
+            st["client"].update(sensitive=sensitive, sensitive_category=cat, practitioner_signoff=prac)
+            text = (f"Paul: sensitivity set to {cat or 'not sensitive'}"
+                    + (f", practitioner sign-off {'yes' if prac else 'no'}" if sensitive else "") + " (CM-025, CM-040)")
+        else:
+            if a.limit != "none" and not a.limit.isdigit():
+                die("limit must be a whole number or 'none'")
+            caps = st["client"].setdefault("safe_fix_cap", {})
+            caps.pop(a.kind, None) if a.limit == "none" else caps.update({a.kind: int(a.limit)})
+            text = f"Paul: safe-fix cap for {a.kind} set to {a.limit}"
+        save(a.slug, st)
+        append(client_dir(a.slug) / "log.md", f"- DECISION {now()[:16]} · run {a.run} · {text}\n")
+        print(text)
+        return
     if a.cmd == "show":
         print(json.dumps(st, indent=2) if a.json else render_show(st))
     elif a.cmd == "require":

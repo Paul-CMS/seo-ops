@@ -19,6 +19,9 @@ Never in the same context as commercial writing or auditing. Rules are cited by 
   "In conclusion", "It's important to note that", any paragraph restating its heading.
 - **Sensitive clients:** health/legal/financial/insurance claims only from Section D; medical
   and chiropractic health claims flagged `[PRACTITIONER REVIEW]`.
+- **Health-adjacent trades (CM-040: mold, asbestos, radon, indoor air, water damage):** a health
+  claim stays only if the post names its authoritative source (EPA, CDC or similar); otherwise
+  remove it. The self-critique lists every health claim with its source. No practitioner review.
 
 ## B — Required inputs (all; list what is missing and stop)
 

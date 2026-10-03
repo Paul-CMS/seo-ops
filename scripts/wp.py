@@ -36,6 +36,8 @@ Rules enforced here (CLAUDE.md §4):
   - Check the current value first; already correct → SKIPPED; different from what the audit recorded →
     STOP. Every change is logged with URL, old, new and result; /rollback restores from the log.
   - Redirects and SEOPress site-wide settings are never changed here — always a VA handoff.
+  - Per-client safe-fix cap (status.py cap): once that many of a kind are applied, the next is refused
+    until Paul raises it.
 """
 import argparse
 import base64
@@ -218,6 +220,19 @@ def require(slug, run_id, kind, page_id=None, post=None, live=False, backup=None
     if post and post.get("status") == "publish" and not (live and backup):
         die("This page is live. Changing an already-published page needs --live and --backup-confirmed "
             "\"ManageWP backup <time>, confirmed by Paul\" — ask Paul to confirm a fresh backup first.")
+
+
+def check_cap(slug, kind):
+    """Per-client safe-fix cap (status.json client.safe_fix_cap, set by status.py cap): refuse once the
+    system has applied that many of this kind for the client. Rollbacks don't free a slot."""
+    cap = (S.load(slug)["client"].get("safe_fix_cap") or {}).get(kind)
+    if cap is None:
+        return
+    done = sum(1 for c in R.changes(slug) if c["kind"] == kind and c.get("channel") == "wp"
+               and str(c["result"]).startswith("APPLIED"))
+    if done >= cap:
+        die(f"REFUSED — safe-fix cap reached for {kind}: {done} of {cap} already applied for this client. "
+            f"Paul checks them live and raises the cap (status.py cap {slug} {kind} <n> --run R) before more go out.", 4)
 
 
 def log(slug, run_id, kind, url, field, old, new, result, **kw):
@@ -502,6 +517,7 @@ def main():
                 log(a.slug, a.run, kind, a.url, a.field, cur[a.field], a.value,
                     f"STOPPED — live value differs from what the audit recorded ({a.expect!r})")
                 die("STOP — the page changed since the audit. Ask Paul.", 11)
+            check_cap(a.slug, kind)
             seo_put(a.slug, p["id"], a.field, a.value, cur)
             after = seo_read(a.slug, p["id"])[a.field]
             log(a.slug, a.run, kind, a.url, a.field, cur[a.field], a.value,
@@ -526,6 +542,7 @@ def main():
                 log(a.slug, a.run, "alt_text", url, "alt_text", cur, a.alt, f"STOPPED — expected {a.expect_alt!r}", ref=str(a.media_id))
                 die("STOP — the alt text changed since it was recorded. Ask Paul.", 11)
             else:
+                check_cap(a.slug, "alt_text")
                 call(a.slug, f"wp/v2/media/{a.media_id}", "POST", {"alt_text": a.alt})
                 after = call(a.slug, f"wp/v2/media/{a.media_id}?context=edit").get("alt_text")
                 log(a.slug, a.run, "alt_text", url, "alt_text", cur, a.alt,
@@ -543,6 +560,7 @@ def main():
             if a.old not in old_c:
                 log(a.slug, a.run, a.kind, a.url, "content", a.old, a.new, "STOPPED — the old value is not on the page")
                 die("STOP — the page changed since the audit (the old link/URL is not there). Ask Paul.", 11)
+            check_cap(a.slug, a.kind)
             new_c = old_c.replace(a.old, a.new)
             snap = client_dir(a.slug) / "snapshots" / "_tmp_old.html"
             snap.write_text(old_c, encoding="utf-8")
