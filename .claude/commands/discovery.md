@@ -21,6 +21,4 @@ Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps d
    the deliverables (S18).
 4. Show Paul the result and the exact `/approve` line from `python3 scripts/next.py <slug>` (it names
    the files the approval covers). Never type it yourself.
-5. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> --summary ... --phase ... --next ... [--waiting ...]`.
-   Client view examples: phase "Confirming your business details", waiting "Your answers on the
-   fact sheet we sent".
+5. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> --summary ...`.

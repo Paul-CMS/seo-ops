@@ -7,7 +7,7 @@
     status.py show <slug> [--json]
     status.py require <slug> <gate> [<gate> ...]     exit 0 if met, 4 if not
     status.py set <slug> <field> <value>              non-gate fields only
-    status.py view <slug> [--phase T] [--done T] [--waiting T ...] [--clear-waiting] [--next T]
+    status.py view <slug>                             the client-facing summary (generated; read-only)
     status.py page <slug> <page_id> --type service|location|county|homepage|about|blog
                           [--name N] [--url U] [--state S] [--file F]
     status.py mark <slug> <artifact> --file F [--file F2 ...]   record the files an approval will cover
@@ -58,7 +58,88 @@ def load(slug):
 
 def save(slug, st):
     st["updated"] = now()
+    st["client_view"] = client_view(st)
     write_json(path(slug), st)
+
+
+# ------------------------------------------------------------------ client-facing summary
+PHRASES = json.loads((ROOT / "methodology" / "client-phrases.json").read_text())
+FILE_CODES = r"\b(SB|SD|LB|LD|LBCH|LDCH|HB|HD|AB|AD|PB|PD|SF|LNKD|DFS|GSC|BL)\b"
+RULE_IDS = r"\b(CM|RULE|BB|SEM|GOV|PROC|CF|HP|SVC|LOC|HUB|ABT|BLG|COM)-?\d+|\bF-\d+|\bS\d{2}\b|\bGOV-T\d+"
+
+
+def client_view_problems(text):
+    """Anything a client must never see: rule IDs, gate names, file codes, internal names."""
+    probs = []
+    if re.search(RULE_IDS, text):
+        probs.append(f"rule ID {re.search(RULE_IDS, text).group(0)!r}")
+    names = set(GATES["gates"]) | set(GATES["conditions"]) | set(GATES["derived"]) | {"site_plan"}
+    for n in names:
+        if re.search(r"\b" + re.escape(n) + r"\b", text):
+            probs.append(f"gate name {n!r}")
+    if re.search(FILE_CODES, text):
+        probs.append(f"file code {re.search(FILE_CODES, text).group(0)!r}")
+    if re.search(r"batch:|page:|status\.json|\.py\b|/approve|\bslug\b", text):
+        probs.append("an internal command or file name")
+    return probs
+
+
+def client_view(st):
+    """Built only from methodology/client-phrases.json, from where the client stands."""
+    P, done, waiting = PHRASES, [], []
+    decided = lambda g: _decided(st, g)
+    c = st["client"]
+    if c["type"] == "blog-only":
+        phase = "articles" if decided("entity_approved") else "getting_started"
+        order = ["entity_approved", "blog_topics_approved"]
+    else:
+        bs = batches(st)
+        if not decided("entity_approved"):
+            phase = "getting_started"
+        elif not condition_met(st, "proof_sheet_returned")[0]:
+            phase = "confirming_details"
+        elif not decided("discovery_signed_off"):
+            phase = "reviewing_site"
+        elif not check(st, "site_plan")[0]:
+            phase = "planning_pages"
+        elif not condition_met(st, "pages_built")[0]:
+            later = ("handed_off", "corrections_requested", "published", "verified", "written_back")
+            phase = "publishing" if any(b.get("state") in later for b in bs) else "writing_pages"
+        elif not decided("release_approved"):
+            phase = "final_checks"
+        else:
+            phase = "articles"
+        order = ["entity_approved", "proof_sheet_approved", "proof_sheet_returned", "audit_approved",
+                 "brand_guide_approved", "discovery_signed_off", "site_plan", "pages_live",
+                 "link_wheel_approved", "release_approved"]
+        if decided("proof_sheet_approved") and not condition_met(st, "proof_sheet_returned")[0]:
+            waiting.append(P["waiting"]["proof_sheet"])
+    live = sum(1 for p in st["pages"].values() if p.get("type") != "blog"
+               and p.get("state") in ("published", "verified", "written_back"))
+    posts = sum(1 for p in st["pages"].values() if p.get("type") == "blog"
+                and (p.get("approval") or {}).get("state") in GATES["met_decisions"])
+    for k in order + ["posts_published"]:
+        if k == "pages_live":
+            ok = live > 0
+        elif k == "posts_published":
+            ok = posts > 0
+        elif k == "site_plan":
+            ok = check(st, "site_plan")[0]
+        elif k in GATES["conditions"]:
+            ok = condition_met(st, k)[0]
+        else:
+            ok = decided(k)
+        if ok:
+            done.append(P["done"][k].format(n=live if k == "pages_live" else posts))
+    view = {"_note": "The only client-facing part of this file, built from methodology/client-phrases.json. "
+                     "Nothing else here is ever shown to a client.",
+            "phase": P["phases"][phase]["phase"], "done": done, "waiting_on_client": waiting,
+            "next": P["phases"][phase]["next"]}
+    for t in [view["phase"], view["next"]] + done + waiting:
+        bad = client_view_problems(t)
+        if bad:
+            die(f"client view blocked — {t!r} contains {', '.join(bad)}. Fix methodology/client-phrases.json.")
+    return view
 
 
 # ------------------------------------------------------------------ sensitive industries (CM-025)
@@ -511,9 +592,6 @@ def main():
     s = sub.add_parser("require"); s.add_argument("slug"); s.add_argument("gates", nargs="+")
     s = sub.add_parser("set"); s.add_argument("slug"); s.add_argument("field"); s.add_argument("value")
     s = sub.add_parser("view"); s.add_argument("slug")
-    s.add_argument("--phase"); s.add_argument("--done", action="append")
-    s.add_argument("--waiting", action="append"); s.add_argument("--clear-waiting", action="store_true")
-    s.add_argument("--next")
     s = sub.add_parser("page"); s.add_argument("slug"); s.add_argument("page_id")
     s.add_argument("--type", choices=["service", "location", "county", "homepage", "about", "blog"])
     s.add_argument("--name"); s.add_argument("--url"); s.add_argument("--state", choices=PAGE_STATES)
@@ -557,6 +635,7 @@ def main():
         st = new_status(a.slug, a.name, a.domain, a.type, a.industry, a.route, a.drive_folder_id,
                         sensitive, cat, prac)
         write_json(d / "status.json", st)
+        save(a.slug, st)
         (d / "log.md").write_text(
             f"# Safety log — {a.name}\n\nAppend-only. Every command writes STARTED before it acts "
             "and FINISHED after. Every change lists URL, old value, new value and result.\n"
@@ -590,13 +669,7 @@ def main():
         st[sect][key] = a.value
         save(a.slug, st); print(f"{a.field} = {a.value}")
     elif a.cmd == "view":
-        cv = st["client_view"]
-        if a.phase: cv["phase"] = a.phase
-        if a.done: cv["done"] += [d for d in a.done if d not in cv["done"]]
-        if a.clear_waiting: cv["waiting_on_client"] = []
-        if a.waiting: cv["waiting_on_client"] += [w for w in a.waiting if w not in cv["waiting_on_client"]]
-        if a.next: cv["next"] = a.next
-        save(a.slug, st); print(json.dumps(cv, indent=2))
+        print(json.dumps(client_view(st), indent=2))
     elif a.cmd == "page":
         p = st["pages"].setdefault(a.page_id, {"state": "planned"})
         for k in ("type", "name", "url", "file"):

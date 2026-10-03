@@ -45,9 +45,9 @@ Every command that does work:
    Write this run's Handoff Log section (template `templates/handoff-log.md`) to
    `clients/<slug>/handoffs/run-<RUN_ID>.md` and pass it to finish. Never edit handoff-log.md,
    decisions.md, document-checklist.md or approval-record.md — they are generated.
-4. **Finish:** `python3 scripts/run.py finish <slug> <RUN_ID> --summary "..." --handoff clients/<slug>/handoffs/run-<RUN_ID>.md --phase "..." --next "..." [--done "..."] [--waiting "..."]`
+4. **Finish:** `python3 scripts/run.py finish <slug> <RUN_ID> --summary "..." --handoff clients/<slug>/handoffs/run-<RUN_ID>.md`
    This writes FINISHED, logs any condition newly met, regenerates the records, updates
-   `client_view`, and makes the run's **one git commit (and push)**. Mirror the regenerated
+   the generated client view, and makes the run's **one git commit (and push)**. Mirror the regenerated
    Handoff Log and Approval Record to Drive.
 
 A run that stops early stays STARTED in the log on purpose — that is how the next command
@@ -268,8 +268,10 @@ clients/<slug>/
 ```
 
 `status.json` → `client_view` is the **only** client-facing part (phase, done, waiting on
-client, next — plain language, no jargon, no rule IDs, no internal names). Nothing else in
-status.json or the repo is ever shown to a client.
+client, next). It is **generated** from where the client stands, using only the fixed phrases in
+`methodology/client-phrases.json` — nobody types it. A check blocks rule IDs, gate names and file
+codes from it (`status.py view <slug>` shows it). Nothing else in status.json or the repo is ever
+shown to a client.
 
 ## 11 · Talking to Paul
 

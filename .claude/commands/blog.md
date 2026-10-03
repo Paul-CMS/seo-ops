@@ -18,5 +18,4 @@ Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps b
 3. Stop at every approval point and give Paul the `/approve` line (blog_map_approved for the map,
    entity_approved and blog_topics_approved for blog-only, page:<id> per post — sensitive clients with
    `--review`, medical/chiropractic with `--practitioner`).
-4. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> ...` (client view e.g. "Writing articles that answer
-   your customers' questions").
+4. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> ...`.

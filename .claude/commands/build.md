@@ -19,7 +19,6 @@ Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps b
    site plan · briefs · SEM IDs (`batch:<id>:sem --ids …`) · drafts (+ `--review` for sensitive
    clients, `--practitioner` for health) · technical blockers cleared (`blockers_cleared`). When every
    batch is written back, the `pages_built` condition is met by the system — no approval.
-5. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> ...` with a plain client view
-   (e.g. phase "Writing your service pages", done "First 5 service pages approved").
+5. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> --summary "..."`.
 
 Drafts reach WordPress only through `/build <slug> ship <id>` — always as WordPress drafts.

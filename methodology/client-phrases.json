@@ -1,0 +1,30 @@
+{
+  "_about": "The only words the client-facing summary (status.json -> client_view) is built from. status.py computes it from where the client stands; nobody types it. Plain language only: tests/run_all.py and status.py block rule IDs, gate names and file codes. Edit a phrase here (and run the tests) to change what clients see.",
+  "phases": {
+    "getting_started":    {"phase": "Getting started", "next": "We are researching your business before we ask you anything."},
+    "confirming_details": {"phase": "Confirming your business details", "next": "Once you return the fact sheet, we finish your business profile."},
+    "reviewing_site":     {"phase": "Reviewing your website", "next": "We are finishing the review of your website."},
+    "planning_pages":     {"phase": "Planning your new pages", "next": "We are planning every service and location page."},
+    "writing_pages":      {"phase": "Writing your pages", "next": "We are writing your service and location pages."},
+    "publishing":         {"phase": "Publishing your new pages", "next": "Your new pages are going live in stages."},
+    "final_checks":       {"phase": "Final checks before launch", "next": "We are linking your pages together and running final checks."},
+    "articles":           {"phase": "Writing articles that answer your customers' questions", "next": "We publish new articles one at a time."}
+  },
+  "done": {
+    "entity_approved":      "We confirmed how search engines should understand your business",
+    "proof_sheet_approved": "We prepared a fact sheet for you to confirm",
+    "proof_sheet_returned": "You returned the fact sheet — thank you",
+    "audit_approved":       "We finished reviewing your website",
+    "brand_guide_approved": "Your business details are confirmed",
+    "discovery_signed_off": "Research is complete and page work has started",
+    "site_plan":            "Your new page plan is ready",
+    "pages_live":           "{n} new pages are live",
+    "link_wheel_approved":  "Your pages are linked together",
+    "release_approved":     "Your site passed its final checks",
+    "blog_topics_approved": "Your article topics are chosen",
+    "posts_published":      "{n} articles written"
+  },
+  "waiting": {
+    "proof_sheet": "Your answers on the fact sheet we sent"
+  }
+}

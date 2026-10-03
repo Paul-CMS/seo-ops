@@ -7,7 +7,7 @@
     run.py change <slug> <run_id> --kind K --url U --field F --old V --new V --result R
                   [--old-file P] [--new-file P] [--ref REF] [--channel wp|handoff|drive|local]
     run.py decision <slug> <run_id> --text T [--ids F-001,F-004]   a decision for decisions.md
-    run.py finish <slug> <run_id> --summary T [--handoff FILE] [--phase T] [--done T] [--waiting T] [--next T]
+    run.py finish <slug> <run_id> --summary T [--handoff FILE]     (the client view is generated, not typed)
     run.py abort  <slug> <run_id> --reason T        only when Paul says so
     run.py check  <slug>                            exit 3 if an unfinished run exists
     run.py steps  [<command>]                       list each step's gates and outputs (from gates.json)
@@ -177,9 +177,7 @@ def main():
     s.add_argument("--old-file"); s.add_argument("--new-file"); s.add_argument("--ref")
     s.add_argument("--channel", choices=["wp", "handoff", "drive", "local"])
     s = sub.add_parser("finish"); s.add_argument("slug"); s.add_argument("run_id")
-    s.add_argument("--summary", required=True); s.add_argument("--phase")
-    s.add_argument("--done", action="append"); s.add_argument("--waiting", action="append")
-    s.add_argument("--clear-waiting", action="store_true"); s.add_argument("--next")
+    s.add_argument("--summary", required=True)
     s.add_argument("--handoff", help="Markdown file with this run's Handoff Log section (templates/handoff-log.md)")
     s = sub.add_parser("abort"); s.add_argument("slug"); s.add_argument("run_id")
     s.add_argument("--reason", required=True)
@@ -275,12 +273,6 @@ def main():
         (st.get("open_runs") or {}).pop(a.run_id, None)
         st["last_run"] = {"run_id": a.run_id, "command": cmd, "finished": now(),
                           "result": a.summary, "changes": len(ch)}
-        cv = st["client_view"]
-        if a.phase: cv["phase"] = a.phase
-        if a.done: cv["done"] += [x for x in a.done if x not in cv["done"]]
-        if a.clear_waiting: cv["waiting_on_client"] = []
-        if a.waiting: cv["waiting_on_client"] += [x for x in a.waiting if x not in cv["waiting_on_client"]]
-        if a.next: cv["next"] = a.next
         S.save(a.slug, st)
         S.log_conditions(a.slug, st)
         import records

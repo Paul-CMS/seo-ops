@@ -670,8 +670,32 @@ def t_repo_hygiene():
           not [f for f in hits(r"Stage [78]\b|Gemini|ChatGPT") if f.startswith((".claude", "CLAUDE")) and "archive-old-instructions" not in f])
 
 
+def t_client_view():
+    import importlib, sys as _sys
+    _sys.path.insert(0, str(SB / "scripts"))
+    os.chdir(SB)
+    S = importlib.import_module("status")
+    P = json.loads((SB / "methodology" / "client-phrases.json").read_text())
+    phrases = [v["phase"] for v in P["phases"].values()] + [v["next"] for v in P["phases"].values()] \
+        + list(P["done"].values()) + list(P["waiting"].values())
+    bad = [(t, S.client_view_problems(t)) for t in phrases if S.client_view_problems(t)]
+    check("every client phrase passes the plain-language check", not bad, bad)
+    for t in ("Entity approved per CM-020", "Next: entity_approved", "SD - Roof Repair - Test Co is ready",
+              "Waiting on audit_approved", "F-012 fixed", "S07 done", "run /approve now"):
+        check(f"the check blocks: {t!r}", bool(S.client_view_problems(t)))
+    if not (SB / "clients" / "wt-full").exists():
+        t_walkthrough_full()
+    cv = status("wt-full")["client_view"]
+    check("a finished full client reads 'Writing articles…' with plain milestones",
+          cv["phase"].startswith("Writing articles") and "8 new pages are live" in cv["done"], cv)
+    sh('python3 scripts/status.py init cv-co --name C --domain c.example --type full --industry roofing')
+    check("a new client starts at 'Getting started'", status("cv-co")["client_view"]["phase"] == "Getting started")
+    code, out = sh("python3 scripts/run.py finish cv-co x --summary s --phase Hello")
+    check("free-text client view flags are gone from run.py finish", code != 0 and "--phase" in out, out)
+
+
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
-             t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive]
+             t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_client_view]
 
 
 def main():

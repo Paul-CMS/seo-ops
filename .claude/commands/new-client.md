@@ -30,7 +30,7 @@ Follow CLAUDE.md. Plain language with Paul throughout.
    **exact URL in the GBP Website field**, WordPress env prefix (Paul adds the Application
    Password to `.env` himself — never ask for it in chat), whether GSC/GA4 access exists.
    Blog-only: services list, city list, voice guidance, customer language.
-7. `run.py finish <slug> <RUN_ID> --summary "Client set up" --phase "Getting started" --next "Researching your business"`
+7. `run.py finish <slug> <RUN_ID> --summary "Client set up"`
 8. Tell Paul the next command: `/next <slug>` — for a full client that runs `/discovery <slug> discovery`
    (public research and the entity foundation come before the proof sheet and the crawl); for a
    blog-only client, `/blog <slug> intake`.
