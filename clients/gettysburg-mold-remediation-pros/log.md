@@ -43,3 +43,35 @@ Step: new-client
 Changes: 1 · Summary: Client set up
 
 ## CONDITION · 2026-10-03T15:37:04-05:00 · Client set up (/new-client finished) — met (system-verified)
+
+## RUN 20261003-153748-wp-check-16f1 · STARTED · /wp-check · 2026-10-03T15:37:48-05:00
+Step: wp-check
+Gates checked: client_setup
+### HANDOFF · /wp-check · 2026-10-03 · run 20261003-153748-wp-check-16f1
+## WordPress check · 2026-10-03 · run 20261003-153748-wp-check-16f1
+
+**What I did**
+- Ran /wp-check. It stopped at the first check because the site's three WordPress lines are not in .env yet. Nothing on the site was touched.
+
+**What was decided, and why**
+- Nothing. The check fails safely, so WordPress stays "not connected".
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Create the `seo-ops` Editor user and an Application Password on gettysburgpamoldremediationpros.com (wordpress-site-setup.md §1) | Jonie | /wp-check |
+| Add WP_GETTYSBURG_MOLD_REMEDIATION_PROS_URL / _USER / _APP_PASSWORD to .env | Paul | /wp-check |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Setup spec | wordpress/wordpress-site-setup.md | — |
+
+**What I could not check**
+- Whether the REST API, the Application Password and SEOPress fields work on this site.
+
+**Anything the next agent would otherwise get wrong**
+- WordPress isn't needed until safe fixes after audit approval, so discovery can go ahead without it. Re-run /wp-check once the .env lines are in.
+### END HANDOFF
+## RUN 20261003-153748-wp-check-16f1 · FINISHED · 2026-10-03T15:38:00-05:00
+Changes: 0 · Summary: WordPress check: not connected — credentials not in .env yet

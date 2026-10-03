@@ -1,6 +1,6 @@
 # Gettysburg Mold Remediation Pros - Document Checklist
 
-Generated 2026-10-03T15:37 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-03T15:38 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -33,7 +33,7 @@ Generated 2026-10-03T15:37 from status.json — do not edit. `[x]` done · `[-]`
 - [ ] The client returned the proof sheet (the returned sheet is recorded) — the client has not returned the proof sheet yet (when it arrives: /discovery gettysburg-mold-remediation-pros sheet-returned)
 - [ ] Every registered audit step has an outcome (Done / Skipped / Failed) — audit steps with no outcome yet: S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S19, S20, S12, S13, S14, S15, S16, S17, S18
 - [ ] Every page in the site plan is built, verified and written back — no site plan yet
-- [ ] WordPress connected (/wp-check passed in the last 30 days) — WordPress is not connected yet — run /wp-check gettysburg-mold-remediation-pros
+- [ ] WordPress connected (/wp-check passed in the last 30 days) — the last /wp-check failed — fix what it reported (clients/gettysburg-mold-remediation-pros/wordpress/wp-check-2026-10-03.md) and run /wp-check gettysburg-mold-remediation-pros again
 
 ## Decisions (Paul)
 
