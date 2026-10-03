@@ -19,7 +19,7 @@ Order: discovery → entity decision → proof sheet → (client has the sheet) 
 | reconcile | proof_sheet_returned |
 | signoff | entity_approved,proof_sheet_approved,proof_sheet_returned,brand_guide_approved,audit_approved |
 
-1. `python3 scripts/run.py start <slug> discovery --gates <gates>` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse in
+1. `python3 scripts/run.py start <slug> discovery --step <step> [--batch <id>|--page <id>]` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse in
    plain language (which gate, what it unlocks). Exit 3 → stop and ask Paul.
 2. Use the **discovery-audit** subagent for the step, giving it the slug, `<RUN_ID>` and the step.
 3. For `audit`: when the subagent has the Finding Register and URL Decision Map, use the

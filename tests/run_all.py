@@ -94,10 +94,11 @@ class Agent:
         p.write_text(text)
         return f"clients/{self.slug}/{rel}"
 
-    def start(self, cmd, gates=""):
-        code, out = sh(f"python3 scripts/run.py start {self.slug} {cmd}" + (f" --gates {gates}" if gates else ""))
+    def start(self, cmd, step=None, batch=None, page=None):
+        code, out = sh(f"python3 scripts/run.py start {self.slug} {cmd}" + (f" --step {step}" if step else "")
+                       + (f" --batch {batch}" if batch else "") + (f" --page {page}" if page else ""))
         if code:
-            self.errors.append(f"start {cmd} {gates} -> {out[:300]}")
+            self.errors.append(f"start {cmd} {step} {batch or ''} -> {out[:300]}")
             return None
         return out.strip().splitlines()[-1]
 
@@ -123,38 +124,38 @@ class Agent:
         sub = args[0] if args else ""
         S = self.slug
         if (name, sub) == ("/discovery", "discovery"):
-            rid = self.start("discovery", "client_setup")
+            rid = self.start("discovery", "discovery")
             for s in ("S01", "S02", "S03"): self.step(rid, s)
             self.mark("entity_record", self.w("discovery/Test Co - Discovery Record - REVIEW.md")); self.fin(rid, "discovery")
         elif (name, sub) == ("/discovery", "proof-sheet"):
-            rid = self.start("discovery", "entity_approved"); self.step(rid, "S04")
+            rid = self.start("discovery", "proof-sheet"); self.step(rid, "S04")
             self.mark("proof_sheet", self.w("discovery/Test Co - Client Proof Sheet - REVIEW.md")); self.fin(rid, "proof sheet")
         elif name == "/crawl":
-            rid = self.start("crawl", "client_setup"); self.step(rid, "S05"); self.fin(rid, "crawl (fake)")
+            rid = self.start("crawl"); self.step(rid, "S05"); self.fin(rid, "crawl (fake)")
         elif (name, sub) == ("/discovery", "data"):
-            rid = self.start("discovery", "proof_sheet_approved")
+            rid = self.start("discovery", "data")
             for s in ("S06", "S07", "S08", "S11", "S19"): self.step(rid, s)
             for s in ("S09", "S10"): self.step(rid, s, "skipped", "BrightLocal upload not in yet")
             self.fin(rid, "data")
         elif (name, sub) == ("/discovery", "audit"):
-            rid = self.start("discovery", "entity_approved")
+            rid = self.start("discovery", "audit")
             for s in ("S12", "S13", "S14", "S15", "S16", "S17", "S18"): self.step(rid, s)
             self.mark("audit_deliverables", *[self.w(f"audit/Test Co - {n} - REVIEW.md") for n in
                                               ("Finding Register", "URL Decision Map", "Recommendations", "Evidence Manifest")])
             self.fin(rid, "audit")
         elif (name, sub) == ("/discovery", "sheet-returned"):
-            rid = self.start("discovery", "proof_sheet_approved")
+            rid = self.start("discovery", "sheet-returned")
             self.mark("proof_sheet_returned", self.w("discovery/Test Co - Client Proof Sheet - RETURNED.md")); self.fin(rid, "returned")
         elif (name, sub) == ("/discovery", "reconcile"):
-            rid = self.start("discovery", "proof_sheet_returned"); self.mark("reconciled", self.w("brand-guide.md", "bg\n")); self.fin(rid, "reconciled")
+            rid = self.start("discovery", "reconcile"); self.mark("reconciled", self.w("brand-guide.md", "bg\n")); self.fin(rid, "reconciled")
         elif (name, sub) == ("/discovery", "signoff"):
-            rid = self.start("discovery", "entity_approved,proof_sheet_approved,proof_sheet_returned,brand_guide_approved,audit_approved")
+            rid = self.start("discovery", "signoff")
             self.mark("discovery_summary", self.w("discovery/Test Co - Discovery Summary - REVIEW.md")); self.fin(rid, "signoff")
         elif (name, sub) == ("/build", "blockers"):
-            rid = self.start("build", "discovery_signed_off")
+            rid = self.start("build", "blockers")
             self.mark("blocker_checklist", self.w("build/Test Co - Technical Blocker Checklist - REVIEW.md")); self.fin(rid, "blockers")
         elif (name, sub) == ("/build", "plan"):
-            rid = self.start("build", "discovery_signed_off")
+            rid = self.start("build", "plan")
             plan = {"pages": [{"id": i, "type": t, "name": i} for i, t in [
                 ("svc-roof-repair", "service"), ("svc-roof-replacement", "service"), ("svc-gutters", "service"),
                 ("loc-springfield", "location"), ("hub-greene-county", "county"), ("loc-nixa", "location"),
@@ -167,10 +168,7 @@ class Agent:
             self.sh(f"python3 scripts/status.py plan {S} --file {shlex.quote(pm)} --json {pj}"); self.fin(rid, "site plan")
         elif (name, sub) == ("/build", "batch"):
             bid = args[1]; stage = args[2] if len(args) > 2 else "briefs"
-            gate = {"briefs": f"discovery_signed_off,batch:{bid}:briefs_ready",
-                    "drafts": f"discovery_signed_off,batch:{bid}:drafts_ready",
-                    "apply-sem": f"discovery_signed_off,batch:{bid}:sem"}[stage]
-            rid = self.start("build", gate)
+            rid = self.start("build", {"briefs": "batch"}.get(stage, stage), batch=bid)
             if not rid:
                 return True
             pages = self.batch_pages(bid)
@@ -186,10 +184,10 @@ class Agent:
                 self.sh(f"python3 scripts/status.py batch {S} {bid} --state sem_applied --files {','.join(fs)}")
             self.fin(rid, f"batch {bid} {stage}")
         elif (name, sub) == ("/build", "pilot-corrections"):
-            rid = self.start("build", "discovery_signed_off,batch:pilot:briefs")
+            rid = self.start("build", "pilot-corrections")
             self.sh(f'python3 scripts/status.py pilot-corrections {S} --note "H1 tweak in specs/service.md"'); self.fin(rid, "pilot corrections")
         elif (name, sub) == ("/implement", "batch"):
-            bid = args[1]; rid = self.start("implement", f"batch:{bid}:drafts")
+            bid = args[1]; rid = self.start("implement", "batch", batch=bid)
             for p in self.batch_pages(bid):
                 self.sh(f'python3 tests/fakes.py wp create-draft {S} --run {rid} --page-id {p} --title "{p}" '
                         f'--content-file clients/{S}/build/D-{p}.md')
@@ -199,25 +197,23 @@ class Agent:
             b = next(x for x in status(S)["build"]["batches"] if x.get("state") == "implemented")
             self.sh(f"python3 scripts/status.py batch {S} {b['id']} --state verified"); self.fin(rid, "verified")
         elif (name, sub) == ("/build", "writeback"):
-            bid = args[1]; rid = self.start("build", f"discovery_signed_off,batch:{bid}:drafts")
+            bid = args[1]; rid = self.start("build", "writeback", batch=bid)
             self.sh(f"python3 scripts/status.py batch {S} {bid} --state written_back"); self.fin(rid, "written back")
         elif name == "/finish":
-            rid = self.start("finish", "pages_built" if sub == "wheel" else "link_wheel_approved")
+            rid = self.start("finish", sub)
             m = {"wheel": ("link_wheel", "finish/Test Co - Link Wheel Tables - REVIEW.md"),
                  "schema": ("schema_built", "finish/schema/index.md"),
                  "qa": ("release_qa", "finish/Test Co - QA Punch-List - REVIEW.md")}[sub]
             self.mark(m[0], self.w(m[1])); self.fin(rid, f"finish {sub}")
         elif (name, sub) == ("/blog", "map"):
-            rid = self.start("blog", "release_approved"); self.mark("blog_map", self.w("blog/Test Co - Blog Decision Map - REVIEW.md")); self.fin(rid, "map")
+            rid = self.start("blog", "map"); self.mark("blog_map", self.w("blog/Test Co - Blog Decision Map - REVIEW.md")); self.fin(rid, "map")
         elif (name, sub) == ("/blog", "intake"):
-            rid = self.start("blog", "client_setup"); self.step(rid, "S03")
+            rid = self.start("blog", "intake"); self.step(rid, "S03")
             self.mark("entity_record", self.w("blog/Test Co - Entity Foundation - REVIEW.md")); self.fin(rid, "intake")
         elif (name, sub) == ("/blog", "topics"):
-            rid = self.start("blog", "entity_approved"); self.mark("topics", self.w("blog/Test Co - Blog Topic List - REVIEW.md")); self.fin(rid, "topics")
+            rid = self.start("blog", "topics"); self.mark("topics", self.w("blog/Test Co - Blog Topic List - REVIEW.md")); self.fin(rid, "topics")
         elif (name, sub) == ("/blog", "next"):
-            gate = "blog_topics_approved" if self.kind == "blog-only" else "blog_map_approved"
-            if self.posts: gate += f",page:{self.posts[-1]}"
-            rid = self.start("blog", gate)
+            rid = self.start("blog", "next")
             if not rid:
                 return True
             pid = f"post-{len(self.posts) + 1}"; f = self.w(f"blog/PD-{pid}.md", "post\n")
@@ -297,9 +293,9 @@ def t_walkthrough_blog_only():
 
 def t_gates():
     sh('python3 scripts/status.py init gates-co --name G --domain g.example --type full --industry roofing')
-    code, out = sh("python3 scripts/run.py start gates-co crawl --gates client_setup")
+    code, out = sh("python3 scripts/run.py start gates-co crawl")
     check("/crawl refused before /new-client finished", code == 4 and "new-client" in out, out)
-    code, out = sh("python3 scripts/run.py start gates-co build --gates discovery_signed_off")
+    code, out = sh("python3 scripts/run.py start gates-co build --step plan")
     check("/build refused with plain-language reasons", code == 4 and "not approved yet" in out and "b1_" not in out, out)
     code, out = sh("python3 scripts/approve.py gates-co entity_approved")
     check("approve.py refuses without Paul's typed /approve", code == 7, out)
@@ -329,10 +325,10 @@ def t_voiding():
 def t_killed_run():
     sh('python3 scripts/status.py init kill-co --name K --domain k.example --type full --industry roofing')
     ag = Agent("kill-co"); rid = ag.start("new-client"); ag.fin(rid, "set up")
-    rid = ag.start("discovery", "client_setup"); ag.step(rid, "S01")
+    rid = ag.start("discovery", "discovery"); ag.step(rid, "S01")
     _, nxt = sh("python3 scripts/next.py kill-co")
     check("/next stops at an unfinished run", '"wait"' in nxt and rid in nxt, nxt)
-    code, out = sh("python3 scripts/run.py start kill-co crawl --gates client_setup")
+    code, out = sh("python3 scripts/run.py start kill-co crawl")
     check("the next command stops and names the unfinished run", code == 3 and rid in out, out)
 
 
@@ -345,7 +341,7 @@ def t_rollback():
     for s in [f"S{i:02d}" for i in range(1, 20)]:
         st.setdefault("audit_steps", {})[s] = {"outcome": "done"}
     (SB / "clients/rb-co/status.json").write_text(json.dumps(st))
-    rid = ag.start("implement", "safe_fixes_allowed")
+    rid = ag.start("implement", "safe")
     code, out = sh(f'python3 tests/fakes.py wp set-alt rb-co --run {rid} --media-id 55 --alt "Roof repair in Springfield" --expect-alt ""')
     check("alt text applied through wp.py (fake)", code == 0 and wp_state()["media"]["55"]["alt_text"], out)
     ag.fin(rid, "alt")
@@ -393,7 +389,7 @@ def t_multi_approve():
 def t_handoffs():
     if not (SB / "clients" / "wt-full").exists():
         t_walkthrough_full()
-    ag = Agent("wt-full"); rid = ag.start("implement", "structural_changes_allowed")
+    ag = Agent("wt-full"); rid = ag.start("implement", "structural")
     bad = ag.w("tmp/r1.csv", "url,field,old,new,reason,decision_map_ref\nold-roofing,,,/roof-repair/,merged,UDM-1\n")
     code, out = sh(f"python3 scripts/handoff.py create wt-full --run {rid} --kind redirect --items {bad}")
     check("redirect with a bare slug is refused", code != 0 and "full URL" in out, out)
@@ -418,7 +414,7 @@ def t_costs():
     ag = Agent("cost-co"); rid = ag.start("new-client"); ag.fin(rid, "set up")
     (SB / "tests" / ".state").mkdir(parents=True, exist_ok=True)
     (SB / "tests" / ".state" / "dfs.json").write_text(json.dumps({"balance": 10.0, "cost": 1.2}))
-    rid = ag.start("discovery", "client_setup")
+    rid = ag.start("verify")
     p = ag.w("tmp/p.json", "{}")
     c1, o1 = sh(f"python3 tests/fakes.py dfs call cost-co serp/google/organic/live/advanced --payload {p} --purpose a --estimate 1.0")
     c2, o2 = sh(f"python3 tests/fakes.py dfs call cost-co serp/google/organic/live/advanced --payload {p} --purpose b --estimate 1.0")
@@ -460,7 +456,26 @@ def t_sensitive():
     check("/new-client asks Paul when the category is unclear", code == 9 and "ASK PAUL" in out, out)
 
 
-SCENARIOS = [t_walkthrough_full, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
+def t_finish_needs_outputs():
+    sh('python3 scripts/status.py init out-co --name O --domain o.example --type full --industry roofing')
+    ag = Agent("out-co"); rid = ag.start("new-client"); ag.fin(rid, "set up")
+    rid = ag.start("discovery", "discovery")
+    for s_ in ("S01", "S02", "S03"): ag.step(rid, s_)
+    code, out = sh(f'python3 scripts/run.py finish out-co {rid} --summary x')
+    check("finish refuses a producing step that recorded no files, and names them",
+          code == 12 and "entity_record" in out and "Discovery Record" in out, out)
+    ag.mark("entity_record", ag.w("discovery/rec.md"))
+    code, out = sh(f'python3 scripts/run.py finish out-co {rid} --summary x')
+    check("finish closes once the files are recorded", code == 0, out)
+    rid = ag.start("discovery", "discovery")
+    for s_ in ("S01", "S02", "S03"): ag.step(rid, s_)
+    code, out = sh(f'python3 scripts/run.py finish out-co {rid} --summary x')
+    check("a mark from an earlier run does not count for this run", code == 12 and "before this run" in out, out)
+    code, out = sh("python3 scripts/run.py start out-co build --step nonsense")
+    check("an unknown step is refused with the list of steps", code == 2 and "build:plan" in out, out)
+
+
+SCENARIOS = [t_finish_needs_outputs, t_walkthrough_full, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive]
 
 

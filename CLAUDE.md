@@ -32,7 +32,7 @@ commit a change that fails it.** A new behaviour gets a new check in `tests/run_
 
 Every command that does work:
 
-1. **Start:** `python3 scripts/run.py start <slug> <command> --gates <g1,g2,...>`
+1. **Start:** `python3 scripts/run.py start <slug> <command> [--step <step>] [--batch <id>|--page <id>]`
    - exit **4** → something it needs is missing. **Refuse.** Tell Paul in plain language what is
      missing (the script's message says it) and what to do first. Never work around it.
    - exit **3** → an unfinished earlier run exists. **Stop and ask Paul**: resume it, verify

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """run.py — the safety log. Every command starts and finishes through here.
 
-    run.py start  <slug> <command> [--gates g1,g2,page:<id>] [--note T]   prints RUN_ID
+    run.py start  <slug> <command> [--step S] [--batch ID] [--page ID] [--note T]   prints RUN_ID
+                  the gates come from scripts/gates.json "steps" (<command>:<step>) — nowhere else
     run.py note   <slug> <run_id> <text>
     run.py change <slug> <run_id> --kind K --url U --field F --old V --new V --result R
                   [--old-file P] [--new-file P] [--ref REF] [--channel wp|handoff|drive|local]
@@ -10,7 +11,8 @@
     run.py abort  <slug> <run_id> --reason T        only when Paul says so
     run.py check  <slug>                            exit 3 if an unfinished run exists
 
-Exit codes: 3 unfinished run found (stop and ask Paul) · 4 gate not met.
+Exit codes: 3 unfinished run found (stop and ask Paul) · 4 gate not met · 12 the step has not
+recorded what it must produce (finish refused — record it, or Paul aborts the run).
 log.md and changes.jsonl are append-only; nothing here ever rewrites them. finish and abort
 regenerate the readable records (records.py) and make the run's one git commit.
 """
@@ -19,6 +21,7 @@ import json
 import re
 import secrets
 import shutil
+import time
 import sys
 from pathlib import Path
 
@@ -83,11 +86,80 @@ def log_change(slug, run_id, kind, url, field, old, new, result, ref=None,
     return n
 
 
+def step_spec(st, command, step):
+    key = f"{command}:{step}" if step else command
+    spec = S.GATES["steps"].get(key)
+    if spec is None:
+        opts = sorted(k for k in S.GATES["steps"] if k == command or k.startswith(command + ":"))
+        die(f"Unknown step '{key}'. Steps for /{command}: " + (", ".join(opts) or "none") +
+            " (scripts/gates.json → steps).", 2)
+    return key, spec
+
+
+def prev_post(st):
+    posts = [pid for pid, p in st["pages"].items() if p.get("type") == "blog"]
+    return posts[-1] if posts else None
+
+
+def resolve(st, spec, a, key):
+    raw = spec.get("gates_blog_only") if st["client"]["type"] == "blog-only" and "gates_blog_only" in spec else spec["gates"]
+    out = []
+    for g in raw:
+        if "{batch}" in g and not a.batch:
+            die(f"step {key} needs --batch <id>", 2)
+        if "{page}" in g and not a.page:
+            die(f"step {key} needs --page <id>", 2)
+        if "{prev_post}" in g:
+            pp = prev_post(st)
+            if not pp:
+                continue  # the first post has no previous post to wait for
+            g = g.replace("{prev_post}", pp)
+        out.append(g.replace("{batch}", a.batch or "").replace("{page}", a.page or ""))
+    return out
+
+
+def missing_outputs(slug, st, info):
+    """What the step must produce (gates.json steps → produces) and has not recorded."""
+    spec = S.GATES["steps"].get(info["step"]) or {}
+    miss = []
+    for want in spec.get("produces", []):
+        want = want.replace("{batch}", info.get("batch") or "")
+        if want.startswith("steps:"):
+            left = [x for x in want[6:].split(",") if x not in (st.get("audit_steps") or {})]
+            if left:
+                miss.append(f"an outcome for audit step(s) {', '.join(left)} — steps.py record <slug> --run <RUN_ID> <S##> done|skipped|failed")
+        elif want.startswith("batch:"):
+            _, bid, stage = want.split(":")
+            b = S.batch(st, bid) or {}
+            fs = (b.get("files") or {}).get(stage) or []
+            gone = [f for f in fs if not (ROOT / f).exists()]
+            if not fs or gone:
+                miss.append(f"the {stage} files for batch {bid}" + (f" (missing on disk: {', '.join(gone)})" if gone else "")
+                            + " — status.py batch <slug> " + bid + " --state ... --files ...")
+        elif want == "blog_post":
+            ok = any(p.get("type") == "blog" and p.get("file") and (ROOT / p["file"]).exists()
+                     and not p.get("approval") for p in st["pages"].values())
+            if not ok:
+                miss.append("the new blog post registered with its draft file — status.py page <slug> <id> --type blog --file <draft> --state draft_written")
+        else:
+            m = (st.get("marks") or {}).get(want) or {}
+            files = m.get("files") or {}
+            gone = [f for f in files if not (ROOT / f).exists()]
+            stale = bool(m) and m.get("ts", 0) < info.get("started_ts", 0)
+            if not files or gone or stale:
+                what = S.GATES.get("artifacts", {}).get(want, want)
+                miss.append(f"{want}: {what}"
+                            + (" — recorded before this run started; record this run's version" if stale and files and not gone else "")
+                            + (f" (missing on disk: {', '.join(gone)})" if gone else "")
+                            + f" — status.py mark <slug> {want} --file <path> [--file ...]")
+    return miss
+
+
 def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("start"); s.add_argument("slug"); s.add_argument("command")
-    s.add_argument("--gates", default=""); s.add_argument("--note")
+    s.add_argument("--step"); s.add_argument("--batch"); s.add_argument("--page"); s.add_argument("--note")
     s = sub.add_parser("note"); s.add_argument("slug"); s.add_argument("run_id"); s.add_argument("text")
     s = sub.add_parser("decision"); s.add_argument("slug"); s.add_argument("run_id")
     s.add_argument("--text", required=True); s.add_argument("--ids")
@@ -108,6 +180,8 @@ def main():
     a = ap.parse_args()
     d = client_dir(a.slug)
 
+    if a.cmd == "start":
+        step_spec(S.load(a.slug), a.command, a.step)   # a mistyped step is a usage error first
     if a.cmd in ("start", "check"):
         left = unfinished(a.slug)
         if left:
@@ -122,9 +196,10 @@ def main():
             print("no unfinished runs"); return
 
     if a.cmd == "start":
-        gates = [g for g in a.gates.split(",") if g]
+        st = S.load(a.slug)
+        key, spec = step_spec(st, a.command, a.step)
+        gates = resolve(st, spec, a, key)
         if gates:
-            st = S.load(a.slug)
             reasons = []
             for g in gates:
                 ok, rs = S.check(st, g)
@@ -136,7 +211,12 @@ def main():
                 sys.exit(4)
         run_id = (f"{now()[:19].replace('-', '').replace(':', '').replace('T', '-')}-{a.command}"
                   f"-{secrets.token_hex(2)}")
+        st = S.load(a.slug)
+        st.setdefault("open_runs", {})[run_id] = {"step": key, "batch": a.batch, "page": a.page, "started": now(),
+                                                  "started_ts": time.time()}
+        S.save(a.slug, st)
         append(d / "log.md", f"\n## RUN {run_id} · STARTED · /{a.command} · {now()}\n"
+               + f"Step: {key}" + (f" · batch {a.batch}" if a.batch else "") + "\n"
                + (f"Gates checked: {', '.join(gates)}\n" if gates else "")
                + (f"Note: {a.note}\n" if a.note else ""))
         print(run_id)
@@ -154,6 +234,16 @@ def main():
         print(f"change #{n} logged")
     elif a.cmd == "finish":
         open_run(a.slug, a.run_id)
+        st0 = S.load(a.slug)
+        info = (st0.get("open_runs") or {}).get(a.run_id)
+        if info:
+            miss = missing_outputs(a.slug, st0, info)
+            if miss:
+                print(f"NOT FINISHED — step {info['step']} has not recorded what it must produce:\n  - "
+                      + "\n  - ".join(miss)
+                      + "\nRecord it and finish again. If the step could not produce it, stop and ask Paul "
+                        "(only he can abort a run).")
+                sys.exit(12)
         ch = changes(a.slug, a.run_id)
         cmd = re.sub(r"-[0-9a-f]{4}$", "", a.run_id.split("-", 2)[-1])
         if a.handoff:
@@ -162,6 +252,7 @@ def main():
         append(d / "log.md", f"## RUN {a.run_id} · FINISHED · {now()}\n"
                f"Changes: {len(ch)} · Summary: {redact(a.summary)}\n")
         st = S.load(a.slug)
+        (st.get("open_runs") or {}).pop(a.run_id, None)
         st["last_run"] = {"run_id": a.run_id, "command": cmd, "finished": now(),
                           "result": a.summary, "changes": len(ch)}
         cv = st["client_view"]
@@ -180,6 +271,7 @@ def main():
     elif a.cmd == "abort":
         open_run(a.slug, a.run_id)
         append(d / "log.md", f"## RUN {a.run_id} · ABORTED · {now()}\nReason (Paul): {redact(a.reason)}\n")
+        st = S.load(a.slug); (st.get("open_runs") or {}).pop(a.run_id, None); S.save(a.slug, st)
         import records
         records.render(a.slug)
         print(git_commit(f"{a.slug}: run {a.run_id} aborted"))

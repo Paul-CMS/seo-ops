@@ -4,7 +4,9 @@
     "entity_approved": {
       "label": "Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)",
       "plain": "the entity foundation (category, area, variants)",
-      "requires": ["client_setup"],
+      "requires": [
+        "client_setup"
+      ],
       "artifact": "entity_record",
       "producer": "/discovery {slug} discovery",
       "producer_blog_only": "/blog {slug} intake"
@@ -12,65 +14,94 @@
     "proof_sheet_approved": {
       "label": "Client proof sheet approved by Paul, ready for him to send",
       "plain": "the client proof sheet (ready for you to send)",
-      "requires": ["entity_approved"],
+      "requires": [
+        "entity_approved"
+      ],
       "artifact": "proof_sheet",
       "producer": "/discovery {slug} proof-sheet"
     },
     "audit_approved": {
       "label": "Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)",
       "plain": "the audit deliverables",
-      "requires": ["entity_approved", "audit_steps_complete"],
+      "requires": [
+        "entity_approved",
+        "audit_steps_complete"
+      ],
       "artifact": "audit_deliverables",
       "producer": "/discovery {slug} audit"
     },
     "brand_guide_approved": {
       "label": "Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)",
       "plain": "the reconciled Brand Guide",
-      "requires": ["proof_sheet_returned"],
+      "requires": [
+        "proof_sheet_returned"
+      ],
       "artifact": "reconciled",
       "producer": "/discovery {slug} reconcile"
     },
     "discovery_signed_off": {
-      "label": "Discovery and audit signed off — Build may start",
+      "label": "Discovery and audit signed off \u2014 Build may start",
       "plain": "the discovery sign-off (start Build)",
-      "requires": ["entity_approved", "proof_sheet_approved", "proof_sheet_returned", "brand_guide_approved", "audit_approved"],
+      "requires": [
+        "entity_approved",
+        "proof_sheet_approved",
+        "proof_sheet_returned",
+        "brand_guide_approved",
+        "audit_approved"
+      ],
       "artifact": "discovery_summary",
       "producer": "/discovery {slug} signoff"
     },
     "blockers_cleared": {
       "label": "Technical blocker checklist cleared and tracking stable",
       "plain": "the technical blocker checklist (cleared)",
-      "requires": ["discovery_signed_off"],
+      "requires": [
+        "discovery_signed_off"
+      ],
       "artifact": "blocker_checklist",
       "producer": "/build {slug} blockers"
     },
     "link_wheel_approved": {
-      "label": "Link wheel built and verified — schema may start",
+      "label": "Link wheel built and verified \u2014 schema may start",
       "plain": "the link wheel (built and verified)",
-      "requires": ["pages_built"],
+      "requires": [
+        "pages_built"
+      ],
       "artifact": "link_wheel",
       "producer": "/finish {slug} wheel"
     },
     "release_approved": {
-      "label": "Schema built and QA cleared — release",
+      "label": "Schema built and QA cleared \u2014 release",
       "plain": "release (schema built, QA cleared)",
-      "requires": ["link_wheel_approved"],
+      "requires": [
+        "link_wheel_approved"
+      ],
       "artifact": "release_qa",
       "producer": "/finish {slug} qa",
-      "before": {"mark": "schema_built", "producer": "/finish {slug} schema"}
+      "before": {
+        "mark": "schema_built",
+        "producer": "/finish {slug} schema"
+      }
     },
     "blog_map_approved": {
-      "label": "Blog Decision Map approved — redirects and blog briefs may start",
+      "label": "Blog Decision Map approved \u2014 redirects and blog briefs may start",
       "plain": "the Blog Decision Map",
-      "requires": ["release_approved"],
-      "requires_blog_only": ["entity_approved", "blog_topics_approved"],
+      "requires": [
+        "release_approved"
+      ],
+      "requires_blog_only": [
+        "entity_approved",
+        "blog_topics_approved"
+      ],
       "artifact": "blog_map",
       "producer": "/blog {slug} map"
     },
     "blog_topics_approved": {
       "label": "Blog Authority Builder topic list approved (checked against service and location page FAQs)",
       "plain": "the blog topic list",
-      "requires": ["entity_approved"],
+      "requires": [
+        "entity_approved"
+      ],
       "artifact": "topics",
       "producer": "/blog {slug} topics"
     }
@@ -84,7 +115,9 @@
     "proof_sheet_returned": {
       "label": "The client returned the proof sheet (the returned sheet is recorded)",
       "plain": "the client's returned proof sheet",
-      "requires": ["proof_sheet_approved"],
+      "requires": [
+        "proof_sheet_approved"
+      ],
       "producer": "/discovery {slug} sheet-returned",
       "wait_for": "the client to return the proof sheet"
     },
@@ -96,42 +129,404 @@
     "pages_built": {
       "label": "Every page in the site plan is built, verified and written back",
       "plain": "every page built and written back",
-      "requires": ["discovery_signed_off"]
+      "requires": [
+        "discovery_signed_off"
+      ]
     }
   },
   "derived": {
     "safe_fixes_allowed": {
       "label": "Safe fixes allowed (audit approved): broken links, alt text, image URLs, sitemap, robots.txt, meta description duplicates, speed",
       "plain": "the audit approval (safe fixes)",
-      "requires": ["audit_approved"]
+      "requires": [
+        "audit_approved"
+      ]
     },
     "structural_changes_allowed": {
       "label": "Structural changes allowed (entity + Brand Guide approved): redirects, URL/slug changes, consolidations, SEO titles and H1s",
       "plain": "the entity foundation and the reconciled Brand Guide (structural changes)",
-      "requires": ["entity_approved", "brand_guide_approved"]
+      "requires": [
+        "entity_approved",
+        "brand_guide_approved"
+      ]
     }
   },
   "change_kinds": {
-    "alt_text":          {"gate": "safe_fixes_allowed",         "channel": "wp_or_handoff", "owner": "Jonie"},
-    "image_url":         {"gate": "safe_fixes_allowed",         "channel": "handoff",       "owner": "Jonie"},
-    "broken_link":       {"gate": "safe_fixes_allowed",         "channel": "handoff",       "owner": "Jonie"},
-    "sitemap":           {"gate": "safe_fixes_allowed",         "channel": "handoff",       "owner": "Jonie"},
-    "robots_txt":        {"gate": "safe_fixes_allowed",         "channel": "handoff",       "owner": "Jonie"},
-    "speed":             {"gate": "safe_fixes_allowed",         "channel": "handoff",       "owner": "Jonie"},
-    "meta_description":  {"gate": "safe_fixes_allowed",         "channel": "wp_after_pilot", "owner": "Jonie"},
-    "seo_title":         {"gate": "structural_changes_allowed", "channel": "wp_after_pilot", "owner": "Jonie"},
-    "h1":                {"gate": "structural_changes_allowed", "channel": "content",       "owner": "Jonie"},
-    "slug":              {"gate": "structural_changes_allowed", "channel": "handoff", "always_with": "redirect", "owner": "Jonie"},
-    "redirect":          {"gate": "structural_changes_allowed", "channel": "handoff",       "owner": "Jonie"},
-    "consolidation":     {"gate": "structural_changes_allowed", "channel": "handoff",       "owner": "Jonie"},
-    "page_content":      {"gate": "page_approval",              "channel": "wp_draft",      "owner": "Jonie"},
-    "link_table":        {"gate": "pages_built",                "channel": "wp_draft",      "owner": "Jonie"},
-    "schema":            {"gate": "link_wheel_approved",        "channel": "wp_after_pilot", "owner": "Jonie"},
-    "citation":          {"gate": "audit_approved",             "channel": "handoff",       "owner": "Gwen"},
-    "gbp":               {"gate": "brand_guide_approved",       "channel": "handoff",       "owner": "Gwen"},
-    "content_review":    {"gate": "audit_approved",             "channel": "handoff",       "owner": "Gwen"},
-    "other":             {"gate": "client_setup",               "channel": "handoff",       "owner": "Gwen"}
+    "alt_text": {
+      "gate": "safe_fixes_allowed",
+      "channel": "wp_or_handoff",
+      "owner": "Jonie"
+    },
+    "image_url": {
+      "gate": "safe_fixes_allowed",
+      "channel": "handoff",
+      "owner": "Jonie"
+    },
+    "broken_link": {
+      "gate": "safe_fixes_allowed",
+      "channel": "handoff",
+      "owner": "Jonie"
+    },
+    "sitemap": {
+      "gate": "safe_fixes_allowed",
+      "channel": "handoff",
+      "owner": "Jonie"
+    },
+    "robots_txt": {
+      "gate": "safe_fixes_allowed",
+      "channel": "handoff",
+      "owner": "Jonie"
+    },
+    "speed": {
+      "gate": "safe_fixes_allowed",
+      "channel": "handoff",
+      "owner": "Jonie"
+    },
+    "meta_description": {
+      "gate": "safe_fixes_allowed",
+      "channel": "wp_after_pilot",
+      "owner": "Jonie"
+    },
+    "seo_title": {
+      "gate": "structural_changes_allowed",
+      "channel": "wp_after_pilot",
+      "owner": "Jonie"
+    },
+    "h1": {
+      "gate": "structural_changes_allowed",
+      "channel": "content",
+      "owner": "Jonie"
+    },
+    "slug": {
+      "gate": "structural_changes_allowed",
+      "channel": "handoff",
+      "always_with": "redirect",
+      "owner": "Jonie"
+    },
+    "redirect": {
+      "gate": "structural_changes_allowed",
+      "channel": "handoff",
+      "owner": "Jonie"
+    },
+    "consolidation": {
+      "gate": "structural_changes_allowed",
+      "channel": "handoff",
+      "owner": "Jonie"
+    },
+    "page_content": {
+      "gate": "page_approval",
+      "channel": "wp_draft",
+      "owner": "Jonie"
+    },
+    "link_table": {
+      "gate": "pages_built",
+      "channel": "wp_draft",
+      "owner": "Jonie"
+    },
+    "schema": {
+      "gate": "link_wheel_approved",
+      "channel": "wp_after_pilot",
+      "owner": "Jonie"
+    },
+    "citation": {
+      "gate": "audit_approved",
+      "channel": "handoff",
+      "owner": "Gwen"
+    },
+    "gbp": {
+      "gate": "brand_guide_approved",
+      "channel": "handoff",
+      "owner": "Gwen"
+    },
+    "content_review": {
+      "gate": "audit_approved",
+      "channel": "handoff",
+      "owner": "Gwen"
+    },
+    "other": {
+      "gate": "client_setup",
+      "channel": "handoff",
+      "owner": "Gwen"
+    }
   },
-  "decisions": ["approved", "approved_with_conditions", "revise", "deferred", "rejected", "blocked"],
-  "met_decisions": ["approved", "approved_with_conditions"]
+  "decisions": [
+    "approved",
+    "approved_with_conditions",
+    "revise",
+    "deferred",
+    "rejected",
+    "blocked"
+  ],
+  "met_decisions": [
+    "approved",
+    "approved_with_conditions"
+  ],
+  "_steps_about": "Every command step: the gates run.py start checks (looked up here \u2014 nowhere else), what it must produce before run.py finish will close it, and (reads) the files the agent reads for that step. {batch} and {page} come from --batch / --page; {prev_post} is the newest blog post. produces: an artifact name (a status.py mark recorded during the run), 'steps:S01,S02' (an outcome for each audit step), 'batch:{batch}:<stage>' (the batch files recorded), 'blog_post' (a new post registered with its file).",
+  "artifacts": {
+    "entity_record": "the Discovery Record with the entity foundation (Brand Guide A/B proposal)",
+    "proof_sheet": "the client proof sheet (.md; the Google Doc client copy is separate)",
+    "proof_sheet_returned": "the client's returned proof sheet, saved as given",
+    "audit_deliverables": "the Finding Register, URL Decision Map, Recommendations and Evidence Manifest",
+    "reconciled": "the reconciled Brand Guide (clients/<slug>/brand-guide.md)",
+    "discovery_summary": "the Discovery Summary with the client-confirmation list",
+    "blocker_checklist": "the Technical Blocker Checklist",
+    "site_plan": "the site plan (.md, registered with status.py plan)",
+    "link_wheel": "the Link Wheel Tables and the wheel verification",
+    "schema_built": "the validated schema files",
+    "release_qa": "the QA Punch-List and acceptance sheets",
+    "blog_map": "the Blog Decision Map",
+    "topics": "the Blog Topic List"
+  },
+  "steps": {
+    "new-client": {
+      "gates": [],
+      "produces": []
+    },
+    "discovery:discovery": {
+      "gates": [
+        "client_setup"
+      ],
+      "produces": [
+        "steps:S01,S02,S03",
+        "entity_record"
+      ]
+    },
+    "discovery:proof-sheet": {
+      "gates": [
+        "entity_approved"
+      ],
+      "produces": [
+        "steps:S04",
+        "proof_sheet"
+      ]
+    },
+    "discovery:sheet-returned": {
+      "gates": [
+        "proof_sheet_approved"
+      ],
+      "produces": [
+        "proof_sheet_returned"
+      ]
+    },
+    "discovery:data": {
+      "gates": [
+        "proof_sheet_approved"
+      ],
+      "produces": [
+        "steps:S06,S07,S08,S09,S10,S11,S19"
+      ]
+    },
+    "discovery:audit": {
+      "gates": [
+        "entity_approved"
+      ],
+      "produces": [
+        "steps:S12,S13,S14,S15,S16,S17,S18",
+        "audit_deliverables"
+      ]
+    },
+    "discovery:reconcile": {
+      "gates": [
+        "proof_sheet_returned"
+      ],
+      "produces": [
+        "reconciled"
+      ]
+    },
+    "discovery:signoff": {
+      "gates": [
+        "entity_approved",
+        "proof_sheet_approved",
+        "proof_sheet_returned",
+        "brand_guide_approved",
+        "audit_approved"
+      ],
+      "produces": [
+        "discovery_summary"
+      ]
+    },
+    "crawl": {
+      "gates": [
+        "client_setup"
+      ],
+      "produces": [
+        "steps:S05"
+      ]
+    },
+    "build:blockers": {
+      "gates": [
+        "discovery_signed_off"
+      ],
+      "produces": [
+        "blocker_checklist"
+      ]
+    },
+    "build:plan": {
+      "gates": [
+        "discovery_signed_off"
+      ],
+      "produces": [
+        "site_plan"
+      ]
+    },
+    "build:batch": {
+      "gates": [
+        "discovery_signed_off",
+        "batch:{batch}:briefs_ready"
+      ],
+      "produces": [
+        "batch:{batch}:briefs"
+      ]
+    },
+    "build:drafts": {
+      "gates": [
+        "discovery_signed_off",
+        "batch:{batch}:drafts_ready"
+      ],
+      "produces": [
+        "batch:{batch}:sem"
+      ]
+    },
+    "build:apply-sem": {
+      "gates": [
+        "discovery_signed_off",
+        "batch:{batch}:sem"
+      ],
+      "produces": [
+        "batch:{batch}:drafts"
+      ]
+    },
+    "build:pilot-corrections": {
+      "gates": [
+        "discovery_signed_off",
+        "batch:pilot:briefs"
+      ],
+      "produces": []
+    },
+    "build:writeback": {
+      "gates": [
+        "discovery_signed_off",
+        "batch:{batch}:drafts"
+      ],
+      "produces": []
+    },
+    "implement:safe": {
+      "gates": [
+        "safe_fixes_allowed"
+      ],
+      "produces": []
+    },
+    "implement:structural": {
+      "gates": [
+        "structural_changes_allowed"
+      ],
+      "produces": []
+    },
+    "implement:batch": {
+      "gates": [
+        "batch:{batch}:drafts"
+      ],
+      "produces": []
+    },
+    "implement:page": {
+      "gates": [
+        "page:{page}"
+      ],
+      "produces": []
+    },
+    "implement:wheel": {
+      "gates": [
+        "pages_built"
+      ],
+      "produces": []
+    },
+    "implement:schema": {
+      "gates": [
+        "link_wheel_approved"
+      ],
+      "produces": []
+    },
+    "verify": {
+      "gates": [],
+      "produces": []
+    },
+    "rollback": {
+      "gates": [],
+      "produces": []
+    },
+    "finish:wheel": {
+      "gates": [
+        "pages_built"
+      ],
+      "produces": [
+        "link_wheel"
+      ]
+    },
+    "finish:schema": {
+      "gates": [
+        "link_wheel_approved"
+      ],
+      "produces": [
+        "schema_built"
+      ]
+    },
+    "finish:qa": {
+      "gates": [
+        "link_wheel_approved"
+      ],
+      "produces": [
+        "release_qa"
+      ]
+    },
+    "blog:map": {
+      "gates": [
+        "release_approved"
+      ],
+      "produces": [
+        "blog_map"
+      ]
+    },
+    "blog:redirects": {
+      "gates": [
+        "blog_map_approved"
+      ],
+      "produces": []
+    },
+    "blog:next": {
+      "gates": [
+        "blog_map_approved",
+        "page:{prev_post}"
+      ],
+      "gates_blog_only": [
+        "blog_topics_approved",
+        "page:{prev_post}"
+      ],
+      "produces": [
+        "blog_post"
+      ]
+    },
+    "blog:refresh": {
+      "gates": [
+        "blog_map_approved"
+      ],
+      "produces": []
+    },
+    "blog:intake": {
+      "gates": [
+        "client_setup"
+      ],
+      "produces": [
+        "steps:S03",
+        "entity_record"
+      ]
+    },
+    "blog:topics": {
+      "gates": [
+        "entity_approved"
+      ],
+      "produces": [
+        "topics"
+      ]
+    }
+  }
 }

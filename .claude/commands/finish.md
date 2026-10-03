@@ -14,7 +14,7 @@ schema (link_wheel_approved met, not marked schema_built) → qa.
 | schema | link_wheel_approved |
 | qa | link_wheel_approved |
 
-1. `python3 scripts/run.py start <slug> finish --gates <gates>` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse and
+1. `python3 scripts/run.py start <slug> finish --step <step> [--batch <id>|--page <id>]` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse and
    explain; exit 3 → stop and ask Paul.
 2. Use the **finish** subagent with slug, `<RUN_ID>` and the part.
 3. Linking exceptions (one contextual link, outbound authority links — CM-022) are listed

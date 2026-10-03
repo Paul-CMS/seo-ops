@@ -16,7 +16,7 @@ Follow CLAUDE.md §4. Look up each change's kind in `scripts/gates.json` → `ch
 | wheel | pages_built | link tables |
 | schema | link_wheel_approved | schema |
 
-1. `python3 scripts/run.py start <slug> implement --gates <gates>` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse and
+1. `python3 scripts/run.py start <slug> implement --step <step> [--batch <id>|--page <id>]` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse and
    say which gate is missing; exit 3 → stop and ask Paul.
 2. Build the change list from the APPROVED source only (Technical Blocker Checklist, URL
    Decision Map, the approved batch drafts, Link Wheel Tables, validated schema). Low technical

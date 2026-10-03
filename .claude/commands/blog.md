@@ -17,7 +17,7 @@ Follow CLAUDE.md. Check `client.type`.
 
 Add `,page:<prev_id>` to the gates when starting the next post (the previous post must be approved).
 
-1. `python3 scripts/run.py start <slug> blog --gates <gates>` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse and
+1. `python3 scripts/run.py start <slug> blog --step <step> [--batch <id>|--page <id>]` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse and
    explain; exit 3 → stop and ask Paul.
 2. Use the **blog** subagent with slug, `<RUN_ID>` and the step. It must not share a context with
    commercial writing or auditing.

@@ -26,6 +26,7 @@ import argparse
 import json
 import re
 import sys
+import time
 
 from lib import ROOT, client_dir, die, now, read_json, sha12, write_json, config
 
@@ -633,7 +634,7 @@ def main():
                                     "files": {}}
                                    for b in plan["batches"]],
                        "pilot_corrections_applied": None}
-        st.setdefault("marks", {})["site_plan"] = {"files": {a.file: sha12(ROOT / a.file)}, "at": now()}
+        st.setdefault("marks", {})["site_plan"] = {"files": {a.file: sha12(ROOT / a.file)}, "at": now(), "ts": time.time()}
         save(a.slug, st); print(render_build(st))
     elif a.cmd == "batch":
         b = batch(st, a.batch_id) or die(f"no batch {a.batch_id}")
@@ -660,7 +661,7 @@ def main():
             if not (ROOT / f).exists():
                 die(f"{f} not found — a mark needs the file that proves it")
             files[f] = sha12(ROOT / f)
-        st.setdefault("marks", {})[a.name] = {"files": files, "at": now()}
+        st.setdefault("marks", {})[a.name] = {"files": files, "at": now(), "ts": time.time()}
         save(a.slug, st); print(f"{a.name}: {', '.join(files)}")
     elif a.cmd == "pilot-corrections":
         if not batch_stage_ok(st, "pilot", "briefs", False)[0]:

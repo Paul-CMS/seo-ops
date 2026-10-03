@@ -17,7 +17,7 @@ Follow CLAUDE.md §5. If no step is given, use `python3 scripts/next.py <slug>`.
 | pilot-corrections | discovery_signed_off,batch:pilot:briefs |
 | writeback <id> | discovery_signed_off,batch:<id>:drafts |
 
-1. `python3 scripts/run.py start <slug> build --gates <gates>` → note the RUN_ID and pass it
+1. `python3 scripts/run.py start <slug> build --step <step> [--batch <id>|--page <id>]` → note the RUN_ID and pass it
    literally to every later step. Exit 4 → refuse and explain; exit 3 → stop and ask Paul.
 2. Route: `--route`, else status.json `client.route`, else ask Paul (A = the system writes,
    B = Paul provides finished content).
