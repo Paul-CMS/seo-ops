@@ -11,6 +11,13 @@ this file is the procedure (who does what, in what order, behind which gate).
 
 ---
 
+## 0 · Changing the system — test first
+
+After **every** change to the system (scripts, gates, hooks, commands, agents, CLAUDE.md, methodology
+files the scripts read), run `python3 tests/run_all.py` (about 30 seconds; fake WordPress, fake
+DataforSEO, fake web, a throwaway copy of the repo — no network, no cost, no client data). **Never
+commit a change that fails it.** A new behaviour gets a new check in `tests/run_all.py`.
+
 ## 1 · Step zero — every command, every session
 
 1. Read `methodology/agency-profile.md`. Never re-ask anything it answers (crawler, JS

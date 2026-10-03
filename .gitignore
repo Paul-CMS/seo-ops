@@ -33,3 +33,6 @@ Thumbs.db
 
 # --- raw data pulls (may contain reviewer names) ---
 clients/*/data/*/raw/
+
+# --- test suite scratch state ---
+tests/.state/

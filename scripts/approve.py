@@ -26,7 +26,8 @@ TOKEN = ROOT / ".claude" / "state" / "approve-token.json"
 MAX_AGE = 20 * 60
 
 
-def take_token(slug, targets):
+def take_token(slug, targets, consume=True):
+    """Check Paul's /approve token names this client and every target; mark it used if consume."""
     if isinstance(targets, str):
         targets = [targets]
     tok = read_json(TOKEN)
@@ -42,9 +43,10 @@ def take_token(slug, targets):
     if slug not in words or missing:
         die(f"REFUSED — Paul's /approve did not name '{slug}' and {', '.join(repr(t) for t in missing) or 'the client'}. "
             f"He typed: {tok.get('prompt', '')[:120]!r}", 7)
-    tok["used"] = True
-    tok["used_for"] = f"{slug} {' '.join(targets)}"
-    write_json(TOKEN, tok)
+    if consume:
+        tok["used"] = True
+        tok["used_for"] = f"{slug} {' '.join(targets)}"
+        write_json(TOKEN, tok)
     return tok
 
 
@@ -281,6 +283,7 @@ def main():
     if multi and (a.files or a.file):
         die("REFUSED — with several approvals in one line, each uses the files its step recorded; "
             "--files is only for a single approval.")
+    take_token(a.slug, a.targets, consume=False)                 # Paul's /approve first
     prepared = [prepare(a, st, t, multi) for t in a.targets]   # all checked before anything changes
     take_token(a.slug, a.targets)
     for apply, _, _ in prepared:
