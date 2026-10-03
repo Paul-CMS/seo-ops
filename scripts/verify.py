@@ -14,7 +14,8 @@ Checks, per logged change:
       broken_link -> the page no longer links to the old URL
       everything else -> listed for a person to check (sitemap, robots.txt, speed)
 Batch mode (after Jonie publishes): for each page, the live URL answers 200 and its SEO title,
-meta description, H1, heading structure (levels and text), body text and link-table links match the
+meta description, target keyword (read back from SEOPress), Open Graph and X title/description, H1,
+heading structure (levels and text), body text and link-table links match the
 approved file exactly. Every difference is listed for Paul. Images without alt text are listed for
 the alt-text safe fix. Exit 0 all match · 1 differences found.
 Writes clients/<slug>/handoffs/verify-<run>.md and logs PASS / FAIL for each item.
@@ -81,6 +82,16 @@ def check(c):
     return "CHECK", "needs a person to confirm (not machine-checkable here)"
 
 
+def meta_prop(body, prop):
+    """Open Graph / X tags: <meta property|name="og:title" content="...">."""
+    for rx in (rf'<meta[^>]+(?:property|name)=["\']{re.escape(prop)}["\'][^>]+content=["\'](.*?)["\']',
+               rf'<meta[^>]+content=["\'](.*?)["\'][^>]+(?:property|name)=["\']{re.escape(prop)}["\']'):
+        m = re.search(rx, body, re.S | re.I)
+        if m:
+            return html.unescape(m.group(1).strip())
+    return ""
+
+
 def strip_tags(t):
     return html.unescape(re.sub(r"<[^>]+>", "", t or "")).strip()
 
@@ -137,6 +148,20 @@ def verify_batch(a, d):
                 diffs.append(f"SEO title is {page_title(body)!r}, approved {meta['seo_title']!r}")
             if page_desc(body) != meta["meta_description"]:
                 diffs.append(f"meta description is {page_desc(body)!r}, approved {meta['meta_description']!r}")
+            for prop, want in (("og:title", meta["seo_title"]), ("og:description", meta["meta_description"]),
+                               ("twitter:title", meta["seo_title"]), ("twitter:description", meta["meta_description"])):
+                got = meta_prop(body, prop)
+                if got != want:
+                    diffs.append(f"{prop} is {got!r}, approved {want!r}")
+            want_kw = meta.get("keyword") or p.get("keyword") or ""
+            if want_kw and p.get("wp_id"):
+                try:
+                    import wp
+                    got_kw = wp.seo_read(a.slug, p["wp_id"])["keyword"]
+                    if got_kw != want_kw:
+                        diffs.append(f"target keyword is {got_kw!r}, approved {want_kw!r}")
+                except Exception as e:  # noqa: BLE001
+                    diffs.append(f"target keyword could not be read back ({e})")
             if h1 != norm(meta["h1"]):
                 diffs.append(f"H1 is {h1!r}, approved {meta['h1']!r}")
             live_heads = [h for h in heads if h[1] != "Link"]

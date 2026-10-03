@@ -16,6 +16,7 @@ Approved page file format (the writer's output; methodology/specs/README.md):
     url: https://example.com/roof-repair/
     seo_title: Roof Repair - Brand
     meta_description: 150–160 characters ...
+    keyword: roof repair                                 (optional; else the site plan's keyword for the page)
     replaces: https://example.com/old-roof-repair/      (optional; comma-separated old URLs)
     ---
     # H1 text
@@ -23,7 +24,9 @@ Approved page file format (the writer's output; methodology/specs/README.md):
     | [Link wheel: populate service-area links here] |
 
 Drafts: post title = the H1 (the theme shows it as the H1, so the content carries no second H1);
-exact slug from the URL; SEOPress title and description set on the draft; content as Gutenberg
+exact slug from the URL; SEOPress title, description, target keyword and social (Open Graph + X, from
+the approved title and meta) set on the draft — drafts always carry every field, before and after
+the site's pilot; robots and canonical stay at SEOPress defaults; content as Gutenberg
 blocks; link-table placeholders filled from the wheel. Rows pointing at pages not yet published
 are left out (unless config "wheel_link_unpublished" is true) and handed to Jonie later as a
 link-table update once their target is live (publish.py pending).
@@ -213,6 +216,9 @@ def cmd_drafts(a):
     import wp
     R.open_run(a.slug, a.run)
     st = S.load(a.slug)
+    ok, why = S.condition_met(st, "wordpress_connected")
+    if not ok:
+        die(f"REFUSED — {why}", 4)
     if a.page:
         ok, why = S.page_approved(st, a.page)
         if not ok:
@@ -246,12 +252,11 @@ def cmd_drafts(a):
         except Exception:
             existing = None
         in_place = bool(existing and existing[1].get("status") == "publish" and slug_name)
-        body = {"title": m["h1"], "content": content, "status": "draft",
-                "slug": (slug_name + "-new") if in_place else slug_name}
         ptype = "posts" if st["pages"].get(pid, {}).get("type") == "blog" else "pages"
-        d = wp.call(a.slug, f"wp/v2/{ptype}", "POST", body)
-        wp.call(a.slug, f"seopress/v1/posts/{d['id']}/title-description-metas", "PUT",
-                {"title": m["seo_title"], "description": m["meta_description"]})
+        keyword = m.get("keyword") or st["pages"].get(pid, {}).get("keyword") or ""
+        body = {"slug": (slug_name + "-new") if in_place else slug_name}
+        d = wp.new_draft(a.slug, ptype, m["h1"], content, body["slug"],
+                         {"title": m["seo_title"], "description": m["meta_description"], "keyword": keyword})
         R.log_change(a.slug, a.run, "page_content", d.get("link", ""), f"new draft {ptype[:-1]}", "(none)",
                      f"draft id {d['id']} ({ptype}) · from {f} sha {sha12(ROOT / f)} · slug {body['slug']}",
                      "APPLIED · draft only (not live) · generated from the approved file", ref=pid, channel="wp")

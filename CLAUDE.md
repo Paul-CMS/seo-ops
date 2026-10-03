@@ -1,7 +1,7 @@
 # seo-ops — the Coastal Marketing SOP
 
 This file **is** the SOP. Claude Code is the only tool: four subagents plus a reviewer,
-thirteen commands (`/next` runs whatever comes next), one status file per client, and an
+fourteen commands (`/next` runs whatever comes next), one status file per client, and an
 append-only safety log. status.json and log.md are the only records written; everything a
 person reads (Handoff Log, decisions summary, Document Checklist, Approval Record) is generated
 from them one-way by `scripts/records.py`. The methodology (the rules) lives in `sop-source/` and `methodology/`;
@@ -129,18 +129,21 @@ Rules enforced in the scripts as well as here:
 
 - **Check the current value before every change; skip what is already done; stop if the live
   value is not what the audit recorded.**
-- **Drafts only.** The system never publishes and never changes a live page's content; Jonie does,
-  from a handoff (`wp.py update-content` is refused).
+- **WordPress: one spec — `wordpress/wordpress-site-setup.md`** (code: `scripts/wp.py`). REST API with an
+  Application Password for a dedicated Editor per site (`WP_<SLUG>_URL/_USER/_APP_PASSWORD` in `.env`);
+  `/wp-check <client>` must pass before any WordPress work. The system **never publishes** — new pages
+  and posts are drafts with every SEOPress field; Jonie publishes. **Any change to an already-published
+  page needs `--live` and Paul's ManageWP backup confirmation.** Safe fixes (alt text, broken links,
+  image URLs, meta descriptions) after the audit approval; structural fixes (title, keyword, social,
+  meta robots, canonical, schema) after entity + Brand Guide approval **and the site's pilot**
+  (`wordpress_pilot_approved`) — VA handoffs until then. SEOPress site-wide settings: read-only evidence;
+  changes are handoffs.
 - **Handoffs go to the owner of the work** (gates.json `owner`): WordPress, technical, redirect and
   title/meta work → Jonie; citations, GBP, content review and everything else → Gwen. Redirect rows
   get `301` filled in and always use full URLs, never bare slugs.
 - **Redirects are never implemented by the system.** Every redirect is a VA handoff (from URL,
   to URL, 301, reason, URL Decision Map ref). A slug change is a URL change: it waits for gate
   2 and always comes with its redirect handoff. `/verify` checks each after the VA marks it done.
-- **Until the WordPress pilot is done** (`config.json` `wp_pilot_done`), SEO titles, meta
-  descriptions, slugs and schema go out as VA handoffs (Jonie). SEOPress exposes titles and
-  descriptions at `PUT /wp-json/seopress/v1/posts/{id}/title-description-metas`; the Kadence
-  per-page head-code meta key is read on the pilot site.
 - Destructive candidates follow CM-019 (§6). Never delete; always redirect.
 
 ## 5 · Routes for page content (Build)

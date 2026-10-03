@@ -148,12 +148,17 @@ def main():
                    "existing live page with the draft's blocks and keep that URL).",
                    "3. Rows with field `301` belong to the page above them: add that redirect in SEOPress → Redirections "
                    "**at the same time** as you publish.",
-                   "4. **Do NOT change** the wording, headings, page title, SEO title, meta description or URL. If a change "
+                   "4. **Do NOT change** the wording, headings, page title, SEO title, meta description, target keyword or URL. If a change "
                    "is truly unavoidable, make it, mark the row `deviated` and say exactly what changed and why.",
                    "When you return the worksheet, the system checks every live page against the approved file.", ""]
         if a.kind == "link_table":
             md += ["**Link tables.** Add each row to the named table on the live page (anchor text → URL exactly as written). "
                    "Change nothing else on the page.", ""]
+        if a.kind == "seopress_settings":
+            md += ["**SEOPress site-wide settings — record only, change nothing.** The seo-ops user is an Editor and "
+                   "cannot read these. For each row, open the screen named in `URL` as an Administrator and record what is "
+                   "set in `note` (a screenshot in the client folder is fine). This is audit evidence; any change to these "
+                   "settings comes later as its own handoff.", ""]
         if a.kind == "navigation":
             md += ["**Navigation menu.** Make each menu change exactly as listed (Appearance → Menus / Kadence header). "
                    "Change nothing else.", ""]

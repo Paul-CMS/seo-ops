@@ -82,6 +82,7 @@ class Agent:
         self.slug, self.kind, self.posts, self.errors = slug, kind, [], []
         self.sem_findings, self.fail_checks_once = {}, set()
         self.jonie_changes_wording, self.verify_outputs = set(), []
+        self.wp_reports = []
         self.c = SB / "clients" / slug
 
     def sh(self, cmd):
@@ -136,7 +137,7 @@ class Agent:
             rid = self.start("crawl"); self.step(rid, "S05"); self.fin(rid, "crawl (fake)")
         elif (name, sub) == ("/discovery", "data"):
             rid = self.start("discovery", "data")
-            for s in ("S06", "S07", "S08", "S11", "S19"): self.step(rid, s)
+            for s in ("S06", "S07", "S08", "S11", "S19", "S20"): self.step(rid, s)
             for s in ("S09", "S10"): self.step(rid, s, "skipped", "BrightLocal upload not in yet")
             self.fin(rid, "data")
         elif (name, sub) == ("/discovery", "audit"):
@@ -197,6 +198,12 @@ class Agent:
         elif (name, sub) == ("/build", "pilot-corrections"):
             rid = self.start("build", "pilot-corrections")
             self.sh(f'python3 scripts/status.py pilot-corrections {S} --note "H1 tweak in specs/service.md"'); self.fin(rid, "pilot corrections")
+        elif name == "/wp-check":
+            pilot = "--pilot" in command
+            rid = self.start("wp-check", "pilot" if pilot else None)
+            code, out = sh(f"python3 tests/fakes.py wp check {S} --run {rid}" + (" --pilot" if pilot else ""))
+            self.wp_reports.append(out)
+            self.fin(rid, "wp-check")
         elif (name, sub) == ("/build", "ship"):
             bid = args[1]; rid = self.start("build", "ship", batch=bid)
             self.sh(f"python3 tests/fakes.py publish wheel {S}")
@@ -218,7 +225,8 @@ class Agent:
                         m = json.loads(ln)
                         if not m["alt"]:
                             self.sh(f'python3 tests/fakes.py wp set-alt {S} --run {rid} --media-id {m["id"]} '
-                                    f'--alt "{pid} in Springfield, Missouri — Test Co" --expect-alt ""')
+                                    f'--alt "{pid} in Springfield, Missouri — Test Co" --expect-alt "" '
+                                    f'--live --backup-confirmed "ManageWP backup before alt text, confirmed by Paul"')
                 for st_ in ("published", "verified", "written_back"):
                     self.sh(f"python3 scripts/status.py batch {S} {bid} --state {st_}")
                 self.sh(f"python3 tests/fakes.py publish pending {S} --run {rid}")
@@ -276,7 +284,7 @@ def page_file(pid, version):
               "hub": "| [Link wheel: populate service links here] |"}.get(pid.split("-")[0], "")
     return (f"---\npage_id: {pid}\nurl: https://test.example/{pid}/\nseo_title: {pid} - Test Co\n"
             f"meta_description: The approved description for {pid}, naming the area and two services.\n"
-            + ("replaces: https://test.example/old-roofing/\n" if pid == "svc-roof-repair" else "")
+            + ("replaces: https://test.example/old-roofing/\nkeyword: roof repair\n" if pid == "svc-roof-repair" else "")
             + f"---\n# {pid.replace('-', ' ').title()} in Greene County\n\nThe opening answer for {pid} ({version}). "
             f"Call today.\n\n## What does {pid} cost?\n\nCost depends on **size** and pitch.\n\n"
             f"- Inspection\n- Repair\n\n## {pid} FAQs\n\n### How long does it take?\n\nMost jobs take one day.\n\n"
@@ -398,10 +406,15 @@ def t_walkthrough_full():
           wp_state()["redirects"].get("https://test.example/old-roofing/") == "https://test.example/svc-roof-repair/")
     media = wp_state()["media"]
     check("alt text added to the images Jonie added (safe fix)", all(m["alt_text"] for k, m in media.items() if int(k) >= 500))
-    check("every page verified against its approved file", all("0 differ" in o for o in ag.verify_outputs), ag.verify_outputs[:2])
+    check("every page verified against its approved file (incl. keyword and social)", all("0 differ" in o for o in ag.verify_outputs), ag.verify_outputs[:2])
+    check("/next ran /wp-check before the first WordPress step", any(l.startswith("run") and "/wp-check wt-full" in l for l in log)
+          and log.index(next(l for l in log if "/wp-check wt-full" in l)) < log.index(next(l for l in log if " ship " in l)))
+    seo1 = wp_state()["seo"][str(first["id"])]
+    check("drafts carry keyword and social (Open Graph + X) from the approved file", seo1.get("_seopress_social_fb_title") == "svc-roof-repair - Test Co"
+          and seo1.get("_seopress_social_twitter_desc", "").startswith("The approved description") and "_seopress_analysis_target_kw" in seo1, seo1)
     st = status("wt-full")
     held = sum(len(v) for v in (st.get("wheel_pending") or {}).values())
-    posts = [i for i in wp_state()["items"].values() if i["type"] == "posts"]
+    posts = [i for i in wp_state()["items"].values() if i["type"] == "posts" and not i["title"]["raw"].startswith("seo-ops connection test")]
     check("approved blog posts go in as WordPress posts (drafts) with a publish handoff", len(posts) == 2 and
           all(i["status"] == "draft" for i in posts), [(i["type"], i["status"]) for i in posts])
     check("held link rows are handed to Jonie once their target is live", held == 0 and
@@ -451,7 +464,7 @@ def t_publish_corrections():
     code, out = sh("python3 scripts/status.py urls wt-pub --published")
     check("QA crawl list holds only published pages", "svc-roof-repair" in out and "svc-new" not in out, out)
     code, out = sh("python3 tests/fakes.py wp update-content wt-pub --run x --page-id a --url https://test.example/a/ --content-file x --expect-sha x")
-    check("the system refuses to change a live page", code != 0 and "never" in out, out)
+    check("the system refuses to replace a live page's content wholesale", code != 0 and "never" in out, out)
 
 
 def t_walkthrough_blog_only():
@@ -508,16 +521,21 @@ def t_rollback():
     st = status("rb-co"); st["gates"]["audit_approved"] = {"state": "approved", "files": {}}
     st["gates"]["entity_approved"] = {"state": "approved", "files": {}}
     (SB / "clients/rb-co/status.json").write_text(json.dumps(st))
-    for s in [f"S{i:02d}" for i in range(1, 20)]:
+    for s in [f"S{i:02d}" for i in range(1, 21)]:
         st.setdefault("audit_steps", {})[s] = {"outcome": "done"}
     (SB / "clients/rb-co/status.json").write_text(json.dumps(st))
+    (SB / "tests/.state/wp.json").unlink(missing_ok=True)
+    rid = ag.start("wp-check"); sh(f"python3 tests/fakes.py wp check rb-co --run {rid}"); ag.fin(rid, "wp-check")
     rid = ag.start("implement", "safe")
     code, out = sh(f'python3 tests/fakes.py wp set-alt rb-co --run {rid} --media-id 55 --alt "Roof repair in Springfield" --expect-alt ""')
-    check("alt text applied through wp.py (fake)", code == 0 and wp_state()["media"]["55"]["alt_text"], out)
+    check("a change to a live page without --live and a backup confirmation is refused", code != 0 and "--live" in out, out)
+    code, out = sh(f'python3 tests/fakes.py wp set-alt rb-co --run {rid} --media-id 55 --alt "Roof repair in Springfield" '
+                   f'--expect-alt "" --live --backup-confirmed "ManageWP backup 09:00, confirmed by Paul"')
+    check("alt text applied through wp.py (fake) with --live + backup", code == 0 and wp_state()["media"]["55"]["alt_text"], out)
     ag.fin(rid, "alt")
     n = [json.loads(l) for l in (SB / "clients/rb-co/changes.jsonl").read_text().splitlines()][-1]["n"]
     rb = ag.start("rollback")
-    sh(f"python3 tests/fakes.py wp restore rb-co --run {rb} --change {n}")
+    sh(f'python3 tests/fakes.py wp restore rb-co --run {rb} --change {n} --live --backup-confirmed "ManageWP backup 09:05, confirmed by Paul"')
     check("rollback restores the old alt text", wp_state()["media"]["55"]["alt_text"] == "")
     ag.fin(rb, "rolled back")
 
@@ -660,6 +678,10 @@ def t_repo_hygiene():
     hits = lambda rx: [str(f.relative_to(SB)) for f, t in text.items() if _re.search(rx, t)]
     check("no old gate names anywhere", not hits(r"\b(b1_entity|b1_audit|bab_topics|impl_safe|block[1-5])\b"),
           hits(r"\b(b1_entity|b1_audit|bab_topics|impl_safe|block[1-5])\b"))
+    check("no superseded WordPress settings (wp_env_prefix, wp_pilot_done)", not hits(r"wp_env_prefix|wp_pilot_done"),
+          hits(r"wp_env_prefix|wp_pilot_done"))
+    check("one WordPress spec document exists and the commands point to it",
+          (SB / "wordpress/wordpress-site-setup.md").exists() and "wordpress-site-setup.md" in text.get(SB / ".claude/commands/wp-check.md", ""))
     check("no --gates in docs (gates live only in gates.json)", not [f for f in hits(r"--gates") if f.endswith(".md")])
     check("no 'Stage 0-4' names in the audit skill", not [f for f in hits(r"\bStage [0-4]\b") if "seo-technical-audit" in f])
     sev = [f for f in hits(r"\|\s*\*\*High\*\*\s*\|")]
@@ -694,8 +716,104 @@ def t_client_view():
     check("free-text client view flags are gone from run.py finish", code != 0 and "--phase" in out, out)
 
 
+def t_wordpress():
+    def setmode(**m):
+        (SB / "tests/.state").mkdir(parents=True, exist_ok=True)
+        (SB / "tests/.state/wp_mode.json").write_text(json.dumps(m))
+    sh('python3 scripts/status.py init wp-co --name "WP Co" --domain test.example --type full --industry roofing')
+    ag = Agent("wp-co"); rid = ag.start("new-client"); ag.fin(rid, "set up")
+    (SB / "tests/.state/wp.json").unlink(missing_ok=True)
+
+    def wpcheck(pilot=False):
+        rid = ag.start("wp-check", "pilot" if pilot else None)
+        code, out = sh(f"python3 tests/fakes.py wp check wp-co --run {rid}" + (" --pilot" if pilot else ""))
+        sh(f"python3 scripts/run.py finish wp-co {rid} --summary wp-check")
+        return code, out
+    cases = [({"no_creds": True}, "missing from .env"), ({"rest_blocked": True}, "security plugin"),
+             ({"bad_password": True}, "Authorization header"), ({"role": "author"}, "must be an Editor"),
+             ({"no_seopress": True}, "SEOPress")]
+    for m, words in cases:
+        setmode(**m)
+        code, out = wpcheck()
+        check(f"/wp-check names the cause: {list(m)[0]}", code == 1 and words in out and "not connected" in out, out[-400:])
+    st = status("wp-co")
+    check("a failed /wp-check leaves WordPress work blocked", not st["wordpress"]["check"]["passed"])
+    code, out = sh("python3 scripts/run.py start wp-co implement --step safe")
+    check("WordPress steps refuse until /wp-check passes", code == 4 and "wp-check" in out, out)
+    setmode()
+    code, out = wpcheck()
+    check("/wp-check passes: login, role, page + post drafts, every SEOPress field read back",
+          code == 0 and "connected" in out and "SEOPress 6.8+" in out and "Draft creation" in out, out)
+    check("site-wide settings unreadable as Editor → one-time VA check for Jonie",
+          "not readable as Editor" in out and any((ag.c / "handoffs").glob("H-*seopress_settings.md")), out[-300:])
+    items = wp_state()["items"]
+    check("/wp-check trashes its test drafts and publishes nothing",
+          all(i["status"] == "trash" for i in items.values() if i["title"]["raw"].startswith("seo-ops connection test")))
+    setmode(settings_readable=True)
+    code, out = wpcheck()
+    check("readable site-wide settings are saved as audit evidence", "saved as audit evidence" in out and
+          any((ag.c / "inputs").glob("seopress-settings-*.json")), out[-300:])
+    setmode()
+    # gates for field changes on an existing live page (page 2, /roof-repair/)
+    st = status("wp-co")
+    for g in ("entity_approved", "audit_approved", "brand_guide_approved", "proof_sheet_approved"):
+        st["gates"][g] = {"state": "approved", "files": {}}
+    st["imported_conditions"] = {"proof_sheet_returned": "test"}
+    st["audit_steps"] = {f"S{i:02d}": {"outcome": "done"} for i in range(1, 21)}
+    (ag.c / "status.json").write_text(json.dumps(st))
+    LIVE = '--live --backup-confirmed "ManageWP backup 10:00, confirmed by Paul"'
+    rid = ag.start("implement", "structural")
+    code, out = sh(f'python3 tests/fakes.py wp set wp-co --run {rid} --url https://test.example/roof-repair/ '
+                   f'--field title --value "Roof Repair - WP Co" --expect "Roof Repair | Test" {LIVE}')
+    check("before the pilot, a title change on an existing page goes to a VA handoff", code != 0 and "VA handoff" in out, out)
+    code, out = sh(f'python3 tests/fakes.py wp set wp-co --run {rid} --url https://test.example/roof-repair/ '
+                   f'--field description --value "New approved description." --expect "old desc"')
+    check("live page: a safe fix without --live is refused", code != 0 and "--live" in out, out)
+    code, out = sh(f'python3 tests/fakes.py wp set wp-co --run {rid} --url https://test.example/roof-repair/ '
+                   f'--field description --value "New approved description." --expect "wrong old value" {LIVE}')
+    check("stops when the page changed since the audit", code == 11, out)
+    code, out = sh(f'python3 tests/fakes.py wp set wp-co --run {rid} --url https://test.example/roof-repair/ '
+                   f'--field description --value "New approved description." --expect "old desc" {LIVE}')
+    check("meta description (safe fix) written before the pilot, with --live + backup", code == 0 and
+          wp_state()["seo"]["2"]["description"] == "New approved description.", out)
+    code, out = sh(f'python3 tests/fakes.py wp set wp-co --run {rid} --url https://test.example/roof-repair/ '
+                   f'--field description --value "New approved description." --expect "old desc" {LIVE}')
+    check("already correct → skipped", "already correct" in out, out)
+    code, out = sh(f'python3 tests/fakes.py wp fix-content wp-co --run {rid} --url https://test.example/roof-repair/ '
+                   f'--kind broken_link --old "old roof repair copy" --new "roof repair copy" {LIVE}')
+    check("broken link / content fix written and logged", code == 0 and "roof repair copy" in wp_state()["items"]["2"]["content"]["raw"], out)
+    ag.fin(rid, "fixes")
+    # pilot: approve, then structural fields go direct
+    st = status("wp-co"); st["build"] = {"site_plan": {"file": "x", "approval": {"state": "approved"}},
+                                         "batches": [{"id": "pilot", "kind": "service", "label": "p", "pages": [], "state": "written_back"}]}
+    (ag.c / "status.json").write_text(json.dumps(st))
+    setmode(mu_plugin_key="_kad_head")
+    sh("python3 scripts/status.py set wp-co client.kadence_head_meta_key _kad_head")
+    code, out = wpcheck(pilot=True)
+    check("/wp-check --pilot: head-code field round trip + a verified batch → pilot passed", code == 0 and "pilot passed" in out, out[-500:])
+    code, out = paul("/approve wp-co wordpress_pilot_approved")
+    check("Paul approves the pilot for this site", code == 0, out)
+    rid = ag.start("implement", "structural")
+    for field, value, expect in (("title", "Roof Repair - WP Co", "Roof Repair | Test"), ("keyword", "roof repair", ""),
+                                 ("social_title", "Roof Repair - WP Co", ""), ("robots", "index,follow", "index,follow"),
+                                 ("canonical", "https://test.example/roof-repair/", "")):
+        code, out = sh(f'python3 tests/fakes.py wp set wp-co --run {rid} --url https://test.example/roof-repair/ '
+                       f'--field {field} --value "{value}" --expect "{expect}" {LIVE}')
+        check(f"after the pilot: {field} written directly and read back", code == 0, out)
+    ag.fin(rid, "structural")
+    n = [json.loads(l) for l in (ag.c / "changes.jsonl").read_text().splitlines() if '"seo_title"' in l][-1]["n"]
+    rb = ag.start("rollback")
+    code, out = sh(f"python3 tests/fakes.py wp restore wp-co --run {rb} --change {n} {LIVE}")
+    check("/rollback restores the old title from the log", code == 0 and wp_state()["seo"]["2"]["title"] == "Roof Repair | Test", out)
+    n = [json.loads(l) for l in (ag.c / "changes.jsonl").read_text().splitlines() if '"broken_link"' in l and "APPLIED" in l][-1]["n"]
+    code, out = sh(f"python3 tests/fakes.py wp restore wp-co --run {rb} --change {n} {LIVE}")
+    check("/rollback restores the old page content", code == 0 and "old roof repair copy" in wp_state()["items"]["2"]["content"]["raw"], out)
+    ag.fin(rb, "rollback")
+    setmode()
+
+
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
-             t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_client_view]
+             t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_wordpress, t_client_view]
 
 
 def main():

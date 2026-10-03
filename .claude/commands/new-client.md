@@ -27,8 +27,9 @@ Follow CLAUDE.md. Plain language with Paul throughout.
    Checklist and Approval Record are generated (`scripts/records.py`) — upload each to the client folder as a
    real `.md` with the client name, and re-upload after each run.
 6. **Intake questions for Paul** (one batch): website URL, GBP link, storefront or SAB, the
-   **exact URL in the GBP Website field**, WordPress env prefix (Paul adds the Application
-   Password to `.env` himself — never ask for it in chat), whether GSC/GA4 access exists.
+   **exact URL in the GBP Website field**, WordPress: Jonie creates the `seo-ops` Editor user and Application Password (wordpress/wordpress-site-setup.md §1)
+   and Paul adds `WP_<SLUG>_URL / _USER / _APP_PASSWORD` to `.env` himself — never ask for them in chat; then run
+   `/wp-check <slug>`, whether GSC/GA4 access exists.
    Blog-only: services list, city list, voice guidance, customer language.
 7. `run.py finish <slug> <RUN_ID> --summary "Client set up"`
 8. Tell Paul the next command: `/next <slug>` — for a full client that runs `/discovery <slug> discovery`

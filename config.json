@@ -1,7 +1,6 @@
 {
   "dfs_confirm_threshold_usd": 2.0,
   "git_push_after_run": true,
-  "wp_pilot_done": false,
   "kadence_head_meta_key": null,
   "team": {
     "decisions": "Paul",

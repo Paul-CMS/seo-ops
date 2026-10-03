@@ -11,7 +11,7 @@ later stages. A step marked *Reusable* is re-run only if its last Done is older 
 (`steps.py fresh`), or Paul asks.
 
 **Order (Paul, 2026-10-02):** entity → architecture (URL Decision Map) → page conformance →
-technical findings. Steps S05–S11 and S19 run **while the client has the proof sheet**.
+technical findings. Steps S05–S11, S19 and S20 run **while the client has the proof sheet**.
 
 | ID | Step | Phase | How | Outputs | Used by | Reusable |
 |---|---|---|---|---|---|---|
@@ -27,6 +27,7 @@ technical findings. Steps S05–S11 and S19 run **while the client has the proof
 | S10 | Local grid | Client has sheet | BrightLocal grid (DataforSEO alongside on the pilot client only) | `BL - local-grid` | Entity findings | yes |
 | S11 | Search Console / GA4 | Client has sheet | Client access, if any | `GSC -`, `GA4 -` | Severity, URL Decision Map | yes |
 | S19 | People Also Ask: core services × primary city + top 3 cities, capped (default 20 queries) | Client has sheet | `scripts/paa.py` (DataforSEO SERP), then the discovery-audit agent routes each question | `data/paa/paa-questions.csv`, `queries.csv`, `paa-routing.md` (intent + route: service FAQ / location FAQ / blog topic / drop; C3 duplicates dropped) | Site plan FAQ topics, briefs, Blog topic list | yes |
+| S20 | SEOPress site-wide settings (title templates, sitemap, noindexed post types, Knowledge Graph schema) — read-only | Client has sheet | `/wp-check` (saved if readable as Editor) or Jonie's one-time VA check; `skipped` if there is no WordPress access yet | `inputs/seopress-settings-*.json` or the returned check worksheet | Technical findings; schema readiness (duplicate schema, wordpress-site-setup.md §8) | yes |
 | S12 | Ingest + cross-checks | Audit | seo-technical-audit `ingest_evidence.py`, `crosscheck.py` | Evidence Manifest, 00-crosschecks | Every finding | no |
 | S13 | Entity analysis: site vs Brand Guide (triple, NAP, brand search, supporting assets) | Audit | discovery-audit agent | Finding Register (entity) | Recommendations | no |
 | S14 | Architecture: every page typed, keep/merge/redirect per CM-019 | Audit | discovery-audit agent | URL Decision Map | Site plan, Build | no |

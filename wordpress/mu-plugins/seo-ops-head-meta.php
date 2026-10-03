@@ -6,8 +6,9 @@
  * Version: 0.1 — key filled in during the WordPress pilot.
  *
  * PILOT STEP: run `python3 scripts/wp.py inspect <slug> <url>` on a page whose head field is set in the
- * Kadence UI, find the meta key that holds it, put it below AND in config.json "kadence_head_meta_key".
- * Until both are set, wp.py refuses set-head and schema goes out as a VA handoff.
+ * Kadence UI, find the meta key that holds it, put it below AND in seo-ops:
+ * `status.py set <slug> client.kadence_head_meta_key <key>` (wordpress/wordpress-site-setup.md §4).
+ * Until both are set and the site's pilot is approved, schema goes out as a VA handoff.
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 

@@ -16,19 +16,22 @@ Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps i
    Decision Map, the approved batch drafts, Link Wheel Tables, validated schema). Low technical
    findings go out together as **one** handoff. Show Paul the list
    and the channel for each item before doing anything.
-3. For each item, by channel:
-   - **System (wp.py):** read the current value first (`wp.py get`). Already the new value →
-     logged SKIPPED. Different from what the audit recorded → STOP, ask Paul. Otherwise apply
-     and read back. Alt text: `wp.py set-alt`. New page content: only through `/build ship` (publish.py drafts). Titles/meta/head field only once `wp_pilot_done` is true.
-   - **VA handoff (handoff.py):** redirects (always), slugs (always, with their paired
-     redirect), titles/meta until the pilot, robots, sitemap, speed, image URLs, broken links.
-     `python3 scripts/handoff.py create <slug> --run <RUN_ID> --kind <k> --items <csv>` — the owner is set by
-     the kind (WordPress/technical/redirect/title-meta → Jonie, everything else → Gwen); redirect rows get
-     301 and must be full URLs.
-     Upload the handoff `.md` and `.csv` to the client's Drive folder (`02 - Build/` or
-     `03 - Finish/`). Paul or the VA sends; the system does not message anyone.
-4. **The system never publishes or changes a live page's content.** New pages and replacement
-   content go in as WordPress drafts with `/build <slug> ship <id>` and Jonie publishes them.
+3. For each item, by channel (spec: `wordpress/wordpress-site-setup.md` §5–6; "WordPress connected" must
+   be met — `/wp-check` first):
+   - **System (wp.py)** — current value first, already correct → logged SKIPPED, different from what
+     the audit recorded → STOP and ask Paul:
+     - safe fixes: `wp.py set --field description`, `wp.py set-alt`, `wp.py fix-content --kind broken_link|image_url`;
+     - structural fixes **after the site's pilot**: `wp.py set --field title|keyword|social_title|social_description|robots|canonical`,
+       `wp.py set-head` (schema). Before the pilot these refuse with "VA handoff" — hand them to Jonie.
+     - **A live page:** ask Paul to confirm a fresh ManageWP backup and the time it was taken; pass
+       `--live --backup-confirmed "ManageWP backup <time>, confirmed by Paul"`. No confirmation → no change.
+   - **VA handoff (handoff.py, owner set by the kind):** redirects (always — full URLs, 301, reason, URL
+     Decision Map ref), slugs (with their paired redirect), menus, SEOPress site-wide settings, robots.txt,
+     sitemap, speed, and structural fields before the pilot.
+     `python3 scripts/handoff.py create <slug> --run <RUN_ID> --kind <k> --items <csv>`. Upload the `.md`
+     and `.csv` to the client's Drive folder. Paul or the VA sends; the system messages no one.
+4. **The system never publishes.** New pages and posts go in as drafts with `/build <slug> ship <id>` /
+   `/blog <slug> publish <id>`; Jonie publishes them.
 5. When a VA returns a worksheet: `handoff.py ingest <slug> --run <RUN_ID> --handoff <H-ID> --returned <csv>`,
    report invented refs and silent omissions, then `/verify`.
 6. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> --summary "<n> applied, <n> skipped, <n> handed off, <n> stopped" ...`.

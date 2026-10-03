@@ -80,6 +80,9 @@ always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 
   commercial investigation / comparison / transactional) and Route (service FAQ — name the page ·
   location FAQ — name the city page · blog topic · drop). Drop anything already in C3. Going
   past the cap needs Paul's OK.
+- **S20 SEOPress site-wide settings:** if the WordPress credentials are in place, run `/wp-check <slug>` now —
+  readable settings are saved as evidence; otherwise it issues Jonie's one-time VA check (record S20 when it
+  returns). No WordPress access yet → `skipped` with the reason.
 Save everything once under `clients/<slug>/` with the evidence naming convention; record every
 step's outcome.
 

@@ -73,7 +73,8 @@ to the page or blog list that owns them. Re-run E1–E9 and the spec checks on e
 1. `python3 scripts/publish.py wheel <slug>` — plans the link wheel from the approved site plan (every
    final URL is known).
 2. `python3 scripts/publish.py drafts <slug> --run <RUN_ID> --batch <id>` — for every page, a WordPress
-   **draft** generated one-way from its approved file: exact slug, SEOPress title and meta description,
+   **draft** generated one-way from its approved file: exact slug, SEOPress title, meta description,
+   target keyword (site plan) and social (Open Graph + X from the approved title and meta),
    content as proper blocks (heading levels, paragraphs, lists, tables, FAQ), link tables filled from the
    wheel (rows to pages not yet live are held and handed over once their target is live). It issues
    the **publish handoff to Jonie** for the batch: draft links + instructions (Kadence layout and
@@ -90,8 +91,9 @@ Never edit a generated draft — change the approved file (Paul re-approves) and
    title, meta, H1, heading structure, body text, link-table links. **Every difference goes to Paul**
    (quote the verify report). If any page differs: a corrections handoff to Jonie (`--kind publish`,
    one row per page, what must match), `status.py batch <slug> <id> --state corrections_requested`, finish.
-3. All match → alt text for the images Jonie added (safe fix, CM-028 Low): `wp.py media <slug> --post <wp_id>`,
-   then `wp.py set-alt ... --expect-alt ""` with the alt format from the spec.
+3. All match → alt text for the images Jonie added (safe fix): `wp.py media <slug> --post <wp_id>`, then
+   `wp.py set-alt ... --expect-alt ""` with the alt format from the spec. The pages are live: ask Paul once
+   for a fresh ManageWP backup confirmation and pass `--live --backup-confirmed "..."` on each.
 4. `status.py batch <slug> <id> --state published`, `--state verified`; Brand Guide write-back (B3, C1/C2,
    C3 — every H2 and FAQ question) and its Drive copy; `--state written_back`.
 5. `publish.py pending <slug> --run <RUN_ID>` — link rows held for pages that are now live → handoff to Jonie.

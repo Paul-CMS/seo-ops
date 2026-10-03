@@ -84,6 +84,7 @@ def blog_posts(st, slug):
             out("decision", f"/approve {slug} page:{pid} --file \"{p.get('file')}\"" + extras(st),
                 f"blog post {p.get('name') or pid} is ready for your approval")
         if S.page_approved(st, pid)[0] and not p.get("wp_id") and not (p.get("approval") or {}).get("baseline"):
+            condition_step(st, slug, "wordpress_connected")
             out("run", f"/blog {slug} publish {pid}",
                 f"WordPress draft of {p.get('name') or pid} from its approved file, and the publish handoff to Jonie")
     out("run", f"/blog {slug} next", "next post from the approved list")
@@ -158,6 +159,7 @@ def main():
             out("run", f"/build {slug} batch {bid} apply-sem",
                 f"apply {', '.join(drafts['sem_ids'])} to batch {bid} and re-run the E-checks on the changed sections")
         if state in ("handed_off", "corrections_requested"):
+            condition_step(st, slug, "wordpress_connected")
             h = b.get("handoff") or "the publish handoff"
             out("wait", f"/build {slug} published {bid}",
                 f"waiting for Jonie to {'correct' if state == 'corrections_requested' else 'publish'} batch {bid} ({h}). "
@@ -165,6 +167,7 @@ def main():
                 "text to the images and writes the batch back to the Brand Guide")
         if state in ("published", "verified"):
             out("run", f"/build {slug} published {bid}", f"finish checking batch {bid} and write it back")
+        condition_step(st, slug, "wordpress_connected")
         out("run", f"/build {slug} ship {bid}",
             f"generate WordPress drafts for batch {bid} from the approved files (link tables filled) and hand "
             "publishing to Jonie")

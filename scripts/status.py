@@ -34,7 +34,7 @@ GATES = json.loads((ROOT / "scripts" / "gates.json").read_text())
 
 SETTABLE = {
     "client.name", "client.domain", "client.industry", "client.route",
-    "client.drive_folder_id", "client.wp_env_prefix", "client.gbp_url",
+    "client.drive_folder_id", "client.kadence_head_meta_key", "client.gbp_url",
     "client.gbp_website_url", "client.address_type", "client.notes", "client.state",
 }
 BATCH_STATES = ["planned", "briefs_written", "drafts_written", "sem_applied", "sem_check_failed",
@@ -165,7 +165,7 @@ def new_status(slug, name, domain, ctype, industry, route=None, folder=None, sen
             "slug": slug, "name": name, "domain": domain, "type": ctype,
             "industry": industry.lower(), "sensitive": sensitive,
             "sensitive_category": category, "practitioner_signoff": practitioner,
-            "route": route, "drive_folder_id": folder, "wp_env_prefix": None,
+            "route": route, "drive_folder_id": folder, "kadence_head_meta_key": None,
             "gbp_url": None, "gbp_website_url": None, "address_type": None, "state": None,
             "imported": False, "notes": None,
         },
@@ -231,6 +231,14 @@ def condition_met(st, name):
         log = path(slug).parent / "log.md"
         ok = log.exists() and re.search(r"^## RUN \S+-new-client\S* · FINISHED", log.read_text(), re.M)
         return bool(ok), ("" if ok else "the client has not been set up yet — run /new-client first")
+    if name == "wordpress_connected":
+        chk = (st.get("wordpress") or {}).get("check") or {}
+        if not chk.get("passed"):
+            return False, (f"WordPress is not connected yet — run /wp-check {slug}" if not chk else
+                           f"the last /wp-check failed — fix what it reported ({chk.get('report')}) and run /wp-check {slug} again")
+        import datetime as _dt
+        age = (_dt.datetime.now().astimezone() - _dt.datetime.fromisoformat(chk["at"])).days
+        return (age <= 30), ("" if age <= 30 else f"the last /wp-check was {age} days ago — run /wp-check {slug} again")
     if name == "proof_sheet_returned":
         files = (st.get("marks") or {}).get("proof_sheet_returned", {}).get("files") or {}
         ok = bool(files) and all((ROOT / f).exists() for f in files)
@@ -474,7 +482,8 @@ def render_build(st):
 # ------------------------------------------------------------------ rendering
 def visible_gates(st):
     for g in GATES["gates"]:
-        if st["client"]["type"] == "blog-only" and g not in ("entity_approved", "blog_topics_approved", "blog_map_approved"):
+        if st["client"]["type"] == "blog-only" and g not in ("entity_approved", "blog_topics_approved", "blog_map_approved",
+                                                             "wordpress_pilot_approved"):
             continue
         if st["client"]["type"] == "full" and g == "blog_topics_approved":
             continue
@@ -489,7 +498,7 @@ def render_show(st):
     out.append("")
     out.append("Conditions (checked by the system):")
     for g in GATES["conditions"]:
-        if st["client"]["type"] == "blog-only" and g != "client_setup":
+        if st["client"]["type"] == "blog-only" and g not in ("client_setup", "wordpress_connected"):
             continue
         ok, why = condition_met(st, g)
         out.append(f"  [{'MET ' if ok else '----'}] {g:24} {label(g)}" + ("" if ok else f" — {why}"))

@@ -227,3 +227,9 @@ fit, duplicate or disconnected instances, URL dependencies.
 only after page types, canonical URLs, organization/location relationships and content
 are approved and stable — all of which sit beyond this skill's boundary. Schema-readiness
 spec checks are reported here (§0); the schema rules are BB-6xx v1.1 (incl. GOV-T5).
+
+**Duplicate schema (wordpress-site-setup.md §8).** If SEOPress outputs its own site-wide schema
+(Knowledge Graph — Organization/Person; seen in the crawl's JSON-LD or the S20 settings evidence) that
+overlaps the hand-built schema, write it as a finding (one finding, every affected URL); turning it off
+is a VA handoff. SEOPress title templates, sitemap configuration and noindexed post types from S20 are
+evidence for §2 and §6 findings, never changed by the system.

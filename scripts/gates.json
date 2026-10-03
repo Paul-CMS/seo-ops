@@ -105,6 +105,15 @@
       ],
       "artifact": "topics",
       "producer": "/blog {slug} topics"
+    },
+    "wordpress_pilot_approved": {
+      "label": "WordPress pilot passed for this site \u2014 the system may write titles, keyword, social, robots, canonical and schema directly",
+      "plain": "the WordPress pilot for this site",
+      "requires": [
+        "wordpress_connected"
+      ],
+      "artifact": "wordpress_pilot",
+      "producer": "/wp-check {slug} --pilot"
     }
   },
   "conditions": {
@@ -133,6 +142,11 @@
       "requires": [
         "discovery_signed_off"
       ]
+    },
+    "wordpress_connected": {
+      "label": "WordPress connected (/wp-check passed in the last 30 days)",
+      "plain": "a working WordPress connection",
+      "producer": "/wp-check {slug}"
     }
   },
   "derived": {
@@ -155,17 +169,17 @@
   "change_kinds": {
     "alt_text": {
       "gate": "safe_fixes_allowed",
-      "channel": "wp_or_handoff",
+      "channel": "wp",
       "owner": "Jonie"
     },
     "image_url": {
       "gate": "safe_fixes_allowed",
-      "channel": "handoff",
+      "channel": "wp",
       "owner": "Jonie"
     },
     "broken_link": {
       "gate": "safe_fixes_allowed",
-      "channel": "handoff",
+      "channel": "wp",
       "owner": "Jonie"
     },
     "sitemap": {
@@ -185,7 +199,7 @@
     },
     "meta_description": {
       "gate": "safe_fixes_allowed",
-      "channel": "wp_after_pilot",
+      "channel": "wp",
       "owner": "Jonie"
     },
     "seo_title": {
@@ -225,7 +239,7 @@
       "owner": "Jonie"
     },
     "schema": {
-      "gate": "link_wheel_approved",
+      "gate": "structural_changes_allowed",
       "channel": "wp_after_pilot",
       "owner": "Jonie"
     },
@@ -258,6 +272,31 @@
       "gate": "discovery_signed_off",
       "channel": "handoff",
       "owner": "Jonie"
+    },
+    "seo_keyword": {
+      "gate": "structural_changes_allowed",
+      "channel": "wp_after_pilot",
+      "owner": "Jonie"
+    },
+    "social": {
+      "gate": "structural_changes_allowed",
+      "channel": "wp_after_pilot",
+      "owner": "Jonie"
+    },
+    "meta_robots": {
+      "gate": "structural_changes_allowed",
+      "channel": "wp_after_pilot",
+      "owner": "Jonie"
+    },
+    "canonical": {
+      "gate": "structural_changes_allowed",
+      "channel": "wp_after_pilot",
+      "owner": "Jonie"
+    },
+    "seopress_settings": {
+      "gate": "client_setup",
+      "channel": "handoff",
+      "owner": "Jonie"
     }
   },
   "decisions": [
@@ -286,7 +325,8 @@
     "schema_built": "the validated schema files",
     "release_qa": "the QA Punch-List and acceptance sheets",
     "blog_map": "the Blog Decision Map",
-    "topics": "the Blog Topic List"
+    "topics": "the Blog Topic List",
+    "wordpress_pilot": "the WordPress pilot report (/wp-check --pilot)"
   },
   "steps": {
     "new-client": {
@@ -346,12 +386,13 @@
         "proof_sheet_approved"
       ],
       "produces": [
-        "steps:S06,S07,S08,S09,S10,S11,S19"
+        "steps:S06,S07,S08,S09,S10,S11,S19,S20"
       ],
       "reads": [
         "methodology/audit-steps.md (S06\u2013S11, S19)",
         "methodology/agency-profile.md (tools)",
-        "clients/<slug>/brand-guide.md (services, cities)"
+        "clients/<slug>/brand-guide.md (services, cities)",
+        "wordpress/wordpress-site-setup.md (\u00a75 site-wide settings)"
       ]
     },
     "discovery:audit": {
@@ -506,7 +547,8 @@
     },
     "implement:safe": {
       "gates": [
-        "safe_fixes_allowed"
+        "safe_fixes_allowed",
+        "wordpress_connected"
       ],
       "produces": [],
       "reads": [
@@ -516,7 +558,8 @@
     },
     "implement:structural": {
       "gates": [
-        "structural_changes_allowed"
+        "structural_changes_allowed",
+        "wordpress_connected"
       ],
       "produces": [],
       "reads": [
@@ -526,7 +569,8 @@
     },
     "implement:page": {
       "gates": [
-        "page:{page}"
+        "page:{page}",
+        "wordpress_connected"
       ],
       "produces": [],
       "reads": [
@@ -535,7 +579,8 @@
     },
     "implement:wheel": {
       "gates": [
-        "pages_built"
+        "pages_built",
+        "wordpress_connected"
       ],
       "produces": [],
       "reads": [
@@ -544,7 +589,8 @@
     },
     "implement:schema": {
       "gates": [
-        "link_wheel_approved"
+        "link_wheel_approved",
+        "wordpress_connected"
       ],
       "produces": [],
       "reads": [
@@ -691,7 +737,8 @@
     "build:ship": {
       "gates": [
         "discovery_signed_off",
-        "batch:{batch}:drafts"
+        "batch:{batch}:drafts",
+        "wordpress_connected"
       ],
       "produces": [
         "batch_state:{batch}:handed_off"
@@ -704,7 +751,8 @@
     "build:published": {
       "gates": [
         "discovery_signed_off",
-        "batch:{batch}:drafts"
+        "batch:{batch}:drafts",
+        "wordpress_connected"
       ],
       "produces": [
         "batch_state:{batch}:written_back|corrections_requested"
@@ -718,11 +766,32 @@
     },
     "blog:publish": {
       "gates": [
-        "page:{page}"
+        "page:{page}",
+        "wordpress_connected"
       ],
       "produces": [],
       "reads": [
         "the approved post file"
+      ]
+    },
+    "wp-check": {
+      "gates": [
+        "client_setup"
+      ],
+      "produces": [],
+      "reads": [
+        "wordpress/wordpress-site-setup.md"
+      ]
+    },
+    "wp-check:pilot": {
+      "gates": [
+        "wordpress_connected"
+      ],
+      "produces": [
+        "wordpress_pilot"
+      ],
+      "reads": [
+        "wordpress/wordpress-site-setup.md (\u00a75 pilot)"
       ]
     }
   }
