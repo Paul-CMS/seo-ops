@@ -1,14 +1,14 @@
 # Gettysburg Mold Remediation Pros - Document Checklist
 
-Generated 2026-10-03T15:38 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-03T16:17 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
 | | Step | Outcome | Reason / output |
 |---|---|---|---|
-| [ ] | S01 Intake facts: website, GBP link, storefront/SAB, exact GBP Website-fie | — |  |
-| [ ] | S02 Public discovery: live site, GBP, social, review profiles, Secretary o | — |  |
-| [ ] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | — |  |
+| [x] | S01 Intake facts: website, GBP link, storefront/SAB, exact GBP Website-fie | done | Intake facts from Paul as recorded at /new-client (no GBP, SAB, confirmed address, no GSC/GA4, health_adjacent); nothing missing for S02/S03 |
+| [x] | S02 Public discovery: live site, GBP, social, review profiles, Secretary o | done | Live site (24 sitemap URLs) and web search for name, address, phone, owner, profiles; no third-party profiles found. PA DOS (bot check), PA AG HIC and IICRC directory could not be checked - listed as NEED |
+| [x] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | done | Category candidates verified on Wikipedia/Wikidata (no GBP - open question); area by Russian Doll with path (two-state area; strict result Mid-Atlantic; proposed South Central PA, 5 of 6 cities); variants; reserved homepage variant; Wikidata URIs |
 | [ ] | S04 Proof sheet built (Markdown + client Google Doc) | — |  |
 | [ ] | S05 Site crawl | — |  |
 | [ ] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | — |  |
@@ -31,7 +31,7 @@ Generated 2026-10-03T15:38 from status.json — do not edit. `[x]` done · `[-]`
 
 - [x] Client set up (/new-client finished)
 - [ ] The client returned the proof sheet (the returned sheet is recorded) — the client has not returned the proof sheet yet (when it arrives: /discovery gettysburg-mold-remediation-pros sheet-returned)
-- [ ] Every registered audit step has an outcome (Done / Skipped / Failed) — audit steps with no outcome yet: S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S19, S20, S12, S13, S14, S15, S16, S17, S18
+- [ ] Every registered audit step has an outcome (Done / Skipped / Failed) — audit steps with no outcome yet: S04, S05, S06, S07, S08, S09, S10, S11, S19, S20, S12, S13, S14, S15, S16, S17, S18
 - [ ] Every page in the site plan is built, verified and written back — no site plan yet
 - [ ] WordPress connected (/wp-check passed in the last 30 days) — the last /wp-check failed — fix what it reported (clients/gettysburg-mold-remediation-pros/wordpress/wp-check-2026-10-03.md) and run /wp-check gettysburg-mold-remediation-pros again
 

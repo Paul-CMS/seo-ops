@@ -16,26 +16,34 @@ publication.
 
 | # | Field | Value | Status |
 |---|---|---|---|
-| 1 | Brand entity (GBP name, exactly) | | |
-| 2 | GBP primary category = the category entity | | |
-| 3 | Category variants (4–6) | | |
-| 4 | Storefront or SAB | | |
-| 5 | Area entity | | |
-| 6 | Area variants (3–5) | | |
+*Proposals from the Discovery Record (run 20261003-160508-discovery-552a, 2026-10-03). Nothing here is approved until Paul's `/approve … entity_approved`.*
+
+| # | Field | Value | Status |
+|---|---|---|---|
+| 1 | Brand entity (GBP name, exactly) | Gettysburg Mold Remediation Pros — **no GBP exists**; name as used on the site and at intake | Submitted |
+| 2 | GBP primary category = the category entity | **No GBP (OPEN, Q-01).** Proposed: **Mold remediation** (Wikipedia "Mold remediation" → Indoor mold, Remediation section; Wikidata Q97609893). Alternatives: Water damage restoration (→ Water damage, Q19289049); Indoor air quality (Q905504) | Unknown — Paul decides |
+| 3 | Category variants (4–6) | Mold remediation · Mold growth, assessment, and remediation · Indoor mold remediation `[NEED: Paul — BB-109]` · Mold removal `[NEED: Paul — no Wikipedia title]` | Submitted |
+| 4 | Storefront or SAB | SAB (Paul intake) — **Disputed by the site's presentation**: "Our own building, in the borough. Not a call center." (/contact/) (C-01) | Disputed |
+| 5 | Area entity | Proposed: **South Central Pennsylvania** (Q7566771) — contains 5 of 6 cities (not Taneytown, MD). Strict BB-105 result: Mid-Atlantic (United States) (Q632014) (Q-02) | Unknown — Paul decides |
+| 6 | Area variants (3–5) | South Central Pennsylvania · Harrisburg–York–Lebanon combined statistical area · Adams County, Pennsylvania · Gettysburg, PA Metropolitan Statistical Area · Gettysburg | Submitted |
 | 7 | Separator standard | ` - ` | |
-| 8 | Phone | | |
-| 9 | Primary domain (canonical host form) | | |
-| 10 | Legal entity name | | |
-| 11 | Exact URL in the GBP Website field | | |
+| 8 | Phone | (267) 828-9088 (site, every page) — `[NEED: client confirms it is the permanent business number]` | Submitted |
+| 9 | Primary domain (canonical host form) | https://gettysburgpamoldremediationpros.com/ (canonical on homepage; http and www forms not verified here) | Submitted |
+| 10 | Legal entity name | `[NEED: PA Department of State search — portal blocked automated access]` | Unknown |
+| 11 | Exact URL in the GBP Website field | n/a — no GBP | Unknown |
 
 **Area entity derivation** (BB-105) — record the path, not just the answer:
 
 ```
-City served:
--> County:
--> Region:
-Contains all N cities served? yes / no
-Smallest true container:
+City served:  Gettysburg, Pennsylvania (Q694550) — borough, county seat of Adams County
+-> County:    Adams County, Pennsylvania (Q351865) = Gettysburg, PA MSA (Q123332714) — contains Hanover/Taneytown? NO
+-> Region:    South Central Pennsylvania (Q7566771) / Harrisburg–York–Lebanon CSA (Q18153388) — Adams + York
+              — contains Taneytown (Carroll County, MD, Q501323)? NO
+-> Region:    Mid-Atlantic (United States) (Q632014) — contains all? YES
+Contains all 6 cities served? South Central PA: no (5 of 6) · Mid-Atlantic: yes
+Smallest true container: Mid-Atlantic (strict BB-105). Proposed for Paul: South Central Pennsylvania, conditional on
+Taneytown, MD being outside the homepage area statement (open question Q-02).
+Cities: Gettysburg, Littlestown, New Oxford, Carroll Valley (Adams PA) · Hanover (York PA) · Taneytown (Carroll MD)
 ```
 
 **Paul approved this section on:** ____________
@@ -44,18 +52,18 @@ Smallest true container:
 
 ### B1 · Reserved for the homepage
 ```
-HOMEPAGE AREA VARIANT:      ________________ [status]
-HOMEPAGE CATEGORY VARIANT:  ________________ [status]
+HOMEPAGE AREA VARIANT:      South Central Pennsylvania [Submitted — proposal, depends on Q-02]
+HOMEPAGE CATEGORY VARIANT:  Mold Remediation [Submitted — proposal, depends on Q-01]
 ```
 No other page may claim the reserved area variant. This is the only cross-page variant rule.
 
 ### B2 · Rotation pool
 Every area variant except the reserved one. Reuse across service pages is correct.
 ```
-1.
-2.
-3.
-4.
+1. Harrisburg–York–Lebanon combined statistical area   [Submitted]
+2. Adams County, Pennsylvania                           [Submitted]
+3. Gettysburg, PA Metropolitan Statistical Area         [Submitted]
+4. Gettysburg                                           [Submitted]
 ```
 
 ### B3 · Assignment log — the write-back target
@@ -139,10 +147,10 @@ TRAVEL FEE BEYOND:
 | Confirmed GBP category → schema subtype | | |
 | Logo files with pixel dimensions | | |
 | Owner name + photo | | |
-| **Wikidata URI — category entity** | | |
-| **Wikidata URI — area entity** | | |
-| **Wikidata URI — county** | | |
-| **Wikidata URI — state** | | |
+| **Wikidata URI — category entity** | https://www.wikidata.org/wiki/Q97609893 (mold remediation) — proposal; alt Q6895739 (enwiki "Indoor mold") | Submitted |
+| **Wikidata URI — area entity** | https://www.wikidata.org/wiki/Q7566771 (South Central Pennsylvania) — proposal; strict BB-105 alt Q632014 (Mid-Atlantic) | Submitted |
+| **Wikidata URI — county** | https://www.wikidata.org/wiki/Q351865 (Adams County, PA); also served: Q490914 (York County, PA), Q501323 (Carroll County, MD) | Submitted |
+| **Wikidata URI — state** | https://www.wikidata.org/wiki/Q1400 (Pennsylvania); Taneytown: Q1391 (Maryland) | Submitted |
 
 ## Section G — Positioning (client's own words)
 ```

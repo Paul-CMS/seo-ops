@@ -6,18 +6,22 @@
     "domain": "gettysburgpamoldremediationpros.com",
     "type": "full",
     "industry": "mold remediation",
-    "sensitive": false,
-    "sensitive_category": null,
+    "sensitive": true,
+    "sensitive_category": "health_adjacent",
     "practitioner_signoff": false,
     "route": null,
     "drive_folder_id": "1OsVC_nP_7Bx232B5HrG9cSduqwx6D7qn",
     "kadence_head_meta_key": null,
-    "gbp_url": null,
+    "gbp_url": "none",
     "gbp_website_url": null,
-    "address_type": null,
-    "state": null,
+    "address_type": "SAB",
+    "state": "PA",
     "imported": false,
-    "notes": null
+    "notes": "Intake (Paul, 2026-10-03): no GBP profile; service-area business; confirmed address 498 Wye Alley, Gettysburg, PA 17325; no Search Console or GA4 access.",
+    "safe_fix_cap": {
+      "alt_text": 5,
+      "broken_link": 2
+    }
   },
   "gates": {
     "entity_approved": {
@@ -54,16 +58,52 @@
       "state": "pending"
     }
   },
-  "marks": {},
+  "marks": {
+    "entity_record": {
+      "files": {
+        "clients/gettysburg-mold-remediation-pros/discovery/Gettysburg Mold Remediation Pros - Discovery Record - REVIEW.md": "09910d98db9c"
+      },
+      "at": "2026-10-03T16:16:20-05:00",
+      "ts": 1791062180.08113
+    }
+  },
   "pages": {},
   "build": null,
-  "audit_steps": {},
+  "audit_steps": {
+    "S01": {
+      "outcome": "done",
+      "reason": "Intake facts from Paul as recorded at /new-client (no GBP, SAB, confirmed address, no GSC/GA4, health_adjacent); nothing missing for S02/S03",
+      "outputs": [
+        "clients/gettysburg-mold-remediation-pros/discovery/Gettysburg Mold Remediation Pros - Discovery Record - REVIEW.md"
+      ],
+      "at": "2026-10-03T16:16:11-05:00",
+      "run": "20261003-160508-discovery-552a"
+    },
+    "S02": {
+      "outcome": "done",
+      "reason": "Live site (24 sitemap URLs) and web search for name, address, phone, owner, profiles; no third-party profiles found. PA DOS (bot check), PA AG HIC and IICRC directory could not be checked - listed as NEED",
+      "outputs": [
+        "clients/gettysburg-mold-remediation-pros/discovery/Gettysburg Mold Remediation Pros - Discovery Record - REVIEW.md"
+      ],
+      "at": "2026-10-03T16:16:11-05:00",
+      "run": "20261003-160508-discovery-552a"
+    },
+    "S03": {
+      "outcome": "done",
+      "reason": "Category candidates verified on Wikipedia/Wikidata (no GBP - open question); area by Russian Doll with path (two-state area; strict result Mid-Atlantic; proposed South Central PA, 5 of 6 cities); variants; reserved homepage variant; Wikidata URIs",
+      "outputs": [
+        "clients/gettysburg-mold-remediation-pros/brand-guide.md"
+      ],
+      "at": "2026-10-03T16:16:11-05:00",
+      "run": "20261003-160508-discovery-552a"
+    }
+  },
   "last_run": {
-    "run_id": "20261003-153748-wp-check-16f1",
-    "command": "wp-check",
-    "finished": "2026-10-03T15:38:00-05:00",
-    "result": "WordPress check: not connected — credentials not in .env yet",
-    "changes": 0
+    "run_id": "20261003-160508-discovery-552a",
+    "command": "discovery",
+    "finished": "2026-10-03T16:17:07-05:00",
+    "result": "Discovery S01-S03: entity foundation proposed (category and area open for Paul), Discovery Record uploaded",
+    "changes": 4
   },
   "spend": {
     "dataforseo_usd": 0.0
@@ -76,7 +116,7 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-03T15:35:57-05:00",
-  "updated": "2026-10-03T15:38:00-05:00",
+  "updated": "2026-10-03T16:17:07-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-03T15:37:04-05:00"

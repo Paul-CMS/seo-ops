@@ -75,3 +75,63 @@ Gates checked: client_setup
 ### END HANDOFF
 ## RUN 20261003-153748-wp-check-16f1 · FINISHED · 2026-10-03T15:38:00-05:00
 Changes: 0 · Summary: WordPress check: not connected — credentials not in .env yet
+
+## RUN 20261003-160508-discovery-552a · STARTED · /discovery · 2026-10-03T16:05:08-05:00
+Step: discovery:discovery
+Gates checked: client_setup
+- DECISION 2026-10-03T16:05 · run 20261003-160508-discovery-552a · Paul: sensitivity set to health_adjacent, practitioner sign-off no (CM-025, CM-040)
+- DECISION 2026-10-03T16:05 · run 20261003-160508-discovery-552a · Paul: safe-fix cap for alt_text set to 5
+- DECISION 2026-10-03T16:05 · run 20261003-160508-discovery-552a · Paul: safe-fix cap for broken_link set to 2
+- DECISION 2026-10-03T16:05 · run 20261003-160508-discovery-552a · Intake answers from Paul: no GBP profile, service-area business, confirmed address 498 Wye Alley, Gettysburg, PA 17325, no GSC/GA4 access (CM-019/CM-021: DataforSEO is the only ranking evidence).
+- CHANGE #2 [drive_file] https://drive.google.com/file/d/1zA3idZhM3s26SCojoqYOFtMnJ_CAngDs/view?usp=drivesdk | upload | old: (new file) | new: Gettysburg Mold Remediation Pros - Discovery Record - REVIEW.md · sha 09910d98db9c | result: done | snapshots  clients/gettysburg-mold-remediation-pros/snapshots/20261003-160508-discovery-552a/0002-new.md
+- CHANGE #3 [audit_step] S01 | Intake facts: website, GBP link, storefront/SAB, exact GBP W | old:  | new: done | result: DONE — Intake facts from Paul as recorded at /new-client (no GBP, SAB, confirmed address, no GSC/GA4, health_adjacent); nothing missing for S02/S03
+- CHANGE #4 [audit_step] S02 | Public discovery: live site, GBP, social, review profiles, S | old:  | new: done | result: DONE — Live site (24 sitemap URLs) and web search for name, address, phone, owner, profiles; no third-party profiles found. PA DOS (bot check), PA AG HIC and IICRC directory could not be checked - listed as NEED
+- CHANGE #5 [audit_step] S03 | Entity research: category entity (Wikipedia), area entity (R | old:  | new: done | result: DONE — Category candidates verified on Wikipedia/Wikidata (no GBP - open question); area by Russian Doll with path (two-state area; strict result Mid-Atlantic; proposed South Central PA, 5 of 6 cities); variants; reserved homepage variant; Wikidata URIs
+- DECISION 2026-10-03T16:16 · run 20261003-160508-discovery-552a · No GBP exists, so BB-106 (GBP primary category = category entity) cannot be applied; recorded as open question Q-01 with three Wikipedia-verified candidates (Mold remediation proposed). Two-state service area (Taneytown MD): strict BB-105 result is Mid-Atlantic; South Central Pennsylvania proposed conditionally (5 of 6 cities). Neither resolved - Paul decides at entity_approved (PROC-01).
+- DECISION 2026-10-03T16:16 · run 20261003-160508-discovery-552a · entity_record covers the Discovery Record only; the Brand Guide working copy (Sections A, B, F filled as proposals) is not attached so later Brand Guide edits at reconcile do not reopen entity_approved. Brand Guide not mirrored to Drive yet (per instructions).
+### HANDOFF · /discovery · 2026-10-03 · run 20261003-160508-discovery-552a
+**What I did**
+- S01: took the intake facts as Paul gave them (no GBP, SAB, 498 Wye Alley, no GSC/GA4, health_adjacent).
+- S02: read all 24 sitemap pages of the live site and searched the web for the business name, address, phone, owner and review/social profiles. Found no third-party profile of any kind. The PA Department of State search (blocked by a bot check), the PA Attorney General HIC registry and the IICRC directory could not be checked.
+- S03: checked category candidates and the area hierarchy on Wikipedia/Wikidata, recorded the Russian Doll path, listed variants, proposed a reserved homepage variant, and collected Wikidata URIs.
+- Wrote the Discovery Record (observations, conflicts C-01 to C-10, health claims H-01 to H-17, open questions Q-01 to Q-06) and filled Brand Guide Sections A, B and the Section F Wikidata rows as proposals.
+- Uploaded the Discovery Record to Drive `01 - Discovery and Audit/Deliverables/` as a real .md and logged it. Saved a snapshot of the public site to the git-ignored `inputs/public-site-2026-10-03/`.
+- Recorded S01–S03 as done. Marked `entity_record` with the Discovery Record.
+
+**What was decided, and why**
+- Nothing about the entity was decided. Both entity questions are recorded as open for Paul (PROC-01): there is no GBP for BB-106, and the service area covers two states.
+- Proposals for Paul: category **Mold remediation** (Wikidata Q97609893); area **South Central Pennsylvania** (Q7566771), which covers 5 of the 6 cities and leaves out Taneytown, MD. A strict BB-105 reading gives Mid-Atlantic (Q632014). Reserved homepage variant: South Central Pennsylvania / Mold Remediation.
+- `entity_record` covers only the Discovery Record, so editing the Brand Guide at reconcile does not reopen entity_approved (logged as a decision).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Q-01 Category entity when there is no GBP (and whether to create a GBP) | Paul | entity_approved |
+| Q-02 Area entity: is Taneytown, MD inside the homepage area statement | Paul | entity_approved |
+| Q-03 Storefront or SAB (the site presents "Our own building") | Paul / client | entity_approved, later schema |
+| Q-04 Category variants "Indoor mold remediation" and "Mold removal": real under BB-109? | Paul | entity_approved |
+| Q-05 No public record of "Wye Alley" / 498 Wye Alley was found | Paul | Brand Guide NAP |
+| Q-06 The live site is Astro on Vercel with no WordPress markers | Paul | every WordPress-channel step, /wp-check |
+| Manual PA DOS, PA AG HIC and IICRC lookups | Gwen | Brand Guide D (legal entity, HIC, certifications) |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Discovery Record | clients/gettysburg-mold-remediation-pros/discovery/Gettysburg Mold Remediation Pros - Discovery Record - REVIEW.md · Drive https://drive.google.com/file/d/1zA3idZhM3s26SCojoqYOFtMnJ_CAngDs/view | REVIEW |
+| Brand Guide (A, B, F proposals) | clients/gettysburg-mold-remediation-pros/brand-guide.md | working copy, not mirrored |
+| Public site snapshot | clients/gettysburg-mold-remediation-pros/inputs/public-site-2026-10-03/ | git-ignored evidence |
+
+**What I could not check**
+- PA Department of State business registry: the portal showed a bot-detection page, and I did not try to get around it.
+- PA Attorney General HIC registry and the IICRC directory: both are JavaScript apps, so I did not query them.
+- No GBP, Maps or reviews exist to check. No DataforSEO was used.
+- The office network intercepts TLS for this domain (issuer `usg_flex_500`). I fetched pages read-only with certificate verification off. This comes from the network, not the client's site.
+
+**Anything the next agent would otherwise get wrong**
+- Taneytown is in **Maryland**. The site says it holds no MHIC licence and does no repair work there, so no single MSA/CSA covers the whole service area.
+- The site's schema `additionalType` points to a Wikipedia title that now redirects to "Indoor mold".
+- The site makes many health claims with no source named (CM-040). They are listed verbatim as observations only: no severity until the audit.
+- The live site does not look like WordPress. Settle Q-06 before planning any wp.py work.
+### END HANDOFF
+## RUN 20261003-160508-discovery-552a · FINISHED · 2026-10-03T16:17:07-05:00
+Changes: 4 · Summary: Discovery S01-S03: entity foundation proposed (category and area open for Paul), Discovery Record uploaded
