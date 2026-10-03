@@ -3,8 +3,10 @@
 
     approve.py <slug> <gate> --decision D [--files f1,f2] [--conditions "a; b"] [--note T]
     approve.py <slug> site_plan --decision D [--files plan.md]
-    approve.py <slug> batch:<id>:briefs|drafts --decision D [--files ...] [--review T] [--practitioner T]
-    approve.py <slug> batch:<id>:sem --decision D --ids SEM-1,SEM-4 [--files <semantic review table>]
+    approve.py <slug> batch:<id>:briefs --decision D [--files ...]
+    approve.py <slug> batch:<id>:drafts --decision D [--sem 1,3,4|none] [--review T] [--practitioner T]
+               the drafts approval covers every draft AND the batch's semantic review table; --sem picks
+               the SEM items to apply (needed only when the review found something)
     approve.py <slug> page:<page_id> --decision D [--file F] [--review T] [--practitioner T]
     approve.py <slug> import --proposal clients/<slug>/import-proposal.json
 
@@ -99,7 +101,7 @@ def do_import(a, d, st):
     batches = []
     if baseline:
         batches.append({"id": "baseline", "kind": "service", "label": "Imported — already live",
-                        "pages": baseline, "state": "written_back", "briefs": bl, "sem": bl,
+                        "pages": baseline, "state": "written_back", "briefs": bl,
                         "drafts": bl, "files": {}})
     groups = {}
     for pid in remaining:
@@ -113,7 +115,7 @@ def do_import(a, d, st):
             n = len([b for b in batches if b["id"].startswith(prefix)]) + 1
             batches.append({"id": f"{prefix}{n}", "kind": kind if kind in S.KIND_ORDER else "service",
                             "label": f"{grp} (remaining)", "pages": pids[i:i + 5], "state": "planned",
-                            "briefs": None, "sem": None, "drafts": None, "files": {}})
+                            "briefs": None, "drafts": None, "files": {}})
     plan_md = d / "build" / f"{st['client']['name']} - Site Plan - IMPORTED.md"
     plan_md.parent.mkdir(parents=True, exist_ok=True)
     lines = [f"# {st['client']['name']} - Site Plan - IMPORTED", "",
@@ -155,10 +157,26 @@ def do_import(a, d, st):
           f"{len(batches) - (1 if baseline else 0)} batch(es); site plan {rel}")
 
 
+def sem_list(v):
+    """'1,3,4' / 'SEM-1, sem-3' → ['SEM-1','SEM-3']; 'none' → []; None → None (not given)."""
+    if v is None:
+        return None
+    if v.strip().lower() in ("none", "no", "0", ""):
+        return []
+    out = []
+    for x in split(v.replace(" ", ",")):
+        n = x.upper().replace("SEM-", "").replace("SEM", "")
+        if not n.isdigit() or not 1 <= int(n) <= 8:
+            die(f"'{x}' is not a SEM item (SEM-1 to SEM-8).")
+        out.append(f"SEM-{int(n)}")
+    return out
+
+
 def prepare(a, st, target, multi):
     """Check one target. Returns (apply_fn, log_text, label). Refuses (exit) on any problem,
     before anything is written — a multi-target /approve applies all or nothing."""
     approved = a.decision in S.GATES["met_decisions"]
+    sem = sem_list(a.sem)
     explicit = split(a.files or a.file) if not multi else []
 
     if target == "site_plan" or target.startswith("batch:"):
@@ -171,7 +189,7 @@ def prepare(a, st, target, multi):
         else:
             _, bid, stage = (target.split(":") + ["", ""])[:3]
             if stage not in S.STAGES:
-                die("Use batch:<id>:briefs, batch:<id>:sem or batch:<id>:drafts")
+                die("Use batch:<id>:briefs or batch:<id>:drafts (SEM items are picked with the drafts: --sem 1,3,4)")
             b = S.batch(st, bid) or die(f"No batch {bid}.")
             if not files:
                 files = file_map((b.get("files") or {}).get(stage) or [])
@@ -180,14 +198,14 @@ def prepare(a, st, target, multi):
                 if not ok:
                     die(f"REFUSED ({target}) — " + "; ".join(why))
                 if not files:
-                    die(f"REFUSED ({target}) — name the exact files approved (--files): for {stage}, "
-                        + ("the semantic review table." if stage == "sem" else "one per page in the batch."))
-                if stage == "sem" and not a.ids:
-                    die("REFUSED — say which SEM IDs to apply (--ids SEM-1,SEM-4), or --ids none.")
+                    die(f"REFUSED ({target}) — name the exact files approved (--files): one per page in the batch"
+                        + (" plus the semantic review table." if stage == "drafts" else "."))
                 if stage == "drafts":
-                    if b.get("state") not in ("sem_applied", "implemented", "verified", "written_back"):
-                        die(f"REFUSED ({target}) — the approved SEM changes have not been applied and re-checked "
-                            "yet (the batch must be at sem_applied).")
+                    if b.get("state") not in ("drafts_written", "sem_check_failed"):
+                        die(f"REFUSED ({target}) — the drafts and their semantic review are not written yet.")
+                    if b.get("sem_findings") and sem is None:
+                        die(f"REFUSED ({target}) — the semantic review found {b['sem_findings']} item(s): say which "
+                            "to apply (--sem 1,3,4) or --sem none.")
                     if st["client"]["sensitive"] and not a.review:
                         die("REFUSED — sensitive client: record the human review with --review.")
                     if st["client"]["practitioner_signoff"] and not a.practitioner:
@@ -196,13 +214,13 @@ def prepare(a, st, target, multi):
         rec = {"state": a.decision, "by": "Paul", "at": now(), "note": a.note, "files": files,
                "conditions": [c.strip() for c in (a.conditions or "").split(";") if c.strip()],
                "sensitive_review": a.review, "practitioner": a.practitioner,
-               **({"sem_ids": split(a.ids)} if a.ids and target.endswith(":sem") else {})}
+               **({"sem_ids": sem or []} if target.endswith(":drafts") else {})}
 
         def apply():
             holder[key] = rec
         text = (f"\n## APPROVAL · {now()} · {label_} · {a.decision} · by Paul\n"
                 + "".join(f"Approved version: {f} (sha {h})\n" for f, h in files.items())
-                + (f"SEM IDs to apply: {a.ids}\n" if a.ids and target.endswith(":sem") else "")
+                + (f"SEM items to apply: {', '.join(sem) if sem else 'none'}\n" if target.endswith(":drafts") else "")
                 + (f"Human review: {a.review}\n" if a.review else "")
                 + (f"Practitioner sign-off: {a.practitioner}\n" if a.practitioner else "")
                 + (f"Note: {a.note}\n" if a.note else ""))
@@ -272,7 +290,7 @@ def main():
     ap.add_argument("--decision", choices=S.GATES["decisions"], default="approved")
     ap.add_argument("--conditions"); ap.add_argument("--files"); ap.add_argument("--file")
     ap.add_argument("--note"); ap.add_argument("--review"); ap.add_argument("--practitioner")
-    ap.add_argument("--proposal"); ap.add_argument("--ids")
+    ap.add_argument("--proposal"); ap.add_argument("--sem", "--ids", dest="sem")
     a = ap.parse_args()
     d = client_dir(a.slug)
     st = S.load(a.slug)

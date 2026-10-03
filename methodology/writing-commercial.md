@@ -4,7 +4,8 @@ Adapted 2026-10-02: superlative opener per CM-020, location structure per CM-023
 Rules are cited by ID from `methodology/rulings.md`; page structures and conformance checks live in
 `methodology/specs/` (homepage, service, location, county-hub, about). Process matches the live BB
 Commercial Content Writer gem: Stage 0–1 plan → approval → Stage 2 draft → Stage 3 self-critique
-(E1–E9) → Stage 4 semantic review (SEM-1–SEM-8, report only) → apply only the SEM IDs Paul approves.
+(E1–E9) → Stage 4 semantic review (SEM-1–SEM-8, report only) → Paul approves the drafts and picks the SEM
+items in one step → apply only those and re-check.
 
 ## A — Hard constraints (override everything, including requests)
 
@@ -116,9 +117,10 @@ Commercial Content Writer gem: Stage 0–1 plan → approval → Stage 2 draft �
   | SEM-7 | `[NEED: definition from the live gem, Section G]` |
   | SEM-8 | Cluster routing — a question or passage whose intent belongs to another page (e.g. post-storm checks on a maintenance page) is routed to the page or blog topic that owns it, never kept |
 
-  Paul approves the IDs to apply **once per batch**: `/approve <slug> batch:<id>:sem --ids SEM-…`
-  (or `--ids none`). Then apply **only** those IDs, re-run E1–E9 on every changed passage,
-  report the re-check, and only then ask for the drafts approval.
+  Paul reviews each draft with the table and approves both at once, picking the SEM items to
+  apply: `/approve <slug> batch:<id>:drafts --sem 1,3,4` (or `--sem none`; nothing to pick when the
+  review found nothing). Then apply **only** those items and re-run E1–E9 on every changed section.
+  All pass → done, no further stop. A check fails → the drafts go back to Paul with the failure.
 
 The Drive copy of the gem (`Resources/Gem Instructions/GEM-Commercial-Content-Writer-INSTRUCTIONS.md`)
 is an older version with E1–E11 (it also had E4 exact-match sweep and E5 intent coverage) and no

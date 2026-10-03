@@ -37,15 +37,15 @@ SETTABLE = {
     "client.drive_folder_id", "client.wp_env_prefix", "client.gbp_url",
     "client.gbp_website_url", "client.address_type", "client.notes", "client.state",
 }
-BATCH_STATES = ["planned", "briefs_written", "drafts_written", "sem_applied", "implemented",
-                "verified", "written_back"]
+BATCH_STATES = ["planned", "briefs_written", "drafts_written", "sem_applied", "sem_check_failed",
+                "implemented", "verified", "written_back"]
 PAGE_STATES = ["planned", "brief_written", "draft_written", "approved", "implemented", "live",
                "written_back", "verified"]
 # batch state -> the state every page in the batch moves to
 BATCH_TO_PAGE = {"briefs_written": "brief_written", "drafts_written": "draft_written",
                  "sem_applied": "draft_written", "implemented": "implemented",
                  "verified": "verified", "written_back": "written_back"}
-STAGES = ["briefs", "sem", "drafts"]
+STAGES = ["briefs", "drafts"]   # two stops per batch: briefs (outline before prose), then drafts + SEM picks
 
 
 def path(slug):
@@ -331,7 +331,7 @@ def batch_ready(st, bid, stage):
     b = batch(st, bid)
     if not b:
         return False, r + [f"batch {bid} is not in the site plan"]
-    prev = {"sem": "briefs", "drafts": "briefs"}.get(stage)
+    prev = {"drafts": "briefs"}.get(stage)
     if prev:
         ok, why = batch_stage_ok(st, bid, prev, False)
         if not ok:
@@ -363,7 +363,7 @@ def check(st, target):
         bp = st.get("build") or {}
         ok = bool(bp.get("pilot_corrections_applied") or bp.get("pilot_waived"))
         return ok, ([] if ok else ["the pilot corrections are not yet applied to the specs"])
-    m = re.match(r"^batch:([\w-]+):(briefs|sem|drafts)(_ready)?$", target)
+    m = re.match(r"^batch:([\w-]+):(briefs|drafts)(_ready)?$", target)
     if m:
         if m.group(3):
             return batch_ready(st, m.group(1), m.group(2))
@@ -523,6 +523,8 @@ def main():
     s.add_argument("--json", required=True)
     s = sub.add_parser("batch"); s.add_argument("slug"); s.add_argument("batch_id")
     s.add_argument("--state", required=True, choices=BATCH_STATES); s.add_argument("--files")
+    s.add_argument("--sem-table"); s.add_argument("--sem-findings", type=int)
+    s.add_argument("--checks-passed", action="store_true"); s.add_argument("--note")
     s = sub.add_parser("pilot-corrections"); s.add_argument("slug"); s.add_argument("--note", required=True)
     s = sub.add_parser("mark"); s.add_argument("slug"); s.add_argument("name")
     s.add_argument("--file", required=True, action="append")
@@ -630,7 +632,7 @@ def main():
                 {k: p[k] for k in ("type", "name", "url", "group") if k in p})
         st["build"] = {"site_plan": {"file": a.file, "approval": None},
                        "batches": [{**{k: b[k] for k in ("id", "kind", "label", "pages")},
-                                    "state": "planned", "briefs": None, "sem": None, "drafts": None,
+                                    "state": "planned", "briefs": None, "drafts": None,
                                     "files": {}}
                                    for b in plan["batches"]],
                        "pilot_corrections_applied": None}
@@ -642,19 +644,55 @@ def main():
             ok, why = batch_ready(st, a.batch_id, "briefs")
             if not ok:
                 die(f"batch {a.batch_id}: " + "; ".join(why))
-        stage_needed = {"drafts_written": "briefs", "sem_applied": "sem", "implemented": "drafts",
-                        "verified": "drafts", "written_back": "drafts"}.get(a.state)
+        stage_needed = {"drafts_written": "briefs", "sem_applied": "drafts", "sem_check_failed": "drafts",
+                        "implemented": "drafts", "verified": "drafts", "written_back": "drafts"}.get(a.state)
         if stage_needed and not batch_stage_ok(st, a.batch_id, stage_needed, False)[0]:
             die(f"batch {a.batch_id}: {stage_needed} are not approved yet")
-        if a.files:
-            fs = [f.strip() for f in a.files.split(",") if f.strip()]
-            for f in fs:
-                if not (ROOT / f).exists():
-                    die(f"{f} not found")
-            key = {"briefs_written": "briefs", "drafts_written": "sem", "sem_applied": "drafts"}.get(a.state, a.state)
-            b.setdefault("files", {})[key] = fs
+        fs = [f.strip() for f in (a.files or "").split(",") if f.strip()]
+        for f in fs + ([a.sem_table] if a.sem_table else []):
+            if not (ROOT / f).exists():
+                die(f"{f} not found")
+        log_line = None
+        if a.state == "briefs_written" and fs:
+            b.setdefault("files", {})["briefs"] = fs
+        elif a.state == "drafts_written":
+            if not fs or not a.sem_table or a.sem_findings is None:
+                die("drafts_written needs --files <one draft per page> --sem-table <semantic review table> "
+                    "--sem-findings <number of SEM rows>")
+            # Paul reviews each draft with the batch's semantic review table and approves both at once.
+            b.setdefault("files", {})["drafts"] = fs + [a.sem_table]
+            b["sem_findings"] = a.sem_findings
+            b["drafts"] = None
+        elif a.state == "sem_applied":
+            ids = (b.get("drafts") or {}).get("sem_ids") or []
+            if not ids:
+                die(f"batch {a.batch_id}: Paul approved no SEM items — nothing to apply")
+            if not a.checks_passed or not fs:
+                die("sem_applied needs --files <the drafts after applying the approved SEM items> and "
+                    "--checks-passed (E1–E9 re-run on every changed section). If a check failed, use "
+                    "--state sem_check_failed --note \"<which check, which page>\".")
+            # Re-pin the approval to the applied versions: the change is exactly what Paul approved.
+            table = [f for f in (b["drafts"].get("files") or {}) if f not in fs]
+            b["drafts"]["files"] = {f: sha12(ROOT / f) for f in fs + table}
+            b["drafts"]["applied"] = {"sem_ids": ids, "at": now(), "checks": "E1–E9 passed on changed sections"}
+            b["files"]["drafts"] = fs + table
+            log_line = (f"- SEM APPLIED {now()[:16]} · batch {a.batch_id} · {', '.join(ids)} · E-checks passed · "
+                        "approval pinned to the applied versions\n")
+        elif a.state == "sem_check_failed":
+            if not a.note or not fs:
+                die("sem_check_failed needs --files <the drafts as they now stand> --note \"<which check failed, where>\"")
+            b["drafts"] = {**(b.get("drafts") or {}), "state": "revise",
+                           "check_failure": a.note, "at": now()}
+            b["files"]["drafts"] = fs + [f for f in b["files"].get("drafts", []) if f not in fs and "Semantic" in f]
+            log_line = f"- SEM CHECK FAILED {now()[:16]} · batch {a.batch_id} · {a.note} · back to Paul\n"
+        elif fs:
+            b.setdefault("files", {})[a.state] = fs
         set_batch_state(st, b, a.state)
-        save(a.slug, st); print(f"batch {a.batch_id}: {a.state}")
+        save(a.slug, st)
+        if log_line:
+            with open(path(a.slug).parent / "log.md", "a", encoding="utf-8") as fh:
+                fh.write(log_line)
+        print(f"batch {a.batch_id}: {a.state}")
     elif a.cmd == "mark":
         files = {}
         for f in a.file:

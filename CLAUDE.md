@@ -89,7 +89,7 @@ decision, printing the exact `/approve` line with its files. Refusals are in pla
 | 8 | Technical blockers (Low items as one handoff) | `/build blockers` + `/implement` | discovery_signed_off | **blockers_cleared** |
 | 9 | **Site plan** — every service and location page in one pass | `/build plan` | discovery_signed_off | **site_plan** |
 | 10 | **Pilot** — 1 service + 1 location brief; corrections go into the specs | `/build batch pilot` | site_plan | **batch:pilot:briefs** |
-| 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); briefs → drafts + self-critique + **semantic review table** → apply approved SEM IDs → `/implement`, `/verify`, write-back | `/build batch <id>` [`drafts`\|`apply-sem`] … | pilot corrections applied | **batch:<id>:briefs**, **batch:<id>:sem** (SEM IDs), **batch:<id>:drafts** |
+| 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); briefs → drafts + self-critique + **semantic review table** → (apply the SEM items Paul picked, re-check) → ship (WordPress drafts, verify, write-back: one run) | `/build batch <id>` [`drafts`\|`apply-sem`], `/build ship <id>` | pilot corrections applied | **batch:<id>:briefs**, **batch:<id>:drafts** (+ SEM picks) — two stops per batch |
 | 12 | All pages built and written back | — | every batch written back | condition **pages_built** (no approval) |
 | 13 | Link wheel → verify | `/finish wheel` | pages_built | **link_wheel_approved** |
 | 14 | Schema → QA crawl → punch-list → acceptance | `/finish schema`, `/finish qa` | link_wheel_approved | **release_approved** (release) |
@@ -145,7 +145,7 @@ Every page type has a spec in `methodology/specs/` (homepage, service, location,
 about, blog post): element order and numbered conformance checks. Build and the audit read them;
 a spec marked DRAFT stops building that page type until Paul approves it; pilot corrections are
 logged in the spec. Writers follow `methodology/writing-commercial.md` (E1–E9, then the Stage 4
-semantic review, one table per batch, report only; Paul approves SEM IDs once per batch) and
+semantic review, one table per batch, report only; Paul approves the drafts and picks SEM items in one step) and
 `methodology/writing-blog.md` (E1–E8, CM-038 link caps, CM-039 author).
 
 Build works in batches: one **site plan** for every service and location page (keyword, area

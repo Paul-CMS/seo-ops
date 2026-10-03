@@ -80,6 +80,7 @@ class Agent:
 
     def __init__(self, slug, kind="full"):
         self.slug, self.kind, self.posts, self.errors = slug, kind, [], []
+        self.sem_findings, self.fail_checks_once = {}, set()
         self.c = SB / "clients" / slug
 
     def sh(self, cmd):
@@ -176,29 +177,31 @@ class Agent:
                 fs = [self.w(f"build/B-{p}.md") for p in pages]
                 self.sh(f"python3 scripts/status.py batch {S} {bid} --state briefs_written --files {','.join(fs)}")
             elif stage == "drafts":
-                for p in pages: self.w(f"build/D-{p}.md", f"{p} draft v1\n")
+                fs = [self.w(f"build/D-{p}.md", f"{p} draft v1\n") for p in pages]
                 sem = self.w(f"build/Test Co - Semantic Review - {bid} - REVIEW.md")
-                self.sh(f"python3 scripts/status.py batch {S} {bid} --state drafts_written --files {shlex.quote(sem)}")
-            else:
-                fs = [self.w(f"build/D-{p}.md", f"{p} draft v2\n") for p in pages]
-                self.sh(f"python3 scripts/status.py batch {S} {bid} --state sem_applied --files {','.join(fs)}")
+                n = self.sem_findings.get(bid, 1)
+                self.sh(f"python3 scripts/status.py batch {S} {bid} --state drafts_written --files {','.join(fs)} "
+                        f"--sem-table {shlex.quote(sem)} --sem-findings {n}")
+            else:  # apply-sem
+                fs = [self.w(f"build/D-{p}.md", f"{p} draft v2 (SEM applied)\n") for p in pages]
+                if bid in self.fail_checks_once:
+                    self.fail_checks_once.discard(bid)
+                    self.sh(f'python3 scripts/status.py batch {S} {bid} --state sem_check_failed --files {",".join(fs)} '
+                            f'--note "E4 chunk length failed on {pages[0]}"')
+                else:
+                    self.sh(f"python3 scripts/status.py batch {S} {bid} --state sem_applied --files {','.join(fs)} --checks-passed")
             self.fin(rid, f"batch {bid} {stage}")
         elif (name, sub) == ("/build", "pilot-corrections"):
             rid = self.start("build", "pilot-corrections")
             self.sh(f'python3 scripts/status.py pilot-corrections {S} --note "H1 tweak in specs/service.md"'); self.fin(rid, "pilot corrections")
-        elif (name, sub) == ("/implement", "batch"):
-            bid = args[1]; rid = self.start("implement", "batch", batch=bid)
+        elif (name, sub) == ("/build", "ship"):
+            bid = args[1]; rid = self.start("build", "ship", batch=bid)
             for p in self.batch_pages(bid):
                 self.sh(f'python3 tests/fakes.py wp create-draft {S} --run {rid} --page-id {p} --title "{p}" '
                         f'--content-file clients/{S}/build/D-{p}.md')
-            self.sh(f"python3 scripts/status.py batch {S} {bid} --state implemented"); self.fin(rid, f"implemented {bid}")
-        elif name == "/verify":
-            rid = self.start("verify")
-            b = next(x for x in status(S)["build"]["batches"] if x.get("state") == "implemented")
-            self.sh(f"python3 scripts/status.py batch {S} {b['id']} --state verified"); self.fin(rid, "verified")
-        elif (name, sub) == ("/build", "writeback"):
-            bid = args[1]; rid = self.start("build", "writeback", batch=bid)
-            self.sh(f"python3 scripts/status.py batch {S} {bid} --state written_back"); self.fin(rid, "written back")
+            for st_ in ("implemented", "verified", "written_back"):
+                self.sh(f"python3 scripts/status.py batch {S} {bid} --state {st_}")
+            self.fin(rid, f"shipped {bid}")
         elif name == "/finish":
             rid = self.start("finish", sub)
             m = {"wheel": ("link_wheel", "finish/Test Co - Link Wheel Tables - REVIEW.md"),
@@ -229,11 +232,13 @@ class Agent:
         return False
 
 
-def walkthrough(slug, kind="full", industry="roofing", max_posts=2, extra_init=""):
+def walkthrough(slug, kind="full", industry="roofing", max_posts=2, extra_init="", setup=None):
     """/new-client then /next until blog posts; returns (transcript, decisions, runs, agent)."""
     sh(f'python3 scripts/status.py init {slug} --name "Test Co" --domain test.example --type {kind} '
        f'--industry {shlex.quote(industry)} --route A {extra_init}')
     ag = Agent(slug, kind)
+    if setup:
+        setup(ag)
     rid = ag.start("new-client"); ag.fin(rid, "set up")
     log, prev, decisions, runs = [], None, 0, 0
     for _ in range(160):
@@ -246,13 +251,15 @@ def walkthrough(slug, kind="full", industry="roofing", max_posts=2, extra_init="
         if n["kind"] == "run":
             if prev == n["command"]:
                 log.append("LOOP"); break
-            if n["command"] == f"/blog {slug} next" and len(ag.posts) >= max_posts:
+            if (n["command"] == f"/blog {slug} next" and len(ag.posts) >= max_posts) or \
+                    (max_posts == 0 and n["command"].startswith(f"/finish {slug}")):
                 log.append("DONE"); break
             if not ag.do(n["command"]):
                 log.append("NO-SIMULATION"); break
             runs += 1; prev = n["command"]
         elif n["kind"] == "decision":
-            line = (n["command"].replace("SEM-…", "SEM-8").replace("<who reviewed it>", "Paul read it")
+            line = (n["command"].replace("<SEM items to apply, e.g. 1,3,4 — or none>", "8")
+                    .replace("<who reviewed it>", "Paul read it")
                     .replace("<name, licence>", "Dr. Test, DC-123"))
             code, out = paul(line)
             if code:
@@ -274,6 +281,14 @@ def t_walkthrough_full():
           "\n".join(l for l in log if "FAILED" in l))
     check("full client: each run stops at the next decision (no run asked twice)", decisions > 0 and runs > 0)
     print(f"        ({runs} runs, {decisions} decisions)")
+    stops = {}
+    for l in log:
+        if l.startswith("decision") and ":batch:" not in l and " batch:" in l:
+            bid = l.split(" batch:")[1].split(":")[0]
+            stops[bid] = stops.get(bid, 0) + 1
+    check("two stops per batch (briefs, then drafts with SEM picks)", stops and all(v == 2 for v in stops.values()), stops)
+    check("SEM picks are applied by a run, not a third stop", any("apply-sem" in l for l in log))
+    check("implement, verify and write-back are one run per batch", sum(" ship " in l for l in log) == len(stops), log)
     rec = SB / "clients" / "wt-full"
     check("records generated: Handoff Log, decisions, checklist, approval record",
           all((rec / f).exists() for f in ("handoff-log.md", "decisions.md", "document-checklist.md", "approval-record.md")))
@@ -282,6 +297,21 @@ def t_walkthrough_full():
     st = status("wt-full")
     check("page states follow their batch", all(p["state"] in ("written_back", "approved") for p in st["pages"].values()),
           {k: v["state"] for k, v in st["pages"].items()})
+
+
+def t_sem_paths():
+    def setup(ag):
+        ag.sem_findings = {"pilot": 0, "s1": 2}
+        ag.fail_checks_once = {"s1"}
+    log, decisions, runs, ag = walkthrough("wt-sem", setup=setup, max_posts=0)
+    pilot = [l for l in log if "batch:pilot:drafts" in l]
+    check("no findings: the drafts line has nothing to select", pilot and "--sem" not in pilot[0], pilot)
+    check("no findings: no apply run", not any("batch pilot apply-sem" in l for l in log))
+    s1 = [l for l in log if l.startswith("decision") and "batch:s1:drafts" in l]
+    check("a failed re-check sends the drafts back to Paul once more", len(s1) == 2, s1)
+    lm = (SB / "clients" / "wt-sem" / "log.md").read_text()
+    check("the failure and the applied SEM items are logged", "SEM CHECK FAILED" in lm and "SEM APPLIED" in lm)
+    check("SEM walkthrough completes", "LOOP" not in log and not ag.errors, "\n".join(log[-4:] + ag.errors[:2]))
 
 
 def t_walkthrough_blog_only():
@@ -475,7 +505,7 @@ def t_finish_needs_outputs():
     check("an unknown step is refused with the list of steps", code == 2 and "build:plan" in out, out)
 
 
-SCENARIOS = [t_finish_needs_outputs, t_walkthrough_full, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
+SCENARIOS = [t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive]
 
 

@@ -261,7 +261,7 @@
     "approved",
     "approved_with_conditions"
   ],
-  "_steps_about": "Every command step: the gates run.py start checks (looked up here \u2014 nowhere else), what it must produce before run.py finish will close it, and (reads) the files the agent reads for that step. {batch} and {page} come from --batch / --page; {prev_post} is the newest blog post. produces: an artifact name (a status.py mark recorded during the run), 'steps:S01,S02' (an outcome for each audit step), 'batch:{batch}:<stage>' (the batch files recorded), 'blog_post' (a new post registered with its file).",
+  "_steps_about": "Every command step: the gates run.py start checks (looked up here \u2014 nowhere else), what it must produce before run.py finish will close it, and (reads) the files the agent reads for that step. {batch} and {page} come from --batch / --page; {prev_post} is the newest blog post. produces: an artifact name (a status.py mark recorded during the run), 'steps:S01,S02' (an outcome for each audit step), 'batch:{batch}:<stage>' (the batch files recorded), 'blog_post' (a new post registered with its file), 'batch_state:{batch}:a|b' (the batch reached one of those states).",
   "artifacts": {
     "entity_record": "the Discovery Record with the entity foundation (Brand Guide A/B proposal)",
     "proof_sheet": "the client proof sheet (.md; the Google Doc client copy is separate)",
@@ -384,29 +384,22 @@
         "batch:{batch}:drafts_ready"
       ],
       "produces": [
-        "batch:{batch}:sem"
+        "batch:{batch}:drafts"
       ]
     },
     "build:apply-sem": {
       "gates": [
         "discovery_signed_off",
-        "batch:{batch}:sem"
+        "batch:{batch}:drafts"
       ],
       "produces": [
-        "batch:{batch}:drafts"
+        "batch_state:{batch}:sem_applied|sem_check_failed"
       ]
     },
     "build:pilot-corrections": {
       "gates": [
         "discovery_signed_off",
         "batch:pilot:briefs"
-      ],
-      "produces": []
-    },
-    "build:writeback": {
-      "gates": [
-        "discovery_signed_off",
-        "batch:{batch}:drafts"
       ],
       "produces": []
     },
@@ -419,12 +412,6 @@
     "implement:structural": {
       "gates": [
         "structural_changes_allowed"
-      ],
-      "produces": []
-    },
-    "implement:batch": {
-      "gates": [
-        "batch:{batch}:drafts"
       ],
       "produces": []
     },
@@ -526,6 +513,15 @@
       ],
       "produces": [
         "topics"
+      ]
+    },
+    "build:ship": {
+      "gates": [
+        "discovery_signed_off",
+        "batch:{batch}:drafts"
+      ],
+      "produces": [
+        "batch_state:{batch}:written_back"
       ]
     }
   }

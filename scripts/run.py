@@ -128,6 +128,12 @@ def missing_outputs(slug, st, info):
             left = [x for x in want[6:].split(",") if x not in (st.get("audit_steps") or {})]
             if left:
                 miss.append(f"an outcome for audit step(s) {', '.join(left)} — steps.py record <slug> --run <RUN_ID> <S##> done|skipped|failed")
+        elif want.startswith("batch_state:"):
+            _, bid, states = want.split(":")
+            b = S.batch(st, bid) or {}
+            if b.get("state") not in states.split("|"):
+                miss.append(f"batch {bid} must reach {' or '.join(states.split('|'))} (it is {b.get('state')}) — "
+                            f"status.py batch <slug> {bid} --state ...")
         elif want.startswith("batch:"):
             _, bid, stage = want.split(":")
             b = S.batch(st, bid) or {}

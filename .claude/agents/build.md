@@ -60,17 +60,24 @@ page spec's checks (report all). Check the batch against itself and earlier batc
 portability failures and FAQ/heading collisions. Link tables stay as placeholders.
 Then **Stage 4 semantic review — one table for the whole batch**, report only (the drafts are not
 changed): `<Client> - Semantic Review - <batch> - REVIEW.md` in `clients/<slug>/build/`.
-`status.py batch <slug> <id> --state drafts_written --files <semantic review table>`.
-Paul approves the SEM IDs to apply: `/approve <slug> batch:<id>:sem --ids SEM-…` (or `--ids none`).
+`status.py batch <slug> <id> --state drafts_written --files <draft1>,<draft2>,... --sem-table <table> --sem-findings <rows>`.
+Paul reviews each draft **with** the table and approves both at once:
+`/approve <slug> batch:<id>:drafts --sem 1,3,4` (or `--sem none`; no `--sem` at all when the review
+found nothing). Sensitive clients add `--review`, health clients `--practitioner`.
 
-## Step: batch <id> apply-sem
-Apply **only** the SEM IDs Paul approved (status.json → the batch's `sem.sem_ids`); routed items go
-to the page or blog list that owns them. Re-run E1–E9 and the spec checks on every changed
-passage and report the re-check under the semantic review table.
-`status.py batch <slug> <id> --state sem_applied --files <draft1>,<draft2>,...`.
-Paul approves the drafts: `/approve <slug> batch:<id>:drafts` (sensitive clients add `--review`,
-health clients `--practitioner`). After approval, save each page to Drive `02 - Build/` as
-`SD/LD/LDCH/HD/AD - <subject> - <Client>`.
+## Step: batch <id> apply-sem   (only when Paul picked SEM items)
+Apply **only** the SEM items Paul picked (status.json → the batch's `drafts.sem_ids`); routed items go
+to the page or blog list that owns them. Re-run E1–E9 and the spec checks on every changed section.
+- All pass → `status.py batch <slug> <id> --state sem_applied --files <drafts> --checks-passed`. The
+  approval is pinned to the applied versions; Paul is not stopped again.
+- Any check fails → `status.py batch <slug> <id> --state sem_check_failed --files <drafts> --note "<check, page>"`.
+  The drafts go back to Paul with the failure.
+
+## Step: ship <id>   (one run, one commit)
+For the approved batch: put every page in WordPress as a **draft** (`wp.py create-draft`), verify, and
+write back to the Brand Guide (B3, C1/C2, C3 — every H2 and FAQ question) and its Drive copy. Then
+`status.py batch <slug> <id> --state implemented`, `--state verified`, `--state written_back`. Save each
+page to Drive `02 - Build/` as `SD/LD/LDCH/HD/AD - <subject> - <Client>`.
 
 ## Step: pilot-corrections
 After the pilot briefs are approved, apply every correction Paul made: to the page spec
@@ -78,12 +85,6 @@ After the pilot briefs are approved, apply every correction Paul made: to the pa
 why) and, if it changes how pages are written, the writing standard. A correction that changes a
 rule goes to `methodology/lessons.md` (the inbox) for Paul to move into rulings.md. Then
 `status.py pilot-corrections <slug> --note "<what changed>"`. No later batch can start until this is recorded.
-
-## Step: writeback <id>
-After the batch is implemented and verified: Brand Guide B3 (URL, type, category variant, area
-variant, content file, ship date), C1/C2, C3 (every H2 and FAQ question) for every page in
-the batch; Drive copy too; `status.py batch <slug> <id> --state written_back`. Service batches
-must be written back before any location batch starts; all before homepage/about.
 
 ## When every batch is written back
 `pages_built` is a **condition** — the system meets it when every batch in the site plan is written

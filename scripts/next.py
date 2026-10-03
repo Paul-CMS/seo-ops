@@ -136,23 +136,22 @@ def main():
             out("run", f"/build {slug} batch {bid}", f"briefs for batch {bid} ({b['label']})")
         if not S.check(st, f"batch:{bid}:briefs")[0]:
             out("decision", f"/approve {slug} batch:{bid}:briefs --files {q(files.get('briefs') or [])}",
-                f"the briefs for batch {bid} are ready for your approval")
+                f"the briefs for batch {bid} are ready for your approval (outline before prose)")
         if state == "briefs_written":
             out("run", f"/build {slug} batch {bid} drafts", f"drafts, self-critique and semantic review for batch {bid}")
-        if not S.check(st, f"batch:{bid}:sem")[0]:
-            out("decision", f"/approve {slug} batch:{bid}:sem --ids SEM-… --files {q(files.get('sem') or [])}",
-                f"the semantic review table for batch {bid} is ready — approve the SEM IDs to apply (or --ids none)")
-        if state == "drafts_written":
-            out("run", f"/build {slug} batch {bid} apply-sem", f"apply the approved SEM IDs to batch {bid} and re-check")
+        drafts = b.get("drafts") or {}
         if not S.check(st, f"batch:{bid}:drafts")[0]:
-            out("decision", f"/approve {slug} batch:{bid}:drafts --files {q(files.get('drafts') or [])}" + extras(st),
-                f"the drafts for batch {bid} are ready for your approval")
-        if state == "sem_applied":
-            out("run", f"/implement {slug} batch {bid}", f"put batch {bid} in as WordPress drafts / handoffs")
-        if state == "implemented":
-            out("run", f"/verify {slug}", f"verify batch {bid}")
-        if state == "verified":
-            out("run", f"/build {slug} writeback {bid}", f"Brand Guide write-back for batch {bid}")
+            n = b.get("sem_findings") or 0
+            failed = drafts.get("check_failure")
+            out("decision", f"/approve {slug} batch:{bid}:drafts"
+                + (" --sem <SEM items to apply, e.g. 1,3,4 — or none>" if n else "") + extras(st),
+                (f"a re-check failed after applying your SEM picks ({failed}) — review and approve again"
+                 if failed else f"the drafts for batch {bid} are ready: review each with the semantic review table "
+                 + (f"({n} SEM item(s) found) " if n else "(nothing found) ") + "and approve them together"))
+        if state in ("drafts_written", "sem_check_failed") and drafts.get("sem_ids") and not drafts.get("applied"):
+            out("run", f"/build {slug} batch {bid} apply-sem",
+                f"apply {', '.join(drafts['sem_ids'])} to batch {bid} and re-run the E-checks on the changed sections")
+        out("run", f"/build {slug} ship {bid}", f"put batch {bid} in WordPress, verify it and write it back to the Brand Guide")
     condition_step(st, slug, "pages_built")
 
     # ---- Finish and blog
