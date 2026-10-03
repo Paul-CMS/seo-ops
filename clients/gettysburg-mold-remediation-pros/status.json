@@ -1,0 +1,84 @@
+{
+  "schema": 3,
+  "client": {
+    "slug": "gettysburg-mold-remediation-pros",
+    "name": "Gettysburg Mold Remediation Pros",
+    "domain": "gettysburgpamoldremediationpros.com",
+    "type": "full",
+    "industry": "mold remediation",
+    "sensitive": false,
+    "sensitive_category": null,
+    "practitioner_signoff": false,
+    "route": null,
+    "drive_folder_id": "1OsVC_nP_7Bx232B5HrG9cSduqwx6D7qn",
+    "kadence_head_meta_key": null,
+    "gbp_url": null,
+    "gbp_website_url": null,
+    "address_type": null,
+    "state": null,
+    "imported": false,
+    "notes": null
+  },
+  "gates": {
+    "entity_approved": {
+      "state": "pending"
+    },
+    "proof_sheet_approved": {
+      "state": "pending"
+    },
+    "audit_approved": {
+      "state": "pending"
+    },
+    "brand_guide_approved": {
+      "state": "pending"
+    },
+    "discovery_signed_off": {
+      "state": "pending"
+    },
+    "blockers_cleared": {
+      "state": "pending"
+    },
+    "link_wheel_approved": {
+      "state": "pending"
+    },
+    "release_approved": {
+      "state": "pending"
+    },
+    "blog_map_approved": {
+      "state": "pending"
+    },
+    "blog_topics_approved": {
+      "state": "pending"
+    },
+    "wordpress_pilot_approved": {
+      "state": "pending"
+    }
+  },
+  "marks": {},
+  "pages": {},
+  "build": null,
+  "audit_steps": {},
+  "last_run": {
+    "run_id": "20261003-153557-new-client-6698",
+    "command": "new-client",
+    "finished": "2026-10-03T15:37:04-05:00",
+    "result": "Client set up",
+    "changes": 1
+  },
+  "spend": {
+    "dataforseo_usd": 0.0
+  },
+  "client_view": {
+    "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
+    "phase": "Getting started",
+    "done": [],
+    "waiting_on_client": [],
+    "next": "We are researching your business before we ask you anything."
+  },
+  "created": "2026-10-03T15:35:57-05:00",
+  "updated": "2026-10-03T15:37:04-05:00",
+  "open_runs": {},
+  "conditions_logged": {
+    "client_setup": "2026-10-03T15:37:04-05:00"
+  }
+}
