@@ -61,11 +61,11 @@
   "marks": {
     "entity_record": {
       "files": {
-        "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md": "6790b5433465",
-        "clients/apex-roofing-of-the-lowcountry/brand-guide.md": "122e6d29a9cb"
+        "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md": "364555ea14fb",
+        "clients/apex-roofing-of-the-lowcountry/brand-guide.md": "30a174a33683"
       },
-      "at": "2026-10-05T21:53:51-05:00",
-      "ts": 1791255231.247846
+      "at": "2026-10-05T22:12:15-05:00",
+      "ts": 1791256335.232507
     }
   },
   "pages": {},
@@ -100,10 +100,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261005-215259-discovery-acd3",
+    "run_id": "20261005-221139-discovery-5ddf",
     "command": "discovery",
-    "finished": "2026-10-05T21:54:09-05:00",
-    "result": "Entity proposal revised per Paul (SC Lowcountry area, variants)",
+    "finished": "2026-10-05T22:12:29-05:00",
+    "result": "Area entity revised per Paul: HHI-Bluffton-Port Royal MSA in SEO titles",
     "changes": 2
   },
   "spend": {
@@ -117,14 +117,14 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-05T21:54:09-05:00",
+  "updated": "2026-10-05T22:12:29-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00"
   },
   "review_pause": {
-    "run_id": "20261005-215259-discovery-acd3",
+    "run_id": "20261005-221139-discovery-5ddf",
     "step": "discovery:discovery",
-    "at": "2026-10-05T21:54:09-05:00"
+    "at": "2026-10-05T22:12:29-05:00"
   }
 }

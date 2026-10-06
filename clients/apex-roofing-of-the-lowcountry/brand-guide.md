@@ -20,8 +20,8 @@ publication.
 | 2 | GBP primary category = the category entity | Roofing contractor — Wikipedia: https://en.wikipedia.org/wiki/Roofer (lead names "roofing contractor") | Proposed (Discovery 2026-10-05) — awaits entity_approved · secondary categories Unknown `[NEED]` |
 | 3 | Category variants (4–6) | Roofing Contractor · Roofer · Roofers (all Wikipedia). Excluded by Paul 2026-10-05: Roof Mechanic. Candidate only, not approved: Residential Roofer (site wording, not Wikipedia; see C4) | Revised per Paul 2026-10-05 — awaits entity_approved · 3 variants, below the template's 4–6 |
 | 4 | Storefront or SAB | SAB (intake; no address on the public GBP) | Internally Verified |
-| 5 | Area entity | South Carolina Lowcountry — Wikipedia: https://en.wikipedia.org/wiki/South_Carolina_Lowcountry ("The Lowcountry is a geographic and cultural region along South Carolina's coast") | Revised per Paul 2026-10-05 — awaits entity_approved · Paul's choice over the smaller MSA (BB-105 smallest container; decision logged) · Georgia not served (Paul 2026-10-05, C1) |
-| 6 | Area variants (3–5) | South Carolina Lowcountry (reserved, homepage) · Lowcountry · Hilton Head Island–Bluffton–Port Royal MSA · Hilton Head Island Metropolitan Area · Beaufort and Jasper Counties | Revised per Paul 2026-10-05 — awaits entity_approved |
+| 5 | Area entity | Hilton Head Island–Bluffton–Port Royal, SC Metropolitan Statistical Area — Wikipedia: https://en.wikipedia.org/wiki/Hilton_Head_Island_metropolitan_area | Revised per Paul 2026-10-05 (2nd) — awaits entity_approved · the brand name already carries "Lowcountry" into every SEO title, so the SEO title takes the metro area · BB-105 smallest container · Georgia not served (Paul 2026-10-05, C1) |
+| 6 | Area variants (3–5) | Hilton Head Island–Bluffton–Port Royal Metropolitan Area (reserved, homepage) · South Carolina Lowcountry · Lowcountry · Hilton Head Island Metropolitan Area · Beaufort and Jasper Counties | Revised per Paul 2026-10-05 (2nd) — awaits entity_approved · "Lowcountry" variants never in an SEO title (see B2) |
 | 7 | Separator standard | ` - ` | Standard |
 | 8 | Phone | (843) 757-2739 (GBP, site, BBB, HomeAdvisor) | Submitted — client to confirm it is not a tracking number |
 | 9 | Primary domain (canonical host form) | https://apexroofingtlc.com/ (www and http forms 301 here in one hop) | Internally Verified |
@@ -41,8 +41,9 @@ Contains all 12 cities served? yes — Bluffton, Hilton Head Island, Beaufort, O
               Port Royal, Fripp Island, St. Helena Island, Pritchardville, Levy, Ridgeland (all Beaufort/Jasper)
               — Georgia is not served (Paul, 2026-10-05; Discovery Record C1)
 Smallest true container: Hilton Head Island–Bluffton–Port Royal, SC MSA
-Area entity chosen:      South Carolina Lowcountry — Paul's decision 2026-10-05, one level above the smallest
-                         container (BB-105); logged in decisions.md
+Area entity chosen:      Hilton Head Island–Bluffton–Port Royal, SC MSA (Paul, 2026-10-05, second revision —
+                         replaces South Carolina Lowcountry: "Lowcountry" is already in the brand name, which is in
+                         every SEO title). South Carolina Lowcountry stays a variant (the region the MSA sits in).
 ```
 Source: `discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md` §3 and "Paul's direction, 2026-10-05".
 
@@ -52,22 +53,24 @@ Source: `discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md
 
 ### B1 · Reserved for the homepage
 ```
-HOMEPAGE AREA VARIANT:      South Carolina Lowcountry [Revised per Paul 2026-10-05 — awaits entity_approved]
-HOMEPAGE CATEGORY VARIANT:  Roofing Contractor        [Proposed — awaits entity_approved]
+HOMEPAGE AREA VARIANT:      Hilton Head Island–Bluffton–Port Royal Metropolitan Area [Revised per Paul 2026-10-05 (2nd) — awaits entity_approved]
+HOMEPAGE CATEGORY VARIANT:  Roofing Contractor                                       [Proposed — awaits entity_approved]
 ```
-"South Carolina Lowcountry" rather than bare "Lowcountry": the brand name itself ("Apex Roofing of
-the Lowcountry") already carries "Lowcountry" on every page, so the bare word cannot be exclusive
-to the homepage.
+The homepage SEO title carries this variant. "Lowcountry" can't be reserved: the brand name
+("Apex Roofing of the Lowcountry") already carries it onto every page.
 No other page may claim the reserved area variant. This is the only cross-page variant rule.
 
 ### B2 · Rotation pool
 Every area variant except the reserved one. Reuse across service pages is correct.
 ```
-1. Lowcountry                                       [Revised per Paul 2026-10-05]
-2. Hilton Head Island–Bluffton–Port Royal MSA        [Proposed]
+1. South Carolina Lowcountry                        [Revised per Paul 2026-10-05 (2nd)]
+2. Lowcountry                                       [Revised per Paul 2026-10-05]
 3. Hilton Head Island Metropolitan Area              [Proposed]
 4. Beaufort and Jasper Counties                      [Proposed]
 ```
+**SEO titles (Paul, 2026-10-05):** the brand is in every SEO title and already says "Lowcountry", so
+variants 1 and 2 are never used in an SEO title — only in the H1, H2s and body. SEO titles take the
+metro-area, Hilton Head Island Metropolitan Area or county variants.
 
 ### B3 · Assignment log — the write-back target
 | Page URL | Page type | Category variant | Area variant | Content file (SD/LD) | Shipped |
@@ -151,7 +154,7 @@ TRAVEL FEE BEYOND:
 | Logo files with pixel dimensions | | |
 | Owner name + photo | | |
 | **Wikidata URI — category entity** | http://www.wikidata.org/entity/Q552378 (roofer) | Proposed |
-| **Wikidata URI — area entity** | http://www.wikidata.org/entity/Q3885311 (South Carolina Lowcountry) — replaces Q17020871 (MSA) per Paul 2026-10-05 | Proposed |
+| **Wikidata URI — area entity** | http://www.wikidata.org/entity/Q17020871 (Hilton Head Island–Bluffton–Port Royal MSA) — region it sits in, if used: http://www.wikidata.org/entity/Q3885311 (South Carolina Lowcountry) | Proposed |
 | **Wikidata URI — county** | http://www.wikidata.org/entity/Q495682 (Beaufort) · http://www.wikidata.org/entity/Q112957 (Jasper) — Paul picks one or both | Proposed |
 | **Wikidata URI — state** | http://www.wikidata.org/entity/Q1456 | Proposed |
 

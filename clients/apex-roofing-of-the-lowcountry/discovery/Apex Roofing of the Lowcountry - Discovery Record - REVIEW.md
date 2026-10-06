@@ -282,6 +282,20 @@ for this area, so it is a real name under BB-109.
 Rotation pool now: Lowcountry · Hilton Head Island–Bluffton–Port Royal MSA · Hilton Head Island Metropolitan Area ·
 Beaufort and Jasper Counties.
 
+### 3.7 Paul's second direction, 2026-10-05 — supersedes the area part of 3.6
+
+Paul: the brand name contains "Lowcountry" and the brand is in every SEO title, so the SEO title should carry the
+Hilton Head Island–Bluffton–Port Royal metro area as the area entity instead.
+
+| Item | 3.6 | Now |
+|---|---|---|
+| Area entity | South Carolina Lowcountry (Q3885311) | **Hilton Head Island–Bluffton–Port Royal, SC MSA** (Q17020871) — also the smallest true container (BB-105), so the 3.6 deviation no longer applies |
+| Reserved homepage variant (homepage SEO title) | South Carolina Lowcountry | **Hilton Head Island–Bluffton–Port Royal Metropolitan Area** |
+| Rotation pool | Lowcountry · MSA · HHI Metropolitan Area · Beaufort and Jasper Counties | South Carolina Lowcountry · Lowcountry · Hilton Head Island Metropolitan Area · Beaufort and Jasper Counties |
+| SEO-title rule | — | "Lowcountry" variants never in an SEO title (the brand supplies it); they are used in H1, H2s and body |
+
+Category entity, category variants (Roofing Contractor, Roofer, Roofers) and C1 (Georgia not served) are unchanged from 3.6.
+
 ---
 
 ## 4 · Conflicts — every candidate value, none resolved (PROC-01)
