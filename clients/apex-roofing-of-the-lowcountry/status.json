@@ -1,0 +1,88 @@
+{
+  "schema": 3,
+  "client": {
+    "slug": "apex-roofing-of-the-lowcountry",
+    "name": "Apex Roofing of the Lowcountry",
+    "domain": "apexroofingtlc.com",
+    "type": "full",
+    "industry": "roofing",
+    "sensitive": false,
+    "sensitive_category": null,
+    "practitioner_signoff": false,
+    "route": null,
+    "drive_folder_id": "1DN9Lji_McIOo9i2eFLV-u7eXrvY00G37",
+    "kadence_head_meta_key": null,
+    "gbp_url": "https://maps.app.goo.gl/AWfz3YNkwvsrggFg7",
+    "gbp_website_url": "http://www.apexroofingtlc.com/",
+    "address_type": "sab",
+    "state": null,
+    "imported": false,
+    "notes": "Intake 2026-10-05 (Paul): no Search Console or GA4 access. GBP Website field is http://www. while the site is given as https://apexroofingtlc.com/ — recorded as given; discovery checks what each resolves to.",
+    "safe_fix_cap": {
+      "alt_text": 5,
+      "broken_link": 2
+    }
+  },
+  "gates": {
+    "entity_approved": {
+      "state": "pending"
+    },
+    "proof_sheet_approved": {
+      "state": "pending"
+    },
+    "audit_approved": {
+      "state": "pending"
+    },
+    "brand_guide_approved": {
+      "state": "pending"
+    },
+    "discovery_signed_off": {
+      "state": "pending"
+    },
+    "blockers_cleared": {
+      "state": "pending"
+    },
+    "link_wheel_approved": {
+      "state": "pending"
+    },
+    "release_approved": {
+      "state": "pending"
+    },
+    "blog_map_approved": {
+      "state": "pending"
+    },
+    "blog_topics_approved": {
+      "state": "pending"
+    },
+    "wordpress_pilot_approved": {
+      "state": "pending"
+    }
+  },
+  "marks": {},
+  "pages": {},
+  "build": null,
+  "audit_steps": {},
+  "last_run": {
+    "run_id": "20261005-210907-new-client-b5e9",
+    "command": "new-client",
+    "finished": "2026-10-05T21:10:52-05:00",
+    "result": "Client set up",
+    "changes": 1
+  },
+  "spend": {
+    "dataforseo_usd": 0.0
+  },
+  "client_view": {
+    "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
+    "phase": "Getting started",
+    "done": [],
+    "waiting_on_client": [],
+    "next": "We are researching your business before we ask you anything."
+  },
+  "created": "2026-10-05T21:09:07-05:00",
+  "updated": "2026-10-05T21:10:52-05:00",
+  "open_runs": {},
+  "conditions_logged": {
+    "client_setup": "2026-10-05T21:10:52-05:00"
+  }
+}
