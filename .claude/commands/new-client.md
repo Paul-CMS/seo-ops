@@ -31,9 +31,12 @@ Follow CLAUDE.md. Plain language with Paul throughout.
    real `.md` with the client name (`drive.py records <slug>` lists the names) and log each upload with
    `drive.py replaced`. After later runs they are replaced through a `drive-mirror` run (CLAUDE.md §2).
 6. **Intake questions for Paul** (one batch): website URL, GBP link, storefront or SAB, the
-   **exact URL in the GBP Website field**, WordPress: Jonie creates the `seo-ops` Editor user and Application Password (wordpress/wordpress-site-setup.md §1)
-   and Paul adds `WP_<SLUG>_URL / _USER / _APP_PASSWORD` to `.env` himself — never ask for them in chat; then run
-   `/wp-check <slug>`, whether GSC/GA4 access exists.
+   **exact URL in the GBP Website field**, whether GSC/GA4 access exists.
+   WordPress: issue the setup handoff to Jonie (after this run finishes — `kind other`, `--to Jonie`): the `seo-ops`
+   Editor user and its Application Password (wordpress/wordpress-site-setup.md §1). Then tell Paul exactly where his
+   part goes: run `python3 scripts/wp.py env-lines <slug>` and show its output, with the file as a clickable link
+   `[.env](.env)` — the username, the Application Password and its name are three different things; the output
+   says which goes where. Never ask for credentials in chat. Then `/wp-check <slug>`.
    Blog-only: services list, city list, voice guidance, customer language.
 7. `run.py finish <slug> <RUN_ID> --summary "Client set up"`
 8. Tell Paul the next command: `/next <slug>` — for a full client that runs `/discovery <slug> discovery`

@@ -6,16 +6,30 @@ Command: `/wp-check <client>`. No connector plugin — the WordPress REST API, d
 
 ## 1 · The seo-ops user (once per site — Jonie or Paul)
 
-1. In wp-admin → Users → Add New: a dedicated user `seo-ops`, role **Editor** (never Administrator).
-2. Users → `seo-ops` → Application Passwords → name it `seo-ops` → copy the password once.
-3. Paul adds three lines to `.env` (never in chat). `<SLUG>` is the client slug in capitals with
-   hyphens as underscores — `red-rover-roofing` → `RED_ROVER_ROOFING`:
+Three different things are involved — keep them apart:
+
+| Thing | What it is | Where it goes |
+|---|---|---|
+| **Username** `seo-ops` | the dedicated WordPress login, role Editor | `.env` → `WP_<SLUG>_USER` |
+| **Application Password name** `seo-ops` | only a label WordPress asks for when the password is created | nowhere — it stays in WordPress |
+| **Application Password** | 24 letters/numbers in six groups of four (`abcd efgh ijkl mnop qrst uvwx`), shown once | `.env` → `WP_<SLUG>_APP_PASSWORD` |
+
+The normal WordPress login password is **not** used and does not work with the REST API.
+
+1. In wp-admin → Users → Add New: a dedicated user with username `seo-ops`, role **Editor** (never Administrator).
+2. Users → `seo-ops` → Application Passwords → name it `seo-ops` → Add → copy the 24-character password once.
+   Send it to Paul privately (password manager share or by phone) — never by email, Slack, Asana or a worksheet.
+3. Paul adds three lines to the `.env` file in the seo-ops folder (`~/Documents/seo-ops/.env`), never in chat.
+   `python3 scripts/wp.py env-lines <slug>` prints the full file path and the exact three lines for that client,
+   with what each one is; every command that asks Paul for credentials shows that output and links the file.
+   `<SLUG>` is the client slug in capitals with hyphens as underscores — `red-rover-roofing` → `RED_ROVER_ROOFING`:
    ```
    WP_<SLUG>_URL=https://example.com
    WP_<SLUG>_USER=seo-ops
    WP_<SLUG>_APP_PASSWORD=xxxx xxxx xxxx xxxx xxxx xxxx
    ```
-   The `.env` guard blocks Claude from reading, searching or listing these.
+   The `.env` guard blocks Claude from reading, searching or listing these. If credentials arrive in chat anyway,
+   Claude does not store or repeat them, asks Paul to change that password, and shows the `env-lines` output.
 
 ## 2 · Requirements
 

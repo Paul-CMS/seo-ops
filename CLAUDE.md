@@ -318,3 +318,11 @@ shown to a client.
 Plain language. Say what was done, what is waiting on whom, and what the next command is.
 When refusing, say which gate is missing and what it would unlock. Never claim a check passed
 if it was skipped.
+
+**At a decision, keep "open choices" and "ready to approve" apart** (`/next` step 3): while any choice
+is still open, ask it and hold back the `/approve` line; print the line only when the files say exactly
+what Paul would approve. Changes sent with an `/approve` line are a revision, not an approval.
+
+**Credentials:** never ask for them in chat. Show `python3 scripts/wp.py env-lines <slug>` (the full
+`.env` path, the exact lines, and which is the username, the Application Password and its name) and link
+`[.env](.env)`. Credentials pasted in chat are never stored or repeated; Paul changes that password.

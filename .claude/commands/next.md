@@ -11,8 +11,16 @@ Arguments: $ARGUMENTS
 2. **kind = run:** say in one line what you are about to run and why, then carry out that
    command exactly as its own file in `.claude/commands/` describes (all its gates, logging and
    stops apply). When it finishes, go back to step 1.
-3. **kind = decision:** stop. Tell Paul in plain language what is ready, then print the `command`
-   exactly as given — it is the `/approve` line to type, with the files it covers. If it ends in
+3. **kind = decision:** stop. Present it in two clearly separate parts:
+   - **Open choices first.** List every choice still open in what Paul would approve (alternatives offered,
+     questions marked Paul, a default you picked for him), each with the options. If there are any, end there:
+     ask him to answer them, say the files will be revised first, and **do not print the `/approve` line yet**.
+   - **Ready to approve** — only when nothing is open (or after his answers have been applied in a revision run).
+     Say what he is approving and what changes once he does, then print the `command` exactly as given — it is
+     the `/approve` line to type, with the files it covers. Say plainly: "If you want any change, tell me instead —
+     don't type /approve with changes attached; I revise the files first and you approve the new version."
+   If Paul sends changes together with an `/approve` line, it is not an approval: apply the changes in a revision
+   run and come back to step 3. If it ends in
    `--sem <…>`, say he lists the SEM items to apply from the table (e.g. `1,3,4`) or `none`; if it has `<who reviewed it>` /
    `<name, licence>`, say he fills those in. Never type it yourself.
 4. **kind = review:** stop (CM-044). The stage that just finished is in review mode: tell Paul what it produced

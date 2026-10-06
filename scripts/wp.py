@@ -8,6 +8,8 @@ Credentials (.env, typed by Paul, never printed): WP_<SLUG>_URL, WP_<SLUG>_USER,
 WP_RED_ROVER_ROOFING_URL).
 
 Connection
+    wp.py env-lines <slug>                 the exact .env file path and the three lines Paul types into it
+                                           (never reads .env; prints placeholders, never a value)
     wp.py check <slug> --run R [--pilot]   /wp-check: connection, Editor role, draft creation (page + post),
                                            SEOPress 6.8+ per-page endpoints, site-wide settings readable?,
                                            must-use plugin + Kadence head-code field. Plain-language report.
@@ -85,9 +87,38 @@ def creds(slug):
     env = load_env()
     base, user, pw = env.get(f"{pre}_URL"), env.get(f"{pre}_USER"), env.get(f"{pre}_APP_PASSWORD")
     if not (base and user and pw):
-        die(f"{pre}_URL / {pre}_USER / {pre}_APP_PASSWORD are missing from .env. Paul types them in himself "
-            "(wordpress/wordpress-site-setup.md).")
+        die(f"{pre}_URL / {pre}_USER / {pre}_APP_PASSWORD are missing from .env. Paul types them in himself — "
+            f"`python3 scripts/wp.py env-lines {slug}` shows the file and the exact lines.")
     return base.rstrip("/"), "Basic " + base64.b64encode(f"{user}:{pw}".encode()).decode()
+
+
+def env_lines(slug, domain):
+    """What Paul types into .env for one site — the file path and the three lines, with what each one is.
+    Reads nothing from .env and prints no credential."""
+    pre = env_prefix(slug)
+    host = re.sub(r"^https?://|/.*$", "", domain or "example.com")
+    return "\n".join([
+        f"File: {ROOT / '.env'}",
+        "  (in the seo-ops folder; it is hidden in Finder — press Cmd+Shift+. to show it. If it does not exist, copy",
+        f"   {ROOT / '.env.example'} to .env.) Open it in a text editor, add these three lines at the end, save:",
+        "",
+        f"{pre}_URL=https://{host}",
+        f"{pre}_USER=seo-ops",
+        f"{pre}_APP_PASSWORD=<the Application Password>",
+        "",
+        "What each line is:",
+        f"  {pre}_URL           the site address, exactly as above (https, no trailing slash).",
+        f"  {pre}_USER          the WordPress USERNAME you log in with — the dedicated Editor user 'seo-ops'",
+        "                      (wordpress-site-setup.md §1). Not an email address, not the password's name.",
+        f"  {pre}_APP_PASSWORD  the Application Password itself: 24 letters/numbers in six groups of four,",
+        "                      e.g. 'abcd efgh ijkl mnop qrst uvwx', copied once when it was created. Keep the spaces.",
+        "                      NOT the normal WordPress login password — that is rejected.",
+        "",
+        "Not in .env: the Application Password's NAME. When it is created (Users → seo-ops → Application Passwords),",
+        "WordPress asks for a name — type 'seo-ops'. That name is only a label in WordPress.",
+        "",
+        "Never paste these values in chat — Claude cannot read .env and never needs them. Then run /wp-check " + slug + ".",
+    ])
 
 
 def call(slug, path, method="GET", body=None, auth=True):
@@ -247,7 +278,9 @@ def live_note(post, backup):
 CAUSE_BLOCKED = ("the REST API is blocked — most likely a security plugin (Wordfence, Solid Security/iThemes, "
                  "All In One WP Security, 'Disable REST API') or the host's firewall (ModSecurity, Cloudflare WAF). "
                  "Allow /wp-json/ for the seo-ops user (wordpress-site-setup.md §3).")
-CAUSE_AUTH = ("the Application Password was not accepted — wrong password, Application Passwords disabled by a "
+CAUSE_AUTH = ("the Application Password was not accepted — wrong password (the normal WordPress login password "
+              "does not work here: it must be the 24-character Application Password), wrong username in _USER, "
+              "Application Passwords disabled by a "
               "security plugin, or the host strips the Authorization header (Apache/CGI: add the .htaccess line "
               "in wordpress-site-setup.md §3).")
 
@@ -288,7 +321,8 @@ def wp_check(a):
         base, _ = creds(a.slug)
         add(True, "Credentials", f"{pre}_URL / _USER / _APP_PASSWORD are in .env")
     except SystemExit:
-        add(False, "Credentials", f"{pre}_URL, {pre}_USER and {pre}_APP_PASSWORD must be in .env — Paul adds them")
+        add(False, "Credentials", f"{pre}_URL, {pre}_USER and {pre}_APP_PASSWORD must be in .env — Paul adds them "
+            f"(the file and the exact lines: python3 scripts/wp.py env-lines {a.slug})")
         finish(False)
     # 2 · REST API reachable (no login)
     try:
@@ -457,6 +491,7 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("check"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s.add_argument("--pilot", action="store_true")
+    s = sub.add_parser("env-lines"); s.add_argument("slug")
     for n in ("get", "inspect"):
         s = sub.add_parser(n); s.add_argument("slug"); s.add_argument("url")
     s = sub.add_parser("media"); s.add_argument("slug"); s.add_argument("--post", type=int, required=True)
@@ -485,6 +520,9 @@ def main():
     try:
         if a.cmd == "check":
             return wp_check(a)
+        if a.cmd == "env-lines":
+            print(env_lines(a.slug, S.load(a.slug)["client"].get("domain")))
+            return
         if a.cmd == "update-content":
             die("REFUSED — the system never replaces a live page's content or publishes. New and replacement content "
                 "goes in as a WordPress draft from the approved file (publish.py drafts); Jonie publishes it.")

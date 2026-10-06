@@ -867,6 +867,20 @@ def t_wordpress():
         setmode(**m)
         code, out = wpcheck()
         check(f"/wp-check names the cause: {list(m)[0]}", code == 1 and words in out and "not connected" in out, out[-400:])
+    setmode(no_creds=True)
+    code, out = wpcheck()
+    check("missing credentials → /wp-check points Paul to wp.py env-lines", "wp.py env-lines wp-co" in out, out[-400:])
+    code, out = sh("python3 scripts/wp.py env-lines wp-co")
+    check("env-lines: the full .env path and the exact three lines for this client",
+          code == 0 and f"File: {SB.resolve() / '.env'}" in out and "WP_WP_CO_URL=https://test.example" in out
+          and "WP_WP_CO_USER=seo-ops" in out and "WP_WP_CO_APP_PASSWORD=<the Application Password>" in out, out)
+    check("env-lines: username, Application Password and the password's name are told apart",
+          "USERNAME" in out and "24 letters/numbers" in out and "NOT the normal WordPress login password" in out
+          and "Not in .env: the Application Password's NAME" in out, out)
+    nxt_md = (SB / ".claude/commands/next.md").read_text()
+    check("/next keeps open choices apart from the /approve line",
+          "Open choices first" in nxt_md and "do not print the `/approve` line yet" in nxt_md
+          and "not an approval" in nxt_md)
     st = status("wp-co")
     check("a failed /wp-check leaves WordPress work blocked", not st["wordpress"]["check"]["passed"])
     code, out = sh("python3 scripts/run.py start wp-co implement --step safe")
