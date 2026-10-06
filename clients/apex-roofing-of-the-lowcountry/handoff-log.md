@@ -118,3 +118,27 @@ Generated from the safety log (clients/apex-roofing-of-the-lowcountry/log.md) �
 **Anything the next agent would otherwise get wrong**
 - "Apex Roofing of Coastal Georgia" (St. Simons Island, GAF directory) may be a different company — don't merge its facts. And every service/location H1 already starts "The Best…": that is an observation, not a finding, until the audit (CM-020).
 
+## /drive-mirror · 2026-10-05 · run 20261005-212655-drive-mirror-c34f
+
+**What I did**
+- Archive-and-replace for the Handoff Log and Document Checklist: old copies renamed with `- 2026-10-05` and moved into `_Archive`; new versions uploaded under the standard names.
+- First upload of the Brand Guide (Sections A, B and F proposals from discovery).
+
+**What was decided, and why**
+- The Approval Record was left as it is: its content has not changed since the first upload (every decision still pending).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Records + Brand Guide in Drive | https://drive.google.com/drive/folders/1DN9Lji_McIOo9i2eFLV-u7eXrvY00G37 | Current as of the discovery run |
+
+**What I could not check**
+- —
+
+**Anything the next agent would otherwise get wrong**
+- Two files called "… - 2026-10-05.md" now sit in `_Archive`; a second archive on the same day needs `drive.py archive-name --n 2`.
+
