@@ -449,3 +449,46 @@ Gates checked: client_setup
 ### END HANDOFF
 ## RUN 20261006-085120-drive-mirror-4406 · FINISHED · 2026-10-06T08:51:36-05:00
 Changes: 1 · Summary: Discovery Record REVIEW copy archived (Paul's yes)
+
+## RUN 20261006-085141-discovery-bb0e · STARTED · /discovery · 2026-10-06T08:51:41-05:00
+Step: discovery:proof-sheet
+Gates checked: entity_approved
+- CHANGE #45 [drive_file] https://drive.google.com/file/d/1InOV2XI8lZIA2iQsWbuja6pidepTX948/view?usp=drivesdk | file | old:  | new: Apex Roofing of the Lowcountry - Client Proof Sheet - REVIEW.md | result: uploaded
+- CHANGE #46 [drive_file] https://docs.google.com/document/d/11uhrPAeoOdQjw1x5ZolTDuL1FkntxL369dK3Rr7NfoU/edit | file | old:  | new: Apex Roofing of the Lowcountry - Client Proof Sheet - CLIENT COPY | result: uploaded
+- CHANGE #47 [audit_step] S04 | Proof sheet built (Markdown + client Google Doc) | old:  | new: done | result: DONE — Proof sheet built from the approved Discovery Record and Brand Guide A; .md and CLIENT COPY Google Doc in Drive Deliverables; return by 2026-10-20
+### HANDOFF · /discovery · 2026-10-06 · run 20261006-085141-discovery-bb0e
+**What I did**
+- Built the client proof sheet (S04, recorded done) from the approved Discovery Record and the Brand Guide.
+  - Access asks, with no passwords anywhere.
+  - Block A: 27 confirm rows, including "no Georgia" and that "Apex Roofing of Coastal Georgia" is a separate business.
+  - Block B: 14 verify rows, each quoted word for word with where it appears.
+  - Block C: documents and facts the client needs to send.
+  - Return by Tue 20 Oct 2026.
+- Saved the `.md` and the `- CLIENT COPY` Google Doc in `01 - Discovery and Audit/Deliverables`. The client was not contacted.
+
+**What was decided, and why**
+- Georgia isn't asked as an open question; it's a confirm row, per Paul.
+- WordPress access is not asked. GA4/Search Console access is an optional ask.
+- Gwen's manual lookups (SOS, LLR, GBP dashboard) are not asked of the client.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Paul's phone number — placeholder "[PAUL'S PHONE NUMBER]" in two places | Paul | Sending the sheet |
+| Google Doc shows literal asterisks inside table cells (the Markdown didn't convert) | Paul: tidy by hand, or regenerate | Sending the sheet |
+| Open choices: Georgia homepage line, claims left off, Block B length (14 vs 6–12), domain renewal note, block order, sharing | Paul | proof_sheet_approved |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Proof sheet | clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Client Proof Sheet - REVIEW.md · https://drive.google.com/file/d/1InOV2XI8lZIA2iQsWbuja6pidepTX948/view | REVIEW |
+| CLIENT COPY Google Doc | https://docs.google.com/document/d/11uhrPAeoOdQjw1x5ZolTDuL1FkntxL369dK3Rr7NfoU/edit | Needs the fixes above; not shared |
+
+**What I could not check**
+- How the Google Doc looks on a phone.
+
+**Anything the next agent would otherwise get wrong**
+- Any change to the sheet `.md` after Paul approves cancels the approval. Make Paul's changes first, then he approves.
+### END HANDOFF
+## RUN 20261006-085141-discovery-bb0e · FINISHED · 2026-10-06T08:56:15-05:00
+Changes: 3 · Summary: Client proof sheet built (REVIEW); open choices for Paul

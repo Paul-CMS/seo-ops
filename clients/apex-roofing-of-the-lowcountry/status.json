@@ -74,6 +74,13 @@
       },
       "at": "2026-10-05T22:34:00-05:00",
       "ts": 1791257640.408161
+    },
+    "proof_sheet": {
+      "files": {
+        "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Client Proof Sheet - REVIEW.md": "94cb43d1b0ff"
+      },
+      "at": "2026-10-06T08:55:28-05:00",
+      "ts": 1791294928.4197838
     }
   },
   "pages": {},
@@ -105,14 +112,23 @@
       ],
       "at": "2026-10-05T21:25:48-05:00",
       "run": "20261005-211303-discovery-aee7"
+    },
+    "S04": {
+      "outcome": "done",
+      "reason": "Proof sheet built from the approved Discovery Record and Brand Guide A; .md and CLIENT COPY Google Doc in Drive Deliverables; return by 2026-10-20",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Client Proof Sheet - REVIEW.md"
+      ],
+      "at": "2026-10-06T08:55:24-05:00",
+      "run": "20261006-085141-discovery-bb0e"
     }
   },
   "last_run": {
-    "run_id": "20261005-223335-discovery-40fe",
+    "run_id": "20261006-085141-discovery-bb0e",
     "command": "discovery",
-    "finished": "2026-10-05T22:34:18-05:00",
-    "result": "Entity files final per Paul; manual lookups to Gwen",
-    "changes": 7
+    "finished": "2026-10-06T08:56:15-05:00",
+    "result": "Client proof sheet built (REVIEW); open choices for Paul",
+    "changes": 3
   },
   "spend": {
     "dataforseo_usd": 0.0
@@ -127,7 +143,7 @@
     "next": "Once you return the fact sheet, we finish your business profile."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-06T08:51:36-05:00",
+  "updated": "2026-10-06T08:56:15-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -141,5 +157,10 @@
       "settings_readable": true,
       "seopress_fields_ok": true
     }
+  },
+  "review_pause": {
+    "run_id": "20261006-085141-discovery-bb0e",
+    "step": "discovery:proof-sheet",
+    "at": "2026-10-06T08:56:15-05:00"
   }
 }
