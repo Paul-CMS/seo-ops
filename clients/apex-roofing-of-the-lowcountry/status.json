@@ -63,11 +63,11 @@
   "build": null,
   "audit_steps": {},
   "last_run": {
-    "run_id": "20261005-210907-new-client-b5e9",
-    "command": "new-client",
-    "finished": "2026-10-05T21:10:52-05:00",
-    "result": "Client set up",
-    "changes": 1
+    "run_id": "20261005-211116-wp-check-0f33",
+    "command": "wp-check",
+    "finished": "2026-10-05T21:11:38-05:00",
+    "result": "WordPress setup handoff issued to Jonie; connection test waits for credentials",
+    "changes": 5
   },
   "spend": {
     "dataforseo_usd": 0.0
@@ -80,7 +80,7 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-05T21:10:52-05:00",
+  "updated": "2026-10-05T21:11:38-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00"
