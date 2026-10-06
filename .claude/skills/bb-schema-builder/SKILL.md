@@ -7,7 +7,7 @@ description: "Build Bradley Benner / Semantic Links JSON-LD schema for a local b
 
 Implements **BB-6xx v1.1**, derived from direct observation of a Bradley-built live
 implementation (SRC-030/031/032), not from the derived documents. Where the two disagree,
-the observed implementation governs — see `references/schema-rules.md`.
+the observed implementation governs — see `sop-source/BB-Standard-Schema-Section-v1.1.md` (the single source).
 
 ## When this runs
 
@@ -42,6 +42,13 @@ Q-ID; without one, the Q-ID must exist and its label must match the entity's nam
 must resolve. Calls are paced. A mismatch or an unreachable source refuses the build — schema is never
 built on an unchecked entity. Give every entity its Wikipedia URL where one exists: it makes the
 check exact.
+
+**Wikipedia or Wikidata down (CM-053).** The build still refuses by default. Paul may let **the one open
+`/finish schema` run** build without the live check: `/approve <slug> schema-offline --reason "..."`, then
+`build_schema.py <config> <out> --offline <slug>`. Only the live entity check is skipped — the Q-ID and
+Wikipedia URL formats, the entry gate and the output check all still run. The approval is used once,
+recorded in status.json and log.md with Paul's name, date and reason; re-run the full build when the sites
+are back.
 
 ## Build
 
@@ -102,13 +109,13 @@ About page, contact page, blog and multi-GBP schema were not observed in the cap
 v1.0's rules for about (`Person` + `Organization`) and blog (`Article`) remain unverified,
 and **there is no rule at all for contact page schema**. Do not invent one — flag it.
 Bradley's written patterns for about, contact, small-site, franchisor and multi-GBP pages are listed in
-`references/schema-rules.md` ("Not observed, still open"), each needing Paul's ruling; the small-site
+`sop-source/BB-Standard-Schema-Section-v1.1.md` ("Not observed, still open"), each needing Paul's ruling; the small-site
 three-node homepage is open question CM-052, and BB-601's two nodes stand until he rules.
-The **Never** list is at the end of `references/schema-rules.md` (CM-050, CM-051).
+The **Never** list is at the end of `sop-source/BB-Standard-Schema-Section-v1.1.md` (CM-050, CM-051).
 
 ## Files
 
-- `references/schema-rules.md` — full BB-6xx v1.1, the deltas from v1.0, and the two
+- `sop-source/BB-Standard-Schema-Section-v1.1.md` (repo root; the single source — `references/schema-rules.md` is only a pointer) — full BB-6xx v1.1, the deltas from v1.0, and the two
   defects in the reference implementation not to copy
 - `assets/client-config-template.yaml` — the config shape, filled with a worked example
 - `scripts/build_schema.py` — entry gate + emitter

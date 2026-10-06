@@ -5,9 +5,12 @@ build_schema.py — emit BB-6xx v1.1 JSON-LD for every page type from one client
     python3 build_schema.py <client.yaml> <out_dir> [--page URL] [--check]
 
 Implements the node sets observed in a Bradley-built live implementation (SRC-030/031/032),
-not the pattern described in the derived documents. See references/schema-rules.md.
+not the pattern described in the derived documents. See sop-source/BB-Standard-Schema-Section-v1.1.md (the single source).
 
 --check runs the entry gate and the entity check only, and reports what is wrong, emitting nothing.
+--offline <slug> skips ONLY the live entity check, and only with Paul's approval for the open
+/finish schema run (/approve <slug> schema-offline --reason "...", CM-053) — once, logged with his name.
+The Q-ID / Wikipedia URL formats are still checked offline, and the entry gate and output check still run.
 
 Three checks, in order (CM-051); any failure writes nothing:
   1. Entry gate — every required Section F value is present (a missing logo or an entity with no
@@ -173,6 +176,59 @@ def verify_entities(cfg):
             if code != 200:
                 problems.append((label, f"the Grokipedia URL does not resolve ({code}) — fix it or remove it"))
     return problems, notes
+
+
+# ---------------------------------------------------------------- offline override (CM-053)
+def _ops():
+    """The seo-ops status and run scripts (repo root/scripts), for the offline approval only."""
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "scripts"))
+    import run as R, status as S   # noqa: E401
+    return R, S
+
+
+def offline_approval(slug):
+    """Paul's /approve <slug> schema-offline for the open /finish schema run, not used yet — else refuse."""
+    R, S = _ops()
+    rec = S.load(slug).get("schema_offline") or {}
+    why = None
+    if not rec:
+        why = "Paul has not approved an offline build"
+    elif rec.get("used"):
+        why = f"Paul's offline approval was already used ({rec['used']['at'][:16]}) — it covers one build"
+    elif rec.get("run") not in R.unfinished(slug):
+        why = f"Paul's offline approval was for run {rec.get('run')}, which is no longer open — it covers that run only"
+    if why:
+        print(f"OFFLINE REFUSED — {why}. The live entity check stays on; to skip it once, Paul types:\n"
+              f"  /approve {slug} schema-offline --reason \"<what is down and since when>\"")
+        sys.exit(2)
+    rec["slug"] = slug
+    return rec
+
+
+def offline_format_check(cfg):
+    """What can be checked without the network: the shape of every Wikidata / Wikipedia URL."""
+    probs = []
+    for e, url in all_entities(cfg):
+        label = f"{url} → entity '{e.get('name')}'"
+        if not QID.match(e["wikidata"]):
+            probs.append((label, f"wikidata must be https://www.wikidata.org/wiki/Q… (got {e['wikidata']})"))
+        if e.get("wikipedia") and not re.match(r"^https://[a-z\-]+\.wikipedia\.org/wiki/.+$", e["wikipedia"]):
+            probs.append((label, "wikipedia must be a https://<lang>.wikipedia.org/wiki/<Title> URL"))
+    return probs
+
+
+def offline_consumed(rec, pages):
+    R, S = _ops()
+    slug = rec.pop("slug")
+    st = S.load(slug)
+    from datetime import datetime
+    at = datetime.now().astimezone().isoformat(timespec="seconds")
+    st["schema_offline"]["used"] = {"at": at, "pages": pages}
+    S.save(slug, st)
+    with open(S.client_dir(slug) / "log.md", "a", encoding="utf-8") as fh:
+        fh.write(f"- SCHEMA OFFLINE {at[:16]} · run {rec['run']} · {pages} page(s) built WITHOUT the live entity check, "
+                 f"under Paul's approval ({rec['reason']}) · re-run the full build when Wikipedia/Wikidata are back\n")
 
 
 # ---------------------------------------------------------------- output check (CM-051)
@@ -397,7 +453,13 @@ def main():
         sys.exit(2)
     for w in warn:
         print(f"  note: {w}")
-    problems, notes = verify_entities(cfg)
+    offline = offline_approval(sys.argv[sys.argv.index("--offline") + 1]) if "--offline" in sys.argv else None
+    if offline:
+        problems, notes = offline_format_check(cfg), []
+        print(f"  OFFLINE — live entity check SKIPPED under Paul's approval of {offline['at'][:16]} "
+              f"(reason: {offline['reason']}). Re-run the full build once Wikipedia/Wikidata are back.")
+    else:
+        problems, notes = verify_entities(cfg)
     for n in notes:
         print(f"  note: {n}")
     if problems:
@@ -441,6 +503,8 @@ def main():
             f'<script type="application/ld+json">\n{text}\n</script>\n')
         written += [raw, wrapped]
 
+    if offline:
+        offline_consumed(offline, len(graphs))
     for p in written:
         print(f"wrote {p}")
     print(f"\n{len(graphs)} page(s): .jsonld (raw — validate each at validator.schema.org first) and "

@@ -29,7 +29,7 @@ recorded, no rule · `SUPERSEDED` no longer governs; follow the pointer.
 
 ## Contents
 - A. Coastal rulings (CM-001–024)
-- B. Standing rulings from the consolidation and after (CM-025 onward, incl. CM-038–052)
+- B. Standing rulings from the consolidation and after (CM-025 onward, incl. CM-038–053)
 - C. Rule Register (RULE-001–015)
 - D. GOV-06 — procedure and tensions (PROC-01, PROC-02, GOV-T1–T10)
 - E. Resolved conflicts (CF-001–009)
@@ -574,6 +574,16 @@ Decided by Paul, one by one. All in `.claude/skills/bb-schema-builder/scripts/bu
 Question for Paul, to decide when a small site comes in: does a site with too few pages to carry its
 services on service pages get the third node? **Until ruled: BB-601's two-node homepage, no exceptions.**
 
+## CM-053 · Schema build when Wikipedia / Wikidata is unreachable
+**ID** CM-053 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** CM-051's live entity check refuses every build when Wikipedia or Wikidata is down; a short outage should not stop all schema work, but skipping the check must stay Paul's call. · **Source** Paul, after the CM-051 round · **Supersedes** — (narrows CM-051 part 1)
+
+Decided by Paul. The default stays: unreachable → the build refuses. Paul may approve
+`/approve <slug> schema-offline --reason "..."` for **the one open `/finish schema` run**; that run may then
+build once with `--offline <slug>`, which skips **only the live entity check** (the Q-ID and Wikipedia URL
+formats, the entry gate and the output check still run). Recorded in status.json and log.md with Paul's
+name, date and reason, and the use is logged; a second build, or another run, needs a new approval.
+The entity check is re-run when the sites are back.
+
 ---
 
 # C. Rule Register
@@ -833,6 +843,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-050 | APPROVED |
 | CM-051 | APPROVED (part 4 PILOT; part 8 held) |
 | CM-052 | OPEN (small-site homepage) |
+| CM-053 | APPROVED |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |

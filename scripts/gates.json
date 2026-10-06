@@ -677,7 +677,6 @@
       ],
       "reads": [
         ".claude/skills/bb-schema-builder/SKILL.md",
-        ".claude/skills/bb-schema-builder/references/schema-rules.md",
         "sop-source/BB-Standard-Schema-Section-v1.1.md",
         "clients/<slug>/brand-guide.md (F)"
       ]

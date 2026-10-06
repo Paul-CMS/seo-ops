@@ -12,6 +12,8 @@
     approve.py <slug> evidence:<page_id> --reason T     waive a BLOCK from the evidence gate (CM-041), for this grid
     approve.py <slug>|global mode:<stage>=auto|review    switch a producing stage's mode (CM-044); auto only
                after the stage passed the pilot; decisions can never be auto
+    approve.py <slug> schema-offline --reason T          Wikipedia/Wikidata unreachable: let THIS open /finish schema
+               run build once without the live entity check (CM-053); every other check still runs
 
 Refuses unless Paul typed /approve in this session within the last 20 minutes: the
 UserPromptSubmit hook writes a one-time token when — and only when — a real user prompt
@@ -293,6 +295,23 @@ def prepare(a, st, target, multi):
                 f"Grid: {rec.get('grid')} (sha {rec.get('sha')}) · was BLOCK: {'; '.join(rec.get('why') or [])}\n"
                 f"Reason: {a.reason}\n")
         return apply, text, f"evidence waiver {pid}"
+
+    if target == "schema-offline":   # CM-053: one run, Paul's name and reason, only the live entity check skipped
+        if not a.reason:
+            die("REFUSED (schema-offline) — say why: --reason \"...\" (e.g. which site was down, since when)")
+        runs = [rid for rid, info in (st.get("open_runs") or {}).items() if info.get("step") == "finish:schema"]
+        if not runs:
+            die("REFUSED (schema-offline) — it covers one open /finish schema run, and none is open. Start the run, "
+                "let the build refuse on the unreachable check, then approve.")
+        rid = sorted(runs)[-1]
+        rec = {"by": "Paul", "at": now(), "reason": a.reason, "run": rid, "used": None}
+
+        def apply():
+            st["schema_offline"] = rec
+        text = (f"\n## APPROVAL · {now()} · schema-offline · by Paul\n"
+                f"Run: {rid} only — the live Wikipedia/Wikidata/Grokipedia entity check may be skipped once in this run; "
+                f"every other check still runs.\nReason: {a.reason}\n")
+        return apply, text, "schema-offline"
 
     if target.startswith("mode:"):
         step, mode = parse_mode(target)

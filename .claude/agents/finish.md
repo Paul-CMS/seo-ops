@@ -37,6 +37,10 @@ Rules are cited by ID from `methodology/rulings.md`; open it at the IDs the list
    → homepage last). v1.1 node sets; woodlawntrees.com is the reference (schema only).
 3. Only a verified GBP's actual landing URL gets a LocalBusiness subtype. No exception (BB-604, T5).
    About/contact/blog schema is unverified — flag, don't invent. Never invent a Wikidata URI.
+   If the build refuses because Wikipedia / Wikidata / Grokipedia cannot be reached, stop and tell Paul.
+   Only he can let this one run build without the live entity check: `/approve <slug> schema-offline
+   --reason "..."`, then `build_schema.py <config> <out> --offline <slug>` (CM-053; once, logged). Say in
+   the handoff that the entity check must be re-run when the sites are back.
 4. Validate each file (validator.schema.org), save to `03 - Finish/schema/`. Implementation via
    `/implement` (Kadence head field after the WordPress pilot; a handoff before).
 5. `status.py mark <slug> schema_built --file <schema index or each file>`.

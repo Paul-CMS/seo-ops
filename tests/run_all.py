@@ -813,6 +813,12 @@ def t_repo_hygiene():
     check("the severity scale is defined only in rulings.md", sev == ["methodology/rulings.md"], sev)
     old = r"(?<!archive/)\b(coastal-delta-addendum\.md|rule-register\.md|conflicts-register\.csv)|templates/document-checklist|stage-2-selfcheck"
     check("no references to archived or removed files (except their archive paths)", not hits(old), hits(old))
+    holders = sorted(str(f.relative_to(SB)) for f in SB.rglob("*.md")
+                     if "tests" not in f.parts and "## BB-601 · The two-node identity graph" in f.read_text(errors="ignore"))
+    pointer = (SB / ".claude/skills/bb-schema-builder/references/schema-rules.md").read_text()
+    check("schema rules live in one place: sop-source v1.1 (the skill copy is only a pointer)",
+          holders == ["sop-source/BB-Standard-Schema-Section-v1.1.md"] and "sop-source/BB-Standard-Schema-Section-v1.1.md" in pointer
+          and "BB-60" not in pointer.replace("BB-601–608", ""), (holders, pointer[:200]))
     check("no Stage 7/8, Gemini or ChatGPT references in CLAUDE.md, agents or skills",
           not [f for f in hits(r"Stage [78]\b|Gemini|ChatGPT") if f.startswith((".claude", "CLAUDE")) and "archive-old-instructions" not in f])
 
@@ -1356,6 +1362,69 @@ def t_schema_gate():
           and any("addressCountry outside" in p for p in probs) and any("areaServed type Country" in p for p in probs), out)
 
 
+def t_schema_offline():
+    S = "so-co"
+    sh(f'python3 scripts/status.py init {S} --name S --domain test.example --type full --industry roofing')
+    ag = Agent(S); rid = ag.start("new-client"); ag.fin(rid, "set up")
+    st = status(S)
+    for g in ("entity_approved", "proof_sheet_approved", "audit_approved", "brand_guide_approved", "discovery_signed_off",
+              "link_wheel_approved"):
+        st["gates"][g] = {"state": "approved", "files": {}}
+    st["imported_conditions"] = {"proof_sheet_returned": "test", "pages_built": "test"}
+    st["audit_steps"] = {f"S{i:02d}": {"outcome": "done"} for i in range(1, 22)}
+    (ag.c / "status.json").write_text(json.dumps(st))
+    d = SB / "tests" / ".state" / "schema-off"; d.mkdir(parents=True, exist_ok=True)
+    cfg = schema_cfg()
+    cfg["service_pages"][0]["entities"] = [{"name": "Dach", "wikidata": "https://www.wikidata.org/wiki/Q83180",
+                                            "wikipedia": "https://de.wikipedia.org/wiki/Dach"}]   # fake web: unreachable
+    (d / "cfg.json").write_text(json.dumps(cfg))
+    n = [0]
+
+    def build(extra=""):
+        n[0] += 1
+        return sh(f"python3 tests/fakes.py build_schema {d / 'cfg.json'} {d / f'out{n[0]}'} {extra}")
+    rid = ag.start("finish", "schema")
+    code, out = build()
+    check("offline: an unreachable Wikipedia still refuses the build by default", code == 2 and "try again" in out, out[-300:])
+    code, out = build(f"--offline {S}")
+    check("offline: --offline without Paul's approval is refused", code == 2 and "OFFLINE REFUSED" in out
+          and f"/approve {S} schema-offline" in out, out[-300:])
+    code, out = sh(f'python3 scripts/approve.py {S} schema-offline --reason "Claude thinks so"')
+    check("offline: Claude cannot approve it (no typed /approve)", code == 7, out)
+    code, out = paul(f"/approve {S} schema-offline")
+    check("offline: the approval needs a reason", code != 0 and "reason" in out, out)
+    code, out = paul(f'/approve {S} schema-offline --reason "Wikipedia API down since 09:10 (status page)"')
+    rec = status(S).get("schema_offline") or {}
+    check("offline: Paul's approval is recorded with his name, date, reason and the one run it covers",
+          code == 0 and rec.get("by") == "Paul" and rec.get("at", "")[:4] == "2026" and "status page" in rec.get("reason", "")
+          and rec.get("run") == rid and "schema-offline · by Paul" in (ag.c / "log.md").read_text(), out)
+    cfg_bad = dict(cfg); cfg_bad["business"] = {**cfg["business"], "description": "[NEED: description]"}
+    (d / "cfg.json").write_text(json.dumps(cfg_bad))
+    code, out = build(f"--offline {S}")
+    check("offline: every other check still runs (working text refused) and the approval is not used up",
+          code == 3 and "OUTPUT CHECK FAILED" in out and not (status(S)["schema_offline"].get("used")), out[-300:])
+    (d / "cfg.json").write_text(json.dumps(cfg))
+    code, out = build(f"--offline {S}")
+    check("offline: with the approval, the run builds once without the live entity check",
+          code == 0 and "live entity check SKIPPED" in out and (d / f"out{n[0]}" / "homepage.jsonld").exists(), out[-300:])
+    check("offline: the use is logged and marked used",
+          status(S)["schema_offline"].get("used") and "SCHEMA OFFLINE" in (ag.c / "log.md").read_text())
+    code, out = build(f"--offline {S}")
+    check("offline: a second build in the same run needs a new approval", code == 2 and "already used" in out, out[-300:])
+    ag.mark("schema_built", ag.w("finish/schema/index.md")); ag.fin(rid, "schema")
+    code, out = paul(f'/approve {S} schema-offline --reason "still down"')
+    check("offline: approving with no /finish schema run open is refused", code != 0 and "none is open" in out, out)
+    rid2 = ag.start("finish", "schema")
+    code, out = build(f"--offline {S}")
+    check("offline: an approval does not carry over to another run", code == 2 and "OFFLINE REFUSED" in out, out[-300:])
+    bad = schema_cfg(); bad["service_pages"][0]["entities"] = [{"name": "Roof", "wikidata": "Q83180"}]
+    (d / "cfg.json").write_text(json.dumps(bad))
+    paul(f'/approve {S} schema-offline --reason "outage again"')
+    code, out = build(f"--offline {S}")
+    check("offline: the Q-ID format is still checked offline", code == 2 and "must be https://www.wikidata.org/wiki/Q" in out, out[-300:])
+    ag.mark("schema_built", ag.w("finish/schema/index.md")); ag.fin(rid2, "schema")
+
+
 def t_readability():
     d = SB / "tests" / ".state"; d.mkdir(parents=True, exist_ok=True)
     head = ("---\npage_id: x\nurl: https://test.example/x/\nseo_title: Comprehensive Professional Environmental "
@@ -1382,7 +1451,7 @@ def t_readability():
 
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view,
-             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_readability]
+             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability]
 
 
 def main():

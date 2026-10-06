@@ -8,7 +8,7 @@
 ## Scope and grading
 
 **These sources are scoped to schema only.** Page structure, headings and copy on that site
-are not optimized to the methodology and must not be cited for anything outside Stage 7.
+are not optimized to the methodology and must not be cited for anything outside Finish — schema.
 
 New grade introduced for this section:
 
