@@ -1261,22 +1261,99 @@ def schema_cfg():
 
 def t_schema_gate():
     d = SB / "tests" / ".state" / "schema"; d.mkdir(parents=True, exist_ok=True)
+    n = [0]
 
-    def run(cfg, check_only=True):
+    def run(cfg, check_only=False):
+        """build_schema.py through the fakes (fake Wikipedia / Wikidata / Grokipedia). Fresh output dir each time."""
+        n[0] += 1
         (d / "cfg.json").write_text(json.dumps(cfg))
-        return sh(f"python3 {SCHEMA} {d / 'cfg.json'} {d / 'out'}" + (" --check" if check_only else ""))
-    code, out = run(schema_cfg(), check_only=False)
-    check("schema: a complete config builds", code == 0 and (d / "out" / "homepage.jsonld").exists(), out)
+        out = d / f"out{n[0]}"
+        code, text = sh(f"python3 tests/fakes.py build_schema {d / 'cfg.json'} {out}" + (" --check" if check_only else ""))
+        return code, text, out
+
+    def graph(out, name="homepage"):
+        return json.loads((out / f"{name}.jsonld").read_text())
+    code, out, o = run(schema_cfg())
+    check("schema: a complete config builds", code == 0 and (o / "homepage.jsonld").exists(), out[-300:])
+    # --- the two crash fixes (CM-050)
     cfg = schema_cfg(); del cfg["business"]["logo"]
     for flag in (True, False):
-        code, out = run(cfg, flag)
+        code, out, _ = run(cfg, flag)
         check(f"schema: a missing logo is refused with a clear message, never a crash ({'--check' if flag else 'build'})",
               code == 2 and "business.logo" in out and "Logo image URL" in out and "Traceback" not in out, out[-400:])
     cfg = schema_cfg(); del cfg["service_pages"][0]["entities"][0]["wikidata"]
     for flag in (True, False):
-        code, out = run(cfg, flag)
+        code, out, _ = run(cfg, flag)
         check(f"schema: an entity with no Wikidata URI is refused with a clear message, never a crash ({'--check' if flag else 'build'})",
               code == 2 and "entity 'Roof'" in out and "no Wikidata URI" in out and "Traceback" not in out, out[-400:])
+    # --- 1 · entity check over HTTP
+    ent = lambda **k: {**{"name": "Roof", "wikidata": "https://www.wikidata.org/wiki/Q83180"}, **k}
+
+    def with_entity(e):
+        c = schema_cfg(); c["service_pages"][0]["entities"] = [e]; return c
+    code, out, o = run(with_entity(ent(wikipedia="https://en.wikipedia.org/wiki/Roof", grokipedia="https://grokipedia.com/page/Roof")))
+    check("schema 1: an entity whose Wikipedia page, Wikidata ID and Grokipedia URL agree builds", code == 0, out[-300:])
+    code, out, o = run(with_entity(ent(wikidata="https://www.wikidata.org/wiki/Q999", wikipedia="https://en.wikipedia.org/wiki/Roof")))
+    check("schema 1: a Wikidata ID that doesn't match the Wikipedia page is refused, nothing written",
+          code == 2 and "ENTITY CHECK FAILED" in out and "Q83180" in out and "Q999" in out and not o.exists(), out[-400:])
+    code, out, _ = run(with_entity(ent(wikidata="https://www.wikidata.org/wiki/Q999", wikipedia="https://en.wikipedia.org/wiki/Roof")), True)
+    check("schema 1: the entity check also runs with --check", code == 2 and "ENTITY CHECK FAILED" in out, out[-300:])
+    code, out, _ = run(with_entity(ent(wikidata="https://www.wikidata.org/wiki/Q424242")))
+    check("schema 1: a Wikidata ID that does not exist is refused", code == 2 and "Q424242 could not be found" in out, out[-300:])
+    code, out, _ = run(with_entity(ent(name="Arborist", wikidata="https://www.wikidata.org/wiki/Q135615")))
+    check("schema 1: a Wikidata ID whose label is a different thing is refused",
+          code == 2 and "is 'Springfield, Missouri', not 'Arborist'" in out, out[-300:])
+    code, out, _ = run(with_entity(ent(grokipedia="https://grokipedia.com/page/Nope")))
+    check("schema 1: a Grokipedia URL that does not resolve is refused", code == 2 and "Grokipedia URL does not resolve" in out, out[-300:])
+    code, out, _ = run(with_entity(ent(wikipedia="https://de.wikipedia.org/wiki/Dach")))
+    check("schema 1: an unreachable source refuses the build (never built unchecked)", code == 2 and "try again" in out, out[-300:])
+    # --- 2 · country from the config
+    _, _, o = run(schema_cfg())
+    g = graph(o)["@graph"]
+    check("schema 2: the country defaults to US", g[2]["address"]["addressCountry"] == "US" and g[1]["contactPoint"]["areaServed"] == "US")
+    cfg = schema_cfg(); cfg["business"]["address"]["addressCountry"] = "CA"
+    _, _, o = run(cfg)
+    g = graph(o)["@graph"]
+    check("schema 2: the country comes from the config, not hard-coded",
+          g[2]["address"]["addressCountry"] == "CA" and g[1]["contactPoint"]["areaServed"] == "CA", g[2]["address"])
+    # --- 3 · working text never ships
+    for leak in ("[NEED: description]", "Roofing for [Client Name] customers", "TODO: write this"):
+        cfg = schema_cfg(); cfg["business"]["description"] = leak
+        code, out, o = run(cfg)
+        check(f"schema 3: working text is refused and nothing is written ({leak[:18]}…)",
+              code == 3 and "OUTPUT CHECK FAILED" in out and not o.exists(), out[-300:])
+    # --- 4 · areaServed (pilot)
+    cfg = schema_cfg(); cfg["area_served"].append({"name": "Rountree", "type": "Place"})
+    code, out, _ = run(cfg)
+    check("schema 4: extended area types need the per-client pilot flag", code == 2 and "area_served_extended" in out, out[-300:])
+    cfg["area_served_extended"] = True
+    cfg["area_served"][0]["wikipedia"] = "https://en.wikipedia.org/wiki/Springfield,_Missouri"
+    cfg["area_served"].append({"name": "Greene County", "type": "AdministrativeArea", "state": "Missouri"})
+    code, out, o = run(cfg)
+    areas = graph(o)["@graph"][2]["areaServed"] if code == 0 else []
+    check("schema 4: with the pilot flag — Place, AdministrativeArea and a city's Wikipedia sameAs",
+          [a["@type"] for a in areas] == ["City", "Place", "AdministrativeArea"] and areas[0].get("sameAs", "").endswith("Missouri")
+          and "addressCountry" not in json.dumps(areas), out[-300:])
+    cfg["area_served"].append({"name": "Earth", "type": "Country"})
+    code, out, _ = run(cfg)
+    check("schema 4: an areaServed type outside City / Place / AdministrativeArea is refused", code == 2 and "type must be one of" in out, out[-300:])
+    # --- 5 · ready-to-paste files
+    _, _, o = run(schema_cfg())
+    wrapped = (o / "homepage.script.html").read_text() if (o / "homepage.script.html").exists() else ""
+    check("schema 5: each page also written inside <script type=application/ld+json>, raw kept for the validator",
+          wrapped.startswith('<script type="application/ld+json">') and wrapped.rstrip().endswith("</script>")
+          and json.loads(wrapped.split(">", 1)[1].rsplit("</script>", 1)[0]) == graph(o), wrapped[:120])
+    # --- 6 · never rules, checked on the output
+    code, out = sh("python3 -c \"import sys,json; sys.path.insert(0,'.claude/skills/bb-schema-builder/scripts'); import build_schema as B; "
+                   "g={'@graph':[{'@type':'RoofingContractor','aggregateRating':{'ratingValue':5}},"
+                   "{'@type':'Thing','@id':'https://en.wikipedia.org/wiki/Roof'},"
+                   "{'@type':'Corporation','addressCountry':'US'},"
+                   "{'@type':'Service','areaServed':[{'@type':'Country','name':'US'}]}]}; "
+                   "print(json.dumps(B.output_problems('x', g)))\"")
+    probs = json.loads(out) if code == 0 else []
+    check("schema 6: never aggregateRating / review, never a Wikipedia @id (plus addressCountry and areaServed hygiene)",
+          len(probs) == 4 and any("aggregateRating" in p for p in probs) and any("Wikipedia URL as an @id" in p for p in probs)
+          and any("addressCountry outside" in p for p in probs) and any("areaServed type Country" in p for p in probs), out)
 
 
 def t_readability():

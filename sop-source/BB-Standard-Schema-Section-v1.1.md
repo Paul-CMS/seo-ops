@@ -331,6 +331,17 @@ v1.0's rules for these were sourced only to the derived documents and stay grade
 The `Person` + `Organization` about-page rule is unverified; the `Article` blog rule is
 unverified. **There remains no rule at all for contact page schema.**
 
+**Patterns in Bradley's written guidance (Semantic Mastery Local Schema bundle, 2026-09-26) — not
+observed on woodlawntrees.com, each needs Paul's ruling before use (CM-051):**
+- **About page** — `AboutPage` + `Person`, the Person's `worksFor` → `#corporation`.
+- **Contact page** — `ContactPage` + `ContactPoint` (only fields visible on the page), `mainEntity` → the business.
+- **Small (sparse) site homepage** — a third `Service` node plus `makesOffer` / `knowsAbout` on the
+  LocalBusiness. **Conflicts with BB-601 (exactly two nodes), which stands.** Open question CM-052,
+  decided when a small site comes in.
+- **Franchisor homepage** — a plain `LocalBusiness`; the franchise offer's `provider` → `#corporation`.
+- **Multi-GBP** — each verified GBP's city landing page takes the LocalBusiness subtype; the homepage
+  keeps `Corporation`. Consistent with GOV-T5.
+
 ---
 
 ## Rules confirmed unchanged
@@ -341,3 +352,14 @@ unverified. **There remains no rule at all for contact page schema.**
 - `HomeAndConstructionBusiness` as the default subtype *(confirmed)*
 - The ID page exists and is referenced from the schema *(confirmed, and strengthened)*
 - `sameAs` reflects the full current citation list *(confirmed)*
+
+## Never (CM-050, CM-051 — the builder refuses the output)
+
+- `aggregateRating` or `review` on the business or anywhere else — self-serving reviews are not
+  allowed in LocalBusiness markup, and reviews are never verified facts (CM-027).
+- A Wikipedia URL as an `@id` — the `@id` is the Wikidata URI (BB-606); Wikipedia goes in `sameAs`.
+- The homepage graph on any other page; LocalBusiness on a service page or a non-GBP location page;
+  a self-referencing `significantLink`; the homepage URL left out of `sameAs`; a CID URL in place of
+  the BB-608 share link. (CM-050: v1.1 and woodlawntrees.com stand against the Local Schema bundle.)
+- Typed cross-page references (`{"@type", "@id"}`) are **held**: woodlawn's bare `@id` stays unless a
+  validator test shows a real improvement.

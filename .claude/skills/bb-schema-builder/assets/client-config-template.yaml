@@ -21,6 +21,7 @@ business:
     addressLocality: Cabins
     addressRegion: WV
     postalCode: "26855"
+    # addressCountry: US              # optional; defaults to US (CM-051)
   has_map: https://maps.app.goo.gl/6fE5PE3GAEhKWG5t7
   hours:
     - days: [Monday, Tuesday, Wednesday, Thursday, Friday]
@@ -47,6 +48,8 @@ same_as:
   - https://s3.amazonaws.com/slstacks/woodlawntrees/id.html
   - https://maps.app.goo.gl/6fE5PE3GAEhKWG5t7
 
+# area_served_extended: true   # PILOT (CM-051): allows type: Place / AdministrativeArea and a city's
+#                               # wikipedia: link. Off until Paul approves it after a validator pass.
 area_served:
   - {name: Cabins, state: West Virginia}
   - {name: Maysville, state: West Virginia}

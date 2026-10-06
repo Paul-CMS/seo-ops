@@ -34,6 +34,14 @@ It lists what is missing and why. Fill those in the Brand Guide, not in the conf
 config is generated from the Brand Guide, and patching it directly puts the two out of sync.
 
 Wikidata URIs are required because v1.1 uses **the Wikidata URI as the `@id`**, not a kgmid.
+A missing logo or an entity with no Wikidata URI is refused with a message, never a crash (CM-050).
+
+**Entity check (CM-051).** Every run — `--check` included — confirms each entity over HTTP before
+anything is built: with a Wikipedia URL, the page's own Wikidata item must equal the configured
+Q-ID; without one, the Q-ID must exist and its label must match the entity's name; a Grokipedia URL
+must resolve. Calls are paced. A mismatch or an unreachable source refuses the build — schema is never
+built on an unchecked entity. Give every entity its Wikipedia URL where one exists: it makes the
+check exact.
 
 ## Build
 
@@ -42,8 +50,19 @@ python3 scripts/build_schema.py <client.yaml> <out_dir>            # all pages
 python3 scripts/build_schema.py <client.yaml> <out_dir> --page URL # one page
 ```
 
-Then validate each file at `validator.schema.org` before implementation. The script emits
-structurally correct JSON-LD; it does not check that the facts inside are true.
+Each page is written twice: `<name>.jsonld` (raw — validate it at `validator.schema.org` before
+implementation) and `<name>.script.html` (the same JSON-LD inside `<script type="application/ld+json">`,
+ready for Jonie to paste). Everything is built in memory and checked first (CM-051): any working text
+(`[NEED`, TODO, "Brand Guide", `[Placeholder]`), any `aggregateRating` / `review`, a Wikipedia URL as an
+`@id`, `addressCountry` outside a `PostalAddress`, or an `areaServed` type other than City / Place /
+AdministrativeArea → nothing is written. The script does not check that the facts are true; Section F does.
+
+**Country** comes from `business.address.addressCountry` (or a top-level `country`); "US" if neither is set.
+
+**Served areas** default to woodlawn's `City` + `State`. `area_served_extended: true` in one client's
+config is a **pilot** (CM-051): it allows `type: Place` (a neighbourhood), `type: AdministrativeArea`
+(a county) and a `wikipedia` link on a city. It becomes the default for every client only after Paul has
+seen that client's output pass validator.schema.org and approved it.
 
 ## The node sets
 
@@ -82,6 +101,10 @@ service and location pages and never defines it. The builder emits it on the hom
 About page, contact page, blog and multi-GBP schema were not observed in the capture.
 v1.0's rules for about (`Person` + `Organization`) and blog (`Article`) remain unverified,
 and **there is no rule at all for contact page schema**. Do not invent one — flag it.
+Bradley's written patterns for about, contact, small-site, franchisor and multi-GBP pages are listed in
+`references/schema-rules.md` ("Not observed, still open"), each needing Paul's ruling; the small-site
+three-node homepage is open question CM-052, and BB-601's two nodes stand until he rules.
+The **Never** list is at the end of `references/schema-rules.md` (CM-050, CM-051).
 
 ## Files
 

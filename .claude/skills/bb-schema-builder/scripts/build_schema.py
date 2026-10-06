@@ -7,10 +7,22 @@ build_schema.py — emit BB-6xx v1.1 JSON-LD for every page type from one client
 Implements the node sets observed in a Bradley-built live implementation (SRC-030/031/032),
 not the pattern described in the derived documents. See references/schema-rules.md.
 
---check runs the entry gate only and reports what is missing, emitting nothing.
+--check runs the entry gate and the entity check only, and reports what is wrong, emitting nothing.
+
+Three checks, in order (CM-051); any failure writes nothing:
+  1. Entry gate — every required Section F value is present (a missing logo or an entity with no
+     Wikidata URI is refused, never a crash).
+  2. Entity check — every entity's Wikidata Q-ID is confirmed over HTTP: against the Wikipedia page's
+     own Wikidata item when a Wikipedia URL is given, else the Q-ID must exist; Grokipedia URLs must
+     resolve. Calls are paced. A mismatch or an unreachable source refuses the build.
+  3. Output check — no working text ([NEED, TODO, "Brand Guide", placeholders) in any string; no
+     aggregateRating / review on anything; no Wikipedia URL as an @id; addressCountry only inside a
+     PostalAddress; areaServed types only City / Place / AdministrativeArea.
+Each page is written twice: <name>.jsonld (raw, for validator.schema.org) and <name>.script.html
+(the same JSON-LD inside <script type="application/ld+json">, ready to paste).
 """
 
-import json, os, re, sys
+import json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 
 try:
     import yaml
@@ -39,6 +51,9 @@ REQUIRED = [
     ("area_served", "Every city served"),
     ("gbp_landing_page", "Which URL is the GBP Website field — decides BB-604"),
 ]
+
+
+AREA_TYPES = ("City", "Place", "AdministrativeArea")
 
 
 def dig(cfg, path):
@@ -70,7 +85,127 @@ def entry_gate(cfg):
             missing.append((page.get("url"),
                             "PENDING URL CHANGE — never write schema for a page whose "
                             "URL is queued to move"))
+    ext = cfg.get("area_served_extended")
+    for c in cfg.get("area_served") or []:
+        name = (c or {}).get("name") or "(no name)"
+        if not ext and ((c or {}).get("type") or (c or {}).get("wikipedia")):
+            missing.append((f"area_served → {name}", "'type' / 'wikipedia' on a served area need area_served_extended: true "
+                            "(pilot — Paul validates one client before it is the default, CM-051)"))
+        t = (c or {}).get("type", "City") if ext else "City"
+        if t not in AREA_TYPES:
+            missing.append((f"area_served → {name}", f"type must be one of {', '.join(AREA_TYPES)} (got {t})"))
+        if t == "City" and not (c or {}).get("state"):
+            missing.append((f"area_served → {name}", "a City needs its state"))
     return missing, warn
+
+
+# ---------------------------------------------------------------- entity check (CM-051 · BB-606)
+UA = "seo-ops bb-schema-builder (Coastal Marketing Strategies; schema entity check)"
+PACE = 0.5      # seconds between calls to Wikipedia / Wikidata / Grokipedia
+QID = re.compile(r"^https://www\.wikidata\.org/wiki/(Q\d+)$")
+
+
+def fetch(url, method="GET"):
+    """(status, text). A network failure is (None, reason). Replaced by a fake in the tests."""
+    req = urllib.request.Request(url, method=method, headers={"User-Agent": UA})
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            return r.status, (r.read().decode("utf-8", "replace") if method != "HEAD" else "")
+    except urllib.error.HTTPError as e:
+        return e.code, ""
+    except Exception as e:  # noqa: BLE001
+        return None, str(e)
+
+
+def all_entities(cfg):
+    seen = {}
+    for page in cfg.get("service_pages", []) + cfg.get("location_pages", []):
+        for e in page.get("entities") or []:
+            if e and e.get("wikidata"):
+                seen.setdefault(e["wikidata"] + "|" + (e.get("wikipedia") or ""), (e, page.get("url")))
+    return list(seen.values())
+
+
+def verify_entities(cfg):
+    problems, notes = [], []
+    for e, url in all_entities(cfg):
+        label = f"{url} → entity '{e.get('name')}'"
+        m = QID.match(e["wikidata"])
+        if not m:
+            problems.append((label, f"wikidata must be https://www.wikidata.org/wiki/Q… (got {e['wikidata']})"))
+            continue
+        q = m.group(1)
+        if e.get("wikipedia"):
+            wm = re.match(r"^https://([a-z\-]+)\.wikipedia\.org/wiki/(.+)$", e["wikipedia"])
+            if not wm:
+                problems.append((label, "wikipedia must be a https://<lang>.wikipedia.org/wiki/<Title> URL"))
+                continue
+            title = urllib.parse.quote(urllib.parse.unquote(wm.group(2)))
+            code, body = fetch(f"https://{wm.group(1)}.wikipedia.org/w/api.php?action=query&prop=pageprops"
+                               f"&ppprop=wikibase_item&redirects=1&format=json&titles={title}")
+            time.sleep(PACE)
+            if code != 200:
+                problems.append((label, f"could not check {e['wikipedia']} ({code or body}) — try again later; "
+                                        "schema is never built on an unchecked entity"))
+                continue
+            pages = (json.loads(body).get("query") or {}).get("pages") or {}
+            item = next(((p.get("pageprops") or {}).get("wikibase_item") for p in pages.values()), None)
+            if not item:
+                problems.append((label, f"{e['wikipedia']} does not exist or has no Wikidata item"))
+            elif item != q:
+                problems.append((label, f"the Wikipedia page is Wikidata {item}, but the config says {q} — one of them is wrong"))
+        else:
+            code, body = fetch(f"https://www.wikidata.org/wiki/Special:EntityData/{q}.json")
+            time.sleep(PACE)
+            if code != 200:
+                problems.append((label, f"Wikidata {q} could not be found ({code or body})"))
+                continue
+            ents = json.loads(body).get("entities") or {}
+            ent = ents.get(q) or next(iter(ents.values()), {})
+            lab = ((ent.get("labels") or {}).get("en") or {}).get("value", "")
+            n = (e.get("name") or "").lower()
+            if lab and n not in lab.lower() and lab.lower() not in n:
+                problems.append((label, f"Wikidata {q} is '{lab}', not '{e.get('name')}' — fix the ID, or add the entity's "
+                                        "Wikipedia URL so the check can match them exactly"))
+        if e.get("grokipedia"):
+            code, _ = fetch(e["grokipedia"], "HEAD")
+            time.sleep(PACE)
+            if code != 200:
+                problems.append((label, f"the Grokipedia URL does not resolve ({code}) — fix it or remove it"))
+    return problems, notes
+
+
+# ---------------------------------------------------------------- output check (CM-051)
+LEAK = re.compile(r"\[NEED|\bTODO\b|\bTBD\b|\bFIXME\b|DataforSEO|Brand Guide|seo-ops|lorem ipsum|\{\{|\}\}", re.I)
+PLACEHOLDER = re.compile(r"\[[A-Z][A-Za-z /]{2,40}\]")
+NEVER_KEYS = ("aggregateRating", "review", "reviews")
+
+
+def output_problems(name, graph):
+    probs = []
+
+    def walk(node, path, parent_key=None):
+        if isinstance(node, dict):
+            t = node.get("@type")
+            for k in NEVER_KEYS:
+                if k in node:
+                    probs.append(f"{name}: '{k}' at {path} — never on the business (self-serving reviews; CM-027)")
+            if str(node.get("@id", "")).find("wikipedia.org") >= 0:
+                probs.append(f"{name}: a Wikipedia URL as an @id at {path} — the @id is the Wikidata URI (BB-606)")
+            if "addressCountry" in node and t != "PostalAddress":
+                probs.append(f"{name}: addressCountry outside a PostalAddress at {path}")
+            if parent_key == "areaServed" and t not in AREA_TYPES:
+                probs.append(f"{name}: areaServed type {t} at {path} — only {', '.join(AREA_TYPES)}")
+            for k, v in node.items():
+                walk(v, f"{path}.{k}", k)
+        elif isinstance(node, list):
+            for i, v in enumerate(node):
+                walk(v, f"{path}[{i}]", parent_key)
+        elif isinstance(node, str):
+            if LEAK.search(node) or PLACEHOLDER.search(node):
+                probs.append(f"{name}: working text in {path}: {node[:80]!r}")
+    walk(graph, "$")
+    return probs
 
 
 # ---------------------------------------------------------------- builders
@@ -85,9 +220,23 @@ def thing(e):
 
 
 def area_served(cfg):
-    return [{"@type": "City", "name": c["name"],
-             "containedInPlace": {"@type": "State", "name": c["state"]}}
-            for c in cfg["area_served"]]
+    """City + State by default (woodlawn). With area_served_extended (pilot, CM-051): Place for a
+    neighbourhood, AdministrativeArea for a county, and an optional Wikipedia sameAs on a city."""
+    ext = cfg.get("area_served_extended")
+    out = []
+    for c in cfg["area_served"]:
+        node = {"@type": c.get("type", "City") if ext else "City", "name": c["name"]}
+        if c.get("state"):
+            node["containedInPlace"] = {"@type": "State", "name": c["state"]}
+        if ext and c.get("wikipedia"):
+            node["sameAs"] = c["wikipedia"]
+        out.append(node)
+    return out
+
+
+def country(cfg):
+    """From the config (business.address.addressCountry, else country); 'US' when neither is set."""
+    return (cfg["business"].get("address") or {}).get("addressCountry") or cfg.get("country") or "US"
 
 
 def website_node(cfg):
@@ -133,7 +282,7 @@ def homepage(cfg):
         "email": b["email"],
         "contactPoint": {"@type": "ContactPoint", "telephone": b["telephone"],
                          "email": b["email"], "contactType": "customer service",
-                         "areaServed": "US", "availableLanguage": "English"},
+                         "areaServed": country(cfg), "availableLanguage": "English"},
         "sameAs": cfg["same_as"],
     })
 
@@ -151,7 +300,7 @@ def homepage(cfg):
         "telephone": b["telephone"], "email": b["email"],
         "description": b["description"],
         "parentOrganization": {"@id": f"{d}/#corporation"},
-        "address": {"@type": "PostalAddress", **b["address"], "addressCountry": "US"},
+        "address": {"@type": "PostalAddress", **b["address"], "addressCountry": country(cfg)},
         "hasMap": b["has_map"],
     })
     if b.get("hours"):
@@ -248,37 +397,54 @@ def main():
         sys.exit(2)
     for w in warn:
         print(f"  note: {w}")
+    problems, notes = verify_entities(cfg)
+    for n in notes:
+        print(f"  note: {n}")
+    if problems:
+        print("\nENTITY CHECK FAILED — schema not written (CM-051, BB-606).\n")
+        for p, why in problems:
+            print(f"  WRONG    {p}\n           {why}")
+        print("\nFix the Wikidata / Wikipedia / Grokipedia links in Brand Guide Section F, then re-run.")
+        sys.exit(2)
     if "--check" in sys.argv:
-        print("\nEntry gate passed.")
+        print("\nEntry gate and entity check passed.")
         return
 
-    os.makedirs(out_dir, exist_ok=True)
     only = None
     if "--page" in sys.argv:
         only = sys.argv[sys.argv.index("--page") + 1]
 
-    written = []
+    graphs = []     # built in memory first: nothing is written unless every graph passes
     if not only or only in (cfg["business"]["url"], cfg["gbp_landing_page"]):
-        p = os.path.join(out_dir, "homepage.jsonld")
-        json.dump(homepage(cfg), open(p, "w"), indent=2, ensure_ascii=False)
-        written.append(p)
-    for s in cfg.get("service_pages", []):
-        if only and s["url"] != only:
-            continue
-        p = os.path.join(out_dir, f"service-{slug(s['url'])}.jsonld")
-        json.dump(service_page(cfg, s), open(p, "w"), indent=2, ensure_ascii=False)
-        written.append(p)
+        graphs.append(("homepage", homepage(cfg)))
+    for s_ in cfg.get("service_pages", []):
+        if not only or s_["url"] == only:
+            graphs.append((f"service-{slug(s_['url'])}", service_page(cfg, s_)))
     for l in cfg.get("location_pages", []):
-        if only and l["url"] != only:
-            continue
-        p = os.path.join(out_dir, f"location-{slug(l['url'])}.jsonld")
-        json.dump(location_page(cfg, l), open(p, "w"), indent=2, ensure_ascii=False)
-        written.append(p)
+        if not only or l["url"] == only:
+            graphs.append((f"location-{slug(l['url'])}", location_page(cfg, l)))
+    probs = [p for name, g in graphs for p in output_problems(name, g)]
+    if probs:
+        print("OUTPUT CHECK FAILED — schema not written (CM-051).\n")
+        for p in probs:
+            print(f"  {p}")
+        sys.exit(3)
+
+    os.makedirs(out_dir, exist_ok=True)
+    written = []
+    for name, g in graphs:
+        text = json.dumps(g, indent=2, ensure_ascii=False)
+        raw = os.path.join(out_dir, f"{name}.jsonld")
+        open(raw, "w", encoding="utf-8").write(text + "\n")
+        wrapped = os.path.join(out_dir, f"{name}.script.html")
+        open(wrapped, "w", encoding="utf-8").write(
+            f'<script type="application/ld+json">\n{text}\n</script>\n')
+        written += [raw, wrapped]
 
     for p in written:
         print(f"wrote {p}")
-    print(f"\n{len(written)} file(s). Validate each at validator.schema.org before "
-          f"implementation.")
+    print(f"\n{len(graphs)} page(s): .jsonld (raw — validate each at validator.schema.org first) and "
+          f".script.html (the same, ready to paste) before implementation.")
 
 
 if __name__ == "__main__":

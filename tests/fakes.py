@@ -17,6 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / ".claude" / "skills" / "bb-schema-builder" / "scripts"))
 STATE = ROOT / "tests" / ".state"
 WP = STATE / "wp.json"
 DFS = STATE / "dfs.json"
@@ -175,7 +176,36 @@ def dfs_request(endpoint, body=None, method=None, timeout=90, retries=3):
             "tasks": [{"status_code": 20000, "id": "fake-task", "result": [{"items": [], "total_count": 0}]}]}
 
 
+# The fake encyclopedia for the schema entity check: Wikipedia title -> Wikidata item; known Grokipedia pages.
+WIKI = {"Roof": "Q83180", "Pruning": "Q500094", "Springfield, Missouri": "Q135615"}
+WIKIDATA_LABELS = {v: k for k, v in WIKI.items()}
+GROK = {"https://grokipedia.com/page/Roof"}
+
+
+def schema_fetch(url, method="GET"):
+    import urllib.parse
+    m = re.match(r"https://en\.wikipedia\.org/w/api\.php\?.*titles=(.+)$", url)
+    if m:
+        title = urllib.parse.unquote(m.group(1)).replace("_", " ")
+        q = WIKI.get(title)
+        page = {"title": title, **({"pageprops": {"wikibase_item": q}} if q else {"missing": ""})}
+        return 200, json.dumps({"query": {"pages": {"1" if q else "-1": page}}})
+    m = re.match(r"https://www\.wikidata\.org/wiki/Special:EntityData/(Q\d+)\.json$", url)
+    if m:
+        lab = WIKIDATA_LABELS.get(m.group(1))
+        return (200, json.dumps({"entities": {m.group(1): {"labels": {"en": {"value": lab}}}}})) if lab else (404, "")
+    if url.startswith("https://grokipedia.com/"):
+        return (200 if url in GROK else 404), ""
+    return None, "fake web: no network in tests"
+
+
 def install():
+    try:
+        import build_schema
+        build_schema.fetch = schema_fetch
+        build_schema.PACE = 0
+    except ImportError:
+        pass
     import dfs
     dfs.request = dfs_request
     try:

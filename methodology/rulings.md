@@ -29,7 +29,7 @@ recorded, no rule · `SUPERSEDED` no longer governs; follow the pointer.
 
 ## Contents
 - A. Coastal rulings (CM-001–024)
-- B. Standing rulings from the consolidation and after (CM-025 onward, incl. CM-038–050)
+- B. Standing rulings from the consolidation and after (CM-025 onward, incl. CM-038–052)
 - C. Rule Register (RULE-001–015)
 - D. GOV-06 — procedure and tensions (PROC-01, PROC-02, GOV-T1–T10)
 - E. Resolved conflicts (CF-001–009)
@@ -539,7 +539,40 @@ Decided by Paul. **Our v1.1 rules and woodlawntrees.com stay the reference:**
 - X4 — no homepage schema on every page: the business is defined once, on the homepage (BB-607);
   LocalBusiness never on a service page or a non-GBP location page (GOV-T5).
 Also decided: `build_schema.py` refuses — never crashes on — a missing logo or an entity with no Wikidata
-URI (fixed 2026-10-05). The other L-007 proposals are decided one by one.
+URI (fixed 2026-10-05). The other L-007 proposals: CM-051.
+
+## CM-051 · Schema builder checks (from the Local Schema comparison)
+**ID** CM-051 · **Status** APPROVED — part 4 PILOT · **Date** 2026-10-05 · **Reason** The builder trusted every Wikidata ID it was given and could ship working text or forbidden markup; each check below stops a mistake before it reaches a live page. · **Source** Semantic Mastery Local Schema bundle (Apache-2.0), L-007 items 1–7 · **Supersedes** — (enforces BB-606, BB-603; CM-050 stands)
+
+Decided by Paul, one by one. All in `.claude/skills/bb-schema-builder/scripts/build_schema.py`; any failure writes nothing.
+1. **Entity check over HTTP** on every run, `--check` included: with a Wikipedia URL, the page's own
+   Wikidata item must equal the configured Q-ID; without one, the Q-ID must exist and its label match the
+   entity's name; a Grokipedia URL must resolve. Paced calls. A mismatch or an unreachable source refuses
+   the build — never built on an unchecked entity.
+2. **Country from the config** (`business.address.addressCountry` or `country`), "US" when neither is set
+   — no longer hard-coded.
+3. **Output check:** no working text in any string (`[NEED`, TODO, TBD, "Brand Guide", "DataforSEO",
+   `[Placeholder]`, template braces).
+4. **Served areas — PILOT:** `City` / `Place` / `AdministrativeArea` only; `addressCountry` only inside a
+   `PostalAddress`; optional Wikipedia `sameAs` on a city. The new types and the city link are behind
+   `area_served_extended: true` in one client's config; **they become the default for all clients only
+   after Paul sees that client's output pass validator.schema.org and approves it.** Until then every
+   client gets woodlawn's `City` + `State`.
+5. **Ready-to-paste files:** each page is also written as `<name>.script.html` (inside
+   `<script type="application/ld+json">`); the raw `.jsonld` stays for the validator.
+6. **Never** (refused by the output check and written into schema-rules.md and SKILL.md):
+   `aggregateRating` / `review` on anything (self-serving reviews; CM-027); a Wikipedia URL as an `@id`.
+7. **Patterns with no rule yet** (about, contact, small-site, franchisor, multi-GBP) are listed in
+   schema-rules.md "Not observed, still open", each needing Paul's ruling. **BB-601's two-node homepage
+   stands**; the small-site three-node pattern is open question CM-052.
+8. **Held, not adopted:** typed cross-page references (`{"@type", "@id"}`). Revisit only if a validator
+   test shows a real improvement over woodlawntrees.com's bare `@id`.
+
+## CM-052 · Small-site homepage: Bradley's three-node pattern
+**ID** CM-052 · **Status** OPEN · **Date** 2026-10-05 · **Reason** Bradley's 2026-09-26 written guidance gives very small sites a third homepage node (`Service`) plus `makesOffer` / `knowsAbout` on the LocalBusiness; BB-601 v1.1 (observed on woodlawntrees.com) says exactly two nodes. · **Source** Semantic Mastery Local Schema bundle (sparse-site homepage patterns) · **Supersedes** —
+
+Question for Paul, to decide when a small site comes in: does a site with too few pages to carry its
+services on service pages get the third node? **Until ruled: BB-601's two-node homepage, no exceptions.**
 
 ---
 
@@ -798,6 +831,8 @@ conflicts follow PROC-01 and are ruled here).
 | CM-048 | APPROVED |
 | CM-049 | APPROVED |
 | CM-050 | APPROVED |
+| CM-051 | APPROVED (part 4 PILOT; part 8 held) |
+| CM-052 | OPEN (small-site homepage) |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |
