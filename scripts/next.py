@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """next.py — what happens next for a client, read from status.json and the safety log.
 
-    next.py <slug>            one line of JSON: {"kind": run|decision|wait, "command": ..., "why": ...}
+    next.py <slug>            one line of JSON: {"kind": run|decision|wait|review, "command": ..., "why": ...}
+    next.py <slug> --continue only at the start of a /next Paul typed: clears a review pause (logged)
 
 kind=run      -> /next runs this command now
 kind=decision -> stop: Paul decides. "command" is the exact /approve line to type.
 kind=wait     -> stop: waiting on the client, a VA or an unfinished run
+kind=review   -> stop: the stage that just finished is in review mode (CM-044). Paul looks at its
+                 output and types /next to go on. A stage in auto mode never pauses. A pause before a
+                 decision or a wait is not shown (that stop already pauses).
 
 Every decision gate in scripts/gates.json names its artifact (the files the approval covers)
 and its producer. For each gate in order: met → move on; approved but its file changed →
@@ -19,7 +23,15 @@ import status as S
 import steps
 
 
+SLUG = None
+PAUSE = None   # the review pause left by the last finished run, if its stage is in review mode
+
+
 def out(kind, command, why):
+    if kind == "run" and PAUSE:
+        kind, why = "review", (f"{PAUSE['step']} finished (run {PAUSE['run_id']}) and that stage is in review mode — "
+                               f"look at what it produced, then type /next to go on. Next would be: {command} ({why})")
+        command = f"/next {SLUG}"
     print(json.dumps({"kind": kind, "command": command, "why": why}))
     sys.exit(0)
 
@@ -73,6 +85,30 @@ def gate_step(st, slug, gate):
     out("run", (prod or spec["producer"]).format(slug=slug), f"prepare {S.plain(gate)}")
 
 
+def evidence_and_briefs(st, slug, b):
+    """CM-041 then CM-043: the evidence gate for the batch, then one brief per page in its own run.
+    A blocked page gets no brief: facts interview → owner's answers → gate re-runs, or Paul's waiver."""
+    bid = b["id"]
+    if any(not S.evidence_state(st, p)[0] for p in b["pages"]):
+        out("run", f"/build {slug} evidence {bid}", f"evidence gate for batch {bid} — the facts each page needs, "
+            "marked Known / Unknown / Unverified / Conflict")
+    blocked = [p for p in b["pages"] if not S.evidence_ok(st, p)[0]]
+    for pid in b["pages"]:
+        if pid not in blocked and not S.page_stage(st, pid, "brief"):
+            out("run", f"/build {slug} brief {bid} {pid}", f"brief for {pid} (its own run)")
+    if blocked:
+        waive = " · ".join(f'/approve {slug} evidence:{p} --reason "<why you waive it>"' for p in blocked)
+        fi = b.get("facts_interview") or {}
+        newest = max(((st["pages"][p].get("evidence") or {}).get("at", "") for p in blocked), default="")
+        if not fi or fi.get("at", "") < newest:
+            out("run", f"/interview {slug} facts {bid}",
+                f"the evidence gate blocked {', '.join(blocked)} — targeted questions for the owner (you send them). "
+                f"Or waive instead: {waive}")
+        out("wait", f"/interview {slug} facts-answers {bid}",
+            f"waiting for the owner's answers to the facts interview ({fi.get('file')}) — when they arrive, this "
+            f"records them in the Brand Guide and re-runs the gate. Or waive instead: {waive}")
+
+
 def blog_posts(st, slug):
     """Stop at any written post that is not approved yet; else write the next one."""
     for pid, p in st["pages"].items():
@@ -91,8 +127,15 @@ def blog_posts(st, slug):
 
 
 def main():
-    slug = sys.argv[1]
+    global PAUSE, SLUG
+    slug = SLUG = sys.argv[1]
     st = S.load(slug)
+    if "--continue" in sys.argv[2:] and st.get("review_pause"):
+        p = st.pop("review_pause")
+        S.save(slug, st)
+        from lib import append, client_dir, now
+        append(client_dir(slug) / "log.md", f"- REVIEW CONTINUED {now()[:16]} · after {p['step']} (run {p['run_id']}) · Paul typed /next\n")
+    PAUSE = st.get("review_pause")
     left = R.unfinished(slug)
     if left:
         out("wait", f"/resume {slug}", f"run {left[0]} never finished — you decide: resume it, /verify it, "
@@ -140,12 +183,18 @@ def main():
             out("run", f"/build {slug} pilot-corrections", "apply your pilot corrections to the specs before the next batch")
         files = b.get("files") or {}
         if state == "planned":
-            out("run", f"/build {slug} batch {bid}", f"briefs for batch {bid} ({b['label']})")
+            evidence_and_briefs(st, slug, b)
         if not S.check(st, f"batch:{bid}:briefs")[0]:
             out("decision", f"/approve {slug} batch:{bid}:briefs --files {q(files.get('briefs') or [])}",
-                f"the briefs for batch {bid} are ready for your approval (outline before prose)")
+                f"the briefs for batch {bid} are ready for your approval (outline before prose; one brief per page, "
+                "each written in its own run)")
         if state == "briefs_written":
-            out("run", f"/build {slug} batch {bid} drafts", f"drafts, self-critique and semantic review for batch {bid}")
+            for pid in b["pages"]:    # CM-043: one page per run
+                if not S.page_stage(st, pid, "draft"):
+                    out("run", f"/build {slug} draft {bid} {pid}", f"draft and self-critique for {pid} (its own run)")
+            out("run", f"/build {slug} batch {bid} drafts",
+                f"batch review for {bid}: every draft side by side (portability, FAQ and heading collisions) and the "
+                "semantic review table")
         drafts = b.get("drafts") or {}
         if not S.check(st, f"batch:{bid}:drafts")[0]:
             n = b.get("sem_findings") or 0

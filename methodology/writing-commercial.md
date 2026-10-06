@@ -4,7 +4,7 @@ Adapted 2026-10-02: superlative opener per CM-020, location structure per CM-023
 Rules are cited by ID from `methodology/rulings.md`; page structures and conformance checks live in
 `methodology/specs/` (homepage, service, location, county-hub, about). Process matches the live BB
 Commercial Content Writer gem: Stage 0–1 plan → approval → Stage 2 draft → Stage 3 self-critique
-(E1–E9) → Stage 4 semantic review (SEM-1–SEM-8, report only) → Paul approves the drafts and picks the SEM
+(E1–E10) → Stage 4 semantic review (SEM-1–SEM-8, report only) → Paul approves the drafts and picks the SEM
 items in one step → apply only those and re-check.
 
 ## A — Hard constraints (override everything, including requests)
@@ -14,6 +14,9 @@ items in one step → apply only those and re-check.
   brand serviced, statistic, founding year, warranty term, licence number or price unless it
   is in Brand Guide Section D. Missing → `[NEED: <exactly what>]` inline, keep going. A draft
   full of NEED markers is correct; a draft with invented specifics is a failure.
+  **A keyword inside a sentence is still a claim (CM-049):** "24-hour water damage cleanup" promises
+  24-hour service. A keyword, variant, PAA question or fan-out query never brings an Unknown or
+  Unverified fact into the copy — if the evidence grid does not show the fact Known, cut or reword the phrase.
 - **A2 Verifiability.** Every entity statement true and checkable.
 - **A3 Variants come from the brief (BB-109).** Never coin one. Missing assigned variant → say so and stop.
 - **A4 Outline before prose.** Deliver the plan (Stage 1) and stop for approval.
@@ -54,8 +57,14 @@ and the common checks in `methodology/specs/README.md`. This standard covers onl
   competitor's page or a sibling page gets rewritten.
 - **C4 Customer words.** Questions, headings and FAQ wording come from customer language (Section I,
   routed PAA questions) where it exists — phrased the way a person would say or type it.
-- **C5 Short and plain.** Short sentences, one idea each. Every section stands alone and names its
-  own entities.
+- **C5 Short and plain — grade 7–8 (CM-047).** Short sentences, one idea each. Every section stands alone and
+  names its own entities. Visitor-facing copy reads at grade 7–8 (the SEO title is excluded); keep the entity
+  terms and named sources, explain a trade term in the next clause.
+- **C7 FAQ answers (CM-048).** Sentence one answers the question in plain English and stands alone.
+  Optionally one more sentence with the company and the next step — worded for this page (never the same
+  sentence on two pages), never a link (CM-005), left off informational answers. A phone number is never
+  the answer; neither is "we offer this service". Fact unknown → teach the general point, invite a look at
+  their case, no number or promise. Cost questions say what drives the cost.
 - **C6 No implementation.** Clean Markdown. No HTML, CSS, schema or JSON-LD.
 
 ## Output — the approved page file
@@ -85,16 +94,18 @@ replaces: <old URL(s) this page replaces, comma-separated — only if any>
   count, H1, superlative yes/no citing Section H2, variant allocation table, full outline
   H1–H4 with the intent each H2 serves, target words, the `[NEED: …]` list. **Stop.**
 - **Stage 2 Draft**, in order, obeying C and the page spec.
-- **Stage 3 Self-critique — all nine, mandatory, each reported:**
+- **Stage 3 Self-critique — all ten, mandatory, each reported:**
   E1 portability (could a passage be pasted onto a sibling page with only the city/service
   swapped? then rewrite; CM-015) · E2 specificity count (≥3 page-specific verifiable facts) ·
   E3 variant check (no consecutive repeats, reserved variant unused, assigned variant used) ·
   E4 chunk lengths (every H2 section ≤375 words) · E5 invention sweep (every concrete noun and
-  number from Section D, else `[NEED]`) · E6 filler sweep (A6, incl. the non-answer opening) ·
+  number from Section D, else `[NEED]`; every keyword-bearing phrase checked against the evidence grid, CM-049) · E6 filler sweep (A6, incl. the non-answer opening) ·
   E7 header check (entity in every header, every H2 a spoken question, no skipped levels, no
-  city in a service-page H tag, one H1) · E8 link check (no cross-page link in prose, FAQ or
+  city in a service-page H tag, one H1; the H1 restate test COM-11, CM-046, with its stripped remainders shown) · E8 link check (no cross-page link in prose, FAQ or
   local context; link-table placeholders present) · E9 human check (sounds like someone who
-  knows the trade). Then the spec's conformance checks for this page type. Report outstanding NEEDs.
+  knows the trade) · E10 reading level (CM-047): `python3 scripts/readability.py <draft> --exclude-terms
+  <entity terms + named sources>` — report the page grade and every paragraph over 10, fix them, then a
+  read-aloud pass (any sentence that needs a second read is rewritten); FAQ answers checked against C7. Then the spec's conformance checks for this page type. Report outstanding NEEDs.
 - **Stage 4 Semantic review — report only; the draft is not changed.** One table **per batch**
   (every page in the batch), saved as `<Client> - Semantic Review - <batch> - REVIEW.md`:
 
@@ -118,7 +129,7 @@ replaces: <old URL(s) this page replaces, comma-separated — only if any>
 
   Paul reviews each draft with the table and approves both at once, picking the SEM items to
   apply: `/approve <slug> batch:<id>:drafts --sem 1,3,4` (or `--sem none`; nothing to pick when the
-  review found nothing). Then apply **only** those items and re-run E1–E9 on every changed section.
+  review found nothing). Then apply **only** those items and re-run E1–E10 on every changed section.
   All pass → done, no further stop. A check fails → the drafts go back to Paul with the failure.
 
 The Drive copy of the gem (`Resources/Gem Instructions/GEM-Commercial-Content-Writer-INSTRUCTIONS.md`)

@@ -22,12 +22,18 @@ For each page from the URL Decision Map (keep / improve / create): page id, type
 **keyword**, **area variant** (from Brand Guide B2; never the B1 reserved one), category
 variant, **H1 decision** including the "The Best" four-condition test (CM-020 — DataforSEO via
 `scripts/dfs.py`, estimate first; never touch an H1 already top 3 for its main keyword),
-**FAQ topics** (including the PAA questions routed to the page in `data/paa/paa-routing.md`), **link targets** (the wheel targets it will get, plus any proposed CM-022
+**FAQ topics** (including the PAA questions routed to the page in `data/paa/paa-routing.md` and the fan-out queries routed to it in `data/fanout/fanout-routing.md`), **link targets** (the wheel targets it will get, plus any proposed CM-022
 exception). Then check the whole site at once and report:
 - **duplicates** — two pages serving the same keyword or intent
 - **variant conflicts** — the same variant at consecutive elements on a page; the reserved
   homepage variant used elsewhere; the pool exhausted (CM-013 — one finding, not many)
 - **FAQ overlap** — the same question on two pages (BB-316), or a question already in C3
+- **claims in keywords and variants** (CM-049) — any keyword, H1 variant or B2/C1 variant that itself
+  makes a claim ("emergency …", "24 hour …", "certified …", "licensed …", "same-day …") is listed with the
+  fact it needs; put it on the page in the plan JSON as `"claims": [{"phrase": "24 hour", "label": "after-hours
+  service", "from": "D:Emergency"}]` so the evidence gate treats that fact as required for the page
+- **coverage** (CM-045) — every PAA question and fan-out query routed to a service or location page has a home
+  (an H2 or FAQ on that page); list any routed row with no home, and every row routed to the blog list
 
 Group the pages into batches: **`pilot` = 1 service + 1 location page** first; then batches of
 about 5 — **service pages by service cluster**, **location pages by county (the county hub
@@ -37,33 +43,64 @@ with its cities)**; homepage and about last. Write `<Client> - Site Plan - REVIE
 Record the H1 decisions in Brand Guide H2 and the URL Decision Map. Paul approves once:
 `/approve <slug> site_plan`.
 
-## Step: batch <id> — briefs (Route A) or sanity check (Route B)
-Only the pages in that batch, from the approved site plan. Each brief
-(`SB/LB/LBCH/HB/AB - <subject> - <Client>`): assigned variants, page type, target, final URL,
-sibling context (C1/C2/C3 + every page already approved in earlier batches), facts from D
-(nothing Unknown/Disputed), customer language (I — words only, CM-027), the H1 decision, the
-audit findings and failed spec checks for this page, the spec's element order.
-`status.py batch <slug> <id> --state briefs_written --files <brief1>,<brief2>,...`. Paul
-approves the batch's briefs in one go.
+## One page per run (CM-043)
+Inside a batch, **each page's brief and each page's draft is its own run** with a fresh context:
+`/build <slug> brief <batch> <page>` and `/build <slug> draft <batch> <page>`. Never write two pages in
+one run. The run records its one page with `status.py page-stage <slug> <page> --stage brief|draft
+--file <file> --run <RUN_ID>`; the script refuses any other page. Sibling consistency is kept by
+(1) the site plan's whole-site check, (2) each run reading the batch's already-written briefs/drafts
+and earlier approved pages, and (3) the **batch review** step, which reads every draft of the batch
+side by side (CM-017's sibling check, now at batch level). The batch stops collect every page for
+Paul's one approval — batches and their two stops are unchanged.
+
+## Step: evidence <id> — the evidence gate (CM-041), before any brief
+For every page in the batch, write its page-specific facts to
+`clients/<slug>/build/evidence/<page_id>.facts.json` — `{"facts": {"<key>": {"value", "status", "source"}}}`
+for each `page:` key its type needs in `methodology/evidence-requirements.json` — taking them **only**
+from the returned proof sheet, the approved Discovery Record, Brand Guide E and public research you can
+cite. Status uses the Brand Guide vocabulary (`Client Confirmed`, `Internally Verified` with a source,
+`Submitted`, `Disputed`, `Unknown`); never upgrade a status, never fill a value you cannot source.
+Section A/D facts are read from the Brand Guide by the script. Then
+`python3 scripts/evidence.py run <slug> --run <RUN_ID> --batch <id>` marks each fact Known / Unknown /
+Unverified / Conflict and scores the page **pass / warn / block**. Report every page's result.
+A **blocked** page gets no brief: `/next` sends it to the facts interview (`/interview <slug> facts <id>`)
+or Paul waives it (`/approve <slug> evidence:<page> --reason "..."`, recorded with his name, date and reason).
+
+## Step: brief <id> <page> — one page (Route A) or sanity check (Route B)
+Only that page, from the approved site plan. The brief (`SB/LB/LBCH/HB/AB - <subject> - <Client>`):
+assigned variants, page type, target, final URL, sibling context (C1/C2/C3, the briefs already written
+in this batch, every page approved in earlier batches), facts from D (nothing Unknown/Disputed), customer
+language (I — words only, CM-027), the H1 decision, the audit findings and failed spec checks for this
+page, the spec's element order, the PAA questions and fan-out queries routed to it. **If the gate
+warned, the brief has an `## Evidence gaps` section** listing every gap from the grid and what the writer
+does instead (`[NEED: …]`, or leave the element out); `status.py page-stage` refuses the brief without it.
+`status.py page-stage <slug> <page> --stage brief --file <brief> --run <RUN_ID>`. When the last page's brief is
+recorded, the batch's briefs are collected automatically for Paul's one approval.
 
 **Route B:** Paul's finished content is checked against `writing-commercial.md` and the Brand
 Guide — list issues per page, never rewrite his copy.
 
-## Step: batch <id> drafts
-Write every page in the batch by `methodology/writing-commercial.md` from its approved brief:
-Stage 0 map and Stage 1 plan per page, Stage 2 draft, Stage 3 self-critique **E1–E9** plus the
-page spec's checks (report all). Check the batch against itself and earlier batches for
-portability failures and FAQ/heading collisions. Link tables stay as placeholders.
-Then **Stage 4 semantic review — one table for the whole batch**, report only (the drafts are not
-changed): `<Client> - Semantic Review - <batch> - REVIEW.md` in `clients/<slug>/build/`.
-`status.py batch <slug> <id> --state drafts_written --files <draft1>,<draft2>,... --sem-table <table> --sem-findings <rows>`.
-Paul reviews each draft **with** the table and approves both at once:
+## Step: draft <id> <page>
+Write that one page by `methodology/writing-commercial.md` from its approved brief: Stage 0 map and
+Stage 1 plan, Stage 2 draft, Stage 3 self-critique **E1–E10** plus the page spec's checks (report all).
+Read the drafts already written in this batch and earlier approved pages so you do not reuse an
+opening angle, heading or FAQ. Link tables stay as placeholders.
+`status.py page-stage <slug> <page> --stage draft --file <draft> --run <RUN_ID>`.
+
+## Step: batch <id> drafts — the batch review (one run, every draft side by side)
+Read every draft in the batch (each written in its own run). Check the batch against itself and
+earlier batches for portability failures (E1 across siblings), opening-angle reuse and FAQ/heading
+collisions; list each in the table. Then **Stage 4 semantic review — one table for the whole batch**,
+report only (the drafts are not changed): `<Client> - Semantic Review - <batch> - REVIEW.md` in
+`clients/<slug>/build/`. `status.py batch <slug> <id> --state drafts_written --sem-table <table>
+--sem-findings <rows>` (the per-page drafts are collected automatically; it refuses if any page lacks its
+own-run draft). Paul reviews each draft **with** the table and approves both at once:
 `/approve <slug> batch:<id>:drafts --sem 1,3,4` (or `--sem none`; no `--sem` at all when the review
 found nothing). Sensitive clients add `--review`, health clients `--practitioner`.
 
 ## Step: batch <id> apply-sem   (only when Paul picked SEM items)
 Apply **only** the SEM items Paul picked (status.json → the batch's `drafts.sem_ids`); routed items go
-to the page or blog list that owns them. Re-run E1–E9 and the spec checks on every changed section.
+to the page or blog list that owns them. Re-run E1–E10 and the spec checks on every changed section.
 - All pass → `status.py batch <slug> <id> --state sem_applied --files <drafts> --checks-passed`. The
   approval is pinned to the applied versions; Paul is not stopped again.
 - Any check fails → `status.py batch <slug> <id> --state sem_check_failed --files <drafts> --note "<check, page>"`.

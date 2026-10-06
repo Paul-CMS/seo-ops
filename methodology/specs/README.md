@@ -70,6 +70,10 @@ These apply on top of each spec's own elements and checks. Audit category §6 On
 | COM-08 | No variant at two consecutive elements (URL → title → H1 → first H2); the homepage's reserved variant appears nowhere else | CM-024 |
 | COM-09 | No cross-page link in body prose, an FAQ answer or local context — links live only in their tables (High if a table is missing) | BB-206, CM-005 |
 | COM-10 | Tables only for real comparisons, lists only for real steps | WC voice |
+| COM-11 | **H1 restate test** (pages whose title names a service or category: homepage, service, location, county hub): strip the brand and the area entity / area variant / city from the SEO title and the H1 — and "The Best" when Brand Guide H2 approves it for this page. If what is left of the H1 is the title's service or category term unchanged, or that term plus one filler word (service, services, company, experts, pros, specialists, solutions, near me, for, local), it fails: rewrite with a different service variant (BB-304). BB-302/BB-305 formats are unchanged | CM-046, BB-304 |
+| COM-12 | **FAQ answers:** sentence one answers the question in plain English and stands alone (BB-316). An optional second sentence gives the company and the next step — never identical on two pages, never a link, left off purely informational answers. A phone number, "call us", "contact us for a quote" or "we offer this service" is never the answer. Fact Unknown → teach the general point and invite a look at their case, no number or promise. A cost question names what drives the cost | CM-048, BB-316, CM-005, CM-015 |
+| COM-13 | **Reading level:** visitor-facing copy (opening, body, FAQ answers, meta description, CTA) at grade 7–8 — `scripts/readability.py` page average ≤ 8.9, no paragraph over 10; the SEO title is excluded. Low | CM-047 |
+| COM-14 | **A keyword is still a claim:** no keyword, variant, PAA question or fan-out query brings an Unknown or Unverified fact into the copy ("24-hour…", "emergency…", "certified…" need that fact Known in the evidence grid) | CM-049, CM-016 |
 
 ## Check IDs
 

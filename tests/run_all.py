@@ -83,6 +83,7 @@ class Agent:
         self.sem_findings, self.fail_checks_once = {}, set()
         self.jonie_changes_wording, self.verify_outputs = set(), []
         self.wp_reports = []
+        self.evidence_gaps = {}   # page id -> fact keys the page's facts file leaves out (CM-041 tests)
         self.c = SB / "clients" / slug
 
     def sh(self, cmd):
@@ -121,6 +122,16 @@ class Agent:
     def batch_pages(self, bid):
         return next(b for b in status(self.slug)["build"]["batches"] if b["id"] == bid)["pages"]
 
+    def write_facts(self, pid):
+        """The page's facts file, from the 'proof sheet' — every page: fact its type needs, minus the gaps."""
+        reqs = json.loads((SB / "methodology" / "evidence-requirements.json").read_text())
+        ptype = status(self.slug)["pages"][pid]["type"]
+        facts = {it["from"][5:]: {"value": f"{it['label']} for {pid}", "status": "Client Confirmed",
+                                  "source": "Client Proof Sheet - RETURNED"}
+                 for it in reqs["types"][ptype] if it["from"].startswith("page:")
+                 and it["from"][5:] not in self.evidence_gaps.get(pid, set())}
+        return self.w(f"build/evidence/{pid}.facts.json", json.dumps({"facts": facts}))
+
     def do(self, command):
         wd = command.split()
         name, args = wd[0], wd[2:]
@@ -137,7 +148,7 @@ class Agent:
             rid = self.start("crawl"); self.step(rid, "S05"); self.fin(rid, "crawl (fake)")
         elif (name, sub) == ("/discovery", "data"):
             rid = self.start("discovery", "data")
-            for s in ("S06", "S07", "S08", "S11", "S19", "S20"): self.step(rid, s)
+            for s in ("S06", "S07", "S08", "S11", "S19", "S20", "S21"): self.step(rid, s)
             for s in ("S09", "S10"): self.step(rid, s, "skipped", "BrightLocal upload not in yet")
             self.fin(rid, "data")
         elif (name, sub) == ("/discovery", "audit"):
@@ -150,7 +161,7 @@ class Agent:
             rid = self.start("discovery", "sheet-returned")
             self.mark("proof_sheet_returned", self.w("discovery/Test Co - Client Proof Sheet - RETURNED.md")); self.fin(rid, "returned")
         elif (name, sub) == ("/discovery", "reconcile"):
-            rid = self.start("discovery", "reconcile"); self.mark("reconciled", self.w("brand-guide.md", "bg\n")); self.fin(rid, "reconciled")
+            rid = self.start("discovery", "reconcile"); self.mark("reconciled", self.w("brand-guide.md", TEST_BG)); self.fin(rid, "reconciled")
         elif (name, sub) == ("/discovery", "signoff"):
             rid = self.start("discovery", "signoff")
             self.mark("discovery_summary", self.w("discovery/Test Co - Discovery Summary - REVIEW.md")); self.fin(rid, "signoff")
@@ -171,20 +182,33 @@ class Agent:
                             {"id": "h1", "kind": "homepage", "label": "Home + about", "pages": ["home", "about"]}]}
             pj = self.w("build/site-plan.json", json.dumps(plan)); pm = self.w("build/Test Co - Site Plan - REVIEW.md")
             self.sh(f"python3 scripts/status.py plan {S} --file {shlex.quote(pm)} --json {pj}"); self.fin(rid, "site plan")
+        elif (name, sub) == ("/build", "evidence"):
+            bid = args[1]; rid = self.start("build", "evidence", batch=bid)
+            for p in self.batch_pages(bid):
+                self.write_facts(p)
+            self.sh(f"python3 scripts/evidence.py run {S} --run {rid} --batch {bid}"); self.fin(rid, f"evidence {bid}")
+        elif (name, sub) in (("/build", "brief"), ("/build", "draft")):
+            bid, pid = args[1], args[2]
+            rid = self.start("build", sub, batch=bid, page=pid)
+            if not rid:
+                return True
+            if sub == "brief":
+                gaps = status(S)["pages"][pid]["evidence"]["result"] in ("warn", "block")
+                f = self.w(f"build/B-{pid}.md", f"# Brief {pid}\n" + ("\n## Evidence gaps\n- see the grid\n" if gaps else ""))
+            else:
+                f = self.w(f"build/D-{pid}.md", page_file(pid, "v1"))
+            self.sh(f"python3 scripts/status.py page-stage {S} {pid} --stage {sub} --file {f} --run {rid}")
+            self.fin(rid, f"{sub} {pid}")
         elif (name, sub) == ("/build", "batch"):
-            bid = args[1]; stage = args[2] if len(args) > 2 else "briefs"
-            rid = self.start("build", {"briefs": "batch"}.get(stage, stage), batch=bid)
+            bid = args[1]; stage = args[2]
+            rid = self.start("build", stage, batch=bid)
             if not rid:
                 return True
             pages = self.batch_pages(bid)
-            if stage == "briefs":
-                fs = [self.w(f"build/B-{p}.md") for p in pages]
-                self.sh(f"python3 scripts/status.py batch {S} {bid} --state briefs_written --files {','.join(fs)}")
-            elif stage == "drafts":
-                fs = [self.w(f"build/D-{p}.md", page_file(p, "v1")) for p in pages]
+            if stage == "drafts":   # the batch review: every per-page draft side by side + the SEM table
                 sem = self.w(f"build/Test Co - Semantic Review - {bid} - REVIEW.md")
                 n = self.sem_findings.get(bid, 1)
-                self.sh(f"python3 scripts/status.py batch {S} {bid} --state drafts_written --files {','.join(fs)} "
+                self.sh(f"python3 scripts/status.py batch {S} {bid} --state drafts_written "
                         f"--sem-table {shlex.quote(sem)} --sem-findings {n}")
             else:  # apply-sem
                 fs = [self.w(f"build/D-{p}.md", page_file(p, "v2")) for p in pages]
@@ -195,6 +219,14 @@ class Agent:
                 else:
                     self.sh(f"python3 scripts/status.py batch {S} {bid} --state sem_applied --files {','.join(fs)} --checks-passed")
             self.fin(rid, f"batch {bid} {stage}")
+        elif (name, sub) == ("/interview", "facts"):
+            bid = args[1]; rid = self.start("interview", "facts", batch=bid)
+            self.sh(f"python3 scripts/evidence.py questions {S} --run {rid} --batch {bid}"); self.fin(rid, f"facts pack {bid}")
+        elif (name, sub) == ("/interview", "facts-answers"):
+            bid = args[1]; rid = self.start("interview", "facts-answers", batch=bid)
+            for p in self.batch_pages(bid):   # the owner answered: the gaps are filled
+                self.evidence_gaps.pop(p, None); self.write_facts(p)
+            self.sh(f"python3 scripts/evidence.py run {S} --run {rid} --batch {bid}"); self.fin(rid, f"facts answers {bid}")
         elif (name, sub) == ("/build", "pilot-corrections"):
             rid = self.start("build", "pilot-corrections")
             self.sh(f'python3 scripts/status.py pilot-corrections {S} --note "H1 tweak in specs/service.md"'); self.fin(rid, "pilot corrections")
@@ -269,12 +301,42 @@ class Agent:
         return True
 
     def handle_wait(self, n):
-        if "sheet-returned" in n["command"]:
+        if "sheet-returned" in n["command"] or "facts-answers" in n["command"]:
             return self.do(n["command"])
         if " published " in n["command"]:
             jonie_publishes(self, n["command"].split()[-1])
             return self.do(n["command"])
         return False
+
+
+TEST_BG = """# Test Co - Brand Guide
+
+## Section A — Entity foundation
+
+| # | Field | Value | Status |
+|---|---|---|---|
+| 1 | Brand entity (GBP name, exactly) | Test Co | Paul Approved |
+| 8 | Phone | (417) 555-0100 | Client Confirmed |
+
+## Section D — Verified facts
+
+| Fact | Value | Status | Source |
+|---|---|---|---|
+| Founding year / years in business | 2009 | Client Confirmed | Client Proof Sheet - RETURNED |
+| Licence numbers and classes | MO-RC-1234 | Client Confirmed | State licence board |
+| Insurance / bonded status | Insured, $2M | Client Confirmed | Certificate on file |
+| Warranty terms | 10-year workmanship | Client Confirmed | Client Proof Sheet - RETURNED |
+| Free estimate — and what free means | Free on-site inspection | Client Confirmed | Client Proof Sheet - RETURNED |
+| Google rating and review count (date checked) | 4.8 / 61 (2026-10-01) | Internally Verified | GBP, checked 2026-10-01 |
+| Named staff for on-page use | Pat Test, owner | Client Confirmed | Client Proof Sheet - RETURNED |
+
+### D2 · Unsupported claims
+
+| Claim (verbatim) | Where it appears | Client answer | Action |
+|---|---|---|---|
+
+## Section E — Service area truth
+"""
 
 
 def page_file(pid, version):
@@ -322,7 +384,7 @@ def jonie_publishes(ag, bid):
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
 
 
-def walkthrough(slug, kind="full", industry="roofing", max_posts=2, extra_init="", setup=None):
+def walkthrough(slug, kind="full", industry="roofing", max_posts=2, extra_init="", setup=None, on_decision=None):
     """/new-client then /next until blog posts; returns (transcript, decisions, runs, agent)."""
     (SB / "tests" / ".state" / "wp.json").unlink(missing_ok=True)   # a fresh fake WordPress per client
     sh(f'python3 scripts/status.py init {slug} --name "Test Co" --domain test.example --type {kind} '
@@ -332,13 +394,13 @@ def walkthrough(slug, kind="full", industry="roofing", max_posts=2, extra_init="
         setup(ag)
     rid = ag.start("new-client"); ag.fin(rid, "set up")
     log, prev, decisions, runs = [], None, 0, 0
-    for _ in range(160):
+    for _ in range(700):
         _, out = sh(f"python3 scripts/next.py {slug}")
         try:
             n = json.loads(out)
         except ValueError:
             log.append(f"next.py crashed: {out[:300]}"); break
-        log.append(f"{n['kind']:8} {n['command']}")
+        log.append(f"{n['kind']:8} {n['command']}" + (f" [{n['why'].split()[0]}]" if n["kind"] == "review" else ""))
         if n["kind"] == "run":
             if prev == n["command"]:
                 log.append("LOOP"); break
@@ -356,6 +418,11 @@ def walkthrough(slug, kind="full", industry="roofing", max_posts=2, extra_init="
             if code:
                 log.append(f"APPROVE FAILED: {out[:300]}"); break
             decisions += 1; prev = None
+            if on_decision:
+                on_decision(line)
+        elif n["kind"] == "review":     # Paul looks, then types /next: the command clears the pause
+            sh(f"python3 scripts/next.py {slug} --continue")
+            prev = None
         else:
             waits = log[-6:].count(log[-1])
             if waits >= 3:
@@ -420,6 +487,16 @@ def t_walkthrough_full():
     check("held link rows are handed to Jonie once their target is live", held == 0 and
           any((SB / "clients/wt-full/handoffs").glob("H-*link_table.csv")), held)
     rec = SB / "clients" / "wt-full"
+    lm = (rec / "log.md").read_text()
+    import re as _re
+    for stage in ("BRIEF", "DRAFT"):
+        rows = _re.findall(rf"^- {stage} \S+ · run (\S+) · (\S+) ·", lm, _re.M)
+        check(f"every {stage.lower()} came from its own run, one page each (CM-043)",
+              len(rows) == 8 and len({r for r, _ in rows}) == 8 and len({p for _, p in rows}) == 8, rows)
+    check("the evidence gate ran on every page before its brief (CM-041)",
+          lm.count("- EVIDENCE ") >= 8 and lm.index("- EVIDENCE ") < lm.index("- BRIEF "))
+    check("producing stages pause for review by default (CM-044)", any(l.startswith("review") for l in log)
+          and "REVIEW CONTINUED" in lm, [l for l in log if l.startswith("review")][:3])
     check("records generated: Handoff Log, decisions, checklist, approval record",
           all((rec / f).exists() for f in ("handoff-log.md", "decisions.md", "document-checklist.md", "approval-record.md")))
     log_md = (rec / "log.md").read_text()
@@ -521,7 +598,7 @@ def t_rollback():
     st = status("rb-co"); st["gates"]["audit_approved"] = {"state": "approved", "files": {}}
     st["gates"]["entity_approved"] = {"state": "approved", "files": {}}
     (SB / "clients/rb-co/status.json").write_text(json.dumps(st))
-    for s in [f"S{i:02d}" for i in range(1, 21)]:
+    for s in [f"S{i:02d}" for i in range(1, 22)]:
         st.setdefault("audit_steps", {})[s] = {"outcome": "done"}
     (SB / "clients/rb-co/status.json").write_text(json.dumps(st))
     (SB / "tests/.state/wp.json").unlink(missing_ok=True)
@@ -807,7 +884,7 @@ def t_wordpress():
     for g in ("entity_approved", "audit_approved", "brand_guide_approved", "proof_sheet_approved"):
         st["gates"][g] = {"state": "approved", "files": {}}
     st["imported_conditions"] = {"proof_sheet_returned": "test"}
-    st["audit_steps"] = {f"S{i:02d}": {"outcome": "done"} for i in range(1, 21)}
+    st["audit_steps"] = {f"S{i:02d}": {"outcome": "done"} for i in range(1, 22)}
     (ag.c / "status.json").write_text(json.dumps(st))
     LIVE = '--live --backup-confirmed "ManageWP backup 10:00, confirmed by Paul"'
     rid = ag.start("implement", "structural")
@@ -873,8 +950,362 @@ def t_wordpress():
     setmode()
 
 
+
+def build_ready(slug, gaps=None):
+    """A client with discovery signed off and the site plan approved, ready for the pilot batch."""
+    sh(f'python3 scripts/status.py init {slug} --name "Test Co" --domain test.example --type full --industry roofing --route A')
+    ag = Agent(slug); rid = ag.start("new-client"); ag.fin(rid, "set up")
+    st = status(slug)
+    for g in ("entity_approved", "proof_sheet_approved", "audit_approved", "brand_guide_approved", "discovery_signed_off",
+              "blockers_cleared"):
+        st["gates"][g] = {"state": "approved", "files": {}}
+    st["imported_conditions"] = {"proof_sheet_returned": "test"}
+    st["audit_steps"] = {f"S{i:02d}": {"outcome": "done"} for i in range(1, 22)}
+    (ag.c / "status.json").write_text(json.dumps(st))
+    ag.w("brand-guide.md", TEST_BG)
+    ag.evidence_gaps = gaps or {}
+    ag.do(f"/build {slug} plan")
+    paul(f"/approve {slug} site_plan")
+    return ag
+
+
+def nxt(slug):
+    """What /next would do when Paul types it (a review pause is cleared first, as the command does)."""
+    return json.loads(sh(f"python3 scripts/next.py {slug} --continue")[1])
+
+
+def t_evidence_gate():
+    S = "ev-co"
+    ag = build_ready(S, {"svc-roof-repair": {"service_scope", "service_process"}, "loc-springfield": {"neighborhoods"}})
+    code, out = sh(f"python3 scripts/run.py start {S} build --step brief --batch pilot --page loc-springfield")
+    check("evidence gate: no brief before the gate has run", code == 4 and "evidence gate has not run" in out, out)
+    check("evidence gate: /next runs the gate before any brief", nxt(S)["command"] == f"/build {S} evidence pilot", nxt(S))
+    ag.do(f"/build {S} evidence pilot")
+    st = status(S)
+    ev = {p: st["pages"][p]["evidence"]["result"] for p in ("svc-roof-repair", "loc-springfield")}
+    check("evidence gate: two required facts unknown → BLOCK", ev["svc-roof-repair"] == "block", ev)
+    check("evidence gate: one required fact unknown → WARN", ev["loc-springfield"] == "warn", ev)
+    grid = (SB / st["pages"]["svc-roof-repair"]["evidence"]["grid"]).read_text()
+    check("evidence grid: each fact marked Known / Unknown with its source (Section A/D + proof sheet)",
+          "**Unknown**" in grid and "**Known**" in grid and "Client Proof Sheet" in grid and "State licence board" in grid, grid[:500])
+    lm = lambda: (ag.c / "log.md").read_text()
+    check("evidence gate: every result is logged", "svc-roof-repair: BLOCK" in lm() and "loc-springfield: WARN" in lm())
+    n = nxt(S)
+    check("evidence gate: /next briefs the warned page, never the blocked one",
+          n["command"] == f"/build {S} brief pilot loc-springfield", n)
+    rid = ag.start("build", "brief", batch="pilot", page="loc-springfield")
+    f = ag.w("build/B-loc-springfield.md", "# Brief\n")
+    code, out = sh(f"python3 scripts/status.py page-stage {S} loc-springfield --stage brief --file {f} --run {rid}")
+    check("evidence gate (warn): a brief without an 'Evidence gaps' section is refused", code != 0 and "Evidence gaps" in out, out)
+    f = ag.w("build/B-loc-springfield.md", "# Brief\n\n## Evidence gaps\n- neighborhoods: [NEED]\n")
+    code, out = sh(f"python3 scripts/status.py page-stage {S} loc-springfield --stage brief --file {f} --run {rid}")
+    check("evidence gate (warn): the brief that flags its gaps is accepted", code == 0, out)
+    ag.fin(rid, "brief")
+    code, out = sh(f"python3 scripts/run.py start {S} build --step brief --batch pilot --page svc-roof-repair")
+    check("evidence gate (block): the blocked page gets no brief", code == 4 and "blocked by the evidence gate" in out, out)
+    n = nxt(S)
+    check("evidence gate (block): /next sends it to the facts interview and shows the waiver line",
+          n["command"] == f"/interview {S} facts pilot" and f"/approve {S} evidence:svc-roof-repair --reason" in n["why"], n)
+    ag.do(f"/interview {S} facts pilot")
+    fi = status(S)["build"]["batches"][0]["facts_interview"]
+    pack = (SB / fi["file"]).read_text()
+    asked = pack.split("<!--")[0]
+    check("facts interview: targeted questions for the blocked page's gaps only",
+          fi["pages"] == ["svc-roof-repair"] and "What the service includes" in asked and "How the service is delivered" in asked
+          and "neighborhoods" not in asked.lower() and fi["questions"] <= 15, pack[:600])
+    check("facts interview: logged, and nothing is sent automatically", "FACTS INTERVIEW" in lm() and "Paul sends it" in pack)
+    n = nxt(S)
+    check("facts interview: /next then waits for the owner's answers (or the waiver)",
+          n["kind"] == "wait" and "facts-answers" in n["command"] and "evidence:svc-roof-repair" in n["why"], n)
+    # --- the waiver
+    code, out = paul(f"/approve {S} evidence:svc-roof-repair")
+    check("waiver: refused without a reason", code != 0 and "reason" in out, out)
+    code, out = paul(f'/approve {S} evidence:loc-springfield --reason "not needed"')
+    check("waiver: a page that is not blocked cannot be waived", code != 0 and "not blocked" in out, out)
+    code, out = sh(f'python3 scripts/approve.py {S} evidence:svc-roof-repair --reason "Claude decided"')
+    check("waiver: Claude cannot waive (only Paul's typed /approve)", code == 7, out)
+    code, out = paul(f'/approve {S} evidence:svc-roof-repair --reason "owner away until May; scope taken from his 2025 quote sheet"')
+    w = (status(S)["pages"]["svc-roof-repair"]["evidence"] or {}).get("waiver") or {}
+    check("waiver: recorded in status.json with Paul's name, date and reason",
+          code == 0 and w.get("by") == "Paul" and w.get("at", "")[:4] == "2026" and "quote sheet" in w.get("reason", ""), out)
+    check("waiver: recorded in log.md", "## WAIVER" in lm() and "quote sheet" in lm())
+    check("waiver: the waived page may now be briefed", sh(f"python3 scripts/status.py require {S} evidence:svc-roof-repair")[0] == 0)
+    ag.evidence_gaps["svc-roof-repair"] = {"service_scope", "service_process", "timeframe"}
+    rid = ag.start("build", "evidence", batch="pilot")
+    for p in ("svc-roof-repair", "loc-springfield"):
+        ag.write_facts(p)
+    sh(f"python3 scripts/evidence.py run {S} --run {rid} --batch pilot"); ag.fin(rid, "evidence again")
+    code, out = sh(f"python3 scripts/status.py require {S} evidence:svc-roof-repair")
+    check("waiver: when the facts change, the old waiver no longer counts", code == 4 and "older grid" in out, out)
+    # --- the facts answers
+    ag.do(f"/interview {S} facts-answers pilot")
+    check("facts answers: the gate re-runs and the page passes", status(S)["pages"]["svc-roof-repair"]["evidence"]["result"] == "pass")
+    check("facts answers: /next goes on to that page's brief", nxt(S)["command"] == f"/build {S} brief pilot svc-roof-repair", nxt(S))
+    ag.do(f"/build {S} brief pilot svc-roof-repair")
+    check("the batch's briefs are collected for Paul's one approval",
+          "BRIEFS COLLECTED" in lm() and nxt(S)["command"].startswith(f"/approve {S} batch:pilot:briefs"), nxt(S))
+    # --- scoring edge cases
+    ag.write_facts("svc-gutters")
+    _, out = sh(f"python3 scripts/evidence.py show {S} svc-gutters")
+    check("evidence gate: every fact known → PASS", "Result: PASS" in out, out[:300])
+    fp = ag.c / "build/evidence/svc-gutters.facts.json"
+    fj = json.loads(fp.read_text()); fj["facts"]["service_scope"]["status"] = "Disputed"; fp.write_text(json.dumps(fj))
+    _, out = sh(f"python3 scripts/evidence.py show {S} svc-gutters")
+    check("evidence gate: a required fact in conflict → BLOCK", "Result: BLOCK" in out and "conflict" in out, out[:400])
+    fj["facts"]["service_scope"] = {"value": "x", "status": "Client Confirmed", "source": ""}; fp.write_text(json.dumps(fj))
+    _, out = sh(f"python3 scripts/evidence.py show {S} svc-gutters")
+    check("evidence gate: a confirmed value with no source is Unverified, not Known", "| **Unverified** |" in out, out[:500])
+    ag.write_facts("svc-gutters")
+    st = status(S); st["pages"]["svc-gutters"]["claims"] = [{"phrase": "24 hour", "label": "after-hours service", "from": "D:Emergency"}]
+    (ag.c / "status.json").write_text(json.dumps(st))
+    _, out = sh(f"python3 scripts/evidence.py show {S} svc-gutters")
+    check("evidence gate: a keyword that makes a claim adds that fact as required (CM-049)",
+          "Claim in '24 hour': after-hours service | required | **Unknown**" in out and "Result: WARN" in out, out[:900])
+    code, out = sh("python3 -c \"import sys; sys.path.insert(0,'scripts'); import evidence as E; "
+                   "r=[{'need':'required','mark':'Known','label':'a'},{'need':'required','mark':'Known','label':'b'},"
+                   "{'need':'supporting','mark':'Unknown','label':'c'}]; print(E.score(r, E.requirements()['thresholds'])[0])\"")
+    check("evidence gate: fewer than 3 known facts → BLOCK (CM-015)", out.strip() == "block", out)
+
+
+def t_one_page_per_run():
+    S = "op-co"
+    ag = build_ready(S)
+    ag.do(f"/build {S} evidence pilot")
+    code, out = sh(f"python3 scripts/run.py start {S} build --step brief --batch pilot")
+    check("one page per run: a brief run must name its one page", code == 2 and "--page" in out, out)
+    rid = ag.start("build", "brief", batch="pilot", page="svc-roof-repair")
+    f = ag.w("build/B-loc-springfield.md", "# b\n")
+    code, out = sh(f"python3 scripts/status.py page-stage {S} loc-springfield --stage brief --file {f} --run {rid}")
+    check("one page per run: a run cannot record a second page", code != 0 and "One page per run" in out, out)
+    code, out = sh(f"python3 scripts/run.py finish {S} {rid} --summary x")
+    check("one page per run: the run cannot finish without its own page's brief", code == 12 and "svc-roof-repair" in out, out)
+    f = ag.w("build/B-svc-roof-repair.md", "# b\n")
+    sh(f"python3 scripts/status.py page-stage {S} svc-roof-repair --stage brief --file {f} --run {rid}"); ag.fin(rid, "brief")
+    b = lambda: next(x for x in status(S)["build"]["batches"] if x["id"] == "pilot")
+    check("one page per run: one brief alone does not reach the batch stop", b()["state"] == "planned", b()["state"])
+    code, out = sh(f"python3 scripts/status.py batch {S} pilot --state briefs_written")
+    check("one page per run: the batch will not collect while a page has no brief of its own",
+          code != 0 and "loc-springfield has no brief" in out, out)
+    ag.do(f"/build {S} brief pilot loc-springfield")
+    runs = [status(S)["pages"][p]["files"]["brief"]["run"] for p in ("svc-roof-repair", "loc-springfield")]
+    check("one page per run: the last page's brief collects the batch for one approval, each from its own run",
+          b()["state"] == "briefs_written" and len(b()["files"]["briefs"]) == 2 and len(set(runs)) == 2, b())
+    n = nxt(S)
+    check("one page per run: one stop for the whole batch's briefs", n["kind"] == "decision" and "batch:pilot:briefs" in n["command"], n)
+    paul(n["command"])
+    check("one page per run: drafts start one page at a time", nxt(S)["command"] == f"/build {S} draft pilot svc-roof-repair", nxt(S))
+    ag.do(f"/build {S} draft pilot svc-roof-repair")
+    sem = ag.w("build/sem.md")
+    code, out = sh(f"python3 scripts/status.py batch {S} pilot --state drafts_written --sem-table {sem} --sem-findings 0")
+    check("one page per run: the batch review waits until every page has its own draft", code != 0 and "loc-springfield has no draft" in out, out)
+    check("one page per run: /next drafts the next page in its own run", nxt(S)["command"] == f"/build {S} draft pilot loc-springfield", nxt(S))
+    ag.do(f"/build {S} draft pilot loc-springfield")
+    check("one page per run: then one batch review run for all the drafts", nxt(S)["command"] == f"/build {S} batch pilot drafts", nxt(S))
+    st = status(S); keep = st["pages"]["loc-springfield"]["files"]["draft"]["run"]
+    st["pages"]["loc-springfield"]["files"]["draft"]["run"] = st["pages"]["svc-roof-repair"]["files"]["draft"]["run"]
+    (ag.c / "status.json").write_text(json.dumps(st))
+    code, out = sh(f"python3 scripts/status.py batch {S} pilot --state drafts_written --sem-table {sem} --sem-findings 0")
+    check("one page per run: two drafts from the same run are refused", code != 0 and "same run" in out, out)
+    st["pages"]["loc-springfield"]["files"]["draft"]["run"] = keep; (ag.c / "status.json").write_text(json.dumps(st))
+    code, out = sh(f"python3 scripts/status.py batch {S} pilot --state drafts_written --files clients/{S}/build/D-svc-roof-repair.md "
+                   f"--sem-table {sem} --sem-findings 0")
+    check("one page per run: the batch collects exactly the per-page drafts", code != 0 and "exactly the per-page" in out, out)
+    code, out = sh(f"python3 scripts/status.py batch {S} pilot --state drafts_written --sem-table {sem} --sem-findings 0")
+    check("one page per run: the batch review collects both drafts + the table for Paul's one approval",
+          code == 0 and len(b()["files"]["drafts"]) == 3, out)
+
+
+def t_modes():
+    sh('python3 scripts/status.py init md-co --name M --domain m.example --type full --industry roofing')
+    ag = Agent("md-co"); rid = ag.start("new-client"); ag.fin(rid, "set up")
+    _, out = sh("python3 scripts/status.py modes md-co")
+    check("modes: every producing stage starts in review", " auto " not in out and "build:draft" in out and "review" in out, out)
+    code, out = paul("/approve md-co mode:build:draft=auto")
+    check("modes: auto is refused before the stage has passed the pilot", code != 0 and "pilot" in out, out)
+    code, out = paul("/approve md-co mode:entity_approved=auto")
+    check("modes: a decision can never be auto", code != 0 and "decision" in out, out)
+    code, out = paul("/approve md-co mode:batch:pilot:briefs=auto")
+    check("modes: a batch approval can never be auto", code != 0 and "decision" in out, out)
+    code, out = paul("/approve md-co mode:build:plan=auto")
+    check("modes: a stage with no pilot always stays in review", code != 0 and "always stays in review" in out, out)
+    code, out = sh("python3 scripts/approve.py md-co mode:build:draft=review")
+    check("modes: only Paul switches a mode (no typed /approve → refused)", code == 7, out)
+
+    switched = []
+
+    def on_dec(line):     # right after Paul approves the pilot drafts, he switches four stages to auto
+        if "batch:pilot:drafts" in line and not switched:
+            for stg in ("build:evidence", "build:brief", "build:draft", "build:drafts"):
+                switched.append((stg,) + paul(f"/approve wt-modes mode:{stg}=auto"))
+
+    def setup(a):
+        a.sem_findings = {"pilot": 0}
+    log, decisions, runs, ag2 = walkthrough("wt-modes", setup=setup, max_posts=0, on_decision=on_dec)
+    check("modes: Paul switches stages to auto after the pilot", switched and all(c == 0 for _, c, _ in switched[:4]), switched[:4])
+    cut = next((i for i, l in enumerate(log) if l.startswith("decision") and "batch:pilot:drafts" in l), len(log))
+    auto = ("[build:evidence]", "[build:brief]", "[build:draft]", "[build:drafts]")
+    before = [l for l in log[:cut] if l.startswith("review") and l.endswith(auto)]
+    after = [l for l in log[cut + 1:] if l.startswith("review") and l.endswith(auto)]
+    check("modes: in review those stages paused after every run", len(before) > 0, before[:3])
+    check("modes: in auto they chain straight on (no pause)", not after, after[:3])
+    check("modes: stages still in review keep pausing",
+          any(l.startswith("review") and not l.endswith(auto) for l in log[cut:]), [l for l in log[cut:] if l.startswith("review")][:3])
+    stops = {}
+    for l in log:
+        if l.startswith("decision") and " batch:" in l:
+            bid = l.split(" batch:")[1].split(":")[0]; stops[bid] = stops.get(bid, 0) + 1
+    check("modes: decisions still stop in auto (two stops per batch)", stops and all(v == 2 for v in stops.values()), stops)
+    check("modes: the walkthrough with auto stages completes", log[-1] == "DONE" and not ag2.errors, log[-4:] + ag2.errors[:2])
+    st = status("wt-modes"); lm = (SB / "clients/wt-modes/log.md").read_text()
+    check("modes: each switch recorded in status.json and log.md",
+          st["modes"].get("build:draft", {}).get("mode") == "auto" and st["modes"]["build:draft"]["by"] == "Paul"
+          and len(st.get("mode_history", [])) == 4 and lm.count("## MODE") == 4, st.get("modes"))
+    code, out = paul("/approve global mode:build:ship=auto")
+    cfg = json.loads((SB / "config.json").read_text())
+    check("modes: a global switch is allowed once a client has passed the pilot, and recorded",
+          code == 0 and cfg["stage_modes"]["build:ship"]["mode"] == "auto"
+          and "GLOBAL" in (SB / "clients/md-co/log.md").read_text(), out)
+    _, out = sh("python3 scripts/status.py modes md-co")
+    check("modes: the global setting applies to every client", "build:ship           auto   (global)" in out, out)
+    paul("/approve md-co mode:build:ship=review")
+    _, out = sh("python3 scripts/status.py modes md-co")
+    check("modes: a client's own setting beats the global one", "build:ship           review (this client)" in out, out)
+    code, out = paul("/approve global mode:discovery:audit=auto")
+    check("modes: a global auto is refused for a stage with no pilot", code != 0, out)
+    paul("/approve global mode:build:ship=review")
+
+
+def t_fanout():
+    sh('python3 scripts/status.py init fo-co --name F --domain f.example --type full --industry roofing')
+    ag = Agent("fo-co"); rid = ag.start("new-client"); ag.fin(rid, "set up")
+    (SB / "tests" / ".state").mkdir(parents=True, exist_ok=True)
+    (SB / "tests" / ".state" / "dfs.json").write_text(json.dumps({"balance": 10.0, "cost": 0.003}))
+    svc = ag.w("tmp/services.txt", "roof repair\n")
+    reg = ag.w("tmp/c3.txt", "How much does roof repair cost?\n")
+    rid = ag.start("verify")
+    base = f"python3 tests/fakes.py fanout run fo-co --run {rid} --services-file {svc} --cities Springfield,Nixa --registry {reg}"
+    _, out = sh(f"python3 tests/fakes.py fanout estimate fo-co --services-file {svc} --cities Springfield,Nixa")
+    check("fan-out: estimated from the confirmed price ($0.0072 a call upper bound)", "× $0.0072" in out, out)
+    code, out = sh(base)
+    d = ag.c / "data" / "fanout"
+    rows = list(__import__("csv").DictReader(open(d / "fanout-queries.csv"))) if (d / "fanout-queries.csv").exists() else []
+    md = (d / "fanout-routing.md").read_text() if (d / "fanout-routing.md").exists() else ""
+    check("fan-out: queries deduplicated across seeds into the CSV", code == 0 and len(rows) == 4
+          and any(r["times_seen"] == "2" for r in rows), out + str(rows[:2]))
+    check("fan-out: the routing worksheet says these are not demand, and pre-marks C3 duplicates",
+          "not observed demand" in md and "drop (C3 duplicate)" in md, md[:400])
+    costs = (ag.c / "dfs-costs.jsonl").read_text()
+    check("fan-out: every call's cost logged", costs.count("ai_optimization/chat_gpt/llm_responses/live") == 2, costs[-300:])
+    ag.fin(rid, "fanout")
+    _, out = sh("python3 scripts/steps.py list")
+    check("fan-out: registered as audit step S21", "S21" in out, out[-200:])
+    (SB / "tests" / ".state" / "dfs.json").unlink()
+
+
+def t_interviews():
+    sh('python3 scripts/status.py init iv-co --name I --domain i.example --type full --industry roofing')
+    ag = Agent("iv-co"); rid = ag.start("new-client"); ag.fin(rid, "set up")
+    code, out = sh("python3 scripts/run.py start iv-co interview --step stories")
+    check("stories: not before the facts exist (Brand Guide approved)", code == 4, out)
+    code, out = sh("python3 scripts/interview.py due iv-co")
+    check("stories: not due before the Brand Guide is approved", code == 1 and "not yet" in out, out)
+    st = status("iv-co"); st["gates"]["brand_guide_approved"] = {"state": "approved", "files": {}}
+    st["imported_conditions"] = {"proof_sheet_returned": "test"}; (ag.c / "status.json").write_text(json.dumps(st))
+    _, out = sh("python3 scripts/interview.py due iv-co")
+    check("stories: the first round is due once the facts exist", out.startswith("due"), out)
+    ag.w("interviews/story-bank.md", "# I — Story bank\n\n## S-001 · thin\n- Date: 2026-10-05 · Round: 1\n- Type: unusual_case\n"
+         "- Quote: \"we see a lot\"\n- Specificity: 2\n- Publish: maybe\n- Status: fresh\n")
+    code, out = sh("python3 scripts/interview.py check iv-co bank")
+    check("story bank: a thin, unquoted, unclassified entry is refused", code == 4 and "specificity 2" in out and "publish" in out, out)
+    ag.w("interviews/story-bank.md", "# I — Story bank\n\n## S-001 · Undersized springs in the Route 9 split-levels\n"
+         "- Date: 2026-10-05 · Round: 1 · Speaker: Pat, owner\n- Type: local_condition\n"
+         "- Quote: \"the split-levels off Route 9 all got undersized torsion springs, so they go around year eight\"\n"
+         "- Specificity: 5\n- Tags: springs\n- Publish: public\n- Status: fresh\n")
+    code, out = sh("python3 scripts/interview.py check iv-co bank")
+    check("story bank: a proper entry passes", code == 0, out)
+    voice = ("# Voice DNA — Pat, owner, I\nSource: t.md · 1,200 words from the author · captured 2026-10-05 · confidence: low\n\n"
+             "## Summary\nPlain.\n\n## Do\n- Lead with the job — \"so first thing, we go look\"\n\n## Never\n- No hype — \"I don't do the big promises\"\n\n"
+             "## Calibration\n| a | b | c |\n\n## Insufficient data\nFormatting.\n")
+    ag.w("interviews/voice-dna-pat.md", voice)
+    code, out = sh("python3 scripts/interview.py check iv-co voice")
+    check("voice DNA: under 2,000 author words without the UNDER FLOOR line is refused", code == 4 and "UNDER FLOOR" in out, out)
+    ag.w("interviews/voice-dna-pat.md", voice.replace("confidence: low\n", "confidence: low\n[UNDER FLOOR — Paul accepts before use]\n"))
+    code, out = sh("python3 scripts/interview.py check iv-co voice")
+    check("voice DNA: with the floor flagged, every rule quoted → ok", code == 0, out)
+    ag.w("interviews/voice-dna-other.md", voice)
+    code, out = sh("python3 scripts/interview.py check iv-co voice")
+    check("voice DNA: two files for one author are refused (never blend)", code == 4 and "never blend" in out, out)
+
+SCHEMA = ".claude/skills/bb-schema-builder/scripts/build_schema.py"
+
+
+def schema_cfg():
+    return {"business": {"name": "Test Co", "url": "https://test.example", "telephone": "+1-417-555-0100",
+                         "email": "pat@test.example", "schema_type": "RoofingContractor",
+                         "id_page_url": "https://test.example/id.html", "founding_date": 2009,
+                         "description": "Roof repair and replacement in Greene County, Missouri.",
+                         "logo": "https://test.example/logo.png",
+                         "address": {"streetAddress": "1 Main St", "addressLocality": "Springfield",
+                                     "addressRegion": "MO", "postalCode": "65801"},
+                         "has_map": "https://maps.app.goo.gl/abc"},
+            "corporation": {"description": "Family roofing company in Greene County since 2009."},
+            "gbp_landing_page": "https://test.example/",
+            "same_as": ["https://test.example/", "https://test.example/id.html", "https://maps.app.goo.gl/abc"],
+            "area_served": [{"name": "Springfield", "state": "Missouri"}],
+            "service_pages": [{"url": "https://test.example/roof-repair/", "title": "Roof Repair - Test Co",
+                               "meta_description": "Roof repair in Greene County.", "service_node_name": "Roof Repair",
+                               "service_type": "Roof repair", "description": "Leak and storm repair.",
+                               "entities": [{"name": "Roof", "wikidata": "https://www.wikidata.org/wiki/Q83180"}]}],
+            "location_pages": []}
+
+
+def t_schema_gate():
+    d = SB / "tests" / ".state" / "schema"; d.mkdir(parents=True, exist_ok=True)
+
+    def run(cfg, check_only=True):
+        (d / "cfg.json").write_text(json.dumps(cfg))
+        return sh(f"python3 {SCHEMA} {d / 'cfg.json'} {d / 'out'}" + (" --check" if check_only else ""))
+    code, out = run(schema_cfg(), check_only=False)
+    check("schema: a complete config builds", code == 0 and (d / "out" / "homepage.jsonld").exists(), out)
+    cfg = schema_cfg(); del cfg["business"]["logo"]
+    for flag in (True, False):
+        code, out = run(cfg, flag)
+        check(f"schema: a missing logo is refused with a clear message, never a crash ({'--check' if flag else 'build'})",
+              code == 2 and "business.logo" in out and "Logo image URL" in out and "Traceback" not in out, out[-400:])
+    cfg = schema_cfg(); del cfg["service_pages"][0]["entities"][0]["wikidata"]
+    for flag in (True, False):
+        code, out = run(cfg, flag)
+        check(f"schema: an entity with no Wikidata URI is refused with a clear message, never a crash ({'--check' if flag else 'build'})",
+              code == 2 and "entity 'Roof'" in out and "no Wikidata URI" in out and "Traceback" not in out, out[-400:])
+
+
+def t_readability():
+    d = SB / "tests" / ".state"; d.mkdir(parents=True, exist_ok=True)
+    head = ("---\npage_id: x\nurl: https://test.example/x/\nseo_title: Comprehensive Professional Environmental "
+            "Remediation Methodologies - Test Co\nmeta_description: We fix leaky roofs in Greene County. Call for a free look.\n---\n")
+    easy = head + ("# Roof Repair in Greene County\n\nWe fix leaks fast. Most jobs take one day. We check the whole roof first.\n\n"
+                   "## How long does a roof repair take?\n\nMost repairs take one day. Big storm jobs can take two or three days.\n")
+    (d / "easy.md").write_text(easy)
+    code, out = sh(f"python3 scripts/readability.py {d / 'easy.md'}")
+    check("reading level: plain copy passes, and the SEO title is not counted (CM-047)", code == 0 and "E10 passes" in out, out)
+    hard = head + ("# Roof Repair in Greene County\n\nComprehensive professional remediation methodologies necessitate "
+                   "meticulous evaluation of deteriorated architectural components, particularly considering "
+                   "environmental variability, structural interdependencies and manufacturer specifications.\n")
+    (d / "hard.md").write_text(hard)
+    code, out = sh(f"python3 scripts/readability.py {d / 'hard.md'}")
+    check("reading level: dense copy fails and the paragraph is listed", code == 1 and "OVER" in out and "E10 FAILS" in out, out)
+    src = head + ("# Mold in Hanover\n\nThe Environmental Protection Agency says to fix leaks fast. "
+                  "The Environmental Protection Agency says mold can grow in two days.\n")
+    (d / "src.md").write_text(src); (d / "terms.txt").write_text("Environmental Protection Agency\n")
+    _, o1 = sh(f"python3 scripts/readability.py {d / 'src.md'}")
+    _, o2 = sh(f"python3 scripts/readability.py {d / 'src.md'} --exclude-terms {d / 'terms.txt'}")
+    g = lambda o: float(o.split("page average grade ")[1].split()[0])
+    check("reading level: named sources and entity terms are left out of the count", g(o2) < g(o1), (o1, o2))
+
+
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
-             t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view]
+             t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view,
+             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_readability]
 
 
 def main():

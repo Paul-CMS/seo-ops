@@ -71,6 +71,9 @@
 | BLG-17 | Informational, not a sales pitch; no copied content from another page | WB-C1, BB-318 | §7 Blog | Medium |
 | BLG-18 | Schema readiness: `Article` with author, datePublished, dateModified | BB-603 (v1.0), BB-704 | §9 Schema readiness | Low |
 | BLG-19 | Sensitive industry: no claim beyond Section D; health claims flagged | CM-025 | §3 Brand, entity | High |
+| BLG-20 | Reading level grade 7–8 (`scripts/readability.py`: average ≤ 8.9, no paragraph over 10); SEO title excluded | CM-047 | §7 Blog | Low |
+| BLG-21 | FAQ answers: first sentence answers in plain English; any company/next-step sentence optional, never repeated from another page, never a link; a phone number is never the answer | CM-048, BB-316 | §6 On-page | Medium |
+| BLG-22 | No keyword, PAA question or fan-out query brings an Unknown or Unverified fact into the post | CM-049, CM-016 | §3 Brand, entity | Medium |
 
 ## 5. Variants and collisions
 

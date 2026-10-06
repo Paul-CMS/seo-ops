@@ -1,6 +1,9 @@
 {
   "dfs_confirm_threshold_usd": 2.0,
   "git_push_after_run": true,
+  "story_cadence_days": 30,
+  "_stage_modes_about": "CM-044. Global stage modes Paul set with /approve global mode:<stage>=auto|review (written by approve.py, never by hand). A client's own setting in its status.json wins. Missing = review.",
+  "stage_modes": {},
   "kadence_head_meta_key": null,
   "team": {
     "decisions": "Paul",
@@ -135,7 +138,7 @@
     "law",
     "(home|senior|elder|personal|memory|child|day|hospice) care"
   ],
-  "_sensitivity_about": "CM-025 / CM-040. classify: a sensitive term → yes; an unsure hint → ask Paul; a clearly-not-sensitive trade → no; anything else → ask Paul. Sensitive terms win over the not-sensitive list.",
+  "_sensitivity_about": "CM-025 / CM-040. classify: a sensitive term \u2192 yes; an unsure hint \u2192 ask Paul; a clearly-not-sensitive trade \u2192 no; anything else \u2192 ask Paul. Sensitive terms win over the not-sensitive list.",
   "not_sensitive_trades": [
     "roof\\w*",
     "plumb\\w*",

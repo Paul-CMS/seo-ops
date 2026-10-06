@@ -3,53 +3,84 @@
   "_checked": "2026-10-02",
   "_account_minimum_payment_usd": 50,
   "on_page/task_post": {
-    "per_page": {"basic": 0.00015, "javascript": 0.0015},
+    "per_page": {
+      "basic": 0.00015,
+      "javascript": 0.0015
+    },
     "confirmed": true,
     "source": "https://dataforseo.com/pricing/on-page/onpage-api",
-    "note": "Results endpoints (summary, pages, links, duplicate_*, redirect_chains, non_indexable) are free for 30 days — summary confirmed in docs, the rest same pattern."
+    "note": "Results endpoints (summary, pages, links, duplicate_*, redirect_chains, non_indexable) are free for 30 days \u2014 summary confirmed in docs, the rest same pattern."
   },
   "serp/google/organic/live/advanced": {
-    "per_unit": 0.002, "unit_results": 10, "confirmed": true,
+    "per_unit": 0.002,
+    "unit_results": 10,
+    "confirmed": true,
     "source": "https://dataforseo.com/pricing/serp/google-organic-serp-api",
     "note": "Per SERP of up to 10 results (depth 100 = 10 units). Search operators x5 each. Standard queue is $0.0006/unit."
   },
   "serp/google/maps/live/advanced": {
-    "per_unit": 0.002, "unit_results": 100, "confirmed": true,
+    "per_unit": 0.002,
+    "unit_results": 100,
+    "confirmed": true,
     "source": "https://dataforseo.com/pricing/serp/google-maps-serp-api",
     "note": "Per SERP of up to 100 results. A 7x7 grid = 49 calls ~ $0.098 per keyword."
   },
   "keywords_data/google_ads/search_volume/live": {
-    "per_task": 0.09, "confirmed": true,
+    "per_task": 0.09,
+    "confirmed": true,
     "source": "https://dataforseo.com/pricing/keywords-data/google-ads",
     "note": "Per task of up to 1,000 keywords; billed per task, not per keyword."
   },
   "dataforseo_labs/google/ranked_keywords/live": {
-    "per_task": 0.012, "per_item": 0.00012, "confirmed": false,
+    "per_task": 0.012,
+    "per_item": 0.00012,
+    "confirmed": false,
     "source": "https://dataforseo.com/pricing/dataforseo-labs/dataforseo-google-api",
     "note": "INFERRED: the page's 'All Other Endpoints' tier; endpoint not named. Up to 1,000 items per call = $0.132. Clickstream data doubles it."
   },
   "dataforseo_labs/google/keyword_overview/live": {
-    "per_task": 0.012, "per_item": 0.00012, "confirmed": false,
+    "per_task": 0.012,
+    "per_item": 0.00012,
+    "confirmed": false,
     "source": "https://dataforseo.com/pricing/dataforseo-labs/dataforseo-google-api",
     "note": "INFERRED: same tier as ranked_keywords. Each keyword is an item."
   },
   "backlinks/summary/live": {
-    "per_task": 0.024, "per_item": 0.000036, "confirmed": true,
+    "per_task": 0.024,
+    "per_item": 3.6e-05,
+    "confirmed": true,
     "source": "https://dataforseo.com/pricing/backlinks/backlinks",
     "note": "Per request + per row; no monthly minimum since 1 July 2026."
   },
   "backlinks/referring_domains/live": {
-    "per_task": 0.024, "per_item": 0.000036, "confirmed": true,
+    "per_task": 0.024,
+    "per_item": 3.6e-05,
+    "confirmed": true,
     "source": "https://dataforseo.com/pricing/backlinks/backlinks"
   },
   "backlinks/backlinks/live": {
-    "per_task": 0.024, "per_item": 0.000036, "confirmed": true,
+    "per_task": 0.024,
+    "per_item": 3.6e-05,
+    "confirmed": true,
     "source": "https://dataforseo.com/pricing/backlinks/backlinks"
   },
   "business_data/google/reviews/task_post": {
-    "per_unit": 0.00075, "unit_results": 10, "per_task_extra_place_id": 0.00075, "confirmed": true,
+    "per_unit": 0.00075,
+    "unit_results": 10,
+    "per_task_extra_place_id": 0.00075,
+    "confirmed": true,
     "source": "https://dataforseo.com/pricing/business-data/google-reviews-api",
     "note": "Standard queue, per 10 reviews of depth; +$0.00075 per task when using place_id or cid. Priority is $0.0015 per 10."
   },
-  "appendix/user_data": {"per_task": 0, "confirmed": true, "source": "https://docs.dataforseo.com/v3/appendix/user_data/"}
+  "appendix/user_data": {
+    "per_task": 0,
+    "confirmed": true,
+    "source": "https://docs.dataforseo.com/v3/appendix/user_data/"
+  },
+  "ai_optimization/chat_gpt/llm_responses/live": {
+    "per_task": 0.0072,
+    "confirmed": true,
+    "source": "https://dataforseo.com/pricing/ai-optimization/llm-responses (base) + https://dataforseo.com/help-center/how-the-price-for-using-llm-responses-endpoints-is-calculated (formula) + https://developers.openai.com/api/docs/pricing (gpt-4.1-mini tokens)",
+    "note": "Checked 2026-10-05. Live = $0.0006 per task + the LLM's own token price, passed through (DataforSEO help centre). gpt-4.1-mini standard: $0.40 per 1M input tokens, $1.60 per 1M output tokens (OpenAI). fanout.py caps max_output_tokens at 4096 and sends ~150 input tokens, so the UPPER BOUND per call = 0.0006 + 4096 x 1.60/1M + 150 x 0.40/1M = ~$0.0072; a typical answer (~120 queries, ~1,200 output tokens) is ~$0.0025. web_search is off (it costs extra). Standard queue would be $0.0002 + a $0.01 prepayment (refunded/topped up to the LLM cost). After real runs, `dfs.py ledger` flags any logged cost that differs."
+  }
 }

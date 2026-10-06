@@ -162,6 +162,12 @@ def web_fetch(url, follow=True):
 
 def dfs_request(endpoint, body=None, method=None, timeout=90, retries=3):
     cfg = json.loads(DFS.read_text()) if DFS.exists() else {}
+    if endpoint.startswith("ai_optimization/"):   # the LLM fan-out answer: a JSON array inside a message
+        qs = ["how much does roof repair cost", "roof repair near me", "signs you need a new roof",
+              "Roof repair near me", "how long does a roof repair take"]
+        return {"status_code": 20000, "cost": cfg.get("cost", 0.003),
+                "tasks": [{"status_code": 20000, "result": [{"items": [{"type": "message", "sections": [
+                    {"type": "text", "text": json.dumps(qs)}]}], "fan_out_queries": []}]}]}
     if endpoint.startswith("appendix/user_data"):
         return {"status_code": 20000, "tasks": [{"status_code": 20000,
                 "result": [{"money": {"balance": cfg.get("balance", 10.0)}}]}]}

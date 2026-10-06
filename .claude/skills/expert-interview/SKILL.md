@@ -1,147 +1,166 @@
 ---
 name: expert-interview
-description: Run the expert-led content process for a local SEO client — generate interview questions for a client's subject-matter expert, and extract structured expertise from the voice-memo transcripts that come back. Use this whenever the user mentions expert interviews, SME interviews, expertise capture, voice memos or transcripts from a client, building an expertise file, first-party content research, or needs blog topics grounded in what a client actually knows rather than generic keyword-driven content. Also use it when the user is starting Stage 6 blog work and wants real source material, or when they say something like "process this transcript", "what should I ask the owner", or "turn this interview into content ideas".
+description: Run the three client interviews for a local SEO client (CM-042) — FACTS (targeted questions when the evidence gate blocks a page; answers update the proof sheet / Brand Guide Section D), STORIES (a recurring round of story-seeking questions for the owner or another expert; answers go to the client's story bank, which the blog writer uses for information gain), and VOICE (a Voice DNA file for the blog author, built from a recorded or transcribed conversation). Use this whenever the user mentions expert or owner interviews, SME interviews, a facts interview, an evidence-gate block, voice memos or transcripts from a client, a story bank, expertise capture, a voice profile or Voice DNA, "what should I ask the owner", "process this transcript", or needs blog material grounded in what the client actually knows.
 ---
 
-# Expert Interview & Expertise Extraction
+# Client interviews — Facts, Stories, Voice
 
 ## What this is for
 
-Generic AI content fails because the model has no firsthand knowledge of the client's business, so it fills gaps with statistically plausible filler. This skill exists to replace that filler with real material from the people who do the work.
+Generic AI content fails because the model has no firsthand knowledge of the client's business,
+so it fills gaps with statistically plausible filler. These interviews replace that filler with
+real material from the people who do the work. There are three, because they answer three
+different needs and have three different owners of the answer (CM-042):
 
-The method is: interview a subject-matter expert at the client, extract discrete insights from what they said, and build a growing expertise file that feeds blog posts, service pages, and site builds for months.
+| Interview | Triggered by | Answers go to | Used by |
+|---|---|---|---|
+| **Facts** | an evidence-gate **block** only (CM-041) | the proof sheet / Brand Guide Section D (or the page's facts file), then the gate re-runs | Build briefs and drafts |
+| **Stories** | a schedule, once the facts exist (`brand_guide_approved`) — default every 30 days | the client's **story bank** (`clients/<slug>/interviews/story-bank.md`) | the blog writer, for information gain (WB-C6) |
+| **Voice** | once per author, from a recorded or transcribed conversation | the author's **Voice DNA** (`clients/<slug>/interviews/voice-dna-<author>.md`) | the blog writer, at draft |
 
-Everything here depends on one thing — **specificity**. "We see a lot of broken springs" is worthless. "In the older split-levels off Route 9 the builders used undersized torsion springs, so we get failures around year eight and the homeowner always thinks the opener is broken" is the entire point. Every design decision below serves that distinction.
+The command is `/interview <slug> facts|facts-answers|stories|stories-answers|voice`. Nothing is
+sent to a client automatically: every question set is reviewed by Paul, and Paul sends it.
 
-## Two modes
+Everything depends on one thing — **specificity**. "We see a lot of broken springs" is worthless.
+"In the older split-levels off Route 9 the builders used undersized torsion springs, so we get
+failures around year eight and the homeowner always thinks the opener is broken" is the entire point.
 
-Ask which one applies if it isn't obvious from what the user said.
-
-**Mode A — Generate questions.** The user needs a round of questions to send an expert. Go to "Mode A" below.
-
-**Mode B — Process a transcript.** The user has a transcript back from a voice memo. Go to "Mode B" below.
-
-A full cycle alternates: A → client records → B → A → client records → B. Two or three rounds usually exhausts a topic per expert.
+Pick the track from what the user said; ask if it is not clear.
 
 ---
 
-## Mode A — Generate questions
+## Facts — gap-driven, only on an evidence-gate block
 
-### What you need first
+**When:** `/next` says the evidence gate blocked one or more pages in a batch. Never for a page that
+passed or warned — those go ahead with `[NEED: …]` markers (CM-016).
 
-Ask for anything missing. Do not guess at client context — inventing plausible-sounding local detail is the exact failure this process exists to prevent.
+**Questions** come from the gaps, not from a bank: `python3 scripts/evidence.py questions <slug> --run <RUN_ID> --batch <id>`
+writes the pack (`clients/<slug>/interviews/facts/<Client> - Facts Interview - <batch> - <date> - REVIEW.md`)
+from every Unknown / Unverified / Conflict fact on the blocked pages, required facts first, shared
+facts asked once, **15 questions at most**. Three question shapes:
 
-- **Client**: business name, trade, primary market, services
-- **Expert**: name and role (owner, estimator, technician, CSR, office manager, project manager)
-- **Round number**: is this the first round for this person, or a follow-up?
-- **Existing expertise file**: if one exists for this client, read it. Questions that re-ask what's already captured waste the expert's patience, which is the scarcest resource in this whole process.
+- **Describe** (Unknown) — "what should we say? If it depends, on what?" plus "can we say this on your website? yes / only in general terms / no".
+- **Verify** (Unverified) — quotes what we have and where it came from; "yes / partly — correction / no".
+- **Verify** (Conflict) — shows the versions we found; "which is right?"
 
-Local market context matters — housing stock and age, climate, common construction eras, regional quirks. If the user has intake data for the client, use it. If not, ask for two or three sentences about the market rather than assuming.
+Edit the wording for the trade and the person (plain, phone-friendly, one question per question),
+but never add a question that is not a gap, and never pre-fill an answer. Paul reviews and sends.
 
-### How to build the questions
+**Answers** (`facts-answers`): save the reply as given in `clients/<slug>/interviews/facts/`. Then, for
+each answer, update the fact it fills — Brand Guide Section D (status `Client Confirmed`, source
+`Facts interview <date>`) or the page's facts file (`clients/<slug>/build/evidence/<page>.facts.json`).
+- "Only in general terms" → status `Client Confirmed` with the value written as the general claim the owner allowed.
+- "No" (not for publication) → leave the fact Unknown and note why in the source column.
+- "I don't know" → stays Unknown.
+- A correction to something the site claims publicly → also a row in D2.
+- Anything from reviews or customer language is still never a fact (CM-027).
+Then re-run the gate: `python3 scripts/evidence.py run <slug> --run <RUN_ID> --batch <id>`. Editing
+the Brand Guide voids `brand_guide_approved` until Paul re-approves it — that is intended: Paul sees
+every new fact before it reaches a page.
 
-The seven standing categories are in `references/question-bank.md`. Read it. They are fixed; what changes is how they get instantiated for this trade, this market, and this person's role.
+---
 
-Weight the categories by role. An owner holds decision criteria and pricing logic. A technician holds what customers misunderstand and what they break themselves. A CSR holds the pre-booking questions and the recurring complaints. Asking a technician about pricing strategy wastes a round.
+## Stories — a recurring round, into the story bank
 
-Rules that matter:
+**When:** after `brand_guide_approved` (the facts exist), every **30 days** by default
+(`config.json` `story_cadence_days`; `python3 scripts/interview.py due <slug>` says whether a round is
+due). One person per round; rounds 1–3 usually exhaust a topic per expert, then switch person.
 
-- **Three to five questions per round. Never more.** A long list reads as homework and gets abandoned. This is the single most common way the process dies.
-- **Anchor each question in something concrete** — a season, a housing type, a neighborhood, a specific failure, a price range. "What's the strangest job you've handled?" gets a shrug. "What's the oddest failure you've seen in the older houses around here?" gets a story.
-- **Ask for stories, not summaries.** "Walk me through a time when..." outperforms "What are common issues with..."
-- **Write at the expert's reading level**, in their vocabulary, not marketing language. These go to a tradesperson on a phone.
-- **One question per question.** Compound questions get half-answered.
+### Generate the round (`stories`)
 
-### Output format for Mode A
+Read the story bank first — questions that re-ask what is already captured waste the expert's
+patience, which is the scarcest resource in this whole process. Use the seven standing categories in
+`references/question-bank.md`, weighted by role (an owner holds decision criteria and pricing
+logic; a technician holds what customers misunderstand and break; a CSR holds the pre-booking
+questions). Steer toward the blog topics and service clusters that are thinnest in the bank.
+
+- **Three to five questions per round. Never more.** A long list reads as homework and gets abandoned.
+- **Anchor each question in something concrete** — a season, a housing type, a neighborhood, a failure, a price range.
+- **Ask for stories, not summaries.** "Walk me through a time when…" beats "What are common issues with…"
+- **Write at the expert's reading level**, in their vocabulary. These go to a tradesperson on a phone.
+- **One question per question.**
+
+Do not invent local context. If intake does not give the market (housing stock, climate,
+construction eras), ask for two or three sentences rather than assuming.
+
+Output `clients/<slug>/interviews/stories/<Client> - Stories Round <N> - <expert> - <date> - REVIEW.md`:
 
 ```
 ## Round [N] — [Expert name], [role] — [Client]
 
-Send by text or email. Ask them to reply with voice memos, one per question,
-recorded whenever it suits them.
+Reply with voice memos, one per question, whenever it suits you.
 
 1. [Question]
-2. [Question]
-3. [Question]
 ...
 
 ---
-Targeting: [one line on which categories this round covers and why]
+Targeting: [categories this round covers and why]
 Not asked yet: [categories still untouched for this expert]
 ```
 
-Then remind the user to review before sending. Questions go out under their name and a bad one spends client goodwill that is hard to get back.
+`status.py mark <slug> story_round --file <it>`. Paul reviews and sends.
+
+### Process the transcript (`stories-answers`)
+
+Claude does not take audio — transcribe elsewhere first and bring the text. Save it as given in
+`clients/<slug>/interviews/stories/`. If it is garbled (site noise, cut-off sentences, mis-heard
+trade terms), say so before extracting — confident structure on bad audio hides the error.
+
+Read `references/extraction-rubric.md`. **Extract only what the expert said** — no added industry
+knowledge, no smoothing, no inferring. One story per entry. Keep the specifics verbatim. **Score
+specificity 1–5**; 1–2 is not filed — it becomes a follow-up question.
+
+Append each entry to `clients/<slug>/interviews/story-bank.md` (format in `references/story-bank.md`):
+ID, date, round, speaker, type, headline, the verbatim quote, specificity, tags, **publish**
+(`public` / `framing-only` / `internal` — ask when unclear; default `framing-only`), **status**
+(`fresh` → `used` with the post it went into → `retired`). A story that states a business fact
+(a warranty, a price, a licence) is **flagged `fact?`** and goes to the facts track — it never
+writes Section D directly.
+
+Then follow-ups for the next round (3–5, targeting the thinnest answers, each with one line on why)
+and content angles that combine several stories. `python3 scripts/interview.py check <slug> bank`
+must pass; `status.py mark <slug> story_bank --file clients/<slug>/interviews/story-bank.md`.
 
 ---
 
-## Mode B — Process a transcript
+## Voice — a Voice DNA file for the blog author
 
-### What you need first
+**Who:** the blog author — the company owner by default (CM-039), unless the client says otherwise.
+**Source:** a recorded or transcribed conversation with that person: a 20–30 minute call about the
+business, how they got into the trade, a few jobs they remember. Stories-round voice memos can be
+pooled. Save the transcript(s) as given in `clients/<slug>/interviews/voice/`.
 
-- The transcript
-- Which client and expert it came from, and which round
-- The existing expertise file for that client, if one exists — read it so you can deduplicate
+Extract **from the author's own words only** (not the interviewer's). Read `references/voice-dna.md`
+for the sections and rules. In short:
+- Structure (sentence length, fragments), rhythm (cadence, repetition, transitions), tone (five 1–5
+  scales, each with a quote), word choice (signature phrases, jargon they use and explain, words they
+  never use), how they make a point, and the anti-patterns to suppress (the generic AI voice).
+- **Every rule is backed by a direct quote.** No quote → no rule.
+- **Spoken source limits:** formatting, paragraphing and emphasis are `insufficient data` — never
+  infer "never uses bold" from speech. Fillers and false starts are rhythm evidence, not things to copy.
+- **Floor:** under ~2,000 words from the author → mark the file `UNDER FLOOR` at the top; the writer may
+  use it only after Paul accepts it.
+- Output: summary · do rules · never rules · 3 calibration rewrites (generic sentence → in-voice →
+  what changed). No URL, phone number or instruction to the writer inside the rules.
 
-If the transcript looks garbled in places (job-site noise, cut-off sentences, obvious mis-transcriptions of trade terms), say so before extracting. Structuring bad audio into confident-looking output is worse than flagging it, because the error becomes invisible downstream.
-
-### Extraction
-
-Read `references/extraction-rubric.md` for the insight types and the specificity scale. The core discipline:
-
-**Extract only what the expert actually said.** Do not add industry knowledge, do not smooth over gaps, do not infer what they probably meant. If the transcript is thin, the correct output is a short list plus follow-up questions, not a padded one. A round that yields four real insights out of eight questions is a successful round.
-
-**One insight per entry.** Do not merge two observations into a paragraph. Insights are reusable units — a single interview should be able to feed a dozen different articles, and that only works if the material is atomized.
-
-**Keep the specifics verbatim.** Neighborhoods, road names, house ages, brands, model numbers, price figures, seasons, failure modes, the words customers actually use. Stripping these out to sound more professional destroys the value.
-
-**Score specificity 1–5.** Anything at 1–2 is generic. Do not file it as an insight; convert it into a follow-up question instead. This is the quality gate that keeps the expertise file honest.
-
-### Follow-up questions
-
-Generate three to five for the next round. Target the **thinnest** answers, not the most interesting ones — the interesting answers already gave you material, the thin ones are where value is still trapped.
-
-For each, note in one line why you're asking. The user reviews before sending.
-
-### Output format for Mode B
-
-```
-## [Client] — Expertise extract, Round [N], [Expert name] ([role])
-
-### New insights
-
-**[TYPE]** [The insight, in the expert's own framing]
-> [supporting quote from the transcript]
-Specificity: [1-5] · Tags: [tag, tag]
-
-[repeat per insight]
-
-### Thin answers
-- [Question] — [why the answer didn't land]
-
-### Suggested follow-ups for Round [N+1]
-1. [Question] — [why]
-...
-
-### Content angles surfacing
-- [Working title] — draws on [which insights] — [the angle in one line]
-```
-
-If the user keeps the expertise file in Notion, format the insights so they paste in cleanly as separate blocks rather than one wall of text.
+Write `clients/<slug>/interviews/voice-dna-<author-slug>.md`; `python3 scripts/interview.py check <slug> voice`
+must pass; `status.py mark <slug> voice_dna --file <it>`. The blog writer reads it at draft
+(`methodology/writing-blog.md` B5): **one** Voice DNA file per author — if two match, stop and ask;
+never blend. House rules (A5 banned phrases, CM-016) still win over the voice.
 
 ---
 
 ## Where this fits downstream
 
-Insights feed:
-
-- **Blog work** — articles built around the actual questions the expert answered, direct answers near the top, deeper explanation underneath
-- **Service and location pages** — real local conditions instead of a city name swapped fifty times
-- **Site builds** — expertise is what stops a mass-generated authority site from reading like every other mass-generated authority site
-
-When surfacing content angles, prefer ones that cross-reference multiple insights. A post built on one anecdote is thin; one built on a misconception plus a local condition plus a cost factor is the kind of thing competitors can't replicate.
+- **Facts** → the evidence gate (CM-041) → briefs and drafts for service and location pages.
+- **Stories** → blog briefs list the story IDs they use ("Story bank entries used: S-007, S-012");
+  the post's information gain (WB-C6) cites them. Service and location pages may use `public`
+  stories as real local conditions (BB-317).
+- **Voice** → the blog writer's draft and self-critique.
 
 ## What this skill will not do
 
-- **It will not invent expertise.** If asked to fill gaps or write the article without source material, say no and explain why — that's the failure mode the whole system exists to avoid.
-- **It will not transcribe audio.** Claude doesn't accept audio files. Transcribe elsewhere first (Google AI Studio handles long files free) and bring the text.
-- **It will not auto-send questions.** Every round is reviewed by a human before it reaches a client.
+- **Invent expertise, facts or voice.** If asked to fill gaps or write without source material, say no and explain why.
+- **Transcribe audio.** Bring text.
+- **Send anything.** Every round is reviewed and sent by Paul. No phone bot, no automatic calls.
+- **Move a story into Section D.** A fact in a story goes to the facts track.

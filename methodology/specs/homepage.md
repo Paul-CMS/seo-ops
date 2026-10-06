@@ -64,7 +64,7 @@
 | HP-03 | Title: full state name, Title Case, no "The Best", site separator used consistently, no entity term dropped for length | BB-302, BB-303, CM-014 | §6 On-page | Medium |
 | HP-04 | Exactly one H1 | BB-307 | §6 On-page | High |
 | HP-05 | H1 contains no brand name | BB-305 | §6 On-page | High |
-| HP-06 | H1 uses a different variant of every title entity, and uses the reserved B1 variants | BB-304, CM-024 | §3 Brand, entity | Medium |
+| HP-06 | H1 uses a different variant of every title entity, and uses the reserved B1 variants — tested mechanically by COM-11 (CM-046) | BB-304, CM-024, CM-046 | §3 Brand, entity | Medium |
 | HP-07 | H1 superlative matches the BG-H2 decision for this page. A missing "The Best" is never a failed check by itself (CM-020) — the check is whether the H1 matches the Brand Guide H2 decision for this page. | CM-020 | §6 On-page | Medium |
 | HP-08 | (Recommendation check) No recommendation changes the homepage H1 once live, or the H1 of any page in the top 3 for its main keyword | BB-313 §3, CM-020 | §6 On-page | High |
 | HP-09 | No variant repeats at consecutive elements URL → title → H1 → first H2 | BB-108, CM-024 | §3 Brand, entity | Medium |

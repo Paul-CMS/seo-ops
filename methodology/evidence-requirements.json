@@ -1,0 +1,69 @@
+{
+  "_about": "CM-041 evidence gate. For each page type: the facts its spec needs before a brief may be written. 'from' says where the fact lives: 'A:<field>' = Brand Guide Section A row, 'D:<fact>' = Brand Guide Section D row (matched by the start of the row label), 'page:<key>' = a page-specific fact the Build agent records in clients/<slug>/build/evidence/<page_id>.facts.json (value, status, source). Statuses use the Brand Guide vocabulary and map to the grid as: Client Confirmed / Paul Approved / Internally Verified WITH a source -> Known; Submitted, or any value with no status or no source -> Unverified; Disputed -> Conflict; empty or Unknown -> Unknown. Thresholds are Paul's starting values (rulings.md CM-041); he tunes them here.",
+  "thresholds": {
+    "block_if_any_required_conflict": true,
+    "block_if_required_gaps_at_least": 2,
+    "block_if_known_below": 3,
+    "pass_max_supporting_gaps": 2
+  },
+  "_thresholds_about": "A gap is Unknown, Unverified or Conflict. BLOCK: any required fact in Conflict; or 2+ required facts that are gaps; or fewer than 3 Known facts in total (CM-015 needs at least 3 verifiable facts, so the draft could not pass E2). PASS: no required gap, no Conflict anywhere, at most 2 supporting gaps, and at least 3 Known. Anything else is WARN: the brief is written and must carry an 'Evidence gaps' section listing every gap.",
+  "types": {
+    "service": [
+      {"key": "phone", "label": "Phone", "need": "required", "from": "A:Phone"},
+      {"key": "service_scope", "label": "What the service includes (scope, inclusions)", "need": "required", "from": "page:service_scope"},
+      {"key": "service_process", "label": "How the service is delivered (steps, methods, equipment)", "need": "required", "from": "page:service_process"},
+      {"key": "offer", "label": "Free estimate / offer — and what free means", "need": "required", "from": "D:Free estimate"},
+      {"key": "timeframe", "label": "Typical job duration or timeline", "need": "supporting", "from": "page:timeframe"},
+      {"key": "pricing", "label": "Price range, or what drives the cost", "need": "supporting", "from": "page:pricing"},
+      {"key": "warranty", "label": "Warranty terms", "need": "supporting", "from": "D:Warranty terms"},
+      {"key": "licence", "label": "Licence numbers and classes", "need": "supporting", "from": "D:Licence numbers"},
+      {"key": "insurance", "label": "Insurance / bonded status", "need": "supporting", "from": "D:Insurance"},
+      {"key": "certifications", "label": "Certifications, authorizations, training", "need": "supporting", "from": "D:Certifications"},
+      {"key": "rating", "label": "Google rating and review count (date checked)", "need": "supporting", "from": "D:Google rating"},
+      {"key": "guarantees", "label": "Guarantees (response time, on-time, satisfaction)", "need": "supporting", "from": "D:Guarantees"}
+    ],
+    "location": [
+      {"key": "phone", "label": "Phone", "need": "required", "from": "A:Phone"},
+      {"key": "city_served", "label": "The city is actually served (Section E / proof sheet)", "need": "required", "from": "page:city_served"},
+      {"key": "local_context", "label": "City-specific conditions (housing stock, terrain, weather, failure patterns)", "need": "required", "from": "page:local_context"},
+      {"key": "neighborhoods", "label": "6-12 real neighborhoods", "need": "required", "from": "page:neighborhoods"},
+      {"key": "offer", "label": "Free estimate / offer", "need": "required", "from": "D:Free estimate"},
+      {"key": "things_to_do", "label": "Things to Do (real, verifiable)", "need": "supporting", "from": "page:things_to_do"},
+      {"key": "top_sites", "label": "Top Sites (real, verifiable)", "need": "supporting", "from": "page:top_sites"},
+      {"key": "response_time", "label": "Response time / guarantees for this area", "need": "supporting", "from": "D:Guarantees"},
+      {"key": "emergency", "label": "Emergency / after-hours reality", "need": "supporting", "from": "D:Emergency"},
+      {"key": "rating", "label": "Google rating and review count (date checked)", "need": "supporting", "from": "D:Google rating"}
+    ],
+    "county": [
+      {"key": "phone", "label": "Phone", "need": "required", "from": "A:Phone"},
+      {"key": "county_cities", "label": "Cities in the county actually served", "need": "required", "from": "page:county_cities"},
+      {"key": "local_context", "label": "County-specific conditions", "need": "required", "from": "page:local_context"},
+      {"key": "offer", "label": "Free estimate / offer", "need": "supporting", "from": "D:Free estimate"},
+      {"key": "rating", "label": "Google rating and review count (date checked)", "need": "supporting", "from": "D:Google rating"},
+      {"key": "licence", "label": "Licence numbers and classes", "need": "supporting", "from": "D:Licence numbers"}
+    ],
+    "homepage": [
+      {"key": "brand", "label": "Brand entity (GBP name, exactly)", "need": "required", "from": "A:Brand entity"},
+      {"key": "phone", "label": "Phone", "need": "required", "from": "A:Phone"},
+      {"key": "core_services", "label": "Core services the business wants more of", "need": "required", "from": "page:core_services"},
+      {"key": "offer", "label": "Free estimate / offer", "need": "required", "from": "D:Free estimate"},
+      {"key": "founding", "label": "Founding year / years in business", "need": "supporting", "from": "D:Founding year"},
+      {"key": "licence", "label": "Licence numbers and classes", "need": "supporting", "from": "D:Licence numbers"},
+      {"key": "insurance", "label": "Insurance / bonded status", "need": "supporting", "from": "D:Insurance"},
+      {"key": "certifications", "label": "Certifications, authorizations, training", "need": "supporting", "from": "D:Certifications"},
+      {"key": "awards", "label": "Awards and rankings", "need": "supporting", "from": "D:Awards"},
+      {"key": "rating", "label": "Google rating and review count (date checked)", "need": "supporting", "from": "D:Google rating"},
+      {"key": "team", "label": "Team size / trucks / jobs completed", "need": "supporting", "from": "D:Team size"}
+    ],
+    "about": [
+      {"key": "founding", "label": "Founding year / years in business", "need": "required", "from": "D:Founding year"},
+      {"key": "staff", "label": "Named staff for on-page use", "need": "required", "from": "D:Named staff"},
+      {"key": "company_story", "label": "How and why the company started (owner's own account)", "need": "required", "from": "page:company_story"},
+      {"key": "licence", "label": "Licence numbers and classes", "need": "supporting", "from": "D:Licence numbers"},
+      {"key": "certifications", "label": "Certifications, authorizations, training", "need": "supporting", "from": "D:Certifications"},
+      {"key": "associations", "label": "Association memberships", "need": "supporting", "from": "D:Association"},
+      {"key": "awards", "label": "Awards and rankings", "need": "supporting", "from": "D:Awards"},
+      {"key": "team", "label": "Team size / trucks / jobs completed", "need": "supporting", "from": "D:Team size"}
+    ]
+  }
+}

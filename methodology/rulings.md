@@ -29,7 +29,7 @@ recorded, no rule · `SUPERSEDED` no longer governs; follow the pointer.
 
 ## Contents
 - A. Coastal rulings (CM-001–024)
-- B. Standing rulings from the consolidation and after (CM-025 onward, incl. CM-038–040)
+- B. Standing rulings from the consolidation and after (CM-025 onward, incl. CM-038–050)
 - C. Rule Register (RULE-001–015)
 - D. GOV-06 — procedure and tensions (PROC-01, PROC-02, GOV-T1–T10)
 - E. Resolved conflicts (CF-001–009)
@@ -182,7 +182,7 @@ years in business. Where a fact is missing, write `[NEED: <exactly what is requi
 inline and continue.
 
 ## CM-017 · Session discipline
-**ID** CM-017 · **Status** APPROVED · **Date** pre-2026-10-02 (Delta v1.0) · **Reason** Operational discipline for running the methodology through an AI. · **Supersedes** —
+**ID** CM-017 · **Status** APPROVED — "one working context per client, not per page" SCOPED by CM-043 (writing runs are per page; the sibling check moved to the batch review) · **Date** pre-2026-10-02 (Delta v1.0) · **Reason** Operational discipline for running the methodology through an AI. · **Supersedes** —
 
 Type ADD. One working context per client, not per page (sibling collision detection depends
 on it). Auditing and writing run in separate contexts — a model that just wrote the copy
@@ -391,6 +391,155 @@ Decided by Paul (first client run, Gettysburg Mold Remediation Pros).
    anything else — including an industry matching neither list — and `/new-client` asks Paul
    instead of deciding. Paul's answer is recorded with `status.py init --category …` or
    `status.py sensitivity <slug> <category>|none --run <RUN_ID>` (logged as a decision).
+
+## CM-041 · Evidence gate before every brief
+**ID** CM-041 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** A brief written on missing or unconfirmed facts produces a draft full of NEED markers or, worse, a confident invention; checking the facts per page before the brief catches it where it is cheapest. · **Source** Semantic Mastery Content Pipeline Suite (content-pipeline-pages evidence gate), adapted · **Supersedes** — (operationalizes CM-016, CM-015 and the Brand Guide's "Unknown/Disputed blocks")
+
+Decided by Paul.
+1. Before any brief, every page in the batch gets an **evidence grid**: the facts its spec needs
+   (`methodology/evidence-requirements.json`, per page type — services, areas, proof points,
+   credentials, timeframes, offer, local facts), each marked from Brand Guide Sections A and D and
+   the page's facts file (sourced from the returned proof sheet, the Discovery Record and cited
+   research): **Known** (Client Confirmed / Paul Approved / Internally Verified with a source),
+   **Unverified** (Submitted, or no status or no source), **Conflict** (Disputed), **Unknown**
+   (empty). `scripts/evidence.py` marks and scores; nobody types a result.
+2. Result per page (**starting values, tuned by Paul in evidence-requirements.json**; a gap is
+   Unknown, Unverified or Conflict):
+   - **block** — any *required* fact in Conflict; or **2 or more** required facts are gaps; or
+     fewer than **3** Known facts in total (CM-015 could not pass).
+   - **pass** — no required gap, no Conflict anywhere, at most **2** supporting gaps, 3+ Known.
+   - **warn** — anything else: the brief is written and carries an `Evidence gaps` section listing
+     every gap (the script refuses the brief without it).
+3. **The gate runs before the brief stop; a blocked page gets no brief.** On a block: the facts
+   interview (CM-042) and a re-run of the gate on the answers, **or** Paul's waiver —
+   `/approve <slug> evidence:<page> --reason "..."` — recorded with his name, date and reason in
+   status.json and log.md. A waiver covers exactly the grid it was given for; when the facts change,
+   the gate re-scores and an old waiver no longer counts.
+4. Differences from the source (deliberate): their gate counts Unverified and Conflict as covered
+   and blocks only when four core fields are all Unknown; ours treats them as gaps and blocks
+   earlier. No word-count or Content Maxima Matrix input.
+
+## CM-042 · Three interviews: facts, stories, voice
+**ID** CM-042 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** One "expert interview" was doing three jobs with three different destinations — filling fact gaps, collecting first-hand stories, and capturing how the author sounds — so none of them had a trigger, a home or a check. · **Source** Semantic Mastery Content Pipeline Suite (owner-interview, expert-interview, voice-interview / voice-extractor), adapted without the Retell phone agents · **Supersedes** the expert-interview skill's single Mode A / Mode B process
+
+Decided by Paul. Skill `expert-interview`, command `/interview`.
+1. **Facts** — triggered **only** by an evidence-gate block (CM-041). Questions come from the gaps of
+   the blocked pages (Describe / Verify, at most 15, shared facts asked once; `evidence.py questions`).
+   Paul sends them. Answers update Brand Guide Section D (`Client Confirmed`, source "Facts interview
+   <date>") or the page's facts file; the gate re-runs. A Brand Guide edit re-opens
+   `brand_guide_approved` for Paul. Customer language is still never a fact (CM-027).
+2. **Stories** — on a schedule once the facts exist (`brand_guide_approved`): **one round of 3–5
+   questions every 30 days** (starting value; `config.json` `story_cadence_days`). Answers go to the
+   client's **story bank** (`clients/<slug>/interviews/story-bank.md`): verbatim quote, specificity 3–5
+   only, publish public / framing-only / internal, status fresh / used / retired. The blog writer uses
+   it for information gain and names the entries used. A business fact in a story goes to the facts
+   track, never straight into Section D.
+3. **Voice** — a **Voice DNA** file for the blog author (the owner by default, CM-039) from a recorded
+   or transcribed conversation: every rule backed by a quote, spoken-source limits respected, under
+   ~2,000 author words → UNDER FLOOR (Paul accepts before use). The blog writer uses exactly one file
+   per author at draft; house rules beat the voice.
+4. Nothing goes to a client automatically; no phone bot or automatic calls.
+
+## CM-043 · One page per run, inside batches
+**ID** CM-043 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** Writing several pages in one context lets one page's wording bleed into the next and makes each later page worse as the context fills; a fresh context per page keeps each one clean. · **Source** Semantic Mastery Content Pipeline Suite (content-pipeline-pages: one slug per invocation), adapted · **Supersedes** CM-017's "one working context per client, not per page" for writing runs (CM-017's other clauses stand)
+
+Decided by Paul.
+1. Batches and batch approvals are unchanged: site plan → pilot → batches of about 5, **two stops
+   per batch** (briefs; drafts with SEM picks).
+2. Inside a batch, **each page's brief and each page's draft is produced in its own run** with a fresh
+   context (`/build <slug> brief|draft <batch> <page>`) — never several pages in one run.
+   `status.py page-stage` refuses any page but the run's own; the batch cannot reach a stop unless
+   every page's file came from a separate run.
+3. **Sibling collision detection (why CM-017 said one context per client) moves to the batch level:**
+   the site plan's whole-site check (duplicates, variants, FAQ overlap) before any brief; each page run
+   reads the batch's already-written briefs/drafts and earlier approved pages; and the **batch review**
+   run reads every draft side by side for portability (E1 across siblings), reused opening angles and
+   FAQ/heading collisions, then writes the semantic review table.
+4. The batch stop collects every page of the batch for Paul's one approval. Applying Paul's SEM picks
+   (`apply-sem`) stays one batch-level run: it applies only approved edits and re-checks them.
+
+## CM-044 · Review or auto, per stage
+**ID** CM-044 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** Once a stage has proved itself on the pilot, pausing after every run costs Paul time without adding a check; before that, every stage should pause. · **Source** Semantic Mastery Content Pipeline Suite (gate_mode review / auto), tightened · **Supersedes** —
+
+Decided by Paul.
+1. Every producing stage (`scripts/gates.json` → `modes`) has a mode: **review** — the `/next` loop
+   stops after the stage so Paul can look, and he types `/next` to go on — or **auto** — it chains to
+   the next stage.
+2. **Default review.** A stage may switch to auto **only after it has passed the pilot** (each stage's
+   pilot is named in gates.json; a stage with no pilot always stays in review), and **only by Paul**:
+   `/approve <slug> mode:<stage>=auto` for one client or `/approve global mode:<stage>=auto` for all
+   (a global auto needs at least one client past the pilot). A client's own setting beats the global
+   one. Every switch is recorded in status.json and log.md (and config.json for a global switch).
+3. **Decision gates (Paul's `/approve`) can never be auto.** approve.py refuses a mode on any gate,
+   condition, page, batch or evidence decision; `/next` stops at every decision in either mode.
+4. Difference from the source (deliberate): their switch is advice only ("once you trust it"); ours is
+   enforced after the pilot.
+
+## CM-045 · Query fan-out is coverage research, not demand
+**ID** CM-045 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** People Also Ask shows only the questions Google chooses to display; an LLM fan-out of likely searches finds more angles a page or post should answer. It is a brainstorm, so it must never pass as measured demand. · **Source** Semantic Mastery Content Pipeline Suite (dataforseo-fanout-queries), adapted · **Supersedes** — (extends CM-012)
+
+Decided by Paul.
+1. Discovery step **S21** (`scripts/fanout.py`, DataforSEO AI Optimization LLM responses, through
+   `dfs.py` with the whole-run cost guard; capped at 10 seeds × 40 queries by default; going past the
+   cap needs Paul's OK). Registered in `methodology/audit-steps.md`.
+2. Every query is routed like a PAA question (service H2/FAQ · location FAQ · blog topic · drop). The
+   site plan's **coverage check** lists every routed row without a home; the Blog Decision Map treats a
+   routed blog-topic row as a Test B signal or a gap candidate — alongside PAA (S19).
+3. Fan-out queries have **no volume** and are **never evidence** for CM-019, CM-020 or CM-021; never
+   cite a number for one (CM-012).
+
+## CM-046 · H1 restate test
+**ID** CM-046 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** BB-304 ("a different variant of every title entity") was checked by eye; a mechanical test catches the H1 that only adds a filler word to the title. · **Source** Semantic Mastery Content Pipeline Suite (content-pipeline-pages title-h1), adapted (L-006 P1) · **Supersedes** — (operationalizes BB-304)
+
+Decided by Paul. Common check COM-11 (homepage, service, location, county hub) and self-critique E7.
+Strip the brand and the area entity / area variant / city from both the SEO title and the H1 — and
+**"The Best" first, when Brand Guide H2 approves it for the page (CM-020)**, so an approved superlative
+never fails the test by itself. If what is left of the H1 is the title's service or category term
+unchanged, or that term plus one filler word (service, services, company, experts, pros, specialists,
+solutions, near me, for, local), rewrite the H1 with a different service variant. **Not adopted:** the
+source's title format and its "Ads headline" H1 — BB-302, BB-305 and CM-014 stand.
+
+## CM-047 · Reading level grade 7–8
+**ID** CM-047 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** Local customers read on a phone, often in a hurry; copy that needs a second read loses them. · **Source** Semantic Mastery Content Pipeline Suite (content-pipeline-pages reading-level), adapted with a measure (L-006 P2) · **Supersedes** —
+
+Decided by Paul. All visitor-facing copy (opening, body, FAQ answers, meta description, CTA, blog posts)
+at grade 7–8; **the SEO title is excluded**. Self-critique E10 (commercial and blog), common check COM-13,
+BLG-20: `scripts/readability.py` (Flesch-Kincaid) — page average ≤ 8.9, no paragraph over grade 10 —
+then a read-aloud pass. Headings, tables, name lists, entity terms and named sources (CM-040) are left out
+of the count, so the check never pushes a writer to drop an entity or a source. Starting values; Paul tunes them.
+
+## CM-048 · FAQ answers: answer first, then (optionally) the company and next step
+**ID** CM-048 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** "Call us for a quote" is not an answer, and the same sales line under every FAQ is the portable boilerplate CM-015 fails. · **Source** Semantic Mastery Content Pipeline Suite (content-pipeline-pages faqs), adapted (L-006 P3) · **Supersedes** — (extends BB-316, WC-C7)
+
+Decided by Paul. Common check COM-12, BLG-21, writing-commercial C7, writing-blog C8.
+1. Sentence one answers the question in plain English and stands alone (BB-316).
+2. A second sentence with the company and the next step is **optional**, **never identical on two pages**
+   (CM-015), **never carries a link** (CM-005), and is left off purely informational answers.
+3. A phone number, "call us", "contact us for a quote" or "we offer this service" is never the answer.
+4. When the fact the answer needs is Unknown: teach the general point and invite a look at their case —
+   no number, no promise, no narrating what we don't know. A cost question names what drives the cost.
+
+## CM-049 · A keyword inside a sentence is still a claim
+**ID** CM-049 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** "24-hour water damage cleanup" in a heading promises 24-hour service whether or not Section D says so; keyword placement was the one path an unverified claim could still take. · **Source** Semantic Mastery Content Pipeline Suite (content-pipeline-pages matrix-terms: "terms never beat evidence"), generalized to every keyword list (L-006 P4) · **Supersedes** — (extends CM-016)
+
+Decided by Paul. Common check COM-14, BLG-22, writing-commercial A1 + E5, writing-blog A1.
+1. No keyword, variant, PAA question or fan-out query brings an Unknown or Unverified fact into the copy;
+   if the evidence grid does not show the fact Known, the phrase is cut or reworded.
+2. The site plan flags every keyword or variant that itself makes a claim ("emergency", "24 hour",
+   "certified", "licensed", "same-day") with the fact it needs (`claims` in the plan JSON); the evidence
+   gate (CM-041) then treats that fact as **required** for the page.
+
+## CM-050 · Schema: v1.1 and woodlawntrees.com stand against the Local Schema bundle
+**ID** CM-050 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** The Semantic Mastery Local Schema bundle (Bradley's written guidance, 2026-09-26) contradicts our observed-implementation reading (BB-6xx v1.1, woodlawntrees.com captured 2026-09-18) in four places; Paul ruled to keep ours. · **Source** Semantic Mastery Local Schema (Apache-2.0), compared in L-007 · **Supersedes** — (resolves L-007 X1–X4; CF-007 stands)
+
+Decided by Paul. **Our v1.1 rules and woodlawntrees.com stay the reference:**
+- X1 — the Maps link format stays as v1.1 defines it (BB-608: the share link), not the CID URL.
+- X2 — no self-referencing `significantLink` (v1.1 "Defect 2" stands).
+- X3 — the homepage URL stays in `sameAs` (BB-603).
+- X4 — no homepage schema on every page: the business is defined once, on the homepage (BB-607);
+  LocalBusiness never on a service page or a non-GBP location page (GOV-T5).
+Also decided: `build_schema.py` refuses — never crashes on — a missing logo or an entity with no Wikidata
+URI (fixed 2026-10-05). The other L-007 proposals are decided one by one.
 
 ---
 
@@ -619,7 +768,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-014 | OPEN |
 | CM-015 | PILOT |
 | CM-016 | APPROVED |
-| CM-017 | APPROVED |
+| CM-017 | APPROVED (per-client context SCOPED → CM-043) |
 | CM-018 | SUPERSEDED → CM-026 |
 | CM-019 | APPROVED |
 | CM-020 | APPROVED |
@@ -639,6 +788,16 @@ conflicts follow PROC-01 and are ruled here).
 | CM-038 | APPROVED |
 | CM-039 | APPROVED |
 | CM-040 | APPROVED |
+| CM-041 | APPROVED (evidence gate; thresholds are starting values) |
+| CM-042 | APPROVED |
+| CM-043 | APPROVED |
+| CM-044 | APPROVED |
+| CM-045 | APPROVED |
+| CM-046 | APPROVED |
+| CM-047 | APPROVED (thresholds are starting values) |
+| CM-048 | APPROVED |
+| CM-049 | APPROVED |
+| CM-050 | APPROVED |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |

@@ -1,7 +1,7 @@
 # seo-ops — the Coastal Marketing SOP
 
 This file **is** the SOP. Claude Code is the only tool: four subagents plus a reviewer,
-fourteen commands (`/next` runs whatever comes next), one status file per client, and an
+fifteen commands (`/next` runs whatever comes next), one status file per client, and an
 append-only safety log. status.json and log.md are the only records written; everything a
 person reads (Handoff Log, decisions summary, Document Checklist, Approval Record) is generated
 from them one-way by `scripts/records.py`. The methodology (the rules) lives in `sop-source/` and `methodology/`;
@@ -79,6 +79,13 @@ knows to stop and ask.
 `/next` passes every condition automatically when its evidence exists and stops at every
 decision, printing the exact `/approve` line with its files. Refusals are in plain language.
 
+**Review or auto, per stage (CM-044).** Every producing stage (gates.json → `modes`) is in
+**review** (the `/next` loop stops after it so Paul can look; he types `/next` to go on) or **auto**
+(the loop goes straight on). Default review. A stage switches to auto only after it has passed the
+pilot, and only by Paul: `/approve <slug> mode:<stage>=auto` (one client) or
+`/approve global mode:<stage>=auto` — recorded in status.json and log.md. Decisions are never stages
+and can never be auto. `status.py modes <slug>` shows them.
+
 ### Full client — the order
 
 What each step needs is checked by `run.py start` from `scripts/gates.json` (`run.py steps` lists it).
@@ -88,14 +95,14 @@ What each step needs is checked by `run.py start` from `scripts/gates.json` (`ru
 | 1 | Intake, Drive folder, document checklist (S01) | `/new-client` | condition **client_setup** |
 | 2 | Discovery + entity research (S02–S03), public sources | `/discovery` | **entity_approved** |
 | 3 | Proof sheet (S04), Markdown + client Google Doc | `/discovery proof-sheet` | **proof_sheet_approved** — Paul sends it |
-| 4 | *While the client has the sheet:* crawl (S05), reviews → customer language, rankings + cannibalization, backlinks, citations, grid, GSC, People Also Ask (S06–S11, S19) | `/crawl`, `/discovery data` | — |
+| 4 | *While the client has the sheet:* crawl (S05), reviews → customer language, rankings + cannibalization, backlinks, citations, grid, GSC, People Also Ask, query fan-out (S06–S11, S19–S21) | `/crawl`, `/discovery data` | — |
 | 5 | Audit: entity → architecture → page conformance → technical, then fresh-context review (S12–S18) | `/discovery audit` | **audit_approved** → safe fixes |
 | 6 | Client returns sheet → record it, reconcile into the Brand Guide | `/discovery sheet-returned`, `/discovery reconcile` | **brand_guide_approved** → structural changes |
 | 7 | Discovery sign-off (Agent 1 never starts Agent 2) | `/discovery signoff` | **discovery_signed_off** |
 | 8 | Technical blockers (Low items as one handoff) | `/build blockers` + `/implement` | **blockers_cleared** |
 | 9 | **Site plan** — every service and location page in one pass; runs side by side with step 8 (Jonie fixes the blockers meanwhile; Paul confirms **blockers_cleared** before release) | `/build plan` | **site_plan** |
 | 10 | **Pilot** — 1 service + 1 location brief; corrections go into the specs | `/build batch pilot` | **batch:pilot:briefs** |
-| 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); briefs → drafts + self-critique + **semantic review table** → (apply the SEM items Paul picked, re-check) → ship (WordPress drafts, verify, write-back: one run) | `/build batch <id>` [`drafts`\|`apply-sem`], `/build ship <id>` | pilot corrections applied | **batch:<id>:briefs**, **batch:<id>:drafts** (+ SEM picks) — two stops per batch |
+| 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); **evidence gate** (CM-041; a blocked page → facts interview or Paul's waiver) → one brief **per page, each its own run** → drafts one per page, each its own run, + self-critique → **batch review** (every draft side by side + semantic review table) → (apply the SEM items Paul picked, re-check) → ship (WordPress drafts, verify, write-back: one run) | `/build evidence <id>`, `/build brief <id> <page>`, `/build draft <id> <page>`, `/build batch <id> drafts`\|`apply-sem`, `/build ship <id>`, `/interview facts <id>` | pilot corrections applied | **batch:<id>:briefs**, **batch:<id>:drafts** (+ SEM picks) — two stops per batch; **evidence:<page>** waiver only on a block |
 | 12 | All pages built and written back | — | condition **pages_built** (no approval) |
 | 13 | Link wheel → verify | `/finish wheel` | **link_wheel_approved** |
 | 14 | Schema → QA crawl → punch-list → acceptance | `/finish schema`, `/finish qa` | **release_approved** (release) |
@@ -162,9 +169,25 @@ Rules enforced in the scripts as well as here:
 Every page type has a spec in `methodology/specs/` (homepage, service, location, county hub,
 about, blog post): element order and numbered conformance checks. Build and the audit read them;
 a spec marked DRAFT stops building that page type until Paul approves it; pilot corrections are
-logged in the spec. Writers follow `methodology/writing-commercial.md` (E1–E9, then the Stage 4
+logged in the spec. Writers follow `methodology/writing-commercial.md` (E1–E10, then the Stage 4
 semantic review, one table per batch, report only; Paul approves the drafts and picks SEM items in one step) and
-`methodology/writing-blog.md` (E1–E8, CM-038 link caps, CM-039 author).
+`methodology/writing-blog.md` (E1–E10, CM-038 link caps, CM-039 author).
+
+**Evidence gate (CM-041)** — before any brief, each page in the batch gets an evidence grid: the
+facts its spec needs (`methodology/evidence-requirements.json`), each Known / Unknown / Unverified /
+Conflict from Brand Guide A and D and the page's facts file → **pass**, **warn** (the brief lists the
+gaps) or **block** (no brief). A block goes to the **facts interview** (`/interview <slug> facts <batch>`,
+CM-042) and the gate re-runs on the answers, or Paul waives it (`/approve <slug> evidence:<page>
+--reason "..."`, recorded with his name, date and reason for that grid).
+
+**One page per run (CM-043)** — inside a batch, each page's brief and each page's draft is its own
+run with a fresh context (`/build <slug> brief|draft <batch> <page>`); the scripts refuse two pages
+in one run. The batch review run then reads every draft side by side (the sibling check, CM-017),
+and each batch stop collects every page for Paul's one approval.
+
+**Interviews (CM-042)** — facts (only on an evidence block), stories (every 30 days once the facts
+exist → the story bank) and voice (a Voice DNA file for the blog author, CM-039). `/interview`;
+skill `expert-interview`. Paul sends every question set.
 
 Build works in batches: one **site plan** for every service and location page (keyword, area
 variant, H1 decision with the "The Best" test, FAQ topics, link targets; checked across the
@@ -208,6 +231,7 @@ The rulings that most change daily work:
 - **Location pages (CM-023)** follow BB-315's sections; **variants (CM-024)** are a shared
   pool, only the homepage's reserved variant is exclusive.
 - **No invented facts (CM-016)** — write `[NEED: …]`. Unknown/Disputed Brand Guide fields block.
+  The evidence gate (CM-041) checks this per page before the brief.
 - **Discovery is not the audit.** No severity, priorities or recommendations before the audit
   step. Conflicts are recorded as OPEN entries in `methodology/rulings.md` (PROC-01), never resolved inside
   the work (GOV-06 §5).
@@ -277,6 +301,8 @@ clients/<slug>/
   approval-record.md Approval Record           (generated; mirrored to Drive)
   brand-guide.md     working copy of the Drive Brand Guide
   discovery/ audit/ build/ finish/ blog/ handoffs/
+  build/evidence/    evidence grids + page facts (CM-041)
+  interviews/        facts packs, stories rounds, story-bank.md, voice-dna-<author>.md (CM-042)
   inputs/            raw evidence and crawl (git-ignored)
   dfs-costs.jsonl    DataforSEO spend
 ```

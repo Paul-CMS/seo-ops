@@ -18,14 +18,18 @@ Rules are cited by ID from `methodology/rulings.md`; open it at the IDs the list
    any), analytics, backlinks. Without GSC, gather **DataforSEO ranking overlap** (post and
    commercial page ranking for the same query) via `scripts/dfs.py` — estimate first, ask Paul
    over $2 — into the config's `serp_overlap` (CM-021).
-2. Run **bb-blog-analysis** (`classify_blog.py`). Work every NEEDS-JUDGMENT and `blocked-*`
+2. Gather the question sources: `data/paa/paa-routing.md` and `data/fanout/fanout-routing.md` rows routed to
+   **blog topic** (CM-045) — a post that answers one of them is a Test B signal (a real question no commercial
+   page covers); a routed question with no post is a gap candidate on the map. Fan-out rows are an LLM's
+   brainstorm: never a volume, never observed conflict (CM-021).
+3. Run **bb-blog-analysis** (`classify_blog.py`). Work every NEEDS-JUDGMENT and `blocked-*`
    row; none may remain. Every post ends at exactly one of COMPETING (with a specific target,
    never "the homepage") · PROTECTED (criterion + signal) · DUPLICATE (winner) ·
    CONSOLIDATE-OR-REDIRECT, citing its test.
-3. Check: no protected post redirected (Test B before Test A, CM-007 — attribute it as
+4. Check: no protected post redirected (Test B before Test A, CM-007 — attribute it as
    Coastal's, never as methodology); nothing marked for deletion; no redirect proposal without
    observed conflict (GSC or DataforSEO overlap, CM-021).
-4. Save `<Client> - Blog Decision Map - REVIEW.md`; `status.py mark <slug> blog_map --file <map>`.
+5. Save `<Client> - Blog Decision Map - REVIEW.md`; `status.py mark <slug> blog_map --file <map>`.
    Tell Paul: `/approve <slug> blog_map_approved`.
 
 **redirects** — redirect list from the **approved** map only, as a VA handoff
@@ -33,11 +37,12 @@ Rules are cited by ID from `methodology/rulings.md`; open it at the IDs the list
 
 **next post** — one at a time, for each protected post and consolidation
 winner: brief (`PB - <post> - <Client>`): the question it answers, why it qualified, the
-commercial parent to bridge to, **required information gain** from expertise capture (run
-the expert-interview skill Mode A to draft questions for Paul to send if there is no source
-material — the writer must refuse rather than write a generic article), headings/FAQs in use
-(C3). Write by `methodology/writing-blog.md`: plan → **stop for Paul's OK** → draft →
-self-critique (E1–E8; E6 reports every CM-038 number). Register the post:
+commercial parent to bridge to, **required information gain** from the client's story bank (name the entries: "Story bank
+entries used: S-007, S-012"; if the bank has nothing for this question, run `/interview <slug> stories`
+for Paul to send — the writer must refuse rather than write a generic article), the author's Voice DNA
+file (CM-042; `python3 scripts/interview.py due <slug>` also says whether a stories round is due),
+headings/FAQs in use (C3). Write by `methodology/writing-blog.md`: plan → **stop for Paul's OK** → draft →
+self-critique (E1–E10; E6 reports every CM-038 number). Register the post:
 `status.py page <slug> <id> --type blog --name "<title>" --file <draft> --state draft_written`;
 Paul approves with `/approve <slug> page:<id>`; then save as `PD - <post> - <Client>`, add its headings and FAQs
 to C3.

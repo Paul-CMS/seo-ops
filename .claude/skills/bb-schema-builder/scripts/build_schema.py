@@ -31,6 +31,7 @@ REQUIRED = [
     ("business.address.addressRegion", "Confirmed NAP"),
     ("business.address.postalCode", "Confirmed NAP"),
     ("business.has_map", "Google Maps share link (maps.app.goo.gl)"),
+    ("business.logo", "Logo image URL (Brand Guide F: logo files) — the Corporation logo and the default image"),
     ("business.founding_date", "Founding year"),
     ("business.description", "Location entity description"),
     ("corporation.description", "Brand entity description"),
@@ -58,6 +59,13 @@ def entry_gate(cfg):
     for page in cfg.get("service_pages", []) + cfg.get("location_pages", []):
         if not page.get("entities"):
             warn.append(f"{page.get('url')}: no entity Things — about[] will be thin")
+        for e in page.get("entities") or []:
+            label = f"{page.get('url')} → entity '{(e or {}).get('name') or '(no name)'}'"
+            if not (e or {}).get("name"):
+                missing.append((label, "entity has no name"))
+            if not (e or {}).get("wikidata"):
+                missing.append((label, "no Wikidata URI — BB-606 (v1.1) makes the Wikidata URI the entity's @id. "
+                                       "Find it (Brand Guide F) or remove the entity from this page"))
         if page.get("pending_url_change"):
             missing.append((page.get("url"),
                             "PENDING URL CHANGE — never write schema for a page whose "

@@ -170,9 +170,10 @@ def log_cost(slug, endpoint, purpose, est, actual, extra=None):
     S.save(slug, st)
 
 
-def paid_post(slug, endpoint, payload, purpose, est, confirmed=False, extra=None):
+def paid_post(slug, endpoint, payload, purpose, est, confirmed=False, extra=None, timeout=90, retries=3):
+    """retries=1 for slow paid endpoints (LLM responses): a retry after a timeout can bill twice."""
     spend_guard(est, confirmed, endpoint, slug)
-    resp = request(endpoint, payload)
+    resp = request(endpoint, payload, timeout=timeout, retries=retries)
     actual = resp.get("cost")
     log_cost(slug, endpoint, purpose, est, actual, extra)
     return resp

@@ -56,7 +56,7 @@ Paul: `/approve <slug> proof_sheet_approved`.
 nothing changed) and `status.py mark <slug> proof_sheet_returned --file <it>`. That meets the
 **condition** `proof_sheet_returned` (the system checks the recorded file; nobody approves it).
 
-**data** (S06–S11, S19) — while the client has the sheet. Each paid script: `estimate` first, show
+**data** (S06–S11, S19–S21) — while the client has the sheet. Each paid script: `estimate` first, show
 Paul the cost, then `run ... --confirmed` only after his yes (over $2, or an unconfirmed price,
 always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 days old.
 - **S06 reviews:** `python3 scripts/reviews.py estimate|run <slug> --run <RUN_ID> --keyword "<GBP name>"
@@ -83,6 +83,13 @@ always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 
 - **S20 SEOPress site-wide settings:** if the WordPress credentials are in place, run `/wp-check <slug>` now —
   readable settings are saved as evidence; otherwise it issues Jonie's one-time VA check (record S20 when it
   returns). No WordPress access yet → `skipped` with the reason.
+- **S21 query fan-out (CM-045):** after S19, `python3 scripts/fanout.py estimate|run <slug> --run <RUN_ID>
+  --services-file <services.txt> --cities "<primary>,<c2>,<c3>,<c4>" [--cap 10] [--per-seed 40]
+  [--registry <C3 file>] --paa clients/<slug>/data/paa/paa-questions.csv` → `data/fanout/fanout-routing.md`.
+  About $0.07 for the default 10 seeds (over $2 asks Paul). **Route every query** like the PAA rows (service
+  H2/FAQ · location FAQ · blog topic · drop); a query that repeats a PAA question routes with it. These are
+  an LLM's brainstorm, not demand: never give them a volume (CM-012) and never use them as evidence for
+  CM-019, CM-020 or CM-021.
 Save everything once under `clients/<slug>/` with the evidence naming convention; record every
 step's outcome.
 

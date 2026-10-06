@@ -57,7 +57,7 @@
 | SVC-05 | Exactly one H1 | BB-307 | §6 On-page | High |
 | SVC-06 | H1 contains no brand name | BB-305 | §6 On-page | High |
 | SVC-07 | H1 uses the area variant, never a city, and not the homepage's reserved B1 variant | BB-305, CM-024 | §3 Brand, entity | High |
-| SVC-08 | H1 uses a different variant of every title entity | BB-304 | §6 On-page | Medium |
+| SVC-08 | H1 uses a different variant of every title entity — tested mechanically by COM-11 (CM-046) | BB-304, CM-046 | §6 On-page | Medium |
 | SVC-09 | H1 superlative matches the BG-H2 decision for this page. A missing "The Best" is never a failed check by itself (CM-020) — the check is whether the H1 matches the Brand Guide H2 decision for this page. | CM-020 | §6 On-page | Medium |
 | SVC-10 | (Recommendation check) No recommendation changes the H1 of a page in the top 3 for its main keyword | CM-020 | §6 On-page | High |
 | SVC-11 | No variant repeats at consecutive elements URL → title → H1 → first H2 | BB-108, CM-024 | §3 Brand, entity | Medium |

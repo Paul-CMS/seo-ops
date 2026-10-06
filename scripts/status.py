@@ -16,7 +16,12 @@
                           [--name N] [--url U] [--state S] [--file F]
     status.py mark <slug> <artifact> --file F [--file F2 ...]   record the files an approval will cover
     status.py plan <slug> --file plan.md --json plan.json
-    status.py batch <slug> <batch_id> --state S [--files f1,f2]
+    status.py batch <slug> <batch_id> --state S [--files f1,f2]   briefs_written / drafts_written collect the
+                                                      per-page files (each from its own run, CM-043)
+    status.py page-stage <slug> <page_id> --stage brief|draft --file F --run R
+                                                      record ONE page's brief or draft from its own run (CM-043);
+                                                      a brief needs the evidence gate cleared (CM-041)
+    status.py modes <slug>                            each producing stage's mode: review / auto (CM-044)
     status.py pilot-corrections <slug> --note T
     status.py approval-record <slug>                  render the Drive Approval Record (Markdown)
 
@@ -462,8 +467,91 @@ def batch_ready(st, bid, stage):
     return not r, r
 
 
+# ------------------------------------------------------------------ evidence gate (CM-041)
+def evidence_state(st, pid):
+    """(result or None, record). result: pass / warn / block / None (gate not run)."""
+    rec = ((st["pages"].get(pid) or {}).get("evidence")) or {}
+    return rec.get("result"), rec
+
+
+def evidence_ok(st, pid):
+    """(ok, why) — may a brief be written for this page? pass/warn yes; block only with Paul's waiver
+    for exactly this grid (the grid's sha at the time he waived it)."""
+    result, rec = evidence_state(st, pid)
+    if not result:
+        return False, f"page {pid}: the evidence gate has not run (evidence.py run)"
+    g = ROOT / rec.get("grid", "")
+    if not g.is_file() or sha12(g) != rec.get("sha"):
+        return False, f"page {pid}: the evidence grid changed after it was scored — re-run the gate"
+    if result in ("pass", "warn"):
+        return True, ""
+    w = rec.get("waiver") or {}
+    if w and w.get("grid_sha") == rec.get("sha"):
+        return True, ""
+    if w:
+        return False, (f"page {pid}: blocked by the evidence gate — your waiver of {w.get('at', '')[:10]} was for an "
+                       "older grid; the facts changed, so it no longer counts")
+    return False, f"page {pid}: blocked by the evidence gate ({'; '.join(rec.get('why') or [])})"
+
+
+# ------------------------------------------------------------------ one page per run (CM-043)
+def page_stage(st, pid, stage):
+    return (((st["pages"].get(pid) or {}).get("files") or {}).get(stage)) or {}
+
+
+def per_page_files(st, b, stage):
+    """(files in batch order, problems) — one file per page, each from its own run."""
+    files, runs, probs = [], {}, []
+    for pid in b["pages"]:
+        rec = page_stage(st, pid, stage)
+        if not rec.get("file"):
+            probs.append(f"{pid} has no {stage} yet (/build <slug> {stage} {b['id']} {pid})")
+            continue
+        if rec.get("run") in runs:
+            probs.append(f"{pid} and {runs[rec['run']]} were written in the same run ({rec['run']}) — one page per run")
+        runs[rec.get("run")] = pid
+        files.append(rec["file"])
+    return files, probs
+
+
+# ------------------------------------------------------------------ review / auto mode per stage (CM-044)
+def mode_stages():
+    return GATES["modes"]["stages"]
+
+
+def stage_mode(st, step):
+    """'review' / 'auto' for a producing stage; None for a step that is not one."""
+    if step not in mode_stages():
+        return None
+    mine = (st.get("modes") or {}).get(step)
+    if mine:
+        return mine["mode"]
+    glob = (config().get("stage_modes") or {}).get(step)
+    return glob["mode"] if glob else GATES["modes"]["default"]
+
+
+def pilot_passed(st, step):
+    """(ok, why) — has this stage passed the pilot for this client?"""
+    spec = (mode_stages().get(step) or {}).get("pilot")
+    if not spec:
+        return False, f"{step} has no pilot, so it always stays in review"
+    if spec.startswith("batch_state:"):
+        _, bid, want = spec.split(":")
+        b = batch(st, bid) or {}
+        ok = b.get("state") == want
+        return ok, ("" if ok else f"the pilot batch has not reached {want} yet")
+    if spec == "first_post":
+        ok = any(p.get("type") == "blog" and page_approved(st, pid)[0] for pid, p in st["pages"].items())
+        return ok, ("" if ok else "no blog post has been approved yet")
+    ok, rs = check(st, spec)
+    return ok, ("" if ok else "the pilot has not passed this stage yet: " + "; ".join(rs))
+
+
 def check(st, target):
     """One entry point for every gate-like target. Returns (ok, [reasons])."""
+    if target.startswith("evidence:"):
+        ok, why = evidence_ok(st, target[9:])
+        return ok, ([] if ok else [why])
     if target.startswith("page:"):
         ok, why = page_approved(st, target[5:])
         return ok, ([] if ok else [why])
@@ -641,6 +729,10 @@ def main():
     s.add_argument("--state", required=True, choices=BATCH_STATES); s.add_argument("--files")
     s.add_argument("--sem-table"); s.add_argument("--sem-findings", type=int)
     s.add_argument("--checks-passed", action="store_true"); s.add_argument("--note")
+    s = sub.add_parser("page-stage"); s.add_argument("slug"); s.add_argument("page_id")
+    s.add_argument("--stage", required=True, choices=["brief", "draft"]); s.add_argument("--file", required=True)
+    s.add_argument("--run", required=True)
+    s = sub.add_parser("modes"); s.add_argument("slug")
     s = sub.add_parser("pilot-corrections"); s.add_argument("slug"); s.add_argument("--note", required=True)
     s = sub.add_parser("mark"); s.add_argument("slug"); s.add_argument("name")
     s.add_argument("--file", required=True, action="append")
@@ -767,7 +859,7 @@ def main():
             die("the first batch must be 'pilot' with exactly 1 service + 1 location page")
         for pid, p in pages.items():
             st["pages"].setdefault(pid, {"state": "planned"}).update(
-                {k: p[k] for k in ("type", "name", "url", "group", "city", "service_variant", "h1", "replaces", "nav") if k in p})
+                {k: p[k] for k in ("type", "name", "url", "group", "city", "service_variant", "h1", "replaces", "nav", "claims") if k in p})
         st["build"] = {"site_plan": {"file": a.file, "approval": None},
                        "batches": [{**{k: b[k] for k in ("id", "kind", "label", "pages")},
                                     "state": "planned", "briefs": None, "drafts": None,
@@ -778,10 +870,21 @@ def main():
         save(a.slug, st); print(render_build(st))
     elif a.cmd == "batch":
         b = batch(st, a.batch_id) or die(f"no batch {a.batch_id}")
-        if a.state == "briefs_written":
-            ok, why = batch_ready(st, a.batch_id, "briefs")
-            if not ok:
-                die(f"batch {a.batch_id}: " + "; ".join(why))
+        if a.state in ("briefs_written", "drafts_written"):
+            stage = "brief" if a.state == "briefs_written" else "draft"
+            if a.state == "briefs_written":
+                ok, why = batch_ready(st, a.batch_id, "briefs")
+                if not ok:
+                    die(f"batch {a.batch_id}: " + "; ".join(why))
+            # CM-043: each page's brief and draft come from its own run; the batch only collects them.
+            per_page, probs = per_page_files(st, b, stage)
+            if probs:
+                die(f"batch {a.batch_id}: " + "; ".join(probs))
+            given = [f.strip() for f in (a.files or "").split(",") if f.strip()]
+            if given and sorted(given) != sorted(per_page):
+                die(f"batch {a.batch_id}: --files must be exactly the per-page {stage}s recorded with "
+                    f"status.py page-stage ({', '.join(per_page)})")
+            a.files = ",".join(per_page)
         stage_needed = {"drafts_written": "briefs", "sem_applied": "drafts", "sem_check_failed": "drafts",
                         "handed_off": "drafts", "corrections_requested": "drafts", "published": "drafts",
                         "verified": "drafts", "written_back": "drafts"}.get(a.state)
@@ -808,12 +911,12 @@ def main():
                 die(f"batch {a.batch_id}: Paul approved no SEM items — nothing to apply")
             if not a.checks_passed or not fs:
                 die("sem_applied needs --files <the drafts after applying the approved SEM items> and "
-                    "--checks-passed (E1–E9 re-run on every changed section). If a check failed, use "
+                    "--checks-passed (E1–E10 re-run on every changed section). If a check failed, use "
                     "--state sem_check_failed --note \"<which check, which page>\".")
             # Re-pin the approval to the applied versions: the change is exactly what Paul approved.
             table = [f for f in (b["drafts"].get("files") or {}) if f not in fs]
             b["drafts"]["files"] = {f: sha12(ROOT / f) for f in fs + table}
-            b["drafts"]["applied"] = {"sem_ids": ids, "at": now(), "checks": "E1–E9 passed on changed sections"}
+            b["drafts"]["applied"] = {"sem_ids": ids, "at": now(), "checks": "E1–E10 passed on changed sections"}
             b["files"]["drafts"] = fs + table
             log_line = (f"- SEM APPLIED {now()[:16]} · batch {a.batch_id} · {', '.join(ids)} · E-checks passed · "
                         "approval pinned to the applied versions\n")
@@ -840,6 +943,59 @@ def main():
             files[f] = sha12(ROOT / f)
         st.setdefault("marks", {})[a.name] = {"files": files, "at": now(), "ts": time.time()}
         save(a.slug, st); print(f"{a.name}: {', '.join(files)}")
+    elif a.cmd == "page-stage":
+        import run as R
+        R.open_run(a.slug, a.run)
+        info = (st.get("open_runs") or {}).get(a.run) or {}
+        want = f"build:{a.stage}"
+        if info.get("step") != want:
+            die(f"a {a.stage} is recorded only by its own /build {a.stage} run (this run is {info.get('step')}).")
+        if info.get("page") != a.page_id:
+            die(f"run {a.run} was started for page {info.get('page')}; it cannot record {a.page_id}. "
+                "One page per run (CM-043): start a run for that page.")
+        b = batch_of(st, a.page_id) or die(f"{a.page_id} is in no batch")
+        if info.get("batch") and info["batch"] != b["id"]:
+            die(f"{a.page_id} is in batch {b['id']}, not {info['batch']}")
+        f = ROOT / a.file
+        if not f.is_file():
+            die(f"{a.file} not found")
+        if a.stage == "brief":
+            ok, why = evidence_ok(st, a.page_id)
+            if not ok:
+                die(f"no brief for a page the evidence gate has not cleared (CM-041): {why}")
+            res = evidence_state(st, a.page_id)[0]
+            if res in ("warn", "block") and not re.search(r"^#+\s*Evidence gaps", f.read_text(), re.M | re.I):
+                die(f"{a.page_id} cleared the evidence gate with {'a WARN' if res == 'warn' else 'your waiver'}: the brief "
+                    "must carry an 'Evidence gaps' section listing every gap from the grid.")
+            if batch_stage_ok(st, b["id"], "briefs", False)[0]:
+                die(f"batch {b['id']} briefs are already approved; Paul re-opens them first (--decision revise).")
+        else:
+            if not batch_stage_ok(st, b["id"], "briefs", False)[0]:
+                die(f"batch {b['id']}: the briefs are not approved yet — no drafts before Paul approves the briefs.")
+            if batch_stage_ok(st, b["id"], "drafts", False)[0]:
+                die(f"batch {b['id']} drafts are already approved; Paul re-opens them first (--decision revise).")
+        p = st["pages"][a.page_id]
+        p.setdefault("files", {})[a.stage] = {"file": a.file, "run": a.run, "at": now(), "sha": sha12(f)}
+        p["state"] = "brief_written" if a.stage == "brief" else "draft_written"
+        log_line = f"- {a.stage.upper()} {now()[:16]} · run {a.run} · {a.page_id} · {a.file}\n"
+        if a.stage == "brief" and b.get("state") in ("planned", "briefs_written"):
+            files, probs = per_page_files(st, b, "brief")
+            if not probs:   # every page has its brief: collect them for Paul's one approval
+                b.setdefault("files", {})["briefs"] = files
+                b["briefs"] = None
+                set_batch_state(st, b, "briefs_written")
+                log_line += f"- BRIEFS COLLECTED {now()[:16]} · batch {b['id']} · {len(files)} page(s), one run each\n"
+        save(a.slug, st)
+        with open(path(a.slug).parent / "log.md", "a", encoding="utf-8") as fh:
+            fh.write(log_line)
+        print(f"{a.page_id}: {a.stage} recorded" + (" · batch briefs collected" if "COLLECTED" in log_line else ""))
+    elif a.cmd == "modes":
+        for step, spec in mode_stages().items():
+            m = stage_mode(st, step)
+            own = (st.get("modes") or {}).get(step)
+            src = "this client" if own else ("global" if (config().get("stage_modes") or {}).get(step) else "default")
+            ok, _ = pilot_passed(st, step)
+            print(f"  {step:20} {m:6} ({src})  pilot {'passed' if ok else ('—' if not spec.get('pilot') else 'not yet')}")
     elif a.cmd == "pilot-corrections":
         if not batch_stage_ok(st, "pilot", "briefs", False)[0]:
             die("the pilot briefs are not approved yet")

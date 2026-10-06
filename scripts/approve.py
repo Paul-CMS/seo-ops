@@ -9,6 +9,9 @@
                the SEM items to apply (needed only when the review found something)
     approve.py <slug> page:<page_id> --decision D [--file F] [--review T] [--practitioner T]
     approve.py <slug> import --proposal clients/<slug>/import-proposal.json
+    approve.py <slug> evidence:<page_id> --reason T     waive a BLOCK from the evidence gate (CM-041), for this grid
+    approve.py <slug>|global mode:<stage>=auto|review    switch a producing stage's mode (CM-044); auto only
+               after the stage passed the pilot; decisions can never be auto
 
 Refuses unless Paul typed /approve in this session within the last 20 minutes: the
 UserPromptSubmit hook writes a one-time token when — and only when — a real user prompt
@@ -172,6 +175,50 @@ def sem_list(v):
     return out
 
 
+def parse_mode(target):
+    """'mode:build:draft=auto' → ('build:draft', 'auto'). Only producing stages have a mode;
+    a decision (an /approve gate) can never be auto (CM-044)."""
+    body = target[5:]
+    step, _, mode = body.rpartition("=")
+    if mode not in ("auto", "review") or not step:
+        die(f"REFUSED ({target}) — write mode:<stage>=auto or mode:<stage>=review.")
+    if step in S.GATES["gates"] or step in S.GATES["conditions"] or step.startswith(("page:", "batch:", "evidence:")) \
+            or step == "site_plan":
+        die(f"REFUSED ({target}) — '{step}' is a decision. Decisions are always yours with /approve and can never be auto.")
+    if step not in S.mode_stages():
+        die(f"REFUSED ({target}) — '{step}' is not a producing stage. Stages: {', '.join(S.mode_stages())}")
+    return step, mode
+
+
+def global_mode(a):
+    """/approve global mode:<stage>=auto — every client; auto needs the stage to have passed the pilot
+    for at least one client. Recorded in config.json and in every client's status.json and log.md."""
+    if len(a.targets) != 1 or not a.targets[0].startswith("mode:"):
+        die("REFUSED — 'global' takes exactly one mode:<stage>=auto|review.")
+    target = a.targets[0]
+    step, mode = parse_mode(target)
+    take_token("global", target, consume=False)
+    from lib import CLIENTS, config
+    slugs = sorted(p.parent.name for p in CLIENTS.glob("*/status.json"))
+    if mode == "auto" and not any(S.pilot_passed(S.load(s), step)[0] for s in slugs):
+        die(f"REFUSED ({target}) — no client has passed the pilot for {step} yet.")
+    take_token("global", target)
+    cfg = config()
+    old = ((cfg.get("stage_modes") or {}).get(step) or {}).get("mode", S.GATES["modes"]["default"])
+    rec = {"mode": mode, "by": "Paul", "at": now(), "note": a.note, "was": old}
+    cfg.setdefault("stage_modes", {})[step] = rec
+    write_json(ROOT / "config.json", cfg)
+    for s in slugs:
+        st = S.load(s)
+        st.setdefault("mode_history", []).append({"step": step, "scope": "global", **rec})
+        S.save(s, st)
+        own = (st.get("modes") or {}).get(step)
+        append(client_dir(s) / "log.md", f"\n## MODE · {now()} · {step}: {old} → {mode} · GLOBAL · by Paul\n"
+               + (f"(this client keeps its own setting: {own['mode']})\n" if own else "")
+               + (f"Note: {a.note}\n" if a.note else ""))
+    print(git_commit(f"global: {step} → {mode} by Paul"))
+
+
 def prepare(a, st, target, multi):
     """Check one target. Returns (apply_fn, log_text, label). Refuses (exit) on any problem,
     before anything is written — a multi-target /approve applies all or nothing."""
@@ -225,6 +272,42 @@ def prepare(a, st, target, multi):
                 + (f"Practitioner sign-off: {a.practitioner}\n" if a.practitioner else "")
                 + (f"Note: {a.note}\n" if a.note else ""))
         return apply, text, label_
+
+    if target.startswith("evidence:"):   # CM-041 waiver: Paul's name, date and reason, tied to this grid
+        pid = target[9:]
+        result, rec = S.evidence_state(st, pid)
+        if result != "block":
+            die(f"REFUSED ({target}) — " + ("the evidence gate has not run for this page." if not result else
+                f"the page is not blocked (it is {result}); there is nothing to waive."))
+        if not a.reason:
+            die(f"REFUSED ({target}) — a waiver needs your reason: --reason \"...\"")
+        ok, why = S.evidence_ok(st, pid)
+        if "changed after it was scored" in why:
+            die(f"REFUSED ({target}) — {why}")
+        w = {"by": "Paul", "at": now(), "reason": a.reason, "grid": rec.get("grid"), "grid_sha": rec.get("sha"),
+             "counts": rec.get("counts")}
+
+        def apply():
+            st["pages"][pid]["evidence"]["waiver"] = w
+        text = (f"\n## WAIVER · {now()} · evidence gate · page {pid} · by Paul\n"
+                f"Grid: {rec.get('grid')} (sha {rec.get('sha')}) · was BLOCK: {'; '.join(rec.get('why') or [])}\n"
+                f"Reason: {a.reason}\n")
+        return apply, text, f"evidence waiver {pid}"
+
+    if target.startswith("mode:"):
+        step, mode = parse_mode(target)
+        if mode == "auto":
+            ok, why = S.pilot_passed(st, step)
+            if not ok:
+                die(f"REFUSED ({target}) — a stage goes to auto only after it has passed the pilot: {why}.")
+        old = S.stage_mode(st, step)
+        rec = {"mode": mode, "by": "Paul", "at": now(), "note": a.note, "was": old}
+
+        def apply():
+            st.setdefault("modes", {})[step] = rec
+            st.setdefault("mode_history", []).append({"step": step, "scope": "client", **rec})
+        text = f"\n## MODE · {now()} · {step}: {old} → {mode} · this client · by Paul\n" + (f"Note: {a.note}\n" if a.note else "")
+        return apply, text, f"{step} {mode}"
 
     if target.startswith("page:"):
         pid = target[5:]
@@ -291,7 +374,10 @@ def main():
     ap.add_argument("--conditions"); ap.add_argument("--files"); ap.add_argument("--file")
     ap.add_argument("--note"); ap.add_argument("--review"); ap.add_argument("--practitioner")
     ap.add_argument("--proposal"); ap.add_argument("--sem", "--ids", dest="sem")
+    ap.add_argument("--reason", help="evidence:<page> waivers: why Paul waives the gate")
     a = ap.parse_args()
+    if a.slug == "global":
+        return global_mode(a)
     d = client_dir(a.slug)
     st = S.load(a.slug)
 
@@ -306,6 +392,7 @@ def main():
     take_token(a.slug, a.targets)
     for apply, _, _ in prepared:
         apply()
+    st.pop("review_pause", None)   # Paul has looked: his /approve also ends a pending review pause (CM-044)
     S.save(a.slug, st)
     for _, text, _ in prepared:
         append(d / "log.md", text)

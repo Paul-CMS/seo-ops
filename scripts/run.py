@@ -104,6 +104,11 @@ def prev_post(st):
 
 def resolve(st, spec, a, key):
     raw = spec.get("gates_blog_only") if st["client"]["type"] == "blog-only" and "gates_blog_only" in spec else spec["gates"]
+    produces = " ".join(spec.get("produces", []))
+    if "{page}" in produces and not a.page:
+        die(f"step {key} needs --page <id> — one page per run (CM-043)", 2)
+    if "{batch}" in produces and not a.batch:
+        die(f"step {key} needs --batch <id>", 2)
     out = []
     for g in raw:
         if "{batch}" in g and not a.batch:
@@ -124,8 +129,22 @@ def missing_outputs(slug, st, info):
     spec = S.GATES["steps"].get(info["step"]) or {}
     miss = []
     for want in spec.get("produces", []):
-        want = want.replace("{batch}", info.get("batch") or "")
-        if want.startswith("steps:"):
+        want = want.replace("{batch}", info.get("batch") or "").replace("{page}", info.get("page") or "")
+        if want.startswith("evidence_batch:"):
+            b = S.batch(st, want.split(":", 1)[1]) or {}
+            stale = [p for p in b.get("pages", []) if ((st["pages"].get(p) or {}).get("evidence") or {}).get("run") != info["id"]]
+            if stale:
+                miss.append(f"an evidence grid from this run for {', '.join(stale)} — evidence.py run <slug> --run <RUN_ID> --batch {b.get('id')}")
+        elif want.startswith("facts_pack:"):
+            b = S.batch(st, want.split(":", 1)[1]) or {}
+            if (b.get("facts_interview") or {}).get("run") != info["id"]:
+                miss.append(f"the facts interview pack — evidence.py questions <slug> --run <RUN_ID> --batch {b.get('id')}")
+        elif want.startswith("page_stage:"):
+            _, pid, stage = want.split(":")
+            if S.page_stage(st, pid, stage).get("run") != info["id"]:
+                miss.append(f"the {stage} for page {pid}, recorded by this run — status.py page-stage <slug> {pid} "
+                            f"--stage {stage} --file <file> --run <RUN_ID>")
+        elif want.startswith("steps:"):
             left = [x for x in want[6:].split(",") if x not in (st.get("audit_steps") or {})]
             if left:
                 miss.append(f"an outcome for audit step(s) {', '.join(left)} — steps.py record <slug> --run <RUN_ID> <S##> done|skipped|failed")
@@ -255,7 +274,7 @@ def main():
         st0 = S.load(a.slug)
         info = (st0.get("open_runs") or {}).get(a.run_id)
         if info:
-            miss = missing_outputs(a.slug, st0, info)
+            miss = missing_outputs(a.slug, st0, {**info, "id": a.run_id})
             if miss:
                 print(f"NOT FINISHED — step {info['step']} has not recorded what it must produce:\n  - "
                       + "\n  - ".join(miss)
@@ -271,6 +290,9 @@ def main():
                f"Changes: {len(ch)} · Summary: {redact(a.summary)}\n")
         st = S.load(a.slug)
         (st.get("open_runs") or {}).pop(a.run_id, None)
+        step = (info or {}).get("step")
+        if S.stage_mode(st, step) == "review":   # CM-044: /next stops here until Paul types /next again
+            st["review_pause"] = {"run_id": a.run_id, "step": step, "at": now()}
         if cmd != "drive-mirror":   # a records mirror is bookkeeping; "last run" stays the real work
             st["last_run"] = {"run_id": a.run_id, "command": cmd, "finished": now(),
                               "result": a.summary, "changes": len(ch)}

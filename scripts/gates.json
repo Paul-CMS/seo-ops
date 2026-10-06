@@ -326,7 +326,10 @@
     "release_qa": "the QA Punch-List and acceptance sheets",
     "blog_map": "the Blog Decision Map",
     "topics": "the Blog Topic List",
-    "wordpress_pilot": "the WordPress pilot report (/wp-check --pilot)"
+    "wordpress_pilot": "the WordPress pilot report (/wp-check --pilot)",
+    "story_round": "the stories interview round (questions for the owner)",
+    "story_bank": "the updated story bank (clients/<slug>/interviews/story-bank.md)",
+    "voice_dna": "the author's Voice DNA file (clients/<slug>/interviews/voice-dna-<author>.md)"
   },
   "steps": {
     "new-client": {
@@ -386,10 +389,10 @@
         "proof_sheet_approved"
       ],
       "produces": [
-        "steps:S06,S07,S08,S09,S10,S11,S19,S20"
+        "steps:S06,S07,S08,S09,S10,S11,S19,S20,S21"
       ],
       "reads": [
-        "methodology/audit-steps.md (S06\u2013S11, S19)",
+        "methodology/audit-steps.md (S06\u2013S11, S19\u2013S21)",
         "methodology/agency-profile.md (tools)",
         "clients/<slug>/brand-guide.md (services, cities)",
         "wordpress/wordpress-site-setup.md (\u00a75 site-wide settings)"
@@ -483,24 +486,62 @@
         "methodology/specs/*.md",
         "clients/<slug>/data/rankings/ (best-variants.csv, url-rankings.csv)",
         "clients/<slug>/data/paa/paa-routing.md",
-        "methodology/rulings.md (CM-020, CM-022, CM-024)"
+        "methodology/rulings.md (CM-020, CM-022, CM-024)",
+        "clients/<slug>/data/fanout/fanout-routing.md"
       ]
     },
-    "build:batch": {
+    "build:evidence": {
       "gates": [
         "discovery_signed_off",
         "batch:{batch}:briefs_ready"
       ],
       "produces": [
-        "batch:{batch}:briefs"
+        "evidence_batch:{batch}"
       ],
       "reads": [
-        "the approved site plan",
+        "the approved site plan (the batch's pages)",
+        "clients/<slug>/brand-guide.md (A, D, E)",
+        "the returned proof sheet and the approved Discovery Record",
+        "methodology/evidence-requirements.json",
+        "methodology/rulings.md (CM-016, CM-027, CM-041)"
+      ]
+    },
+    "build:brief": {
+      "gates": [
+        "discovery_signed_off",
+        "batch:{batch}:briefs_ready",
+        "evidence:{page}"
+      ],
+      "produces": [
+        "page_stage:{page}:brief"
+      ],
+      "reads": [
+        "the approved site plan (this page's row and its siblings)",
         "clients/<slug>/brand-guide.md",
-        "methodology/specs/<type>.md for the batch's page types",
+        "clients/<slug>/build/evidence/<page>.grid.md",
+        "methodology/specs/<type>.md for this page",
         "clients/<slug>/data/reviews/customer-language.md",
         "clients/<slug>/data/paa/paa-routing.md",
-        "the audit findings for the batch's pages"
+        "clients/<slug>/data/fanout/fanout-routing.md",
+        "the briefs already written in this batch and the pages approved in earlier batches (sibling context)",
+        "the audit findings for this page",
+        "methodology/rulings.md (CM-041, CM-043)"
+      ]
+    },
+    "build:draft": {
+      "gates": [
+        "discovery_signed_off",
+        "batch:{batch}:briefs"
+      ],
+      "produces": [
+        "page_stage:{page}:draft"
+      ],
+      "reads": [
+        "the approved brief for this page",
+        "methodology/writing-commercial.md",
+        "methodology/specs/<type>.md + methodology/specs/README.md (common checks)",
+        "clients/<slug>/brand-guide.md (A\u2013D, H2, I)",
+        "the drafts already written in this batch and the pages approved in earlier batches (sibling context)"
       ]
     },
     "build:drafts": {
@@ -512,10 +553,12 @@
         "batch:{batch}:drafts"
       ],
       "reads": [
-        "the approved briefs for the batch",
-        "methodology/writing-commercial.md",
-        "methodology/specs/<type>.md + methodology/specs/README.md (common checks)",
-        "clients/<slug>/brand-guide.md (A\u2013D, H2, I)"
+        "every draft in the batch (one per page, each from its own run)",
+        "methodology/writing-commercial.md (E1, Stage 4)",
+        "methodology/specs/<type>.md",
+        "clients/<slug>/brand-guide.md (C1\u2013C3)",
+        "the pages approved in earlier batches",
+        "methodology/rulings.md (CM-017, CM-043)"
       ]
     },
     "build:apply-sem": {
@@ -528,7 +571,7 @@
       ],
       "reads": [
         "the batch's semantic review table and drafts",
-        "methodology/writing-commercial.md (E1\u2013E9, Stage 4)",
+        "methodology/writing-commercial.md (E1\u2013E10, Stage 4)",
         "methodology/specs/<type>.md"
       ]
     },
@@ -665,7 +708,9 @@
         ".claude/skills/bb-blog-analysis/SKILL.md",
         ".claude/skills/bb-blog-analysis/references/tests.md",
         "the approved URL Decision Map",
-        "methodology/rulings.md (CM-007, CM-019, CM-021)"
+        "methodology/rulings.md (CM-007, CM-019, CM-021)",
+        "clients/<slug>/data/paa/paa-routing.md",
+        "clients/<slug>/data/fanout/fanout-routing.md"
       ]
     },
     "blog:redirects": {
@@ -694,7 +739,9 @@
         "methodology/specs/blog-post.md",
         ".claude/skills/expert-interview/SKILL.md",
         "clients/<slug>/brand-guide.md (C3, D, I, author)",
-        "methodology/rulings.md (CM-007, CM-038, CM-039)"
+        "methodology/rulings.md (CM-007, CM-038, CM-039)",
+        "clients/<slug>/interviews/story-bank.md",
+        "clients/<slug>/interviews/voice-dna-<author>.md"
       ]
     },
     "blog:refresh": {
@@ -802,6 +849,171 @@
       "reads": [
         "scripts/drive.py (docstring: archive-and-replace)"
       ]
+    },
+    "discovery:fanout": {
+      "gates": [
+        "proof_sheet_approved"
+      ],
+      "produces": [
+        "steps:S21"
+      ],
+      "reads": [
+        "methodology/audit-steps.md (S21)",
+        "clients/<slug>/brand-guide.md (services, cities)",
+        "clients/<slug>/data/paa/paa-questions.csv",
+        "methodology/rulings.md (CM-012, CM-045)"
+      ]
+    },
+    "interview:facts": {
+      "gates": [
+        "discovery_signed_off"
+      ],
+      "produces": [
+        "facts_pack:{batch}"
+      ],
+      "reads": [
+        "clients/<slug>/build/evidence/<page>.grid.md for the batch's blocked pages",
+        ".claude/skills/expert-interview/SKILL.md (Facts)",
+        "methodology/rulings.md (CM-041, CM-042)"
+      ]
+    },
+    "interview:facts-answers": {
+      "gates": [
+        "discovery_signed_off"
+      ],
+      "produces": [
+        "evidence_batch:{batch}"
+      ],
+      "reads": [
+        "the owner's answers (save them as given in clients/<slug>/interviews/facts/)",
+        "the facts interview pack",
+        "clients/<slug>/brand-guide.md (D)",
+        ".claude/skills/expert-interview/SKILL.md (Facts)",
+        "methodology/rulings.md (CM-016, CM-027, CM-042)"
+      ]
+    },
+    "interview:stories": {
+      "gates": [
+        "brand_guide_approved"
+      ],
+      "produces": [
+        "story_round"
+      ],
+      "reads": [
+        ".claude/skills/expert-interview/SKILL.md (Stories)",
+        ".claude/skills/expert-interview/references/question-bank.md",
+        "clients/<slug>/interviews/story-bank.md",
+        "clients/<slug>/brand-guide.md (C1, E, G)",
+        "methodology/rulings.md (CM-042)"
+      ]
+    },
+    "interview:stories-answers": {
+      "gates": [
+        "brand_guide_approved"
+      ],
+      "produces": [
+        "story_bank"
+      ],
+      "reads": [
+        "the transcript (save it as given in clients/<slug>/interviews/stories/)",
+        ".claude/skills/expert-interview/SKILL.md (Stories)",
+        ".claude/skills/expert-interview/references/extraction-rubric.md",
+        "clients/<slug>/interviews/story-bank.md",
+        "methodology/rulings.md (CM-027, CM-042)"
+      ]
+    },
+    "interview:voice": {
+      "gates": [
+        "brand_guide_approved"
+      ],
+      "produces": [
+        "voice_dna"
+      ],
+      "reads": [
+        "the recorded conversation's transcript (save it as given in clients/<slug>/interviews/voice/)",
+        ".claude/skills/expert-interview/SKILL.md (Voice)",
+        ".claude/skills/expert-interview/references/voice-dna.md",
+        "clients/<slug>/brand-guide.md (author)",
+        "methodology/rulings.md (CM-039, CM-042)"
+      ]
+    }
+  },
+  "_modes_about": "CM-044. Every producing stage has a mode: review (the /next loop stops after the stage so Paul can look) or auto (the loop goes straight on). Default review. A stage can switch to auto only after it has passed the pilot ('pilot' below; none = always review), only by Paul with /approve <slug>|global mode:<stage>=auto, recorded in status.json and log.md. Decisions (/approve gates) are never stages here and can never be auto.",
+  "modes": {
+    "default": "review",
+    "stages": {
+      "discovery:discovery": {
+        "pilot": null
+      },
+      "discovery:proof-sheet": {
+        "pilot": null
+      },
+      "discovery:data": {
+        "pilot": null
+      },
+      "discovery:fanout": {
+        "pilot": null
+      },
+      "discovery:audit": {
+        "pilot": null
+      },
+      "discovery:reconcile": {
+        "pilot": null
+      },
+      "discovery:signoff": {
+        "pilot": null
+      },
+      "build:blockers": {
+        "pilot": null
+      },
+      "build:plan": {
+        "pilot": null
+      },
+      "build:evidence": {
+        "pilot": "batch:pilot:briefs"
+      },
+      "build:brief": {
+        "pilot": "batch:pilot:briefs"
+      },
+      "build:draft": {
+        "pilot": "batch:pilot:drafts"
+      },
+      "build:drafts": {
+        "pilot": "batch:pilot:drafts"
+      },
+      "build:apply-sem": {
+        "pilot": "batch:pilot:drafts"
+      },
+      "build:ship": {
+        "pilot": "batch_state:pilot:written_back"
+      },
+      "build:published": {
+        "pilot": "batch_state:pilot:written_back"
+      },
+      "finish:wheel": {
+        "pilot": null
+      },
+      "finish:schema": {
+        "pilot": null
+      },
+      "finish:qa": {
+        "pilot": null
+      },
+      "blog:map": {
+        "pilot": null
+      },
+      "blog:next": {
+        "pilot": "first_post"
+      },
+      "blog:topics": {
+        "pilot": null
+      },
+      "interview:stories-answers": {
+        "pilot": null
+      },
+      "interview:voice": {
+        "pilot": null
+      }
     }
   }
 }
