@@ -6,6 +6,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 
 | When | What | Decision |
 |---|---|---|
+| 2026-10-05T22:36 | entity_approved | approved |
 
 ## Decisions logged during runs
 

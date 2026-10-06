@@ -4,7 +4,10 @@ Generated from the seo-ops system (clients/apex-roofing-of-the-lowcountry/status
 
 ## Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)
 
-- Decision: **pending**
+- Decision: **approved**
+- Decided by: Paul · 2026-10-05T22:36:31-05:00
+- Approved version: `clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md` (sha d06cc3b66d1c)
+- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2` (sha 858a9bcbb587)
 
 ## Client proof sheet approved by Paul, ready for him to send
 

@@ -376,3 +376,7 @@ Gates checked: client_setup
 ### END HANDOFF
 ## RUN 20261005-223335-discovery-40fe · FINISHED · 2026-10-05T22:34:18-05:00
 Changes: 7 · Summary: Entity files final per Paul; manual lookups to Gwen
+
+## APPROVAL · 2026-10-05T22:36:31-05:00 · entity_approved · approved · by Paul
+Approved version: clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md (sha d06cc3b66d1c)
+Approved version: clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2 (sha 858a9bcbb587)
