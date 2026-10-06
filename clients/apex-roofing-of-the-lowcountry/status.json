@@ -100,10 +100,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261005-221139-discovery-5ddf",
-    "command": "discovery",
-    "finished": "2026-10-05T22:12:29-05:00",
-    "result": "Area entity revised per Paul: HHI-Bluffton-Port Royal MSA in SEO titles",
+    "run_id": "20261005-221818-wp-check-1c23",
+    "command": "wp-check",
+    "finished": "2026-10-05T22:19:50-05:00",
+    "result": "wp-check: connected except SEOPress 10.0.1 per-page fields can't be read back",
     "changes": 2
   },
   "spend": {
@@ -117,7 +117,7 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-05T22:12:29-05:00",
+  "updated": "2026-10-05T22:19:50-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00"
@@ -126,5 +126,14 @@
     "run_id": "20261005-221139-discovery-5ddf",
     "step": "discovery:discovery",
     "at": "2026-10-05T22:12:29-05:00"
+  },
+  "wordpress": {
+    "check": {
+      "at": "2026-10-05T22:19:07-05:00",
+      "passed": false,
+      "report": "clients/apex-roofing-of-the-lowcountry/wordpress/wp-check-2026-10-05.md",
+      "settings_readable": true,
+      "seopress_fields_ok": false
+    }
   }
 }
