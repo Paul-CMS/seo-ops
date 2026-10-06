@@ -300,3 +300,37 @@ Gates checked: client_setup
 ### END HANDOFF
 ## RUN 20261005-221818-wp-check-1c23 · FINISHED · 2026-10-05T22:19:50-05:00
 Changes: 2 · Summary: wp-check: connected except SEOPress 10.0.1 per-page fields can't be read back
+
+## RUN 20261005-223142-wp-check-24f5 · STARTED · /wp-check · 2026-10-05T22:31:42-05:00
+Step: wp-check
+Gates checked: client_setup
+- CHANGE #26 [wp_check] https://apexroofingtlc.com/?page_id=1610 | test draft page | old: (none) | new: draft id 1610 | result: APPLIED · test draft (trashed at the end of the check)
+- CHANGE #27 [wp_check] https://apexroofingtlc.com/?p=1611 | test draft post | old: (none) | new: draft id 1611 | result: APPLIED · test draft (trashed at the end of the check)
+### HANDOFF · /wp-check · 2026-10-05 · run 20261005-223142-wp-check-24f5
+**What I did**
+- Re-ran /wp-check after the SEOPress 10.x fix (commit e0cdf3b). Every SEOPress per-page field was written to a test draft and read back; both test drafts were trashed. Result: **connected** (valid 30 days).
+
+**What was decided, and why**
+- Nothing new. The login is still an Administrator (NOTE, not a failure) — Paul's call whether Jonie switches it to Editor.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Administrator login vs the dedicated Editor the spec asks for | Paul | Nothing |
+| Kadence head-code meta key | Found during the pilot | Schema (Finish) |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Check report | clients/apex-roofing-of-the-lowcountry/wordpress/wp-check-2026-10-05.md | Connected |
+
+**What I could not check**
+- —
+
+**Anything the next agent would otherwise get wrong**
+- This site runs SEOPress 10.0.1; `wp.py get` now reads its stored values. Use `wp.py raw-seo` if a field ever looks wrong.
+### END HANDOFF
+## RUN 20261005-223142-wp-check-24f5 · FINISHED · 2026-10-05T22:33:28-05:00
+Changes: 2 · Summary: wp-check passed: WordPress connected (SEOPress 10.0.1 read fixed)
+
+## CONDITION · 2026-10-05T22:33:28-05:00 · WordPress connected (/wp-check passed in the last 30 days) — met (system-verified)

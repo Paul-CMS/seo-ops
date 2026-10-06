@@ -18,6 +18,7 @@ Rules for this run (Paul, 2026-10-05):
 | 2026-10-05 | entity decision | The system should expect `seo-ops` as the WordPress username — but if paul@coastalmarketingstrategies.com is already used by another user on the site, a different username is fine. The system should note that change automatically and apply it. **Withdrawn by Paul the same day:** "I guess the application password name is supposed to be seo-ops? then scratch the prev instruction about username. just be clear." → no username rule; instead make the user name vs the Application Password's name vs the password itself unmistakable. |
 | 2026-10-05 | entity decision | Say explicitly — better, link — the .env file the credentials go in, and be clear about exactly what goes in it. |
 | 2026-10-05 | entity decision | The brand name contains "Lowcountry" and the brand is in every SEO title, so use the Hilton Head Island–Bluffton–Port Royal metro area as the area entity in the SEO title instead. |
+| 2026-10-05 | wp-check | "Lowcountry should be in every SEO title in which the brand is being used, since it is official part of the brand name." (Answers open choice 2: the brand is always written in full in SEO titles.) |
 
 ## Collected for the next pause
 
