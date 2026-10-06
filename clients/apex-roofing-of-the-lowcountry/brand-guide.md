@@ -68,8 +68,10 @@ Every area variant except the reserved one. Reuse across service pages is correc
 3. Hilton Head Island Metropolitan Area              [Proposed]
 4. Beaufort and Jasper Counties                      [Proposed]
 ```
-**SEO titles (Paul, 2026-10-05):** the brand is in every SEO title and already says "Lowcountry", so
-variants 1 and 2 are never used in an SEO title — only in the H1, H2s and body. SEO titles take the
+**SEO titles (Paul, 2026-10-05):** the brand is written in full — "Apex Roofing of the Lowcountry",
+never shortened — in every SEO title that carries the brand, because "Lowcountry" is part of the
+official brand name. So "Lowcountry" reaches every branded SEO title through the brand, and variants
+1 and 2 are not added on top in an SEO title (H1, H2s and body only). SEO titles take the
 metro-area, Hilton Head Island Metropolitan Area or county variants.
 
 ### B3 · Assignment log — the write-back target

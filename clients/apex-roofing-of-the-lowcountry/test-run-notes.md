@@ -20,6 +20,21 @@ Rules for this run (Paul, 2026-10-05):
 | 2026-10-05 | entity decision | The brand name contains "Lowcountry" and the brand is in every SEO title, so use the Hilton Head Island–Bluffton–Port Royal metro area as the area entity in the SEO title instead. |
 | 2026-10-05 | wp-check | "Lowcountry should be in every SEO title in which the brand is being used, since it is official part of the brand name." (Answers open choice 2: the brand is always written in full in SEO titles.) |
 
+## Fix round 2026-10-05 (Paul: "can we fix whatever needs to be fixed in the system?") — commit e0cdf3b, tests 279/279
+
+| Item (row below) | Outcome |
+|---|---|
+| SEOPress 10.0.1 per-page fields read as empty | **Fixed** — `seo_read` reads the stored values from the per-section endpoints and unwraps `{success, data}`; `wp.py raw-seo` added. Re-ran /wp-check on the live site: **connected**. |
+| Entity approval covers the whole Brand Guide | **Fixed** — approvals can name sections (`brand-guide.md#A+B1+B2`); Build write-back and reconcile no longer cancel it. Apex's entity_record re-marked that way. |
+| `kind other` defaults to Gwen for WordPress setup | **Fixed** — `wp_setup` kind (owner Jonie). |
+| CAPTCHA-gated SOS/LLR + GBP dashboard facts | **Fixed** — `manual_lookup` kind (owner Gwen); discovery sends them in one handoff. Apex: H-2026-10-05-02-manual_lookup issued. |
+| Handoff Log doubled headings (from Gettysburg) | **Fixed** — `run.py finish` drops a file's own heading; template updated. |
+| One county Wikidata row for a two-county MSA | **Fixed** — template row now "one per county". |
+| /wp-check "Nothing on the site was changed" | **Fixed** — says the two test drafts were created and trashed. |
+| Guard too strict (filenames inside arguments, `cd &&`, the credentials-file name in commit messages) | **Not changed** — hooks are off limits to Claude by design. Paul edits `.claude/hooks/guard.py` himself, or tells Claude explicitly to. |
+| `drive.py` has no upload command | **Not changed** — uploads go through the Drive connector; a script upload needs Drive API credentials the system doesn't have. |
+| Template folder tree drift (Gettysburg) | **Not changed** — low value; the tree was checked by hand this run. |
+
 ## Collected for the next pause
 
 | Date | Step | Item | Blocker? |

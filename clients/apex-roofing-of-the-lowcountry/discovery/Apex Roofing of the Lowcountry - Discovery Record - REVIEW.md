@@ -296,6 +296,10 @@ Hilton Head Island–Bluffton–Port Royal metro area as the area entity instead
 
 Category entity, category variants (Roofing Contractor, Roofer, Roofers) and C1 (Georgia not served) are unchanged from 3.6.
 
+Paul confirmed (same day): the reserved variant is written "…Metropolitan Area" (the Wikipedia form; Q8 answered — no
+"Metro Area" shortening), and the brand is always written in full in every SEO title that carries it, since "Lowcountry"
+is part of the official brand name — the "Lowcountry" variants are therefore not added on top in SEO titles, site-wide.
+
 ---
 
 ## 4 · Conflicts — every candidate value, none resolved (PROC-01)
