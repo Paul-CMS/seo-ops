@@ -61,11 +61,11 @@
   "marks": {
     "entity_record": {
       "files": {
-        "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md": "ddfb21b5f782",
-        "clients/apex-roofing-of-the-lowcountry/brand-guide.md": "33f0aefc0a42"
+        "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md": "6790b5433465",
+        "clients/apex-roofing-of-the-lowcountry/brand-guide.md": "122e6d29a9cb"
       },
-      "at": "2026-10-05T21:25:50-05:00",
-      "ts": 1791253550.5854259
+      "at": "2026-10-05T21:53:51-05:00",
+      "ts": 1791255231.247846
     }
   },
   "pages": {},
@@ -100,11 +100,11 @@
     }
   },
   "last_run": {
-    "run_id": "20261005-211303-discovery-aee7",
+    "run_id": "20261005-215259-discovery-acd3",
     "command": "discovery",
-    "finished": "2026-10-05T21:26:51-05:00",
-    "result": "Discovery and entity foundation proposed (public sources)",
-    "changes": 5
+    "finished": "2026-10-05T21:54:09-05:00",
+    "result": "Entity proposal revised per Paul (SC Lowcountry area, variants)",
+    "changes": 2
   },
   "spend": {
     "dataforseo_usd": 0.0
@@ -117,14 +117,14 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-05T21:28:44-05:00",
+  "updated": "2026-10-05T21:54:09-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00"
   },
   "review_pause": {
-    "run_id": "20261005-211303-discovery-aee7",
+    "run_id": "20261005-215259-discovery-acd3",
     "step": "discovery:discovery",
-    "at": "2026-10-05T21:26:51-05:00"
+    "at": "2026-10-05T21:54:09-05:00"
   }
 }

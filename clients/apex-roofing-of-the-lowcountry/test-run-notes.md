@@ -13,6 +13,7 @@ Rules for this run (Paul, 2026-10-05):
 
 | Date | Step | Note |
 |---|---|---|
+| 2026-10-05 | entity decision | Paul: SEOPress version on apexroofingtlc.com is 10.0.1 (meets the 6.8+ requirement). WordPress username given as PaulMeisner rather than a dedicated `seo-ops` user; password given in chat (not recorded here). Area entity → Lowcountry / SC Lowcountry; Roof Mechanic out; no Coastal Georgia currently. |
 
 ## Collected for the next pause
 
@@ -30,3 +31,7 @@ Rules for this run (Paul, 2026-10-05):
 | 2026-10-05 | discovery | The public Google Maps view is limited: GBP secondary categories, service-area list and open date are not visible, so BB-107 (broadest category primary) can't be checked in discovery without GBP dashboard access. | No |
 | 2026-10-05 | discovery | Brand Guide Section F has one "Wikidata URI — county" row; Apex's MSA is two counties (Beaufort + Jasper). Both written into the one row for now. | No |
 | 2026-10-05 | discovery | `drive.py` has no upload command, so first-time uploads go through the Drive connector by pasting the whole file as text (the 33 KB evidence file came through 1 byte short — trailing newline). An `upload` subcommand would make it exact and cheaper. | No |
+| 2026-10-05 | entity decision | The `entity_approved` line covers the whole `brand-guide.md`. Every later Brand Guide write (proof-sheet reconcile, Build write-back to B3/C/D) changes that file, so the entity approval would "stop counting" each time even though Section A didn't change. Worth checking how Gettysburg behaved; a per-section hash (Section A + B only) would fit better. | Not yet — it becomes one at reconcile |
+| 2026-10-05 | entity decision | Paul typed `/approve` at the end of a message that also changed the proposal. It wasn't run as an approval command, and approving would have locked in the rejected metro area anyway. The changes were applied in a revision run instead and Paul re-types `/approve` on the revised files. Worth a line in CLAUDE.md §3: an approval with changes = revise first, then approve. | No |
+| 2026-10-05 | entity decision | WordPress credentials arrived in chat instead of `.env`, and for a personal account (PaulMeisner) rather than a dedicated `seo-ops` Editor. The password looks like a login password, not an Application Password (24 characters in groups of four), which the REST connection needs. Not written anywhere by the system. | Yes for /wp-check — not for discovery |
+| 2026-10-05 | entity decision | The Drive copy of the Discovery Record (REVIEW) is the version from before Paul's changes. Per /approve step 5 the approved version goes up as a new `- APPROVED.md` file after the approval, so it wasn't re-uploaded now. | No |

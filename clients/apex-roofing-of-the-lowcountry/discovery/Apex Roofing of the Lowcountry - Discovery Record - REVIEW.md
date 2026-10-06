@@ -260,13 +260,35 @@ Rotation pool:  1. Hilton Head Island–Bluffton–Port Royal MSA  2. Hilton Hea
 
 The MSA spans two counties; the Brand Guide has one county row — both are listed (Paul picks, or keeps both).
 
+### 3.6 Paul's direction, 2026-10-05 — supersedes 3.2–3.5 where they differ
+
+Paul reviewed the proposal above and directed these changes before approving (logged as decisions in this run):
+
+| Item | Was proposed | Paul's direction | Now in the Brand Guide |
+|---|---|---|---|
+| Category entity | Roofing contractor | Roofing Contractor — agreed | Roofing Contractor (homepage category variant) |
+| Category variants | Roofing Contractor · Roofer · Roofers · Roof Mechanic | All except Roof Mechanic | Roofing Contractor · Roofer · Roofers (Residential Roofer stays a candidate only — not approved) |
+| Area entity | Hilton Head Island–Bluffton–Port Royal, SC MSA (Q17020871) | "Lowcountry or South Carolina Lowcountry" instead | **South Carolina Lowcountry** (Wikipedia article title; Wikidata Q3885311) |
+| Reserved homepage variant | Hilton Head Island Metropolitan Area | "Lowcountry or South Carolina Lowcountry" | **South Carolina Lowcountry** — bare "Lowcountry" is in the brand name on every page, so it can't be exclusive to the homepage; it goes into the rotation pool |
+| C1 — Georgia | open | "No coastal Georgia is being served currently" | Georgia out of scope; the homepage line "& Coastal Georgia" stays an observation for the audit |
+
+Russian Doll with Paul's choice: Bluffton → Beaufort County → Hilton Head Island–Bluffton–Port Royal MSA (smallest
+true container) → **South Carolina Lowcountry** (Wikipedia: "The area includes the Hilton Head Island-Bluffton-Beaufort,
+SC Metropolitan Statistical Area"; most common definition Charleston, Dorchester, Beaufort, Georgetown, Colleton, Hampton,
+Berkeley, Jasper and Williamsburg counties). Contains all 12 cities: yes. It is one level above the smallest container
+BB-105 names — Paul's decision, logged; BB-105's own Beaufort + Jasper example lists "South Carolina Lowcountry" as a name
+for this area, so it is a real name under BB-109.
+
+Rotation pool now: Lowcountry · Hilton Head Island–Bluffton–Port Royal MSA · Hilton Head Island Metropolitan Area ·
+Beaufort and Jasper Counties.
+
 ---
 
 ## 4 · Conflicts — every candidate value, none resolved (PROC-01)
 
 | # | Field | Candidate values (verbatim, with source) | Goes to |
 |---|---|---|---|
-| C1 | **Service area — does it include Georgia?** (affects the area entity) | (a) 12 SC cities, all in Beaufort/Jasper — location pages, menu; (b) "Serving the South Carolina Lowcountry & Coastal Georgia" — homepage (W8); (c) "Beaufort,, Jasper and Savannah counties" — BBB; (d) GBP service-area list — not visible | Proof sheet (client) + Paul (entity) |
+| C1 | **Service area — does it include Georgia?** (affects the area entity) | (a) 12 SC cities, all in Beaufort/Jasper — location pages, menu; (b) "Serving the South Carolina Lowcountry & Coastal Georgia" — homepage (W8); (c) "Beaufort,, Jasper and Savannah counties" — BBB; (d) GBP service-area list — not visible | Proof sheet (client) + Paul (entity) — **Paul 2026-10-05: Georgia not served currently** (see 3.6) |
 | C2 | Founding / start date | (a) "Business Started: 2015-11-11" — BBB; (b) DOMESTIC LLC filing "2 Dec 2015" — OpenCorporates copy of SOS; BBB "incorporated on 12/2/2015"; (c) domain registered 2015-11-23 — RDAP; (d) "founded here over a decade ago" — /bluffton/ (W2); (e) GBP open date — not visible | Proof sheet |
 | C3 | Owner / roles | (a) "Founded by Ralph and Pierce Brehany" — homepage (W1); (b) BBB: Ralph Brehany "President", Pierce Brehany "Owner"; (c) reviews: "Ralph" as "The owner" and "his son Pierce" | Proof sheet |
 | C4 | Residential only, or residential + commercial | (a) "a licensed residential roofing contractor" — homepage (W6); Facebook / footer "a residential roofing company"; (b) "top-tier roofing solutions for homes and businesses" — /about/ (W7); (c) "residential and commercial roof inspections" — GBP post 2026-10-04; (d) "roofing subcontractor on new construction projects" — /roof-installation/ (W16) | Proof sheet |
