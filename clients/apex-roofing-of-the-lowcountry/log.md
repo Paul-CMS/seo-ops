@@ -82,3 +82,34 @@ Gates checked: client_setup
 ### END HANDOFF
 ## RUN 20261005-211116-wp-check-0f33 · FINISHED · 2026-10-05T21:11:38-05:00
 Changes: 5 · Summary: WordPress setup handoff issued to Jonie; connection test waits for credentials
+
+## RUN 20261005-211145-drive-mirror-3ea9 · STARTED · /drive-mirror · 2026-10-05T21:11:45-05:00
+Step: drive-mirror
+Gates checked: client_setup
+- CHANGE #7 [drive_file] https://drive.google.com/file/d/1xjKRRsQFihLC5BZCr2YbT8SlshxuUDkl/view | upload | old: (new file) | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 19890a697a4c | result: done | snapshots  clients/apex-roofing-of-the-lowcountry/snapshots/20261005-211145-drive-mirror-3ea9/0007-new.md
+- CHANGE #8 [drive_file] https://drive.google.com/file/d/1obnlpMw1OavfmWrdLmPSqgA03WO29rcO/view | upload | old: (new file) | new: Apex Roofing of the Lowcountry - Approval Record.md · sha 5aefc2a6d4aa | result: done | snapshots  clients/apex-roofing-of-the-lowcountry/snapshots/20261005-211145-drive-mirror-3ea9/0008-new.md
+- CHANGE #9 [drive_file] https://drive.google.com/file/d/1Fhz6qpIWOYDLHp2OIBH6iOo3CTEgSA_L/view | upload | old: (new file) | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 393d6e4acc83 | result: done | snapshots  clients/apex-roofing-of-the-lowcountry/snapshots/20261005-211145-drive-mirror-3ea9/0009-new.md
+### HANDOFF · /drive-mirror · 2026-10-05 · run 20261005-211145-drive-mirror-3ea9
+**What I did**
+- First upload to the client Drive folder: Handoff Log, Approval Record and Document Checklist as real `.md` files under their standard names. Nothing to archive (no earlier copies).
+
+**What was decided, and why**
+- The Brand Guide is not mirrored yet: it is still the blank template. It goes up once discovery fills Section A.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Records in Drive | https://drive.google.com/drive/folders/1DN9Lji_McIOo9i2eFLV-u7eXrvY00G37 | Uploaded |
+
+**What I could not check**
+- —
+
+**Anything the next agent would otherwise get wrong**
+- Later mirrors are archive-and-replace (dated name → `_Archive`, upload new), never a second copy beside the first.
+### END HANDOFF
+## RUN 20261005-211145-drive-mirror-3ea9 · FINISHED · 2026-10-05T21:12:50-05:00
+Changes: 3 · Summary: Records mirrored to Drive (first upload)

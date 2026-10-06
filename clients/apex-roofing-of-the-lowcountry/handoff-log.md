@@ -62,3 +62,26 @@ Generated from the safety log (clients/apex-roofing-of-the-lowcountry/log.md) �
 **Anything the next agent would otherwise get wrong**
 - Discovery does not need WordPress. It can run now; /wp-check is only needed before the first WordPress step (safe fixes after the audit approval).
 
+## /drive-mirror · 2026-10-05 · run 20261005-211145-drive-mirror-3ea9
+
+**What I did**
+- First upload to the client Drive folder: Handoff Log, Approval Record and Document Checklist as real `.md` files under their standard names. Nothing to archive (no earlier copies).
+
+**What was decided, and why**
+- The Brand Guide is not mirrored yet: it is still the blank template. It goes up once discovery fills Section A.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Records in Drive | https://drive.google.com/drive/folders/1DN9Lji_McIOo9i2eFLV-u7eXrvY00G37 | Uploaded |
+
+**What I could not check**
+- —
+
+**Anything the next agent would otherwise get wrong**
+- Later mirrors are archive-and-replace (dated name → `_Archive`, upload new), never a second copy beside the first.
+
