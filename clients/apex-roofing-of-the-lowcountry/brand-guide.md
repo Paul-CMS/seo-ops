@@ -1,4 +1,4 @@
-# [Client Name] - Brand Guide
+# Apex Roofing of the Lowcountry - Brand Guide
 ### The single business-truth record. Every agent reads it; the Build agent writes back to it.
 Repo working copy: `clients/<slug>/brand-guide.md` · mirrored to `[Client Name] - TMS/[Client Name] - Brand Guide.md`
 
@@ -16,27 +16,30 @@ publication.
 
 | # | Field | Value | Status |
 |---|---|---|---|
-| 1 | Brand entity (GBP name, exactly) | | |
-| 2 | GBP primary category = the category entity | | |
-| 3 | Category variants (4–6) | | |
-| 4 | Storefront or SAB | | |
-| 5 | Area entity | | |
-| 6 | Area variants (3–5) | | |
-| 7 | Separator standard | ` - ` | |
-| 8 | Phone | | |
-| 9 | Primary domain (canonical host form) | | |
-| 10 | Legal entity name | | |
-| 11 | Exact URL in the GBP Website field | | |
+| 1 | Brand entity (GBP name, exactly) | Apex Roofing of the Lowcountry | Proposed (Discovery 2026-10-05) — awaits entity_approved · name forms differ across sources (Discovery Record C5) |
+| 2 | GBP primary category = the category entity | Roofing contractor — Wikipedia: https://en.wikipedia.org/wiki/Roofer (lead names "roofing contractor") | Proposed (Discovery 2026-10-05) — awaits entity_approved · secondary categories Unknown `[NEED]` |
+| 3 | Category variants (4–6) | Roofing Contractor · Roofer · Roofers · Roof Mechanic (all Wikipedia); candidate only: Residential Roofer (site wording, not Wikipedia; see C4) | Proposed (Discovery 2026-10-05) — awaits entity_approved |
+| 4 | Storefront or SAB | SAB (intake; no address on the public GBP) | Internally Verified |
+| 5 | Area entity | Hilton Head Island–Bluffton–Port Royal, SC Metropolitan Statistical Area (Hilton Head Island metropolitan area) | Proposed (Discovery 2026-10-05) — awaits entity_approved · Disputed if Georgia is served (C1) |
+| 6 | Area variants (3–5) | Hilton Head Island Metropolitan Area · Hilton Head Island–Bluffton–Port Royal MSA · Hilton Head Island–Bluffton Metropolitan Area · South Carolina Lowcountry · Beaufort and Jasper Counties | Proposed (Discovery 2026-10-05) — awaits entity_approved |
+| 7 | Separator standard | ` - ` | Standard |
+| 8 | Phone | (843) 757-2739 (GBP, site, BBB, HomeAdvisor) | Submitted — client to confirm it is not a tracking number |
+| 9 | Primary domain (canonical host form) | https://apexroofingtlc.com/ (www and http forms 301 here in one hop) | Internally Verified |
+| 10 | Legal entity name | APEX ROOFING OF THE LOWCOUNTRY LLC (SC no. 493170, Good Standing — OpenCorporates copy; SOS primary not read, CAPTCHA) | Submitted `[NEED: SOS primary check]` |
+| 11 | Exact URL in the GBP Website field | http://www.apexroofingtlc.com/ (as recorded by Paul at intake) | Submitted |
 
 **Area entity derivation** (BB-105) — record the path, not just the answer:
 
 ```
-City served:
--> County:
--> Region:
-Contains all N cities served? yes / no
-Smallest true container:
+City served:  Bluffton, SC ("a town in southern Beaufort County")
+-> County:    Beaufort County, SC ("part of the Hilton Head Island-Bluffton-Port Royal metropolitan statistical area")
+-> Region:    Hilton Head Island–Bluffton–Port Royal, SC MSA = Beaufort + Jasper counties
+Contains all 12 cities served? yes — Bluffton, Hilton Head Island, Beaufort, Okatie, Hardeeville, Lady's Island,
+              Port Royal, Fripp Island, St. Helena Island, Pritchardville, Levy, Ridgeland (all Beaufort/Jasper)
+              — unless Georgia is served (Discovery Record C1)
+Smallest true container: Hilton Head Island–Bluffton–Port Royal, SC MSA
 ```
+Source: `discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md` §3 (proposal).
 
 **Paul approved this section on:** ____________
 
@@ -44,18 +47,18 @@ Smallest true container:
 
 ### B1 · Reserved for the homepage
 ```
-HOMEPAGE AREA VARIANT:      ________________ [status]
-HOMEPAGE CATEGORY VARIANT:  ________________ [status]
+HOMEPAGE AREA VARIANT:      Hilton Head Island Metropolitan Area [Proposed — awaits entity_approved]
+HOMEPAGE CATEGORY VARIANT:  Roofing Contractor                   [Proposed — awaits entity_approved]
 ```
 No other page may claim the reserved area variant. This is the only cross-page variant rule.
 
 ### B2 · Rotation pool
 Every area variant except the reserved one. Reuse across service pages is correct.
 ```
-1.
-2.
-3.
-4.
+1. Hilton Head Island–Bluffton–Port Royal MSA        [Proposed]
+2. Hilton Head Island–Bluffton Metropolitan Area     [Proposed]
+3. South Carolina Lowcountry                         [Proposed]
+4. Beaufort and Jasper Counties                      [Proposed]
 ```
 
 ### B3 · Assignment log — the write-back target
@@ -139,10 +142,10 @@ TRAVEL FEE BEYOND:
 | Confirmed GBP category → schema subtype | | |
 | Logo files with pixel dimensions | | |
 | Owner name + photo | | |
-| **Wikidata URI — category entity** | | |
-| **Wikidata URI — area entity** | | |
-| **Wikidata URI — county** | | |
-| **Wikidata URI — state** | | |
+| **Wikidata URI — category entity** | http://www.wikidata.org/entity/Q552378 (roofer) | Proposed |
+| **Wikidata URI — area entity** | http://www.wikidata.org/entity/Q17020871 | Proposed |
+| **Wikidata URI — county** | http://www.wikidata.org/entity/Q495682 (Beaufort) · http://www.wikidata.org/entity/Q112957 (Jasper) — Paul picks one or both | Proposed |
+| **Wikidata URI — state** | http://www.wikidata.org/entity/Q1456 | Proposed |
 
 ## Section G — Positioning (client's own words)
 ```
