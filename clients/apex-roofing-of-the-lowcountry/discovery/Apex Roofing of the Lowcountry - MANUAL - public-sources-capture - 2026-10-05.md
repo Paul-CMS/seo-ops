@@ -611,3 +611,34 @@ Sitemaps: https://apexroofingtlc.com/sitemap.xml → page-sitemap1.xml (29 URLs)
 - South Carolina — Q1456 · South Carolina Lowcountry — Q3885311
 - Cities: Bluffton Q3243593 (Beaufort) · Hilton Head Island Q1001134 (Beaufort) · Beaufort Q813376 (Beaufort) · Okatie Q7081838 (Beaufort and Jasper) · Hardeeville Q2122398 (Jasper and Beaufort) · Lady's Island Q6469863 (Beaufort) · Port Royal Q926275 (Beaufort) · Fripp Island Q3709246 (Beaufort, infobox) · Saint Helena Island Q2884518 (Beaufort) · Pritchardville Q7245943 (Beaufort) · Levy Q6535867 (Jasper) · Ridgeland Q1975694 (Jasper)
 - Q17020871 aliases include: Hilton Head Island metropolitan area; Hilton Head Island–Bluffton metropolitan area; Hilton Head Island-Bluffton, SC MSA; Hilton Head Island-Bluffton-Port Royal, SC Metropolitan Statistical Area; Hilton Head Island-Bluffton, SC Metro Area
+
+## Addendum 2026-10-06 · other profiles and ratings (free public web search; no paid calls)
+
+Run 20261006-104753-discovery-44eb. Paul asked "what can you find?". Most profile pages refuse automated reads (HTTP 403), so
+unless marked "page read", the values are the search engine's result text (confidence `found`, not verified, date
+unknown). Observations only; nothing resolved. Checked 2026-10-06.
+
+| Platform | Result | URL | Name as listed | Rating / count | Other details (verbatim where quoted) |
+|---|---|---|---|---|---|
+| Yelp | found (page 403; search result only) | https://www.yelp.com/biz/apex-roofing-of-the-lowcountry-bluffton-2 | "APEX ROOFING OF THE LOWCOUNTRY" | not shown | result text: 6 Sutton Ct, Bluffton, SC 29910; a review calls it a "small, local family-owned company" |
+| Angi | found (page 403; search result only) | https://www.angi.com/companylist/us/sc/bluffton/apex-roofing-of-the-lowcountry-llc-reviews-1.htm | "Apex Roofing of the Lowcountry, LLC" | 4.9 / 45 reviews; "recommended by 93%" (another result: 4.93 / 42; another: 4.93 / 45) | result text: "6 Sutton Court"; "in business since 2015"; "Free Estimates"; "comfortable with insurance work" |
+| Nextdoor | found (page 404 to automated read; search result only) | https://nextdoor.com/pages/apex-roofing-of-the-lowcountry-bluffton-sc-1/ | "Apex Roofing of the Lowcountry" | not shown | — |
+| Houzz | found (page read) | https://www.houzz.com/professionals/roofing-and-gutters/apex-roofing-of-the-lowcountry-llc-pfvwus-pf~816399123 | "Apex Roofing of the Lowcountry, LLC" | no reviews ("You could be the first review") | "Bluffton, SC 29910" · "(843) 757-2739" · "www.apexroofingtlc.com/" · service areas Hilton Head Island, Bluffton, Beaufort, Ridgeland, "Hardeville" |
+| Manta | found (page 403; search result only) | https://www.manta.com/c/mhk7kkf/apex-roofing-of-the-lowcountry-llc (also /d/mhk7kkf/…) | "Apex Roofing of the Lowcountry Bluffton and Beaufort SC" / "Apex Roofing of the Lowcountry, LLC" | not shown | result text: 6 Sutton Court, Bluffton, SC 29910 · (843) 757-2739 · **"Established in 2016"** (a further start-date candidate, Discovery Record C2) |
+| GAF contractor directory | found (page 403; search result only) | https://www.gaf.com/en-us/roofing-contractors/residential/usa/sc/bluffton/apex-roofing-of-the-lowcountry-llc-1125208 | "Apex Roofing of the Lowcountry LLC" | not shown | result text: **"GAF Certified™"**, "System Plus® Limited Warranty"; 6 Sutton Ct, Bluffton SC 29910; (843) 757-2739; "in business since 2015"; **"State License Number: RBS 57706"**; "1-5 employees" |
+| CertainTeed contractor directory | not found (site search returned nothing for Apex in Bluffton) | — | — | — | the site's "ShingleMaster" claim (W3) remains unconfirmed by any third party |
+| LinkedIn | found — personal profile only, no company page | https://www.linkedin.com/in/ralph-brehany-64ba0110a/ | "Ralph Brehany - Owner - Apex Roofing of the LowCountry" | — | result text: owner since 2015, Bluffton, SC |
+| Instagram | not found (results were other "Apex Roofing" businesses) | — | — | — | — |
+| Thumbtack | not found (only unrelated "Apex" businesses, incl. Apex Exteriors LLC) | — | — | — | — |
+| Porch | not found | — | — | — | — |
+| Apple Maps | not checked — no public web search of Apple Maps listings | — | — | — | needs a manual look on an Apple device |
+| Bing Places | not found — Bing web search for the exact name returned no local panel | — | — | — | needs a manual look in Bing Maps |
+
+Also seen (not the client, recorded to avoid mix-ups): "Apex Exteriors LLC" (Ridgeland / Bluffton SC, Nextdoor and Thumbtack);
+"Apex Fabrication & Restoration" (Bluffton, Yelp); "Apex Roofing Group" (Myrtle Beach).
+Third-party lists naming the client (not profiles): https://thebuildermarket.com/us/sc/bluffton/roofing ·
+https://downtobid.com/contractors/roofing/bluffton/3 · https://www.roof-crafters.com/learn/top-5-roofing-companies-in-bluffton-south-carolina ·
+https://apex-roofing.contractorlink.app/reviews (certificate error; not read).
+
+New observations for Paul / reconcile (not resolved): GAF lists the client as "GAF Certified" while the site claims
+CertainTeed ShingleMaster; GAF's licence text "RBS 57706" may indicate the licence class; Manta says "Established in 2016".
