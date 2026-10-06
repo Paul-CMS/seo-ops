@@ -21,6 +21,8 @@ has no row in audit-steps.md** — say it must be registered first.
 ## Record what each decision will cover
 Every approval names its files. When a step produces the thing Paul approves, record it:
 `python3 scripts/status.py mark <slug> <artifact> --file <path> [--file <path> ...]`
+A Markdown file can be named by sections — `brand-guide.md#A+B1+B2` covers only `## Section A`, `### B1`
+and `### B2`; edits elsewhere in the file leave the approval standing.
 (artifacts: `entity_record`, `proof_sheet`, `proof_sheet_returned`, `audit_deliverables`,
 `reconciled`, `discovery_summary`). `/next` then shows Paul the exact `/approve` line.
 
@@ -34,6 +36,11 @@ recommendations. The audit produces findings.
 - S01 intake facts from status.json (ask Paul for anything missing).
 - S02 live site, GBP, social and review profiles, Secretary of State, licence board
   (`.claude/skills/client-intake/references/discovery.md` for source hierarchy and confidence).
+  Sources the system cannot read (CAPTCHA-gated Secretary of State or licence board searches; the GBP
+  dashboard — secondary categories, service-area list, open date) go to Gwen in **one** handoff:
+  `handoff.py create <slug> --run <RUN_ID> --kind manual_lookup --items <csv>` — one row per lookup (search
+  page URL, what to record, why). She saves screenshots or notes as `MANUAL` evidence; until then those fields
+  stay at the confidence the public copies give (never verified).
 - S03 entity foundation: category entity = GBP primary category verified on Wikipedia
   (BB-106/107); area entity by the Russian Doll method with the path recorded (BB-105, BB-110);
   real candidate variants (BB-109); proposed reserved homepage variant; Wikidata URIs for
@@ -41,7 +48,9 @@ recommendations. The audit produces findings.
 - Record every conflict with all candidate values; never resolve one. Quote every public claim
   verbatim with its URL.
 - Write the Discovery Record (`- REVIEW.md`) and Brand Guide A/B as proposals; upload; log.
-- Record S01–S03 with `steps.py record`, then `status.py mark <slug> entity_record --file <Discovery Record>`.
+- Record S01–S03 with `steps.py record`, then `status.py mark <slug> entity_record --file <Discovery Record>
+  --file clients/<slug>/brand-guide.md#A+B1+B2` — the Brand Guide only by the sections the entity decision is
+  about, so later Brand Guide work (reconcile, Build write-back to B3/C/D) doesn't cancel it.
 - Present the entity foundation (category, area + derivation + "contains all N cities",
   variants, reserved homepage variant). Paul: `/approve <slug> entity_approved --files ...`. **Stop.**
 
@@ -122,7 +131,8 @@ Paul: `/approve <slug> audit_approved`.
 (`client-intake/references/proof-sheet.md` §6): `Client Confirmed` + date, keep `was:` values,
 complete the Brand Guide (Unknown/Disputed stay so), D2 unsupported claims, the content-risk
 list. An entity-relevant correction means entity_approved must be re-approved — say so.
-`status.py mark <slug> reconciled --file clients/<slug>/brand-guide.md`. Paul: `/approve <slug> brand_guide_approved`.
+`status.py mark <slug> reconciled --file clients/<slug>/brand-guide.md#A+D+E+G` (the reconciled client facts —
+not B3/C, which Build writes back to, and not F, which Finish completes). Paul: `/approve <slug> brand_guide_approved`.
 The owner named on the returned sheet goes in the Brand Guide author field (CM-039).
 
 **signoff** — the four discovery decisions and the returned sheet are in: the summary and client-confirmation

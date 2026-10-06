@@ -297,6 +297,16 @@
       "gate": "client_setup",
       "channel": "handoff",
       "owner": "Jonie"
+    },
+    "wp_setup": {
+      "gate": "client_setup",
+      "channel": "handoff",
+      "owner": "Jonie"
+    },
+    "manual_lookup": {
+      "gate": "client_setup",
+      "channel": "handoff",
+      "owner": "Gwen"
     }
   },
   "decisions": [

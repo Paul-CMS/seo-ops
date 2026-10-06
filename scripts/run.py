@@ -27,7 +27,7 @@ import sys
 from pathlib import Path
 
 import status as S
-from lib import ROOT, append, client_dir, die, git_commit, now, read_json, redact
+from lib import ROOT, append, client_dir, die, git_commit, now, read_json, redact, ref_missing
 
 RUN_LINE = re.compile(r"^## RUN (\S+) · (STARTED|FINISHED|ABORTED) · ")
 
@@ -170,7 +170,7 @@ def missing_outputs(slug, st, info):
         else:
             m = (st.get("marks") or {}).get(want) or {}
             files = m.get("files") or {}
-            gone = [f for f in files if not (ROOT / f).exists()]
+            gone = [f for f in files if ref_missing(f)]
             stale = bool(m) and m.get("ts", 0) < info.get("started_ts", 0)
             if not files or gone or stale:
                 what = S.GATES.get("artifacts", {}).get(want, want)
@@ -285,6 +285,8 @@ def main():
         cmd = re.sub(r"-[0-9a-f]{4}$", "", a.run_id.split("-", 2)[-1])
         if a.handoff:
             body = Path(a.handoff).read_text(encoding="utf-8").strip()
+            # records.py writes the section heading; drop the file's own (old template) so it isn't doubled
+            body = re.sub(r"\A#{1,3} [^\n]*\n+", "", body)
             append(d / "log.md", f"### HANDOFF · /{cmd} · {now()[:10]} · run {a.run_id}\n{redact(body)}\n### END HANDOFF\n")
         append(d / "log.md", f"## RUN {a.run_id} · FINISHED · {now()}\n"
                f"Changes: {len(ch)} · Summary: {redact(a.summary)}\n")

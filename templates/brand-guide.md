@@ -141,7 +141,7 @@ TRAVEL FEE BEYOND:
 | Owner name + photo | | |
 | **Wikidata URI — category entity** | | |
 | **Wikidata URI — area entity** | | |
-| **Wikidata URI — county** | | |
+| **Wikidata URI — county** (one per county the area entity covers) | | |
 | **Wikidata URI — state** | | |
 
 ## Section G — Positioning (client's own words)

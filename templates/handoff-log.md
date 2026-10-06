@@ -5,9 +5,10 @@ human-readable summary that the next person — or VA — reads cold.
 
 ## Section template
 
-```
-## [Agent] · [date] · run [RUN_ID]
+The run's file starts at **What I did** — `records.py` adds the `## /<command> · <date> · run <RUN_ID>`
+heading itself, so the file has no heading of its own.
 
+```
 **What I did**
 -
 

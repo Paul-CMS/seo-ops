@@ -37,7 +37,7 @@ import re
 import sys
 import time
 
-from lib import ROOT, append, client_dir, die, now, read_json, sha12, write_json, config
+from lib import ROOT, append, client_dir, die, now, read_json, ref_missing, ref_sha, sha12, write_json, config
 
 GATES = json.loads((ROOT / "scripts" / "gates.json").read_text())
 
@@ -219,10 +219,10 @@ def new_status(slug, name, domain, ctype, industry, route=None, folder=None, sen
 def files_ok(files):
     """(ok, why) for a {path: sha} map recorded with an approval."""
     for f, h in (files or {}).items():
-        p = ROOT / f
-        if not p.exists():
-            return False, f"file {f} no longer exists"
-        if sha12(p) != h:
+        gone = ref_missing(f)
+        if gone:
+            return False, f"{gone} (approved as {f})"
+        if ref_sha(f) != h:
             return False, f"{f} changed after approval"
     return True, ""
 
@@ -938,9 +938,10 @@ def main():
     elif a.cmd == "mark":
         files = {}
         for f in a.file:
-            if not (ROOT / f).exists():
-                die(f"{f} not found — a mark needs the file that proves it")
-            files[f] = sha12(ROOT / f)
+            gone = ref_missing(f)
+            if gone:
+                die(f"{gone} — a mark needs the file (and sections) that prove it")
+            files[f] = ref_sha(f)
         st.setdefault("marks", {})[a.name] = {"files": files, "at": now(), "ts": time.time()}
         save(a.slug, st); print(f"{a.name}: {', '.join(files)}")
     elif a.cmd == "page-stage":

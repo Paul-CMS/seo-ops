@@ -582,6 +582,47 @@ def t_voiding():
     check("re-approval clears the void", sh("python3 scripts/status.py require wt-full entity_approved")[0] == 0)
 
 
+def t_section_approval():
+    """An approval can cover named sections of the Brand Guide; edits elsewhere leave it standing."""
+    sh('python3 scripts/status.py init sec-co --name "Sec Co" --domain sec.example --type full --industry roofing')
+    ag = Agent("sec-co"); rid = ag.start("new-client"); ag.fin(rid, "set up")
+    rid = ag.start("discovery", "discovery")
+    rec = ag.w("discovery/Sec Co - Discovery Record - REVIEW.md", "# Record\n")
+    bg = ag.w("brand-guide.md", "# BG\n\n## Section A — Entity\narea: X\n\n## Section B — Variants\n\n"
+              "### B1 · Reserved\nhome: Y\n\n### B2 · Pool\n1. Z\n\n### B3 · Assignment log\n| / | |\n\n"
+              "## Section C — Pages\n")
+    code, out = sh(f"python3 scripts/status.py mark sec-co entity_record --file {shlex.quote(rec)} --file {bg}#A+B9")
+    check("a mark naming a section that isn't there is refused", code != 0 and "B9 not found" in out, out)
+    ag.mark("entity_record", rec, f"{bg}#A+B1+B2")
+    for s in ("S01", "S02", "S03"):
+        ag.step(rid, s)
+    ag.fin(rid, "discovery")
+    _, nxt = sh("python3 scripts/next.py sec-co")
+    check("/next prints the approve line with the section ref", f"{bg}#A+B1+B2" in nxt, nxt)
+    code, out = paul("/approve sec-co entity_approved")
+    check("Paul approves the entity by sections", code == 0, out)
+    p = SB / bg
+    p.write_text(p.read_text().replace("| / | |", "| / | homepage | Roofing Contractor |") + "| /roof-repair/ | service |\n")
+    code, out = sh("python3 scripts/status.py require sec-co entity_approved")
+    check("Build write-back to B3 and C leaves the entity approval standing", code == 0, out)
+    p.write_text(p.read_text().replace("area: X", "area: W"))
+    code, out = sh("python3 scripts/status.py require sec-co entity_approved")
+    check("an edit inside Section A cancels the entity approval", code == 4 and "changed after approval" in out, out)
+    # handoff kinds with their own owner, and a handoff file with an old-style heading
+    rid = ag.start("wp-check")
+    items = ag.w("handoffs/_items.csv", "url,field,old,new,reason,decision_map_ref\nhttps://sec.example/wp-admin/,user,,seo-ops,setup,\n")
+    _, o1 = sh(f"python3 scripts/handoff.py create sec-co --run {rid} --kind wp_setup --items {items}")
+    _, o2 = sh(f"python3 scripts/handoff.py create sec-co --run {rid} --kind manual_lookup --items {items}")
+    md = lambda o: (SB / o.split("→ ")[1].split(" and ")[0]).read_text()
+    check("WordPress setup handoff goes to Jonie without an override", "**For:** Jonie" in md(o1), o1)
+    check("manual lookups (CAPTCHA registries, GBP dashboard) go to Gwen", "**For:** Gwen" in md(o2), o2)
+    hf = ag.w(f"handoffs/run-{rid}.md", "## Old heading · 2026\n\n**What I did**\n- setup handoff\n")
+    sh(f'python3 scripts/run.py finish sec-co {rid} --summary x --handoff {hf}')
+    log = (ag.c / "handoff-log.md").read_text()
+    check("the Handoff Log has one heading per run (a file's own heading is dropped)",
+          "Old heading" not in log and "- setup handoff" in log, log[-400:])
+
+
 def t_killed_run():
     sh('python3 scripts/status.py init kill-co --name K --domain k.example --type full --industry roofing')
     ag = Agent("kill-co"); rid = ag.start("new-client"); ag.fin(rid, "set up")
@@ -894,6 +935,10 @@ def t_wordpress():
     items = wp_state()["items"]
     check("/wp-check trashes its test drafts and publishes nothing",
           all(i["status"] == "trash" for i in items.values() if i["title"]["raw"].startswith("seo-ops connection test")))
+    setmode(seopress10=True)
+    code, out = wpcheck()
+    check("SEOPress 10.x ({success, data} + per-section lists): every field written and read back",
+          code == 0 and "SEOPress 6.8+" in out and "not read back" not in out, out[-500:])
     setmode(settings_readable=True)
     code, out = wpcheck()
     check("readable site-wide settings are saved as audit evidence", "saved as audit evidence" in out and
@@ -1463,7 +1508,7 @@ def t_readability():
     check("reading level: named sources and entity terms are left out of the count", g(o2) < g(o1), (o1, o2))
 
 
-SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_killed_run, t_rollback,
+SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_section_approval, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view,
              t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability]
 

@@ -124,6 +124,29 @@ def wp_call(slug, path, method="GET", body=None, auth=True):
                 err(403, '{"code":"rest_forbidden"}')
             cur.update(body); save_wp(s)
             return dict(cur)
+        if md_.get("seopress10"):
+            # SEOPress 10.x (seen on apexroofingtlc.com, 10.0.1): the main GET is wrapped in {success, data}
+            # and has no keyword; the per-section GETs return the stored values (lists of {key, value}).
+            ep = m.group(2)
+            kv = lambda keys: [{"key": k, "type": "input", "value": cur.get(k, "")} for k in keys]
+            if ep == "title-description-metas":
+                return {"title": cur.get("title", ""), "description": cur.get("description", "")}
+            if ep == "target-keywords":
+                kw = cur.get("_seopress_analysis_target_kw", "")
+                return {"value": [k.strip() for k in kw.split(",") if k.strip()], "usage": []}
+            if ep == "social-settings":
+                return kv(["_seopress_social_fb_title", "_seopress_social_fb_desc",
+                           "_seopress_social_twitter_title", "_seopress_social_twitter_desc"])
+            if ep == "meta-robot-settings":
+                return kv(["_seopress_robots_index", "_seopress_robots_follow", "_seopress_robots_canonical"])
+            return {"success": True, "data": {
+                "title": cur.get("title", ""), "description": cur.get("description", ""),
+                "canonical": cur.get("_seopress_robots_canonical", ""),
+                "og": {"title": cur.get("_seopress_social_fb_title", ""), "description": cur.get("_seopress_social_fb_desc", "")},
+                "twitter": {"title": cur.get("_seopress_social_twitter_title", ""),
+                            "description": cur.get("_seopress_social_twitter_desc", "")},
+                "robots": {"noindex": cur.get("_seopress_robots_index") == "yes",
+                           "nofollow": cur.get("_seopress_robots_follow") == "yes"}}}
         # public GET, shaped like SEOPress's response
         return {"title": cur.get("title", ""), "description": cur.get("description", ""),
                 "canonical": cur.get("_seopress_robots_canonical", ""),

@@ -32,7 +32,7 @@ Follow CLAUDE.md. Plain language with Paul throughout.
    `drive.py replaced`. After later runs they are replaced through a `drive-mirror` run (CLAUDE.md §2).
 6. **Intake questions for Paul** (one batch): website URL, GBP link, storefront or SAB, the
    **exact URL in the GBP Website field**, whether GSC/GA4 access exists.
-   WordPress: issue the setup handoff to Jonie (after this run finishes — `kind other`, `--to Jonie`): the `seo-ops`
+   WordPress: issue the setup handoff to Jonie (after this run finishes, in a `wp-check` run — `--kind wp_setup`): the `seo-ops`
    Editor user and its Application Password (wordpress/wordpress-site-setup.md §1). Then tell Paul exactly where his
    part goes: run `python3 scripts/wp.py env-lines <slug>` and show its output, with the file as a clickable link
    `[.env](.env)` — the username, the Application Password and its name are three different things; the output

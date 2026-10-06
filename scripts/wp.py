@@ -17,6 +17,7 @@ Connection
 Read (no run needed)
     wp.py get <slug> <url>                 status, slug, title, every SEOPress field
     wp.py inspect <slug> <url>             post meta keys exposed (pilot: find the Kadence head-code key)
+    wp.py raw-seo <slug> <url>             SEOPress's raw per-page responses (read-only; maps a new SEOPress version)
     wp.py media <slug> --post ID           images attached to a page/post: id, file, alt text
     wp.py redirects <slug>                 SEOPress redirect list (for /verify)
 Write (an open run, the gate for the change kind, the current value as expected)
@@ -166,21 +167,51 @@ def seo_read(slug, post_id):
     """Every SEOPress field, normalised (public GET seopress/v1/posts/{id}). Field names are confirmed
     on the pilot site: a field this cannot read back fails the pilot instead of being guessed."""
     r = call(slug, f"seopress/v1/posts/{post_id}")
+    if isinstance(r, dict) and isinstance(r.get("data"), dict) and "success" in r:
+        r = r["data"]                       # SEOPress 10.x wraps the main GET in {success, data}
+
+    def section(ep):
+        """Stored values from a per-section GET (SEOPress 10.x: a list of {key, value}). Older versions
+        answer with the main shape or not at all — then the main response below is used."""
+        try:
+            resp = call(slug, f"seopress/v1/posts/{post_id}/{ep}")
+        except WpError:
+            return {}
+        if isinstance(resp, list):
+            return {i["key"]: i.get("value") for i in resp if isinstance(i, dict) and "key" in i}
+        return resp if isinstance(resp, dict) else {}
+    tdm, tk = section("title-description-metas"), section("target-keywords")
+    soc, rob = section("social-settings"), section("meta-robot-settings")
+    # only the 10.x list form carries stored values for these two
+    soc = soc if any(k.startswith("_seopress_social_") for k in soc) else {}
+    rob = rob if any(k.startswith("_seopress_robots_") for k in rob) else {}
+    tdm = tdm if set(tdm) <= {"title", "description"} else {}
+    if isinstance(tk.get("value"), list):
+        r = {**r, "target_keywords": ",".join(tk["value"])}
+    for src in (tdm, soc, rob):
+        r = {**r, **{k: v for k, v in src.items() if k.startswith("_seopress_") or k in ("title", "description")}}
     g = lambda *ks: next((r[k] for k in ks if r.get(k) not in (None, "")), "")
     og, tw, rb = r.get("og") or {}, r.get("twitter") or {}, r.get("robots") or {}
-    noindex = rb.get("noindex") if isinstance(rb, dict) else None
-    noindex = noindex if noindex is not None else (g("_seopress_robots_index") == "yes")
-    nofollow = rb.get("nofollow") if isinstance(rb, dict) else None
-    nofollow = nofollow if nofollow is not None else (g("_seopress_robots_follow") == "yes")
+    # Stored values (the per-section GETs) win over the main response, which on 10.x shows display values
+    # (e.g. og.title falls back to the page title when no social title is stored).
+    stored = bool(soc or rob)
+    soc_v = lambda key, alt: g(key) if stored else (alt or g(key))
+    if rob:
+        noindex, nofollow = g("_seopress_robots_index") == "yes", g("_seopress_robots_follow") == "yes"
+    else:
+        noindex = rb.get("noindex") if isinstance(rb, dict) else None
+        noindex = noindex if noindex is not None else (g("_seopress_robots_index") == "yes")
+        nofollow = rb.get("nofollow") if isinstance(rb, dict) else None
+        nofollow = nofollow if nofollow is not None else (g("_seopress_robots_follow") == "yes")
     return {"title": g("title", "_seopress_titles_title"),
             "description": g("description", "_seopress_titles_desc"),
             "keyword": g("target_keywords", "target_kw", "_seopress_analysis_target_kw"),
-            "social_title": og.get("title") or g("_seopress_social_fb_title"),
-            "social_description": og.get("description") or g("_seopress_social_fb_desc"),
-            "social_title_x": tw.get("title") or g("_seopress_social_twitter_title"),
-            "social_description_x": tw.get("description") or g("_seopress_social_twitter_desc"),
+            "social_title": soc_v("_seopress_social_fb_title", og.get("title")),
+            "social_description": soc_v("_seopress_social_fb_desc", og.get("description")),
+            "social_title_x": soc_v("_seopress_social_twitter_title", tw.get("title")),
+            "social_description_x": soc_v("_seopress_social_twitter_desc", tw.get("description")),
             "robots": f"{'noindex' if noindex else 'index'},{'nofollow' if nofollow else 'follow'}",
-            "canonical": g("canonical", "_seopress_robots_canonical"),
+            "canonical": g("_seopress_robots_canonical") if rob else g("canonical", "_seopress_robots_canonical"),
             "raw": r}
 
 
@@ -481,7 +512,8 @@ def render_check(st, items, pilot):
     out += ["", ("Result: **connected** — WordPress work can start." if passed and not pilot else
                  "Result: **pilot passed** — Paul may approve wordpress_pilot_approved; after that the system writes "
                  "titles, keyword, social, robots, canonical and schema directly." if passed else
-                 "Result: **not connected** — fix the items marked FIX, then run /wp-check again. Nothing on the site was changed.")]
+                 "Result: **not connected** — fix the items marked FIX, then run /wp-check again. Nothing live was changed "
+                 "(the check's two test drafts were created and trashed).")]
     return "\n".join(out) + "\n"
 
 
@@ -492,7 +524,7 @@ def main():
     s = sub.add_parser("check"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s.add_argument("--pilot", action="store_true")
     s = sub.add_parser("env-lines"); s.add_argument("slug")
-    for n in ("get", "inspect"):
+    for n in ("get", "inspect", "raw-seo"):
         s = sub.add_parser(n); s.add_argument("slug"); s.add_argument("url")
     s = sub.add_parser("media"); s.add_argument("slug"); s.add_argument("--post", type=int, required=True)
     s = sub.add_parser("redirects"); s.add_argument("slug")
@@ -532,6 +564,15 @@ def main():
             print(json.dumps({"type": kind, "id": p["id"], "status": p.get("status"), "slug": p.get("slug"),
                               "link": p.get("link"), "title": (p.get("title") or {}).get("raw"),
                               "content_sha": sha((p.get("content") or {}).get("raw")), "seopress": s_}, indent=1))
+        elif a.cmd == "raw-seo":
+            kind, p = find(a.slug, a.url)
+            out = {}
+            for ep in ("", "/title-description-metas", "/target-keywords", "/social-settings", "/meta-robot-settings"):
+                try:
+                    out[ep or "/"] = call(a.slug, f"seopress/v1/posts/{p['id']}{ep}")
+                except WpError as e:
+                    out[ep or "/"] = f"error {e.code}"
+            print(json.dumps({"id": p["id"], "status": p.get("status"), "responses": out}, indent=1))
         elif a.cmd == "inspect":
             kind, p = find(a.slug, a.url)
             print(json.dumps({"id": p["id"], "meta_keys_exposed": sorted((p.get("meta") or {}).keys()),

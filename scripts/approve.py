@@ -27,7 +27,7 @@ import argparse
 import time
 
 import status as S
-from lib import ROOT, append, client_dir, die, git_commit, now, read_json, sha12, write_json
+from lib import ROOT, append, client_dir, die, git_commit, now, read_json, ref_missing, ref_sha, sha12, write_json
 
 TOKEN = ROOT / ".claude" / "state" / "approve-token.json"
 MAX_AGE = 20 * 60
@@ -60,9 +60,10 @@ def take_token(slug, targets, consume=True):
 def file_map(paths):
     out = {}
     for f in paths:
-        if not (ROOT / f).exists():
-            die(f"File {f} not found — an approval names the exact version it approves.")
-        out[f] = sha12(ROOT / f)
+        gone = ref_missing(f)
+        if gone:
+            die(f"{gone} — an approval names the exact version it approves.")
+        out[f] = ref_sha(f)
     return out
 
 

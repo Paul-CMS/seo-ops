@@ -70,6 +70,50 @@ def sha12(path):
     return h.hexdigest()[:12]
 
 
+# An approval can cover named sections of a Markdown file instead of the whole file:
+#   clients/x/brand-guide.md#A+B1+B2  → "## Section A …" and "### B1 …" / "### B2 …" only.
+# A section runs from its heading to the next heading of the same or a higher level. Edits outside the
+# named sections (e.g. Build's write-back to B3, C, D) then leave the approval standing.
+def ref_path(ref):
+    return ROOT / ref.split("#", 1)[0]
+
+
+def _md_section(text, sid):
+    pats = [rf"^(#{{2}}) Section {re.escape(sid)}\b", rf"^(#{{2,3}}) {re.escape(sid)}\b"]
+    lines = text.splitlines()
+    for pat in pats:
+        for i, line in enumerate(lines):
+            m = re.match(pat, line)
+            if m:
+                level = len(m.group(1))
+                end = next((j for j in range(i + 1, len(lines))
+                            if re.match(r"^(#{1,%d}) " % level, lines[j])), len(lines))
+                return "\n".join(lines[i:end])
+    return None
+
+
+def ref_missing(ref):
+    """'' if the file (and every named section) exists, else what is missing."""
+    p = ref_path(ref)
+    if not p.exists():
+        return f"file {ref.split('#', 1)[0]} not found"
+    if "#" in ref:
+        text = p.read_text(encoding="utf-8")
+        gone = [s for s in ref.split("#", 1)[1].split("+") if _md_section(text, s) is None]
+        if gone:
+            return f"section {', '.join(gone)} not found in {ref.split('#', 1)[0]}"
+    return ""
+
+
+def ref_sha(ref):
+    """sha12 of the file, or of only the named sections when the ref has #A+B1…"""
+    if "#" not in ref:
+        return sha12(ref_path(ref))
+    text = ref_path(ref).read_text(encoding="utf-8")
+    parts = [_md_section(text, s) or f"<missing {s}>" for s in ref.split("#", 1)[1].split("+")]
+    return hashlib.sha256("\n\x00\n".join(parts).encode()).hexdigest()[:12]
+
+
 _ENV_CACHE = None
 
 
