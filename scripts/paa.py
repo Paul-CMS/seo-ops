@@ -46,12 +46,17 @@ def main():
         s = sub.add_parser(n); s.add_argument("slug"); s.add_argument("--services-file", required=True)
         s.add_argument("--cities", required=True); s.add_argument("--state", required=True)
         s.add_argument("--cap", type=int, default=20)
+        # default: primary + top 3 cities (audit-steps S19); more only when Paul asks for them
+        s.add_argument("--max-cities", type=int, default=4)
+        # towns DataforSEO has no location for are searched from a nearby one: "Okatie=Bluffton;Levy=Beaufort"
+        s.add_argument("--search-from", default="")
         if n == "run":
             s.add_argument("--run", required=True); s.add_argument("--confirmed", action="store_true")
             s.add_argument("--registry")
     a = ap.parse_args()
     services = [l.strip().lower() for l in open(a.services_file) if l.strip()]
-    cities = [c.strip() for c in a.cities.split(",") if c.strip()][:4]
+    cities = [c.strip() for c in a.cities.split(",") if c.strip()][: a.max_cities]
+    search_from = dict(p.split("=", 1) for p in a.search_from.split(";") if "=" in p)
     qs = queries(services, cities)
     run_qs = qs[: a.cap]
     each = dfs.estimate(SERP, tasks=1, depth=10)
@@ -77,7 +82,8 @@ def main():
         else:
             res = None
             for attempt in (1, 2):       # one retry on DataforSEO's temporary errors (e.g. 40101)
-                resp = dfs.paid_post(a.slug, SERP, [{"keyword": q, "location_name": f"{city},{a.state},United States",
+                loc = search_from.get(city, city)
+                resp = dfs.paid_post(a.slug, SERP, [{"keyword": q, "location_name": f"{loc},{a.state},United States",
                                                      "language_code": "en", "depth": 10, "device": "desktop"}],
                                      f"PAA for '{q}'", each, a.confirmed)
                 try:

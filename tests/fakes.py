@@ -192,6 +192,9 @@ def dfs_request(endpoint, body=None, method=None, timeout=90, retries=3):
         return {"status_code": 20000, "cost": cfg.get("cost", 0.003),
                 "tasks": [{"status_code": 20000, "result": [{"items": [{"type": "message", "sections": [
                     {"type": "text", "text": json.dumps(qs)}]}], "fan_out_queries": []}]}]}
+    if endpoint.startswith("serp/") and body:   # record where each SERP query was searched from
+        with open(STATE / "serp_locations.txt", "a") as fh:
+            fh.write(f"{body[0].get('keyword')}|{body[0].get('location_name')}\n")
     if endpoint.startswith("appendix/user_data"):
         return {"status_code": 20000, "tasks": [{"status_code": 20000,
                 "result": [{"money": {"balance": cfg.get("balance", 10.0)}}]}]}

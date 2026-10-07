@@ -1286,6 +1286,13 @@ def t_fanout():
     n2 = (ag.c / "dfs-costs.jsonl").read_text().count("serp/google/organic")
     check("PAA: a second run reuses the saved queries and posts nothing new", code1 == 0 and code2 == 0 and n1 == 2 and n2 == 2,
           f"{n1} {n2} {o1[-200:]} {o2[-200:]}")
+    locs = SB / "tests" / ".state" / "serp_locations.txt"
+    locs.unlink(missing_ok=True)
+    code, out = sh(f"python3 tests/fakes.py paa run fo-co --run {rid} --services-file {svc} --cities Springfield,Nixa,Ozark "
+                   f"--max-cities 5 --search-from 'Ozark=Springfield' --state Missouri --cap 10 --confirmed")
+    seen = locs.read_text() if locs.exists() else ""
+    check("PAA: more towns on request, and a town with no location is searched from a nearby one",
+          code == 0 and "roof repair Ozark|Springfield,Missouri,United States" in seen, seen + out[-200:])
     ag.fin(rid, "paa")
     (SB / "tests" / ".state" / "dfs.json").unlink()
 
