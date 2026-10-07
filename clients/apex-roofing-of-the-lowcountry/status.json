@@ -135,17 +135,26 @@
       ],
       "at": "2026-10-06T08:55:24-05:00",
       "run": "20261006-085141-discovery-bb0e"
+    },
+    "S05": {
+      "outcome": "done",
+      "reason": "DataforSEO basic crawl, 72 URLs, $0.15. 12 of 14 files in Drive Evidence; h2_all and all_inlinks local only (connector paste limits)",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/inputs/crawl/"
+      ],
+      "at": "2026-10-07T15:44:16-05:00",
+      "run": "20261007-152559-crawl-0206"
     }
   },
   "last_run": {
-    "run_id": "20261007-152000-discovery-9b0e",
-    "command": "discovery",
-    "finished": "2026-10-07T15:20:21-05:00",
-    "result": "Returned sheet recorded (client's answers as given)",
-    "changes": 1
+    "run_id": "20261007-152559-crawl-0206",
+    "command": "crawl",
+    "finished": "2026-10-07T15:44:33-05:00",
+    "result": "Crawled 72 URLs, $0.15",
+    "changes": 15
   },
   "spend": {
-    "dataforseo_usd": 0.0
+    "dataforseo_usd": 0.15
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
@@ -159,7 +168,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-07T15:25:37-05:00",
+  "updated": "2026-10-07T15:44:33-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",

@@ -1,6 +1,6 @@
 # Apex Roofing of the Lowcountry - Document Checklist
 
-Generated 2026-10-07T15:25 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-07T15:44 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -10,7 +10,7 @@ Generated 2026-10-07T15:25 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S02 Public discovery: live site, GBP, social, review profiles, Secretary o | done | Live site (sitemap pages), public GBP view, BBB, HomeAdvisor list page, Facebook, RDAP, OpenCorporates copy of SC SOS read. Not read: SC SOS primary and SC LLR (both CAPTCHA), GBP secondary categories/service areas/open date (limited view), HomeAdvisor profile (403), Yelp/Angi/Nextdoor/Apple/Bing |
 | [x] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | done | Category entity Roofing contractor (Wikipedia Roofer, Q552378); area entity Hilton Head Island-Bluffton-Port Royal SC MSA (Q17020871) by Russian Doll from Bluffton, contains all 12 location-page cities; variants, reserved homepage variant and Wikidata URIs proposed. Open: Georgia service-area conflict (C1) |
 | [x] | S04 Proof sheet built (Markdown + client Google Doc) | done | Proof sheet built from the approved Discovery Record and Brand Guide A; .md and CLIENT COPY Google Doc in Drive Deliverables; return by 2026-10-20 |
-| [ ] | S05 Site crawl | — |  |
+| [x] | S05 Site crawl | done | DataforSEO basic crawl, 72 URLs, $0.15. 12 of 14 files in Drive Evidence; h2_all and all_inlinks local only (connector paste limits) |
 | [ ] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | — |  |
 | [ ] | S07 Rankings + cannibalization: every ranked keyword per URL (top 100), co | — |  |
 | [ ] | S08 Backlinks pull: referring domains per URL | — |  |
@@ -32,7 +32,7 @@ Generated 2026-10-07T15:25 from status.json — do not edit. `[x]` done · `[-]`
 
 - [x] Client set up (/new-client finished)
 - [x] The client returned the proof sheet (the returned sheet is recorded)
-- [ ] Every registered audit step has an outcome (Done / Skipped / Failed) — audit steps with no outcome yet: S05, S06, S07, S08, S09, S10, S11, S19, S20, S21, S12, S13, S14, S15, S16, S17, S18
+- [ ] Every registered audit step has an outcome (Done / Skipped / Failed) — audit steps with no outcome yet: S06, S07, S08, S09, S10, S11, S19, S20, S21, S12, S13, S14, S15, S16, S17, S18
 - [ ] Every page in the site plan is built, verified and written back — no site plan yet
 - [x] WordPress connected (/wp-check passed in the last 30 days)
 
