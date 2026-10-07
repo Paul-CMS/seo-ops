@@ -11,7 +11,9 @@ Generated from the seo-ops system (clients/apex-roofing-of-the-lowcountry/status
 
 ## Client proof sheet approved by Paul, ready for him to send
 
-- Decision: **pending**
+- Decision: **approved**
+- Decided by: Paul · 2026-10-07T15:19:52-05:00
+- Approved version: `clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Client Proof Sheet - REVIEW.md` (sha f8bb8b6123c6)
 
 ## Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)
 

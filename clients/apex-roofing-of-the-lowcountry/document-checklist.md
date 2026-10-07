@@ -39,7 +39,7 @@ Generated 2026-10-07T15:19 from status.json — do not edit. `[x]` done · `[-]`
 ## Decisions (Paul)
 
 - [x] Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)
-- [ ] Client proof sheet approved by Paul, ready for him to send
+- [x] Client proof sheet approved by Paul, ready for him to send
 - [ ] Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)
 - [ ] Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 - [ ] Discovery and audit signed off — Build may start
