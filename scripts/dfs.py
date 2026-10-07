@@ -78,9 +78,24 @@ def task_result(resp, i=0):
     return t
 
 
+_BAL = {"at": 0.0, "value": None}
+
+
 def balance():
-    r = request("appendix/user_data")
-    return float(task_result(r)["result"][0]["money"]["balance"])
+    """Account balance. DataforSEO allows 6 user_data calls a minute, so the value is reused for 60 s
+    (spend is still checked per call against it) and a rate-limit answer (40202) is waited out."""
+    import time as _t
+    if _BAL["value"] is not None and _t.time() - _BAL["at"] < 60:
+        return _BAL["value"]
+    for attempt in range(5):
+        try:
+            r = request("appendix/user_data")
+            _BAL.update(at=_t.time(), value=float(task_result(r)["result"][0]["money"]["balance"]))
+            return _BAL["value"]
+        except DfsError as e:
+            if "40202" not in str(e) or attempt == 4:
+                raise
+            _t.sleep(15)
 
 
 def price(endpoint):

@@ -1270,6 +1270,10 @@ def t_fanout():
           "not observed demand" in md and "drop (C3 duplicate)" in md, md[:400])
     costs = (ag.c / "dfs-costs.jsonl").read_text()
     check("fan-out: every call's cost logged", costs.count("ai_optimization/chat_gpt/llm_responses/live") == 2, costs[-300:])
+    code, out = sh(base)
+    costs = (ag.c / "dfs-costs.jsonl").read_text()
+    check("fan-out: a second run reuses the saved seeds and pays nothing new",
+          code == 0 and costs.count("ai_optimization/chat_gpt/llm_responses/live") == 2, out[-300:])
     ag.fin(rid, "fanout")
     _, out = sh("python3 scripts/steps.py list")
     check("fan-out: registered as audit step S21", "S21" in out, out[-200:])

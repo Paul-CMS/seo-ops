@@ -124,10 +124,14 @@ def main():
     for seed in run_seeds:
         payload = [{"user_prompt": prompt(seed, a.per_seed), "model_name": MODEL, "system_message": SYSTEM,
                     "max_output_tokens": 4096, "temperature": 0.9, "web_search": False}]
-        resp = dfs.paid_post(a.slug, LLM, payload, f"query fan-out for '{seed}'", each, a.confirmed,
-                             timeout=180, retries=1)
-        res = (dfs.task_result(resp).get("result") or [{}])[0]
-        (d / "raw" / (re.sub(r"[^a-z0-9]+", "-", seed.lower()) + ".json")).write_text(json.dumps(res))
+        raw = d / "raw" / (re.sub(r"[^a-z0-9]+", "-", seed.lower()) + ".json")
+        if raw.exists():                 # saved by an earlier, interrupted run: reuse, never pay twice
+            res = json.loads(raw.read_text())
+        else:
+            resp = dfs.paid_post(a.slug, LLM, payload, f"query fan-out for '{seed}'", each, a.confirmed,
+                                 timeout=180, retries=1)
+            res = (dfs.task_result(resp).get("result") or [{}])[0]
+            raw.write_text(json.dumps(res))
         qs = list(dict.fromkeys(parse(res)))
         for q in qs:
             seen.setdefault(norm(q), {"query": q, "seeds": [], "count": 0})
