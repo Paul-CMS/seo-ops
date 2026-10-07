@@ -1273,6 +1273,16 @@ def t_fanout():
     ag.fin(rid, "fanout")
     _, out = sh("python3 scripts/steps.py list")
     check("fan-out: registered as audit step S21", "S21" in out, out[-200:])
+    # PAA: a run interrupted after some queries reuses the saved results — never pays twice
+    rid = ag.start("verify")
+    paa = f"python3 tests/fakes.py paa run fo-co --run {rid} --services-file {svc} --cities Springfield,Nixa --state Missouri --confirmed"
+    code1, o1 = sh(paa)
+    n1 = (ag.c / "dfs-costs.jsonl").read_text().count("serp/google/organic")
+    code2, o2 = sh(paa)
+    n2 = (ag.c / "dfs-costs.jsonl").read_text().count("serp/google/organic")
+    check("PAA: a second run reuses the saved queries and posts nothing new", code1 == 0 and code2 == 0 and n1 == 2 and n2 == 2,
+          f"{n1} {n2} {o1[-200:]} {o2[-200:]}")
+    ag.fin(rid, "paa")
     (SB / "tests" / ".state" / "dfs.json").unlink()
 
 

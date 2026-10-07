@@ -19,6 +19,7 @@ import argparse
 import csv
 import json
 import re
+import time
 from difflib import SequenceMatcher
 
 import dfs
@@ -70,11 +71,23 @@ def main():
     seen, qlog = {}, []
     for q in run_qs:
         city = next((c for c in cities if q.endswith(c.lower()) or q.endswith(c)), cities[0])
-        resp = dfs.paid_post(a.slug, SERP, [{"keyword": q, "location_name": f"{city},{a.state},United States",
-                                             "language_code": "en", "depth": 10, "device": "desktop"}],
-                             f"PAA for '{q}'", each, a.confirmed)
-        res = (dfs.task_result(resp).get("result") or [{}])[0]
-        (d / "raw" / (re.sub(r"[^a-z0-9]+", "-", q.lower()) + ".json")).write_text(json.dumps(res))
+        raw = d / "raw" / (re.sub(r"[^a-z0-9]+", "-", q.lower()) + ".json")
+        if raw.exists():                 # saved by an earlier, interrupted run: reuse, never pay twice
+            res = json.loads(raw.read_text())
+        else:
+            res = None
+            for attempt in (1, 2):       # one retry on DataforSEO's temporary errors (e.g. 40101)
+                resp = dfs.paid_post(a.slug, SERP, [{"keyword": q, "location_name": f"{city},{a.state},United States",
+                                                     "language_code": "en", "depth": 10, "device": "desktop"}],
+                                     f"PAA for '{q}'", each, a.confirmed)
+                try:
+                    res = (dfs.task_result(resp).get("result") or [{}])[0]
+                    break
+                except dfs.DfsError as e:
+                    if attempt == 2 or "Invalid Field" in str(e):
+                        raise SystemExit(f"STOP — '{q}': {e}. Saved queries are reused on the next run.")
+                    time.sleep(10)
+            raw.write_text(json.dumps(res))
         n = 0
         for it in res.get("items") or []:
             if it.get("type") != "people_also_ask":
