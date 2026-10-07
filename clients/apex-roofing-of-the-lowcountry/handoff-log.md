@@ -584,3 +584,59 @@ Generated from the safety log (clients/apex-roofing-of-the-lowcountry/log.md) �
 **Anything the next agent would otherwise get wrong**
 - The audit reads the local crawl files, not the Drive copies. The Drive CSVs have LF line endings (the local files have CRLF); the content is the same.
 
+## /discovery · 2026-10-07 · run 20261007-154441-discovery-64db
+
+**What I did**
+- **Paid pulls (Paul OK'd ≈ $0.68; actual $0.236).**
+  - Reviews: 67 reviews, $0.015.
+  - Rankings: 41 keywords on 7 URLs, $0.107.
+  - Backlinks: 711 referring domains (694 to the homepage), including 2 old URLs, $0.050.
+  - People Also Ask: 20 queries, $0.052.
+  - Query fan-out: 10 seeds, $0.012.
+  - The 4th city is Hardeeville, because DataforSEO has no location for Okatie or Lady's Island.
+- **Free steps:**
+  - S09 citations skipped (Paul).
+  - S10 local grid done: Paul's Local Dominator scans, registered for S10 (commit d0c6425); results in `data/local-grid/local-grid-summary.md`; the reports' advice was not used.
+  - S11 skipped (no GSC/GA4, Paul).
+  - S20 done (SEOPress settings from /wp-check).
+- **System fixes during the run (true blockers; each tested and pushed):**
+  - `reviews.py` read 0 of 67 reviews (new DataforSEO label) — fixed (a5c57eb), re-read at no cost.
+  - `paa.py` stopped on a temporary DataforSEO error and would have paid twice on a re-run — it now reuses saved queries and retries once (6487a4c).
+  - `dfs.balance()` hit DataforSEO's 6-per-minute limit — it now reuses the balance for 60 s, and `fanout.py` reuses saved seeds (990b381).
+- **Removed one reviewer's signed name** from `reviews.csv` before commit (review ChZDSUhNMG9n…, now "[reviewer's name removed]").
+- **Routing and review themes (Discovery agent):**
+  - S06 themes added to `customer-language.md`. 66 five-star and 1 two-star review, so the 5.0 is rounded.
+  - S19: 50 PAA questions — 27 service FAQ, 10 blog, 13 drop.
+  - S21: 379 fan-out queries — 269 service, 35 location FAQ (Bluffton and Hilton Head Island), 55 blog, 20 drop.
+  - All recorded done.
+
+**What was decided, and why**
+- Rankings: the two "cannibalization" clusters are the homepage under its `http://www.` and `https://` hosts — a host issue, not two pages. Left for the audit.
+- PAA: 6 queries were billed twice. DataforSEO bills failed tasks: 1 from the first stop, plus 5 retries on temporary errors. That added $0.012.
+- Residential only: flat-roof and other commercial-leaning queries were dropped. Georgia and out-of-area queries were dropped.
+- Review-only claims (10-year warranty, permits, free small fixes) stay out of Brand Guide D (CM-027).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Reviews: a signed name in review text isn't caught by the script (fixed by hand this time) | Next pause (script) | Nothing now |
+| PAA / fan-out only used 4 / 2 cities — no city-specific questions for the other location pages | Paul | Site plan FAQ coverage (later) |
+| Grid scan centre ("Beaufort") — check the heat-map image before citing any geographic pattern | Audit | Entity findings wording |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Reviews + customer language | clients/apex-roofing-of-the-lowcountry/data/reviews/ | Complete |
+| Rankings | clients/apex-roofing-of-the-lowcountry/data/rankings/ | Complete |
+| Backlinks | clients/apex-roofing-of-the-lowcountry/data/backlinks/referring-domains-per-url.csv | Complete |
+| Local grid | clients/apex-roofing-of-the-lowcountry/data/local-grid/local-grid-summary.md | Complete |
+| PAA / fan-out routing | clients/apex-roofing-of-the-lowcountry/data/paa/paa-routing.md · data/fanout/fanout-routing.md | Complete |
+
+**What I could not check**
+- The quality of the 711 referring domains (the audit judges it). Whether routed answers are true for Apex — every factual answer waits on Brand Guide D (reconcile).
+
+**Anything the next agent would otherwise get wrong**
+- Routing is planning input, not findings. Rows sharing a "merge: …" note are one H2/FAQ (BB-316).
+- Head-term rows ("… near me") route to a page because it is their target, not to become FAQs.
+- Old URLs with backlinks (/services/synthetic-roofing/, /service-area/hilton-head-island-sc/) matter for CM-019 / redirects.
+

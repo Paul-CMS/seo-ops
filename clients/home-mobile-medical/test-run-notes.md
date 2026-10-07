@@ -38,3 +38,8 @@ Kept for this test run. Anything Paul writes as "note:" is added here verbatim, 
 - C: all confirmed; maintenance and repair scope still to clarify.
 - D1: confirmed — "think he might be a one man show".
 - D2–D11, E, F, G3–G4: not yet marked → asked in chat.
+
+## 2026-10-07 — client answers (Paul relayed)
+- Repairs and maintenance: yes. Team: Jason plus a helper. Free in-home estimates: yes; can quote from a photo (stair count). Wants a photo-upload-to-quote feature.
+- Install: usually one day, 3–4 hours. Brands: Paul checking. Stannah as main dealer reference if evidence exists.
+- Not answered yet: outdoor lifts.

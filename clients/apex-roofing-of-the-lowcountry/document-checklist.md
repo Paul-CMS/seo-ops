@@ -1,6 +1,6 @@
 # Apex Roofing of the Lowcountry - Document Checklist
 
-Generated 2026-10-07T15:44 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-07T17:00 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -11,15 +11,15 @@ Generated 2026-10-07T15:44 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | done | Category entity Roofing contractor (Wikipedia Roofer, Q552378); area entity Hilton Head Island-Bluffton-Port Royal SC MSA (Q17020871) by Russian Doll from Bluffton, contains all 12 location-page cities; variants, reserved homepage variant and Wikidata URIs proposed. Open: Georgia service-area conflict (C1) |
 | [x] | S04 Proof sheet built (Markdown + client Google Doc) | done | Proof sheet built from the approved Discovery Record and Brand Guide A; .md and CLIENT COPY Google Doc in Drive Deliverables; return by 2026-10-20 |
 | [x] | S05 Site crawl | done | DataforSEO basic crawl, 72 URLs, $0.15. 12 of 14 files in Drive Evidence; h2_all and all_inlinks local only (connector paste limits) |
-| [ ] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | — |  |
-| [ ] | S07 Rankings + cannibalization: every ranked keyword per URL (top 100), co | — |  |
-| [ ] | S08 Backlinks pull: referring domains per URL | — |  |
-| [ ] | S09 Citations | — |  |
-| [ ] | S10 Local grid | — |  |
-| [ ] | S11 Search Console / GA4 | — |  |
-| [ ] | S19 People Also Ask: core services × primary city + top 3 cities, capped ( | — |  |
-| [ ] | S20 SEOPress site-wide settings (title templates, sitemap, noindexed post  | — |  |
-| [ ] | S21 Query fan-out (CM-045): core services × primary city + top 3 cities, c | — |  |
+| [x] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | done | 67 reviews (rating 5.0; 66 five-star, 1 two-star); themes, symptom words and review-only claims added to customer-language.md; nothing to Brand Guide D (CM-027) |
+| [x] | S07 Rankings + cannibalization: every ranked keyword per URL (top 100), co | done | DataforSEO Labs ranked keywords (US): 41 keywords on 7 URLs; 2 'cannibalization' clusters are the homepage under http://www and https (host duplicate); 3 of 104 'best' variants with volume; $0.107 |
+| [x] | S08 Backlinks pull: referring domains per URL | done | DataforSEO backlinks one_per_domain: 711 referring domains (694 to the homepage), 6 target URLs incl. 2 old URLs; $0.05 |
+| [-] | S09 Citations | skipped | Paul 2026-10-07: skip citations for this audit (no BrightLocal citation tracker export) |
+| [x] | S10 Local grid | done | Local Dominator scans 2026-10-07: roof repair bluffton (local pack 6.99, maps 20+), roofing contractor near me (local pack 19.29, maps 20+); 176 pins, 3 mi. Results only; report advice not used |
+| [-] | S11 Search Console / GA4 | skipped | No Search Console or GA4 access (intake 2026-10-05); Paul 2026-10-06: not needed, we use our own SEO data |
+| [x] | S19 People Also Ask: core services × primary city + top 3 cities, capped ( | done | 20 queries, 50 questions routed: 27 service FAQ, 0 location FAQ, 10 blog topic, 13 drop; C3 empty so no C3 drops |
+| [x] | S20 SEOPress site-wide settings (title templates, sitemap, noindexed post  | done | Readable during /wp-check 2026-10-05 (Administrator login); saved as evidence |
+| [x] | S21 Query fan-out (CM-045): core services × primary city + top 3 cities, c | done | 10 seeds, 379 queries routed: 269 service H2/FAQ (about 75 head terms), 35 location FAQ, 55 blog topic, 20 drop; 2 PAA repeats route with PAA; no volumes (CM-012) |
 | [ ] | S12 Ingest + cross-checks | — |  |
 | [ ] | S13 Entity analysis: site vs Brand Guide (triple, NAP, brand search, suppo | — |  |
 | [ ] | S14 Architecture: every page typed, keep/merge/redirect per CM-019 | — |  |
@@ -32,7 +32,7 @@ Generated 2026-10-07T15:44 from status.json — do not edit. `[x]` done · `[-]`
 
 - [x] Client set up (/new-client finished)
 - [x] The client returned the proof sheet (the returned sheet is recorded)
-- [ ] Every registered audit step has an outcome (Done / Skipped / Failed) — audit steps with no outcome yet: S06, S07, S08, S09, S10, S11, S19, S20, S21, S12, S13, S14, S15, S16, S17, S18
+- [ ] Every registered audit step has an outcome (Done / Skipped / Failed) — audit steps with no outcome yet: S12, S13, S14, S15, S16, S17, S18
 - [ ] Every page in the site plan is built, verified and written back — no site plan yet
 - [x] WordPress connected (/wp-check passed in the last 30 days)
 

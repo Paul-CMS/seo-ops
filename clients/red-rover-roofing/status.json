@@ -1,0 +1,83 @@
+{
+  "schema": 3,
+  "client": {
+    "slug": "red-rover-roofing",
+    "name": "Red Rover Roofing",
+    "domain": "redroverroofingco.com",
+    "type": "full",
+    "industry": "roofing",
+    "sensitive": false,
+    "sensitive_category": null,
+    "practitioner_signoff": false,
+    "route": null,
+    "drive_folder_id": null,
+    "kadence_head_meta_key": null,
+    "gbp_url": null,
+    "gbp_website_url": null,
+    "address_type": null,
+    "state": null,
+    "imported": false,
+    "notes": null
+  },
+  "gates": {
+    "entity_approved": {
+      "state": "pending"
+    },
+    "proof_sheet_approved": {
+      "state": "pending"
+    },
+    "audit_approved": {
+      "state": "pending"
+    },
+    "brand_guide_approved": {
+      "state": "pending"
+    },
+    "discovery_signed_off": {
+      "state": "pending"
+    },
+    "blockers_cleared": {
+      "state": "pending"
+    },
+    "link_wheel_approved": {
+      "state": "pending"
+    },
+    "release_approved": {
+      "state": "pending"
+    },
+    "blog_map_approved": {
+      "state": "pending"
+    },
+    "blog_topics_approved": {
+      "state": "pending"
+    },
+    "wordpress_pilot_approved": {
+      "state": "pending"
+    }
+  },
+  "marks": {},
+  "pages": {},
+  "build": null,
+  "audit_steps": {},
+  "last_run": null,
+  "spend": {
+    "dataforseo_usd": 0.0
+  },
+  "client_view": {
+    "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
+    "phase": "Getting started",
+    "done": [],
+    "waiting_on_client": [],
+    "next": "We are researching your business before we ask you anything."
+  },
+  "created": "2026-10-07T16:05:24-05:00",
+  "updated": "2026-10-07T16:05:24-05:00",
+  "open_runs": {
+    "20261007-160524-new-client-fc92": {
+      "step": "new-client",
+      "batch": null,
+      "page": null,
+      "started": "2026-10-07T16:05:24-05:00",
+      "started_ts": 1791407124.099776
+    }
+  }
+}

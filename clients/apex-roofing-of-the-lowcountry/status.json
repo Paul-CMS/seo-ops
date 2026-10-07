@@ -144,17 +144,94 @@
       ],
       "at": "2026-10-07T15:44:16-05:00",
       "run": "20261007-152559-crawl-0206"
+    },
+    "S11": {
+      "outcome": "skipped",
+      "reason": "No Search Console or GA4 access (intake 2026-10-05); Paul 2026-10-06: not needed, we use our own SEO data",
+      "outputs": [],
+      "at": "2026-10-07T15:45:16-05:00",
+      "run": "20261007-154441-discovery-64db"
+    },
+    "S20": {
+      "outcome": "done",
+      "reason": "Readable during /wp-check 2026-10-05 (Administrator login); saved as evidence",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/inputs/seopress-settings-2026-10-05.json"
+      ],
+      "at": "2026-10-07T15:45:17-05:00",
+      "run": "20261007-154441-discovery-64db"
+    },
+    "S09": {
+      "outcome": "skipped",
+      "reason": "Paul 2026-10-07: skip citations for this audit (no BrightLocal citation tracker export)",
+      "outputs": [],
+      "at": "2026-10-07T16:11:17-05:00",
+      "run": "20261007-154441-discovery-64db"
+    },
+    "S10": {
+      "outcome": "done",
+      "reason": "Local Dominator scans 2026-10-07: roof repair bluffton (local pack 6.99, maps 20+), roofing contractor near me (local pack 19.29, maps 20+); 176 pins, 3 mi. Results only; report advice not used",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/data/local-grid/local-grid-summary.md"
+      ],
+      "at": "2026-10-07T16:32:37-05:00",
+      "run": "20261007-154441-discovery-64db"
+    },
+    "S08": {
+      "outcome": "done",
+      "reason": "DataforSEO backlinks one_per_domain: 711 referring domains (694 to the homepage), 6 target URLs incl. 2 old URLs; $0.05",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/data/backlinks/referring-domains-per-url.csv"
+      ],
+      "at": "2026-10-07T16:40:12-05:00",
+      "run": "20261007-154441-discovery-64db"
+    },
+    "S07": {
+      "outcome": "done",
+      "reason": "DataforSEO Labs ranked keywords (US): 41 keywords on 7 URLs; 2 'cannibalization' clusters are the homepage under http://www and https (host duplicate); 3 of 104 'best' variants with volume; $0.107",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/data/rankings/"
+      ],
+      "at": "2026-10-07T16:54:30-05:00",
+      "run": "20261007-154441-discovery-64db"
+    },
+    "S06": {
+      "outcome": "done",
+      "reason": "67 reviews (rating 5.0; 66 five-star, 1 two-star); themes, symptom words and review-only claims added to customer-language.md; nothing to Brand Guide D (CM-027)",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/data/reviews/customer-language.md"
+      ],
+      "at": "2026-10-07T16:59:03-05:00",
+      "run": "20261007-154441-discovery-64db"
+    },
+    "S19": {
+      "outcome": "done",
+      "reason": "20 queries, 50 questions routed: 27 service FAQ, 0 location FAQ, 10 blog topic, 13 drop; C3 empty so no C3 drops",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/data/paa/paa-routing.md"
+      ],
+      "at": "2026-10-07T16:59:06-05:00",
+      "run": "20261007-154441-discovery-64db"
+    },
+    "S21": {
+      "outcome": "done",
+      "reason": "10 seeds, 379 queries routed: 269 service H2/FAQ (about 75 head terms), 35 location FAQ, 55 blog topic, 20 drop; 2 PAA repeats route with PAA; no volumes (CM-012)",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/data/fanout/fanout-routing.md"
+      ],
+      "at": "2026-10-07T16:59:09-05:00",
+      "run": "20261007-154441-discovery-64db"
     }
   },
   "last_run": {
-    "run_id": "20261007-152559-crawl-0206",
-    "command": "crawl",
-    "finished": "2026-10-07T15:44:33-05:00",
-    "result": "Crawled 72 URLs, $0.15",
-    "changes": 15
+    "run_id": "20261007-154441-discovery-64db",
+    "command": "discovery",
+    "finished": "2026-10-07T17:00:51-05:00",
+    "result": "Data step: reviews, rankings, backlinks, PAA, fan-out ($0.236), local grid; citations and GSC skipped",
+    "changes": 16
   },
   "spend": {
-    "dataforseo_usd": 0.15
+    "dataforseo_usd": 0.385961
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
@@ -168,7 +245,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-07T15:44:33-05:00",
+  "updated": "2026-10-07T17:00:51-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -183,5 +260,18 @@
       "settings_readable": true,
       "seopress_fields_ok": true
     }
+  },
+  "evidence": {
+    "google_rating": {
+      "rating": 5,
+      "reviews_count": 67,
+      "checked": "2026-10-07",
+      "source": "DataforSEO Business Data"
+    }
+  },
+  "review_pause": {
+    "run_id": "20261007-154441-discovery-64db",
+    "step": "discovery:data",
+    "at": "2026-10-07T17:00:51-05:00"
   }
 }
