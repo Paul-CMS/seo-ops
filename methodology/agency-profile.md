@@ -11,7 +11,7 @@
 |---|---|---|
 | Site crawl | **DataforSEO OnPage API, basic mode** via `/crawl` | Fallback: Screaming Frog free licence |
 | Citations | **BrightLocal** citation tracker | VA uploads the CSV. Stays |
-| Local grid | **BrightLocal** for now | DataforSEO grid runs alongside on ONE client first; Paul compares before BrightLocal's grid role is dropped |
+| Local grid | **BrightLocal** or **Local Dominator** (scan PDFs; results only, never its advice) | DataforSEO grid runs alongside on ONE client first; Paul compares before BrightLocal's grid role is dropped |
 | Backlinks | **DataforSEO** Backlinks API | |
 | Keyword volume, rankings, SERPs | **DataforSEO** | All calls through `scripts/dfs.py` |
 | Search Console / GA4 | Client-dependent | **Usually unavailable.** Optional evidence |
