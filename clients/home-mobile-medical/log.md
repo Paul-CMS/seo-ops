@@ -171,3 +171,37 @@ Changes: 6 · Summary: WordPress connected ([REDACTED] Editor, SEOPress 6.8+ fie
 ## RUN 20261007-172819-drive-mirror-bbb0 · STARTED · /drive-mirror · 2026-10-07T17:28:19-05:00
 Step: drive-mirror
 Gates checked: client_setup
+- CHANGE #18 [drive_file] https://drive.google.com/file/d/1K8ikedB7cC2kbJVWVmmoMha374zk9b_3/view | archive | old: Home Mobile Medical - Approval Record.md | new: _Archive/Home Mobile Medical - Approval Record - 2026-10-07.md | result: done · renamed and moved, nothing deleted
+- CHANGE #19 [drive_file] https://drive.google.com/file/d/1107LvaCe5maXeRjGNt_gJ1xrWgpI2Qe5/view | upload | old: previous version archived as Home Mobile Medical - Approval Record - 2026-10-07.md | new: Home Mobile Medical - Approval Record.md · sha 9bbbed6e689a | result: done | snapshots  clients/home-mobile-medical/snapshots/20261007-172819-drive-mirror-bbb0/0019-new.md
+- CHANGE #20 [drive_file] https://drive.google.com/file/d/1Vy-jQRS6kX-osokX99hLfkuByprL3B2M/view | archive | old: Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-07.md | result: done · renamed and moved, nothing deleted
+- CHANGE #21 [drive_file] https://drive.google.com/file/d/12CU6SFMw_P6bj4f_5R1Gt1zCQBZb5tFJ/view | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-07.md | new: Home Mobile Medical - Handoff Log.md · sha ed2a76248a37 | result: done | snapshots  clients/home-mobile-medical/snapshots/20261007-172819-drive-mirror-bbb0/0021-new.md
+- CHANGE #22 [drive_file] https://drive.google.com/file/d/1_Fytn9V6t6VgXdyuteVKPBMK5tHw-vUa/view | archive | old: Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-07.md | result: done · renamed and moved, nothing deleted
+- CHANGE #23 [drive_file] https://drive.google.com/file/d/1t0JO6mUr8SFrOedo4BT9qRXXOsHBVBu7/view | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-07.md | new: Home Mobile Medical - Document Checklist.md · sha b116d2db39c3 | result: done | snapshots  clients/home-mobile-medical/snapshots/20261007-172819-drive-mirror-bbb0/0023-new.md
+- CHANGE #24 [drive_file] https://docs.google.com/document/d/1lBvQBUQtOul5ti7FGqv1Wfw1O7hsp70ZH_qCX3FHr-E/edit | archive | old: Home Mobile Medical - Brand Guide.md | new: _Archive/Home Mobile Medical - Brand Guide - 2026-10-07 | result: done · renamed and moved, nothing deleted
+- CHANGE #25 [drive_file] https://drive.google.com/file/d/1VO6CC1r9Ni-SrVs-8Y5gC6oIr541Q9g7/view | upload | old: previous version archived as Home Mobile Medical - Brand Guide - 2026-10-07 | new: Home Mobile Medical - Brand Guide.md · sha d8df329226ad | result: done | snapshots  clients/home-mobile-medical/snapshots/20261007-172819-drive-mirror-bbb0/0025-new.md
+- DECISION 2026-10-07T17:31 · run 20261007-172819-drive-mirror-bbb0 · Paul 2026-10-07 approved archiving the ChatGPT-era Drive records (Handoff Log, Approval Record, Document Checklist, Google Doc Brand Guide): renamed with the date and moved to _Archive; nothing deleted. READ FIRST doc and SUPERSEDED proof sheet left in place (rename list).
+### HANDOFF · /drive-mirror · 2026-10-07 · run 20261007-172819-drive-mirror-bbb0
+**What I did**
+- Archived the four ChatGPT-era records in the v3 folder (dated names, moved to `_Archive`) and uploaded the system's Approval Record, Handoff Log, Document Checklist and Brand Guide as real `.md` files at the client-folder root.
+
+**What was decided, and why**
+- Paul approved archiving files the system did not originally upload (CLAUDE.md §8 otherwise allows it only for system uploads). Nothing deleted.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| READ FIRST doc, SUPERSEDED proof sheet, LD→LNKD rename | Paul (rename list) | Nothing |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Drive records | v3 `Home Mobile Medical - TMS/` root | Current as of this run |
+
+**What I could not check**
+- —
+
+**Anything the next agent would otherwise get wrong**
+- The "00 - … READ FIRST" Google Doc in Deliverables still describes the old ChatGPT audit; the system records at the folder root govern.
+### END HANDOFF
+## RUN 20261007-172819-drive-mirror-bbb0 · FINISHED · 2026-10-07T17:31:21-05:00
+Changes: 8 · Summary: Drive records mirrored (4 archived, 4 uploaded)
