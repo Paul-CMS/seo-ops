@@ -1,6 +1,6 @@
 # Apex Roofing of the Lowcountry - Document Checklist
 
-Generated 2026-10-07T15:19 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-07T15:20 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -31,7 +31,7 @@ Generated 2026-10-07T15:19 from status.json — do not edit. `[x]` done · `[-]`
 ## Conditions
 
 - [x] Client set up (/new-client finished)
-- [ ] The client returned the proof sheet (the returned sheet is recorded) — the client has not returned the proof sheet yet (when it arrives: /discovery apex-roofing-of-the-lowcountry sheet-returned)
+- [x] The client returned the proof sheet (the returned sheet is recorded)
 - [ ] Every registered audit step has an outcome (Done / Skipped / Failed) — audit steps with no outcome yet: S05, S06, S07, S08, S09, S10, S11, S19, S20, S21, S12, S13, S14, S15, S16, S17, S18
 - [ ] Every page in the site plan is built, verified and written back — no site plan yet
 - [x] WordPress connected (/wp-check passed in the last 30 days)
