@@ -34,6 +34,13 @@ def out_dir(slug):
     return d
 
 
+def review_items(res):
+    """The review items in a task result. DataforSEO labels them "google_review" or (seen 2026-10)
+    "google_reviews_search"; anything carrying a review_id is a review."""
+    return [i for i in (res.get("items") or [])
+            if str(i.get("type", "google_review")).startswith("google_review") or "review_id" in i]
+
+
 def write_customer_language(d, slug, items, rating, count, services, cities):
     """customer-language.md — the customers' own words, no reviewer names. Never verified facts
     (CM-027): nothing here enters Brand Guide Section D unless the client confirms it."""
@@ -113,7 +120,7 @@ def main():
         raise SystemExit(10)
     (d / "raw" / "reviews.json").write_text(json.dumps(res))
 
-    items = [i for i in (res.get("items") or []) if i.get("type", "google_review") == "google_review"]
+    items = review_items(res)
     rating = (res.get("rating") or {}).get("value")
     count = res.get("reviews_count")
     st = S.load(a.slug)

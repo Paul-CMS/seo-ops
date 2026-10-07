@@ -623,6 +623,15 @@ def t_section_approval():
           "Old heading" not in log and "- setup handoff" in log, log[-400:])
 
 
+def t_reviews_parse():
+    code, out = sh("python3 -c \"import sys; sys.path.insert(0, 'scripts'); import reviews; "
+                   "r = {'items': [{'type': 'google_review', 'review_id': 'a'}, "
+                   "{'type': 'google_reviews_search', 'review_id': 'b'}, {'type': 'something_else'}]}; "
+                   "print(','.join(i['review_id'] for i in reviews.review_items(r)))\"")
+    check("reviews: both DataforSEO labels for a review are read (google_review, google_reviews_search)",
+          code == 0 and out.strip().endswith("a,b"), out)
+
+
 def t_killed_run():
     sh('python3 scripts/status.py init kill-co --name K --domain k.example --type full --industry roofing')
     ag = Agent("kill-co"); rid = ag.start("new-client"); ag.fin(rid, "set up")
@@ -1508,7 +1517,7 @@ def t_readability():
     check("reading level: named sources and entity terms are left out of the count", g(o2) < g(o1), (o1, o2))
 
 
-SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_section_approval, t_killed_run, t_rollback,
+SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_section_approval, t_reviews_parse, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view,
              t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability]
 
