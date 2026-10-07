@@ -1,0 +1,5 @@
+ref,url,field,old,new,reason,decision_map_ref,status,note
+H-2026-10-07-02-seopress_settings-01,SEOPress → Titles & Metas,screenshot or note,,(record what is set — change nothing),"title templates per post type, and which post types are set to noindex",AUDIT-EVIDENCE,issued,
+H-2026-10-07-02-seopress_settings-02,SEOPress → XML/HTML Sitemap,screenshot or note,,(record what is set — change nothing),"is the sitemap on, which post types and taxonomies are in it",AUDIT-EVIDENCE,issued,
+H-2026-10-07-02-seopress_settings-03,SEOPress → Social Networks → Knowledge Graph,screenshot or note,,(record what is set — change nothing),"is Organization/Person schema output on; name, logo, sameAs",AUDIT-EVIDENCE,issued,
+H-2026-10-07-02-seopress_settings-04,SEOPress → Advanced,screenshot or note,,(record what is set — change nothing),"anything that changes canonical, attachment pages or redirects",AUDIT-EVIDENCE,issued,

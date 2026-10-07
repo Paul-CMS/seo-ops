@@ -75,3 +75,30 @@ Generated from the safety log (clients/home-mobile-medical/log.md) — do not ed
 **Anything the next agent would otherwise get wrong**
 - The connection test is `/wp-check home-mobile-medical`, only after Paul has added the credential lines.
 
+## /wp-check · 2026-10-07 · run 20261007-172720-wp-check-bb94
+
+**What I did**
+- Ran `wp.py check`: credentials present, REST API reachable, logged in as [REDACTED] (Editor), draft page and post created, every SEOPress 6.8+ per-page field written and read back on a test draft. Test drafts trashed; nothing published.
+- `wp.py` issued H-2026-10-07-02-seopress_settings to Jonie (4 items) because SEOPress site-wide settings need an Administrator to read.
+
+**What was decided, and why**
+- Result: connected. The condition "WordPress connected" is met for 30 days. The account stays Editor (setup §1).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| SEOPress site-wide settings check | Jonie | Audit step S20 evidence |
+| Kadence head-code meta key | Found during the WordPress pilot | Schema in Finish |
+| WordPress pilot (`--pilot`) | Paul, later | Direct structural writes (titles, robots, canonical, schema) |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| SEOPress settings worksheet | clients/home-mobile-medical/handoffs/H-2026-10-07-02-seopress_settings.md / .csv | Sent to Jonie |
+
+**What I could not check**
+- SEOPress site-wide settings (Administrator only).
+
+**Anything the next agent would otherwise get wrong**
+- H-2026-10-07-01-wp_setup (user + Application Password) is in effect done: the check logged in as [REDACTED]. Ingest Jonie's returned worksheet to close it.
+

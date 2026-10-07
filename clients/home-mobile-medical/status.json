@@ -533,11 +533,11 @@
     }
   },
   "last_run": {
-    "run_id": "20261007-172152-wp-check-12e0",
+    "run_id": "20261007-172720-wp-check-bb94",
     "command": "wp-check",
-    "finished": "2026-10-07T17:22:18-05:00",
-    "result": "WordPress setup handoff to Jonie (H-2026-10-07-01-wp_setup)",
-    "changes": 3
+    "finished": "2026-10-07T17:28:07-05:00",
+    "result": "WordPress connected (seo-ops Editor, SEOPress 6.8+ fields OK); SEOPress settings handoff to Jonie",
+    "changes": 6
   },
   "spend": {
     "dataforseo_usd": 0.0
@@ -556,13 +556,25 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-07T17:22:18-05:00",
+  "updated": "2026-10-07T17:28:07-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
   },
   "conditions_logged": {
     "proof_sheet_returned": "2026-10-07T17:21:12-05:00",
-    "client_setup": "2026-10-07T17:21:45-05:00"
+    "client_setup": "2026-10-07T17:21:45-05:00",
+    "wordpress_connected": "2026-10-07T17:28:07-05:00"
+  },
+  "wordpress": {
+    "settings_check_issued": "2026-10-07T17:27:56-05:00",
+    "check": {
+      "at": "2026-10-07T17:27:56-05:00",
+      "passed": true,
+      "report": "clients/home-mobile-medical/wordpress/wp-check-2026-10-07.md",
+      "settings_readable": false,
+      "seopress_fields_ok": true,
+      "needs_settings_handoff": true
+    }
   }
 }

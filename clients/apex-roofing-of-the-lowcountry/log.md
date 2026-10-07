@@ -879,3 +879,4 @@ Changes: 16 · Summary: Data step: reviews, rankings, backlinks, PAA, fan-out ($
 Step: discovery:data
 Gates checked: proof_sheet_approved
 - REVIEW CONTINUED 2026-10-07T17:18 · after discovery:data (run 20261007-154441-discovery-64db) · Paul typed /next
+- CHANGE #103 [data_pull] Bluffton,Hilton Head Island,Beaufort,Hardeeville,Port Royal,St. Helena Island,Ridgeland,Okatie,Lady's Island,Fripp Island,Pritchardville,Levy | PAA | old:  | new: 96 queries, 140 questions | result: DONE

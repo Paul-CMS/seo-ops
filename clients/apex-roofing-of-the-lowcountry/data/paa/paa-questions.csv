@@ -1,51 +1,141 @@
 question,source_queries,times_seen,closest_existing_heading_or_faq,similarity
-What is the 25% rule for roofing?,roof repair Bluffton | roof replacement Bluffton | roof installation Bluffton | roof inspection Bluffton | emergency roof repair Bluffton | roof repair Hilton Head Island | roof replacement Hilton Head Island | roof installation Hilton Head Island | roof inspection Hilton Head Island | roof repair Beaufort | roof installation Beaufort | roof inspection Beaufort,12,,0.00
+What is the 25% rule for roofing?,roof repair Bluffton | roof replacement Bluffton | roof installation Bluffton | roof inspection Bluffton | emergency roof repair Bluffton | roof repair Hilton Head Island | roof replacement Hilton Head Island | roof installation Hilton Head Island | roof inspection Hilton Head Island | roof repair Beaufort | roof installation Beaufort | roof inspection Beaufort | roof repair Hardeeville | roof replacement Hardeeville | roof installation Hardeeville | roof inspection Hardeeville | slate roofing Hardeeville | roof repair Port Royal | roof replacement Port Royal | roof installation Port Royal | roof inspection Port Royal | slate roofing Port Royal | roof replacement St. Helena Island | roof installation St. Helena Island | roof inspection St. Helena Island | emergency roof repair St. Helena Island | roof repair Ridgeland | roof replacement Ridgeland | roof installation Ridgeland | roof inspection Ridgeland | emergency roof repair Ridgeland | metal roofing Ridgeland | roof repair Okatie | roof replacement Okatie | roof installation Okatie | roof inspection Okatie | emergency roof repair Okatie | metal roofing Okatie | roof repair Lady's Island | roof replacement Lady's Island | roof repair Fripp Island | roof replacement Fripp Island | roof installation Fripp Island | roof inspection Fripp Island | roof inspection Pritchardville | emergency roof repair Pritchardville | metal roofing Pritchardville | roof installation Levy | roof inspection Levy | metal roofing Levy | slate roofing Levy,51,,0.00
+How to tell if a roofer is lying?,roof installation Bluffton | roof replacement Beaufort | roof repair Hardeeville | roof replacement Hardeeville | roof installation Hardeeville | roof installation Ridgeland | roof repair Okatie | roof installation Okatie | roof repair Lady's Island | roof repair Fripp Island | roof replacement Fripp Island | roof inspection Fripp Island,12,,0.00
+What is the average cost to replace a roof in South Carolina?,roof replacement Hilton Head Island | roof installation Hilton Head Island | roof installation Hardeeville | roof replacement Lady's Island | roof installation Lady's Island | emergency roof repair Lady's Island | roof repair Fripp Island | roof installation Fripp Island | emergency roof repair Fripp Island | roof installation Pritchardville,10,,0.00
+"Is $50,000 for a new roof good?",roof installation Bluffton | roof installation Hilton Head Island | roof replacement Port Royal | roof installation Port Royal | roof replacement St. Helena Island | roof replacement Ridgeland | roof installation Fripp Island,7,,0.00
+Can I get a grant to replace my roof in South Carolina?,roof replacement Hilton Head Island | roof replacement St. Helena Island | roof replacement Lady's Island | roof installation Lady's Island | emergency roof repair Lady's Island | roof repair Fripp Island | emergency roof repair Fripp Island,7,,0.00
+"Is $30,000 too much for a roof?",roof inspection Beaufort | roof installation Hardeeville | roof installation Port Royal | roof inspection St. Helena Island | roof replacement Lady's Island | roof installation Levy | roof inspection Levy,7,,0.00
+How much does a new roof cost in SC?,roof replacement Hardeeville | emergency roof repair Hardeeville | roof installation St. Helena Island | emergency roof repair St. Helena Island | roof repair Lady's Island | roof replacement Fripp Island | roof inspection Fripp Island,7,,0.00
+What is the average price for a 3 ft by 8 ft metal roof?,metal roofing Bluffton | metal roofing Beaufort | metal roofing Hardeeville | metal roofing Port Royal | metal roofing Levy,5,,0.00
+What is the average price of a roof repair?,roof repair Hilton Head Island | roof repair Beaufort | emergency roof repair Beaufort | roof repair Ridgeland | roof repair Okatie,5,,0.00
+What is the lifespan of a roof in South Carolina?,roof repair Hilton Head Island | roof repair Beaufort | roof inspection Hardeeville | roof installation Lady's Island | roof installation Pritchardville,5,,0.00
 Should a 20 year old roof replace?,roof replacement Bluffton | roof repair Hilton Head Island | roof repair Beaufort | roof installation Beaufort,4,,0.00
-Is roof restoration worth it?,roof repair Bluffton | roof replacement Beaufort,2,,0.00
-What do you call someone who does roofing?,roof repair Bluffton | roof replacement Beaufort,2,,0.00
-What is the average cost of a new roof in South Carolina?,roof installation Bluffton | roof installation Beaufort,2,,0.00
-"Is $50,000 for a new roof good?",roof installation Bluffton | roof installation Hilton Head Island,2,,0.00
-How to tell if a roofer is lying?,roof installation Bluffton | roof replacement Beaufort,2,,0.00
-How much does a typical roof inspection cost?,roof inspection Bluffton | roof inspection Hilton Head Island,2,,0.00
-What is included in a roof inspection?,roof inspection Bluffton | roof inspection Hilton Head Island,2,,0.00
+Can a roof be repaired in a day?,emergency roof repair Bluffton | emergency roof repair Port Royal | emergency roof repair Ridgeland | emergency roof repair Pritchardville,4,,0.00
+How much is a 20 ft sheet of metal roofing?,metal roofing Bluffton | metal roofing Beaufort | metal roofing Hardeeville | metal roofing St. Helena Island,4,,0.00
+How much does it cost to replace a roof on a $4000 square foot house?,slate roofing Bluffton | roof replacement Port Royal | slate roofing Ridgeland | roof installation Fripp Island,4,,0.00
+What are the three types of roofing?,roof replacement Hardeeville | roof installation St. Helena Island | emergency roof repair St. Helena Island | roof replacement Fripp Island,4,,0.00
+How can I get my roof repaired if I have no money?,emergency roof repair Port Royal | roof repair Ridgeland | emergency roof repair Okatie | emergency roof repair Pritchardville,4,,0.00
+Is roof restoration worth it?,roof repair Bluffton | roof replacement Beaufort | roof repair Hardeeville,3,,0.00
+What do you call someone who does roofing?,roof repair Bluffton | roof replacement Beaufort | roof installation Pritchardville,3,,0.00
+What is the average cost of a new roof in South Carolina?,roof installation Bluffton | roof installation Beaufort | slate roofing Hardeeville,3,,0.00
+How much does a typical roof inspection cost?,roof inspection Bluffton | roof inspection Hilton Head Island | roof inspection Levy,3,,0.00
+What is included in a roof inspection?,roof inspection Bluffton | roof inspection Hilton Head Island | roof inspection Ridgeland,3,,0.00
+How urgent is roof repair?,emergency roof repair Bluffton | emergency roof repair Beaufort | emergency roof repair Port Royal,3,,0.00
+How much does a metal roof cost for a 2000 sq ft home?,metal roofing Bluffton | metal roofing Okatie | metal roofing Fripp Island,3,,0.00
+What is a major disadvantage of a slate roof?,slate roofing Bluffton | slate roofing Okatie | slate roofing Levy,3,,0.00
+How much do slate roofs cost?,slate roofing Bluffton | slate roofing Ridgeland | slate roofing Okatie,3,,0.00
+How much does a metal roof cost for a 2000 sq ft house?,metal roofing Hilton Head Island | metal roofing Hardeeville | metal roofing Port Royal,3,,0.00
+Who inspects roofs for damage?,roof inspection Beaufort | roof inspection Port Royal | roof inspection Ridgeland,3,,0.00
+How much would a metal roof cost on a 1000 sq ft house?,metal roofing Beaufort | metal roofing St. Helena Island | metal roofing Ridgeland,3,,0.00
+What is the biggest problem with metal roofs?,metal roofing Hardeeville | metal roofing Port Royal | metal roofing St. Helena Island,3,,0.00
+What is the average lifespan of a synthetic slate roof?,slate roofing Hardeeville | slate roofing St. Helena Island | slate roofing Fripp Island,3,,0.00
+Who is the best person to fix a leaking roof?,roof repair Port Royal | emergency roof repair Port Royal | roof repair Ridgeland,3,,0.00
+Is slate good for roofing?,slate roofing St. Helena Island | slate roofing Okatie | slate roofing Fripp Island,3,,0.00
+What does it typically cost to replace a roof?,roof replacement Bluffton | roof replacement Ridgeland,2,,0.00
+How much does it cost to replace a roof on a $4000 square-foot house?,roof replacement Bluffton | roof replacement Ridgeland,2,,0.00
 How much is 1000 sq ft of metal roofing?,metal roofing Bluffton | metal roofing Hilton Head Island,2,,0.00
-What is the average price of a roof repair?,roof repair Hilton Head Island | roof repair Beaufort,2,,0.00
-What is the lifespan of a roof in South Carolina?,roof repair Hilton Head Island | roof repair Beaufort,2,,0.00
-What is the average cost to replace a roof in South Carolina?,roof replacement Hilton Head Island | roof installation Hilton Head Island,2,,0.00
+How much does it cost to replace a roof on a 2000 square-foot house with hip roof in Texas?,roof replacement Hilton Head Island | roof replacement Okatie,2,,0.00
+What is the average cost to put on a roof?,roof installation Hilton Head Island | roof installation Port Royal,2,,0.00
+How long does a roof last in South Carolina?,emergency roof repair Hilton Head Island | roof inspection Pritchardville,2,,0.00
+Who can I call for an emergency roofing service in Manchester?,emergency roof repair Hilton Head Island | emergency roof repair Lady's Island,2,,0.00
+What is the average price for a 3 ft by 10 ft metal roof?,metal roofing Hilton Head Island | metal roofing St. Helena Island,2,,0.00
+How much does a metal roof cost in South Carolina?,metal roofing Hilton Head Island | metal roofing Beaufort,2,,0.00
+"What is cheaper, a slate or tile roof?",slate roofing Hilton Head Island | slate roofing Ridgeland,2,,0.00
+How much does it cost to replace a roof on a 2 200 square foot house in California?,roof installation Beaufort | slate roofing Hardeeville,2,,0.00
+Are roof repair estimates free?,roof inspection Beaufort | emergency roof repair Hardeeville,2,,0.00
+What damages the roof the most?,roof repair Hardeeville | emergency roof repair Hardeeville,2,,0.00
+How much does a basic roof inspection cost?,roof inspection Hardeeville | roof inspection Okatie,2,,0.00
+What do they do for a roof inspection?,roof inspection Hardeeville | roof inspection Okatie,2,,0.00
+What is the best material for skylights?,skylights Hardeeville | skylights Pritchardville,2,,0.00
+How much should it cost to fix a roof?,roof repair Port Royal | roof inspection Pritchardville,2,,0.00
+What is the cheapest cost to replace a roof?,roof replacement St. Helena Island | roof replacement Okatie,2,,0.00
+How many roofing contractors are in the US?,roof installation St. Helena Island | roof repair Lady's Island,2,,0.00
+Which company is the best for roofing?,roof installation Ridgeland | roof installation Pritchardville,2,,0.00
+Is it cheaper to put a metal roof or shingles?,metal roofing Ridgeland | metal roofing Okatie,2,,0.00
+"How much does it cost to put a metal roof on a 2,000 sq ft house?",metal roofing Ridgeland | metal roofing Levy,2,,0.00
+Is drip edge required in SC?,roof repair Okatie | roof installation Okatie,2,,0.00
+Do roofing contractors need to be licensed in South Carolina?,roof inspection Okatie | roof installation Lady's Island,2,,0.00
+How do I get a new roof if I can't afford it?,emergency roof repair Lady's Island | emergency roof repair Fripp Island,2,,0.00
+Do you have to pay sales tax on a new roof?,roof repair Levy | roof installation Levy,2,,0.00
 How can I get a new roof if I can't afford it?,roof repair Bluffton,1,,0.00
-What does it typically cost to replace a roof?,roof replacement Bluffton,1,,0.00
-How much does it cost to replace a roof on a $4000 square-foot house?,roof replacement Bluffton,1,,0.00
 How much does it cost to check a roof?,roof inspection Bluffton,1,,0.00
-Can a roof be repaired in a day?,emergency roof repair Bluffton,1,,0.00
-How urgent is roof repair?,emergency roof repair Bluffton,1,,0.00
 How to do a temporary roof repair?,emergency roof repair Bluffton,1,,0.00
-How much does a metal roof cost for a 2000 sq ft home?,metal roofing Bluffton,1,,0.00
-What is the average price for a 3 ft by 8 ft metal roof?,metal roofing Bluffton,1,,0.00
-How much is a 20 ft sheet of metal roofing?,metal roofing Bluffton,1,,0.00
-What is a major disadvantage of a slate roof?,slate roofing Bluffton,1,,0.00
-How much do slate roofs cost?,slate roofing Bluffton,1,,0.00
 Do insurance companies like slate roofs?,slate roofing Bluffton,1,,0.00
-How much does it cost to replace a roof on a $4000 square foot house?,slate roofing Bluffton,1,,0.00
-Can I get a grant to replace my roof in South Carolina?,roof replacement Hilton Head Island,1,,0.00
-How much does it cost to replace a roof on a 2000 square-foot house with hip roof in Texas?,roof replacement Hilton Head Island,1,,0.00
-What is the average cost to put on a roof?,roof installation Hilton Head Island,1,,0.00
 How long should a roof inspection take?,roof inspection Hilton Head Island,1,,0.00
 How much does it cost to replace a roof in SC?,emergency roof repair Hilton Head Island,1,,0.00
-How long does a roof last in South Carolina?,emergency roof repair Hilton Head Island,1,,0.00
-Who can I call for an emergency roofing service in Manchester?,emergency roof repair Hilton Head Island,1,,0.00
-How much does a metal roof cost for a 2000 sq ft house?,metal roofing Hilton Head Island,1,,0.00
-What is the average price for a 3 ft by 10 ft metal roof?,metal roofing Hilton Head Island,1,,0.00
-How much does a metal roof cost in South Carolina?,metal roofing Hilton Head Island,1,,0.00
 What does slate roofing look like?,slate roofing Hilton Head Island,1,,0.00
 What famous people live on Hilton Head Island?,slate roofing Hilton Head Island,1,,0.00
 Do slate roofs need a membrane?,slate roofing Hilton Head Island,1,,0.00
-"What is cheaper, a slate or tile roof?",slate roofing Hilton Head Island,1,,0.00
 What celebs live in Hilton Head?,skylights Hilton Head Island,1,,0.00
 What is the prettiest beach on Hilton Head Island?,skylights Hilton Head Island,1,,0.00
 What is the best month to go to Hilton Head Island?,skylights Hilton Head Island,1,,0.00
 Where is the best place to watch the sunrise on Hilton Head Island?,skylights Hilton Head Island,1,,0.00
 Do Lowes do roof replacement?,roof replacement Beaufort,1,,0.00
-How much does it cost to replace a roof on a 2 200 square foot house in California?,roof installation Beaufort,1,,0.00
-Who inspects roofs for damage?,roof inspection Beaufort,1,,0.00
-"Is $30,000 too much for a roof?",roof inspection Beaufort,1,,0.00
-Are roof repair estimates free?,roof inspection Beaufort,1,,0.00
+Can I repair a roof leak while it's raining?,emergency roof repair Beaufort,1,,0.00
+What is the cheapest way to fix a roof?,emergency roof repair Beaufort,1,,0.00
+How can I fix a leaking corrugated roof?,emergency roof repair Hardeeville,1,,0.00
+"What is Hardeeville, South Carolina known for?",skylights Hardeeville,1,,0.00
+What type of skylight is best for a metal roof?,skylights Hardeeville,1,,0.00
+"How far is Hardeeville, SC from the beach?",skylights Hardeeville,1,,0.00
+How much does it typically cost to repair a roof leak?,roof repair Port Royal,1,,0.00
+What is the average cost to replace a 1500 square foot roof?,roof replacement Port Royal,1,,0.00
+What is the average cost of a roof inspection in Florida?,roof inspection Port Royal,1,,0.00
+How much does it usually cost to fix a roof leak?,roof inspection Port Royal,1,,0.00
+How much does a 20x20 metal roof cost?,metal roofing Port Royal,1,,0.00
+How often should a slate roof be replaced?,slate roofing Port Royal,1,,0.00
+How expensive is it to repair a slate roof?,slate roofing Port Royal,1,,0.00
+How many slates can a roofer lay in a day?,slate roofing Port Royal,1,,0.00
+How much is a certified roof inspection?,roof inspection St. Helena Island,1,,0.00
+What does a roof inspection include?,roof inspection St. Helena Island,1,,0.00
+How to fix a damaged roof?,emergency roof repair St. Helena Island,1,,0.00
+What is the price of slates?,slate roofing St. Helena Island,1,,0.00
+Can you use slate on a 15 degree roof?,slate roofing St. Helena Island,1,,0.00
+What are the downsides of having a skylight?,skylights St. Helena Island,1,,0.00
+What is the average cost to install a skylight on a roof?,skylights St. Helena Island,1,,0.00
+What is the best brand of skylight?,skylights St. Helena Island,1,,0.00
+"Who lives on St. Helena Island, SC?",skylights St. Helena Island,1,,0.00
+Can a handyman replace a roof?,roof installation Ridgeland,1,,0.00
+How much do roof inspections usually cost?,roof inspection Ridgeland,1,,0.00
+Is my roof leaking an emergency?,emergency roof repair Ridgeland,1,,0.00
+Can a handyman fix a roof leak?,emergency roof repair Ridgeland,1,,0.00
+What are the disadvantages of slate roofing?,slate roofing Ridgeland,1,,0.00
+What is the average cost to replace a roof on a 2000 square-foot home?,roof replacement Okatie,1,,0.00
+How much does it cost to replace a roof on a 2 200 square-foot house in California?,roof installation Okatie,1,,0.00
+How much is an emergency roof repair?,emergency roof repair Okatie,1,,0.00
+How to emergency patch a roof?,emergency roof repair Okatie,1,,0.00
+Which metal roofing sheet is best?,metal roofing Okatie,1,,0.00
+Can a slate roof last 200 years?,slate roofing Okatie,1,,0.00
+How much is a metal roof for 1200 square feet?,metal roofing Lady's Island,1,,0.00
+How popular is metal roofing?,metal roofing Lady's Island,1,,0.00
+What is the best roofing material for coastal areas?,metal roofing Lady's Island,1,,0.00
+What are the downsides of a standing seam metal roof?,metal roofing Lady's Island,1,,0.00
+How to become a certified roof inspector in Florida?,roof inspection Fripp Island,1,,0.00
+What are the roofing laws in South Carolina?,emergency roof repair Fripp Island,1,,0.00
+What type of metal roofing is best for South Florida?,metal roofing Fripp Island,1,,0.00
+What type of metal roof is best for coastal areas?,metal roofing Fripp Island,1,,0.00
+Can you put a metal roof over shingles in Florida?,metal roofing Fripp Island,1,,0.00
+What type of shingle roof looks like slate?,slate roofing Fripp Island,1,,0.00
+What is the ideal slope for a slate roof?,slate roofing Fripp Island,1,,0.00
+How do I repair my own roof?,roof inspection Pritchardville,1,,0.00
+Will homeowners insurance cover a roof repair?,emergency roof repair Pritchardville,1,,0.00
+What gauge metal roof is hail resistant?,metal roofing Pritchardville,1,,0.00
+How to do metal roofing on a house?,metal roofing Pritchardville,1,,0.00
+How much is metal for a metal roof?,metal roofing Pritchardville,1,,0.00
+How long does slate tile roofing last?,slate roofing Pritchardville,1,,0.00
+Who are some manufacturers of synthetic slate roofing?,slate roofing Pritchardville,1,,0.00
+What properties of slate make it a good roofing material?,slate roofing Pritchardville,1,,0.00
+What are the downsides of skylights?,skylights Pritchardville,1,,0.00
+Are house skylights worth it?,skylights Pritchardville,1,,0.00
+Do skylights usually open?,skylights Pritchardville,1,,0.00
+Do you have to empty the loft when having a new roof?,roof repair Levy,1,,0.00
+Is it illegal for a roofer to pay your deductible?,roof repair Levy,1,,0.00
+How much does it cost to replace a roof on a condo building?,roof repair Levy,1,,0.00
+Can I deduct the cost of roof replacement from my taxes?,roof replacement Levy,1,,0.00
+What is the 25% rule in roofing?,roof replacement Levy,1,,0.00
+Is there a tax credit for a new roof in 2026?,roof replacement Levy,1,,0.00
+What is the average cost to replace a roof on a 2000 square foot home?,roof replacement Levy,1,,0.00
+How to pay for a new roof when you don't have the money?,roof installation Levy,1,,0.00
+How much does a roof inspection cost in PA?,roof inspection Levy,1,,0.00
+What are the different types of metal roofing?,metal roofing Levy,1,,0.00
+What is the average cost per square foot for a slate roof?,slate roofing Levy,1,,0.00
+What are the prices of roofing slate?,slate roofing Levy,1,,0.00

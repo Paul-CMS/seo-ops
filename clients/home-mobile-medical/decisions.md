@@ -37,3 +37,4 @@ Generated from status.json and the safety log — do not edit. Record a decision
 
 - 2026-10-07T17:21 — The client returned the proof sheet (the returned sheet is recorded) — met (system-verified)
 - 2026-10-07T17:21 — Client set up (/new-client finished) — met (system-verified)
+- 2026-10-07T17:28 — WordPress connected (/wp-check passed in the last 30 days) — met (system-verified)

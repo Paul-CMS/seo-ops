@@ -127,3 +127,43 @@ Gates checked: client_setup
 ### END HANDOFF
 ## RUN 20261007-172152-wp-check-12e0 · FINISHED · 2026-10-07T17:22:18-05:00
 Changes: 3 · Summary: WordPress setup handoff to Jonie (H-2026-10-07-01-wp_setup)
+
+## RUN 20261007-172720-wp-check-bb94 · STARTED · /wp-check · 2026-10-07T17:27:20-05:00
+Step: wp-check
+Gates checked: client_setup
+- CHANGE #12 [wp_check] https://homemobilemedical.com/?page_id=4166 | test draft page | old: (none) | new: draft id 4166 | result: APPLIED · test draft (trashed at the end of the check)
+- CHANGE #13 [wp_check] https://homemobilemedical.com/?p=4167 | test draft post | old: (none) | new: draft id 4167 | result: APPLIED · test draft (trashed at the end of the check)
+- CHANGE #14 [seopress_settings] SEOPress → Titles & Metas | screenshot or note | old:  | new: (record what is set — change nothing) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-07-02-seopress_settings-01
+- CHANGE #15 [seopress_settings] SEOPress → XML/HTML Sitemap | screenshot or note | old:  | new: (record what is set — change nothing) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-07-02-seopress_settings-02
+- CHANGE #16 [seopress_settings] SEOPress → Social Networks → Knowledge Graph | screenshot or note | old:  | new: (record what is set — change nothing) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-07-02-seopress_settings-03
+- CHANGE #17 [seopress_settings] SEOPress → Advanced | screenshot or note | old:  | new: (record what is set — change nothing) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-07-02-seopress_settings-04
+### HANDOFF · /wp-check · 2026-10-07 · run 20261007-172720-wp-check-bb94
+**What I did**
+- Ran `wp.py check`: credentials present, REST API reachable, logged in as [REDACTED] (Editor), draft page and post created, every SEOPress 6.8+ per-page field written and read back on a test draft. Test drafts trashed; nothing published.
+- `wp.py` issued H-2026-10-07-02-seopress_settings to Jonie (4 items) because SEOPress site-wide settings need an Administrator to read.
+
+**What was decided, and why**
+- Result: connected. The condition "WordPress connected" is met for 30 days. The account stays Editor (setup §1).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| SEOPress site-wide settings check | Jonie | Audit step S20 evidence |
+| Kadence head-code meta key | Found during the WordPress pilot | Schema in Finish |
+| WordPress pilot (`--pilot`) | Paul, later | Direct structural writes (titles, robots, canonical, schema) |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| SEOPress settings worksheet | clients/home-mobile-medical/handoffs/H-2026-10-07-02-seopress_settings.md / .csv | Sent to Jonie |
+
+**What I could not check**
+- SEOPress site-wide settings (Administrator only).
+
+**Anything the next agent would otherwise get wrong**
+- H-2026-10-07-01-wp_setup (user + Application Password) is in effect done: the check logged in as [REDACTED]. Ingest Jonie's returned worksheet to close it.
+### END HANDOFF
+## RUN 20261007-172720-wp-check-bb94 · FINISHED · 2026-10-07T17:28:07-05:00
+Changes: 6 · Summary: WordPress connected ([REDACTED] Editor, SEOPress 6.8+ fields OK); SEOPress settings handoff to Jonie
+
+## CONDITION · 2026-10-07T17:28:07-05:00 · WordPress connected (/wp-check passed in the last 30 days) — met (system-verified)

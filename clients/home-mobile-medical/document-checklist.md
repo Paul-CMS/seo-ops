@@ -1,6 +1,6 @@
 # Home Mobile Medical - Document Checklist
 
-Generated 2026-10-07T17:22 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-07T17:28 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -34,7 +34,7 @@ Generated 2026-10-07T17:22 from status.json — do not edit. `[x]` done · `[-]`
 - [x] The client returned the proof sheet (the returned sheet is recorded)
 - [ ] Every registered audit step has an outcome (Done / Skipped / Failed) — audit steps with no outcome yet: S06, S07, S08, S19, S20, S21, S12, S13, S14, S15, S16, S17, S18
 - [ ] Every page in the site plan is built, verified and written back — batches not yet built and written back: svc1, loc1, loc2, loc3, loc4, loc5, loc6, loc7, final1, final2
-- [ ] WordPress connected (/wp-check passed in the last 30 days) — WordPress is not connected yet — run /wp-check home-mobile-medical
+- [x] WordPress connected (/wp-check passed in the last 30 days)
 
 ## Decisions (Paul)
 
