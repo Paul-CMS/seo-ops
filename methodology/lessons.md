@@ -83,3 +83,10 @@ What we propose (ranked; none conflicts with v1.1 unless marked):
 
 Not taken, and why: `aggregateRating` from a Grok-built dossier; a dossier that overrides live data; LLM-generated JSON; their Wikipedia-URL `@id` fallback; ContentMaxima geo-trigger stops. Ours already defines the `WebSite` node theirs never defines (woodlawn's dangling `#website`), and keeps the `pending_url_change` refusal and GOV-T5-in-code they lack.
 Note: `references/schema-rules.md` and `sop-source/BB-Standard-Schema-Section-v1.1.md` differ only at line 11 — changes 6 and 7 must land in both.
+
+## L-008 · 2026-10-06 · When a hub may be a metro area instead of a county · PROPOSED
+Rule affected: methodology/specs/county-hub.md §1 ("when a county hub exists at all" — Coastal default, needs Paul's ruling), BB-207, BB-208.
+What we do now: the county-hub spec assumes one hub per county; the trigger for a hub is an open Coastal default.
+What we propose: a hub may cover a metro area instead of one county **only when the metro area is a legitimate, verifiable geographic category** (an official US metropolitan statistical area with a Wikipedia/Wikidata entry, used in its official name and county list). Otherwise the hub is a county hub. Served cities outside every hub's area link from the top service-area hub.
+Why (evidence): Home Mobile Medical keeps /service-area/charleston/ (Berkeley, Charleston, Dorchester counties) and /service-area/hhi-beaufort/ (Beaufort and Jasper counties); each spans more than one county but matches an official metro area. Paul 2026-10-06: "sure it can, if this provides legitimate categorization. Otherwise, maybe we hub it by county pages."
+Proposed by: Claude for Paul, from his 2026-10-06 direction (home-mobile-medical import).

@@ -1,0 +1,26 @@
+# Safety log — Home Mobile Medical
+
+Append-only. Every command writes STARTED before it acts and FINISHED after. Every change lists URL, old value, new value and result.
+Machine-readable mirror for /rollback: changes.jsonl.
+
+
+## RUN 20261006-112201-new-client-fb9a · STARTED · /new-client · 2026-10-06T11:22:01-05:00
+Step: new-client
+- CHANGE #1 [local_file] clients/home-mobile-medical/test-run-notes.md | file | old:  | new: created | result: done
+- CHANGE #2 [local_file] clients/home-mobile-medical/rename-list.md | file | old:  | new: created | result: done
+- CHANGE #3 [local_file] clients/home-mobile-medical/brand-guide.md | file | old:  | new: created | result: done
+- DECISION 2026-10-06T11:23 · run 20261006-112201-new-client-fb9a · Sensitivity set by Paul: health_adjacent (classifier said health). No practitioner sign-off; health/safety claims need a named authoritative source, otherwise removed; Paul approves those pages (CM-040).
+- CHANGE #4 [local_file] clients/home-mobile-medical/import-proposal.json | file | old:  | new: draft created | result: done
+- DECISION 2026-10-06T11:35 · run 20261006-112201-new-client-fb9a · Paul 2026-10-06: no Georgia location pages. Decision 037 (Drive Client Decision Log, 2026-10-02) stands for location pages; Savannah GA and Pooler GA leave the location set and are treated like other out-of-area legacy pages.
+- DECISION 2026-10-06T11:35 · run 20261006-112201-new-client-fb9a · Paul 2026-10-06: the GBP address (2127 Boundary St #5, Beaufort, SC 29902) stays in the site footer so the website and GBP cross-reference. It is not a storefront; the business remains a service-area business and the site must not present a walk-in location.
+- DECISION 2026-10-06T11:35 · run 20261006-112201-new-client-fb9a · Paul 2026-10-06: Search Console is unavailable; DataforSEO replaces it as the evidence for every removal/redirect/410 candidate (CM-019: no top-100 rankings, no referring domains, not a GBP/citation destination, client confirms no leads).
+- DECISION 2026-10-06T11:35 · run 20261006-112201-new-client-fb9a · Paul 2026-10-06: no gate is signed at import. Paul signs off once every claim has been proofed and everything has been recorded. Import gates stay pending until then.
+- CHANGE #5 [local_file] clients/home-mobile-medical/out-of-area-pages.md | file | old:  | new: created | result: done
+- DECISION 2026-10-06T11:43 · run 20261006-112201-new-client-fb9a · Paul 2026-10-06: the pre-seo-ops build files (homepage build sheet, service page drafts, location page drafts) are believed lost. None are in Drive. Unless they turn up, those pages are imported as planned, not written; live pages are checked against the site before anything is called a baseline.
+- DECISION 2026-10-06T11:46 · run 20261006-112201-new-client-fb9a · Paul 2026-10-06: drop Florida and Michigan — all 17 FL/MI pages (6 FL, 11 MI) leave the site architecture.
+- DECISION 2026-10-06T11:46 · run 20261006-112201-new-client-fb9a · Paul 2026-10-06: out-of-area and retired pages get 301s, not 410s. Replaces 'out-of-area legacy pages get 410s' from the import brief; matches CM-019/CM-001 (never delete; always redirect). Each still needs the CM-019 DataforSEO check before it becomes a candidate; every redirect is a handoff to Jonie.
+- DECISION 2026-10-06T12:01 · run 20261006-112201-new-client-fb9a · Paul 2026-10-06: Georgia comes off homemobilemedical.com entirely (Savannah hub and all 17 Georgia pages) and becomes its own subdomain or microsite, keeping the main site's area entity clean (South Carolina Lowcountry). Open: client confirmation that Georgia is served (Decision 037 says it is not); subdomain vs separate domain; the microsite is a separate project, not part of this import. Georgia URLs 301 to their equivalent microsite pages once those exist; until then they stay as they are (no redirect to an unrelated SC page).
+- DECISION 2026-10-06T12:05 · run 20261006-112201-new-client-fb9a · Paul 2026-10-06: DataforSEO evidence (CM-019) runs after the remaining gates are approved, in the normal /discovery data step — no pull inside the import. The 301 list is finished after that pull.
+- DECISION 2026-10-06T12:05 · run 20261006-112201-new-client-fb9a · Paul 2026-10-06: the client does take jobs in Georgia (supersedes the 'Georgia not served' part of Decision 037 as a business fact). Georgia is served from a separate microsite (own project, own /new-client); homemobilemedical.com stays South Carolina Lowcountry only.
+- DECISION 2026-10-06T12:05 · run 20261006-112201-new-client-fb9a · Paul 2026-10-06: a hub may be a metro area if it is a legitimate, verifiable geographic category; otherwise hub by county. Proposed for the hubs: /service-area/charleston/ = Charleston-North Charleston metro area; /service-area/hhi-beaufort/ = Hilton Head Island-Bluffton metro area (or Beaufort County). Names and Wikidata entries to be verified in Build; county-hub spec is still DRAFT. Logged as lessons.md L-008.
+- CHANGE #6 [local_file] clients/home-mobile-medical/discovery/claims-proof-list.md | file | old:  | new: created | result: done

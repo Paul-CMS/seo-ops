@@ -412,3 +412,35 @@ Generated from the safety log (clients/apex-roofing-of-the-lowcountry/log.md) �
 **Anything the next agent would otherwise get wrong**
 - At reconcile, read Paul's answers file together with the client's returned sheet. Paul's answers cover most of the facts.
 
+## /discovery · 2026-10-07 · run 20261007-144926-discovery-20d6
+
+**What I did**
+- The client answered most of the sheet informally through Paul. I saved their words verbatim as evidence: `discovery/Apex Roofing of the Lowcountry - MANUAL - client-answers-informal - 2026-10-07.md`, also in Drive Evidence.
+- Cut the client proof sheet to the 8 questions still open: licences current, licence class and holder, email, trip charge, payment methods, titles and certifications, what sets them apart, the job they want more of. Removed the Access block and the phone lines. Re-marked `proof_sheet`; archive-and-replace for the sheet `.md` and the CLIENT COPY in Drive.
+
+**What was decided, and why**
+- Paul: "residential" is a description in headings and page text, not a name variant (entity unchanged). No phone line on the sheet.
+- The client's answers are not yet recorded as the returned sheet. That happens at sheet-returned, after Paul approves the sheet.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| proof_sheet_approved | Paul | Sending the follow-up; data pulls; recording the returned answers |
+| 6 Sutton Ct on the GBP and website? (client wants it; Google's rules for service-area businesses; a storefront would change the area entity) | Paul | Reconcile (Brand Guide approval) |
+| Check the CLIENT COPY layout | Paul | Sending |
+| New client facts to reconcile: lifetime no-leak workmanship warranty (transferable) · 50-year manufacturer warranty (transferable) · Hearth financing · certified installers for both CertainTeed and GAF · Brays Island and Lobeco (both northern Beaufort County, inside the approved metro area) | Reconcile | — |
+| We now have GBP access, so Gwen's dashboard lookups (H-2026-10-05-02 rows 3–5) can be done directly | Gwen | BB-107 |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Proof sheet | clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Client Proof Sheet - REVIEW.md · https://drive.google.com/file/d/1MRVuiezDpyRafYHUoY3lKdA20kPaGvPe/view | REVIEW |
+| CLIENT COPY | https://docs.google.com/document/d/17jqGB3i9Dfk791-_VCboakbX_Z5PM3BaFaR2mtZ8vTA/edit | Ready once Paul approves |
+| Client answers (verbatim) | https://drive.google.com/file/d/1QUNMOJpa-7YXgRgWV7lFDAxW6yPZvhBW/view | Evidence |
+
+**What I could not check**
+- Brays Island has no Wikipedia article. It is a private community near Sheldon, northern Beaufort County — confirm at reconcile.
+
+**Anything the next agent would otherwise get wrong**
+- At sheet-returned, the returned file = the 2026-10-07 informal answers plus whatever the client sends for the 8 follow-up questions. At reconcile, read it together with Paul's answers file.
+

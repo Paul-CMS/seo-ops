@@ -1,0 +1,146 @@
+{
+  "_status": "DRAFT \u2014 not ready for /approve. Open questions for Paul are in the run summary.",
+  "source": "Home Mobile Medical - Approval Record.md (v3 TMS root, Drive 1K8ikedB7cC2kbJVWVmmoMha374zk9b_3) \u2014 every block unsigned",
+  "gates": {},
+  "pages": {
+    "homepage": {
+      "type": "homepage",
+      "name": "Homepage",
+      "url": "https://homemobilemedical.com/",
+      "group": "final",
+      "state": "planned",
+      "claimed": "Paul: title + H1 approved; build sheet Pass 1 (12 tasks) ready, Pass 2 blocked on client facts",
+      "found": "no build sheet or approval in Drive"
+    },
+    "svc-stair-lifts": {
+      "type": "service",
+      "name": "Stair Lifts (parent; straight consolidated in)",
+      "url": "https://homemobilemedical.com/services/stair-lifts/",
+      "group": "lifts",
+      "state": "planned",
+      "claimed": "Paul: written to publishable standard",
+      "found": "no draft in Drive; live site not checked"
+    },
+    "svc-curved-stair-lifts": {
+      "type": "service",
+      "name": "Curved Stair Lifts",
+      "url": "https://homemobilemedical.com/services/curved-stair-lifts/",
+      "group": "lifts",
+      "state": "planned",
+      "claimed": "Paul: written to publishable standard",
+      "found": "no draft in Drive; live site not checked"
+    },
+    "svc-porch-lifts": {
+      "type": "service",
+      "name": "Porch Lifts / Vertical Platform Lifts",
+      "url": "https://homemobilemedical.com/services/porch-lifts/",
+      "group": "lifts",
+      "state": "planned",
+      "claimed": "Paul: written to publishable standard",
+      "found": "no draft in Drive; live site not checked"
+    },
+    "svc-wheelchair-lifts": {
+      "type": "service",
+      "name": "Wheelchair Lifts",
+      "url": "https://homemobilemedical.com/services/wheelchair-lifts/",
+      "group": "lifts",
+      "state": "planned",
+      "claimed": "Paul: written to publishable standard",
+      "found": "no draft in Drive; live site not checked"
+    },
+    "loc-beaufort-sc": {
+      "type": "location",
+      "name": "Beaufort, SC",
+      "url": "https://homemobilemedical.com/service-area/beaufort-sc/",
+      "group": "SC Lowcountry",
+      "state": "planned",
+      "claimed": "Paul: built",
+      "found": "no draft in Drive; live site not checked"
+    },
+    "loc-bluffton-sc": {
+      "type": "location",
+      "name": "Bluffton, SC",
+      "url": "https://homemobilemedical.com/service-area/bluffton-sc/",
+      "group": "SC Lowcountry",
+      "state": "planned",
+      "claimed": "Paul: built",
+      "found": "no draft in Drive; live site not checked"
+    },
+    "loc-hilton-head-island-sc": {
+      "type": "location",
+      "name": "Hilton Head Island, SC",
+      "url": "https://homemobilemedical.com/service-area/hilton-head-island-sc/",
+      "group": "SC Lowcountry",
+      "state": "planned",
+      "claimed": "Paul: built",
+      "found": "no draft in Drive; live site not checked"
+    },
+    "loc-charleston-sc": {
+      "type": "location",
+      "name": "Charleston, SC",
+      "url": "https://homemobilemedical.com/service-area/charleston-sc/",
+      "group": "SC Lowcountry",
+      "state": "planned",
+      "claimed": "Paul: built",
+      "found": "no draft in Drive; live site not checked"
+    },
+    "loc-mount-pleasant-sc": {
+      "type": "location",
+      "name": "Mount Pleasant, SC",
+      "url": "https://homemobilemedical.com/service-area/mount-pleasant-sc/",
+      "group": "SC Lowcountry",
+      "state": "planned",
+      "claimed": "Paul: built",
+      "found": "no draft in Drive; live site not checked"
+    },
+    "loc-summerville-sc": {
+      "type": "location",
+      "name": "Summerville, SC",
+      "url": "https://homemobilemedical.com/service-area/summerville-sc/",
+      "group": "SC Lowcountry",
+      "state": "planned",
+      "claimed": "Paul: built",
+      "found": "no draft in Drive; live site not checked"
+    },
+    "loc-port-royal-sc": {
+      "type": "location",
+      "name": "Port Royal, SC",
+      "url": "https://homemobilemedical.com/service-area/port-royal-sc/",
+      "group": "SC Lowcountry",
+      "state": "planned",
+      "claimed": "Paul: built",
+      "found": "no draft in Drive; live site not checked"
+    },
+    "loc-north-charleston-sc": {
+      "type": "location",
+      "name": "North Charleston, SC",
+      "url": "https://homemobilemedical.com/service-area/north-charleston-sc/",
+      "group": "SC Lowcountry",
+      "state": "planned",
+      "claimed": "Paul: built",
+      "found": "no draft in Drive; live site not checked"
+    }
+  },
+  "pilot_done": false,
+  "steps": {},
+  "unconfirmed": [
+    "Approval Record Blocks 1-5 are all blank: no gate is signed in Drive.",
+    "Document Checklist (2026-10-02): proof sheet not returned; Tier 3 2/9; 'proof sheet is the next gate'.",
+    "No Finding Register, Recommendations or Evidence Manifest exist; the READ FIRST file still asks for the audit to be run.",
+    "URL Decision Map exists only in the older non-v3 folder; its Stage 2 Review marks the destructive-action gate FAIL / blocking.",
+    "No homepage build sheet, service drafts or location drafts anywhere in Drive.",
+    "3 of the 7 service pages and 4 of the 14 location pages are not named.",
+    "Live site could not be reached from this session."
+  ],
+  "decisions_2026_10_06": [
+    "No Georgia location pages (Decision 037 stands).",
+    "Beaufort GBP address in the footer for GBP cross-reference; still an SAB.",
+    "DataforSEO replaces Search Console for CM-019 evidence.",
+    "No gate signed until every claim is proofed and everything recorded."
+  ],
+  "out_of_area_candidates": [
+    "https://homemobilemedical.com/service-area/savannah-ga/",
+    "https://homemobilemedical.com/service-area/pooler-ga/",
+    "Florida, Michigan and other Georgia URLs from the URL Decision Map \u2014 full list pending"
+  ]
+}
