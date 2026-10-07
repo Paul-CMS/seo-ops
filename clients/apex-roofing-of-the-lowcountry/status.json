@@ -231,7 +231,7 @@
     "changes": 16
   },
   "spend": {
-    "dataforseo_usd": 0.519961
+    "dataforseo_usd": 0.529961
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
@@ -245,7 +245,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-07T17:21:09-05:00",
+  "updated": "2026-10-07T17:21:44-05:00",
   "open_runs": {
     "20261007-170552-discovery-4092": {
       "step": "discovery:data",

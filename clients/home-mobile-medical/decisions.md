@@ -36,3 +36,4 @@ Generated from status.json and the safety log — do not edit. Record a decision
 ## Conditions met (system-verified)
 
 - 2026-10-07T17:21 — The client returned the proof sheet (the returned sheet is recorded) — met (system-verified)
+- 2026-10-07T17:21 — Client set up (/new-client finished) — met (system-verified)

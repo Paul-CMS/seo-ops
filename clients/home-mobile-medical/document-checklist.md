@@ -30,7 +30,7 @@ Generated 2026-10-07T17:21 from status.json — do not edit. `[x]` done · `[-]`
 
 ## Conditions
 
-- [ ] Client set up (/new-client finished) — the client has not been set up yet — run /new-client first
+- [x] Client set up (/new-client finished)
 - [x] The client returned the proof sheet (the returned sheet is recorded)
 - [ ] Every registered audit step has an outcome (Done / Skipped / Failed) — audit steps with no outcome yet: S06, S07, S08, S19, S20, S21, S12, S13, S14, S15, S16, S17, S18
 - [ ] Every page in the site plan is built, verified and written back — batches not yet built and written back: svc1, loc1, loc2, loc3, loc4, loc5, loc6, loc7, final1, final2
@@ -38,10 +38,10 @@ Generated 2026-10-07T17:21 from status.json — do not edit. `[x]` done · `[-]`
 
 ## Decisions (Paul)
 
-- [ ] Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)
-- [ ] Client proof sheet approved by Paul, ready for him to send
+- [x] Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)
+- [x] Client proof sheet approved by Paul, ready for him to send
 - [ ] Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)
-- [ ] Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
+- [x] Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 - [ ] Discovery and audit signed off — Build may start
 - [ ] Technical blocker checklist cleared and tracking stable
 - [ ] Link wheel built and verified — schema may start

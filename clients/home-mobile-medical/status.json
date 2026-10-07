@@ -532,7 +532,13 @@
       "reason": "GSC and GA4 unavailable (client); DataforSEO replaces them for CM-019 (Paul 2026-10-06)"
     }
   },
-  "last_run": null,
+  "last_run": {
+    "run_id": "20261006-112201-new-client-fb9a",
+    "command": "new-client",
+    "finished": "2026-10-07T17:21:45-05:00",
+    "result": "Client imported from the v3 TMS folder; claims proofed with Paul and the client; Brand Guide reconciled; import approved by Paul (entity, proof sheet, Brand Guide); audit runs next (option B)",
+    "changes": 8
+  },
   "spend": {
     "dataforseo_usd": 0.0
   },
@@ -550,20 +556,13 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-07T17:21:12-05:00",
-  "open_runs": {
-    "20261006-112201-new-client-fb9a": {
-      "step": "new-client",
-      "batch": null,
-      "page": null,
-      "started": "2026-10-06T11:22:01-05:00",
-      "started_ts": 1791303721.518657
-    }
-  },
+  "updated": "2026-10-07T17:21:45-05:00",
+  "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
   },
   "conditions_logged": {
-    "proof_sheet_returned": "2026-10-07T17:21:12-05:00"
+    "proof_sheet_returned": "2026-10-07T17:21:12-05:00",
+    "client_setup": "2026-10-07T17:21:45-05:00"
   }
 }
