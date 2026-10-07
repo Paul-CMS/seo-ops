@@ -93,3 +93,37 @@ Site plan generated: clients/home-mobile-medical/build/Home Mobile Medical - Sit
 Changes: 8 · Summary: Client imported from the v3 TMS folder; claims proofed with Paul and the client; Brand Guide reconciled; import approved by Paul (entity, proof sheet, Brand Guide); audit runs next (option B)
 
 ## CONDITION · 2026-10-07T17:21:45-05:00 · Client set up (/new-client finished) — met (system-verified)
+
+## RUN 20261007-172152-wp-check-12e0 · STARTED · /wp-check · 2026-10-07T17:21:52-05:00
+Step: wp-check
+Gates checked: client_setup
+- CHANGE #9 [wp_setup] https://homemobilemedical.com/wp-admin/user-new.php | WordPress user | old: none | new: Create user: username [REDACTED], role Editor (never Administrator) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-07-01-wp_setup-01
+- CHANGE #10 [wp_setup] https://homemobilemedical.com/wp-admin/users.php | Application Password | old: none | new: Users → [REDACTED] → Application Passwords → name it [REDACTED] → Add → copy the 24-character password once. Send it to Paul privately (password manager share … | result: HANDOFF ISSUED to Jonie | ref H-2026-10-07-01-wp_setup-02
+- CHANGE #11 [wp_setup] https://homemobilemedical.com/wp-admin/plugins.php | SEOPress version | old: unknown | new: Report the installed SEOPress version (needs 6.8 or later; free is enough). Do not update anything without asking Paul | result: HANDOFF ISSUED to Jonie | ref H-2026-10-07-01-wp_setup-03
+### HANDOFF · /wp-check · 2026-10-07 · run 20261007-172152-wp-check-12e0
+**What I did**
+- Issued handoff H-2026-10-07-01-wp_setup to Jonie: create the `[REDACTED]` Editor user, its Application Password (sent to Paul privately), and report the SEOPress version.
+- Gave Paul the exact credential-file lines (`wp.py env-lines home-mobile-medical`).
+
+**What was decided, and why**
+- WordPress setup goes to Jonie (gates.json owner for wp_setup). No WordPress connection was attempted: there are no credentials yet.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| [REDACTED] user + Application Password | Jonie | All WordPress work |
+| Three credential lines | Paul | /wp-check home-mobile-medical |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Setup worksheet | clients/home-mobile-medical/handoffs/H-2026-10-07-01-wp_setup.md / .csv | Sent to Jonie |
+
+**What I could not check**
+- Whether WordPress, SEOPress or Application Passwords are enabled on the site (site unreachable from this session).
+
+**Anything the next agent would otherwise get wrong**
+- The connection test is `/wp-check home-mobile-medical`, only after Paul has added the credential lines.
+### END HANDOFF
+## RUN 20261007-172152-wp-check-12e0 · FINISHED · 2026-10-07T17:22:18-05:00
+Changes: 3 · Summary: WordPress setup handoff to Jonie (H-2026-10-07-01-wp_setup)

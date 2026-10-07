@@ -49,3 +49,29 @@ Generated from the safety log (clients/home-mobile-medical/log.md) — do not ed
 - The old URL Decision Map predates Paul's decisions: its Georgia KEEP rows, its 410s and the hhi-beaufort split are all superseded. Georgia URLs wait for the microsite; FL/MI and retired pages are 301s after DataforSEO.
 - Do not use the old Stannah "verified dealer" line or the homepage testimonials.
 
+## /wp-check · 2026-10-07 · run 20261007-172152-wp-check-12e0
+
+**What I did**
+- Issued handoff H-2026-10-07-01-wp_setup to Jonie: create the `[REDACTED]` Editor user, its Application Password (sent to Paul privately), and report the SEOPress version.
+- Gave Paul the exact credential-file lines (`wp.py env-lines home-mobile-medical`).
+
+**What was decided, and why**
+- WordPress setup goes to Jonie (gates.json owner for wp_setup). No WordPress connection was attempted: there are no credentials yet.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| [REDACTED] user + Application Password | Jonie | All WordPress work |
+| Three credential lines | Paul | /wp-check home-mobile-medical |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Setup worksheet | clients/home-mobile-medical/handoffs/H-2026-10-07-01-wp_setup.md / .csv | Sent to Jonie |
+
+**What I could not check**
+- Whether WordPress, SEOPress or Application Passwords are enabled on the site (site unreachable from this session).
+
+**Anything the next agent would otherwise get wrong**
+- The connection test is `/wp-check home-mobile-medical`, only after Paul has added the credential lines.
+
