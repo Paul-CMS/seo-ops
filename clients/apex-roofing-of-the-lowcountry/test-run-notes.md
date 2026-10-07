@@ -41,6 +41,8 @@ Rules for this run (Paul, 2026-10-05):
 
 | Date | Step | Item | Blocker? |
 |---|---|---|---|
+| 2026-10-07 | proof-sheet | The client and Paul answered every question before the sheet was sent, so the sheet will never go out. The system still needs `proof_sheet_approved` before it can record the returned answers and before the data pulls. Paul approves a sheet nobody receives. A "facts answered directly (no sheet sent)" path — Paul confirms the answers, which meets both the sheet approval and the returned condition — would fit how this actually went. | No |
+| 2026-10-07 | proof-sheet | `run.py finish` refuses a proof-sheet run that only recorded answers (no sheet change) until the unchanged sheet is re-marked. Harmless (same version), but a run that adds facts without touching the sheet is a normal case. | No |
 | 2026-10-05 | new-client | Paul thought Apex might have been started on Oct 3. Nothing for Apex exists in the repo (main, `review-fixes`, stashes) or in the v3 Drive root — Oct 3 was Gettysburg Mold Remediation Pros. Set up fresh. | No |
 | 2026-10-05 | new-client | Older Apex folders exist elsewhere in Drive, outside v3: "Apex Roofing" (owner witkowskiblair@gmail.com, with "Apex Roofing Client Images"), "Apex Commerical Pages" (Paul, Apr 2026) and "Apex Roofing of the Lowcountry" (owner mark.a.ko.08@gmail.com, May 2026). Not read, not touched. Paul decides whether any of them is source material for discovery (e.g. client images, earlier page copy). | No |
 | 2026-10-05 | new-client | The GBP Website field is `http://www.apexroofingtlc.com/`; the site was given as `https://apexroofingtlc.com/`. Recorded as given — discovery checks what each resolves to (no judgement before the audit). | No |

@@ -79,8 +79,8 @@
       "files": {
         "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Client Proof Sheet - REVIEW.md": "f8bb8b6123c6"
       },
-      "at": "2026-10-07T15:14:35-05:00",
-      "ts": 1791404075.176624
+      "at": "2026-10-07T15:19:15-05:00",
+      "ts": 1791404355.9574988
     }
   },
   "pages": {},
@@ -124,10 +124,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261007-151404-discovery-f9a6",
+    "run_id": "20261007-151906-discovery-3a31",
     "command": "discovery",
-    "finished": "2026-10-07T15:14:35-05:00",
-    "result": "Paul answered the 8 follow-up questions; address option (a)",
+    "finished": "2026-10-07T15:19:16-05:00",
+    "result": "Paul confirmed both licences current",
     "changes": 1
   },
   "spend": {
@@ -143,7 +143,7 @@
     "next": "Once you return the fact sheet, we finish your business profile."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-07T15:14:35-05:00",
+  "updated": "2026-10-07T15:19:16-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -159,8 +159,8 @@
     }
   },
   "review_pause": {
-    "run_id": "20261007-151404-discovery-f9a6",
+    "run_id": "20261007-151906-discovery-3a31",
     "step": "discovery:proof-sheet",
-    "at": "2026-10-07T15:14:35-05:00"
+    "at": "2026-10-07T15:19:16-05:00"
   }
 }

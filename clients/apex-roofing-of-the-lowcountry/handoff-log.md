@@ -475,3 +475,27 @@ Generated from the safety log (clients/apex-roofing-of-the-lowcountry/log.md) �
 **Anything the next agent would otherwise get wrong**
 - Nothing more is coming from the client. At sheet-returned, record the client's informal answers (with Paul's answers file alongside) as the returned sheet.
 
+## /discovery · 2026-10-07 · run 20261007-151906-discovery-3a31
+
+**What I did**
+- Recorded Paul's confirmation that both licences are current — SC #57706 and Town of Bluffton #0620033323 — in his answers file. The proof sheet was not changed.
+
+**What was decided, and why**
+- Paul: "Both licenses are good. 57706 appears on more websites, but both legit."
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Licence class and holder name from the state lookup | Gwen (H-2026-10-05-02) | Schema / licence wording only |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Paul's answers | clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - MANUAL - proof-sheet-answers-paul - 2026-10-06.md | Updated |
+
+**What I could not check**
+- —
+
+**Anything the next agent would otherwise get wrong**
+- —
+

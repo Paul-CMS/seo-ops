@@ -629,3 +629,33 @@ Gates checked: entity_approved
 ### END HANDOFF
 ## RUN 20261007-151404-discovery-f9a6 · FINISHED · 2026-10-07T15:14:35-05:00
 Changes: 1 · Summary: Paul answered the 8 follow-up questions; address option (a)
+
+## RUN 20261007-151906-discovery-3a31 · STARTED · /discovery · 2026-10-07T15:19:06-05:00
+Step: discovery:proof-sheet
+Gates checked: entity_approved
+- CHANGE #60 [other] clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - MANUAL - proof-sheet-answers-paul - 2026-10-06.md | licences | old: found - not verified | new: Paul confirmed both current (SC 57706, Bluffton 0620033323) | result: recorded
+### HANDOFF · /discovery · 2026-10-07 · run 20261007-151906-discovery-3a31
+**What I did**
+- Recorded Paul's confirmation that both licences are current — SC #57706 and Town of Bluffton #0620033323 — in his answers file. The proof sheet was not changed.
+
+**What was decided, and why**
+- Paul: "Both licenses are good. 57706 appears on more websites, but both legit."
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Licence class and holder name from the state lookup | Gwen (H-2026-10-05-02) | Schema / licence wording only |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Paul's answers | clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - MANUAL - proof-sheet-answers-paul - 2026-10-06.md | Updated |
+
+**What I could not check**
+- —
+
+**Anything the next agent would otherwise get wrong**
+- —
+### END HANDOFF
+## RUN 20261007-151906-discovery-3a31 · FINISHED · 2026-10-07T15:19:16-05:00
+Changes: 1 · Summary: Paul confirmed both licences current
