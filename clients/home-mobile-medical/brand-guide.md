@@ -5,8 +5,8 @@ Repo working copy: `clients/home-mobile-medical/brand-guide.md` · mirrored to `
 > **Reconciled 2026-10-07 during the import** (run 20261006-112201-new-client-fb9a) from: the v3 Drive Brand Guide
 > (Google Doc, 2026-10-02), Client Decision Log 001–038, Client Gap Sheet with owner confirmations, Discovery Record
 > (2026-09-28), the claims proof list (`discovery/claims-proof-list.md`, marked by Paul 2026-10-07) and the client's
-> answers relayed by Paul on 2026-10-07. Quotes of the live site are from the 2026-09-18 crawl. Waiting for Paul's
-> approval (gate brand_guide_approved, through the import).
+> answers relayed by Paul on 2026-10-07. Quotes of the live site are from the 2026-09-18 crawl. Approved by Paul
+> 2026-10-07 through the import (gate brand_guide_approved).
 
 ## Field status values
 
@@ -48,7 +48,7 @@ Smallest true container: South Carolina Lowcountry
 Georgia is served from a separate microsite (own project), so it is outside this site's area entity.
 ```
 
-**Paul approved this section on:** 2026-10-02 (old workflow, Phase 4b) · category scope narrowed 2026-10-07 · gate signed at import: ________
+**Paul approved this section on:** 2026-10-02 (old workflow, Phase 4b) · category scope narrowed 2026-10-07 · gate signed at import: 2026-10-07 (Paul)
 
 ## Section B — Variant ownership  *(CM-024: collisions are vertical, not horizontal)*
 

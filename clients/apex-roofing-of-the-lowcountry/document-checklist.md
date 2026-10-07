@@ -1,6 +1,6 @@
 # Apex Roofing of the Lowcountry - Document Checklist
 
-Generated 2026-10-07T17:00 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-07T17:31 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -17,7 +17,7 @@ Generated 2026-10-07T17:00 from status.json — do not edit. `[x]` done · `[-]`
 | [-] | S09 Citations | skipped | Paul 2026-10-07: skip citations for this audit (no BrightLocal citation tracker export) |
 | [x] | S10 Local grid | done | Local Dominator scans 2026-10-07: roof repair bluffton (local pack 6.99, maps 20+), roofing contractor near me (local pack 19.29, maps 20+); 176 pins, 3 mi. Results only; report advice not used |
 | [-] | S11 Search Console / GA4 | skipped | No Search Console or GA4 access (intake 2026-10-05); Paul 2026-10-06: not needed, we use our own SEO data |
-| [x] | S19 People Also Ask: core services × primary city + top 3 cities, capped ( | done | 20 queries, 50 questions routed: 27 service FAQ, 0 location FAQ, 10 blog topic, 13 drop; C3 empty so no C3 drops |
+| [x] | S19 People Also Ask: core services × primary city + top 3 cities, capped ( | done | PAA: 96 queries (8 services x 12 towns), 140 distinct questions routed - 76 service FAQ, 2 location FAQ (Lady's Island, Fripp Island), 28 blog topic, 34 drop; first 50 routes carried over unchanged |
 | [x] | S20 SEOPress site-wide settings (title templates, sitemap, noindexed post  | done | Readable during /wp-check 2026-10-05 (Administrator login); saved as evidence |
 | [x] | S21 Query fan-out (CM-045): core services × primary city + top 3 cities, c | done | 10 seeds, 379 queries routed: 269 service H2/FAQ (about 75 head terms), 35 location FAQ, 55 blog topic, 20 drop; 2 PAA repeats route with PAA; no volumes (CM-012) |
 | [ ] | S12 Ingest + cross-checks | — |  |
