@@ -47,3 +47,20 @@ Row references (A, B1–B14, C) are the first sheet's rows; Discovery Record ref
 | C — "What do you do that other roofers here don't?" | Client to answer. | to check — asked of the client |
 | C — "What job do you most want more of?" | Paul left blank; stays on the sheet (coordinator asking Paul). | to check — asked of the client |
 | C — "What do customers most often get wrong about roofing?" | Client to answer. | to check — asked of the client |
+
+## Addendum 2026-10-07 — Paul's answers to the 8 follow-up questions (the sheet was not sent)
+
+The client's own answers from the same day are in `… - MANUAL - client-answers-informal - 2026-10-07.md` (warranties,
+Hearth financing, CertainTeed + GAF, after-hours, travel area, "what customers get wrong"). Paul answered the rest:
+
+| Follow-up question | Paul's answer (his words, lightly cleaned) | Status |
+|---|---|---|
+| 1 — Licences #57706 and Bluffton #0620033323 current? | "Work with evidence you already have." Evidence: #57706 on the homepage, BBB (issuer SC LLR, expires 2027-06-30) and GAF ("RBS 57706"); Bluffton #0620033323 only on the homepage. | found — not verified (LLR lookup with Gwen, H-2026-10-05-02) |
+| 2 — Licence class and name held under | "Same as above." Evidence: GAF shows "RBS 57706" (likely a Residential Builders specialty licence); holder name not seen. | found — not verified |
+| 3 — Email that reaches a person | "No public facing email address." | Paul confirmed 2026-10-07 — no email on the site |
+| 4 — Minimum service call / trip charge | "No min call charge." | Paul confirmed 2026-10-07 |
+| 5 — Payment methods | "Standard payment methods." (No list given; HomeAdvisor shows "Credit card accepted".) | Paul confirmed 2026-10-07 — no specific list to publish |
+| 6 — Job titles / personal certifications | Ralph and Pierce are father and son. "If no confirmed job title from search, assume father is the owner. No need to otherwise specify." Evidence: Ralph "Owner" (LinkedIn, reviews) vs BBB Ralph "President" / Pierce "Owner". On the site: keep "Founded by Ralph and Pierce Brehany", no titles. | Paul's direction 2026-10-07; titles stay unpublished (sources conflict) |
+| 7 — What do you do that other roofers here don't? | Use the client's own words: certified factory installers of both CertainTeed and GAF ("many homeowners do have a preference") + the "what customers get wrong" answer (flashing, underlayment, sealed valleys, nail spacing, methodical install). | Client's words (2026-10-07), selected by Paul |
+| 8 — What job do you most want more of? | "The most revenue making… residential installation and repair?" | Paul's best guess 2026-10-07 — not confirmed by the client |
+| Address (6 Sutton Ct) | Option (a): keep the address hidden on the GBP; keep the approved metro area as the area entity. The street address may appear on the website only if wanted. | Paul decided 2026-10-07 |
