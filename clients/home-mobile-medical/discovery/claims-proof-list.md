@@ -21,7 +21,7 @@ Paul's 2026-10-06 answers in this session. The live site could not be re-read to
 | A6 | Email info@homemobilemedical.com | Observed in directories only | Discovery Record | Client confirms | | CONFIRMED
 | A7 | Hours Mon–Fri 9–5, Sat–Sun closed | Observed in directories only | Discovery Record | Client confirms | | CONFIRMED
 | A8 | Primary GBP category: Mobility equipment supplier | Approved by Paul 2026-10-02 | Decision 038 | Secondary categories still unknown (client/VA reads the GBP editor) | | CONFIRMED
-| A9 | Legal entity name / DBA | Unknown | Decision 034 | Client supplies (needed for schema and legal pages only) | | CONFIRMED - CAN WE LOOK UP THE WEB FOR A BUSINESS LICENSE ENTRY? OTHERWISE NEEDS CONFRIAMTION FROM CLIENT
+| A9 | Legal entity name / DBA | **Home Mobile Medical** (Paul 2026-10-07); no SC SOS record located | Paul | — | | CONFIRMED - CAN WE LOOK UP THE WEB FOR A BUSINESS LICENSE ENTRY? OTHERWISE NEEDS CONFRIAMTION FROM CLIENT
 
 ## B. History and ownership
 
@@ -47,7 +47,7 @@ Paul's 2026-10-06 answers in this session. The live site could not be re-read to
 | C6 | "We offer ongoing maintenance and support services…" | **Confirmed by client 2026-10-07** | Client via Paul | Brand scope still open; no plans, prices or response times | CONFIRMED |
 | C7 | Wheelchair-lift repair (/bluffton-sc/wheelchair-lift-repair/) | **Confirmed by client 2026-10-07** (does repairs) | Client via Paul | Own installs only or any brand? | CONFIRMED |
 | C8 | Stair-lift repair (/hilton-head/stair-lift-repair/) | **Confirmed by client 2026-10-07** (does repairs) | Client via Paul | Own installs only or any brand? | CONFIRMED |
-| C9 | Outdoor stair lifts | Not offered as a service until supported | Gap Sheet | Owner + product evidence | |
+| C9 | Outdoor stair lifts | Outdoor access confirmed **as porch lifts** (raised entrances, decks) 2026-10-07; no separate outdoor stair-lift claim | Client via Paul | — | CONFIRMED (porch lifts) |
 | C10 | "We rent and sell mobility equipment in the Lowcountry" | **False** (rentals discontinued) | Beaufort page; Decision 007 | ❌ remove | |
 | C11 | Power chairs, scooter lifts, mobility ramps, scooter repair, rentals | **Discontinued** | Decisions 007, 008 | ❌ remove (pages 301 after the DataforSEO check) | |
 | C12 | "We provide a free in-home consultation" | **Confirmed 2026-10-07** — free in-home estimates; can also quote from a photo (priced by stair count) | Client via Paul | — | CONFIRMED |
@@ -59,14 +59,14 @@ Paul's 2026-10-06 answers in this session. The live site could not be re-read to
 | D1 | Jason personally supervises/oversees every installation | Confirmed | Decision 015 | — | | confirm. think he might be a one man show
 | D2 | Same-day installation available **in most cases** | Confirmed 2026-10-07: usually one day, 3–4 hours | Client via Paul | Keep the qualifier everywhere | CONFIRMED |
 | D3 | "…ensure your stair lift is ready for safe use the same day it is installed" | Published | Beaufort page | ✏️ fold into D2 wording ("in most cases") | |
-| D4 | "Every lift is custom-fit to your staircase" | Published, unsupported | Beaufort page | True for curved rails, not all straight units — owner confirms or ✏️ "fitted to your staircase" | |
+| D4 | "Every lift is custom-fit to your staircase" | Paul 2026-10-07 | — | ✏️ "fitted to your staircase" | ✏️ |
 | D5 | "All of our stair lifts come with battery backup systems…" | **Product spec, unsupported** | Beaufort page | 🔗 manufacturer spec sheet (e.g. Stannah) for every model sold, or ✏️ drop "all" | |
 | D6 | "Our experienced technicians…" / "skilled professionals" | **Corrected 2026-10-07**: Jason plus one helper | Client via Paul | ✏️ "Jason and his helper" — no "team of technicians" | ✏️ |
 | D7 | Stannah relationship | **No link on record**; web search 2026-10-07 found no dealer listing | Old Brand Guide (no URL) | stannah.com dealer-locator entry or client document → then main dealer reference (Paul 2026-10-07) | 🔗 |
 | D8 | Bruno, Harmar, Handicare or any other brand; "authorized/certified dealer" | Not proven | Decision 012 | 🔗 manufacturer evidence, else none | |
-| D9 | Warranty terms | Unknown | Brand Guide §12 | Owner documents, else none | |
+| D9 | Warranty terms | Manufacturer's warranty only (2026-10-07) | Client via Paul | No HMM warranty claim | CONFIRMED |
 | D10 | Financing available (capability only — no provider, rates or terms) | Confirmed at capability level | Decision 017 | — | |
-| D11 | Licence, insurance, certifications | Unknown | Discovery Record Q9 | Owner documents or "none" | |
+| D11 | Licence, insurance, certifications | No licence number found (2026-10-07) | Paul | No licence/insurance/certification claim published | ❌ |
 
 ## E. Safety, health and coverage claims (health-adjacent — named source or remove)
 
@@ -84,7 +84,7 @@ Paul's 2026-10-06 answers in this session. The live site could not be re-read to
 
 | # | Claim | Status now | Source | What proves it | Paul |
 |---|---|---|---|---|---|
-| F1 | Homepage testimonials (Debbie S, Laura B, Sher D) — mention "inventory" and "several different needs" | Likely BME-era; reuse permission **not confirmed** | Homepage; Gap Sheet | Owner confirms they are HMM reviews or permission to reuse; else ❌ remove | |
+| F1 | Homepage testimonials (Debbie S, Laura B, Sher D) | **Placeholder reviews** (Paul 2026-10-07) | Paul | ❌ remove | ❌ |
 
 ## G. Geography
 

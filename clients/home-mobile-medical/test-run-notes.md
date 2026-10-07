@@ -43,3 +43,19 @@ Kept for this test run. Anything Paul writes as "note:" is added here verbatim, 
 - Repairs and maintenance: yes. Team: Jason plus a helper. Free in-home estimates: yes; can quote from a photo (stair count). Wants a photo-upload-to-quote feature.
 - Install: usually one day, 3–4 hours. Brands: Paul checking. Stannah as main dealer reference if evidence exists.
 - Not answered yet: outdoor lifts.
+
+## 2026-10-07 — Paul's answers (round 7)
+- Outdoor = porch lifts. Manufacturer's warranty only. No licence number found. Reviews are placeholders. Legal name: Home Mobile Medical.
+- "Fitted to your staircase": yes. Safety statement: partially keep, as holding himself to the highest industry standards.
+- Asked: do we need to keep the Medicare/tax/ADA blogs?
+- GBP: primary Mobility equipment supplier; secondary Medical equipment supplier.
+
+## 2026-10-07 — round 8
+- Primary GBP category only. Keep the blogs until later decision. Confirming everything else.
+- Repairs: general scope — any stair lift or anything within service coverage, not just his installs.
+- Brand line: "installing and repairing leading brands like Stannah, (1–2 more?)", no authorized-dealer claim.
+
+## 2026-10-07 — round 9
+- Brand line confirmed (Stannah, Bruno, Harmar). Folly Island. Schema assets: placeholders, check back at schema.
+- Payment methods: general accepted payment methods. Asked what the site says about after-hours service.
+- "Then we run B" (system runs the audit step on the existing evidence).

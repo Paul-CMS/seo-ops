@@ -1,71 +1,243 @@
-# Home Mobile Medical — Brand Guide (imported)
+# Home Mobile Medical - Brand Guide
+### The single business-truth record. Every agent reads it; the Build agent writes back to it.
+Repo working copy: `clients/home-mobile-medical/brand-guide.md` · mirrored to `Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md`
 
-> **Imported 2026-10-06** from the v3 Drive file `Home Mobile Medical - Brand Guide` (Google Doc, Deliverables,
-> last modified 2026-10-02). Copied as written; it is in the old "Working Brand & Entity Guide" layout, not
-> `templates/brand-guide.md`. **Not yet reconciled.** Paul's 2026-10-06 instructions change parts of it
-> (marked ⚠ below) and are waiting for his answers before they are written in.
+> **Reconciled 2026-10-07 during the import** (run 20261006-112201-new-client-fb9a) from: the v3 Drive Brand Guide
+> (Google Doc, 2026-10-02), Client Decision Log 001–038, Client Gap Sheet with owner confirmations, Discovery Record
+> (2026-09-28), the claims proof list (`discovery/claims-proof-list.md`, marked by Paul 2026-10-07) and the client's
+> answers relayed by Paul on 2026-10-07. Quotes of the live site are from the 2026-09-18 crawl. Waiting for Paul's
+> approval (gate brand_guide_approved, through the import).
 
-## Status key
-- CONFIRMED — supplied or approved by the owner/project lead.
-- VERIFIED EXTERNAL SOURCE — independently supported by a first-party manufacturer or similar source.
-- USER-APPROVED WORKING ASSUMPTION — usable for planning; do not expand.
-- CLIENT CONFIRMATION REQUIRED — do not publish as fact until confirmed.
-- LEGACY / DO NOT USE — obsolete, sold, discontinued or unrelated.
+## Field status values
 
-## 1. Entity identity — CONFIRMED
-- Public brand name: Home Mobile Medical
-- Primary phone: (843) 476-1329
-- Business model: service-area business (SAB); customers served at their location; not a walk-in showroom.
-- Primary GBP category and website commercial entity: Mobility equipment supplier. Specializes in home accessibility and lift solutions, installation and support.
+`Submitted` · `Internally Verified` · `Client Confirmed` · `Disputed` · `Unknown` · `Paul Approved`
 
-## 2. Business history — CONFIRMED
-- Beaufort Medical Equipment (BME) was Jason Workens' former company (beds, wheelchairs). It was sold.
-- HMM is not merely a rebrand or continuation of BME.
-- The project kept access to the legacy GBP; its legacy signals are to be corrected, not copied.
-- LEGACY / DO NOT USE: broad BME service claims, old BME address/service descriptions, directory text implying general DME rental/sales.
+**A field at `Unknown` or `Disputed` blocks whatever consumes it.** Writers write
+`[NEED: ...]` instead of inventing (CM-016). `Submitted` may appear in a draft but blocks
+publication.
 
-## 3. Current service scope
-- CONFIRMED / PROJECT-APPROVED: straight stair lifts; curved stair lifts; porch lifts / vertical platform lifts; wheelchair lifts; professional installation; purchase/source and install new lifts.
-  - ⚠ Paul 2026-10-06: straight stair lifts are consolidated into the parent stair-lift page; curved stair lifts and porch lifts keep their own pages; parent/child pages with real subtype demand keep their URLs.
-- WORKING ASSUMPTION: stair-lift maintenance and ongoing support (plans, pricing, warranty and terms unconfirmed).
-- LEGACY / DO NOT USE: hospital bed rental; general wheelchair rental/sales as DME; scooters; power chairs; lift chairs; general DME; general medical-equipment rental.
+**Sensitivity:** health-adjacent (CM-040). Health, safety and coverage claims only with a named authoritative source,
+otherwise removed. Paul approves those pages. No practitioner sign-off.
 
-## 4. Service territory
-- CONFIRMED PRIORITY MARKETS: South Carolina Lowcountry; Charleston, Hilton Head Island, Beaufort, Hollywood, Walterboro (SC).
-- LEGACY / DO NOT USE: Florida, Georgia, Michigan.
-  - Paul 2026-10-06: South Carolina Lowcountry is the area entity. **No Georgia location pages** (Decision 037 stands).
-- CLIENT CONFIRMATION REQUIRED: exact city-by-city service radius; which other Lowcountry communities get pages.
+---
 
-## 5. Manufacturers
-- VERIFIED EXTERNAL SOURCE: Stannah (Stannah's SC dealer information lists HMM).
-- CLIENT CONFIRMATION REQUIRED: Bruno, Harmar, Handicare or any other. No "authorized/certified dealer", exclusivity, warranty or credential claims without evidence.
+## Section A — Entity foundation  *(Paul approves: gate entity_approved)*
 
-## 6. Approved business claims — CONFIRMED
-- Family-owned · 15+ years of experience (tie to Jason's experience, not the brand's age) · Jason Workens personally supervises installations · Financing available (capability only) · Same-day installation available in most cases · HMM sources/buys and installs lifts (not a manufacturer).
+| # | Field | Value | Status |
+|---|---|---|---|
+| 1 | Brand entity (GBP name, exactly) | Home Mobile Medical | Client Confirmed |
+| 2 | GBP primary category = the category entity | Mobility equipment supplier (supporting Wikimedia subject: Mobility aid, Q6887300). **Primary category only** — no "Medical equipment supplier" secondary (Paul 2026-10-07) | Paul Approved 2026-10-02 / 2026-10-07 |
+| 3 | Category variants (4–6) | Mobility equipment supplier · stair lift installer · stair lift and accessibility lift company · home accessibility lifts · accessibility equipment (grid query language). Excluded: "medical equipment supplier" (broad-DME signal, Decisions 007/038) | Submitted — taken from the Discovery Record's observed variants; the Document Checklist records the variant list as approved 2026-10-02 but the old files never wrote it out |
+| 4 | Storefront or SAB | Service-area business. Not customer-facing. The GBP address stays in the site footer only so the site and GBP cross-reference | Client Confirmed; Paul Approved 2026-10-06 |
+| 5 | Area entity | South Carolina Lowcountry (Q3885311) | Paul Approved 2026-10-02 |
+| 6 | Area variants (3–5) | South Carolina Lowcountry *(reserved)* · the Lowcountry · Beaufort County · Hilton Head Island–Bluffton–Port Royal area · Charleston area | Submitted (see A3 note) |
+| 7 | Separator standard | ` - ` | Paul Approved (agency standard) |
+| 8 | Phone | (843) 476-1329 | Client Confirmed |
+| 9 | Primary domain (canonical host form) | https://homemobilemedical.com/ | Internally Verified (crawl 2026-09-18) |
+| 10 | Legal entity name | Home Mobile Medical | Paul Approved 2026-10-07 (no SC Secretary of State record located) |
+| 11 | Exact URL in the GBP Website field | https://homemobilemedical.com/ | Paul Approved 2026-09-28 |
 
-## 7. Address / local SEO
-- HMM is an SAB and should not be presented as customer-facing.
-- The website has shown 106 Arrow Road, Hilton Head, SC 29928; the old BME footprint used 2127 Boundary St #5, Beaufort, SC 29902.
-- Rule as imported: neither address is permission to publish a walk-in storefront; do not reintroduce a hidden address to match old citations.
-  - Paul 2026-10-06: the GBP address (2127 Boundary St #5, Beaufort, SC 29902) is authoritative and **stays in the footer** so the site and GBP cross-reference. It is not a storefront; no walk-in wording, no showroom map framing.
+**Area entity derivation** (BB-105):
 
-## 8. Content and SEO guardrails
-- Current lift-focused scope controls. Do not infer services from old crawl pages, directories, BME history, filenames or stale metadata.
-- One canonical intent per service/location page; internal links to final 200 canonical URLs.
-- 301 only to a genuinely equivalent destination; otherwise removal/410. No blanket redirects to the homepage.
-  - ⚠ Paul 2026-10-06: out-of-area legacy pages get 410s; merged location pages become mentions, not sections; service pages share one area entity.
+```
+City served:   24 South Carolina towns (Section E), anchors Charleston, Hilton Head Island, Beaufort, Hollywood, Walterboro
+-> County:     Beaufort, Jasper, Charleston, Berkeley, Dorchester, Colleton, Hampton
+-> Region:     South Carolina Lowcountry
+Contains all 24 cities served? yes
+Smallest true container: South Carolina Lowcountry
+Georgia is served from a separate microsite (own project), so it is outside this site's area entity.
+```
 
-## 9. Medical / insurance / legal-style claims — SOURCE REVIEW REQUIRED
-- Medicare, Medicaid, private insurance, tax deductibility, ADA/compliance, clinical/medical advice.
-- Health-adjacent client (CM-040): such claims only with a named authoritative source, otherwise removed; Paul approves those pages.
-- LEGACY / DO NOT USE: semaglutide, weight-loss, Live Oak Weight Loss or other unrelated medical content — remove/de-index, no unrelated redirect.
+**Paul approved this section on:** 2026-10-02 (old workflow, Phase 4b) · category scope narrowed 2026-10-07 · gate signed at import: ________
 
-## 10. Website architecture (as imported)
-- KEEP / REWRITE: homepage, about, contact, services hub, current lift service pages, useful stair-lift education, priority Lowcountry service-area content.
-- CONSOLIDATE: competing location URL patterns and duplicate city/service intent.
-- RETIRE: Florida, Georgia and Michigan location pages (Georgia confirmed out, see §4); broad-DME pages; discontinued rental pages; unrelated medical content; thin archives/pagination.
+## Section B — Variant ownership  *(CM-024: collisions are vertical, not horizontal)*
 
-## 12. Open items — CLIENT CONFIRMATION REQUIRED
-Public email · business hours · manufacturers beyond Stannah · warranty terms · certifications/training · legal entity name · service radius by city · first-party photography · financing terms/provider · maintenance/service-plan scope · insurance-handling process.
+### B1 · Reserved for the homepage
+```
+HOMEPAGE AREA VARIANT:      South Carolina Lowcountry [Paul Approved 2026-10-02]
+HOMEPAGE CATEGORY VARIANT:  Mobility equipment supplier [Paul Approved 2026-10-02]
+```
+No other page may claim the reserved area variant. This is the only cross-page variant rule.
 
-(Sections 11, 13 and 14 of the Drive file are workflow notes for the old system and are not carried over.)
+### B2 · Rotation pool
+```
+1. the Lowcountry
+2. Beaufort County
+3. Hilton Head Island–Bluffton–Port Royal area
+4. Charleston area
+```
+
+### B3 · Assignment log — the write-back target
+| Page URL | Page type | Category variant | Area variant | Content file (SD/LD) | Shipped |
+|---|---|---|---|---|---|
+| / | homepage | | *(reserved)* | | |
+
+No rows yet: the pre-seo-ops build files (homepage build sheet, service and location drafts) were lost (Paul 2026-10-06).
+
+## Section C — Page inventory
+
+### C0 · Page order (from the URL Decision Map)
+Set by the site plan in Build. Source map: `Home Mobile Medical - URL Decision Map` (Google Sheet, older TMS folder), amended by Paul's 2026-10-06/07 decisions.
+
+### C1 · Service pages
+| URL | Service name | H1 service variant | Status |
+|---|---|---|---|
+| /services/ | Services hub | | Planned (rewrite) |
+| /services/stair-lifts/ | Stair lifts — parent; straight stair lifts consolidated in | | Planned (rewrite) |
+| /services/curved-stair-lifts/ | Curved stair lifts | | Planned (rewrite) |
+| /services/porch-lifts/ | Porch lifts / vertical platform lifts (the outdoor offer) | | Planned (rewrite) |
+| /services/wheelchair-lifts/ | Wheelchair lifts | | Planned (rewrite) |
+| /services/straight-stair-lifts/ | → consolidated into /services/stair-lifts/ (301 after the CM-019 check) | | Planned |
+| repair and maintenance | Stair-lift and lift repair and maintenance — page/URL decided in the site plan (existing: /hilton-head/stair-lift-repair/, /bluffton-sc/wheelchair-lift-repair/) | | Planned |
+
+Parent/child service pages with real subtype demand keep their URLs (Paul). Service pages share one area entity.
+
+### C2 · Location pages
+Canonical pattern `/service-area/{city-state}/` (Decision 023). Hubs: `/service-area/` (Lowcountry) · `/service-area/charleston/` (Charleston metro area) · `/service-area/hhi-beaufort/` (Hilton Head Island–Bluffton–Port Royal metro area) — metro hubs pending L-008 and the county-hub spec. Merged location pages become mentions, not sections.
+
+| URL | City | GBP landing page? | Status |
+|---|---|---|---|
+| /service-area/beaufort-sc/ | Beaufort | No (GBP lands on the homepage) | Planned |
+| /service-area/bluffton-sc/ | Bluffton | No | Planned |
+| /service-area/hilton-head-island-sc/ | Hilton Head Island | No | Planned |
+| /service-area/port-royal-sc/ | Port Royal | No | Planned |
+| /service-area/ladys-island-sc/ | Lady's Island | No | Planned |
+| /service-area/laurel-bay-sc/ | Laurel Bay | No | Planned |
+| /service-area/daufuskie-island-sc/ | Daufuskie Island | No | Planned |
+| /service-area/okatie-sc/ | Okatie | No | Planned |
+| /service-area/yemassee-sc/ | Yemassee | No | Planned |
+| /service-area/hardeeville-sc/ | Hardeeville | No | Planned |
+| /service-area/ridgeland-sc/ | Ridgeland | No | Planned |
+| /service-area/levy-sc/ | Levy | No | Planned |
+| /service-area/walterboro-sc/ | Walterboro | No | Planned |
+| /service-area/edisto-island-sc/ | Edisto Island | No | Planned |
+| /service-area/charleston-sc/ | Charleston | No | Planned |
+| /service-area/north-charleston-sc/ | North Charleston | No | Planned |
+| /service-area/mount-pleasant-sc/ | Mount Pleasant | No | Planned |
+| /service-area/summerville-sc/ | Summerville | No | Planned |
+| /service-area/goose-creek-sc/ | Goose Creek | No | Planned |
+| /service-area/hanahan-sc/ | Hanahan | No | Planned |
+| /service-area/moncks-corner-sc/ | Moncks Corner | No | Planned |
+| /service-area/hollywood-sc/ | Hollywood | No | Planned |
+| /service-area/kiawah-island-sc/ | Kiawah Island | No | Planned |
+| /service-area/folly-island-sc/ | Folly Island | No | Planned |
+
+Only a verified GBP's actual landing URL gets LocalBusiness-type schema (BB-604).
+
+### C3 · Heading and FAQ registry
+Filled from the site plan and each approved page.
+
+| Question or H2 | Page that owns it |
+|---|---|
+
+## Section D — Verified facts
+Everything a writer may state. **Not here = does not exist.**
+
+| Fact | Value | Status | Source |
+|---|---|---|---|
+| Founding year / years in business | 15+ years of **Jason Workens' experience** — never the brand's age (a directory says the business opened 2023) | Client Confirmed | Decision 013 |
+| History | Jason's former company, Beaufort Medical Equipment, was sold; Home Mobile Medical is not a rebrand of it | Client Confirmed | Decision 003 |
+| Ownership | Family-owned; locally owned and operated | Client Confirmed | Decision 014; Paul 2026-10-07 |
+| Legal entity + DBA | Home Mobile Medical; no DBA known | Paul Approved | Paul 2026-10-07 |
+| Licence numbers and classes | None to publish | Paul Approved | Paul 2026-10-07 (none found) |
+| Insurance / bonded status | None to publish | Paul Approved | Paul 2026-10-07 |
+| Certifications, authorizations, factory training | None. No authorized/certified-dealer wording for any brand | Paul Approved | Paul 2026-10-07 |
+| Brands installed and repaired | "We install and repair stair lifts from leading brands such as Stannah, Bruno and Harmar." Independent; no authorized/certified-dealer wording | Paul Approved | Paul 2026-10-07 |
+| Association memberships | None known | Unknown | |
+| Warranty terms | Manufacturer's warranty only; no Home Mobile Medical warranty | Client Confirmed | Paul 2026-10-07 |
+| Guarantees | None | Client Confirmed | |
+| Awards and rankings | None | Unknown | |
+| Google rating and review count (date checked) | [NEED: read from the GBP] | Unknown | |
+| Team size / trucks / jobs completed | Jason plus one helper. Jason personally supervises every installation | Client Confirmed | Paul 2026-10-07; Decision 015 |
+| Installation time | Usually one day, about 3–4 hours; same-day installation **in most cases** | Client Confirmed | Paul 2026-10-07; Decision 016 |
+| Financing — available, provider, terms | Available. No provider, rates or terms published | Client Confirmed | Decision 017 |
+| Free estimate — and what free means | Free in-home estimate. Can also quote from a photo of the stairs (priced by stair count) | Client Confirmed | Paul 2026-10-07 |
+| Services | Straight stair lifts · curved stair lifts · porch lifts / vertical platform lifts (outdoor access for raised entrances and decks) · wheelchair lifts · professional installation · sourcing new lifts for customers · maintenance · repairs (any stair lift or lift within the service coverage, any brand) | Client Confirmed | Decision 005; Paul 2026-10-07 |
+| Not offered | Broad DME, rentals, hospital beds, power chairs, scooters, scooter lifts, scooter repair, lift chairs, mobility ramps, general wheelchairs; HMM is not a manufacturer | Client Confirmed | Decisions 007, 008, 018 |
+| Safety statement | "Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions." | Paul Approved | Paul 2026-10-07 |
+| Email | info@homemobilemedical.com | Client Confirmed | Paul 2026-10-07 |
+| Hours | Monday–Friday 9:00 AM–5:00 PM; Saturday–Sunday closed | Client Confirmed | Paul 2026-10-07 |
+| Emergency / after-hours reality | [NEED] | Unknown | |
+| Minimum service call or trip charge | [NEED] | Unknown | |
+| Payment methods | General wording only ("we accept common payment methods"); no specific list | Paul Approved | Paul 2026-10-07 |
+| Services subcontracted out | None known | Unknown | |
+| Named staff for on-page use | Jason Workens, founder/owner | Client Confirmed | Paul 2026-10-07 |
+| Licensed practitioner for health-claim sign-off | Not required (health-adjacent, CM-040) | Paul Approved | |
+
+### D2 · Unsupported claims
+| Claim (verbatim) | Where it appears | Client answer | Action |
+|---|---|---|---|
+| "We rent and sell mobility equipment in the Lowcountry." | /service-area/beaufort-sc/ | False — rentals discontinued | Remove |
+| "Safety is our top priority, and we adhere to the highest standards and regulations." | / | "Regulations" unsupported | Replace with the Section D safety statement |
+| "…installation meets the highest standards of safety and care." | /service-area/beaufort-sc/ | As above | Replace with the Section D safety statement |
+| "Every lift is custom-fit to your staircase…" | /service-area/beaufort-sc/ | Not true of every unit | "fitted to your staircase" |
+| "All of our stair lifts come with battery backup systems…" | /service-area/beaufort-sc/ | Product spec, unproven | Remove "all" unless manufacturer spec sheets cover every model sold |
+| "…ready for safe use the same day it is installed." | /service-area/beaufort-sc/ | Same day in most cases | Add "in most cases" |
+| "Our experienced technicians…" / "skilled professionals" | / | Jason plus one helper | "Jason and his helper" |
+| Homepage testimonials (Debbie S, Laura B, Sher D) | / | Placeholder reviews | Remove |
+| 106 Arrow Road, Hilton Head, SC 29928 | Directions link; Beaufort page closing copy | Not the business address | Remove |
+| Medicare / Medicaid / insurance, tax, ADA, product-spec statements | Blog posts | Kept until the Blog Decision Map | Rewrite only from Medicare.gov/CMS, IRS Pub 502, ADA.gov, manufacturer spec sheets |
+| Stannah "verified dealer" | Old Brand Guide | No evidence on record | Use only in the general brand line, never as dealer status |
+
+## Section E — Service area truth
+```
+FURTHEST NORTH:   Moncks Corner          FURTHEST SOUTH:  Daufuskie Island
+FURTHEST EAST:    Mount Pleasant         FURTHEST WEST:   Yemassee
+CITIES CLAIMED ON SITE: the 24 South Carolina towns in C2 — all confirmed served (Paul 2026-10-07)
+EXPLICIT EXCLUSIONS: Florida, Michigan (not served; pages dropped, 301). Georgia is served only through a separate microsite, never on this site.
+TRAVEL FEE BEYOND: [NEED]
+```
+(Bounds derived from the confirmed city list.)
+
+## Section F — Schema inputs  *(Block 3 cannot open without these)*
+
+| Asset | Value | Status |
+|---|---|---|
+| ID page URL (becomes the business entity @id) | [NEED: decide — About page or a new ID page] | Unknown — deferred to Finish (Paul 2026-10-07) |
+| Full citation list → sameAs | Facebook, Bing, Yelp, Storeboard, Chamber of Commerce, Hotfrog, Tupalo (BrightLocal 2026-09-28) — URLs to collect; Beaufort Medical Equipment listings excluded | Internally Verified (list), URLs Unknown |
+| Social profile list | https://www.facebook.com/homemobilemed · https://www.instagram.com/homemobilemedical/ | Internally Verified |
+| Google Maps share link → hasMap | https://maps.app.goo.gl/6A4wAczgy3A7w9Lu7 | Paul Approved |
+| Apple Maps link → sameAs | [NEED] | Unknown — deferred to Finish (Paul 2026-10-07) |
+| Confirmed NAP exactly as it must appear | Home Mobile Medical · 2127 Boundary St #5, Beaufort, SC 29902 · (843) 476-1329 | Paul Approved 2026-10-06 |
+| Confirmed GBP category → schema subtype | Mobility equipment supplier → subtype chosen in Finish (bb-schema-builder) | Paul Approved |
+| Logo files with pixel dimensions | [NEED] | Unknown — deferred to Finish (Paul 2026-10-07) |
+| Owner name + photo | Jason Workens; photo [NEED] | Name Client Confirmed |
+| **Wikidata URI — category entity** | https://www.wikidata.org/wiki/Q6887300 (Mobility aid, supporting subject) | Internally Verified |
+| **Wikidata URI — area entity** | https://www.wikidata.org/wiki/Q3885311 | Paul Approved |
+| **Wikidata URI — county** (one per county the area entity covers) | Beaufort County https://www.wikidata.org/wiki/Q495682 · Jasper, Charleston, Berkeley, Dorchester, Colleton, Hampton [NEED: look up] | Partly verified |
+| **Wikidata URI — state** | https://www.wikidata.org/wiki/Q1456 | Internally Verified |
+
+## Section G — Positioning (client's own words)
+```
+WHAT WE DO THAT OTHERS HERE DO NOT: Jason installs every lift himself; most installs take one day, about 3–4 hours; quotes from a photo of your stairs. [Submitted — relayed by Paul, not yet in the client's own words]
+JOB WE MOST WANT MORE OF: [NEED]
+MOST COMMON THING CUSTOMERS GET WRONG ABOUT THIS TRADE: [NEED]
+```
+
+## Section H — Constraints, exceptions and the superlative opener
+
+| Type | Detail | Approved by | Exit condition |
+|---|---|---|---|
+| Client constraint | Georgia lives on a separate microsite; nothing on this site targets Georgia | Paul 2026-10-06/07 | Paul reverses it |
+| Client constraint | Destructive URL actions are 301s (never 410s), each after the CM-019 DataforSEO check; DataforSEO replaces Search Console | Paul 2026-10-06 | — |
+| Client constraint | Medicare/tax/ADA/product blog posts stay as they are until the Blog Decision Map | Paul 2026-10-07 | Blog Decision Map approved |
+| Client constraint | Site feature wanted: photo upload so Jason can quote by phone | Client via Paul 2026-10-07 | Built (Jonie handoff in Build) |
+| Paul Exception | None | | |
+
+### H2 · "The Best" decisions (CM-020) — conditional, never a default
+| Page | Main keyword & current rank | 1 Demand | 2 Opportunity | 3 Proof (Section D fact) | 4 Not sensitive / Paul OK | Top-3 lock? | Decision | Evidence locator |
+|---|---|---|---|---|---|---|---|---|
+
+## Section I — Customer language
+| Source | Location | Captured |
+|---|---|---|
+| None yet — the homepage reviews were placeholders | — | — |
+
+## Maintenance
+
+| When | Action |
+|---|---|
+| Page content approved (SD/LD) | Add its row to B3 and C1/C2, its FAQ questions and H2s to C3 |
+| New citation built | Add to Section F and sameAs |
+| GBP primary category changes | Rebuild Sections A and B — entity gate re-opens |
+| Any field moves status | Update in place. Never keep two versions |

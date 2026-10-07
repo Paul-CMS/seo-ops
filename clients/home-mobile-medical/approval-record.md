@@ -4,11 +4,15 @@ Generated from the seo-ops system (clients/home-mobile-medical/status.json). Do 
 
 ## Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)
 
-- Decision: **pending**
+- Decision: **approved**
+- Decided by: Paul (import confirmed) · 2026-10-07T17:21:12-05:00
+- Note: Mobility equipment supplier; South Carolina Lowcountry (reserved homepage variant). Georgia via separate microsite.
 
 ## Client proof sheet approved by Paul, ready for him to send
 
-- Decision: **pending**
+- Decision: **approved**
+- Decided by: Paul (import confirmed) · 2026-10-07T17:21:12-05:00
+- Note: The duplicate 'Client Proof Sheet - SUPERSEDED.md' is not the record.
 
 ## Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)
 
@@ -16,7 +20,9 @@ Generated from the seo-ops system (clients/home-mobile-medical/status.json). Do 
 
 ## Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 
-- Decision: **pending**
+- Decision: **approved**
+- Decided by: Paul (import confirmed) · 2026-10-07T17:21:12-05:00
+- Note: Open [NEED] items block only what consumes them; schema assets deferred to Finish.
 
 ## Discovery and audit signed off — Build may start
 
@@ -46,3 +52,41 @@ Generated from the seo-ops system (clients/home-mobile-medical/status.json). Do 
 
 - Decision: **pending**
 
+## Page content approvals
+
+| Page | Type | Decision | By | Date | Human review | Practitioner |
+|---|---|---|---|---|---|---|
+| Stair Lifts (parent; straight consolidated in) | service | pending |  |  |  |  |
+| Curved Stair Lifts | service | pending |  |  |  |  |
+| Porch Lifts / Vertical Platform Lifts | service | pending |  |  |  |  |
+| Wheelchair Lifts | service | pending |  |  |  |  |
+| Stair Lift and Lift Repair and Maintenance | service | pending |  |  |  |  |
+| Hilton Head Island–Bluffton–Port Royal area hub | county | pending |  |  |  |  |
+| Beaufort, SC | location | pending |  |  |  |  |
+| Bluffton, SC | location | pending |  |  |  |  |
+| Hilton Head Island, SC | location | pending |  |  |  |  |
+| Port Royal, SC | location | pending |  |  |  |  |
+| Lady's Island, SC | location | pending |  |  |  |  |
+| Laurel Bay, SC | location | pending |  |  |  |  |
+| Daufuskie Island, SC | location | pending |  |  |  |  |
+| Okatie, SC | location | pending |  |  |  |  |
+| Hardeeville, SC | location | pending |  |  |  |  |
+| Ridgeland, SC | location | pending |  |  |  |  |
+| Levy, SC | location | pending |  |  |  |  |
+| Yemassee, SC | location | pending |  |  |  |  |
+| Charleston area hub | county | pending |  |  |  |  |
+| Charleston, SC | location | pending |  |  |  |  |
+| North Charleston, SC | location | pending |  |  |  |  |
+| Mount Pleasant, SC | location | pending |  |  |  |  |
+| Summerville, SC | location | pending |  |  |  |  |
+| Goose Creek, SC | location | pending |  |  |  |  |
+| Hanahan, SC | location | pending |  |  |  |  |
+| Moncks Corner, SC | location | pending |  |  |  |  |
+| Hollywood, SC | location | pending |  |  |  |  |
+| Kiawah Island, SC | location | pending |  |  |  |  |
+| Folly Island, SC | location | pending |  |  |  |  |
+| South Carolina Lowcountry service-area hub | county | pending |  |  |  |  |
+| Walterboro, SC | location | pending |  |  |  |  |
+| Edisto Island, SC | location | pending |  |  |  |  |
+| Homepage | homepage | pending |  |  |  |  |
+| About | about | pending |  |  |  |  |
