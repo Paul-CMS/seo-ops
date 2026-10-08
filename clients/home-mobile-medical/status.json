@@ -627,6 +627,15 @@
       ],
       "at": "2026-10-08T07:37:18-05:00",
       "run": "20261007-203219-discovery-784c"
+    },
+    "S17": {
+      "outcome": "done",
+      "reason": "",
+      "outputs": [
+        "clients/home-mobile-medical/audit/2026-10-07/"
+      ],
+      "at": "2026-10-08T07:49:36-05:00",
+      "run": "20261007-203219-discovery-784c"
     }
   },
   "last_run": {
@@ -653,7 +662,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-08T07:37:18-05:00",
+  "updated": "2026-10-08T07:49:36-05:00",
   "open_runs": {
     "20261007-203219-discovery-784c": {
       "step": "discovery:audit",
