@@ -49,6 +49,8 @@ def decision_step(command):
         return ("build:brief" if m.group(2) == "briefs" else "build:drafts"), m.group(1)
     if target == "site_plan":
         return "build:plan", None
+    if target == "specs":   # global: the stage the client is in (from its last run)
+        return None, None
     if target.startswith("evidence:"):
         return "build:evidence", None
     if target.startswith("page:"):
@@ -272,13 +274,14 @@ def _walk(slug, cont):
     approval_one(st, slug)
     # Data while the client has the sheet, then the audit (specs approved once, globally, before any scoring).
     if not S.gate_met(st, "audit_approved")[0]:
-        condition_step(st, slug, "page_specs_approved")
         if "S05" not in st["audit_steps"]:
             out("run", f"/crawl {slug}", "crawl the site while the client has the proof sheet")
         data = [r["id"] for r in steps.registry() if r["phase"] == "Client has sheet" and r["id"] != "S05"]
         if any(i not in st["audit_steps"] for i in data):
             out("run", f"/discovery {slug} data",
                 "reviews, rankings, People Also Ask, backlinks, citations, grid, GSC — one cost yes for the whole step")
+        if "audit_deliverables" not in (st.get("marks") or {}):
+            condition_step(st, slug, "page_specs_approved")   # gates the audit step, never an approval given
         for r in S.requires(st, "audit_approved"):
             if r in S.GATES["conditions"]:
                 condition_step(st, slug, r)
@@ -304,6 +307,8 @@ def _walk(slug, cont):
         bid, state = b["id"], b.get("state", "planned")
         if state == "written_back":
             continue
+        if state == "planned" or state == "briefs_written":
+            condition_step(st, slug, "page_specs_approved")   # no page is written against unapproved specs
         if bid != "pilot" and not S.check(st, "pilot_corrections")[0]:
             out("run", f"/build {slug} pilot-corrections", "apply your pilot corrections to the specs before the next batch")
         files = b.get("files") or {}

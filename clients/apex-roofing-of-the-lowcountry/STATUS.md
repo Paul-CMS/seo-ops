@@ -1,17 +1,16 @@
 # Apex Roofing of the Lowcountry - Status
 
-- **Stage —**
-- **What is happening now:** waiting for Paul's approval — the page specs are not approved yet — Paul approves them once, for every client: /approve global specs. The specs in methodology/specs/ are the same for every client; approve them once before any audit scores pages against them or any page is written
-- **Waiting on:** Paul — the page specs are not approved yet — Paul approves them once, for every client: /approve ; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Bra
-- **Next action:** Paul types `/approve global specs` (or asks for changes first)
+- **Stage 5 of 8 — Build plan and blockers**
+- **What is happening now:** ready to start: technical blocker checklist and one handoff to Jonie (she fixes them while the site plan goes ahead)
+- **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Bra; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
+- **Next action:** `/build apex-roofing-of-the-lowcountry blockers` — Paul opens a **new session on Haiku** in ~/Documents/seo-ops and types `/next apex-roofing-of-the-lowcountry` (agents: build (opus), clerk (haiku))
 
-_Generated 2026-10-08T12:21 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-08T12:22 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the page specs are not approved yet — Paul approves them once, for every client: /approve global specs. The specs in methodology/specs/ are the same for every client; approve them once before any audit scores pages against them or any page is written | 2026-10-08 | /approve global specs |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Brand Guide D) | 2026-10-08 | send_the_client_one_question_is_your_cer |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |

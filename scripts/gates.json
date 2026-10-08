@@ -26,8 +26,7 @@
       "plain": "the audit deliverables",
       "requires": [
         "entity_approved",
-        "audit_steps_complete",
-        "page_specs_approved"
+        "audit_steps_complete"
       ],
       "artifact": "audit_deliverables",
       "producer": "/discovery {slug} audit"

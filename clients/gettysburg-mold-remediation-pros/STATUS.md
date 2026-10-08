@@ -5,7 +5,7 @@
 - **Waiting on:** nobody
 - **Next action:** `/discovery gettysburg-mold-remediation-pros proof-sheet` — Paul opens a **new session on Haiku** in ~/Documents/seo-ops and types `/next gettysburg-mold-remediation-pros` (agents: discovery-audit (opus), clerk (haiku))
 
-_Generated 2026-10-08T12:21 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-08T12:22 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 

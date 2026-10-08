@@ -39,8 +39,12 @@ def agents_line(stage):
     return ", ".join(f"{a} ({agent_model(a) or '?'})" for a in stage["agents"])
 
 
+RETIRED_STEPS = {"discovery:signoff": "discovery:reconcile"}   # R3: the sign-off is a condition now
+
+
 def stage_of(step):
     """The stage dict for a step key ('discovery:audit', 'crawl'), or None for an any-stage step."""
+    step = RETIRED_STEPS.get(step, step)
     if step in S.GATES.get("any_stage", []):
         return None
     for st in stages():

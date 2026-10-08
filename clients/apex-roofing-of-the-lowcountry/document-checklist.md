@@ -1,6 +1,6 @@
 # Apex Roofing of the Lowcountry - Document Checklist
 
-Generated 2026-10-08T12:21 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-08T12:22 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -43,7 +43,7 @@ Generated 2026-10-08T12:21 from status.json — do not edit. `[x]` done · `[-]`
 
 - [x] Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant)
 - [x] Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly
-- [ ] Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)
+- [x] Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)
 - [x] Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 - [ ] Link wheel built and verified — schema may start
 - [ ] Schema built and QA cleared — release

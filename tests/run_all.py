@@ -1772,6 +1772,10 @@ def t_decide_once():
     code, out = sh("python3 scripts/status.py require fd-co page_specs_approved")
     check("R3: a spec changed after Paul approved it re-opens the specs approval (once, globally)",
           code == 4 and "service.md" in out and "/approve global specs" in out, out)
+    code, out = sh("python3 scripts/status.py require fd-co entity_approved proof_sheet_approved")
+    req = json.loads((SB / "scripts" / "gates.json").read_text())["gates"]
+    check("R3: a spec change never voids an approval already given (the specs gate the steps that score or write pages)",
+          code == 0 and not any("page_specs_approved" in g.get("requires", []) for g in req.values()), out)
     spec.write_text(old)
     check("R3: the approved specs carry an APPROVED status line", "**Status:** APPROVED" in old, old[:200])
 
