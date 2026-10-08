@@ -32,7 +32,9 @@ Generated from the seo-ops system (clients/apex-roofing-of-the-lowcountry/status
 
 ## Discovery and audit signed off — Build may start
 
-- Decision: **pending**
+- Decision: **approved**
+- Decided by: Paul · 2026-10-08T11:03:17-05:00
+- Approved version: `clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Summary - REVIEW.md` (sha 564167710178)
 
 ## Technical blocker checklist cleared and tracking stable
 

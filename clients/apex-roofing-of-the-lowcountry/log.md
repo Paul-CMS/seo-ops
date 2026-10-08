@@ -1275,3 +1275,6 @@ Gates checked: entity_approved, proof_sheet_approved, proof_sheet_returned, bran
 ### END HANDOFF
 ## RUN 20261008-104054-discovery-3010 · FINISHED · 2026-10-08T10:42:34-05:00
 Changes: 0 · Summary: Discovery Summary + client-confirmation list ready for sign-off
+
+## APPROVAL · 2026-10-08T11:03:17-05:00 · discovery_signed_off · approved · by Paul
+Approved version: clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Summary - REVIEW.md (sha 564167710178)
