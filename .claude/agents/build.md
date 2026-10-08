@@ -16,7 +16,10 @@ Rules are cited by ID from `methodology/rulings.md`; open it at the IDs the list
 Every High finding blocking measurement or crawling, plus the batched Low technical items, as
 `<Client> - Technical Blocker Checklist - REVIEW.md` (one line per fix: finding ID, all
 affected URLs, change kind from `scripts/gates.json`). `status.py mark <slug> blocker_checklist --file <it>`.
-Implementation is `/implement`; Paul approves `blockers_cleared` once it is cleared.
+Then hand every blocker item to Jonie in **one** handoff (Low items together) with `handoff.py create <slug> --run
+<RUN_ID> --kind <kind> --items <csv> --blockers` (one per kind if the kinds differ), or `status.py blockers-none <slug>
+--run <RUN_ID>` when the checklist has no items. "Blockers cleared" is a **condition**: met when Jonie returns the
+handoff done and `/verify` passes every row — nobody approves it.
 
 ## Step: plan — the SITE PLAN, every service and location page in one pass
 For each page from the URL Decision Map (keep / improve / create): page id, type, final URL,

@@ -12,6 +12,10 @@
     approve.py <slug> evidence:<page_id> --reason T     waive a BLOCK from the evidence gate (CM-041), for this grid
     approve.py <slug>|global mode:<stage>=auto|review    switch a producing stage's mode (CM-044); auto only
                after the stage passed the pilot; decisions can never be auto
+    approve.py global specs                              approve the page specs (methodology/specs) once, for every
+               client (R3); each spec's status line becomes APPROVED; a later change to a spec re-opens it
+    approve.py <slug> entity_approved proof_sheet_approved   Approval 1 in one line (R3); every answer in the approved
+               Decision Sheet is then settled (decisions-settled.md) and never asked again
     approve.py <slug> schema-offline --reason T          Wikipedia/Wikidata unreachable: let THIS open /finish schema
                run build once without the live entity check (CM-053); every other check still runs
 
@@ -25,6 +29,7 @@ later, only this approval stops counting (status.py).
 """
 import argparse
 import time
+from pathlib import Path
 
 import status as S
 from lib import ROOT, append, client_dir, die, git_commit, now, read_json, ref_missing, ref_sha, sha12, write_json
@@ -78,6 +83,9 @@ def do_import(a, d, st):
     take_token(a.slug, "import")
     src = prop.get("source", "Drive Approval Record")
     for g, rec in prop.get("gates", {}).items():
+        if g in S.GATES.get("retired_gates", {}):   # R3: now a condition — a signed Drive block proves it
+            st.setdefault("imported_conditions", {})[g] = f"imported — {rec.get('source', src)}"
+            continue
         if g not in st["gates"]:
             die(f"Unknown gate in proposal: {g}")
         st["gates"][g] = {**rec, "by": "Paul (import confirmed)", "at": now(),
@@ -220,6 +228,60 @@ def global_mode(a):
                + (f"(this client keeps its own setting: {own['mode']})\n" if own else "")
                + (f"Note: {a.note}\n" if a.note else ""))
     print(git_commit(f"global: {step} → {mode} by Paul"))
+
+
+def global_specs(a):
+    """/approve global specs (R3): the page specs are methodology, approved once for every client. Each spec's status
+    line is rewritten to APPROVED; config.json records each spec's sha (status line excluded). A changed spec makes
+    page_specs_approved unmet until Paul approves again (pilot corrections re-stamp themselves: status.py)."""
+    take_token("global", "specs")
+    from lib import CLIENTS, config
+    import re as _re
+    stamp = f"**Status:** APPROVED — {now()[:10]}, Paul"
+    files = {}
+    for rel in S.spec_files():
+        f = ROOT / rel
+        text = f.read_text(encoding="utf-8")
+        new = S.STATUS_LINE.sub(stamp, text, count=1) if S.STATUS_LINE.search(text) else text
+        if new != text:
+            f.write_text(new, encoding="utf-8")
+        files[rel] = S.spec_sha(rel)
+    cfg = config()
+    cfg["specs_approval"] = {"by": "Paul", "at": now(), "note": a.note, "files": files}
+    write_json(ROOT / "config.json", cfg)
+    for s in sorted(x.parent.name for x in CLIENTS.glob("*/status.json")):
+        append(client_dir(s) / "log.md", f"\n## APPROVAL · {now()} · page specs (global) · approved · by Paul\n"
+               + "".join(f"Approved version: {r} (sha {h})\n" for r, h in files.items()))
+        st = S.load(s)
+        S.log_conditions(s, st)
+        import records
+        records.render(s)
+    print(git_commit("global: page specs approved by Paul"))
+    print(f"page specs approved: {', '.join(Path(r).name for r in files)}")
+
+
+def settle_decision_sheet(slug, files):
+    """Approval 1 settles every Decision Sheet row: its answer, or the recommended default when no answer was given."""
+    import settled
+    n = 0
+    for f in files:
+        path = ROOT / f.split("#", 1)[0]
+        if "Decision Sheet" not in path.name or not path.is_file():
+            continue
+        have = settled.entries(slug)
+        for line in path.read_text(encoding="utf-8").splitlines():
+            cells = [c.strip() for c in line.strip().strip("|").split("|")] if line.lstrip().startswith("|") else []
+            if len(cells) < 4 or not settled.KEY.match(cells[0].strip("`")) or cells[0].lower() == "key":
+                continue
+            key, what, default, answer = cells[0].strip("`"), cells[1], cells[2], cells[3]
+            value = answer or f"{default} (recommended default)"
+            if not value.strip() or value.strip() == "(recommended default)":
+                continue
+            if (have.get(key) or {}).get("state") == "settled":
+                continue
+            settled.settle(slug, "approval-1", key, f"{what}: {value}", by="Paul (Approval 1)", closed_ok=True)
+            n += 1
+    return n
 
 
 def prepare(a, st, target, multi):
@@ -369,7 +431,7 @@ def prepare(a, st, target, multi):
         if not files:
             die(f"REFUSED ({g}) — this approval must name the files it covers. Nothing is recorded for "
                 f"{S.plain(g)} yet (the producing command marks them), so pass --files.")
-        missing = [r for r in S.requires(st, g) if not S._decided(st, r)]
+        missing = [r for r in S.requires(st, g) if not S._decided(st, r) and r not in a.targets]
         if missing:
             die(f"REFUSED ({g}) — these come first: "
                 + "; ".join(S.condition_met(st, r)[1] if r in S.GATES["conditions"] else S.plain(r) + " — not approved yet"
@@ -409,6 +471,8 @@ def main():
     ap.add_argument("--reason", help="evidence:<page> waivers: why Paul waives the gate")
     a = ap.parse_args()
     if a.slug == "global":
+        if a.targets == ["specs"]:
+            return global_specs(a)
         return global_mode(a)
     d = client_dir(a.slug)
     st = S.load(a.slug)
@@ -428,6 +492,10 @@ def main():
     S.save(a.slug, st)
     for _, text, _ in prepared:
         append(d / "log.md", text)
+    if a.decision in S.GATES["met_decisions"] and "entity_approved" in a.targets:
+        n = settle_decision_sheet(a.slug, (st["gates"].get("entity_approved") or {}).get("files") or {})
+        if n:
+            print(f"Decision Sheet: {n} decision(s) settled — they are never asked again")
     S.log_conditions(a.slug, st)
     import drive
     import records

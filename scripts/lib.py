@@ -105,8 +105,42 @@ def ref_missing(ref):
     return ""
 
 
+STATUS_COLS = ("status", "confidence")
+STATUS_TAG = re.compile(r"\[(?:status|Submitted|Internally Verified|Client Confirmed|Disputed|Unknown|Paul Approved)"
+                        r"[^\]]*\]", re.I)
+
+
+def _strip_status(section):
+    """R3 (2026-10-08): a row's status is not part of what Paul approved. Drop every table column headed
+    Status/Confidence, inline [status] tags and 'Paul approved this section on' lines, so a reconcile that only
+    moves a row from Proposed to Client Confirmed leaves the approval standing. Values still count."""
+    out, drop = [], None
+    for line in section.splitlines():
+        if line.lstrip().startswith("|"):
+            cells = line.strip().strip("|").split("|")
+            if drop is None or set(line.replace("|", "").strip()) <= set("-: "):
+                if not set(line.replace("|", "").strip()) <= set("-: "):
+                    drop = {i for i, c in enumerate(cells) if c.strip().strip("*").lower() in STATUS_COLS}
+            line = "|".join(c for i, c in enumerate(cells) if i not in (drop or set()))
+        else:
+            drop = None
+            if re.match(r"^\*\*Paul approved this section on", line.strip()):
+                continue
+        out.append(STATUS_TAG.sub("", line).rstrip())
+    return "\n".join(out)
+
+
 def ref_sha(ref):
-    """sha12 of the file, or of only the named sections when the ref has #A+B1…"""
+    """sha12 of the file, or of only the named sections when the ref has #A+B1… (status columns ignored)."""
+    if "#" not in ref:
+        return sha12(ref_path(ref))
+    text = ref_path(ref).read_text(encoding="utf-8")
+    parts = [_strip_status(_md_section(text, s) or f"<missing {s}>") for s in ref.split("#", 1)[1].split("+")]
+    return hashlib.sha256("\n\x00\n".join(parts).encode()).hexdigest()[:12]
+
+
+def ref_sha_v1(ref):
+    """The section hash before 2026-10-08 (status columns counted) — only for migrate.py to re-stamp approvals."""
     if "#" not in ref:
         return sha12(ref_path(ref))
     text = ref_path(ref).read_text(encoding="utf-8")

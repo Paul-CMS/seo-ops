@@ -23,6 +23,11 @@ This is Paul's decision, not yours. Do not add, soften or second-guess it.
    - `python3 scripts/approve.py <slug> batch:<id>:briefs|drafts --decision <d> [--files ...] [--sem 1,3,4|none] [--review ...] [--practitioner ...]`
    - `python3 scripts/approve.py <slug> page:<id> --decision <d> --file <f> [--review "..."] [--practitioner "..."]`
    - `python3 scripts/approve.py <slug> import --proposal clients/<slug>/import-proposal.json`
+   - several decisions in one line (Approval 1 `entity_approved proof_sheet_approved`, Approval 2 `audit_approved
+     brand_guide_approved`): `python3 scripts/approve.py <slug> <gate> <gate> --decision <d>` — each uses the files its
+     step recorded; a decision named in the same line counts as approved for the other's prerequisites.
+   - `python3 scripts/approve.py global specs` — the page specs, once, for every client.
+   - `python3 scripts/approve.py <slug>|global mode:<stage>=auto|review`
    It refuses unless this /approve came from Paul in the last 20 minutes, and it refuses gates
    whose earlier gates are not met. If it refuses because the token expired or was used, ask
    Paul to type /approve again — never try to work around it.

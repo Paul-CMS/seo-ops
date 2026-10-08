@@ -132,55 +132,66 @@ def missing_outputs(slug, st, info):
     spec = S.GATES["steps"].get(info["step"]) or {}
     miss = []
     for want in spec.get("produces", []):
-        want = want.replace("{batch}", info.get("batch") or "").replace("{page}", info.get("page") or "")
-        if want.startswith("evidence_batch:"):
-            b = S.batch(st, want.split(":", 1)[1]) or {}
-            stale = [p for p in b.get("pages", []) if ((st["pages"].get(p) or {}).get("evidence") or {}).get("run") != info["id"]]
-            if stale:
-                miss.append(f"an evidence grid from this run for {', '.join(stale)} — evidence.py run <slug> --run <RUN_ID> --batch {b.get('id')}")
-        elif want.startswith("facts_pack:"):
-            b = S.batch(st, want.split(":", 1)[1]) or {}
-            if (b.get("facts_interview") or {}).get("run") != info["id"]:
-                miss.append(f"the facts interview pack — evidence.py questions <slug> --run <RUN_ID> --batch {b.get('id')}")
-        elif want.startswith("page_stage:"):
-            _, pid, stage = want.split(":")
-            if S.page_stage(st, pid, stage).get("run") != info["id"]:
-                miss.append(f"the {stage} for page {pid}, recorded by this run — status.py page-stage <slug> {pid} "
-                            f"--stage {stage} --file <file> --run <RUN_ID>")
-        elif want.startswith("steps:"):
-            left = [x for x in want[6:].split(",") if x not in (st.get("audit_steps") or {})]
-            if left:
-                miss.append(f"an outcome for audit step(s) {', '.join(left)} — steps.py record <slug> --run <RUN_ID> <S##> done|skipped|failed")
-        elif want.startswith("batch_state:"):
-            _, bid, states = want.split(":")
-            b = S.batch(st, bid) or {}
-            if b.get("state") not in states.split("|"):
-                miss.append(f"batch {bid} must reach {' or '.join(states.split('|'))} (it is {b.get('state')}) — "
-                            f"status.py batch <slug> {bid} --state ...")
-        elif want.startswith("batch:"):
-            _, bid, stage = want.split(":")
-            b = S.batch(st, bid) or {}
-            fs = (b.get("files") or {}).get(stage) or []
-            gone = [f for f in fs if not (ROOT / f).exists()]
-            if not fs or gone:
-                miss.append(f"the {stage} files for batch {bid}" + (f" (missing on disk: {', '.join(gone)})" if gone else "")
-                            + " — status.py batch <slug> " + bid + " --state ... --files ...")
-        elif want == "blog_post":
-            ok = any(p.get("type") == "blog" and p.get("file") and (ROOT / p["file"]).exists()
-                     and not p.get("approval") for p in st["pages"].values())
-            if not ok:
-                miss.append("the new blog post registered with its draft file — status.py page <slug> <id> --type blog --file <draft> --state draft_written")
-        else:
-            m = (st.get("marks") or {}).get(want) or {}
-            files = m.get("files") or {}
-            gone = [f for f in files if ref_missing(f)]
-            stale = bool(m) and m.get("ts", 0) < info.get("started_ts", 0)
-            if not files or gone or stale:
-                what = S.GATES.get("artifacts", {}).get(want, want)
-                miss.append(f"{want}: {what}"
-                            + (" — recorded before this run started; record this run's version" if stale and files and not gone else "")
-                            + (f" (missing on disk: {', '.join(gone)})" if gone else "")
-                            + f" — status.py mark <slug> {want} --file <path> [--file ...]")
+        if "|" in want and not want.startswith(("batch_state:", "steps:")):
+            alts = [_missing_one(slug, st, info, w) for w in want.split("|")]
+            if all(alts):
+                miss.append(" — or — ".join(m[0] for m in alts))
+            continue
+        miss += _missing_one(slug, st, info, want)
+    return miss
+
+
+def _missing_one(slug, st, info, want):
+    miss = []
+    want = want.replace("{batch}", info.get("batch") or "").replace("{page}", info.get("page") or "")
+    if want.startswith("evidence_batch:"):
+        b = S.batch(st, want.split(":", 1)[1]) or {}
+        stale = [p for p in b.get("pages", []) if ((st["pages"].get(p) or {}).get("evidence") or {}).get("run") != info["id"]]
+        if stale:
+            miss.append(f"an evidence grid from this run for {', '.join(stale)} — evidence.py run <slug> --run <RUN_ID> --batch {b.get('id')}")
+    elif want.startswith("facts_pack:"):
+        b = S.batch(st, want.split(":", 1)[1]) or {}
+        if (b.get("facts_interview") or {}).get("run") != info["id"]:
+            miss.append(f"the facts interview pack — evidence.py questions <slug> --run <RUN_ID> --batch {b.get('id')}")
+    elif want.startswith("page_stage:"):
+        _, pid, stage = want.split(":")
+        if S.page_stage(st, pid, stage).get("run") != info["id"]:
+            miss.append(f"the {stage} for page {pid}, recorded by this run — status.py page-stage <slug> {pid} "
+                        f"--stage {stage} --file <file> --run <RUN_ID>")
+    elif want.startswith("steps:"):
+        left = [x for x in want[6:].split(",") if x not in (st.get("audit_steps") or {})]
+        if left:
+            miss.append(f"an outcome for audit step(s) {', '.join(left)} — steps.py record <slug> --run <RUN_ID> <S##> done|skipped|failed")
+    elif want.startswith("batch_state:"):
+        _, bid, states = want.split(":")
+        b = S.batch(st, bid) or {}
+        if b.get("state") not in states.split("|"):
+            miss.append(f"batch {bid} must reach {' or '.join(states.split('|'))} (it is {b.get('state')}) — "
+                        f"status.py batch <slug> {bid} --state ...")
+    elif want.startswith("batch:"):
+        _, bid, stage = want.split(":")
+        b = S.batch(st, bid) or {}
+        fs = (b.get("files") or {}).get(stage) or []
+        gone = [f for f in fs if not (ROOT / f).exists()]
+        if not fs or gone:
+            miss.append(f"the {stage} files for batch {bid}" + (f" (missing on disk: {', '.join(gone)})" if gone else "")
+                        + " — status.py batch <slug> " + bid + " --state ... --files ...")
+    elif want == "blog_post":
+        ok = any(p.get("type") == "blog" and p.get("file") and (ROOT / p["file"]).exists()
+                 and not p.get("approval") for p in st["pages"].values())
+        if not ok:
+            miss.append("the new blog post registered with its draft file — status.py page <slug> <id> --type blog --file <draft> --state draft_written")
+    else:
+        m = (st.get("marks") or {}).get(want) or {}
+        files = m.get("files") or {}
+        gone = [f for f in files if ref_missing(f)]
+        stale = bool(m) and m.get("ts", 0) < info.get("started_ts", 0)
+        if not files or gone or stale:
+            what = S.GATES.get("artifacts", {}).get(want, want)
+            miss.append(f"{want}: {what}"
+                        + (" — recorded before this run started; record this run's version" if stale and files and not gone else "")
+                        + (f" (missing on disk: {', '.join(gone)})" if gone else "")
+                        + f" — status.py mark <slug> {want} --file <path> [--file ...]")
     return miss
 
 
@@ -194,6 +205,8 @@ def main():
     s.add_argument("--text", required=True); s.add_argument("--ids")
     s.add_argument("--settle", metavar="KEY", help="settle this decision once (decisions-settled.md)")
     s.add_argument("--reopen", metavar="KEY", help="one reopen request for a settled decision; --text is the reason")
+    s.add_argument("--ask", metavar="KEY", help="an open question, asked once; settling the same key closes it")
+    s.add_argument("--who", default="Paul", help="with --ask: who the question waits on")
     s = sub.add_parser("change"); s.add_argument("slug"); s.add_argument("run_id")
     for k in ("kind", "url", "field", "result"):
         s.add_argument(f"--{k}", required=True)
@@ -270,6 +283,10 @@ def main():
         import settled
         if a.settle and a.reopen:
             die("--settle or --reopen, not both.")
+        if a.ask:
+            settled.ask(a.slug, a.run_id, a.ask, a.who, a.text)
+            print(f"open question '{a.ask}' logged (waiting on {a.who})")
+            return
         if a.reopen:
             settled.reopen(a.slug, a.run_id, a.reopen, a.text)
             print(f"reopen request logged for '{a.reopen}' (counted as a process defect)")

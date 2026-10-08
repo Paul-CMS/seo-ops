@@ -11,6 +11,7 @@ DataforSEO and a fake public web (tests/fakes.py), prints PASS/FAIL per check, d
 sandbox and exits 1 if anything failed. Nothing touches the network, the real repo, Drive or a
 client site. CLAUDE.md: run this after every change to the system; never commit a failing run.
 """
+import csv
 import json
 import os
 import shlex
@@ -171,12 +172,29 @@ class Agent:
             self.mark("proof_sheet_returned", self.w("discovery/Test Co - Client Proof Sheet - RETURNED.md")); self.fin(rid, "returned")
         elif (name, sub) == ("/discovery", "reconcile"):
             rid = self.start("discovery", "reconcile"); self.mark("reconciled", self.w("brand-guide.md", TEST_BG)); self.fin(rid, "reconciled")
-        elif (name, sub) == ("/discovery", "signoff"):
-            rid = self.start("discovery", "signoff")
-            self.mark("discovery_summary", self.w("discovery/Test Co - Discovery Summary - REVIEW.md")); self.fin(rid, "signoff")
+        elif (name, sub) == ("/discovery", "facts-direct"):
+            rid = self.start("discovery", "facts-direct"); self.step(rid, "S04")
+            f = self.w("discovery/Test Co - MANUAL - client-answers - 2026-10-08.md", "Owner said: residential only.\n")
+            self.mark("facts_direct", f); self.mark("proof_sheet", f); self.fin(rid, "facts answered directly")
         elif (name, sub) == ("/build", "blockers"):
             rid = self.start("build", "blockers")
-            self.mark("blocker_checklist", self.w("build/Test Co - Technical Blocker Checklist - REVIEW.md")); self.fin(rid, "blockers")
+            self.mark("blocker_checklist", self.w("build/Test Co - Technical Blocker Checklist - REVIEW.md"))
+            items = self.w("build/blockers.csv", "url,field,old,new,reason,decision_map_ref\n"
+                           "https://test.example/sitemap.xml,sitemap,missing pages,all pages listed,F-003,\n")
+            self.sh(f"python3 scripts/handoff.py create {S} --run {rid} --kind sitemap --items {items} --blockers")
+            self.fin(rid, "blockers")
+        elif name == "/verify":   # Jonie returned the blocker handoff: record it, then /verify checks each row
+            rid = self.start("verify")
+            for hid in status(S).get("blocker_handoffs") or []:
+                rows = list(csv.DictReader(open(self.c / "handoffs" / f"{hid}.csv", newline="")))
+                for r_ in rows:
+                    r_["status"] = "done"
+                ret = self.c / "handoffs" / f"{hid}-returned.csv"
+                with open(ret, "w", newline="") as fh:
+                    w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
+                self.sh(f"python3 scripts/handoff.py ingest {S} --run {rid} --handoff {hid} --returned {ret.relative_to(SB)}")
+                self.sh(f"python3 scripts/verify.py {S} --run {rid} --handoff {hid}")
+            self.fin(rid, "blockers verified")
         elif (name, sub) == ("/build", "plan"):
             rid = self.start("build", "plan")
             plan = {"pages": [{"id": i, "type": t, "name": i, "url": f"https://test.example/{i}/", **x} for i, t, x in [
@@ -310,6 +328,8 @@ class Agent:
         return True
 
     def handle_wait(self, n):
+        if n["command"].startswith("/verify "):
+            return self.do(n["command"])
         if "sheet-returned" in n["command"] or "facts-answers" in n["command"]:
             return self.do(n["command"])
         if " published " in n["command"]:
@@ -459,8 +479,17 @@ def t_walkthrough_full():
     check("two stops per batch (briefs, then drafts with SEM picks)", stops and all(v == 2 for v in stops.values()), stops)
     check("SEM picks are applied by a run, not a third stop", any("apply-sem" in l for l in log))
     i_plan = next((i for i, l in enumerate(log) if "/build wt-full plan" in l), 99)
-    i_blk = next((i for i, l in enumerate(log) if "blockers_cleared" in l), -1)
-    check("the site plan runs without waiting for the blockers decision", i_plan < i_blk, (i_plan, i_blk))
+    i_blk = next((i for i, l in enumerate(log) if l.startswith("wait") and "/verify wt-full" in l), -1)
+    check("the site plan runs without waiting for the blockers to clear", i_plan < i_blk, (i_plan, i_blk))
+    disc = [l for l in log[:next(i for i, l in enumerate(log) if "/build wt-full" in l)]
+            if l.startswith("decision") and "global specs" not in l]
+    check("R3: discovery + audit take two approvals (Decision Sheet + entity + facts; audit + Brand Guide)",
+          len(disc) == 2 and "entity_approved proof_sheet_approved" in disc[0]
+          and "audit_approved brand_guide_approved" in disc[1], disc)
+    check("R3: the page specs are approved once, globally, before the audit",
+          sum("/approve global specs" in l for l in log) == 1, [l for l in log if "specs" in l])
+    check("R3: no discovery sign-off or blockers approval is asked (both are conditions)",
+          not any(("discovery_signed_off" in l or "blockers_cleared" in l) and l.startswith("decision") for l in log))
     check("one ship run per batch (drafts + publish handoff)", sum(" ship " in l for l in log) == len(stops), log)
     check("one check run per batch after Jonie publishes (verify + alt text + write-back)",
           sum(" published " in l and l.startswith("wait") for l in log) == len(stops),
@@ -606,8 +635,11 @@ def t_section_approval():
     for s in ("S01", "S02", "S03"):
         ag.step(rid, s)
     ag.fin(rid, "discovery")
-    _, nxt = sh("python3 scripts/next.py sec-co")
-    check("/next prints the approve line with the section ref", f"{bg}#A+B1+B2" in nxt, nxt)
+    sh("python3 scripts/next.py sec-co --continue")
+    ag.do("/discovery sec-co proof-sheet")
+    _, nxt_ = sh("python3 scripts/next.py sec-co --continue")
+    check("/next shows Approval 1 with the section ref it covers",
+          "entity_approved proof_sheet_approved" in nxt_ and "brand-guide.md#A+B1+B2" in nxt_, nxt_)
     code, out = paul("/approve sec-co entity_approved")
     check("Paul approves the entity by sections", code == 0, out)
     p = SB / bg
@@ -676,6 +708,12 @@ def t_rollback():
     ag.fin(rb, "rolled back")
 
 
+def specs_ok(slug):
+    """The page specs are approved once per sandbox (the first scenario that needs them approves them)."""
+    if sh(f"python3 scripts/status.py require {slug} page_specs_approved")[0]:
+        paul("/approve global specs")
+
+
 def t_import():
     sh('python3 scripts/status.py init imp-co --name "Imp Co" --domain i.example --type full --industry roofing')
     ag = Agent("imp-co"); rid = ag.start("new-client")
@@ -689,6 +727,11 @@ def t_import():
     p = ag.w("import-proposal.json", json.dumps(prop)); ag.fin(rid, "proposal")
     code, out = paul(f"/approve imp-co import --proposal {p}")
     check("import confirmed by Paul", code == 0, out)
+    st = status("imp-co")
+    check("import: a signed sign-off / blockers block becomes a met condition (R3), not a gate",
+          "discovery_signed_off" not in st["gates"] and "discovery_signed_off" in st.get("imported_conditions", {}),
+          st.get("imported_conditions"))
+    specs_ok("imp-co")
     _, nxt = sh("python3 scripts/next.py imp-co")
     check("/next resumes at the next unbuilt batch, never /crawl", "/crawl" not in nxt and "batch" in nxt, nxt)
     st = status("imp-co")
@@ -1091,14 +1134,15 @@ def build_ready(slug, gaps=None):
     sh(f'python3 scripts/status.py init {slug} --name "Test Co" --domain test.example --type full --industry roofing --route A')
     ag = Agent(slug); rid = ag.start("new-client"); ag.fin(rid, "set up")
     st = status(slug)
-    for g in ("entity_approved", "proof_sheet_approved", "audit_approved", "brand_guide_approved", "discovery_signed_off",
-              "blockers_cleared"):
+    for g in ("entity_approved", "proof_sheet_approved", "audit_approved", "brand_guide_approved"):
         st["gates"][g] = {"state": "approved", "files": {}}
-    st["imported_conditions"] = {"proof_sheet_returned": "test"}
+    st["imported_conditions"] = {"proof_sheet_returned": "test", "blockers_cleared": "test"}
     st["audit_steps"] = {f"S{i:02d}": {"outcome": "done"} for i in range(1, 22)}
     (ag.c / "status.json").write_text(json.dumps(st))
     ag.w("brand-guide.md", TEST_BG)
     ag.evidence_gaps = gaps or {}
+    if sh(f"python3 scripts/status.py require {slug} page_specs_approved")[0]:
+        paul("/approve global specs")
     ag.do(f"/build {slug} plan")
     paul(f"/approve {slug} site_plan")
     return ag
@@ -1289,7 +1333,9 @@ def t_modes():
     for l in log:
         if l.startswith("decision") and " batch:" in l:
             bid = l.split(" batch:")[1].split(":")[0]; stops[bid] = stops.get(bid, 0) + 1
-    check("modes: decisions still stop in auto (two stops per batch)", stops and all(v == 2 for v in stops.values()), stops)
+    check("modes: decisions still stop in auto — the pilot twice, later batches for the drafts only (R3)",
+          stops.get("pilot") == 2 and all(v == 1 for k, v in stops.items() if k != "pilot")
+          and all("drafts" in l for l in log if l.startswith("decision") and " batch:" in l and "batch:pilot:" not in l), stops)
     check("modes: the walkthrough with auto stages completes", log[-1] == "DONE" and not ag2.errors, log[-4:] + ag2.errors[:2])
     st = status("wt-modes"); lm = (SB / "clients/wt-modes/log.md").read_text()
     check("modes: each switch recorded in status.json and log.md",
@@ -1664,9 +1710,125 @@ def t_settled_and_status():
     check("R7: records.py top prints the four lines /next and /resume show", code == 0 and len(out.splitlines()) == 4, out)
 
 
+DECISION_SHEET = """# Fd Co - Decision Sheet - REVIEW
+
+| Key | Decision | Recommended default | Answer (Paul) | Evidence / why |
+|---|---|---|---|---|
+| area_entity | Area entity | Springfield metro area | | contains all 6 towns |
+| address_display.website | Street address on the website? | hidden | shown | Paul |
+| title_format.service | SEO-title format — service pages | `Service Name - Brand` | | |
+| blog_author | Blog author | | | |
+"""
+
+
+def t_decide_once():
+    # Approval 1 with the client's direct answers: no sheet to approve, and the facts count as returned
+    sh('python3 scripts/status.py init fd-co --name "Fd Co" --domain fd.example --type full --industry roofing')
+    ag = Agent("fd-co"); ag.fin(ag.start("new-client"), "set up")
+    rid = ag.start("discovery", "discovery")
+    for s in ("S01", "S02", "S03"):
+        ag.step(rid, s)
+    bg = ag.w("brand-guide.md", TEST_BG)
+    ag.mark("entity_record", ag.w("discovery/Fd Co - Decision Sheet - REVIEW.md", DECISION_SHEET),
+            ag.w("discovery/Fd Co - Discovery Record - REVIEW.md"), "clients/fd-co/brand-guide.md#A")
+    ag.fin(rid, "discovery")
+    sh("python3 scripts/next.py fd-co --continue")
+    ag.do("/discovery fd-co facts-direct")
+    n = nxt("fd-co")
+    check("R3: with the client's direct answers, Approval 1 is one line (no sheet to approve)",
+          n["kind"] == "decision" and n["command"] == "/approve fd-co entity_approved proof_sheet_approved", n)
+    code, out = paul(n["command"])
+    st = status("fd-co")
+    check("R3: approving the direct answers meets 'proof sheet returned' — nothing waits for a sheet nobody was sent",
+          code == 0 and "proof_sheet_returned" in st.get("conditions_logged", {}), out)
+    reg = (ag.c / "decisions-settled.md").read_text()
+    check("R6: Approval 1 settles every Decision Sheet answer (or its default) — never asked again",
+          "area_entity" in reg and "Springfield metro area (recommended default)" in reg
+          and "address_display.website" in reg and ": shown" in reg and "blog_author" not in reg, reg)
+    rid = ag.start("crawl")
+    code, out = sh(f'python3 scripts/run.py decision fd-co {rid} --settle address_display.website --text "hidden after all"')
+    check("R6: a later step cannot re-ask a Decision Sheet answer", code == 4 and "already settled" in out, out)
+    ag.step(rid, "S05"); ag.fin(rid, "crawl")
+    # status-only reconcile edits do not void the entity approval; a value change does
+    text = (SB / bg).read_text()
+    (SB / bg).write_text(text.replace("| Test Co | Paul Approved |", "| Test Co | Client Confirmed 2026-10-08 |"))
+    check("R3: a reconcile that only changes a row's status leaves the entity approval standing",
+          sh("python3 scripts/status.py require fd-co entity_approved")[0] == 0)
+    (SB / bg).write_text(text.replace("| Test Co | Paul Approved |", "| Test Co Roofing | Paul Approved |"))
+    code, out = sh("python3 scripts/status.py require fd-co entity_approved")
+    check("R3: a changed value in Section A still voids it (re-approve)", code == 4 and "re-approved" in out, out)
+    (SB / bg).write_text(text)
+    # #8: an answers-only run on the proof-sheet step finishes without re-marking an unchanged sheet
+    rid = ag.start("discovery", "proof-sheet")
+    ag.mark("facts_direct", ag.w("discovery/Fd Co - MANUAL - client-answers - 2026-10-09.md", "More answers.\n"))
+    code, out = sh(f'python3 scripts/run.py finish fd-co {rid} --summary "answers recorded"')
+    check("#8: a proof-sheet run that records only the client's answers can finish", code == 0, out)
+    # page specs: a change re-opens the global approval; pilot corrections keep it
+    if sh("python3 scripts/status.py require fd-co page_specs_approved")[0] != 0:
+        paul("/approve global specs")
+    spec = SB / "methodology" / "specs" / "service.md"
+    old = spec.read_text()
+    spec.write_text(old + "\nA new rule.\n")
+    code, out = sh("python3 scripts/status.py require fd-co page_specs_approved")
+    check("R3: a spec changed after Paul approved it re-opens the specs approval (once, globally)",
+          code == 4 and "service.md" in out and "/approve global specs" in out, out)
+    spec.write_text(old)
+    check("R3: the approved specs carry an APPROVED status line", "**Status:** APPROVED" in old, old[:200])
+
+
+def t_briefs_after_pilot():
+    switched = []
+
+    def on_decision(line):
+        if "batch:pilot:drafts" in line and not switched:
+            code, out = paul("/approve wt-auto mode:build:brief=auto")
+            switched.append((code, out))
+    log, decisions, runs, ag = walkthrough("wt-auto", max_posts=0, on_decision=on_decision)
+    check("R3: after the pilot Paul may switch briefs to auto", switched and switched[0][0] == 0, switched)
+    later = [l for l in log if l.startswith("decision") and ":briefs" in l and "batch:pilot:" not in l]
+    drafts = [l for l in log if l.startswith("decision") and ":drafts" in l and "batch:pilot:" not in l]
+    check("R3: after the pilot, batches stop for the drafts only (no briefs approval)", not later and len(drafts) >= 3,
+          (later, drafts))
+    check("R3: the walkthrough still completes", "LOOP" not in log and not ag.errors, "\n".join(log[-4:] + ag.errors[:2]))
+
+
+def t_migration():
+    sh('python3 scripts/status.py init mg-co --name "Mg Co" --domain mg.example --type full --industry roofing')
+    ag = Agent("mg-co"); ag.fin(ag.start("new-client"), "set up")
+    bg = SB / ag.w("brand-guide.md", TEST_BG)
+    sec = "clients/mg-co/brand-guide.md#A"
+    v1 = sh(f"cd scripts && python3 -c 'import lib; print(lib.ref_sha_v1(\"{sec}\"))'")[1].strip()
+    st = status("mg-co")
+    st["schema"] = 3
+    st["gates"]["entity_approved"] = {"state": "approved", "by": "Paul", "at": "2026-10-05T10:00:00", "files": {sec: v1}}
+    st["gates"]["discovery_signed_off"] = {"state": "approved", "by": "Paul", "at": "2026-10-08T10:00:00", "files": {}}
+    st["gates"]["blockers_cleared"] = {"state": "pending"}
+    (ag.c / "status.json").write_text(json.dumps(st, indent=2))
+    (ag.c / "STATUS.md").write_text("# Mg Co — status\n\n## Waiting on\n\n| Who | What | Since | Reference |\n|---|---|---|---|\n"
+                                    "| Client (via Paul) | Synthetic roofing offered? | 2026-10-08 | F-009 |\n"
+                                    "| Gwen | SoS record | 2026-10-05 | handoff H-1 |\n\n"
+                                    "## Settled — do not re-raise\n\n- **Entity:** category Roofing Contractor.\n"
+                                    "- **WordPress:** the login is an Administrator; Paul decides once whether Jonie switches it.\n")
+    code, out = sh("python3 scripts/migrate.py mg-co")
+    st = status("mg-co")
+    check("migration: approvals kept — the section approval is re-stamped to the new hash, not voided",
+          code == 0 and st["schema"] == 4 and st["gates"]["entity_approved"]["files"][sec] != v1
+          and sh("python3 scripts/status.py require mg-co entity_approved")[0] == 0, out)
+    check("migration: discovery_signed_off and blockers_cleared become conditions (history kept)",
+          "discovery_signed_off" not in st["gates"] and st["retired_gates"]["discovery_signed_off"]["state"] == "approved", st.get("retired_gates"))
+    reg = (ag.c / "decisions-settled.md").read_text()
+    check("migration: a hand-written STATUS.md is carried over — settled stays settled, open questions stay open",
+          "category Roofing Contractor" in reg and "Synthetic roofing offered?" in reg and "wordpress_login" in reg
+          and "SoS record" not in reg, reg)
+    stx = (ag.c / "STATUS.md").read_text()
+    check("migration: STATUS.md is now generated", "Generated" in stx and "- **Stage " in stx, stx[:300])
+    code, out = sh("python3 scripts/migrate.py mg-co")
+    check("migration runs once (a second run changes nothing)", "already migrated" in out, out)
+
+
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_section_approval, t_reviews_parse, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view,
-             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status]
+             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_migration]
 
 
 def main():

@@ -97,3 +97,16 @@ What we do now: the audit follows the lock — no recommendation changes a live 
 What we propose: the BB-313 §3 lock applies to a homepage H1 that was built to the Standard, or that ranks top 3 for the homepage's main keyword (CM-020). A legacy homepage H1 that fails HP-06 and holds no top-3 entity ranking may be rebuilt once, in the homepage batch, with the change logged in the URL Decision Map and Brand Guide H; after that the lock applies.
 Why (evidence): Home Mobile Medical's live H1 "Enhance Your Independence And Mobility With Our Stair Lift Solutions" (SF h1_all 2026-09-18) uses neither reserved variant ("Mobility equipment supplier", "South Carolina Lowcountry") and names no area; DataforSEO (2026-10-07) shows no entity keyword in the top 3 for the homepage. The same tension came up on Apex Roofing of the Lowcountry: Paul ruled it on 2026-10-08 for that client only (H1 stays as live with a familiar pool variant; the reserved variant goes in the title — Apex CF-LOCAL-002). That ruling is client-specific and is NOT applied to Home Mobile Medical; its question Q4 stays open for Paul. A tension recurring across clients is a candidate for a standing ruling (PROC-01).
 Proposed by: Claude (discovery-audit agent), home-mobile-medical audit run 20261007-203219-discovery-784c.
+
+## L-010 · 2026-10-08 · Approve less: two discovery approvals, conditions, briefs after the pilot · PROPOSED
+Rule affected: CM-044 ("decisions are never stages and can never be auto"), the Block 1 gate list, specs/README.md status-line rule.
+What we do now (already built, REWRITE-HANDOFF.md R3, Paul's written requirement of 2026-10-08): discovery and audit take two
+approvals (Approval 1 = Decision Sheet + entity + client facts; Approval 2 = audit + reconciled Brand Guide);
+`discovery_signed_off` and `blockers_cleared` are conditions met from evidence; the page specs are approved once,
+globally (`/approve global specs`); after the pilot, when Paul switches `build:brief` to auto, a batch's briefs are not a
+stop — Paul approves the drafts only (the pilot's briefs are always approved).
+What we propose: amend CM-044 to say so — the batch-briefs decision becomes a condition (every page's brief written in its
+own run, evidence gate cleared) once the pilot passed and Paul switched the stage; every other decision stays Paul's.
+Why (evidence): Apex Roofing of the Lowcountry needed 7 approvals for discovery + audit, three of them re-approvals
+caused by decisions asked before the information that shaped them existed (REWRITE-HANDOFF.md §1, R6).
+Proposed by: Claude, rewrite session 2026-10-08.

@@ -22,7 +22,8 @@
                                                       record ONE page's brief or draft from its own run (CM-043);
                                                       a brief needs the evidence gate cleared (CM-041)
     status.py modes <slug>                            each producing stage's mode: review / auto (CM-044)
-    status.py pilot-corrections <slug> --note T
+    status.py pilot-corrections <slug> --note T      (re-stamps the specs it changed: the global approval stands)
+    status.py blockers-none <slug> --run R            the blocker checklist has no items (blockers_cleared is met)
     status.py approval-record <slug>                  render the Drive Approval Record (Markdown)
 
 Gates are NOT settable here. Only approve.py, run through /approve, can set a gate.
@@ -36,6 +37,7 @@ import json
 import re
 import sys
 import time
+from pathlib import Path
 
 from lib import ROOT, append, client_dir, die, now, read_json, ref_missing, ref_sha, sha12, write_json, config
 
@@ -187,7 +189,7 @@ def sensitivity_fields(category, practitioner=None):
 def new_status(slug, name, domain, ctype, industry, route=None, folder=None, sensitive=None,
                category=None, practitioner=False):
     return {
-        "schema": 3,
+        "schema": 4,
         "client": {
             "slug": slug, "name": name, "domain": domain, "type": ctype,
             "industry": industry.lower(), "sensitive": sensitive,
@@ -269,8 +271,18 @@ def condition_met(st, name):
     if name == "proof_sheet_returned":
         files = (st.get("marks") or {}).get("proof_sheet_returned", {}).get("files") or {}
         ok = bool(files) and all((ROOT / f).exists() for f in files)
+        if not ok and facts_direct_approved(st):   # R3: the client's answers came directly and Paul approved them
+            ok = True
         return ok, ("" if ok else "the client has not returned the proof sheet yet "
                     f"(when it arrives: /discovery {slug} sheet-returned)")
+    if name == "discovery_signed_off":   # R3: derived — no summary to approve
+        left = [r for r in GATES["conditions"][name]["requires"] if not _decided(st, r)]
+        return not left, ("" if not left else "discovery is not signed off yet — still open: "
+                          + ", ".join(plain(r) for r in left))
+    if name == "blockers_cleared":
+        return blockers_cleared(st)
+    if name == "page_specs_approved":
+        return specs_approved()
     if name == "audit_steps_complete":
         import steps
         left = steps.missing(st)
@@ -282,6 +294,77 @@ def condition_met(st, name):
         return ok, ("" if ok else ("no site plan yet" if not bs else
                                    "batches not yet built and written back: " + ", ".join(left)))
     return False, f"unknown condition {name}"
+
+
+def facts_direct_approved(st):
+    """The client's direct answers (no sheet sent) are recorded and Paul approved them as the client facts."""
+    fd = ((st.get("marks") or {}).get("facts_direct") or {}).get("files") or {}
+    rec = st["gates"].get("proof_sheet_approved") or {}
+    return bool(fd) and rec.get("state") in GATES["met_decisions"] and set(fd) <= set(rec.get("files") or {}) \
+        and all(not ref_missing(f) for f in fd)
+
+
+# ------------------------------------------------------------------ page specs, approved once for every client (R3)
+SPECS = ROOT / "methodology" / "specs"
+STATUS_LINE = re.compile(r"^\*\*Status:\*\*.*$", re.M)
+
+
+def spec_files():
+    return sorted(str(p.relative_to(ROOT)) for p in SPECS.glob("*.md"))
+
+
+def spec_sha(rel):
+    """A spec's content without its status line (approving it rewrites that line)."""
+    import hashlib
+    text = STATUS_LINE.sub("", (ROOT / rel).read_text(encoding="utf-8"))
+    return hashlib.sha256(text.encode()).hexdigest()[:12]
+
+
+def specs_approved():
+    rec = config().get("specs_approval") or {}
+    files = rec.get("files") or {}
+    if not files:
+        return False, "the page specs are not approved yet — Paul approves them once, for every client: /approve global specs"
+    changed = [f for f in spec_files() if files.get(f) != spec_sha(f)]
+    if changed:
+        return False, ("page spec(s) changed since you approved them: " + ", ".join(Path(f).name for f in changed)
+                       + " — /approve global specs")
+    return True, ""
+
+
+# ------------------------------------------------------------------ technical blockers (R3: a condition)
+def blockers_cleared(st):
+    """Met when the blocker checklist is recorded and every row of every blocker handoff came back done and
+    /verify passed it (PASS, or CHECK = confirmed by a person) — or the checklist recorded no blockers."""
+    if "blocker_checklist" not in (st.get("marks") or {}):
+        return False, "the technical blocker checklist is not written yet"
+    hs = st.get("blocker_handoffs") or []
+    if not hs:
+        if st.get("blockers_none"):
+            return True, ""
+        return False, "the blocker items have not been handed to Jonie yet (handoff.py create … --blockers)"
+    import csv
+    slug = st["client"]["slug"]
+    d = path(slug).parent
+    verdict = {}
+    p = d / "changes.jsonl"
+    for line in (p.read_text().splitlines() if p.exists() else []):
+        if '"verify"' in line:
+            c = json.loads(line)
+            if c.get("kind") == "verify" and c.get("ref"):
+                verdict[c["ref"]] = c["result"]
+    left = []
+    for hid in hs:
+        f = d / "handoffs" / f"{hid}.csv"
+        rows = list(csv.DictReader(open(f, newline="", encoding="utf-8-sig"))) if f.exists() else []
+        for r in rows:
+            v = verdict.get(r["ref"], "")
+            if r.get("status") != "done":
+                left.append(f"{r['ref']} is {r.get('status') or 'open'}")
+            elif not v.startswith(("VERIFY PASS", "VERIFY CHECK")):
+                left.append(f"{r['ref']} is done but not verified yet" if not v else f"{r['ref']} failed /verify")
+    return not left, ("" if not left else "blockers not cleared: " + "; ".join(left[:5])
+                      + (f" (+{len(left) - 5} more)" if len(left) > 5 else ""))
 
 
 def log_conditions(slug, st):
@@ -418,10 +501,19 @@ def _approval_ok(rec, label_, check_files=True):
     return True, ""
 
 
+def briefs_need_approval(st, bid):
+    """R3: after the pilot, once Paul has switched build:brief to auto (only possible after the pilot passed),
+    a batch's briefs are not a stop — Paul approves the drafts only. The pilot's briefs are always approved."""
+    return bid == "pilot" or stage_mode(st, "build:brief") != "auto"
+
+
 def batch_stage_ok(st, bid, stage, check_files=True):
     b = batch(st, bid)
     if not b:
         return False, f"batch {bid} is not in the site plan"
+    if stage == "briefs" and not b.get(stage) and not briefs_need_approval(st, bid):
+        _, probs = per_page_files(st, b, "brief")
+        return (not probs), ("" if not probs else f"batch {bid} briefs: " + "; ".join(probs))
     ok, why = _approval_ok(b.get(stage), f"batch {bid} {stage}", check_files)
     if not ok:
         return ok, why
@@ -549,6 +641,11 @@ def pilot_passed(st, step):
 
 def check(st, target):
     """One entry point for every gate-like target. Returns (ok, [reasons])."""
+    if target.startswith("marked:"):
+        art = target[7:]
+        files = ((st.get("marks") or {}).get(art) or {}).get("files") or {}
+        ok = bool(files) and not any(ref_missing(f) for f in files)
+        return ok, ([] if ok else [f"{GATES['artifacts'].get(art, art)} is not recorded yet"])
     if target.startswith("evidence:"):
         ok, why = evidence_ok(st, target[9:])
         return ok, ([] if ok else [why])
@@ -734,6 +831,7 @@ def main():
     s.add_argument("--run", required=True)
     s = sub.add_parser("modes"); s.add_argument("slug")
     s = sub.add_parser("pilot-corrections"); s.add_argument("slug"); s.add_argument("--note", required=True)
+    s = sub.add_parser("blockers-none"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s = sub.add_parser("mark"); s.add_argument("slug"); s.add_argument("name")
     s.add_argument("--file", required=True, action="append")
     a = ap.parse_args()
@@ -781,6 +879,15 @@ def main():
         return
 
     st = load(a.slug)
+    if a.cmd == "blockers-none":   # the checklist found nothing to hand to Jonie
+        import run as R
+        R.open_run(a.slug, a.run)
+        st["blockers_none"] = {"at": now(), "run": a.run}
+        save(a.slug, st)
+        append(client_dir(a.slug) / "log.md", f"- DECISION {now()[:16]} · run {a.run} · the technical blocker checklist "
+               "has no items — nothing to hand to Jonie\n")
+        print("recorded: no technical blockers")
+        return
     if a.cmd in ("sensitivity", "cap"):   # Paul's answers in chat, recorded as decisions in the open run
         import run as R
         R.open_run(a.slug, a.run)
@@ -1002,6 +1109,16 @@ def main():
             die("the pilot briefs are not approved yet")
         st["build"]["pilot_corrections_applied"] = {"at": now(), "note": a.note}
         save(a.slug, st); print("pilot corrections recorded")
+        cfg = config()
+        rec = cfg.get("specs_approval") or {}
+        moved = [f for f in spec_files() if rec.get("files") and (rec["files"].get(f) != spec_sha(f))]
+        if moved:   # a logged pilot correction keeps a spec APPROVED (specs/README.md, status line rule)
+            for f in moved:
+                rec["files"][f] = spec_sha(f)
+            rec.setdefault("pilot_corrections", []).append({"at": now(), "client": a.slug, "specs": moved, "note": a.note})
+            write_json(ROOT / "config.json", cfg)
+            append(path(a.slug).parent / "log.md", f"- PILOT CORRECTIONS {now()[:16]} · specs re-stamped (approval kept): "
+                   f"{', '.join(Path(f).name for f in moved)} · {a.note}\n")
 
 
 if __name__ == "__main__":

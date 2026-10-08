@@ -116,6 +116,11 @@ def settled_register(slug):
     out += ["", "## Settled", ""]
     rows = [(k, e) for k, e in ents.items() if e.get("state") == "settled"]
     out += [f"- **{k}** ({e['at'][:10]}, {e.get('by') or '—'}): {e['text']}" for k, e in rows] or ["_None yet._"]
+    opn = [(k, e) for k, e in ents.items() if e.get("state") == "open"]
+    if opn:
+        out += ["", "## Open questions — asked once, waiting for an answer", ""]
+        out += [f"- **{k}** (asked {e.get('asked_at', '')[:10]}, waiting on {e.get('who')}): {e.get('question')}"
+                for k, e in opn]
     reo = [(k, e) for k, e in ents.items() if e.get("state") == "reopened"]
     if reo:
         out += ["", "## Reopened — waiting for Paul", ""]
@@ -210,6 +215,8 @@ def status_md(slug):
     for k, e in settled.entries(slug).items():
         if e.get("state") == "reopened":
             waits.append(("Paul", f"reopened decision '{k}': {e.get('reason')}", e.get("reopened_at", "")[:10], k))
+        elif e.get("state") == "open":
+            waits.append((e.get("who") or "Paul", e.get("question"), e.get("asked_at", "")[:10], k))
     hs = _open_handoffs(slug)
     for hid, owner, kind, issued, n_open, n in hs:
         waits.append((owner, f"{kind} handoff — {n_open} of {n} item(s) open", issued, hid))

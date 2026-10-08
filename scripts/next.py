@@ -20,6 +20,7 @@ ask Paul to re-approve; artifact recorded → stop at the decision; else run the
 import json
 import re
 import sys
+from pathlib import Path
 
 import run as R
 import stages
@@ -90,6 +91,24 @@ def condition_step(st, slug, cond):
     if ok:
         return
     spec = S.GATES["conditions"][cond]
+    if cond == "page_specs_approved":   # R3: methodology, approved once for every client
+        out("decision", "/approve global specs",
+            f"{why}. The specs in methodology/specs/ are the same for every client; approve them once before any "
+            "audit scores pages against them or any page is written")
+    if cond == "discovery_signed_off":
+        for r in spec["requires"]:
+            if r in S.GATES["conditions"]:
+                condition_step(st, slug, r)
+            else:
+                gate_step(st, slug, r)
+        return
+    if cond == "blockers_cleared":
+        if "blocker_checklist" not in (st.get("marks") or {}):
+            out("run", f"/build {slug} blockers", "technical blocker checklist and its handoff to Jonie")
+        if not st.get("blocker_handoffs") and not st.get("blockers_none"):
+            out("run", f"/build {slug} blockers", "hand the blocker items to Jonie (one handoff, --blockers)")
+        out("wait", f"/verify {slug}", f"{why}. When Jonie returns the blocker handoff, /verify checks every item; "
+            "the blockers count as cleared when all are done and verified — no approval")
     if spec.get("wait_for"):
         out("wait", spec["producer"].format(slug=slug),
             f"waiting for {spec['wait_for']} — when it arrives, run this to record it")
@@ -121,6 +140,56 @@ def gate_step(st, slug, gate):
             f"{S.plain(gate)} is ready for your approval")
     prod = spec.get("producer_blog_only") if st["client"]["type"] == "blog-only" else None
     out("run", (prod or spec["producer"]).format(slug=slug), f"prepare {S.plain(gate)}")
+
+
+def approve_line(st, slug, gates):
+    """One /approve line for one or several decisions. A single decision names its files; several in one line use
+    the files each step recorded (approve.py refuses --files with several)."""
+    if len(gates) == 1:
+        g = gates[0]
+        files = S.mark_files(st, S.GATES["gates"][g]["artifact"]) or list((st["gates"].get(g) or {}).get("files") or {})
+        return f"/approve {slug} {g} --files {q(files)}"
+    return f"/approve {slug} " + " ".join(gates)
+
+
+def covers(st, gates):
+    return "; ".join(f"{S.plain(g)}: {', '.join(Path(f.split('#')[0]).name + ('#' + f.split('#')[1] if '#' in f else '') for f in S.mark_files(st, S.GATES['gates'][g]['artifact']))}"
+                     for g in gates)
+
+
+def approval_one(st, slug):
+    """Approval 1 (R3): the Decision Sheet + entity foundation and the client facts — one /approve line."""
+    want = [g for g in ("entity_approved", "proof_sheet_approved") if not S.gate_met(st, g)[0]]
+    if not want:
+        return
+    marks = st.get("marks") or {}
+    if "entity_approved" in want and "entity_record" not in marks:
+        out("run", f"/discovery {slug} discovery", "public research, the entity foundation and the Decision Sheet "
+            "(every identity and format decision with a recommended default)")
+    if "proof_sheet_approved" in want and "proof_sheet" not in marks:
+        out("run", f"/discovery {slug} proof-sheet", "the client proof sheet — or, if the client already answered "
+            f"directly, /discovery {slug} facts-direct (their answers saved verbatim; no sheet to approve)")
+    out("decision", approve_line(st, slug, want),
+        f"Discovery is ready for your approval in one line — {covers(st, want)}. Once approved, every Decision Sheet "
+        "answer is settled for good and the data pulls can start")
+
+
+def approval_two(st, slug):
+    """Approval 2 (R3): the audit + the reconciled Brand Guide in one line; the sign-off is then a condition."""
+    want = [g for g in ("audit_approved", "brand_guide_approved") if not S.gate_met(st, g)[0]]
+    if not want:
+        return
+    if not S.condition_met(st, "proof_sheet_returned")[0]:
+        alone = (f" Or approve the audit alone now (safe fixes can start): {approve_line(st, slug, ['audit_approved'])}"
+                 if "audit_approved" in want else "")
+        out("wait", f"/discovery {slug} sheet-returned",
+            "waiting for the client's facts (the returned proof sheet) — when they arrive, this records them, then "
+            "reconcile, and the audit and Brand Guide come to you together in one approval." + alone)
+    if "brand_guide_approved" in want and "reconciled" not in (st.get("marks") or {}):
+        out("run", f"/discovery {slug} reconcile", "reconcile the client's facts into the Brand Guide")
+    out("decision", approve_line(st, slug, want),
+        f"the audit and the reconciled Brand Guide are ready for your approval in one line — {covers(st, want)}. "
+        "Discovery is then signed off automatically and Build starts")
 
 
 def evidence_and_briefs(st, slug, b):
@@ -199,27 +268,32 @@ def _walk(slug, cont):
         gate_step(st, slug, "blog_topics_approved")
         blog_posts(st, slug)
 
-    # ---- Discovery and audit
-    gate_step(st, slug, "entity_approved")
-    gate_step(st, slug, "proof_sheet_approved")
-    # while the client has the sheet: crawl and data steps, then the audit
+    # ---- Discovery and audit — two approvals (R3). Approval 1: the Decision Sheet + entity + client facts.
+    approval_one(st, slug)
+    # Data while the client has the sheet, then the audit (specs approved once, globally, before any scoring).
     if not S.gate_met(st, "audit_approved")[0]:
+        condition_step(st, slug, "page_specs_approved")
         if "S05" not in st["audit_steps"]:
             out("run", f"/crawl {slug}", "crawl the site while the client has the proof sheet")
         data = [r["id"] for r in steps.registry() if r["phase"] == "Client has sheet" and r["id"] != "S05"]
         if any(i not in st["audit_steps"] for i in data):
             out("run", f"/discovery {slug} data",
-                "reviews, rankings, People Also Ask, backlinks, citations, grid, GSC — while the client has the sheet")
-        gate_step(st, slug, "audit_approved")
-    condition_step(st, slug, "proof_sheet_returned")
-    gate_step(st, slug, "brand_guide_approved")
-    gate_step(st, slug, "discovery_signed_off")
+                "reviews, rankings, People Also Ask, backlinks, citations, grid, GSC — one cost yes for the whole step")
+        for r in S.requires(st, "audit_approved"):
+            if r in S.GATES["conditions"]:
+                condition_step(st, slug, r)
+        if "audit_deliverables" not in (st.get("marks") or {}):
+            out("run", f"/discovery {slug} audit", "the audit: entity → architecture → page conformance → technical, "
+                "then the fresh-context review")
+    approval_two(st, slug)
 
     # ---- Build. The technical blocker checklist and the site plan both need only the discovery
     # sign-off and run side by side: the checklist goes to Jonie as handoffs while the plan and
     # batches proceed; Paul confirms "blockers cleared" before release (release_approved requires it).
-    if "blocker_checklist" not in (st.get("marks") or {}) and not S._decided(st, "blockers_cleared"):
-        out("run", f"/build {slug} blockers", "technical blocker checklist (Jonie fixes these while the site plan goes ahead)")
+    condition_step(st, slug, "discovery_signed_off")
+    if "blocker_checklist" not in (st.get("marks") or {}) and not S.condition_met(st, "blockers_cleared")[0]:
+        out("run", f"/build {slug} blockers", "technical blocker checklist and one handoff to Jonie (she fixes them "
+            "while the site plan goes ahead)")
     bp = st.get("build")
     if not bp:
         out("run", f"/build {slug} plan", "site plan for every service and location page, in one pass")
@@ -275,7 +349,7 @@ def _walk(slug, cont):
 
     # ---- Finish and blog
     gate_step(st, slug, "link_wheel_approved")
-    gate_step(st, slug, "blockers_cleared")
+    condition_step(st, slug, "blockers_cleared")
     gate_step(st, slug, "release_approved")
     gate_step(st, slug, "blog_map_approved")
     blog_posts(st, slug)

@@ -18,8 +18,9 @@ Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps b
    Never hand one subagent two pages: one page per run, fresh context per page (CM-043).
 4. Stop at each decision and give Paul the exact line from `python3 scripts/next.py <slug>`:
    site plan · evidence block (facts interview or waiver) · briefs · drafts with SEM picks (+ `--review` for sensitive
-   clients, `--practitioner` for health) · technical blockers cleared (`blockers_cleared`). When every
-   batch is written back, the `pages_built` condition is met by the system — no approval.
+   clients, `--practitioner` for health) · After the pilot, Paul may switch `build:brief` to auto (`/approve <slug> mode:build:brief=auto`): later batches
+   then stop for the drafts only. "Blockers cleared" (Jonie's handoff done and verified) and `pages_built` (every
+   batch written back) are conditions the system meets — no approval.
 5. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> --summary "..."`.
 
 Drafts reach WordPress only through `/build <slug> ship <id>` — always as WordPress drafts.

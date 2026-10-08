@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """handoff.py — VA handoffs: work the system prepares but a person carries out.
 
-    handoff.py create <slug> --run R --kind K --items items.csv [--title T] [--to NAME --owner-reason T]
+    handoff.py create <slug> --run R --kind K --items items.csv [--title T] [--to NAME --owner-reason T] [--blockers]
+                      --blockers: a technical blocker handoff — "blockers cleared" is met when every row is done and
+                      /verify passed it (R3)
     handoff.py ingest <slug> --run R --handoff H-ID --returned returned.csv
     handoff.py list   <slug> [--open]
 
@@ -69,6 +71,7 @@ def main():
     s.add_argument("--kind", required=True, choices=sorted(KINDS)); s.add_argument("--to")
     s.add_argument("--owner-reason")
     s.add_argument("--items", required=True); s.add_argument("--title")
+    s.add_argument("--blockers", action="store_true", help="a technical blocker handoff (blockers_cleared waits on it)")
     s = sub.add_parser("ingest"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s.add_argument("--handoff", required=True); s.add_argument("--returned", required=True)
     s = sub.add_parser("list"); s.add_argument("slug"); s.add_argument("--open", action="store_true")
@@ -169,6 +172,10 @@ def main():
         for r in rows:
             R.log_change(a.slug, a.run, a.kind, r["url"], r["field"], r["old"], r["new"],
                          f"HANDOFF ISSUED to {a.to}", ref=r["ref"], channel="handoff")
+        if a.blockers:
+            st = S.load(a.slug)
+            st.setdefault("blocker_handoffs", []).append(hid)
+            S.save(a.slug, st)
         print(f"{hid}: {len(rows)} item(s) → clients/{a.slug}/handoffs/{hid}.md and .csv")
 
     elif a.cmd == "ingest":

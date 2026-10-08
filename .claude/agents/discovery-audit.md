@@ -24,8 +24,17 @@ Every approval names its files. When a step produces the thing Paul approves, re
 `python3 scripts/status.py mark <slug> <artifact> --file <path> [--file <path> ...]`
 A Markdown file can be named by sections — `brand-guide.md#A+B1+B2` covers only `## Section A`, `### B1`
 and `### B2`; edits elsewhere in the file leave the approval standing.
-(artifacts: `entity_record`, `proof_sheet`, `proof_sheet_returned`, `audit_deliverables`,
-`reconciled`, `discovery_summary`). `/next` then shows Paul the exact `/approve` line.
+(artifacts: `entity_record`, `proof_sheet`, `facts_direct`, `proof_sheet_returned`, `audit_deliverables`,
+`reconciled`). `/next` then shows Paul the exact `/approve` line. Two approvals cover discovery and the audit (R3):
+Approval 1 = entity + Decision Sheet + client facts; Approval 2 = audit + reconciled Brand Guide.
+
+## Decide once (R6)
+Read `clients/<slug>/decisions-settled.md` first. Everything there is settled: apply it, never ask it again, never
+offer alternatives to it. New contradicting evidence → one `run.py decision <slug> <RUN_ID> --reopen <key> --text
+"<evidence>"` and carry on with the settled value. A question for Paul or the client is asked once:
+`run.py decision <slug> <RUN_ID> --ask <key> --who "Client (via Paul)" --text "<question>"`; when answered,
+`--settle <key>`. Missing-data choices (citations skipped, grid tool, Admin vs Editor login …) are settled once and
+never repeated in later summaries.
 
 ## The line that matters most
 Discovery produces observations and questions — no severity, no priorities, no
@@ -49,19 +58,33 @@ recommendations. The audit produces findings.
 - Record every conflict with all candidate values; never resolve one. Quote every public claim
   verbatim with its URL.
 - Write the Discovery Record (`- REVIEW.md`) and Brand Guide A/B as proposals; `drive.py upload` the Record (a logged file copy).
-- Record S01–S03 with `steps.py record`, then `status.py mark <slug> entity_record --file <Discovery Record>
-  --file clients/<slug>/brand-guide.md#A+B1+B2` — the Brand Guide only by the sections the entity decision is
-  about, so later Brand Guide work (reconcile, Build write-back to B3/C/D) doesn't cancel it.
-- Present the entity foundation (category, area + derivation + "contains all N cities",
-  variants, reserved homepage variant). Paul: `/approve <slug> entity_approved --files ...`. **Stop.**
+- **Decision Sheet** (`templates/decision-sheet.md` → `clients/<slug>/discovery/<Client> - Decision Sheet - REVIEW.md`):
+  every identity and format decision together — category + variants, scope descriptor (e.g. residential: a description
+  in H1/body, never a category variant unless Wikipedia-real), area entity, reserved homepage **title** variant,
+  homepage **H1** variant, SEO-title format per page type, brand in full, services, towns, address display (GBP and
+  website), "The Best" policy, blog author, sensitive category, CMS, WordPress login, tools (citations, grid, GSC/GA4).
+  Each row gets a recommended default with its evidence; Paul answers only where he disagrees. The audit and Build
+  apply these and never re-ask them.
+- Record S01–S03 with `steps.py record`, then `status.py mark <slug> entity_record --file <Decision Sheet>
+  --file <Discovery Record> --file clients/<slug>/brand-guide.md#A+B1+B2` — the Brand Guide only by the sections the
+  entity decision is about (row statuses are not hashed, so a reconcile that only confirms a row leaves the approval
+  standing). **Do not stop here** — the proof sheet comes next and both go to Paul in Approval 1.
 
 **proof-sheet** (S04) — From `templates/proof-sheet.md` and
-`client-intake/references/field-schema.md`: Access, Block A confirm, Block B verify (quoted,
-never guessed), Block C needs, return-by date, default, phone offer. Save the `.md` and the
-`- CLIENT COPY` Google Doc. **Never contact the client.** Record S04; `status.py mark <slug> proof_sheet --file <sheet .md>`.
-Paul: `/approve <slug> proof_sheet_approved`.
+`client-intake/references/field-schema.md`: Access (one row: add us as a Manager on the Google Business Profile),
+Block A confirm, Block B verify (quoted, never guessed), Block C needs, return-by date, default. Questions already
+settled in the Decision Sheet are not on it. Save the `.md`; the `- CLIENT COPY` Google Doc goes through the connector
+as **HTML** (Markdown in tables shows literal asterisks) — the only connector upload. **Never contact the client.**
+Record S04; `status.py mark <slug> proof_sheet --file <sheet .md>`. Paul: Approval 1
+(`/approve <slug> entity_approved proof_sheet_approved`). **Stop.**
 
-**sheet-returned** — when Paul says the client sent the sheet back: save it as
+**facts-direct** (S04) — the client answered without a sheet (call, email, text): save the answers **verbatim,
+immediately** as MANUAL evidence (`<Client> - MANUAL - client-answers - <date>.md`, `drive.py upload`), then
+`status.py mark <slug> facts_direct --file <it>` and `status.py mark <slug> proof_sheet --file <it>`. Approval 1 then
+approves those answers as the client facts; that also meets "facts returned" — no sheet is approved or waited for.
+Later informal answers in any run: save them verbatim the same way and `status.py mark <slug> facts_direct`.
+
+**sheet-returned** (any session) — when Paul says the client sent the sheet back: save it as
 `clients/<slug>/discovery/<Client> - Client Proof Sheet - RETURNED.md` (the client's answers as given,
 nothing changed) and `status.py mark <slug> proof_sheet_returned --file <it>`. That meets the
 **condition** `proof_sheet_returned` (the system checks the recorded file; nobody approves it).
@@ -111,10 +134,11 @@ Run the **seo-technical-audit** skill procedure, in this order:
    supporting assets.
 3. S14 **architecture** — the URL Decision Map, every page typed, every destructive candidate
    under CM-019 (all four conditions or `Needs Evidence`; never on a Working Hypothesis alone).
-4. S15 **page conformance** — every page scored against its spec in `methodology/specs/<type>.md`:
-   a scorecard row per page, one column per check ID (HP-/SVC-/LOC-/HUB-/ABT-/BLG-), results placed
-   in the nine categories (analysis-rules.md). A failed check is Medium (CM-028); a spec still
-   marked DRAFT is advisory — say so in Assumptions and Limitations.
+4. S15 **page conformance** — every page scored against its spec in `methodology/specs/<type>.md` (the
+   audit cannot start until Paul approved the specs, once, globally): **one scorecard file per page type**
+   (`scorecard-<type>.csv`, a row per page, one column per check ID HP-/SVC-/LOC-/HUB-/ABT-/BLG-), results placed in
+   the nine categories (analysis-rules.md). A failed check is Medium (CM-028). Titles and H1s are scored against the
+   settled Decision Sheet formats, never re-decided.
 5. S16 **technical** findings.
 
 **Severity:** CM-028 (High / Medium / Low only). **One finding per issue, listing every affected URL.**
@@ -130,15 +154,16 @@ Paul: `/approve <slug> audit_approved`.
 
 **reconcile** — Parse whatever the client returned
 (`client-intake/references/proof-sheet.md` §6): `Client Confirmed` + date, keep `was:` values,
-complete the Brand Guide (Unknown/Disputed stay so), D2 unsupported claims, the content-risk
-list. An entity-relevant correction means entity_approved must be re-approved — say so.
+complete the Brand Guide (Unknown/Disputed stay so), D2 unsupported claims, the D3 content-risk
+list. Changing only a row's status never voids the entity approval. Only a changed **value** in A/B1/B2 does — and
+then only when the client corrected an entity fact: say so as one reopen request (`--reopen <key>`), never as a new
+question.
 `status.py mark <slug> reconciled --file clients/<slug>/brand-guide.md#A+D+E+G` (the reconciled client facts —
-not B3/C, which Build writes back to, and not F, which Finish completes). Paul: `/approve <slug> brand_guide_approved`.
-The owner named on the returned sheet goes in the Brand Guide author field (CM-039).
+not B3/C, which Build writes back to, and not F, which Finish completes). Paul: Approval 2
+(`/approve <slug> audit_approved brand_guide_approved`). The owner named on the returned sheet goes in the Brand Guide
+author field (CM-039) unless the Decision Sheet already settled the author.
 
-**signoff** — the four discovery decisions and the returned sheet are in: the summary and client-confirmation
-list, saved as `<Client> - Discovery Summary - REVIEW.md`; `status.py mark <slug> discovery_summary --file <it>`. Paul:
-`/approve <slug> discovery_signed_off`. **You never start Build.**
+Discovery is then **signed off automatically** (a condition — no summary, no approval). **You never start Build.**
 
 ## Always
 File names per `methodology/naming-convention.md`; every Drive copy goes through `drive.py upload` (file copy, logged — never retype a file into the connector); never invent a

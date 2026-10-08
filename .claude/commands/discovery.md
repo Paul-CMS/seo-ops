@@ -1,15 +1,18 @@
 ---
 description: Agent 1 — discovery, entity foundation, proof sheet, audit, reconciliation, Block 1
-argument-hint: <slug> [discovery|proof-sheet|sheet-returned|data|audit|reconcile|signoff]
+argument-hint: <slug> [discovery|proof-sheet|facts-direct|sheet-returned|data|audit|reconcile]
 ---
 
 Arguments: $ARGUMENTS
 
 Follow CLAUDE.md. If no step is given, use `python3 scripts/next.py <slug>` and say which step and why.
-Order: discovery → entity decision → proof sheet → (client has the sheet) `/crawl`, `data`,
-`audit` → audit decision → client returns sheet (`sheet-returned`) → `reconcile` → `signoff`.
+Order (R3 — two approvals): `discovery` (entity + **Decision Sheet**) → `proof-sheet` (or `facts-direct` when
+the client already answered) → **Approval 1** (`/approve <slug> entity_approved proof_sheet_approved`) → new session:
+`/crawl`, `data` (one cost yes for the whole step) → new session: `audit` (page specs approved once, globally) →
+`sheet-returned` → `reconcile` → **Approval 2** (`/approve <slug> audit_approved brand_guide_approved`). The discovery
+sign-off is then a condition — nothing to approve.
 
-Steps: `discovery` · `proof-sheet` · `sheet-returned` · `data` · `audit` · `reconcile` · `signoff`.
+Steps: `discovery` · `proof-sheet` · `facts-direct` · `sheet-returned` · `data` · `audit` · `reconcile`.
 Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps discovery` lists them; `run.py start` checks them.
 
 1. `python3 scripts/run.py start <slug> discovery --step <step> [--batch <id>|--page <id>]` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse in
