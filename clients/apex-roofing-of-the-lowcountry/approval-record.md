@@ -5,9 +5,9 @@ Generated from the seo-ops system (clients/apex-roofing-of-the-lowcountry/status
 ## Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)
 
 - Decision: **approved**
-- Decided by: Paul · 2026-10-08T07:36:22-05:00
+- Decided by: Paul · 2026-10-08T10:40:10-05:00
 - Approved version: `clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md` (sha 76a048adc3f7)
-- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2` (sha d5673fb2dcf3)
+- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2` (sha 4d43186bd478)
 
 ## Client proof sheet approved by Paul, ready for him to send
 
@@ -26,7 +26,9 @@ Generated from the seo-ops system (clients/apex-roofing-of-the-lowcountry/status
 
 ## Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 
-- Decision: **pending**
+- Decision: **approved**
+- Decided by: Paul · 2026-10-08T10:40:10-05:00
+- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G` (sha b8be065916a5)
 
 ## Discovery and audit signed off — Build may start
 

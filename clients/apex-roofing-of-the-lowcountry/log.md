@@ -1226,3 +1226,10 @@ Gates checked: proof_sheet_returned
 ### END HANDOFF
 ## RUN 20261008-080806-discovery-b736 · FINISHED · 2026-10-08T08:08:45-05:00
 Changes: 1 · Summary: Reconcile choices applied (website address, no travel fee, ShingleMaster asked, Ralph kept)
+
+## APPROVAL · 2026-10-08T10:40:10-05:00 · entity_approved · approved · by Paul
+Approved version: clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md (sha 76a048adc3f7)
+Approved version: clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2 (sha 4d43186bd478)
+
+## APPROVAL · 2026-10-08T10:40:10-05:00 · brand_guide_approved · approved · by Paul
+Approved version: clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G (sha b8be065916a5)
