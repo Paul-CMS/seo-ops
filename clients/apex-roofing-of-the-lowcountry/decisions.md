@@ -29,6 +29,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 - 2026-10-07T20:10 · run 20261007-194242-discovery-9495 · Gate B Q2 (Paul): option 2a - the rebuilt homepage links all 8 services as H3 links (Paul Exception to BB-313's 5-6). · affects F-023
 - 2026-10-08T07:33 · run 20261008-073331-discovery-a866 · Paul (supersedes the 2026-10-05 reserved variant): the homepage SEO title carries 'Hilton Head Island Metropolitan Area' (Wikipedia article title, a real name); the homepage H1 uses a familiar pool variant - Lowcountry or South Carolina Lowcountry. 'Hilton Head Island-Bluffton-Port Royal Metropolitan Area' moves to the pool. Rules CF-LOCAL-002 (HP-06 vs BB-304): reserved variant in the title, pool variant in the H1. B2 now states service titles 'Service Name - Brand' (Gate B 1a).
 - 2026-10-08T08:08 · run 20261008-080806-discovery-b736 · Paul reconcile choices: 1a street address 6 Sutton Ct on the website, GBP address stays hidden; 2a no travel fee; 3b ask the client whether CertainTeed ShingleMaster is current (stays off the site until confirmed); 4a Ralph Brehany stays owner/author on Paul's direction.
+- 2026-10-08T13:36 · run 20261008-131822-build:blockers-b359 · Paul chose (b): retitle the 8 service pages and /about/ now through Jonie, ahead of the rebuild. Issued H-2026-10-08-08-seo_title (9 titles) and H-2026-10-08-09-h1 (About H1), not flagged as blockers (they do not block crawling or measurement). · affects F-014,F-015
 
 ## Conditions met (system-verified)
 
