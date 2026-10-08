@@ -1,0 +1,564 @@
+{
+  "client": "apex-roofing-of-the-lowcountry",
+  "run": "20261008-134424-build:plan-c61b",
+  "date": "2026-10-08",
+  "pages": [
+    {
+      "id": "svc-roof-repair",
+      "type": "service",
+      "name": "Roof Repair",
+      "url": "https://apexroofingtlc.com/roof-repair/",
+      "group": "Repair and response",
+      "service_variant": "Roof Leak and Damage Repair",
+      "h1": "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+      "keyword": "roof repair",
+      "area_variant": "South Carolina Lowcountry",
+      "title": "Roof Repair - Apex Roofing of the Lowcountry",
+      "the_best": false,
+      "faq_topics": [
+        "What is the 25% rule for roofing?",
+        "How much does a roof repair cost?",
+        "Should I repair or replace my roof?",
+        "Can a roof be repaired in a day?",
+        "Why do so many roof leaks start at the flashing?"
+      ],
+      "claims": [],
+      "link_targets": "all 12 location pages (H3 service-areas table, Finish)"
+    },
+    {
+      "id": "svc-roof-replacement",
+      "type": "service",
+      "name": "Roof Replacement",
+      "url": "https://apexroofingtlc.com/roof-replacement/",
+      "group": "Replacement and new roofs",
+      "service_variant": "Re-Roofing",
+      "h1": "Re-Roofing in Beaufort and Jasper Counties",
+      "keyword": "roof replacement",
+      "area_variant": "Beaufort and Jasper Counties",
+      "title": "Roof Replacement - Apex Roofing of the Lowcountry",
+      "the_best": false,
+      "faq_topics": [
+        "What does a roof replacement cost in South Carolina?",
+        "Should a 20-year-old roof be replaced?",
+        "How long does a roof replacement take?",
+        "What warranty comes with a new roof?"
+      ],
+      "claims": [],
+      "link_targets": "all 12 location pages (H3 service-areas table, Finish)"
+    },
+    {
+      "id": "svc-roof-installation",
+      "type": "service",
+      "name": "Roof Installation",
+      "url": "https://apexroofingtlc.com/roof-installation/",
+      "group": "Replacement and new roofs",
+      "service_variant": "New-Construction Roofing",
+      "h1": "New-Construction Roofing in the South Carolina Lowcountry",
+      "keyword": "roof installation",
+      "area_variant": "South Carolina Lowcountry",
+      "title": "Roof Installation - Apex Roofing of the Lowcountry",
+      "the_best": false,
+      "faq_topics": [
+        "Is drip edge required in South Carolina?",
+        "How long does a new-construction roof take to install?",
+        "Which shingles and underlayment go on a new roof?",
+        "How can I tell if a new roof was installed correctly?"
+      ],
+      "claims": [
+        {
+          "phrase": "New-Construction",
+          "label": "Apex roofs new construction (subcontractor on new builds, W16)",
+          "from": "D:Services subcontracted"
+        }
+      ],
+      "link_targets": "all 12 location pages (H3 service-areas table, Finish)"
+    },
+    {
+      "id": "svc-roof-inspections",
+      "type": "service",
+      "name": "Roof Inspections",
+      "url": "https://apexroofingtlc.com/roof-inspections/",
+      "group": "Repair and response",
+      "service_variant": "Roof Condition Inspections",
+      "h1": "Roof Condition Inspections in Beaufort and Jasper Counties",
+      "keyword": "roof inspection",
+      "area_variant": "Beaufort and Jasper Counties",
+      "title": "Roof Inspections - Apex Roofing of the Lowcountry",
+      "the_best": false,
+      "faq_topics": [
+        "How much does a roof inspection cost?",
+        "What is included in a roof inspection?",
+        "How long should a roof inspection take?",
+        "How often should a roof be inspected?",
+        "Who inspects a roof for storm damage?"
+      ],
+      "claims": [],
+      "link_targets": "all 12 location pages (H3 service-areas table, Finish)"
+    },
+    {
+      "id": "svc-emergency-roof-repair",
+      "type": "service",
+      "name": "Emergency Roof Repair",
+      "url": "https://apexroofingtlc.com/emergency-roof-repair/",
+      "group": "Repair and response",
+      "service_variant": "Storm and Leak Emergency Roofing",
+      "h1": "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+      "keyword": "emergency roof repair",
+      "area_variant": "South Carolina Lowcountry",
+      "title": "Emergency Roof Repair - Apex Roofing of the Lowcountry",
+      "the_best": false,
+      "faq_topics": [
+        "Is a leaking roof an emergency?",
+        "What should I do about a roof leak until the roofer arrives?",
+        "Can a roof leak be repaired while it is raining?",
+        "How much does emergency roof repair cost?"
+      ],
+      "claims": [
+        {
+          "phrase": "emergency",
+          "label": "emergency / after-hours service",
+          "from": "D:Emergency"
+        }
+      ],
+      "link_targets": "all 12 location pages (H3 service-areas table, Finish)"
+    },
+    {
+      "id": "svc-metal-roofing",
+      "type": "service",
+      "name": "Metal Roofing",
+      "url": "https://apexroofingtlc.com/metal-roofing-2/",
+      "group": "Materials and features",
+      "service_variant": "Standing Seam Metal Roofs",
+      "h1": "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+      "keyword": "metal roofing",
+      "area_variant": "Beaufort and Jasper Counties",
+      "title": "Metal Roofing - Apex Roofing of the Lowcountry",
+      "the_best": false,
+      "faq_topics": [
+        "How much does a metal roof cost?",
+        "Is a metal roof worth the extra cost over shingles?",
+        "What are the biggest problems with metal roofs?",
+        "Can a metal roof go over existing shingles?",
+        "How long does a metal roof last, and what does the warranty cover?"
+      ],
+      "claims": [
+        {
+          "phrase": "Standing Seam",
+          "label": "Apex installs standing seam metal (W20 price range)",
+          "from": "D:Price ranges"
+        }
+      ],
+      "link_targets": "all 12 location pages (H3 service-areas table, Finish)"
+    },
+    {
+      "id": "svc-slate-roofing",
+      "type": "service",
+      "name": "Slate Roofing",
+      "url": "https://apexroofingtlc.com/slate-roofing/",
+      "group": "Materials and features",
+      "service_variant": "Natural Slate Roofs",
+      "h1": "Natural Slate Roofs in the South Carolina Lowcountry",
+      "keyword": "slate roofing",
+      "area_variant": "South Carolina Lowcountry",
+      "title": "Slate Roofing - Apex Roofing of the Lowcountry",
+      "the_best": false,
+      "faq_topics": [
+        "How much does a slate roof cost?",
+        "What is the biggest disadvantage of a slate roof?",
+        "How long does a slate roof last?",
+        "Can a slate roof be repaired instead of replaced?",
+        "Can slate go on a low-slope roof?"
+      ],
+      "claims": [
+        {
+          "phrase": "Natural Slate",
+          "label": "Apex installs natural slate (W19 price range)",
+          "from": "D:Price ranges"
+        }
+      ],
+      "link_targets": "all 12 location pages (H3 service-areas table, Finish)"
+    },
+    {
+      "id": "svc-skylights",
+      "type": "service",
+      "name": "Skylights",
+      "url": "https://apexroofingtlc.com/skylights/",
+      "group": "Materials and features",
+      "service_variant": "Skylight Installation",
+      "h1": "Skylight Installation in Beaufort and Jasper Counties",
+      "keyword": "skylight installation",
+      "area_variant": "Beaufort and Jasper Counties",
+      "title": "Skylights - Apex Roofing of the Lowcountry",
+      "the_best": false,
+      "faq_topics": [
+        "How much does it cost to install a skylight?",
+        "What are the downsides of a skylight?",
+        "Are skylights worth it?",
+        "What type of skylight works on a metal roof?",
+        "Do skylights open?"
+      ],
+      "claims": [],
+      "link_targets": "all 12 location pages (H3 service-areas table, Finish)"
+    },
+    {
+      "id": "loc-bluffton",
+      "type": "location",
+      "name": "Bluffton",
+      "url": "https://apexroofingtlc.com/bluffton/",
+      "group": "Beaufort County",
+      "city": "Bluffton",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Bluffton",
+      "keyword": "roofing contractor bluffton sc",
+      "category_variant": "Roofers",
+      "title": "Apex Roofing of the Lowcountry - Roofing Contractor - Bluffton, South Carolina",
+      "the_best": false,
+      "faq_topics": [
+        "Do I need a Town of Bluffton permit to replace my roof?",
+        "What roofing materials are allowed in Old Town Bluffton?",
+        "Do you replace roofs in Palmetto Bluff, Belfair and other gated Bluffton communities?",
+        "Is Apex Roofing of the Lowcountry based in Bluffton?"
+      ],
+      "faq_gaps": 0,
+      "claims": [],
+      "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)"
+    },
+    {
+      "id": "loc-hilton-head-island",
+      "type": "location",
+      "name": "Hilton Head Island",
+      "url": "https://apexroofingtlc.com/hilton-head-island/",
+      "group": "Beaufort County",
+      "city": "Hilton Head Island",
+      "service_variant": "Roofers",
+      "h1": "Roofers on Hilton Head Island",
+      "keyword": "roofing contractor hilton head island sc",
+      "category_variant": "Roofers",
+      "title": "Apex Roofing of the Lowcountry - Roofing Contractor - Hilton Head Island, South Carolina",
+      "the_best": false,
+      "faq_topics": [
+        "Which roofing materials and colors do Hilton Head Island plantation communities approve?",
+        "How does salt air affect roofs on Hilton Head Island?"
+      ],
+      "faq_gaps": 1,
+      "claims": [],
+      "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+    },
+    {
+      "id": "loc-okatie",
+      "type": "location",
+      "name": "Okatie",
+      "url": "https://apexroofingtlc.com/okatie/",
+      "group": "Beaufort County",
+      "city": "Okatie",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Okatie",
+      "keyword": "roofing contractor okatie sc",
+      "category_variant": "Roofers",
+      "title": "Apex Roofing of the Lowcountry - Roofing Contractor - Okatie, South Carolina",
+      "the_best": false,
+      "faq_topics": [
+        "Do you work in Spring Island, Callawassie Island and other Okatie communities?"
+      ],
+      "faq_gaps": 2,
+      "claims": [],
+      "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+    },
+    {
+      "id": "loc-pritchardville",
+      "type": "location",
+      "name": "Pritchardville",
+      "url": "https://apexroofingtlc.com/pritchardville/",
+      "group": "Beaufort County",
+      "city": "Pritchardville",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Pritchardville",
+      "keyword": "roofing contractor pritchardville sc",
+      "category_variant": "Roofers",
+      "title": "Apex Roofing of the Lowcountry - Roofing Contractor - Pritchardville, South Carolina",
+      "the_best": false,
+      "faq_topics": [],
+      "faq_gaps": 3,
+      "claims": [],
+      "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+    },
+    {
+      "id": "loc-beaufort",
+      "type": "location",
+      "name": "Beaufort",
+      "url": "https://apexroofingtlc.com/beaufort/",
+      "group": "Beaufort County",
+      "city": "Beaufort",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Beaufort",
+      "keyword": "roofing contractor beaufort sc",
+      "category_variant": "Roofers",
+      "title": "Apex Roofing of the Lowcountry - Roofing Contractor - Beaufort, South Carolina",
+      "the_best": false,
+      "faq_topics": [
+        "Does a roof replacement in Beaufort's Historic District need review board approval?",
+        "Can a historic Beaufort home get a metal roof?"
+      ],
+      "faq_gaps": 1,
+      "claims": [],
+      "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+    },
+    {
+      "id": "loc-port-royal",
+      "type": "location",
+      "name": "Port Royal",
+      "url": "https://apexroofingtlc.com/port-royal/",
+      "group": "Beaufort County",
+      "city": "Port Royal",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Port Royal",
+      "keyword": "roofing contractor port royal sc",
+      "category_variant": "Roofers",
+      "title": "Apex Roofing of the Lowcountry - Roofing Contractor - Port Royal, South Carolina",
+      "the_best": false,
+      "faq_topics": [
+        "Are there special rules for roofs in Port Royal's Old Village?",
+        "Do you work on homes near Parris Island and in military housing?"
+      ],
+      "faq_gaps": 1,
+      "claims": [],
+      "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+    },
+    {
+      "id": "loc-ladys-island",
+      "type": "location",
+      "name": "Lady's Island",
+      "url": "https://apexroofingtlc.com/ladys-island/",
+      "group": "Beaufort County",
+      "city": "Lady's Island",
+      "service_variant": "Roofers",
+      "h1": "Roofers on Lady's Island",
+      "keyword": "roofing contractor lady's island sc",
+      "category_variant": "Roofers",
+      "title": "Apex Roofing of the Lowcountry - Roofing Contractor - Lady's Island, South Carolina",
+      "the_best": false,
+      "faq_topics": [
+        "Do you re-roof homes on Dataw Island?"
+      ],
+      "faq_gaps": 2,
+      "claims": [],
+      "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+    },
+    {
+      "id": "loc-st-helena-island",
+      "type": "location",
+      "name": "St. Helena Island",
+      "url": "https://apexroofingtlc.com/st-helena-island/",
+      "group": "Beaufort County",
+      "city": "St. Helena Island",
+      "service_variant": "Roofers",
+      "h1": "Roofers on St. Helena Island",
+      "keyword": "roofing contractor st. helena island sc",
+      "category_variant": "Roofers",
+      "title": "Apex Roofing of the Lowcountry - Roofing Contractor - St. Helena Island, South Carolina",
+      "the_best": false,
+      "faq_topics": [
+        "Do you serve Harbor Island homes from St. Helena Island?"
+      ],
+      "faq_gaps": 2,
+      "claims": [],
+      "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+    },
+    {
+      "id": "loc-fripp-island",
+      "type": "location",
+      "name": "Fripp Island",
+      "url": "https://apexroofingtlc.com/fripp-island/",
+      "group": "Beaufort County",
+      "city": "Fripp Island",
+      "service_variant": "Roofers",
+      "h1": "Roofers on Fripp Island",
+      "keyword": "roofing contractor fripp island sc",
+      "category_variant": "Roofers",
+      "title": "Apex Roofing of the Lowcountry - Roofing Contractor - Fripp Island, South Carolina",
+      "the_best": false,
+      "faq_topics": [
+        "How does a roofing crew get onto gated Fripp Island?",
+        "What roofing material holds up best on an oceanfront Fripp Island home?",
+        "Does the Fripp Island property owners' association review roof replacements?"
+      ],
+      "faq_gaps": 0,
+      "claims": [],
+      "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)"
+    },
+    {
+      "id": "loc-hardeeville",
+      "type": "location",
+      "name": "Hardeeville",
+      "url": "https://apexroofingtlc.com/hardeeville/",
+      "group": "Jasper County",
+      "city": "Hardeeville",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Hardeeville",
+      "keyword": "roofing contractor hardeeville sc",
+      "category_variant": "Roofers",
+      "title": "Apex Roofing of the Lowcountry - Roofing Contractor - Hardeeville, South Carolina",
+      "the_best": false,
+      "faq_topics": [
+        "Should I have my new Hardeeville home's roof checked before the builder warranty ends?"
+      ],
+      "faq_gaps": 2,
+      "claims": [],
+      "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+    },
+    {
+      "id": "loc-ridgeland",
+      "type": "location",
+      "name": "Ridgeland",
+      "url": "https://apexroofingtlc.com/ridgeland/",
+      "group": "Jasper County",
+      "city": "Ridgeland",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Ridgeland",
+      "keyword": "roofing contractor ridgeland sc",
+      "category_variant": "Roofers",
+      "title": "Apex Roofing of the Lowcountry - Roofing Contractor - Ridgeland, South Carolina",
+      "the_best": false,
+      "faq_topics": [
+        "Who issues roofing permits in Ridgeland and Jasper County?",
+        "Do Ridgeland homeowners pay more because they are farther from Bluffton?"
+      ],
+      "faq_gaps": 1,
+      "claims": [],
+      "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+    },
+    {
+      "id": "loc-levy",
+      "type": "location",
+      "name": "Levy",
+      "url": "https://apexroofingtlc.com/levy/",
+      "group": "Jasper (to verify) County",
+      "city": "Levy",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Levy",
+      "keyword": "roofing contractor levy sc",
+      "category_variant": "Roofers",
+      "title": "Apex Roofing of the Lowcountry - Roofing Contractor - Levy, South Carolina",
+      "the_best": false,
+      "faq_topics": [],
+      "faq_gaps": 3,
+      "claims": [],
+      "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+    },
+    {
+      "id": "home",
+      "type": "homepage",
+      "name": "Homepage",
+      "url": "https://apexroofingtlc.com/",
+      "h1": "unchanged (locked, BB-313 \u00a73)",
+      "keyword": "roofing company hilton head island metro area",
+      "faq_topics": [
+        "Do you give free estimates?",
+        "Do you offer financing?",
+        "Are you licensed and insured?",
+        "Which towns do you serve?"
+      ],
+      "claims": [],
+      "link_targets": "all 8 services as H3 links (Paul Exception DEC-LOCAL-012)",
+      "keyword_note": "Paul 2026-10-08 choice 1a: metro level; 'hilton head roofing company/contractor' left to loc-hilton-head-island (D-1 resolved)"
+    },
+    {
+      "id": "about",
+      "type": "about",
+      "name": "About",
+      "url": "https://apexroofingtlc.com/about/",
+      "h1": "About Apex Roofing of the Lowcountry (Paul, DEC-LOCAL-015)",
+      "claims": []
+    }
+  ],
+  "batches": [
+    {
+      "id": "pilot",
+      "kind": "service",
+      "label": "Pilot \u2014 Roof Repair + Bluffton",
+      "pages": [
+        "svc-roof-repair",
+        "loc-bluffton"
+      ]
+    },
+    {
+      "id": "s1",
+      "kind": "service",
+      "label": "Service cluster \u2014 core roofing work",
+      "pages": [
+        "svc-roof-replacement",
+        "svc-roof-installation",
+        "svc-roof-inspections",
+        "svc-emergency-roof-repair"
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "service",
+      "label": "Service cluster \u2014 materials and features",
+      "pages": [
+        "svc-metal-roofing",
+        "svc-slate-roofing",
+        "svc-skylights"
+      ]
+    },
+    {
+      "id": "l1",
+      "kind": "location",
+      "label": "Beaufort County \u2014 south of the Broad River",
+      "pages": [
+        "loc-hilton-head-island",
+        "loc-okatie",
+        "loc-pritchardville"
+      ]
+    },
+    {
+      "id": "l2",
+      "kind": "location",
+      "label": "Beaufort County \u2014 Beaufort and the Sea Islands",
+      "pages": [
+        "loc-beaufort",
+        "loc-port-royal",
+        "loc-ladys-island",
+        "loc-st-helena-island",
+        "loc-fripp-island"
+      ]
+    },
+    {
+      "id": "l3",
+      "kind": "location",
+      "label": "Jasper County",
+      "pages": [
+        "loc-hardeeville",
+        "loc-ridgeland",
+        "loc-levy"
+      ]
+    },
+    {
+      "id": "h1",
+      "kind": "homepage",
+      "label": "Homepage and About (last)",
+      "pages": [
+        "home",
+        "about"
+      ]
+    }
+  ],
+  "paul_choices_2026_10_08": {
+    "1": "a \u2014 homepage keyword 'roofing company hilton head island metro area'",
+    "2": "a \u2014 permit FAQ only on Bluffton (Beaufort County) and Ridgeland (Jasper County); HHI, Okatie, Pritchardville jurisdiction FAQs dropped",
+    "3": "b \u2014 'The Best' SERP re-test run (3 queries) \u2014 see the Site Plan \u00a72a",
+    "4": "a \u2014 'Residential Roofer' approved as a category variant (Brand Guide A3 write held \u2014 see Site Plan \u00a76)",
+    "5": "a \u2014 location FAQ gaps sourced in the facts interview at each batch's evidence step"
+  }
+}

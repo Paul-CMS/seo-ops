@@ -50,3 +50,29 @@ Generated from the seo-ops system (clients/apex-roofing-of-the-lowcountry/status
 
 - Decision: **pending**
 
+## Page content approvals
+
+| Page | Type | Decision | By | Date | Human review | Practitioner |
+|---|---|---|---|---|---|---|
+| Roof Repair | service | pending |  |  |  |  |
+| Roof Replacement | service | pending |  |  |  |  |
+| Roof Installation | service | pending |  |  |  |  |
+| Roof Inspections | service | pending |  |  |  |  |
+| Emergency Roof Repair | service | pending |  |  |  |  |
+| Metal Roofing | service | pending |  |  |  |  |
+| Slate Roofing | service | pending |  |  |  |  |
+| Skylights | service | pending |  |  |  |  |
+| Bluffton | location | pending |  |  |  |  |
+| Hilton Head Island | location | pending |  |  |  |  |
+| Okatie | location | pending |  |  |  |  |
+| Pritchardville | location | pending |  |  |  |  |
+| Beaufort | location | pending |  |  |  |  |
+| Port Royal | location | pending |  |  |  |  |
+| Lady's Island | location | pending |  |  |  |  |
+| St. Helena Island | location | pending |  |  |  |  |
+| Fripp Island | location | pending |  |  |  |  |
+| Hardeeville | location | pending |  |  |  |  |
+| Ridgeland | location | pending |  |  |  |  |
+| Levy | location | pending |  |  |  |  |
+| Homepage | homepage | pending |  |  |  |  |
+| About | about | pending |  |  |  |  |

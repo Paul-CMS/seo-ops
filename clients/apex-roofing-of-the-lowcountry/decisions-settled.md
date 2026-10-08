@@ -22,11 +22,14 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **audit** (2026-10-08, Paul (STATUS.md, 2026-10-08)): Audit: 30 findings (3 High, 18 Medium, 9 Low), advisory until the specs are approved; nothing removed or merged.
 - **data** (2026-10-08, Paul (STATUS.md, 2026-10-08)): Data: citations skipped for this audit; Search Console/Analytics not used; local grid from Local Dominator (ranks only).
 - **drive** (2026-10-08, Paul (STATUS.md, 2026-10-08)): Drive: the Finding Register and URL Decision Map stay in the repo only (too large for the Drive connector) until Drive for desktop is set up — `clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/`.
+- **site_plan_open_choices** (2026-10-08, Paul): Paul 2026-10-08 site plan choices: 1a homepage keyword to metro level (roofing company hilton head island metro area); 2a permit FAQ on Bluffton and Ridgeland only (HHI, Okatie, Pritchardville jurisdiction FAQs dropped, FO 275/307 to blog list); 3b The Best SERP re-test run; 4a Residential Roofer approved as a category variant; 5a location FAQ gaps (now 18) sourced in the facts interview at each location batch evidence step
+- **cm020_serp_retest_2026_10_08** (2026-10-08, Paul): CM-020 SERP re-test (Paul yes, spent 0.006 USD, 3 Google top-10 reads from Hilton Head Island): condition 2 fails for Roof Repair (1/10 best titles), Roof Replacement (2/10), Skylights (2/10, mostly out-of-area results); only directory lists use best, Apex not in top 10. No page gets The Best; re-test after launch once pages rank.
 
 ## Open questions — asked once, waiting for an answer
 
 - **wordpress_login** (asked 2026-10-08, waiting on Paul): WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet)
 - **send_the_client_one_question_is_your_cer** (asked 2026-10-08, waiting on Paul): Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Brand Guide D)
 - **synthetic_roofing_offered** (asked 2026-10-08, waiting on Client (via Paul)): Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002)
+- **residential_roofer_a3_write** (asked 2026-10-08, waiting on Paul): Residential Roofer (choice 4a) lives in Brand Guide A3, inside entity_approved (A+B1+B2) and brand_guide_approved (A+D+E+G). Writing it voids both until re-approved. (i) write now and re-approve: /approve apex-roofing-of-the-lowcountry entity_approved brand_guide_approved site_plan; or (ii) use it on the site plan authority and write A3 at the next Brand Guide revision. A3 not edited.
 
 Process defects (reopenings): **0**

@@ -137,10 +137,377 @@
       },
       "at": "2026-10-08T13:29:18-05:00",
       "ts": 1791484158.487642
+    },
+    "site_plan": {
+      "files": {
+        "clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Site Plan - REVIEW.md": "f7b3f00ad9b0"
+      },
+      "at": "2026-10-08T14:25:22-05:00",
+      "ts": 1791487522.143753
     }
   },
-  "pages": {},
-  "build": null,
+  "pages": {
+    "svc-roof-repair": {
+      "state": "planned",
+      "type": "service",
+      "name": "Roof Repair",
+      "url": "https://apexroofingtlc.com/roof-repair/",
+      "group": "Repair and response",
+      "service_variant": "Roof Leak and Damage Repair",
+      "h1": "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+      "claims": []
+    },
+    "svc-roof-replacement": {
+      "state": "planned",
+      "type": "service",
+      "name": "Roof Replacement",
+      "url": "https://apexroofingtlc.com/roof-replacement/",
+      "group": "Replacement and new roofs",
+      "service_variant": "Re-Roofing",
+      "h1": "Re-Roofing in Beaufort and Jasper Counties",
+      "claims": []
+    },
+    "svc-roof-installation": {
+      "state": "planned",
+      "type": "service",
+      "name": "Roof Installation",
+      "url": "https://apexroofingtlc.com/roof-installation/",
+      "group": "Replacement and new roofs",
+      "service_variant": "New-Construction Roofing",
+      "h1": "New-Construction Roofing in the South Carolina Lowcountry",
+      "claims": [
+        {
+          "phrase": "New-Construction",
+          "label": "Apex roofs new construction (subcontractor on new builds, W16)",
+          "from": "D:Services subcontracted"
+        }
+      ]
+    },
+    "svc-roof-inspections": {
+      "state": "planned",
+      "type": "service",
+      "name": "Roof Inspections",
+      "url": "https://apexroofingtlc.com/roof-inspections/",
+      "group": "Repair and response",
+      "service_variant": "Roof Condition Inspections",
+      "h1": "Roof Condition Inspections in Beaufort and Jasper Counties",
+      "claims": []
+    },
+    "svc-emergency-roof-repair": {
+      "state": "planned",
+      "type": "service",
+      "name": "Emergency Roof Repair",
+      "url": "https://apexroofingtlc.com/emergency-roof-repair/",
+      "group": "Repair and response",
+      "service_variant": "Storm and Leak Emergency Roofing",
+      "h1": "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+      "claims": [
+        {
+          "phrase": "emergency",
+          "label": "emergency / after-hours service",
+          "from": "D:Emergency"
+        }
+      ]
+    },
+    "svc-metal-roofing": {
+      "state": "planned",
+      "type": "service",
+      "name": "Metal Roofing",
+      "url": "https://apexroofingtlc.com/metal-roofing-2/",
+      "group": "Materials and features",
+      "service_variant": "Standing Seam Metal Roofs",
+      "h1": "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+      "claims": [
+        {
+          "phrase": "Standing Seam",
+          "label": "Apex installs standing seam metal (W20 price range)",
+          "from": "D:Price ranges"
+        }
+      ]
+    },
+    "svc-slate-roofing": {
+      "state": "planned",
+      "type": "service",
+      "name": "Slate Roofing",
+      "url": "https://apexroofingtlc.com/slate-roofing/",
+      "group": "Materials and features",
+      "service_variant": "Natural Slate Roofs",
+      "h1": "Natural Slate Roofs in the South Carolina Lowcountry",
+      "claims": [
+        {
+          "phrase": "Natural Slate",
+          "label": "Apex installs natural slate (W19 price range)",
+          "from": "D:Price ranges"
+        }
+      ]
+    },
+    "svc-skylights": {
+      "state": "planned",
+      "type": "service",
+      "name": "Skylights",
+      "url": "https://apexroofingtlc.com/skylights/",
+      "group": "Materials and features",
+      "service_variant": "Skylight Installation",
+      "h1": "Skylight Installation in Beaufort and Jasper Counties",
+      "claims": []
+    },
+    "loc-bluffton": {
+      "state": "planned",
+      "type": "location",
+      "name": "Bluffton",
+      "url": "https://apexroofingtlc.com/bluffton/",
+      "group": "Beaufort County",
+      "city": "Bluffton",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Bluffton",
+      "claims": []
+    },
+    "loc-hilton-head-island": {
+      "state": "planned",
+      "type": "location",
+      "name": "Hilton Head Island",
+      "url": "https://apexroofingtlc.com/hilton-head-island/",
+      "group": "Beaufort County",
+      "city": "Hilton Head Island",
+      "service_variant": "Roofers",
+      "h1": "Roofers on Hilton Head Island",
+      "claims": []
+    },
+    "loc-okatie": {
+      "state": "planned",
+      "type": "location",
+      "name": "Okatie",
+      "url": "https://apexroofingtlc.com/okatie/",
+      "group": "Beaufort County",
+      "city": "Okatie",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Okatie",
+      "claims": []
+    },
+    "loc-pritchardville": {
+      "state": "planned",
+      "type": "location",
+      "name": "Pritchardville",
+      "url": "https://apexroofingtlc.com/pritchardville/",
+      "group": "Beaufort County",
+      "city": "Pritchardville",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Pritchardville",
+      "claims": []
+    },
+    "loc-beaufort": {
+      "state": "planned",
+      "type": "location",
+      "name": "Beaufort",
+      "url": "https://apexroofingtlc.com/beaufort/",
+      "group": "Beaufort County",
+      "city": "Beaufort",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Beaufort",
+      "claims": []
+    },
+    "loc-port-royal": {
+      "state": "planned",
+      "type": "location",
+      "name": "Port Royal",
+      "url": "https://apexroofingtlc.com/port-royal/",
+      "group": "Beaufort County",
+      "city": "Port Royal",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Port Royal",
+      "claims": []
+    },
+    "loc-ladys-island": {
+      "state": "planned",
+      "type": "location",
+      "name": "Lady's Island",
+      "url": "https://apexroofingtlc.com/ladys-island/",
+      "group": "Beaufort County",
+      "city": "Lady's Island",
+      "service_variant": "Roofers",
+      "h1": "Roofers on Lady's Island",
+      "claims": []
+    },
+    "loc-st-helena-island": {
+      "state": "planned",
+      "type": "location",
+      "name": "St. Helena Island",
+      "url": "https://apexroofingtlc.com/st-helena-island/",
+      "group": "Beaufort County",
+      "city": "St. Helena Island",
+      "service_variant": "Roofers",
+      "h1": "Roofers on St. Helena Island",
+      "claims": []
+    },
+    "loc-fripp-island": {
+      "state": "planned",
+      "type": "location",
+      "name": "Fripp Island",
+      "url": "https://apexroofingtlc.com/fripp-island/",
+      "group": "Beaufort County",
+      "city": "Fripp Island",
+      "service_variant": "Roofers",
+      "h1": "Roofers on Fripp Island",
+      "claims": []
+    },
+    "loc-hardeeville": {
+      "state": "planned",
+      "type": "location",
+      "name": "Hardeeville",
+      "url": "https://apexroofingtlc.com/hardeeville/",
+      "group": "Jasper County",
+      "city": "Hardeeville",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Hardeeville",
+      "claims": []
+    },
+    "loc-ridgeland": {
+      "state": "planned",
+      "type": "location",
+      "name": "Ridgeland",
+      "url": "https://apexroofingtlc.com/ridgeland/",
+      "group": "Jasper County",
+      "city": "Ridgeland",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Ridgeland",
+      "claims": []
+    },
+    "loc-levy": {
+      "state": "planned",
+      "type": "location",
+      "name": "Levy",
+      "url": "https://apexroofingtlc.com/levy/",
+      "group": "Jasper (to verify) County",
+      "city": "Levy",
+      "service_variant": "Roofers",
+      "h1": "Roofers in Levy",
+      "claims": []
+    },
+    "home": {
+      "state": "planned",
+      "type": "homepage",
+      "name": "Homepage",
+      "url": "https://apexroofingtlc.com/",
+      "h1": "unchanged (locked, BB-313 §3)",
+      "claims": []
+    },
+    "about": {
+      "state": "planned",
+      "type": "about",
+      "name": "About",
+      "url": "https://apexroofingtlc.com/about/",
+      "h1": "About Apex Roofing of the Lowcountry (Paul, DEC-LOCAL-015)",
+      "claims": []
+    }
+  },
+  "build": {
+    "site_plan": {
+      "file": "clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Site Plan - REVIEW.md",
+      "approval": null
+    },
+    "batches": [
+      {
+        "id": "pilot",
+        "kind": "service",
+        "label": "Pilot — Roof Repair + Bluffton",
+        "pages": [
+          "svc-roof-repair",
+          "loc-bluffton"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "files": {}
+      },
+      {
+        "id": "s1",
+        "kind": "service",
+        "label": "Service cluster — core roofing work",
+        "pages": [
+          "svc-roof-replacement",
+          "svc-roof-installation",
+          "svc-roof-inspections",
+          "svc-emergency-roof-repair"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "files": {}
+      },
+      {
+        "id": "s2",
+        "kind": "service",
+        "label": "Service cluster — materials and features",
+        "pages": [
+          "svc-metal-roofing",
+          "svc-slate-roofing",
+          "svc-skylights"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "files": {}
+      },
+      {
+        "id": "l1",
+        "kind": "location",
+        "label": "Beaufort County — south of the Broad River",
+        "pages": [
+          "loc-hilton-head-island",
+          "loc-okatie",
+          "loc-pritchardville"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "files": {}
+      },
+      {
+        "id": "l2",
+        "kind": "location",
+        "label": "Beaufort County — Beaufort and the Sea Islands",
+        "pages": [
+          "loc-beaufort",
+          "loc-port-royal",
+          "loc-ladys-island",
+          "loc-st-helena-island",
+          "loc-fripp-island"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "files": {}
+      },
+      {
+        "id": "l3",
+        "kind": "location",
+        "label": "Jasper County",
+        "pages": [
+          "loc-hardeeville",
+          "loc-ridgeland",
+          "loc-levy"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "files": {}
+      },
+      {
+        "id": "h1",
+        "kind": "homepage",
+        "label": "Homepage and About (last)",
+        "pages": [
+          "home",
+          "about"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "files": {}
+      }
+    ],
+    "pilot_corrections_applied": null
+  },
   "audit_steps": {
     "S01": {
       "outcome": "done",
@@ -329,16 +696,16 @@
     }
   },
   "last_run": {
-    "run_id": "20261008-131822-build:blockers-b359",
-    "command": "build:blockers",
-    "finished": "2026-10-08T13:36:41-05:00",
-    "result": "Technical blocker checklist complete: 7 handoffs to Jonie (46 rows). High findings F-014/F-015/F-022 will be fixed in the rebuild. Choice (b): service and About page titles are being retitled now (H-08/H-09). Site plan can proceed in parallel.",
-    "changes": 56,
-    "step": "build:blockers",
+    "run_id": "20261008-134424-build:plan-c61b",
+    "command": "build:plan",
+    "finished": "2026-10-08T14:27:16-05:00",
+    "result": "Site plan complete for all 20 service and location pages. Keywords assigned, H1 decisions settled (no 'The Best'), 37 service and 19 location FAQs with no repeats. Town FAQ gaps (18 slots) to be sourced in facts interviews. Google 'best' check run: no page qualifies (competitors don't rank with 'best'). Batches: pilot (Roof Repair + Bluffton) → s1/s2 (services) → l1/l2/l3 (locations) → home/about.",
+    "changes": 49,
+    "step": "build:plan",
     "batch": null
   },
   "spend": {
-    "dataforseo_usd": 0.585961
+    "dataforseo_usd": 0.591961
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
@@ -355,7 +722,7 @@
     "next": "We are planning every service and location page."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-08T13:36:41-05:00",
+  "updated": "2026-10-08T14:27:16-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -417,8 +784,8 @@
     }
   },
   "review_pause": {
-    "run_id": "20261008-131822-build:blockers-b359",
-    "step": "build:blockers",
-    "at": "2026-10-08T13:36:41-05:00"
+    "run_id": "20261008-134424-build:plan-c61b",
+    "step": "build:plan",
+    "at": "2026-10-08T14:27:16-05:00"
   }
 }
