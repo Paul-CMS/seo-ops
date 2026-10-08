@@ -1938,13 +1938,34 @@ SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_p
              t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_migration, t_sessions, t_guard_rewrite]
 
 
+def extra_scenarios():
+    """tests/checks/*.py: each module's SCENARIOS, called with this harness as h."""
+    import importlib.util
+    import types
+    h = types.SimpleNamespace(SB=SB, sh=sh, check=check, status=status, Agent=Agent, paul=paul,
+                              new_session=new_session, nxt=nxt)
+    out = []
+    for f in sorted((REPO / "tests" / "checks").glob("*.py")):
+        if f.name.startswith("_"):
+            continue
+        spec = importlib.util.spec_from_file_location(f"checks_{f.stem}", f)
+        m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+        for fn in getattr(m, "SCENARIOS", []):
+            def run(fn=fn):
+                h.SB = SB
+                fn(h)
+            run.__name__ = f"t_{f.stem}_{fn.__name__.lstrip('t_')}"
+            out.append(run)
+    return out
+
+
 def main():
     keep = "--keep" in sys.argv
     only = sys.argv[sys.argv.index("-k") + 1] if "-k" in sys.argv else None
     make_sandbox()
     new_session()
     try:
-        for t in SCENARIOS:
+        for t in SCENARIOS + extra_scenarios():
             if only and only not in t.__name__:
                 continue
             print(f"\n{t.__name__[2:].replace('_', ' ')}")
