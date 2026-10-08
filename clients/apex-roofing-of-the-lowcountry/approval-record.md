@@ -17,7 +17,12 @@ Generated from the seo-ops system (clients/apex-roofing-of-the-lowcountry/status
 
 ## Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)
 
-- Decision: **pending**
+- Decision: **approved**
+- Decided by: Paul · 2026-10-08T07:43:38-05:00
+- Approved version: `clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Finding Register - REVIEW.md` (sha 962665eb263e)
+- Approved version: `clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - URL Decision Map - REVIEW.md` (sha 38f22236658e)
+- Approved version: `clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Recommendations - REVIEW.md` (sha c4a2bebda187)
+- Approved version: `clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Evidence Manifest - REVIEW.md` (sha 6c2076437ccc)
 
 ## Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 

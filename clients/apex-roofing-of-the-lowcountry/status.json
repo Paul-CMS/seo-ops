@@ -46,7 +46,17 @@
       }
     },
     "audit_approved": {
-      "state": "pending"
+      "state": "approved",
+      "by": "Paul",
+      "at": "2026-10-08T07:43:38-05:00",
+      "note": null,
+      "conditions": [],
+      "files": {
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Finding Register - REVIEW.md": "962665eb263e",
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - URL Decision Map - REVIEW.md": "38f22236658e",
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Recommendations - REVIEW.md": "c4a2bebda187",
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Evidence Manifest - REVIEW.md": "6c2076437ccc"
+      }
     },
     "brand_guide_approved": {
       "state": "pending"
@@ -312,13 +322,14 @@
     "done": [
       "We confirmed how search engines should understand your business",
       "We prepared a fact sheet for you to confirm",
-      "You returned the fact sheet — thank you"
+      "You returned the fact sheet — thank you",
+      "We finished reviewing your website"
     ],
     "waiting_on_client": [],
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-08T07:40:48-05:00",
+  "updated": "2026-10-08T07:43:38-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -342,10 +353,5 @@
       "checked": "2026-10-07",
       "source": "DataforSEO Business Data"
     }
-  },
-  "review_pause": {
-    "run_id": "20261008-073627-discovery-2c41",
-    "step": "discovery:audit",
-    "at": "2026-10-08T07:40:48-05:00"
   }
 }
