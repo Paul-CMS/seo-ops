@@ -1,0 +1,10 @@
+service_id,service,source,url,url_status,notes
+SVC-1,Roof Repair,Paul 2026-10-06 (keep all 8),https://apexroofingtlc.com/roof-repair/,200,
+SVC-2,Roof Replacement,Paul 2026-10-06 (keep all 8),https://apexroofingtlc.com/roof-replacement/,200,
+SVC-3,Roof Installation,Paul 2026-10-06 (keep all 8),https://apexroofingtlc.com/roof-installation/,200,
+SVC-4,Roof Inspections,Paul 2026-10-06 (keep all 8),https://apexroofingtlc.com/roof-inspections/,200,
+SVC-5,Emergency Roof Repair,Paul 2026-10-06 (keep all 8),https://apexroofingtlc.com/emergency-roof-repair/,200,
+SVC-6,Metal Roofing,Paul 2026-10-06 (keep all 8),https://apexroofingtlc.com/metal-roofing-2/,200,slug '-2' (F-010)
+SVC-7,Slate Roofing,Paul 2026-10-06 (keep all 8),https://apexroofingtlc.com/slate-roofing/,200,
+SVC-8,Skylights,Paul 2026-10-06 (keep all 8),https://apexroofingtlc.com/skylights/,200,
+—,Synthetic roofing,not in the confirmed list; H3 on /roof-replacement/; old URL /services/synthetic-roofing/ → 404,—,404,F-009; client to confirm whether offered

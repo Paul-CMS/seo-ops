@@ -95,6 +95,16 @@
       },
       "at": "2026-10-07T15:20:20-05:00",
       "ts": 1791404420.603759
+    },
+    "audit_deliverables": {
+      "files": {
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Finding Register - REVIEW.md": "4f2b9dbed61b",
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - URL Decision Map - REVIEW.md": "5e01528c2719",
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Recommendations - REVIEW.md": "5f4ed4ede423",
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Evidence Manifest - REVIEW.md": "4324edc55130"
+      },
+      "at": "2026-10-07T20:24:55-05:00",
+      "ts": 1791422695.165568
     }
   },
   "pages": {},
@@ -221,14 +231,77 @@
       ],
       "at": "2026-10-07T16:59:09-05:00",
       "run": "20261007-154441-discovery-64db"
+    },
+    "S12": {
+      "outcome": "done",
+      "reason": "Ingest + cross-checks: 13/13 crawl exports recognised, manifest SRC-001-027; crosscheck: rendering LIMITATION (standing config), coverage CONFIRMED; nothing CONTRADICTED",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/00-crosschecks.md"
+      ],
+      "at": "2026-10-07T20:00:51-05:00",
+      "run": "20261007-194242-discovery-9495"
+    },
+    "S13": {
+      "outcome": "done",
+      "reason": "Entity: site vs Brand Guide (triple, NAP, brand forms, GBP field, schema readiness) - findings F-001 to F-008",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/findings.csv"
+      ],
+      "at": "2026-10-07T20:01:01-05:00",
+      "run": "20261007-194242-discovery-9495"
+    },
+    "S14": {
+      "outcome": "done",
+      "reason": "URL Decision Map: 83 rows (72 crawled + 2 sitemap-only + 1 backlink-only + 2 host variants + 6 noindexed archives); no CM-019 candidate (conditions 3-4 unmet everywhere); 1 Needs Evidence slug change, 1 redirect fix",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/url-decision-map.csv"
+      ],
+      "at": "2026-10-07T20:01:01-05:00",
+      "run": "20261007-194242-discovery-9495"
+    },
+    "S15": {
+      "outcome": "done",
+      "reason": "Conformance scorecards for 46 spec'd pages (homepage, 8 service, 12 location, about, 24 posts); all specs DRAFT (advisory); utility pages have no spec",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/inventories/conformance-scorecard-service.csv"
+      ],
+      "at": "2026-10-07T20:01:02-05:00",
+      "run": "20261007-194242-discovery-9495"
+    },
+    "S16": {
+      "outcome": "done",
+      "reason": "Technical findings F-009, F-027, F-029, F-030, F-031, F-033 (Low, one batch) - redirect to 404, internal links to redirects, sitemap redirects, separators, meta descriptions, alt text",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/findings.csv"
+      ],
+      "at": "2026-10-07T20:01:02-05:00",
+      "run": "20261007-194242-discovery-9495"
+    },
+    "S17": {
+      "outcome": "done",
+      "reason": "Fresh-context review: 21 confirmed, 9 revised, 3 withdrawn; High 3 / Medium 17 / Low 10; map 3 rows corrected",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/review-s17.csv"
+      ],
+      "at": "2026-10-07T20:20:01-05:00",
+      "run": "20261007-194242-discovery-9495"
+    },
+    "S18": {
+      "outcome": "done",
+      "reason": "Rendered Finding Register, URL Decision Map, Recommendations, Evidence Manifest (REVIEW) from the latest revision of each finding (30 active: High 3, Medium 17, Low 10; 3 withdrawn listed). Recommendations and Evidence Manifest uploaded to Drive Deliverables; Finding Register (87 KB) and URL Decision Map (40 KB) kept local - too large to paste reliably",
+      "outputs": [
+        "clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Recommendations - REVIEW.md"
+      ],
+      "at": "2026-10-07T20:23:06-05:00",
+      "run": "20261007-194242-discovery-9495"
     }
   },
   "last_run": {
-    "run_id": "20261007-170552-discovery-4092",
+    "run_id": "20261007-194242-discovery-9495",
     "command": "discovery",
-    "finished": "2026-10-07T17:31:09-05:00",
-    "result": "People Also Ask extended to all 12 towns: 140 questions routed ($0.20)",
-    "changes": 2
+    "finished": "2026-10-07T20:25:32-05:00",
+    "result": "Audit S12-S18: 30 findings (3 High, 17 Medium, 10 Low, all spec-based advisory), URL Decision Map 83 rows, no removals; reviewed in a fresh context",
+    "changes": 9
   },
   "spend": {
     "dataforseo_usd": 0.585961
@@ -245,20 +318,13 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-07T19:42:42-05:00",
-  "open_runs": {
-    "20261007-194242-discovery-9495": {
-      "step": "discovery:audit",
-      "batch": null,
-      "page": null,
-      "started": "2026-10-07T19:42:42-05:00",
-      "started_ts": 1791420162.678229
-    }
-  },
+  "updated": "2026-10-07T20:25:32-05:00",
+  "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
     "wordpress_connected": "2026-10-05T22:33:28-05:00",
-    "proof_sheet_returned": "2026-10-07T15:20:21-05:00"
+    "proof_sheet_returned": "2026-10-07T15:20:21-05:00",
+    "audit_steps_complete": "2026-10-07T20:25:32-05:00"
   },
   "wordpress": {
     "check": {
@@ -276,5 +342,10 @@
       "checked": "2026-10-07",
       "source": "DataforSEO Business Data"
     }
+  },
+  "review_pause": {
+    "run_id": "20261007-194242-discovery-9495",
+    "step": "discovery:audit",
+    "at": "2026-10-07T20:25:32-05:00"
   }
 }

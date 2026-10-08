@@ -1,6 +1,6 @@
 # Apex Roofing of the Lowcountry - Document Checklist
 
-Generated 2026-10-07T17:31 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-07T20:25 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -20,19 +20,19 @@ Generated 2026-10-07T17:31 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S19 People Also Ask: core services × primary city + top 3 cities, capped ( | done | PAA: 96 queries (8 services x 12 towns), 140 distinct questions routed - 76 service FAQ, 2 location FAQ (Lady's Island, Fripp Island), 28 blog topic, 34 drop; first 50 routes carried over unchanged |
 | [x] | S20 SEOPress site-wide settings (title templates, sitemap, noindexed post  | done | Readable during /wp-check 2026-10-05 (Administrator login); saved as evidence |
 | [x] | S21 Query fan-out (CM-045): core services × primary city + top 3 cities, c | done | 10 seeds, 379 queries routed: 269 service H2/FAQ (about 75 head terms), 35 location FAQ, 55 blog topic, 20 drop; 2 PAA repeats route with PAA; no volumes (CM-012) |
-| [ ] | S12 Ingest + cross-checks | — |  |
-| [ ] | S13 Entity analysis: site vs Brand Guide (triple, NAP, brand search, suppo | — |  |
-| [ ] | S14 Architecture: every page typed, keep/merge/redirect per CM-019 | — |  |
-| [ ] | S15 Page conformance: every page scored against its spec (check IDs HP/SVC | — |  |
-| [ ] | S16 Technical findings (Low batched into one handoff) | — |  |
-| [ ] | S17 Fresh-context review of Finding Register + URL Decision Map | — |  |
-| [ ] | S18 Render deliverables | — |  |
+| [x] | S12 Ingest + cross-checks | done | Ingest + cross-checks: 13/13 crawl exports recognised, manifest SRC-001-027; crosscheck: rendering LIMITATION (standing config), coverage CONFIRMED; nothing CONTRADICTED |
+| [x] | S13 Entity analysis: site vs Brand Guide (triple, NAP, brand search, suppo | done | Entity: site vs Brand Guide (triple, NAP, brand forms, GBP field, schema readiness) - findings F-001 to F-008 |
+| [x] | S14 Architecture: every page typed, keep/merge/redirect per CM-019 | done | URL Decision Map: 83 rows (72 crawled + 2 sitemap-only + 1 backlink-only + 2 host variants + 6 noindexed archives); no CM-019 candidate (conditions 3-4 unmet everywhere); 1 Needs Evidence slug change, 1 redirect fix |
+| [x] | S15 Page conformance: every page scored against its spec (check IDs HP/SVC | done | Conformance scorecards for 46 spec'd pages (homepage, 8 service, 12 location, about, 24 posts); all specs DRAFT (advisory); utility pages have no spec |
+| [x] | S16 Technical findings (Low batched into one handoff) | done | Technical findings F-009, F-027, F-029, F-030, F-031, F-033 (Low, one batch) - redirect to 404, internal links to redirects, sitemap redirects, separators, meta descriptions, alt text |
+| [x] | S17 Fresh-context review of Finding Register + URL Decision Map | done | Fresh-context review: 21 confirmed, 9 revised, 3 withdrawn; High 3 / Medium 17 / Low 10; map 3 rows corrected |
+| [x] | S18 Render deliverables | done | Rendered Finding Register, URL Decision Map, Recommendations, Evidence Manifest (REVIEW) from the latest revision of each finding (30 active: High 3, Medium 17, Low 10; 3 withdrawn listed). Recommendations and Evidence Manifest uploaded to Drive Deliverables; Finding Register (87 KB) and URL Decision Map (40 KB) kept local - too large to paste reliably |
 
 ## Conditions
 
 - [x] Client set up (/new-client finished)
 - [x] The client returned the proof sheet (the returned sheet is recorded)
-- [ ] Every registered audit step has an outcome (Done / Skipped / Failed) — audit steps with no outcome yet: S12, S13, S14, S15, S16, S17, S18
+- [x] Every registered audit step has an outcome (Done / Skipped / Failed)
 - [ ] Every page in the site plan is built, verified and written back — no site plan yet
 - [x] WordPress connected (/wp-check passed in the last 30 days)
 

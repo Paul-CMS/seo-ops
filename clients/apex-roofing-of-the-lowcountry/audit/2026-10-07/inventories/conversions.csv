@@ -1,0 +1,4 @@
+conversion,where,evidence,status
+Phone call (843) 757-2739,tel: links on every page,live captures,not measurable — no GA4/call tracking (S11 skipped)
+Estimate request form,"/contact/ (WPForms, JavaScript)",live capture /contact/,not testable in a basic crawl; delivery not verified — limitation
+'Leave A Review' link,footer → share.google/r8Uke1EDnb1SsIZGq,live captures,n/a

@@ -1,0 +1,38 @@
+register,id,reviewed_revision,outcome,new_revision,severity_before,severity_after,reason
+findings,F-001,1,revised,2,Medium,Medium,"Georgia and ""homes and businesses"" contradictions stand; MCRD/on-base FAQ answer is residential (rev 1 missed the qualifier) -> client-confirmation item; Victorian-era commercial line removed (describes town, not customers)."
+findings,F-002,1,revised,2,Medium,Medium,"Item (h) Levy financing withdrawn: client confirmed Hearth financing on the returned sheet (Message 2); Levy dropped from URLs; alternative-tested updated (financing, warranties confirmed)."
+findings,F-003,1,confirmed,,Low,Low,"Sampled: utility titles ""of The Lowcountry"" confirmed in page_titles_all."
+findings,F-004,2,revised,3,High,Medium,"Area term is the approved metro-area entity in abbreviated pool-variant form, not a city: wording correction (HP-03, B1 assignment), not an entity break (CM-028). Merges F-005."
+findings,F-005,1,withdrawn,2,Medium,N/A,"Merged into F-004 rev 3 (same title, same fix); state-name part not carried (BB-302 homepage format has no state element)."
+findings,F-006,1,withdrawn,2,Medium,N/A,H1 using a pool variant is what BB-304 requires when B1 puts the reserved variant in the title; HP-06 wording conflicts with BB-304 (flag to Paul); H1 locked; record task moved to F-011.
+findings,F-007,1,confirmed,,Medium,Medium,Scoped to served HTML with the JS alternative stated; recommendation is constructive (Finish). Not a JS-rendered-data defect.
+findings,F-008,1,confirmed,,Low,Low,Redirect and GBP field evidence consistent; RULE-005 applied correctly.
+findings,F-009,1,confirmed,,Low,Low,301 -> 404 reproducible; repairing a redirect to a 404 removes no live page (constructive); map Client Confirmed corrected to No.
+findings,F-010,1,confirmed,,Medium,Medium,"CM-019 recorded as Needs Evidence (citations unknown, leads not asked); safer alternative present; publication gate blocked."
+findings,F-011,1,revised,2,Medium,Medium,"Condition 1 (demand) passes for roof-repair, roof-replacement, skylights (near-me vol 10); condition 2 unmeasured everywhere; proof not yet in Section D (CM-027). Not a missing-""The Best"" finding."
+findings,F-012,1,revised,2,Medium,Medium,"Merged with F-013 (same title->H1 repetition, 14 of 15 URLs overlap); now 15 URLs; strip test re-run from crawl exports."
+findings,F-013,1,withdrawn,2,Medium,N/A,Merged into F-012 rev 2.
+findings,F-014,2,confirmed,,High,High,Re-derived from page_titles_all (8 brand-first titles with area term); Paul Q1 = 1a; specs/README lists wrong title entity order as High. Advisory while spec is DRAFT.
+findings,F-015,1,revised,2,High,High,"High kept on ABT-01 (title has neither area nor category; BB-302 About format); H1 part (ABT-04) and ""Area Category"" meaning are Coastal defaults -> advisory at Low until Paul rules."
+findings,F-016,1,revised,2,Medium,Low,Owner/founder section is a Coastal default in about.md -> never above Low until Paul rules (specs/README).
+findings,F-017,1,confirmed,,Medium,Medium,Sampled 5 openings: unfinished sentences and missing phone confirmed.
+findings,F-018,1,confirmed,,Medium,Medium,Sampled roof-repair H2 list: no delivery H2; CTA as H2.
+findings,F-019,1,confirmed,,Medium,Medium,Map not asserted (JS caveat stated).
+findings,F-020,1,confirmed,,Medium,Medium,Consistent with Paul GBP address-hidden decision.
+findings,F-021,1,confirmed,,Medium,Medium,Applies Paul FAQ note (DEC-LOCAL-004) without re-routing; alternative (county permit differences) handled.
+findings,F-022,1,confirmed,,High,High,Re-derived from service captures: city names in FAQ H3s on 6 service pages. BB-314 / BB-307 explicit; breaks the service/location entity separation. Advisory while spec is DRAFT.
+findings,F-023,2,confirmed,,Medium,Medium,HP-11 closed by Paul Exception DEC-LOCAL-012; JS widgets not asserted.
+findings,F-024,1,confirmed,,Medium,Medium,Sampled Levy list (corridors as H3s); Palmetto Hall kept as Working Hypothesis.
+findings,F-025,1,confirmed,,Medium,Medium,Heading-level skips confirmed in captures.
+findings,F-026,1,revised,2,Medium,Medium,"Recount: 22 of 24 fail (19 no brand, 3 separator/short-brand); moisture-in-attic and indoor-air-quality pass (full brand) - removed from URLs."
+findings,F-027,1,confirmed,,Low,Low,CM-014 consistency is the finding; separators confirmed in page_titles_all.
+findings,F-028,1,confirmed,,Medium,Medium,"8 webwritter007 posts confirmed; owner default per CM-039 and Paul (father = owner, no titles)."
+findings,F-029,1,confirmed,,Low,Low,"150-160 is the spec meta standard (WC-C2), not a tool label."
+findings,F-030,1,confirmed,,Low,Low,Redirecting internal links; safe fix.
+findings,F-031,1,revised,2,Low,Low,"""Unpublish to draft"" removed: could disable post-level redirects (one old URL has a backlink) without a CM-019 check; sitemap exclusion only."
+findings,F-032,1,confirmed,,Low,Low,HP-17 Low per spec.
+findings,F-033,1,confirmed,,Low,Low,Tool label (no_image_alt) not used for severity; decorative caveat stated.
+url-decision-map,U-001,,revised,,,,Proposed Action now cites F-004 rev 3 (F-005 merged); Traffic cell cites F-011 (F-006 withdrawn).
+url-decision-map,U-070,,revised,,,,"Client Confirmed ""Yes"" -> ""No — needed"" (F-009 target choice not yet confirmed by the client; CM-016/RULE-010)."
+url-decision-map,U-071,,revised,,,,"Client Confirmed ""Yes"" -> ""No — needed"" (same reason)."
+url-decision-map,ALL,,confirmed,,,,83 rows; every internal URL in inventories/urls.csv has a row (only 9 external URLs absent) plus 3 sitemap/legacy URLs; no destructive candidate; Needs Evidence on U-030/U-062 correct (CM-019).
