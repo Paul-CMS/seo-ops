@@ -87,10 +87,10 @@
     "entity_record": {
       "files": {
         "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md": "76a048adc3f7",
-        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2": "d5673fb2dcf3"
+        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2": "c13141e1df7d"
       },
-      "at": "2026-10-08T07:34:11-05:00",
-      "ts": 1791462851.825239
+      "at": "2026-10-08T07:59:03-05:00",
+      "ts": 1791464343.868296
     },
     "proof_sheet": {
       "files": {
@@ -115,6 +115,13 @@
       },
       "at": "2026-10-08T07:38:16-05:00",
       "ts": 1791463096.9666932
+    },
+    "reconciled": {
+      "files": {
+        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G": "1265196d5d53"
+      },
+      "at": "2026-10-08T07:59:01-05:00",
+      "ts": 1791464341.094178
     }
   },
   "pages": {},
@@ -307,11 +314,11 @@
     }
   },
   "last_run": {
-    "run_id": "20261008-073627-discovery-2c41",
+    "run_id": "20261008-075515-discovery-24a2",
     "command": "discovery",
-    "finished": "2026-10-08T07:40:48-05:00",
-    "result": "Audit deliverables revised to Paul's rulings (homepage title/H1, About page, advisory); 30 findings: 3 High, 18 Medium, 9 Low",
-    "changes": 4
+    "finished": "2026-10-08T08:00:06-05:00",
+    "result": "Brand Guide reconciled (client + Paul answers); entity re-approval needed; 4 open choices for Paul",
+    "changes": 1
   },
   "spend": {
     "dataforseo_usd": 0.585961
@@ -329,16 +336,8 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-08T07:55:15-05:00",
-  "open_runs": {
-    "20261008-075515-discovery-24a2": {
-      "step": "discovery:reconcile",
-      "batch": null,
-      "page": null,
-      "started": "2026-10-08T07:55:15-05:00",
-      "started_ts": 1791464115.599584
-    }
-  },
+  "updated": "2026-10-08T08:00:06-05:00",
+  "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
     "wordpress_connected": "2026-10-05T22:33:28-05:00",
@@ -361,5 +360,10 @@
       "checked": "2026-10-07",
       "source": "DataforSEO Business Data"
     }
+  },
+  "review_pause": {
+    "run_id": "20261008-075515-discovery-24a2",
+    "step": "discovery:reconcile",
+    "at": "2026-10-08T08:00:06-05:00"
   }
 }

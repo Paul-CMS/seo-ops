@@ -16,17 +16,17 @@ publication.
 
 | # | Field | Value | Status |
 |---|---|---|---|
-| 1 | Brand entity (GBP name, exactly) | Apex Roofing of the Lowcountry | Proposed (Discovery 2026-10-05) — awaits entity_approved · name forms differ across sources (Discovery Record C5) |
-| 2 | GBP primary category = the category entity | Roofing contractor — Wikipedia: https://en.wikipedia.org/wiki/Roofer (lead names "roofing contractor") | Proposed (Discovery 2026-10-05) — awaits entity_approved · secondary categories Unknown `[NEED]` |
-| 3 | Category variants (4–6) | Roofing Contractor · Roofer · Roofers (all Wikipedia). Excluded by Paul 2026-10-05: Roof Mechanic. Candidate only, not approved: Residential Roofer (site wording, not Wikipedia; see C4) | Revised per Paul 2026-10-05 — awaits entity_approved · 3 variants, below the template's 4–6 |
-| 4 | Storefront or SAB | SAB (intake; no address on the public GBP) | Internally Verified |
-| 5 | Area entity | Hilton Head Island–Bluffton–Port Royal, SC Metropolitan Statistical Area — Wikipedia: https://en.wikipedia.org/wiki/Hilton_Head_Island_metropolitan_area | Revised per Paul 2026-10-05 (2nd) — awaits entity_approved · the brand name already carries "Lowcountry" into every SEO title, so the SEO title takes the metro area · BB-105 smallest container · Georgia not served (Paul 2026-10-05, C1) |
-| 6 | Area variants (3–5) | Hilton Head Island Metropolitan Area (reserved, homepage SEO title) · Hilton Head Island–Bluffton–Port Royal Metropolitan Area · South Carolina Lowcountry · Lowcountry · Beaufort and Jasper Counties | Revised per Paul 2026-10-08 — awaits entity re-approval · "Lowcountry" variants never added in an SEO title (see B2) |
+| 1 | Brand entity (GBP name, exactly) | Apex Roofing of the Lowcountry — the public-facing name everywhere ("LLC" dropped; Paul 2026-10-06, Discovery Record C5) | Paul Approved 2026-10-06 (public name) · entity_approved 2026-10-08 · was: Proposed — name forms differ across sources (C5) |
+| 2 | GBP primary category = the category entity | Roofing contractor — Wikipedia: https://en.wikipedia.org/wiki/Roofer (lead names "roofing contractor") | Paul Approved (entity_approved 2026-10-08) · was: Proposed · secondary categories Unknown `[NEED: GBP secondary categories — Gwen's manual lookup]` |
+| 3 | Category variants (4–6) | Roofing Contractor · Roofer · Roofers (all Wikipedia). Excluded by Paul 2026-10-05: Roof Mechanic. Candidate only, not approved: Residential Roofer (site wording, not Wikipedia) — the business is residential only (Paul 2026-10-06) | Paul Approved (entity_approved 2026-10-08) · was: Revised per Paul 2026-10-05 · 3 variants, below the template's 4–6 |
+| 4 | Storefront or SAB | SAB based in Bluffton, SC — no office customers visit. Publicly shown: "Bluffton, SC 29910" only; the street address (6 Sutton Ct, Bluffton, SC 29910) stays hidden on the GBP (Paul option (a), 2026-10-07). The client's own answer named "6 Sutton Ct, Bluffton, SC 29910" as the address to list on the GBP and website (returned sheet, 2026-10-07); BBB shows it (Discovery Record C6). On the website only if wanted (Paul) `[NEED: Paul — street address on the website, yes or no]`; re-check the BBB address later (Paul) | Paul Approved 2026-10-06 (SAB) and 2026-10-07 (address hidden on the GBP) · was: Internally Verified (intake; no address on the public GBP) |
+| 5 | Area entity | Hilton Head Island–Bluffton–Port Royal, SC Metropolitan Statistical Area — Wikipedia: https://en.wikipedia.org/wiki/Hilton_Head_Island_metropolitan_area | Paul Approved (entity_approved 2026-10-08) · was: Revised per Paul 2026-10-05 (2nd) · the brand name already carries "Lowcountry" into every SEO title, so the SEO title takes the metro area · BB-105 smallest container · Georgia not served (Paul 2026-10-05; client 2026-10-07: "just the immediate Lowcountry") · client also travels to Brays Island and Lobeco, SC (2026-10-07) — their county was not checked in this run `[NEED: confirm both sit inside the MSA (Beaufort/Jasper) so "contains all cities served" still holds]` (see Section E) |
+| 6 | Area variants (3–5) | Hilton Head Island Metropolitan Area (reserved, homepage SEO title) · Hilton Head Island–Bluffton–Port Royal Metropolitan Area · South Carolina Lowcountry · Lowcountry · Beaufort and Jasper Counties | Paul Approved (entity_approved 2026-10-08) · was: Revised per Paul 2026-10-08 · "Lowcountry" variants never added in an SEO title (see B2) |
 | 7 | Separator standard | ` - ` | Standard |
-| 8 | Phone | (843) 757-2739 (GBP, site, BBB, HomeAdvisor) | Submitted — client to confirm it is not a tracking number |
+| 8 | Phone | (843) 757-2739 (GBP, site, BBB, HomeAdvisor) | Paul Approved 2026-10-06 · was: Submitted · `[NEED: confirm it is not a call-tracking number — not answered]` |
 | 9 | Primary domain (canonical host form) | https://apexroofingtlc.com/ (www and http forms 301 here in one hop) | Internally Verified |
-| 10 | Legal entity name | APEX ROOFING OF THE LOWCOUNTRY LLC (SC no. 493170, Good Standing — OpenCorporates copy; SOS primary not read, CAPTCHA) | Submitted `[NEED: SOS primary check]` |
-| 11 | Exact URL in the GBP Website field | http://www.apexroofingtlc.com/ (as recorded by Paul at intake) | Submitted |
+| 10 | Legal entity name | APEX ROOFING OF THE LOWCOUNTRY LLC (SC no. 493170, Good Standing — OpenCorporates copy; SOS primary not read, CAPTCHA). Paul 2026-10-06: the legal name is whatever the state registration shows | Submitted `[NEED: SOS primary check — Gwen's manual lookup]` (unchanged) |
+| 11 | Exact URL in the GBP Website field | http://www.apexroofingtlc.com/ (as recorded by Paul at intake). Client 2026-10-07: Paul has access to the GBP ("Yes") | Submitted (unchanged) `[NEED: read the Website field in the GBP dashboard — Gwen's manual lookup]` |
 
 **Area entity derivation** (BB-105) — record the path, not just the answer:
 
@@ -47,7 +47,7 @@ Area entity chosen:      Hilton Head Island–Bluffton–Port Royal, SC MSA (Pau
 ```
 Source: `discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md` §3 and "Paul's direction, 2026-10-05".
 
-**Paul approved this section on:** ____________
+**Paul approved this section on:** 2026-10-08 (entity_approved) — reconcile edited rows 1, 4, 8, 10, 11 on 2026-10-08; re-approval due
 
 ## Section B — Variant ownership  *(CM-024: collisions are vertical, not horizontal)*
 
@@ -108,28 +108,41 @@ Every FAQ question and H2 live on the site, with the page that owns it. No quest
 
 ## Section D — Verified facts
 Everything a writer may state. **Not here = does not exist.**
+Reconciled 2026-10-08 from three sources, read together: the client's own words (returned sheet, 2026-10-07 →
+`Client Confirmed 2026-10-07`), Paul's answers (2026-10-06 and the 2026-10-07 addenda → `Paul Approved` — Paul spoke
+for the client; not a client confirmation) and public evidence (`Submitted` until someone confirms it). Paul's
+"to check", "best guess" and "assume" answers are not confirmations. Reviews are never a source here (CM-027).
+Site-claim refs (W#, C#) are the Discovery Record's.
 
 | Fact | Value | Status | Source |
 |---|---|---|---|
-| Founding year / years in business | | | |
-| Legal entity + DBA | | | |
-| Licence numbers and classes | | | |
-| Insurance / bonded status | | | |
-| Certifications, authorizations, factory training | | | |
-| Association memberships | | | |
-| Warranty terms | | | |
-| Guarantees (response time, on-time, satisfaction) | | | |
-| Awards and rankings | | | |
-| Google rating and review count (date checked) | | | |
-| Team size / trucks / jobs completed | | | |
-| Financing — available, provider, terms | | | |
-| Free estimate — and what free means | | | |
-| Emergency / after-hours reality | | | |
-| Minimum service call or trip charge | | | |
-| Payment methods | | | |
-| Services subcontracted out | | | |
-| Named staff for on-page use | | | |
-| Licensed practitioner for health-claim sign-off *(medical / chiropractic)* | | | |
+| Founding year / years in business | 2015 ("Roll with 2015"). Exact date not settled: BBB "Business Started: 2015-11-11"; LLC filing 2 Dec 2015; Paul: licence acquired in December. Site W2 "over a decade ago" agrees with 2015 | Paul Approved 2026-10-06 (year) · `[NEED: exact start date, if a date is ever published]` | Paul answers B1; Discovery Record C2 |
+| Legal entity + DBA | Legal: APEX ROOFING OF THE LOWCOUNTRY LLC (SC no. 493170) · public name: Apex Roofing of the Lowcountry | Public name Paul Approved 2026-10-06 · legal name Submitted `[NEED: SOS primary check]` | Paul answers B5; OpenCorporates copy |
+| Licence numbers and classes | SC License #57706 (issuer SC LLR; BBB shows expiry 2027-06-30) · Town of Bluffton License #0620033323. Both current: "Both licenses are good … both legit." Class and holder name not known — GAF shows "RBS 57706" (not verified) | Numbers + current: Paul Approved 2026-10-07 · class / holder: Unknown `[NEED: licence class and name held under — Gwen's LLR lookup]` | Paul addendum 2026-10-07; W3–W5; BBB; GAF |
+| Insurance / bonded status | Full general liability and workers' compensation insurance (W15) · bonded: not stated | Insurance Paul Approved 2026-10-06 · bonded Unknown `[NEED: bonded? only if it will be claimed]` | Paul answers B11 |
+| Certifications, authorizations, factory training | "we are certified factory installers of both CertainTeed and GAF. This is important as many homeowners do have a preference." No programme tier named for either. CertainTeed ShingleMaster (W3): **not confirmed** — see D2 | Client Confirmed 2026-10-07 (factory installers, both brands) · ShingleMaster Submitted `[NEED: is ShingleMaster current?]` · GAF tier Unknown `[NEED: GAF programme name, if one will be claimed]` | Returned sheet, Message 2; W3 |
+| Association memberships | BBB profile, A+ rating, since March 2021 ("looks accurate"). Accreditation not stated | Paul Approved 2026-10-06 (profile + rating) · accreditation Unknown `[NEED: BBB accredited? only if claimed]` | Paul answers A (Online) |
+| Warranty terms | Manufacturer: "50 year Limited Lifetime Warranty which is transferable" · workmanship: "our lifetime no-leak warranty which is also transferable" (replaces W13's untermed "separately guaranteed") · SureStart PLUS extended warranty covering material and labor (W12) · metal panels "40-year warranty against chalking and fading" (W14): not confirmed | Manufacturer + workmanship: Client Confirmed 2026-10-07 · SureStart PLUS: Paul Approved 2026-10-06 · W14: Submitted `[NEED: confirm the 40-year Kynar 500 / Hylar 5000 panel warranty]` | Returned sheet, Message 2; Paul answers B9; W12–W14 |
+| Guarantees (response time, on-time, satisfaction) | None stated. No response time promised (see the emergency row) | Unknown — do not state a response time (CM-016) | — |
+| Awards and rankings | None supplied | Unknown | — |
+| Google rating and review count (date checked) | 5.0 from 67 reviews (2026-10-05, GBP; 67 on the 2026-10-07 pull). Evidence for CM-020 condition 3 only — not a fact about the work (CM-027). Other platforms: HomeAdvisor 4.8 / 53 (Paul: looks accurate) | Internally Verified (evidence only) | Discovery Record (GBP); data/reviews (2026-10-07) |
+| Team size / trucks / jobs completed | Not supplied. Site: "Our operations are handled by our in-house team" (W24) — not confirmed | Unknown `[NEED: team size / jobs completed, only if to be published]` · W24 Submitted | W24 |
+| Financing — available, provider, terms | Yes — "We've offered financing for several years through a company call Hearth. They specialize in home improvement loans." Terms not given | Client Confirmed 2026-10-07 (available, provider Hearth) · terms Unknown `[NEED: financing terms — never state a rate or term]` | Returned sheet, Message 2 |
+| Free estimate — and what free means | Free estimates ("Yes, free estimates"). What free covers beyond that is not confirmed: W17 "Pre-estimate inspections … are always free. Independent inspection reports … are priced separately." | Paul Approved 2026-10-06 (free estimates) · W17 detail Submitted `[NEED: confirm paid independent inspection reports]` | Paul answers B12; W10, W17 |
+| Emergency / after-hours reality | "Ralph and Pierce are always on call and treat a emergency as high priority and especially for past customers." No after-hours fee stated; no response time | Client Confirmed 2026-10-07 | Returned sheet, Message 1 |
+| Minimum service call or trip charge | No minimum call charge. Travel fee: to "Any travel fee or places you won't go?" the client answered "No, just the immediate Lowcountry, but he dose travel to Brays Island and as far as Lobeco, SC" | No minimum: Paul Approved 2026-10-07 · no travel fee: client's "No" — reading not confirmed `[NEED: Paul — does "No" mean no travel fee?]` | Paul addendum q4; returned sheet, Message 1 |
+| Payment methods | "Standard payment methods" — no list to publish. HomeAdvisor shows "Credit card accepted" (found only) | Paul Approved 2026-10-07 (no specific list) · any named method `[NEED: list, only if one will be published]` | Paul addendum q5 |
+| Services subcontracted out | None stated. Apex itself works as a roofing subcontractor on new construction in Beaufort and Jasper County (W16): accurate | W16 Paul Approved 2026-10-06 · services Apex subcontracts out: Unknown | Paul answers B4 |
+| Named staff for on-page use | Ralph Brehany and his son Pierce Brehany (father and son) — "Founded by Ralph and Pierce Brehany". No job titles published: sources conflict (BBB: Ralph "President", Pierce "Owner"; LinkedIn and reviews: Ralph "Owner") — Paul: no need to specify. No personal certifications given | Names: Client Confirmed 2026-10-07 ("Yes, Ralph and his son Pierce") · father and son, no titles: Paul Approved 2026-10-07 | Returned sheet, Message 1; Paul addendum q6; W1 |
+| Licensed practitioner for health-claim sign-off *(medical / chiropractic)* | Not applicable — roofing | N/A | — |
+| **Author (CM-039)** | Ralph Brehany — owner by Paul's direction: "If no confirmed job title from search, assume father is the owner." The returned sheet names no owner | Paul Approved 2026-10-07 (direction) — **not** client-confirmed | Paul addendum q6 |
+| Services offered | Roof repair · roof replacement · roof installation · roof inspections · emergency roof repair · metal roofing · slate roofing · skylights (keep all 8 for now) | Paul Approved 2026-10-06 | Paul answers A (services) |
+| Residential or commercial | Residential only, for now | Paul Approved 2026-10-06 | Paul answers B3; Discovery Record C4 |
+| Hours | Monday–Saturday 8 AM–5 PM · Sunday closed | Paul Approved 2026-10-06 | Paul answers A (hours) |
+| Public email | None — "No public facing email address." | Paul Approved 2026-10-07 | Paul addendum q3 |
+| Price ranges (slate W19, metal W20) | Slate: natural "$35,000 to $70,000 or more", synthetic "$18,000 to $35,000" · standing seam "$22,000 to $40,000 … versus $9,000 to $18,000 for shingles". "Fairly accurate" — "always room for fluctuation based on scale of project" | Paul Approved 2026-10-06 — publish only as ranges that vary with the scale of the project | Paul answers B14 |
+| Products installed | "CertainTeed or GAF shingles, corrosion-resistant flashings, synthetic underlayment" (W11) · "We install Velux and FAKRO units" (W18) | CertainTeed + GAF consistent with the client's 2026-10-07 answer · W11 rest and W18: Submitted `[NEED: confirm]` | W11, W18 |
+| Other live site claims not yet confirmed | Projects in Sun City, Sea Pines, Palmetto Dunes, Hilton Head Plantation, Palmetto Bluff, Colleton River Plantation, Moss Creek, Belfair (W9) · "Every project is documented photographically" (W10) · Bluffton "typically our first response" (W21) · no Ridgeland premium vs Hilton Head (W23) · Ralph or Pierce "get on your roof personally" (W25) | Submitted — may appear in a draft, block publication | W9, W10, W21, W23, W25 |
 
 ### D2 · Unsupported claims
 Claims the site makes publicly that the client could not substantiate. Writers must not repeat
@@ -137,14 +150,42 @@ them; the content-risk list tracks where they are live.
 
 | Claim (verbatim) | Where it appears | Client answer | Action |
 |---|---|---|---|
+| "Serving the South Carolina Lowcountry & Coastal Georgia" | https://apexroofingtlc.com/ (W8) | Paul: Georgia not served currently (2026-10-05); client: "just the immediate Lowcountry" (2026-10-07) | Do not repeat; never name Georgia. Content risk R1 |
+| "providing top-tier roofing solutions for homes and businesses" | https://apexroofingtlc.com/about/ (W7) | Paul: residential only, for now (2026-10-06) | Do not repeat "businesses" / commercial. Content risk R2 |
+| "provides residential and commercial roof inspections throughout the Lowcountry" | GBP owner post, 2026-10-04 | Paul: residential only, for now (2026-10-06) | Do not repeat "commercial". Content risk R3 |
+| "CertainTeed ShingleMaster certified." | https://apexroofingtlc.com/ (W3) | Not confirmed. The client said "certified factory installers of both CertainTeed and GAF" — a different, broader claim, not the ShingleMaster credential | Writers use the client's wording, not "ShingleMaster", until confirmed. Content risk R4 |
+| "Many homeowners in rural Beaufort County … benefit from payment arrangements." | https://apexroofingtlc.com/levy/ (W22) | Paul flagged it (2026-10-06). The client confirmed financing through Hearth — not "payment arrangements" by Apex | Writers say "financing through Hearth" only. Content risk R5 |
+
+### D3 · Content-risk list (live content that disagrees with the reconciled facts)
+Recorded for the audit and Build; reconcile changes no live page. Where an audit finding already covers a row, the
+finding governs the fix.
+
+| # | Live content | Where | Reconciled fact | Owner of any fix |
+|---|---|---|---|---|
+| R1 | "& Coastal Georgia" | homepage (W8) | Georgia not served | site content (Build / WordPress) |
+| R2 | "homes and businesses" | /about/ (W7) | residential only | site content |
+| R3 | "residential and commercial roof inspections" | GBP owner post 2026-10-04 | residential only | GBP (Gwen) |
+| R4 | "CertainTeed ShingleMaster certified." | homepage (W3) | factory installer of CertainTeed and GAF; ShingleMaster not confirmed | site content — after Paul's choice (see open choices) |
+| R5 | "payment arrangements" | /levy/ (W22) | financing through Hearth | site content |
+| R6 | "All workmanship is separately guaranteed" — no term | /roof-replacement/ (W13) | lifetime no-leak workmanship warranty, transferable (client) — the live page understates a confirmed fact | site content (an addition, not a removal) |
+| R7 | Service area "Beaufort,, Jasper and Savannah counties" (Savannah = Georgia) | BBB profile (Discovery Record C1) | Georgia not served | citation (Gwen) |
+| R8 | GAF directory "Apex Roofing of Coastal Georgia", St. Simons Island GA | GAF directory | not theirs (Paul 2026-10-06) — no action on the client's content; never cite it as theirs | — |
 
 ## Section E — Service area truth
 ```
-FURTHEST NORTH:            FURTHEST SOUTH:
-FURTHEST EAST:             FURTHEST WEST:
-CITIES CLAIMED ON SITE:
-EXPLICIT EXCLUSIONS:
-TRAVEL FEE BEYOND:
+FURTHEST NORTH:   Lobeco, SC (client: "as far as Lobeco, SC")      FURTHEST SOUTH:  Hilton Head Island / Bluffton (named towns)
+FURTHEST EAST:    Fripp Island (named town)                         FURTHEST WEST:   Ridgeland / Hardeeville (named towns)
+                  (directions inferred from the named towns and the client's words — not confirmed by the client)
+CITIES CLAIMED ON SITE:  Bluffton, Hilton Head Island, Beaufort, Okatie, Hardeeville, Lady's Island, Port Royal,
+                  Fripp Island, St. Helena Island, Pritchardville, Levy, Ridgeland — all 12 confirmed (Paul 2026-10-06);
+                  CTA list also names Palmetto Bluff (W28)
+ALSO SERVED (client, 2026-10-07): Brays Island; Lobeco, SC — "he dose travel to Brays Island and as far as Lobeco, SC"
+                  (no pages for these; county not checked [NEED])
+CLIENT'S OWN WORDS: "just the immediate Lowcountry"
+EXPLICIT EXCLUSIONS: Georgia — not served currently (Paul 2026-10-05; "Apex Roofing of Coastal Georgia" is not theirs,
+                  Paul 2026-10-06). Commercial work — residential only for now (Paul 2026-10-06)
+TRAVEL FEE BEYOND: client answered "No" to "Any travel fee or places you won't go?" [NEED: Paul — read as no travel
+                  fee?] · no minimum call charge (Paul 2026-10-07)
 ```
 
 ## Section F — Schema inputs  *(Block 3 cannot open without these)*
@@ -168,15 +209,33 @@ TRAVEL FEE BEYOND:
 ## Section G — Positioning (client's own words)
 ```
 WHAT WE DO THAT OTHERS HERE DO NOT:
+  Client Confirmed 2026-10-07 (selected by Paul 2026-10-07 from the client's words):
+  "we are certified factory installers of both CertainTeed and GAF. This is important as many homeowners do
+  have a preference."
+  + the craftsmanship in the client's answer below (flashing above all; underlayment, sealed valleys, nail
+  spacing, a methodical install). Not a ShingleMaster claim (see D2).
+
 JOB WE MOST WANT MORE OF:
+  Paul's best guess 2026-10-07 — NOT confirmed by the client: "The most revenue making… residential
+  installation and repair?"  [NEED: client to confirm the job they most want more of]
+
 MOST COMMON THING CUSTOMERS GET WRONG ABOUT THIS TRADE:
+  Client Confirmed 2026-10-07 (verbatim):
+  "It is not just a commodity; the difference in price is what you can't see, the underlayment, the thickness
+  of the underlayment, sealed valleys, trim, handling wood rot, nail spacing, how methodical the install is,
+  straightness of the shingles. You know, bad roof from the street,,,it looks like waves you can surf on.
+  Flashing is the biggest; so much water damage and future water damage can be stopped or mitigated by using
+  enough flashing and not just trying to use a tube of silicone to make it go faster and cheaper."
 ```
 
 ## Section H — Constraints, exceptions and the superlative opener
 
 | Type | Detail | Approved by | Exit condition |
 |---|---|---|---|
-| Client constraint | | | |
+| Client constraint | Residential only, for now — no commercial pages or claims | Paul 2026-10-06 | Paul says commercial work is offered |
+| Client constraint | Georgia not served — no Georgia pages or claims | Paul 2026-10-05; client 2026-10-07 ("just the immediate Lowcountry") | Paul says Georgia is served |
+| Client constraint | Street address hidden on the GBP; "Bluffton, SC" shown publicly | Paul 2026-10-07 (option a) | Paul decides to show the address |
+| Client constraint | No job titles published for Ralph and Pierce | Paul 2026-10-07 | client confirms titles |
 | Paul Exception | | | |
 
 ### H2 · "The Best" decisions (CM-020) — conditional, never a default
@@ -186,6 +245,8 @@ MOST COMMON THING CUSTOMERS GET WRONG ABOUT THIS TRADE:
 ## Section I — Customer language
 | Source | Location | Captured |
 |---|---|---|
+| Google reviews (66 texts, rating 5 from 67 reviews) — customers' words, never facts (CM-027), no reviewer names | `clients/apex-roofing-of-the-lowcountry/data/reviews/customer-language.md` | 2026-10-07 (scripts/reviews.py) |
+| The client's own words ("what customers get wrong", warranties, after-hours) | Section G; `discovery/Apex Roofing of the Lowcountry - Client Proof Sheet - RETURNED.md` | 2026-10-07 |
 
 ## Maintenance
 
