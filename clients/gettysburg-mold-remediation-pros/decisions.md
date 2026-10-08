@@ -6,6 +6,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 
 | When | What | Decision |
 |---|---|---|
+| 2026-10-08T13:15 | page specs (global) | approved |
 
 ## Decisions logged during runs
 
@@ -19,3 +20,4 @@ Generated from status.json and the safety log — do not edit. Record a decision
 ## Conditions met (system-verified)
 
 - 2026-10-03T15:37 — Client set up (/new-client finished) — met (system-verified)
+- 2026-10-08T13:15 — Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)

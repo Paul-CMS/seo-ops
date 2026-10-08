@@ -1345,3 +1345,14 @@ Section approvals re-stamped (status columns no longer hashed): 2 · void approv
 - OPEN synthetic_roofing_offered · 2026-10-08T12:21:53-05:00 · run migration-v4 · by Client (via Paul) · Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002)
 
 ## CONDITION · 2026-10-08T12:21:53-05:00 · Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — met (system-verified)
+
+## APPROVAL · 2026-10-08T13:15:46-05:00 · page specs (global) · approved · by Paul
+Approved version: methodology/specs/README.md (sha 13bde3165a59)
+Approved version: methodology/specs/about.md (sha 633163a215ae)
+Approved version: methodology/specs/blog-post.md (sha bb60f76bddb0)
+Approved version: methodology/specs/county-hub.md (sha 4ed0d3bfb1d8)
+Approved version: methodology/specs/homepage.md (sha 645431d1fd4c)
+Approved version: methodology/specs/location.md (sha bf5b163f4357)
+Approved version: methodology/specs/service.md (sha 0d679dadad45)
+
+## CONDITION · 2026-10-08T13:15:46-05:00 · Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)

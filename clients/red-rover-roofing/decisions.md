@@ -6,6 +6,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 
 | When | What | Decision |
 |---|---|---|
+| 2026-10-08T13:15 | page specs (global) | approved |
 
 ## Decisions logged during runs
 
@@ -13,4 +14,4 @@ _None yet._
 
 ## Conditions met (system-verified)
 
-_None yet._
+- 2026-10-08T13:15 — Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)

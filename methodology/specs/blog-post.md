@@ -1,5 +1,5 @@
 # Spec — Blog post (informational)
-**Status:** DRAFT — awaiting Paul's review (build and audit treat a DRAFT spec as advisory; Paul marks it APPROVED)
+**Status:** APPROVED — 2026-10-08, Paul
 **Governs:** informational blog post · **Rule sources:** BB-201, BB-302, BB-307–310, BB-316, BB-318, BB-603 (v1.0), BB-701–704, BB-913, CM-003, CM-004, CM-007, CM-011, CM-012, CM-016, CM-021, CM-025, CM-027, CM-038, CM-039, WB-A–C
 **Used by:** Build (briefs and drafts), Audit (conformance scorecard, S15), Finish QA, pilot corrections
 

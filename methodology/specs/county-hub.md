@@ -1,5 +1,5 @@
 # Spec — County hub page
-**Status:** DRAFT — awaiting Paul's review (build and audit treat a DRAFT spec as advisory; Paul marks it APPROVED)
+**Status:** APPROVED — 2026-10-08, Paul
 **Governs:** county hub page · **Rule sources:** BB-207, BB-208, BB-301–304, BB-306–312, BB-316–318, BB-604 (v1.0), CM-003, CM-005, CM-014–016, CM-024, CM-025, CM-027, WC-C2, WC-C4, WC-C5, WC-C7, WC-C8
 **Used by:** Build (briefs and drafts), Audit (conformance scorecard, S15), Finish QA, pilot corrections
 

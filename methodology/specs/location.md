@@ -1,5 +1,5 @@
 # Spec — Location page
-**Status:** DRAFT — awaiting Paul's review (build and audit treat a DRAFT spec as advisory; Paul marks it APPROVED)
+**Status:** APPROVED — 2026-10-08, Paul
 **Governs:** location page (one per city) · **Rule sources:** BB-108, BB-201–206, BB-208, BB-301–312, BB-315–318, BB-402, BB-604 (v1.0), BB-605/606 (v1.1), CM-003, CM-005, CM-010, CM-011, CM-014–016, CM-020, CM-022–025, CM-027, WC-C2–C8
 **Used by:** Build (briefs and drafts), Audit (conformance scorecard, S15), Finish QA, pilot corrections
 

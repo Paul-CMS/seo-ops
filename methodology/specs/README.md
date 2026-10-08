@@ -1,6 +1,6 @@
 # Page specs
 
-**Status:** DRAFT — awaiting Paul's review (build and audit treat a DRAFT spec as advisory; Paul marks it APPROVED)
+**Status:** APPROVED — 2026-10-08, Paul
 
 ## What a spec is
 

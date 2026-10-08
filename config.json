@@ -195,5 +195,19 @@
     "construction",
     "builders?",
     "home builders?"
-  ]
+  ],
+  "specs_approval": {
+    "by": "Paul",
+    "at": "2026-10-08T13:15:46-05:00",
+    "note": null,
+    "files": {
+      "methodology/specs/README.md": "13bde3165a59",
+      "methodology/specs/about.md": "633163a215ae",
+      "methodology/specs/blog-post.md": "bb60f76bddb0",
+      "methodology/specs/county-hub.md": "4ed0d3bfb1d8",
+      "methodology/specs/homepage.md": "645431d1fd4c",
+      "methodology/specs/location.md": "bf5b163f4357",
+      "methodology/specs/service.md": "0d679dadad45"
+    }
+  }
 }

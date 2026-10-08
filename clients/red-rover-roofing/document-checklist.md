@@ -1,6 +1,6 @@
 # Red Rover Roofing - Document Checklist
 
-Generated 2026-10-08T12:59 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-08T13:15 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -38,7 +38,7 @@ Generated 2026-10-08T12:59 from status.json — do not edit. `[x]` done · `[-]`
 - [ ] WordPress connected (/wp-check passed in the last 30 days) — WordPress is not connected yet — run /wp-check red-rover-roofing
 - [ ] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — discovery is not signed off yet — still open: the Decision Sheet and the entity foundation, the client proof sheet (or the client's direct answers), the client's returned proof sheet, the audit deliverables, the reconciled Brand Guide
 - [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — the technical blocker checklist is not written yet
-- [ ] Page specs approved by Paul once, globally (methodology/specs) and unchanged since — the page specs are not approved yet — Paul approves them once, for every client: /approve global specs
+- [x] Page specs approved by Paul once, globally (methodology/specs) and unchanged since
 
 ## Decisions (Paul)
 

@@ -1,5 +1,5 @@
 # Spec — Service page
-**Status:** DRAFT — awaiting Paul's review (build and audit treat a DRAFT spec as advisory; Paul marks it APPROVED)
+**Status:** APPROVED — 2026-10-08, Paul
 **Governs:** service page (one per primary service) · **Rule sources:** BB-106, BB-108, BB-201–206, BB-208, BB-301–312, BB-314, BB-316, BB-318, BB-319, BB-604/606 (v1.1), CM-003, CM-005, CM-011, CM-012, CM-014–016, CM-020, CM-022, CM-024, CM-025, CM-027, WC-C2–C8
 **Used by:** Build (briefs and drafts), Audit (conformance scorecard, S15), Finish QA, pilot corrections
 

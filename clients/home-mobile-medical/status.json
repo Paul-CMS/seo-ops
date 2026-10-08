@@ -676,7 +676,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-08T12:21:53-05:00",
+  "updated": "2026-10-08T13:15:46-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
@@ -685,7 +685,8 @@
     "proof_sheet_returned": "2026-10-07T17:21:12-05:00",
     "client_setup": "2026-10-07T17:21:45-05:00",
     "wordpress_connected": "2026-10-07T17:28:07-05:00",
-    "audit_steps_complete": "2026-10-08T07:57:14-05:00"
+    "audit_steps_complete": "2026-10-08T07:57:14-05:00",
+    "page_specs_approved": "2026-10-08T13:15:46-05:00"
   },
   "wordpress": {
     "settings_check_issued": "2026-10-07T17:27:56-05:00",

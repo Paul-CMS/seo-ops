@@ -1,11 +1,11 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 5 of 8 — Build plan and blockers**
-- **What is happening now:** No session is recorded — the seo-ops session hook is not installed (hooks-pending/INSTALL.md). One session per stage is enforced through it. Next there: /build apex-roofing-of-the-lowcountry blockers (technical blocker checklist and one handoff to Jonie (she fixes them while the site plan goes ahead))
+- **What is happening now:** ready to start: technical blocker checklist and one handoff to Jonie (she fixes them while the site plan goes ahead)
 - **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Bra; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
-- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
+- **Next action:** `/build apex-roofing-of-the-lowcountry blockers` — Paul opens a **new session on Haiku** in ~/Documents/seo-ops and types `/next apex-roofing-of-the-lowcountry` (agents: build (opus), clerk (haiku))
 
-_Generated 2026-10-08T12:59 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-08T13:15 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 
@@ -24,6 +24,7 @@ _Generated 2026-10-08T12:59 by the system — do not edit. Start every session i
 - 2026-10-08: Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest) — approved
 - 2026-10-08: Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims) — approved
 - 2026-10-08: discovery_signed_off — approved
+- 2026-10-08: page specs (global) — approved
 - Entity: category Roofing Contractor (variants Roofer, Roofers); area = Hilton Head Island–Bluffton–Port Royal metro area.
 - Titles: homepage SEO title uses "Hilton Head Island Metropolitan Area"; homepage H1 uses a familiar name (Lowcountry / South Carolina Lowcountry); service titles `Service Name - Apex Roofing of the Lowcountry` (no area); brand always in full.
 - Homepage: links all 8 services (Paul exception).

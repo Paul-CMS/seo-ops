@@ -13,6 +13,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 | 2026-10-08T10:40 | entity_approved | approved |
 | 2026-10-08T10:40 | brand_guide_approved | approved |
 | 2026-10-08T11:03 | discovery_signed_off | approved |
+| 2026-10-08T13:15 | page specs (global) | approved |
 
 ## Decisions logged during runs
 
@@ -36,3 +37,4 @@ Generated from status.json and the safety log — do not edit. Record a decision
 - 2026-10-07T15:20 — The client returned the proof sheet (the returned sheet is recorded) — met (system-verified)
 - 2026-10-07T20:25 — Every registered audit step has an outcome (Done / Skipped / Failed) — met (system-verified)
 - 2026-10-08T12:21 — Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — met (system-verified)
+- 2026-10-08T13:15 — Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)

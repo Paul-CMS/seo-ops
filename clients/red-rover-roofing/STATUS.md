@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — decide what to do with the unfinished run (resume, /verify, /rollback or abort)
 - **Next action:** `/resume red-rover-roofing` once the wait above is over
 
-_Generated 2026-10-08T12:59 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-08T13:15 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 
@@ -15,7 +15,7 @@ _Generated 2026-10-08T12:59 by the system — do not edit. Start every session i
 
 ## Settled decisions — never re-raised
 
-_None yet._
+- 2026-10-08: page specs (global) — approved
 
 ## Open VA items
 

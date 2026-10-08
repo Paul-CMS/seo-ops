@@ -346,14 +346,15 @@
     "next": "We are planning every service and location page."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-08T12:21:53-05:00",
+  "updated": "2026-10-08T13:15:46-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
     "wordpress_connected": "2026-10-05T22:33:28-05:00",
     "proof_sheet_returned": "2026-10-07T15:20:21-05:00",
     "audit_steps_complete": "2026-10-07T20:25:32-05:00",
-    "discovery_signed_off": "2026-10-08T12:21:53-05:00"
+    "discovery_signed_off": "2026-10-08T12:21:53-05:00",
+    "page_specs_approved": "2026-10-08T13:15:46-05:00"
   },
   "wordpress": {
     "check": {

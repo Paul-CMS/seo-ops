@@ -9,6 +9,7 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - 2026-10-08 — audit_approved: approved
 - 2026-10-08 — brand_guide_approved: approved
 - 2026-10-08 — discovery_signed_off: approved
+- 2026-10-08 — page specs (global): approved
 
 ## Settled
 
