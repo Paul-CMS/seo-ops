@@ -285,3 +285,49 @@ Gates checked: entity_approved
 - CHANGE #57 [audit_file] clients/home-mobile-medical/audit/2026-10-07/review-s17.csv | review record (S17) | old:  | new: per-row outcomes: 40 findings + URL map rows | result: created
 - CHANGE #58 [audit_file] clients/home-mobile-medical/audit/2026-10-07/ audit-local decision log | DEC-LOCAL-006 (S17 independent review) | old:  | new: Independent review per CM-026 (fresh-context reviewer): 28 confirmed, 12 revised, 0 withdrawn; map 7 destructive recs withdrawn, 1 revised | result: appended
 - CHANGE #59 [audit_step] S17 | Fresh-context review of Finding Register + URL Decision Map | old:  | new: done | result: DONE
+- CHANGE #60 [audit_step] S18 | Render deliverables | old:  | new: done | result: DONE — Rendered from the registers after S17 review and the five reviewer fixes: Finding Register, URL Decision Map, Recommendations, Evidence Manifest (REVIEW) in audit/2026-10-07/deliverables/
+- CHANGE #61 [local_file] methodology/lessons.md | L-009 | old:  | new: Added L-009 PROPOSED: homepage H1 lock on a legacy homepage (PROC-01 step 4 for CF-LOCAL-001); notes Apex 2026-10-08 ruling is client-specific, not applied; te… | result: done
+- CHANGE #62 [local_file] clients/home-mobile-medical/audit/2026-10-07/ | S17 hand-back fixes | old: CF-001; SF settings on SRC-009..027; rendering para named DataforSEO; U-138..U-159 source 'old URL Decision Map only' | new: CF-LOCAL-001 (conflicts, README, scorecard, questions, URL map draft rows; F-026 rev 3); manifest metadata corrected; crosschecks names SF free crawl 2026-09-1… | result: done
+- CHANGE #63 [local_file] clients/home-mobile-medical/audit/2026-10-07/deliverables/ | S18 deliverables | old:  | new: Rendered (REVIEW): Home Mobile Medical - Finding Register - REVIEW.md; - URL Decision Map - REVIEW.md; - Recommendations - REVIEW.md; - Evidence Manifest - REV… | result: done
+### HANDOFF · /discovery · 2026-10-08 · run 20261007-203219-discovery-784c
+**What I did**
+- Ran the audit on the existing evidence (option B, no new crawl): brought the 2026-09-18 Screaming Frog exports and other Drive v3 evidence into `inputs/` (read-only copies), then S12 ingest, S13 entity, S14 architecture, S15 conformance, S16 technical.
+- S17: independent audit-reviewer in a fresh context — 28 findings confirmed, 12 revised, 0 withdrawn; 7 destructive URL recommendations withdrawn (they fail CM-019 C1/C2).
+- S18: applied the reviewer's five fixes (CF-001 → CF-LOCAL-001; lessons.md L-009 PROPOSED; manifest metadata; cross-check wording; URL-map source labels), rendered four REVIEW deliverables, marked `audit_deliverables`. Tests: 283 passed.
+
+**What was decided, and why**
+- Paul's decisions applied throughout: 301 never 410; Georgia held for the microsite; FL/MI dropped; metro hubs (L-008 proposed, county-hub spec DRAFT → Low); blog disposition deferred to the Blog Decision Map; CM-040 claims.
+- Independence per CM-026 (DEC-LOCAL-006).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Q1 client confirms no leads on 36 retirement URLs | Paul / client | Any 301 |
+| Q2 redirect targets | Paul | 301 handoffs |
+| Q3 the 10 CM-019-failing URLs: keep live or Paul Exception | Paul | Their disposition |
+| Q4 / CF-LOCAL-001 / L-009 homepage H1 lock | Paul | Homepage H1 |
+| Q9 GBP listing history after the BME sale | Client via Paul | Review replies, GBP changes |
+| Q5, Q6 page status checks | Jonie | 2 + 40 URL rows |
+| Q7 grid centre/device; Q8 citation link destinations | Gwen | Grid findings; CM-019 C3 |
+| S20 SEOPress settings | Jonie | Technical evidence |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Finding Register | clients/home-mobile-medical/audit/2026-10-07/deliverables/Home Mobile Medical - Finding Register - REVIEW.md | For Paul |
+| URL Decision Map | …/deliverables/Home Mobile Medical - URL Decision Map - REVIEW.md | For Paul |
+| Recommendations | …/deliverables/Home Mobile Medical - Recommendations - REVIEW.md | For Paul |
+| Evidence Manifest | …/deliverables/Home Mobile Medical - Evidence Manifest - REVIEW.md | For Paul |
+
+**What I could not check**
+- Body text (free SF crawl, no rendering, two H2s per page) — many section/FAQ/claim checks are Needs Evidence. No structured-data export.
+
+**Anything the next agent would otherwise get wrong**
+- No URL is a final 301 yet: condition 4 is pending everywhere and condition 3 rests on backlink-domain matching until Gwen checks listing links (Q8).
+- Two older log entries still say CF-001 (append-only); the conflict is CF-LOCAL-001.
+- All specs are DRAFT: conformance failures are advisory.
+### END HANDOFF
+## RUN 20261007-203219-discovery-784c · FINISHED · 2026-10-08T07:57:14-05:00
+Changes: 22 · Summary: Audit on existing evidence: 40 findings (12H/13M/15L) after independent review; 159-row URL Decision Map; 4 REVIEW deliverables marked
+
+## CONDITION · 2026-10-08T07:57:14-05:00 · Every registered audit step has an outcome (Done / Skipped / Failed) — met (system-verified)

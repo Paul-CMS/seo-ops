@@ -10,7 +10,7 @@ Both apex and www forms appear across exports for: ccprc.com, southcarolinaparks
 
 ## [LIMITATION] Rendering
 
-Rendered columns empty on 96/96 rows. This is our standing configuration (DataforSEO OnPage, basic mode, no JavaScript rendering), NOT evidence that content disappears on render and NOT a defect to report.
+Rendered columns empty on 96/96 rows. This is the configuration of the evidence used here - a Screaming Frog free-licence crawl of 2026-09-18 with no JavaScript rendering (the SF fallback; no DataforSEO OnPage crawl was run for this audit, Paul: no new crawl), NOT evidence that content disappears on render and NOT a defect to report.
   Consequence: JS dependency is unknown. Any finding that would rest on what Google renders is marked Needs Evidence.
   State this ONCE in Assumptions and Limitations. Never per finding. Do not recommend re-crawling with rendering.
 

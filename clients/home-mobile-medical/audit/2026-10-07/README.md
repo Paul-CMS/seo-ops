@@ -29,7 +29,7 @@
 
 ## Blocked on
 
-Gate B answers (Q1–Q7); S20 SEOPress worksheet (Jonie); conflict CF-001 (Paul).
+Gate B answers (Q1–Q7); S20 SEOPress worksheet (Jonie); conflict CF-LOCAL-001 (Paul).
 
 ## Handoffs
 
