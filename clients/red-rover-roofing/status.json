@@ -1,5 +1,5 @@
 {
-  "schema": 3,
+  "schema": 4,
   "client": {
     "slug": "red-rover-roofing",
     "name": "Red Rover Roofing",
@@ -30,12 +30,6 @@
       "state": "pending"
     },
     "brand_guide_approved": {
-      "state": "pending"
-    },
-    "discovery_signed_off": {
-      "state": "pending"
-    },
-    "blockers_cleared": {
       "state": "pending"
     },
     "link_wheel_approved": {
@@ -70,7 +64,7 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-07T16:05:24-05:00",
-  "updated": "2026-10-07T16:05:24-05:00",
+  "updated": "2026-10-08T12:21:53-05:00",
   "open_runs": {
     "20261007-160524-new-client-fc92": {
       "step": "new-client",
@@ -78,6 +72,18 @@
       "page": null,
       "started": "2026-10-07T16:05:24-05:00",
       "started_ts": 1791407124.099776
+    }
+  },
+  "retired_gates": {
+    "discovery_signed_off": {
+      "state": "pending",
+      "retired": "2026-10-08T12:21:53-05:00",
+      "why": "R3: now a condition, met from evidence"
+    },
+    "blockers_cleared": {
+      "state": "pending",
+      "retired": "2026-10-08T12:21:53-05:00",
+      "why": "R3: now a condition, met from evidence"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "schema": 3,
+  "schema": 4,
   "client": {
     "slug": "apex-roofing-of-the-lowcountry",
     "name": "Apex Roofing of the Lowcountry",
@@ -32,7 +32,7 @@
       "conditions": [],
       "files": {
         "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md": "76a048adc3f7",
-        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2": "4d43186bd478"
+        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2": "433330552c97"
       }
     },
     "proof_sheet_approved": {
@@ -65,21 +65,8 @@
       "note": null,
       "conditions": [],
       "files": {
-        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G": "b8be065916a5"
+        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G": "b3cf28ab74c0"
       }
-    },
-    "discovery_signed_off": {
-      "state": "approved",
-      "by": "Paul",
-      "at": "2026-10-08T11:03:17-05:00",
-      "note": null,
-      "conditions": [],
-      "files": {
-        "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Summary - REVIEW.md": "564167710178"
-      }
-    },
-    "blockers_cleared": {
-      "state": "pending"
     },
     "link_wheel_approved": {
       "state": "pending"
@@ -359,13 +346,14 @@
     "next": "We are planning every service and location page."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-08T11:13:58-05:00",
+  "updated": "2026-10-08T12:21:53-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
     "wordpress_connected": "2026-10-05T22:33:28-05:00",
     "proof_sheet_returned": "2026-10-07T15:20:21-05:00",
-    "audit_steps_complete": "2026-10-07T20:25:32-05:00"
+    "audit_steps_complete": "2026-10-07T20:25:32-05:00",
+    "discovery_signed_off": "2026-10-08T12:21:53-05:00"
   },
   "wordpress": {
     "check": {
@@ -382,6 +370,25 @@
       "reviews_count": 67,
       "checked": "2026-10-07",
       "source": "DataforSEO Business Data"
+    }
+  },
+  "retired_gates": {
+    "discovery_signed_off": {
+      "state": "approved",
+      "by": "Paul",
+      "at": "2026-10-08T11:03:17-05:00",
+      "note": null,
+      "conditions": [],
+      "files": {
+        "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Summary - REVIEW.md": "564167710178"
+      },
+      "retired": "2026-10-08T12:21:53-05:00",
+      "why": "R3: now a condition, met from evidence"
+    },
+    "blockers_cleared": {
+      "state": "pending",
+      "retired": "2026-10-08T12:21:53-05:00",
+      "why": "R3: now a condition, met from evidence"
     }
   }
 }

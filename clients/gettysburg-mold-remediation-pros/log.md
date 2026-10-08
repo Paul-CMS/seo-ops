@@ -145,3 +145,6 @@ Gates checked: client_setup
 - CHANGE #9 [drive_file] https://drive.google.com/file/d/1lQA2pZJUN4z4uckkjVIz9M3JaSBucu4N/view | upload | old: previous version archived as Gettysburg Mold Remediation Pros - Document Checklist - 2026-10-03.md | new: Gettysburg Mold Remediation Pros - Document Checklist.md · sha e04acd9c61d4 | result: done | snapshots  clients/gettysburg-mold-remediation-pros/snapshots/20261003-161750-drive-mirror-414c/0009-new.md
 ## RUN 20261003-161750-drive-mirror-414c · FINISHED · 2026-10-03T16:19:11-05:00
 Changes: 4 · Summary: Drive records mirrored: Handoff Log, Document Checklist (old copies archived with their date)
+
+## MIGRATION · 2026-10-08T12:21:53-05:00 · schema 4 (rewrite 2026-10-08)
+Section approvals re-stamped (status columns no longer hashed): 0 · void approvals left void: 0 · now conditions: discovery_signed_off, blockers_cleared

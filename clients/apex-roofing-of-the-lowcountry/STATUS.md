@@ -1,56 +1,47 @@
-# Apex Roofing of the Lowcountry — status (2026-10-08)
+# Apex Roofing of the Lowcountry - Status
 
-**Stage:** Discovery and audit are **done and signed off** (Paul, 2026-10-08). **Next stage: Build.**
+- **Stage —**
+- **What is happening now:** waiting for Paul's approval — the page specs are not approved yet — Paul approves them once, for every client: /approve global specs. The specs in methodology/specs/ are the same for every client; approve them once before any audit scores pages against them or any page is written
+- **Waiting on:** Paul — the page specs are not approved yet — Paul approves them once, for every client: /approve ; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Bra
+- **Next action:** Paul types `/approve global specs` (or asks for changes first)
 
-**What happens next:** a new session runs `/next apex-roofing-of-the-lowcountry`. It produces the **site plan** (every
-service and location page: keyword, H1, FAQ topics, links) and the **technical-blocker handoff** for Jonie, side by side.
-No page copy is written until Paul approves the service and location page specs (still drafts).
-
-**Start every session in** `~/Documents/seo-ops`. One session per stage.
+_Generated 2026-10-08T12:21 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | Approve the page specs in `methodology/specs/` (service and location first) before Build writes pages | 2026-10-08 | — |
-| Paul | Send the client one question: "Is your CertainTeed ShingleMaster status current?" | 2026-10-08 | Brand Guide D |
-| Gwen | SC Secretary of State record, SC licence class and holder name, GBP dashboard (categories, service areas, opening date) | 2026-10-05 | handoff H-2026-10-05-02-manual_lookup |
-| Client (via Paul) | Synthetic roofing offered? (decides where the broken `/services/synthetic-roofing/` redirect points) · Port Royal base-housing work? · one confirmed price range | 2026-10-08 | audit F-009, F-001, F-002 |
+| Paul | the page specs are not approved yet — Paul approves them once, for every client: /approve global specs. The specs in methodology/specs/ are the same for every client; approve them once before any audit scores pages against them or any page is written | 2026-10-08 | /approve global specs |
+| Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
+| Paul | Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Brand Guide D) | 2026-10-08 | send_the_client_one_question_is_your_cer |
+| Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
+| Jonie | other handoff — 5 of 5 item(s) open | 2026-10-05 | H-2026-10-05-01-other |
+| Gwen | manual lookup handoff — 5 of 5 item(s) open | 2026-10-05 | H-2026-10-05-02-manual_lookup |
 
-## Settled — do not re-raise
+## Settled decisions — never re-raised
 
-- **Entity:** category Roofing Contractor (variants Roofer, Roofers); area = Hilton Head Island–Bluffton–Port Royal metro area.
-- **Titles:** homepage SEO title uses "Hilton Head Island Metropolitan Area"; homepage H1 uses a familiar name (Lowcountry /
-  South Carolina Lowcountry); service titles `Service Name - Apex Roofing of the Lowcountry` (no area); brand always in full.
-- **Homepage:** links all 8 services (Paul exception).
-- **About page:** title "About Apex Roofing of the Lowcountry - Roofing Contractor in the Hilton Head Island–Bluffton–Port Royal
-  Metropolitan Area"; H1 "About Apex Roofing of the Lowcountry"; Ralph and Pierce Brehany named only, with a visible
-  placeholder for photo and titles.
-- **Business:** residential only · 8 services kept · 12 towns (+ Brays Island, Lobeco) · not Georgia · SAB based in Bluffton ·
-  street address 6 Sutton Ct shown on the **website**, hidden on the **Google profile** · no travel fee · no public email ·
-  financing through Hearth · CertainTeed + GAF certified installers · lifetime no-leak workmanship warranty and 50-year
-  manufacturer warranty, both transferable · blog author Ralph Brehany.
-- **Not on the site until confirmed:** "& Coastal Georgia", "homes and businesses", "residential and commercial inspections",
-  ShingleMaster, "payment arrangements".
-- **Audit:** 30 findings (3 High, 18 Medium, 9 Low), advisory until the specs are approved; nothing removed or merged.
-- **Data:** citations skipped for this audit; Search Console/Analytics not used; local grid from Local Dominator (ranks only).
-- **Drive:** the Finding Register and URL Decision Map stay in the repo only (too large for the Drive connector) until Drive
-  for desktop is set up — `clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/`.
-- **WordPress:** connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to
-  an Editor.
+- 2026-10-08: Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant) — approved
+- 2026-10-07: Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly — approved
+- 2026-10-08: Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest) — approved
+- 2026-10-08: Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims) — approved
+- 2026-10-08: discovery_signed_off — approved
+- Entity: category Roofing Contractor (variants Roofer, Roofers); area = Hilton Head Island–Bluffton–Port Royal metro area.
+- Titles: homepage SEO title uses "Hilton Head Island Metropolitan Area"; homepage H1 uses a familiar name (Lowcountry / South Carolina Lowcountry); service titles `Service Name - Apex Roofing of the Lowcountry` (no area); brand always in full.
+- Homepage: links all 8 services (Paul exception).
+- About page: title "About Apex Roofing of the Lowcountry - Roofing Contractor in the Hilton Head Island–Bluffton–Port Royal Metropolitan Area"; H1 "About Apex Roofing of the Lowcountry"; Ralph and Pierce Brehany named only, with a visible placeholder for photo and titles.
+- Business: residential only · 8 services kept · 12 towns (+ Brays Island, Lobeco) · not Georgia · SAB based in Bluffton · street address 6 Sutton Ct shown on the **website**, hidden on the **Google profile** · no travel fee · no public email · financing through Hearth · CertainTeed + GAF certified installers · lifetime no-leak workmanship warranty and 50-year manufacturer warranty, both transferable · blog author Ralph Brehany.
+- Not on the site until confirmed: "& Coastal Georgia", "homes and businesses", "residential and commercial inspections", ShingleMaster, "payment arrangements".
+- Audit: 30 findings (3 High, 18 Medium, 9 Low), advisory until the specs are approved; nothing removed or merged.
+- Data: citations skipped for this audit; Search Console/Analytics not used; local grid from Local Dominator (ranks only).
+- Drive: the Finding Register and URL Decision Map stay in the repo only (too large for the Drive connector) until Drive for desktop is set up — `clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/`.
 
-## Unlocked now
+## Open VA items
 
-Safe fixes (broken links, alt text, image URLs, sitemap, meta descriptions — capped at 5 alt texts and 2 broken links until
-Paul checks them live) and structural changes (titles, H1s; redirects always as handoffs to Jonie).
+- **H-2026-10-05-01-other** (Jonie) — other: 5 of 5 open, issued 2026-10-05
+- **H-2026-10-05-02-manual_lookup** (Gwen) — manual lookup: 5 of 5 open, issued 2026-10-05
 
 ## Spend so far
 
-DataforSEO $0.59 (crawl $0.15, data pulls $0.24, People Also Ask for all towns $0.20). Model usage ≈ $111 — see
-`REWRITE-HANDOFF.md` §1 for why and the plan to cut it.
+- DataforSEO: $0.59
 
-## Where things are
-
-Brand Guide `brand-guide.md` · Discovery Record and Summary `discovery/` · audit `audit/2026-10-07/` · data `data/` ·
-handoffs to VAs `handoffs/H-*.md` · run notes `test-run-notes.md` · Drive: `v3. CMS Technical SEO Audit 2026 /
-Apex Roofing of the Lowcountry - TMS`.
+Last run: /discovery 2026-10-08T10:42 — Discovery Summary + client-confirmation list ready for sign-off

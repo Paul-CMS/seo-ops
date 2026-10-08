@@ -2,11 +2,11 @@
 
 Generated from the seo-ops system (clients/gettysburg-mold-remediation-pros/status.json). Do not edit by hand — approvals are made with /approve and mirrored here.
 
-## Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)
+## Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant)
 
 - Decision: **pending**
 
-## Client proof sheet approved by Paul, ready for him to send
+## Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly
 
 - Decision: **pending**
 
@@ -15,14 +15,6 @@ Generated from the seo-ops system (clients/gettysburg-mold-remediation-pros/stat
 - Decision: **pending**
 
 ## Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
-
-- Decision: **pending**
-
-## Discovery and audit signed off — Build may start
-
-- Decision: **pending**
-
-## Technical blocker checklist cleared and tracking stable
 
 - Decision: **pending**
 

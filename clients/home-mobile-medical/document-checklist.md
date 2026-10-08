@@ -1,6 +1,6 @@
 # Home Mobile Medical - Document Checklist
 
-Generated 2026-10-08T07:57 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-08T12:21 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -31,19 +31,20 @@ Generated 2026-10-08T07:57 from status.json — do not edit. `[x]` done · `[-]`
 ## Conditions
 
 - [x] Client set up (/new-client finished)
-- [x] The client returned the proof sheet (the returned sheet is recorded)
+- [x] The client's facts are in — the returned proof sheet is recorded, or Paul approved the client's direct answers
 - [x] Every registered audit step has an outcome (Done / Skipped / Failed)
 - [ ] Every page in the site plan is built, verified and written back — batches not yet built and written back: svc1, loc1, loc2, loc3, loc4, loc5, loc6, loc7, final1, final2
 - [x] WordPress connected (/wp-check passed in the last 30 days)
+- [ ] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — discovery is not signed off yet — still open: the audit deliverables
+- [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — the technical blocker checklist is not written yet
+- [ ] Page specs approved by Paul once, globally (methodology/specs) and unchanged since — the page specs are not approved yet — Paul approves them once, for every client: /approve global specs
 
 ## Decisions (Paul)
 
-- [x] Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)
-- [x] Client proof sheet approved by Paul, ready for him to send
+- [x] Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant)
+- [x] Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly
 - [ ] Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)
 - [x] Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
-- [ ] Discovery and audit signed off — Build may start
-- [ ] Technical blocker checklist cleared and tracking stable
 - [ ] Link wheel built and verified — schema may start
 - [ ] Schema built and QA cleared — release
 - [ ] Blog Decision Map approved — redirects and blog briefs may start

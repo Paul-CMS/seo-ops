@@ -1,5 +1,5 @@
 {
-  "schema": 3,
+  "schema": 4,
   "client": {
     "slug": "home-mobile-medical",
     "name": "Home Mobile Medical",
@@ -49,12 +49,6 @@
       "at": "2026-10-07T17:21:12-05:00",
       "files": {},
       "imported": true
-    },
-    "discovery_signed_off": {
-      "state": "pending"
-    },
-    "blockers_cleared": {
-      "state": "pending"
     },
     "link_wheel_approved": {
       "state": "pending"
@@ -682,7 +676,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-08T07:57:14-05:00",
+  "updated": "2026-10-08T12:21:53-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
@@ -716,5 +710,17 @@
     "run_id": "20261007-203219-discovery-784c",
     "step": "discovery:audit",
     "at": "2026-10-08T07:57:14-05:00"
+  },
+  "retired_gates": {
+    "discovery_signed_off": {
+      "state": "pending",
+      "retired": "2026-10-08T12:21:53-05:00",
+      "why": "R3: now a condition, met from evidence"
+    },
+    "blockers_cleared": {
+      "state": "pending",
+      "retired": "2026-10-08T12:21:53-05:00",
+      "why": "R3: now a condition, met from evidence"
+    }
   }
 }

@@ -2,14 +2,14 @@
 
 Generated from the seo-ops system (clients/apex-roofing-of-the-lowcountry/status.json). Do not edit by hand — approvals are made with /approve and mirrored here.
 
-## Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)
+## Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant)
 
 - Decision: **approved**
 - Decided by: Paul · 2026-10-08T10:40:10-05:00
 - Approved version: `clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md` (sha 76a048adc3f7)
-- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2` (sha 4d43186bd478)
+- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2` (sha 433330552c97)
 
-## Client proof sheet approved by Paul, ready for him to send
+## Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly
 
 - Decision: **approved**
 - Decided by: Paul · 2026-10-07T15:19:52-05:00
@@ -28,17 +28,7 @@ Generated from the seo-ops system (clients/apex-roofing-of-the-lowcountry/status
 
 - Decision: **approved**
 - Decided by: Paul · 2026-10-08T10:40:10-05:00
-- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G` (sha b8be065916a5)
-
-## Discovery and audit signed off — Build may start
-
-- Decision: **approved**
-- Decided by: Paul · 2026-10-08T11:03:17-05:00
-- Approved version: `clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Summary - REVIEW.md` (sha 564167710178)
-
-## Technical blocker checklist cleared and tracking stable
-
-- Decision: **pending**
+- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G` (sha b3cf28ab74c0)
 
 ## Link wheel built and verified — schema may start
 

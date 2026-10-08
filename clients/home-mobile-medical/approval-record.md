@@ -2,13 +2,13 @@
 
 Generated from the seo-ops system (clients/home-mobile-medical/status.json). Do not edit by hand — approvals are made with /approve and mirrored here.
 
-## Entity foundation approved (category entity, area entity, variant list, reserved homepage variant)
+## Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant)
 
 - Decision: **approved**
 - Decided by: Paul (import confirmed) · 2026-10-07T17:21:12-05:00
 - Note: Mobility equipment supplier; South Carolina Lowcountry (reserved homepage variant). Georgia via separate microsite.
 
-## Client proof sheet approved by Paul, ready for him to send
+## Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly
 
 - Decision: **approved**
 - Decided by: Paul (import confirmed) · 2026-10-07T17:21:12-05:00
@@ -23,14 +23,6 @@ Generated from the seo-ops system (clients/home-mobile-medical/status.json). Do 
 - Decision: **approved**
 - Decided by: Paul (import confirmed) · 2026-10-07T17:21:12-05:00
 - Note: Open [NEED] items block only what consumes them; schema assets deferred to Finish.
-
-## Discovery and audit signed off — Build may start
-
-- Decision: **pending**
-
-## Technical blocker checklist cleared and tracking stable
-
-- Decision: **pending**
 
 ## Link wheel built and verified — schema may start
 

@@ -331,3 +331,6 @@ Gates checked: entity_approved
 Changes: 22 · Summary: Audit on existing evidence: 40 findings (12H/13M/15L) after independent review; 159-row URL Decision Map; 4 REVIEW deliverables marked
 
 ## CONDITION · 2026-10-08T07:57:14-05:00 · Every registered audit step has an outcome (Done / Skipped / Failed) — met (system-verified)
+
+## MIGRATION · 2026-10-08T12:21:53-05:00 · schema 4 (rewrite 2026-10-08)
+Section approvals re-stamped (status columns no longer hashed): 0 · void approvals left void: 0 · now conditions: discovery_signed_off, blockers_cleared
