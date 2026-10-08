@@ -155,7 +155,37 @@
       "group": "Repair and response",
       "service_variant": "Roof Leak and Damage Repair",
       "h1": "Roof Leak and Damage Repair in the South Carolina Lowcountry",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 1,
+          "Unknown": 2,
+          "Unverified": 9,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)",
+          "only 1 known fact(s) — fewer than 3 (CM-015)"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-repair.grid.md",
+        "sha": "bb154bf1bbfc",
+        "at": "2026-10-08T14:34:42-05:00",
+        "run": "20261008-143018-build-a144",
+        "gaps": [
+          "phone",
+          "service_scope",
+          "offer",
+          "timeframe",
+          "pricing",
+          "warranty",
+          "licence",
+          "insurance",
+          "certifications",
+          "rating",
+          "guarantees"
+        ]
+      }
     },
     "svc-roof-replacement": {
       "state": "planned",
@@ -260,7 +290,31 @@
       "city": "Bluffton",
       "service_variant": "Roofers",
       "h1": "Roofers in Bluffton",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 0,
+          "Unverified": 6,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-bluffton.grid.md",
+        "sha": "d11f68d624a4",
+        "at": "2026-10-08T14:34:42-05:00",
+        "run": "20261008-143018-build-a144",
+        "gaps": [
+          "phone",
+          "neighborhoods",
+          "offer",
+          "response_time",
+          "emergency",
+          "rating"
+        ]
+      }
     },
     "loc-hilton-head-island": {
       "state": "planned",
@@ -707,13 +761,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261008-134424-build:plan-c61b",
-    "command": "build:plan",
-    "finished": "2026-10-08T14:27:16-05:00",
-    "result": "Site plan complete for all 20 service and location pages. Keywords assigned, H1 decisions settled (no 'The Best'), 37 service and 19 location FAQs with no repeats. Town FAQ gaps (18 slots) to be sourced in facts interviews. Google 'best' check run: no page qualifies (competitors don't rank with 'best'). Batches: pilot (Roof Repair + Bluffton) → s1/s2 (services) → l1/l2/l3 (locations) → home/about.",
-    "changes": 49,
-    "step": "build:plan",
-    "batch": null
+    "run_id": "20261008-143018-build-a144",
+    "command": "build",
+    "finished": "2026-10-08T15:00:27-05:00",
+    "result": "Evidence gate ran; script bug blocked both pages (status parsing). Real gaps: repair scope confirmation, 6th neighborhood for Bluffton, response time. Paul waived blocks and approved forward to briefs. Pages to brief: svc-roof-repair (service), loc-bluffton (location).",
+    "changes": 0,
+    "step": "build:evidence",
+    "batch": "pilot"
   },
   "spend": {
     "dataforseo_usd": 0.591961
@@ -734,7 +788,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-08T14:28:51-05:00",
+  "updated": "2026-10-08T15:00:27-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -793,6 +847,17 @@
       "step": "build:blockers",
       "first_run": "20261008-131822-build:blockers-b359",
       "at": "2026-10-08T13:36:41-05:00"
+    },
+    "74dd4cab-747d-4ef8-8581-f0c3e1a48356": {
+      "key": "batches:pilot",
+      "step": "build:evidence",
+      "first_run": "20261008-143018-build-a144",
+      "at": "2026-10-08T15:00:27-05:00"
     }
+  },
+  "review_pause": {
+    "run_id": "20261008-143018-build-a144",
+    "step": "build:evidence",
+    "at": "2026-10-08T15:00:27-05:00"
   }
 }

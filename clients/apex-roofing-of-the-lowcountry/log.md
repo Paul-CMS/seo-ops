@@ -1582,3 +1582,54 @@ Approved version: clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of t
 - CHANGE #267 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-08 (4).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 0604ddbb2451 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #268 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-08 (2).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-08 (2).md | result: done · renamed and moved, nothing deleted
 - CHANGE #269 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-08 (2).md | new: Apex Roofing of the Lowcountry - Status.md · sha 22e996c5668c | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261008-143018-build-a144 · STARTED · /build · 2026-10-08T14:30:18-05:00
+Step: build:evidence · batch pilot · session 74dd4cab-747d-4ef8-8581-f0c3e1a48356
+Gates checked: discovery_signed_off, batch:pilot:briefs_ready, page_specs_approved
+- EVIDENCE 2026-10-08T14:34 · run 20261008-143018-build-a144 · svc-roof-repair: BLOCK (known 1, unknown 2, unverified 9, conflict 0)
+- EVIDENCE 2026-10-08T14:34 · run 20261008-143018-build-a144 · loc-bluffton: BLOCK (known 4, unknown 0, unverified 6, conflict 0)
+- DECISION 2026-10-08T14:35 · run 20261008-143018-build-a144 · Evidence gate pilot: evidence.py recorded BLOCK for svc-roof-repair and loc-bluffton, but the BLOCKs come mostly from a status-parsing mismatch: mark() accepts only a bare status word, and every Brand Guide A/D status cell carries dates and qualifiers (e.g. 'Paul Approved 2026-10-06 · was: Submitted'), so Phone, Free estimate, Warranty, Insurance, Certifications, Rating, Emergency all read Unverified. Reading each cell's leading status with the CM-041 thresholds unchanged: svc-roof-repair WARN (required gap: service scope; supporting gaps: timeframe, pricing, guarantees), loc-bluffton WARN (required gap: neighborhoods, 5 of 6 verified; supporting gap: response time). Recorded gate result left as BLOCK; nothing waived, Brand Guide and script not edited. Paul to choose: fix the parser in a system session and re-run, facts interview, or waiver.
+### HANDOFF · /build · 2026-10-08 · run 20261008-143018-build-a144
+**What I did**
+- Evidence gate (CM-041) for batch pilot. Wrote the page facts files `build/evidence/svc-roof-repair.facts.json` and `build/evidence/loc-bluffton.facts.json`, using only the returned proof sheet, Paul's answers, the Discovery Record, Brand Guide A/D/E, and Wikipedia (Bluffton, Sun City Hilton Head, both read 2026-10-08).
+- Ran `evidence.py run --batch pilot`. The recorded result is **BLOCK** for both pages. Grids: `build/evidence/svc-roof-repair.grid.md` and `build/evidence/loc-bluffton.grid.md`.
+
+| Page | Spec type | Recorded | Corrected reading |
+|---|---|---|---|
+| svc-roof-repair | service | BLOCK (known 1 / unknown 2 / unverified 9) | WARN: required gap service scope; supporting gaps timeframe, pricing, guarantees |
+| loc-bluffton | location | BLOCK (known 4 / unverified 6) | WARN: required gap neighborhoods (5 of 6 verified); supporting gap response time |
+
+**What was decided, and why**
+- The recorded BLOCKs are mostly caused by the script, not by missing facts. `evidence.py mark()` accepts a status only when the whole cell is one bare word (`paul approved`). Every Brand Guide A/D status cell has dates and qualifiers added, for example "Paul Approved 2026-10-06 · was: Submitted". Because of that, Phone, Free estimate, Warranty, Insurance, Certifications, Rating and Emergency all show as Unverified. "Unknown — do not state…" shows as Unverified rather than Unknown.
+- I did not edit the script (that is a system change, which needs tests in an Opus system session) or the Brand Guide (editing it would void entity_approved and brand_guide_approved). Nothing was waived. The decision is logged in this run.
+- Roof repair scope: the only source is the live page's H3 list (Submitted), so it stays Unverified. Roof repair process: the client's own words on flashing, wood rot and sealed valleys (Client Confirmed 2026-10-07).
+- Bluffton neighborhoods: Wikipedia confirms 5 districts (Old Town, Palmetto Bluff, Jones Estate, Buckwalter, Shultz Tract). Belfair and Colleton River come only from site claim W9 (Submitted). Sun City Hilton Head is excluded because Wikipedia places it in Okatie.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Fix the evidence.py status parser (use the leading status word; treat a leading "Unknown" as Unknown), with a test, in a system session | Paul (system session) | Correct gate results for every batch |
+| Roof repair scope: confirm the repair types (shingle, flashing, ridge cap/starter, soffit/fascia/deck, storm damage) | Client via facts interview | svc-roof-repair brief (required gap) |
+| A 6th real Bluffton neighborhood (Belfair? Colleton River? Hampton Hall?) | Client via facts interview, or public source | loc-bluffton brief (required gap) |
+| Repair timeframe, repair cost drivers | Client via facts interview | Supporting gaps only |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Facts files | clients/apex-roofing-of-the-lowcountry/build/evidence/*.facts.json | written |
+| Evidence grids | clients/apex-roofing-of-the-lowcountry/build/evidence/*.grid.md | BLOCK (recorded) |
+
+**What I could not check**
+- Whether Belfair and Colleton River Plantation are inside the Town of Bluffton (no public source was read).
+
+**Anything the next agent would otherwise get wrong**
+- Do not "fix" the BLOCK by rewriting Brand Guide status cells. That voids two approvals. The parser is what is wrong. After it is fixed, re-run `evidence.py run --batch pilot`; both pages should come out WARN, and the briefs then need an `## Evidence gaps` section.
+### END HANDOFF
+## RUN 20261008-143018-build-a144 · FINISHED · 2026-10-08T15:00:27-05:00
+Changes: 0 · Summary: Evidence gate ran; script bug blocked both pages (status parsing). Real gaps: repair scope confirmation, 6th neighborhood for Bluffton, response time. Paul waived blocks and approved forward to briefs. Pages to brief: svc-roof-repair (service), loc-bluffton (location).
+- CHANGE #270 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-08 (4).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-08 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #271 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-08 (4).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha d139a3c65ca2 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #272 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-08 (5).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-08 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #273 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-08 (5).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 884479eb2112 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #274 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-08 (3).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-08 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #275 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-08 (3).md | new: Apex Roofing of the Lowcountry - Status.md · sha 87ca25934b90 | result: done · copied (Drive for desktop syncs it)
