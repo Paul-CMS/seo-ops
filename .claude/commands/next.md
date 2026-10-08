@@ -30,8 +30,10 @@ Arguments: $ARGUMENTS
 4. **kind = review:** stop (CM-044). The stage that just finished is in review mode: tell Paul what it produced
    (the files, the result) and that `/next` continues. A stage Paul has switched to auto never pauses; a
    decision is never auto.
-5. **kind = wait:** stop. Say who or what it is waiting on (client, VA handoff, unfinished run).
-6. Also stop whenever the command you are running stops for Paul (cost confirmation, outline
+5. **kind = new_session:** stop (R2). Say: "Stage <x> is done in this session. Open a new chat on <Model> in
+   ~/Documents/seo-ops and type `/next <slug>`." Never try to run the step here — `run.py start` refuses it.
+6. **kind = wait:** stop. Say who or what it is waiting on (client, VA handoff, unfinished run).
+7. Also stop whenever the command you are running stops for Paul (cost confirmation, outline
    check, a STOP from a script). Never run more than one paid step without Paul seeing the cost.
 
 The specific commands (`/discovery`, `/crawl`, `/build`, …) stay available for manual use.

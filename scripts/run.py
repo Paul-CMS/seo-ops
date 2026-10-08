@@ -261,14 +261,21 @@ def main():
                 print(f"REFUSED — /{a.command} can't run for {a.slug} yet. It needs:\n  - " + "\n  - ".join(reasons))
                 print(f"\n`python3 scripts/next.py {a.slug}` shows what to do first. Only Paul approves, with /approve.")
                 sys.exit(4)
+        import stages
+        refusal = stages.session_conflict(a.slug, key, a.batch)   # R2: one session per stage, enforced
+        if refusal:
+            print(f"REFUSED — {refusal}")
+            sys.exit(4)
+        sid = stages.current_session()
         run_id = (f"{now()[:19].replace('-', '').replace(':', '').replace('T', '-')}-{a.command}"
                   f"-{secrets.token_hex(2)}")
         st = S.load(a.slug)
         st.setdefault("open_runs", {})[run_id] = {"step": key, "batch": a.batch, "page": a.page, "started": now(),
-                                                  "started_ts": time.time()}
+                                                  "started_ts": time.time(), "session": sid}
         S.save(a.slug, st)
         append(d / "log.md", f"\n## RUN {run_id} · STARTED · /{a.command} · {now()}\n"
-               + f"Step: {key}" + (f" · batch {a.batch}" if a.batch else "") + "\n"
+               + f"Step: {key}" + (f" · batch {a.batch}" if a.batch else "")
+               + (f" · session {sid}" if sid else "") + "\n"
                + (f"Gates checked: {', '.join(gates)}\n" if gates else "")
                + (f"Note: {a.note}\n" if a.note else ""))
         rl = spec.get("reads") or []
@@ -326,6 +333,11 @@ def main():
         st = S.load(a.slug)
         (st.get("open_runs") or {}).pop(a.run_id, None)
         step = (info or {}).get("step")
+        import stages
+        skey = stages.session_key(step or "", (info or {}).get("batch"))
+        if skey and (info or {}).get("session"):   # R2: this session has now done this stage
+            st.setdefault("sessions", {}).setdefault(info["session"], {"key": skey, "step": step, "first_run": a.run_id,
+                                                                       "at": now()})
         if S.stage_mode(st, step) == "review":   # CM-044: /next stops here until Paul types /next again
             st["review_pause"] = {"run_id": a.run_id, "step": step, "at": now()}
         if cmd != "drive-mirror":   # a records mirror is bookkeeping; "last run" stays the real work

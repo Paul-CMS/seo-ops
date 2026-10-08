@@ -24,6 +24,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 RESULTS = []
 SB = None  # sandbox root
+SESSIONS = []   # R2: every session the tests opened (a new one each time a stage changes)
 
 
 # ------------------------------------------------------------------ sandbox
@@ -50,15 +51,41 @@ def make_sandbox():
     cfg["drive"]["local_root"] = str(v3)
     (SB / "config.json").write_text(json.dumps(cfg, indent=2))
     assert str(SB) in json.loads((SB / "config.json").read_text())["drive"]["local_root"]
+    # hooks Paul has not installed yet (hooks-pending/) are what the tests run, so the suite checks what he installs
+    pend = SB / "hooks-pending"
+    if pend.is_dir():
+        for f in pend.glob("*.py"):
+            shutil.copy2(f, SB / ".claude" / "hooks" / f.name)
+        if (pend / "settings.json").exists():
+            shutil.copy2(pend / "settings.json", SB / ".claude" / "settings.json")
     assert not (SB / ".env").exists()
     sh("git init -q && git add -A && git -c user.email=t@t -c user.name=t commit -qm base")
 
 
-def sh(cmd, ok=None):
+def _sh(cmd):
     r = subprocess.run(cmd, shell=True, cwd=SB, capture_output=True, text=True,
                        env={**os.environ, "GIT_AUTHOR_NAME": "t", "GIT_AUTHOR_EMAIL": "t@t",
                             "GIT_COMMITTER_NAME": "t", "GIT_COMMITTER_EMAIL": "t@t"})
     return r.returncode, (r.stdout + r.stderr).strip()
+
+
+def new_session(model="claude-haiku-4-5"):
+    """Paul opens a new chat: the real SessionStart hook records its id."""
+    sid = f"test-session-{len(SESSIONS) + 1}"
+    payload = json.dumps({"session_id": sid, "cwd": str(SB), "hook_event_name": "SessionStart", "source": "startup",
+                          "model": model})
+    r = subprocess.run(["python3", ".claude/hooks/session_start.py"], input=payload, text=True, cwd=SB,
+                       capture_output=True)
+    SESSIONS.append(sid)
+    return r.stdout
+
+
+def sh(cmd, ok=None):
+    code, out = _sh(cmd)
+    if code == 4 and "Start a new session" in out and cmd.startswith("python3 scripts/run.py start"):
+        new_session()   # R2: the stage changed — the tests do what Paul does: a new chat, then /next
+        code, out = _sh(cmd)
+    return code, out
 
 
 def check(name, cond, detail=""):
@@ -79,7 +106,8 @@ def wp_state():
 # ------------------------------------------------------------------ Paul and the agent
 def paul(line, expect_ok=True):
     """Paul types a /approve line: the real UserPromptSubmit hook, then approve.py."""
-    payload = json.dumps({"prompt": line, "cwd": str(SB), "hook_event_name": "UserPromptSubmit"})
+    payload = json.dumps({"prompt": line, "cwd": str(SB), "hook_event_name": "UserPromptSubmit",
+                          "session_id": SESSIONS[-1] if SESSIONS else None})
     subprocess.run(["python3", ".claude/hooks/approve_token.py"], input=payload, text=True, cwd=SB)
     code, out = sh("python3 scripts/approve.py " + shlex.join(shlex.split(line)[1:]))
     return code, out
@@ -449,6 +477,9 @@ def walkthrough(slug, kind="full", industry="roofing", max_posts=2, extra_init="
             decisions += 1; prev = None
             if on_decision:
                 on_decision(line)
+        elif n["kind"] == "new_session":   # R2: Paul opens a new chat on the session model and types /next
+            new_session(); prev = None
+            log.append("SESSION")
         elif n["kind"] == "review":     # Paul looks, then types /next: the command clears the pause
             sh(f"python3 scripts/next.py {slug} --continue")
             prev = None
@@ -470,6 +501,10 @@ def t_walkthrough_full():
     check("full client: every decision line was accepted as typed", not any(l.startswith("APPROVE FAILED") for l in log),
           "\n".join(l for l in log if "FAILED" in l))
     check("full client: each run stops at the next decision (no run asked twice)", decisions > 0 and runs > 0)
+    ns = log.count("SESSION")
+    check("R2: the walkthrough opens a new session at each stage (and per batch), never mid-stage",
+          ns >= 7 and all(log[i + 1].startswith(("run", "review", "decision", "wait")) for i, l in enumerate(log[:-1]) if l == "SESSION"),
+          ns)
     print(f"        ({runs} runs, {decisions} decisions)")
     stops = {}
     for l in log:
@@ -1150,7 +1185,11 @@ def build_ready(slug, gaps=None):
 
 def nxt(slug):
     """What /next would do when Paul types it (a review pause is cleared first, as the command does)."""
-    return json.loads(sh(f"python3 scripts/next.py {slug} --continue")[1])
+    n = json.loads(sh(f"python3 scripts/next.py {slug} --continue")[1])
+    if n["kind"] == "new_session":   # R2: Paul opens a new chat and types /next there
+        new_session()
+        n = json.loads(sh(f"python3 scripts/next.py {slug} --continue")[1])
+    return n
 
 
 def t_evidence_gate():
@@ -1830,15 +1869,80 @@ def t_migration():
     check("migration runs once (a second run changes nothing)", "already migrated" in out, out)
 
 
+def t_sessions():
+    import shutil as _sh_
+    sf = SB / ".claude" / "state" / "session.json"
+    saved = sf.read_text() if sf.exists() else None
+    sh('python3 scripts/status.py init se-co --name "Se Co" --domain se.example --type full --industry roofing')
+    sh('python3 scripts/status.py init se2-co --name "Se2 Co" --domain se2.example --type full --industry roofing')
+    sf.unlink(missing_ok=True)
+    code, out = _sh("python3 scripts/run.py start se-co new-client")
+    check("R2: with no session recorded (hook not installed) a stage run is refused", code == 4 and "session hook" in out, out)
+    out = new_session("claude-haiku-4-5")
+    check("R2: the SessionStart hook records the session and prints the model reminder",
+          sf.exists() and "one session per stage" in out and "Haiku" in out, out)
+    check("R1: a session on another model is warned (Haiku and Opus only)", "Haiku and Opus only" in new_session("claude-sonnet-5-5"))
+    new_session()
+    ag = Agent("se-co"); rid = ag.start("new-client"); ag.fin(rid, "set up")
+    code, out = _sh("python3 scripts/run.py start se-co discovery --step discovery")
+    check("R2: a session that finished one stage cannot start the next — the system says to open a new session",
+          code == 4 and "Stage 1 (Setup) is done in this session" in out and "new session" in out and "Haiku" in out, out)
+    n = json.loads(_sh("python3 scripts/next.py se-co --continue")[1])
+    check("R2: /next stops with new_session instead of running the next stage here", n["kind"] == "new_session", n)
+    code, out = _sh("python3 scripts/run.py start se-co wp-check")
+    check("R2: bookkeeping steps (any stage) still run in the same session", code == 0, out)
+    if code == 0:
+        sh(f'python3 scripts/run.py finish se-co {out.splitlines()[-1]} --summary "check"')
+    code, out = _sh("python3 scripts/run.py start se2-co new-client")
+    check("R2: the same session cannot start a stage for another client either", code == 4 and "for se-co" in out, out)
+    new_session()
+    code, out = _sh("python3 scripts/run.py start se-co discovery --step discovery")
+    check("R2: in a new session the next stage starts", code == 0, out)
+    lm = (SB / "clients/se-co/log.md").read_text()
+    check("R2: every run records its session", f"session {SESSIONS[-1]}" in lm)
+    if saved is not None:
+        sf.write_text(saved)
+
+
+def t_guard_rewrite():
+    def g(tool, inp):
+        r = subprocess.run(["python3", ".claude/hooks/guard.py"], input=json.dumps({"tool_name": tool, "tool_input": inp,
+                           "cwd": str(SB)}), text=True, cwd=SB, capture_output=True)
+        return r.returncode == 2
+    B = lambda c: g("Bash", {"command": c})
+    check("#20: a read-only chain on the safety log is allowed", not B("cd clients/x && cat log.md | grep RUN | tail -3"))
+    check("#20: a record name inside a quoted argument is text", not B('git commit -m "regenerate approval-record.md and decisions.md"')
+          and not B('python3 scripts/run.py decision x R --text "see log.md; status.json & co"'))
+    check("#20: the credentials file named in a commit message is text", not B('git commit -m "never commit .env"'))
+    check("#20: writes stay blocked — redirect, rm, sed -i, tee, inline python",
+          B("echo x > clients/x/log.md") and B("cd clients/x && rm status.json") and B("sed -i '' s/a/b/ clients/x/status.json")
+          and B("echo x | tee -a clients/x/log.md") and B("python3 -c \"open('clients/x/status.json','w')\"")
+          and B("cp /tmp/a clients/x/approval-record.md"))
+    check("#20: .env stays unreadable however it is written", B("cat .env") and B('cat ".env"') and B("cd x && head -1 .env"))
+    check("#20: hooks and approval state stay off limits", B("cat .claude/state/approve-token.json") and B("ls .claude/hooks"))
+    check("#20: history rewriting stays blocked", B("git reset --hard HEAD~1") and B("git push --force"))
+    check("#20: DataforSEO/WordPress API calls outside the scripts stay blocked",
+          B("curl https://api.dataforseo.com/v3/x") and B("curl https://x.example/wp-json/wp/v2/pages"))
+    cfg = json.loads((SB / "config.json").read_text())["drive"]
+    D = "mcp__462fe272-2d95-47ed-a152-03251be122dc__search_files"
+    check("R8: a Drive search across all of Drive is blocked", g(D, {"query": "title contains 'Apex'"}))
+    check("R8: a Drive search inside the v3 folder is allowed",
+          not g(D, {"query": f"parentId = '{cfg['root_folder_id']}' and title contains 'Apex'"}))
+    check("R8: a search that escapes the v3 folder with 'or' is blocked",
+          g(D, {"query": f"parentId = '{cfg['root_folder_id']}' or title contains 'Apex'"}))
+    check("R8: a search in a folder outside v3 is blocked", g(D, {"query": "parentId = 'someOtherFolder'"}))
+
+
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_section_approval, t_reviews_parse, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view,
-             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_migration]
+             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_migration, t_sessions, t_guard_rewrite]
 
 
 def main():
     keep = "--keep" in sys.argv
     only = sys.argv[sys.argv.index("-k") + 1] if "-k" in sys.argv else None
     make_sandbox()
+    new_session()
     try:
         for t in SCENARIOS:
             if only and only not in t.__name__:

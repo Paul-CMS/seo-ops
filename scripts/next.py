@@ -9,6 +9,8 @@
 kind=run      -> /next runs this command now
 kind=decision -> stop: Paul decides. "command" is the exact /approve line to type.
 kind=wait     -> stop: waiting on the client, a VA or an unfinished run
+kind=new_session -> stop (R2): this session already did another stage. Paul opens a new chat on the session
+                 model and types /next <slug> there.
 kind=review   -> stop: the stage that just finished is in review mode (CM-044). Paul looks at its
                  output and types /next to go on. A stage in auto mode never pauses. A pause before a
                  decision or a wait is not shown (that stop already pauses).
@@ -65,6 +67,10 @@ def out(kind, command, why):
         kind, why = "review", (f"{PAUSE['step']} finished (run {PAUSE['run_id']}) and that stage is in review mode — "
                                f"look at what it produced, then type /next to go on. Next would be: {command} ({why})")
         command = f"/next {SLUG}"
+    if kind == "run" and step:
+        refusal = stages.session_conflict(SLUG, step, batch)   # R2: a new stage needs a new session
+        if refusal:
+            kind, why, command = "new_session", f"{refusal} Next there: {command} ({why})", f"/next {SLUG}"
     rec = {"kind": kind, "command": command, "why": why}
     if not step and kind == "decision":
         step, batch = decision_step(command)

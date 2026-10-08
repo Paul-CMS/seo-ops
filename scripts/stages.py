@@ -82,6 +82,42 @@ def step_of_command(command):
     return (key if key in S.GATES["steps"] else None), batch
 
 
+SESSION_FILE = ROOT / ".claude" / "state" / "session.json"
+
+
+def current_session():
+    """The session id the hooks recorded (SessionStart / UserPromptSubmit), or None."""
+    try:
+        import json
+        return json.loads(SESSION_FILE.read_text()).get("session_id")
+    except Exception:
+        return None
+
+
+def session_conflict(slug, step, batch=None, sid=None):
+    """R2: None if this session may run <step>; else the plain-language refusal. A session that finished a run of
+    one stage (for one client) may not start another stage — bookkeeping steps (any_stage) are always allowed."""
+    key = session_key(step, batch)
+    if not key:
+        return None
+    sid = sid or current_session()
+    if not sid:
+        return ("No session is recorded — the seo-ops session hook is not installed (hooks-pending/INSTALL.md). "
+                "One session per stage is enforced through it.")
+    from lib import CLIENTS
+    import json
+    for p in sorted(CLIENTS.glob("*/status.json")):
+        rec = (json.loads(p.read_text()).get("sessions") or {}).get(sid)
+        if rec and (p.parent.name != slug or rec.get("key") != key):
+            done = stage_of(rec.get("step") or "") or {}
+            nxt = stage_of(step) or {}
+            return (f"Stage {done.get('n', '?')} ({done.get('name', rec.get('key'))}) is done in this session"
+                    + (f" for {p.parent.name}" if p.parent.name != slug else "")
+                    + f". Start a new session (new chat, model: {nxt.get('session_model', 'haiku').title()}) in "
+                    f"~/Documents/seo-ops and type /next {slug}.")
+    return None
+
+
 def describe(step, batch=None):
     """{'stage': '2 of 8 — Discovery', 'session_model': 'haiku', 'agents': '…'} for a step (or {} if none)."""
     st = stage_of(step) if step else None

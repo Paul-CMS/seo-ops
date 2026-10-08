@@ -1126,12 +1126,10 @@
         "build:draft",
         "build:drafts",
         "build:apply-sem",
-        "build:pilot-corrections",
         "build:ship",
         "build:published",
         "interview:facts",
-        "interview:facts-answers",
-        "implement:page"
+        "interview:facts-answers"
       ]
     },
     {
@@ -1181,7 +1179,9 @@
     "implement:safe",
     "implement:structural",
     "discovery:sheet-returned",
-    "drive-mirror"
+    "drive-mirror",
+    "build:pilot-corrections",
+    "implement:page"
   ],
   "retired_gates": {
     "discovery_signed_off": {
