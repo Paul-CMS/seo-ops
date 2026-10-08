@@ -87,10 +87,10 @@
     "entity_record": {
       "files": {
         "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md": "76a048adc3f7",
-        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2": "c13141e1df7d"
+        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2": "4d43186bd478"
       },
-      "at": "2026-10-08T07:59:03-05:00",
-      "ts": 1791464343.868296
+      "at": "2026-10-08T08:08:45-05:00",
+      "ts": 1791464925.338093
     },
     "proof_sheet": {
       "files": {
@@ -118,10 +118,10 @@
     },
     "reconciled": {
       "files": {
-        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G": "1265196d5d53"
+        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G": "b8be065916a5"
       },
-      "at": "2026-10-08T07:59:01-05:00",
-      "ts": 1791464341.094178
+      "at": "2026-10-08T08:08:45-05:00",
+      "ts": 1791464925.146144
     }
   },
   "pages": {},
@@ -314,10 +314,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261008-075515-discovery-24a2",
+    "run_id": "20261008-080806-discovery-b736",
     "command": "discovery",
-    "finished": "2026-10-08T08:00:06-05:00",
-    "result": "Brand Guide reconciled (client + Paul answers); entity re-approval needed; 4 open choices for Paul",
+    "finished": "2026-10-08T08:08:45-05:00",
+    "result": "Reconcile choices applied (website address, no travel fee, ShingleMaster asked, Ralph kept)",
     "changes": 1
   },
   "spend": {
@@ -336,7 +336,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-08T08:00:06-05:00",
+  "updated": "2026-10-08T08:08:45-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -362,8 +362,8 @@
     }
   },
   "review_pause": {
-    "run_id": "20261008-075515-discovery-24a2",
+    "run_id": "20261008-080806-discovery-b736",
     "step": "discovery:reconcile",
-    "at": "2026-10-08T08:00:06-05:00"
+    "at": "2026-10-08T08:08:45-05:00"
   }
 }

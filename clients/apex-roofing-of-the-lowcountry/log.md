@@ -1190,3 +1190,39 @@ Gates checked: proof_sheet_returned
 ### END HANDOFF
 ## RUN 20261008-075515-discovery-24a2 · FINISHED · 2026-10-08T08:00:06-05:00
 Changes: 1 · Summary: Brand Guide reconciled (client + Paul answers); entity re-approval needed; 4 open choices for Paul
+
+## RUN 20261008-080806-discovery-b736 · STARTED · /discovery · 2026-10-08T08:08:06-05:00
+Step: discovery:reconcile
+Gates checked: proof_sheet_returned
+- DECISION 2026-10-08T08:08 · run 20261008-080806-discovery-b736 · Paul reconcile choices: 1a street address 6 Sutton Ct on the website, GBP address stays hidden; 2a no travel fee; 3b ask the client whether CertainTeed ShingleMaster is current (stays off the site until confirmed); 4a Ralph Brehany stays owner/author on Paul's direction.
+- CHANGE #133 [other] clients/apex-roofing-of-the-lowcountry/brand-guide.md | A4, D (travel fee, ShingleMaster, author), D3 R4, E, H | old: 4 open choices marked [NEED: Paul] | new: website address shown, no travel fee, ShingleMaster asked of the client, Ralph kept | result: revised per Paul
+### HANDOFF · /discovery · 2026-10-08 · run 20261008-080806-discovery-b736
+**What I did**
+- Applied Paul's four reconcile choices to the Brand Guide (A4, D, D3 R4, E, H). No open-choice markers remain. Re-recorded `reconciled` (`#A+D+E+G`) and `entity_record` (Discovery Record + `#A+B1+B2`).
+
+**What was decided, and why**
+- **1a:** the website shows the full street address "6 Sutton Ct, Bluffton, SC 29910"; the GBP address stays hidden (service-area business).
+- **2a:** no travel fee — the client's "No" is read as no travel fee.
+- **3b:** ask the client whether CertainTeed ShingleMaster is current. It stays off the site until confirmed.
+- **4a:** Ralph Brehany stays owner/author on Paul's direction (not client-confirmed).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Ask the client: "Is your CertainTeed ShingleMaster status current?" — one question; Paul sends it | Paul | Using "ShingleMaster" in any copy |
+| brand_guide_approved + entity re-approval (Section A statuses changed) | Paul | Structural changes; discovery sign-off |
+| Licence class / holder name; GBP secondary categories | Gwen (H-2026-10-05-02) | Licence wording; BB-107 |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Brand Guide (reconciled) | clients/apex-roofing-of-the-lowcountry/brand-guide.md | Ready for approval |
+
+**What I could not check**
+- Brays Island's county (no Wikipedia article; near Sheldon, Beaufort County). Lobeco is in Beaufort County per Wikipedia.
+
+**Anything the next agent would otherwise get wrong**
+- Website NAP = "Apex Roofing of the Lowcountry · 6 Sutton Ct, Bluffton, SC 29910 · (843) 757-2739"; the GBP shows no street address. That difference is deliberate (SAB), not a NAP inconsistency.
+### END HANDOFF
+## RUN 20261008-080806-discovery-b736 · FINISHED · 2026-10-08T08:08:45-05:00
+Changes: 1 · Summary: Reconcile choices applied (website address, no travel fee, ShingleMaster asked, Ralph kept)
