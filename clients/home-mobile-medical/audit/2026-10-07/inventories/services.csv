@@ -1,0 +1,10 @@
+service,status,canonical_url,existing_urls,note
+Stair lifts (parent; straight consolidated in),Client Confirmed,/services/stair-lifts/,/services/stair-lifts/; /services/straight-stair-lifts/ (merge candidate); /stair-lift-installer/ (legacy),Brand Guide C1/D
+Curved stair lifts,Client Confirmed,/services/curved-stair-lifts/,/services/curved-stair-lifts/,
+Porch lifts / vertical platform lifts,Client Confirmed,/services/porch-lifts/,/services/porch-lifts/,outdoor access offer
+Wheelchair lifts,Client Confirmed,/services/wheelchair-lifts/,/services/wheelchair-lifts/; /charleston-sc/wheelchair-lifts/; /hilton-head/wheelchair-lift/,
+Repair & maintenance (any brand),Client Confirmed,"/services/stair-lift-repair/ (to create, site plan)",/hilton-head/stair-lift-repair/; /bluffton-sc/wheelchair-lift-repair/,F-014
+Power chairs,Discontinued,—,/services/power-chairs/; /charleston-sc/power-chairs/; /power-chairs/; /savannah-ga/power-chairs/,F-003
+Mobility ramps,Discontinued,—,/services/mobility-ramps/; /charleston-sc/mobility-ramps/; /savannah-ga/mobility-ramps/,F-003
+Scooter lifts / scooter repair,Discontinued,—,/services/scooter-lifts/; /mobility-scooter-repair-near-me/ (post),F-003
+Rentals / broad DME,Discontinued,—,/equipment-rentals/* and /charleston-sc/*-rental (already 301 to /),existing 301s kept

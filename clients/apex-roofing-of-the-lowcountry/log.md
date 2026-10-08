@@ -1026,3 +1026,7 @@ Gates checked: client_setup
 ### END HANDOFF
 ## RUN 20261008-073331-discovery-a866 · FINISHED · 2026-10-08T07:34:12-05:00
 Changes: 2 · Summary: Reserved homepage variant -> Hilton Head Island Metropolitan Area; H1 pool variant (Paul)
+
+## APPROVAL · 2026-10-08T07:36:22-05:00 · entity_approved · approved · by Paul
+Approved version: clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md (sha 76a048adc3f7)
+Approved version: clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2 (sha d5673fb2dcf3)
