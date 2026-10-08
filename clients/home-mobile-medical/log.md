@@ -205,3 +205,59 @@ Gates checked: client_setup
 ### END HANDOFF
 ## RUN 20261007-172819-drive-mirror-bbb0 · FINISHED · 2026-10-07T17:31:21-05:00
 Changes: 8 · Summary: Drive records mirrored (4 archived, 4 uploaded)
+
+## RUN 20261007-173133-discovery-dce1 · STARTED · /discovery · 2026-10-07T17:31:33-05:00
+Step: discovery:data
+Gates checked: proof_sheet_approved
+- CHANGE #26 [audit_step] S20 | SEOPress site-wide settings (title templates, sitemap, noind | old:  | new: skipped | result: SKIPPED — SEOPress site-wide settings not readable as Editor (/wp-check 20261007-172720-wp-check-bb94); one-time VA check issued to Jonie as handoff H-2026-10-07-02-seopress_settings. Re-record S20 done when her returned worksheet is saved. No Administrator access attempted (wordpress-site-setup.md section 5).
+- CHANGE #27 [data_prep] clients/home-mobile-medical/data/services.txt | file | old:  | new: seed file: 5 core services for S07/S19/S21 (stair lifts, curved stair lifts, porch lifts, wheelchair lifts, stair lift repair) | result: DONE
+- CHANGE #28 [data_prep] clients/home-mobile-medical/data/backlinks/ | file | old:  | new: S08 DataforSEO payloads prepared, not sent: payload-summary.json (backlinks/summary/live), payload-backlinks-p1.json (backlinks/backlinks/live, domain target, … | result: DONE
+- CHANGE #29 [data_pull] Home Mobile Medical | reviews task | old:  | new: 10080044-1266-0298-0000-7c408b378ad6 | result: POSTED
+- CHANGE #30 [data_pull] homemobilemedical.com | rankings | old:  | new: 115 rows, 0 clusters | result: DONE
+- CHANGE #31 [data_pull] Beaufort,Charleston,Hilton Head Island,Bluffton | PAA | old:  | new: 20 queries, 35 questions | result: DONE
+- CHANGE #32 [data_pull] Beaufort,Charleston,Hilton Head Island,Bluffton | fan-out | old:  | new: 10 seeds, 354 queries | result: DONE
+- CHANGE #33 [data_pull] clients/home-mobile-medical/data/reviews/ | reviews.csv, mentions.csv, customer-language.md | old:  | new: 19 reviews, rating 2.9; listing matched GBP (2127 Boundary St #5, Beaufort, SC 29902; place_id ChIJF8pA_TgM_IgRjCK0oAHmLKg); reviewer self-name redacted from o… | result: DONE
+- CHANGE #34 [data_pull] clients/home-mobile-medical/data/backlinks/Home Mobile Medical - DFS - backlinks - 2026-10-07.csv | S08 referring domains per URL | old:  | new: summary: 722 live backlinks, 709 referring domains; 721 rows pulled (1 page); 5 target URLs; raw/summary.json + raw/backlinks-p1.json (git-ignored) | result: DONE
+- CHANGE #35 [data_routing] clients/home-mobile-medical/data/paa/paa-routing.md | Intent + Route | old: unrouted | new: 35 routed: 15 service FAQ, 0 location FAQ, 6 blog topic, 14 drop; summary appended | result: DONE
+- CHANGE #36 [data_routing] clients/home-mobile-medical/data/fanout/fanout-routing.md | Intent + Route | old: unrouted | new: 354 routed: 138 service H2/FAQ, 124 location FAQ (Charleston 89, Beaufort 35), 47 blog topic, 45 drop; summary appended | result: DONE
+- CHANGE #37 [audit_step] S06 | Reviews pull: Google rating, count, recent review text (no r | old:  | new: done | result: DONE — DataforSEO Google reviews, 19 reviews, rating 2.9; listing matched GBP address; reviews 2017-2023 describe the former retail/rental store, none mention lift services; $0.0150
+- CHANGE #38 [audit_step] S07 | Rankings + cannibalization: every ranked keyword per URL (to | old:  | new: done | result: DONE — DataforSEO Labs ranked keywords (US, whole domain): 115 rows, 110 keywords, 15 ranking URLs, 0 cannibalization clusters; 25 'best' variants (SC) all without measurable volume; $0.1158
+- CHANGE #39 [audit_step] S08 | Backlinks pull: referring domains per URL | old:  | new: done | result: DONE — DataforSEO Backlinks (whole domain, live): 722 backlinks / 709 referring domains; 5 target URLs, homepage holds 708 RDs; $0.0740
+- CHANGE #40 [audit_step] S19 | People Also Ask: core services × primary city + top 3 cities | old:  | new: done | result: DONE — 20 PAA queries (5 services x Beaufort, Charleston, Hilton Head Island, Bluffton) -> 35 questions, all routed; 24 SERP calls incl. 4 billed retries after DataforSEO 40101 errors; $0.0480
+- CHANGE #41 [audit_step] S21 | Query fan-out (CM-045): core services × primary city + top 3 | old:  | new: done | result: DONE — Query fan-out, 10 seeds (5 services x Beaufort, Charleston; cap 10 per Paul) -> 354 queries, all routed; Hilton Head Island and Bluffton seeds not run; not demand (CM-045, CM-012); $0.0122
+### HANDOFF · /discovery · 2026-10-07 · run 20261007-173133-discovery-dce1
+**What I did**
+- Ran the data step on Paul's approval (~$0.70 estimate, fan-out cap 10): reviews (S06), domain rankings + "best" volumes (S07), backlinks (S08), People Also Ask (S19), query fan-out (S21). 39 DataforSEO calls, **$0.265 actual**. S20 recorded skipped (SEOPress settings need Administrator; Jonie's handoff H-2026-10-07-02).
+- Routed 35 PAA questions and 354 fan-out queries; wrote customer-language themes (no reviewer names); aggregated backlinks per URL.
+
+**What was decided, and why**
+- Rankings and backlinks pulled for the whole domain so every URL (incl. GA/FL/MI and retired) is covered for CM-019.
+- Fan-out kept to 10 seeds (Beaufort, Charleston); Paul did not approve 20.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| S05 crawl tables not yet in `inputs/crawl/` (Drive v3 Evidence) | Audit step | S12 join to all 118 URLs |
+| SEOPress settings worksheet | Jonie | S20 → done |
+| CM-019 conditions 3–4 for FL/MI (GBP/citation destination; client confirms no leads) | Audit / Paul | Final 301 list |
+| Fan-out for Hilton Head Island and Bluffton (+$0.07) | Paul | Optional |
+| Confirm ranked_keywords price in dfs_prices.json ($0.012 + $0.00012/row) | Paul | Future --confirmed prompts |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Reviews | clients/home-mobile-medical/data/reviews/ | Done |
+| Rankings | clients/home-mobile-medical/data/rankings/ | Done |
+| Backlinks | clients/home-mobile-medical/data/backlinks/Home Mobile Medical - DFS - backlinks - 2026-10-07.csv | Done |
+| PAA + fan-out routing | clients/home-mobile-medical/data/paa/, data/fanout/ | Done |
+
+**What I could not check**
+- Rankings are US-level only (DataforSEO Labs limit).
+
+**Anything the next agent would otherwise get wrong**
+- GBP shows 2.9 stars from 19 reviews, all 2017–2023 and about the old walk-in medical-supply/rental store; none mentions lifts. Not CM-020 proof and almost no lift customer language.
+- No /services/ page ranks; the homepage (56 keywords) and the Medicare post (17) carry the domain. "Best" variants have no SC volume.
+- CM-019 exceptions (rank or have links → Needs Evidence): /savannah-ga/, /service-area/savannah-ga/, /savannah/stair-lift/, /charleston-sc/mobility-ramps/, /service-area/mt-pleasant-sc/, /bluffton-sc/, /bluffton-sc/wheelchair-lift-repair/, /bluffton-sc/stair-lift-installer/, /charleston/stair-lift/, /hilton-head/stair-lift/. No FL/MI URL ranks or has links.
+### END HANDOFF
+## RUN 20261007-173133-discovery-dce1 · FINISHED · 2026-10-07T19:58:53-05:00
+Changes: 16 · Summary: Data step: reviews, rankings, backlinks, PAA, fan-out (/bin/zsh.265); S20 skipped pending Jonie
