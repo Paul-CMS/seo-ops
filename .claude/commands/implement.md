@@ -30,8 +30,9 @@ Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps i
    - **VA handoff (handoff.py, owner set by the kind):** redirects (always — full URLs, 301, reason, URL
      Decision Map ref), slugs (with their paired redirect), menus, SEOPress site-wide settings, robots.txt,
      sitemap, speed, and structural fields before the pilot.
-     `python3 scripts/handoff.py create <slug> --run <RUN_ID> --kind <k> --items <csv>`. Upload the `.md`
-     and `.csv` to the client's Drive folder and log each upload (`drive.py replaced`). Paul or the VA sends;
+     `python3 scripts/handoff.py create <slug> --run <RUN_ID> --kind <k> --items <csv>`. Copy the `.md`
+     and `.csv` into the client's Drive folder with `drive.py upload <slug> --run <RUN_ID> --file <md> --file <csv>`
+     (a file copy, logged — never retyped). Paul or the VA sends;
      the system messages no one.
 4. **The system never publishes.** New pages and posts go in as drafts with `/build <slug> ship <id>` /
    `/blog <slug> publish <id>`; Jonie publishes them.

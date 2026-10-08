@@ -48,7 +48,7 @@ recommendations. The audit produces findings.
   category, area, county, state.
 - Record every conflict with all candidate values; never resolve one. Quote every public claim
   verbatim with its URL.
-- Write the Discovery Record (`- REVIEW.md`) and Brand Guide A/B as proposals; upload; log.
+- Write the Discovery Record (`- REVIEW.md`) and Brand Guide A/B as proposals; `drive.py upload` the Record (a logged file copy).
 - Record S01–S03 with `steps.py record`, then `status.py mark <slug> entity_record --file <Discovery Record>
   --file clients/<slug>/brand-guide.md#A+B1+B2` — the Brand Guide only by the sections the entity decision is
   about, so later Brand Guide work (reconcile, Build write-back to B3/C/D) doesn't cancel it.
@@ -141,7 +141,7 @@ list, saved as `<Client> - Discovery Summary - REVIEW.md`; `status.py mark <slug
 `/approve <slug> discovery_signed_off`. **You never start Build.**
 
 ## Always
-File names per `methodology/naming-convention.md`; log every Drive upload; never invent a
+File names per `methodology/naming-convention.md`; every Drive copy goes through `drive.py upload` (file copy, logged — never retype a file into the connector); never invent a
 fact (CM-016); never set a gate; never contact the client. Write your Handoff Log section last, to `clients/<slug>/handoffs/run-<RUN_ID>.md` (passed to `run.py finish --handoff`).
 
 ## Cost discipline (R1)

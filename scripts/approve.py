@@ -387,6 +387,18 @@ def prepare(a, st, target, multi):
     return apply, text, g
 
 
+def approved_files(st, target):
+    """{file: sha} an approval just recorded, for the Drive copies."""
+    if target in S.GATES["gates"]:
+        return (st["gates"].get(target) or {}).get("files") or {}
+    if target == "site_plan":
+        return (((st.get("build") or {}).get("site_plan") or {}).get("approval") or {}).get("files") or {}
+    if target.startswith("batch:"):
+        _, bid, stage = (target.split(":") + ["", ""])[:3]
+        return ((S.batch(st, bid) or {}).get(stage) or {}).get("files") or {}
+    return {}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("slug"); ap.add_argument("targets", nargs="+")
@@ -417,8 +429,14 @@ def main():
     for _, text, _ in prepared:
         append(d / "log.md", text)
     S.log_conditions(a.slug, st)
+    import drive
     import records
     records.render(a.slug)
+    if a.decision in S.GATES["met_decisions"]:   # #10: approved deliverables get a stamped '- APPROVED' Drive copy
+        for t in a.targets:
+            for f, h in approved_files(st, t).items():
+                drive.approved_copy(a.slug, t, f, h, a.decision)
+    drive.mirror(a.slug, f"approval-{now()[:10]}", closed_ok=True)   # R4: Approval Record and Status reach Drive
     labels = ", ".join(lbl for _, _, lbl in prepared)
     print(git_commit(f"{a.slug}: {labels} {a.decision} by Paul"))
 

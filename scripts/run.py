@@ -63,8 +63,11 @@ def _short(v, n=160):
 
 
 def log_change(slug, run_id, kind, url, field, old, new, result, ref=None,
-               channel=None, old_file=None, new_file=None):
-    open_run(slug, run_id)
+               channel=None, old_file=None, new_file=None, closed_ok=False):
+    """closed_ok: the automatic Drive mirror right after a run finished (or after an approval) logs under that
+    run's id without reopening it."""
+    if not closed_ok:
+        open_run(slug, run_id)
     d = client_dir(slug)
     n = len(changes(slug)) + 1
     snap = d / "snapshots" / run_id
@@ -189,6 +192,8 @@ def main():
     s = sub.add_parser("note"); s.add_argument("slug"); s.add_argument("run_id"); s.add_argument("text")
     s = sub.add_parser("decision"); s.add_argument("slug"); s.add_argument("run_id")
     s.add_argument("--text", required=True); s.add_argument("--ids")
+    s.add_argument("--settle", metavar="KEY", help="settle this decision once (decisions-settled.md)")
+    s.add_argument("--reopen", metavar="KEY", help="one reopen request for a settled decision; --text is the reason")
     s = sub.add_parser("change"); s.add_argument("slug"); s.add_argument("run_id")
     for k in ("kind", "url", "field", "result"):
         s.add_argument(f"--{k}", required=True)
@@ -262,6 +267,17 @@ def main():
         append(d / "log.md", f"- NOTE {now()[11:19]} {redact(a.text)}\n")
     elif a.cmd == "decision":
         open_run(a.slug, a.run_id)
+        import settled
+        if a.settle and a.reopen:
+            die("--settle or --reopen, not both.")
+        if a.reopen:
+            settled.reopen(a.slug, a.run_id, a.reopen, a.text)
+            print(f"reopen request logged for '{a.reopen}' (counted as a process defect)")
+            return
+        if a.settle:
+            settled.settle(a.slug, a.run_id, a.settle, a.text)
+            print(f"settled: {a.settle}")
+            return
         append(d / "log.md", f"- DECISION {now()[:16]} · run {a.run_id} · {redact(a.text)}"
                + (f" · affects {a.ids}" if a.ids else "") + "\n")
         print("decision logged")
@@ -301,17 +317,23 @@ def main():
                               "batch": (info or {}).get("batch")}
         S.save(a.slug, st)
         S.log_conditions(a.slug, st)
+        import drive
         import records
         records.render(a.slug)
         if not a.handoff:
             print("note: no --handoff section given — the Handoff Log has nothing from this run")
+        m = drive.mirror(a.slug, a.run_id, closed_ok=True)   # R4: the records reach Drive by file copy, no agent
+        print("Drive: " + ("copy pending sync (no local Drive folder — recorded once)" if "pending" in m
+                           else f"{m.get('copied', 0)} record(s) copied, {m.get('unchanged', 0)} unchanged"))
         print(git_commit(f"{a.slug}: /{cmd} finished ({len(ch)} changes)\n\n{a.summary}"))
     elif a.cmd == "abort":
         open_run(a.slug, a.run_id)
         append(d / "log.md", f"## RUN {a.run_id} · ABORTED · {now()}\nReason (Paul): {redact(a.reason)}\n")
         st = S.load(a.slug); (st.get("open_runs") or {}).pop(a.run_id, None); S.save(a.slug, st)
+        import drive
         import records
         records.render(a.slug)
+        drive.mirror(a.slug, a.run_id, closed_ok=True)
         print(git_commit(f"{a.slug}: run {a.run_id} aborted"))
 
 

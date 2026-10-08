@@ -19,17 +19,13 @@ Follow CLAUDE.md. Plain language with Paul throughout.
    Paul's answer about an existing client: `status.py sensitivity <slug> <category>|none --run <RUN_ID>`.
    If Paul sets a safe-fix cap for the client: `status.py cap <slug> alt_text|broken_link|… <n> --run <RUN_ID>`.
 3. `python3 scripts/run.py start <slug> new-client` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands) — every step below is a logged change.
-4. **Drive folder:** check whether `<Client Name> - TMS` already exists at the root of
-   `v3. CMS Technical SEO Audit 2026` (ids in config.json). If not, create it as a copy of
-   `_CLIENT FOLDER TEMPLATE - copy per client`: the folders `01 - Discovery and Audit/{Evidence,
-   Deliverables}`, `02 - Build`, `03 - Finish`, `04 - Blog`, `_Archive`. If the Drive tools
-   can't create folders, say so immediately and ask Paul to copy the template by hand (right
-   click → Make a copy → rename → move to the root). Record the id:
-   `status.py set <slug> client.drive_folder_id <id>`.
+4. **Drive folder (R8 — v3 only):** `python3 scripts/drive.py folder <slug> --run <RUN_ID>`. It looks at exactly one
+   place — `<v3>/<Client Name> - TMS` — and uses it if it is there, else copies `_CLIENT FOLDER TEMPLATE - copy per
+   client` there as a real folder copy (logged). **Never search Drive** (or any other folder) for earlier work on
+   the client. No local Drive folder → it records "Drive copy pending sync" once and you move on.
 5. Brand Guide from `templates/brand-guide.md` → `clients/<slug>/brand-guide.md`. The Handoff Log, Document
-   Checklist and Approval Record are generated (`scripts/records.py`) — upload each to the client folder as a
-   real `.md` with the client name (`drive.py records <slug>` lists the names) and log each upload with
-   `drive.py replaced`. After later runs they are replaced through a `drive-mirror` run (CLAUDE.md §2).
+   Checklist, Approval Record and Status are generated (`scripts/records.py`) and `run.py finish` copies them into
+   the client folder by itself — nothing to upload.
 6. **Intake questions for Paul** (one batch): website URL, GBP link, storefront or SAB, the
    **exact URL in the GBP Website field**, whether GSC/GA4 access exists.
    WordPress: issue the setup handoff to Jonie (after this run finishes, in a `wp-check` run — `--kind wp_setup`): the `seo-ops`
@@ -44,7 +40,8 @@ Follow CLAUDE.md. Plain language with Paul throughout.
    blog-only client, `/blog <slug> intake`.
 
 ## Import (A-1 Pool Service, Red Rover Roofing, any client already mid-stream)
-1. Find `<Client Name> - TMS` in v3. Read its Approval Record, Handoff Log, Brand Guide and
+1. Open `<v3>/<Client Name> - TMS` only (`python3 scripts/drive.py where <slug>` prints its local path after
+   `status.py init`; never search elsewhere in Drive). Read its Approval Record, Handoff Log, Brand Guide and
    Document Checklist, and list every file (read-only).
 2. `status.py init` as above, then start a run.
 3. Write `clients/<slug>/import-proposal.json`:

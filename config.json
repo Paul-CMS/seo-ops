@@ -13,6 +13,7 @@
   "drive": {
     "root_folder_name": "v3. CMS Technical SEO Audit 2026",
     "root_folder_id": "1inIhcUodC1bPu6YBhcNvyO4Y5vZvrjT6",
+    "local_root": "~/Library/CloudStorage/GoogleDrive-paul@coastalmarketingstrategies.com/My Drive/v3. CMS Technical SEO Audit 2026",
     "template_folder_name": "_CLIENT FOLDER TEMPLATE - copy per client",
     "template_folder_id": "16nGvkPSqPqOXEs9Qy8XGoVC1pAT14D0v",
     "resources_folder_id": "1BduPSljznxjXvGdm3eVKnwfspxMbTbH6",
@@ -22,8 +23,10 @@
       "Handoff Log",
       "Approval Record",
       "Document Checklist",
-      "Brand Guide"
-    ]
+      "Brand Guide",
+      "Status"
+    ],
+    "_local_root_about": "R4: Google Drive for desktop (streaming) shows the v3 folder at this local path. drive.py copies files there and Drive syncs them. Nothing outside it is ever read or written (R8)."
   },
   "blocked_tool_prefixes": {
     "mcp__8a51fb9d-5d75-414d-a0e6-4609383d6f7f__": "Paid DataforSEO calls go through scripts/dfs.py so every cost is checked and logged. Do not use the DataforSEO connector directly."
@@ -138,7 +141,7 @@
     "law",
     "(home|senior|elder|personal|memory|child|day|hospice) care"
   ],
-  "_sensitivity_about": "CM-025 / CM-040. classify: a sensitive term \u2192 yes; an unsure hint \u2192 ask Paul; a clearly-not-sensitive trade \u2192 no; anything else \u2192 ask Paul. Sensitive terms win over the not-sensitive list.",
+  "_sensitivity_about": "CM-025 / CM-040. classify: a sensitive term → yes; an unsure hint → ask Paul; a clearly-not-sensitive trade → no; anything else → ask Paul. Sensitive terms win over the not-sensitive list.",
   "not_sensitive_trades": [
     "roof\\w*",
     "plumb\\w*",

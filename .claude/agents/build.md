@@ -120,7 +120,7 @@ to the page or blog list that owns them. Re-run E1–E10 and the spec checks on 
    goes in the CSV as `deviated` with a reason). A page that replaces an existing URL has its 301 paired
    with its publish row so Jonie does both at once.
 3. Menu changes for the batch's pages: `handoff.py create <slug> --run <RUN_ID> --kind navigation --items <csv>`.
-4. `status.py batch <slug> <id> --state handed_off`. Upload the handoff to Drive `02 - Build/`.
+4. `status.py batch <slug> <id> --state handed_off`. Copy the handoff into Drive with `drive.py upload <slug> --run <RUN_ID> --file <md> --file <csv> --to "02 - Build"`.
 Never edit a generated draft — change the approved file (Paul re-approves) and regenerate.
 
 ## Step: published <id>   (after Jonie returns the worksheet)

@@ -24,8 +24,9 @@ Follow CLAUDE.md. Defaults: domain = status.json `client.domain`, max pages 1000
 5. When it completes: files are in `clients/<slug>/inputs/crawl/` (git-ignored) —
    `<Client> - DFS - internal_all|links_all|page_titles_all|meta_description_all|h1_all|h2_all|all_inlinks|external_all - <date>.csv`
    plus duplicate_titles, duplicate_descriptions, duplicate_content, redirect_chains,
-   non_indexable, and the crawl-config `.md`. Upload them to Drive
-   `01 - Discovery and Audit/Evidence/` (names already follow the convention) and log each upload.
+   non_indexable, and the crawl-config `.md`. Copy them to Drive with
+   `python3 scripts/drive.py upload <slug> --run <RUN_ID> --file <each file>` (they land in
+   `01 - Discovery and Audit/Evidence/`; byte-exact file copies, logged — the model never retypes a file).
 6. Record the step: `python3 scripts/steps.py record <slug> --run <RUN_ID> S05 done --output clients/<slug>/inputs/crawl/`
    (or `failed` / `skipped` with `--reason`). Reuse: if `steps.py fresh <slug> S05` says reuse
    (crawled under 60 days ago), do not crawl again unless Paul asks.

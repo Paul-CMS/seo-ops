@@ -39,7 +39,16 @@ def make_sandbox():
     (SB / "clients").mkdir()
     cfg = json.loads((SB / "config.json").read_text())
     cfg["git_push_after_run"] = False
+    # R4: a fake local v3 folder (Drive for desktop) inside the sandbox — never the real Drive
+    v3 = SB / "fake-drive" / "v3"
+    tpl = v3 / cfg["drive"]["template_folder_name"]
+    for sub in ("01 - Discovery and Audit/Evidence", "01 - Discovery and Audit/Deliverables", "02 - Build",
+                "03 - Finish", "04 - Blog", "_Archive"):
+        (tpl / sub).mkdir(parents=True, exist_ok=True)
+    (tpl / "README - how to use this template.md").write_text("template\n")
+    cfg["drive"]["local_root"] = str(v3)
     (SB / "config.json").write_text(json.dumps(cfg, indent=2))
+    assert str(SB) in json.loads((SB / "config.json").read_text())["drive"]["local_root"]
     assert not (SB / ".env").exists()
     sh("git init -q && git add -A && git -c user.email=t@t -c user.name=t commit -qm base")
 
@@ -817,6 +826,58 @@ def t_drive():
     sh(f'python3 scripts/run.py finish dr-co {m} --summary "Drive records mirrored"')   # no handoff section
     check("a drive-mirror run leaves the Handoff Log and 'last run' unchanged (no re-mirror loop)",
           (ag.c / "handoff-log.md").read_text() == before and status("dr-co")["last_run"]["run_id"] == last)
+    log = (ag.c / "log.md").read_text()
+    check("R4: no local client folder → 'Drive copy pending sync' is settled once, never repeated",
+          log.count("- SETTLED drive_pending_sync") == 1 and "drive_pending_sync" in (ag.c / "decisions-settled.md").read_text(),
+          log[-600:])
+
+    # ---- R4: Drive for desktop — the v3 folder is a local path; uploads are file copies
+    v3 = Path(json.loads((SB / "config.json").read_text())["drive"]["local_root"])
+    sh('python3 scripts/status.py init lc-co --name "Lc Co" --domain lc.example --type full --industry roofing')
+    lc = Agent("lc-co"); rid = lc.start("new-client")
+    code, out = sh(f"python3 scripts/drive.py folder lc-co --run {rid}")
+    folder = v3 / "Lc Co - TMS"
+    check("R4/R8: /new-client copies the template folder to <v3>/<Client> - TMS (a real folder copy)",
+          code == 0 and (folder / "01 - Discovery and Audit" / "Evidence").is_dir() and (folder / "_Archive").is_dir()
+          and (folder / "README - how to use this template.md").exists(), out)
+    big = SB / "clients" / "lc-co" / "inputs" / "crawl" / "Lc Co - DFS - internal_all - 2026-10-08.csv"
+    big.parent.mkdir(parents=True, exist_ok=True)
+    big.write_text("url,status\n" + "".join(f"https://lc.example/p{i}/,200\n" for i in range(60000)))
+    code, out = sh(f'python3 scripts/drive.py upload lc-co --run {rid} --file "{big.relative_to(SB)}"')
+    dst = folder / "01 - Discovery and Audit" / "Evidence" / big.name
+    check("R4: a large crawl CSV is copied byte-exact into Evidence (nothing retyped)",
+          code == 0 and dst.exists() and dst.read_bytes() == big.read_bytes(), out)
+    lc.fin(rid, "set up")
+    names = [f"Lc Co - {n}.md" for n in ("Handoff Log", "Approval Record", "Document Checklist")]
+    check("R4: run.py finish mirrors the records into the client folder by itself",
+          all((folder / n).exists() for n in names)
+          and (folder / "Lc Co - Handoff Log.md").read_text() == (lc.c / "handoff-log.md").read_text())
+    ch = [json.loads(l) for l in (lc.c / "changes.jsonl").read_text().splitlines() if l.strip()]
+    check("R4: every Drive copy is logged as a drive_file change",
+          sum(1 for c in ch if c["kind"] == "drive_file" and c["field"] == "upload") >= 4, [c["field"] for c in ch])
+    code, out = sh(f"python3 scripts/drive.py folder lc-co --run x")
+    rid2 = lc.start("wp-check"); code, out = sh(f"python3 scripts/drive.py folder lc-co --run {rid2}")
+    check("R8: an existing client folder is used as is (no second copy)", code == 0 and "existing" in out, out)
+    lc.fin(rid2, "second run")
+    arch = sorted(p.name for p in (folder / "_Archive").iterdir())
+    check("R4: a changed record is archived with its date into _Archive, then replaced (nothing deleted)",
+          any(n.startswith("Lc Co - Handoff Log - ") for n in arch)
+          and (folder / "Lc Co - Handoff Log.md").read_text() == (lc.c / "handoff-log.md").read_text(), arch)
+    check("R4: an unchanged record is left alone (not archived again)",
+          not any(n.startswith("Lc Co - Approval Record - ") for n in arch), arch)
+    # #10: an approved REVIEW deliverable gets a stamped '- APPROVED' Drive copy; the repo file is unchanged
+    rid3 = lc.start("discovery", "discovery")
+    for s in ("S01", "S02", "S03"):
+        lc.step(rid3, s)
+    rec = lc.w("discovery/Lc Co - Discovery Record - REVIEW.md", "# Lc Co - Discovery Record - REVIEW\n\nbody\n")
+    lc.mark("entity_record", rec); lc.fin(rid3, "discovery")
+    before = (SB / rec).read_text()
+    code, out = paul("/approve lc-co entity_approved")
+    ap = folder / "01 - Discovery and Audit" / "Deliverables" / "Lc Co - Discovery Record - APPROVED.md"
+    txt = ap.read_text() if ap.exists() else ""
+    check("#10: the approved Drive copy says APPROVED with Paul, date and sha; the repo file is unchanged",
+          ap.exists() and txt.startswith("# Lc Co - Discovery Record - APPROVED") and "APPROVED by Paul on" in txt
+          and "sha " in txt and (SB / rec).read_text() == before, (out, txt[:300]))
 
 
 def t_finish_needs_outputs():
