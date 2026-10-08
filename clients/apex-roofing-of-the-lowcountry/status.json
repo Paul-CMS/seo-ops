@@ -129,6 +129,13 @@
       },
       "at": "2026-10-08T08:08:45-05:00",
       "ts": 1791464925.146144
+    },
+    "discovery_summary": {
+      "files": {
+        "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Summary - REVIEW.md": "564167710178"
+      },
+      "at": "2026-10-08T10:42:20-05:00",
+      "ts": 1791474140.0916429
     }
   },
   "pages": {},
@@ -321,11 +328,11 @@
     }
   },
   "last_run": {
-    "run_id": "20261008-080806-discovery-b736",
+    "run_id": "20261008-104054-discovery-3010",
     "command": "discovery",
-    "finished": "2026-10-08T08:08:45-05:00",
-    "result": "Reconcile choices applied (website address, no travel fee, ShingleMaster asked, Ralph kept)",
-    "changes": 1
+    "finished": "2026-10-08T10:42:34-05:00",
+    "result": "Discovery Summary + client-confirmation list ready for sign-off",
+    "changes": 0
   },
   "spend": {
     "dataforseo_usd": 0.585961
@@ -344,7 +351,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-08T10:40:10-05:00",
+  "updated": "2026-10-08T10:42:34-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -368,5 +375,10 @@
       "checked": "2026-10-07",
       "source": "DataforSEO Business Data"
     }
+  },
+  "review_pause": {
+    "run_id": "20261008-104054-discovery-3010",
+    "step": "discovery:signoff",
+    "at": "2026-10-08T10:42:34-05:00"
   }
 }

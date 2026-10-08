@@ -1233,3 +1233,45 @@ Approved version: clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2 
 
 ## APPROVAL · 2026-10-08T10:40:10-05:00 · brand_guide_approved · approved · by Paul
 Approved version: clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G (sha b8be065916a5)
+
+## RUN 20261008-104054-discovery-3010 · STARTED · /discovery · 2026-10-08T10:40:54-05:00
+Step: discovery:signoff
+Gates checked: entity_approved, proof_sheet_approved, proof_sheet_returned, brand_guide_approved, audit_approved
+### HANDOFF · /discovery · 2026-10-08 · run 20261008-104054-discovery-3010
+**What I did**
+- Wrote the one-page Discovery Summary and client-confirmation list from decisions.md, the Document Checklist and the approved audit deliverables. No new research and no paid calls.
+- Checked the file name with naming.py (deliverable: OK).
+- Recorded it as `discovery_summary` with `status.py mark`. No Drive upload; Paul mirrors after the approval.
+
+**What was decided, and why**
+- Nothing new was decided. The summary restates the re-approved entity (2026-10-08), the audit counts and Paul's standing decisions.
+- The website NAP is shown with the full street address, following reconcile choice 1a. This replaces the older "Bluffton, SC 29910" wording in Recommendation A9.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| discovery_signed_off | Paul | Build start |
+| Is CertainTeed ShingleMaster current? (one question) | Paul sends it | Using "ShingleMaster" in any copy |
+| Licence class / holder; GBP secondary categories, service areas, open date | Gwen (H-2026-10-05-02) | Licence wording; BB-107 |
+| Synthetic roofing offered (and which type)? | Client, through Paul | C1 redirect target (default `/roof-replacement/`) |
+| Port Royal base privatized housing / access process | Client, through Paul | Port Royal on-base lines and the MCRD FAQ |
+| One roof-replacement price range | Client, through Paul | Any price range in copy |
+| The other F-002 claims; Metal Roofing leads | Client, through Paul | Those claims; the F-010 slug change |
+| Finding Register and URL Decision Map not in Drive | Paul | Drive completeness only |
+| Six page specs still DRAFT | Paul | Build writing each page type |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Discovery Summary | clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Summary - REVIEW.md | Ready for approval |
+| Recommendations / Evidence Manifest / Finding Register / URL Decision Map | clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/ | Approved 2026-10-08 |
+
+**What I could not check**
+- The Brand Guide itself was not re-read in this step. The unsupported-claims list comes from F-002 and the Recommendations confirmation list.
+
+**Anything the next agent would otherwise get wrong**
+- Severity counts: the S17 step note says Medium 17 / Low 10. The rendered Finding Register says High 3 · Medium 18 · Low 9 (30 active), and the register is the record.
+- Service titles have no area term. The homepage title carries "Hilton Head Island Metropolitan Area" in full. The homepage H1 stays locked.
+### END HANDOFF
+## RUN 20261008-104054-discovery-3010 · FINISHED · 2026-10-08T10:42:34-05:00
+Changes: 0 · Summary: Discovery Summary + client-confirmation list ready for sign-off
