@@ -1,17 +1,16 @@
 # Apex Roofing of the Lowcountry - Status
 
-- **Stage 5 of 8 — Build plan and blockers**
-- **What is happening now:** waiting for Paul's approval — the site plan is ready for your approval
-- **Waiting on:** Paul — the site plan is ready for your approval; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Bra
-- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry site_plan --files "clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Site Plan - REVIEW.md"` (or asks for changes first)
+- **Stage 6 of 8 — Pilot, then batches (batch pilot)**
+- **What is happening now:** Stage 5 (Build plan and blockers) is done in this session. Start a new session (new chat, model: Haiku) in ~/Documents/seo-ops and type /next apex-roofing-of-the-lowcountry. Next there: /build apex-roofing-of-the-lowcountry evidence pilot (evidence gate for batch pilot — the facts each page needs, marked Known / Unknown / Unverified / Conflict)
+- **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Bra; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
+- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
 
-_Generated 2026-10-08T14:27 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-08T14:28 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the site plan is ready for your approval | 2026-10-08 | /approve apex-roofing-of-the-lowcountry site_plan |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Brand Guide D) | 2026-10-08 | send_the_client_one_question_is_your_cer |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
@@ -33,6 +32,7 @@ _Generated 2026-10-08T14:27 by the system — do not edit. Start every session i
 - 2026-10-08: Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims) — approved
 - 2026-10-08: discovery_signed_off — approved
 - 2026-10-08: page specs (global) — approved
+- 2026-10-08: site plan — approved
 - Entity: category Roofing Contractor (variants Roofer, Roofers); area = Hilton Head Island–Bluffton–Port Royal metro area.
 - Titles: homepage SEO title uses "Hilton Head Island Metropolitan Area"; homepage H1 uses a familiar name (Lowcountry / South Carolina Lowcountry); service titles `Service Name - Apex Roofing of the Lowcountry` (no area); brand always in full.
 - Homepage: links all 8 services (Paul exception).
