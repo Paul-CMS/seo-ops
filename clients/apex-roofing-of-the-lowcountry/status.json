@@ -184,7 +184,20 @@
           "certifications",
           "rating",
           "guarantees"
-        ]
+        ],
+        "waiver": {
+          "by": "Paul",
+          "at": "2026-10-08T15:05:35-05:00",
+          "reason": "Real gaps identified (repair scope, neighborhoods, response time); move forward with briefs using industry standards + competitor research + local context; verify during drafting.",
+          "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-repair.grid.md",
+          "grid_sha": "bb154bf1bbfc",
+          "counts": {
+            "Known": 1,
+            "Unknown": 2,
+            "Unverified": 9,
+            "Conflict": 0
+          }
+        }
       }
     },
     "svc-roof-replacement": {
@@ -313,7 +326,20 @@
           "response_time",
           "emergency",
           "rating"
-        ]
+        ],
+        "waiver": {
+          "by": "Paul",
+          "at": "2026-10-08T15:05:35-05:00",
+          "reason": "Real gaps identified (repair scope, neighborhoods, response time); move forward with briefs using industry standards + competitor research + local context; verify during drafting.",
+          "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-bluffton.grid.md",
+          "grid_sha": "d11f68d624a4",
+          "counts": {
+            "Known": 4,
+            "Unknown": 0,
+            "Unverified": 6,
+            "Conflict": 0
+          }
+        }
       }
     },
     "loc-hilton-head-island": {
@@ -788,7 +814,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-08T15:00:27-05:00",
+  "updated": "2026-10-08T15:05:35-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -854,10 +880,5 @@
       "first_run": "20261008-143018-build-a144",
       "at": "2026-10-08T15:00:27-05:00"
     }
-  },
-  "review_pause": {
-    "run_id": "20261008-143018-build-a144",
-    "step": "build:evidence",
-    "at": "2026-10-08T15:00:27-05:00"
   }
 }
