@@ -2,6 +2,7 @@
 """records.py — the human-readable records, generated one-way from status.json and log.md.
 
     records.py render <slug>
+    records.py top <slug>     STATUS.md's top four lines (stage, what is happening, waiting on, next action)
 
 Writes (overwrites) in clients/<slug>/:
   handoff-log.md        every run's handoff section (run.py finish --handoff <file>), oldest first
@@ -10,6 +11,8 @@ Writes (overwrites) in clients/<slug>/:
   document-checklist.md what is in, skipped or missing — from the audit-step outcomes, conditions
                         and decisions
   approval-record.md    the Drive Approval Record (status.py approval-record)
+  decisions-settled.md  every settled decision, one line each — agents never re-raise them (R6)
+  STATUS.md             one page a VA can read at any moment (R7): stage, now, waiting on, next, settled, VA items, spend
 
 These files are never edited by hand (the guard hook blocks it): change the source — run a
 command, record a decision, approve — and they are regenerated. run.py finish/abort and
@@ -143,6 +146,112 @@ def test_run_notes(slug):
         p.write_text(new)
 
 
+def _open_handoffs(slug):
+    """[(id, owner, kind, issued, open, total)] for every handoff with rows not done/verified."""
+    import csv
+    d = client_dir(slug) / "handoffs"
+    out = []
+    for f in sorted(d.glob("H-*.csv")) if d.exists() else []:
+        m = re.match(r"^(H-(\d{4}-\d{2}-\d{2})-\d+-([a-z_]+))\.csv$", f.name)
+        if not m:
+            continue
+        with open(f, newline="", encoding="utf-8-sig") as fh:
+            rows = list(csv.DictReader(fh))
+        left = [r for r in rows if r.get("status") not in ("done", "verified")]
+        if not left:
+            continue
+        md = f.with_suffix(".md")
+        who = re.search(r"\*\*For:\*\* (\w+)", md.read_text()) if md.exists() else None
+        owner = who.group(1) if who else (S.GATES["change_kinds"].get(m.group(3)) or {}).get("owner", "Gwen")
+        out.append((m.group(1), owner, m.group(3).replace("_", " "), m.group(2), len(left), len(rows)))
+    return out
+
+
+def _spend(slug):
+    import json
+    p = client_dir(slug) / "dfs-costs.jsonl"
+    rows = [json.loads(x) for x in p.read_text().splitlines() if x.strip()] if p.exists() else []
+    return sum(float(r.get("actual_usd") or 0) for r in rows), sum(float(r.get("failed_usd") or 0) for r in rows)
+
+
+def status_md(slug):
+    """STATUS.md (R7): one page a VA can read at any moment — stage, what is happening, who waits on what, the next
+    action, settled decisions (never re-raised), open VA items, spend. Plain language; mirrored to Drive."""
+    import next as N
+    import run as R
+    import settled
+    st = S.load(slug)
+    c = st["client"]
+    nx = N.compute(slug)
+    left = R.unfinished(slug)
+    stage = nx.get("stage") or "—"
+    if left:
+        info = (st.get("open_runs") or {}).get(left[0]) or {}
+        now_line = f"run {left[0]} ({info.get('step', '?')}) started {info.get('started', '')[:16]} and has not finished"
+    elif nx["kind"] == "run":
+        now_line = f"ready to start: {nx['why']}"
+    elif nx["kind"] == "decision":
+        now_line = f"waiting for Paul's approval — {nx['why']}"
+    elif nx["kind"] == "review":
+        now_line = "Paul is reviewing what the last step produced; /next continues"
+    else:
+        now_line = nx["why"]
+    lr = st.get("last_run") or {}
+    since = (lr.get("finished") or st.get("updated") or "")[:10]
+    waits = []
+    if left:
+        waits.append(("Paul", "decide what to do with the unfinished run (resume, /verify, /rollback or abort)", since, left[0]))
+    if nx["kind"] in ("decision", "review"):
+        waits.append(("Paul", nx["why"], since, nx["command"].split(" --")[0]))
+    elif nx["kind"] == "wait" and not left:
+        who = "Client (via Paul)" if re.search(r"client|owner", nx["why"]) else (
+            "Jonie" if "Jonie" in nx["why"] else "Paul")
+        waits.append((who, nx["why"], since, nx["command"]))
+    for k, e in settled.entries(slug).items():
+        if e.get("state") == "reopened":
+            waits.append(("Paul", f"reopened decision '{k}': {e.get('reason')}", e.get("reopened_at", "")[:10], k))
+    hs = _open_handoffs(slug)
+    for hid, owner, kind, issued, n_open, n in hs:
+        waits.append((owner, f"{kind} handoff — {n_open} of {n} item(s) open", issued, hid))
+    if nx["kind"] == "run":
+        nxt = (f"`{nx['command']}` — Paul opens a **new session on {nx.get('session_model', 'haiku').title()}** in "
+               f"~/Documents/seo-ops and types `/next {slug}`" + (f" (agents: {nx['agents']})" if nx.get("agents") else ""))
+    elif nx["kind"] == "decision":
+        nxt = f"Paul types `{nx['command']}` (or asks for changes first)"
+    else:
+        nxt = f"`{nx['command']}` once the wait above is over"
+    who_waits = "; ".join(f"{w[0]} — {w[1][:90]}" for w in waits[:3]) or "nobody"
+    total, failed = _spend(slug)
+    out = [f"# {c['name']} - Status", "",
+           f"- **Stage {stage.replace(' of ', ' of ', 1)}**",
+           f"- **What is happening now:** {now_line}",
+           f"- **Waiting on:** {who_waits}",
+           f"- **Next action:** {nxt}", "",
+           f"_Generated {S.now()[:16]} by the system — do not edit. Start every session in `~/Documents/seo-ops`, "
+           "one session per stage._", "",
+           "## Waiting on", "", "| Who | What | Since | Reference |", "|---|---|---|---|"]
+    out += [f"| {w} | {t} | {s} | {r} |" for w, t, s, r in waits] or ["| — | nothing | | |"]
+    out += ["", "## Settled decisions — never re-raised", ""]
+    aps = settled.approvals(slug)
+    out += [f"- {when}: {S.label(what) if what in S.GATES['gates'] else what} — {dec}" for when, what, dec in aps]
+    out += [f"- {e['text']}" for k, e in settled.entries(slug).items() if e.get("state") == "settled"]
+    if not aps and not settled.entries(slug):
+        out.append("_None yet._")
+    out += ["", "## Open VA items", ""]
+    out += ([f"- **{hid}** ({owner}) — {kind}: {n_open} of {n} open, issued {issued}" for hid, owner, kind, issued, n_open, n in hs]
+            or ["_None._"])
+    out += ["", "## Spend so far", "", f"- DataforSEO: ${total:.2f}" + (f" (of which failed tasks ${failed:.2f})" if failed else "")]
+    if lr:
+        out += ["", f"Last run: /{lr.get('command')} {lr.get('finished', '')[:16]} — {lr.get('result')}"]
+    return "\n".join(out) + "\n"
+
+
+def top(slug):
+    """The four lines /next and /resume print instead of re-explaining history."""
+    lines = [x for x in status_md(slug).splitlines() if x.startswith("- **")]
+    return "\n".join(lines[:4])
+
+
 def render(slug):
     st = S.load(slug)
     d = client_dir(slug)
@@ -152,10 +261,14 @@ def render(slug):
     (d / "document-checklist.md").write_text(checklist(st))
     (d / "approval-record.md").write_text(S.render_approval_record(st))
     (d / "decisions-settled.md").write_text(settled_register(slug))
+    (d / "STATUS.md").write_text(status_md(slug))
     test_run_notes(slug)
 
 
 if __name__ == "__main__":
+    if len(sys.argv) == 3 and sys.argv[1] == "top":
+        print(top(sys.argv[2]))
+        sys.exit(0)
     if len(sys.argv) != 3 or sys.argv[1] != "render":
         sys.exit(__doc__)
     render(sys.argv[2])

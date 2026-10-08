@@ -1626,9 +1626,47 @@ def t_models():
     check("stages.py lists every stage with its models", "clerk (haiku)" in out and "build (opus)" in out, out)
 
 
+def t_settled_and_status():
+    sh('python3 scripts/status.py init ss-co --name "Ss Co" --domain ss.example --type full --industry roofing')
+    ag = Agent("ss-co"); ag.fin(ag.start("new-client"), "set up")
+    rid = ag.start("discovery", "discovery")
+    code, out = sh(f'python3 scripts/run.py decision ss-co {rid} --settle address_display --text "Street address shown on the website, hidden on the Google profile"')
+    check("R6: a decision is settled once (logged)", code == 0 and "- SETTLED address_display" in (ag.c / "log.md").read_text(), out)
+    code, out = sh(f'python3 scripts/run.py decision ss-co {rid} --settle address_display --text "ask again"')
+    check("R6: settling the same decision again is refused — it is not asked twice", code == 4 and "already settled" in out, out)
+    code, out = sh(f'python3 scripts/run.py decision ss-co {rid} --reopen address_display --text ""')
+    check("R6: a reopen request needs the reason", code != 0, out)
+    code, out = sh(f'python3 scripts/run.py decision ss-co {rid} --reopen address_display --text "client now wants it hidden on the site too"')
+    code2, out2 = sh(f'python3 scripts/run.py decision ss-co {rid} --reopen address_display --text "again"')
+    check("R6: one reopen request (logged with the flag), a second is refused", code == 0 and code2 == 4, (out, out2))
+    sh(f'python3 scripts/run.py decision ss-co {rid} --settle address_display --text "Address hidden on the website and the Google profile"')
+    sh(f"python3 scripts/run.py decision ss-co {rid} --settle citations --text \"Citations skipped for this audit (no BrightLocal)\"")
+    items = ag.w("h.csv", "url,field,old,new,reason,decision_map_ref\nhttps://x.example/,SoS record,,record it,captcha,\n")
+    sh(f"python3 scripts/handoff.py create ss-co --run {rid} --kind manual_lookup --items {items}")
+    for s in ("S01", "S02", "S03"):
+        ag.step(rid, s)
+    ag.mark("entity_record", ag.w("discovery/Ss Co - Discovery Record - REVIEW.md")); ag.fin(rid, "discovery")
+    reg = (ag.c / "decisions-settled.md").read_text()
+    check("R6: decisions-settled.md lists each settled decision once (the latest), with the reopen counted as a defect",
+          "Address hidden on the website and the Google profile" in reg and "Street address shown" not in reg
+          and "Citations skipped" in reg and "Process defects (reopenings): **1**" in reg, reg)
+    notes = (ag.c / "test-run-notes.md").read_text() if (ag.c / "test-run-notes.md").exists() else ""
+    check("R6: the reopening is counted in the client's test-run notes", "address_display: reopened 1×" in notes, notes)
+    stx = (ag.c / "STATUS.md").read_text() if (ag.c / "STATUS.md").exists() else ""
+    top4 = [l for l in stx.splitlines() if l.startswith("- **")][:4]
+    check("R7: STATUS.md opens with stage n of N, what is happening now, waiting on, next action",
+          len(top4) == 4 and top4[0].startswith("- **Stage 2 of ") and "What is happening now" in top4[1]
+          and "Waiting on" in top4[2] and "Next action" in top4[3], top4)
+    check("R7: STATUS.md lists settled decisions once, open VA items with owner and id, and spend",
+          stx.count("Citations skipped for this audit") == 1 and "manual_lookup" in stx and "(Gwen)" in stx
+          and "DataforSEO: $" in stx and "~/Documents/seo-ops" in stx, stx)
+    code, out = sh("python3 scripts/records.py top ss-co")
+    check("R7: records.py top prints the four lines /next and /resume show", code == 0 and len(out.splitlines()) == 4, out)
+
+
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_section_approval, t_reviews_parse, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view,
-             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models]
+             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status]
 
 
 def main():

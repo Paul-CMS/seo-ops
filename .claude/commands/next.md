@@ -7,7 +7,8 @@ Arguments: $ARGUMENTS
 
 0. **Only when Paul typed this `/next` himself** (not when you loop back in step 2): `python3 scripts/next.py <slug> --continue`
    — it clears a review pause and logs that Paul continued. Never pass `--continue` anywhere else.
-1. `python3 scripts/next.py <slug>` — it prints `{"kind", "command", "why", "stage", "session_model", "agents"}`.
+1. `python3 scripts/records.py top <slug>` — print its four lines first (stage, what is happening now, waiting on,
+   next action); never re-explain history. Then `python3 scripts/next.py <slug>` — it prints `{"kind", "command", "why", "stage", "session_model", "agents"}`.
    Start every reply with the stage line, e.g. **Stage 5 of 8 — Build plan and blockers · session: Haiku · agents:
    build (Opus), clerk (Haiku)**. Judgment work goes to the named Opus agent; mechanical work to `clerk`. Relay an
    agent's `clients/<slug>/handoffs/run-<RUN_ID>.summary.md` as written — don't re-explain history.
