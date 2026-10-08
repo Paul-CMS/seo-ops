@@ -99,6 +99,10 @@ def condition_step(st, slug, cond):
     if ok:
         return
     spec = S.GATES["conditions"][cond]
+    if cond == "wordpress_connected" and (st["client"].get("cms") or "wordpress") not in ("wordpress", "unknown"):
+        out("wait", f"/resume {slug}", f"{st['client']['name']} runs on {st['client']['cms']}, not WordPress: the "
+            "WordPress steps (/wp-check, WordPress drafts) are N/A. Paul decides how approved pages go live "
+            "(a publish handoff to Jonie with the approved files)")
     if cond == "page_specs_approved":   # R3: methodology, approved once for every client
         out("decision", "/approve global specs",
             f"{why}. The specs in methodology/specs/ are the same for every client; approve them once before any "
@@ -282,7 +286,7 @@ def _walk(slug, cont):
     if not S.gate_met(st, "audit_approved")[0]:
         if "S05" not in st["audit_steps"]:
             out("run", f"/crawl {slug}", "crawl the site while the client has the proof sheet")
-        data = [r["id"] for r in steps.registry() if r["phase"] == "Client has sheet" and r["id"] != "S05"]
+        data = [r["id"] for r in steps.registry() if r["phase"] == "Client has sheet" and r["id"] not in ("S05", "S05b")]
         if any(i not in st["audit_steps"] for i in data):
             out("run", f"/discovery {slug} data",
                 "reviews, rankings, People Also Ask, backlinks, citations, grid, GSC — one cost yes for the whole step")

@@ -6,7 +6,8 @@ alongside People Also Ask (S19). Feeds the site plan's coverage check and the Bl
     fanout.py run      <slug> --run R --services-file F --cities ... [--per-seed 40] [--cap 10] [--confirmed]
                        [--registry c3.txt] [--paa clients/<slug>/data/paa/paa-questions.csv]
 
-What it is: for each seed ("<service> <city>", primary city first, capped at --cap seeds) one
+What it is: for each seed ("<service> <city>", spread round-robin over services × cities so every
+service and every given city appears before any pair repeats one — capped at --cap seeds) one
 DataforSEO AI Optimization call (ai_optimization/chat_gpt/llm_responses/live) asks an LLM for the
 --per-seed searches a local customer might type around that seed — informational, cost, how-to,
 comparison and local. The answers are deduplicated across seeds and checked against the PAA
@@ -17,7 +18,9 @@ no volume and never count as evidence for CM-019/CM-020/CM-021. They are candida
 a question a page or a post should answer. Never cite a volume for one (CM-012).
 
 Outputs in clients/<slug>/data/fanout/ (raw/ git-ignored):
-  fanout-queries.csv   query, seeds, times seen, also in PAA?, closest C3 match + similarity
+  fanout-queries.csv   query, group (the service(s) of its seeds), seeds, times seen, also in PAA?,
+                       closest C3 match + similarity
+  seeds.csv            seed, service, city, queries returned
   fanout-routing.md    the routing worksheet: Intent and Route filled by the discovery-audit agent
                        (service H2/FAQ · location FAQ · blog topic · drop); C3 and PAA duplicates pre-marked
 Cost: whole-run estimate first (dfs.run_guard: balance, $2 threshold). Price (dfs_prices.json, checked
@@ -44,8 +47,21 @@ def norm(q):
     return re.sub(r"[^a-z0-9 ]", "", q.lower()).strip()
 
 
+def seed_pairs(services, cities):
+    """Every (service, city) pair, ordered so a cap spreads the seeds: each pick is the unused pair whose
+    service and city have been used least so far (ties: primary city first, then the order given). The
+    first max(services, cities) seeds therefore cover every service and every city before any repeats."""
+    left = [(si, ci) for ci in range(len(cities)) for si in range(len(services))]
+    us, uc, out = [0] * len(services), [0] * len(cities), []
+    while left:
+        si, ci = min(left, key=lambda p: (us[p[0]] + uc[p[1]], max(us[p[0]], uc[p[1]]), left.index(p)))
+        left.remove((si, ci)); us[si] += 1; uc[ci] += 1
+        out.append((services[si], cities[ci]))
+    return out
+
+
 def seeds(services, cities):
-    return [f"{s} {c}" for c in cities for s in services]
+    return [f"{s} {c}" for s, c in seed_pairs(services, cities)]
 
 
 def prompt(seed, n):
@@ -104,13 +120,18 @@ def main():
             s.add_argument("--registry"); s.add_argument("--paa")
     a = ap.parse_args()
     services = [l.strip().lower() for l in open(a.services_file) if l.strip()]
-    cities = [c.strip() for c in a.cities.split(",") if c.strip()][:4]
-    all_seeds = seeds(services, cities)
+    cities = [c.strip() for c in a.cities.split(",") if c.strip()]
+    pairs = seed_pairs(services, cities)
+    all_seeds = [f"{s_} {c}" for s_, c in pairs]
+    run_pairs = pairs[: a.cap]
     run_seeds = all_seeds[: a.cap]
+    group_of = {f"{s_} {c}": s_ for s_, c in pairs}
     each = dfs.estimate(LLM, tasks=1)
 
     if a.cmd == "estimate":
-        print(f"{len(all_seeds)} seeds; capped at {a.cap} → {len(run_seeds)} calls × ${each:.4f} (upper bound) "
+        print(f"{len(services)} services × {len(cities)} cities = {len(all_seeds)} seeds; capped at {a.cap} → "
+              f"{len(run_seeds)} seeds covering {len({s_ for s_, _ in run_pairs})} services and "
+              f"{len({c for _, c in run_pairs})} cities; {len(run_seeds)} calls × ${each:.4f} (upper bound) "
               f"= ${each * len(run_seeds):.4f} · balance ${dfs.balance():.2f}")
         if len(all_seeds) > a.cap:
             print(f"Not run: {len(all_seeds) - a.cap} seeds beyond the cap — expanding needs Paul's OK.")
@@ -136,21 +157,23 @@ def main():
         for q in qs:
             seen.setdefault(norm(q), {"query": q, "seeds": [], "count": 0})
             seen[norm(q)]["seeds"].append(seed); seen[norm(q)]["count"] += 1
-        qlog.append([seed, len(qs)])
+        qlog.append([seed, group_of[seed], seed[len(group_of[seed]) + 1:], len(qs)])
 
     reg = [l.strip() for l in open(a.registry)] if a.registry else []
     paa = [r["question"] for r in csv.DictReader(open(a.paa))] if a.paa else []
     rows = []
-    for v in sorted(seen.values(), key=lambda v: (-v["count"], v["query"])):
+    for v in seen.values():
+        v["group"] = " / ".join(dict.fromkeys(group_of[x] for x in v["seeds"]))
+    for v in sorted(seen.values(), key=lambda v: (v["group"], -v["count"], v["query"])):
         c3, c3s = best_match(v["query"], reg)
         pq, pqs = best_match(v["query"], paa)
         rows.append((v, c3, c3s, pq, pqs))
     with open(d / "fanout-queries.csv", "w", newline="") as fh:
         w = csv.writer(fh)
-        w.writerow(["query", "seeds", "times_seen", "closest_paa_question", "paa_similarity",
+        w.writerow(["query", "group", "seeds", "times_seen", "closest_paa_question", "paa_similarity",
                     "closest_existing_heading_or_faq", "c3_similarity"])
         for v, c3, c3s, pq, pqs in rows:
-            w.writerow([v["query"], " | ".join(dict.fromkeys(v["seeds"])), v["count"], pq, f"{pqs:.2f}", c3, f"{c3s:.2f}"])
+            w.writerow([v["query"], v["group"], " | ".join(dict.fromkeys(v["seeds"])), v["count"], pq, f"{pqs:.2f}", c3, f"{c3s:.2f}"])
     md = ["# Fan-out routing — LLM query fan-out (S21)", "",
           f"{len(run_seeds)} seeds → {len(seen)} distinct queries. Written by scripts/fanout.py; **the discovery-audit "
           "agent fills Intent and Route** for every row.", "",
@@ -160,18 +183,20 @@ def main():
           "Intent: informational · problem-aware · commercial investigation · comparison · transactional.  ",
           "Route: **service H2/FAQ** (name the page) · **location FAQ** (name the city page) · **blog topic** · **drop** "
           "(off-topic, or already covered — C3 or PAA similarity ≥ 0.85 is pre-marked).", "",
-          "| # | Query | Seen | Seeds | Closest PAA question | PAA sim | Closest C3 | C3 sim | Intent | Route | Note |",
-          "|---|---|---|---|---|---|---|---|---|---|---|"]
+          "Rows are grouped by service (Group = the service of the seeds that produced the query).", "",
+          "| # | Group | Query | Seen | Seeds | Closest PAA question | PAA sim | Closest C3 | C3 sim | Intent | Route | Note |",
+          "|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for i, (v, c3, c3s, pq, pqs) in enumerate(rows, 1):
         route = "drop (C3 duplicate)" if c3s >= 0.85 else ("same as PAA — route with it" if pqs >= 0.85 else "")
-        md.append(f"| {i} | {v['query']} | {v['count']} | {' / '.join(dict.fromkeys(v['seeds']))} | {pq} | {pqs:.2f} | "
+        md.append(f"| {i} | {v['group']} | {v['query']} | {v['count']} | {' / '.join(dict.fromkeys(v['seeds']))} | {pq} | {pqs:.2f} | "
                   f"{c3} | {c3s:.2f} | | {route} | |")
     (d / "fanout-routing.md").write_text("\n".join(md) + "\n")
     with open(d / "seeds.csv", "w", newline="") as fh:
-        w = csv.writer(fh); w.writerow(["seed", "queries"]); w.writerows(qlog)
+        w = csv.writer(fh); w.writerow(["seed", "service", "city", "queries"]); w.writerows(qlog)
     R.log_change(a.slug, a.run, "data_pull", ",".join(cities), "fan-out", "",
                  f"{len(run_seeds)} seeds, {len(seen)} queries", "DONE", channel="local")
-    print(f"{len(run_seeds)} seeds → {len(seen)} distinct fan-out queries "
+    print(f"{len(run_seeds)} seeds ({len({s_ for s_, _ in run_pairs})} services × "
+          f"{len({c for _, c in run_pairs})} cities) → {len(seen)} distinct fan-out queries "
           f"({sum(1 for r in rows if r[4] >= 0.85)} overlap PAA, {sum(1 for r in rows if r[2] >= 0.85)} already in C3)")
     if len(all_seeds) > a.cap:
         print(f"{len(all_seeds) - a.cap} seeds beyond the cap were not run — ask Paul before expanding.")

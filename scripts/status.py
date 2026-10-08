@@ -46,7 +46,7 @@ GATES = json.loads((ROOT / "scripts" / "gates.json").read_text())
 SETTABLE = {
     "client.name", "client.domain", "client.industry", "client.route",
     "client.drive_folder_id", "client.kadence_head_meta_key", "client.gbp_url",
-    "client.gbp_website_url", "client.address_type", "client.notes", "client.state",
+    "client.gbp_website_url", "client.address_type", "client.notes", "client.state", "client.cms",
 }
 SAFE_FIX_CAP_KINDS = ["alt_text", "broken_link", "image_url", "meta_description"]
 BATCH_STATES = ["planned", "briefs_written", "drafts_written", "sem_applied", "sem_check_failed",

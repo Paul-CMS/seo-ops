@@ -1,6 +1,6 @@
 # Red Rover Roofing - Document Checklist
 
-Generated 2026-10-08T12:22 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-08T12:59 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -10,7 +10,8 @@ Generated 2026-10-08T12:22 from status.json — do not edit. `[x]` done · `[-]`
 | [ ] | S02 Public discovery: live site, GBP, social, review profiles, Secretary o | — |  |
 | [ ] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | — |  |
 | [ ] | S04 Proof sheet built (Markdown + client Google Doc) | — |  |
-| [ ] | S05 Site crawl | — |  |
+| [ ] | S05 Site crawl (max pages = sitemap size × 1.5, min 20, max 1000; 1000 whe | — |  |
+| [ ] | S05b Page text capture: the body text of every crawled HTML page (the basic | — |  |
 | [ ] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | — |  |
 | [ ] | S07 Rankings + cannibalization: every ranked keyword per URL (top 100), co | — |  |
 | [ ] | S08 Backlinks pull: referring domains per URL | — |  |

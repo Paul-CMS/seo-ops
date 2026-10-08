@@ -42,6 +42,28 @@ If both apex and `www.` forms appear across exports, two things follow: every co
 must normalize, and the host split itself is a canonical/redirect question to verify
 against live response codes. Do not assume which is canonical from the export.
 
+### Host consistency — the crawl itself
+Independent of any tool's claim: every crawled 2xx URL, every canonical and every internal
+link target should sit on one form of the site (https or http · www or bare). The check lists
+each other form with counts and examples, and any page crawled under two forms. Redirecting
+URLs on another form are listed separately — they are expected when they 301 to the main
+form. Result `UNVERIFIED` until the live response codes are checked.
+
+### Orphan candidates — zero internal inlinks
+Pages in the crawl (200, HTML, not the homepage) or in the sitemap that no internal
+hyperlink points to, counted from the link-level export with host-normalized matching
+(canonical, alternate, redirect and image rows are not inlinks; self-links don't count). No
+link-level export → the crawl's Inlinks column, flagged as weaker evidence; neither →
+`LIMITATION`. Zero inlinks makes a page an orphan **candidate**, never an orphan finding by
+itself — resolve against GSC, analytics, backlinks, GBP destinations and paid landing pages.
+
+### Sitemap vs crawl
+Needs a sitemap URL list in the evidence (`*sitemap*.txt` / `.xml` / `.csv`; without one →
+`LIMITATION`). Reports sitemap URLs the crawl did not find, sitemap URLs that answered
+non-200, sitemap URLs canonicalised elsewhere, and indexable 200 pages missing from the
+sitemap. Not-found URLs may be a crawl-scope gap (check the crawl stop reason first);
+non-200 results are checked live before any finding.
+
 ### Crawl coverage
 The overview's page count against the page export's row count. A mismatch means neither
 can be used as a denominator until reconciled. Percentages computed on an unreconciled

@@ -1,10 +1,22 @@
 #!/usr/bin/env python3
 """crawl.py — DataforSEO OnPage crawl for /crawl.
 
-    crawl.py estimate <slug> --domain D [--max-pages 1000] [--mode basic|javascript]
-    crawl.py run      <slug> --run RUN_ID --domain D [--max-pages 1000] [--mode basic]
+    crawl.py estimate <slug> --domain D [--max-pages N] [--mode basic|javascript]
+    crawl.py run      <slug> --run RUN_ID --domain D [--max-pages N] [--mode basic]
                       [--crawl-delay 2000] [--confirmed] [--new-crawl] [--max-wait 540]
     crawl.py status   <slug>
+    crawl.py summary  <slug>                 (re)build data/crawl/crawl-summary.csv from the crawl tables
+    crawl.py text     <slug> --run RUN_ID [--delay 2] [--max-words 800]
+                                             S05b: free, polite fetch of each crawled HTML page's body
+                                             text -> data/crawl/page-text.csv
+
+--max-pages (#18): when it is not given, it is the site's sitemap size x 1.5 (rounded up,
+minimum 20, maximum 1000) — the sitemap is read from robots.txt `Sitemap:` lines, else
+/sitemap.xml, else /sitemap_index.xml (indexes followed). No readable sitemap -> the old
+default of 1000, and the estimate says so. The estimate always prints the value and why.
+
+Agents read the script-made summaries (crawl-summary.csv, page-text.csv), never the raw
+exports (R5).
 
 `run` is resumable and idempotent. It reads clients/<slug>/inputs/crawl/crawl-state.json:
   - no task yet          -> estimate, spend guard, post ONE task (the only paid step)
@@ -21,10 +33,15 @@ Exit codes: 5 needs Paul's cost confirmation · 6 would exceed balance · 10 sti
 import argparse
 import csv
 import datetime
+import html as htmlmod
 import http
 import json
+import math
+import re
 import sys
 import time
+import urllib.parse
+import urllib.robotparser
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -36,6 +53,9 @@ from lib import client_dir, die, now, read_json, write_json
 RESULT_SETS = ["pages", "links", "duplicate_title", "duplicate_description",
                "redirect_chains", "non_indexable", "duplicate_content"]
 PACE = 0.25  # seconds between result calls — well under the 2000/min API limit
+WEB_PACE = 1.0  # seconds between our own fetches of the client's public site (sitemaps)
+DEFAULT_MAX_PAGES, MIN_MAX_PAGES, CAP_MAX_PAGES = 1000, 20, 1000
+MAX_CHILD_SITEMAPS = 50
 
 
 def crawl_dir(slug):
@@ -64,6 +84,88 @@ def clean_domain(d):
     return d.split("/")[0]
 
 
+# ---------------------------------------------------------------- public web (free, polite)
+def web_fetch(url):
+    """The same public-web fetch verify.py uses (one GET, honest user agent, 30 s timeout).
+    Looked up at call time so the test suite's fake web applies here too."""
+    import verify
+    return verify.fetch(url)
+
+
+def data_dir(slug):
+    d = client_dir(slug) / "data" / "crawl"
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
+def _same_site(url, domain):
+    host = (urllib.parse.urlsplit(url).hostname or "").lower()
+    return host == domain or host == "www." + domain
+
+
+def sitemap_urls(domain):
+    """Page URLs listed in the site's sitemap(s). Returns (set of urls, list of sitemap files read).
+    Order: robots.txt Sitemap: lines, else /sitemap.xml, else /sitemap_index.xml; indexes followed
+    (at most MAX_CHILD_SITEMAPS child files). One fetch at a time, WEB_PACE seconds apart."""
+    base = f"https://{domain}"
+    fetched = [0]
+
+    def get(u):
+        if fetched[0]:
+            time.sleep(WEB_PACE)
+        fetched[0] += 1
+        code, _, body = web_fetch(u)
+        return body if code == 200 and body else ""
+
+    robots = get(base + "/robots.txt")
+    starts = [l.split(":", 1)[1].strip() for l in robots.splitlines()
+              if l.strip().lower().startswith("sitemap:") and l.split(":", 1)[1].strip()]
+    candidates = starts or [base + "/sitemap.xml", base + "/sitemap_index.xml"]
+    urls, read, seen = set(), [], set()
+    for start in candidates:
+        queue = [start]
+        while queue and len(seen) <= MAX_CHILD_SITEMAPS:
+            sm = queue.pop(0)
+            if sm in seen:
+                continue
+            seen.add(sm)
+            if sm.lower().endswith(".gz"):
+                continue          # compressed sitemaps are not read; the fallback covers it
+            body = get(sm)
+            if "<loc" not in body.lower():
+                continue
+            read.append(sm)
+            locs = [htmlmod.unescape(x.strip()) for x in
+                    re.findall(r"<loc>\s*(.*?)\s*</loc>", body, re.S | re.I)]
+            if re.search(r"<sitemapindex\b", body, re.I):
+                queue += [x for x in locs if x not in seen]
+            else:
+                urls.update(x for x in locs if _same_site(x, domain))
+        if urls and not starts:
+            break                 # /sitemap.xml worked — no need for /sitemap_index.xml
+    return urls, read
+
+
+def choose_max_pages(domain, given):
+    """(max_pages, reason). An explicit --max-pages always wins."""
+    if given is not None:
+        return given, "set with --max-pages"
+    try:
+        urls, read = sitemap_urls(domain)
+    except Exception as e:      # never let a sitemap problem stop the crawl
+        urls, read = set(), []
+        why = f"sitemap could not be read ({e})"
+    else:
+        why = "no readable sitemap (robots.txt, /sitemap.xml, /sitemap_index.xml)"
+    if not urls:
+        return DEFAULT_MAX_PAGES, f"{why} — fell back to the old default of {DEFAULT_MAX_PAGES}"
+    n = len(urls)
+    mp = min(CAP_MAX_PAGES, max(MIN_MAX_PAGES, math.ceil(n * 1.5)))
+    return mp, (f"sitemap lists {n} URLs ({len(read)} sitemap file(s): {', '.join(read[:3])}"
+                f"{' …' if len(read) > 3 else ''}) × 1.5 = {math.ceil(n * 1.5)}, "
+                f"kept between {MIN_MAX_PAGES} and {CAP_MAX_PAGES}")
+
+
 # ---------------------------------------------------------------- estimate / post
 def do_estimate(domain, max_pages, mode):
     est = dfs.estimate("on_page/task_post", pages=max_pages, mode=mode)
@@ -71,7 +173,7 @@ def do_estimate(domain, max_pages, mode):
     return est, bal
 
 
-def post_task(slug, run_id, st, domain, max_pages, mode, delay, confirmed):
+def post_task(slug, run_id, st, domain, max_pages, mode, delay, confirmed, reason=""):
     est = dfs.estimate("on_page/task_post", pages=max_pages, mode=mode)
     task = {"target": domain, "max_crawl_pages": max_pages, "crawl_delay": delay,
             "enable_javascript": mode == "javascript", "load_resources": False,
@@ -82,9 +184,9 @@ def post_task(slug, run_id, st, domain, max_pages, mode, delay, confirmed):
     st.update({"task_id": t["id"], "domain": domain, "max_pages": max_pages, "mode": mode,
                "crawl_delay_ms": delay, "posted_at": now(), "posted_by_run": run_id,
                "estimate_usd": est, "cost_usd": resp.get("cost"), "phase": "crawling",
-               "checkpoints": {}})
+               "max_pages_reason": reason, "checkpoints": {}})
     write_json(state_path(slug), st)
-    note(slug, run_id, f"task posted for {domain} ({mode}, max {max_pages} pages, "
+    note(slug, run_id, f"task posted for {domain} ({mode}, max {max_pages} pages — {reason}, "
          f"{delay} ms between hits) · cost ${resp.get('cost')} · task {t['id']}")
 
 
@@ -359,7 +461,7 @@ def convert(slug, run_id, st):
            f"- Tool: DataforSEO OnPage API, task `{st['task_id']}`\n"
            f"- Mode: {st['mode']} (JavaScript {'on' if st['mode'] == 'javascript' else 'off'};"
            " missing JavaScript-rendered data is never a finding)\n"
-           f"- Max pages: {st['max_pages']} · crawled: {(st.get('summary') or {}).get('pages_crawled')}"
+           f"- Max pages: {st['max_pages']} ({st.get('max_pages_reason') or 'set with --max-pages'}) · crawled: {(st.get('summary') or {}).get('pages_crawled')}"
            f" · stop reason: {(st.get('summary') or {}).get('stop_reason')}\n"
            f"- Crawl delay: {st['crawl_delay_ms']} ms between hits · user agent: DataforSEO default\n"
            f"- Posted: {st['posted_at']} · cost: ${st.get('cost_usd')}\n"
@@ -371,8 +473,121 @@ def convert(slug, run_id, st):
     st["phase"] = "converted"
     st["converted_at"] = now()
     write_json(state_path(slug), st)
+    p, n = build_summary(slug)
+    written.append(f"{p.relative_to(client_dir(slug))} ({n} rows) — the file agents read")
     note(slug, run_id, "converted: " + "; ".join(written))
     print("\n".join(written))
+
+
+# ---------------------------------------------------------------- R5: compact summary for agents
+SUMMARY_COLS = [  # summary column <- internal_all column
+    ("url", "Address"), ("status", "Status Code"), ("indexability", "Indexability"),
+    ("indexability_status", "Indexability Status"), ("title", "Title 1"), ("title_len", "Title 1 Length"),
+    ("meta_description", "Meta Description 1"), ("meta_len", "Meta Description 1 Length"),
+    ("h1", "H1-1"), ("h1_count", None), ("word_count", "Word Count"), ("canonical", "Canonical Link Element 1"),
+    ("meta_robots", "Meta Robots 1"), ("inlinks", "Inlinks"), ("unique_inlinks", "Unique Inlinks"),
+    ("outlinks", "Outlinks"), ("external_outlinks", "External Outlinks"), ("depth", "Crawl Depth"),
+    ("redirect_url", "Redirect URL")]
+
+
+def latest_table(slug, name):
+    hits = sorted(crawl_dir(slug).glob(f"* - DFS - {name} - *.csv"), key=lambda p: (p.name[-14:], p.name))
+    return hits[-1] if hits else None
+
+
+def build_summary(slug):
+    """data/crawl/crawl-summary.csv: one row per crawled page, audited columns only, from the
+    converted internal_all table (H1 count from the raw pages when present)."""
+    src = latest_table(slug, "internal_all")
+    if not src:
+        die(f"no converted crawl table (internal_all) in clients/{slug}/inputs/crawl/ — run /crawl first.", 4)
+    h1n = {}
+    for p in read_jsonl(crawl_dir(slug) / "raw" / "pages.jsonl"):
+        h1n[p.get("url")] = len(((p.get("meta") or {}).get("htags") or {}).get("h1") or [])
+    with open(src, newline="", encoding="utf-8") as fh:
+        rows = list(csv.DictReader(fh))
+    body = []
+    for r in rows:
+        u = r.get("Address", "")
+        cnt = h1n.get(u)
+        if cnt is None:
+            cnt = sum(1 for c in ("H1-1", "H1-2") if r.get(c))
+            cnt = "2+" if cnt == 2 else cnt
+        body.append([cnt if col is None else r.get(col, "") for _, col in SUMMARY_COLS])
+    out = data_dir(slug) / "crawl-summary.csv"
+    write_csv(out, [k for k, _ in SUMMARY_COLS], body)
+    return out, len(body)
+
+
+# ---------------------------------------------------------------- S05b: page text capture (free)
+_DROP = re.compile(r"<(script|style|noscript|svg|template|iframe|nav|header|footer|form)\b.*?</\1\s*>", re.S | re.I)
+
+
+def page_text(body):
+    """(h1, body text). Main content when the page marks it (<main>/<article>), else <body>,
+    without scripts, styles, navigation, header, footer and forms."""
+    m = re.search(r"<h1\b[^>]*>(.*?)</h1\s*>", body, re.S | re.I)
+    h1 = re.sub(r"\s+", " ", htmlmod.unescape(re.sub(r"<[^>]+>", " ", m.group(1)))).strip() if m else ""
+    b = re.sub(r"<!--.*?-->", " ", body, flags=re.S)
+    b = _DROP.sub(" ", b)
+    for tag in ("main", "article", "body"):
+        mm = re.search(rf"<{tag}\b[^>]*>(.*)</{tag}\s*>", b, re.S | re.I)
+        if mm:
+            b = mm.group(1)
+            break
+    b = re.sub(r"<(br|/p|/div|/li|/h[1-6]|/tr)\b[^>]*>", " ", b, flags=re.I)
+    text = re.sub(r"\s+", " ", htmlmod.unescape(re.sub(r"<[^>]+>", " ", b))).strip()
+    return h1, text
+
+
+def crawled_html_urls(slug):
+    """Internal HTML pages the crawl returned with a 200, from the raw pages (else internal_all)."""
+    pages = read_jsonl(crawl_dir(slug) / "raw" / "pages.jsonl")
+    if pages:
+        urls = [p["url"] for p in pages if p.get("url") and p.get("resource_type") == "html"
+                and p.get("status_code") == 200]
+    else:
+        src = latest_table(slug, "internal_all")
+        if not src:
+            die(f"no crawl in clients/{slug}/inputs/crawl/ — run /crawl first (S05).", 4)
+        with open(src, newline="", encoding="utf-8") as fh:
+            urls = [r["Address"] for r in csv.DictReader(fh) if str(r.get("Status Code")) == "200"]
+    return list(dict.fromkeys(urls))
+
+
+def capture_text(slug, run_id, delay, max_words):
+    R.open_run(slug, run_id)
+    urls = crawled_html_urls(slug)
+    st = read_json(state_path(slug), {})
+    domain = st.get("domain") or clean_domain(S.load(slug)["client"].get("domain") or "")
+    rp = urllib.robotparser.RobotFileParser()
+    code, _, robots = web_fetch(f"https://{domain}/robots.txt") if domain else (0, {}, "")
+    rp.parse(robots.splitlines() if code == 200 else [])
+    rows, skipped, failed = [], 0, 0
+    for i, u in enumerate(urls):
+        if not rp.can_fetch("*", u):
+            skipped += 1
+            rows.append([u, "", "", 0, "", "not fetched: disallowed by robots.txt"])
+            continue
+        time.sleep(delay)
+        code, _, body = web_fetch(u)
+        if code != 200 or not body:
+            failed += 1
+            rows.append([u, code, "", 0, "", f"not fetched: HTTP {code}"])
+            continue
+        h1, text = page_text(body)
+        words = text.split()
+        cut = len(words) > max_words
+        rows.append([u, code, h1, len(words), "yes" if cut else "no",
+                     " ".join(words[:max_words]) + (" …" if cut else "")])
+    out = data_dir(slug) / "page-text.csv"
+    write_csv(out, ["url", "status", "h1", "word_count", "truncated", "text"], rows)
+    msg = (f"S05b page text: {len(rows) - skipped - failed} of {len(urls)} pages captured"
+           f" ({skipped} disallowed by robots.txt, {failed} failed) · first {max_words} words each"
+           f" · {out.relative_to(client_dir(slug))} · no charge")
+    note(slug, run_id, msg)
+    print(msg)
+    return out
 
 
 # ---------------------------------------------------------------- CLI
@@ -381,22 +596,38 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     for name in ("estimate", "run"):
         s = sub.add_parser(name); s.add_argument("slug"); s.add_argument("--domain", required=True)
-        s.add_argument("--max-pages", type=int, default=1000)
+        s.add_argument("--max-pages", type=int, default=None,
+                       help="default: sitemap size x 1.5 (min 20, max 1000); 1000 if no sitemap")
         s.add_argument("--mode", choices=["basic", "javascript"], default="basic")
         if name == "run":
             s.add_argument("--run", required=True); s.add_argument("--crawl-delay", type=int, default=2000)
             s.add_argument("--confirmed", action="store_true"); s.add_argument("--new-crawl", action="store_true")
             s.add_argument("--max-wait", type=int, default=540)
     s = sub.add_parser("status"); s.add_argument("slug")
+    s = sub.add_parser("summary"); s.add_argument("slug")
+    s = sub.add_parser("text"); s.add_argument("slug"); s.add_argument("--run", required=True)
+    s.add_argument("--delay", type=float, default=2.0, help="seconds between page fetches (minimum 1)")
+    s.add_argument("--max-words", type=int, default=800, help="words kept per page (the count is always full)")
     a = ap.parse_args()
 
     if a.cmd == "status":
         st = read_json(state_path(a.slug), {})
         print(json.dumps({k: v for k, v in st.items() if k != "checkpoints"}, indent=1) if st else "no crawl yet")
         return
+    if a.cmd == "summary":
+        p, n = build_summary(a.slug)
+        print(f"{p.relative_to(client_dir(a.slug).parent.parent)} — {n} pages")
+        return
+    if a.cmd == "text":
+        if a.delay < 1:
+            die("a delay below 1 second between page fetches is not polite; minimum is 1.")
+        if a.max_words < 50:
+            die("--max-words below 50 keeps too little text to be useful.")
+        capture_text(a.slug, a.run, a.delay, a.max_words)
+        return
 
     domain = clean_domain(a.domain)
-    if not (1 <= a.max_pages <= 100000):
+    if a.max_pages is not None and not (1 <= a.max_pages <= 100000):
         die("--max-pages must be between 1 and 100000")
     try:
         if a.cmd == "estimate":
@@ -405,9 +636,12 @@ def main():
                 print(f"RESUME — a crawl of {domain} already exists (task {st['task_id']}, phase "
                       f"{st['phase']}, posted {st['posted_at'][:10]}). Resuming costs nothing.")
                 return
-            est, bal = do_estimate(domain, a.max_pages, a.mode)
-            print(f"Estimate: up to ${est:.4f} for {a.max_pages} pages in {a.mode} mode "
+            mp, why = choose_max_pages(domain, a.max_pages)
+            est, bal = do_estimate(domain, mp, a.mode)
+            print(f"Max pages: {mp} — {why}.")
+            print(f"Estimate: up to ${est:.4f} for {mp} pages in {a.mode} mode "
                   f"(${dfs.PRICES['on_page/task_post']['per_page'][a.mode]}/page). Balance ${bal:.2f}.")
+            print(f"Run with: --max-pages {mp}")
             if est > bal:
                 print("STOP — this would exceed the remaining balance. Do not start; tell Paul.")
                 sys.exit(6)
@@ -429,8 +663,10 @@ def main():
                 for f in (crawl_dir(a.slug) / "raw").glob("*.jsonl"):
                     f.rename(f.with_suffix(f".{st['task_id'][:8]}.old"))
                 st = {}
-            post_task(a.slug, a.run, st, domain, a.max_pages, a.mode, a.crawl_delay, a.confirmed)
-        elif (st["max_pages"], st["mode"]) != (a.max_pages, a.mode):
+            mp, why = choose_max_pages(domain, a.max_pages)
+            print(f"Max pages: {mp} — {why}.")
+            post_task(a.slug, a.run, st, domain, mp, a.mode, a.crawl_delay, a.confirmed, why)
+        elif (a.max_pages is not None and st["max_pages"] != a.max_pages) or st["mode"] != a.mode:
             note(a.slug, a.run, f"resuming existing task {st['task_id']} ({st['mode']}, max "
                  f"{st['max_pages']}); requested settings ignored — no new charge")
         else:

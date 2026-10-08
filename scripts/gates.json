@@ -371,7 +371,8 @@
         "templates/decision-sheet.md",
         "templates/brand-guide.md (A, B)",
         "sop-source/BB-Standard-v1.0.md (BB-1xx entity rules)",
-        "methodology/rulings.md (CM-016, CM-020, PROC-01)"
+        "methodology/rulings.md (CM-016, CM-020, PROC-01)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "discovery:proof-sheet": {
@@ -388,7 +389,8 @@
         ".claude/skills/client-intake/references/field-schema.md",
         ".claude/skills/client-intake/references/proof-sheet.md",
         "the Decision Sheet and Discovery Record (this client)",
-        "clients/<slug>/brand-guide.md"
+        "clients/<slug>/brand-guide.md",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "discovery:sheet-returned": {
@@ -399,7 +401,8 @@
         "proof_sheet_returned"
       ],
       "reads": [
-        "the client's returned sheet (save it as given)"
+        "the client's returned sheet (save it as given)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "discovery:data": {
@@ -413,7 +416,8 @@
         "methodology/audit-steps.md (S06–S11, S19–S21)",
         "methodology/agency-profile.md (tools)",
         "clients/<slug>/brand-guide.md (services, cities)",
-        "wordpress/wordpress-site-setup.md (§5 site-wide settings)"
+        "wordpress/wordpress-site-setup.md (§5 site-wide settings)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "discovery:audit": {
@@ -432,8 +436,14 @@
         "methodology/specs/*.md",
         "methodology/rulings.md",
         "clients/<slug>/brand-guide.md",
-        "clients/<slug>/data/",
-        "clients/<slug>/inputs/crawl/"
+        "clients/<slug>/decisions-settled.md",
+        "clients/<slug>/data/crawl/crawl-summary.csv + page-text.csv (never the raw crawl tables)",
+        "clients/<slug>/data/reviews/reviews-summary.md + customer-language.md",
+        "clients/<slug>/data/backlinks/backlinks-per-url.csv",
+        "clients/<slug>/data/local-grid/local-grid-summary.md",
+        "clients/<slug>/data/rankings/ (summaries)",
+        "clients/<slug>/data/paa/paa-routing.md",
+        "clients/<slug>/data/fanout/fanout-routing.md"
       ]
     },
     "discovery:reconcile": {
@@ -473,7 +483,8 @@
       "reads": [
         "the approved Finding Register",
         "methodology/rulings.md (CM-028)",
-        "scripts/gates.json (change_kinds)"
+        "scripts/gates.json (change_kinds)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "build:plan": {
@@ -484,13 +495,14 @@
         "site_plan"
       ],
       "reads": [
-        "the approved URL Decision Map, Finding Register and conformance scorecard",
+        "the approved URL Decision Map, Finding Register and the scorecard per page type",
         "clients/<slug>/brand-guide.md",
         "methodology/specs/*.md",
         "clients/<slug>/data/rankings/ (best-variants.csv, url-rankings.csv)",
         "clients/<slug>/data/paa/paa-routing.md",
         "methodology/rulings.md (CM-020, CM-022, CM-024)",
-        "clients/<slug>/data/fanout/fanout-routing.md"
+        "clients/<slug>/data/fanout/fanout-routing.md",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "build:evidence": {
@@ -507,7 +519,8 @@
         "clients/<slug>/brand-guide.md (A, D, E)",
         "the returned proof sheet and the approved Discovery Record",
         "methodology/evidence-requirements.json",
-        "methodology/rulings.md (CM-016, CM-027, CM-041)"
+        "methodology/rulings.md (CM-016, CM-027, CM-041)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "build:brief": {
@@ -530,7 +543,8 @@
         "clients/<slug>/data/fanout/fanout-routing.md",
         "the briefs already written in this batch and the pages approved in earlier batches (sibling context)",
         "the audit findings for this page",
-        "methodology/rulings.md (CM-041, CM-043)"
+        "methodology/rulings.md (CM-041, CM-043)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "build:draft": {
@@ -547,7 +561,8 @@
         "methodology/writing-commercial.md",
         "methodology/specs/<type>.md + methodology/specs/README.md (common checks)",
         "clients/<slug>/brand-guide.md (A–D, H2, I)",
-        "the drafts already written in this batch and the pages approved in earlier batches (sibling context)"
+        "the drafts already written in this batch and the pages approved in earlier batches (sibling context)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "build:drafts": {
@@ -564,7 +579,8 @@
         "methodology/specs/<type>.md",
         "clients/<slug>/brand-guide.md (C1–C3)",
         "the pages approved in earlier batches",
-        "methodology/rulings.md (CM-017, CM-043)"
+        "methodology/rulings.md (CM-017, CM-043)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "build:apply-sem": {
@@ -578,7 +594,8 @@
       "reads": [
         "the batch's semantic review table and drafts",
         "methodology/writing-commercial.md (E1–E10, Stage 4)",
-        "methodology/specs/<type>.md"
+        "methodology/specs/<type>.md",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "build:pilot-corrections": {
@@ -591,7 +608,8 @@
         "Paul's notes on the pilot approvals (clients/<slug>/decisions.md, approval-record.md)",
         "methodology/specs/<type>.md (§8)",
         "methodology/writing-commercial.md",
-        "methodology/lessons.md"
+        "methodology/lessons.md",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "implement:safe": {
@@ -671,7 +689,8 @@
         "clients/<slug>/build/link-wheel.json",
         ".claude/skills/updated-link-strategy/SKILL.md",
         ".claude/skills/link-implementation-qa/SKILL.md",
-        "methodology/rulings.md (CM-011, CM-022)"
+        "methodology/rulings.md (CM-011, CM-022)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "finish:schema": {
@@ -684,7 +703,8 @@
       "reads": [
         ".claude/skills/bb-schema-builder/SKILL.md",
         "sop-source/BB-Standard-Schema-Section-v1.1.md",
-        "clients/<slug>/brand-guide.md (F)"
+        "clients/<slug>/brand-guide.md (F)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "finish:qa": {
@@ -699,7 +719,8 @@
         "the approved URL Decision Map",
         "methodology/specs/*.md (checks)",
         "clients/<slug>/brand-guide.md (B3, C, H2)",
-        "status.py urls <slug> --published"
+        "status.py urls <slug> --published",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "blog:map": {
@@ -715,7 +736,8 @@
         "the approved URL Decision Map",
         "methodology/rulings.md (CM-007, CM-019, CM-021)",
         "clients/<slug>/data/paa/paa-routing.md",
-        "clients/<slug>/data/fanout/fanout-routing.md"
+        "clients/<slug>/data/fanout/fanout-routing.md",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "blog:redirects": {
@@ -724,7 +746,8 @@
       ],
       "produces": [],
       "reads": [
-        "the approved Blog Decision Map"
+        "the approved Blog Decision Map",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "blog:next": {
@@ -746,7 +769,8 @@
         "clients/<slug>/brand-guide.md (C3, D, I, author)",
         "methodology/rulings.md (CM-007, CM-038, CM-039)",
         "clients/<slug>/interviews/story-bank.md",
-        "clients/<slug>/interviews/voice-dna-<author>.md"
+        "clients/<slug>/interviews/voice-dna-<author>.md",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "blog:refresh": {
@@ -756,7 +780,8 @@
       "produces": [],
       "reads": [
         "the Blog Refresh Schedule",
-        ".claude/skills/bb-blog-analysis/references/tests.md (Test B)"
+        ".claude/skills/bb-blog-analysis/references/tests.md (Test B)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "blog:intake": {
@@ -770,7 +795,8 @@
       "reads": [
         "methodology/agency-profile.md",
         "templates/brand-guide.md (A, B)",
-        "sop-source/BB-Standard-v1.0.md (BB-1xx entity rules)"
+        "sop-source/BB-Standard-v1.0.md (BB-1xx entity rules)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "blog:topics": {
@@ -783,7 +809,8 @@
       "reads": [
         "clients/<slug>/brand-guide.md",
         "the client's live service and location pages (FAQs and H2s)",
-        "methodology/rulings.md (CM-012)"
+        "methodology/rulings.md (CM-012)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "build:ship": {
@@ -797,7 +824,8 @@
       ],
       "reads": [
         "the approved page files for the batch",
-        "clients/<slug>/build/ site plan JSON"
+        "clients/<slug>/build/ site plan JSON",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "build:published": {
@@ -813,7 +841,8 @@
         "the returned publish worksheet",
         "the verify report",
         "methodology/specs/<type>.md (alt-text format)",
-        "clients/<slug>/brand-guide.md (B3, C1–C3)"
+        "clients/<slug>/brand-guide.md (B3, C1–C3)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "blog:publish": {
@@ -823,7 +852,8 @@
       ],
       "produces": [],
       "reads": [
-        "the approved post file"
+        "the approved post file",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "wp-check": {
@@ -866,7 +896,8 @@
         "methodology/audit-steps.md (S21)",
         "clients/<slug>/brand-guide.md (services, cities)",
         "clients/<slug>/data/paa/paa-questions.csv",
-        "methodology/rulings.md (CM-012, CM-045)"
+        "methodology/rulings.md (CM-012, CM-045)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "interview:facts": {
@@ -954,7 +985,8 @@
       "reads": [
         "the client's answers as Paul received them (save them verbatim first)",
         "the Decision Sheet (this client)",
-        "clients/<slug>/brand-guide.md"
+        "clients/<slug>/brand-guide.md",
+        "clients/<slug>/decisions-settled.md"
       ]
     }
   },

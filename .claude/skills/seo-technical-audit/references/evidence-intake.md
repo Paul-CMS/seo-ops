@@ -31,6 +31,36 @@ filenames vary by client, VA and export date; column sets do not.
 | `cms.wordpress_all_urls` | cms_inventory |
 | `gsc.queries` / `pages` / `page_indexing` | measurement |
 | `localserp.audit_sheet` | local_visibility |
+| `dataforseo.duplicate_tags` / `duplicate_content` / `redirect_chains` / `non_indexable` | crawl |
+| `dataforseo.crawl_config` (the `DFS - crawl-config` file) | crawl |
+| `sitemap.urls` (any `*sitemap*.txt` / `.xml` / `.csv` — one URL per line or `<loc>`) | crawl |
+
+### The client's other evidence — by folder, one manifest row per file
+
+The data steps write their outputs under `clients/<slug>/data/`; `ingest_evidence.py` finds
+the client folder from the evidence path (or `--client-dir`) and adds a row for every file
+there and under `inputs/` outside the crawl folder. Each `raw/` folder is one row (file
+count, total size). `--no-extra` reads the crawl folder only.
+
+| Folder | Recognised as | Category |
+|---|---|---|
+| `data/reviews/` | `data.reviews (S06)` | reviews |
+| `data/rankings/` | `data.rankings (S07)` | rankings |
+| `data/backlinks/` | `data.backlinks (S08)` | backlinks |
+| `data/citations/` | `data.citations (S09)` | citations |
+| `data/local-grid/` | `data.local_grid (S10)` — `local-grid-summary.md` from `scripts/grid_pdf.py` | local_visibility |
+| `data/gsc/` | `data.gsc (S11)` | measurement |
+| `data/paa/` | `data.paa (S19)` | content_research |
+| `data/fanout/` | `data.fanout (S21)` — never demand (CM-045) | content_research |
+| `data/` (top level, e.g. `services.txt`) | `data.client_lists` | intake |
+| `inputs/seopress-settings-*.json` | `wordpress.settings (S20)` | cms_settings |
+| `inputs/local-grid/*.pdf` | `localdominator.grid_pdf (S10)` — read the summary, not the PDF | local_visibility |
+| `inputs/live-pages/` | `manual.live_capture` | crawl_supplement |
+
+A standard export dropped into `data/` (a GSC or citation CSV) keeps its fingerprinted
+type. URLs in these files' `url` / `page` columns join the URL inventory. Two manifest
+columns are added for them and for every crawl export: `size_bytes` and `file_date` (the
+date in the file name, else the file's modified date).
 
 Note the `tool_findings` category is deliberately separate from `crawl`. Those exports
 contain a tool's conclusions, and the workflow treats them differently throughout —

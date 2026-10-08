@@ -27,6 +27,25 @@ Every page in the frozen URL inventory is scored against its page spec in
 and each check names the audit category it belongs to. Score every page against every
 check of its type; a page with no matching spec gets its page type questioned under §5.
 
+**One scorecard file per page type**, never one combined file — each type has its own check
+set, so a combined sheet is mostly empty columns and hides which checks apply:
+
+| Page type | File (in `inventories/`) | Spec | Check IDs |
+|---|---|---|---|
+| homepage | `scorecard-homepage.csv` | `homepage.md` | HP- + COM- |
+| service | `scorecard-service.csv` | `service.md` | SVC- + COM- |
+| location | `scorecard-location.csv` | `location.md` | LOC- + COM- |
+| county hub | `scorecard-county.csv` | `county-hub.md` | HUB- + COM- |
+| about | `scorecard-about.csv` | `about.md` | ABT- + COM- |
+| blog post | `scorecard-blog.csv` | `blog-post.md` | BLG- |
+
+COM- are the checks common to every commercial page (`methodology/specs/README.md`); blog
+posts don't carry them. Each file: columns `page_url`, `page_type`, then one column per check
+ID — the spec's own in spec order, then COM-. One row per page of that type. Each cell is `pass`, `fail F-###` (the finding that
+carries it), `N/A (<reason>)` or `not scored — <reason>`. A type with no pages on the site
+still gets its file, header only, so the reviewer can see it was considered. Every page in the
+URL Decision Map with one of these types appears in exactly one scorecard.
+
 Scorecard results are reported inside the nine categories, not as a separate section:
 
 | Spec checks | Category |

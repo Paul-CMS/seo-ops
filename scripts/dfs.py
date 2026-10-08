@@ -15,6 +15,11 @@ the confirmation threshold (config.json, $2) and --confirmed is absent -> exit 5
 first). Every paid call is logged with estimate and actual cost to
 clients/<slug>/dfs-costs.jsonl and added to status.json spend.
 
+DataforSEO bills failed tasks too. A ledger row whose call had failed tasks carries `failed_usd`
+(the part of the cost spent on them) and `failed_tasks`; every paid command prints one cost line
+on exit — "DataforSEO this command: $X over N call(s) (of which failed tasks $Y)" — and
+`dfs.py ledger` shows the same split in its totals.
+
 Credentials come from .env (DFS_LOGIN, DFS_PASSWORD). They are never printed.
 """
 import argparse
@@ -175,10 +180,43 @@ def spend_guard(est, confirmed, endpoint=None, slug=None):
     return bal
 
 
-def log_cost(slug, endpoint, purpose, est, actual, extra=None):
+def failed_cost(resp):
+    """(cost of the failed tasks in a response, number of failed tasks). A task's own `cost` is used when
+    DataforSEO gives one; otherwise the call's cost is shared equally across its tasks."""
+    tasks = resp.get("tasks") or []
+    bad = [t for t in tasks if t.get("status_code") not in (20000, 20100)]
+    if not bad:
+        return 0.0, 0
+    share = float(resp.get("cost") or 0) / max(1, len(tasks))
+    usd = sum(float(t["cost"]) if t.get("cost") is not None else share for t in bad)
+    return round(usd, 6), len(bad)
+
+
+_CALLS = []   # (actual, failed) for each paid call this process made — the exit cost line
+
+
+def cost_line():
+    total = sum(a for a, _ in _CALLS)
+    failed = sum(f for _, f in _CALLS)
+    return (f"DataforSEO this command: ${total:.4f} over {len(_CALLS)} call(s) "
+            f"(of which failed tasks ${failed:.4f})")
+
+
+def _print_cost_line():
+    if _CALLS:
+        print(cost_line(), file=sys.stderr)
+
+
+def log_cost(slug, endpoint, purpose, est, actual, extra=None, failed_usd=0.0, failed_tasks=0):
     import status as S
     rec = {"at": now(), "run_id": current_run(slug), "endpoint": endpoint, "purpose": purpose,
            "estimate_usd": est, "actual_usd": actual, **(extra or {})}
+    if failed_tasks:
+        rec.update(failed_usd=failed_usd, failed_tasks=failed_tasks)
+    if not _CALLS:
+        import atexit
+        atexit.register(_print_cost_line)
+    _CALLS.append((float(actual or 0), float(failed_usd or 0)))
     append(client_dir(slug) / "dfs-costs.jsonl", json.dumps(rec) + "\n")
     st = S.load(slug)
     st["spend"]["dataforseo_usd"] = round(st["spend"].get("dataforseo_usd", 0) + float(actual or 0), 6)
@@ -190,7 +228,10 @@ def paid_post(slug, endpoint, payload, purpose, est, confirmed=False, extra=None
     spend_guard(est, confirmed, endpoint, slug)
     resp = request(endpoint, payload, timeout=timeout, retries=retries)
     actual = resp.get("cost")
-    log_cost(slug, endpoint, purpose, est, actual, extra)
+    f_usd, f_n = failed_cost(resp)
+    log_cost(slug, endpoint, purpose, est, actual, extra, f_usd, f_n)
+    if f_n:
+        print(f"NOTE — {f_n} failed task(s) in '{purpose}' were billed ${f_usd:.4f}.", file=sys.stderr)
     return resp
 
 
@@ -247,15 +288,18 @@ def main():
                 print(text)
         elif a.cmd == "ledger":
             p = client_dir(a.slug) / "dfs-costs.jsonl"
-            rows = [json.loads(l) for l in p.read_text().splitlines()] if p.exists() else []
+            rows = [json.loads(l) for l in p.read_text().splitlines() if l.strip()] if p.exists() else []
             flags = 0
             for r in rows:
                 act, est = float(r.get("actual_usd") or 0), r.get("estimate_usd")
                 off = est is not None and abs(act - est) > max(0.005, 0.25 * est)
                 flags += off
+                fl = f"  [failed tasks ${float(r['failed_usd']):.4f}]" if r.get("failed_usd") else ""
                 print(f"{r['at'][:16]}  ${act:8.4f}  (est ${est if est is not None else 0:.4f})"
-                      f"{'  <-- DIFFERS from price table' if off else ''}  {r['endpoint']}  — {r['purpose']}")
-            print(f"total ${sum(float(r.get('actual_usd') or 0) for r in rows):.4f} over {len(rows)} call(s)")
+                      f"{'  <-- DIFFERS from price table' if off else ''}{fl}  {r['endpoint']}  — {r['purpose']}")
+            failed = sum(float(r.get("failed_usd") or 0) for r in rows)
+            print(f"total ${sum(float(r.get('actual_usd') or 0) for r in rows):.4f} over {len(rows)} call(s) "
+                  f"(of which failed tasks ${failed:.4f})")
             if flags:
                 print(f"{flags} call(s) cost differently from scripts/dfs_prices.json — check the table.")
     except DfsError as e:

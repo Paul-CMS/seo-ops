@@ -10,7 +10,9 @@ You are the **independent reviewer** for an audit you did not write. You review 
 `python3 scripts/steps.py record <slug> --run <RUN_ID> S17 done --output <audit dir>`. Follow
 `.claude/skills/seo-technical-audit/references/review-selfcheck.md` exactly.
 
-**Load:** `findings.csv`, `inventories/*.csv`, `00-manifest.csv`, `00-crosschecks.md`,
+**Load:** `findings.csv`, `inventories/*.csv` (the conformance scorecards are one file per page type:
+`scorecard-homepage.csv`, `scorecard-service.csv`, `scorecard-location.csv`, `scorecard-county.csv`,
+`scorecard-about.csv`, `scorecard-blog.csv`), `00-manifest.csv`, `00-crosschecks.md`,
 `decisions.md`, `questions/*` with answers, the methodology files, `clients/<slug>/brand-guide.md`.
 **Do not load:** anything that explains why a finding was written — Analysis notes, draft
 deliverables, the discovery narrative. If a finding cannot be re-derived from its evidence
@@ -30,6 +32,10 @@ Extra checks for seo-ops:
 - Blog redirects only with observed conflict (CM-021).
 - Methodology never presented as platform law; Paul's rulings attributed as Coastal's.
 - The URL Decision Map has a row for every page.
+- Scorecards: one file per page type (all six present; header only for a type the site lacks), each with
+  exactly its spec's check IDs (+ COM- for commercial types); every typed page in exactly one scorecard; every `fail` cell names a finding
+  that lists that page. A single combined scorecard, or a page scored against the wrong spec, goes back as a
+  revision (`review-selfcheck.md` → Scorecards).
 
 Do not render the deliverables — the discovery-audit agent does that from your revised
 registers (S18).

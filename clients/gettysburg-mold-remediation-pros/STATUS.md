@@ -1,11 +1,11 @@
 # Gettysburg Mold Remediation Pros - Status
 
 - **Stage 2 of 8 — Discovery**
-- **What is happening now:** ready to start: the client proof sheet — or, if the client already answered directly, /discovery gettysburg-mold-remediation-pros facts-direct (their answers saved verbatim; no sheet to approve)
+- **What is happening now:** No session is recorded — the seo-ops session hook is not installed (hooks-pending/INSTALL.md). One session per stage is enforced through it. Next there: /discovery gettysburg-mold-remediation-pros proof-sheet (the client proof sheet — or, if the client already answered directly, /discovery gettysburg-mold-remediation-pros facts-direct (their answers saved verbatim; no sheet to approve))
 - **Waiting on:** nobody
-- **Next action:** `/discovery gettysburg-mold-remediation-pros proof-sheet` — Paul opens a **new session on Haiku** in ~/Documents/seo-ops and types `/next gettysburg-mold-remediation-pros` (agents: discovery-audit (opus), clerk (haiku))
+- **Next action:** `/next gettysburg-mold-remediation-pros` once the wait above is over
 
-_Generated 2026-10-08T12:22 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-08T12:59 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 

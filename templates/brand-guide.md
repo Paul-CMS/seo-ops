@@ -99,7 +99,7 @@ Everything a writer may state. **Not here = does not exist.**
 | Warranty terms | | | |
 | Guarantees (response time, on-time, satisfaction) | | | |
 | Awards and rankings | | | |
-| Google rating and review count (date checked) | | | |
+| Google rating and review count — exactly as Google shows them on the day, with the date ("4.9 · 67 reviews, 2026-10-07"; never a rounded 5.0) | | | |
 | Team size / trucks / jobs completed | | | |
 | Financing — available, provider, terms | | | |
 | Free estimate — and what free means | | | |
@@ -109,6 +109,7 @@ Everything a writer may state. **Not here = does not exist.**
 | Services subcontracted out | | | |
 | Named staff for on-page use | | | |
 | Licensed practitioner for health-claim sign-off *(medical / chiropractic)* | | | |
+| Blog author — a real person (CM-039; from the Decision Sheet) | | | |
 
 ### D2 · Unsupported claims
 Claims the site makes publicly that the client could not substantiate. Writers must not repeat
@@ -117,10 +118,15 @@ them; the content-risk list tracks where they are live.
 | Claim (verbatim) | Where it appears | Client answer | Action |
 |---|---|---|---|
 
+### D3 · Content-risk list
+Every live page that still carries a D2 claim or an unconfirmed fact, until it is rebuilt or corrected.
+
+| Page URL | Claim or fact | Source (D2 row / audit finding) | Fixed by (batch or handoff) |
+|---|---|---|---|
+
 ## Section E — Service area truth
 ```
-FURTHEST NORTH:            FURTHEST SOUTH:
-FURTHEST EAST:             FURTHEST WEST:
+TOWNS AT THE EDGES (the furthest towns served, any direction):
 CITIES CLAIMED ON SITE:
 EXPLICIT EXCLUSIONS:
 TRAVEL FEE BEYOND:

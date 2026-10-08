@@ -110,3 +110,11 @@ own run, evidence gate cleared) once the pilot passed and Paul switched the stag
 Why (evidence): Apex Roofing of the Lowcountry needed 7 approvals for discovery + audit, three of them re-approvals
 caused by decisions asked before the information that shaped them existed (REWRITE-HANDOFF.md §1, R6).
 Proposed by: Claude, rewrite session 2026-10-08.
+
+## L-011 · 2026-10-08 · "The Best" proof quotes the rating as Google shows it · PROPOSED
+Rule affected: CM-020 (proof), Brand Guide D (rating row).
+What we do now (built): the rating and review count are recorded exactly as Google shows them on the day, with the date,
+never recomputed or rounded by us; the Brand Guide row and the discovery agent say so.
+What we propose: add that sentence to CM-020's proof condition.
+Why (evidence): Apex — 66 five-star reviews and one two-star showed as "5.0" in our notes; the exact figure was 4.96.
+Proposed by: Claude, rewrite session 2026-10-08 (REWRITE-HANDOFF.md §5 #15).

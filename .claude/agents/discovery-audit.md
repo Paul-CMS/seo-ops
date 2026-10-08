@@ -47,7 +47,8 @@ recommendations. The audit produces findings.
 - S02 live site, GBP, social and review profiles, Secretary of State, licence board
   (`.claude/skills/client-intake/references/discovery.md` for source hierarchy and confidence).
   Sources the system cannot read (CAPTCHA-gated Secretary of State or licence board searches; the GBP
-  dashboard — secondary categories, service-area list, open date) go to Gwen in **one** handoff:
+  dashboard — secondary categories, service-area list, open date: Gwen reads it as standing work once we are GBP
+  Manager) go to Gwen in **one** handoff:
   `handoff.py create <slug> --run <RUN_ID> --kind manual_lookup --items <csv>` — one row per lookup (search
   page URL, what to record, why). She saves screenshots or notes as `MANUAL` evidence; until then those fields
   stay at the confidence the public copies give (never verified).
@@ -94,15 +95,20 @@ Paul the cost, then `run ... --confirmed` only after his yes (over $2, or an unc
 always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 days old.
 - **S06 reviews:** `python3 scripts/reviews.py estimate|run <slug> --run <RUN_ID> --keyword "<GBP name>"
   --location "<City>,<State>,United States" --services-file <services.txt> --cities "<c1>,<c2>"`.
-  Writes `data/reviews/reviews.csv`, `mentions.csv` (no reviewer names) and `customer-language.md`
+  Writes `data/reviews/reviews.csv`, `mentions.csv` (no reviewer names), `customer-language.md` and
+  `reviews-summary.md` (read the summary and customer-language.md, never the raw pull)
   (the customers' words). Add themes to customer-language.md; quote, never attribute. Reviews are
   **never** verified facts (CM-027): nothing enters Brand Guide Section D unless the client
-  confirms it. The rating and count are saved as "The Best" proof evidence (CM-020). Fewer than
+  confirms it. The rating and count are saved as "The Best" proof evidence (CM-020) **exactly as Google shows them on
+  the day, with the date** ("4.9 · 67 reviews, 2026-10-07") — never recomputed or rounded (66×5 + 1×2 is 4.96, which
+  Google shows as 5.0; quote what Google shows). Fewer than
   5 reviews → record S06 skipped.
 - **S07 rankings:** `python3 scripts/rankings.py estimate|run <slug> --run <RUN_ID> --services-file
   <services.txt> --cities "<c1>,..." --state "<State or XX>"` → ranked keywords per URL,
   cannibalization clusters, "best" variant volumes (any US state).
-- **S08 backlinks:** referring domains per URL through `scripts/dfs.py call`.
+- **S08 backlinks:** `scripts/dfs.py call … --out clients/<slug>/data/backlinks/raw/backlinks-<date>.json`, then
+  `python3 scripts/backlinks.py summary <slug>`; read `data/backlinks/backlinks-per-url.csv`, never the raw JSON.
+- **S10 Local Dominator PDFs:** `python3 scripts/grid_pdf.py <slug>` once; read only `data/local-grid/local-grid-summary.md`.
 - **S09 citations / S10 local grid:** BrightLocal uploads from Gwen — if not there yet, record
   `skipped` with the reason (the generated Document Checklist shows them as outstanding).
 - **S11 GSC/GA4:** only if access exists.
@@ -113,7 +119,7 @@ always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 
   commercial investigation / comparison / transactional) and Route (service FAQ — name the page ·
   location FAQ — name the city page · blog topic · drop). Drop anything already in C3. Going
   past the cap needs Paul's OK.
-- **S20 SEOPress site-wide settings:** if the WordPress credentials are in place, run `/wp-check <slug>` now —
+- **S20 SEOPress site-wide settings:** not a WordPress site (the client's cms in `status.py show`) → `skipped` "not WordPress". Otherwise: if the WordPress credentials are in place, run `/wp-check <slug>` now —
   readable settings are saved as evidence; otherwise it issues Jonie's one-time VA check (record S20 when it
   returns). No WordPress access yet → `skipped` with the reason.
 - **S21 query fan-out (CM-045):** after S19, `python3 scripts/fanout.py estimate|run <slug> --run <RUN_ID>
@@ -128,8 +134,9 @@ step's outcome.
 
 **audit** (S12–S18) — the crawl (S05) and data steps must have outcomes.
 Run the **seo-technical-audit** skill procedure, in this order:
-1. S12 ingest + cross-checks (`ingest_evidence.py clients/<slug>/inputs/crawl <audit dir>` and
-   the other inputs; `crosscheck.py`). CONTRADICTED blocks the related finding.
+1. S12 ingest + cross-checks (`ingest_evidence.py clients/<slug>/inputs/crawl <audit dir>` — it also takes
+   `data/` and the other inputs itself; `crosscheck.py` adds host consistency, orphans and sitemap checks).
+   Read `data/crawl/crawl-summary.csv` and `page-text.csv`, never the raw crawl tables. CONTRADICTED blocks the related finding.
 2. S13 **entity** — the site against the Brand Guide: semantic triple, NAP, brand search,
    supporting assets.
 3. S14 **architecture** — the URL Decision Map, every page typed, every destructive candidate

@@ -7,8 +7,10 @@
 
 Content:   [CODE] - [Service or Location Name] - [Client Name]        (no status, no extension)
            SB SD LB LD LBCH LDCH HB HD AB AD PB PD
-Deliverable: [Client Name] - [Artifact] - [DRAFT|REVIEW|APPROVED|SUPERSEDED].md
-Living:    [Client Name] - Brand Guide|Approval Record|Document Checklist|Handoff Log.md
+Deliverable: [Client Name] - [Artifact] - [DRAFT|REVIEW|APPROVED|SUPERSEDED|RETURNED].md
+           the proof sheet's native Google Doc: [Client Name] - Client Proof Sheet - CLIENT COPY   (no extension)
+Living:    [Client Name] - Brand Guide|Approval Record|Document Checklist|Handoff Log|Status.md
+Internal:  [Client Name] - INTERNAL - [description] - [YYYY-MM-DD].md     (Paul's own notes and answers)
 Evidence:  [Client Name] - [SF|LNKD|BL|GSC|GA4|CMS|DFS|MANUAL] - [export] - [YYYY-MM-DD].[ext]
 Reference: [Client Name] - [Description] - REFERENCE.[ext]
 """
@@ -21,9 +23,9 @@ CODES = {"SB": "service brief", "SD": "service draft (approved content)", "LB": 
          "HB": "homepage brief", "HD": "homepage draft", "AB": "about brief", "AD": "about draft",
          "PB": "blog post brief", "PD": "blog post draft"}
 SOURCES = ["SF", "LNKD", "BL", "GSC", "GA4", "CMS", "DFS", "MANUAL"]
-STATUSES = ["DRAFT", "REVIEW", "APPROVED", "SUPERSEDED"]
-LIVING = ["Brand Guide", "Approval Record", "Document Checklist", "Handoff Log"]
-EXT = re.compile(r"\.(md|csv|xlsx|pdf|docx|txt|json)$", re.I)
+STATUSES = ["DRAFT", "REVIEW", "APPROVED", "SUPERSEDED", "RETURNED"]
+LIVING = ["Brand Guide", "Approval Record", "Document Checklist", "Handoff Log", "Status", "Settled Decisions"]
+EXT = re.compile(r"\.(md|csv|xlsx|pdf|docx|txt|json|gdoc)$", re.I)
 
 
 LEGACY = [(re.compile(r"^Service Page Brief(?:\s+([SL]\d+(?:\.\d+)?|\d+))?$", re.I), "SB"),
@@ -90,6 +92,14 @@ def check(name, client):
     legacy = _legacy_content(rest, client)
     if legacy:
         return "content (old style)", ["old-style brief/draft name — needs a content code"] + legacy[1], legacy[0]
+    if len(rest) >= 3 and rest[0] == "INTERNAL":
+        if not re.match(r"^\d{4}-\d{2}-\d{2}\.md$", rest[-1]):
+            probs.append("internal notes end with - YYYY-MM-DD.md")
+        return "internal", probs, None
+    if len(rest) >= 2 and EXT.sub("", rest[-1]) == "CLIENT COPY":
+        if EXT.search(rest[-1]) and not rest[-1].endswith(".gdoc"):
+            probs.append("the CLIENT COPY is the native Google Doc (no file extension)")
+        return "client copy", probs, None
     if len(rest) >= 3 and rest[0].upper() in SOURCES + ["LD"]:
         kind = "evidence"
         if rest[0] == "LD":
@@ -109,7 +119,7 @@ def check(name, client):
         if not name.endswith(".md"):
             probs.append("deliverables are .md files")
         return "deliverable", probs, None
-    probs.append("deliverable without a status (DRAFT, REVIEW, APPROVED or SUPERSEDED)")
+    probs.append("deliverable without a status (DRAFT, REVIEW, APPROVED, SUPERSEDED or RETURNED)")
     return "deliverable?", probs, None
 
 

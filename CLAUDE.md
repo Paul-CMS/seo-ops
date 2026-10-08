@@ -1,13 +1,22 @@
 # seo-ops — the Coastal Marketing SOP
 
-This file **is** the SOP. Claude Code is the only tool: four subagents plus a reviewer,
-fifteen commands (`/next` runs whatever comes next), one status file per client, and an
+This file **is** the SOP. Claude Code is the only tool: four Opus subagents plus an Opus reviewer and a Haiku
+`clerk`, fifteen commands (`/next` runs whatever comes next), one status file per client, and an
 append-only safety log. status.json and log.md are the only records written; everything a
-person reads (Handoff Log, decisions summary, Document Checklist, Approval Record) is generated
-from them one-way by `scripts/records.py`. The methodology (the rules) lives in `sop-source/` and `methodology/`;
+person reads (Handoff Log, decisions summary, Document Checklist, Approval Record, **STATUS.md**,
+**decisions-settled.md**) is generated from them one-way by `scripts/records.py`. The methodology (the rules) lives in `sop-source/` and `methodology/`;
 this file is the procedure (who does what, in what order, behind which gate).
 
 **Paul decides. The system prepares, checks, logs and stops.**
+
+**Cost rules (Paul, 2026-10-08 — REWRITE-HANDOFF.md):** models are preset, **Haiku and Opus only** — every stage
+session runs on Haiku (it orchestrates `/next`, relays agent summaries, prints `/approve` lines); judgment runs in the
+Opus agents (`discovery-audit`, `audit-reviewer`, `build`, `finish`, `blog`), mechanical work in the Haiku `clerk`
+(models fixed in `.claude/agents/*.md`; `python3 scripts/stages.py list`). A system/design session (changing seo-ops)
+runs on Opus. **Never switch a session's model mid-session.** **One session per stage** — enforced: `run.py start`
+refuses a step of a new stage in a session that already finished another (bookkeeping steps excepted). Start every
+session in `~/Documents/seo-ops`. **Decide once:** a settled decision (`decisions-settled.md`) is never asked again.
+Agents read compact script-made summaries, never raw exports.
 
 ---
 
@@ -20,7 +29,8 @@ commit a change that fails it.** A new behaviour gets a new check in `tests/run_
 
 ## 1 · Step zero — every command, every session
 
-1. `python3 scripts/status.py show <slug>` — where the client stands.
+1. `python3 scripts/records.py top <slug>` — where the client stands in four lines (stage, now, waiting on, next);
+   `clients/<slug>/STATUS.md` for the rest. Read `clients/<slug>/decisions-settled.md` — never re-raise what it lists.
 2. Read **only** the files listed for the step — `run.py start` prints the list (`run.py steps <command>`
    shows them all; scripts/gates.json → steps → reads). Nothing else is read by default.
 3. Rules come from `methodology/rulings.md` (cite IDs; never restate). `methodology/lessons.md` is an
@@ -36,24 +46,29 @@ Every command that does work:
      missing (the script's message says it) and what to do first. Never work around it.
    - exit **3** → an unfinished earlier run exists. **Stop and ask Paul**: resume it, verify
      it (`/verify`), roll it back (`/rollback`), or abort it (Paul's call only).
+   - exit **4** with "Start a new session" → this session already did another stage (R2). Tell Paul to open a new
+     chat on the stage's model in `~/Documents/seo-ops` and type `/next <slug>` there.
 2. **Act.** Log every change *as it happens*:
    `python3 scripts/run.py change <slug> <RUN_ID> --kind K --url U --field F --old V --new V --result R`
-   (wp.py, handoff.py, verify.py and crawl.py log for you). A file written to Drive is a
-   change too (`--kind drive_file --channel drive`, URL = the Drive link).
+   (wp.py, handoff.py, verify.py, crawl.py and drive.py log for you). Files reach Drive only as file copies:
+   `python3 scripts/drive.py upload <slug> --run <RUN_ID> --file <f>` (logged). **Never retype a file into the
+   Drive connector.**
 3. **Decisions and hand-off:** a decision during the run (Paul Exception, applied default, N/A,
-   deviation, Gate B outcome) → `run.py decision <slug> <RUN_ID> --text "..." [--ids F-001]`.
+   deviation, Gate B outcome) → `run.py decision <slug> <RUN_ID> --text "..." [--ids F-001]`. A decision that must
+   never be asked again → `--settle <key>`; a question asked once → `--ask <key> --who "..."`; new contradicting
+   evidence on a settled one → one `--reopen <key>` (counted as a process defect).
    Write this run's Handoff Log section (template `templates/handoff-log.md`) to
    `clients/<slug>/handoffs/run-<RUN_ID>.md` and pass it to finish. Never edit handoff-log.md,
    decisions.md, document-checklist.md or approval-record.md — they are generated.
 4. **Finish:** `python3 scripts/run.py finish <slug> <RUN_ID> --summary "..." --handoff clients/<slug>/handoffs/run-<RUN_ID>.md`
-   This writes FINISHED, logs any condition newly met, regenerates the records, updates
-   the generated client view, and makes the run's **one git commit (and push)**.
-5. **Mirror to Drive** (the regenerated Handoff Log, Approval Record, Document Checklist and, once
-   filled, the Brand Guide — `drive.py records <slug>`): `run.py start <slug> drive-mirror`; for each
-   file, **archive-and-replace** — rename the old Drive file with its date (`drive.py archive-name`),
-   move it into the client folder's `_Archive`, upload the new file under the original name, and log
-   both with `drive.py replaced`; then `run.py finish`. Nothing in Drive is deleted. The same
-   archive-and-replace applies to any file the system uploads again during a run.
+   This writes FINISHED, logs any condition newly met, regenerates the records (incl. STATUS.md), updates
+   the generated client view, **copies the changed records into the client's Drive folder** (archive-and-replace,
+   logged — no separate mirror run, no agent) and makes the run's **one git commit (and push)**.
+5. **Drive is automatic (R4).** Google Drive for desktop shows v3 as a local folder (`config.json drive.local_root`);
+   `drive.py` copies files there and Drive syncs them. Archive-and-replace: the old file is renamed with its date and
+   moved into `_Archive`, the new one copied in, both logged; unchanged files are left alone; nothing in Drive is
+   deleted. `/approve` also copies the Approval Record and Status, and stamps an approved `- REVIEW` deliverable's
+   Drive copy `- APPROVED` (Paul, date, sha). No local Drive folder → "Drive copy pending sync" is settled once.
 
 A run that stops early stays STARTED in the log on purpose — that is how the next command
 knows to stop and ask.
@@ -73,8 +88,17 @@ knows to stop and ask.
   sequence) · `revise` · `deferred` · `rejected` · `blocked`.
 - **Conditions** — facts the scripts check from evidence, never approved, logged in log.md the
   first time they are met: `client_setup` (/new-client finished), `proof_sheet_returned` (the
-  returned sheet is recorded), `audit_steps_complete` (every audit step has an outcome),
-  `pages_built` (every batch built and written back).
+  returned sheet is recorded, or Paul approved the client's direct answers), `audit_steps_complete` (every audit
+  step has an outcome), `discovery_signed_off` (the two discovery approvals and the client's facts are in),
+  `blockers_cleared` (every blocker handoff returned done and `/verify` passed it), `page_specs_approved`
+  (global: Paul approved the specs once with `/approve global specs` and none changed since — a logged pilot
+  correction keeps it), `pages_built` (every batch built and written back), `wordpress_connected`.
+
+**Approve less (R3).** Discovery + audit take **two** approvals: **Approval 1** `/approve <slug> entity_approved
+proof_sheet_approved` (the Decision Sheet + entity foundation + the proof sheet or the client's direct answers);
+**Approval 2** `/approve <slug> audit_approved brand_guide_approved`. Approval 1 settles every Decision Sheet answer.
+A row's *status* in the Brand Guide is not part of an approval (only values are hashed), so a reconcile that only
+confirms rows voids nothing.
 
 `/next` passes every condition automatically when its evidence exists and stops at every
 decision, printing the exact `/approve` line with its files. Refusals are in plain language.
@@ -92,21 +116,23 @@ What each step needs is checked by `run.py start` from `scripts/gates.json` (`ru
 
 | # | Step | Command | Ends at |
 |---|---|---|---|
-| 1 | Intake, Drive folder, document checklist (S01) | `/new-client` | condition **client_setup** |
-| 2 | Discovery + entity research (S02–S03), public sources | `/discovery` | **entity_approved** |
-| 3 | Proof sheet (S04), Markdown + client Google Doc | `/discovery proof-sheet` | **proof_sheet_approved** — Paul sends it |
-| 4 | *While the client has the sheet:* crawl (S05), reviews → customer language, rankings + cannibalization, backlinks, citations, grid, GSC, People Also Ask, query fan-out (S06–S11, S19–S21) | `/crawl`, `/discovery data` | — |
-| 5 | Audit: entity → architecture → page conformance → technical, then fresh-context review (S12–S18) | `/discovery audit` | **audit_approved** → safe fixes |
-| 6 | Client returns sheet → record it, reconcile into the Brand Guide | `/discovery sheet-returned`, `/discovery reconcile` | **brand_guide_approved** → structural changes |
-| 7 | Discovery sign-off (Agent 1 never starts Agent 2) | `/discovery signoff` | **discovery_signed_off** |
-| 8 | Technical blockers (Low items as one handoff) | `/build blockers` + `/implement` | **blockers_cleared** |
-| 9 | **Site plan** — every service and location page in one pass; runs side by side with step 8 (Jonie fixes the blockers meanwhile; Paul confirms **blockers_cleared** before release) | `/build plan` | **site_plan** |
-| 10 | **Pilot** — 1 service + 1 location brief; corrections go into the specs | `/build batch pilot` | **batch:pilot:briefs** |
-| 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); **evidence gate** (CM-041; a blocked page → facts interview or Paul's waiver) → one brief **per page, each its own run** → drafts one per page, each its own run, + self-critique → **batch review** (every draft side by side + semantic review table) → (apply the SEM items Paul picked, re-check) → ship (WordPress drafts, verify, write-back: one run) | `/build evidence <id>`, `/build brief <id> <page>`, `/build draft <id> <page>`, `/build batch <id> drafts`\|`apply-sem`, `/build ship <id>`, `/interview facts <id>` | pilot corrections applied | **batch:<id>:briefs**, **batch:<id>:drafts** (+ SEM picks) — two stops per batch; **evidence:<page>** waiver only on a block |
-| 12 | All pages built and written back | — | condition **pages_built** (no approval) |
-| 13 | Link wheel → verify | `/finish wheel` | **link_wheel_approved** |
-| 14 | Schema → QA crawl → punch-list → acceptance | `/finish schema`, `/finish qa` | **release_approved** (release) |
-| 15 | Blog Decision Map → redirects (handoff) → posts | `/blog` | **blog_map_approved**, then **page:<id>** per post |
+Each row's *Session* is the stage it runs in (one session per stage; all on Haiku with the named Opus agents).
+
+| # | Step | Command | Ends at | Session |
+|---|---|---|---|---|
+| 1 | Intake, Drive folder (v3 only), CMS, document checklist (S01) | `/new-client` | condition **client_setup** | 1 Setup |
+| 2 | Discovery + entity research (S02–S03), public sources, **Decision Sheet** | `/discovery` | — | 2 Discovery |
+| 3 | Proof sheet (S04), Markdown + client Google Doc (HTML) — or the client's direct answers | `/discovery proof-sheet` \| `facts-direct` | **Approval 1** (entity + Decision Sheet + facts) — Paul sends the sheet | 2 Discovery |
+| 4 | *While the client has the sheet:* crawl (S05, S05b page text), reviews → customer language, rankings + cannibalization, backlinks, citations, grid, GSC, People Also Ask, query fan-out (S06–S11, S19–S21) — one cost yes | `/crawl`, `/discovery data` | — | 3 Data |
+| 5 | Audit (page specs approved once, globally): entity → architecture → page conformance (one scorecard per page type) → technical, then fresh-context review (S12–S18); client facts recorded and reconciled into the Brand Guide | `/discovery audit`, `sheet-returned`, `reconcile` | **Approval 2** (audit + Brand Guide) → safe fixes, structural changes; **discovery_signed_off** met | 4 Audit |
+| 8 | Technical blockers (one handoff to Jonie, `--blockers`) | `/build blockers` + `/verify` | condition **blockers_cleared** | 5 Build plan |
+| 9 | **Site plan** — every service and location page in one pass; runs side by side with step 8 | `/build plan` | **site_plan** | 5 Build plan |
+| 10 | **Pilot** — 1 service + 1 location brief; corrections go into the specs | `/build batch pilot` | **batch:pilot:briefs** | 6 (pilot) |
+| 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); **evidence gate** (CM-041; a blocked page → facts interview or Paul's waiver) → one brief **per page, each its own run** → drafts one per page, each its own run, + self-critique → **batch review** (every draft side by side + semantic review table) → (apply the SEM items Paul picked, re-check) → ship (WordPress drafts, verify, write-back: one run) | `/build evidence <id>`, `/build brief <id> <page>`, `/build draft <id> <page>`, `/build batch <id> drafts`\|`apply-sem`, `/build ship <id>`, `/interview facts <id>` | **batch:<id>:briefs** (until Paul switches briefs to auto after the pilot — then drafts only), **batch:<id>:drafts** (+ SEM picks); **evidence:<page>** waiver only on a block | 6 (one session per batch) |
+| 12 | All pages built and written back | — | condition **pages_built** (no approval) | — |
+| 13 | Link wheel → verify | `/finish wheel` | **link_wheel_approved** | 7 Finish |
+| 14 | Schema → QA crawl → punch-list → acceptance | `/finish schema`, `/finish qa` | **release_approved** (release; needs blockers cleared) | 7 Finish |
+| 15 | Blog Decision Map → redirects (handoff) → posts | `/blog` | **blog_map_approved**, then **page:<id>** per post | 8 Blog |
 
 Every step's data is saved once per client and reused (re-run if older than 60 days).
 An imported client (`/new-client --import`) gets its live pages as an approved baseline and a
@@ -167,9 +193,10 @@ Rules enforced in the scripts as well as here:
   Brand Guide write-back → handoff to the VA.
 
 Every page type has a spec in `methodology/specs/` (homepage, service, location, county hub,
-about, blog post): element order and numbered conformance checks. Build and the audit read them;
-a spec marked DRAFT stops building that page type until Paul approves it; pilot corrections are
-logged in the spec. Writers follow `methodology/writing-commercial.md` (E1–E10, then the Stage 4
+about, blog post): element order and numbered conformance checks. Build and the audit read them.
+**Paul approves the specs once, for every client** (`/approve global specs`) before any audit scores pages against
+them or any page is written; a changed spec re-opens that (a logged pilot correction does not). A routed PAA/fan-out question is a candidate for an FAQ, not an obligation; a location FAQ is about that town
+(writing-commercial.md C8). Writers follow `methodology/writing-commercial.md` (E1–E10, then the Stage 4
 semantic review, one table per batch, report only; Paul approves the drafts and picks SEM items in one step) and
 `methodology/writing-blog.md` (E1–E10, CM-038 link caps, CM-039 author).
 
@@ -250,14 +277,18 @@ than re-logging an exception each time.
 
 ## 8 · Drive
 
-- One folder per client: `[Client Name] - TMS` at the root of `v3. CMS Technical SEO Audit 2026`,
-  copied from `_CLIENT FOLDER TEMPLATE - copy per client`. Audits reference only that folder.
+- **Drive scope = the v3 folder only (R8).** One folder per client: `[Client Name] - TMS` at the root of
+  `v3. CMS Technical SEO Audit 2026` (local path: `config.json drive.local_root`; `drive.py where <slug>`), copied
+  from `_CLIENT FOLDER TEMPLATE - copy per client` as a real folder copy by `drive.py folder`. A new client: check
+  whether `<Client> - TMS` exists in v3 and go from there. **Never search or scan other Drive folders** for prior work
+  on a client (the guard blocks connector searches not scoped to a v3 folder). Audits reference only that folder.
 - Every file follows `methodology/naming-convention.md` (check with `scripts/naming.py`).
   Content: `[CODE] - [Service or Location] - [Client]`. Deliverables:
   `[Client] - [Artifact] - [STATUS].md`. Evidence:
   `[Client] - [SF|LNKD|BL|GSC|GA4|CMS|DFS|MANUAL] - [export] - [date].ext`.
-- Write real `.md` files (no Google Docs conversion). The only Google Doc the system creates
-  is the proof sheet's client copy, named `- CLIENT COPY`.
+- Write real `.md` files (no Google Docs conversion), copied by `drive.py`. The only Google Doc the system creates
+  is the proof sheet's client copy, named `- CLIENT COPY`, uploaded through the connector as **HTML** — the only
+  connector upload.
 - Never delete Drive files. Never rename existing files — renames go on a rename list for Paul —
   with one exception: a file the system uploaded is replaced by archive-and-replace (§2 step 5:
   dated name, moved into `_Archive`, logged).
@@ -273,7 +304,7 @@ than re-logging an exception each time.
 | SB/LB/HB/AB briefs, SD/LD/HD/AD approved drafts, Technical Blocker Checklist, build handoffs | `02 - Build/` |
 | Link Wheel Tables, schema, QA Punch-List, acceptance sheets | `03 - Finish/` |
 | Blog Decision Map, PB/PD, refresh schedule | `04 - Blog/` |
-| Brand Guide, Approval Record (mirrored from status.json), Document Checklist, Handoff Log | client folder root |
+| Brand Guide, Approval Record (mirrored from status.json), Document Checklist, Handoff Log, Status | client folder root (copied by `run.py finish`) |
 
 ## 9 · Money, credentials, contact
 
@@ -296,6 +327,8 @@ clients/<slug>/
   changes.jsonl      machine copy for /rollback   (scripts only)
   snapshots/         old/new content for rollback (scripts only)
   decisions.md       decisions summary         (generated by records.py)
+  decisions-settled.md  every settled decision, open question and reopening (generated; agents read it)
+  STATUS.md          one page for the VA: stage, now, waiting on, next, settled, VA items, spend (generated; mirrored)
   handoff-log.md     Handoff Log               (generated; mirrored to Drive)
   document-checklist.md                        (generated)
   approval-record.md Approval Record           (generated; mirrored to Drive)
@@ -315,7 +348,8 @@ shown to a client.
 
 ## 11 · Talking to Paul
 
-Plain language. Say what was done, what is waiting on whom, and what the next command is.
+Plain language. Say what was done, what is waiting on whom, and what the next command is — start from
+`records.py top <slug>`; never re-explain history.
 When refusing, say which gate is missing and what it would unlock. Never claim a check passed
 if it was skipped.
 

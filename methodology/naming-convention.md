@@ -31,15 +31,19 @@ Examples: `SB - Roof Repair - Red Rover Roofing` · `LD - Franklin TN - Exodus C
 ## 2 · Deliverables
 
 ```
-[Client Name] - [Artifact] - [DRAFT | REVIEW | APPROVED | SUPERSEDED].md
+[Client Name] - [Artifact] - [DRAFT | REVIEW | APPROVED | SUPERSEDED | RETURNED].md
 ```
 
 `DRAFT` in progress · `REVIEW` awaiting Paul · `APPROVED` signed — the only status an agent
-acts on · `SUPERSEDED` → move to `_Archive/`.
+acts on (the Drive copy is stamped with Paul's name, date and sha) · `SUPERSEDED` → move to `_Archive/` ·
+`RETURNED` the client's returned proof sheet, as given. The proof sheet's native Google Doc is
+`[Client Name] - Client Proof Sheet - CLIENT COPY` (no extension). Paul's own notes and answers:
+`[Client Name] - INTERNAL - [description] - [YYYY-MM-DD].md`.
 
 ## 3 · Living records — no status, never versioned
 
-`[Client Name] - Brand Guide.md` · `- Approval Record.md` · `- Document Checklist.md` · `- Handoff Log.md`
+`[Client Name] - Brand Guide.md` · `- Approval Record.md` · `- Document Checklist.md` · `- Handoff Log.md` · `- Status.md`
+(all copied into the client folder by the scripts — R4)
 
 ## 4 · Evidence
 

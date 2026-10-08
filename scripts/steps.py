@@ -26,7 +26,7 @@ MAX_AGE_DAYS = 60
 def registry():
     rows = []
     for line in REG.read_text().splitlines():
-        m = re.match(r"^\|\s*(S\d{2})\s*\|(.+)\|\s*$", line)
+        m = re.match(r"^\|\s*(S\d{2}b?)\s*\|(.+)\|\s*$", line)
         if m:
             cells = [c.strip() for c in m.group(2).split("|")]
             rows.append({"id": m.group(1), "step": cells[0], "phase": cells[1], "how": cells[2],
@@ -35,9 +35,12 @@ def registry():
     return rows
 
 
+OPTIONAL = {"S05b"}   # free supplements: recorded when run, never required (an approved audit stays complete)
+
+
 def missing(st):
     have = st.get("audit_steps") or {}
-    return [r for r in registry() if r["id"] not in have]
+    return [r for r in registry() if r["id"] not in have and r["id"] not in OPTIONAL]
 
 
 def main():

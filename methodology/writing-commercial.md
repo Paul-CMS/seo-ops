@@ -60,6 +60,10 @@ and the common checks in `methodology/specs/README.md`. This standard covers onl
 - **C5 Short and plain — grade 7–8 (CM-047).** Short sentences, one idea each. Every section stands alone and
   names its own entities. Visitor-facing copy reads at grade 7–8 (the SEO title is excluded); keep the entity
   terms and named sources, explain a trade term in the next clause.
+- **C8 FAQs earn their place (Paul, 2026-10-07).** A routed PAA or fan-out question is a *candidate*, not an
+  obligation. Use it only when this page's reader would ask it here. A location-page FAQ is about that town, or about
+  the service in that town — never a generic trade question with the city name added. The site plan says, per FAQ,
+  why it applies to this page; a question with no such reason is dropped (or goes to the blog list).
 - **C7 FAQ answers (CM-048).** Sentence one answers the question in plain English and stands alone.
   Optionally one more sentence with the company and the next step — worded for this page (never the same
   sentence on two pages), never a link (CM-005), left off informational answers. A phone number is never

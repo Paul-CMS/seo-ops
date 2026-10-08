@@ -1,6 +1,6 @@
 # Home Mobile Medical - Document Checklist
 
-Generated 2026-10-08T12:22 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-08T12:59 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -10,7 +10,8 @@ Generated 2026-10-08T12:22 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S02 Public discovery: live site, GBP, social, review profiles, Secretary o | done | Discovery Record 2026-09-28 |
 | [x] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | done | Entity foundation approved 2026-10-02 |
 | [x] | S04 Proof sheet built (Markdown + client Google Doc) | done | Client Gap Sheet + claims proof list 2026-10-07 |
-| [x] | S05 Site crawl | done | Screaming Frog crawl 2026-09-18 (118 HTML URLs; internal, external, titles, meta, H1, H2, links, javascript) in v3 Evidence; no new crawl (Paul) |
+| [x] | S05 Site crawl (max pages = sitemap size × 1.5, min 20, max 1000; 1000 whe | done | Screaming Frog crawl 2026-09-18 (118 HTML URLs; internal, external, titles, meta, H1, H2, links, javascript) in v3 Evidence; no new crawl (Paul) |
+| [ ] | S05b Page text capture: the body text of every crawled HTML page (the basic | — |  |
 | [x] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | done | DataforSEO Google reviews, 19 reviews, rating 2.9; listing matched GBP address; reviews 2017-2023 describe the former retail/rental store, none mention lift services; $0.0150 |
 | [x] | S07 Rankings + cannibalization: every ranked keyword per URL (top 100), co | done | DataforSEO Labs ranked keywords (US, whole domain): 115 rows, 110 keywords, 15 ranking URLs, 0 cannibalization clusters; 25 'best' variants (SC) all without measurable volume; $0.1158 |
 | [x] | S08 Backlinks pull: referring domains per URL | done | DataforSEO Backlinks (whole domain, live): 722 backlinks / 709 referring domains; 5 target URLs, homepage holds 708 RDs; $0.0740 |

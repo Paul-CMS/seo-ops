@@ -36,7 +36,7 @@
 | 5 | Opening paragraph | No H tag, 60–120 words, unique to this city, triple in a third variant set, phone and offer, first sentence answers | BB-312, CM-003, WC-C5 | BG-A8, D |
 | 6 | H2 services table | H3 links to **all** service pages; **no service descriptions**; rows left as placeholder for Finish | BB-205, BB-315, CM-005 | BG-C1 |
 | 7 | H2 local context | 3–5 sentences on this city's genuinely unique conditions (housing stock, terrain, weather, failure patterns); appears on no other page; no links | BB-315, BB-317, CM-005, CM-016 | Brief source facts |
-| 8 | FAQ | H2 wrapper + H3 per question; 3–4 questions unique to this city; first sentence answers (40–60 words); none in C3 | BB-315, BB-316, WC-C7 | BG-C3 |
+| 8 | FAQ | H2 wrapper + H3 per question; 3–4 questions unique to this city — each about this town or the service here, with its reason in the site plan (a routed PAA/fan-out question is a candidate, not an obligation); first sentence answers (40–60 words); none in C3 | BB-315, BB-316, WC-C7 | BG-C3 |
 | 9 | H2 neighborhoods | 6–12 real, verifiable neighborhoods | BB-315, BB-317, CM-016 | Brief source facts |
 | 10 | City map | City-level map embed, no H tag; the GBP map only if this is a verified GBP landing page | BB-315 | BG-C2, F |
 | 11 | H2 Things to Do | Real, verifiable | BB-315, BB-317 | Brief source facts |

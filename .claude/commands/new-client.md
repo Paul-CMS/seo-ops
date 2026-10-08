@@ -26,6 +26,8 @@ Follow CLAUDE.md. Plain language with Paul throughout.
 5. Brand Guide from `templates/brand-guide.md` → `clients/<slug>/brand-guide.md`. The Handoff Log, Document
    Checklist, Approval Record and Status are generated (`scripts/records.py`) and `run.py finish` copies them into
    the client folder by itself — nothing to upload.
+5b. **CMS (#23):** `python3 scripts/cms.py detect <slug> --run <RUN_ID>` — records the CMS and settles it. Not WordPress →
+   every WordPress step (the setup handoff, /wp-check, SEOPress settings S20) is N/A; say so once and skip them.
 6. **Intake questions for Paul** (one batch): website URL, GBP link, storefront or SAB, the
    **exact URL in the GBP Website field**, whether GSC/GA4 access exists.
    WordPress: issue the setup handoff to Jonie (after this run finishes, in a `wp-check` run — `--kind wp_setup`): the `seo-ops`

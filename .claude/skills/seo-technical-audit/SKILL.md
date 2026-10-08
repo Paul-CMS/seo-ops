@@ -65,9 +65,23 @@ looks identical to one run on the client's methodology and is not the same thing
 
 ```bash
 python3 scripts/init_audit.py <client-slug>
-python3 scripts/ingest_evidence.py <evidence_dir> <audit_dir>
+python3 scripts/ingest_evidence.py <evidence_dir> <audit_dir>   # evidence_dir = clients/<slug>/inputs/crawl
 python3 scripts/crosscheck.py   <evidence_dir> <audit_dir>
 ```
+
+`ingest_evidence.py` fingerprints the crawl exports **and** takes the client's other evidence
+into the same manifest, one row per file: every data-step output under `clients/<slug>/data/`
+(reviews, rankings, backlinks, local grid, PAA, fan-out, citations, GSC — whatever exists) and
+the files under `clients/<slug>/inputs/` outside the crawl folder (SEOPress / WordPress settings,
+Local Dominator PDFs, the sitemap URL list, live-page captures). Do not hand-add rows for them.
+`crosscheck.py` also checks the crawl itself: **host consistency** (crawled URLs, canonicals and
+internal link targets on one http/https · www/bare form), **orphan candidates** (crawl or sitemap
+pages with zero internal inlinks) and **sitemap vs crawl** (sitemap URLs not crawled or non-200;
+indexable 200 pages missing from the sitemap). The sitemap check needs a sitemap URL list
+(`*sitemap*.txt` / `.xml` / `.csv` in `inputs/`); without one it is a LIMITATION.
+
+**Local grid PDFs are never read directly** — `python3 scripts/grid_pdf.py <slug>` (repo root)
+extracts their text once and writes `data/local-grid/local-grid-summary.md`; read that.
 
 Fill the manifest's `tool_settings`, `date_window`, `geography_device` and `scope_limits`
 — the exports don't contain them and they decide whether findings are safe. Then run the
@@ -103,7 +117,9 @@ Then run the analysis categories against the frozen inventories, following
 1. **Entity** — who the business is, what it provides, where (§3, §4)
 2. **Architecture** — the URL Decision Map (§5)
 3. **Page conformance** — every page scored against its spec in `methodology/specs/`
-   (`analysis-rules.md` §0)
+   (`analysis-rules.md` §0): **one scorecard file per page type**,
+   `inventories/scorecard-<type>.csv` (`homepage`, `service`, `location`, `county`, `about`,
+   `blog`), never one combined file
 4. **Technical findings** (§1, §2, §8, §9)
 
 Every finding is a row in `findings.csv` with all fields populated. **Never write a
@@ -180,6 +196,7 @@ clients/<slug>/audit/<date>/
   00-crosschecks.md      cross-check results
   00-unrecognised.md     exports that couldn't be fingerprinted
   inventories/*.csv
+  inventories/scorecard-<type>.csv   one per page type: homepage, service, location, county, about, blog
   findings.csv           append-only, one row per finding revision
   url-decision-map.csv
   questions/questions.csv

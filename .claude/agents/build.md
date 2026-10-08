@@ -31,6 +31,9 @@ exception). Then check the whole site at once and report:
 - **duplicates** — two pages serving the same keyword or intent
 - **variant conflicts** — the same variant at consecutive elements on a page; the reserved
   homepage variant used elsewhere; the pool exhausted (CM-013 — one finding, not many)
+- **FAQ fit** — every FAQ topic in the plan carries a one-line *why it applies to this page*; a routed PAA/fan-out
+  question is a candidate, not an obligation, and a location FAQ must be about that town or the service there
+  (writing-commercial.md C8). No reason → drop it or send it to the blog list.
 - **FAQ overlap** — the same question on two pages (BB-316), or a question already in C3
 - **claims in keywords and variants** (CM-049) — any keyword, H1 variant or B2/C1 variant that itself
   makes a claim ("emergency …", "24 hour …", "certified …", "licensed …", "same-day …") is listed with the

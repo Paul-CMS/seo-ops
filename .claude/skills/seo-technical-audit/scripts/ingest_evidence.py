@@ -3,13 +3,22 @@
 ingest_evidence.py — fingerprint every export in an evidence folder, normalize what
 can be normalized, and write the evidence manifest plus the URL inventory.
 
-    python3 ingest_evidence.py <evidence_dir> <audit_dir>
+    python3 ingest_evidence.py <evidence_dir> <audit_dir> [--client-dir DIR] [--no-extra]
 
 Identifies exports by header signature rather than filename, because filenames vary
 by client, VA and export date while the tool's column set does not.
 
+Also takes the client's other evidence into the same manifest, one row per file: the
+data-step outputs under `clients/<slug>/data/` (reviews, rankings, backlinks, local grid,
+PAA, fan-out, citations, GSC — whatever exists) and the files under `clients/<slug>/inputs/`
+outside the crawl folder (SEOPress / WordPress settings evidence, Local Dominator PDFs,
+sitemap URL lists, live-page captures). The client folder is found from <evidence_dir>
+(…/clients/<slug>/…) or given with --client-dir; --no-extra reads the crawl folder only.
+Those files are recognised by the folder they sit in (our own scripts wrote them), so
+they never go to 00-unrecognised.md. A `raw/` folder is one row (file count, total size).
+
 Writes:
-    <audit_dir>/00-manifest.csv        one row per export, with recognised type
+    <audit_dir>/00-manifest.csv        one row per export / evidence file, with recognised type
     <audit_dir>/00-unrecognised.md     anything it could not fingerprint
     <audit_dir>/inventories/urls.csv   normalized URL inventory across all sources
 
@@ -100,6 +109,121 @@ SIGNATURES = [
 
 URL_COLS = ["address", "url", "page", "target url", "source url", "image url", "domain"]
 
+TABULAR = (".csv", ".tsv", ".txt", ".xlsx", ".xlsm")
+
+# clients/<slug>/data/<folder>/ -> (recognised_as, category). Written by our own scripts
+# (reviews.py, rankings.py, dfs backlinks, grid_pdf.py, paa.py, fanout.py …).
+DATA_FOLDERS = {
+    "reviews":   ("data.reviews (S06)", "reviews"),
+    "rankings":  ("data.rankings (S07)", "rankings"),
+    "backlinks": ("data.backlinks (S08)", "backlinks"),
+    "citations": ("data.citations (S09)", "citations"),
+    "local-grid": ("data.local_grid (S10)", "local_visibility"),
+    "gsc":       ("data.gsc (S11)", "measurement"),
+    "paa":       ("data.paa (S19)", "content_research"),
+    "fanout":    ("data.fanout (S21)", "content_research"),
+}
+# clients/<slug>/inputs/<folder>/ (outside the crawl folder) -> (recognised_as, category)
+INPUT_FOLDERS = {
+    "local-grid": ("localdominator.grid_pdf (S10)", "local_visibility"),
+    "live-pages": ("manual.live_capture", "crawl_supplement"),
+    "gsc":        ("gsc.export (S11)", "measurement"),
+    "citations":  ("citations.export (S09)", "citations"),
+}
+
+
+def is_sitemap(path):
+    """A sitemap URL list: the file name says sitemap (txt / xml / csv)."""
+    fn = os.path.basename(path).lower()
+    return "sitemap" in fn and os.path.splitext(fn)[1] in (".txt", ".xml", ".csv")
+
+
+def sitemap_urls(path):
+    """URLs listed in a sitemap file: <loc> values in XML, else every line that starts
+    with http (first token). Child-sitemap entries (*.xml) are dropped."""
+    with open(path, encoding="utf-8-sig", errors="replace") as fh:
+        text = fh.read()
+    if "<loc>" in text.lower():
+        urls = re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", text, flags=re.I)
+    else:
+        urls = [re.split(r"[\s,]", ln.strip())[0] for ln in text.splitlines()
+                if ln.strip().lower().startswith("http")]
+    return [u for u in urls if not u.lower().split("?")[0].endswith(".xml")]
+
+
+def client_dir_for(evidence_dir):
+    """clients/<slug>/ from a path inside it, else None."""
+    parts = os.path.abspath(evidence_dir).split(os.sep)
+    if "clients" in parts:
+        i = len(parts) - 1 - parts[::-1].index("clients")
+        if i + 1 < len(parts):
+            return os.sep.join(parts[:i + 2])
+    return None
+
+
+def extra_files(client_dir, evidence_dir):
+    """Evidence outside the crawl folder: data/** and inputs/** (minus the crawl folder).
+    Yields (path, kind, category, raw_dir_or_None). raw/ folders are yielded once."""
+    if not client_dir:
+        return
+    ev = os.path.abspath(evidence_dir)
+    for top, table in (("data", DATA_FOLDERS), ("inputs", INPUT_FOLDERS)):
+        base = os.path.join(client_dir, top)
+        if not os.path.isdir(base):
+            continue
+        for root, dirs, files in os.walk(base):
+            ar = os.path.abspath(root)
+            if ar == ev or ar.startswith(ev + os.sep):
+                dirs[:] = []
+                continue
+            dirs.sort()
+            rel = os.path.relpath(root, base)
+            folder = "" if rel == "." else rel.split(os.sep)[0]
+            kind, cat = table.get(folder, (f"{top}.{folder or 'root'}", "other"))
+            if folder == "" and top == "data":
+                kind, cat = "data.client_lists", "intake"
+            if "raw" in dirs:
+                dirs.remove("raw")
+                yield os.path.join(root, "raw"), kind + " raw", cat, True
+            for fn in sorted(files):
+                if fn.startswith((".", "~$")):
+                    continue
+                p = os.path.join(root, fn)
+                k, c = kind, cat
+                if is_sitemap(p):
+                    k, c = "sitemap.urls", "crawl"
+                elif top == "inputs" and re.search(r"seopress|wordpress|wp-settings", fn, re.I):
+                    k, c = "wordpress.settings (S20)", "cms_settings"
+                yield p, k, c, False
+
+
+def file_date(path):
+    m = re.search(r"(20\d\d-\d\d-\d\d)", os.path.basename(path))
+    if m:
+        return m.group(1)
+    return datetime.date.fromtimestamp(os.stat(path).st_mtime).isoformat()
+
+
+def count_records(path):
+    """(rows, columns) for a non-crawl evidence file; '' where it has no rows."""
+    ext = os.path.splitext(path)[1].lower()
+    if is_sitemap(path):
+        return len(sitemap_urls(path)), ""
+    if ext in (".csv", ".tsv", ".xlsx", ".xlsm"):
+        h, r = read_headers_and_rows(path)
+        return len(r), len(h)
+    if ext == ".json":
+        try:
+            with open(path, encoding="utf-8") as fh:
+                d = json.load(fh)
+        except (ValueError, OSError):
+            return "", ""
+        return (len(d) if isinstance(d, (list, dict)) else 1), ""
+    if ext in (".jsonl", ".txt"):
+        with open(path, encoding="utf-8", errors="replace") as fh:
+            return sum(1 for ln in fh if ln.strip()), ""
+    return "", ""
+
 
 def norm_header(h):
     return re.sub(r"\s+", " ", str(h or "").replace("\ufeff", "").strip().lower())
@@ -177,56 +301,122 @@ def harvest_urls(headers, rows, kind):
     return out
 
 
+def manifest_row(path, shown, kind, category, rows, columns, digest=None, size=None, date=None):
+    stat = os.stat(path)
+    return {
+        "source_id": "",
+        "file": shown,
+        "recognised_as": kind or "UNRECOGNISED",
+        "category": category or "",
+        "rows": rows,
+        "columns": columns,
+        "sha256_12": sha(path) if digest is None else digest,
+        "file_modified": datetime.datetime.fromtimestamp(
+            stat.st_mtime).isoformat(timespec="seconds"),
+        "tool_settings": "",     # analyst fills: UA, rendering, scope
+        "date_window": "",       # analyst fills
+        "geography_device": "",  # analyst fills
+        "scope_limits": "",      # analyst fills
+        "size_bytes": stat.st_size if size is None else size,
+        "file_date": date or file_date(path),
+    }
+
+
+def add_urls(all_urls, headers, rows, kind):
+    for key, raw, col, k in harvest_urls(headers, rows, kind):
+        if not key:
+            continue
+        rec = all_urls.setdefault(key, {"url_key": key, "example_raw": raw,
+                                        "seen_in": set(), "hosts": set()})
+        rec["seen_in"].add(k)
+        m = re.match(r"^https?://([^/]+)", raw)
+        if m:
+            rec["hosts"].add(m.group(1).lower())
+
+
 def main():
-    if len(sys.argv) < 3:
+    args = sys.argv[1:]
+    no_extra = "--no-extra" in args
+    client_dir = None
+    if "--client-dir" in args:
+        i = args.index("--client-dir")
+        client_dir = args[i + 1]
+        del args[i:i + 2]
+    args = [a for a in args if a != "--no-extra"]
+    if len(args) < 2:
         print(__doc__)
         sys.exit(1)
-    evidence_dir, audit_dir = sys.argv[1], sys.argv[2]
+    evidence_dir, audit_dir = args[0], args[1]
+    if not no_extra and not client_dir:
+        client_dir = client_dir_for(evidence_dir)
     os.makedirs(os.path.join(audit_dir, "inventories"), exist_ok=True)
 
     manifest, unknown, all_urls = [], [], {}
 
-    for root, _, files in os.walk(evidence_dir):
+    for root, dirs, files in os.walk(evidence_dir):
+        dirs.sort()
         for fn in sorted(files):
             if fn.startswith("~$") or fn.startswith("."):
                 continue
             path = os.path.join(root, fn)
             ext = os.path.splitext(fn)[1].lower()
-            if ext not in (".csv", ".tsv", ".txt", ".xlsx", ".xlsm"):
+            shown = os.path.relpath(path, evidence_dir)
+            if is_sitemap(path):
+                urls = sitemap_urls(path)
+                row = manifest_row(path, shown, "sitemap.urls", "crawl", len(urls), "")
+                row["_group"] = 0
+                manifest.append(row)
+                add_urls(all_urls, ["url"], [[u] for u in urls], "sitemap.urls")
+                continue
+            if "crawl-config" in fn.lower():
+                row = manifest_row(path, shown, "dataforseo.crawl_config", "crawl", "", "")
+                row["_group"] = 0
+                manifest.append(row)
+                continue
+            if ext not in TABULAR:
                 continue
             headers, rows = read_headers_and_rows(path)
             kind, category = fingerprint(headers)
-            stat = os.stat(path)
-            row = {
-                "source_id": "",
-                "file": os.path.relpath(path, evidence_dir),
-                "recognised_as": kind or "UNRECOGNISED",
-                "category": category or "",
-                "rows": len(rows),
-                "columns": len(headers),
-                "sha256_12": sha(path),
-                "file_modified": datetime.datetime.fromtimestamp(
-                    stat.st_mtime).isoformat(timespec="seconds"),
-                "tool_settings": "",     # analyst fills: UA, rendering, scope
-                "date_window": "",       # analyst fills
-                "geography_device": "",  # analyst fills
-                "scope_limits": "",      # analyst fills
-            }
+            row = manifest_row(path, shown, kind, category, len(rows), len(headers))
+            row["_group"] = 0
             manifest.append(row)
             if not kind:
                 unknown.append((row["file"], [norm_header(h) for h in headers][:15]))
                 continue
-            for key, raw, col, k in harvest_urls(headers, rows, kind):
-                if not key:
-                    continue
-                rec = all_urls.setdefault(key, {"url_key": key, "example_raw": raw,
-                                                "seen_in": set(), "hosts": set()})
-                rec["seen_in"].add(k)
-                m = re.match(r"^https?://([^/]+)", raw)
-                if m:
-                    rec["hosts"].add(m.group(1).lower())
+            add_urls(all_urls, headers, rows, kind)
 
-    for i, row in enumerate(sorted(manifest, key=lambda r: r["file"]), 1):
+    extra = 0
+    if not no_extra:
+        for path, kind, category, is_raw in extra_files(client_dir, evidence_dir):
+            shown = os.path.relpath(path, client_dir)
+            if is_raw:
+                fs = [os.path.join(r, f) for r, _, fl in os.walk(path) for f in fl
+                      if not f.startswith(".")]
+                if not fs:
+                    continue
+                newest = max(fs, key=lambda f: os.stat(f).st_mtime)
+                row = manifest_row(newest, f"{shown}/ ({len(fs)} files)", kind, category,
+                                   len(fs), "", digest="",
+                                   size=sum(os.stat(f).st_size for f in fs),
+                                   date=file_date(newest))
+            else:
+                rows, columns = count_records(path)
+                row = manifest_row(path, shown, kind, category, rows, columns)
+                if kind == "sitemap.urls":
+                    urls = sitemap_urls(path)
+                    add_urls(all_urls, ["url"], [[u] for u in urls], "sitemap.urls")
+                elif os.path.splitext(path)[1].lower() in (".csv", ".tsv", ".xlsx", ".xlsm"):
+                    h, r = read_headers_and_rows(path)
+                    fp, fc = fingerprint(h)
+                    if fp:   # a standard export dropped into data/ — keep its real type
+                        row["recognised_as"], row["category"] = fp, fc
+                    add_urls(all_urls, h, r, row["recognised_as"])
+            row["_group"] = 1
+            manifest.append(row)
+            extra += 1
+
+    manifest.sort(key=lambda r: (r.pop("_group"), r["file"]))
+    for i, row in enumerate(manifest, 1):
         row["source_id"] = f"SRC-{i:03d}"
 
     man_path = os.path.join(audit_dir, "00-manifest.csv")
@@ -259,6 +449,10 @@ def main():
 
     recognised = sum(1 for m in manifest if m["recognised_as"] != "UNRECOGNISED")
     print(f"manifest:   {man_path}  ({recognised}/{len(manifest)} recognised)")
+    if not no_extra:
+        print(f"other evidence: {extra} file(s) from "
+              f"{os.path.join(client_dir, 'data') if client_dir else '(no client folder found)'}"
+              f" and inputs/")
     print(f"urls:       {inv_path}  ({len(all_urls)} unique)")
     if unknown:
         print(f"unrecognised: {len(unknown)} — see 00-unrecognised.md")

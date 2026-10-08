@@ -4,19 +4,13 @@
 Before we start on your website, here is everything we found about [Business Name] publicly.
 It's already filled in — just fix anything wrong and fill the few blanks we couldn't find.
 About ten minutes. **If we don't hear back by [deadline], we'll build with what's here.**
-Rather do it by phone? Call [Paul] at [number] — five minutes.
 
 ---
 
-## Access — who has these?
-*"Don't know" is a fine answer. Who set it up originally — you, or someone you hired?*
-
-| Item | Who has it | Status |
-|---|---|---|
-| Google Business Profile | | |
-| Domain registrar | | |
-| Website / hosting login | | |
-| Google Analytics / Search Console | | |
+## Access — one thing to do
+| Please | Done? |
+|---|---|
+| Add us as a **Manager** on your Google Business Profile (Business Profile → ⋮ → Business Profile settings → Managers → Add → [agency email]) | |
 
 ## A — Confirm this
 *Tick ✓ if right, ✗ and fix it if wrong.*
@@ -48,9 +42,11 @@ Where sources disagree we show every version — tell us which is right.
   3. What do customers most often get wrong about your trade?
 
 ---
-Questions? [Paul] · [phone]
+Questions? Reply to the email this came with.
 
 <!-- System notes (removed from the client copy):
+- Paul 2026-10-06/08: no phone-offer line and no GSC/GA4/hosting/domain questions — the only access ask is GBP Manager.
+- Questions already settled in the Decision Sheet (decisions-settled.md) are never on the sheet.
 - Block B items are never pre-filled guesses. Quoted if the site already claims it; blank if not.
 - Legal / licensing claims that stay unconfirmed are not published.
 - Medical / chiropractic: health claims also need the licensed practitioner's sign-off.

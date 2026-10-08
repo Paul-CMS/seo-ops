@@ -1,11 +1,11 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 5 of 8 — Build plan and blockers**
-- **What is happening now:** ready to start: technical blocker checklist and one handoff to Jonie (she fixes them while the site plan goes ahead)
+- **What is happening now:** No session is recorded — the seo-ops session hook is not installed (hooks-pending/INSTALL.md). One session per stage is enforced through it. Next there: /build apex-roofing-of-the-lowcountry blockers (technical blocker checklist and one handoff to Jonie (she fixes them while the site plan goes ahead))
 - **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Bra; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
-- **Next action:** `/build apex-roofing-of-the-lowcountry blockers` — Paul opens a **new session on Haiku** in ~/Documents/seo-ops and types `/next apex-roofing-of-the-lowcountry` (agents: build (opus), clerk (haiku))
+- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
 
-_Generated 2026-10-08T12:22 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-08T12:59 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 

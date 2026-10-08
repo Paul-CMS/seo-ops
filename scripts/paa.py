@@ -13,7 +13,10 @@ Outputs in clients/<slug>/data/paa/ (raw/ git-ignored):
   paa-questions.csv   question, source queries, times seen, closest C3 match + similarity
   queries.csv         every query run and how many PAA questions it returned
   paa-routing.md      the routing worksheet: Intent and Route columns are filled by the
-                      discovery-audit agent (a judgment, not a script); C3 duplicates pre-marked drop
+                      discovery-audit agent (a judgment, not a script); C3 duplicates pre-marked drop.
+                      A re-run keeps the Intent / Route / Note already filled in, matched by question
+                      text (lowercase, collapsed spaces, end punctuation ignored); routed questions that
+                      no longer appear are listed at the bottom so nothing the agent wrote is lost.
 """
 import argparse
 import csv
@@ -31,6 +34,35 @@ SERP = "serp/google/organic/live/advanced"
 
 def norm(q):
     return re.sub(r"[^a-z0-9 ]", "", q.lower()).strip()
+
+
+def key(q):
+    """Routing match key: lowercase, collapsed whitespace, punctuation at the end stripped."""
+    return re.sub(r"\s+", " ", q.lower()).strip().rstrip("?.!,;:…\"' ").strip()
+
+
+def cell(x):
+    return str(x).replace("|", "/").replace("\n", " ").strip()
+
+
+def old_routing(path):
+    """{key(question): (question, intent, route, note)} from an earlier paa-routing.md — the table rows and
+    the 'routed earlier, not seen in this run' list."""
+    out = {}
+    if not path.exists():
+        return out
+    for line in path.read_text().splitlines():
+        cells = [c.strip() for c in line.strip().strip("|").split("|")] if line.startswith("|") else []
+        if len(cells) == 9 and cells[0].isdigit():
+            q, intent, route, note = cells[1], cells[6], cells[7], cells[8]
+        else:
+            m = re.match(r"^- (.+?) — Intent: (.*?) · Route: (.*?) · Note: (.*)$", line)
+            if not m:
+                continue
+            q, intent, route, note = (g.strip() for g in m.groups())
+        if intent or note or (route and route != "drop (C3 duplicate)"):
+            out[key(q)] = (q, intent, route, note)
+    return out
 
 
 def queries(services, cities):
@@ -134,17 +166,30 @@ def main():
           "(off-topic, or already in the C3 registry — similarity ≥ 0.85 is pre-marked).", "",
           "| # | Question | Seen | Source queries | Closest C3 heading/FAQ | Similarity | Intent | Route | Note |",
           "|---|---|---|---|---|---|---|---|---|"]
+    prev = old_routing(d / "paa-routing.md")
+    kept = 0
     for i, (v, best, score) in enumerate(rows, 1):
         route = "drop (C3 duplicate)" if score >= 0.85 else ""
-        md.append(f"| {i} | {v['question']} | {v['count']} | {' / '.join(dict.fromkeys(v['queries']))} | "
-                  f"{best} | {score:.2f} | | {route} | |")
+        intent = note = ""
+        old = prev.pop(key(v["question"]), None)
+        if old:
+            kept += 1
+            intent, route, note = old[1], old[2] or route, old[3]
+        md.append(f"| {i} | {cell(v['question'])} | {v['count']} | {' / '.join(dict.fromkeys(v['queries']))} | "
+                  f"{cell(best)} | {score:.2f} | {intent} | {route} | {note} |")
+    if prev:
+        md += ["", "## Routed earlier, not seen in this run", "",
+               "Kept so the routing is not lost; these questions did not come back from the queries above.", ""]
+        md += [f"- {q} — Intent: {i_} · Route: {r_} · Note: {n_}" for q, i_, r_, n_ in prev.values()]
     (d / "paa-routing.md").write_text("\n".join(md) + "\n")
     with open(d / "queries.csv", "w", newline="") as fh:
         w = csv.writer(fh); w.writerow(["query", "paa_questions"]); w.writerows(qlog)
     R.log_change(a.slug, a.run, "data_pull", ",".join(cities), "PAA", "", f"{len(run_qs)} queries, {len(seen)} questions",
                  "DONE", channel="local")
     print(f"{len(run_qs)} queries → {len(seen)} distinct PAA questions "
-          f"({sum(1 for v in seen.values() if v['count'] > 1)} seen on more than one query)")
+          f"({sum(1 for v in seen.values() if v['count'] > 1)} seen on more than one query)"
+          + (f" · routing kept for {kept} question(s) from the earlier worksheet" if kept else "")
+          + (f" · {len(prev)} routed question(s) not seen this time, listed at the bottom" if prev else ""))
     if len(qs) > a.cap:
         print(f"{len(qs) - a.cap} queries beyond the cap were not run — ask Paul before expanding.")
 

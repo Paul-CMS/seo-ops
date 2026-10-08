@@ -36,7 +36,7 @@
 | 5 | Opening paragraph | No H tag, 60–120 words, triple in a third variant set, phone and offer, a distinct buyer state, first sentence answers | BB-312, CM-003, WC-C5 | BG-A8, D, G |
 | 6 | H2 how the service is delivered | Process, materials, what the buyer gets; names entities | BB-314 | BG-D, G |
 | 7 | H2 service types / subtypes | H3 per type; sub-services live here, not on their own pages | BB-204, BB-314 | BG-C1 |
-| 8 | H2 FAQ | Fresh variant pair; H3 per question in customer words; 4–6; first sentence is the full answer (40–60 words); none in the C3 registry | BB-316, WC-C7 | BG-C3, I |
+| 8 | H2 FAQ | Fresh variant pair; H3 per question in customer words; 4–6, each with its reason in the site plan (a routed PAA/fan-out question is a candidate, not an obligation); first sentence is the full answer (40–60 words); none in the C3 registry | BB-316, WC-C7 | BG-C3, I |
 | 9 | H2 service areas | H3 links to **every** location page; table rows left as a placeholder for Finish; no city in the H2 text | BB-205, BB-206, BB-314, CM-005 | BG-C2 |
 | 10 | CTA | No H tag; phone and offer | BB-314 | BG-A8, D |
 | — | Every H tag | No city name anywhere | BB-307, BB-314, BB-905 | — |

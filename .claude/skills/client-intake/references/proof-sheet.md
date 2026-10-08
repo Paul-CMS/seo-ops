@@ -56,11 +56,11 @@ BLOCK C — WE NEED THIS FROM YOU
   Names and photos
 
 ACCESS
-  Simple table: Item | Who has it | Status
-  "Don't know" listed as an acceptable answer
+  One row: "Add us as a Manager on your Google Business Profile" (Paul, 2026-10-08 — no GSC/GA4,
+  hosting or domain questions)
 
 [Footer]
-  One name, one phone number, one sentence offering to do it over the phone instead
+  "Questions? Reply to the email this came with." (no phone line — Paul, 2026-10-08)
 ```
 
 Target: 25–30 rows in Block A, 6–12 in Block B, under 10 in Block C. Ten minutes.
@@ -98,13 +98,10 @@ The blanks matter more than the rest — mostly license and insurance stuff
 we can't publish without confirming from you.
 
 If I don't hear back by [day], we'll build with what's on there now.
-
-Rather do it over the phone? Call me at [number] and I'll fill it in while
-we talk — takes five minutes.
 ```
 
-The phone offer is not a formality. For a meaningful share of clients it's the only
-thing that works, and five minutes at 7am beats a sheet opened at lunch and abandoned.
+No phone offer (Paul, 2026-10-08): the sheet carries no phone line. Clients who would rather talk reply to the
+email; their answers are saved verbatim as MANUAL evidence (`/discovery <slug> facts-direct`).
 
 ## 5. Staging
 

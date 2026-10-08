@@ -92,7 +92,7 @@ Google Doc), which has its own distinct name.
 |---|---|---|
 | Paul | Decisions, entity approval, every gate, all destructive and spend calls, sends everything to clients | — |
 | Jonie | Website and technical implementation | Redirects, slugs, titles/meta (until the WordPress pilot), robots, sitemap, speed, image URLs |
-| Gwen | SEO lead, VA execution | Evidence uploads, citations, content tasks, everything else |
+| Gwen | SEO lead, VA execution | Evidence uploads, citations, content tasks, everything else. **Standing:** once a client has added us as GBP Manager, read the GBP dashboard (secondary categories, service areas, opening date) into the client's one `manual_lookup` handoff |
 
 VAs work without Claude access. A handoff must stand on its own.
 

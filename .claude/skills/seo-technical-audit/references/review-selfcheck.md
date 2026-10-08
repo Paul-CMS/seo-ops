@@ -17,7 +17,8 @@ what it knows.
 
 **Load:**
 - `findings.csv`
-- `inventories/*.csv`
+- `inventories/*.csv` — including the conformance scorecards, one file per page type
+  (`scorecard-homepage.csv`, `-service`, `-location`, `-county`, `-about`, `-blog`)
 - `00-manifest.csv`
 - `00-crosschecks.md`
 - `decisions.md`
@@ -76,6 +77,15 @@ Every merge, redirect, delete, noindex or canonical change must meet CM-019 (all
 conditions, else `Needs Evidence`) with the check completed in the URL Decision Map, plus a
 safer alternative. Missing either, the recommendation is withdrawn, not downgraded
 (CM-001). Check the publication gate (CM-009).
+
+### Scorecards
+
+There is one scorecard per page type (`inventories/scorecard-<type>.csv`; `analysis-rules.md`
+§0). Check that each of the six files exists (header only when the site has no page of that
+type), that its columns are exactly that spec's check IDs (plus COM- for commercial types), that every typed page in the URL
+Decision Map is in exactly one scorecard, and that every `fail` cell names a finding that
+lists that page. A combined scorecard, a missing type or a page scored against the wrong
+spec goes back as a revision.
 
 ### Reconciliation
 
