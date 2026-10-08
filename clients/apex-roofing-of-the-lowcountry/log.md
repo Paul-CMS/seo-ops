@@ -1278,3 +1278,53 @@ Changes: 0 · Summary: Discovery Summary + client-confirmation list ready for si
 
 ## APPROVAL · 2026-10-08T11:03:17-05:00 · discovery_signed_off · approved · by Paul
 Approved version: clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Summary - REVIEW.md (sha 564167710178)
+
+## RUN 20261008-110342-drive-mirror-7c9f · STARTED · /drive-mirror · 2026-10-08T11:03:42-05:00
+Step: drive-mirror
+Gates checked: client_setup
+- CHANGE #134 [drive_file] https://drive.google.com/file/d/1Zn4tgOB22pgwW6zmUxzb4qlN38YcMIzg/view | archive | old: Apex Roofing of the Lowcountry - Approval Record.md | new: _Archive/Apex Roofing of the Lowcountry - Approval Record - 2026-10-08 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #135 [drive_file] https://drive.google.com/file/d/1pQQOs1cVuCyjYjgl06uckov76rrod8ew/view | upload | old: previous version archived as Apex Roofing of the Lowcountry - Approval Record - 2026-10-08 (2).md | new: Apex Roofing of the Lowcountry - Approval Record.md · sha b00363e098b9 | result: done | snapshots  clients/apex-roofing-of-the-lowcountry/snapshots/20261008-110342-drive-mirror-7c9f/0135-new.md
+- CHANGE #136 [drive_file] https://drive.google.com/file/d/1UHwtgvaJd9_CynPdValYLvaSnBlyHqx1/view | archive | old: Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-08 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #137 [drive_file] https://drive.google.com/file/d/1aRGFbGoDS7KFKsopoSfzfjsjLOKKdpvC/view | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-08 (2).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha bdceeb28ebe4 | result: done | snapshots  clients/apex-roofing-of-the-lowcountry/snapshots/20261008-110342-drive-mirror-7c9f/0137-new.md
+- CHANGE #138 [drive_file] https://drive.google.com/file/d/1tmQQUTXCWNTURddqsut4550czVgusJEH/view | archive | old: Apex Roofing of the Lowcountry - Brand Guide.md | new: _Archive/Apex Roofing of the Lowcountry - Brand Guide - 2026-10-08 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #139 [drive_file] https://drive.google.com/file/d/1NkHQNyI1s-0SSrSI2ZweyeMFXZlAJMdg/view | upload | old: previous version archived as Apex Roofing of the Lowcountry - Brand Guide - 2026-10-08 (2).md | new: Apex Roofing of the Lowcountry - Brand Guide.md · sha 9b1146487d9e | result: done | snapshots  clients/apex-roofing-of-the-lowcountry/snapshots/20261008-110342-drive-mirror-7c9f/0139-new.md
+- CHANGE #140 [drive_file] https://drive.google.com/file/d/1kq4xPLEqgMKtsmOjgbS5SDxjcEg4eTVT/view | archive | old: Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-08 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #141 [drive_file] https://drive.google.com/file/d/1GJD1q6sCbY9wFP5KfUAW_e2yC_6KAg5V/view | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-08 (2).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 1b9b729adc46 | result: done | snapshots  clients/apex-roofing-of-the-lowcountry/snapshots/20261008-110342-drive-mirror-7c9f/0141-new.md
+- CHANGE #142 [drive_file] https://drive.google.com/file/d/1UPd5Y_FAMeDaqEmy-F48Ic5dyeHnJaHs/view | file | old:  | new: Apex Roofing of the Lowcountry - Discovery Summary - APPROVED.md (Deliverables) | result: uploaded
+### HANDOFF · /drive-mirror · 2026-10-08 · run 20261008-110342-drive-mirror-7c9f
+**What I did**
+- Resumed this run after an interruption. The earlier attempt had made no changes and touched nothing in Drive (checked: no changes logged; the four records were still in the client folder and no "(2)" archive names existed).
+- Archive-and-replace in the client folder after Paul's `brand_guide_approved` and `discovery_signed_off` (2026-10-08). Approval Record, Document Checklist, Brand Guide and Handoff Log: each old copy was renamed `… - 2026-10-08 (2).md` and moved into `_Archive`, and the current local file was uploaded under the standard name (changes #135, #137, #139, #141).
+- Uploaded the approved Discovery Summary as a new file, `Apex Roofing of the Lowcountry - Discovery Summary - APPROVED.md`, in `01 - Discovery and Audit/Deliverables` (content identical to the approved REVIEW file; change #142).
+
+**What was decided, and why**
+- `--n 2` archive names: this morning's mirror already put a `… - 2026-10-08.md` of each record into `_Archive`.
+- The Discovery Record was not re-uploaded: it has not changed since this morning's mirror.
+- The Finding Register and URL Decision Map were not uploaded: too large to paste reliably through the connector. They stay repo-only at `clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/`.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Finding Register + URL Decision Map in Drive | Paul (direct-upload tool) | Drive completeness only |
+| Move the REVIEW copies (Recommendations, Evidence Manifest, proof sheet) to `_Archive`? | Paul | Nothing |
+| Is CertainTeed ShingleMaster current? (one question) | Paul sends it | Using "ShingleMaster" in any copy |
+| Six page specs still DRAFT | Paul | Build writing each page type |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Discovery Summary (APPROVED) | https://drive.google.com/file/d/1UPd5Y_FAMeDaqEmy-F48Ic5dyeHnJaHs/view | Uploaded |
+| Brand Guide | https://drive.google.com/file/d/1NkHQNyI1s-0SSrSI2ZweyeMFXZlAJMdg/view | Current (approved) |
+| Records | https://drive.google.com/drive/folders/1DN9Lji_McIOo9i2eFLV-u7eXrvY00G37 | Current as of the discovery sign-off |
+| Finding Register / URL Decision Map | clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/ | Approved, repo-only |
+
+**What I could not check**
+- Byte sizes of the three generated records (Approval Record, Document Checklist, Handoff Log) against the local files: pasted unchanged from the Read output, but not compared (Drive sizes: 2,993 · 6,691 · 64,979). The Brand Guide (26,585) and Discovery Summary (6,900) match the local files byte for byte.
+
+**Anything the next agent would otherwise get wrong**
+- The Drive copy of the APPROVED Discovery Summary still says "REVIEW" in its title line and status line: it is the approved file unchanged, as the Approval Record lists it. Don't edit it.
+- `_Archive` now holds `… - 2026-10-08.md` and `… - 2026-10-08 (2).md` of each of the four records; another archive of these today needs `drive.py archive-name --n 3`.
+- The Drive Handoff Log does not yet include this run's section; it goes up with the next mirror.
+### END HANDOFF
+## RUN 20261008-110342-drive-mirror-7c9f · FINISHED · 2026-10-08T11:13:58-05:00
+Changes: 9 · Summary: Drive mirror after Brand Guide approval and discovery sign-off (resumed)
