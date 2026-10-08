@@ -40,7 +40,7 @@
       "producer": "/discovery {slug} reconcile"
     },
     "discovery_signed_off": {
-      "label": "Discovery and audit signed off \u2014 Build may start",
+      "label": "Discovery and audit signed off — Build may start",
       "plain": "the discovery sign-off (start Build)",
       "requires": [
         "entity_approved",
@@ -62,7 +62,7 @@
       "producer": "/build {slug} blockers"
     },
     "link_wheel_approved": {
-      "label": "Link wheel built and verified \u2014 schema may start",
+      "label": "Link wheel built and verified — schema may start",
       "plain": "the link wheel (built and verified)",
       "requires": [
         "pages_built"
@@ -71,7 +71,7 @@
       "producer": "/finish {slug} wheel"
     },
     "release_approved": {
-      "label": "Schema built and QA cleared \u2014 release",
+      "label": "Schema built and QA cleared — release",
       "plain": "release (schema built, QA cleared)",
       "requires": [
         "link_wheel_approved",
@@ -85,7 +85,7 @@
       }
     },
     "blog_map_approved": {
-      "label": "Blog Decision Map approved \u2014 redirects and blog briefs may start",
+      "label": "Blog Decision Map approved — redirects and blog briefs may start",
       "plain": "the Blog Decision Map",
       "requires": [
         "release_approved"
@@ -107,7 +107,7 @@
       "producer": "/blog {slug} topics"
     },
     "wordpress_pilot_approved": {
-      "label": "WordPress pilot passed for this site \u2014 the system may write titles, keyword, social, robots, canonical and schema directly",
+      "label": "WordPress pilot passed for this site — the system may write titles, keyword, social, robots, canonical and schema directly",
       "plain": "the WordPress pilot for this site",
       "requires": [
         "wordpress_connected"
@@ -321,7 +321,7 @@
     "approved",
     "approved_with_conditions"
   ],
-  "_steps_about": "Every command step: the gates run.py start checks (looked up here \u2014 nowhere else), what it must produce before run.py finish will close it, and (reads) the only files the agent reads for that step (run.py start prints them). {batch} and {page} come from --batch / --page; {prev_post} is the newest blog post. produces: an artifact name (a status.py mark recorded during the run), 'steps:S01,S02' (an outcome for each audit step), 'batch:{batch}:<stage>' (the batch files recorded), 'blog_post' (a new post registered with its file), 'batch_state:{batch}:a|b' (the batch reached one of those states).",
+  "_steps_about": "Every command step: the gates run.py start checks (looked up here — nowhere else), what it must produce before run.py finish will close it, and (reads) the only files the agent reads for that step (run.py start prints them). {batch} and {page} come from --batch / --page; {prev_post} is the newest blog post. produces: an artifact name (a status.py mark recorded during the run), 'steps:S01,S02' (an outcome for each audit step), 'batch:{batch}:<stage>' (the batch files recorded), 'blog_post' (a new post registered with its file), 'batch_state:{batch}:a|b' (the batch reached one of those states).",
   "artifacts": {
     "entity_record": "the Discovery Record with the entity foundation (Brand Guide A/B proposal)",
     "proof_sheet": "the client proof sheet (.md; the Google Doc client copy is separate)",
@@ -402,10 +402,10 @@
         "steps:S06,S07,S08,S09,S10,S11,S19,S20,S21"
       ],
       "reads": [
-        "methodology/audit-steps.md (S06\u2013S11, S19\u2013S21)",
+        "methodology/audit-steps.md (S06–S11, S19–S21)",
         "methodology/agency-profile.md (tools)",
         "clients/<slug>/brand-guide.md (services, cities)",
-        "wordpress/wordpress-site-setup.md (\u00a75 site-wide settings)"
+        "wordpress/wordpress-site-setup.md (§5 site-wide settings)"
       ]
     },
     "discovery:audit": {
@@ -435,7 +435,7 @@
         "reconciled"
       ],
       "reads": [
-        ".claude/skills/client-intake/references/proof-sheet.md (\u00a76 reconciliation)",
+        ".claude/skills/client-intake/references/proof-sheet.md (§6 reconciliation)",
         "the returned proof sheet",
         "clients/<slug>/brand-guide.md",
         "templates/brand-guide.md",
@@ -550,7 +550,7 @@
         "the approved brief for this page",
         "methodology/writing-commercial.md",
         "methodology/specs/<type>.md + methodology/specs/README.md (common checks)",
-        "clients/<slug>/brand-guide.md (A\u2013D, H2, I)",
+        "clients/<slug>/brand-guide.md (A–D, H2, I)",
         "the drafts already written in this batch and the pages approved in earlier batches (sibling context)"
       ]
     },
@@ -566,7 +566,7 @@
         "every draft in the batch (one per page, each from its own run)",
         "methodology/writing-commercial.md (E1, Stage 4)",
         "methodology/specs/<type>.md",
-        "clients/<slug>/brand-guide.md (C1\u2013C3)",
+        "clients/<slug>/brand-guide.md (C1–C3)",
         "the pages approved in earlier batches",
         "methodology/rulings.md (CM-017, CM-043)"
       ]
@@ -581,7 +581,7 @@
       ],
       "reads": [
         "the batch's semantic review table and drafts",
-        "methodology/writing-commercial.md (E1\u2013E10, Stage 4)",
+        "methodology/writing-commercial.md (E1–E10, Stage 4)",
         "methodology/specs/<type>.md"
       ]
     },
@@ -593,7 +593,7 @@
       "produces": [],
       "reads": [
         "Paul's notes on the pilot approvals (clients/<slug>/decisions.md, approval-record.md)",
-        "methodology/specs/<type>.md (\u00a78)",
+        "methodology/specs/<type>.md (§8)",
         "methodology/writing-commercial.md",
         "methodology/lessons.md"
       ]
@@ -817,7 +817,7 @@
         "the returned publish worksheet",
         "the verify report",
         "methodology/specs/<type>.md (alt-text format)",
-        "clients/<slug>/brand-guide.md (B3, C1\u2013C3)"
+        "clients/<slug>/brand-guide.md (B3, C1–C3)"
       ]
     },
     "blog:publish": {
@@ -847,7 +847,7 @@
         "wordpress_pilot"
       ],
       "reads": [
-        "wordpress/wordpress-site-setup.md (\u00a75 pilot)"
+        "wordpress/wordpress-site-setup.md (§5 pilot)"
       ]
     },
     "drive-mirror": {
@@ -1024,5 +1024,153 @@
         "pilot": null
       }
     }
-  }
+  },
+  "_stages_about": "R1/R2 (Paul, 2026-10-08). Every step belongs to one stage. A stage runs in its own session on the session model (Haiku — it orchestrates /next, relays agent summaries, prints /approve lines); judgment lives in the agents, whose model is fixed in .claude/agents/<name>.md frontmatter (opus or haiku only). run.py start refuses a step of a new stage in a session that already finished a different stage. 'per_batch' stages are one session per batch. 'any_stage' steps are bookkeeping that may run in any session. A system/design session (editing seo-ops itself) runs on Opus and starts no runs.",
+  "stages": [
+    {
+      "id": "setup",
+      "n": 1,
+      "name": "Setup",
+      "session_model": "haiku",
+      "agents": [
+        "clerk"
+      ],
+      "steps": [
+        "new-client"
+      ]
+    },
+    {
+      "id": "discovery",
+      "n": 2,
+      "name": "Discovery",
+      "session_model": "haiku",
+      "agents": [
+        "discovery-audit",
+        "clerk"
+      ],
+      "steps": [
+        "discovery:discovery",
+        "discovery:proof-sheet",
+        "discovery:facts-direct",
+        "blog:intake"
+      ]
+    },
+    {
+      "id": "data",
+      "n": 3,
+      "name": "Data",
+      "session_model": "haiku",
+      "agents": [
+        "clerk",
+        "discovery-audit"
+      ],
+      "steps": [
+        "crawl",
+        "discovery:data",
+        "discovery:fanout"
+      ]
+    },
+    {
+      "id": "audit",
+      "n": 4,
+      "name": "Audit",
+      "session_model": "haiku",
+      "agents": [
+        "discovery-audit",
+        "audit-reviewer",
+        "clerk"
+      ],
+      "steps": [
+        "discovery:audit",
+        "discovery:reconcile",
+        "discovery:signoff"
+      ]
+    },
+    {
+      "id": "build-plan",
+      "n": 5,
+      "name": "Build plan and blockers",
+      "session_model": "haiku",
+      "agents": [
+        "build",
+        "clerk"
+      ],
+      "steps": [
+        "build:blockers",
+        "build:plan"
+      ]
+    },
+    {
+      "id": "batches",
+      "n": 6,
+      "name": "Pilot, then batches",
+      "session_model": "haiku",
+      "agents": [
+        "build",
+        "clerk"
+      ],
+      "per_batch": true,
+      "steps": [
+        "build:evidence",
+        "build:brief",
+        "build:draft",
+        "build:drafts",
+        "build:apply-sem",
+        "build:pilot-corrections",
+        "build:ship",
+        "build:published",
+        "interview:facts",
+        "interview:facts-answers",
+        "implement:page"
+      ]
+    },
+    {
+      "id": "finish",
+      "n": 7,
+      "name": "Finish",
+      "session_model": "haiku",
+      "agents": [
+        "finish",
+        "clerk"
+      ],
+      "steps": [
+        "finish:wheel",
+        "finish:schema",
+        "finish:qa",
+        "implement:wheel",
+        "implement:schema"
+      ]
+    },
+    {
+      "id": "blog",
+      "n": 8,
+      "name": "Blog",
+      "session_model": "haiku",
+      "agents": [
+        "blog",
+        "clerk"
+      ],
+      "steps": [
+        "blog:map",
+        "blog:redirects",
+        "blog:next",
+        "blog:refresh",
+        "blog:topics",
+        "blog:publish",
+        "interview:stories",
+        "interview:stories-answers",
+        "interview:voice"
+      ]
+    }
+  ],
+  "any_stage": [
+    "verify",
+    "rollback",
+    "wp-check",
+    "wp-check:pilot",
+    "implement:safe",
+    "implement:structural",
+    "discovery:sheet-returned",
+    "drive-mirror"
+  ]
 }

@@ -297,7 +297,8 @@ def main():
             st["review_pause"] = {"run_id": a.run_id, "step": step, "at": now()}
         if cmd != "drive-mirror":   # a records mirror is bookkeeping; "last run" stays the real work
             st["last_run"] = {"run_id": a.run_id, "command": cmd, "finished": now(),
-                              "result": a.summary, "changes": len(ch)}
+                              "result": a.summary, "changes": len(ch), "step": step,
+                              "batch": (info or {}).get("batch")}
         S.save(a.slug, st)
         S.log_conditions(a.slug, st)
         import records

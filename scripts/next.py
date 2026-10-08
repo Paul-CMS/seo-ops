@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """next.py — what happens next for a client, read from status.json and the safety log.
 
-    next.py <slug>            one line of JSON: {"kind": run|decision|wait|review, "command": ..., "why": ...}
+    next.py <slug>            one line of JSON: {"kind": run|decision|wait|review, "command": ..., "why": ...,
+                              "stage": "n of N — name", "session_model": "haiku", "agents": "build (opus), clerk (haiku)"}
+                              (R1: start the stage's session on session_model; the agents' models are fixed)
     next.py <slug> --continue only at the start of a /next Paul typed: clears a review pause (logged)
 
 kind=run      -> /next runs this command now
@@ -16,9 +18,11 @@ and its producer. For each gate in order: met → move on; approved but its file
 ask Paul to re-approve; artifact recorded → stop at the decision; else run the producer.
 """
 import json
+import re
 import sys
 
 import run as R
+import stages
 import status as S
 import steps
 
@@ -27,13 +31,47 @@ SLUG = None
 PAUSE = None   # the review pause left by the last finished run, if its stage is in review mode
 
 
+class Next(Exception):
+    """Raised by out(): the one next action. compute() catches it."""
+
+    def __init__(self, rec):
+        super().__init__(rec["kind"])
+        self.rec = rec
+
+
+def decision_step(command):
+    """The step that produced what an /approve line approves — its stage is the one the decision ends."""
+    w = command.split()
+    target = w[2] if len(w) > 2 else ""
+    m = re.match(r"^batch:([\w-]+):(briefs|drafts)$", target)
+    if m:
+        return ("build:brief" if m.group(2) == "briefs" else "build:drafts"), m.group(1)
+    if target == "site_plan":
+        return "build:plan", None
+    if target.startswith("evidence:"):
+        return "build:evidence", None
+    if target.startswith("page:"):
+        return "blog:next", None
+    spec = S.GATES["gates"].get(target)
+    return stages.step_of_command((spec or {}).get("producer", "").replace("{slug}", SLUG)) if spec else (None, None)
+
+
 def out(kind, command, why):
+    step, batch = stages.step_of_command(command)
     if kind == "run" and PAUSE:
         kind, why = "review", (f"{PAUSE['step']} finished (run {PAUSE['run_id']}) and that stage is in review mode — "
                                f"look at what it produced, then type /next to go on. Next would be: {command} ({why})")
         command = f"/next {SLUG}"
-    print(json.dumps({"kind": kind, "command": command, "why": why}))
-    sys.exit(0)
+    rec = {"kind": kind, "command": command, "why": why}
+    if not step and kind == "decision":
+        step, batch = decision_step(command)
+    if not step and kind in ("decision", "review", "wait"):
+        last = (S.load(SLUG).get("last_run") or {})
+        step, batch = last.get("step"), last.get("batch")
+    rec.update(stages.describe(step, batch))   # R1: the stage, the session model and the agents it uses
+    if step:
+        rec["step"] = step
+    raise Next(rec)
 
 
 def q(files):
@@ -126,11 +164,24 @@ def blog_posts(st, slug):
     out("run", f"/blog {slug} next", "next post from the approved list")
 
 
+def compute(slug, cont=False):
+    """The next action as a dict (kind, command, why, stage, session_model, agents)."""
+    try:
+        _walk(slug, cont)
+    except Next as n:
+        return n.rec
+    return {"kind": "wait", "command": f"/resume {slug}", "why": "nothing left to do"}
+
+
 def main():
+    print(json.dumps(compute(sys.argv[1], "--continue" in sys.argv[2:])))
+
+
+def _walk(slug, cont):
     global PAUSE, SLUG
-    slug = SLUG = sys.argv[1]
+    SLUG = slug
     st = S.load(slug)
-    if "--continue" in sys.argv[2:] and st.get("review_pause"):
+    if cont and st.get("review_pause"):
         p = st.pop("review_pause")
         S.save(slug, st)
         from lib import append, client_dir, now

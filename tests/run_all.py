@@ -1538,9 +1538,36 @@ def t_readability():
     check("reading level: named sources and entity terms are left out of the count", g(o2) < g(o1), (o1, o2))
 
 
+def t_models():
+    import re as _re
+    want = {"discovery-audit": "opus", "audit-reviewer": "opus", "build": "opus", "finish": "opus", "blog": "opus",
+            "clerk": "haiku"}
+    got = {}
+    for f in (SB / ".claude" / "agents").glob("*.md"):
+        m = _re.search(r"^model:\s*(\S+)", f.read_text().split("\n---", 2)[0], _re.M)
+        got[f.stem] = m.group(1) if m else None
+    check("R1: every agent has a preset model — Opus for judgment, Haiku (clerk) for mechanical work",
+          all(got.get(k) == v for k, v in want.items()) and set(got.values()) <= {"haiku", "opus"}, got)
+    g = json.loads((SB / "scripts" / "gates.json").read_text())
+    check("R1: every stage's session runs on Haiku (no Sonnet, no Fable)",
+          {s["session_model"] for s in g["stages"]} == {"haiku"}, [s["session_model"] for s in g["stages"]])
+    mapped = {x for s in g["stages"] for x in s["steps"]} | set(g["any_stage"])
+    check("R2: every step belongs to exactly one stage (or is bookkeeping for any stage)",
+          set(g["steps"]) <= mapped and len([x for s in g["stages"] for x in s["steps"]]) ==
+          len({x for s in g["stages"] for x in s["steps"]}), set(g["steps"]) - mapped)
+    sh('python3 scripts/status.py init md-co --name "Md Co" --domain md.example --type full --industry roofing')
+    ag = Agent("md-co"); ag.fin(ag.start("new-client"), "set up")
+    n = nxt("md-co")
+    check("R1: next.py names the stage, the session model and the agents with their models",
+          n.get("stage", "").startswith("2 of ") and n.get("session_model") == "haiku"
+          and "discovery-audit (opus)" in n.get("agents", ""), n)
+    _, out = sh("python3 scripts/stages.py list")
+    check("stages.py lists every stage with its models", "clerk (haiku)" in out and "build (opus)" in out, out)
+
+
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_section_approval, t_reviews_parse, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view,
-             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability]
+             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models]
 
 
 def main():
