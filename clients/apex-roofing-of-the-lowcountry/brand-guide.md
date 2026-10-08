@@ -21,7 +21,7 @@ publication.
 | 3 | Category variants (4–6) | Roofing Contractor · Roofer · Roofers (all Wikipedia). Excluded by Paul 2026-10-05: Roof Mechanic. Candidate only, not approved: Residential Roofer (site wording, not Wikipedia; see C4) | Revised per Paul 2026-10-05 — awaits entity_approved · 3 variants, below the template's 4–6 |
 | 4 | Storefront or SAB | SAB (intake; no address on the public GBP) | Internally Verified |
 | 5 | Area entity | Hilton Head Island–Bluffton–Port Royal, SC Metropolitan Statistical Area — Wikipedia: https://en.wikipedia.org/wiki/Hilton_Head_Island_metropolitan_area | Revised per Paul 2026-10-05 (2nd) — awaits entity_approved · the brand name already carries "Lowcountry" into every SEO title, so the SEO title takes the metro area · BB-105 smallest container · Georgia not served (Paul 2026-10-05, C1) |
-| 6 | Area variants (3–5) | Hilton Head Island–Bluffton–Port Royal Metropolitan Area (reserved, homepage) · South Carolina Lowcountry · Lowcountry · Hilton Head Island Metropolitan Area · Beaufort and Jasper Counties | Revised per Paul 2026-10-05 (2nd) — awaits entity_approved · "Lowcountry" variants never in an SEO title (see B2) |
+| 6 | Area variants (3–5) | Hilton Head Island Metropolitan Area (reserved, homepage SEO title) · Hilton Head Island–Bluffton–Port Royal Metropolitan Area · South Carolina Lowcountry · Lowcountry · Beaufort and Jasper Counties | Revised per Paul 2026-10-08 — awaits entity re-approval · "Lowcountry" variants never added in an SEO title (see B2) |
 | 7 | Separator standard | ` - ` | Standard |
 | 8 | Phone | (843) 757-2739 (GBP, site, BBB, HomeAdvisor) | Submitted — client to confirm it is not a tracking number |
 | 9 | Primary domain (canonical host form) | https://apexroofingtlc.com/ (www and http forms 301 here in one hop) | Internally Verified |
@@ -53,26 +53,31 @@ Source: `discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md
 
 ### B1 · Reserved for the homepage
 ```
-HOMEPAGE AREA VARIANT:      Hilton Head Island–Bluffton–Port Royal Metropolitan Area [Revised per Paul 2026-10-05 (2nd) — awaits entity_approved]
-HOMEPAGE CATEGORY VARIANT:  Roofing Contractor                                       [Proposed — awaits entity_approved]
+HOMEPAGE AREA VARIANT:      Hilton Head Island Metropolitan Area [Revised per Paul 2026-10-08 — awaits entity re-approval]
+HOMEPAGE CATEGORY VARIANT:  Roofing Contractor                   [Proposed — awaits entity re-approval]
 ```
-The homepage SEO title carries this variant. "Lowcountry" can't be reserved: the brand name
-("Apex Roofing of the Lowcountry") already carries it onto every page.
+The homepage **SEO title** carries this variant (Wikipedia's article title for the MSA — a real name, BB-109).
+The homepage **H1** uses a more familiar pool variant — "Lowcountry" or "South Carolina Lowcountry" (Paul,
+2026-10-08; BB-304). "Lowcountry" can't be reserved: the brand name ("Apex Roofing of the Lowcountry")
+already carries it onto every page.
 No other page may claim the reserved area variant. This is the only cross-page variant rule.
 
 ### B2 · Rotation pool
 Every area variant except the reserved one. Reuse across service pages is correct.
 ```
-1. South Carolina Lowcountry                        [Revised per Paul 2026-10-05 (2nd)]
-2. Lowcountry                                       [Revised per Paul 2026-10-05]
-3. Hilton Head Island Metropolitan Area              [Proposed]
-4. Beaufort and Jasper Counties                      [Proposed]
+1. South Carolina Lowcountry                              [Revised per Paul 2026-10-05 (2nd)]
+2. Lowcountry                                             [Revised per Paul 2026-10-05]
+3. Hilton Head Island–Bluffton–Port Royal Metropolitan Area [Revised per Paul 2026-10-08 — swapped with the reserved variant]
+4. Beaufort and Jasper Counties                           [Proposed]
 ```
-**SEO titles (Paul, 2026-10-05):** the brand is written in full — "Apex Roofing of the Lowcountry",
-never shortened — in every SEO title that carries the brand, because "Lowcountry" is part of the
-official brand name. So "Lowcountry" reaches every branded SEO title through the brand, and variants
-1 and 2 are not added on top in an SEO title (H1, H2s and body only). SEO titles take the
-metro-area, Hilton Head Island Metropolitan Area or county variants.
+**SEO titles (Paul, 2026-10-05 and 2026-10-08):** the brand is written in full — "Apex Roofing of the
+Lowcountry", never shortened — in every SEO title that carries the brand, because "Lowcountry" is part
+of the official brand name. So "Lowcountry" reaches every branded SEO title through the brand, and
+variants 1 and 2 are not added on top in an SEO title (H1, H2s and body only).
+- **Homepage SEO title:** the reserved variant (B1).
+- **Service-page SEO titles:** `Service Name - Brand`, no area term — the brand's "Lowcountry" carries the
+  service area (Paul, Gate B 1a, 2026-10-07; audit DEC-LOCAL-011).
+- **Location-page SEO titles:** follow the location spec (the city).
 
 ### B3 · Assignment log — the write-back target
 | Page URL | Page type | Category variant | Area variant | Content file (SD/LD) | Shipped |

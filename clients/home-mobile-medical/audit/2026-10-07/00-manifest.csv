@@ -1,0 +1,9 @@
+source_id,file,recognised_as,category,rows,columns,sha256_12,file_modified,tool_settings,date_window,geography_device,scope_limits
+SRC-001,Home Mobile Medical - SF - external_all - 2026-09-18.csv,screamingfrog.external_all,crawl,172,6,2c9bc46c3174,2026-10-07T20:35:24,,,,
+SRC-002,Home Mobile Medical - SF - h1_all - 2026-09-18.csv,screamingfrog.h1_all,crawl,96,6,731ce4cc0c2d,2026-10-07T20:35:24,,,,
+SRC-003,Home Mobile Medical - SF - h2_all - 2026-09-18.csv,screamingfrog.h2_all,crawl,96,8,a9bcbc7448c0,2026-10-07T20:35:24,,,,
+SRC-004,Home Mobile Medical - SF - internal_all - 2026-09-18.csv,screamingfrog.internal_all,crawl,284,68,8ab2cff1f7f3,2026-10-07T20:35:24,,,,
+SRC-005,Home Mobile Medical - SF - javascript_all - 2026-09-18.csv,screamingfrog.javascript_all,crawl,96,30,110be10ecb66,2026-10-07T20:35:24,,,,
+SRC-006,Home Mobile Medical - SF - links_all - 2026-09-18.csv,screamingfrog.links_all,crawl,96,15,979f09475acd,2026-10-07T20:35:24,,,,
+SRC-007,Home Mobile Medical - SF - meta_description_all - 2026-09-18.csv,screamingfrog.meta_description_all,crawl,96,7,385f9984bec6,2026-10-07T20:35:24,,,,
+SRC-008,Home Mobile Medical - SF - page_titles_all - 2026-09-18.csv,screamingfrog.page_titles_all,crawl,96,7,72863fcb0fc7,2026-10-07T20:35:24,,,,

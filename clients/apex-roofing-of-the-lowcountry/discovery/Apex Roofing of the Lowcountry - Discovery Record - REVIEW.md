@@ -300,6 +300,19 @@ Paul confirmed (same day): the reserved variant is written "…Metropolitan Area
 "Metro Area" shortening), and the brand is always written in full in every SEO title that carries it, since "Lowcountry"
 is part of the official brand name — the "Lowcountry" variants are therefore not added on top in SEO titles, site-wide.
 
+### 3.8 Paul's direction, 2026-10-08 — reserved homepage variant (supersedes that row of 3.7)
+
+During the audit approval Paul ruled the homepage title/H1 split (audit conflict CF-LOCAL-002, HP-06 vs BB-304):
+
+| Item | 3.7 | Now |
+|---|---|---|
+| Reserved homepage variant (homepage SEO title) | Hilton Head Island–Bluffton–Port Royal Metropolitan Area | **Hilton Head Island Metropolitan Area** (Wikipedia article title — §3.3; a real name, BB-109) |
+| Homepage H1 | — | a familiar pool variant: **Lowcountry** or **South Carolina Lowcountry** ("folks are more familiar with that and it is still accurate") |
+| Rotation pool | South Carolina Lowcountry · Lowcountry · Hilton Head Island Metropolitan Area · Beaufort and Jasper Counties | South Carolina Lowcountry · Lowcountry · **Hilton Head Island–Bluffton–Port Royal Metropolitan Area** · Beaufort and Jasper Counties |
+| Service-page SEO titles | (metro/county variants) | `Service Name - Brand`, no area term (Gate B 1a, 2026-10-07) |
+
+The area entity itself (the MSA, Q17020871) is unchanged.
+
 ---
 
 ## 4 · Conflicts — every candidate value, none resolved (PROC-01)
