@@ -1030,3 +1030,61 @@ Changes: 2 · Summary: Reserved homepage variant -> Hilton Head Island Metropoli
 ## APPROVAL · 2026-10-08T07:36:22-05:00 · entity_approved · approved · by Paul
 Approved version: clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md (sha 76a048adc3f7)
 Approved version: clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2 (sha d5673fb2dcf3)
+
+## RUN 20261008-073627-discovery-2c41 · STARTED · /discovery · 2026-10-08T07:36:27-05:00
+Step: discovery:audit
+Gates checked: entity_approved
+- CHANGE #116 [drive_file] https://drive.google.com/file/d/1d6uL99jW-PCmFPjMDHd6UVFzpE_ZygDl/view?usp=drivesdk | archive | old: Apex Roofing of the Lowcountry - Recommendations - REVIEW.md | new: _Archive/Apex Roofing of the Lowcountry - Recommendations - REVIEW - 2026-10-08.md | result: done · renamed and moved, nothing deleted
+- CHANGE #117 [drive_file] https://drive.google.com/file/d/1dVCYpd3KlpBmAWDbHKJWmMgyzZHVzNlG/view?usp=drivesdk | upload | old: previous version archived as Apex Roofing of the Lowcountry - Recommendations - REVIEW - 2026-10-08.md | new: Apex Roofing of the Lowcountry - Recommendations - REVIEW.md · sha c4a2bebda187 | result: done | snapshots  clients/apex-roofing-of-the-lowcountry/snapshots/20261008-073627-discovery-2c41/0117-new.md
+- CHANGE #118 [drive_file] https://drive.google.com/file/d/1brOXSWq2d-COpf0-HVrzNiJ0FT1HJh8p/view?usp=drivesdk | archive | old: Apex Roofing of the Lowcountry - Evidence Manifest - REVIEW.md | new: _Archive/Apex Roofing of the Lowcountry - Evidence Manifest - REVIEW - 2026-10-08.md | result: done · renamed and moved, nothing deleted
+- CHANGE #119 [drive_file] https://drive.google.com/file/d/1-M0Pzd79LUGQ2wMIs6QFmf565IEnfr3y/view?usp=drivesdk | upload | old: previous version archived as Apex Roofing of the Lowcountry - Evidence Manifest - REVIEW - 2026-10-08.md | new: Apex Roofing of the Lowcountry - Evidence Manifest - REVIEW.md · sha 6c2076437ccc | result: done | snapshots  clients/apex-roofing-of-the-lowcountry/snapshots/20261008-073627-discovery-2c41/0119-new.md
+### HANDOFF · /discovery · 2026-10-08 · run 20261008-073627-discovery-2c41
+**What I did**
+- Applied Paul's 2026-10-08 audit-approval rulings to the existing findings. Each change is a superseding row; there are no new findings and no paid calls.
+  - **F-004 rev 4:** the homepage title is now a one-word fix, "Metro" → "Metropolitan". The reserved variant is "Hilton Head Island Metropolitan Area". Stays Medium.
+  - **F-015 rev 3:** the About page title and H1 follow Paul's ruling. Stays High.
+  - **F-016 rev 3:** owners by name only, with a visible placeholder for their photo and job titles. Low → Medium.
+- Marked CF-LOCAL-002 as ruled by Paul in `conflicts.csv`.
+- Updated the "Paul Decision" cells on the homepage and About rows of the URL Decision Map. The map still has 83 rows.
+- Recorded four entries in the audit's decision log:
+  - DEC-LOCAL-014: CF-LOCAL-002 ruled, and the homepage H1 preference if it is ever rebuilt.
+  - DEC-LOCAL-015: About page.
+  - DEC-LOCAL-016: 3a — accepted as advisory while the specs are DRAFT.
+  - DEC-LOCAL-017: B2 now aligned with 1a; no new review needed.
+- Re-rendered the four REVIEW deliverables from the latest revision of each finding. Re-marked `audit_deliverables` with the four files.
+- Archive-and-replace in Drive for the Recommendations (change #117) and the Evidence Manifest (change #119):
+  - The old copies were renamed "… - REVIEW - 2026-10-08.md" and moved to `_Archive`.
+  - The new copies were uploaded to Deliverables. Byte sizes match the local files.
+
+**What was decided, and why**
+- **F-004 stays Medium (CM-028):** the title still fails a spec check (HP-03, the B1 assignment) but does not break the entity model.
+- **F-016 goes from Low to Medium:** Paul's ruling removed the "Coastal default — never above Low" condition.
+- **Paul's About H1 carries the brand,** which ABT-03 would otherwise fail. His ruling governs for this client.
+- **No fresh-context review is needed.** These are Paul's rulings applied to findings the S17 review already checked.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| `audit_approved` | Paul | Safe fixes, the Low batch |
+| Client confirmations (Port Royal base housing, synthetic roofing, ShingleMaster, one price range, other F-002 claims) | client via Paul | Brand Guide D/D2; F-009 target |
+| Specs approved before Build; HP-06 wording correction | Paul | Build |
+| Finding Register and URL Decision Map not in Drive (too large to paste) | Paul (direct-upload tool) | Drive completeness only |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Recommendations | clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Recommendations - REVIEW.md | REVIEW · Drive https://drive.google.com/file/d/1dVCYpd3KlpBmAWDbHKJWmMgyzZHVzNlG/view |
+| Evidence Manifest | clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Evidence Manifest - REVIEW.md | REVIEW · Drive https://drive.google.com/file/d/1-M0Pzd79LUGQ2wMIs6QFmf565IEnfr3y/view |
+| Finding Register / URL Decision Map | same folder | REVIEW, local only |
+
+**What I could not check**
+- Nothing new this run. The limits of the 2026-10-07 audit still apply: JavaScript-loaded content, no GSC/GA4, no citations.
+
+**Anything the next agent would otherwise get wrong**
+- The reserved homepage variant is now "Hilton Head Island Metropolitan Area".
+- "Hilton Head Island–Bluffton–Port Royal Metropolitan Area" is a pool variant; it is what the About title uses.
+- The live homepage H1 stays locked.
+- Read the latest revision of each finding: F-004 is at rev 4; F-015 and F-016 are at rev 3.
+### END HANDOFF
+## RUN 20261008-073627-discovery-2c41 · FINISHED · 2026-10-08T07:40:48-05:00
+Changes: 4 · Summary: Audit deliverables revised to Paul's rulings (homepage title/H1, About page, advisory); 30 findings: 3 High, 18 Medium, 9 Low

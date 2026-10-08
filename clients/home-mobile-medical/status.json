@@ -582,6 +582,51 @@
       ],
       "at": "2026-10-07T19:58:08-05:00",
       "run": "20261007-173133-discovery-dce1"
+    },
+    "S12": {
+      "outcome": "done",
+      "reason": "Ingest (8/8 SF exports recognised) + crosscheck (host CONTRADICTED = third-party domains only; rendering LIMITATION; coverage OK) + manual addendum (H1 corroborated; LNKD canonical issue contradicted; orphan candidates reconciled; CM-019 C3 method); manifest SRC-001..027 incl. BL, CMS, sitemap, LNKD, 6 grid PDFs, old map, DFS data",
+      "outputs": [
+        "clients/home-mobile-medical/audit/2026-10-07/00-crosschecks.md"
+      ],
+      "at": "2026-10-08T07:37:18-05:00",
+      "run": "20261007-203219-discovery-784c"
+    },
+    "S13": {
+      "outcome": "done",
+      "reason": "Entity analysis: 12 findings (F-001..F-012): category entity in homepage title, Georgia on SC site, discontinued services/DME, second NAP, safety claims, unsupported claims, Folly naming, Yemassee heading, GBP reviews 2.9/19 old store, citation NAP/coverage, backlink baseline",
+      "outputs": [
+        "clients/home-mobile-medical/audit/2026-10-07/findings.csv"
+      ],
+      "at": "2026-10-08T07:37:18-05:00",
+      "run": "20261007-203219-discovery-784c"
+    },
+    "S14": {
+      "outcome": "done",
+      "reason": "URL Decision Map 159 rows (all 118 crawled + 40 uncrawled + 1 Create), CM-019 C1-C4 per destructive candidate: 36 pass C1-C3 awaiting C4, 10 fail (Needs Evidence), 18 Georgia Hold-microsite; findings F-013..F-021",
+      "outputs": [
+        "clients/home-mobile-medical/audit/2026-10-07/url-decision-map.csv"
+      ],
+      "at": "2026-10-08T07:37:18-05:00",
+      "run": "20261007-203219-discovery-784c"
+    },
+    "S15": {
+      "outcome": "done",
+      "reason": "Conformance scorecard vs methodology/specs (all DRAFT - advisory): homepage, 5 service, 24 SC location (+9 GA held), 3 hubs (Low cap), about, 21 posts; findings F-022..F-032; checks needing body/full headings marked NE",
+      "outputs": [
+        "clients/home-mobile-medical/audit/2026-10-07/conformance-scorecard.csv"
+      ],
+      "at": "2026-10-08T07:37:18-05:00",
+      "run": "20261007-203219-discovery-784c"
+    },
+    "S16": {
+      "outcome": "done",
+      "reason": "Technical findings F-033..F-040 (all Low) + other Low items batched into one list (13 items) for Build handoff; schema readiness N/A (no structured-data export, S20 pending)",
+      "outputs": [
+        "clients/home-mobile-medical/audit/2026-10-07/low-items-handoff-list.csv"
+      ],
+      "at": "2026-10-08T07:37:18-05:00",
+      "run": "20261007-203219-discovery-784c"
     }
   },
   "last_run": {
@@ -608,7 +653,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-07T20:32:19-05:00",
+  "updated": "2026-10-08T07:37:18-05:00",
   "open_runs": {
     "20261007-203219-discovery-784c": {
       "step": "discovery:audit",

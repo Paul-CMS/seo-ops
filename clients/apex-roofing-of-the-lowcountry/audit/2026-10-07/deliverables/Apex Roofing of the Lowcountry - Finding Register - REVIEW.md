@@ -1,25 +1,26 @@
 # Apex Roofing of the Lowcountry - Finding Register - REVIEW
 
-**Status:** REVIEW — awaiting Paul (`audit_approved`). Rendered from the registers in `clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/` (latest revision of each finding); never edited by hand. All six page specs are **DRAFT**: every spec-based finding is advisory (DEC-LOCAL-003).
+**Status:** REVIEW — awaiting Paul (`audit_approved`). Rendered from the registers in `clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/` (latest revision of each finding); never edited by hand. All six page specs are **DRAFT**: every spec-based finding is advisory — accepted as advisory by Paul, 2026-10-08 (DEC-LOCAL-003, DEC-LOCAL-016). Revised 2026-10-08 with Paul's rulings (DEC-LOCAL-014–017; run 20261008-073627-discovery-2c41).
 
-**Date:** 2026-10-07 · **Run:** 20261007-194242-discovery-9495 · **Review:** S17 fresh-context audit-reviewer (CM-026) — 21 confirmed, 9 revised, 3 withdrawn
+**Date:** 2026-10-07 · **Run:** 20261007-194242-discovery-9495 · **Review:** S17 fresh-context audit-reviewer (CM-026) — 21 confirmed, 9 revised, 3 withdrawn; 2026-10-08: F-004, F-015, F-016 revised to apply Paul's rulings (no new review needed, DEC-LOCAL-017)
 
-**Active findings: 30** — High 3 · Medium 17 · Low 10 (CM-028). Low items go to the technical handoff as one batch.
+**Active findings: 30** — High 3 · Medium 18 · Low 9 (CM-028). Low items go to the technical handoff as one batch.
 
 ## Summary
 
 | ID | Sev. | Category | Finding | Pages | S17 | Client conf. | Paul |
 |---|---|---|---|---|---|---|---|
 | F-014 | High | 6 On-page and content structure | All 8 service-page SEO titles use 'Apex Roofing of the Lowcountry - [Service] - Hilton Head Island Metro Area'; the expected format for this client is `Service | 8 | confirmed (rev 2) | No | Yes |
-| F-015 | High | 6 On-page and content structure | About page SEO title is 'About Us \| Apex Roofing of The Lowcountry' — it carries neither the area nor the category the BB-302 About format requires (`About Bran | 1 | revised (rev 2) | No | Yes |
+| F-015 | High | 6 On-page and content structure | About page SEO title is 'About Us \| Apex Roofing of The Lowcountry' and its H1 is 'About Us' | 1 | revised (rev 3) | No | No |
 | F-022 | High | 6 On-page and content structure | City names in H tags on service pages (SVC-12 fails, High — BB-314 'no city in any H tag'): roof-repair H3 'How long does a typical roof repair take in Bluffton | 6 | confirmed (rev 1) | No | No |
 | F-001 | Medium | 3 Brand, entity and verified truth | Site copy contradicts two facts Paul confirmed | 3 | revised (rev 2) | Yes (Port Royal on-base / MCRD work only) | No |
 | F-002 | Medium | 3 Brand, entity and verified truth | Claims on live pages are not traceable to a confirmed fact (Brand Guide Section D is not reconciled yet; the returned sheet and Paul's answers are the current b | 31 | revised (rev 2) | Yes | No |
-| F-004 | Medium | 3 Brand, entity and verified truth | Homepage SEO title is 'Apex Roofing of the Lowcountry - Roofing Contractor - Hilton Head Island Metro Area' (83 characters) | 1 | revised (rev 3) | No | Yes |
+| F-004 | Medium | 3 Brand, entity and verified truth | Homepage SEO title is 'Apex Roofing of the Lowcountry - Roofing Contractor - Hilton Head Island Metro Area' (83 characters) | 1 | revised (rev 4) | No | No |
 | F-007 | Medium | 9 Schema readiness | Structured data in the served HTML: the homepage carries one JSON-LD node, `WebSite` (@id https://apexroofingtlc.com/#website); no business-entity nodes (Corpor | 34 | confirmed (rev 1) | No | No |
 | F-010 | Medium | 5 Architecture, services, locations, page types | The Metal Roofing service page is served at /metal-roofing-2/ (a WordPress duplicate-slug suffix); /metal-roofing/ 301-redirects to it and is still the link tar | 2 | confirmed (rev 1) | Yes | Yes |
 | F-011 | Medium | 6 On-page and content structure | All 21 money-page H1s open with 'The Best' (homepage, 8 service, 12 location), and Brand Guide H2 holds no CM-020 decision for any page (HP-07, SVC-09, LOC-07 f | 21 | revised (rev 2) | No | Yes |
 | F-012 | Medium | 6 On-page and content structure | The H1 repeats a title entity variant (BB-304) on 15 pages — merges F-013 (S17: one issue, one H1 rewrite fixes both) | 15 | revised (rev 2) | No | No |
+| F-016 | Medium | 3 Brand, entity and verified truth | The About page does not name the owners or show a named photo; it speaks of 'our seasoned professionals' and 'our in-house team' only (ABT-07 fails) | 1 | revised (rev 3) | No | No |
 | F-017 | Medium | 6 On-page and content structure | Opening paragraphs miss spec elements on all 20 service and location pages and the About page (SVC-13, LOC-10, ABT-06 fail; the homepage opening passes HP-10): | 21 | confirmed (rev 1) | No | No |
 | F-018 | Medium | 5 Architecture, services, locations, page types | Service pages do not follow the BB-314 section order (SVC-14 fails on 8): 7 of 8 have no 'how the service is delivered' H2 (roof-installation's 'Installation St | 8 | confirmed (rev 1) | No | No |
 | F-019 | Medium | 5 Architecture, services, locations, page types | All 12 location pages lack the BB-315 'Things to Do' and 'Top Sites' sections (LOC-17, LOC-20 fail) and close with the CTA as an H2 | 12 | confirmed (rev 1) | No | No |
@@ -33,7 +34,6 @@
 | F-003 | Low | 3 Brand, entity and verified truth | The approved public brand name 'Apex Roofing of the Lowcountry' (Paul 2026-10-06, B5) appears in other forms: 'Apex Roofing of The Lowcountry' (capital T) in th | 9 | confirmed (rev 1) | No | No |
 | F-008 | Low | 4 GBP and local visibility | The GBP Website field holds http://www.apexroofingtlc.com/ (Brand Guide A11, recorded by Paul at intake) | 2 | confirmed (rev 1) | No | Yes |
 | F-009 | Low | 2 Technical and crawl | /services/synthetic-roofing/ 301-redirects to /synthetic-roofing/, which returns 404 | 2 | confirmed (rev 1) | Yes | No |
-| F-016 | Low | 3 Brand, entity and verified truth | The About page does not name the owner(s) or show a named photo; it speaks of 'our seasoned professionals' and 'our in-house team' only (ABT-07 fails) | 1 | revised (rev 2) | No | No |
 | F-027 | Low | 6 On-page and content structure | Mixed title separators across the site (CM-014: consistency is the finding): money pages use ' - '; 8 utility pages use ' \| '; 5 category archives use '  - ' (d | 10 | confirmed (rev 1) | No | No |
 | F-029 | Low | 6 On-page and content structure | Meta descriptions: none on the 5 category archives; outside 150–160 characters on the homepage (244), all 8 service pages (162–194) and 9 location pages (157–17 | 19 | confirmed (rev 1) | No | No |
 | F-030 | Low | 2 Technical and crawl | Internal links point at redirecting URLs: '/contact' (no trailing slash; 301 → /contact/) from the header 'Request A Quote' button and CTA on 58 pages; '/metal- | 10 | confirmed (rev 1) | No | No |
@@ -66,14 +66,14 @@
 ### F-015 · High · 6 On-page and content structure
 
 - **Pages:** https://apexroofingtlc.com/about/
-- **Observed:** About page SEO title is 'About Us \| Apex Roofing of The Lowcountry' — it carries neither the area nor the category the BB-302 About format requires (`About Brand - Area Category`; ABT-01 fails, High per the spec: wrong title entity format). H1 is 'About Us' (ABT-04): the H1 format is marked 'Coastal default — needs Paul's ruling' in about.md element 4, and the meaning of 'Area Category' in element 2 is also a Coastal default — so the H1 part is advisory at Low until Paul rules (specs/README), and the High rests on ABT-01 alone. [S17 rev 2.] Spec is DRAFT (advisory).
-- **Evidence:** inputs/crawl/Apex Roofing of the Lowcountry - DFS - page_titles_all - 2026-10-07.csv and inputs/crawl/Apex Roofing of the Lowcountry - DFS - h1_all - 2026-10-07.csv rows https://apexroofingtlc.com/about/ (SRC-012; SRC-006)
+- **Observed:** About page SEO title is 'About Us \| Apex Roofing of The Lowcountry' and its H1 is 'About Us'. Paul ruled the About format on 2026-10-08 (DEC-LOCAL-015): title 'About Apex Roofing of the Lowcountry - Roofing Contractor in the Hilton Head Island–Bluffton–Port Royal Metropolitan Area' (a pool area variant — the reserved variant is homepage-only) and H1 'About Apex Roofing of the Lowcountry'. The live title carries neither the category nor the area (ABT-01 fails — High per the spec: wrong title entity format); the live H1 names no entity (ABT-04 fails, now firm). The ruled H1 carries the brand, which ABT-03 ('no brand') would otherwise fail — Paul's ruling governs for this client. Spec is DRAFT (advisory — accepted as advisory by Paul, DEC-LOCAL-016).
+- **Evidence:** inputs/crawl/Apex Roofing of the Lowcountry - DFS - page_titles_all - 2026-10-07.csv and inputs/crawl/Apex Roofing of the Lowcountry - DFS - h1_all - 2026-10-07.csv rows https://apexroofingtlc.com/about/; decisions.md DEC-LOCAL-015 (Paul 2026-10-08) (SRC-012; SRC-006)
 - **Classification / confidence:** Bradley Methodology Rule · Single-source
-- **Other explanation:** None — direct read. — tested: S17: read about.md elements 2 and 4 and the README rule for Coastal defaults; title and H1 re-read from the crawl exports.
-- **Recommendation:** Rebuild the About page (homepage and about last in Build order) with the BB-302 About title format and an entity H1 (no brand). Paul rules, in the site plan, what 'Area Category' means and the About H1 format — both Coastal defaults today.
+- **Other explanation:** None — direct read; the target format is now Paul's ruling, not a Coastal default. — tested: Paul ruled the title and H1 format (2026-10-08); title and H1 re-read from the crawl exports.
+- **Recommendation:** Rebuild the About page (last in Build order with the homepage) with title 'About Apex Roofing of the Lowcountry - Roofing Contractor in the Hilton Head Island–Bluffton–Port Royal Metropolitan Area' and H1 'About Apex Roofing of the Lowcountry' (Paul's ruling, DEC-LOCAL-015). Title change is structural (gate 2; pilot or Jonie handoff).
 - **Risk if acted / deferred:** Low — the page does not rank. / The page that should anchor the owner/brand entity says nothing in its title or H1.
-- **Depends on:** Build order (about last); Paul's ruling on the about-spec Coastal defaults (title 'Area Category', H1 format); structural_changes_allowed for the title. · **Owner (placeholder):** Build (Agent 2) · **Publication gate:** n/a
-- **Revision:** 2 (supersedes F-015.1) · S17: revised (rev 2)
+- **Depends on:** Build order (about last); structural_changes_allowed for the title. · **Owner (placeholder):** Build (Agent 2) · **Publication gate:** n/a
+- **Revision:** 3 (supersedes F-015.2) · S17: revised (rev 3)
 
 ### F-022 · High · 6 On-page and content structure
 
@@ -114,14 +114,14 @@
 ### F-004 · Medium · 3 Brand, entity and verified truth
 
 - **Pages:** https://apexroofingtlc.com/
-- **Observed:** Homepage SEO title is 'Apex Roofing of the Lowcountry - Roofing Contractor - Hilton Head Island Metro Area' (83 characters). The area term names the approved area entity — the Hilton Head Island metropolitan area (Brand Guide A5; a metro area, not one city, so HP-02's entity test passes on substance) — but in an abbreviated form ('Metro' for 'Metropolitan') of B2 pool variant 3, not the reserved homepage variant 'Hilton Head Island–Bluffton–Port Royal Metropolitan Area' that B1 assigns to the homepage SEO title. Fails HP-03 (no entity term shortened, BB-303) and the B1 assignment. Merges F-005 (same title, same fix — one finding per issue). F-005's 'no full state name' point is not carried: BB-302's homepage format `Brand - GB Category - Area Entity` has no state element and the title holds no abbreviated state; adding 'South Carolina' is a site-plan choice, not a failure. Severity Medium (S17): a wording correction inside the approved area entity; the entity model is not broken (CM-028). The same 'Hilton Head Island Metro Area' wording in the 8 service titles is handled by F-014 rev 2 (area term removed, Q1 = 1a); its use in the sitewide CTA H2 is pool-variant sharing, which CM-024 allows. Spec is DRAFT (advisory).
-- **Evidence:** inputs/crawl/Apex Roofing of the Lowcountry - DFS - page_titles_all - 2026-10-07.csv row https://apexroofingtlc.com/ (Title 1, Title 1 Length 83); brand-guide.md Section A5, A6, B1 ('The homepage SEO title carries this variant'), B2 pool item 3; methodology/specs/homepage.md HP-02, HP-03; sop-source BB-302, BB-303 (SRC-012; SRC-026)
+- **Observed:** Homepage SEO title is 'Apex Roofing of the Lowcountry - Roofing Contractor - Hilton Head Island Metro Area' (83 characters). Paul ruled on 2026-10-08 (CF-LOCAL-002; Brand Guide B1/B2 updated and entity re-approved) that the reserved homepage variant is 'Hilton Head Island Metropolitan Area' (Wikipedia's article title) and that it goes in the homepage SEO title, with a familiar pool variant in the H1. The live title therefore differs from the reserved variant by one word only: 'Metro' instead of 'Metropolitan' — an abbreviated entity term (HP-03, BB-303: never shortened). Severity stays Medium (CM-028: it still fails a spec check — HP-03 / the B1 assignment — and does not break the entity model, so not High; it is a spec check, not template hygiene, so not Low). Merges F-005 (S17). Spec is DRAFT (advisory — accepted as advisory by Paul, DEC-LOCAL-016).
+- **Evidence:** inputs/crawl/Apex Roofing of the Lowcountry - DFS - page_titles_all - 2026-10-07.csv row https://apexroofingtlc.com/ (Title 1, Title 1 Length 83); brand-guide.md Section A5, A6, B1 ('The homepage SEO title carries this variant'), B2 pool item 3; methodology/specs/homepage.md HP-02, HP-03; sop-source BB-302, BB-303; brand-guide.md B1 as re-approved 2026-10-08 (reserved variant 'Hilton Head Island Metropolitan Area'); conflicts.csv CF-LOCAL-002 (ruled); decisions.md DEC-LOCAL-014 (SRC-012; SRC-026)
 - **Classification / confidence:** Bradley Methodology Rule · Single-source
-- **Other explanation:** The shortened form may have been chosen to limit title length (BB-303 says never to); Google may treat 'Metro Area' and 'Metropolitan Area' as the same place, which is why this is a wording fix, not an entity break. — tested: S17: compared the title with A5 (Wikipedia entity 'Hilton Head Island metropolitan area'), B1, B2 and BB-302's homepage format; confirmed HP-02's 'not one city' test passes; F-005 merged.
-- **Recommendation:** At rebuild, the homepage SEO title carries the reserved B1 area variant in full, as recorded in Brand Guide B1 (BB-303 — never truncated), keeping the `Brand - GB Category - Area Entity` order already used. Title change is structural: after entity_approved + brand_guide_approved, via the WordPress pilot or a VA handoff (Jonie). The homepage H1 is not part of this recommendation (BB-313 §3, HP-08).
-- **Risk if acted / deferred:** A long title; one-time recrawl. Title changes are reversible. / The homepage title carries a shortened pool variant instead of its reserved variant — minor entity-wording drift; no ranking loss evidenced (homepage ranks #16 for its main entity keyword with the current title).
+- **Other explanation:** 'Metro' may have been chosen to shorten the title; Google likely treats 'Metro Area' and 'Metropolitan Area' as the same place — which is why this is a one-word wording fix, not an entity break. — tested: Compared the live title with the re-approved B1 reserved variant (one-word difference); CF-LOCAL-002 ruled by Paul.
+- **Recommendation:** Change one word in the homepage SEO title: 'Apex Roofing of the Lowcountry - Roofing Contractor - Hilton Head Island Metropolitan Area' (reserved variant in full, BB-303). Title change is structural: after brand_guide_approved, via the WordPress pilot or a VA handoff (Jonie). The homepage H1 stays locked (BB-313 §3, HP-08); if it is ever rebuilt, Paul's preference is a familiar pool variant — 'Lowcountry' or 'South Carolina Lowcountry' (DEC-LOCAL-014).
+- **Risk if acted / deferred:** Very low — one word; title changes are reversible. / The homepage title carries a shortened pool variant instead of its reserved variant — minor entity-wording drift; no ranking loss evidenced (homepage ranks #16 for its main entity keyword with the current title).
 - **Depends on:** entity_approved (met); brand_guide_approved; structural_changes_allowed. · **Owner (placeholder):** Build (Agent 2) / Jonie · **Publication gate:** n/a
-- **Revision:** 3 (supersedes F-004.2) · S17: revised (rev 3)
+- **Revision:** 4 (supersedes F-004.3) · S17: revised (rev 4)
 
 ### F-007 · Medium · 9 Schema readiness
 
@@ -170,6 +170,18 @@
 - **Risk if acted / deferred:** Low — none of the pages ranks. / Title and H1 repeat the same term on 15 pages; BB-304 variant spread lost.
 - **Depends on:** Site plan (Build); F-011 (superlative decision); F-014 rev 2. · **Owner (placeholder):** Build (Agent 2) · **Publication gate:** n/a
 - **Revision:** 2 (supersedes F-012.1) · S17: revised (rev 2)
+
+### F-016 · Medium · 3 Brand, entity and verified truth
+
+- **Pages:** https://apexroofingtlc.com/about/
+- **Observed:** The About page does not name the owners or show a named photo; it speaks of 'our seasoned professionals' and 'our in-house team' only (ABT-07 fails). Paul ruled the owner section on 2026-10-08 (DEC-LOCAL-015): Ralph and Pierce Brehany by name only, with a clearly visible placeholder for their photo and job titles. With the ruling in place the element is no longer a Coastal default awaiting Paul, so the specs/README 'never above Low' rule no longer applies: severity Medium per the spec's 'Fails as' (CM-028). Spec is DRAFT (advisory — accepted as advisory by Paul, DEC-LOCAL-016).
+- **Evidence:** inputs/live-pages/Apex Roofing of the Lowcountry - MANUAL - live-page-about - 2026-10-07.txt (full body); inputs/live-pages/Apex Roofing of the Lowcountry - MANUAL - live-page-home - 2026-10-07.txt — search 'Founded by Ralph and Pierce Brehany'; discovery/Apex Roofing of the Lowcountry - MANUAL - proof-sheet-answers-paul - 2026-10-06.md B2, follow-up 6; decisions.md DEC-LOCAL-015 (Paul 2026-10-08) (SRC-023; SRC-022)
+- **Classification / confidence:** Bradley Methodology Rule · Corroborated
+- **Other explanation:** An image on the page may show the owners without a caption (alt is empty). — tested: Checked the About capture for names (none); Paul ruled the owner section (2026-10-08).
+- **Recommendation:** Rebuilt About page names Ralph and Pierce Brehany by name only, with a clearly visible placeholder for their photo and their job titles (e.g. '[NEED: photo of Ralph and Pierce Brehany]', '[NEED: job titles — client to confirm]') so nobody ships it unnoticed (CM-016). The evidence gate (CM-041) treats both as open until filled.
+- **Risk if acted / deferred:** None. / The page meant to carry the people behind the business shows no people.
+- **Depends on:** Owner photo and job titles (client); Brand Guide F. · **Owner (placeholder):** Build (Agent 2) · **Publication gate:** n/a
+- **Revision:** 3 (supersedes F-016.2) · S17: revised (rev 3)
 
 ### F-017 · Medium · 6 On-page and content structure
 
@@ -326,18 +338,6 @@
 - **Risk if acted / deferred:** Low. / A referring domain's link lands on a 404; a visitor from that link sees an error.
 - **Depends on:** Client confirmation of the synthetic-roofing offering (target choice only). · **Owner (placeholder):** Jonie (redirect handoff) · **Publication gate:** n/a
 - **Revision:** 1 (supersedes N/A) · S17: confirmed (rev 1)
-
-### F-016 · Low · 3 Brand, entity and verified truth
-
-- **Pages:** https://apexroofingtlc.com/about/
-- **Observed:** The About page does not name the owner(s) or show a named photo; it speaks of 'our seasoned professionals' and 'our in-house team' only (ABT-07 fails). The homepage does name the founders ('Founded by Ralph and Pierce Brehany'), and Paul directed keeping that statement with no job titles (2026-10-06 B2; 2026-10-07 follow-up 6). Severity Low (S17 rev 2): the owner/founder section the check rests on (about.md element 6) is marked 'Coastal default — needs Paul's ruling', and specs/README says such an element is never reported above Low until Paul rules; CM-004 is PILOT. Spec is DRAFT (advisory) — severity per the spec's 'Fails as'; see Assumptions and Limitations.
-- **Evidence:** inputs/live-pages/Apex Roofing of the Lowcountry - MANUAL - live-page-about - 2026-10-07.txt (full body); inputs/live-pages/Apex Roofing of the Lowcountry - MANUAL - live-page-home - 2026-10-07.txt — search 'Founded by Ralph and Pierce Brehany'; discovery/Apex Roofing of the Lowcountry - MANUAL - proof-sheet-answers-paul - 2026-10-06.md B2, follow-up 6 (SRC-023; SRC-022)
-- **Classification / confidence:** Bradley Methodology Rule · Corroborated
-- **Other explanation:** An image on the page may show the owners without a caption (alt is empty). — tested: Checked the About capture for names (none). S17: checked about.md element 6 status (Coastal default).
-- **Recommendation:** Rebuilt About page names Ralph and Pierce Brehany, father and son founders, with a real photo, no job titles (Paul's direction). Photo files: Paul says all files are provided (location to confirm).
-- **Risk if acted / deferred:** None. / The page meant to carry the people behind the business shows no people.
-- **Depends on:** Owner photo (Brand Guide F). · **Owner (placeholder):** Build (Agent 2) · **Publication gate:** n/a
-- **Revision:** 2 (supersedes F-016.1) · S17: revised (rev 2)
 
 ### F-027 · Low · 6 On-page and content structure
 

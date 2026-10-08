@@ -2,6 +2,8 @@
 
 **Status:** REVIEW — awaiting Paul (`audit_approved`). Rendered from the registers in `clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/` (latest revision of each finding); never edited by hand.
 
+**Revised 2026-10-08** (run 20261008-073627-discovery-2c41): Paul's rulings applied to F-004, F-015 and F-016 (DEC-LOCAL-014–017). No new evidence was added and no paid calls were made. The Brand Guide B1/B2 change (reserved homepage variant "Hilton Head Island Metropolitan Area", entity re-approved 2026-10-08) is in SRC-026.
+
 ## Audit step outcomes (`steps.py manifest`)
 
 | Step | Outcome | Reason | Outputs | Date |

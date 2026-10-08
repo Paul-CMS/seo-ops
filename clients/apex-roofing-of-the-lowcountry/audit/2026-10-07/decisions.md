@@ -107,3 +107,35 @@ Reason: CM-026 (standing exception to RULE-011); review-selfcheck.md challenge p
 Affects: all findings; URL Decision Map U-001, U-070, U-071
 Decided by: audit-reviewer (S17)
 Maps to register entry: CM-026, CM-028, CM-019
+
+## DEC-LOCAL-014 · 2026-10-08 · Paul ruling (CF-LOCAL-002)
+Decision: HP-06 vs BB-304 ruled. The reserved homepage variant goes in the homepage SEO title; the H1 takes a familiar pool variant. The reserved homepage variant is now "Hilton Head Island Metropolitan Area" (Wikipedia's article title). Brand Guide B1/B2 and Discovery Record §3.8 were updated in run 20261008-073331-discovery-a866 and the entity was re-approved by Paul on 2026-10-08. "Hilton Head Island–Bluffton–Port Royal Metropolitan Area" moved to the pool. Homepage H1: locked as live (BB-313 §3, HP-08). If it is ever rebuilt, Paul prefers "Lowcountry" or "South Carolina Lowcountry". The HP-06 wording is corrected when the specs are approved.
+Reason: Paul's ruling at the audit approval.
+Affects: F-004 (rev 4 — now a one-word fix, 'Metro' → 'Metropolitan', Medium per CM-028); withdrawn F-006 stays withdrawn; conflicts.csv CF-LOCAL-002 ruled
+Decided by: Paul, 2026-10-08
+Maps to register entry: BB-304, BB-313 §3, HP-06; PROC-01 step 5
+
+## DEC-LOCAL-015 · 2026-10-08 · Paul ruling (About page)
+Decision: About page title "About Apex Roofing of the Lowcountry - Roofing Contractor in the Hilton Head Island–Bluffton–Port Royal Metropolitan Area" (a pool area variant; the reserved variant is homepage-only). H1 "About Apex Roofing of the Lowcountry". This H1 carries the brand, which ABT-03 would otherwise fail; Paul's ruling governs for this client. Owner section: Ralph and Pierce Brehany by name only, with a clearly visible placeholder for their photo and job titles so nobody ships it unnoticed.
+Reason: closes the about.md Coastal defaults (title "Area Category", H1 format, owner section) that F-015/F-016 waited on.
+Affects: F-015 (rev 3, High — ABT-01 and ABT-04 now firm), F-016 (rev 3, Low → Medium — no longer a Coastal default awaiting a ruling)
+Decided by: Paul, 2026-10-08
+Maps to register entry: BB-302, ABT-01, ABT-03, ABT-04, ABT-07; CM-016 (placeholders)
+
+## DEC-LOCAL-016 · 2026-10-08 · Paul ruling (3a — specs DRAFT)
+Decision: The audit is accepted as advisory while the page specs are DRAFT. The specs are approved before Build starts.
+Reason: Paul's ruling at the audit approval.
+Affects: every spec-based finding (DEC-LOCAL-003 stands)
+Decided by: Paul, 2026-10-08
+Maps to register entry: specs/README.md "Status line rule"
+
+## DEC-LOCAL-017 · 2026-10-08 · alignment and review
+Decision:
+- Brand Guide B2's SEO-title sentence is now aligned with Gate B 1a (DEC-LOCAL-011). The earlier "superseded for service pages" open point is closed.
+- No new findings were written. F-004, F-015 and F-016 were revised only to apply Paul's rulings (DEC-LOCAL-014, -015), so no new fresh-context review is needed; S17 (DEC-LOCAL-013) stands.
+- F-016's severity rises from Low to Medium mechanically: the ruling removes the "Coastal default — never above Low" condition the reviewer applied.
+- Final active counts: High 3, Medium 18, Low 9.
+Reason: Paul's rulings applied to existing findings.
+Affects: F-004, F-015, F-016
+Decided by: analyst (applying Paul's rulings)
+Maps to register entry: CM-026, CM-028

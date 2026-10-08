@@ -1,10 +1,10 @@
 # Apex Roofing of the Lowcountry - Recommendations - REVIEW
 
 **Status:** REVIEW. Waiting on Paul (`audit_approved`). Built from the Finding Register and URL Decision Map as they stand after the S17 review, using the latest revision of each finding. Nothing here is implemented, and nothing goes to the client automatically.
-**Date:** 2026-10-07 · **Run:** 20261007-194242-discovery-9495 · **Site:** https://apexroofingtlc.com/ (72 URLs crawled)
+**Date:** 2026-10-07, revised 2026-10-08 with Paul's rulings · **Runs:** 20261007-194242-discovery-9495, 20261008-073627-discovery-2c41 · **Site:** https://apexroofingtlc.com/ (72 URLs crawled)
 
 **Read this first:**
-- **All six page specs are DRAFT.** Every item that rests on a spec check (marked *advisory*) is a recommendation, not a gate, until you approve the spec.
+- **All six page specs are DRAFT.** Paul accepted the audit as advisory on that basis (3a, 2026-10-08), and the specs get approved before Build. Every item that rests on a spec check is marked *advisory*.
 - **Every item cites its finding** (F-###) and the research behind it.
 - **There is no recommendation without research support.**
 - **The Local Dominator reports' written advice is not used anywhere.** Only their measured ranks were read.
@@ -35,36 +35,40 @@ There are also claims the client has not yet confirmed: the price ranges differ 
 So the plan is to rebuild in place. The only redirect work is two repairs: an old URL that redirects to a 404, and moving `/metal-roofing-2/` to a clean slug, which is "Needs Evidence".
 
 **The numbers:**
-- **30 findings:** High 3 · Medium 17 · Low 10 (CM-028).
+- **30 findings:** High 3 · Medium 18 · Low 9 (CM-028).
 - **URL Decision Map, 83 rows:** Keep 78 · Redirect (fix / new 301) 2 · Merge 0 · Needs Evidence 3.
 
 ## 2 · Before you approve
 
-1. **HP-06 wording conflict (recorded, not resolved).**
-   - The homepage spec says the H1 "uses the reserved B1 variants".
-   - BB-304 says the H1 uses a *different* variant of every title entity, and B1's reserved area variant goes in the homepage title.
-   - The reviewer withdrew F-006 on that basis. The conflict is recorded as CF-LOCAL-002 under PROC-01, and the current rule (BB-304) was followed.
-   - It needs your ruling as a spec correction. The live homepage H1 is locked either way (BB-313 §3).
-2. **About-page rulings that F-015 and F-016 depend on.**
-   - In `about.md`, the meaning of "Area Category" in the About title, the About H1 format and the owner/founder section are all Coastal defaults "needing Paul's ruling".
-   - F-015 stays High on the title format (BB-302) alone. Its H1 part, and all of F-016, are advisory at Low until you rule.
-3. **Client confirmations still needed** (section 7 has the full list):
-   - Port Royal base housing / MCRD work.
-   - The synthetic-roofing redirect target.
+**Nothing in this section is still open for a decision.** The items below were resolved by Paul's rulings (2026-10-07 and 2026-10-08). The client confirmations are not decisions; they are collected through the client-confirmation list (section 7) and don't block `audit_approved`.
+
+1. **HP-06 vs BB-304 (CF-LOCAL-002) — resolved, Paul 2026-10-08.**
+   - The reserved homepage variant "Hilton Head Island Metropolitan Area" goes in the homepage SEO title.
+   - A familiar pool variant goes in the H1.
+   - The live homepage H1 stays locked (BB-313 §3). If it is ever rebuilt: "Lowcountry" or "South Carolina Lowcountry".
+   - The HP-06 wording is corrected when the specs are approved (DEC-LOCAL-014).
+2. **About page — resolved, Paul 2026-10-08 (DEC-LOCAL-015).**
+   - Title: "About Apex Roofing of the Lowcountry - Roofing Contractor in the Hilton Head Island–Bluffton–Port Royal Metropolitan Area".
+   - H1: "About Apex Roofing of the Lowcountry".
+   - Owners: Ralph and Pierce Brehany by name only, with a clearly visible placeholder for their photo and job titles.
+3. **Specs DRAFT — resolved (3a, Paul 2026-10-08).** The audit is accepted as advisory; the specs are approved before Build (DEC-LOCAL-016).
+4. **Brand Guide B2 and service titles — resolved.** B2 is now aligned with Gate B 1a: service titles are `Service Name - Brand` with no area term (DEC-LOCAL-011, DEC-LOCAL-017).
+5. **Homepage services block — resolved.** All 8 services are H3 links (Paul Exception, Gate B 2a, DEC-LOCAL-012).
+6. **Client confirmations — in progress, not a decision** (section 7):
+   - Port Royal base housing.
+   - Synthetic-roofing redirect target.
    - ShingleMaster status.
-   - The roof-replacement price range.
-   - The other unconfirmed claims in F-002.
-4. **Brand Guide B2's metro-area sentence is superseded for service pages** by your Gate B answer (DEC-LOCAL-011): service titles are `Service Name - Brand` with no area term.
-   - `brand-guide.md` was not edited, because B2 is under the entity approval.
-   - The reconcile step and the site plan carry the change forward. The sentence still governs the homepage title.
-5. **The homepage H1 stays as is** (BB-313 §3). You record it as your decision in Brand Guide H2 (F-011).
+   - One price range.
+   - The other claims in F-002.
 
 ## 3 · Decisions already made (respected throughout)
 
 - **Entity:**
   - Category: Roofing Contractor (variants Roofing Contractor, Roofer, Roofers).
   - Area: Hilton Head Island–Bluffton–Port Royal MSA.
-  - Reserved homepage variant: "Hilton Head Island–Bluffton–Port Royal Metropolitan Area".
+  - Reserved homepage variant: "Hilton Head Island Metropolitan Area" (re-approved 2026-10-08), used in the homepage SEO title only.
+  - "Hilton Head Island–Bluffton–Port Royal Metropolitan Area" is now a pool variant.
+  - Homepage H1: a familiar pool variant ("Lowcountry" or "South Carolina Lowcountry"). The live H1 is locked.
 - **Brand in SEO titles:** always written in full, "Apex Roofing of the Lowcountry". "Lowcountry" variants are never added on top in an SEO title.
 - **Service titles:** `Service Name - Apex Roofing of the Lowcountry`, with no area term (Q1 = 1a, DEC-LOCAL-011).
 - **Homepage services block:** all 8 services as H3 links. This is a Paul Exception to BB-313 §6 (Q2 = 2a, DEC-LOCAL-012).
@@ -80,7 +84,7 @@ So the plan is to rebuild in place. The only redirect work is two repairs: an ol
 |---|---|---|---|
 | A1 | Retitle the 8 service pages `[Service] - Apex Roofing of the Lowcountry`, with no area term *(advisory)* | F-014 | High |
 | A2 | Remove city names from service-page H tags. City angles move to that city's FAQ only if they pass your FAQ note *(advisory)* | F-022 | High |
-| A3 | Rebuild the About page: About title in BB-302 format, an entity H1, the founders named (no job titles), a real photo *(advisory; H1/owner parts Low until you rule)* | F-015, F-016 | High / Low |
+| A3 | Rebuild the About page to Paul's ruling (DEC-LOCAL-015): title "About Apex Roofing of the Lowcountry - Roofing Contractor in the Hilton Head Island–Bluffton–Port Royal Metropolitan Area"; H1 "About Apex Roofing of the Lowcountry"; Ralph and Pierce Brehany by name only, with a clearly visible placeholder for their photo and job titles *(advisory)* | F-015, F-016 | High / Medium |
 | A4 | Drop the "Coastal Georgia" and "homes and businesses" wording. Repeat Port Royal base-access lines only if the client confirms that work | F-001 | Medium |
 | A5 | Use only confirmed claims: one confirmed price range or none; ShingleMaster only if confirmed; code claims with a named source; no job titles in the author box | F-002 | Medium |
 | A6 | Make the CM-020 "The Best" decision per page and record it in the Decision Map and Brand Guide H2. On current evidence condition 2 is unmeasured everywhere, so the rebuilt H1s drop "The Best" unless new evidence passes. Homepage H1 unchanged | F-011 | Medium |
@@ -92,7 +96,7 @@ So the plan is to rebuild in place. The only redirect work is two repairs: an ol
 | A12 | Neighbourhoods: 6–12 real, sourced names per city; no road corridors; no name on two pages; "Parris Island" spelled correctly *(advisory)* | F-024 | Medium |
 | A13 | Heading order H2 → H3 with entity-named headers (About, Bluffton, Port Royal; Contact template) *(advisory)* | F-025 | Medium |
 | A14 | Homepage (built last): add a brand-level FAQ (4–6 questions) and a real-project gallery; all 8 service H3 links; H1 unchanged *(advisory)* | F-023 | Medium |
-| A15 | Homepage title: the reserved B1 variant in full, never abbreviated | F-004 | Medium |
+| A15 | Homepage title: change one word, "Metro" → "Metropolitan": "Apex Roofing of the Lowcountry - Roofing Contractor - Hilton Head Island Metropolitan Area" (reserved variant in full) | F-004 | Medium |
 | A16 | Featured-blog block on the homepage only after the blog redirects are live *(advisory)* | F-032 | Low |
 
 ### B. Structural — after `entity_approved` (met) and `brand_guide_approved`

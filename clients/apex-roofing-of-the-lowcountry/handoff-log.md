@@ -756,3 +756,52 @@ Generated from the safety log (clients/apex-roofing-of-the-lowcountry/log.md) �
 **Anything the next agent would otherwise get wrong**
 - The area entity itself (the MSA) is unchanged. Only which name is reserved for the homepage title changed.
 
+## /discovery · 2026-10-08 · run 20261008-073627-discovery-2c41
+
+**What I did**
+- Applied Paul's 2026-10-08 audit-approval rulings to the existing findings. Each change is a superseding row; there are no new findings and no paid calls.
+  - **F-004 rev 4:** the homepage title is now a one-word fix, "Metro" → "Metropolitan". The reserved variant is "Hilton Head Island Metropolitan Area". Stays Medium.
+  - **F-015 rev 3:** the About page title and H1 follow Paul's ruling. Stays High.
+  - **F-016 rev 3:** owners by name only, with a visible placeholder for their photo and job titles. Low → Medium.
+- Marked CF-LOCAL-002 as ruled by Paul in `conflicts.csv`.
+- Updated the "Paul Decision" cells on the homepage and About rows of the URL Decision Map. The map still has 83 rows.
+- Recorded four entries in the audit's decision log:
+  - DEC-LOCAL-014: CF-LOCAL-002 ruled, and the homepage H1 preference if it is ever rebuilt.
+  - DEC-LOCAL-015: About page.
+  - DEC-LOCAL-016: 3a — accepted as advisory while the specs are DRAFT.
+  - DEC-LOCAL-017: B2 now aligned with 1a; no new review needed.
+- Re-rendered the four REVIEW deliverables from the latest revision of each finding. Re-marked `audit_deliverables` with the four files.
+- Archive-and-replace in Drive for the Recommendations (change #117) and the Evidence Manifest (change #119):
+  - The old copies were renamed "… - REVIEW - 2026-10-08.md" and moved to `_Archive`.
+  - The new copies were uploaded to Deliverables. Byte sizes match the local files.
+
+**What was decided, and why**
+- **F-004 stays Medium (CM-028):** the title still fails a spec check (HP-03, the B1 assignment) but does not break the entity model.
+- **F-016 goes from Low to Medium:** Paul's ruling removed the "Coastal default — never above Low" condition.
+- **Paul's About H1 carries the brand,** which ABT-03 would otherwise fail. His ruling governs for this client.
+- **No fresh-context review is needed.** These are Paul's rulings applied to findings the S17 review already checked.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| `audit_approved` | Paul | Safe fixes, the Low batch |
+| Client confirmations (Port Royal base housing, synthetic roofing, ShingleMaster, one price range, other F-002 claims) | client via Paul | Brand Guide D/D2; F-009 target |
+| Specs approved before Build; HP-06 wording correction | Paul | Build |
+| Finding Register and URL Decision Map not in Drive (too large to paste) | Paul (direct-upload tool) | Drive completeness only |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Recommendations | clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Recommendations - REVIEW.md | REVIEW · Drive https://drive.google.com/file/d/1dVCYpd3KlpBmAWDbHKJWmMgyzZHVzNlG/view |
+| Evidence Manifest | clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/Apex Roofing of the Lowcountry - Evidence Manifest - REVIEW.md | REVIEW · Drive https://drive.google.com/file/d/1-M0Pzd79LUGQ2wMIs6QFmf565IEnfr3y/view |
+| Finding Register / URL Decision Map | same folder | REVIEW, local only |
+
+**What I could not check**
+- Nothing new this run. The limits of the 2026-10-07 audit still apply: JavaScript-loaded content, no GSC/GA4, no citations.
+
+**Anything the next agent would otherwise get wrong**
+- The reserved homepage variant is now "Hilton Head Island Metropolitan Area".
+- "Hilton Head Island–Bluffton–Port Royal Metropolitan Area" is a pool variant; it is what the About title uses.
+- The live homepage H1 stays locked.
+- Read the latest revision of each finding: F-004 is at rev 4; F-015 and F-016 are at rev 3.
+
