@@ -282,6 +282,9 @@ than re-logging an exception each time.
   from `_CLIENT FOLDER TEMPLATE - copy per client` as a real folder copy by `drive.py folder`. A new client: check
   whether `<Client> - TMS` exists in v3 and go from there. **Never search or scan other Drive folders** for prior work
   on a client (the guard blocks connector searches not scoped to a v3 folder). Audits reference only that folder.
+- **A VA's Mac** (`VA-SETUP.md`) has its own `machine.json` (git-ignored): `drive_local_root` (its path to v3,
+  overriding config.json) and `can_approve: false` — the VA runs the stages, approve.py refuses there, and Paul
+  approves on his own Mac after a `git pull`. One client is worked on one Mac at a time.
 - Every file follows `methodology/naming-convention.md` (check with `scripts/naming.py`).
   Content: `[CODE] - [Service or Location] - [Client]`. Deliverables:
   `[Client] - [Artifact] - [STATUS].md`. Evidence:

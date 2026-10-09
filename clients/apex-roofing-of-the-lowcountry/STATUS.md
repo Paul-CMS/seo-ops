@@ -1,17 +1,16 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 6 of 8 — Pilot, then batches (batch pilot)**
-- **What is happening now:** waiting for Paul's approval — the drafts for batch pilot are ready: review each with the semantic review table (4 SEM item(s) found) and approve them together
-- **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (4 SEM it; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
-- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry batch:pilot:drafts --sem <SEM items to apply, e.g. 1,3,4 — or none>` (or asks for changes first)
+- **What is happening now:** ready to start: apply SEM-1, SEM-2, SEM-3 to batch pilot and re-run the E-checks on the changed sections
+- **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect; Paul — Residential Roofer (choice 4a) lives in Brand Guide A3, inside entity_approved (A+B1+B2) a
+- **Next action:** `/build apex-roofing-of-the-lowcountry batch pilot apply-sem` — Paul opens a **new session on Haiku** in ~/Documents/seo-ops and types `/next apex-roofing-of-the-lowcountry` (agents: build (opus), clerk (haiku))
 
-_Generated 2026-10-09T13:58 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-09T14:02 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the drafts for batch pilot are ready: review each with the semantic review table (4 SEM item(s) found) and approve them together | 2026-10-09 | /approve apex-roofing-of-the-lowcountry batch:pilot:drafts |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
 | Paul | Residential Roofer (choice 4a) lives in Brand Guide A3, inside entity_approved (A+B1+B2) and brand_guide_approved (A+D+E+G). Writing it voids both until re-approved. (i) write now and re-approve: /approve apex-roofing-of-the-lowcountry entity_approved brand_guide_approved site_plan; or (ii) use it on the site plan authority and write A3 at the next Brand Guide revision. A3 not edited. | 2026-10-08 | residential_roofer_a3_write |
