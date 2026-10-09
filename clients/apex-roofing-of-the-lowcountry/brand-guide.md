@@ -149,7 +149,6 @@ Site-claim refs (W#, C#) are the Discovery Record's.
 | Clean-up | Clean-up each day and a magnet sweep for loose nails | Paul Approved 2026-10-09 | Paul 2026-10-09 (settled pilot_facts_2026_10_09; reviews; magnet per Paul) |
 | Permits | On a roof replacement, Apex gets the Town permit | Paul Approved 2026-10-09 | Paul 2026-10-09 (settled pilot_facts_2026_10_09; review 2026-08-15) |
 | Synthetic roofing offered | Yes | Paul Approved 2026-10-09 | Paul 2026-10-09 (settled synthetic_roofing) |
-| Who does the work on the roof | Ralph and Pierce Brehany (father and son) both get on the roof | Paul Approved 2026-10-09 | Paul 2026-10-09 (settled w25_who_goes_on_the_roof; W25) |
 
 ### D2 · Unsupported claims
 Claims the site makes publicly that the client could not substantiate. Writers must not repeat

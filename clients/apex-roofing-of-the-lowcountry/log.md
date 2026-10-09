@@ -2429,3 +2429,5 @@ Folded in: d-permits: new row (Paul 2026-10-09 (settled pilot_facts_2026_10_09; 
 Folded in: d-synthetic-roofing-offered: new row (Paul 2026-10-09 (settled synthetic_roofing))
 Folded in: loc-bluffton page facts: neighborhoods (settled bluffton_communities)
 Folded in: SD - Roof Repair - Apex Roofing of the Lowcountry.md line 76: inline link placeholder in the one P11 form (no wording change)
+
+## MIGRATION · 2026-10-09T18:09:42-05:00 · rewrite 2 P4 repair: 1 repeated fact row(s) removed from the Brand Guide · approvals counting again: gate brand_guide_approved: brand-guide.md#A+D+E+G · no stamp changed

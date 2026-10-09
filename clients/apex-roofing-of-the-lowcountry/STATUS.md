@@ -1,17 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
-- **Stage 4 of 8 — Audit**
-- **What is happening now:** waiting for Paul's approval — the audit and the reconciled Brand Guide are ready for your approval in one line — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts
-- **Waiting on:** Paul — the audit and the reconciled Brand Guide are ready for your approval in one line — the rec; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
-- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry brand_guide_approved --files "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G"` (or asks for changes first)
+- **Stage 6 of 8 — Pilot, then batches (batch s1)**
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — build:evidence finished (run 20261009-142804-build-8390) and that stage is in review mode ; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
+- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
 
-_Generated 2026-10-09T18:08 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-09T18:09 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the audit and the reconciled Brand Guide are ready for your approval in one line — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts | 2026-10-09 | /approve apex-roofing-of-the-lowcountry brand_guide_approved |
+| Paul | build:evidence finished (run 20261009-142804-build-8390) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /interview apex-roofing-of-the-lowcountry facts s1 (the evidence gate blocked svc-roof-replacement, svc-roof-installation, svc-roof-inspections, svc-emergency-roof-repair — targeted questions for the owner (you send them). Or waive instead: /approve apex-roofing-of-the-lowcountry evidence:svc-roof-replacement --reason "<why you waive it>" · /approve apex-roofing-of-the-lowcountry evidence:svc-roof-installation --reason "<why you waive it>" · /approve apex-roofing-of-the-lowcountry evidence:svc-roof-inspections --reason "<why you waive it>" · /approve apex-roofing-of-the-lowcountry evidence:svc-emergency-roof-repair --reason "<why you waive it>") | 2026-10-09 | /next apex-roofing-of-the-lowcountry |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
