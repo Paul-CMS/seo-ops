@@ -1,16 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 6 of 8 — Pilot, then batches (batch pilot)**
-- **What is happening now:** ready to start: brief for svc-roof-repair (its own run)
-- **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Bra; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
-- **Next action:** `/build apex-roofing-of-the-lowcountry brief pilot svc-roof-repair` — Paul opens a **new session on Haiku** in ~/Documents/seo-ops and types `/next apex-roofing-of-the-lowcountry` (agents: build (opus), clerk (haiku))
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — build:brief finished (run 20261008-150539-build-a2ae) and that stage is in review mode — l; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Bra
+- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
 
-_Generated 2026-10-08T15:05 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-08T22:21 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
+| Paul | build:brief finished (run 20261008-150539-build-a2ae) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry brief pilot loc-bluffton (brief for loc-bluffton (its own run)) | 2026-10-08 | /next apex-roofing-of-the-lowcountry |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Brand Guide D) | 2026-10-08 | send_the_client_one_question_is_your_cer |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
@@ -60,4 +61,4 @@ _Generated 2026-10-08T15:05 by the system — do not edit. Start every session i
 
 - DataforSEO: $0.59
 
-Last run: /build 2026-10-08T15:00 — Evidence gate ran; script bug blocked both pages (status parsing). Real gaps: repair scope confirmation, 6th neighborhood for Bluffton, response time. Paul waived blocks and approved forward to briefs. Pages to brief: svc-roof-repair (service), loc-bluffton (location).
+Last run: /build 2026-10-08T22:21 — Roof Repair brief written. H1 no 'The Best' (search test failed CM-020). FAQ sections set. Evidence gaps flagged [NEED] on repair types; repair warranty, duration, cost drivers unknown. Flags: 25% rule may not apply in SC; repair warranty term needs client clarification; facts interview needed on repair scope, duration, cost drivers, warranty, methods.

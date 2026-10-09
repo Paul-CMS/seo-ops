@@ -59,3 +59,11 @@ Kept for this test run. Anything Paul writes as "note:" is added here verbatim, 
 - Brand line confirmed (Stannah, Bruno, Harmar). Folly Island. Schema assets: placeholders, check back at schema.
 - Payment methods: general accepted payment methods. Asked what the site says about after-hours service.
 - "Then we run B" (system runs the audit step on the existing evidence).
+
+## 2026-10-08 — Paul's answers to the audit's open choices
+1. "retire pages" — retire the 36 candidates (Paul confirms CM-019 condition 4 for the client).
+2. a — default 301 targets.
+3. "3.b" — Paul Exception to redirect the CM-019-failing pages (scope to confirm in the next session).
+4. a — homepage H1 stays; reserved wording goes in the title (as for Apex).
+5. "it was the old bme gbp, and is ours now."
+- Asked for a handoff to a new session (one session per stage, new rules). → session-handoff-2026-10-08.md

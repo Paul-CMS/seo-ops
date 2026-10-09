@@ -345,3 +345,4 @@ Approved version: methodology/specs/location.md (sha bf5b163f4357)
 Approved version: methodology/specs/service.md (sha 0d679dadad45)
 
 ## CONDITION · 2026-10-08T13:15:46-05:00 · Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)
+- REVIEW CONTINUED 2026-10-08T22:19 · after discovery:audit (run 20261007-203219-discovery-784c) · Paul typed /next

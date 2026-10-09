@@ -148,7 +148,7 @@
   },
   "pages": {
     "svc-roof-repair": {
-      "state": "planned",
+      "state": "brief_written",
       "type": "service",
       "name": "Roof Repair",
       "url": "https://apexroofingtlc.com/roof-repair/",
@@ -197,6 +197,14 @@
             "Unverified": 9,
             "Conflict": 0
           }
+        }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/pilot/SB - Roof Repair - Apex Roofing of the Lowcountry.md",
+          "run": "20261008-150539-build-a2ae",
+          "at": "2026-10-08T22:18:52-05:00",
+          "sha": "6cf0d2f3fe0b"
         }
       }
     },
@@ -787,12 +795,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261008-143018-build-a144",
+    "run_id": "20261008-150539-build-a2ae",
     "command": "build",
-    "finished": "2026-10-08T15:00:27-05:00",
-    "result": "Evidence gate ran; script bug blocked both pages (status parsing). Real gaps: repair scope confirmation, 6th neighborhood for Bluffton, response time. Paul waived blocks and approved forward to briefs. Pages to brief: svc-roof-repair (service), loc-bluffton (location).",
+    "finished": "2026-10-08T22:21:57-05:00",
+    "result": "Roof Repair brief written. H1 no 'The Best' (search test failed CM-020). FAQ sections set. Evidence gaps flagged [NEED] on repair types; repair warranty, duration, cost drivers unknown. Flags: 25% rule may not apply in SC; repair warranty term needs client clarification; facts interview needed on repair scope, duration, cost drivers, warranty, methods.",
     "changes": 0,
-    "step": "build:evidence",
+    "step": "build:brief",
     "batch": "pilot"
   },
   "spend": {
@@ -814,7 +822,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-08T15:05:35-05:00",
+  "updated": "2026-10-08T22:21:57-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -880,5 +888,10 @@
       "first_run": "20261008-143018-build-a144",
       "at": "2026-10-08T15:00:27-05:00"
     }
+  },
+  "review_pause": {
+    "run_id": "20261008-150539-build-a2ae",
+    "step": "build:brief",
+    "at": "2026-10-08T22:21:57-05:00"
   }
 }
