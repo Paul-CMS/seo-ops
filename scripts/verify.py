@@ -176,6 +176,10 @@ def verify_batch(a, d):
                 first = next((i for i, (x, y) in enumerate(zip(wa, la)) if x != y), min(len(wa), len(la)))
                 diffs.append(f"body text differs from the approved file at: "
                              f"{(la[first] if first < len(la) else '(text missing)')[:120]!r}")
+            import placeholders   # P11: a live page never carries a placeholder or the open-items notice
+            left = placeholders.live_hits(strip_tags(re.sub(r"<(script|style|head)\b.*?</\1>", "", body, flags=re.S | re.I)))
+            if left:
+                diffs.append(f"placeholder text on the live page: {', '.join(left[:6])}")
             miss_links = [u for u in p.get("links_placed", []) if u not in links]
             if miss_links:
                 diffs.append(f"link-table links missing: {', '.join(miss_links[:6])}")

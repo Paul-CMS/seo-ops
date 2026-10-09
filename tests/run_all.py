@@ -126,6 +126,7 @@ class Agent:
         self.evidence_gaps = {}   # page id -> fact keys the page's facts file leaves out (CM-041 tests)
         self.plan = None          # a site plan to use instead of the default one
         self.ship_seen = []       # (batch, {earlier page: WordPress status}) at each ship run (CM-055)
+        self.draft_extra = {}     # page id -> text appended to its draft (P11 placeholder tests)
         self.c = SB / "clients" / slug
 
     def sh(self, cmd):
@@ -275,7 +276,7 @@ class Agent:
                 gaps = status(S)["pages"][pid]["evidence"]["result"] in ("warn", "block")
                 f = self.w(f"build/B-{pid}.md", f"# Brief {pid}\n" + ("\n## Evidence gaps\n- see the grid\n" if gaps else ""))
             else:
-                f = self.w(f"build/D-{pid}.md", page_file(pid, "v1"))
+                f = self.w(f"build/D-{pid}.md", page_file(pid, "v1") + self.draft_extra.get(pid, ""))
             self.sh(f"python3 scripts/status.py page-stage {S} {pid} --stage {sub} --file {f} --run {rid}")
             self.fin(rid, f"{sub} {pid}")
         elif (name, sub) == ("/build", "batch"):
@@ -290,7 +291,7 @@ class Agent:
                 self.sh(f"python3 scripts/status.py batch {S} {bid} --state drafts_written "
                         f"--sem-table {shlex.quote(sem)} --sem-findings {n}")
             else:  # apply-sem
-                fs = [self.w(f"build/D-{p}.md", page_file(p, "v2")) for p in pages]
+                fs = [self.w(f"build/D-{p}.md", page_file(p, "v2") + self.draft_extra.get(p, "")) for p in pages]
                 if bid in self.fail_checks_once:
                     self.fail_checks_once.discard(bid)
                     self.sh(f'python3 scripts/status.py batch {S} {bid} --state sem_check_failed --files {",".join(fs)} '
@@ -1989,6 +1990,55 @@ def t_writing_never_waits():
           gm["build:ship"]["pilot"] == gm["build:published"]["pilot"] == "batch:pilot:drafts", gm["build:ship"])
 
 
+def t_placeholders():
+    """P11 (Q10): no placeholder ships silently."""
+    sample = ("---\npage_id: x\n---\n# H1\n\nSee [our work](/gallery/) and [LINK → /emergency-roof-repair/ · CM-022 "
+              "exception]. [Link placeholder: /x/ — note]. Price [NEED: price range]. [Map: embed a map here]. "
+              "TODO later, TBD, XXX, {{city}}, [PLACEHOLDER: photo], [TBD: owner], [PAUL'S call]. [x] done.\n\n"
+              "| [Link wheel: populate service links here] |\n")
+    code, out = sh("python3 -c \"import sys, json; sys.path.insert(0,'scripts'); import placeholders as P; "
+                   f"t = open('/dev/stdin').read(); print(json.dumps([[i['kind'], i['text']] for i in P.scan_text(t)]))\" "
+                   f"<<'EOF'\n{sample}EOF")
+    got = json.loads(out) if code == 0 else []
+    texts = [t for _, t in got]
+    check("P11: the scan finds every placeholder kind, one entry each",
+          all(any(x in t for t in texts) for x in ("[LINK →", "[Link placeholder", "[NEED:", "[Map:", "TODO", "TBD", "XXX",
+                                                   "{{city}}", "[PLACEHOLDER", "[TBD:", "[PAUL'S")) and len(got) == 11, got)
+    check("P11: a Markdown link, a checkbox and the unfilled link-wheel row (filled at ship) are not placeholders",
+          not any(t in ("[our work]", "[x]") or "Link wheel" in t for t in texts), texts)
+    code, out = sh("python3 -c \"import sys; sys.path.insert(0,'scripts'); import publish; "
+                   "print(publish.placeholder_problems('See [Link placeholder: /x/ — y] [NEED: z]'), "
+                   "publish.placeholder_problems('See [LINK → /x/ · CM-022 exception]'))\"")
+    check("P11: an inline link placeholder must use the one form [LINK → /slug/ · reason]",
+          "write it as [LINK →" in out and out.rstrip().endswith("[]"), out)
+
+    def setup(ag):
+        ag.sem_findings = {"pilot": 0}
+        ag.draft_extra = {"svc-roof-repair": "\nPrices vary. [NEED: the price range the owner quotes]\n"}
+    log, decisions, runs, ag = walkthrough("ph-co", setup=setup, max_posts=0)
+    st = status("ph-co")
+    page = st["pages"]["svc-roof-repair"]
+    raw = (wp_state().get("items") or {}).get(str(page.get("wp_id")), {}).get("content", {}).get("raw", "")
+    check("P11: a WordPress draft with an open placeholder carries the visible 'Open items' notice at the top",
+          raw.startswith("<!-- wp:group") and "Open items on this page" in raw and "[NEED: the price range" in raw, raw[:300])
+    check("P11: the open item is recorded on the page", any("price range" in i["text"] for i in page.get("open_items", [])),
+          page.get("open_items"))
+    other = st["pages"]["loc-springfield"]
+    oraw = (wp_state().get("items") or {}).get(str(other.get("wp_id")), {}).get("content", {}).get("raw", "")
+    check("P11: a clean page gets no notice", oraw and "Open items on this page" not in oraw, oraw[:200])
+    hs = sorted((SB / "clients/ph-co/handoffs").glob("H-*-publish.csv"))
+    rows = [r for h_ in hs for r in csv.DictReader(open(h_, newline=""))]
+    check("P11: the placeholder is a row for Jonie in the publish handoff, next to the page's publish row",
+          any(r["field"] == "open item" and "price range" in r["old"] and r["decision_map_ref"] == "svc-roof-repair"
+              for r in rows), [r["field"] for r in rows])
+    rep = " ".join(f.read_text() for f in (SB / "clients/ph-co/handoffs").glob("verify-*.md"))
+    check("P11: /verify fails a live page that still carries a placeholder", "placeholder text on the live page" in rep, rep[:600])
+    b = next(x for x in st["build"]["batches"] if x["id"] == "pilot")
+    code, out = sh("python3 -c \"import sys, json; sys.path.insert(0,'scripts'); import status as S, next as N; "
+                   "st = S.load('ph-co'); print(N.open_items_note(st, S.batch(st, 'pilot')))\"")
+    check("P11: the drafts approval line lists every placeholder per page", "price range" in out and "D-svc-roof-repair" in out, out)
+
+
 def t_migration():
     sh('python3 scripts/status.py init mg-co --name "Mg Co" --domain mg.example --type full --industry roofing')
     ag = Agent("mg-co"); ag.fin(ag.start("new-client"), "set up")
@@ -2257,7 +2307,7 @@ def t_batch_of_five():
 
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_section_approval, t_reviews_parse, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view,
-             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_pilot_order, t_writing_never_waits, t_migration, t_sessions, t_guard_rewrite,
+             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_pilot_order, t_writing_never_waits, t_placeholders, t_migration, t_sessions, t_guard_rewrite,
              t_answer_once, t_research_before_asking, t_url_rule, t_batch_of_five]
 
 

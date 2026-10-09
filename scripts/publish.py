@@ -52,6 +52,7 @@ import sys
 import urllib.parse
 from pathlib import Path
 
+import placeholders
 import run as R
 import status as S
 from lib import ROOT, client_dir, config, die, now, sha12
@@ -102,7 +103,10 @@ def placeholder_problems(text):
     """Every placeholder needs a visible [NEED: …] note on the same line (CM-016; Paul, 2026-10-09). [] when clean."""
     out = []
     for n, line in enumerate(text.splitlines(), 1):
-        if "[NEED:" in line or PLACEHOLDER.match(line.strip()):
+        if re.search(r"\[Link placeholder", line, re.I):   # P11: one form only, so the link-wheel step can find it
+            out.append(f"line {n}: inline link placeholder — write it as [LINK → /slug/ · reason]")
+            continue
+        if "[NEED:" in line or "[LINK →" in line or PLACEHOLDER.match(line.strip()):
             continue
         hrefs = [m.group(1).strip() for m in re.finditer(r"\[[^\]]*\]\(([^)]*)\)", line)]
         hrefs += [m.group(1).strip() for m in re.finditer(r"href=[\"']([^\"']*)[\"']", line, re.I)]
@@ -287,6 +291,10 @@ def cmd_drafts(a):
         f, m = by_page[pid]
         tables, pending = tables_for(st, wheel, pid, b["pages"], together=not a.page)
         content = to_blocks(m["body"], tables)
+        # P11: every open placeholder is a visible notice at the top of the draft and a row for Jonie
+        open_items = placeholders.scan(ROOT / f)
+        if open_items:
+            content = placeholders.notice_block(open_items) + "\n\n" + content
         slug_name = slug_of(m["url"])
         existing = None
         try:
@@ -308,6 +316,7 @@ def cmd_drafts(a):
         how = (f"Replace the content of the live page at {m['url']} with this draft's blocks (keep that URL), "
                "then trash the draft" if in_place else f"Publish at exactly {m['url']}")
         page.update({"wp_id": d["id"], "wp_type": ptype, "url": m["url"], "file": f, "state": "drafted",
+                     "open_items": [{"line": i["line"], "text": i["text"]} for i in open_items],
                      "links_placed": [u for k, rows in tables.items() if k in placed for _, u in rows],
                      "publish": {"draft_link": d.get("link", ""), "how": how, "replaces": m["replaces"]}})
         pending = [x for x in pending if x[0] in placed]
@@ -371,6 +380,10 @@ def cmd_handoff(a):
             rows += [{"url": old, "field": "301", "old": old, "new": p["url"],
                       "reason": f"replaced by {pid} — do it together with the publish", "decision_map_ref": pid}
                      for old in pub.get("replaces") or []]
+            rows += [{"url": pub.get("draft_link", ""), "field": "open item", "old": i["text"], "new": "",
+                      "reason": f"approved file line {i['line']}: resolve before publishing — do not publish {p['url']} "
+                                "while its 'Open items' notice is on the page (P11)", "decision_map_ref": pid}
+                     for i in p.get("open_items") or []]
     d = client_dir(a.slug) / "handoffs"
     pre = ["## Technical blockers (already sent — listed here so this is the one place to look)", ""]
     for hid in st.get("blocker_handoffs") or []:

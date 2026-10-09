@@ -285,7 +285,8 @@ def build_batch(st, slug, b):
             + (" --sem <SEM items to apply, e.g. 1,3,4 — or none>" if n else "") + extras(st),
             (f"a re-check failed after applying your SEM picks ({failed}) — review and approve again"
              if failed else f"the drafts for batch {bid} are ready: review each with the semantic review table "
-             + (f"({n} SEM item(s) found) " if n else "(nothing found) ") + "and approve them together"))
+             + (f"({n} SEM item(s) found) " if n else "(nothing found) ") + "and approve them together")
+            + open_items_note(st, b))
     if state in ("drafts_written", "sem_check_failed") and drafts.get("sem_ids") and not drafts.get("applied"):
         out("run", f"/build {slug} batch {bid} apply-sem",
             f"apply {', '.join(drafts['sem_ids'])} to batch {bid} and re-run the E-checks on the changed sections")
@@ -293,6 +294,21 @@ def build_batch(st, slug, b):
     out("run", f"/build {slug} ship {bid}",
         f"WordPress drafts for batch {bid} from the approved files (link tables filled) — the next batch does not "
         "wait for publishing; every page goes to Jonie together")
+
+
+def open_items_note(st, b):
+    """P11: every placeholder per page, in the drafts approval line, so Paul approves knowingly."""
+    import placeholders
+    from lib import ROOT
+    parts = []
+    for f in (b.get("files") or {}).get("drafts") or []:
+        p = ROOT / f
+        if p.is_file() and "Semantic Review" not in f:
+            items = placeholders.scan(p)
+            if items:
+                parts.append(f"{Path(f).name}: {placeholders.summary(items)}")
+    return (". Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a "
+            "row for Jonie): " + " | ".join(parts)) if parts else ". No placeholders in the drafts"
 
 
 def publish_wait(st, slug, b):

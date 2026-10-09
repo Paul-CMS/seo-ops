@@ -26,6 +26,9 @@ Rules are cited by ID from `methodology/rulings.md`; open it at the IDs the list
    logged, listed separately for Paul's approval. Voice queries route to an existing FAQ or a
    blog gap — never a new page (CM-012); no invented search volumes.
 4. Any exception Paul approves goes to Jonie as a `link_table` handoff (the system never edits a live page).
+   **Inline link markers (P11):** every `[LINK → /slug/ · reason]` in an approved page is one of these proposals:
+   approved → the handoff row turns that text into a real link; not approved → the row removes the bracket and keeps
+   the words. List every marker (`placeholders.py scan <file>`); none may stay on a live page (`/verify` fails it).
 5. **Verify** with a fresh `/crawl` of the published pages only (`status.py urls <slug> --published`) and the link-implementation-qa method: the wheel in both
    directions, anchors character for character, destinations 200 directly. Every gap is a fix.
 6. Prepare Block 3 (tables on every page, QA zero failures, no pending URL change, Brand Guide

@@ -99,6 +99,11 @@ Write that one page by `methodology/writing-commercial.md` from its approved bri
 Stage 1 plan, Stage 2 draft, Stage 3 self-critique **E1–E10** plus the page spec's checks (report all).
 Read the drafts already written in this batch and earlier approved pages so you do not reuse an
 opening angle, heading or FAQ. Link tables stay as placeholders.
+**Placeholders (P11, Q10):** a link you want in the prose is written only as `[LINK → /slug/ · reason]` — never
+`[Link placeholder …]`, never a `#` or empty link; the link-wheel step makes it a real link once Paul approves the
+CM-022 exception, or drops the bracket and keeps the text. A missing fact is `[NEED: …]`. Never leave an instruction
+in brackets (`[Map: …]`, `[Insert …]`) — every bracket is listed in Paul's approval line and becomes an "Open items"
+notice on the WordPress draft (`python3 scripts/placeholders.py scan <file>` shows them).
 `status.py page-stage <slug> <page> --stage draft --file <draft> --run <RUN_ID>`.
 
 ## Step: batch <id> drafts — the batch review (one run, every draft side by side)
