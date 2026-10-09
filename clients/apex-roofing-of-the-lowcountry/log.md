@@ -2309,3 +2309,49 @@ Changes: 8 · Summary: Pilot: new WP drafts 1620/1621 from SEM-applied files; pu
 - CHANGE #389 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (12).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 6da8b4204b51 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #390 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (12).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (12).md | result: done · renamed and moved, nothing deleted
 - CHANGE #391 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (12).md | new: Apex Roofing of the Lowcountry - Status.md · sha 0679f1ebf078 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261009-142045-build-a198 · STARTED · /build · 2026-10-09T14:20:45-05:00
+Step: build:pilot-corrections · session 0ed9494a-d39c-458b-a350-b0f27797f264
+Gates checked: discovery_signed_off, batch:pilot:briefs
+- DECISION 2026-10-09T14:22 · run 20261009-142045-build-a198 · Pilot corrections (Paul, 2026-10-09), client-level, carried into every later Apex brief: (1) the flashing credit reads 'the owners' - Ralph and Pierce Brehany, no job titles published; (2) Roof Repair services list = shingle repair and replacement, flashing replacement, ridge cap and starter strip repair, soffit/fascia/deck repair, leak repair - no hail (moved to Emergency Roof Repair, SEM-5); (3) $20,000-$25,000 is a Roof Replacement brief fact only, cited to Ken Gathercole's Google review 2026-08-15, never a general price; (4) warranty mentioned only in a replacement context; (5) Bluffton cut down for depth - nobody needs the depth. Already settled (pilot_facts_2026_10_09, replacement_price_review, w25_who_goes_on_the_roof); not re-asked.
+- DECISION 2026-10-09T14:22 · run 20261009-142045-build-a198 · Spec section 8 lines NOT written: the edit to methodology/specs/service.md and location.md was refused by the permission system in this run, so no spec file changed. Proposed lines for Paul: service.md #7/SVC-19 - sub-services are exactly those the client confirmed for that service, others move to the page that owns them; warranty and price claims only on the service they apply to (single-review price only on that service's brief, cited). location.md #5/#8/LOC-22/LOC-23 - each section carries what its element requires and stops; no detail lists, generic regional sentences or FAQ answers repeating the opening; 1,000 words is a ceiling, not a target; no element dropped. Paul adds them (or allows the edit) in a later session; the s1 briefs apply both from this decision.
+- DECISION 2026-10-09T14:22 · run 20261009-142045-build-a198 · Project note (Paul's rule, 2026-10-09): every Apex page stays a WordPress draft until every page is drafted; then all are published together. A system change (ship/publish handoff timing) for a later Opus design session - not made now. Until then, Paul holds each batch's publish handoff (pilot handoff H-2026-10-09-09-publish already held).
+### HANDOFF · /build · 2026-10-09 · run 20261009-142045-build-a198
+**What I did**
+- Recorded Paul's pilot corrections (status.py pilot-corrections) so later batches are no longer held by the pilot-corrections check.
+- Logged the corrections as three run decisions: the client-level corrections, the proposed spec section 8 lines, and the publish-together project note.
+- Tried to add one pilot-correction line each to methodology/specs/service.md and location.md section 8. The permission system refused the edit, so no spec file changed. The proposed lines are in the decision log.
+
+**What was decided, and why**
+- Client-level corrections, carried into every later Apex brief (already settled, not re-asked): the flashing credit reads "the owners" (Ralph and Pierce Brehany, no job titles); the Roof Repair services list is shingle repair and replacement, flashing replacement, ridge cap and starter strip repair, soffit/fascia/deck repair, leak repair (no hail; hail goes to Emergency Roof Repair); $20,000-$25,000 is a Roof Replacement brief fact only, cited to Ken Gathercole's Google review of 2026-08-15; warranty only in a replacement context; Bluffton cut down because nobody needs the depth.
+- Proposed spec lines (not written): service #7/SVC-19 lists only the sub-services the client confirmed for that service and puts warranty and price claims only on the service they apply to. Location #5/#8/LOC-22/LOC-23 gives each section what its element needs and stops, and treats 1,000 words as a ceiling, not a target.
+- Publish-together rule (every page stays a WordPress draft until all are drafted): this is a project note for a later Opus design session. No system change was made.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Spec section 8 lines for service.md and location.md: allow the edit or add them by hand | Paul | Nothing blocked. The s1 briefs apply the lines from the decision log. |
+| Publish-together rule as a system change (ship and publish timing) | Paul (Opus design session) | Until then, Paul holds each batch's publish handoff |
+| Evidence-gate status parser (dated status cells read as Unverified, see the 2026-10-08 decision) | Paul (system session) | s1 evidence results may come out BLOCK again |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Site plan (s1 pages) | clients/apex-roofing-of-the-lowcountry/build/ | approved |
+| Service spec | methodology/specs/service.md | approved, section 8 empty |
+| Pilot corrections | decisions.md, run 20261009-142045-build-a198 | recorded |
+
+**What I could not check**
+- Whether batch s1 passes its own gates (briefs_ready, evidence). The next run checks them with `run.py start`.
+
+**Anything the next agent would otherwise get wrong**
+- Spec section 8 is still empty. Read this run's decisions as the pilot corrections. Keep hail off every page except Emergency Roof Repair, and only with the client's confirmation. Put the $20,000-$25,000 figure on Roof Replacement only, cited to the review, never as Apex's price.
+### END HANDOFF
+## RUN 20261009-142045-build-a198 · FINISHED · 2026-10-09T14:22:56-05:00
+Changes: 0 · Summary: Pilot corrections recorded (client decisions); spec section 8 lines proposed, edit refused by permissions; publish-together rule noted for a design session
+- CHANGE #392 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (10).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #393 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (10).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha ac867633c4cc | result: done · copied (Drive for desktop syncs it)
+- CHANGE #394 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (13).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (13).md | result: done · renamed and moved, nothing deleted
+- CHANGE #395 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (13).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha aff1476cbc8b | result: done · copied (Drive for desktop syncs it)
+- CHANGE #396 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (13).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (13).md | result: done · renamed and moved, nothing deleted
+- CHANGE #397 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (13).md | new: Apex Roofing of the Lowcountry - Status.md · sha f98300e8df18 | result: done · copied (Drive for desktop syncs it)

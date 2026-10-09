@@ -5,7 +5,7 @@
 - **Waiting on:** Jonie — waiting for Jonie to publish batch pilot (H-2026-10-09-10-publish). When the worksheet com; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
 - **Next action:** `/build apex-roofing-of-the-lowcountry published pilot` once the wait above is over
 
-_Generated 2026-10-09T14:12 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-09T14:22 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 
@@ -74,4 +74,4 @@ _Generated 2026-10-09T14:12 by the system — do not edit. Start every session i
 
 - DataforSEO: $0.59
 
-Last run: /build 2026-10-09T14:12 — Pilot: new WP drafts 1620/1621 from SEM-applied files; publish handoff H-2026-10-09-10-publish; 1614/1615 and H-...-09 superseded
+Last run: /build 2026-10-09T14:22 — Pilot corrections recorded (client decisions); spec section 8 lines proposed, edit refused by permissions; publish-together rule noted for a design session

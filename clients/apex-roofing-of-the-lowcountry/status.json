@@ -688,7 +688,10 @@
         "files": {}
       }
     ],
-    "pilot_corrections_applied": null
+    "pilot_corrections_applied": {
+      "at": "2026-10-09T14:22:24-05:00",
+      "note": "Paul's pilot corrections 2026-10-09 recorded as client decisions (owners credit, no titles; Roof Repair services list, no hail; replacement price Replacement brief only, cited to Ken Gathercole review; warranty only in replacement context; Bluffton cut for depth). Spec section 8 lines proposed in run 20261009-142045-build-a198, not written (edit refused by permissions). Publish-together rule = project note for a later design session."
+    }
   },
   "audit_steps": {
     "S01": {
@@ -878,13 +881,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261009-140647-build-c103",
+    "run_id": "20261009-142045-build-a198",
     "command": "build",
-    "finished": "2026-10-09T14:12:02-05:00",
-    "result": "Pilot: new WP drafts 1620/1621 from SEM-applied files; publish handoff H-2026-10-09-10-publish; 1614/1615 and H-...-09 superseded",
-    "changes": 8,
-    "step": "build:ship",
-    "batch": "pilot"
+    "finished": "2026-10-09T14:22:56-05:00",
+    "result": "Pilot corrections recorded (client decisions); spec section 8 lines proposed, edit refused by permissions; publish-together rule noted for a design session",
+    "changes": 0,
+    "step": "build:pilot-corrections",
+    "batch": null
   },
   "spend": {
     "dataforseo_usd": 0.591961
@@ -905,7 +908,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-09T14:12:02-05:00",
+  "updated": "2026-10-09T14:22:56-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
