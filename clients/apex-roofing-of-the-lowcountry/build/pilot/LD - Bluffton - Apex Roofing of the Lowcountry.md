@@ -44,7 +44,7 @@ Plan on one if your home is inside town limits: the Town of Bluffton issues its 
 
 ### What roofing materials are allowed in Old Town Bluffton?
 
-Ask the Town of Bluffton before you pick a roof material for a home in Old Town, a National Historic District since 1996. Bring the Town's answer to your estimate, and we will price the roof to match it.
+Ask the Town of Bluffton before you pick a roof material for a home in Old Town. Bring the Town's answer to your estimate, and we will price the roof to match it.
 
 ### Do you replace roofs in Palmetto Bluff and nearby gated communities?
 

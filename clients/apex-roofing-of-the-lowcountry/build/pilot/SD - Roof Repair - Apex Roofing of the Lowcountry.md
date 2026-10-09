@@ -21,7 +21,7 @@ A repair visit goes in this order:
 5. **Clean up.** We clean up each day and run a magnet over the ground for loose nails.
 6. **Show you the work.** We send you photos of the work, with progress photos each day on a longer job.
 
-Flashing comes first. Flashing is the metal that seals the joints where the roof meets a chimney, a wall, a vent pipe or a valley. In the words of Ralph and Pierce, a lot of water damage can be stopped "by using enough flashing and not just trying to use a tube of silicone to make it go faster and cheaper." Sealant alone cracks. Proper flashing lasts.
+Flashing comes first. Flashing is the metal that seals the joints where the roof meets a chimney, a wall, a vent pipe or a valley. In the words of the owners, a lot of water damage can be stopped "by using enough flashing and not just trying to use a tube of silicone to make it go faster and cheaper." Sealant alone cracks. Proper flashing lasts.
 
 We match the repair to the roof you have. Apex is a certified factory installer of both CertainTeed and GAF shingles, so a repair can use the same brand already on your home. On repairs we use corrosion-resistant flashing, which stands up to salt air, and synthetic underlayment under the new shingles.
 
@@ -39,7 +39,7 @@ Damaged shingles are replaced one by one with a matching CertainTeed or GAF shin
 
 ### Flashing Replacement at Chimneys, Walls and Valleys
 
-Loose or corroded flashing is removed and replaced, not covered over with caulk. This covers chimney flashing, step flashing along walls, valley flashing and pipe boots.
+Loose or corroded flashing is removed and replaced. This covers chimney flashing, step flashing along walls, valley flashing and pipe boots.
 
 ### Ridge Cap and Starter Strip Repair
 

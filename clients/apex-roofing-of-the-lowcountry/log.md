@@ -2205,3 +2205,54 @@ SEM items to apply: SEM-1, SEM-2, SEM-3
 - CHANGE #366 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (10).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 7c4772c5c3a2 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #367 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (10).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (10).md | result: done · renamed and moved, nothing deleted
 - CHANGE #368 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (10).md | new: Apex Roofing of the Lowcountry - Status.md · sha 5cae8016612c | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261009-140247-build-805e · STARTED · /build · 2026-10-09T14:02:47-05:00
+Step: build:apply-sem · batch pilot · session 0ed9494a-d39c-458b-a350-b0f27797f264
+Gates checked: discovery_signed_off, batch:pilot:drafts
+- CHANGE #369 [page_content] clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md | FAQ: What roofing materials are allowed in Old Town Bluffton? (SEM-1) | old: Ask the Town of Bluffton before you pick a roof material for a home in Old Town, a National Historic District since 1996. | new: Ask the Town of Bluffton before you pick a roof material for a home in Old Town. | result: applied | ref SEM-1
+- CHANGE #370 [page_content] clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md | H3 Flashing Replacement at Chimneys, Walls and Valleys (SEM-2) | old: Loose or corroded flashing is removed and replaced, not covered over with caulk. | new: Loose or corroded flashing is removed and replaced. | result: applied | ref SEM-2
+- CHANGE #371 [page_content] clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md | Delivery H2 flashing paragraph quote attribution (SEM-3) | old: In the words of Ralph and Pierce, a lot of water damage can be stopped | new: In the words of the owners, a lot of water damage can be stopped | result: applied | ref SEM-3
+- DECISION 2026-10-09T14:03 · run 20261009-140247-build-805e · Pilot apply-sem: applied only SEM-1, SEM-2, SEM-3 as picked by Paul. SEM-4 (Bluffton FAQ 'Apex replaces roofs in Palmetto Bluff') reviewed and kept as written: Paul confirmed Apex offers all services, including roof replacement, in Palmetto Bluff, Belfair, Colleton River Plantation and Moss Creek.
+- SEM APPLIED 2026-10-09T14:03 · batch pilot · SEM-1, SEM-2, SEM-3 · E-checks passed · approval pinned to the applied versions
+### HANDOFF · /build · 2026-10-09 · run 20261009-140247-build-805e
+**What I did**
+- Applied only the SEM items Paul picked for the pilot (SEM-1, SEM-2, SEM-3 from the review table of run 20261009-135629-build-8db7). Changes #369–#371.
+- SEM-1 (LD Bluffton, Old Town FAQ): removed the third "National Historic District since 1996" mention. The H2 "What Makes Roofing in Bluffton Different?" sentence and the Top Sites list keep it.
+- SEM-2 (SD Roof Repair, H3 Flashing Replacement): removed "not covered over with caulk". The flashing-versus-sealant point now lives only in the delivery paragraph.
+- SEM-3 (SD Roof Repair, delivery paragraph): the flashing quote is now credited to "the owners" (was "Ralph and Pierce").
+- Re-ran E1–E10 and the service/location spec checks on the changed sections: all pass. Readability (E10): SD page grade 6.2, LD 5.8, no paragraph over 10.
+- Recorded batch pilot as `sem_applied` with `--checks-passed` (approval pinned to the applied versions; no new stop).
+
+**What was decided, and why**
+- SEM-4 reviewed and kept: "Apex replaces roofs in Palmetto Bluff" stays as written. Paul confirmed Apex offers all services in Palmetto Bluff and the nearby communities (logged with run.py decision).
+- No Brand Guide row was edited. Section G records the flashing quote as the client's verbatim answer of 2026-10-07 with no named speaker, so "the owners" matches the source.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| "the owners" is a light role word; Brand Guide D (named staff) says no job titles published. Paul chose the wording, so it stands. | Paul (FYI only) | Nothing |
+| pilot_emergency_faq_link_cm022 (SD emergency FAQ link, CM-022 exception in Finish) | Paul | Finish link wheel |
+| WordPress drafts 1614/1615 hold the older copy | Build (ship step) | Must be regenerated from the SEM-applied files at ship |
+| Jonie handoff H-2026-10-09-09-publish | Paul / Build | Stays on hold until the drafts are regenerated |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| SD Roof Repair (SEM-applied) | clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md | sem_applied, checks passed |
+| LD Bluffton (SEM-applied) | clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md | sem_applied, checks passed |
+| Semantic Review | clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Semantic Review - pilot - REVIEW.md | approved (SEM 1,2,3) |
+
+**What I could not check**
+- Nothing in WordPress was touched or compared; the live drafts 1614/1615 were not read in this run.
+
+**Anything the next agent would otherwise get wrong**
+- Do not push the old WordPress drafts 1614/1615 to Jonie: they predate these edits. Regenerate them from the files above at `/build ship pilot` (never edit a generated draft). SEM-4 was deliberately not applied.
+### END HANDOFF
+## RUN 20261009-140247-build-805e · FINISHED · 2026-10-09T14:04:14-05:00
+Changes: 3 · Summary: Pilot SEM-1,2,3 applied to SD Roof Repair and LD Bluffton; SEM-4 kept; E1-E10 pass
+- CHANGE #372 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (8).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (8).md | result: done · renamed and moved, nothing deleted
+- CHANGE #373 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (8).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 887bab92e6e0 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #374 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (11).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (11).md | result: done · renamed and moved, nothing deleted
+- CHANGE #375 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (11).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 2ee52d621684 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #376 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (11).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (11).md | result: done · renamed and moved, nothing deleted
+- CHANGE #377 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (11).md | new: Apex Roofing of the Lowcountry - Status.md · sha 1488bb3bf31a | result: done · copied (Drive for desktop syncs it)

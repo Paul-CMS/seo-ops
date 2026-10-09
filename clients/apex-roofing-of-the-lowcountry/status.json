@@ -545,7 +545,7 @@
           "svc-roof-repair",
           "loc-bluffton"
         ],
-        "state": "drafts_written",
+        "state": "sem_applied",
         "briefs": {
           "state": "approved",
           "by": "Paul",
@@ -565,8 +565,8 @@
           "at": "2026-10-09T14:02:41-05:00",
           "note": null,
           "files": {
-            "clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md": "0e51afca8497",
-            "clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md": "928b039f6737",
+            "clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md": "fc7c7933af8f",
+            "clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md": "29f915db08aa",
             "clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Semantic Review - pilot - REVIEW.md": "06239c18bb0f"
           },
           "conditions": [],
@@ -576,7 +576,16 @@
             "SEM-1",
             "SEM-2",
             "SEM-3"
-          ]
+          ],
+          "applied": {
+            "sem_ids": [
+              "SEM-1",
+              "SEM-2",
+              "SEM-3"
+            ],
+            "at": "2026-10-09T14:03:51-05:00",
+            "checks": "E1–E10 passed on changed sections"
+          }
         },
         "files": {
           "briefs": [
@@ -869,12 +878,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261009-135629-build-8db7",
+    "run_id": "20261009-140247-build-805e",
     "command": "build",
-    "finished": "2026-10-09T13:58:30-05:00",
-    "result": "Pilot batch review of revised drafts: sibling check clean, 4 new SEM items, table re-registered",
-    "changes": 0,
-    "step": "build:drafts",
+    "finished": "2026-10-09T14:04:14-05:00",
+    "result": "Pilot SEM-1,2,3 applied to SD Roof Repair and LD Bluffton; SEM-4 kept; E1-E10 pass",
+    "changes": 3,
+    "step": "build:apply-sem",
     "batch": "pilot"
   },
   "spend": {
@@ -896,7 +905,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-09T14:02:41-05:00",
+  "updated": "2026-10-09T14:04:14-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -1154,5 +1163,10 @@
         "loc-levy"
       ]
     ]
+  },
+  "review_pause": {
+    "run_id": "20261009-140247-build-805e",
+    "step": "build:apply-sem",
+    "at": "2026-10-09T14:04:14-05:00"
   }
 }
