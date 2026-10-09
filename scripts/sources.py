@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""sources.py — research before asking (Paul, 2026-10-09; CM-056). Every source already on disk is searched for a
+"""sources.py — research before asking (Paul, 2026-10-09; CM-057). Every source already on disk is searched for a
 fact before the fact can become a question. Used by the evidence gate (evidence.py); read-only, no network, no cost.
 
     sources.py list   <slug>                       which sources exist on disk (and which do not)
@@ -14,7 +14,8 @@ Sources, in order (each one optional — a missing one is listed as "not on disk
     rankings data/rankings/rankings-summary.md   rankings summary
 Search terms per fact: methodology/evidence-requirements.json → "find" ({service} and {city} are the page's own).
 A hit is one sentence that matches every pattern of one term group. What a hit counts as in the grid is set per source
-kind in evidence-requirements.json → "found_marks" (CM-056).
+kind in evidence-requirements.json → "found_marks" (CM-057: a review counts as Known only when 3+ different reviewers
+say it and nothing conflicts; a site or GBP hit stays Unverified — a one-line yes/no question).
 """
 import csv
 import json
@@ -59,8 +60,9 @@ def documents(slug):
             continue
         p = d / rel
         if rel.endswith("reviews.csv"):
-            for i, r in enumerate(_csv(p), 2):
-                docs.append({"kind": "review", "text": r.get("text") or "",
+            for i, r in enumerate(_csv(p), 2):   # one Google account = one review per business; the key is a hash
+                docs.append({"kind": "review", "text": r.get("text") or "", "date": r.get("date", ""),
+                             "reviewer": r.get("reviewer_key") or r.get("review_id") or f"row{i}",
                              "label": f"Google review {r.get('date', '')} ({rel} row {i})"})
         elif rel.endswith("page-text.csv"):
             for i, r in enumerate(_csv(p), 2):
@@ -112,9 +114,10 @@ def search(slug, fact_key, page=None, docs=None, limit=3):
             s = s.strip()
             if s and any(all(p.search(s) for p in g) for g in groups):
                 q = s if len(s) <= 220 else s[:217] + "…"
-                res["hits"].append({"kind": doc["kind"], "label": doc["label"], "quote": q})
+                res["hits"].append({"kind": doc["kind"], "label": doc["label"], "quote": q,
+                                    "reviewer": doc.get("reviewer"), "date": doc.get("date", "")})
                 break   # one sentence per document is enough to cite it
-        if len(res["hits"]) >= limit:
+        if limit and len(res["hits"]) >= limit:
             break
     return res
 

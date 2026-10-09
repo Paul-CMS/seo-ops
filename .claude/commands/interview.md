@@ -16,7 +16,7 @@ Follow CLAUDE.md. Use the **expert-interview** skill; it holds the method for al
    - **facts-answers <batch>** — save the owner's reply as given in `clients/<slug>/interviews/facts/`, write each
      answer into Brand Guide Section D or the page's facts file, settle each answer once under the key the pack names
      for it (`run.py decision <slug> <RUN_ID> --settle fact:… --by "Client (via Paul)" --text "<answer>"` — the gate
-     reads settled answers, so it is never asked again, CM-056), then `python3 scripts/evidence.py run <slug> --run <RUN_ID> --batch <id>`.
+     reads settled answers, so it is never asked again, P4), then `python3 scripts/evidence.py run <slug> --run <RUN_ID> --batch <id>`.
      Tell Paul the Brand Guide changed, so he re-approves it (`/next` gives the line).
    - **stories** — `python3 scripts/interview.py due <slug>` first; one round of 3–5 questions; `status.py mark <slug> story_round --file <round>`.
    - **stories-answers** — transcript → story bank entries; `interview.py check <slug> bank`; `status.py mark <slug> story_bank --file clients/<slug>/interviews/story-bank.md`.

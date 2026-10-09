@@ -225,8 +225,8 @@ semantic review, one table per batch, report only; Paul approves the drafts and 
 facts its spec needs (`methodology/evidence-requirements.json`), each Known / Unknown / Unverified /
 Conflict from Brand Guide A and D, the page's facts file, answers already settled under the fact's key, and —
 **before anything is a gap — every source on disk** (reviews, the client's site text, GBP export, grid, rankings;
-`scripts/sources.py`, CM-056), each hit cited. A review answers a fact as Known, stated only attributed; a site
-claim is a yes/no. Only "searched, not found" becomes a question → **pass**, **warn** (the brief lists the
+`scripts/sources.py`), each hit cited. A fact 3+ different reviewers report is Known (`customer_reported`, CM-057),
+stated only as customers describe it; a site or GBP claim is a yes/no. Only "searched, not found" becomes a question → **pass**, **warn** (the brief lists the
 gaps) or **block** (no brief). A block goes to the **facts interview** (`/interview <slug> facts <batch>`,
 CM-042) and the gate re-runs on the answers, or Paul waives it (`/approve <slug> evidence:<page>
 --reason "..."`, recorded with his name, date and reason for that grid).

@@ -12,7 +12,7 @@ own facts file (clients/<slug>/build/evidence/<page_id>.facts.json, written by t
 the proof sheet, Discovery Record and research — value, status, source per fact). The script does
 the marking and the scoring; nobody types a result.
 
-Decide once and research before asking (Paul, 2026-10-09; CM-056). A fact that is not Known there is then looked up:
+Decide once and research before asking (Paul, 2026-10-09; CM-057). A fact that is not Known there is then looked up:
   1. an answer already settled under its facts key (`fact:<d|a>:<fact>` or `fact:<page>:<key>`, decisions-settled.md)
      — never asked again;
   2. every source on disk (scripts/sources.py: reviews, the client's site text, a GBP export, grid, rankings), each hit
@@ -103,12 +103,15 @@ def mark(rec):
     status = lead
     if status == "disputed":
         return "Conflict"
-    if status.startswith("found — "):   # research before asking: the mark comes from found_marks (CM-056)
+    if status.startswith("found — "):   # research before asking: the mark comes from found_marks (CM-057)
         return "Known" if status.endswith("known") and source else "Unverified"
     if not value or status == "unknown" or value.startswith("[NEED"):
         return "Unknown"
     if status in KNOWN_STATES and source:
         return "Known"
+    if status.startswith("customer reported") and source and int(rec.get("count") or 0) >= int(
+            requirements().get("review_min_independent") or 3):
+        return "Known"   # CM-057: 3+ different reviewers; stated only as customers describe it
     return "Unverified"   # Submitted, no status, or no source
 
 
@@ -131,15 +134,28 @@ def settled_answer(ents, fk):
 
 def research(slug, it, page, docs):
     """(rec or None, searched) — a sourced value from the files on disk, or what was searched."""
-    res = sources.search(slug, it["key"], page, docs)
+    res = sources.search(slug, it["key"], page, docs, limit=None)
     if not res["hits"]:
         return None, res
-    marks = (requirements().get("found_marks") or {})
-    h = res["hits"][0]
+    reqs = requirements()
+    marks = reqs.get("found_marks") or {}
+    need = int(reqs.get("review_min_independent") or 3)
+    revs = [h for h in res["hits"] if h["kind"] == "review"]
+    people = {h.get("reviewer") or h["label"] for h in revs}
+    if len(people) >= need:   # CM-057: 3+ different reviewers, nothing conflicting → Known, stated as customers say it
+        h = revs[0]
+        return {"value": f"\"{h['quote']}\" (+{len(revs) - 1} more)", "status": "Found — " + marks.get("review", "Known"),
+                "source": f"customer_reported: {len(people)} different reviewers, e.g. {h['label']} · state it only as "
+                          "customers describe it ('customers mention…'); prices, timelines and warranty terms only as a "
+                          "cited customer example (CM-057)", "via": "review", "count": len(people)}, res
+    h = next((x for x in res["hits"] if x["kind"] != "review"), res["hits"][0])
+    if h["kind"] == "review":
+        return {"value": f"\"{h['quote']}\"", "status": "Found — Unverified",
+                "source": f"customer_reported: only {len(people)} reviewer(s) — CM-057 needs {need} · {h['label']}",
+                "via": "review", "count": len(people)}, res
     more = f" (+{len(res['hits']) - 1} more)" if len(res["hits"]) > 1 else ""
-    status = "Found — " + marks.get(h["kind"], "Unverified")
-    note = " · state it attributed ('customers mention…'), CM-056" if h["kind"] == "review" else ""
-    return {"value": f"\"{h['quote']}\"{more}", "status": status, "source": h["label"] + note, "via": h["kind"]}, res
+    return {"value": f"\"{h['quote']}\"{more}", "status": "Found — " + marks.get(h["kind"], "Unverified"),
+            "source": h["label"], "via": h["kind"]}, res
 
 
 # ------------------------------------------------------------------ scoring
@@ -223,7 +239,7 @@ def render(st, pid, rows, result, counts, why):
             src = "not searchable on disk — ask"
         out.append(f"| {r['label']} | {r['need']} | **{r['mark']}** | {v} | {src} |")
     if searched or missing:
-        out += ["", "**Sources searched before asking (CM-056):** " + (", ".join(sorted(searched)) or "none on disk"),
+        out += ["", "**Sources searched before asking (CM-057):** " + (", ".join(sorted(searched)) or "none on disk"),
                 "", "**Not on disk:** " + (", ".join(sorted(missing)) or "—")]
     return "\n".join(out) + "\n"
 
@@ -251,7 +267,7 @@ def record(slug, run_id, pid):
 
 # ------------------------------------------------------------------ facts interview pack (CM-042)
 def question(r):
-    if r.get("via") == "site":
+    if r.get("via") in ("site", "gbp"):   # CM-057: the client's own site or GBP — one yes/no line
         return (f"Your website says this about **{r['label']}**: {r['value']} ({r['source']}). Still true? yes / no — "
                 "correction", "Verify")
     if r["mark"] == "Conflict":

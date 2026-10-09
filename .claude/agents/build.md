@@ -67,7 +67,7 @@ and earlier approved pages, and (3) the **batch review** step, which reads every
 side by side (CM-017's sibling check, now at batch level). The batch stops collect every page for
 Paul's one approval — batches and their two stops are unchanged.
 
-## Step: brief <id> — part 1: the evidence gate (CM-041), research first (CM-056)
+## Step: brief <id> — part 1: the evidence gate (CM-041), research first (CM-057)
 (`/build <slug> evidence <id>` runs this part alone.) For every page in the batch, write its page-specific facts to
 `clients/<slug>/build/evidence/<page_id>.facts.json` — `{"facts": {"<key>": {"value", "status", "source"}}}`
 for each `page:` key its type needs in `methodology/evidence-requirements.json` — taking them **only**

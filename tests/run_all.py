@@ -2234,9 +2234,11 @@ def t_answer_once():
     ag.step(rid, "S05"); ag.fin(rid, "crawl")
 
 
-REVIEWS_CSV = """review_id,date,rating,text,owner_replied
-r1,2026-08-15,5,"Our roof repair was handled by Pat. They replaced the cracked flashing and the vents. For the roof repair they took photos of every step and explained the process. The whole job took one day.",yes
-r2,2026-07-02,5,"Great crew, very tidy.",no
+REVIEWS_CSV = """review_id,date,rating,text,owner_replied,reviewer_key
+r1,2026-08-15,5,"Our roof repair was handled by Pat. They replaced the cracked flashing and the vents. For the roof repair they took photos of every step and explained the process. The whole job took one day.",yes,rv-a
+r2,2026-07-02,5,"Great crew, very tidy.",no,rv-b
+r3,2026-06-11,5,"Our roof repair: they replaced the flashing around the chimney. The roof repair crew explained the process first. The job took one day.",no,rv-c
+r4,2026-05-03,5,"The roof repair replaced two cracked vents and the flashing. For the roof repair they showed photos and explained the process. It took one day.",no,rv-d
 """
 PAGE_TEXT_CSV = """url,status,h1,word_count,truncated,text
 https://test.example/springfield/,200,Springfield,40,no,"Many Springfield homes are older homes with original decking. Call us today."
@@ -2244,7 +2246,8 @@ https://test.example/springfield/,200,Springfield,40,no,"Many Springfield homes 
 
 
 def t_research_before_asking():
-    """CM-056: every source on disk is searched before a fact becomes a question; each hit is cited."""
+    """CM-057: every source on disk is searched before a fact becomes a question; each hit is cited; a review answers a
+    fact only when 3+ different reviewers say it."""
     S = "rb-co"
     gaps = {"svc-roof-repair": {"service_scope", "service_process", "timeframe", "pricing"},
             "loc-springfield": {"neighborhoods", "local_context", "things_to_do"}}
@@ -2255,8 +2258,9 @@ def t_research_before_asking():
     st = status(S)
     grid = (SB / st["pages"]["svc-roof-repair"]["evidence"]["grid"]).read_text()
     row = next((l for l in grid.splitlines() if l.startswith("| What the service includes")), "")
-    check("research: a fact a review answers is Known, cited to the review (file, row, date), not Unknown",
-          "**Known**" in row and "Google review 2026-08-15 (data/reviews/reviews.csv row 2)" in row and "attributed" in row, row)
+    check("CM-057: a fact 3+ different reviewers report is Known (customer_reported), cited to a review (file, row, date)",
+          "**Known**" in row and "Google review 2026-08-15 (data/reviews/reviews.csv row 2)" in row
+          and "customer_reported: 3 different reviewers" in row and "customers describe it" in row, row)
     check("research: process and timeframe found in the same review are Known too",
           all("**Known**" in l for l in grid.splitlines() if l.startswith(("| How the service is delivered", "| Typical job duration"))), grid)
     prow = next((l for l in grid.splitlines() if l.startswith("| Price range")), "")
@@ -2267,6 +2271,15 @@ def t_research_before_asking():
           st["pages"]["svc-roof-repair"]["evidence"])
     check("research: the page with facts nowhere on disk is blocked", st["pages"]["loc-springfield"]["evidence"]["result"] == "block",
           st["pages"]["loc-springfield"]["evidence"])
+    code, out = sh("cd scripts && python3 -c \"import json, evidence as E, status as S; pg = S.load('rb-co')['pages']['svc-roof-repair']; "
+                   "d = lambda r, w: {'kind': 'review', 'text': 'Our roof repair replaced the flashing.', 'label': 'review ' + r, 'reviewer': w}; "
+                   "it = {'key': 'service_scope'}; "
+                   "one = E.research('rb-co', it, pg, [d('1', 'a')])[0]; "
+                   "same = E.research('rb-co', it, pg, [d('1', 'a'), d('2', 'a'), d('3', 'a')])[0]; "
+                   "gbp = E.research('rb-co', it, pg, [{'kind': 'gbp', 'text': 'Our roof repair replaced the flashing.', 'label': 'gbp'}])[0]; "
+                   "print(json.dumps([E.mark(one), E.mark(same), E.mark(gbp)]))\"")
+    check("CM-057: one review, or the same reviewer three times, is not enough; a GBP hit stays Unverified",
+          code == 0 and json.loads(out.splitlines()[-1]) == ["Unverified", "Unverified", "Unverified"], out)
     ag.do(f"/interview {S} facts pilot")
     fi = status(S)["build"]["batches"][0]["facts_interview"]
     pack = (SB / fi["file"]).read_text()

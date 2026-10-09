@@ -236,4 +236,50 @@ def t_p7_url_rule(h):
             code == 4 and "not exempt" in out and "/services/" in out, out)
 
 
-SCENARIOS = [t_p3_system_session, t_p3_flags_and_review, t_p2_parallel_clients, t_p7_url_rule]
+def t_p5_reviews(h):
+    S = "rv-co"
+    h.sh(f'python3 scripts/status.py init {S} --name "Rv Co" --domain rv.example --type full --industry roofing')
+    ag = h.Agent(S); ag.fin(ag.start("new-client"), "set up")
+    long_text = "Our roof repair was great. " + ("They explained every step and the flashing work was careful. " * 50) + "The end."
+    items = [
+        {"review_id": "a1", "timestamp": "2026-08-01 10:00:00", "rating": {"value": 5}, "profile_name": "Jane Roe",
+         "profile_url": "https://g/a", "review_text": long_text},
+        {"review_id": "b1", "timestamp": "2026-07-01 10:00:00", "rating": {"value": 5}, "profile_name": "Sam Poe",
+         "profile_url": "https://g/b", "review_text": "Mark did our roof. They sent photos every day. Clean up was spotless."},
+        {"review_id": "c1", "timestamp": "2026-06-01 10:00:00", "rating": {"value": 5}, "profile_name": "Ann Doe",
+         "profile_url": "https://g/c", "review_text": "Mark was on time. Photos of each step came by text. Great clean up."},
+        {"review_id": "d1", "timestamp": "2026-05-01 10:00:00", "rating": {"value": 5}, "profile_name": "Ann Doe",
+         "profile_url": "https://g/c", "review_text": "Second job with Mark. More photos.",
+         "owner_answer": "Thanks Ann! We always send photos and clean up."},
+        {"review_id": "e1", "timestamp": "2026-04-01 10:00:00", "rating": {"value": 5}, "profile_name": "Lee Coe",
+         "profile_url": "https://g/e", "review_text": "Mark and the crew were careful. They sent photos too."},
+    ]
+    raw = ag.c / "data/reviews/raw"
+    raw.mkdir(parents=True, exist_ok=True)
+    (raw / "reviews.json").write_text(json.dumps({"rating": {"value": 5}, "reviews_count": 9, "items": items}))
+    code, out = h.sh(f"python3 scripts/reviews.py summarize {S}")
+    rows = (ag.c / "data/reviews/reviews.csv").read_text()
+    h.check("P5: a long review text is kept whole in reviews.csv (not truncated)", long_text.strip() in rows, len(rows))
+    h.check("P5: the pull is checked against Google's count — a gap is flagged", "PULL INCOMPLETE" in out and "9 reviews" in out
+            and "5 were pulled" in out, out)
+    h.check("P5: reviews.csv carries a reviewer key (a hash), never a reviewer name",
+            "reviewer_key" in rows.splitlines()[0] and not any(n in rows for n in ("Jane Roe", "Sam Poe", "Ann Doe", "Lee Coe")))
+    rid = ag.start("wp-check")
+    code, out = h.sh(f"python3 scripts/reviews.py extract {S} --run {rid}")
+    rf = json.loads((ag.c / "data/reviews/review-facts.json").read_text())["facts"]
+    h.check("P5: photos told by 3 different reviewers (one of them twice) count 3 — the same reviewer twice counts once, owner replies never",
+            rf.get("practice:photos", {}).get("count") == 3, rf.get("practice:photos"))
+    h.check("P5: clean-up told by 2 reviewers stays below CM-057's 3 (not customer_reported)",
+            rf.get("practice:clean-up", {}).get("count") == 2, rf.get("practice:clean-up"))
+    h.check("P5: a staff member named in 3+ reviews is found", rf.get("staff:Mark", {}).get("count") == 3, sorted(rf))
+    cl = (ag.c / "data/reviews/customer-language.md").read_text()
+    h.check("P5: customer-language.md gains the 'Facts customers report' table (fact, reviewers, example), no names",
+            "## Facts customers report" in cl and "| photos | 3 ✓ |" in cl and "Ann Doe" not in cl, cl[-700:])
+    fx = json.loads((ag.c / "facts.json").read_text())["facts"]
+    r = next((x for x in fx if x.get("key") == "practice:photos"), {})
+    h.check("P5: candidates go into facts.json as customer_reported with the quote and the count (never a Brand Guide row)",
+            r.get("status") == "customer_reported" and r.get("count") == 3 and r.get("section") == "R" and r.get("quote"), r)
+    ag.fin(rid, "reviews")
+
+
+SCENARIOS = [t_p3_system_session, t_p3_flags_and_review, t_p2_parallel_clients, t_p7_url_rule, t_p5_reviews]

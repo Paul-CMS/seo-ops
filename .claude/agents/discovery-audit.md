@@ -102,9 +102,10 @@ always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 
   --location "<City>,<State>,United States" --services-file <services.txt> --cities "<c1>,<c2>"`.
   Writes `data/reviews/reviews.csv`, `mentions.csv` (no reviewer names), `customer-language.md` and
   `reviews-summary.md` (read the summary and customer-language.md, never the raw pull)
-  (the customers' words). Add themes to customer-language.md; quote, never attribute. Reviews are
-  **never** verified facts (CM-027): nothing enters Brand Guide Section D unless the client
-  confirms it. The rating and count are saved as "The Best" proof evidence (CM-020) **exactly as Google shows them on
+  (the customers' words). Add themes to customer-language.md; quote, never attribute. Then
+  `python3 scripts/reviews.py extract <slug> --run <RUN_ID>`: a fact 3+ different reviewers report is
+  `customer_reported` (CM-057) — Known for the evidence gate, stated only as customers describe it; it never
+  becomes a Section D row until Paul or the client confirms it (`run.py fact`). The rating and count are saved as "The Best" proof evidence (CM-020) **exactly as Google shows them on
   the day, with the date** ("4.9 · 67 reviews, 2026-10-07") — never recomputed or rounded (66×5 + 1×2 is 4.96, which
   Google shows as 5.0; quote what Google shows). Fewer than
   5 reviews → record S06 skipped.

@@ -8,8 +8,8 @@ Never in the same context as commercial writing or auditing. Rules are cited by 
 
 - **A1 No invented facts (CM-016).** No statistic, price, timeframe, code reference,
   certification, local condition or product unless it is in the brief, Brand Guide Section D
-  or the supplied source material. Missing → `[NEED: …]`. Reviews and customer language are
-  words, never verified facts (CM-027). A keyword, PAA question or fan-out query in a sentence is
+  or the supplied source material. Missing → `[NEED: …]`. Customer language is wording; a
+  `customer_reported` fact (CM-057) is stated only as customers describe it, never as the company's claim. A keyword, PAA question or fan-out query in a sentence is
   still a claim (CM-049) — it never brings in a fact the sources do not hold.
 - **A2 Verifiability. A3 Attribution honesty** — no "we've seen this hundreds of times" unless
   the source material says so.

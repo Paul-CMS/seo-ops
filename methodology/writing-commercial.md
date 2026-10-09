@@ -9,8 +9,10 @@ items in one step → apply only those and re-check.
 
 ## A — Hard constraints (override everything, including requests)
 
-- **A1 No invented facts (CM-016).** Reviews and customer language are never verified facts (CM-027):
-  use their wording for questions and headings, never as a Section D claim. No neighborhood, landmark, certification, response time,
+- **A1 No invented facts (CM-016).** Customer language is wording for questions and headings. A fact the grid marks
+  `customer_reported` (3+ different reviewers, CM-057) is stated only as customers describe it ("customers mention…",
+  "homeowners often tell us…") — never as the company's own claim; prices, timelines and warranty terms from reviews
+  appear only as a cited customer example. Reviewer names never appear. No neighborhood, landmark, certification, response time,
   brand serviced, statistic, founding year, warranty term, licence number or price unless it
   is in Brand Guide Section D. Missing → `[NEED: <exactly what>]` inline, keep going. A draft
   full of NEED markers is correct; a draft with invented specifics is a failure.

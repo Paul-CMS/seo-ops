@@ -6,6 +6,12 @@
                         [--depth 200] [--confirmed] [--max-wait 540] [--services-file F] [--cities "a,b"]
     reviews.py summarize <slug> [--services-file F] [--cities "a,b"]
                         rebuild every output from the saved raw/reviews.json (no DataforSEO call)
+    reviews.py extract  <slug> --run R
+                        CM-057 (rewrite 2 P5): for every fact the evidence gate needs, and for staff, places,
+                        materials, practices, prices, timelines and warranties, the review sentences that say it and the
+                        number of DIFFERENT reviewers — written to data/reviews/review-facts.json, the "Facts customers
+                        report" table in customer-language.md, and facts.json as customer_reported candidates
+                        (section R: never a Brand Guide row, so no approval changes). Known for the gate at 3+ reviewers.
 
 Pulls the newest reviews (up to --depth, max 200 here) through DataforSEO Business Data.
 Saves raw data (with reviewer names) to clients/<slug>/data/reviews/raw/ — git-ignored and
@@ -18,11 +24,15 @@ A reviewer's sign-off at the end of a text ("- John D.", "Thanks, Mary", a last 
 capitalised name) is stripped before any output; texts that still end in a capitalised name are
 counted and listed by review_id so the agent can check them.
 Fewer than 5 reviews → the step is skipped with a reason.
-Reviews are NOT verified facts: nothing from them enters Brand Guide Section D unless the
-client confirms it on the proof sheet.
+Reviews (CM-057, which amends CM-027's first bullet): a fact 3+ different reviewers report, with nothing conflicting,
+is customer_reported — Known for the evidence gate, stated only as customers describe it, never as the company's own
+claim; prices, timelines and warranty terms only as a cited customer example. Reviewer names never appear: reviews.csv
+carries a one-way reviewer_key (a hash), only so the same reviewer is never counted twice. Owner replies never count.
+The pull is checked against Google's displayed count; a gap is flagged.
 """
 import argparse
 import csv
+import hashlib
 import json
 import re
 import time
@@ -213,7 +223,14 @@ def main():
     s.add_argument("--services-file"); s.add_argument("--cities", default="")
     s = sub.add_parser("summarize"); s.add_argument("slug")
     s.add_argument("--services-file"); s.add_argument("--cities", default="")
+    s = sub.add_parser("extract"); s.add_argument("slug"); s.add_argument("--run", required=True)
     a = ap.parse_args()
+    if a.cmd == "extract":
+        R.open_run(a.slug, a.run)
+        found, strong, need = extract(a.slug, a.run)
+        print(f"{len(found)} fact(s)/topic(s) found in the reviews · {strong} reported by {need}+ different reviewers "
+              "(customer_reported) · customer-language.md 'Facts customers report' and facts.json section R updated")
+        return
     if a.cmd == "summarize":
         raw = out_dir(a.slug) / "raw" / "reviews.json"
         if not raw.exists():
@@ -276,11 +293,13 @@ def process(slug, res, services_file=None, cities_arg=""):
     cities = [c.strip() for c in (cities_arg or "").split(",") if c.strip()]
     cleaned, n_stripped, flagged = clean_items(items, cities)
     with open(d / "reviews.csv", "w", newline="") as fh, open(d / "mentions.csv", "w", newline="") as mh:
-        w = csv.writer(fh); w.writerow(["review_id", "date", "rating", "text", "owner_replied"])
+        w = csv.writer(fh); w.writerow(["review_id", "date", "rating", "text", "owner_replied", "reviewer_key"])
         m = csv.writer(mh); m.writerow(["review_id", "date", "services_mentioned", "places_mentioned", "questions"])
         for it, text in cleaned:
             rid, date = it.get("review_id"), (it.get("timestamp") or "")[:10]
-            w.writerow([rid, date, (it.get("rating") or {}).get("value"), text, bool(it.get("owner_answer"))])
+            who = str(it.get("profile_url") or it.get("profile_name") or rid)
+            w.writerow([rid, date, (it.get("rating") or {}).get("value"), text, bool(it.get("owner_answer")),
+                        hashlib.sha256(who.encode()).hexdigest()[:10]])   # a hash, never the name
             low = text.lower()
             m.writerow([rid, date,
                         "; ".join(s_ for s_ in services if s_ and s_ in low),
@@ -294,9 +313,122 @@ def process(slug, res, services_file=None, cities_arg=""):
                + (f" (check: {', '.join(str(x) for x in flagged[:10])}{' …' if len(flagged) > 10 else ''})"
                   if flagged else "")
                + " · agents read reviews-summary.md")
+    gap = (count or 0) - len(items)
+    if gap > 0:   # P5: the pull is checked against the count Google shows
+        print(f"PULL INCOMPLETE — Google shows {count} reviews, {len(items)} were pulled ({gap} missing"
+              + (", the 200-review cap" if len(items) >= 200 else "") + "). Facts in the missing reviews are not seen.")
+    st = S.load(slug)
+    st["evidence"]["google_rating"]["pulled"] = len(items)
+    S.save(slug, st)
     print(summary)
     if (count or 0) < 5:
         print("SKIP — fewer than 5 reviews; record S06 as skipped with this reason.")
+
+
+# ------------------------------------------------------------------ CM-057: facts customers report
+TOPICS = {
+    "practice:photos": [r"\bphotos?\b|\bpictures?\b"],
+    "practice:clean-up": [r"\bclean(ed|ing)?[- ]?up\b|\bclean\b|\btidy\b|\bmagnet\b|\bdebris\b"],
+    "practice:permits": [r"\bpermits?\b"],
+    "practice:explains": [r"\bexplain(ed|s)?\b|\bwalked (us|me) through\b"],
+    "prices ($ amounts)": [r"\$\s?\d[\d,]*(\.\d\d)?\s?(k\b)?"],
+    "materials": [r"\bshingles?\b|\bmetal\b|\bslate\b|\bunderlayment\b|\bflashing\b|\bgutters?\b|\bskylights?\b|\btile\b"],
+}
+
+
+def _rows(slug):
+    p = out_dir(slug) / "reviews.csv"
+    if not p.exists():
+        die(f"no reviews.csv for {slug} — pull the reviews first (reviews.py run / summarize)", 4)
+    with open(p, newline="", encoding="utf-8-sig") as fh:
+        return list(csv.DictReader(fh))
+
+
+def extract(slug, run_id):
+    """{fact or topic: {count, quotes[{date, quote, row}]}} — counted by different reviewers (CM-057)."""
+    import facts
+    import sources
+    reqs = read_json(sources.REQ) or {}
+    need = int(reqs.get("review_min_independent") or 3)
+    rows = _rows(slug)
+    docs = [{"kind": "review", "text": r.get("text") or "", "date": r.get("date", ""),
+             "reviewer": r.get("reviewer_key") or r.get("review_id") or f"row{i}", "label": f"reviews.csv row {i}"}
+            for i, r in enumerate(rows, 2)]
+    st = S.load(slug)
+    found = {}
+
+    def add(key, label, hits):
+        people = {h["reviewer"] for h in hits}
+        if people:
+            found[key] = {"label": label, "count": len(people),
+                          "quotes": [{"date": h["date"], "quote": h["quote"], "row": h["label"]} for h in hits[:8]]}
+
+    for key in (reqs.get("find") or {}):
+        res = sources.search(slug, key, {}, docs, limit=None)
+        add(f"fact:{key}", key.replace("_", " "), res["hits"])
+    for key, pats in TOPICS.items():
+        rx = [re.compile(x, re.I) for x in pats]
+        hits = []
+        for d_ in docs:
+            for sent in sources.SENT.split(d_["text"]):
+                if any(r.search(sent) for r in rx):
+                    hits.append({"reviewer": d_["reviewer"], "date": d_["date"], "label": d_["label"],
+                                 "quote": sent.strip()[:220]})
+                    break
+        add(key, key.split(":")[-1].replace("-", " ") if ":" in key else key, hits)
+    cities = sorted({p.get("city") for p in st["pages"].values() if p.get("city")})
+    for c in cities:
+        hits = [{"reviewer": d_["reviewer"], "date": d_["date"], "label": d_["label"],
+                 "quote": next(x for x in sources.SENT.split(d_["text"]) if c.lower() in x.lower()).strip()[:220]}
+                for d_ in docs if c.lower() in d_["text"].lower()]
+        add(f"place:{c}", c, hits)
+    # people: a capitalised first name in 3+ different reviews that is not a place, a brand word or a sentence start
+    names = {}
+    skip = {c.lower() for c in cities} | NOT_NAMES | {w.lower() for w in str(st["client"].get("name", "")).split()}
+    skip |= {w for d_ in docs for w in re.findall(r"\b[a-z][a-z]{2,}\b", d_["text"])}   # also in lower case: not a name
+    brand = re.sub(r"[^a-z]", "", str(st["client"].get("name", "")).lower())
+    skip |= {w.lower() for d_ in docs for w in re.findall(r"\b[A-Z][a-z]{2,}\b", d_["text"]) if w.lower() in brand}
+    for d_ in docs:
+        for m in re.finditer(r"\b([A-Z][a-z]{2,})\b", d_["text"]):
+            w = m.group(1)
+            if w.lower() not in skip:
+                names.setdefault(w, {})[d_["reviewer"]] = d_
+    for w, by in names.items():
+        if len(by) >= need:
+            add(f"staff:{w}", f"person named {w}", [{"reviewer": r, "date": d_["date"], "label": d_["label"],
+                 "quote": next((x for x in sources.SENT.split(d_["text"]) if w in x), "").strip()[:220]}
+                for r, d_ in by.items()])
+    d = out_dir(slug)
+    write_json(d / "review-facts.json", {"made": now(), "min_reviewers": need, "facts": found})
+    # customer-language.md: the "Facts customers report" table (replaced each time)
+    cl = d / "customer-language.md"
+    text = cl.read_text() if cl.exists() else f"# {st['client']['name']} - Customer Language\n"
+    text = re.sub(r"\n## Facts customers report.*?(?=\n## |\Z)", "", text, flags=re.S)
+    tbl = ["", "## Facts customers report (CM-057)", "",
+           f"Counted by different reviewers. {need}+ = customer_reported: Known for the evidence gate, stated only as "
+           "customers describe it (\"customers mention…\"). Prices, timelines and warranty terms only as a cited customer "
+           "example, never as the company's. No reviewer names.", "",
+           "| Fact | Reviewers | Example (date) |", "|---|---|---|"]
+    for key, f in sorted(found.items(), key=lambda kv: -kv[1]["count"]):
+        q = f["quotes"][0]
+        tbl.append(f"| {f['label']} | {f['count']}{' ✓' if f['count'] >= need else ''} | \"{q['quote'].replace('|', '/')}\" "
+                   f"({q['date']}) |")
+    cl.write_text(text.rstrip("\n") + "\n" + "\n".join(tbl) + "\n")
+    # facts.json: customer_reported candidates in section R (never a Brand Guide row, so no approval changes)
+    data = facts.load(slug)
+    rows_ = [r for r in data["facts"] if r.get("section") != "R"]
+    for key, f in found.items():
+        rows_.append({"id": "r-" + re.sub(r"[^a-z0-9]+", "-", key.lower()).strip("-"), "section": "R", "key": key,
+                      "label": f["label"], "value": "; ".join(f"\"{q['quote']}\" ({q['date']})" for q in f["quotes"][:3]),
+                      "status": "customer_reported", "status_text": None, "source": f"Google reviews ({f['count']} "
+                      "different reviewers; data/reviews/review-facts.json)", "quote": f["quotes"][0]["quote"],
+                      "date": now()[:10], "who": "reviews.py extract", "count": f["count"]})
+    facts.save(slug, rows_)
+    strong = sum(1 for f in found.values() if f["count"] >= need)
+    from lib import append
+    append(client_dir(slug) / "log.md", f"- REVIEW FACTS {now()[:16]} · run {run_id} · {len(found)} fact(s)/topic(s) found "
+           f"in reviews, {strong} with {need}+ different reviewers (customer_reported, CM-057) · data/reviews/review-facts.json\n")
+    return found, strong, need
 
 
 if __name__ == "__main__":

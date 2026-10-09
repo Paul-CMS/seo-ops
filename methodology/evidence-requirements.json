@@ -301,10 +301,10 @@
       }
     ]
   },
-  "_find_about": "CM-056 (Paul, 2026-10-09): research before asking. Before a fact can be a gap, scripts/sources.py searches every source on disk (reviews, the client's own site text, a GBP export, the local grid, rankings). 'find' lists the search terms per fact key: each entry is a regex, or a list of regexes that must all match one sentence. {service} and {city} are the page's own service variant and city. A fact with no entry is not searched (identity fields come from Brand Guide A). 'found_marks' sets what a hit counts as, per source kind: a review or GBP hit is Known (Paul's ruling 1a — the page states it only attributed, e.g. 'customers mention…', with the review date); a hit on the client's own site is Unverified (old site claims are confirmed with one yes/no, never re-asked as an open question). Every hit is cited (file, row, date, quote).",
+  "_find_about": "CM-057 (Paul, 2026-10-09): research before asking. Before a fact can be a gap, scripts/sources.py searches every source on disk (reviews, the client's own site text, a GBP export, the local grid, rankings). 'find' lists the search terms per fact key: each entry is a regex, or a list of regexes that must all match one sentence. {service} and {city} are the page's own service variant and city. A fact with no entry is not searched (identity fields come from Brand Guide A). 'found_marks' sets what a hit counts as, per source kind: a review hit is Known only when review_min_independent (3) or more different reviewers say it and nothing conflicts (customer_reported: the page states it only as customers describe it, 'customers mention…'; prices, timelines and warranty terms only as a cited customer example); a hit on the client's own site or a GBP export is Unverified (old site claims are confirmed with one yes/no, never re-asked as an open question). Every hit is cited (file, row, date, quote).",
   "found_marks": {
     "review": "Known",
-    "gbp": "Known",
+    "gbp": "Unverified",
     "site": "Unverified",
     "grid": "Unverified",
     "rankings": "Unverified"
@@ -400,5 +400,6 @@
     "county_cities": [
       "\\b{city}\\b"
     ]
-  }
+  },
+  "review_min_independent": 3
 }
