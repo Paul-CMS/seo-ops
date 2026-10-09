@@ -427,3 +427,69 @@ Approved version: clients/home-mobile-medical/audit/2026-10-07/deliverables/Home
 ## RUN 20261009-122052-build-8f9c · STARTED · /build · 2026-10-09T12:20:52-05:00
 Step: build:blockers · session 0dc29fbc-0c0d-484a-b453-9417d993f6e3
 Gates checked: discovery_signed_off
+- CHANGE #90 [redirect] https://homemobilemedical.com/service-area/bluffton-sc-2/ | 301 | old: 301 -> [REDACTED]service-area/bluffton-sc -> 301 -> [REDACTED]service-area/bluffton-sc/ (two hops) | new: [REDACTED]service-area/bluffton-sc/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-03-redirect-01
+- CHANGE #91 [redirect] https://homemobilemedical.com/service-area/charleston-sc-2/ | 301 | old: 301 -> [REDACTED]service-area/charleston-sc -> 301 -> [REDACTED]service-area/charleston-sc/ (two hops) | new: [REDACTED]service-area/charleston-sc/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-03-redirect-02
+- CHANGE #92 [redirect] https://homemobilemedical.com/service-area/beaufort-sc-2/ | 301 | old: 301 -> [REDACTED]service-area/beaufort-sc -> 301 -> [REDACTED]service-area/beaufort-sc/ (two hops) | new: [REDACTED]service-area/beaufort-sc/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-03-redirect-03
+- CHANGE #93 [broken_link] https://homemobilemedical.com/are-stair-lifts-covered-by-medicare-medicaid-or-health-insurance/ | internal links | old: links to one or more of the redirecting URLs listed in 'new' (2026-09-18 crawl) | new: Repoint each internal link (post content, menus or widgets on this page) that goes to a redirecting URL, straight to its final URL: [REDACTED]service-area/beau… | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-04-broken_link-01
+- CHANGE #94 [broken_link] https://homemobilemedical.com/are-stair-lifts-covered-by-medicare/ | internal links | old: links to one or more of the redirecting URLs listed in 'new' (2026-09-18 crawl) | new: Repoint each internal link (post content, menus or widgets on this page) that goes to a redirecting URL, straight to its final URL: [REDACTED]service-area/beau… | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-04-broken_link-02
+- CHANGE #95 [broken_link] https://homemobilemedical.com/are-stair-lifts-expensive-to-run/ | internal links | old: links to one or more of the redirecting URLs listed in 'new' (2026-09-18 crawl) | new: Repoint each internal link (post content, menus or widgets on this page) that goes to a redirecting URL, straight to its final URL: [REDACTED]service-area/beau… | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-04-broken_link-03
+- CHANGE #96 [broken_link] https://homemobilemedical.com/are-stair-lifts-noisy/ | internal links | old: links to one or more of the redirecting URLs listed in 'new' (2026-09-18 crawl) | new: Repoint each internal link (post content, menus or widgets on this page) that goes to a redirecting URL, straight to its final URL: [REDACTED]service-area/beau… | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-04-broken_link-04
+- CHANGE #97 [broken_link] https://homemobilemedical.com/are-stair-lifts-safe-and-ada-compliant/ | internal links | old: links to one or more of the redirecting URLs listed in 'new' (2026-09-18 crawl) | new: Repoint each internal link (post content, menus or widgets on this page) that goes to a redirecting URL, straight to its final URL: [REDACTED]service-area/beau… | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-04-broken_link-05
+- CHANGE #98 [broken_link] https://homemobilemedical.com/can-stair-lifts-turn-corners-or-go-around-corners/ | internal links | old: links to one or more of the redirecting URLs listed in 'new' (2026-09-18 crawl) | new: Repoint each internal link (post content, menus or widgets on this page) that goes to a redirecting URL, straight to its final URL: [REDACTED]service-area/beau… | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-04-broken_link-06
+- CHANGE #99 [broken_link] https://homemobilemedical.com/can-stairlifts-be-used-outside/ | internal links | old: links to one or more of the redirecting URLs listed in 'new' (2026-09-18 crawl) | new: Repoint each internal link (post content, menus or widgets on this page) that goes to a redirecting URL, straight to its final URL: [REDACTED]service-area/beau… | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-04-broken_link-07
+- CHANGE #100 [broken_link] https://homemobilemedical.com/is-there-a-weight-limit-on-stairlifts/ | internal links | old: links to one or more of the redirecting URLs listed in 'new' (2026-09-18 crawl) | new: Repoint each internal link (post content, menus or widgets on this page) that goes to a redirecting URL, straight to its final URL: [REDACTED]service-area/beau… | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-04-broken_link-08
+- CHANGE #101 [broken_link] https://homemobilemedical.com/service-area/mt-pleasant-sc/ | internal links | old: links to one or more of the redirecting URLs listed in 'new' (2026-09-18 crawl) | new: Repoint each internal link (post content, menus or widgets on this page) that goes to a redirecting URL, straight to its final URL: [REDACTED]service-area/beau… | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-04-broken_link-09
+- CHANGE #102 [other] https://homemobilemedical.com/new-homepage/ | HTTP status + robots (check only) | old: unknown (not crawled; CMS page 'New Homepage', published 2026-09-10, not in the sitemap) | new: record: HTTP status; WordPress status (published/draft/private); meta robots (index or noindex); canonical - change nothing | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-05-other-01
+- CHANGE #103 [other] https://homemobilemedical.com/about-us-across-the-web/ | HTTP status + robots (check only) | old: unknown (not crawled; listed in the XML sitemap, no internal link) | new: record: HTTP status; WordPress status; meta robots; canonical - change nothing | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-05-other-02
+- CHANGE #104 [drive_file] drive:Home Mobile Medical - TMS/02 - Build/Home Mobile Medical - Technical Blocker Checklist - REVIEW.md | upload | old: (new file) | new: Home Mobile Medical - Technical Blocker Checklist - REVIEW.md · sha 4617130ee2db | result: done · copied (Drive for desktop syncs it)
+- CHANGE #105 [drive_file] drive:Home Mobile Medical - TMS/02 - Build/H-2026-10-09-03-redirect.md | upload | old: (new file) | new: H-2026-10-09-03-redirect.md · sha d234a9cf9d0b | result: done · copied (Drive for desktop syncs it)
+- CHANGE #106 [drive_file] drive:Home Mobile Medical - TMS/02 - Build/H-2026-10-09-03-redirect.csv | upload | old: (new file) | new: H-2026-10-09-03-redirect.csv · sha 862d09288c43 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #107 [drive_file] drive:Home Mobile Medical - TMS/02 - Build/H-2026-10-09-04-broken_link.md | upload | old: (new file) | new: H-2026-10-09-04-broken_link.md · sha 9621dee60c72 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #108 [drive_file] drive:Home Mobile Medical - TMS/02 - Build/H-2026-10-09-04-broken_link.csv | upload | old: (new file) | new: H-2026-10-09-04-broken_link.csv · sha 746282ce8926 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #109 [drive_file] drive:Home Mobile Medical - TMS/02 - Build/H-2026-10-09-05-other.md | upload | old: (new file) | new: H-2026-10-09-05-other.md · sha b84f74af48c0 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #110 [drive_file] drive:Home Mobile Medical - TMS/02 - Build/H-2026-10-09-05-other.csv | upload | old: (new file) | new: H-2026-10-09-05-other.csv · sha 198a2bd743f7 | result: done · copied (Drive for desktop syncs it)
+- DECISION 2026-10-09T12:24 · run 20261009-122052-build-8f9c · Blocker checklist scope: no High finding blocks crawling, indexing or measurement; decided 301s, F-035 sitemap removals (paired with them) and F-002/F-003 menu removals routed to /implement structural (URL Decision Map), not the blocker handoff. Low batch to Jonie: F-033 chain repoints (3), F-033 internal links on non-rebuilt pages (9, /services/stair-lift/ links sent to /services/stair-lifts/ per F-034), F-038/Q5 status check (2). Chain targets use the slash URL per F-033 rather than the slash-less Decision Map target. · affects F-033,F-034,F-035,F-038
+### HANDOFF · /build · 2026-10-09 · run 20261009-122052-build-8f9c
+**What I did**
+- Read the approved Finding Register (latest revision of each of the 40 findings) and the matching URL Decision Map rows. Wrote `Home Mobile Medical - Technical Blocker Checklist - REVIEW.md` and marked it as artifact `blocker_checklist`.
+- Issued three blocker handoffs to Jonie (`--blockers`), 14 rows in all: H-2026-10-09-03-redirect (3 two-hop redirect chains, F-033), H-2026-10-09-04-broken_link (9 pages with internal links through 301s, F-033), H-2026-10-09-05-other (2-page status/robots check only, F-038 / Q5).
+- Copied the checklist and the three handoffs (.md + .csv) to Drive `02 - Build`.
+
+**What was decided, and why**
+- None of the 12 High findings blocks crawling, indexing or measurement. Each is fixed by a rebuild, by `/implement structural` (decided 301s and menu removals from the URL Decision Map) or by the Blog Decision Map, so none is a blocker row.
+- F-035 sitemap removals stay with the redirect handoff in `/implement structural`, because the finding pairs each removal with its 301.
+- The chain repoints target the slash URL (F-033 text). The Decision Map target is slash-less, which would leave one hop.
+- Links to /services/stair-lift/ are sent to /services/stair-lifts/ (F-034's natural target), not to the legacy /hilton-head/stair-lift/. The redirect itself is unchanged.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Return the 3 blocker handoffs, then `/verify` | Jonie, then system | blockers_cleared (release) |
+| F-034 redirect target; Q3 (10 value URLs) | Paul | /services/stair-lift/ target; 6 F-013 and 4 F-003 URLs |
+| F-040 GA4/GSC access from the client | Paul | measurement baseline |
+| Decided 301s, F-035 sitemap removals, F-002/F-003 menu removals | `/implement structural` (not yet run) | entity cleanup |
+| F-036 utility metas (/contact/, /terms-conditions/ + 4) | `/implement safe` | — |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Technical Blocker Checklist | clients/home-mobile-medical/build/Home Mobile Medical - Technical Blocker Checklist - REVIEW.md | written, marked |
+| Blocker handoffs | clients/home-mobile-medical/handoffs/H-2026-10-09-0{3,4,5}-*.md/.csv | issued to Jonie |
+| Item sources | clients/home-mobile-medical/build/blockers/*-items.csv | inputs |
+
+**What I could not check**
+- Live status of any URL. WordPress was not touched.
+- Which page each redirecting link sits on. The crawl export has inlink counts only, so each link row lists all 8 redirecting URLs and Jonie marks "none found" where there are none.
+
+**Anything the next agent would otherwise get wrong**
+- The site plan is already approved (imported), so `/build plan` is not needed. The next Build work is the evidence gate for the first batch.
+- The 36 decided 301s are NOT in the blocker handoff. Issue them in `/implement structural` with their F-035 sitemap removals. Pair /hilton-head/stair-lift-repair/ with the svc1 publish.
+### END HANDOFF
+## RUN 20261009-122052-build-8f9c · FINISHED · 2026-10-09T12:24:54-05:00
+Changes: 21 · Summary: Technical Blocker Checklist written; 14 blocker rows to Jonie in 3 handoffs (redirect chains, internal links through 301s, Q5 status check); no High blocks crawling/indexing/measurement
+- CHANGE #111 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-09.md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-09.md | result: done · renamed and moved, nothing deleted
+- CHANGE #112 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-09.md | new: Home Mobile Medical - Handoff Log.md · sha 39bf71bfd647 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #113 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-09 (2).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-09 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #114 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-09 (2).md | new: Home Mobile Medical - Document Checklist.md · sha c558245b72fe | result: done · copied (Drive for desktop syncs it)
+- CHANGE #115 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-09 (2).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-09 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #116 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-09 (2).md | new: Home Mobile Medical - Status.md · sha 4caed42171bb | result: done · copied (Drive for desktop syncs it)

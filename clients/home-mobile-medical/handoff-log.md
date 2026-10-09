@@ -235,3 +235,40 @@ Generated from the safety log (clients/home-mobile-medical/log.md) — do not ed
 - The /hilton-head/stair-lift-repair/ redirect is paired with the publish of /services/stair-lift-repair/.
 - The 15 Georgia rows stay on Hold.
 
+## /build · 2026-10-09 · run 20261009-122052-build-8f9c
+
+**What I did**
+- Read the approved Finding Register (latest revision of each of the 40 findings) and the matching URL Decision Map rows. Wrote `Home Mobile Medical - Technical Blocker Checklist - REVIEW.md` and marked it as artifact `blocker_checklist`.
+- Issued three blocker handoffs to Jonie (`--blockers`), 14 rows in all: H-2026-10-09-03-redirect (3 two-hop redirect chains, F-033), H-2026-10-09-04-broken_link (9 pages with internal links through 301s, F-033), H-2026-10-09-05-other (2-page status/robots check only, F-038 / Q5).
+- Copied the checklist and the three handoffs (.md + .csv) to Drive `02 - Build`.
+
+**What was decided, and why**
+- None of the 12 High findings blocks crawling, indexing or measurement. Each is fixed by a rebuild, by `/implement structural` (decided 301s and menu removals from the URL Decision Map) or by the Blog Decision Map, so none is a blocker row.
+- F-035 sitemap removals stay with the redirect handoff in `/implement structural`, because the finding pairs each removal with its 301.
+- The chain repoints target the slash URL (F-033 text). The Decision Map target is slash-less, which would leave one hop.
+- Links to /services/stair-lift/ are sent to /services/stair-lifts/ (F-034's natural target), not to the legacy /hilton-head/stair-lift/. The redirect itself is unchanged.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Return the 3 blocker handoffs, then `/verify` | Jonie, then system | blockers_cleared (release) |
+| F-034 redirect target; Q3 (10 value URLs) | Paul | /services/stair-lift/ target; 6 F-013 and 4 F-003 URLs |
+| F-040 GA4/GSC access from the client | Paul | measurement baseline |
+| Decided 301s, F-035 sitemap removals, F-002/F-003 menu removals | `/implement structural` (not yet run) | entity cleanup |
+| F-036 utility metas (/contact/, /terms-conditions/ + 4) | `/implement safe` | — |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Technical Blocker Checklist | clients/home-mobile-medical/build/Home Mobile Medical - Technical Blocker Checklist - REVIEW.md | written, marked |
+| Blocker handoffs | clients/home-mobile-medical/handoffs/H-2026-10-09-0{3,4,5}-*.md/.csv | issued to Jonie |
+| Item sources | clients/home-mobile-medical/build/blockers/*-items.csv | inputs |
+
+**What I could not check**
+- Live status of any URL. WordPress was not touched.
+- Which page each redirecting link sits on. The crawl export has inlink counts only, so each link row lists all 8 redirecting URLs and Jonie marks "none found" where there are none.
+
+**Anything the next agent would otherwise get wrong**
+- The site plan is already approved (imported), so `/build plan` is not needed. The next Build work is the evidence gate for the first batch.
+- The 36 decided 301s are NOT in the blocker handoff. Issue them in `/implement structural` with their F-035 sitemap removals. Pair /hilton-head/stair-lift-repair/ with the svc1 publish.
+
