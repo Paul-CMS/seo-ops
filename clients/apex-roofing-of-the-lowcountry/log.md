@@ -1812,3 +1812,66 @@ Changes: 0 · Summary: Roof Repair draft written. Passes E1–E10 and all spec c
 ## RUN 20261009-123816-build-2c02 · STARTED · /build · 2026-10-09T12:38:16-05:00
 Step: build:draft · batch pilot · session 40f19473-200f-425f-ad55-135b59d4f873
 Gates checked: discovery_signed_off, batch:pilot:briefs, page_specs_approved
+- CHANGE #302 [content_draft] https://apexroofingtlc.com/bluffton/ | LD draft file | old: (none) | new: build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md | result: written
+- DECISION 2026-10-09T12:43 · run 20261009-123816-build-2c02 · Route A applied for the loc-bluffton draft: status.json client.route is unset (status.py show prints no route); the Paul-approved LB brief states Route A and the pilot briefs were approved as Route A briefs. Not settled - Paul may set the route.
+- DECISION 2026-10-09T12:43 · run 20261009-123816-build-2c02 · loc-bluffton draft: FAQ 1 (Town permit) sourced during drafting per Paul's waiver ('verify during drafting'): Town of Bluffton Applications, Certificates, Forms and Permitting page https://www.townofbluffton.sc.gov/228/Applications-Certificates-Forms-and-Perm (read 2026-10-09) lists a RE-Roof Building Permit Application, Roof Fastener and Shingles Certificate, Ice and Water Shield Certificate, Flashing Affidavit, and a Certificate of Appropriateness HD Application. FAQ 2 Old Town material list and the COFA-for-re-roof rule (UDO 3.18 / Article 5) not read in primary text - left as [NEED]. Whether Apex pulls the permit - [NEED] client.
+- DECISION 2026-10-09T12:43 · run 20261009-123816-build-2c02 · loc-bluffton draft deviates from the approved brief in one heading: FAQ 3 H3 drops 'Belfair' ('Do you replace roofs in Palmetto Bluff and other gated Bluffton communities?') because Belfair's location in Bluffton is not publicly verified (facts file); Belfair stays inside the [NEED: W9] marker. Paul may restore it at draft approval.
+- DRAFT 2026-10-09T12:43 · run 20261009-123816-build-2c02 · loc-bluffton · clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md
+### HANDOFF · /build · 2026-10-09 · run 20261009-123816-build-2c02
+**What I did**
+- Wrote the pilot location draft for `loc-bluffton` from the approved brief (LB - Bluffton), one page in this run (CM-043), and recorded it: `status.py page-stage … loc-bluffton --stage draft`.
+- Route A: status.json `client.route` is unset; the Paul-approved brief states Route A (logged as a decision).
+- Sibling context read: SD - Roof Repair (pilot). No earlier approved pages. Bluffton's opening angle (home base / local roofer, owners near and away), headings and FAQs do not reuse Roof Repair's.
+- Per Paul's waiver ("verify during drafting") I read the Town of Bluffton forms page for FAQ 1 and searched for the Old Town material rules for FAQ 2 (primary UDO text not readable — left as `[NEED]`).
+- Word count about 840 including markers (under the 1,000 ceiling).
+
+**Stage 3 self-critique (E1–E10)**
+- E1 portability: PASS — the opening (based in Bluffton, Town of Bluffton licence #0620033323, out-of-town owners), local context (May River, New River, Old Town 1996, 1,275 → 27,716 people) and FAQ 1 (the Town's own re-roof permit forms) cannot move to Okatie, Pritchardville or Hilton Head Island. Most portable line: FAQ 3's "ask your property owners' association" sentence — re-test in the batch reviews against Hilton Head Island.
+- E2 specificity: PASS — 7 city-specific verifiable facts: based in Bluffton (BG-A4); Town licence (BG-D); May/New River; Old Town National Historic District 1996, 46 contributing buildings; population growth; Town re-roof permit forms (townofbluffton.sc.gov, read 2026-10-09); Church of the Cross 1854–1857 / Heyward House 1998 / Oyster Company 1899.
+- E3 variants: PASS — title Roofing Contractor → H1 Roofers → first H2 Roofing Contractor (not consecutive with the title) → FAQ H2 Roofer. Opening third set: roofer / roofing contractor + Bluffton, SC / Beaufort County. Sibling H2 uses B2 #2 "Lowcountry"; body uses B2 #4. Reserved B1 variant unused; "Residential Roofer" not used.
+- E4 chunk lengths: PASS — longest H2 section (FAQ) about 330 words incl. markers.
+- E5 invention: PASS with NEEDs — every Apex fact traces to BG-A/D; place facts to the brief's Wikipedia read or the Town forms page. CM-049: no keyword-borne claim; no response time; "always on call" is the client's Client Confirmed wording.
+- E6 filler: PASS — no A6 phrases.
+- E7 headers: PASS — one H1; every H2 a spoken question with an entity; H2→H3 only. COM-11: title remainder "Roofing Contractor" vs H1 remainder "Roofers" — differs, pass.
+- E8 links: PASS — no link in prose, FAQ or local context; both placeholder rows present; no outbound link placed (Finish candidates: the Town forms page for FAQ 1, the UDO for FAQ 2).
+- E9 human check: PASS.
+- E10 reading level: PASS — readability.py page grade 7.0, no paragraph over 10 (highest 9.1, the FAQ 3 answer). C7: sentence one answers each FAQ; no phone as answer; FAQ 2 informational, no company sentence.
+- Spec checks: LOC-01–13 pass (LOC-08 n/a) · LOC-14 4 questions, but FAQ 2 and FAQ 3 rest on `[NEED]` — publication-blocked · **LOC-15 FAIL (5 of 6 neighborhoods)** · LOC-16 map placeholder (Jonie embeds) · LOC-17 pass · LOC-18 placeholder (Finish) · **LOC-19 open** — CTA uses BG-A1/A4/A8; BG-F empty so the exact-match check cannot run · LOC-20–25 pass · LOC-26 no schema written (WebPage + ItemList recommendation stands) · LOC-27 n/a.
+
+**What was decided, and why**
+- Route A applied (brief says Route A; client.route unset).
+- FAQ 3 heading drops "Belfair" (not publicly placed in Bluffton); Belfair stays in the W9 `[NEED]` marker.
+- FAQ 1 sourced from the Town forms page; whether Apex pulls the permit stays `[NEED]`.
+- The self-critique is kept out of the LD file (publish.py would publish it).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Sixth Bluffton neighborhood with a public source | Paul / research or facts interview | LOC-15, publication |
+| Does Apex pull the Town of Bluffton re-roof permit? | Client via Paul | FAQ 1 second sentence |
+| Old Town: COFA needed for a re-roof (UDO §3.18) and the Article 5 roof-material list | Research (Town UDO) | FAQ 2, publication |
+| W9 work in Palmetto Bluff / Belfair / Colleton River / Moss Creek | Client via Paul | FAQ 3, publication |
+| Brand Guide F (NAP) empty | Paul (before Finish) | LOC-19 |
+| client.route unset in status.json | Paul | nothing now |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Bluffton draft | clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md | draft recorded |
+| Roof Repair draft (sibling) | clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md | draft recorded |
+
+**What I could not check**
+- The text of the Town of Bluffton UDO (§3.18, Article 5) and the two Town PDFs (no PDF reader available) — only the Town's forms page was read directly.
+- That Church of the Cross and Heyward House sit inside Old Town (not claimed on the page).
+
+**Anything the next agent would otherwise get wrong**
+- Both pilot drafts are written; the next step is the pilot batch review (`/build <slug> batch pilot drafts`), one run with both drafts side by side and the Stage 4 semantic table. FAQ 1 here (Beaufort County permit owner) must stay distinct from Ridgeland's Jasper County permit FAQ later.
+### END HANDOFF
+## RUN 20261009-123816-build-2c02 · FINISHED · 2026-10-09T12:43:45-05:00
+Changes: 1 · Summary: Pilot Bluffton location draft written (LD), E1-E10 pass, LOC-15 fails 5/6 neighborhoods, NEEDs open
+- CHANGE #303 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09.md | result: done · renamed and moved, nothing deleted
+- CHANGE #304 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09.md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 06d7a06b2301 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #305 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (2).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #306 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (2).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha d5c185b8e786 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #307 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (2).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #308 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (2).md | new: Apex Roofing of the Lowcountry - Status.md · sha 488fdbc605a3 | result: done · copied (Drive for desktop syncs it)

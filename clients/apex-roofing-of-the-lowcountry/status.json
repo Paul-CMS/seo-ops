@@ -309,7 +309,7 @@
       "claims": []
     },
     "loc-bluffton": {
-      "state": "brief_written",
+      "state": "draft_written",
       "type": "location",
       "name": "Bluffton",
       "url": "https://apexroofingtlc.com/bluffton/",
@@ -361,6 +361,12 @@
           "run": "20261008-222200-build-f8f3",
           "at": "2026-10-08T22:27:26-05:00",
           "sha": "8b70358ea294"
+        },
+        "draft": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md",
+          "run": "20261009-123816-build-2c02",
+          "at": "2026-10-09T12:43:09-05:00",
+          "sha": "c59a53c719cd"
         }
       }
     },
@@ -826,11 +832,11 @@
     }
   },
   "last_run": {
-    "run_id": "20261009-122305-build-e8c2",
+    "run_id": "20261009-123816-build-2c02",
     "command": "build",
-    "finished": "2026-10-09T12:35:57-05:00",
-    "result": "Roof Repair draft written. Passes E1–E10 and all spec checks SVC-03–SVC-22. Grade 5.6 reading level, 6 page-specific facts, no city in headings, no 'The Best'. Two decisions: 25% rule (SC source, general answer, or drop); first H2 area term 'Beaufort and Jasper Counties' acceptable. Flagged [NEED]: repair types, job duration, warranty term, photos, owners on roof, flashing/underlayment (facts interview items). Emergency FAQ answer in words only (no link, CM-005).",
-    "changes": 0,
+    "finished": "2026-10-09T12:43:45-05:00",
+    "result": "Pilot Bluffton location draft written (LD), E1-E10 pass, LOC-15 fails 5/6 neighborhoods, NEEDs open",
+    "changes": 1,
     "step": "build:draft",
     "batch": "pilot"
   },
@@ -853,17 +859,8 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-09T12:38:16-05:00",
-  "open_runs": {
-    "20261009-123816-build-2c02": {
-      "step": "build:draft",
-      "batch": "pilot",
-      "page": "loc-bluffton",
-      "started": "2026-10-09T12:38:16-05:00",
-      "started_ts": 1791567496.895395,
-      "session": "40f19473-200f-425f-ad55-135b59d4f873"
-    }
-  },
+  "updated": "2026-10-09T12:43:45-05:00",
+  "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
     "wordpress_connected": "2026-10-05T22:33:28-05:00",
@@ -927,6 +924,17 @@
       "step": "build:evidence",
       "first_run": "20261008-143018-build-a144",
       "at": "2026-10-08T15:00:27-05:00"
+    },
+    "40f19473-200f-425f-ad55-135b59d4f873": {
+      "key": "batches:pilot",
+      "step": "build:draft",
+      "first_run": "20261009-123816-build-2c02",
+      "at": "2026-10-09T12:43:45-05:00"
     }
+  },
+  "review_pause": {
+    "run_id": "20261009-123816-build-2c02",
+    "step": "build:draft",
+    "at": "2026-10-09T12:43:45-05:00"
   }
 }
