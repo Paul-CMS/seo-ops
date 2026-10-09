@@ -1,0 +1,1726 @@
+{
+ "svc-roof-repair": {
+  "service_areas": [
+   [
+    "Roof Leak and Damage Repair in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Roof Leak and Damage Repair in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Roof Leak and Damage Repair in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Roof Leak and Damage Repair in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Roof Leak and Damage Repair in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "svc-roof-replacement": {
+  "service_areas": [
+   [
+    "Re-Roofing in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Re-Roofing in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Re-Roofing in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Re-Roofing in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Re-Roofing in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Re-Roofing in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Re-Roofing in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Re-Roofing in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Re-Roofing in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Re-Roofing in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Re-Roofing in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Re-Roofing in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "svc-roof-installation": {
+  "service_areas": [
+   [
+    "New-Construction Roofing in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "New-Construction Roofing in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "New-Construction Roofing in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "New-Construction Roofing in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "New-Construction Roofing in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "New-Construction Roofing in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "New-Construction Roofing in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "New-Construction Roofing in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "New-Construction Roofing in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "New-Construction Roofing in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "New-Construction Roofing in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "New-Construction Roofing in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "svc-roof-inspections": {
+  "service_areas": [
+   [
+    "Roof Condition Inspections in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Roof Condition Inspections in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Roof Condition Inspections in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Roof Condition Inspections in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Roof Condition Inspections in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Roof Condition Inspections in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Roof Condition Inspections in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Roof Condition Inspections in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Roof Condition Inspections in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Roof Condition Inspections in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Roof Condition Inspections in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Roof Condition Inspections in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "svc-emergency-roof-repair": {
+  "service_areas": [
+   [
+    "Storm and Leak Emergency Roofing in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "svc-metal-roofing": {
+  "service_areas": [
+   [
+    "Standing Seam Metal Roofs in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Standing Seam Metal Roofs in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Standing Seam Metal Roofs in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Standing Seam Metal Roofs in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Standing Seam Metal Roofs in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Standing Seam Metal Roofs in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Standing Seam Metal Roofs in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Standing Seam Metal Roofs in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Standing Seam Metal Roofs in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Standing Seam Metal Roofs in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Standing Seam Metal Roofs in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Standing Seam Metal Roofs in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "svc-slate-roofing": {
+  "service_areas": [
+   [
+    "Natural Slate Roofs in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Natural Slate Roofs in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Natural Slate Roofs in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Natural Slate Roofs in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Natural Slate Roofs in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Natural Slate Roofs in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Natural Slate Roofs in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Natural Slate Roofs in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Natural Slate Roofs in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Natural Slate Roofs in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Natural Slate Roofs in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Natural Slate Roofs in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "svc-skylights": {
+  "service_areas": [
+   [
+    "Skylight Installation in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Skylight Installation in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Skylight Installation in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Skylight Installation in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Skylight Installation in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Skylight Installation in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Skylight Installation in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Skylight Installation in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Skylight Installation in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Skylight Installation in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Skylight Installation in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Skylight Installation in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "loc-bluffton": {
+  "services": [
+   [
+    "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-repair/",
+    "svc-roof-repair"
+   ],
+   [
+    "Re-Roofing in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-replacement/",
+    "svc-roof-replacement"
+   ],
+   [
+    "New-Construction Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-installation/",
+    "svc-roof-installation"
+   ],
+   [
+    "Roof Condition Inspections in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-inspections/",
+    "svc-roof-inspections"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/emergency-roof-repair/",
+    "svc-emergency-roof-repair"
+   ],
+   [
+    "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/metal-roofing-2/",
+    "svc-metal-roofing"
+   ],
+   [
+    "Natural Slate Roofs in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/slate-roofing/",
+    "svc-slate-roofing"
+   ],
+   [
+    "Skylight Installation in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/skylights/",
+    "svc-skylights"
+   ]
+  ],
+  "siblings": [
+   [
+    "Roof Leak and Damage Repair in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Roof Leak and Damage Repair in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Roof Leak and Damage Repair in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Roof Leak and Damage Repair in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Roof Leak and Damage Repair in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "loc-hilton-head-island": {
+  "services": [
+   [
+    "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-repair/",
+    "svc-roof-repair"
+   ],
+   [
+    "Re-Roofing in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-replacement/",
+    "svc-roof-replacement"
+   ],
+   [
+    "New-Construction Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-installation/",
+    "svc-roof-installation"
+   ],
+   [
+    "Roof Condition Inspections in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-inspections/",
+    "svc-roof-inspections"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/emergency-roof-repair/",
+    "svc-emergency-roof-repair"
+   ],
+   [
+    "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/metal-roofing-2/",
+    "svc-metal-roofing"
+   ],
+   [
+    "Natural Slate Roofs in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/slate-roofing/",
+    "svc-slate-roofing"
+   ],
+   [
+    "Skylight Installation in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/skylights/",
+    "svc-skylights"
+   ]
+  ],
+  "siblings": [
+   [
+    "Roof Leak and Damage Repair in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Roof Leak and Damage Repair in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Roof Leak and Damage Repair in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Roof Leak and Damage Repair in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Roof Leak and Damage Repair in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Roof Leak and Damage Repair in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "loc-okatie": {
+  "services": [
+   [
+    "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-repair/",
+    "svc-roof-repair"
+   ],
+   [
+    "Re-Roofing in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-replacement/",
+    "svc-roof-replacement"
+   ],
+   [
+    "New-Construction Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-installation/",
+    "svc-roof-installation"
+   ],
+   [
+    "Roof Condition Inspections in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-inspections/",
+    "svc-roof-inspections"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/emergency-roof-repair/",
+    "svc-emergency-roof-repair"
+   ],
+   [
+    "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/metal-roofing-2/",
+    "svc-metal-roofing"
+   ],
+   [
+    "Natural Slate Roofs in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/slate-roofing/",
+    "svc-slate-roofing"
+   ],
+   [
+    "Skylight Installation in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/skylights/",
+    "svc-skylights"
+   ]
+  ],
+  "siblings": [
+   [
+    "Roof Leak and Damage Repair in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Roof Leak and Damage Repair in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Roof Leak and Damage Repair in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Roof Leak and Damage Repair in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "loc-pritchardville": {
+  "services": [
+   [
+    "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-repair/",
+    "svc-roof-repair"
+   ],
+   [
+    "Re-Roofing in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-replacement/",
+    "svc-roof-replacement"
+   ],
+   [
+    "New-Construction Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-installation/",
+    "svc-roof-installation"
+   ],
+   [
+    "Roof Condition Inspections in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-inspections/",
+    "svc-roof-inspections"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/emergency-roof-repair/",
+    "svc-emergency-roof-repair"
+   ],
+   [
+    "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/metal-roofing-2/",
+    "svc-metal-roofing"
+   ],
+   [
+    "Natural Slate Roofs in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/slate-roofing/",
+    "svc-slate-roofing"
+   ],
+   [
+    "Skylight Installation in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/skylights/",
+    "svc-skylights"
+   ]
+  ],
+  "siblings": [
+   [
+    "Roof Leak and Damage Repair in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Roof Leak and Damage Repair in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Roof Leak and Damage Repair in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Roof Leak and Damage Repair in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Roof Leak and Damage Repair in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "loc-beaufort": {
+  "services": [
+   [
+    "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-repair/",
+    "svc-roof-repair"
+   ],
+   [
+    "Re-Roofing in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-replacement/",
+    "svc-roof-replacement"
+   ],
+   [
+    "New-Construction Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-installation/",
+    "svc-roof-installation"
+   ],
+   [
+    "Roof Condition Inspections in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-inspections/",
+    "svc-roof-inspections"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/emergency-roof-repair/",
+    "svc-emergency-roof-repair"
+   ],
+   [
+    "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/metal-roofing-2/",
+    "svc-metal-roofing"
+   ],
+   [
+    "Natural Slate Roofs in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/slate-roofing/",
+    "svc-slate-roofing"
+   ],
+   [
+    "Skylight Installation in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/skylights/",
+    "svc-skylights"
+   ]
+  ],
+  "siblings": [
+   [
+    "Roof Leak and Damage Repair in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Roof Leak and Damage Repair in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Roof Leak and Damage Repair in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Roof Leak and Damage Repair in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "loc-port-royal": {
+  "services": [
+   [
+    "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-repair/",
+    "svc-roof-repair"
+   ],
+   [
+    "Re-Roofing in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-replacement/",
+    "svc-roof-replacement"
+   ],
+   [
+    "New-Construction Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-installation/",
+    "svc-roof-installation"
+   ],
+   [
+    "Roof Condition Inspections in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-inspections/",
+    "svc-roof-inspections"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/emergency-roof-repair/",
+    "svc-emergency-roof-repair"
+   ],
+   [
+    "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/metal-roofing-2/",
+    "svc-metal-roofing"
+   ],
+   [
+    "Natural Slate Roofs in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/slate-roofing/",
+    "svc-slate-roofing"
+   ],
+   [
+    "Skylight Installation in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/skylights/",
+    "svc-skylights"
+   ]
+  ],
+  "siblings": [
+   [
+    "Roof Leak and Damage Repair in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Roof Leak and Damage Repair in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Roof Leak and Damage Repair in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Roof Leak and Damage Repair in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "loc-ladys-island": {
+  "services": [
+   [
+    "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-repair/",
+    "svc-roof-repair"
+   ],
+   [
+    "Re-Roofing in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-replacement/",
+    "svc-roof-replacement"
+   ],
+   [
+    "New-Construction Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-installation/",
+    "svc-roof-installation"
+   ],
+   [
+    "Roof Condition Inspections in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-inspections/",
+    "svc-roof-inspections"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/emergency-roof-repair/",
+    "svc-emergency-roof-repair"
+   ],
+   [
+    "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/metal-roofing-2/",
+    "svc-metal-roofing"
+   ],
+   [
+    "Natural Slate Roofs in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/slate-roofing/",
+    "svc-slate-roofing"
+   ],
+   [
+    "Skylight Installation in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/skylights/",
+    "svc-skylights"
+   ]
+  ],
+  "siblings": [
+   [
+    "Roof Leak and Damage Repair in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Roof Leak and Damage Repair in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Roof Leak and Damage Repair in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Roof Leak and Damage Repair in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Roof Leak and Damage Repair in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "loc-st-helena-island": {
+  "services": [
+   [
+    "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-repair/",
+    "svc-roof-repair"
+   ],
+   [
+    "Re-Roofing in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-replacement/",
+    "svc-roof-replacement"
+   ],
+   [
+    "New-Construction Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-installation/",
+    "svc-roof-installation"
+   ],
+   [
+    "Roof Condition Inspections in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-inspections/",
+    "svc-roof-inspections"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/emergency-roof-repair/",
+    "svc-emergency-roof-repair"
+   ],
+   [
+    "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/metal-roofing-2/",
+    "svc-metal-roofing"
+   ],
+   [
+    "Natural Slate Roofs in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/slate-roofing/",
+    "svc-slate-roofing"
+   ],
+   [
+    "Skylight Installation in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/skylights/",
+    "svc-skylights"
+   ]
+  ],
+  "siblings": [
+   [
+    "Roof Leak and Damage Repair in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Roof Leak and Damage Repair in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Roof Leak and Damage Repair in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Roof Leak and Damage Repair in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Roof Leak and Damage Repair in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "loc-fripp-island": {
+  "services": [
+   [
+    "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-repair/",
+    "svc-roof-repair"
+   ],
+   [
+    "Re-Roofing in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-replacement/",
+    "svc-roof-replacement"
+   ],
+   [
+    "New-Construction Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-installation/",
+    "svc-roof-installation"
+   ],
+   [
+    "Roof Condition Inspections in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-inspections/",
+    "svc-roof-inspections"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/emergency-roof-repair/",
+    "svc-emergency-roof-repair"
+   ],
+   [
+    "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/metal-roofing-2/",
+    "svc-metal-roofing"
+   ],
+   [
+    "Natural Slate Roofs in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/slate-roofing/",
+    "svc-slate-roofing"
+   ],
+   [
+    "Skylight Installation in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/skylights/",
+    "svc-skylights"
+   ]
+  ],
+  "siblings": [
+   [
+    "Roof Leak and Damage Repair in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Roof Leak and Damage Repair in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Roof Leak and Damage Repair in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Roof Leak and Damage Repair in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Roof Leak and Damage Repair in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "loc-hardeeville": {
+  "services": [
+   [
+    "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-repair/",
+    "svc-roof-repair"
+   ],
+   [
+    "Re-Roofing in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-replacement/",
+    "svc-roof-replacement"
+   ],
+   [
+    "New-Construction Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-installation/",
+    "svc-roof-installation"
+   ],
+   [
+    "Roof Condition Inspections in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-inspections/",
+    "svc-roof-inspections"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/emergency-roof-repair/",
+    "svc-emergency-roof-repair"
+   ],
+   [
+    "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/metal-roofing-2/",
+    "svc-metal-roofing"
+   ],
+   [
+    "Natural Slate Roofs in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/slate-roofing/",
+    "svc-slate-roofing"
+   ],
+   [
+    "Skylight Installation in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/skylights/",
+    "svc-skylights"
+   ]
+  ],
+  "siblings": [
+   [
+    "Roof Leak and Damage Repair in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Roof Leak and Damage Repair in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Roof Leak and Damage Repair in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Roof Leak and Damage Repair in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ],
+   [
+    "Roof Leak and Damage Repair in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "loc-ridgeland": {
+  "services": [
+   [
+    "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-repair/",
+    "svc-roof-repair"
+   ],
+   [
+    "Re-Roofing in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-replacement/",
+    "svc-roof-replacement"
+   ],
+   [
+    "New-Construction Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-installation/",
+    "svc-roof-installation"
+   ],
+   [
+    "Roof Condition Inspections in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-inspections/",
+    "svc-roof-inspections"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/emergency-roof-repair/",
+    "svc-emergency-roof-repair"
+   ],
+   [
+    "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/metal-roofing-2/",
+    "svc-metal-roofing"
+   ],
+   [
+    "Natural Slate Roofs in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/slate-roofing/",
+    "svc-slate-roofing"
+   ],
+   [
+    "Skylight Installation in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/skylights/",
+    "svc-skylights"
+   ]
+  ],
+  "siblings": [
+   [
+    "Roof Leak and Damage Repair in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Roof Leak and Damage Repair in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Roof Leak and Damage Repair in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Roof Leak and Damage Repair in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Levy",
+    "https://apexroofingtlc.com/levy/",
+    "loc-levy"
+   ]
+  ]
+ },
+ "loc-levy": {
+  "services": [
+   [
+    "Roof Leak and Damage Repair in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-repair/",
+    "svc-roof-repair"
+   ],
+   [
+    "Re-Roofing in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-replacement/",
+    "svc-roof-replacement"
+   ],
+   [
+    "New-Construction Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/roof-installation/",
+    "svc-roof-installation"
+   ],
+   [
+    "Roof Condition Inspections in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/roof-inspections/",
+    "svc-roof-inspections"
+   ],
+   [
+    "Storm and Leak Emergency Roofing in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/emergency-roof-repair/",
+    "svc-emergency-roof-repair"
+   ],
+   [
+    "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/metal-roofing-2/",
+    "svc-metal-roofing"
+   ],
+   [
+    "Natural Slate Roofs in the South Carolina Lowcountry",
+    "https://apexroofingtlc.com/slate-roofing/",
+    "svc-slate-roofing"
+   ],
+   [
+    "Skylight Installation in Beaufort and Jasper Counties",
+    "https://apexroofingtlc.com/skylights/",
+    "svc-skylights"
+   ]
+  ],
+  "siblings": [
+   [
+    "Roof Leak and Damage Repair in Bluffton",
+    "https://apexroofingtlc.com/bluffton/",
+    "loc-bluffton"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hilton Head Island",
+    "https://apexroofingtlc.com/hilton-head-island/",
+    "loc-hilton-head-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Okatie",
+    "https://apexroofingtlc.com/okatie/",
+    "loc-okatie"
+   ],
+   [
+    "Roof Leak and Damage Repair in Pritchardville",
+    "https://apexroofingtlc.com/pritchardville/",
+    "loc-pritchardville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Beaufort",
+    "https://apexroofingtlc.com/beaufort/",
+    "loc-beaufort"
+   ],
+   [
+    "Roof Leak and Damage Repair in Port Royal",
+    "https://apexroofingtlc.com/port-royal/",
+    "loc-port-royal"
+   ],
+   [
+    "Roof Leak and Damage Repair in Lady's Island",
+    "https://apexroofingtlc.com/ladys-island/",
+    "loc-ladys-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in St. Helena Island",
+    "https://apexroofingtlc.com/st-helena-island/",
+    "loc-st-helena-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Fripp Island",
+    "https://apexroofingtlc.com/fripp-island/",
+    "loc-fripp-island"
+   ],
+   [
+    "Roof Leak and Damage Repair in Hardeeville",
+    "https://apexroofingtlc.com/hardeeville/",
+    "loc-hardeeville"
+   ],
+   [
+    "Roof Leak and Damage Repair in Ridgeland",
+    "https://apexroofingtlc.com/ridgeland/",
+    "loc-ridgeland"
+   ]
+  ]
+ }
+}
