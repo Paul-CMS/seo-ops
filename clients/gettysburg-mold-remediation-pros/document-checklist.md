@@ -1,6 +1,6 @@
 # Gettysburg Mold Remediation Pros - Document Checklist
 
-Generated 2026-10-08T13:15 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-09T18:08 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -34,6 +34,7 @@ Generated 2026-10-08T13:15 from status.json — do not edit. `[x]` done · `[-]`
 - [x] Client set up (/new-client finished)
 - [ ] The client's facts are in — the returned proof sheet is recorded, or Paul approved the client's direct answers — the client has not returned the proof sheet yet (when it arrives: /discovery gettysburg-mold-remediation-pros sheet-returned)
 - [ ] Every registered audit step has an outcome (Done / Skipped / Failed) — audit steps with no outcome yet: S04, S05, S06, S07, S08, S09, S10, S11, S19, S20, S21, S12, S13, S14, S15, S16, S17, S18
+- [ ] Every page in the site plan is a WordPress draft — ready for the one living publish handoff (CM-055) — no site plan yet
 - [ ] Every page in the site plan is built, verified and written back — no site plan yet
 - [ ] WordPress connected (/wp-check passed in the last 30 days) — the last /wp-check failed — fix what it reported (clients/gettysburg-mold-remediation-pros/wordpress/wp-check-2026-10-03.md) and run /wp-check gettysburg-mold-remediation-pros again
 - [ ] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — discovery is not signed off yet — still open: the Decision Sheet and the entity foundation, the client proof sheet (or the client's direct answers), the client's returned proof sheet, the audit deliverables, the reconciled Brand Guide

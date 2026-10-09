@@ -159,3 +159,6 @@ Approved version: methodology/specs/location.md (sha bf5b163f4357)
 Approved version: methodology/specs/service.md (sha 0d679dadad45)
 
 ## CONDITION · 2026-10-08T13:15:46-05:00 · Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)
+
+## MIGRATION · 2026-10-09T18:08:52-05:00 · rewrite 2 P4: facts.json
+31 facts from Brand Guide A and D · 0 approval stamp(s) re-stamped on the value-only hash · 0 lost
