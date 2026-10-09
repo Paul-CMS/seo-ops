@@ -41,6 +41,15 @@ if sid:
            "started": old.get("started") if old.get("session_id") == sid else time.time(),
            "model": old.get("model") if old.get("session_id") == sid else None}
     f.write_text(json.dumps(rec))
+    # P2: one file per session — the newest prompt marks the newest session in this folder
+    (state / "sessions").mkdir(parents=True, exist_ok=True)
+    sf = state / "sessions" / f"{sid}.json"
+    try:
+        mine = json.loads(sf.read_text())
+    except Exception:
+        mine = {"session_id": sid, "started": time.time(), "model": None}
+    mine["seen"] = time.time()
+    sf.write_text(json.dumps(mine))
 
 prompt = (data.get("prompt") or "").strip()
 if prompt.startswith("/approve"):

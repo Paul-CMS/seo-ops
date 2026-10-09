@@ -22,6 +22,7 @@ import tempfile
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+os.environ.pop("CLAUDE_SEO_OPS_SESSION", None)   # P2: the tests' sessions come from the hooks, never this chat's
 RESULTS = []
 SB = None  # sandbox root
 SESSIONS = []   # R2: every session the tests opened (a new one each time a stage changes)
@@ -1821,7 +1822,7 @@ def t_settled_and_status():
           and "Waiting on" in top4[2] and "Next action" in top4[3], top4)
     check("R7: STATUS.md lists settled decisions once, open VA items with owner and id, and spend",
           stx.count("Citations skipped for this audit") == 1 and "manual_lookup" in stx and "(Gwen)" in stx
-          and "DataforSEO: $" in stx and "~/Documents/seo-ops" in stx, stx)
+          and "DataforSEO: $" in stx and "worktree.py open" in stx, stx)
     code, out = sh("python3 scripts/records.py top ss-co")
     check("R7: records.py top prints the four lines /next and /resume show", code == 0 and len(out.splitlines()) == 4, out)
 
@@ -1987,12 +1988,20 @@ def t_sessions():
     sh('python3 scripts/status.py init se-co --name "Se Co" --domain se.example --type full --industry roofing')
     sh('python3 scripts/status.py init se2-co --name "Se2 Co" --domain se2.example --type full --industry roofing')
     sf.unlink(missing_ok=True)
+    sdir = SB / ".claude" / "state" / "sessions"
+    saved_dir = SB / ".claude" / "state" / "sessions-saved"
+    if sdir.exists():
+        sdir.rename(saved_dir)
     code, out = _sh("python3 scripts/run.py start se-co new-client")
+    if saved_dir.exists():
+        saved_dir.rename(sdir)
     check("R2: with no session recorded (hook not installed) a stage run is refused", code == 4 and "session hook" in out, out)
     out = new_session("claude-haiku-4-5")
     check("R2: the SessionStart hook records the session and prints the model reminder",
           sf.exists() and "one session per stage" in out and "Haiku" in out, out)
-    check("R1: a session on another model is warned (Haiku and Opus only)", "Haiku and Opus only" in new_session("claude-sonnet-5-5"))
+    check("Q12: Sonnet is an allowed model (no warning); any other model is warned",
+          "seo-ops uses Haiku, Sonnet and Opus" not in new_session("claude-sonnet-5-5")
+          and "seo-ops uses Haiku, Sonnet and Opus" in new_session("other-model-1"))
     new_session()
     ag = Agent("se-co"); rid = ag.start("new-client"); ag.fin(rid, "set up")
     code, out = _sh("python3 scripts/run.py start se-co discovery --step discovery")

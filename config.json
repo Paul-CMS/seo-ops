@@ -1,6 +1,8 @@
 {
   "dfs_confirm_threshold_usd": 2.0,
   "git_push_after_run": true,
+  "client_worktrees_root": "~/Documents/seo-ops-clients",
+  "_client_worktrees_about": "Rewrite 2 P2: scripts/worktree.py open <slug> makes one git worktree per client here (branch client/<slug>); each client chat runs in its own folder. System sessions run only in the main folder.",
   "story_cadence_days": 30,
   "_stage_modes_about": "CM-044. Global stage modes Paul set with /approve global mode:<stage>=auto|review (written by approve.py, never by hand). A client's own setting in its status.json wins. Missing = review.",
   "stage_modes": {},

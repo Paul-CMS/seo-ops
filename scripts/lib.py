@@ -40,6 +40,8 @@ def machine():
     can_approve: false on a VA's Mac - the VA runs the stages, Paul approves on his own Mac.
     can_change_system: false on a VA's Mac - /system is refused there (rewrite 2 P3)."""
     p = ROOT / "machine.json"
+    if not p.exists():   # a client worktree (P2) uses its Mac's settings from the main checkout
+        p = main_root() / "machine.json"
     return json.loads(p.read_text()) if p.exists() else {}
 
 
@@ -167,6 +169,8 @@ def load_env():
         return _ENV_CACHE
     env = {}
     p = ROOT / ".env"
+    if not p.exists():   # a client worktree (P2): the credentials stay in the main checkout only
+        p = main_root() / ".env"
     if p.exists():
         for line in p.read_text().splitlines():
             line = line.strip()
@@ -195,23 +199,77 @@ def redact(text):
     return text
 
 
-def git_commit(message):
-    """Commit everything git is allowed to see. Push if configured. Never fails the run."""
+def _git(*args):
+    return subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True, text=True)
+
+
+def main_root():
+    """The main checkout of this repo (Paul's ~/Documents/seo-ops). In a client worktree (P2) ROOT is the worktree;
+    git-ignored per-Mac files (.env, machine.json) live only in the main checkout."""
+    try:
+        r = _git("rev-parse", "--path-format=absolute", "--git-common-dir")
+        if r.returncode == 0 and r.stdout.strip():
+            return Path(r.stdout.strip()).parent
+    except Exception:  # noqa: BLE001
+        pass
+    return ROOT
+
+
+def git_branch():
+    r = _git("rev-parse", "--abbrev-ref", "HEAD")
+    return r.stdout.strip() if r.returncode == 0 else ""
+
+
+def system_session():
+    import changereq
+    return changereq.system_session()
+
+
+def _sync_main(out):
+    """P2: bring this branch up to origin/main and push it there as a fast-forward; one retry on a race. A real
+    conflict stops with a plain message. Never forces."""
+    if not config().get("git_push_after_run"):
+        return
+    if _git("remote", "get-url", "origin").returncode != 0:
+        out.append("no remote — the commit is safe locally")
+        return
+    for attempt in (1, 2):
+        pr = _git("pull", "--rebase", "--autostash", "-q", "origin", "main")
+        if pr.returncode != 0:
+            _git("rebase", "--abort")
+            out.append("NOT PUSHED — this client's commit conflicts with newer work on main. Nothing was lost: the "
+                       "commit is safe here. Tell Paul; a system session resolves it (never force). "
+                       + redact((pr.stderr or pr.stdout).strip()[:300]))
+            return
+        ps = _git("push", "-q", "origin", "HEAD:main")
+        if ps.returncode == 0:
+            out.append("pushed" + (" (after one retry)" if attempt == 2 else ""))
+            return
+    out.append("push failed twice (commit is safe locally): " + redact(ps.stderr.strip()[:300]))
+
+
+def git_commit(message, slug=None, paths=None):
+    """Commit and push. Never fails the run.
+    P2: with a slug, only clients/<slug>/ is staged and committed — never another client's files (`git add -A` is
+    gone). paths: the exact files a script changed (global approvals). Neither: a system commit, allowed only in a
+    system session (P3). After the commit the branch is rebased on origin/main and pushed to main (one retry)."""
     out = []
     try:
-        subprocess.run(["git", "-C", str(ROOT), "add", "-A"], check=True,
-                       capture_output=True, text=True)
-        r = subprocess.run(["git", "-C", str(ROOT), "commit", "-q", "-m", message],
-                           capture_output=True, text=True)
-        if r.returncode != 0 and "nothing to commit" not in (r.stdout + r.stderr):
+        if slug:
+            spec = [f"clients/{slug}/"]
+        elif paths:
+            spec = list(paths)
+        elif system_session():
+            spec = ["."]
+        else:
+            return "NOT COMMITTED — a commit outside one client's folder happens only in a system session (P3)."
+        _git("add", "-A", "--", *spec)
+        r = _git("commit", "-q", "-m", message, "--", *spec)
+        if r.returncode != 0 and not re.search(r"nothing|no changes", r.stdout + r.stderr):
             out.append("git commit failed: " + redact(r.stderr.strip()))
         elif r.returncode == 0:
             out.append("committed: " + message.splitlines()[0])
-        if config().get("git_push_after_run"):
-            p = subprocess.run(["git", "-C", str(ROOT), "push", "-q"],
-                               capture_output=True, text=True)
-            out.append("pushed" if p.returncode == 0
-                       else "push failed (commit is safe locally): " + redact(p.stderr.strip()))
+        _sync_main(out)
     except Exception as e:  # noqa: BLE001
         out.append(f"git step failed: {e}")
     return "; ".join(out)

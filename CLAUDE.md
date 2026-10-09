@@ -14,8 +14,10 @@ session runs on Haiku (it orchestrates `/next`, relays agent summaries, prints `
 Opus agents (`discovery-audit`, `audit-reviewer`, `build`, `finish`, `blog`), mechanical work in the Haiku `clerk`
 (models fixed in `.claude/agents/*.md`; `python3 scripts/stages.py list`). A system/design session (changing seo-ops)
 runs on Opus. **Never switch a session's model mid-session.** **One session per stage** — enforced: `run.py start`
-refuses a step of a new stage in a session that already finished another (bookkeeping steps excepted). Start every
-session in `~/Documents/seo-ops`. **Decide once:** a settled decision (`decisions-settled.md`) is never asked again.
+refuses a step of a new stage in a session that already finished another (bookkeeping steps excepted). **One folder per client (P2):** a client's
+sessions run in its own git worktree (`python3 scripts/worktree.py open <slug>` prints the folder; branch
+`client/<slug>`); each run commits only `clients/<slug>/` and pushes to main; one chat per client at a time (a lock
+refuses a second; only Paul clears it, `run.py unlock`). System sessions run in `~/Documents/seo-ops` (main). **Decide once:** a settled decision (`decisions-settled.md`) is never asked again.
 Agents read compact script-made summaries, never raw exports.
 
 ---
@@ -60,7 +62,8 @@ Every command that does work:
    - exit **3** → an unfinished earlier run exists. **Stop and ask Paul**: resume it, verify
      it (`/verify`), roll it back (`/rollback`), or abort it (Paul's call only).
    - exit **4** with "Start a new session" → this session already did another stage (R2). Tell Paul to open a new
-     chat on the stage's model in `~/Documents/seo-ops` and type `/next <slug>` there.
+     chat on the stage's model in the client's folder (`worktree.py open <slug>`) and type `/next <slug>` there.
+   - exit **4** with "another chat is working on" → a second chat on this client (P2). Stop; tell Paul.
 2. **Act.** Log every change *as it happens*:
    `python3 scripts/run.py change <slug> <RUN_ID> --kind K --url U --field F --old V --new V --result R`
    (wp.py, handoff.py, verify.py, crawl.py and drive.py log for you). Files reach Drive only as file copies:
@@ -309,7 +312,7 @@ than re-logging an exception each time.
   on a client (the guard blocks connector searches not scoped to a v3 folder). Audits reference only that folder.
 - **A VA's Mac** (`VA-SETUP.md`) has its own `machine.json` (git-ignored): `drive_local_root` (its path to v3,
   overriding config.json) and `can_approve: false` — the VA runs the stages, approve.py refuses there, and Paul
-  approves on his own Mac after a `git pull`. One client is worked on one Mac at a time.
+  approves on his own Mac after a `git pull`. One chat per client at a time (the client lock, P2).
 - Every file follows `methodology/naming-convention.md` (check with `scripts/naming.py`).
   Content: `[CODE] - [Service or Location] - [Client]`. Deliverables:
   `[Client] - [Artifact] - [STATUS].md`. Evidence:

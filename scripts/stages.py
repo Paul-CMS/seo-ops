@@ -10,6 +10,7 @@ never causes a mid-session switch.
 """
 import re
 import sys
+from pathlib import Path
 
 from lib import ROOT
 
@@ -83,15 +84,87 @@ def step_of_command(command):
 
 
 SESSION_FILE = ROOT / ".claude" / "state" / "session.json"
+SESSIONS_DIR = ROOT / ".claude" / "state" / "sessions"
+LOCK_FRESH_S = 2 * 3600
+
+
+def latest_session(state_dir):
+    """The id of the newest session file (by last prompt seen) in a .claude/state folder, or None."""
+    import json
+    best = (None, -1)
+    for f in (Path(state_dir) / "sessions").glob("*.json"):
+        try:
+            rec = json.loads(f.read_text())
+        except Exception:
+            continue
+        if float(rec.get("seen") or 0) > best[1]:
+            best = (rec.get("session_id"), float(rec.get("seen") or 0))
+    return best[0]
 
 
 def current_session():
-    """The session id the hooks recorded (SessionStart / UserPromptSubmit), or None."""
+    """This chat's session id (P2): CLAUDE_SEO_OPS_SESSION, which the SessionStart hook puts in the session's own
+    environment; else the newest per-session file in this folder's .claude/state/sessions/ (each client worktree has
+    its own); else the old single session.json. None if no hook ran."""
+    import json
+    import os
+    sid = os.environ.get("CLAUDE_SEO_OPS_SESSION")
+    if sid:
+        return sid
+    sid = latest_session(ROOT / ".claude" / "state")
+    if sid:
+        return sid
     try:
-        import json
         return json.loads(SESSION_FILE.read_text()).get("session_id")
     except Exception:
         return None
+
+
+# ------------------------------------------------------------------ client lock (P2)
+def lock_path(slug):
+    """Locks live in git's common folder, so every worktree of this repo sees the same lock for a client."""
+    from lib import main_root
+    import subprocess
+    r = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "--path-format=absolute", "--git-common-dir"],
+                       capture_output=True, text=True)
+    base = Path(r.stdout.strip()) if r.returncode == 0 and r.stdout.strip() else main_root() / ".claude" / "state"
+    return base / "seo-ops-locks" / f"{slug}.json"
+
+
+def lock_holder(slug, sid):
+    """The lock record if another session holds this client and its lock is fresh, else None. Fresh = under two hours
+    old AND the holder is still the newest session in its own folder (a newer chat there has taken over)."""
+    import json
+    import time
+    p = lock_path(slug)
+    try:
+        rec = json.loads(p.read_text())
+    except Exception:
+        return None
+    if not rec.get("session") or rec.get("session") == sid:
+        return None
+    if time.time() - float(rec.get("at") or 0) >= LOCK_FRESH_S:
+        return None
+    latest = latest_session(Path(rec.get("worktree") or ROOT) / ".claude" / "state")
+    if latest and latest != rec["session"]:
+        return None
+    return rec
+
+
+def take_lock(slug, sid):
+    import json
+    import socket
+    import time
+    p = lock_path(slug)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps({"session": sid, "host": socket.gethostname(), "worktree": str(ROOT), "at": time.time()}))
+
+
+def unlock(slug):
+    p = lock_path(slug)
+    existed = p.exists()
+    p.unlink(missing_ok=True)
+    return existed
 
 
 def session_conflict(slug, step, batch=None, sid=None):
@@ -114,7 +187,7 @@ def session_conflict(slug, step, batch=None, sid=None):
             return (f"Stage {done.get('n', '?')} ({done.get('name', rec.get('key'))}) is done in this session"
                     + (f" for {p.parent.name}" if p.parent.name != slug else "")
                     + f". Start a new session (new chat, model: {nxt.get('session_model', 'haiku').title()}) in "
-                    f"~/Documents/seo-ops and type /next {slug}.")
+                    f"the client folder (python3 scripts/worktree.py open {slug}) and type /next {slug}.")
     return None
 
 

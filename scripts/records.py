@@ -227,7 +227,7 @@ def status_md(slug):
         waits.append((owner, f"{kind} handoff — {n_open} of {n} item(s) open", issued, hid))
     if nx["kind"] == "run":
         nxt = (f"`{nx['command']}` — Paul opens a **new session on {nx.get('session_model', 'haiku').title()}** in "
-               f"~/Documents/seo-ops and types `/next {slug}`" + (f" (agents: {nx['agents']})" if nx.get("agents") else ""))
+               f"the client folder (`python3 scripts/worktree.py open {slug}`) and types `/next {slug}`" + (f" (agents: {nx['agents']})" if nx.get("agents") else ""))
     elif nx["kind"] == "decision":
         nxt = f"Paul types `{nx['command']}` (or asks for changes first)"
     else:
@@ -239,7 +239,7 @@ def status_md(slug):
            f"- **What is happening now:** {now_line}",
            f"- **Waiting on:** {who_waits}",
            f"- **Next action:** {nxt}", "",
-           f"_Generated {S.now()[:16]} by the system — do not edit. Start every session in `~/Documents/seo-ops`, "
+           f"_Generated {S.now()[:16]} by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), "
            "one session per stage._", "",
            "## Waiting on", "", "| Who | What | Since | Reference |", "|---|---|---|---|"]
     out += [f"| {w} | {t} | {s} | {r} |" for w, t, s, r in waits] or ["| — | nothing | | |"]

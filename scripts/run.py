@@ -12,6 +12,7 @@
     run.py flag   <slug> <run_id> --text T [--workaround T] [--who W]
                   a workflow issue for Paul's next system session (P3, Q2): appended to clients/<slug>/flags.jsonl,
                   listed in STATUS.md and /system-review. The run continues on the current rules.
+    run.py unlock <slug>                            Paul only, in his own terminal: clear the client lock (P2)
     run.py check  <slug>                            exit 3 if an unfinished run exists
     run.py steps  [<command>]                       list each step's gates and outputs (from gates.json)
 
@@ -236,6 +237,7 @@ def main():
     s = sub.add_parser("flag"); s.add_argument("slug"); s.add_argument("run_id")
     s.add_argument("--text", required=True); s.add_argument("--workaround", default="")
     s.add_argument("--who", default="Claude")
+    s = sub.add_parser("unlock"); s.add_argument("slug")
     s = sub.add_parser("check"); s.add_argument("slug")
     s = sub.add_parser("steps"); s.add_argument("command", nargs="?")
     a = ap.parse_args()
@@ -250,6 +252,12 @@ def main():
         return
     d = client_dir(a.slug)
 
+    if a.cmd == "unlock":   # P2: Paul only, in his own terminal (the guard blocks Claude from running it)
+        import stages
+        gone = stages.unlock(a.slug)
+        append(d / "log.md", f"- UNLOCK {now()[:16]} · client lock {'removed' if gone else 'was not set'} (Paul)\n")
+        print(f"{a.slug}: lock {'removed' if gone else 'was not set'}")
+        return
     if a.cmd == "start":
         step_spec(S.load(a.slug), a.command, a.step)   # a mistyped step is a usage error first
     if a.cmd in ("start", "check"):
@@ -285,6 +293,16 @@ def main():
             print(f"REFUSED — {refusal}")
             sys.exit(4)
         sid = stages.current_session()
+        held = stages.lock_holder(a.slug, sid) if sid else None   # P2: one chat per client at a time
+        if held:
+            import datetime
+            since = datetime.datetime.fromtimestamp(float(held["at"])).strftime("%H:%M")
+            print(f"REFUSED — another chat is working on {a.slug} (session {held['session']} on {held.get('host')}, "
+                  f"in {held.get('worktree')}, since {since}). Finish there first. If that chat is gone, Paul runs "
+                  f"`python3 scripts/run.py unlock {a.slug}` in his own terminal.")
+            sys.exit(4)
+        if sid:
+            stages.take_lock(a.slug, sid)
         run_id = (f"{now()[:19].replace('-', '').replace(':', '').replace('T', '-')}-{a.command}"
                   f"-{secrets.token_hex(2)}")
         st = S.load(a.slug)
@@ -381,7 +399,7 @@ def main():
         m = drive.mirror(a.slug, a.run_id, closed_ok=True)   # R4: the records reach Drive by file copy, no agent
         print("Drive: " + ("copy pending sync (no local Drive folder — recorded once)" if "pending" in m
                            else f"{m.get('copied', 0)} record(s) copied, {m.get('unchanged', 0)} unchanged"))
-        print(git_commit(f"{a.slug}: /{cmd} finished ({len(ch)} changes)\n\n{a.summary}"))
+        print(git_commit(f"{a.slug}: /{cmd} finished ({len(ch)} changes)\n\n{a.summary}", slug=a.slug))
     elif a.cmd == "abort":
         open_run(a.slug, a.run_id)
         append(d / "log.md", f"## RUN {a.run_id} · ABORTED · {now()}\nReason (Paul): {redact(a.reason)}\n")
@@ -390,7 +408,7 @@ def main():
         import records
         records.render(a.slug)
         drive.mirror(a.slug, a.run_id, closed_ok=True)
-        print(git_commit(f"{a.slug}: run {a.run_id} aborted"))
+        print(git_commit(f"{a.slug}: run {a.run_id} aborted", slug=a.slug))
 
 
 if __name__ == "__main__":

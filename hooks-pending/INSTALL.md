@@ -18,3 +18,6 @@ session; the tests use `.claude/hooks/` when it is empty.
   `clients/*/flags.jsonl` are append-only, scripts only.
 - **P3** `approve_token.py`: `/system` writes the one-time system token for that session (refused on a VA Mac,
   `machine.json can_change_system: false`).
+- **P2** `session_start.py` and `approve_token.py`: one state file per session (`.claude/state/sessions/<id>.json`),
+  and `CLAUDE_SEO_OPS_SESSION` in the session's environment. Sonnet is an allowed model (Q12).
+- **P2** `guard.py`: Claude cannot clear a client lock (`run.py unlock`, `seo-ops-locks/`); Paul runs it.

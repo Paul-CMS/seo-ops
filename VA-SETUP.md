@@ -167,13 +167,16 @@ so the VA does not need to learn it by heart. This guide covers only setup and t
 
 ### Every session
 
-1. **Pull first.** In Terminal:
+1. **Pull first, then open the client's own folder.** In Terminal:
 
    ```bash
-   cd ~/Documents/seo-ops && git pull
+   cd ~/Documents/seo-ops && git pull && python3 scripts/worktree.py open <client-slug>
    ```
 
-2. **New session per stage.** In the Code tab, start a **new** session in `~/Documents/seo-ops` with
+   It prints a folder like `~/Documents/seo-ops-clients/<client-slug>` (made the first time, reused after).
+   Each client has its own folder, so two clients can run at the same time in two chats without mixing.
+
+2. **New session per stage.** In the Code tab, start a **new** session **in that client folder** with
    the model set to **Haiku**. The heavy work runs in Opus agents automatically. Never switch a
    session's model halfway; start a new session instead.
 3. Type **`/next <client-slug>`**. The system runs whatever comes next and stops at the next decision
@@ -200,11 +203,13 @@ so the VA does not need to learn it by heart. This guide covers only setup and t
 - **Old instruction files:** `/archive-old-instructions` asks Paul, file by file.
 - **Anything to a client:** the system never sends anything to a client. Paul sends the proof sheet and every question set.
 
-### One client, one Mac at a time
+### One chat per client at a time
 
-If Paul and the VA both work on the same client at the same time, their records conflict. Agree on who
-has which client. If a run ends with `push failed`, the work is safe on your Mac. Run `git pull`, then
-`git push`. If `git pull` reports a *conflict*, stop and send Paul the message. Don't try to fix it yourself.
+Each client runs in its own folder (`worktree.py open <slug>`), and each run commits only that client's
+files, so different clients never mix. One client can only have one chat at a time: a second chat on the
+same client is refused ("another chat is working on …"). If the first chat is really gone, ask Paul — only
+he clears the lock. If a run ends with `NOT PUSHED` or `push failed`, the work is safe on your Mac; send Paul
+the message. Don't try to fix it yourself.
 
 ### Never
 

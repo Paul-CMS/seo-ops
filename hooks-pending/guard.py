@@ -132,6 +132,7 @@ PROTECTED = [
     (re.compile(r"(^|/)methodology/change-requests\.md$"),
      "change-requests.md is append-only: run.py flag (client session) or scripts/changereq.py (system session)."),
     (re.compile(r"(^|/)\.claude/(state|hooks)/"), "approval state and hooks are off limits."),
+    (re.compile(r"(^|/)seo-ops-locks/"), "client locks are cleared only by Paul (run.py unlock, in his own terminal)."),
     (re.compile(r"(^|/)\.claude/settings(\.local)?\.json$"), "hook settings are off limits."),
     (re.compile(r"(^|/)\.env$"), ".env holds credentials. Never read, print or edit it — scripts load it themselves."),
 ]
@@ -238,7 +239,7 @@ MESSAGE_PROGS = {"git", "gh", "echo", "printf"}   # quoted words are text, not p
 INLINE = {"python", "python3", "node", "perl", "ruby"}
 REC = re.compile(r"status\.json|(^|/)log\.md\b|changes\.jsonl|flags\.jsonl|/snapshots/|\bdecisions\.md|"
                  r"\bdocument-checklist\.md|\bapproval-record\.md|\bhandoff-log\.md|change-requests\.md")
-HOOKS = re.compile(r"\.claude/(state|hooks)|approve-token|system-token|\.claude/settings")
+HOOKS = re.compile(r"\.claude/(state|hooks)|approve-token|system-token|\.claude/settings|seo-ops-locks")
 ENV = re.compile(r"(^|[/=])\.env(\.[\w.-]+)?$")
 
 
@@ -305,6 +306,8 @@ def check_segment(seg, redir):
     sub = words[1] if len(words) > 1 else ""
     via_script = prog in ("python", "python3") and len(words) > 1 and re.match(r"^(\./)?scripts/[a-z_]+\.py$", words[1])
     is_msg = prog in MESSAGE_PROGS and not (prog == "git" and sub in GIT_WRITE)
+    if via_script and words[1].endswith("run.py") and len(words) > 2 and words[2] == "unlock":
+        block("only Paul clears a client lock (P2): he runs `python3 scripts/run.py unlock <slug>` in his own terminal.")
 
     for r in redir:
         if REC.search(r) or ENV.search(r) or HOOKS.search(r):

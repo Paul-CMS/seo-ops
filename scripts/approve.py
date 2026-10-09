@@ -169,7 +169,7 @@ def do_import(a, d, st):
     S.log_conditions(a.slug, st)
     import records
     records.render(a.slug)
-    print(git_commit(f"{a.slug}: import confirmed by Paul"))
+    print(git_commit(f"{a.slug}: import confirmed by Paul", slug=a.slug))
     print(f"imported: {len(baseline)} live pages as baseline, {len(remaining)} pages planned in "
           f"{len(batches) - (1 if baseline else 0)} batch(es); site plan {rel}")
 
@@ -230,7 +230,7 @@ def global_mode(a):
         append(client_dir(s) / "log.md", f"\n## MODE · {now()} · {step}: {old} → {mode} · GLOBAL · by Paul\n"
                + (f"(this client keeps its own setting: {own['mode']})\n" if own else "")
                + (f"Note: {a.note}\n" if a.note else ""))
-    print(git_commit(f"global: {step} → {mode} by Paul"))
+    print(git_commit(f"global: {step} → {mode} by Paul", paths=["config.json", "clients/"]))
 
 
 def global_specs(a):
@@ -259,7 +259,7 @@ def global_specs(a):
         S.log_conditions(s, st)
         import records
         records.render(s)
-    print(git_commit("global: page specs approved by Paul"))
+    print(git_commit("global: page specs approved by Paul", paths=["config.json", "clients/", "methodology/specs/"]))
     print(f"page specs approved: {', '.join(Path(r).name for r in files)}")
 
 
@@ -509,7 +509,7 @@ def main():
                 drive.approved_copy(a.slug, t, f, h, a.decision)
     drive.mirror(a.slug, f"approval-{now()[:10]}", closed_ok=True)   # R4: Approval Record and Status reach Drive
     labels = ", ".join(lbl for _, _, lbl in prepared)
-    print(git_commit(f"{a.slug}: {labels} {a.decision} by Paul"))
+    print(git_commit(f"{a.slug}: {labels} {a.decision} by Paul", slug=a.slug))
 
 
 if __name__ == "__main__":
