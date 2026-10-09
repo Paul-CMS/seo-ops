@@ -509,3 +509,6 @@ Approved version: clients/home-mobile-medical/build/Home Mobile Medical - Site P
 - CHANGE #122 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-09 (4).md | new: Home Mobile Medical - Document Checklist.md · sha 08446c360d6b | result: done · copied (Drive for desktop syncs it)
 - CHANGE #123 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-09 (4).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-09 (4).md | result: done · renamed and moved, nothing deleted
 - CHANGE #124 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-09 (4).md | new: Home Mobile Medical - Status.md · sha afdce4c40aee | result: done · copied (Drive for desktop syncs it)
+
+## MIGRATION · 2026-10-09T18:08:49-05:00 · rewrite 2 P4: facts.json
+39 facts from Brand Guide A and D · 0 approval stamp(s) re-stamped on the value-only hash · 0 lost

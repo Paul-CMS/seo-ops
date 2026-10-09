@@ -1,16 +1,25 @@
 # Home Mobile Medical - Status
 
 - **Stage 6 of 8 — Pilot, then batches (batch pilot)**
-- **What is happening now:** Stage 5 (Build plan and blockers) is done in this session. Start a new session (new chat, model: Haiku) in ~/Documents/seo-ops and type /next home-mobile-medical. Next there: /build home-mobile-medical evidence pilot (evidence gate for batch pilot — the facts each page needs, marked Known / Unknown / Unverified / Conflict)
-- **Waiting on:** Jonie — wp setup handoff — 3 of 3 item(s) open; Jonie — seopress settings handoff — 4 of 4 item(s) open; Jonie — redirect handoff — 3 of 3 item(s) open
-- **Next action:** `/next home-mobile-medical` once the wait above is over
+- **What is happening now:** ready to start: briefs for batch pilot in one run: the evidence gate per page (sources on disk searched first), then a brief for every page it clears
+- **Waiting on:** nobody
+- **Next action:** `/build home-mobile-medical brief pilot` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open home-mobile-medical`) and types `/next home-mobile-medical` (agents: build (opus), clerk (haiku))
 
-_Generated 2026-10-09T12:40 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-09T18:08 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
+| — | nothing | | |
+
+## Waiting on (not blocking)
+
+_Open, but the next action above goes ahead without them._
+
+| Who | What | Since | Reference |
+|---|---|---|---|
+| Jonie | blockers not cleared: H-2026-10-09-03-redirect-01 is issued; H-2026-10-09-03-redirect-02 is issued; H-2026-10-09-03-redirect-03 is issued; H-2026-10-09-04-broken_link-01 is issued; H-2026-10-09-04-broken_link-02 is issued (+9 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-09 | /verify home-mobile-medical |
 | Jonie | wp setup handoff — 3 of 3 item(s) open | 2026-10-07 | H-2026-10-07-01-wp_setup |
 | Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-07 | H-2026-10-07-02-seopress_settings |
 | Jonie | redirect handoff — 3 of 3 item(s) open | 2026-10-09 | H-2026-10-09-03-redirect |
@@ -33,6 +42,10 @@ _Generated 2026-10-09T12:40 by the system — do not edit. Start every session i
 - **H-2026-10-09-03-redirect** (Jonie) — redirect: 3 of 3 open, issued 2026-10-09
 - **H-2026-10-09-04-broken_link** (Jonie) — broken link: 9 of 9 open, issued 2026-10-09
 - **H-2026-10-09-05-other** (Jonie) — other: 2 of 2 open, issued 2026-10-09
+
+## Flagged for Paul (system)
+
+_None._
 
 ## Spend so far
 
