@@ -1002,7 +1002,8 @@ def main():
                 if pid in seen:
                     die(f"page {pid} is in two batches ({seen[pid]}, {b['id']})")
                 seen[pid] = b["id"]
-        bad = [x for pid, p in pages.items() for x in slug_problems(p.get("url"), p.get("type"))]
+        import urlcheck   # P7: the whole plan, incl. city/service mixing, -2 suffixes, hubs, changed URLs
+        bad = urlcheck.problems(list(pages.values()))
         if bad:
             die("site plan URLs break the URL rule:\n  - " + "\n  - ".join(bad))
         missing = [pid for pid, p in pages.items() if p["type"] in KIND_ORDER and pid not in seen]

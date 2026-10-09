@@ -29,7 +29,7 @@ recorded, no rule · `SUPERSEDED` no longer governs; follow the pointer.
 
 ## Contents
 - A. Coastal rulings (CM-001–024)
-- B. Standing rulings from the consolidation and after (CM-025 onward, incl. CM-038–057)
+- B. Standing rulings from the consolidation and after (CM-025 onward, incl. CM-038–058)
 - C. Rule Register (RULE-001–015)
 - D. GOV-06 — procedure and tensions (PROC-01, PROC-02, GOV-T1–T10)
 - E. Resolved conflicts (CF-001–009)
@@ -641,6 +641,20 @@ company's; they appear only as a cited customer example. A hit on the client's o
 becomes a one-line yes/no question. Reviewer names stay out of deliverables, and self-serving rating claims stay
 out of schema (CM-027 unchanged).
 
+## CM-058 · A hub may be a metro area, when the metro area is a real category
+**ID** CM-058 · **Status** APPROVED · **Date** 2026-10-09 · **Reason** Home Mobile Medical's hubs each span several counties but match an official metropolitan area; a county-only rule would split a real category. · **Source** Paul, REWRITE-2-DECISIONS.md (c), accepting L-008 (CR-001) · **Supersedes** — (settles the open Coastal default in methodology/specs/county-hub.md §1 for metro hubs)
+
+Decided by Paul.
+1. A hub may cover a metro area instead of one county **only when the metro area is a legitimate, verifiable
+   geographic category**: an official US metropolitan statistical area with a Wikidata entry (checked before the
+   hub is planned, Q-ID recorded in the site plan), named as it is officially and with its official county list.
+   Otherwise the hub is a county hub.
+2. The hub URL is one root slug naming the county or metro area (`/beaufort-county/`, `/charleston-metro/`), never a
+   service and never under a folder (BB-208, HUB-04; `scripts/urlcheck.py`).
+3. Served cities outside every hub's area link from the top service-area hub.
+Checked 2026-10-09: Charleston metropolitan area (SC) — Wikidata Q5084207; Hilton Head Island–Bluffton–Port Royal
+metropolitan area — Wikidata Q17020871.
+
 ---
 
 # C. Rule Register
@@ -905,6 +919,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-055 | APPROVED (publish together, one living handoff) |
 | CM-056 | REPLACED → CM-057 |
 | CM-057 | APPROVED (reviews as customer-reported facts) |
+| CM-058 | APPROVED (metro hubs, when the metro area is a real category) |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |

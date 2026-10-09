@@ -98,6 +98,12 @@ def do_import(a, d, st):
         st.setdefault("imported_conditions", {})["proof_sheet_returned"] = f"imported — {src}"
     for c in prop.get("conditions") or []:
         st.setdefault("imported_conditions", {})[c] = f"imported — {src}"
+    import urlcheck   # P7: the import baseline is not exempt from the URL rule
+    bad = urlcheck.problems([{"id": pid, **p} for pid, p in (prop.get("pages") or {}).items()])
+    if bad:
+        die("REFUSED — the import breaks the URL rule (the live baseline is not exempt). In the proposal, give each "
+            "page its root URL as 'url' and its old URL under 'replaces' (its 301 is paired with the publish):\n  - "
+            + "\n  - ".join(bad), 4)
     live_states = {"live", "approved", "written_back", "verified", "implemented"}
     baseline, remaining = [], []
     for pid, p in prop.get("pages", {}).items():

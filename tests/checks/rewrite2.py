@@ -195,4 +195,45 @@ def t_p2_parallel_clients(h):
         cfgp.write_text(cfg0)
 
 
-SCENARIOS = [t_p3_system_session, t_p3_flags_and_review, t_p2_parallel_clients]
+def t_p7_url_rule(h):
+    pages = [
+        {"id": "svc-a", "type": "service", "url": "https://t.example/roof-repair/", "service_variant": "Roof Repair"},
+        {"id": "svc-b", "type": "service", "url": "https://t.example/roof-repair-bluffton/"},
+        {"id": "svc-c", "type": "service", "url": "https://t.example/metal-roofing-2/"},
+        {"id": "loc-a", "type": "location", "url": "https://t.example/bluffton/", "city": "Bluffton"},
+        {"id": "loc-b", "type": "location", "url": "https://t.example/roof-repair-beaufort/", "city": "Beaufort"},
+        {"id": "loc-c", "type": "location", "url": "https://t.example/locations/okatie/", "city": "Okatie"},
+        {"id": "hub-a", "type": "county", "url": "https://t.example/charleston-metro/"},
+        {"id": "hub-b", "type": "county", "url": "https://t.example/hhi-beaufort/"},
+        {"id": "hub-c", "type": "county", "url": "https://t.example/beaufort-county/"},
+        {"id": "loc-d", "type": "location", "url": "https://t.example/okatie/", "city": "Okatie",
+         "live_url": "https://t.example/service-area/okatie-sc/"},
+        {"id": "loc-e", "type": "location", "url": "https://t.example/ridgeland/", "city": "Ridgeland",
+         "live_url": "https://t.example/service-area/ridgeland-sc/", "replaces": ["https://t.example/service-area/ridgeland-sc/"]},
+    ]
+    pf = h.SB / "tests" / ".state" / "p7-plan.json"
+    pf.parent.mkdir(parents=True, exist_ok=True)
+    pf.write_text(json.dumps({"pages": pages}))
+    code, out = h.sh(f"python3 scripts/urlcheck.py x {pf}")
+    flagged = lambda frag: any(frag in l for l in out.splitlines())
+    h.check("P7: a service slug that names a city is refused", flagged("roof-repair-bluffton/: a service slug never names a city"), out)
+    h.check("P7: a -2 suffix is refused", flagged("metal-roofing-2/: a -2 suffix"), out)
+    h.check("P7: a location slug that names a service is refused", flagged("roof-repair-beaufort/: a location slug never names a service"), out)
+    h.check("P7: /locations/ and the other folders are refused", flagged("/locations/okatie/: drop the /locations/"), out)
+    h.check("P7: a hub must be a county or metro slug", flagged("hhi-beaufort/: a hub slug") and not flagged("t.example/charleston-metro/:")
+            and not flagged("t.example/beaufort-county/:"), out)
+    h.check("P7: a changed live URL must be paired with its redirect (replaces)",
+            flagged("okatie/: its live URL") and not flagged("ridgeland/"), out)
+    h.check("P7: clean root URLs pass", not flagged("t.example/roof-repair/:") and not flagged("t.example/bluffton/:"), out)
+    h.sh('python3 scripts/status.py init ui-co --name "Ui Co" --domain ui.example --type full --industry roofing')
+    ag = h.Agent("ui-co"); rid = ag.start("new-client")
+    prop = {"source": "test", "gates": {}, "pages": {
+        "svc-a": {"type": "service", "state": "live", "url": "https://ui.example/services/roof-repair/"},
+        "loc-a": {"type": "location", "state": "live", "url": "https://ui.example/bluffton/"}}}
+    p = ag.w("import-proposal.json", json.dumps(prop)); ag.fin(rid, "proposal")
+    code, out = h.paul(f"/approve ui-co import --proposal {p}")
+    h.check("P7: an import whose live baseline breaks the URL rule is refused (the baseline is not exempt)",
+            code == 4 and "not exempt" in out and "/services/" in out, out)
+
+
+SCENARIOS = [t_p3_system_session, t_p3_flags_and_review, t_p2_parallel_clients, t_p7_url_rule]

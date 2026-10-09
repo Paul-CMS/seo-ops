@@ -29,7 +29,10 @@ For each page from the URL Decision Map (keep / improve / create): page id, type
 variant, **H1 decision** including the "The Best" four-condition test (CM-020 — DataforSEO via
 `scripts/dfs.py`, estimate first; never touch an H1 already top 3 for its main keyword),
 **FAQ topics** (including the PAA questions routed to the page in `data/paa/paa-routing.md` and the fan-out queries routed to it in `data/fanout/fanout-routing.md`), **link targets** (the wheel targets it will get, plus any proposed CM-022
-exception). Then check the whole site at once and report:
+exception). **URLs (P7):** every service, location and hub URL is one root slug — no folder, no city in a service
+slug, no service in a location slug, no `-2`; a hub is a county or metro slug (CM-058). A page whose live URL changes
+carries its `live_url` and lists it under `replaces` (its 301 goes with the publish). `python3 scripts/urlcheck.py
+<slug> <plan.json>` must pass — `status.py plan` refuses the plan otherwise. Then check the whole site at once and report:
 - **duplicates** — two pages serving the same keyword or intent
 - **variant conflicts** — the same variant at consecutive elements on a page; the reserved
   homepage variant used elsewhere; the pool exhausted (CM-013 — one finding, not many)
