@@ -510,6 +510,7 @@
         "clients/<slug>/data/paa/paa-routing.md",
         "methodology/rulings.md (CM-020, CM-022, CM-024)",
         "clients/<slug>/data/fanout/fanout-routing.md",
+        "clients/<slug>/data/competitors/coverage.md (coverage ideas only, P6)",
         "clients/<slug>/decisions-settled.md"
       ]
     },

@@ -1766,13 +1766,13 @@ def t_readability():
 def t_models():
     import re as _re
     want = {"discovery-audit": "opus", "audit-reviewer": "opus", "build": "opus", "finish": "opus", "blog": "opus",
-            "clerk": "haiku"}
+            "clerk": "haiku", "researcher": "sonnet"}
     got = {}
     for f in (SB / ".claude" / "agents").glob("*.md"):
         m = _re.search(r"^model:\s*(\S+)", f.read_text().split("\n---", 2)[0], _re.M)
         got[f.stem] = m.group(1) if m else None
-    check("R1: every agent has a preset model — Opus for judgment, Haiku (clerk) for mechanical work",
-          all(got.get(k) == v for k, v in want.items()) and set(got.values()) <= {"haiku", "opus"}, got)
+    check("Q12: every agent has a preset model — Opus for judgment, Sonnet for research, Haiku (clerk) for mechanics",
+          all(got.get(k) == v for k, v in want.items()) and set(got.values()) <= {"haiku", "sonnet", "opus"}, got)
     g = json.loads((SB / "scripts" / "gates.json").read_text())
     check("R1: every stage's session runs on Haiku (no Sonnet, no Fable)",
           {s["session_model"] for s in g["stages"]} == {"haiku"}, [s["session_model"] for s in g["stages"]])
@@ -2250,7 +2250,7 @@ def t_research_before_asking():
     fact only when 3+ different reviewers say it."""
     S = "rb-co"
     gaps = {"svc-roof-repair": {"service_scope", "service_process", "timeframe", "pricing"},
-            "loc-springfield": {"neighborhoods", "local_context", "things_to_do"}}
+            "loc-springfield": {"neighborhoods", "local_context", "things_to_do", "city_served"}}
     ag = build_ready(S, gaps)
     ag.w("data/reviews/reviews.csv", REVIEWS_CSV)
     ag.w("data/crawl/page-text.csv", PAGE_TEXT_CSV)
@@ -2289,10 +2289,14 @@ def t_research_before_asking():
           and "Typical job duration" not in asked, asked)
     check("research: a fact found only on the client's own site is a yes/no, quoting where it was found",
           "Your website says" in asked and "older homes" in asked and "Still true?" in asked, asked)
-    check("research: a fact found nowhere is asked, and the pack lists what was searched first",
-          "6-12 real neighborhoods" in asked and "searched first:" in pack and "key fact:loc-springfield:neighborhoods" in pack, pack)
+    check("research: a client fact found nowhere is asked, and the pack lists what was searched (searched: line)",
+          "Emergency / after-hours reality" in asked and "searched: facts.json → decisions-settled.md" in pack
+          and "key fact:d:emergency" in pack, pack)
+    check("P6: a public fact (the city's neighborhoods, local context) is never asked — it goes to the research list",
+          "6-12 real neighborhoods" not in asked and "City-specific conditions" not in asked
+          and "6-12 real neighborhoods" in (ag.c / "build/evidence/research-pilot.md").read_text(), asked)
     lm = lambda: (ag.c / "log.md").read_text()
-    check("decide once: every facts question is asked once, under its key", "- OPEN fact:loc-springfield:neighborhoods" in lm())
+    check("decide once: every facts question is asked once, under its key", "- OPEN fact:d:emergency" in lm())
     # a second pack in a new run does not ask it again
     new_session()
     rid = ag.start("build", "evidence", batch="pilot")
@@ -2300,19 +2304,19 @@ def t_research_before_asking():
     ag.do(f"/interview {S} facts pilot")
     pack2 = (SB / status(S)["build"]["batches"][0]["facts_interview"]["file"]).read_text()
     check("decide once: a later facts pack does not re-ask a question already asked",
-          lm().count("- OPEN fact:loc-springfield:neighborhoods") == 1 and "6-12 real neighborhoods" not in pack2.split("<!--")[0]
+          lm().count("- OPEN fact:d:emergency") == 1 and "Emergency / after-hours reality" not in pack2.split("<!--")[0]
           and "Already asked, not repeated" in pack2, pack2[:500])
     # the owner answers once; a new run reads the settled answer, never asks it again
     new_session()
     rid = ag.start("interview", "facts-answers", batch="pilot")
-    code, out = sh(f'python3 scripts/run.py decision {S} {rid} --settle fact:loc-springfield:neighborhoods --by "Client (via Paul)" '
-                   '--text "Rountree, Phelps Grove, Galloway, Rountree Hills, Southern Hills, Seminole"')
+    code, out = sh(f'python3 scripts/run.py decision {S} {rid} --settle fact:d:emergency --by "Client (via Paul)" '
+                   '--text "Yes — on call evenings and weekends, no after-hours fee"')
     check("decide once: the owner's answer is settled under the question's key", code == 0, out)
     sh(f"python3 scripts/evidence.py run {S} --run {rid} --batch pilot"); ag.fin(rid, "facts answers")
     g2 = (SB / status(S)["pages"]["loc-springfield"]["evidence"]["grid"]).read_text()
-    nrow = next((l for l in g2.splitlines() if l.startswith("| 6-12 real neighborhoods")), "")
+    nrow = next((l for l in g2.splitlines() if l.startswith("| Emergency / after-hours reality")), "")
     check("decide once: the next run reads the settled answer as Known (cited), so it is never a gap again",
-          "**Known**" in nrow and "decisions-settled.md fact:loc-springfield:neighborhoods" in nrow, nrow)
+          "**Known**" in nrow and "decisions-settled.md fact:d:emergency" in nrow, nrow)
 
 
 def t_url_rule():

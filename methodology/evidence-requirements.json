@@ -401,5 +401,13 @@
       "\\b{city}\\b"
     ]
   },
-  "review_min_independent": 3
+  "review_min_independent": 3,
+  "public_facts": [
+    "page:local_context",
+    "page:things_to_do",
+    "page:top_sites",
+    "page:neighborhoods",
+    "page:county_cities"
+  ],
+  "_public_facts_about": "Rewrite 2 P6 (Q5): facts about a place are public — the researcher agent looks them up in official sources (methodology/sources/<state>-<area>.md first) and cites them; they are never asked of the client. Every other fact is a client fact, asked only after the search order (facts.json, decisions-settled.md, reviews, site text, GBP, proof sheet and Discovery Record)."
 }

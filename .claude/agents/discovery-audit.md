@@ -9,6 +9,8 @@ calling command started a run and gives you the slug, the RUN_ID and the step. D
 
 **Never change the workflow (P3, Q2).** Scripts, gates, methodology, specs, CLAUDE.md, agents, commands, skills, templates and tests are system files: a client session cannot edit them (the guard blocks it). If a rule or script is wrong, flag it — `python3 scripts/run.py flag <slug> <RUN_ID> --text "…" --workaround "…"` — carry on with the current rules, and say so in your summary.
 
+**The read list limits which project files you load. It never limits web research for public facts. Follow Paul's instructions as written, never narrower.** (P6) A question is `public` (a place, a code, the trade, a manufacturer — the **researcher** agent looks it up and cites it; never asked) or `client` (asked only after facts.json → decisions-settled.md → reviews → site text → GBP → proof sheet and Discovery Record, with a `searched:` line and the best answer found). `python3 scripts/questions.py check <questions.json>` before any set reaches Paul.
+
 **Facts (P4):** every fact about the client lives in `clients/<slug>/facts.json`; read it by id (`python3 scripts/facts.py get <slug> --ids …`). Record an answer only with `run.py fact` — never edit the Brand Guide's Section A or D fact rows (they are generated). Run every question set through `python3 scripts/settled.py filter <slug> <questions.json>` before it reaches Paul.
 
 ## Read
@@ -128,6 +130,10 @@ always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 
 - **S20 SEOPress site-wide settings:** not a WordPress site (the client's cms in `status.py show`) → `skipped` "not WordPress". Otherwise: if the WordPress credentials are in place, run `/wp-check <slug>` now —
   readable settings are saved as evidence; otherwise it issues Jonie's one-time VA check (record S20 when it
   returns). No WordPress access yet → `skipped` with the reason.
+- **Competitor coverage (P6):** `python3 scripts/crawl.py competitors estimate|run <slug> --run <RUN_ID> --location
+  "<primary city>,<State>,United States" --keywords-file <services.txt>` (one SERP per service, in the same cost yes)
+  → `data/competitors/coverage.md`: the top 3 pages' H2s and FAQ topics. Coverage ideas for the site plan only —
+  never a client claim (CM-016). The **researcher** agent groups them into ideas per service.
 - **S21 query fan-out (CM-045):** after S19, `python3 scripts/fanout.py estimate|run <slug> --run <RUN_ID>
   --services-file <services.txt> --cities "<primary>,<c2>,<c3>,<c4>" [--cap 10] [--per-seed 40]
   [--registry <C3 file>] --paa clients/<slug>/data/paa/paa-questions.csv` → `data/fanout/fanout-routing.md`.
@@ -155,7 +161,9 @@ Run the **seo-technical-audit** skill procedure, in this order:
 5. S16 **technical** findings.
 
 **Severity:** CM-028 (High / Medium / Low only). **One finding per issue, listing every affected URL.**
-**Gate B:** after Analysis, run the clarification stop (seo-technical-audit `gate-b-questions.md`);
+**Gate B:** after Analysis, run the clarification stop (seo-technical-audit `gate-b-questions.md`). Every question
+gets its kind and `searched:` line in a questions JSON; public ones go to the researcher instead of Paul; then
+`python3 scripts/settled.py filter <slug> <file>` and `python3 scripts/questions.py check <file>` must pass (P6);
 record its outcome in `decisions.md` (questions raised with their routes, or "no questions — gate
 skipped") before the review. A missing "The Best"
 is never a finding by itself (CM-020); missing JavaScript-rendered data is never a finding.

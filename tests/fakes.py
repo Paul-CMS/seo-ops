@@ -161,8 +161,19 @@ def wp_call(slug, path, method="GET", body=None, auth=True):
     raise RuntimeError(f"fake WP: unhandled {method} {path}")
 
 
+RIVALS = {   # competitor pages on the fake public web (P6 coverage tests)
+    "https://rival.example/roof-repair/": "<html><body><nav><h2>Menu</h2></nav><h1>Roof Repair</h1><h2>Signs you need a repair</h2>"
+    "<p>Leaks and missing shingles are the usual signs.</p><h2>Our repair process</h2><h3>How long does a roof repair take?</h3>"
+    "<p>Most repairs take a day.</p></body></html>",
+    "https://other.example/roofing/repair/": "<html><body><h2>Flashing repair</h2><h3>Is roof repair covered by insurance?</h3>"
+    "<p>Sometimes.</p></body></html>",
+}
+
+
 def web_fetch(url, follow=True):
     """Public web: published items render title/meta/content; redirects answer 301."""
+    if url in RIVALS:
+        return 200, {}, RIVALS[url]
     s = load_wp()
     u = url.rstrip("/") + "/"
     if u in s["redirects"]:
@@ -195,6 +206,9 @@ def dfs_request(endpoint, body=None, method=None, timeout=90, retries=3):
     if endpoint.startswith("serp/") and body:   # record where each SERP query was searched from
         with open(STATE / "serp_locations.txt", "a") as fh:
             fh.write(f"{body[0].get('keyword')}|{body[0].get('location_name')}\n")
+        if cfg.get("serp_organic"):   # P6: organic results for the competitor coverage test
+            return {"status_code": 20000, "cost": cfg.get("cost", 0.002), "tasks": [{"status_code": 20000, "id": "fake",
+                    "result": [{"items": [{"type": "organic", "url": u} for u in cfg["serp_organic"]]}]}]}
     if endpoint.startswith("appendix/user_data"):
         return {"status_code": 20000, "tasks": [{"status_code": 20000,
                 "result": [{"money": {"balance": cfg.get("balance", 10.0)}}]}]}

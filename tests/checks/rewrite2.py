@@ -282,4 +282,50 @@ def t_p5_reviews(h):
     ag.fin(rid, "reviews")
 
 
-SCENARIOS = [t_p3_system_session, t_p3_flags_and_review, t_p2_parallel_clients, t_p7_url_rule, t_p5_reviews]
+def t_p6_research_first(h):
+    qf = h.SB / "tests" / ".state" / "p6-qs.json"
+    qf.parent.mkdir(parents=True, exist_ok=True)
+    qf.write_text(json.dumps([
+        {"text": "Do you go on the roof yourself?", "kind": "client", "searched": ["facts.json", "reviews"]},
+        {"text": "Does Bluffton require a permit for a re-roof?", "kind": "public"},
+        {"text": "What is your warranty?", "kind": "client"},
+        {"text": "Any awards?"}]))
+    code, out = h.sh(f"python3 scripts/questions.py check {qf}")
+    h.check("P6: a question set is refused with a public question, a client question without searched:, or no kind",
+            code == 1 and "Q2" in out and "never asked" in out and "Q3" in out and "searched:" in out and "Q4" in out
+            and "no kind" in out and "Q1" not in out, out)
+    qf.write_text(json.dumps([{"text": "Do you go on the roof yourself?", "kind": "client", "searched": ["facts.json"]}]))
+    h.check("P6: a set of client questions, each with its searched: line, passes", h.sh(f"python3 scripts/questions.py check {qf}")[0] == 0)
+    agents = {f.stem: f.read_text() for f in (h.SB / ".claude" / "agents").glob("*.md")}
+    h.check("P6: every agent says the read list never limits web research for public facts",
+            all("never limits web research for public facts" in t for t in agents.values()),
+            [k for k, t in agents.items() if "never limits web research" not in t])
+    h.check("P6: the researcher agent runs on Sonnet and may search the web",
+            "model: sonnet" in agents.get("researcher", "") and "WebSearch" in agents.get("researcher", ""))
+    h.check("P6: an area source list exists for the Lowcountry, with the SC licence lookup",
+            "verify.llronline.com" in (h.SB / "methodology/sources/sc-lowcountry.md").read_text())
+    # competitor coverage: top pages per service keyword, H2s and FAQ topics, never the client's own site
+    S = "cp-co"
+    h.sh(f'python3 scripts/status.py init {S} --name "Cp Co" --domain cp.example --type full --industry roofing')
+    ag = h.Agent(S); ag.fin(ag.start("new-client"), "set up")
+    h.sh(f"python3 scripts/status.py page {S} svc-roof-repair --type service --url https://cp.example/roof-repair/ --state planned")
+    dj = h.SB / "tests" / ".state" / "dfs.json"
+    dj.write_text(json.dumps({"balance": 10.0, "cost": 0.002, "serp_organic": [
+        "https://cp.example/roof-repair/", "https://rival.example/roof-repair/", "https://other.example/roofing/repair/"]}))
+    try:
+        rid = ag.start("wp-check")
+        kf = ag.w("kw.txt", "roof repair\n")
+        code, out = h.sh(f'python3 tests/fakes.py crawl competitors run {S} --run {rid} --location "Springfield,Missouri,United States" '
+                         f'--keywords-file {kf} --confirmed')
+        cov = (ag.c / "data/competitors/coverage.md").read_text() if (ag.c / "data/competitors/coverage.md").exists() else ""
+        h.check("P6: competitor coverage lists each top page's H2s and FAQ topics, skipping the client's own site",
+                code == 0 and "rival.example" in cov and "Signs you need a repair" in cov
+                and "How long does a roof repair take?" in cov and "cp.example/roof-repair" not in cov
+                and "Menu" not in cov and "Nothing here is a fact about the client" in cov, out + cov[:600])
+        ag.fin(rid, "competitors")
+    finally:
+        dj.unlink(missing_ok=True)
+
+
+SCENARIOS = [t_p3_system_session, t_p3_flags_and_review, t_p2_parallel_clients, t_p7_url_rule, t_p5_reviews,
+             t_p6_research_first]

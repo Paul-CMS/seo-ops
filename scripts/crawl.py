@@ -6,6 +6,7 @@
                       [--crawl-delay 2000] [--confirmed] [--new-crawl] [--max-wait 540]
     crawl.py status   <slug>
     crawl.py summary  <slug>                 (re)build data/crawl/crawl-summary.csv from the crawl tables
+    crawl.py competitors estimate|run <slug> …   P6: top competitor pages per service keyword — coverage ideas only (competitors.py)
     crawl.py text     <slug> --run RUN_ID [--delay 2] [--max-words 800]
                                              S05b: free, polite fetch of each crawled HTML page's body
                                              text -> data/crawl/page-text.csv
@@ -592,6 +593,10 @@ def capture_text(slug, run_id, delay, max_words):
 
 # ---------------------------------------------------------------- CLI
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] == "competitors":   # P6: crawl.py competitors <estimate|run> <slug> …
+        import competitors
+        sys.argv = ["competitors.py"] + sys.argv[2:]
+        return competitors.main()
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     for name in ("estimate", "run"):

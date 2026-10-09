@@ -285,8 +285,9 @@ def facts_pack(slug, run_id, bid):
     blocked = [p for p in b["pages"] if S.evidence_state(st, p)[0] == "block"]
     if not blocked:
         die(f"batch {bid}: no page is blocked by the evidence gate — the facts interview runs only on a block (CM-042).")
-    seen, qs, waiting = {}, [], {}
+    seen, qs, waiting, research = {}, [], {}, {}
     ents = settled.entries(slug)
+    public = set(requirements().get("public_facts") or [])
     for pid in blocked:
         rows, *_ = grid(slug, st, pid)
         for r in sorted(rows, key=lambda r: (r["need"] != "required", r["mark"] != "Conflict")):
@@ -296,14 +297,35 @@ def facts_pack(slug, run_id, bid):
             if (ents.get(k) or {}).get("state") in ("open", "answered"):   # asked once already — never again
                 waiting.setdefault(k, ents[k])
                 continue
+            if r["from"] in public:   # P6: a public fact is looked up by the researcher, never asked
+                research.setdefault(k, {"label": r["label"], "pages": [], "from": r["from"], "need": r["need"]})
+                research[k]["pages"].append(pid)
+                continue
             if k in seen:
                 seen[k]["pages"].append(pid)
                 continue
-            text, kind = question(r)
-            seen[k] = {"text": text, "kind": kind, "need": r["need"], "pages": [pid], "from": r["from"], "key": k,
-                       "fact_id": r.get("fact_id"), "searched": r.get("searched")}
+            text, style = question(r)
+            sr = r.get("searched") or {}
+            searched = ["facts.json", "decisions-settled.md"] + list(sr.get("searched") or []) + ["proof sheet / Discovery Record"]
+            seen[k] = {"text": text, "style": style, "kind": "client", "need": r["need"], "pages": [pid], "from": r["from"],
+                       "key": k, "fact_id": r.get("fact_id"), "searched": searched,
+                       "best_answer": r["value"] if r["mark"] in ("Unverified", "Conflict") and r.get("value") else ""}
             qs.append(seen[k])
     qs, _dropped, answered = settled.filter_questions(slug, qs)   # P4: never ask what is already answered
+    import questions
+    bad = questions.problems(qs)   # P6: every question has a kind and a searched: line; no public fact is asked
+    if bad:
+        die("REFUSED — the facts pack breaks the question rule:\n  - " + "\n  - ".join(bad))
+    if research:
+        rl = client_dir(slug) / "build" / "evidence" / f"research-{bid}.md"
+        rl.parent.mkdir(parents=True, exist_ok=True)
+        rl.write_text("\n".join([f"# Research list — batch {bid} ({now()[:10]})", "",
+                                  "Public facts (P6): the researcher agent looks each one up in official sources — "
+                                  "methodology/sources/<state>-<area>.md first — and records it with its source in the page's "
+                                  "facts file, or 'not found' with the sources tried. Never asked of the client.", "",
+                                  "| Fact | Need | Pages | Key |", "|---|---|---|---|"]
+                                 + [f"| {v['label']} | {v['need']} | {', '.join(v['pages'])} | {k} |" for k, v in research.items()])
+                      + "\n")
     cap = 15
     qs = qs[:cap]
     for q in qs:   # asked once: the key is what the answer settles (run.py decision --settle <key>)
@@ -316,14 +338,18 @@ def facts_pack(slug, run_id, bid):
              "Quick ones — answer by reply, voice memo or a five-minute call. \"I don't know\" is a fine answer.", ""]
     for i, q in enumerate(qs, 1):
         lines.append(f"{i}. {q['text']}")
-        if q["kind"] == "Describe":
+        if q.get("best_answer"):
+            lines.append(f"   *What we found:* {q['best_answer'][:200]} — yes / no — correction")
+        if q["style"] == "Describe":
             lines.append("   *Can we say this on your website?* yes / only in general terms / no")
     lines += ["", "<!-- System notes (removed before sending):",
               f"- Facts interview (CM-042) for blocked page(s): {', '.join(blocked)} · evidence gate CM-041",
               "- Each question → the fact it fills:"]
-    lines += [f"  - Q{i}: {q['from']} ({q['need']}) → pages {', '.join(q['pages'])} · {q['kind']} · key {q['key']}"
-              + (f" · searched first: {', '.join(q['searched']['searched']) or 'nothing on disk'}" if q.get("searched") else "")
-              for i, q in enumerate(qs, 1)]
+    lines += [f"  - Q{i}: {q['from']} ({q['need']}) → pages {', '.join(q['pages'])} · {q['style']} · client · key {q['key']}"
+              f" · searched: {' → '.join(q['searched'])}" for i, q in enumerate(qs, 1)]
+    if research:
+        lines += [f"- Public facts, not asked — the researcher looks them up (build/evidence/research-{bid}.md): "
+                  + ", ".join(v["label"] for v in research.values())]
     if answered:
         lines += [f"- {answered[0].upper()}{answered[1:]} (not asked again)"]
     if waiting:
