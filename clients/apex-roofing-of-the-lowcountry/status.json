@@ -32,7 +32,7 @@
       "conditions": [],
       "files": {
         "clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md": "76a048adc3f7",
-        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2": "433330552c97"
+        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2": "e524145c9c46"
       }
     },
     "proof_sheet_approved": {
@@ -65,7 +65,7 @@
       "note": null,
       "conditions": [],
       "files": {
-        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G": "b3cf28ab74c0"
+        "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G": "0d1beead3504"
       }
     },
     "link_wheel_approved": {
@@ -684,7 +684,7 @@
           "at": "2026-10-09T14:02:41-05:00",
           "note": null,
           "files": {
-            "clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md": "fc7c7933af8f",
+            "clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md": "8affd9457f3b",
             "clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md": "29f915db08aa",
             "clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Semantic Review - pilot - REVIEW.md": "06239c18bb0f"
           },
@@ -1027,7 +1027,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-09T14:30:43-05:00",
+  "updated": "2026-10-09T18:08:47-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",

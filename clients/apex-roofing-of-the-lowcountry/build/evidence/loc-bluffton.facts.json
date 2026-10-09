@@ -13,9 +13,9 @@
       "source": "https://en.wikipedia.org/wiki/Bluffton,_South_Carolina (read 2026-10-08)"
     },
     "neighborhoods": {
-      "value": "Verified (5): Old Town, Palmetto Bluff, Jones Estate, Buckwalter, Shultz Tract. Candidates not verified as Bluffton by a public source: Belfair, Colleton River Plantation (site W9, Submitted). Sun City Hilton Head excluded: Wikipedia places it in Okatie.",
-      "status": "Submitted",
-      "source": "Wikipedia Bluffton (5 districts, Internally Verified); W9 live site (Submitted); https://en.wikipedia.org/wiki/Sun_City_Hilton_Head. 5 verified is below the spec's 6-12."
+      "value": "Inside the Town of Bluffton: Old Town, Palmetto Bluff, Jones Estate, Buckwalter, Shultz Tract, Hampton Hall. Also served, outside the Town limits (Greater Bluffton): Belfair, Colleton River Plantation, Moss Creek.",
+      "status": "Paul Approved 2026-10-09",
+      "source": "Paul 2026-10-09 (settled bluffton_communities); Town of Bluffton Neighborhoods PDF; Wikipedia Bluffton"
     },
     "things_to_do": {
       "value": "May River; Oyster Factory / Bluffton Oyster Co (opened 1899); Old Town Bluffton historic district.",

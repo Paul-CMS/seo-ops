@@ -1,21 +1,29 @@
 # Apex Roofing of the Lowcountry - Status
 
-- **Stage 6 of 8 — Pilot, then batches (batch pilot)**
-- **What is happening now:** waiting for Jonie to publish batch pilot (H-2026-10-09-10-publish). When the worksheet comes back, this checks every live page against its approved file, adds alt text to the images and writes the batch back to the Brand Guide
-- **Waiting on:** Jonie — waiting for Jonie to publish batch pilot (H-2026-10-09-10-publish). When the worksheet com; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
-- **Next action:** `/build apex-roofing-of-the-lowcountry published pilot` once the wait above is over
+- **Stage 4 of 8 — Audit**
+- **What is happening now:** waiting for Paul's approval — the audit and the reconciled Brand Guide are ready for your approval in one line — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts
+- **Waiting on:** Paul — the audit and the reconciled Brand Guide are ready for your approval in one line — the rec; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
+- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry brand_guide_approved --files "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G"` (or asks for changes first)
 
-_Generated 2026-10-09T14:30 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-09T18:08 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Jonie | waiting for Jonie to publish batch pilot (H-2026-10-09-10-publish). When the worksheet comes back, this checks every live page against its approved file, adds alt text to the images and writes the batch back to the Brand Guide | 2026-10-09 | /build apex-roofing-of-the-lowcountry published pilot |
+| Paul | the audit and the reconciled Brand Guide are ready for your approval in one line — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts | 2026-10-09 | /approve apex-roofing-of-the-lowcountry brand_guide_approved |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
-| Paul | Residential Roofer (choice 4a) lives in Brand Guide A3, inside entity_approved (A+B1+B2) and brand_guide_approved (A+D+E+G). Writing it voids both until re-approved. (i) write now and re-approve: /approve apex-roofing-of-the-lowcountry entity_approved brand_guide_approved site_plan; or (ii) use it on the site plan authority and write A3 at the next Brand Guide revision. A3 not edited. | 2026-10-08 | residential_roofer_a3_write |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
+
+## Waiting on (not blocking)
+
+_Open, but the next action above goes ahead without them._
+
+| Who | What | Since | Reference |
+|---|---|---|---|
+| Jonie | waiting for Jonie to publish the pages (H-2026-10-09-10-publish). When the worksheet comes back, this checks batch pilot's live pages against their approved files, adds alt text and updates the living handoff | 2026-10-09 | /build apex-roofing-of-the-lowcountry published pilot |
+| Jonie | blockers not cleared: H-2026-10-08-03-redirect-01 is issued; H-2026-10-08-03-redirect-02 is issued; H-2026-10-08-04-broken_link-01 is issued; H-2026-10-08-04-broken_link-02 is issued; H-2026-10-08-04-broken_link-03 is issued (+41 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-09 | /verify apex-roofing-of-the-lowcountry |
 | Jonie | other handoff — 5 of 5 item(s) open | 2026-10-05 | H-2026-10-05-01-other |
 | Gwen | manual lookup handoff — 5 of 5 item(s) open | 2026-10-05 | H-2026-10-05-02-manual_lookup |
 | Jonie | redirect handoff — 2 of 2 item(s) open | 2026-10-08 | H-2026-10-08-03-redirect |
@@ -50,6 +58,7 @@ _Generated 2026-10-09T14:30 by the system — do not edit. Start every session i
 - Paul 2026-10-09: CertainTeed ShingleMaster is current - yes (Paul's answer). Brand Guide D status set to Paul Approved; the D value, D2 row and content risk R4 still read not confirmed and change at the next Brand Guide revision (re-opens brand_guide_approved). Not used in the pilot drafts.
 - Paul 2026-10-08 site plan choices: 1a homepage keyword to metro level (roofing company hilton head island metro area); 2a permit FAQ on Bluffton and Ridgeland only (HHI, Okatie, Pritchardville jurisdiction FAQs dropped, FO 275/307 to blog list); 3b The Best SERP re-test run; 4a Residential Roofer approved as a category variant; 5a location FAQ gaps (now 18) sourced in the facts interview at each location batch evidence step
 - CM-020 SERP re-test (Paul yes, spent 0.006 USD, 3 Google top-10 reads from Hilton Head Island): condition 2 fails for Roof Repair (1/10 best titles), Roof Replacement (2/10), Skylights (2/10, mostly out-of-area results); only directory lists use best, Apex not in top 10. No page gets The Best; re-test after launch once pages rank.
+- Residential Roofer written into Brand Guide A3 (Paul approved it 2026-10-08, site plan choice 4a); entity and Brand Guide approvals re-stamped by the rewrite 2 migration
 - W25 answered by Paul 2026-10-09: father and son, Ralph and Pierce Brehany, both get on the roof. Founder line on Roof Repair kept (pilot SEM row 9 -> SEM-4); only the W25 [NEED] is removed when SEM-4 is applied.
 - Paul 2026-10-09 pilot answers: Apex uses corrosion-resistant flashing and synthetic underlayment on repairs (W11); Apex does leak repair; Roof Repair services = shingle repair/replacement, flashing replacement, ridge cap and starter strip, soffit/fascia/deck, leak repair (no hail - SEM-5 moved it to Emergency); photos of the work with daily progress photos (W10, reviews); daily clean-up and magnet sweep (reviews; magnet per Paul, not in export); no repair-warranty answer - GAF System Plus Limited Warranties mentioned only for a replacement (review 2026-08-15); on a replacement Apex gets the Town permit (review 2026-08-15); timing only as attributed review examples, no general visit length; 25% rule kept general (no SC source found). Review-sourced facts recorded as a Paul Exception to CM-027 in Brand Guide H.
 - Paul 2026-10-09: synthetic roofing is offered - yes. Neither pilot page's services list needs it (Roof Repair list per Paul has no synthetic; Bluffton lists the 8 services). Port Royal base-housing work remains open under synthetic_roofing_offered.
@@ -69,6 +78,10 @@ _Generated 2026-10-09T14:30 by the system — do not edit. Start every session i
 - **H-2026-10-08-08-seo_title** (Jonie) — seo title: 9 of 9 open, issued 2026-10-08
 - **H-2026-10-09-09-publish** (Jonie) — publish: 2 of 2 open, issued 2026-10-09
 - **H-2026-10-09-10-publish** (Jonie) — publish: 2 of 2 open, issued 2026-10-09
+
+## Flagged for Paul (system)
+
+_None._
 
 ## Spend so far
 

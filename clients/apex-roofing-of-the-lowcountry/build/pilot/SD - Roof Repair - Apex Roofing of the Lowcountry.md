@@ -73,7 +73,7 @@ Often, yes: a small repair can be quick, but one that uncovers rotted decking ta
 
 ### What should I do if I have an emergency roof leak?
 
-If water is coming through the ceiling right now, catch it and move what you can. Then call a roofer to stop the leak. An active leak or fresh storm damage is an emergency, not a scheduled repair. See Emergency Roof Repair for what to do next. [Link placeholder: /emergency-roof-repair/ — CM-022 exception, proposed in Finish; no link placed in Build (CM-005)] Ralph and Pierce are on call and treat an emergency as high priority.
+If water is coming through the ceiling right now, catch it and move what you can. Then call a roofer to stop the leak. An active leak or fresh storm damage is an emergency, not a scheduled repair. See Emergency Roof Repair for what to do next. [LINK → /emergency-roof-repair/ · CM-022 exception, proposed in Finish; no link placed in Build (CM-005)] Ralph and Pierce are on call and treat an emergency as high priority.
 
 ## Where Do We Repair Roofs?
 

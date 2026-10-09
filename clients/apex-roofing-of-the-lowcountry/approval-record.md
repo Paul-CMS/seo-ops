@@ -7,7 +7,7 @@ Generated from the seo-ops system (clients/apex-roofing-of-the-lowcountry/status
 - Decision: **approved**
 - Decided by: Paul · 2026-10-08T10:40:10-05:00
 - Approved version: `clients/apex-roofing-of-the-lowcountry/discovery/Apex Roofing of the Lowcountry - Discovery Record - REVIEW.md` (sha 76a048adc3f7)
-- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2` (sha 433330552c97)
+- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+B1+B2` (sha e524145c9c46)
 
 ## Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly
 
@@ -28,7 +28,7 @@ Generated from the seo-ops system (clients/apex-roofing-of-the-lowcountry/status
 
 - Decision: **approved**
 - Decided by: Paul · 2026-10-08T10:40:10-05:00
-- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G` (sha b3cf28ab74c0)
+- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G` (sha 0d1beead3504)
 
 ## Link wheel built and verified — schema may start
 

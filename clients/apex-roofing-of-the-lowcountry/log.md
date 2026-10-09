@@ -2415,3 +2415,17 @@ Changes: 0 · Summary: Evidence gate s1: all 4 service pages BLOCK (mainly dated
 - CHANGE #401 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (14).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 520dc02a2d7d | result: done · copied (Drive for desktop syncs it)
 - CHANGE #402 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (14).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (14).md | result: done · renamed and moved, nothing deleted
 - CHANGE #403 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (14).md | new: Apex Roofing of the Lowcountry - Status.md · sha b2c8371329de | result: done · copied (Drive for desktop syncs it)
+- SETTLED residential_roofer_a3_write · 2026-10-09T18:08:47-05:00 · run migration-rewrite2 · by Paul (site plan choice 4a, 2026-10-08) · Residential Roofer written into Brand Guide A3 (Paul approved it 2026-10-08, site plan choice 4a); entity and Brand Guide approvals re-stamped by the rewrite 2 migration
+
+## MIGRATION · 2026-10-09T18:08:47-05:00 · rewrite 2 P4: facts.json
+44 facts from Brand Guide A and D · 3 approval stamp(s) re-stamped on the value-only hash · 0 lost
+Folded in: d-certifications-authorizations-factory-training: settled send_the_client_one_question_is_your_cer (ShingleMaster current — yes)
+Folded in: a-category-variants-4-6: settled site_plan_open_choices 4a (closes residential_roofer_a3_write)
+Folded in: d-who-does-the-work: new row (Paul 2026-10-09 (settled w25_who_goes_on_the_roof; W25))
+Folded in: d-job-photos: new row (Paul 2026-10-09 (settled pilot_facts_2026_10_09; W10, reviews))
+Folded in: d-repair-materials: new row (Paul 2026-10-09 (settled pilot_facts_2026_10_09; W11))
+Folded in: d-clean-up: new row (Paul 2026-10-09 (settled pilot_facts_2026_10_09; reviews; magnet per Paul))
+Folded in: d-permits: new row (Paul 2026-10-09 (settled pilot_facts_2026_10_09; review 2026-08-15))
+Folded in: d-synthetic-roofing-offered: new row (Paul 2026-10-09 (settled synthetic_roofing))
+Folded in: loc-bluffton page facts: neighborhoods (settled bluffton_communities)
+Folded in: SD - Roof Repair - Apex Roofing of the Lowcountry.md line 76: inline link placeholder in the one P11 form (no wording change)
