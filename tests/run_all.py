@@ -34,7 +34,7 @@ def make_sandbox():
     SB = Path(tempfile.mkdtemp(prefix="seo-ops-test-", dir=base))
     ignore = shutil.ignore_patterns(".env", ".git", ".state", "__pycache__")
     for item in REPO.iterdir():
-        if item.name in (".env", ".git", "clients"):
+        if item.name in (".env", ".git", "clients", "machine.json"):   # machine.json: this Mac's own settings
             continue
         dst = SB / item.name
         (shutil.copytree(item, dst, ignore=ignore) if item.is_dir() else shutil.copy2(item, dst))

@@ -28,6 +28,7 @@ Thumbs.db
 .idea/
 
 # --- seo-ops runtime state ---
+machine.json
 .claude/state/
 *.tmp
 

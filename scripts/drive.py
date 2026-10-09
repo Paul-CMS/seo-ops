@@ -38,7 +38,7 @@ from pathlib import Path
 
 import run as R
 import status as S
-from lib import ROOT, append, client_dir, config, die, now, sha12
+from lib import ROOT, append, client_dir, config, die, machine, now, sha12
 
 LOCAL = {"Handoff Log": "handoff-log.md", "Approval Record": "approval-record.md",
          "Document Checklist": "document-checklist.md", "Brand Guide": "brand-guide.md", "Status": "STATUS.md"}
@@ -66,7 +66,7 @@ def archive_name(name, date, n=None):
 
 def local_root():
     """The v3 folder on this Mac, or None if Drive for desktop is not set up."""
-    raw = cfg().get("local_root")
+    raw = machine().get("drive_local_root") or cfg().get("local_root")
     if not raw:
         return None
     p = Path(raw).expanduser()
@@ -83,7 +83,7 @@ def where(slug):
     st = S.load(slug)
     root = local_root()
     if not root:
-        raw = cfg().get("local_root")
+        raw = machine().get("drive_local_root") or cfg().get("local_root")
         return None, ("Drive for desktop is not set up on this Mac (config.json drive.local_root is empty)" if not raw
                       else f"the local Drive folder {raw} is not there (Drive for desktop signed out or not syncing?)")
     f = client_folder(st)

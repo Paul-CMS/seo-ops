@@ -32,7 +32,7 @@ import time
 from pathlib import Path
 
 import status as S
-from lib import ROOT, append, client_dir, die, git_commit, now, read_json, ref_missing, ref_sha, sha12, write_json
+from lib import ROOT, append, machine, client_dir, die, git_commit, now, read_json, ref_missing, ref_sha, sha12, write_json
 
 TOKEN = ROOT / ".claude" / "state" / "approve-token.json"
 MAX_AGE = 20 * 60
@@ -42,6 +42,9 @@ def take_token(slug, targets, consume=True):
     """Check Paul's /approve token names this client and every target; mark it used if consume."""
     if isinstance(targets, str):
         targets = [targets]
+    if machine().get("can_approve") is False:
+        die("REFUSED — this Mac runs the stages but does not approve (machine.json can_approve: false). "
+            "Send Paul the /approve line; he approves on his own Mac after a git pull.", 7)
     tok = read_json(TOKEN)
     if not tok:
         die("REFUSED — no /approve from Paul in this session. Only Paul can approve, by typing "

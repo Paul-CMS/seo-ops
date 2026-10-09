@@ -1,17 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 6 of 8 — Pilot, then batches (batch pilot)**
-- **What is happening now:** waiting for Paul's approval — the drafts for batch pilot are ready: review each with the semantic review table (8 SEM item(s) found) and approve them together
-- **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (8 SEM it; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
+- **What is happening now:** waiting for Paul's approval — the drafts for batch pilot are ready: review each with the semantic review table (4 SEM item(s) found) and approve them together
+- **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (4 SEM it; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
 - **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry batch:pilot:drafts --sem <SEM items to apply, e.g. 1,3,4 — or none>` (or asks for changes first)
 
-_Generated 2026-10-09T13:54 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-09T13:58 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the drafts for batch pilot are ready: review each with the semantic review table (8 SEM item(s) found) and approve them together | 2026-10-09 | /approve apex-roofing-of-the-lowcountry batch:pilot:drafts |
+| Paul | the drafts for batch pilot are ready: review each with the semantic review table (4 SEM item(s) found) and approve them together | 2026-10-09 | /approve apex-roofing-of-the-lowcountry batch:pilot:drafts |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
 | Paul | Residential Roofer (choice 4a) lives in Brand Guide A3, inside entity_approved (A+B1+B2) and brand_guide_approved (A+D+E+G). Writing it voids both until re-approved. (i) write now and re-approve: /approve apex-roofing-of-the-lowcountry entity_approved brand_guide_approved site_plan; or (ii) use it on the site plan authority and write A3 at the next Brand Guide revision. A3 not edited. | 2026-10-08 | residential_roofer_a3_write |
@@ -72,4 +72,4 @@ _Generated 2026-10-09T13:54 by the system — do not edit. Start every session i
 
 - DataforSEO: $0.59
 
-Last run: /build 2026-10-09T13:54 — Pilot drafts SD Roof Repair and LD Bluffton revised from Paul's 2026-10-09 answers (all NEEDs closed); Brand Guide H exceptions + replacement price recorded; drafts await re-approval, not pushed
+Last run: /build 2026-10-09T13:58 — Pilot batch review of revised drafts: sibling check clean, 4 new SEM items, table re-registered

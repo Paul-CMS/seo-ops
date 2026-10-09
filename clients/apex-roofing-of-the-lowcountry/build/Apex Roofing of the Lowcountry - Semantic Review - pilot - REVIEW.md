@@ -1,50 +1,54 @@
 # Apex Roofing of the Lowcountry - Semantic Review - pilot - REVIEW
 
-**Batch:** pilot · **Run:** 20261009-130919-build-89b2 (re-issue of run 20261009-124809-build-ab2d) · **Date:** 2026-10-09 · **Report only — the drafts are not changed.**
+**Batch:** pilot · **Run:** 20261009-135629-build-8db7 · **Date:** 2026-10-09 · **Report only — the drafts are not changed.**
 
-This re-issue consolidates the earlier 11 rows into **8 SEM items (SEM-1 to SEM-8)**, the set the approval accepts, and builds in Paul's answers of 2026-10-09 (logged in run 20261009-130919-build-89b2). The findings themselves are unchanged.
+This review replaces the earlier table (runs 20261009-124809-build-ab2d / 20261009-130919-build-89b2). That table's SEM-1 to SEM-8 were picked by Paul and applied in run 20261009-131416-build-ec1c; the drafts were then revised with Paul's answers in run 20261009-134712-build-eac1 (flashing, leak repair, photos, warranty from a review, permit, Bluffton neighborhoods, services list, timing examples). **This table lists only new issues in the revised drafts.** The SEM numbers below are new and do not refer to the old items.
 
 Pages reviewed side by side (each written in its own run, CM-043):
 - `svc-roof-repair` — `clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md`
 - `loc-bluffton` — `clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md`
 
-Earlier approved pages: none (pilot is the first batch; Brand Guide C1–C3 are still empty).
+Earlier approved pages: none (pilot is the first batch; Brand Guide C1–C3 still empty).
 
 ## 1. Sibling check (CM-017 as scoped by CM-043)
 
 | Check | Result |
 |---|---|
-| FAQ question on both pages (BB-316) | None. SD has 6 service questions, LD has 4 Bluffton questions; no overlap. |
+| FAQ question on both pages (BB-316) | None. SD: 25% rule, cost, repair or replace, repaired in a day, emergency leak. LD: Town permit, Old Town materials, Palmetto Bluff and gated communities, based in Bluffton. |
 | H2/H3 heading on both pages | None. |
-| Opening angle reuse | Buyer states differ (SD: slow leak, not yet an emergency; LD: Bluffton-based roofer, incl. owners living out of town). The **sentence pattern** is shared — SEM-2. |
-| Passage portable between the two pages (E1 across siblings) | One near-identical on-call sentence on both pages — SEM-2. One region-level climate sentence on LD that overlaps SD's weather paragraph — SEM-6. |
-| Collisions with future siblings in the site plan | LD sibling-cities H2 has no city and would repeat on all 12 location pages — SEM-7. Hail/storm intent on SD belongs to Emergency Roof Repair — SEM-5. |
+| Opening angle and sentence form | Different. SD opens on the buyer ("Homeowners across the … metropolitan area hire Apex … to repair a roof…"), slow leak, not yet an emergency; CTA "For a free repair estimate, phone …". LD opens on the base ("Based in Bluffton, SC, Apex … is a roofer that works only on homes"), owners nearby and out of town; CTA "Ask for a free estimate at …". Old SEM-2 holds. |
+| On-call sentence | On SD only (emergency FAQ). Old SEM-2 holds. |
+| Revision content repeated across the pages | None. Flashing quote, photos, daily clean-up/magnet, timing review, GAF warranty review: SD only. Town permit, Palmetto Bluff/Hampton Hall, Old Town: LD only. |
+| Shared lines that are business facts (not a finding) | Licence numbers, hours (Mon–Sat 8–5) and phone appear on both, as NAP/trust lines — expected. "No travel fee" appears on both (SD delivery step 1, LD base FAQ); record the LD form in C3 at write-back so later location pages do not repeat the sentence. |
+| Passage portable between the pages (E1 across siblings) | None found. LD's storm paragraph is now tied to Bluffton facts (elevation, May River, New River, Old Town, growth) and does not repeat SD's weather paragraph. |
 
-## 2. Semantic review table (pick by SEM number)
+## 2. Targeted checks on the revision
 
-The **SEM #** is the item number Paul picks (`--sem`). The **Check** column is the check that caught it: SEM-1 to SEM-7 still have no definition in `methodology/writing-commercial.md` (Stage 4 `[NEED: definition from the live gem, Section G]`), so findings are tagged SEM-8 where it applies and otherwise with the standard check (E1, C7, A6, A7, BB-310, BB-316).
+| Check | Result |
+|---|---|
+| LD — Town limits vs Greater Bluffton | **Pass.** Palmetto Bluff stated as inside the Town of Bluffton; Belfair, Colleton River Plantation and Moss Creek stated as outside the Town limits in Beaufort County. Neighborhood list (Old Town, Palmetto Bluff, Jones Estate, Buckwalter, Shultz Tract, Hampton Hall) contains none of the three Greater Bluffton communities. Permit FAQ sends addresses outside town limits to Beaufort County Building Codes — consistent. |
+| No new claim stated as Apex's general price | **Pass.** No price on either page; SD cost FAQ gives factors and the free estimate only. |
+| $20,000–$25,000 figure | **Pass.** Not on either pilot page (no "$", "20,000" or "25,000" in either draft). |
+| SD — services list vs Paul's list | **Pass.** H3s: Shingle Repair and Replacement · Flashing Replacement at Chimneys, Walls and Valleys · Ridge Cap and Starter Strip Repair · Soffit, Fascia and Roof Deck Repair · Roof Leak Repair. No hail anywhere on the page. |
+| SD — warranty only in the replacement context | **Pass.** One mention, inside the "Should I repair or replace my roof?" FAQ, about a replacement roof and the GAF System Plus Limited Warranties from the 2026-08-15 review. No repair warranty stated. |
+| SD — timing | **Pass.** Only as an attributed review example plus "your estimate will tell you"; no general visit length. |
 
-| SEM # | Old rows | Check | Page · element | What was found | Action (Paul's answers built in) | Blocked? |
-|---|---|---|---|---|---|---|
-| **SEM-1** | 1 | SEM-8 | svc-roof-repair · FAQ "What should I do if I have an emergency roof leak?" | Active-leak / storm question on the scheduled-repair page; its intent belongs to Emergency Roof Repair. | **Keep the FAQ on Roof Repair (Paul) — not routed.** Point the reader to the Emergency Roof Repair page (`/emergency-roof-repair/`) in the answer. Under CM-022/CM-005 Build does not place the link: the answer carries a link placeholder, and the link is proposed in Finish as this page's one CM-022 contextual-link exception for Paul's approval. SD keeps its FAQ count (subject to SEM-3). | Not blocked for the copy; the live link waits on Finish (open question `pilot_emergency_faq_link_cm022`). |
-| **SEM-2** | 2, 8 | C7 / E1 (sibling); opening-angle reuse (CM-043 §3) | Both pages · opening paragraph first and last sentence; SD emergency FAQ last sentence; LD FAQ "Is Apex Roofing of the Lowcountry based in Bluffton?" last sentence | "Ralph and Pierce are on call and treat an emergency as high priority" appears on both pages almost word for word; both openings use "Apex Roofing of the Lowcountry is a roof[ing contractor / er] that / based…" and both close "Call (843) 757-2739 for a free estimate." | Because SEM-1 keeps the SD FAQ, the on-call sentence stays on **one** page only: keep it on SD (the emergency FAQ), and on LD replace it with a Bluffton-specific next step (or end after the answer). Vary the entity sentence and the CTA sentence so the two pages use different forms; record the used forms in C3 at write-back so later pages avoid them. | No |
-| **SEM-3** | 6, 7 | E1 (within page) / A6 | svc-roof-repair · FAQ "Why do so many roof leaks start at the flashing?"; H3 "Roof Leak Repair", first sentence | Flashing is explained three times (delivery section, Flashing H3, this FAQ). The Roof Leak Repair lead sentence ("A roofing contractor fixes a leaking roof, and the work starts with finding the true entry point.") reads as an inserted query and repeats delivery steps 2–3. | **Drop the flashing FAQ** (5 FAQs remain, within spec 4–6). **Replace the generic lead sentence** under "Roof Leak Repair" with what is specific to this case (a leak in one or two areas traced to the failed flashing, shingle or seam). | No for the edits. The H3 keeps its existing `[NEED: client confirms this repair type]`, which still blocks ship. |
-| **SEM-4** | 9 | SEM-8 | svc-roof-repair · H2 "How Do Our Roofers Fix a Damaged Roof in Beaufort and Jasper Counties?", 2nd sentence | "Apex was founded by Ralph Brehany and his son, Pierce." — founder line on a service page, followed by the W25 [NEED]. | **Keep (Paul).** W25 answered by Paul 2026-10-09: father and son, Ralph and Pierce, both get on the roof. Reword the line to that fact (who gets on the roof) and **remove the W25 [NEED] only**; every other [NEED] stays. | No (W25 settled: `w25_who_goes_on_the_roof`). |
-| **SEM-5** | 10 | SEM-8 | svc-roof-repair · H3 "Hail Damage Repair" (and "hail damage" in the H2 lead list) | Storm/hail damage overlaps the Emergency Roof Repair page's intent; hail repair is unconfirmed. | **Move to Emergency Roof Repair (Paul).** Remove the H3 and the "hail damage" mention from the Roof Repair lead list; route hail/storm damage to the Emergency Roof Repair brief (later batch), where it still needs the client's confirmation of hail repair before it ships. Roof Repair keeps 5 repair-type H3s. | No on Roof Repair. Routed → svc-emergency-roof-repair (its own NEED travels with it). |
-| **SEM-6** | 3, 5 | E1 / C7; E1 (portability, LOC-13, BB-317) | loc-bluffton · FAQ "Is Apex Roofing of the Lowcountry based in Bluffton?"; H2 "What Makes Roofing in Bluffton Different?", 3rd sentence | The FAQ answer repeats the opening (based in Bluffton, licence #0620033323 a second time, 6 Sutton Ct). The climate sentence (humid subtropical, hurricanes, wind-driven rain) is true of every town and repeats SD's weather paragraph. | FAQ: keep the question; answer with the address and what a Bluffton base means for the job (no travel fee — settled in Business), without repeating the licence number. Climate sentence: **localize to Bluffton (Paul)** — tie the storm exposure to the sourced Bluffton-only facts already in the brief (May River through the town centre, New River on the southwest edge, about 20 ft elevation; Wikipedia, LB row 7). No new fact is added. | No |
-| **SEM-7** | 4 | A7 / BB-316 (heading registry) | loc-bluffton · H2 "Which Other Lowcountry Towns Do We Serve?" | No city in the heading, so it would be word for word the same on all 12 location pages. | Put the city in it, e.g. "Which Towns Near Bluffton Do We Also Serve?", and use that pattern for the location batches. | No |
-| **SEM-8** | 11 | BB-310 | loc-bluffton · H2 "Which Roof Services Can You Get From a Bluffton Roofing Contractor?", lead sentence | "…eight roofing services, each with its own page." describes the website, not the service. | Drop "each with its own page": "Apex offers Bluffton homeowners eight roofing services:" (the H3s and link table stay as they are). | No |
+## 3. Semantic review table (pick by SEM number)
 
-**Old row → new item:** 1 → SEM-1 · 2 → SEM-2 · 3 → SEM-6 · 4 → SEM-7 · 5 → SEM-6 · 6 → SEM-3 · 7 → SEM-3 · 8 → SEM-2 · 9 → SEM-4 · 10 → SEM-5 · 11 → SEM-8.
+The **Check** column is the check that caught it (SEM-1 to SEM-7 still have no definition in `methodology/writing-commercial.md`; findings are tagged with the standard check).
 
-Checks with no findings: FAQ collision between the two pages; H2/H3 collision between the two pages; buyer-state reuse in the openings; reserved B1 variant use (none on either page). SEM-1 to SEM-7 as checks: not run (no definition).
+| SEM # | Check | Page · element | What was found | Suggested action | Blocked? |
+|---|---|---|---|---|---|
+| **SEM-1** | E1 (within page) / A6 | loc-bluffton · H2 "What Makes Roofing in Bluffton Different?" 4th sentence; FAQ "What roofing materials are allowed in Old Town Bluffton?"; H2 "What Are the Top Sites to See in Bluffton?" list | Old Town's National Historic District listing in 1996 is stated three times on one page; the revised Old Town FAQ added the third. | Keep the date in the Top Sites list (and the H2 sentence if wanted); in the Old Town FAQ say only "a home in Old Town" without repeating the listing year. | No |
+| **SEM-2** | E1 (within page) | svc-roof-repair · delivery H2 flashing paragraph ("Sealant alone cracks. Proper flashing lasts."); H3 "Flashing Replacement at Chimneys, Walls and Valleys" ("not covered over with caulk") | The new flashing paragraph makes the flashing-versus-sealant point; the Flashing H3 makes it again. | Keep the point in the delivery paragraph (it carries the client's words); in the H3 say only what is replaced and where (chimney, step, valley flashing, pipe boots). | No |
+| **SEM-3** | CM-016 (attribution) | svc-roof-repair · delivery H2 flashing paragraph, "In the words of Ralph and Pierce" | Brand Guide G records the flashing quote as the client's verbatim answer of 2026-10-07 without naming who said it; the draft credits both owners. | Attribute it to "the owners" (or "Apex's owners"), or Paul confirms which of them said it. | No |
+| **SEM-4** | CM-016 (claim scope) | loc-bluffton · FAQ "Do you replace roofs in Palmetto Bluff and nearby gated communities?" — answer first sentence | Paul's W9 answer (settled `bluffton_communities`) is that Apex **works in** these communities; the answer states "Apex replaces roofs in Palmetto Bluff", a narrower claim than the source. | Either Paul confirms replacements there (keep as is), or reword the question and answer to "work on roofs in Palmetto Bluff…". | No |
 
-## 3. Outside the SEM items
+**SEM items: 4 (SEM-1 to SEM-4).** None blocks the copy. Pick any, all or none: `--sem 1,2,3,4` / `--sem none`.
 
-- **Bluffton depth (Paul, 2026-10-09):** Paul accepts that the Bluffton draft is too long and wants it cut down. This is not a SEM item and no copy is changed in this report-only run; it is a revision of the Bluffton draft, made when the draft is next changed.
+Checks with no findings: FAQ collision; H2/H3 collision; opening-angle and sentence-form reuse; on-call sentence; revision content repeated across pages; Town-limits distinction; price claims; $20,000–$25,000 figure; Roof Repair services list; warranty context; timing; reserved B1 variant use (none on either page).
 
-## 4. Open [NEED] items still in the drafts (not SEM items — they block ship until answered)
+## 4. Still open (not SEM items)
 
-**svc-roof-repair (11 after SEM-4/SEM-5):** W10 photo documentation · W11 corrosion-resistant flashing and synthetic underlayment · warranty on a repair · client confirms each of the 5 remaining repair types (shingle, flashing, ridge cap/starter strip, soffit/fascia/deck, leak) · SC source for the 25% rule (or keep the answer general) · typical repair visit length (drop that FAQ if unanswered). W25 is answered (SEM-4); hail moves with SEM-5.
-
-**loc-bluffton (5):** Apex pulls the Town of Bluffton re-roof permit · UDO §3.18 Certificate of Appropriateness for an Old Town re-roof · UDO Article 5 roof-material list · W9 work in Palmetto Bluff, Belfair, Colleton River Plantation, Moss Creek · a 6th Bluffton neighborhood with a public source (spec needs 6–12).
+- **pilot_emergency_faq_link_cm022** (open question, waiting on Paul): SD's emergency FAQ keeps its link placeholder; the link is proposed in Finish as the page's one CM-022 exception.
+- **C3 at write-back:** record every H2 and FAQ question of both pages, the two opening/CTA sentence forms, and the "no travel fee" sentence form, so later batches avoid them.

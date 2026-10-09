@@ -34,6 +34,14 @@ def config():
     return json.loads((ROOT / "config.json").read_text())
 
 
+def machine():
+    """This Mac's own settings (machine.json, git-ignored; missing = Paul's Mac, the defaults).
+    drive_local_root: this Mac's path to the v3 folder (overrides config.json drive.local_root).
+    can_approve: false on a VA's Mac - the VA runs the stages, Paul approves on his own Mac."""
+    p = ROOT / "machine.json"
+    return json.loads(p.read_text()) if p.exists() else {}
+
+
 def client_dir(slug, must_exist=True):
     if not SLUG_RE.match(slug or ""):
         die(f"Bad client slug '{slug}'. Use lowercase letters, digits and hyphens.")
