@@ -41,6 +41,7 @@ def make_sandbox():
     (SB / "clients").mkdir()
     cfg = json.loads((SB / "config.json").read_text())
     cfg["git_push_after_run"] = False
+    cfg.pop("specs_approval", None)   # a fresh install: Paul's real global specs approval is not the sandbox's
     # R4: a fake local v3 folder (Drive for desktop) inside the sandbox — never the real Drive
     v3 = SB / "fake-drive" / "v3"
     tpl = v3 / cfg["drive"]["template_folder_name"]

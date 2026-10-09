@@ -547,7 +547,30 @@
           "sensitive_review": null,
           "practitioner": null
         },
-        "drafts": null,
+        "drafts": {
+          "state": "approved",
+          "by": "Paul",
+          "at": "2026-10-09T13:14:08-05:00",
+          "note": null,
+          "files": {
+            "clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md": "7af4c4593579",
+            "clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md": "c59a53c719cd",
+            "clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Semantic Review - pilot - REVIEW.md": "9c47a05960c6"
+          },
+          "conditions": [],
+          "sensitive_review": null,
+          "practitioner": null,
+          "sem_ids": [
+            "SEM-1",
+            "SEM-2",
+            "SEM-3",
+            "SEM-4",
+            "SEM-5",
+            "SEM-6",
+            "SEM-7",
+            "SEM-8"
+          ]
+        },
         "files": {
           "briefs": [
             "clients/apex-roofing-of-the-lowcountry/build/pilot/SB - Roof Repair - Apex Roofing of the Lowcountry.md",
@@ -865,7 +888,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-09T13:11:08-05:00",
+  "updated": "2026-10-09T13:14:08-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -943,10 +966,5 @@
       "first_run": "20261009-124809-build-ab2d",
       "at": "2026-10-09T12:50:36-05:00"
     }
-  },
-  "review_pause": {
-    "run_id": "20261009-130919-build-89b2",
-    "step": "build:drafts",
-    "at": "2026-10-09T13:11:08-05:00"
   }
 }

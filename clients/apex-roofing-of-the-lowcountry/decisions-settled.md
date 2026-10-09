@@ -12,6 +12,7 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - 2026-10-08 — page specs (global): approved
 - 2026-10-08 — site plan: approved
 - 2026-10-09 — batch pilot briefs: approved
+- 2026-10-09 — batch pilot drafts: approved
 
 ## Settled
 
