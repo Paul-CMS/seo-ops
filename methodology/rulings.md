@@ -29,7 +29,7 @@ recorded, no rule · `SUPERSEDED` no longer governs; follow the pointer.
 
 ## Contents
 - A. Coastal rulings (CM-001–024)
-- B. Standing rulings from the consolidation and after (CM-025 onward, incl. CM-038–053)
+- B. Standing rulings from the consolidation and after (CM-025 onward, incl. CM-038–057)
 - C. Rule Register (RULE-001–015)
 - D. GOV-06 — procedure and tensions (PROC-01, PROC-02, GOV-T1–T10)
 - E. Resolved conflicts (CF-001–009)
@@ -300,7 +300,7 @@ narrative of its reasoning; and the content QA in Finish never shares context wi
 writer. Each audit's `decisions.md` cites CM-026; it does not log a new exception.
 
 ## CM-027 · Reviews are never verified facts
-**ID** CM-027 · **Status** APPROVED — amendment PROPOSED in CM-056 (not in force) · **Date** 2026-10-02 · **Reason** Customer language is unverified and reviewer names are personal data; only the client can confirm a fact. · **Supersedes** —
+**ID** CM-027 · **Status** APPROVED — first bullet AMENDED by CM-057 (review content may enter facts.json as `customer_reported`) · **Date** 2026-10-02 · **Reason** Customer language is unverified and reviewer names are personal data; only the client can confirm a fact. · **Supersedes** —
 
 - Nothing from Google reviews (or any customer language) enters Brand Guide Section D
   unless the client confirms it on the proof sheet.
@@ -441,7 +441,7 @@ Decided by Paul. Skill `expert-interview`, command `/interview`.
 4. Nothing goes to a client automatically; no phone bot or automatic calls.
 
 ## CM-043 · One page per run, inside batches
-**ID** CM-043 · **Status** APPROVED — briefs scoping PROPOSED in CM-054 (not in force) · **Date** 2026-10-05 · **Reason** Writing several pages in one context lets one page's wording bleed into the next and makes each later page worse as the context fills; a fresh context per page keeps each one clean. · **Source** Semantic Mastery Content Pipeline Suite (content-pipeline-pages: one slug per invocation), adapted · **Supersedes** CM-017's "one working context per client, not per page" for writing runs (CM-017's other clauses stand)
+**ID** CM-043 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** Writing several pages in one context lets one page's wording bleed into the next and makes each later page worse as the context fills; a fresh context per page keeps each one clean. · **Source** Semantic Mastery Content Pipeline Suite (content-pipeline-pages: one slug per invocation), adapted · **Supersedes** CM-017's "one working context per client, not per page" for writing runs (CM-017's other clauses stand)
 
 Decided by Paul.
 1. Batches and batch approvals are unchanged: site plan → pilot → batches of about 5, **two stops
@@ -585,7 +585,7 @@ name, date and reason, and the use is logged; a second build, or another run, ne
 The entity check is re-run when the sites are back.
 
 ## CM-054 · Briefs: one run and one approval per batch
-**ID** CM-054 · **Status** PROPOSED (not approved by Paul) · **Date** 2026-10-09 · **Reason** One run per brief, each behind its own evidence-gate run, made a five-page service batch take a day; the brief is an outline, so the bleed CM-043 guards against matters far less there than in prose. · **Source** Paul, design brief 2026-10-09 (problem 6) · **Supersedes** CM-043 point 2 for briefs only (drafts stay one page per run)
+**ID** CM-054 · **Status** REJECTED (Paul, 2026-10-09: conflicts with rewrite 2 P10 — briefs and drafts for all pages of a kind in one run, parallel per-page agents) · **Date** 2026-10-09 · **Reason** One run per brief, each behind its own evidence-gate run, made a five-page service batch take a day; the brief is an outline, so the bleed CM-043 guards against matters far less there than in prose. · **Source** Paul, design brief 2026-10-09 (problem 6) · **Supersedes** CM-043 point 2 for briefs only (drafts stay one page per run)
 
 Proposed in the design-brief session; not approved by Paul.
 1. `/build <slug> brief <batch>` is **one run** for the whole batch: it runs the evidence gate per page (CM-041,
@@ -596,8 +596,8 @@ Proposed in the design-brief session; not approved by Paul.
 3. **One approval per batch** (`batch:<id>:briefs`), unchanged. Drafts: CM-043 stands — one page per run.
 
 ## CM-055 · Publish together; nothing waits on a VA handoff
-**ID** CM-055 · **Status** PROPOSED (not approved by Paul) · **Date** 2026-10-09 · **Reason** Waiting for Jonie to publish each batch before the next batch could be written stalled every client at the pilot; the pages link to each other, so they are best published together anyway. · **Source** Paul, design brief 2026-10-09 (problems 3 and 7); memory "publish only after all drafts" · **Supersedes** CLAUDE.md §4 "one publish handoff to Jonie per batch" and §5 "service batches written back before any location batch"
-Proposed in the design-brief session; not approved by Paul.
+**ID** CM-055 · **Status** APPROVED (Paul, 2026-10-09) · **Date** 2026-10-09 · **Reason** Waiting for Jonie to publish each batch before the next batch could be written stalled every client at the pilot; the pages link to each other, so they are best published together anyway. · **Source** Paul, design brief 2026-10-09 (problems 3 and 7); memory "publish only after all drafts" · **Supersedes** CLAUDE.md §4 "one publish handoff to Jonie per batch" and §5 "service batches written back before any location batch"
+Decided by Paul.
 1. **Drafting never waits on a handoff.** No batch step requires the technical blockers to be cleared or any page to
    be published. A batch's `ship` run only creates its WordPress drafts; the next batch goes straight on.
    Service before location is kept, by Paul's **drafts approval** of the service batch, not by publishing.
@@ -610,7 +610,7 @@ Proposed in the design-brief session; not approved by Paul.
 4. `blockers_cleared` still gates release (`release_approved`), nothing earlier.
 
 ## CM-056 · Research before asking; a review can answer a fact
-**ID** CM-056 · **Status** PROPOSED (not approved by Paul) · **Date** 2026-10-09 · **Reason** The evidence gate read only the Brand Guide and the page facts file, so facts the client's own reviews and site already answered became questions — and answered questions came back in later sessions. · **Source** Paul, design brief 2026-10-09 (problems 1, 4, 5); ruling 1a · **Supersedes** — (amends CM-027 for the evidence gate; extends CM-041, CM-042)
+**ID** CM-056 · **Status** REPLACED → CM-057 (Paul, 2026-10-09; never in force) · **Date** 2026-10-09 · **Reason** The evidence gate read only the Brand Guide and the page facts file, so facts the client's own reviews and site already answered became questions — and answered questions came back in later sessions. · **Source** Paul, design brief 2026-10-09 (problems 1, 4, 5); ruling 1a · **Supersedes** — (amends CM-027 for the evidence gate; extends CM-041, CM-042)
 
 Proposed in the design-brief session; not approved by Paul.
 1. **Search before asking.** Before a fact is a gap, `scripts/sources.py` searches every source on disk: Google
@@ -627,6 +627,19 @@ Proposed in the design-brief session; not approved by Paul.
 4. **Decide once, by key.** An answer settled under a key related to an open question must name it (`--closes`) or
    say why it stays open (`--leaves-open`); a question related to a settled or open one is refused unless it says
    what is new (`--distinct`).
+
+## CM-057 · Reviews as customer-reported facts
+**ID** CM-057 · **Status** APPROVED · **Date** 2026-10-09 · **Reason** Facts the client's own reviews already answered (who goes on the roof, photos, clean-up, permits) were still asked of Paul, and CM-027 kept every review out of the facts. · **Source** Paul, REWRITE-2-DECISIONS.md (b); rewrite 2 P5 · **Supersedes** CM-027's first bullet (CM-027's other bullets stand); replaces the proposed CM-056
+
+Decided by Paul, in Paul's wording.
+Review content may enter `facts.json` as `customer_reported`, with the quote and the number of reviews that support
+it. It counts as Known for the evidence gate when 3 or more independent reviews support it and nothing conflicts.
+"Independent" means different reviewers: the same reviewer twice does not count, and owner replies do not count.
+The writer states it only as customers describe it ("customers mention…") until Paul or the client confirms it; one
+confirmation makes it a plain fact. Prices, timelines and warranty terms from reviews are never stated as the
+company's; they appear only as a cited customer example. A hit on the client's own site or GBP stays Unverified and
+becomes a one-line yes/no question. Reviewer names stay out of deliverables, and self-serving rating claims stay
+out of schema (CM-027 unchanged).
 
 ---
 
@@ -865,7 +878,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-024 | APPROVED |
 | CM-025 | APPROVED |
 | CM-026 | APPROVED |
-| CM-027 | APPROVED (amendment proposed: CM-056) |
+| CM-027 | APPROVED (first bullet amended by CM-057) |
 | CM-028 | APPROVED |
 | CM-029 | NOTED (merged into CM-022) |
 | CM-030 | OPEN |
@@ -877,7 +890,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-040 | APPROVED |
 | CM-041 | APPROVED (evidence gate; thresholds are starting values) |
 | CM-042 | APPROVED |
-| CM-043 | APPROVED (briefs scoping proposed: CM-054) |
+| CM-043 | APPROVED |
 | CM-044 | APPROVED |
 | CM-045 | APPROVED |
 | CM-046 | APPROVED |
@@ -888,9 +901,10 @@ conflicts follow PROC-01 and are ruled here).
 | CM-051 | APPROVED (part 4 PILOT; part 8 held) |
 | CM-052 | OPEN (small-site homepage) |
 | CM-053 | APPROVED |
-| CM-054 | PROPOSED (briefs: one run per batch) |
-| CM-055 | PROPOSED (publish together, one living handoff) |
-| CM-056 | PROPOSED (research before asking; reviews answer facts, attributed) |
+| CM-054 | REJECTED (conflicts with rewrite 2 P10) |
+| CM-055 | APPROVED (publish together, one living handoff) |
+| CM-056 | REPLACED → CM-057 |
+| CM-057 | APPROVED (reviews as customer-reported facts) |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |
