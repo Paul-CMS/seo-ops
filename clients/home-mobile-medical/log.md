@@ -346,3 +346,62 @@ Approved version: methodology/specs/service.md (sha 0d679dadad45)
 
 ## CONDITION · 2026-10-08T13:15:46-05:00 · Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)
 - REVIEW CONTINUED 2026-10-08T22:19 · after discovery:audit (run 20261007-203219-discovery-784c) · Paul typed /next
+
+## RUN 20261009-071238-discovery-94fa · STARTED · /discovery · 2026-10-09T07:12:38-05:00
+Step: discovery:audit · session 27001d21-4639-469e-ab5f-a835b621fa6f
+Gates checked: entity_approved, page_specs_approved
+- SETTLED cm019-c4-no-leads · 2026-10-09T07:13:00-05:00 · run 20261009-071238-discovery-94fa · by Paul · Paul 2026-10-09 (Q1): client confirms no leads from any of the 36 retirement URLs (17 FL/MI, 5 discontinued-service, 14 SC legacy incl. /services/straight-stair-lifts/). CM-019 C4 passes; all 36 become 301s.
+- SETTLED cm019-c3-citation-check-waived · 2026-10-09T07:13:00-05:00 · run 20261009-071238-discovery-94fa · by Paul · Paul Exception 2026-10-09 (Q8): citation link-destination check skipped; CM-019 C3 accepted on DataforSEO referring-domain evidence for the 36 URLs. Do not re-raise.
+- SETTLED redirect-targets-default · 2026-10-09T07:13:00-05:00 · run 20261009-071238-discovery-94fa · by Paul · Paul 2026-10-09 (Q2): redirect the 36 to the appropriate URLs - the audit's defaults (FL/MI -> /services/stair-lifts/, power chairs/scooter lifts -> /services/, ramps -> /services/porch-lifts/; SC legacy duplicates -> their canonical service/location page per the URL Decision Map).
+- CHANGE #64 [audit_file] clients/home-mobile-medical/audit/2026-10-07/url-decision-map.csv | superseding rows (Paul Q1/Q2/Q8) | old: 167 rows; 36 Needs Evidence (C4 pending) | new: 203 rows: 36 superseding rows -> Redirect (301), C1-C4 pass | result: appended
+- CHANGE #65 [audit_file] clients/home-mobile-medical/audit/2026-10-07/findings.csv | superseding rows (Paul Q1/Q2/Q8) | old: 57 rows | new: 62 rows: F-003 rev 3, F-013 rev 2, F-014 rev 2, F-015 rev 3, F-035 rev 3 - 36 URLs decided 301, disposition no longer Assumed | result: appended
+- CHANGE #66 [audit_file] clients/home-mobile-medical/audit/2026-10-07/questions/questions.csv | Q1, Q2, Q8 answer columns | old: open | new: answered 2026-10-09 (Q1 confirmed no leads; Q2 defaults; Q8 waived - Paul Exception) | result: updated
+- CHANGE #67 [audit_file] clients/home-mobile-medical/audit/2026-10-07/decisions.md | DEC-LOCAL-008 Gate B outcome | old:  | new: Q1/Q2/Q8 answered; Q8 Paul Exception; 36 URLs decided 301 | result: appended
+- CHANGE #68 [audit_file] clients/home-mobile-medical/audit/2026-10-07/deliverables/Home Mobile Medical - URL Decision Map - REVIEW.md | re-render (36 rows, summary, CM-019 table) | old: 36 Redirect/merge candidate - Needs Evidence (C4 pending); CM-019 C1-C3 pass C4 pending 51 | new: 36 Redirect (301) decided; CM-019 C1-C4 pass 36, C1-C3 pass C4 pending 15 (Georgia, held) | result: rendered
+- CHANGE #69 [audit_file] clients/home-mobile-medical/audit/2026-10-07/deliverables/Home Mobile Medical - Finding Register - REVIEW.md | re-render F-003, F-013, F-014, F-015, F-035 | old: revisions 2/1/1/2/2 | new: revisions 3/2/2/3/3; totals unchanged (12H/13M/15L) | result: rendered
+- CHANGE #70 [audit_file] clients/home-mobile-medical/audit/2026-10-07/deliverables/Home Mobile Medical - Recommendations - REVIEW.md | re-render (summary, URL decisions, limitations, change preview, Q1/Q2/Q8, Low list F-035) | old: Q1/Q2/Q8 open; redirects and sitemap wait on Q1/Q8 | new: Q1/Q2/Q8 answered; 36 decided 301s as VA handoffs after audit approval; sitemap removal paired with them | result: rendered
+- CHANGE #71 [audit_file] clients/home-mobile-medical/audit/2026-10-07/deliverables/Home Mobile Medical - Evidence Manifest - REVIEW.md | CM-019 C3 limitation row | old: Q8 closes the gap | new: gap accepted by Paul Exception (Q8, 2026-10-09) | result: rendered
+- CHANGE #72 [audit_file] clients/home-mobile-medical/audit/2026-10-07/findings.csv | row count correction for change #65 | old: 57 to 62 rows (as logged in #65) | new: 53 to 58 data rows (5 superseding rows appended) | result: corrected
+### HANDOFF · /discovery · 2026-10-09 · run 20261009-071238-discovery-94fa
+**What I did**
+- Recorded Paul's answers to Q1, Q2 and Q8 as settled decisions.
+- Appended 36 superseding rows to the URL Decision Map: each is now Redirect (301) to its default target, with CM-019 C1–C4 passing.
+- Appended superseding rows for F-003, F-013, F-014, F-015 and F-035, and marked Q1, Q2 and Q8 answered. Added DEC-LOCAL-008 to the audit decisions.
+- Re-rendered all four audit deliverables (still REVIEW) and re-marked them for audit_approved.
+
+**What was decided, and why**
+- Q1 (Paul, 2026-10-09): the client confirms no leads from the 36 retirement URLs (17 FL/MI, 5 discontinued-service, 14 SC legacy including /services/straight-stair-lifts/). CM-019 C4 passes.
+- Q8 (Paul Exception): the citation listing check is waived. C3 is accepted on the DataforSEO referring-domain evidence.
+- Q2: the audit's default redirect targets.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Approval 2 (audit_approved) | Paul | Redirect handoffs, safe fixes, Build |
+| Q3 (the 10 URLs failing CM-019), Q4 (CF-001 homepage H1) | Paul | Those dispositions |
+| Q5–Q7, Q9 | Jonie / Gwen / client | Their findings |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| URL Decision Map | clients/home-mobile-medical/audit/2026-10-07/deliverables/Home Mobile Medical - URL Decision Map - REVIEW.md | REVIEW |
+| Finding Register, Recommendations, Evidence Manifest | same folder | REVIEW |
+
+**What I could not check**
+- Citation listing destinations (Q8 was waived by Paul).
+
+**Anything the next agent would otherwise get wrong**
+- Q1, Q2 and Q8 are settled. Never re-raise them.
+- The 36 301s go to Jonie as handoffs only after audit_approved.
+- The /hilton-head/stair-lift-repair/ redirect is paired with the publish of /services/stair-lift-repair/.
+- The 15 Georgia rows stay on Hold.
+### END HANDOFF
+## RUN 20261009-071238-discovery-94fa · FINISHED · 2026-10-09T07:27:17-05:00
+Changes: 9 · Summary: Q1, Q2 and Q8 settled by Paul; 36 retirement URLs decided as 301s; audit deliverables re-rendered for approval
+- CHANGE #73 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-07 (2).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-07 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #74 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-07 (2).md | new: Home Mobile Medical - Handoff Log.md · sha c2c1bd0524c6 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #75 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Approval Record - 2026-10-07 (2).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Approval Record.md | new: _Archive/Home Mobile Medical - Approval Record - 2026-10-07 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #76 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Approval Record.md | upload | old: previous version archived as Home Mobile Medical - Approval Record - 2026-10-07 (2).md | new: Home Mobile Medical - Approval Record.md · sha 3f6a9beaa608 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #77 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-07 (2).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-07 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #78 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-07 (2).md | new: Home Mobile Medical - Document Checklist.md · sha 4a7a29c134ad | result: done · copied (Drive for desktop syncs it)
+- CHANGE #79 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: (new file) | new: Home Mobile Medical - Status.md · sha c0153c8d477c | result: done · copied (Drive for desktop syncs it)

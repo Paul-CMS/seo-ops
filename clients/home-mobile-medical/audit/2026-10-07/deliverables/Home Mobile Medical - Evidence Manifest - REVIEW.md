@@ -1,6 +1,6 @@
 # Home Mobile Medical - Evidence Manifest - REVIEW
 
-**Status:** REVIEW - awaiting Paul (gate audit_approved). Rendered 2026-10-08 from `00-manifest.csv`, `00-crosschecks.md` and `steps.py manifest` (run 20261007-203219-discovery-784c). Rendered, never edited.
+**Status:** REVIEW - awaiting Paul (gate audit_approved). Rendered 2026-10-08 from `00-manifest.csv`, `00-crosschecks.md` and `steps.py manifest` (run 20261007-203219-discovery-784c); re-rendered 2026-10-09 for the Q8 Paul Exception (run 20261009-071238-discovery-94fa). Rendered, never edited.
 
 Evidence files live in `clients/home-mobile-medical/inputs/` (git-ignored; copied read-only from the Drive v3 Evidence folder) and `clients/home-mobile-medical/data/`. The six Local Dominator PDFs were read in place in Drive. No Drive file was changed.
 
@@ -49,7 +49,7 @@ Evidence files live in `clients/home-mobile-medical/inputs/` (git-ignored; copie
 | Orphan candidates | Reconciled against CMS, sitemap, DataforSEO, GBP and citations | Called candidates, never orphans (F-035) |
 | CMS vs crawl | 124 CMS items; 37 published items not crawled; 11 crawled archives/stubs not in CMS | Every URL has a URL Decision Map row |
 | Citation NAP | Measured against Brand Guide F, not the tracker's stored NAP; tracker's google.com "Potential" row is a tracker defect | F-010, F-011 |
-| CM-019 condition 3 | GBP field = homepage; citation destinations via DataforSEO referring domains (no destination column in the tracker) | Q8 closes the gap |
+| CM-019 condition 3 | GBP field = homepage; citation destinations via DataforSEO referring domains (no destination column in the tracker) | Gap accepted by Paul for the 36 decided 301s: listing check waived (Paul Exception, Q8, 2026-10-09; DEC-LOCAL-008) |
 
 ## 3 · Registered step outcomes (`steps.py manifest home-mobile-medical`)
 
