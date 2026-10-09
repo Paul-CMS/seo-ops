@@ -1,0 +1,26 @@
+{
+  "page": "svc-roof-inspections",
+  "recorded_by_run": "20261009-142804-build-8390",
+  "facts": {
+    "service_scope": {
+      "value": "Live /roof-inspections/ lists post-storm, pre-purchase, annual maintenance and insurance-claim inspections. Residential only (no commercial inspections — D2 R3). Not confirmed by the client or Paul.",
+      "status": "Submitted",
+      "source": "Live site https://apexroofingtlc.com/roof-inspections/ (public-sources capture 2026-10-05, meta and H3s); Brand Guide D Residential or commercial; D2 row 3"
+    },
+    "service_process": {
+      "value": "Ralph or Pierce Brehany (father and son) visit and get on the roof personally (W25); the work is photographed (W10 as 'photos of the work'). Drone use, report format and checklist: not confirmed.",
+      "status": "Paul Approved",
+      "source": "Brand Guide D Other live site claims (W25 and W10 Paul Approved 2026-10-09); decisions-settled w25_who_goes_on_the_roof"
+    },
+    "timeframe": {
+      "value": "",
+      "status": "Unknown",
+      "source": "No inspection visit length confirmed; Paul 2026-10-09: no general visit length (decisions-settled pilot_facts_2026_10_09)"
+    },
+    "pricing": {
+      "value": "Free estimates (Paul Approved 2026-10-06). Inspection-specific: 'Pre-estimate inspections … are always free. Independent inspection reports … are priced separately' (W17) — not confirmed; no report price.",
+      "status": "Submitted",
+      "source": "Brand Guide D Free estimate row (Paul answers B12; W17 Submitted [NEED: confirm paid independent inspection reports])"
+    }
+  }
+}

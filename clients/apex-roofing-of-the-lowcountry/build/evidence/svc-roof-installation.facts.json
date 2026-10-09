@@ -1,0 +1,26 @@
+{
+  "page": "svc-roof-installation",
+  "recorded_by_run": "20261009-142804-build-8390",
+  "facts": {
+    "service_scope": {
+      "value": "Roofing on new construction: Apex works as a roofing subcontractor on new construction projects throughout Beaufort and Jasper County (W16). Shingle systems from CertainTeed and GAF (certified factory installers of both). Residential only. Not included here (live site only, Submitted): 'additions', and the live H3s wind uplift, underlayment selection, ventilation design.",
+      "status": "Paul Approved",
+      "source": "W16 Paul Approved 2026-10-06 (Paul answers B4); returned sheet Message 2 (CertainTeed + GAF, Client Confirmed 2026-10-07); Brand Guide D Residential or commercial; live /roof-installation/ meta and H3s (public-sources capture 2026-10-05) for the excluded items"
+    },
+    "service_process": {
+      "value": "In the client's own words, what makes an install right: underlayment and its thickness, sealed valleys, trim, nail spacing, a methodical install, straight shingles (a bad roof 'looks like waves you can surf on'), and enough flashing rather than 'a tube of silicone'. Working alongside a general contractor's schedule: not confirmed.",
+      "status": "Client Confirmed",
+      "source": "Returned proof sheet, Message 1 (2026-10-07), 'What do customers most often get wrong'"
+    },
+    "timeframe": {
+      "value": "",
+      "status": "Unknown",
+      "source": "No install duration confirmed in the proof sheet, Paul's answers or the Discovery Record"
+    },
+    "pricing": {
+      "value": "",
+      "status": "Unknown",
+      "source": "No new-construction price or cost drivers confirmed; site plan routes every new-roof cost question to Roof Replacement. W20's shingle range is a replacement comparison, not a subcontract price."
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "page": "svc-roof-replacement",
+  "recorded_by_run": "20261009-142804-build-8390",
+  "facts": {
+    "service_scope": {
+      "value": "Tear-off and re-roof of an existing home. Live /roof-replacement/ lists materials installed: architectural asphalt shingles, metal, slate, synthetic. Products: CertainTeed or GAF shingles (client: certified factory installers of both), corrosion-resistant flashings and synthetic underlayment (W11). On a replacement Apex pulls the Town permit and GAF System Plus warranties are mentioned (Paul 2026-10-09 from a review, Paul Exception to CM-027). Materials list as a whole not confirmed by the client.",
+      "status": "Submitted",
+      "source": "Live site https://apexroofingtlc.com/roof-replacement/ (public-sources capture 2026-10-05, H2/H3); Brand Guide D Products installed (W11); returned sheet Message 2; decisions-settled pilot_facts_2026_10_09 and synthetic_roofing"
+    },
+    "service_process": {
+      "value": "In the client's own words, what separates a good install: the underlayment and its thickness, sealed valleys, trim, handling wood rot, nail spacing, how methodical the install is, straightness of the shingles; enough flashing, not 'a tube of silicone'. Photos of the work with progress photos each day; daily clean-up and magnet sweep (Paul 2026-10-09).",
+      "status": "Client Confirmed",
+      "source": "Returned proof sheet, Message 1 (2026-10-07), 'What do customers most often get wrong'; photos/clean-up: Paul 2026-10-09 (decisions-settled pilot_facts_2026_10_09; Brand Guide D W10)"
+    },
+    "timeframe": {
+      "value": "",
+      "status": "Unknown",
+      "source": "No general replacement duration confirmed. Paul 2026-10-09: timing only as attributed review examples, no general visit length (decisions-settled pilot_facts_2026_10_09)"
+    },
+    "pricing": {
+      "value": "Shingle roof: '$9,000 to $18,000 for shingles' (W20, metal page comparison) — publish only as a range that varies with the scale of the project ('always room for fluctuation based on scale of project'). One attributed example: $20,000-$25,000 for a roof replacement (single Google review 2026-08-15, per Paul) — this brief only, cited to that review, never as Apex's general price.",
+      "status": "Paul Approved",
+      "source": "Brand Guide D Price ranges (Paul answers B14, 2026-10-06; W20); decisions-settled replacement_price_review (Paul 2026-10-09)"
+    }
+  }
+}

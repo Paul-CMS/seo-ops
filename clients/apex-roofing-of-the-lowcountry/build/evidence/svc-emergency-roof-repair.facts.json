@@ -1,0 +1,26 @@
+{
+  "page": "svc-emergency-roof-repair",
+  "recorded_by_run": "20261009-142804-build-8390",
+  "facts": {
+    "service_scope": {
+      "value": "Live /emergency-roof-repair/ covers hurricane and tropical-storm wind damage, severe thunderstorm damage and active leaks with no storm; hail damage moved here from Roof Repair (pilot SEM-5). Emergency tarping appears only in a live FAQ — not confirmed. Not confirmed by the client or Paul as a scope list.",
+      "status": "Submitted",
+      "source": "Live site https://apexroofingtlc.com/emergency-roof-repair/ (public-sources capture 2026-10-05, meta and H3s); decisions-settled pilot_facts_2026_10_09 (hail -> Emergency)"
+    },
+    "service_process": {
+      "value": "'Ralph and Pierce are always on call and treat a emergency as high priority and especially for past customers.' Ralph or Pierce get on the roof personally. No response time may be stated; no after-hours fee stated.",
+      "status": "Client Confirmed",
+      "source": "Returned proof sheet, Message 1 (2026-10-07), after-hours answer; W25 Paul Approved 2026-10-09; Brand Guide D Guarantees (Unknown — no response time)"
+    },
+    "timeframe": {
+      "value": "",
+      "status": "Unknown",
+      "source": "No response time or repair duration confirmed (Brand Guide D Guarantees: Unknown — do not state a response time, CM-016). W21 'first response' for Bluffton is Submitted only"
+    },
+    "pricing": {
+      "value": "No minimum service-call charge. No after-hours fee was stated by the client (absence only — not a promise). No emergency price range.",
+      "status": "Paul Approved",
+      "source": "Brand Guide D Minimum service call (Paul addendum q4, 2026-10-07); returned sheet Message 1"
+    }
+  }
+}

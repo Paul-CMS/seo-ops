@@ -228,7 +228,36 @@
       "group": "Replacement and new roofs",
       "service_variant": "Re-Roofing",
       "h1": "Re-Roofing in Beaufort and Jasper Counties",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 2,
+          "Unknown": 1,
+          "Unverified": 9,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)",
+          "only 2 known fact(s) — fewer than 3 (CM-015)"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-replacement.grid.md",
+        "sha": "5753d75a3cf4",
+        "at": "2026-10-09T14:30:00-05:00",
+        "run": "20261009-142804-build-8390",
+        "gaps": [
+          "phone",
+          "service_scope",
+          "offer",
+          "timeframe",
+          "warranty",
+          "licence",
+          "insurance",
+          "certifications",
+          "rating",
+          "guarantees"
+        ]
+      }
     },
     "svc-roof-installation": {
       "state": "planned",
@@ -244,7 +273,37 @@
           "label": "Apex roofs new construction (subcontractor on new builds, W16)",
           "from": "D:Services subcontracted"
         }
-      ]
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 2,
+          "Unknown": 2,
+          "Unverified": 9,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)",
+          "only 2 known fact(s) — fewer than 3 (CM-015)"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-installation.grid.md",
+        "sha": "a312dc13e62f",
+        "at": "2026-10-09T14:30:00-05:00",
+        "run": "20261009-142804-build-8390",
+        "gaps": [
+          "phone",
+          "offer",
+          "timeframe",
+          "pricing",
+          "warranty",
+          "licence",
+          "insurance",
+          "certifications",
+          "rating",
+          "guarantees",
+          "claim:New-Construction"
+        ]
+      }
     },
     "svc-roof-inspections": {
       "state": "planned",
@@ -254,7 +313,37 @@
       "group": "Repair and response",
       "service_variant": "Roof Condition Inspections",
       "h1": "Roof Condition Inspections in Beaufort and Jasper Counties",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 1,
+          "Unknown": 1,
+          "Unverified": 10,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)",
+          "only 1 known fact(s) — fewer than 3 (CM-015)"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-inspections.grid.md",
+        "sha": "fdc106b773fc",
+        "at": "2026-10-09T14:30:00-05:00",
+        "run": "20261009-142804-build-8390",
+        "gaps": [
+          "phone",
+          "service_scope",
+          "offer",
+          "timeframe",
+          "pricing",
+          "warranty",
+          "licence",
+          "insurance",
+          "certifications",
+          "rating",
+          "guarantees"
+        ]
+      }
     },
     "svc-emergency-roof-repair": {
       "state": "planned",
@@ -270,7 +359,37 @@
           "label": "emergency / after-hours service",
           "from": "D:Emergency"
         }
-      ]
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 2,
+          "Unknown": 1,
+          "Unverified": 10,
+          "Conflict": 0
+        },
+        "why": [
+          "4 required facts are not known (block at 2)",
+          "only 2 known fact(s) — fewer than 3 (CM-015)"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-emergency-roof-repair.grid.md",
+        "sha": "45d84fe0b2c3",
+        "at": "2026-10-09T14:30:00-05:00",
+        "run": "20261009-142804-build-8390",
+        "gaps": [
+          "phone",
+          "service_scope",
+          "offer",
+          "timeframe",
+          "warranty",
+          "licence",
+          "insurance",
+          "certifications",
+          "rating",
+          "guarantees",
+          "claim:emergency"
+        ]
+      }
     },
     "svc-metal-roofing": {
       "state": "planned",
@@ -881,13 +1000,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261009-142045-build-a198",
+    "run_id": "20261009-142804-build-8390",
     "command": "build",
-    "finished": "2026-10-09T14:22:56-05:00",
-    "result": "Pilot corrections recorded (client decisions); spec section 8 lines proposed, edit refused by permissions; publish-together rule noted for a design session",
+    "finished": "2026-10-09T14:30:43-05:00",
+    "result": "Evidence gate s1: all 4 service pages BLOCK (mainly dated Brand Guide status cells read as Unverified; real gaps = live-site-only scope on 3 pages, timeframes, inspection pricing). Facts files + grids written; no briefs.",
     "changes": 0,
-    "step": "build:pilot-corrections",
-    "batch": null
+    "step": "build:evidence",
+    "batch": "s1"
   },
   "spend": {
     "dataforseo_usd": 0.591961
@@ -908,7 +1027,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-09T14:22:56-05:00",
+  "updated": "2026-10-09T14:30:43-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -985,6 +1104,12 @@
       "step": "build:drafts",
       "first_run": "20261009-124809-build-ab2d",
       "at": "2026-10-09T12:50:36-05:00"
+    },
+    "a5aedfda-3fe8-4bd3-96f3-e6a505a76bac": {
+      "key": "batches:s1",
+      "step": "build:evidence",
+      "first_run": "20261009-142804-build-8390",
+      "at": "2026-10-09T14:30:43-05:00"
     }
   },
   "wheel_pending": {
@@ -1168,8 +1293,8 @@
     ]
   },
   "review_pause": {
-    "run_id": "20261009-140647-build-c103",
-    "step": "build:ship",
-    "at": "2026-10-09T14:12:02-05:00"
+    "run_id": "20261009-142804-build-8390",
+    "step": "build:evidence",
+    "at": "2026-10-09T14:30:43-05:00"
   }
 }
