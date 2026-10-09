@@ -1334,6 +1334,14 @@ def t_evidence_gate():
     row = next((l for l in out.splitlines() if l.startswith("| What the service includes")), "")
     check("evidence gate: a status cell with a date and a note after the word still reads as that status (Known)",
           "**Known**" in row, row)
+    cases = [("Paul Approved 2026-10-06 · was: Submitted", "Known"), ("Client Confirmed (sheet)", "Known"),
+             ("Submitted", "Unverified"), ("Unknown — asked 10-08", "Unknown"), ("Disputed — two phone numbers", "Conflict"),
+             ("paul_approved", "Known"), ("INTERNALLY VERIFIED by Gwen", "Known")]
+    code, out = sh("python3 -c \"import sys, json; sys.path.insert(0,'scripts'); import evidence as E; "
+                   f"print(json.dumps([E.mark({{'value': 'x', 'source': 'Paul', 'status': s}}) for s in {[c[0] for c in cases]!r}]))\"")
+    got = json.loads(out) if code == 0 else []
+    check("P1: the leading status word decides the mark (date, note, case and underscores ignored)",
+          got == [c[1] for c in cases], list(zip([c[0] for c in cases], got)) or out)
     ag.write_facts("svc-gutters")
     st = status(S); st["pages"]["svc-gutters"]["claims"] = [{"phrase": "24 hour", "label": "after-hours service", "from": "D:Emergency"}]
     (ag.c / "status.json").write_text(json.dumps(st))

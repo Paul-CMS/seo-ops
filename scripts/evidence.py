@@ -96,10 +96,10 @@ def mark(rec):
     if not rec:
         return "Unknown"
     value = str(rec.get("value") or "").strip()
-    status = str(rec.get("status") or "").strip().lower()
+    status = re.sub(r"[\s_-]+", " ", str(rec.get("status") or "")).strip().lower()   # "paul_approved" = "Paul Approved"
     source = str(rec.get("source") or "").strip()
     # a status cell may carry a date or a note after the word ("Paul Approved 2026-10-06 · was: Submitted"): the
-    # leading status word is what counts
+    # leading status word is what counts (P1)
     lead = next((k for k in KNOWN_STATES | {"disputed", "unknown", "submitted"} if status.startswith(k)), status)
     status = lead
     if status == "disputed":
