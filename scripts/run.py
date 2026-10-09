@@ -237,6 +237,10 @@ def main():
     s = sub.add_parser("flag"); s.add_argument("slug"); s.add_argument("run_id")
     s.add_argument("--text", required=True); s.add_argument("--workaround", default="")
     s.add_argument("--who", default="Claude")
+    s = sub.add_parser("fact"); s.add_argument("slug"); s.add_argument("run_id")
+    s.add_argument("--id", required=True); s.add_argument("--value"); s.add_argument("--status")
+    s.add_argument("--source"); s.add_argument("--quote"); s.add_argument("--label"); s.add_argument("--section")
+    s.add_argument("--who", default="Paul"); s.add_argument("--count", type=int)
     s = sub.add_parser("unlock"); s.add_argument("slug")
     s = sub.add_parser("check"); s.add_argument("slug")
     s = sub.add_parser("steps"); s.add_argument("command", nargs="?")
@@ -342,6 +346,17 @@ def main():
         append(d / "log.md", f"- DECISION {now()[:16]} · run {a.run_id} · {redact(a.text)}"
                + (f" · affects {a.ids}" if a.ids else "") + "\n")
         print("decision logged")
+    elif a.cmd == "fact":   # P4: the one way a fact enters facts.json — every answer, wherever it came from
+        open_run(a.slug, a.run_id)
+        import facts
+        row, old = facts.set_fact(a.slug, a.id, value=a.value, status=a.status, source=a.source, quote=a.quote,
+                                  label=a.label, section=a.section, who=a.who, count=a.count)
+        facts.render(a.slug)
+        what = "new" if not old else ", ".join(k for k in ("value", "status", "source", "quote", "count")
+                                                if old.get(k) != row.get(k)) or "unchanged"
+        append(d / "log.md", f"- FACT {now()[:16]} · run {a.run_id} · {a.id} ({what}) · {row['status']} · "
+               f"{redact(str(row['value']))[:200]} · source {redact(str(row.get('source') or '—'))[:120]} · by {a.who}\n")
+        print(f"fact {a.id}: {what} — {row['status']}")
     elif a.cmd == "flag":   # P3: a client session never changes the workflow — it flags the issue for Paul
         open_run(a.slug, a.run_id)
         import changereq

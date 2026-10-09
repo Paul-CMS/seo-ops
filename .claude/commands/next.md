@@ -36,6 +36,11 @@ Arguments: $ARGUMENTS
    when nothing else can run (P8).
    **`waits`** (any kind): open waits that do **not** block the next action. List them one line each under
    "Waiting on (not blocking)" and carry on. A VA handoff never stops writing.
+**Every answer is recorded the moment Paul gives it (P4, Q3).** A fact — from Paul, the client, a returned sheet, an
+interview or an email — goes in with `python3 scripts/run.py fact <slug> <RUN_ID> --id <fact id> --value "…" --status
+paul_approved|client_confirmed|… --source "…"` (`facts.py list <slug>` shows the ids; a new fact adds `--label`). A
+decision goes in with `run.py decision … --settle <key>`. Before any question set reaches Paul:
+`python3 scripts/settled.py filter <slug> <questions.json>` — it drops what is already answered and names it in one line.
 7. Also stop whenever the command you are running stops for Paul (cost confirmation, outline
    check, a STOP from a script). Never run more than one paid step without Paul seeing the cost.
 

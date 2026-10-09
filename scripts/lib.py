@@ -141,8 +141,52 @@ def _strip_status(section):
     return "\n".join(out)
 
 
+VALUE_DROP = {"status", "confidence", "source", "sources", "date", "checked", "evidence", "note", "notes", "who", "by",
+              "was", "quote", "where"}
+
+
+def _values_only(section):
+    """P4 (rewrite 2): what Paul approves in a Brand Guide section is its values. Each table row becomes a normalised
+    'field = value' line (status, source, date, note and quote columns dropped); text outside tables is kept,
+    without status tags and 'Paul approved this section on' lines. A confirmation or a new source never voids an
+    approval; a changed value does."""
+    out, keep, header = [], None, None
+    for line in section.splitlines():
+        s = line.strip()
+        if not s.startswith("|"):
+            if re.match(r"^\*\*Paul approved this section on", s):
+                continue
+            s = STATUS_TAG.sub("", s).strip()
+        if s.startswith("|"):
+            cells = [c.strip().strip("*").strip() for c in s.strip("|").split("|")]
+            if set(s.replace("|", "").strip()) <= set("-: "):
+                continue
+            if header is None:
+                header = [c.lower() for c in cells]
+                keep = [i for i, c in enumerate(header) if c not in VALUE_DROP]
+                continue
+            vals = [re.sub(r"\s+", " ", cells[i]) for i in keep if i < len(cells)]
+            out.append(" = ".join(v for v in vals if v))
+        else:
+            header = None
+            if s:
+                out.append(re.sub(r"\s+", " ", s))
+    return "\n".join(out)
+
+
 def ref_sha(ref):
-    """sha12 of the file, or of only the named sections when the ref has #A+B1… (status columns ignored)."""
+    """sha12 of the file, or of only the named sections when the ref has #A+B1…. Brand Guide sections hash their
+    values only (P4); other section refs ignore status columns (R3)."""
+    if "#" not in ref:
+        return sha12(ref_path(ref))
+    text = ref_path(ref).read_text(encoding="utf-8")
+    norm = _values_only if ref.split("#", 1)[0].endswith("brand-guide.md") else _strip_status
+    parts = [norm(_md_section(text, s) or f"<missing {s}>") for s in ref.split("#", 1)[1].split("+")]
+    return hashlib.sha256("\n\x00\n".join(parts).encode()).hexdigest()[:12]
+
+
+def ref_sha_v2(ref):
+    """The section hash of 2026-10-08 (status columns ignored, sources and notes counted) — only for migrate.py."""
     if "#" not in ref:
         return sha12(ref_path(ref))
     text = ref_path(ref).read_text(encoding="utf-8")

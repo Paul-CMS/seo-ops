@@ -62,16 +62,15 @@ def _section_rows(text, letter):
 
 
 def brand_facts(slug):
-    """{'A:<field>': {...}, 'D:<fact>': {...}} with value, status, source."""
-    p = client_dir(slug) / "brand-guide.md"
-    text = p.read_text() if p.exists() else ""
+    """{'A:<field>': {...}, 'D:<fact>': {...}} with value, status, source — from facts.json, the one facts store (P4).
+    A client not migrated yet is read from its Brand Guide rows (facts.load bootstraps them)."""
+    import facts
     out = {}
-    for cells in _section_rows(text, "A"):
-        if len(cells) >= 4:
-            out["A:" + cells[1]] = {"value": cells[2], "status": cells[3], "source": "Brand Guide A"}
-    for cells in _section_rows(text, "D"):
-        if len(cells) >= 4:
-            out["D:" + cells[0]] = {"value": cells[1], "status": cells[2], "source": cells[3]}
+    for r in facts.load(slug)["facts"]:
+        out[f"{r['section']}:{r['label']}"] = {
+            "value": r.get("value", ""), "status": r.get("status_text") or r.get("status", ""),
+            "source": r.get("source") or (f"Brand Guide {r['section']}" if r["section"] == "A" else ""),
+            "count": r.get("count"), "fact_id": r["id"]}
     return out
 
 
@@ -196,6 +195,7 @@ def grid(slug, st, pid):
                 found, searched = research(slug, it, page, docs)
                 rec = found or rec
         rows.append({**it, "mark": mark(rec), "value": (rec or {}).get("value", ""), "fact_key": fk,
+                     "fact_id": (rec or {}).get("fact_id"),
                      "source": (rec or {}).get("source", ""), "status": (rec or {}).get("status", ""),
                      "via": (rec or {}).get("via", ""), "searched": searched})
     result, counts, why = score(rows, reqs["thresholds"])
@@ -285,8 +285,9 @@ def facts_pack(slug, run_id, bid):
                 continue
             text, kind = question(r)
             seen[k] = {"text": text, "kind": kind, "need": r["need"], "pages": [pid], "from": r["from"], "key": k,
-                       "searched": r.get("searched")}
+                       "fact_id": r.get("fact_id"), "searched": r.get("searched")}
             qs.append(seen[k])
+    qs, _dropped, answered = settled.filter_questions(slug, qs)   # P4: never ask what is already answered
     cap = 15
     qs = qs[:cap]
     for q in qs:   # asked once: the key is what the answer settles (run.py decision --settle <key>)
@@ -307,6 +308,8 @@ def facts_pack(slug, run_id, bid):
     lines += [f"  - Q{i}: {q['from']} ({q['need']}) → pages {', '.join(q['pages'])} · {q['kind']} · key {q['key']}"
               + (f" · searched first: {', '.join(q['searched']['searched']) or 'nothing on disk'}" if q.get("searched") else "")
               for i, q in enumerate(qs, 1)]
+    if answered:
+        lines += [f"- {answered[0].upper()}{answered[1:]} (not asked again)"]
     if waiting:
         lines += ["- Already asked, not repeated here: " + ", ".join(f"{k} ({e.get('asked_at', '')[:10]})" for k, e in waiting.items())]
     lines += ["- Each answer is recorded once under its key: run.py decision <slug> <RUN_ID> --settle <key> --by",

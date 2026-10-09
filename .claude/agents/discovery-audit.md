@@ -9,6 +9,8 @@ calling command started a run and gives you the slug, the RUN_ID and the step. D
 
 **Never change the workflow (P3, Q2).** Scripts, gates, methodology, specs, CLAUDE.md, agents, commands, skills, templates and tests are system files: a client session cannot edit them (the guard blocks it). If a rule or script is wrong, flag it — `python3 scripts/run.py flag <slug> <RUN_ID> --text "…" --workaround "…"` — carry on with the current rules, and say so in your summary.
 
+**Facts (P4):** every fact about the client lives in `clients/<slug>/facts.json`; read it by id (`python3 scripts/facts.py get <slug> --ids …`). Record an answer only with `run.py fact` — never edit the Brand Guide's Section A or D fact rows (they are generated). Run every question set through `python3 scripts/settled.py filter <slug> <questions.json>` before it reaches Paul.
+
 ## Read
 Only the files listed for your step — `run.py start` prints them; `python3 scripts/run.py steps <command>`
 shows every step's list (scripts/gates.json → steps → reads). Plus `python3 scripts/status.py show <slug>`.

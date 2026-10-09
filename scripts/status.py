@@ -41,7 +41,7 @@ import sys
 import time
 from pathlib import Path
 
-from lib import ROOT, append, client_dir, die, now, read_json, ref_missing, ref_sha, sha12, write_json, config
+from lib import ROOT, append, client_dir, die, now, read_json, ref_missing, ref_sha, ref_sha_v2, sha12, write_json, config
 
 GATES = json.loads((ROOT / "scripts" / "gates.json").read_text())
 
@@ -228,7 +228,7 @@ def files_ok(files):
         gone = ref_missing(f)
         if gone:
             return False, f"{gone} (approved as {f})"
-        if ref_sha(f) != h:
+        if ref_sha(f) != h and not ("#" in f and ref_sha_v2(f) == h):   # a pre-P4 stamp: values unchanged too
             return False, f"{f} changed after approval"
     return True, ""
 

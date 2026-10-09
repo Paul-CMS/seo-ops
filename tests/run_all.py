@@ -2039,6 +2039,54 @@ def t_placeholders():
     check("P11: the drafts approval line lists every placeholder per page", "price range" in out and "D-svc-roof-repair" in out, out)
 
 
+def t_facts_store():
+    """P4 (Q3): one facts store; a confirmation never voids an approval, a changed value does; answered questions
+    are filtered out; the migration keeps every approval."""
+    S = "fs-co"
+    sh(f'python3 scripts/status.py init {S} --name "Test Co" --domain fs.example --type full --industry roofing')
+    ag = Agent(S); ag.fin(ag.start("new-client"), "set up")
+    ag.w("brand-guide.md", TEST_BG.replace("| 8 | Phone | (417) 555-0100 | Client Confirmed |",
+                                           "| 8 | Phone | (417) 555-0100 | Submitted |"))
+    sec = f"clients/{S}/brand-guide.md#A+D"
+    h = sh(f"cd scripts && python3 -c 'import lib; print(lib.ref_sha(\"{sec}\"))'")[1].strip()
+    st = status(S)
+    st["gates"]["entity_approved"] = {"state": "approved", "files": {sec: h}, "by": "Paul", "at": "2026-10-09"}
+    (ag.c / "status.json").write_text(json.dumps(st))
+    met = lambda: sh(f"python3 scripts/status.py require {S} entity_approved")[0] == 0
+    code, out = sh(f"python3 scripts/migrate2.py facts {S} --dry-run")
+    check("P4: a dry run lists every approval before and after and keeps nothing",
+          code == 0 and "DRY RUN" in out and "counts → counts" in out and not (ag.c / "facts.json").exists(), out)
+    code, out = sh(f"python3 scripts/migrate2.py facts {S}")
+    fj = json.loads((ag.c / "facts.json").read_text()) if (ag.c / "facts.json").exists() else {"facts": []}
+    check("P4: the migration builds facts.json from the Brand Guide and keeps every approval",
+          code == 0 and len(fj["facts"]) == 9 and "0 approvals lost" in out and met()
+          and "## MIGRATION" in (ag.c / "log.md").read_text(), out)
+    rid = ag.start("wp-check")
+    code, out = sh(f'python3 scripts/run.py fact {S} {rid} --id a-phone --status client_confirmed --source "returned sheet"')
+    bg = (ag.c / "brand-guide.md").read_text()
+    check("P4: run.py fact records an answer, logs it, and the Brand Guide row is regenerated from facts.json",
+          code == 0 and "- FACT " in (ag.c / "log.md").read_text() and "| 8 | Phone | (417) 555-0100 | Client Confirmed" in bg, out)
+    check("P4: a status-only change keeps the approval (values only are fingerprinted)", met())
+    sh(f'python3 scripts/run.py fact {S} {rid} --id d-warranty-terms --source "warranty PDF" --quote "ten years"')
+    check("P4: a new source or quote keeps the approval too", met())
+    code, out = sh(f"cd scripts && python3 -c \"import evidence as E; "
+                   f"r=E.lookup('A:Phone', E.brand_facts('{S}'), {{}}); print(E.mark(r))\"")
+    check("P4: the evidence gate reads facts.json (the confirmed phone is Known)", out.strip().endswith("Known"), out)
+    sh(f'python3 scripts/run.py fact {S} {rid} --id a-phone --value "(417) 555-0199"')
+    check("P4: a changed value voids the approval, as it should", not met())
+    sh(f'python3 scripts/run.py decision {S} {rid} --settle w25_who_goes_on_the_roof --text "Pat and Sam both get on the roof"')
+    qs = [{"key": "w25_who_goes_on_the_roof", "text": "Who goes on the roof?"},
+          {"fact_id": "d-warranty-terms", "text": "What are the warranty terms?"},
+          {"key": "fact:d:awards", "text": "Any awards?"}]
+    qf = ag.w("qs.json", json.dumps(qs))
+    code, out = sh(f"python3 scripts/settled.py filter {S} {qf}")
+    res = json.loads(out) if code == 0 else {}
+    check("P4: questions already answered (settled key, Known fact) are filtered out, named in one line",
+          [q["key"] for q in res.get("kept", [])] == ["fact:d:awards"] and res.get("note", "").startswith("already answered: ")
+          and "w25_who_goes_on_the_roof" in res["note"] and "d-warranty-terms" in res["note"], out)
+    ag.fin(rid, "facts")
+
+
 def t_migration():
     sh('python3 scripts/status.py init mg-co --name "Mg Co" --domain mg.example --type full --industry roofing')
     ag = Agent("mg-co"); ag.fin(ag.start("new-client"), "set up")
@@ -2307,7 +2355,7 @@ def t_batch_of_five():
 
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_section_approval, t_reviews_parse, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view,
-             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_pilot_order, t_writing_never_waits, t_placeholders, t_migration, t_sessions, t_guard_rewrite,
+             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_pilot_order, t_writing_never_waits, t_placeholders, t_facts_store, t_migration, t_sessions, t_guard_rewrite,
              t_answer_once, t_research_before_asking, t_url_rule, t_batch_of_five]
 
 

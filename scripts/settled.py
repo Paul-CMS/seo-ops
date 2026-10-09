@@ -24,6 +24,7 @@ A key may be reopened only while it is settled, only with a reason, and every re
 process defect (a decision asked at the wrong time — fix the order, not the decision).
 
     settled.py show <slug>          the register as the agents see it
+    settled.py filter <slug> <questions.json>   drop every question already answered (P4) — run before Paul sees a set
 """
 import re
 import sys
@@ -170,10 +171,57 @@ def defects(slug):
     return sum(e.get("reopened", 0) for e in entries(slug).values())
 
 
+KNOWN_FACT = ("client_confirmed", "paul_approved", "internally_verified")
+
+
+def _norm(t):
+    return " ".join(w for w in re.findall(r"[a-z0-9]+", (t or "").lower()) if w not in STOP)
+
+
+def filter_questions(slug, questions):
+    """P4 (Q3): drop every question already answered — in facts.json (a Known fact) or decisions-settled.md (a settled
+    or answered key, or the same question asked before). Matched on the fact id / key first, normalised text second.
+    questions: [{'id'|'key'|'fact_id': …, 'text': …}]. Returns (kept, dropped [(question, why)], one-line note)."""
+    import facts
+    fx = facts.by_id(facts.load(slug)["facts"])
+    ents = entries(slug)
+    done_texts = {}
+    for k, e in ents.items():
+        if e.get("state") in ("settled", "answered"):
+            for t in (e.get("question"), e.get("text")):
+                if t:
+                    done_texts[_norm(t)] = (k, (e.get("at") or e.get("answered_at") or e.get("asked_at") or "")[:10])
+    kept, dropped = [], []
+    for q in questions:
+        ids = [q.get(x) for x in ("fact_id", "id", "key") if q.get(x)]
+        why = None
+        for i in ids:
+            f = fx.get(i)
+            if f and f.get("status") in KNOWN_FACT:
+                why = f"{i} ({(f.get('date') or '')[5:]})"
+                break
+            e = ents.get(i)
+            if e and e.get("state") in ("settled", "answered"):
+                why = f"{i} ({(e.get('at') or e.get('answered_at') or '')[5:10]})"
+                break
+        if not why:
+            hit = done_texts.get(_norm(q.get("text")))
+            if hit:
+                why = f"{hit[0]} ({hit[1][5:]})"
+        (dropped.append((q, why)) if why else kept.append(q))
+    note = ("already answered: " + ", ".join(w for _, w in dropped)) if dropped else ""
+    return kept, dropped, note
+
+
 def main():
     if len(sys.argv) == 3 and sys.argv[1] == "show":
         import records
         print(records.settled_register(sys.argv[2]), end="")
+    elif len(sys.argv) == 4 and sys.argv[1] == "filter":   # settled.py filter <slug> <questions.json> (agents' sets)
+        import json
+        qs = json.loads(open(sys.argv[3]).read())
+        kept, dropped, note = filter_questions(sys.argv[2], qs)
+        print(json.dumps({"kept": kept, "note": note}, indent=1))
     else:
         sys.exit(__doc__)
 

@@ -280,6 +280,8 @@ def top(slug):
 
 
 def render(slug):
+    import facts
+    facts.render(slug)   # P4: the Brand Guide's fact rows come from facts.json
     st = S.load(slug)
     d = client_dir(slug)
     log = _log(slug)
