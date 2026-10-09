@@ -2072,6 +2072,12 @@ def t_facts_store():
     code, out = sh(f"cd scripts && python3 -c \"import evidence as E; "
                    f"r=E.lookup('A:Phone', E.brand_facts('{S}'), {{}}); print(E.mark(r))\"")
     check("P4: the evidence gate reads facts.json (the confirmed phone is Known)", out.strip().endswith("Known"), out)
+    sh(f'python3 scripts/run.py fact {S} {rid} --id d-crew --label "Who does the work on the roof" --value "Pat and Sam" '
+       f'--status paul_approved --source "Paul"')
+    sh(f"python3 scripts/records.py render {S}"); sh(f"python3 scripts/facts.py render {S}")
+    bg = (ag.c / "brand-guide.md").read_text()
+    check("P4: a fact whose id is not its label's is rendered once, however often the records are regenerated",
+          bg.count("| Who does the work on the roof |") == 1, bg[-600:])
     sh(f'python3 scripts/run.py fact {S} {rid} --id a-phone --value "(417) 555-0199"')
     check("P4: a changed value voids the approval, as it should", not met())
     sh(f'python3 scripts/run.py decision {S} {rid} --settle w25_who_goes_on_the_roof --text "Pat and Sam both get on the roof"')

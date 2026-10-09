@@ -147,14 +147,14 @@ def render_into_text(text, rows):
             continue
         head, trows = t
         mine = [r for r in rows if r["section"] == letter]
-        ids = by_id(mine)
+        by_label = {fact_id(letter, r["label"]): r for r in mine}   # a row is matched by its label, whatever its id
         seen = set()
         for i, cells in trows:
             label = cells[1] if letter == "A" and len(cells) > 1 else (cells[0] if cells else "")
-            fid = fact_id(letter, label)
-            if fid in ids:
-                lines[i] = _line(row_cells(ids[fid]))
-                seen.add(fid)
+            r = by_label.get(fact_id(letter, label))
+            if r:
+                lines[i] = _line(row_cells(r))
+                seen.add(r["id"])
         new = [r for r in mine if r["id"] not in seen]
         if new:
             last = trows[-1][0] if trows else head + 1

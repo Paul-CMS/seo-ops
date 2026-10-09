@@ -172,7 +172,47 @@ def migrate_facts(slug, dry):
                 p.write_text(text, encoding="utf-8")
 
 
+def repair_duplicates(slug):
+    """2026-10-09 repair: the first facts render matched rows by an id rebuilt from the label, so a fact whose id
+    differed (d-who-does-the-work) was appended twice after the re-stamp. Remove repeated fact rows (keep the first)
+    and report which approvals count again; no stamp is changed."""
+    import facts
+    d = client_dir(slug)
+    bg = d / "brand-guide.md"
+    st = S.load(slug)
+    before = snapshot(st)
+    lines, seen, drop = bg.read_text(encoding="utf-8").splitlines(), set(), []
+    for letter in ("A", "D"):
+        _, t = facts._table("\n".join(lines), letter)
+        for i, cells in (t[1] if t else []):
+            if lines[i] in seen:
+                drop.append(i)
+            seen.add(lines[i])
+    if not drop:
+        return f"{slug}: no repeated fact rows"
+    text = "\n".join(l for i, l in enumerate(lines) if i not in set(drop)) + "\n"
+    bg.write_text(text, encoding="utf-8")
+    after = snapshot(S.load(slug))
+    back = [f"{w}: {f.split('/')[-1]}" for w, fs in after.items() for f, ok in fs.items() if ok and not before[w][f]]
+    lost = [f"{w}: {f}" for w, fs in before.items() for f, ok in fs.items() if ok and not after[w][f]]
+    if lost:
+        bg.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        die(f"{slug}: STOP — the repair would void {', '.join(lost)}; nothing written")
+    append(d / "log.md", f"\n## MIGRATION · {now()} · rewrite 2 P4 repair: {len(drop)} repeated fact row(s) removed "
+           f"from the Brand Guide · approvals counting again: {', '.join(back) or 'none'} · no stamp changed\n")
+    import records
+    records.render(slug)
+    return f"{slug}: removed {len(drop)} repeated row(s); counting again: {', '.join(back) or 'none'}"
+
+
 def main():
+    if len(sys.argv) == 3 and sys.argv[1] == "repair-duplicates":
+        out = repair_duplicates(sys.argv[2])
+        print(out)
+        if "removed" in out:
+            print(git_commit(f"{sys.argv[2]}: rewrite 2 migration repair — repeated fact row removed (P4)\n\n{out}",
+                             slug=sys.argv[2]))
+        return
     if len(sys.argv) < 3 or sys.argv[1] != "facts":
         sys.exit(__doc__)
     slug, dry = sys.argv[2], "--dry-run" in sys.argv
