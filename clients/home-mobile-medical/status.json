@@ -339,12 +339,16 @@
     "site_plan": {
       "file": "clients/home-mobile-medical/build/Home Mobile Medical - Site Plan - IMPORTED.md",
       "approval": {
-        "state": "approved",
-        "by": "Paul (import confirmed)",
-        "at": "2026-10-07T17:21:12-05:00",
+        "state": "revise",
+        "by": "Paul",
+        "at": "2026-10-09T12:39:42-05:00",
+        "note": "Re-open the imported site plan to add a pilot batch first (1 service + 1 location)",
         "files": {
           "clients/home-mobile-medical/build/Home Mobile Medical - Site Plan - IMPORTED.md": "6ad603f87fd1"
-        }
+        },
+        "conditions": [],
+        "sensitive_review": null,
+        "practitioner": null
       }
     },
     "batches": [
@@ -683,21 +687,20 @@
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
-    "phase": "Writing your pages",
+    "phase": "Planning your new pages",
     "done": [
       "We confirmed how search engines should understand your business",
       "We prepared a fact sheet for you to confirm",
       "You returned the fact sheet — thank you",
       "We finished reviewing your website",
       "Your business details are confirmed",
-      "Research is complete and page work has started",
-      "Your new page plan is ready"
+      "Research is complete and page work has started"
     ],
     "waiting_on_client": [],
-    "next": "We are writing your service and location pages."
+    "next": "We are planning every service and location page."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-09T12:34:04-05:00",
+  "updated": "2026-10-09T12:39:42-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"

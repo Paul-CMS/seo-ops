@@ -1,0 +1,355 @@
+{
+ "pages": [
+  {
+   "id": "svc-stair-lifts",
+   "type": "service",
+   "name": "Stair Lifts (parent; straight consolidated in)",
+   "url": "https://homemobilemedical.com/services/stair-lifts/",
+   "group": "lifts"
+  },
+  {
+   "id": "svc-curved-stair-lifts",
+   "type": "service",
+   "name": "Curved Stair Lifts",
+   "url": "https://homemobilemedical.com/services/curved-stair-lifts/",
+   "group": "lifts"
+  },
+  {
+   "id": "svc-porch-lifts",
+   "type": "service",
+   "name": "Porch Lifts / Vertical Platform Lifts",
+   "url": "https://homemobilemedical.com/services/porch-lifts/",
+   "group": "lifts"
+  },
+  {
+   "id": "svc-wheelchair-lifts",
+   "type": "service",
+   "name": "Wheelchair Lifts",
+   "url": "https://homemobilemedical.com/services/wheelchair-lifts/",
+   "group": "lifts"
+  },
+  {
+   "id": "svc-repair-maintenance",
+   "type": "service",
+   "name": "Stair Lift and Lift Repair and Maintenance",
+   "url": "https://homemobilemedical.com/services/stair-lift-repair/ (URL set in the site plan)",
+   "group": "lifts"
+  },
+  {
+   "id": "hub-hhi-beaufort",
+   "type": "county",
+   "name": "Hilton Head Island–Bluffton–Port Royal area hub",
+   "url": "https://homemobilemedical.com/service-area/hhi-beaufort/",
+   "group": "HHI-Bluffton-Port Royal metro"
+  },
+  {
+   "id": "loc-beaufort-sc",
+   "type": "location",
+   "name": "Beaufort, SC",
+   "url": "https://homemobilemedical.com/service-area/beaufort-sc/",
+   "group": "HHI-Bluffton-Port Royal metro"
+  },
+  {
+   "id": "loc-bluffton-sc",
+   "type": "location",
+   "name": "Bluffton, SC",
+   "url": "https://homemobilemedical.com/service-area/bluffton-sc/",
+   "group": "HHI-Bluffton-Port Royal metro"
+  },
+  {
+   "id": "loc-hilton-head-island-sc",
+   "type": "location",
+   "name": "Hilton Head Island, SC",
+   "url": "https://homemobilemedical.com/service-area/hilton-head-island-sc/",
+   "group": "HHI-Bluffton-Port Royal metro"
+  },
+  {
+   "id": "loc-port-royal-sc",
+   "type": "location",
+   "name": "Port Royal, SC",
+   "url": "https://homemobilemedical.com/service-area/port-royal-sc/",
+   "group": "HHI-Bluffton-Port Royal metro"
+  },
+  {
+   "id": "loc-ladys-island-sc",
+   "type": "location",
+   "name": "Lady's Island, SC",
+   "url": "https://homemobilemedical.com/service-area/ladys-island-sc/",
+   "group": "HHI-Bluffton-Port Royal metro"
+  },
+  {
+   "id": "loc-laurel-bay-sc",
+   "type": "location",
+   "name": "Laurel Bay, SC",
+   "url": "https://homemobilemedical.com/service-area/laurel-bay-sc/",
+   "group": "HHI-Bluffton-Port Royal metro"
+  },
+  {
+   "id": "loc-daufuskie-island-sc",
+   "type": "location",
+   "name": "Daufuskie Island, SC",
+   "url": "https://homemobilemedical.com/service-area/daufuskie-island-sc/",
+   "group": "HHI-Bluffton-Port Royal metro"
+  },
+  {
+   "id": "loc-okatie-sc",
+   "type": "location",
+   "name": "Okatie, SC",
+   "url": "https://homemobilemedical.com/service-area/okatie-sc/",
+   "group": "HHI-Bluffton-Port Royal metro"
+  },
+  {
+   "id": "loc-hardeeville-sc",
+   "type": "location",
+   "name": "Hardeeville, SC",
+   "url": "https://homemobilemedical.com/service-area/hardeeville-sc/",
+   "group": "HHI-Bluffton-Port Royal metro"
+  },
+  {
+   "id": "loc-ridgeland-sc",
+   "type": "location",
+   "name": "Ridgeland, SC",
+   "url": "https://homemobilemedical.com/service-area/ridgeland-sc/",
+   "group": "HHI-Bluffton-Port Royal metro"
+  },
+  {
+   "id": "loc-levy-sc",
+   "type": "location",
+   "name": "Levy, SC",
+   "url": "https://homemobilemedical.com/service-area/levy-sc/",
+   "group": "HHI-Bluffton-Port Royal metro"
+  },
+  {
+   "id": "loc-yemassee-sc",
+   "type": "location",
+   "name": "Yemassee, SC",
+   "url": "https://homemobilemedical.com/service-area/yemassee-sc/",
+   "group": "HHI-Bluffton-Port Royal metro"
+  },
+  {
+   "id": "hub-charleston",
+   "type": "county",
+   "name": "Charleston area hub",
+   "url": "https://homemobilemedical.com/service-area/charleston/",
+   "group": "Charleston metro"
+  },
+  {
+   "id": "loc-charleston-sc",
+   "type": "location",
+   "name": "Charleston, SC",
+   "url": "https://homemobilemedical.com/service-area/charleston-sc/",
+   "group": "Charleston metro"
+  },
+  {
+   "id": "loc-north-charleston-sc",
+   "type": "location",
+   "name": "North Charleston, SC",
+   "url": "https://homemobilemedical.com/service-area/north-charleston-sc/",
+   "group": "Charleston metro"
+  },
+  {
+   "id": "loc-mount-pleasant-sc",
+   "type": "location",
+   "name": "Mount Pleasant, SC",
+   "url": "https://homemobilemedical.com/service-area/mount-pleasant-sc/",
+   "group": "Charleston metro"
+  },
+  {
+   "id": "loc-summerville-sc",
+   "type": "location",
+   "name": "Summerville, SC",
+   "url": "https://homemobilemedical.com/service-area/summerville-sc/",
+   "group": "Charleston metro"
+  },
+  {
+   "id": "loc-goose-creek-sc",
+   "type": "location",
+   "name": "Goose Creek, SC",
+   "url": "https://homemobilemedical.com/service-area/goose-creek-sc/",
+   "group": "Charleston metro"
+  },
+  {
+   "id": "loc-hanahan-sc",
+   "type": "location",
+   "name": "Hanahan, SC",
+   "url": "https://homemobilemedical.com/service-area/hanahan-sc/",
+   "group": "Charleston metro"
+  },
+  {
+   "id": "loc-moncks-corner-sc",
+   "type": "location",
+   "name": "Moncks Corner, SC",
+   "url": "https://homemobilemedical.com/service-area/moncks-corner-sc/",
+   "group": "Charleston metro"
+  },
+  {
+   "id": "loc-hollywood-sc",
+   "type": "location",
+   "name": "Hollywood, SC",
+   "url": "https://homemobilemedical.com/service-area/hollywood-sc/",
+   "group": "Charleston metro"
+  },
+  {
+   "id": "loc-kiawah-island-sc",
+   "type": "location",
+   "name": "Kiawah Island, SC",
+   "url": "https://homemobilemedical.com/service-area/kiawah-island-sc/",
+   "group": "Charleston metro"
+  },
+  {
+   "id": "loc-folly-island-sc",
+   "type": "location",
+   "name": "Folly Island, SC",
+   "url": "https://homemobilemedical.com/service-area/folly-island-sc/",
+   "group": "Charleston metro"
+  },
+  {
+   "id": "hub-lowcountry",
+   "type": "county",
+   "name": "South Carolina Lowcountry service-area hub",
+   "url": "https://homemobilemedical.com/service-area/",
+   "group": "Lowcountry (other)"
+  },
+  {
+   "id": "loc-walterboro-sc",
+   "type": "location",
+   "name": "Walterboro, SC",
+   "url": "https://homemobilemedical.com/service-area/walterboro-sc/",
+   "group": "Lowcountry (other)"
+  },
+  {
+   "id": "loc-edisto-island-sc",
+   "type": "location",
+   "name": "Edisto Island, SC",
+   "url": "https://homemobilemedical.com/service-area/edisto-island-sc/",
+   "group": "Lowcountry (other)"
+  },
+  {
+   "id": "homepage",
+   "type": "homepage",
+   "name": "Homepage",
+   "url": "https://homemobilemedical.com/",
+   "group": "final"
+  },
+  {
+   "id": "about",
+   "type": "about",
+   "name": "About",
+   "url": "https://homemobilemedical.com/about/",
+   "group": "final"
+  }
+ ],
+ "batches": [
+  {
+   "id": "pilot",
+   "kind": "pilot",
+   "label": "Pilot — 1 service + 1 location",
+   "pages": [
+    "svc-stair-lifts",
+    "loc-beaufort-sc"
+   ]
+  },
+  {
+   "id": "svc1",
+   "kind": "service",
+   "label": "lifts (remaining)",
+   "pages": [
+    "svc-curved-stair-lifts",
+    "svc-porch-lifts",
+    "svc-wheelchair-lifts",
+    "svc-repair-maintenance"
+   ]
+  },
+  {
+   "id": "loc1",
+   "kind": "location",
+   "label": "HHI-Bluffton-Port Royal metro (remaining)",
+   "pages": [
+    "hub-hhi-beaufort",
+    "loc-bluffton-sc",
+    "loc-hilton-head-island-sc",
+    "loc-port-royal-sc"
+   ]
+  },
+  {
+   "id": "loc2",
+   "kind": "location",
+   "label": "HHI-Bluffton-Port Royal metro (remaining)",
+   "pages": [
+    "loc-ladys-island-sc",
+    "loc-laurel-bay-sc",
+    "loc-daufuskie-island-sc",
+    "loc-okatie-sc",
+    "loc-hardeeville-sc"
+   ]
+  },
+  {
+   "id": "loc3",
+   "kind": "location",
+   "label": "HHI-Bluffton-Port Royal metro (remaining)",
+   "pages": [
+    "loc-ridgeland-sc",
+    "loc-levy-sc",
+    "loc-yemassee-sc"
+   ]
+  },
+  {
+   "id": "loc4",
+   "kind": "location",
+   "label": "Charleston metro (remaining)",
+   "pages": [
+    "hub-charleston",
+    "loc-charleston-sc",
+    "loc-north-charleston-sc",
+    "loc-mount-pleasant-sc",
+    "loc-summerville-sc"
+   ]
+  },
+  {
+   "id": "loc5",
+   "kind": "location",
+   "label": "Charleston metro (remaining)",
+   "pages": [
+    "loc-goose-creek-sc",
+    "loc-hanahan-sc",
+    "loc-moncks-corner-sc",
+    "loc-hollywood-sc",
+    "loc-kiawah-island-sc"
+   ]
+  },
+  {
+   "id": "loc6",
+   "kind": "location",
+   "label": "Charleston metro (remaining)",
+   "pages": [
+    "loc-folly-island-sc"
+   ]
+  },
+  {
+   "id": "loc7",
+   "kind": "location",
+   "label": "Lowcountry (other) (remaining)",
+   "pages": [
+    "hub-lowcountry",
+    "loc-walterboro-sc",
+    "loc-edisto-island-sc"
+   ]
+  },
+  {
+   "id": "final1",
+   "kind": "homepage",
+   "label": "homepage final (remaining)",
+   "pages": [
+    "homepage"
+   ]
+  },
+  {
+   "id": "final2",
+   "kind": "about",
+   "label": "about final (remaining)",
+   "pages": [
+    "about"
+   ]
+  }
+ ]
+}
