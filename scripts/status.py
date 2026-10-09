@@ -19,8 +19,10 @@
     status.py batch <slug> <batch_id> --state S [--files f1,f2]   briefs_written / drafts_written collect the
                                                       per-page files (each from its own run, CM-043)
     status.py page-stage <slug> <page_id> --stage brief|draft --file F --run R
-                                                      record ONE page's brief or draft from its own run (CM-043);
-                                                      a brief needs the evidence gate cleared (CM-041)
+                                                      record one page's brief (from the batch's one brief run, CM-054)
+                                                      or draft (from its own run, CM-043); a brief needs the evidence
+                                                      gate cleared (CM-041); a draft is refused with a placeholder
+                                                      that has no [NEED: ...] note (CM-016)
     status.py modes <slug>                            each producing stage's mode: review / auto (CM-044)
     status.py pilot-corrections <slug> --note T      (re-stamps the specs it changed: the global approval stands)
     status.py blockers-none <slug> --run R            the blocker checklist has no items (blockers_cleared is met)
@@ -49,13 +51,15 @@ SETTABLE = {
     "client.gbp_website_url", "client.address_type", "client.notes", "client.state", "client.cms",
 }
 SAFE_FIX_CAP_KINDS = ["alt_text", "broken_link", "image_url", "meta_description"]
-BATCH_STATES = ["planned", "briefs_written", "drafts_written", "sem_applied", "sem_check_failed",
+BATCH_STATES = ["planned", "briefs_written", "drafts_written", "sem_applied", "sem_check_failed", "drafted",
                 "handed_off", "corrections_requested", "published", "verified", "written_back"]
+# CM-055: a batch whose pages are WordPress drafts (or later) never holds up the next batch
+DRAFTED_OR_LATER = ("drafted", "handed_off", "corrections_requested", "published", "verified", "written_back")
 PAGE_STATES = ["planned", "brief_written", "draft_written", "approved", "drafted", "published",
                "written_back", "verified"]
 # batch state -> the state every page in the batch moves to
 BATCH_TO_PAGE = {"briefs_written": "brief_written", "drafts_written": "draft_written",
-                 "sem_applied": "draft_written", "handed_off": "drafted", "published": "published",
+                 "sem_applied": "draft_written", "drafted": "drafted", "handed_off": "drafted", "published": "published",
                  "verified": "verified", "written_back": "written_back"}
 STAGES = ["briefs", "drafts"]   # two stops per batch: briefs (outline before prose), then drafts + SEM picks
 
@@ -287,6 +291,12 @@ def condition_met(st, name):
         import steps
         left = steps.missing(st)
         return not left, ("" if not left else "audit steps with no outcome yet: " + ", ".join(x["id"] for x in left))
+    if name == "pages_drafted":   # CM-055: every page is a WordPress draft — one living handoff, published together
+        bs = batches(st)
+        left = [b["id"] for b in bs if b.get("state") not in DRAFTED_OR_LATER]
+        ok = bool(bs) and not left
+        return ok, ("" if ok else ("no site plan yet" if not bs else
+                                   "batches not yet in WordPress as drafts: " + ", ".join(left)))
     if name == "pages_built":
         bs = batches(st)
         left = [b["id"] for b in bs if b.get("state") != "written_back"]
@@ -475,6 +485,25 @@ def page_approved(st, page_id):
     return True, ""
 
 
+# ------------------------------------------------------------------ URL structure (BB-207, BB-208)
+SLUG_PREFIXES = ("service", "services", "service-area", "service-areas", "areas", "areas-we-serve", "locations",
+                 "location", "cities")
+
+
+def slug_problems(url, ptype):
+    """Bradley's URL rule for service, location and county pages: root-proximate — one path segment, never under
+    /service/, /services/, /service-area/ (or a similar folder). Paul, 2026-10-09. [] when the URL is fine."""
+    import urllib.parse
+    if ptype not in ("service", "location", "county") or not url:
+        return []
+    parts = [x for x in urllib.parse.urlparse(url).path.split("/") if x]
+    if parts and parts[0].lower() in SLUG_PREFIXES:
+        return [f"{url}: drop the /{parts[0]}/ folder — service and location URLs sit at the root (BB-207, BB-208)"]
+    if len(parts) != 1:
+        return [f"{url}: a {ptype} URL is one slug at the root, e.g. /roof-repair/ or /bluffton/ (BB-208)"]
+    return []
+
+
 # ------------------------------------------------------------------ build plan & batches
 KIND_ORDER = {"service": 0, "location": 1, "county": 1, "homepage": 2, "about": 2}
 
@@ -555,15 +584,17 @@ def batch_ready(st, bid, stage):
 
 
 def batch_order_blocks(st, bid):
-    """Service batches are written back before any location batch, homepage and about last. The pilot
-    (1 service + 1 location) is exempt both ways: it runs first and never waits on, or holds up, the order."""
+    """Service batches before any location batch, homepage and about last — by Paul's drafts approval, never by
+    publishing (CM-055: nothing waits on Jonie; the pages are published together at the end). The pilot (1 service +
+    1 location) is exempt both ways: it runs first and never waits on, or holds up, the order."""
     b = batch(st, bid)
     if not b or bid == "pilot":
         return []
     mine = KIND_ORDER.get(b["kind"], 1)
-    return [f"{o['kind']} batch {o['id']} must be written back to the Brand Guide first"
+    return [f"{o['kind']} batch {o['id']} needs its drafts approved first"
             for o in batches(st)
-            if o["id"] not in ("pilot", bid) and KIND_ORDER.get(o["kind"], 1) < mine and o.get("state") != "written_back"]
+            if o["id"] not in ("pilot", bid) and KIND_ORDER.get(o["kind"], 1) < mine
+            and o.get("state") not in DRAFTED_OR_LATER and not batch_stage_ok(st, o["id"], "drafts", False)[0]]
 
 
 # ------------------------------------------------------------------ evidence gate (CM-041)
@@ -599,14 +630,15 @@ def page_stage(st, pid, stage):
 
 
 def per_page_files(st, b, stage):
-    """(files in batch order, problems) — one file per page, each from its own run."""
+    """(files in batch order, problems) — one file per page. Drafts each from their own run (CM-043); briefs come
+    from the batch's one brief run (CM-054)."""
     files, runs, probs = [], {}, []
     for pid in b["pages"]:
         rec = page_stage(st, pid, stage)
         if not rec.get("file"):
             probs.append(f"{pid} has no {stage} yet (/build <slug> {stage} {b['id']} {pid})")
             continue
-        if rec.get("run") in runs:
+        if stage == "draft" and rec.get("run") in runs:
             probs.append(f"{pid} and {runs[rec['run']]} were written in the same run ({rec['run']}) — one page per run")
         runs[rec.get("run")] = pid
         files.append(rec["file"])
@@ -944,6 +976,11 @@ def main():
             if a.state == "approved":
                 die("Page approval is set only through /approve.")
             p["state"] = a.state
+        if a.file and p.get("type") == "blog" and (ROOT / a.file).is_file():
+            import publish
+            bad = publish.placeholder_problems((ROOT / a.file).read_text(encoding="utf-8"))
+            if bad:
+                die(f"{a.page_id}: placeholder(s) without a visible [NEED: ...] note (CM-016):\n  - " + "\n  - ".join(bad))
         save(a.slug, st); print(json.dumps({a.page_id: p}, indent=2))
     elif a.cmd == "urls":
         live = ("published", "verified", "written_back")
@@ -965,6 +1002,9 @@ def main():
                 if pid in seen:
                     die(f"page {pid} is in two batches ({seen[pid]}, {b['id']})")
                 seen[pid] = b["id"]
+        bad = [x for pid, p in pages.items() for x in slug_problems(p.get("url"), p.get("type"))]
+        if bad:
+            die("site plan URLs break the URL rule:\n  - " + "\n  - ".join(bad))
         missing = [pid for pid, p in pages.items() if p["type"] in KIND_ORDER and pid not in seen]
         if missing:
             die("pages in no batch: " + ", ".join(missing))
@@ -1000,7 +1040,7 @@ def main():
                     f"status.py page-stage ({', '.join(per_page)})")
             a.files = ",".join(per_page)
         stage_needed = {"drafts_written": "briefs", "sem_applied": "drafts", "sem_check_failed": "drafts",
-                        "handed_off": "drafts", "corrections_requested": "drafts", "published": "drafts",
+                        "drafted": "drafts", "handed_off": "drafts", "corrections_requested": "drafts", "published": "drafts",
                         "verified": "drafts", "written_back": "drafts"}.get(a.state)
         if stage_needed and not batch_stage_ok(st, a.batch_id, stage_needed, False)[0]:
             die(f"batch {a.batch_id}: {stage_needed} are not approved yet")
@@ -1008,6 +1048,11 @@ def main():
         for f in fs + ([a.sem_table] if a.sem_table else []):
             if not (ROOT / f).exists():
                 die(f"{f} not found")
+        if a.state in ("drafts_written", "sem_applied"):
+            import publish
+            bad = [f"{Path(f).name}: {x}" for f in fs for x in publish.placeholder_problems((ROOT / f).read_text(encoding="utf-8"))]
+            if bad:
+                die(f"batch {a.batch_id}: placeholder(s) without a visible [NEED: ...] note (CM-016):\n  - " + "\n  - ".join(bad))
         log_line = None
         if a.state == "briefs_written" and fs:
             b.setdefault("files", {})["briefs"] = fs
@@ -1065,10 +1110,12 @@ def main():
         want = f"build:{a.stage}"
         if info.get("step") != want:
             die(f"a {a.stage} is recorded only by its own /build {a.stage} run (this run is {info.get('step')}).")
-        if info.get("page") != a.page_id:
+        b = batch_of(st, a.page_id) or die(f"{a.page_id} is in no batch")
+        if a.stage == "draft" and info.get("page") != a.page_id:
             die(f"run {a.run} was started for page {info.get('page')}; it cannot record {a.page_id}. "
                 "One page per run (CM-043): start a run for that page.")
-        b = batch_of(st, a.page_id) or die(f"{a.page_id} is in no batch")
+        if a.stage == "brief" and info.get("page") not in (None, a.page_id):
+            die(f"run {a.run} was started for page {info.get('page')}; it cannot record {a.page_id}.")
         if info.get("batch") and info["batch"] != b["id"]:
             die(f"{a.page_id} is in batch {b['id']}, not {info['batch']}")
         f = ROOT / a.file
@@ -1087,6 +1134,10 @@ def main():
         else:
             if not batch_stage_ok(st, b["id"], "briefs", False)[0]:
                 die(f"batch {b['id']}: the briefs are not approved yet — no drafts before Paul approves the briefs.")
+            import publish
+            bad = publish.placeholder_problems(f.read_text(encoding="utf-8"))
+            if bad:
+                die(f"{a.page_id}: placeholder(s) without a visible [NEED: ...] note (CM-016):\n  - " + "\n  - ".join(bad))
             if batch_stage_ok(st, b["id"], "drafts", False)[0]:
                 die(f"batch {b['id']} drafts are already approved; Paul re-opens them first (--decision revise).")
         p = st["pages"][a.page_id]

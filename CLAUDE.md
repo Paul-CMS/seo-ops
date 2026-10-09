@@ -55,7 +55,9 @@ Every command that does work:
    Drive connector.**
 3. **Decisions and hand-off:** a decision during the run (Paul Exception, applied default, N/A,
    deviation, Gate B outcome) → `run.py decision <slug> <RUN_ID> --text "..." [--ids F-001]`. A decision that must
-   never be asked again → `--settle <key>`; a question asked once → `--ask <key> --who "..."`; new contradicting
+   never be asked again → `--settle <key>` (an answer to an open question names it: `--closes <open key>`, or
+   `--leaves-open "<why>"` — a related open question is refused otherwise); a question asked once → `--ask <key>
+   --who "..."` (refused when a settled or open key is the same decision, unless `--distinct "<what is new>"`); new contradicting
    evidence on a settled one → one `--reopen <key>` (counted as a process defect).
    Write this run's Handoff Log section (template `templates/handoff-log.md`) to
    `clients/<slug>/handoffs/run-<RUN_ID>.md` and pass it to finish. Never edit handoff-log.md,
@@ -125,10 +127,11 @@ Each row's *Session* is the stage it runs in (one session per stage; all on Haik
 | 3 | Proof sheet (S04), Markdown + client Google Doc (HTML) — or the client's direct answers | `/discovery proof-sheet` \| `facts-direct` | **Approval 1** (entity + Decision Sheet + facts) — Paul sends the sheet | 2 Discovery |
 | 4 | *While the client has the sheet:* crawl (S05, S05b page text), reviews → customer language, rankings + cannibalization, backlinks, citations, grid, GSC, People Also Ask, query fan-out (S06–S11, S19–S21) — one cost yes | `/crawl`, `/discovery data` | — | 3 Data |
 | 5 | Audit (page specs approved once, globally): entity → architecture → page conformance (one scorecard per page type) → technical, then fresh-context review (S12–S18); client facts recorded and reconciled into the Brand Guide | `/discovery audit`, `sheet-returned`, `reconcile` | **Approval 2** (audit + Brand Guide) → safe fixes, structural changes; **discovery_signed_off** met | 4 Audit |
-| 8 | Technical blockers (one handoff to Jonie, `--blockers`) | `/build blockers` + `/verify` | condition **blockers_cleared** | 5 Build plan |
+| 8 | Technical blockers (one handoff to Jonie, `--blockers`) — never holds up writing; gates release only | `/build blockers` + `/verify` | condition **blockers_cleared** | 5 Build plan |
 | 9 | **Site plan** — every service and location page in one pass; runs side by side with step 8 | `/build plan` | **site_plan** | 5 Build plan |
 | 10 | **Pilot** — 1 service + 1 location brief; corrections go into the specs | `/build batch pilot` | **batch:pilot:briefs** | 6 (pilot) |
-| 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); **evidence gate** (CM-041; a blocked page → facts interview or Paul's waiver) → one brief **per page, each its own run** → drafts one per page, each its own run, + self-critique → **batch review** (every draft side by side + semantic review table) → (apply the SEM items Paul picked, re-check) → ship (WordPress drafts, verify, write-back: one run) | `/build evidence <id>`, `/build brief <id> <page>`, `/build draft <id> <page>`, `/build batch <id> drafts`\|`apply-sem`, `/build ship <id>`, `/interview facts <id>` | **batch:<id>:briefs** (until Paul switches briefs to auto after the pilot — then drafts only), **batch:<id>:drafts** (+ SEM picks); **evidence:<page>** waiver only on a block | 6 (one session per batch) |
+| 11 | **Batches of ~5** — service by cluster, location by county (hub + cities); **one brief run per batch** (CM-054): the evidence gate per page (CM-041; sources on disk searched first, CM-056; a blocked page → facts interview or Paul's waiver), then every cleared page's brief → drafts one per page, each its own run, + self-critique → **batch review** (every draft side by side + semantic review table) → (apply the SEM items Paul picked, re-check) → ship (**WordPress drafts only** — the next batch goes straight on, CM-055) | `/build brief <id>`, `/build draft <id> <page>`, `/build batch <id> drafts`\|`apply-sem`, `/build ship <id>`, `/interview facts <id>` | **batch:<id>:briefs** (until Paul switches briefs to auto after the pilot — then drafts only), **batch:<id>:drafts** (+ SEM picks); **evidence:<page>** waiver only on a block | 6 (one session per batch) |
+| 11b | Every page is a WordPress draft → **one living publish handoff** to Jonie for all of them (redirects paired, blockers listed); each returned worksheet → verify, alt text, write-back, and the same document's status updated (CM-055) | `/build handoff`, `/build published <id>` | condition **pages_drafted** | 6 |
 | 12 | All pages built and written back | — | condition **pages_built** (no approval) | — |
 | 13 | Link wheel → verify | `/finish wheel` | **link_wheel_approved** | 7 Finish |
 | 14 | Schema → QA crawl → punch-list → acceptance | `/finish schema`, `/finish qa` | **release_approved** (release; needs blockers cleared) | 7 Finish |
@@ -155,8 +158,10 @@ handoffs; page content only as WordPress drafts from approved files; link tables
 
 **Publishing (the system never publishes).** For every new page the system generates a WordPress
 **draft** from the approved file, one-way: exact slug, SEOPress title and meta, full content as proper
-blocks, link tables filled from the link wheel (planned from the site plan). Then one **publish
-handoff to Jonie per batch**: draft links; apply the Kadence layout and styling, add images, publish;
+blocks, link tables filled from the link wheel (planned from the site plan; every planned page, since all go live
+together). **Nothing waits on publishing (CM-055):** a batch's drafts never hold up the next batch. When every page
+is a draft, **one living publish handoff to Jonie** for all of them, updated as she returns it: draft links; apply the
+Kadence layout and styling, add images, publish them together;
 change no wording, headings, title, meta or URL (unavoidable changes = `deviated` with a reason). A
 page replacing an existing URL has its redirect paired with the publish. Menu changes: handoff to
 Jonie. After Jonie marks pages published, `/verify` checks each live page against its approved file
@@ -200,17 +205,24 @@ them or any page is written; a changed spec re-opens that (a logged pilot correc
 semantic review, one table per batch, report only; Paul approves the drafts and picks SEM items in one step) and
 `methodology/writing-blog.md` (E1–E10, CM-038 link caps, CM-039 author).
 
-**Evidence gate (CM-041)** — before any brief, each page in the batch gets an evidence grid: the
+**Evidence gate (CM-041)** — inside the batch's brief run, each page gets an evidence grid: the
 facts its spec needs (`methodology/evidence-requirements.json`), each Known / Unknown / Unverified /
-Conflict from Brand Guide A and D and the page's facts file → **pass**, **warn** (the brief lists the
+Conflict from Brand Guide A and D, the page's facts file, answers already settled under the fact's key, and —
+**before anything is a gap — every source on disk** (reviews, the client's site text, GBP export, grid, rankings;
+`scripts/sources.py`, CM-056), each hit cited. A review answers a fact as Known, stated only attributed; a site
+claim is a yes/no. Only "searched, not found" becomes a question → **pass**, **warn** (the brief lists the
 gaps) or **block** (no brief). A block goes to the **facts interview** (`/interview <slug> facts <batch>`,
 CM-042) and the gate re-runs on the answers, or Paul waives it (`/approve <slug> evidence:<page>
 --reason "..."`, recorded with his name, date and reason for that grid).
 
-**One page per run (CM-043)** — inside a batch, each page's brief and each page's draft is its own
-run with a fresh context (`/build <slug> brief|draft <batch> <page>`); the scripts refuse two pages
-in one run. The batch review run then reads every draft side by side (the sibling check, CM-017),
-and each batch stop collects every page for Paul's one approval.
+**Briefs per batch, drafts per page (CM-054, CM-043)** — one brief run writes every cleared page's brief
+(`/build <slug> brief <batch>`); each page's draft is its own run with a fresh context (`/build <slug> draft <batch>
+<page>`; the scripts refuse two drafts in one run). The batch review run then reads every draft side by side (the
+sibling check, CM-017), and each batch stop collects every page for Paul's one approval. A draft with a placeholder
+(a `#`/`TBD`/empty link, TBD/TODO text) and no visible `[NEED: …]` note on that line is refused (CM-016).
+
+**URLs (BB-207, BB-208)** — every service, location and county URL is one slug at the root: never under `/service/`,
+`/services/` or `/service-area/`. The site plan and the WordPress drafts refuse anything else.
 
 **Interviews (CM-042)** — facts (only on an evidence block), stories (every 30 days once the facts
 exist → the story bank) and voice (a Voice DNA file for the blog author, CM-039). `/interview`;
@@ -219,7 +231,7 @@ skill `expert-interview`. Paul sends every question set.
 Build works in batches: one **site plan** for every service and location page (keyword, area
 variant, H1 decision with the "The Best" test, FAQ topics, link targets; checked across the
 site for duplicates, variant conflicts and FAQ overlap) → a **1+1 pilot** → batches of about
-5. Service batches are written back to the Brand Guide before any location batch; homepage
+5. Service batches get their drafts approved before any location batch starts (not published — CM-055); homepage
 and about last. Plan and batches live in status.json → `build`.
 
 **Sensitive clients (CM-025, CM-040)** — matched by category at `/new-client` (health,

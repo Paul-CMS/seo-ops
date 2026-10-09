@@ -50,18 +50,18 @@ with its cities)**; homepage and about last. Write `<Client> - Site Plan - REVIE
 Record the H1 decisions in Brand Guide H2 and the URL Decision Map. Paul approves once:
 `/approve <slug> site_plan`.
 
-## One page per run (CM-043)
-Inside a batch, **each page's brief and each page's draft is its own run** with a fresh context:
-`/build <slug> brief <batch> <page>` and `/build <slug> draft <batch> <page>`. Never write two pages in
-one run. The run records its one page with `status.py page-stage <slug> <page> --stage brief|draft
---file <file> --run <RUN_ID>`; the script refuses any other page. Sibling consistency is kept by
+## Briefs per batch (CM-054), drafts per page (CM-043)
+Inside a batch, **the briefs are one run** (`/build <slug> brief <batch>`: the evidence gate, then a brief for every
+page it clears) and **each page's draft is its own run** with a fresh context (`/build <slug> draft <batch> <page>`).
+Never write two drafts in one run. Each file is recorded with `status.py page-stage <slug> <page> --stage brief|draft
+--file <file> --run <RUN_ID>`; a draft run refuses any page but its own. Sibling consistency is kept by
 (1) the site plan's whole-site check, (2) each run reading the batch's already-written briefs/drafts
 and earlier approved pages, and (3) the **batch review** step, which reads every draft of the batch
 side by side (CM-017's sibling check, now at batch level). The batch stops collect every page for
 Paul's one approval — batches and their two stops are unchanged.
 
-## Step: evidence <id> — the evidence gate (CM-041), before any brief
-For every page in the batch, write its page-specific facts to
+## Step: brief <id> — part 1: the evidence gate (CM-041), research first (CM-056)
+(`/build <slug> evidence <id>` runs this part alone.) For every page in the batch, write its page-specific facts to
 `clients/<slug>/build/evidence/<page_id>.facts.json` — `{"facts": {"<key>": {"value", "status", "source"}}}`
 for each `page:` key its type needs in `methodology/evidence-requirements.json` — taking them **only**
 from the returned proof sheet, the approved Discovery Record, Brand Guide E and public research you can
@@ -69,20 +69,25 @@ cite. Status uses the Brand Guide vocabulary (`Client Confirmed`, `Internally Ve
 `Submitted`, `Disputed`, `Unknown`); never upgrade a status, never fill a value you cannot source.
 Section A/D facts are read from the Brand Guide by the script. Then
 `python3 scripts/evidence.py run <slug> --run <RUN_ID> --batch <id>` marks each fact Known / Unknown /
-Unverified / Conflict and scores the page **pass / warn / block**. Report every page's result.
+Unverified / Conflict and scores the page **pass / warn / block**. Before a fact can be a gap the script reads the
+answer already settled under its key (`fact:…`, decisions-settled.md) and **searches every source on disk** —
+reviews, the client's site text, a GBP export, grid, rankings (`scripts/sources.py`) — and cites each hit. A fact a
+review answers is Known: state it **only attributed** ("customers mention…", with the date; never a reviewer's name).
+A fact found only on the client's site is a yes/no. Report every page's result.
 A **blocked** page gets no brief: `/next` sends it to the facts interview (`/interview <slug> facts <id>`)
 or Paul waives it (`/approve <slug> evidence:<page> --reason "..."`, recorded with his name, date and reason).
 
-## Step: brief <id> <page> — one page (Route A) or sanity check (Route B)
-Only that page, from the approved site plan. The brief (`SB/LB/LBCH/HB/AB - <subject> - <Client>`):
+## Step: brief <id> — part 2: every cleared page's brief (Route A) or sanity check (Route B)
+One section/file per page, from the approved site plan; skip the blocked pages. The brief (`SB/LB/LBCH/HB/AB - <subject> - <Client>`):
 assigned variants, page type, target, final URL, sibling context (C1/C2/C3, the briefs already written
 in this batch, every page approved in earlier batches), facts from D (nothing Unknown/Disputed), customer
 language (I — words only, CM-027), the H1 decision, the audit findings and failed spec checks for this
 page, the spec's element order, the PAA questions and fan-out queries routed to it. **If the gate
 warned, the brief has an `## Evidence gaps` section** listing every gap from the grid and what the writer
 does instead (`[NEED: …]`, or leave the element out); `status.py page-stage` refuses the brief without it.
-`status.py page-stage <slug> <page> --stage brief --file <brief> --run <RUN_ID>`. When the last page's brief is
-recorded, the batch's briefs are collected automatically for Paul's one approval.
+`status.py page-stage <slug> <page> --stage brief --file <brief> --run <RUN_ID>` for each page. When the last page's
+brief is recorded, the batch's briefs are collected automatically for Paul's one approval; the run cannot finish while
+a cleared page has no brief.
 
 **Route B:** Paul's finished content is checked against `writing-commercial.md` and the Brand
 Guide — list issues per page, never rewrite his copy.
@@ -120,14 +125,19 @@ to the page or blog list that owns them. Re-run E1–E10 and the spec checks on 
    **draft** generated one-way from its approved file: exact slug, SEOPress title, meta description,
    target keyword (site plan) and social (Open Graph + X from the approved title and meta),
    content as proper blocks (heading levels, paragraphs, lists, tables, FAQ), link tables filled from the
-   wheel (rows to pages not yet live are held and handed over once their target is live). It issues
-   the **publish handoff to Jonie** for the batch: draft links + instructions (Kadence layout and
-   styling, images, publish; never change wording, headings, title, meta or URL — any unavoidable change
-   goes in the CSV as `deviated` with a reason). A page that replaces an existing URL has its 301 paired
-   with its publish row so Jonie does both at once.
+   wheel with **every planned page** (they all go live together, CM-055). It refuses a file with a placeholder
+   that has no `[NEED: …]` note, or a URL under `/service/`, `/services/`, `/service-area/`. The batch becomes
+   `drafted` — **no handoff yet**; the next batch goes straight on.
 3. Menu changes for the batch's pages: `handoff.py create <slug> --run <RUN_ID> --kind navigation --items <csv>`.
-4. `status.py batch <slug> <id> --state handed_off`. Copy the handoff into Drive with `drive.py upload <slug> --run <RUN_ID> --file <md> --file <csv> --to "02 - Build"`.
 Never edit a generated draft — change the approved file (Paul re-approves) and regenerate.
+
+## Step: handoff   (once every page is a WordPress draft — CM-055)
+`python3 scripts/publish.py handoff <slug> --run <RUN_ID>` — **one living publish handoff to Jonie** for every
+drafted page: draft links + instructions (Kadence layout and styling, images, publish them together; never change
+wording, headings, title, meta or URL — any unavoidable change goes in the CSV as `deviated` with a reason), each page's
+301s paired under its publish row, and the technical blockers listed for reference. Copy it into Drive with
+`drive.py upload <slug> --run <RUN_ID> --file <md> --file <csv> --to "02 - Build"`. Each `published` run updates the
+same document's status column.
 
 ## Step: published <id>   (after Jonie returns the worksheet)
 1. `handoff.py ingest <slug> --run <RUN_ID> --handoff <H-ID> --returned <csv>` — report deviations and omissions.

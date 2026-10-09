@@ -123,6 +123,8 @@ class Agent:
         self.jonie_changes_wording, self.verify_outputs = set(), []
         self.wp_reports = []
         self.evidence_gaps = {}   # page id -> fact keys the page's facts file leaves out (CM-041 tests)
+        self.plan = None          # a site plan to use instead of the default one
+        self.ship_seen = []       # (batch, {earlier page: WordPress status}) at each ship run (CM-055)
         self.c = SB / "clients" / slug
 
     def sh(self, cmd):
@@ -226,7 +228,7 @@ class Agent:
             self.fin(rid, "blockers verified")
         elif (name, sub) == ("/build", "plan"):
             rid = self.start("build", "plan")
-            plan = {"pages": [{"id": i, "type": t, "name": i, "url": f"https://test.example/{i}/", **x} for i, t, x in [
+            plan = self.plan or {"pages": [{"id": i, "type": t, "name": i, "url": f"https://test.example/{i}/", **x} for i, t, x in [
                 ("svc-roof-repair", "service", {"service_variant": "Roof Repair"}),
                 ("svc-roof-replacement", "service", {"service_variant": "Roof Replacement"}),
                 ("svc-gutters", "service", {"service_variant": "Gutter Installation"}),
@@ -243,6 +245,26 @@ class Agent:
             for p in self.batch_pages(bid):
                 self.write_facts(p)
             self.sh(f"python3 scripts/evidence.py run {S} --run {rid} --batch {bid}"); self.fin(rid, f"evidence {bid}")
+        elif (name, sub) == ("/build", "brief") and len(args) == 2:   # CM-054: one brief run for the batch
+            bid = args[1]; rid = self.start("build", "brief", batch=bid)
+            if not rid:
+                return True
+            for p in self.batch_pages(bid):
+                self.write_facts(p)
+            self.sh(f"python3 scripts/evidence.py run {S} --run {rid} --batch {bid}")
+            for pid in self.batch_pages(bid):
+                if self.batch_pages and status(S)["pages"][pid].get("files", {}).get("brief"):
+                    continue
+                if sh(f"python3 scripts/status.py require {S} evidence:{pid}")[0]:
+                    continue   # blocked: no brief (facts interview or waiver)
+                gaps = status(S)["pages"][pid]["evidence"]["result"] in ("warn", "block")
+                f = self.w(f"build/B-{pid}.md", f"# Brief {pid}\n" + ("\n## Evidence gaps\n- see the grid\n" if gaps else ""))
+                self.sh(f"python3 scripts/status.py page-stage {S} {pid} --stage brief --file {f} --run {rid}")
+            self.fin(rid, f"briefs {bid}")
+        elif (name, sub) == ("/build", "handoff"):
+            rid = self.start("build", "handoff")
+            self.sh(f"python3 tests/fakes.py publish handoff {S} --run {rid}")
+            self.fin(rid, "living publish handoff")
         elif (name, sub) in (("/build", "brief"), ("/build", "draft")):
             bid, pid = args[1], args[2]
             rid = self.start("build", sub, batch=bid, page=pid)
@@ -294,10 +316,12 @@ class Agent:
             self.fin(rid, "wp-check")
         elif (name, sub) == ("/build", "ship"):
             bid = args[1]; rid = self.start("build", "ship", batch=bid)
+            items, st_ = wp_state().get("items", {}), status(S)
+            self.ship_seen.append((bid, {pid: (items.get(str(p.get("wp_id"))) or {}).get("status")
+                                         for pid, p in st_["pages"].items() if p.get("wp_id")}))
             self.sh(f"python3 tests/fakes.py publish wheel {S}")
             self.sh(f"python3 tests/fakes.py publish drafts {S} --run {rid} --batch {bid}")
-            self.sh(f"python3 scripts/status.py batch {S} {bid} --state handed_off")
-            self.fin(rid, f"drafts + publish handoff for {bid}")
+            self.fin(rid, f"WordPress drafts for {bid}")
         elif (name, sub) == ("/build", "published"):
             bid = args[1]; rid = self.start("build", "published", batch=bid)
             b = next(x for x in status(S)["build"]["batches"] if x["id"] == bid)
@@ -419,11 +443,12 @@ def jonie_publishes(ag, bid):
     s = json.loads(wp.read_text())
     st = status(ag.slug)
     b = next(x for x in st["build"]["batches"] if x["id"] == bid)
-    for pid in b["pages"]:
+    together = [pid for x in st["build"]["batches"] if x.get("handoff") == b["handoff"] for pid in x["pages"]]
+    for pid in together:   # CM-055: Jonie publishes every page in the living handoff together
         p = st["pages"][pid]
         it = s["items"][str(p["wp_id"])]
         it["status"], it["link"] = "publish", p["url"]
-        if bid in ag.jonie_changes_wording and b.get("state") == "handed_off":
+        if bid in ag.jonie_changes_wording and b.get("state") == "handed_off" and pid in b["pages"]:
             it["content"]["raw"] = it["content"]["raw"].replace("Call today.", "Call us today for a free quote!")
         elif "Call us today for a free quote!" in it["content"]["raw"]:
             it["content"]["raw"] = it["content"]["raw"].replace("Call us today for a free quote!", "Call today.")
@@ -558,15 +583,41 @@ def t_walkthrough_full():
     posts = [i for i in wp_state()["items"].values() if i["type"] == "posts" and not i["title"]["raw"].startswith("seo-ops connection test")]
     check("approved blog posts go in as WordPress posts (drafts) with a publish handoff", len(posts) == 2 and
           all(i["status"] == "draft" for i in posts), [(i["type"], i["status"]) for i in posts])
-    check("held link rows are handed to Jonie once their target is live", held == 0 and
-          any((SB / "clients/wt-full/handoffs").glob("H-*link_table.csv")), held)
+    check("CM-055: link tables carry every planned page (published together, nothing held back)",
+          held == 0 and "https://test.example/loc-nixa/" in raw, held)
+    i_ship = [i for i, l in enumerate(log) if l.startswith("run") and " ship " in l]
+    i_pub = [i for i, l in enumerate(log) if l.startswith("wait") and " published " in l]
+    i_hand = [i for i, l in enumerate(log) if l.startswith("run") and l.endswith("/build wt-full handoff")]
+    check("CM-055: every batch is drafted before anything waits on publishing (one batch never waits on another's publish)",
+          i_ship and i_pub and max(i_ship) < min(i_pub), (i_ship, i_pub))
+    seen = dict(ag.ship_seen)
+    check("CM-055: page N+1 is drafted while page N is still a WordPress draft",
+          seen.get("s1", {}).get("svc-roof-repair") == "draft" and seen.get("l1", {}).get("svc-roof-replacement") == "draft",
+          ag.ship_seen)
+    check("CM-055: one living publish handoff, after every page is drafted", len(i_hand) == 1 and max(i_ship) < i_hand[0] < min(i_pub),
+          (i_ship, i_hand, i_pub))
+    hid = st["publish_handoff"]["id"]
+    rows_ = list(csv.DictReader(open(SB / "clients/wt-full/handoffs" / f"{hid}.csv", newline="")))
+    md_ = (SB / "clients/wt-full/handoffs" / f"{hid}.md").read_text()
+    check("CM-055: the living handoff lists every page to publish, with its paired redirect and the blockers",
+          sum(r["field"] == "publish" for r in rows_) == 8 and any(r["field"] == "301" for r in rows_)
+          and "Technical blockers" in md_ and all(b.get("handoff") == hid for b in st["build"]["batches"]), md_[:600])
+    check("CM-055: the living handoff is updated as pages are published (status column, progress)",
+          f"{len(rows_)} of {len(rows_)} row(s) done" in md_ and "| done" in md_, md_[-400:])
+    i_draft = next((i for i, l in enumerate(log) if l.startswith("run") and " draft " in l), 99)
+    check("batch drafting runs while the technical blocker handoff is still open (no VA handoff stops writing)",
+          i_draft < i_blk and any(l.startswith("run") and "/build wt-full blockers" in l for l in log[:i_draft]), (i_draft, i_blk))
+    bad_urls = [u for p in st["pages"].values() for u in [p.get("url") or ""] if "/service/" in u or "/services/" in u or "/service-area/" in u]
+    check("URL rule: no planned service or location URL sits under /service/, /services/ or /service-area/", not bad_urls, bad_urls)
     rec = SB / "clients" / "wt-full"
     lm = (rec / "log.md").read_text()
     import re as _re
-    for stage in ("BRIEF", "DRAFT"):
-        rows = _re.findall(rf"^- {stage} \S+ · run (\S+) · (\S+) ·", lm, _re.M)
-        check(f"every {stage.lower()} came from its own run, one page each (CM-043)",
-              len(rows) == 8 and len({r for r, _ in rows}) == 8 and len({p for _, p in rows}) == 8, rows)
+    rows = _re.findall(r"^- DRAFT \S+ · run (\S+) · (\S+) ·", lm, _re.M)
+    check("every draft came from its own run, one page each (CM-043)",
+          len(rows) == 8 and len({r for r, _ in rows}) == 8 and len({p for _, p in rows}) == 8, rows)
+    rows = _re.findall(r"^- BRIEF \S+ · run (\S+) · (\S+) ·", lm, _re.M)
+    check("briefs: one run per batch with a brief for every page (CM-054)",
+          len(rows) == 8 and len({r for r, _ in rows}) == 4 and len({p for _, p in rows}) == 8, rows)
     check("the evidence gate ran on every page before its brief (CM-041)",
           lm.count("- EVIDENCE ") >= 8 and lm.index("- EVIDENCE ") < lm.index("- BRIEF "))
     check("producing stages pause for review by default (CM-044)", any(l.startswith("review") for l in log)
@@ -1196,10 +1247,15 @@ def nxt(slug):
 def t_evidence_gate():
     S = "ev-co"
     ag = build_ready(S, {"svc-roof-repair": {"service_scope", "service_process"}, "loc-springfield": {"neighborhoods"}})
-    code, out = sh(f"python3 scripts/run.py start {S} build --step brief --batch pilot --page loc-springfield")
-    check("evidence gate: no brief before the gate has run", code == 4 and "evidence gate has not run" in out, out)
-    check("evidence gate: /next runs the gate before any brief", nxt(S)["command"] == f"/build {S} evidence pilot", nxt(S))
-    ag.do(f"/build {S} evidence pilot")
+    check("evidence gate: /next runs one brief run for the batch, the gate inside it (CM-054)",
+          nxt(S)["command"] == f"/build {S} brief pilot", nxt(S))
+    rid = ag.start("build", "brief", batch="pilot")
+    f = ag.w("build/B-loc-springfield.md", "# Brief\n")
+    code, out = sh(f"python3 scripts/status.py page-stage {S} loc-springfield --stage brief --file {f} --run {rid}")
+    check("evidence gate: no brief before the gate has run", code != 0 and "evidence gate has not run" in out, out)
+    for p_ in ("svc-roof-repair", "loc-springfield"):
+        ag.write_facts(p_)
+    sh(f"python3 scripts/evidence.py run {S} --run {rid} --batch pilot")
     st = status(S)
     ev = {p: st["pages"][p]["evidence"]["result"] for p in ("svc-roof-repair", "loc-springfield")}
     check("evidence gate: two required facts unknown → BLOCK", ev["svc-roof-repair"] == "block", ev)
@@ -1209,19 +1265,16 @@ def t_evidence_gate():
           "**Unknown**" in grid and "**Known**" in grid and "Client Proof Sheet" in grid and "State licence board" in grid, grid[:500])
     lm = lambda: (ag.c / "log.md").read_text()
     check("evidence gate: every result is logged", "svc-roof-repair: BLOCK" in lm() and "loc-springfield: WARN" in lm())
-    n = nxt(S)
-    check("evidence gate: /next briefs the warned page, never the blocked one",
-          n["command"] == f"/build {S} brief pilot loc-springfield", n)
-    rid = ag.start("build", "brief", batch="pilot", page="loc-springfield")
     f = ag.w("build/B-loc-springfield.md", "# Brief\n")
     code, out = sh(f"python3 scripts/status.py page-stage {S} loc-springfield --stage brief --file {f} --run {rid}")
     check("evidence gate (warn): a brief without an 'Evidence gaps' section is refused", code != 0 and "Evidence gaps" in out, out)
     f = ag.w("build/B-loc-springfield.md", "# Brief\n\n## Evidence gaps\n- neighborhoods: [NEED]\n")
     code, out = sh(f"python3 scripts/status.py page-stage {S} loc-springfield --stage brief --file {f} --run {rid}")
     check("evidence gate (warn): the brief that flags its gaps is accepted", code == 0, out)
+    f = ag.w("build/B-svc-roof-repair.md", "# Brief\n\n## Evidence gaps\n- scope\n")
+    code, out = sh(f"python3 scripts/status.py page-stage {S} svc-roof-repair --stage brief --file {f} --run {rid}")
+    check("evidence gate (block): the blocked page gets no brief", code != 0 and "blocked by the evidence gate" in out, out)
     ag.fin(rid, "brief")
-    code, out = sh(f"python3 scripts/run.py start {S} build --step brief --batch pilot --page svc-roof-repair")
-    check("evidence gate (block): the blocked page gets no brief", code == 4 and "blocked by the evidence gate" in out, out)
     n = nxt(S)
     check("evidence gate (block): /next sends it to the facts interview and shows the waiver line",
           n["command"] == f"/interview {S} facts pilot" and f"/approve {S} evidence:svc-roof-repair --reason" in n["why"], n)
@@ -1259,8 +1312,9 @@ def t_evidence_gate():
     # --- the facts answers
     ag.do(f"/interview {S} facts-answers pilot")
     check("facts answers: the gate re-runs and the page passes", status(S)["pages"]["svc-roof-repair"]["evidence"]["result"] == "pass")
-    check("facts answers: /next goes on to that page's brief", nxt(S)["command"] == f"/build {S} brief pilot svc-roof-repair", nxt(S))
-    ag.do(f"/build {S} brief pilot svc-roof-repair")
+    check("facts answers: /next goes on to that page's brief (one more brief run for the batch)",
+          nxt(S)["command"] == f"/build {S} brief pilot", nxt(S))
+    ag.do(f"/build {S} brief pilot")
     check("the batch's briefs are collected for Paul's one approval",
           "BRIEFS COLLECTED" in lm() and nxt(S)["command"].startswith(f"/approve {S} batch:pilot:briefs"), nxt(S))
     # --- scoring edge cases
@@ -1274,6 +1328,12 @@ def t_evidence_gate():
     fj["facts"]["service_scope"] = {"value": "x", "status": "Client Confirmed", "source": ""}; fp.write_text(json.dumps(fj))
     _, out = sh(f"python3 scripts/evidence.py show {S} svc-gutters")
     check("evidence gate: a confirmed value with no source is Unverified, not Known", "| **Unverified** |" in out, out[:500])
+    fj["facts"]["service_scope"] = {"value": "x", "status": "Paul Approved 2026-10-06 · was: Submitted", "source": "Paul"}
+    fp.write_text(json.dumps(fj))
+    _, out = sh(f"python3 scripts/evidence.py show {S} svc-gutters")
+    row = next((l for l in out.splitlines() if l.startswith("| What the service includes")), "")
+    check("evidence gate: a status cell with a date and a note after the word still reads as that status (Known)",
+          "**Known**" in row, row)
     ag.write_facts("svc-gutters")
     st = status(S); st["pages"]["svc-gutters"]["claims"] = [{"phrase": "24 hour", "label": "after-hours service", "from": "D:Emergency"}]
     (ag.c / "status.json").write_text(json.dumps(st))
@@ -1289,31 +1349,39 @@ def t_evidence_gate():
 def t_one_page_per_run():
     S = "op-co"
     ag = build_ready(S)
-    ag.do(f"/build {S} evidence pilot")
-    code, out = sh(f"python3 scripts/run.py start {S} build --step brief --batch pilot")
-    check("one page per run: a brief run must name its one page", code == 2 and "--page" in out, out)
-    rid = ag.start("build", "brief", batch="pilot", page="svc-roof-repair")
-    f = ag.w("build/B-loc-springfield.md", "# b\n")
-    code, out = sh(f"python3 scripts/status.py page-stage {S} loc-springfield --stage brief --file {f} --run {rid}")
-    check("one page per run: a run cannot record a second page", code != 0 and "One page per run" in out, out)
-    code, out = sh(f"python3 scripts/run.py finish {S} {rid} --summary x")
-    check("one page per run: the run cannot finish without its own page's brief", code == 12 and "svc-roof-repair" in out, out)
+    rid = ag.start("build", "brief", batch="pilot")
+    for p_ in ("svc-roof-repair", "loc-springfield"):
+        ag.write_facts(p_)
+    sh(f"python3 scripts/evidence.py run {S} --run {rid} --batch pilot")
     f = ag.w("build/B-svc-roof-repair.md", "# b\n")
-    sh(f"python3 scripts/status.py page-stage {S} svc-roof-repair --stage brief --file {f} --run {rid}"); ag.fin(rid, "brief")
+    sh(f"python3 scripts/status.py page-stage {S} svc-roof-repair --stage brief --file {f} --run {rid}")
+    code, out = sh(f"python3 scripts/run.py finish {S} {rid} --summary x")
+    check("CM-054: the batch brief run cannot finish until every cleared page has its brief", code == 12 and "loc-springfield" in out, out)
     b = lambda: next(x for x in status(S)["build"]["batches"] if x["id"] == "pilot")
-    check("one page per run: one brief alone does not reach the batch stop", b()["state"] == "planned", b()["state"])
+    check("CM-054: one brief alone does not reach the batch stop", b()["state"] == "planned", b()["state"])
     code, out = sh(f"python3 scripts/status.py batch {S} pilot --state briefs_written")
-    check("one page per run: the batch will not collect while a page has no brief of its own",
-          code != 0 and "loc-springfield has no brief" in out, out)
-    ag.do(f"/build {S} brief pilot loc-springfield")
+    check("CM-054: the batch will not collect while a page has no brief", code != 0 and "loc-springfield has no brief" in out, out)
+    f = ag.w("build/B-loc-springfield.md", "# b\n")
+    sh(f"python3 scripts/status.py page-stage {S} loc-springfield --stage brief --file {f} --run {rid}"); ag.fin(rid, "briefs")
     runs = [status(S)["pages"][p]["files"]["brief"]["run"] for p in ("svc-roof-repair", "loc-springfield")]
-    check("one page per run: the last page's brief collects the batch for one approval, each from its own run",
-          b()["state"] == "briefs_written" and len(b()["files"]["briefs"]) == 2 and len(set(runs)) == 2, b())
+    check("CM-054: both briefs come from the one batch run and collect for one approval",
+          b()["state"] == "briefs_written" and len(b()["files"]["briefs"]) == 2 and len(set(runs)) == 1, b())
     n = nxt(S)
     check("one page per run: one stop for the whole batch's briefs", n["kind"] == "decision" and "batch:pilot:briefs" in n["command"], n)
     paul(n["command"])
     check("one page per run: drafts start one page at a time", nxt(S)["command"] == f"/build {S} draft pilot svc-roof-repair", nxt(S))
-    ag.do(f"/build {S} draft pilot svc-roof-repair")
+    # CM-016: a placeholder with no [NEED: ...] note is refused, with one it is accepted
+    rid = ag.start("build", "draft", batch="pilot", page="svc-roof-repair")
+    for bad_ in ("Read our [warranty](#) terms.", "Serving Springfield since [year](till present).", "Price TBD.",
+                 '<a href="TBD">reviews</a>'):
+        f = ag.w("build/D-svc-roof-repair.md", page_file("svc-roof-repair", "v1") + f"\n{bad_}\n")
+        code, out = sh(f"python3 scripts/status.py page-stage {S} svc-roof-repair --stage draft --file {f} --run {rid}")
+        check(f"placeholders: a draft with {bad_!r} and no [NEED] note is refused", code != 0 and "[NEED" in out, out)
+    f = ag.w("build/D-svc-roof-repair.md", page_file("svc-roof-repair", "v1")
+             + "\nRead our [warranty](#) terms. [NEED: the warranty page URL — none exists yet]\n")
+    code, out = sh(f"python3 scripts/status.py page-stage {S} svc-roof-repair --stage draft --file {f} --run {rid}")
+    check("placeholders: the same link with a visible [NEED: ...] note is accepted", code == 0, out)
+    ag.fin(rid, "draft")
     sem = ag.w("build/sem.md")
     code, out = sh(f"python3 scripts/status.py batch {S} pilot --state drafts_written --sem-table {sem} --sem-findings 0")
     check("one page per run: the batch review waits until every page has its own draft", code != 0 and "loc-springfield has no draft" in out, out)
@@ -1849,7 +1917,7 @@ def t_pilot_order():
     code, out = sh(f"python3 scripts/status.py require {S} batch:pilot:briefs_ready")
     check("pilot order: a location-kind pilot is not held behind the service batches", code == 0, out)
     n = nxt(S)
-    check("pilot order: /next starts with the pilot", n["command"] == f"/build {S} evidence pilot", n)
+    check("pilot order: /next starts with the pilot", n["command"] == f"/build {S} brief pilot", n)
     st = status(S)
     pilot = next(b for b in st["build"]["batches"] if b["id"] == "pilot")
     pilot.update({"state": "written_back", "briefs": {"state": "approved", "files": {}},
@@ -1857,10 +1925,17 @@ def t_pilot_order():
     st["build"]["pilot_corrections_applied"] = {"at": "2026-10-09", "note": "test"}
     (ag.c / "status.json").write_text(json.dumps(st))
     code, out = sh(f"python3 scripts/status.py require {S} batch:l1:briefs_ready")
-    check("pilot order: a location batch still waits for the service batch", code != 0 and "batch s1" in out, out)
+    check("pilot order: a location batch still waits for the service batch's drafts approval", code != 0 and "batch s1" in out, out)
     n = nxt(S)
     check("pilot order: /next skips the waiting location batch and runs the service batch",
-          n["command"] == f"/build {S} evidence s1", n)
+          n["command"] == f"/build {S} brief s1", n)
+    st = status(S)
+    s1 = next(b for b in st["build"]["batches"] if b["id"] == "s1")
+    s1.update({"state": "drafted", "briefs": {"state": "approved", "files": {}}, "drafts": {"state": "approved", "files": {}}})
+    (ag.c / "status.json").write_text(json.dumps(st))
+    code, out = sh(f"python3 scripts/status.py require {S} batch:l1:briefs_ready")
+    check("CM-055: the location batch starts once the service drafts are in WordPress — not after they are published",
+          code == 0, out)
 
 
 def t_migration():
@@ -1961,9 +2036,170 @@ def t_guard_rewrite():
     check("R8: a search in a folder outside v3 is blocked", g(D, {"query": "parentId = 'someOtherFolder'"}))
 
 
+def t_answer_once():
+    """Decide once (Paul, 2026-10-09): an answer lands on the question it answers, and is never asked again."""
+    S = "ao-co"
+    sh(f'python3 scripts/status.py init {S} --name "Ao Co" --domain ao.example --type full --industry roofing')
+    ag = Agent(S); ag.fin(ag.start("new-client"), "set up")
+    rid = ag.start("discovery", "discovery")
+    sh(f'python3 scripts/run.py decision {S} {rid} --ask synthetic_roofing_offered --who "Client (via Paul)" '
+       '--text "Synthetic roofing offered?"')
+    code, out = sh(f'python3 scripts/run.py decision {S} {rid} --settle synthetic_roofing --text "Paul: yes, offered"')
+    check("decide once: an answer under a different key is refused while the question it answers stays open",
+          code == 4 and "synthetic_roofing_offered" in out and "--closes" in out, out)
+    code, out = sh(f'python3 scripts/run.py decision {S} {rid} --settle synthetic_roofing --closes synthetic_roofing_offered '
+                   '--text "Paul: yes, offered"')
+    check("decide once: --closes records the answer against the open question", code == 0, out)
+    for s_ in ("S01", "S02", "S03"):
+        ag.step(rid, s_)
+    ag.mark("entity_record", ag.w("discovery/Ao Co - Discovery Record - REVIEW.md")); ag.fin(rid, "discovery")
+    reg = (ag.c / "decisions-settled.md").read_text()
+    stx = (ag.c / "STATUS.md").read_text()
+    check("decide once: the register shows the question answered, and STATUS no longer waits on it",
+          "## Answered" in reg and "answered by **synthetic_roofing**" in reg and "Synthetic roofing offered?" not in stx, reg)
+    new_session()
+    rid = ag.start("crawl")
+    code, out = sh(f'python3 scripts/run.py decision {S} {rid} --ask synthetic_roofing_offered --who "Client (via Paul)" '
+                   '--text "Do you offer synthetic roofing?"')
+    check("decide once: a new run cannot ask the answered question again", code == 4 and "answered" in out, out)
+    code, out = sh(f'python3 scripts/run.py decision {S} {rid} --ask synthetic_roofing_scope --who "Client (via Paul)" '
+                   '--text "Which synthetic roofing do you install?"')
+    check("decide once: a related question is refused unless it says what is new", code == 4 and "same decision" in out, out)
+    code, out = sh(f'python3 scripts/run.py decision {S} {rid} --ask synthetic_roofing_scope --who "Client (via Paul)" '
+                   '--distinct "the brands, not whether it is offered" --text "Which synthetic roofing brands do you install?"')
+    check("decide once: a genuinely new question goes through with its reason logged", code == 0, out)
+    ag.step(rid, "S05"); ag.fin(rid, "crawl")
+
+
+REVIEWS_CSV = """review_id,date,rating,text,owner_replied
+r1,2026-08-15,5,"Our roof repair was handled by Pat. They replaced the cracked flashing and the vents. For the roof repair they took photos of every step and explained the process. The whole job took one day.",yes
+r2,2026-07-02,5,"Great crew, very tidy.",no
+"""
+PAGE_TEXT_CSV = """url,status,h1,word_count,truncated,text
+https://test.example/springfield/,200,Springfield,40,no,"Many Springfield homes are older homes with original decking. Call us today."
+"""
+
+
+def t_research_before_asking():
+    """CM-056: every source on disk is searched before a fact becomes a question; each hit is cited."""
+    S = "rb-co"
+    gaps = {"svc-roof-repair": {"service_scope", "service_process", "timeframe", "pricing"},
+            "loc-springfield": {"neighborhoods", "local_context", "things_to_do"}}
+    ag = build_ready(S, gaps)
+    ag.w("data/reviews/reviews.csv", REVIEWS_CSV)
+    ag.w("data/crawl/page-text.csv", PAGE_TEXT_CSV)
+    ag.do(f"/build {S} brief pilot")
+    st = status(S)
+    grid = (SB / st["pages"]["svc-roof-repair"]["evidence"]["grid"]).read_text()
+    row = next((l for l in grid.splitlines() if l.startswith("| What the service includes")), "")
+    check("research: a fact a review answers is Known, cited to the review (file, row, date), not Unknown",
+          "**Known**" in row and "Google review 2026-08-15 (data/reviews/reviews.csv row 2)" in row and "attributed" in row, row)
+    check("research: process and timeframe found in the same review are Known too",
+          all("**Known**" in l for l in grid.splitlines() if l.startswith(("| How the service is delivered", "| Typical job duration"))), grid)
+    prow = next((l for l in grid.splitlines() if l.startswith("| Price range")), "")
+    check("research: a fact no source has is 'searched, not found', with the sources listed",
+          "**Unknown**" in prow and "searched, not found" in prow and "Sources searched before asking" in grid
+          and "data/reviews/reviews.csv" in grid and "Not on disk:" in grid, grid[-700:])
+    check("research: the review-backed page is not blocked (no question needed)", st["pages"]["svc-roof-repair"]["evidence"]["result"] != "block",
+          st["pages"]["svc-roof-repair"]["evidence"])
+    check("research: the page with facts nowhere on disk is blocked", st["pages"]["loc-springfield"]["evidence"]["result"] == "block",
+          st["pages"]["loc-springfield"]["evidence"])
+    ag.do(f"/interview {S} facts pilot")
+    fi = status(S)["build"]["batches"][0]["facts_interview"]
+    pack = (SB / fi["file"]).read_text()
+    asked = pack.split("<!--")[0]
+    check("research: no question is generated for a fact present in a review",
+          "What the service includes" not in asked and "How the service is delivered" not in asked
+          and "Typical job duration" not in asked, asked)
+    check("research: a fact found only on the client's own site is a yes/no, quoting where it was found",
+          "Your website says" in asked and "older homes" in asked and "Still true?" in asked, asked)
+    check("research: a fact found nowhere is asked, and the pack lists what was searched first",
+          "6-12 real neighborhoods" in asked and "searched first:" in pack and "key fact:loc-springfield:neighborhoods" in pack, pack)
+    lm = lambda: (ag.c / "log.md").read_text()
+    check("decide once: every facts question is asked once, under its key", "- OPEN fact:loc-springfield:neighborhoods" in lm())
+    # a second pack in a new run does not ask it again
+    new_session()
+    rid = ag.start("build", "evidence", batch="pilot")
+    sh(f"python3 scripts/evidence.py run {S} --run {rid} --batch pilot"); ag.fin(rid, "evidence again")
+    ag.do(f"/interview {S} facts pilot")
+    pack2 = (SB / status(S)["build"]["batches"][0]["facts_interview"]["file"]).read_text()
+    check("decide once: a later facts pack does not re-ask a question already asked",
+          lm().count("- OPEN fact:loc-springfield:neighborhoods") == 1 and "6-12 real neighborhoods" not in pack2.split("<!--")[0]
+          and "Already asked, not repeated" in pack2, pack2[:500])
+    # the owner answers once; a new run reads the settled answer, never asks it again
+    new_session()
+    rid = ag.start("interview", "facts-answers", batch="pilot")
+    code, out = sh(f'python3 scripts/run.py decision {S} {rid} --settle fact:loc-springfield:neighborhoods --by "Client (via Paul)" '
+                   '--text "Rountree, Phelps Grove, Galloway, Rountree Hills, Southern Hills, Seminole"')
+    check("decide once: the owner's answer is settled under the question's key", code == 0, out)
+    sh(f"python3 scripts/evidence.py run {S} --run {rid} --batch pilot"); ag.fin(rid, "facts answers")
+    g2 = (SB / status(S)["pages"]["loc-springfield"]["evidence"]["grid"]).read_text()
+    nrow = next((l for l in g2.splitlines() if l.startswith("| 6-12 real neighborhoods")), "")
+    check("decide once: the next run reads the settled answer as Known (cited), so it is never a gap again",
+          "**Known**" in nrow and "decisions-settled.md fact:loc-springfield:neighborhoods" in nrow, nrow)
+
+
+def t_url_rule():
+    """BB-207/208 (Paul, 2026-10-09): no service or location URL under /service/, /services/, /service-area/."""
+    S = "ur-co"
+    sh(f'python3 scripts/status.py init {S} --name "Ur Co" --domain test.example --type full --industry roofing --route A')
+    ag = Agent(S); ag.fin(ag.start("new-client"), "set up")
+    st = status(S)
+    for g in ("entity_approved", "proof_sheet_approved", "audit_approved", "brand_guide_approved"):
+        st["gates"][g] = {"state": "approved", "files": {}}
+    st["imported_conditions"] = {"proof_sheet_returned": "test"}
+    st["audit_steps"] = {f"S{i:02d}": {"outcome": "done"} for i in range(1, 22)}
+    (ag.c / "status.json").write_text(json.dumps(st))
+    for bad in ("https://test.example/service-area/nixa/", "https://test.example/services/roof-repair/",
+                "https://test.example/service/roof-repair/", "https://test.example/roofing/roof-repair/"):
+        typ = "location" if "nixa" in bad else "service"
+        ag.plan = {"pages": [{"id": "svc-a", "type": "service", "name": "a", "url": "https://test.example/roof-repair/"},
+                             {"id": "loc-a", "type": "location", "name": "b", "url": "https://test.example/springfield/"},
+                             {"id": "x", "type": typ, "name": "x", "url": bad}],
+                   "batches": [{"id": "pilot", "kind": "service", "label": "P", "pages": ["svc-a", "loc-a"]},
+                               {"id": "s1", "kind": typ, "label": "S", "pages": ["x"]}]}
+        rid = ag.start("build", "plan")
+        pj = ag.w("build/site-plan.json", json.dumps(ag.plan)); pm = ag.w("build/Ur Co - Site Plan - REVIEW.md")
+        code, out = sh(f"python3 scripts/status.py plan {S} --file {shlex.quote(pm)} --json {pj}")
+        check(f"URL rule: a site plan with {bad.split('test.example')[1]} is refused", code != 0 and "URL rule" in out, out)
+        sh(f'python3 scripts/run.py abort {S} {rid} --reason "test"')
+    ag.plan["pages"][2]["url"] = "https://test.example/nixa/"
+    ag.plan["pages"][2]["type"] = "location"
+    ag.plan["batches"][1]["kind"] = "location"
+    rid = ag.start("build", "plan")
+    pj = ag.w("build/site-plan.json", json.dumps(ag.plan)); pm = ag.w("build/Ur Co - Site Plan - REVIEW.md")
+    code, out = sh(f"python3 scripts/status.py plan {S} --file {shlex.quote(pm)} --json {pj}")
+    check("URL rule: root-level service and location URLs are accepted", code == 0, out)
+    ag.fin(rid, "site plan")
+
+
+def t_batch_of_five():
+    """CM-054: a batch of 5 gets its 5 briefs in one run and one approval; drafts stay one page per run."""
+    pages = [("svc-roof-repair", "service", {"service_variant": "Roof Repair"}), ("loc-springfield", "location", {"city": "Springfield"})]
+    pages += [(f"svc-{n}", "service", {"service_variant": n.title()}) for n in ("gutters", "siding", "skylights", "chimneys", "decks")]
+    plan = {"pages": [{"id": i, "type": t, "name": i, "url": f"https://test.example/{i}/", **x} for i, t, x in pages],
+            "batches": [{"id": "pilot", "kind": "service", "label": "Pilot", "pages": ["svc-roof-repair", "loc-springfield"]},
+                        {"id": "s1", "kind": "service", "label": "Exterior", "pages": [p[0] for p in pages[2:]]}]}
+
+    def setup(a):
+        a.plan = plan
+    log, decisions, runs, ag = walkthrough("wt-five", setup=setup, max_posts=0)
+    check("five: the walkthrough completes", log[-1] == "DONE" and not ag.errors, log[-4:] + ag.errors[:2])
+    import re as _re
+    lm = (SB / "clients/wt-five/log.md").read_text()
+    b5 = [(r, p) for r, p in _re.findall(r"^- BRIEF \S+ · run (\S+) · (\S+) ·", lm, _re.M) if p in plan["batches"][1]["pages"]]
+    check("five: a batch of 5 produces 5 briefs in one run", len(b5) == 5 and len({r for r, _ in b5}) == 1, b5)
+    check("five: one brief run and one briefs approval for the batch",
+          sum(l.startswith("run") and l.endswith("/build wt-five brief s1") for l in log) == 1
+          and sum(l.startswith("decision") and "batch:s1:briefs" in l for l in log) == 1, [l for l in log if " s1" in l][:8])
+    d5 = [r for r, p in _re.findall(r"^- DRAFT \S+ · run (\S+) · (\S+) ·", lm, _re.M) if p in plan["batches"][1]["pages"]]
+    check("five: drafts stay one page per run (CM-043)", len(d5) == 5 and len(set(d5)) == 5, d5)
+
+
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_section_approval, t_reviews_parse, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view,
-             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_pilot_order, t_migration, t_sessions, t_guard_rewrite]
+             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_pilot_order, t_migration, t_sessions, t_guard_rewrite,
+             t_answer_once, t_research_before_asking, t_url_rule, t_batch_of_five]
 
 
 def extra_scenarios():

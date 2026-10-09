@@ -121,6 +121,11 @@ def settled_register(slug):
         out += ["", "## Open questions — asked once, waiting for an answer", ""]
         out += [f"- **{k}** (asked {e.get('asked_at', '')[:10]}, waiting on {e.get('who')}): {e.get('question')}"
                 for k, e in opn]
+    ans = [(k, e) for k, e in ents.items() if e.get("state") == "answered"]
+    if ans:
+        out += ["", "## Answered — never asked again", ""]
+        out += [f"- **{k}** (asked {e.get('asked_at', '')[:10]}): {e.get('question')} — answered by **{e.get('answered_by')}** "
+                f"({e.get('answered_at', '')[:10]})" for k, e in ans]
     reo = [(k, e) for k, e in ents.items() if e.get("state") == "reopened"]
     if reo:
         out += ["", "## Reopened — waiting for Paul", ""]

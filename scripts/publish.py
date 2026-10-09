@@ -5,9 +5,12 @@ The system NEVER publishes. It generates drafts one-way from the approved SD/LD/
 stays the source; never edit the draft by hand), and hands publishing to Jonie.
 
     publish.py wheel  <slug>                          plan the link wheel from the site plan → build/link-wheel.json
-    publish.py drafts <slug> --run R --batch B        one WordPress draft per page in the batch + the publish handoff
-    publish.py drafts <slug> --run R --page P         the same for one approved page (a blog post: a WordPress post)
-    publish.py blocks <file>                          print the block markup a file turns into (for checking)
+    publish.py drafts  <slug> --run R --batch B       one WordPress draft per page in the batch — no handoff yet (CM-055)
+    publish.py drafts  <slug> --run R --page P        one approved blog post as a WordPress post draft + its publish handoff
+    publish.py handoff <slug> --run R                 once every batch is drafted: ONE living publish handoff to Jonie for
+                                                      every service, location, hub, home and about page (CM-055)
+    publish.py check   <file>                         placeholders without a [NEED: ...] note (exit 1 if any)
+    publish.py blocks  <file>                         print the block markup a file turns into (for checking)
     publish.py pending <slug> --run R                 link-table rows that can now be filled on published pages → handoff
 
 Approved page file format (the writer's output; methodology/specs/README.md):
@@ -30,6 +33,16 @@ the site's pilot; robots and canonical stay at SEOPress defaults; content as Gut
 blocks; link-table placeholders filled from the wheel. Rows pointing at pages not yet published
 are left out (unless config "wheel_link_unpublished" is true) and handed to Jonie later as a
 link-table update once their target is live (publish.py pending).
+
+Publishing as a whole (Paul, 2026-10-09; CM-055): service, location, hub, homepage and about pages are published
+together. A batch's ship run only creates its WordPress drafts — publishing never holds up the next batch. Because
+every planned page goes live at once, a batch draft's link tables carry every planned page that has a URL (nothing is
+held back). When every batch is drafted, `publish.py handoff` writes one living handoff (every page to publish with its
+paired redirects, plus the technical blockers already with Jonie, for reference); each `/build published` updates the
+same document's status column as Jonie publishes.
+
+Placeholders (CM-016): a draft is refused if it carries a placeholder — a link to "#", "TBD", "till present", an empty
+or bracketed href, or TBD / TODO / [Insert …] text — on a line without a visible `[NEED: …]` note.
 """
 import argparse
 import html
@@ -37,6 +50,7 @@ import json
 import re
 import sys
 import urllib.parse
+from pathlib import Path
 
 import run as R
 import status as S
@@ -76,6 +90,29 @@ def parse(path):
 def slug_of(url):
     path = urllib.parse.urlparse(url).path.strip("/")
     return path.split("/")[-1] if path else ""
+
+
+# ------------------------------------------------------------------ placeholders (CM-016)
+PH_HREF = re.compile(r"^(|#|\.\.\.|…|x+|tb[ad]|todo|link|url|placeholder|till present|n/?a)$", re.I)
+PH_HREF_PART = re.compile(r"tbd|todo|placeholder|till present|insert|^[\[<{]", re.I)
+PH_TEXT = re.compile(r"\b(TBD|TODO|TBA|XXX)\b|till present|lorem ipsum|\{\{|\[(insert|placeholder|add|link to|url)\b[^\]]*\]", re.I)
+
+
+def placeholder_problems(text):
+    """Every placeholder needs a visible [NEED: …] note on the same line (CM-016; Paul, 2026-10-09). [] when clean."""
+    out = []
+    for n, line in enumerate(text.splitlines(), 1):
+        if "[NEED:" in line or PLACEHOLDER.match(line.strip()):
+            continue
+        hrefs = [m.group(1).strip() for m in re.finditer(r"\[[^\]]*\]\(([^)]*)\)", line)]
+        hrefs += [m.group(1).strip() for m in re.finditer(r"href=[\"']([^\"']*)[\"']", line, re.I)]
+        bad = [h for h in hrefs if PH_HREF.match(h) or PH_HREF_PART.search(h)]
+        text_hit = PH_TEXT.search(re.sub(r"\[[^\]]*\]\([^)]*\)", "", line))
+        if bad:
+            out.append(f"line {n}: placeholder link {', '.join(repr(h) for h in bad)} — add [NEED: <what the link needs>]")
+        elif text_hit:
+            out.append(f"line {n}: placeholder {text_hit.group(0)!r} — add [NEED: <exactly what is missing>]")
+    return out
 
 
 # ------------------------------------------------------------------ markdown → blocks
@@ -178,8 +215,9 @@ def live_or_batch(st, target, batch_pages):
         or (p.get("approval") or {}).get("baseline")
 
 
-def tables_for(st, wheel, pid, batch_pages):
-    allow_all = config().get("wheel_link_unpublished", False)
+def tables_for(st, wheel, pid, batch_pages, together=False):
+    """together (CM-055): every planned page goes live in the same publish, so every row with a URL is placed."""
+    allow_all = together or config().get("wheel_link_unpublished", False)
     tables, pending = {}, []
     for key, rows in (wheel.get(pid) or {}).items():
         keep = []
@@ -233,17 +271,21 @@ def cmd_drafts(a):
             die(f"REFUSED — {why}", 4)
         wheel = load_wheel(a.slug)
     files = [f for f in (b.get("files") or {}).get("drafts", []) if "Semantic Review" not in f]
-    by_page = {}
+    by_page, bad = {}, []
     for f in files:
         m = parse(f)
         by_page[m["page_id"]] = (f, m)
+        bad += [f"{Path(f).name}: {x}" for x in placeholder_problems((ROOT / f).read_text(encoding="utf-8"))]
+        bad += S.slug_problems(m["url"], (st["pages"].get(m["page_id"]) or {}).get("type"))
+    if bad:
+        die("REFUSED — nothing was sent to WordPress:\n  - " + "\n  - ".join(bad), 4)
     missing = [p for p in b["pages"] if p not in by_page]
     if missing:
         die(f"approved files for pages {', '.join(missing)} not found in the batch's drafts approval")
     rows_pub, rows_redirect, pend_all = [], [], {}
     for pid in b["pages"]:
         f, m = by_page[pid]
-        tables, pending = tables_for(st, wheel, pid, b["pages"])
+        tables, pending = tables_for(st, wheel, pid, b["pages"], together=not a.page)
         content = to_blocks(m["body"], tables)
         slug_name = slug_of(m["url"])
         existing = None
@@ -263,11 +305,12 @@ def cmd_drafts(a):
         page = st["pages"].setdefault(pid, {})
         placed = {TABLE_KEYS.get(x.group(1).lower().strip(), x.group(1).lower())
                   for x in (PLACEHOLDER.match(l.strip()) for l in m["body"].split("\n")) if x}
-        page.update({"wp_id": d["id"], "wp_type": ptype, "url": m["url"], "file": f, "state": "drafted",
-                     "links_placed": [u for k, rows in tables.items() if k in placed for _, u in rows]})
-        pending = [x for x in pending if x[0] in placed]
         how = (f"Replace the content of the live page at {m['url']} with this draft's blocks (keep that URL), "
                "then trash the draft" if in_place else f"Publish at exactly {m['url']}")
+        page.update({"wp_id": d["id"], "wp_type": ptype, "url": m["url"], "file": f, "state": "drafted",
+                     "links_placed": [u for k, rows in tables.items() if k in placed for _, u in rows],
+                     "publish": {"draft_link": d.get("link", ""), "how": how, "replaces": m["replaces"]}})
+        pending = [x for x in pending if x[0] in placed]
         rows_pub.append({"url": d.get("link", ""), "field": "publish", "old": "(draft)", "new": m["url"],
                          "reason": how, "decision_map_ref": pid})
         for old in m["replaces"]:
@@ -275,6 +318,13 @@ def cmd_drafts(a):
                                   "reason": f"replaced by {pid} — do it together with the publish", "decision_map_ref": pid})
         if pending:
             pend_all[pid] = pending
+    if a.batch:   # CM-055: drafts only — the one living publish handoff comes once every batch is drafted
+        S.set_batch_state(st, b, "drafted")
+        st.setdefault("wheel_pending", {}).update({k: v for k, v in pend_all.items()})
+        S.save(a.slug, st)
+        print(f"{len(rows_pub)} drafts created for batch {a.batch} · nothing handed to Jonie yet — every service and "
+              "location page is published together from one living handoff once all batches are drafted (CM-055)")
+        return
     S.save(a.slug, st)
     tmp = client_dir(a.slug) / "handoffs" / f"_publish-{a.batch or a.page}.csv"
     tmp.parent.mkdir(parents=True, exist_ok=True)
@@ -296,6 +346,65 @@ def cmd_drafts(a):
     S.save(a.slug, st)
     print(f"{len(rows_pub)} drafts created · {len(rows_redirect)} paired redirect(s) · "
           f"{sum(len(v) for v in pend_all.values())} link row(s) waiting for their target to go live")
+
+
+def cmd_handoff(a):
+    """CM-055: one living publish handoff for every drafted page, once every batch is drafted."""
+    import csv
+    import handoff
+    R.open_run(a.slug, a.run)
+    st = S.load(a.slug)
+    ok, why = S.condition_met(st, "pages_drafted")
+    if not ok:
+        die(f"REFUSED — not every page is a WordPress draft yet: {why}. Pages are published together (CM-055).", 4)
+    todo = [b for b in S.batches(st) if b.get("state") == "drafted"]
+    if not todo:
+        die("nothing to hand off — every drafted batch is already in the living publish handoff "
+            f"({(st.get('publish_handoff') or {}).get('id')})")
+    rows = []
+    for b in todo:
+        for pid in b["pages"]:
+            p = st["pages"][pid]
+            pub = p.get("publish") or {}
+            rows.append({"url": pub.get("draft_link", ""), "field": "publish", "old": "(draft)", "new": p["url"],
+                         "reason": pub.get("how") or f"Publish at exactly {p['url']}", "decision_map_ref": pid})
+            rows += [{"url": old, "field": "301", "old": old, "new": p["url"],
+                      "reason": f"replaced by {pid} — do it together with the publish", "decision_map_ref": pid}
+                     for old in pub.get("replaces") or []]
+    d = client_dir(a.slug) / "handoffs"
+    pre = ["## Technical blockers (already sent — listed here so this is the one place to look)", ""]
+    for hid in st.get("blocker_handoffs") or []:
+        f = d / f"{hid}.csv"
+        br = list(csv.DictReader(open(f, newline="", encoding="utf-8-sig"))) if f.exists() else []
+        left = [r for r in br if r.get("status") not in ("done", "verified")]
+        pre.append(f"- **{hid}** — {len(br) - len(left)} of {len(br)} done" + (": still open " + ", ".join(
+            f"{r['ref']} ({r['field']} {r['url']})" for r in left[:8]) if left else ""))
+    if len(pre) == 2:
+        pre.append("- none" if st.get("blockers_none") else "- the blocker checklist has not been handed over yet")
+    pre += ["", "## Publish — every page together",
+            "", "Publish **all** rows in one go (they link to each other), each with the redirects listed under it. "
+            "This document is updated each time you return the worksheet: the Status column shows what is done.", ""]
+    tmp, prf = d / "_publish-all.csv", d / "_publish-all-preface.md"
+    with open(tmp, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=["url", "field", "old", "new", "reason", "decision_map_ref"])
+        w.writeheader(); w.writerows(rows)
+    prf.write_text("\n".join(pre) + "\n")
+    sys.argv = ["handoff.py", "create", a.slug, "--run", a.run, "--kind", "publish", "--items", str(tmp.relative_to(ROOT)),
+                "--preface", str(prf.relative_to(ROOT)),
+                "--title", f"{st['client']['name']} - Publish Handoff - all pages (living document)"]
+    handoff.main()
+    tmp.unlink(); prf.unlink()
+    hid = sorted(d.glob("H-*-publish.csv"), key=lambda x: x.stat().st_mtime)[-1].stem
+    st = S.load(a.slug)
+    for b in S.batches(st):
+        if b.get("state") == "drafted":
+            S.set_batch_state(st, b, "handed_off")
+            b["handoff"] = hid
+    st["publish_handoff"] = {"id": hid, "at": now(), "run": a.run,
+                             "batches": [b["id"] for b in todo]}
+    S.save(a.slug, st)
+    print(f"{hid}: one living publish handoff for {sum(len(b['pages']) for b in todo)} page(s) in "
+          f"{len(todo)} batch(es) → Jonie publishes them together")
 
 
 def cmd_pending(a):
@@ -339,6 +448,8 @@ def main():
     s = sub.add_parser("drafts"); s.add_argument("slug"); s.add_argument("--run", required=True)
     g = s.add_mutually_exclusive_group(required=True); g.add_argument("--batch"); g.add_argument("--page")
     s = sub.add_parser("blocks"); s.add_argument("file")
+    s = sub.add_parser("check"); s.add_argument("file")
+    s = sub.add_parser("handoff"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s = sub.add_parser("pending"); s.add_argument("slug"); s.add_argument("--run", required=True)
     a = ap.parse_args()
     if a.cmd == "wheel":
@@ -347,6 +458,12 @@ def main():
         cmd_drafts(a)
     elif a.cmd == "pending":
         cmd_pending(a)
+    elif a.cmd == "handoff":
+        cmd_handoff(a)
+    elif a.cmd == "check":
+        bad = placeholder_problems((ROOT / a.file).read_text(encoding="utf-8"))
+        print("\n".join(bad) or "no placeholders without a [NEED: ...] note")
+        sys.exit(1 if bad else 0)
     else:
         m = parse(a.file)
         print(to_blocks(m["body"]))

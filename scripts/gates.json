@@ -116,6 +116,14 @@
       "plain": "an outcome for every audit step",
       "producer": "/discovery {slug} audit"
     },
+    "pages_drafted": {
+      "label": "Every page in the site plan is a WordPress draft — ready for the one living publish handoff (CM-055)",
+      "plain": "every page drafted in WordPress",
+      "requires": [
+        "discovery_signed_off"
+      ],
+      "producer": "/build {slug} ship"
+    },
     "pages_built": {
       "label": "Every page in the site plan is built, verified and written back",
       "plain": "every page built and written back",
@@ -527,23 +535,23 @@
       "gates": [
         "discovery_signed_off",
         "batch:{batch}:briefs_ready",
-        "evidence:{page}",
         "page_specs_approved"
       ],
       "produces": [
-        "page_stage:{page}:brief"
+        "evidence_batch:{batch}",
+        "batch_briefs:{batch}"
       ],
       "reads": [
-        "the approved site plan (this page's row and its siblings)",
+        "the approved site plan (the batch's pages and their siblings)",
         "clients/<slug>/brand-guide.md",
-        "clients/<slug>/build/evidence/<page>.grid.md",
-        "methodology/specs/<type>.md for this page",
+        "clients/<slug>/build/evidence/<page>.grid.md for each page (written by this run's evidence gate)",
+        "methodology/specs/<type>.md for each page type in the batch",
         "clients/<slug>/data/reviews/customer-language.md",
         "clients/<slug>/data/paa/paa-routing.md",
         "clients/<slug>/data/fanout/fanout-routing.md",
-        "the briefs already written in this batch and the pages approved in earlier batches (sibling context)",
-        "the audit findings for this page",
-        "methodology/rulings.md (CM-041, CM-043)",
+        "the pages approved in earlier batches (sibling context)",
+        "the audit findings for these pages",
+        "methodology/rulings.md (CM-041, CM-054, CM-056)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -820,7 +828,7 @@
         "wordpress_connected"
       ],
       "produces": [
-        "batch_state:{batch}:handed_off"
+        "batch_state:{batch}:drafted"
       ],
       "reads": [
         "the approved page files for the batch",
@@ -988,6 +996,21 @@
         "clients/<slug>/brand-guide.md",
         "clients/<slug>/decisions-settled.md"
       ]
+    },
+    "build:handoff": {
+      "gates": [
+        "discovery_signed_off",
+        "pages_drafted",
+        "wordpress_connected"
+      ],
+      "produces": [
+        "publish_handoff"
+      ],
+      "reads": [
+        "status.json (the drafted pages)",
+        "the technical blocker handoff(s)",
+        "clients/<slug>/decisions-settled.md"
+      ]
     }
   },
   "_modes_about": "CM-044. Every producing stage has a mode: review (the /next loop stops after the stage so Paul can look) or auto (the loop goes straight on). Default review. A stage can switch to auto only after it has passed the pilot ('pilot' below; none = always review), only by Paul with /approve <slug>|global mode:<stage>=auto, recorded in status.json and log.md. Decisions (/approve gates) are never stages here and can never be auto.",
@@ -1064,6 +1087,9 @@
         "pilot": null
       },
       "discovery:facts-direct": {
+        "pilot": null
+      },
+      "build:handoff": {
         "pilot": null
       }
     }
@@ -1159,6 +1185,7 @@
         "build:drafts",
         "build:apply-sem",
         "build:ship",
+        "build:handoff",
         "build:published",
         "interview:facts",
         "interview:facts-answers"

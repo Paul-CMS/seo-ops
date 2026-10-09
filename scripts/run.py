@@ -149,6 +149,14 @@ def _missing_one(slug, st, info, want):
         stale = [p for p in b.get("pages", []) if ((st["pages"].get(p) or {}).get("evidence") or {}).get("run") != info["id"]]
         if stale:
             miss.append(f"an evidence grid from this run for {', '.join(stale)} — evidence.py run <slug> --run <RUN_ID> --batch {b.get('id')}")
+    elif want.startswith("batch_briefs:"):   # CM-054: every page the gate cleared has a brief from this run
+        b = S.batch(st, want.split(":", 1)[1]) or {}
+        left = [p for p in b.get("pages", []) if S.evidence_ok(st, p)[0] and not S.page_stage(st, p, "brief")]
+        if left:
+            miss.append(f"a brief for {', '.join(left)} — status.py page-stage <slug> <page> --stage brief --file <f> --run <RUN_ID>")
+    elif want == "publish_handoff":
+        if (st.get("publish_handoff") or {}).get("run") != info["id"]:
+            miss.append("the living publish handoff — publish.py handoff <slug> --run <RUN_ID>")
     elif want.startswith("facts_pack:"):
         b = S.batch(st, want.split(":", 1)[1]) or {}
         if (b.get("facts_interview") or {}).get("run") != info["id"]:
@@ -207,6 +215,10 @@ def main():
     s.add_argument("--reopen", metavar="KEY", help="one reopen request for a settled decision; --text is the reason")
     s.add_argument("--ask", metavar="KEY", help="an open question, asked once; settling the same key closes it")
     s.add_argument("--who", default="Paul", help="with --ask: who the question waits on")
+    s.add_argument("--by", default="Paul", help="with --settle: who answered (Paul, or 'Client (via Paul)')")
+    s.add_argument("--closes", help="with --settle: the open question key(s) this answers, comma-separated")
+    s.add_argument("--leaves-open", help="with --settle: why a related open question still stands")
+    s.add_argument("--distinct", help="with --ask: why this is a new question, not a related settled/open one")
     s = sub.add_parser("change"); s.add_argument("slug"); s.add_argument("run_id")
     for k in ("kind", "url", "field", "result"):
         s.add_argument(f"--{k}", required=True)
@@ -291,7 +303,7 @@ def main():
         if a.settle and a.reopen:
             die("--settle or --reopen, not both.")
         if a.ask:
-            settled.ask(a.slug, a.run_id, a.ask, a.who, a.text)
+            settled.ask(a.slug, a.run_id, a.ask, a.who, a.text, distinct=a.distinct)
             print(f"open question '{a.ask}' logged (waiting on {a.who})")
             return
         if a.reopen:
@@ -299,8 +311,9 @@ def main():
             print(f"reopen request logged for '{a.reopen}' (counted as a process defect)")
             return
         if a.settle:
-            settled.settle(a.slug, a.run_id, a.settle, a.text)
-            print(f"settled: {a.settle}")
+            closes = [c.strip() for c in (a.closes or "").split(",") if c.strip()]
+            settled.settle(a.slug, a.run_id, a.settle, a.text, by=a.by, closes=closes, leaves_open=a.leaves_open)
+            print(f"settled: {a.settle}" + (f" · closed: {', '.join(closes)}" if closes else ""))
             return
         append(d / "log.md", f"- DECISION {now()[:16]} · run {a.run_id} · {redact(a.text)}"
                + (f" · affects {a.ids}" if a.ids else "") + "\n")

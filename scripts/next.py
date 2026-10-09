@@ -205,16 +205,17 @@ def approval_two(st, slug):
 
 
 def evidence_and_briefs(st, slug, b):
-    """CM-041 then CM-043: the evidence gate for the batch, then one brief per page in its own run.
-    A blocked page gets no brief: facts interview → owner's answers → gate re-runs, or Paul's waiver."""
+    """CM-054: one brief run for the batch — it runs the evidence gate per page (CM-041; research on disk first,
+    CM-056), then writes every cleared page's brief. A blocked page gets no brief: facts interview → owner's answers →
+    gate re-runs (then one more brief run for those pages), or Paul's waiver."""
     bid = b["id"]
     if any(not S.evidence_state(st, p)[0] for p in b["pages"]):
-        out("run", f"/build {slug} evidence {bid}", f"evidence gate for batch {bid} — the facts each page needs, "
-            "marked Known / Unknown / Unverified / Conflict")
+        out("run", f"/build {slug} brief {bid}", f"briefs for batch {bid} in one run: the evidence gate per page "
+            "(sources on disk searched first), then a brief for every page it clears")
     blocked = [p for p in b["pages"] if not S.evidence_ok(st, p)[0]]
-    for pid in b["pages"]:
-        if pid not in blocked and not S.page_stage(st, pid, "brief"):
-            out("run", f"/build {slug} brief {bid} {pid}", f"brief for {pid} (its own run)")
+    todo = [p for p in b["pages"] if p not in blocked and not S.page_stage(st, p, "brief")]
+    if todo:
+        out("run", f"/build {slug} brief {bid}", f"briefs for {', '.join(todo)} (one run for the batch)")
     if blocked:
         waive = " · ".join(f'/approve {slug} evidence:{p} --reason "<why you waive it>"' for p in blocked)
         fi = b.get("facts_interview") or {}
@@ -313,9 +314,10 @@ def _walk(slug, cont):
     if not S.check(st, "site_plan")[0]:
         out("decision", f"/approve {slug} site_plan --files {q([bp['site_plan']['file']])}",
             "the site plan is ready for your approval")
+    # CM-055: batches are drafted one after another and never wait on publishing; every page goes to Jonie together.
     for b in S.batches(st):
         bid, state = b["id"], b.get("state", "planned")
-        if state == "written_back":
+        if state in S.DRAFTED_OR_LATER:
             continue
         if state == "planned" and S.batch_order_blocks(st, bid):
             continue    # an earlier-kind batch (service before location) goes first — the same check as batch_ready
@@ -349,19 +351,27 @@ def _walk(slug, cont):
         if state in ("drafts_written", "sem_check_failed") and drafts.get("sem_ids") and not drafts.get("applied"):
             out("run", f"/build {slug} batch {bid} apply-sem",
                 f"apply {', '.join(drafts['sem_ids'])} to batch {bid} and re-run the E-checks on the changed sections")
-        if state in ("handed_off", "corrections_requested"):
-            condition_step(st, slug, "wordpress_connected")
-            h = b.get("handoff") or "the publish handoff"
-            out("wait", f"/build {slug} published {bid}",
-                f"waiting for Jonie to {'correct' if state == 'corrections_requested' else 'publish'} batch {bid} ({h}). "
-                "When the worksheet comes back, this checks every live page against its approved file, adds alt "
-                "text to the images and writes the batch back to the Brand Guide")
-        if state in ("published", "verified"):
-            out("run", f"/build {slug} published {bid}", f"finish checking batch {bid} and write it back")
         condition_step(st, slug, "wordpress_connected")
         out("run", f"/build {slug} ship {bid}",
-            f"generate WordPress drafts for batch {bid} from the approved files (link tables filled) and hand "
-            "publishing to Jonie")
+            f"WordPress drafts for batch {bid} from the approved files (link tables filled) — the next batch does not "
+            "wait for publishing; every page goes to Jonie together")
+    if S.batches(st) and S.condition_met(st, "pages_drafted")[0]:
+        if any(b.get("state") == "drafted" for b in S.batches(st)):
+            out("run", f"/build {slug} handoff", "every page is a WordPress draft: one living publish handoff to Jonie "
+                "for all of them (with their redirects and the open technical blockers), published together")
+        for b in S.batches(st):
+            bid, state = b["id"], b.get("state")
+            if state in ("published", "verified"):
+                out("run", f"/build {slug} published {bid}", f"finish checking batch {bid} and write it back")
+        for b in S.batches(st):
+            bid, state = b["id"], b.get("state")
+            if state in ("handed_off", "corrections_requested"):
+                condition_step(st, slug, "wordpress_connected")
+                h = b.get("handoff") or "the publish handoff"
+                out("wait", f"/build {slug} published {bid}",
+                    f"waiting for Jonie to {'correct' if state == 'corrections_requested' else 'publish'} the pages "
+                    f"({h}). When the worksheet comes back, this checks batch {bid}'s live pages against their approved "
+                    "files, adds alt text, writes the batch back to the Brand Guide and updates the living handoff")
     condition_step(st, slug, "pages_built")
 
     # ---- Finish and blog

@@ -12,6 +12,14 @@ own facts file (clients/<slug>/build/evidence/<page_id>.facts.json, written by t
 the proof sheet, Discovery Record and research — value, status, source per fact). The script does
 the marking and the scoring; nobody types a result.
 
+Decide once and research before asking (Paul, 2026-10-09; CM-056). A fact that is not Known there is then looked up:
+  1. an answer already settled under its facts key (`fact:<d|a>:<fact>` or `fact:<page>:<key>`, decisions-settled.md)
+     — never asked again;
+  2. every source on disk (scripts/sources.py: reviews, the client's site text, a GBP export, grid, rankings), each hit
+     cited (file, row, date, quote) and marked per evidence-requirements.json → found_marks.
+Each remaining gap says "searched, not found" with the sources listed. Only those become facts questions; a fact found
+only on the client's own site is a one-line yes/no. Every question is asked once (run.py --ask under its facts key).
+
 Result: pass · warn (the brief must carry an "Evidence gaps" section) · block (no brief until the
 facts interview fills the gaps and the gate re-runs, or Paul waives it with
 `/approve <slug> evidence:<page_id> --reason "..."`). Thresholds: evidence-requirements.json.
@@ -24,6 +32,8 @@ import re
 import sys
 
 import run as R
+import settled
+import sources
 import status as S
 from lib import ROOT, append, client_dir, die, now, read_json, sha12, today
 
@@ -88,13 +98,49 @@ def mark(rec):
     value = str(rec.get("value") or "").strip()
     status = str(rec.get("status") or "").strip().lower()
     source = str(rec.get("source") or "").strip()
+    # a status cell may carry a date or a note after the word ("Paul Approved 2026-10-06 · was: Submitted"): the
+    # leading status word is what counts
+    lead = next((k for k in KNOWN_STATES | {"disputed", "unknown", "submitted"} if status.startswith(k)), status)
+    status = lead
     if status == "disputed":
         return "Conflict"
+    if status.startswith("found — "):   # research before asking: the mark comes from found_marks (CM-056)
+        return "Known" if status.endswith("known") and source else "Unverified"
     if not value or status == "unknown" or value.startswith("[NEED"):
         return "Unknown"
     if status in KNOWN_STATES and source:
         return "Known"
     return "Unverified"   # Submitted, no status, or no source
+
+
+# ------------------------------------------------------------------ decide once + research before asking
+def fact_key(pid, src):
+    """The one key a fact is asked and answered under: shared Brand Guide facts once per client, page facts per page."""
+    kind, _, key = src.partition(":")
+    base = f"fact:{pid}:{key}" if kind == "page" else f"fact:{kind.lower()}:{key}"
+    return re.sub(r"[^a-z0-9_.:-]+", "_", base.lower()).strip("_")[:60]
+
+
+def settled_answer(ents, fk):
+    e = ents.get(fk) or {}
+    if e.get("state") != "settled":
+        return None
+    by = (e.get("by") or "").lower()
+    return {"value": e["text"], "status": "Client Confirmed" if "client" in by else "Paul Approved",
+            "source": f"answer {e['at'][:10]} ({e.get('by')}; decisions-settled.md {fk})", "via": "settled"}
+
+
+def research(slug, it, page, docs):
+    """(rec or None, searched) — a sourced value from the files on disk, or what was searched."""
+    res = sources.search(slug, it["key"], page, docs)
+    if not res["hits"]:
+        return None, res
+    marks = (requirements().get("found_marks") or {})
+    h = res["hits"][0]
+    more = f" (+{len(res['hits']) - 1} more)" if len(res["hits"]) > 1 else ""
+    status = "Found — " + marks.get(h["kind"], "Unverified")
+    note = " · state it attributed ('customers mention…'), CM-056" if h["kind"] == "review" else ""
+    return {"value": f"\"{h['quote']}\"{more}", "status": status, "source": h["label"] + note, "via": h["kind"]}, res
 
 
 # ------------------------------------------------------------------ scoring
@@ -131,14 +177,27 @@ def grid(slug, st, pid):
         die(f"no evidence requirements for page type {page.get('type')!r} (methodology/evidence-requirements.json)")
     bf = brand_facts(slug)
     pf, pf_path = page_facts(slug, pid)
+    ents = settled.entries(slug)
+    docs = None
     # CM-049: a keyword or variant the site plan flagged as carrying a claim makes that fact required
     items = items + [{"key": f"claim:{c.get('phrase', i)}", "label": f"Claim in '{c.get('phrase')}': {c.get('label')}",
                       "need": "required", "from": c["from"]} for i, c in enumerate(page.get("claims") or [])]
     rows = []
     for it in items:
         rec = lookup(it["from"], bf, pf)
-        rows.append({**it, "mark": mark(rec), "value": (rec or {}).get("value", ""),
-                     "source": (rec or {}).get("source", ""), "status": (rec or {}).get("status", "")})
+        fk = fact_key(pid, it["from"])
+        searched = None
+        if mark(rec) not in ("Known", "Conflict"):
+            ans = settled_answer(ents, fk)
+            if ans:
+                rec = ans
+            elif mark(rec) == "Unknown":
+                docs = sources.documents(slug) if docs is None else docs
+                found, searched = research(slug, it, page, docs)
+                rec = found or rec
+        rows.append({**it, "mark": mark(rec), "value": (rec or {}).get("value", ""), "fact_key": fk,
+                     "source": (rec or {}).get("source", ""), "status": (rec or {}).get("status", ""),
+                     "via": (rec or {}).get("via", ""), "searched": searched})
     result, counts, why = score(rows, reqs["thresholds"])
     return rows, result, counts, why
 
@@ -151,9 +210,21 @@ def render(st, pid, rows, result, counts, why):
            "_The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._", ""]
     out += [f"- {w}" for w in why] + ([""] if why else [])
     out += ["| Fact | Need | Mark | Value | Source |", "|---|---|---|---|---|"]
+    searched, missing = set(), set()
     for r in rows:
-        v = str(r["value"]).replace("|", "/")[:120]
-        out.append(f"| {r['label']} | {r['need']} | **{r['mark']}** | {v} | {str(r['source']).replace('|', '/')} |")
+        v = str(r["value"]).replace("|", "/")[:240]
+        src = str(r["source"]).replace("|", "/")
+        sr = r.get("searched")
+        if sr and sr.get("terms"):
+            searched |= set(sr["searched"]); missing |= set(sr["missing"])
+            if r["mark"] == "Unknown":
+                src = f"searched, not found ({len(sr['searched'])} source(s) on disk)"
+        elif sr is not None and not sr.get("terms") and r["mark"] == "Unknown":
+            src = "not searchable on disk — ask"
+        out.append(f"| {r['label']} | {r['need']} | **{r['mark']}** | {v} | {src} |")
+    if searched or missing:
+        out += ["", "**Sources searched before asking (CM-056):** " + (", ".join(sorted(searched)) or "none on disk"),
+                "", "**Not on disk:** " + (", ".join(sorted(missing)) or "—")]
     return "\n".join(out) + "\n"
 
 
@@ -180,6 +251,9 @@ def record(slug, run_id, pid):
 
 # ------------------------------------------------------------------ facts interview pack (CM-042)
 def question(r):
+    if r.get("via") == "site":
+        return (f"Your website says this about **{r['label']}**: {r['value']} ({r['source']}). Still true? yes / no — "
+                "correction", "Verify")
     if r["mark"] == "Conflict":
         return (f"We found different versions of **{r['label']}**: \"{r['value']}\" ({r['source'] or 'no source'}). "
                 "Which is right?", "Verify")
@@ -195,21 +269,28 @@ def facts_pack(slug, run_id, bid):
     blocked = [p for p in b["pages"] if S.evidence_state(st, p)[0] == "block"]
     if not blocked:
         die(f"batch {bid}: no page is blocked by the evidence gate — the facts interview runs only on a block (CM-042).")
-    seen, qs = {}, []
+    seen, qs, waiting = {}, [], {}
+    ents = settled.entries(slug)
     for pid in blocked:
         rows, *_ = grid(slug, st, pid)
         for r in sorted(rows, key=lambda r: (r["need"] != "required", r["mark"] != "Conflict")):
             if r["mark"] == "Known":
                 continue
-            k = r["from"] if not r["from"].startswith("page:") else f"{pid}:{r['from']}"
+            k = r["fact_key"]
+            if (ents.get(k) or {}).get("state") in ("open", "answered"):   # asked once already — never again
+                waiting.setdefault(k, ents[k])
+                continue
             if k in seen:
                 seen[k]["pages"].append(pid)
                 continue
             text, kind = question(r)
-            seen[k] = {"text": text, "kind": kind, "need": r["need"], "pages": [pid], "from": r["from"]}
+            seen[k] = {"text": text, "kind": kind, "need": r["need"], "pages": [pid], "from": r["from"], "key": k,
+                       "searched": r.get("searched")}
             qs.append(seen[k])
     cap = 15
     qs = qs[:cap]
+    for q in qs:   # asked once: the key is what the answer settles (run.py decision --settle <key>)
+        settled.ask(slug, run_id, q["key"], "Client (via Paul)", re.sub(r"\*\*", "", q["text"])[:300])
     name = st["client"]["name"]
     d = client_dir(slug) / "interviews" / "facts"
     d.mkdir(parents=True, exist_ok=True)
@@ -223,9 +304,14 @@ def facts_pack(slug, run_id, bid):
     lines += ["", "<!-- System notes (removed before sending):",
               f"- Facts interview (CM-042) for blocked page(s): {', '.join(blocked)} · evidence gate CM-041",
               "- Each question → the fact it fills:"]
-    lines += [f"  - Q{i}: {q['from']} ({q['need']}) → pages {', '.join(q['pages'])} · {q['kind']}" for i, q in enumerate(qs, 1)]
-    lines += ["- Answers go into Brand Guide Section D (status Client Confirmed, source 'Facts interview <date>') or the",
-              "  page facts file; then /interview <slug> facts-answers <batch> re-runs the gate.",
+    lines += [f"  - Q{i}: {q['from']} ({q['need']}) → pages {', '.join(q['pages'])} · {q['kind']} · key {q['key']}"
+              + (f" · searched first: {', '.join(q['searched']['searched']) or 'nothing on disk'}" if q.get("searched") else "")
+              for i, q in enumerate(qs, 1)]
+    if waiting:
+        lines += ["- Already asked, not repeated here: " + ", ".join(f"{k} ({e.get('asked_at', '')[:10]})" for k, e in waiting.items())]
+    lines += ["- Each answer is recorded once under its key: run.py decision <slug> <RUN_ID> --settle <key> --by",
+              "  \"Client (via Paul)\" --text \"<answer>\" (and into Brand Guide Section D or the page facts file); then",
+              "  /interview <slug> facts-answers <batch> re-runs the gate, which reads the settled answers.",
               "- Paul sends it. Nothing goes to the client automatically. -->", ""]
     f.write_text("\n".join(lines))
     rel = str(f.relative_to(ROOT))

@@ -33,7 +33,8 @@ Read `clients/<slug>/decisions-settled.md` first. Everything there is settled: a
 offer alternatives to it. New contradicting evidence → one `run.py decision <slug> <RUN_ID> --reopen <key> --text
 "<evidence>"` and carry on with the settled value. A question for Paul or the client is asked once:
 `run.py decision <slug> <RUN_ID> --ask <key> --who "Client (via Paul)" --text "<question>"`; when answered,
-`--settle <key>`. Missing-data choices (citations skipped, grid tool, Admin vs Editor login …) are settled once and
+`--settle <key>` with the **same key** — or, if the answer is recorded under another key, `--closes <open key>` (the
+script refuses a related answer that leaves the question open). Missing-data choices (citations skipped, grid tool, Admin vs Editor login …) are settled once and
 never repeated in later summaries.
 
 ## The line that matters most

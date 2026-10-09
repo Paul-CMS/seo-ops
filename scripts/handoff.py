@@ -2,6 +2,7 @@
 """handoff.py — VA handoffs: work the system prepares but a person carries out.
 
     handoff.py create <slug> --run R --kind K --items items.csv [--title T] [--to NAME --owner-reason T] [--blockers]
+                      [--preface FILE]   Markdown placed above the table (the living publish handoff, CM-055)
                       --blockers: a technical blocker handoff — "blockers cleared" is met when every row is done and
                       /verify passed it (R3)
     handoff.py ingest <slug> --run R --handoff H-ID --returned returned.csv
@@ -19,7 +20,8 @@ items.csv columns: url, field, old, new, reason, decision_map_ref   (slug rows m
 
 Each handoff becomes clients/<slug>/handoffs/<id>.md (instructions) + <id>.csv (the
 worksheet the VA returns: status done | blocked | deviated, note). Every item is logged
-in the safety log. /verify checks each item after the VA marks it done.
+in the safety log. /verify checks each item after the VA marks it done. The .md carries a Status
+column; each ingest rewrites that part (from "**Progress:**" down), so one document stays current.
 """
 import argparse
 import csv
@@ -54,6 +56,17 @@ def write_csv(p, rows):
         w.writeheader(); w.writerows(rows)
 
 
+def table(rows):
+    """The part of the .md an ingest rewrites: progress line + the table with each row's status."""
+    done = sum(r.get("status") in ("done", "verified") for r in rows)
+    out = [f"**Progress:** {done} of {len(rows)} row(s) done (updated {today()})", "",
+           "| Ref | URL | Field | Now | Change to | Why | Decision Map | Status |", "|---|---|---|---|---|---|---|---|"]
+    out += [f"| {r['ref']} | {r['url']} | {r['field']} | {r['old']} | {r['new']} | {r['reason']} | "
+            f"{r['decision_map_ref']} | {r.get('status') or 'issued'}{(' — ' + r['note']) if r.get('note') else ''} |"
+            for r in rows]
+    return out
+
+
 def full_url(v, domain, row, col):
     v = (v or "").strip()
     if re.match(r"^https?://", v):
@@ -72,6 +85,7 @@ def main():
     s.add_argument("--owner-reason")
     s.add_argument("--items", required=True); s.add_argument("--title")
     s.add_argument("--blockers", action="store_true", help="a technical blocker handoff (blockers_cleared waits on it)")
+    s.add_argument("--preface", help="Markdown file placed above the table (the living publish handoff)")
     s = sub.add_parser("ingest"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s.add_argument("--handoff", required=True); s.add_argument("--returned", required=True)
     s = sub.add_parser("list"); s.add_argument("slug"); s.add_argument("--open", action="store_true")
@@ -165,9 +179,9 @@ def main():
         if a.kind == "navigation":
             md += ["**Navigation menu.** Make each menu change exactly as listed (Appearance → Menus / Kadence header). "
                    "Change nothing else.", ""]
-        md += ["| Ref | URL | Field | Now | Change to | Why | Decision Map |", "|---|---|---|---|---|---|---|"]
-        md += [f"| {r['ref']} | {r['url']} | {r['field']} | {r['old']} | {r['new']} | {r['reason']} | "
-               f"{r['decision_map_ref']} |" for r in rows]
+        if a.preface:
+            md += [(ROOT / a.preface).read_text().rstrip("\n"), ""]
+        md += table(rows)
         (d / f"{hid}.md").write_text("\n".join(md) + "\n")
         for r in rows:
             R.log_change(a.slug, a.run, a.kind, r["url"], r["field"], r["old"], r["new"],
@@ -200,6 +214,10 @@ def main():
         for ref in omitted:
             problems.append(f"{ref}: silently omitted from the returned worksheet")
         write_csv(d / f"{a.handoff}.csv", list(mine.values()))
+        mdp = d / f"{a.handoff}.md"
+        if mdp.exists() and "**Progress:**" in mdp.read_text():   # the living document: status kept current
+            text = mdp.read_text()
+            mdp.write_text(text[:text.index("**Progress:**")] + "\n".join(table(list(mine.values()))) + "\n")
         print(f"ingested {len(seen)} row(s). Problems: {len(problems)}")
         for p in problems:
             print("  - " + p)

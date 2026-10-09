@@ -1,0 +1,602 @@
+
+repo hygiene
+  PASS  no old gate names anywhere
+  PASS  no superseded WordPress settings (wp_env_prefix, wp_pilot_done)
+  PASS  one WordPress spec document exists and the commands point to it
+  PASS  no --gates in docs (gates live only in gates.json)
+  PASS  no 'Stage 0-4' names in the audit skill
+  PASS  the severity scale is defined only in rulings.md
+  PASS  no references to archived or removed files (except their archive paths)
+  PASS  schema rules live in one place: sop-source v1.1 (the skill copy is only a pointer)
+  PASS  no Stage 7/8, Gemini or ChatGPT references in CLAUDE.md, agents or skills
+
+finish needs outputs
+  PASS  finish refuses a producing step that recorded no files, and names them
+  PASS  finish closes once the files are recorded
+  PASS  a mark from an earlier run does not count for this run
+  PASS  every step has a reading list
+  PASS  run.py start prints the step's reading list, run ID last
+  PASS  an unknown step is refused with the list of steps
+
+walkthrough full
+  PASS  full client: /next reaches blog posts
+  PASS  full client: no loops, no failed commands
+  PASS  full client: every decision line was accepted as typed
+  PASS  full client: each run stops at the next decision (no run asked twice)
+  PASS  R2: the walkthrough opens a new session at each stage (and per batch), never mid-stage
+        (43 runs, 17 decisions)
+  PASS  two stops per batch (briefs, then drafts with SEM picks)
+  PASS  SEM picks are applied by a run, not a third stop
+  PASS  the site plan runs without waiting for the blockers to clear
+  PASS  R3: discovery + audit take two approvals (Decision Sheet + entity + facts; audit + Brand Guide)
+  PASS  R3: the page specs are approved once, globally, before the audit
+  PASS  R3: no discovery sign-off or blockers approval is asked (both are conditions)
+  PASS  one ship run per batch (drafts + publish handoff)
+  PASS  one check run per batch after Jonie publishes (verify + alt text + write-back)
+  PASS  drafts generated from the approved files and published only by Jonie
+  PASS  draft content is proper blocks (headings, paragraphs, lists, table)
+  PASS  post title is the H1; SEOPress title and meta set on the draft
+  PASS  link tables filled from the wheel (pilot location linked from the pilot service page)
+  PASS  replaced URL: redirect paired with the publish and done by Jonie
+  PASS  alt text added to the images Jonie added (safe fix)
+  PASS  every page verified against its approved file (incl. keyword and social)
+  PASS  /next ran /wp-check before the first WordPress step
+  PASS  drafts carry keyword and social (Open Graph + X) from the approved file
+  PASS  approved blog posts go in as WordPress posts (drafts) with a publish handoff
+  PASS  CM-055: link tables carry every planned page (published together, nothing held back)
+  PASS  CM-055: every batch is drafted before anything waits on publishing (one batch never waits on another's publish)
+  PASS  CM-055: page N+1 is drafted while page N is still a WordPress draft
+  PASS  CM-055: one living publish handoff, after every page is drafted
+  PASS  CM-055: the living handoff lists every page to publish, with its paired redirect and the blockers
+  PASS  CM-055: the living handoff is updated as pages are published (status column, progress)
+  PASS  batch drafting runs while the technical blocker handoff is still open (no VA handoff stops writing)
+  PASS  URL rule: no planned service or location URL sits under /service/, /services/ or /service-area/
+  PASS  every draft came from its own run, one page each (CM-043)
+  PASS  briefs: one run per batch with a brief for every page (CM-054)
+  PASS  the evidence gate ran on every page before its brief (CM-041)
+  PASS  producing stages pause for review by default (CM-044)
+  PASS  records generated: Handoff Log, decisions, checklist, approval record
+  PASS  conditions are logged when met
+  PASS  page states follow their batch
+
+sem paths
+  PASS  no findings: the drafts line has nothing to select
+  PASS  no findings: no apply run
+  PASS  a failed re-check sends the drafts back to Paul once more
+  PASS  the failure and the applied SEM items are logged
+  PASS  SEM walkthrough completes
+
+publish corrections
+  PASS  verify catches a wording change Jonie made
+  PASS  the difference is reported (verify report names the changed text)
+  PASS  a corrections handoff goes back to Jonie, then the batch passes
+  PASS  after Jonie's correction the pilot is verified and written back
+  PASS  QA crawl list holds only published pages
+  PASS  the system refuses to replace a live page's content wholesale
+
+walkthrough blog only
+  PASS  blog-only (health): reaches posts without loops
+  PASS  chiropractic is sensitive with practitioner sign-off
+
+gates
+  PASS  /crawl refused before /new-client finished
+  PASS  /build refused with plain-language reasons
+  PASS  approve.py refuses without Paul's typed /approve
+  PASS  an approval with no recorded files is refused
+  PASS  a condition cannot be approved
+
+voiding
+  PASS  editing an approved file voids that decision
+  PASS  later decisions stay met (not blocked)
+  PASS  /resume flags the upstream change
+  PASS  /next asks Paul to re-approve with the exact line
+  PASS  re-approval clears the void
+
+section approval
+  PASS  a mark naming a section that isn't there is refused
+  PASS  /next shows Approval 1 with the section ref it covers
+  PASS  Paul approves the entity by sections
+  PASS  Build write-back to B3 and C leaves the entity approval standing
+  PASS  an edit inside Section A cancels the entity approval
+  PASS  WordPress setup handoff goes to Jonie without an override
+  PASS  manual lookups (CAPTCHA registries, GBP dashboard) go to Gwen
+  PASS  the Handoff Log has one heading per run (a file's own heading is dropped)
+
+reviews parse
+  PASS  reviews: both DataforSEO labels for a review are read (google_review, google_reviews_search)
+
+killed run
+  PASS  /next stops at an unfinished run
+  PASS  the next command stops and names the unfinished run
+
+rollback
+  PASS  a change to a live page without --live and a backup confirmation is refused
+  PASS  alt text applied through wp.py (fake) with --live + backup
+  PASS  rollback restores the old alt text
+
+import
+  PASS  import confirmed by Paul
+  PASS  import: a signed sign-off / blockers block becomes a met condition (R3), not a gate
+  PASS  /next resumes at the next unbuilt batch, never /crawl
+  PASS  live pages are an approved baseline
+
+multi approve
+  PASS  one /approve line approves several items with one commit
+  PASS  multi-approve is all-or-nothing
+
+handoffs
+  PASS  redirect with a bare slug is refused
+  PASS  redirect sent to Gwen is refused without a reason
+  PASS  redirect: 301 filled, full URLs, owner Jonie
+  PASS  citation handoff goes to Gwen
+
+costs
+  PASS  per-run total over $2 asks Paul even when each call is under $2
+  PASS  a call over the balance stops
+  PASS  an unconfirmed price asks Paul
+
+guard
+  PASS  .env: Read blocked
+  PASS  .env: Grep at repo root blocked
+  PASS  .env: Glob .e* blocked
+  PASS  .env: grep -r blocked
+  PASS  .env: cat ./.e* blocked
+  PASS  Grep in a subfolder still allowed
+  PASS  status.json edit blocked
+  PASS  generated records cannot be edited by hand
+
+sensitive
+  PASS  sensitive check: roofing → no
+  PASS  sensitive check: chiropractor → yes
+  PASS  sensitive check: physical therapy → yes
+  PASS  sensitive check: law firm → yes
+  PASS  sensitive check: lawn care → no
+  PASS  sensitive check: tax preparation → yes
+  PASS  sensitive check: wellness center → unsure
+  PASS  sensitive check: mold remediation → yes
+  PASS  sensitive check: asbestos abatement → yes
+  PASS  sensitive check: radon mitigation → yes
+  PASS  sensitive check: indoor air quality testing → yes
+  PASS  sensitive check: water damage restoration → yes
+  PASS  sensitive check: dog grooming → unsure
+  PASS  mold is health-adjacent, no practitioner sign-off (CM-040)
+  PASS  /new-client asks Paul when the category is unclear
+  PASS  /new-client asks Paul when an industry is on neither list (CM-040)
+  PASS  Paul's answer (--category none) creates the client
+  PASS  status.py sensitivity records Paul's answer and logs it as a decision
+  PASS  sensitivity needs an open run
+
+drive
+  PASS  archive name = old name + its date
+  PASS  drive.py records lists the mirrored records with their Drive names
+  PASS  a Drive upload outside an open run is refused
+  PASS  archive-and-replace logs two drive changes: archive (nothing deleted) + upload
+  PASS  an archive name that is not the old name + date is refused
+  PASS  a drive-mirror run leaves the Handoff Log and 'last run' unchanged (no re-mirror loop)
+  PASS  R4: no local client folder → 'Drive copy pending sync' is settled once, never repeated
+  PASS  R4/R8: /new-client copies the template folder to <v3>/<Client> - TMS (a real folder copy)
+  PASS  R4: a large crawl CSV is copied byte-exact into Evidence (nothing retyped)
+  PASS  R4: run.py finish mirrors the records into the client folder by itself
+  PASS  R4: every Drive copy is logged as a drive_file change
+  PASS  R8: an existing client folder is used as is (no second copy)
+  PASS  R4: a changed record is archived with its date into _Archive, then replaced (nothing deleted)
+  PASS  R4: an unchanged record is left alone (not archived again)
+  PASS  #10: the approved Drive copy says APPROVED with Paul, date and sha; the repo file is unchanged
+
+wordpress
+  PASS  /wp-check names the cause: no_creds
+  PASS  /wp-check names the cause: rest_blocked
+  PASS  /wp-check names the cause: bad_password
+  PASS  /wp-check names the cause: role
+  PASS  /wp-check names the cause: no_seopress
+  PASS  missing credentials → /wp-check points Paul to wp.py env-lines
+  PASS  env-lines: the full .env path and the exact three lines for this client
+  PASS  env-lines: username, Application Password and the password's name are told apart
+  PASS  /next keeps open choices apart from the /approve line
+  PASS  a failed /wp-check leaves WordPress work blocked
+  PASS  WordPress steps refuse until /wp-check passes
+  PASS  /wp-check passes: login, role, page + post drafts, every SEOPress field read back
+  PASS  site-wide settings unreadable as Editor → one-time VA check for Jonie
+  PASS  /wp-check trashes its test drafts and publishes nothing
+  PASS  SEOPress 10.x ({success, data} + per-section lists): every field written and read back
+  PASS  readable site-wide settings are saved as audit evidence
+  PASS  before the pilot, a title change on an existing page goes to a VA handoff
+  PASS  live page: a safe fix without --live is refused
+  PASS  stops when the page changed since the audit
+  PASS  meta description (safe fix) written before the pilot, with --live + backup
+  PASS  already correct → skipped
+  PASS  broken link / content fix written and logged
+  PASS  Paul's safe-fix cap is recorded per client and logged
+  PASS  safe-fix cap reached → the next broken-link fix is refused, the page is untouched
+  PASS  at the cap, an already-correct item is still checked and skipped
+  PASS  cap none removes the cap
+  PASS  /wp-check --pilot: head-code field round trip + a verified batch → pilot passed
+  PASS  Paul approves the pilot for this site
+  PASS  after the pilot: title written directly and read back
+  PASS  after the pilot: keyword written directly and read back
+  PASS  after the pilot: social_title written directly and read back
+  PASS  after the pilot: robots written directly and read back
+  PASS  after the pilot: canonical written directly and read back
+  PASS  /rollback restores the old title from the log
+  PASS  /rollback restores the old page content
+
+client view
+  PASS  every client phrase passes the plain-language check
+  PASS  the check blocks: 'Entity approved per CM-020'
+  PASS  the check blocks: 'Next: entity_approved'
+  PASS  the check blocks: 'SD - Roof Repair - Test Co is ready'
+  PASS  the check blocks: 'Waiting on audit_approved'
+  PASS  the check blocks: 'F-012 fixed'
+  PASS  the check blocks: 'S07 done'
+  PASS  the check blocks: 'run /approve now'
+  PASS  a finished full client reads 'Writing articles…' with plain milestones
+  PASS  a new client starts at 'Getting started'
+  PASS  free-text client view flags are gone from run.py finish
+
+evidence gate
+  PASS  evidence gate: /next runs one brief run for the batch, the gate inside it (CM-054)
+  PASS  evidence gate: no brief before the gate has run
+  PASS  evidence gate: two required facts unknown → BLOCK
+  PASS  evidence gate: one required fact unknown → WARN
+  PASS  evidence grid: each fact marked Known / Unknown with its source (Section A/D + proof sheet)
+  PASS  evidence gate: every result is logged
+  PASS  evidence gate (warn): a brief without an 'Evidence gaps' section is refused
+  PASS  evidence gate (warn): the brief that flags its gaps is accepted
+  PASS  evidence gate (block): the blocked page gets no brief
+  PASS  evidence gate (block): /next sends it to the facts interview and shows the waiver line
+  PASS  facts interview: targeted questions for the blocked page's gaps only
+  PASS  facts interview: logged, and nothing is sent automatically
+  PASS  facts interview: /next then waits for the owner's answers (or the waiver)
+  PASS  waiver: refused without a reason
+  PASS  waiver: a page that is not blocked cannot be waived
+  PASS  waiver: Claude cannot waive (only Paul's typed /approve)
+  PASS  waiver: recorded in status.json with Paul's name, date and reason
+  PASS  waiver: recorded in log.md
+  PASS  waiver: the waived page may now be briefed
+  PASS  waiver: when the facts change, the old waiver no longer counts
+  PASS  facts answers: the gate re-runs and the page passes
+  PASS  facts answers: /next goes on to that page's brief (one more brief run for the batch)
+  PASS  the batch's briefs are collected for Paul's one approval
+  PASS  evidence gate: every fact known → PASS
+  PASS  evidence gate: a required fact in conflict → BLOCK
+  PASS  evidence gate: a confirmed value with no source is Unverified, not Known
+  PASS  evidence gate: a status cell with a date and a note after the word still reads as that status (Known)
+  PASS  evidence gate: a keyword that makes a claim adds that fact as required (CM-049)
+  PASS  evidence gate: fewer than 3 known facts → BLOCK (CM-015)
+
+one page per run
+  PASS  CM-054: the batch brief run cannot finish until every cleared page has its brief
+  PASS  CM-054: one brief alone does not reach the batch stop
+  PASS  CM-054: the batch will not collect while a page has no brief
+  PASS  CM-054: both briefs come from the one batch run and collect for one approval
+  PASS  one page per run: one stop for the whole batch's briefs
+  PASS  one page per run: drafts start one page at a time
+  PASS  placeholders: a draft with 'Read our [warranty](#) terms.' and no [NEED] note is refused
+  PASS  placeholders: a draft with 'Serving Springfield since [year](till present).' and no [NEED] note is refused
+  PASS  placeholders: a draft with 'Price TBD.' and no [NEED] note is refused
+  PASS  placeholders: a draft with '<a href="TBD">reviews</a>' and no [NEED] note is refused
+  PASS  placeholders: the same link with a visible [NEED: ...] note is accepted
+  PASS  one page per run: the batch review waits until every page has its own draft
+  PASS  one page per run: /next drafts the next page in its own run
+  PASS  one page per run: then one batch review run for all the drafts
+  PASS  one page per run: two drafts from the same run are refused
+  PASS  one page per run: the batch collects exactly the per-page drafts
+  PASS  one page per run: the batch review collects both drafts + the table for Paul's one approval
+
+modes
+  PASS  modes: every producing stage starts in review
+  PASS  modes: auto is refused before the stage has passed the pilot
+  PASS  modes: a decision can never be auto
+  PASS  modes: a batch approval can never be auto
+  PASS  modes: a stage with no pilot always stays in review
+  PASS  modes: only Paul switches a mode (no typed /approve → refused)
+  PASS  modes: Paul switches stages to auto after the pilot
+  PASS  modes: in review those stages paused after every run
+  PASS  modes: in auto they chain straight on (no pause)
+  PASS  modes: stages still in review keep pausing
+  PASS  modes: decisions still stop in auto — the pilot twice, later batches for the drafts only (R3)
+  PASS  modes: the walkthrough with auto stages completes
+  PASS  modes: each switch recorded in status.json and log.md
+  PASS  modes: a global switch is allowed once a client has passed the pilot, and recorded
+  PASS  modes: the global setting applies to every client
+  PASS  modes: a client's own setting beats the global one
+  PASS  modes: a global auto is refused for a stage with no pilot
+
+fanout
+  PASS  fan-out: estimated from the confirmed price ($0.0072 a call upper bound)
+  PASS  fan-out: queries deduplicated across seeds into the CSV
+  PASS  fan-out: the routing worksheet says these are not demand, and pre-marks C3 duplicates
+  PASS  fan-out: every call's cost logged
+  PASS  fan-out: a second run reuses the saved seeds and pays nothing new
+  PASS  fan-out: registered as audit step S21
+  PASS  PAA: a second run reuses the saved queries and posts nothing new
+  PASS  PAA: more towns on request, and a town with no location is searched from a nearby one
+
+interviews
+  PASS  stories: not before the facts exist (Brand Guide approved)
+  PASS  stories: not due before the Brand Guide is approved
+  PASS  stories: the first round is due once the facts exist
+  PASS  story bank: a thin, unquoted, unclassified entry is refused
+  PASS  story bank: a proper entry passes
+  PASS  voice DNA: under 2,000 author words without the UNDER FLOOR line is refused
+  PASS  voice DNA: with the floor flagged, every rule quoted → ok
+  PASS  voice DNA: two files for one author are refused (never blend)
+
+schema gate
+  PASS  schema: a complete config builds
+  PASS  schema: a missing logo is refused with a clear message, never a crash (--check)
+  PASS  schema: a missing logo is refused with a clear message, never a crash (build)
+  PASS  schema: an entity with no Wikidata URI is refused with a clear message, never a crash (--check)
+  PASS  schema: an entity with no Wikidata URI is refused with a clear message, never a crash (build)
+  PASS  schema 1: an entity whose Wikipedia page, Wikidata ID and Grokipedia URL agree builds
+  PASS  schema 1: a Wikidata ID that doesn't match the Wikipedia page is refused, nothing written
+  PASS  schema 1: the entity check also runs with --check
+  PASS  schema 1: a Wikidata ID that does not exist is refused
+  PASS  schema 1: a Wikidata ID whose label is a different thing is refused
+  PASS  schema 1: a Grokipedia URL that does not resolve is refused
+  PASS  schema 1: an unreachable source refuses the build (never built unchecked)
+  PASS  schema 2: the country defaults to US
+  PASS  schema 2: the country comes from the config, not hard-coded
+  PASS  schema 3: working text is refused and nothing is written ([NEED: description…)
+  PASS  schema 3: working text is refused and nothing is written (Roofing for [Clien…)
+  PASS  schema 3: working text is refused and nothing is written (TODO: write this…)
+  PASS  schema 4: extended area types need the per-client pilot flag
+  PASS  schema 4: with the pilot flag — Place, AdministrativeArea and a city's Wikipedia sameAs
+  PASS  schema 4: an areaServed type outside City / Place / AdministrativeArea is refused
+  PASS  schema 5: each page also written inside <script type=application/ld+json>, raw kept for the validator
+  PASS  schema 6: never aggregateRating / review, never a Wikipedia @id (plus addressCountry and areaServed hygiene)
+
+schema offline
+  PASS  offline: an unreachable Wikipedia still refuses the build by default
+  PASS  offline: --offline without Paul's approval is refused
+  PASS  offline: Claude cannot approve it (no typed /approve)
+  PASS  offline: the approval needs a reason
+  PASS  offline: Paul's approval is recorded with his name, date, reason and the one run it covers
+  PASS  offline: every other check still runs (working text refused) and the approval is not used up
+  PASS  offline: with the approval, the run builds once without the live entity check
+  PASS  offline: the use is logged and marked used
+  PASS  offline: a second build in the same run needs a new approval
+  PASS  offline: approving with no /finish schema run open is refused
+  PASS  offline: an approval does not carry over to another run
+  PASS  offline: the Q-ID format is still checked offline
+
+readability
+  PASS  reading level: plain copy passes, and the SEO title is not counted (CM-047)
+  PASS  reading level: dense copy fails and the paragraph is listed
+  PASS  reading level: named sources and entity terms are left out of the count
+
+models
+  PASS  R1: every agent has a preset model — Opus for judgment, Haiku (clerk) for mechanical work
+  PASS  R1: every stage's session runs on Haiku (no Sonnet, no Fable)
+  PASS  R2: every step belongs to exactly one stage (or is bookkeeping for any stage)
+  PASS  R1: next.py names the stage, the session model and the agents with their models
+  PASS  stages.py lists every stage with its models
+
+settled and status
+  PASS  R6: a decision is settled once (logged)
+  PASS  R6: settling the same decision again is refused — it is not asked twice
+  PASS  R6: a reopen request needs the reason
+  PASS  R6: one reopen request (logged with the flag), a second is refused
+  PASS  R6: decisions-settled.md lists each settled decision once (the latest), with the reopen counted as a defect
+  PASS  R6: the reopening is counted in the client's test-run notes
+  PASS  R7: STATUS.md opens with stage n of N, what is happening now, waiting on, next action
+  PASS  R7: STATUS.md lists settled decisions once, open VA items with owner and id, and spend
+  PASS  R7: records.py top prints the four lines /next and /resume show
+
+decide once
+  PASS  R3: with the client's direct answers, Approval 1 is one line (no sheet to approve)
+  PASS  R3: approving the direct answers meets 'proof sheet returned' — nothing waits for a sheet nobody was sent
+  PASS  R6: Approval 1 settles every Decision Sheet answer (or its default) — never asked again
+  PASS  R6: a later step cannot re-ask a Decision Sheet answer
+  PASS  R3: a reconcile that only changes a row's status leaves the entity approval standing
+  PASS  R3: a changed value in Section A still voids it (re-approve)
+  PASS  #8: a proof-sheet run that records only the client's answers can finish
+  PASS  R3: a spec changed after Paul approved it re-opens the specs approval (once, globally)
+  PASS  R3: a spec change never voids an approval already given (the specs gate the steps that score or write pages)
+  PASS  R3: the approved specs carry an APPROVED status line
+
+briefs after pilot
+  PASS  R3: after the pilot Paul may switch briefs to auto
+  PASS  R3: after the pilot, batches stop for the drafts only (no briefs approval)
+  PASS  R3: the walkthrough still completes
+
+pilot order
+  PASS  pilot order: a location-kind pilot is not held behind the service batches
+  PASS  pilot order: /next starts with the pilot
+  PASS  pilot order: a location batch still waits for the service batch's drafts approval
+  PASS  pilot order: /next skips the waiting location batch and runs the service batch
+  PASS  CM-055: the location batch starts once the service drafts are in WordPress — not after they are published
+
+migration
+  PASS  migration: approvals kept — the section approval is re-stamped to the new hash, not voided
+  PASS  migration: discovery_signed_off and blockers_cleared become conditions (history kept)
+  PASS  migration: a hand-written STATUS.md is carried over — settled stays settled, open questions stay open
+  PASS  migration: STATUS.md is now generated
+  PASS  migration runs once (a second run changes nothing)
+
+sessions
+  PASS  R2: with no session recorded (hook not installed) a stage run is refused
+  PASS  R2: the SessionStart hook records the session and prints the model reminder
+  PASS  R1: a session on another model is warned (Haiku and Opus only)
+  PASS  R2: a session that finished one stage cannot start the next — the system says to open a new session
+  PASS  R2: /next stops with new_session instead of running the next stage here
+  PASS  R2: bookkeeping steps (any stage) still run in the same session
+  PASS  R2: the same session cannot start a stage for another client either
+  PASS  R2: in a new session the next stage starts
+  PASS  R2: every run records its session
+
+guard rewrite
+  PASS  #20: a read-only chain on the safety log is allowed
+  PASS  #20: a record name inside a quoted argument is text
+  PASS  #20: the credentials file named in a commit message is text
+  PASS  #20: writes stay blocked — redirect, rm, sed -i, tee, inline python
+  PASS  #20: .env stays unreadable however it is written
+  PASS  #20: hooks and approval state stay off limits
+  PASS  #20: history rewriting stays blocked
+  PASS  #20: DataforSEO/WordPress API calls outside the scripts stay blocked
+  PASS  R8: a Drive search across all of Drive is blocked
+  PASS  R8: a Drive search inside the v3 folder is allowed
+  PASS  R8: a search that escapes the v3 folder with 'or' is blocked
+  PASS  R8: a search in a folder outside v3 is blocked
+
+answer once
+  PASS  decide once: an answer under a different key is refused while the question it answers stays open
+  PASS  decide once: --closes records the answer against the open question
+  PASS  decide once: the register shows the question answered, and STATUS no longer waits on it
+  PASS  decide once: a new run cannot ask the answered question again
+  PASS  decide once: a related question is refused unless it says what is new
+  PASS  decide once: a genuinely new question goes through with its reason logged
+
+research before asking
+  PASS  research: a fact a review answers is Known, cited to the review (file, row, date), not Unknown
+  PASS  research: process and timeframe found in the same review are Known too
+  PASS  research: a fact no source has is 'searched, not found', with the sources listed
+  PASS  research: the review-backed page is not blocked (no question needed)
+  PASS  research: the page with facts nowhere on disk is blocked
+  PASS  research: no question is generated for a fact present in a review
+  PASS  research: a fact found only on the client's own site is a yes/no, quoting where it was found
+  PASS  research: a fact found nowhere is asked, and the pack lists what was searched first
+  PASS  decide once: every facts question is asked once, under its key
+  PASS  decide once: a later facts pack does not re-ask a question already asked
+  PASS  decide once: the owner's answer is settled under the question's key
+  PASS  decide once: the next run reads the settled answer as Known (cited), so it is never a gap again
+
+url rule
+  PASS  URL rule: a site plan with /service-area/nixa/ is refused
+  PASS  URL rule: a site plan with /services/roof-repair/ is refused
+  PASS  URL rule: a site plan with /service/roof-repair/ is refused
+  PASS  URL rule: a site plan with /roofing/roof-repair/ is refused
+  PASS  URL rule: root-level service and location URLs are accepted
+
+batch of five
+  PASS  five: the walkthrough completes
+  PASS  five: a batch of 5 produces 5 briefs in one run
+  PASS  five: one brief run and one briefs approval for the batch
+  PASS  five: drafts stay one page per run (CM-043)
+
+audit rewrite ingest data
+  PASS  client audit-ingest created
+  PASS  ingest runs with the data folder
+  PASS  manifest keeps the crawl exports first and recognised
+  PASS  one manifest row per data / inputs file, with source and row count
+  PASS  a raw/ folder is one row (file count)
+  PASS  every row has a size and a date; source ids run SRC-001…
+  PASS  nothing from data/ lands in 00-unrecognised.md
+  PASS  sitemap-only and rankings URLs join the URL inventory
+  PASS  --no-extra reads the crawl folder only
+
+audit rewrite crosschecks
+  PASS  client audit-cross created
+  PASS  crosscheck runs and finds the sitemap in inputs/
+  PASS  host form: a canonical and a link on http://www. are flagged UNVERIFIED
+  PASS  orphans: /b/ (canonical row and self-link don't count) and sitemap-only /ghost/ are candidates; /a/, /c/ (linked under another host form), the homepage and the 301 are not
+  PASS  sitemap: /ghost/ not crawled, /old/ non-200, /b/ and /c/ missing from the sitemap
+  PASS  client audit-clean created
+  PASS  clean site: the three new checks are CONFIRMED (XML sitemap read)
+  PASS  client audit-nositemap created
+  PASS  no sitemap list → Sitemap is a LIMITATION, never a pass
+  PASS  --sitemap FILE is used when the client has none
+
+audit rewrite scorecards per type
+  PASS  the audit procedure and the reviewer expect one scorecard file per page type
+  PASS  no audit doc asks for a single combined scorecard
+
+audit rewrite grid pdf
+  PASS  client audit-grid created
+  PASS  no extraction backend → exit 2 with a plain message, nothing written
+  PASS  grid_pdf finds the PDF in inputs/local-grid and writes data/local-grid/local-grid-summary.md
+  PASS  summary: keyword, view, average rank, grid size, scan date
+  PASS  summary: the rank grid as a small table and the competitor row
+  PASS  summary: the report's written advice is not copied
+  PASS  re-run with nothing newer → up to date, nothing extracted
+  PASS  a newer PDF → the generated summary is rewritten
+  PASS  a hand-written summary is never overwritten without --force
+  PASS  --force rewrites it
+
+crawl rewrite max pages fallback
+  PASS  #18: no sitemap -> max pages falls back to 1000 and the estimate says why
+  PASS  #18: an explicit --max-pages wins and the estimate says so
+
+crawl rewrite max pages sitemap
+  PASS  #18: robots.txt Sitemap: -> index followed, 48 same-site URLs (duplicates and other hosts dropped) x 1.5 = max 72 pages
+  PASS  #18: /sitemap.xml without robots.txt; a tiny site gets the minimum of 20
+  PASS  #18: /sitemap_index.xml as the last fallback; a big site is capped at 1000
+  PASS  #18: crawl run without --max-pages posts sitemap x 1.5 (72), not 1000, and stores the reason
+  PASS  #18: the log note for the posted task says why that max pages was used
+
+crawl rewrite summary and text
+  PASS  R5: a finished crawl writes data/crawl/crawl-summary.csv, one row per page
+  PASS  R5: the summary has only the audited columns (CSV, no JSON)
+  PASS  R5: summary values come from the crawl (H1 count 2, word count, length, indexability)
+  PASS  R5: crawl.py summary rebuilds the same file from the existing crawl tables
+  PASS  the crawl runs finished cleanly
+  PASS  S05b: one page-text.csv row per crawled HTML 200 page (redirects not fetched)
+  PASS  S05b: body text only — no script, style, navigation or footer; entities decoded
+  PASS  S05b: long pages are cut to --max-words with the full word count kept
+  PASS  S05b: robots.txt is respected (disallowed page listed, not fetched)
+  PASS  S05b: the capture is noted in the safety log as free
+  PASS  S05b: a fetch delay under 1 second is refused
+  PASS  S05b: registered in methodology/audit-steps.md
+
+data rewrite reviews
+  PASS  reviews: sign-offs ('- John D.', 'Thanks, Mary', a name-only last line) are stripped; other endings kept
+  PASS  reviews: no sign-off or reviewer name in reviews.csv, mentions.csv or customer-language.md
+  PASS  reviews: the run counts stripped sign-offs and flags texts still ending in a name (by id)
+  PASS  reviews: reviews-summary.md has the review count, rating distribution and themes with counts
+  PASS  reviews: the summary carries no reviewer names and no quotes
+  PASS  reviews: summarize rebuilds every output from the saved raw export, with no new call
+
+data rewrite fanout spread
+  PASS  fan-out: the first max(services, cities) seeds cover every service and every city (3 × 6)
+  PASS  fan-out: 7 services × 2 cities — every service within 7 seeds, primary city first
+  PASS  fan-out: with --cap 5, the seeds cover all 5 services and all 4 cities (not 2 cities)
+  PASS  fan-out: a group column (the service) in fanout-queries.csv and the routing worksheet
+  PASS  fan-out: the cost line reports failed-task spend apart
+
+data rewrite paa routing
+  PASS  PAA: first run writes the worksheet with empty Intent/Route/Note
+  PASS  PAA: a re-run keeps Intent/Route/Note by question text (case, spaces, end punctuation ignored)
+  PASS  PAA: a routed question not seen this run is kept at the bottom, not lost
+  PASS  PAA: a third run still keeps both the table routing and the earlier list
+
+data rewrite failed costs
+  PASS  costs: a call with a failed task logs failed_usd for it in the ledger
+  PASS  costs: the command's cost line shows the failed-task spend apart
+  PASS  costs: a paid script stopped by a failed task still prints its cost line with the failed spend
+  PASS  costs: dfs.py ledger totals show failed tasks apart
+
+data rewrite backlinks
+  PASS  backlinks: no saved export → refused in plain language (exit 4)
+  PASS  backlinks: backlinks-per-url.csv has url, referring domains, backlinks, top 3 referring domains
+
+machine machine settings
+  PASS  machine.json drive_local_root overrides config.json's Drive path on this Mac
+  PASS  machine.json can_approve:false → /approve is refused on this Mac (Paul approves on his own)
+  PASS  a Mac that cannot approve still runs the other scripts
+  PASS  machine.json is git-ignored (each Mac keeps its own)
+
+rewrite misc emplates
+  PASS  #1/#5: the proof sheet asks only for GBP Manager access and has no phone line
+  PASS  #9: the Brand Guide template has the blog author row and a D3 content-risk list; no N/S/E/W
+  PASS  #15: the rating row says: exactly as Google shows it on the day
+  PASS  R6: the Decision Sheet template carries every identity and format decision (#3 scope, #22 login, #23 CMS)
+  PASS  #2: a routed FAQ is a candidate, not an obligation; location FAQs are about the town
+
+rewrite misc naming
+  PASS  #7: RETURNED, CLIENT COPY, Status and INTERNAL notes are valid names
+  PASS  #7: a deliverable with no status is still flagged
+
+rewrite misc cms
+  PASS  #23: /new-client detects the CMS (Astro) and settles it
+  PASS  #23: WordPress is recognised from wp-content
+  PASS  #23: not WordPress → the WordPress steps are N/A (no /wp-check is asked)
+
+rewrite misc reads
+  PASS  R5: the audit reads script-made summaries (crawl, reviews, backlinks, grid), never raw exports
+  PASS  R6: every judgment step reads decisions-settled.md
+  PASS  #11: S05b is registered but optional (an approved audit stays complete)
+
+smoke harness
+  PASS  extra scenario modules load (tests/checks)
+
+481 passed, 0 failed
