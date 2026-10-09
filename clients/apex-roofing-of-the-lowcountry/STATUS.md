@@ -1,17 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 6 of 8 — Pilot, then batches (batch pilot)**
-- **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:draft finished (run 20261009-123816-build-2c02) and that stage is in review mode — l; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Bra
-- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
+- **What is happening now:** waiting for Paul's approval — the drafts for batch pilot are ready: review each with the semantic review table (11 SEM item(s) found) and approve them together
+- **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (11 SEM i; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Bra
+- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry batch:pilot:drafts --sem <SEM items to apply, e.g. 1,3,4 — or none>` (or asks for changes first)
 
-_Generated 2026-10-09T12:43 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-09T12:50 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:draft finished (run 20261009-123816-build-2c02) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry batch pilot drafts (batch review for pilot: every draft side by side (portability, FAQ and heading collisions) and the semantic review table) | 2026-10-09 | /next apex-roofing-of-the-lowcountry |
+| Paul | the drafts for batch pilot are ready: review each with the semantic review table (11 SEM item(s) found) and approve them together | 2026-10-09 | /approve apex-roofing-of-the-lowcountry batch:pilot:drafts |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Brand Guide D) | 2026-10-08 | send_the_client_one_question_is_your_cer |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
@@ -62,4 +62,4 @@ _Generated 2026-10-09T12:43 by the system — do not edit. Start every session i
 
 - DataforSEO: $0.59
 
-Last run: /build 2026-10-09T12:43 — Pilot Bluffton location draft written (LD), E1-E10 pass, LOC-15 fails 5/6 neighborhoods, NEEDs open
+Last run: /build 2026-10-09T12:50 — Pilot batch review: sibling check clean on FAQs/headings; semantic review table with 11 SEM items for Paul

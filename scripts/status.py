@@ -550,13 +550,20 @@ def batch_ready(st, bid, stage):
             r.append("pilot: " + why)
         if not bp.get("pilot_corrections_applied"):
             r.append("the pilot corrections are not yet applied to the specs (status.py pilot-corrections)")
-    mine = KIND_ORDER.get(b["kind"], 1)
-    for o in batches(st):
-        if o["id"] in ("pilot", bid):
-            continue
-        if KIND_ORDER.get(o["kind"], 1) < mine and o.get("state") != "written_back":
-            r.append(f"{o['kind']} batch {o['id']} must be written back to the Brand Guide first")
+    r += batch_order_blocks(st, bid)
     return not r, r
+
+
+def batch_order_blocks(st, bid):
+    """Service batches are written back before any location batch, homepage and about last. The pilot
+    (1 service + 1 location) is exempt both ways: it runs first and never waits on, or holds up, the order."""
+    b = batch(st, bid)
+    if not b or bid == "pilot":
+        return []
+    mine = KIND_ORDER.get(b["kind"], 1)
+    return [f"{o['kind']} batch {o['id']} must be written back to the Brand Guide first"
+            for o in batches(st)
+            if o["id"] not in ("pilot", bid) and KIND_ORDER.get(o["kind"], 1) < mine and o.get("state") != "written_back"]
 
 
 # ------------------------------------------------------------------ evidence gate (CM-041)

@@ -1875,3 +1875,48 @@ Changes: 1 · Summary: Pilot Bluffton location draft written (LD), E1-E10 pass, 
 - CHANGE #306 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (2).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha d5c185b8e786 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #307 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (2).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (2).md | result: done · renamed and moved, nothing deleted
 - CHANGE #308 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (2).md | new: Apex Roofing of the Lowcountry - Status.md · sha 488fdbc605a3 | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-09T12:48 · after build:draft (run 20261009-123816-build-2c02) · Paul typed /next
+
+## RUN 20261009-124809-build-ab2d · STARTED · /build · 2026-10-09T12:48:09-05:00
+Step: build:drafts · batch pilot · session 0ed9494a-d39c-458b-a350-b0f27797f264
+Gates checked: discovery_signed_off, batch:pilot:drafts_ready
+- DECISION 2026-10-09T12:50 · run 20261009-124809-build-ab2d · Pilot batch review: SEM-1 to SEM-7 have no definition in writing-commercial.md (NEED from the live gem, Section G); the semantic review used SEM-8 plus E1, C7, A7 and BB-310 to tag findings. 11 rows; sibling check found no FAQ or heading collision between svc-roof-repair and loc-bluffton.
+### HANDOFF · /build · 2026-10-09 · run 20261009-124809-build-ab2d
+**What I did**
+- Batch review for the pilot: read the Roof Repair service draft (SD) and the Bluffton location draft (LD) side by side, each written in its own run (CM-043).
+- Sibling check (CM-017 as scoped by CM-043): no FAQ or heading collision between the two pages; buyer states in the openings differ; one near-identical on-call sentence on both pages; one region-level climate sentence on LD.
+- Wrote the semantic review table (report only, drafts unchanged): `build/Apex Roofing of the Lowcountry - Semantic Review - pilot - REVIEW.md`, 11 numbered rows.
+- Recorded the batch as drafts_written with the table (`status.py batch ... --sem-findings 11`).
+
+**What was decided, and why**
+- SEM-1 to SEM-7 are undefined in writing-commercial.md, so findings are tagged SEM-8 where it applies and otherwise with the standard check that caught them (E1, C7, A7, BB-310). Logged as a run decision.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Pick SEM items 1–11 (or none) and approve the pilot drafts | Paul | apply-sem / ship for pilot |
+| 12 NEED items on svc-roof-repair (W25, W10, W11, repair warranty, 6 repair types, 25% rule SC source, visit length) | Client via Paul | ship of svc-roof-repair |
+| 5 NEED items on loc-bluffton (permit pulled by Apex, UDO §3.18, UDO Art. 5, W9 gated communities, 6th neighborhood) | Client via Paul / research | ship of loc-bluffton |
+| SEM-1–SEM-7 definitions (from the live gem, Section G) | Paul | complete Stage 4 checks |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Semantic review table | clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Semantic Review - pilot - REVIEW.md | REVIEW |
+| Service draft | clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md | awaiting approval |
+| Location draft | clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md | awaiting approval |
+
+**What I could not check**
+- SEM-1 to SEM-7 (no definitions). Readability (E10) was not re-run; that belongs to each page's draft run.
+
+**Anything the next agent would otherwise get wrong**
+- Row 1 routes the emergency FAQ to the Emergency Roof Repair page and row 6 drops the flashing FAQ; if Paul picks both, SD keeps 4 FAQs (still within 4–6). Row 4 sets a city-bearing sibling-cities H2 pattern for all location batches — carry it into the pilot corrections if Paul picks it.
+### END HANDOFF
+## RUN 20261009-124809-build-ab2d · FINISHED · 2026-10-09T12:50:36-05:00
+Changes: 0 · Summary: Pilot batch review: sibling check clean on FAQs/headings; semantic review table with 11 SEM items for Paul
+- CHANGE #309 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (2).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #310 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (2).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 97d570f4725d | result: done · copied (Drive for desktop syncs it)
+- CHANGE #311 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (3).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #312 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (3).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 3e11f611b75c | result: done · copied (Drive for desktop syncs it)
+- CHANGE #313 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (3).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #314 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (3).md | new: Apex Roofing of the Lowcountry - Status.md · sha 6118f8bf5227 | result: done · copied (Drive for desktop syncs it)

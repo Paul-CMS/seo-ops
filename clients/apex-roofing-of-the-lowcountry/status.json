@@ -533,7 +533,7 @@
           "svc-roof-repair",
           "loc-bluffton"
         ],
-        "state": "briefs_written",
+        "state": "drafts_written",
         "briefs": {
           "state": "approved",
           "by": "Paul",
@@ -552,8 +552,14 @@
           "briefs": [
             "clients/apex-roofing-of-the-lowcountry/build/pilot/SB - Roof Repair - Apex Roofing of the Lowcountry.md",
             "clients/apex-roofing-of-the-lowcountry/build/pilot/LB - Bluffton - Apex Roofing of the Lowcountry.md"
+          ],
+          "drafts": [
+            "clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md",
+            "clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md",
+            "clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Semantic Review - pilot - REVIEW.md"
           ]
-        }
+        },
+        "sem_findings": 11
       },
       {
         "id": "s1",
@@ -832,12 +838,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261009-123816-build-2c02",
+    "run_id": "20261009-124809-build-ab2d",
     "command": "build",
-    "finished": "2026-10-09T12:43:45-05:00",
-    "result": "Pilot Bluffton location draft written (LD), E1-E10 pass, LOC-15 fails 5/6 neighborhoods, NEEDs open",
-    "changes": 1,
-    "step": "build:draft",
+    "finished": "2026-10-09T12:50:36-05:00",
+    "result": "Pilot batch review: sibling check clean on FAQs/headings; semantic review table with 11 SEM items for Paul",
+    "changes": 0,
+    "step": "build:drafts",
     "batch": "pilot"
   },
   "spend": {
@@ -859,7 +865,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-09T12:43:45-05:00",
+  "updated": "2026-10-09T12:50:36-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -930,11 +936,17 @@
       "step": "build:draft",
       "first_run": "20261009-123816-build-2c02",
       "at": "2026-10-09T12:43:45-05:00"
+    },
+    "0ed9494a-d39c-458b-a350-b0f27797f264": {
+      "key": "batches:pilot",
+      "step": "build:drafts",
+      "first_run": "20261009-124809-build-ab2d",
+      "at": "2026-10-09T12:50:36-05:00"
     }
   },
   "review_pause": {
-    "run_id": "20261009-123816-build-2c02",
-    "step": "build:draft",
-    "at": "2026-10-09T12:43:45-05:00"
+    "run_id": "20261009-124809-build-ab2d",
+    "step": "build:drafts",
+    "at": "2026-10-09T12:50:36-05:00"
   }
 }

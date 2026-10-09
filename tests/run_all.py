@@ -1835,6 +1835,33 @@ def t_briefs_after_pilot():
     check("R3: the walkthrough still completes", "LOOP" not in log and not ag.errors, "\n".join(log[-4:] + ag.errors[:2]))
 
 
+def t_pilot_order():
+    """The pilot (1 service + 1 location) is exempt from service-before-location, in batch_ready and in /next;
+    after it, a planned location batch listed before a service batch waits for the service batch."""
+    S = "po-co"
+    ag = build_ready(S)
+    st = status(S)
+    by = {b["id"]: b for b in st["build"]["batches"]}
+    by["pilot"]["kind"] = "location"
+    st["build"]["batches"] = [by["pilot"], by["l1"], by["s1"], by["h1"]]
+    (ag.c / "status.json").write_text(json.dumps(st))
+    code, out = sh(f"python3 scripts/status.py require {S} batch:pilot:briefs_ready")
+    check("pilot order: a location-kind pilot is not held behind the service batches", code == 0, out)
+    n = nxt(S)
+    check("pilot order: /next starts with the pilot", n["command"] == f"/build {S} evidence pilot", n)
+    st = status(S)
+    pilot = next(b for b in st["build"]["batches"] if b["id"] == "pilot")
+    pilot.update({"state": "written_back", "briefs": {"state": "approved", "files": {}},
+                  "drafts": {"state": "approved", "files": {}}})
+    st["build"]["pilot_corrections_applied"] = {"at": "2026-10-09", "note": "test"}
+    (ag.c / "status.json").write_text(json.dumps(st))
+    code, out = sh(f"python3 scripts/status.py require {S} batch:l1:briefs_ready")
+    check("pilot order: a location batch still waits for the service batch", code != 0 and "batch s1" in out, out)
+    n = nxt(S)
+    check("pilot order: /next skips the waiting location batch and runs the service batch",
+          n["command"] == f"/build {S} evidence s1", n)
+
+
 def t_migration():
     sh('python3 scripts/status.py init mg-co --name "Mg Co" --domain mg.example --type full --industry roofing')
     ag = Agent("mg-co"); ag.fin(ag.start("new-client"), "set up")
@@ -1935,7 +1962,7 @@ def t_guard_rewrite():
 
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_section_approval, t_reviews_parse, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view,
-             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_migration, t_sessions, t_guard_rewrite]
+             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_pilot_order, t_migration, t_sessions, t_guard_rewrite]
 
 
 def extra_scenarios():

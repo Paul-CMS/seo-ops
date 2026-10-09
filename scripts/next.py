@@ -317,6 +317,8 @@ def _walk(slug, cont):
         bid, state = b["id"], b.get("state", "planned")
         if state == "written_back":
             continue
+        if state == "planned" and S.batch_order_blocks(st, bid):
+            continue    # an earlier-kind batch (service before location) goes first — the same check as batch_ready
         if state == "planned" or state == "briefs_written":
             condition_step(st, slug, "page_specs_approved")   # no page is written against unapproved specs
         if bid != "pilot" and not S.check(st, "pilot_corrections")[0]:
