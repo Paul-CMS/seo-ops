@@ -1978,3 +1978,57 @@ SEM items to apply: SEM-1, SEM-2, SEM-3, SEM-4, SEM-5, SEM-6, SEM-7, SEM-8
 - CHANGE #323 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (5).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 4a30fe36cf9b | result: done · copied (Drive for desktop syncs it)
 - CHANGE #324 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (5).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (5).md | result: done · renamed and moved, nothing deleted
 - CHANGE #325 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (5).md | new: Apex Roofing of the Lowcountry - Status.md · sha 6f081e464bcc | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261009-131416-build-ec1c · STARTED · /build · 2026-10-09T13:14:16-05:00
+Step: build:apply-sem · batch pilot · session 0ed9494a-d39c-458b-a350-b0f27797f264
+Gates checked: discovery_signed_off, batch:pilot:drafts
+- CHANGE #326 [content_draft] https://apexroofingtlc.com/roof-repair/ | SD draft file (SEM-1,2,3,4,5) | old:  | new:  | result: applied | ref SEM-1 emergency FAQ link placeholder; SEM-2 opening/CTA reworded, on-call kept here; SEM-3 flashing FAQ dropped, Roof Leak Repair lead replaced; SEM-4 founder line -> Ralph and Pierce both get on the roof, W25 NEED removed; SEM-5 hail H3 and mention removed (routed to svc-emergency-roof-repair) | snapshots clients/apex-roofing-of-the-lowcountry/snapshots/20261009-131416-build-ec1c/0326-old.md clients/apex-roofing-of-the-lowcountry/snapshots/20261009-131416-build-ec1c/0326-new.md
+- CHANGE #327 [content_draft] https://apexroofingtlc.com/bluffton/ | LD draft file (SEM-2,6,7,8 + depth cut) | old:  | new:  | result: applied | ref SEM-2 opening/CTA reworded, on-call removed; SEM-6 FAQ answer no longer repeats opening or licence, climate tied to May River/New River/20 ft; SEM-7 sibling H2 names Bluffton; SEM-8 'each with its own page' dropped; Paul's depth cut: body 834 -> 788 words | snapshots clients/apex-roofing-of-the-lowcountry/snapshots/20261009-131416-build-ec1c/0327-old.md clients/apex-roofing-of-the-lowcountry/snapshots/20261009-131416-build-ec1c/0327-new.md
+- DECISION 2026-10-09T13:17 · run 20261009-131416-build-ec1c · SEM-5 routed: hail/storm damage repair (H3 + lead-list mention) removed from svc-roof-repair and routed to the svc-emergency-roof-repair brief (later batch); it still needs the client's confirmation of hail repair before it ships.
+- DECISION 2026-10-09T13:17 · run 20261009-131416-build-ec1c · Bluffton depth cut (Paul, 2026-10-09) applied inside this apply-sem run: no location-spec section dropped (services table, local context, 4 FAQs, neighborhoods, map, Things to Do, Top Sites, siblings, CTA all kept); cuts were the permit-forms list, the generic climate sentence, the FAQ-4 repeat of the opening and shorter lead sentences. Body 834 -> 788 words; what remains is spec-required. No fact added.
+- DECISION 2026-10-09T13:17 · run 20261009-131416-build-ec1c · SEM-1 applied per Paul's yes: the Roof Repair emergency FAQ carries a link placeholder to /emergency-roof-repair/; no link placed in Build (CM-005). Finish proposes it as the page's one CM-022 contextual-link exception for Paul's approval (open question pilot_emergency_faq_link_cm022 stays open until Finish).
+- SEM APPLIED 2026-10-09T13:17 · batch pilot · SEM-1, SEM-2, SEM-3, SEM-4, SEM-5, SEM-6, SEM-7, SEM-8 · E-checks passed · approval pinned to the applied versions
+### HANDOFF · /build · 2026-10-09 · run 20261009-131416-build-ec1c
+**What I did**
+- Applied the eight SEM items Paul picked (SEM-1 to SEM-8) to the two pilot drafts, exactly as the re-issued Semantic Review table's actions say.
+- Roof Repair (SD): SEM-1 emergency-leak FAQ kept, with a link placeholder to /emergency-roof-repair/ (no link placed); SEM-2 opening first sentence and CTA reworded, on-call sentence kept here only; SEM-3 flashing FAQ dropped (5 FAQs), Roof Leak Repair lead sentence replaced; SEM-4 founder line now "Ralph and Pierce both get on the roof", W25 [NEED] removed; SEM-5 Hail Damage Repair H3 and "hail damage" in the lead list removed (5 repair-type H3s).
+- Bluffton (LD): SEM-2 opening reworded, on-call sentence removed, own CTA form; SEM-6 FAQ "based in Bluffton" answers with the address and no travel fee, no licence repeat, plus a Bluffton next step; climate sentence tied to May River, New River and ~20 ft elevation; SEM-7 sibling H2 is now "Which Towns Near Bluffton Do We Also Serve?"; SEM-8 "each with its own page" dropped.
+- Paul's depth cut on Bluffton: permit-forms list, generic climate line and repeated FAQ text removed, lead sentences shortened. Body 834 -> 788 words. No spec section dropped, no fact added.
+- Re-ran E1-E10 and the service/location spec checks on every changed section: all pass. readability.py: SD grade 5.8, LD grade 6.4, no paragraph over 10.
+- Logged changes #326 (SD) and #327 (LD); batch pilot recorded as sem_applied with checks passed.
+
+**What was decided, and why**
+- SEM-5 hail/storm repair routed to the svc-emergency-roof-repair brief (later batch); still needs the client's confirmation of hail repair.
+- Bluffton cut kept every element location.md §3 requires (services table, local context, 3-4 FAQs, neighborhoods, map, Things to Do, Top Sites, siblings, CTA); the remaining length is spec-required.
+- SEM-1 link stays a placeholder; Finish proposes it as Roof Repair's one CM-022 contextual-link exception for Paul's approval.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Roof Repair [NEED]s: W10 photos, W11 flashing/underlayment, repair warranty, 5 repair types confirmed, 25% rule SC source, repair visit length | Client via Paul (facts interview) | Ship of svc-roof-repair |
+| Bluffton [NEED]s: Apex pulls Town permit, UDO §3.18, UDO Art. 5 materials list, W9 gated communities, 6th neighborhood (LOC-15 needs 6-12) | Client via Paul / research | Ship of loc-bluffton |
+| Emergency FAQ link (pilot_emergency_faq_link_cm022) | Finish, Paul approves | The live link only |
+| Hail repair confirmation (routed) | Client via Paul | Emergency Roof Repair brief |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| SD - Roof Repair | clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md | SEM applied, checks passed |
+| LD - Bluffton | clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md | SEM applied, checks passed |
+| Semantic Review table | clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Semantic Review - pilot - REVIEW.md | Applied (SEM-1..8) |
+
+**What I could not check**
+- E4 on Roof Repair's delivery H2 is 354 copy words now (401 with the [NEED] markers counted); when W10, W11 and the repair warranty are answered, keep each to a short sentence or the section passes 375.
+- Neighborhood count (LOC-15) stays at 5 + [NEED] until a sixth is sourced.
+
+**Anything the next agent would otherwise get wrong**
+- Used forms to record in C3 at write-back: SD opening "Homeowners across … hire Apex Roofing of the Lowcountry, a roofing contractor, …", CTA "For a free repair estimate, phone …"; LD opening "Based in Bluffton, SC, Apex Roofing of the Lowcountry is a roofer …", CTA "Ask for a free estimate at …". The on-call sentence lives on Roof Repair only. Sibling-city H2 pattern for the location batches: "Which Towns Near <City> Do We Also Serve?". Pilot corrections (status.py pilot-corrections) must still be recorded before the next batch.
+### END HANDOFF
+## RUN 20261009-131416-build-ec1c · FINISHED · 2026-10-09T13:18:09-05:00
+Changes: 2 · Summary: Pilot SEM-1..8 applied to Roof Repair and Bluffton, Bluffton cut 834->788 words; E1-E10 and spec checks pass
+- CHANGE #328 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (4).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #329 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (4).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 88ec09fe6670 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #330 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (6).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #331 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (6).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha fc01962ef580 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #332 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (6).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #333 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (6).md | new: Apex Roofing of the Lowcountry - Status.md · sha 84fe08666882 | result: done · copied (Drive for desktop syncs it)
