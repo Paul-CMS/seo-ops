@@ -9,6 +9,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 | 2026-10-08T13:15 | page specs (global) | approved |
 | 2026-10-09T07:39 | audit_approved | approved |
 | 2026-10-09T12:39 | site plan | revise |
+| 2026-10-09T12:40 | site plan | approved |
 | 2026-10-07T17:21 | import from Drive | confirmed |
 
 ## Decisions logged during runs

@@ -93,6 +93,13 @@
       },
       "at": "2026-10-09T12:24:16-05:00",
       "ts": 1791566656.786319
+    },
+    "site_plan": {
+      "files": {
+        "clients/home-mobile-medical/build/Home Mobile Medical - Site Plan - REVISED.md": "acd2d040d2df"
+      },
+      "at": "2026-10-09T12:39:47-05:00",
+      "ts": 1791567587.3664498
     }
   },
   "pages": {
@@ -337,14 +344,14 @@
   },
   "build": {
     "site_plan": {
-      "file": "clients/home-mobile-medical/build/Home Mobile Medical - Site Plan - IMPORTED.md",
+      "file": "clients/home-mobile-medical/build/Home Mobile Medical - Site Plan - REVISED.md",
       "approval": {
-        "state": "revise",
+        "state": "approved",
         "by": "Paul",
-        "at": "2026-10-09T12:39:42-05:00",
-        "note": "Re-open the imported site plan to add a pilot batch first (1 service + 1 location)",
+        "at": "2026-10-09T12:40:09-05:00",
+        "note": null,
         "files": {
-          "clients/home-mobile-medical/build/Home Mobile Medical - Site Plan - IMPORTED.md": "6ad603f87fd1"
+          "clients/home-mobile-medical/build/Home Mobile Medical - Site Plan - REVISED.md": "acd2d040d2df"
         },
         "conditions": [],
         "sensitive_review": null,
@@ -353,11 +360,23 @@
     },
     "batches": [
       {
+        "id": "pilot",
+        "kind": "pilot",
+        "label": "Pilot — 1 service + 1 location",
+        "pages": [
+          "svc-stair-lifts",
+          "loc-beaufort-sc"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "files": {}
+      },
+      {
         "id": "svc1",
         "kind": "service",
         "label": "lifts (remaining)",
         "pages": [
-          "svc-stair-lifts",
           "svc-curved-stair-lifts",
           "svc-porch-lifts",
           "svc-wheelchair-lifts",
@@ -374,7 +393,6 @@
         "label": "HHI-Bluffton-Port Royal metro (remaining)",
         "pages": [
           "hub-hhi-beaufort",
-          "loc-beaufort-sc",
           "loc-bluffton-sc",
           "loc-hilton-head-island-sc",
           "loc-port-royal-sc"
@@ -475,7 +493,7 @@
       {
         "id": "final1",
         "kind": "homepage",
-        "label": "final (remaining)",
+        "label": "homepage final (remaining)",
         "pages": [
           "homepage"
         ],
@@ -487,7 +505,7 @@
       {
         "id": "final2",
         "kind": "about",
-        "label": "final (remaining)",
+        "label": "about final (remaining)",
         "pages": [
           "about"
         ],
@@ -497,7 +515,6 @@
         "files": {}
       }
     ],
-    "pilot_waived": false,
     "pilot_corrections_applied": null
   },
   "audit_steps": {
@@ -687,20 +704,21 @@
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
-    "phase": "Planning your new pages",
+    "phase": "Writing your pages",
     "done": [
       "We confirmed how search engines should understand your business",
       "We prepared a fact sheet for you to confirm",
       "You returned the fact sheet — thank you",
       "We finished reviewing your website",
       "Your business details are confirmed",
-      "Research is complete and page work has started"
+      "Research is complete and page work has started",
+      "Your new page plan is ready"
     ],
     "waiting_on_client": [],
-    "next": "We are planning every service and location page."
+    "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-09T12:39:42-05:00",
+  "updated": "2026-10-09T12:40:09-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
