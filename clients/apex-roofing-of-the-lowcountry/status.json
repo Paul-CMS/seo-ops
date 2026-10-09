@@ -148,7 +148,7 @@
   },
   "pages": {
     "svc-roof-repair": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "service",
       "name": "Roof Repair",
       "url": "https://apexroofingtlc.com/roof-repair/",
@@ -213,7 +213,7 @@
           "sha": "7af4c4593579"
         }
       },
-      "wp_id": 1614,
+      "wp_id": 1620,
       "wp_type": "pages",
       "file": "clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md",
       "links_placed": [
@@ -315,7 +315,7 @@
       "claims": []
     },
     "loc-bluffton": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "location",
       "name": "Bluffton",
       "url": "https://apexroofingtlc.com/bluffton/",
@@ -375,7 +375,7 @@
           "sha": "c59a53c719cd"
         }
       },
-      "wp_id": 1615,
+      "wp_id": 1621,
       "wp_type": "pages",
       "file": "clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md",
       "links_placed": [
@@ -545,7 +545,7 @@
           "svc-roof-repair",
           "loc-bluffton"
         ],
-        "state": "sem_applied",
+        "state": "handed_off",
         "briefs": {
           "state": "approved",
           "by": "Paul",
@@ -599,7 +599,7 @@
           ]
         },
         "sem_findings": 4,
-        "handoff": "H-2026-10-09-09-publish"
+        "handoff": "H-2026-10-09-10-publish"
       },
       {
         "id": "s1",
@@ -878,12 +878,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261009-140247-build-805e",
+    "run_id": "20261009-140647-build-c103",
     "command": "build",
-    "finished": "2026-10-09T14:04:14-05:00",
-    "result": "Pilot SEM-1,2,3 applied to SD Roof Repair and LD Bluffton; SEM-4 kept; E1-E10 pass",
-    "changes": 3,
-    "step": "build:apply-sem",
+    "finished": "2026-10-09T14:12:02-05:00",
+    "result": "Pilot: new WP drafts 1620/1621 from SEM-applied files; publish handoff H-2026-10-09-10-publish; 1614/1615 and H-...-09 superseded",
+    "changes": 8,
+    "step": "build:ship",
     "batch": "pilot"
   },
   "spend": {
@@ -891,7 +891,7 @@
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
-    "phase": "Writing your pages",
+    "phase": "Publishing your new pages",
     "done": [
       "We confirmed how search engines should understand your business",
       "We prepared a fact sheet for you to confirm",
@@ -902,10 +902,10 @@
       "Your new page plan is ready"
     ],
     "waiting_on_client": [],
-    "next": "We are writing your service and location pages."
+    "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-09T14:04:14-05:00",
+  "updated": "2026-10-09T14:12:02-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -917,9 +917,9 @@
   },
   "wordpress": {
     "check": {
-      "at": "2026-10-05T22:33:20-05:00",
+      "at": "2026-10-09T14:09:44-05:00",
       "passed": true,
-      "report": "clients/apex-roofing-of-the-lowcountry/wordpress/wp-check-2026-10-05.md",
+      "report": "clients/apex-roofing-of-the-lowcountry/wordpress/wp-check-2026-10-09.md",
       "settings_readable": true,
       "seopress_fields_ok": true
     }
@@ -1165,8 +1165,8 @@
     ]
   },
   "review_pause": {
-    "run_id": "20261009-140247-build-805e",
-    "step": "build:apply-sem",
-    "at": "2026-10-09T14:04:14-05:00"
+    "run_id": "20261009-140647-build-c103",
+    "step": "build:ship",
+    "at": "2026-10-09T14:12:02-05:00"
   }
 }

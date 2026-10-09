@@ -2256,3 +2256,56 @@ Changes: 3 · Summary: Pilot SEM-1,2,3 applied to SD Roof Repair and LD Bluffton
 - CHANGE #375 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (11).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 2ee52d621684 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #376 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (11).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (11).md | result: done · renamed and moved, nothing deleted
 - CHANGE #377 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (11).md | new: Apex Roofing of the Lowcountry - Status.md · sha 1488bb3bf31a | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-09T14:05 · after build:apply-sem (run 20261009-140247-build-805e) · Paul typed /next
+
+## RUN 20261009-140647-build-c103 · STARTED · /build · 2026-10-09T14:06:47-05:00
+Step: build:ship · batch pilot · session 0ed9494a-d39c-458b-a350-b0f27797f264
+Gates checked: discovery_signed_off, batch:pilot:drafts, wordpress_connected
+- CHANGE #378 [wp_check] https://apexroofingtlc.com/?page_id=1616 | test draft page | old: (none) | new: draft id 1616 | result: APPLIED · test draft (trashed at the end of the check)
+- CHANGE #379 [wp_check] https://apexroofingtlc.com/?p=1617 | test draft post | old: (none) | new: draft id 1617 | result: APPLIED · test draft (trashed at the end of the check)
+- CHANGE #380 [page_content] https://apexroofingtlc.com/?page_id=1620 | new draft page | old: (none) | new: draft id 1620 (pages) · from clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md sha fc7c7933af8f · slug ro… | result: APPLIED · draft only (not live) · generated from the approved file | ref svc-roof-repair
+- CHANGE #381 [page_content] https://apexroofingtlc.com/?page_id=1621 | new draft page | old: (none) | new: draft id 1621 (pages) · from clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md sha 29f915db08aa · slug bluff… | result: APPLIED · draft only (not live) · generated from the approved file | ref loc-bluffton
+- CHANGE #382 [publish] https://apexroofingtlc.com/?page_id=1620 | publish | old: (draft) | new: [REDACTED]/roof-repair/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-10-publish-01
+- CHANGE #383 [publish] https://apexroofingtlc.com/?page_id=1621 | publish | old: (draft) | new: [REDACTED]/bluffton/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-10-publish-02
+- CHANGE #384 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/02 - Build/H-2026-10-09-10-publish.md | upload | old: (new file) | new: H-2026-10-09-10-publish.md · sha c0dca769af7e | result: done · copied (Drive for desktop syncs it)
+- CHANGE #385 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/02 - Build/H-2026-10-09-10-publish.csv | upload | old: (new file) | new: H-2026-10-09-10-publish.csv · sha 2bf13a70fba6 | result: done · copied (Drive for desktop syncs it)
+### HANDOFF · /build · 2026-10-09 · run 20261009-140647-build-c103
+**What I did**
+- Resumed the stopped ship run on Paul's option 1 (accept new drafts). WordPress check passed under this run (test drafts 1616/1617 created and trashed; NOTE: login is an Administrator; Kadence head-code key not set yet).
+- Re-planned the link wheel (`publish.py wheel`, 20 pages) and ran `publish.py drafts --batch pilot`: new WordPress DRAFTS from the current approved (SEM-applied) files — svc-roof-repair → draft 1620 (slug roof-repair-new, SD sha fc7c7933af8f); loc-bluffton → draft 1621 (slug bluffton-new, LD sha 29f915db08aa). SEOPress title, meta description and target keyword set by the script. Nothing published; no `--live`; no published page touched.
+- The script issued publish handoff H-2026-10-09-10-publish to Jonie (2 rows: replace the content of the live /roof-repair/ and /bluffton/ with the draft blocks, keep the URL, then trash the draft). 0 paired redirects; 29 link-table rows held until their targets go live.
+
+**What was decided, and why**
+- Paul chose to accept new drafts rather than reuse 1614/1615 (they predate the SEM edits). Old drafts and the old handoff were left untouched for Paul.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Old drafts 1614 (roof repair) and 1615 (Bluffton) superseded — trash in WordPress | Paul | Confusion for Jonie if left |
+| Handoff H-2026-10-09-09-publish superseded by H-2026-10-09-10-publish — not edited or withdrawn | Paul | Jonie must work only from -10 |
+| SEM-1 emergency link: the SD FAQ carries the inline text "[Link placeholder: /emergency-roof-repair/ …]" in its paragraph, and it is in draft 1620 as visible text | Paul / Finish | Would show on the live page if published as-is; decide before Jonie publishes |
+| pilot_emergency_faq_link_cm022 (CM-022 exception) | Paul | Finish link wheel |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Publish handoff | clients/apex-roofing-of-the-lowcountry/handoffs/H-2026-10-09-10-publish.md / .csv | issued to Jonie |
+| WP drafts | ?page_id=1620, ?page_id=1621 | draft |
+| Link wheel | clients/apex-roofing-of-the-lowcountry/build/link-wheel.json | planned |
+
+**What I could not check**
+- Did not read drafts 1620/1621 back from WordPress block by block; `/verify` checks the live pages after Jonie publishes.
+- No menu (navigation) handoff: both pilot pages replace existing live URLs, so no menu change was identified.
+- Batch pilot set to handed_off (`run.py finish` requires it for ship); handoff .md and .csv copied to Drive `02 - Build`.
+
+**Anything the next agent would otherwise get wrong**
+- Jonie works from H-2026-10-09-10-publish only (drafts 1620/1621). 1614/1615 and H-…-09 are superseded; the SEM-1 placeholder text is inside the roof-repair FAQ paragraph and must not go live as text.
+### END HANDOFF
+## RUN 20261009-140647-build-c103 · FINISHED · 2026-10-09T14:12:02-05:00
+Changes: 8 · Summary: Pilot: new WP drafts 1620/1621 from SEM-applied files; publish handoff H-2026-10-09-10-publish; 1614/1615 and H-...-09 superseded
+- CHANGE #386 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (9).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #387 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (9).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 57883e427870 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #388 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (12).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (12).md | result: done · renamed and moved, nothing deleted
+- CHANGE #389 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (12).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 6da8b4204b51 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #390 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (12).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (12).md | result: done · renamed and moved, nothing deleted
+- CHANGE #391 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (12).md | new: Apex Roofing of the Lowcountry - Status.md · sha 0679f1ebf078 | result: done · copied (Drive for desktop syncs it)

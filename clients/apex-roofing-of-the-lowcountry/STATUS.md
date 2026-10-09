@@ -1,17 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 6 of 8 — Pilot, then batches (batch pilot)**
-- **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:apply-sem finished (run 20261009-140247-build-805e) and that stage is in review mode; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
-- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
+- **What is happening now:** waiting for Jonie to publish batch pilot (H-2026-10-09-10-publish). When the worksheet comes back, this checks every live page against its approved file, adds alt text to the images and writes the batch back to the Brand Guide
+- **Waiting on:** Jonie — waiting for Jonie to publish batch pilot (H-2026-10-09-10-publish). When the worksheet com; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
+- **Next action:** `/build apex-roofing-of-the-lowcountry published pilot` once the wait above is over
 
-_Generated 2026-10-09T14:04 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-09T14:12 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:apply-sem finished (run 20261009-140247-build-805e) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry ship pilot (generate WordPress drafts for batch pilot from the approved files (link tables filled) and hand publishing to Jonie) | 2026-10-09 | /next apex-roofing-of-the-lowcountry |
+| Jonie | waiting for Jonie to publish batch pilot (H-2026-10-09-10-publish). When the worksheet comes back, this checks every live page against its approved file, adds alt text to the images and writes the batch back to the Brand Guide | 2026-10-09 | /build apex-roofing-of-the-lowcountry published pilot |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
 | Paul | Residential Roofer (choice 4a) lives in Brand Guide A3, inside entity_approved (A+B1+B2) and brand_guide_approved (A+D+E+G). Writing it voids both until re-approved. (i) write now and re-approve: /approve apex-roofing-of-the-lowcountry entity_approved brand_guide_approved site_plan; or (ii) use it on the site plan authority and write A3 at the next Brand Guide revision. A3 not edited. | 2026-10-08 | residential_roofer_a3_write |
@@ -25,6 +25,7 @@ _Generated 2026-10-09T14:04 by the system — do not edit. Start every session i
 | Jonie | other handoff — 2 of 2 item(s) open | 2026-10-08 | H-2026-10-08-07-other |
 | Jonie | seo title handoff — 9 of 9 item(s) open | 2026-10-08 | H-2026-10-08-08-seo_title |
 | Jonie | publish handoff — 2 of 2 item(s) open | 2026-10-09 | H-2026-10-09-09-publish |
+| Jonie | publish handoff — 2 of 2 item(s) open | 2026-10-09 | H-2026-10-09-10-publish |
 
 ## Settled decisions — never re-raised
 
@@ -67,9 +68,10 @@ _Generated 2026-10-09T14:04 by the system — do not edit. Start every session i
 - **H-2026-10-08-07-other** (Jonie) — other: 2 of 2 open, issued 2026-10-08
 - **H-2026-10-08-08-seo_title** (Jonie) — seo title: 9 of 9 open, issued 2026-10-08
 - **H-2026-10-09-09-publish** (Jonie) — publish: 2 of 2 open, issued 2026-10-09
+- **H-2026-10-09-10-publish** (Jonie) — publish: 2 of 2 open, issued 2026-10-09
 
 ## Spend so far
 
 - DataforSEO: $0.59
 
-Last run: /build 2026-10-09T14:04 — Pilot SEM-1,2,3 applied to SD Roof Repair and LD Bluffton; SEM-4 kept; E1-E10 pass
+Last run: /build 2026-10-09T14:12 — Pilot: new WP drafts 1620/1621 from SEM-applied files; publish handoff H-2026-10-09-10-publish; 1614/1615 and H-...-09 superseded
