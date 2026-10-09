@@ -888,13 +888,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261009-131920-build-c283",
+    "run_id": "20261009-134712-build-eac1",
     "command": "build",
-    "finished": "2026-10-09T13:21:37-05:00",
-    "result": "Pilot shipped as WordPress drafts 1614 (Roof Repair) and 1615 (Bluffton); publish handoff H-2026-10-09-09-publish issued; [NEED] markers still in both pages - Paul to hold",
-    "changes": 6,
-    "step": "build:ship",
-    "batch": "pilot"
+    "finished": "2026-10-09T13:54:39-05:00",
+    "result": "Pilot drafts SD Roof Repair and LD Bluffton revised from Paul's 2026-10-09 answers (all NEEDs closed); Brand Guide H exceptions + replacement price recorded; drafts await re-approval, not pushed",
+    "changes": 3,
+    "step": "build:pilot-corrections",
+    "batch": null
   },
   "spend": {
     "dataforseo_usd": 0.591961
@@ -915,7 +915,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-09T13:21:37-05:00",
+  "updated": "2026-10-09T13:54:39-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",

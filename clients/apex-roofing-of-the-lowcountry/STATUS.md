@@ -1,19 +1,18 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 6 of 8 — Pilot, then batches (batch pilot)**
-- **What is happening now:** waiting for Jonie to publish batch pilot (H-2026-10-09-09-publish). When the worksheet comes back, this checks every live page against its approved file, adds alt text to the images and writes the batch back to the Brand Guide
-- **Waiting on:** Jonie — waiting for Jonie to publish batch pilot (H-2026-10-09-09-publish). When the worksheet com; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Bra
-- **Next action:** `/build apex-roofing-of-the-lowcountry published pilot` once the wait above is over
+- **What is happening now:** waiting for Paul's approval — the drafts for batch pilot are ready: review each with the semantic review table (8 SEM item(s) found) and approve them together
+- **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (8 SEM it; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
+- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry batch:pilot:drafts --sem <SEM items to apply, e.g. 1,3,4 — or none>` (or asks for changes first)
 
-_Generated 2026-10-09T13:21 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-09T13:54 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Jonie | waiting for Jonie to publish batch pilot (H-2026-10-09-09-publish). When the worksheet comes back, this checks every live page against its approved file, adds alt text to the images and writes the batch back to the Brand Guide | 2026-10-09 | /build apex-roofing-of-the-lowcountry published pilot |
+| Paul | the drafts for batch pilot are ready: review each with the semantic review table (8 SEM item(s) found) and approve them together | 2026-10-09 | /approve apex-roofing-of-the-lowcountry batch:pilot:drafts |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
-| Paul | Send the client one question: "Is your CertainTeed ShingleMaster status current?" (ref Brand Guide D) | 2026-10-08 | send_the_client_one_question_is_your_cer |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
 | Paul | Residential Roofer (choice 4a) lives in Brand Guide A3, inside entity_approved (A+B1+B2) and brand_guide_approved (A+D+E+G). Writing it voids both until re-approved. (i) write now and re-approve: /approve apex-roofing-of-the-lowcountry entity_approved brand_guide_approved site_plan; or (ii) use it on the site plan authority and write A3 at the next Brand Guide revision. A3 not edited. | 2026-10-08 | residential_roofer_a3_write |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
@@ -47,9 +46,15 @@ _Generated 2026-10-09T13:21 by the system — do not edit. Start every session i
 - Audit: 30 findings (3 High, 18 Medium, 9 Low), advisory until the specs are approved; nothing removed or merged.
 - Data: citations skipped for this audit; Search Console/Analytics not used; local grid from Local Dominator (ranks only).
 - Drive: the Finding Register and URL Decision Map stay in the repo only (too large for the Drive connector) until Drive for desktop is set up — `clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/`.
+- Paul 2026-10-09: CertainTeed ShingleMaster is current - yes (Paul's answer). Brand Guide D status set to Paul Approved; the D value, D2 row and content risk R4 still read not confirmed and change at the next Brand Guide revision (re-opens brand_guide_approved). Not used in the pilot drafts.
 - Paul 2026-10-08 site plan choices: 1a homepage keyword to metro level (roofing company hilton head island metro area); 2a permit FAQ on Bluffton and Ridgeland only (HHI, Okatie, Pritchardville jurisdiction FAQs dropped, FO 275/307 to blog list); 3b The Best SERP re-test run; 4a Residential Roofer approved as a category variant; 5a location FAQ gaps (now 18) sourced in the facts interview at each location batch evidence step
 - CM-020 SERP re-test (Paul yes, spent 0.006 USD, 3 Google top-10 reads from Hilton Head Island): condition 2 fails for Roof Repair (1/10 best titles), Roof Replacement (2/10), Skylights (2/10, mostly out-of-area results); only directory lists use best, Apex not in top 10. No page gets The Best; re-test after launch once pages rank.
 - W25 answered by Paul 2026-10-09: father and son, Ralph and Pierce Brehany, both get on the roof. Founder line on Roof Repair kept (pilot SEM row 9 -> SEM-4); only the W25 [NEED] is removed when SEM-4 is applied.
+- Paul 2026-10-09 pilot answers: Apex uses corrosion-resistant flashing and synthetic underlayment on repairs (W11); Apex does leak repair; Roof Repair services = shingle repair/replacement, flashing replacement, ridge cap and starter strip, soffit/fascia/deck, leak repair (no hail - SEM-5 moved it to Emergency); photos of the work with daily progress photos (W10, reviews); daily clean-up and magnet sweep (reviews; magnet per Paul, not in export); no repair-warranty answer - GAF System Plus Limited Warranties mentioned only for a replacement (review 2026-08-15); on a replacement Apex gets the Town permit (review 2026-08-15); timing only as attributed review examples, no general visit length; 25% rule kept general (no SC source found). Review-sourced facts recorded as a Paul Exception to CM-027 in Brand Guide H.
+- Paul 2026-10-09: synthetic roofing is offered - yes. Neither pilot page's services list needs it (Roof Repair list per Paul has no synthetic; Bluffton lists the 8 services). Port Royal base-housing work remains open under synthetic_roofing_offered.
+- Paul 2026-10-09: Apex works in Palmetto Bluff, Belfair, Colleton River Plantation and Moss Creek (W9). Per the Town of Bluffton Neighborhoods PDF, Palmetto Bluff and Hampton Hall are inside the Town limits; Belfair, Colleton River Plantation and Moss Creek are Greater Bluffton (unincorporated Beaufort County). Bluffton page names those three only as also served, outside the Town limits. Hampton Hall is the 6th Bluffton neighborhood (Town PDF; also named in a 2026-05-17 review).
+- Paul 2026-10-09: no Old Town historic review or UDO roof-material claims (UDO 3.18 and Article 5 NEEDs dropped) unless evidence is found; none found in this run. The Old Town FAQ now only tells the homeowner to ask the Town before choosing a material.
+- Paul 2026-10-09: $20,000-$25,000 for a roof replacement, source Google review, Ken Gathercole, 2026-08-15 (per Paul; the figure is not in the reviews export). For the Roof Replacement brief only, cited to that single review, never as Apex's general price. Recorded in Brand Guide H; not in either pilot draft.
 
 ## Open VA items
 
@@ -67,4 +72,4 @@ _Generated 2026-10-09T13:21 by the system — do not edit. Start every session i
 
 - DataforSEO: $0.59
 
-Last run: /build 2026-10-09T13:21 — Pilot shipped as WordPress drafts 1614 (Roof Repair) and 1615 (Bluffton); publish handoff H-2026-10-09-09-publish issued; [NEED] markers still in both pages - Paul to hold
+Last run: /build 2026-10-09T13:54 — Pilot drafts SD Roof Repair and LD Bluffton revised from Paul's 2026-10-09 answers (all NEEDs closed); Brand Guide H exceptions + replacement price recorded; drafts await re-approval, not pushed

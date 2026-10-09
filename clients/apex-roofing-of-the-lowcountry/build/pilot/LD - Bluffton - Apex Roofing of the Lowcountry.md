@@ -40,15 +40,15 @@ Before you hire a roofer in Bluffton, check three things. Who issues the permit?
 
 ### Do I need a Town of Bluffton permit to replace my roof?
 
-Plan on one if your home is inside town limits: the Town of Bluffton issues its own re-roof building permit, with an application just for re-roofing. If your Bluffton address is outside town limits, ask Beaufort County's Building Codes office. [NEED: client confirms Apex pulls the Town of Bluffton re-roof permit] Apex pulls the permit for your job.
+Plan on one if your home is inside town limits: the Town of Bluffton issues its own re-roof building permit, with an application just for re-roofing. If your Bluffton address is outside town limits, ask Beaufort County's Building Codes office. On a roof replacement, Apex gets the Town permit for you.
 
 ### What roofing materials are allowed in Old Town Bluffton?
 
-In Old Town Bluffton, the Town decides which roof materials are allowed, not the roofer. Old Town is a historic district, and exterior changes there go through the Town's historic review for a Certificate of Appropriateness. [NEED: confirm from Town of Bluffton UDO §3.18 that a re-roof in Old Town needs a Certificate of Appropriateness] The materials that pass are set by the Town's design standards. [NEED: cite the current roof-material list in Town of Bluffton UDO Article 5 before publishing]
+Ask the Town of Bluffton before you pick a roof material for a home in Old Town, a National Historic District since 1996. Bring the Town's answer to your estimate, and we will price the roof to match it.
 
-### Do you replace roofs in Palmetto Bluff and other gated Bluffton communities?
+### Do you replace roofs in Palmetto Bluff and nearby gated communities?
 
-[NEED: client confirms work in Palmetto Bluff, Belfair, Colleton River Plantation and Moss Creek (W9)] Yes, Apex replaces roofs in Palmetto Bluff and other gated communities in Bluffton. Before you pick a roof color or material, ask your property owners' association whether it has to approve the choice.
+Yes, Apex replaces roofs in Palmetto Bluff, inside the Town of Bluffton. We also serve Belfair, Colleton River Plantation and Moss Creek, which sit outside the Town limits in Beaufort County. Before you pick a roof color or material, ask your property owners' association whether it has to approve the choice.
 
 ### Is Apex Roofing of the Lowcountry based in Bluffton?
 
@@ -63,7 +63,7 @@ Apex serves homes across Bluffton, including these neighborhoods:
 - Jones Estate
 - Buckwalter
 - Shultz Tract
-- [NEED: one more Bluffton neighborhood with a public source]
+- Hampton Hall
 
 [Map: embed a city-level map of Bluffton, SC here — not the Google Business Profile map]
 
