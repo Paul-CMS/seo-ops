@@ -15,6 +15,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 | 2026-10-08T11:03 | discovery_signed_off | approved |
 | 2026-10-08T13:15 | page specs (global) | approved |
 | 2026-10-08T14:28 | site plan | approved |
+| 2026-10-09T12:22 | batch pilot briefs | approved |
 
 ## Decisions logged during runs
 
