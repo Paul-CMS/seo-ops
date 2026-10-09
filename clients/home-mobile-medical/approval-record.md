@@ -16,7 +16,12 @@ Generated from the seo-ops system (clients/home-mobile-medical/status.json). Do 
 
 ## Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)
 
-- Decision: **pending**
+- Decision: **approved**
+- Decided by: Paul · 2026-10-09T07:39:47-05:00
+- Approved version: `clients/home-mobile-medical/audit/2026-10-07/deliverables/Home Mobile Medical - Finding Register - REVIEW.md` (sha 5bbf8d0d8c6a)
+- Approved version: `clients/home-mobile-medical/audit/2026-10-07/deliverables/Home Mobile Medical - URL Decision Map - REVIEW.md` (sha 87ed2b1e7129)
+- Approved version: `clients/home-mobile-medical/audit/2026-10-07/deliverables/Home Mobile Medical - Recommendations - REVIEW.md` (sha 3c4e44d49845)
+- Approved version: `clients/home-mobile-medical/audit/2026-10-07/deliverables/Home Mobile Medical - Evidence Manifest - REVIEW.md` (sha 1a864e320a0d)
 
 ## Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 

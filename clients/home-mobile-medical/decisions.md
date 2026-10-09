@@ -7,6 +7,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 | When | What | Decision |
 |---|---|---|
 | 2026-10-08T13:15 | page specs (global) | approved |
+| 2026-10-09T07:39 | audit_approved | approved |
 | 2026-10-07T17:21 | import from Drive | confirmed |
 
 ## Decisions logged during runs
@@ -43,3 +44,4 @@ Generated from status.json and the safety log — do not edit. Record a decision
 - 2026-10-07T17:28 — WordPress connected (/wp-check passed in the last 30 days) — met (system-verified)
 - 2026-10-08T07:57 — Every registered audit step has an outcome (Done / Skipped / Failed) — met (system-verified)
 - 2026-10-08T13:15 — Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)
+- 2026-10-09T07:39 — Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — met (system-verified)

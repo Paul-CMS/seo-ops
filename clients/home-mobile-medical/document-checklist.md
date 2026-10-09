@@ -1,6 +1,6 @@
 # Home Mobile Medical - Document Checklist
 
-Generated 2026-10-09T07:27 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-09T07:39 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -36,7 +36,7 @@ Generated 2026-10-09T07:27 from status.json — do not edit. `[x]` done · `[-]`
 - [x] Every registered audit step has an outcome (Done / Skipped / Failed)
 - [ ] Every page in the site plan is built, verified and written back — batches not yet built and written back: svc1, loc1, loc2, loc3, loc4, loc5, loc6, loc7, final1, final2
 - [x] WordPress connected (/wp-check passed in the last 30 days)
-- [ ] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — discovery is not signed off yet — still open: the audit deliverables
+- [x] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded)
 - [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — the technical blocker checklist is not written yet
 - [x] Page specs approved by Paul once, globally (methodology/specs) and unchanged since
 
@@ -44,7 +44,7 @@ Generated 2026-10-09T07:27 from status.json — do not edit. `[x]` done · `[-]`
 
 - [x] Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant)
 - [x] Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly
-- [ ] Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)
+- [x] Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)
 - [x] Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 - [ ] Link wheel built and verified — schema may start
 - [ ] Schema built and QA cleared — release
