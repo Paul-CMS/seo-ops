@@ -1,4 +1,6 @@
-# Lessons — inbox
+# Lessons — ARCHIVED 2026-10-09 (rewrite 2 P3)
+**Archived.** The one inbox is now `methodology/change-requests.md` (written by `scripts/changereq.py`). L-008–L-011 continue there as CR-001–CR-004. Kept for history only.
+
 ### Inbox — proposed corrections. Nothing here is in force. Paul moves an accepted item into rulings.md (with an ID) and marks it here as MOVED → CM-###.
 
 Format:

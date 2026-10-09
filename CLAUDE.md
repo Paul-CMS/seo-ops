@@ -20,12 +20,25 @@ Agents read compact script-made summaries, never raw exports.
 
 ---
 
-## 0 · Changing the system — test first
+## 0 · Changing the system — only in a system session, test first
 
-After **every** change to the system (scripts, gates, hooks, commands, agents, CLAUDE.md, methodology
-files the scripts read), run `python3 tests/run_all.py` (about 30 seconds; fake WordPress, fake
+**Only Paul changes the workflow (Q2).** The system files — `scripts/**` (incl. `gates.json`), `methodology/**`,
+`CLAUDE.md`, `.claude/agents|commands|skills/**`, `templates/**`, `tests/**`, `docs/**`, `hooks-pending/**`,
+`config.json` — change only in a **system session**: Paul types `/system` (a hook issues a one-time system token for
+that session; the guard blocks every other session; a VA Mac, `machine.json can_change_system: false`, never gets
+one). A system session runs on Opus, in the main folder, and does no client work.
+
+**In a client session, never change the workflow — flag it:** `python3 scripts/run.py flag <slug> <RUN_ID> --text
+"…" [--workaround "…"]`. The run continues on the current rules; the flag shows in the client's STATUS.md under
+"Flagged for Paul (system)". **`/system-review`** (system session) collects every flag into
+`methodology/change-requests.md` (CR-###, the one inbox; append-only, `scripts/changereq.py`), and Paul answers each:
+accept, reject or edit. Accepted items are built in that session → tests → commit → `changereq.py done <CR> --sha`.
+
+After **every** change to the system, run `python3 tests/run_all.py` (a few minutes; fake WordPress, fake
 DataforSEO, fake web, a throwaway copy of the repo — no network, no cost, no client data). **Never
-commit a change that fails it.** A new behaviour gets a new check in `tests/run_all.py`.
+commit a change that fails it.** A new behaviour gets a new check in `tests/run_all.py`. Hook changes are written to
+`hooks-pending/` (the guard keeps Claude out of `.claude/hooks/`); the tests run them and Paul installs them
+(`hooks-pending/INSTALL.md`).
 
 ## 1 · Step zero — every command, every session
 
@@ -33,8 +46,8 @@ commit a change that fails it.** A new behaviour gets a new check in `tests/run_
    `clients/<slug>/STATUS.md` for the rest. Read `clients/<slug>/decisions-settled.md` — never re-raise what it lists.
 2. Read **only** the files listed for the step — `run.py start` prints the list (`run.py steps <command>`
    shows them all; scripts/gates.json → steps → reads). Nothing else is read by default.
-3. Rules come from `methodology/rulings.md` (cite IDs; never restate). `methodology/lessons.md` is an
-   inbox of proposals — nothing in it is in force.
+3. Rules come from `methodology/rulings.md` (cite IDs; never restate). `methodology/change-requests.md` is
+   the inbox of proposals — nothing in it is in force.
 
 ## 2 · The run protocol — no exceptions
 
@@ -249,8 +262,8 @@ BB-601–608 replaced by `BB-Standard-Schema-Section-v1.1.md`; woodlawntrees.com
 reference, schema only) > everything else.** Platform requirements and legal/truth limits bind
 every rule. rulings.md holds every Coastal ruling (CM-###), the Rule Register (RULE-###), the
 GOV-06 procedure for new conflicts (PROC-01) and the resolved Conflicts Register. Skills, agents
-and writer standards cite IDs; never restate a rule as if it were new. New proposals go to
-`methodology/lessons.md` (inbox) until Paul moves them into rulings.md.
+and writer standards cite IDs; never restate a rule as if it were new. New proposals are flagged
+(`run.py flag`) into `methodology/change-requests.md` until Paul accepts them in `/system-review`.
 
 The rulings that most change daily work:
 
@@ -275,8 +288,8 @@ The rulings that most change daily work:
   step. Conflicts are recorded as OPEN entries in `methodology/rulings.md` (PROC-01), never resolved inside
   the work (GOV-06 §5).
 
-A proposed methodology correction goes in `methodology/lessons.md` (inbox) with its reason; it is
-in force only once Paul moves it into rulings.md with an ID.
+A proposed methodology correction is flagged (`run.py flag`, with its reason); it is in force only once Paul
+accepts it in `/system-review` and it is written into rulings.md with an ID.
 
 ## 7 · Independence
 

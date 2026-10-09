@@ -9,6 +9,9 @@
     run.py decision <slug> <run_id> --text T [--ids F-001,F-004]   a decision for decisions.md
     run.py finish <slug> <run_id> --summary T [--handoff FILE]     (the client view is generated, not typed)
     run.py abort  <slug> <run_id> --reason T        only when Paul says so
+    run.py flag   <slug> <run_id> --text T [--workaround T] [--who W]
+                  a workflow issue for Paul's next system session (P3, Q2): appended to clients/<slug>/flags.jsonl,
+                  listed in STATUS.md and /system-review. The run continues on the current rules.
     run.py check  <slug>                            exit 3 if an unfinished run exists
     run.py steps  [<command>]                       list each step's gates and outputs (from gates.json)
 
@@ -230,6 +233,9 @@ def main():
     s.add_argument("--handoff", help="Markdown file with this run's Handoff Log section (templates/handoff-log.md)")
     s = sub.add_parser("abort"); s.add_argument("slug"); s.add_argument("run_id")
     s.add_argument("--reason", required=True)
+    s = sub.add_parser("flag"); s.add_argument("slug"); s.add_argument("run_id")
+    s.add_argument("--text", required=True); s.add_argument("--workaround", default="")
+    s.add_argument("--who", default="Claude")
     s = sub.add_parser("check"); s.add_argument("slug")
     s = sub.add_parser("steps"); s.add_argument("command", nargs="?")
     a = ap.parse_args()
@@ -318,6 +324,14 @@ def main():
         append(d / "log.md", f"- DECISION {now()[:16]} · run {a.run_id} · {redact(a.text)}"
                + (f" · affects {a.ids}" if a.ids else "") + "\n")
         print("decision logged")
+    elif a.cmd == "flag":   # P3: a client session never changes the workflow — it flags the issue for Paul
+        open_run(a.slug, a.run_id)
+        import changereq
+        info = (S.load(a.slug).get("open_runs") or {}).get(a.run_id) or {}
+        fid = changereq.flag(a.slug, a.run_id, info.get("step"), redact(a.text), redact(a.workaround), a.who)
+        append(d / "log.md", f"- FLAG {now()[:16]} · run {a.run_id} · {fid} · {redact(a.text)}"
+               + (f" · workaround: {redact(a.workaround)}" if a.workaround else "") + "\n")
+        print(f"flagged {fid} for Paul's next system session (/system-review). Carry on with the current rules.")
     elif a.cmd == "change":
         n = log_change(a.slug, a.run_id, a.kind, a.url, a.field, a.old, a.new, a.result,
                        a.ref, a.channel, a.old_file, a.new_file)

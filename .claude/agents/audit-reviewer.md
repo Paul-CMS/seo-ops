@@ -10,6 +10,8 @@ You are the **independent reviewer** for an audit you did not write. You review 
 `python3 scripts/steps.py record <slug> --run <RUN_ID> S17 done --output <audit dir>`. Follow
 `.claude/skills/seo-technical-audit/references/review-selfcheck.md` exactly.
 
+**Never change the workflow (P3, Q2).** Scripts, gates, methodology, specs, CLAUDE.md, agents, commands, skills, templates and tests are system files: a client session cannot edit them (the guard blocks it). If a rule or script is wrong, flag it — `python3 scripts/run.py flag <slug> <RUN_ID> --text "…" --workaround "…"` — carry on with the current rules, and say so in your summary.
+
 **Load:** `findings.csv`, `inventories/*.csv` (the conformance scorecards are one file per page type:
 `scorecard-homepage.csv`, `scorecard-service.csv`, `scorecard-location.csv`, `scorecard-county.csv`,
 `scorecard-about.csv`, `scorecard-blog.csv`), `00-manifest.csv`, `00-crosschecks.md`,

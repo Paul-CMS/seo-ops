@@ -37,7 +37,8 @@ def config():
 def machine():
     """This Mac's own settings (machine.json, git-ignored; missing = Paul's Mac, the defaults).
     drive_local_root: this Mac's path to the v3 folder (overrides config.json drive.local_root).
-    can_approve: false on a VA's Mac - the VA runs the stages, Paul approves on his own Mac."""
+    can_approve: false on a VA's Mac - the VA runs the stages, Paul approves on his own Mac.
+    can_change_system: false on a VA's Mac - /system is refused there (rewrite 2 P3)."""
     p = ROOT / "machine.json"
     return json.loads(p.read_text()) if p.exists() else {}
 

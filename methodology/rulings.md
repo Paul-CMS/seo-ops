@@ -8,8 +8,8 @@ Platform requirements and legal/truth constraints still bound every rule (PROC-0
 **How this file is used**
 - Skills, agents and writer standards **cite IDs from here and never restate rules.** If a
   skill needs a rule, it names the ID (e.g. "CM-019", "RULE-005", "BB-305").
-- `methodology/lessons.md` is an **inbox**: proposals only, never in force until Paul moves
-  an item here with an ID.
+- `methodology/change-requests.md` is the **inbox** (rewrite 2 P3; the old `lessons.md` is archived): proposals
+  only, never in force until Paul accepts one in `/system-review` and it is entered here with an ID.
 - Only Paul adds, changes or retires an entry. A change is a new entry (or a status change
   with a pointer) — never a silent edit of the rule text.
 - Consolidated on 2026-10-02 from: the Coastal Delta v1.0 (CM-001–018), the Delta addendum
@@ -749,8 +749,8 @@ destroyed.**
    risk. Never average two positions.
 3. Flag the affected findings `client_confirmation_required` or `paul_approval_required`,
    confidence `Assumed`.
-4. Draft the proposed ruling in this file's entry format (as an inbox item in
-   `lessons.md`).
+4. Draft the proposed ruling in this file's entry format and flag it (`run.py flag`, it becomes a
+   change request in `change-requests.md`).
 5. Paul rules; the ruling becomes an entry here with an ID.
 
 A tension that recurs across three clients is a candidate for a standing ruling here, not

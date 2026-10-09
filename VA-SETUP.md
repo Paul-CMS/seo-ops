@@ -109,12 +109,15 @@ so the VA does not need to learn it by heart. This guide covers only setup and t
    ```json
    {
      "drive_local_root": "/Users/YOU/Library/CloudStorage/GoogleDrive-you@example.com/My Drive/v3. CMS Technical SEO Audit 2026",
-     "can_approve": false
+     "can_approve": false,
+     "can_change_system": false
    }
    ```
 
    - `drive_local_root`: where v3 is on **this** Mac.
    - `can_approve: false`: this Mac runs the work but never approves. Do not change it.
+   - `can_change_system: false`: this Mac never changes the workflow (scripts, rules, specs). If something in
+     the workflow looks wrong, the session flags it for Paul (`run.py flag`) and carries on. Do not change it.
    - Git never uploads `machine.json`, because each Mac keeps its own.
 
 ### B4. Credentials — `.env`

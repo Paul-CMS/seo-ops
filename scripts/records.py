@@ -252,6 +252,13 @@ def status_md(slug):
     out += ["", "## Open VA items", ""]
     out += ([f"- **{hid}** ({owner}) — {kind}: {n_open} of {n} open, issued {issued}" for hid, owner, kind, issued, n_open, n in hs]
             or ["_None._"])
+    import changereq   # P3: workflow issues flagged in this client's sessions, for Paul's next system session
+    fl = changereq.open_flags(slug)
+    out += ["", "## Flagged for Paul (system)", ""]
+    out += ([f"- **{r['id']}**{' → ' + cid if cid else ''} ({state.lower()}{', not yet reviewed' if not cid else ''}) "
+             f"{r['at'][:10]} · {r.get('step') or '—'}: {r['text']}"
+             + (f" — workaround: {r['workaround']}" if r.get("workaround") else "") for r, cid, state in fl]
+            or ["_None._"])
     out += ["", "## Spend so far", "", f"- DataforSEO: ${total:.2f}" + (f" (of which failed tasks ${failed:.2f})" if failed else "")]
     if lr:
         out += ["", f"Last run: /{lr.get('command')} {lr.get('finished', '')[:16]} — {lr.get('result')}"]

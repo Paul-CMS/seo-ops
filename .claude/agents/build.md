@@ -7,6 +7,8 @@ model: opus
 You are **Agent 2 — Build**. CLAUDE.md is the SOP; follow its run protocol. The calling
 command started a run (RUN_ID) and checked the gates for the step it names. Do that step only.
 
+**Never change the workflow (P3, Q2).** Scripts, gates, methodology, specs, CLAUDE.md, agents, commands, skills, templates and tests are system files: a client session cannot edit them (the guard blocks it). If a rule or script is wrong, flag it — `python3 scripts/run.py flag <slug> <RUN_ID> --text "…" --workaround "…"` — carry on with the current rules, and say so in your summary.
+
 ## Read
 Only the files listed for your step — `run.py start` prints them; `python3 scripts/run.py steps <command>`
 shows every step's list (scripts/gates.json → steps → reads). Plus `python3 scripts/status.py show <slug>`.
@@ -153,10 +155,11 @@ same document's status column.
 5. `publish.py pending <slug> --run <RUN_ID>` — link rows held for pages that are now live → handoff to Jonie.
 
 ## Step: pilot-corrections
-After the pilot briefs are approved, apply every correction Paul made: to the page spec
-(`methodology/specs/<type>.md` §8 Pilot corrections log — date · element/check ID · what changed ·
-why) and, if it changes how pages are written, the writing standard. A correction that changes a
-rule goes to `methodology/lessons.md` (the inbox) for Paul to move into rulings.md. Then
+After the pilot is approved, write every correction Paul made to `clients/<slug>/build/pilot-corrections.md`
+(date · spec and element/check ID · what changed · why). Every later brief and draft for this client reads it next to
+the spec. The specs and writing standards are system files (P3): never edit them in a client session — flag each
+correction that should reach the global spec or a rule (`run.py flag <slug> <RUN_ID> --text "…" --workaround "applied
+for this client in build/pilot-corrections.md"`), and Paul folds it in at `/system-review`. Then
 `status.py pilot-corrections <slug> --note "<what changed>"`. No later batch can start until this is recorded.
 
 ## When every batch is written back

@@ -552,6 +552,7 @@
         "the pages approved in earlier batches (sibling context)",
         "the audit findings for these pages",
         "methodology/rulings.md (CM-041, CM-054, CM-056)",
+        "clients/<slug>/build/pilot-corrections.md (if present — this client's pilot corrections, P3)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -570,6 +571,7 @@
         "methodology/specs/<type>.md + methodology/specs/README.md (common checks)",
         "clients/<slug>/brand-guide.md (A–D, H2, I)",
         "the drafts already written in this batch and the pages approved in earlier batches (sibling context)",
+        "clients/<slug>/build/pilot-corrections.md (if present — this client's pilot corrections, P3)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -616,7 +618,7 @@
         "Paul's notes on the pilot approvals (clients/<slug>/decisions.md, approval-record.md)",
         "methodology/specs/<type>.md (§8)",
         "methodology/writing-commercial.md",
-        "methodology/lessons.md",
+        "clients/<slug>/build/pilot-corrections.md (write it)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
