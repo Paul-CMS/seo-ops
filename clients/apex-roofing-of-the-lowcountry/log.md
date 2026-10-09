@@ -1920,3 +1920,50 @@ Changes: 0 · Summary: Pilot batch review: sibling check clean on FAQs/headings;
 - CHANGE #312 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (3).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 3e11f611b75c | result: done · copied (Drive for desktop syncs it)
 - CHANGE #313 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (3).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (3).md | result: done · renamed and moved, nothing deleted
 - CHANGE #314 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (3).md | new: Apex Roofing of the Lowcountry - Status.md · sha 6118f8bf5227 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261009-130919-build-89b2 · STARTED · /build · 2026-10-09T13:09:19-05:00
+Step: build:drafts · batch pilot · session 0ed9494a-d39c-458b-a350-b0f27797f264
+Gates checked: discovery_signed_off, batch:pilot:drafts_ready
+- SETTLED w25_who_goes_on_the_roof · 2026-10-09T13:10:06-05:00 · run 20261009-130919-build-89b2 · by Paul · W25 answered by Paul 2026-10-09: father and son, Ralph and Pierce Brehany, both get on the roof. Founder line on Roof Repair kept (pilot SEM row 9 -> SEM-4); only the W25 [NEED] is removed when SEM-4 is applied.
+- DECISION 2026-10-09T13:10 · run 20261009-130919-build-89b2 · Paul's answers to the pilot semantic review (11 rows, re-issued as SEM-1..SEM-8): row 1 keep the emergency-leak FAQ on Roof Repair and link it to /emergency-roof-repair/ (not routed); row 9 keep founder line (W25 answered); row 10 move Hail Damage Repair to the Emergency Roof Repair page and remove the H3 from Roof Repair; rows 2-8 and 11 apply as suggested, row 5 localized to Bluffton rather than cut. Paul accepts the Bluffton depth complaint (cut Bluffton down) - not a SEM item, no copy changed in this report-only run.
+- OPEN pilot_emergency_faq_link_cm022 · 2026-10-09T13:10:06-05:00 · run 20261009-130919-build-89b2 · by Paul · SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another.
+### HANDOFF · /build · 2026-10-09 · run 20261009-130919-build-89b2
+**What I did**
+- Re-issued the pilot semantic review table: the 11 rows of run 20261009-124809-build-ab2d consolidated into SEM-1 to SEM-8 (the set approve.py accepts), with Paul's 2026-10-09 answers built into each action. Report only; neither draft changed.
+- Re-registered the batch: `status.py batch apex-roofing-of-the-lowcountry pilot --state drafts_written --sem-findings 8` with the re-issued table.
+- Logged Paul's answers (one decision), settled W25 (`w25_who_goes_on_the_roof`: Ralph and Pierce both get on the roof), and asked one question (`pilot_emergency_faq_link_cm022`).
+
+**What was decided, and why**
+- Row map: 1→SEM-1 · 2,8→SEM-2 · 6,7→SEM-3 · 9→SEM-4 · 10→SEM-5 · 3,5→SEM-6 · 4→SEM-7 · 11→SEM-8 (grouped by page and kind of fix).
+- SEM-2: because SEM-1 keeps the emergency FAQ on Roof Repair, the on-call sentence stays on Roof Repair only; Bluffton gets its own next step.
+- SEM-6: the climate sentence is localized with the facts already sourced in the Bluffton brief (May River, New River, ~20 ft), so nothing new is invented.
+- Bluffton cut-down (Paul accepted the depth complaint) is recorded as a draft revision, not a SEM item.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| SEM-1 link to /emergency-roof-repair/ is an in-prose link: CM-022/CM-005 say Build leaves a placeholder and Finish proposes it as the page's one exception | Paul | The live link (not the drafts approval) |
+| Bluffton draft cut-down | Paul / Build | Bluffton draft revision |
+| Remaining [NEED]s (SD 11, LD 5) | Client via Paul | Ship |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Semantic review (8 SEM items) | clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Semantic Review - pilot - REVIEW.md | Ready for Paul with the drafts |
+| SD Roof Repair | clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md | Unchanged |
+| LD Bluffton | clients/apex-roofing-of-the-lowcountry/build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md | Unchanged |
+
+**What I could not check**
+- SEM-1 to SEM-7 as checks still have no definition in writing-commercial.md; not run.
+
+**Anything the next agent would otherwise get wrong**
+- Paul's picks are SEM numbers 1–8 from the re-issued table, not the old row numbers. In apply-sem: SEM-4 removes only the W25 [NEED]; SEM-5 removes hail from Roof Repair and routes it to the Emergency Roof Repair brief; SEM-1 keeps the FAQ and does not place a live link.
+### END HANDOFF
+## RUN 20261009-130919-build-89b2 · FINISHED · 2026-10-09T13:11:08-05:00
+Changes: 0 · Summary: Pilot semantic review re-issued as SEM-1..SEM-8 (11 rows consolidated, Paul's answers built in; W25 settled; drafts unchanged)
+- CHANGE #315 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (3).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #316 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (3).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 6499f26a1f59 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #317 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (4).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #318 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (4).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha ae346eaaed21 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #319 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (4).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #320 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (4).md | new: Apex Roofing of the Lowcountry - Status.md · sha 34817178b4cf | result: done · copied (Drive for desktop syncs it)
