@@ -303,7 +303,7 @@
       "claims": []
     },
     "loc-bluffton": {
-      "state": "planned",
+      "state": "brief_written",
       "type": "location",
       "name": "Bluffton",
       "url": "https://apexroofingtlc.com/bluffton/",
@@ -347,6 +347,14 @@
             "Unverified": 6,
             "Conflict": 0
           }
+        }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/pilot/LB - Bluffton - Apex Roofing of the Lowcountry.md",
+          "run": "20261008-222200-build-f8f3",
+          "at": "2026-10-08T22:27:26-05:00",
+          "sha": "8b70358ea294"
         }
       }
     },
@@ -513,10 +521,15 @@
           "svc-roof-repair",
           "loc-bluffton"
         ],
-        "state": "planned",
+        "state": "briefs_written",
         "briefs": null,
         "drafts": null,
-        "files": {}
+        "files": {
+          "briefs": [
+            "clients/apex-roofing-of-the-lowcountry/build/pilot/SB - Roof Repair - Apex Roofing of the Lowcountry.md",
+            "clients/apex-roofing-of-the-lowcountry/build/pilot/LB - Bluffton - Apex Roofing of the Lowcountry.md"
+          ]
+        }
       },
       {
         "id": "s1",
@@ -795,10 +808,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261008-150539-build-a2ae",
+    "run_id": "20261008-222200-build-f8f3",
     "command": "build",
-    "finished": "2026-10-08T22:21:57-05:00",
-    "result": "Roof Repair brief written. H1 no 'The Best' (search test failed CM-020). FAQ sections set. Evidence gaps flagged [NEED] on repair types; repair warranty, duration, cost drivers unknown. Flags: 25% rule may not apply in SC; repair warranty term needs client clarification; facts interview needed on repair scope, duration, cost drivers, warranty, methods.",
+    "finished": "2026-10-08T22:29:33-05:00",
+    "result": "Bluffton brief written. H1 'Roofers in Bluffton', keyword 'roofing contractor bluffton sc' (avoids homepage repeat). Based-in-Bluffton angle. FAQ: 1 answerable (based in Bluffton); 2 need Town of Bluffton sources; 1 needs client confirmation (gated communities). Neighborhoods: 5 sourced from Wikipedia (need 6 for spec). Address/phone confirmed from Paul's 2026-10-08 decision.",
     "changes": 0,
     "step": "build:brief",
     "batch": "pilot"
@@ -822,7 +835,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-08T22:21:57-05:00",
+  "updated": "2026-10-08T22:29:33-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -890,8 +903,8 @@
     }
   },
   "review_pause": {
-    "run_id": "20261008-150539-build-a2ae",
+    "run_id": "20261008-222200-build-f8f3",
     "step": "build:brief",
-    "at": "2026-10-08T22:21:57-05:00"
+    "at": "2026-10-08T22:29:33-05:00"
   }
 }

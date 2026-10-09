@@ -1127,3 +1127,39 @@ Generated from the safety log (clients/apex-roofing-of-the-lowcountry/log.md) �
 **Anything the next agent would otherwise get wrong**
 - The Bluffton brief is next, in its own run. Paul's waiver does not make Submitted facts publishable: repair types, W10 and W25 stay [NEED] in the draft. Never attach the lifetime warranty to a repair, and never echo the reviews' "10 year" warranty.
 
+## /build · 2026-10-08 · run 20261008-222200-build-f8f3
+
+**What I did**
+- Wrote the Bluffton location brief (pilot, one page per run, CM-043) from the approved site plan, the location spec, Brand Guide A–I, the evidence grid and facts file, customer language, the fan-out routing (no PAA rows route to Bluffton), the sibling Roof Repair brief and the audit findings for /bluffton/.
+- Recorded it: `status.py page-stage … loc-bluffton --stage brief` → "brief recorded · batch briefs collected" (both pilot briefs are now in for Paul's one approval).
+
+**What was decided, and why**
+- H1 "Roofers in Bluffton", no "The Best" (CM-020 condition 1 fails; BG-H2). First H2 must not use "Roofers".
+- Paul's evidence waiver applied narrowly: no response time and no competitor claims (CM-016; BG-D Guarantees Unknown). FAQ 4 uses the client's own "always on call … high priority".
+- Neighborhoods: only the 5 Wikipedia-verified names; the 6th is [NEED] (LOC-15 fails until sourced).
+- CTA NAP shows the street address (Paul 2026-10-08, BG-A4), superseding F-020's older recommendation.
+- File named LB (brief), not LD (reserved for the approved draft).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Sixth Bluffton neighborhood with a public source | Paul / facts interview | LOC-15 on the draft |
+| Town of Bluffton permit source (FAQ 1) and Old Town design-guideline source (FAQ 2) | drafter (cite) or Paul | LOC-14 (needs 3 answerable FAQs) |
+| Client confirms work in Palmetto Bluff / Belfair / gated communities (W9) | Client via Paul | FAQ 3 publication |
+| Brand Guide F (confirmed NAP) empty | Paul | LOC-19 check at Finish |
+| Residential Roofer A3 write (`residential_roofer_a3_write`) | Paul | use of that variant |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Bluffton brief | clients/apex-roofing-of-the-lowcountry/build/pilot/LB - Bluffton - Apex Roofing of the Lowcountry.md | recorded, awaiting batch:pilot:briefs |
+| Roof Repair brief | clients/apex-roofing-of-the-lowcountry/build/pilot/SB - Roof Repair - Apex Roofing of the Lowcountry.md | recorded, awaiting batch:pilot:briefs |
+| Evidence grid | clients/apex-roofing-of-the-lowcountry/build/evidence/loc-bluffton.grid.md | BLOCK, waived by Paul |
+
+**What I could not check**
+- Whether Belfair, Colleton River Plantation, Moss Creek or Hampton Hall lie in Bluffton (no public source read in this step).
+- The Town of Bluffton permit and Old Town historic-district rules (no official source in the read list).
+
+**Anything the next agent would otherwise get wrong**
+- Do not write a response time, a "first response" claim or anything a competitor says, even though the waiver text mentions them. Do not explain services on this page (link table only). Do not repeat Old Town in Things to Do; it is a Top Site and a neighborhood. Keep "roofing company" out of the H tags (the homepage holds #1 for it).
+

@@ -1692,3 +1692,53 @@ Changes: 0 · Summary: Roof Repair brief written. H1 no 'The Best' (search test 
 - CHANGE #283 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-08 (7).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha eb02a978390e | result: done · copied (Drive for desktop syncs it)
 - CHANGE #284 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-08 (5).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-08 (5).md | result: done · renamed and moved, nothing deleted
 - CHANGE #285 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-08 (5).md | new: Apex Roofing of the Lowcountry - Status.md · sha 25b83cab1337 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261008-222200-build-f8f3 · STARTED · /build · 2026-10-08T22:22:00-05:00
+Step: build:brief · batch pilot · session 74dd4cab-747d-4ef8-8581-f0c3e1a48356
+Gates checked: discovery_signed_off, batch:pilot:briefs_ready, evidence:loc-bluffton, page_specs_approved
+- BRIEF 2026-10-08T22:27 · run 20261008-222200-build-f8f3 · loc-bluffton · clients/apex-roofing-of-the-lowcountry/build/pilot/LB - Bluffton - Apex Roofing of the Lowcountry.md
+- BRIEFS COLLECTED 2026-10-08T22:27 · batch pilot · 2 page(s), one run each
+- DECISION 2026-10-08T22:27 · run 20261008-222200-build-f8f3 · Bluffton brief: Paul's evidence waiver applied narrowly. No response time and no competitor claims used (CM-016; BG-D Guarantees Unknown) despite the request to use industry standards and competitor claims. Neighborhoods limited to the 5 Wikipedia-verified names (6th is [NEED], LOC-15 fails until sourced). FAQs 1-3 need a cited Town of Bluffton source or client confirmation; only FAQ 4 answerable now. Brief named LB (not LD, which is reserved for the approved draft) per the naming convention.
+### HANDOFF · /build · 2026-10-08 · run 20261008-222200-build-f8f3
+**What I did**
+- Wrote the Bluffton location brief (pilot, one page per run, CM-043) from the approved site plan, the location spec, Brand Guide A–I, the evidence grid and facts file, customer language, the fan-out routing (no PAA rows route to Bluffton), the sibling Roof Repair brief and the audit findings for /bluffton/.
+- Recorded it: `status.py page-stage … loc-bluffton --stage brief` → "brief recorded · batch briefs collected" (both pilot briefs are now in for Paul's one approval).
+
+**What was decided, and why**
+- H1 "Roofers in Bluffton", no "The Best" (CM-020 condition 1 fails; BG-H2). First H2 must not use "Roofers".
+- Paul's evidence waiver applied narrowly: no response time and no competitor claims (CM-016; BG-D Guarantees Unknown). FAQ 4 uses the client's own "always on call … high priority".
+- Neighborhoods: only the 5 Wikipedia-verified names; the 6th is [NEED] (LOC-15 fails until sourced).
+- CTA NAP shows the street address (Paul 2026-10-08, BG-A4), superseding F-020's older recommendation.
+- File named LB (brief), not LD (reserved for the approved draft).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Sixth Bluffton neighborhood with a public source | Paul / facts interview | LOC-15 on the draft |
+| Town of Bluffton permit source (FAQ 1) and Old Town design-guideline source (FAQ 2) | drafter (cite) or Paul | LOC-14 (needs 3 answerable FAQs) |
+| Client confirms work in Palmetto Bluff / Belfair / gated communities (W9) | Client via Paul | FAQ 3 publication |
+| Brand Guide F (confirmed NAP) empty | Paul | LOC-19 check at Finish |
+| Residential Roofer A3 write (`residential_roofer_a3_write`) | Paul | use of that variant |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Bluffton brief | clients/apex-roofing-of-the-lowcountry/build/pilot/LB - Bluffton - Apex Roofing of the Lowcountry.md | recorded, awaiting batch:pilot:briefs |
+| Roof Repair brief | clients/apex-roofing-of-the-lowcountry/build/pilot/SB - Roof Repair - Apex Roofing of the Lowcountry.md | recorded, awaiting batch:pilot:briefs |
+| Evidence grid | clients/apex-roofing-of-the-lowcountry/build/evidence/loc-bluffton.grid.md | BLOCK, waived by Paul |
+
+**What I could not check**
+- Whether Belfair, Colleton River Plantation, Moss Creek or Hampton Hall lie in Bluffton (no public source read in this step).
+- The Town of Bluffton permit and Old Town historic-district rules (no official source in the read list).
+
+**Anything the next agent would otherwise get wrong**
+- Do not write a response time, a "first response" claim or anything a competitor says, even though the waiver text mentions them. Do not explain services on this page (link table only). Do not repeat Old Town in Things to Do; it is a Top Site and a neighborhood. Keep "roofing company" out of the H tags (the homepage holds #1 for it).
+### END HANDOFF
+## RUN 20261008-222200-build-f8f3 · FINISHED · 2026-10-08T22:29:33-05:00
+Changes: 0 · Summary: Bluffton brief written. H1 'Roofers in Bluffton', keyword 'roofing contractor bluffton sc' (avoids homepage repeat). Based-in-Bluffton angle. FAQ: 1 answerable (based in Bluffton); 2 need Town of Bluffton sources; 1 needs client confirmation (gated communities). Neighborhoods: 5 sourced from Wikipedia (need 6 for spec). Address/phone confirmed from Paul's 2026-10-08 decision.
+- CHANGE #286 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-08 (6).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-08 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #287 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-08 (6).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 02fabe719cf7 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #288 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-08 (8).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-08 (8).md | result: done · renamed and moved, nothing deleted
+- CHANGE #289 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-08 (8).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 9a12a059f0b4 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #290 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-08 (6).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-08 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #291 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-08 (6).md | new: Apex Roofing of the Lowcountry - Status.md · sha 75ea1ad803c4 | result: done · copied (Drive for desktop syncs it)
