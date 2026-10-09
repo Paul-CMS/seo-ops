@@ -64,16 +64,8 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-07T16:05:24-05:00",
-  "updated": "2026-10-08T13:15:46-05:00",
-  "open_runs": {
-    "20261007-160524-new-client-fc92": {
-      "step": "new-client",
-      "batch": null,
-      "page": null,
-      "started": "2026-10-07T16:05:24-05:00",
-      "started_ts": 1791407124.099776
-    }
-  },
+  "updated": "2026-10-09T16:01:31-05:00",
+  "open_runs": {},
   "retired_gates": {
     "discovery_signed_off": {
       "state": "pending",

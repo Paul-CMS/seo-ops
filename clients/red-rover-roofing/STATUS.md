@@ -1,17 +1,17 @@
 # Red Rover Roofing - Status
 
-- **Stage —**
-- **What is happening now:** run 20261007-160524-new-client-fc92 (new-client) started 2026-10-07T16:05 and has not finished
-- **Waiting on:** Paul — decide what to do with the unfinished run (resume, /verify, /rollback or abort)
-- **Next action:** `/resume red-rover-roofing` once the wait above is over
+- **Stage 1 of 8 — Setup**
+- **What is happening now:** ready to start: the client has not been set up yet — run /new-client first
+- **Waiting on:** nobody
+- **Next action:** `/new-client` — Paul opens a **new session on Haiku** in ~/Documents/seo-ops and types `/next red-rover-roofing` (agents: clerk (haiku))
 
-_Generated 2026-10-08T13:15 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
+_Generated 2026-10-09T16:01 by the system — do not edit. Start every session in `~/Documents/seo-ops`, one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | decide what to do with the unfinished run (resume, /verify, /rollback or abort) | 2026-10-08 | 20261007-160524-new-client-fc92 |
+| — | nothing | | |
 
 ## Settled decisions — never re-raised
 

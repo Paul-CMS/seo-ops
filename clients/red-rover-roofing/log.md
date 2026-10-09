@@ -20,3 +20,10 @@ Approved version: methodology/specs/location.md (sha bf5b163f4357)
 Approved version: methodology/specs/service.md (sha 0d679dadad45)
 
 ## CONDITION · 2026-10-08T13:15:46-05:00 · Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)
+## RUN 20261007-160524-new-client-fc92 · ABORTED · 2026-10-09T16:01:31-05:00
+Reason (Paul): Paul, 2026-10-09 (REWRITE-2-DECISIONS.md e): the run logged only its STARTED line, 0 changes, empty crawl folder. Red Rover is set up later with /new-client --import.
+- CHANGE #1 [drive_file] drive:Red Rover Roofing - TMS/Red Rover Roofing - Handoff Log.md | upload | old: (new file) | new: Red Rover Roofing - Handoff Log.md · sha 126507d5d3de | result: done · copied (Drive for desktop syncs it)
+- CHANGE #2 [drive_file] drive:Red Rover Roofing - TMS/Red Rover Roofing - Approval Record.md | upload | old: (new file) | new: Red Rover Roofing - Approval Record.md · sha 23121403f31d | result: done · copied (Drive for desktop syncs it)
+- CHANGE #3 [drive_file] drive:Red Rover Roofing - TMS/_Archive/Red Rover Roofing - Document Checklist - 2026-09-24.md | archive | old: drive:Red Rover Roofing - TMS/Red Rover Roofing - Document Checklist.md | new: _Archive/Red Rover Roofing - Document Checklist - 2026-09-24.md | result: done · renamed and moved, nothing deleted
+- CHANGE #4 [drive_file] drive:Red Rover Roofing - TMS/Red Rover Roofing - Document Checklist.md | upload | old: previous version archived as Red Rover Roofing - Document Checklist - 2026-09-24.md | new: Red Rover Roofing - Document Checklist.md · sha 6b627712bb5c | result: done · copied (Drive for desktop syncs it)
+- CHANGE #5 [drive_file] drive:Red Rover Roofing - TMS/Red Rover Roofing - Status.md | upload | old: (new file) | new: Red Rover Roofing - Status.md · sha d19ed2e26d76 | result: done · copied (Drive for desktop syncs it)
