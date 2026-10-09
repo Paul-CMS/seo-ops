@@ -148,7 +148,7 @@
   },
   "pages": {
     "svc-roof-repair": {
-      "state": "brief_written",
+      "state": "draft_written",
       "type": "service",
       "name": "Roof Repair",
       "url": "https://apexroofingtlc.com/roof-repair/",
@@ -205,6 +205,12 @@
           "run": "20261008-150539-build-a2ae",
           "at": "2026-10-08T22:18:52-05:00",
           "sha": "6cf0d2f3fe0b"
+        },
+        "draft": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md",
+          "run": "20261009-122305-build-e8c2",
+          "at": "2026-10-09T12:33:23-05:00",
+          "sha": "7af4c4593579"
         }
       }
     },
@@ -820,12 +826,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261008-222200-build-f8f3",
+    "run_id": "20261009-122305-build-e8c2",
     "command": "build",
-    "finished": "2026-10-08T22:29:33-05:00",
-    "result": "Bluffton brief written. H1 'Roofers in Bluffton', keyword 'roofing contractor bluffton sc' (avoids homepage repeat). Based-in-Bluffton angle. FAQ: 1 answerable (based in Bluffton); 2 need Town of Bluffton sources; 1 needs client confirmation (gated communities). Neighborhoods: 5 sourced from Wikipedia (need 6 for spec). Address/phone confirmed from Paul's 2026-10-08 decision.",
+    "finished": "2026-10-09T12:35:57-05:00",
+    "result": "Roof Repair draft written. Passes E1–E10 and all spec checks SVC-03–SVC-22. Grade 5.6 reading level, 6 page-specific facts, no city in headings, no 'The Best'. Two decisions: 25% rule (SC source, general answer, or drop); first H2 area term 'Beaufort and Jasper Counties' acceptable. Flagged [NEED]: repair types, job duration, warranty term, photos, owners on roof, flashing/underlayment (facts interview items). Emergency FAQ answer in words only (no link, CM-005).",
     "changes": 0,
-    "step": "build:brief",
+    "step": "build:draft",
     "batch": "pilot"
   },
   "spend": {
@@ -847,17 +853,8 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-09T12:23:05-05:00",
-  "open_runs": {
-    "20261009-122305-build-e8c2": {
-      "step": "build:draft",
-      "batch": "pilot",
-      "page": "svc-roof-repair",
-      "started": "2026-10-09T12:23:05-05:00",
-      "started_ts": 1791566585.879696,
-      "session": "74dd4cab-747d-4ef8-8581-f0c3e1a48356"
-    }
-  },
+  "updated": "2026-10-09T12:35:57-05:00",
+  "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
     "wordpress_connected": "2026-10-05T22:33:28-05:00",
@@ -922,5 +919,10 @@
       "first_run": "20261008-143018-build-a144",
       "at": "2026-10-08T15:00:27-05:00"
     }
+  },
+  "review_pause": {
+    "run_id": "20261009-122305-build-e8c2",
+    "step": "build:draft",
+    "at": "2026-10-09T12:35:57-05:00"
   }
 }

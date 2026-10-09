@@ -6,11 +6,11 @@ meta_description: Slow leak or failed flashing? Apex Roofing of the Lowcountry h
 ---
 # Roof Leak and Damage Repair in the South Carolina Lowcountry
 
-Apex Roofing of the Lowcountry is a roofing contractor that finds and fixes roof repairs for homeowners across the Hilton Head Island–Bluffton–Port Royal metropolitan area. Maybe you have a slow roof leak that shows up after a long rain. Maybe a few shingles lifted, or the flashing at the chimney pulled loose. It is not an emergency yet, but you want the cause found and fixed the right way, not a new roof you do not need. Call (843) 757-2739 for a free estimate.
+Apex Roofing of the Lowcountry is a roofing contractor that handles roof repairs for homeowners across the Hilton Head Island–Bluffton–Port Royal metropolitan area. Maybe you have a slow roof leak that shows up after a long rain. Maybe a few shingles lifted, or the flashing at the chimney pulled loose. It is not an emergency yet, but you want the cause found and fixed the right way, not a new roof you do not need. Call (843) 757-2739 for a free estimate.
 
 ## How Do Our Roofers Fix a Damaged Roof in Beaufort and Jasper Counties?
 
-Our roofers fix a damaged roof by finding where the water gets in, not just where the stain shows, and then repairing that spot with the right flashing and matching materials. Ralph Brehany and his son Pierce run the work. [NEED: client confirm — Ralph or Pierce gets on the roof personally (W25)]
+Our roofers fix a damaged roof by finding where the water gets in, not just where the stain shows, and then repairing that spot with the right flashing and matching materials. Apex was founded by Ralph Brehany and his son, Pierce. [NEED: client confirm — Ralph or Pierce gets on the roof personally (W25)]
 
 A repair visit goes in this order:
 
@@ -26,13 +26,13 @@ We match the repair to the roof you have. Apex is a certified factory installer 
 
 Lowcountry weather is hard on roofs. Salt air wears down metal flashing faster than it does inland. Wind lifts the tabs on older three-tab shingles and loosens ridge caps. Algae and moss hold water against the shingles and let it creep underneath. A poorly vented attic traps humid air, and that moisture can rot the deck from below.
 
-Signs your roof needs a repair: a ceiling stain after heavy rain, shingles that are lifted, cracked or missing, granules in the gutters, a soft spot when you walk the attic, or dark, damp wood around a chimney or vent.
+How do you know a roof needs repair? Look for a ceiling stain after heavy rain. Look for shingles that are lifted, cracked or gone. Check the gutters for grit from the shingles. In the attic, look for damp, dark wood near a chimney or vent.
 
 [NEED: what warranty covers a repair? — the lifetime no-leak warranty is confirmed for roofs, not for repairs]
 
 ## Which Roof Repairs Do We Handle?
 
-Apex handles the repairs that stop most residential roof leaks: shingles, flashing, ridge caps, wood rot at the edges and deck, leak tracing, and hail damage.
+Apex fixes the parts of a home's roof that let water in. That means shingles, flashing, ridge caps, rotted wood at the edges and deck, hidden leaks, and hail damage.
 
 ### Shingle Repair and Replacement
 
@@ -62,19 +62,19 @@ Apex handles the repairs that stop most residential roof leaks: shingles, flashi
 
 ### What is the 25% rule for roofing?
 
-The 25% rule is a building code rule in some states that says if more than a quarter of a roof section is repaired or replaced within a set period, the whole section has to be brought up to current code. Whether it applies to your home depends on the code your local building department enforces. [NEED: 25% rule SC source — cite the South Carolina adopted code text, or keep this answer general]
+The 25% rule is a code rule in some states. If more than a quarter of a roof section gets new roofing in a set time, the whole section must meet current code. Your local building department decides if a rule like this applies to your home. [NEED: 25% rule SC source — cite the South Carolina adopted code text, or keep this answer general]
 
 ### How much does a roof repair cost?
 
-The cost of a roof repair depends on how big the damaged area is, what kind of damage it is, and what turns up under the shingles, like rotted decking. Roof pitch, how easy the roof is to reach, and matching the existing shingle also change the price. Apex gives a free estimate with no minimum service-call charge.
+The cost of a roof repair depends on the size and kind of damage and what turns up under the shingles, like rotted decking. Roof pitch, access and matching the existing shingle also change the price. Apex gives a free estimate with no minimum service-call charge.
 
 ### Should I repair or replace my roof?
 
-Repair is the right call when the damage is limited to one area and the layers underneath are still sound. Replacement makes sense when the underlayment, valleys or deck have failed across the roof. The difference is often what you cannot see from the ground, so Ralph and Pierce check under the shingles before giving an honest answer.
+Repair is the right call when the damage is limited to one area and the layers underneath are still sound. Replacement makes sense when the underlayment, valleys or deck have failed across the roof. The difference is what you cannot see from the ground, so we look under the shingles before we give you an answer.
 
 ### Can a roof be repaired in a day?
 
-Many small repairs, like a few shingles or one pipe boot, can be finished in a single visit. Repairs that uncover rotted decking or widespread flashing damage take longer, because the wood has to be replaced before the roof is closed up. Your estimate will tell you how long your repair should take. [NEED: typical repair visit length — facts interview; drop this FAQ if unanswered]
+Many small repairs, like a few shingles or one pipe boot, can be finished in a single visit. Repairs that uncover rotted decking take longer, because the wood must be replaced first. Your estimate will tell you how long your repair should take. [NEED: typical repair visit length — facts interview; drop this FAQ if unanswered]
 
 ### Why do so many roof leaks start at the flashing?
 
@@ -82,10 +82,10 @@ Most roof leaks start at the flashing because every joint where the roof meets a
 
 ### What should I do if I have an emergency roof leak?
 
-If water is coming through the ceiling right now, catch it in a bucket, move what you can out of the way, and call a roofer to stop the leak as soon as it is safe. An active leak or fresh storm damage is an emergency, not a scheduled repair. Ralph and Pierce are on call and treat an emergency as high priority.
+If water is coming through the ceiling right now, catch it, move what you can out of the way, and call a roofer to stop the leak. An active leak or fresh storm damage is an emergency, not a scheduled repair. Ralph and Pierce are on call and treat an emergency as high priority.
 
 ## Where Do We Repair Roofs?
 
 | [Link wheel: populate service-area links here] |
 
-Call Apex Roofing of the Lowcountry at (843) 757-2739 for a free estimate on your roof repair. We are open Monday through Saturday, 8 AM to 5 PM. SC License #57706 · Town of Bluffton License #0620033323 · Fully insured with general liability and workers' compensation coverage.
+Call Apex Roofing of the Lowcountry at (843) 757-2739 for a free estimate on your roof repair. We are open Monday through Saturday, 8 AM to 5 PM. SC License #57706 · Town of Bluffton License #0620033323 · Insured with general liability and workers' compensation coverage.
