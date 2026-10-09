@@ -31,8 +31,11 @@ Arguments: $ARGUMENTS
    (the files, the result) and that `/next` continues. A stage Paul has switched to auto never pauses; a
    decision is never auto.
 5. **kind = new_session:** stop (R2). Say: "Stage <x> is done in this session. Open a new chat on <Model> in
-   ~/Documents/seo-ops and type `/next <slug>`." Never try to run the step here — `run.py start` refuses it.
-6. **kind = wait:** stop. Say who or what it is waiting on (client, VA handoff, unfinished run).
+   the client's folder (`python3 scripts/worktree.py open <slug>`) and type `/next <slug>`." Never try to run the step here — `run.py start` refuses it.
+6. **kind = wait:** stop. Say who or what it is waiting on (client, VA handoff, unfinished run). This comes only
+   when nothing else can run (P8).
+   **`waits`** (any kind): open waits that do **not** block the next action. List them one line each under
+   "Waiting on (not blocking)" and carry on. A VA handoff never stops writing.
 7. Also stop whenever the command you are running stops for Paul (cost confirmation, outline
    check, a STOP from a script). Never run more than one paid step without Paul seeing the cost.
 

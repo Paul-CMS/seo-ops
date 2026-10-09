@@ -835,6 +835,7 @@
       "reads": [
         "the approved page files for the batch",
         "clients/<slug>/build/ site plan JSON",
+        "clients/<slug>/brand-guide.md (B3, C1–C3 — the content write-back runs here, P8)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -1059,10 +1060,10 @@
         "pilot": "batch:pilot:drafts"
       },
       "build:ship": {
-        "pilot": "batch_state:pilot:written_back"
+        "pilot": "batch:pilot:drafts"
       },
       "build:published": {
-        "pilot": "batch_state:pilot:written_back"
+        "pilot": "batch:pilot:drafts"
       },
       "finish:wheel": {
         "pilot": null

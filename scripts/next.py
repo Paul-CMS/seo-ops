@@ -8,12 +8,17 @@
 
 kind=run      -> /next runs this command now
 kind=decision -> stop: Paul decides. "command" is the exact /approve line to type.
-kind=wait     -> stop: waiting on the client, a VA or an unfinished run
+kind=wait     -> stop: waiting on the client, a VA or an unfinished run — only when nothing else can run
 kind=new_session -> stop (R2): this session already did another stage. Paul opens a new chat on the session
                  model and types /next <slug> there.
 kind=review   -> stop: the stage that just finished is in review mode (CM-044). Paul looks at its
                  output and types /next to go on. A stage in auto mode never pauses. A pause before a
                  decision or a wait is not shown (that stop already pauses).
+
+P8 (rewrite 2, Q7): a wait never stops writing. Inside Build, a wait (Jonie's blocker or publish handoff, the
+owner's facts answers, a WordPress connection) is collected and the walk goes on to the next batch; /next returns the
+first run or decision it finds, with "waits": every open wait (not blocking). It returns kind=wait only when nothing
+else can run. An unfinished run and the discovery waits still stop.
 
 Every decision gate in scripts/gates.json names its artifact (the files the approval covers)
 and its producer. For each gate in order: met → move on; approved but its file changed →
@@ -34,12 +39,28 @@ SLUG = None
 PAUSE = None   # the review pause left by the last finished run, if its stage is in review mode
 
 
+WAITS = []     # P8: waits met on the way, not blocking
+
+
 class Next(Exception):
     """Raised by out(): the one next action. compute() catches it."""
 
     def __init__(self, rec):
         super().__init__(rec["kind"])
         self.rec = rec
+
+
+class Wait(Next):
+    """A wait: soft() collects it and the walk goes on; otherwise it is the answer."""
+
+
+def soft(fn, *args):
+    """P8: run one independent part of the walk; a wait there is collected, not a stop."""
+    try:
+        fn(*args)
+    except Wait as w:
+        if all(w.rec["command"] != x["command"] for x in WAITS):
+            WAITS.append(w.rec)
 
 
 def decision_step(command):
@@ -80,7 +101,7 @@ def out(kind, command, why):
     rec.update(stages.describe(step, batch))   # R1: the stage, the session model and the agents it uses
     if step:
         rec["step"] = step
-    raise Next(rec)
+    raise (Wait if kind == "wait" else Next)(rec)
 
 
 def q(files):
@@ -229,6 +250,60 @@ def evidence_and_briefs(st, slug, b):
             f"records them in the Brand Guide and re-runs the gate. Or waive instead: {waive}")
 
 
+def build_batch(st, slug, b):
+    """One batch's next step (P8: run softly, so a wait here never stops the next batch)."""
+    bid, state = b["id"], b.get("state", "planned")
+    if state in S.DRAFTED_OR_LATER:
+        return
+    if bid != "pilot" and S.batch(st, "pilot") and not S.check(st, "batch:pilot:drafts")[0]:
+        return    # every batch after the pilot waits for the pilot's drafts approval (its corrections shape them)
+    if state == "planned" and S.batch_order_blocks(st, bid):
+        return    # an earlier-kind batch (service before location) goes first — the same check as batch_ready
+    if state == "planned" or state == "briefs_written":
+        condition_step(st, slug, "page_specs_approved")   # no page is written against unapproved specs
+    if bid != "pilot" and not S.check(st, "pilot_corrections")[0]:
+        out("run", f"/build {slug} pilot-corrections", "apply your pilot corrections to the specs before the next batch")
+    files = b.get("files") or {}
+    if state == "planned":
+        evidence_and_briefs(st, slug, b)
+    if not S.check(st, f"batch:{bid}:briefs")[0]:
+        out("decision", f"/approve {slug} batch:{bid}:briefs --files {q(files.get('briefs') or [])}",
+            f"the briefs for batch {bid} are ready for your approval (outline before prose; one brief per page, "
+            "each written in its own run)")
+    if state == "briefs_written":
+        for pid in b["pages"]:    # CM-043: one page per run
+            if not S.page_stage(st, pid, "draft"):
+                out("run", f"/build {slug} draft {bid} {pid}", f"draft and self-critique for {pid} (its own run)")
+        out("run", f"/build {slug} batch {bid} drafts",
+            f"batch review for {bid}: every draft side by side (portability, FAQ and heading collisions) and the "
+            "semantic review table")
+    drafts = b.get("drafts") or {}
+    if not S.check(st, f"batch:{bid}:drafts")[0]:
+        n = b.get("sem_findings") or 0
+        failed = drafts.get("check_failure")
+        out("decision", f"/approve {slug} batch:{bid}:drafts"
+            + (" --sem <SEM items to apply, e.g. 1,3,4 — or none>" if n else "") + extras(st),
+            (f"a re-check failed after applying your SEM picks ({failed}) — review and approve again"
+             if failed else f"the drafts for batch {bid} are ready: review each with the semantic review table "
+             + (f"({n} SEM item(s) found) " if n else "(nothing found) ") + "and approve them together"))
+    if state in ("drafts_written", "sem_check_failed") and drafts.get("sem_ids") and not drafts.get("applied"):
+        out("run", f"/build {slug} batch {bid} apply-sem",
+            f"apply {', '.join(drafts['sem_ids'])} to batch {bid} and re-run the E-checks on the changed sections")
+    condition_step(st, slug, "wordpress_connected")
+    out("run", f"/build {slug} ship {bid}",
+        f"WordPress drafts for batch {bid} from the approved files (link tables filled) — the next batch does not "
+        "wait for publishing; every page goes to Jonie together")
+
+
+def publish_wait(st, slug, b):
+    bid, state = b["id"], b.get("state")
+    h = b.get("handoff") or "the publish handoff"
+    out("wait", f"/build {slug} published {bid}",
+        f"waiting for Jonie to {'correct' if state == 'corrections_requested' else 'publish'} the pages "
+        f"({h}). When the worksheet comes back, this checks batch {bid}'s live pages against their approved "
+        "files, adds alt text and updates the living handoff")
+
+
 def blog_posts(st, slug):
     """Stop at any written post that is not approved yet; else write the next one."""
     for pid, p in st["pages"].items():
@@ -248,11 +323,41 @@ def blog_posts(st, slug):
 
 def compute(slug, cont=False):
     """The next action as a dict (kind, command, why, stage, session_model, agents)."""
+    WAITS.clear()
     try:
         _walk(slug, cont)
+        rec = {"kind": "wait", "command": f"/resume {slug}", "why": "nothing left to do"}
     except Next as n:
-        return n.rec
-    return {"kind": "wait", "command": f"/resume {slug}", "why": "nothing left to do"}
+        rec = n.rec
+    _survey(slug)
+    waits = [w for w in WAITS if w["command"] != rec["command"]]
+    if rec["kind"] == "wait" and waits:   # nothing can run: the first wait met on the way is the answer
+        rec, waits = waits[0], waits[1:] + ([rec] if rec["why"] != "nothing left to do" else [])
+    rec["waits"] = [{"command": w["command"], "why": w["why"]} for w in waits]
+    return rec
+
+
+def _survey(slug):
+    """P8: every open wait in Build, even past the action found — listed as 'not blocking'."""
+    st = S.load(slug)
+    if not st.get("build"):
+        return
+
+    def look(fn, *args):
+        try:
+            fn(*args)
+        except Wait as w:
+            if all(w.rec["command"] != x["command"] for x in WAITS):
+                WAITS.append(w.rec)
+        except Next:
+            pass
+    for b in S.batches(st):
+        if b.get("state") in ("handed_off", "corrections_requested"):
+            look(publish_wait, st, slug, b)
+        else:
+            look(build_batch, st, slug, b)
+    if st.get("blocker_handoffs") and not S.condition_met(st, "blockers_cleared")[0]:
+        look(condition_step, st, slug, "blockers_cleared")
 
 
 def main():
@@ -316,45 +421,7 @@ def _walk(slug, cont):
             "the site plan is ready for your approval")
     # CM-055: batches are drafted one after another and never wait on publishing; every page goes to Jonie together.
     for b in S.batches(st):
-        bid, state = b["id"], b.get("state", "planned")
-        if state in S.DRAFTED_OR_LATER:
-            continue
-        if state == "planned" and S.batch_order_blocks(st, bid):
-            continue    # an earlier-kind batch (service before location) goes first — the same check as batch_ready
-        if state == "planned" or state == "briefs_written":
-            condition_step(st, slug, "page_specs_approved")   # no page is written against unapproved specs
-        if bid != "pilot" and not S.check(st, "pilot_corrections")[0]:
-            out("run", f"/build {slug} pilot-corrections", "apply your pilot corrections to the specs before the next batch")
-        files = b.get("files") or {}
-        if state == "planned":
-            evidence_and_briefs(st, slug, b)
-        if not S.check(st, f"batch:{bid}:briefs")[0]:
-            out("decision", f"/approve {slug} batch:{bid}:briefs --files {q(files.get('briefs') or [])}",
-                f"the briefs for batch {bid} are ready for your approval (outline before prose; one brief per page, "
-                "each written in its own run)")
-        if state == "briefs_written":
-            for pid in b["pages"]:    # CM-043: one page per run
-                if not S.page_stage(st, pid, "draft"):
-                    out("run", f"/build {slug} draft {bid} {pid}", f"draft and self-critique for {pid} (its own run)")
-            out("run", f"/build {slug} batch {bid} drafts",
-                f"batch review for {bid}: every draft side by side (portability, FAQ and heading collisions) and the "
-                "semantic review table")
-        drafts = b.get("drafts") or {}
-        if not S.check(st, f"batch:{bid}:drafts")[0]:
-            n = b.get("sem_findings") or 0
-            failed = drafts.get("check_failure")
-            out("decision", f"/approve {slug} batch:{bid}:drafts"
-                + (" --sem <SEM items to apply, e.g. 1,3,4 — or none>" if n else "") + extras(st),
-                (f"a re-check failed after applying your SEM picks ({failed}) — review and approve again"
-                 if failed else f"the drafts for batch {bid} are ready: review each with the semantic review table "
-                 + (f"({n} SEM item(s) found) " if n else "(nothing found) ") + "and approve them together"))
-        if state in ("drafts_written", "sem_check_failed") and drafts.get("sem_ids") and not drafts.get("applied"):
-            out("run", f"/build {slug} batch {bid} apply-sem",
-                f"apply {', '.join(drafts['sem_ids'])} to batch {bid} and re-run the E-checks on the changed sections")
-        condition_step(st, slug, "wordpress_connected")
-        out("run", f"/build {slug} ship {bid}",
-            f"WordPress drafts for batch {bid} from the approved files (link tables filled) — the next batch does not "
-            "wait for publishing; every page goes to Jonie together")
+        soft(build_batch, st, slug, b)
     if S.batches(st) and S.condition_met(st, "pages_drafted")[0]:
         if any(b.get("state") == "drafted" for b in S.batches(st)):
             out("run", f"/build {slug} handoff", "every page is a WordPress draft: one living publish handoff to Jonie "
@@ -366,12 +433,7 @@ def _walk(slug, cont):
         for b in S.batches(st):
             bid, state = b["id"], b.get("state")
             if state in ("handed_off", "corrections_requested"):
-                condition_step(st, slug, "wordpress_connected")
-                h = b.get("handoff") or "the publish handoff"
-                out("wait", f"/build {slug} published {bid}",
-                    f"waiting for Jonie to {'correct' if state == 'corrections_requested' else 'publish'} the pages "
-                    f"({h}). When the worksheet comes back, this checks batch {bid}'s live pages against their approved "
-                    "files, adds alt text, writes the batch back to the Brand Guide and updates the living handoff")
+                soft(publish_wait, st, slug, b)   # P8: every batch Jonie has is listed, none stops the others
     condition_step(st, slug, "pages_built")
 
     # ---- Finish and blog

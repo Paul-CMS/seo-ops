@@ -131,6 +131,9 @@ to the page or blog list that owns them. Re-run E1–E10 and the spec checks on 
    that has no `[NEED: …]` note, or a URL under `/service/`, `/services/`, `/service-area/`. The batch becomes
    `drafted` — **no handoff yet**; the next batch goes straight on.
 3. Menu changes for the batch's pages: `handoff.py create <slug> --run <RUN_ID> --kind navigation --items <csv>`.
+4. **Brand Guide write-back now (P8: content, not publishing):** each approved page's row in B3, the variants it used
+   in C1/C2, every H2 and FAQ question in C3; then its Drive copy (`drive.py upload`). The next batch reads it, so
+   it never reuses a variant, heading or FAQ. Publishing is never a prerequisite for writing.
 Never edit a generated draft — change the approved file (Paul re-approves) and regenerate.
 
 ## Step: handoff   (once every page is a WordPress draft — CM-055)
@@ -150,8 +153,8 @@ same document's status column.
 3. All match → alt text for the images Jonie added (safe fix): `wp.py media <slug> --post <wp_id>`, then
    `wp.py set-alt ... --expect-alt ""` with the alt format from the spec. The pages are live: ask Paul once
    for a fresh ManageWP backup confirmation and pass `--live --backup-confirmed "..."` on each.
-4. `status.py batch <slug> <id> --state published`, `--state verified`; Brand Guide write-back (B3, C1/C2,
-   C3 — every H2 and FAQ question) and its Drive copy; `--state written_back`.
+4. `status.py batch <slug> <id> --state published`, `--state verified`; `--state written_back` (the Brand Guide
+   content write-back already ran at ship, P8).
 5. `publish.py pending <slug> --run <RUN_ID>` — link rows held for pages that are now live → handoff to Jonie.
 
 ## Step: pilot-corrections

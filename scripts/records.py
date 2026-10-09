@@ -223,8 +223,13 @@ def status_md(slug):
         elif e.get("state") == "open":
             waits.append((e.get("who") or "Paul", e.get("question"), e.get("asked_at", "")[:10], k))
     hs = _open_handoffs(slug)
+    # P8: while the system can run or Paul can decide, the VA's work and other waits do not block — listed apart
+    side = []
+    for w in nx.get("waits") or []:
+        who = "Client (via Paul)" if re.search(r"client|owner", w["why"]) else ("Jonie" if "Jonie" in w["why"] else "Paul")
+        side.append((who, w["why"], since, w["command"]))
     for hid, owner, kind, issued, n_open, n in hs:
-        waits.append((owner, f"{kind} handoff — {n_open} of {n} item(s) open", issued, hid))
+        (waits if nx["kind"] == "wait" else side).append((owner, f"{kind} handoff — {n_open} of {n} item(s) open", issued, hid))
     if nx["kind"] == "run":
         nxt = (f"`{nx['command']}` — Paul opens a **new session on {nx.get('session_model', 'haiku').title()}** in "
                f"the client folder (`python3 scripts/worktree.py open {slug}`) and types `/next {slug}`" + (f" (agents: {nx['agents']})" if nx.get("agents") else ""))
@@ -243,6 +248,9 @@ def status_md(slug):
            "one session per stage._", "",
            "## Waiting on", "", "| Who | What | Since | Reference |", "|---|---|---|---|"]
     out += [f"| {w} | {t} | {s} | {r} |" for w, t, s, r in waits] or ["| — | nothing | | |"]
+    out += ["", "## Waiting on (not blocking)", "", "_Open, but the next action above goes ahead without them._", "",
+            "| Who | What | Since | Reference |", "|---|---|---|---|"]
+    out += [f"| {w} | {t} | {s} | {r} |" for w, t, s, r in side] or ["| — | nothing | | |"]
     out += ["", "## Settled decisions — never re-raised", ""]
     aps = settled.approvals(slug)
     out += [f"- {when}: {S.label(what) if what in S.GATES['gates'] else what} — {dec}" for when, what, dec in aps]

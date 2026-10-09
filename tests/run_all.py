@@ -1947,6 +1947,48 @@ def t_pilot_order():
           code == 0, out)
 
 
+def t_writing_never_waits():
+    """P8 (Q7): a wait on Jonie or the owner never stops writing; /next lists it and goes on."""
+    S = "nw-co"
+    ag = build_ready(S)
+    st = status(S)
+    st["imported_conditions"].pop("blockers_cleared", None)
+    st.setdefault("marks", {})["blocker_checklist"] = {"files": {}}
+    st["blocker_handoffs"] = ["H-2026-10-09-01-wp_setup"]
+    ag.w("handoffs/H-2026-10-09-01-wp_setup.csv", "ref,url,field,old,new,status\nB-1,https://test.example/,robots,,fix,open\n")
+    by = {b["id"]: b for b in st["build"]["batches"]}
+    by["pilot"].update({"state": "handed_off", "handoff": "the living publish handoff",
+                        "briefs": {"state": "approved", "files": {}}, "drafts": {"state": "approved", "files": {}}})
+    st["build"]["pilot_corrections_applied"] = {"at": "2026-10-09", "note": "test"}
+    (ag.c / "status.json").write_text(json.dumps(st))
+    n = nxt(S)
+    check("P8: with a blocker handoff and a publish handoff open, /next still offers the next brief",
+          n["kind"] == "run" and n["command"] == f"/build {S} brief s1", n)
+    ws = " ".join(w["command"] for w in n.get("waits", []))
+    check("P8: /next lists the open waits (publish and blockers) as not blocking",
+          f"/build {S} published pilot" in ws and f"/verify {S}" in ws, n)
+    st = status(S)
+    s1 = next(b for b in st["build"]["batches"] if b["id"] == "s1")
+    s1.update({"state": "drafts_written", "briefs": {"state": "approved", "files": {}},
+               "drafts": {"state": "approved", "files": {}}})
+    st["imported_conditions"]["wordpress_connected"] = "test"
+    (ag.c / "status.json").write_text(json.dumps(st))
+    code, out = sh(f"python3 scripts/status.py require {S} batch:l1:briefs_ready")
+    n = nxt(S)
+    check("P8: location writing may start once the service drafts are approved — nothing shipped or published",
+          code == 0 and s1["state"] == "drafts_written", out)
+    check("P8: right after the drafts approval /next ships them (WordPress drafts + the Brand Guide write-back)",
+          n["kind"] == "run" and n["command"] == f"/build {S} ship s1", n)
+    sh(f"python3 scripts/records.py render {S}")
+    stx = (ag.c / "STATUS.md").read_text()
+    nb = stx.split("## Waiting on (not blocking)")[-1].split("## ")[0]
+    check("P8: STATUS.md's next action is the next step the system can do; the waits sit under 'Waiting on (not blocking)'",
+          f"/build {S} ship s1" in stx.split("## Waiting on")[0] and "Jonie" in nb, stx[:1600])
+    gm = json.loads((SB / "scripts/gates.json").read_text())["modes"]["stages"]
+    check("P8: ship and published leave review mode on the pilot's drafts approval, not on publishing",
+          gm["build:ship"]["pilot"] == gm["build:published"]["pilot"] == "batch:pilot:drafts", gm["build:ship"])
+
+
 def t_migration():
     sh('python3 scripts/status.py init mg-co --name "Mg Co" --domain mg.example --type full --industry roofing')
     ag = Agent("mg-co"); ag.fin(ag.start("new-client"), "set up")
@@ -2215,7 +2257,7 @@ def t_batch_of_five():
 
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_section_approval, t_reviews_parse, t_killed_run, t_rollback,
              t_import, t_multi_approve, t_handoffs, t_costs, t_guard, t_sensitive, t_drive, t_wordpress, t_client_view,
-             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_pilot_order, t_migration, t_sessions, t_guard_rewrite,
+             t_evidence_gate, t_one_page_per_run, t_modes, t_fanout, t_interviews, t_schema_gate, t_schema_offline, t_readability, t_models, t_settled_and_status, t_decide_once, t_briefs_after_pilot, t_pilot_order, t_writing_never_waits, t_migration, t_sessions, t_guard_rewrite,
              t_answer_once, t_research_before_asking, t_url_rule, t_batch_of_five]
 
 
