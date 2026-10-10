@@ -203,6 +203,21 @@ so the VA does not need to learn it by heart. This guide covers only setup and t
 - **Old instruction files:** `/archive-old-instructions` asks Paul, file by file.
 - **Anything to a client:** the system never sends anything to a client. Paul sends the proof sheet and every question set.
 
+### The VA Worklist — one document per client
+
+Everything a person has to do for a client is one row of its **VA Worklist** (Drive: "<Client> - VA Worklist",
+in the client folder; repo: `clients/<slug>/handoffs/VA-WORKLIST.md` and `.csv`). Sections: 1 Setup · 2 Blockers ·
+3 Redirects · 4 Publish · 5 After publish · 6 Manual lookups. Setup, Blockers and Manual lookups can be worked any
+time; Redirects, Publish and After publish arrive in one handover, once every service and location page is a
+WordPress draft — then every page is published together. Tick `status` in the CSV (done / blocked / deviated, a note
+on every blocked or deviated row) and give it back; the next `/next` reads it. Never publish a page that shows an
+"Open items on this page" notice until its row is resolved.
+
+### If something in the workflow looks wrong
+
+Don't work around it and don't change anything. The session flags it for Paul (`run.py flag …`), carries on with
+the current rules, and the flag shows in the client's STATUS.md under "Flagged for Paul (system)".
+
 ### One chat per client at a time
 
 Each client runs in its own folder (`worktree.py open <slug>`), and each run commits only that client's
