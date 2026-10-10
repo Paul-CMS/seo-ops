@@ -316,14 +316,18 @@ class Agent:
             code, out = sh(f"python3 tests/fakes.py wp check {S} --run {rid}" + (" --pilot" if pilot else ""))
             self.wp_reports.append(out)
             self.fin(rid, "wp-check")
+        elif (name, sub) == ("/build", "writeback"):
+            bid = args[1]; rid = self.start("build", "writeback", batch=bid)
+            self.sh(f"python3 scripts/status.py writeback {S} {bid} --run {rid}")
+            self.fin(rid, f"Brand Guide write-back for {bid}")
         elif (name, sub) == ("/build", "ship"):
-            bid = args[1]; rid = self.start("build", "ship", batch=bid)
+            rid = self.start("build", "ship")
             items, st_ = wp_state().get("items", {}), status(S)
-            self.ship_seen.append((bid, {pid: (items.get(str(p.get("wp_id"))) or {}).get("status")
-                                         for pid, p in st_["pages"].items() if p.get("wp_id")}))
+            self.ship_seen.append(("all", {pid: (items.get(str(p.get("wp_id"))) or {}).get("status")
+                                           for pid, p in st_["pages"].items() if p.get("wp_id")}))
             self.sh(f"python3 tests/fakes.py publish wheel {S}")
-            self.sh(f"python3 tests/fakes.py publish drafts {S} --run {rid} --batch {bid}")
-            self.fin(rid, f"WordPress drafts for {bid}")
+            self.sh(f"python3 tests/fakes.py publish drafts {S} --run {rid} --all")
+            self.fin(rid, "WordPress drafts for every approved page")
         elif (name, sub) == ("/build", "published"):
             bid = args[1]; rid = self.start("build", "published", batch=bid)
             b = next(x for x in status(S)["build"]["batches"] if x["id"] == bid)
@@ -553,7 +557,12 @@ def t_walkthrough_full():
           sum("/approve global specs" in l for l in log) == 1, [l for l in log if "specs" in l])
     check("R3: no discovery sign-off or blockers approval is asked (both are conditions)",
           not any(("discovery_signed_off" in l or "blockers_cleared" in l) and l.startswith("decision") for l in log))
-    check("one ship run per batch (drafts + publish handoff)", sum(" ship " in l for l in log) == len(stops), log)
+    check("P9: one ship run for every service and location page (not one per batch)",
+          sum(l.startswith("run") and l.endswith("/build wt-full ship") for l in log) == 1, [l for l in log if " ship" in l])
+    check("P8: each batch's Brand Guide write-back runs right after its drafts approval, before shipping",
+          sum(l.startswith("run") and "/build wt-full writeback " in l for l in log) == len(stops)
+          and max(i for i, l in enumerate(log) if "/build wt-full writeback " in l)
+          < next(i for i, l in enumerate(log) if l.endswith("/build wt-full ship")), [l for l in log if "writeback" in l])
     check("one check run per batch after Jonie publishes (verify + alt text + write-back)",
           sum(" published " in l and l.startswith("wait") for l in log) == len(stops),
           [l for l in log if " published " in l])
@@ -576,7 +585,7 @@ def t_walkthrough_full():
     check("alt text added to the images Jonie added (safe fix)", all(m["alt_text"] for k, m in media.items() if int(k) >= 500))
     check("every page verified against its approved file (incl. keyword and social)", all("0 differ" in o for o in ag.verify_outputs), ag.verify_outputs[:2])
     check("/next ran /wp-check before the first WordPress step", any(l.startswith("run") and "/wp-check wt-full" in l for l in log)
-          and log.index(next(l for l in log if "/wp-check wt-full" in l)) < log.index(next(l for l in log if " ship " in l)))
+          and log.index(next(l for l in log if "/wp-check wt-full" in l)) < log.index(next(l for l in log if l.endswith("/build wt-full ship"))))
     seo1 = wp_state()["seo"][str(first["id"])]
     check("drafts carry keyword and social (Open Graph + X) from the approved file", seo1.get("_seopress_social_fb_title") == "svc-roof-repair - Test Co"
           and seo1.get("_seopress_social_twitter_desc", "").startswith("The approved description") and "_seopress_analysis_target_kw" in seo1, seo1)
@@ -587,15 +596,13 @@ def t_walkthrough_full():
           all(i["status"] == "draft" for i in posts), [(i["type"], i["status"]) for i in posts])
     check("CM-055: link tables carry every planned page (published together, nothing held back)",
           held == 0 and "https://test.example/loc-nixa/" in raw, held)
-    i_ship = [i for i, l in enumerate(log) if l.startswith("run") and " ship " in l]
+    i_ship = [i for i, l in enumerate(log) if l.startswith("run") and l.endswith("/build wt-full ship")]
     i_pub = [i for i, l in enumerate(log) if l.startswith("wait") and " published " in l]
     i_hand = [i for i, l in enumerate(log) if l.startswith("run") and l.endswith("/build wt-full handoff")]
     check("CM-055: every batch is drafted before anything waits on publishing (one batch never waits on another's publish)",
           i_ship and i_pub and max(i_ship) < min(i_pub), (i_ship, i_pub))
-    seen = dict(ag.ship_seen)
-    check("CM-055: page N+1 is drafted while page N is still a WordPress draft",
-          seen.get("s1", {}).get("svc-roof-repair") == "draft" and seen.get("l1", {}).get("svc-roof-replacement") == "draft",
-          ag.ship_seen)
+    check("P9: before the one ship run no page was in WordPress; it creates every draft at once",
+          len(ag.ship_seen) == 1 and not ag.ship_seen[0][1], ag.ship_seen)
     check("CM-055: one living publish handoff, after every page is drafted", len(i_hand) == 1 and max(i_ship) < i_hand[0] < min(i_pub),
           (i_ship, i_hand, i_pub))
     hid = st["publish_handoff"]["id"]
@@ -1978,13 +1985,13 @@ def t_writing_never_waits():
     n = nxt(S)
     check("P8: location writing may start once the service drafts are approved — nothing shipped or published",
           code == 0 and s1["state"] == "drafts_written", out)
-    check("P8: right after the drafts approval /next ships them (WordPress drafts + the Brand Guide write-back)",
-          n["kind"] == "run" and n["command"] == f"/build {S} ship s1", n)
+    check("P8: right after the drafts approval /next writes the batch back to the Brand Guide (content, not publishing)",
+          n["kind"] == "run" and n["command"] == f"/build {S} writeback s1", n)
     sh(f"python3 scripts/records.py render {S}")
     stx = (ag.c / "STATUS.md").read_text()
     nb = stx.split("## Waiting on (not blocking)")[-1].split("## ")[0]
     check("P8: STATUS.md's next action is the next step the system can do; the waits sit under 'Waiting on (not blocking)'",
-          f"/build {S} ship s1" in stx.split("## Waiting on")[0] and "Jonie" in nb, stx[:1600])
+          f"/build {S} writeback s1" in stx.split("## Waiting on")[0] and "Jonie" in nb, stx[:1600])
     gm = json.loads((SB / "scripts/gates.json").read_text())["modes"]["stages"]
     check("P8: ship and published leave review mode on the pilot's drafts approval, not on publishing",
           gm["build:ship"]["pilot"] == gm["build:published"]["pilot"] == "batch:pilot:drafts", gm["build:ship"])

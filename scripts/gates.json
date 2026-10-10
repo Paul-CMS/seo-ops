@@ -827,16 +827,12 @@
     "build:ship": {
       "gates": [
         "discovery_signed_off",
-        "batch:{batch}:drafts",
         "wordpress_connected"
       ],
-      "produces": [
-        "batch_state:{batch}:drafted"
-      ],
+      "produces": [],
       "reads": [
-        "the approved page files for the batch",
+        "every approved page file (all batches)",
         "clients/<slug>/build/ site plan JSON",
-        "clients/<slug>/brand-guide.md (B3, C1–C3 — the content write-back runs here, P8)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -1015,6 +1011,18 @@
         "the technical blocker handoff(s)",
         "clients/<slug>/decisions-settled.md"
       ]
+    },
+    "build:writeback": {
+      "gates": [
+        "discovery_signed_off",
+        "batch:{batch}:drafts"
+      ],
+      "produces": [],
+      "reads": [
+        "the batch drafts Paul approved (incl. applied SEM items)",
+        "clients/<slug>/brand-guide.md (B3, C1, C2, C3)",
+        "clients/<slug>/decisions-settled.md"
+      ]
     }
   },
   "_modes_about": "CM-044. Every producing stage has a mode: review (the /next loop stops after the stage so Paul can look) or auto (the loop goes straight on). Default review. A stage can switch to auto only after it has passed the pilot ('pilot' below; none = always review), only by Paul with /approve <slug>|global mode:<stage>=auto, recorded in status.json and log.md. Decisions (/approve gates) are never stages here and can never be auto.",
@@ -1095,6 +1103,9 @@
       },
       "build:handoff": {
         "pilot": null
+      },
+      "build:writeback": {
+        "pilot": "batch:pilot:drafts"
       }
     }
   },
@@ -1188,6 +1199,7 @@
         "build:draft",
         "build:drafts",
         "build:apply-sem",
+        "build:writeback",
         "build:ship",
         "build:handoff",
         "build:published",

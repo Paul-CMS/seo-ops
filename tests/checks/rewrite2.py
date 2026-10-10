@@ -327,5 +327,68 @@ def t_p6_research_first(h):
         dj.unlink(missing_ok=True)
 
 
+def t_p9_worklist(h):
+    import csv as _csv
+    # after the full walkthrough: one worklist, sections in order, publish rows with their 301s, Drive copy
+    wl = h.SB / "clients/wt-full/handoffs/VA-WORKLIST.md"
+    t = wl.read_text() if wl.exists() else ""
+    h.check("P9: the full walkthrough leaves one VA Worklist with Blockers and Publish sections, in order",
+            "## 2 · Blockers" in t and "## 4 · Publish" in t and t.index("## 2 · Blockers") < t.index("## 4 · Publish")
+            and "Publish **all of them together**" in t, t[:800])
+    rows = list(_csv.DictReader(open(h.SB / "clients/wt-full/handoffs/VA-WORKLIST.csv", newline=""))) if wl.exists() else []
+    pub = [r for r in rows if r["section"].startswith("4")]
+    h.check("P9: every page's publish row and its paired 301 sit together in section 4",
+            sum(r["field"] == "publish" for r in pub) >= 8 and any(r["field"] == "301" for r in pub)
+            and pub[[r["field"] for r in pub].index("301") - 1]["field"] == "publish", [r["field"] for r in pub])
+    old = sorted((h.SB / "clients/wt-full/handoffs").glob("H-*.md"))
+    h.check("P9: the old per-handoff documents are marked superseded", old and all("Superseded by the VA Worklist" in f.read_text() for f in old))
+    code, out = h.sh("cd scripts && python3 -c \"import drive; print([n for _, l, n in drive.records('wt-full')])\"")
+    h.check("P9: the worklist (Markdown and CSV) is one of the records copied to the client's Drive folder",
+            "Test Co - VA Worklist.md" in out and "Test Co - VA Worklist.csv" in out, out)
+    # a client before the handover: setup and manual lookups show, publish waits; the returned worklist is ingested
+    S = "wl-co"
+    h.sh(f'python3 scripts/status.py init {S} --name "Wl Co" --domain wl.example --type full --industry roofing')
+    ag = h.Agent(S); ag.fin(ag.start("new-client"), "set up")
+    st = h.status(S)
+    for g in ("entity_approved", "proof_sheet_approved", "audit_approved", "brand_guide_approved"):
+        st["gates"][g] = {"state": "approved", "files": {}}
+    (ag.c / "status.json").write_text(json.dumps(st))
+    rid = ag.start("wp-check")
+    a1 = ag.w("a.csv", "url,field,old,new,reason,decision_map_ref\nhttps://wl.example/wp-admin/,user,,seo-ops,setup,\n")
+    a2 = ag.w("b.csv", "url,field,old,new,reason,decision_map_ref\nhttps://sos.example/,record,,read it,legal name,\n")
+    a3 = ag.w("c.csv", "url,field,old,new,reason,decision_map_ref\nhttps://wl.example/x/,publish,(draft),https://wl.example/x/,publish,svc-x\n")
+    for kind, f in (("wp_setup", a1), ("manual_lookup", a2), ("publish", a3)):
+        h.sh(f"python3 scripts/handoff.py create {S} --run {rid} --kind {kind} --items {f}")
+    h.sh(f"python3 scripts/records.py render {S}")
+    t = (ag.c / "handoffs/VA-WORKLIST.md").read_text()
+    h.check("P9: before the handover the worklist carries Setup and Manual lookups; Redirects/Publish wait for it",
+            "## 1 · Setup" in t and "## 6 · Manual lookups" in t and "## 4 · Publish" not in t
+            and "come in one handover" in t and "1 row(s) waiting" in t, t)
+    ret = list(_csv.DictReader(open(ag.c / "handoffs/VA-WORKLIST.csv", newline="")))
+    for r in ret:
+        r["status"], r["note"] = ("done", "") if r["section"].startswith("1") else ("blocked", "listing site down")
+    rp = ag.c / "handoffs/VA-WORKLIST-returned.csv"
+    with open(rp, "w", newline="") as fh:
+        w = _csv.DictWriter(fh, fieldnames=list(ret[0].keys())); w.writeheader(); w.writerows(ret)
+    code, out = h.sh(f"python3 scripts/handoff.py ingest {S} --run {rid} --returned {rp.relative_to(h.SB)}")
+    t = (ag.c / "handoffs/VA-WORKLIST.md").read_text()
+    h.check("P9: the returned worklist is ingested row by row into its groups, and the worklist shows the ticks",
+            code == 0 and "| done" in t and "blocked — listing site down" in t and "invented" not in out, out + t[-500:])
+    ag.fin(rid, "worklist")
+    # ship-all refuses while any service or location batch is not approved
+    st = h.status(S)
+    st["build"] = {"site_plan": {"file": "x", "approval": None}, "pilot_corrections_applied": None, "batches": [
+        {"id": "pilot", "kind": "service", "label": "P", "pages": [], "state": "drafts_written", "files": {},
+         "briefs": {"state": "approved", "files": {}}, "drafts": {"state": "approved", "files": {}}, "content_written_back": {"at": "x"}},
+        {"id": "l1", "kind": "location", "label": "L", "pages": [], "state": "planned", "files": {}, "briefs": None, "drafts": None}]}
+    st.setdefault("imported_conditions", {})["wordpress_connected"] = "test"
+    (ag.c / "status.json").write_text(json.dumps(st))
+    rid = ag.start("wp-check")
+    code, out = h.sh(f"python3 tests/fakes.py publish drafts {S} --run {rid} --all")
+    h.check("P9: services and locations ship as a whole — ship refuses while a location batch is not approved",
+            code == 4 and "every service and location page ships together" in out and "l1 (drafts not approved yet)" in out, out)
+    ag.fin(rid, "ship refused")
+
+
 SCENARIOS = [t_p3_system_session, t_p3_flags_and_review, t_p2_parallel_clients, t_p7_url_rule, t_p5_reviews,
-             t_p6_research_first]
+             t_p6_research_first, t_p9_worklist]

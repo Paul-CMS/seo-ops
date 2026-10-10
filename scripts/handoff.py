@@ -5,7 +5,8 @@
                       [--preface FILE]   Markdown placed above the table (the living publish handoff, CM-055)
                       --blockers: a technical blocker handoff — "blockers cleared" is met when every row is done and
                       /verify passed it (R3)
-    handoff.py ingest <slug> --run R --handoff H-ID --returned returned.csv
+    handoff.py ingest <slug> --run R --returned returned.csv [--handoff H-ID]
+                      the returned VA Worklist (P9): every row is routed to its group by ref; --handoff for one group
     handoff.py list   <slug> [--open]
 
 items.csv columns: url, field, old, new, reason, decision_map_ref   (slug rows may add new_url)
@@ -87,7 +88,7 @@ def main():
     s.add_argument("--blockers", action="store_true", help="a technical blocker handoff (blockers_cleared waits on it)")
     s.add_argument("--preface", help="Markdown file placed above the table (the living publish handoff)")
     s = sub.add_parser("ingest"); s.add_argument("slug"); s.add_argument("--run", required=True)
-    s.add_argument("--handoff", required=True); s.add_argument("--returned", required=True)
+    s.add_argument("--handoff"); s.add_argument("--returned", required=True)
     s = sub.add_parser("list"); s.add_argument("slug"); s.add_argument("--open", action="store_true")
     a = ap.parse_args()
     d = hdir(a.slug)
@@ -193,35 +194,55 @@ def main():
         print(f"{hid}: {len(rows)} item(s) → clients/{a.slug}/handoffs/{hid}.md and .csv")
 
     elif a.cmd == "ingest":
-        mine = {r["ref"]: r for r in read_csv(d / f"{a.handoff}.csv")}
-        back = read_csv(a.returned)
-        problems, seen = [], set()
-        for r in back:
-            ref = r.get("ref", "")
-            if ref not in mine:
-                problems.append(f"invented ref {ref!r} — not in the handoff"); continue
-            seen.add(ref)
-            stt = (r.get("status") or "").strip().lower()
-            if stt not in ("done", "blocked", "deviated"):
-                problems.append(f"{ref}: invalid status {stt!r} — treated as not done"); continue
-            if stt in ("blocked", "deviated") and not r.get("note"):
-                problems.append(f"{ref}: {stt} with no note — incomplete")
-            mine[ref]["status"], mine[ref]["note"] = stt, r.get("note", "")
-            R.log_change(a.slug, a.run, "handoff_return", mine[ref]["url"], mine[ref]["field"],
-                         mine[ref]["old"], mine[ref]["new"], f"VA reported {stt}" + (f": {r.get('note')}" if r.get("note") else ""),
-                         ref=ref, channel="handoff")
-        omitted = [ref for ref in mine if ref not in seen and mine[ref]["status"] == "issued"]
-        for ref in omitted:
-            problems.append(f"{ref}: silently omitted from the returned worksheet")
-        write_csv(d / f"{a.handoff}.csv", list(mine.values()))
-        mdp = d / f"{a.handoff}.md"
-        if mdp.exists() and "**Progress:**" in mdp.read_text():   # the living document: status kept current
-            text = mdp.read_text()
-            mdp.write_text(text[:text.index("**Progress:**")] + "\n".join(table(list(mine.values()))) + "\n")
-        print(f"ingested {len(seen)} row(s). Problems: {len(problems)}")
-        for p in problems:
-            print("  - " + p)
+        back_all = read_csv(a.returned)
+        if a.handoff:
+            groups = {a.handoff: back_all}
+        else:   # P9: the returned VA Worklist — route each row to its group by ref
+            import worklist
+            where = {r["ref"]: r["_hid"] for r in worklist.rows(a.slug)}
+            groups = {}
+            for r in back_all:
+                groups.setdefault(where.get(r.get("ref", ""), "?"), []).append(r)
+            if "?" in groups:
+                print("  - invented ref(s) not in the worklist: " + ", ".join(r.get("ref", "") for r in groups.pop("?")))
+            for hid in set(where.values()) - set(groups):
+                groups[hid] = []
+        for hid, back in sorted(groups.items()):
+            ingest_one(a, d, hid, back, whole=bool(a.handoff))
+        import worklist
+        worklist.build(a.slug)
         print("Next: /verify checks every row marked done against the live site.")
+
+
+def ingest_one(a, d, hid, back, whole=True):
+    """One group's returned rows. whole: the return is the group's whole worksheet (an omitted row is a problem)."""
+    mine = {r["ref"]: r for r in read_csv(d / f"{hid}.csv")}
+    problems, seen = [], set()
+    for r in back:
+        ref = r.get("ref", "")
+        if ref not in mine:
+            problems.append(f"invented ref {ref!r} — not in the handoff"); continue
+        seen.add(ref)
+        stt = (r.get("status") or "").strip().lower()
+        if stt not in ("done", "blocked", "deviated"):
+            problems.append(f"{ref}: invalid status {stt!r} — treated as not done"); continue
+        if stt in ("blocked", "deviated") and not r.get("note"):
+            problems.append(f"{ref}: {stt} with no note — incomplete")
+        mine[ref]["status"], mine[ref]["note"] = stt, r.get("note", "")
+        R.log_change(a.slug, a.run, "handoff_return", mine[ref]["url"], mine[ref]["field"],
+                     mine[ref]["old"], mine[ref]["new"], f"VA reported {stt}" + (f": {r.get('note')}" if r.get("note") else ""),
+                     ref=ref, channel="handoff")
+    omitted = [ref for ref in mine if ref not in seen and mine[ref]["status"] == "issued"] if (whole or back) else []
+    for ref in omitted:
+        problems.append(f"{ref}: silently omitted from the returned worksheet")
+    write_csv(d / f"{hid}.csv", list(mine.values()))
+    mdp = d / f"{hid}.md"
+    if mdp.exists() and "**Progress:**" in mdp.read_text():   # the living document: status kept current
+        text = mdp.read_text()
+        mdp.write_text(text[:text.index("**Progress:**")] + "\n".join(table(list(mine.values()))) + "\n")
+    print(f"{hid}: ingested {len(seen)} row(s). Problems: {len(problems)}")
+    for p in problems:
+        print("  - " + p)
 
 
 if __name__ == "__main__":

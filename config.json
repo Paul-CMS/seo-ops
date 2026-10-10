@@ -26,7 +26,9 @@
       "Approval Record",
       "Document Checklist",
       "Brand Guide",
-      "Status"
+      "Status",
+      "VA Worklist",
+      "VA Worklist CSV"
     ],
     "_local_root_about": "R4: Google Drive for desktop (streaming) shows the v3 folder at this local path. drive.py copies files there and Drive syncs them. Nothing outside it is ever read or written (R8)."
   },
@@ -211,5 +213,7 @@
       "methodology/specs/location.md": "bf5b163f4357",
       "methodology/specs/service.md": "0d679dadad45"
     }
-  }
+  },
+  "wheel_link_unpublished": true,
+  "_wheel_link_unpublished_about": "Rewrite 2 P9: every service and location page ships together, so every link target already exists as a draft with its final URL; link tables are complete."
 }

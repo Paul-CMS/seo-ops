@@ -357,6 +357,44 @@ def cmd_drafts(a):
           f"{sum(len(v) for v in pend_all.values())} link row(s) waiting for their target to go live")
 
 
+CORE = ("service", "location", "county")
+
+
+def ship_ready(st):
+    """(ok, why, batch ids to ship) — P9: services and locations ship as a whole. Every service and location batch
+    (the pilot included) must have its drafts approved and its Brand Guide write-back done; homepage and about batches
+    ship with them when approved, otherwise later as a worklist addition."""
+    todo, missing = [], []
+    for b in S.batches(st):
+        if b.get("state") in S.DRAFTED_OR_LATER or (b.get("drafts") or {}).get("baseline"):
+            continue
+        approved = S.check(st, f"batch:{b['id']}:drafts")[0]
+        core = b.get("kind") in CORE or b["id"] == "pilot"
+        if approved and (b.get("content_written_back") or not core):
+            todo.append(b["id"])
+        elif core:
+            missing.append(f"{b['id']} ({'Brand Guide write-back not done' if approved else 'drafts not approved yet'})")
+    if missing:
+        return False, "every service and location page ships together — still waiting for: " + ", ".join(missing), todo
+    return bool(todo), ("" if todo else "nothing left to ship"), todo
+
+
+def cmd_drafts_all(a):
+    """P9: one run creates the WordPress draft of every approved page; link tables are complete, because every target
+    exists as a draft with its final URL."""
+    R.open_run(a.slug, a.run)
+    st = S.load(a.slug)
+    ok, why, todo = ship_ready(st)
+    if not ok:
+        die(f"REFUSED — {why}", 4)
+    for bid in todo:
+        a.batch = bid
+        cmd_drafts(a)
+    a.batch = None
+    print(f"shipped {len(todo)} batch(es) as WordPress drafts in one run: {', '.join(todo)} — next, the one VA Worklist "
+          "handover (/build <slug> handoff)")
+
+
 def cmd_handoff(a):
     """CM-055: one living publish handoff for every drafted page, once every batch is drafted."""
     import csv
@@ -459,7 +497,8 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("wheel"); s.add_argument("slug")
     s = sub.add_parser("drafts"); s.add_argument("slug"); s.add_argument("--run", required=True)
-    g = s.add_mutually_exclusive_group(required=True); g.add_argument("--batch"); g.add_argument("--page")
+    g = s.add_mutually_exclusive_group(); g.add_argument("--batch"); g.add_argument("--page")
+    g.add_argument("--all", action="store_true", help="the default: every approved page in one run (P9)")
     s = sub.add_parser("blocks"); s.add_argument("file")
     s = sub.add_parser("check"); s.add_argument("file")
     s = sub.add_parser("handoff"); s.add_argument("slug"); s.add_argument("--run", required=True)
@@ -468,7 +507,10 @@ def main():
     if a.cmd == "wheel":
         cmd_wheel(a)
     elif a.cmd == "drafts":
-        cmd_drafts(a)
+        if a.batch or a.page:
+            cmd_drafts(a)
+        else:
+            cmd_drafts_all(a)
     elif a.cmd == "pending":
         cmd_pending(a)
     elif a.cmd == "handoff":

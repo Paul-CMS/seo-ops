@@ -290,10 +290,20 @@ def build_batch(st, slug, b):
     if state in ("drafts_written", "sem_check_failed") and drafts.get("sem_ids") and not drafts.get("applied"):
         out("run", f"/build {slug} batch {bid} apply-sem",
             f"apply {', '.join(drafts['sem_ids'])} to batch {bid} and re-run the E-checks on the changed sections")
-    condition_step(st, slug, "wordpress_connected")
-    out("run", f"/build {slug} ship {bid}",
-        f"WordPress drafts for batch {bid} from the approved files (link tables filled) — the next batch does not "
-        "wait for publishing; every page goes to Jonie together")
+    if not b.get("content_written_back"):   # P8: content, not publishing — the next batch reads it
+        out("run", f"/build {slug} writeback {bid}",
+            f"Brand Guide write-back for batch {bid} (B3, C1/C2, C3) from the approved drafts — the next batch reads it")
+    # P9: no per-batch ship — every service and location page ships together once all are approved
+
+
+def ship_all(st, slug):
+    """P9: one ship run once every service and location batch is approved and written back."""
+    import publish
+    ok, why, todo = publish.ship_ready(st)
+    if ok:
+        condition_step(st, slug, "wordpress_connected")
+        out("run", f"/build {slug} ship", f"every approved page as a WordPress draft in one run ({', '.join(todo)}) — "
+            "link tables complete, every target already has its final URL")
 
 
 def open_items_note(st, b):
@@ -438,6 +448,7 @@ def _walk(slug, cont):
     # CM-055: batches are drafted one after another and never wait on publishing; every page goes to Jonie together.
     for b in S.batches(st):
         soft(build_batch, st, slug, b)
+    soft(ship_all, st, slug)
     if S.batches(st) and S.condition_met(st, "pages_drafted")[0]:
         if any(b.get("state") == "drafted" for b in S.batches(st)):
             out("run", f"/build {slug} handoff", "every page is a WordPress draft: one living publish handoff to Jonie "

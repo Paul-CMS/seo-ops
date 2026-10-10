@@ -41,7 +41,8 @@ import status as S
 from lib import ROOT, append, client_dir, config, die, machine, now, sha12
 
 LOCAL = {"Handoff Log": "handoff-log.md", "Approval Record": "approval-record.md",
-         "Document Checklist": "document-checklist.md", "Brand Guide": "brand-guide.md", "Status": "STATUS.md"}
+         "Document Checklist": "document-checklist.md", "Brand Guide": "brand-guide.md", "Status": "STATUS.md",
+         "VA Worklist": "handoffs/VA-WORKLIST.md", "VA Worklist CSV": "handoffs/VA-WORKLIST.csv"}   # P9
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # where a repo file's Drive copy goes, by its folder under clients/<slug>/
 PLACES = {"discovery": "01 - Discovery and Audit/Deliverables", "audit": "01 - Discovery and Audit/Deliverables",
@@ -167,7 +168,7 @@ def records(slug):
     out = []
     for label in cfg().get("mirrored_records") or LOCAL:
         local = client_dir(slug) / LOCAL[label]
-        out.append((label, local, f"{st['client']['name']} - {label}.md"))
+        out.append((label, local, f"{st['client']['name']} - {label.replace(' CSV', '')}{local.suffix}"))
     return out
 
 

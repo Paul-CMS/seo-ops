@@ -257,7 +257,8 @@ def status_md(slug):
     out += [f"- {e['text']}" for k, e in settled.entries(slug).items() if e.get("state") == "settled"]
     if not aps and not settled.entries(slug):
         out.append("_None yet._")
-    out += ["", "## Open VA items", ""]
+    out += ["", "## Open VA items", "", "_Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` "
+            "(Drive: \"" + c["name"] + " - VA Worklist\")._", ""]
     out += ([f"- **{hid}** ({owner}) — {kind}: {n_open} of {n} open, issued {issued}" for hid, owner, kind, issued, n_open, n in hs]
             or ["_None._"])
     import changereq   # P3: workflow issues flagged in this client's sessions, for Paul's next system session
@@ -281,7 +282,9 @@ def top(slug):
 
 def render(slug):
     import facts
+    import worklist
     facts.render(slug)   # P4: the Brand Guide's fact rows come from facts.json
+    worklist.build(slug)   # P9: one living VA Worklist
     st = S.load(slug)
     d = client_dir(slug)
     log = _log(slug)

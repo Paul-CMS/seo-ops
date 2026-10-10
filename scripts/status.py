@@ -292,8 +292,8 @@ def condition_met(st, name):
         left = steps.missing(st)
         return not left, ("" if not left else "audit steps with no outcome yet: " + ", ".join(x["id"] for x in left))
     if name == "pages_drafted":   # CM-055: every page is a WordPress draft — one living handoff, published together
-        bs = batches(st)
-        left = [b["id"] for b in bs if b.get("state") not in DRAFTED_OR_LATER]
+        bs = [b for b in batches(st) if b.get("kind") in ("service", "location", "county") or b["id"] == "pilot"]
+        left = [b["id"] for b in bs if b.get("state") not in DRAFTED_OR_LATER]   # P9: homepage/about may follow later
         ok = bool(bs) and not left
         return ok, ("" if ok else ("no site plan yet" if not bs else
                                    "batches not yet in WordPress as drafts: " + ", ".join(left)))
@@ -869,6 +869,7 @@ def main():
     s.add_argument("--stage", required=True, choices=["brief", "draft"]); s.add_argument("--file", required=True)
     s.add_argument("--run", required=True)
     s = sub.add_parser("modes"); s.add_argument("slug")
+    s = sub.add_parser("writeback"); s.add_argument("slug"); s.add_argument("batch_id"); s.add_argument("--run", required=True)
     s = sub.add_parser("pilot-corrections"); s.add_argument("slug"); s.add_argument("--note", required=True)
     s = sub.add_parser("blockers-none"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s = sub.add_parser("mark"); s.add_argument("slug"); s.add_argument("name")
@@ -1163,6 +1164,16 @@ def main():
             src = "this client" if own else ("global" if (config().get("stage_modes") or {}).get(step) else "default")
             ok, _ = pilot_passed(st, step)
             print(f"  {step:20} {m:6} ({src})  pilot {'passed' if ok else ('—' if not spec.get('pilot') else 'not yet')}")
+    elif a.cmd == "writeback":   # P8/P9: the batch's Brand Guide content write-back, right after its drafts approval
+        b = batch(st, a.batch_id) or die(f"no batch {a.batch_id}")
+        ok, why = check(st, f"batch:{a.batch_id}:drafts")
+        if not ok:
+            die("REFUSED — the write-back follows the drafts approval: " + "; ".join(why), 4)
+        b["content_written_back"] = {"at": now(), "run": a.run}
+        save(a.slug, st)
+        append(client_dir(a.slug) / "log.md", f"- WRITE-BACK {now()[:16]} · run {a.run} · batch {a.batch_id}: Brand Guide "
+               "B3, C1/C2, C3 updated from the approved drafts\n")
+        print(f"batch {a.batch_id}: Brand Guide write-back recorded")
     elif a.cmd == "pilot-corrections":
         if not batch_stage_ok(st, "pilot", "briefs", False)[0]:
             die("the pilot briefs are not approved yet")

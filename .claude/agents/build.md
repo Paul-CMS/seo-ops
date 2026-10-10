@@ -132,10 +132,16 @@ to the page or blog list that owns them. Re-run E1–E10 and the spec checks on 
 - Any check fails → `status.py batch <slug> <id> --state sem_check_failed --files <drafts> --note "<check, page>"`.
   The drafts go back to Paul with the failure.
 
-## Step: ship <id>   (one run, one commit — the system never publishes)
+## Step: writeback <id>   (right after the batch's drafts approval — P8: content, not publishing)
+Write the approved batch back to the Brand Guide: each page's row in B3, the variants it used in C1/C2, every H2 and
+FAQ question in C3; its Drive copy (`drive.py upload`). Then `status.py writeback <slug> <id> --run <RUN_ID>`. The
+next batch reads it, so it never reuses a variant, heading or FAQ.
+
+## Step: ship   (ONE run for every service and location page — P9; the system never publishes)
 1. `python3 scripts/publish.py wheel <slug>` — plans the link wheel from the approved site plan (every
    final URL is known).
-2. `python3 scripts/publish.py drafts <slug> --run <RUN_ID> --batch <id>` — for every page, a WordPress
+2. `python3 scripts/publish.py drafts <slug> --run <RUN_ID> --all` — refused until every service and location
+   batch has its drafts approved and written back; then, for every approved page at once, a WordPress
    **draft** generated one-way from its approved file: exact slug, SEOPress title, meta description,
    target keyword (site plan) and social (Open Graph + X from the approved title and meta),
    content as proper blocks (heading levels, paragraphs, lists, tables, FAQ), link tables filled from the
@@ -148,7 +154,7 @@ to the page or blog list that owns them. Re-run E1–E10 and the spec checks on 
    it never reuses a variant, heading or FAQ. Publishing is never a prerequisite for writing.
 Never edit a generated draft — change the approved file (Paul re-approves) and regenerate.
 
-## Step: handoff   (once every page is a WordPress draft — CM-055)
+## Step: handoff   (once every service and location page is a WordPress draft — the VA Worklist handover, P9)
 `python3 scripts/publish.py handoff <slug> --run <RUN_ID>` — **one living publish handoff to Jonie** for every
 drafted page: draft links + instructions (Kadence layout and styling, images, publish them together; never change
 wording, headings, title, meta or URL — any unavoidable change goes in the CSV as `deviated` with a reason), each page's
@@ -157,7 +163,8 @@ wording, headings, title, meta or URL — any unavoidable change goes in the CSV
 same document's status column.
 
 ## Step: published <id>   (after Jonie returns the worksheet)
-1. `handoff.py ingest <slug> --run <RUN_ID> --handoff <H-ID> --returned <csv>` — report deviations and omissions.
+1. `handoff.py ingest <slug> --run <RUN_ID> --returned <the returned VA-WORKLIST.csv>` — every row goes to its group
+   by ref; report deviations and omissions.
 2. `verify.py <slug> --run <RUN_ID> --batch <id>` — every live page against its approved file: URL, SEO
    title, meta, H1, heading structure, body text, link-table links. **Every difference goes to Paul**
    (quote the verify report). If any page differs: a corrections handoff to Jonie (`--kind publish`,
