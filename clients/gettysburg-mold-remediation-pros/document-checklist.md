@@ -1,6 +1,6 @@
 # Gettysburg Mold Remediation Pros - Document Checklist
 
-Generated 2026-10-09T18:08 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-09T20:16 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 

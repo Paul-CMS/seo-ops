@@ -5,7 +5,7 @@
 - **Waiting on:** nobody
 - **Next action:** `/discovery gettysburg-mold-remediation-pros proof-sheet` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open gettysburg-mold-remediation-pros`) and types `/next gettysburg-mold-remediation-pros` (agents: discovery-audit (opus), clerk (haiku))
 
-_Generated 2026-10-09T18:08 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-09T20:16 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -27,6 +27,8 @@ _Open, but the next action above goes ahead without them._
 
 ## Open VA items
 
+_Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Gettysburg Mold Remediation Pros - VA Worklist")._
+
 _None._
 
 ## Flagged for Paul (system)
@@ -36,5 +38,9 @@ _None._
 ## Spend so far
 
 - DataforSEO: $0.00
+
+## Spend by step (model)
+
+_Nothing recorded yet (run.py finish --tokens --cost)._
 
 Last run: /discovery 2026-10-03T16:17 — Discovery S01-S03: entity foundation proposed (category and area open for Paul), Discovery Record uploaded
