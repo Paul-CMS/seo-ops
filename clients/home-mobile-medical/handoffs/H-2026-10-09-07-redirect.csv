@@ -1,0 +1,2 @@
+ref,url,field,old,new,reason,decision_map_ref,status,note
+H-2026-10-09-07-redirect-01,https://homemobilemedical.com/services/,301,https://homemobilemedical.com/services/,https://homemobilemedical.com/,rewrite 2: the /services/ folder page goes (Paul 2026-10-09; no chains),services-index,issued,

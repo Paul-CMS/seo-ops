@@ -277,3 +277,9 @@ Generated from the safety log (clients/home-mobile-medical/log.md) — do not ed
 **What I did**
 - rewrite 2 URL migration: worklist rows for the redirect / slug clearing
 
+## /drive-mirror · 2026-10-09 · run 20261009-222728-drive-mirror-744e
+
+**What I did**
+- Added the 301 /services/ → homepage (worklist section 3).
+- Pointed the three -sc-2 redirects (not yet done by Jonie) at the root URLs, so there are no chains.
+

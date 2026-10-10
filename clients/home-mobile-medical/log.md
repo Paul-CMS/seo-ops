@@ -573,3 +573,29 @@ Changes: 1 · Summary: rewrite 2 URL migration (worklist rows)
 - CHANGE #133 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-09 (5).md | new: Home Mobile Medical - Status.md · sha 304269f7429e | result: done · copied (Drive for desktop syncs it)
 - CHANGE #134 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.md | upload | old: (new file) | new: Home Mobile Medical - VA Worklist.md · sha 2723646d3a18 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #135 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.csv | upload | old: (new file) | new: Home Mobile Medical - VA Worklist.csv · sha 0805bef3f8ef | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261009-222728-drive-mirror-744e · STARTED · /drive-mirror · 2026-10-09T22:27:28-05:00
+Step: drive-mirror · session 55ffb3c8-069b-4af6-a4b4-8790ec003647
+Gates checked: client_setup
+Note: rewrite 2 follow-up: /services/ redirect, -sc-2 retargets
+- CHANGE #136 [redirect] https://homemobilemedical.com/services/ | 301 | old: [REDACTED]services/ | new: [REDACTED] | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-07-redirect-01
+- CHANGE #137 [redirect] https://homemobilemedical.com/service-area/bluffton-sc-2/ | 301 target | old: [REDACTED]service-area/bluffton-sc/ | new: [REDACTED]bluffton-sc/ | result: RETARGETED · rewrite 2: /service-area/bluffton-sc/ moves to /bluffton-sc/ (Paul 2026-10-09) — no redirect chains | ref H-2026-10-09-03-redirect-01
+- CHANGE #138 [redirect] https://homemobilemedical.com/service-area/charleston-sc-2/ | 301 target | old: [REDACTED]service-area/charleston-sc/ | new: [REDACTED]charleston-sc/ | result: RETARGETED · rewrite 2: /service-area/charleston-sc/ moves to /charleston-sc/ (Paul 2026-10-09) — no redirect chains | ref H-2026-10-09-03-redirect-02
+- CHANGE #139 [redirect] https://homemobilemedical.com/service-area/beaufort-sc-2/ | 301 target | old: [REDACTED]service-area/beaufort-sc/ | new: [REDACTED]beaufort-sc/ | result: RETARGETED · rewrite 2: /service-area/beaufort-sc/ moves to /beaufort-sc/ (Paul 2026-10-09) — no redirect chains | ref H-2026-10-09-03-redirect-03
+### HANDOFF · /drive-mirror · 2026-10-09 · run 20261009-222728-drive-mirror-744e
+**What I did**
+- Added the 301 /services/ → homepage (worklist section 3).
+- Pointed the three -sc-2 redirects (not yet done by Jonie) at the root URLs, so there are no chains.
+### END HANDOFF
+## RUN 20261009-222728-drive-mirror-744e · FINISHED · 2026-10-09T22:27:37-05:00
+Changes: 4 · Summary: rewrite 2 follow-up: /services/ 301 and -sc-2 retargets
+- CHANGE #140 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-09 (3).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-09 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #141 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-09 (3).md | new: Home Mobile Medical - Handoff Log.md · sha 93b010fa9fba | result: done · copied (Drive for desktop syncs it)
+- CHANGE #142 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-09 (6).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-09 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #143 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-09 (6).md | new: Home Mobile Medical - Document Checklist.md · sha 0b509dad4f3f | result: done · copied (Drive for desktop syncs it)
+- CHANGE #144 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-09 (6).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-09 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #145 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-09 (6).md | new: Home Mobile Medical - Status.md · sha 2f7c249c7316 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #146 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - VA Worklist - 2026-10-09.md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.md | new: _Archive/Home Mobile Medical - VA Worklist - 2026-10-09.md | result: done · renamed and moved, nothing deleted
+- CHANGE #147 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.md | upload | old: previous version archived as Home Mobile Medical - VA Worklist - 2026-10-09.md | new: Home Mobile Medical - VA Worklist.md · sha e8888e1d20b1 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #148 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - VA Worklist - 2026-10-09.csv | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.csv | new: _Archive/Home Mobile Medical - VA Worklist - 2026-10-09.csv | result: done · renamed and moved, nothing deleted
+- CHANGE #149 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.csv | upload | old: previous version archived as Home Mobile Medical - VA Worklist - 2026-10-09.csv | new: Home Mobile Medical - VA Worklist.csv · sha 10c85ac3c5ee | result: done · copied (Drive for desktop syncs it)

@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the site plan is ready for your approval
 - **Next action:** Paul types `/approve home-mobile-medical site_plan --files "clients/home-mobile-medical/build/Home Mobile Medical - Site Plan - REVISED.md"` (or asks for changes first)
 
-_Generated 2026-10-09T20:16 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-09T22:27 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -26,6 +26,7 @@ _Open, but the next action above goes ahead without them._
 | Jonie | broken link handoff — 9 of 9 item(s) open | 2026-10-09 | H-2026-10-09-04-broken_link |
 | Jonie | other handoff — 2 of 2 item(s) open | 2026-10-09 | H-2026-10-09-05-other |
 | Jonie | redirect handoff — 1 of 1 item(s) open | 2026-10-09 | H-2026-10-09-06-redirect |
+| Jonie | redirect handoff — 1 of 1 item(s) open | 2026-10-09 | H-2026-10-09-07-redirect |
 
 ## Settled decisions — never re-raised
 
@@ -46,6 +47,7 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Hom
 - **H-2026-10-09-04-broken_link** (Jonie) — broken link: 9 of 9 open, issued 2026-10-09
 - **H-2026-10-09-05-other** (Jonie) — other: 2 of 2 open, issued 2026-10-09
 - **H-2026-10-09-06-redirect** (Jonie) — redirect: 1 of 1 open, issued 2026-10-09
+- **H-2026-10-09-07-redirect** (Jonie) — redirect: 1 of 1 open, issued 2026-10-09
 
 ## Flagged for Paul (system)
 
