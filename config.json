@@ -215,5 +215,10 @@
     }
   },
   "wheel_link_unpublished": true,
-  "_wheel_link_unpublished_about": "Rewrite 2 P9: every service and location page ships together, so every link target already exists as a draft with its final URL; link tables are complete."
+  "_wheel_link_unpublished_about": "Rewrite 2 P9: every service and location page ships together, so every link target already exists as a draft with its final URL; link tables are complete.",
+  "mcp_allowed": [
+    "Google Drive (the v3 folder only, R8)",
+    "Claude Browser (in-app browser)"
+  ],
+  "_mcp_allowed_about": "Rewrite 2 P12: the connector tools seo-ops uses. Paul runs /context in a seo-ops session and disables, in the project settings, every connector listed there that is not named here; each loaded connector adds to every request's cost. DataforSEO stays blocked (blocked_tool_prefixes); paid calls go through scripts/dfs.py."
 }

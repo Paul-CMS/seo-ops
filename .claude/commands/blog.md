@@ -5,7 +5,7 @@ argument-hint: <slug> [map|redirects|next|publish <id>|refresh|intake|topics]
 
 Arguments: $ARGUMENTS
 
-Follow CLAUDE.md. Check `client.type`.
+Follow CLAUDE.md and `docs/stage-8-blog.md`. Check `client.type`.
 
 Steps — full client: `map` · `redirects` · `next` · `publish` (`--page <id>`) · `refresh`; blog-only client: `intake` · `topics` · `next` · `publish`.
 Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps blog` lists them; `run.py start` checks them. `next` waits for the previous post's approval automatically.

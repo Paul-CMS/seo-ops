@@ -28,6 +28,7 @@ command recorded with `status.py mark`). No files → refused. If one of those f
 later, only this approval stops counting (status.py).
 """
 import argparse
+import re
 import time
 from pathlib import Path
 
@@ -239,6 +240,29 @@ def global_mode(a):
     print(git_commit(f"global: {step} → {mode} by Paul", paths=["config.json", "clients/"]))
 
 
+def global_model(a):
+    """/approve global model:build:draft=sonnet|opus (rewrite 2 §4: the Sonnet drafting test) — Paul's choice of model
+    for one job, for every client. Recorded in config.json model_overrides and logged; next.py and stages.py print it."""
+    target = a.targets[0]
+    m = re.match(r"^model:([a-z0-9:-]+)=(haiku|sonnet|opus)$", target)
+    if not m:
+        die("REFUSED — write model:<step>=haiku|sonnet|opus, e.g. model:build:draft=sonnet")
+    key, model = m.groups()
+    keys = {r.get("key") or step for step, rs in (S.GATES.get("models") or {}).items() for r in rs}
+    if key not in keys:
+        die(f"REFUSED ({target}) — no job '{key}' in gates.json → models ({', '.join(sorted(keys))})")
+    take_token("global", target)
+    from lib import config
+    cfg = config()
+    old = ((cfg.get("model_overrides") or {}).get(key) or {}).get("model")
+    cfg.setdefault("model_overrides", {})[key] = {"model": model, "by": "Paul", "at": now(), "note": a.note, "was": old}
+    write_json(ROOT / "config.json", cfg)
+    from lib import CLIENTS
+    for s in sorted(p.parent.name for p in CLIENTS.glob("*/status.json")):
+        append(client_dir(s) / "log.md", f"\n## MODEL · {now()} · {key}: {old or 'default'} → {model} · GLOBAL · by Paul\n")
+    print(git_commit(f"global: model for {key} → {model} by Paul", paths=["config.json", "clients/"]))
+
+
 def global_specs(a):
     """/approve global specs (R3): the page specs are methodology, approved once for every client. Each spec's status
     line is rewritten to APPROVED; config.json records each spec's sha (status line excluded). A changed spec makes
@@ -316,6 +340,9 @@ def prepare(a, st, target, multi):
                 files = file_map((b.get("files") or {}).get(stage) or [])
             if approved:
                 ok, why = S.batch_ready(st, bid, stage)
+                if stage == "drafts" and f"batch:{bid}:briefs" in a.targets:   # P10: briefs approved in this same line
+                    why = [w for w in why if not w.startswith(f"batch {bid} briefs")]
+                    ok = not why
                 if not ok:
                     die(f"REFUSED ({target}) — " + "; ".join(why))
                 if not files:
@@ -389,6 +416,9 @@ def prepare(a, st, target, multi):
         step, mode = parse_mode(target)
         if mode == "auto":
             ok, why = S.pilot_passed(st, step)
+            cond = (S.GATES["modes"]["stages"].get(step) or {}).get("pilot")
+            if not ok and cond in a.targets and approved:   # P10: the pilot approved in this same line counts
+                ok = True
             if not ok:
                 die(f"REFUSED ({target}) — a stage goes to auto only after it has passed the pilot: {why}.")
         old = S.stage_mode(st, step)
@@ -482,6 +512,8 @@ def main():
     if a.slug == "global":
         if a.targets == ["specs"]:
             return global_specs(a)
+        if len(a.targets) == 1 and a.targets[0].startswith("model:"):
+            return global_model(a)
         return global_mode(a)
     d = client_dir(a.slug)
     st = S.load(a.slug)

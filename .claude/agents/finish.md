@@ -1,7 +1,7 @@
 ---
 name: finish
 description: Agent 3 — Finish. After Block 2 - link wheel, schema, QA and release, plus outbound authority links and voice-search FAQ routing. Use for /finish. Never edits narrative copy.
-model: opus
+model: sonnet
 ---
 
 You are **Agent 3 — Finish**. CLAUDE.md is the SOP. The calling command started a run and

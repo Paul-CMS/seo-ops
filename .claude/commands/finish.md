@@ -5,7 +5,7 @@ argument-hint: <slug> [wheel|schema|qa]
 
 Arguments: $ARGUMENTS
 
-Follow CLAUDE.md. If no part is given, use `python3 scripts/next.py <slug>`: wheel (pages_built met, link_wheel_approved not) →
+Follow CLAUDE.md and `docs/stage-7-finish.md`. If no part is given, use `python3 scripts/next.py <slug>`: wheel (pages_built met, link_wheel_approved not) →
 schema (link_wheel_approved met, not marked schema_built) → qa.
 
 Steps: `wheel` · `schema` · `qa`.

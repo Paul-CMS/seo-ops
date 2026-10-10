@@ -379,7 +379,7 @@
         "templates/decision-sheet.md",
         "templates/brand-guide.md (A, B)",
         "sop-source/BB-Standard-v1.0.md (BB-1xx entity rules)",
-        "methodology/rulings.md (CM-016, CM-020, PROC-01)",
+        "python3 scripts/rulings.py CM-016 CM-020 PROC-01 (never rulings.md whole, P12)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -442,7 +442,7 @@
         ".claude/skills/seo-technical-audit/SKILL.md",
         ".claude/skills/seo-technical-audit/references/*.md",
         "methodology/specs/*.md",
-        "methodology/rulings.md",
+        "python3 scripts/rulings.py --index, then the IDs the step needs (never rulings.md whole, P12)",
         "clients/<slug>/brand-guide.md",
         "clients/<slug>/decisions-settled.md",
         "clients/<slug>/data/crawl/crawl-summary.csv + page-text.csv (never the raw crawl tables)",
@@ -466,7 +466,7 @@
         "the returned proof sheet",
         "clients/<slug>/brand-guide.md",
         "templates/brand-guide.md",
-        "methodology/rulings.md (CM-016, CM-027, CM-039)",
+        "python3 scripts/rulings.py CM-016 CM-027 CM-039 (never rulings.md whole, P12)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -490,7 +490,7 @@
       ],
       "reads": [
         "the approved Finding Register",
-        "methodology/rulings.md (CM-028)",
+        "python3 scripts/rulings.py CM-028 (never rulings.md whole, P12)",
         "scripts/gates.json (change_kinds)",
         "clients/<slug>/decisions-settled.md"
       ]
@@ -508,7 +508,7 @@
         "methodology/specs/*.md",
         "clients/<slug>/data/rankings/ (best-variants.csv, url-rankings.csv)",
         "clients/<slug>/data/paa/paa-routing.md",
-        "methodology/rulings.md (CM-020, CM-022, CM-024)",
+        "python3 scripts/rulings.py CM-020 CM-022 CM-024 (never rulings.md whole, P12)",
         "clients/<slug>/data/fanout/fanout-routing.md",
         "clients/<slug>/data/competitors/coverage.md (coverage ideas only, P6)",
         "clients/<slug>/decisions-settled.md"
@@ -528,7 +528,7 @@
         "clients/<slug>/brand-guide.md (A, D, E)",
         "the returned proof sheet and the approved Discovery Record",
         "methodology/evidence-requirements.json",
-        "methodology/rulings.md (CM-016, CM-027, CM-041)",
+        "python3 scripts/rulings.py CM-016 CM-027 CM-041 (never rulings.md whole, P12)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -552,7 +552,7 @@
         "clients/<slug>/data/fanout/fanout-routing.md",
         "the pages approved in earlier batches (sibling context)",
         "the audit findings for these pages",
-        "methodology/rulings.md (CM-041, CM-054, CM-056)",
+        "python3 scripts/rulings.py CM-041 CM-057 (never rulings.md whole, P12)",
         "clients/<slug>/build/pilot-corrections.md (if present — this client's pilot corrections, P3)",
         "clients/<slug>/decisions-settled.md"
       ]
@@ -590,7 +590,7 @@
         "methodology/specs/<type>.md",
         "clients/<slug>/brand-guide.md (C1–C3)",
         "the pages approved in earlier batches",
-        "methodology/rulings.md (CM-017, CM-043)",
+        "python3 scripts/rulings.py CM-017 CM-043 (never rulings.md whole, P12)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -700,7 +700,7 @@
         "clients/<slug>/build/link-wheel.json",
         ".claude/skills/updated-link-strategy/SKILL.md",
         ".claude/skills/link-implementation-qa/SKILL.md",
-        "methodology/rulings.md (CM-011, CM-022)",
+        "python3 scripts/rulings.py CM-011 CM-022 (never rulings.md whole, P12)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -745,7 +745,7 @@
         ".claude/skills/bb-blog-analysis/SKILL.md",
         ".claude/skills/bb-blog-analysis/references/tests.md",
         "the approved URL Decision Map",
-        "methodology/rulings.md (CM-007, CM-019, CM-021)",
+        "python3 scripts/rulings.py CM-007 CM-019 CM-021 (never rulings.md whole, P12)",
         "clients/<slug>/data/paa/paa-routing.md",
         "clients/<slug>/data/fanout/fanout-routing.md",
         "clients/<slug>/decisions-settled.md"
@@ -778,7 +778,7 @@
         "methodology/specs/blog-post.md",
         ".claude/skills/expert-interview/SKILL.md",
         "clients/<slug>/brand-guide.md (C3, D, I, author)",
-        "methodology/rulings.md (CM-007, CM-038, CM-039)",
+        "python3 scripts/rulings.py CM-007 CM-038 CM-039 (never rulings.md whole, P12)",
         "clients/<slug>/interviews/story-bank.md",
         "clients/<slug>/interviews/voice-dna-<author>.md",
         "clients/<slug>/decisions-settled.md"
@@ -820,7 +820,7 @@
       "reads": [
         "clients/<slug>/brand-guide.md",
         "the client's live service and location pages (FAQs and H2s)",
-        "methodology/rulings.md (CM-012)",
+        "python3 scripts/rulings.py CM-012 (never rulings.md whole, P12)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -904,7 +904,7 @@
         "methodology/audit-steps.md (S21)",
         "clients/<slug>/brand-guide.md (services, cities)",
         "clients/<slug>/data/paa/paa-questions.csv",
-        "methodology/rulings.md (CM-012, CM-045)",
+        "python3 scripts/rulings.py CM-012 CM-045 (never rulings.md whole, P12)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -918,7 +918,7 @@
       "reads": [
         "clients/<slug>/build/evidence/<page>.grid.md for the batch's blocked pages",
         ".claude/skills/expert-interview/SKILL.md (Facts)",
-        "methodology/rulings.md (CM-041, CM-042)"
+        "python3 scripts/rulings.py CM-041 CM-042 (never rulings.md whole, P12)"
       ]
     },
     "interview:facts-answers": {
@@ -933,7 +933,7 @@
         "the facts interview pack",
         "clients/<slug>/brand-guide.md (D)",
         ".claude/skills/expert-interview/SKILL.md (Facts)",
-        "methodology/rulings.md (CM-016, CM-027, CM-042)"
+        "python3 scripts/rulings.py CM-016 CM-027 CM-042 (never rulings.md whole, P12)"
       ]
     },
     "interview:stories": {
@@ -948,7 +948,7 @@
         ".claude/skills/expert-interview/references/question-bank.md",
         "clients/<slug>/interviews/story-bank.md",
         "clients/<slug>/brand-guide.md (C1, E, G)",
-        "methodology/rulings.md (CM-042)"
+        "python3 scripts/rulings.py CM-042 (never rulings.md whole, P12)"
       ]
     },
     "interview:stories-answers": {
@@ -963,7 +963,7 @@
         ".claude/skills/expert-interview/SKILL.md (Stories)",
         ".claude/skills/expert-interview/references/extraction-rubric.md",
         "clients/<slug>/interviews/story-bank.md",
-        "methodology/rulings.md (CM-027, CM-042)"
+        "python3 scripts/rulings.py CM-027 CM-042 (never rulings.md whole, P12)"
       ]
     },
     "interview:voice": {
@@ -978,7 +978,7 @@
         ".claude/skills/expert-interview/SKILL.md (Voice)",
         ".claude/skills/expert-interview/references/voice-dna.md",
         "clients/<slug>/brand-guide.md (author)",
-        "methodology/rulings.md (CM-039, CM-042)"
+        "python3 scripts/rulings.py CM-039 CM-042 (never rulings.md whole, P12)"
       ]
     },
     "discovery:facts-direct": {
@@ -1022,6 +1022,59 @@
         "the batch drafts Paul approved (incl. applied SEM items)",
         "clients/<slug>/brand-guide.md (B3, C1, C2, C3)",
         "clients/<slug>/decisions-settled.md"
+      ]
+    },
+    "build:facts": {
+      "gates": [
+        "discovery_signed_off",
+        "site_plan",
+        "page_specs_approved"
+      ],
+      "produces": [
+        "facts_round"
+      ],
+      "reads": [
+        "the approved site plan (every page)",
+        "methodology/evidence-requirements.json",
+        "clients/<slug>/facts.json (facts.py get)",
+        "clients/<slug>/data/reviews/review-facts.json",
+        "methodology/sources/<state>-<area>.md (the researcher)",
+        "clients/<slug>/decisions-settled.md"
+      ]
+    },
+    "build:write": {
+      "gates": [
+        "discovery_signed_off",
+        "batch:{batch}:briefs_ready",
+        "page_specs_approved"
+      ],
+      "produces": [
+        "batch_written:{batch}"
+      ],
+      "reads": [
+        "the approved site plan (the batch's pages and their siblings)",
+        "clients/<slug>/brand-guide.md",
+        "clients/<slug>/build/evidence/<page>.grid.md for each page (written by this run's evidence gate)",
+        "methodology/specs/<type>.md for each page type in the batch",
+        "clients/<slug>/data/reviews/customer-language.md",
+        "clients/<slug>/data/paa/paa-routing.md",
+        "clients/<slug>/data/fanout/fanout-routing.md",
+        "the pages approved in earlier batches (sibling context)",
+        "the audit findings for these pages",
+        "python3 scripts/rulings.py CM-041 CM-057 (never rulings.md whole, P12)",
+        "clients/<slug>/build/pilot-corrections.md (if present — this client's pilot corrections, P3)",
+        "clients/<slug>/decisions-settled.md",
+        "the approved brief for this page",
+        "methodology/writing-commercial.md",
+        "methodology/specs/<type>.md + methodology/specs/README.md (common checks)",
+        "clients/<slug>/brand-guide.md (A–D, H2, I)",
+        "the drafts already written in this batch and the pages approved in earlier batches (sibling context)",
+        "every draft in the batch (one per page, each from its own run)",
+        "methodology/writing-commercial.md (E1, Stage 4)",
+        "methodology/specs/<type>.md",
+        "clients/<slug>/brand-guide.md (C1–C3)",
+        "the pages approved in earlier batches",
+        "python3 scripts/rulings.py CM-017 CM-043 (never rulings.md whole, P12)"
       ]
     }
   },
@@ -1106,6 +1159,12 @@
       },
       "build:writeback": {
         "pilot": "batch:pilot:drafts"
+      },
+      "build:write": {
+        "pilot": "batch:pilot:drafts"
+      },
+      "build:facts": {
+        "pilot": null
       }
     }
   },
@@ -1146,6 +1205,7 @@
       "session_model": "haiku",
       "agents": [
         "clerk",
+        "researcher",
         "discovery-audit"
       ],
       "steps": [
@@ -1176,25 +1236,29 @@
       "session_model": "haiku",
       "agents": [
         "build",
+        "researcher",
         "clerk"
       ],
       "steps": [
         "build:blockers",
-        "build:plan"
+        "build:plan",
+        "build:facts"
       ]
     },
     {
       "id": "batches",
       "n": 6,
-      "name": "Pilot, then batches",
+      "name": "Pilot, services, locations, ship (one session each)",
       "session_model": "haiku",
       "agents": [
         "build",
+        "brief-writer",
         "clerk"
       ],
       "per_batch": true,
       "steps": [
         "build:evidence",
+        "build:write",
         "build:brief",
         "build:draft",
         "build:drafts",
@@ -1214,6 +1278,7 @@
       "session_model": "haiku",
       "agents": [
         "finish",
+        "finish-qa",
         "clerk"
       ],
       "steps": [
@@ -1267,5 +1332,151 @@
       "label": "Technical blocker checklist cleared and tracking stable",
       "why": "R3 (2026-10-08): now a condition — met from evidence, never approved"
     }
+  },
+  "_models_about": "Rewrite 2 §4 (Q12): the model for each job. Opus where the judgment is hard to check, Sonnet for structured assembly, research and extraction, Haiku for orchestration and mechanics. Every stage session runs on Haiku. The agent's frontmatter model must match its role here (tests check it); a role marked 'override' passes the model to the Agent call. Paul changes a role only with /approve global model:<step>=<model> (recorded in config.json model_overrides).",
+  "models": {
+    "new-client": [
+      {
+        "role": "setup",
+        "agent": "clerk",
+        "model": "haiku"
+      }
+    ],
+    "discovery:discovery": [
+      {
+        "role": "research and entity proposal",
+        "agent": "discovery-audit",
+        "model": "opus"
+      }
+    ],
+    "discovery:data": [
+      {
+        "role": "data pulls",
+        "agent": "clerk",
+        "model": "haiku"
+      },
+      {
+        "role": "review facts by meaning, competitor summaries",
+        "agent": "researcher",
+        "model": "sonnet"
+      }
+    ],
+    "crawl": [
+      {
+        "role": "crawl",
+        "agent": "clerk",
+        "model": "haiku"
+      }
+    ],
+    "discovery:audit": [
+      {
+        "role": "conformance (auto checks)",
+        "agent": "clerk",
+        "model": "haiku"
+      },
+      {
+        "role": "judgment columns and findings",
+        "agent": "discovery-audit",
+        "model": "opus"
+      },
+      {
+        "role": "fresh-context review",
+        "agent": "audit-reviewer",
+        "model": "opus"
+      }
+    ],
+    "build:plan": [
+      {
+        "role": "site plan",
+        "agent": "build",
+        "model": "opus"
+      }
+    ],
+    "build:facts": [
+      {
+        "role": "grids and the question set",
+        "agent": "clerk",
+        "model": "haiku"
+      },
+      {
+        "role": "public facts",
+        "agent": "researcher",
+        "model": "sonnet"
+      }
+    ],
+    "build:write": [
+      {
+        "role": "briefs",
+        "agent": "brief-writer",
+        "model": "sonnet"
+      },
+      {
+        "role": "drafts",
+        "agent": "build",
+        "model": "opus",
+        "key": "build:draft"
+      },
+      {
+        "role": "batch review",
+        "agent": "build",
+        "model": "opus"
+      }
+    ],
+    "build:draft": [
+      {
+        "role": "drafts",
+        "agent": "build",
+        "model": "opus",
+        "key": "build:draft"
+      }
+    ],
+    "build:ship": [
+      {
+        "role": "ship and worklist",
+        "agent": "clerk",
+        "model": "haiku"
+      }
+    ],
+    "finish:wheel": [
+      {
+        "role": "link wheel",
+        "agent": "finish",
+        "model": "sonnet"
+      }
+    ],
+    "finish:schema": [
+      {
+        "role": "schema (script-driven)",
+        "agent": "finish",
+        "model": "sonnet"
+      }
+    ],
+    "finish:qa": [
+      {
+        "role": "QA crawl",
+        "agent": "finish",
+        "model": "sonnet"
+      },
+      {
+        "role": "content QA",
+        "agent": "finish-qa",
+        "model": "opus"
+      }
+    ],
+    "blog:map": [
+      {
+        "role": "blog map",
+        "agent": "blog",
+        "model": "sonnet",
+        "override": true
+      }
+    ],
+    "blog:next": [
+      {
+        "role": "blog posts",
+        "agent": "blog",
+        "model": "opus"
+      }
+    ]
   }
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """run.py — the safety log. Every command starts and finishes through here.
 
-    run.py start  <slug> <command> [--step S] [--batch ID] [--page ID] [--note T]   prints RUN_ID
+    run.py start  <slug> <command> [--step S] [--batch ID] [--page ID | --pages all] [--note T]   prints RUN_ID
                   the gates come from scripts/gates.json "steps" (<command>:<step>) — nowhere else
     run.py note   <slug> <run_id> <text>
     run.py change <slug> <run_id> --kind K --url U --field F --old V --new V --result R
@@ -158,6 +158,19 @@ def _missing_one(slug, st, info, want):
         left = [p for p in b.get("pages", []) if S.evidence_ok(st, p)[0] and not S.page_stage(st, p, "brief")]
         if left:
             miss.append(f"a brief for {', '.join(left)} — status.py page-stage <slug> <page> --stage brief --file <f> --run <RUN_ID>")
+    elif want == "facts_round":   # P10: one facts round for every page
+        if (((st.get("build") or {}).get("facts_round")) or {}).get("run") != info["id"]:
+            miss.append("the facts round for every page — evidence.py run <slug> --run <RUN_ID> --all, then "
+                        "evidence.py questions <slug> --run <RUN_ID> --all")
+    elif want.startswith("batch_written:"):   # P10: briefs, one draft per page (each its own sub-agent), the review
+        b = S.batch(st, want.split(":", 1)[1]) or {}
+        left = [p for p in b.get("pages", []) for stg in ("brief", "draft") if S.page_stage(st, p, stg).get("run") != info["id"]]
+        if left:
+            miss.append(f"a brief and a draft from this run for {', '.join(sorted(set(left)))} — status.py page-stage "
+                        "<slug> <page> --stage brief|draft --file <f> --run <RUN_ID> [--agent <id>]")
+        elif b.get("state") not in ("drafts_written", "sem_applied", "sem_check_failed"):
+            miss.append(f"the batch review for {b.get('id')} — status.py batch <slug> {b.get('id')} --state drafts_written "
+                        "--sem-table <file> --sem-findings <n>")
     elif want == "publish_handoff":
         if (st.get("publish_handoff") or {}).get("run") != info["id"]:
             miss.append("the living publish handoff — publish.py handoff <slug> --run <RUN_ID>")
@@ -212,6 +225,7 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("start"); s.add_argument("slug"); s.add_argument("command")
     s.add_argument("--step"); s.add_argument("--batch"); s.add_argument("--page"); s.add_argument("--note")
+    s.add_argument("--pages", choices=["all"], help="P10: a brief or draft run for every page of the batch, one sub-agent each")
     s = sub.add_parser("note"); s.add_argument("slug"); s.add_argument("run_id"); s.add_argument("text")
     s = sub.add_parser("decision"); s.add_argument("slug"); s.add_argument("run_id")
     s.add_argument("--text", required=True); s.add_argument("--ids")
@@ -232,6 +246,8 @@ def main():
     s = sub.add_parser("finish"); s.add_argument("slug"); s.add_argument("run_id")
     s.add_argument("--summary", required=True)
     s.add_argument("--handoff", help="Markdown file with this run's Handoff Log section (templates/handoff-log.md)")
+    s.add_argument("--tokens", type=int, help="P12: the tokens this run used (Claude Code's usage, or the session's own count)")
+    s.add_argument("--cost", type=float, help="P12: the model cost of this run in USD, if known")
     s = sub.add_parser("abort"); s.add_argument("slug"); s.add_argument("run_id")
     s.add_argument("--reason", required=True)
     s = sub.add_parser("flag"); s.add_argument("slug"); s.add_argument("run_id")
@@ -311,7 +327,7 @@ def main():
                   f"-{secrets.token_hex(2)}")
         st = S.load(a.slug)
         st.setdefault("open_runs", {})[run_id] = {"step": key, "batch": a.batch, "page": a.page, "started": now(),
-                                                  "started_ts": time.time(), "session": sid}
+                                                  "started_ts": time.time(), "session": sid, "pages": a.pages}
         S.save(a.slug, st)
         append(d / "log.md", f"\n## RUN {run_id} · STARTED · /{a.command} · {now()}\n"
                + f"Step: {key}" + (f" · batch {a.batch}" if a.batch else "")
@@ -319,6 +335,9 @@ def main():
                + (f"Gates checked: {', '.join(gates)}\n" if gates else "")
                + (f"Note: {a.note}\n" if a.note else ""))
         rl = spec.get("reads") or []
+        doc = stages.stage_doc(key)   # P12: the stage's procedure file comes first
+        if doc:
+            rl = [doc] + [x for x in rl if x != doc]
         if rl:
             print("Read for this step (only these): " + " · ".join(x.replace("<slug>", a.slug) for x in rl))
         print(run_id)   # always the last line
@@ -389,7 +408,13 @@ def main():
             body = re.sub(r"\A#{1,3} [^\n]*\n+", "", body)
             append(d / "log.md", f"### HANDOFF · /{cmd} · {now()[:10]} · run {a.run_id}\n{redact(body)}\n### END HANDOFF\n")
         append(d / "log.md", f"## RUN {a.run_id} · FINISHED · {now()}\n"
-               f"Changes: {len(ch)} · Summary: {redact(a.summary)}\n")
+               f"Changes: {len(ch)} · Summary: {redact(a.summary)}\n"
+               + (f"Spend: {a.tokens or 0} tokens · ${a.cost or 0:.2f}\n" if a.tokens or a.cost else ""))
+        if a.tokens or a.cost:   # P12: measure where the money goes
+            stx = S.load(a.slug)
+            stx.setdefault("model_spend", []).append({"run": a.run_id, "step": (info or {}).get("step"),
+                                                      "tokens": a.tokens or 0, "usd": a.cost or 0.0, "at": now()})
+            S.save(a.slug, stx)
         st = S.load(a.slug)
         (st.get("open_runs") or {}).pop(a.run_id, None)
         step = (info or {}).get("step")

@@ -23,6 +23,7 @@ Arguments: $ARGUMENTS
      Say what he is approving and what changes once he does, then print the `command` exactly as given — it is
      the `/approve` line to type, with the files it covers. Say plainly: "If you want any change, tell me instead —
      don't type /approve with changes attached; I revise the files first and you approve the new version."
+   End every decision stop with the record's `sitting` line, word for word (P12).
    If Paul sends changes together with an `/approve` line, it is not an approval: apply the changes in a revision
    run and come back to step 3. If it ends in
    `--sem <…>`, say he lists the SEM items to apply from the table (e.g. `1,3,4`) or `none`; if it has `<who reviewed it>` /

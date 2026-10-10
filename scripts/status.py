@@ -638,9 +638,10 @@ def per_page_files(st, b, stage):
         if not rec.get("file"):
             probs.append(f"{pid} has no {stage} yet (/build <slug> {stage} {b['id']} {pid})")
             continue
-        if stage == "draft" and rec.get("run") in runs:
-            probs.append(f"{pid} and {runs[rec['run']]} were written in the same run ({rec['run']}) — one page per run")
-        runs[rec.get("run")] = pid
+        who = (rec.get("run"), rec.get("agent"))   # P10: one fresh sub-agent per page inside one run keeps CM-043
+        if stage == "draft" and who in runs:
+            probs.append(f"{pid} and {runs[who]} were written in the same context ({rec['run']}) — one page per agent")
+        runs[who] = pid
         files.append(rec["file"])
     return files, probs
 
@@ -868,6 +869,7 @@ def main():
     s = sub.add_parser("page-stage"); s.add_argument("slug"); s.add_argument("page_id")
     s.add_argument("--stage", required=True, choices=["brief", "draft"]); s.add_argument("--file", required=True)
     s.add_argument("--run", required=True)
+    s.add_argument("--agent", help="P10: in a write run (or --pages all), the id of the fresh sub-agent that wrote this page")
     s = sub.add_parser("modes"); s.add_argument("slug")
     s = sub.add_parser("writeback"); s.add_argument("slug"); s.add_argument("batch_id"); s.add_argument("--run", required=True)
     s = sub.add_parser("pilot-corrections"); s.add_argument("slug"); s.add_argument("--note", required=True)
@@ -1003,6 +1005,19 @@ def main():
                 if pid in seen:
                     die(f"page {pid} is in two batches ({seen[pid]}, {b['id']})")
                 seen[pid] = b["id"]
+        groups = {}
+        for b in plan["batches"]:
+            if b["id"] != "pilot":
+                g = {"county": "location", "about": "homepage"}.get(b["kind"], b["kind"])
+                groups.setdefault(g, []).append(b)
+        for g, bs in groups.items():
+            n = sum(len(b["pages"]) for b in bs)
+            if n <= 15 and len(bs) > 1:
+                die(f"P10: all {n} {g} page(s) are one batch, written in one run — split only above 15 pages "
+                    f"({', '.join(b['id'] for b in bs)})")
+            big = [b["id"] for b in bs if len(b["pages"]) > 15]
+            if big:
+                die(f"P10: a batch holds at most 15 pages — split {', '.join(big)} by cluster or county")
         import urlcheck   # P7: the whole plan, incl. city/service mixing, -2 suffixes, hubs, changed URLs
         bad = urlcheck.problems(list(pages.values()))
         if bad:
@@ -1044,7 +1059,9 @@ def main():
         stage_needed = {"drafts_written": "briefs", "sem_applied": "drafts", "sem_check_failed": "drafts",
                         "drafted": "drafts", "handed_off": "drafts", "corrections_requested": "drafts", "published": "drafts",
                         "verified": "drafts", "written_back": "drafts"}.get(a.state)
-        if stage_needed and not batch_stage_ok(st, a.batch_id, stage_needed, False)[0]:
+        pilot_write = (a.state == "drafts_written" and a.batch_id == "pilot"
+                       and not per_page_files(st, b, "brief")[1])   # P10: pilot briefs + drafts approved together
+        if stage_needed and not pilot_write and not batch_stage_ok(st, a.batch_id, stage_needed, False)[0]:
             die(f"batch {a.batch_id}: {stage_needed} are not approved yet")
         fs = [f.strip() for f in (a.files or "").split(",") if f.strip()]
         for f in fs + ([a.sem_table] if a.sem_table else []):
@@ -1110,10 +1127,16 @@ def main():
         R.open_run(a.slug, a.run)
         info = (st.get("open_runs") or {}).get(a.run) or {}
         want = f"build:{a.stage}"
-        if info.get("step") != want:
-            die(f"a {a.stage} is recorded only by its own /build {a.stage} run (this run is {info.get('step')}).")
+        write_run = info.get("step") == "build:write" or (info.get("step") == want and info.get("pages") == "all")
+        if info.get("step") != want and not write_run:
+            die(f"a {a.stage} is recorded only by its own /build {a.stage} run or the batch's write run "
+                f"(this run is {info.get('step')}).")
         b = batch_of(st, a.page_id) or die(f"{a.page_id} is in no batch")
-        if a.stage == "draft" and info.get("page") != a.page_id:
+        if write_run and a.stage == "draft" and not a.agent:
+            die("in a write run each page's draft comes from its own fresh sub-agent (CM-043): pass --agent <its id>.")
+        if write_run:
+            pass
+        elif a.stage == "draft" and info.get("page") != a.page_id:
             die(f"run {a.run} was started for page {info.get('page')}; it cannot record {a.page_id}. "
                 "One page per run (CM-043): start a run for that page.")
         if a.stage == "brief" and info.get("page") not in (None, a.page_id):
@@ -1134,7 +1157,9 @@ def main():
             if batch_stage_ok(st, b["id"], "briefs", False)[0]:
                 die(f"batch {b['id']} briefs are already approved; Paul re-opens them first (--decision revise).")
         else:
-            if not batch_stage_ok(st, b["id"], "briefs", False)[0]:
+            in_write = write_run and (b["id"] == "pilot" or not briefs_need_approval(st, b["id"])) \
+                and not per_page_files(st, b, "brief")[1]   # P10: the pilot (one approval for both) or briefs on auto
+            if not in_write and not batch_stage_ok(st, b["id"], "briefs", False)[0]:
                 die(f"batch {b['id']}: the briefs are not approved yet — no drafts before Paul approves the briefs.")
             import publish
             bad = publish.placeholder_problems(f.read_text(encoding="utf-8"))
@@ -1143,9 +1168,11 @@ def main():
             if batch_stage_ok(st, b["id"], "drafts", False)[0]:
                 die(f"batch {b['id']} drafts are already approved; Paul re-opens them first (--decision revise).")
         p = st["pages"][a.page_id]
-        p.setdefault("files", {})[a.stage] = {"file": a.file, "run": a.run, "at": now(), "sha": sha12(f)}
+        p.setdefault("files", {})[a.stage] = {"file": a.file, "run": a.run, "at": now(), "sha": sha12(f),
+                                               **({"agent": a.agent} if a.agent else {})}
         p["state"] = "brief_written" if a.stage == "brief" else "draft_written"
-        log_line = f"- {a.stage.upper()} {now()[:16]} · run {a.run} · {a.page_id} · {a.file}\n"
+        log_line = (f"- {a.stage.upper()} {now()[:16]} · run {a.run} · {a.page_id} · {a.file}"
+                    + (f" · agent {a.agent}" if a.agent else "") + "\n")
         if a.stage == "brief" and b.get("state") in ("planned", "briefs_written"):
             files, probs = per_page_files(st, b, "brief")
             if not probs:   # every page has its brief: collect them for Paul's one approval

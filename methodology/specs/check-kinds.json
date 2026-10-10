@@ -1,0 +1,19 @@
+{
+  "_about": "Rewrite 2 P12. Which spec checks are scored by scripts/conformance.py (auto — no judgment, from the crawl and the page-text capture) and which the Opus audit agent fills (every check not listed under auto is judgment: claims, openings, FAQ fit, tone). Kept beside the specs, not inside them, so marking a check never changes a spec file or re-opens Paul's global specs approval.",
+  "auto": {
+    "SVC-02": "URL root-proximate, no city (urlcheck rules)",
+    "SVC-03": "title ends ' - <Brand>' (Service Name - Brand)",
+    "SVC-05": "exactly one H1",
+    "SVC-06": "H1 contains no brand name",
+    "SVC-12": "no planned city name in the H1 or any H2",
+    "LOC-01": "URL is one root slug (the city), no service (urlcheck rules)",
+    "LOC-05": "exactly one H1",
+    "HUB-04": "URL root-proximate, county or metro slug, no service (urlcheck rules)",
+    "HUB-05": "exactly one H1 and no brand",
+    "HP-05": "exactly one H1",
+    "COM-T": "SEO title 60 characters or fewer",
+    "COM-M": "meta description 120-160 characters",
+    "COM-N": "the Brand Guide phone number appears in the page text",
+    "COM-W": "word count recorded (for the judgment columns)"
+  }
+}

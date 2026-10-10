@@ -5,7 +5,7 @@ argument-hint: "<Client Name>" <domain> --industry <trade> [--blog-only] [--rout
 
 Arguments: $ARGUMENTS
 
-Follow CLAUDE.md. Plain language with Paul throughout.
+Follow CLAUDE.md and `docs/stage-1-setup.md`. Plain language with Paul throughout.
 
 ## New client
 1. Work out the slug (lowercase, hyphens: "Red Rover Roofing" → `red-rover-roofing`) and type

@@ -2,6 +2,8 @@
 """migrate2.py — rewrite 2 client migrations (2026-10-09). Never loses an approval: every approval is listed before
 and after, and nothing is written when one that counted before would stop counting.
 
+    migrate2.py urls  <slug> [--dry-run]     P7 + P10: Paul's URL decisions (REWRITE-2-DECISIONS.md c) and one batch per
+                                             kind (split only above 15 pages); the site plan is re-approved once
     migrate2.py facts <slug> [--dry-run]     P4: build clients/<slug>/facts.json from the Brand Guide's A and D rows
                                              (plus the client's settled answers mapped below), regenerate the rows,
                                              re-stamp every approval on the value-only hash; Apex: P11's line-76 fix
@@ -10,6 +12,7 @@ A dry run does the work, prints the report, and puts every file back exactly as 
 Each real run logs one MIGRATION line in the client's log.md and makes one commit of that client's folder.
 """
 import json
+import re
 import sys
 
 import status as S
@@ -172,6 +175,171 @@ def migrate_facts(slug, dry):
                 p.write_text(text, encoding="utf-8")
 
 
+# ------------------------------------------------------------------ P7 + P10: URLs and batches
+HMM = "home-mobile-medical"
+URL_MOVES = {
+    HMM: {"hub-hhi-beaufort": "https://homemobilemedical.com/hilton-head-bluffton-metro/",
+          "hub-charleston": "https://homemobilemedical.com/charleston-metro/"},
+    APEX: {"svc-metal-roofing": "https://apexroofingtlc.com/metal-roofing/"},
+}
+DROP = {HMM: {"hub-lowcountry": "https://homemobilemedical.com/"}}   # /service-area/ → 301 to the homepage
+REBATCH = {
+    HMM: [("services", "service", "All service pages", ["svc1"]),
+          ("loc-hhi", "location", "Hilton Head Island–Bluffton–Port Royal metro (hub + towns)", ["loc1", "loc2", "loc3"]),
+          ("loc-charleston", "location", "Charleston metro (hub + towns) + Walterboro, Edisto Island", ["loc4", "loc5", "loc6", "loc7"]),
+          ("final", "homepage", "Homepage and About", ["final1", "final2"])],
+    APEX: [("services", "service", "All service pages", ["s1", "s2"]),
+           ("locations", "location", "All location pages", ["l1", "l2", "l3"])],
+}
+PLAN_JSON = {HMM: "build/site-plan-revised.plan.json", APEX: "build/site-plan.json"}
+WHY = {HMM: "Paul 2026-10-09 (REWRITE-2-DECISIONS.md c): /services/<x>/ → /<x>/, /service-area/<city>/ → /<city>/, metro hubs "
+            "(CM-058: Charleston Q5084207, Hilton Head Island–Bluffton–Port Royal Q17020871), /service-area/ → 301 to the homepage",
+       APEX: "Paul 2026-10-09 (REWRITE-2-DECISIONS.md c): /metal-roofing-2/ → /metal-roofing/ with a 301"}
+
+
+def new_url(slug, pg):
+    if pg["id"] in URL_MOVES.get(slug, {}):
+        return URL_MOVES[slug][pg["id"]]
+    u = pg.get("url") or ""
+    if slug == HMM:
+        u = re.sub(r"/services/([^/]+)/$", r"/\1/", u)
+        u = re.sub(r"/service-area/([^/]+)/$", r"/\1/", u)
+    return u
+
+
+def migrate_urls(slug, dry):
+    import urlcheck
+    d = client_dir(slug)
+    st = S.load(slug)
+    if st.get("rewrite2_urls"):
+        return f"{slug}: URLs already migrated"
+    before = snapshot(st)
+    pj = d / PLAN_JSON[slug]
+    plan = json.loads(pj.read_text())
+    moves, drops = [], []
+    for pg in plan["pages"]:
+        if pg["id"] in DROP.get(slug, {}):
+            drops.append((pg["id"], pg["url"], DROP[slug][pg["id"]]))
+            continue
+        planned_only = " (URL set in the site plan)" in (pg.get("url") or "")   # not live: no redirect needed
+        if planned_only:
+            pg["url"] = pg["url"].split(" (")[0]
+            nu = new_url(slug, pg)
+            moves.append((pg["id"], pg["url"] + " (planned, never live)", nu))
+            pg["url"] = nu
+            continue
+        nu = new_url(slug, pg)
+        if nu != pg["url"]:
+            moves.append((pg["id"], pg["url"], nu))
+            pg["replaces"] = sorted(set((pg.get("replaces") or []) + [pg["url"]]))
+            pg["live_url"] = pg["url"]
+            pg["url"] = nu
+    plan["pages"] = [pg for pg in plan["pages"] if pg["id"] not in DROP.get(slug, {})]
+    old_b = {b["id"]: b for b in plan["batches"]}
+    st_b = {b["id"]: b for b in st["build"]["batches"]}
+    merged, gone = [], set()
+    for nid, kind, label, olds in REBATCH.get(slug, []):
+        for o in olds:
+            sb = st_b.get(o) or {}
+            if sb.get("state") not in ("planned", None) or sb.get("briefs") or sb.get("drafts"):
+                die(f"{slug}: batch {o} is already under way ({sb.get('state')}) — stop, nothing written")
+        pages = [x for o in olds for x in old_b[o]["pages"] if x not in DROP.get(slug, {})]
+        merged.append({"id": nid, "kind": kind, "label": label, "pages": pages})
+        gone |= set(olds)
+    keep = [b for b in plan["batches"] if b["id"] not in gone]
+    first = next((i for i, b in enumerate(plan["batches"]) if b["id"] in gone), len(keep))
+    plan["batches"] = keep[:first] + merged + keep[first:]
+    bad = urlcheck.problems(plan["pages"])
+    if bad:
+        die(f"{slug}: the moved plan still breaks the URL rule — stop:\n  - " + "\n  - ".join(bad))
+    report = [f"  {pid}: {o} → {n}" + ("" if o.endswith("never live)") else " (301 paired with the publish)")
+              for pid, o, n in moves]
+    report += [f"  {pid}: {o} dropped from the plan → 301 to {to}" for pid, o, to in drops]
+    report += [f"  batches: {', '.join(sorted(gone))} → {', '.join(m['id'] for m in merged)}"]
+    head = f"{slug}: {len(moves)} URL(s) moved, {len(drops)} page(s) dropped, {len(gone)} batch(es) merged into {len(merged)}"
+    if dry:
+        return head + " (DRY RUN — nothing written)\n" + "\n".join(report) + \
+            "\n  approvals: unchanged except the site plan, which Paul re-approves once (its file changes)"
+    pj.write_text(json.dumps(plan, indent=2, ensure_ascii=False) + "\n")
+    md = ROOT / st["build"]["site_plan"]["file"]
+    text = md.read_text(encoding="utf-8")
+    for _, o, n in moves:
+        text = text.replace(o.replace(" (planned, never live)", ""), n)
+    note = ("\n> **Rewrite 2 changes (2026-10-09), for Paul's re-approval:** " + WHY[slug] + ". Batches: one per kind "
+            "(P10), split only above 15 pages: " + "; ".join(f"{m['id']} ({len(m['pages'])})" for m in merged) + ".\n")
+    lines = text.split("\n", 1)
+    md.write_text(lines[0] + "\n" + note + (lines[1] if len(lines) > 1 else ""), encoding="utf-8")
+    st = S.load(slug)
+    for pid, o, n in moves:
+        p_ = st["pages"].get(pid) or {}
+        if o.endswith(" (planned, never live)"):
+            p_["url"] = n
+            continue
+        p_.update({"url": n, "live_url": o, "replaces": sorted(set((p_.get("replaces") or []) + [o]))})
+    for pid, *_ in drops:
+        st["pages"].pop(pid, None)
+    sb = [b for b in st["build"]["batches"] if b["id"] not in gone]
+    new = [{"id": m["id"], "kind": m["kind"], "label": m["label"], "pages": m["pages"], "state": "planned",
+            "briefs": None, "drafts": None, "files": {}} for m in merged]
+    i = next((k for k, b in enumerate(st["build"]["batches"]) if b["id"] in gone), len(sb))
+    st["build"]["batches"] = sb[:i] + new + sb[i:]
+    for b in st["build"]["batches"]:
+        b["pages"] = [x for x in b["pages"] if x not in DROP.get(slug, {})]
+    st["rewrite2_urls"] = {"at": now(), "moves": len(moves), "dropped": [x[0] for x in drops]}
+    S.save(slug, st)
+    after = snapshot(S.load(slug))
+    lost = [f"{w}: {f}" for w, fs in before.items() for f, ok in fs.items()
+            if ok and not after.get(w, {}).get(f) and w != "site plan"]
+    if lost:
+        die(f"{slug}: STOP — approvals other than the site plan would be lost: {', '.join(lost)}")
+    append(d / "log.md", f"\n## MIGRATION · {now()} · rewrite 2 P7 + P10: URLs and batches\n{WHY[slug]}\n"
+           + "\n".join(r.strip() for r in report) + "\nThe site plan file changed: Paul re-approves it once.\n")
+    import subprocess
+    rid = None
+    r = subprocess.run(["python3", str(ROOT / "scripts" / "run.py"), "start", slug, "drive-mirror",
+                        "--note", "rewrite 2 URL migration: worklist rows"], capture_output=True, text=True, cwd=ROOT)
+    if r.returncode == 0:
+        rid = r.stdout.strip().splitlines()[-1]
+        rows = []
+        for pid, o, to in drops:
+            rows.append(("redirect", f"url,field,old,new,reason,decision_map_ref\n{o},301,,{to},"
+                         f"rewrite 2: {pid} dropped (Paul 2026-10-09),{pid}\n"))
+        if slug == APEX:
+            rows.append(("other", "url,field,old,new,reason,decision_map_ref\nhttps://apexroofingtlc.com/metal-roofing/,"
+                         "clear the slug,whatever holds /metal-roofing/ now,nothing,find and clear it first so the new "
+                         "Metal Roofing page publishes at /metal-roofing/ (its 301 from /metal-roofing-2/ is with its "
+                         "publish row),svc-metal-roofing\n"))
+        for kind, body in rows:
+            f = d / "handoffs" / f"_migration-{kind}.csv"
+            f.parent.mkdir(exist_ok=True)
+            f.write_text(body)
+            args = ["python3", str(ROOT / "scripts" / "handoff.py"), "create", slug, "--run", rid, "--kind", kind,
+                    "--items", str(f.relative_to(ROOT))]
+            if kind == "other":
+                args += ["--to", "Jonie", "--owner-reason", "WordPress slug work"]
+            subprocess.run(args, capture_output=True, text=True, cwd=ROOT)
+            f.unlink(missing_ok=True)
+        if slug == HMM:   # Paul (c): reopen the redirect default — nothing may point at /services/ any more (no chains)
+            import settled
+            if (settled.entries(slug).get("redirect-targets-default") or {}).get("state") == "settled":
+                settled.reopen(slug, rid, "redirect-targets-default",
+                               "rewrite 2 (Paul 2026-10-09, REWRITE-2-DECISIONS.md c): /services/ and /service-area/ are gone")
+                settled.settle(slug, rid, "redirect-targets-default",
+                               "Paul 2026-10-09 (Q2, revised in rewrite 2): redirect the 36 to the appropriate URLs — FL/MI → "
+                               "/stair-lifts/, power chairs/scooter lifts → the homepage (was /services/), ramps → /porch-lifts/; "
+                               "SC legacy duplicates → their canonical root service/location page. No redirect points at "
+                               "/services/ or /service-area/, so there are no chains.", by="Paul (REWRITE-2-DECISIONS.md c)",
+                               closed_ok=True)
+        hf = d / "handoffs" / f"run-{rid}.md"
+        hf.write_text("**What I did**\n- rewrite 2 URL migration: worklist rows for the redirect / slug clearing\n")
+        subprocess.run(["python3", str(ROOT / "scripts" / "run.py"), "finish", slug, rid, "--summary",
+                        "rewrite 2 URL migration (worklist rows)", "--handoff", str(hf.relative_to(ROOT))],
+                       capture_output=True, text=True, cwd=ROOT)
+    import records
+    records.render(slug)
+    return head + "\n" + "\n".join(report)
+
+
 def repair_duplicates(slug):
     """2026-10-09 repair: the first facts render matched rows by an id rebuilt from the label, so a fact whose id
     differed (d-who-does-the-work) was appended twice after the re-stamp. Remove repeated fact rows (keep the first)
@@ -212,6 +380,12 @@ def main():
         if "removed" in out:
             print(git_commit(f"{sys.argv[2]}: rewrite 2 migration repair — repeated fact row removed (P4)\n\n{out}",
                              slug=sys.argv[2]))
+        return
+    if len(sys.argv) >= 3 and sys.argv[1] == "urls":
+        out = migrate_urls(sys.argv[2], "--dry-run" in sys.argv)
+        print(out)
+        if "--dry-run" not in sys.argv and "already" not in out:
+            print(git_commit(f"{sys.argv[2]}: rewrite 2 migration — URLs and batches (P7, P10)\n\n{out}", slug=sys.argv[2]))
         return
     if len(sys.argv) < 3 or sys.argv[1] != "facts":
         sys.exit(__doc__)

@@ -93,6 +93,9 @@ def out(kind, command, why):
         if refusal:
             kind, why, command = "new_session", f"{refusal} Next there: {command} ({why})", f"/next {SLUG}"
     rec = {"kind": kind, "command": command, "why": why}
+    if kind == "decision":   # P12: keep sessions short and warm
+        rec["sitting"] = ("Answer and approve in one sitting; if you step away for more than a few minutes, end this "
+                          "chat and start a new one with /next — STATUS.md carries everything.")
     if not step and kind == "decision":
         step, batch = decision_step(command)
     if not step and kind in ("decision", "review", "wait"):
@@ -264,8 +267,20 @@ def build_batch(st, slug, b):
     if bid != "pilot" and not S.check(st, "pilot_corrections")[0]:
         out("run", f"/build {slug} pilot-corrections", "apply your pilot corrections to the specs before the next batch")
     files = b.get("files") or {}
+    write_flow = bid == "pilot" or not S.briefs_need_approval(st, bid)   # P10
+    if state == "planned" and write_flow and all(S.evidence_ok(st, p)[0] for p in b["pages"]):
+        out("run", f"/build {slug} write {bid}",
+            f"batch {bid} in one run: every brief, then one draft per page (each from its own fresh sub-agent, "
+            "CM-043), then the batch review side by side")
     if state == "planned":
         evidence_and_briefs(st, slug, b)
+    if bid == "pilot" and state in ("drafts_written", "sem_check_failed") and not S.check(st, "batch:pilot:briefs")[0]:
+        n = b.get("sem_findings") or 0   # P10: the pilot's briefs and drafts are approved together, in one line
+        out("decision", f"/approve {slug} batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto"
+            + (" --sem <SEM items to apply, e.g. 1,3,4 — or none>" if n else "") + extras(st),
+            "the pilot's briefs and drafts are ready for one approval (and, in the same line, later batches' briefs "
+            "switch to auto, so each later batch stops once, for its drafts): review the drafts with the semantic "
+            "review table " + (f"({n} SEM item(s) found)" if n else "(nothing found)") + open_items_note(st, b))
     if not S.check(st, f"batch:{bid}:briefs")[0]:
         out("decision", f"/approve {slug} batch:{bid}:briefs --files {q(files.get('briefs') or [])}",
             f"the briefs for batch {bid} are ready for your approval (outline before prose; one brief per page, "
@@ -304,6 +319,19 @@ def ship_all(st, slug):
         condition_step(st, slug, "wordpress_connected")
         out("run", f"/build {slug} ship", f"every approved page as a WordPress draft in one run ({', '.join(todo)}) — "
             "link tables complete, every target already has its final URL")
+
+
+def facts_answers_wait(st, slug, fr):
+    """P10: the facts round's questions are answered once; writing goes on for every page that already cleared."""
+    if not fr or not fr.get("questions"):
+        return
+    import settled
+    ents = settled.entries(slug)
+    open_ = [k for k, e in ents.items() if e.get("state") == "open" and k.startswith("fact:")]
+    if open_:
+        out("wait", f"/interview {slug} facts-answers all",
+            f"waiting for the answers to the facts round ({fr.get('file')}; {len(open_)} fact(s) open) — when they "
+            "arrive, each is recorded once (run.py fact / --settle) and the grids re-run")
 
 
 def open_items_note(st, b):
@@ -445,6 +473,13 @@ def _walk(slug, cont):
     if not S.check(st, "site_plan")[0]:
         out("decision", f"/approve {slug} site_plan --files {q([bp['site_plan']['file']])}",
             "the site plan is ready for your approval")
+    # P10: one facts round for every page, before the pilot
+    fr = (st.get("build") or {}).get("facts_round")
+    if not fr and any(not S.evidence_state(st, p)[0] for b in S.batches(st) for p in b["pages"]
+                      if b.get("state") in ("planned", None)):
+        out("run", f"/build {slug} facts", "one facts round for every page: the evidence grids, the researcher looks up "
+            "every public fact, reviews attached (CM-057), then one pre-filled question set grouped by fact")
+    soft(facts_answers_wait, st, slug, fr)
     # CM-055: batches are drafted one after another and never wait on publishing; every page goes to Jonie together.
     for b in S.batches(st):
         soft(build_batch, st, slug, b)

@@ -5,7 +5,7 @@ argument-hint: <slug> [discovery|proof-sheet|facts-direct|sheet-returned|data|au
 
 Arguments: $ARGUMENTS
 
-Follow CLAUDE.md. If no step is given, use `python3 scripts/next.py <slug>` and say which step and why.
+Follow CLAUDE.md and the stage file for the step (`docs/stage-2-discovery.md`, `stage-3-data.md`, `stage-4-audit.md`). If no step is given, use `python3 scripts/next.py <slug>` and say which step and why.
 Order (R3 — two approvals): `discovery` (entity + **Decision Sheet**) → `proof-sheet` (or `facts-direct` when
 the client already answered) → **Approval 1** (`/approve <slug> entity_approved proof_sheet_approved`) → new session:
 `/crawl`, `data` (one cost yes for the whole step) → new session: `audit` (page specs approved once, globally) →

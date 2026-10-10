@@ -263,6 +263,33 @@ class Agent:
                 f = self.w(f"build/B-{pid}.md", f"# Brief {pid}\n" + ("\n## Evidence gaps\n- see the grid\n" if gaps else ""))
                 self.sh(f"python3 scripts/status.py page-stage {S} {pid} --stage brief --file {f} --run {rid}")
             self.fin(rid, f"briefs {bid}")
+        elif (name, sub) == ("/build", "facts"):   # P10: one facts round for every page
+            rid = self.start("build", "facts")
+            if not rid:
+                return True
+            for b in status(S)["build"]["batches"]:
+                for p in b["pages"]:
+                    if (status(S)["pages"].get(p) or {}).get("type") in ("service", "location", "county", "homepage", "about"):
+                        self.write_facts(p)
+            self.sh(f"python3 scripts/evidence.py run {S} --run {rid} --all")
+            self.sh(f"python3 scripts/evidence.py questions {S} --run {rid} --all")
+            self.fin(rid, "facts round")
+        elif (name, sub) == ("/build", "write"):   # P10: briefs, one draft per page (own sub-agent), the review
+            bid = args[1]; rid = self.start("build", "write", batch=bid)
+            if not rid:
+                return True
+            pages = self.batch_pages(bid)
+            for pid in pages:
+                gaps = status(S)["pages"][pid]["evidence"]["result"] in ("warn", "block")
+                f = self.w(f"build/B-{pid}.md", f"# Brief {pid}\n" + ("\n## Evidence gaps\n- see the grid\n" if gaps else ""))
+                self.sh(f"python3 scripts/status.py page-stage {S} {pid} --stage brief --file {f} --run {rid}")
+            for pid in pages:
+                f = self.w(f"build/D-{pid}.md", page_file(pid, "v1") + self.draft_extra.get(pid, ""))
+                self.sh(f"python3 scripts/status.py page-stage {S} {pid} --stage draft --file {f} --run {rid} --agent sub-{pid}")
+            sem = self.w(f"build/Test Co - Semantic Review - {bid} - REVIEW.md")
+            n = self.sem_findings.get(bid, 1)
+            self.sh(f"python3 scripts/status.py batch {S} {bid} --state drafts_written --sem-table {shlex.quote(sem)} --sem-findings {n}")
+            self.fin(rid, f"batch {bid} written in one run")
         elif (name, sub) == ("/build", "handoff"):
             rid = self.start("build", "handoff")
             self.sh(f"python3 tests/fakes.py publish handoff {S} --run {rid}")
@@ -304,6 +331,15 @@ class Agent:
             self.sh(f"python3 scripts/evidence.py questions {S} --run {rid} --batch {bid}"); self.fin(rid, f"facts pack {bid}")
         elif (name, sub) == ("/interview", "facts-answers"):
             bid = args[1]; rid = self.start("interview", "facts-answers", batch=bid)
+            if bid == "all":   # P10: the facts round's answers — every open fact key answered once
+                for p in list(self.evidence_gaps):
+                    self.evidence_gaps.pop(p, None); self.write_facts(p)
+                import re as _re
+                keys = dict.fromkeys(_re.findall(r"^- OPEN (fact:\S+) ", (self.c / "log.md").read_text(), _re.M))
+                for k in keys:
+                    self.sh(f'python3 scripts/run.py decision {S} {rid} --settle {k} --by "Client (via Paul)" --text "answered: {k}"')
+                self.sh(f"python3 scripts/evidence.py run {S} --run {rid} --all"); self.fin(rid, "facts round answers")
+                return True
             for p in self.batch_pages(bid):   # the owner answered: the gaps are filled
                 self.evidence_gaps.pop(p, None); self.write_facts(p)
             self.sh(f"python3 scripts/evidence.py run {S} --run {rid} --batch {bid}"); self.fin(rid, f"facts answers {bid}")
@@ -543,7 +579,17 @@ def t_walkthrough_full():
         if l.startswith("decision") and ":batch:" not in l and " batch:" in l:
             bid = l.split(" batch:")[1].split(":")[0]
             stops[bid] = stops.get(bid, 0) + 1
-    check("two stops per batch (briefs, then drafts with SEM picks)", stops and all(v == 2 for v in stops.values()), stops)
+    check("P10: one stop per batch — the pilot's briefs and drafts together, later batches their drafts only",
+          stops and all(v == 1 for v in stops.values()), stops)
+    check("P10: one facts round for every page, before the pilot is written",
+          sum(l.startswith("run") and l.endswith("/build wt-full facts") for l in log) == 1
+          and next(i for i, l in enumerate(log) if l.endswith("/build wt-full facts"))
+          < next(i for i, l in enumerate(log) if "/build wt-full write pilot" in l), [l for l in log if "facts" in l])
+    check("P10: each batch is written in ONE run (briefs, a draft per page, the review)",
+          sum(l.startswith("run") and "/build wt-full write " in l for l in log) == len(stops)
+          and not any(l.startswith("run") and (" brief " in l or " draft " in l) for l in log), [l for l in log if "write" in l])
+    check("P10: the pilot approval line also switches later briefs to auto",
+          any("batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto" in l for l in log if l.startswith("decision")))
     check("SEM picks are applied by a run, not a third stop", any("apply-sem" in l for l in log))
     i_plan = next((i for i, l in enumerate(log) if "/build wt-full plan" in l), 99)
     i_blk = next((i for i, l in enumerate(log) if l.startswith("wait") and "/verify wt-full" in l), -1)
@@ -613,7 +659,7 @@ def t_walkthrough_full():
           and "Technical blockers" in md_ and all(b.get("handoff") == hid for b in st["build"]["batches"]), md_[:600])
     check("CM-055: the living handoff is updated as pages are published (status column, progress)",
           f"{len(rows_)} of {len(rows_)} row(s) done" in md_ and "| done" in md_, md_[-400:])
-    i_draft = next((i for i, l in enumerate(log) if l.startswith("run") and " draft " in l), 99)
+    i_draft = next((i for i, l in enumerate(log) if l.startswith("run") and " write " in l), 99)
     check("batch drafting runs while the technical blocker handoff is still open (no VA handoff stops writing)",
           i_draft < i_blk and any(l.startswith("run") and "/build wt-full blockers" in l for l in log[:i_draft]), (i_draft, i_blk))
     bad_urls = [u for p in st["pages"].values() for u in [p.get("url") or ""] if "/service/" in u or "/services/" in u or "/service-area/" in u]
@@ -621,11 +667,11 @@ def t_walkthrough_full():
     rec = SB / "clients" / "wt-full"
     lm = (rec / "log.md").read_text()
     import re as _re
-    rows = _re.findall(r"^- DRAFT \S+ · run (\S+) · (\S+) ·", lm, _re.M)
-    check("every draft came from its own run, one page each (CM-043)",
-          len(rows) == 8 and len({r for r, _ in rows}) == 8 and len({p for _, p in rows}) == 8, rows)
+    rows = _re.findall(r"^- DRAFT \S+ · run (\S+) · (\S+) · .*? · agent (\S+)$", lm, _re.M)
+    check("CM-043 kept: every draft came from its own fresh sub-agent, one page each, logged",
+          len(rows) == 8 and len({a for _, _, a in rows}) == 8 and len({p for _, p, _ in rows}) == 8, rows)
     rows = _re.findall(r"^- BRIEF \S+ · run (\S+) · (\S+) ·", lm, _re.M)
-    check("briefs: one run per batch with a brief for every page (CM-054)",
+    check("briefs: one run per batch with a brief for every page (P10)",
           len(rows) == 8 and len({r for r, _ in rows}) == 4 and len({p for _, p in rows}) == 8, rows)
     check("the evidence gate ran on every page before its brief (CM-041)",
           lm.count("- EVIDENCE ") >= 8 and lm.index("- EVIDENCE ") < lm.index("- BRIEF "))
@@ -829,7 +875,8 @@ def t_import():
           st.get("imported_conditions"))
     specs_ok("imp-co")
     _, nxt = sh("python3 scripts/next.py imp-co")
-    check("/next resumes at the next unbuilt batch, never /crawl", "/crawl" not in nxt and "batch" in nxt, nxt)
+    check("/next resumes at the next unbuilt work (the facts round, then the batches), never /crawl",
+          "/crawl" not in nxt and ("batch" in nxt or "/build imp-co facts" in nxt), nxt)
     st = status("imp-co")
     check("live pages are an approved baseline", all(st["pages"][x]["approval"].get("baseline") for x in ("svc-a", "loc-a")))
 
@@ -1241,6 +1288,9 @@ def build_ready(slug, gaps=None):
         paul("/approve global specs")
     ag.do(f"/build {slug} plan")
     paul(f"/approve {slug} site_plan")
+    st = status(slug)   # these scenarios test what follows the facts round (P10); the walkthrough tests the round
+    st["build"]["facts_round"] = {"run": "test", "questions": 0, "at": "2026-10-09"}
+    (ag.c / "status.json").write_text(json.dumps(st))
     return ag
 
 
@@ -1321,11 +1371,11 @@ def t_evidence_gate():
     # --- the facts answers
     ag.do(f"/interview {S} facts-answers pilot")
     check("facts answers: the gate re-runs and the page passes", status(S)["pages"]["svc-roof-repair"]["evidence"]["result"] == "pass")
-    check("facts answers: /next goes on to that page's brief (one more brief run for the batch)",
-          nxt(S)["command"] == f"/build {S} brief pilot", nxt(S))
-    ag.do(f"/build {S} brief pilot")
-    check("the batch's briefs are collected for Paul's one approval",
-          "BRIEFS COLLECTED" in lm() and nxt(S)["command"].startswith(f"/approve {S} batch:pilot:briefs"), nxt(S))
+    check("facts answers: /next goes on to the pilot's one write run (P10)",
+          nxt(S)["command"] == f"/build {S} write pilot", nxt(S))
+    ag.do(f"/build {S} write pilot")
+    check("P10: the pilot's briefs and drafts come to Paul in one approval line",
+          "BRIEFS COLLECTED" in lm() and nxt(S)["command"].startswith(f"/approve {S} batch:pilot:briefs batch:pilot:drafts"), nxt(S))
     # --- scoring edge cases
     ag.write_facts("svc-gutters")
     _, out = sh(f"python3 scripts/evidence.py show {S} svc-gutters")
@@ -1409,7 +1459,7 @@ def t_one_page_per_run():
     st["pages"]["loc-springfield"]["files"]["draft"]["run"] = st["pages"]["svc-roof-repair"]["files"]["draft"]["run"]
     (ag.c / "status.json").write_text(json.dumps(st))
     code, out = sh(f"python3 scripts/status.py batch {S} pilot --state drafts_written --sem-table {sem} --sem-findings 0")
-    check("one page per run: two drafts from the same run are refused", code != 0 and "same run" in out, out)
+    check("one page per run: two drafts from the same context are refused", code != 0 and "same context" in out, out)
     st["pages"]["loc-springfield"]["files"]["draft"]["run"] = keep; (ag.c / "status.json").write_text(json.dumps(st))
     code, out = sh(f"python3 scripts/status.py batch {S} pilot --state drafts_written --files clients/{S}/build/D-svc-roof-repair.md "
                    f"--sem-table {sem} --sem-findings 0")
@@ -1439,7 +1489,7 @@ def t_modes():
 
     def on_dec(line):     # right after Paul approves the pilot drafts, he switches four stages to auto
         if "batch:pilot:drafts" in line and not switched:
-            for stg in ("build:evidence", "build:brief", "build:draft", "build:drafts"):
+            for stg in ("build:write", "build:evidence", "build:draft", "build:drafts"):
                 switched.append((stg,) + paul(f"/approve wt-modes mode:{stg}=auto"))
 
     def setup(a):
@@ -1447,10 +1497,11 @@ def t_modes():
     log, decisions, runs, ag2 = walkthrough("wt-modes", setup=setup, max_posts=0, on_decision=on_dec)
     check("modes: Paul switches stages to auto after the pilot", switched and all(c == 0 for _, c, _ in switched[:4]), switched[:4])
     cut = next((i for i, l in enumerate(log) if l.startswith("decision") and "batch:pilot:drafts" in l), len(log))
-    auto = ("[build:evidence]", "[build:brief]", "[build:draft]", "[build:drafts]")
+    auto = ("[build:write]", "[build:evidence]", "[build:draft]", "[build:drafts]")
     before = [l for l in log[:cut] if l.startswith("review") and l.endswith(auto)]
     after = [l for l in log[cut + 1:] if l.startswith("review") and l.endswith(auto)]
-    check("modes: in review those stages paused after every run", len(before) > 0, before[:3])
+    before = [l for l in log[:cut] if l.startswith("review")]   # P10: the pilot's write run ends at its decision
+    check("modes: in review the stages paused before the switch", len(before) > 0, before[:3])
     check("modes: in auto they chain straight on (no pause)", not after, after[:3])
     check("modes: stages still in review keep pausing",
           any(l.startswith("review") and not l.endswith(auto) for l in log[cut:]), [l for l in log[cut:] if l.startswith("review")][:3])
@@ -1458,14 +1509,14 @@ def t_modes():
     for l in log:
         if l.startswith("decision") and " batch:" in l:
             bid = l.split(" batch:")[1].split(":")[0]; stops[bid] = stops.get(bid, 0) + 1
-    check("modes: decisions still stop in auto — the pilot twice, later batches for the drafts only (R3)",
-          stops.get("pilot") == 2 and all(v == 1 for k, v in stops.items() if k != "pilot")
+    check("modes: decisions still stop in auto — the pilot once (briefs + drafts), later batches for the drafts only",
+          stops.get("pilot") == 1 and all(v == 1 for k, v in stops.items() if k != "pilot")
           and all("drafts" in l for l in log if l.startswith("decision") and " batch:" in l and "batch:pilot:" not in l), stops)
     check("modes: the walkthrough with auto stages completes", log[-1] == "DONE" and not ag2.errors, log[-4:] + ag2.errors[:2])
     st = status("wt-modes"); lm = (SB / "clients/wt-modes/log.md").read_text()
     check("modes: each switch recorded in status.json and log.md",
           st["modes"].get("build:draft", {}).get("mode") == "auto" and st["modes"]["build:draft"]["by"] == "Paul"
-          and len(st.get("mode_history", [])) == 4 and lm.count("## MODE") == 4, st.get("modes"))
+          and len(st.get("mode_history", [])) == 5 and lm.count("## MODE") == 5, st.get("modes"))
     code, out = paul("/approve global mode:build:ship=auto")
     cfg = json.loads((SB / "config.json").read_text())
     check("modes: a global switch is allowed once a client has passed the pilot, and recorded",
@@ -1772,7 +1823,7 @@ def t_readability():
 
 def t_models():
     import re as _re
-    want = {"discovery-audit": "opus", "audit-reviewer": "opus", "build": "opus", "finish": "opus", "blog": "opus",
+    want = {"discovery-audit": "opus", "audit-reviewer": "opus", "build": "opus", "finish": "sonnet", "blog": "opus",
             "clerk": "haiku", "researcher": "sonnet"}
     got = {}
     for f in (SB / ".claude" / "agents").glob("*.md"):
@@ -2376,11 +2427,14 @@ def t_batch_of_five():
     lm = (SB / "clients/wt-five/log.md").read_text()
     b5 = [(r, p) for r, p in _re.findall(r"^- BRIEF \S+ · run (\S+) · (\S+) ·", lm, _re.M) if p in plan["batches"][1]["pages"]]
     check("five: a batch of 5 produces 5 briefs in one run", len(b5) == 5 and len({r for r, _ in b5}) == 1, b5)
-    check("five: one brief run and one briefs approval for the batch",
-          sum(l.startswith("run") and l.endswith("/build wt-five brief s1") for l in log) == 1
-          and sum(l.startswith("decision") and "batch:s1:briefs" in l for l in log) == 1, [l for l in log if " s1" in l][:8])
-    d5 = [r for r, p in _re.findall(r"^- DRAFT \S+ · run (\S+) · (\S+) ·", lm, _re.M) if p in plan["batches"][1]["pages"]]
-    check("five: drafts stay one page per run (CM-043)", len(d5) == 5 and len(set(d5)) == 5, d5)
+    check("P10: the batch of 5 is written in one run and stops once, for its drafts (briefs on auto after the pilot)",
+          sum(l.startswith("run") and l.endswith("/build wt-five write s1") for l in log) == 1
+          and not any(l.startswith("decision") and "batch:s1:briefs" in l for l in log)
+          and sum(l.startswith("decision") and "batch:s1:drafts" in l for l in log) == 1, [l for l in log if " s1" in l][:8])
+    agents = [ag_ for pid_, ag_ in _re.findall(r"^- DRAFT \S+ · run \S+ · (\S+) · .*? · agent (\S+)$", lm, _re.M)
+              if pid_ in plan["batches"][1]["pages"]]
+    check("five: each of the 5 drafts came from its own fresh sub-agent (CM-043, logged)",
+          len(agents) == 5 and len(set(agents)) == 5, agents)
 
 
 SCENARIOS = [t_repo_hygiene, t_finish_needs_outputs, t_walkthrough_full, t_sem_paths, t_publish_corrections, t_walkthrough_blog_only, t_gates, t_voiding, t_section_approval, t_reviews_parse, t_killed_run, t_rollback,

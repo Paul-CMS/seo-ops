@@ -390,5 +390,95 @@ def t_p9_worklist(h):
     ag.fin(rid, "ship refused")
 
 
+def t_p12_cost(h):
+    import re as _re
+    code, out = h.sh("python3 scripts/rulings.py CM-020 CM-057")
+    h.check("P12: rulings.py prints only the rulings named, by ID",
+            code == 0 and out.startswith("## CM-020") and "## CM-057" in out and "## CM-022" not in out, out[:200])
+    code, out = h.sh("python3 scripts/rulings.py CM-999")
+    h.check("P12: an unknown ruling ID is reported, never guessed", code == 1 and "not found" in out, out)
+    g = json.loads((h.SB / "scripts/gates.json").read_text())
+    whole = [k for k, v in g["steps"].items() for x in v.get("reads", []) if x.startswith("methodology/rulings.md")]
+    h.check("P12: read lists cite rulings by ID (rulings.py), never rulings.md whole", not whole, whole)
+    B = lambda c: _guard(h, "Bash", {"command": c}, "client-chat")[0]
+    R = lambda f, **k: _guard(h, "Read", {"file_path": f, **k}, "client-chat")[0]
+    h.check("P12: in a client session the guard blocks a whole read of rulings.md and any read of the safety log",
+            R("methodology/rulings.md") and not R("methodology/rulings.md", offset=500, limit=40)
+            and R("clients/x/log.md") and R("clients/x/handoff-log.md") and B("cat clients/x/log.md")
+            and not R("clients/x/STATUS.md"))
+    # models: the frontmatter of every agent matches its role in gates.json → models (no drift)
+    fm = {}
+    for f in (h.SB / ".claude" / "agents").glob("*.md"):
+        m = _re.search(r"^model:\s*(\S+)", f.read_text().split("\n---", 2)[0], _re.M)
+        fm[f.stem] = m.group(1) if m else None
+    drift = [(step, r["agent"], r["model"], fm.get(r["agent"])) for step, rs in g["models"].items() for r in rs
+             if not r.get("override") and fm.get(r["agent"]) != r["model"]]
+    h.check("§4: every role's model in gates.json matches its agent's frontmatter (stages.py and next.py print them)",
+            not drift and fm.get("brief-writer") == "sonnet" and fm.get("finish") == "sonnet" and fm.get("finish-qa") == "opus",
+            drift or fm)
+    code, out = h.sh("python3 scripts/stages.py list")
+    h.check("§4: stages.py lists each step's jobs with their models",
+            "briefs: brief-writer (sonnet)" in out and "content QA: finish-qa (opus)" in out, out[-600:])
+    code, out = h.paul("/approve global model:build:draft=sonnet")
+    code2, out2 = h.sh("python3 scripts/stages.py list")
+    cfg = json.loads((h.SB / "config.json").read_text())
+    h.check("§4: Paul's /approve global model:build:draft=sonnet switches the drafting job to draft-writer, recorded",
+            code == 0 and "drafts: draft-writer (sonnet)" in out2
+            and cfg.get("model_overrides", {}).get("build:draft", {}).get("by") == "Paul", (out, out2[-400:]))
+    h.paul("/approve global model:build:draft=opus")
+    # spend by step, and records.py brand by section
+    S = "sp-co"
+    h.sh(f'python3 scripts/status.py init {S} --name "Sp Co" --domain sp.example --type full --industry roofing')
+    ag = h.Agent(S)
+    rid = ag.start("new-client")
+    hf = ag.w(f"handoffs/run-{rid}.md", "**What I did**\n- set up\n")
+    h.sh(f'python3 scripts/run.py finish {S} {rid} --summary "set up" --handoff {hf} --tokens 12000 --cost 0.42')
+    stx = (ag.c / "STATUS.md").read_text()
+    h.check("P12: run.py finish records the run's tokens and cost; STATUS.md shows spend by step",
+            "## Spend by step (model)" in stx and "| new-client | 1 | 12,000 | $0.42 |" in stx, stx[-500:])
+    ag.w("brand-guide.md", "# BG\n\n## Section A — Entity\n\n| # | Field | Value | Status |\n|---|---|---|---|\n| 1 | Brand | Sp Co | Paul Approved |\n\n"
+         "## Section D — Facts\n\n| Fact | Value | Status | Source |\n|---|---|---|---|\n| Phone | 1 | Unknown | |\n")
+    code, out = h.sh(f"python3 scripts/records.py brand {S} --sections A")
+    h.check("P12: records.py brand reads only the sections asked for", code == 0 and "Section A" in out and "Section D" not in out, out)
+    core = (h.SB / "CLAUDE.md").read_bytes()
+    g = json.loads((h.SB / "scripts/gates.json").read_text())
+    docs = {p.name for p in (h.SB / "docs").glob("stage-*.md")}
+    h.check("P12: CLAUDE.md is a core of at most 4 KB; every stage has its own docs/stage-<n>-*.md",
+            len(core) <= 4096 and all(any(d.startswith(f"stage-{s['n']}-") for d in docs) for s in g["stages"])
+            and (h.SB / "docs/reference.md").exists() and (h.SB / "docs/system.md").exists(), (len(core), docs))
+    code, out = h.sh(f"python3 scripts/run.py start {S} discovery --step discovery")
+    h.check("P12: run.py start puts the stage's procedure file first in the read list",
+            code == 0 and "Read for this step (only these): docs/stage-2-discovery.md" in out, out[-300:])
+    if code == 0:
+        h.sh(f'python3 scripts/run.py abort {S} {out.splitlines()[-1]} --reason "test"')
+    n = h.nxt(S)
+    h.check("P12: at a decision /next carries the one-sitting reminder",
+            n["kind"] != "decision" or "one sitting" in n.get("sitting", ""), n)
+
+
+def t_p12_conformance(h):
+    import csv as _csv
+    S = "cf-co"
+    h.sh(f'python3 scripts/status.py init {S} --name "Cf Co" --domain cf.example --type full --industry roofing')
+    h.sh(f"python3 scripts/status.py page {S} svc-roof-repair --type service --url https://cf.example/roof-repair/ --state planned")
+    h.sh(f"python3 scripts/status.py page {S} loc-nixa --type location --url https://cf.example/services/nixa/ --state planned")
+    d = h.SB / "clients" / S / "inputs" / "crawl"
+    d.mkdir(parents=True, exist_ok=True)
+    cols = ["Address", "Content Type", "Status Code", "Title 1", "Meta Description 1", "H1-1", "Word Count"]
+    rows = [["https://cf.example/roof-repair/", "text/html", "200", "Roof Repair - Cf Co", "x" * 130, "Roof Repair in Greene County", "900"],
+            ["https://cf.example/services/nixa/", "text/html", "200", "A title that is far too long for any search result page at all", "short", "Nixa", "400"]]
+    with open(d / "Cf Co - DFS - internal_all - 2026-10-09.csv", "w", newline="") as fh:
+        w = _csv.writer(fh); w.writerow(cols); w.writerows(rows)
+    code, out = h.sh(f"python3 scripts/conformance.py {S}")
+    res = {(r["page"], r["check"]): r["result"] for r in _csv.DictReader(open(h.SB / "clients" / S / "audit/conformance.csv", newline=""))} \
+        if code == 0 else {}
+    h.check("P12: conformance.py scores the mechanical checks from the crawl (title, meta, H1, URL), no judgment",
+            res.get(("svc-roof-repair", "COM-T")) == "PASS" and res.get(("loc-nixa", "COM-T")) == "FAIL"
+            and res.get(("loc-nixa", "LOC-01")) == "FAIL" and res.get(("svc-roof-repair", "SVC-03")) == "PASS"
+            and res.get(("loc-nixa", "COM-M")) == "FAIL", (out, res))
+    kinds = json.loads((h.SB / "methodology/specs/check-kinds.json").read_text())
+    h.check("P12: the auto checks are listed beside the specs (the specs themselves are unchanged)", "SVC-05" in kinds["auto"])
+
+
 SCENARIOS = [t_p3_system_session, t_p3_flags_and_review, t_p2_parallel_clients, t_p7_url_rule, t_p5_reviews,
-             t_p6_research_first, t_p9_worklist]
+             t_p6_research_first, t_p9_worklist, t_p12_cost, t_p12_conformance]

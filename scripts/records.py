@@ -269,6 +269,17 @@ def status_md(slug):
              + (f" — workaround: {r['workaround']}" if r.get("workaround") else "") for r, cid, state in fl]
             or ["_None._"])
     out += ["", "## Spend so far", "", f"- DataforSEO: ${total:.2f}" + (f" (of which failed tasks ${failed:.2f})" if failed else "")]
+    ms = st.get("model_spend") or []   # P12: model cost per step (run.py finish --tokens/--cost)
+    by = {}
+    for r in ms:
+        k = r.get("step") or "?"
+        t = by.setdefault(k, [0, 0, 0.0])
+        t[0] += 1; t[1] += int(r.get("tokens") or 0); t[2] += float(r.get("usd") or 0)
+    out += ["", "## Spend by step (model)", ""]
+    out += (["| Step | Runs | Tokens | USD |", "|---|---|---|---|"]
+            + [f"| {k} | {n} | {tok:,} | ${usd:.2f} |" for k, (n, tok, usd) in sorted(by.items(), key=lambda kv: -kv[1][2])]
+            + [f"| **total** | {sum(v[0] for v in by.values())} | {sum(v[1] for v in by.values()):,} | "
+               f"${sum(v[2] for v in by.values()):.2f} |"]) if by else ["_Nothing recorded yet (run.py finish --tokens --cost)._"]
     if lr:
         out += ["", f"Last run: /{lr.get('command')} {lr.get('finished', '')[:16]} — {lr.get('result')}"]
     return "\n".join(out) + "\n"
@@ -297,9 +308,27 @@ def render(slug):
     test_run_notes(slug)
 
 
+def brand(slug, sections):
+    """P12: only the named Brand Guide sections (A, D, B2, C3 …), never the whole 36 KB file."""
+    from lib import _md_section
+    text = (client_dir(slug) / "brand-guide.md").read_text(encoding="utf-8")
+    out, missing = [], []
+    for sid in sections:
+        sec = _md_section(text, sid)
+        (out.append(sec) if sec else missing.append(sid))
+    return "\n\n".join(out), missing
+
+
 if __name__ == "__main__":
     if len(sys.argv) == 3 and sys.argv[1] == "top":
         print(top(sys.argv[2]))
+        sys.exit(0)
+    if len(sys.argv) == 5 and sys.argv[1] == "brand" and sys.argv[3] == "--sections":
+        text, missing = brand(sys.argv[2], [x.strip() for x in sys.argv[4].split(",") if x.strip()])
+        print(text)
+        if missing:
+            print("not found: " + ", ".join(missing), file=sys.stderr)
+            sys.exit(1)
         sys.exit(0)
     if len(sys.argv) != 3 or sys.argv[1] != "render":
         sys.exit(__doc__)

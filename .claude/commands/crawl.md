@@ -5,7 +5,7 @@ argument-hint: <slug> [domain] [--max-pages 1000] [--mode basic|javascript]
 
 Arguments: $ARGUMENTS
 
-Follow CLAUDE.md. Defaults: domain = the client's domain, mode basic, max pages = sitemap size × 1.5 (the estimate says which and why — leave `--max-pages` off unless Paul sets it).
+Follow CLAUDE.md and `docs/stage-3-data.md`. Defaults: domain = the client's domain, mode basic, max pages = sitemap size × 1.5 (the estimate says which and why — leave `--max-pages` off unless Paul sets it).
 
 1. `python3 scripts/run.py start <slug> crawl` (the client must exist and
    `/new-client` must have finished; exit 4 → refuse and say so) → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands) — stop on exit 3 (unfinished run → ask Paul).

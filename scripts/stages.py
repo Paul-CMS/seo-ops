@@ -191,14 +191,47 @@ def session_conflict(slug, step, batch=None, sid=None):
     return None
 
 
+def stage_doc(step):
+    """docs/stage-<n>-*.md for the step's stage (P12: the procedure, loaded only by that stage), or None."""
+    st = stage_of(step) if step else None
+    if not st:
+        return None
+    hits = sorted((ROOT / "docs").glob(f"stage-{st['n']}-*.md"))
+    return str(hits[0].relative_to(ROOT)) if hits else None
+
+
+MODEL_AGENT = {("build:draft", "sonnet"): "draft-writer", ("build:draft", "opus"): "build"}
+
+
+def step_models(step):
+    """[(role, agent, model)] for a step, from gates.json → models with Paul's overrides (config.json
+    model_overrides, set only by /approve global model:<key>=<model>)."""
+    from lib import config
+    over = config().get("model_overrides") or {}
+    out = []
+    for r in (S.GATES.get("models") or {}).get(step, []):
+        key = r.get("key") or step
+        model = (over.get(key) or {}).get("model") or r["model"]
+        agent = MODEL_AGENT.get((key, model), r["agent"]) if model != r["model"] else r["agent"]
+        out.append((r["role"], agent, model))
+    return out
+
+
+def models_line(step):
+    return "; ".join(f"{role}: {agent} ({model})" for role, agent, model in step_models(step))
+
+
 def describe(step, batch=None):
     """{'stage': '2 of 8 — Discovery', 'session_model': 'haiku', 'agents': '…'} for a step (or {} if none)."""
     st = stage_of(step) if step else None
     if not st:
         return {}
     name = st["name"] + (f" (batch {batch})" if st.get("per_batch") and batch else "")
-    return {"stage": f"{st['n']} of {total()} — {name}", "session_model": st["session_model"],
-            "agents": agents_line(st)}
+    out = {"stage": f"{st['n']} of {total()} — {name}", "session_model": st["session_model"],
+           "agents": agents_line(st)}
+    if step_models(step):
+        out["models"] = models_line(step)   # §4: who does each job in this step, on which model
+    return out
 
 
 def main():
@@ -206,6 +239,9 @@ def main():
         for st in stages():
             print(f"{st['n']} {st['name']:26} session {st['session_model']:6} agents: {agents_line(st)}")
             print(f"  {'':24} steps: {', '.join(st['steps'])}")
+            for step in st["steps"]:
+                if step_models(step):
+                    print(f"  {'':24}   {step}: {models_line(step)}")
         print("any stage: " + ", ".join(S.GATES.get("any_stage", [])))
     elif sys.argv[1:2] == ["of"] and len(sys.argv) > 2:
         st = stage_of(sys.argv[2])

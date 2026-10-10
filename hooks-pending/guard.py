@@ -185,6 +185,12 @@ if tool in ("Edit", "Write", "MultiEdit", "NotebookEdit", "Read"):
             block(why)
     if tool != "Read" and system_path(fp) and not system_session():
         block(SYSTEM_WHY)
+    if tool == "Read" and not system_session():   # P12: cost — read by ID or summary, never the whole history
+        if re.search(r"(^|/)methodology/rulings\.md$", fp) and not (inp.get("offset") or inp.get("limit")):
+            block("rulings.md is read by ID (P12): python3 scripts/rulings.py CM-020 CM-022 … — never the whole file.")
+        if re.search(r"(^|/)clients/[^/]+/(log\.md|handoff-log\.md)$", fp):
+            block("the safety log and the Handoff Log are not read in a client session (P12): read STATUS.md "
+                  "(records.py top <slug>) and decisions-settled.md instead.")
     sys.exit(0)
 
 
@@ -315,6 +321,12 @@ def check_segment(seg, redir):
                   "(no redirection into them).")
     if not system_session():
         check_system(prog, sub, words, seg, redir, via_script, is_msg)
+        if prog in ("cat", "less", "more", "head", "tail") and any(
+                re.search(r"(^|/)clients/[^/]+/(log\.md|handoff-log\.md)$", t) for t, _ in seg[1:]):
+            block("the safety log and the Handoff Log are not read in a client session (P12): read STATUS.md "
+                  "(records.py top <slug>) and decisions-settled.md instead.")
+        if prog in ("cat", "less", "more") and any(re.search(r"(^|/)methodology/rulings\.md$", t) for t, _ in seg[1:]):
+            block("rulings.md is read by ID (P12): python3 scripts/rulings.py CM-020 CM-022 … — never the whole file.")
     for t, qd in seg:
         if HOOKS.search(t) and not (qd and is_msg):
             block("approval state and hooks are off limits.")

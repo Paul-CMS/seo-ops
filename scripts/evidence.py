@@ -279,12 +279,23 @@ def question(r):
     return (f"**{r['label']}** — what should we say? If it depends, on what?", "Describe")
 
 
+def plan_pages(st):
+    return [p for b in S.batches(st) for p in b["pages"]]
+
+
 def facts_pack(slug, run_id, bid):
+    """bid=None: P10's one facts round for every page in the site plan — every client gap, grouped by fact (one
+    answer can fill 20 location pages); else CM-042's facts interview for a batch's blocked pages."""
     st = S.load(slug)
-    b = S.batch(st, bid) or die(f"no batch {bid}")
-    blocked = [p for p in b["pages"] if S.evidence_state(st, p)[0] == "block"]
-    if not blocked:
-        die(f"batch {bid}: no page is blocked by the evidence gate — the facts interview runs only on a block (CM-042).")
+    if bid is None:
+        blocked = [p for p in plan_pages(st) if S.evidence_state(st, p)[0] in ("warn", "block")]
+        if not blocked:
+            blocked = []
+    else:
+        b = S.batch(st, bid) or die(f"no batch {bid}")
+        blocked = [p for p in b["pages"] if S.evidence_state(st, p)[0] == "block"]
+        if not blocked:
+            die(f"batch {bid}: no page is blocked by the evidence gate — the facts interview runs only on a block (CM-042).")
     seen, qs, waiting, research = {}, [], {}, {}
     ents = settled.entries(slug)
     public = set(requirements().get("public_facts") or [])
@@ -301,39 +312,47 @@ def facts_pack(slug, run_id, bid):
                 research.setdefault(k, {"label": r["label"], "pages": [], "from": r["from"], "need": r["need"]})
                 research[k]["pages"].append(pid)
                 continue
-            if k in seen:
-                seen[k]["pages"].append(pid)
+            gk = r["from"] if bid is None else k   # the facts round groups by fact, not by page
+            if gk in seen:
+                seen[gk]["pages"].append(pid)
+                if k not in seen[gk]["keys"]:
+                    seen[gk]["keys"].append(k)
                 continue
             text, style = question(r)
             sr = r.get("searched") or {}
             searched = ["facts.json", "decisions-settled.md"] + list(sr.get("searched") or []) + ["proof sheet / Discovery Record"]
-            seen[k] = {"text": text, "style": style, "kind": "client", "need": r["need"], "pages": [pid], "from": r["from"],
-                       "key": k, "fact_id": r.get("fact_id"), "searched": searched,
-                       "best_answer": r["value"] if r["mark"] in ("Unverified", "Conflict") and r.get("value") else ""}
-            qs.append(seen[k])
+            seen[gk] = {"text": text, "style": style, "kind": "client", "need": r["need"], "pages": [pid], "from": r["from"],
+                        "key": k, "keys": [k], "fact_id": r.get("fact_id"), "searched": searched,
+                        "best_answer": r["value"] if r["mark"] in ("Unverified", "Conflict") and r.get("value") else ""}
+            qs.append(seen[gk])
     qs, _dropped, answered = settled.filter_questions(slug, qs)   # P4: never ask what is already answered
     import questions
     bad = questions.problems(qs)   # P6: every question has a kind and a searched: line; no public fact is asked
     if bad:
         die("REFUSED — the facts pack breaks the question rule:\n  - " + "\n  - ".join(bad))
     if research:
-        rl = client_dir(slug) / "build" / "evidence" / f"research-{bid}.md"
+        rl = client_dir(slug) / "build" / "evidence" / f"research-{bid or 'all'}.md"
         rl.parent.mkdir(parents=True, exist_ok=True)
-        rl.write_text("\n".join([f"# Research list — batch {bid} ({now()[:10]})", "",
+        rl.write_text("\n".join([f"# Research list — {('batch ' + bid) if bid else 'every page'} ({now()[:10]})", "",
                                   "Public facts (P6): the researcher agent looks each one up in official sources — "
                                   "methodology/sources/<state>-<area>.md first — and records it with its source in the page's "
                                   "facts file, or 'not found' with the sources tried. Never asked of the client.", "",
                                   "| Fact | Need | Pages | Key |", "|---|---|---|---|"]
                                  + [f"| {v['label']} | {v['need']} | {', '.join(v['pages'])} | {k} |" for k, v in research.items()])
                       + "\n")
-    cap = 15
+    label = bid or "all"
+    for q in qs:   # a page fact asked for several pages: one line names them all
+        if len(q["pages"]) > 1 and q["from"].startswith("page:"):
+            q["text"] = f"For {len(q['pages'])} pages ({', '.join(q['pages'][:8])}{' …' if len(q['pages']) > 8 else ''}): {q['text']}"
+    cap = 15 if bid else 40
     qs = qs[:cap]
-    for q in qs:   # asked once: the key is what the answer settles (run.py decision --settle <key>)
-        settled.ask(slug, run_id, q["key"], "Client (via Paul)", re.sub(r"\*\*", "", q["text"])[:300])
+    for q in qs:   # asked once: each key is what the answer settles (run.py decision --settle <key>)
+        for k in q["keys"]:
+            settled.ask(slug, run_id, k, "Client (via Paul)", re.sub(r"\*\*", "", q["text"])[:300])
     name = st["client"]["name"]
     d = client_dir(slug) / "interviews" / "facts"
     d.mkdir(parents=True, exist_ok=True)
-    f = d / f"{name} - Facts Interview - {bid} - {today()} - REVIEW.md"
+    f = d / f"{name} - Facts Interview - {label} - {today()} - REVIEW.md"
     lines = [f"# {name} — a few facts we need before we write", "",
              "Quick ones — answer by reply, voice memo or a five-minute call. \"I don't know\" is a fine answer.", ""]
     for i, q in enumerate(qs, 1):
@@ -343,12 +362,13 @@ def facts_pack(slug, run_id, bid):
         if q["style"] == "Describe":
             lines.append("   *Can we say this on your website?* yes / only in general terms / no")
     lines += ["", "<!-- System notes (removed before sending):",
-              f"- Facts interview (CM-042) for blocked page(s): {', '.join(blocked)} · evidence gate CM-041",
+              (f"- Facts interview (CM-042) for blocked page(s): {', '.join(blocked)} · evidence gate CM-041" if bid else
+               f"- The one facts round (P10) for every page with a gap: {len(blocked)} page(s), grouped by fact"),
               "- Each question → the fact it fills:"]
     lines += [f"  - Q{i}: {q['from']} ({q['need']}) → pages {', '.join(q['pages'])} · {q['style']} · client · key {q['key']}"
               f" · searched: {' → '.join(q['searched'])}" for i, q in enumerate(qs, 1)]
     if research:
-        lines += [f"- Public facts, not asked — the researcher looks them up (build/evidence/research-{bid}.md): "
+        lines += [f"- Public facts, not asked — the researcher looks them up (build/evidence/research-{label}.md): "
                   + ", ".join(v["label"] for v in research.values())]
     if answered:
         lines += [f"- {answered[0].upper()}{answered[1:]} (not asked again)"]
@@ -361,10 +381,14 @@ def facts_pack(slug, run_id, bid):
     f.write_text("\n".join(lines))
     rel = str(f.relative_to(ROOT))
     st = S.load(slug)
-    S.batch(st, bid)["facts_interview"] = {"file": rel, "at": now(), "run": run_id, "pages": blocked,
-                                           "questions": len(qs)}
+    rec = {"file": rel, "at": now(), "run": run_id, "pages": blocked, "questions": len(qs),
+           "research": len(research)}
+    if bid:
+        S.batch(st, bid)["facts_interview"] = rec
+    else:
+        st["build"]["facts_round"] = rec
     S.save(slug, st)
-    append(client_dir(slug) / "log.md", f"- FACTS INTERVIEW {now()[:16]} · run {run_id} · batch {bid} · "
+    append(client_dir(slug) / "log.md", f"- FACTS INTERVIEW {now()[:16]} · run {run_id} · {('batch ' + bid) if bid else 'facts round (all pages)'} · "
            f"{len(qs)} question(s) for {', '.join(blocked)} · {rel}\n")
     return rel, len(qs), blocked
 
@@ -373,10 +397,10 @@ def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("run"); s.add_argument("slug"); s.add_argument("--run", required=True)
-    s.add_argument("--batch"); s.add_argument("--page")
+    s.add_argument("--batch"); s.add_argument("--page"); s.add_argument("--all", action="store_true")
     s = sub.add_parser("show"); s.add_argument("slug"); s.add_argument("page")
     s = sub.add_parser("questions"); s.add_argument("slug"); s.add_argument("--run", required=True)
-    s.add_argument("--batch", required=True)
+    g = s.add_mutually_exclusive_group(required=True); g.add_argument("--batch"); g.add_argument("--all", action="store_true")
     a = ap.parse_args()
     if a.cmd == "show":
         st = S.load(a.slug)
@@ -387,17 +411,20 @@ def main():
         return
     R.open_run(a.slug, a.run)
     if a.cmd == "questions":
-        rel, n, blocked = facts_pack(a.slug, a.run, a.batch)
-        print(f"facts interview: {n} question(s) for {', '.join(blocked)} → {rel}\nPaul reviews and sends it.")
+        rel, n, blocked = facts_pack(a.slug, a.run, None if a.all else a.batch)
+        print(f"facts {'round' if a.all else 'interview'}: {n} question(s) for {len(blocked)} page(s) → {rel}\n"
+              "Paul reviews and sends it." + (" Nothing to ask." if not n else ""))
         return
     st = S.load(a.slug)
-    if a.batch:
+    if a.all:   # P10: the one facts round — every page in the site plan
+        pids = plan_pages(st)
+    elif a.batch:
         b = S.batch(st, a.batch) or die(f"no batch {a.batch}")
         pids = b["pages"]
     elif a.page:
         pids = [a.page]
     else:
-        die("give --batch or --page")
+        die("give --all, --batch or --page")
     blocked = 0
     for pid in pids:
         result, counts, why, rel = record(a.slug, a.run, pid)

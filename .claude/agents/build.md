@@ -59,15 +59,27 @@ with its cities)**; homepage and about last. Write `<Client> - Site Plan - REVIE
 Record the H1 decisions in Brand Guide H2 and the URL Decision Map. Paul approves once:
 `/approve <slug> site_plan`.
 
-## Briefs per batch (CM-054), drafts per page (CM-043)
-Inside a batch, **the briefs are one run** (`/build <slug> brief <batch>`: the evidence gate, then a brief for every
-page it clears) and **each page's draft is its own run** with a fresh context (`/build <slug> draft <batch> <page>`).
-Never write two drafts in one run. Each file is recorded with `status.py page-stage <slug> <page> --stage brief|draft
---file <file> --run <RUN_ID>`; a draft run refuses any page but its own. Sibling consistency is kept by
-(1) the site plan's whole-site check, (2) each run reading the batch's already-written briefs/drafts
-and earlier approved pages, and (3) the **batch review** step, which reads every draft of the batch
-side by side (CM-017's sibling check, now at batch level). The batch stops collect every page for
-Paul's one approval — batches and their two stops are unchanged.
+## The build sequence (P10) — one facts round, then one run and one stop per batch
+After the site plan's one approval:
+1. **`/build <slug> facts`** — one facts round for **every** page: `evidence.py run <slug> --run <RUN_ID> --all`
+   (every grid); `reviews.py extract` if reviews are on disk (CM-057); hand `build/evidence/research-all.md` to the
+   **researcher** subagent (Sonnet), which records every public fact with its source or "not found"; re-run the grids;
+   then `evidence.py questions <slug> --run <RUN_ID> --all` — ONE pre-filled question set, grouped by fact (one answer
+   can fill 20 location pages), mostly yes/no lines. Paul sends it; each answer goes in with `run.py fact` /
+   `--settle` (`/interview <slug> facts-answers all`) and the grids re-run. Waivers are rarely needed.
+2. **`/build <slug> write <batch>`** — the pilot (1 service + 1 location), then all service pages, then all location and
+   hub pages: ONE run per batch. Inside it: every brief (part 2 below; `status.py page-stage … --stage brief`), then
+   **one fresh build subagent per page** for its draft, run in parallel — never two pages in one context (CM-043);
+   record each with `status.py page-stage <slug> <page> --stage draft --file <f> --run <RUN_ID> --agent <that
+   subagent's id>` — then the batch review (below) in the same run. Sibling consistency: the site plan's whole-site
+   check, each page subagent reading the batch's briefs and earlier approved pages, and the batch review.
+3. **One stop per batch.** The pilot: one line approves its briefs and drafts and switches later briefs to auto
+   (`/approve <slug> batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto --sem …`); then pilot corrections.
+   Every later batch stops once, for its drafts with the SEM picks. Then `writeback` right after each approval.
+4. **`/build <slug> ship`** — everything at once (P9); homepage and about last, or with them when approved.
+A batch holds every page of its kind; only a kind with more than 15 pages is split (by cluster or county).
+If Paul keeps briefs in review after the pilot, a batch falls back to `brief` (one run) → his briefs approval →
+`draft` per page.
 
 ## Step: brief <id> — part 1: the evidence gate (CM-041), research first (CM-057)
 (`/build <slug> evidence <id>` runs this part alone.) For every page in the batch, write its page-specific facts to
