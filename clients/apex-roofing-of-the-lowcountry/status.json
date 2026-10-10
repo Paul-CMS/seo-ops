@@ -395,7 +395,7 @@
       "state": "planned",
       "type": "service",
       "name": "Metal Roofing",
-      "url": "https://apexroofingtlc.com/metal-roofing-2/",
+      "url": "https://apexroofingtlc.com/metal-roofing/",
       "group": "Materials and features",
       "service_variant": "Standing Seam Metal Roofs",
       "h1": "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
@@ -405,6 +405,10 @@
           "label": "Apex installs standing seam metal (W20 price range)",
           "from": "D:Price ranges"
         }
+      ],
+      "live_url": "https://apexroofingtlc.com/metal-roofing-2/",
+      "replaces": [
+        "https://apexroofingtlc.com/metal-roofing-2/"
       ]
     },
     "svc-slate-roofing": {
@@ -721,25 +725,14 @@
         "handoff": "H-2026-10-09-10-publish"
       },
       {
-        "id": "s1",
+        "id": "services",
         "kind": "service",
-        "label": "Service cluster — core roofing work",
+        "label": "All service pages",
         "pages": [
           "svc-roof-replacement",
           "svc-roof-installation",
           "svc-roof-inspections",
-          "svc-emergency-roof-repair"
-        ],
-        "state": "planned",
-        "briefs": null,
-        "drafts": null,
-        "files": {}
-      },
-      {
-        "id": "s2",
-        "kind": "service",
-        "label": "Service cluster — materials and features",
-        "pages": [
+          "svc-emergency-roof-repair",
           "svc-metal-roofing",
           "svc-slate-roofing",
           "svc-skylights"
@@ -750,40 +743,18 @@
         "files": {}
       },
       {
-        "id": "l1",
+        "id": "locations",
         "kind": "location",
-        "label": "Beaufort County — south of the Broad River",
+        "label": "All location pages",
         "pages": [
           "loc-hilton-head-island",
           "loc-okatie",
-          "loc-pritchardville"
-        ],
-        "state": "planned",
-        "briefs": null,
-        "drafts": null,
-        "files": {}
-      },
-      {
-        "id": "l2",
-        "kind": "location",
-        "label": "Beaufort County — Beaufort and the Sea Islands",
-        "pages": [
+          "loc-pritchardville",
           "loc-beaufort",
           "loc-port-royal",
           "loc-ladys-island",
           "loc-st-helena-island",
-          "loc-fripp-island"
-        ],
-        "state": "planned",
-        "briefs": null,
-        "drafts": null,
-        "files": {}
-      },
-      {
-        "id": "l3",
-        "kind": "location",
-        "label": "Jasper County",
-        "pages": [
+          "loc-fripp-island",
           "loc-hardeeville",
           "loc-ridgeland",
           "loc-levy"
@@ -1013,21 +984,20 @@
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
-    "phase": "Publishing your new pages",
+    "phase": "Planning your new pages",
     "done": [
       "We confirmed how search engines should understand your business",
       "We prepared a fact sheet for you to confirm",
       "You returned the fact sheet — thank you",
       "We finished reviewing your website",
       "Your business details are confirmed",
-      "Research is complete and page work has started",
-      "Your new page plan is ready"
+      "Research is complete and page work has started"
     ],
     "waiting_on_client": [],
-    "next": "Your new pages are going live in stages."
+    "next": "We are planning every service and location page."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-09T18:08:47-05:00",
+  "updated": "2026-10-09T20:15:29-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -1296,5 +1266,10 @@
     "run_id": "20261009-142804-build-8390",
     "step": "build:evidence",
     "at": "2026-10-09T14:30:43-05:00"
+  },
+  "rewrite2_urls": {
+    "at": "2026-10-09T20:15:29-05:00",
+    "moves": 1,
+    "dropped": []
   }
 }

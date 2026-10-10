@@ -1,17 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
-- **Stage 6 of 8 — Pilot, then batches (batch s1)**
-- **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:evidence finished (run 20261009-142804-build-8390) and that stage is in review mode ; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
-- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
+- **Stage 5 of 8 — Build plan and blockers**
+- **What is happening now:** waiting for Paul's approval — the site plan is ready for your approval
+- **Waiting on:** Paul — the site plan is ready for your approval; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
+- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry site_plan --files "clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Site Plan - REVIEW.md"` (or asks for changes first)
 
-_Generated 2026-10-09T18:09 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-09T20:15 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:evidence finished (run 20261009-142804-build-8390) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /interview apex-roofing-of-the-lowcountry facts s1 (the evidence gate blocked svc-roof-replacement, svc-roof-installation, svc-roof-inspections, svc-emergency-roof-repair — targeted questions for the owner (you send them). Or waive instead: /approve apex-roofing-of-the-lowcountry evidence:svc-roof-replacement --reason "<why you waive it>" · /approve apex-roofing-of-the-lowcountry evidence:svc-roof-installation --reason "<why you waive it>" · /approve apex-roofing-of-the-lowcountry evidence:svc-roof-inspections --reason "<why you waive it>" · /approve apex-roofing-of-the-lowcountry evidence:svc-emergency-roof-repair --reason "<why you waive it>") | 2026-10-09 | /next apex-roofing-of-the-lowcountry |
+| Paul | the site plan is ready for your approval | 2026-10-09 | /approve apex-roofing-of-the-lowcountry site_plan |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
@@ -34,6 +34,7 @@ _Open, but the next action above goes ahead without them._
 | Jonie | seo title handoff — 9 of 9 item(s) open | 2026-10-08 | H-2026-10-08-08-seo_title |
 | Jonie | publish handoff — 2 of 2 item(s) open | 2026-10-09 | H-2026-10-09-09-publish |
 | Jonie | publish handoff — 2 of 2 item(s) open | 2026-10-09 | H-2026-10-09-10-publish |
+| Jonie | other handoff — 1 of 1 item(s) open | 2026-10-09 | H-2026-10-09-11-other |
 
 ## Settled decisions — never re-raised
 
@@ -68,6 +69,8 @@ _Open, but the next action above goes ahead without them._
 
 ## Open VA items
 
+_Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Apex Roofing of the Lowcountry - VA Worklist")._
+
 - **H-2026-10-05-01-other** (Jonie) — other: 5 of 5 open, issued 2026-10-05
 - **H-2026-10-05-02-manual_lookup** (Gwen) — manual lookup: 5 of 5 open, issued 2026-10-05
 - **H-2026-10-08-03-redirect** (Jonie) — redirect: 2 of 2 open, issued 2026-10-08
@@ -78,6 +81,7 @@ _Open, but the next action above goes ahead without them._
 - **H-2026-10-08-08-seo_title** (Jonie) — seo title: 9 of 9 open, issued 2026-10-08
 - **H-2026-10-09-09-publish** (Jonie) — publish: 2 of 2 open, issued 2026-10-09
 - **H-2026-10-09-10-publish** (Jonie) — publish: 2 of 2 open, issued 2026-10-09
+- **H-2026-10-09-11-other** (Jonie) — other: 1 of 1 open, issued 2026-10-09
 
 ## Flagged for Paul (system)
 
@@ -86,5 +90,9 @@ _None._
 ## Spend so far
 
 - DataforSEO: $0.59
+
+## Spend by step (model)
+
+_Nothing recorded yet (run.py finish --tokens --cost)._
 
 Last run: /build 2026-10-09T14:30 — Evidence gate s1: all 4 service pages BLOCK (mainly dated Brand Guide status cells read as Unverified; real gaps = live-site-only scope on 3 pages, timeframes, inspection pricing). Facts files + grids written; no briefs.

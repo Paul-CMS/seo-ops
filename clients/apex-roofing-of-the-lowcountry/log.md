@@ -2431,3 +2431,33 @@ Folded in: loc-bluffton page facts: neighborhoods (settled bluffton_communities)
 Folded in: SD - Roof Repair - Apex Roofing of the Lowcountry.md line 76: inline link placeholder in the one P11 form (no wording change)
 
 ## MIGRATION · 2026-10-09T18:09:42-05:00 · rewrite 2 P4 repair: 1 repeated fact row(s) removed from the Brand Guide · approvals counting again: gate brand_guide_approved: brand-guide.md#A+D+E+G · no stamp changed
+
+## MIGRATION · 2026-10-09T20:15:29-05:00 · rewrite 2 P7 + P10: URLs and batches
+Paul 2026-10-09 (REWRITE-2-DECISIONS.md c): /metal-roofing-2/ → /metal-roofing/ with a 301
+svc-metal-roofing: https://apexroofingtlc.com/metal-roofing-2/ → https://apexroofingtlc.com/metal-roofing/ (301 paired with the publish)
+batches: l1, l2, l3, s1, s2 → services, locations
+The site plan file changed: Paul re-approves it once.
+
+## RUN 20261009-201529-drive-mirror-043d · STARTED · /drive-mirror · 2026-10-09T20:15:29-05:00
+Step: drive-mirror · session 55ffb3c8-069b-4af6-a4b4-8790ec003647
+Gates checked: client_setup
+Note: rewrite 2 URL migration: worklist rows
+- CHANGE #404 [other] https://apexroofingtlc.com/metal-roofing/ | clear the slug | old: whatever holds /metal-roofing/ now | new: nothing | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-11-other-01
+### HANDOFF · /drive-mirror · 2026-10-09 · run 20261009-201529-drive-mirror-043d
+**What I did**
+- rewrite 2 URL migration: worklist rows for the redirect / slug clearing
+### END HANDOFF
+## RUN 20261009-201529-drive-mirror-043d · FINISHED · 2026-10-09T20:15:29-05:00
+Changes: 1 · Summary: rewrite 2 URL migration (worklist rows)
+- CHANGE #405 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (12).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (12).md | result: done · renamed and moved, nothing deleted
+- CHANGE #406 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-09 (12).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 0459a79f60d8 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #407 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Approval Record - 2026-10-08 (4).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Approval Record.md | new: _Archive/Apex Roofing of the Lowcountry - Approval Record - 2026-10-08 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #408 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Approval Record.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Approval Record - 2026-10-08 (4).md | new: Apex Roofing of the Lowcountry - Approval Record.md · sha c2b71d4375ec | result: done · copied (Drive for desktop syncs it)
+- CHANGE #409 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (15).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (15).md | result: done · renamed and moved, nothing deleted
+- CHANGE #410 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-09 (15).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha c948e1f89605 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #411 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Brand Guide - 2026-10-09.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Brand Guide.md | new: _Archive/Apex Roofing of the Lowcountry - Brand Guide - 2026-10-09.md | result: done · renamed and moved, nothing deleted
+- CHANGE #412 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Brand Guide.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Brand Guide - 2026-10-09.md | new: Apex Roofing of the Lowcountry - Brand Guide.md · sha 08af020cd13f | result: done · copied (Drive for desktop syncs it)
+- CHANGE #413 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (15).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-09 (15).md | result: done · renamed and moved, nothing deleted
+- CHANGE #414 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-09 (15).md | new: Apex Roofing of the Lowcountry - Status.md · sha ad7e05076198 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #415 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.md | upload | old: (new file) | new: Apex Roofing of the Lowcountry - VA Worklist.md · sha 0d765c9f120d | result: done · copied (Drive for desktop syncs it)
+- CHANGE #416 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.csv | upload | old: (new file) | new: Apex Roofing of the Lowcountry - VA Worklist.csv · sha 4a686175d061 | result: done · copied (Drive for desktop syncs it)

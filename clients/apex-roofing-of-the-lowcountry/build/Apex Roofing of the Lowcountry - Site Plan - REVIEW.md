@@ -1,5 +1,7 @@
 # Apex Roofing of the Lowcountry - Site Plan - REVIEW
 
+> **Rewrite 2 changes (2026-10-09), for Paul's re-approval:** Paul 2026-10-09 (REWRITE-2-DECISIONS.md c): /metal-roofing-2/ → /metal-roofing/ with a 301. Batches: one per kind (P10), split only above 15 pages: services (7); locations (11).
+
 Run 20261008-134424-build:plan-c61b · 2026-10-08 · Build agent (Agent 2) · for Paul's one approval: `/approve apex-roofing-of-the-lowcountry site_plan`
 Plan data: `clients/apex-roofing-of-the-lowcountry/build/site-plan.json` (registered with this file).
 
@@ -40,7 +42,7 @@ Title for every service page: `[Service] - Apex Roofing of the Lowcountry` (no a
 | svc-roof-installation | https://apexroofingtlc.com/roof-installation/ | roof installation | Roof Installation | New-Construction Roofing in the South Carolina Lowcountry — no 'The Best' | South Carolina Lowcountry | Replacement and new roofs | H3 service-areas table → all 12 location pages (Finish fills) |
 | svc-roof-inspections | https://apexroofingtlc.com/roof-inspections/ | roof inspection | Roof Inspections | Roof Condition Inspections in Beaufort and Jasper Counties — no 'The Best' | Beaufort and Jasper Counties | Repair and response | H3 service-areas table → all 12 location pages (Finish fills) |
 | svc-emergency-roof-repair | https://apexroofingtlc.com/emergency-roof-repair/ | emergency roof repair | Emergency Roof Repair | Storm and Leak Emergency Roofing in the South Carolina Lowcountry — no 'The Best' | South Carolina Lowcountry | Repair and response | H3 service-areas table → all 12 location pages (Finish fills) |
-| svc-metal-roofing | https://apexroofingtlc.com/metal-roofing-2/ | metal roofing | Metal Roofing | Standing Seam Metal Roofs in Beaufort and Jasper Counties — no 'The Best' | Beaufort and Jasper Counties | Materials and features | H3 service-areas table → all 12 location pages (Finish fills) |
+| svc-metal-roofing | https://apexroofingtlc.com/metal-roofing/ | metal roofing | Metal Roofing | Standing Seam Metal Roofs in Beaufort and Jasper Counties — no 'The Best' | Beaufort and Jasper Counties | Materials and features | H3 service-areas table → all 12 location pages (Finish fills) |
 | svc-slate-roofing | https://apexroofingtlc.com/slate-roofing/ | slate roofing | Slate Roofing | Natural Slate Roofs in the South Carolina Lowcountry — no 'The Best' | South Carolina Lowcountry | Materials and features | H3 service-areas table → all 12 location pages (Finish fills) |
 | svc-skylights | https://apexroofingtlc.com/skylights/ | skylight installation | Skylights | Skylight Installation in Beaufort and Jasper Counties — no 'The Best' | Beaufort and Jasper Counties | Materials and features | H3 service-areas table → all 12 location pages (Finish fills) |
 

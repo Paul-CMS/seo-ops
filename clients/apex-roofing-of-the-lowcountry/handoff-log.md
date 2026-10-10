@@ -1612,3 +1612,8 @@ Generated from the safety log (clients/apex-roofing-of-the-lowcountry/log.md) �
 - If the parser is fixed and the gate re-run, expect WARN on all 4 pages. Even then, Replacement, Inspections and Emergency still have Submitted scope, which their briefs must list under Evidence gaps.
 - The facts interview (`/interview apex-roofing-of-the-lowcountry facts s1`) would mostly re-ask facts that are already Paul Approved or Client Confirmed. Settled decisions must not be re-asked, so its pack needs trimming to the real gaps above before Paul sends it.
 
+## /drive-mirror · 2026-10-09 · run 20261009-201529-drive-mirror-043d
+
+**What I did**
+- rewrite 2 URL migration: worklist rows for the redirect / slug clearing
+

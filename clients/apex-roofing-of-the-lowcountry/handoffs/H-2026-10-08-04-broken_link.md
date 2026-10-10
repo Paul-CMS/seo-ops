@@ -1,5 +1,7 @@
 # Apex Roofing of the Lowcountry - Technical Blockers - Links Through Redirects - H-2026-10-08-04-broken_link
 
+> **Superseded by the VA Worklist** (`VA-WORKLIST.md`, rewrite 2 P9) — work from the worklist; this file is kept as the record.
+
 **For:** Jonie · **Prepared:** 2026-10-08 · **Client:** Apex Roofing of the Lowcountry (apexroofingtlc.com)
 
 ## What to do

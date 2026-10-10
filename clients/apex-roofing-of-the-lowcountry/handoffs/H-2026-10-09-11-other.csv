@@ -1,0 +1,2 @@
+ref,url,field,old,new,reason,decision_map_ref,status,note
+H-2026-10-09-11-other-01,https://apexroofingtlc.com/metal-roofing/,clear the slug,whatever holds /metal-roofing/ now,nothing,find and clear it first so the new Metal Roofing page publishes at /metal-roofing/ (its 301 from /metal-roofing-2/ is with its publish row),svc-metal-roofing,issued,

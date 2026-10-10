@@ -126,7 +126,7 @@
       "id": "svc-metal-roofing",
       "type": "service",
       "name": "Metal Roofing",
-      "url": "https://apexroofingtlc.com/metal-roofing-2/",
+      "url": "https://apexroofingtlc.com/metal-roofing/",
       "group": "Materials and features",
       "service_variant": "Standing Seam Metal Roofs",
       "h1": "Standing Seam Metal Roofs in Beaufort and Jasper Counties",
@@ -148,7 +148,11 @@
           "from": "D:Price ranges"
         }
       ],
-      "link_targets": "all 12 location pages (H3 service-areas table, Finish)"
+      "link_targets": "all 12 location pages (H3 service-areas table, Finish)",
+      "replaces": [
+        "https://apexroofingtlc.com/metal-roofing-2/"
+      ],
+      "live_url": "https://apexroofingtlc.com/metal-roofing-2/"
     },
     {
       "id": "svc-slate-roofing",
@@ -243,7 +247,7 @@
       "faq_gaps": 1,
       "claims": [],
       "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
-      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) — Paul 2026-10-08 choice 5a"
     },
     {
       "id": "loc-okatie",
@@ -264,7 +268,7 @@
       "faq_gaps": 2,
       "claims": [],
       "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
-      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) — Paul 2026-10-08 choice 5a"
     },
     {
       "id": "loc-pritchardville",
@@ -283,7 +287,7 @@
       "faq_gaps": 3,
       "claims": [],
       "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
-      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) — Paul 2026-10-08 choice 5a"
     },
     {
       "id": "loc-beaufort",
@@ -305,7 +309,7 @@
       "faq_gaps": 1,
       "claims": [],
       "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
-      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) — Paul 2026-10-08 choice 5a"
     },
     {
       "id": "loc-port-royal",
@@ -327,7 +331,7 @@
       "faq_gaps": 1,
       "claims": [],
       "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
-      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) — Paul 2026-10-08 choice 5a"
     },
     {
       "id": "loc-ladys-island",
@@ -348,7 +352,7 @@
       "faq_gaps": 2,
       "claims": [],
       "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
-      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) — Paul 2026-10-08 choice 5a"
     },
     {
       "id": "loc-st-helena-island",
@@ -369,7 +373,7 @@
       "faq_gaps": 2,
       "claims": [],
       "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
-      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) — Paul 2026-10-08 choice 5a"
     },
     {
       "id": "loc-fripp-island",
@@ -412,7 +416,7 @@
       "faq_gaps": 2,
       "claims": [],
       "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
-      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) — Paul 2026-10-08 choice 5a"
     },
     {
       "id": "loc-ridgeland",
@@ -434,7 +438,7 @@
       "faq_gaps": 1,
       "claims": [],
       "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
-      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) — Paul 2026-10-08 choice 5a"
     },
     {
       "id": "loc-levy",
@@ -453,14 +457,14 @@
       "faq_gaps": 3,
       "claims": [],
       "link_targets": "all 8 service pages (H3 services table) + the 11 sibling city pages (Finish)",
-      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) \u2014 Paul 2026-10-08 choice 5a"
+      "faq_gaps_source": "facts interview at the evidence step (CM-041/CM-042) — Paul 2026-10-08 choice 5a"
     },
     {
       "id": "home",
       "type": "homepage",
       "name": "Homepage",
       "url": "https://apexroofingtlc.com/",
-      "h1": "unchanged (locked, BB-313 \u00a73)",
+      "h1": "unchanged (locked, BB-313 §3)",
       "keyword": "roofing company hilton head island metro area",
       "faq_topics": [
         "Do you give free estimates?",
@@ -485,60 +489,39 @@
     {
       "id": "pilot",
       "kind": "service",
-      "label": "Pilot \u2014 Roof Repair + Bluffton",
+      "label": "Pilot — Roof Repair + Bluffton",
       "pages": [
         "svc-roof-repair",
         "loc-bluffton"
       ]
     },
     {
-      "id": "s1",
+      "id": "services",
       "kind": "service",
-      "label": "Service cluster \u2014 core roofing work",
+      "label": "All service pages",
       "pages": [
         "svc-roof-replacement",
         "svc-roof-installation",
         "svc-roof-inspections",
-        "svc-emergency-roof-repair"
-      ]
-    },
-    {
-      "id": "s2",
-      "kind": "service",
-      "label": "Service cluster \u2014 materials and features",
-      "pages": [
+        "svc-emergency-roof-repair",
         "svc-metal-roofing",
         "svc-slate-roofing",
         "svc-skylights"
       ]
     },
     {
-      "id": "l1",
+      "id": "locations",
       "kind": "location",
-      "label": "Beaufort County \u2014 south of the Broad River",
+      "label": "All location pages",
       "pages": [
         "loc-hilton-head-island",
         "loc-okatie",
-        "loc-pritchardville"
-      ]
-    },
-    {
-      "id": "l2",
-      "kind": "location",
-      "label": "Beaufort County \u2014 Beaufort and the Sea Islands",
-      "pages": [
+        "loc-pritchardville",
         "loc-beaufort",
         "loc-port-royal",
         "loc-ladys-island",
         "loc-st-helena-island",
-        "loc-fripp-island"
-      ]
-    },
-    {
-      "id": "l3",
-      "kind": "location",
-      "label": "Jasper County",
-      "pages": [
+        "loc-fripp-island",
         "loc-hardeeville",
         "loc-ridgeland",
         "loc-levy"
@@ -555,10 +538,10 @@
     }
   ],
   "paul_choices_2026_10_08": {
-    "1": "a \u2014 homepage keyword 'roofing company hilton head island metro area'",
-    "2": "a \u2014 permit FAQ only on Bluffton (Beaufort County) and Ridgeland (Jasper County); HHI, Okatie, Pritchardville jurisdiction FAQs dropped",
-    "3": "b \u2014 'The Best' SERP re-test run (3 queries) \u2014 see the Site Plan \u00a72a",
-    "4": "a \u2014 'Residential Roofer' approved as a category variant (Brand Guide A3 write held \u2014 see Site Plan \u00a76)",
-    "5": "a \u2014 location FAQ gaps sourced in the facts interview at each batch's evidence step"
+    "1": "a — homepage keyword 'roofing company hilton head island metro area'",
+    "2": "a — permit FAQ only on Bluffton (Beaufort County) and Ridgeland (Jasper County); HHI, Okatie, Pritchardville jurisdiction FAQs dropped",
+    "3": "b — 'The Best' SERP re-test run (3 queries) — see the Site Plan §2a",
+    "4": "a — 'Residential Roofer' approved as a category variant (Brand Guide A3 write held — see Site Plan §6)",
+    "5": "a — location FAQ gaps sourced in the facts interview at each batch's evidence step"
   }
 }

@@ -1,5 +1,7 @@
 # Apex Roofing of the Lowcountry - Manual Lookups Handoff - H-2026-10-05-02-manual_lookup
 
+> **Superseded by the VA Worklist** (`VA-WORKLIST.md`, rewrite 2 P9) — work from the worklist; this file is kept as the record.
+
 **For:** Gwen · **Prepared:** 2026-10-05 · **Client:** Apex Roofing of the Lowcountry (apexroofingtlc.com)
 
 ## What to do
