@@ -137,13 +137,14 @@ so the VA does not need to learn it by heart. This guide covers only setup and t
 
 ### B5. Check that everything works
 
-1. **The test suite.** It uses no network, no money and no client data, and takes about 30 seconds:
+1. **The test suite (fast tier).** It uses no network, no money and no client data, and takes under a minute:
 
    ```bash
    cd ~/Documents/seo-ops && python3 tests/run_all.py
    ```
 
-   The last line must say `… passed, 0 failed`. If anything fails, send Paul the output.
+   The last line must say `… passed, 0 failed`. If anything fails, send Paul the output. (The full tier, `--full`,
+   takes 10–15 minutes; Paul runs it before changing the system — a VA never needs it.)
 
 2. **Drive:**
 
@@ -221,9 +222,12 @@ the current rules, and the flag shows in the client's STATUS.md under "Flagged f
 ### One chat per client at a time
 
 Each client runs in its own folder (`worktree.py open <slug>`), and each run commits only that client's
-files, so different clients never mix. One client can only have one chat at a time: a second chat on the
-same client is refused ("another chat is working on …"). If the first chat is really gone, ask Paul — only
-he clears the lock. If a run ends with `NOT PUSHED` or `push failed`, the work is safe on your Mac; send Paul
+files, so different clients never mix. While a run is open for a client, no other chat may start one ("another
+chat is working on …") — not even a new chat in the same folder; when that run finishes, the next chat may go on.
+If the first chat is really gone with its run still open, ask Paul — only he clears the lock.
+
+**Paul and the VA never work on the same client at the same time** (a manual rule — the lock only sees runs, not
+two people reading and planning). Agree who has which client before starting, and `git pull` before you begin. If a run ends with `NOT PUSHED` or `push failed`, the work is safe on your Mac; send Paul
 the message. Don't try to fix it yourself.
 
 ### Never

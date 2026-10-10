@@ -41,4 +41,4 @@ Gates are set only by Paul typing `/approve` (a hook issues the token). At a dec
 Scripts, gates, methodology, specs, CLAUDE.md, docs, agents, commands, skills, templates, tests and config change
 only in a system session (Paul types `/system`). Otherwise flag it and carry on:
 `python3 scripts/run.py flag <slug> <RUN_ID> --text "…" --workaround "…"`. After every system change:
-`python3 tests/run_all.py`; never commit a failing change.
+`python3 tests/run_all.py` (fast, under a minute); before every system commit `--full`; never commit a failing change.

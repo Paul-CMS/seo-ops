@@ -257,6 +257,7 @@ def main():
     s.add_argument("--id", required=True); s.add_argument("--value"); s.add_argument("--status")
     s.add_argument("--source"); s.add_argument("--quote"); s.add_argument("--label"); s.add_argument("--section")
     s.add_argument("--who", default="Paul"); s.add_argument("--count", type=int)
+    s.add_argument("--status-text", help="the status cell exactly as the Brand Guide shows it")
     s = sub.add_parser("unlock"); s.add_argument("slug")
     s = sub.add_parser("check"); s.add_argument("slug")
     s = sub.add_parser("steps"); s.add_argument("command", nargs="?")
@@ -321,10 +322,10 @@ def main():
                   f"in {held.get('worktree')}, since {since}). Finish there first. If that chat is gone, Paul runs "
                   f"`python3 scripts/run.py unlock {a.slug}` in his own terminal.")
             sys.exit(4)
-        if sid:
-            stages.take_lock(a.slug, sid)
         run_id = (f"{now()[:19].replace('-', '').replace(':', '').replace('T', '-')}-{a.command}"
                   f"-{secrets.token_hex(2)}")
+        if sid:
+            stages.take_lock(a.slug, sid, run_id)   # held while this run is open (finish/abort release it)
         st = S.load(a.slug)
         st.setdefault("open_runs", {})[run_id] = {"step": key, "batch": a.batch, "page": a.page, "started": now(),
                                                   "started_ts": time.time(), "session": sid, "pages": a.pages}
@@ -370,6 +371,13 @@ def main():
         import facts
         row, old = facts.set_fact(a.slug, a.id, value=a.value, status=a.status, source=a.source, quote=a.quote,
                                   label=a.label, section=a.section, who=a.who, count=a.count)
+        if a.status_text is not None:   # the status cell as shown (statuses are never fingerprinted, so no approval moves)
+            data = facts.load(a.slug)
+            for r in data["facts"]:
+                if r["id"] == a.id:
+                    r["status_text"] = a.status_text
+                    row = r
+            facts.save(a.slug, data["facts"])
         facts.render(a.slug)
         what = "new" if not old else ", ".join(k for k in ("value", "status", "source", "quote", "count")
                                                 if old.get(k) != row.get(k)) or "unchanged"
@@ -417,6 +425,8 @@ def main():
             S.save(a.slug, stx)
         st = S.load(a.slug)
         (st.get("open_runs") or {}).pop(a.run_id, None)
+        import stages
+        stages.release_lock(a.slug, a.run_id)   # the client is free for the next chat
         step = (info or {}).get("step")
         import stages
         skey = stages.session_key(step or "", (info or {}).get("batch"))
@@ -444,6 +454,8 @@ def main():
         open_run(a.slug, a.run_id)
         append(d / "log.md", f"## RUN {a.run_id} · ABORTED · {now()}\nReason (Paul): {redact(a.reason)}\n")
         st = S.load(a.slug); (st.get("open_runs") or {}).pop(a.run_id, None); S.save(a.slug, st)
+        import stages
+        stages.release_lock(a.slug, a.run_id)
         import drive
         import records
         records.render(a.slug)

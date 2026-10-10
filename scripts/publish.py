@@ -291,6 +291,10 @@ def cmd_drafts(a):
         f, m = by_page[pid]
         tables, pending = tables_for(st, wheel, pid, b["pages"], together=not a.page)
         content = to_blocks(m["body"], tables)
+        # P7: every old URL this page replaces gets its 301 next to its publish — from the file's header and from the
+        # site plan / migration (status.json pages → replaces), never only one of them
+        m["replaces"] = sorted({u for u in (m.get("replaces") or []) + ((st["pages"].get(pid) or {}).get("replaces") or [])
+                                if u and u.rstrip("/") != m["url"].rstrip("/")})
         # P11: every open placeholder is a visible notice at the top of the draft and a row for Jonie
         open_items = placeholders.scan(ROOT / f)
         if open_items:
@@ -418,7 +422,8 @@ def cmd_handoff(a):
             rows += [{"url": old, "field": "301", "old": old, "new": p["url"],
                       "reason": f"replaced by {pid} — do it together with the publish", "decision_map_ref": pid}
                      for old in pub.get("replaces") or []]
-            rows += [{"url": pub.get("draft_link", ""), "field": "open item", "old": i["text"], "new": "",
+            rows += [{"url": pub.get("draft_link", ""), "field": "open item", "old": i["text"],
+                      "new": placeholders.instruction(i["text"]),
                       "reason": f"approved file line {i['line']}: resolve before publishing — do not publish {p['url']} "
                                 "while its 'Open items' notice is on the page (P11)", "decision_map_ref": pid}
                      for i in p.get("open_items") or []]

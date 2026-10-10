@@ -70,7 +70,7 @@ def brand_facts(slug):
         out[f"{r['section']}:{r['label']}"] = {
             "value": r.get("value", ""), "status": r.get("status_text") or r.get("status", ""),
             "source": r.get("source") or (f"Brand Guide {r['section']}" if r["section"] == "A" else ""),
-            "count": r.get("count"), "fact_id": r["id"]}
+            "count": r.get("count"), "meaning_checked": r.get("meaning_checked"), "fact_id": r["id"]}
     return out
 
 
@@ -109,7 +109,7 @@ def mark(rec):
         return "Unknown"
     if status in KNOWN_STATES and source:
         return "Known"
-    if status.startswith("customer reported") and source and int(rec.get("count") or 0) >= int(
+    if status.startswith("customer reported") and source and rec.get("meaning_checked") and int(rec.get("count") or 0) >= int(
             requirements().get("review_min_independent") or 3):
         return "Known"   # CM-057: 3+ different reviewers; stated only as customers describe it
     return "Unverified"   # Submitted, no status, or no source
@@ -132,27 +132,41 @@ def settled_answer(ents, fk):
             "source": f"answer {e['at'][:10]} ({e.get('by')}; decisions-settled.md {fk})", "via": "settled"}
 
 
+def checked_review_fact(slug, key):
+    """The researcher-checked customer_reported row for a fact key (facts.json section R), or None."""
+    import facts
+    for r in facts.load(slug)["facts"]:
+        if r.get("section") == "R" and r.get("key") == f"fact:{key}" and r.get("meaning_checked"):
+            return r
+    return None
+
+
 def research(slug, it, page, docs):
-    """(rec or None, searched) — a sourced value from the files on disk, or what was searched."""
+    """(rec or None, searched) — a sourced value from the files on disk, or what was searched.
+    CM-057 + Paul 2026-10-09: a review counts toward Known only after the researcher has checked the matches by
+    meaning (`reviews.py checked`) and 3+ different reviewers remain. A keyword match alone is a pre-filled yes/no line."""
     res = sources.search(slug, it["key"], page, docs, limit=None)
-    if not res["hits"]:
-        return None, res
     reqs = requirements()
     marks = reqs.get("found_marks") or {}
     need = int(reqs.get("review_min_independent") or 3)
+    chk = checked_review_fact(slug, it["key"])
+    if chk and int(chk.get("count") or 0) >= need:
+        return {"value": chk.get("value", ""), "status": "Found — " + marks.get("review", "Known"),
+                "source": f"customer_reported: {chk['count']} different reviewers, checked by meaning "
+                          f"({chk.get('checked_at', '')[:10]}) · state it only as customers describe it ('customers "
+                          "mention…'); prices, timelines and warranty terms only as a cited customer example (CM-057)",
+                "via": "review", "count": chk["count"]}, res
+    if not res["hits"]:
+        return None, res
     revs = [h for h in res["hits"] if h["kind"] == "review"]
     people = {h.get("reviewer") or h["label"] for h in revs}
-    if len(people) >= need:   # CM-057: 3+ different reviewers, nothing conflicting → Known, stated as customers say it
+    h = next((x for x in res["hits"] if x["kind"] != "review"), None)
+    if h is None:
         h = revs[0]
-        return {"value": f"\"{h['quote']}\" (+{len(revs) - 1} more)", "status": "Found — " + marks.get("review", "Known"),
-                "source": f"customer_reported: {len(people)} different reviewers, e.g. {h['label']} · state it only as "
-                          "customers describe it ('customers mention…'); prices, timelines and warranty terms only as a "
-                          "cited customer example (CM-057)", "via": "review", "count": len(people)}, res
-    h = next((x for x in res["hits"] if x["kind"] != "review"), res["hits"][0])
-    if h["kind"] == "review":
-        return {"value": f"\"{h['quote']}\"", "status": "Found — Unverified",
-                "source": f"customer_reported: only {len(people)} reviewer(s) — CM-057 needs {need} · {h['label']}",
-                "via": "review", "count": len(people)}, res
+        return {"value": f"\"{h['quote']}\"" + (f" (+{len(revs) - 1} more)" if len(revs) > 1 else ""),
+                "status": "Found — Unverified",
+                "source": f"keyword match in {len(people)} review(s), not yet checked by meaning — {h['label']}",
+                "via": "review_keyword", "count": len(people)}, res
     more = f" (+{len(res['hits']) - 1} more)" if len(res["hits"]) > 1 else ""
     return {"value": f"\"{h['quote']}\"{more}", "status": "Found — " + marks.get(h["kind"], "Unverified"),
             "source": h["label"], "via": h["kind"]}, res
@@ -268,8 +282,12 @@ def record(slug, run_id, pid):
 # ------------------------------------------------------------------ facts interview pack (CM-042)
 def question(r):
     if r.get("via") in ("site", "gbp"):   # CM-057: the client's own site or GBP — one yes/no line
-        return (f"Your website says this about **{r['label']}**: {r['value']} ({r['source']}). Still true? yes / no — "
+        where = "website" if r["via"] == "site" else "Google profile"
+        return (f"Your {where} says this about **{r['label']}**: {r['value']} ({r['source']}). Still true? yes / no — "
                 "correction", "Verify")
+    if r.get("via") == "review_keyword":   # Paul 2026-10-09: a keyword match is a pre-filled yes/no, never Known
+        return (f"Customers mention this about **{r['label']}**: {r['value']} ({r.get('count')} review(s)). Can we say "
+                "that? yes / no — correction", "Verify")
     if r["mark"] == "Conflict":
         return (f"We found different versions of **{r['label']}**: \"{r['value']}\" ({r['source'] or 'no source'}). "
                 "Which is right?", "Verify")

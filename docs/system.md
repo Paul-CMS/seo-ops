@@ -5,7 +5,7 @@
 `config.json` — change only in a **system session**: Paul types `/system` (a hook issues a one-time system token for
 that session; the guard blocks every other session; a VA Mac, `machine.json can_change_system: false`, never gets
 one). A system session runs on **Opus**, in the main folder (`~/Documents/seo-ops`, branch `main`), and does no
-client work. Pull first.
+client work. `/system` begins with `changereq.py start`: it refuses on uncommitted changes and pulls first.
 
 ## The inbox
 In a client session nobody changes the workflow — they flag it: `python3 scripts/run.py flag <slug> <RUN_ID> --text
@@ -16,7 +16,7 @@ edit. Accepted items are built in that session → tests → commit (CR ID in th
 A ruling becomes a numbered entry in `methodology/rulings.md` (PROC-01), never a silent edit.
 
 ## Test first
-After **every** change: `python3 tests/run_all.py` (10–15 minutes; fake WordPress, fake DataforSEO, fake web, a
+After **every** change: `python3 tests/run_all.py` (the fast tier, under a minute). **Before every system commit:** `python3 tests/run_all.py --full` (every scenario incl. the end-to-end walkthroughs, 10–15 minutes — run it in the background; fake WordPress, fake DataforSEO, fake web, a
 throwaway copy of the repo — no network, no cost, no client data; run it in the background). **Never commit a change
 that fails it.** A new behaviour gets a new check (`tests/run_all.py` or `tests/checks/*.py`). One commit per item.
 

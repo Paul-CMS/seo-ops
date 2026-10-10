@@ -68,6 +68,14 @@ def summary(items, limit=6):
     return s + (f" (+{len(items) - limit} more)" if len(items) > limit else "")
 
 
+def instruction(text):
+    """The worklist instruction for a placeholder Jonie can resolve herself (Paul, 2026-10-09), else ''."""
+    m = re.match(r"^\[Map:.*?\bmap of (.+?)(?:\s+here\b|\s+—|,\s*not\b|\])", text, re.I)
+    if m:
+        return f"Jonie: embed a Google map of {m.group(1).strip()}"
+    return ""
+
+
 def notice_block(items):
     """The visible notice at the top of a WordPress draft that still has open placeholders."""
     import html

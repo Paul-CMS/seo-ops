@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """The seo-ops test suite. One command:
 
-    python3 tests/run_all.py            run everything (about a minute)
+    python3 tests/run_all.py            the FAST tier (under a minute) — what a VA runs to check a Mac
+    python3 tests/run_all.py --full     every scenario, incl. the end-to-end walkthroughs — before every system commit
+    python3 tests/run_all.py --timing   print the slowest scenarios
     python3 tests/run_all.py -k import  only scenarios whose name contains "import"
     python3 tests/run_all.py --keep     keep the sandbox folder for inspection
 
@@ -127,6 +129,7 @@ class Agent:
         self.plan = None          # a site plan to use instead of the default one
         self.ship_seen = []       # (batch, {earlier page: WordPress status}) at each ship run (CM-055)
         self.draft_extra = {}     # page id -> text appended to its draft (P11 placeholder tests)
+        self.plan_replaces = {}   # page id -> old URLs recorded in the site plan only (P7 redirect pairing test)
         self.c = SB / "clients" / slug
 
     def sh(self, cmd):
@@ -240,6 +243,9 @@ class Agent:
                             {"id": "s1", "kind": "service", "label": "Roofing", "pages": ["svc-roof-replacement", "svc-gutters"]},
                             {"id": "l1", "kind": "location", "label": "Greene County", "pages": ["hub-greene-county", "loc-nixa"]},
                             {"id": "h1", "kind": "homepage", "label": "Home + about", "pages": ["home", "about"]}]}
+            for pg in plan["pages"]:   # P7: old URLs known only from the site plan (not the page file's header)
+                if pg["id"] in self.plan_replaces:
+                    pg["replaces"] = self.plan_replaces[pg["id"]]
             pj = self.w("build/site-plan.json", json.dumps(plan)); pm = self.w("build/Test Co - Site Plan - REVIEW.md")
             self.sh(f"python3 scripts/status.py plan {S} --file {shlex.quote(pm)} --json {pj}"); self.fin(rid, "site plan")
         elif (name, sub) == ("/build", "evidence"):
@@ -2073,6 +2079,7 @@ def t_placeholders():
     def setup(ag):
         ag.sem_findings = {"pilot": 0}
         ag.draft_extra = {"svc-roof-repair": "\nPrices vary. [NEED: the price range the owner quotes]\n"}
+        ag.plan_replaces = {"loc-springfield": ["https://test.example/service-area/springfield/"]}
     log, decisions, runs, ag = walkthrough("ph-co", setup=setup, max_posts=0)
     st = status("ph-co")
     page = st["pages"]["svc-roof-repair"]
@@ -2089,6 +2096,11 @@ def t_placeholders():
     check("P11: the placeholder is a row for Jonie in the publish handoff, next to the page's publish row",
           any(r["field"] == "open item" and "price range" in r["old"] and r["decision_map_ref"] == "svc-roof-repair"
               for r in rows), [r["field"] for r in rows])
+    i_pub = next((i for i, r in enumerate(rows) if r["field"] == "publish" and r["decision_map_ref"] == "loc-springfield"), None)
+    check("P7: an old URL known only from the site plan still gets its 301, right under its page's publish row",
+          i_pub is not None and any(r["field"] == "301" and r["url"] == "https://test.example/service-area/springfield/"
+                                    and r["new"] == "https://test.example/loc-springfield/" for r in rows[i_pub + 1:i_pub + 4]),
+          [(r["field"], r["decision_map_ref"], r["url"]) for r in rows])
     rep = " ".join(f.read_text() for f in (SB / "clients/ph-co/handoffs").glob("verify-*.md"))
     check("P11: /verify fails a live page that still carries a placeholder", "placeholder text on the live page" in rep, rep[:600])
     b = next(x for x in st["build"]["batches"] if x["id"] == "pilot")
@@ -2316,19 +2328,12 @@ def t_research_before_asking():
     st = status(S)
     grid = (SB / st["pages"]["svc-roof-repair"]["evidence"]["grid"]).read_text()
     row = next((l for l in grid.splitlines() if l.startswith("| What the service includes")), "")
-    check("CM-057: a fact 3+ different reviewers report is Known (customer_reported), cited to a review (file, row, date)",
-          "**Known**" in row and "Google review 2026-08-15 (data/reviews/reviews.csv row 2)" in row
-          and "customer_reported: 3 different reviewers" in row and "customers describe it" in row, row)
-    check("research: process and timeframe found in the same review are Known too",
-          all("**Known**" in l for l in grid.splitlines() if l.startswith(("| How the service is delivered", "| Typical job duration"))), grid)
-    prow = next((l for l in grid.splitlines() if l.startswith("| Price range")), "")
-    check("research: a fact no source has is 'searched, not found', with the sources listed",
-          "**Unknown**" in prow and "searched, not found" in prow and "Sources searched before asking" in grid
-          and "data/reviews/reviews.csv" in grid and "Not on disk:" in grid, grid[-700:])
-    check("research: the review-backed page is not blocked (no question needed)", st["pages"]["svc-roof-repair"]["evidence"]["result"] != "block",
-          st["pages"]["svc-roof-repair"]["evidence"])
-    check("research: the page with facts nowhere on disk is blocked", st["pages"]["loc-springfield"]["evidence"]["result"] == "block",
-          st["pages"]["loc-springfield"]["evidence"])
+    check("Paul 2026-10-09: a keyword match in 3 reviews is NOT Known until the researcher checks it by meaning",
+          "**Unverified**" in row and "keyword match in 3 review(s), not yet checked by meaning" in row
+          and "Google review 2026-08-15 (data/reviews/reviews.csv row 2)" in row, row)
+    code, out = sh("cd scripts && python3 -c \"import evidence as E; print(E.question({'via': 'review_keyword', "
+                   "'label': 'What the service includes', 'value': 'q', 'count': 3, 'mark': 'Unverified', 'source': ''})[0])\"")
+    check("a keyword match becomes a pre-filled yes/no line for Paul", "Customers mention" in out and "yes / no" in out, out)
     code, out = sh("cd scripts && python3 -c \"import json, evidence as E, status as S; pg = S.load('rb-co')['pages']['svc-roof-repair']; "
                    "d = lambda r, w: {'kind': 'review', 'text': 'Our roof repair replaced the flashing.', 'label': 'review ' + r, 'reviewer': w}; "
                    "it = {'key': 'service_scope'}; "
@@ -2338,6 +2343,28 @@ def t_research_before_asking():
                    "print(json.dumps([E.mark(one), E.mark(same), E.mark(gbp)]))\"")
     check("CM-057: one review, or the same reviewer three times, is not enough; a GBP hit stays Unverified",
           code == 0 and json.loads(out.splitlines()[-1]) == ["Unverified", "Unverified", "Unverified"], out)
+    rid = ag.start("wp-check")   # the researcher reads the matches by meaning
+    sh(f"python3 scripts/reviews.py extract {S} --run {rid}")
+    for k in ("service_scope", "service_process", "timeframe"):
+        sh(f'python3 scripts/reviews.py checked {S} --run {rid} --key fact:{k} --count 3 --note "all three say it"')
+    sh(f"python3 scripts/evidence.py run {S} --run {rid} --page svc-roof-repair")
+    ag.fin(rid, "review facts checked by meaning")
+    st = status(S)
+    grid = (SB / st["pages"]["svc-roof-repair"]["evidence"]["grid"]).read_text()
+    row = next((l for l in grid.splitlines() if l.startswith("| What the service includes")), "")
+    check("CM-057: once checked by meaning, a fact 3+ different reviewers report is Known (customer_reported)",
+          "**Known**" in row and "customer_reported: 3 different reviewers, checked by meaning" in row
+          and "customers describe it" in row, row)
+    check("research: process and timeframe, checked the same way, are Known too",
+          all("**Known**" in l for l in grid.splitlines() if l.startswith(("| How the service is delivered", "| Typical job duration"))), grid)
+    prow = next((l for l in grid.splitlines() if l.startswith("| Price range")), "")
+    check("research: a fact no source has is 'searched, not found', with the sources listed",
+          "**Unknown**" in prow and "searched, not found" in prow and "Sources searched before asking" in grid
+          and "data/reviews/reviews.csv" in grid and "Not on disk:" in grid, grid[-700:])
+    check("research: the review-backed page is not blocked (no question needed)", st["pages"]["svc-roof-repair"]["evidence"]["result"] != "block",
+          st["pages"]["svc-roof-repair"]["evidence"])
+    check("research: the page with facts nowhere on disk is blocked", st["pages"]["loc-springfield"]["evidence"]["result"] == "block",
+          st["pages"]["loc-springfield"]["evidence"])
     ag.do(f"/interview {S} facts pilot")
     fi = status(S)["build"]["batches"][0]["facts_interview"]
     pack = (SB / fi["file"]).read_text()
@@ -2448,7 +2475,7 @@ def extra_scenarios():
     import importlib.util
     import types
     h = types.SimpleNamespace(SB=SB, sh=sh, check=check, status=status, Agent=Agent, paul=paul,
-                              new_session=new_session, nxt=nxt)
+                              new_session=new_session, nxt=nxt, walkthrough_full=t_walkthrough_full)
     out = []
     for f in sorted((REPO / "tests" / "checks").glob("*.py")):
         if f.name.startswith("_"):
@@ -2464,21 +2491,41 @@ def extra_scenarios():
     return out
 
 
+# Rewrite 2 (Paul, 2026-10-09): two tiers. The FAST tier (the default, under a minute) is what a VA runs to check a
+# Mac; the FULL tier (--full) runs every scenario, including the end-to-end walkthroughs, before every system commit.
+SLOW = {"t_walkthrough_full", "t_sem_paths", "t_publish_corrections", "t_walkthrough_blog_only", "t_modes",
+        "t_placeholders", "t_batch_of_five", "t_rewrite2_p9_worklist", "t_rewrite2_p2_parallel_clients",
+        "t_voiding", "t_briefs_after_pilot", "t_wordpress", "t_crawl_rewrite_max_pages_fallback", "t_multi_approve",
+        "t_handoffs", "t_client_view", "t_crawl_rewrite_summary_and_text"}   # walkthroughs and the slowest crawl; that runs (or re-runs) an end-to-end walkthrough
+
+
 def main():
+    import time as _time
     keep = "--keep" in sys.argv
+    full = "--full" in sys.argv
     only = sys.argv[sys.argv.index("-k") + 1] if "-k" in sys.argv else None
     make_sandbox()
     new_session()
+    took = []
+    t0 = _time.time()
     try:
         for t in SCENARIOS + extra_scenarios():
             if only and only not in t.__name__:
                 continue
+            if not only and not full and _slow(t):
+                continue
             print(f"\n{t.__name__[2:].replace('_', ' ')}")
+            t1 = _time.time()
             try:
                 t()
             except Exception as e:  # a crash is a failure, not a stop
                 check(f"{t.__name__} ran without crashing", False, repr(e))
+            took.append((_time.time() - t1, t.__name__))
     finally:
+        if "--timing" in sys.argv:
+            print("\nslowest scenarios: " + ", ".join(f"{n[2:]} {d:.0f}s" for d, n in sorted(took, reverse=True)[:15]))
+        print(f"\ntier: {'single scenario' if only else ('FULL' if full else 'FAST (python3 tests/run_all.py --full runs everything)')}"
+              f" · {_time.time() - t0:.0f}s")
         if keep:
             print(f"\nsandbox kept: {SB}")
         else:
@@ -2486,6 +2533,11 @@ def main():
     failed = [r for r in RESULTS if not r[1]]
     print(f"\n{len(RESULTS) - len(failed)} passed, {len(failed)} failed")
     sys.exit(1 if failed else 0)
+
+
+def _slow(t):
+    """A scenario in SLOW, or one that depends on the walkthrough's client (the worklist checks)."""
+    return t.__name__ in SLOW or any(t.__name__.startswith(x) for x in SLOW)
 
 
 if __name__ == "__main__":

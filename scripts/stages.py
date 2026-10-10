@@ -85,7 +85,6 @@ def step_of_command(command):
 
 SESSION_FILE = ROOT / ".claude" / "state" / "session.json"
 SESSIONS_DIR = ROOT / ".claude" / "state" / "sessions"
-LOCK_FRESH_S = 2 * 3600
 
 
 def latest_session(state_dir):
@@ -132,10 +131,10 @@ def lock_path(slug):
 
 
 def lock_holder(slug, sid):
-    """The lock record if another session holds this client and its lock is fresh, else None. Fresh = under two hours
-    old AND the holder is still the newest session in its own folder (a newer chat there has taken over)."""
+    """The lock record if ANOTHER session has an open run for this client, else None (Paul, 2026-10-09). The lock is
+    taken by run.py start and released by run.py finish / abort, so it holds exactly while a run is open — a new chat,
+    even in the same folder, may take the client only when no run is open. Only Paul clears a stuck lock (unlock)."""
     import json
-    import time
     p = lock_path(slug)
     try:
         rec = json.loads(p.read_text())
@@ -143,21 +142,31 @@ def lock_holder(slug, sid):
         return None
     if not rec.get("session") or rec.get("session") == sid:
         return None
-    if time.time() - float(rec.get("at") or 0) >= LOCK_FRESH_S:
-        return None
-    latest = latest_session(Path(rec.get("worktree") or ROOT) / ".claude" / "state")
-    if latest and latest != rec["session"]:
-        return None
     return rec
 
 
-def take_lock(slug, sid):
+def take_lock(slug, sid, run_id):
     import json
     import socket
     import time
     p = lock_path(slug)
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps({"session": sid, "host": socket.gethostname(), "worktree": str(ROOT), "at": time.time()}))
+    p.write_text(json.dumps({"session": sid, "run": run_id, "host": socket.gethostname(), "worktree": str(ROOT),
+                             "at": time.time()}))
+
+
+def release_lock(slug, run_id):
+    """run.py finish / abort: the lock goes with the run that took it."""
+    import json
+    p = lock_path(slug)
+    try:
+        rec = json.loads(p.read_text())
+    except Exception:
+        return False
+    if rec.get("run") == run_id:
+        p.unlink(missing_ok=True)
+        return True
+    return False
 
 
 def unlock(slug):

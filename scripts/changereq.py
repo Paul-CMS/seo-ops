@@ -7,6 +7,7 @@
     changereq.py decide <CR-###> accept|reject|edit --text T   (system session) Paul's answer in /system-review
     changereq.py done <CR-###> --sha SHA                 (system session) built, tested and committed
     changereq.py session                                 is this a system session? (exit 0 yes, 4 no)
+    changereq.py start                                   /system step 1: refuse unless main, clean; then git pull (ff-only)
 
 A client session never changes the workflow. It flags the issue instead (`run.py flag <slug> <RUN_ID> --text …`),
 which appends a row to clients/<slug>/flags.jsonl (append-only; the run continues on the current rules). Flags live
@@ -160,12 +161,36 @@ def main():
     s = sub.add_parser("list"); s.add_argument("--open", action="store_true")
     sub.add_parser("collect")
     sub.add_parser("session")
+    sub.add_parser("start")
     s = sub.add_parser("add"); s.add_argument("--title", required=True); s.add_argument("--text", required=True)
     s.add_argument("--by", default="Paul")
     s = sub.add_parser("decide"); s.add_argument("cr"); s.add_argument("answer", choices=["accept", "reject", "edit"])
     s.add_argument("--text", default="")
     s = sub.add_parser("done"); s.add_argument("cr"); s.add_argument("--sha", required=True)
     a = ap.parse_args()
+    if a.cmd == "start":   # /system step 1 (Paul, 2026-10-09): the main folder, clean, up to date
+        import subprocess
+        from lib import ROOT as _R, main_root
+
+        def git(*x):
+            return subprocess.run(["git", "-C", str(_R), *x], capture_output=True, text=True)
+        if not system_session():
+            die("REFUSED — not a system session: Paul types /system first (and the hooks must be installed).", 4)
+        if main_root().resolve() != _R.resolve():
+            die(f"REFUSED — a system session runs in the main folder ({main_root()}), never in a client worktree.", 4)
+        br = git("rev-parse", "--abbrev-ref", "HEAD").stdout.strip()
+        if br != "main":
+            die(f"REFUSED — the main folder is on branch {br}, not main.", 4)
+        dirty = [l for l in git("status", "--porcelain").stdout.splitlines() if l.strip()]
+        if dirty:
+            die("REFUSED — the main folder has uncommitted changes; commit or put them aside first:\n  "
+                + "\n  ".join(dirty[:20]), 4)
+        if git("remote", "get-url", "origin").returncode == 0:
+            r = git("pull", "--ff-only", "-q", "origin", "main")
+            if r.returncode != 0:
+                die("REFUSED — git pull did not fast-forward main; resolve it first: " + (r.stderr or r.stdout).strip(), 4)
+        print("system session ready: main folder, clean, up to date (" + git("rev-parse", "--short", "HEAD").stdout.strip() + ")")
+        return
     if a.cmd == "session":
         ok = system_session()
         print("system session: yes" if ok else "system session: no (Paul types /system to start one)")

@@ -641,6 +641,10 @@ company's; they appear only as a cited customer example. A hit on the client's o
 becomes a one-line yes/no question. Reviewer names stay out of deliverables, and self-serving rating claims stay
 out of schema (CM-027 unchanged).
 
+Clarified by Paul, 2026-10-09 (later the same day): a keyword match alone never counts toward Known. A review
+match counts only after the researcher has read it by meaning and recorded it (`reviews.py checked`); until then it is
+a pre-filled yes/no line for Paul.
+
 ## CM-058 · A hub may be a metro area, when the metro area is a real category
 **ID** CM-058 · **Status** APPROVED · **Date** 2026-10-09 · **Reason** Home Mobile Medical's hubs each span several counties but match an official metropolitan area; a county-only rule would split a real category. · **Source** Paul, REWRITE-2-DECISIONS.md (c), accepting L-008 (CR-001) · **Supersedes** — (settles the open Coastal default in methodology/specs/county-hub.md §1 for metro hubs)
 

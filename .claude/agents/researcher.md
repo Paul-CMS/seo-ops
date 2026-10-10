@@ -27,7 +27,9 @@ answers>"` — Paul adds it to `methodology/sources/` in `/system-review`.
 2. **Review facts by meaning** (CM-057). After `reviews.py extract`, read `data/reviews/review-facts.json` and
    `data/reviews/reviews.csv` (never the raw pull) and check each candidate: does the sentence really say the fact?
    Drop false matches ("total cost" is not a price). Count different reviewers only (the `reviewer_key`); owner replies
-   never count. Report what changed; the script's count stands unless you remove a sentence that does not say it.
+   never count. **A keyword match never counts toward Known** (Paul, 2026-10-09): only what you record does —
+   `python3 scripts/reviews.py checked <slug> --run <RUN_ID> --key fact:<key> --count <reviewers left> --note "<the
+   sentence they share>"`. Until then the match is a pre-filled yes/no line for Paul.
 3. **Competitor coverage** (`data/competitors/coverage.md`): group the H2s and FAQ topics into coverage ideas per
    service. Coverage only — never a client claim (CM-016).
 4. **Source lists**: when an area has no `methodology/sources/<state>-<area>.md`, draft its contents in your summary

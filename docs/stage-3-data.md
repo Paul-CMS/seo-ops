@@ -11,7 +11,8 @@ Session model: Haiku · agents: clerk, researcher (Sonnet), discovery-audit (Opu
 
 - Every paid script: whole-run estimate first; over $2 → ask Paul.
 - Reviews: `reviews.py run` (the pull is checked against Google's count), then `reviews.py extract` — a fact 3+
-  different reviewers report is `customer_reported` (CM-057). The researcher checks the matches by meaning.
+  different reviewers report is a `customer_reported` candidate (CM-057). A keyword match never counts: the
+  researcher reads each by meaning and records it (`reviews.py checked`); until then it is a yes/no line for Paul.
 - Competitor coverage (`crawl.py competitors`): the top 3 pages' H2s and FAQ topics per service — ideas only, never
   client claims (CM-016).
 - Data is saved once per client and reused (re-run if older than 60 days). Agents read the summaries, never raw exports.

@@ -90,6 +90,8 @@ def main():
     s = sub.add_parser("ingest"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s.add_argument("--handoff"); s.add_argument("--returned", required=True)
     s = sub.add_parser("list"); s.add_argument("slug"); s.add_argument("--open", action="store_true")
+    s = sub.add_parser("retarget"); s.add_argument("slug"); s.add_argument("--run", required=True)
+    s.add_argument("--ref", required=True); s.add_argument("--new", required=True); s.add_argument("--reason", required=True)
     a = ap.parse_args()
     d = hdir(a.slug)
 
@@ -192,6 +194,41 @@ def main():
             st.setdefault("blocker_handoffs", []).append(hid)
             S.save(a.slug, st)
         print(f"{hid}: {len(rows)} item(s) → clients/{a.slug}/handoffs/{hid}.md and .csv")
+
+    elif a.cmd == "retarget":   # a redirect's target changed (e.g. the URL it pointed at moved): no chains
+        hid = a.ref.rsplit("-", 1)[0]
+        f = d / f"{hid}.csv"
+        rows = read_csv(f) if f.exists() else die(f"no handoff group {hid}")
+        row = next((r for r in rows if r["ref"] == a.ref), None) or die(f"no row {a.ref}")
+        domain = re.sub(r"^https?://|/$", "", st["client"]["domain"])
+        new = full_url(a.new, domain, 1, "new target")
+        was = row["new"]
+        if row.get("status") in ("done", "verified"):   # already live: a new row changes it
+            tmp = d / "_retarget.csv"
+            with open(tmp, "w", newline="", encoding="utf-8") as fh:
+                w = csv.DictWriter(fh, fieldnames=["url", "field", "old", "new", "reason", "decision_map_ref"])
+                w.writeheader()
+                w.writerow({"url": row["url"], "field": "301", "old": was, "new": new,
+                            "reason": f"change the target of {a.ref} (done) from {was} to {new}: {a.reason}",
+                            "decision_map_ref": row.get("decision_map_ref") or a.ref})
+            sys.argv = ["handoff.py", "create", a.slug, "--run", a.run, "--kind", "redirect", "--items",
+                        str(tmp.relative_to(ROOT))]
+            main()
+            tmp.unlink()
+            print(f"{a.ref} was already done: a target-change row was added")
+        else:
+            row["new"] = new
+            row["note"] = (row.get("note") + " · " if row.get("note") else "") + f"target changed {today()}: was {was}"
+            write_csv(f, rows)
+            mdp = d / f"{hid}.md"
+            if mdp.exists() and "**Progress:**" in mdp.read_text():
+                text = mdp.read_text()
+                mdp.write_text(text[:text.index("**Progress:**")] + "\n".join(table(rows)) + "\n")
+            print(f"{a.ref}: target {was} → {new}")
+        R.log_change(a.slug, a.run, "redirect", row["url"], "301 target", was, new, f"RETARGETED · {a.reason}",
+                     ref=a.ref, channel="handoff")
+        import worklist
+        worklist.build(a.slug)
 
     elif a.cmd == "ingest":
         back_all = read_csv(a.returned)

@@ -120,6 +120,24 @@ def _run(cwd, cmd, env_extra=None):
     return r.returncode, (r.stdout + r.stderr).strip()
 
 
+def t_p3_system_start(h):
+    sid = _current_sid(h)
+    tok = h.SB / ".claude" / "state" / "system-token.json"
+    _system(h, sid)
+    try:
+        (h.SB / "scratch-change.txt").write_text("x")
+        code, out = h.sh("python3 scripts/changereq.py start")
+        h.check("/system refuses while the main folder has uncommitted changes", code == 4 and "uncommitted" in out, out)
+        _run(h.SB, "git add -A && git commit -qm 'test: clean the main folder'")
+        code, out = h.sh("python3 scripts/changereq.py start")
+        h.check("/system goes ahead once the main folder is clean (and pulls first when there is a remote)",
+                code == 0 and "system session ready" in out, out)
+    finally:
+        tok.unlink(missing_ok=True)
+    code, out = h.sh("python3 scripts/changereq.py start")
+    h.check("/system start is refused outside a system session", code == 4 and "not a system session" in out, out)
+
+
 def t_p2_parallel_clients(h):
     import shutil
     SB = h.SB
@@ -167,9 +185,18 @@ def t_p2_parallel_clients(h):
                 and all(f.startswith("clients/wa-co/") for f in files["wa-co"])
                 and all(f.startswith("clients/wb-co/") for f in files["wb-co"]), (oa, ob, log, files))
         h.check("P2: the run records its own chat's session id", f"session chat-a" in (wa / "clients/wa-co/log.md").read_text())
+        ra = _run(wa, "python3 scripts/run.py start wa-co new-client")[1].splitlines()[-1]   # chat-a has a run open
         code, out = _run(SB, "python3 scripts/run.py start wa-co new-client", {"CLAUDE_SEO_OPS_SESSION": "chat-x"})
-        h.check("P2: a second chat on the same client is refused while the first holds it",
-                code == 4 and "another chat is working on wa-co" in out and "unlock" in out, out)
+        code2, out2 = _run(wa, "python3 scripts/run.py start wa-co new-client", {"CLAUDE_SEO_OPS_SESSION": "chat-a2"})
+        h.check("P2: a second chat while a run is open is refused — in another folder and in the same folder",
+                code == 4 and "another chat is working on wa-co" in out and "unlock" in out
+                and code2 in (3, 4) and ("another chat is working on wa-co" in out2 or "unfinished run" in out2), (out, out2))
+        _run(wa, f'python3 scripts/run.py finish wa-co {ra} --summary "a again"')
+        code, out = _run(wa, "python3 scripts/run.py start wa-co new-client", {"CLAUDE_SEO_OPS_SESSION": "chat-a2"})
+        h.check("P2: a new chat after the run finished may take the client", code == 0, out)
+        if code == 0:
+            _run(wa, f'python3 scripts/run.py abort wa-co {out.splitlines()[-1]} --reason "test"',
+                 {"CLAUDE_SEO_OPS_SESSION": "chat-a2"})
         hook = SB / ".git" / "hooks" / "pre-push"
         hook.write_text("#!/bin/sh\nif [ -f race-marker ]; then rm -f race-marker; exit 1; fi\nexit 0\n")
         hook.chmod(0o755)
@@ -179,6 +206,7 @@ def t_p2_parallel_clients(h):
         code, out = _run(wa, f'python3 scripts/run.py finish wa-co {ra} --summary "again"')
         h.check("P2: a push that loses a race is retried once and then succeeds", "pushed (after one retry)" in out, out)
         hook.unlink()
+        ra = _run(wa, "python3 scripts/run.py start wa-co new-client")[1].splitlines()[-1]   # a stuck run holds the lock
         g, gout = _guard(h, "Bash", {"command": "python3 scripts/run.py unlock wa-co"}, "chat-a")
         h.check("P2: Claude cannot clear a client lock (the guard blocks run.py unlock)", g, gout)
         code, out = _run(SB, "python3 scripts/run.py unlock wa-co")
@@ -330,6 +358,8 @@ def t_p6_research_first(h):
 def t_p9_worklist(h):
     import csv as _csv
     # after the full walkthrough: one worklist, sections in order, publish rows with their 301s, Drive copy
+    if not (h.SB / "clients/wt-full").exists():
+        h.walkthrough_full()
     wl = h.SB / "clients/wt-full/handoffs/VA-WORKLIST.md"
     t = wl.read_text() if wl.exists() else ""
     h.check("P9: the full walkthrough leaves one VA Worklist with Blockers and Publish sections, in order",
@@ -352,6 +382,7 @@ def t_p9_worklist(h):
     st = h.status(S)
     for g in ("entity_approved", "proof_sheet_approved", "audit_approved", "brand_guide_approved"):
         st["gates"][g] = {"state": "approved", "files": {}}
+    st["imported_conditions"] = {"proof_sheet_returned": "test"}
     (ag.c / "status.json").write_text(json.dumps(st))
     rid = ag.start("wp-check")
     a1 = ag.w("a.csv", "url,field,old,new,reason,decision_map_ref\nhttps://wl.example/wp-admin/,user,,seo-ops,setup,\n")
@@ -374,6 +405,23 @@ def t_p9_worklist(h):
     t = (ag.c / "handoffs/VA-WORKLIST.md").read_text()
     h.check("P9: the returned worklist is ingested row by row into its groups, and the worklist shows the ticks",
             code == 0 and "| done" in t and "blocked — listing site down" in t and "invented" not in out, out + t[-500:])
+    a4 = ag.w("d.csv", "url,field,old,new,reason,decision_map_ref\nhttps://wl.example/old-a/,301,,https://wl.example/service-area/a/,dup,U-2\n"
+              "https://wl.example/old-b/,301,,https://wl.example/service-area/b/,dup,U-3\n")
+    code, out = h.sh(f"python3 scripts/handoff.py create {S} --run {rid} --kind redirect --items {a4}")
+    hid = out.split(":")[0].strip()
+    code, out = h.sh(f'python3 scripts/handoff.py retarget {S} --run {rid} --ref {hid}-01 --new https://wl.example/a/ '
+                     '--reason "the target moved to the root (no chains)"')
+    rows = list(_csv.DictReader(open(ag.c / f"handoffs/{hid}.csv", newline="")))
+    h.check("handoff retarget: an issued redirect row points at its new target (the old one kept in the note)",
+            code == 0 and rows[0]["new"] == "https://wl.example/a/" and "was https://wl.example/service-area/a/" in rows[0]["note"], out)
+    for r in rows:
+        r["status"] = "done"
+    with open(ag.c / f"handoffs/{hid}.csv", "w", newline="") as fh:
+        w = _csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
+    code, out = h.sh(f'python3 scripts/handoff.py retarget {S} --run {rid} --ref {hid}-02 --new https://wl.example/b/ '
+                     '--reason "the target moved to the root"')
+    h.check("handoff retarget: a redirect Jonie already did gets a target-change row instead",
+            code == 0 and "target-change row" in out, out)
     ag.fin(rid, "worklist")
     # ship-all refuses while any service or location batch is not approved
     st = h.status(S)
@@ -456,6 +504,14 @@ def t_p12_cost(h):
             n["kind"] != "decision" or "one sitting" in n.get("sitting", ""), n)
 
 
+def t_p11_map_instruction(h):
+    code, out = h.sh("cd scripts && python3 -c \"import placeholders as P; "
+                     "print(P.instruction('[Map: embed a city-level map of Bluffton, SC here — not the Google Business Profile map]')); "
+                     "print(repr(P.instruction('[NEED: the price range]')))\"")
+    h.check("P11: a [Map: …] placeholder becomes the worklist instruction 'Jonie: embed a Google map of <place>'",
+            out.splitlines()[:2] == ["Jonie: embed a Google map of Bluffton, SC", "''"], out)
+
+
 def t_p12_conformance(h):
     import csv as _csv
     S = "cf-co"
@@ -480,5 +536,5 @@ def t_p12_conformance(h):
     h.check("P12: the auto checks are listed beside the specs (the specs themselves are unchanged)", "SVC-05" in kinds["auto"])
 
 
-SCENARIOS = [t_p3_system_session, t_p3_flags_and_review, t_p2_parallel_clients, t_p7_url_rule, t_p5_reviews,
-             t_p6_research_first, t_p9_worklist, t_p12_cost, t_p12_conformance]
+SCENARIOS = [t_p3_system_session, t_p3_flags_and_review, t_p3_system_start, t_p2_parallel_clients, t_p7_url_rule, t_p5_reviews,
+             t_p6_research_first, t_p9_worklist, t_p12_cost, t_p11_map_instruction, t_p12_conformance]
