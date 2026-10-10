@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the site plan is ready for your approval
 - **Next action:** Paul types `/approve home-mobile-medical site_plan --files "clients/home-mobile-medical/build/Home Mobile Medical - Site Plan - REVISED.md"` (or asks for changes first)
 
-_Generated 2026-10-09T20:15 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-09T20:16 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
