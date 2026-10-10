@@ -1617,3 +1617,9 @@ Generated from the safety log (clients/apex-roofing-of-the-lowcountry/log.md) �
 **What I did**
 - rewrite 2 URL migration: worklist rows for the redirect / slug clearing
 
+## /drive-mirror · 2026-10-09 · run 20261009-222751-drive-mirror-dd35
+
+**What I did**
+- Added the worklist row "Jonie: embed a Google map of Bluffton, SC" (section 4, with the pilot publish).
+- Brand Guide D2 and D3 (R4): ShingleMaster resolved per Paul 2026-10-09; the Certifications status note tidied. This changes values in Section D, so brand_guide_approved needs Paul's re-approval.
+

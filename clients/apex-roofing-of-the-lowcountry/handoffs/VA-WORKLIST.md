@@ -1,10 +1,10 @@
 # Apex Roofing of the Lowcountry - VA Worklist
 
-**One living worklist for every VA item** · client Apex Roofing of the Lowcountry (apexroofingtlc.com) · updated 2026-10-09 · **Progress:** 0 of 57 row(s) done
+**One living worklist for every VA item** · client Apex Roofing of the Lowcountry (apexroofingtlc.com) · updated 2026-10-09 · **Progress:** 0 of 62 row(s) done
 
 Work from this document only. Tick `status` in the CSV (**done**, **blocked** or **deviated**, with a `note` on every blocked or deviated row) and send it back. Check each current value first (`old`): already done → mark `done`, note `already done`; something else → do not change it, mark `blocked` and say what you found. Do not add rows.
 
-> **Sections 3 Redirects, 4 Publish and 5 After publish come in one handover**, once every service and location page is a WordPress draft (13 row(s) waiting).
+> **Sections 3 Redirects, 4 Publish and 5 After publish come in one handover**, once every service and location page is a WordPress draft (9 row(s) waiting).
 
 ## 2 · Blockers
 
@@ -58,6 +58,18 @@ Technical blockers. Fix each one as written; check the current value first. Thes
 | H-2026-10-08-06-seo_title-07 | Jonie | 2026-10-08 | https://apexroofingtlc.com/terms-conditions/privacy-policy/ | SEOPress title | Privacy Policy | Apex Roofing of The Lowcountry | Privacy Policy - Apex Roofing of the Lowcountry | F-003 (brand written exactly as approved: lowercase 'the') + F-027 (site separator ' - ') | issued |
 | H-2026-10-08-07-other-01 | Jonie | 2026-10-08 | https://apexroofingtlc.com/ (sitewide footer 'About' text, every page) | footer text | APEX ROOFING of the Lowcountry is a residential roofing company ... APEX ROOFING’S commitment to excellence ... | Apex Roofing of the Lowcountry is a residential roofing company ... Apex Roofing of the Lowcountry’s commitment to excellence ... (change only the two brand-name forms; every other word stays) | F-003: brand written exactly as approved (Brand Guide A1) | issued |
 | H-2026-10-08-07-other-02 | Jonie | 2026-10-08 | https://apexroofingtlc.com/contact/ | heading level | <H3> CALL US TODAY! (directly under the H1, no H2) | same text as an H2 (heading level only; wording unchanged) | F-025: heading skips a level (H1 -> H3); contact has no page spec so this is a template edit | issued |
+
+## 4 · Publish
+
+Every page in this section is a WordPress **draft** made from its approved file. Publish **all of them together** (they link to each other): apply the Kadence layout and styling, add images, publish at exactly the URL in `new`, and add each `301` row listed under its page at the same time. Do NOT change wording, headings, title, meta, keyword or URL (an unavoidable change: mark `deviated` and say why). A page with an **open item** row, or an 'Open items on this page' notice, is not published until that row is resolved.
+
+| Ref | For | Added | URL | Field | Now | Change to | Why | Status |
+|---|---|---|---|---|---|---|---|---|
+| H-2026-10-09-09-publish-01 | Jonie | 2026-10-09 | https://apexroofingtlc.com/?page_id=1614 | publish | (draft) | https://apexroofingtlc.com/roof-repair/ | Replace the content of the live page at https://apexroofingtlc.com/roof-repair/ with this draft's blocks (keep that URL), then trash the draft | issued |
+| H-2026-10-09-09-publish-02 | Jonie | 2026-10-09 | https://apexroofingtlc.com/?page_id=1615 | publish | (draft) | https://apexroofingtlc.com/bluffton/ | Replace the content of the live page at https://apexroofingtlc.com/bluffton/ with this draft's blocks (keep that URL), then trash the draft | issued |
+| H-2026-10-09-10-publish-01 | Jonie | 2026-10-09 | https://apexroofingtlc.com/?page_id=1620 | publish | (draft) | https://apexroofingtlc.com/roof-repair/ | Replace the content of the live page at https://apexroofingtlc.com/roof-repair/ with this draft's blocks (keep that URL), then trash the draft | issued |
+| H-2026-10-09-10-publish-02 | Jonie | 2026-10-09 | https://apexroofingtlc.com/?page_id=1621 | publish | (draft) | https://apexroofingtlc.com/bluffton/ | Replace the content of the live page at https://apexroofingtlc.com/bluffton/ with this draft's blocks (keep that URL), then trash the draft | issued |
+| H-2026-10-09-12-publish-01 | Jonie | 2026-10-09 | https://apexroofingtlc.com/bluffton/ | open item | [Map: embed a city-level map of Bluffton SC here — not the Google Business Profile map] | Jonie: embed a Google map of Bluffton, SC | approved file LD - Bluffton line 68 (WordPress draft 1621): a city-level map of Bluffton, not the Google Business Profile map; do it when you publish the page | issued |
 
 ## 6 · Manual lookups
 

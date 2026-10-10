@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-09T18:08:47-05:00",
+  "updated": "2026-10-09T22:28:15-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -219,7 +219,7 @@
       "label": "Certifications, authorizations, factory training",
       "value": "\"we are certified factory installers of both CertainTeed and GAF. This is important as many homeowners do have a preference.\" No programme tier named for either. CertainTeed ShingleMaster (W3): current (Paul 2026-10-09)",
       "status": "client_confirmed",
-      "status_text": "Client Confirmed 2026-10-07 (factory installers, both brands) · ShingleMaster: Paul Approved 2026-10-09 (\"current — yes\"; Paul's answer, not a client confirmation — the value cell and D2/D3 R4 still say not confirmed and change at the next Brand Guide revision, which re-opens brand_guide_approved) · GAF tier Unknown `[NEED: GAF programme name, if one will be claimed]`",
+      "status_text": "Client Confirmed 2026-10-07 (factory installers, both brands) · ShingleMaster: Paul Approved 2026-10-09 (\"current — yes\"; Paul's answer, not a client confirmation) · GAF tier Unknown `[NEED: GAF programme name, if one will be claimed]`",
       "source": "Returned sheet, Message 2; W3",
       "quote": "",
       "date": "2026-10-07",
