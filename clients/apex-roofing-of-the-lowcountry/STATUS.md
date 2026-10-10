@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the site plan is ready for your approval; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
 - **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry site_plan --files "clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Site Plan - REVIEW.md"` (or asks for changes first)
 
-_Generated 2026-10-09T20:15 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-09T20:16 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
