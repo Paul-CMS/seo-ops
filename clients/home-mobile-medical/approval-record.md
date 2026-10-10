@@ -82,7 +82,6 @@ Generated from the seo-ops system (clients/home-mobile-medical/status.json). Do 
 | Hollywood, SC | location | pending |  |  |  |  |
 | Kiawah Island, SC | location | pending |  |  |  |  |
 | Folly Island, SC | location | pending |  |  |  |  |
-| South Carolina Lowcountry service-area hub | county | pending |  |  |  |  |
 | Walterboro, SC | location | pending |  |  |  |  |
 | Edisto Island, SC | location | pending |  |  |  |  |
 | Homepage | homepage | pending |  |  |  |  |

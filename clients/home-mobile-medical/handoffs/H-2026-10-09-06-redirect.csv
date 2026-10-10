@@ -1,0 +1,2 @@
+ref,url,field,old,new,reason,decision_map_ref,status,note
+H-2026-10-09-06-redirect-01,https://homemobilemedical.com/service-area/,301,https://homemobilemedical.com/service-area/,https://homemobilemedical.com/,rewrite 2: hub-lowcountry dropped (Paul 2026-10-09),hub-lowcountry,issued,

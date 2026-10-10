@@ -512,3 +512,64 @@ Approved version: clients/home-mobile-medical/build/Home Mobile Medical - Site P
 
 ## MIGRATION · 2026-10-09T18:08:49-05:00 · rewrite 2 P4: facts.json
 39 facts from Brand Guide A and D · 0 approval stamp(s) re-stamped on the value-only hash · 0 lost
+
+## MIGRATION · 2026-10-09T20:15:33-05:00 · rewrite 2 P7 + P10: URLs and batches
+Paul 2026-10-09 (REWRITE-2-DECISIONS.md c): /services/<x>/ → /<x>/, /service-area/<city>/ → /<city>/, metro hubs (CM-058: Charleston Q5084207, Hilton Head Island–Bluffton–Port Royal Q17020871), /service-area/ → 301 to the homepage
+svc-stair-lifts: https://homemobilemedical.com/services/stair-lifts/ → https://homemobilemedical.com/stair-lifts/ (301 paired with the publish)
+svc-curved-stair-lifts: https://homemobilemedical.com/services/curved-stair-lifts/ → https://homemobilemedical.com/curved-stair-lifts/ (301 paired with the publish)
+svc-porch-lifts: https://homemobilemedical.com/services/porch-lifts/ → https://homemobilemedical.com/porch-lifts/ (301 paired with the publish)
+svc-wheelchair-lifts: https://homemobilemedical.com/services/wheelchair-lifts/ → https://homemobilemedical.com/wheelchair-lifts/ (301 paired with the publish)
+svc-repair-maintenance: https://homemobilemedical.com/services/stair-lift-repair/ (planned, never live) → https://homemobilemedical.com/stair-lift-repair/
+hub-hhi-beaufort: https://homemobilemedical.com/service-area/hhi-beaufort/ → https://homemobilemedical.com/hilton-head-bluffton-metro/ (301 paired with the publish)
+loc-beaufort-sc: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/ (301 paired with the publish)
+loc-bluffton-sc: https://homemobilemedical.com/service-area/bluffton-sc/ → https://homemobilemedical.com/bluffton-sc/ (301 paired with the publish)
+loc-hilton-head-island-sc: https://homemobilemedical.com/service-area/hilton-head-island-sc/ → https://homemobilemedical.com/hilton-head-island-sc/ (301 paired with the publish)
+loc-port-royal-sc: https://homemobilemedical.com/service-area/port-royal-sc/ → https://homemobilemedical.com/port-royal-sc/ (301 paired with the publish)
+loc-ladys-island-sc: https://homemobilemedical.com/service-area/ladys-island-sc/ → https://homemobilemedical.com/ladys-island-sc/ (301 paired with the publish)
+loc-laurel-bay-sc: https://homemobilemedical.com/service-area/laurel-bay-sc/ → https://homemobilemedical.com/laurel-bay-sc/ (301 paired with the publish)
+loc-daufuskie-island-sc: https://homemobilemedical.com/service-area/daufuskie-island-sc/ → https://homemobilemedical.com/daufuskie-island-sc/ (301 paired with the publish)
+loc-okatie-sc: https://homemobilemedical.com/service-area/okatie-sc/ → https://homemobilemedical.com/okatie-sc/ (301 paired with the publish)
+loc-hardeeville-sc: https://homemobilemedical.com/service-area/hardeeville-sc/ → https://homemobilemedical.com/hardeeville-sc/ (301 paired with the publish)
+loc-ridgeland-sc: https://homemobilemedical.com/service-area/ridgeland-sc/ → https://homemobilemedical.com/ridgeland-sc/ (301 paired with the publish)
+loc-levy-sc: https://homemobilemedical.com/service-area/levy-sc/ → https://homemobilemedical.com/levy-sc/ (301 paired with the publish)
+loc-yemassee-sc: https://homemobilemedical.com/service-area/yemassee-sc/ → https://homemobilemedical.com/yemassee-sc/ (301 paired with the publish)
+hub-charleston: https://homemobilemedical.com/service-area/charleston/ → https://homemobilemedical.com/charleston-metro/ (301 paired with the publish)
+loc-charleston-sc: https://homemobilemedical.com/service-area/charleston-sc/ → https://homemobilemedical.com/charleston-sc/ (301 paired with the publish)
+loc-north-charleston-sc: https://homemobilemedical.com/service-area/north-charleston-sc/ → https://homemobilemedical.com/north-charleston-sc/ (301 paired with the publish)
+loc-mount-pleasant-sc: https://homemobilemedical.com/service-area/mount-pleasant-sc/ → https://homemobilemedical.com/mount-pleasant-sc/ (301 paired with the publish)
+loc-summerville-sc: https://homemobilemedical.com/service-area/summerville-sc/ → https://homemobilemedical.com/summerville-sc/ (301 paired with the publish)
+loc-goose-creek-sc: https://homemobilemedical.com/service-area/goose-creek-sc/ → https://homemobilemedical.com/goose-creek-sc/ (301 paired with the publish)
+loc-hanahan-sc: https://homemobilemedical.com/service-area/hanahan-sc/ → https://homemobilemedical.com/hanahan-sc/ (301 paired with the publish)
+loc-moncks-corner-sc: https://homemobilemedical.com/service-area/moncks-corner-sc/ → https://homemobilemedical.com/moncks-corner-sc/ (301 paired with the publish)
+loc-hollywood-sc: https://homemobilemedical.com/service-area/hollywood-sc/ → https://homemobilemedical.com/hollywood-sc/ (301 paired with the publish)
+loc-kiawah-island-sc: https://homemobilemedical.com/service-area/kiawah-island-sc/ → https://homemobilemedical.com/kiawah-island-sc/ (301 paired with the publish)
+loc-folly-island-sc: https://homemobilemedical.com/service-area/folly-island-sc/ → https://homemobilemedical.com/folly-island-sc/ (301 paired with the publish)
+loc-walterboro-sc: https://homemobilemedical.com/service-area/walterboro-sc/ → https://homemobilemedical.com/walterboro-sc/ (301 paired with the publish)
+loc-edisto-island-sc: https://homemobilemedical.com/service-area/edisto-island-sc/ → https://homemobilemedical.com/edisto-island-sc/ (301 paired with the publish)
+hub-lowcountry: https://homemobilemedical.com/service-area/ dropped from the plan → 301 to https://homemobilemedical.com/
+batches: final1, final2, loc1, loc2, loc3, loc4, loc5, loc6, loc7, svc1 → services, loc-hhi, loc-charleston, final
+The site plan file changed: Paul re-approves it once.
+
+## RUN 20261009-201533-drive-mirror-0325 · STARTED · /drive-mirror · 2026-10-09T20:15:33-05:00
+Step: drive-mirror · session 55ffb3c8-069b-4af6-a4b4-8790ec003647
+Gates checked: client_setup
+Note: rewrite 2 URL migration: worklist rows
+- CHANGE #125 [redirect] https://homemobilemedical.com/service-area/ | 301 | old: [REDACTED]service-area/ | new: [REDACTED] | result: HANDOFF ISSUED to Jonie | ref H-2026-10-09-06-redirect-01
+- REOPENED redirect-targets-default · 2026-10-09T20:15:33-05:00 · run 20261009-201533-drive-mirror-0325 · rewrite 2 (Paul 2026-10-09, REWRITE-2-DECISIONS.md c): /services/ and /service-area/ are gone
+- SETTLED redirect-targets-default · 2026-10-09T20:15:33-05:00 · run 20261009-201533-drive-mirror-0325 · by Paul (REWRITE-2-DECISIONS.md c) · Paul 2026-10-09 (Q2, revised in rewrite 2): redirect the 36 to the appropriate URLs — FL/MI → /stair-lifts/, power chairs/scooter lifts → the homepage (was /services/), ramps → /porch-lifts/; SC legacy duplicates → their canonical root service/location page. No redirect points at /services/ or /service-area/, so there are no chains.
+### HANDOFF · /drive-mirror · 2026-10-09 · run 20261009-201533-drive-mirror-0325
+**What I did**
+- rewrite 2 URL migration: worklist rows for the redirect / slug clearing
+### END HANDOFF
+## RUN 20261009-201533-drive-mirror-0325 · FINISHED · 2026-10-09T20:15:34-05:00
+Changes: 1 · Summary: rewrite 2 URL migration (worklist rows)
+- CHANGE #126 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-09 (2).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-09 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #127 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-09 (2).md | new: Home Mobile Medical - Handoff Log.md · sha f56d0bed687a | result: done · copied (Drive for desktop syncs it)
+- CHANGE #128 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Approval Record - 2026-10-09 (2).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Approval Record.md | new: _Archive/Home Mobile Medical - Approval Record - 2026-10-09 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #129 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Approval Record.md | upload | old: previous version archived as Home Mobile Medical - Approval Record - 2026-10-09 (2).md | new: Home Mobile Medical - Approval Record.md · sha eb0523819740 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #130 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-09 (5).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-09 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #131 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-09 (5).md | new: Home Mobile Medical - Document Checklist.md · sha 33b1b986ff5d | result: done · copied (Drive for desktop syncs it)
+- CHANGE #132 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-09 (5).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-09 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #133 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-09 (5).md | new: Home Mobile Medical - Status.md · sha 304269f7429e | result: done · copied (Drive for desktop syncs it)
+- CHANGE #134 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.md | upload | old: (new file) | new: Home Mobile Medical - VA Worklist.md · sha 2723646d3a18 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #135 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.csv | upload | old: (new file) | new: Home Mobile Medical - VA Worklist.csv · sha 0805bef3f8ef | result: done · copied (Drive for desktop syncs it)

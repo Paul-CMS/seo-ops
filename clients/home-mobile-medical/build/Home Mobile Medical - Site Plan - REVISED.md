@@ -1,5 +1,7 @@
 # Home Mobile Medical - Site Plan - REVISED (pilot first)
 
+> **Rewrite 2 changes (2026-10-09), for Paul's re-approval:** Paul 2026-10-09 (REWRITE-2-DECISIONS.md c): /services/<x>/ → /<x>/, /service-area/<city>/ → /<city>/, metro hubs (CM-058: Charleston Q5084207, Hilton Head Island–Bluffton–Port Royal Q17020871), /service-area/ → 301 to the homepage. Batches: one per kind (P10), split only above 15 pages: services (4); loc-hhi (12); loc-charleston (13); final (2).
+
 Revision of the imported site plan (2026-10-07). Change: a **pilot** batch is added as the first batch — 1 service page (Stair Lifts) and 1 location page (Beaufort, SC), taken out of svc1 and loc1. Every other page stays in its batch. Pilot corrections are applied before any other batch (SOP step 10).
 
 | Page | Type | Batch |

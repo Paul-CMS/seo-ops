@@ -1,6 +1,6 @@
 # Home Mobile Medical - Document Checklist
 
-Generated 2026-10-09T18:08 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-09T20:15 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -34,8 +34,8 @@ Generated 2026-10-09T18:08 from status.json — do not edit. `[x]` done · `[-]`
 - [x] Client set up (/new-client finished)
 - [x] The client's facts are in — the returned proof sheet is recorded, or Paul approved the client's direct answers
 - [x] Every registered audit step has an outcome (Done / Skipped / Failed)
-- [ ] Every page in the site plan is a WordPress draft — ready for the one living publish handoff (CM-055) — batches not yet in WordPress as drafts: pilot, svc1, loc1, loc2, loc3, loc4, loc5, loc6, loc7, final1, final2
-- [ ] Every page in the site plan is built, verified and written back — batches not yet built and written back: pilot, svc1, loc1, loc2, loc3, loc4, loc5, loc6, loc7, final1, final2
+- [ ] Every page in the site plan is a WordPress draft — ready for the one living publish handoff (CM-055) — batches not yet in WordPress as drafts: pilot, services, loc-hhi, loc-charleston
+- [ ] Every page in the site plan is built, verified and written back — batches not yet built and written back: pilot, services, loc-hhi, loc-charleston, final
 - [x] WordPress connected (/wp-check passed in the last 30 days)
 - [x] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded)
 - [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — blockers not cleared: H-2026-10-09-03-redirect-01 is issued; H-2026-10-09-03-redirect-02 is issued; H-2026-10-09-03-redirect-03 is issued; H-2026-10-09-04-broken_link-01 is issued; H-2026-10-09-04-broken_link-02 is issued (+9 more)

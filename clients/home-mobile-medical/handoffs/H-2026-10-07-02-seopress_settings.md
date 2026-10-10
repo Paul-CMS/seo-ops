@@ -1,5 +1,7 @@
 # SEOPress Site-Wide Settings Check (one-time) - H-2026-10-07-02-seopress_settings
 
+> **Superseded by the VA Worklist** (`VA-WORKLIST.md`, rewrite 2 P9) — work from the worklist; this file is kept as the record.
+
 **For:** Jonie · **Prepared:** 2026-10-07 · **Client:** Home Mobile Medical (homemobilemedical.com)
 
 ## What to do

@@ -272,3 +272,8 @@ Generated from the safety log (clients/home-mobile-medical/log.md) — do not ed
 - The site plan is already approved (imported), so `/build plan` is not needed. The next Build work is the evidence gate for the first batch.
 - The 36 decided 301s are NOT in the blocker handoff. Issue them in `/implement structural` with their F-035 sitemap removals. Pair /hilton-head/stair-lift-repair/ with the svc1 publish.
 
+## /drive-mirror · 2026-10-09 · run 20261009-201533-drive-mirror-0325
+
+**What I did**
+- rewrite 2 URL migration: worklist rows for the redirect / slug clearing
+
