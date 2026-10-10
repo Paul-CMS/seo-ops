@@ -142,6 +142,8 @@ def lock_holder(slug, sid):
         return None
     if not rec.get("session") or rec.get("session") == sid:
         return None
+    if not rec.get("run"):   # a lock in the first (time-based) format names no run: it can never be released — ignore it
+        return None
     return rec
 
 

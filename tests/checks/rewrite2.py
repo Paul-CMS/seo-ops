@@ -192,6 +192,12 @@ def t_p2_parallel_clients(h):
                 code == 4 and "another chat is working on wa-co" in out and "unlock" in out
                 and code2 in (3, 4) and ("another chat is working on wa-co" in out2 or "unfinished run" in out2), (out, out2))
         _run(wa, f'python3 scripts/run.py finish wa-co {ra} --summary "a again"')
+        lp = SB / ".git" / "seo-ops-locks" / "wa-co.json"
+        lp.write_text(json.dumps({"session": "old-chat", "host": "x", "at": 0}))   # the first, time-based format
+        code, out = _run(SB, "python3 scripts/run.py start wa-co new-client", {"CLAUDE_SEO_OPS_SESSION": "chat-y"})
+        h.check("P2: a lock in the old format (no run named) never blocks", code == 0, out)
+        if code == 0:
+            _run(SB, f'python3 scripts/run.py abort wa-co {out.splitlines()[-1]} --reason "test"', {"CLAUDE_SEO_OPS_SESSION": "chat-y"})
         code, out = _run(wa, "python3 scripts/run.py start wa-co new-client", {"CLAUDE_SEO_OPS_SESSION": "chat-a2"})
         h.check("P2: a new chat after the run finished may take the client", code == 0, out)
         if code == 0:
@@ -395,6 +401,15 @@ def t_p9_worklist(h):
     h.check("P9: before the handover the worklist carries Setup and Manual lookups; Redirects/Publish wait for it",
             "## 1 · Setup" in t and "## 6 · Manual lookups" in t and "## 4 · Publish" not in t
             and "come in one handover" in t and "1 row(s) waiting" in t, t)
+    stb = h.status(S)   # a page already with Jonie (old per-batch flow): its publish rows show before the handover
+    stb["build"] = {"batches": [{"id": "pilot", "kind": "service", "pages": ["svc-x"], "state": "handed_off"}],
+                    "site_plan": {"file": "x"}}
+    (ag.c / "status.json").write_text(json.dumps(stb))
+    h.sh(f"python3 scripts/records.py render {S}")
+    t2 = (ag.c / "handoffs/VA-WORKLIST.md").read_text()
+    h.check("P9: rows for a page already handed to Jonie show in the worklist before the one handover", "## 4 · Publish" in t2, t2)
+    stb.pop("build"); (ag.c / "status.json").write_text(json.dumps(stb))
+    h.sh(f"python3 scripts/records.py render {S}")
     ret = list(_csv.DictReader(open(ag.c / "handoffs/VA-WORKLIST.csv", newline="")))
     for r in ret:
         r["status"], r["note"] = ("done", "") if r["section"].startswith("1") else ("blocked", "listing site down")

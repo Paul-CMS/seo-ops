@@ -93,7 +93,12 @@ def build(slug):
     if not allr and not (d / "VA-WORKLIST.csv").exists():
         return None
     over = handed_over(st)
-    shown = [r for r in allr if over or r["section"] in (1, 2, 6)]
+    # pages already with Jonie (a batch handed off before the one-handover rule, e.g. a pilot): their rows always show
+    sent = {b.get("handoff") for b in S.batches(st) if b.get("handoff")}
+    sent_pages = {p for b in S.batches(st) if b.get("state") in ("handed_off", "corrections_requested", "published",
+                                                                  "verified", "written_back") for p in b["pages"]}
+    shown = [r for r in allr if over or r["section"] in (1, 2, 6) or r["_hid"] in sent
+             or r.get("decision_map_ref") in sent_pages]
     held = len(allr) - len(shown)
     shown.sort(key=lambda r: (r["section"], r["added"], r["ref"]))
     with open(d / "VA-WORKLIST.csv", "w", newline="", encoding="utf-8") as fh:
