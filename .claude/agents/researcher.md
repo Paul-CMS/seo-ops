@@ -23,7 +23,9 @@ answers>"` — Paul adds it to `methodology/sources/` in `/system-review`.
    manufacturer, the code body). For each fact record the value with its source URL and the date you read it, in the
    page's facts file (`build/evidence/<page>.facts.json`: value, status `Internally Verified`, source) — or "not
    found" with every source you tried. A not-found item goes to Paul as a decision only: drop the element, or keep
-   it general. Never ask the client a public fact.
+   it general. Never ask the client a public fact. A source-list row marked **Local context only** (e.g. a chamber of
+   commerce) is cited only for things to do, landmarks and area character — never for a permit, code or any
+   regulatory fact; those come only from official government sources.
 2. **Review facts by meaning** (CM-057). After `reviews.py extract`, read `data/reviews/review-facts.json` and
    `data/reviews/reviews.csv` (never the raw pull) and check each candidate: does the sentence really say the fact?
    Drop false matches ("total cost" is not a price). Count different reviewers only (the `reviewer_key`); owner replies

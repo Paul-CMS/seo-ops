@@ -108,4 +108,20 @@ def t_sync_main(h):
     shutil.rmtree(tmp)
 
 
-SCENARIOS = [t_where_rename, t_sync_main]
+def t_lowcountry_sources(h):
+    src = (REPO / "methodology" / "sources" / "sc-lowcountry.md").read_text()
+    urls = ["hiltonheadislandsc.gov/building/permits/", "cityofbeaufort.org/154/Building-Codes",
+            "portroyal.org/161/Building-Official", "jaspercountysc.gov/services/planning-and-building",
+            "hardeevillesc.gov/2650/Building-Permits", "ridgelandsc.gov/planning-and-community-development/home"]
+    h.check("CR-006–CR-011: the six official government sources are in the Lowcountry list", all(u in src for u in urls),
+            [u for u in urls if u not in src])
+    row = next((l for l in src.splitlines() if "jaspersc.org" in l), "")
+    h.check("CR-012: the chamber page is labelled local context only, never for permits, codes or regulatory facts",
+            "Local context only" in row and "Never for permits, codes or any regulatory fact" in row
+            and "not a government body" in row, row)
+    res = (REPO / ".claude" / "agents" / "researcher.md").read_text()
+    h.check("CR-012: the researcher never cites a local-context-only row for a regulatory fact",
+            "Local context only" in res and "never for a permit, code or any" in res)
+
+
+SCENARIOS = [t_where_rename, t_sync_main, t_lowcountry_sources]

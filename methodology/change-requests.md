@@ -188,3 +188,36 @@ Workaround used: none in a client session; the approval is not recorded until a 
 - CR-002 · 2026-10-12 · ACCEPTED · Paul · edited: Paul 2026-10-12: the BB-313 §3 lock lifts only when the live H1 fails HP-06 AND the homepage is not in the top 10 for its main keyword AND has few Search Console clicks for it over 90 days ('few' is a config value; the proposal shows the numbers). Always Paul's decision, never automatic. The old H1 is logged for rollback; a 30-day ranking and clicks check goes on the worklist. Then apply to home-mobile-medical Q4 with its numbers.
 
 - CR-002 · 2026-10-12 · DONE · system session · commit 7c50c9d
+
+- CR-006 · 2026-10-12 · ACCEPTED · Paul · Paul 2026-10-12: official government source — add to methodology/sources/sc-lowcountry.md
+
+- CR-007 · 2026-10-12 · ACCEPTED · Paul · Paul 2026-10-12: official government source — add to methodology/sources/sc-lowcountry.md
+
+- CR-008 · 2026-10-12 · ACCEPTED · Paul · Paul 2026-10-12: official government source — add to methodology/sources/sc-lowcountry.md
+
+- CR-009 · 2026-10-12 · ACCEPTED · Paul · Paul 2026-10-12: official government source — add to methodology/sources/sc-lowcountry.md
+
+- CR-010 · 2026-10-12 · ACCEPTED · Paul · Paul 2026-10-12: official government source — add to methodology/sources/sc-lowcountry.md
+
+- CR-011 · 2026-10-12 · ACCEPTED · Paul · Paul 2026-10-12: official government source — add to methodology/sources/sc-lowcountry.md
+
+- CR-012 · 2026-10-12 · ACCEPTED · Paul · edited: Paul 2026-10-12: local-context source only (things to do, landmarks, area character for location pages); never for permits, codes or any regulatory fact; labelled that way in the source list
+
+- CR-019 · 2026-10-12 · ACCEPTED · Paul · edited: Paul 2026-10-12: merged with CR-021. writing-commercial.md E10 shows readability.py --exclude-terms as inline terms, but the script opens it as a file path (FileNotFoundError / File name too long). Build: --exclude-terms takes a file path or a comma-separated list (an existing file is read; otherwise split on commas); E10 shows both; a test for each. Covers CR-020 point 2.
+
+- CR-021 · 2026-10-12 · REJECTED · Paul · Paul 2026-10-12: merged into CR-019 (same issue)
+
+## CR-023 · 2026-10-12 · Spec approvals per spec file; a changed spec applies to new work only
+Raised in a system session by Paul.
+What happens now: /approve global specs approves every page spec at once (config.json specs_approval records each file's sha). Any edit to any spec makes page_specs_approved unmet for every client until Paul approves again, so a wording change (e.g. homepage.md element 3 for CM-059) would block clients mid-stage.
+What is proposed: approvals are per spec file. A changed spec applies to new work only; a client mid-stage keeps the version it started with (recorded per client, by sha) until Paul moves it over. Paul approves a changed spec on its own, not all specs.
+Raised while building CR-002 (homepage.md left unchanged). Left OPEN for a later session.
+
+---
+
+## CR-024 · 2026-10-12 · A 90-day Search Console queries export for the homepage is a standard intake document
+Raised in a system session by Paul.
+What happens now: no client has a Search Console export in inputs/, so CM-059 condition (c) — few clicks for the homepage's main keyword over 90 days — cannot be checked (Home Mobile Medical Q4: CANNOT TELL YET).
+What is proposed: at intake, every client's document checklist includes a Search Console Performance → Queries export, filtered to the homepage, last 90 days (named '<Client> - GSC - queries-homepage-90d - <date>.csv', read by scripts/h1lock.py --gsc).
+
+---
