@@ -3187,3 +3187,52 @@ Changes: 0 · Summary: Roof Replacement draft written (services batch): whole-ho
 - CHANGE #520 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (9).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 378dd6462e67 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #521 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (9).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (9).md | result: done · renamed and moved, nothing deleted
 - CHANGE #522 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (9).md | new: Apex Roofing of the Lowcountry - Status.md · sha fb8f7adf5a03 | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-12T07:41 · after build:draft (run 20261012-073726-build-ecf5) · Paul typed /next
+
+## RUN 20261012-074135-build-56f3 · STARTED · /build · 2026-10-12T07:41:35-05:00
+Step: build:draft · batch services · session a1a7f5f8-03bf-44ec-ad8e-1ebe990b1d87
+Gates checked: discovery_signed_off, batch:services:briefs, page_specs_approved
+- DRAFT 2026-10-12T07:44 · run 20261012-074135-build-56f3 · svc-roof-installation · clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Installation - Apex Roofing of the Lowcountry.md
+- FLAG 2026-10-12T07:44 · run 20261012-074135-build-56f3 · F-014 · writing-commercial.md E10 shows readability.py --exclude-terms <entity terms + named sources> as a list, but scripts/readability.py reads --exclude-terms as a file path (FileNotFoundError on a comma list). · workaround: Wrote the terms one per line to a scratchpad file and passed its path.
+### HANDOFF · /build · 2026-10-12 · run 20261012-074135-build-56f3
+**Agent:** Build (Agent 2) · 2026-10-12 · Route A
+
+### Done
+- Drafted `clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Installation - Apex Roofing of the Lowcountry.md` from the approved brief (SB - Roof Installation, approved 2026-10-12) and `methodology/specs/service.md`. ~900 words incl. headings; 730 counted by readability.py.
+- Recorded: `status.py page-stage … svc-roof-installation --stage draft` (ok).
+- Public-fact research (P6): drip edge in SC = S.C. Code Regs. 8-1228 (SC modification of IRC R905.2.8.5): "A drip edge shall be provided at eaves and rake edges of asphalt shingle roofs where required by the manufacturer." Effective history to 2022-05-27. Source: https://www.law.cornell.edu/regulations/south-carolina/R-8-1228. Clears brief flag F1; FAQ 1 now states the rule with the source named (no link — outbound authority link candidate for Finish, CM-011). Not entered in facts.json (public fact; researcher/fact-recording left to the facts round).
+- Flag F-014 raised: readability.py `--exclude-terms` takes a file path, writing-commercial.md E10 implies a list. Workaround: terms file in scratchpad.
+
+### Paul's standing rules (2026-10-12) applied
+No price or cost figure at all on this page (Replacement owns cost; brief §6), so no per-square price, no whole-home range, no Ken Gathercole review. CertainTeed Belmont not named. No lifespan figure.
+
+### [NEED] markers left (3)
+1. Delivery H2: how Apex fits a builder's schedule (dry-in, return trips) — optional; delete the line if not stated.
+2. FAQ 2: typical install time on a new home (answer is general without it).
+3. FAQ 3: synthetic underlayment on new installs too? (Paul Approved for repairs only).
+
+### Self-critique (Stage 3)
+- E1 portability: PASS on page, two batch-review notes — (a) the "waves you can surf on" quote also appears in the Roof Replacement draft's delivery H2 (brief assigned it to this page's FAQ 4); (b) the layer sequence (underlayment → flashing/valleys → shingles) echoes Replacement step 5 in different words.
+- E2 specificity: PASS — W16 subcontractor on new construction in Beaufort and Jasper County; CertainTeed + GAF factory installer, ShingleMaster; S.C. Code Regs. 8-1228; licence numbers; Ralph and Pierce on the roof.
+- E3 variants: PASS — URL roof installation → title Roof Installation → H1 New-Construction Roofing / South Carolina Lowcountry → first H2 roof a new home / Beaufort and Jasper Counties / Roofers; FAQ H2 new build / Lowcountry / Roofer; reserved B1 unused.
+- E4 chunks: PASS (delivery ~290 words, largest).
+- E5 invention: PASS — every claim from BG-D/G or the cited regulation; Additions H3 left out (Submitted only); live wind/ventilation H3s not carried.
+- E6 filler: PASS. E7 headers: PASS; COM-11 remainder "Roof Installation" vs "New-Construction Roofing" — pass. E8 links: PASS — no prose links; service-area placeholder present. E9: PASS. E10: page grade 5.9, no paragraph over 10 (after two fixes).
+- Spec: SVC-01–SVC-22 pass on the draft; SVC-15 note — FAQ first sentences are 25–45 words (the spec's 40–60 read as the opening answer block); 4 FAQs; SVC-21 outbound link left to Finish.
+- Types H2 has 2 H3s (additions left out per brief).
+
+### Open
+- Brief F2 (FAQ count) now moot for FAQ 1; FAQ 2 stays general unless the client gives an install time.
+- Open facts keys unchanged: fact:d:services_subcontracted, fact:d:insurance (Paul's 2026-10-11 "correct" answers not yet recorded).
+
+### Next
+Remaining services drafts (Metal Roofing, Slate Roofing, Skylights, Roof Inspections, Emergency Roof Repair) each in their own run; then the services batch review.
+### END HANDOFF
+## RUN 20261012-074135-build-56f3 · FINISHED · 2026-10-12T07:44:49-05:00
+Changes: 0 · Summary: Roof Installation draft written (services batch): 3 NEEDs, drip edge FAQ sourced to S.C. Code Regs. 8-1228, no prices; flag F-014 raised
+- CHANGE #523 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (7).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (7).md | result: done · renamed and moved, nothing deleted
+- CHANGE #524 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (7).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha e781865e925b | result: done · copied (Drive for desktop syncs it)
+- CHANGE #525 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (10).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #526 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (10).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha df93ad28f417 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #527 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (10).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #528 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (10).md | new: Apex Roofing of the Lowcountry - Status.md · sha f8916367e637 | result: done · copied (Drive for desktop syncs it)

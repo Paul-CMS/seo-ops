@@ -260,7 +260,7 @@
       }
     },
     "svc-roof-installation": {
-      "state": "brief_written",
+      "state": "draft_written",
       "type": "service",
       "name": "Roof Installation",
       "url": "https://apexroofingtlc.com/roof-installation/",
@@ -303,6 +303,12 @@
           "run": "20261012-071954-build-c525",
           "at": "2026-10-12T07:22:42-05:00",
           "sha": "7f5c51df1771"
+        },
+        "draft": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Installation - Apex Roofing of the Lowcountry.md",
+          "run": "20261012-074135-build-56f3",
+          "at": "2026-10-12T07:44:17-05:00",
+          "sha": "f05e35730f85"
         }
       }
     },
@@ -1374,10 +1380,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261012-073726-build-ecf5",
+    "run_id": "20261012-074135-build-56f3",
     "command": "build",
-    "finished": "2026-10-12T07:40:21-05:00",
-    "result": "Roof Replacement draft written (services batch): whole-home price ranges only, review example once, 2 NEEDs left",
+    "finished": "2026-10-12T07:44:49-05:00",
+    "result": "Roof Installation draft written (services batch): 3 NEEDs, drip edge FAQ sourced to S.C. Code Regs. 8-1228, no prices; flag F-014 raised",
     "changes": 0,
     "step": "build:draft",
     "batch": "services"
@@ -1401,7 +1407,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-12T07:40:21-05:00",
+  "updated": "2026-10-12T07:44:49-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -1684,8 +1690,8 @@
     "dropped": []
   },
   "review_pause": {
-    "run_id": "20261012-073726-build-ecf5",
+    "run_id": "20261012-074135-build-56f3",
     "step": "build:draft",
-    "at": "2026-10-12T07:40:21-05:00"
+    "at": "2026-10-12T07:44:49-05:00"
   }
 }

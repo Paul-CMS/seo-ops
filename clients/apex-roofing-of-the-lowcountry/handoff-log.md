@@ -1888,3 +1888,38 @@ Agent 2 — Build · 2026-10-12 · Route A · step build:brief (revision 2), bat
 ### Not done (by design)
 - Nothing published, nothing sent to WordPress, no link table filled, no schema.
 
+## /build · 2026-10-12 · run 20261012-074135-build-56f3
+
+**Agent:** Build (Agent 2) · 2026-10-12 · Route A
+
+### Done
+- Drafted `clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Installation - Apex Roofing of the Lowcountry.md` from the approved brief (SB - Roof Installation, approved 2026-10-12) and `methodology/specs/service.md`. ~900 words incl. headings; 730 counted by readability.py.
+- Recorded: `status.py page-stage … svc-roof-installation --stage draft` (ok).
+- Public-fact research (P6): drip edge in SC = S.C. Code Regs. 8-1228 (SC modification of IRC R905.2.8.5): "A drip edge shall be provided at eaves and rake edges of asphalt shingle roofs where required by the manufacturer." Effective history to 2022-05-27. Source: https://www.law.cornell.edu/regulations/south-carolina/R-8-1228. Clears brief flag F1; FAQ 1 now states the rule with the source named (no link — outbound authority link candidate for Finish, CM-011). Not entered in facts.json (public fact; researcher/fact-recording left to the facts round).
+- Flag F-014 raised: readability.py `--exclude-terms` takes a file path, writing-commercial.md E10 implies a list. Workaround: terms file in scratchpad.
+
+### Paul's standing rules (2026-10-12) applied
+No price or cost figure at all on this page (Replacement owns cost; brief §6), so no per-square price, no whole-home range, no Ken Gathercole review. CertainTeed Belmont not named. No lifespan figure.
+
+### [NEED] markers left (3)
+1. Delivery H2: how Apex fits a builder's schedule (dry-in, return trips) — optional; delete the line if not stated.
+2. FAQ 2: typical install time on a new home (answer is general without it).
+3. FAQ 3: synthetic underlayment on new installs too? (Paul Approved for repairs only).
+
+### Self-critique (Stage 3)
+- E1 portability: PASS on page, two batch-review notes — (a) the "waves you can surf on" quote also appears in the Roof Replacement draft's delivery H2 (brief assigned it to this page's FAQ 4); (b) the layer sequence (underlayment → flashing/valleys → shingles) echoes Replacement step 5 in different words.
+- E2 specificity: PASS — W16 subcontractor on new construction in Beaufort and Jasper County; CertainTeed + GAF factory installer, ShingleMaster; S.C. Code Regs. 8-1228; licence numbers; Ralph and Pierce on the roof.
+- E3 variants: PASS — URL roof installation → title Roof Installation → H1 New-Construction Roofing / South Carolina Lowcountry → first H2 roof a new home / Beaufort and Jasper Counties / Roofers; FAQ H2 new build / Lowcountry / Roofer; reserved B1 unused.
+- E4 chunks: PASS (delivery ~290 words, largest).
+- E5 invention: PASS — every claim from BG-D/G or the cited regulation; Additions H3 left out (Submitted only); live wind/ventilation H3s not carried.
+- E6 filler: PASS. E7 headers: PASS; COM-11 remainder "Roof Installation" vs "New-Construction Roofing" — pass. E8 links: PASS — no prose links; service-area placeholder present. E9: PASS. E10: page grade 5.9, no paragraph over 10 (after two fixes).
+- Spec: SVC-01–SVC-22 pass on the draft; SVC-15 note — FAQ first sentences are 25–45 words (the spec's 40–60 read as the opening answer block); 4 FAQs; SVC-21 outbound link left to Finish.
+- Types H2 has 2 H3s (additions left out per brief).
+
+### Open
+- Brief F2 (FAQ count) now moot for FAQ 1; FAQ 2 stays general unless the client gives an install time.
+- Open facts keys unchanged: fact:d:services_subcontracted, fact:d:insurance (Paul's 2026-10-11 "correct" answers not yet recorded).
+
+### Next
+Remaining services drafts (Metal Roofing, Slate Roofing, Skylights, Roof Inspections, Emergency Roof Repair) each in their own run; then the services batch review.
+
