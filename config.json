@@ -4,6 +4,12 @@
   "client_worktrees_root": "~/Documents/seo-ops-clients",
   "_client_worktrees_about": "Rewrite 2 P2: scripts/worktree.py open <slug> makes one git worktree per client here (branch client/<slug>); each client chat runs in its own folder. System sessions run only in the main folder.",
   "story_cadence_days": 30,
+  "h1_lock_lift": {
+    "rank_top_n": 10,
+    "few_clicks_90d": 10,
+    "followup_days": 30
+  },
+  "_h1_lock_lift_about": "CM-059 (CR-002, Paul 2026-10-12). The homepage H1 lock may be put to Paul only when the H1 fails HP-06, the homepage is not in the organic top rank_top_n for its main keyword, and it has fewer than few_clicks_90d Search Console clicks for it over 90 days. Paul tunes the numbers here. scripts/h1lock.py reads them.",
   "_stage_modes_about": "CM-044. Global stage modes Paul set with /approve global mode:<stage>=auto|review (written by approve.py, never by hand). A client's own setting in its status.json wins. Missing = review.",
   "stage_modes": {},
   "kadence_head_meta_key": null,

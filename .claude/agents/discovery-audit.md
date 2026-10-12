@@ -166,7 +166,10 @@ gets its kind and `searched:` line in a questions JSON; public ones go to the re
 `python3 scripts/settled.py filter <slug> <file>` and `python3 scripts/questions.py check <file>` must pass (P6);
 record its outcome in `decisions.md` (questions raised with their routes, or "no questions — gate
 skipped") before the review. A missing "The Best"
-is never a finding by itself (CM-020); missing JavaScript-rendered data is never a finding.
+is never a finding by itself (CM-020); missing JavaScript-rendered data is never a finding. A live homepage H1
+that fails HP-06 stays locked (HP-08) unless CM-059's three conditions hold: run `python3 scripts/h1lock.py check
+<slug> --keyword "<main keyword>" --hp06 fail [--gsc <GSC queries export>]` and put its table to Paul as a Gate B
+decision (default: no H1 change) — never a recommendation made on your own.
 Refuse your own output if a finding lacks an evidence locator, or the URL Decision Map has
 fewer rows than the site has pages. The command then runs the **audit-reviewer** (S17). S18:
 render the deliverables; the Evidence Manifest includes `steps.py manifest <slug>`.

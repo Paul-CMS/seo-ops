@@ -659,6 +659,24 @@ Decided by Paul.
 Checked 2026-10-09: Charleston metropolitan area (SC) — Wikidata Q5084207; Hilton Head Island–Bluffton–Port Royal
 metropolitan area — Wikidata Q17020871.
 
+## CM-059 · The homepage H1 lock lifts for a failing, unranked legacy H1 — Paul's decision, every time
+**ID** CM-059 · **Status** APPROVED · **Date** 2026-10-12 · **Reason** The BB-313 §3 lock kept legacy homepage H1s that predate the Standard, fail HP-06 and earn nothing (Home Mobile Medical CF-LOCAL-001; Apex CF-LOCAL-002). · **Source** Paul, /system-review 2026-10-12, accepting CR-002 with edits · **Supersedes** — (narrows BB-313 §3 and HP-08 for the homepage only; the CM-020 top-3 rule for every page stands)
+
+Decided by Paul.
+1. The homepage H1 stays locked once live (BB-313 §3, HP-08) **unless all three hold**: (a) the live H1 fails HP-06;
+   (b) the homepage is **not in the organic top 10** (`config.json h1_lock_lift.rank_top_n`) for its main keyword
+   (CM-020's definition: the highest-volume keyword the URL ranks for that matches its service/area entity); and
+   (c) it has **few Search Console clicks** for that keyword over the last 90 days (fewer than
+   `config.json h1_lock_lift.few_clicks_90d`).
+2. Meeting all three never changes anything by itself. The audit puts it to Paul as a decision with the numbers,
+   made by `python3 scripts/h1lock.py check <slug> --keyword "…" --hp06 fail [--gsc <GSC queries export>]`: the live
+   H1, the organic and local-pack positions, the 90-day clicks, the thresholds. A number the data cannot show is a
+   `[NEED: …]`, and an unknown condition is not met. Only Paul's answer lifts the lock — once, in the homepage batch.
+3. The old H1 is logged for rollback (the change's safety-log row and the URL Decision Map + Brand Guide H), and a
+   30-day check — organic position and 90-day clicks against the baseline — goes on the VA Worklist the day the new
+   H1 is live: `python3 scripts/h1lock.py followup <slug> --run R --keyword "…" --old-h1 "…" --changed YYYY-MM-DD`.
+   If both got worse, Paul decides whether to roll back. After the change the lock applies again.
+
 ---
 
 # C. Rule Register
@@ -924,6 +942,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-056 | REPLACED → CM-057 |
 | CM-057 | APPROVED (reviews as customer-reported facts) |
 | CM-058 | APPROVED (metro hubs, when the metro area is a real category) |
+| CM-059 | APPROVED (homepage H1 lock lifts for a failing, unranked legacy H1 — Paul decides) |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |
