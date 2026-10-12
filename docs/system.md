@@ -1,7 +1,7 @@
 # Changing seo-ops — the system session
 
 **Only Paul changes the workflow (Q2).** The system files — `scripts/**` (incl. `gates.json`), `methodology/**`,
-`CLAUDE.md`, `docs/**`, `.claude/agents|commands|skills/**`, `templates/**`, `tests/**`, `hooks-pending/**`,
+`CLAUDE.md`, `docs/**`, `.claude/agents|commands|skills/**`, `templates/**`, `tests/**`,
 `config.json` — change only in a **system session**: Paul types `/system` (a hook issues a one-time system token for
 that session; the guard blocks every other session; a VA Mac, `machine.json can_change_system: false`, never gets
 one). A system session runs on **Opus**, in the main folder (`~/Documents/seo-ops`, branch `main`), and does no
@@ -21,8 +21,9 @@ throwaway copy of the repo — no network, no cost, no client data; run it in th
 that fails it.** A new behaviour gets a new check (`tests/run_all.py` or `tests/checks/*.py`). One commit per item.
 
 ## Hooks
-The guard keeps Claude out of `.claude/hooks/` and `.claude/settings.json`. Hook changes are written to
-`hooks-pending/`; the tests run those; Paul installs them (`hooks-pending/INSTALL.md`) from his own terminal.
+The guard keeps Claude out of `.claude/hooks/` and `.claude/settings.json`; the tests run the installed hooks (the
+sandbox copies `.claude/`). A hook change is Paul's: Claude writes the proposed change in the chat (or a scratch file
+outside the repo); Paul applies it to `.claude/hooks/` from his own terminal, commits it, and reopens every chat.
 
 ## Client migrations
 A change that touches client records ships with a migration (`scripts/migrate2.py`): a dry run first that lists every

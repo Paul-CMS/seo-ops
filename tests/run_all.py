@@ -55,13 +55,6 @@ def make_sandbox():
     cfg["drive"]["local_root"] = str(v3)
     (SB / "config.json").write_text(json.dumps(cfg, indent=2))
     assert str(SB) in json.loads((SB / "config.json").read_text())["drive"]["local_root"]
-    # hooks Paul has not installed yet (hooks-pending/) are what the tests run, so the suite checks what he installs
-    pend = SB / "hooks-pending"
-    if pend.is_dir():
-        for f in pend.glob("*.py"):
-            shutil.copy2(f, SB / ".claude" / "hooks" / f.name)
-        if (pend / "settings.json").exists():
-            shutil.copy2(pend / "settings.json", SB / ".claude" / "settings.json")
     assert not (SB / ".env").exists()
     sh("git init -q && git add -A && git -c user.email=t@t -c user.name=t commit -qm base")
 

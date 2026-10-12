@@ -3,6 +3,7 @@
 Run alone: python3 tests/run_all.py -k rewrite2
 """
 import json
+import re
 import subprocess
 
 
@@ -36,9 +37,9 @@ def t_p3_system_session(h):
             and "run.py flag" in out, out)
     blocked = [p for p in ("scripts/gates.json", "methodology/specs/service.md", "CLAUDE.md", ".claude/agents/build.md",
                            ".claude/commands/next.md", ".claude/skills/x/SKILL.md", "templates/handoff-log.md",
-                           "tests/run_all.py", "config.json", "docs/stage-6.md", "hooks-pending/guard.py")
+                           "tests/run_all.py", "config.json", "docs/stage-6.md")
                if _guard(h, "Write", {"file_path": p}, "client-chat")[0]]
-    h.check("P3: every system path is blocked outside a system session", len(blocked) == 11, blocked)
+    h.check("P3: every system path is blocked outside a system session", len(blocked) == 10, blocked)
     h.check("P3: client files and reads stay allowed",
             not _guard(h, "Write", {"file_path": "clients/x/build/SD - x.md"}, "client-chat")[0]
             and not _guard(h, "Read", {"file_path": "scripts/run.py"}, "client-chat")[0])
@@ -91,8 +92,13 @@ def t_p3_flags_and_review(h):
     code, out = h.sh("python3 scripts/changereq.py collect")
     h.check("P3: collecting flags is refused outside a system session", code == 4 and "system session" in out, out)
     code, out = h.sh("python3 scripts/changereq.py list --open")
-    h.check("P3: the inbox lists L-008–L-011 as CR-001–CR-004, CR-005, and the uncollected flag",
-            all(f"CR-00{i}" in out for i in range(1, 6)) and "(not collected) fl-co F-001" in out, out)
+    # the inbox is the real one (copied into the sandbox): items Paul has closed since drop out of --open
+    closed = set(re.findall(r"^- (CR-\d{3}) · \S+ · (?:DONE|REJECTED) · ",
+                            (h.SB / "methodology" / "change-requests.md").read_text(), re.M))
+    want = [f"CR-00{i}" for i in range(1, 6) if f"CR-00{i}" not in closed]
+    h.check("P3: the inbox lists every CR not DONE or REJECTED (of CR-001–CR-005), and the uncollected flag",
+            all(c in out for c in want) and not any(f"{c} ·" in out for c in closed)
+            and "(not collected) fl-co F-001" in out, out)
     sid = _current_sid(h)
     _system(h, sid)
     try:

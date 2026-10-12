@@ -186,7 +186,7 @@ def session_conflict(slug, step, batch=None, sid=None):
         return None
     sid = sid or current_session()
     if not sid:
-        return ("No session is recorded — the seo-ops session hook is not installed (hooks-pending/INSTALL.md). "
+        return ("No session is recorded — the seo-ops session hook is not installed (.claude/hooks/session_start.py). "
                 "One session per stage is enforced through it.")
     from lib import CLIENTS
     import json

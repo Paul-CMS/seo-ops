@@ -12,7 +12,7 @@ now change the system files; every client session still cannot.
 1. `python3 scripts/changereq.py start` — it refuses unless this is a system session, in the main folder
    (`~/Documents/seo-ops`, branch `main`, never a client worktree), with **no uncommitted changes**; then it runs
    `git pull` (fast-forward only). On a refusal, tell Paul in plain words what it said (the hooks may not be installed —
-   `hooks-pending/INSTALL.md` — this Mac may have `can_change_system: false`, or the folder has changes) and stop.
+   `.claude/hooks/` and `.claude/settings.json` — this Mac may have `can_change_system: false`, or the folder has changes) and stop.
 2. A system session runs on **Opus** and does no client work.
 3. Do what Paul asked ($ARGUMENTS). If he named nothing, offer `/system-review`.
 4. After **every** change: `python3 tests/run_all.py` (fast); before every commit `python3 tests/run_all.py --full`. Never commit a failing change; every new behaviour gets a new
