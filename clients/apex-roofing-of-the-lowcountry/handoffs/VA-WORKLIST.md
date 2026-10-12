@@ -1,6 +1,6 @@
 # Apex Roofing of the Lowcountry - VA Worklist
 
-**One living worklist for every VA item** · client Apex Roofing of the Lowcountry (apexroofingtlc.com) · updated 2026-10-09 · **Progress:** 0 of 62 row(s) done
+**One living worklist for every VA item** · client Apex Roofing of the Lowcountry (apexroofingtlc.com) · updated 2026-10-11 · **Progress:** 0 of 62 row(s) done
 
 Work from this document only. Tick `status` in the CSV (**done**, **blocked** or **deviated**, with a `note` on every blocked or deviated row) and send it back. Check each current value first (`old`): already done → mark `done`, note `already done`; something else → do not change it, mark `blocked` and say what you found. Do not add rows.
 
