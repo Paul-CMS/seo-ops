@@ -74,11 +74,11 @@ Suggested headings (no pilot or sibling heading reused; no city in any H tag):
 | # | Question (H3) | Why it belongs here | Routed rows | Answer source / status |
 |---|---|---|---|---|
 | 1 | Is a leaking roof an emergency? | urgency triage — the page's lead question | PAA #22, #98 | Yes when water is coming in now, after storm damage, or near wiring; a slow stain after rain can wait for a scheduled repair. Ralph and Pierce are on call (Client Confirmed). No time promise. |
-| 2 | What should I do about a roof leak until the roofer arrives? | safe interim steps before an emergency visit | PAA #61, #104; FO #96, #98, #259, #371 | **Collision — see Flag F1.** The approved Roof Repair FAQ "What should I do if I have an emergency roof leak?" already answers "catch it and move what you can, then call a roofer". **Proposed (Paul decides at brief approval):** replace this FAQ with **"Do past customers get priority in a roofing emergency?"** — page-specific, Client Confirmed ("especially for past customers"), routed rows move to the delivery H2 ("stop the water now"). If Paul keeps the original, its answer must cover only what the routed rows add (safety: stay off the roof, power near water, photos for records — general) and not repeat Roof Repair's text. |
+| 2 | Do past customers get priority in a roofing emergency? | page-specific: who gets moved up the list when a roof is damaged — only this page answers it (replaces "What should I do until the roofer arrives?", which duplicated the approved Roof Repair emergency-leak FAQ, pilot SEM-1; Paul chose option a, 2026-10-12) | none routed — answered from BG-D Emergency. The old FAQ's routed rows (PAA #61, #104; FO #96, #98, #259, #371) move to the H2 delivery ("stop the water now"), in general terms, without repeating Roof Repair's "catch it and move what you can" text | First sentence: yes — Ralph and Pierce are on call and treat an emergency as high priority, especially for past customers (BG-D Emergency, **Client Confirmed 2026-10-07**; client wording "treat a emergency as high priority and especially for past customers" — re-phrase, do not quote with the typo). Every emergency is still treated as high priority; past customers come first among them. **No response time, no "24 hour", no "same-day", no guarantee of arrival.** Must not repeat the opening's on-call sentence word for word (writer varies it). |
 | 3 | Can a roof leak be repaired while it is raining? | a storm-time question only the emergency page answers | PAA #73 | General: a lasting repair needs a dry, safe roof; in rain or lightning the first step is keeping water out. Any temporary measure Apex itself takes → `[NEED: does Apex tarp or patch temporarily?]`. |
 | 4 | How much does emergency roof repair cost? | emergency pricing differs from scheduled repair | PAA #103; FO #86 | Cost drivers only (extent of damage, what is found under the shingles, access, materials). No minimum service-call charge (Paul Approved); free estimate. **No figure; never "no after-hours fee".** Must not read like Roof Repair's cost FAQ (batch review). |
 
-Routed elsewhere: H3 storm and hurricane damage (FO #249, #250), H3 emergency shingle replacement (FO #99) → types. Transactional rows including '24 hour' (FO #11) → the page itself, **never as wording**. Insurance rows (PAA #119) → blog list.
+Routed elsewhere: interim-steps rows PAA #61, #104; FO #96, #98, #259, #371 (from the replaced FAQ 2) → H2 delivery, general safety only (stay off the roof, keep clear of water near wiring), not Roof Repair's FAQ text. H3 storm and hurricane damage (FO #249, #250), H3 emergency shingle replacement (FO #99) → types. Transactional rows including '24 hour' (FO #11) → the page itself, **never as wording**. Insurance rows (PAA #119) → blog list.
 
 ---
 
@@ -109,7 +109,7 @@ Any response time · "24 hour" / "24/7" / "same-day" / "within the hour" · "no 
 
 - Approved earlier: **Roof Repair** — owns scheduled repair, the leak-repair H3, its own emergency-leak FAQ (with the link placeholder to this page); **Bluffton**.
 - This batch: Roof Inspections (after the storm has passed — FAQ 5 there), Roof Replacement (storm-damage replacement H3 — a whole new roof; this page stops at the emergency and the lasting repair), Roof Installation.
-- Close siblings for the batch review: FAQ 2 here ↔ Roof Repair FAQ "What should I do if I have an emergency roof leak?"; FAQ 4 here ↔ Roof Repair "How much does a roof repair cost?"; types H3s ↔ Inspections FAQ 5 and Replacement's storm-damage H3.
+- Close siblings for the batch review: delivery H2 "stop the water now" (now carrying the old FAQ 2's routed rows) ↔ Roof Repair FAQ "What should I do if I have an emergency roof leak?"; FAQ 2 here ↔ this page's opening (both use the on-call / past-customers fact — vary the wording); FAQ 4 here ↔ Roof Repair "How much does a roof repair cost?"; types H3s ↔ Inspections FAQ 5 and Replacement's storm-damage H3.
 
 ---
 
@@ -126,6 +126,12 @@ Gate **WARN**. Paul's 2026-10-11 facts answers (answer 1: "all 6 service lists a
 
 ## Flags for Paul
 
-- **F1 — FAQ collision with the approved Roof Repair page.** Site plan FAQ 2 here duplicates the emergency-leak FAQ Paul added to Roof Repair at the pilot (SEM-1). Options: (a) replace it with "Do past customers get priority in a roofing emergency?" (proposed; Client Confirmed, unique to this page); (b) keep it with a safety-only answer that does not repeat Roof Repair; (c) remove the FAQ from Roof Repair instead (re-approval of Roof Repair). The brief proposes (a).
+- ~~F1 — FAQ collision with the approved Roof Repair page.~~ **Resolved 2026-10-12:** Paul chose option (a); FAQ 2 is now "Do past customers get priority in a roofing emergency?" (see change log).
 - **F2 — tarping.** Emergency tarping is on the live page and in reviews but not confirmed. One yes/no to the client.
 - **F3 — record the 2026-10-11 facts answers** (see Roof Replacement brief F2).
+
+## Change log
+
+| Date | Run | Change |
+|---|---|---|
+| 2026-10-12 | 20261012-071055-build-c11c | FAQ 2 "What should I do about a roof leak until the roofer arrives?" replaced by **"Do past customers get priority in a roofing emergency?"** (Paul chose option a of F1: it duplicated the approved Roof Repair emergency-leak FAQ, SEM-1). Answer from BG-D Emergency (Client Confirmed 2026-10-07). The old FAQ's routed rows moved to the H2 delivery. F1 marked resolved. Nothing else changed. |

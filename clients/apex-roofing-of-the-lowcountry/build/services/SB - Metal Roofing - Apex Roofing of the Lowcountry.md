@@ -112,7 +112,7 @@ Georgia · commercial / "homes and businesses" · any client-specific or review 
 
 - Approved earlier (pilot): **Roof Repair** (flashing-first paragraph, GAF System Plus review example, 25% rule); **Bluffton** (Town permit, Old Town materials FAQ).
 - Briefs in this batch: **Roof Replacement** (owns shingle cost and the shingle warranty; carries a short metal H3 — keep this page's depth separate), **Roof Installation**, **Roof Inspections**, **Emergency Roof Repair**, **Slate Roofing** and **Skylights** (this run).
-- Close siblings for the batch review: FAQ 1 here ↔ Replacement FAQ 1 (two cost answers — each its own material; Replacement's brief still carries the older $9,000–$18,000 shingle range, see Flags); FAQ 2 here ↔ the metal-vs-shingle blog post; Skylights FAQ 4 (skylight on a metal roof) ↔ this page's types H2; Slate's ARB/BAR approval step ↔ this page's ARB colour submittals (say each once, in its own terms).
+- Close siblings for the batch review: FAQ 1 here ↔ Replacement FAQ 1 (two cost answers — each its own material; Replacement's brief now uses the same Lowcountry standard ranges, updated 2026-10-12, run 20261012-071055-build-c11c, and gives metal one line only); FAQ 2 here ↔ the metal-vs-shingle blog post; Skylights FAQ 4 (skylight on a metal roof) ↔ this page's types H2; Slate's ARB/BAR approval step ↔ this page's ARB colour submittals (say each once, in its own terms).
 
 ---
 
