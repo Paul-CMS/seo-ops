@@ -102,9 +102,10 @@ def t_p3_flags_and_review(h):
     sid = _current_sid(h)
     _system(h, sid)
     try:
+        last = max(int(n) for n in re.findall(r"^## CR-(\d{3}) ·", (h.SB / "methodology" / "change-requests.md").read_text(), re.M))
         code, out = h.sh("python3 scripts/changereq.py collect")
         cr = out.split(": ")[-1].strip()
-        h.check("P3: /system-review collects the flag as the next CR", code == 0 and cr == "CR-006", out)
+        h.check("P3: /system-review collects the flag as the next CR", code == 0 and cr == f"CR-{last + 1:03d}", out)
         code, out = h.sh(f"python3 scripts/changereq.py done {cr} --sha abc1234")
         h.check("P3: a CR that Paul has not accepted cannot be marked done", code != 0, out)
         h.sh(f'python3 scripts/changereq.py decide {cr} accept --text "location spec: 3+ for towns under 5k"')
