@@ -38,7 +38,9 @@ Apex is a factory installer for both CertainTeed and GAF, and it holds CertainTe
 
 ### Is drip edge required in South Carolina?
 
-South Carolina requires a drip edge at the eaves and rake edges of an asphalt shingle roof when the shingle maker's instructions call for one, under the state's change to the residential code (S.C. Code of Regulations 8-1228). A drip edge is the metal strip at the roof's edge that steers water into the gutter and away from the wood trim. Your local building department enforces the code on each new home.
+Yes, in most cases. The 2021 South Carolina Residential Code requires a drip edge at the eaves and rake edges of an asphalt shingle roof when the shingle maker's instructions call for one (R905.2.8.5; S.C. Code of Regulations 8-1228). Most major shingle makers now do. A drip edge is the metal strip that steers water into the gutter.
+
+Your local building department enforces the code on each new home. [NEED: does Apex install drip edge on every new roof? — client]
 
 ### How long does a new-construction roof take to install?
 

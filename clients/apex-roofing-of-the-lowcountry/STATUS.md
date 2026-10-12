@@ -1,16 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
-- **What is happening now:** ready to start: apply SEM-1, SEM-2, SEM-3, SEM-4, SEM-5, SEM-6, SEM-7, SEM-8, SEM-9, SEM-10, SEM-11, SEM-12, SEM-13, SEM-14, SEM-15 to batch services and re-run the E-checks on the changed sections
-- **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
-- **Next action:** `/build apex-roofing-of-the-lowcountry batch services apply-sem` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open apex-roofing-of-the-lowcountry`) and types `/next apex-roofing-of-the-lowcountry` (agents: build (opus), brief-writer (sonnet), clerk (haiku))
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — build:apply-sem finished (run 20261012-142751-build-99a8) and that stage is in review mode; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
+- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
 
-_Generated 2026-10-12T14:27 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-12T14:29 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
+| Paul | build:apply-sem finished (run 20261012-142751-build-99a8) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry writeback services (Brand Guide write-back for batch services (B3, C1/C2, C3) from the approved drafts — the next batch reads it) | 2026-10-12 | /next apex-roofing-of-the-lowcountry |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
@@ -95,6 +96,9 @@ _Open, but the next action above goes ahead without them._
 - Named staff: Ralph and Pierce Brehany (father and son), credited as owners, no job titles (Paul 2026-10-08 about_page; pilot corrections 2026-10-09). Not asked again.
 - On-time arrival and finishing as scheduled: customer_reported by 10 different reviewers (checked by meaning 2026-10-11); stated only attributed ('customers mention…'), never as an Apex guarantee. No client question needed.
 - Metal and slate pricing already answered: standing seam $22,000-$40,000 (vs $9,000-$18,000 shingles), natural slate $35,000-$70,000+, synthetic slate $18,000-$35,000; 'fairly accurate', varies with scale of project (Paul answers B14, Brand Guide D). Not asked again.
+- Paul: keep the Emergency Roof Repair FAQ 'Is a leaking roof an emergency?' at 63 words; CM-060 60-word limit waived for this FAQ
+- Paul accepted the exclude-terms list used for the services readability checks (entity terms, named sources, area variant: Apex Roofing of the Lowcountry, Apex, CertainTeed, GAF, ShingleMaster, SureStart PLUS, DaVinci Roofscapes, Vermont, Beaufort and Jasper Counties, South Carolina, Lowcountry, S.C. Code of Regulations 8-1228, 2021 South Carolina Residential Code, R905.2.8.5, standing seam, Velux, FAKRO, Hilton Head Island–Bluffton–Port Royal metropolitan area, Hilton Head Island), per CM-047
+- Paul: Metal Roofing FAQ 'How much does a metal roof cost?' uses the most-confirmed regional ranges — standing seam about $16,600 to $32,000+ for a typical home; coastal Lowcountry about $30,000 to $45,000+; stated as published cost-guide ranges, not Apex's price; $24,000 removed from the Metal draft
 
 ## Open VA items
 
@@ -130,4 +134,4 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /build 2026-10-12T14:09 — SEM 1-15 applied to 7 service drafts; edited elements pass; sem_check_failed on pre-existing E10/CM-060 sentences in touched sections (fixes proposed for Paul)
+Last run: /build 2026-10-12T14:29 — services apply-sem: six approved fixes applied (metal ranges per Paul), Emergency FAQ waiver and exclude-terms settled, all checks pass; batch sem_applied

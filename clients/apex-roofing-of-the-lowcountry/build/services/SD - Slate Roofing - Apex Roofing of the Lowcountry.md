@@ -22,7 +22,7 @@ Slate is not a do-it-yourself roof. The tiles crack if you step on them the wron
 
 ## Natural, Synthetic or a Repair: Which Slate Work Do You Need?
 
-Apex does three kinds of slate work: new roofs in genuine Vermont slate, new roofs in DaVinci Roofscapes synthetic slate, and repairs to slate roofs that are mostly sound.
+Apex does three kinds of slate work. It puts on new roofs in genuine Vermont slate or DaVinci Roofscapes synthetic slate. It also repairs slate roofs that are mostly sound.
 
 ### Genuine Vermont Slate
 
@@ -44,7 +44,7 @@ The price of a slate roof turns mostly on the size of the roof, then on natural 
 
 ### What is the biggest disadvantage of a slate roof?
 
-The biggest disadvantage of a slate roof is its weight: natural slate is far heavier than architectural shingles, so not every house can carry it without extra framing. It also costs more up front, and a broken tile needs a roofer who knows slate.
+The biggest disadvantage of a slate roof is its weight. Natural slate weighs about 800 to 1,500 pounds per square, or 100 square feet, so many houses need stronger framing first. It also costs more up front, often two to three times a shingle roof. And a broken tile needs a roofer who knows slate.
 
 ### Can a slate roof be repaired instead of replaced?
 

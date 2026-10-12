@@ -3710,3 +3710,62 @@ SEM items to apply: SEM-1, SEM-2, SEM-3, SEM-4, SEM-5, SEM-6, SEM-7, SEM-8, SEM-
 - CHANGE #604 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (22).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 49434dff4f4d | result: done · copied (Drive for desktop syncs it)
 - CHANGE #605 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (22).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (22).md | result: done · renamed and moved, nothing deleted
 - CHANGE #606 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (22).md | new: Apex Roofing of the Lowcountry - Status.md · sha 6f7e0ab99e2f | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261012-142751-build-99a8 · STARTED · /build · 2026-10-12T14:27:51-05:00
+Step: build:apply-sem · batch services · session ac082591-abde-49a7-bbdb-710f65cf2b3f
+Gates checked: discovery_signed_off, batch:services:drafts
+- SETTLED emergency_faq_63_words_waived · 2026-10-12T14:29:09-05:00 · run 20261012-142751-build-99a8 · by Paul · Paul: keep the Emergency Roof Repair FAQ 'Is a leaking roof an emergency?' at 63 words; CM-060 60-word limit waived for this FAQ
+- SETTLED exclude_terms_accepted · 2026-10-12T14:29:09-05:00 · run 20261012-142751-build-99a8 · by Paul · Paul accepted the exclude-terms list used for the services readability checks (entity terms, named sources, area variant: Apex Roofing of the Lowcountry, Apex, CertainTeed, GAF, ShingleMaster, SureStart PLUS, DaVinci Roofscapes, Vermont, Beaufort and Jasper Counties, South Carolina, Lowcountry, S.C. Code of Regulations 8-1228, 2021 South Carolina Residential Code, R905.2.8.5, standing seam, Velux, FAKRO, Hilton Head Island–Bluffton–Port Royal metropolitan area, Hilton Head Island), per CM-047
+- SETTLED metal_cost_ranges · 2026-10-12T14:29:09-05:00 · run 20261012-142751-build-99a8 · by Paul · Paul: Metal Roofing FAQ 'How much does a metal roof cost?' uses the most-confirmed regional ranges — standing seam about $16,600 to $32,000+ for a typical home; coastal Lowcountry about $30,000 to $45,000+; stated as published cost-guide ranges, not Apex's price; $24,000 removed from the Metal draft
+- CHANGE #607 [draft_edit] clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Replacement - Apex Roofing of the Lowcountry.md | FAQ What warranty comes with a new roof? (grade fix) | old:  | new:  | result: applied
+- CHANGE #608 [draft_edit] clients/apex-roofing-of-the-lowcountry/build/services/SD - Slate Roofing - Apex Roofing of the Lowcountry.md | FAQ biggest disadvantage + types H2 intro (grade fixes) | old:  | new:  | result: applied
+- CHANGE #609 [draft_edit] clients/apex-roofing-of-the-lowcountry/build/services/SD - Metal Roofing - Apex Roofing of the Lowcountry.md | FAQ How much does a metal roof cost? (60 words, Paul's ranges) | old:  | new:  | result: applied
+- CHANGE #610 [draft_edit] clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Installation - Apex Roofing of the Lowcountry.md | FAQ Is drip edge required in South Carolina? (58 words) | old:  | new:  | result: applied
+- CHANGE #611 [draft_edit] clients/apex-roofing-of-the-lowcountry/build/services/SD - Skylights - Apex Roofing of the Lowcountry.md | FAQ How much does it cost to install a skylight? (60 words) | old:  | new:  | result: applied
+- SEM APPLIED 2026-10-12T14:29 · batch services · SEM-1, SEM-2, SEM-3, SEM-4, SEM-5, SEM-6, SEM-7, SEM-8, SEM-9, SEM-10, SEM-11, SEM-12, SEM-13, SEM-14, SEM-15 · E-checks passed · approval pinned to the applied versions
+### HANDOFF · /build · 2026-10-12 · run 20261012-142751-build-99a8
+**Agent:** Agent 2 — Build (Opus) · **Date:** 2026-10-12
+
+### What was done
+SEM items 1–15 were already applied in the previous run, so they were not applied again. This run applied the six fixes Paul approved. Text came from the previous run's scratch `apply_proposed.py`, and Metal Roofing used the price ranges Paul chose.
+
+| # | Page · section | Before | After |
+|---|---|---|---|
+| 1 | Roof Replacement · FAQ "What warranty comes with a new roof?" | flagged grade 10.1 (section 9.1) | section grade 7.1 · p1 58 words |
+| 2 | Slate Roofing · FAQ "What is the biggest disadvantage of a slate roof?" | grade 10.7 (paragraph over 10, E10 FAIL) | grade 4.9 · p1 55 words |
+| 3 | Metal Roofing · FAQ "How much does a metal roof cost?" | p1 80 words · grade 6.6 | p1 60 words · grade 4.4 |
+| 4 | Roof Installation · FAQ "Is drip edge required in South Carolina?" | p1 72 words · grade 8.6 | p1 58 words · grade 4.7 · Apex-practice [NEED] kept |
+| 5 | Skylights · FAQ "How much does it cost to install a skylight?" | p1 62 words · grade 8.3 | p1 60 words · grade 8.1 |
+| 6 | Slate Roofing · types H2 intro "Natural, Synthetic or a Repair…" | flagged grade 10.1 (section 9.2) | grade 2.4 |
+
+These are the Metal ranges Paul chose (settled `metal_cost_ranges`). Standing seam on a typical home runs about $16,600 to $32,000 or more. Coastal Lowcountry homes run about $30,000 to $45,000 or more. The draft says these are regional ranges from published cost guides, that Apex's price will differ, and that the free estimate gives the real figure. The Metal draft no longer contains $24,000.
+
+### Decisions recorded
+- `emergency_faq_63_words_waived`: Paul is keeping the Emergency Roof Repair FAQ "Is a leaking roof an emergency?" at 63 words. He waived the CM-060 60-word limit for this FAQ, and the FAQ was not changed.
+- `exclude_terms_accepted`: Paul accepted the exclude-terms list used for the readability checks under CM-047. The list is in the previous run's scratch `terms.txt`.
+- `metal_cost_ranges`: the metal price ranges listed above.
+
+### Checks on the changed sections
+- **Readability** (`readability.py --exclude-terms terms.txt`): E10 passes on all five changed pages, and no paragraph is over grade 10. Page averages are Roof Replacement 5.0, Slate 6.0, Metal 6.2, Roof Installation 5.2 and Skylights 6.0. Emergency Roof Repair was not changed and also passes at 5.1.
+- **CM-060:** every changed FAQ opens with a short first sentence and has a first paragraph of 55–60 words. Every other FAQ in the batch is between 40 and 60 words, except the waived Emergency FAQ at 63.
+- **E1–E10 and spec checks:**
+  - No new claim about Apex was added.
+  - The new public facts come from Paul's approved research: the drip-edge code (R905.2.8.5, SC Reg 8-1228), the slate weight per square and the 2–3x cost, and the metal ranges.
+  - The changed FAQs have no links. No heading changed.
+  - `placeholders.py`: every bracket is a `[NEED: …]`. Pass.
+- Both earlier failures in untouched sections now pass: the Skylights cost FAQ (fix 5) and the Slate types H2 intro (fix 6).
+
+### Batch state
+`services` → **sem_applied** with `--checks-passed`. The approval is pinned to the applied versions, so Paul is not stopped again. Next step is `writeback services`.
+
+### Open item for Paul (not changed — instruction D)
+The Roof Replacement FAQ "What does a roof replacement cost in South Carolina?" still says standing seam metal costs "about $24,000 to $45,000 or more". The Metal page now gives $16,600–$32,000+ for a typical home and $30,000–$45,000+ for coastal homes, so the two sibling pages disagree. Paul can align Roof Replacement with the Metal ranges, which is a one-sentence change he would need to re-approve, or keep it as it is.
+### END HANDOFF
+## RUN 20261012-142751-build-99a8 · FINISHED · 2026-10-12T14:29:37-05:00
+Changes: 5 · Summary: services apply-sem: six approved fixes applied (metal ranges per Paul), Emergency FAQ waiver and exclude-terms settled, all checks pass; batch sem_applied
+- CHANGE #612 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (17).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (17).md | result: done · renamed and moved, nothing deleted
+- CHANGE #613 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (17).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 4b1f9cc375d8 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #614 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (23).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (23).md | result: done · renamed and moved, nothing deleted
+- CHANGE #615 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (23).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 1086bcf7e552 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #616 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (23).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (23).md | result: done · renamed and moved, nothing deleted
+- CHANGE #617 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (23).md | new: Apex Roofing of the Lowcountry - Status.md · sha 1e934afa2f34 | result: done · copied (Drive for desktop syncs it)

@@ -42,7 +42,7 @@ A damaged metal roof is not always a lost cause. Apex looks at the roof and weig
 
 ### How much does a metal roof cost?
 
-In 2026, a standing seam metal roof on a typical Lowcountry home runs about $24,000 to $45,000 or more, and the price moves with the size of the roof. That is a regional range from published cost guides, not Apex's price. The main cost drivers are the size and pitch of the roof, the panel profile and coating, tearing off the old roof, and the vents and chimneys the panels must fit around. Your free estimate gives the real figure.
+In 2026, standing seam metal runs about $16,600 to $32,000 or more for a typical home. Coastal Lowcountry homes often run about $30,000 to $45,000 or more. These are regional ranges from published cost guides; Apex's price will differ. Roof size and pitch, panel type, tear-off, wind-code rules and vents move the price. Your free estimate gives the real figure.
 
 ### Is a metal roof worth the extra cost over shingles?
 

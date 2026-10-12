@@ -46,7 +46,7 @@ Some skylights are past repair. When a unit can no longer be fixed, the whole sk
 
 ### How much does it cost to install a skylight?
 
-The cost to install a skylight depends most on whether a new opening must be cut and framed in the roof, or whether an old skylight just needs new glass or new flashing. The roof type and pitch, the size and type of skylight, and any community approval also change the price. Apex lists each part in a free, itemized written estimate.
+The cost to install a skylight depends most on whether a new opening must be cut and framed in the roof, or whether an old skylight just needs new glass or flashing. Roof type and pitch, the size and type of skylight, and any community approval also change the price. Apex lists each part in a free, itemized written estimate.
 
 ### What are the downsides of a skylight?
 

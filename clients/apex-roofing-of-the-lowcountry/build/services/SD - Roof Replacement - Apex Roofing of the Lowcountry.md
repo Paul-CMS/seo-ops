@@ -78,7 +78,7 @@ It depends on the size of the roof and what turns up under the old shingles. A J
 
 ### What warranty comes with a new roof?
 
-A new shingle roof from Apex comes with a 50-year limited lifetime manufacturer warranty and a lifetime no-leak workmanship warranty. Both can be passed to the next owner if you sell the house. Apex also offers the SureStart PLUS extended warranty, which covers material and labor.
+A new shingle roof from Apex comes with two warranties. The maker's warranty is a 50-year limited lifetime warranty on the materials. Apex adds a lifetime no-leak workmanship warranty on the install. Both can be passed to the next owner if you sell the house. Apex also offers the SureStart PLUS extended warranty, which covers material and labor.
 
 ## Where Do We Replace Roofs?
 
