@@ -235,3 +235,5 @@ What is proposed: at intake, every client's document checklist includes a Search
 - CR-011 · 2026-10-12 · DONE · system session · commit edf3b2f
 
 - CR-012 · 2026-10-12 · DONE · system session · commit edf3b2f
+
+- CR-019 · 2026-10-12 · DONE · system session · commit 783a9ae
