@@ -184,3 +184,5 @@ Workaround used: none in a client session; the approval is not recorded until a 
 - CR-022 · 2026-10-12 · ACCEPTED · Paul · Paul 2026-10-12: --sem accepts exactly the SEM rows in that batch's table, whatever the count
 
 - CR-022 · 2026-10-12 · DONE · system session · commit fd2de4b
+
+- CR-002 · 2026-10-12 · ACCEPTED · Paul · edited: Paul 2026-10-12: the BB-313 §3 lock lifts only when the live H1 fails HP-06 AND the homepage is not in the top 10 for its main keyword AND has few Search Console clicks for it over 90 days ('few' is a config value; the proposal shows the numbers). Always Paul's decision, never automatic. The old H1 is logged for rollback; a 30-day ranking and clicks check goes on the worklist. Then apply to home-mobile-medical Q4 with its numbers.
