@@ -23,6 +23,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 | 2026-10-12T07:10 | brand_guide_approved | approved |
 | 2026-10-12T07:33 | brand_guide_approved | approved |
 | 2026-10-12T07:37 | batch services briefs | approved |
+| 2026-10-12T11:45 | brand_guide_approved | approved |
 
 ## Decisions logged during runs
 
