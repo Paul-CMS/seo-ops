@@ -1965,3 +1965,34 @@ None raised. One tooling note for /system-review: `readability.py --exclude-term
 ### Next
 The batch review (`/build … drafts services`) once the Emergency, Metal, Slate and Skylights drafts are recorded.
 
+## /build · 2026-10-12 · run 20261012-074931-build-45cc
+
+**Agent:** Build (Agent 2, Opus) · **Date:** 2026-10-12 · **Route:** A
+
+### Done
+- Drafted `clients/apex-roofing-of-the-lowcountry/build/services/SD - Emergency Roof Repair - Apex Roofing of the Lowcountry.md` from the approved brief (revised 2026-10-12, FAQ 2 = past-customer priority), spec `methodology/specs/service.md`.
+- Recorded: `status.py page-stage … svc-emergency-roof-repair --stage draft` → "draft recorded".
+- Flag F-015 raised (FAQ 40–60-word first sentence vs CM-047 reading level; readability.py `--exclude-terms` takes a file, not a list as E10 shows). Workaround applied; rules unchanged.
+
+### Draft facts
+- About 1,100 words (body). Meta 160 chars. Opening 104 words. H2 sections: delivery ~324, types ~293, FAQ ~290 words (all under 375).
+- Reading level: page average grade 5.4, no paragraph over 10 (E10 passes).
+- 7 `[NEED]` markers: tarping/temporary patch (×2: delivery step 4, FAQ 3); "client confirms this emergency type" (×5, one per H3 type — open question `fact:svc-emergency-roof-repair:service_scope`).
+
+### Stage 3 self-critique
+- E1 portability: opening (owners on call, past customers first) and FAQ 2 are unique to Apex. The H3 type descriptions (wind, thunderstorm, hail, leak, shingles) are general trade content and partly portable — batch review should look at them beside Inspections' post-storm H3 and Replacement's storm-damage H3.
+- E2 specificity: 5 page-specific facts — owners always on call with emergency priority and past customers first (Client Confirmed); Ralph and Pierce get on the roof (Paul Approved); no minimum service-call charge; photos of the work; SC #57706 and Town of Bluffton #0620033323.
+- E3 variants: URL "emergency roof repair" → title "Emergency Roof Repair" → H1 "Storm and Leak Emergency Roofing / South Carolina Lowcountry" → first H2 "urgent roof damage / Beaufort and Jasper Counties / Roofing Contractor". No consecutive repeat; reserved B1 variant unused. Opening: metro area + roofer + emergency roof repair. FAQ H2: Lowcountry + Roofers.
+- E4 chunks: all H2 sections ≤ 375 words.
+- E5 invention: no response time, no "24 hour"/"same-day", no after-hours-fee claim, no price, no per-square figure, no lifespan, no Ken Gathercole review, no CertainTeed Belmont, no insurance-claim help, no tarping as a service, never "bonded". Falling limb used only as one review's words ("a gaping hole in our roof"), no reviewer name. Storm-safety advice is general (stay off the roof, keep clear of water near wiring).
+- E6 filler: no A6 phrases; cost FAQ does not open with the non-answer.
+- E7 headers: one H1; every H2 a question with an entity; no city in any H tag; no skipped levels. COM-11: title remainder "Emergency Roof Repair" vs H1 remainder "Storm and Leak Emergency Roofing" — pass.
+- E8 links: no cross-page link or link placeholder in prose/FAQ/opening; service-areas table placeholder present. Roof Repair's emergency FAQ is not duplicated (its "catch it and move what you can" text and its on-call sentence are not reused).
+- E9 human: read-aloud pass done; reads like the owners talking.
+- E10: grade 5.4, passes.
+- Spec checks SVC-01–SVC-22: pass, except SVC-19 pending the 5 type confirmations and tarping (Submitted → blocks publication until answered). SVC-15: 4 FAQs, none matching siblings' questions. FAQ first sentences are short and stand alone; the 40–60 words sit across the first answer paragraph (F-015).
+
+### Open
+- Client answers needed: emergency types (service_scope, already asked 2026-10-11) and tarping yes/no (brief F2).
+- Batch review (`/build … drafts`) once Metal Roofing, Slate Roofing and Skylights drafts exist.
+

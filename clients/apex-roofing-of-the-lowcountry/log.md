@@ -3292,3 +3292,48 @@ Changes: 0 · Summary: Roof Inspections draft written (services batch): 4 FAQs, 
 - CHANGE #532 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (11).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 9dd4a441f647 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #533 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (11).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (11).md | result: done · renamed and moved, nothing deleted
 - CHANGE #534 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (11).md | new: Apex Roofing of the Lowcountry - Status.md · sha 5c49124fd3af | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-12T07:49 · after build:draft (run 20261012-074602-build-fe96) · Paul typed /next
+
+## RUN 20261012-074931-build-45cc · STARTED · /build · 2026-10-12T07:49:31-05:00
+Step: build:draft · batch services · session a1a7f5f8-03bf-44ec-ad8e-1ebe990b1d87
+Gates checked: discovery_signed_off, batch:services:briefs, page_specs_approved
+- DRAFT 2026-10-12T07:52 · run 20261012-074931-build-45cc · svc-emergency-roof-repair · clients/apex-roofing-of-the-lowcountry/build/services/SD - Emergency Roof Repair - Apex Roofing of the Lowcountry.md
+- FLAG 2026-10-12T07:52 · run 20261012-074931-build-45cc · F-015 · service.md element 8 says the FAQ 'first sentence is the full answer (40-60 words)', which pulls against CM-047 grade 7-8 and the short sentences C5 asks for; also writing-commercial E10 shows readability.py --exclude-terms as a list of terms, but the script reads a file path. · workaround: Emergency draft: sentence one answers alone and is short; the whole first answer paragraph runs about 40-60 words. Exclude terms passed as a scratch file.
+### HANDOFF · /build · 2026-10-12 · run 20261012-074931-build-45cc
+**Agent:** Build (Agent 2, Opus) · **Date:** 2026-10-12 · **Route:** A
+
+### Done
+- Drafted `clients/apex-roofing-of-the-lowcountry/build/services/SD - Emergency Roof Repair - Apex Roofing of the Lowcountry.md` from the approved brief (revised 2026-10-12, FAQ 2 = past-customer priority), spec `methodology/specs/service.md`.
+- Recorded: `status.py page-stage … svc-emergency-roof-repair --stage draft` → "draft recorded".
+- Flag F-015 raised (FAQ 40–60-word first sentence vs CM-047 reading level; readability.py `--exclude-terms` takes a file, not a list as E10 shows). Workaround applied; rules unchanged.
+
+### Draft facts
+- About 1,100 words (body). Meta 160 chars. Opening 104 words. H2 sections: delivery ~324, types ~293, FAQ ~290 words (all under 375).
+- Reading level: page average grade 5.4, no paragraph over 10 (E10 passes).
+- 7 `[NEED]` markers: tarping/temporary patch (×2: delivery step 4, FAQ 3); "client confirms this emergency type" (×5, one per H3 type — open question `fact:svc-emergency-roof-repair:service_scope`).
+
+### Stage 3 self-critique
+- E1 portability: opening (owners on call, past customers first) and FAQ 2 are unique to Apex. The H3 type descriptions (wind, thunderstorm, hail, leak, shingles) are general trade content and partly portable — batch review should look at them beside Inspections' post-storm H3 and Replacement's storm-damage H3.
+- E2 specificity: 5 page-specific facts — owners always on call with emergency priority and past customers first (Client Confirmed); Ralph and Pierce get on the roof (Paul Approved); no minimum service-call charge; photos of the work; SC #57706 and Town of Bluffton #0620033323.
+- E3 variants: URL "emergency roof repair" → title "Emergency Roof Repair" → H1 "Storm and Leak Emergency Roofing / South Carolina Lowcountry" → first H2 "urgent roof damage / Beaufort and Jasper Counties / Roofing Contractor". No consecutive repeat; reserved B1 variant unused. Opening: metro area + roofer + emergency roof repair. FAQ H2: Lowcountry + Roofers.
+- E4 chunks: all H2 sections ≤ 375 words.
+- E5 invention: no response time, no "24 hour"/"same-day", no after-hours-fee claim, no price, no per-square figure, no lifespan, no Ken Gathercole review, no CertainTeed Belmont, no insurance-claim help, no tarping as a service, never "bonded". Falling limb used only as one review's words ("a gaping hole in our roof"), no reviewer name. Storm-safety advice is general (stay off the roof, keep clear of water near wiring).
+- E6 filler: no A6 phrases; cost FAQ does not open with the non-answer.
+- E7 headers: one H1; every H2 a question with an entity; no city in any H tag; no skipped levels. COM-11: title remainder "Emergency Roof Repair" vs H1 remainder "Storm and Leak Emergency Roofing" — pass.
+- E8 links: no cross-page link or link placeholder in prose/FAQ/opening; service-areas table placeholder present. Roof Repair's emergency FAQ is not duplicated (its "catch it and move what you can" text and its on-call sentence are not reused).
+- E9 human: read-aloud pass done; reads like the owners talking.
+- E10: grade 5.4, passes.
+- Spec checks SVC-01–SVC-22: pass, except SVC-19 pending the 5 type confirmations and tarping (Submitted → blocks publication until answered). SVC-15: 4 FAQs, none matching siblings' questions. FAQ first sentences are short and stand alone; the 40–60 words sit across the first answer paragraph (F-015).
+
+### Open
+- Client answers needed: emergency types (service_scope, already asked 2026-10-11) and tarping yes/no (brief F2).
+- Batch review (`/build … drafts`) once Metal Roofing, Slate Roofing and Skylights drafts exist.
+### END HANDOFF
+## RUN 20261012-074931-build-45cc · FINISHED · 2026-10-12T07:52:47-05:00
+Changes: 0 · Summary: Emergency Roof Repair draft written (services batch); 7 NEEDs (tarping, 5 emergency types); flag F-015
+- CHANGE #535 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (9).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #536 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (9).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 31594fc7676d | result: done · copied (Drive for desktop syncs it)
+- CHANGE #537 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (12).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (12).md | result: done · renamed and moved, nothing deleted
+- CHANGE #538 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (12).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha cddb9ab12922 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #539 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (12).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (12).md | result: done · renamed and moved, nothing deleted
+- CHANGE #540 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (12).md | new: Apex Roofing of the Lowcountry - Status.md · sha 754b398cb8ea | result: done · copied (Drive for desktop syncs it)
