@@ -13,10 +13,11 @@
                   a workflow issue for Paul's next system session (P3, Q2): appended to clients/<slug>/flags.jsonl,
                   listed in STATUS.md and /system-review. The run continues on the current rules.
     run.py unlock <slug>                            Paul only, in his own terminal: clear the client lock (P2)
-    run.py check  <slug>                            exit 3 if an unfinished run exists
+    run.py check  <slug>                            exit 3 if an unfinished run exists; exit 4 (like start) in a client
+                                                    worktree that is missing a link to the main folder
     run.py steps  [<command>]                       list each step's gates and outputs (from gates.json)
 
-Exit codes: 3 unfinished run found (stop and ask Paul) · 4 gate not met · 12 the step has not
+Exit codes: 3 unfinished run found (stop and ask Paul) · 4 gate not met, or worktree links missing · 12 the step has not
 recorded what it must produce (finish refused — record it, or Paul aborts the run).
 log.md and changes.jsonl are append-only; nothing here ever rewrites them. finish and abort
 regenerate the readable records (records.py) and make the run's one git commit.
@@ -282,6 +283,11 @@ def main():
     if a.cmd == "start":
         step_spec(S.load(a.slug), a.command, a.step)   # a mistyped step is a usage error first
     if a.cmd in ("start", "check"):
+        import worktree
+        missing = worktree.refusal(a.slug)   # a client worktree must see machine.json, .env and the raw data
+        if missing:
+            print(missing)
+            sys.exit(4)
         left = unfinished(a.slug)
         if left:
             print("STOP — unfinished run(s) found for this client:")

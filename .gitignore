@@ -4,8 +4,8 @@
 !.env.example
 
 # --- Client raw data ---
-clients/*/inputs/
-clients/*/crawl/
+clients/*/inputs
+clients/*/crawl
 
 # --- Credential and key files ---
 *credentials*
@@ -33,7 +33,7 @@ machine.json
 *.tmp
 
 # --- raw data pulls (may contain reviewer names) ---
-clients/*/data/*/raw/
+clients/*/data/*/raw
 
 # --- test suite scratch state ---
 tests/.state/

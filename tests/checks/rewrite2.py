@@ -156,6 +156,10 @@ def t_p2_parallel_clients(h):
             h.sh(f'python3 scripts/status.py init {s} --name "{s.title()}" --domain {s}.example --type full --industry roofing')
         (SB / "clients/wa-co/inputs").mkdir(parents=True, exist_ok=True)
         (SB / "clients/wa-co/inputs/raw.csv").write_text("x\n")
+        (SB / "clients/wa-co/data/gbp/raw").mkdir(parents=True, exist_ok=True)
+        (SB / "clients/wa-co/data/gbp/raw/pull.json").write_text("{}\n")
+        (SB / "machine.json").write_text('{"can_approve": true}\n')   # git-ignored; removed in finally
+        (SB / ".env").write_text("FAKE_TEST_KEY=not-a-secret\n")
         cfg = json.loads(cfg0)
         cfg.update({"git_push_after_run": True, "client_worktrees_root": str(wtroot)})
         cfgp.write_text(json.dumps(cfg, indent=2))
@@ -170,6 +174,49 @@ def t_p2_parallel_clients(h):
         h.check("P2: the client's git-ignored raw data is linked from the main folder",
                 (wa / "clients/wa-co/inputs/raw.csv").exists(), out)
         h.check("P2: opening it again reuses the folder", "reusing" in _run(SB, "python3 scripts/worktree.py open wa-co")[1])
+        want = ("machine.json", ".env", "clients/wa-co/inputs", "clients/wa-co/data/gbp/raw")
+        h.check("P2: machine.json, .env, inputs/ and data/*/raw/ are symlinks to the main folder, never copies",
+                all((wa / r).is_symlink() and (wa / r).resolve() == (SB / r).resolve() for r in want)
+                and (wb / "machine.json").is_symlink() and (wb / ".env").is_symlink()
+                and not (wb / "clients/wb-co/crawl").exists(), [(r, (wa / r).is_symlink()) for r in want])
+        st = _run(wa, "git status --porcelain --untracked-files=all")[1]
+        h.check("P2: git ignores the links themselves — a client commit can never stage a symlink to the main folder",
+                not any(r in st for r in want), st)
+        code, out = _run(wa, "python3 scripts/worktree.py check wa-co")
+        code2, out2 = _run(SB, "python3 scripts/run.py check wa-co")
+        h.check("P2: a fully linked worktree passes the check; the main folder is never refused", code == 0 and code2 == 0,
+                (out, out2))
+        (wa / ".env").unlink()
+        (wa / "clients/wa-co/inputs").unlink()
+        cs, os_ = _run(wa, "python3 scripts/run.py start wa-co new-client")
+        cc, oc = _run(wa, "python3 scripts/run.py check wa-co")
+        cw, ow = _run(wa, "python3 scripts/worktree.py check wa-co")
+        h.check("P2: run.py start, run.py check and worktree.py check (/resume) refuse in a worktree missing a link, "
+                "naming what is missing and the fix",
+                cs == 4 and cc == 4 and cw == 4 and "REFUSED" in os_ and ".env" in os_ and "clients/wa-co/inputs" in os_
+                and "machine.json" not in os_ and "worktree.py open wa-co" in os_
+                and not json.loads((wa / "clients/wa-co/status.json").read_text()).get("open_runs"), (os_, oc, ow))
+        (wa / "clients/wa-co/inputs").mkdir()          # an empty real folder is replaced by the link
+        (wa / "machine.json").unlink()
+        (wa / "machine.json").symlink_to(wa / "nowhere.json")   # a broken link is replaced
+        code, out = _run(SB, "python3 scripts/worktree.py open wa-co")
+        h.check("P2: open re-creates missing links, replaces an empty folder and a broken link, and says what it sees",
+                code == 0 and all((wa / r).is_symlink() and (wa / r).resolve() == (SB / r).resolve() for r in want)
+                and "linked from the main folder" in out and "sees from the main folder" in out
+                and _run(wa, "python3 scripts/worktree.py check wa-co")[0] == 0, out)
+        (wa / "clients/wa-co/data/gbp/raw").unlink()
+        (wa / "clients/wa-co/data/gbp/raw").mkdir()
+        (wa / "clients/wa-co/data/gbp/raw/own.json").write_text("{}\n")
+        code, out = _run(SB, "python3 scripts/worktree.py open wa-co")
+        code2, out2 = _run(wa, "python3 scripts/worktree.py check wa-co")
+        h.check("P2: a worktree folder with its own files is never touched — open says so and the check refuses",
+                (wa / "clients/wa-co/data/gbp/raw/own.json").exists() and "NOT LINKED" in out
+                and code2 == 4 and "data/gbp/raw" in out2, (out, out2))
+        import shutil as _sh
+        _sh.move(str(wa / "clients/wa-co/data/gbp/raw/own.json"), str(SB / "clients/wa-co/data/gbp/raw/own.json"))
+        _run(SB, "python3 scripts/worktree.py open wa-co")
+        h.check("P2: once its files are moved to the main folder, open links it and they are seen",
+                (wa / "clients/wa-co/data/gbp/raw/own.json").exists() and (wa / "clients/wa-co/data/gbp/raw").is_symlink())
         for wt, sid in ((wa, "chat-a"), (wb, "chat-b")):
             _hook(h, "session_start.py", {"session_id": sid, "cwd": str(wt), "hook_event_name": "SessionStart",
                                           "source": "startup", "model": "claude-haiku-4-5"})
@@ -232,6 +279,8 @@ def t_p2_parallel_clients(h):
         _run(SB, "git remote remove origin")
         shutil.rmtree(wtroot, ignore_errors=True)
         shutil.rmtree(origin, ignore_errors=True)
+        (SB / "machine.json").unlink(missing_ok=True)
+        (SB / ".env").unlink(missing_ok=True)
         cfgp.write_text(cfg0)
 
 
