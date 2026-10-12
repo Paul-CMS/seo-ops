@@ -2862,3 +2862,55 @@ Changes: 0 · Summary: Facts answers recorded for the three blocked service page
 - CHANGE #466 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-11 (4).md | new: Apex Roofing of the Lowcountry - Status.md · sha 79cea673f600 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #467 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - VA Worklist - 2026-10-11.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.md | new: _Archive/Apex Roofing of the Lowcountry - VA Worklist - 2026-10-11.md | result: done · renamed and moved, nothing deleted
 - CHANGE #468 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - VA Worklist - 2026-10-11.md | new: Apex Roofing of the Lowcountry - VA Worklist.md · sha b4424386e3a1 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261012-065658-build-15df · STARTED · /build · 2026-10-12T06:56:58-05:00
+Step: build:brief · batch services · session a1a7f5f8-03bf-44ec-ad8e-1ebe990b1d87
+Gates checked: discovery_signed_off, batch:services:briefs_ready, page_specs_approved
+- REOPENED replacement_price_review · 2026-10-12T07:00:28-05:00 · run 20261012-065658-build-15df · Paul 2026-10-12: settle the replacement price with the Lowcountry standard he gave (d-price-replacement-standard-2026), not the review. The Google review ($20,000-$25,000) may appear on the Roof Replacement page only as an example.
+- SETTLED replacement_price_review · 2026-10-12T07:00:28-05:00 · run 20261012-065658-build-15df · by Paul · Paul 2026-10-12: Roof replacement price on the page = the Lowcountry standard ranges (d-price-replacement-standard-2026): architectural asphalt $350-$475/sq (about $14,000-$20,000 on a typical 1,800-2,000 sq ft home); standing seam metal $700-$1,200/sq (about $24,000-$45,000+). Not the review. The review ($20,000-$25,000, Ken Gathercole, 2026-08-15) may be used on the Roof Replacement page as an example only, cited to that single review.
+- DECISION 2026-10-12T07:00 · run 20261012-065658-build-15df · Paul 2026-10-12: the Lowcountry price sources (sureflowroof.com, charlestonroofhelp.com) are competitor blogs. The researcher must check independent sources when writing the Roof Replacement page; the price stays the Lowcountry standard until they do.
+- DECISION 2026-10-12T07:00 · run 20261012-065658-build-15df · Paul 2026-10-12: ignore bonded status (answer 5 'not sure about the bonded part'). Do not raise it or write it as a gap.
+- BRIEF 2026-10-12T07:03 · run 20261012-065658-build-15df · svc-metal-roofing · clients/apex-roofing-of-the-lowcountry/build/services/SB - Metal Roofing - Apex Roofing of the Lowcountry.md
+- BRIEF 2026-10-12T07:03 · run 20261012-065658-build-15df · svc-slate-roofing · clients/apex-roofing-of-the-lowcountry/build/services/SB - Slate Roofing - Apex Roofing of the Lowcountry.md
+- BRIEF 2026-10-12T07:03 · run 20261012-065658-build-15df · svc-skylights · clients/apex-roofing-of-the-lowcountry/build/services/SB - Skylights - Apex Roofing of the Lowcountry.md
+- BRIEFS COLLECTED 2026-10-12T07:03 · batch services · 7 page(s), one run each
+- FLAG 2026-10-12T07:03 · run 20261012-065658-build-15df · F-013 · methodology/specs/service.md §3 #9 and §6 tell writers to leave service-area rows as '| [Link wheel: populate service-area links here] |', but the build rules (P11, stage-6 doc) allow only [NEED: …] and [LINK → /slug/ · reason] placeholders, and publish.py drafts refuses a placeholder without a NEED note. The two rules disagree on the service-areas table placeholder. · workaround: Briefs keep the spec's link-wheel row form (as the approved pilot and sibling briefs do); Finish fills the table before ship. Paul to settle the form at /system-review.
+- EVIDENCE 2026-10-12T07:04 · run 20261012-065658-build-15df · svc-roof-replacement: WARN (known 8, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T07:04 · run 20261012-065658-build-15df · svc-roof-installation: WARN (known 8, unknown 0, unverified 5, conflict 0)
+- EVIDENCE 2026-10-12T07:04 · run 20261012-065658-build-15df · svc-roof-inspections: WARN (known 7, unknown 0, unverified 5, conflict 0)
+- EVIDENCE 2026-10-12T07:04 · run 20261012-065658-build-15df · svc-emergency-roof-repair: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T07:04 · run 20261012-065658-build-15df · svc-metal-roofing: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T07:04 · run 20261012-065658-build-15df · svc-slate-roofing: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T07:04 · run 20261012-065658-build-15df · svc-skylights: WARN (known 8, unknown 0, unverified 4, conflict 0)
+### HANDOFF · /build · 2026-10-12 · run 20261012-065658-build-15df
+**Agent:** Build (Agent 2), Route A.
+
+**Done**
+- Re-ran the evidence gate for the batch in this run (`evidence.py run … --batch services`). The results were unchanged: all 7 pages WARN. The four earlier pages still have 1 required gap each, and metal, slate and skylights have 0.
+- Wrote and recorded (`status.py page-stage … --stage brief`) the three briefs that were blocked and are now unblocked by Paul's 2026-10-11 answers 1–2 (settled 2026-10-12):
+  - `clients/apex-roofing-of-the-lowcountry/build/services/SB - Metal Roofing - Apex Roofing of the Lowcountry.md`
+  - `clients/apex-roofing-of-the-lowcountry/build/services/SB - Slate Roofing - Apex Roofing of the Lowcountry.md`
+  - `clients/apex-roofing-of-the-lowcountry/build/services/SB - Skylights - Apex Roofing of the Lowcountry.md`
+- All three gates WARN (0 required gaps); each brief has `## Evidence gaps`. The script reported "batch briefs collected" — all seven services briefs are on file for Paul's one approval.
+- The four existing briefs (Replacement, Installation, Inspections, Emergency) were not touched; the batch tool did not ask for them to be re-run.
+- Applied: settled scope/process wording only; Paul answer 3 (Lowcountry standard prices `d-price-replacement-standard-2026`, no client-specific or review prices, no $20k–$25k example); answers 4–6 (metal 40-year panel warranty, insurance, new construction); answer 7 (metas name replacement / emergency as the second service); coordinator's mid-run decisions (bonded status not raised; no review price figures).
+- Flag F-013 raised: the service spec's `[Link wheel: …]` row placeholder vs the P11 placeholder rule. Workaround: kept the spec's form, as the pilot and sibling briefs do.
+
+**Open for Paul (in the briefs)**
+- Metal and slate: the briefs use the Lowcountry standard instead of the older client ranges W20/W19, per answer 3. Paul can keep W20/W19 instead.
+- Metal: answer 4 (40-year panel warranty) is a logged decision, but `d-warranty-terms` still says Submitted. It needs a `run.py fact` record before publication.
+- Slate: whether to move the synthetic-slate PAA questions (#30, #116, #124) off the blog list now that synthetic slate is confirmed. Default is no change.
+- Skylights: optional yes/no question to the client: does Apex install Velux and FAKRO (W18)?
+- Researcher pass (public facts, cited): metal over shingles, metal lifespan, slate lifespan, slate minimum slope, skylight energy, skylights on metal roofs, fixed vs venting skylights.
+- Sibling conflict (reported, not changed): the Replacement brief still uses the W20 shingle range ($9,000–$18,000). Answer 3 points to the Lowcountry standard ($14,000–$20,000). Paul resolves this at the brief approval.
+
+**Not done / never:** no drafts, no gates, no fact records, no edits to the four existing briefs.
+### END HANDOFF
+## RUN 20261012-065658-build-15df · FINISHED · 2026-10-12T07:04:26-05:00
+Changes: 0 · Summary: Briefs for svc-metal-roofing, svc-slate-roofing, svc-skylights written and recorded (WARN, gaps listed); all 7 services briefs collected for Paul's approval; flag F-013 raised
+- CHANGE #469 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12.md | result: done · renamed and moved, nothing deleted
+- CHANGE #470 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12.md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 3b245c7dd3e1 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #471 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12.md | result: done · renamed and moved, nothing deleted
+- CHANGE #472 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12.md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha f99e1f5211d7 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #473 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12.md | result: done · renamed and moved, nothing deleted
+- CHANGE #474 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12.md | new: Apex Roofing of the Lowcountry - Status.md · sha 58bf66561724 | result: done · copied (Drive for desktop syncs it)

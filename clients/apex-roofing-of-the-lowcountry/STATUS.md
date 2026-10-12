@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the audit and the reconciled Brand Guide are ready for your approval in one line — the rec; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
 - **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry brand_guide_approved --files "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G"` (or asks for changes first)
 
-_Generated 2026-10-12T06:56 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-12T07:04 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -81,7 +81,7 @@ _Open, but the next action above goes ahead without them._
 - Paul 2026-10-09: synthetic roofing is offered - yes. Neither pilot page's services list needs it (Roof Repair list per Paul has no synthetic; Bluffton lists the 8 services). Port Royal base-housing work remains open under synthetic_roofing_offered.
 - Paul 2026-10-09: Apex works in Palmetto Bluff, Belfair, Colleton River Plantation and Moss Creek (W9). Per the Town of Bluffton Neighborhoods PDF, Palmetto Bluff and Hampton Hall are inside the Town limits; Belfair, Colleton River Plantation and Moss Creek are Greater Bluffton (unincorporated Beaufort County). Bluffton page names those three only as also served, outside the Town limits. Hampton Hall is the 6th Bluffton neighborhood (Town PDF; also named in a 2026-05-17 review).
 - Paul 2026-10-09: no Old Town historic review or UDO roof-material claims (UDO 3.18 and Article 5 NEEDs dropped) unless evidence is found; none found in this run. The Old Town FAQ now only tells the homeowner to ask the Town before choosing a material.
-- Paul 2026-10-09: $20,000-$25,000 for a roof replacement, source Google review, Ken Gathercole, 2026-08-15 (per Paul; the figure is not in the reviews export). For the Roof Replacement brief only, cited to that single review, never as Apex's general price. Recorded in Brand Guide H; not in either pilot draft.
+- Paul 2026-10-12: Roof replacement price on the page = the Lowcountry standard ranges (d-price-replacement-standard-2026): architectural asphalt $350-$475/sq (about $14,000-$20,000 on a typical 1,800-2,000 sq ft home); standing seam metal $700-$1,200/sq (about $24,000-$45,000+). Not the review. The review ($20,000-$25,000, Ken Gathercole, 2026-08-15) may be used on the Roof Replacement page as an example only, cited to that single review.
 - Paul 2026-10-11 answer 1 (site is accurate; services confirmed): Standing seam metal roofing for coastal conditions (salt air, hurricane winds, UV, humidity): concealed fasteners, wind-uplift resistance; coated standing seam panels (Kynar 500 and Hylar 5000) in a range of profiles and colours, with colour submittals and ARB submissions for HOA communities.
 - Paul 2026-10-11 answer 1 (site is accurate; services confirmed): genuine Vermont slate in standard grades suited to coastal wind requirements; premium synthetic slate (DaVinci Roofscapes, CertainTeed Belmont); slate repair, replacing individual tiles when most of the field is sound, and re-flashing penetrations.
 - Paul 2026-10-11 answer 1 (site is accurate; services confirmed): new skylight installation in existing roofs (including structural work); repair or replacement of failing units, including sealed-unit replacement for fogging between panes and flashing and curb repair.
@@ -126,6 +126,7 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 - **F-010** (open, not yet reviewed) 2026-10-11 · build:facts: reviews.csv has no reviewer_key column, so the researcher counts one reviewer per row (CM-057 distinct-reviewer count is approximate). — workaround: counted per row; owner replies excluded
 - **F-011** (open, not yet reviewed) 2026-10-11 · build:facts: Grid marks a Brand Guide D row Unverified when any part is unconfirmed (Warranty terms: manufacturer + workmanship Client Confirmed, only W14 metal 40-year Submitted), which makes the whole row a question. — workaround: asked only the W14 part (Q4)
 - **F-012** (open, not yet reviewed) 2026-10-11 · build:brief: /next started build:brief for the services batch while Paul's 2026-10-11 facts answers (interviews/facts/... Facts Answers - all - 2026-10-11.md) were on disk but unrecorded: the evidence gate scored on stale facts (metal, slate, skylights BLOCK; scope gaps on the other 4) although the answers likely clear them. next.py / the brief gate does not check for an unrecorded facts-answers file. — workaround: Briefs written for the 4 WARN pages with [NEED] markers and a note that the 2026-10-11 answers await /interview facts-answers all; 3 BLOCK pages left unbriefed; re-run the gate after recording.
+- **F-013** (open, not yet reviewed) 2026-10-12 · build:brief: methodology/specs/service.md §3 #9 and §6 tell writers to leave service-area rows as '| [Link wheel: populate service-area links here] |', but the build rules (P11, stage-6 doc) allow only [NEED: …] and [LINK → /slug/ · reason] placeholders, and publish.py drafts refuses a placeholder without a NEED note. The two rules disagree on the service-areas table placeholder. — workaround: Briefs keep the spec's link-wheel row form (as the approved pilot and sibling briefs do); Finish fills the table before ship. Paul to settle the form at /system-review.
 
 ## Spend so far
 
@@ -135,4 +136,4 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /interview 2026-10-12T06:56 — Facts answers recorded for the three blocked service pages (scope and process settled); evidence gate re-run: all seven service pages WARN, none BLOCK
+Last run: /build 2026-10-12T07:04 — Briefs for svc-metal-roofing, svc-slate-roofing, svc-skylights written and recorded (WARN, gaps listed); all 7 services briefs collected for Paul's approval; flag F-013 raised

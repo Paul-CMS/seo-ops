@@ -65,6 +65,8 @@ Generated from status.json and the safety log — do not edit. Record a decision
 - 2026-10-12T06:56 · run 20261012-065139-interview-b77b · Paul 2026-10-11 answer 8 (awards): list any awards currently on the website; otherwise none. Note for Paul after the page handoffs: the client needs to work on awards; Paul will get the client a few this week.
 - 2026-10-12T06:56 · run 20261012-065139-interview-b77b · Paul 2026-10-11 answer 9 (team size / roofs done): skip.
 - 2026-10-12T06:56 · run 20261012-065139-interview-b77b · Paul 2026-10-11 answer 10 (about / company story): the client asks to make it about customer care, 'not just another house… someone's home'. Note for Paul after the page handoffs: the business needs to be active on Facebook posts.
+- 2026-10-12T07:00 · run 20261012-065658-build-15df · Paul 2026-10-12: the Lowcountry price sources (sureflowroof.com, charlestonroofhelp.com) are competitor blogs. The researcher must check independent sources when writing the Roof Replacement page; the price stays the Lowcountry standard until they do.
+- 2026-10-12T07:00 · run 20261012-065658-build-15df · Paul 2026-10-12: ignore bonded status (answer 5 'not sure about the bonded part'). Do not raise it or write it as a gap.
 
 ## Conditions met (system-verified)
 
