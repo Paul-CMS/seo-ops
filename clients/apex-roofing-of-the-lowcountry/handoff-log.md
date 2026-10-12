@@ -2281,3 +2281,26 @@ Paul asked for this revision: the Roof Replacement cost FAQ now uses the same me
 ### Note for Paul (not changed)
 The next paragraph starts "These are typical ranges for the area, not a quote." The new sentence just before it starts "These are regional ranges…", so two sentences in a row now open with "These are". This is minor. If Paul wants it fixed, he can delete the second sentence, which is a one-line change.
 
+## /build · 2026-10-12 · run 20261012-150342-build-474a
+
+**Step:** Brand Guide content write-back for batch `services` (P8), right after Paul's drafts approval (2026-10-12, SEM applied).
+
+**Done**
+- Brand Guide B3 (assignment log): 9 rows — the 7 services pages plus the 2 pilot pages (Roof Repair, Bluffton). Each row gives the category and area variants used in the H1 and H2s and the approved content file. Change #628.
+- Brand Guide C1 (service pages): 8 rows (7 services + pilot Roof Repair) with the H1 service variant and status. C2 (location pages): pilot Bluffton row. Change #629.
+- Brand Guide C3 (heading and FAQ registry): 78 rows (every H2 and FAQ question on the 9 approved pages). No question or H2 appears on two pages. Change #630.
+- Brand Guide copied to Drive (`drive.py upload`).
+- `status.py writeback apex-roofing-of-the-lowcountry services` recorded (exit 0).
+
+**Checks**
+- The reserved homepage variant (B1, "Hilton Head Island Metropolitan Area") appears on no approved page.
+- The H1s match the approved site plan for all 7 services pages.
+
+**Notes / open**
+- The pilot batch's content (Roof Repair, Bluffton) had never been written into B3/C1/C2/C3 (the pilot shipped under the earlier flow). It is added now so the locations batch does not reuse its variants, headings or FAQs. Only the services batch write-back was recorded in status; the pilot batch's own status record was not changed.
+- C2 "GBP landing page?" for Bluffton is not recorded in the Brand Guide; Section F must answer it before schema (BB-604).
+- From the services semantic review (not this step): the 40-year metal panel warranty (W14) still reads Submitted in D (`d-warranty-terms`); it needs a fact row before ship.
+- Edits were made only in B3 and C1–C3, which are outside the approved Brand Guide sections, so brand_guide_approved stands.
+
+**Next:** `/build apex-roofing-of-the-lowcountry write locations` (the locations batch reads B3/C1–C3).
+

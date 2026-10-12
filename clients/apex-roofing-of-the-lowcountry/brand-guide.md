@@ -83,6 +83,18 @@ variants 1 and 2 are not added on top in an SEO title (H1, H2s and body only).
 | Page URL | Page type | Category variant | Area variant | Content file (SD/LD) | Shipped |
 |---|---|---|---|---|---|
 | / | homepage | | *(reserved)* | | |
+| /roof-repair/ | service | Roofers; Roofer | South Carolina Lowcountry (H1); Beaufort and Jasper Counties; Lowcountry | build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md (pilot, drafts approved 2026-10-09; written back 2026-10-12) | WP draft (not live) |
+| /bluffton/ | location | Roofers (H1); Roofing Contractor; Roofer | Bluffton (city) | build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md (pilot, drafts approved 2026-10-09; written back 2026-10-12) | WP draft (not live) |
+| /roof-replacement/ | service | Residential Roofer; Roofing Contractor | Beaufort and Jasper Counties (H1); South Carolina Lowcountry; Lowcountry | build/services/SD - Roof Replacement - Apex Roofing of the Lowcountry.md (services, drafts approved 2026-10-12, SEM applied) | No |
+| /roof-installation/ | service | Roofers; Roofer | South Carolina Lowcountry (H1); Beaufort and Jasper Counties; Lowcountry | build/services/SD - Roof Installation - Apex Roofing of the Lowcountry.md (services, drafts approved 2026-10-12, SEM applied) | No |
+| /roof-inspections/ | service | Roofer; Residential Roofer | Beaufort and Jasper Counties (H1); South Carolina Lowcountry; Lowcountry | build/services/SD - Roof Inspections - Apex Roofing of the Lowcountry.md (services, drafts approved 2026-10-12, SEM applied) | No |
+| /emergency-roof-repair/ | service | Roofing Contractor; Roofers | South Carolina Lowcountry (H1); Beaufort and Jasper Counties; Lowcountry; Hilton Head Island–Bluffton–Port Royal metropolitan area (intro body) | build/services/SD - Emergency Roof Repair - Apex Roofing of the Lowcountry.md (services, drafts approved 2026-10-12, SEM applied) | No |
+| /metal-roofing/ | service | Roofing Contractor; Roofers | Beaufort and Jasper Counties (H1); South Carolina Lowcountry; Lowcountry | build/services/SD - Metal Roofing - Apex Roofing of the Lowcountry.md (services, drafts approved 2026-10-12, SEM applied) | No |
+| /slate-roofing/ | service | Roofer | South Carolina Lowcountry (H1); Beaufort and Jasper Counties; Lowcountry | build/services/SD - Slate Roofing - Apex Roofing of the Lowcountry.md (services, drafts approved 2026-10-12, SEM applied) | No |
+| /skylights/ | service | Residential Roofer | Beaufort and Jasper Counties (H1); South Carolina Lowcountry; Lowcountry | build/services/SD - Skylights - Apex Roofing of the Lowcountry.md (services, drafts approved 2026-10-12, SEM applied) | No |
+
+Variants are those in the H1 and H2s (category variants from A3; area variants from the B2 pool). No page uses the
+reserved homepage variant (B1, "Hilton Head Island Metropolitan Area").
 
 ## Section C — Page inventory
 
@@ -93,10 +105,19 @@ variants 1 and 2 are not added on top in an SEO title (H1, H2s and body only).
 ### C1 · Service pages
 | URL | Service name | H1 service variant | Status |
 |---|---|---|---|
+| /roof-repair/ | Roof Repair | Roof Leak and Damage Repair | Pilot drafts approved 2026-10-09; WordPress draft (not live) |
+| /roof-replacement/ | Roof Replacement | Re-Roofing | Services drafts approved 2026-10-12 (SEM applied); not yet in WordPress |
+| /roof-installation/ | Roof Installation | New-Construction Roofing | Services drafts approved 2026-10-12 (SEM applied); not yet in WordPress |
+| /roof-inspections/ | Roof Inspections | Roof Condition Inspections | Services drafts approved 2026-10-12 (SEM applied); not yet in WordPress |
+| /emergency-roof-repair/ | Emergency Roof Repair | Storm and Leak Emergency Roofing | Services drafts approved 2026-10-12 (SEM applied); not yet in WordPress |
+| /metal-roofing/ | Metal Roofing | Standing Seam Metal Roofs | Services drafts approved 2026-10-12 (SEM applied); not yet in WordPress; live URL /metal-roofing-2/ is 301'd at publish |
+| /slate-roofing/ | Slate Roofing | Natural Slate Roofs | Services drafts approved 2026-10-12 (SEM applied); not yet in WordPress |
+| /skylights/ | Skylights | Skylight Installation | Services drafts approved 2026-10-12 (SEM applied); not yet in WordPress |
 
 ### C2 · Location pages
 | URL | City | GBP landing page? | Status |
 |---|---|---|---|
+| /bluffton/ | Bluffton | Not recorded here (check Section F before schema) | Pilot drafts approved 2026-10-09; WordPress draft (not live); H1 variant "Roofers" |
 
 Only a verified GBP's actual landing URL gets LocalBusiness-type schema (BB-604).
 
@@ -105,6 +126,87 @@ Every FAQ question and H2 live on the site, with the page that owns it. No quest
 
 | Question or H2 | Page that owns it |
 |---|---|
+| H2: How Do Our Roofers Fix a Damaged Roof in Beaufort and Jasper Counties? | /roof-repair/ |
+| H2: Which Roof Repairs Do We Handle? | /roof-repair/ |
+| H2: What Do Homeowners Ask a Lowcountry Roofer About Repairs? | /roof-repair/ |
+| FAQ: What is the 25% rule for roofing? | /roof-repair/ |
+| FAQ: How much does a roof repair cost? | /roof-repair/ |
+| FAQ: Should I repair or replace my roof? | /roof-repair/ |
+| FAQ: Can a roof be repaired in a day? | /roof-repair/ |
+| FAQ: What should I do if I have an emergency roof leak? | /roof-repair/ |
+| H2: Where Do We Repair Roofs? | /roof-repair/ |
+| H2: Which Roof Services Can You Get From a Bluffton Roofing Contractor? | /bluffton/ |
+| H2: What Makes Roofing in Bluffton Different? | /bluffton/ |
+| H2: What Should Bluffton Homeowners Know Before Hiring a Roofer? | /bluffton/ |
+| FAQ: Do I need a Town of Bluffton permit to replace my roof? | /bluffton/ |
+| FAQ: What roofing materials are allowed in Old Town Bluffton? | /bluffton/ |
+| FAQ: Do you replace roofs in Palmetto Bluff and nearby gated communities? | /bluffton/ |
+| FAQ: Is Apex Roofing of the Lowcountry based in Bluffton? | /bluffton/ |
+| H2: Which Bluffton Neighborhoods Do We Serve? | /bluffton/ |
+| H2: What Are Some Things to Do in Bluffton? | /bluffton/ |
+| H2: What Are the Top Sites to See in Bluffton? | /bluffton/ |
+| H2: Which Towns Near Bluffton Do We Also Serve? | /bluffton/ |
+| H2: What Does a Roofing Contractor Do About Urgent Roof Damage in Beaufort and Jasper Counties? | /emergency-roof-repair/ |
+| H2: Which Roof Emergencies Do We Respond To? | /emergency-roof-repair/ |
+| H2: When Should You Call Lowcountry Roofers About a Roof Emergency? | /emergency-roof-repair/ |
+| FAQ: Is a leaking roof an emergency? | /emergency-roof-repair/ |
+| FAQ: Do past customers get priority in a roofing emergency? | /emergency-roof-repair/ |
+| FAQ: Can a roof leak be repaired while it is raining? | /emergency-roof-repair/ |
+| FAQ: How much does emergency roof repair cost? | /emergency-roof-repair/ |
+| H2: Where Do We Handle Roof Emergencies? | /emergency-roof-repair/ |
+| H2: How Does a Roofing Contractor Put a Metal Roof on a Home in the South Carolina Lowcountry? | /metal-roofing/ |
+| H2: Which Standing Seam Metal Roof Options Can You Choose From? | /metal-roofing/ |
+| H2: Which Metal Roof Questions Do Lowcountry Roofers Hear Most? | /metal-roofing/ |
+| FAQ: How much does a metal roof cost? | /metal-roofing/ |
+| FAQ: Is a metal roof worth the extra cost over shingles? | /metal-roofing/ |
+| FAQ: What are the biggest problems with metal roofs? | /metal-roofing/ |
+| FAQ: Can a metal roof go over existing shingles? | /metal-roofing/ |
+| FAQ: How long does a metal roof last, and what does the warranty cover? | /metal-roofing/ |
+| H2: Where Do We Install Metal Roofs? | /metal-roofing/ |
+| H2: What Happens When a Roofer Checks Your Roof in the South Carolina Lowcountry? | /roof-inspections/ |
+| H2: Which Kinds of Roof Inspections Can You Book? | /roof-inspections/ |
+| H2: Which Inspection Questions Can a Lowcountry Residential Roofer Answer? | /roof-inspections/ |
+| FAQ: How much does a roof inspection cost? | /roof-inspections/ |
+| FAQ: What is included in a roof inspection? | /roof-inspections/ |
+| FAQ: How often should a roof be inspected? | /roof-inspections/ |
+| FAQ: Who inspects a roof for storm damage? | /roof-inspections/ |
+| H2: Where Do We Inspect Roofs? | /roof-inspections/ |
+| H2: What Goes Into a New Home's Roof From Beaufort and Jasper Counties Roofers? | /roof-installation/ |
+| H2: What New-Construction Roofing Work Do We Take On? | /roof-installation/ |
+| H2: What Should Builders Settle With a Lowcountry Roofer Before a New Roof Goes On? | /roof-installation/ |
+| FAQ: Is drip edge required in South Carolina? | /roof-installation/ |
+| FAQ: How long does a new-construction roof take to install? | /roof-installation/ |
+| FAQ: Which shingles and underlayment go on a new roof? | /roof-installation/ |
+| FAQ: How can I tell if a new roof was installed correctly? | /roof-installation/ |
+| H2: Where Do We Install New Roofs? | /roof-installation/ |
+| H2: How Does a Residential Roofer Replace a Roof in the South Carolina Lowcountry? | /roof-replacement/ |
+| H2: Which Roofing Materials Can Go on Your New Roof? | /roof-replacement/ |
+| H2: Which Questions Do Homeowners Ask a Lowcountry Roofing Contractor Before a New Roof? | /roof-replacement/ |
+| FAQ: What does a roof replacement cost in South Carolina? | /roof-replacement/ |
+| FAQ: Should a 20-year-old roof be replaced? | /roof-replacement/ |
+| FAQ: How long does a roof replacement take? | /roof-replacement/ |
+| FAQ: What warranty comes with a new roof? | /roof-replacement/ |
+| H2: Where Do We Replace Roofs? | /roof-replacement/ |
+| H2: How Should a Residential Roofer Add or Fix a Skylight in the South Carolina Lowcountry? | /skylights/ |
+| H2: Which Skylight Job Fits Your Home: a New Unit, New Glass or New Flashing? | /skylights/ |
+| H2: Is a Skylight a Good Idea for Your Lowcountry Home? | /skylights/ |
+| FAQ: How much does it cost to install a skylight? | /skylights/ |
+| FAQ: What are the downsides of a skylight? | /skylights/ |
+| FAQ: Are skylights worth it? | /skylights/ |
+| FAQ: What type of skylight works on a metal roof? | /skylights/ |
+| H2: Where Do We Install and Repair Skylights? | /skylights/ |
+| H2: How Does a Roofer Lay a Slate Roof in Beaufort and Jasper Counties? | /slate-roofing/ |
+| H2: Natural, Synthetic or a Repair: Which Slate Work Do You Need? | /slate-roofing/ |
+| H2: What Should Lowcountry Owners Know Before Choosing Slate? | /slate-roofing/ |
+| FAQ: How much does a slate roof cost? | /slate-roofing/ |
+| FAQ: What is the biggest disadvantage of a slate roof? | /slate-roofing/ |
+| FAQ: Can a slate roof be repaired instead of replaced? | /slate-roofing/ |
+| FAQ: How long does a synthetic slate roof last? | /slate-roofing/ |
+| FAQ: Who makes synthetic slate, and does it look like real slate? | /slate-roofing/ |
+| H2: Where Do We Install and Repair Slate Roofs? | /slate-roofing/ |
+
+Pilot pages (Roof Repair, Bluffton) and the services batch, from the approved drafts (written back 2026-10-12, run
+20261012-150342-build-474a). H3 service-type subheadings are not listed; they repeat type names by design.
 
 ## Section D — Verified facts
 Everything a writer may state. **Not here = does not exist.**
