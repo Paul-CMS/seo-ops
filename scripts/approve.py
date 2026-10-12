@@ -190,10 +190,35 @@ def sem_list(v):
     out = []
     for x in split(v.replace(" ", ",")):
         n = x.upper().replace("SEM-", "").replace("SEM", "")
-        if not n.isdigit() or not 1 <= int(n) <= 8:
-            die(f"'{x}' is not a SEM item (SEM-1 to SEM-8).")
+        if not n.isdigit() or int(n) < 1:
+            die(f"'{x}' is not a SEM item (write numbers, e.g. --sem 1,3,4).")
         out.append(f"SEM-{int(n)}")
     return out
+
+
+SEM_ROW = re.compile(r"^\s*\|\s*\**\s*(SEM-\d+)\s*\**\s*\|", re.I)
+
+
+def table_sem_ids(rel):
+    """The SEM items in a batch's semantic review table: the rows whose first cell is SEM-n (F-017 — whatever the count)."""
+    path = ROOT / rel if rel else None
+    if not path or not path.is_file():
+        return None
+    return [m.group(1).upper() for m in map(SEM_ROW.match, path.read_text(encoding="utf-8").splitlines()) if m]
+
+
+def check_sem(target, b, sem):
+    """--sem must name only SEM items that are rows in this batch's review table (the last drafts file)."""
+    if not sem:
+        return
+    table = ((b.get("files") or {}).get("drafts") or [None])[-1]
+    have = table_sem_ids(table)
+    if not have:
+        die(f"REFUSED ({target}) — the batch's semantic review table ({table or 'not recorded'}) has no SEM rows to pick from.")
+    bad = [s for s in sem if s not in have]
+    if bad:
+        die(f"REFUSED ({target}) — {', '.join(bad)} not in the batch's semantic review table "
+            f"(it has {', '.join(have)}).")
 
 
 def parse_mode(target):
@@ -338,6 +363,8 @@ def prepare(a, st, target, multi):
             b = S.batch(st, bid) or die(f"No batch {bid}.")
             if not files:
                 files = file_map((b.get("files") or {}).get(stage) or [])
+            if stage == "drafts":
+                check_sem(target, b, sem)
             if approved:
                 ok, why = S.batch_ready(st, bid, stage)
                 if stage == "drafts" and f"batch:{bid}:briefs" in a.targets:   # P10: briefs approved in this same line

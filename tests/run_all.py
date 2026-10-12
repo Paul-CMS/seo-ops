@@ -110,6 +110,12 @@ def paul(line, expect_ok=True):
     return code, out
 
 
+def sem_table(n):
+    """A semantic review table with n SEM rows, numbered SEM-1..SEM-n (the shape approve.py reads, F-017)."""
+    return ("| ID | Check | Where | Finding |\n|---|---|---|---|\n"
+            + "".join(f"| **SEM-{i}** | E1 across siblings | page | finding {i} |\n" for i in range(1, n + 1)))
+
+
 class Agent:
     """Carries out each /next 'run' mechanically, the way its .claude/commands file says."""
 
@@ -285,8 +291,8 @@ class Agent:
             for pid in pages:
                 f = self.w(f"build/D-{pid}.md", page_file(pid, "v1") + self.draft_extra.get(pid, ""))
                 self.sh(f"python3 scripts/status.py page-stage {S} {pid} --stage draft --file {f} --run {rid} --agent sub-{pid}")
-            sem = self.w(f"build/Test Co - Semantic Review - {bid} - REVIEW.md")
             n = self.sem_findings.get(bid, 1)
+            sem = self.w(f"build/Test Co - Semantic Review - {bid} - REVIEW.md", sem_table(n))
             self.sh(f"python3 scripts/status.py batch {S} {bid} --state drafts_written --sem-table {shlex.quote(sem)} --sem-findings {n}")
             self.fin(rid, f"batch {bid} written in one run")
         elif (name, sub) == ("/build", "handoff"):
@@ -312,8 +318,8 @@ class Agent:
                 return True
             pages = self.batch_pages(bid)
             if stage == "drafts":   # the batch review: every per-page draft side by side + the SEM table
-                sem = self.w(f"build/Test Co - Semantic Review - {bid} - REVIEW.md")
                 n = self.sem_findings.get(bid, 1)
+                sem = self.w(f"build/Test Co - Semantic Review - {bid} - REVIEW.md", sem_table(n))
                 self.sh(f"python3 scripts/status.py batch {S} {bid} --state drafts_written "
                         f"--sem-table {shlex.quote(sem)} --sem-findings {n}")
             else:  # apply-sem
@@ -535,7 +541,7 @@ def walkthrough(slug, kind="full", industry="roofing", max_posts=2, extra_init="
                 log.append("NO-SIMULATION"); break
             runs += 1; prev = n["command"]
         elif n["kind"] == "decision":
-            line = (n["command"].replace("<SEM items to apply, e.g. 1,3,4 — or none>", "8")
+            line = (n["command"].replace("<SEM items to apply, e.g. 1,3,4 — or none>", "1")
                     .replace("<who reviewed it>", "Paul read it")
                     .replace("<name, licence>", "Dr. Test, DC-123"))
             code, out = paul(line)
