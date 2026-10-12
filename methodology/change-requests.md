@@ -59,3 +59,5 @@ If Paul pays API rates, location drafts can run through the Message Batches API 
 ---
 
 - CR-001 · 2026-10-09 · ACCEPTED · Paul · REWRITE-2-DECISIONS.md (c): HMM hubs become metro hubs (/charleston-metro/, /hilton-head-bluffton-metro/) once each metro area's Wikidata entry is checked; built in rewrite 2 P7
+
+- CR-001 · 2026-10-11 · DONE · system session · commit f85a547
