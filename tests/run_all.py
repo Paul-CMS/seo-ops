@@ -760,7 +760,7 @@ def t_voiding():
     _, show = sh("python3 scripts/status.py show wt-full")
     check("editing an approved file voids that decision", c1 == 4 and "re-approve" in o1, o1)
     check("later decisions stay met (not blocked)", c2 == 0, o2)
-    check("/resume flags the upstream change", "upstream change" in show)
+    check("/where flags the upstream change", "upstream change" in show)
     _, nxt = sh("python3 scripts/next.py wt-full")
     check("/next asks Paul to re-approve with the exact line", "/approve wt-full entity_approved --files" in nxt, nxt)
     paul("/approve wt-full entity_approved")
@@ -1888,7 +1888,7 @@ def t_settled_and_status():
           stx.count("Citations skipped for this audit") == 1 and "manual_lookup" in stx and "(Gwen)" in stx
           and "DataforSEO: $" in stx and "worktree.py open" in stx, stx)
     code, out = sh("python3 scripts/records.py top ss-co")
-    check("R7: records.py top prints the four lines /next and /resume show", code == 0 and len(out.splitlines()) == 4, out)
+    check("R7: records.py top prints the four lines /next and /where show", code == 0 and len(out.splitlines()) == 4, out)
 
 
 DECISION_SHEET = """# Fd Co - Decision Sheet - REVIEW

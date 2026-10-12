@@ -192,7 +192,7 @@ def t_p2_parallel_clients(h):
         cs, os_ = _run(wa, "python3 scripts/run.py start wa-co new-client")
         cc, oc = _run(wa, "python3 scripts/run.py check wa-co")
         cw, ow = _run(wa, "python3 scripts/worktree.py check wa-co")
-        h.check("P2: run.py start, run.py check and worktree.py check (/resume) refuse in a worktree missing a link, "
+        h.check("P2: run.py start, run.py check and worktree.py check (/where) refuse in a worktree missing a link, "
                 "naming what is missing and the fix",
                 cs == 4 and cc == 4 and cw == 4 and "REFUSED" in os_ and ".env" in os_ and "clients/wa-co/inputs" in os_
                 and "machine.json" not in os_ and "worktree.py open wa-co" in os_

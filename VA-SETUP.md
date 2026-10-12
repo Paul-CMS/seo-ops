@@ -157,7 +157,7 @@ so the VA does not need to learn it by heart. This guide covers only setup and t
 
 3. **Claude:** in the Claude app's Code tab, start a new session with **`~/Documents/seo-ops`** as
    the folder. The first message should be the seo-ops reminder about one session per stage. Type
-   `/resume <client-slug>`. It should tell you where that client stands.
+   `/where <client-slug>`. It should tell you where that client stands.
 
 4. **WordPress**, for each client you'll work on: in a session, type `/wp-check <client-slug>`. It
    must pass before any WordPress work.
@@ -248,7 +248,7 @@ the message. Don't try to fix it yourself.
 | Command | What it does |
 |---|---|
 | `/next <slug>` | Runs whatever comes next for a client and stops at the next decision or review point |
-| `/resume <slug>` | Where the client stands, what ran last, what's next |
+| `/where <slug>` | Where the client stands, what ran last, what's next |
 | `/new-client` | Sets up a new client: intake, Drive folder, CMS, document checklist |
 | `/wp-check <slug>` | Tests the WordPress connection |
 | `/verify <slug>` | Re-checks changed pages against the live site (system changes and VA handoffs marked done) |

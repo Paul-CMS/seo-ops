@@ -6,7 +6,7 @@ Read the part you need. The stage files (`docs/stage-<n>-*.md`) say what each st
 - **Decisions** — Paul's, set **only by `/approve`** typed by Paul (a hook issues a one-time token; the guard blocks
   direct edits). **Every approval names the exact files it covers** (the producing step records them with `status.py
   mark`); approve.py refuses an approval with no files. If one of those files changes, **only that decision** stops
-  counting; `/resume` flags later ones "upstream change". Brand Guide sections are fingerprinted on their values only
+  counting; `/where` flags later ones "upstream change". Brand Guide sections are fingerprinted on their values only
   (P4): a confirmation, a new source or a date never voids an approval; a changed value does. One `/approve` line may
   approve several decisions (`/approve <slug> a b c`); a decision named in the same line counts for the others'
   prerequisites. Values: `approved` · `approved_with_conditions` · `revise` · `deferred` · `rejected` · `blocked`.

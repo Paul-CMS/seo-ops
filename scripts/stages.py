@@ -68,7 +68,7 @@ def step_of_command(command):
     if not w or not w[0].startswith("/"):
         return None, None
     name, args = w[0][1:], w[2:]
-    if name in ("approve", "next", "resume"):
+    if name in ("approve", "next", "where"):
         return None, None
     if name == "build" and args[:1] == ["batch"]:
         return f"build:{args[2] if len(args) > 2 else 'drafts'}", (args[1] if len(args) > 1 else None)

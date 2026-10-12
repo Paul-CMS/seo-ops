@@ -286,7 +286,7 @@ def status_md(slug):
 
 
 def top(slug):
-    """The four lines /next and /resume print instead of re-explaining history."""
+    """The four lines /next and /where print instead of re-explaining history."""
     lines = [x for x in status_md(slug).splitlines() if x.startswith("- **")]
     return "\n".join(lines[:4])
 

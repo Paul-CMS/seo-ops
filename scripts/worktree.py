@@ -3,7 +3,7 @@
 
     worktree.py open <slug>     create or reuse <client_worktrees_root>/<slug>/ on branch client/<slug> (from main)
                                 and print the folder to open the chat in
-    worktree.py check [<slug>]  exit 4 with a plain message if this worktree is missing a link (run.py start, /resume)
+    worktree.py check [<slug>]  exit 4 with a plain message if this worktree is missing a link (run.py start, /where)
     worktree.py list            every client worktree
 
 Each worktree has its own git index (one client's commit can never pick up another's files) and its own
@@ -85,7 +85,7 @@ def problems(slug=None):
 
 
 def refusal(slug=None):
-    """The plain message for /resume and run.py start, or None when nothing is missing."""
+    """The plain message for /where and run.py start, or None when nothing is missing."""
     bad = problems(slug)
     if not bad:
         return None

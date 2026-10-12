@@ -124,7 +124,7 @@ def condition_step(st, slug, cond):
         return
     spec = S.GATES["conditions"][cond]
     if cond == "wordpress_connected" and (st["client"].get("cms") or "wordpress") not in ("wordpress", "unknown"):
-        out("wait", f"/resume {slug}", f"{st['client']['name']} runs on {st['client']['cms']}, not WordPress: the "
+        out("wait", f"/where {slug}", f"{st['client']['name']} runs on {st['client']['cms']}, not WordPress: the "
             "WordPress steps (/wp-check, WordPress drafts) are N/A. Paul decides how approved pages go live "
             "(a publish handoff to Jonie with the approved files)")
     if cond == "page_specs_approved":   # R3: methodology, approved once for every client
@@ -150,7 +150,7 @@ def condition_step(st, slug, cond):
             f"waiting for {spec['wait_for']} — when it arrives, run this to record it")
     if spec.get("producer"):
         out("run", spec["producer"].format(slug=slug), why)
-    out("wait", f"/resume {slug}", why)
+    out("wait", f"/where {slug}", why)
 
 
 def gate_step(st, slug, gate):
@@ -167,7 +167,7 @@ def gate_step(st, slug, gate):
         files = S.mark_files(st, spec["artifact"]) or list(rec.get("files") or {})
         out("decision", f"/approve {slug} {gate} --files {q(files)}",
             f"{S.plain(gate)} changed after you approved it — re-approve it (later steps are not blocked; "
-            "/resume flags them as 'upstream change')")
+            "/where flags them as 'upstream change')")
     before = spec.get("before")
     if before and before["mark"] not in marks:
         out("run", before["producer"].format(slug=slug), f"needed before {S.plain(gate)}")
@@ -380,7 +380,7 @@ def compute(slug, cont=False):
     WAITS.clear()
     try:
         _walk(slug, cont)
-        rec = {"kind": "wait", "command": f"/resume {slug}", "why": "nothing left to do"}
+        rec = {"kind": "wait", "command": f"/where {slug}", "why": "nothing left to do"}
     except Next as n:
         rec = n.rec
     _survey(slug)
@@ -430,7 +430,7 @@ def _walk(slug, cont):
     PAUSE = st.get("review_pause")
     left = R.unfinished(slug)
     if left:
-        out("wait", f"/resume {slug}", f"run {left[0]} never finished — you decide: resume it, /verify it, "
+        out("wait", f"/where {slug}", f"run {left[0]} never finished — you decide: resume it, /verify it, "
             "/rollback it, or abort it")
     c = st["client"]
 
