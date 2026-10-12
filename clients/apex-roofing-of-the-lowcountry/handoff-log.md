@@ -1830,3 +1830,61 @@ Agent 2 — Build · 2026-10-12 · Route A · step build:brief (revision 2), bat
 ## Open for Paul
 - Slate weight wording "per square" (800–1,500 lbs per square vs 200–350 for architectural shingles): keep, or reword as "per 100 sq ft"?
 
+## /build · 2026-10-12 · run 20261012-073726-build-ecf5
+
+**Agent:** Build (Agent 2) · 2026-10-12 · Route A
+
+### Done
+- Draft written from the approved brief (`SB - Roof Replacement`, approved 2026-10-12):
+  `clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Replacement - Apex Roofing of the Lowcountry.md`
+  (1,024 words incl. headings; 856 visitor-facing words scored).
+- Recorded: `status.py page-stage apex-roofing-of-the-lowcountry svc-roof-replacement --stage draft` (exit 0).
+
+### Paul's standing rules applied (2026-10-12)
+- No per-square price anywhere. Only the two whole-home ranges (asphalt about $14,000–$20,000; standing seam metal
+  about $24,000–$45,000+), stated as typical Lowcountry ranges that vary with roof size, never as Apex's price.
+- The $20,000–$25,000 review (2026-08-15) appears once, in FAQ 1, as one customer's example; reviewer not named.
+- CertainTeed Belmont not named. Impact-resistant, wood, slate/tile named with no figure.
+
+### Stage 3 self-critique (E1–E10)
+- E1 portability: opening rebuilt so it does not mirror Roof Repair's sentence pattern; delivery uses the
+  "commodity / what you can't see" half of the client quote and "waves you can surf on" (Roof Repair has the
+  silicone/flashing half); no GAF System Plus example (Roof Repair owns it). Pass.
+- E2 specificity: 5 page-specific facts — lifetime no-leak + 50-year manufacturer warranty (transferable);
+  CertainTeed + GAF factory installer and ShingleMaster; Town permit on a replacement; whole-home price ranges;
+  SureStart PLUS. Pass.
+- E3 variants: URL roof replacement → title Roof Replacement → H1 Re-Roofing / Beaufort and Jasper Counties →
+  first H2 replace a roof / South Carolina Lowcountry / Residential Roofer → opening metro area + roofing contractor
+  → FAQ H2 Lowcountry + Roofing Contractor. No consecutive repeat; reserved B1 unused. Pass.
+- E4 chunk lengths: delivery 298 · types 186 · FAQ 332 · service areas + CTA 63 (all ≤ 375). Pass.
+- E5 invention sweep: every fact traced to the brief / BG-D / settled decisions; 2 `[NEED]` kept (below).
+  General trade statements only for material descriptions (architectural shingles layered; slate heaviest;
+  synthetic made to look like slate, lighter). Pass, with those noted for batch review.
+- E6 filler: none of the A6 phrases; cost FAQ answers first, no non-answer opening. Pass.
+- E7 headers: one H1; every H2 a spoken question with an entity; no city in any H tag; no skipped levels.
+  COM-11: title remainder "Roof Replacement" vs H1 remainder "Re-Roofing" — differ. Pass.
+- E8 links: no cross-page link or `[LINK →]` in prose; service-area placeholder row present. Pass.
+- E9 human: reads as the owners' trade advice (bid comparison checklist). Pass.
+- E10 reading level: page grade 4.8 (856 words); first pass flagged 2 paragraphs (10.6, 10.1) — both split and
+  re-run clean, no paragraph over 10. Pass.
+- Spec SVC-01–23: pass, except SVC-21 (no outbound link — documented in the brief, Finish decision) and SVC-22
+  (schema — Finish only).
+
+### Open items in the draft
+- `[NEED: same corrosion-resistant flashing and synthetic underlayment on a full replacement?]` (delivery, step 5)
+- `[NEED: cited lifespan source for asphalt shingles in coastal SC]` (FAQ 2)
+
+### For the batch review (not changed here)
+- FAQ 2 ↔ Roof Repair "Should I repair or replace my roof?" — check side by side.
+- FAQ H2 shape is close to Roof Repair's FAQ H2 ("What Do Homeowners Ask a Lowcountry Roofer About Repairs?") — reworded
+  to "Which Questions Do Homeowners Ask a Lowcountry Roofing Contractor Before a New Roof?"; still a near pattern.
+- Settled `replacement_price_review` text and Brand Guide H (Paul Exception rows) still carry per-square figures and
+  "Town and HOA permits"; the draft follows Paul's 2026-10-12 rule and BG-D (Town permit only). Brand Guide H row
+  should be tidied at the next Brand Guide revision.
+
+### Flags raised
+- None this run (the spec §8 pilot-corrections write remains as flagged in run 20261009-142045-build-a198).
+
+### Not done (by design)
+- Nothing published, nothing sent to WordPress, no link table filled, no schema.
+

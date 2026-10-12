@@ -214,7 +214,7 @@
       ]
     },
     "svc-roof-replacement": {
-      "state": "brief_written",
+      "state": "draft_written",
       "type": "service",
       "name": "Roof Replacement",
       "url": "https://apexroofingtlc.com/roof-replacement/",
@@ -250,6 +250,12 @@
           "run": "20261012-071954-build-c525",
           "at": "2026-10-12T07:22:42-05:00",
           "sha": "4701fec5c85b"
+        },
+        "draft": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Replacement - Apex Roofing of the Lowcountry.md",
+          "run": "20261012-073726-build-ecf5",
+          "at": "2026-10-12T07:39:46-05:00",
+          "sha": "2041f773ad56"
         }
       }
     },
@@ -1368,12 +1374,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261012-073051-interview-f000",
-    "command": "interview",
-    "finished": "2026-10-12T07:30:52-05:00",
-    "result": "Paul: keep slate weight wording (per square)",
+    "run_id": "20261012-073726-build-ecf5",
+    "command": "build",
+    "finished": "2026-10-12T07:40:21-05:00",
+    "result": "Roof Replacement draft written (services batch): whole-home price ranges only, review example once, 2 NEEDs left",
     "changes": 0,
-    "step": "interview:facts-answers",
+    "step": "build:draft",
     "batch": "services"
   },
   "spend": {
@@ -1395,7 +1401,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-12T07:37:19-05:00",
+  "updated": "2026-10-12T07:40:21-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -1676,5 +1682,10 @@
     "at": "2026-10-09T20:15:29-05:00",
     "moves": 1,
     "dropped": []
+  },
+  "review_pause": {
+    "run_id": "20261012-073726-build-ecf5",
+    "step": "build:draft",
+    "at": "2026-10-12T07:40:21-05:00"
   }
 }
