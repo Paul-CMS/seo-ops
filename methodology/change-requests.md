@@ -239,3 +239,5 @@ What is proposed: at intake, every client's document checklist includes a Search
 - CR-019 · 2026-10-12 · DONE · system session · commit 783a9ae
 
 - CR-020 · 2026-10-12 · ACCEPTED · Paul · Paul 2026-10-12: CM-060 — sentence one answers alone in short plain words; the first answer paragraph is 40–60 words. Spec wording waits for CR-023 or /approve global specs.
+
+- CR-020 · 2026-10-12 · DONE · system session · commit 9d2268f
