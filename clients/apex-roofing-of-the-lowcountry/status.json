@@ -235,8 +235,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-replacement.grid.md",
         "sha": "22cb36fe6e38",
-        "at": "2026-10-11T21:48:13-05:00",
-        "run": "20261011-214754-build-8691",
+        "at": "2026-10-12T06:56:45-05:00",
+        "run": "20261012-065139-interview-b77b",
         "gaps": [
           "service_scope",
           "warranty",
@@ -281,8 +281,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-installation.grid.md",
         "sha": "00c6eca94d6c",
-        "at": "2026-10-11T21:48:13-05:00",
-        "run": "20261011-214754-build-8691",
+        "at": "2026-10-12T06:56:45-05:00",
+        "run": "20261012-065139-interview-b77b",
         "gaps": [
           "pricing",
           "warranty",
@@ -322,8 +322,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-inspections.grid.md",
         "sha": "0a9554785cb6",
-        "at": "2026-10-11T21:48:13-05:00",
-        "run": "20261011-214754-build-8691",
+        "at": "2026-10-12T06:56:45-05:00",
+        "run": "20261012-065139-interview-b77b",
         "gaps": [
           "service_scope",
           "pricing",
@@ -369,8 +369,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-emergency-roof-repair.grid.md",
         "sha": "9346e4c77bb5",
-        "at": "2026-10-11T21:48:13-05:00",
-        "run": "20261011-214754-build-8691",
+        "at": "2026-10-12T06:56:45-05:00",
+        "run": "20261012-065139-interview-b77b",
         "gaps": [
           "service_scope",
           "warranty",
@@ -407,23 +407,21 @@
         "https://apexroofingtlc.com/metal-roofing-2/"
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 7,
+          "Known": 9,
           "Unknown": 0,
-          "Unverified": 6,
+          "Unverified": 4,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "0 required and 4 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-metal-roofing.grid.md",
-        "sha": "ee74ef7bada8",
-        "at": "2026-10-11T21:48:13-05:00",
-        "run": "20261011-214754-build-8691",
+        "sha": "bec9af13d9a2",
+        "at": "2026-10-12T06:56:45-05:00",
+        "run": "20261012-065139-interview-b77b",
         "gaps": [
-          "service_scope",
-          "service_process",
           "pricing",
           "warranty",
           "licence",
@@ -447,23 +445,21 @@
         }
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 7,
+          "Known": 9,
           "Unknown": 0,
-          "Unverified": 6,
+          "Unverified": 4,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "0 required and 4 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-slate-roofing.grid.md",
-        "sha": "aa92f8e8aeee",
-        "at": "2026-10-11T21:48:13-05:00",
-        "run": "20261011-214754-build-8691",
+        "sha": "054cd620faf1",
+        "at": "2026-10-12T06:56:45-05:00",
+        "run": "20261012-065139-interview-b77b",
         "gaps": [
-          "service_scope",
-          "service_process",
           "pricing",
           "warranty",
           "licence",
@@ -481,23 +477,21 @@
       "h1": "Skylight Installation in Beaufort and Jasper Counties",
       "claims": [],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 6,
+          "Known": 8,
           "Unknown": 0,
-          "Unverified": 6,
+          "Unverified": 4,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "0 required and 4 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-skylights.grid.md",
-        "sha": "9462b1c2759b",
-        "at": "2026-10-11T21:48:13-05:00",
-        "run": "20261011-214754-build-8691",
+        "sha": "d8201767d351",
+        "at": "2026-10-12T06:56:45-05:00",
+        "run": "20261012-065139-interview-b77b",
         "gaps": [
-          "service_scope",
-          "service_process",
           "pricing",
           "warranty",
           "licence",
@@ -1056,7 +1050,19 @@
         "state": "planned",
         "briefs": null,
         "drafts": null,
-        "files": {}
+        "files": {},
+        "facts_interview": {
+          "file": "clients/apex-roofing-of-the-lowcountry/interviews/facts/Apex Roofing of the Lowcountry - Facts Interview - services - 2026-10-12 - REVIEW.md",
+          "at": "2026-10-12T06:55:50-05:00",
+          "run": "20261012-065139-interview-b77b",
+          "pages": [
+            "svc-metal-roofing",
+            "svc-slate-roofing",
+            "svc-skylights"
+          ],
+          "questions": 0,
+          "research": 0
+        }
       },
       {
         "id": "locations",
@@ -1311,12 +1317,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261011-214754-build-8691",
-    "command": "build",
-    "finished": "2026-10-11T21:54:44-05:00",
-    "result": "Services briefs: 4 WARN pages briefed (Replacement, Installation, Inspections, Emergency); Metal, Slate, Skylights BLOCK, no brief; 2026-10-11 facts answers unrecorded; flag F-012",
+    "run_id": "20261012-065139-interview-b77b",
+    "command": "interview",
+    "finished": "2026-10-12T06:56:55-05:00",
+    "result": "Facts answers recorded for the three blocked service pages (scope and process settled); evidence gate re-run: all seven service pages WARN, none BLOCK",
     "changes": 0,
-    "step": "build:brief",
+    "step": "interview:facts-answers",
     "batch": "services"
   },
   "spend": {
@@ -1338,7 +1344,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-11T21:54:44-05:00",
+  "updated": "2026-10-12T06:56:55-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",

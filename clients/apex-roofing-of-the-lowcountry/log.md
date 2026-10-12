@@ -2799,3 +2799,66 @@ Changes: 0 · Summary: Services briefs: 4 WARN pages briefed (Replacement, Insta
 - CHANGE #456 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-11 (3).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha afe8aa7f970f | result: done · copied (Drive for desktop syncs it)
 - CHANGE #457 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-11 (3).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-11 (3).md | result: done · renamed and moved, nothing deleted
 - CHANGE #458 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-11 (3).md | new: Apex Roofing of the Lowcountry - Status.md · sha 02948ab529cc | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261012-065139-interview-b77b · STARTED · /interview · 2026-10-12T06:51:39-05:00
+Step: interview:facts-answers · batch services · session a1a7f5f8-03bf-44ec-ad8e-1ebe990b1d87
+Gates checked: discovery_signed_off
+- FACT 2026-10-12T06:51 · run 20261012-065139-interview-b77b · d-price-replacement-standard-2026 (new) · paul_approved · Architectural asphalt shingles: $350–$475 per square (about $14,000–$20,000 total on a typical 1,800–2,000 sq ft home). Impact-resistant shingles $425–$600 per square. Standing seam metal $700–$1,200  · source Paul 2026-10-12 (chat), citing sureflowroof.com/blog/new-roof-cost-south-carolina and charlestonroofhelp.com/guides/2026 · by Paul
+- DECISION 2026-10-12T06:51 · run 20261012-065139-interview-b77b · Paul 2026-10-12: FAQ 2 on svc-emergency-roof-repair — choose (a): replace 'What should I do until the roofer arrives?' with 'Do past customers get priority in a roofing emergency?' (client-confirmed wording). Applies in a revision of the emergency-roof-repair brief; not settled until he approves the revised brief.
+- FACTS INTERVIEW 2026-10-12T06:55 · run 20261012-065139-interview-b77b · batch services · 0 question(s) for svc-metal-roofing, svc-slate-roofing, svc-skylights · clients/apex-roofing-of-the-lowcountry/interviews/facts/Apex Roofing of the Lowcountry - Facts Interview - services - 2026-10-12 - REVIEW.md
+- SETTLED fact:svc-metal-roofing:service_scope · 2026-10-12T06:56:32-05:00 · run 20261012-065139-interview-b77b · by Paul · Paul 2026-10-11 answer 1 (site is accurate; services confirmed): Standing seam metal roofing for coastal conditions (salt air, hurricane winds, UV, humidity): concealed fasteners, wind-uplift resistance; coated standing seam panels (Kynar 500 and Hylar 5000) in a range of profiles and colours, with colour submittals and ARB submissions for HOA communities.
+- SETTLED fact:svc-metal-roofing:service_process · 2026-10-12T06:56:37-05:00 · run 20261012-065139-interview-b77b · by Paul · Paul 2026-10-11 answer 2 (site is accurate; metal process confirmed): free consultation first; colour submittals and ARB submissions for HOA communities; repair assessed against replacement for damaged metal.
+- SETTLED fact:svc-slate-roofing:service_scope · 2026-10-12T06:56:37-05:00 · run 20261012-065139-interview-b77b · by Paul · Paul 2026-10-11 answer 1 (site is accurate; services confirmed): genuine Vermont slate in standard grades suited to coastal wind requirements; premium synthetic slate (DaVinci Roofscapes, CertainTeed Belmont); slate repair, replacing individual tiles when most of the field is sound, and re-flashing penetrations.
+- SETTLED fact:svc-slate-roofing:service_process · 2026-10-12T06:56:37-05:00 · run 20261012-065139-interview-b77b · by Paul · Paul 2026-10-11 answer 2 (site is accurate; slate process confirmed): framing assessed first (slate weighs roughly 800-1,500 lbs per square vs 200-350 for architectural shingles), with possible sister-rafter or purlin reinforcement; material approval coordinated with the City of Beaufort BAR for historic districts.
+- SETTLED fact:svc-skylights:service_scope · 2026-10-12T06:56:37-05:00 · run 20261012-065139-interview-b77b · by Paul · Paul 2026-10-11 answer 1 (site is accurate; services confirmed): new skylight installation in existing roofs (including structural work); repair or replacement of failing units, including sealed-unit replacement for fogging between panes and flashing and curb repair.
+- SETTLED fact:svc-skylights:service_process · 2026-10-12T06:56:37-05:00 · run 20261012-065139-interview-b77b · by Paul · Paul 2026-10-11 answer 2 (site is accurate; skylight process confirmed): leaks during rain point to flashing or curb failure; condensation without rain points to a failed sealed unit; itemised written estimates; ARB approval may be needed for street-visible skylights in plantation communities.
+- DECISION 2026-10-12T06:56 · run 20261012-065139-interview-b77b · Paul 2026-10-11 answer 3 (prices): 'You can officially work off the Lowcountry standard in roofing costs.' Use the Lowcountry standard ranges (see d-price-replacement-standard-2026); no client-specific prices; review price mentions are undated and not used. Conflicts with settled replacement_price_review — Paul to confirm whether to reopen it.
+- DECISION 2026-10-12T06:56 · run 20261012-065139-interview-b77b · Paul 2026-10-11 answers 4-6 (confirmed correct): metal 40-year warranty correct; insurance (full general liability and workers' compensation) correct, bonded part not sure; new-construction subcontracting correct (Apex works as a roofing subcontractor on new construction in Beaufort and Jasper County).
+- DECISION 2026-10-12T06:56 · run 20261012-065139-interview-b77b · Paul 2026-10-11 answer 7: services to push more calls for: emergency and replacement.
+- DECISION 2026-10-12T06:56 · run 20261012-065139-interview-b77b · Paul 2026-10-11 answer 8 (awards): list any awards currently on the website; otherwise none. Note for Paul after the page handoffs: the client needs to work on awards; Paul will get the client a few this week.
+- DECISION 2026-10-12T06:56 · run 20261012-065139-interview-b77b · Paul 2026-10-11 answer 9 (team size / roofs done): skip.
+- DECISION 2026-10-12T06:56 · run 20261012-065139-interview-b77b · Paul 2026-10-11 answer 10 (about / company story): the client asks to make it about customer care, 'not just another house… someone's home'. Note for Paul after the page handoffs: the business needs to be active on Facebook posts.
+- EVIDENCE 2026-10-12T06:56 · run 20261012-065139-interview-b77b · svc-roof-replacement: WARN (known 8, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T06:56 · run 20261012-065139-interview-b77b · svc-roof-installation: WARN (known 8, unknown 0, unverified 5, conflict 0)
+- EVIDENCE 2026-10-12T06:56 · run 20261012-065139-interview-b77b · svc-roof-inspections: WARN (known 7, unknown 0, unverified 5, conflict 0)
+- EVIDENCE 2026-10-12T06:56 · run 20261012-065139-interview-b77b · svc-emergency-roof-repair: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T06:56 · run 20261012-065139-interview-b77b · svc-metal-roofing: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T06:56 · run 20261012-065139-interview-b77b · svc-slate-roofing: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T06:56 · run 20261012-065139-interview-b77b · svc-skylights: WARN (known 8, unknown 0, unverified 4, conflict 0)
+### HANDOFF · /interview · 2026-10-12 · run 20261012-065139-interview-b77b
+## What changed
+- Settled scope and process answers under `fact:<page>:<key>` for svc-metal-roofing, svc-slate-roofing and svc-skylights (six settles, Paul 2026-10-11 answers 1 and 2: "site is accurate"). The settled text is the live-site wording Paul confirmed.
+- Recorded Paul's 2026-10-11 answers 3–10 as decisions (no settle; several are notes for after the page handoffs).
+- Recorded `d-price-replacement-standard-2026` (paul_approved, Paul 2026-10-12 chat) with the two sources he gave.
+- Recorded decision: FAQ 2 on svc-emergency-roof-repair → option (a), to be applied in a revision of that brief.
+- Re-ran the evidence gate for the services batch: all seven service pages WARN, none BLOCK.
+
+## Open for Paul
+1. **replacement_price_review** (settled, $20k–$25k) conflicts with answer 3 ("work off the Lowcountry standard"). Reopen or keep?
+2. **Price sources.** Both cited sources are contractor marketing blogs. Researcher to verify against an independent source?
+3. **Notes after the page handoffs:** awards (client to obtain a few this week, Paul); company story about customer care; Facebook posts must be active.
+4. **Bonded status** is still not sure (answer 5).
+
+## Gate result (services batch)
+| Page | Result | Unverified | Required gaps |
+|---|---|---|---|
+| svc-roof-replacement | WARN | 4 | 1 |
+| svc-roof-installation | WARN | 5 | 1 |
+| svc-roof-inspections | WARN | 5 | 1 |
+| svc-emergency-roof-repair | WARN | 4 | 1 |
+| svc-metal-roofing | WARN | 4 | 0 |
+| svc-slate-roofing | WARN | 4 | 0 |
+| svc-skylights | WARN | 4 | 0 |
+### END HANDOFF
+## RUN 20261012-065139-interview-b77b · FINISHED · 2026-10-12T06:56:55-05:00
+Changes: 0 · Summary: Facts answers recorded for the three blocked service pages (scope and process settled); evidence gate re-run: all seven service pages WARN, none BLOCK
+- CHANGE #459 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-11 (2).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-11 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #460 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-11 (2).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 1966568c9a81 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #461 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-11 (4).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-11 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #462 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-11 (4).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha c032bf707149 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #463 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Brand Guide - 2026-10-09 (3).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Brand Guide.md | new: _Archive/Apex Roofing of the Lowcountry - Brand Guide - 2026-10-09 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #464 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Brand Guide.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Brand Guide - 2026-10-09 (3).md | new: Apex Roofing of the Lowcountry - Brand Guide.md · sha b81a9ef565f1 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #465 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-11 (4).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-11 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #466 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-11 (4).md | new: Apex Roofing of the Lowcountry - Status.md · sha 79cea673f600 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #467 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - VA Worklist - 2026-10-11.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.md | new: _Archive/Apex Roofing of the Lowcountry - VA Worklist - 2026-10-11.md | result: done · renamed and moved, nothing deleted
+- CHANGE #468 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - VA Worklist - 2026-10-11.md | new: Apex Roofing of the Lowcountry - VA Worklist.md · sha b4424386e3a1 | result: done · copied (Drive for desktop syncs it)

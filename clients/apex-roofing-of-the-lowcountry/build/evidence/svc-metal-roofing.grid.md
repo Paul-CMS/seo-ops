@@ -1,16 +1,16 @@
 # Evidence grid — Metal Roofing (service)
 
-**Result: BLOCK** · Known 7 · Unknown 0 · Unverified 6 · Conflict 0 (CM-041)
+**Result: WARN** · Known 9 · Unknown 0 · Unverified 4 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
 
-- 2 required facts are not known (block at 2)
+- 0 required and 4 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'
 
 | Fact | Need | Mark | Value | Source |
 |---|---|---|---|---|
 | Phone | required | **Known** | (843) 757-2739 (GBP, site, BBB, HomeAdvisor) | Brand Guide A |
-| What the service includes (scope, inclusions) | required | **Unverified** | Standing seam metal roofing for coastal conditions (salt air, hurricane winds, UV, humidity): concealed fasteners, wind-uplift resistance; page says 'We install Kynar 500 and Hylar 5000 coated standing seam panels in a range of profiles and | Live site https://apexroofingtlc.com/metal-roofing/ (read 2026-10-11) — not confirmed by the client or Paul |
-| How the service is delivered (steps, methods, equipment) | required | **Unverified** | Process is only lightly described: free consultation first; colour submittals and ARB submissions for HOA communities; repair assessed against replacement for damaged metal. No step-by-step install method on the page. | Live site https://apexroofingtlc.com/metal-roofing/ (read 2026-10-11) — not confirmed by the client or Paul |
+| What the service includes (scope, inclusions) | required | **Known** | Paul 2026-10-11 answer 1 (site is accurate; services confirmed): Standing seam metal roofing for coastal conditions (salt air, hurricane winds, UV, humidity): concealed fasteners, wind-uplift resistance; coated standing seam panels (Kynar 5 | answer 2026-10-12 (Paul; decisions-settled.md fact:svc-metal-roofing:service_scope) |
+| How the service is delivered (steps, methods, equipment) | required | **Known** | Paul 2026-10-11 answer 2 (site is accurate; metal process confirmed): free consultation first; colour submittals and ARB submissions for HOA communities; repair assessed against replacement for damaged metal. | answer 2026-10-12 (Paul; decisions-settled.md fact:svc-metal-roofing:service_process) |
 | Free estimate / offer — and what free means | required | **Known** | Free estimates ("Yes, free estimates"). What free covers beyond that is not confirmed: W17 "Pre-estimate inspections … are always free. Independent inspection reports … are priced separately." | Paul answers B12; W10, W17 |
 | Typical job duration or timeline | supporting | **Known** | "One of them was Apex, spoke with Ralph the owner and he had his son Pearce call, and he came by the next day." (2025-06-05); "2 days in n out." (2024-01-03); "Showed up on time, inspected the roof as requested and provided photos and a wri | customer_reported: 4 different reviewers, checked by meaning (2026-10-11) · state it only as customers describe it ('customers mention…'); prices, timelines and warranty terms only as a cited customer example (CM-057) |
 | Price range, or what drives the cost | supporting | **Unverified** | "In my opinion, the various System Plus Limited Warranties justified the replacement of the roof and its total cost, and it certainly assured me of its future viability." (+17 more) | keyword match in 18 review(s), not yet checked by meaning — Google review 2026-08-15 (data/reviews/reviews.csv row 4) |

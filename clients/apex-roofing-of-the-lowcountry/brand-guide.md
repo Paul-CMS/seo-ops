@@ -149,6 +149,7 @@ Site-claim refs (W#, C#) are the Discovery Record's.
 | Clean-up | Clean-up each day and a magnet sweep for loose nails | Paul Approved 2026-10-09 | Paul 2026-10-09 (settled pilot_facts_2026_10_09; reviews; magnet per Paul) |
 | Permits | On a roof replacement, Apex gets the Town permit | Paul Approved 2026-10-09 | Paul 2026-10-09 (settled pilot_facts_2026_10_09; review 2026-08-15) |
 | Synthetic roofing offered | Yes | Paul Approved 2026-10-09 | Paul 2026-10-09 (settled synthetic_roofing) |
+| Roof replacement price standard, Lowcountry 2026 | Architectural asphalt shingles: $350–$475 per square (about $14,000–$20,000 total on a typical 1,800–2,000 sq ft home). Impact-resistant shingles $425–$600 per square. Standing seam metal $700–$1,200 per square (about $24,000–$45,000+ total). Wood shingles/shakes $800–$1,400 per square. Slate or tile $1,000–$2,000+ per square. | Paul Approved 2026-10-12 · was: Unknown | Paul 2026-10-12 (chat), citing sureflowroof.com/blog/new-roof-cost-south-carolina and charlestonroofhelp.com/guides/2026-charleston-roofing-guide |
 
 ### D2 · Unsupported claims
 Claims the site makes publicly that the client could not substantiate. Writers must not repeat

@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-11T21:28:11-05:00",
+  "updated": "2026-10-12T06:51:43-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -955,6 +955,21 @@
       "date": "2026-10-11",
       "who": "reviews.py extract",
       "count": 3
+    },
+    {
+      "id": "d-price-replacement-standard-2026",
+      "section": "D",
+      "num": "",
+      "label": "Roof replacement price standard, Lowcountry 2026",
+      "value": "Architectural asphalt shingles: $350–$475 per square (about $14,000–$20,000 total on a typical 1,800–2,000 sq ft home). Impact-resistant shingles $425–$600 per square. Standing seam metal $700–$1,200 per square (about $24,000–$45,000+ total). Wood shingles/shakes $800–$1,400 per square. Slate or tile $1,000–$2,000+ per square.",
+      "status": "paul_approved",
+      "source": "Paul 2026-10-12 (chat), citing sureflowroof.com/blog/new-roof-cost-south-carolina and charlestonroofhelp.com/guides/2026-charleston-roofing-guide",
+      "quote": "",
+      "date": "2026-10-12",
+      "who": "Paul",
+      "count": null,
+      "was": "Unknown",
+      "status_text": null
     }
   ]
 }
