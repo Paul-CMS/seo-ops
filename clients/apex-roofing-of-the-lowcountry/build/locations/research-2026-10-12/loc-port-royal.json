@@ -1,0 +1,81 @@
+{
+ "gaps": {
+  "note": "Grid complete (5 neighbourhood-level places). No item looks wrong except the Mossy Creek wording.",
+  "mossy": {
+   "port_royal_source": "https://en.wikipedia.org/wiki/Port_Royal,_South_Carolina - 'a low-density residential area known as Mossy Creek' immediately north of the Old Village (read 2026-10-12); text does not say it extends into Beaufort.",
+   "beaufort_source": "Beaufort's article names 'Mossy Oaks', not Mossy Creek.",
+   "recommendation_data": "Keep Mossy Creek on the Port Royal page only."
+  }
+ },
+ "faq_sources": [
+  {
+   "topic": "Are there special rules for roofs in Port Royal's Old Village?",
+   "answer_facts": [
+    "Not found by name: no Town source I read uses 'Old Village' as a regulated district or sets roof-specific standards (tried: Port Royal Code Art. 3 s.3.3.50, zero hits for 'Old Village'; Historic Preservation Committee page; HPC application; Building Official page).",
+    "What exists: the Town's Historic Preservation Overlay (HPO) Zone, Port Royal Code Art. 3 s.3.3.50. A Certificate of Appropriateness 'may be required for alteration, construction, demolition, or relocation on property listed on the Town Historic Register visible from a public street right-of-way'; visible 'even if hidden by vegetation or a fence'; 'any change to a landmark may require a certificate even if not visible'.",
+    "Exempt from a certificate: 'Repairs, replacements, and routine maintenance that do not constitute alteration' and 'Exterior painting of previously painted structures'.",
+    "The Commission may authorize the Administrator (with chairman concurrence) to approve certain work; the Administrator may approve items 'not so significant as to impair or affect historic, architectural, or aesthetic character' within 15 days; otherwise the Historic Preservation Commission (5 members, 3rd Tuesday 3:00 pm, 700 Paris Ave) decides.",
+    "Applications judged on the Secretary of the Interior's Standards. Town's list of designated landmarks/districts is maintained by the Municipal Clerk (code) / Planning Office ('Port Royal Historic Landmark List' document, not retrieved). Whether a given Old Village house is on the Register is a per-address check with Planning, 843-986-2207.",
+    "Demolition-by-neglect clause lists 'Deterioration of roofs' as an example of exterior deterioration for Register properties.",
+    "Building permits: Town Building Official page says permits via Permits Administrator 843-986-2219 / permits@portroyal.org; page does not mention re-roof."
+   ],
+   "sources": [
+    "https://www.portroyal.org/DocumentCenter/View/116/Article-3---Specific-to-Zones-PDF (Port Royal Code Art.3 s.3.3.50, undated scan; read 2026-10-12)",
+    "https://www.portroyal.org/187/Historic-Preservation-Committee (read 2026-10-12)",
+    "https://www.portroyal.org/DocumentCenter/View/1758 (HPC application, read 2026-10-12)",
+    "https://portroyal.org/161/Building-Official (read 2026-10-12)"
+   ]
+  },
+  {
+   "topic": "Do you work on homes near Parris Island and in military housing? (public facts only)",
+   "answer_facts": [
+    "Parris Island was annexed by the Town of Port Royal on Oct 11, 2000, 'effectively doubling the municipal population overnight due to on-base housing' (Wikipedia).",
+    "Laurel Bay is an unincorporated census-designated place in Beaufort County, ZIP 29906, a military housing complex opened in the mid-1950s that serves families at MCAS Beaufort, MCRD Parris Island and Naval Hospital Beaufort (Wikipedia).",
+    "On-base housing at MCAS Beaufort is privatized (PPV, Public Private Venture); the partner is HUNT Military Communities at Tri-Command, serving MCAS Beaufort, MCRD Parris Island and Naval Hospital Beaufort (Military OneSource). The same page still says 'AMCC at Tri-Command' once (older name). Search results (not fetched; marines.mil returned 403) say day-to-day management is by Tri-Command Property Management as Hunt's agent and that Laurel Bay Family Housing is a Hunt property.",
+    "Implication: on-base privatized homes are maintained by the housing partner, so an individual homeowner does not hire a roofer for them; off-base homes near the bases are ordinary private property. Whether Apex does any military-housing work is a client fact (not answered).",
+    "Military Housing Office, MCAS Beaufort: (843) 228-6000; Parris Island housing office numbers differ across pages."
+   ],
+   "sources": [
+    "https://installations.militaryonesource.mil/military-installation/mcas-beaufort/housing/housing (read 2026-10-12)",
+    "https://en.wikipedia.org/wiki/Laurel_Bay,_South_Carolina (read 2026-10-12)",
+    "https://en.wikipedia.org/wiki/Port_Royal,_South_Carolina (read 2026-10-12)",
+    "https://installations.militaryonesource.mil/military-installation/mcrd-parris-island/housing/housing (surfaced in search, not fetched)"
+   ]
+  }
+ ],
+ "faq_candidates": [
+  {
+   "question": "My Port Royal house is in a flood zone - does a big re-roof or remodel trigger the 50% elevation rule?",
+   "why_this_town": "The Town's own Citizen's Guide to Flood Awareness and local flood damage prevention ordinance; town elevation 3 ft (Wikipedia). Caveat: the 50% substantial-improvement rule is the NFIP baseline, so only the Town's application is local; portability is borderline.",
+   "answer_facts": [
+    "Town guide: FEMA flood maps 'adopted as part of our local flood damage prevention ordinance'.",
+    "'If additions, remodeling or repairs to an existing structure equals or exceeds 50% of the building's market value, the entire building must be elevated above the base flood elevation' (same for substantial damage).",
+    "Elevation Certificates for new or substantially improved structures by a registered land surveyor or engineer; certificates on file available on request; building permit required before construction in flood zones.",
+    "Guide is undated; contact numbers inconsistent (Building Code Office (843) 986-2215; flood insurance info (843) 986-2207). The Town's ordinance PDF was not read, so the cumulative-cost look-back period for Port Royal is NOT FOUND."
+   ],
+   "sources": [
+    "https://portroyal.org/DocumentCenter/View/305/Port-Royal-Citizen-Guide-to-Flood-Awareness (4 pp, read 2026-10-12)"
+   ]
+  },
+  {
+   "question": "Is my home in Shell Point or Burton inside the Town of Port Royal, and who handles my roof permit?",
+   "why_this_town": "Port Royal annexed Shell Point, Burton and Parris Island (Wikipedia), so addresses with a Beaufort mailing address can be in the Town. Borderline: touches the permit topic Bluffton owns; use only if Paul accepts a which-office angle.",
+   "answer_facts": [
+    "'Port Royal also annexed properties in the Shell Point and Burton areas of Beaufort County' (Wikipedia).",
+    "Town Building Department: permits via Permits Administrator 843-986-2219, permits@portroyal.org, 700 Paris Ave. County building-codes page lists Port Royal under 'Municipalities' separately.",
+    "Per-address check: Town of Port Royal / Beaufort County GIS (not retrieved)."
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Port_Royal,_South_Carolina (read 2026-10-12)",
+    "https://portroyal.org/161/Building-Official (read 2026-10-12)",
+    "https://www.beaufortcountysc.gov/building-codes/ (read 2026-10-12)"
+   ]
+  }
+ ],
+ "flags": [
+  "'Old Village' as a regulated historic district was NOT found in the Town code. Do not state as fact that the Old Village is a design-review district; say the Town's Historic Preservation Overlay applies to properties on the Town Historic Register, checked per address.",
+  "Port Royal Code Art. 3 PDF is an older undated scan; the HPC application PDF lists vacancies and a former planner. s.3.3.50 may have been amended.",
+  "Facts file says Mossy Creek 'extends into Beaufort'; not in the article text I read.",
+  "marines.mil pages returned 403; relied on Military OneSource (names Hunt; also a stale AMCC reference). Safer copy: 'managed by a private housing partner' unless re-checked."
+ ]
+}

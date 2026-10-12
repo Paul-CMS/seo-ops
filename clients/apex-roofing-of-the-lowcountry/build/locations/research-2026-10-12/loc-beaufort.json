@@ -1,0 +1,82 @@
+{
+ "gaps": {
+  "note": "Grid complete; no item looks wrong. Mossy question: Beaufort's Wikipedia lists 'Mossy Oaks' (Battery Creek neighbourhoods), not 'Mossy Creek'. Mossy Creek appears only on Port Royal's article.",
+  "mossy": {
+   "beaufort_source": "https://en.wikipedia.org/wiki/Beaufort,_South_Carolina - 'The Battery Creek neighborhoods of Mossy Oaks, Royal Oaks, First Boulevard, and Cottage Farms ... form the southern residential areas of the city'; Mossy Creek not mentioned (read 2026-10-12)",
+   "port_royal_source": "https://en.wikipedia.org/wiki/Port_Royal,_South_Carolina - 'a low-density residential area known as Mossy Creek', immediately north of the Old Village (read 2026-10-12); the text does NOT say it extends into Beaufort.",
+   "recommendation_data": "Two different names (Mossy Oaks vs Mossy Creek). Mossy Creek = Port Royal page only; Mossy Oaks = Beaufort page only. The Port Royal facts file says 'Mossy Creek (extends into Beaufort)'; that wording is not in the article text I fetched."
+  }
+ },
+ "faq_sources": [
+  {
+   "topic": "Does a roof replacement in Beaufort's Historic District need review board approval?",
+   "answer_facts": [
+    "City of Beaufort Code s.9.10.1: a Certificate of Appropriateness (COA) is required for 'any construction activity in any historic district', including modification to existing structures (2017 code text, amended 2018).",
+    "City 'Historic District Review (Major) HRB Review' form (updated Oct. 31, 2025): discretionary HRB review applies to 'Changes to exterior materials of contributing structure(s)', Roof listed as an item. Single-family HRB fee $100 (fee schedule effective 05/14/2024).",
+    "City 'Historic District Review (Minor) Administrative Review' form (updated Oct. 31, 2025), fee $0: staff-level review covers (a) 'Changes to non-contributing structure(s)' including Roof, and (b) 'In-kind repairs of a contributing or non-contributing structure(s)' including 'Reroof'. The Administrator may send any administrative application to the HRB instead. All other COA applications go to the HRB.",
+    "City Metal Roofing Guidelines: 'Changes in roofing material on contributing structures are to be reviewed by the Historic Review Board. Changes in roofing material on noncontributing structures are to be reviewed at staff level on case-by-case basis, with the option for staff to elevate the project to Board-level review.' Contributing / non-contributing lists: https://cityofbeaufort.org/350/Beaufort-County-Historic-Sites-Survey",
+    "Both forms point to Beaufort Code s.9.10. The HRB also uses the Beaufort Preservation Manual (2022) and the Secretary of the Interior's Standards for Rehabilitation (contributing structures); Northwest Quadrant has its own Design Guidelines.",
+    "City Building Permits page lists 'reroof' under building projects under $50,000 that 'still require Building Code review' (separate from the COA).",
+    "Not found: the current s.9.10 text defining 'in-kind' or 'ordinary maintenance'. The 2018 code PDF lists only non-contributing 'roof materials' as Minor; the Oct 2025 form adds in-kind reroof. Preservation Manual 2022 PDF had no extractable text (not read)."
+   ],
+   "sources": [
+    "https://cityofbeaufort.org/DocumentCenter/View/10051 (Minor/Administrative form, updated 10/31/2025; read 2026-10-12)",
+    "https://cityofbeaufort.org/DocumentCenter/View/10050 (Major/HRB form, requirements, fee schedule, updated 10/31/2025; read 2026-10-12)",
+    "https://cityofbeaufort.org/DocumentCenter/View/1000/Certificate-of-Appropriateness-Section-910-PDF (Beaufort Code s.9.10, adopted 2017/amended 2018; read 2026-10-12)",
+    "https://cityofbeaufort.org/DocumentCenter/View/9574 (Metal Roofing Guidelines for Properties in the Historic District, undated; read 2026-10-12)",
+    "https://cityofbeaufort.org/178/Historic-District (read 2026-10-12)",
+    "https://cityofbeaufort.org/156/Building-Permits (read 2026-10-12)"
+   ]
+  },
+  {
+   "topic": "Can a historic Beaufort home get a metal roof?",
+   "answer_facts": [
+    "City Metal Roofing Guidelines: mechanical lock standing seam 'may be appropriate for certain buildings'; allowed as replacement for terne metal, on non-contributing structures, new construction, or 'roof replacements on contributing structures with a non-historic roof (i.e. asphalt shingle, 5V)'. Hand-folded mechanical lock is 'the most appropriate substitute for historic terne metal'; needs skilled craftsmen (hand-folded crimped ridges and hips, no bulky caps).",
+    "Snap-lock standing seam 'may be appropriate for new construction or roof replacements on non-contributing structures'; because it cannot be hand-folded, 'these are not appropriate for historic, contributing structures.'",
+    "Terne metal is 'historically significant'; staff policy is to preserve as many historic terne roofs as possible, ask for photo documentation before removal, recommend recoating if it can be saved; if not, recommend mechanical lock standing seam in copper, steel, galvalume or aluminum. 'Staff does not support the replacement of a historic terne metal roofs with a significantly different material such as asphalt shingles.'",
+    "Review route: contributing structure = Historic Review Board; non-contributing = staff, case by case.",
+    "A staff comment on 1406 Greene St (5V crimp can be approved, standing seam preferred) came from a search summary of a City HRB agenda; not read in full, do not use."
+   ],
+   "sources": [
+    "https://cityofbeaufort.org/DocumentCenter/View/9574 (read 2026-10-12)"
+   ]
+  }
+ ],
+ "faq_candidates": [
+  {
+   "question": "Does the Bailey Bill tax freeze apply if I replace the roof on an older Beaufort house?",
+   "why_this_town": "The Bailey Bill is the City of Beaufort's own local program (with Beaufort County); not true of any coastal town.",
+   "answer_facts": [
+    "City of Beaufort Bailey Bill packet (revised 3/18/2019): if an owner invests at least 75% of the building's assessed value into the building, and the work is eligible and approved, the assessed value is frozen at the pre-rehabilitation value for 10 years.",
+    "Eligible properties: in the Historic District and at least 50 years old, OR listed on the 1997 Beaufort County Above Ground Historic Sites Survey.",
+    "'Expenditures for rehabilitation' (SC 12-120.D) include improvements on or within the historic building, A&E fees, and costs necessary to maintain historic character or integrity.",
+    "The packet's own example: a $75,000-assessed home with a new roof, siding removal, window rehab, electrical and plumbing at about $60,000 'met, and exceeded' the 75% threshold. Roof is listed as an architectural element on the Part A form.",
+    "Process: pre-application conference, HRB Project Application + Part A, MOU, Part B final review; retain original material or replace with same materials per staff/HRB; no later exterior changes without approval; remaining freeze transfers on sale. Fee $150 single-family/duplex.",
+    "Caveat: a roof alone will rarely reach 75% of assessed value; the example combines several items."
+   ],
+   "sources": [
+    "https://cityofbeaufort.org/DocumentCenter/View/6749/Bailey-Bill-Application-Packet_PDF (read 2026-10-12)"
+   ]
+  },
+  {
+   "question": "Is there a South Carolina tax credit for repairing the roof on a historic home in Beaufort?",
+   "why_this_town": "Weaker on portability (statewide program); relevant because Beaufort's district is a National Historic Landmark district. Use only if Paul accepts a state program tied to the Beaufort district.",
+   "answer_facts": [
+    "SC SHPO Preservation Hotline #11 (revised Aug 2023): 25% State Historic Rehabilitation Tax Credit for an owner-occupied residence; allowable expenses include 'exterior rehabilitation work'; building must be NR-listed, individually eligible, or contribute to an NR historic district; not income-producing.",
+    "$15,000 of allowable rehabilitation expenses within 36 months (stated for the state credits on the same document).",
+    "SHPO must review and approve plans before work begins; work must meet the Secretary of the Interior's Standards (SCDAH Homeowner page: 'Applications must be submitted to the SHPO ... BEFORE WORK BEGINS').",
+    "Local property tax special assessment (Bailey Bill type) is listed as a separate incentive."
+   ],
+   "sources": [
+    "https://scdah.sc.gov/sites/scdah/files/Documents/Historic%20Preservation%20(SHPO)/Programs/Programs/Tax%20Incentives/Preservation%20Hotline%20%2311-082023.pdf (read 2026-10-12)",
+    "https://scdah.sc.gov/node/121 (Homeowner page, read 2026-10-12)"
+   ]
+  }
+ ],
+ "flags": [
+  "Preservation Manual 2022 (60 MB PDF) had no extractable text; not read. It may carry roof-specific guidance.",
+  "Beaufort Code s.9.10 on cityofbeaufort.org is the 2017/2018 version; the Oct 2025 forms are newer and add in-kind reroof as staff-level. Safest wording: 'in-kind reroof is listed as administrative (staff) review on the City's form'; do not claim like-for-like needs no review.",
+  "Metal Roofing Guidelines PDF is undated.",
+  "City of Beaufort cumulative-period for flood substantial improvement not confirmed; not offered as a Beaufort candidate."
+ ]
+}

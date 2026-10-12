@@ -1,0 +1,61 @@
+{
+ "gaps": {
+  "note": "Grids complete; none checked as wrong. Neighbourhood list is Wikipedia only (not re-verified); Hearthstone Lakes etc. annexed 2004-2010 per Wikipedia."
+ },
+ "faq_sources": [
+  {
+   "topic": "Should I have my new Hardeeville home's roof checked before the builder warranty ends?",
+   "answer_facts": [
+    "S.C. Code 15-3-640 (official, scstatehouse.gov): suits for damages from a defective or unsafe condition of an improvement to real property may not be brought more than eight years after substantial completion; covers contract and negligence claims against builders, designers, suppliers; a certificate of occupancy (new construction) is proof of substantial completion unless contractor and owner agree a different date in writing; parties may agree before completion to a longer guarantee; building permits must carry a bold notice of the right to contract for a longer guarantee.",
+    "Short quotes: 'may be brought more than eight years after substantial completion of the improvement'; 'shall constitute proof of substantial completion of the improvement'.",
+    "Law-firm FAQ (Steinberg, plaintiff-side, not official): anyone who builds a new home 'guarantees that they performed their work properly' and sellers guarantee habitability.",
+    "NOT FOUND from an official source: that SC builders typically give a one-year workmanship warranty. The Title 39 ch. 67 'Homebuyers Protection and Warranty Act' appears only as 1990s bills; I could not confirm it was enacted. Do not state '1 year'. The warranty term is whatever the builder's written warranty says (a client/consumer fact, not public).",
+    "New-build communities in Hardeeville per Wikipedia: Hilton Head Lakes, Riverton Pointe (formerly Hampton Pointe, renamed 2021), Hearthstone Lakes, Latitude Margaritaville, Jasper County portions of Sun City Hilton Head, planned Tradition Hilton Head; New River area developments annexed into the city 2004-2010; Tradition first development agreement with the city, 2004."
+   ],
+   "sources": [
+    "https://www.scstatehouse.gov/code/t15c003.php (read 2026-10-12, summarised by fetch tool; verify wording)",
+    "https://www.steinberglawfirm.com/construction-defect/faqs/how-does-south-carolina-law-protect-home-purchasers/",
+    "https://en.wikipedia.org/wiki/Hardeeville,_South_Carolina"
+   ]
+  }
+ ],
+ "faq_candidates": [
+  {
+   "question": "Does my Hardeeville lot need an elevation certificate before or after I add to the house or re-roof?",
+   "why_this_town": "The City of Hardeeville publishes its own Elevation Certificate Requirements chart (05-25-2023) that depends on whether the lot or structure is in the Special Flood Hazard Area.",
+   "answer_facts": [
+    "City chart: City 'reserves the right to require an elevation certificate for any project'. New construction and additions/lanai/sheds: certificate required at the stages shown (construction drawings, building under construction, finished construction) when the structure or addition is in the SFHA; not required when no portion of the lot is in the SFHA; where the SFHA only touches the building setback, a certificate is required for some stages. The chart does not mention re-roofing. Overlaps permit topic (Ridgeland owns Jasper permit FAQ) - Paul to decide."
+   ],
+   "sources": [
+    "https://hardeevillesc.gov/DocumentCenter/View/14771/Elevation-Cert-Requirements---05-25-2023a-PDF (read 2026-10-12, text extracted)",
+    "https://www.hardeevillesc.gov/2650/Building-Permits"
+   ]
+  },
+  {
+   "question": "Which Hardeeville neighborhoods are age-restricted or master-planned, and does my roof fall under an HOA?",
+   "why_this_town": "Hardeeville median age 60.4; Sun City, Latitude Margaritaville and Hilton Head Lakes drove growth from 2,952 (2010) to 7,473 (2020).",
+   "answer_facts": [
+    "Wikipedia: Sun City Hilton Head is age-restricted (no minimum age given on the page); Hardeeville median age 60.4 (2020); population 2,952 to 7,473. No public source I found gives any of these communities' roof/ARB rules (Latitude Margaritaville and Hilton Head Lakes searches returned nothing). So the HOA part is NOT answerable from public sources - weak."
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hardeeville,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Sun_City_Hilton_Head"
+   ]
+  },
+  {
+   "question": "What building code applies to a roof in Hardeeville?",
+   "why_this_town": "City page posts the SC code adoption notice; BUT this is a code/permit question and the same answer applies statewide - fails portability; listed only because Hardeeville page has the official source.",
+   "answer_facts": [
+    "City page: SC Building Codes Council adopted the most recent editions of the required codes, with local amendments; submittals through the online portal; special-inspections form cites IBC 2021. Contact 843-784-2231. Exact IRC edition not retrieved."
+   ],
+   "sources": [
+    "https://www.hardeevillesc.gov/2650/Building-Permits"
+   ]
+  }
+ ],
+ "flags": [
+  "Hardeeville: only 1-2 weak town-specific candidates beyond the builder-warranty FAQ (flood/elevation certificate is the best). Third candidate fails portability; include only if Paul accepts.",
+  "One-year builder warranty is not supported by an official source; the statutory fact I can cite is the 8-year repose period only.",
+  "Sources suggestion: SC Code of Laws Title 15 ch. 3 (https://www.scstatehouse.gov/code/t15c003.php) and Hardeeville document center for the SC sources list."
+ ]
+}

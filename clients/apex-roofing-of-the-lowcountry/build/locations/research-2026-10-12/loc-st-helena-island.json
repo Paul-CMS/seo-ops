@@ -1,0 +1,62 @@
+{
+ "gaps": {
+  "things_to_do": {
+   "items": [
+    {"name": "Penn Center - York W. Bailey Museum and campus", "note": "16 Penn Center Circle West, St. Helena Island SC 29920. Museum Tue-Sat 10-4; docent tours listed 10:00, 12:00, 3:00; self-guided $10, docent-led with documentary $15, $5 campus map (25 historic buildings); free parking; free age 5 and under; nature trail and overlook shared with NPS. Hours and prices change - re-check before use.", "source": "https://www.penncenter.com/visit", "read": "2026-10-12"},
+    {"name": "Fort Fremont Preserve and History Center (county-owned)", "note": "1124 Land's End Road, St. Helena Island. Preserve open daily dawn to dusk, free. History center Fri 10-2, Sat 10-4, Sun 1-4 (county notice Apr 2023; confirm current). 18 acres, built 1898, National Register. Already a top_site in facts.json, so use here only if Paul wants it in both.", "source": "https://beaufortcountysc.gov/news/2023/04/sundays-in-the-park-beaufort-county-announces--new-hours-for-the-fort-fremont-history-center-.html", "read": "2026-10-12"},
+    {"name": "St. Helena Parish Chapel of Ease ruins (tabby ruins)", "note": "National Register listed Oct 6, 1988, at junction of SC roads 45 and 37 near Frogmore; built c. 1740; burned Feb 1886. UNVERIFIED: from search-result summaries only; the SC state record page was behind a bot check. Re-read from NPS/NRHP before use.", "source": "https://gohistoric.com/places/314392-st-helena-parish-chapel-ease-ruins-frogmore (search summary, not opened)", "read": "2026-10-12"},
+    {"name": "Penn Center Heritage Days (annual November Gullah festival)", "note": "Run by Penn Center's History and Culture program each November; current-year dates not found - cite as annual event only.", "source": "https://www.penncenter.com/visit (search summary)", "read": "2026-10-12"}
+   ],
+   "not_found_tried": [
+    "Hunting Island State Park placement: SC State Parks (https://southcarolinaparks.com/hunting-island) gives address 2555 Sea Island Pkwy, Hunting Island SC 29920 and calls it a barrier island; Wikipedia St. Helena article lists it only in the Sea Islands navigation list and never places it on St. Helena. Neither official source puts it on St. Helena - skipped per instruction.",
+    "NPS Reconstruction Era National Historical Park planyourvisit page (https://www.nps.gov/reer/planyourvisit/index.htm) does not name Penn Center or St. Helena in the text read. The county CPO ordinance text says the Penn Center area is a National Historic Landmark and two of the four Reconstruction Era National Park sites - county text, not NPS; verify on NPS before citing.",
+    "Current-year Heritage Days dates: not stated on the Penn Center visit page."
+   ]
+  }
+ },
+ "faq_sources": [
+  {
+   "topic": "Do you serve Harbor Island homes from St. Helena Island? (public facts only)",
+   "answer_facts": [
+    "Harbor Island is in Beaufort County: a barrier island about 14 miles east of Beaufort, roughly 800 acres of upland on the northeast side (Wikipedia).",
+    "US 21 is 'the only vehicular access route to the island and other nearby islands'. The 1939 swing-span Harbor River Bridge was replaced by a fixed-span bridge that opened April 25, 2021. Wikipedia's St. Helena article says US 21 (Sea Islands Parkway) connects St. Helena to Beaufort.",
+    "Gated: yes. The Fripp Company bought most of the land and developed 'a gated residential and resort community'. A Harbor Island Owners Association exists (2018 lawsuit by SC Environmental Law Project on its behalf). Population 209 (2020 census).",
+    "Harbor Island owners association architectural-review or contractor-access rules: NOT found (search returned only real-estate listings; no association website found).",
+    "Whether Apex serves Harbor Island is a client fact; Harbor Island is not one of the 12 confirmed towns."
+   ],
+   "sources": ["https://en.wikipedia.org/wiki/Harbor_Island,_South_Carolina (read 2026-10-12)", "https://en.wikipedia.org/wiki/St._Helena_Island,_South_Carolina (read 2026-10-12)"]
+  }
+ ],
+ "faq_candidates": [
+  {
+   "question": "Does St. Helena Island's Cultural Protection Overlay change anything about replacing my roof?",
+   "why_this_town": "The overlay exists only for St. Helena Island; no other Apex town has one.",
+   "answer_facts": [
+    "Beaufort County's Cultural Protection Overlay (CPO) zone is 'established to provide for the long term protection of the culturally significant resources found on St. Helena Island' (CDC Sec. 3.4.50.A). First adopted April 26, 1999 (Ordinance 1999/12, Appendix C); amended 2023 (final reading reported May 8, 2023).",
+    "What it does: limits large-scale development; permitted uses 'shall be limited to the base zoning'; Site Design (C): 'Design features that restrict access to water and other culturally significant locations, and franchise design are prohibited'; Use Limitations (D) prohibit restricted-access (gated) communities, resorts, golf courses.",
+    "In sections A-D as read (April 2023 planning commission packet, 'Ed. 04.04.2023') there is NO roofing, colour or exterior-appearance standard for existing homes. Boundaries 'are depicted on the Beaufort County Official Zoning Map'.",
+    "Caveat: packet version of the ordinance, not the live adopted CDC on municode, which I did not open. No permit claim here (one permit FAQ per county)."
+   ],
+   "sources": ["https://www.beaufortcountysc.gov/planning-commission/agendas/2023/05.01.23.pdf (PDF text decoded locally, read 2026-10-12)", "https://library.municode.com/sc/beaufort_county/codes/community_development_code (not opened; verify final text)", "https://www.wtoc.com/2023/04/11/beaufort-co-council-votes-approve-amendment-cultural-protection-overlay/ (search summary)"]
+  },
+  {
+   "question": "How do I find out whether my St. Helena Island home is in a flood zone?",
+   "why_this_town": "Sea Island surrounded by expansive marsh (Wikipedia). Weaker on portability: the lookup process is county-wide.",
+   "answer_facts": [
+    "Beaufort County Building Codes flood page lists a Flood Verification Form, Digital Flood Insurance Rate Maps, the county mapping site, FEMA FloodSmart, and an elevation-certificate request. Contact listed: Annie Peifer, 843-255-2086, 100 Ribaut Rd Rm 225 (title not stated).",
+    "The page does NOT say whether a re-roof triggers any flood rule or the 50% substantial-improvement rule, and does not mention St. Helena. Answer can only say where to look up the zone."
+   ],
+   "sources": ["https://www.beaufortcountysc.gov/building-codes/flood-info.html (read 2026-10-12)", "https://en.wikipedia.org/wiki/St._Helena_Island,_South_Carolina"]
+  },
+  {
+   "question": "(optional, weak) Will St. Helena's historic landmarks restrict my roof if I live near Frogmore or Lands End?",
+   "why_this_town": "Names St. Helena landmarks.",
+   "answer_facts": ["Not answerable from sources read: nothing read says listed landmarks restrict neighbouring private roofs. Do not use."],
+   "sources": []
+  }
+ ],
+ "flags": [
+  "Harbor Island association rules not found - Paul decision: keep the Harbor Island FAQ to public facts above or drop it.",
+  "Need 2 FAQs: candidate 1 is solid (with the caveat); candidate 2 is generic. Candidate 3 is not usable."
+ ]
+}

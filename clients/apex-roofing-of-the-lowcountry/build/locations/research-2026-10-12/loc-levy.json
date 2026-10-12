@@ -1,0 +1,69 @@
+{
+ "gaps": {
+  "neighborhoods": {
+   "items": [],
+   "not_found_tried": [
+    "Wikipedia Levy, SC: unincorporated community in southern Jasper County, 13 ft, SC 315; names no neighborhoods.",
+    "Wikipedia Ridgeland and the jaspersc.org Discover Ridgeland/Hardeeville page: no Levy content.",
+    "Web search for Levy community/subdivisions returned only Wikipedia, county history pages and SC legislature bills.",
+    "Honest count: 0 sourced neighborhoods."
+   ]
+  },
+  "things_to_do": {
+   "items": [],
+   "not_found_tried": [
+    "Wikipedia Levy; Jasper County Chamber discover page (no Levy mention); web search.",
+    "Nearest sourced attraction is Savannah National Wildlife Refuge (Laurel Hill Wildlife Drive; visitor center 694 Beech Hill Lane, Hardeeville; trails sunrise-sunset, no fee; visitor center Mon-Fri 10-2 per FWS - search summary https://www.fws.gov/refuge/savannah/visit-us). Sources place it off US 17 near Hardeeville, not at Levy - do not list it as a Levy site."
+   ]
+  },
+  "top_sites": {
+   "items": [],
+   "not_found_tried": [
+    "Wikipedia Levy (no landmarks). Wikipedia NRHP listings for Jasper County: 10 entries, none in Levy (Ridgeland, Gillisonville, Robertville, Tillman). Only fact: formerly served by the abandoned Seaboard Air Line Charleston Subdivision (already in local_context)."
+   ]
+  }
+ },
+ "county_verification": {
+  "county": "Jasper County, South Carolina",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Levy,_South_Carolina: 'unincorporated community in Jasper County'; 'southern portions of Jasper County'; 13 ft; SC 315 (read 2026-10-12)",
+   "Wikipedia Ridgeland page lists Levy among Jasper County's unincorporated communities (read 2026-10-12)",
+   "SC legislature 1979 act adding a Levy precinct to Jasper County voting precincts (search summary): https://scstatehouse.gov/sess103_1979-1980/bills/3946.htm"
+  ],
+  "note": "Plan's 'Jasper (to verify)' is resolved: Jasper. Levy is not incorporated; no town government in any source."
+ },
+ "faq_sources": [],
+ "faq_candidates": [
+  {
+   "question": "Is Levy a town, and who covers a Levy address for city or county services?",
+   "why_this_town": "Levy is an unincorporated community, not a town.",
+   "answer_facts": [
+    "Levy is an unincorporated community in southern Jasper County (Wikipedia): no town government of its own.",
+    "Jasper County Planning and Building handles county permits; the Town of Ridgeland and City of Hardeeville each run their own permit offices. Whether a given Levy parcel lies inside Hardeeville limits is NOT found: Hardeeville has annexed parcels from unincorporated Jasper County one at a time (council agendas, search summary) and grew from 5 sq mi in 2000 to over 45 sq mi by 2010 (Wikipedia, search summary). Parcel check: Jasper County GIS/assessor or Hardeeville planning.",
+    "Keep to jurisdiction only; permit content stays with the Ridgeland FAQ."
+   ],
+   "sources": ["https://en.wikipedia.org/wiki/Levy,_South_Carolina (read 2026-10-12)", "https://en.wikipedia.org/wiki/Hardeeville,_South_Carolina (search summary)", "https://www.hardeevillesc.gov/2650/Building-Permits (not re-read)"]
+  },
+  {
+   "question": "How do I check whether my Levy home is in a flood zone?",
+   "why_this_town": "Levy sits at 13 ft elevation in southern Jasper County (Wikipedia). Weak on portability: the process is county-wide.",
+   "answer_facts": [
+    "Jasper County's Planning and Building forms-and-links page points to FEMA's Map Service Center and a 'Find your flood zone' link (search summary; not opened). Effective county Flood Insurance Study dated October 18, 2019, community 450112, covering unincorporated Jasper plus Hardeeville and Ridgeland (search summary).",
+    "Planning and Building: 358 Third Avenue Room 202, Ridgeland; 843-717-3650; Mon-Fri 9-5.",
+    "No source says whether a re-roof triggers flood rules - answer limited to where to look up the zone."
+   ],
+   "sources": ["https://www.jaspercountysc.gov/services/planning-and-building/forms-links/ (search summary; open before use)", "https://en.wikipedia.org/wiki/Levy,_South_Carolina"]
+  },
+  {
+   "question": "(fallback) Do Levy homeowners qualify for SC Safe Home roof grants?",
+   "why_this_town": "Levy is in Jasper County. Fails portability (county-level, not Levy).",
+   "answer_facts": ["SC Safe Home (SC Dept of Insurance) funds roof retrofits for coastal owner-occupied single-family homes; earlier coverage lists Beaufort and Jasper among eligible counties (may be out of date); roof award $7,500 non-matching / $6,000 matching, must meet FORTIFIED Roof retrofit guidelines; 2026 window opened Feb 10. Official SC Safe Home/SCDOI page NOT read - re-verify before use."],
+   "sources": ["https://scdailygazette.com/2025/06/11/sc-program-helping-homeowners-protect-roofs-against-hurricanes-gets-funding-boost/ (search summary)", "https://www.wtoc.com/2026/02/11/sc-safe-home-grant-program-reopens-with-expanded-funding-february-10/ (search summary)"]
+  }
+ ],
+ "flags": [
+  "Levy has no sourced neighborhoods, Things to Do or Top Sites. Paul decision: drop those grid rows or keep them general.",
+  "Only FAQ candidate 1 is cleanly Levy-specific; 2 and 3 are weak on portability and rest on unopened pages. Paul may prefer fewer than 3.",
+  "Possible new official sources to flag for the sources list (not flagged by me): Jasper County forms-links page (flood zone / FEMA MSC) and SC Safe Home (SC Dept of Insurance)."
+ ]
+}

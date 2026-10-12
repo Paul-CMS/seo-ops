@@ -1,0 +1,71 @@
+{
+ "gaps": {
+  "neighborhoods": {
+   "items": [
+    {"name": "Beach Club Villas (units 158-199)", "note": "Listed in the FIPOA Homeowners Manual under 'Fripp Island Regime Managers: The following neighborhoods have supplemental management regimes'.", "source": "FIPOA New Homeowners Manual 2026 (rev. Aug 2026): https://www.mygreencondo.net/cloud_attachment/Y29uZG9fMjM2Ml9hY2NvdW50/condo_folders/1784900075972_901006587_1784900071_1NewHomeownersManual2026revAugust2026.pdf", "read": "2026-10-12"},
+    {"name": "CJFV Phase I (N, 310-344), Phase II (S, 401-422), Phase III (C, 101-144)", "note": "Abbreviation 'CJFV' is never spelled out in the text read - do not expand it. Three separate regimes.", "source": "same manual", "read": "2026-10-12"},
+    {"name": "Fiddlers Cove", "note": "same regime list", "source": "same manual", "read": "2026-10-12"},
+    {"name": "North Hampton Court", "note": "same regime list", "source": "same manual", "read": "2026-10-12"},
+    {"name": "Ocean Cottages", "note": "same regime list", "source": "same manual", "read": "2026-10-12"},
+    {"name": "Ocean Creek", "note": "regime list; also named a 'Resort Properties' area (Marina, Springtide, Beach Club, Ocean Point, Ocean Creek areas) in the commercial-access section", "source": "same manual", "read": "2026-10-12"},
+    {"name": "Sandown Units", "note": "same regime list", "source": "same manual", "read": "2026-10-12"},
+    {"name": "Springtide Village", "note": "same regime list; 'Springtide area' is also a Resort Properties area", "source": "same manual", "read": "2026-10-12"},
+    {"name": "Tennis Villas", "note": "same regime list", "source": "same manual", "read": "2026-10-12"},
+    {"name": "Deer Lake Associates", "note": "same regime list", "source": "same manual", "read": "2026-10-12"},
+    {"name": "Fairway Club", "note": "same regime list", "source": "same manual", "read": "2026-10-12"},
+    {"name": "New Haven Court", "note": "same regime list", "source": "same manual", "read": "2026-10-12"},
+    {"name": "River Club", "note": "same regime list", "source": "same manual", "read": "2026-10-12"},
+    {"name": "Sawgrass Bluff", "note": "same regime list", "source": "same manual", "read": "2026-10-12"},
+    {"name": "Sunsuites", "note": "same regime list", "source": "same manual", "read": "2026-10-12"}
+   ],
+   "not_found_tried": [
+    "The manual text was decoded from PDF streams by script and the column order is scrambled: which manager belongs to which name is NOT certain, and the list may contain a stray item. Re-check against the PDF (around page 7) before use.",
+    "Almost all are condominium/villa regimes, not single-family areas. The manual says 'certain neighborhoods and all condominiums are handled by small regimes'. No named single-family neighborhoods found.",
+    "Wikipedia Fripp Island (already in facts.json) names none; the island is one gated community with one POA.",
+    "Ocean Point is a resort/golf area (Ocean Point Golf Links is already a Things to Do item), not in the regime list."
+   ]
+  }
+ },
+ "faq_sources": [
+  {
+   "topic": "How does a roofing crew get onto gated Fripp Island?",
+   "answer_facts": [
+    "Gate staffed 24/7 by FIPOA Security (SLED-trained officers); security/gate 843-838-2334. FIPOA office 225 Tarpon Blvd, Mon-Fri 8:30-4:30, 843-838-4155.",
+    "FIPOA charges access fees to 'certain commercial vendors and service providers'. No access fee if the contractor has a Fripp Island Contractor decal. USPS/FedEx/UPS, utilities, emergency vehicles and a list of other service types are exempt. Concrete trucks $50 per trip (2026 manual). Daily-pass and yearly-decal dollar amounts sit in a table I could not read: NOT found.",
+    "Commercial decals are issued each April; bought in January the price is prorated to half; an annual commercial decal gets the provider listed on the POA Service Provider list. A vehicle with a business/contractor decal may do only business, commercial or construction activity on the island.",
+    "A contractor at the gate unprepared to pay 'will not be turned away' if Security can reach the owner and the owner assures payment within 14 days; Security emails the owner an IOU. Pay by cheque to FIPOA, at the office (cash/cheque/card), or mail to FIPOA, Attn SECURITY, 225 Tarpon Blvd.",
+    "Hours: sources give a weekend rule only - 'Contractors can only work on the weekend if permission has been given by Security', must be on a weekend worklist, quiet work only. No weekday hours found in any source read. The full Rules & Regulations (approved May 28, 2026, Access Control section) was not readable (link returned Not Found).",
+    "Owner side: guest passes via GateAccess.net / ABDI Gate Access App or Security 24/7 with property PIN."
+   ],
+   "sources": ["https://www.mygreencondo.net/frippislandpoa/community (read 2026-10-12)", "FIPOA New Homeowners Manual 2026 (rev. Aug 2026), Contractor Access section, text decoded locally: https://www.mygreencondo.net/cloud_attachment/Y29uZG9fMjM2Ml9hY2NvdW50/condo_folders/1784900075972_901006587_1784900071_1NewHomeownersManual2026revAugust2026.pdf (read 2026-10-12)"]
+  },
+  {
+   "topic": "Does the Fripp Island property owners' association review roof replacements?",
+   "answer_facts": [
+    "The Fripp Island Architectural Review Board (ARB) implements the covenants (design review); members appointed by the FIPOA Board; meets first and third Thursday of each month at 8:30 AM; applications due in the ARB office by 4:30 PM the Friday before the meeting. The ARB covers single-family properties; condominiums are handled by their regimes.",
+    "FIPOA's own ARB FAQ (2026 manual): 'Do I need ARB approval to repaint or re-roof my house the same color/material as it is now? No, but you still need to complete an application and post a permit; there is no cost.' The FAQ states review expressly for driveway material/colour changes, not for roofs - do not state more about a roof change than the sentence says.",
+    "Forms on the ARB page: Request for Exterior Alteration/Improvement Application, Checklist for Alterations/Improvements, Building Permit Application and Checklist. ARB Guidelines sit behind the homeowners' login - roofing-specific standards NOT found publicly.",
+    "Non-new-construction projects have 9 months from permit date to finish; daily fines after that unless an extension is filed."
+   ],
+   "sources": ["https://www.mygreencondo.net/frippislandpoa/ARB (read 2026-10-12)", "FIPOA New Homeowners Manual 2026, ARB FAQ (same PDF as above, read 2026-10-12)"]
+  },
+  {
+   "topic": "What roofing material holds up best on an oceanfront Fripp Island home? (cited facts only, no superlative)",
+   "answer_facts": [
+    "SC adopted the 2021 SC Building Codes with an effective date of January 1, 2023 (SC Building Codes Council, LLR).",
+    "The Council's Beaufort County wind map is an image with 130 MPH and 140 MPH lines, labelled 'based upon the 2015 South Carolina Residential Code and a report to the SC Building Codes Council by Dr. Timothy Mays dated 6/30/2016'. I could not tell which line covers Fripp: no stated wind speed for Fripp found - do not print one.",
+    "FEMA (Hurricane Charley MAT report, Fact Sheet 3.3.1, NFIP Technical Bulletin 8; search summaries): within 3,000 feet of saltwater use stainless steel or hot-dip galvanized exposed roof fasteners; roofing nails, not staples; salt accumulation speeds corrosion; galvanizing wears off and stainless needs less maintenance; unsealed shingles were a common failure in high wind. Typical coverings listed: asphalt/wood shingles, tile, slate, metal.",
+    "IBHS FORTIFIED Roof (a voluntary standard, not code): 8d ring-shank nails (0.113 in x 2-3/8 in), sealed roof deck, no mandated roof cover but it must pass rated testing; 3,000-ft saltwater rule for hot-dip galvanized/stainless fasteners (2022 checklist).",
+    "No source read ranks one material 'best'. Manufacturer coastal-warranty notes: NOT searched in depth - NOT found.",
+    "Material or colour changes may go through FIPOA ARB (see the ARB answer)."
+   ],
+   "sources": ["https://llr.sc.gov/bcc/BCAdoption.aspx (read 2026-10-12)", "https://llr.sc.gov/bcc/PDFfiles/WSMaps/Beaufort%2015(Mays).pdf (map image read 2026-10-12)", "https://www.fema.gov/sites/default/files/documents/fema_p-2181-fact-sheet-3-3-1-roof-systems-sloped-roofs.pdf (search summary)", "https://www.fema.gov/sites/default/files/2020-07/tb8-corrosion_protection_metal_connectors_coastal_areas.pdf (search summary)", "https://fortifiedhome.org/roof/ (search summary)"]
+  }
+ ],
+ "faq_candidates": [],
+ "flags": [
+  "Fripp daily-pass and decal fee amounts are in an unreadable table and weekday hours are not found. Paul decision: keep general (fee applies unless contractor decal; weekend work needs Security permission) or drop fee detail.",
+  "Rules & Regulations PDF link (approved May 28, 2026) returned Not Found - re-check.",
+  "Spec needs 0 new FAQs for Fripp; none supplied."
+ ]
+}

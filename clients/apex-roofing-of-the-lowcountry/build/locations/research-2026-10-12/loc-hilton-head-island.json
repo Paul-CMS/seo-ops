@@ -1,0 +1,65 @@
+{
+ "gaps": {
+  "note": "Grids complete; no listed item checked as wrong (not re-verified)."
+ },
+ "faq_sources": [
+  {
+   "topic": "Which roofing materials and colors do Hilton Head Island plantation communities approve?",
+   "answer_facts": [
+    "Sea Pines: ARB approval is required for roof repair and replacement. Repairs must match existing shingles exactly in color and material. Same-type wood shake, or asphalt/fiberglass in Weathered Wood or Slate Blend, still needs an ARB request. Any other color or material change needs a request at least 5 working days before work, with a sample unless using GAF Timberline or Elk Prestique series. Default is fungus-resistant architectural shingles with minimum wind resistance per Town code unless the ARB approves other materials (wood shake, metal). A Town building permit is also required for any re-roof. Document: Sea Pines 'Section III - Other Guidelines for Existing Residences' (file uploaded 2018/09; no date printed that I could read; verify current with the ARB).",
+    "Palmetto Dunes: PDPOA ARB Standards & Guidelines (approved 16 Dec 2025, effective 1 Jan 2026) sec. 7.2 D: a replacement roof 'shall match the house or villa's aesthetics and community color palette'; sec. 8.7: roofs must comply with local and state wind and fire ratings; may be finished metal (low-sheen, non-reflective, standing seam without exposed fasteners) and non-wood shakes or shingled roof; roof colors must match home aesthetics and the community color palette; roof vents and skylight trim must be painted to blend. PDPOA 'Exterior House Colors and Roofs' color board (2021 upload) lists roof colors in two groups, metal and shingles; names on it include Dark Bronze, Mansard Brown, Antique Dark Gray, Slate Gray, Charcoal Gray, Weathered Wood, Slate, Shakewood, Pewter Gray, Driftwood, Barkwood (I could not tell from extracted text which names fall in which group; view the PDF before use). PDPOA page: most exterior alterations require ARB approval.",
+    "Hilton Head Plantation: the only ARB guidelines I could read are a 2012-era copy produced for MLS and hosted on a realtor site (not the POA site; may be out of date). It says all re-roofing needs ARB approval before work (Application for Design Review with a material sample; written approval before work starts); approvable roof materials: Class A asphalt/fiberglass shingles with minimum 30-year warranty and fungus resistance, standing-seam metal (16 oz copper, factory-finish paint or terne only), wood shakes (acceptable, not recommended, fire-retardant treatment), others judged on compatibility; roof pitch not less than 6:12 (4:12 on double-pitch lower roofs); 'very light' and 'very dark' shingle shades will not be approved. The POA's own site (hiltonheadplantation.com) did not show ARB guidelines in what I read. Current official version NOT FOUND."
+   ],
+   "sources": [
+    "https://www.seapinesliving.com/wp-content/uploads/2018/09/Section-III.pdf (read 2026-10-12, text extracted from PDF)",
+    "https://www.seapinesliving.com/property-owners/news/recent-news/reminder-from-the-architectural-review-board/ (read 2026-10-12; says owners must get ARB approval before exterior alterations)",
+    "https://pdpoa.org/wp-content/uploads/2025/12/ARB-Standards-and-Guildelines-Approved-12-16-25.pdf (read 2026-10-12)",
+    "https://pdpoa.org/about/arb/ and https://pdpoa.org/community/news/new-arb-guidelines-effective-1-1-2026/ (read 2026-10-12)",
+    "https://pdpoa.org/wp-content/uploads/2021/04/Exterior-House-Colors-and-Roofs.pdf (read 2026-10-12)",
+    "https://bloghiltonheadagent.com/wp-content/uploads/2012/09/Hilton-Head-Plantation-ARB.pdf (third-party MLS copy, 2012-era; read 2026-10-12)"
+   ]
+  },
+  {
+   "topic": "How does salt air affect roofs on Hilton Head Island? (citable source, no Apex claims)",
+   "answer_facts": [
+    "FEMA Hurricane Recovery Advisory No. 2 'Asphalt Shingle Roofing for High-Wind Regions' (Sept 2004): 'Use stainless steel nails when building within 3,000 feet of saltwater.'",
+    "FEMA Recovery Advisory No. 1 (roof underlayment) recommends stainless steel or hot-dip galvanized fasteners for attaching underlayment within 3,000 feet of saltwater (as summarised in the FEMA-hosted compilation fema488 appendix D).",
+    "Not found: a South Carolina or Beaufort County code section requiring corrosion-resistant fasteners by distance from salt water (the 3,000 ft rule I found in code form is Florida's 2026 FBC sec. 1711, not SC; do not cite as local). Not found: a university extension page or a shingle-manufacturer warranty clause on salt air.",
+    "Town of Hilton Head Island roof certificate form states a 140 mph 3-second gust wind basis (IRC 301.2.1.1) and requires fastener type/amount to be listed; it is a permit form, not a salt-air source."
+   ],
+   "sources": [
+    "https://www.fema.gov/sites/default/files/2020-08/fema488_appx_d_ras.txt (read 2026-10-12)",
+    "https://inspectapedia.com/roof/Asphalt-Roofing-High-Wind-FEMA.pdf (copy of the same advisory; not read in full)",
+    "https://hiltonheadislandsc.gov/forms/bldgdev/RoofingCertificate.pdf (via search summary only)"
+   ]
+  }
+ ],
+ "faq_candidates": [
+  {
+   "question": "My Hilton Head Island home is in a flood zone. Does a new roof count toward the Town's 49 percent rule?",
+   "why_this_town": "The Town's own Flood Damage Control Ordinance and Build Responsibly page; island is largely flood-zone/VE; Town-specific 49% (not FEMA's usual 50%) threshold and VE elevation rule.",
+   "answer_facts": [
+    "Town page: building permits are required for any improvement to a structure, including re-roofing. If the cost of improving a structure equals or exceeds 49 percent of its assessed or appraised value the building must be brought into compliance with the current Flood Damage Control Ordinance. Zone VE: lowest supporting member at least 3 ft above base flood elevation or 13 ft above mean sea level, whichever is higher. Whether a re-roof counts toward the test is NOT stated on the pages I read (search summary of the Substantial Improvement page: compares cost of work to structure value per Beaufort County Tax Assessor or a certified appraisal under 2 years old; a Substantial Damage/Improvement Review Application is needed above 40 percent). Answer must stop at what the Town says and send the reader to the Town for the re-roof ruling."
+   ],
+   "sources": [
+    "https://hiltonheadislandsc.gov/public_safety/flood/build_responsibly.php (read 2026-10-12)",
+    "https://hiltonheadislandsc.gov/building/substantialimprove.cfm (search summary only)"
+   ]
+  },
+  {
+   "question": "Does a metal or different-looking roof on Hilton Head Island need Town Design Review, or only my plantation's board?",
+   "why_this_town": "Town of Hilton Head Island Design Review Board covers listed areas; plantations (Sea Pines, Palmetto Dunes, HHP) add their own ARB.",
+   "answer_facts": [
+    "Town Design Review page: review applies to properties along major and minor roads (Cross Island Pkwy, Palmetto Bay Rd, Pope Ave, US 278), waterfront and marsh-front land, resort areas, and near Sea Pines Circle and Coligny Circle; triggers include 'any alterations to the external appearance of a building, such as new paint or materials.' The page does NOT say whether single-family homes are exempt (contact Assistant Planning Director). Overlaps the dropped permit FAQ - Paul to decide."
+   ],
+   "sources": [
+    "https://hiltonheadislandsc.gov/services/development/design_review/index.php (read 2026-10-12)"
+   ]
+  }
+ ],
+ "flags": [
+  "Hilton Head Plantation: no current official ARB guideline found; only a 2012-era MLS copy on a realtor site. Paul decides whether to cite it with that caveat or keep the HHP line general.",
+  "Sea Pines Section III PDF carries no printed date I could extract (uploaded 2018/09); search tool also surfaced a Community Standards Rules document (May 2025) not read.",
+  "Sources list suggestion: new source for HHI plantation ARBs: https://pdpoa.org/about/arb/ and https://www.seapinesliving.com/ - ARB guidelines (answers roof material/colour approval)."
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "gaps": {
+  "neighborhoods": {
+   "items": [
+    {"name": "Rice Shire Woods (subdivision, Rice Shire Road)", "note": "Appears only as an architectural review request on the Town of Ridgeland Planning Commission Oct 9, 2025 agenda (search summary; PDF unreadable). Not confirmed inside town limits - UNVERIFIED lead.", "source": "https://www.ridgelandsc.gov/pdfs/Planning-Commission-October-9-2025-Agenda-Packet.pdf", "read": "2026-10-12"},
+    {"name": "Groves at Bees Creek (proposed)", "note": "Sept 14, 2026 Planning Commission conceptual review, zoned T3 Neighborhood General. Proposed, not built - do NOT list as an existing neighborhood.", "source": "https://www.ridgelandsc.gov/pdfs/Planning-Commission-September-14-2026-Agenda-Packet.pdf (search summary)", "read": "2026-10-12"}
+   ],
+   "not_found_tried": [
+    "Wikipedia Ridgeland names no neighborhoods or subdivisions (nearby communities only: Old House, Switzerland, Tillman, Point South, Coosawhatchie, Gillisonville, Grahamville, Okatie, Pineland, Pocotaligo, Purrysburg, Robertville, Sun City, Tarboro; Hardeeville 14 mi south).",
+    "jaspersc.org Discover Ridgeland page names none. Town of Ridgeland planning home and forms pages name none. Jasper County GIS/assessor subdivision layer not opened.",
+    "Realtor listing pages (Tideland Realty) name Weathersbee, Northridge, Patrician Acres, Wellington, Wellington Estates, Rushwood, Good Hope Estates, Fox Chase, Oak Plantation Common, Hwy 17A. NOT citable (commercial, unclear if inside town limits) - leads only.",
+    "Honest count: 0 confirmed from official or Wikipedia sources."
+   ]
+  }
+ },
+ "faq_sources": [
+  {
+   "topic": "Who issues roofing permits in Ridgeland and Jasper County? Does a re-roof need one?",
+   "answer_facts": [
+    "Town of Ridgeland: 'All projects, from subdivisions to supermarkets to residential modifications, are required to gain approval from the Town's Planning and Community Development Department'; building permit issued 'only after review of the plans by certified plan reviewers and codes enforcement personnel'. Apply online via CommunityCore; forms 'Residential Permit Submittal Requirements' and 'Building Permit Application'. Building Official Robert Wilfong 843-754-6881; permit technician/main 843-726-7516; minor projects Aaron Rucker 843-726-7521; Town Hall, 1 Town Square, Ridgeland SC 29936.",
+    "The Town pages I could read do not use the word roofing or re-roof. A 2018 Town business guide (search summary only) says modifications to existing buildings need a building permit, work without one carries a $1,000 penalty, and plan review adds 50% of the permit fee. So 'a re-roof needs a Town permit' is NOT found explicitly - confirm by phone.",
+    "Jasper County Planning and Building: 'A building permit is required for new construction, additions, alterations, repairs, roof replacement, electrical, plumbing...' Only exemptions: residential accessory structures under 200 sq ft, commercial accessory under 120 sq ft, fences under 7 ft, retaining walls under 4 ft. Residential application: Building Permit Application, Zoning Permit, Septic or Sewer Approval, 911 Address, 2 sets of construction documents or manufacturer's installation instructions, contractor info with 'both SC & Jasper County License numbers'; all contractors and subs need a Jasper County Business License. Office 358 Third Avenue Room 202, Ridgeland; 843-717-3650.",
+    "The county page does not state in words that it covers only unincorporated areas. 'Town addresses to the Town, unincorporated to the county' is the reasonable reading but not verbatim.",
+    "Hardeeville has its own building permits: https://www.hardeevillesc.gov/2650/Building-Permits"
+   ],
+   "sources": ["https://www.ridgelandsc.gov/planning-and-community-development/building-permits-forms (read 2026-10-12)", "https://www.ridgelandsc.gov/planning-and-community-development/home (read 2026-10-12)", "https://jaspercountysc.gov/services/planning-and-building (read 2026-10-12)", "https://www.ridgelandsc.gov/pdfs/New-Business-Guide-and-Resources-062818.pdf (search summary only)"]
+  },
+  {
+   "topic": "Driving distance Bluffton to Ridgeland",
+   "answer_facts": ["No Bluffton-to-Ridgeland distance found in any source read. Wikipedia Ridgeland gives Hardeeville 14 miles south and Savannah 31 miles south and does not mention Bluffton. No-travel-fee is a settled client fact."],
+   "sources": ["https://en.wikipedia.org/wiki/Ridgeland,_South_Carolina (read 2026-10-12)"]
+  }
+ ],
+ "faq_candidates": [
+  {
+   "question": "Does the Town of Ridgeland have design standards for a new roof?",
+   "why_this_town": "Concerns Ridgeland's own development code, not the county permit question.",
+   "answer_facts": [
+    "From a search summary of the Town's Architectural Review and Checklist: Town architectural standards apply to structures in transect zones T2.5, T3, T4, T5 and SD-Exit 21; asphaltic/fiberglass shingles 'shall be architectural grade' and 'submitted for approval'; metal flashing limited to copper, lead or anodized aluminum. I could not open the PDF to confirm the wording, whether it covers re-roofs of existing homes, or which streets fall in those zones - UNVERIFIED. The Town also has an Architectural Review Application form.",
+    "Edges into a regulatory fact; the source is official (Town) but was not read directly. Paul decides."
+   ],
+   "sources": ["https://www.ridgelandsc.gov/pdfs/planning-and-community-development/Architectural-Review-and-Checklist.pdf (fetch could not decode; search summary only)", "https://www.ridgelandsc.gov/pdfs/TOR-Architectural-Review-Application.pdf (not read)"]
+  },
+  {
+   "question": "I own a manufactured home outside Ridgeland town limits - is re-roofing it handled the same way?",
+   "why_this_town": "The Town has a Mobile Home permitting checklist and the county lists manufactured houses.",
+   "answer_facts": ["Only sourced fact: Jasper County requires a building permit 'to install a manufactured house' and accepts manufacturer's installation instructions as construction documents. The Town has a 'Mobile Home Permitting Checklist and Requirements' PDF (not read). NO source read says manufactured homes are common locally or addresses re-roofing them - the local fact is unsupported. Likely not usable."],
+   "sources": ["https://jaspercountysc.gov/services/planning-and-building", "https://www.ridgelandsc.gov/pdfs/Mobile-Home-Permit-Submittal-and-Set-up-Requirements.pdf (not read)"]
+  }
+ ],
+ "flags": [
+  "Ridgeland needs 1 more FAQ; only candidate 1 is plausible and it is unverified. Fallback: keep the page at 3 FAQs (Paul decision).",
+  "Optional top_sites extension (Wikipedia NRHP list for Jasper County, read 2026-10-12): Church of the Holy Trinity (Ridgeland, 1982), Honey Hill-Boyd's Neck Battlefield (2004), Old House Plantation (1997), Jasper County Courthouse (1981), Sinclair Service Station (2015), White Hall Plantation House Ruins and Oak Avenue (2000). https://en.wikipedia.org/wiki/National_Register_of_Historic_Places_listings_in_Jasper_County,_South_Carolina",
+  "Wikipedia infobox inconsistency (62 ft vs 16 ft elevation) already noted in facts.json."
+ ]
+}

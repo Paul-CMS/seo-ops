@@ -2304,3 +2304,65 @@ The next paragraph starts "These are typical ranges for the area, not a quote." 
 
 **Next:** `/build apex-roofing-of-the-lowcountry write locations` (the locations batch reads B3/C1–C3).
 
+## /build · 2026-10-12 · run 20261012-150859-build-1044
+
+**Route:** A. **Scope:** evidence gate + briefs for 11 location pages (CM-041, CM-054, CM-057).
+
+### Evidence gate (`evidence.py run --batch locations`)
+None blocked; every page cleared and got a brief.
+- PASS (6): loc-hilton-head-island, loc-okatie, loc-beaufort, loc-port-royal, loc-st-helena-island, loc-hardeeville
+- WARN (5): loc-pritchardville, loc-ladys-island, loc-fripp-island, loc-ridgeland, loc-levy. Each has a required gap (neighborhoods) and its brief carries `## Evidence gaps`.
+
+### Research first (CM-057, P6)
+Three researcher subagents (Sonnet) looked up the public gaps and FAQ sources for all 11 pages. Their output is copied to `build/locations/research-2026-10-12/<page>.json`.
+- Now sourced: Lady's Island neighborhoods (12, from a county staff report), Things to Do and Top Sites; Okatie (Callawassie Island, two NRHP top sites); a St. Helena Things to Do; Fripp POA "neighborhoods" (villa regimes); Levy is in Jasper County.
+- Not found: neighborhoods for Pritchardville, Ridgeland and Levy; anything for Levy.
+- **Not on the grids:** recording these in `build/evidence/<page>.facts.json` was blocked (the guard stops inline scripts, and the permission classifier denied a scratchpad script). Flag **F-018** asks for a script to record a page fact. The briefs cite the research as "public research 2026-10-12 — not yet on the grid". The grids for Lady's Island, Okatie, St. Helena and Fripp therefore understate what is known.
+
+### Briefs
+- 11 briefs, each from its own brief-writer subagent (Sonnet), in `build/locations/LB - <City> - Apex Roofing of the Lowcountry.md`.
+- Each was recorded with `status.py page-stage … --stage brief`, and the batch briefs were collected.
+- **Build batch check:**
+  - Variant chains are correct on all 11 pages: title "Roofing Contractor", H1 "Roofers", first H2 rotates Roofing Contractor / Roofer / Residential Roofer.
+  - No FAQ repeats a C3 entry.
+  - The sibling-cities H2 "Which Other Lowcountry Towns Do We Serve?" was on Port Royal, Ridgeland and Levy. Each now names its own town (BB-316).
+
+### FAQ status (spec needs 3–4)
+| Page | Usable | Conditional or Paul's call | Gaps |
+|---|---|---|---|
+| Fripp Island | 3 (two carry client `[NEED]`s) | — | — |
+| Beaufort | 2 | Bailey Bill | — |
+| Port Royal | 2 | Parris Island (open client question) | — |
+| Hilton Head Island | 2 | Town flood rule | — |
+| Ridgeland | 2 | — | 1 |
+| Lady's Island | — | City/County jurisdiction; County flood rule; Dataw (not on Lady's Island) | — |
+| St. Helena Island | — | Harbor Island; Cultural Protection Overlay | 1 |
+| Okatie | — | Spring Island / Callawassie | 2 |
+| Hardeeville | 1 (statute wording to verify) | — | 2 |
+| Levy | 1 | — | 2 |
+| Pritchardville | 0 | — | 3 |
+
+**Batch overlap:** flood-rule questions are proposed on Hilton Head Island, Port Royal and Lady's Island. Keep at most one, and choose before the drafts.
+
+### Open for Paul
+1. The briefs approval (each brief's Flags for Paul section lists its options).
+2. Thin pages: Pritchardville and Levy fail LOC-14, LOC-15 and LOC-17 on public sources, and Ridgeland and Okatie fail LOC-15. Options:
+   - (a) client/Paul local knowledge, then the researcher verifies it
+   - (b) accept `[NEED]` sections and hold the page from publication
+   - (c) for Levy, decide whether it keeps a page (Paul's URL decision)
+3. Dataw FAQ does not fit Lady's Island. Options: drop it, keep it as "nearby islands" if the client confirms, or move it.
+4. Client facts still open:
+   - Apex's work in named communities (Spring Island, Callawassie, Harbor Island, Dataw)
+   - Port Royal base housing
+   - a Fripp contractor decal
+   - a Jasper County business licence
+   - W16 (`fact:d:services_subcontracted` is still listed as waiting, although Paul re-confirmed it on 2026-10-11)
+5. Brand Guide F (NAP) is still empty and needs filling before Finish.
+6. The Port Royal facts file says Mossy Creek "extends into Beaufort"; the source doesn't say so. The briefs don't use it.
+
+### Flags raised
+- F-018: no script to record page facts from research (workaround above).
+
+### Not done (by design)
+No drafts, no WordPress, no links, no schema, no gates set.
+

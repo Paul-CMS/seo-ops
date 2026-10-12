@@ -1,0 +1,155 @@
+{
+ "gaps": {
+  "neighborhoods": {
+   "items": [
+    {
+     "name": "Callawassie Island",
+     "note": "Gated residential island community, 880 acres, 717 home sites, 27-hole Fazio course; Wikipedia infobox address is 176 Callawassie Drive, Okatie, SC 29909; in Beaufort County; reached by half-mile causeway south of SC 170. Public site callawassieisland.com titled 'Private Gated Community' with Okatie SC 29909 map links.",
+     "source": "https://en.wikipedia.org/wiki/Callawassie_Island ; https://www.callawassieisland.com",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Oldfield",
+     "note": "Builder page: 'an exclusive, gated community in the charming coastal town of Okatie, South Carolina', sales office 130 Oldfield Way, Okatie, SC 29909. Already on Wikipedia Okatie page. (Builder marketing page, not official.)",
+     "source": "https://dreamfindershomes.com/new-homes/sc/okatie/oldfield ; https://en.wikipedia.org/wiki/Okatie,_South_Carolina",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Sun City Hilton Head (already in grid)",
+     "note": "Wikipedia: age-restricted planned community in the Okatie area, Beaufort and Jasper counties; Del Webb; three phases around golf courses and community centers; individual neighbourhoods not named.",
+     "source": "https://en.wikipedia.org/wiki/Sun_City_Hilton_Head",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Riverbend (already in grid)",
+     "note": "On the Wikipedia Okatie page; also a county planning minute (2003) mentions 'River's End and River's Bend subdivisions' on Highway 170.",
+     "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina ; https://www.beaufortcountysc.gov/planning-commission/minutes/2003/120203.pdf (search summary)",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "River's End (weak)",
+     "note": "Named in 2003 Beaufort County Planning Commission minutes as a subdivision on Highway 170 near Okatie; no current source that it is described as Okatie; Okatie Marsh PUD (2008) is 'directly south of the River's End Subdivision'.",
+     "source": "https://www.beaufortcountysc.gov/planning-commission/minutes/2003/120203.pdf ; https://www.beaufortcountysc.gov/council/council-action-summaries/2008/2008-september.pdf (via search summary; not read in full)",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Spring Island (weak - Okatie only as mailing address)",
+     "note": "Spring Island Trust office and Spring Island Realty list Okatie, SC 29909 addresses (40 / 38 Mobley Oaks Ln); the Spring Island site itself says the island community is 'in Beaufort, SC' and calls it a 'Private Waterfront Community'; gating and ARB not stated on pages read. Trust says it works with the Spring Island POA.",
+     "source": "https://www.springislandtrust.org/sit19/spring-island ; https://www.springisland.com",
+     "read": "2026-10-12"
+    }
+   ],
+   "not_found_tried": [
+    "Berkeley Hall, Heyward Pointe, Rose Dhu Creek, Colleton River Plantation: only real-estate listing sites describe them (Berkeley Hall 'in Bluffton' on an agent site; Heyward Pointe/Okatie unconfirmed); berkeleyhall.com is a parked domain; no official or Wikipedia source placing them in Okatie. Not added.",
+    "Belfair, Rose Hill Plantation: Bluffton, not Okatie per sources seen.",
+    "Result: 4 solid (Callawassie Island, Oldfield, Sun City Hilton Head, Riverbend) + 2 weak (River's End, Spring Island) = fewer than 6 solid. Wikipedia page for Spring Island returned 404; no Okatie-neighbourhood list on Beaufort County or Jasper County pages found."
+   ]
+  },
+  "top_sites": {
+   "items": [
+    {
+     "name": "Callawassie Sugar Works",
+     "note": "NRHP-listed 27 May 2014 (ref 13001096); 'the only sugar mill ruins known to exist in South Carolina' (Wikipedia, Callawassie Island article); 29 Sugar Mill Dr., Okatie; tabby ruins on gated Callawassie Island - public access not stated.",
+     "source": "https://en.wikipedia.org/wiki/Callawassie_Sugar_Works ; https://en.wikipedia.org/wiki/National_Register_of_Historic_Places_listings_in_Beaufort_County,_South_Carolina",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Altamaha Town Heritage Preserve",
+     "note": "County page: 100-acre oak-hickory forest on the Okatie and Colleton Rivers, listed on the NRHP in 1994, Yamasee village and colonial cemetery site; Old Bailey's Road off Okatie Highway (SC 170), 'Okatie, SC'; dawn to dusk; 0.5-mile flat trail. Wikipedia lists nearest city as Bluffton (NRHP 21 Jan 1994, ref 93001479).",
+     "source": "https://www.beaufortcountysc.gov/events/2025/04/04.17.2025 Trail Talk at Altamaha T.H.P.html ; https://en.wikipedia.org/wiki/Altamaha_Town",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Old Barrel Landing School",
+     "note": "One-room schoolhouse on SC Hwy 170, Okatie 29909; served grades 1-8 until 1919; restored 1995; named for a landing on the Okatie River. NRHP status not stated.",
+     "source": "https://www.scpictureproject.org/beaufort-county/old-barrel-landing-school.html",
+     "read": "2026-10-12"
+    }
+   ],
+   "not_found_tried": [
+    "Wikipedia Okatie page states no NRHP sites; NRHP Beaufort County list shows Callawassie Sugar Works as the only Okatie-located entry I could read (second half of the list page was not readable via fetch)."
+   ]
+  },
+  "things_to_do": {
+   "items": [
+    {
+     "name": "Altamaha Town Heritage Preserve (county passive park)",
+     "note": "See above; open dawn to dusk, leashed dogs.",
+     "source": "https://www.beaufortcountysc.gov/events/2025/04/04.17.2025 Trail Talk at Altamaha T.H.P.html",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Widgeon Point Preserve (county passive park)",
+     "note": "43 Okatie Hwy (county lists as Beaufort, SC); 0.7-mile earthen loop; hours 6am-7pm winter, 7am-8pm daylight time; leashed dogs. Not stated as in Okatie.",
+     "source": "https://www.beaufortcountysc.gov/events/2024/09/09.28.2024 Birding at Widgeon Point Perserve.html (via search summary)",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Camp St. Mary's Park (county)",
+     "note": "121 Camp St. Mary's Road, 'Okatie area of Beaufort County', about 10 acres on the Okatie River; open for pier and dock access only (2023 notice); gate 7am-7pm.",
+     "source": "https://beaufortcountysc.gov/news/2023/11/camp-st.-marys-park-conceptual-plan-open-house.html (via search summary)",
+     "read": "2026-10-12"
+    }
+   ],
+   "not_found_tried": []
+  }
+ },
+ "faq_sources": [
+  {
+   "topic": "Do you work in Spring Island, Callawassie Island and other Okatie communities? (public facts only)",
+   "answer_facts": [
+    "Callawassie Island: gated residential community (Wikipedia: developed 'as a gated, residential community' after 1981); 880 acres; 717 home sites; Okatie, SC 29909 address; Beaufort County; half-mile causeway south of SC 170 or by boat; site title 'Private Gated Community'.",
+    "Spring Island: 'Private Waterfront Community' (springisland.com); Okatie SC 29909 mailing address for Spring Island Trust and Spring Island Realty; site says it is 'in Beaufort, SC'; Trust works with the Spring Island POA; gating and architectural review not stated on pages read. Not described by a public source as 'in Okatie' beyond mailing addresses.",
+    "Oldfield: builder page says gated community in Okatie.",
+    "Not found: any published architectural review/roof guidelines for Callawassie Island, Spring Island or Oldfield (searched; Callawassie site has a 'Building on Callawassie' link with no content retrieved)."
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Callawassie_Island",
+    "https://www.callawassieisland.com",
+    "https://www.springisland.com",
+    "https://www.springislandtrust.org/sit19/spring-island",
+    "https://dreamfindershomes.com/new-homes/sc/okatie/oldfield"
+   ]
+  }
+ ],
+ "faq_candidates": [
+  {
+   "question": "Is the Callawassie Sugar Works or any historic site near my Okatie home going to limit what roof I can put on?",
+   "why_this_town": "Okatie has NRHP properties (Callawassie Sugar Works, Altamaha Town) - but I found nothing tying them to roofing rules; likely NOT answerable from a source. Low confidence.",
+   "answer_facts": [
+    "NRHP listing does not by itself restrict private neighbouring homes (not sourced from a page I read) - do not use unless Paul wants it sourced further."
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Callawassie_Sugar_Works"
+   ]
+  },
+  {
+   "question": "How does a roofer get into a gated Okatie community like Callawassie Island or Oldfield?",
+   "why_this_town": "Callawassie Island and Oldfield are gated Okatie communities; Callawassie is reached only by a half-mile causeway or boat.",
+   "answer_facts": [
+    "Public facts only: Callawassie Island is gated (Wikipedia; callawassieisland.com), reached by half-mile causeway south of SC 170; Oldfield described as gated (builder page). The gate procedure itself is NOT published on pages I read (client/community fact)."
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Callawassie_Island",
+    "https://www.callawassieisland.com",
+    "https://dreamfindershomes.com/new-homes/sc/okatie/oldfield"
+   ]
+  },
+  {
+   "question": "Is my Okatie home in a flood zone, and where do I get an elevation certificate?",
+   "why_this_town": "Okatie sits on the Okatee River estuary, unincorporated Beaufort/Jasper County; the county flood page applies. Weak on portability (true of any unincorporated Beaufort County area).",
+   "answer_facts": [
+    "Beaufort County building codes flood page: links a flood zone verification form and quick facts, a way to request Elevation Certificates for your property (Building Inspections contact 843-255-2086), and the Beaufort County Flood Damage Prevention Ordinance. Page does not state roof or substantial-improvement rules. Jasper-County side of Okatie: not researched."
+   ],
+   "sources": [
+    "https://www.beaufortcountysc.gov/building-codes/flood-info.html (read 2026-10-12)"
+   ]
+  }
+ ],
+ "flags": [
+  "Okatie neighbourhoods: only 4 solid + 2 weak found; need 6-12. Paul decides: ship 4-6 with weak items, or keep grid short.",
+  "Sun City Hilton Head ARC roof/exterior rules: not found (site suncityhiltonhead.org is an HOA portal; no guidelines visible). No Sun City FAQ candidate possible.",
+  "Callawassie Sugar Works sits inside a gated community; public access not stated, so cite as a site only, not a visitable attraction.",
+  "Okatie population figures on Wikipedia are inconsistent (already noted in facts)."
+ ]
+}

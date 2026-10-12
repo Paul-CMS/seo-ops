@@ -1,0 +1,228 @@
+{
+ "gaps": {
+  "neighborhoods": {
+   "items": [
+    {
+     "name": "Burckmeyer Beach",
+     "note": "Named as a Lady's Island Community Preservation (LICP) residential area",
+     "source": "Beaufort County Planning Commission staff report CDPA-000015-2021, Dec 6 2021: 'The LICP is located only on Lady's Island covering largely residential areas and neighborhoods including, but not limited to, Burckmeyer Beach, Captain Blythewood Landings, Tradewinds Plantation, the waterfront on Sunset Boulevard, Celadon, Brindlewood, Academy Estates, Magnolia Court, Deer Run, Royal Pines, Telfair, Christine Place, and Spanish Moss' - https://www.beaufortcountysc.gov/planning-commission/agendas/2021/120621.pdf",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Captain Blythewood Landings",
+     "note": "same list",
+     "source": "same",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Tradewinds Plantation",
+     "note": "same list",
+     "source": "same",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Celadon",
+     "note": "same list",
+     "source": "same",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Brindlewood",
+     "note": "same list",
+     "source": "same",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Academy Estates",
+     "note": "same list",
+     "source": "same",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Magnolia Court",
+     "note": "same list",
+     "source": "same",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Deer Run",
+     "note": "same list",
+     "source": "same",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Royal Pines",
+     "note": "same list",
+     "source": "same",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Telfair",
+     "note": "same list",
+     "source": "same",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Christine Place",
+     "note": "same list",
+     "source": "same",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Spanish Moss",
+     "note": "same list",
+     "source": "same",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Cat Island",
+     "note": "Beaufort tourism site calls Cat Island and Distant Island 'small island residential communities' near Lady's Island; wording is ambiguous on whether they are ON Lady's Island. Hold unless Paul accepts.",
+     "source": "https://www.beaufortsc.org/islands-and-towns/ladys-island/",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Distant Island",
+     "note": "same page, same ambiguity",
+     "source": "https://www.beaufortsc.org/islands-and-towns/ladys-island/",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Coosaw Point",
+     "note": "Wikipedia: Coosaw people lived on 'the high ground of Coosaw Point on Lady's Island' (historic site). As a residential community: LocalWiki (community-edited, weak) says upscale community on Sams Point Road, former Laurel Hill Plantation, sold 1997 and renamed. No official source for the community.",
+     "source": "https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) ; https://localwiki.org/bsc/Laurel_Hill_Plantation",
+     "read": "2026-10-12"
+    }
+   ],
+   "not_found_tried": [
+    "Dataw Island is NOT on Lady's Island: Dataw's own site gives 121 Dataw Drive, Beaufort SC 29920, an 870-acre island between the Morgan River and Jenkins Creek (https://www.dataw.com); Wikipedia's NRHP list files its tabby ruins with St. Helena Island entries. Do not list Dataw as a Lady's Island neighborhood.",
+    "Pleasant Point, Brickyard Point, Islands of Beaufort, Cane/Kane Island: only real-estate listing sites; no official source found placing them as Lady's Island neighbourhoods (Brickyard Point Road is a road in a 2016 County rezoning agenda for a 98-acre parcel). Fripp is on Fripp Island, not Lady's Island.",
+    "Wikipedia Lady's Island article names no neighbourhoods; beaufort.com relocation page names none on Lady's Island; the Lady's Island Plan PDF itself not located (county LIPIC agenda PDFs are binary, not read)."
+   ]
+  },
+  "things_to_do": {
+   "items": [
+    {
+     "name": "Whitehall Park",
+     "note": "9.72 acres of mixed pine and live oak canopy along a salt marsh point on the Beaufort River, 120 White Hall Drive, Lady's Island; owned by Beaufort County, maintained by the City of Beaufort. Hours and the 24/7 path to Woods Bridge come from a search snippet, not re-read.",
+     "source": "https://www.beaufortcountysc.gov/news/2023/04/whitehall-park-grand-opening-celebration.html",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Crystal Lake Park",
+     "note": "County Land Preservation park, 124 Lady's Island Drive: 25 acres of forest, salt marsh and a pond; 0.5-mile loop trail (half boardwalk); catch-and-release fishing; no paddling or swimming; leashed pets. Details from search summaries of county pages; page not directly fetched.",
+     "source": "https://www.beaufortcountysc.gov/planning/passive-parks/Passive%20Parks%20and%20Facilities.html ; https://www.beaufortcountysc.gov/events/2025/04/04.27.2025%20Critters%20of%20Crystal%20Lake.html",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "White Hall Boat Landing",
+     "note": "County public boat landing, 33 Sea Island Parkway, access to Lady's Island-Factory Creek, four-lane ramp, 16 parking spaces (county page via search summary).",
+     "source": "https://www.beaufortcountysc.gov/public-works/boat-landings/white-hall-boat-landing.html",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "County Land Preservation nature programs at Whitehall and Crystal Lake (birding, cast net clinics)",
+     "note": "County events pages, 2025",
+     "source": "https://www.beaufortcountysc.gov/events/2025/06/06.04.2025%20Birding%20at%20Whitehall.html",
+     "read": "2026-10-12"
+    }
+   ],
+   "not_found_tried": [
+    "beaufortsc.org Lady's Island page names no specific attractions, parks or restaurants (categories only).",
+    "Wikipedia names no parks; scpictureproject page names only the former Sam's Point Landing crab shack (torn down about 2014).",
+    "Brewer Memorial Park (one acre at the bridge foot) appeared only in a search snippet; not verified."
+   ]
+  },
+  "top_sites": {
+   "items": [
+    {
+     "name": "Richard V. Woods Memorial Bridge (originally Lady's Island Bridge)",
+     "note": "Swing bridge linking downtown Beaufort and Lady's Island; opened Dec 17 1959, replaced a 1927 swing bridge; Pratt through-truss; NRHP listed Jan 6 2023 (ref 100008530). Conflict: Wikipedia's county NRHP table shows Oct 6 1988 (looks wrong); the bridge article, SC SHPO record (https://schpr.sc.gov/index.php/Detail/objects/S10817707078) and local news agree on Jan 6 2023.",
+     "source": "https://en.wikipedia.org/wiki/Richard_V._Woods_Memorial_Bridge",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Beaufort Executive Airport (also called Beaufort County Airport)",
+     "note": "General aviation airport on about 110 acres on Lady's Island, 39 Airport Circle, Beaufort SC 29907 (FAA ARW); county-operated.",
+     "source": "https://aeronautics.sc.gov/airports/beaufort-executive-arw-airport",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Coosaw Point (historic site)",
+     "note": "High ground where the Coosaw people lived; Civil War post 'Coosaw' / 'Sams' fort' at the northeastern point of the island.",
+     "source": "https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina)",
+     "read": "2026-10-12"
+    },
+    {
+     "name": "Whitehall Park",
+     "note": "see things to do",
+     "source": "https://www.beaufortcountysc.gov/news/2023/04/whitehall-park-grand-opening-celebration.html",
+     "read": "2026-10-12"
+    }
+   ],
+   "not_found_tried": [
+    "No other NRHP listing on Lady's Island: Wikipedia NRHP list for Beaufort County (first 100,000 characters read) has only the bridge tied to Lady's Island; Seaside, Coffin Point and Frogmore sites are on St. Helena Island. Last ~23,000 characters of that page not read.",
+    "The 1980s second bridge to Port Royal is named only generically (no bridge name found)."
+   ]
+  }
+ },
+ "faq_sources": [
+  {
+   "topic": "Do you re-roof homes on Dataw Island? (public facts only)",
+   "answer_facts": [
+    "Dataw Island is not on Lady's Island: a privately gated 870-acre island between the Morgan River and Jenkins Creek, 121 Dataw Drive, Beaufort SC 29920, about 15 minutes from historic Beaufort (dataw.com). A Lady's Island page should not claim Dataw as part of Lady's Island.",
+    "Dataw Island Architectural Review Board (ARB), a committee of the Dataw Island Owners' Association, administers the Design Guidelines (rev. March 2025). 'Repainting or re-roofing a home' is a minor home-improvement project needing an ARB application; 'Re-roof with same color and material as existing' needs a signed application only (no plans, samples, fees or deposits); 'Reroof with different material or colors' requires the color and material on the application, with samples (shingles from the ARB-office approved list; metal needs a labeled 8.5x11 sample).",
+    "Roofing materials (Guidelines): 'Use slate tile, standing seam metal or asphalt shingles. Mildew-resistant shingles are required for new or replaced roofing. Other materials will be considered on a case-by-case basis. If metal roofing is chosen, it must have a non-glare finish.' Pitch 3:12 minimum to 10:12 maximum for most areas.",
+    "DIOA Rules and Regulations (May 2025): any exterior modification of an existing home must be approved in advance by the ARB (search summary; PDF not read).",
+    "The Guidelines say new construction after ARB approval needs a Beaufort County building permit; a county permit for a re-roof is not confirmed in the Guidelines."
+   ],
+   "sources": [
+    "https://members.dataw.com/documents/20124/44829/Dataw+Island+Design+Guidelines+Rev.+March+2025.pdf/da254782-f07c-c704-9286-0d6888f7c655?t=1750859906191 (86 pp, read 2026-10-12)",
+    "https://www.dataw.com/files/Dataw%20Island%20Design%20Guidelines%20Rev.%20July%202022.pdf (older version)",
+    "https://www.dataw.com (read 2026-10-12)",
+    "https://members.dataw.com/documents/20124/0/DIOA+Rules+and+Regs+5+7+2025(1).pdf/b414fefb-092b-e8de-81c8-a729d45bf470?t=1747149693463 (surfaced in search only)"
+   ]
+  }
+ ],
+ "faq_candidates": [
+  {
+   "question": "Lady's Island is split between the City of Beaufort and the county - which one covers my house, and does the Historic District apply?",
+   "why_this_town": "Only Lady's Island is described as partly inside the City of Beaufort and mostly unincorporated, reached by the Woods Bridge. Borderline against the permit-question exclusion: it is a which-office question. Paul decides.",
+   "answer_facts": [
+    "Wikipedia: 'Small portions of the island are within the City of Beaufort, while the majority of the island remains unincorporated.'",
+    "County LICP district 'is located only on Lady's Island' (county staff report, Dec 6 2021); LICP is a county zoning district.",
+    "City of Beaufort Building Codes handles City addresses; the City's page lists 'reroof' under projects that 'still require Building Code review'. County Building Codes issues county permits; the county page lists municipalities separately.",
+    "The City's Historic District is downtown Beaufort on Port Royal Island (Wikipedia: Beaufort is 'mostly on Port Royal Island (annexed land on Lady's Island)'); no source found that applies COA/HRB review to Lady's Island houses.",
+    "Per-address check: County GIS / assessor, or City Community Development 843-525-7011."
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina)",
+    "https://www.beaufortcountysc.gov/planning-commission/agendas/2021/120621.pdf",
+    "https://cityofbeaufort.org/156/Building-Permits",
+    "https://www.beaufortcountysc.gov/building-codes/",
+    "https://en.wikipedia.org/wiki/Beaufort,_South_Carolina (all read 2026-10-12)"
+   ]
+  },
+  {
+   "question": "Does a big re-roof on my Lady's Island home trigger Beaufort County's flood 'substantial improvement' rule?",
+   "why_this_town": "Most of Lady's Island is unincorporated, so Beaufort County's Chapter 78 applies (not a town ordinance); elevation 16 ft per Wikipedia. Overlap risk with any other page on unincorporated county land. The 50% rule is the NFIP baseline; the county's cumulative period is the local part.",
+   "answer_facts": [
+    "Beaufort County Code ch. 78, art. II (Flood Damage Prevention, Ord. 2019/04): 'substantial improvement' = any repair, reconstruction, rehabilitation, addition or other improvement whose cost equals or exceeds 50 percent of the structure's market value before the start of construction; includes substantially damaged structures.",
+    "Administrator duties: assess permits/repairs reaching 50%; 'Cost of work counted ... shall be cumulative for a period of five years'. The definition section says 'Permits shall be cumulative for a period of ten years' - internal inconsistency in the ordinance text.",
+    "Market value by county assessor building value or appraisal. Exclusions: correcting identified code violations; alteration of a historic structure that keeps its designation.",
+    "County Flood Information page: Elevation Certificates on request; contact Annie Peifer 843-255-2086."
+   ],
+   "sources": [
+    "https://beaufortcountysc.gov/building-codes/documents/Flood-Damage-Prevention-Ordinance.pdf (read 2026-10-12)",
+    "https://www.beaufortcountysc.gov/building-codes/flood-info.html (read 2026-10-12)"
+   ]
+  }
+ ],
+ "flags": [
+  "Dataw Island is on its own island (ZIP 29920), not Lady's Island. The FAQ 'Do you re-roof homes on Dataw Island?' does not fit a Lady's Island page on public facts; Paul should decide where it lives.",
+  "Named-community ARB rules for Lady's Island communities (Coosaw Point, Cat Island): not found (tried searches for POA and ARC guidelines; none located). A 'named community ARB' FAQ can only be sourced for Dataw.",
+  "Neighbourhood list is from one official county staff report ('including, but not limited to'); LICP is county zoning, so a few may since have been annexed into the City. Cat Island, Distant Island and Coosaw Point are weaker.",
+  "Whitehall Park and Crystal Lake details partly from search summaries of county pages; re-fetch before quoting hours or rules.",
+  "Wikipedia's NRHP table lists the Woods Bridge as Oct 6 1988; the correct date is Jan 6 2023 per the bridge article, SHPO and local news.",
+  "Source suggestion for Paul (system review; not flagged, read-only task): Beaufort County Planning Commission agenda staff reports as a source for Lady's Island neighbourhoods; Port Royal Citizen's Guide to Flood Awareness; City of Beaufort Historic District page https://cityofbeaufort.org/178/Historic-District."
+ ]
+}

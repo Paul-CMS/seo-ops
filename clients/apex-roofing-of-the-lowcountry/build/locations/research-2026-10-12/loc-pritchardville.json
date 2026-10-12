@@ -1,0 +1,71 @@
+{
+ "gaps": {
+  "neighborhoods": {
+   "items": [],
+   "not_found_tried": [
+    "https://en.wikipedia.org/wiki/Pritchardville,_South_Carolina (names no communities; lists Pritchard Farms only as the namesake)",
+    "tidelandrealty.realgeeks.com and hiltonheadrealtysales.com Pritchardville pages (marketing pages; describe Pritchardville itself as 'a subdivision' / 'neighborhood', name no sub-communities; not citable)",
+    "Beaufort County planning/plat search (no Pritchardville subdivision list found)",
+    "Web searches for Pritchardville neighbourhoods returned nothing naming communities. Only possible lead: a Town of Bluffton review log mentioning 'New Riverside - Parcel 9' (not confirmed in Pritchardville; do not use). Recommendation: keep neighbourhoods empty; Paul may drop the element."
+   ]
+  },
+  "things_to_do": {
+   "items": [],
+   "not_found_tried": [
+    "Wikipedia Pritchardville page lists no attractions",
+    "Beaufort County parks pages and web searches: no park or attraction located in Pritchardville (a search summary mentioned 'L Scott Stell Park' near Pritchardville from an unreliable aggregate; I could not confirm it from any county page)",
+    "Wikipedia: Pritchardville Elementary is a school, not an attraction"
+   ]
+  },
+  "top_sites": {
+   "items": [
+    {
+     "name": "St. Luke's Church (already in grid)",
+     "note": "Wikipedia: built 1824, transitional Georgian/Greek Revival, one of few with intact slave galleries, about 4 miles north of Pritchardville; NRHP 10 Nov 1987; NRHP county list gives location as SC Highway 170, Pritchardville. Now St. Luke's Methodist, also Bull Hill Church.",
+     "source": "https://en.wikipedia.org/wiki/St._Luke%27s_Church_(Pritchardville,_South_Carolina)",
+     "read": "2026-10-12"
+    }
+   ],
+   "not_found_tried": []
+  }
+ },
+ "faq_sources": [],
+ "faq_candidates": [
+  {
+   "question": "Is Pritchardville part of Bluffton, Hardeeville or unincorporated Beaufort County, and does that change who I call about my roof?",
+   "why_this_town": "Pritchardville is an unincorporated crossroads between Hardeeville and Bluffton on SC 46.",
+   "answer_facts": [
+    "Wikipedia: unincorporated community in Beaufort County between Hardeeville and Bluffton on SC 46. SC 46 east of Pritchardville is named May River Road and runs into the Town of Bluffton. Borders on both the excluded annexation and permit topics - Paul to decide."
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pritchardville,_South_Carolina",
+    "https://en.wikipedia.org/wiki/South_Carolina_Highway_46"
+   ]
+  },
+  {
+   "question": "Are the older homes and churches around Pritchardville historic, and does that affect roof work?",
+   "why_this_town": "St. Luke's Church (1824) near Pritchardville is NRHP-listed (1987); Pritchardville was settled by Ohioans per the 1938 WPA guide.",
+   "answer_facts": [
+    "Facts available: St. Luke's NRHP 10 Nov 1987; Pritchardville 'originally built up chiefly by settlers from Ohio' (Wikipedia citing 1938 Federal Writers' Project guide). Beaufort County has a Historic Preservation Review Board (agenda seen), but I found no source saying Pritchardville has a designated district or roofing rule. NOT answerable on roofing - weak."
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pritchardville,_South_Carolina",
+    "https://www.beaufortcountysc.gov/historic-preservation-board/agendas/2026/08.20.2026.pdf (via search summary)"
+   ]
+  },
+  {
+   "question": "How do I find out if my Pritchardville home is in a flood zone?",
+   "why_this_town": "Unincorporated Beaufort County; county flood page applies. Fails portability against other unincorporated Beaufort County places.",
+   "answer_facts": [
+    "Beaufort County flood page: flood zone verification form and quick facts, Elevation Certificate request, Flood Damage Prevention Ordinance link, Building Inspections 843-255-2086."
+   ],
+   "sources": [
+    "https://www.beaufortcountysc.gov/building-codes/flood-info.html (read 2026-10-12)"
+   ]
+  }
+ ],
+ "flags": [
+  "Pritchardville cannot reach 3 FAQs from town-specific public facts. Honest count: 0 strong, 3 weak (jurisdiction, historic, flood). Paul decides: use 3 weak, shrink the page to fewer FAQs, or keep general.",
+  "Pritchardville neighbourhoods and things to do: not found; recommend dropping those elements."
+ ]
+}
