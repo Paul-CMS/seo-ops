@@ -5,14 +5,14 @@
 `config.json` — change only in a **system session**: Paul types `/system` (a hook issues a one-time system token for
 that session; the guard blocks every other session; a VA Mac, `machine.json can_change_system: false`, never gets
 one). A system session runs on **Opus**, in the main folder (`~/Documents/seo-ops`, branch `main`), and does no
-client work. `/system` begins with `changereq.py start`: it refuses on uncommitted changes and pulls first.
+client work. `/system` begins with `changereq.py start`: it refuses on uncommitted changes, then syncs main with GitHub (fast-forward; push unpushed commits; auto-rebase only when this Mac's commits are system-only and GitHub's are `clients/`-only, fast tier passed — otherwise it stops and shows both sides).
 
 ## The inbox
 In a client session nobody changes the workflow — they flag it: `python3 scripts/run.py flag <slug> <RUN_ID> --text
 "…" [--workaround "…"]`. The run continues on the current rules; the flag shows in the client's STATUS.md under
 "Flagged for Paul (system)". **`/system-review`** collects every flag into `methodology/change-requests.md` (CR-###,
 the one inbox, append-only, `scripts/changereq.py`) and lists every OPEN item; Paul answers each: accept, reject or
-edit. Accepted items are built in that session → tests → commit (CR ID in the message) → `changereq.py done <CR> --sha`.
+edit. Accepted items are built in that session → tests → commit (CR ID in the message) → `changereq.py push` (at once; exit 5 = the push failed: say so and stop) → `changereq.py done <CR> --sha`.
 A ruling becomes a numbered entry in `methodology/rulings.md` (PROC-01), never a silent edit.
 
 ## Test first

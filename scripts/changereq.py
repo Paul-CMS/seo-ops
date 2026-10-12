@@ -5,9 +5,15 @@
     changereq.py collect                                 (system session) give every new client flag its CR-### number
     changereq.py add --title T --text T [--by B]         (system session) a proposal raised in a system session
     changereq.py decide <CR-###> accept|reject|edit --text T   (system session) Paul's answer in /system-review
-    changereq.py done <CR-###> --sha SHA                 (system session) built, tested and committed
+    changereq.py done <CR-###> --sha SHA                 (system session) built, tested, committed and pushed
     changereq.py session                                 is this a system session? (exit 0 yes, 4 no)
-    changereq.py start                                   /system step 1: refuse unless main, clean; then git pull (ff-only)
+    changereq.py start                                   /system step 1: refuse unless main, clean; then sync with origin
+    changereq.py push                                    (system session) after every system commit; exit 5 = push failed, stop
+
+Main stays in step with GitHub (2026-10-12): every system commit is pushed at once. `start` fast-forwards when only
+GitHub moved, pushes when only this Mac did, and when both moved rebases on its own only if this Mac's commits touch
+system files alone and GitHub's touch clients/ alone — then the fast tier must pass before it pushes. Anything else
+stops and shows Paul both sides.
 
 A client session never changes the workflow. It flags the issue instead (`run.py flag <slug> <RUN_ID> --text …`),
 which appends a row to clients/<slug>/flags.jsonl (append-only; the run continues on the current rules). Flags live
@@ -155,6 +161,79 @@ def collect():
     return new
 
 
+# ------------------------------------------------------------------ main stays in step with origin (2026-10-12)
+def _lines(r):
+    return [l for l in r.stdout.splitlines() if l.strip()]
+
+
+def fast_tier(root):
+    """(passed, last lines) of python3 tests/run_all.py (the fast tier) in root."""
+    import subprocess
+    r = subprocess.run([sys.executable, "tests/run_all.py"], cwd=root, capture_output=True, text=True)
+    tail = (r.stdout + r.stderr).strip().splitlines()[-3:]
+    return r.returncode == 0 and bool(tail) and tail[-1].endswith(" 0 failed"), "\n".join(tail)
+
+
+def push(git):
+    """(ok, message). Every system commit goes to origin at once; a failed push is said plainly and stops the session."""
+    sha = git("rev-parse", "--short", "HEAD").stdout.strip()
+    r = git("push", "-q", "origin", "main")
+    if r.returncode != 0:
+        return False, (f"PUSH FAILED — commit {sha} is only on this Mac, not on GitHub. Stop here: nothing else until "
+                       f"it is pushed. Git said:\n  " + (r.stderr or r.stdout).strip().replace("\n", "\n  "))
+    return True, f"pushed {sha} to origin/main"
+
+
+def on_origin(git, sha):
+    """True when sha is on GitHub's main (or there is no remote to push to, as in the test sandbox)."""
+    if git("remote", "get-url", "origin").returncode != 0:
+        return True
+    return git("merge-base", "--is-ancestor", sha, "origin/main").returncode == 0
+
+
+def sync_main(git, run_fast_tier):
+    """Bring main in step with origin (/system step 1). Returns (ok, message).
+    behind only → fast-forward · ahead only → push · diverged, with the local commits touching only system files and
+    origin's only clients/ → rebase, run the fast tier, push · anything else → stop and show Paul."""
+    r = git("fetch", "-q", "origin", "main")
+    if r.returncode != 0:
+        return False, "REFUSED — could not fetch origin: " + (r.stderr or r.stdout).strip()
+    ahead = _lines(git("log", "--oneline", "origin/main..HEAD"))
+    behind = _lines(git("log", "--oneline", "HEAD..origin/main"))
+    if not ahead and not behind:
+        return True, "up to date"
+    if behind and not ahead:
+        r = git("merge", "--ff-only", "-q", "origin/main")
+        return (r.returncode == 0, "fast-forwarded" if r.returncode == 0 else
+                "REFUSED — could not fast-forward main: " + (r.stderr or r.stdout).strip())
+    if ahead and not behind:
+        return push(git)
+    base = git("merge-base", "HEAD", "origin/main").stdout.strip()
+    mine = _lines(git("diff", "--name-only", base, "HEAD"))
+    theirs = _lines(git("diff", "--name-only", base, "origin/main"))
+    show = (f"\n  This Mac has {len(ahead)} commit(s) GitHub doesn't:\n    " + "\n    ".join(ahead[:15])
+            + f"\n    files: {', '.join(mine[:15]) or '—'}"
+            + f"\n  GitHub has {len(behind)} commit(s) this Mac doesn't:\n    " + "\n    ".join(behind[:15])
+            + f"\n    files: {', '.join(theirs[:15]) + (' …' if len(theirs) > 15 else '') or '—'}")
+    safe = (mine and not any(f.startswith("clients/") for f in mine)
+            and theirs and all(f.startswith("clients/") for f in theirs))
+    if not safe:
+        return False, ("REFUSED — main has diverged from GitHub and it is not the safe case (this Mac's commits only "
+                       "system files, GitHub's only clients/). Paul decides: rebase or merge." + show)
+    was = git("rev-parse", "--short", "HEAD").stdout.strip()
+    r = git("rebase", "-q", "origin/main")
+    if r.returncode != 0:
+        git("rebase", "--abort")
+        return False, "REFUSED — the rebase onto GitHub's main stopped, so it was undone. Paul decides." + show
+    ok, tail = run_fast_tier()
+    if not ok:
+        return False, (f"REFUSED — rebased this Mac's commits onto GitHub's main, but the fast tier fails, so nothing "
+                       f"was pushed. Main was {was} before the rebase. Paul decides.\n  " + tail.replace("\n", "\n  "))
+    ok, msg = push(git)
+    return ok, (f"rebased {len(ahead)} system commit(s) onto {len(behind)} client commit(s) from GitHub, fast tier "
+                f"passed, " + msg if ok else msg)
+
+
 def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -162,6 +241,7 @@ def main():
     sub.add_parser("collect")
     sub.add_parser("session")
     sub.add_parser("start")
+    sub.add_parser("push")
     s = sub.add_parser("add"); s.add_argument("--title", required=True); s.add_argument("--text", required=True)
     s.add_argument("--by", default="Paul")
     s = sub.add_parser("decide"); s.add_argument("cr"); s.add_argument("answer", choices=["accept", "reject", "edit"])
@@ -186,10 +266,20 @@ def main():
             die("REFUSED — the main folder has uncommitted changes; commit or put them aside first:\n  "
                 + "\n  ".join(dirty[:20]), 4)
         if git("remote", "get-url", "origin").returncode == 0:
-            r = git("pull", "--ff-only", "-q", "origin", "main")
-            if r.returncode != 0:
-                die("REFUSED — git pull did not fast-forward main; resolve it first: " + (r.stderr or r.stdout).strip(), 4)
+            ok, msg = sync_main(git, lambda: fast_tier(_R))
+            if not ok:
+                die(msg, 4)
+            if msg != "up to date":
+                print(msg)
         print("system session ready: main folder, clean, up to date (" + git("rev-parse", "--short", "HEAD").stdout.strip() + ")")
+        return
+    if a.cmd == "push":    # after every system commit (2026-10-12): pushed at once, or the session stops
+        import subprocess
+        need_system()
+        ok, msg = push(lambda *x: subprocess.run(["git", "-C", str(ROOT), *x], capture_output=True, text=True))
+        if not ok:
+            die(msg, 5)
+        print(msg)
         return
     if a.cmd == "session":
         ok = system_session()
@@ -225,6 +315,9 @@ def main():
     elif a.cmd == "done":
         if entries().get(a.cr, {}).get("state") != "ACCEPTED":
             die(f"{a.cr} is not ACCEPTED — only an accepted change request is built and marked done")
+        import subprocess
+        if not on_origin(lambda *x: subprocess.run(["git", "-C", str(ROOT), *x], capture_output=True, text=True), a.sha):
+            die(f"{a.cr}: commit {a.sha} is not on GitHub yet — run python3 scripts/changereq.py push first")
         event(a.cr, "DONE", "system session", f"commit {a.sha}")
         print(f"{a.cr}: DONE ({a.sha})")
 
