@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the drafts for batch services are ready: review each with the semantic review table (15 SE; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
 - **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry batch:services:drafts --sem <SEM items to apply, e.g. 1,3,4 — or none>` (or asks for changes first)
 
-_Generated 2026-10-12T11:45 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-12T12:25 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -131,6 +131,7 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 - **F-014** (open, not yet reviewed) 2026-10-12 · build:draft: writing-commercial.md E10 shows readability.py --exclude-terms <entity terms + named sources> as a list, but scripts/readability.py reads --exclude-terms as a file path (FileNotFoundError on a comma list). — workaround: Wrote the terms one per line to a scratchpad file and passed its path.
 - **F-015** (open, not yet reviewed) 2026-10-12 · build:draft: service.md element 8 says the FAQ 'first sentence is the full answer (40-60 words)', which pulls against CM-047 grade 7-8 and the short sentences C5 asks for; also writing-commercial E10 shows readability.py --exclude-terms as a list of terms, but the script reads a file path. — workaround: Emergency draft: sentence one answers alone and is short; the whole first answer paragraph runs about 40-60 words. Exclude terms passed as a scratch file.
 - **F-016** (open, not yet reviewed) 2026-10-12 · build:draft: writing-commercial.md E10 shows 'readability.py <draft> --exclude-terms <entity terms + named sources>' as if terms are passed inline, but scripts/readability.py opens --exclude-terms as a file path (OSError: File name too long when given a comma list). — workaround: Wrote the terms one per line to a scratchpad file and passed its path.
+- **F-017** (open, not yet reviewed) 2026-10-12 · interview:facts-answers: approve.py rejects SEM items 9-15: the --sem check (scripts/approve.py line ~194) hardcodes SEM-1 to SEM-8, but the services review table has SEM-1 to SEM-15. Paul's approval 'batch:services:drafts --sem 1,...,15' was refused. — workaround: none in a client session; the approval is not recorded until a system session widens the check
 
 ## Spend so far
 
@@ -140,4 +141,4 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /interview 2026-10-12T11:43 — Paul's SEM and facts answers: warranty fact recorded; SEM 1-15 applied at approval; Skylights FAQ 4 kept; Slate FAQs 3 and 5 dropped
+Last run: /interview 2026-10-12T12:25 — Warranty fact recorded; SEM 1-15 decisions recorded; approve.py SEM check flagged as F-017

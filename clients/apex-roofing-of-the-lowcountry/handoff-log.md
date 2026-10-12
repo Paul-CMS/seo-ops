@@ -2173,3 +2173,14 @@ The batch review (`/build … drafts services`) once the Emergency, Metal, Slate
 ## Open for Paul
 - Slate weight wording "per square" (800–1,500 lbs per square vs 200–350 for architectural shingles): keep, or reword as "per 100 sq ft"?
 
+## /interview · 2026-10-12 · run 20261012-122518-interview-16a4
+
+## What changed
+- Recorded `d-warranty-terms` as paul_approved, with the 40-year metal panel warranty against chalking and fading (Paul 2026-10-11 answer 4).
+- Recorded Paul's decisions: SEM items 1–15 all applied, with SEM-10 modified (process and standard stay in full on Emergency Roof Repair, Roof Replacement and Roof Installation; smaller services get a brief mention); Skylights FAQ 4 kept (yes, Apex installs skylights in metal roofs); Slate FAQs 3 and 5 dropped.
+- Flag F-017: `scripts/approve.py` rejects SEM items 9–15 (the check accepts SEM-1 to SEM-8 only), so Paul's services drafts approval with `--sem 1,…,15` was refused. Needs a system session to widen the check.
+
+## Open for Paul
+- Services drafts approval is not recorded until F-017 is fixed in a system session.
+- Brand Guide was re-approved after the warranty fact changed Section D.
+

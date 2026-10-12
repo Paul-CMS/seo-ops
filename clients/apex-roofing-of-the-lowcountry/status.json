@@ -235,8 +235,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-replacement.grid.md",
         "sha": "fceec814cb3e",
-        "at": "2026-10-12T11:43:52-05:00",
-        "run": "20261012-114352-interview-44aa",
+        "at": "2026-10-12T12:25:19-05:00",
+        "run": "20261012-122518-interview-16a4",
         "gaps": [
           "service_scope",
           "licence",
@@ -286,8 +286,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-installation.grid.md",
         "sha": "5a688097be56",
-        "at": "2026-10-12T11:43:52-05:00",
-        "run": "20261012-114352-interview-44aa",
+        "at": "2026-10-12T12:25:19-05:00",
+        "run": "20261012-122518-interview-16a4",
         "gaps": [
           "pricing",
           "licence",
@@ -332,8 +332,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-inspections.grid.md",
         "sha": "bd012b74375f",
-        "at": "2026-10-12T11:43:52-05:00",
-        "run": "20261012-114352-interview-44aa",
+        "at": "2026-10-12T12:25:19-05:00",
+        "run": "20261012-122518-interview-16a4",
         "gaps": [
           "service_scope",
           "pricing",
@@ -384,8 +384,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-emergency-roof-repair.grid.md",
         "sha": "ba1619e6132f",
-        "at": "2026-10-12T11:43:52-05:00",
-        "run": "20261012-114352-interview-44aa",
+        "at": "2026-10-12T12:25:19-05:00",
+        "run": "20261012-122518-interview-16a4",
         "gaps": [
           "service_scope",
           "licence",
@@ -439,8 +439,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-metal-roofing.grid.md",
         "sha": "a5265f474d93",
-        "at": "2026-10-12T11:43:52-05:00",
-        "run": "20261012-114352-interview-44aa",
+        "at": "2026-10-12T12:25:19-05:00",
+        "run": "20261012-122518-interview-16a4",
         "gaps": [
           "pricing",
           "licence",
@@ -490,8 +490,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-slate-roofing.grid.md",
         "sha": "731e03624e14",
-        "at": "2026-10-12T11:43:52-05:00",
-        "run": "20261012-114352-interview-44aa",
+        "at": "2026-10-12T12:25:19-05:00",
+        "run": "20261012-122518-interview-16a4",
         "gaps": [
           "pricing",
           "licence",
@@ -535,8 +535,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-skylights.grid.md",
         "sha": "f3642df06824",
-        "at": "2026-10-12T11:43:53-05:00",
-        "run": "20261012-114352-interview-44aa",
+        "at": "2026-10-12T12:25:19-05:00",
+        "run": "20261012-122518-interview-16a4",
         "gaps": [
           "pricing",
           "licence",
@@ -1414,10 +1414,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261012-114352-interview-44aa",
+    "run_id": "20261012-122518-interview-16a4",
     "command": "interview",
-    "finished": "2026-10-12T11:43:53-05:00",
-    "result": "Paul's SEM and facts answers: warranty fact recorded; SEM 1-15 applied at approval; Skylights FAQ 4 kept; Slate FAQs 3 and 5 dropped",
+    "finished": "2026-10-12T12:25:36-05:00",
+    "result": "Warranty fact recorded; SEM 1-15 decisions recorded; approve.py SEM check flagged as F-017",
     "changes": 0,
     "step": "interview:facts-answers",
     "batch": "services"
@@ -1441,7 +1441,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-12T11:45:01-05:00",
+  "updated": "2026-10-12T12:25:36-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",

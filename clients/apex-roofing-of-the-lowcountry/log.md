@@ -3601,3 +3601,33 @@ Approved version: clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G 
 - CHANGE #576 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (18).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 557ca235ad72 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #577 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (18).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (18).md | result: done · renamed and moved, nothing deleted
 - CHANGE #578 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (18).md | new: Apex Roofing of the Lowcountry - Status.md · sha 246c64bcfb72 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261012-122518-interview-16a4 · STARTED · /interview · 2026-10-12T12:25:18-05:00
+Step: interview:facts-answers · batch services · session a1a7f5f8-03bf-44ec-ad8e-1ebe990b1d87
+Gates checked: discovery_signed_off
+- FLAG 2026-10-12T12:25 · run 20261012-122518-interview-16a4 · F-017 · approve.py rejects SEM items 9-15: the --sem check (scripts/approve.py line ~194) hardcodes SEM-1 to SEM-8, but the services review table has SEM-1 to SEM-15. Paul's approval 'batch:services:drafts --sem 1,...,15' was refused. · workaround: none in a client session; the approval is not recorded until a system session widens the check
+- EVIDENCE 2026-10-12T12:25 · run 20261012-122518-interview-16a4 · svc-roof-replacement: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-12T12:25 · run 20261012-122518-interview-16a4 · svc-roof-installation: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T12:25 · run 20261012-122518-interview-16a4 · svc-roof-inspections: WARN (known 8, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T12:25 · run 20261012-122518-interview-16a4 · svc-emergency-roof-repair: WARN (known 10, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-12T12:25 · run 20261012-122518-interview-16a4 · svc-metal-roofing: WARN (known 10, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-12T12:25 · run 20261012-122518-interview-16a4 · svc-slate-roofing: WARN (known 10, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-12T12:25 · run 20261012-122518-interview-16a4 · svc-skylights: WARN (known 9, unknown 0, unverified 3, conflict 0)
+### HANDOFF · /interview · 2026-10-12 · run 20261012-122518-interview-16a4
+## What changed
+- Recorded `d-warranty-terms` as paul_approved, with the 40-year metal panel warranty against chalking and fading (Paul 2026-10-11 answer 4).
+- Recorded Paul's decisions: SEM items 1–15 all applied, with SEM-10 modified (process and standard stay in full on Emergency Roof Repair, Roof Replacement and Roof Installation; smaller services get a brief mention); Skylights FAQ 4 kept (yes, Apex installs skylights in metal roofs); Slate FAQs 3 and 5 dropped.
+- Flag F-017: `scripts/approve.py` rejects SEM items 9–15 (the check accepts SEM-1 to SEM-8 only), so Paul's services drafts approval with `--sem 1,…,15` was refused. Needs a system session to widen the check.
+
+## Open for Paul
+- Services drafts approval is not recorded until F-017 is fixed in a system session.
+- Brand Guide was re-approved after the warranty fact changed Section D.
+### END HANDOFF
+## RUN 20261012-122518-interview-16a4 · FINISHED · 2026-10-12T12:25:36-05:00
+Changes: 0 · Summary: Warranty fact recorded; SEM 1-15 decisions recorded; approve.py SEM check flagged as F-017
+- CHANGE #579 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (15).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (15).md | result: done · renamed and moved, nothing deleted
+- CHANGE #580 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (15).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha e4c6eac16ef1 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #581 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (19).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (19).md | result: done · renamed and moved, nothing deleted
+- CHANGE #582 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (19).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha cc6f3a118818 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #583 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (19).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (19).md | result: done · renamed and moved, nothing deleted
+- CHANGE #584 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (19).md | new: Apex Roofing of the Lowcountry - Status.md · sha 937362c63bbe | result: done · copied (Drive for desktop syncs it)
