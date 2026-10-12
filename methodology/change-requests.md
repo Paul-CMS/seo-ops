@@ -61,3 +61,126 @@ If Paul pays API rates, location drafts can run through the Message Batches API 
 - CR-001 · 2026-10-09 · ACCEPTED · Paul · REWRITE-2-DECISIONS.md (c): HMM hubs become metro hubs (/charleston-metro/, /hilton-head-bluffton-metro/) once each metro area's Wikidata entry is checked; built in rewrite 2 P7
 
 - CR-001 · 2026-10-11 · DONE · system session · commit f85a547
+
+## CR-006 · 2026-10-11 · new source for Town of Hilton Head Island building permits: https://hiltonheadis
+Flag: apex-roofing-of-the-lowcountry F-001 · step build:facts · run 20261011-212524-build-5379 · flagged by Claude (2026-10-11T21:31)
+What: new source for Town of Hilton Head Island building permits: https://hiltonheadislandsc.gov/building/permits/ — building permit applications, checklists, CSS portal
+Workaround used: used in this run's facts files
+
+---
+
+## CR-007 · 2026-10-11 · new source for City of Beaufort building codes: https://cityofbeaufort.org/154/B
+Flag: apex-roofing-of-the-lowcountry F-002 · step build:facts · run 20261011-212524-build-5379 · flagged by Claude (2026-10-11T21:31)
+What: new source for City of Beaufort building codes: https://cityofbeaufort.org/154/Building-Codes — city building codes department and state-adopted codes in effect
+Workaround used: used in this run's facts files
+
+---
+
+## CR-008 · 2026-10-11 · new source for Town of Port Royal building permits: https://portroyal.org/161/Bu
+Flag: apex-roofing-of-the-lowcountry F-003 · step build:facts · run 20261011-212524-build-5379 · flagged by Claude (2026-10-11T21:31)
+What: new source for Town of Port Royal building permits: https://portroyal.org/161/Building-Official — building official, permit application and inspections
+Workaround used: used in this run's facts files
+
+---
+
+## CR-009 · 2026-10-11 · new source for Jasper County building permits: https://jaspercountysc.gov/servic
+Flag: apex-roofing-of-the-lowcountry F-004 · step build:facts · run 20261011-212524-build-5379 · flagged by Claude (2026-10-11T21:31)
+What: new source for Jasper County building permits: https://jaspercountysc.gov/services/planning-and-building — county planning and building, permit applications and checklists
+Workaround used: used in this run's facts files
+
+---
+
+## CR-010 · 2026-10-11 · new source for Town of Hardeeville building permits: https://www.hardeevillesc.g
+Flag: apex-roofing-of-the-lowcountry F-005 · step build:facts · run 20261011-212524-build-5379 · flagged by Claude (2026-10-11T21:31)
+What: new source for Town of Hardeeville building permits: https://www.hardeevillesc.gov/2650/Building-Permits — city building permits (zoning procedures at hardeevillesc.zoninghub.com)
+Workaround used: used in this run's facts files
+
+---
+
+## CR-011 · 2026-10-11 · new source for City of Ridgeland building permits: https://www.ridgelandsc.gov/p
+Flag: apex-roofing-of-the-lowcountry F-006 · step build:facts · run 20261011-212524-build-5379 · flagged by Claude (2026-10-11T21:31)
+What: new source for City of Ridgeland building permits: https://www.ridgelandsc.gov/planning-and-community-development/home — planning and community development, residential permit requirements and forms
+Workaround used: used in this run's facts files
+
+---
+
+## CR-012 · 2026-10-11 · new source for Jasper County places and attractions: https://jaspersc.org/2021/0
+Flag: apex-roofing-of-the-lowcountry F-007 · step build:facts · run 20261011-212524-build-5379 · flagged by Claude (2026-10-11T21:31)
+What: new source for Jasper County places and attractions: https://jaspersc.org/2021/07/discover-ridgeland-and-hardeeville/ — Jasper County chamber page on Ridgeland and Hardeeville sites and parks
+Workaround used: used in this run's facts files
+
+---
+
+## CR-013 · 2026-10-11 · evidence.py questions --all: a second call in the same round overwrites the ques
+Flag: apex-roofing-of-the-lowcountry F-008 · step build:facts · run 20261011-212524-build-5379 · flagged by Claude (2026-10-11T21:35)
+What: evidence.py questions --all: a second call in the same round overwrites the question-set file with 0 questions, because the first call already opened every key (settled.ask) and the rewrite lists them only as 'already asked'. The first set's text survives only in log.md OPEN lines.
+Workaround used: rebuilt the set by hand from the OPEN lines + grids into interviews/facts/...REVIEW.md and facts-round-all-2026-10-11.questions.json; settled.py filter + questions.py check passed
+
+---
+
+## CR-014 · 2026-10-11 · evidence.py questions --all opens keys before the page facts files exist: city_s
+Flag: apex-roofing-of-the-lowcountry F-009 · step build:facts · run 20261011-212524-build-5379 · flagged by Claude (2026-10-11T21:35)
+What: evidence.py questions --all opens keys before the page facts files exist: city_served for 11 location pages was asked with a keyword-ranking row as its 'best answer', though Brand Guide E + settled 'business' already answer it; service_scope was grouped across 7 services under Roof Repair's list. Grouping by fact needs per-page pre-fills, and Section E should feed city_served.
+Workaround used: wrote city_served facts files from Brand Guide E; closed the keys via run.py decision --settle --closes; per-service scope lines in the hand-built set
+
+---
+
+## CR-015 · 2026-10-11 · reviews.csv has no reviewer_key column, so the researcher counts one reviewer pe
+Flag: apex-roofing-of-the-lowcountry F-010 · step build:facts · run 20261011-212524-build-5379 · flagged by Claude (2026-10-11T21:35)
+What: reviews.csv has no reviewer_key column, so the researcher counts one reviewer per row (CM-057 distinct-reviewer count is approximate).
+Workaround used: counted per row; owner replies excluded
+
+---
+
+## CR-016 · 2026-10-11 · Grid marks a Brand Guide D row Unverified when any part is unconfirmed (Warranty
+Flag: apex-roofing-of-the-lowcountry F-011 · step build:facts · run 20261011-212524-build-5379 · flagged by Claude (2026-10-11T21:35)
+What: Grid marks a Brand Guide D row Unverified when any part is unconfirmed (Warranty terms: manufacturer + workmanship Client Confirmed, only W14 metal 40-year Submitted), which makes the whole row a question.
+Workaround used: asked only the W14 part (Q4)
+
+---
+
+## CR-017 · 2026-10-11 · /next started build:brief for the services batch while Paul's 2026-10-11 facts a
+Flag: apex-roofing-of-the-lowcountry F-012 · step build:brief · run 20261011-214754-build-8691 · flagged by Claude (2026-10-11T21:54)
+What: /next started build:brief for the services batch while Paul's 2026-10-11 facts answers (interviews/facts/... Facts Answers - all - 2026-10-11.md) were on disk but unrecorded: the evidence gate scored on stale facts (metal, slate, skylights BLOCK; scope gaps on the other 4) although the answers likely clear them. next.py / the brief gate does not check for an unrecorded facts-answers file.
+Workaround used: Briefs written for the 4 WARN pages with [NEED] markers and a note that the 2026-10-11 answers await /interview facts-answers all; 3 BLOCK pages left unbriefed; re-run the gate after recording.
+
+---
+
+## CR-018 · 2026-10-12 · methodology/specs/service.md §3 #9 and §6 tell writers to leave service-area row
+Flag: apex-roofing-of-the-lowcountry F-013 · step build:brief · run 20261012-065658-build-15df · flagged by Claude (2026-10-12T07:03)
+What: methodology/specs/service.md §3 #9 and §6 tell writers to leave service-area rows as '| [Link wheel: populate service-area links here] |', but the build rules (P11, stage-6 doc) allow only [NEED: …] and [LINK → /slug/ · reason] placeholders, and publish.py drafts refuses a placeholder without a NEED note. The two rules disagree on the service-areas table placeholder.
+Workaround used: Briefs keep the spec's link-wheel row form (as the approved pilot and sibling briefs do); Finish fills the table before ship. Paul to settle the form at /system-review.
+
+---
+
+## CR-019 · 2026-10-12 · writing-commercial.md E10 shows readability.py --exclude-terms <entity terms + n
+Flag: apex-roofing-of-the-lowcountry F-014 · step build:draft · run 20261012-074135-build-56f3 · flagged by Claude (2026-10-12T07:44)
+What: writing-commercial.md E10 shows readability.py --exclude-terms <entity terms + named sources> as a list, but scripts/readability.py reads --exclude-terms as a file path (FileNotFoundError on a comma list).
+Workaround used: Wrote the terms one per line to a scratchpad file and passed its path.
+
+---
+
+## CR-020 · 2026-10-12 · service.md element 8 says the FAQ 'first sentence is the full answer (40-60 word
+Flag: apex-roofing-of-the-lowcountry F-015 · step build:draft · run 20261012-074931-build-45cc · flagged by Claude (2026-10-12T07:52)
+What: service.md element 8 says the FAQ 'first sentence is the full answer (40-60 words)', which pulls against CM-047 grade 7-8 and the short sentences C5 asks for; also writing-commercial E10 shows readability.py --exclude-terms as a list of terms, but the script reads a file path.
+Workaround used: Emergency draft: sentence one answers alone and is short; the whole first answer paragraph runs about 40-60 words. Exclude terms passed as a scratch file.
+
+---
+
+## CR-021 · 2026-10-12 · writing-commercial.md E10 shows 'readability.py <draft> --exclude-terms <entity 
+Flag: apex-roofing-of-the-lowcountry F-016 · step build:draft · run 20261012-080653-build-ad60 · flagged by Claude (2026-10-12T08:10)
+What: writing-commercial.md E10 shows 'readability.py <draft> --exclude-terms <entity terms + named sources>' as if terms are passed inline, but scripts/readability.py opens --exclude-terms as a file path (OSError: File name too long when given a comma list).
+Workaround used: Wrote the terms one per line to a scratchpad file and passed its path.
+
+---
+
+## CR-022 · 2026-10-12 · approve.py rejects SEM items 9-15: the --sem check (scripts/approve.py line ~194
+Flag: apex-roofing-of-the-lowcountry F-017 · step interview:facts-answers · run 20261012-122518-interview-16a4 · flagged by Claude (2026-10-12T12:25)
+What: approve.py rejects SEM items 9-15: the --sem check (scripts/approve.py line ~194) hardcodes SEM-1 to SEM-8, but the services review table has SEM-1 to SEM-15. Paul's approval 'batch:services:drafts --sem 1,...,15' was refused.
+Workaround used: none in a client session; the approval is not recorded until a system session widens the check
+
+---
+
+- CR-022 · 2026-10-12 · ACCEPTED · Paul · Paul 2026-10-12: --sem accepts exactly the SEM rows in that batch's table, whatever the count
+
+- CR-022 · 2026-10-12 · DONE · system session · commit fd2de4b
