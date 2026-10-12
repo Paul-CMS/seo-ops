@@ -677,6 +677,13 @@ Decided by Paul.
    H1 is live: `python3 scripts/h1lock.py followup <slug> --run R --keyword "…" --old-h1 "…" --changed YYYY-MM-DD`.
    If both got worse, Paul decides whether to roll back. After the change the lock applies again.
 
+## CM-060 · FAQ answers: a short first sentence, a 40–60-word first paragraph
+**ID** CM-060 · **Status** APPROVED · **Date** 2026-10-12 · **Reason** "First sentence is the full answer (40–60 words)" asks for one long sentence, against grade 7–8 (CM-047) and C5's short sentences (apex F-015). · **Source** Paul, /system-review 2026-10-12, accepting CR-020 · **Supersedes** — the "first sentence … (40–60 words)" wording in methodology/specs service.md, location.md, homepage.md and blog-post.md (the spec text is updated later, with CR-023 or /approve global specs; this ruling governs now)
+
+Decided by Paul. In every FAQ answer, sentence one answers the question on its own in short, plain words
+(CM-048, BB-316). The **first answer paragraph** — that sentence plus what supports it — is 40–60 words. The
+reading level (CM-047, E10) applies to the whole answer as usual.
+
 ---
 
 # C. Rule Register
@@ -943,6 +950,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-057 | APPROVED (reviews as customer-reported facts) |
 | CM-058 | APPROVED (metro hubs, when the metro area is a real category) |
 | CM-059 | APPROVED (homepage H1 lock lifts for a failing, unranked legacy H1 — Paul decides) |
+| CM-060 | APPROVED (FAQ: short first sentence, 40–60-word first paragraph; overrides the spec wording) |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |

@@ -141,4 +141,11 @@ def t_readability_terms(h):
     h.check("CR-019: E10 shows the comma-list form and the file form", "a comma-separated list, or a file with one term per line" in wc)
 
 
-SCENARIOS = [t_where_rename, t_sync_main, t_lowcountry_sources, t_readability_terms]
+def t_cm060(h):
+    rul = (REPO / "methodology" / "rulings.md").read_text()
+    body = rul.split("## CM-060 ·", 1)[1].split("\n## ", 1)[0] if "## CM-060 ·" in rul else ""
+    h.check("CM-060 (CR-020): a numbered ruling — short first sentence, 40–60-word first paragraph, in the status table",
+            "first answer paragraph" in body and "40–60 words" in body and "| CM-060 | APPROVED" in rul, body[:300])
+
+
+SCENARIOS = [t_where_rename, t_sync_main, t_lowcountry_sources, t_readability_terms, t_cm060]
