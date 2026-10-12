@@ -1996,3 +1996,37 @@ The batch review (`/build … drafts services`) once the Emergency, Metal, Slate
 - Client answers needed: emergency types (service_scope, already asked 2026-10-11) and tarping yes/no (brief F2).
 - Batch review (`/build … drafts`) once Metal Roofing, Slate Roofing and Skylights drafts exist.
 
+## /build · 2026-10-12 · run 20261012-080147-build-944f
+
+**Agent:** Build (Agent 2, Opus) · **Date:** 2026-10-12 · **Route:** A
+
+### Done
+- Drafted `clients/apex-roofing-of-the-lowcountry/build/services/SD - Metal Roofing - Apex Roofing of the Lowcountry.md` from the approved brief (`SB - Metal Roofing …`, approved 2026-10-12), spec `methodology/specs/service.md`. Header carries `replaces: [REDACTED]/metal-roofing-2/` (301 goes with the publish).
+- Recorded: `status.py page-stage … svc-metal-roofing --stage draft` → "draft recorded" (re-recorded once after trimming the FAQ section).
+- No new flag. The readability `--exclude-terms` file-vs-list mismatch and the FAQ 40–60-word first-sentence vs CM-047 tension are already flagged (F-015, run 20261012-074931-build-45cc); same workaround used.
+
+### Draft facts
+- About 1,040 words of body text (1,119 including headings and markers). Meta 157 chars (brief's proposed meta). Opening 103 words.
+- H2 sections: delivery 294, types 227, FAQ 366 (incl. H3s and two NEED markers), service areas + CTA 73. All ≤ 375.
+- Reading level: page average grade 6.7, no paragraph over 10 (E10 passes).
+- 3 `[NEED]` markers: metal install steps (delivery step 3); cited source on metal over existing shingles in SC (FAQ 4 — drop the FAQ at approval if the researcher finds none, per brief); cited lifespan source for standing seam (FAQ 5).
+- Spelling: "color" (US) used for the settled "colour".
+
+### Stage 3 self-critique
+- E1 portability: opening buyer state (coastal homeowner weighing metal vs shingles, HOA color approval) is unique on the site. The "coast is the reason" paragraph ties salt air/sun/humidity to concealed fasteners and coatings — metal-only. FAQ 3 problems list is general trade content, closed with Apex's settled scope. No sentence, quote or FAQ wording reused from Replacement, Installation, Inspections, Emergency or the pilot (no owners' "waves you can surf on"/"commodity" quote, no flashing paragraph, no tear-off steps).
+- E2 specificity: Kynar 500 / Hylar 5000 coated standing seam with concealed fasteners and wind-uplift resistance (settled scope); color submittals and ARB submissions for HOA communities (settled scope + process); 40-year panel warranty against chalking and fading (Paul answer 4 — see Open); free consultation first and repair weighed against replacement (settled process); SC #57706 and Town of Bluffton #0620033323; Hearth financing.
+- E3 variants: URL "metal roofing" → title "Metal Roofing" → H1 "Standing Seam Metal Roofs / Beaufort and Jasper Counties" → first H2 "put a metal roof on a home / South Carolina Lowcountry / Roofing Contractor". Opening: metro area + residential roofer + metal roofs. FAQ H2: metal roof + Lowcountry + Roofers. No consecutive repeat; reserved B1 unused.
+- E4 chunks: all ≤ 375 words.
+- E5 invention: no per-square price; only the whole-home standard ranges ($24,000–$45,000+ metal; $14,000–$20,000 shingles), stated as typical regional ranges that vary with roof size, not Apex's price. No W20 figure, no Ken Gathercole review, no CertainTeed Belmont, no lifespan figure, no hail/UL 2218 or energy claim, no wind/mph rating, no install duration, no re-coating/sealant/panel-replacement services (H3 kept to the assessment only), no Georgia, no commercial, no "best". "Customers often mention that the owners take the time to explain the products" is attributed, per brief §4. General trade statements only: what concealed fasteners and PVDF coatings are, the three common metal-roof problems, why a re-cover hides the deck.
+- E6 filler: no A6 phrases; cost FAQ opens with the range, then drivers.
+- E7 headers: one H1; every H2 a spoken question naming an entity; FAQ H2 avoids the siblings' "What Do … Ask a Lowcountry … About …?" frame; no city or community in any H tag; no skipped levels. COM-11: title remainder "Metal Roofing" vs H1 remainder "Standing Seam Metal Roofs" — different variant, pass.
+- E8 links: no link or link placeholder in prose, FAQ or opening; service-areas table placeholder present.
+- E9 human: read-aloud pass done.
+- E10: grade 6.7, passes.
+- Spec SVC-01–SVC-22: pass, except SVC-19 pending until the 40-year panel warranty has its fact record (W14 still Submitted in BG-D `d-warranty-terms`) and the two researcher NEEDs are resolved. SVC-15: 5 FAQs, none in C3 or sibling drafts. SVC-21: no outbound link (Finish candidate: the cited source for FAQ 4 or 5).
+
+### Open
+- **40-year panel-finish warranty needs a fact record before publication.** Paul confirmed it 2026-10-11 (answer 4); `d-warranty-terms` still reads W14 as Submitted. Record with `run.py fact` (open question `fact:d:warranty_terms`). Used three times on the page (types H3, FAQ 2, FAQ 5).
+- Researcher: metal over existing shingles (SC/IRC source) and standing seam lifespan source.
+- Batch review (`/build … drafts`) once Slate Roofing and Skylights drafts exist.
+
