@@ -247,3 +247,7 @@ Raised in a system session by Paul.
 Apex services: /approve batch:services:drafts was REFUSED ('the drafts and their semantic review are not written yet') because the batch is at sem_applied - the SEM answers were applied before the approval was recorded. approve.py must accept a drafts approval when the batch is at drafts_written or any later state, sem_applied included. When the SEM items are already applied, the approval records them as applied and they are not re-applied. Test for this case.
 
 ---
+
+- CR-025 · 2026-10-12 · ACCEPTED · Paul · Paul asked for this fix directly in the 2026-10-12 system session
+
+- CR-025 · 2026-10-12 · DONE · system session · commit f28cbdb
