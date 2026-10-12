@@ -6,7 +6,7 @@ meta_description: Skylight leaking or fogged? Apex Roofing of the Lowcountry ins
 ---
 # Skylight Installation in Beaufort and Jasper Counties
 
-When a skylight drips in the rain or turns cloudy between the panes, Apex Roofing of the Lowcountry can repair it or replace it, and we also cut new skylights into existing roofs across the Hilton Head Island–Bluffton–Port Royal metropolitan area. Maybe water spots show up on the ceiling under the skylight after every storm. Maybe the glass has gone foggy and you can no longer see the sky. Or maybe you have a dark room and want daylight in it. Any of these is a job for a roofer, because the skylight is part of the roof. Call (843) 757-2739 for a free estimate.
+When a skylight drips in the rain or turns cloudy between the panes, Apex Roofing of the Lowcountry can repair it or replace it, and we also cut new skylights into existing roofs across the Hilton Head Island–Bluffton–Port Royal metropolitan area. Water spots on the ceiling after every storm, glass gone foggy, or a dark room that needs daylight are all jobs for a roofer, because the skylight is part of the roof. Call (843) 757-2739 for a free estimate.
 
 ## How Should a Residential Roofer Add or Fix a Skylight in the South Carolina Lowcountry?
 
@@ -16,11 +16,11 @@ A residential roofer should find out why a skylight is failing before fixing any
 2. **A written estimate.** The estimate is free. It is itemized, so each part of the job has its own line.
 3. **The work.** A repair fixes the part that failed. For a new skylight, we cut the opening in your existing roof and frame it. That is structural work, because the opening goes through the roof framing. [NEED: skylight install steps beyond cutting and framing the opening, if they are to be described]
 4. **Community approval.** In a plantation community, a skylight that can be seen from the street may need approval from the architectural review board, or ARB. Check with your community before the work is booked.
-5. **Photos and clean-up.** We send photos of the skylight work. Each day ends with a clean-up and a magnet sweep for stray nails.
+5. **Before and after.** Photos show you the finished skylight, and the work area is swept for nails.
 
 The people on your roof are the owners, Ralph Brehany and his son, Pierce. That matters on a skylight, where a careless cut or a skipped piece of flashing shows up as the next leak.
 
-Is water pouring in around a skylight during a storm? Do not wait for a sunny day to call. Ralph and Pierce are always on call, and an emergency gets high priority.
+Is water pouring in around a skylight during a storm? Do not wait for a sunny day to call.
 
 ## Which Skylight Job Fits Your Home: a New Unit, New Glass or New Flashing?
 
@@ -58,11 +58,7 @@ A skylight can be worth it when a room gets little or no daylight, such as a hal
 
 ### What type of skylight works on a metal roof?
 
-A skylight on a standing seam metal roof needs a unit and flashing made for metal. The flashing has to fit the raised seams so water cannot get in where the skylight meets the panels. [NEED: cited manufacturer guidance on skylights for standing seam metal roofs — researcher] [NEED: does Apex install skylights in standing seam metal roofs?]
-
-### Do skylights open?
-
-[NEED: cited manufacturer source on fixed vs venting skylights — researcher; drop this FAQ if no source by draft approval] If fresh air matters to you as much as light, bring it up at the estimate so the right skylight is chosen.
+A skylight on a standing seam metal roof needs a unit and flashing made for metal. The flashing has to fit the raised seams so water cannot get in where the skylight meets the panels. [NEED: cited manufacturer guidance on skylights for standing seam metal roofs — researcher] Mention the metal roof when you book the estimate, so the right unit and flashing are chosen.
 
 ## Where Do We Install and Repair Skylights?
 

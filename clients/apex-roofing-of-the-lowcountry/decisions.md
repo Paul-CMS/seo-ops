@@ -81,6 +81,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 - 2026-10-12T11:43 · run 20261012-114352-interview-44aa · Paul 2026-10-12: apply SEM items 1 through 15, all of them. SEM-10 modified: the photos and clean-up process stays in full on Emergency Roof Repair, Roof Replacement and Roof Installation, with varied wording; process and standard stand out on every page; the smaller services (Roof Inspections, Metal, Slate, Skylights) get a brief mention only.
 - 2026-10-12T11:43 · run 20261012-114352-interview-44aa · Paul 2026-10-12: Skylights FAQ 4 — yes, Apex installs skylights in metal roofs. Keep FAQ 4. Researcher still owes manufacturer guidance (public fact).
 - 2026-10-12T11:43 · run 20261012-114352-interview-44aa · Paul 2026-10-12: Slate FAQ 3 (lifespan) and FAQ 5 (minimum slope): drop both. Slate lands at 5 FAQs after the 7/8 merge.
+- 2026-10-12T14:08 · run 20261012-140216-build-c112 · apply-sem services: routed items. Slate FAQs 'How long does a slate roof last?' (PAA #84/#106, FO #112) and 'Can slate go on a low-slope roof?' dropped per Paul 2026-10-12 (SEM-14) -> blog list (slate lifespan; slate minimum slope). Skylights FAQ 'Do skylights open?' (PAA #128) dropped, no source by draft approval (brief rule, SEM-15) -> blog list (fixed vs venting skylights). SEM-6 on-call message and SEM-13 storm-damage signs stay with Emergency Roof Repair, which already carries both; no change to Emergency for them.
 
 ## Conditions met (system-verified)
 

@@ -2184,3 +2184,31 @@ The batch review (`/build … drafts services`) once the Emergency, Metal, Slate
 - Services drafts approval is not recorded until F-017 is fixed in a system session.
 - Brand Guide was re-approved after the warranty fact changed Section D.
 
+## /build · 2026-10-12 · run 20261012-140216-build-c112
+
+## What changed
+All 15 SEM items Paul picked (2026-10-12) were applied to the 7 service drafts in `clients/apex-roofing-of-the-lowcountry/build/services/`. Changes #590–596 were logged.
+- **Roof Replacement:** SEM-1 quote removed. SEM-5 "the permit". SEM-4 "A July 2019 review" and "A January 2024 review". SEM-10 clean-up and daily photos kept in full, reworded away from the pilot line.
+- **Roof Installation:** SEM-8 brand paragraph, the "shows from the street" clause, "residential only" in the H3 and the FAQ 3 thickness sentence removed (FAQ 3 now points back to the underlayment section). SEM-12 delivery H2 "What Goes Into a New Home's Roof From Beaufort and Jasper Counties Roofers?" and FAQ H2 "What Should Builders Settle With a Lowcountry Roofer Before a New Roof Goes On?" SEM-10 one clean-up line added in new wording (Paul: process in full on this page).
+- **Roof Inspections:** SEM-11 opening now leads with the buy, sell or after-storm decision. SEM-12 FAQ H2 "Which Inspection Questions Can a Lowcountry Residential Roofer Answer?" SEM-13 storm-signs sentence removed.
+- **Emergency Roof Repair:** SEM-7 "no minimum" removed from step 1, FAQ 1 now ends with "call and describe what you see", duplicate tarping NEED removed from FAQ 3 (now 6 NEEDs). SEM-4 limb review dated July 2022 (from reviews.csv). SEM-12 FAQ H2 "When Should You Call Lowcountry Roofers About a Roof Emergency?" SEM-10 photos step now also covers debris and the magnet sweep, in new wording.
+- **Metal Roofing:** SEM-2 FAQ 2 now says "a long finish warranty". SEM-3 FAQ 2 refers back to the price above, and FAQ 3 is shortened. SEM-9 standalone owners line removed. SEM-10 step 4 is now a brief mention.
+- **Slate Roofing:** SEM-11 opening now leads with the older or historic home, with no "Maybe". SEM-14 FAQs 3 and 5 dropped (Paul), and FAQs 7 and 8 merged into "Who makes synthetic slate, and does it look like real slate?" (5 FAQs, 1 NEED). SEM-10 brief mention.
+- **Skylights:** SEM-11 three "Maybe" sentences now one sentence. SEM-6 on-call sentence removed. SEM-15 FAQ 4 kept (Paul: yes, metal roofs), and the client NEED was removed. The researcher NEED stays. FAQ 5 "Do skylights open?" dropped (no source by approval). SEM-10 brief mention. 4 FAQs, 4 NEEDs.
+- To meet CM-060 (40–60 words), these edited FAQ answers were adjusted: Emergency FAQ 1 (63, was 70), Metal FAQ 2 (60), Installation FAQ 3 (41), Skylights FAQ 4 (52, added one general sentence), Slate merged FAQ (51, added one general sentence).
+- **Routed (decision logged):** Slate lifespan (PAA #84/#106, FO #112), Slate minimum slope and Skylights "Do skylights open?" (PAA #128) go to the blog list. The on-call message and the storm-damage signs stay with Emergency, which already has both.
+
+## Checks
+- Every edited element passes. E1: no shared lines across siblings or with the pilot. E2–E9 pass. E3 variant chains are intact and B1 is unused. E4: every H2 section is 375 words or fewer. E7: every H2 is a spoken question with an entity. E8: no links. FAQ counts are 4–6 on every page.
+- **Still failing, in H2 sections the SEM edits touched but in sentences Paul did not pick (copy from the approved drafts, left as it was):**
+  1. E10 · Replacement FAQ "What warranty comes with a new roof?", grade 10.1. Proposed fix: "A new shingle roof from Apex comes with two warranties. The maker's is a 50-year limited lifetime warranty. Apex adds a lifetime no-leak workmanship warranty."
+  2. E10 · Slate FAQ "What is the biggest disadvantage of a slate roof?", grade 10.7. Proposed fix: split after "its weight." into "Natural slate is far heavier than architectural shingles, so not every house can carry it without extra framing."
+  3. E10 · Slate types H2 intro, grade 10.1 (section not edited). Proposed fix: "Apex does three kinds of slate work. It puts on new roofs in genuine Vermont slate or DaVinci Roofscapes synthetic slate. It also repairs slate roofs that are mostly sound."
+  4. CM-060 · first FAQ paragraph over 60 words: Metal "How much does a metal roof cost?" (80), Installation "Is drip edge required in South Carolina?" (72), Skylights "How much does it cost to install a skylight?" (62, section not edited).
+- State: **sem_check_failed**. The drafts go back to Paul.
+
+## Open for Paul
+- Approve the four fixes above as written, or change them. They are all sentence splits and trims, with no new facts.
+- Paul's yes on skylights in metal roofs (2026-10-12) is logged as a decision only, not as a fact row. The page does not state it as Apex's claim.
+- The researcher still owes sources for the remaining NEEDs: Replacement 2 · Installation 3 · Inspections 5 · Emergency 6 · Metal 3 · Slate 1 · Skylights 4.
+

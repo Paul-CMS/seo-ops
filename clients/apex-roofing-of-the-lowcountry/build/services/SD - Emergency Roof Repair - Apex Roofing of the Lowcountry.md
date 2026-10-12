@@ -12,13 +12,13 @@ When a storm tears into your roof or water starts coming through the ceiling, ca
 
 A roofing contractor handling urgent roof damage works in a set order: stop more water from getting in, find all of the damage, then make a repair that lasts. Here is how an emergency call with Apex goes.
 
-1. **The call.** You phone (843) 757-2739 and tell us what happened: wind, hail, a fallen limb, or a leak that came out of nowhere. There is no minimum service-call charge.
+1. **The call.** You phone (843) 757-2739 and tell us what happened: wind, hail, a fallen limb, or a leak that came out of nowhere.
 2. **Stay safe until we get there.** Stay off the roof, above all in wind, rain or lightning. Keep clear of any water near light fixtures, outlets or wiring.
 3. **On the roof.** Ralph or Pierce gets up on the roof once it is safe to climb. The owners do this work themselves.
 4. **Stop the water now.** The first job is keeping more water out of the house. [NEED: does Apex tarp or patch temporarily in an emergency?]
 5. **Find the full damage.** A storm rarely breaks just one spot. We check the shingles, the flashing, the valleys and the wood deck under them, because wet or cracked decking has to be found before the roof is closed up.
 6. **The lasting repair.** Once the roof is dry, the damaged area is rebuilt, layer by layer, to hold up in the next storm. If the roof is too far gone to repair, we will tell you so, and a full replacement becomes the next step.
-7. **Photos.** You get photos of the work, so you can see what was damaged and what was fixed.
+7. **Proof and a clear yard.** Photos show you what the storm damaged and what was fixed. Before the crew leaves each day, storm debris is cleared and a magnet goes over the yard for nails.
 
 Lowcountry weather is the reason most of these calls happen. Hurricane season brings high wind and sideways rain. Tropical storms can sit over the coast for days. Summer thunderstorms drop hail and bring down limbs with little warning. A roof that was fine in the morning can be open to the sky by night.
 
@@ -36,7 +36,7 @@ Strong wind gets under the edge of a shingle and peels it back. Once a few go, t
 
 [NEED: client confirms this emergency type]
 
-A summer thunderstorm can do a lot of harm in a short time. Gusts tear off shingles, and heavy rain finds every weak joint. Falling limbs are part of storm damage too. One homeowner's Google review describes a limb that left "a gaping hole in our roof."
+A summer thunderstorm can do a lot of harm in a short time. Gusts tear off shingles, and heavy rain finds every weak joint. Falling limbs are part of storm damage too. One homeowner's Google review from July 2022 describes a limb that left "a gaping hole in our roof."
 
 ### Hail Damage
 
@@ -56,11 +56,11 @@ Not every emergency comes with a storm. A roof leak can show up after a long, st
 
 When shingles blow off, the layers under them are left open to the rain. Missing shingles are replaced so the roof deck is covered and watertight again.
 
-## What Do Homeowners Ask Lowcountry Roofers in a Roof Emergency?
+## When Should You Call Lowcountry Roofers About a Roof Emergency?
 
 ### Is a leaking roof an emergency?
 
-A leaking roof is an emergency when water is dripping or running into the house, when a storm or a falling limb has opened up the roof, or when water is getting near wiring or light fixtures. A small stain that shows up after rain and does not grow can usually wait for a scheduled repair. If you cannot tell which one you have, Ralph and Pierce are on call to take a look.
+A leaking roof is an emergency when water is coming into the house. It also counts when a storm or falling limb has opened the roof, or when water is near wiring or light fixtures. A small stain that does not grow can usually wait for a scheduled repair. If you cannot tell which one you have, call and describe what you see.
 
 ### Do past customers get priority in a roofing emergency?
 
@@ -68,7 +68,7 @@ Yes, past customers get priority at Apex Roofing of the Lowcountry. Every roof e
 
 ### Can a roof leak be repaired while it is raining?
 
-A lasting roof leak repair needs a dry roof and safe footing, so it usually has to wait until the rain and any lightning have passed. Wet shingles are slick, and a repair sealed onto a wet surface may not hold. While the storm is still going, the goal is to keep more water out of the house. [NEED: does Apex tarp or patch temporarily?]
+A lasting roof leak repair needs a dry roof and safe footing, so it usually has to wait until the rain and any lightning have passed. Wet shingles are slick, and a repair sealed onto a wet surface may not hold. While the storm is still going, the goal is to keep more water out of the house.
 
 ### How much does emergency roof repair cost?
 

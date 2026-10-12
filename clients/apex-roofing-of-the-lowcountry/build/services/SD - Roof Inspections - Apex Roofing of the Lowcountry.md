@@ -6,7 +6,7 @@ meta_description: Need to know what shape your roof is in? Apex Roofing of the L
 ---
 # Roof Condition Inspections in Beaufort and Jasper Counties
 
-Apex Roofing of the Lowcountry is a roofing contractor that does roof inspections for homeowners across the Hilton Head Island–Bluffton–Port Royal metropolitan area. You do not have a leak. You just need to know where your roof stands before you decide something. A big storm just blew through. You are buying a house, or selling one. Or the roof has been up a long time and you want to plan ahead. You want a straight answer, even if the answer is that nothing needs doing. Call (843) 757-2739 to set up a free estimate.
+Before you buy a house, sell one or decide what to do after a big storm, a roof inspection tells you where your roof stands. Apex Roofing of the Lowcountry, a roofing contractor, does that check for homeowners across the Hilton Head Island–Bluffton–Port Royal metropolitan area. You may not have a leak at all. The roof may just have been up a long time, and you want to plan ahead. You want a straight answer, even if the answer is that nothing needs doing. Call (843) 757-2739 to set up a free estimate.
 
 ## What Happens When a Roofer Checks Your Roof in the South Carolina Lowcountry?
 
@@ -49,7 +49,7 @@ A roof is one of the costliest parts of a house to redo. Buyers want to know wha
 
 A yearly look at a roof with no known problems lets small things get fixed while they are still small. A loose pipe boot or a few lifted shingles cost far less to deal with now than the water damage they can cause later.
 
-## What Do Homeowners Ask a Lowcountry Residential Roofer About Inspections?
+## Which Inspection Questions Can a Lowcountry Residential Roofer Answer?
 
 ### How much does a roof inspection cost?
 
@@ -65,7 +65,7 @@ A roof should be checked on a regular schedule, and again after any major storm,
 
 ### Who inspects a roof for storm damage?
 
-A roofer who gets up on the roof is the right person to check for storm damage, because most of it cannot be seen from the ground. Storm damage often looks like lifted or creased shingle tabs, a loose ridge cap or flashing pulled away from a wall or chimney. At Apex, Ralph or Pierce does the climbing. If water is coming into the house right now, treat it as an emergency and call right away.
+A roofer who gets up on the roof is the right person to check for storm damage, because most of it cannot be seen from the ground. At Apex, Ralph or Pierce does the climbing. If water is coming into the house right now, treat it as an emergency and call right away.
 
 ## Where Do We Inspect Roofs?
 

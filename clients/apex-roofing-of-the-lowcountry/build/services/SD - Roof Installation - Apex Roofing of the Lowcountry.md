@@ -8,19 +8,17 @@ meta_description: Building a new home? Apex Roofing of the Lowcountry roofs new 
 
 When a new house goes up in the Hilton Head Island–Bluffton–Port Royal metropolitan area, Apex Roofing of the Lowcountry can handle the roof installation as the roofing subcontractor. You might be a builder, a general contractor or an owner with a home under way. The walls are up and the deck is close. Now you need a roofing contractor who puts the new roof on right the first time, so nobody comes back to fix it. Our work is on homes only. Call (843) 757-2739 for a free estimate.
 
-## How Do Our Roofers Roof a New Home in Beaufort and Jasper Counties?
+## What Goes Into a New Home's Roof From Beaufort and Jasper Counties Roofers?
 
-Our roofers roof a new home by building it up one layer at a time on the fresh deck, and by taking the time to get each layer straight and sealed. Ralph and Pierce Brehany, the father and son who own Apex, both get on the roof.
+A new home's roof from our roofers goes on one layer at a time over the fresh deck, with each layer set straight and sealed before the next. Ralph and Pierce Brehany, the father and son who own Apex, both get on the roof.
 
 The first layer is the underlayment. It is the sheet that sits between the wood deck and the shingles, and it is the last line of defense if water gets past them. The owners point out that its thickness matters, even though no one sees it once the shingles are on.
 
 Next come the flashing, the valleys and the trim. Flashing is the metal that seals the joints where the roof meets a wall, a vent pipe or a valley. A new roof needs enough of it at every one of those joints. Valleys, where two roof slopes meet, are sealed so water runs down them and not under them. The trim along the edges is finished neatly.
 
-Then the shingles go on. The nails are spaced with care, and the rows are kept straight across the whole roof. A methodical install is slower than a rushed one, and it shows from the street.
+Then the shingles go on. The nails are spaced with care, and the rows are kept straight across the whole roof. A methodical install is slower than a rushed one.
 
-Apex is a certified factory installer of both CertainTeed and GAF shingles. Many homeowners have a preference, so the builder or owner can choose the brand.
-
-You get photos of the work, with progress photos each day on a longer job.
+You get photos of the work, with progress photos each day on a longer job. The build site is cleared at the end of each day, with a magnet run over the lot for dropped nails.
 
 [NEED: how Apex fits a builder's schedule on new construction (for example dry-in timing and return trips for trim-out), if it will be stated]
 
@@ -30,13 +28,13 @@ Apex puts the first roof on new homes. We work with builders and general contrac
 
 ### New Homes for Builders and General Contractors
 
-Apex works as a roofing subcontractor on new construction throughout Beaufort and Jasper County. The builder or general contractor runs the job, and Apex installs the roof on each new house. The work is residential only.
+Apex works as a roofing subcontractor on new construction throughout Beaufort and Jasper County. The builder or general contractor runs the job, and Apex installs the roof on each new house.
 
 ### CertainTeed and GAF Shingle Systems
 
 Apex is a factory installer for both CertainTeed and GAF, and it holds CertainTeed ShingleMaster status. That means a new home does not have to settle for whichever brand a roofer happens to carry. If the owner or the builder already prefers one brand, the roof can be built with it. If not, we can walk through both before the order goes in.
 
-## What Do Builders and Owners Ask a Lowcountry Roofer About a New Build?
+## What Should Builders Settle With a Lowcountry Roofer Before a New Roof Goes On?
 
 ### Is drip edge required in South Carolina?
 
@@ -48,7 +46,7 @@ The time to roof a new home depends on the size and shape of the roof, how many 
 
 ### Which shingles and underlayment go on a new roof?
 
-A new roof from Apex uses CertainTeed or GAF shingles, and the builder or owner picks the brand. Under the shingles, the thickness of the underlayment matters, because it is the layer that keeps water out if a shingle ever fails. [NEED: synthetic underlayment on new installs too?] We can go over the options with you before the materials are ordered.
+A new roof from Apex uses CertainTeed or GAF shingles, and the builder or owner picks the brand. Under them goes the underlayment, the water barrier covered above. [NEED: synthetic underlayment on new installs too?] We can go over the options with you before the materials are ordered.
 
 ### How can I tell if a new roof was installed correctly?
 

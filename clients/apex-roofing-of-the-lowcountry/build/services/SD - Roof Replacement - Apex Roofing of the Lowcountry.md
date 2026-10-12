@@ -15,15 +15,15 @@ A residential roofer replaces a roof by stripping it down to the wood. Then we f
 Here is how an Apex roof replacement goes:
 
 1. **Free estimate.** Ralph or Pierce Brehany, the father and son who own Apex, get up on your roof and look at it.
-2. **Permit.** Apex gets the Town permit for the job.
+2. **Permit.** Apex gets the permit for the job.
 3. **Tear-off.** The old shingles and underlayment come off, down to the roof deck.
 4. **Deck check.** We check the plywood deck and replace any wet or rotted wood.
 5. **New layers.** Underlayment goes down first. Then come the flashing, the valleys and the shingles. [NEED: same corrosion-resistant flashing and synthetic underlayment on a full replacement?]
-6. **Clean-up.** We clean up each day and run a magnet over the yard for loose nails.
-7. **Photos.** You get photos of the work, with progress photos each day.
+6. **Clean-up.** Each evening the crew clears the debris and sweeps the yard with a magnet for stray nails.
+7. **Daily photos.** Each day a new set of photos shows how far the roof has come, so you can follow the job even when you are not home.
 8. **Warranties.** Your warranty papers are handed over when the job is done.
 
-The hidden parts are where two bids differ. Ask each roofer what goes under the shingles and how thick the underlayment is. Ask if the valleys are sealed and how the trim is finished. Ask what happens to rotted wood, and how far apart the nails go. A careful, step-by-step install shows from the street. A rushed one, in the owners' words, "looks like waves you can surf on."
+The hidden parts are where two bids differ. Ask each roofer what goes under the shingles and how thick the underlayment is. Ask if the valleys are sealed and how the trim is finished. Ask what happens to rotted wood, and how far apart the nails go. A careful, step-by-step install shows from the street.
 
 Apex is a certified factory installer of both CertainTeed and GAF shingles, and a CertainTeed ShingleMaster. Many homeowners prefer one brand, so you can choose.
 
@@ -74,7 +74,7 @@ Age alone does not decide it. A 20-year-old roof may still be sound, or it may b
 
 ### How long does a roof replacement take?
 
-It depends on the size of the roof and what turns up under the old shingles. One customer's review describes the tear-off and new roof done in three days. Another review sums up the job as "2 days in n out." Your estimate will include a schedule for your home.
+It depends on the size of the roof and what turns up under the old shingles. A July 2019 review describes the tear-off and new roof done in three days. A January 2024 review sums up the job as "2 days in n out." Your estimate will include a schedule for your home.
 
 ### What warranty comes with a new roof?
 

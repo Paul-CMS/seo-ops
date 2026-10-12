@@ -16,9 +16,7 @@ A roofing contractor puts a metal roof on a home in three stages: a talk about w
 1. **Free consultation.** We start by talking through your home, your budget and how long you plan to stay. Customers often mention that the owners take the time to explain the products.
 2. **Color submittals and ARB submissions.** Many Lowcountry communities have an architectural review board, or ARB, that must approve a new roof color. If yours does, Apex prepares the color submittals and the ARB paperwork.
 3. **The install.** The panels go on with concealed fasteners. That means the screws sit under the raised seams, out of the weather. The whole system is built for wind-uplift resistance, which is how well a roof holds its panels down when hurricane winds try to pull them up. [NEED: metal install steps — underlayment, panel seaming, trim]
-4. **Photos and clean-up.** You get photos of the work, with progress photos each day on a longer job. The site is cleaned up each day, and a magnet is run over the yard for loose nails.
-
-Ralph Brehany and his son Pierce own Apex, and both of them work up on the roof themselves.
+4. **Wrap-up.** You get daily photos of the panels going on, and the yard gets a magnet sweep for nails before we leave.
 
 The coast is the reason for each of those choices. Salt air eats at bare metal and open screw heads. Summer sun fades a weak paint finish. Humid air keeps everything damp. Hidden fasteners and coated panels are how a metal roof holds up here.
 
@@ -48,11 +46,11 @@ In 2026, a standing seam metal roof on a typical Lowcountry home runs about $24,
 
 ### Is a metal roof worth the extra cost over shingles?
 
-A metal roof can be worth the extra cost if you plan to stay in your home and want a roof built for salt air and hurricane wind. Architectural shingles run about $14,000 to $20,000 on a typical Lowcountry home, so standing seam (about $24,000 to $45,000 or more) costs more up front. The extra buys hidden screws, wind-uplift resistance, coated panels and a 40-year panel warranty against chalking and fading. If you may sell soon, shingles can be the better fit.
+Yes, if you plan to stay in the home and want a roof built for salt air and hurricane wind. Architectural shingles run about $14,000 to $20,000, so standing seam, priced above, costs more up front. The extra buys hidden screws, wind-uplift resistance and coated panels with a long finish warranty. If you may sell soon, shingles can fit better.
 
 ### What are the biggest problems with metal roofs?
 
-Metal roofs have three common problems: leaks at open screws and at pipe and vent openings, paint that wears down in salt air, and rain noise. Apex installs concealed-fastener panels with Kynar 500 or Hylar 5000 coatings to deal with the first two.
+Metal roofs have three common problems: leaks at open screws and at pipe and vent openings, paint that wears down in salt air, and rain noise. The concealed-fastener, coated panels Apex installs are built to deal with the first two.
 
 ### Can a metal roof go over existing shingles?
 

@@ -6,7 +6,7 @@ meta_description: Slate tiles cracked or slipping? Apex Roofing of the Lowcountr
 ---
 # Natural Slate Roofs in the South Carolina Lowcountry
 
-Apex Roofing of the Lowcountry installs genuine Vermont slate and synthetic slate, and repairs slate roofs, on homes across the Hilton Head Island–Bluffton–Port Royal metropolitan area. Maybe your house is older, even historic, and a few tiles have cracked or slid out of place. You want the roof fixed, not torn off. Or you love the look of slate and need to know your house can hold it up. Either way, start with a roofing contractor who works with slate. Call (843) 757-2739 for a free estimate.
+On an older or historic home, a few cracked or slipping slate tiles do not have to mean a new roof. Across the Hilton Head Island–Bluffton–Port Royal metropolitan area, Apex Roofing of the Lowcountry repairs slate roofs and puts on new ones in genuine Vermont slate or synthetic slate. You may want the roof fixed, not torn off. Or you love the look of slate and need to know your house can hold it up. Either way, start with a roofing contractor who works with slate. Call (843) 757-2739 for a free estimate.
 
 ## How Does a Roofer Lay a Slate Roof in Beaufort and Jasper Counties?
 
@@ -16,7 +16,7 @@ A roofer lays a slate roof by checking that the house can carry the stone first,
 2. **Reinforcement, if needed.** When the framing falls short, it gets stronger before the slate goes up. That can mean sister rafters, where a new board is fastened alongside an old rafter, or purlins, which are boards run across the rafters to spread the weight.
 3. **Approval in historic districts.** Homes in the City of Beaufort's historic districts may need the roof material approved first. Apex coordinates that approval with the City of Beaufort Board of Architectural Review.
 4. **The work on the roof.** Ralph Brehany and his son Pierce own Apex, and both of them get up on the roof. [NEED: slate install steps — underlayment, fastening, flashing, if they are to be described]
-5. **Photos and clean-up.** You get photos of the work, plus progress photos each day on a longer job. The site is cleaned each day, and a magnet goes over the yard to pick up loose nails.
+5. **Records and tidy-up.** Photos follow the slate as it goes on, and the yard is cleared of nails each day.
 
 Slate is not a do-it-yourself roof. The tiles crack if you step on them the wrong way, and a cracked tile lets in water. Walking, cutting and fastening slate takes a roofer who has done it before.
 
@@ -46,29 +46,17 @@ The price of a slate roof turns mostly on the size of the roof, then on natural 
 
 The biggest disadvantage of a slate roof is its weight: natural slate is far heavier than architectural shingles, so not every house can carry it without extra framing. It also costs more up front, and a broken tile needs a roofer who knows slate.
 
-### How long does a slate roof last?
-
-[NEED: cited lifespan source for natural slate roofs — researcher] How long a natural slate roof lasts depends on the grade of the stone, the quality of the install, and how the flashing and nails hold up.
-
 ### Can a slate roof be repaired instead of replaced?
 
 Yes, a slate roof can be repaired instead of replaced when most of the tiles are still sound: the bad tiles are swapped out one by one and leaking flashing is renewed. Watch for cracked, slipped or missing tiles, hail damage, and leaks around a chimney or vent.
-
-### Can slate go on a low-slope roof?
-
-[NEED: cited minimum slope for slate roofing — researcher] Slate keeps water out by overlapping, so the roof needs enough pitch for rain to run off before it can creep under the tiles.
 
 ### How long does a synthetic slate roof last?
 
 A good guide to how long DaVinci synthetic slate is built to last is the maker's own warranty: a lifetime limited warranty with a 10-year non-prorated period. Non-prorated means coverage is not cut back for age in those 10 years. It is DaVinci's warranty, not Apex's.
 
-### What type of shingle roof looks like slate?
+### Who makes synthetic slate, and does it look like real slate?
 
-Synthetic slate, also called composite slate, looks like slate without being stone. Apex installs DaVinci Roofscapes, whose Province Slate tile is made from virgin resins. It suits a house not built to carry stone.
-
-### Who makes synthetic slate roofing?
-
-Several companies make synthetic slate, and the brand Apex installs is DaVinci Roofscapes, part of Westlake Royal Building Products.
+Several companies make synthetic slate, also called composite slate. It is made to look like natural slate without being stone. The brand Apex installs is DaVinci Roofscapes, part of Westlake Royal Building Products. Before you choose, it helps to see natural and synthetic slate side by side on a finished roof.
 
 ## Where Do We Install and Repair Slate Roofs?
 
