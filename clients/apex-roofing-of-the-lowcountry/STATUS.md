@@ -1,17 +1,16 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 5 of 8 — Build plan and blockers**
-- **What is happening now:** waiting for Paul's approval — the site plan is ready for your approval
-- **Waiting on:** Paul — the site plan is ready for your approval; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
-- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry site_plan --files "clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Site Plan - REVIEW.md"` (or asks for changes first)
+- **What is happening now:** ready to start: one facts round for every page: the evidence grids, the researcher looks up every public fact, reviews attached (CM-057), then one pre-filled question set grouped by fact
+- **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
+- **Next action:** `/build apex-roofing-of-the-lowcountry facts` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open apex-roofing-of-the-lowcountry`) and types `/next apex-roofing-of-the-lowcountry` (agents: build (opus), researcher (sonnet), clerk (haiku))
 
-_Generated 2026-10-11T21:21 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-11T21:22 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the site plan is ready for your approval | 2026-10-09 | /approve apex-roofing-of-the-lowcountry site_plan |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
@@ -45,7 +44,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-11: Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims) — approved
 - 2026-10-08: discovery_signed_off — approved
 - 2026-10-08: page specs (global) — approved
-- 2026-10-08: site plan — approved
+- 2026-10-11: site plan — approved
 - 2026-10-09: batch pilot briefs — approved
 - 2026-10-09: batch pilot drafts — approved
 - Entity: category Roofing Contractor (variants Roofer, Roofers); area = Hilton Head Island–Bluffton–Port Royal metro area.

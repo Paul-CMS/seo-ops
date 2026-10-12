@@ -649,10 +649,10 @@
       "approval": {
         "state": "approved",
         "by": "Paul",
-        "at": "2026-10-08T14:28:51-05:00",
+        "at": "2026-10-11T21:22:11-05:00",
         "note": null,
         "files": {
-          "clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Site Plan - REVIEW.md": "f7b3f00ad9b0"
+          "clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Site Plan - REVIEW.md": "c40653319bfb"
         },
         "conditions": [],
         "sensitive_review": null,
@@ -984,20 +984,21 @@
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
-    "phase": "Planning your new pages",
+    "phase": "Publishing your new pages",
     "done": [
       "We confirmed how search engines should understand your business",
       "We prepared a fact sheet for you to confirm",
       "You returned the fact sheet — thank you",
       "We finished reviewing your website",
       "Your business details are confirmed",
-      "Research is complete and page work has started"
+      "Research is complete and page work has started",
+      "Your new page plan is ready"
     ],
     "waiting_on_client": [],
-    "next": "We are planning every service and location page."
+    "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-11T21:21:44-05:00",
+  "updated": "2026-10-11T21:22:11-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
