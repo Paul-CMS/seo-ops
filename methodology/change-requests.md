@@ -241,3 +241,9 @@ What is proposed: at intake, every client's document checklist includes a Search
 - CR-020 · 2026-10-12 · ACCEPTED · Paul · Paul 2026-10-12: CM-060 — sentence one answers alone in short plain words; the first answer paragraph is 40–60 words. Spec wording waits for CR-023 or /approve global specs.
 
 - CR-020 · 2026-10-12 · DONE · system session · commit 9d2268f
+
+## CR-025 · 2026-10-12 · approve.py accepts a drafts approval at drafts-reviewed or any later batch state (sem_applied included)
+Raised in a system session by Paul.
+Apex services: /approve batch:services:drafts was REFUSED ('the drafts and their semantic review are not written yet') because the batch is at sem_applied - the SEM answers were applied before the approval was recorded. approve.py must accept a drafts approval when the batch is at drafts_written or any later state, sem_applied included. When the SEM items are already applied, the approval records them as applied and they are not re-applied. Test for this case.
+
+---

@@ -221,6 +221,22 @@ def check_sem(target, b, sem):
             f"(it has {', '.join(have)}).")
 
 
+def drafts_applied(target, b, sem):
+    """CR-025: a drafts approval is accepted once the drafts and their semantic review are written — drafts_written or
+    any later batch state (sem_applied included). Returns the SEM items already applied (the earlier approval's
+    'applied' record), or None. Applied items are recorded as applied, never re-applied: --sem may only repeat them."""
+    if b.get("state") not in S.BATCH_STATES[S.BATCH_STATES.index("drafts_written"):]:
+        die(f"REFUSED ({target}) — the drafts and their semantic review are not written yet.")
+    applied = (b.get("drafts") or {}).get("applied")
+    if not applied:
+        return None
+    done = applied.get("sem_ids") or []
+    if sem is not None and sorted(sem) != sorted(done):
+        die(f"REFUSED ({target}) — {', '.join(done) or 'no SEM items'} already applied to these drafts; leave out "
+            "--sem (or repeat exactly those) — a different pick needs the drafts revised first.")
+    return applied
+
+
 def parse_mode(target):
     """'mode:build:draft=auto' → ('build:draft', 'auto'). Only producing stages have a mode;
     a decision (an /approve gate) can never be auto (CM-044)."""
@@ -348,6 +364,7 @@ def prepare(a, st, target, multi):
     approved = a.decision in S.GATES["met_decisions"]
     sem = sem_list(a.sem)
     explicit = split(a.files or a.file) if not multi else []
+    applied = None   # CR-025: SEM items applied to the drafts before this approval
 
     if target == "site_plan" or target.startswith("batch:"):
         bp = st.get("build") or die("No site plan registered yet (status.py plan ...).")
@@ -376,8 +393,9 @@ def prepare(a, st, target, multi):
                     die(f"REFUSED ({target}) — name the exact files approved (--files): one per page in the batch"
                         + (" plus the semantic review table." if stage == "drafts" else "."))
                 if stage == "drafts":
-                    if b.get("state") not in ("drafts_written", "sem_check_failed"):
-                        die(f"REFUSED ({target}) — the drafts and their semantic review are not written yet.")
+                    applied = drafts_applied(target, b, sem)
+                    if applied:
+                        sem = list(applied.get("sem_ids") or [])
                     if b.get("sem_findings") and sem is None:
                         die(f"REFUSED ({target}) — the semantic review found {b['sem_findings']} item(s): say which "
                             "to apply (--sem 1,3,4) or --sem none.")
@@ -389,13 +407,15 @@ def prepare(a, st, target, multi):
         rec = {"state": a.decision, "by": "Paul", "at": now(), "note": a.note, "files": files,
                "conditions": [c.strip() for c in (a.conditions or "").split(";") if c.strip()],
                "sensitive_review": a.review, "practitioner": a.practitioner,
-               **({"sem_ids": sem or []} if target.endswith(":drafts") else {})}
+               **({"sem_ids": sem or []} if target.endswith(":drafts") else {}),
+               **({"applied": applied} if applied else {})}
 
         def apply():
             holder[key] = rec
         text = (f"\n## APPROVAL · {now()} · {label_} · {a.decision} · by Paul\n"
                 + "".join(f"Approved version: {f} (sha {h})\n" for f, h in files.items())
-                + (f"SEM items to apply: {', '.join(sem) if sem else 'none'}\n" if target.endswith(":drafts") else "")
+                + ((f"SEM items already applied (not re-applied): {', '.join(sem)}\n" if applied else
+                    f"SEM items to apply: {', '.join(sem) if sem else 'none'}\n") if target.endswith(":drafts") else "")
                 + (f"Human review: {a.review}\n" if a.review else "")
                 + (f"Practitioner sign-off: {a.practitioner}\n" if a.practitioner else "")
                 + (f"Note: {a.note}\n" if a.note else ""))
