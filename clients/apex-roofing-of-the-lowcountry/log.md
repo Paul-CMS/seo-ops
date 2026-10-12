@@ -3385,3 +3385,56 @@ Changes: 0 · Summary: Metal Roofing draft written and recorded (services batch)
 - CHANGE #544 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (13).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 3e21bc1c5cb5 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #545 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (13).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (13).md | result: done · renamed and moved, nothing deleted
 - CHANGE #546 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (13).md | new: Apex Roofing of the Lowcountry - Status.md · sha 9eb105a1dc8a | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-12T08:06 · after build:draft (run 20261012-080147-build-944f) · Paul typed /next
+
+## RUN 20261012-080653-build-ad60 · STARTED · /build · 2026-10-12T08:06:53-05:00
+Step: build:draft · batch services · session a1a7f5f8-03bf-44ec-ad8e-1ebe990b1d87
+Gates checked: discovery_signed_off, batch:services:briefs, page_specs_approved
+- DRAFT 2026-10-12T08:10 · run 20261012-080653-build-ad60 · svc-slate-roofing · clients/apex-roofing-of-the-lowcountry/build/services/SD - Slate Roofing - Apex Roofing of the Lowcountry.md
+- FLAG 2026-10-12T08:10 · run 20261012-080653-build-ad60 · F-016 · writing-commercial.md E10 shows 'readability.py <draft> --exclude-terms <entity terms + named sources>' as if terms are passed inline, but scripts/readability.py opens --exclude-terms as a file path (OSError: File name too long when given a comma list). · workaround: Wrote the terms one per line to a scratchpad file and passed its path.
+### HANDOFF · /build · 2026-10-12 · run 20261012-080653-build-ad60
+**Agent:** Build (Agent 2), Opus · **Date:** 2026-10-12 · **Route:** A
+
+### Done
+- Drafted `clients/apex-roofing-of-the-lowcountry/build/services/SD - Slate Roofing - Apex Roofing of the Lowcountry.md` from the approved brief (SB, revised 2026-10-12) and `methodology/specs/service.md`. 1,092 body words.
+- Recorded: `status.py page-stage apex-roofing-of-the-lowcountry svc-slate-roofing --stage draft` (run 20261012-080653-build-ad60).
+- Flag F-016 raised (readability.py `--exclude-terms` takes a file, the standard shows inline terms). Workaround: terms file in scratchpad.
+
+### Stage 0/1 (map and plan, from the approved brief)
+- Title `Slate Roofing - Apex Roofing of the Lowcountry` (46 chars) · meta 160 chars (brief wording) · H1 `Natural Slate Roofs in the South Carolina Lowcountry` · no "The Best" (BG-H2).
+- Variant chain: URL slate roofing → title Slate Roofing → H1 Natural Slate Roofs / South Carolina Lowcountry → first H2 "lay a slate roof" / Beaufort and Jasper Counties / Roofer → opening: Hilton Head Island–Bluffton–Port Royal metropolitan area / roofing contractor → FAQ H2 slate / Lowcountry.
+- Order: opening → delivery H2 → types H2 (Vermont, DaVinci, Repair H3s) → FAQ H2 (8 H3s, brief order) → service-areas H2 + placeholder → CTA.
+
+### Stage 3 self-critique
+- **E1 portability:** pass. Weight figures, sister rafters/purlins, City of Beaufort BAR, Vermont grades, DaVinci are slate-only. No sentence reused from Metal, Replacement, Installation, Inspections, Emergency or Roof Repair (checked: Replacement's "heaviest choice / weighs much less than real stone" not echoed; cost FAQ worded differently from Metal FAQ 1; repair FAQ is about slate tiles, not Roof Repair's repair-or-replace).
+- **E2 specificity:** pass — Vermont slate in coastal-wind grades; DaVinci Roofscapes (Province Slate, virgin resins); 800–1,500 vs 200–350 lbs per square; City of Beaufort BAR; licence numbers.
+- **E3 variants:** pass — no consecutive repeat; reserved B1 variant unused; B2 #1 in H1.
+- **E4 chunks:** delivery 278 · types 218 · service areas 74 · **FAQ 382 words counting the H2/H3 lines and the two NEED markers** (≈ 305 of answer text). Marginally over the ~375 heading-inclusive count while 8 FAQs stand; falls well under once FAQ 3/5 are sourced-and-trimmed or dropped.
+- **E5 invention sweep:** every fact from the brief's settled list. No price figure, no per-square price, no lifespan in years, no Belmont/CertainTeed, no Ken Gathercole review, no HHI ARB, no tapping, no underlayment, no duration, no re-nailing. Weight wording kept exactly. General trade statements (slate cracks underfoot; overlap needs pitch; colour is in the stone; tiles vary in colour/size/thickness) are general knowledge, no numbers. "Part of Westlake Royal Building Products" rests on the brief's cited source page (westlakeroyalbuildingproducts.com/roofing/davinci-roofscapes/...).
+- **E6 filler:** pass; removed one "best" ("A good guide…" in FAQ 6). No A6 phrases.
+- **E7 headers:** one H1; every H2 a spoken question with an entity; no city in any H tag (Beaufort and Jasper Counties = county variant; "Vermont" is a state, in the H3 product name); no skipped levels. COM-11: title remainder "Slate Roofing" vs H1 remainder "Natural Slate Roofs" — different variant, pass.
+- **E8 links:** no cross-page link or `[LINK →]` in prose; service-area placeholder present.
+- **E9 human:** reads as a slate roofer; explains square, sister rafters, purlins, penetrations, non-prorated.
+- **E10 reading level:** page grade 6.6 (target ≤ 8.9); highest paragraphs 9.8 (FAQ 3, NEED text), 9.7 (types H2 heading line), 9.5 (FAQ 5) — none over 10. Read-aloud pass done.
+- **Spec checks:** SVC-01–09, 11–14, 16–22 pass. **SVC-15 fails on count: 8 FAQs vs 4–6** — the brief set 8 (FAQ 3 and 5 drop if unsourced → 6). SVC-23 N/A.
+
+### Open items (placeholders.py: 3)
+1. `[NEED: slate install steps — underlayment, fastening, flashing, if they are to be described]` (delivery step 4)
+2. `[NEED: cited lifespan source for natural slate roofs — researcher]` (FAQ 3)
+3. `[NEED: cited minimum slope for slate roofing — researcher]` (FAQ 5)
+
+### For the batch review
+- FAQ 7 and FAQ 8 overlap (both land on DaVinci); FAQ 7 also repeats the DaVinci H3 (Province Slate, virgin resins). Candidate SEM row: merge or cut one.
+- FAQ count: if FAQ 3 and 5 stay unsourced, drop them (brief rule) → 6 FAQs, SVC-15 and E4 pass.
+
+### Not done
+- No publish, no WordPress, no link table, no schema.
+### END HANDOFF
+## RUN 20261012-080653-build-ad60 · FINISHED · 2026-10-12T08:10:52-05:00
+Changes: 0 · Summary: Slate Roofing draft written (svc-slate-roofing, services batch): 3 NEEDs, 8 FAQs pending FAQ 3/5 sourcing, flag F-016
+- CHANGE #547 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (11).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (11).md | result: done · renamed and moved, nothing deleted
+- CHANGE #548 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (11).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha d627f2759ab5 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #549 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (14).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (14).md | result: done · renamed and moved, nothing deleted
+- CHANGE #550 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (14).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha bd50b4f9191f | result: done · copied (Drive for desktop syncs it)
+- CHANGE #551 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (14).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (14).md | result: done · renamed and moved, nothing deleted
+- CHANGE #552 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (14).md | new: Apex Roofing of the Lowcountry - Status.md · sha 6f4294ed6110 | result: done · copied (Drive for desktop syncs it)

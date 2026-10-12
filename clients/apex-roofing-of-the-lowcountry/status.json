@@ -468,7 +468,7 @@
       }
     },
     "svc-slate-roofing": {
-      "state": "brief_written",
+      "state": "draft_written",
       "type": "service",
       "name": "Slate Roofing",
       "url": "https://apexroofingtlc.com/slate-roofing/",
@@ -510,6 +510,12 @@
           "run": "20261012-071954-build-c525",
           "at": "2026-10-12T07:22:42-05:00",
           "sha": "a03788746504"
+        },
+        "draft": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/services/SD - Slate Roofing - Apex Roofing of the Lowcountry.md",
+          "run": "20261012-080653-build-ad60",
+          "at": "2026-10-12T08:10:13-05:00",
+          "sha": "e8516196313f"
         }
       }
     },
@@ -1398,10 +1404,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261012-080147-build-944f",
+    "run_id": "20261012-080653-build-ad60",
     "command": "build",
-    "finished": "2026-10-12T08:05:54-05:00",
-    "result": "Metal Roofing draft written and recorded (services batch); 3 NEEDs; 40-year panel warranty needs a fact record before publication",
+    "finished": "2026-10-12T08:10:52-05:00",
+    "result": "Slate Roofing draft written (svc-slate-roofing, services batch): 3 NEEDs, 8 FAQs pending FAQ 3/5 sourcing, flag F-016",
     "changes": 0,
     "step": "build:draft",
     "batch": "services"
@@ -1425,7 +1431,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-12T08:05:54-05:00",
+  "updated": "2026-10-12T08:10:52-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -1708,8 +1714,8 @@
     "dropped": []
   },
   "review_pause": {
-    "run_id": "20261012-080147-build-944f",
+    "run_id": "20261012-080653-build-ad60",
     "step": "build:draft",
-    "at": "2026-10-12T08:05:54-05:00"
+    "at": "2026-10-12T08:10:52-05:00"
   }
 }
