@@ -105,7 +105,7 @@ Routed elsewhere: install process and time (FO #68, #140, #346) → H2 delivery 
 
 ## 6 · Must not appear
 
-Georgia · commercial · any skylight price figure (live page or review) · the $20,000–$25,000 replacement review example · Velux / FAKRO until confirmed · "no-name or builder-grade" comparisons · tubular skylights · flat-roof skylights · energy savings figures · a skylight warranty term · any response time, "24 hour", "same-day" · a licence class · "best" / superlatives · cross-page links in prose, FAQ answers or the opening (`[LINK → /slug/ · reason]` only) · reviewer names · a city or community name in any H tag.
+Georgia · commercial · any skylight price figure (live page or review) · any per-square price (Paul 2026-10-12) · the $20,000–$25,000 replacement review example · Velux / FAKRO until confirmed · "no-name or builder-grade" comparisons · tubular skylights · flat-roof skylights · energy savings figures · a skylight warranty term · any response time, "24 hour", "same-day" · a licence class · "best" / superlatives · cross-page links in prose, FAQ answers or the opening (`[LINK → /slug/ · reason]` only) · reviewer names · a city or community name in any H tag.
 
 ## 7 · Sibling context
 
@@ -132,3 +132,9 @@ Other open items for the writer (not grid rows): `[NEED: confirm Apex installs V
 
 - **F1 — thin FAQ risk.** FAQs 3, 4 and 5 each need a cited public source (the researcher can find them; no client question). If FAQ 5 stays unsourced at draft approval, the page drops to 4 FAQs. Options: (a) researcher pass before the drafts (recommended; public facts are never asked); (b) accept 4 FAQs.
 - **F2 — one client yes/no, if you want brands on the page:** "Apex installs Velux and FAKRO skylights — yes / no?" (W18, on the live page). Without it the page names no brand.
+
+## Change log
+
+| Date | Run | Change |
+|---|---|---|
+| 2026-10-12 | 20261012-071954-build-c525 | Paul 2026-10-12 (no per-square prices anywhere): checked — this brief carried no per-square figure; "any per-square price" added to Must not appear. Nothing else changed. |

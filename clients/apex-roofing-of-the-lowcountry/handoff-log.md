@@ -1788,3 +1788,25 @@ Partial support: asphalt, metal, wood, slate per-square ranges roughly in line. 
 - Settled `metal_slate_price_ranges` (W20/W19 client ranges) still differs from the new standard; Metal and Slate briefs already flag it for Paul.
 - No flags raised (no workflow rule found wrong). No facts recorded, no drafts written, no decisions made.
 
+## /build · 2026-10-12 · run 20261012-071954-build-c525
+
+Agent 2 — Build · 2026-10-12 · Route A · step build:brief (revision 2), batch services
+
+## What changed (Paul's three answers, 2026-10-12, logged as decisions to this run)
+- **SB - Roof Replacement** — FAQ 1, specificity item 4, the Evidence gaps price row and F3 now give only the two whole-home ranges: architectural asphalt about $14,000–$20,000 for a typical home, standing seam metal about $24,000–$45,000+, both varying with roof size. Every per-square figure removed. Impact-resistant, wood and slate/tile: no figure (the approved standard gives no whole-home range for them). The one attributed review example ($20,000–$25,000, 2026-08-15) unchanged: reviewer not named on the page, named in the source note only.
+- **SB - Metal Roofing** — FAQ 1, FAQ 2, Evidence gaps price row and F1: whole-home ranges only, per-square removed. Change log added.
+- **SB - Slate Roofing** — (1) FAQ 1 now states no price (no whole-home slate range in the approved standard); FAQ 2, F-002 row, price gap row and F1 aligned. (2) CertainTeed Belmont removed from the scope note, types H3, specificity, FAQ 7, FAQ 8, routed line, must-not list and F3 (resolved); DaVinci Roofscapes is the only synthetic brand. One-line note kept in Evidence gaps that Paul skipped the Belmont detail. (3) FAQ 6 answer: DaVinci's lifetime limited warranty with a 10-year non-prorated period, as the manufacturer's warranty; no lifespan in years.
+- **SB - Roof Installation, Roof Inspections, Emergency Roof Repair, Skylights** — no per-square figure was present; "any per-square price" added to Must not appear; change-log row added.
+- All seven re-recorded with `status.py page-stage --stage brief` (batch briefs collected).
+
+## Remaining "per square" text
+- No per-square price in any brief. The only "per square" figure left is the slate **weight** (800–1,500 lbs per square vs 200–350 for shingles; settled process, Slate delivery H2 and specificity 2) — a weight, not a price, kept unchanged. Other mentions are the rule itself ("no per-square price").
+
+## Open for Paul (not decided here)
+- `facts.json` `d-price-replacement-standard-2026` and settled `replacement_price_review` still hold the per-square figures; `fact:svc-slate-roofing:service_scope` still names Belmont. The briefs override both. Paul may want these records updated (`run.py fact` / `--settle`) so later batches do not pick them up.
+- Slate weight "per square" wording — keep, or restate (e.g. per 100 sq ft) at brief approval.
+- Earlier flags still open: F3 Replacement (whole-home ranges higher than independent sources), metal F1 (W20 vs standard), slate F1 (no price), 40-year metal warranty fact still Submitted.
+
+## Flags raised
+- None (no workflow rule or script problem met).
+

@@ -2974,3 +2974,61 @@ Changes: 0 · Summary: Services briefs revised: Replacement on Lowcountry standa
 - CHANGE #484 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (3).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 6d06dd2cc486 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #485 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (3).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (3).md | result: done · renamed and moved, nothing deleted
 - CHANGE #486 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (3).md | new: Apex Roofing of the Lowcountry - Status.md · sha bc6c7065db71 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261012-071954-build-c525 · STARTED · /build · 2026-10-12T07:19:54-05:00
+Step: build:brief · batch services · session a1a7f5f8-03bf-44ec-ad8e-1ebe990b1d87
+Gates checked: discovery_signed_off, batch:services:briefs_ready, page_specs_approved
+- DECISION 2026-10-12T07:19 · run 20261012-071954-build-c525 · Paul 2026-10-12: do not mention per-square prices anywhere. General whole-home price only, which varies with square footage. Price ranges on the page stay the approved whole-home ranges.
+- DECISION 2026-10-12T07:19 · run 20261012-071954-build-c525 · Paul 2026-10-12: CertainTeed Belmont — not sure, skip. Write the Slate page without it: do not name Belmont or describe it as slate-look shingle or synthetic.
+- DECISION 2026-10-12T07:19 · run 20261012-071954-build-c525 · Paul 2026-10-12: synthetic slate lifespan — okay: use DaVinci's own warranty (lifetime limited, 10-year non-prorated) as the FAQ answer.
+- DECISION 2026-10-12T07:19 · run 20261012-071954-build-c525 · Paul 2026-10-12: write the Slate page now without the Belmont information (skipped).
+- BRIEF 2026-10-12T07:22 · run 20261012-071954-build-c525 · svc-roof-replacement · clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Replacement - Apex Roofing of the Lowcountry.md
+- BRIEFS COLLECTED 2026-10-12T07:22 · batch services · 7 page(s), one run each
+- BRIEF 2026-10-12T07:22 · run 20261012-071954-build-c525 · svc-roof-installation · clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Installation - Apex Roofing of the Lowcountry.md
+- BRIEFS COLLECTED 2026-10-12T07:22 · batch services · 7 page(s), one run each
+- BRIEF 2026-10-12T07:22 · run 20261012-071954-build-c525 · svc-roof-inspections · clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Inspections - Apex Roofing of the Lowcountry.md
+- BRIEFS COLLECTED 2026-10-12T07:22 · batch services · 7 page(s), one run each
+- BRIEF 2026-10-12T07:22 · run 20261012-071954-build-c525 · svc-emergency-roof-repair · clients/apex-roofing-of-the-lowcountry/build/services/SB - Emergency Roof Repair - Apex Roofing of the Lowcountry.md
+- BRIEFS COLLECTED 2026-10-12T07:22 · batch services · 7 page(s), one run each
+- BRIEF 2026-10-12T07:22 · run 20261012-071954-build-c525 · svc-metal-roofing · clients/apex-roofing-of-the-lowcountry/build/services/SB - Metal Roofing - Apex Roofing of the Lowcountry.md
+- BRIEFS COLLECTED 2026-10-12T07:22 · batch services · 7 page(s), one run each
+- BRIEF 2026-10-12T07:22 · run 20261012-071954-build-c525 · svc-slate-roofing · clients/apex-roofing-of-the-lowcountry/build/services/SB - Slate Roofing - Apex Roofing of the Lowcountry.md
+- BRIEFS COLLECTED 2026-10-12T07:22 · batch services · 7 page(s), one run each
+- BRIEF 2026-10-12T07:22 · run 20261012-071954-build-c525 · svc-skylights · clients/apex-roofing-of-the-lowcountry/build/services/SB - Skylights - Apex Roofing of the Lowcountry.md
+- BRIEFS COLLECTED 2026-10-12T07:22 · batch services · 7 page(s), one run each
+- EVIDENCE 2026-10-12T07:23 · run 20261012-071954-build-c525 · svc-roof-replacement: WARN (known 8, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T07:23 · run 20261012-071954-build-c525 · svc-roof-installation: WARN (known 8, unknown 0, unverified 5, conflict 0)
+- EVIDENCE 2026-10-12T07:23 · run 20261012-071954-build-c525 · svc-roof-inspections: WARN (known 7, unknown 0, unverified 5, conflict 0)
+- EVIDENCE 2026-10-12T07:23 · run 20261012-071954-build-c525 · svc-emergency-roof-repair: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T07:23 · run 20261012-071954-build-c525 · svc-metal-roofing: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T07:23 · run 20261012-071954-build-c525 · svc-slate-roofing: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T07:23 · run 20261012-071954-build-c525 · svc-skylights: WARN (known 8, unknown 0, unverified 4, conflict 0)
+### HANDOFF · /build · 2026-10-12 · run 20261012-071954-build-c525
+Agent 2 — Build · 2026-10-12 · Route A · step build:brief (revision 2), batch services
+
+## What changed (Paul's three answers, 2026-10-12, logged as decisions to this run)
+- **SB - Roof Replacement** — FAQ 1, specificity item 4, the Evidence gaps price row and F3 now give only the two whole-home ranges: architectural asphalt about $14,000–$20,000 for a typical home, standing seam metal about $24,000–$45,000+, both varying with roof size. Every per-square figure removed. Impact-resistant, wood and slate/tile: no figure (the approved standard gives no whole-home range for them). The one attributed review example ($20,000–$25,000, 2026-08-15) unchanged: reviewer not named on the page, named in the source note only.
+- **SB - Metal Roofing** — FAQ 1, FAQ 2, Evidence gaps price row and F1: whole-home ranges only, per-square removed. Change log added.
+- **SB - Slate Roofing** — (1) FAQ 1 now states no price (no whole-home slate range in the approved standard); FAQ 2, F-002 row, price gap row and F1 aligned. (2) CertainTeed Belmont removed from the scope note, types H3, specificity, FAQ 7, FAQ 8, routed line, must-not list and F3 (resolved); DaVinci Roofscapes is the only synthetic brand. One-line note kept in Evidence gaps that Paul skipped the Belmont detail. (3) FAQ 6 answer: DaVinci's lifetime limited warranty with a 10-year non-prorated period, as the manufacturer's warranty; no lifespan in years.
+- **SB - Roof Installation, Roof Inspections, Emergency Roof Repair, Skylights** — no per-square figure was present; "any per-square price" added to Must not appear; change-log row added.
+- All seven re-recorded with `status.py page-stage --stage brief` (batch briefs collected).
+
+## Remaining "per square" text
+- No per-square price in any brief. The only "per square" figure left is the slate **weight** (800–1,500 lbs per square vs 200–350 for shingles; settled process, Slate delivery H2 and specificity 2) — a weight, not a price, kept unchanged. Other mentions are the rule itself ("no per-square price").
+
+## Open for Paul (not decided here)
+- `facts.json` `d-price-replacement-standard-2026` and settled `replacement_price_review` still hold the per-square figures; `fact:svc-slate-roofing:service_scope` still names Belmont. The briefs override both. Paul may want these records updated (`run.py fact` / `--settle`) so later batches do not pick them up.
+- Slate weight "per square" wording — keep, or restate (e.g. per 100 sq ft) at brief approval.
+- Earlier flags still open: F3 Replacement (whole-home ranges higher than independent sources), metal F1 (W20 vs standard), slate F1 (no price), 40-year metal warranty fact still Submitted.
+
+## Flags raised
+- None (no workflow rule or script problem met).
+### END HANDOFF
+## RUN 20261012-071954-build-c525 · FINISHED · 2026-10-12T07:23:16-05:00
+Changes: 0 · Summary: Services briefs revision 2: per-square prices removed (whole-home ranges only), Belmont dropped from Slate, Slate FAQ 6 uses DaVinci warranty; 7 briefs re-recorded
+- CHANGE #487 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (3).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #488 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (3).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 61bc59bbfd09 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #489 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (4).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #490 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (4).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 90cf9d1f903c | result: done · copied (Drive for desktop syncs it)
+- CHANGE #491 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (4).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #492 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (4).md | new: Apex Roofing of the Lowcountry - Status.md · sha 666d2d874b59 | result: done · copied (Drive for desktop syncs it)

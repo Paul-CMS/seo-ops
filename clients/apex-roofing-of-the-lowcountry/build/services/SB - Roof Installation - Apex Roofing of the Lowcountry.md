@@ -104,7 +104,7 @@ Routed elsewhere: install process (FO #225, #236) → H2 delivery; every cost ro
 
 ## 6 · Must not appear
 
-Commercial / "homes and businesses" · Georgia · "130 mph" or any wind rating without a cited source · response time, "same-day" · "bonded" · licence class · any price or cost figure (Replacement owns cost) · "best" / superlatives · cross-page links in prose, FAQ answers or the opening · reviewer names.
+Commercial / "homes and businesses" · Georgia · "130 mph" or any wind rating without a cited source · response time, "same-day" · "bonded" · licence class · any price or cost figure (Replacement owns cost) · any per-square price (Paul 2026-10-12) · "best" / superlatives · cross-page links in prose, FAQ answers or the opening · reviewer names.
 
 ## 7 · Sibling context
 
@@ -130,3 +130,9 @@ Gate **WARN**. Paul's 2026-10-11 facts answers (answer 5 insurance "correct", an
 
 - **F1 — drip edge FAQ needs a public code source.** The researcher can look up the South Carolina adopted residential code on drip edge (public fact, cited). If none is found, the answer stays general, or the FAQ is swapped for a sourced one.
 - **F2 — FAQ count.** If both FAQ 1 (no code source) and FAQ 2 (no install time) end up unsourced, the page would carry 4 FAQs with two thin answers. Options: (a) keep both with general answers and no figures; (b) ask the client one question — typical install time on a new home; (c) replace one with a sourced question from the fan-out list. Decide at the draft.
+
+## Change log
+
+| Date | Run | Change |
+|---|---|---|
+| 2026-10-12 | 20261012-071954-build-c525 | Paul 2026-10-12 (no per-square prices anywhere): checked — this brief carried no per-square figure; "any per-square price" added to Must not appear. Nothing else changed. |

@@ -68,6 +68,10 @@ Generated from status.json and the safety log — do not edit. Record a decision
 - 2026-10-12T06:56 · run 20261012-065139-interview-b77b · Paul 2026-10-11 answer 10 (about / company story): the client asks to make it about customer care, 'not just another house… someone's home'. Note for Paul after the page handoffs: the business needs to be active on Facebook posts.
 - 2026-10-12T07:00 · run 20261012-065658-build-15df · Paul 2026-10-12: the Lowcountry price sources (sureflowroof.com, charlestonroofhelp.com) are competitor blogs. The researcher must check independent sources when writing the Roof Replacement page; the price stays the Lowcountry standard until they do.
 - 2026-10-12T07:00 · run 20261012-065658-build-15df · Paul 2026-10-12: ignore bonded status (answer 5 'not sure about the bonded part'). Do not raise it or write it as a gap.
+- 2026-10-12T07:19 · run 20261012-071954-build-c525 · Paul 2026-10-12: do not mention per-square prices anywhere. General whole-home price only, which varies with square footage. Price ranges on the page stay the approved whole-home ranges.
+- 2026-10-12T07:19 · run 20261012-071954-build-c525 · Paul 2026-10-12: CertainTeed Belmont — not sure, skip. Write the Slate page without it: do not name Belmont or describe it as slate-look shingle or synthetic.
+- 2026-10-12T07:19 · run 20261012-071954-build-c525 · Paul 2026-10-12: synthetic slate lifespan — okay: use DaVinci's own warranty (lifetime limited, 10-year non-prorated) as the FAQ answer.
+- 2026-10-12T07:19 · run 20261012-071954-build-c525 · Paul 2026-10-12: write the Slate page now without the Belmont information (skipped).
 
 ## Conditions met (system-verified)
 

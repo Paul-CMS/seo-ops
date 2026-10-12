@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the briefs for batch services are ready for your approval (outline before prose; one brief; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
 - **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry batch:services:briefs --files "clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Replacement - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Installation - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Inspections - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Emergency Roof Repair - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Metal Roofing - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Slate Roofing - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Skylights - Apex Roofing of the Lowcountry.md"` (or asks for changes first)
 
-_Generated 2026-10-12T07:14 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-12T07:23 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -136,4 +136,4 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /build 2026-10-12T07:14 — Services briefs revised: Replacement on Lowcountry standard prices (independent check partial), Emergency FAQ 2 replaced, Slate gets synthetic-slate FAQs 6-8
+Last run: /build 2026-10-12T07:23 — Services briefs revision 2: per-square prices removed (whole-home ranges only), Belmont dropped from Slate, Slate FAQ 6 uses DaVinci warranty; 7 briefs re-recorded

@@ -102,7 +102,7 @@ Routed elsewhere: inspection method, qualifications (FO #215 → licence numbers
 
 ## 6 · Must not appear
 
-"commercial" / "residential and commercial inspections" · insurance-claim help · "certified inspection" / inspector certification · drone · a report format or checklist as Apex's standard · response time, "same-day" · "bonded" · licence class · any inspection price · "best" · cross-page links in prose, FAQ answers or the opening · reviewer names.
+"commercial" / "residential and commercial inspections" · insurance-claim help · "certified inspection" / inspector certification · drone · a report format or checklist as Apex's standard · response time, "same-day" · "bonded" · licence class · any inspection price · any per-square price (Paul 2026-10-12) · "best" · cross-page links in prose, FAQ answers or the opening · reviewer names.
 
 ## 7 · Sibling context
 
@@ -128,3 +128,9 @@ Gate **WARN**. Paul's 2026-10-11 facts answers (answer 1: "site is accurate — 
 
 - **F1 — what "free" covers.** W17 (free pre-estimate inspections, paid stand-alone reports) is still unconfirmed and is the answer to this page's buying question. One yes/no to the client settles it.
 - **F2 — record the 2026-10-11 facts answers** (see Roof Replacement brief F2); they clear this page's scope gap.
+
+## Change log
+
+| Date | Run | Change |
+|---|---|---|
+| 2026-10-12 | 20261012-071954-build-c525 | Paul 2026-10-12 (no per-square prices anywhere): checked — this brief carried no per-square figure; "any per-square price" added to Must not appear. Nothing else changed. |

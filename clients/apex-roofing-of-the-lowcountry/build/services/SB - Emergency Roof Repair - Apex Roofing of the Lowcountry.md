@@ -103,7 +103,7 @@ Routed elsewhere: interim-steps rows PAA #61, #104; FO #96, #98, #259, #371 (fro
 
 ## 6 · Must not appear
 
-Any response time · "24 hour" / "24/7" / "same-day" / "within the hour" · "no after-hours fee" · tarping as a service (until confirmed) · insurance-claim help · commercial · Georgia · "bonded" · licence class · any price · "best" · cross-page links in prose, FAQ answers or the opening · reviewer names.
+Any response time · "24 hour" / "24/7" / "same-day" / "within the hour" · "no after-hours fee" · tarping as a service (until confirmed) · insurance-claim help · commercial · Georgia · "bonded" · licence class · any price · any per-square price (Paul 2026-10-12) · "best" · cross-page links in prose, FAQ answers or the opening · reviewer names.
 
 ## 7 · Sibling context
 
@@ -135,3 +135,4 @@ Gate **WARN**. Paul's 2026-10-11 facts answers (answer 1: "all 6 service lists a
 | Date | Run | Change |
 |---|---|---|
 | 2026-10-12 | 20261012-071055-build-c11c | FAQ 2 "What should I do about a roof leak until the roofer arrives?" replaced by **"Do past customers get priority in a roofing emergency?"** (Paul chose option a of F1: it duplicated the approved Roof Repair emergency-leak FAQ, SEM-1). Answer from BG-D Emergency (Client Confirmed 2026-10-07). The old FAQ's routed rows moved to the H2 delivery. F1 marked resolved. Nothing else changed. |
+| 2026-10-12 | 20261012-071954-build-c525 | Paul 2026-10-12 (no per-square prices anywhere): checked — this brief carried no per-square figure; "any per-square price" added to Must not appear. Nothing else changed. |
