@@ -1072,7 +1072,24 @@
           "svc-skylights"
         ],
         "state": "briefs_written",
-        "briefs": null,
+        "briefs": {
+          "state": "approved",
+          "by": "Paul",
+          "at": "2026-10-12T07:37:19-05:00",
+          "note": null,
+          "files": {
+            "clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Replacement - Apex Roofing of the Lowcountry.md": "4701fec5c85b",
+            "clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Installation - Apex Roofing of the Lowcountry.md": "7f5c51df1771",
+            "clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Inspections - Apex Roofing of the Lowcountry.md": "406ef9d8354f",
+            "clients/apex-roofing-of-the-lowcountry/build/services/SB - Emergency Roof Repair - Apex Roofing of the Lowcountry.md": "d5ce0dc27f69",
+            "clients/apex-roofing-of-the-lowcountry/build/services/SB - Metal Roofing - Apex Roofing of the Lowcountry.md": "044a19827aa0",
+            "clients/apex-roofing-of-the-lowcountry/build/services/SB - Slate Roofing - Apex Roofing of the Lowcountry.md": "a03788746504",
+            "clients/apex-roofing-of-the-lowcountry/build/services/SB - Skylights - Apex Roofing of the Lowcountry.md": "76da67472384"
+          },
+          "conditions": [],
+          "sensitive_review": null,
+          "practitioner": null
+        },
         "drafts": null,
         "files": {
           "briefs": [
@@ -1378,7 +1395,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-12T07:33:55-05:00",
+  "updated": "2026-10-12T07:37:19-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",

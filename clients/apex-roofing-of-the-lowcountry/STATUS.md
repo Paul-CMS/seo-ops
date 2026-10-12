@@ -1,17 +1,16 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
-- **What is happening now:** waiting for Paul's approval — the briefs for batch services are ready for your approval (outline before prose; one brief per page, each written in its own run)
-- **Waiting on:** Paul — the briefs for batch services are ready for your approval (outline before prose; one brief; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
-- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry batch:services:briefs --files "clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Replacement - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Installation - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Inspections - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Emergency Roof Repair - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Metal Roofing - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Slate Roofing - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Skylights - Apex Roofing of the Lowcountry.md"` (or asks for changes first)
+- **What is happening now:** ready to start: draft and self-critique for svc-roof-replacement (its own run)
+- **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
+- **Next action:** `/build apex-roofing-of-the-lowcountry draft services svc-roof-replacement` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open apex-roofing-of-the-lowcountry`) and types `/next apex-roofing-of-the-lowcountry` (agents: build (opus), brief-writer (sonnet), clerk (haiku))
 
-_Generated 2026-10-12T07:33 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-12T07:37 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the briefs for batch services are ready for your approval (outline before prose; one brief per page, each written in its own run) | 2026-10-12 | /approve apex-roofing-of-the-lowcountry batch:services:briefs |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
@@ -63,6 +62,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-11: site plan — approved
 - 2026-10-09: batch pilot briefs — approved
 - 2026-10-09: batch pilot drafts — approved
+- 2026-10-12: batch services briefs — approved
 - Entity: category Roofing Contractor (variants Roofer, Roofers); area = Hilton Head Island–Bluffton–Port Royal metro area.
 - Titles: homepage SEO title uses "Hilton Head Island Metropolitan Area"; homepage H1 uses a familiar name (Lowcountry / South Carolina Lowcountry); service titles `Service Name - Apex Roofing of the Lowcountry` (no area); brand always in full.
 - Homepage: links all 8 services (Paul exception).
