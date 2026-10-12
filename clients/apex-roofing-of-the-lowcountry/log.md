@@ -3497,3 +3497,64 @@ Changes: 0 · Summary: Skylights service draft written from the approved brief (
 - CHANGE #556 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (15).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 81b2326ffced | result: done · copied (Drive for desktop syncs it)
 - CHANGE #557 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (15).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (15).md | result: done · renamed and moved, nothing deleted
 - CHANGE #558 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (15).md | new: Apex Roofing of the Lowcountry - Status.md · sha 21349f4267fb | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-12T08:20 · after build:draft (run 20261012-081530-build-c16d) · Paul typed /next
+
+## RUN 20261012-082058-build-4027 · STARTED · /build · 2026-10-12T08:20:58-05:00
+Step: build:drafts · batch services · session a1a7f5f8-03bf-44ec-ad8e-1ebe990b1d87
+Gates checked: discovery_signed_off, batch:services:drafts_ready
+### HANDOFF · /build · 2026-10-12 · run 20261012-082058-build-4027
+**Agent:** Build (Agent 2), Opus · **Date:** 2026-10-12 · **Route:** A
+
+### Done
+- Read all seven service drafts side by side (Roof Replacement, Roof Installation, Roof Inspections, Emergency Roof Repair, Metal Roofing, Slate Roofing, Skylights), each written in its own run (CM-043). Also read the approved pilot pages (Roof Repair, Bluffton) as the earlier-batch registry, because Brand Guide C1–C3 are still empty.
+- Wrote the Stage 4 semantic review, report only, with no draft changed: `clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Semantic Review - services - REVIEW.md`. This is the path the step prescribes, used instead of `build/services/REVIEW - services batch drafts.md`.
+- Recorded `status.py batch apex-roofing-of-the-lowcountry services --state drafts_written --sem-table <review> --sem-findings 15`. The per-page drafts were collected automatically.
+
+### Cross-page claim checks
+- Whole-home prices only, with no per-square price anywhere: pass. Slate's "per square" is a weight figure.
+- Belmont is not named: pass.
+- The Gathercole review is cited once, on Replacement only, with no name: pass.
+- DaVinci is the only synthetic brand: pass.
+- ShingleMaster is confirmed: pass.
+- The B1 reserved variant is unused: pass.
+- No in-prose links: pass.
+- Every bracket is a NEED note: pass.
+- Open: the 40-year metal warranty is stated three times on Metal while D `d-warranty-terms` still reads W14 as Submitted. It must be recorded as a fact before ship.
+
+### SEM items (15; Paul picks)
+1. Replacement: remove the "waves you can surf on" quote. Installation owns it (brief split).
+2. Metal: say the 40-year warranty in the H3 and FAQ 5 only, and drop it from FAQ 2.
+3. Metal: FAQ 2 stops restating FAQ 1's range in full; FAQ 3 shortens its repeat of the fasteners and coatings.
+4. Replacement and Emergency: add review dates (July 2019, January 2024; the Emergency limb quote's date is looked up at apply).
+5. Replacement: "Town permit" becomes "the permit" (county addresses).
+6. Skylights: drop the on-call / high-priority sentence (it copies approved Roof Repair; Emergency owns it).
+7. Emergency: cut within-page repeats (on-call three times, no-minimum twice, the tarp NEED twice).
+8. Installation: cut within-page repeats (brand choice three times, underlayment thickness, street test, residential-only).
+9. Metal: drop the standalone owners line, which near-copies Slate's.
+10. Replacement, Metal, Slate, Skylights: vary the photos/clean-up step. Replacement's line copies pilot Roof Repair.
+11. Inspections, Slate, Skylights: rework the openings that share sentence frames with siblings.
+12. Installation (2 H2s), Inspections and Emergency FAQ H2s: reshape the headings that copy pilot Roof Repair's H2 templates.
+13. Inspections: the storm-damage FAQ drops its signs list, which repeats its own H3 and Emergency's.
+14. Slate: merge FAQs 7 and 8, and drop FAQs 3 and 5 if they are still unsourced, which brings the page to 5–6 FAQs.
+15. Skylights: FAQ 4 (skylights on metal) stays only if the client confirms and a source is found; otherwise it goes to the blog list. Keep at least 4 FAQs.
+
+### Open items (not fixed here)
+- [NEED] counts: Replacement 2 · Installation 3 · Inspections 5 · Emergency 7 · Metal 3 · Slate 3 · Skylights 6.
+- W14 fact row to record (`run.py fact … --id d-warranty-terms`).
+- pilot_emergency_faq_link_cm022 is still open.
+- C3 write-back after approval.
+
+### Flags
+- None new.
+
+### Next
+- Paul reviews the seven drafts with the review table and approves them with his SEM picks (`/approve apex-roofing-of-the-lowcountry batch:services:drafts --sem <ids>` or `--sem none`). Then apply-sem runs if he picks any items, then writeback.
+### END HANDOFF
+## RUN 20261012-082058-build-4027 · FINISHED · 2026-10-12T08:26:44-05:00
+Changes: 0 · Summary: Services batch review: 7 drafts side by side, semantic review written (15 SEM items, report only), batch drafts_written for Paul's approval
+- CHANGE #559 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (13).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (13).md | result: done · renamed and moved, nothing deleted
+- CHANGE #560 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (13).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 8e1e07f8bd05 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #561 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (16).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (16).md | result: done · renamed and moved, nothing deleted
+- CHANGE #562 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (16).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 844423fde6b4 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #563 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (16).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (16).md | result: done · renamed and moved, nothing deleted
+- CHANGE #564 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (16).md | new: Apex Roofing of the Lowcountry - Status.md · sha ea1c0e5877c4 | result: done · copied (Drive for desktop syncs it)

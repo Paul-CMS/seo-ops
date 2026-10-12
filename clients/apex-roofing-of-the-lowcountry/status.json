@@ -1113,7 +1113,7 @@
           "svc-slate-roofing",
           "svc-skylights"
         ],
-        "state": "briefs_written",
+        "state": "drafts_written",
         "briefs": {
           "state": "approved",
           "by": "Paul",
@@ -1142,6 +1142,16 @@
             "clients/apex-roofing-of-the-lowcountry/build/services/SB - Metal Roofing - Apex Roofing of the Lowcountry.md",
             "clients/apex-roofing-of-the-lowcountry/build/services/SB - Slate Roofing - Apex Roofing of the Lowcountry.md",
             "clients/apex-roofing-of-the-lowcountry/build/services/SB - Skylights - Apex Roofing of the Lowcountry.md"
+          ],
+          "drafts": [
+            "clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Replacement - Apex Roofing of the Lowcountry.md",
+            "clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Installation - Apex Roofing of the Lowcountry.md",
+            "clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Inspections - Apex Roofing of the Lowcountry.md",
+            "clients/apex-roofing-of-the-lowcountry/build/services/SD - Emergency Roof Repair - Apex Roofing of the Lowcountry.md",
+            "clients/apex-roofing-of-the-lowcountry/build/services/SD - Metal Roofing - Apex Roofing of the Lowcountry.md",
+            "clients/apex-roofing-of-the-lowcountry/build/services/SD - Slate Roofing - Apex Roofing of the Lowcountry.md",
+            "clients/apex-roofing-of-the-lowcountry/build/services/SD - Skylights - Apex Roofing of the Lowcountry.md",
+            "clients/apex-roofing-of-the-lowcountry/build/Apex Roofing of the Lowcountry - Semantic Review - services - REVIEW.md"
           ]
         },
         "facts_interview": {
@@ -1155,7 +1165,8 @@
           ],
           "questions": 0,
           "research": 0
-        }
+        },
+        "sem_findings": 15
       },
       {
         "id": "locations",
@@ -1410,12 +1421,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261012-081530-build-c16d",
+    "run_id": "20261012-082058-build-4027",
     "command": "build",
-    "finished": "2026-10-12T08:19:33-05:00",
-    "result": "Skylights service draft written from the approved brief (1,096 words, 6 NEED markers, E1-E10 and spec checks pass)",
+    "finished": "2026-10-12T08:26:44-05:00",
+    "result": "Services batch review: 7 drafts side by side, semantic review written (15 SEM items, report only), batch drafts_written for Paul's approval",
     "changes": 0,
-    "step": "build:draft",
+    "step": "build:drafts",
     "batch": "services"
   },
   "spend": {
@@ -1437,7 +1448,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-12T08:19:33-05:00",
+  "updated": "2026-10-12T08:26:44-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -1720,8 +1731,8 @@
     "dropped": []
   },
   "review_pause": {
-    "run_id": "20261012-081530-build-c16d",
-    "step": "build:draft",
-    "at": "2026-10-12T08:19:33-05:00"
+    "run_id": "20261012-082058-build-4027",
+    "step": "build:drafts",
+    "at": "2026-10-12T08:26:44-05:00"
   }
 }
