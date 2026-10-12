@@ -1,0 +1,31 @@
+{
+  "page": "loc-levy",
+  "facts": {
+    "city_served": {
+      "value": "Levy, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06.",
+      "status": "Paul Approved",
+      "source": "Brand Guide E (all 12 towns confirmed, Paul 2026-10-06); decisions-settled 'business' (12 towns)"
+    },
+    "local_context": {
+      "value": "Unincorporated community in southern Jasper County; elevation 13 ft; reached via SC Highway 315; formerly served by the now-abandoned Seaboard Air Line Charleston Subdivision. Page gives no population, climate, terrain or housing data.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Levy,_South_Carolina (read 2026-10-11)"
+    },
+    "neighborhoods": {
+      "value": "",
+      "status": "Unknown",
+      "source": "not found — tried: https://en.wikipedia.org/wiki/Levy,_South_Carolina (names none; Levy appears only in the Jasper County list of other communities)"
+    },
+    "things_to_do": {
+      "value": "",
+      "status": "Unknown",
+      "source": "not found — tried: https://en.wikipedia.org/wiki/Levy,_South_Carolina (no attractions stated)"
+    },
+    "top_sites": {
+      "value": "",
+      "status": "Unknown",
+      "source": "not found — tried: https://en.wikipedia.org/wiki/Levy,_South_Carolina (no landmarks stated)"
+    }
+  },
+  "recorded_by_run": "20261011-212524-build-5379"
+}

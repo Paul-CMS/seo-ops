@@ -1,0 +1,102 @@
+[
+  {
+    "kind": "client",
+    "key": "fact:svc-roof-replacement:service_scope",
+    "fact_id": "fact:svc-roof-replacement:service_scope",
+    "keys": ["fact:svc-roof-replacement:service_scope", "fact:svc-roof-inspections:service_scope", "fact:svc-emergency-roof-repair:service_scope", "fact:svc-metal-roofing:service_scope", "fact:svc-slate-roofing:service_scope", "fact:svc-skylights:service_scope"],
+    "pages": ["svc-roof-replacement", "svc-roof-inspections", "svc-emergency-roof-repair", "svc-metal-roofing", "svc-slate-roofing", "svc-skylights"],
+    "text": "Your website lists what each service includes. Is each list right? (yes / no / correction for each) a) Roof replacement: tear-off and re-roof in architectural shingles (CertainTeed or GAF), metal, slate or synthetic. b) Roof inspections: post-storm, pre-purchase, annual maintenance and insurance-claim inspections (homes only). c) Emergency repair: hurricane and storm wind damage, thunderstorm damage, hail damage, active leaks; and do you tarp roofs in an emergency? d) Metal: standing seam panels with Kynar 500 / Hylar 5000 coatings, plus repair and re-coating of older metal roofs. e) Slate: Vermont slate and synthetic slate (DaVinci, CertainTeed Belmont), plus slate repair (tiles, flashing, re-nailing). f) Skylights: new installs (Velux and FAKRO only), fogged-glass unit replacement, flashing and curb repair, full replacement.",
+    "best_answer": "Live pages /roof-replacement/, /roof-inspections/, /emergency-roof-repair/ (read 2026-10-05) and /metal-roofing/, /slate-roofing/, /skylights/ (read 2026-10-11); none confirmed by the client",
+    "searched": ["facts.json", "decisions-settled.md", "reviews (reviews.csv, review-facts.json)", "live pages /roof-replacement/ /roof-inspections/ /emergency-roof-repair/ /metal-roofing/ /slate-roofing/ /skylights/", "GBP data (not on disk)", "proof sheet / Discovery Record"]
+  },
+  {
+    "kind": "client",
+    "key": "fact:svc-metal-roofing:service_process",
+    "fact_id": "fact:svc-metal-roofing:service_process",
+    "keys": ["fact:svc-metal-roofing:service_process", "fact:svc-slate-roofing:service_process", "fact:svc-skylights:service_process"],
+    "pages": ["svc-metal-roofing", "svc-slate-roofing", "svc-skylights"],
+    "text": "How the work is done on these three. Your site says (yes / no / correction for each): a) Metal: free consultation, colour samples and HOA/ARB paperwork handled for you; damaged metal is priced as repair versus replace. b) Slate: the roof framing is checked first (slate is 3-5 times heavier than shingles) and reinforced if needed; you have handled City of Beaufort BAR and Hilton Head ARB approvals (Sea Pines, Palmetto Dunes, Hilton Head Plantation). c) Skylights: a leak in rain means flashing or curb, fog between the panes means a failed glass unit; itemised written estimate; ARB approval where the skylight faces the street. Anything you always do on these jobs that the site leaves out?",
+    "best_answer": "Live pages /metal-roofing/, /slate-roofing/, /skylights/ (read 2026-10-11); none gives a step-by-step install method",
+    "searched": ["facts.json", "decisions-settled.md", "reviews (reviews.csv, review-facts.json)", "live pages /metal-roofing/ /slate-roofing/ /skylights/", "GBP data (not on disk)", "proof sheet / Discovery Record"]
+  },
+  {
+    "kind": "client",
+    "key": "fact:svc-roof-repair:pricing",
+    "fact_id": "fact:svc-roof-repair:pricing",
+    "keys": ["fact:svc-roof-repair:pricing", "fact:svc-roof-installation:pricing", "fact:svc-roof-inspections:pricing", "fact:svc-skylights:pricing"],
+    "pages": ["svc-roof-repair", "svc-roof-installation", "svc-roof-inspections", "svc-skylights"],
+    "text": "Prices. A range, 'it depends on ...', or 'don't publish' are all fine. a) A typical roof repair: what range, or what drives the cost? b) Inspections: your site says pre-estimate inspections are always free and an independent inspection report is priced separately. Right? If so, roughly what does a report cost? c) Skylights: the site says $400-$800 for a new glass unit, $600-$1,200 for a flashing kit, $1,500-$3,500 for a full replacement. OK to keep? d) New-construction roofing: a price you want shown, or leave it out?",
+    "best_answer": "No Apex repair price anywhere (reviews checked by meaning 2026-10-11: none); inspections W17 on the live site; skylight ranges on /skylights/ (read 2026-10-11). Shingle replacement $9,000-$18,000 and metal/slate ranges are already settled and not asked.",
+    "searched": ["facts.json", "decisions-settled.md", "reviews (reviews.csv, review-facts.json)", "live pages /roof-inspections/ (W17) /skylights/", "GBP data (not on disk)", "proof sheet / Discovery Record"]
+  },
+  {
+    "kind": "client",
+    "key": "fact:d:warranty_terms",
+    "fact_id": "fact:d:warranty_terms",
+    "keys": ["fact:d:warranty_terms"],
+    "pages": ["svc-metal-roofing"],
+    "text": "Your metal roofing page says a metal roof with a marine-grade coating carries a 40-year manufacturer warranty against chalking and fading. Is that right? (Your shingle warranties, 50-year manufacturer and lifetime no-leak workmanship, both transferable, are already confirmed.) yes / no / correction",
+    "best_answer": "40-year panel warranty (W14, /metal-roofing/, read 2026-10-11)",
+    "searched": ["facts.json", "decisions-settled.md", "reviews (reviews.csv, review-facts.json)", "live page /metal-roofing/ (W14)", "Brand Guide D Warranty terms", "proof sheet / Discovery Record"]
+  },
+  {
+    "kind": "client",
+    "key": "fact:d:insurance",
+    "fact_id": "fact:d:insurance",
+    "keys": ["fact:d:insurance"],
+    "pages": ["svc-roof-repair", "svc-roof-replacement", "svc-roof-installation", "svc-roof-inspections", "svc-emergency-roof-repair", "svc-metal-roofing", "svc-slate-roofing", "svc-skylights", "home"],
+    "text": "Insurance: we have full general liability and workers' compensation. Right? And are you bonded? yes / no / correction",
+    "best_answer": "Full general liability and workers' compensation (W15, Paul answers B11); bonded not stated",
+    "searched": ["facts.json", "decisions-settled.md", "reviews (one mention only, 2026-10-11)", "live site W15", "Paul answers B11", "proof sheet / Discovery Record"]
+  },
+  {
+    "kind": "client",
+    "key": "fact:d:services_subcontracted",
+    "fact_id": "fact:d:services_subcontracted",
+    "keys": ["fact:d:services_subcontracted"],
+    "pages": ["svc-roof-installation"],
+    "text": "New construction: you work as the roofing subcontractor for builders on new homes in Beaufort and Jasper County. Right? yes / no / correction",
+    "best_answer": "W16 (live site); Paul answers B4: accurate",
+    "searched": ["facts.json", "decisions-settled.md", "reviews (reviews.csv)", "live site W16", "Paul answers B4", "proof sheet / Discovery Record"]
+  },
+  {
+    "kind": "client",
+    "key": "fact:home:core_services",
+    "fact_id": "fact:home:core_services",
+    "keys": ["fact:home:core_services"],
+    "pages": ["home"],
+    "text": "Which two or three services do you most want more calls for (for example replacement, repair, metal, inspections)?",
+    "best_answer": "",
+    "searched": ["facts.json", "decisions-settled.md", "reviews (reviews.csv)", "live homepage", "GBP categories (Discovery Record)", "proof sheet / Discovery Record"]
+  },
+  {
+    "kind": "client",
+    "key": "fact:d:awards",
+    "fact_id": "fact:d:awards",
+    "keys": ["fact:d:awards"],
+    "pages": ["home", "about"],
+    "text": "Any awards or rankings we can mention (a manufacturer award, a 'Best of' listing)? 'None' is a fine answer.",
+    "best_answer": "None found; BBB A+ since March 2021 is already recorded",
+    "searched": ["facts.json", "decisions-settled.md", "reviews (reviews.csv)", "live site", "BBB profile", "proof sheet / Discovery Record"]
+  },
+  {
+    "kind": "client",
+    "key": "fact:d:team_size",
+    "fact_id": "fact:d:team_size",
+    "keys": ["fact:d:team_size"],
+    "pages": ["home", "about"],
+    "text": "Your site says operations are handled by your in-house team. Right? Roughly how many people on the crew, and about how many roofs done since 2015? (Skip anything you'd rather not publish.)",
+    "best_answer": "'Our operations are handled by our in-house team' (W24, live site), not confirmed",
+    "searched": ["facts.json", "decisions-settled.md", "reviews (reviews.csv)", "live site W24", "GBP data (not on disk)", "proof sheet / Discovery Record"]
+  },
+  {
+    "kind": "client",
+    "key": "fact:about:company_story",
+    "fact_id": "fact:about:company_story",
+    "keys": ["fact:about:company_story"],
+    "pages": ["about"],
+    "text": "In a sentence or two: why did Ralph start Apex in 2015, and how did Pierce come into it? A voice memo is fine.",
+    "best_answer": "Customers call it a family-owned business (review 2019-06-15); nothing on how or why it started",
+    "searched": ["facts.json", "decisions-settled.md", "reviews (checked by meaning 2026-10-11: no origin story)", "live About page", "BBB / LinkedIn (Discovery Record)", "proof sheet / Discovery Record"]
+  }
+]

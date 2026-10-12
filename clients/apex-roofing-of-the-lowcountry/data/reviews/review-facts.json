@@ -1,0 +1,688 @@
+{
+  "made": "2026-10-11T21:26:39-05:00",
+  "min_reviewers": 3,
+  "facts": {
+    "fact:timeframe": {
+      "label": "timeframe",
+      "count": 8,
+      "quotes": [
+        {
+          "date": "2025-06-05",
+          "quote": "One of them was Apex, spoke with Ralph the owner and he had his son Pearce call, and he came by the next day.",
+          "row": "reviews.csv row 9"
+        },
+        {
+          "date": "2024-01-03",
+          "quote": "2 days in n out.",
+          "row": "reviews.csv row 14"
+        },
+        {
+          "date": "2023-12-29",
+          "quote": "Showed up on time, inspected the roof as requested and provided photos and a written report the next day.",
+          "row": "reviews.csv row 15"
+        },
+        {
+          "date": "2019-12-31",
+          "quote": "That night I got a very fair and reasonable quote and when I accepted, they were out two days later to do the repair which was amazing around the holidays.",
+          "row": "reviews.csv row 40"
+        },
+        {
+          "date": "2019-07-18",
+          "quote": "Ralph Brehaney, (owner), and the crew were so skilled and performed excellently; tearing off old roof and replacing with new Certainteed Shingles in three days, during the hottest days of summer on our 12/12 pitch roof!",
+          "row": "reviews.csv row 46"
+        },
+        {
+          "date": "2019-05-22",
+          "quote": "They arrived on time, worked tirelessly throughout the day, (only breaking for lunch), and had the new roof installed and completed by 1:00pm the next day.",
+          "row": "reviews.csv row 48"
+        },
+        {
+          "date": "2018-10-19",
+          "quote": "The roof was completed in a day and a half by hard working professional workers and all defects in the old roof were corrected.",
+          "row": "reviews.csv row 58"
+        },
+        {
+          "date": "2018-08-21",
+          "quote": "Ralph (owner) responded to my phone call in less than 2 hours and sent his son Pierce the next day to repair a small leak Wow!",
+          "row": "reviews.csv row 61"
+        }
+      ]
+    },
+    "fact:pricing": {
+      "label": "pricing",
+      "count": 18,
+      "quotes": [
+        {
+          "date": "2026-08-15",
+          "quote": "In my opinion, the various System Plus Limited Warranties justified the replacement of the roof and its total cost, and it certainly assured me of its future viability.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2026-05-17",
+          "quote": "I live in Hampton Hall in Bluffton and I had a need recently to get a quote for a new roof.",
+          "row": "reviews.csv row 7"
+        },
+        {
+          "date": "2025-06-05",
+          "quote": "One of the other roofers came by a few days before and quoted me $3,000 to fix the leak.",
+          "row": "reviews.csv row 9"
+        },
+        {
+          "date": "2023-02-01",
+          "quote": "Honest assessments and pricing for roofing needs.",
+          "row": "reviews.csv row 20"
+        },
+        {
+          "date": "2022-07-17",
+          "quote": "We were quite pleased with the workmanship and price.",
+          "row": "reviews.csv row 21"
+        },
+        {
+          "date": "2021-12-13",
+          "quote": "The work began on time, finished on time, and the price was fair.",
+          "row": "reviews.csv row 23"
+        },
+        {
+          "date": "2020-09-28",
+          "quote": "They are priced competitively, and their work is impeccable.",
+          "row": "reviews.csv row 32"
+        },
+        {
+          "date": "2020-07-07",
+          "quote": "From quote to completion our expectations were exceeded.",
+          "row": "reviews.csv row 33"
+        }
+      ]
+    },
+    "fact:warranty": {
+      "label": "warranty",
+      "count": 7,
+      "quotes": [
+        {
+          "date": "2026-08-15",
+          "quote": "Following the job completion, Ralph provided me with the warranties that come with all the GAF products that were applied to our roof, which I was not initially aware of but am very pleased with.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2025-03-03",
+          "quote": "The 10 year workmanship warranty shows confidence in the work done.",
+          "row": "reviews.csv row 11"
+        },
+        {
+          "date": "2024-05-08",
+          "quote": "All jobs are done very well and in a timely manner, backed by warranty; and if there is any issue, they respond and deal immediately!!",
+          "row": "reviews.csv row 12"
+        },
+        {
+          "date": "2020-03-11",
+          "quote": "The new roof includes a full 10 year warranty on workmanship!",
+          "row": "reviews.csv row 36"
+        },
+        {
+          "date": "2019-12-28",
+          "quote": "Ralph was very thorough in detail on how the process will go step by step including warranty and County inspection.",
+          "row": "reviews.csv row 41"
+        },
+        {
+          "date": "2019-08-15",
+          "quote": "When APEX Roofing of the Low Country comes to your home to do your roof, you’ll be getting so much more than brand new high quality shingles and a 10 year transferrable warranty…you’ll witness first hand why a success…",
+          "row": "reviews.csv row 44"
+        },
+        {
+          "date": "2019-05-22",
+          "quote": "We also have a (10) yr warranty that protects our home and is transferable should we ever move.",
+          "row": "reviews.csv row 48"
+        }
+      ]
+    },
+    "fact:insurance": {
+      "label": "insurance",
+      "count": 2,
+      "quotes": [
+        {
+          "date": "2020-06-30",
+          "quote": "He gave me an outstanding quote (sans insurance estimate) that was competitive while providing top of the line materials.",
+          "row": "reviews.csv row 34"
+        },
+        {
+          "date": "2018-10-19",
+          "quote": "Apex was the only roofer (from the three roofers contacted) who pointed out the wind damage on our old roof that our insurance company subsequently covered.",
+          "row": "reviews.csv row 58"
+        }
+      ]
+    },
+    "fact:guarantees": {
+      "label": "guarantees",
+      "count": 10,
+      "quotes": [
+        {
+          "date": "2026-08-15",
+          "quote": "His full crew showed up on Monday morning, right at the scheduled time and went right to work, working continuously through each day.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2023-12-29",
+          "quote": "Showed up on time, inspected the roof as requested and provided photos and a written report the next day.",
+          "row": "reviews.csv row 15"
+        },
+        {
+          "date": "2023-12-25",
+          "quote": "They showed up on time and had the job finished when they said they would.",
+          "row": "reviews.csv row 16"
+        },
+        {
+          "date": "2022-07-17",
+          "quote": "Apex Roofing of the Low Country was recommended to us by a neighbor and they responded quickly and patched the hole in our roof to prevent any additional damage to our home.",
+          "row": "reviews.csv row 21"
+        },
+        {
+          "date": "2021-12-13",
+          "quote": "The work began on time, finished on time, and the price was fair.",
+          "row": "reviews.csv row 23"
+        },
+        {
+          "date": "2021-03-15",
+          "quote": "They delivered a high quality finished product on time, on budget and with no surprises.",
+          "row": "reviews.csv row 27"
+        },
+        {
+          "date": "2021-01-24",
+          "quote": "Apex Roofing is always responsive, on time, professional, a great value, and always willing to explain anything in great detail.",
+          "row": "reviews.csv row 28"
+        },
+        {
+          "date": "2020-06-30",
+          "quote": "His team showed up on time and completed on time in spite of the relentless SC heat.",
+          "row": "reviews.csv row 34"
+        }
+      ]
+    },
+    "fact:response_time": {
+      "label": "response time",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2022-07-17",
+          "quote": "Apex Roofing of the Low Country was recommended to us by a neighbor and they responded quickly and patched the hole in our roof to prevent any additional damage to our home.",
+          "row": "reviews.csv row 21"
+        }
+      ]
+    },
+    "fact:emergency": {
+      "label": "emergency",
+      "count": 2,
+      "quotes": [
+        {
+          "date": "2023-12-29",
+          "quote": "I contacted Ralph the week before Christmas on a recommendation from a friend as I needed an emergency roof inspection.",
+          "row": "reviews.csv row 15"
+        },
+        {
+          "date": "2018-10-03",
+          "quote": "I had a small, non-emergency repair and Apex Roofing took care of my issue without trying to up sell me on additional services I did not need.",
+          "row": "reviews.csv row 60"
+        }
+      ]
+    },
+    "fact:founding": {
+      "label": "founding",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2019-06-15",
+          "quote": "What more could you want than good work and a family owned business!",
+          "row": "reviews.csv row 47"
+        }
+      ]
+    },
+    "fact:staff": {
+      "label": "staff",
+      "count": 13,
+      "quotes": [
+        {
+          "date": "2026-08-31",
+          "quote": "The owner, Ralph, was extremely helpful explaining products and handling my MANY questions.",
+          "row": "reviews.csv row 2"
+        },
+        {
+          "date": "2026-07-10",
+          "quote": "Ralph and his son Pierce communicated with us very well and was easy to work with on this job.",
+          "row": "reviews.csv row 5"
+        },
+        {
+          "date": "2026-05-17",
+          "quote": "The owner, Ralph, was very quick to respond with a very competitive quote.",
+          "row": "reviews.csv row 7"
+        },
+        {
+          "date": "2025-06-05",
+          "quote": "One of them was Apex, spoke with Ralph the owner and he had his son Pearce call, and he came by the next day.",
+          "row": "reviews.csv row 9"
+        },
+        {
+          "date": "2021-12-13",
+          "quote": "The owner, Ralph, is experienced, efficient, professional, competent,warm, and friendly.",
+          "row": "reviews.csv row 23"
+        },
+        {
+          "date": "2020-02-20",
+          "quote": "I highly recommend Ralph, his son and crews!",
+          "row": "reviews.csv row 37"
+        },
+        {
+          "date": "2019-08-15",
+          "quote": "Ralph, the owner of the company, puts people first.",
+          "row": "reviews.csv row 44"
+        },
+        {
+          "date": "2019-06-15",
+          "quote": "His son came to fix it -he was very knowledgeable and polite.",
+          "row": "reviews.csv row 47"
+        }
+      ]
+    },
+    "fact:company_story": {
+      "label": "company story",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2019-06-15",
+          "quote": "What more could you want than good work and a family owned business!",
+          "row": "reviews.csv row 47"
+        }
+      ]
+    },
+    "practice:photos": {
+      "label": "photos",
+      "count": 9,
+      "quotes": [
+        {
+          "date": "2026-08-15",
+          "quote": "As an unexpected benefit, each day I received photos, showing the completed work to date.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2023-12-29",
+          "quote": "Showed up on time, inspected the roof as requested and provided photos and a written report the next day.",
+          "row": "reviews.csv row 15"
+        },
+        {
+          "date": "2021-03-27",
+          "quote": "Before and after photos are really useful.",
+          "row": "reviews.csv row 25"
+        },
+        {
+          "date": "2020-03-11",
+          "quote": "Knowing that we were not able to check on the progress from Florida, Ralph kept us up to date with emails and photos - both before and after.",
+          "row": "reviews.csv row 36"
+        },
+        {
+          "date": "2019-12-31",
+          "quote": "He took pictures and explained in detail what could be done to repair it.",
+          "row": "reviews.csv row 40"
+        },
+        {
+          "date": "2019-03-05",
+          "quote": "Ralph, the owner kept me updated on a daily basis with emails and pictures.",
+          "row": "reviews.csv row 52"
+        },
+        {
+          "date": "2018-12-14",
+          "quote": "They explained what was needed in a report & then followed up with pictures & completed work order once the work had been completed.",
+          "row": "reviews.csv row 57"
+        },
+        {
+          "date": "2018-07-24",
+          "quote": "They always kept me in the loop on the progress and even sent daily pictures while we were away for a week during the installation.",
+          "row": "reviews.csv row 63"
+        }
+      ]
+    },
+    "practice:clean-up": {
+      "label": "clean up",
+      "count": 12,
+      "quotes": [
+        {
+          "date": "2026-08-31",
+          "quote": "Clean up was superb each day.",
+          "row": "reviews.csv row 2"
+        },
+        {
+          "date": "2026-08-15",
+          "quote": "The crew did a pretty good job of cleaning up much of the debris at the end of each workday.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2026-07-10",
+          "quote": "The crew we had did a great job in cleaning up after the job was done.",
+          "row": "reviews.csv row 5"
+        },
+        {
+          "date": "2024-02-21",
+          "quote": "The roofing crew were timely, efficient, and kept the worksite neat and tidy.",
+          "row": "reviews.csv row 13"
+        },
+        {
+          "date": "2020-06-30",
+          "quote": "Every detail was taken care of by the Apex team and the clean up was better than when they started.",
+          "row": "reviews.csv row 34"
+        },
+        {
+          "date": "2020-02-20",
+          "quote": "True to the estimate, timing of job, work ethics of the crew and cleanup throughout the project and after.",
+          "row": "reviews.csv row 37"
+        },
+        {
+          "date": "2020-01-30",
+          "quote": "The cleanup was way beyond my expectations with multiple walks around my property.",
+          "row": "reviews.csv row 39"
+        },
+        {
+          "date": "2019-12-18",
+          "quote": "The crew was exceptionally clean following each day’s work.",
+          "row": "reviews.csv row 42"
+        }
+      ]
+    },
+    "practice:permits": {
+      "label": "permits",
+      "count": 2,
+      "quotes": [
+        {
+          "date": "2026-08-15",
+          "quote": "And he took care of obtaining the town and the HOA permits, and once he had those in hand, we set up the schedule to begin the job.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2019-01-16",
+          "quote": "They take care of permits and daily clean-up.",
+          "row": "reviews.csv row 55"
+        }
+      ]
+    },
+    "practice:explains": {
+      "label": "explains",
+      "count": 8,
+      "quotes": [
+        {
+          "date": "2026-08-15",
+          "quote": "Ralph explained to me all that would be done during the replacement.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2025-03-03",
+          "quote": "Ralph explained the continuous improvement philosophy his company utilizes to assure the quality of their work.",
+          "row": "reviews.csv row 11"
+        },
+        {
+          "date": "2021-01-24",
+          "quote": "Apex Roofing is always responsive, on time, professional, a great value, and always willing to explain anything in great detail.",
+          "row": "reviews.csv row 28"
+        },
+        {
+          "date": "2019-12-31",
+          "quote": "He took pictures and explained in detail what could be done to repair it.",
+          "row": "reviews.csv row 40"
+        },
+        {
+          "date": "2019-11-23",
+          "quote": "Ralph sat down with us and explained every detail of the process.",
+          "row": "reviews.csv row 43"
+        },
+        {
+          "date": "2019-01-17",
+          "quote": "He met with me to discuss the bid and to explain each step to me.",
+          "row": "reviews.csv row 54"
+        },
+        {
+          "date": "2019-01-16",
+          "quote": "The owner takes time to explain exactly what and how they’ll do the job – and then they do exactly that, no surprises.",
+          "row": "reviews.csv row 55"
+        },
+        {
+          "date": "2018-12-14",
+          "quote": "They explained what was needed in a report & then followed up with pictures & completed work order once the work had been completed.",
+          "row": "reviews.csv row 57"
+        }
+      ]
+    },
+    "prices ($ amounts)": {
+      "label": "prices ($ amounts)",
+      "count": 2,
+      "quotes": [
+        {
+          "date": "2025-06-05",
+          "quote": "One of the other roofers came by a few days before and quoted me $3,000 to fix the leak.",
+          "row": "reviews.csv row 9"
+        },
+        {
+          "date": "2019-12-18",
+          "quote": "I am quite certain that Ralph could have easily increased our bill by $500 or more for the labor, supplies and materials.",
+          "row": "reviews.csv row 42"
+        }
+      ]
+    },
+    "materials": {
+      "label": "materials",
+      "count": 14,
+      "quotes": [
+        {
+          "date": "2026-08-15",
+          "quote": "The crew even went around our home with a metal detector, picking up the countless loose nails and screws.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2026-07-10",
+          "quote": "Apex Roofing of the Lowcountry did an excellent job of replacing our shingles.",
+          "row": "reviews.csv row 5"
+        },
+        {
+          "date": "2025-06-05",
+          "quote": "Had a slow roof leak on a metal roof that is 7 years old.",
+          "row": "reviews.csv row 9"
+        },
+        {
+          "date": "2025-06-04",
+          "quote": "Apex replaced the roof on my house and changed the skylights with a much better product.",
+          "row": "reviews.csv row 10"
+        },
+        {
+          "date": "2021-03-27",
+          "quote": "(They were tugging at and trying to eat the flashing at the top of the chimney of my house as well as multiple neighbors).",
+          "row": "reviews.csv row 26"
+        },
+        {
+          "date": "2020-05-28",
+          "quote": "Plus, a couple months after the new roof was installed, a raccoon ripped off a bunch of shingles and underlayment trying to get into our attic.",
+          "row": "reviews.csv row 35"
+        },
+        {
+          "date": "2020-03-11",
+          "quote": "Many issues with rot in the underlayment were encountered and all were repaired or replaced.",
+          "row": "reviews.csv row 36"
+        },
+        {
+          "date": "2019-12-31",
+          "quote": "They took many images showing what section was removed and the replacement underlayment and the finished result.",
+          "row": "reviews.csv row 40"
+        }
+      ]
+    },
+    "place:Bluffton": {
+      "label": "Bluffton",
+      "count": 2,
+      "quotes": [
+        {
+          "date": "2026-05-17",
+          "quote": "I live in Hampton Hall in Bluffton and I had a need recently to get a quote for a new roof.",
+          "row": "reviews.csv row 7"
+        },
+        {
+          "date": "2019-03-05",
+          "quote": "I live out of town and needed a roof on my Bluffton home.",
+          "row": "reviews.csv row 52"
+        }
+      ]
+    },
+    "place:Ridgeland": {
+      "label": "Ridgeland",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2020-03-11",
+          "quote": "My sister, who is disabled, lives alone in Ridgeland.",
+          "row": "reviews.csv row 36"
+        }
+      ]
+    },
+    "staff:Ralph": {
+      "label": "person named Ralph",
+      "count": 45,
+      "quotes": [
+        {
+          "date": "2026-08-31",
+          "quote": "The owner, Ralph, was extremely helpful explaining products and handling my MANY questions.",
+          "row": "reviews.csv row 2"
+        },
+        {
+          "date": "2026-08-15",
+          "quote": "I met with both owners of the company, Ralph and Pierce Brehany.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2026-07-10",
+          "quote": "Ralph and his son Pierce communicated with us very well and was easy to work with on this job.",
+          "row": "reviews.csv row 5"
+        },
+        {
+          "date": "2026-05-17",
+          "quote": "The owner, Ralph, was very quick to respond with a very competitive quote.",
+          "row": "reviews.csv row 7"
+        },
+        {
+          "date": "2025-07-30",
+          "quote": "Ralph responded immediately to our every concern.",
+          "row": "reviews.csv row 8"
+        },
+        {
+          "date": "2025-06-05",
+          "quote": "One of them was Apex, spoke with Ralph the owner and he had his son Pearce call, and he came by the next day.",
+          "row": "reviews.csv row 9"
+        },
+        {
+          "date": "2025-03-03",
+          "quote": "Ralph explained the continuous improvement philosophy his company utilizes to assure the quality of their work.",
+          "row": "reviews.csv row 11"
+        },
+        {
+          "date": "2024-05-08",
+          "quote": "Ralph, Pierce, and their crews are amazing!!",
+          "row": "reviews.csv row 12"
+        }
+      ]
+    },
+    "staff:Pierce": {
+      "label": "person named Pierce",
+      "count": 18,
+      "quotes": [
+        {
+          "date": "2026-08-28",
+          "quote": "Pierce was amazing!",
+          "row": "reviews.csv row 3"
+        },
+        {
+          "date": "2026-08-15",
+          "quote": "I met with both owners of the company, Ralph and Pierce Brehany.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2026-07-10",
+          "quote": "Ralph and his son Pierce communicated with us very well and was easy to work with on this job.",
+          "row": "reviews.csv row 5"
+        },
+        {
+          "date": "2024-05-08",
+          "quote": "Ralph, Pierce, and their crews are amazing!!",
+          "row": "reviews.csv row 12"
+        },
+        {
+          "date": "2024-01-03",
+          "quote": "Local Family Biz with Ralph and Son, Pierce, delivered  best products and high level execution for our new roof installation.",
+          "row": "reviews.csv row 14"
+        },
+        {
+          "date": "2021-12-13",
+          "quote": "His son,Pierce, has the same work ethic as his father.",
+          "row": "reviews.csv row 23"
+        },
+        {
+          "date": "2021-08-16",
+          "quote": "I can’t say enough about Ralph and Pierce.",
+          "row": "reviews.csv row 24"
+        },
+        {
+          "date": "2021-03-27",
+          "quote": "Thank you to Ralph and Pierce for getting this job done.",
+          "row": "reviews.csv row 25"
+        }
+      ]
+    },
+    "staff:Brehany": {
+      "label": "person named Brehany",
+      "count": 6,
+      "quotes": [
+        {
+          "date": "2026-08-15",
+          "quote": "I met with both owners of the company, Ralph and Pierce Brehany.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2021-12-13",
+          "quote": "When neither Brehany was on site, one crew leader was assigned.",
+          "row": "reviews.csv row 23"
+        },
+        {
+          "date": "2021-03-15",
+          "quote": "Ralph Brehany and Alex Mejia did an outstanding job.",
+          "row": "reviews.csv row 27"
+        },
+        {
+          "date": "2020-06-30",
+          "quote": "From start to finish Ralph Brehany was a refreshing joy to work with.",
+          "row": "reviews.csv row 34"
+        },
+        {
+          "date": "2020-03-11",
+          "quote": "Ralph Brehany is the exception to the rule!",
+          "row": "reviews.csv row 36"
+        },
+        {
+          "date": "2019-05-22",
+          "quote": "Ralph Brehany (owner) arrived at my home within an hour to inspect, and ultimately determine, I needed a new roof.",
+          "row": "reviews.csv row 48"
+        }
+      ]
+    },
+    "staff:Alex": {
+      "label": "person named Alex",
+      "count": 3,
+      "quotes": [
+        {
+          "date": "2021-03-15",
+          "quote": "Ralph Brehany and Alex Mejia did an outstanding job.",
+          "row": "reviews.csv row 27"
+        },
+        {
+          "date": "2020-09-28",
+          "quote": "The crew, led by Alex, was terrific, and worked extremely hard to make it right.",
+          "row": "reviews.csv row 32"
+        },
+        {
+          "date": "2019-05-22",
+          "quote": "THANK YOU Ralph, Pierce, Alex and the crew!",
+          "row": "reviews.csv row 48"
+        }
+      ]
+    }
+  }
+}

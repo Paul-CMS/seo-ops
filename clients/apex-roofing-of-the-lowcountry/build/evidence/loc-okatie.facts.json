@@ -1,0 +1,31 @@
+{
+  "page": "loc-okatie",
+  "facts": {
+    "city_served": {
+      "value": "Okatie, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06.",
+      "status": "Paul Approved",
+      "source": "Brand Guide E (all 12 towns confirmed, Paul 2026-10-06); decisions-settled 'business' (12 towns)"
+    },
+    "local_context": {
+      "value": "Unincorporated community stretching from south central Jasper County into western Beaufort County, named for the Okatee River (an estuary of Port Royal Sound); elevation 20 ft; predominantly low-density residential development since the 1990s, so housing is largely recent; the page gives estimated growth of 30.5% (27,703 in 2020 to 36,146 in July 2024) [figures as printed on the page; its infobox 2010 count of 12,570 is inconsistent, so treat population as indicative]. Bounded by I-95 and SC 462; SC 170 is the main route. Climate/hurricane not stated on page.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina (read 2026-10-11)"
+    },
+    "neighborhoods": {
+      "value": "3 named on the source: Sun City Hilton Head (age-restricted planned community in the Okatie area of Beaufort and Jasper counties, unincorporated), Riverbend, Oldfield. Okatie is unincorporated, so none are inside a town; fewer than 6 found.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina ; https://en.wikipedia.org/wiki/Sun_City_Hilton_Head (read 2026-10-11)"
+    },
+    "things_to_do": {
+      "value": "Hilton Head Island Recreation Association and the Beaufort-Jasper YMCA of the Lowcountry are listed on the page (fitness classes, youth programs). No attractions otherwise stated; thin.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina (read 2026-10-11)"
+    },
+    "top_sites": {
+      "value": "",
+      "status": "Unknown",
+      "source": "not found — tried: https://en.wikipedia.org/wiki/Okatie,_South_Carolina (page states no NRHP sites and lists only institutions: Beaufort-Jasper Water and Sewer Authority HQ, Beaufort-Jasper Academy for Career Excellence, John Paul II Catholic High School)"
+    }
+  },
+  "recorded_by_run": "20261011-212524-build-5379"
+}

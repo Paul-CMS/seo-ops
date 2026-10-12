@@ -1,0 +1,31 @@
+{
+  "page": "loc-st-helena-island",
+  "facts": {
+    "city_served": {
+      "value": "St. Helena Island, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06.",
+      "status": "Paul Approved",
+      "source": "Brand Guide E (all 12 towns confirmed, Paul 2026-10-06); decisions-settled 'business' (12 towns)"
+    },
+    "local_context": {
+      "value": "Sea Island in Beaufort County surrounded by expansive marshes, especially on the southeastern side; described as a major centre of African-American Gullah culture and language. Page gives no elevation, climate or housing data.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/St._Helena_Island,_South_Carolina (read 2026-10-11)"
+    },
+    "neighborhoods": {
+      "value": "Established communities Frogmore (commercial centre) and Lands End (also called Fort Fremont); other named areas Cedar Grove, Eddings Point, Coffin Point, Fripp Point, Warsaw Island, plus Dulamo Road, Folly Road and Pollawana Road areas. 7 named places plus 3 road-named areas; the page does not state town limits (island is not described as incorporated).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/St._Helena_Island,_South_Carolina (read 2026-10-11)"
+    },
+    "things_to_do": {
+      "value": "",
+      "status": "Unknown",
+      "source": "not found — tried: https://en.wikipedia.org/wiki/St._Helena_Island,_South_Carolina (no visitor activities listed; Penn Center only linked as external site)"
+    },
+    "top_sites": {
+      "value": "Fort Fremont (former military battery at Lands End guarding the Beaufort River entrance); Penn School/Penn Center (post-emancipation school for freed people, linked from page); National Register: Indian Hill Site, Knights of Wise Men Lodge.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/St._Helena_Island,_South_Carolina (read 2026-10-11)"
+    }
+  },
+  "recorded_by_run": "20261011-212524-build-5379"
+}

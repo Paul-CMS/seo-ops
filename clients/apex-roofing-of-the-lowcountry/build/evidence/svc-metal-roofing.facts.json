@@ -1,0 +1,16 @@
+{
+  "page": "svc-metal-roofing",
+  "recorded_by_run": "20261011-212524-build-5379",
+  "facts": {
+    "service_scope": {
+      "value": "Standing seam metal roofing for coastal conditions (salt air, hurricane winds, UV, humidity): concealed fasteners, wind-uplift resistance; page says 'We install Kynar 500 and Hylar 5000 coated standing seam panels in a range of profiles and colors', with colour submittals for HOA communities. Also repair and re-coating of older metal systems: panel re-coating, sealant replacement, panel replacement, with a repair-versus-replace comparison. Page says a properly installed metal roof with a marine-grade coating carries a 40-year manufacturer warranty. Page cost claims (standing seam 2.5x-3x shingles, about $22,000-$40,000 vs $9,000-$18,000) are unconfirmed.",
+      "status": "Submitted",
+      "source": "Live site https://apexroofingtlc.com/metal-roofing/ (read 2026-10-11) — not confirmed by the client or Paul"
+    },
+    "service_process": {
+      "value": "Process is only lightly described: free consultation first; colour submittals and ARB submissions for HOA communities; repair assessed against replacement for damaged metal. No step-by-step install method on the page.",
+      "status": "Submitted",
+      "source": "Live site https://apexroofingtlc.com/metal-roofing/ (read 2026-10-11) — not confirmed by the client or Paul"
+    }
+  }
+}

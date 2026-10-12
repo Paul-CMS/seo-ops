@@ -1,0 +1,31 @@
+{
+  "page": "loc-beaufort",
+  "facts": {
+    "city_served": {
+      "value": "Beaufort, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06.",
+      "status": "Paul Approved",
+      "source": "Brand Guide E (all 12 towns confirmed, Paul 2026-10-06); decisions-settled 'business' (12 towns)"
+    },
+    "local_context": {
+      "value": "Humid subtropical climate, warm winters by SC standards; about 45 in annual precipitation; elevation 20 ft; sits amid a marshy estuary, mostly on Port Royal Island (annexed land on Lady's Island). The 1893 hurricane and a 1907 fire caused extensive destruction; US 21 is the main hurricane evacuation route. Chartered 1711 (second-oldest city in SC); 304 acres are a National Historic Landmark district, known for antebellum architecture; 2020 census 5,947 housing units, 12.2% vacant; Pigeon Point has mostly one-story early-20th-century homes. Flood risk not discussed on the page.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Beaufort,_South_Carolina (read 2026-10-11)"
+    },
+    "neighborhoods": {
+      "value": "Historic district's five neighbourhoods: Downtown, The Point, The Bluff, The Old Commons, Northwest Quadrant; other residential areas: Pigeon Point, Higginsonville, West End, Depot, Spanish Point, and the Battery Creek neighbourhoods Mossy Oaks, Royal Oaks, First Boulevard, Cottage Farms. 15 named; Lady's Island is only partly annexed. Page does not separately state town-limit status per neighbourhood.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Beaufort,_South_Carolina (read 2026-10-11)"
+    },
+    "things_to_do": {
+      "value": "Hunting Island State Park (page: the state's most visited state park); Henry Chambers Waterfront Park; Spanish Moss Trail (rail trail, opened 2012); Beaufort Shrimp Festival (first weekend of October); Beaufort International Film Festival (mid-February); A Taste of Beaufort (first Saturday in May); Water Festival (mid-July); Historic Beaufort Foundation Fall Tour of Homes; Downtown Marina on the Intracoastal Waterway.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Beaufort,_South_Carolina (read 2026-10-11)"
+    },
+    "top_sites": {
+      "value": "Beaufort Historic District (National Historic Landmark); John Mark Verdier House (901 Bay Street); Parish Church of St. Helena (founded 1712); Beaufort National Cemetery; Robert Smalls House; Tabby Manse; The Anchorage; Fort Lyttelton Site; Hunting Island State Park Lighthouse; Reconstruction Era National Monument (established 2017).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Beaufort,_South_Carolina (read 2026-10-11)"
+    }
+  },
+  "recorded_by_run": "20261011-212524-build-5379"
+}

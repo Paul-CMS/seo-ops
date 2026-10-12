@@ -9,7 +9,7 @@
     "sensitive": false,
     "sensitive_category": null,
     "practitioner_signoff": false,
-    "route": null,
+    "route": "A",
     "drive_folder_id": "1DN9Lji_McIOo9i2eFLV-u7eXrvY00G37",
     "kadence_head_meta_key": null,
     "gbp_url": "https://maps.app.goo.gl/AWfz3YNkwvsrggFg7",
@@ -157,33 +157,26 @@
       "h1": "Roof Leak and Damage Repair in the South Carolina Lowcountry",
       "claims": [],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 1,
-          "Unknown": 2,
-          "Unverified": 9,
+          "Known": 7,
+          "Unknown": 0,
+          "Unverified": 5,
           "Conflict": 0
         },
         "why": [
-          "3 required facts are not known (block at 2)",
-          "only 1 known fact(s) — fewer than 3 (CM-015)"
+          "1 required and 4 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-repair.grid.md",
-        "sha": "bb154bf1bbfc",
-        "at": "2026-10-08T14:34:42-05:00",
-        "run": "20261008-143018-build-a144",
+        "sha": "b4dd3f883c2e",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
         "gaps": [
-          "phone",
           "service_scope",
-          "offer",
-          "timeframe",
           "pricing",
           "warranty",
           "licence",
-          "insurance",
-          "certifications",
-          "rating",
-          "guarantees"
+          "insurance"
         ],
         "waiver": {
           "by": "Paul",
@@ -230,32 +223,25 @@
       "h1": "Re-Roofing in Beaufort and Jasper Counties",
       "claims": [],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 2,
-          "Unknown": 1,
-          "Unverified": 9,
+          "Known": 8,
+          "Unknown": 0,
+          "Unverified": 4,
           "Conflict": 0
         },
         "why": [
-          "3 required facts are not known (block at 2)",
-          "only 2 known fact(s) — fewer than 3 (CM-015)"
+          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-replacement.grid.md",
-        "sha": "5753d75a3cf4",
-        "at": "2026-10-09T14:30:00-05:00",
-        "run": "20261009-142804-build-8390",
+        "sha": "22cb36fe6e38",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
         "gaps": [
-          "phone",
           "service_scope",
-          "offer",
-          "timeframe",
           "warranty",
           "licence",
-          "insurance",
-          "certifications",
-          "rating",
-          "guarantees"
+          "insurance"
         ]
       }
     },
@@ -275,32 +261,25 @@
         }
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 2,
-          "Unknown": 2,
-          "Unverified": 9,
+          "Known": 8,
+          "Unknown": 0,
+          "Unverified": 5,
           "Conflict": 0
         },
         "why": [
-          "3 required facts are not known (block at 2)",
-          "only 2 known fact(s) — fewer than 3 (CM-015)"
+          "1 required and 4 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-installation.grid.md",
-        "sha": "a312dc13e62f",
-        "at": "2026-10-09T14:30:00-05:00",
-        "run": "20261009-142804-build-8390",
+        "sha": "00c6eca94d6c",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
         "gaps": [
-          "phone",
-          "offer",
-          "timeframe",
           "pricing",
           "warranty",
           "licence",
           "insurance",
-          "certifications",
-          "rating",
-          "guarantees",
           "claim:New-Construction"
         ]
       }
@@ -315,33 +294,26 @@
       "h1": "Roof Condition Inspections in Beaufort and Jasper Counties",
       "claims": [],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 1,
-          "Unknown": 1,
-          "Unverified": 10,
+          "Known": 7,
+          "Unknown": 0,
+          "Unverified": 5,
           "Conflict": 0
         },
         "why": [
-          "3 required facts are not known (block at 2)",
-          "only 1 known fact(s) — fewer than 3 (CM-015)"
+          "1 required and 4 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-inspections.grid.md",
-        "sha": "fdc106b773fc",
-        "at": "2026-10-09T14:30:00-05:00",
-        "run": "20261009-142804-build-8390",
+        "sha": "0a9554785cb6",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
         "gaps": [
-          "phone",
           "service_scope",
-          "offer",
-          "timeframe",
           "pricing",
           "warranty",
           "licence",
-          "insurance",
-          "certifications",
-          "rating",
-          "guarantees"
+          "insurance"
         ]
       }
     },
@@ -361,33 +333,25 @@
         }
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 2,
-          "Unknown": 1,
-          "Unverified": 10,
+          "Known": 9,
+          "Unknown": 0,
+          "Unverified": 4,
           "Conflict": 0
         },
         "why": [
-          "4 required facts are not known (block at 2)",
-          "only 2 known fact(s) — fewer than 3 (CM-015)"
+          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-emergency-roof-repair.grid.md",
-        "sha": "45d84fe0b2c3",
-        "at": "2026-10-09T14:30:00-05:00",
-        "run": "20261009-142804-build-8390",
+        "sha": "9346e4c77bb5",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
         "gaps": [
-          "phone",
           "service_scope",
-          "offer",
-          "timeframe",
           "warranty",
           "licence",
-          "insurance",
-          "certifications",
-          "rating",
-          "guarantees",
-          "claim:emergency"
+          "insurance"
         ]
       }
     },
@@ -409,7 +373,31 @@
       "live_url": "https://apexroofingtlc.com/metal-roofing-2/",
       "replaces": [
         "https://apexroofingtlc.com/metal-roofing-2/"
-      ]
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 7,
+          "Unknown": 0,
+          "Unverified": 6,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-metal-roofing.grid.md",
+        "sha": "ee74ef7bada8",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "pricing",
+          "warranty",
+          "licence",
+          "insurance"
+        ]
+      }
     },
     "svc-slate-roofing": {
       "state": "planned",
@@ -425,7 +413,31 @@
           "label": "Apex installs natural slate (W19 price range)",
           "from": "D:Price ranges"
         }
-      ]
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 7,
+          "Unknown": 0,
+          "Unverified": 6,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-slate-roofing.grid.md",
+        "sha": "aa92f8e8aeee",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "pricing",
+          "warranty",
+          "licence",
+          "insurance"
+        ]
+      }
     },
     "svc-skylights": {
       "state": "planned",
@@ -435,7 +447,31 @@
       "group": "Materials and features",
       "service_variant": "Skylight Installation",
       "h1": "Skylight Installation in Beaufort and Jasper Counties",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 6,
+          "Unknown": 0,
+          "Unverified": 6,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-skylights.grid.md",
+        "sha": "9462b1c2759b",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "pricing",
+          "warranty",
+          "licence",
+          "insurance"
+        ]
+      }
     },
     "loc-bluffton": {
       "state": "drafted",
@@ -448,27 +484,20 @@
       "h1": "Roofers in Bluffton",
       "claims": [],
       "evidence": {
-        "result": "block",
+        "result": "pass",
         "counts": {
-          "Known": 4,
+          "Known": 9,
           "Unknown": 0,
-          "Unverified": 6,
+          "Unverified": 1,
           "Conflict": 0
         },
-        "why": [
-          "3 required facts are not known (block at 2)"
-        ],
+        "why": [],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-bluffton.grid.md",
-        "sha": "d11f68d624a4",
-        "at": "2026-10-08T14:34:42-05:00",
-        "run": "20261008-143018-build-a144",
+        "sha": "bb2ed3ed5961",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
         "gaps": [
-          "phone",
-          "neighborhoods",
-          "offer",
-          "response_time",
-          "emergency",
-          "rating"
+          "response_time"
         ],
         "waiver": {
           "by": "Paul",
@@ -514,7 +543,24 @@
       "city": "Hilton Head Island",
       "service_variant": "Roofers",
       "h1": "Roofers on Hilton Head Island",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 9,
+          "Unknown": 0,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-hilton-head-island.grid.md",
+        "sha": "581c11d45658",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "response_time"
+        ]
+      }
     },
     "loc-okatie": {
       "state": "planned",
@@ -525,7 +571,25 @@
       "city": "Okatie",
       "service_variant": "Roofers",
       "h1": "Roofers in Okatie",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-okatie.grid.md",
+        "sha": "7f7c0506c98b",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "top_sites",
+          "response_time"
+        ]
+      }
     },
     "loc-pritchardville": {
       "state": "planned",
@@ -536,7 +600,28 @@
       "city": "Pritchardville",
       "service_variant": "Roofers",
       "h1": "Roofers in Pritchardville",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "warn",
+        "counts": {
+          "Known": 7,
+          "Unknown": 2,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [
+          "1 required and 2 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-pritchardville.grid.md",
+        "sha": "997b13852e2e",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "neighborhoods",
+          "things_to_do",
+          "response_time"
+        ]
+      }
     },
     "loc-beaufort": {
       "state": "planned",
@@ -547,7 +632,24 @@
       "city": "Beaufort",
       "service_variant": "Roofers",
       "h1": "Roofers in Beaufort",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 9,
+          "Unknown": 0,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-beaufort.grid.md",
+        "sha": "0cf781042306",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "response_time"
+        ]
+      }
     },
     "loc-port-royal": {
       "state": "planned",
@@ -558,7 +660,24 @@
       "city": "Port Royal",
       "service_variant": "Roofers",
       "h1": "Roofers in Port Royal",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 9,
+          "Unknown": 0,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-port-royal.grid.md",
+        "sha": "7380267a4582",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "response_time"
+        ]
+      }
     },
     "loc-ladys-island": {
       "state": "planned",
@@ -569,7 +688,29 @@
       "city": "Lady's Island",
       "service_variant": "Roofers",
       "h1": "Roofers on Lady's Island",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "warn",
+        "counts": {
+          "Known": 6,
+          "Unknown": 3,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [
+          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-ladys-island.grid.md",
+        "sha": "eeea90bd284d",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "neighborhoods",
+          "things_to_do",
+          "top_sites",
+          "response_time"
+        ]
+      }
     },
     "loc-st-helena-island": {
       "state": "planned",
@@ -580,7 +721,25 @@
       "city": "St. Helena Island",
       "service_variant": "Roofers",
       "h1": "Roofers on St. Helena Island",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-st-helena-island.grid.md",
+        "sha": "f763b6bfa1bb",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "things_to_do",
+          "response_time"
+        ]
+      }
     },
     "loc-fripp-island": {
       "state": "planned",
@@ -591,7 +750,27 @@
       "city": "Fripp Island",
       "service_variant": "Roofers",
       "h1": "Roofers on Fripp Island",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "warn",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [
+          "1 required and 1 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-fripp-island.grid.md",
+        "sha": "1d1a3c073185",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "neighborhoods",
+          "response_time"
+        ]
+      }
     },
     "loc-hardeeville": {
       "state": "planned",
@@ -602,7 +781,24 @@
       "city": "Hardeeville",
       "service_variant": "Roofers",
       "h1": "Roofers in Hardeeville",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 9,
+          "Unknown": 0,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-hardeeville.grid.md",
+        "sha": "9e80f5a1d190",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "response_time"
+        ]
+      }
     },
     "loc-ridgeland": {
       "state": "planned",
@@ -613,7 +809,27 @@
       "city": "Ridgeland",
       "service_variant": "Roofers",
       "h1": "Roofers in Ridgeland",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "warn",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [
+          "1 required and 1 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-ridgeland.grid.md",
+        "sha": "99f19d73e9ab",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "neighborhoods",
+          "response_time"
+        ]
+      }
     },
     "loc-levy": {
       "state": "planned",
@@ -624,7 +840,29 @@
       "city": "Levy",
       "service_variant": "Roofers",
       "h1": "Roofers in Levy",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "warn",
+        "counts": {
+          "Known": 6,
+          "Unknown": 3,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [
+          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-levy.grid.md",
+        "sha": "1d28e58d8915",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "neighborhoods",
+          "things_to_do",
+          "top_sites",
+          "response_time"
+        ]
+      }
     },
     "home": {
       "state": "planned",
@@ -632,7 +870,30 @@
       "name": "Homepage",
       "url": "https://apexroofingtlc.com/",
       "h1": "unchanged (locked, BB-313 §3)",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "warn",
+        "counts": {
+          "Known": 6,
+          "Unknown": 3,
+          "Unverified": 2,
+          "Conflict": 0
+        },
+        "why": [
+          "1 required and 4 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/home.grid.md",
+        "sha": "514894d5b781",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "core_services",
+          "licence",
+          "insurance",
+          "awards",
+          "team"
+        ]
+      }
     },
     "about": {
       "state": "planned",
@@ -640,7 +901,30 @@
       "name": "About",
       "url": "https://apexroofingtlc.com/about/",
       "h1": "About Apex Roofing of the Lowcountry (Paul, DEC-LOCAL-015)",
-      "claims": []
+      "claims": [],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 3,
+          "Unknown": 2,
+          "Unverified": 3,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/about.grid.md",
+        "sha": "eac8cb0e2c50",
+        "at": "2026-10-11T21:33:33-05:00",
+        "run": "20261011-212524-build-5379",
+        "gaps": [
+          "staff",
+          "company_story",
+          "licence",
+          "awards",
+          "team"
+        ]
+      }
     }
   },
   "build": {
@@ -781,6 +1065,30 @@
     "pilot_corrections_applied": {
       "at": "2026-10-09T14:22:24-05:00",
       "note": "Paul's pilot corrections 2026-10-09 recorded as client decisions (owners credit, no titles; Roof Repair services list, no hail; replacement price Replacement brief only, cited to Ken Gathercole review; warranty only in replacement context; Bluffton cut for depth). Spec section 8 lines proposed in run 20261009-142045-build-a198, not written (edit refused by permissions). Publish-together rule = project note for a later design session."
+    },
+    "facts_round": {
+      "file": "clients/apex-roofing-of-the-lowcountry/interviews/facts/Apex Roofing of the Lowcountry - Facts Interview - all - 2026-10-11 - REVIEW.md",
+      "at": "2026-10-11T21:31:18-05:00",
+      "run": "20261011-212524-build-5379",
+      "pages": [
+        "svc-roof-repair",
+        "svc-roof-replacement",
+        "svc-roof-installation",
+        "svc-roof-inspections",
+        "svc-emergency-roof-repair",
+        "svc-metal-roofing",
+        "svc-slate-roofing",
+        "svc-skylights",
+        "loc-pritchardville",
+        "loc-ladys-island",
+        "loc-fripp-island",
+        "loc-ridgeland",
+        "loc-levy",
+        "home",
+        "about"
+      ],
+      "questions": 0,
+      "research": 10
     }
   },
   "audit_steps": {
@@ -971,13 +1279,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261009-142804-build-8390",
+    "run_id": "20261011-212524-build-5379",
     "command": "build",
-    "finished": "2026-10-09T14:30:43-05:00",
-    "result": "Evidence gate s1: all 4 service pages BLOCK (mainly dated Brand Guide status cells read as Unverified; real gaps = live-site-only scope on 3 pages, timeframes, inspection pricing). Facts files + grids written; no briefs.",
-    "changes": 0,
-    "step": "build:evidence",
-    "batch": "s1"
+    "finished": "2026-10-11T21:35:34-05:00",
+    "result": "Facts round (Route A): grids for all 22 pages (8 PASS, 11 WARN, 4 BLOCK: metal, slate, skylights, about); researcher filled location public facts and checked review facts by meaning; 19 stale open keys closed against existing settled answers; 10-question client set grouped by fact, filtered and checked; flags F-008..F-011.",
+    "changes": 2,
+    "step": "build:facts",
+    "batch": null
   },
   "spend": {
     "dataforseo_usd": 0.591961
@@ -998,7 +1306,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-11T21:22:11-05:00",
+  "updated": "2026-10-11T21:35:34-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -1081,6 +1389,12 @@
       "step": "build:evidence",
       "first_run": "20261009-142804-build-8390",
       "at": "2026-10-09T14:30:43-05:00"
+    },
+    "9d88a11a-867f-41c7-bf85-bf018b301464": {
+      "key": "build-plan",
+      "step": "build:facts",
+      "first_run": "20261011-212524-build-5379",
+      "at": "2026-10-11T21:35:34-05:00"
     }
   },
   "wheel_pending": {
@@ -1267,5 +1581,10 @@
     "at": "2026-10-09T20:15:29-05:00",
     "moves": 1,
     "dropped": []
+  },
+  "review_pause": {
+    "run_id": "20261011-212524-build-5379",
+    "step": "build:facts",
+    "at": "2026-10-11T21:35:34-05:00"
   }
 }

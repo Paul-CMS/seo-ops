@@ -1,0 +1,31 @@
+{
+  "page": "loc-port-royal",
+  "facts": {
+    "city_served": {
+      "value": "Port Royal, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06.",
+      "status": "Paul Approved",
+      "source": "Brand Guide E (all 12 towns confirmed, Paul 2026-10-06); decisions-settled 'business' (12 towns)"
+    },
+    "local_context": {
+      "value": "Elevation 3 ft (infobox); the 1893 Sea Islands Hurricane destroyed much of the phosphate industry and stunted development; the page has no climate or flood section. Population 3,950 (2000), 10,678 (2010), 14,220 (2020), a large part of the increase from annexing Parris Island in 2000 (on-base housing). 2020 census: 4,764 housing units, 13.8% vacant. Old Village is the historic centre; Mossy Creek is low-density residential north of it.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Port_Royal,_South_Carolina (read 2026-10-11)"
+    },
+    "neighborhoods": {
+      "value": "Old Village (historic centre, Paris Avenue main street), Mossy Creek (extends into Beaufort), Shell Point and Burton (areas the town annexed), Parris Island (annexed 2000); also the Preserve at Port Royal Apartments complex. 5 neighbourhood-level places; fewer than 6. Annexed areas are inside town limits per the page.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Port_Royal,_South_Carolina (read 2026-10-11)"
+    },
+    "things_to_do": {
+      "value": "Spanish Moss Trail (14.9-mile rail trail to Beaufort); Street Music events on Paris Avenue; annual soft shell crab festival (late April); community oyster roast (late October); Sands Beach boardwalk; dock area where the hurricane scene of Forrest Gump was filmed.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Port_Royal,_South_Carolina (read 2026-10-11)"
+    },
+    "top_sites": {
+      "value": "National Register listings: Camp Saxton Site, Fort Frederick Heritage Preserve, Hasell Point Site, F.W. Scheper Store, Union Church of Port Royal; the Proclamation tree where the Emancipation Proclamation was first read at Christmas 1863; site of the Naval Battle of Port Royal.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Port_Royal,_South_Carolina (read 2026-10-11)"
+    }
+  },
+  "recorded_by_run": "20261011-212524-build-5379"
+}

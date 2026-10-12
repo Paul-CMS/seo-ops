@@ -1,0 +1,31 @@
+{
+  "page": "loc-hilton-head-island",
+  "facts": {
+    "city_served": {
+      "value": "Hilton Head Island, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06.",
+      "status": "Paul Approved",
+      "source": "Brand Guide E (all 12 towns confirmed, Paul 2026-10-06); decisions-settled 'business' (12 towns)"
+    },
+    "local_context": {
+      "value": "Humid subtropical climate, hot humid summers and mild winters; annual rainfall averages 51.4 in, August wettest. Listed elevation 0 ft; island is shoe-shaped, a sea island at the north end and a barrier island at the south end, separated by the tidal marsh of Broad Creek; sandy soils. The 1893 Sea Islands Hurricane (16-ft storm surge) is the page's storm-history reference. Development began with Sea Pines in 1956, so most housing is post-1956; 2020 census counted 29,018 housing units, 40.3% vacant (second homes/rentals); about 70% of the island is inside gated communities. The oldest intact structure is the Baynard Mausoleum (1846).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hilton_Head_Island,_South_Carolina (read 2026-10-11)"
+    },
+    "neighborhoods": {
+      "value": "Sea Pines (includes Harbour Town), Hilton Head Plantation, Palmetto Dunes, Shipyard, Port Royal Plantation, Folly Field, Mitchelville (Civil War-era community for formerly enslaved people, north end), Shelter Cove. 8 named. Town limits: per the page the Town has jurisdiction over the whole island except Mariner's Cove, Blue Heron Point and Windmill Harbor, and a small area near William Hilton Parkway; the page does not give a per-neighbourhood town/unincorporated status for the eight above.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hilton_Head_Island,_South_Carolina (read 2026-10-11)"
+    },
+    "things_to_do": {
+      "value": "RBC Heritage PGA Tour golf at Harbour Town Golf Links (held there since 1969); Arts Center of Coastal Carolina; Coastal Discovery Museum Turtle Talk & Walk (summer); public beach access at Coligny Circle Plaza and eight public beach parks (Coligny, Driessen, Folly Field, Islanders among them); wildlife including dolphin strand feeding.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hilton_Head_Island,_South_Carolina (read 2026-10-11)"
+    },
+    "top_sites": {
+      "value": "Harbour Town Lighthouse; Leamington Lighthouse (Hilton Head Rear Range Lighthouse, 1870s); Liberty Oak in Harbour Town; Sea Pines shell ring (about 4,000 years old); Fort Walker site (captured 7 Nov 1861); Stoney-Baynard Plantation site; Baynard Mausoleum (1846); National Register listings include Fort Howell, Fort Mitchel, Zion Cemetery, Cherry Hill School, Fish Haul Archaeological Site.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hilton_Head_Island,_South_Carolina (read 2026-10-11)"
+    }
+  },
+  "recorded_by_run": "20261011-212524-build-5379"
+}

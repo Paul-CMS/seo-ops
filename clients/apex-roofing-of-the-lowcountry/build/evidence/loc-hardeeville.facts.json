@@ -1,0 +1,31 @@
+{
+  "page": "loc-hardeeville",
+  "facts": {
+    "city_served": {
+      "value": "Hardeeville, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06.",
+      "status": "Paul Approved",
+      "source": "Brand Guide E (all 12 towns confirmed, Paul 2026-10-06); decisions-settled 'business' (12 towns)"
+    },
+    "local_context": {
+      "value": "Atlantic coastal plain with very few variations in elevation; elevation about 20 ft (infobox 16 ft); Savannah National Wildlife Refuge borders much of the city to the west. Rapid growth: population 2,952 (2010) to 7,473 (2020); 2020 census 3,951 housing units, 12.8% vacant; median age 60.4 (2020). Much housing is recent (Sun City, Latitude Margaritaville, Hilton Head Lakes, Tradition). The page has no climate/hurricane/flood text.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hardeeville,_South_Carolina (read 2026-10-11)"
+    },
+    "neighborhoods": {
+      "value": "Historic Hardeeville area: Car Moorer Acres, Pine Arbor, Heritage Place, Jenny Greeene, Deerfield Village. New River area: Hilton Head Lakes, Riverton Pointe (formerly Hampton Pointe, renamed 2021), Hearthstone Lakes, Latitude Margaritaville, Jasper County portions of Sun City Hilton Head. Planned: Tradition Hilton Head. 11 named. The page does not give town-limit status per neighbourhood.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hardeeville,_South_Carolina (read 2026-10-11)"
+    },
+    "things_to_do": {
+      "value": "Sergeant Jasper Park (over 300 acres of picnic areas, lakes and trails); Millstone Landing on the Savannah River (fishing access); The Sarge Disc Golf Course; Hardeeville Veterans Park; annual Catfish Festival; Savannah National Wildlife Refuge borders the city.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hardeeville,_South_Carolina ; https://jaspersc.org/2021/07/discover-ridgeland-and-hardeeville/ (read 2026-10-11)"
+    },
+    "top_sites": {
+      "value": "Argent Lumber Company Engine No. 7 (wood-burning steam locomotive on display); Hardeeville Museum (inside City Hall); marker at the site of Purrysburg (Swiss Huguenot settlement founded 1732); Hardeeville Veterans Park.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hardeeville,_South_Carolina ; https://jaspersc.org/2021/07/discover-ridgeland-and-hardeeville/ (read 2026-10-11)"
+    }
+  },
+  "recorded_by_run": "20261011-212524-build-5379"
+}

@@ -1,0 +1,16 @@
+{
+  "page": "svc-skylights",
+  "recorded_by_run": "20261011-212524-build-5379",
+  "facts": {
+    "service_scope": {
+      "value": "New skylight installation in existing roofs (including structural work) and repair or replacement of failing units: sealed-unit replacement for fogging between panes, flashing and curb repair (flashing kit replacement without replacing the unit when curb and glazing are sound), and full skylight replacement for warped frames, deteriorated curbs or discontinued models, matching the rough opening where possible, with updated flashing and a manufacturer warranty. Page says it installs Velux and FAKRO and not no-name or builder-grade units. Page cost claims (sealed unit $400-$800, flashing kit $600-$1,200, full replacement $1,500-$3,500) are unconfirmed.",
+      "status": "Submitted",
+      "source": "Live site https://apexroofingtlc.com/skylights/ (read 2026-10-11) — not confirmed by the client or Paul"
+    },
+    "service_process": {
+      "value": "Leak diagnosis described: leaks during rain point to flashing or curb failure; condensation without rain points to a failed sealed unit. Itemised written estimates; ARB approval may be needed for street-visible skylights in plantation communities. No step-by-step install method on the page.",
+      "status": "Submitted",
+      "source": "Live site https://apexroofingtlc.com/skylights/ (read 2026-10-11) — not confirmed by the client or Paul"
+    }
+  }
+}

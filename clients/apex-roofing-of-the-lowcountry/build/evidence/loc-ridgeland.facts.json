@@ -1,0 +1,31 @@
+{
+  "page": "loc-ridgeland",
+  "facts": {
+    "city_served": {
+      "value": "Ridgeland, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06.",
+      "status": "Paul Approved",
+      "source": "Brand Guide E (all 12 towns confirmed, Paul 2026-10-06); decisions-settled 'business' (12 towns)"
+    },
+    "local_context": {
+      "value": "Town centre on a low ridge at 62 ft (page; infobox says 16 ft, so inconsistent) — name refers to some of the highest land in Jasper County. 2020 census population about 3,750; 1,151 housing units, 9.6% vacant; median age 36.4. Page has no climate/hurricane/flood text.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Ridgeland,_South_Carolina (read 2026-10-11)"
+    },
+    "neighborhoods": {
+      "value": "",
+      "status": "Unknown",
+      "source": "not found — tried: https://en.wikipedia.org/wiki/Ridgeland,_South_Carolina (names none inside town; nearby places Old House, Switzerland, Tillman, Point South are separate communities)"
+    },
+    "things_to_do": {
+      "value": "Ridgeland farmers market (weekends, April to December); visit the historic sites Old House Plantation and Old Baptist Church.",
+      "status": "Internally Verified",
+      "source": "https://jaspersc.org/2021/07/discover-ridgeland-and-hardeeville/ (read 2026-10-11)"
+    },
+    "top_sites": {
+      "value": "Jasper County Courthouse (Ridgeland is the county seat); Old House Plantation (childhood home of Thomas Heyward Jr., Declaration of Independence signer); Old Baptist Church (former Union forces headquarters).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Ridgeland,_South_Carolina ; https://jaspersc.org/2021/07/discover-ridgeland-and-hardeeville/ (read 2026-10-11)"
+    }
+  },
+  "recorded_by_run": "20261011-212524-build-5379"
+}

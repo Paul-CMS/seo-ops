@@ -1,19 +1,41 @@
 # Apex Roofing of the Lowcountry - Status
 
-- **Stage 5 of 8 — Build plan and blockers**
-- **What is happening now:** ready to start: one facts round for every page: the evidence grids, the researcher looks up every public fact, reviews attached (CM-057), then one pre-filled question set grouped by fact
-- **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
-- **Next action:** `/build apex-roofing-of-the-lowcountry facts` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open apex-roofing-of-the-lowcountry`) and types `/next apex-roofing-of-the-lowcountry` (agents: build (opus), researcher (sonnet), clerk (haiku))
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — build:facts finished (run 20261011-212524-build-5379) and that stage is in review mode — l; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
+- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
 
-_Generated 2026-10-11T21:22 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-11T21:35 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
+| Paul | build:facts finished (run 20261011-212524-build-5379) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry brief services (briefs for svc-roof-replacement, svc-roof-installation, svc-roof-inspections, svc-emergency-roof-repair (one run for the batch)) | 2026-10-11 | /next apex-roofing-of-the-lowcountry |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
+| Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-replacement:service_scope |
+| Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-inspections:service_scope |
+| Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-emergency-roof-repair:service_scope |
+| Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-metal-roofing:service_scope |
+| Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-slate-roofing:service_scope |
+| Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-skylights:service_scope |
+| Client (via Paul) | For 6 pages (svc-roof-repair, svc-roof-installation, svc-roof-inspections, svc-metal-roofing, svc-slate-roofing, svc-skylights): Customers mention this about Price range, or what drives the cost: "In my opinion, the various System Plus Limited Warranties justified the replacement of the roof and its | 2026-10-11 | fact:svc-roof-repair:pricing |
+| Client (via Paul) | For 6 pages (svc-roof-repair, svc-roof-installation, svc-roof-inspections, svc-metal-roofing, svc-slate-roofing, svc-skylights): Customers mention this about Price range, or what drives the cost: "In my opinion, the various System Plus Limited Warranties justified the replacement of the roof and its | 2026-10-11 | fact:svc-roof-installation:pricing |
+| Client (via Paul) | For 6 pages (svc-roof-repair, svc-roof-installation, svc-roof-inspections, svc-metal-roofing, svc-slate-roofing, svc-skylights): Customers mention this about Price range, or what drives the cost: "In my opinion, the various System Plus Limited Warranties justified the replacement of the roof and its | 2026-10-11 | fact:svc-roof-inspections:pricing |
+| Client (via Paul) | For 6 pages (svc-roof-repair, svc-roof-installation, svc-roof-inspections, svc-metal-roofing, svc-slate-roofing, svc-skylights): Customers mention this about Price range, or what drives the cost: "In my opinion, the various System Plus Limited Warranties justified the replacement of the roof and its | 2026-10-11 | fact:svc-skylights:pricing |
+| Client (via Paul) | We have Warranty terms as "Manufacturer: "50 year Limited Lifetime Warranty which is transferable" · workmanship: "our lifetime no-leak warranty which is also transferable" (replaces W13's untermed "separately guaranteed") · SureStart PLUS extended warranty covering material and labor (W12) · metal  | 2026-10-11 | fact:d:warranty_terms |
+| Client (via Paul) | We have Licence numbers and classes as "SC License #57706 (issuer SC LLR; BBB shows expiry 2027-06-30) · Town of Bluffton License #0620033323. Both current: "Both licenses are good … both legit." Class and holder name not known — GAF shows "RBS 57706" (not verified)" (from Paul addendum 2026-10-07;  | 2026-10-11 | fact:d:licence_numbers |
+| Client (via Paul) | We have Insurance / bonded status as "Full general liability and workers' compensation insurance (W15) · bonded: not stated" (from Paul answers B11). Is that right? yes / partly — correction / no | 2026-10-11 | fact:d:insurance |
+| Client (via Paul) | We have Claim in 'New-Construction': Apex roofs new construction (subcontractor on new builds, W16) as "None stated. Apex itself works as a roofing subcontractor on new construction in Beaufort and Jasper County (W16): accurate" (from Paul answers B4). Is that right? yes / partly — correction / no | 2026-10-11 | fact:d:services_subcontracted |
+| Client (via Paul) | For 3 pages (svc-metal-roofing, svc-slate-roofing, svc-skylights): How the service is delivered (steps, methods, equipment) — what should we say? If it depends, on what? | 2026-10-11 | fact:svc-metal-roofing:service_process |
+| Client (via Paul) | For 3 pages (svc-metal-roofing, svc-slate-roofing, svc-skylights): How the service is delivered (steps, methods, equipment) — what should we say? If it depends, on what? | 2026-10-11 | fact:svc-slate-roofing:service_process |
+| Client (via Paul) | For 3 pages (svc-metal-roofing, svc-slate-roofing, svc-skylights): How the service is delivered (steps, methods, equipment) — what should we say? If it depends, on what? | 2026-10-11 | fact:svc-skylights:service_process |
+| Client (via Paul) | Core services the business wants more of — what should we say? If it depends, on what? | 2026-10-11 | fact:home:core_services |
+| Client (via Paul) | Awards and rankings — what should we say? If it depends, on what? | 2026-10-11 | fact:d:awards |
+| Client (via Paul) | Team size / trucks / jobs completed — what should we say? If it depends, on what? | 2026-10-11 | fact:d:team_size |
+| Client (via Paul) | Customers mention this about How and why the company started (owner's own account): "What more could you want than good work and a family owned business!" (None review(s)). Can we say that? yes / no — correction | 2026-10-11 | fact:about:company_story |
 
 ## Waiting on (not blocking)
 
@@ -21,8 +43,8 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Jonie | waiting for Jonie to publish the pages (H-2026-10-09-10-publish). When the worksheet comes back, this checks batch pilot's live pages against their approved files, adds alt text and updates the living handoff | 2026-10-09 | /build apex-roofing-of-the-lowcountry published pilot |
-| Jonie | blockers not cleared: H-2026-10-08-03-redirect-01 is issued; H-2026-10-08-03-redirect-02 is issued; H-2026-10-08-04-broken_link-01 is issued; H-2026-10-08-04-broken_link-02 is issued; H-2026-10-08-04-broken_link-03 is issued (+41 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-09 | /verify apex-roofing-of-the-lowcountry |
+| Jonie | waiting for Jonie to publish the pages (H-2026-10-09-10-publish). When the worksheet comes back, this checks batch pilot's live pages against their approved files, adds alt text and updates the living handoff | 2026-10-11 | /build apex-roofing-of-the-lowcountry published pilot |
+| Jonie | blockers not cleared: H-2026-10-08-03-redirect-01 is issued; H-2026-10-08-03-redirect-02 is issued; H-2026-10-08-04-broken_link-01 is issued; H-2026-10-08-04-broken_link-02 is issued; H-2026-10-08-04-broken_link-03 is issued (+41 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-11 | /verify apex-roofing-of-the-lowcountry |
 | Jonie | other handoff — 5 of 5 item(s) open | 2026-10-05 | H-2026-10-05-01-other |
 | Gwen | manual lookup handoff — 5 of 5 item(s) open | 2026-10-05 | H-2026-10-05-02-manual_lookup |
 | Jonie | redirect handoff — 2 of 2 item(s) open | 2026-10-08 | H-2026-10-08-03-redirect |
@@ -66,6 +88,12 @@ _Open, but the next action above goes ahead without them._
 - Paul 2026-10-09: Apex works in Palmetto Bluff, Belfair, Colleton River Plantation and Moss Creek (W9). Per the Town of Bluffton Neighborhoods PDF, Palmetto Bluff and Hampton Hall are inside the Town limits; Belfair, Colleton River Plantation and Moss Creek are Greater Bluffton (unincorporated Beaufort County). Bluffton page names those three only as also served, outside the Town limits. Hampton Hall is the 6th Bluffton neighborhood (Town PDF; also named in a 2026-05-17 review).
 - Paul 2026-10-09: no Old Town historic review or UDO roof-material claims (UDO 3.18 and Article 5 NEEDs dropped) unless evidence is found; none found in this run. The Old Town FAQ now only tells the homeowner to ask the Town before choosing a material.
 - Paul 2026-10-09: $20,000-$25,000 for a roof replacement, source Google review, Ken Gathercole, 2026-08-15 (per Paul; the figure is not in the reviews export). For the Roof Replacement brief only, cited to that single review, never as Apex's general price. Recorded in Brand Guide H; not in either pilot draft.
+- All 12 location-page towns are served (Brand Guide E, confirmed by Paul 2026-10-06; settled 'business' 12 towns). The city_served question was opened by mistake in this run's first facts pack (the grid lacked the page facts files); no client question needed.
+- Job timing: only as attributed review examples, no general visit length (Paul 2026-10-09, pilot_facts_2026_10_09). The researcher confirmed by meaning that 4 different reviewers give job lengths (fact:timeframe, 2026-10-11). Not asked of the client.
+- Roof Repair scope = shingle repair/replacement, flashing replacement, ridge cap and starter strip, soffit/fascia/deck, leak repair; no hail (Paul 2026-10-09, pilot_facts_2026_10_09). Not asked again.
+- Named staff: Ralph and Pierce Brehany (father and son), credited as owners, no job titles (Paul 2026-10-08 about_page; pilot corrections 2026-10-09). Not asked again.
+- On-time arrival and finishing as scheduled: customer_reported by 10 different reviewers (checked by meaning 2026-10-11); stated only attributed ('customers mention…'), never as an Apex guarantee. No client question needed.
+- Metal and slate pricing already answered: standing seam $22,000-$40,000 (vs $9,000-$18,000 shingles), natural slate $35,000-$70,000+, synthetic slate $18,000-$35,000; 'fairly accurate', varies with scale of project (Paul answers B14, Brand Guide D). Not asked again.
 
 ## Open VA items
 
@@ -86,7 +114,17 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 
 ## Flagged for Paul (system)
 
-_None._
+- **F-001** (open, not yet reviewed) 2026-10-11 · build:facts: new source for Town of Hilton Head Island building permits: https://hiltonheadislandsc.gov/building/permits/ — building permit applications, checklists, CSS portal — workaround: used in this run's facts files
+- **F-002** (open, not yet reviewed) 2026-10-11 · build:facts: new source for City of Beaufort building codes: https://cityofbeaufort.org/154/Building-Codes — city building codes department and state-adopted codes in effect — workaround: used in this run's facts files
+- **F-003** (open, not yet reviewed) 2026-10-11 · build:facts: new source for Town of Port Royal building permits: https://portroyal.org/161/Building-Official — building official, permit application and inspections — workaround: used in this run's facts files
+- **F-004** (open, not yet reviewed) 2026-10-11 · build:facts: new source for Jasper County building permits: https://jaspercountysc.gov/services/planning-and-building — county planning and building, permit applications and checklists — workaround: used in this run's facts files
+- **F-005** (open, not yet reviewed) 2026-10-11 · build:facts: new source for Town of Hardeeville building permits: https://www.hardeevillesc.gov/2650/Building-Permits — city building permits (zoning procedures at hardeevillesc.zoninghub.com) — workaround: used in this run's facts files
+- **F-006** (open, not yet reviewed) 2026-10-11 · build:facts: new source for City of Ridgeland building permits: https://www.ridgelandsc.gov/planning-and-community-development/home — planning and community development, residential permit requirements and forms — workaround: used in this run's facts files
+- **F-007** (open, not yet reviewed) 2026-10-11 · build:facts: new source for Jasper County places and attractions: https://jaspersc.org/2021/07/discover-ridgeland-and-hardeeville/ — Jasper County chamber page on Ridgeland and Hardeeville sites and parks — workaround: used in this run's facts files
+- **F-008** (open, not yet reviewed) 2026-10-11 · build:facts: evidence.py questions --all: a second call in the same round overwrites the question-set file with 0 questions, because the first call already opened every key (settled.ask) and the rewrite lists them only as 'already asked'. The first set's text survives only in log.md OPEN lines. — workaround: rebuilt the set by hand from the OPEN lines + grids into interviews/facts/...REVIEW.md and facts-round-all-2026-10-11.questions.json; settled.py filter + questions.py check passed
+- **F-009** (open, not yet reviewed) 2026-10-11 · build:facts: evidence.py questions --all opens keys before the page facts files exist: city_served for 11 location pages was asked with a keyword-ranking row as its 'best answer', though Brand Guide E + settled 'business' already answer it; service_scope was grouped across 7 services under Roof Repair's list. Grouping by fact needs per-page pre-fills, and Section E should feed city_served. — workaround: wrote city_served facts files from Brand Guide E; closed the keys via run.py decision --settle --closes; per-service scope lines in the hand-built set
+- **F-010** (open, not yet reviewed) 2026-10-11 · build:facts: reviews.csv has no reviewer_key column, so the researcher counts one reviewer per row (CM-057 distinct-reviewer count is approximate). — workaround: counted per row; owner replies excluded
+- **F-011** (open, not yet reviewed) 2026-10-11 · build:facts: Grid marks a Brand Guide D row Unverified when any part is unconfirmed (Warranty terms: manufacturer + workmanship Client Confirmed, only W14 metal 40-year Submitted), which makes the whole row a question. — workaround: asked only the W14 part (Q4)
 
 ## Spend so far
 
@@ -96,4 +134,4 @@ _None._
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /build 2026-10-09T14:30 — Evidence gate s1: all 4 service pages BLOCK (mainly dated Brand Guide status cells read as Unverified; real gaps = live-site-only scope on 3 pages, timeframes, inspection pricing). Facts files + grids written; no briefs.
+Last run: /build 2026-10-11T21:35 — Facts round (Route A): grids for all 22 pages (8 PASS, 11 WARN, 4 BLOCK: metal, slate, skylights, about); researcher filled location public facts and checked review facts by meaning; 19 stale open keys closed against existing settled answers; 10-question client set grouped by fact, filtered and checked; flags F-008..F-011.

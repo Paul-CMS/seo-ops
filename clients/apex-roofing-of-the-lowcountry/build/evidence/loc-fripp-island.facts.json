@@ -1,0 +1,31 @@
+{
+  "page": "loc-fripp-island",
+  "facts": {
+    "city_served": {
+      "value": "Fripp Island, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06.",
+      "status": "Paul Approved",
+      "source": "Brand Guide E (all 12 towns confirmed, Paul 2026-10-06); decisions-settled 'business' (12 towns)"
+    },
+    "local_context": {
+      "value": "Barrier island and census-designated place in Beaufort County; elevation 0 ft; about three miles of Atlantic beachfront, some parts fully submerged at high tide; wide marsh and estuarine system separates it from St. Helena Island; most seaward of the Sea Islands. Residential vacation resort of homes and condominiums, a private gated community run by the Fripp Island Property Owners Association; nearly one-third of lots undeveloped. Population 963 (2020), up to about 5,000 in summer. Page gives no hurricane/climate text.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Fripp_Island,_South_Carolina (read 2026-10-11)"
+    },
+    "neighborhoods": {
+      "value": "",
+      "status": "Unknown",
+      "source": "not found — tried: https://en.wikipedia.org/wiki/Fripp_Island,_South_Carolina (names no neighbourhoods; island is a single private gated community, unincorporated CDP)"
+    },
+    "things_to_do": {
+      "value": "Ocean Point Golf Links, Ocean Creek Golf Course (Davis Love III design), racquet club, marina, island-wide Audubon bird preserve and loggerhead turtle hatchery. The page calls it a private gated community; public access to these is not stated.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Fripp_Island,_South_Carolina (read 2026-10-11)"
+    },
+    "top_sites": {
+      "value": "Fripp Inlet Bridge (opened 1964, now toll-free); island-wide Audubon bird preserve; loggerhead turtle hatchery; all-faiths chapel.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Fripp_Island,_South_Carolina (read 2026-10-11)"
+    }
+  },
+  "recorded_by_run": "20261011-212524-build-5379"
+}

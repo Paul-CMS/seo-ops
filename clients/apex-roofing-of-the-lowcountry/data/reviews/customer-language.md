@@ -132,3 +132,32 @@ Bluffton (incl. "Hampton Hall in Bluffton") · "Sun City" · Ridgeland · one re
 ### Claims that appear only in reviews — unverified (CM-027)
 
 Customers mention a "10 year workmanship warranty" / "10 year transferrable warranty" / "warranted for leaks for 10 years", "Certainteed Shingles", that the company handles "permits" and "County inspection", that it tarps during rain, that two family members own the company, and that some small fixes were done free of charge. **None of these enters Brand Guide Section D** unless the client confirms it on the returned proof sheet (reconcile step); several review wordings differ from each other (for example "workmanship" vs "transferrable" vs "for leaks"), so warranty terms in particular need the client's own wording.
+
+## Facts customers report (CM-057)
+
+Counted by different reviewers. 3+ = customer_reported: Known for the evidence gate, stated only as customers describe it ("customers mention…"). Prices, timelines and warranty terms only as a cited customer example, never as the company's. No reviewer names.
+
+| Fact | Reviewers | Example (date) |
+|---|---|---|
+| person named Ralph | 45 ✓ | "The owner, Ralph, was extremely helpful explaining products and handling my MANY questions." (2026-08-31) |
+| pricing | 18 ✓ | "In my opinion, the various System Plus Limited Warranties justified the replacement of the roof and its total cost, and it certainly assured me of its future viability." (2026-08-15) |
+| person named Pierce | 18 ✓ | "Pierce was amazing!" (2026-08-28) |
+| materials | 14 ✓ | "The crew even went around our home with a metal detector, picking up the countless loose nails and screws." (2026-08-15) |
+| staff | 13 ✓ | "The owner, Ralph, was extremely helpful explaining products and handling my MANY questions." (2026-08-31) |
+| clean up | 12 ✓ | "Clean up was superb each day." (2026-08-31) |
+| guarantees | 10 ✓ | "His full crew showed up on Monday morning, right at the scheduled time and went right to work, working continuously through each day." (2026-08-15) |
+| photos | 9 ✓ | "As an unexpected benefit, each day I received photos, showing the completed work to date." (2026-08-15) |
+| timeframe | 8 ✓ | "One of them was Apex, spoke with Ralph the owner and he had his son Pearce call, and he came by the next day." (2025-06-05) |
+| explains | 8 ✓ | "Ralph explained to me all that would be done during the replacement." (2026-08-15) |
+| warranty | 7 ✓ | "Following the job completion, Ralph provided me with the warranties that come with all the GAF products that were applied to our roof, which I was not initially aware of but am very pleased with." (2026-08-15) |
+| person named Brehany | 6 ✓ | "I met with both owners of the company, Ralph and Pierce Brehany." (2026-08-15) |
+| person named Alex | 3 ✓ | "Ralph Brehany and Alex Mejia did an outstanding job." (2021-03-15) |
+| insurance | 2 | "He gave me an outstanding quote (sans insurance estimate) that was competitive while providing top of the line materials." (2020-06-30) |
+| emergency | 2 | "I contacted Ralph the week before Christmas on a recommendation from a friend as I needed an emergency roof inspection." (2023-12-29) |
+| permits | 2 | "And he took care of obtaining the town and the HOA permits, and once he had those in hand, we set up the schedule to begin the job." (2026-08-15) |
+| prices ($ amounts) | 2 | "One of the other roofers came by a few days before and quoted me $3,000 to fix the leak." (2025-06-05) |
+| Bluffton | 2 | "I live in Hampton Hall in Bluffton and I had a need recently to get a quote for a new roof." (2026-05-17) |
+| response time | 1 | "Apex Roofing of the Low Country was recommended to us by a neighbor and they responded quickly and patched the hole in our roof to prevent any additional damage to our home." (2022-07-17) |
+| founding | 1 | "What more could you want than good work and a family owned business!" (2019-06-15) |
+| company story | 1 | "What more could you want than good work and a family owned business!" (2019-06-15) |
+| Ridgeland | 1 | "My sister, who is disabled, lives alone in Ridgeland." (2020-03-11) |

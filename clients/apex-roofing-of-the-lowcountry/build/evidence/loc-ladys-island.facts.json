@@ -1,0 +1,31 @@
+{
+  "page": "loc-ladys-island",
+  "facts": {
+    "city_served": {
+      "value": "Lady's Island, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06.",
+      "status": "Paul Approved",
+      "source": "Brand Guide E (all 12 towns confirmed, Paul 2026-10-06); decisions-settled 'business' (12 towns)"
+    },
+    "local_context": {
+      "value": "Predominantly residential Sea Island in Beaufort County; elevation 16 ft; maritime upland forest, estuarine tidal and freshwater wetland ecosystems; since the late 20th century former plantation and timber tracts have been converted to residential subdivisions, so much of the housing is recent. Small portions are within the City of Beaufort; the majority is unincorporated. Climate/hurricane not stated on the page.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (read 2026-10-11)"
+    },
+    "neighborhoods": {
+      "value": "",
+      "status": "Unknown",
+      "source": "not found — tried: https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (names none; mentions Coosaw Point only as a historic site); Redfin listing pages name Cat Island, Coosaw Point, Islands of Beaufort but those are real-estate sources, not recorded as verified"
+    },
+    "things_to_do": {
+      "value": "",
+      "status": "Unknown",
+      "source": "not found — tried: https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (lists no attractions)"
+    },
+    "top_sites": {
+      "value": "",
+      "status": "Unknown",
+      "source": "not found — tried: https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (lists no landmarks; links only to the county NRHP list)"
+    }
+  },
+  "recorded_by_run": "20261011-212524-build-5379"
+}
