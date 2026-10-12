@@ -2,16 +2,16 @@
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
 - **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:facts finished (run 20261011-212524-build-5379) and that stage is in review mode — l; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
+- **Waiting on:** Paul — build:brief finished (run 20261011-214754-build-8691) and that stage is in review mode — l; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
 - **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
 
-_Generated 2026-10-11T21:35 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-11T21:54 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:facts finished (run 20261011-212524-build-5379) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry brief services (briefs for svc-roof-replacement, svc-roof-installation, svc-roof-inspections, svc-emergency-roof-repair (one run for the batch)) | 2026-10-11 | /next apex-roofing-of-the-lowcountry |
+| Paul | build:brief finished (run 20261011-214754-build-8691) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /interview apex-roofing-of-the-lowcountry facts services (the evidence gate blocked svc-metal-roofing, svc-slate-roofing, svc-skylights — targeted questions for the owner (you send them). Or waive instead: /approve apex-roofing-of-the-lowcountry evidence:svc-metal-roofing --reason "<why you waive it>" · /approve apex-roofing-of-the-lowcountry evidence:svc-slate-roofing --reason "<why you waive it>" · /approve apex-roofing-of-the-lowcountry evidence:svc-skylights --reason "<why you waive it>") | 2026-10-11 | /next apex-roofing-of-the-lowcountry |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
@@ -125,6 +125,7 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 - **F-009** (open, not yet reviewed) 2026-10-11 · build:facts: evidence.py questions --all opens keys before the page facts files exist: city_served for 11 location pages was asked with a keyword-ranking row as its 'best answer', though Brand Guide E + settled 'business' already answer it; service_scope was grouped across 7 services under Roof Repair's list. Grouping by fact needs per-page pre-fills, and Section E should feed city_served. — workaround: wrote city_served facts files from Brand Guide E; closed the keys via run.py decision --settle --closes; per-service scope lines in the hand-built set
 - **F-010** (open, not yet reviewed) 2026-10-11 · build:facts: reviews.csv has no reviewer_key column, so the researcher counts one reviewer per row (CM-057 distinct-reviewer count is approximate). — workaround: counted per row; owner replies excluded
 - **F-011** (open, not yet reviewed) 2026-10-11 · build:facts: Grid marks a Brand Guide D row Unverified when any part is unconfirmed (Warranty terms: manufacturer + workmanship Client Confirmed, only W14 metal 40-year Submitted), which makes the whole row a question. — workaround: asked only the W14 part (Q4)
+- **F-012** (open, not yet reviewed) 2026-10-11 · build:brief: /next started build:brief for the services batch while Paul's 2026-10-11 facts answers (interviews/facts/... Facts Answers - all - 2026-10-11.md) were on disk but unrecorded: the evidence gate scored on stale facts (metal, slate, skylights BLOCK; scope gaps on the other 4) although the answers likely clear them. next.py / the brief gate does not check for an unrecorded facts-answers file. — workaround: Briefs written for the 4 WARN pages with [NEED] markers and a note that the 2026-10-11 answers await /interview facts-answers all; 3 BLOCK pages left unbriefed; re-run the gate after recording.
 
 ## Spend so far
 
@@ -134,4 +135,4 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /build 2026-10-11T21:35 — Facts round (Route A): grids for all 22 pages (8 PASS, 11 WARN, 4 BLOCK: metal, slate, skylights, about); researcher filled location public facts and checked review facts by meaning; 19 stale open keys closed against existing settled answers; 10-question client set grouped by fact, filtered and checked; flags F-008..F-011.
+Last run: /build 2026-10-11T21:54 — Services briefs: 4 WARN pages briefed (Replacement, Installation, Inspections, Emergency); Metal, Slate, Skylights BLOCK, no brief; 2026-10-11 facts answers unrecorded; flag F-012

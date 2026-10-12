@@ -2746,3 +2746,56 @@ Changes: 2 · Summary: Facts round (Route A): grids for all 22 pages (8 PASS, 11
 - CHANGE #450 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-11 (2).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 0d86d5aefab8 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #451 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-11 (2).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-11 (2).md | result: done · renamed and moved, nothing deleted
 - CHANGE #452 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-11 (2).md | new: Apex Roofing of the Lowcountry - Status.md · sha 638e426b99de | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-11T21:47 · after build:facts (run 20261011-212524-build-5379) · Paul typed /next
+
+## RUN 20261011-214754-build-8691 · STARTED · /build · 2026-10-11T21:47:54-05:00
+Step: build:brief · batch services · session a1a7f5f8-03bf-44ec-ad8e-1ebe990b1d87
+Gates checked: discovery_signed_off, batch:services:briefs_ready, page_specs_approved
+- EVIDENCE 2026-10-11T21:48 · run 20261011-214754-build-8691 · svc-roof-replacement: WARN (known 8, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-11T21:48 · run 20261011-214754-build-8691 · svc-roof-installation: WARN (known 8, unknown 0, unverified 5, conflict 0)
+- EVIDENCE 2026-10-11T21:48 · run 20261011-214754-build-8691 · svc-roof-inspections: WARN (known 7, unknown 0, unverified 5, conflict 0)
+- EVIDENCE 2026-10-11T21:48 · run 20261011-214754-build-8691 · svc-emergency-roof-repair: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-11T21:48 · run 20261011-214754-build-8691 · svc-metal-roofing: BLOCK (known 7, unknown 0, unverified 6, conflict 0)
+- EVIDENCE 2026-10-11T21:48 · run 20261011-214754-build-8691 · svc-slate-roofing: BLOCK (known 7, unknown 0, unverified 6, conflict 0)
+- EVIDENCE 2026-10-11T21:48 · run 20261011-214754-build-8691 · svc-skylights: BLOCK (known 6, unknown 0, unverified 6, conflict 0)
+- BRIEF 2026-10-11T21:54 · run 20261011-214754-build-8691 · svc-roof-replacement · clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Replacement - Apex Roofing of the Lowcountry.md
+- BRIEF 2026-10-11T21:54 · run 20261011-214754-build-8691 · svc-roof-installation · clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Installation - Apex Roofing of the Lowcountry.md
+- BRIEF 2026-10-11T21:54 · run 20261011-214754-build-8691 · svc-roof-inspections · clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Inspections - Apex Roofing of the Lowcountry.md
+- BRIEF 2026-10-11T21:54 · run 20261011-214754-build-8691 · svc-emergency-roof-repair · clients/apex-roofing-of-the-lowcountry/build/services/SB - Emergency Roof Repair - Apex Roofing of the Lowcountry.md
+- FLAG 2026-10-11T21:54 · run 20261011-214754-build-8691 · F-012 · /next started build:brief for the services batch while Paul's 2026-10-11 facts answers (interviews/facts/... Facts Answers - all - 2026-10-11.md) were on disk but unrecorded: the evidence gate scored on stale facts (metal, slate, skylights BLOCK; scope gaps on the other 4) although the answers likely clear them. next.py / the brief gate does not check for an unrecorded facts-answers file. · workaround: Briefs written for the 4 WARN pages with [NEED] markers and a note that the 2026-10-11 answers await /interview facts-answers all; 3 BLOCK pages left unbriefed; re-run the gate after recording.
+### HANDOFF · /build · 2026-10-11 · run 20261011-214754-build-8691
+**Route:** A. **Date:** 2026-10-11.
+
+### Done
+- Evidence gate (CM-041) re-run for the services batch: Roof Replacement, Roof Installation, Roof Inspections, Emergency Roof Repair **WARN** (1 required gap each); Metal Roofing, Slate Roofing, Skylights **BLOCK** (2 required facts not known each).
+- Briefs written and recorded (`status.py page-stage … --stage brief`) for the 4 WARN pages, each with an `## Evidence gaps` section:
+  - `clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Replacement - Apex Roofing of the Lowcountry.md`
+  - `clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Installation - Apex Roofing of the Lowcountry.md`
+  - `clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Inspections - Apex Roofing of the Lowcountry.md`
+  - `clients/apex-roofing-of-the-lowcountry/build/services/SB - Emergency Roof Repair - Apex Roofing of the Lowcountry.md`
+- No brief for the 3 blocked pages.
+- Flag F-012 raised (system): the brief step started while Paul's 2026-10-11 facts answers were unrecorded.
+
+### Open — for Paul
+| Item | Options | Blocks |
+|---|---|---|
+| Paul's 2026-10-11 facts answers are on disk but not recorded | record with `/interview apex-roofing-of-the-lowcountry facts-answers all`, then re-run the gate | clears most scope `[NEED]`s on the 4 briefs; likely unblocks Metal, Slate, Skylights |
+| Replacement price: settled one-review $20k–$25k example vs Paul's 2026-10-11 answer ("review price mentions not used; Lowcountry standard ranges") | (a) drop the example, keep W20 $9k–$18k; (b) drop it, researcher cites a published SC/Lowcountry range; (c) keep as settled | Roof Replacement FAQ 1 |
+| Emergency FAQ 2 duplicates the approved Roof Repair emergency-leak FAQ (SEM-1) | (a) replace with "Do past customers get priority in a roofing emergency?" (proposed); (b) keep, safety-only answer; (c) remove it from Roof Repair (re-approval) | Emergency brief |
+| Metal, Slate, Skylights blocked | record the 2026-10-11 answers and re-run the gate, or `/approve … evidence:<page> --reason "…"` | their briefs |
+| One-line client checks (optional) | tarping in emergencies; W17 free inspection / paid reports; install time on a new home; synthetic underlayment on replacements/new installs | `[NEED]`s in the briefs |
+
+### Public facts for the researcher (never asked of the client)
+SC adopted residential code on drip edge (Installation FAQ 1); inspection-frequency guidance (Inspections FAQ 4); asphalt-shingle lifespan in coastal SC (Replacement FAQ 2); if Paul picks (b) above, a published SC/Lowcountry replacement cost range.
+
+### Not done (outside this step)
+No drafts. No facts recorded. No settled decision reopened (the price conflict is listed for Paul instead).
+### END HANDOFF
+## RUN 20261011-214754-build-8691 · FINISHED · 2026-10-11T21:54:44-05:00
+Changes: 0 · Summary: Services briefs: 4 WARN pages briefed (Replacement, Installation, Inspections, Emergency); Metal, Slate, Skylights BLOCK, no brief; 2026-10-11 facts answers unrecorded; flag F-012
+- CHANGE #453 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-11.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-11.md | result: done · renamed and moved, nothing deleted
+- CHANGE #454 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-11.md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 05ac7f5efa7d | result: done · copied (Drive for desktop syncs it)
+- CHANGE #455 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-11 (3).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-11 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #456 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-11 (3).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha afe8aa7f970f | result: done · copied (Drive for desktop syncs it)
+- CHANGE #457 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-11 (3).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-11 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #458 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-11 (3).md | new: Apex Roofing of the Lowcountry - Status.md · sha 02948ab529cc | result: done · copied (Drive for desktop syncs it)

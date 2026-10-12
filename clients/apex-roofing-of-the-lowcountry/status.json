@@ -214,7 +214,7 @@
       ]
     },
     "svc-roof-replacement": {
-      "state": "planned",
+      "state": "brief_written",
       "type": "service",
       "name": "Roof Replacement",
       "url": "https://apexroofingtlc.com/roof-replacement/",
@@ -235,18 +235,26 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-replacement.grid.md",
         "sha": "22cb36fe6e38",
-        "at": "2026-10-11T21:33:33-05:00",
-        "run": "20261011-212524-build-5379",
+        "at": "2026-10-11T21:48:13-05:00",
+        "run": "20261011-214754-build-8691",
         "gaps": [
           "service_scope",
           "warranty",
           "licence",
           "insurance"
         ]
+      },
+      "files": {
+        "brief": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Replacement - Apex Roofing of the Lowcountry.md",
+          "run": "20261011-214754-build-8691",
+          "at": "2026-10-11T21:54:10-05:00",
+          "sha": "326e92a1d545"
+        }
       }
     },
     "svc-roof-installation": {
-      "state": "planned",
+      "state": "brief_written",
       "type": "service",
       "name": "Roof Installation",
       "url": "https://apexroofingtlc.com/roof-installation/",
@@ -273,8 +281,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-installation.grid.md",
         "sha": "00c6eca94d6c",
-        "at": "2026-10-11T21:33:33-05:00",
-        "run": "20261011-212524-build-5379",
+        "at": "2026-10-11T21:48:13-05:00",
+        "run": "20261011-214754-build-8691",
         "gaps": [
           "pricing",
           "warranty",
@@ -282,10 +290,18 @@
           "insurance",
           "claim:New-Construction"
         ]
+      },
+      "files": {
+        "brief": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Installation - Apex Roofing of the Lowcountry.md",
+          "run": "20261011-214754-build-8691",
+          "at": "2026-10-11T21:54:10-05:00",
+          "sha": "c14793ea5312"
+        }
       }
     },
     "svc-roof-inspections": {
-      "state": "planned",
+      "state": "brief_written",
       "type": "service",
       "name": "Roof Inspections",
       "url": "https://apexroofingtlc.com/roof-inspections/",
@@ -306,8 +322,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-inspections.grid.md",
         "sha": "0a9554785cb6",
-        "at": "2026-10-11T21:33:33-05:00",
-        "run": "20261011-212524-build-5379",
+        "at": "2026-10-11T21:48:13-05:00",
+        "run": "20261011-214754-build-8691",
         "gaps": [
           "service_scope",
           "pricing",
@@ -315,10 +331,18 @@
           "licence",
           "insurance"
         ]
+      },
+      "files": {
+        "brief": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Inspections - Apex Roofing of the Lowcountry.md",
+          "run": "20261011-214754-build-8691",
+          "at": "2026-10-11T21:54:10-05:00",
+          "sha": "3c6bbfd49a80"
+        }
       }
     },
     "svc-emergency-roof-repair": {
-      "state": "planned",
+      "state": "brief_written",
       "type": "service",
       "name": "Emergency Roof Repair",
       "url": "https://apexroofingtlc.com/emergency-roof-repair/",
@@ -345,14 +369,22 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-emergency-roof-repair.grid.md",
         "sha": "9346e4c77bb5",
-        "at": "2026-10-11T21:33:33-05:00",
-        "run": "20261011-212524-build-5379",
+        "at": "2026-10-11T21:48:13-05:00",
+        "run": "20261011-214754-build-8691",
         "gaps": [
           "service_scope",
           "warranty",
           "licence",
           "insurance"
         ]
+      },
+      "files": {
+        "brief": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/services/SB - Emergency Roof Repair - Apex Roofing of the Lowcountry.md",
+          "run": "20261011-214754-build-8691",
+          "at": "2026-10-11T21:54:11-05:00",
+          "sha": "78f4db491cd0"
+        }
       }
     },
     "svc-metal-roofing": {
@@ -387,8 +419,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-metal-roofing.grid.md",
         "sha": "ee74ef7bada8",
-        "at": "2026-10-11T21:33:33-05:00",
-        "run": "20261011-212524-build-5379",
+        "at": "2026-10-11T21:48:13-05:00",
+        "run": "20261011-214754-build-8691",
         "gaps": [
           "service_scope",
           "service_process",
@@ -427,8 +459,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-slate-roofing.grid.md",
         "sha": "aa92f8e8aeee",
-        "at": "2026-10-11T21:33:33-05:00",
-        "run": "20261011-212524-build-5379",
+        "at": "2026-10-11T21:48:13-05:00",
+        "run": "20261011-214754-build-8691",
         "gaps": [
           "service_scope",
           "service_process",
@@ -461,8 +493,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-skylights.grid.md",
         "sha": "9462b1c2759b",
-        "at": "2026-10-11T21:33:33-05:00",
-        "run": "20261011-212524-build-5379",
+        "at": "2026-10-11T21:48:13-05:00",
+        "run": "20261011-214754-build-8691",
         "gaps": [
           "service_scope",
           "service_process",
@@ -1279,13 +1311,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261011-212524-build-5379",
+    "run_id": "20261011-214754-build-8691",
     "command": "build",
-    "finished": "2026-10-11T21:35:34-05:00",
-    "result": "Facts round (Route A): grids for all 22 pages (8 PASS, 11 WARN, 4 BLOCK: metal, slate, skylights, about); researcher filled location public facts and checked review facts by meaning; 19 stale open keys closed against existing settled answers; 10-question client set grouped by fact, filtered and checked; flags F-008..F-011.",
-    "changes": 2,
-    "step": "build:facts",
-    "batch": null
+    "finished": "2026-10-11T21:54:44-05:00",
+    "result": "Services briefs: 4 WARN pages briefed (Replacement, Installation, Inspections, Emergency); Metal, Slate, Skylights BLOCK, no brief; 2026-10-11 facts answers unrecorded; flag F-012",
+    "changes": 0,
+    "step": "build:brief",
+    "batch": "services"
   },
   "spend": {
     "dataforseo_usd": 0.591961
@@ -1306,7 +1338,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-11T21:35:34-05:00",
+  "updated": "2026-10-11T21:54:44-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -1395,6 +1427,12 @@
       "step": "build:facts",
       "first_run": "20261011-212524-build-5379",
       "at": "2026-10-11T21:35:34-05:00"
+    },
+    "a1a7f5f8-03bf-44ec-ad8e-1ebe990b1d87": {
+      "key": "batches:services",
+      "step": "build:brief",
+      "first_run": "20261011-214754-build-8691",
+      "at": "2026-10-11T21:54:44-05:00"
     }
   },
   "wheel_pending": {
@@ -1583,8 +1621,8 @@
     "dropped": []
   },
   "review_pause": {
-    "run_id": "20261011-212524-build-5379",
-    "step": "build:facts",
-    "at": "2026-10-11T21:35:34-05:00"
+    "run_id": "20261011-214754-build-8691",
+    "step": "build:brief",
+    "at": "2026-10-11T21:54:44-05:00"
   }
 }
