@@ -57,7 +57,7 @@ Sometimes a storm damages a roof too badly to patch. Once the home is safe and d
 
 ### What does a roof replacement cost in South Carolina?
 
-In 2026, a typical whole-home roof replacement in the Lowcountry runs about $14,000 to $20,000 with architectural asphalt shingles. Standing seam metal runs about $24,000 to $45,000 or more. Both ranges move up or down with the size of your roof.
+In 2026, a typical whole-home roof replacement in the Lowcountry runs about $14,000 to $20,000 with architectural asphalt shingles. Standing seam metal runs about $16,600 to $32,000 or more for a typical home. Coastal Lowcountry homes often run about $30,000 to $45,000 or more. These are regional ranges from published cost guides; Apex's price will differ.
 
 These are typical ranges for the area, not a quote. The main cost drivers are:
 

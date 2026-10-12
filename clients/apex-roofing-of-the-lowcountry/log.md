@@ -3769,3 +3769,45 @@ Changes: 5 · Summary: services apply-sem: six approved fixes applied (metal ran
 - CHANGE #615 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (23).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 1086bcf7e552 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #616 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (23).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (23).md | result: done · renamed and moved, nothing deleted
 - CHANGE #617 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (23).md | new: Apex Roofing of the Lowcountry - Status.md · sha 1e934afa2f34 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261012-143054-build-3339 · STARTED · /build · 2026-10-12T14:30:54-05:00
+Step: build:apply-sem · batch services · session ac082591-abde-49a7-bbdb-710f65cf2b3f
+Gates checked: discovery_signed_off, batch:services:drafts
+- SEM APPLIED 2026-10-12T14:31 · batch services · SEM-1, SEM-2, SEM-3, SEM-4, SEM-5, SEM-6, SEM-7, SEM-8, SEM-9, SEM-10, SEM-11, SEM-12, SEM-13, SEM-14, SEM-15 · E-checks passed · approval pinned to the applied versions
+### HANDOFF · /build · 2026-10-12 · run 20261012-143054-build-3339
+**Agent:** Agent 2 — Build (Opus) · **Date:** 2026-10-12
+
+### What was done
+Paul asked for this revision: the Roof Replacement cost FAQ now uses the same metal ranges as the Metal Roofing page (settled `metal_cost_ranges`). Only the first paragraph of the FAQ "What does a roof replacement cost in South Carolina?" changed.
+
+- **Before:** "Standing seam metal runs about $24,000 to $45,000 or more. Both ranges move up or down with the size of your roof."
+- **After:** "Standing seam metal runs about $16,600 to $32,000 or more for a typical home. Coastal Lowcountry homes often run about $30,000 to $45,000 or more. These are regional ranges from published cost guides; Apex's price will differ."
+- The sentence "Both ranges move up or down with the size of your roof" was removed for two reasons. The paragraph now gives three ranges, so "Both" was wrong. Keeping the sentence would also make the paragraph 67 words, which breaks CM-060. Roof size is still covered by the cost-driver list that follows.
+- The free-estimate line was already in the FAQ's last paragraph, so it was not changed.
+- $24,000 no longer appears anywhere in the draft.
+- No Brand Guide change and no fact rows.
+
+### Checks on the changed section
+- **CM-060:** the first paragraph is 56 words, with a short first sentence. Pass.
+- **E10 / CM-047** (`readability.py`, with the accepted exclude-terms list rebuilt from decisions-settled `exclude_terms_accepted`): the section is grade 5.2 and the page average is 5.1. No paragraph is over grade 10. Pass.
+- **E4:** the FAQ H2 section is 362 words, within the 375 limit. Pass.
+- **E5:** every figure comes from the settled `metal_cost_ranges`. Pass.
+- **E3, E7, E8:** no variant or heading changed, and there are no links. Pass.
+- **Placeholders:** the only brackets are the 2 existing `[NEED: …]` notes. Pass.
+- **E1:** the metal sentences match the Metal page's wording. Paul asked for this so the two pages stay consistent, so it is not a portability failure.
+- **Emergency FAQ waiver:** the 63-word waiver still stands.
+
+### Batch state
+`services` → **sem_applied** with `--checks-passed`. Next step is `writeback services`.
+
+### Note for Paul (not changed)
+The next paragraph starts "These are typical ranges for the area, not a quote." The new sentence just before it starts "These are regional ranges…", so two sentences in a row now open with "These are". This is minor. If Paul wants it fixed, he can delete the second sentence, which is a one-line change.
+### END HANDOFF
+## RUN 20261012-143054-build-3339 · FINISHED · 2026-10-12T14:31:57-05:00
+Changes: 0 · Summary: services apply-sem revision: Roof Replacement cost FAQ aligned to Metal ranges ($16,600-$32,000+ typical; $30,000-$45,000+ coastal), $24,000 removed; all checks pass; batch sem_applied
+- CHANGE #618 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (18).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (18).md | result: done · renamed and moved, nothing deleted
+- CHANGE #619 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (18).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 423a59cc6431 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #620 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (24).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (24).md | result: done · renamed and moved, nothing deleted
+- CHANGE #621 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (24).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha d4015fa80239 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #622 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (24).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (24).md | result: done · renamed and moved, nothing deleted
+- CHANGE #623 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (24).md | new: Apex Roofing of the Lowcountry - Status.md · sha abcfa355c552 | result: done · copied (Drive for desktop syncs it)
