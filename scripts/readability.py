@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """readability.py — the reading-level check (CM-047), self-critique E10 for commercial and blog drafts.
 
-    readability.py <draft.md> [--exclude-terms terms.txt]      report; exit 1 if the page misses the target
+    readability.py <draft.md> [--exclude-terms terms.txt | "term, term"]  report; exit 1 if the page misses the target
 
 Visitor-facing copy targets grade 7–8 (Flesch-Kincaid). Counted: the meta description and every prose
 paragraph, FAQ answers included. Not counted: the header block's seo_title (excluded by CM-047), headings
@@ -14,6 +14,7 @@ Target: page average ≤ 8.9 and no paragraph over grade 10. Each paragraph over
 split or a plainer word. Then the writer still does the read-aloud pass (writing-commercial.md E10).
 """
 import argparse
+import os
 import re
 import sys
 
@@ -82,11 +83,23 @@ def units(md, terms):
     return cleaned
 
 
+def exclude_terms(v):
+    """--exclude-terms (CR-019): an existing file (one term per line) or a comma-separated list, longest first."""
+    if not v:
+        return []
+    try:
+        is_file = os.path.isfile(v)
+    except (OSError, ValueError):   # a long comma list is not a file name
+        is_file = False
+    raw = open(v, encoding="utf-8").read().splitlines() if is_file else v.split(",")
+    return sorted({t.strip() for t in raw if t.strip()}, key=len, reverse=True)
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("draft"); ap.add_argument("--exclude-terms")
+    ap.add_argument("draft"); ap.add_argument("--exclude-terms", help="a file (one term per line) or a comma-separated list")
     a = ap.parse_args()
-    terms = sorted({l.strip() for l in open(a.exclude_terms) if l.strip()}, key=len, reverse=True) if a.exclude_terms else []
+    terms = exclude_terms(a.exclude_terms)
     rows = [(sec, t, *grade(t)) for sec, t in units(open(a.draft, encoding="utf-8").read(), terms)]
     rows = [r for r in rows if r[2] is not None]
     if not rows:

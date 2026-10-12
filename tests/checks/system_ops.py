@@ -124,4 +124,21 @@ def t_lowcountry_sources(h):
             "Local context only" in res and "never for a permit, code or any" in res)
 
 
-SCENARIOS = [t_where_rename, t_sync_main, t_lowcountry_sources]
+def t_readability_terms(h):
+    d = h.SB / "clients" / "rd-co"
+    d.mkdir(parents=True, exist_ok=True)
+    (d / "draft.md").write_text("# Roof Repair\n\nWe fix roofs in Beaufort County. Environmental Protection Agency rules apply to old shingles.\n")
+    (d / "terms.txt").write_text("Beaufort County\nEnvironmental Protection Agency\n")
+    long = ", ".join(["Environmental Protection Agency", "Beaufort County"] + [f"Term number {i}" for i in range(40)])
+    runs = {k: h.sh(f'python3 scripts/readability.py clients/rd-co/draft.md --exclude-terms {v}')
+            for k, v in (("file", "clients/rd-co/terms.txt"), ("list", '"Beaufort County, Environmental Protection Agency"'),
+                         ("long", f'"{long}"'))}
+    h.check("CR-019: --exclude-terms takes a file, a comma list, and a list too long to be a file name — no crash",
+            all("Reading level" in o and "Traceback" not in o for _, o in runs.values()),
+            {k: o[-200:] for k, (_, o) in runs.items()})
+    h.check("CR-019: the file and the list give the same score", runs["file"][1] == runs["list"][1], runs)
+    wc = (REPO / "methodology" / "writing-commercial.md").read_text()
+    h.check("CR-019: E10 shows the comma-list form and the file form", "a comma-separated list, or a file with one term per line" in wc)
+
+
+SCENARIOS = [t_where_rename, t_sync_main, t_lowcountry_sources, t_readability_terms]

@@ -110,7 +110,7 @@ replaces: <old URL(s) this page replaces, comma-separated — only if any>
   city in a service-page H tag, one H1; the H1 restate test COM-11, CM-046, with its stripped remainders shown) · E8 link check (no cross-page link in prose, FAQ or
   local context; link-table placeholders present) · E9 human check (sounds like someone who
   knows the trade) · E10 reading level (CM-047): `python3 scripts/readability.py <draft> --exclude-terms
-  <entity terms + named sources>` — report the page grade and every paragraph over 10, fix them, then a
+  "<entity term>, <service name>, <named source>"` (a comma-separated list, or a file with one term per line) — report the page grade and every paragraph over 10, fix them, then a
   read-aloud pass (any sentence that needs a second read is rewritten); FAQ answers checked against C7. Then the spec's conformance checks for this page type. Report outstanding NEEDs.
 - **Stage 4 Semantic review — report only; the draft is not changed.** One table **per batch**
   (every page in the batch), saved as `<Client> - Semantic Review - <batch> - REVIEW.md`:

@@ -221,3 +221,17 @@ What happens now: no client has a Search Console export in inputs/, so CM-059 co
 What is proposed: at intake, every client's document checklist includes a Search Console Performance → Queries export, filtered to the homepage, last 90 days (named '<Client> - GSC - queries-homepage-90d - <date>.csv', read by scripts/h1lock.py --gsc).
 
 ---
+
+- CR-006 · 2026-10-12 · DONE · system session · commit edf3b2f
+
+- CR-007 · 2026-10-12 · DONE · system session · commit edf3b2f
+
+- CR-008 · 2026-10-12 · DONE · system session · commit edf3b2f
+
+- CR-009 · 2026-10-12 · DONE · system session · commit edf3b2f
+
+- CR-010 · 2026-10-12 · DONE · system session · commit edf3b2f
+
+- CR-011 · 2026-10-12 · DONE · system session · commit edf3b2f
+
+- CR-012 · 2026-10-12 · DONE · system session · commit edf3b2f
