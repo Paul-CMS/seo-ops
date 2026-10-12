@@ -73,6 +73,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 - 2026-10-12T07:19 · run 20261012-071954-build-c525 · Paul 2026-10-12: synthetic slate lifespan — okay: use DaVinci's own warranty (lifetime limited, 10-year non-prorated) as the FAQ answer.
 - 2026-10-12T07:19 · run 20261012-071954-build-c525 · Paul 2026-10-12: write the Slate page now without the Belmont information (skipped).
 - 2026-10-12T07:23 · run 20261012-072350-interview-4762 · Paul 2026-10-12: superseded — replacement_price_review holds the Lowcountry whole-home ranges only, no per-square figures (see d-price-replacement-standard-2026, revised today).
+- 2026-10-12T07:30 · run 20261012-073051-interview-f000 · Paul 2026-10-12: KEEP — slate weight wording stays 'per square' (800–1,500 lbs per square vs 200–350 for architectural shingles). No change.
 
 ## Conditions met (system-verified)
 

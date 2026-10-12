@@ -235,8 +235,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-replacement.grid.md",
         "sha": "22cb36fe6e38",
-        "at": "2026-10-12T07:24:04-05:00",
-        "run": "20261012-072350-interview-4762",
+        "at": "2026-10-12T07:30:52-05:00",
+        "run": "20261012-073051-interview-f000",
         "gaps": [
           "service_scope",
           "warranty",
@@ -281,8 +281,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-installation.grid.md",
         "sha": "00c6eca94d6c",
-        "at": "2026-10-12T07:24:04-05:00",
-        "run": "20261012-072350-interview-4762",
+        "at": "2026-10-12T07:30:52-05:00",
+        "run": "20261012-073051-interview-f000",
         "gaps": [
           "pricing",
           "warranty",
@@ -322,8 +322,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-inspections.grid.md",
         "sha": "0a9554785cb6",
-        "at": "2026-10-12T07:24:04-05:00",
-        "run": "20261012-072350-interview-4762",
+        "at": "2026-10-12T07:30:52-05:00",
+        "run": "20261012-073051-interview-f000",
         "gaps": [
           "service_scope",
           "pricing",
@@ -369,8 +369,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-emergency-roof-repair.grid.md",
         "sha": "9346e4c77bb5",
-        "at": "2026-10-12T07:24:04-05:00",
-        "run": "20261012-072350-interview-4762",
+        "at": "2026-10-12T07:30:52-05:00",
+        "run": "20261012-073051-interview-f000",
         "gaps": [
           "service_scope",
           "warranty",
@@ -419,8 +419,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-metal-roofing.grid.md",
         "sha": "bec9af13d9a2",
-        "at": "2026-10-12T07:24:04-05:00",
-        "run": "20261012-072350-interview-4762",
+        "at": "2026-10-12T07:30:52-05:00",
+        "run": "20261012-073051-interview-f000",
         "gaps": [
           "pricing",
           "warranty",
@@ -465,8 +465,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-slate-roofing.grid.md",
         "sha": "ef14fa383795",
-        "at": "2026-10-12T07:24:04-05:00",
-        "run": "20261012-072350-interview-4762",
+        "at": "2026-10-12T07:30:52-05:00",
+        "run": "20261012-073051-interview-f000",
         "gaps": [
           "pricing",
           "warranty",
@@ -505,8 +505,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-skylights.grid.md",
         "sha": "d8201767d351",
-        "at": "2026-10-12T07:24:04-05:00",
-        "run": "20261012-072350-interview-4762",
+        "at": "2026-10-12T07:30:52-05:00",
+        "run": "20261012-073051-interview-f000",
         "gaps": [
           "pricing",
           "warranty",
@@ -1351,10 +1351,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261012-072350-interview-4762",
+    "run_id": "20261012-073051-interview-f000",
     "command": "interview",
-    "finished": "2026-10-12T07:24:04-05:00",
-    "result": "Records fixed: per-square price removed from the Lowcountry standard fact; Belmont removed from the settled slate scope",
+    "finished": "2026-10-12T07:30:52-05:00",
+    "result": "Paul: keep slate weight wording (per square)",
     "changes": 0,
     "step": "interview:facts-answers",
     "batch": "services"
@@ -1378,7 +1378,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-12T07:24:04-05:00",
+  "updated": "2026-10-12T07:30:52-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",

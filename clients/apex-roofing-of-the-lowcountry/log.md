@@ -3066,3 +3066,32 @@ Changes: 0 · Summary: Records fixed: per-square price removed from the Lowcount
 - CHANGE #498 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Brand Guide.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Brand Guide - 2026-10-12.md | new: Apex Roofing of the Lowcountry - Brand Guide.md · sha e36b8f19e8c0 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #499 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (5).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (5).md | result: done · renamed and moved, nothing deleted
 - CHANGE #500 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (5).md | new: Apex Roofing of the Lowcountry - Status.md · sha c86137b0a53a | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261012-073051-interview-f000 · STARTED · /interview · 2026-10-12T07:30:51-05:00
+Step: interview:facts-answers · batch services · session a1a7f5f8-03bf-44ec-ad8e-1ebe990b1d87
+Gates checked: discovery_signed_off
+- DECISION 2026-10-12T07:30 · run 20261012-073051-interview-f000 · Paul 2026-10-12: KEEP — slate weight wording stays 'per square' (800–1,500 lbs per square vs 200–350 for architectural shingles). No change.
+- EVIDENCE 2026-10-12T07:30 · run 20261012-073051-interview-f000 · svc-roof-replacement: WARN (known 8, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T07:30 · run 20261012-073051-interview-f000 · svc-roof-installation: WARN (known 8, unknown 0, unverified 5, conflict 0)
+- EVIDENCE 2026-10-12T07:30 · run 20261012-073051-interview-f000 · svc-roof-inspections: WARN (known 7, unknown 0, unverified 5, conflict 0)
+- EVIDENCE 2026-10-12T07:30 · run 20261012-073051-interview-f000 · svc-emergency-roof-repair: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T07:30 · run 20261012-073051-interview-f000 · svc-metal-roofing: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T07:30 · run 20261012-073051-interview-f000 · svc-slate-roofing: WARN (known 9, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-12T07:30 · run 20261012-073051-interview-f000 · svc-skylights: WARN (known 8, unknown 0, unverified 4, conflict 0)
+### HANDOFF · /interview · 2026-10-12 · run 20261012-073051-interview-f000
+## What changed
+- `d-price-replacement-standard-2026` (facts.json): value now holds whole-home ranges only (asphalt about $14,000–$20,000; standing seam metal about $24,000–$45,000+; no per-square figures). Paul 2026-10-12.
+- `fact:svc-slate-roofing:service_scope`: reopened and re-settled without CertainTeed Belmont (Paul: "not sure, skip"). Reopen logged as a process defect.
+- `replacement_price_review`: logged as superseded. The Lowcountry whole-home ranges only, no per-square figures.
+
+## Open for Paul
+- Slate weight wording "per square" (800–1,500 lbs per square vs 200–350 for architectural shingles): keep, or reword as "per 100 sq ft"?
+### END HANDOFF
+## RUN 20261012-073051-interview-f000 · FINISHED · 2026-10-12T07:30:52-05:00
+Changes: 0 · Summary: Paul: keep slate weight wording (per square)
+- CHANGE #501 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (5).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #502 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (5).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha a008bcdbafe2 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #503 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (6).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #504 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (6).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 7d40988419e7 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #505 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (6).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #506 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (6).md | new: Apex Roofing of the Lowcountry - Status.md · sha 24aab0cf5018 | result: done · copied (Drive for desktop syncs it)

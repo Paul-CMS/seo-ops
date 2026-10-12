@@ -1820,3 +1820,13 @@ Agent 2 — Build · 2026-10-12 · Route A · step build:brief (revision 2), bat
 ## Open for Paul
 - Slate weight wording "per square" (800–1,500 lbs per square vs 200–350 for architectural shingles): keep, or reword as "per 100 sq ft"?
 
+## /interview · 2026-10-12 · run 20261012-073051-interview-f000
+
+## What changed
+- `d-price-replacement-standard-2026` (facts.json): value now holds whole-home ranges only (asphalt about $14,000–$20,000; standing seam metal about $24,000–$45,000+; no per-square figures). Paul 2026-10-12.
+- `fact:svc-slate-roofing:service_scope`: reopened and re-settled without CertainTeed Belmont (Paul: "not sure, skip"). Reopen logged as a process defect.
+- `replacement_price_review`: logged as superseded. The Lowcountry whole-home ranges only, no per-square figures.
+
+## Open for Paul
+- Slate weight wording "per square" (800–1,500 lbs per square vs 200–350 for architectural shingles): keep, or reword as "per 100 sq ft"?
+
