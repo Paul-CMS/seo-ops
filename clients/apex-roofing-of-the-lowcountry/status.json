@@ -225,21 +225,20 @@
       "evidence": {
         "result": "warn",
         "counts": {
-          "Known": 8,
+          "Known": 9,
           "Unknown": 0,
-          "Unverified": 4,
+          "Unverified": 3,
           "Conflict": 0
         },
         "why": [
-          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+          "1 required and 2 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-replacement.grid.md",
-        "sha": "22cb36fe6e38",
-        "at": "2026-10-12T07:30:52-05:00",
-        "run": "20261012-073051-interview-f000",
+        "sha": "fceec814cb3e",
+        "at": "2026-10-12T11:43:52-05:00",
+        "run": "20261012-114352-interview-44aa",
         "gaps": [
           "service_scope",
-          "warranty",
           "licence",
           "insurance"
         ]
@@ -277,21 +276,20 @@
       "evidence": {
         "result": "warn",
         "counts": {
-          "Known": 8,
+          "Known": 9,
           "Unknown": 0,
-          "Unverified": 5,
+          "Unverified": 4,
           "Conflict": 0
         },
         "why": [
-          "1 required and 4 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-installation.grid.md",
-        "sha": "00c6eca94d6c",
-        "at": "2026-10-12T07:30:52-05:00",
-        "run": "20261012-073051-interview-f000",
+        "sha": "5a688097be56",
+        "at": "2026-10-12T11:43:52-05:00",
+        "run": "20261012-114352-interview-44aa",
         "gaps": [
           "pricing",
-          "warranty",
           "licence",
           "insurance",
           "claim:New-Construction"
@@ -324,22 +322,21 @@
       "evidence": {
         "result": "warn",
         "counts": {
-          "Known": 7,
+          "Known": 8,
           "Unknown": 0,
-          "Unverified": 5,
+          "Unverified": 4,
           "Conflict": 0
         },
         "why": [
-          "1 required and 4 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-roof-inspections.grid.md",
-        "sha": "0a9554785cb6",
-        "at": "2026-10-12T07:30:52-05:00",
-        "run": "20261012-073051-interview-f000",
+        "sha": "bd012b74375f",
+        "at": "2026-10-12T11:43:52-05:00",
+        "run": "20261012-114352-interview-44aa",
         "gaps": [
           "service_scope",
           "pricing",
-          "warranty",
           "licence",
           "insurance"
         ]
@@ -377,21 +374,20 @@
       "evidence": {
         "result": "warn",
         "counts": {
-          "Known": 9,
+          "Known": 10,
           "Unknown": 0,
-          "Unverified": 4,
+          "Unverified": 3,
           "Conflict": 0
         },
         "why": [
-          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+          "1 required and 2 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-emergency-roof-repair.grid.md",
-        "sha": "9346e4c77bb5",
-        "at": "2026-10-12T07:30:52-05:00",
-        "run": "20261012-073051-interview-f000",
+        "sha": "ba1619e6132f",
+        "at": "2026-10-12T11:43:52-05:00",
+        "run": "20261012-114352-interview-44aa",
         "gaps": [
           "service_scope",
-          "warranty",
           "licence",
           "insurance"
         ]
@@ -433,21 +429,20 @@
       "evidence": {
         "result": "warn",
         "counts": {
-          "Known": 9,
+          "Known": 10,
           "Unknown": 0,
-          "Unverified": 4,
+          "Unverified": 3,
           "Conflict": 0
         },
         "why": [
-          "0 required and 4 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+          "0 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-metal-roofing.grid.md",
-        "sha": "bec9af13d9a2",
-        "at": "2026-10-12T07:30:52-05:00",
-        "run": "20261012-073051-interview-f000",
+        "sha": "a5265f474d93",
+        "at": "2026-10-12T11:43:52-05:00",
+        "run": "20261012-114352-interview-44aa",
         "gaps": [
           "pricing",
-          "warranty",
           "licence",
           "insurance"
         ]
@@ -485,21 +480,20 @@
       "evidence": {
         "result": "warn",
         "counts": {
-          "Known": 9,
+          "Known": 10,
           "Unknown": 0,
-          "Unverified": 4,
+          "Unverified": 3,
           "Conflict": 0
         },
         "why": [
-          "0 required and 4 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+          "0 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-slate-roofing.grid.md",
-        "sha": "ef14fa383795",
-        "at": "2026-10-12T07:30:52-05:00",
-        "run": "20261012-073051-interview-f000",
+        "sha": "731e03624e14",
+        "at": "2026-10-12T11:43:52-05:00",
+        "run": "20261012-114352-interview-44aa",
         "gaps": [
           "pricing",
-          "warranty",
           "licence",
           "insurance"
         ]
@@ -531,21 +525,20 @@
       "evidence": {
         "result": "warn",
         "counts": {
-          "Known": 8,
+          "Known": 9,
           "Unknown": 0,
-          "Unverified": 4,
+          "Unverified": 3,
           "Conflict": 0
         },
         "why": [
-          "0 required and 4 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+          "0 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/svc-skylights.grid.md",
-        "sha": "d8201767d351",
-        "at": "2026-10-12T07:30:52-05:00",
-        "run": "20261012-073051-interview-f000",
+        "sha": "f3642df06824",
+        "at": "2026-10-12T11:43:53-05:00",
+        "run": "20261012-114352-interview-44aa",
         "gaps": [
           "pricing",
-          "warranty",
           "licence",
           "insurance"
         ]
@@ -1421,12 +1414,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261012-082058-build-4027",
-    "command": "build",
-    "finished": "2026-10-12T08:26:44-05:00",
-    "result": "Services batch review: 7 drafts side by side, semantic review written (15 SEM items, report only), batch drafts_written for Paul's approval",
+    "run_id": "20261012-114352-interview-44aa",
+    "command": "interview",
+    "finished": "2026-10-12T11:43:53-05:00",
+    "result": "Paul's SEM and facts answers: warranty fact recorded; SEM 1-15 applied at approval; Skylights FAQ 4 kept; Slate FAQs 3 and 5 dropped",
     "changes": 0,
-    "step": "build:drafts",
+    "step": "interview:facts-answers",
     "batch": "services"
   },
   "spend": {
@@ -1448,7 +1441,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-12T08:26:44-05:00",
+  "updated": "2026-10-12T11:43:53-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",

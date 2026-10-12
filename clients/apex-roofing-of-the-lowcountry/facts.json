@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-12T07:23:50-05:00",
+  "updated": "2026-10-12T11:43:52-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -245,14 +245,15 @@
       "section": "D",
       "num": "",
       "label": "Warranty terms",
-      "value": "Manufacturer: \"50 year Limited Lifetime Warranty which is transferable\" · workmanship: \"our lifetime no-leak warranty which is also transferable\" (replaces W13's untermed \"separately guaranteed\") · SureStart PLUS extended warranty covering material and labor (W12) · metal panels \"40-year warranty against chalking and fading\" (W14): not confirmed",
-      "status": "submitted",
-      "status_text": "Manufacturer + workmanship: Client Confirmed 2026-10-07 · SureStart PLUS: Paul Approved 2026-10-06 · W14: Submitted `[NEED: confirm the 40-year Kynar 500 / Hylar 5000 panel warranty]`",
-      "source": "Returned sheet, Message 2; Paul answers B9; W12–W14",
+      "value": "Manufacturer: 50 year Limited Lifetime Warranty which is transferable. Workmanship: our lifetime no-leak warranty which is also transferable. SureStart PLUS extended warranty covering material and labor. Metal standing seam panels: 40-year warranty against chalking and fading (Paul 2026-10-11 answer 4: correct).",
+      "status": "paul_approved",
+      "status_text": null,
+      "source": "Paul 2026-10-11 answer 4 (metal 40-year warranty correct); returned sheet Message 2; Paul answers B9",
       "quote": "",
-      "date": "2026-10-07",
-      "who": "",
-      "count": null
+      "date": "2026-10-12",
+      "who": "Paul",
+      "count": null,
+      "was": "Submitted"
     },
     {
       "id": "d-guarantees-response-time-on-time-satisfaction",
