@@ -3438,3 +3438,62 @@ Changes: 0 · Summary: Slate Roofing draft written (svc-slate-roofing, services 
 - CHANGE #550 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (14).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha bd50b4f9191f | result: done · copied (Drive for desktop syncs it)
 - CHANGE #551 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (14).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (14).md | result: done · renamed and moved, nothing deleted
 - CHANGE #552 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (14).md | new: Apex Roofing of the Lowcountry - Status.md · sha 6f4294ed6110 | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-12T08:15 · after build:draft (run 20261012-080653-build-ad60) · Paul typed /next
+
+## RUN 20261012-081530-build-c16d · STARTED · /build · 2026-10-12T08:15:30-05:00
+Step: build:draft · batch services · session a1a7f5f8-03bf-44ec-ad8e-1ebe990b1d87
+Gates checked: discovery_signed_off, batch:services:briefs, page_specs_approved
+- DRAFT 2026-10-12T08:18 · run 20261012-081530-build-c16d · svc-skylights · clients/apex-roofing-of-the-lowcountry/build/services/SD - Skylights - Apex Roofing of the Lowcountry.md
+- DRAFT 2026-10-12T08:18 · run 20261012-081530-build-c16d · svc-skylights · clients/apex-roofing-of-the-lowcountry/build/services/SD - Skylights - Apex Roofing of the Lowcountry.md
+### HANDOFF · /build · 2026-10-12 · run 20261012-081530-build-c16d
+**Agent:** Build (Agent 2), Opus · **Date:** 2026-10-12 · **Route:** A
+
+### Done
+- Drafted `clients/apex-roofing-of-the-lowcountry/build/services/SD - Skylights - Apex Roofing of the Lowcountry.md` from the approved brief (SB - Skylights, approved 2026-10-12) and `methodology/specs/service.md`. 1,096 body words (869 visitor-facing words scored by readability.py).
+- Recorded: `status.py page-stage apex-roofing-of-the-lowcountry svc-skylights --stage draft` (run 20261012-081530-build-c16d; re-recorded after the E1 rewrite).
+- No new flag. The readability `--exclude-terms` file issue is already flagged (F-016); same workaround (terms file in scratchpad).
+
+### Stage 0/1 (map and plan, from the approved brief)
+- Title `Skylights - Apex Roofing of the Lowcountry` · meta 159 chars (brief wording) · H1 `Skylight Installation in Beaufort and Jasper Counties` · no "The Best" (BG-H2).
+- Variant chain: URL skylights → title Skylights → H1 Skylight Installation / Beaufort and Jasper Counties → first H2 "add or fix a skylight" / South Carolina Lowcountry / Residential Roofer → opening: Hilton Head Island–Bluffton–Port Royal metropolitan area / roofer → FAQ H2 skylight / Lowcountry (no category term, per brief option).
+- Headings re-worded from the brief's suggestions to avoid sibling shapes: first H2 uses "How Should …" (Replacement uses "How Does a Residential Roofer Replace …"); types H2 avoids Slate's "X, Y or a Repair: Which …" shape; FAQ H2 "Is a Skylight a Good Idea for Your Lowcountry Home?" avoids the "What Should … Know Before" (Slate) and "Which … Questions Do … Hear" (Metal) shapes.
+- Order: opening → delivery H2 (5 steps) → types H2 (4 H3s) → FAQ H2 (5 H3s) → service-areas H2 + placeholder → CTA.
+
+### Stage 3 self-critique
+- **E1 portability:** pass after one rewrite. Leak-vs-fog diagnosis, curb and sealed unit, structural opening, ARB for street-visible skylights are skylight-only. Fixed two near-copies of sibling sentences (clean-up/magnet line was almost word-for-word Slate's; owner line matched Metal/Slate's "Ralph Brehany and his son Pierce own Apex, and both…"). Flashing H3 is about the skylight's own flashing and curb, not Roof Repair's chimney/wall/valley paragraph; the G "tube of silicone" quote is not reused. Emergency line uses the client's words, not Emergency's opener.
+- **E2 specificity:** pass — rain = flashing/curb vs. no-rain fog = failed sealed unit; sealed-unit replacement and flashing/curb repair without a new unit; itemized written estimates; ARB for street-visible skylights in plantation communities; SC License #57706 and Town of Bluffton #0620033323.
+- **E3 variants:** pass — no consecutive repeat; reserved B1 variant unused; B2 #4 in H1, B2 #1 in first H2.
+- **E4 chunks:** delivery 332 · types 263 · FAQ 313 · service areas 75 (heading-inclusive) — all under 375.
+- **E5 invention sweep:** no price, no per-square figure, no lifespan, no energy figure, no fixed-vs-venting claim, no warranty term, no install duration, no brand named outside the NEED marker, no Ken Gathercole review, no CertainTeed Belmont, no tubular or flat-roof skylights, no response time ("at any hour" considered and removed as a CM-049 24-hour risk). General trade explanations only (what flashing, a curb and a sealed unit are; heat and glare as a general downside; a roof replacement is a sensible time to decide on skylights). ARB step says "check with your community" — the brief does not settle that Apex prepares ARB paperwork for skylights.
+- **E6 filler:** pass; no A6 phrases; cost FAQ opens with the main driver, not "costs vary".
+- **E7 headers:** one H1; every H2 a spoken question naming an entity; no city or community in any H tag; no skipped levels. COM-11: title remainder "Skylights" vs H1 remainder "Skylight Installation" — "installation" is not in the filler list, and the brief/site plan set this H1 (F-012). Pass.
+- **E8 links:** no cross-page link and no `[LINK →]` placeholder in prose or FAQ; service-area placeholder present.
+- **E9 human:** reads as a roofer explaining a skylight job; trade terms explained in the next clause.
+- **E10 reading level:** page grade 5.5 (≤ 8.9); highest paragraph 8.5 (cost FAQ); two paragraphs over 10 in the first pass (types H2 intro, metal FAQ) were split. Read-aloud pass done.
+- **Spec checks:** SVC-01–09, 11–14, 16–22 pass. SVC-15: 5 FAQs (within 4–6); FAQ 5 drops if no cited source by draft approval → 4. SVC-23 N/A. FAQ first sentences run 16–42 words (spec says the answer is 40–60); FAQ 4 and 5 are short because their facts wait on cited sources.
+
+### Open items (placeholders.py: 6, all `[NEED: …]`)
+1. `[NEED: skylight install steps beyond cutting and framing the opening, if they are to be described]` (delivery step 3)
+2. `[NEED: confirm Apex installs Velux and FAKRO — name the brands here only if yes]` (Full Skylight Replacement H3; client yes/no, brief F2)
+3. `[NEED: cited source on skylight energy performance — researcher]` (FAQ 3)
+4. `[NEED: cited manufacturer guidance on skylights for standing seam metal roofs — researcher]` (FAQ 4)
+5. `[NEED: does Apex install skylights in standing seam metal roofs?]` (FAQ 4; client yes/no)
+6. `[NEED: cited manufacturer source on fixed vs venting skylights — researcher; drop this FAQ if no source by draft approval]` (FAQ 5)
+
+### For the batch review
+- FAQ 4 (skylight on metal) touches Metal Roofing's scope; answers only the skylight side, no link.
+- Delivery step 1 (leak diagnosis) sits close to Emergency FAQ "Is a leaking roof an emergency?" — different question (where vs. how urgent); check side by side.
+- The meta names "emergency roof repair" (brief wording, Paul answer 7); the body's emergency line is one short paragraph.
+- Researcher pass needed for items 3, 4, 6 (public facts — never asked of the client).
+
+### Not done
+- No publish, no WordPress, no link table, no schema, no Brand Guide write-back (that follows the batch's drafts approval).
+### END HANDOFF
+## RUN 20261012-081530-build-c16d · FINISHED · 2026-10-12T08:19:33-05:00
+Changes: 0 · Summary: Skylights service draft written from the approved brief (1,096 words, 6 NEED markers, E1-E10 and spec checks pass)
+- CHANGE #553 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (12).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (12).md | result: done · renamed and moved, nothing deleted
+- CHANGE #554 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (12).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 33f3593ded8d | result: done · copied (Drive for desktop syncs it)
+- CHANGE #555 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (15).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (15).md | result: done · renamed and moved, nothing deleted
+- CHANGE #556 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (15).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 81b2326ffced | result: done · copied (Drive for desktop syncs it)
+- CHANGE #557 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (15).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (15).md | result: done · renamed and moved, nothing deleted
+- CHANGE #558 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (15).md | new: Apex Roofing of the Lowcountry - Status.md · sha 21349f4267fb | result: done · copied (Drive for desktop syncs it)
