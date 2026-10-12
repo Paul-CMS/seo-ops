@@ -1,17 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
-- **What is happening now:** waiting for Paul's approval — the briefs for batch services are ready for your approval (outline before prose; one brief per page, each written in its own run)
-- **Waiting on:** Paul — the briefs for batch services are ready for your approval (outline before prose; one brief; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
-- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry batch:services:briefs --files "clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Replacement - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Installation - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Roof Inspections - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Emergency Roof Repair - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Metal Roofing - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Slate Roofing - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/services/SB - Skylights - Apex Roofing of the Lowcountry.md"` (or asks for changes first)
+- **Stage 4 of 8 — Audit**
+- **What is happening now:** waiting for Paul's approval — the audit and the reconciled Brand Guide are ready for your approval in one line — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts
+- **Waiting on:** Paul — the audit and the reconciled Brand Guide are ready for your approval in one line — the rec; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Client (via Paul) — Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect
+- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry brand_guide_approved --files "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G"` (or asks for changes first)
 
-_Generated 2026-10-12T07:23 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-12T07:24 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the briefs for batch services are ready for your approval (outline before prose; one brief per page, each written in its own run) | 2026-10-12 | /approve apex-roofing-of-the-lowcountry batch:services:briefs |
+| Paul | the audit and the reconciled Brand Guide are ready for your approval in one line — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts | 2026-10-12 | /approve apex-roofing-of-the-lowcountry brand_guide_approved |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Client (via Paul) | Synthetic roofing offered? (decides where the broken /services/synthetic-roofing/ redirect points) · Port Royal base-housing work? · one confirmed price range (ref audit F-009, F-001, F-002) | 2026-10-08 | synthetic_roofing_offered |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
@@ -83,7 +83,7 @@ _Open, but the next action above goes ahead without them._
 - Paul 2026-10-09: no Old Town historic review or UDO roof-material claims (UDO 3.18 and Article 5 NEEDs dropped) unless evidence is found; none found in this run. The Old Town FAQ now only tells the homeowner to ask the Town before choosing a material.
 - Paul 2026-10-12: Roof replacement price on the page = the Lowcountry standard ranges (d-price-replacement-standard-2026): architectural asphalt $350-$475/sq (about $14,000-$20,000 on a typical 1,800-2,000 sq ft home); standing seam metal $700-$1,200/sq (about $24,000-$45,000+). Not the review. The review ($20,000-$25,000, Ken Gathercole, 2026-08-15) may be used on the Roof Replacement page as an example only, cited to that single review.
 - Paul 2026-10-11 answer 1 (site is accurate; services confirmed): Standing seam metal roofing for coastal conditions (salt air, hurricane winds, UV, humidity): concealed fasteners, wind-uplift resistance; coated standing seam panels (Kynar 500 and Hylar 5000) in a range of profiles and colours, with colour submittals and ARB submissions for HOA communities.
-- Paul 2026-10-11 answer 1 (site is accurate; services confirmed): genuine Vermont slate in standard grades suited to coastal wind requirements; premium synthetic slate (DaVinci Roofscapes, CertainTeed Belmont); slate repair, replacing individual tiles when most of the field is sound, and re-flashing penetrations.
+- Paul 2026-10-11 answer 1 (site is accurate; services confirmed), revised 2026-10-12: genuine Vermont slate in standard grades suited to coastal wind requirements; premium synthetic slate (DaVinci Roofscapes only); slate repair, replacing individual tiles when most of the field is sound, and re-flashing penetrations. CertainTeed Belmont skipped by Paul (not sure) — do not name it.
 - Paul 2026-10-11 answer 1 (site is accurate; services confirmed): new skylight installation in existing roofs (including structural work); repair or replacement of failing units, including sealed-unit replacement for fogging between panes and flashing and curb repair.
 - Paul 2026-10-11 answer 2 (site is accurate; metal process confirmed): free consultation first; colour submittals and ARB submissions for HOA communities; repair assessed against replacement for damaged metal.
 - Paul 2026-10-11 answer 2 (site is accurate; slate process confirmed): framing assessed first (slate weighs roughly 800-1,500 lbs per square vs 200-350 for architectural shingles), with possible sister-rafter or purlin reinforcement; material approval coordinated with the City of Beaufort BAR for historic districts.
@@ -136,4 +136,4 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /build 2026-10-12T07:23 — Services briefs revision 2: per-square prices removed (whole-home ranges only), Belmont dropped from Slate, Slate FAQ 6 uses DaVinci warranty; 7 briefs re-recorded
+Last run: /interview 2026-10-12T07:24 — Records fixed: per-square price removed from the Lowcountry standard fact; Belmont removed from the settled slate scope

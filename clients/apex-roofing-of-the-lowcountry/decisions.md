@@ -72,6 +72,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 - 2026-10-12T07:19 · run 20261012-071954-build-c525 · Paul 2026-10-12: CertainTeed Belmont — not sure, skip. Write the Slate page without it: do not name Belmont or describe it as slate-look shingle or synthetic.
 - 2026-10-12T07:19 · run 20261012-071954-build-c525 · Paul 2026-10-12: synthetic slate lifespan — okay: use DaVinci's own warranty (lifetime limited, 10-year non-prorated) as the FAQ answer.
 - 2026-10-12T07:19 · run 20261012-071954-build-c525 · Paul 2026-10-12: write the Slate page now without the Belmont information (skipped).
+- 2026-10-12T07:23 · run 20261012-072350-interview-4762 · Paul 2026-10-12: superseded — replacement_price_review holds the Lowcountry whole-home ranges only, no per-square figures (see d-price-replacement-standard-2026, revised today).
 
 ## Conditions met (system-verified)
 
