@@ -5988,3 +5988,50 @@ Approved version: clients/apex-roofing-of-the-lowcountry/build/h1/AB - About - A
 - CHANGE #862 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (22).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 5f920eb6fa1f | result: done · copied (Drive for desktop syncs it)
 - CHANGE #863 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (22).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (22).md | result: done · renamed and moved, nothing deleted
 - CHANGE #864 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (22).md | new: Apex Roofing of the Lowcountry - Status.md · sha 6c0d16462d42 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261013-144954-build-6134 · STARTED · /build · 2026-10-13T14:49:54-05:00
+Step: build:writeback · batch h1 · session c8c4edb4-ac21-4ae0-9921-08c6e6237c0f
+Gates checked: discovery_signed_off, batch:h1:briefs
+- CHANGE #865 [brand_guide] clients/apex-roofing-of-the-lowcountry/brand-guide.md#B3 | B3 assignment log | old:  | new:  | result: APPLIED · local · 2 rows: homepage row filled (was empty), About row added, from the approved h1 briefs incl. Paul's two edited homepage H2s (CM-061 write-back at the brief approval) | snapshots clients/apex-roofing-of-the-lowcountry/snapshots/20261013-144954-build-6134/0865-old.md clients/apex-roofing-of-the-lowcountry/snapshots/20261013-144954-build-6134/0865-new.md
+- CHANGE #866 [brand_guide] clients/apex-roofing-of-the-lowcountry/brand-guide.md#C3 | C3 heading and FAQ registry | old:  | new:  | result: APPLIED · local · 16 rows (11 H2s + 5 FAQ questions): homepage 12, About 4, as briefed and as Paul edited the homepage services and service-areas H2s; no question or H2 on two pages (201 rows total); C1 and C2 unchanged (no service or location page in this section) | snapshots clients/apex-roofing-of-the-lowcountry/snapshots/20261013-144954-build-6134/0866-old.md clients/apex-roofing-of-the-lowcountry/snapshots/20261013-144954-build-6134/0866-new.md
+- CHANGE #867 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/brand-guide - 2026-10-12.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/brand-guide.md | new: _Archive/brand-guide - 2026-10-12.md | result: done · renamed and moved, nothing deleted
+- CHANGE #868 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/brand-guide.md | upload | old: previous version archived as brand-guide - 2026-10-12.md | new: brand-guide.md · sha f022702343b0 | result: done · copied (Drive for desktop syncs it)
+- WRITE-BACK 2026-10-13T14:52 · run 20261013-144954-build-6134 · batch h1: Brand Guide B3, C1/C2, C3 updated once for the section, from its approved briefs
+### HANDOFF · /build · 2026-10-13 · run 20261013-144954-build-6134
+**Step:** the h1 section's one Brand Guide write-back (CM-061), at the brief approval (batch h1 briefs approved by Paul 2026-10-13). Route A. Written from the approved briefs as they now stand, including Paul's two edited homepage H2s.
+
+**Done**
+- Brand Guide B3 (assignment log): 2 rows. The homepage row (`/`, previously empty) now records the category and area variants from the approved brief: SEO title Roofing Contractor + Hilton Head Island Metropolitan Area (B1 reserved), H1 Residential Roofer + South Carolina Lowcountry (locked as live), services H2 Beaufort and Jasper Counties, Lowcountry in the testimonials, FAQ and service-areas H2s. A new `/about/` row: SEO title Roofing Contractor + Hilton Head Island–Bluffton–Port Royal Metropolitan Area (B2 #3), owners H2 Roofers, service-area H2 Beaufort and Jasper Counties. Change #865.
+- Brand Guide C3 (heading and FAQ registry): 16 rows. Homepage: 7 H2s (including "Which Roofing Services Do We Offer in Beaufort and Jasper Counties?" and "Where in the Lowcountry Does Apex Roof Homes?" as Paul edited them) and 5 FAQ questions. About: 4 H2s, no FAQ. No H2 or question appears twice (201 rows in C3). Change #866.
+- C1 and C2 unchanged: there are no service or location pages in this section.
+- Fact rows regenerated from facts.json (`facts.py render`): nothing changed.
+- Brand Guide copied to Drive (`drive.py upload`).
+- `status.py writeback apex-roofing-of-the-lowcountry h1` recorded (exit 0).
+
+**Approved values**
+- Only B3 and C3 were edited. Both sit outside the approved Brand Guide sections. B1, B2 and the fact rows did not change, so brand_guide_approved stands and does not need to go on the next approval line.
+
+**Not done (refused by the permission check)**
+- Two explanatory note lines were not added: one under B3 and one under C3, each saying where the h1 rows came from. Both edits were refused. The table rows are complete without them, and the provenance is in this log and in changes #865–#866.
+
+**For the drafts review (not changed here)**
+- The homepage services H2 that Paul edited says "Roofing Services" and no longer carries a category variant. The brief's variant chain had "Roofer" there.
+- The edited service-areas H2 uses "Lowcountry". So do the FAQ H2 and the testimonials H2 just before it, which makes three consecutive H2s with the same area term (CM-024). The writer can re-word the FAQ or testimonials H2 in the draft. Any re-word goes in the draft review as a Fix-and-list row (F-020).
+- The C2 and B3 status cells for the locations pages still say "draft not yet written", although those drafts were approved on 2026-10-13. Drafts never write the Brand Guide, so these cells stay as they are until a later write-back or Finish.
+
+**Open [NEED]s carried by the briefs**
+- Homepage: 6–9 real project photos for the gallery; the GBP Google Maps share link (Section F hasMap empty); what each non-certification recognition badge is.
+- About: a photo of Ralph and Pierce Brehany; their job titles, only if the client wants titles published; the owners' own account of how and why they started Apex (open client question `fact:about:company_story`).
+
+**Next:** `/build apex-roofing-of-the-lowcountry write h1` (drafts, one fresh subagent per page, then the draft review). This needs its own run.
+### END HANDOFF
+## RUN 20261013-144954-build-6134 · FINISHED · 2026-10-13T14:52:44-05:00
+Changes: 4 · Summary: h1 write-back: Brand Guide B3 2 rows (homepage filled, About added) and C3 16 rows (11 H2s + 5 FAQs, Paul's edited homepage H2s); C1/C2 and fact rows unchanged; no approved value changed
+- CHANGE #869 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (20).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (20).md | result: done · renamed and moved, nothing deleted
+- CHANGE #870 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (20).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 421ca8fdf8f9 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #871 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (23).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (23).md | result: done · renamed and moved, nothing deleted
+- CHANGE #872 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (23).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 252cd158c09a | result: done · copied (Drive for desktop syncs it)
+- CHANGE #873 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Brand Guide - 2026-10-13 (2).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Brand Guide.md | new: _Archive/Apex Roofing of the Lowcountry - Brand Guide - 2026-10-13 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #874 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Brand Guide.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Brand Guide - 2026-10-13 (2).md | new: Apex Roofing of the Lowcountry - Brand Guide.md · sha f022702343b0 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #875 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (23).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (23).md | result: done · renamed and moved, nothing deleted
+- CHANGE #876 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (23).md | new: Apex Roofing of the Lowcountry - Status.md · sha 86f8b8932937 | result: done · copied (Drive for desktop syncs it)

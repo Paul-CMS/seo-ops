@@ -1794,6 +1794,10 @@
               "file": "clients/apex-roofing-of-the-lowcountry/build/h1/briefs-apply.json"
             }
           }
+        },
+        "content_written_back": {
+          "at": "2026-10-13T14:52:20-05:00",
+          "run": "20261013-144954-build-6134"
         }
       }
     ],
@@ -2014,12 +2018,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-140538-build-1832",
+    "run_id": "20261013-144954-build-6134",
     "command": "build",
-    "finished": "2026-10-13T14:13:59-05:00",
-    "result": "h1 briefs: homepage and about briefed (gate WARN both, none blocked); brief review 0 asks, 8 decided-for-you, applied; ready for Paul's briefs approval",
-    "changes": 5,
-    "step": "build:brief",
+    "finished": "2026-10-13T14:52:44-05:00",
+    "result": "h1 write-back: Brand Guide B3 2 rows (homepage filled, About added) and C3 16 rows (11 H2s + 5 FAQs, Paul's edited homepage H2s); C1/C2 and fact rows unchanged; no approved value changed",
+    "changes": 4,
+    "step": "build:writeback",
     "batch": "h1"
   },
   "spend": {
@@ -2041,7 +2045,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T14:49:35-05:00",
+  "updated": "2026-10-13T14:52:44-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2374,5 +2378,10 @@
       "usd": 0.0,
       "at": "2026-10-12T21:31:50-05:00"
     }
-  ]
+  ],
+  "review_pause": {
+    "run_id": "20261013-144954-build-6134",
+    "step": "build:writeback",
+    "at": "2026-10-13T14:52:44-05:00"
+  }
 }

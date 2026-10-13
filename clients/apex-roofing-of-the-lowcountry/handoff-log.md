@@ -3805,3 +3805,32 @@ Nothing approved. No WordPress, no link table, no schema, no Brand Guide write-b
 - Paul approves the h1 briefs. The write-back (`/build apex-roofing-of-the-lowcountry writeback h1`) runs once at that approval. Then the drafts (one fresh subagent per page) and the draft review.
 - `pages_built` is not met yet: the services, locations and h1 batches are not built and written back.
 
+## /build · 2026-10-13 · run 20261013-144954-build-6134
+
+**Step:** the h1 section's one Brand Guide write-back (CM-061), at the brief approval (batch h1 briefs approved by Paul 2026-10-13). Route A. Written from the approved briefs as they now stand, including Paul's two edited homepage H2s.
+
+**Done**
+- Brand Guide B3 (assignment log): 2 rows. The homepage row (`/`, previously empty) now records the category and area variants from the approved brief: SEO title Roofing Contractor + Hilton Head Island Metropolitan Area (B1 reserved), H1 Residential Roofer + South Carolina Lowcountry (locked as live), services H2 Beaufort and Jasper Counties, Lowcountry in the testimonials, FAQ and service-areas H2s. A new `/about/` row: SEO title Roofing Contractor + Hilton Head Island–Bluffton–Port Royal Metropolitan Area (B2 #3), owners H2 Roofers, service-area H2 Beaufort and Jasper Counties. Change #865.
+- Brand Guide C3 (heading and FAQ registry): 16 rows. Homepage: 7 H2s (including "Which Roofing Services Do We Offer in Beaufort and Jasper Counties?" and "Where in the Lowcountry Does Apex Roof Homes?" as Paul edited them) and 5 FAQ questions. About: 4 H2s, no FAQ. No H2 or question appears twice (201 rows in C3). Change #866.
+- C1 and C2 unchanged: there are no service or location pages in this section.
+- Fact rows regenerated from facts.json (`facts.py render`): nothing changed.
+- Brand Guide copied to Drive (`drive.py upload`).
+- `status.py writeback apex-roofing-of-the-lowcountry h1` recorded (exit 0).
+
+**Approved values**
+- Only B3 and C3 were edited. Both sit outside the approved Brand Guide sections. B1, B2 and the fact rows did not change, so brand_guide_approved stands and does not need to go on the next approval line.
+
+**Not done (refused by the permission check)**
+- Two explanatory note lines were not added: one under B3 and one under C3, each saying where the h1 rows came from. Both edits were refused. The table rows are complete without them, and the provenance is in this log and in changes #865–#866.
+
+**For the drafts review (not changed here)**
+- The homepage services H2 that Paul edited says "Roofing Services" and no longer carries a category variant. The brief's variant chain had "Roofer" there.
+- The edited service-areas H2 uses "Lowcountry". So do the FAQ H2 and the testimonials H2 just before it, which makes three consecutive H2s with the same area term (CM-024). The writer can re-word the FAQ or testimonials H2 in the draft. Any re-word goes in the draft review as a Fix-and-list row (F-020).
+- The C2 and B3 status cells for the locations pages still say "draft not yet written", although those drafts were approved on 2026-10-13. Drafts never write the Brand Guide, so these cells stay as they are until a later write-back or Finish.
+
+**Open [NEED]s carried by the briefs**
+- Homepage: 6–9 real project photos for the gallery; the GBP Google Maps share link (Section F hasMap empty); what each non-certification recognition badge is.
+- About: a photo of Ralph and Pierce Brehany; their job titles, only if the client wants titles published; the owners' own account of how and why they started Apex (open client question `fact:about:company_story`).
+
+**Next:** `/build apex-roofing-of-the-lowcountry write h1` (drafts, one fresh subagent per page, then the draft review). This needs its own run.
+

@@ -82,7 +82,8 @@ variants 1 and 2 are not added on top in an SEO title (H1, H2s and body only).
 ### B3 · Assignment log — the write-back target
 | Page URL | Page type | Category variant | Area variant | Content file (SD/LD) | Shipped |
 |---|---|---|---|---|---|
-| / | homepage | | *(reserved)* | | |
+| / | homepage | Roofing Contractor (SEO title, B1 reserved); Residential Roofer (H1, locked as live); Roofers (FAQ H2); roofing contractor / roofers (opening). Services H2 carries "Roofing Services", no category variant (Paul's wording) | Hilton Head Island Metropolitan Area (SEO title, B1 reserved, homepage only); South Carolina Lowcountry (H1, locked); Beaufort and Jasper Counties (services H2); Lowcountry (testimonials, FAQ and service-areas H2s); Hilton Head Island–Bluffton–Port Royal metropolitan area (opening body) | build/h1/HB - Homepage - Apex Roofing of the Lowcountry.md (h1, briefs approved 2026-10-13; draft not yet written) | No |
+| /about/ | about | Roofing Contractor (SEO title); Roofers (owners H2); roofer / residential roofer (opening); H1 brand only ("About Apex Roofing of the Lowcountry", DEC-LOCAL-015) | Hilton Head Island–Bluffton–Port Royal Metropolitan Area (SEO title, B2 #3); Beaufort and Jasper Counties (service-area H2; opening); Lowcountry (opening) | build/h1/AB - About - Apex Roofing of the Lowcountry.md (h1, briefs approved 2026-10-13; draft not yet written) | No |
 | /roof-repair/ | service | Roofers; Roofer | South Carolina Lowcountry (H1); Beaufort and Jasper Counties; Lowcountry | build/pilot/SD - Roof Repair - Apex Roofing of the Lowcountry.md (pilot, drafts approved 2026-10-09; written back 2026-10-12) | WP draft (not live) |
 | /bluffton/ | location | Roofers (H1); Roofing Contractor; Roofer | Bluffton (city) | build/pilot/LD - Bluffton - Apex Roofing of the Lowcountry.md (pilot, drafts approved 2026-10-09; written back 2026-10-12) | WP draft (not live) |
 | /roof-replacement/ | service | Residential Roofer; Roofing Contractor | Beaufort and Jasper Counties (H1); South Carolina Lowcountry; Lowcountry | build/services/SD - Roof Replacement - Apex Roofing of the Lowcountry.md (services, drafts approved 2026-10-12, SEM applied) | No |
@@ -333,6 +334,22 @@ Every FAQ question and H2 live on the site, with the page that owns it. No quest
 | FAQ: Can I choose between CertainTeed and GAF shingles for my Levy roof? | /levy/ |
 | H2: Which Levy Neighborhoods Do We Serve? | /levy/ |
 | H2: Which Towns Near Levy Do We Also Serve? | /levy/ |
+| H2: Which Roofing Services Do We Offer in Beaufort and Jasper Counties? | / |
+| H2: Who Is Apex Roofing of the Lowcountry? | / |
+| H2: What Do Our Finished Roofs Look Like? | / |
+| H2: What Do Lowcountry Homeowners Say About Apex? | / |
+| H2: What Do Homeowners Ask Lowcountry Roofers Before They Call? | / |
+| FAQ: Do you give free estimates? | / |
+| FAQ: Are you licensed and insured? | / |
+| FAQ: Do you travel outside the 12 towns on this page? | / |
+| FAQ: Do you work on commercial buildings? | / |
+| FAQ: How long has Apex Roofing of the Lowcountry been roofing Lowcountry homes? | / |
+| H2: Where in the Lowcountry Does Apex Roof Homes? | / |
+| H2: Ready for a Free Estimate From Apex Roofing of the Lowcountry? | / |
+| H2: Who Are Ralph and Pierce Brehany, the Roofers Behind Apex? | /about/ |
+| H2: Which Licences and Certifications Does Apex Roofing of the Lowcountry Hold? | /about/ |
+| H2: How Did Apex Roofing of the Lowcountry Start in Bluffton? | /about/ |
+| H2: Where in Beaufort and Jasper Counties Does Apex Work? | /about/ |
 
 Pilot pages (Roof Repair, Bluffton) and the services batch, from the approved drafts (written back 2026-10-12, run
 20261012-150342-build-474a). H3 service-type subheadings are not listed; they repeat type names by design.
