@@ -174,7 +174,7 @@ def research(slug, it, page, docs):
 
 # ------------------------------------------------------------------ scoring
 def score(rows, th):
-    gap = lambda r: r["mark"] != "Known"
+    gap = lambda r: r["mark"] != "Known" and not r.get("researched")   # CM-061 §8: a researched public gap never holds
     req_gaps = [r for r in rows if r["need"] == "required" and gap(r)]
     sup_gaps = [r for r in rows if r["need"] != "required" and gap(r)]
     conflicts = [r for r in rows if r["mark"] == "Conflict"]
@@ -228,6 +228,11 @@ def grid(slug, st, pid):
                      "fact_id": (rec or {}).get("fact_id"),
                      "source": (rec or {}).get("source", ""), "status": (rec or {}).get("status", ""),
                      "via": (rec or {}).get("via", ""), "searched": searched})
+        if rows[-1]["mark"] == "Unknown" and it["from"] in set(reqs.get("public_facts") or []):
+            import research as research_log   # CM-061 §8: a public gap researched to the minimum is a target, not a
+            hit = research_log.find(slug, fk)  # hold — the element is shortened or dropped (Fix and list)
+            if hit:
+                rows[-1]["researched"] = hit["id"]
     result, counts, why = score(rows, reqs["thresholds"])
     return rows, result, counts, why
 
@@ -251,6 +256,8 @@ def render(st, pid, rows, result, counts, why):
                 src = f"searched, not found ({len(sr['searched'])} source(s) on disk)"
         elif sr is not None and not sr.get("terms") and r["mark"] == "Unknown":
             src = "not searchable on disk — ask"
+        if r.get("researched"):
+            src = f"researched, not found ({r['researched']}) — a target, not a hold: shortened or dropped (Fix and list)"
         out.append(f"| {r['label']} | {r['need']} | **{r['mark']}** | {v} | {src} |")
     if searched or missing:
         out += ["", "**Sources searched before asking (CM-057):** " + (", ".join(sorted(searched)) or "none on disk"),
@@ -331,6 +338,8 @@ def facts_pack(slug, run_id, bid):
             k = r["fact_key"]
             if (ents.get(k) or {}).get("state") in ("open", "answered"):   # asked once already — never again
                 waiting.setdefault(k, ents[k])
+                continue
+            if r.get("researched"):   # CM-061 §8: researched to the minimum, not found — dropped by default, never asked
                 continue
             if r.get("via") == "review_keyword":   # CM-061: reviews found it — written as an attributed customer
                 tiered.setdefault(r["label"], set()).add(pid)   # example (usage tier) until checked by meaning; never asked

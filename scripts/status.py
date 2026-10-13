@@ -342,6 +342,52 @@ def specs_approved():
     return True, ""
 
 
+WRITING_EXTRA = ["methodology/writing-commercial.md", "methodology/location-faq.md"]
+
+
+def writing_fp():
+    """CM-061 §9: one fingerprint of what shapes the writing — the specs (status lines ignored), the writing standard
+    and the location FAQ recipe. Each drafts approval records it; a change means the next section pilots again."""
+    import hashlib
+    parts = [f"{f}:{spec_sha(f)}" for f in spec_files()]
+    parts += [f"{f}:{sha12(ROOT / f)}" for f in WRITING_EXTRA if (ROOT / f).is_file()]
+    return hashlib.sha256("\n".join(parts).encode()).hexdigest()[:12]
+
+
+def _approved_sections(st):
+    return [b for b in batches(st) if (b.get("drafts") or {}).get("state") in GATES["met_decisions"]
+            and not (b.get("drafts") or {}).get("baseline")]
+
+
+def pilot_needed(st):
+    """(needed, reason) — gates.json → modes → pilot (CM-061 §9)."""
+    rule = (GATES["modes"].get("pilot") or {}).get("rule", "always")
+    if rule != "auto":
+        return True, "the pilot rule is 'always' (gates.json → modes → pilot)"
+    ind = (st["client"].get("industry") or "").strip().lower()
+    mine = _approved_sections(st)
+    others = []
+    for d in sorted(p for p in (ROOT / "clients").iterdir() if (p / "status.json").is_file()):
+        if d.name == st["client"].get("slug", st.get("slug")):
+            continue
+        try:
+            o = load(d.name)
+        except SystemExit:
+            continue
+        if (o["client"].get("industry") or "").strip().lower() == ind and _approved_sections(o):
+            others.append(d.name)
+    if not mine and not others:
+        return True, f"a new industry ({ind or 'not set'}): no client has an approved section in it yet"
+    if not mine:
+        return True, "this client's first section"
+    last = max(mine, key=lambda b: b["drafts"].get("at", ""))
+    if last["drafts"].get("writing_fp") and last["drafts"]["writing_fp"] != writing_fp():
+        return True, (f"the specs or writing rules changed since section {last['id']} was approved "
+                      f"({last['drafts'].get('at', '')[:10]})")
+    return False, ("no pilot: this client has an approved section, its industry is not new, and the specs and writing "
+                   "rules have not changed since — every page of the section is drafted in one run")
+
+
 # ------------------------------------------------------------------ technical blockers (R3: a condition)
 def blockers_cleared(st):
     """Met when the blocker checklist is recorded and every row of every blocker handoff came back done and
@@ -865,12 +911,14 @@ def main():
     s = sub.add_parser("batch"); s.add_argument("slug"); s.add_argument("batch_id")
     s.add_argument("--state", required=True, choices=BATCH_STATES); s.add_argument("--files")
     s.add_argument("--sem-table"); s.add_argument("--sem-findings", type=int)
+    s.add_argument("--review-sheet", help="CM-061: the section's drafts review sheet (review.py sheet), instead of --sem-table")
     s.add_argument("--checks-passed", action="store_true"); s.add_argument("--note")
     s = sub.add_parser("page-stage"); s.add_argument("slug"); s.add_argument("page_id")
     s.add_argument("--stage", required=True, choices=["brief", "draft"]); s.add_argument("--file", required=True)
     s.add_argument("--run", required=True)
     s.add_argument("--agent", help="P10: in a write run (or --pages all), the id of the fresh sub-agent that wrote this page")
     s = sub.add_parser("modes"); s.add_argument("slug")
+    s = sub.add_parser("pilot"); s.add_argument("slug")
     s = sub.add_parser("writeback"); s.add_argument("slug"); s.add_argument("batch_id"); s.add_argument("--run", required=True)
     s = sub.add_parser("pilot-corrections"); s.add_argument("slug"); s.add_argument("--note", required=True)
     s = sub.add_parser("blockers-none"); s.add_argument("slug"); s.add_argument("--run", required=True)
@@ -1026,8 +1074,11 @@ def main():
         if missing:
             die("pages in no batch: " + ", ".join(missing))
         pilot = next((b for b in plan["batches"] if b["id"] == "pilot"), None)
-        if not pilot or sorted(pages[x]["type"] for x in pilot["pages"]) != ["location", "service"]:
-            die("the first batch must be 'pilot' with exactly 1 service + 1 location page")
+        needed, why_pilot = pilot_needed(st)   # CM-061 §9: a pilot only when it is worth it
+        if needed and not pilot:
+            die(f"a pilot is needed ({why_pilot}): the first batch must be 'pilot' with exactly 1 service + 1 location page")
+        if pilot and sorted(pages[x]["type"] for x in pilot["pages"]) != ["location", "service"]:
+            die("the pilot batch must have exactly 1 service + 1 location page")
         for pid, p in pages.items():
             st["pages"].setdefault(pid, {"state": "planned"}).update(
                 {k: p[k] for k in ("type", "name", "url", "group", "city", "service_variant", "h1", "replaces", "nav", "claims") if k in p})
@@ -1036,7 +1087,9 @@ def main():
                                     "state": "planned", "briefs": None, "drafts": None,
                                     "files": {}}
                                    for b in plan["batches"]],
-                       "pilot_corrections_applied": None}
+                       "pilot_corrections_applied": None,
+                       **({} if pilot else {"pilot_waived": {"at": now(), "reason": why_pilot, "rule": "CM-061 §9"}})}
+        print(f"pilot: {'yes — ' if needed else ''}{why_pilot}")
         st.setdefault("marks", {})["site_plan"] = {"files": {a.file: sha12(ROOT / a.file)}, "at": now(), "ts": time.time()}
         save(a.slug, st); print(render_build(st))
     elif a.cmd == "batch":
@@ -1064,7 +1117,7 @@ def main():
         if stage_needed and not pilot_write and not batch_stage_ok(st, a.batch_id, stage_needed, False)[0]:
             die(f"batch {a.batch_id}: {stage_needed} are not approved yet")
         fs = [f.strip() for f in (a.files or "").split(",") if f.strip()]
-        for f in fs + ([a.sem_table] if a.sem_table else []):
+        for f in fs + [x for x in (a.sem_table, a.review_sheet) if x]:
             if not (ROOT / f).exists():
                 die(f"{f} not found")
         if a.state in ("drafts_written", "sem_applied"):
@@ -1075,10 +1128,19 @@ def main():
         log_line = None
         if a.state == "briefs_written" and fs:
             b.setdefault("files", {})["briefs"] = fs
+        elif a.state == "drafts_written" and a.review_sheet:
+            # CM-061: the one draft review sheet (review.py sheet) — SEM picks are rows in it, never a --sem list
+            rv = ((b.get("review") or {}).get("drafts") or {})
+            if rv.get("sheet") != a.review_sheet:
+                die(f"batch {a.batch_id}: {a.review_sheet} is not this section's draft review sheet (review.py sheet "
+                    f"{a.slug} {a.batch_id} drafts) — recorded: {rv.get('sheet') or 'none'}")
+            b.setdefault("files", {})["drafts"] = fs + [a.review_sheet]
+            b["sem_findings"] = 0
+            b["drafts"] = None
         elif a.state == "drafts_written":
             if not fs or not a.sem_table or a.sem_findings is None:
-                die("drafts_written needs --files <one draft per page> --sem-table <semantic review table> "
-                    "--sem-findings <number of SEM rows>")
+                die("drafts_written needs --files <one draft per page> and --review-sheet <the section's drafts review "
+                    "sheet> (CM-061) — or, for a batch already under way, --sem-table <table> --sem-findings <n>")
             # Paul reviews each draft with the batch's semantic review table and approves both at once.
             b.setdefault("files", {})["drafts"] = fs + [a.sem_table]
             b["sem_findings"] = a.sem_findings
@@ -1188,6 +1250,9 @@ def main():
         with open(path(a.slug).parent / "log.md", "a", encoding="utf-8") as fh:
             fh.write(log_line)
         print(f"{a.page_id}: {a.stage} recorded" + (" · batch briefs collected" if "COLLECTED" in log_line else ""))
+    elif a.cmd == "pilot":   # CM-061 §9: does this client's next section need a pilot, and why
+        needed, why = pilot_needed(st)
+        print(f"pilot {'needed' if needed else 'not needed'}: {why}")
     elif a.cmd == "modes":
         for step, spec in mode_stages().items():
             m = stage_mode(st, step)
@@ -1195,15 +1260,20 @@ def main():
             src = "this client" if own else ("global" if (config().get("stage_modes") or {}).get(step) else "default")
             ok, _ = pilot_passed(st, step)
             print(f"  {step:20} {m:6} ({src})  pilot {'passed' if ok else ('—' if not spec.get('pilot') else 'not yet')}")
-    elif a.cmd == "writeback":   # P8/P9: the batch's Brand Guide content write-back, right after its drafts approval
+    elif a.cmd == "writeback":   # CM-061 §6: ONE Brand Guide write-back per section, at the brief approval
         b = batch(st, a.batch_id) or die(f"no batch {a.batch_id}")
-        ok, why = check(st, f"batch:{a.batch_id}:drafts")
+        ok, why = check(st, f"batch:{a.batch_id}:briefs")
         if not ok:
-            die("REFUSED — the write-back follows the drafts approval: " + "; ".join(why), 4)
+            die("REFUSED — the Brand Guide is written once per section, at the brief approval (CM-061): "
+                + "; ".join(why), 4)
+        if b.get("content_written_back"):
+            die(f"REFUSED — section {a.batch_id} already wrote the Brand Guide ({b['content_written_back']['at'][:16]}, "
+                f"run {b['content_written_back']['run']}). It is written once per section (CM-061); drafts, the draft "
+                "review and ship never write it.", 4)
         b["content_written_back"] = {"at": now(), "run": a.run}
         save(a.slug, st)
         append(client_dir(a.slug) / "log.md", f"- WRITE-BACK {now()[:16]} · run {a.run} · batch {a.batch_id}: Brand Guide "
-               "B3, C1/C2, C3 updated from the approved drafts\n")
+               "B3, C1/C2, C3 updated once for the section, from its approved briefs\n")
         print(f"batch {a.batch_id}: Brand Guide write-back recorded")
     elif a.cmd == "pilot-corrections":
         if not batch_stage_ok(st, "pilot", "briefs", False)[0]:

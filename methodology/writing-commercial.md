@@ -4,8 +4,9 @@ Adapted 2026-10-02: superlative opener per CM-020, location structure per CM-023
 Rules are cited by ID from `methodology/rulings.md`; page structures and conformance checks live in
 `methodology/specs/` (homepage, service, location, county-hub, about). Process matches the live BB
 Commercial Content Writer gem: Stage 0–1 plan → approval → Stage 2 draft → Stage 3 self-critique
-(E1–E10) → Stage 4 semantic review (SEM-1–SEM-8, report only) → Paul approves the drafts and picks the SEM
-items in one step → apply only those and re-check.
+(E1–E10) → Stage 4 semantic review (SEM-1–SEM-8). CM-061: the writer raises nothing for Paul — every check runs once,
+in the one checker pass after all pages are written; each finding is a Fix, a Fix and list or an Ask
+(methodology/review-severities.json), SEM items included, in the section's one review sheet (scripts/review.py).
 
 ## A — Hard constraints (override everything, including requests)
 

@@ -627,7 +627,7 @@ def t_walkthrough_full():
           not any(("discovery_signed_off" in l or "blockers_cleared" in l) and l.startswith("decision") for l in log))
     check("P9: one ship run for every service and location page (not one per batch)",
           sum(l.startswith("run") and l.endswith("/build wt-full ship") for l in log) == 1, [l for l in log if " ship" in l])
-    check("P8: each batch's Brand Guide write-back runs right after its drafts approval, before shipping",
+    check("CM-061 §6: each section's one Brand Guide write-back runs at its brief approval, before shipping",
           sum(l.startswith("run") and "/build wt-full writeback " in l for l in log) == len(stops)
           and max(i for i, l in enumerate(log) if "/build wt-full writeback " in l)
           < next(i for i, l in enumerate(log) if l.endswith("/build wt-full ship")), [l for l in log if "writeback" in l])
@@ -1458,6 +1458,10 @@ def t_one_page_per_run():
     n = nxt(S)
     check("one page per run: one stop for the whole batch's briefs", n["kind"] == "decision" and "batch:pilot:briefs" in n["command"], n)
     paul(n["command"])
+    n = nxt(S)
+    check("CM-061 §6: right after the briefs approval /next writes the section back to the Brand Guide, once",
+          n["command"] == f"/build {S} writeback pilot", n)
+    ag.do(n["command"])
     check("one page per run: drafts start one page at a time", nxt(S)["command"] == f"/build {S} draft pilot svc-roof-repair", nxt(S))
     # CM-016: a placeholder with no [NEED: ...] note is refused, with one it is accepted
     rid = ag.start("build", "draft", batch="pilot", page="svc-roof-repair")
@@ -2058,7 +2062,7 @@ def t_writing_never_waits():
     n = nxt(S)
     check("P8: location writing may start once the service drafts are approved — nothing shipped or published",
           code == 0 and s1["state"] == "drafts_written", out)
-    check("P8: right after the drafts approval /next writes the batch back to the Brand Guide (content, not publishing)",
+    check("CM-061 §6: once the section's briefs are approved /next writes it back to the Brand Guide (content, not publishing)",
           n["kind"] == "run" and n["command"] == f"/build {S} writeback s1", n)
     sh(f"python3 scripts/records.py render {S}")
     stx = (ag.c / "STATUS.md").read_text()
@@ -2513,7 +2517,8 @@ def extra_scenarios():
 SLOW = {"t_walkthrough_full", "t_sem_paths", "t_publish_corrections", "t_walkthrough_blog_only", "t_modes",
         "t_placeholders", "t_batch_of_five", "t_rewrite2_p9_worklist", "t_rewrite2_p2_parallel_clients",
         "t_voiding", "t_briefs_after_pilot", "t_wordpress", "t_crawl_rewrite_max_pages_fallback", "t_multi_approve",
-        "t_handoffs", "t_client_view", "t_crawl_rewrite_summary_and_text"}   # walkthroughs and the slowest crawl; that runs (or re-runs) an end-to-end walkthrough
+        "t_handoffs", "t_client_view", "t_crawl_rewrite_summary_and_text",
+        "t_rewrite3_brand_guide_once_walkthrough"}   # walkthroughs and the slowest crawl; that runs (or re-runs) an end-to-end walkthrough
 
 
 def main():

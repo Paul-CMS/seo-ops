@@ -111,6 +111,12 @@ def q(files):
     return '"' + ",".join(files) + '"'
 
 
+def bg_reapproval(st):
+    """CM-061 §6: approvals stay value-only; when the section's one write-back changed a value brand_guide_approved
+    covers, its re-approval rides on the section's approval line — still one line for Paul."""
+    return " brand_guide_approved" if not S.check(st, "brand_guide_approved")[0] else ""
+
+
 def extras(st):
     c = st["client"]
     return ((' --review "<who reviewed it>"' if c.get("sensitive") else "")
@@ -253,6 +259,22 @@ def evidence_and_briefs(st, slug, b):
             f"records them in the Brand Guide and re-runs the gate. Or waive instead: {waive}")
 
 
+def review_sheet(st, slug, b, step):
+    """CM-061: a section's review sheet for a step, not yet applied — Paul answers it in one line (questions), or the
+    system applies the defaults (nothing to ask). The approval line comes after."""
+    rv = (b.get("review") or {}).get(step)
+    if not rv or rv.get("applied"):
+        return
+    bid = b["id"]
+    if rv.get("asks"):
+        out("decision", f'/build {slug} review {bid} {step} "accept all"',
+            f"the {bid} {step} review sheet has {rv['asks']} question(s) for you and {rv.get('listed', 0)} decided for you "
+            f"({rv.get('md')}): reply \"accept all\", or \"accept all except 7b, 12c\" — an empty answer takes the "
+            "recommended option")
+    out("run", f"/build {slug} review {bid} {step}",
+        f"apply the {bid} {step} review — nothing to ask; {rv.get('listed', 0)} decided for you")
+
+
 def build_batch(st, slug, b):
     """One batch's next step (P8: run softly, so a wait here never stops the next batch)."""
     bid, state = b["id"], b.get("state", "planned")
@@ -274,17 +296,25 @@ def build_batch(st, slug, b):
             "CM-043), then the batch review side by side")
     if state == "planned":
         evidence_and_briefs(st, slug, b)
+    if not S.check(st, f"batch:{bid}:briefs")[0]:
+        review_sheet(st, slug, b, "briefs")
+    if state in ("drafts_written", "sem_check_failed") and not S.check(st, f"batch:{bid}:drafts")[0]:
+        review_sheet(st, slug, b, "drafts")
     if bid == "pilot" and state in ("drafts_written", "sem_check_failed") and not S.check(st, "batch:pilot:briefs")[0]:
         n = b.get("sem_findings") or 0   # P10: the pilot's briefs and drafts are approved together, in one line
-        out("decision", f"/approve {slug} batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto"
+        out("decision", f"/approve {slug} batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto{bg_reapproval(st)}"
             + (" --sem <SEM items to apply, e.g. 1,3,4 — or none>" if n else "") + extras(st),
             "the pilot's briefs and drafts are ready for one approval (and, in the same line, later batches' briefs "
             "switch to auto, so each later batch stops once, for its drafts): review the drafts with the semantic "
             "review table " + (f"({n} SEM item(s) found)" if n else "(nothing found)") + open_items_note(st, b))
     if not S.check(st, f"batch:{bid}:briefs")[0]:
-        out("decision", f"/approve {slug} batch:{bid}:briefs --files {q(files.get('briefs') or [])}",
+        out("decision", f"/approve {slug} batch:{bid}:briefs{bg_reapproval(st)} --files {q(files.get('briefs') or [])}",
             f"the briefs for batch {bid} are ready for your approval (outline before prose; one brief per page, "
             "each written in its own run)")
+    if not b.get("content_written_back"):   # CM-061 §6: once per section, at the brief approval — the next section reads it
+        out("run", f"/build {slug} writeback {bid}",
+            f"Brand Guide write-back for section {bid} (B3, C1/C2, C3) from its approved briefs — once per section; "
+            "drafts, the draft review and ship never write it")
     if state == "briefs_written":
         for pid in b["pages"]:    # CM-043: one page per run
             if not S.page_stage(st, pid, "draft"):
@@ -296,7 +326,7 @@ def build_batch(st, slug, b):
     if not S.check(st, f"batch:{bid}:drafts")[0]:
         n = b.get("sem_findings") or 0
         failed = drafts.get("check_failure")
-        out("decision", f"/approve {slug} batch:{bid}:drafts"
+        out("decision", f"/approve {slug} batch:{bid}:drafts{bg_reapproval(st)}"
             + (" --sem <SEM items to apply, e.g. 1,3,4 — or none>" if n else "") + extras(st),
             (f"a re-check failed after applying your SEM picks ({failed}) — review and approve again"
              if failed else f"the drafts for batch {bid} are ready: review each with the semantic review table "
@@ -305,9 +335,6 @@ def build_batch(st, slug, b):
     if state in ("drafts_written", "sem_check_failed") and drafts.get("sem_ids") and not drafts.get("applied"):
         out("run", f"/build {slug} batch {bid} apply-sem",
             f"apply {', '.join(drafts['sem_ids'])} to batch {bid} and re-run the E-checks on the changed sections")
-    if not b.get("content_written_back"):   # P8: content, not publishing — the next batch reads it
-        out("run", f"/build {slug} writeback {bid}",
-            f"Brand Guide write-back for batch {bid} (B3, C1/C2, C3) from the approved drafts — the next batch reads it")
     # P9: no per-batch ship — every service and location page ships together once all are approved
 
 

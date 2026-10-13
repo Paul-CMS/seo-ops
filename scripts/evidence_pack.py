@@ -251,7 +251,8 @@ def gaps(slug, st, pid):
     for r in rows:
         if r["mark"] != "Unknown":
             continue
-        kind = "public" if r["from"] in public else ("lookup" if r["from"] in lookup else "client")
+        kind = ("researched" if r.get("researched") else "public" if r["from"] in public
+                else ("lookup" if r["from"] in lookup else "client"))
         out.append({"key": r["key"], "label": r["label"], "need": r["need"], "from": r["from"], "kind": kind,
                     "fact_key": r["fact_key"]})
     return out
@@ -333,24 +334,27 @@ def render(st, p):
     out += [f"- {s['at']} · `{s['key']}` — {s['text']}" for s in p["settled"]] or ["_None._"]
     out += ["", "## Gaps — the only things research looks for", ""]
     who = {"public": "researcher (public fact — never asked)", "lookup": "researcher (verify by public lookup — never asked)",
-           "client": "client search order, then an Ask (kind 3) only with a research-log entry"}
+           "client": "client search order, then an Ask (kind 3) only with a research-log entry",
+           "researched": "researched, not found — shorten or drop the element (Fix and list); never a hold"}
     out += [f"- {g['label']} ({g['need']}, `{g['from']}`) → {who[g['kind']]}" for g in p["gaps"]] or ["_None._"]
     return "\n".join(out) + "\n"
 
 
 # ------------------------------------------------------------------ §8 viability
-def viability(slug, section):
-    """[(pid, score, of, missing, verdict)] for the section's location pages: neighbourhoods, places and things to do,
-    local conditions, and the three FAQ categories, from each pack."""
+def viability(slug, section=None):
+    """[(pid, score, of, missing, verdict)] for the location pages of a section (or of every section): neighbourhoods,
+    places and things to do, local conditions, and the three FAQ categories, from each pack (§8)."""
     st = S.load(slug)
-    b = S.batch(st, section) or die(f"no section {section}")
+    bs = [S.batch(st, section) or die(f"no section {section}")] if section else S.batches(st)
     out = []
-    for pid in b["pages"]:
+    for pid, sec in [(p, b["id"]) for b in bs for p in b["pages"]]:
         if (st["pages"][pid].get("type")) != "location":
             continue
-        pk = read_json(client_dir(slug) / "build" / section / "packs" / f"{pid}.json")
+        pk = read_json(client_dir(slug) / "build" / sec / "packs" / f"{pid}.json")
         if not pk:
-            die(f"{pid}: no evidence pack yet — evidence_pack.py build {slug} {section}")
+            out.append((pid, 0, 6, ["no evidence pack yet — evidence.py run <slug> --run <RUN_ID> --all builds every pack"],
+                        "no pack"))
+            continue
         gap = {g["key"] for g in pk["gaps"]}
         qs = pk["questions"]
         items = {
@@ -373,7 +377,8 @@ def main():
     s = sub.add_parser("build"); s.add_argument("slug"); s.add_argument("section"); s.add_argument("--page")
     s.add_argument("--run")
     s = sub.add_parser("show"); s.add_argument("slug"); s.add_argument("page")
-    s = sub.add_parser("viability"); s.add_argument("slug"); s.add_argument("section")
+    s = sub.add_parser("viability"); s.add_argument("slug"); s.add_argument("section", nargs="?")
+    s.add_argument("--all", action="store_true")
     a = ap.parse_args()
     if a.cmd == "show":
         st = S.load(a.slug)
@@ -381,9 +386,15 @@ def main():
         print((ROOT / rec["file"]).read_text(), end="")
         return
     if a.cmd == "viability":
-        rows = viability(a.slug, a.section)
+        if not a.section and not a.all:
+            die("give a section or --all")
+        rows = viability(a.slug, None if a.all else a.section)
         for pid, sc, of, miss, verdict in rows:
             print(f"{pid:28} {sc}/{of}  {verdict.upper():15} " + (f"missing: {', '.join(miss)}" if miss else ""))
+        weak = [r[0] for r in rows if r[4] == "merge proposal"]
+        if weak:
+            print("Merge proposals for the site plan (an Ask, kind 1, merge recommended; a 301 if a URL exists): "
+                  + ", ".join(weak))
         return
     st = S.load(a.slug)
     b = S.batch(st, a.section) or die(f"no section (batch) {a.section} in the site plan")

@@ -42,6 +42,8 @@ carries its `live_url` and lists it under `replaces` (its 301 goes with the publ
 - **duplicates** — two pages serving the same keyword or intent
 - **variant conflicts** — the same variant at consecutive elements on a page; the reserved
   homepage variant used elsewhere; the pool exhausted (CM-013 — one finding, not many)
+- **Location FAQs** — three per location page, one per category (local cost or decision · logistics in this area
+  · trust in this area), questions taken first from the page's evidence pack: `methodology/location-faq.md` (CM-061)
 - **FAQ fit** — every FAQ topic in the plan carries a one-line *why it applies to this page*; a routed PAA/fan-out
   question is a candidate, not an obligation, and a location FAQ must be about that town or the service there
   (writing-commercial.md C8). No reason → drop it or send it to the blog list.
@@ -53,9 +55,17 @@ carries its `live_url` and lists it under `replaces` (its 301 goes with the publ
 - **coverage** (CM-045) — every PAA question and fan-out query routed to a service or location page has a home
   (an H2 or FAQ on that page); list any routed row with no home, and every row routed to the blog list
 
-Group the pages into batches: **`pilot` = 1 service + 1 location page** first; then batches of
-about 5 — **service pages by service cluster**, **location pages by county (the county hub
-with its cities)**; homepage and about last. Write `<Client> - Site Plan - REVIEW.md` in
+Group the pages into batches: **`pilot` = 1 service + 1 location page** first — **only when a pilot is worth it**
+(CM-061 §9: `python3 scripts/status.py pilot <slug>` prints the decision and its reason — a client's first section, a
+new industry, or the first section after a spec or writing-rule change; otherwise no pilot batch, and `status.py plan`
+records why); then batches of about 5 — **service pages by service cluster**, **location pages by county (the county
+hub with its cities)**; homepage and about last.
+**Viability check (CM-061 §8), before the plan reaches Paul:** register the plan, then `evidence.py run <slug> --run
+<RUN_ID> --all` (every page's grid and evidence pack) and `python3 scripts/evidence_pack.py viability <slug> --all`.
+A location where most of neighbourhoods, places and things to do, local conditions and the three FAQ categories
+(`methodology/location-faq.md`) cannot be filled arrives in the plan as a **merge proposal** into the nearest planned
+city page (a 301 if a URL exists) — an Ask (kind 1) with the merge recommended. The location minimums are targets: no
+page is held for an optional section. Write `<Client> - Site Plan - REVIEW.md` in
 `clients/<slug>/build/` and a JSON of pages and batches, then register both:
 `python3 scripts/status.py plan <slug> --file <plan.md> --json <plan.json>`.
 Record the H1 decisions in Brand Guide H2 and the URL Decision Map. Paul approves once:
@@ -73,11 +83,14 @@ After the site plan's one approval:
    hub pages: ONE run per batch. Inside it: every brief (part 2 below; `status.py page-stage … --stage brief`), then
    **one fresh build subagent per page** for its draft, run in parallel — never two pages in one context (CM-043);
    record each with `status.py page-stage <slug> <page> --stage draft --file <f> --run <RUN_ID> --agent <that
-   subagent's id>` — then the batch review (below) in the same run. Sibling consistency: the site plan's whole-site
-   check, each page subagent reading the batch's briefs and earlier approved pages, and the batch review.
-3. **One stop per batch.** The pilot: one line approves its briefs and drafts and switches later briefs to auto
-   (`/approve <slug> batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto --sem …`); then pilot corrections.
-   Every later batch stops once, for its drafts with the SEM picks. Then `writeback` right after each approval.
+   subagent's id>` — then the review (below: one checker pass, one review sheet) in the same run. Sibling
+   consistency: the site plan's whole-site check, each page subagent reading the batch's briefs and earlier approved
+   pages, and the one checker pass.
+3. **At most two review sheets and two approval lines per section** (CM-061): the brief review and the draft review.
+   The pilot: one line approves its briefs and drafts and switches later briefs to auto
+   (`/approve <slug> batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto`); then pilot corrections. A pilot
+   runs only when it is worth it (`gates.json` → `modes` → `pilot`). The Brand Guide write-back runs once per
+   section, at the brief approval (below).
 4. **`/build <slug> ship`** — everything at once (P9); homepage and about last, or with them when approved.
 A batch holds every page of its kind; only a kind with more than 15 pages is split (by cluster or county).
 If Paul keeps briefs in review after the pilot, a batch falls back to `brief` (one run) → his briefs approval →
@@ -138,7 +151,38 @@ in brackets (`[Map: …]`, `[Insert …]`) — every bracket is listed in Paul's
 notice on the WordPress draft (`python3 scripts/placeholders.py scan <file>` shows them).
 `status.py page-stage <slug> <page> --stage draft --file <draft> --run <RUN_ID>`.
 
-## Step: batch <id> drafts — the batch review (one run, every draft side by side)
+## The review — decide by default, one checker pass per step (CM-061; replaces the SEM table and `--sem`)
+Writers never self-flag to Paul. After **all** pages of the section are written, **one checker pass** runs every rule
+check once (E1–E10, the spec's checks, portability, collisions, Stage 4 semantics, the usage tiers) — for the briefs
+(brief review) and again for the drafts (draft review). Each finding is one JSON object keyed **page + rule + item**
+with its severity (`methodology/review-severities.json`):
+- **Fix** — form only (length within ±25% of target, wording, sentence order, formatting, reading grade, a missing or
+  wrong internal link, variant repetition, heading case; and a Known pack fact written around): fix it silently.
+- **Fix and list** — a content change made by default (an optional section shortened or dropped, an FAQ swapped for
+  its fallback, a claim softened to its usage tier, a `site_stated` claim used, pack evidence added, a public
+  not-found element dropped, a semantic item): make it, with `decided_for_you` saying what you did.
+- **Ask** — only the four kinds: 1 page/URL decisions · 2 legal or money claims · 3 client-only facts not found after
+  the search order (link the `research.py log` entry; one client question list per section, pre-filled best answers)
+  · 4 real conflicts (two sources of equal standing). Each with options and a recommended default.
+Then `python3 scripts/review.py sheet <slug> <section> <briefs|drafts> --findings <findings.json> --run <RUN_ID>`:
+it drops duplicates, anything already decided in the section, and any Ask already answered or asked
+(facts.json, decisions-settled.md); it turns an Ask that is not one of the four kinds into "Fix and list"; it refuses a
+kind-3 Ask without its research-log entry; for drafts it adds the usage check (§3.4: "Evidence used: 6 of 9 excerpts"
+per page; a pack with 2+ review excerpts the draft does not use → a "Fix and list" row). It writes ONE sheet,
+`build/<section>/<step>-review.csv` (+ `.md`, copied to Drive with `drive.py upload`). SEM picks are rows in it.
+- **No Ask rows** → `review.py apply <slug> <section> <step> --run <RUN_ID>` at once, apply every item, and stop at
+  the approval line.
+- **Ask rows** → stop: Paul answers in the sheet or in one line ("accept all" / "accept all except 7b, 12c") with
+  `/build <slug> review <section> <step> "<his line>"` — that run calls `review.py apply … --answers "<line>"` and
+  applies every item to every page in one run (kind-3 answers also go in with `run.py fact`).
+Drafts are recorded for approval with the sheet: `status.py batch <slug> <id> --state drafts_written --review-sheet
+<build/<section>/drafts-review.csv>`. The approval accepts the section at any state after the review is applied —
+`/approve <slug> batch:<id>:drafts` (no `--sem`); sensitive clients add `--review`, health clients `--practitioner`.
+An Ask unanswered for 3 working days (`review.py overdue <slug> --run <RUN_ID> --apply`, then `review.py apply`): kinds
+1, 3 and 4 ship with the recommended option and the page carries an open-item `[NEED: …]` (a worklist row at ship);
+kind 2 is left out of the page — the sentence removed, not softened — until answered.
+
+## Step: batch <id> drafts — for a batch already under way with a semantic review table (before CM-061)
 Read every draft in the batch (each written in its own run). Check the batch against itself and
 earlier batches for portability failures (E1 across siblings), opening-angle reuse and FAQ/heading
 collisions; list each in the table. Then **Stage 4 semantic review — one table for the whole batch**,
@@ -147,7 +191,8 @@ report only (the drafts are not changed): `<Client> - Semantic Review - <batch> 
 --sem-findings <rows>` (the per-page drafts are collected automatically; it refuses if any page lacks its
 own-run draft). Paul reviews each draft **with** the table and approves both at once:
 `/approve <slug> batch:<id>:drafts --sem 1,3,4` (or `--sem none`; no `--sem` at all when the review
-found nothing). Sensitive clients add `--review`, health clients `--practitioner`.
+found nothing). Sensitive clients add `--review`, health clients `--practitioner`. **New sections use the review
+above instead.**
 
 ## Step: batch <id> apply-sem   (only when Paul picked SEM items)
 Apply **only** the SEM items Paul picked (status.json → the batch's `drafts.sem_ids`); routed items go
@@ -157,10 +202,15 @@ to the page or blog list that owns them. Re-run E1–E10 and the spec checks on 
 - Any check fails → `status.py batch <slug> <id> --state sem_check_failed --files <drafts> --note "<check, page>"`.
   The drafts go back to Paul with the failure.
 
-## Step: writeback <id>   (right after the batch's drafts approval — P8: content, not publishing)
-Write the approved batch back to the Brand Guide: each page's row in B3, the variants it used in C1/C2, every H2 and
-FAQ question in C3; its Drive copy (`drive.py upload`). Then `status.py writeback <slug> <id> --run <RUN_ID>`. The
-next batch reads it, so it never reuses a variant, heading or FAQ.
+## Step: writeback <id>   (ONCE per section, at the brief approval — CM-061 §6)
+During a section, facts go to `facts.json` only (`run.py fact`); nothing in the section writes the Brand Guide until
+its briefs are approved (or accepted, when briefs are on auto). Then ONE write-back: each page's row in B3, the variants
+its brief assigns in C1/C2, every H2 and FAQ question in C3, and the fact rows regenerated from facts.json
+(`records.py render`); its Drive copy (`drive.py upload`). Then `status.py writeback <slug> <id> --run <RUN_ID>` — it
+refuses a second write-back for the same section. **Drafts, the draft review and ship never write the Brand Guide.**
+Approvals stay value-only: if the write-back changed a value `brand_guide_approved` covers, `/next` puts
+`brand_guide_approved` in the section's approval line — still one line for Paul. The next section reads it, so it never
+reuses a variant, heading or FAQ.
 
 ## Step: ship   (ONE run for every service and location page — P9; the system never publishes)
 1. `python3 scripts/publish.py wheel <slug>` — plans the link wheel from the approved site plan (every
@@ -174,9 +224,8 @@ next batch reads it, so it never reuses a variant, heading or FAQ.
    that has no `[NEED: …]` note, or a URL under `/service/`, `/services/`, `/service-area/`. The batch becomes
    `drafted` — **no handoff yet**; the next batch goes straight on.
 3. Menu changes for the batch's pages: `handoff.py create <slug> --run <RUN_ID> --kind navigation --items <csv>`.
-4. **Brand Guide write-back now (P8: content, not publishing):** each approved page's row in B3, the variants it used
-   in C1/C2, every H2 and FAQ question in C3; then its Drive copy (`drive.py upload`). The next batch reads it, so
-   it never reuses a variant, heading or FAQ. Publishing is never a prerequisite for writing.
+4. **No Brand Guide write-back here** (CM-061 §6): each section wrote it once, at its brief approval. Publishing is
+   never a prerequisite for writing.
 Never edit a generated draft — change the approved file (Paul re-approves) and regenerate.
 
 ## Step: handoff   (once every service and location page is a WordPress draft — the VA Worklist handover, P9)
@@ -198,7 +247,7 @@ same document's status column.
    `wp.py set-alt ... --expect-alt ""` with the alt format from the spec. The pages are live: ask Paul once
    for a fresh ManageWP backup confirmation and pass `--live --backup-confirmed "..."` on each.
 4. `status.py batch <slug> <id> --state published`, `--state verified`; `--state written_back` (the Brand Guide
-   content write-back already ran at ship, P8).
+   content write-back already ran once for the section, at its brief approval — CM-061).
 5. `publish.py pending <slug> --run <RUN_ID>` — link rows held for pages that are now live → handoff to Jonie.
 
 ## Step: pilot-corrections

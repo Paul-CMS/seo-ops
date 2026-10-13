@@ -50,7 +50,7 @@ def _mirror_client_files(h, slug):
 def t_manifest(h):
     """§3.1: every input type on file has a manifest entry; every consuming step's read list names it; unused inputs
     show in STATUS.md."""
-    S_ = "mf-co"
+    S_ = "r3-manifest-co"
     h.sh(f'python3 scripts/status.py init {S_} --name "Mf Co" --domain mf.example --type full --industry roofing')
     n = _mirror_client_files(h, S_)
     code, out = h.sh("python3 scripts/manifest.py check")
@@ -108,7 +108,7 @@ def packs_client(h, slug, gaps=None):
 
 def t_packs(h):
     """§3.2: one evidence pack per page, built by script with the evidence gate, before any brief."""
-    S_ = "pk-co"
+    S_ = "r3-packs-co"
     ag, code, out = packs_client(h, S_)
     st = h.status(S_)
     pk = (st["pages"]["svc-roof-repair"].get("pack") or {})
@@ -164,7 +164,7 @@ CLIENT_SOURCES = ("facts.json || decisions-settled.md || the evidence pack || th
 
 def t_research(h):
     """§4: research before "not found" — the log, its minimum, and the scripts that refuse what falls short."""
-    S_ = "rs-co"
+    S_ = "r3-research-co"
     ag, code, out = packs_client(h, S_, {"loc-springfield": {"neighborhoods", "things_to_do"},
                                          "svc-roof-repair": {"pricing"}})
     h.new_session()
@@ -242,4 +242,275 @@ def t_research(h):
     ag.fin(rid, "lookup")
 
 
-SCENARIOS = [t_definitions, t_manifest, t_packs, t_research]
+def F(page, rule, item, sev, cat, **kw):
+    return {"page": page, "rule": rule, "item": item, "severity": sev, "category": cat,
+            "finding": kw.pop("finding", f"{rule} on {item}"), "plain_why": kw.pop("plain_why", "it matters"), **kw}
+
+
+def write_pilot(h, ag, S_, rid):
+    for pid in ag.batch_pages("pilot"):
+        f = ag.w(f"build/pilot/B-{pid}.md", f"# Brief {pid}\n\n## Evidence gaps\n- see the pack\n")
+        code, out = h.sh(f"python3 scripts/status.py page-stage {S_} {pid} --stage brief --file '{f}' --run {rid}")
+        if code:
+            h.check(f"the pilot brief for {pid} is recorded", False, out)
+    for pid in ag.batch_pages("pilot"):
+        d = ag.w(f"build/pilot/D-{pid}.md", f"# {pid}\n\nWe repair roofs carefully and on schedule. Call us today.\n")
+        code, out = h.sh(f"python3 scripts/status.py page-stage {S_} {pid} --stage draft --file '{d}' --run {rid} --agent sub-{pid}")
+        if code:
+            h.check(f"the pilot draft for {pid} is recorded", False, out)
+
+
+def t_review(h):
+    """§5 + §3.4: severities, one checker pass, dedupe, one review sheet per step, apply, approval, overdue."""
+    S_ = "r3-review-co"
+    ag, code, out = packs_client(h, S_)
+    h.new_session()
+    rid = ag.start("build", "write", batch="pilot")
+    write_pilot(h, ag, S_, rid)
+    # Apex fixtures: W16 is answered in facts.json; synthetic_roofing_offered is already asked and waiting
+    h.sh(f'python3 scripts/run.py fact {S_} {rid} --id d-services-subcontracted-w16 --section D --label "Services '
+         f'subcontracted (W16)" --value "Apex works as a roofing subcontractor on new construction" --status paul_approved '
+         f'--source "Paul 2026-10-11"')
+    h.sh(f'python3 scripts/run.py decision {S_} {rid} --ask synthetic_roofing_offered --who "Client (via Paul)" '
+         f'--text "Synthetic roofing offered? Port Royal base-housing work?"')
+    log = h.sh(f"python3 scripts/research.py log {S_} --run {rid} --section pilot --gap fact:d:emergency --kind client "
+               f'--result not_found --sources "{CLIENT_SOURCES}"')[1].strip().splitlines()[-1]
+    two = ["keep the page", "merge it into the Springfield page (301)"]
+    findings = [
+        F("svc-roof-repair", "E4", "FAQ 2 length", "fix", "length"),
+        F("svc-roof-repair", "SEM-3", "intro angle", "fix_and_list", "semantic", decided_for_you="opened with the leak story"),
+        F("svc-roof-repair", "SEM-3", "intro angle", "fix_and_list", "semantic", decided_for_you="dup"),
+        F("loc-springfield", "plan", "page viability", "ask", "", kind=1, options=two, recommended="b"),
+        F("loc-springfield", "C8", "FAQ wording", "ask", "", options=["reword", "drop"], recommended="a"),
+        F("svc-roof-repair", "claim", "warranty years", "ask", "", kind=2, options=["state 10 years", "leave it out"], recommended="b"),
+        F("loc-springfield", "D", "after-hours service", "ask", "", kind=3, log=log, options=["yes", "no"], recommended="b"),
+        F("loc-hardeeville", "D", "new construction (W16)", "ask", "", kind=3, log=log, fact_key="fact:d:services_subcontracted",
+          options=["yes", "no"], recommended="a"),
+        F("loc-port-royal", "D", "synthetic roofing / base housing", "ask", "", kind=3, log=log,
+          decision_key="synthetic_roofing_offered", options=["yes", "no"], recommended="a"),
+        F("svc-roof-repair", "E2", "generic sentence", "fix", "other_content", decided_for_you="named the flashing work"),
+    ]
+    fj = ag.w("build/pilot/drafts-findings.json", json.dumps(findings))
+    bad = ag.w("build/pilot/bad.json", json.dumps([F("svc-roof-repair", "D", "x", "ask", "", kind=3, options=["a", "b"],
+                                                      recommended="a")]))
+    code, out = h.sh(f"python3 scripts/review.py sheet {S_} pilot drafts --findings {bad} --run {rid}")
+    h.check("§4.2/§5.2: a kind-3 Ask without its research-log entry is refused", code == 4 and "research-log" in out, out)
+    code, out = h.sh(f"python3 scripts/review.py sheet {S_} pilot drafts --findings {fj} --run {rid}")
+    h.check("§5.3: the one checker pass becomes one review sheet for the section's drafts", code == 0, out)
+    rows = list(csv.DictReader(open(h.SB / f"clients/{S_}/build/pilot/drafts-review.csv")))
+    h.check("§5.3: the sheet has the columns id, page, url, item, finding, plain_why, decided_for_you, options, "
+            "recommended, answer, note", list(rows[0].keys()) == ["id", "page", "url", "item", "finding", "plain_why",
+            "decided_for_you", "options", "recommended", "answer", "note"], list(rows[0].keys()))
+    items = [r["item"] for r in rows]
+    h.check("§5.1: a Fix (form only) is fixed silently — never in the sheet", "FAQ 2 length" not in items, items)
+    h.check("§5.1: the same page + rule + item is raised once", items.count("intro angle") == 1, items)
+    h.check("§5.2: an Ask that is not one of the four kinds but has a recommended option is decided by default",
+            any(r["item"] == "FAQ wording" and r["decided_for_you"] == "" and "decided by default" in r["note"] for r in rows)
+            or any(r["item"] == "FAQ wording" and "not one of the four Ask kinds" in r["note"] for r in rows), rows)
+    h.check("§5.1: a 'Fix' that changes content is listed as Decided for you",
+            any(r["item"] == "generic sentence" and r["decided_for_you"] for r in rows), rows)
+    h.check("§5.2 (Apex Hardeeville W16): a question answered in facts.json never appears", "new construction (W16)" not in items)
+    h.check("§5.2 (Apex Port Royal synthetic_roofing_offered): a question already asked never appears again",
+            "synthetic roofing / base housing" not in items)
+    data = json.loads((h.SB / f"clients/{S_}/build/pilot/drafts-review.json").read_text())
+    whys = " ".join(d["why"] for d in data["dropped"])
+    h.check("§5.2: the sheet says why each question was not raised", "facts.json" in whys and "synthetic_roofing_offered" in whys
+            and "duplicate" in whys, data["dropped"])
+    asks = [r for r in data["rows"] if r.get("severity") == "ask"]
+    h.check("§5.2: only the four kinds are Asks (here 1, 2 and 3), each with options and a recommended default",
+            sorted(r["kind"] for r in asks) == ["1", "2", "3"] and all(r["options"] and r["recommended"] for r in asks), asks)
+    u = [r for r in rows if r["item"] == "evidence used"]
+    h.check("§3.4: the draft review shows evidence used per page", len(u) == 2
+            and all(re.match(r"Evidence used: \d+ of \d+ excerpts", r["finding"]) for r in u), u)
+    h.check("§3.4: a pack with 2+ review excerpts the draft does not use gets a Fix-and-list row with the strongest one",
+            any(r["item"] == "review evidence" and r["page"] == "svc-roof-repair" and "strongest excerpt" in r["decided_for_you"]
+                for r in rows), rows)
+    sheet = f"clients/{S_}/build/pilot/drafts-review.csv"
+    code, out = h.sh(f"python3 scripts/status.py batch {S_} pilot --state drafts_written --review-sheet {sheet}")
+    h.check("§5.3: the drafts are recorded with the review sheet (no SEM table, no --sem)", code == 0, out)
+    ag.fin(rid, "pilot written and reviewed")
+    n = h.nxt(S_)
+    h.check("§5.3: /next asks Paul to answer the sheet in one line before any approval",
+            n["kind"] == "decision" and n["command"].startswith(f"/build {S_} review pilot drafts") and "accept all except" in n["why"], n)
+    code, out = h.paul(f"/approve {S_} batch:pilot:briefs batch:pilot:drafts")
+    h.check("§5.3: the approval is refused until the review sheet is applied", code != 0 and "not applied yet" in out, out)
+    h.new_session()
+    rid = ag.start("build", "review", batch="pilot")
+    one = next(r["id"] for r in rows if r["item"] == "page viability")
+    code, out = h.sh(f'python3 scripts/review.py apply {S_} pilot drafts --run {rid} --answers "accept all except {one}a"')
+    ap = json.loads((h.SB / f"clients/{S_}/build/pilot/drafts-apply.json").read_text())["items"]
+    pv = next(i for i in ap if i["item"] == "page viability")
+    h.check("§5.3: one chat line answers the sheet — the named row takes Paul's option, every other row its default",
+            code == 0 and pv["choice"] == "a" and pv["by"] == "Paul" and pv["action"] == "keep the page"
+            and all(i["by"] == "default" for i in ap if i["item"] != "page viability"), ap)
+    ag.fin(rid, "review applied")
+    st = h.status(S_)   # the F-017 / sem_applied class: a later batch state must not refuse the approval
+    next(b for b in st["build"]["batches"] if b["id"] == "pilot")["state"] = "sem_applied"
+    (h.SB / f"clients/{S_}/status.json").write_text(json.dumps(st))
+    code, out = h.paul(f"/approve {S_} batch:pilot:briefs batch:pilot:drafts")
+    h.check("§5.3: after the review is applied the section is approved in one line, without --sem — at any later "
+            "batch state (sem_applied here)", code == 0, out)
+    # the same findings again in this section: never raised again
+    h.new_session()
+    rid = ag.start("build", "review", batch="pilot")
+    code, out = h.sh(f"python3 scripts/review.py sheet {S_} pilot briefs --findings {fj} --run {rid}")
+    again = json.loads((h.SB / f"clients/{S_}/build/pilot/briefs-review.json").read_text())
+    h.check("§5.1: a finding decided once in the section is never raised again by a later check",
+            not [r for r in again["rows"] if r.get("severity") in ("ask", "fix_and_list")]
+            and "decided earlier in this section" in json.dumps(again["dropped"]), again)
+    h.check("§10.8: the brief review shows the evidence-used line per page too",
+            sum(1 for r in again["rows"] if r["item"] == "evidence used") == 2, again["rows"])
+    ag.fin(rid, "no new findings")
+    # §5.4 overdue: kinds 1, 3, 4 default; kind 2 is left out
+    h.new_session()
+    rid = ag.start("build", "review", batch="pilot")
+    od = ag.w("build/pilot/od.json", json.dumps([
+        F("loc-springfield", "plan", "merge Springfield", "ask", "", kind=1, options=two, recommended="b"),
+        F("svc-roof-repair", "claim", "financing", "ask", "", kind=2, options=["say financing", "leave it out"], recommended="a")]))
+    h.sh(f"python3 scripts/review.py sheet {S_} pilot drafts --findings {od} --run {rid}")
+    code, out = h.sh("cd scripts && python3 -c \"import review, datetime as d; "
+                     f"print(review.overdue('{S_}', '{rid}', True, d.date.today() + d.timedelta(days=7)))\"")
+    rows = {r["item"]: r for r in csv.DictReader(open(h.SB / f"clients/{S_}/build/pilot/drafts-review.csv"))}
+    h.check("§5.4: after 3 working days a kind-1 Ask takes the recommended option",
+            rows["merge Springfield"]["answer"].startswith("b (overdue default"), rows)
+    h.check("§5.4: a kind-2 Ask (legal or money) is never defaulted — it is left out", rows["financing"]["answer"] == "omit", rows)
+    h.sh(f"python3 scripts/review.py apply {S_} pilot drafts --run {rid}")
+    ap = {i["item"]: i for i in json.loads((h.SB / f"clients/{S_}/build/pilot/drafts-apply.json").read_text())["items"]}
+    h.check("§5.4: the defaulted page carries an open-item notice; the kind-2 claim is removed, not softened",
+            ap["merge Springfield"].get("open_item", "").startswith("[NEED: confirm merge Springfield")
+            and "remove the sentence" in ap["financing"]["action"] and ap["financing"].get("open_item", "").startswith("[NEED:"), ap)
+    ag.fin(rid, "overdue")
+    sev = json.loads(_read(h, "methodology/review-severities.json"))
+    h.check("§5.1: the severities file lists the form-only Fix categories and the four Ask kinds",
+            {"length", "wording", "reading_grade", "internal_link", "heading_case"} <= set(sev["fix"]["categories"])
+            and sorted(sev["ask"]["kinds"]) == ["1", "2", "3", "4"] and sev["ask"]["never_default"] == ["2"])
+
+
+def t_brand_guide_once(h):
+    """§6: the Brand Guide is written once per section, at the brief approval; never by drafts, review or ship."""
+    S_ = "r3-bg-co"
+    ag, code, out = packs_client(h, S_)
+    h.new_session()
+    rid = ag.start("build", "write", batch="pilot")
+    write_pilot(h, ag, S_, rid)
+    sem = ag.w("build/Test Co - Semantic Review - pilot - REVIEW.md", "| ID | Check |\n|---|---|\n")
+    h.sh(f"python3 scripts/status.py batch {S_} pilot --state drafts_written --sem-table '{sem}' --sem-findings 0")
+    ag.fin(rid, "pilot written")
+    h.new_session()
+    rid = ag.start("build", "writeback", batch="pilot")
+    h.check("§6: the write-back step needs the section's briefs approved (not the drafts)", rid is None
+            and any("batch:pilot:briefs" in e or "briefs" in e for e in ag.errors[-1:]), ag.errors[-1:])
+    ag.errors.clear()
+    code, out = h.paul(f"/approve {S_} batch:pilot:briefs batch:pilot:drafts")
+    n = h.nxt(S_)
+    h.check("§6: once the briefs are approved, /next runs the section's one write-back",
+            code == 0 and n["kind"] == "run" and n["command"] == f"/build {S_} writeback pilot", (out, n))
+    rid = ag.start("build", "writeback", batch="pilot")
+    code, out = h.sh(f"python3 scripts/status.py writeback {S_} pilot --run {rid}")
+    h.check("§6: the write-back is recorded once for the section", code == 0, out)
+    code, out = h.sh(f"python3 scripts/status.py writeback {S_} pilot --run {rid}")
+    h.check("§6: a second Brand Guide write-back for the same section is refused", code == 4 and "once per section" in out, out)
+    ag.fin(rid, "write-back")
+    g = json.loads(_read(h, "scripts/gates.json"))["steps"]["build:writeback"]
+    h.check("§6: build:writeback is gated on the briefs approval", "batch:{batch}:briefs" in g["gates"]
+            and "batch:{batch}:drafts" not in g["gates"], g)
+    bm = _read(h, ".claude/agents/build.md")
+    h.check("§6: drafts, the draft review and ship never write the Brand Guide (the agent's instructions)",
+            "Drafts, the draft review and ship never write the Brand Guide" in bm and "No Brand Guide write-back here" in bm)
+    src = _read(h, "scripts/next.py")
+    h.check("§6: a voided brand_guide_approved rides on the section's approval line (value-only approvals)",
+            "def bg_reapproval" in src and "batch:{bid}:briefs{bg_reapproval(st)}" in src)
+
+
+def t_brand_guide_once_walkthrough(h):
+    """§6 test: a full client — every section writes the Brand Guide exactly once, never in a drafts or ship run."""
+    log, decisions, runs, ag = h.walkthrough("r3-bgw", max_posts=0)
+    lm = (h.SB / "clients/r3-bgw/log.md").read_text()
+    wb = re.findall(r"^- WRITE-BACK \S+ · run (\S+) · batch (\S+):", lm, re.M)
+    batches = [b["id"] for b in h.status("r3-bgw")["build"]["batches"]]
+    per = {b: sum(1 for _, x in wb if x == b) for b in batches}
+    h.check("§6: a full walkthrough writes the Brand Guide exactly once per section", log[-1] == "DONE"
+            and all(v == 1 for v in per.values()), (per, log[-4:]))
+    steps = dict(re.findall(r"^## RUN (\S+) · STARTED · .*\nStep: (\S+)", lm, re.M))
+    h.check("§6: every write-back ran in its own write-back step — never in a drafts, review or ship run",
+            all(steps.get(r) == "build:writeback" for r, _ in wb), [(r, steps.get(r)) for r, _ in wb])
+
+
+def t_location_faq_viability(h):
+    """§7 FAQ recipe; §8 viability check and minimums as targets."""
+    faq = _read(h, "methodology/location-faq.md")
+    h.check("§7: the location FAQ recipe has three categories, the question order and the brand-level fallback",
+            all(x in faq for x in ("1 · Local cost or decision", "2 · Logistics in this area", "3 · Trust in this area",
+                                   "PAA and fan-out questions already in the page's evidence pack", "brand-level local fallback",
+                                   "\"Fix and list\" row in the review sheet, never\n  an Ask", "25% re-roof rule apply to homes on Fripp Island")), faq[:400])
+    reads = " ".join(json.loads(_read(h, "scripts/gates.json"))["steps"]["build:write"]["reads"])
+    h.check("§7: brief and draft writers read the FAQ recipe", "methodology/location-faq.md" in reads)
+    S_ = "r3-viab-co"
+    ag, code, out = packs_client(h, S_, {"loc-springfield": {"neighborhoods", "local_context", "things_to_do", "top_sites"}})
+    st = h.status(S_)
+    h.check("§8 setup: two required public gaps block the location page", st["pages"]["loc-springfield"]["evidence"]["result"] == "block",
+            st["pages"]["loc-springfield"]["evidence"])
+    h.new_session()
+    rid = ag.start("build", "evidence", batch="pilot")
+    for gap in ("neighborhoods", "local_context"):
+        h.sh(f"python3 scripts/research.py log {S_} --run {rid} --section pilot --gap fact:loc-springfield:{gap} --kind public "
+             f'--page loc-springfield --result not_found --queries "springfield {gap} || City of Springfield {gap} || '
+             f'springfield {gap} list" --sources "methodology/sources/sc-lowcountry.md || Wikipedia: Springfield"')
+    h.sh(f"python3 scripts/evidence.py run {S_} --run {rid} --batch pilot")
+    st = h.status(S_)
+    grid = (h.SB / st["pages"]["loc-springfield"]["evidence"]["grid"]).read_text()
+    h.check("§8: a public gap researched to the minimum is a target, not a hold — the page is no longer blocked",
+            st["pages"]["loc-springfield"]["evidence"]["result"] != "block" and "a target, not a hold" in grid, grid[:900])
+    pack = (h.SB / st["pages"]["loc-springfield"]["pack"]["file"]).read_text()
+    h.check("§8: the pack tells the writer to shorten or drop the researched element (Fix and list)",
+            "shorten or drop the element (Fix and list)" in pack, pack.split("## Gaps")[-1][:500])
+    code, out = h.sh(f"python3 scripts/evidence_pack.py viability {S_} --all")
+    h.check("§8: the viability check scores each location from its pack and proposes a merge for an unsourceable one",
+            code == 0 and "loc-springfield" in out and "/6" in out and "MERGE PROPOSAL" in out and "Merge proposals" in out, out)
+    ag.fin(rid, "viability")
+
+
+def t_pilot_rule(h):
+    """§9: a pilot only for a client's first section, a new industry, or after a writing change."""
+    g = json.loads(_read(h, "scripts/gates.json"))["modes"]
+    h.check("§9: gates.json → modes has the pilot: auto rule", (g.get("pilot") or {}).get("rule") == "auto", g.get("pilot"))
+    S_ = "r3-pilot-co"
+    h.sh(f'python3 scripts/status.py init {S_} --name "Pi Co" --domain pi.example --type full --industry "chimney sweeping" --sensitive no')
+    code, out = h.sh(f"python3 scripts/status.py pilot {S_}")
+    h.check("§9: a new industry needs a pilot, and says why", "pilot needed" in out and "new industry" in out, out)
+    st = h.status(S_)   # this client already has one approved section, with today's writing fingerprint
+    code, fp = h.sh("cd scripts && python3 -c \"import status; print(status.writing_fp())\"")
+    st["build"] = {"site_plan": {"file": "x", "approval": None}, "pilot_corrections_applied": None,
+                   "batches": [{"id": "services", "kind": "service", "label": "S", "pages": [], "state": "drafted",
+                                "briefs": {"state": "approved"}, "drafts": {"state": "approved", "at": "2026-10-12T10:00",
+                                                                            "writing_fp": fp.strip()}}]}
+    (h.SB / f"clients/{S_}/status.json").write_text(json.dumps(st))
+    code, out = h.sh(f"python3 scripts/status.py pilot {S_}")
+    h.check("§9: an approved section, a known industry and unchanged writing rules → no pilot, with the reason",
+            "pilot not needed" in out and "drafted in one run" in out, out)
+    wc = h.SB / "methodology/writing-commercial.md"
+    orig = wc.read_text()
+    wc.write_text(orig + "\n- a new writing rule\n")
+    code, out = h.sh(f"python3 scripts/status.py pilot {S_}")
+    wc.write_text(orig)
+    h.check("§9: the first section after a writing-rule change pilots again", "pilot needed" in out and "changed" in out, out)
+    plan = {"pages": [{"id": "loc-a", "type": "location", "name": "A", "city": "A", "url": "https://pi.example/a/"},
+                      {"id": "loc-b", "type": "location", "name": "B", "city": "B", "url": "https://pi.example/b/"}],
+            "batches": [{"id": "locations", "kind": "location", "label": "L", "pages": ["loc-a", "loc-b"]}]}
+    ag = h.Agent(S_)
+    pj = ag.w("build/site-plan.json", json.dumps(plan)); pm = ag.w("build/Pi Co - Site Plan - REVIEW.md")
+    code, out = h.sh(f"python3 scripts/status.py plan {S_} --file '{pm}' --json {pj}")
+    st = h.status(S_)
+    h.check("§9: a plan without a pilot is accepted when none is needed; the reason is recorded",
+            code == 0 and "drafted in one run" in (st["build"].get("pilot_waived") or {}).get("reason", ""), out)
+    S2 = "r3-pilot2-co"
+    h.sh(f'python3 scripts/status.py init {S2} --name "Pj Co" --domain pj.example --type full --industry "chimney sweeping" --sensitive no')
+    ag2 = h.Agent(S2)
+    pj = ag2.w("build/site-plan.json", json.dumps(plan)); pm = ag2.w("build/Pj Co - Site Plan - REVIEW.md")
+    code, out = h.sh(f"python3 scripts/status.py plan {S2} --file '{pm}' --json {pj}")
+    h.check("§9: a client's first section without a pilot batch is refused, with the reason",
+            code != 0 and "a pilot is needed" in out and ("first section" in out or "new industry" in out), out)
+
+
+SCENARIOS = [t_definitions, t_manifest, t_packs, t_research, t_review, t_brand_guide_once, t_brand_guide_once_walkthrough,
+             t_location_faq_viability, t_pilot_rule]

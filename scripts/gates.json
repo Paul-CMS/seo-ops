@@ -514,6 +514,7 @@
         "python3 scripts/rulings.py CM-020 CM-022 CM-024 (never rulings.md whole, P12)",
         "clients/<slug>/data/fanout/fanout-routing.md",
         "clients/<slug>/data/competitors/coverage.md (coverage ideas only, P6)",
+        "methodology/location-faq.md (location FAQ recipe, viability check — CM-061)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -568,6 +569,7 @@
         "clients/<slug>/build/pilot-corrections.md (if present — this client's pilot corrections, P3)",
         "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts",
         "methodology/writing-commercial.md (Usage tiers)",
+        "methodology/location-faq.md (location pages: three FAQs, one per category — CM-061)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -589,6 +591,7 @@
         "clients/<slug>/build/pilot-corrections.md (if present — this client's pilot corrections, P3)",
         "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts (written at its usage tier)",
         "methodology/writing-commercial.md (Usage tiers)",
+        "methodology/location-faq.md (location pages: three FAQs, one per category — CM-061)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -1034,11 +1037,11 @@
     "build:writeback": {
       "gates": [
         "discovery_signed_off",
-        "batch:{batch}:drafts"
+        "batch:{batch}:briefs"
       ],
       "produces": [],
       "reads": [
-        "the batch drafts Paul approved (incl. applied SEM items)",
+        "the section's approved briefs (variants, H2s and FAQ questions each page will use) — CM-061: the Brand Guide is written once per section, at the brief approval",
         "clients/<slug>/brand-guide.md (B3, C1, C2, C3)",
         "clients/<slug>/decisions-settled.md"
       ]
@@ -1099,7 +1102,22 @@
         "methodology/specs/<type>.md",
         "clients/<slug>/brand-guide.md (C1–C3)",
         "the pages approved in earlier batches",
+        "methodology/location-faq.md (location pages: three FAQs, one per category — CM-061)",
         "python3 scripts/rulings.py CM-017 CM-043 (never rulings.md whole, P12)"
+      ]
+    },
+    "build:review": {
+      "gates": [
+        "discovery_signed_off"
+      ],
+      "produces": [],
+      "reads": [
+        "clients/<slug>/build/<section>/<step>-review.csv (Paul's answers) and <step>-review.json",
+        "Paul's one answer line (\"accept all\" or \"accept all except 7b, 12c\")",
+        "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts",
+        "methodology/writing-commercial.md (Usage tiers)",
+        "methodology/review-severities.json (Fix · Fix and list · Ask; the four Ask kinds)",
+        "clients/<slug>/decisions-settled.md"
       ]
     }
   },
@@ -1191,6 +1209,15 @@
       "build:facts": {
         "pilot": null
       }
+    },
+    "pilot": {
+      "rule": "auto",
+      "_about": "CM-061 part 6 (rewrite 3 §9): a pilot (1 service + 1 location, briefs and drafts, one approval) runs only for a client's first section, a new industry, or the first section after a change to the specs or the writing rules (methodology/specs/*.md, writing-commercial.md, location-faq.md — the fingerprint each drafts approval records). Otherwise all pages of a section are drafted in one run. status.py pilot <slug> prints the decision and the reason; status.py plan refuses a plan without a pilot when one is needed. 'always' = the old rule.",
+      "when": [
+        "first_section",
+        "new_industry",
+        "writing_change"
+      ]
     }
   },
   "_stages_about": "R1/R2 (Paul, 2026-10-08). Every step belongs to one stage. A stage runs in its own session on the session model (Haiku — it orchestrates /next, relays agent summaries, prints /approve lines); judgment lives in the agents, whose model is fixed in .claude/agents/<name>.md frontmatter (opus or haiku only). run.py start refuses a step of a new stage in a session that already finished a different stage. 'per_batch' stages are one session per batch. 'any_stage' steps are bookkeeping that may run in any session. A system/design session (editing seo-ops itself) runs on Opus and starts no runs.",
@@ -1287,6 +1314,7 @@
         "build:brief",
         "build:draft",
         "build:drafts",
+        "build:review",
         "build:apply-sem",
         "build:writeback",
         "build:ship",

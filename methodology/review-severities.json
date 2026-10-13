@@ -1,0 +1,28 @@
+{
+  "_about": "CM-061 part 3 (rewrite 3 §5): every finding of the one checker pass per step has one severity. scripts/review.py enforces it: a 'fix' must be a form category; an 'ask' must be one of the four kinds (a kind-3 Ask links a valid research-log entry; a kind-4 Ask names two sources); anything else with a recommended option becomes 'fix_and_list'. Definitions: methodology/definitions.md.",
+  "fix": {
+    "_about": "Form only — fixed silently, logged in the run only, never in the review sheet.",
+    "categories": ["length", "wording", "sentence_order", "formatting", "reading_grade", "internal_link", "variant_repetition", "heading_case", "placeholder_format"],
+    "length_tolerance": 0.25
+  },
+  "fix_and_list": {
+    "_about": "A content change made by default with the recommended option, listed under 'Decided for you' in the review sheet. Anyone can override it.",
+    "categories": ["optional_section", "faq_fallback", "claim_softened", "site_stated_used", "pack_evidence_added", "public_not_found", "semantic", "portability", "collision", "other_content"]
+  },
+  "ask": {
+    "_about": "Only these four kinds reach Paul as a question, each with options and a recommended default.",
+    "kinds": {
+      "1": "page or URL decision — create, merge, drop, redirect",
+      "2": "legal or money claim about the client — warranties, prices, financing, licences, insurance, permits the client says it pulls, guarantees",
+      "3": "client-only fact not found after the search order (research.py log, kind client) — batched into one client question list per section, with pre-filled best answers",
+      "4": "real conflict — two sources of equal standing that disagree"
+    },
+    "never_default": ["2"]
+  },
+  "finding_fields": {
+    "required": ["page", "rule", "item", "finding", "severity", "category"],
+    "ask": ["kind", "options", "recommended", "plain_why"],
+    "fix_and_list": ["decided_for_you"],
+    "optional": ["url", "fact_key", "fact_id", "decision_key", "log", "sources", "note"]
+  }
+}

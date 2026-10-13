@@ -12,5 +12,9 @@ Session model: Haiku · agents: build (Opus), researcher (Sonnet), clerk.
 
 - URLs: one root slug per service, location and hub page — no folder, no city in a service slug, no service in a
   location slug, no `-2`; hubs are county or metro slugs (CM-058). `status.py plan` refuses anything else.
+- **Pilot only when it is worth it** (CM-061 §9): `status.py pilot <slug>` — a client's first section, a new
+  industry, or the first section after a spec or writing-rule change; otherwise all pages are drafted in one run.
+- **Viability check** before the plan reaches Paul (`evidence_pack.py viability <slug> --all`): a location that
+  cannot be sourced is proposed as a merge (kind-1 Ask). Location FAQs: `methodology/location-faq.md`.
 - Batches: one per kind (all services; all locations and hubs; home and about) — split only above 15 pages.
 - The facts round's question set goes to Paul once; `/interview <slug> facts-answers all` records the answers.

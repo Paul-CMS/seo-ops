@@ -382,6 +382,10 @@ def prepare(a, st, target, multi):
                 files = file_map((b.get("files") or {}).get(stage) or [])
             if stage == "drafts":
                 check_sem(target, b, sem)
+            rv = (b.get("review") or {}).get(stage)
+            if approved and rv and not rv.get("applied"):   # CM-061: the approval follows the applied review sheet
+                die(f"REFUSED ({target}) — the {bid} {stage} review sheet ({rv.get('sheet')}) is not applied yet: answer it "
+                    f"(\"accept all\" or \"accept all except 7b\") and the system applies it (review.py apply) first.")
             if approved:
                 ok, why = S.batch_ready(st, bid, stage)
                 if stage == "drafts" and f"batch:{bid}:briefs" in a.targets:   # P10: briefs approved in this same line
@@ -407,7 +411,7 @@ def prepare(a, st, target, multi):
         rec = {"state": a.decision, "by": "Paul", "at": now(), "note": a.note, "files": files,
                "conditions": [c.strip() for c in (a.conditions or "").split(";") if c.strip()],
                "sensitive_review": a.review, "practitioner": a.practitioner,
-               **({"sem_ids": sem or []} if target.endswith(":drafts") else {}),
+               **({"sem_ids": sem or [], "writing_fp": S.writing_fp()} if target.endswith(":drafts") else {}),
                **({"applied": applied} if applied else {})}
 
         def apply():
