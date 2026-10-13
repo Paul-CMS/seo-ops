@@ -2,16 +2,16 @@
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch locations)**
 - **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:draft finished (run 20261013-074929-build-0560) and that stage is in review mode — l; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
+- **Waiting on:** Paul — build:draft finished (run 20261013-075700-build-e62d) and that stage is in review mode — l; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
 - **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
 
-_Generated 2026-10-13T07:56 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-13T08:04 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:draft finished (run 20261013-074929-build-0560) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry draft locations loc-beaufort (draft and self-critique for loc-beaufort (its own run)) | 2026-10-13 | /next apex-roofing-of-the-lowcountry |
+| Paul | build:draft finished (run 20261013-075700-build-e62d) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry draft locations loc-port-royal (draft and self-critique for loc-port-royal (its own run)) | 2026-10-13 | /next apex-roofing-of-the-lowcountry |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
 | Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-replacement:service_scope |
@@ -157,4 +157,4 @@ _None — every input on file has been read._
 | build:brief | 2 | 612,000 | $0.00 |
 | **total** | 2 | 612,000 | $0.00 |
 
-Last run: /build 2026-10-13T07:56 — Pritchardville location draft revised to Paul's 2026-10-13 instructions: three sourced local FAQs (wind code, permit by address, hurricane evacuation), fact-checked local context (Ohio colony per the 1938 Ocean Highway guide, fire district, May River Road corridor), New Riverside neighbourhoods dropped so it does not compete with Bluffton, grade 6.1, one map NEED.
+Last run: /build 2026-10-13T08:04 — Drafted the Beaufort location page (671 words, grade 6.8) with three Beaufort-only FAQs: metal roof rules, the City's historic review route, and saving old terne roofs; the terne FAQ replaces the Bailey Bill FAQ to cover the trust category; two City sources logged (RL-locations-16, 17); placeholders are the map NEED and one /metal-roofing/ link.

@@ -4462,3 +4462,87 @@ Changes: 0 · Summary: Pritchardville location draft revised to Paul's 2026-10-1
 - CHANGE #738 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (4).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 26e7d77a1806 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #739 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (4).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (4).md | result: done · renamed and moved, nothing deleted
 - CHANGE #740 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (4).md | new: Apex Roofing of the Lowcountry - Status.md · sha fedd64b1c216 | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-13T07:56 · after build:draft (run 20261013-074929-build-0560) · Paul typed /next
+
+## RUN 20261013-075700-build-e62d · STARTED · /build · 2026-10-13T07:57:00-05:00
+Step: build:draft · batch locations · session 4b4b1602-b1b8-4325-bb46-d6fdcde6c418
+Gates checked: discovery_signed_off, batch:locations:briefs, page_specs_approved
+- RESEARCH 2026-10-13T08:03 · run 20261013-075700-build-e62d · RL-locations-16 · fact:loc-beaufort:faq_terne_roof (public): found
+- RESEARCH 2026-10-13T08:03 · run 20261013-075700-build-e62d · RL-locations-17 · fact:loc-beaufort:faq_building_code_review (public): found
+- DRAFT 2026-10-13T08:03 · run 20261013-075700-build-e62d · loc-beaufort · clients/apex-roofing-of-the-lowcountry/build/locations/LD - Beaufort - Apex Roofing of the Lowcountry.md · agent build-subagent-loc-beaufort-e62d
+### HANDOFF · /build · 2026-10-13 · run 20261013-075700-build-e62d
+**Agent:** Build (Agent 2), Opus, fresh subagent for this one page (CM-043; agent id `build-subagent-loc-beaufort-e62d`) · **Date:** 2026-10-13 · **Route:** A
+
+### Done
+- Wrote `clients/apex-roofing-of-the-lowcountry/build/locations/LD - Beaufort - Apex Roofing of the Lowcountry.md` from the approved brief (`LB - Beaufort …`), the evidence pack and Paul's rules of 2026-10-13 (settled `location_three_strong_faqs`). Recorded it with `status.py page-stage … --stage draft --run 20261013-075700-build-e62d --agent build-subagent-loc-beaufort-e62d` (exit 0).
+- New public research logged:
+  - RL-locations-16: the City of Beaufort *Metal Roofing Guidelines*, re-read from the PDF on 2026-10-13. It covers the terne-metal staff policy (preserve, recoat, photos before removal, no asphalt replacement) and the snap-lock and mechanical-lock rules.
+  - RL-locations-17: the City Building Permits page. "Reroof" is listed under projects that "still require Building Code review".
+- No flag raised. Readability `--exclude-terms` used a terms file in the scratchpad (the F-016 workaround).
+
+### The three FAQs (one per category, methodology/location-faq.md)
+1. **Cat. 1 · local decision (material):** "Can a historic Beaufort home get a metal roof?" (as briefed). Source: City Metal Roofing Guidelines (https://cityofbeaufort.org/DocumentCenter/View/9574).
+   - Mechanical-lock standing seam may be right when a contributing house replaces a non-historic roof. Snap-lock is not.
+   - Contributing houses go to the HRB; non-contributing houses go to staff, case by case.
+   - Apex: installs standing seam (settled `fact:svc-metal-roofing:service_scope`). The page makes no mechanical-lock or hand-folding claim for Apex.
+2. **Cat. 2 · logistics (review route):** "Does a roof replacement in Beaufort's Historic District need review board approval?" (as briefed). Sources:
+   - City Minor and Major forms, updated 31 Oct 2025 (/View/10051, /View/10050)
+   - City Code s.9.10 (/View/1000)
+   - the historic sites survey (/350)
+   - the City Building Permits page (/156)
+
+   Wording: an in-kind reroof is staff-level review, and staff can send it to the Board. The page never says "no review needed". Apex "coordinates the roofing-material approval" (settled). It makes no claim that Apex files the COA or pulls the permit (settled `location_client_questions_skipped`).
+3. **Cat. 3 · trust (local pain point: aging historic terne roofs):** "Can the old terne metal roof on my Beaufort house be saved?" (new).
+   - Pain point: the City's terne policy and rust from missed recoating (Guidelines, RL-locations-16).
+   - Apex: founded 2015 (Paul Approved). Ralph and Pierce are the ones on the roof (Paul Approved, W25). Photos of the work go to the customer (Paul Approved).
+   - Review: one 2019 example, attributed (photos topic, keyword tier), with no reviewer name.
+   - The page makes no claim that Apex recoats terne.
+
+### Rewords vs the brief / C3 (F-020: Brand Guide C3 still holds the briefed wording)
+- FAQ 3 "Does the Bailey Bill tax freeze apply if I replace the roof on an older Beaufort house?" → **replaced** by "Can the old terne metal roof on my Beaufort house be saved?" The brief had no trust-category FAQ. The Bailey Bill is a tax and money item, it is not a roofing decision, and its relevance to a roofer page is weaker.
+- FAQ 1 and FAQ 2 wording unchanged. Every H2 is as briefed, in C3.
+- Things to Do: **Hunting Island State Park dropped** for the Beaufort International Film Festival, to keep the page on Beaufort itself (Paul's rule 4; the park is off Beaufort, near St. Helena and Fripp). Top Sites: Verdier House, St. Helena parish church, Robert Smalls House and Beaufort National Cemetery. The Historic District is kept out of this list (it is in the opening and local context).
+
+### Unique and not competing
+- The opening angle (the City reviews a historic roof's material) belongs to Beaufort only.
+- No sentence, lead-in or heading pattern is copied from Bluffton, Hilton Head Island, Okatie or Pritchardville. The sibling lead-in and CTA were reworded after a check.
+- FAQ angles not used elsewhere: none on a permit authority, wind rating, evacuation, salt air or plantation board. Slate's BAR line is not repeated (slate framing and weight are absent).
+- Port Royal, Lady's Island and St. Helena content is not used. Lady's Island is named only in the sibling lead-in, and Port Royal Island only as Beaufort's location. Mossy Creek, Dataw Island, Harbor Island and base housing are not used.
+
+### Checks
+- 671 visitor-facing words scored (the file has 990 words, including frontmatter and markup). Page grade 6.8, no paragraph over 10, E10 passed, read-aloud pass done. FAQ first paragraphs are 53, 55 and 59 words.
+- E1 portability: pass. E2: 8 or more specific facts (1711 charter, second-oldest city, 304-acre NHL district, the 1893 hurricane and 1907 fire, Pigeon Point, the HRB and staff routes, the metal guidelines, the terne policy).
+- E3: title Roofing Contractor → H1 Roofers → services H2 Roofing Contractor → opening roofer and roofing contractor → FAQ H2 Roofer. No consecutive repeat; the reserved variant is not used.
+- E4: every chunk is under 375 words.
+- E5: no price, response time, fee, tax figure, COA or permit claim, or neighbourhood work claim.
+- E6: pass. E7: one H1, and every H2 is a question naming Beaufort. E8: one `[LINK →]` placeholder in FAQ 2, a proposed CM-022 exception that the brief allowed. E9: pass.
+- Spec:
+  - LOC-14 met.
+  - LOC-15 met (12 neighbourhoods).
+  - LOC-16 open (map NEED).
+  - LOC-17 met.
+  - LOC-18/11 placeholders present.
+  - LOC-19 NAP matches.
+  - LOC-22 under 1,000 words.
+  - LOC-26: WebPage + ItemList, recommendation only.
+- Placeholders: 1 NEED (map) and 1 LINK (/metal-roofing/).
+
+### For the drafts review
+1. Fix and list: the Bailey Bill FAQ was replaced by the terne trust FAQ. Option: restore it as a 4th FAQ (the spec allows 3–4), or send it to the blog list. A C3 update is needed at write-back.
+2. Fix and list: Hunting Island was swapped for the Film Festival, so the page does not reach toward St. Helena or Fripp.
+3. Fix and list: the `replaces:` frontmatter was left out because the site plan JSON has no `replaces` or `live_url` for loc-beaufort. The brief says /can-i-replace-my-roof-myself-beaufort-historic-district/ 301s here. Confirm the 301 sits in the URL Decision Map or redirect handoff.
+4. Check: the `[LINK → /metal-roofing/]` in FAQ 2 is a CM-022 exception candidate (Finish decides). Note the live metal page slug may be /metal-roofing-2/ in the routing data.
+5. Robert Smalls House and Beaufort National Cemetery are listed by name only; the pack has no detail for them.
+6. Finish outbound candidates (CM-011): the City Historic District page (/178), the Metal Roofing Guidelines (/View/9574) and the City Building Permits page (/156).
+
+### Not done
+No publish, link table, schema or Brand Guide write-back. Nothing approved.
+### END HANDOFF
+## RUN 20261013-075700-build-e62d · FINISHED · 2026-10-13T08:04:23-05:00
+Changes: 0 · Summary: Drafted the Beaufort location page (671 words, grade 6.8) with three Beaufort-only FAQs: metal roof rules, the City's historic review route, and saving old terne roofs; the terne FAQ replaces the Bailey Bill FAQ to cover the trust category; two City sources logged (RL-locations-16, 17); placeholders are the map NEED and one /metal-roofing/ link.
+- CHANGE #741 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (5).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #742 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (5).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha bad0c673339a | result: done · copied (Drive for desktop syncs it)
+- CHANGE #743 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (5).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #744 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (5).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha fc0475dde238 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #745 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (5).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #746 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (5).md | new: Apex Roofing of the Lowcountry - Status.md · sha 88ecd085161e | result: done · copied (Drive for desktop syncs it)
