@@ -5533,3 +5533,138 @@ Changes: 0 · Summary: Ridgeland location draft written and recorded (895 words,
 - CHANGE #798 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (14).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 4f264b4f8828 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #799 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (14).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (14).md | result: done · renamed and moved, nothing deleted
 - CHANGE #800 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (14).md | new: Apex Roofing of the Lowcountry - Status.md · sha 896d767fd594 | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-13T13:20 · after build:draft (run 20261013-130728-build-8ef0) · Paul typed /next
+
+## RUN 20261013-132052-build-32e7 · STARTED · /build · 2026-10-13T13:20:52-05:00
+Step: build:draft · batch locations · session 4b4b1602-b1b8-4325-bb46-d6fdcde6c418
+Gates checked: discovery_signed_off, batch:locations:briefs, page_specs_approved
+- RESEARCH 2026-10-13T13:27 · run 20261013-132052-build-32e7 · RL-locations-42 · fact:loc-levy:faq_permit_jurisdiction (public): found
+- RESEARCH 2026-10-13T13:27 · run 20261013-132052-build-32e7 · RL-locations-43 · fact:loc-levy:faq_permit_office (public): found
+- DRAFT 2026-10-13T13:27 · run 20261013-132052-build-32e7 · loc-levy · clients/apex-roofing-of-the-lowcountry/build/locations/LD - Levy - Apex Roofing of the Lowcountry.md · agent build-subagent-loc-levy-32e7
+### HANDOFF · /build · 2026-10-13 · run 20261013-132052-build-32e7
+**Agent:** Build (Agent 2), Opus, a fresh subagent for this one page (CM-043; agent id `build-subagent-loc-levy-32e7`) · **Date:** 2026-10-13 · **Route:** A
+
+### Done
+- Wrote `clients/apex-roofing-of-the-lowcountry/build/locations/LD - Levy - Apex Roofing of the Lowcountry.md` from the approved brief, under Paul's settled rule `location_three_strong_faqs`.
+- Recorded it with `status.py page-stage … --stage draft --run 20261013-132052-build-32e7 --agent build-subagent-loc-levy-32e7` (exit 0).
+- Logged research rows RL-locations-42 and 43 with `research.py log`.
+  - **RL-42:** S.C. Code § 6-9-30(A) (scstatehouse.gov, read 2026-10-13). Each county appoints a building official so that "the unincorporated area of the county is under the jurisdiction of a building official". Each municipality does the same within its limits. This is the sourced reason Levy, which is unincorporated, goes to Jasper County.
+  - **RL-43:** Jasper County Planning and Building page, re-read 2026-10-13.
+    - "roof replacement" is on its permit list.
+    - You apply online through the County permitting site or on the paper Building Permit Application.
+    - The Building Department "inspect[s] and enforce[s]" the International Building Code.
+    - Office hours are Monday to Friday, 9 AM to 5 PM; phone (843) 717-3650.
+    - The page says nothing about towns.
+- Wikipedia's Levy page was re-read. It matches the pack: unincorporated southern Jasper County, SC 315, 13 ft, and the abandoned Seaboard Air Line Charleston Subdivision.
+
+### The three FAQs (one per category, methodology/location-faq.md)
+1. **Cat. 2 · logistics:** "Levy has no town government, so which office issues my roof permit?"
+   - Jasper County does. Under S.C. Code § 6-9-30, the unincorporated area is under the county building official, and the County lists roof replacement among the jobs that need a permit.
+   - The answer gives the online or paper application, the weekday hours, the phone number and the IBC inspection duty, then tells the reader to ask the County before a start date is set.
+   - Sources: RL-42, RL-43, and Wikipedia (unincorporated).
+   - It makes no exemption promise, no Apex-pulls-the-permit claim and no licence claim. It does not split Town and County (that is Ridgeland's FAQ) and makes no Hardeeville-limits claim.
+2. **Cat. 1 · local cost decision** (a brand-level local fallback; Fix and list):
+   - Question: "Financing a Levy roof replacement — does Apex offer it?"
+   - Answer: yes, through Hearth, a home-improvement lender (client_confirmed). The loan terms come from Hearth. Cost is driven by roof size and material (approved price standard), and the estimate gives a figure first.
+   - No price, rate or terms appear (the prices are on Roof Replacement).
+   - The pack has PAA support for this page: "How to pay for a new roof when you don't have the money?" and "Is $30,000 too much for a roof?"
+3. **Cat. 3 · trust:** "Whose crew comes back to Levy if a new roof ever leaks?"
+   - The local pain point: a home outside any town, and who answers for the roof years later.
+   - Apex's answer:
+     - Apex's own no-leak workmanship warranty (settled `business`), with no term stated.
+     - Levy is one of the 12 places Apex serves (BG-E).
+     - Apex is a certified factory installer of both CertainTeed and GAF, so the owner picks the brand (client_confirmed; this folds in the brief's FAQ 3).
+     - One attributed example, not used on any sibling page: a 2026-08-15 review (pack row 4) says Ralph handed over the warranties for all the GAF products after the job.
+   - The answer has no reviewer name, no ShingleMaster and no warranty length.
+
+### Rewords vs the brief (for Brand Guide C3 at write-back, F-020)
+
+| Element | Brief | Draft | Why |
+|---|---|---|---|
+| Services H2 | What Can a Roofer Do for Your Levy Home? | Does a Roofer Come Out to Levy for Every Kind of Roof Job? | Too close to Port Royal ("What Can You Hire a Port Royal Roofer to Do?") and St. Helena ("…Help Your St. Helena Island Home?") |
+| Local context H2 | What Should a Levy Homeowner Know About Where Levy Sits? | What Kind of Place Is Levy, South Carolina? | "What Should … Know" is Port Royal's shape; "Where" is Pritchardville's |
+| FAQ H2 | What Do Levy Homeowners Ask a Residential Roofer? | What Does a Residential Roofer Tell Levy Homeowners About Permits, Payment and Warranties? | The same shape is on Okatie and Pritchardville |
+| FAQ 1 | Do I need a Jasper County permit to replace my roof in Levy? | Levy has no town government, so which office issues my roof permit? | "Do I need" is taken (Bluffton). The new shape leads with Levy's own point: no town, so the County (§ 6-9-30) |
+| FAQ 2 | Can I finance a new roof on my Levy home? | Financing a Levy roof replacement — does Apex offer it? | "Can" is taken |
+| FAQ 3 | Can I choose between CertainTeed and GAF shingles for my Levy roof? | **Replaced:** Whose crew comes back to Levy if a new roof ever leaks? | "Can" is taken, and brand choice alone is not a local trust FAQ. The brand choice stays inside the answer |
+| Neighbourhoods H2 | Which Levy Neighborhoods Do We Serve? | Which Communities Lie Near Levy? | The same shape is on four siblings. Limehouse is a separate community, and the draft makes no service claim for it |
+| Siblings H2 | Which Towns Near Levy Do We Also Serve? | Which 11 Other Lowcountry Places Share Apex's Service Area With Levy? | The same shape is on Beaufort, Hilton Head Island, Okatie and Pritchardville |
+
+- **FAQ openings are Levy / Financing / Whose.** None is used on a sibling location FAQ or a service-page FAQ.
+- **The opening is no longer "Is".** Okatie already opens an FAQ with "Is", although it is not on the taken list.
+
+### Unique, and off the sibling pages
+- **Opening:**
+  - unincorporated southern Jasper County
+  - SC 315
+  - Jasper County as the only local government
+  - the three questions the page answers
+  - no travel fee, said once
+  - no distance, drive time or response time
+- **Local context:**
+  - 13 ft
+  - SC 315
+  - the abandoned Seaboard Air Line Charleston Subdivision
+  - "every Levy home is a Jasper County job"
+  - no hurricane, flood, soil or housing claim
+- **Kept off the page:**
+  - the 1938 "Levys" ticket-agent story (Pritchardville)
+  - Hardeeville's builder and subcontractor angle and its city limits
+  - Ridgeland's Town-vs-County split and its founders-on-the-roof trust angle
+  - Pritchardville's wind rating and evacuation
+  - storm-trust angles (St. Helena, Pritchardville)
+  - photo updates (Fripp, Hardeeville)
+  - every review already used elsewhere
+- **Exact-sentence check** (sentences of 5+ words) against every location, pilot and service draft: 0 matches after one reword. "For a free estimate, call (843) 757-2739." matched Hardeeville and now reads "Book a free estimate at (843) 757-2739."
+
+### Checks
+- **Size and reading level:**
+  - 737 words below the front matter (LOC-22: under 1,000; a short page by design).
+  - Readability: page grade 5.1 over 543 scored words, no paragraph over 10, so E10 passes. Terms file: `scratchpad/terms-levy.txt` (the F-016 workaround).
+- **Paragraph lengths:**
+  - Opening: 89 words.
+  - Local context: 4 sentences (64 words).
+  - FAQ first paragraphs: 54 / 54 / 58.
+- **E1–E10:**
+  - E1: pass.
+  - E2: 4 Levy facts, plus § 6-9-30 and the County permit facts.
+  - E3: Roofing Contractor (title) → Roofers (H1) → Roofer (services H2) → Residential Roofer (FAQ H2). The opening uses "roofing contractor". The reserved B1 variant is not used.
+  - E4: every H2 is under 375 words.
+  - E5: every fact traces to the pack, the brief or RL-42/43.
+  - E6: no banned phrasing.
+  - E7: one H1; every H2 is a spoken question naming Levy. COM-11: the title's remainder is "Roofing Contractor" and the H1's is "Roofers", so it passes.
+  - E8: no links in prose; both link-table placeholders present.
+  - E9: pass.
+- **Spec:**
+  - LOC-14: 3 FAQs, one per category.
+  - LOC-15: 1 nearby community. The target is 6; this is a Fix and list item.
+  - LOC-16: map NEED.
+  - LOC-17: Things to Do and Top Sites are dropped. They were researched and nothing was found (RL-11, RL-12); this is a Fix and list item.
+  - LOC-19: NAP.
+  - LOC-20: CM-023 order.
+  - LOC-24: passes.
+- **Placeholders** (`placeholders.py scan`): 1 NEED (the city-level map) and 0 LINK.
+
+### For the drafts review
+1. **Fix and list:**
+   - FAQ 3 is replaced (brand choice becomes a whose-crew-comes-back trust FAQ, with the brand choice inside the answer).
+   - FAQs 1 and 2 are reworded, and five H2s are reworded (see the table). C3 needs these at write-back.
+2. **Fix and list:** RL-42 (S.C. Code § 6-9-30) is new public evidence that was not in the brief. It is used as the reason Levy goes to the County.
+3. **Fix and list:** the FAQ 3 answer names "Apex's own no-leak workmanship warranty" with no term. The brief said Roof Replacement owns the warranty terms. `fact:d:warranty_terms` shows as asked of the client, while settled `business` and the pack show it as approved. The fallback is to drop that sentence and keep only the maker's warranty and the review example.
+4. **Fix and list:** the 2026-08-15 review is used as an attributed customer example (warranties handed over after the job). Its tier is a keyword match, so it stays an attributed example.
+5. **Fix and list:** FAQ 2 (financing) is a brand-level local fallback. No Levy-specific cost factor has a source.
+6. **Finish outbound candidates (CM-011):**
+   - jaspercountysc.gov/services/planning-and-building/
+   - scstatehouse.gov/code/t06c009.php
+
+### Not done
+No publish, link table, schema or Brand Guide write-back. Nothing approved. No flag raised. `run.py finish` is left to the calling command.
+### END HANDOFF
+## RUN 20261013-132052-build-32e7 · FINISHED · 2026-10-13T13:28:39-05:00
+Changes: 0 · Summary: Levy location draft written (737 words, grade 5.1) with three FAQs - Jasper County permit grounded in S.C. Code 6-9-30, Hearth financing, and an Apex-warranty trust answer - five H2s and all three FAQs reworded or replaced vs the brief for uniqueness, research rows RL-locations-42/43 logged, one map NEED left open.
+- CHANGE #801 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (15).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (15).md | result: done · renamed and moved, nothing deleted
+- CHANGE #802 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (15).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha aacdd96e06cb | result: done · copied (Drive for desktop syncs it)
+- CHANGE #803 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (15).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (15).md | result: done · renamed and moved, nothing deleted
+- CHANGE #804 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (15).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 7931e3fa97c2 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #805 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (15).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (15).md | result: done · renamed and moved, nothing deleted
+- CHANGE #806 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (15).md | new: Apex Roofing of the Lowcountry - Status.md · sha df696ed0f214 | result: done · copied (Drive for desktop syncs it)
