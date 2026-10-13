@@ -5887,3 +5887,87 @@ SEM items to apply: none
 - CHANGE #839 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (19).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 51e6a670e4e6 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #840 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (19).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (19).md | result: done · renamed and moved, nothing deleted
 - CHANGE #841 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (19).md | new: Apex Roofing of the Lowcountry - Status.md · sha f60bcd712cd9 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261013-140538-build-1832 · STARTED · /build · 2026-10-13T14:05:38-05:00
+Step: build:brief · batch h1 · session c8c4edb4-ac21-4ae0-9921-08c6e6237c0f
+Gates checked: discovery_signed_off, batch:h1:briefs_ready, page_specs_approved
+- EVIDENCE 2026-10-13T14:06 · run 20261013-140538-build-1832 · home: WARN (known 6, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-13T14:06 · run 20261013-140538-build-1832 · about: BLOCK (known 3, unknown 2, unverified 3, conflict 0)
+- FACT 2026-10-13T14:06 · run 20261013-140538-build-1832 · d-named-staff-for-on-page-use (value, status, source) · paul_approved · Ralph Brehany and his son Pierce Brehany (father and son), credited as owners, no job titles — "Founded by Ralph and Pierce Brehany". No personal certifications given · source Returned sheet, Message 1; Paul addendum q6; settled about_page 2026-10-08, named_staff_on_page 2026-10-11; pilot correc · by Paul
+- EVIDENCE 2026-10-13T14:06 · run 20261013-140538-build-1832 · home: WARN (known 6, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-13T14:06 · run 20261013-140538-build-1832 · about: BLOCK (known 3, unknown 2, unverified 3, conflict 0)
+- FACT 2026-10-13T14:07 · run 20261013-140538-build-1832 · d-named-staff-for-on-page-use (unchanged) · paul_approved · Ralph Brehany and his son Pierce Brehany (father and son), credited as owners, no job titles — "Founded by Ralph and Pierce Brehany". No personal certifications given · source Returned sheet, Message 1; Paul addendum q6; settled about_page 2026-10-08, named_staff_on_page 2026-10-11; pilot correc · by Paul
+- EVIDENCE 2026-10-13T14:07 · run 20261013-140538-build-1832 · home: WARN (known 6, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-13T14:07 · run 20261013-140538-build-1832 · about: WARN (known 4, unknown 2, unverified 2, conflict 0)
+- REVIEW FACT CHECKED 2026-10-13T14:08 · run 20261013-140538-build-1832 · practice:communication: 32 different reviewer(s) after reading by meaning · By meaning: reviewers describe responsiveness, daily updates, prompt calls/texts/emails, being kept informed; dropped 'call them' recommendations and a neighbour-referral mention
+- REVIEW FACT CHECKED 2026-10-13T14:08 · run 20261013-140538-build-1832 · practice:clean-up: 14 different reviewer(s) after reading by meaning · Crew cleaned up daily/after job (nails/debris/spotless); one review calls it 'better than when they started'
+- REVIEW FACT CHECKED 2026-10-13T14:08 · run 20261013-140538-build-1832 · practice:photos: 9 different reviewer(s) after reading by meaning · Reviewers received before/after or daily progress photos or a photo report; dropped one review complaining a different company took no photos and one where the tech took pictures but no delivery stated
+- REVIEW FACT CHECKED 2026-10-13T14:08 · run 20261013-140538-build-1832 · practice:permits: 2 different reviewer(s) after reading by meaning · Two reviewers say Apex handled/obtained permits (one town and HOA permits, one 'take care of permits'); county inspection mention not counted
+- REVIEW FACT CHECKED 2026-10-13T14:08 · run 20261013-140538-build-1832 · staff:Ralph: 45 different reviewer(s) after reading by meaning · Ralph named as the owner dealt with (quotes, calls, explanations); all genuine, no false matches
+- REVIEW FACT CHECKED 2026-10-13T14:08 · run 20261013-140538-build-1832 · staff:Pierce: 19 different reviewer(s) after reading by meaning · Pierce (Ralph's son) named by 18 reviewers plus one misspelled 'Pearce' clearly the same son; unnamed 'his son' mentions excluded
+- REVIEW FACT CHECKED 2026-10-13T14:08 · run 20261013-140538-build-1832 · staff:Brehany: 7 different reviewer(s) after reading by meaning · Brehany family surname used by 7 reviews (incl. variant spelling Brehaney); several are 'Ralph Brehany' by name, one 'neither Brehany' and one 'Pierce Brehany'
+- REVIEW FACT CHECKED 2026-10-13T14:08 · run 20261013-140538-build-1832 · staff:Alex: 3 different reviewer(s) after reading by meaning · Alex (crew leader; one gives full name Alex Mejia) named by 3 reviewers
+- EVIDENCE PACKS 2026-10-13T14:08 · run 20261013-140538-build-1832 · section h1 · 2 page(s) · build/h1/packs/
+- EVIDENCE 2026-10-13T14:08 · run 20261013-140538-build-1832 · home: WARN (known 6, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-13T14:08 · run 20261013-140538-build-1832 · about: WARN (known 4, unknown 2, unverified 2, conflict 0)
+- REVIEW FACT CHECKED 2026-10-13T14:08 · run 20261013-140538-build-1832 · practice:explains: 32 different reviewer(s) after reading by meaning · Same by-meaning count as practice:communication (researcher 2026-10-13): responsive, kept informed, explained the work, prompt calls/texts; 'give them a call' recommendations dropped. The pack maps communication to practice:explains.
+- EVIDENCE PACKS 2026-10-13T14:08 · run 20261013-140538-build-1832 · section h1 · 2 page(s) · build/h1/packs/
+- BRIEF 2026-10-13T14:12 · run 20261013-140538-build-1832 · home · clients/apex-roofing-of-the-lowcountry/build/h1/HB - Homepage - Apex Roofing of the Lowcountry.md
+- BRIEF 2026-10-13T14:12 · run 20261013-140538-build-1832 · about · clients/apex-roofing-of-the-lowcountry/build/h1/AB - About - Apex Roofing of the Lowcountry.md
+- BRIEFS COLLECTED 2026-10-13T14:12 · batch h1 · 2 page(s), one run each
+- REVIEW SHEET 2026-10-13T14:13 · run 20261013-140538-build-1832 · h1 briefs: 0 Ask, 8 decided for you, 0 fixed silently, 0 not raised (duplicate, decided or answered) · clients/apex-roofing-of-the-lowcountry/build/h1/briefs-review.csv
+- REVIEW APPLIED 2026-10-13T14:13 · run 20261013-140538-build-1832 · h1 briefs: 8 row(s) (0 answered by Paul, the rest by default) · clients/apex-roofing-of-the-lowcountry/build/h1/briefs-apply.json
+- BRIEF 2026-10-13T14:13 · run 20261013-140538-build-1832 · home · clients/apex-roofing-of-the-lowcountry/build/h1/HB - Homepage - Apex Roofing of the Lowcountry.md
+- BRIEFS COLLECTED 2026-10-13T14:13 · batch h1 · 2 page(s), one run each
+- BRIEF 2026-10-13T14:13 · run 20261013-140538-build-1832 · about · clients/apex-roofing-of-the-lowcountry/build/h1/AB - About - Apex Roofing of the Lowcountry.md
+- BRIEFS COLLECTED 2026-10-13T14:13 · batch h1 · 2 page(s), one run each
+- CHANGE #842 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/02 - Build/briefs-review.md | upload | old: (new file) | new: briefs-review.md · sha 12d6ab704f8f | result: done · copied (Drive for desktop syncs it)
+- CHANGE #843 [evidence] https://apexroofingtlc.com/ | build/evidence/home.facts.json | old:  | new: page:core_services Unknown (open client question fact:home:core_services) | result: done
+- CHANGE #844 [evidence] https://apexroofingtlc.com/about/ | build/evidence/about.facts.json | old:  | new: page:company_story Unknown (open client question fact:about:company_story) | result: done
+- CHANGE #845 [brief] https://apexroofingtlc.com/ | build/h1/HB - Homepage - Apex Roofing of the Lowcountry.md | old:  | new: homepage brief written (gate WARN) | result: done
+- CHANGE #846 [brief] https://apexroofingtlc.com/about/ | build/h1/AB - About - Apex Roofing of the Lowcountry.md | old:  | new: about brief written (gate WARN) | result: done
+- FLAG 2026-10-13T14:13 · run 20261013-140538-build-1832 · F-023 · evidence_pack.py maps the review topic 'communication' to the facts.json key practice:explains, while the build agent instructions and the researcher use practice:communication; reviews.py checked under practice:communication does not mark the pack topic as checked. · workaround: Recorded the same by-meaning count (32) under both practice:communication and practice:explains in run 20261013-140538-build-1832.
+### HANDOFF · /build · 2026-10-13 · run 20261013-140538-build-1832
+**Agent:** Build (Agent 2), Opus · **Date:** 2026-10-13 · **Route:** A
+
+### What was done
+- Evidence gate (CM-041) for `home` and `about`. Wrote `build/evidence/home.facts.json` (page:core_services Unknown) and `build/evidence/about.facts.json` (page:company_story Unknown); nothing invented.
+- First gate run: home WARN, about BLOCK. The block came from "named staff" still reading Submitted in facts.json, but Paul had already answered it (settled `about_page` 2026-10-08, `named_staff_on_page` 2026-10-11). I synced it with `run.py fact` (d-named-staff-for-on-page-use → paul_approved) and re-ran the gate. Result: **home WARN, about WARN.** No page is blocked.
+- Researcher (Sonnet) checked the review topics by meaning (`reviews.py checked`): communication 32 (also recorded as practice:explains — see flag), clean-up 14, photos 9, permits 2, Ralph 45, Pierce 19, Brehany 7, Alex 3. Packs rebuilt: `build/h1/packs/home.md`, `about.md`.
+- Briefs written and recorded (`status.py page-stage … --stage brief`). Batch briefs collected:
+  - `build/h1/HB - Homepage - Apex Roofing of the Lowcountry.md`
+  - `build/h1/AB - About - Apex Roofing of the Lowcountry.md`
+- Brief review (CM-061): `build/h1/briefs-review.csv` / `.md`. It has 0 Ask rows and 8 Fix-and-list rows, and was applied with `review.py apply`. The briefs were re-recorded and the `.md` copied to Drive (02 - Build).
+
+### Decided for you (Fix and list — in the review sheet)
+1. Homepage: the "Do you offer financing?" FAQ was dropped, because Levy already owns "Can I finance a new roof on my Levy home?" (BB-316). Financing stays as one CTA line.
+2. Homepage: "Which towns do you serve?" became "Do you travel outside the 12 towns on this page?". Two fallback FAQs were added: commercial work (homes only) and "since 2015".
+3. Homepage: the featured blog section is left out until blog redirects are live (F-032).
+4. Homepage: the gallery and the Maps embed carry `[NEED: …]` (no project photos and no GBP share link on file).
+5. Five reviews state a 10-year warranty (rows 11, 36, 44, 48, 49), which conflicts with the settled lifetime no-leak term. They are never quoted.
+6. About: the team section is merged into the owners section (only Ralph and Pierce are approved; the crew leader in reviews is not named).
+7. About: no FAQ.
+8. About: the history section carries `[NEED: owner's own account of how and why they started]`. The question is already open with the client.
+
+### Notes
+- Homepage H1 stays locked exactly as live: "The Best Residential Roofer in the South Carolina Lowcountry" (DEC-LOCAL-014, HP-08). The live source's double space renders as one.
+- Homepage title fix: "Metro" → "Metropolitan" (F-004). About title and H1 follow Paul's ruling DEC-LOCAL-015.
+- Open client questions this batch relies on (already asked 2026-10-11, not re-asked): fact:home:core_services, fact:about:company_story, fact:d:licence_numbers, fact:d:insurance, fact:d:awards, fact:d:team_size.
+
+### Flags (system)
+- F-023: evidence_pack.py maps "communication" to `practice:explains`, while the agent instructions use `practice:communication`. Workaround: recorded the count under both keys.
+
+### Next
+- Paul approves the h1 briefs. The write-back (`/build apex-roofing-of-the-lowcountry writeback h1`) runs once at that approval. Then the drafts (one fresh subagent per page) and the draft review.
+- `pages_built` is not met yet: the services, locations and h1 batches are not built and written back.
+### END HANDOFF
+## RUN 20261013-140538-build-1832 · FINISHED · 2026-10-13T14:13:59-05:00
+Changes: 5 · Summary: h1 briefs: homepage and about briefed (gate WARN both, none blocked); brief review 0 asks, 8 decided-for-you, applied; ready for Paul's briefs approval
+- CHANGE #847 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (19).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (19).md | result: done · renamed and moved, nothing deleted
+- CHANGE #848 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (19).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha be806008ec2c | result: done · copied (Drive for desktop syncs it)
+- CHANGE #849 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (20).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (20).md | result: done · renamed and moved, nothing deleted
+- CHANGE #850 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (20).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 060e4379dec5 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #851 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Brand Guide - 2026-10-13.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Brand Guide.md | new: _Archive/Apex Roofing of the Lowcountry - Brand Guide - 2026-10-13.md | result: done · renamed and moved, nothing deleted
+- CHANGE #852 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Brand Guide.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Brand Guide - 2026-10-13.md | new: Apex Roofing of the Lowcountry - Brand Guide.md · sha 5ed21792aa98 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #853 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (20).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (20).md | result: done · renamed and moved, nothing deleted
+- CHANGE #854 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (20).md | new: Apex Roofing of the Lowcountry - Status.md · sha 356c5493ac68 | result: done · copied (Drive for desktop syncs it)

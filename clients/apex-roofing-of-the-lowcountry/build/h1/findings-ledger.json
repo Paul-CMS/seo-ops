@@ -1,0 +1,58 @@
+{
+  "about|abt-07|team-merged-into-owners": {
+    "step": "briefs",
+    "at": "2026-10-13T14:13:18-05:00",
+    "choice": "a",
+    "action": "Team section merged into the owners H2; the crew leader named in reviews is not used (not approved for on-page use).",
+    "by": "default"
+  },
+  "about|bb-316|faq-left-out": {
+    "step": "briefs",
+    "at": "2026-10-13T14:13:18-05:00",
+    "choice": "a",
+    "action": "No FAQ on the About page.",
+    "by": "default"
+  },
+  "about|cm-041|company-story-need": {
+    "step": "briefs",
+    "at": "2026-10-13T14:13:18-05:00",
+    "choice": "a",
+    "action": "History section written from the founding year, the father-and-son ownership and the client's own view of a well-built roof, with a visible [NEED: …] where the story goes.",
+    "by": "default"
+  },
+  "home|bb-316|faq-financing-overlap-levy": {
+    "step": "briefs",
+    "at": "2026-10-13T14:13:18-05:00",
+    "choice": "a",
+    "action": "Financing FAQ dropped from the homepage; financing stays as one line in the final CTA. FAQ set: free estimates; licensed and insured; travel beyond the 12 towns; commercial work (no, homes only); sinc",
+    "by": "default"
+  },
+  "home|hp-15|faq-towns-reworded": {
+    "step": "briefs",
+    "at": "2026-10-13T14:13:18-05:00",
+    "choice": "a",
+    "action": "Reworded to 'Do you travel outside the 12 towns on this page?' (Brays Island, Lobeco, Spring, Callawassie, Harbor and Dataw Islands; no travel fee; not Georgia). Two fallback brand-level FAQs added fr",
+    "by": "default"
+  },
+  "home|hp-17|featured-blog-left-out": {
+    "step": "briefs",
+    "at": "2026-10-13T14:13:18-05:00",
+    "choice": "a",
+    "action": "Featured blog section left out of the rebuilt homepage; it can return after the blog stage.",
+    "by": "default"
+  },
+  "home|hp-23|gallery-and-maps-need": {
+    "step": "briefs",
+    "at": "2026-10-13T14:13:18-05:00",
+    "choice": "a",
+    "action": "Both sections are kept in the page order with a [NEED: …] note each; they become Open items on the WordPress draft for Jonie / Finish.",
+    "by": "default"
+  },
+  "home|cm-057|review-warranty-length-conflict": {
+    "step": "briefs",
+    "at": "2026-10-13T14:13:18-05:00",
+    "choice": "a",
+    "action": "Those five reviews are never quoted as testimonials or used for any warranty line on the homepage or About page.",
+    "by": "default"
+  }
+}

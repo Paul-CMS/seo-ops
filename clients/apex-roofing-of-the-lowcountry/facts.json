@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-12T21:28:39-05:00",
+  "updated": "2026-10-13T14:08:42-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -401,14 +401,15 @@
       "section": "D",
       "num": "",
       "label": "Named staff for on-page use",
-      "value": "Ralph Brehany and his son Pierce Brehany (father and son) — \"Founded by Ralph and Pierce Brehany\". No job titles published: sources conflict (BBB: Ralph \"President\", Pierce \"Owner\"; LinkedIn and reviews: Ralph \"Owner\") — Paul: no need to specify. No personal certifications given",
-      "status": "submitted",
-      "status_text": "Names: Client Confirmed 2026-10-07 (\"Yes, Ralph and his son Pierce\") · father and son, no titles: Paul Approved 2026-10-07",
-      "source": "Returned sheet, Message 1; Paul addendum q6; W1",
+      "value": "Ralph Brehany and his son Pierce Brehany (father and son), credited as owners, no job titles — \"Founded by Ralph and Pierce Brehany\". No personal certifications given",
+      "status": "paul_approved",
+      "status_text": "Paul Approved 2026-10-08 (father and son, owners, no titles; settled about_page, named_staff_on_page) · names Client Confirmed 2026-10-07 (\"Yes, Ralph and his son Pierce\")",
+      "source": "Returned sheet, Message 1; Paul addendum q6; settled about_page 2026-10-08, named_staff_on_page 2026-10-11; pilot corrections 2026-10-09",
       "quote": "",
-      "date": "2026-10-07",
-      "who": "",
-      "count": null
+      "date": "2026-10-13",
+      "who": "Paul",
+      "count": null,
+      "was": "Submitted"
     },
     {
       "id": "d-licensed-practitioner-for-health-claim-sign-off-medical-ch",
@@ -798,8 +799,11 @@
       "source": "Google reviews (9 different reviewers; data/reviews/review-facts.json)",
       "quote": "As an unexpected benefit, each day I received photos, showing the completed work to date.",
       "date": "2026-10-11",
-      "who": "reviews.py extract",
-      "count": 9
+      "who": "researcher",
+      "count": 9,
+      "meaning_checked": true,
+      "checked_at": "2026-10-13T14:08:19-05:00",
+      "checked_note": "Reviewers received before/after or daily progress photos or a photo report; dropped one review complaining a different company took no photos and one where the tech took pictures but no delivery stated"
     },
     {
       "id": "r-practice-clean-up",
@@ -812,8 +816,11 @@
       "source": "Google reviews (12 different reviewers; data/reviews/review-facts.json)",
       "quote": "Clean up was superb each day.",
       "date": "2026-10-11",
-      "who": "reviews.py extract",
-      "count": 12
+      "who": "researcher",
+      "count": 14,
+      "meaning_checked": true,
+      "checked_at": "2026-10-13T14:08:19-05:00",
+      "checked_note": "Crew cleaned up daily/after job (nails/debris/spotless); one review calls it 'better than when they started'"
     },
     {
       "id": "r-practice-permits",
@@ -826,8 +833,11 @@
       "source": "Google reviews (2 different reviewers; data/reviews/review-facts.json)",
       "quote": "And he took care of obtaining the town and the HOA permits, and once he had those in hand, we set up the schedule to begin the job.",
       "date": "2026-10-11",
-      "who": "reviews.py extract",
-      "count": 2
+      "who": "researcher",
+      "count": 2,
+      "meaning_checked": true,
+      "checked_at": "2026-10-13T14:08:19-05:00",
+      "checked_note": "Two reviewers say Apex handled/obtained permits (one town and HOA permits, one 'take care of permits'); county inspection mention not counted"
     },
     {
       "id": "r-practice-explains",
@@ -840,8 +850,11 @@
       "source": "Google reviews (8 different reviewers; data/reviews/review-facts.json)",
       "quote": "Ralph explained to me all that would be done during the replacement.",
       "date": "2026-10-11",
-      "who": "reviews.py extract",
-      "count": 8
+      "who": "researcher",
+      "count": 32,
+      "meaning_checked": true,
+      "checked_at": "2026-10-13T14:08:42-05:00",
+      "checked_note": "Same by-meaning count as practice:communication (researcher 2026-10-13): responsive, kept informed, explained the work, prompt calls/texts; 'give them a call' recommendations dropped. The pack maps communication to practice:explains."
     },
     {
       "id": "r-prices-amounts",
@@ -913,8 +926,11 @@
       "source": "Google reviews (45 different reviewers; data/reviews/review-facts.json)",
       "quote": "The owner, Ralph, was extremely helpful explaining products and handling my MANY questions.",
       "date": "2026-10-11",
-      "who": "reviews.py extract",
-      "count": 45
+      "who": "researcher",
+      "count": 45,
+      "meaning_checked": true,
+      "checked_at": "2026-10-13T14:08:19-05:00",
+      "checked_note": "Ralph named as the owner dealt with (quotes, calls, explanations); all genuine, no false matches"
     },
     {
       "id": "r-staff-pierce",
@@ -927,8 +943,11 @@
       "source": "Google reviews (18 different reviewers; data/reviews/review-facts.json)",
       "quote": "Pierce was amazing!",
       "date": "2026-10-11",
-      "who": "reviews.py extract",
-      "count": 18
+      "who": "researcher",
+      "count": 19,
+      "meaning_checked": true,
+      "checked_at": "2026-10-13T14:08:19-05:00",
+      "checked_note": "Pierce (Ralph's son) named by 18 reviewers plus one misspelled 'Pearce' clearly the same son; unnamed 'his son' mentions excluded"
     },
     {
       "id": "r-staff-brehany",
@@ -941,8 +960,11 @@
       "source": "Google reviews (6 different reviewers; data/reviews/review-facts.json)",
       "quote": "I met with both owners of the company, Ralph and Pierce Brehany.",
       "date": "2026-10-11",
-      "who": "reviews.py extract",
-      "count": 6
+      "who": "researcher",
+      "count": 7,
+      "meaning_checked": true,
+      "checked_at": "2026-10-13T14:08:20-05:00",
+      "checked_note": "Brehany family surname used by 7 reviews (incl. variant spelling Brehaney); several are 'Ralph Brehany' by name, one 'neither Brehany' and one 'Pierce Brehany'"
     },
     {
       "id": "r-staff-alex",
@@ -955,8 +977,11 @@
       "source": "Google reviews (3 different reviewers; data/reviews/review-facts.json)",
       "quote": "Ralph Brehany and Alex Mejia did an outstanding job.",
       "date": "2026-10-11",
-      "who": "reviews.py extract",
-      "count": 3
+      "who": "researcher",
+      "count": 3,
+      "meaning_checked": true,
+      "checked_at": "2026-10-13T14:08:20-05:00",
+      "checked_note": "Alex (crew leader; one gives full name Alex Mejia) named by 3 reviewers"
     },
     {
       "id": "d-price-replacement-standard-2026",
@@ -1002,6 +1027,23 @@
       "count": null,
       "was": "Unknown",
       "status_text": "Paul Approved 2026-10-12"
+    },
+    {
+      "id": "r-practice-communication",
+      "section": "R",
+      "key": "practice:communication",
+      "label": "communication",
+      "value": "By meaning: reviewers describe responsiveness, daily updates, prompt calls/texts/emails, being kept informed; dropped 'call them' recommendations and a neighbour-referral mention",
+      "status": "customer_reported",
+      "status_text": null,
+      "source": "Google reviews (read by the researcher; data/reviews/reviews.csv)",
+      "quote": "",
+      "date": "2026-10-13",
+      "who": "researcher",
+      "count": 32,
+      "meaning_checked": true,
+      "checked_at": "2026-10-13T14:08:19-05:00",
+      "checked_note": "By meaning: reviewers describe responsiveness, daily updates, prompt calls/texts/emails, being kept informed; dropped 'call them' recommendations and a neighbour-referral mention"
     }
   ]
 }

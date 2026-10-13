@@ -1304,7 +1304,7 @@
       }
     },
     "home": {
-      "state": "planned",
+      "state": "brief_written",
       "type": "homepage",
       "name": "Homepage",
       "url": "https://apexroofingtlc.com/",
@@ -1323,8 +1323,8 @@
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/home.grid.md",
         "sha": "514894d5b781",
-        "at": "2026-10-11T21:33:33-05:00",
-        "run": "20261011-212524-build-5379",
+        "at": "2026-10-13T14:08:33-05:00",
+        "run": "20261013-140538-build-1832",
         "gaps": [
           "core_services",
           "licence",
@@ -1332,37 +1332,90 @@
           "awards",
           "team"
         ]
+      },
+      "pack": {
+        "file": "clients/apex-roofing-of-the-lowcountry/build/h1/packs/home.md",
+        "json": "clients/apex-roofing-of-the-lowcountry/build/h1/packs/home.json",
+        "sha": "5619b49d4e7f",
+        "at": "2026-10-13T14:08:42-05:00",
+        "run": "20261013-140538-build-1832",
+        "section": "h1",
+        "counts": {
+          "facts": 47,
+          "review_topics": 11,
+          "review_excerpts": 47,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "settled": 7,
+          "gaps": 3,
+          "excerpts": 47
+        }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/h1/HB - Homepage - Apex Roofing of the Lowcountry.md",
+          "run": "20261013-140538-build-1832",
+          "at": "2026-10-13T14:13:22-05:00",
+          "sha": "bfeab61f3de4"
+        }
       }
     },
     "about": {
-      "state": "planned",
+      "state": "brief_written",
       "type": "about",
       "name": "About",
       "url": "https://apexroofingtlc.com/about/",
       "h1": "About Apex Roofing of the Lowcountry (Paul, DEC-LOCAL-015)",
       "claims": [],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 3,
+          "Known": 4,
           "Unknown": 2,
-          "Unverified": 3,
+          "Unverified": 2,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/about.grid.md",
-        "sha": "eac8cb0e2c50",
-        "at": "2026-10-11T21:33:33-05:00",
-        "run": "20261011-212524-build-5379",
+        "sha": "73f10bc5571f",
+        "at": "2026-10-13T14:08:33-05:00",
+        "run": "20261013-140538-build-1832",
         "gaps": [
-          "staff",
           "company_story",
           "licence",
           "awards",
           "team"
         ]
+      },
+      "pack": {
+        "file": "clients/apex-roofing-of-the-lowcountry/build/h1/packs/about.md",
+        "json": "clients/apex-roofing-of-the-lowcountry/build/h1/packs/about.json",
+        "sha": "c50f58d18828",
+        "at": "2026-10-13T14:08:42-05:00",
+        "run": "20261013-140538-build-1832",
+        "section": "h1",
+        "counts": {
+          "facts": 47,
+          "review_topics": 11,
+          "review_excerpts": 47,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "settled": 15,
+          "gaps": 2,
+          "excerpts": 47
+        }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/h1/AB - About - Apex Roofing of the Lowcountry.md",
+          "run": "20261013-140538-build-1832",
+          "at": "2026-10-13T14:13:22-05:00",
+          "sha": "3707324ce1d2"
+        }
       }
     }
   },
@@ -1702,10 +1755,34 @@
           "home",
           "about"
         ],
-        "state": "planned",
+        "state": "briefs_written",
         "briefs": null,
         "drafts": null,
-        "files": {}
+        "files": {
+          "briefs": [
+            "clients/apex-roofing-of-the-lowcountry/build/h1/HB - Homepage - Apex Roofing of the Lowcountry.md",
+            "clients/apex-roofing-of-the-lowcountry/build/h1/AB - About - Apex Roofing of the Lowcountry.md"
+          ]
+        },
+        "review": {
+          "briefs": {
+            "sheet": "clients/apex-roofing-of-the-lowcountry/build/h1/briefs-review.csv",
+            "md": "clients/apex-roofing-of-the-lowcountry/build/h1/briefs-review.md",
+            "at": "2026-10-13T14:13:15-05:00",
+            "run": "20261013-140538-build-1832",
+            "asks": 0,
+            "listed": 8,
+            "fixes": 0,
+            "dropped": 0,
+            "applied": {
+              "at": "2026-10-13T14:13:18-05:00",
+              "run": "20261013-140538-build-1832",
+              "answers": "",
+              "explicit": 0,
+              "file": "clients/apex-roofing-of-the-lowcountry/build/h1/briefs-apply.json"
+            }
+          }
+        }
       }
     ],
     "pilot_corrections_applied": {
@@ -1925,13 +2002,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-140135-build-f424",
+    "run_id": "20261013-140538-build-1832",
     "command": "build",
-    "finished": "2026-10-13T14:03:11-05:00",
-    "result": "Fripp Island draft: removed the contractor decal sentence from the gate FAQ per Paul's settled answer (locations_drafts_open_choices); FAQ paragraph 41 words, FAQ section 346 words, E10 grade 6.9, 1 map NEED; draft re-recorded.",
-    "changes": 1,
-    "step": "build:draft",
-    "batch": "locations"
+    "finished": "2026-10-13T14:13:59-05:00",
+    "result": "h1 briefs: homepage and about briefed (gate WARN both, none blocked); brief review 0 asks, 8 decided-for-you, applied; ready for Paul's briefs approval",
+    "changes": 5,
+    "step": "build:brief",
+    "batch": "h1"
   },
   "spend": {
     "dataforseo_usd": 0.591961
@@ -1952,7 +2029,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T14:04:35-05:00",
+  "updated": "2026-10-13T14:13:59-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2077,6 +2154,12 @@
       "step": "build:writeback",
       "first_run": "20261012-213607-build-27a0",
       "at": "2026-10-13T07:01:00-05:00"
+    },
+    "c8c4edb4-ac21-4ae0-9921-08c6e6237c0f": {
+      "key": "batches:h1",
+      "step": "build:brief",
+      "first_run": "20261013-140538-build-1832",
+      "at": "2026-10-13T14:13:59-05:00"
     }
   },
   "wheel_pending": {
@@ -2279,5 +2362,10 @@
       "usd": 0.0,
       "at": "2026-10-12T21:31:50-05:00"
     }
-  ]
+  ],
+  "review_pause": {
+    "run_id": "20261013-140538-build-1832",
+    "step": "build:brief",
+    "at": "2026-10-13T14:13:59-05:00"
+  }
 }

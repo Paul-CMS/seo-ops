@@ -1,0 +1,82 @@
+[
+  {
+    "page": "home",
+    "rule": "BB-316",
+    "item": "faq-financing-overlap-levy",
+    "finding": "The site plan's homepage FAQ 'Do you offer financing?' repeats the approved Levy FAQ 'Can I finance a new roof on my Levy home?' (same Hearth answer).",
+    "severity": "fix_and_list",
+    "category": "collision",
+    "plain_why": "One question, one page (BB-316); Levy was approved first.",
+    "decided_for_you": "Financing FAQ dropped from the homepage; financing stays as one line in the final CTA. FAQ set: free estimates; licensed and insured; travel beyond the 12 towns; commercial work (no, homes only); since 2015."
+  },
+  {
+    "page": "home",
+    "rule": "HP-15",
+    "item": "faq-towns-reworded",
+    "finding": "The site plan's FAQ 'Which towns do you serve?' would repeat the service-areas grid H2 on the same page.",
+    "severity": "fix_and_list",
+    "category": "semantic",
+    "plain_why": "The grid already answers which towns; the FAQ answers the edges instead.",
+    "decided_for_you": "Reworded to 'Do you travel outside the 12 towns on this page?' (Brays Island, Lobeco, Spring, Callawassie, Harbor and Dataw Islands; no travel fee; not Georgia). Two fallback brand-level FAQs added from Section D: commercial work (homes only) and how long Apex has been roofing (since 2015)."
+  },
+  {
+    "page": "home",
+    "rule": "HP-17",
+    "item": "featured-blog-left-out",
+    "finding": "The live homepage features blog posts before any blog redirect decision exists (F-032).",
+    "severity": "fix_and_list",
+    "category": "optional_section",
+    "plain_why": "BB-313 section 15 is built only after blog redirects are live; the Blog Decision Map is not approved.",
+    "decided_for_you": "Featured blog section left out of the rebuilt homepage; it can return after the blog stage."
+  },
+  {
+    "page": "home",
+    "rule": "HP-23",
+    "item": "gallery-and-maps-need",
+    "finding": "Gallery needs real project photos and the Maps embed needs the GBP share link; neither is on file (Brand Guide F hasMap empty).",
+    "severity": "fix_and_list",
+    "category": "missing_input",
+    "plain_why": "No stock photos and no invented map link (CM-004, CM-016).",
+    "decided_for_you": "Both sections are kept in the page order with a [NEED: …] note each; they become Open items on the WordPress draft for Jonie / Finish."
+  },
+  {
+    "page": "home",
+    "rule": "CM-057",
+    "item": "review-warranty-length-conflict",
+    "finding": "Five reviews (rows 11, 36, 44, 48, 49; 2019-2025) state a 10-year workmanship or leak warranty; the approved term is the lifetime no-leak workmanship warranty (settled fact:d:warranty_terms).",
+    "severity": "fix_and_list",
+    "category": "usage_tier",
+    "plain_why": "Warranty terms from reviews are never stated as the company's (CM-057); the settled term governs.",
+    "decided_for_you": "Those five reviews are never quoted as testimonials or used for any warranty line on the homepage or About page."
+  },
+  {
+    "page": "about",
+    "rule": "ABT-07",
+    "item": "team-merged-into-owners",
+    "finding": "The spec's team section has only two approved names (Ralph and Pierce), who are already the owners section; team size is Unknown.",
+    "severity": "fix_and_list",
+    "category": "optional_section",
+    "plain_why": "A team H2 would repeat the owners H2 or invent a team.",
+    "decided_for_you": "Team section merged into the owners H2; the crew leader named in reviews is not used (not approved for on-page use)."
+  },
+  {
+    "page": "about",
+    "rule": "BB-316",
+    "item": "faq-left-out",
+    "finding": "The About FAQ is optional; every brand-level question already has an owner page.",
+    "severity": "fix_and_list",
+    "category": "optional_section",
+    "plain_why": "An About FAQ would duplicate homepage or service-page questions.",
+    "decided_for_you": "No FAQ on the About page."
+  },
+  {
+    "page": "about",
+    "rule": "CM-041",
+    "item": "company-story-need",
+    "finding": "The required fact 'how and why the company started (owner's own account)' is Unknown; the client question fact:about:company_story is already open (asked 2026-10-11).",
+    "severity": "fix_and_list",
+    "category": "missing_input",
+    "plain_why": "Nothing invented (CM-016); the question is already with the client, so it is not asked again.",
+    "decided_for_you": "History section written from the founding year, the father-and-son ownership and the client's own view of a well-built roof, with a visible [NEED: …] where the story goes."
+  }
+]

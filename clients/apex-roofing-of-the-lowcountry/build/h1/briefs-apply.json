@@ -1,0 +1,97 @@
+{
+  "made": "2026-10-13T14:13:18-05:00",
+  "run": "20261013-140538-build-1832",
+  "section": "h1",
+  "step": "briefs",
+  "answers": "",
+  "items": [
+    {
+      "id": "1",
+      "page": "about",
+      "url": "https://apexroofingtlc.com/about/",
+      "item": "team-merged-into-owners",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Team section merged into the owners H2; the crew leader named in reviews is not used (not approved for on-page use).",
+      "by": "default"
+    },
+    {
+      "id": "2",
+      "page": "about",
+      "url": "https://apexroofingtlc.com/about/",
+      "item": "faq-left-out",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "No FAQ on the About page.",
+      "by": "default"
+    },
+    {
+      "id": "3",
+      "page": "about",
+      "url": "https://apexroofingtlc.com/about/",
+      "item": "company-story-need",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "History section written from the founding year, the father-and-son ownership and the client's own view of a well-built roof, with a visible [NEED: …] where the story goes.",
+      "by": "default"
+    },
+    {
+      "id": "4",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "faq-financing-overlap-levy",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Financing FAQ dropped from the homepage; financing stays as one line in the final CTA. FAQ set: free estimates; licensed and insured; travel beyond the 12 towns; commercial work (no, homes only); since 2015.",
+      "by": "default"
+    },
+    {
+      "id": "5",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "faq-towns-reworded",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Reworded to 'Do you travel outside the 12 towns on this page?' (Brays Island, Lobeco, Spring, Callawassie, Harbor and Dataw Islands; no travel fee; not Georgia). Two fallback brand-level FAQs added from Section D: commercial work (homes only) and how long Apex has been roofing (since 2015).",
+      "by": "default"
+    },
+    {
+      "id": "6",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "featured-blog-left-out",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Featured blog section left out of the rebuilt homepage; it can return after the blog stage.",
+      "by": "default"
+    },
+    {
+      "id": "7",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "gallery-and-maps-need",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Both sections are kept in the page order with a [NEED: …] note each; they become Open items on the WordPress draft for Jonie / Finish.",
+      "by": "default"
+    },
+    {
+      "id": "8",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "review-warranty-length-conflict",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Those five reviews are never quoted as testimonials or used for any warranty line on the homepage or About page.",
+      "by": "default"
+    }
+  ]
+}

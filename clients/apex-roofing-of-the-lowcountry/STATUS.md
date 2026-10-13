@@ -1,16 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch h1)**
-- **What is happening now:** Stage 6 (Pilot, services, locations, ship (one session each)) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open apex-roofing-of-the-lowcountry) and type /next apex-roofing-of-the-lowcountry. Next there: /build apex-roofing-of-the-lowcountry brief h1 (briefs for home (one run for the batch))
-- **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM; Client (via Paul) — For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-ro
-- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
+- **Stage 4 of 8 — Audit**
+- **What is happening now:** waiting for Paul's approval — the audit and the reconciled Brand Guide are ready for your approval in one line — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts
+- **Waiting on:** Paul — the audit and the reconciled Brand Guide are ready for your approval in one line — the rec; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
+- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry brand_guide_approved --files "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G"` (or asks for changes first)
 
-_Generated 2026-10-13T14:04 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-13T14:13 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
+| Paul | the audit and the reconciled Brand Guide are ready for your approval in one line — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts | 2026-10-13 | /approve apex-roofing-of-the-lowcountry brand_guide_approved |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
 | Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-replacement:service_scope |
@@ -148,6 +149,7 @@ _None — every input on file has been read._
 - **F-020** (open, not yet reviewed) 2026-10-13 · build:writeback: CM-061 writes C3 once, at the brief approval, but the location briefs give 'suggested headings (writer may re-word inside the rules)' and some FAQ questions say 'writer may re-word'. Drafts never write the Brand Guide, so any heading or FAQ the draft re-words leaves C3 out of step with the shipped page, and later sections check collisions against stale rows. — workaround: C3 records the H2s and FAQ questions exactly as briefed (locations, 107 rows). The draft checker pass should hold each draft to its briefed headings, or list any re-word as a Fix-and-list row so the next write-back (or a system fix) can correct C3.
 - **F-021** (open, not yet reviewed) 2026-10-13 · build:draft: Location drafts cannot re-read official PDFs (Port Royal flood guide, Beaufort County ch. 78 flood ordinance, Dataw Design Guidelines, Beaufort County District 9B map): WebFetch returns unreadable binary and no PDF text tool is installed, so drafts rest on earlier brief-time reads and some facts (e.g. the Beaufort County cumulative substantial-improvement period) stay unconfirmed. — workaround: Drafts state no unconfirmed figure, cite the brief-time reading, and tell the reader to ask the office; list each for the drafts review.
 - **F-022** (open, not yet reviewed) 2026-10-13 · build:drafts: review.py apply ends with 'apply every item to its page in this run, then re-record the files', but no command says how. Re-recording each draft with status.py page-stage from the one review run would give every page the same run and agent, which per_page_files then refuses as one context for all pages (CM-043). The page-stage sha is stored but never checked, so the edited drafts stay recorded under their own-run records. — workaround: Applied the review items to the drafts in this run, logged each change with run.py change (old/new snapshots), and recorded the section with status.py batch locations --state drafts_written --review-sheet …; page-stage records were not re-written.
+- **F-023** (open, not yet reviewed) 2026-10-13 · build:brief: evidence_pack.py maps the review topic 'communication' to the facts.json key practice:explains, while the build agent instructions and the researcher use practice:communication; reviews.py checked under practice:communication does not mark the pack topic as checked. — workaround: Recorded the same by-meaning count (32) under both practice:communication and practice:explains in run 20261013-140538-build-1832.
 
 ## Spend so far
 
@@ -160,4 +162,4 @@ _None — every input on file has been read._
 | build:brief | 2 | 612,000 | $0.00 |
 | **total** | 2 | 612,000 | $0.00 |
 
-Last run: /build 2026-10-13T14:03 — Fripp Island draft: removed the contractor decal sentence from the gate FAQ per Paul's settled answer (locations_drafts_open_choices); FAQ paragraph 41 words, FAQ section 346 words, E10 grade 6.9, 1 map NEED; draft re-recorded.
+Last run: /build 2026-10-13T14:13 — h1 briefs: homepage and about briefed (gate WARN both, none blocked); brief review 0 asks, 8 decided-for-you, applied; ready for Paul's briefs approval
