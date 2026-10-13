@@ -1,17 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
-- **Stage 4 of 8 — Audit**
-- **What is happening now:** waiting for Paul's approval — the audit and the reconciled Brand Guide are ready for your approval in one line — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts
-- **Waiting on:** Paul — the audit and the reconciled Brand Guide are ready for your approval in one line — the rec; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
-- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry brand_guide_approved --files "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G"` (or asks for changes first)
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch h1)**
+- **What is happening now:** waiting for Paul's approval — the briefs for batch h1 are ready for your approval (outline before prose; one brief per page, each written in its own run)
+- **Waiting on:** Paul — the briefs for batch h1 are ready for your approval (outline before prose; one brief per p; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
+- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry batch:h1:briefs --files "clients/apex-roofing-of-the-lowcountry/build/h1/HB - Homepage - Apex Roofing of the Lowcountry.md,clients/apex-roofing-of-the-lowcountry/build/h1/AB - About - Apex Roofing of the Lowcountry.md"` (or asks for changes first)
 
-_Generated 2026-10-13T14:13 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-13T14:31 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the audit and the reconciled Brand Guide are ready for your approval in one line — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts | 2026-10-13 | /approve apex-roofing-of-the-lowcountry brand_guide_approved |
+| Paul | the briefs for batch h1 are ready for your approval (outline before prose; one brief per page, each written in its own run) | 2026-10-13 | /approve apex-roofing-of-the-lowcountry batch:h1:briefs |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
 | Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-replacement:service_scope |
@@ -54,7 +54,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-08: Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant) — approved
 - 2026-10-07: Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly — approved
 - 2026-10-08: Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest) — approved
-- 2026-10-12: Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims) — approved
+- 2026-10-13: Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims) — approved
 - 2026-10-08: discovery_signed_off — approved
 - 2026-10-08: page specs (global) — approved
 - 2026-10-11: site plan — approved

@@ -27,8 +27,8 @@ Generated from the seo-ops system (clients/apex-roofing-of-the-lowcountry/status
 ## Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 
 - Decision: **approved**
-- Decided by: Paul · 2026-10-12T21:34:48-05:00
-- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G` (sha 171ad5def76b)
+- Decided by: Paul · 2026-10-13T14:31:52-05:00
+- Approved version: `clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G` (sha 952b542e25db)
 
 ## Link wheel built and verified — schema may start
 
