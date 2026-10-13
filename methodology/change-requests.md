@@ -251,3 +251,39 @@ Apex services: /approve batch:services:drafts was REFUSED ('the drafts and their
 - CR-025 · 2026-10-12 · ACCEPTED · Paul · Paul asked for this fix directly in the 2026-10-12 system session
 
 - CR-025 · 2026-10-12 · DONE · system session · commit f28cbdb
+
+## CR-026 · 2026-10-12 · Rewrite 3 Phase 2: sections shown in STATUS.md and /where
+Raised in a system session by Paul.
+Raised in a system session by Paul (rewrite 3 handoff §11, Phase 2 — after Apex locations ship). Not built yet. STATUS.md and /where show the build by section (services, locations with hubs, homepage and core pages, additional pages) and step (briefs, brief review, drafts, draft review, ship): where each section stands, its review sheets and what Paul answers next.
+
+---
+
+## CR-027 · 2026-10-12 · Rewrite 3 Phase 2: homepage, core pages and additional pages as steps after locations
+Raised in a system session by Paul.
+Raised in a system session by Paul (rewrite 3 handoff §11, Phase 2 — after Apex locations ship). Not built yet. The homepage and core pages, then additional pages, become sections built after the locations section, with the same steps, evidence packs, review sheets and once-per-section Brand Guide write-back (CM-061).
+
+---
+
+## CR-028 · 2026-10-12 · Rewrite 3 Phase 2: every refusal prints what happened plus the next command
+Raised in a system session by Paul.
+Raised in a system session by Paul (rewrite 3 handoff §11, Phase 2 — after Apex locations ship). Not built yet. Every script refusal (exit 3/4/7) prints what happened in plain words plus the next command to run, or the one line to send Paul.
+
+---
+
+## CR-029 · 2026-10-12 · Rewrite 3 Phase 2: /stuck <slug>
+Raised in a system session by Paul.
+Raised in a system session by Paul (rewrite 3 handoff §11, Phase 2 — after Apex locations ship). Not built yet. A /stuck <slug> command: when a client run cannot go on, it says plainly why, what is open, and the one next command or the one line to send Paul.
+
+---
+
+## CR-030 · 2026-10-12 · Rewrite 3 Phase 3: the rehearsal client clients/_rehearsal/
+Raised in a system session by Paul.
+Raised in a system session by Paul (rewrite 3 handoff §11, Phase 3 — before the VA takes over). Not built yet. A rehearsal client (clients/_rehearsal/) a VA can run end to end — every section and step, the review sheets and approvals — with fake WordPress and DataforSEO, no cost and no real client data.
+
+---
+
+## CR-031 · 2026-10-12 · Rewrite 3 Phase 3: VA-SETUP rewritten around the steps
+Raised in a system session by Paul.
+Raised in a system session by Paul (rewrite 3 handoff §11, Phase 3 — before the VA takes over). Not built yet. VA-SETUP.md rewritten around the sections and steps (briefs, brief review, drafts, draft review, ship), the review sheets and the one-line answers.
+
+---
