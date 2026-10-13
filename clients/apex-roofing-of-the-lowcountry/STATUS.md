@@ -2,16 +2,16 @@
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch locations)**
 - **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:draft finished (run 20261013-124504-build-b1c6) and that stage is in review mode — l; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
+- **Waiting on:** Paul — build:draft finished (run 20261013-125617-build-b121) and that stage is in review mode — l; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
 - **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
 
-_Generated 2026-10-13T12:54 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-13T13:03 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:draft finished (run 20261013-124504-build-b1c6) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry draft locations loc-hardeeville (draft and self-critique for loc-hardeeville (its own run)) | 2026-10-13 | /next apex-roofing-of-the-lowcountry |
+| Paul | build:draft finished (run 20261013-125617-build-b121) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry draft locations loc-ridgeland (draft and self-critique for loc-ridgeland (its own run)) | 2026-10-13 | /next apex-roofing-of-the-lowcountry |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
 | Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-replacement:service_scope |
@@ -158,4 +158,4 @@ _None — every input on file has been read._
 | build:brief | 2 | 612,000 | $0.00 |
 | **total** | 2 | 612,000 | $0.00 |
 
-Last run: /build 2026-10-13T12:54 — Drafted loc-fripp-island (971 words, grade 6.8) with three FAQs, one per category (ARB same-colour re-roof application, POA gate access and fees, photo updates for an owner who is away with FEMA's uplift zones); logged RL-locations-34 to 36; recorded the draft; one map NEED left.
+Last run: /build 2026-10-13T13:03 — Drafted loc-hardeeville (975 words, grade 5.7) with three sourced Hardeeville FAQs - builder-warranty timing with the S.C. Code 15-3-640 wording checked on scstatehouse.gov, the City of Hardeeville roof permit, and a builder's-roofer trust question - all H2s and two FAQs reworded for uniqueness, research rows RL-37 to 39 logged, one map NEED left.
