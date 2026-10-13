@@ -37,12 +37,12 @@ Pilot corrections: no `build/pilot-corrections.md` on file; Paul's pilot answers
 | FAQ H2 (fresh pair) | Roofers | Lowcountry |
 
 Suggested headings (writer may re-word inside the rules; each sayable as a question; no city in any H tag; none may repeat a C3 heading — the Roof Repair FAQ H2 "What Do Homeowners Ask a Lowcountry Roofer About Repairs?" and the Bluffton H2 "What Should Bluffton Homeowners Know Before Hiring a Roofer?" are close, so stay clear of both):
-- Services H2: *Which Roofer Services Do We Offer in Beaufort and Jasper Counties?*
+- Services H2: *Which Roofing Services Do We Offer in Beaufort and Jasper Counties?*
 - Trust H2: *Who Is Apex Roofing of the Lowcountry?*
 - Gallery H2: *What Do Our Finished Roofs Look Like?*
 - Testimonials H2: *What Do Lowcountry Homeowners Say About Apex?*
 - FAQ H2: *What Do Homeowners Ask Lowcountry Roofers Before They Call?*
-- Service areas H2: *Where Across the Lowcountry Does Apex Roof Homes?* (not the location pages' "Which Towns Near … Do We Also Serve?" shape)
+- Service areas H2: *Where in the Lowcountry Does Apex Roof Homes?* (not the location pages' "Which Towns Near … Do We Also Serve?" shape)
 - Final CTA H2: *Ready for a Free Estimate From Apex Roofing of the Lowcountry?*
 
 ---

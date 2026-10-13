@@ -1756,7 +1756,19 @@
           "about"
         ],
         "state": "briefs_written",
-        "briefs": null,
+        "briefs": {
+          "state": "approved",
+          "by": "Paul",
+          "at": "2026-10-13T14:49:35-05:00",
+          "note": null,
+          "files": {
+            "clients/apex-roofing-of-the-lowcountry/build/h1/HB - Homepage - Apex Roofing of the Lowcountry.md": "60d17ce3a7d9",
+            "clients/apex-roofing-of-the-lowcountry/build/h1/AB - About - Apex Roofing of the Lowcountry.md": "3707324ce1d2"
+          },
+          "conditions": [],
+          "sensitive_review": null,
+          "practitioner": null
+        },
         "drafts": null,
         "files": {
           "briefs": [
@@ -2029,7 +2041,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T14:31:53-05:00",
+  "updated": "2026-10-13T14:49:35-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
