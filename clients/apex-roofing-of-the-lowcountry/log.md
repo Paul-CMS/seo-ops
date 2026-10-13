@@ -4546,3 +4546,116 @@ Changes: 0 · Summary: Drafted the Beaufort location page (671 words, grade 6.8)
 - CHANGE #744 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (5).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha fc0475dde238 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #745 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (5).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (5).md | result: done · renamed and moved, nothing deleted
 - CHANGE #746 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (5).md | new: Apex Roofing of the Lowcountry - Status.md · sha 88ecd085161e | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-13T08:10 · after build:draft (run 20261013-075700-build-e62d) · Paul typed /next
+
+## RUN 20261013-081021-build-1bd6 · STARTED · /build · 2026-10-13T08:10:21-05:00
+Step: build:draft · batch locations · session 4b4b1602-b1b8-4325-bb46-d6fdcde6c418
+Gates checked: discovery_signed_off, batch:locations:briefs, page_specs_approved
+- RESEARCH 2026-10-13T08:16 · run 20261013-081021-build-1bd6 · RL-locations-18 · fact:loc-port-royal:top_sites (public): found
+- RESEARCH 2026-10-13T08:16 · run 20261013-081021-build-1bd6 · RL-locations-19 · fact:loc-port-royal:faq_base_housing (public): found
+- DRAFT 2026-10-13T08:16 · run 20261013-081021-build-1bd6 · loc-port-royal · clients/apex-roofing-of-the-lowcountry/build/locations/LD - Port Royal - Apex Roofing of the Lowcountry.md · agent build-subagent-loc-port-royal-1bd6
+### HANDOFF · /build · 2026-10-13 · run 20261013-081021-build-1bd6
+**Agent:** Build (Agent 2), Opus, fresh subagent for this one page (CM-043; agent id `build-subagent-loc-port-royal-1bd6`) · **Date:** 2026-10-13 · **Route:** A
+
+### Done
+- Wrote `clients/apex-roofing-of-the-lowcountry/build/locations/LD - Port Royal - Apex Roofing of the Lowcountry.md` from the approved brief (`LB - Port Royal …`), the evidence pack and Paul's rules of 2026-10-13 (settled `location_three_strong_faqs`). Recorded it with `status.py page-stage … --stage draft --run 20261013-081021-build-1bd6 --agent build-subagent-loc-port-royal-1bd6` (exit 0).
+- New public research logged:
+  - RL-locations-18: NPS Camp Saxton page. The Emancipation Proclamation was read there on **January 1, 1863**. The pack and Wikipedia say "first read at Christmas" in 1863, and that is wrong. The Emancipation Oak sits inside Naval Hospital Beaufort and is not open to the public, so the "Proclamation tree" is **not** listed as a site to visit. Fort Frederick is a county-managed park with the tabby ruins of a British-built fort.
+  - RL-locations-19: Military OneSource, MCRD Parris Island housing (read 2026-10-13). Housing there is privatized, and day-to-day management and maintenance go through the housing partner. The partner is not named.
+- Not logged: the flood ordinance's cumulative look-back. `research.py log` refused a `not_found` row with fewer than 3 queries. The item is optional, the page states no look-back, and the brief already marks it as not found. The Town flood guide PDF came back as binary on 2026-10-13, so its wording rests on the 2026-10-12 read (brief §3).
+- No flag raised. Readability `--exclude-terms` used a terms file in the scratchpad (the F-016 workaround).
+
+### The three FAQs (one per category, methodology/location-faq.md)
+1. **Cat. 1 · local decision (flood rule):** "Does a big roof job on a Port Royal home trigger the flood-zone 50% rule?" (C3 wording, unchanged).
+   - Source: Town of Port Royal *Citizen's Guide to Flood Awareness* (/View/305). Town ordinance adopts the FEMA maps. The rule is 50% of **market** value, and the whole building is then elevated. The same rule covers substantial damage. A permit is needed before building in a flood zone.
+   - Framed as Port Royal's own rule (settled `flood_rule_faq_overlap_kept`). Hilton Head's version is 49% of assessed value.
+   - The page gives no look-back, no zone for any address, and no statement that a roof alone reaches 50%.
+2. **Cat. 2 · logistics (who to call, on base and off):** "Do you work on Port Royal base housing and homes near Parris Island?" (lightly reworded).
+   - Apex: works on Port Royal base housing and near Parris Island (Paul Approved, `communities_outside_towns`).
+   - Public facts: Parris Island has been part of the Town since 2000 (Wikipedia). On-base family housing is run by a private housing partner, so residents call the partner's maintenance line first (Military OneSource, RL-locations-19).
+   - The page makes no gate-access, contract, procedure or synthetic-material claim, and does not name the partner.
+3. **Cat. 3 · trust (local pain point: older Old Village homes):** "Who should repair the roof on an older house in Port Royal's Old Village?" (replaces the brief's FAQ 1).
+   - Sources: Port Royal Code Art. 3 s.3.3.50 (HPO), as read 2026-10-12.
+     - Repairs, replacements and routine maintenance that are not alteration are exempt from a Certificate of Appropriateness.
+     - A visible change to a Town Historic Register property may need one.
+     - The demolition-by-neglect clause lists deteriorating roofs.
+     - Town Planning is 843-986-2207, checked per address. The page says not every Old Village house is on the Register.
+   - Apex (Paul Approved):
+     - Ralph and Pierce both get on the roof.
+     - Repairs use corrosion-resistant flashing and synthetic underlayment.
+     - The customer gets photos of the work.
+   - Review: speed topic, checked by meaning, 18 reviewers. Written at the "Customers mention…" tier as "crews who show up promptly each day". No response time.
+
+### Rewords vs the brief / C3 (F-020: Brand Guide C3 still holds the briefed wording)
+- FAQ "Does my Port Royal home need historic review before a roof job?" (cat. 1) → **replaced** by "Who should repair the roof on an older house in Port Royal's Old Village?" (cat. 3 trust).
+  - The brief had no clear trust FAQ.
+  - The historic-review route is a Beaufort angle already taken.
+  - The overlay facts are kept but reframed around repair in kind.
+- FAQ "Do you work on homes near Parris Island and in military housing?" → "Do you work on Port Royal base housing and homes near Parris Island?" This names the town and uses Paul's own words.
+- Services H2 "Which Roofing Services Does a Port Royal Roofer Offer?" → "What Can You Hire a Port Royal Roofer to Do?" The old wording repeated the Hilton Head and Beaufort heading pattern. The "Roofer" variant is kept.
+- FAQ H2 "What Should Port Royal Homeowners Ask a Residential Roofer?" → "Which Port Royal Roof Questions Should a Residential Roofer Answer?" The old wording repeated the Okatie and Pritchardville "homeowners ask" pattern.
+- Neighborhoods H2 "Which Port Royal Neighborhoods Do We Work In?" → "Which Port Royal Neighborhoods Are in Our Service Area?" The old wording implied work done in each neighbourhood (E5).
+- Things to Do: the Spanish Moss Trail was **dropped**. Beaufort's page already lists it, and it runs to Beaufort (rule 4).
+- Top Sites:
+  - "Proclamation tree" dropped (not accessible; date wrong in the pack). The Camp Saxton Site carries the January 1, 1863 reading instead (NPS).
+  - Hasell Point and the Naval Battle site were not used. The battle overlaps Hilton Head's Fort Walker listing.
+- The FAQ flood wording was cut to "the Town's flood guide" for grade.
+
+### Unique and not competing
+- **Opening angle:** a low-lying town (3 ft) with two kinds of homes, the Old Village and the land annexed later (Parris Island 2000, parts of Shell Point and Burton). No other page has this angle.
+- **Local context:** 1893 hurricane → phosphate industry; population growth from the Parris Island annexation. Other pages used the 1893 storm only for surge (Hilton Head) and with the 1907 fire (Beaufort).
+- **No reused material:** checked against Bluffton, Hilton Head Island, Okatie, Pritchardville, Beaufort and the service FAQs. No sentence, lead-in, CTA line or heading pattern from them appears here.
+- **No taken FAQ angle:**
+  - none of the plantation boards, salt air, county line, ARC, Town/County permit, wind rating, evacuation, City HRB or terne angles
+  - no Port Royal permit question (one per county; Bluffton owns it)
+- **Stays on Port Royal:**
+  - Beaufort, Lady's Island and the base are not covered.
+  - Parris Island appears only as part of the Town.
+  - Mossy Creek is listed only as a Port Royal neighbourhood, with no Beaufort relation (settled).
+  - The Spanish Moss Trail was dropped.
+
+### Checks
+- 707 visitor-facing words scored. Page grade 5.9, no paragraph over 10. E10 passed after one sentence split in FAQ 1. Read-aloud pass done.
+- FAQ first paragraphs are about 55, 58 and 56 words.
+- E1 portability: pass. The opening, local context and all three FAQs name Port Royal-only facts.
+- E2: 8 or more specific facts: 3 ft elevation, 1893 hurricane and phosphate, population 3,950/10,678/14,220, Parris Island 2000, Shell Point and Burton, the Town flood 50% rule, the HPO exemption and Register, Camp Saxton 1863.
+- E3: title Roofing Contractor → H1 Roofers → services H2 Roofer → opening roofer and roofing contractor → FAQ H2 Residential Roofer. No consecutive repeat; the reserved variant is not used.
+- E4: every section under 375 words.
+- E5:
+  - no price, response time, look-back, flood-zone designation or permit-pulling claim
+  - no base-access claim, partner name, or neighbourhood work claim
+  - review speed at its tier
+- E6: pass. E7: one H1, and every H2 is a spoken question naming Port Royal.
+- E8: no cross-page link in prose; link-table placeholders present. E9: pass.
+- Spec:
+  - LOC-14 met (3).
+  - LOC-15: 5 of the 6 target (Fix and list).
+  - LOC-16: map NEED.
+  - LOC-17 met.
+  - LOC-18/11 placeholders.
+  - LOC-19 NAP matches.
+  - LOC-22 under 1,000.
+  - LOC-26: WebPage + ItemList, recommendation only.
+- Placeholders (`placeholders.py scan`): 1 NEED (map), 0 LINK.
+
+### For the drafts review
+1. Fix and list: the historic-review FAQ was replaced by the Old Village repair (trust) FAQ, and the base-housing FAQ was reworded. C3 needs an update at write-back (F-020).
+2. Fix and list: the services, FAQ and neighbourhoods H2s were reworded for pattern uniqueness. C3 needs an update.
+3. Fix and list: five neighbourhoods against the target of 6 (CM-061 §8).
+4. Fix and list: Proclamation tree dropped and Camp Saxton dated January 1, 1863 (NPS), because the pack/Wikipedia "Christmas 1863" is wrong. The pack's top_sites fact should be corrected at the next pack build.
+5. Fix and list: Spanish Moss Trail dropped (on Beaufort's page; runs to Beaufort).
+6. Check: the flood-guide wording rests on the 2026-10-12 read of an undated guide, and the look-back was not found. Optional: read the Town flood ordinance before ship.
+7. Check: "Customers mention crews who show up promptly each day" is the speed topic at its tier, not a response time. Confirm Paul is content with it given the brief's "no fast" line.
+8. Finish outbound candidates (CM-011): the Town Citizen's Guide to Flood Awareness (/View/305), the Historic Preservation Committee page (/187), and NPS Camp Saxton.
+
+### Not done
+No publish, link table, schema or Brand Guide write-back. Nothing approved.
+### END HANDOFF
+## RUN 20261013-081021-build-1bd6 · FINISHED · 2026-10-13T08:17:50-05:00
+Changes: 0 · Summary: Drafted the Port Royal location page (707 words, grade 5.9) with three category FAQs (Town flood 50% rule, base housing near Parris Island, Old Village repair under the historic overlay), logged NPS and Military OneSource research, corrected the Camp Saxton date, and listed the FAQ and H2 rewords for the drafts review.
+- CHANGE #747 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (6).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #748 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (6).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 704746baad48 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #749 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (6).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #750 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (6).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 2fddaffb6aad | result: done · copied (Drive for desktop syncs it)
+- CHANGE #751 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (6).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #752 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (6).md | new: Apex Roofing of the Lowcountry - Status.md · sha 08d3c6397d3e | result: done · copied (Drive for desktop syncs it)

@@ -869,7 +869,7 @@
       }
     },
     "loc-port-royal": {
-      "state": "brief_written",
+      "state": "draft_written",
       "type": "location",
       "name": "Port Royal",
       "url": "https://apexroofingtlc.com/port-royal/",
@@ -901,6 +901,13 @@
           "run": "20261012-205526-build-9baf",
           "at": "2026-10-12T21:23:13-05:00",
           "sha": "3b100d25d028"
+        },
+        "draft": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Port Royal - Apex Roofing of the Lowcountry.md",
+          "run": "20261013-081021-build-1bd6",
+          "at": "2026-10-13T08:16:34-05:00",
+          "sha": "db7ac995e295",
+          "agent": "build-subagent-loc-port-royal-1bd6"
         }
       },
       "pack": {
@@ -1818,10 +1825,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-075700-build-e62d",
+    "run_id": "20261013-081021-build-1bd6",
     "command": "build",
-    "finished": "2026-10-13T08:04:23-05:00",
-    "result": "Drafted the Beaufort location page (671 words, grade 6.8) with three Beaufort-only FAQs: metal roof rules, the City's historic review route, and saving old terne roofs; the terne FAQ replaces the Bailey Bill FAQ to cover the trust category; two City sources logged (RL-locations-16, 17); placeholders are the map NEED and one /metal-roofing/ link.",
+    "finished": "2026-10-13T08:17:50-05:00",
+    "result": "Drafted the Port Royal location page (707 words, grade 5.9) with three category FAQs (Town flood 50% rule, base housing near Parris Island, Old Village repair under the historic overlay), logged NPS and Military OneSource research, corrected the Camp Saxton date, and listed the FAQ and H2 rewords for the drafts review.",
     "changes": 0,
     "step": "build:draft",
     "batch": "locations"
@@ -1845,7 +1852,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T08:04:23-05:00",
+  "updated": "2026-10-13T08:17:50-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2174,8 +2181,8 @@
     }
   ],
   "review_pause": {
-    "run_id": "20261013-075700-build-e62d",
+    "run_id": "20261013-081021-build-1bd6",
     "step": "build:draft",
-    "at": "2026-10-13T08:04:23-05:00"
+    "at": "2026-10-13T08:17:50-05:00"
   }
 }
