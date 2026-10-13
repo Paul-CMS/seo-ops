@@ -1,0 +1,42 @@
+{
+  "made": "2026-10-13T13:50:01-05:00",
+  "run": "20261013-133740-build-53f3",
+  "fixes": [
+    {
+      "page": "loc-levy",
+      "rule": "E9",
+      "item": "faq2-first-sentence",
+      "finding": "'Yes, if it qualifies.' had no clear subject; now 'Yes, if the home qualifies.'",
+      "severity": "fix",
+      "category": "wording",
+      "url": "https://apexroofingtlc.com/levy/"
+    },
+    {
+      "page": "loc-ridgeland",
+      "rule": "E9",
+      "item": "neighbourhoods-lead-in",
+      "finding": "'new streets like these:' before a one-item list; now 'such as this one:'",
+      "severity": "fix",
+      "category": "wording",
+      "url": "https://apexroofingtlc.com/ridgeland/"
+    },
+    {
+      "page": "loc-st-helena-island",
+      "rule": "E9",
+      "item": "faq3-owners",
+      "finding": "'so the owners see the damage' read as the homeowners; now 'so Apex's owners see the damage'",
+      "severity": "fix",
+      "category": "wording",
+      "url": "https://apexroofingtlc.com/st-helena-island/"
+    },
+    {
+      "page": "loc-fripp-island",
+      "rule": "E9",
+      "item": "faq1-login",
+      "finding": "'sit in the homeowners' login' now reads 'sit behind the homeowners' login'",
+      "severity": "fix",
+      "category": "wording",
+      "url": "https://apexroofingtlc.com/fripp-island/"
+    }
+  ]
+}

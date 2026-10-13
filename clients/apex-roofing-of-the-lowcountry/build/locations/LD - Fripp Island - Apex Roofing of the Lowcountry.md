@@ -42,7 +42,7 @@ Three things shape a Fripp Island roof job: the island's review board, the secur
 
 Yes. A re-roof in the same color and material needs no approval from the Fripp Island Architectural Review Board. Even so, the property owners' association's homeowners manual says you must still complete an application and post a permit, and there is no cost. The ARB reviews single-family homes, while condominiums are handled by their own regimes.
 
-The ARB meets on the first and third Thursday of each month at 8:30 AM. Applications are due at its office by 4:30 PM on the Friday before. Thinking about a new color or a different material? Ask the ARB first, because its roofing standards sit in the homeowners' login.
+The ARB meets on the first and third Thursday of each month at 8:30 AM. Applications are due at its office by 4:30 PM on the Friday before. Thinking about a new color or a different material? Ask the ARB first, because its roofing standards sit behind the homeowners' login.
 
 ### Why does a roofing crew need clearance at the Fripp Island security gate?
 

@@ -44,7 +44,7 @@ You can apply online through the County's permitting site, or on its paper Build
 
 ### Grant money for a wind-rated roof — can Levy homeowners apply?
 
-Yes, if it qualifies. Levy is in Jasper County, one of 11 counties where the state's SC Safe Home program funds grants. Covered roof work includes a high wind-rated roof covering, roof deck attachment and a secondary water barrier. The home must be a freestanding single-family house you own and live in.
+Yes, if the home qualifies. Levy is in Jasper County, one of 11 counties where the state's SC Safe Home program funds grants. Covered roof work includes a high wind-rated roof covering, roof deck attachment and a secondary water barrier. The home must be a freestanding single-family house you own and live in.
 
 It also needs an active homeowner's policy and no past storm damage or claim payouts. Grants top out at $7,500. Applications open twice a year; check the SC Department of Insurance's Safe Home page for dates. For costs a grant leaves, Apex offers Hearth financing and a free estimate.
 
@@ -52,7 +52,7 @@ It also needs an active homeowner's policy and no past storm damage or claim pay
 
 Apex's does. The install is covered by Apex's own no-leak workmanship warranty, so the company that put the roof on is the one that answers for it. That is the real worry with a roof on a home outside any town: who will pick up the phone years later. Levy is one of the 12 places Apex serves.
 
-The shingles carry their maker's warranty too. Apex is a certified factory installer of both CertainTeed and GAF, so you can pick the brand you prefer, and many homeowners have one. In a 2026 review, one homeowner wrote that after the job, Ralph handed over the warranties for all the GAF products on the roof.
+The shingles carry their maker's warranty too. Apex is a certified factory installer of both CertainTeed and GAF, so you can pick the brand you prefer. In a 2026 review, one homeowner wrote that after the job, Ralph handed over the warranties for all the GAF products on the roof.
 
 ## Which Communities Lie Near Levy?
 

@@ -52,7 +52,7 @@ Before the job, ask the Harbor Island Owners Association what it needs from you 
 
 ### Where do St. Helena Island homeowners turn when a storm damages the roof?
 
-They can call Ralph and Pierce Brehany, the father and son who run Apex Roofing of the Lowcountry. Both stay on call and treat a roof emergency as high priority, most of all for past customers. Both also get up on the roof themselves, so the owners see the damage firsthand.
+They can call Ralph and Pierce Brehany, the father and son who run Apex Roofing of the Lowcountry. Both stay on call and treat a roof emergency as high priority, most of all for past customers. Both also get up on the roof themselves, so Apex's owners see the damage firsthand.
 
 Storms have hit these islands hard before. In August 1893 a massive hurricane slammed the Sea Islands, and the National Park Service says thousands of people, mostly Gullah Geechee, died during and after it. On any job, Apex sends you photos of the work, with progress photos each day on a longer job. One homeowner wrote in 2026 that Ralph explained everything that would be done during the replacement.
 

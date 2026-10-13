@@ -6,7 +6,7 @@ meta_description: Port Royal roofers for roof repair, roof replacement, metal ro
 ---
 # Roofers in Port Royal
 
-Apex Roofing of the Lowcountry is a residential roofer for homes across the Town of Port Royal, SC, in Beaufort County. The town sits about 3 feet above sea level. Its homes range from the Old Village, the historic center around Paris Avenue, to the land the Town took in later: Parris Island in 2000, plus parts of Shell Point and Burton. Old or new, a Port Royal house sits on low ground, and a roofing contractor here plans the roof around that. Call (843) 757-2739 for a free estimate.
+Apex Roofing of the Lowcountry is a residential roofer for homes across the Town of Port Royal, SC, in Beaufort County. The town sits about 3 feet above sea level. Its homes range from the Old Village, the historic center around Paris Avenue, to the land the Town took in later: Parris Island in 2000, plus parts of Shell Point and Burton. Old or new, a Port Royal house sits on low ground, and a roofing contractor here plans the roof around that. A free estimate is one call away at (843) 757-2739.
 
 ## What Can You Hire a Port Royal Roofer to Do?
 

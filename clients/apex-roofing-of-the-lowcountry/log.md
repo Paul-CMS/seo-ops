@@ -5725,3 +5725,109 @@ Changes: 0 · Summary: Levy draft revised: financing fallback FAQ 2 replaced wit
 - CHANGE #810 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (16).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 199ff4f284c1 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #811 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (16).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (16).md | result: done · renamed and moved, nothing deleted
 - CHANGE #812 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (16).md | new: Apex Roofing of the Lowcountry - Status.md · sha cd653637f541 | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-13T13:37 · after build:draft (run 20261013-133428-build-0964) · Paul typed /next
+
+## RUN 20261013-133740-build-53f3 · STARTED · /build · 2026-10-13T13:37:40-05:00
+Step: build:drafts · batch locations · session 4b4b1602-b1b8-4325-bb46-d6fdcde6c418
+Gates checked: discovery_signed_off, batch:locations:drafts_ready
+- CHANGE #813 [draft] clients/apex-roofing-of-the-lowcountry/build/locations/LD - Levy - Apex Roofing of the Lowcountry.md | FAQ 2 first sentence (Fix, wording) | old: Yes, if it qualifies. | new: Yes, if the home qualifies. | result: APPLIED · local · drafts review Fix (form only)
+- CHANGE #814 [draft] clients/apex-roofing-of-the-lowcountry/build/locations/LD - Ridgeland - Apex Roofing of the Lowcountry.md | Neighbourhoods lead-in (Fix, wording) | old: to new streets like these: | new: to new streets such as this one: | result: APPLIED · local · drafts review Fix (form only; one list item)
+- CHANGE #815 [draft] clients/apex-roofing-of-the-lowcountry/build/locations/LD - St. Helena Island - Apex Roofing of the Lowcountry.md | FAQ 3 para 1 (Fix, wording) | old: so the owners see the damage firsthand. | new: so Apex's owners see the damage firsthand. | result: APPLIED · local · drafts review Fix (form only; 'owners' was ambiguous)
+- CHANGE #816 [draft] clients/apex-roofing-of-the-lowcountry/build/locations/LD - Fripp Island - Apex Roofing of the Lowcountry.md | FAQ 1 para 2 (Fix, wording) | old: sit in the homeowners' login. | new: sit behind the homeowners' login. | result: APPLIED · local · drafts review Fix (form only)
+- REVIEW SHEET 2026-10-13T13:50 · run 20261013-133740-build-53f3 · locations drafts: 0 Ask, 61 decided for you, 4 fixed silently, 0 not raised (duplicate, decided or answered) · clients/apex-roofing-of-the-lowcountry/build/locations/drafts-review.csv
+- REVIEW APPLIED 2026-10-13T13:50 · run 20261013-133740-build-53f3 · locations drafts: 61 row(s) (0 answered by Paul, the rest by default) · clients/apex-roofing-of-the-lowcountry/build/locations/drafts-apply.json
+- CHANGE #817 [draft] clients/apex-roofing-of-the-lowcountry/build/locations/LD - Hilton Head Island - Apex Roofing of the Lowcountry.md | drafts review apply (rows 20, 21, 23) + Fix | old:  | new:  | result: APPLIED · local · salt-air FAQ made the trust FAQ (Apex repair materials, owners on the roof, one attributed 2026 review); Apex-gets-the-permit clause removed (settled location_client_questions_skipped); 5 H2s reworded; FAQ section trimmed to 370 words; Fix: opening phone sentence reworded (shared with Bluffton) | snapshots clients/apex-roofing-of-the-lowcountry/snapshots/20261013-133740-build-53f3/0817-old.md clients/apex-roofing-of-the-lowcountry/snapshots/20261013-133740-build-53f3/0817-new.md
+- CHANGE #818 [draft] clients/apex-roofing-of-the-lowcountry/build/locations/LD - Okatie - Apex Roofing of the Lowcountry.md | drafts review apply (rows 36, 37, 38) + Fix | old:  | new:  | result: APPLIED · local · 7 H2s reworded; FAQ 1 reworded to 'Which Okatie-area communities has Apex already roofed in?' with pain point, owners on the roof and one attributed 2026 review; local context rewritten without the opening's repeats; Fix: opening phone sentence reworded | snapshots clients/apex-roofing-of-the-lowcountry/snapshots/20261013-133740-build-53f3/0818-old.md clients/apex-roofing-of-the-lowcountry/snapshots/20261013-133740-build-53f3/0818-new.md
+- CHANGE #819 [draft] clients/apex-roofing-of-the-lowcountry/build/locations/LD - Beaufort - Apex Roofing of the Lowcountry.md | drafts review apply (row 1) + Fix | old:  | new:  | result: APPLIED · local · 7 H2s reworded; Fix: opening phone sentence reworded (shared with Okatie, Port Royal, Pritchardville) | snapshots clients/apex-roofing-of-the-lowcountry/snapshots/20261013-133740-build-53f3/0819-old.md clients/apex-roofing-of-the-lowcountry/snapshots/20261013-133740-build-53f3/0819-new.md
+- CHANGE #820 [draft] clients/apex-roofing-of-the-lowcountry/build/locations/LD - Pritchardville - Apex Roofing of the Lowcountry.md | drafts review apply (row 49) | old:  | new:  | result: APPLIED · local · 3 H2s reworded (services, top sites, siblings) | snapshots clients/apex-roofing-of-the-lowcountry/snapshots/20261013-133740-build-53f3/0820-old.md clients/apex-roofing-of-the-lowcountry/snapshots/20261013-133740-build-53f3/0820-new.md
+- CHANGE #821 [draft] clients/apex-roofing-of-the-lowcountry/build/locations/LD - Levy - Apex Roofing of the Lowcountry.md | drafts review apply (row 31) + Fix (FAQ 2 first sentence) | old:  | new:  | result: APPLIED · local · removed unsourced 'and many homeowners have one' | snapshots clients/apex-roofing-of-the-lowcountry/snapshots/20261013-133740-build-53f3/0821-old.md clients/apex-roofing-of-the-lowcountry/snapshots/20261013-133740-build-53f3/0821-new.md
+- CHANGE #822 [draft] clients/apex-roofing-of-the-lowcountry/build/locations/LD - Port Royal - Apex Roofing of the Lowcountry.md | Fix (opening phone sentence) | old:  | new:  | result: APPLIED · local · Fix (form only): 'Call (843) 757-2739 for a free estimate.' reworded — the sentence was shared with Okatie, Beaufort, Pritchardville | snapshots clients/apex-roofing-of-the-lowcountry/snapshots/20261013-133740-build-53f3/0822-old.md clients/apex-roofing-of-the-lowcountry/snapshots/20261013-133740-build-53f3/0822-new.md
+- SETTLED fact:d:warranty_terms · 2026-10-13T13:53:00-05:00 · run 20261013-133740-build-53f3 · by Paul · Records sync (locations drafts review row 32): the warranty terms are already answered — facts.json d-warranty-terms is paul_approved (manufacturer 50-year limited lifetime, transferable; lifetime no-leak workmanship warranty, transferable; SureStart PLUS) and settled 'business' (2026-10-08) confirms the lifetime transferable no-leak workmanship warranty. The open ask is closed; nothing new was asked or answered.
+- DECISION 2026-10-13T13:53 · run 20261013-133740-build-53f3 · Locations drafts review row 2 (default): the Beaufort Bailey Bill tax-freeze question leaves the location page (replaced by the terne trust FAQ) and goes to the blog list as a topic candidate.
+- CHANGE #823 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/02 - Build/drafts-review.md | upload | old: (new file) | new: drafts-review.md · sha e0567b446557 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #824 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/02 - Build/drafts-review.csv | upload | old: (new file) | new: drafts-review.csv · sha 674966117c22 | result: done · copied (Drive for desktop syncs it)
+- FLAG 2026-10-13T13:53 · run 20261013-133740-build-53f3 · F-022 · review.py apply ends with 'apply every item to its page in this run, then re-record the files', but no command says how. Re-recording each draft with status.py page-stage from the one review run would give every page the same run and agent, which per_page_files then refuses as one context for all pages (CM-043). The page-stage sha is stored but never checked, so the edited drafts stay recorded under their own-run records. · workaround: Applied the review items to the drafts in this run, logged each change with run.py change (old/new snapshots), and recorded the section with status.py batch locations --state drafts_written --review-sheet …; page-stage records were not re-written.
+### HANDOFF · /build · 2026-10-13 · run 20261013-133740-build-53f3
+**Agent:** Build (Agent 2), Opus · **Date:** 2026-10-13 · **Route:** A · CM-061 draft review (one checker pass, one sheet)
+
+### Done
+- Read all 11 location drafts side by side, plus the approved Bluffton pilot and the 8 service drafts. Checked portability (E1), FAQ and heading collisions, the three-category FAQ rule (settled `location_three_strong_faqs`), the usage tiers and the usage check. Ran an exact-sentence check (5+ words) across every location, pilot and service draft.
+- Closed every "for the drafts review" item from today's 16 per-page handoffs. Each one is a row on the sheet, a Fix, or a note below.
+- `review.py sheet … locations drafts` wrote `build/locations/drafts-review.csv` (+ .md, .json). Result: **0 Ask, 61 Fix and list, 4 Fix**, 0 dropped. There were no Ask rows, so the review was applied at once: `review.py apply … locations drafts` wrote `build/locations/drafts-apply.json` (61 rows, all on the recommended default).
+- Applied every content row to the drafts. Each edit is logged with `run.py change`, with old and new snapshots (changes #813–822):
+  - **Hilton Head Island:**
+    - The salt-air FAQ is now the trust FAQ. It adds Apex's repair materials, the owners on the roof and one attributed 2026 review.
+    - The "Apex gets [the Town permit] for you" clause is removed (settled `location_client_questions_skipped`).
+    - 5 H2s reworded.
+    - FAQ section trimmed to 370 words.
+  - **Okatie:**
+    - FAQ 1 is now "Which Okatie-area communities has Apex already roofed in?". It adds the pain point, the owners on the roof and one attributed 2026 review.
+    - Local context rewritten without the opening's repeats.
+    - 7 H2s reworded.
+  - **Beaufort:** 7 H2s reworded.
+  - **Pritchardville:** 3 H2s reworded.
+  - **Levy:** removed the unsourced "and many homeowners have one".
+- **Fix (form only, silent), 8 in total:**
+  - Four are on the sheet's Fix list:
+    - Levy: "if the home qualifies"
+    - Ridgeland: "such as this one"
+    - St. Helena: "Apex's owners"
+    - Fripp: "behind the homeowners' login"
+  - Four more came from the sentence check: the phone sentence was reworded on Hilton Head Island, Okatie, Beaufort and Port Royal, because it was shared with Bluffton or with siblings. Pritchardville keeps "Call (843) 757-2739 for a free estimate." (the services pages also use it).
+- **Records:**
+  - Settled `fact:d:warranty_terms`. The open ask was stale: facts.json d-warranty-terms is paul_approved, and settled `business` confirms it.
+  - Logged a decision: the Beaufort Bailey Bill question goes to the blog list.
+- `status.py batch … locations --state drafts_written --review-sheet clients/apex-roofing-of-the-lowcountry/build/locations/drafts-review.csv` (exit 0).
+- Copied the sheet (.md, .csv) to Drive, "02 - Build".
+- **Re-checks after the edits:**
+  - Readability: every page is within ≤ 8.9 with no paragraph over 10. Page grades: Hilton Head Island 7.0, Okatie 6.5, Beaufort 6.5, Pritchardville 5.7, Levy 4.9; the other pages are unchanged.
+  - Placeholders: 1 map NEED per page, plus Beaufort's `[LINK → /metal-roofing/ …]`.
+  - FAQ sections: all ≤ 375.
+  - Variant chain unchanged on every edited page.
+  - Exact-sentence check: none left in the location bodies, apart from the NAP line, the link-wheel rows and Pritchardville's phone line.
+
+### Evidence used (usage check, §3.4)
+Hilton Head Island 1/47 · Okatie 3/48 · Pritchardville 3/49 · Beaufort 3/47 · Port Royal 3/47 · Lady's Island 5/50 · St. Helena Island 4/48 · Fripp Island 4/48 · Hardeeville 5/47 · Ridgeland 1/49 · Levy 4/49. These counts were taken before the edits; the Hilton Head Island and Okatie review lines added today are paraphrased, so the 5-word matcher may still not count them. No automatic usage row was raised.
+
+### Paul's chat items, where each landed
+- Hardeeville § 15-3-640 → row 16. Fix and list, keep. It is a public legal fact, not a claim about Apex, so it is not a kind-2 Ask.
+- Fripp decal rule → row 10. Fix and list, keep: it is the POA's own rule, with no decal claim about Apex.
+- Fripp FEMA 499 hosted by Louisiana DENR → row 11, keep.
+- Ridgeland 2021 checklist → row 56, keep with "ask for the current wording".
+- Ridgeland 2020 review → row 57, keep.
+- St. Helena named job → row 60. Keep, and ask no client question (settled skip).
+- Permit FAQ collision on 5 pages → row 35. Distinct, no change.
+- Keyword-tier reviews → rows 7, 14, 19, 28, 61. All kept as attributed examples. The researcher's by-meaning check is still open for communication (23 reviewers), clean-up (11), photos (9) and the named-staff topics. After that check, those examples can become "Customers mention…".
+- Warranty records mismatch → row 32; the stale ask is closed.
+- Map NEED and Bluffton's `[Map: …]` → row 22. Bluffton is not changed here: it is in the pilot section and is already a WordPress draft, so a fix needs a pilot correction and re-approval.
+- The five already-known items each have a row: Pritchardville neighbourhoods (51), Lady's Island swing bridge (26), Port Royal five-year rule (43), Beaufort Top Sites (4), Levy SC Safe Home (30, 33).
+
+### F-020 (C3) and F-021 (PDFs)
+- **F-020:** every reword is listed in the per-page "c3-rewords-and-replacements" rows (2, 9, 15, 26, 30, 42, 50, 55, 59) and the H2 collision rows (1, 23, 36, 49). The procedure has **no path** to correct C3: the locations write-back already ran at the brief approval, `status.py writeback` refuses a second one, and drafts, the draft review and ship never write the Brand Guide. F-020 stands. The Brand Guide was not edited.
+- **F-021 (claims resting on brief-time reads):**
+  - Okatie: Callawassie ARC list (41)
+  - Port Royal: flood guide, paragraph 1 (44)
+  - Lady's Island: Dataw Design Guidelines (27)
+  - Fripp: FEMA 499 host (11) and the FIPOA manual ARB rule (12)
+  - Ridgeland: 2021 checklist (56)
+
+### Flags
+- **New: F-022.** review.py apply says to "re-record the files", but re-recording with page-stage from one run would break CM-043's one-agent-per-page check. Workaround: the review items were logged with run.py change and the section was recorded with status.py batch.
+
+### Waiting on (not blocking)
+- Jonie: the pilot publish (H-2026-10-09-10) and the 46 blocker items.
+
+### Next
+`/approve apex-roofing-of-the-lowcountry batch:locations:drafts` once this run is finished. next.py adds any `brand_guide_approved` and placeholder notes. Then `/build apex-roofing-of-the-lowcountry ship`, after the homepage and about, or with them.
+
+### Not done
+Nothing approved. No WordPress, no link table, no schema, no Brand Guide write-back. `run.py finish` is left to the calling command.
+### END HANDOFF
+## RUN 20261013-133740-build-53f3 · FINISHED · 2026-10-13T13:55:19-05:00
+Changes: 12 · Summary: Locations drafts review (CM-061): 11 drafts checked side by side; one sheet with 0 Ask, 61 Fix and list (applied: Hilton Head Island trust FAQ and permit-claim removal, Okatie FAQ 1 and local context, H2 rewords on 4 pages, Levy unsourced clause), 8 form fixes; stale warranty ask closed; F-022 flagged; ready for /approve batch:locations:drafts.
+- CHANGE #825 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (17).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (17).md | result: done · renamed and moved, nothing deleted
+- CHANGE #826 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (17).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 07912030abbb | result: done · copied (Drive for desktop syncs it)
+- CHANGE #827 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (17).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (17).md | result: done · renamed and moved, nothing deleted
+- CHANGE #828 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (17).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 99a68a45004e | result: done · copied (Drive for desktop syncs it)
+- CHANGE #829 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (17).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (17).md | result: done · renamed and moved, nothing deleted
+- CHANGE #830 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (17).md | new: Apex Roofing of the Lowcountry - Status.md · sha 350ee4ee2a0f | result: done · copied (Drive for desktop syncs it)

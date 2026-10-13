@@ -87,6 +87,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 - 2026-10-12T11:43 · run 20261012-114352-interview-44aa · Paul 2026-10-12: Skylights FAQ 4 — yes, Apex installs skylights in metal roofs. Keep FAQ 4. Researcher still owes manufacturer guidance (public fact).
 - 2026-10-12T11:43 · run 20261012-114352-interview-44aa · Paul 2026-10-12: Slate FAQ 3 (lifespan) and FAQ 5 (minimum slope): drop both. Slate lands at 5 FAQs after the 7/8 merge.
 - 2026-10-12T14:08 · run 20261012-140216-build-c112 · apply-sem services: routed items. Slate FAQs 'How long does a slate roof last?' (PAA #84/#106, FO #112) and 'Can slate go on a low-slope roof?' dropped per Paul 2026-10-12 (SEM-14) -> blog list (slate lifespan; slate minimum slope). Skylights FAQ 'Do skylights open?' (PAA #128) dropped, no source by draft approval (brief rule, SEM-15) -> blog list (fixed vs venting skylights). SEM-6 on-call message and SEM-13 storm-damage signs stay with Emergency Roof Repair, which already carries both; no change to Emergency for them.
+- 2026-10-13T13:53 · run 20261013-133740-build-53f3 · Locations drafts review row 2 (default): the Beaufort Bailey Bill tax-freeze question leaves the location page (replaced by the terne trust FAQ) and goes to the blog list as a topic candidate.
 
 ## Conditions met (system-verified)
 

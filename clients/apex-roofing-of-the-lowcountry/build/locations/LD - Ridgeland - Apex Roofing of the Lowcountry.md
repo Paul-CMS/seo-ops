@@ -58,7 +58,7 @@ Damage hidden under the shingles is the other worry. In a 2020 review, a custome
 
 ## Does Apex Serve Your Neighborhood in Ridgeland?
 
-Apex serves Ridgeland and nearby residential communities. That runs from the homes around downtown Ridgeland to new streets like these:
+Apex serves Ridgeland and nearby residential communities. That runs from the homes around downtown Ridgeland to new streets such as this one:
 
 - The Groves at Bees Creek, a new-home community off Bees Creek Road
 

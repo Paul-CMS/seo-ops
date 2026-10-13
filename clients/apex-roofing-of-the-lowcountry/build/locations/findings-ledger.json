@@ -1,0 +1,429 @@
+{
+  "loc-beaufort|location-three-strong-faqs|h2-pattern-collision": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Reword: services to 'Old House or New, What Will a Beaufort Roofing Contractor Take On?'; local context to 'Why Do Beaufort Roofs Sit on Some of the State's Oldest Houses?'; FAQ to 'How Does a Beaufor",
+    "by": "default"
+  },
+  "loc-beaufort|f-020|c3-rewords-and-replacements": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the terne trust FAQ; send the Bailey Bill question to the blog list; list for C3 (F-020).",
+    "by": "default"
+  },
+  "loc-beaufort|loc-17|things-to-do-swap": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the swap.",
+    "by": "default"
+  },
+  "loc-beaufort|loc-17|top-sites-details-added": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep.",
+    "by": "default"
+  },
+  "loc-beaufort|cm-022|metal-roofing-link-placeholder": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the placeholder; the link-wheel step (Finish) decides, using the site plan's final URL /metal-roofing/.",
+    "by": "default"
+  },
+  "loc-beaufort|p7|old-urls-301": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "No draft change; the redirects already exist and stay with the sitemap handoff.",
+    "by": "default"
+  },
+  "loc-beaufort|usage-tiers|photos-review-tier": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the attributed example as written.",
+    "by": "default"
+  },
+  "loc-fripp-island|e1|owners-photos-overlap": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep: same facts, different angle and sentences on each page. No change.",
+    "by": "default"
+  },
+  "loc-fripp-island|f-020|c3-rewords-and-replacements": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep; list for C3 (F-020).",
+    "by": "default"
+  },
+  "loc-fripp-island|location-client-questions-skipped|decal-rule-line": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the general rule; no decal claim about Apex.",
+    "by": "default"
+  },
+  "loc-fripp-island|f-021|fema-499-host": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep, citing FEMA 499 Fact Sheet 18 (the Finish outbound link should point to fema.gov once it can be read).",
+    "by": "default"
+  },
+  "loc-fripp-island|f-021|arb-rule-not-refetched": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep.",
+    "by": "default"
+  },
+  "loc-fripp-island|loc-17|hunting-island-added": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep.",
+    "by": "default"
+  },
+  "loc-fripp-island|usage-tiers|photos-review-tier": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the attributed example.",
+    "by": "default"
+  },
+  "loc-hardeeville|f-020|c3-rewords-and-replacements": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep; list for C3 (F-020).",
+    "by": "default"
+  },
+  "loc-hardeeville|legal|statute-paraphrase": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the paragraph as written.",
+    "by": "default"
+  },
+  "loc-hardeeville|loc-15|jenny-greeene-dropped": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep 8.",
+    "by": "default"
+  },
+  "loc-hardeeville|pack-evidence-added|new-public-facts": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep.",
+    "by": "default"
+  },
+  "loc-hardeeville|usage-tiers|inspection-review-tier": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the attributed example.",
+    "by": "default"
+  },
+  "loc-hilton-head-island|location-three-strong-faqs|faq-categories": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Count FAQ 1 (review-board approval before work, 5 working days ahead) as logistics and FAQ 3 (Town 49% flood rule) as the local decision. Make FAQ 2 (salt air) the trust FAQ: keep the FEMA fastener po",
+    "by": "default"
+  },
+  "loc-hilton-head-island|location-client-questions-skipped|faq3-permit-claim": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Remove the clause; keep the Town's own sentence 'The page also says re-roofing needs a building permit.'",
+    "by": "default"
+  },
+  "loc-hilton-head-island|p11|map-embed-all-pages": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the NEED on all 11 pages (it ships as an open-items notice and a worklist row for the embed). Bluffton is not in this section: its [Map: ...] is listed here only; changing it means a pilot correc",
+    "by": "default"
+  },
+  "loc-hilton-head-island|location-three-strong-faqs|h2-pattern-collision": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Reword: FAQ H2 to 'What Island Rules Does a Hilton Head Island Roofer Have to Work Around?'; Neighborhoods to 'Is Your Hilton Head Island Community on Apex's Service List?'; Things to Do to 'Golf, Art",
+    "by": "default"
+  },
+  "loc-hilton-head-island|loc-17|things-to-do-arts-center": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the item as written (real and verifiable by name); a detail can be added if the researcher finds one.",
+    "by": "default"
+  },
+  "loc-ladys-island|f-020|c3-procedure": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "List every reword on this sheet and in the apply record (drafts-apply.json) so a system session can correct C3; F-020 already flags the missing path. No Brand Guide edit in this run.",
+    "by": "default"
+  },
+  "loc-ladys-island|f-020|c3-rewords-and-replacements": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep; list for C3 (F-020).",
+    "by": "default"
+  },
+  "loc-ladys-island|f-021|brief-time-pdf-read": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep both as written (the reader is told to ask the County which period applies).",
+    "by": "default"
+  },
+  "loc-ladys-island|usage-tiers|cleanup-review-tier": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the attributed example.",
+    "by": "default"
+  },
+  "loc-ladys-island|loc-15|coosaw-point-top-site-only": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep.",
+    "by": "default"
+  },
+  "loc-levy|f-020|c3-rewords-and-replacements": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep; list for C3 (F-020).",
+    "by": "default"
+  },
+  "loc-levy|e5|unsourced-brand-preference": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Remove 'and many homeowners have one'.",
+    "by": "default"
+  },
+  "loc-levy|settled-business|workmanship-warranty-sentence": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the sentence, no term; at apply, close the stale open ask fact:d:warranty_terms in decisions-settled.md (run.py decision --settle, citing facts.json d-warranty-terms and settled 'business').",
+    "by": "default"
+  },
+  "loc-levy|pack-evidence-added|new-public-facts": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep.",
+    "by": "default"
+  },
+  "loc-levy|loc-15|thin-sections": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Ship as is.",
+    "by": "default"
+  },
+  "loc-okatie|bb-316|permit-faq-collision": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep all five: each answers its own jurisdiction's point in a different question shape. No change.",
+    "by": "default"
+  },
+  "loc-okatie|location-three-strong-faqs|h2-pattern-collision": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Reword: services to 'In Beaufort or Jasper County, What Can an Okatie Roofer Do for Your Home?'; local context to 'Which River and Which Communities Shape Okatie?'; FAQ to 'Community Rules or County P",
+    "by": "default"
+  },
+  "loc-okatie|location-three-strong-faqs|faq1-trust": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Reword the question to 'Which Okatie-area communities has Apex already roofed in?'; add the pain point (behind a gate, the job runs on the community's rules as well as the County's), that Ralph and Pi",
+    "by": "default"
+  },
+  "loc-okatie|e1|opening-local-context-repeat": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Rewrite the local context to three sentences without the repeats: the Okatee River name and 20 ft elevation; the Jasper-to-Beaufort extent, unincorporated; Sun City Hilton Head's three phases. The ope",
+    "by": "default"
+  },
+  "loc-okatie|loc-15|neighbourhoods-4-of-6": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Ship with four verified names.",
+    "by": "default"
+  },
+  "loc-okatie|loc-17|things-to-do-thin": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep as written.",
+    "by": "default"
+  },
+  "loc-okatie|f-021|brief-time-pdf-read": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep: sourced at brief time, attributed to 'Callawassie's published guidelines'.",
+    "by": "default"
+  },
+  "loc-port-royal|f-020|c3-rewords-and-replacements": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep; list for C3 (F-020).",
+    "by": "default"
+  },
+  "loc-port-royal|pack-evidence-added|flood-five-year-count": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep.",
+    "by": "default"
+  },
+  "loc-port-royal|f-021|brief-time-pdf-read": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep: sourced at brief time, and the reader is sent to the Town's building office.",
+    "by": "default"
+  },
+  "loc-port-royal|loc-15|neighbourhoods-5-of-6": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Ship with five.",
+    "by": "default"
+  },
+  "loc-port-royal|loc-17|top-sites-and-things-changes": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep; correct the pack's top_sites fact at the next pack build.",
+    "by": "default"
+  },
+  "loc-port-royal|usage-tiers|speed-customers-mention": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep.",
+    "by": "default"
+  },
+  "loc-pritchardville|bb-316|storm-faq-overlap": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep all three: different question, local pain point and proof. No change.",
+    "by": "default"
+  },
+  "loc-pritchardville|location-three-strong-faqs|h2-pattern-collision": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Reword: services to 'Is Every Residential Roofer Service Open to a Pritchardville Home?'; Top Sites to 'Which Historic Church Stands Near Pritchardville?'; Siblings to 'Beyond Pritchardville and SC 46",
+    "by": "default"
+  },
+  "loc-pritchardville|f-020|c3-rewords-and-replacements": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the revised FAQs and headings; list them for C3 (F-020).",
+    "by": "default"
+  },
+  "loc-pritchardville|loc-15|neighbourhoods-dropped": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Ship with no neighborhoods section.",
+    "by": "default"
+  },
+  "loc-pritchardville|loc-17|things-to-do-dropped-one-top-site": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Ship as is.",
+    "by": "default"
+  },
+  "loc-pritchardville|usage-tiers|insurance-review-example": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep as an attributed example (no name, no claim that Apex handles insurance claims).",
+    "by": "default"
+  },
+  "loc-pritchardville|bb-316|two-faqs-same-office": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep both.",
+    "by": "default"
+  },
+  "loc-ridgeland|f-020|c3-rewords-and-replacements": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep; list for C3 (F-020).",
+    "by": "default"
+  },
+  "loc-ridgeland|f-021|materials-checklist-2021": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep, with the 'ask the Town's planning office for the current wording and your lot's zone' line.",
+    "by": "default"
+  },
+  "loc-ridgeland|usage-tiers|2020-review-beyond-opening": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep.",
+    "by": "default"
+  },
+  "loc-ridgeland|loc-15|one-neighbourhood-one-thing": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Ship as is.",
+    "by": "default"
+  },
+  "loc-st-helena-island|f-020|c3-rewords-and-replacements": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep; list for C3 (F-020).",
+    "by": "default"
+  },
+  "loc-st-helena-island|location-client-questions-skipped|no-named-st-helena-job": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep as written; no client question. If Paul names a St. Helena job in his reply line, one sentence is added.",
+    "by": "default"
+  },
+  "loc-st-helena-island|usage-tiers|communication-review-tier": {
+    "step": "drafts",
+    "at": "2026-10-13T13:50:21-05:00",
+    "choice": "a",
+    "action": "Keep the attributed example.",
+    "by": "default"
+  }
+}

@@ -6,9 +6,9 @@ meta_description: Beaufort roofers for roof repair, replacement, metal roofing a
 ---
 # Roofers in Beaufort
 
-Apex Roofing of the Lowcountry is a residential roofer for homes in Beaufort, SC, including the older houses in and around the City's National Historic Landmark district. On a historic house there, the roof material is not only your call. The City of Beaufort reviews it, and Apex coordinates the roofing-material approval with that review. Whether your house went up before the Civil War or in the early 1900s, start with a roofing contractor who plans for the City's step. Call (843) 757-2739 for a free estimate.
+Apex Roofing of the Lowcountry is a residential roofer for homes in Beaufort, SC, including the older houses in and around the City's National Historic Landmark district. On a historic house there, the roof material is not only your call. The City of Beaufort reviews it, and Apex coordinates the roofing-material approval with that review. Whether your house went up before the Civil War or in the early 1900s, start with a roofing contractor who plans for the City's step. Phone (843) 757-2739 to set up a free estimate.
 
-## What Roofing Services Does a Beaufort Roofing Contractor Offer?
+## Old House or New, What Will a Beaufort Roofing Contractor Take On?
 
 Apex brings eight roofing services to Beaufort homes, from The Point to Mossy Oaks:
 
@@ -30,11 +30,11 @@ Apex brings eight roofing services to Beaufort homes, from The Point to Mossy Oa
 
 | [Link wheel: populate service links here] |
 
-## What Makes Beaufort a Different Place to Roof?
+## Why Do Beaufort Roofs Sit on Some of the State's Oldest Houses?
 
 Beaufort's roofs sit on some of the oldest houses in the state. Chartered in 1711, Beaufort is the second-oldest city in South Carolina, and it sits amid a marshy estuary, mostly on Port Royal Island. The 1893 hurricane and a 1907 fire caused extensive destruction in the city. Today, 304 acres of Beaufort form a National Historic Landmark district known for its antebellum architecture, while Pigeon Point is mostly one-story homes from the early 20th century. A roof job in Beaufort can mean either kind of house, and each brings its own questions.
 
-## What Do Owners of Historic Beaufort Homes Ask a Roofer?
+## How Does a Beaufort Roofer Handle Historic Review, Metal and Terne?
 
 Owners of older Beaufort homes ask which City review a roof needs, whether metal is allowed and whether an old roof can be saved.
 
@@ -56,7 +56,7 @@ It may be, and the City of Beaufort would rather keep it. The City's staff polic
 
 Terne needs regular recoating, and neglected spots rust until the roof stops keeping water out. So you need a straight answer about your roof's condition. Ralph and Pierce Brehany, the father and son who founded Apex in 2015, are the ones on the roof, and the photos of the work come to you. One homeowner wrote in 2019 that Ralph took pictures and explained in detail what could be done to repair the roof.
 
-## Which Beaufort Neighborhoods Do We Serve?
+## Which Beaufort Neighborhoods, From The Point to Cottage Farms, Are Covered?
 
 Apex's service area takes in these Beaufort neighborhoods, from the five in the Historic District to those along Battery Creek:
 
@@ -75,7 +75,7 @@ Apex's service area takes in these Beaufort neighborhoods, from the five in the 
 
 [NEED: city-level map embed of Beaufort, SC — not the Google Business Profile map]
 
-## What Are Some Things to Do in Beaufort?
+## Which Festivals and Waterfront Spots Bring People to Beaufort?
 
 Beaufort's things to do run from the waterfront and a rail trail to two festivals a year.
 
@@ -84,7 +84,7 @@ Beaufort's things to do run from the waterfront and a rail trail to two festival
 - **Beaufort Shrimp Festival** — held the first weekend of October.
 - **Beaufort International Film Festival** — held in mid-February.
 
-## What Are the Top Sites to See in Beaufort?
+## Which Beaufort Landmarks Tell the City's Story Since 1712?
 
 Four of Beaufort's top sites carry the city's history from 1712 on.
 
@@ -93,7 +93,7 @@ Four of Beaufort's top sites carry the city's history from 1712 on.
 - **Robert Smalls House** — at 511 Prince Street, a private home seen from the street.
 - **Beaufort National Cemetery** — at 1601 Boundary Street, set up in 1863.
 
-## Which Towns Near Beaufort Do We Also Serve?
+## Port Royal, Lady's Island and Beyond: Which Other Towns Near Beaufort Does Apex Serve?
 
 Port Royal and Lady's Island, Beaufort's next-door neighbors, head the list of 11 more towns Apex serves.
 
