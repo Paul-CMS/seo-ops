@@ -261,6 +261,14 @@ def status_md(slug):
             "(Drive: \"" + c["name"] + " - VA Worklist\")._", ""]
     out += ([f"- **{hid}** ({owner}) — {kind}: {n_open} of {n} open, issued {issued}" for hid, owner, kind, issued, n_open, n in hs]
             or ["_None._"])
+    import manifest   # CM-061 §3.1: inputs on file that no finished step has read
+    un = manifest.unused(slug)
+    out += ["", "## Data on file not used yet", "",
+            "_Inputs the data manifest (methodology/data-manifest.json) says a step must read, where that step has not "
+            "finished for this client yet._", ""]
+    out += ([f"- **{e['id']}** ({len(fs)} file(s), e.g. `{fs[0]}`) — read by "
+             f"{', '.join(e.get('read_by') or ['the step that reads ' + e.get('raw_of', '?')])}" for e, fs in un]
+            or ["_None — every input on file has been read._"])
     import changereq   # P3: workflow issues flagged in this client's sessions, for Paul's next system session
     fl = changereq.open_flags(slug)
     out += ["", "## Flagged for Paul (system)", ""]

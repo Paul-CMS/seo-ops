@@ -380,6 +380,7 @@
         "templates/brand-guide.md (A, B)",
         "sop-source/BB-Standard-v1.0.md (BB-1xx entity rules)",
         "python3 scripts/rulings.py CM-016 CM-020 PROC-01 (never rulings.md whole, P12)",
+        "clients/<slug>/inputs/public-site-* (a saved copy of the client's site, if captured) and inputs/*entity-profile* (an earlier entity profile, if any)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -425,6 +426,7 @@
         "methodology/agency-profile.md (tools)",
         "clients/<slug>/brand-guide.md (services, cities)",
         "wordpress/wordpress-site-setup.md (§5 site-wide settings)",
+        "clients/<slug>/data/services.txt (the service names the pulls tag by)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -451,7 +453,8 @@
         "clients/<slug>/data/local-grid/local-grid-summary.md",
         "clients/<slug>/data/rankings/ (summaries)",
         "clients/<slug>/data/paa/paa-routing.md",
-        "clients/<slug>/data/fanout/fanout-routing.md"
+        "clients/<slug>/data/fanout/fanout-routing.md",
+        "clients/<slug>/inputs/ (an imported client's exports: crawl tables, technical audit, citation tracker, grid links, old URL map)"
       ]
     },
     "discovery:reconcile": {
@@ -529,6 +532,15 @@
         "the returned proof sheet and the approved Discovery Record",
         "methodology/evidence-requirements.json",
         "python3 scripts/rulings.py CM-016 CM-027 CM-041 (never rulings.md whole, P12)",
+        "clients/<slug>/facts.json (facts.py get)",
+        "clients/<slug>/data/reviews/reviews.csv + mentions.csv + review-facts.json (through the evidence pack)",
+        "clients/<slug>/data/paa/paa-questions.csv (through the evidence pack)",
+        "clients/<slug>/data/fanout/fanout-queries.csv (through the evidence pack)",
+        "clients/<slug>/data/crawl/ page-text.csv, data/gbp/ and data/local-grid/ (site_stated and GBP excerpts, through the evidence pack)",
+        "clients/<slug>/interviews/ (facts answers and transcripts, through the evidence pack)",
+        "methodology/sources/<state>-<area>.md (public facts and the public lookups for licences and certifications)",
+        "methodology/writing-commercial.md (Usage tiers)",
+        "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -554,6 +566,8 @@
         "the audit findings for these pages",
         "python3 scripts/rulings.py CM-041 CM-057 (never rulings.md whole, P12)",
         "clients/<slug>/build/pilot-corrections.md (if present — this client's pilot corrections, P3)",
+        "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts",
+        "methodology/writing-commercial.md (Usage tiers)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -573,6 +587,8 @@
         "clients/<slug>/brand-guide.md (A–D, H2, I)",
         "the drafts already written in this batch and the pages approved in earlier batches (sibling context)",
         "clients/<slug>/build/pilot-corrections.md (if present — this client's pilot corrections, P3)",
+        "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts (written at its usage tier)",
+        "methodology/writing-commercial.md (Usage tiers)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -591,6 +607,8 @@
         "clients/<slug>/brand-guide.md (C1–C3)",
         "the pages approved in earlier batches",
         "python3 scripts/rulings.py CM-017 CM-043 (never rulings.md whole, P12)",
+        "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts (the usage check: evidence used per page)",
+        "methodology/review-severities.json (Fix · Fix and list · Ask; the four Ask kinds)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -748,6 +766,7 @@
         "python3 scripts/rulings.py CM-007 CM-019 CM-021 (never rulings.md whole, P12)",
         "clients/<slug>/data/paa/paa-routing.md",
         "clients/<slug>/data/fanout/fanout-routing.md",
+        "clients/<slug>/inputs/*blog-inventory* (the CMS export of posts, if on file)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -1039,6 +1058,9 @@
         "clients/<slug>/facts.json (facts.py get)",
         "clients/<slug>/data/reviews/review-facts.json",
         "methodology/sources/<state>-<area>.md (the researcher)",
+        "clients/<slug>/data/reviews/reviews.csv + mentions.csv (through the evidence packs)",
+        "clients/<slug>/data/gbp/ (GBP Q&A and posts — the client research order)",
+        "the returned proof sheet and the approved Discovery Record",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -1063,6 +1085,9 @@
         "the audit findings for these pages",
         "python3 scripts/rulings.py CM-041 CM-057 (never rulings.md whole, P12)",
         "clients/<slug>/build/pilot-corrections.md (if present — this client's pilot corrections, P3)",
+        "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts",
+        "methodology/writing-commercial.md (Usage tiers)",
+        "methodology/review-severities.json (Fix · Fix and list · Ask; the four Ask kinds)",
         "clients/<slug>/decisions-settled.md",
         "the approved brief for this page",
         "methodology/writing-commercial.md",
