@@ -620,7 +620,7 @@
       ]
     },
     "loc-hilton-head-island": {
-      "state": "brief_written",
+      "state": "draft_written",
       "type": "location",
       "name": "Hilton Head Island",
       "url": "https://apexroofingtlc.com/hilton-head-island/",
@@ -652,6 +652,13 @@
           "run": "20261012-205526-build-9baf",
           "at": "2026-10-12T21:23:13-05:00",
           "sha": "1c3dcb6bf3ff"
+        },
+        "draft": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Hilton Head Island - Apex Roofing of the Lowcountry.md",
+          "run": "20261013-070640-build-ff69",
+          "at": "2026-10-13T07:11:35-05:00",
+          "sha": "04617075f915",
+          "agent": "build-subagent-loc-hilton-head-island-ff69"
         }
       },
       "pack": {
@@ -1790,12 +1797,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261012-213607-build-27a0",
+    "run_id": "20261013-070640-build-ff69",
     "command": "build",
-    "finished": "2026-10-13T07:01:00-05:00",
-    "result": "Locations Brand Guide write-back (CM-061): B3 +11 rows, C2 +11 rows, C3 +107 rows (74 H2s, 33 FAQs) from the approved briefs, no duplicates, no approved value changed, fact rows unchanged, Drive copied; flag F-020 (C3 vs re-worded draft headings).",
-    "changes": 5,
-    "step": "build:writeback",
+    "finished": "2026-10-13T07:12:33-05:00",
+    "result": "Drafted the Hilton Head Island location page (about 900 words, grade 7.0, E1-E10 and spec checks pass, briefed headings and FAQs unchanged, one NEED for the city map) and recorded it with status.py page-stage.",
+    "changes": 0,
+    "step": "build:draft",
     "batch": "locations"
   },
   "spend": {
@@ -1817,7 +1824,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T07:01:00-05:00",
+  "updated": "2026-10-13T07:12:33-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2146,8 +2153,8 @@
     }
   ],
   "review_pause": {
-    "run_id": "20261012-213607-build-27a0",
-    "step": "build:writeback",
-    "at": "2026-10-13T07:01:00-05:00"
+    "run_id": "20261013-070640-build-ff69",
+    "step": "build:draft",
+    "at": "2026-10-13T07:12:33-05:00"
   }
 }

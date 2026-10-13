@@ -4229,3 +4229,58 @@ Changes: 5 · Summary: Locations Brand Guide write-back (CM-061): B3 +11 rows, C
 - CHANGE #714 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (33).md | new: Apex Roofing of the Lowcountry - Status.md · sha 118691de9ca1 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #715 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - VA Worklist - 2026-10-12.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.md | new: _Archive/Apex Roofing of the Lowcountry - VA Worklist - 2026-10-12.md | result: done · renamed and moved, nothing deleted
 - CHANGE #716 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - VA Worklist - 2026-10-12.md | new: Apex Roofing of the Lowcountry - VA Worklist.md · sha 3b0b2f6a0b26 | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-13T07:06 · after build:writeback (run 20261012-213607-build-27a0) · Paul typed /next
+
+## RUN 20261013-070640-build-ff69 · STARTED · /build · 2026-10-13T07:06:40-05:00
+Step: build:draft · batch locations · session 4b4b1602-b1b8-4325-bb46-d6fdcde6c418
+Gates checked: discovery_signed_off, batch:locations:briefs, page_specs_approved
+- DRAFT 2026-10-13T07:11 · run 20261013-070640-build-ff69 · loc-hilton-head-island · clients/apex-roofing-of-the-lowcountry/build/locations/LD - Hilton Head Island - Apex Roofing of the Lowcountry.md · agent build-subagent-loc-hilton-head-island-ff69
+### HANDOFF · /build · 2026-10-13 · run 20261013-070640-build-ff69
+**Agent:** Build (Agent 2), Opus, fresh subagent for this one page (CM-043; agent id `build-subagent-loc-hilton-head-island-ff69`) · **Date:** 2026-10-13 · **Route:** A
+
+### Done
+- Drafted `clients/apex-roofing-of-the-lowcountry/build/locations/LD - Hilton Head Island - Apex Roofing of the Lowcountry.md` from the approved brief (LB - Hilton Head Island, briefs approved 2026-10-12), `methodology/specs/location.md`, `methodology/location-faq.md` and the evidence pack `build/locations/packs/loc-hilton-head-island.md`. About 900 body words (667 visitor-facing words scored by readability.py), under the 1,000 ceiling.
+- Recorded: `status.py page-stage apex-roofing-of-the-lowcountry loc-hilton-head-island --stage draft --run 20261013-070640-build-ff69 --agent build-subagent-loc-hilton-head-island-ff69` (exit 0).
+- No new flag. The readability `--exclude-terms` issue is already flagged (F-016); same workaround (terms file in scratchpad).
+
+### Stage 0/1 (map and plan, from the approved brief)
+- Title `Apex Roofing of the Lowcountry - Roofing Contractor - Hilton Head Island, South Carolina` · meta 159 chars (brief wording) · H1 `Roofers on Hilton Head Island` · no "The Best" (BG-H2, settled cm020).
+- Variant chain: URL hilton-head-island → title Roofing Contractor → H1 Roofers → first H2 Roofing Contractor → opening roofer / roofing contractor + Hilton Head Island, SC · Beaufort County → FAQ H2 Roofer. Reserved B1 variant and "metro area" unused.
+- Order (CM-023): opening → services H2 (8 H3s, placeholder row) → local context H2 → FAQ H2 (3 H3s) → neighborhoods H2 (8 list items) → map → Things to Do H2 (4) → Top Sites H2 (4) → sibling cities H2 (placeholder row) → CTA with NAP (no H tag).
+- Every H2 and FAQ question is the C3/briefed wording, unchanged (F-020: nothing re-worded).
+
+### Stage 3 self-critique
+- **E1 portability:** pass. Opening angle (plantation review boards, Sea Pines and Palmetto Dunes) and local context (listed elevation 0 ft, sea island north / barrier island south, Broad Creek marsh, 1893 surge, 40.3% of 29,018 units vacant) are island-only. Table lead-in, neighborhoods lead-in, sibling lead-in and CTA line re-worded so none copies Bluffton's sentences; the permit sentence is re-worded from Bluffton's.
+- **E2 specificity:** pass, 5+ (elevation and sea/barrier island geography; 1893 Sea Islands Hurricane 16-ft surge; 2020 housing units and vacancy; Sea Pines and Palmetto Dunes board rules incl. the 1 Jan 2026 effective date; the Town's 49% threshold).
+- **E3 variants:** pass — no consecutive repeat; assigned variants used; B1 reserved unused.
+- **E4 chunks (heading-inclusive words):** services 47 · local context 118 · FAQ 371 · neighborhoods 53 · Things to Do 91 · Top Sites 56 · siblings 54 — all ≤ 375 (FAQ trimmed from 505 in the first pass: Sea Pines sample/default-shingle detail, Palmetto Dunes wind/fire-rating line and the Zone VE elevation rule cut).
+- **E5 invention sweep:** pass. No price, lifespan, response time, warranty, licence, rating, reviewer name or review content. No claim that Apex has worked in Sea Pines, Palmetto Dunes or Hilton Head Plantation. No Palmetto Dunes colour names. No Florida 3,000-ft code rule. Re-roof vs the 49% test left to the Town. Salt-air answer is FEMA 2004 guidance only, stated as not an SC/Beaufort code; no "Apex uses stainless nails". Apex's own part uses settled facts only (metal colour submittals and ARB submissions for HOA communities; Town permit on a replacement).
+- **E6 filler:** pass; no A6 phrases.
+- **E7 headers:** one H1; every H2 a spoken question naming Hilton Head Island; no skipped levels. COM-11: title remainder "Roofing Contractor" vs H1 remainder "Roofers" — pass.
+- **E8 links:** no link or `[LINK →]` in prose, FAQ or local context; both link-table placeholder rows present.
+- **E9 human:** reads as a local roofer explaining island rules; trade terms explained in the next clause (review board, underlayment, zinc-coated).
+- **E10 reading level:** page grade 7.0 (≤ 8.9); highest paragraph 9.7 (neighborhoods); three paragraphs over 10 in the first pass split. Read-aloud pass done. FAQ first answer paragraphs 47 / 46 / 55 words (40–60).
+- **Spec checks:** LOC-01–07, 09–13, 15, 17–25 pass; LOC-08 N/A; LOC-14 pass (3 FAQs, all island-only, none elsewhere in C3 except the settled flood-rule overlap, worded for the Town's own source); LOC-16 open (map placeholder); LOC-26 recommendation only (WebPage + ItemList, no LocalBusiness); LOC-27 N/A.
+
+### Open items (placeholders.py: 1)
+1. `[NEED: city-level map embed of Hilton Head Island, SC — not the Google Business Profile map]` — written as a NEED note, not the brief's `[Map: …]` wording (P11 forbids instruction brackets; the approved Bluffton pilot still carries `[Map: …]`).
+- Link-table rows `| [Link wheel: populate service links here] |` and `| [Link wheel: populate sibling-city links here] |` (spec §6 form; Finish fills).
+
+### For the draft review
+- FAQ categories (location-faq.md asks one per category): the brief assigns two "local decision" FAQs (plantation boards, Town flood rule) and one "trust" FAQ (salt air), no logistics FAQ — kept as briefed and approved; the checker may list it.
+- Things to Do: the pack gives no fact for the Arts Center of Coastal Carolina; the item reads "the arts center on the island" only.
+- Salt-air FAQ sits closest to Fripp Island's oceanfront answer — this one stays on fasteners only.
+- Flood-rule FAQ overlaps Port Royal and Lady's Island (settled `flood_rule_faq_overlap_kept`); compare wording side by side.
+- Outbound authority candidates for Finish (CM-011): https://pdpoa.org/about/arb/ (FAQ 1), the FEMA advisory (FAQ 2).
+
+### Not done
+- No publish, no WordPress, no link table, no schema, no Brand Guide write-back (drafts never write it, CM-061).
+### END HANDOFF
+## RUN 20261013-070640-build-ff69 · FINISHED · 2026-10-13T07:12:33-05:00
+Changes: 0 · Summary: Drafted the Hilton Head Island location page (about 900 words, grade 7.0, E1-E10 and spec checks pass, briefed headings and FAQs unchanged, one NEED for the city map) and recorded it with status.py page-stage.
+- CHANGE #717 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13.md | result: done · renamed and moved, nothing deleted
+- CHANGE #718 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13.md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha abddb58517e8 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #719 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13.md | result: done · renamed and moved, nothing deleted
+- CHANGE #720 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13.md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha ca59c1db50ec | result: done · copied (Drive for desktop syncs it)
+- CHANGE #721 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13.md | result: done · renamed and moved, nothing deleted
+- CHANGE #722 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13.md | new: Apex Roofing of the Lowcountry - Status.md · sha 158178c517e8 | result: done · copied (Drive for desktop syncs it)
