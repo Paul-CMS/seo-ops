@@ -4965,3 +4965,37 @@ Changes: 0 · Summary: Port Royal flood FAQ now states the Town code's five-year
 - CHANGE #768 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (9).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha e0437a850756 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #769 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (9).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (9).md | result: done · renamed and moved, nothing deleted
 - CHANGE #770 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (9).md | new: Apex Roofing of the Lowcountry - Status.md · sha 7d1e59b71fd1 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261013-123330-build-0582 · STARTED · /build · 2026-10-13T12:33:30-05:00
+Step: build:draft · batch locations · session 4b4b1602-b1b8-4325-bb46-d6fdcde6c418
+Gates checked: discovery_signed_off, batch:locations:briefs, page_specs_approved
+- RESEARCH 2026-10-13T12:34 · run 20261013-123330-build-0582 · RL-locations-29 · top_sites:robert_smalls_house (public): found
+- RESEARCH 2026-10-13T12:34 · run 20261013-123330-build-0582 · RL-locations-30 · top_sites:beaufort_national_cemetery (public): found
+- DRAFT 2026-10-13T12:34 · run 20261013-123330-build-0582 · loc-beaufort · clients/apex-roofing-of-the-lowcountry/build/locations/LD - Beaufort - Apex Roofing of the Lowcountry.md · agent build-subagent-loc-beaufort-0582
+### HANDOFF · /build · 2026-10-13 · run 20261013-123330-build-0582
+**What was done**
+- Revised `clients/apex-roofing-of-the-lowcountry/build/locations/LD - Beaufort - Apex Roofing of the Lowcountry.md` per Paul (2026-10-13): one verified detail added to each Top Sites item that had a name only. Nothing else changed (git diff: 2 lines).
+  - Robert Smalls House: "at 511 Prince Street, a private home seen from the street." (NPS)
+  - Beaufort National Cemetery: "at 1601 Boundary Street, set up in 1863." (VA NCA; NPS)
+  - Not used, as instructed: a build date for the Smalls house; the "original national cemetery" wording.
+- Research log: RL-locations-29 (Robert Smalls House, NPS) and RL-locations-30 (Beaufort National Cemetery, VA + NPS) in `build/locations/research-log.csv`, both `public`, `found`.
+- Recorded with `status.py page-stage apex-roofing-of-the-lowcountry loc-beaufort --stage draft --run 20261013-123330-build-0582 --agent build-subagent-loc-beaufort-0582` (exit 0).
+
+**Checks**
+- Readability/E10: page grade 7.3 over 711 scored words, no paragraph over 10, E10 passes. Top Sites section grade 0.9. F-016 workaround used: terms file in the scratchpad. That file lists entity names: the client, the towns, the street and site names, Historic District, Certificate of Appropriateness, Battery Creek and similar. With a narrower terms file, two untouched paragraphs scored over 10 because of entity names. The committed version scores the same way, so this revision did not cause it.
+- E4: Top Sites section is 61 words. The FAQ chunks are unchanged, and every chunk is under 375 words.
+- E5: no price, time, permit or work claim added. The addresses and dates are public facts with cited sources.
+- Page length: about 940 words of body markup (1,013 including frontmatter). There are 711 scored prose words, so the page is under 1,000.
+- placeholders.py: 2, unchanged (NEED map embed; LINK → /metal-roofing/).
+- Siblings: the new details are Beaufort-only landmarks, so they do not overlap any sibling page.
+
+**Flags**: none raised. Approvals: none.
+### END HANDOFF
+## RUN 20261013-123330-build-0582 · FINISHED · 2026-10-13T12:35:04-05:00
+Changes: 0 · Summary: Beaufort location draft revised: one sourced detail each added to the Robert Smalls House (511 Prince Street, private home) and Beaufort National Cemetery (1601 Boundary Street, est. 1863) Top Sites items, RL-locations-29/30 logged, E10 passes at grade 7.3, draft re-recorded.
+- CHANGE #771 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (10).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #772 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (10).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 7ce9b0451f67 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #773 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (10).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #774 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (10).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 0eb500e60d73 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #775 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (10).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #776 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (10).md | new: Apex Roofing of the Lowcountry - Status.md · sha 211227d6ce75 | result: done · copied (Drive for desktop syncs it)

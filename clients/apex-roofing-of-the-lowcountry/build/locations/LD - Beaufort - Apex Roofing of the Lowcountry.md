@@ -90,8 +90,8 @@ Four of Beaufort's top sites carry the city's history from 1712 on.
 
 - **Parish Church of St. Helena** — founded in 1712.
 - **John Mark Verdier House** — at 901 Bay Street.
-- **Robert Smalls House**
-- **Beaufort National Cemetery**
+- **Robert Smalls House** — at 511 Prince Street, a private home seen from the street.
+- **Beaufort National Cemetery** — at 1601 Boundary Street, set up in 1863.
 
 ## Which Towns Near Beaufort Do We Also Serve?
 

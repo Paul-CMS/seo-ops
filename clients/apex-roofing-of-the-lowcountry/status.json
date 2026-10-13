@@ -842,10 +842,10 @@
         },
         "draft": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Beaufort - Apex Roofing of the Lowcountry.md",
-          "run": "20261013-075700-build-e62d",
-          "at": "2026-10-13T08:03:25-05:00",
-          "sha": "aff51fef8997",
-          "agent": "build-subagent-loc-beaufort-e62d"
+          "run": "20261013-123330-build-0582",
+          "at": "2026-10-13T12:34:39-05:00",
+          "sha": "36483f42d6b3",
+          "agent": "build-subagent-loc-beaufort-0582"
         }
       },
       "pack": {
@@ -1832,10 +1832,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-123131-build-3f60",
+    "run_id": "20261013-123330-build-0582",
     "command": "build",
-    "finished": "2026-10-13T12:33:26-05:00",
-    "result": "Port Royal flood FAQ now states the Town code's five-year cumulative permit count toward the 50% rule (ch. 9 Sec. 9-21, Ord. 2020-34), logged as RL-locations-28; all other content unchanged, checks pass (grade 5.8, FAQ lead 59 words).",
+    "finished": "2026-10-13T12:35:04-05:00",
+    "result": "Beaufort location draft revised: one sourced detail each added to the Robert Smalls House (511 Prince Street, private home) and Beaufort National Cemetery (1601 Boundary Street, est. 1863) Top Sites items, RL-locations-29/30 logged, E10 passes at grade 7.3, draft re-recorded.",
     "changes": 0,
     "step": "build:draft",
     "batch": "locations"
@@ -1859,7 +1859,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T12:33:26-05:00",
+  "updated": "2026-10-13T12:35:04-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2188,8 +2188,8 @@
     }
   ],
   "review_pause": {
-    "run_id": "20261013-123131-build-3f60",
+    "run_id": "20261013-123330-build-0582",
     "step": "build:draft",
-    "at": "2026-10-13T12:33:26-05:00"
+    "at": "2026-10-13T12:35:04-05:00"
   }
 }
