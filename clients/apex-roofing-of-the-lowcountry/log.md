@@ -5831,3 +5831,40 @@ Changes: 12 · Summary: Locations drafts review (CM-061): 11 drafts checked side
 - CHANGE #828 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (17).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 99a68a45004e | result: done · copied (Drive for desktop syncs it)
 - CHANGE #829 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (17).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (17).md | result: done · renamed and moved, nothing deleted
 - CHANGE #830 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (17).md | new: Apex Roofing of the Lowcountry - Status.md · sha 350ee4ee2a0f | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261013-140135-build-f424 · STARTED · /build · 2026-10-13T14:01:35-05:00
+Step: build:draft · batch locations · session 4b4b1602-b1b8-4325-bb46-d6fdcde6c418
+Gates checked: discovery_signed_off, batch:locations:briefs, page_specs_approved
+- SETTLED locations_drafts_open_choices · 2026-10-13T14:01:35-05:00 · run 20261013-140135-build-f424 · by Paul · Paul 2026-10-13, locations drafts open choices: (1) Hardeeville S.C. Code 15-3-640 paragraph kept (recommendation); (2) Fripp Island: drop all mention of contractor decals - no decal rule line, no decal claim; (3) Ridgeland materials FAQ kept with 'ask the Town for the current wording' (recommendation); (4) Ridgeland 2020 family-member review paragraph kept in the trust FAQ (recommendation).
+- CHANGE #831 [draft] clients/apex-roofing-of-the-lowcountry/build/locations/LD - Fripp Island - Apex Roofing of the Lowcountry.md | Gate FAQ first paragraph (contractor decal sentence removed) | old: A contractor whose vehicle carries a Fripp Island Contractor decal pays no access fee. | new: (sentence removed) | result: APPLIED · local · Paul's answer, settled locations_drafts_open_choices (2026-10-13)
+- DRAFT 2026-10-13T14:02 · run 20261013-140135-build-f424 · loc-fripp-island · clients/apex-roofing-of-the-lowcountry/build/locations/LD - Fripp Island - Apex Roofing of the Lowcountry.md · agent build-subagent-loc-fripp-island-f424
+### HANDOFF · /build · 2026-10-13 · run 20261013-140135-build-f424
+**Agent:** build-subagent-loc-fripp-island-f424 (fresh context, one page, CM-043)
+
+### Done
+- Applied Paul's answer (settled `locations_drafts_open_choices`, 2026-10-13): removed every mention of contractor decals from the Fripp Island page.
+  - Took out one sentence in the gate FAQ's first paragraph: "A contractor whose vehicle carries a Fripp Island Contractor decal pays no access fee."
+  - No other wording needed fixing. No new facts. Nothing else changed.
+  - `grep -i decal` now finds 0 matches.
+- Logged as change #831 (`run.py change`, the same way run 53f3 logged its review edits).
+- Recorded the draft again: `status.py page-stage … --stage draft --agent build-subagent-loc-fripp-island-f424`.
+
+### Checks
+- Gate FAQ first paragraph: 41 words (the limit is 40–60). Passes.
+- FAQ H2 section: 346 words of body text (the limit is 375 or fewer). Passes.
+- E10 readability, using the F-016 terms file `scratchpad/terms-fripp.txt`:
+  - Page grade 6.9 over 680 words. No paragraph is over grade 10.
+  - The gate FAQ grades 8.3. Passes.
+- `placeholders.py scan`: 1 placeholder, the expected map NEED (line 72).
+
+### Open
+- None from this edit.
+### END HANDOFF
+## RUN 20261013-140135-build-f424 · FINISHED · 2026-10-13T14:03:11-05:00
+Changes: 1 · Summary: Fripp Island draft: removed the contractor decal sentence from the gate FAQ per Paul's settled answer (locations_drafts_open_choices); FAQ paragraph 41 words, FAQ section 346 words, E10 grade 6.9, 1 map NEED; draft re-recorded.
+- CHANGE #832 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (18).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (18).md | result: done · renamed and moved, nothing deleted
+- CHANGE #833 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (18).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha e8426375f282 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #834 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (18).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (18).md | result: done · renamed and moved, nothing deleted
+- CHANGE #835 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (18).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 138940b5a3e1 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #836 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (18).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (18).md | result: done · renamed and moved, nothing deleted
+- CHANGE #837 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (18).md | new: Apex Roofing of the Lowcountry - Status.md · sha b8d8d91904b5 | result: done · copied (Drive for desktop syncs it)

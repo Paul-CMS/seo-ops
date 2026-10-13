@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the drafts for batch locations are ready: review each with the semantic review table (noth; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
 - **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry batch:locations:drafts` (or asks for changes first)
 
-_Generated 2026-10-13T13:55 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-13T14:03 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -110,6 +110,7 @@ _Open, but the next action above goes ahead without them._
 - Paul 2026-10-12 supplied public research for Pritchardville, Levy, Lady's Island (answers.md §1) and Ridgeland, Okatie (answers-round-2.md); researched and cited into the page facts files (research log, run 20261012-205526-build-9baf). Wording limits kept: Pritchardville 'and nearby New Riverside/Bluffton communities', never a City; no blanket historic restrictions; gutters do not fix flooding. Levy is unincorporated Jasper County (not Beaufort County); water-company history only; Jasper County permit FAQ, no exemption promise. Ridgeland postal address ≠ town limits; no inland-wear or '130 mph' claim. Okatie spans Beaufort and Jasper; no Beaufort-only permit answer; Callawassie rules not copied to Spring Island; permit and ARC approval kept separate.
 - Paul 2026-10-12: Brand Guide Section F confirmed NAP / schema address = the full street address '6 Sutton Ct, Bluffton, SC 29910' (matches the website and BBB, settled 'business'). The Google profile stays a service-area business with the address hidden.
 - Paul 2026-10-13: keep the location FAQ recipe (methodology/location-faq.md, adapted from Bradley's local FAQ prompt). Every location page, Pritchardville and every page still to draft, has three strong FAQs, one per category: (1) local cost or decision, (2) logistics in this area, (3) trust in this area (a local pain point plus Apex's local experience), each rooted in sourced, place-relevant facts. A FAQ may be reworded from the brief to meet this; the reword is listed for the drafts review (F-020). Pritchardville must not compete with Bluffton, where it overlaps the Town limits: anchor it in Pritchardville itself, with Bluffton only as Apex's base and a neighbour. Each page is written uniquely (no sentence, angle or heading pattern reused from a sibling page).
+- Paul 2026-10-13, locations drafts open choices: (1) Hardeeville S.C. Code 15-3-640 paragraph kept (recommendation); (2) Fripp Island: drop all mention of contractor decals - no decal rule line, no decal claim; (3) Ridgeland materials FAQ kept with 'ask the Town for the current wording' (recommendation); (4) Ridgeland 2020 family-member review paragraph kept in the trust FAQ (recommendation).
 
 ## Open VA items
 
@@ -159,4 +160,4 @@ _None — every input on file has been read._
 | build:brief | 2 | 612,000 | $0.00 |
 | **total** | 2 | 612,000 | $0.00 |
 
-Last run: /build 2026-10-13T13:55 — Locations drafts review (CM-061): 11 drafts checked side by side; one sheet with 0 Ask, 61 Fix and list (applied: Hilton Head Island trust FAQ and permit-claim removal, Okatie FAQ 1 and local context, H2 rewords on 4 pages, Levy unsourced clause), 8 form fixes; stale warranty ask closed; F-022 flagged; ready for /approve batch:locations:drafts.
+Last run: /build 2026-10-13T14:03 — Fripp Island draft: removed the contractor decal sentence from the gate FAQ per Paul's settled answer (locations_drafts_open_choices); FAQ paragraph 41 words, FAQ section 346 words, E10 grade 6.9, 1 map NEED; draft re-recorded.

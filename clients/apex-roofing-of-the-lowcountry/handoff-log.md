@@ -3747,3 +3747,26 @@ Hilton Head Island 1/47 · Okatie 3/48 · Pritchardville 3/49 · Beaufort 3/47 �
 ### Not done
 Nothing approved. No WordPress, no link table, no schema, no Brand Guide write-back. `run.py finish` is left to the calling command.
 
+## /build · 2026-10-13 · run 20261013-140135-build-f424
+
+**Agent:** build-subagent-loc-fripp-island-f424 (fresh context, one page, CM-043)
+
+### Done
+- Applied Paul's answer (settled `locations_drafts_open_choices`, 2026-10-13): removed every mention of contractor decals from the Fripp Island page.
+  - Took out one sentence in the gate FAQ's first paragraph: "A contractor whose vehicle carries a Fripp Island Contractor decal pays no access fee."
+  - No other wording needed fixing. No new facts. Nothing else changed.
+  - `grep -i decal` now finds 0 matches.
+- Logged as change #831 (`run.py change`, the same way run 53f3 logged its review edits).
+- Recorded the draft again: `status.py page-stage … --stage draft --agent build-subagent-loc-fripp-island-f424`.
+
+### Checks
+- Gate FAQ first paragraph: 41 words (the limit is 40–60). Passes.
+- FAQ H2 section: 346 words of body text (the limit is 375 or fewer). Passes.
+- E10 readability, using the F-016 terms file `scratchpad/terms-fripp.txt`:
+  - Page grade 6.9 over 680 words. No paragraph is over grade 10.
+  - The gate FAQ grades 8.3. Passes.
+- `placeholders.py scan`: 1 placeholder, the expected map NEED (line 72).
+
+### Open
+- None from this edit.
+

@@ -46,7 +46,7 @@ The ARB meets on the first and third Thursday of each month at 8:30 AM. Applicat
 
 ### Why does a roofing crew need clearance at the Fripp Island security gate?
 
-Fripp Island is private, so Security officers from the property owners' association run its gate day and night. The association charges access fees to some commercial vendors and service providers. A contractor whose vehicle carries a Fripp Island Contractor decal pays no access fee. Weekend work needs Security's permission, and it must be quiet work.
+Fripp Island is private, so Security officers from the property owners' association run its gate day and night. The association charges access fees to some commercial vendors and service providers. Weekend work needs Security's permission, and it must be quiet work.
 
 A contractor who arrives without the fee will not be turned away if Security can reach you and you agree to pay within 14 days. Security then emails you an IOU, so keep your phone close on work days. Ask how the gate will be handled when you book your estimate, so nothing holds up the first day.
 

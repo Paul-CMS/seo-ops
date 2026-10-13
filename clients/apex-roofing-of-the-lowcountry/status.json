@@ -1090,10 +1090,10 @@
         },
         "draft": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Fripp Island - Apex Roofing of the Lowcountry.md",
-          "run": "20261013-124504-build-b1c6",
-          "at": "2026-10-13T12:53:08-05:00",
-          "sha": "4cb7754bf8fc",
-          "agent": "build-subagent-loc-fripp-island-b1c6"
+          "run": "20261013-140135-build-f424",
+          "at": "2026-10-13T14:02:46-05:00",
+          "sha": "b69d330227e5",
+          "agent": "build-subagent-loc-fripp-island-f424"
         }
       },
       "pack": {
@@ -1901,12 +1901,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-133740-build-53f3",
+    "run_id": "20261013-140135-build-f424",
     "command": "build",
-    "finished": "2026-10-13T13:55:19-05:00",
-    "result": "Locations drafts review (CM-061): 11 drafts checked side by side; one sheet with 0 Ask, 61 Fix and list (applied: Hilton Head Island trust FAQ and permit-claim removal, Okatie FAQ 1 and local context, H2 rewords on 4 pages, Levy unsourced clause), 8 form fixes; stale warranty ask closed; F-022 flagged; ready for /approve batch:locations:drafts.",
-    "changes": 12,
-    "step": "build:drafts",
+    "finished": "2026-10-13T14:03:11-05:00",
+    "result": "Fripp Island draft: removed the contractor decal sentence from the gate FAQ per Paul's settled answer (locations_drafts_open_choices); FAQ paragraph 41 words, FAQ section 346 words, E10 grade 6.9, 1 map NEED; draft re-recorded.",
+    "changes": 1,
+    "step": "build:draft",
     "batch": "locations"
   },
   "spend": {
@@ -1928,7 +1928,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T13:55:19-05:00",
+  "updated": "2026-10-13T14:03:11-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2257,8 +2257,8 @@
     }
   ],
   "review_pause": {
-    "run_id": "20261013-133740-build-53f3",
-    "step": "build:drafts",
-    "at": "2026-10-13T13:55:19-05:00"
+    "run_id": "20261013-140135-build-f424",
+    "step": "build:draft",
+    "at": "2026-10-13T14:03:11-05:00"
   }
 }
