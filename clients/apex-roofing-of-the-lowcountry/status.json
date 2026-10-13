@@ -780,10 +780,10 @@
         },
         "draft": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Pritchardville - Apex Roofing of the Lowcountry.md",
-          "run": "20261013-072426-build-e9bb",
-          "at": "2026-10-13T07:27:04-05:00",
-          "sha": "0e1c3fce3768",
-          "agent": "build-subagent-loc-pritchardville-e9bb"
+          "run": "20261013-074929-build-0560",
+          "at": "2026-10-13T07:55:40-05:00",
+          "sha": "4e1f8c0c4820",
+          "agent": "build-subagent-loc-pritchardville-0560"
         }
       },
       "pack": {
@@ -1811,10 +1811,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-072426-build-e9bb",
+    "run_id": "20261013-074929-build-0560",
     "command": "build",
-    "finished": "2026-10-13T07:27:53-05:00",
-    "result": "Drafted loc-pritchardville (LD - Pritchardville) from its approved brief and evidence pack; E1-E10 and spec checks pass apart from the briefed FAQ H2 wording, LOC-15/17 below target as Fix and list; one NEED (city map) remains.",
+    "finished": "2026-10-13T07:56:50-05:00",
+    "result": "Pritchardville location draft revised to Paul's 2026-10-13 instructions: three sourced local FAQs (wind code, permit by address, hurricane evacuation), fact-checked local context (Ohio colony per the 1938 Ocean Highway guide, fire district, May River Road corridor), New Riverside neighbourhoods dropped so it does not compete with Bluffton, grade 6.1, one map NEED.",
     "changes": 0,
     "step": "build:draft",
     "batch": "locations"
@@ -1838,7 +1838,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T07:27:53-05:00",
+  "updated": "2026-10-13T07:56:50-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2167,8 +2167,8 @@
     }
   ],
   "review_pause": {
-    "run_id": "20261013-072426-build-e9bb",
+    "run_id": "20261013-074929-build-0560",
     "step": "build:draft",
-    "at": "2026-10-13T07:27:53-05:00"
+    "at": "2026-10-13T07:56:50-05:00"
   }
 }

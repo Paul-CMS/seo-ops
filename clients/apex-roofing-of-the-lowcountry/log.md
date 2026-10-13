@@ -4397,3 +4397,68 @@ Changes: 0 · Summary: Drafted loc-pritchardville (LD - Pritchardville) from its
 - CHANGE #732 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (3).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha ba10c3ef9b7d | result: done · copied (Drive for desktop syncs it)
 - CHANGE #733 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (3).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (3).md | result: done · renamed and moved, nothing deleted
 - CHANGE #734 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (3).md | new: Apex Roofing of the Lowcountry - Status.md · sha 3ba3885268f5 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261013-074929-build-0560 · STARTED · /build · 2026-10-13T07:49:29-05:00
+Step: build:draft · batch locations · session 4b4b1602-b1b8-4325-bb46-d6fdcde6c418
+Gates checked: discovery_signed_off, batch:locations:briefs, page_specs_approved
+- SETTLED location_three_strong_faqs · 2026-10-13T07:49:46-05:00 · run 20261013-074929-build-0560 · by Paul · Paul 2026-10-13: keep the location FAQ recipe (methodology/location-faq.md, adapted from Bradley's local FAQ prompt). Every location page, Pritchardville and every page still to draft, has three strong FAQs, one per category: (1) local cost or decision, (2) logistics in this area, (3) trust in this area (a local pain point plus Apex's local experience), each rooted in sourced, place-relevant facts. A FAQ may be reworded from the brief to meet this; the reword is listed for the drafts review (F-020). Pritchardville must not compete with Bluffton, where it overlaps the Town limits: anchor it in Pritchardville itself, with Bluffton only as Apex's base and a neighbour. Each page is written uniquely (no sentence, angle or heading pattern reused from a sibling page).
+- RESEARCH 2026-10-13T07:55 · run 20261013-074929-build-0560 · RL-locations-13 · fact:loc-pritchardville:local_context (public): found
+- RESEARCH 2026-10-13T07:55 · run 20261013-074929-build-0560 · RL-locations-14 · fact:loc-pritchardville:faq_wind_code (public): found
+- RESEARCH 2026-10-13T07:55 · run 20261013-074929-build-0560 · RL-locations-15 · fact:loc-pritchardville:faq_hurricane (public): found
+- DRAFT 2026-10-13T07:55 · run 20261013-074929-build-0560 · loc-pritchardville · clients/apex-roofing-of-the-lowcountry/build/locations/LD - Pritchardville - Apex Roofing of the Lowcountry.md · agent build-subagent-loc-pritchardville-0560
+### HANDOFF · /build · 2026-10-13 · run 20261013-074929-build-0560
+**Agent:** Build (Agent 2), Opus, fresh subagent for this one page (CM-043; agent id `build-subagent-loc-pritchardville-0560`) · **Date:** 2026-10-13 · **Route:** A
+
+### Done
+- Revised `clients/apex-roofing-of-the-lowcountry/build/locations/LD - Pritchardville - Apex Roofing of the Lowcountry.md` to Paul's instructions of 2026-10-13 (settled `location_three_strong_faqs`) and the researcher's fact-check. Recorded: `status.py page-stage … --stage draft --run 20261013-074929-build-0560 --agent build-subagent-loc-pritchardville-0560` (exit 0).
+- New public research logged: RL-locations-13 (local context: Bluffton Township Fire District history, Station 31, the 2023 County meeting at Pritchardville Elementary, the 1938 Ocean Highway guide), RL-locations-14 (S.C. Code Regs. 8-1202 shingle wind design; Beaufort County enforces the 2021 SC Residential Code), RL-locations-15 (Beaufort County has one hurricane evacuation zone, per Bluffton Township Fire District).
+- No flag raised. Readability `--exclude-terms` used a terms file in the scratchpad (F-016 workaround).
+
+### Changes, section by section
+- **Opening:** rewritten. It no longer says "Bluffton roofer covers your home", and it no longer opens with "So if…". It now covers: unincorporated Beaufort County, SC 46 between Hardeeville and Bluffton, no town government (which shapes who you call), based in Bluffton, no travel fee, phone and free estimate. Pritchard Farms is dropped (Wikipedia only).
+- **Services H2:** heading unchanged; new lead-in line.
+- **Local context:** the Ohio line now follows its source (1938 FWP *Ocean Highway* guide: "an Ohio colony", plus the Levys SC / Levys GA ticket-agent story told in my own words). Also new: SC 46 = May River Road corridor; Pritchardville's volunteer fire department was one of the three that formed the Bluffton Township Fire District in 1978, and Station 31 serves the area today; the 2023 County planning meeting at Pritchardville Elementary on the May River Road corridor. Removed: "east of Pritchardville it becomes May River Road".
+- **FAQ:** H2 reworded to a spoken question. All three FAQs rebuilt; see below.
+- **Neighborhoods:** section **dropped**, with its two New Riverside items, because they are Town of Bluffton developments and would compete with the Bluffton page. "New Riverside" is also gone from FAQ 2 and the CTA.
+- **Map NEED:** kept, in place after the FAQ.
+- **Top Sites:** St. Luke's Church, "about four miles north of Pritchardville"; 1824, transitional Georgian / Greek Revival, NRHP 1987, Bull Hill Church / St. Luke's Methodist. The exact day of the NRHP listing is dropped.
+- **Siblings:** unchanged. **CTA:** NAP unchanged; the line was reworded so it no longer copies the Bluffton or Hilton Head Island pattern.
+
+### The three FAQs
+1. **Cat. 1 · local decision (wind code):** "What wind rating do shingles need on a Pritchardville home?" Sources: S.C. Code Regs. 8-1202 (https://www.law.cornell.edu/regulations/south-carolina/R-8-1202), Beaufort County Building Codes (https://www.beaufortcountysc.gov/building-codes/index.html). No wind-speed number (none is sourced for the parcel). No Apex promise beyond the free estimate.
+2. **Cat. 2 · logistics (permit):** "Who issues the roof permit for a Pritchardville address?" (as briefed). Sources: the County Building Codes page; the Town forms page (https://www.townofbluffton.sc.gov/228/Applications-Certificates-Forms-and-Perm); Beaufort County GIS (https://www.beaufortcountysc.gov/gis/). The answer is hedged ("check your parcel"). It makes no Apex-pulls-the-permit claim and does not mention the Bluffton Explorer.
+3. **Cat. 3 · trust (hurricanes):** "Who checks my Pritchardville roof after a hurricane evacuation?" The pain point (one county-wide evacuation zone, so homes stand empty during a storm) comes from the Bluffton Township Fire District (https://blufftonfd.com/risk-reduction/hurricane-preparedness/hurricane-evacuation-information/). Local experience: founded 2015 (Paul Approved), and one attributed 2018 review on wind damage the insurer later covered (insurance claims: 2 reviewers, attributed tier, no company claim, no name).
+
+### Rewords vs the brief / C3 (F-020: Brand Guide C3 still holds the briefed wording)
+- FAQ H2: "Questions Pritchardville Homeowners Ask a Roofing Contractor" → "What Do Pritchardville Homeowners Ask a Roofing Contractor?"
+- FAQ 1: "Where should the rain off my roof go on a home near Pritchardville?" → replaced by "What wind rating do shingles need on a Pritchardville home?"
+- FAQ 3: "How is my yard left after a roof job in Pritchardville?" → replaced by "Who checks my Pritchardville roof after a hurricane evacuation?"
+- Neighborhoods H2 "Which Pritchardville Neighborhoods Do We Serve?" → removed (section dropped).
+
+### Not competing with Bluffton
+Every fact is about Pritchardville itself. Bluffton appears only as Apex's base, as a neighbour on SC 46, in the Town-limits permit logic, and in the proper names Town of Bluffton and Bluffton Township Fire District. The page has no Bluffton neighbourhoods, no Bluffton things to do, no Bluffton drainage advice and no "Bluffton roofer covers you" angle.
+
+### Checks
+- 776 words in the file; 546 visitor-facing words scored. Page grade 6.1, no paragraph over 10, E10 pass. FAQ first paragraphs are 55, 52 and 58 words.
+- E1 portability: pass. Opening, local context and FAQs are Pritchardville-only, and no sentence or heading pattern is taken from Bluffton, Okatie or Hilton Head Island. E2: 7 or more specific facts. E3 variant chain unchanged (title Roofing Contractor → H1 Roofers → services H2 Residential Roofer → opening roofing contractor → FAQ H2 Roofing Contractor). E4: all chunks under 375. E5: no price, response time, distance, drive time, wind-speed figure, annexation claim or permit-pulling claim. E6: pass. E7: one H1, every H2 a question naming the entity. E8: no prose links. E9: pass.
+- Spec: LOC-14 met (3 FAQs, one per category). LOC-15 not met (neighbourhoods dropped; Fix and list). LOC-16 open (map NEED). LOC-17 partial (no Things to Do; one Top Site).
+- Placeholders: 1 NEED (map). Link-table rows: 2 (service and sibling).
+
+### For the drafts review
+1. Fix and list: Neighborhoods section dropped. Option: restore it with the District 9B map labels (Westbury Park, Gascoigne Bluff, Alston Park) once a source shows they are in Pritchardville.
+2. Fix and list: the drainage and clean-up FAQs were replaced (Paul's instruction). The rewords above need a C3 update at the next write-back.
+3. FAQ 3 quotes a review that mentions insurance coverage, as an attributed example only. Confirm that is acceptable (it is a money-adjacent statement).
+4. FAQ 1 and FAQ 2 both send the reader to Beaufort County Building Codes. This is deliberate (different questions), but check it at the checker pass.
+5. Finish outbound candidates (CM-011): S.C. Code Regs. 8-1202, Beaufort County Building Codes, the Town forms page, Beaufort County GIS, and the Bluffton Township Fire District evacuation page.
+
+### Not done
+No publish, link table, schema or Brand Guide write-back. Nothing approved.
+### END HANDOFF
+## RUN 20261013-074929-build-0560 · FINISHED · 2026-10-13T07:56:50-05:00
+Changes: 0 · Summary: Pritchardville location draft revised to Paul's 2026-10-13 instructions: three sourced local FAQs (wind code, permit by address, hurricane evacuation), fact-checked local context (Ohio colony per the 1938 Ocean Highway guide, fire district, May River Road corridor), New Riverside neighbourhoods dropped so it does not compete with Bluffton, grade 6.1, one map NEED.
+- CHANGE #735 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (4).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #736 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (4).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha fbc77690cf43 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #737 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (4).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #738 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (4).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 26e7d77a1806 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #739 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (4).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #740 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (4).md | new: Apex Roofing of the Lowcountry - Status.md · sha fedd64b1c216 | result: done · copied (Drive for desktop syncs it)

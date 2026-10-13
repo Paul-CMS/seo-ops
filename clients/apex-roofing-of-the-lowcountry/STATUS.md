@@ -2,16 +2,16 @@
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch locations)**
 - **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:draft finished (run 20261013-072426-build-e9bb) and that stage is in review mode — l; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
+- **Waiting on:** Paul — build:draft finished (run 20261013-074929-build-0560) and that stage is in review mode — l; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
 - **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
 
-_Generated 2026-10-13T07:27 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-13T07:56 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:draft finished (run 20261013-072426-build-e9bb) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry draft locations loc-beaufort (draft and self-critique for loc-beaufort (its own run)) | 2026-10-13 | /next apex-roofing-of-the-lowcountry |
+| Paul | build:draft finished (run 20261013-074929-build-0560) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry draft locations loc-beaufort (draft and self-critique for loc-beaufort (its own run)) | 2026-10-13 | /next apex-roofing-of-the-lowcountry |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
 | Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-replacement:service_scope |
@@ -109,6 +109,7 @@ _Open, but the next action above goes ahead without them._
 - Paul 2026-10-12 (answers-round-2.md): Hilton Head Island — keep its FAQ as briefed (FAQ 3 the Town flood-rule question, option a); do not replace it.
 - Paul 2026-10-12 supplied public research for Pritchardville, Levy, Lady's Island (answers.md §1) and Ridgeland, Okatie (answers-round-2.md); researched and cited into the page facts files (research log, run 20261012-205526-build-9baf). Wording limits kept: Pritchardville 'and nearby New Riverside/Bluffton communities', never a City; no blanket historic restrictions; gutters do not fix flooding. Levy is unincorporated Jasper County (not Beaufort County); water-company history only; Jasper County permit FAQ, no exemption promise. Ridgeland postal address ≠ town limits; no inland-wear or '130 mph' claim. Okatie spans Beaufort and Jasper; no Beaufort-only permit answer; Callawassie rules not copied to Spring Island; permit and ARC approval kept separate.
 - Paul 2026-10-12: Brand Guide Section F confirmed NAP / schema address = the full street address '6 Sutton Ct, Bluffton, SC 29910' (matches the website and BBB, settled 'business'). The Google profile stays a service-area business with the address hidden.
+- Paul 2026-10-13: keep the location FAQ recipe (methodology/location-faq.md, adapted from Bradley's local FAQ prompt). Every location page, Pritchardville and every page still to draft, has three strong FAQs, one per category: (1) local cost or decision, (2) logistics in this area, (3) trust in this area (a local pain point plus Apex's local experience), each rooted in sourced, place-relevant facts. A FAQ may be reworded from the brief to meet this; the reword is listed for the drafts review (F-020). Pritchardville must not compete with Bluffton, where it overlaps the Town limits: anchor it in Pritchardville itself, with Bluffton only as Apex's base and a neighbour. Each page is written uniquely (no sentence, angle or heading pattern reused from a sibling page).
 
 ## Open VA items
 
@@ -156,4 +157,4 @@ _None — every input on file has been read._
 | build:brief | 2 | 612,000 | $0.00 |
 | **total** | 2 | 612,000 | $0.00 |
 
-Last run: /build 2026-10-13T07:27 — Drafted loc-pritchardville (LD - Pritchardville) from its approved brief and evidence pack; E1-E10 and spec checks pass apart from the briefed FAQ H2 wording, LOC-15/17 below target as Fix and list; one NEED (city map) remains.
+Last run: /build 2026-10-13T07:56 — Pritchardville location draft revised to Paul's 2026-10-13 instructions: three sourced local FAQs (wind code, permit by address, hurricane evacuation), fact-checked local context (Ohio colony per the 1938 Ocean Highway guide, fire district, May River Road corridor), New Riverside neighbourhoods dropped so it does not compete with Bluffton, grade 6.1, one map NEED.
