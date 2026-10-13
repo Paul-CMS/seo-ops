@@ -1304,7 +1304,7 @@
       }
     },
     "home": {
-      "state": "brief_written",
+      "state": "draft_written",
       "type": "homepage",
       "name": "Homepage",
       "url": "https://apexroofingtlc.com/",
@@ -1358,11 +1358,18 @@
           "run": "20261013-140538-build-1832",
           "at": "2026-10-13T14:13:22-05:00",
           "sha": "bfeab61f3de4"
+        },
+        "draft": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/h1/HD - Homepage - Apex Roofing of the Lowcountry.md",
+          "run": "20261013-160308-build-074c",
+          "at": "2026-10-13T16:09:50-05:00",
+          "sha": "723742a223d9",
+          "agent": "build-subagent-home-074c"
         }
       }
     },
     "about": {
-      "state": "brief_written",
+      "state": "draft_written",
       "type": "about",
       "name": "About",
       "url": "https://apexroofingtlc.com/about/",
@@ -1415,6 +1422,13 @@
           "run": "20261013-140538-build-1832",
           "at": "2026-10-13T14:13:22-05:00",
           "sha": "3707324ce1d2"
+        },
+        "draft": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/h1/AD - About - Apex Roofing of the Lowcountry.md",
+          "run": "20261013-160308-build-074c",
+          "at": "2026-10-13T16:09:51-05:00",
+          "sha": "c80794517282",
+          "agent": "build-subagent-about-074c"
         }
       }
     }
@@ -1755,7 +1769,7 @@
           "home",
           "about"
         ],
-        "state": "briefs_written",
+        "state": "drafts_written",
         "briefs": {
           "state": "approved",
           "by": "Paul",
@@ -1774,6 +1788,11 @@
           "briefs": [
             "clients/apex-roofing-of-the-lowcountry/build/h1/HB - Homepage - Apex Roofing of the Lowcountry.md",
             "clients/apex-roofing-of-the-lowcountry/build/h1/AB - About - Apex Roofing of the Lowcountry.md"
+          ],
+          "drafts": [
+            "clients/apex-roofing-of-the-lowcountry/build/h1/HD - Homepage - Apex Roofing of the Lowcountry.md",
+            "clients/apex-roofing-of-the-lowcountry/build/h1/AD - About - Apex Roofing of the Lowcountry.md",
+            "clients/apex-roofing-of-the-lowcountry/build/h1/drafts-review.csv"
           ]
         },
         "review": {
@@ -1793,12 +1812,24 @@
               "explicit": 0,
               "file": "clients/apex-roofing-of-the-lowcountry/build/h1/briefs-apply.json"
             }
+          },
+          "drafts": {
+            "sheet": "clients/apex-roofing-of-the-lowcountry/build/h1/drafts-review.csv",
+            "md": "clients/apex-roofing-of-the-lowcountry/build/h1/drafts-review.md",
+            "at": "2026-10-13T16:12:17-05:00",
+            "run": "20261013-160308-build-074c",
+            "asks": 3,
+            "listed": 6,
+            "fixes": 3,
+            "dropped": 0,
+            "applied": null
           }
         },
         "content_written_back": {
           "at": "2026-10-13T14:52:20-05:00",
           "run": "20261013-144954-build-6134"
-        }
+        },
+        "sem_findings": 0
       }
     ],
     "pilot_corrections_applied": {
@@ -2045,7 +2076,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T14:52:44-05:00",
+  "updated": "2026-10-13T16:27:07-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",

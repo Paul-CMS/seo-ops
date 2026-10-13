@@ -87,6 +87,7 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **fact:d:awards** (asked 2026-10-11, waiting on Client (via Paul)): Awards and rankings — what should we say? If it depends, on what?
 - **fact:d:team_size** (asked 2026-10-11, waiting on Client (via Paul)): Team size / trucks / jobs completed — what should we say? If it depends, on what?
 - **fact:about:company_story** (asked 2026-10-11, waiting on Client (via Paul)): Customers mention this about How and why the company started (owner's own account): "What more could you want than good work and a family owned business!" (None review(s)). Can we say that? yes / no — correction
+- **h1_drafts_review_h2s** (asked 2026-10-13, waiting on Paul): h1 drafts review (build/h1/drafts-review.csv), 3 questions: (1) About H2 'Licences' -> 'Licenses' (rec. change); (2) homepage Testimonials H2 approved 'What Do Lowcountry Homeowners Say About Apex?' reworded in draft to 'What Do Homeowners Say About Working With Apex?' (rec. keep draft, CM-024); (3) homepage FAQ H2 approved 'What Do Homeowners Ask Lowcountry Roofers Before They Call?' reworded to 'What Do Homeowners Ask Roofers in Beaufort and Jasper Counties Before They Call?' (rec. keep draft). Brand Guide C3 holds the approved wording for all three; it changes only at a later write-back.
 
 ## Answered — never asked again
 

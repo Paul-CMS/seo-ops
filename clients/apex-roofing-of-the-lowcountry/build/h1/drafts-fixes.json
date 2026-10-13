@@ -1,0 +1,36 @@
+{
+  "made": "2026-10-13T16:12:17-05:00",
+  "run": "20261013-160308-build-074c",
+  "fixes": [
+    {
+      "page": "home",
+      "rule": "ABT-09",
+      "item": "license-spelling-body",
+      "finding": "Body used 'licences'/'licence' (2 places); the site and licence documents use 'license'. Fixed (change #877).",
+      "severity": "fix",
+      "category": "wording",
+      "plain_why": "One spelling site-wide.",
+      "url": "https://apexroofingtlc.com/"
+    },
+    {
+      "page": "home",
+      "rule": "CM-016",
+      "item": "testimonials-intro-ranking",
+      "finding": "'Homeowners mention three things most' implied a ranking not in the pack; reworded to 'Three things come up again and again' (change #877).",
+      "severity": "fix",
+      "category": "wording",
+      "plain_why": "No claim stronger than the pack.",
+      "url": "https://apexroofingtlc.com/"
+    },
+    {
+      "page": "about",
+      "rule": "CM-016",
+      "item": "flashing-every-joint",
+      "finding": "'enough flashing at every joint' was stronger than the client's words (BG-G); now 'using enough flashing' (change #878).",
+      "severity": "fix",
+      "category": "wording",
+      "plain_why": "No claim stronger than the source.",
+      "url": "https://apexroofingtlc.com/about/"
+    }
+  ]
+}

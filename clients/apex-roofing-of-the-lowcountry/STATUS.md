@@ -1,17 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch h1)**
-- **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:writeback finished (run 20261013-144954-build-6134) and that stage is in review mode; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
-- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
+- **What is happening now:** waiting for Paul's approval — the h1 drafts review sheet has 3 question(s) for you and 6 decided for you (clients/apex-roofing-of-the-lowcountry/build/h1/drafts-review.md): reply "accept all", or "accept all except 7b, 12c" — an empty answer takes the recommended option
+- **Waiting on:** Paul — the h1 drafts review sheet has 3 question(s) for you and 6 decided for you (clients/apex-r; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
+- **Next action:** Paul types `/build apex-roofing-of-the-lowcountry review h1 drafts "accept all"` (or asks for changes first)
 
-_Generated 2026-10-13T14:52 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-13T16:27 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:writeback finished (run 20261013-144954-build-6134) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry draft h1 home (draft and self-critique for home (its own run)) | 2026-10-13 | /next apex-roofing-of-the-lowcountry |
+| Paul | the h1 drafts review sheet has 3 question(s) for you and 6 decided for you (clients/apex-roofing-of-the-lowcountry/build/h1/drafts-review.md): reply "accept all", or "accept all except 7b, 12c" — an empty answer takes the recommended option | 2026-10-13 | /build apex-roofing-of-the-lowcountry review h1 drafts "accept all" |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
 | Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-replacement:service_scope |
@@ -27,6 +27,7 @@ _Generated 2026-10-13T14:52 by the system — do not edit. Start every session i
 | Client (via Paul) | Awards and rankings — what should we say? If it depends, on what? | 2026-10-11 | fact:d:awards |
 | Client (via Paul) | Team size / trucks / jobs completed — what should we say? If it depends, on what? | 2026-10-11 | fact:d:team_size |
 | Client (via Paul) | Customers mention this about How and why the company started (owner's own account): "What more could you want than good work and a family owned business!" (None review(s)). Can we say that? yes / no — correction | 2026-10-11 | fact:about:company_story |
+| Paul | h1 drafts review (build/h1/drafts-review.csv), 3 questions: (1) About H2 'Licences' -> 'Licenses' (rec. change); (2) homepage Testimonials H2 approved 'What Do Lowcountry Homeowners Say About Apex?' reworded in draft to 'What Do Homeowners Say About Working With Apex?' (rec. keep draft, CM-024); (3) homepage FAQ H2 approved 'What Do Homeowners Ask Lowcountry Roofers Before They Call?' reworded to 'What Do Homeowners Ask Roofers in Beaufort and Jasper Counties Before They Call?' (rec. keep draft). Brand Guide C3 holds the approved wording for all three; it changes only at a later write-back. | 2026-10-13 | h1_drafts_review_h2s |
 
 ## Waiting on (not blocking)
 
@@ -151,6 +152,7 @@ _None — every input on file has been read._
 - **F-021** (open, not yet reviewed) 2026-10-13 · build:draft: Location drafts cannot re-read official PDFs (Port Royal flood guide, Beaufort County ch. 78 flood ordinance, Dataw Design Guidelines, Beaufort County District 9B map): WebFetch returns unreadable binary and no PDF text tool is installed, so drafts rest on earlier brief-time reads and some facts (e.g. the Beaufort County cumulative substantial-improvement period) stay unconfirmed. — workaround: Drafts state no unconfirmed figure, cite the brief-time reading, and tell the reader to ask the office; list each for the drafts review.
 - **F-022** (open, not yet reviewed) 2026-10-13 · build:drafts: review.py apply ends with 'apply every item to its page in this run, then re-record the files', but no command says how. Re-recording each draft with status.py page-stage from the one review run would give every page the same run and agent, which per_page_files then refuses as one context for all pages (CM-043). The page-stage sha is stored but never checked, so the edited drafts stay recorded under their own-run records. — workaround: Applied the review items to the drafts in this run, logged each change with run.py change (old/new snapshots), and recorded the section with status.py batch locations --state drafts_written --review-sheet …; page-stage records were not re-written.
 - **F-023** (open, not yet reviewed) 2026-10-13 · build:brief: evidence_pack.py maps the review topic 'communication' to the facts.json key practice:explains, while the build agent instructions and the researcher use practice:communication; reviews.py checked under practice:communication does not mark the pack topic as checked. — workaround: Recorded the same by-meaning count (32) under both practice:communication and practice:explains in run 20261013-140538-build-1832.
+- **F-024** (open, not yet reviewed) 2026-10-13 · build:write: run.py finish for build:write (produces batch_written:h1) requires a brief AND a draft recorded from this run for every page. The h1 briefs were written in run 20261013-140538-build-1832 and approved by Paul 2026-10-13, and the write-back ran on them, so this run only had drafts to write. finish refuses (exit 12). Re-recording the approved briefs under this run would rewrite approved records just to satisfy the check. When briefs come from an earlier run and are already approved, the check should accept them. — workaround: Drafts recorded with their own agent ids, review sheet written (3 Ask), batch h1 recorded drafts_written, sheet copied to Drive, handoff and summary written. Run left unfinished. Paul decides: re-record the unchanged briefs under this run and finish, or abort the run (the drafts, sheet and records stay).
 
 ## Spend so far
 

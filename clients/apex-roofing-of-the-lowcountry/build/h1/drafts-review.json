@@ -1,0 +1,323 @@
+{
+  "made": "2026-10-13T16:12:17-05:00",
+  "run": "20261013-160308-build-074c",
+  "step": "drafts",
+  "section": "h1",
+  "rows": [
+    {
+      "severity": "ask",
+      "kind": "4",
+      "key": "about|abt-09|licences-spelling-h2",
+      "note": "Ask kind 4",
+      "_finding": {
+        "page": "about",
+        "rule": "ABT-09",
+        "item": "licences-spelling-h2",
+        "finding": "The About H2 registered in Brand Guide C3 and approved in the brief is 'Which Licences and Certifications Does Apex Roofing of the Lowcountry Hold?' (British spelling). The About body, the homepage and every approved service and location page spell it 'License', as does the licence itself ('SC License #57706'). The draft keeps the approved 'Licences' H2 and was not changed.",
+        "severity": "ask",
+        "category": "semantic",
+        "kind": "4",
+        "sources": [
+          "Brand Guide C3 + approved About brief: 'Which Licences and Certifications…'",
+          "Approved service/location pages and Brand Guide D: 'SC License #57706', 'Licensed and insured'"
+        ],
+        "options": [
+          "Change the H2 to 'Which Licenses and Certifications Does Apex Roofing of the Lowcountry Hold?' (US spelling, matches the site); C3 updated at the next write-back",
+          "Keep 'Licences' as approved"
+        ],
+        "recommended": "a",
+        "plain_why": "One spelling on the whole site; the licence documents use 'License'.",
+        "url": "https://apexroofingtlc.com/about/"
+      },
+      "id": "1",
+      "page": "about",
+      "url": "https://apexroofingtlc.com/about/",
+      "item": "licences-spelling-h2",
+      "finding": "The About H2 registered in Brand Guide C3 and approved in the brief is 'Which Licences and Certifications Does Apex Roofing of the Lowcountry Hold?' (British spelling). The About body, the homepage and every approved service and location page spell it 'License', as does the licence itself ('SC License #57706'). The draft keeps the approved 'Licences' H2 and was not changed.",
+      "plain_why": "One spelling on the whole site; the licence documents use 'License'.",
+      "decided_for_you": "",
+      "options": "a) Change the H2 to 'Which Licenses and Certifications Does Apex Roofing of the Lowcountry Hold?' (US spelling, matches the site); C3 updated at the next write-back · b) Keep 'Licences' as approved",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "ask",
+      "kind": "4",
+      "key": "home|cm-024|testimonials-h2-reworded",
+      "note": "Ask kind 4",
+      "_finding": {
+        "page": "home",
+        "rule": "CM-024",
+        "item": "testimonials-h2-reworded",
+        "finding": "The approved brief's Testimonials H2 'What Do Lowcountry Homeowners Say About Apex?' (also the row in Brand Guide C3) was changed in the draft to 'What Do Homeowners Say About Working With Apex?'. Reason: with the brief's wording, the Testimonials, FAQ and Service-areas H2s all use 'Lowcountry' (three H2s in a row with the same area term, CM-024). Paul approved only his own two H2 edits (Services and Service areas), not this one. Brand Guide C3 still shows the old wording; drafts never write the Brand Guide, so C3 and the page disagree until a later write-back.",
+        "severity": "ask",
+        "category": "semantic",
+        "kind": "4",
+        "sources": [
+          "Approved h1 brief + Brand Guide C3 row: 'What Do Lowcountry Homeowners Say About Apex?' (Paul approved 2026-10-13)",
+          "Approved spec rule CM-024 / HP-09: no variant at two consecutive elements (three consecutive 'Lowcountry' H2s with the brief wording)"
+        ],
+        "options": [
+          "Keep the draft's 'What Do Homeowners Say About Working With Apex?' (no area term; CM-024 passes); C3 updated at the next write-back",
+          "Go back to the approved 'What Do Lowcountry Homeowners Say About Apex?' (three 'Lowcountry' H2s in a row, CM-024 fails)",
+          "Paul gives his own wording"
+        ],
+        "recommended": "a",
+        "plain_why": "You approved this heading in the brief. The draft changed it to avoid three headings in a row saying 'Lowcountry'. Your call which wording ships.",
+        "url": "https://apexroofingtlc.com/"
+      },
+      "id": "2",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "testimonials-h2-reworded",
+      "finding": "The approved brief's Testimonials H2 'What Do Lowcountry Homeowners Say About Apex?' (also the row in Brand Guide C3) was changed in the draft to 'What Do Homeowners Say About Working With Apex?'. Reason: with the brief's wording, the Testimonials, FAQ and Service-areas H2s all use 'Lowcountry' (three H2s in a row with the same area term, CM-024). Paul approved only his own two H2 edits (Services and Service areas), not this one. Brand Guide C3 still shows the old wording; drafts never write the Brand Guide, so C3 and the page disagree until a later write-back.",
+      "plain_why": "You approved this heading in the brief. The draft changed it to avoid three headings in a row saying 'Lowcountry'. Your call which wording ships.",
+      "decided_for_you": "",
+      "options": "a) Keep the draft's 'What Do Homeowners Say About Working With Apex?' (no area term; CM-024 passes); C3 updated at the next write-back · b) Go back to the approved 'What Do Lowcountry Homeowners Say About Apex?' (three 'Lowcountry' H2s in a row, CM-024 fails) · c) Paul gives his own wording",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "ask",
+      "kind": "4",
+      "key": "home|cm-024|faq-h2-reworded",
+      "note": "Ask kind 4",
+      "_finding": {
+        "page": "home",
+        "rule": "CM-024",
+        "item": "faq-h2-reworded",
+        "finding": "The approved brief's FAQ H2 'What Do Homeowners Ask Lowcountry Roofers Before They Call?' (also the row in Brand Guide C3) was changed in the draft to 'What Do Homeowners Ask Roofers in Beaufort and Jasper Counties Before They Call?'. Same reason as the Testimonials H2: three consecutive 'Lowcountry' H2s with the brief wording (CM-024). 'Beaufort and Jasper Counties' is also in the Services H2, but not at a consecutive element. Paul approved only his own Services and Service-areas H2 edits. Brand Guide C3 still shows the old wording (drafts never write the Brand Guide).",
+        "severity": "ask",
+        "category": "semantic",
+        "kind": "4",
+        "sources": [
+          "Approved h1 brief + Brand Guide C3 row: 'What Do Homeowners Ask Lowcountry Roofers Before They Call?' (Paul approved 2026-10-13)",
+          "Approved spec rule CM-024 / HP-09: no variant at two consecutive elements"
+        ],
+        "options": [
+          "Keep the draft's 'What Do Homeowners Ask Roofers in Beaufort and Jasper Counties Before They Call?'; C3 updated at the next write-back",
+          "Go back to the approved 'What Do Homeowners Ask Lowcountry Roofers Before They Call?' (CM-024 fails if the Testimonials H2 also keeps 'Lowcountry')",
+          "Paul gives his own wording"
+        ],
+        "recommended": "a",
+        "plain_why": "You approved this heading in the brief. The draft changed it for the same 'Lowcountry three times in a row' reason. Your call which wording ships.",
+        "url": "https://apexroofingtlc.com/"
+      },
+      "id": "3",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "faq-h2-reworded",
+      "finding": "The approved brief's FAQ H2 'What Do Homeowners Ask Lowcountry Roofers Before They Call?' (also the row in Brand Guide C3) was changed in the draft to 'What Do Homeowners Ask Roofers in Beaufort and Jasper Counties Before They Call?'. Same reason as the Testimonials H2: three consecutive 'Lowcountry' H2s with the brief wording (CM-024). 'Beaufort and Jasper Counties' is also in the Services H2, but not at a consecutive element. Paul approved only his own Services and Service-areas H2 edits. Brand Guide C3 still shows the old wording (drafts never write the Brand Guide).",
+      "plain_why": "You approved this heading in the brief. The draft changed it for the same 'Lowcountry three times in a row' reason. Your call which wording ships.",
+      "decided_for_you": "",
+      "options": "a) Keep the draft's 'What Do Homeowners Ask Roofers in Beaufort and Jasper Counties Before They Call?'; C3 updated at the next write-back · b) Go back to the approved 'What Do Homeowners Ask Lowcountry Roofers Before They Call?' (CM-024 fails if the Testimonials H2 also keeps 'Lowcountry') · c) Paul gives his own wording",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "about|abt-08|on-call-paragraph-added",
+      "note": "",
+      "_finding": {
+        "page": "about",
+        "rule": "ABT-08",
+        "item": "on-call-paragraph-added",
+        "finding": "The owners section adds a short paragraph: Ralph and Pierce are on call and treat a roof emergency as high priority, especially for past customers. From the pack (d-emergency-after-hours-reality, Client Confirmed, the client's own words). No response time, after-hours fee or guarantee is stated. Not in the brief.",
+        "severity": "fix_and_list",
+        "category": "pack_evidence_added",
+        "plain_why": "A Client Confirmed fact that shows how the owners work; written without any time promise.",
+        "decided_for_you": "Kept, with no response time or guarantee.",
+        "url": "https://apexroofingtlc.com/about/"
+      },
+      "id": "4",
+      "page": "about",
+      "url": "https://apexroofingtlc.com/about/",
+      "item": "on-call-paragraph-added",
+      "finding": "The owners section adds a short paragraph: Ralph and Pierce are on call and treat a roof emergency as high priority, especially for past customers. From the pack (d-emergency-after-hours-reality, Client Confirmed, the client's own words). No response time, after-hours fee or guarantee is stated. Not in the brief.",
+      "plain_why": "A Client Confirmed fact that shows how the owners work; written without any time promise.",
+      "decided_for_you": "Kept, with no response time or guarantee.",
+      "options": "a) Kept, with no response time or guarantee. · b) keep it as it was",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "about|abt-10|history-how-they-build",
+      "note": "",
+      "_finding": {
+        "page": "about",
+        "rule": "ABT-10",
+        "item": "history-how-they-build",
+        "finding": "The history H2 paraphrases the client's view of a good roof (BG-G, Client Confirmed): underlayment and its thickness, sealed valleys, nail spacing, fixing wood rot, enough flashing; plus the Paul-approved repair materials (corrosion-resistant flashing, synthetic underlayment). It does not reuse the Roof Replacement 'commodity' lines or the Roof Repair 'tube of silicone' line (exact-sentence check: no shared sentence).",
+        "severity": "fix_and_list",
+        "category": "semantic",
+        "plain_why": "The owners' story is not on file yet, so their way of working stands in until it is.",
+        "decided_for_you": "Kept as written, next to the open [NEED] for the owners' own founding story.",
+        "url": "https://apexroofingtlc.com/about/"
+      },
+      "id": "5",
+      "page": "about",
+      "url": "https://apexroofingtlc.com/about/",
+      "item": "history-how-they-build",
+      "finding": "The history H2 paraphrases the client's view of a good roof (BG-G, Client Confirmed): underlayment and its thickness, sealed valleys, nail spacing, fixing wood rot, enough flashing; plus the Paul-approved repair materials (corrosion-resistant flashing, synthetic underlayment). It does not reuse the Roof Replacement 'commodity' lines or the Roof Repair 'tube of silicone' line (exact-sentence check: no shared sentence).",
+      "plain_why": "The owners' story is not on file yet, so their way of working stands in until it is.",
+      "decided_for_you": "Kept as written, next to the open [NEED] for the owners' own founding story.",
+      "options": "a) Kept as written, next to the open [NEED] for the owners' own founding story. · b) keep it as it was",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "home|hp-21|license-issuer-sentence",
+      "note": "",
+      "_finding": {
+        "page": "home",
+        "rule": "HP-21",
+        "item": "license-issuer-sentence",
+        "finding": "FAQ 'Are you licensed and insured?' adds that the state license comes from the South Carolina Department of Labor, Licensing and Regulation, so the homeowner can look the number up. From the pack (licence row: issuer SC LLR, Paul addendum 2026-10-07). No class, holder or expiry stated.",
+        "severity": "fix_and_list",
+        "category": "pack_evidence_added",
+        "plain_why": "A checkable source for the number, already in the evidence pack.",
+        "decided_for_you": "Kept: one sentence naming SC LLR as the issuer; nothing else about the licence added.",
+        "url": "https://apexroofingtlc.com/"
+      },
+      "id": "6",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "license-issuer-sentence",
+      "finding": "FAQ 'Are you licensed and insured?' adds that the state license comes from the South Carolina Department of Labor, Licensing and Regulation, so the homeowner can look the number up. From the pack (licence row: issuer SC LLR, Paul addendum 2026-10-07). No class, holder or expiry stated.",
+      "plain_why": "A checkable source for the number, already in the evidence pack.",
+      "decided_for_you": "Kept: one sentence naming SC LLR as the issuer; nothing else about the licence added.",
+      "options": "a) Kept: one sentence naming SC LLR as the issuer; nothing else about the licence added. · b) keep it as it was",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "home|bb-316|commercial-faq-new-construction",
+      "note": "",
+      "_finding": {
+        "page": "home",
+        "rule": "BB-316",
+        "item": "commercial-faq-new-construction",
+        "finding": "FAQ 'Do you work on commercial buildings?' adds that Apex roofs new houses for local home builders in Beaufort and Jasper Counties (pack d-services-subcontracted-out, Paul Approved; settled services_subcontracted_new_construction).",
+        "severity": "fix_and_list",
+        "category": "pack_evidence_added",
+        "plain_why": "Answers the obvious follow-up (builders) with a Paul-approved fact; still homes only.",
+        "decided_for_you": "Kept the new-construction sentence in the commercial FAQ.",
+        "url": "https://apexroofingtlc.com/"
+      },
+      "id": "7",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "commercial-faq-new-construction",
+      "finding": "FAQ 'Do you work on commercial buildings?' adds that Apex roofs new houses for local home builders in Beaufort and Jasper Counties (pack d-services-subcontracted-out, Paul Approved; settled services_subcontracted_new_construction).",
+      "plain_why": "Answers the obvious follow-up (builders) with a Paul-approved fact; still homes only.",
+      "decided_for_you": "Kept the new-construction sentence in the commercial FAQ.",
+      "options": "a) Kept the new-construction sentence in the commercial FAQ. · b) keep it as it was",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "home|hp-13|recognition-badges-left-out",
+      "note": "",
+      "_finding": {
+        "page": "home",
+        "rule": "HP-13",
+        "item": "recognition-badges-left-out",
+        "finding": "The brief allowed the live 'Recognition' badges only if they are Section D certifications, with a [NEED] for any other badge. The draft has no badge strip: the trust cards and the social proof bar already show CertainTeed, GAF, Google, HomeAdvisor and BBB.",
+        "severity": "fix_and_list",
+        "category": "optional_section",
+        "plain_why": "No unverified badge can slip onto the page; the certified ones are already shown in text.",
+        "decided_for_you": "No separate badge strip and no badge [NEED]; Jonie keeps only CertainTeed, GAF and BBB badge images if the theme shows any.",
+        "url": "https://apexroofingtlc.com/"
+      },
+      "id": "8",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "recognition-badges-left-out",
+      "finding": "The brief allowed the live 'Recognition' badges only if they are Section D certifications, with a [NEED] for any other badge. The draft has no badge strip: the trust cards and the social proof bar already show CertainTeed, GAF, Google, HomeAdvisor and BBB.",
+      "plain_why": "No unverified badge can slip onto the page; the certified ones are already shown in text.",
+      "decided_for_you": "No separate badge strip and no badge [NEED]; Jonie keeps only CertainTeed, GAF and BBB badge images if the theme shows any.",
+      "options": "a) No separate badge strip and no badge [NEED]; Jonie keeps only CertainTeed, GAF and BBB badge images if the theme shows any. · b) keep it as it was",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "home|bb-313-11|testimonials-no-town",
+      "note": "",
+      "_finding": {
+        "page": "home",
+        "rule": "BB-313 §11",
+        "item": "testimonials-no-town",
+        "finding": "The four testimonials (reviews rows 2, 15, 40, 5; none of the excluded rows 11, 36, 44, 48, 49) cover a replacement, an inspection, a repair and the owners, but none names a town; the brief asked for one naming a town if the pack had one.",
+        "severity": "fix_and_list",
+        "category": "semantic",
+        "plain_why": "Short, clear quotes were preferred over a longer one that names a place.",
+        "decided_for_you": "Kept the four quotes as written; the areas grid carries the towns.",
+        "url": "https://apexroofingtlc.com/"
+      },
+      "id": "9",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "testimonials-no-town",
+      "finding": "The four testimonials (reviews rows 2, 15, 40, 5; none of the excluded rows 11, 36, 44, 48, 49) cover a replacement, an inspection, a repair and the owners, but none names a town; the brief asked for one naming a town if the pack had one.",
+      "plain_why": "Short, clear quotes were preferred over a longer one that names a place.",
+      "decided_for_you": "Kept the four quotes as written; the areas grid carries the towns.",
+      "options": "a) Kept the four quotes as written; the areas grid carries the towns. · b) keep it as it was",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "id": "U1",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "evidence used",
+      "finding": "Evidence used: 13 of 47 excerpts",
+      "plain_why": "",
+      "decided_for_you": "",
+      "options": "",
+      "recommended": "",
+      "answer": "",
+      "note": "usage check (§3.4)",
+      "severity": "info"
+    },
+    {
+      "id": "U2",
+      "page": "about",
+      "url": "https://apexroofingtlc.com/about/",
+      "item": "evidence used",
+      "finding": "Evidence used: 5 of 47 excerpts",
+      "plain_why": "",
+      "decided_for_you": "",
+      "options": "",
+      "recommended": "",
+      "answer": "",
+      "note": "usage check (§3.4)",
+      "severity": "info"
+    }
+  ],
+  "dropped": [],
+  "usage": [
+    {
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "used": 13,
+      "total": 47
+    },
+    {
+      "page": "about",
+      "url": "https://apexroofingtlc.com/about/",
+      "used": 5,
+      "total": 47
+    }
+  ]
+}
