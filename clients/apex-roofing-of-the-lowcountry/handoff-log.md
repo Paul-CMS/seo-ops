@@ -3141,3 +3141,123 @@ No approval, publish, link table, schema or Brand Guide write-back. No flag rais
 ### Not done
 No publish, link table, schema or Brand Guide write-back. Nothing approved. No flag raised. `run.py finish` is left to the calling command.
 
+## /build · 2026-10-13 · run 20261013-124504-build-b1c6
+
+**Agent:** Build (Agent 2), Opus, a fresh subagent for this one page (CM-043; agent id `build-subagent-loc-fripp-island-b1c6`) · **Date:** 2026-10-13 · **Route:** A
+
+### Done
+- Wrote `clients/apex-roofing-of-the-lowcountry/build/locations/LD - Fripp Island - Apex Roofing of the Lowcountry.md` from the approved brief, under Paul's settled rule `location_three_strong_faqs`.
+- Recorded it with `status.py page-stage … --stage draft --run 20261013-124504-build-b1c6 --agent build-subagent-loc-fripp-island-b1c6` (exit 0).
+- Logged research rows RL-locations-34 to 36 with `research.py log`. Every argument was double-quoted, and the cells came out clean, so no fix was needed:
+  - RL-34: a re-read of the FIPOA community page. It covers the gate (Security run it 24/7), access fees for certain vendors, no fee with a Fripp Island Contractor decal, and the IOU rule (the owner pays within 14 days). The weekend rule comes from the 2026 manual already on file.
+  - RL-35: the SC State Parks page for Hunting Island (five miles of beach, lighthouse built 1859 and rebuilt 1875) and a re-read of Wikipedia on Fripp. Wikipedia puts Fripp "between Hunting Island State Park to the north and Pritchards Island", gives the bridge as 2,067 ft (1964, now toll-free) and the summer population as about 5,000.
+  - RL-36: FEMA 499 (June 2005), Home Builder's Guide to Coastal Construction, Technical Fact Sheet No. 18 "Roof Sheathing Installation": "The highest uplift forces occur at roof corners, edges, and ridge lines."
+    - The text copy is hosted by Louisiana DENR. The fema.gov P-2181 PDF came back as binary (F-021), and the FEMA building-science page has no roof text.
+- Source for the ARB re-roof rule: the brief's round-2 research (`research-2026-10-12/round2.json`, quoting the FIPOA manual's ARB FAQ). It was not re-fetched; the ARB web page itself does not carry it.
+
+### The three FAQs (one per category, methodology/location-faq.md)
+1. **Cat. 1 · local cost or decision:** "Would a same-color re-roof on Fripp Island still need an ARB application?"
+   - Answer: Yes. It needs no ARB approval, but it does need an application and a posted permit, at no cost.
+   - The ARB covers single-family homes; condominiums go through their regimes.
+   - Meetings are the 1st and 3rd Thursday at 8:30 AM; applications are due by 4:30 PM the Friday before.
+   - For a colour or material change, ask the ARB (its standards are behind the homeowners' login).
+   - Source: FIPOA New Homeowners Manual 2026, ARB FAQ, and the FIPOA ARB page.
+2. **Cat. 2 · logistics:** "Why does a roofing crew need clearance at the Fripp Island security gate?"
+   - FIPOA Security run the gate day and night.
+   - Access fees apply to some vendors; there is no fee with a Contractor decal.
+   - Weekend work needs Security's permission and must be quiet.
+   - A crew without the fee gets in if the owner agrees to pay within 14 days (an IOU by email).
+   - The reader is told to ask how the gate will be handled when booking.
+   - No claim that Apex holds a decal or pass (settled `location_client_questions_skipped`). No fee amounts.
+   - Source: RL-34 and the 2026 manual.
+3. **Cat. 3 · trust:** "If I'm away from Fripp Island, how will I know how my roof job is going?"
+   - Apex practice: photos of the work, with daily progress photos on a longer job (paul_approved). Ralph and Pierce both go on the roof (paul_approved).
+   - The local pain point: FEMA's corners/edges/ridge uplift point (RL-36), on an island open to the Atlantic.
+   - One review is used as an attributed example (2020, an owner in Florida who got emails and photos from Ralph before and after; keyword-match tier, no reviewer name).
+
+### Rewords vs the brief (for Brand Guide C3 at write-back, F-020)
+
+| Element | Brief | Draft | Why |
+|---|---|---|---|
+| Services H2 | Which Services Does a Fripp Island Roofer Offer? | Which Jobs Does Apex Take On as a Fripp Island Roofer? | Same shape as Hilton Head Island, Beaufort and Okatie |
+| Local context H2 | What Makes Roofing on Fripp Island Different? | How Close to the Ocean Do Fripp Island Roofs Sit? | Same shape as Bluffton, Okatie and Beaufort |
+| FAQ H2 | What Do Fripp Island Homeowners Ask a Residential Roofer? | How Do Fripp Island Owners Plan a Roof Job With a Residential Roofer? | Same shape as Beaufort, Hilton Head Island and Pritchardville |
+| FAQ (ARB) | Does the Fripp Island property owners' association review roof replacements? | Would a same-color re-roof on Fripp Island still need an ARB application? | "Does" is taken (Beaufort, Hilton Head Island, Port Royal); now a cat. 1 decision/cost question |
+| FAQ (gate) | How does a roofing crew get onto gated Fripp Island? | Why does a roofing crew need clearance at the Fripp Island security gate? | Hilton Head Island opens with "How does" |
+| FAQ (wind) | What should an oceanfront Fripp Island roof be built to withstand? | **Replaced:** If I'm away from Fripp Island, how will I know how my roof job is going? | Paul's rule needs a trust FAQ. A wind-rating answer would repeat Pritchardville's (code wind rating) and Hilton Head Island's (FEMA fasteners). Its FEMA point (corners/edges/ridge) moved into the trust answer, with a cited source, so the brief's FEMA NEED is closed |
+| Neighbourhoods H2 | Which Fripp Island Neighborhoods Do We Serve? | Which Neighborhood Regimes Share Fripp Island? | Same shape as four siblings; it also avoids implying Apex works in these condo regimes |
+| Things to Do H2 | What Are Some Things to Do on Fripp Island? | What Keeps People Busy on Fripp Island? | Same shape as four siblings |
+| Top Sites H2 | What Are the Top Sites to See on Fripp Island? | What Sights Are on and Around Fripp Island? | Same shape as four siblings; now covers Hunting Island |
+| Siblings H2 | Which Towns Near Fripp Island Do We Also Serve? | What Other Towns Does Apex Serve Near Fripp Island? | Same shape as four siblings |
+
+- **FAQ question openings are Would / Why / If.** No sibling location FAQ or service-page FAQ uses them.
+- **Map placeholder:** the brief's `[Map: …]` is written in the P11 `[NEED: …]` form.
+
+### Unique, and off the sibling pages
+- **Opening angle:** the most seaward Sea Island, at sea level, private and gated. The check-in is at the POA gate, and a change of look starts with the island's review board.
+- **Local context:**
+  - 0 ft elevation
+  - marsh and estuary separating Fripp from St. Helena
+  - a gated vacation resort run by FIPOA
+  - a third of the lots undeveloped
+  - 963 residents (2020), about 5,000 in summer
+- **Trust angle:** the owner who is away from the job, and the roof zones FEMA flags. No storm history is used (St. Helena has 1893; Pritchardville has evacuation).
+- **Not used on this page:**
+  - salt air and fasteners (Hilton Head Island)
+  - the code wind rating (Pritchardville)
+  - the 2018 wind-damage review (Pritchardville)
+  - Harbor Island (St. Helena)
+  - plantation themes
+  - gated-community work (Bluffton)
+  - the swing bridge
+  - flood rules
+- **Hunting Island State Park** appears only in Top Sites, framed as "just north of Fripp". St. Helena left it unused.
+- **Exact-sentence check** against every location, pilot and service draft: 0 matches, apart from the required NAP line.
+
+### Checks
+- **Size and reading level:**
+  - 971 words below the front matter, including headings and tables. Under the 1,000-word ceiling (LOC-22).
+  - Readability scored 692 words, page grade 6.8, no paragraph over 10. E10 passes. The terms file is `scratchpad/terms-fripp.txt` (the F-016 workaround).
+  - The first run flagged two paragraphs over 10 (the gate answer and the neighbourhoods lead-in). Both were split.
+- **Paragraph lengths:**
+  - Opening: about 88 words.
+  - FAQ first paragraphs: 56 / 55 / about 52.
+- **E1–E10:**
+  - E1: pass.
+  - E2: at least 10 page-specific facts.
+  - E3: Roofing Contractor (title) → Roofers (H1) → Roofer (services H2) → Residential Roofer (FAQ H2). The opening uses roofing contractor / residential roofer. The reserved B1 variant is not used.
+  - E4: every H2 under 375 words.
+  - E5: every fact traces to the pack, the brief's research or RL-34 to 36.
+  - E6: no banned phrasing.
+  - E7: one H1; every H2 is a spoken question and names its entity.
+  - E8: no links in prose; both link-table placeholders present.
+  - E9: pass.
+- **Spec:**
+  - LOC-14: 3 FAQs, one per category.
+  - LOC-15: 8 neighbourhoods.
+  - LOC-16: map NEED.
+  - LOC-17: Things to Do (3) and Top Sites (4).
+  - LOC-19: NAP present.
+  - LOC-20: CM-023 order.
+- **No price, fee amount, response time, warranty, rating, decal or permit-filing claim, or reviewer name** on the page.
+- **Placeholders** (`placeholders.py scan`): 1 NEED (the city-level map) and 0 LINK.
+
+### For the drafts review
+1. **Fix and list:**
+   - The wind FAQ is replaced by the trust FAQ.
+   - Every H2 and FAQ reword in the table above. C3 needs them at write-back (F-020).
+2. **Fix and list:** Hunting Island State Park was added to Top Sites (RL-35). It is not in the brief's list.
+3. **Fix and list:** the FEMA point is cited from a text copy of FEMA 499 Fact Sheet 18 hosted by Louisiana DENR, because the fema.gov PDF could not be read (F-021). If Paul wants a fema.gov host, the sentence can be checked again or dropped.
+4. **Fix and list (overlap to watch):**
+   - The photos and both-owners-on-the-roof facts also appear on St. Helena Island, Beaufort and Port Royal, in different words.
+   - Here the angle is the absent owner, with the unused 2020 "from Florida" review.
+   - The review is at keyword-match tier. It could become "Customers mention…" once the researcher checks the photos topic (9 reviewers) by meaning.
+5. **Note:** the ARB re-roof rule closely matches Dataw's (Lady's Island page). Each page states its own island's published rule, in a different question.
+6. **Finish outbound candidates (CM-011):**
+   - the FIPOA ARB page
+   - southcarolinaparks.com/hunting-island
+   - the FEMA 499 fact sheet
+
+### Not done
+No publish, link table, schema or Brand Guide write-back. Nothing approved. No flag raised. `run.py finish` is left to the calling command.
+
