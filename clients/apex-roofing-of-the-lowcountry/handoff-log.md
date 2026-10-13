@@ -3375,3 +3375,135 @@ No publish, link table, schema or Brand Guide write-back. Nothing approved. No f
 ### Not done
 No publish, link table, schema or Brand Guide write-back. Nothing approved. No flag raised. `run.py finish` is left to the calling command.
 
+## /build · 2026-10-13 · run 20261013-130728-build-8ef0
+
+**Agent:** Build (Agent 2), Opus, a fresh subagent for this one page (CM-043; agent id `build-subagent-loc-ridgeland-8ef0`) · **Date:** 2026-10-13 · **Route:** A
+
+### Done
+- Wrote `clients/apex-roofing-of-the-lowcountry/build/locations/LD - Ridgeland - Apex Roofing of the Lowcountry.md` from the approved brief, under Paul's settled rule `location_three_strong_faqs`.
+- Recorded it with `status.py page-stage … --stage draft --run 20261013-130728-build-8ef0 --agent build-subagent-loc-ridgeland-8ef0` (exit 0).
+- Logged research rows RL-locations-40 and 41 with `research.py log`.
+  - **RL-40:** the Town of Ridgeland Architectural Review checklist PDF (last updated 4/6/21). WebFetch could not read it, so the text was pulled from the PDF's compressed streams with a stdlib-only script in the scratchpad, a new form of the F-021 workaround.
+    - Zoning Ordinance §5.13.1: the standards apply to all structures in transect zones T2.5, T3, T4, T5 and SD-Exit 2.
+    - §5.13.6 (roof materials): wood shingles; galvanized steel (corrugated, 5V crimp or standing seam); galvalume; copper. Asphalt or fiberglass shingles must be architectural grade and submitted for approval. Flashing must be copper, lead or anodized aluminum.
+    - §5.13.7h: skylights must be flat and not visible from any fronting street.
+    - Caveat: search summaries (not read) show 2025 variance requests and 2026 amendments to Article 5.13. The page tells the reader to check the current wording with the Town.
+  - **RL-41:** both permit pages re-read today.
+    - Jasper County Planning and Building: "roof replacement" is on its permit list. Office at 358 Third Avenue, Room 202, Ridgeland; (843) 717-3650.
+    - Town of Ridgeland: Town staff monitor building permits; it has its own Building Official. Town Hall is at 1 Town Square; main number (843) 726-7516. No Town page names roofs.
+
+### The three FAQs (one per category, methodology/location-faq.md)
+1. **Cat. 1 · local decision:** "Under Ridgeland's architectural standards, which roofing materials can I choose?"
+   - Asphalt or fiberglass shingles must be architectural grade and sent to the Town for approval.
+   - The list also allows metal (galvanized steel in corrugated, 5V crimp or standing seam panels, galvalume, copper) and wood shingles.
+   - The rules apply in the T2.5 to T5 zones.
+   - Flashing and skylight rules are included.
+   - The reader is told to confirm the current wording and their zone with the Town.
+   - Source: RL-40. Apex offers shingle and metal roofs (paul_approved services).
+2. **Cat. 2 · logistics:** "Am I inside Ridgeland's town limits, and does that change who issues my roof permit?"
+   - Outside the limits, Jasper County issues the permit and lists roof replacement among the jobs that need one.
+   - Inside the limits, the Town runs its own permit process with its own Building Official.
+   - A Ridgeland mailing address does not prove which side you are on (Paul).
+   - Both offices are in town, with their addresses and phone numbers.
+   - No Apex-pulls-the-permit claim, no licence claim and no claim that the Town requires a re-roof permit (settled `location_client_questions_skipped`).
+   - Source: RL-41.
+3. **Cat. 3 · trust:** "Hiring a roofer for a family member's Ridgeland home, how can I trust the work?"
+   - The local pain point: the person living in the house is not the one who hired the roofer. That is the pack's only Ridgeland review situation.
+   - Apex's experience:
+     - Ralph and Pierce Brehany work on the roof in person (paul_approved).
+     - Customers mention crews arriving when scheduled and finishing on time (speed tier, settled `guarantees_review_attributed`).
+     - One attributed example from the 2020 Ridgeland review: an out-of-state customer had the roof replaced on a family member's Ridgeland home, rot turned up under the old roof, and the family wrote that all of it was repaired or replaced.
+   - The draft gives no name, no quote and nothing about the relative's circumstances.
+
+### Rewords vs the brief (for Brand Guide C3 at write-back, F-020)
+
+| Element | Brief | Draft | Why |
+|---|---|---|---|
+| Services H2 | Which Roofing Services Does a Ridgeland Roofing Contractor Offer? | Is There a Ridgeland Roofing Contractor for Repairs, New Roofs and Skylights? | "Which … Offer" has the same shape as Hilton Head Island, Okatie and Beaufort |
+| Local context H2 | What Should You Know About Roofing in Ridgeland, the Jasper County Seat? | Was Ridgeland Really Built on a Ridge? | Port Royal uses "What Should You Know About Roofing in…" |
+| FAQ H2 | What Do Ridgeland Homeowners Ask a Roofer Before Booking? | Can a Roofer Help With Ridgeland's Shingle Rules, Permits and Crews? | "What Do … Homeowners Ask" is on Beaufort, Hilton Head Island and Pritchardville |
+| FAQ 1 | Do I need a Town of Ridgeland or Jasper County permit to replace my roof? | Am I inside Ridgeland's town limits, and does that change who issues my roof permit? (now FAQ 2, cat. 2) | "Do I need" is on Bluffton and Okatie. The new shape leads with Ridgeland's own point: town limits versus mailing address |
+| FAQ 2 | Do Ridgeland homeowners pay more because they are farther from Bluffton? (cat. 1) | **Replaced:** Under Ridgeland's architectural standards, which roofing materials can I choose? | The no-travel-fee fact is already in the opening, and Pritchardville's opening uses it too. The Town's §5.13.6 roof-material rule changes the job here and is sourced (RL-40). The travel-fee line stays in the opening |
+| FAQ 3 | Will the crew show up when they say they will for my Ridgeland roof? | Hiring a roofer for a family member's Ridgeland home, how can I trust the work? | "Will Apex" is on Lady's Island. The question is now rooted in the Ridgeland review situation (a local pain point plus local experience). The on-time fact stays in the answer |
+| Neighbourhoods H2 | Which Ridgeland Neighborhoods Do We Serve? | Does Apex Serve Your Neighborhood in Ridgeland? | The same shape is on four siblings |
+| Things to Do H2 | What Are Some Things to Do in Ridgeland? | Looking for Something to Do in Ridgeland? | The same shape is on four siblings |
+| Top Sites H2 | What Are the Top Sites to See in Ridgeland? | Ever Visited the Historic Sites in and Around Ridgeland? | The same shape is on four siblings. "In and Around" covers Old House Plantation, which is a separate community |
+| Siblings H2 | Which Towns Near Ridgeland Do We Also Serve? | Elsewhere in Beaufort and Jasper Counties, Which Towns Does Apex Serve? | The same shape is on Beaufort, Okatie and others. "Beaufort and Jasper Counties" is an approved A5 area variant |
+
+- **FAQ question openings are Under / Am / Hiring.** No sibling location FAQ or service-page FAQ uses them.
+- **H2 openings are Is There / Was / Can a Roofer / Does Apex / Looking / Ever / Elsewhere.** None is used on a sibling H2.
+
+### Unique, and off the sibling pages
+- **Opening:**
+  - the county seat
+  - a low ridge, inland, away from the Bluffton base
+  - no travel fee, in a new sentence
+  - two buyer states: a family member's home, and owners choosing shingles under the Town's standards
+- **Local context:**
+  - the ridge and the highest land in the county
+  - incorporated 1894
+  - the county seat, with the courthouse and the County building office in town
+  - 2020: about 3,750 people, 1,151 housing units, 9.6% vacant
+  - no climate, storm or flood text
+- **Kept off the page:**
+  - Hardeeville's growth, builder warranty and City permit
+  - Levy's unincorporated or water-company angle
+  - Okatie's two-county permit and the Callawassie ARC list. FAQ 1 is written as prose, not Okatie's bullet list
+  - Fripp's absent-owner photo updates. The 2020 review's emails-and-photos detail, which Fripp already uses, is not repeated; this page uses the rot found under the roof instead
+  - St. Helena's on-call storm owners
+  - Bluffton, except as the base and the NAP
+- **Exact-sentence check** against every location, pilot and service draft: 0 matches in the body. The only match is the required NAP line. "Call (843) 757-2739 for a free estimate." was a match and has been reworded.
+
+### Checks
+- **Size and reading level:**
+  - 895 words below the front matter, under the 1,000-word ceiling (LOC-22).
+  - Readability scored 646 words: page grade 5.2, no paragraph over 10. E10 passes; the cap is 8.9.
+  - The neighbourhood lead-in was at 11.1 and was split. Terms file: `scratchpad/terms-ridgeland.txt` (the F-016 workaround).
+- **Paragraph lengths:**
+  - Opening: 98 words.
+  - FAQ first paragraphs: 59 / 55 / 56.
+  - The FAQ H2 section is 373 words including its H3s.
+- **E1–E10:**
+  - E1: pass.
+  - E2: at least 10 Ridgeland facts.
+  - E3: Roofing Contractor (title) → Roofers (H1) → Roofing Contractor (services H2) → Roofer (FAQ H2). The opening uses "roofer / roofing contractor". "Residential Roofer" and the reserved B1 variant are not used.
+  - E4: every H2 at 375 words or fewer.
+  - E5: every fact traces to the pack, the brief or RL-40/41.
+  - E6: no banned phrasing.
+  - E7: one H1; every H2 is a spoken question naming Ridgeland.
+  - E8: no links in prose; both link-table placeholders present.
+  - E9: pass.
+- **Spec:**
+  - LOC-14: 3 FAQs, one per category.
+  - LOC-15: 1 neighbourhood. The target is 6; this is a Fix and list item per the brief.
+  - LOC-16: map NEED.
+  - LOC-17: Things to Do (1) and Top Sites (4).
+  - LOC-19: NAP.
+  - LOC-20: CM-023 order.
+- **Not on the page:**
+  - no price, response time, warranty term, rating or licence
+  - no Apex-pulls-the-permit claim and no Town re-roof-permit claim
+  - no elevation figure, distance, Bees Creek Plantation or reviewer name
+- **Placeholders** (`placeholders.py scan`): 1 NEED (the city-level map) and 0 LINK.
+
+### For the drafts review
+1. **Fix and list:**
+   - FAQ 2 of the brief (travel fee) is replaced by the Town roof-materials FAQ. The site plan's faq_topics listed the travel-fee question.
+   - The permit and trust FAQs are reworded, and every H2 is reworded (see the table). C3 needs these at write-back.
+2. **Fix and list:** RL-40 is new public evidence that was not in the brief.
+   - It comes from a 2021 Town checklist, and Article 5.13 may have been amended in 2026.
+   - The recommended default is to keep it with the "ask for the current wording" line.
+   - The fallback is to drop the material list and keep only "shingles must be architectural grade and submitted for approval".
+3. **Fix and list:** the 2020 Ridgeland review is used as an attributed customer example (rot repaired or replaced on a family member's home).
+   - The usage tier allows this, but the brief had limited it to words only for the opening.
+   - The rot detail is from the full review text in `data/reviews/reviews.csv` (row 36 in the pack), not the pack's excerpt.
+   - The fallback is to drop the second paragraph of FAQ 3.
+4. **Finish outbound candidates (CM-011):**
+   - jaspercountysc.gov/services/planning-and-building/
+   - ridgelandsc.gov/planning-and-community-development/home
+   - ridgelandsc.gov/pdfs/TOR-Architectural-Review.pdf
+5. **Note:** the brief says the old post 301s here, but the site plan has no `replaces`, so the front matter has none. The redirect stays a VA handoff.
+
+### Not done
+No publish, link table, schema or Brand Guide write-back. Nothing approved. No flag raised. A possible system flag for later: the stdlib PDF-stream extraction could become a script to replace the F-021 workaround. `run.py finish` is left to the calling command.
+
