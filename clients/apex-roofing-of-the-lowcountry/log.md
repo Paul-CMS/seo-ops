@@ -5868,3 +5868,22 @@ Changes: 1 · Summary: Fripp Island draft: removed the contractor decal sentence
 - CHANGE #835 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (18).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 138940b5a3e1 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #836 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (18).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (18).md | result: done · renamed and moved, nothing deleted
 - CHANGE #837 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (18).md | new: Apex Roofing of the Lowcountry - Status.md · sha b8d8d91904b5 | result: done · copied (Drive for desktop syncs it)
+
+## APPROVAL · 2026-10-13T14:04:35-05:00 · batch locations drafts · approved · by Paul
+Approved version: clients/apex-roofing-of-the-lowcountry/build/locations/LD - Hilton Head Island - Apex Roofing of the Lowcountry.md (sha b8a592ababa2)
+Approved version: clients/apex-roofing-of-the-lowcountry/build/locations/LD - Okatie - Apex Roofing of the Lowcountry.md (sha 8b3cc5d1b612)
+Approved version: clients/apex-roofing-of-the-lowcountry/build/locations/LD - Pritchardville - Apex Roofing of the Lowcountry.md (sha 4e34c38fbf8d)
+Approved version: clients/apex-roofing-of-the-lowcountry/build/locations/LD - Beaufort - Apex Roofing of the Lowcountry.md (sha e8528595a2b0)
+Approved version: clients/apex-roofing-of-the-lowcountry/build/locations/LD - Port Royal - Apex Roofing of the Lowcountry.md (sha 53065236d913)
+Approved version: clients/apex-roofing-of-the-lowcountry/build/locations/LD - Lady's Island - Apex Roofing of the Lowcountry.md (sha 977e1edd596e)
+Approved version: clients/apex-roofing-of-the-lowcountry/build/locations/LD - St. Helena Island - Apex Roofing of the Lowcountry.md (sha 0a9840448b5b)
+Approved version: clients/apex-roofing-of-the-lowcountry/build/locations/LD - Fripp Island - Apex Roofing of the Lowcountry.md (sha b69d330227e5)
+Approved version: clients/apex-roofing-of-the-lowcountry/build/locations/LD - Hardeeville - Apex Roofing of the Lowcountry.md (sha e85d2ad501a4)
+Approved version: clients/apex-roofing-of-the-lowcountry/build/locations/LD - Ridgeland - Apex Roofing of the Lowcountry.md (sha 4d90b7ae96a0)
+Approved version: clients/apex-roofing-of-the-lowcountry/build/locations/LD - Levy - Apex Roofing of the Lowcountry.md (sha be3c2536f26a)
+Approved version: clients/apex-roofing-of-the-lowcountry/build/locations/drafts-review.csv (sha 674966117c22)
+SEM items to apply: none
+- CHANGE #838 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (19).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (19).md | result: done · renamed and moved, nothing deleted
+- CHANGE #839 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (19).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 51e6a670e4e6 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #840 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (19).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (19).md | result: done · renamed and moved, nothing deleted
+- CHANGE #841 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (19).md | new: Apex Roofing of the Lowcountry - Status.md · sha f60bcd712cd9 | result: done · copied (Drive for desktop syncs it)
