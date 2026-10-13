@@ -3834,3 +3834,25 @@ Nothing approved. No WordPress, no link table, no schema, no Brand Guide write-b
 
 **Next:** `/build apex-roofing-of-the-lowcountry write h1` (drafts, one fresh subagent per page, then the draft review). This needs its own run.
 
+## /build · 2026-10-13 · run 20261013-162715-build-f1d2
+
+**Client:** Apex Roofing of the Lowcountry · **Stage:** 6 of 8 (batch h1: homepage + about) · **Date:** 2026-10-13
+
+## What happened
+- Paul aborted write run 20261013-160308-build-074c (finish refused by F-024). The drafts, review sheet, batch state, change records and Drive copies were kept.
+- Paul answered the h1 draft review with "accept all" (the recommended option on all 3 Ask rows and 6 Fix-and-list rows). Recorded by `review.py apply` → `build/h1/drafts-apply.json`.
+- Row 1 applied: the About H2 changed from "Which Licences and Certifications…" to "Which Licenses and Certifications Does Apex Roofing of the Lowcountry Hold?" (change #887). No other UK spelling is left in either draft.
+- Rows 2–9 needed no edit. The draft already says what the answer keeps.
+
+## Checks
+- placeholders.py: the homepage has 2 NEEDs (gallery photos, Google Maps share link). The About page has 3 NEEDs (owners' photo, job titles, the owners' own story, fact:about:company_story). Same as before; all valid.
+- The changed H2 appears in no other draft.
+
+## Open
+- C3 mismatch for the next Brand Guide write-back (F-020): About licences H2 (row 1), homepage Testimonials H2 (row 2) and FAQ H2 (row 3).
+- F-025 (new): the edited About draft could not be re-recorded in a review run. The file is changed and logged, but it is not re-recorded.
+- F-024: run.py finish for build:write should accept briefs approved in an earlier run.
+
+## Next
+- Paul types the batch h1 drafts approval line from `next.py`. Ship is a later step and needs its own approval.
+

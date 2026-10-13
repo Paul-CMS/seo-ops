@@ -6057,3 +6057,40 @@ Reason (Paul): Finish refused: h1 briefs were approved in run 20261013-140538-bu
 - CHANGE #884 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (24).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha c44b2e28768c | result: done · copied (Drive for desktop syncs it)
 - CHANGE #885 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (24).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (24).md | result: done · renamed and moved, nothing deleted
 - CHANGE #886 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (24).md | new: Apex Roofing of the Lowcountry - Status.md · sha 4c9da2ddb289 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261013-162715-build-f1d2 · STARTED · /build · 2026-10-13T16:27:15-05:00
+Step: build:review · batch h1 · session 81e9433f-49ee-4fc9-951a-8b131b9e967c
+Gates checked: discovery_signed_off
+- REVIEW APPLIED 2026-10-13T16:27 · run 20261013-162715-build-f1d2 · h1 drafts: 9 row(s) (0 answered by Paul, the rest by default) · clients/apex-roofing-of-the-lowcountry/build/h1/drafts-apply.json
+- CHANGE #887 [draft_edit] https://apexroofingtlc.com/about/ | h2 | old: Which Licences and Certifications Does Apex Roofing of the Lowcountry Hold? | new: Which Licenses and Certifications Does Apex Roofing of the Lowcountry Hold? | result: applied | ref drafts-review row 1 (licences-spelling-h2), Paul: accept all
+- FLAG 2026-10-13T16:28 · run 20261013-162715-build-f1d2 · F-025 · review.py apply tells the agent to 're-record the files' after applying, but status.py page-stage --stage draft refuses in a build:review run ('a draft is recorded only by its own /build draft run or the batch's write run'). With F-024 the write run could not be finished either, so an edited draft has no run that can re-record it. · workaround: Edit applied to the draft file and logged as change #887; draft not re-recorded. build:review produces nothing, so finish is not blocked.
+- NOTE 16:28:00 C3 mismatch for the next Brand Guide write-back: About H2 now 'Which Licenses and Certifications Does Apex Roofing of the Lowcountry Hold?' (row 1); Homepage Testimonials H2 'What Do Homeowners Say About Working With Apex?' (row 2) and FAQ H2 'What Do Homeowners Ask Roofers in Beaufort and Jasper Counties Before They Call?' (row 3) differ from C3 (F-020).
+### HANDOFF · /build · 2026-10-13 · run 20261013-162715-build-f1d2
+**Client:** Apex Roofing of the Lowcountry · **Stage:** 6 of 8 (batch h1: homepage + about) · **Date:** 2026-10-13
+
+## What happened
+- Paul aborted write run 20261013-160308-build-074c (finish refused by F-024). The drafts, review sheet, batch state, change records and Drive copies were kept.
+- Paul answered the h1 draft review with "accept all" (the recommended option on all 3 Ask rows and 6 Fix-and-list rows). Recorded by `review.py apply` → `build/h1/drafts-apply.json`.
+- Row 1 applied: the About H2 changed from "Which Licences and Certifications…" to "Which Licenses and Certifications Does Apex Roofing of the Lowcountry Hold?" (change #887). No other UK spelling is left in either draft.
+- Rows 2–9 needed no edit. The draft already says what the answer keeps.
+
+## Checks
+- placeholders.py: the homepage has 2 NEEDs (gallery photos, Google Maps share link). The About page has 3 NEEDs (owners' photo, job titles, the owners' own story, fact:about:company_story). Same as before; all valid.
+- The changed H2 appears in no other draft.
+
+## Open
+- C3 mismatch for the next Brand Guide write-back (F-020): About licences H2 (row 1), homepage Testimonials H2 (row 2) and FAQ H2 (row 3).
+- F-025 (new): the edited About draft could not be re-recorded in a review run. The file is changed and logged, but it is not re-recorded.
+- F-024: run.py finish for build:write should accept briefs approved in an earlier run.
+
+## Next
+- Paul types the batch h1 drafts approval line from `next.py`. Ship is a later step and needs its own approval.
+### END HANDOFF
+## RUN 20261013-162715-build-f1d2 · FINISHED · 2026-10-13T16:28:11-05:00
+Changes: 1 · Summary: h1 draft review applied (accept all): About H2 'Licences' → 'Licenses'; rows 2–9 already matched. Placeholders unchanged (5 valid NEEDs). F-025 flagged.
+- CHANGE #888 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (21).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (21).md | result: done · renamed and moved, nothing deleted
+- CHANGE #889 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (21).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 3bdc03e57415 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #890 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (25).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (25).md | result: done · renamed and moved, nothing deleted
+- CHANGE #891 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (25).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 722ce627bf41 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #892 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (25).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (25).md | result: done · renamed and moved, nothing deleted
+- CHANGE #893 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (25).md | new: Apex Roofing of the Lowcountry - Status.md · sha 9d635e1d2e86 | result: done · copied (Drive for desktop syncs it)

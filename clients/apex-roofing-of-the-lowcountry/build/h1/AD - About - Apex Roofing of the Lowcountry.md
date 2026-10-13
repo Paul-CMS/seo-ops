@@ -20,7 +20,7 @@ Customers mention Ralph and Pierce by name in their Google reviews. Many of thos
 
 Roof trouble does not wait for office hours, and Ralph and Pierce are on call for it. They treat a roof emergency as high priority, especially for homeowners they have worked for before.
 
-## Which Licences and Certifications Does Apex Roofing of the Lowcountry Hold?
+## Which Licenses and Certifications Does Apex Roofing of the Lowcountry Hold?
 
 Apex Roofing of the Lowcountry holds a South Carolina license and a Town of Bluffton license, and both are current. The company is also insured and is a factory-certified installer for two shingle makers.
 

@@ -1822,7 +1822,13 @@
             "listed": 6,
             "fixes": 3,
             "dropped": 0,
-            "applied": null
+            "applied": {
+              "at": "2026-10-13T16:27:23-05:00",
+              "run": "20261013-162715-build-f1d2",
+              "answers": "accept all",
+              "explicit": 0,
+              "file": "clients/apex-roofing-of-the-lowcountry/build/h1/drafts-apply.json"
+            }
           }
         },
         "content_written_back": {
@@ -2049,12 +2055,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-144954-build-6134",
+    "run_id": "20261013-162715-build-f1d2",
     "command": "build",
-    "finished": "2026-10-13T14:52:44-05:00",
-    "result": "h1 write-back: Brand Guide B3 2 rows (homepage filled, About added) and C3 16 rows (11 H2s + 5 FAQs, Paul's edited homepage H2s); C1/C2 and fact rows unchanged; no approved value changed",
-    "changes": 4,
-    "step": "build:writeback",
+    "finished": "2026-10-13T16:28:11-05:00",
+    "result": "h1 draft review applied (accept all): About H2 'Licences' → 'Licenses'; rows 2–9 already matched. Placeholders unchanged (5 valid NEEDs). F-025 flagged.",
+    "changes": 1,
+    "step": "build:review",
     "batch": "h1"
   },
   "spend": {
@@ -2076,7 +2082,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T16:27:07-05:00",
+  "updated": "2026-10-13T16:28:11-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2207,6 +2213,12 @@
       "step": "build:brief",
       "first_run": "20261013-140538-build-1832",
       "at": "2026-10-13T14:13:59-05:00"
+    },
+    "81e9433f-49ee-4fc9-951a-8b131b9e967c": {
+      "key": "batches:h1",
+      "step": "build:review",
+      "first_run": "20261013-162715-build-f1d2",
+      "at": "2026-10-13T16:28:11-05:00"
     }
   },
   "wheel_pending": {

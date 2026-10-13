@@ -1,0 +1,108 @@
+{
+  "made": "2026-10-13T16:27:23-05:00",
+  "run": "20261013-162715-build-f1d2",
+  "section": "h1",
+  "step": "drafts",
+  "answers": "accept all",
+  "items": [
+    {
+      "id": "1",
+      "page": "about",
+      "url": "https://apexroofingtlc.com/about/",
+      "item": "licences-spelling-h2",
+      "severity": "ask",
+      "kind": "4",
+      "choice": "a",
+      "action": "Change the H2 to 'Which Licenses and Certifications Does Apex Roofing of the Lowcountry Hold?' (US spelling, matches the site); C3 updated at the next write-back",
+      "by": "default"
+    },
+    {
+      "id": "2",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "testimonials-h2-reworded",
+      "severity": "ask",
+      "kind": "4",
+      "choice": "a",
+      "action": "Keep the draft's 'What Do Homeowners Say About Working With Apex?' (no area term; CM-024 passes); C3 updated at the next write-back",
+      "by": "default"
+    },
+    {
+      "id": "3",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "faq-h2-reworded",
+      "severity": "ask",
+      "kind": "4",
+      "choice": "a",
+      "action": "Keep the draft's 'What Do Homeowners Ask Roofers in Beaufort and Jasper Counties Before They Call?'; C3 updated at the next write-back",
+      "by": "default"
+    },
+    {
+      "id": "4",
+      "page": "about",
+      "url": "https://apexroofingtlc.com/about/",
+      "item": "on-call-paragraph-added",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Kept, with no response time or guarantee.",
+      "by": "default"
+    },
+    {
+      "id": "5",
+      "page": "about",
+      "url": "https://apexroofingtlc.com/about/",
+      "item": "history-how-they-build",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Kept as written, next to the open [NEED] for the owners' own founding story.",
+      "by": "default"
+    },
+    {
+      "id": "6",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "license-issuer-sentence",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Kept: one sentence naming SC LLR as the issuer; nothing else about the licence added.",
+      "by": "default"
+    },
+    {
+      "id": "7",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "commercial-faq-new-construction",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Kept the new-construction sentence in the commercial FAQ.",
+      "by": "default"
+    },
+    {
+      "id": "8",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "recognition-badges-left-out",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "No separate badge strip and no badge [NEED]; Jonie keeps only CertainTeed, GAF and BBB badge images if the theme shows any.",
+      "by": "default"
+    },
+    {
+      "id": "9",
+      "page": "home",
+      "url": "https://apexroofingtlc.com/",
+      "item": "testimonials-no-town",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Kept the four quotes as written; the areas grid carries the towns.",
+      "by": "default"
+    }
+  ]
+}

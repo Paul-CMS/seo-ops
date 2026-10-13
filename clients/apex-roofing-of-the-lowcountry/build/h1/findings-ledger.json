@@ -54,5 +54,68 @@
     "choice": "a",
     "action": "Those five reviews are never quoted as testimonials or used for any warranty line on the homepage or About page.",
     "by": "default"
+  },
+  "about|abt-09|licences-spelling-h2": {
+    "step": "drafts",
+    "at": "2026-10-13T16:27:23-05:00",
+    "choice": "a",
+    "action": "Change the H2 to 'Which Licenses and Certifications Does Apex Roofing of the Lowcountry Hold?' (US spelling, matches the site); C3 updated at the next write-back",
+    "by": "default"
+  },
+  "home|cm-024|testimonials-h2-reworded": {
+    "step": "drafts",
+    "at": "2026-10-13T16:27:23-05:00",
+    "choice": "a",
+    "action": "Keep the draft's 'What Do Homeowners Say About Working With Apex?' (no area term; CM-024 passes); C3 updated at the next write-back",
+    "by": "default"
+  },
+  "home|cm-024|faq-h2-reworded": {
+    "step": "drafts",
+    "at": "2026-10-13T16:27:23-05:00",
+    "choice": "a",
+    "action": "Keep the draft's 'What Do Homeowners Ask Roofers in Beaufort and Jasper Counties Before They Call?'; C3 updated at the next write-back",
+    "by": "default"
+  },
+  "about|abt-08|on-call-paragraph-added": {
+    "step": "drafts",
+    "at": "2026-10-13T16:27:23-05:00",
+    "choice": "a",
+    "action": "Kept, with no response time or guarantee.",
+    "by": "default"
+  },
+  "about|abt-10|history-how-they-build": {
+    "step": "drafts",
+    "at": "2026-10-13T16:27:23-05:00",
+    "choice": "a",
+    "action": "Kept as written, next to the open [NEED] for the owners' own founding story.",
+    "by": "default"
+  },
+  "home|hp-21|license-issuer-sentence": {
+    "step": "drafts",
+    "at": "2026-10-13T16:27:23-05:00",
+    "choice": "a",
+    "action": "Kept: one sentence naming SC LLR as the issuer; nothing else about the licence added.",
+    "by": "default"
+  },
+  "home|bb-316|commercial-faq-new-construction": {
+    "step": "drafts",
+    "at": "2026-10-13T16:27:23-05:00",
+    "choice": "a",
+    "action": "Kept the new-construction sentence in the commercial FAQ.",
+    "by": "default"
+  },
+  "home|hp-13|recognition-badges-left-out": {
+    "step": "drafts",
+    "at": "2026-10-13T16:27:23-05:00",
+    "choice": "a",
+    "action": "No separate badge strip and no badge [NEED]; Jonie keeps only CertainTeed, GAF and BBB badge images if the theme shows any.",
+    "by": "default"
+  },
+  "home|bb-313-11|testimonials-no-town": {
+    "step": "drafts",
+    "at": "2026-10-13T16:27:23-05:00",
+    "choice": "a",
+    "action": "Kept the four quotes as written; the areas grid carries the towns.",
+    "by": "default"
   }
 }
