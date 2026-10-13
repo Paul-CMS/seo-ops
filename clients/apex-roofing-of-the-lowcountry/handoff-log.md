@@ -2875,3 +2875,107 @@ No publish, link table, schema or Brand Guide write-back. Nothing approved.
 ### Not done
 No publish, link table, schema or Brand Guide write-back. Nothing approved. `run.py finish` is left to the calling command.
 
+## /build · 2026-10-13 · run 20261013-122710-build-4b79
+
+**Agent:** Build (Agent 2), Opus, a fresh subagent for this one page (CM-043; agent id `build-subagent-loc-ladys-island-4b79`) · **Date:** 2026-10-13 · **Route:** A
+
+### Done
+- Revised `clients/apex-roofing-of-the-lowcountry/build/locations/LD - Lady's Island - Apex Roofing of the Lowcountry.md` as Paul asked on 2026-10-13. Only research findings that need no approval were applied, under the settled rule `location_three_strong_faqs`.
+- Recorded the draft with `status.py page-stage … --stage draft --run 20261013-122710-build-4b79 --agent build-subagent-loc-ladys-island-4b79` (exit 0).
+- Logged research rows RL-locations-22 to 27 with `research.py log`:
+  - eCFR 33 CFR 117.911(e)
+  - SCDOT fender project portal
+  - SCDOT 2023 gates press release
+  - SCDOT 2026 McTeer lane closures, which also records the not-found items: bridge weight or width limits, and a funded Woods replacement
+  - Municode ch. 78 (Supp. 55)
+  - dataw.com directions
+
+### What changed
+1. **The City-or-County FAQ is replaced** by a logistics FAQ on the Woods Memorial swing bridge. The City point survives as one sentence in the flood FAQ ("Inside City of Beaufort limits, ask the City instead").
+   - **No Apex practice is claimed:** no delivery timing, no McTeer routing, no materials kept on site, no tarping.
+   - **No bridge limits are stated**, because no weight or width limit was found.
+   - **No replacement is stated**, because no funded full replacement was found.
+2. **Flood FAQ:**
+   - Names Chapter 78 of the County Code.
+   - Says the cost of permitted work adds up and that "the code cites both a five-year and a ten-year period". The reader is told to ask Beaufort County which period applies before pairing a roof with other work.
+   - States no single period.
+   - Differs from Port Royal (Town, five years) and Hilton Head (Town, 49%).
+3. **Dataw FAQ:**
+   - Dataw is now described as "a separate gated island community near Lady's Island, reached from US 21 by Polowana Road and Dataw Drive".
+   - The page never puts Dataw on Lady's Island and never mentions St. Helena.
+   - The Design Guidelines content is unchanged. One sentence moved to the second paragraph to keep the first paragraph at 51 words.
+4. **Opening:**
+   - Dropped the "first thing to settle is City or County" angle, which repeated Okatie and Pritchardville.
+   - Now names both bridges (Woods and McTeer) and newer subdivisions.
+5. **Closing line:** dropped "City side or County side".
+6. **FAQ order:** decision (flood) → logistics (bridge) → trust (Dataw).
+7. **Coosaw Point is kept as a Top Site only.** It is not added to Neighbourhoods, for three reasons:
+   - The approved brief §4 excludes it from the list as a historic site.
+   - The 12 listed names all come from one county source.
+   - Adding it would put the same place in two sections.
+   - If Paul wants it as a neighbourhood, that is a brief change.
+
+### The three FAQs
+1. **Cat. 1 · local decision:** "Could a new roof on a Lady's Island home set off Beaufort County's 50% flood rule?"
+   - Sources: Municode ch. 78, Secs. 78-29 and 78-38(23) (RL-26); the County Flood Information page (RL-21).
+2. **Cat. 2 · logistics:** "When can the Woods Memorial swing bridge slow a trip onto Lady's Island?"
+   - Sources: 33 CFR 117.911(e) (RL-22), the SCDOT fender project (RL-23), SCDOT 2023 gates (RL-24), SCDOT 2026 McTeer (RL-25).
+3. **Cat. 3 · trust:** "Will Apex re-roof our home on Dataw Island, near Lady's Island?"
+   - Apex works on Dataw (Paul Approved).
+   - Dataw Design Guidelines (March 2025) and dataw.com (RL-27).
+   - CertainTeed and GAF certification (client_confirmed).
+   - Clean-up and magnet sweep (paul_approved).
+   - One review used as an attributed example (keyword-match tier).
+
+### Heading rewords vs the brief (for C3 at write-back, F-020)
+
+| Element | Brief | Previous draft | Now | Why |
+|---|---|---|---|---|
+| FAQ 1 | City of Beaufort or Beaufort County? | City-or-County question | Replaced by the bridge FAQ (Cat. 2) | Paul 2026-10-13: the City-or-County angle repeats Okatie and Pritchardville |
+| FAQ 2 | flood "substantial improvement" | Unchanged | Unchanged | Already unique |
+| FAQ 3 | Dataw | Unchanged | Unchanged | Already unique |
+| Services H2 | — | "Which Residential Roofer Services Can Lady's Island Homes Book?" | "What Roof Work Can a Residential Roofer Handle on a Lady's Island Home?" | The old shape was close to Pritchardville's "Which Roof Services Can a Residential Roofer Do …" |
+| FAQ H2 | — | "What Should You Ask a Roofing Contractor About a Lady's Island Re-Roof?" | "What Comes Up When a Roofing Contractor Quotes a Lady's Island Re-Roof?" | Bluffton opens with "What Should …" |
+
+- **FAQ question shapes are now Could / When can / Will Apex.** None is used on Hilton Head Island, Okatie, Pritchardville, Beaufort, Port Royal or Bluffton.
+- **Every other H2 is unchanged**, and all were already unique.
+
+### Checks
+- **Size and reading level:**
+  - 784 words scored; page grade 6.5. No paragraph scored over 10.
+  - E10 passes. The readability terms file is in the scratchpad (the F-016 workaround).
+- **Paragraph lengths:**
+  - Opening: 77 words.
+  - FAQ first paragraphs: 51 (flood), 57 (bridge, after moving one sentence) and 51 (Dataw). All are in the 40–60 range.
+- **E1:** pass. The bridge and US 21 Business, County ch. 78 and the Dataw route are specific to this page.
+  - Exact-sentence check against every location, pilot and service draft: only the briefed meta CTA matches.
+- **E3:** variants unchanged (title Roofing Contractor → H1 Roofers → services H2 Residential Roofer → FAQ H2 Roofing Contractor).
+- **E5:** every new fact traces to RL-22 to RL-27.
+- **E7:** heading levels are correct.
+- **E8:** no links.
+- **Spec:**
+  - LOC-14 met: 3 FAQs, one per category.
+  - LOC-15: 12 neighbourhoods.
+  - LOC-16: map NEED.
+  - LOC-19: NAP.
+- **Placeholders** (`placeholders.py scan`): 1 NEED (the city-level map) and 0 LINK.
+
+### For the drafts review
+1. **Fix and list:** three changes:
+   - the FAQ replacement (City/County → bridge)
+   - the two H2 rewords
+   - the opening re-angled to the bridges
+
+   C3 needs these at write-back (F-020).
+2. **Fix and list:** the flood look-back is written as "both five- and ten-year periods cited". The code is internally inconsistent; a call to the County Floodplain Administrator would settle it. Optional; the page is true as written.
+3. **Fix and list (carried over):** the clean-up review is still at keyword-match tier. It could become "Customers mention…" once the researcher checks it by meaning.
+4. **Note:** Coosaw Point stays a Top Site only, not a neighbourhood (brief §4).
+5. **Finish outbound candidates (CM-011):**
+   - eCFR 33 CFR 117.911
+   - SCDOT fender project portal
+   - Municode ch. 78
+   - Beaufort County Flood Information page
+
+### Not done
+No publish, link table, schema or Brand Guide write-back. Nothing approved. No flag raised. `run.py finish` is left to the calling command.
+
