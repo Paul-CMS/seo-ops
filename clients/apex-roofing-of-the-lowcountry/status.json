@@ -993,7 +993,7 @@
       }
     },
     "loc-st-helena-island": {
-      "state": "brief_written",
+      "state": "draft_written",
       "type": "location",
       "name": "St. Helena Island",
       "url": "https://apexroofingtlc.com/st-helena-island/",
@@ -1025,6 +1025,13 @@
           "run": "20261012-205526-build-9baf",
           "at": "2026-10-12T21:23:14-05:00",
           "sha": "0c54651971e6"
+        },
+        "draft": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - St. Helena Island - Apex Roofing of the Lowcountry.md",
+          "run": "20261013-123507-build-e367",
+          "at": "2026-10-13T12:42:44-05:00",
+          "sha": "f59d92703fa5",
+          "agent": "build-subagent-loc-st-helena-island-e367"
         }
       },
       "pack": {
@@ -1832,10 +1839,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-123330-build-0582",
+    "run_id": "20261013-123507-build-e367",
     "command": "build",
-    "finished": "2026-10-13T12:35:04-05:00",
-    "result": "Beaufort location draft revised: one sourced detail each added to the Robert Smalls House (511 Prince Street, private home) and Beaufort National Cemetery (1601 Boundary Street, est. 1863) Top Sites items, RL-locations-29/30 logged, E10 passes at grade 7.3, draft re-recorded.",
+    "finished": "2026-10-13T12:43:53-05:00",
+    "result": "Drafted loc-st-helena-island (968 words, grade 5.9) with three category FAQs - Cultural Protection Overlay (live Municode Sec. 3.4.50), Harbor Island access via US 21 and its gate, and a storm-trust FAQ (NPS 1893 hurricane plus Apex's on-call owners) - every H2 and FAQ reworded for uniqueness, 1 map NEED, research rows RL-locations-31 to 33.",
     "changes": 0,
     "step": "build:draft",
     "batch": "locations"
@@ -1859,7 +1866,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T12:35:04-05:00",
+  "updated": "2026-10-13T12:43:53-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2188,8 +2195,8 @@
     }
   ],
   "review_pause": {
-    "run_id": "20261013-123330-build-0582",
+    "run_id": "20261013-123507-build-e367",
     "step": "build:draft",
-    "at": "2026-10-13T12:35:04-05:00"
+    "at": "2026-10-13T12:43:53-05:00"
   }
 }
