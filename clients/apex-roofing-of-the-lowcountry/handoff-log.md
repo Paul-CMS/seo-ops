@@ -2375,3 +2375,10 @@ No drafts, no WordPress, no links, no schema, no gates set.
 - 11 briefs revised and recorded; changes #664–674. FAQs rebuilt to 3 per page (location-faq.md), brand-level fallbacks distinct per page, under-target sections trimmed or dropped (CM-061 §8).
 - Flag F-019 (sources list additions). Open: Paul's A/B on 2a (Okatie, Levy, Pritchardville FAQ), then batch:locations:briefs approval with brand_guide_approved riding on it.
 
+## /build · 2026-10-12 · run 20261012-212825-build-fdce
+
+- Settled site_plan_open_choices: 2a revised to option A (Paul 2026-10-12) — who-issues-the-permit FAQ on Okatie, Levy and Pritchardville, each from its own jurisdiction's source, no Apex-pulls-the-permit claim; 1a, 3b, 4a, 5a unchanged.
+- Settled brand_guide_f_address (closes the open question): Section F confirmed NAP = 6 Sutton Ct, Bluffton, SC 29910 in schema (matches website and BBB); GBP stays SAB with the address hidden. Fact f-confirmed-nap (paul_approved); Brand Guide F row filled (change #683).
+- Briefs: Okatie FAQ 3, Levy FAQ 1 (jurisdiction folded into the permit answer), Pritchardville FAQ 2 resolved to option A; B alternatives and open markers removed; 3 FAQs per page kept (#684–686). CM-011 outbound rows updated to name the cited permit offices as Finish candidates (#687–689; Okatie row added).
+- Open: Paul's one-line approval of batch:locations:briefs with brand_guide_approved. Flag F-019 (sources list) is for a /system session.
+

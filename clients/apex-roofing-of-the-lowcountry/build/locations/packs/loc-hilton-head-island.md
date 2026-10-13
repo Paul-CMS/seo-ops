@@ -1,6 +1,6 @@
 # Evidence pack — Hilton Head Island (location)
 
-Section **locations** · https://apexroofingtlc.com/hilton-head-island/ · built 2026-10-12T21:09 by evidence_pack.py (CM-061).
+Section **locations** · https://apexroofingtlc.com/hilton-head-island/ · built 2026-10-12T21:31 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -199,6 +199,7 @@ _Nothing on the client's site or GBP names it._
 - 2026-10-08 · `entity` — Entity: category Roofing Contractor (variants Roofer, Roofers); area = Hilton Head Island–Bluffton–Port Royal metro area.
 - 2026-10-08 · `titles` — Titles: homepage SEO title uses "Hilton Head Island Metropolitan Area"; homepage H1 uses a familiar name (Lowcountry / South Carolina Lowcountry); service titles `Service Name - Apex Roofing of the Lowcountry` (no area); brand always in full.
 - 2026-10-08 · `about_page` — About page: title "About Apex Roofing of the Lowcountry - Roofing Contractor in the Hilton Head Island–Bluffton–Port Royal Metropolitan Area"; H1 "About Apex Roofing of the Lowcountry"; Ralph and Pierce Brehany named only, with a visible placeholder for photo and titles.
+- 2026-10-12 · `site_plan_open_choices` — Paul 2026-10-12: 2a revised to option A — a who-issues-the-permit FAQ is added on Okatie (Beaufort or Jasper County, by address), Levy (Jasper County, roof replacement) and Pritchardville (Beaufort County or the Town of Bluffton, check the address), each answered from its own jurisdiction's source, 
 - 2026-10-08 · `cm020_serp_retest_2026_10_08` — CM-020 SERP re-test (Paul yes, spent 0.006 USD, 3 Google top-10 reads from Hilton Head Island): condition 2 fails for Roof Repair (1/10 best titles), Roof Replacement (2/10), Skylights (2/10, mostly out-of-area results); only directory lists use best, Apex not in top 10. No page gets The Best; re-te
 - 2026-10-11 · `fact:loc-hilton-head-island:city_served` — answered by 'loc_towns_served'
 - 2026-10-11 · `fact:loc-okatie:city_served` — answered by 'loc_towns_served'

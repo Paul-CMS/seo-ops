@@ -3,7 +3,7 @@
  "type": "location",
  "url": "https://apexroofingtlc.com/beaufort/",
  "section": "locations",
- "built": "2026-10-12T21:09:46-05:00",
+ "built": "2026-10-12T21:31:46-05:00",
  "services": [],
  "places": [
   "Beaufort"
@@ -855,6 +855,11 @@
  ],
  "research": [],
  "settled": [
+  {
+   "key": "site_plan_open_choices",
+   "text": "Paul 2026-10-12: 2a revised to option A — a who-issues-the-permit FAQ is added on Okatie (Beaufort or Jasper County, by address), Levy (Jasper County, roof replacement) and Pritchardville (Beaufort County or the Town of Bluffton, check the address), each answered from its own jurisdiction's source, ",
+   "at": "2026-10-12"
+  },
   {
    "key": "bluffton_communities",
    "text": "Paul 2026-10-09: Apex works in Palmetto Bluff, Belfair, Colleton River Plantation and Moss Creek (W9). Per the Town of Bluffton Neighborhoods PDF, Palmetto Bluff and Hampton Hall are inside the Town limits; Belfair, Colleton River Plantation and Moss Creek are Greater Bluffton (unincorporated Beaufo",

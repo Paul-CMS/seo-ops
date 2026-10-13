@@ -1,6 +1,6 @@
 # Evidence pack — Beaufort (location)
 
-Section **locations** · https://apexroofingtlc.com/beaufort/ · built 2026-10-12T21:09 by evidence_pack.py (CM-061).
+Section **locations** · https://apexroofingtlc.com/beaufort/ · built 2026-10-12T21:31 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -191,6 +191,7 @@ _Nothing on the client's site or GBP names it._
 
 ## Settled decisions touching this page
 
+- 2026-10-12 · `site_plan_open_choices` — Paul 2026-10-12: 2a revised to option A — a who-issues-the-permit FAQ is added on Okatie (Beaufort or Jasper County, by address), Levy (Jasper County, roof replacement) and Pritchardville (Beaufort County or the Town of Bluffton, check the address), each answered from its own jurisdiction's source, 
 - 2026-10-09 · `bluffton_communities` — Paul 2026-10-09: Apex works in Palmetto Bluff, Belfair, Colleton River Plantation and Moss Creek (W9). Per the Town of Bluffton Neighborhoods PDF, Palmetto Bluff and Hampton Hall are inside the Town limits; Belfair, Colleton River Plantation and Moss Creek are Greater Bluffton (unincorporated Beaufo
 - 2026-10-12 · `fact:d:services_subcontracted` — answered by 'services_subcontracted_new_construction'
 - 2026-10-12 · `fact:svc-slate-roofing:service_process` — Paul 2026-10-11 answer 2 (site is accurate; slate process confirmed): framing assessed first (slate weighs roughly 800-1,500 lbs per square vs 200-350 for architectural shingles), with possible sister-rafter or purlin reinforcement; material approval coordinated with the City of Beaufort BAR for his

@@ -1,6 +1,6 @@
 # Evidence pack — Hardeeville (location)
 
-Section **locations** · https://apexroofingtlc.com/hardeeville/ · built 2026-10-12T21:09 by evidence_pack.py (CM-061).
+Section **locations** · https://apexroofingtlc.com/hardeeville/ · built 2026-10-12T21:31 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 

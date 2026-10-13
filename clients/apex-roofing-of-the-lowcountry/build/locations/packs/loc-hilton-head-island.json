@@ -3,7 +3,7 @@
  "type": "location",
  "url": "https://apexroofingtlc.com/hilton-head-island/",
  "section": "locations",
- "built": "2026-10-12T21:09:46-05:00",
+ "built": "2026-10-12T21:31:46-05:00",
  "services": [],
  "places": [
   "Hilton Head Island"
@@ -1349,6 +1349,11 @@
    "key": "about_page",
    "text": "About page: title \"About Apex Roofing of the Lowcountry - Roofing Contractor in the Hilton Head Island–Bluffton–Port Royal Metropolitan Area\"; H1 \"About Apex Roofing of the Lowcountry\"; Ralph and Pierce Brehany named only, with a visible placeholder for photo and titles.",
    "at": "2026-10-08"
+  },
+  {
+   "key": "site_plan_open_choices",
+   "text": "Paul 2026-10-12: 2a revised to option A — a who-issues-the-permit FAQ is added on Okatie (Beaufort or Jasper County, by address), Levy (Jasper County, roof replacement) and Pritchardville (Beaufort County or the Town of Bluffton, check the address), each answered from its own jurisdiction's source, ",
+   "at": "2026-10-12"
   },
   {
    "key": "cm020_serp_retest_2026_10_08",

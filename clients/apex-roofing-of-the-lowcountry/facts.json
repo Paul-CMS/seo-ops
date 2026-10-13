@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-12T20:59:28-05:00",
+  "updated": "2026-10-12T21:28:39-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -987,6 +987,21 @@
       "count": null,
       "was": "Unknown",
       "status_text": null
+    },
+    {
+      "id": "f-confirmed-nap",
+      "section": "F",
+      "num": "",
+      "label": "Confirmed NAP exactly as it must appear",
+      "value": "Apex Roofing of the Lowcountry · 6 Sutton Ct, Bluffton, SC 29910 (full street address in schema, matches the website; the Google profile stays a service-area business with the address hidden) · phone as in Brand Guide A",
+      "status": "paul_approved",
+      "source": "Paul 2026-10-12 (settled brand_guide_f_address)",
+      "quote": "",
+      "date": "2026-10-12",
+      "who": "Paul",
+      "count": null,
+      "was": "Unknown",
+      "status_text": "Paul Approved 2026-10-12"
     }
   ]
 }

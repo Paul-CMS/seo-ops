@@ -1,6 +1,6 @@
 # Evidence pack — Okatie (location)
 
-Section **locations** · https://apexroofingtlc.com/okatie/ · built 2026-10-12T21:09 by evidence_pack.py (CM-061).
+Section **locations** · https://apexroofingtlc.com/okatie/ · built 2026-10-12T21:31 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -187,6 +187,7 @@ _Nothing on the client's site or GBP names it._
 
 ## Settled decisions touching this page
 
+- 2026-10-12 · `site_plan_open_choices` — Paul 2026-10-12: 2a revised to option A — a who-issues-the-permit FAQ is added on Okatie (Beaufort or Jasper County, by address), Levy (Jasper County, roof replacement) and Pritchardville (Beaufort County or the Town of Bluffton, check the address), each answered from its own jurisdiction's source, 
 - 2026-10-11 · `fact:loc-hilton-head-island:city_served` — answered by 'loc_towns_served'
 - 2026-10-11 · `fact:loc-okatie:city_served` — answered by 'loc_towns_served'
 - 2026-10-11 · `fact:loc-pritchardville:city_served` — answered by 'loc_towns_served'

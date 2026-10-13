@@ -307,7 +307,7 @@ TRAVEL FEE BEYOND: none — client answered "No" to "Any travel fee or places yo
 | Social profile list | | |
 | Google Maps share link → hasMap | | |
 | Apple Maps link → sameAs | | |
-| Confirmed NAP exactly as it must appear | | |
+| Confirmed NAP exactly as it must appear | Apex Roofing of the Lowcountry · 6 Sutton Ct, Bluffton, SC 29910 (full street address in schema, matches the website and BBB; the GBP stays a service-area business with the address hidden) · phone as in Section A | Paul Approved 2026-10-12 |
 | Confirmed GBP category → schema subtype | | |
 | Logo files with pixel dimensions | | |
 | Owner name + photo | | |
