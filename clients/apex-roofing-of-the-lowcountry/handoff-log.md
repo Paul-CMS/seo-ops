@@ -2497,3 +2497,47 @@ No drafts, no WordPress, no links, no schema, no gates set.
 ### Not done
 - No publish, no WordPress, no link table, no schema, no Brand Guide write-back (drafts never write it, CM-061).
 
+## /build · 2026-10-13 · run 20261013-072426-build-e9bb
+
+**Agent:** Build (Agent 2), Opus, fresh subagent for this one page (CM-043; agent id `build-subagent-loc-pritchardville-e9bb`) · **Date:** 2026-10-13 · **Route:** A
+
+### Done
+- Drafted `clients/apex-roofing-of-the-lowcountry/build/locations/LD - Pritchardville - Apex Roofing of the Lowcountry.md` from the approved brief (LB - Pritchardville, briefs approved 2026-10-12), `methodology/specs/location.md`, `methodology/location-faq.md` and the evidence pack `build/locations/packs/loc-pritchardville.md`. About 750 words in the file (490 visitor-facing words scored by readability.py), well under the 1,000 ceiling.
+- Recorded: `status.py page-stage apex-roofing-of-the-lowcountry loc-pritchardville --stage draft --run 20261013-072426-build-e9bb --agent build-subagent-loc-pritchardville-e9bb` (exit 0).
+- No new flag. Readability `--exclude-terms` handled with a terms file in the scratchpad (same workaround as F-016).
+
+### Stage 0/1 (map and plan, from the approved brief)
+- Title `Apex Roofing of the Lowcountry - Roofing Contractor - Pritchardville, South Carolina` · meta 152 chars (brief wording) · H1 `Roofers in Pritchardville` · no "The Best" (BG-H2).
+- Variant chain: URL pritchardville → title Roofing Contractor → H1 Roofers → first H2 Residential Roofer → opening roofing contractor + Pritchardville, SC / Beaufort County → FAQ H2 Roofing Contractor. Reserved B1 variant unused.
+- Order (CM-023): opening → services H2 (8 H3s, placeholder row) → local context H2 (4 sentences) → FAQ H2 (3 H3s, one per category) → neighborhoods H2 (2 list items) → map → Top Sites H2 (1) → sibling cities H2 (placeholder row) → CTA with NAP (no H tag). Things to Do dropped (brief; researched, not found).
+- Every H2 and FAQ question is the C3/briefed wording, unchanged (F-020: nothing re-worded).
+
+### Stage 3 self-critique
+- **E1 portability:** pass. Opening angle (small unincorporated SC 46 crossroads between Hardeeville and Bluffton, Pritchard Farms, "does a Bluffton roofer cover my home — yes, no travel fee") and local context (SC 46 becomes May River Road into Bluffton; 1938 WPA guide, Ohio settlers) are Pritchardville-only. Permit FAQ angle is Town-vs-County by address (inside/outside Bluffton town limits, Bluffton Explorer parcel check) — distinct from Okatie (Beaufort vs Jasper County) and Bluffton (Town permit, Apex gets it). Clean-up FAQ worded apart from the service pages' clean-up lines. Lead-ins for services, neighborhoods, siblings and the CTA line differ from Bluffton, Okatie and Hilton Head Island.
+- **E2 specificity:** pass, 6 (unincorporated Beaufort County; SC 46 between Hardeeville and Bluffton; Pritchard Farms; Ohio settlers per 1938 WPA guide; SC 46 = May River Road into Bluffton; St. Luke's 1824, NRHP 10 Nov 1987, Bull Hill Church).
+- **E3 variants:** pass — no consecutive repeat; assigned variants used.
+- **E4 chunks:** opening ~85 · services ~25 · local context ~60 · FAQ ~280 · neighborhoods ~20 · Top Sites ~45 · siblings ~25 — all ≤ 375.
+- **E5 invention sweep:** pass. No price, lifespan, response time, distance, drive time, "nearest town", warranty term, licence, rating, reviewer name, population, elevation or climate sentence. No "City of Pritchardville"; New Riverside communities called "nearby", not inside the Town; no Apex-worked-there claim. No Apex-pulls-the-permit claim (settled `location_client_questions_skipped`). Drainage = Town of Bluffton guidance, said not to be a Pritchardville rule; no gutter installation, no "gutters fix flooding". Clean-up = Paul Approved practice; review used once as an attributed example (keyword-match tier), no "customers mention", no name. St. Luke's said "near"; no historic-restriction claim.
+- **E6 filler:** pass.
+- **E7 headers:** one H1; entity in every header; no skipped levels. COM-11: title remainder "Roofing Contractor" vs H1 remainder "Roofers" — pass. **One E7 finding:** the briefed FAQ H2 "Questions Pritchardville Homeowners Ask a Roofing Contractor" is not a spoken question (kept under F-020).
+- **E8 links:** no link or `[LINK →]` in prose, FAQ or local context; both link-table placeholder rows present.
+- **E9 human:** reads as a local roofer answering "do you come out here, who do I call for the permit".
+- **E10 reading level:** page grade 6.3; one paragraph over 10 fixed (FAQ 3 second paragraph 10.4 → under 10). Read-aloud pass done. FAQ first answer paragraphs about 48 / 52 / 47 words.
+- **Spec checks:** LOC-01–07, 09–14, 18–25 pass; LOC-08 N/A; LOC-15 below target (2 of 6 — Fix and list per brief); LOC-16 open (map NEED); LOC-17 partial (Things to Do dropped, one Top Site — Fix and list per brief); LOC-26 recommendation only (WebPage + ItemList, no LocalBusiness); LOC-27 N/A.
+
+### Open items (placeholders.py: 1)
+1. `[NEED: city-level map embed of Pritchardville, SC — not the Google Business Profile map]` (NEED form, as on Hilton Head Island and Okatie; the brief's `[Map: …]` wording is not allowed under P11).
+- Link-table rows `| [Link wheel: populate service links here] |` and `| [Link wheel: populate sibling-city links here] |`.
+
+### For the draft review
+- FAQ H2 "Questions Pritchardville Homeowners Ask a Roofing Contractor" is not a spoken question (E7); kept as briefed/C3 under F-020. Suggested fix: "What Do Pritchardville Homeowners Ask a Roofing Contractor?"
+- Neighborhoods: 2 listed, target 6 (Fix and list, CM-061 §8). Things to Do dropped; Top Sites one item (Fix and list).
+- FAQ 1 uses Town of Bluffton guidance for a Beaufort County community — worded as "the Town's advice for nearby Bluffton homes, not a Pritchardville rule".
+- FAQ 2 names "the Bluffton Explorer map" (from the brief's round-2 research) — confirm the name at the checker pass.
+- St. Luke's details (1824, style, NRHP date, Bull Hill Church) come from the brief's public research 2026-10-12 (Wikipedia); the pack row carries NRHP 1987 only.
+- Opening "Apex is based in Bluffton, east along SC 46" — direction only, no distance or speed.
+- Outbound authority candidates for Finish (CM-011): Beaufort County Building Codes page and the Town of Bluffton re-roof permit page (FAQ 2); Town of Bluffton Flooding and Drainage Concerns page (FAQ 1).
+
+### Not done
+- No publish, no WordPress, no link table, no schema, no Brand Guide write-back (drafts never write it, CM-061).
+

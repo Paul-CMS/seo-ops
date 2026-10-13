@@ -744,7 +744,7 @@
       }
     },
     "loc-pritchardville": {
-      "state": "brief_written",
+      "state": "draft_written",
       "type": "location",
       "name": "Pritchardville",
       "url": "https://apexroofingtlc.com/pritchardville/",
@@ -777,6 +777,13 @@
           "run": "20261012-212825-build-fdce",
           "at": "2026-10-12T21:30:47-05:00",
           "sha": "f82f6fe6aee5"
+        },
+        "draft": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Pritchardville - Apex Roofing of the Lowcountry.md",
+          "run": "20261013-072426-build-e9bb",
+          "at": "2026-10-13T07:27:04-05:00",
+          "sha": "0e1c3fce3768",
+          "agent": "build-subagent-loc-pritchardville-e9bb"
         }
       },
       "pack": {
@@ -1804,10 +1811,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-071514-build-3126",
+    "run_id": "20261013-072426-build-e9bb",
     "command": "build",
-    "finished": "2026-10-13T07:19:10-05:00",
-    "result": "Drafted loc-okatie (Okatie location page, about 820 words, grade 7.0) from its approved brief and evidence pack, with one map NEED and four neighborhoods against the target of six; draft recorded for the locations draft review.",
+    "finished": "2026-10-13T07:27:53-05:00",
+    "result": "Drafted loc-pritchardville (LD - Pritchardville) from its approved brief and evidence pack; E1-E10 and spec checks pass apart from the briefed FAQ H2 wording, LOC-15/17 below target as Fix and list; one NEED (city map) remains.",
     "changes": 0,
     "step": "build:draft",
     "batch": "locations"
@@ -1831,7 +1838,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T07:19:10-05:00",
+  "updated": "2026-10-13T07:27:53-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2160,8 +2167,8 @@
     }
   ],
   "review_pause": {
-    "run_id": "20261013-071514-build-3126",
+    "run_id": "20261013-072426-build-e9bb",
     "step": "build:draft",
-    "at": "2026-10-13T07:19:10-05:00"
+    "at": "2026-10-13T07:27:53-05:00"
   }
 }
