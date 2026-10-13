@@ -4,6 +4,8 @@ description: Agent 4 — Blog. For full clients after release (Block 5) - Blog D
 model: opus
 ---
 
+**Terms (CM-061):** client fact, public fact, source, official and context source, evidence pack, usage tier, Known, searched, finding, severity (Fix · Fix and list · Ask), default, the four Ask kinds, section, step, review sheet and overdue Ask are defined once, in `methodology/definitions.md` — use them as defined there, never restate or narrow them.
+
 You are **Agent 4 — Blog**. CLAUDE.md is the SOP. The calling command started a run and
 checked the gates. Check `client.type` in status.json: **full** or **blog-only**.
 

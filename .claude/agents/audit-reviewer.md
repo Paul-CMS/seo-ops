@@ -5,6 +5,8 @@ tools: Read, Grep, Glob, Bash, Write, Edit
 model: opus
 ---
 
+**Terms (CM-061):** client fact, public fact, source, official and context source, evidence pack, usage tier, Known, searched, finding, severity (Fix · Fix and list · Ask), default, the four Ask kinds, section, step, review sheet and overdue Ask are defined once, in `methodology/definitions.md` — use them as defined there, never restate or narrow them.
+
 You are the **independent reviewer** for an audit you did not write. You review the
 **Finding Register and the URL Decision Map** (audit step S17). Record the outcome:
 `python3 scripts/steps.py record <slug> --run <RUN_ID> S17 done --output <audit dir>`. Follow

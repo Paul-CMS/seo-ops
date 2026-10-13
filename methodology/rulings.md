@@ -684,6 +684,34 @@ Decided by Paul. In every FAQ answer, sentence one answers the question on its o
 (CM-048, BB-316). The **first answer paragraph** — that sentence plus what supports it — is 40–60 words. The
 reading level (CM-047, E10) applies to the whole answer as usual.
 
+## CM-061 · Evidence first, decide by default
+**ID** CM-061 · **Status** APPROVED · **Date** 2026-10-12 · **Reason** Data is pulled but not used: the evidence and draft steps read none of the review, PAA or fan-out files, "not found" needs no proof, every rule is escalated, the same finding is raised by several checkers, and the Brand Guide is written several times per run (Apex locations: 53 questions for 11 pages; reviews mention photos, yet photos went to Paul as a question). · **Source** Paul, rewrite 3 handoff (Phase 1), 2026-10-12 · **Supersedes** — the batch-review, SEM-pick and write-back parts of `.claude/agents/build.md` and the specs where they differ; the spec wording is updated later, with CR-023 (this ruling governs now)
+
+Decided by Paul. Every term is defined once, in `methodology/definitions.md`.
+1. **Evidence first.** Every input on file is listed in `methodology/data-manifest.json` with the steps that must read
+   it. Before any brief, `scripts/evidence_pack.py` builds one evidence pack per page (facts, reviews, PAA and fan-out
+   questions, site and GBP, public facts, settled decisions, gaps); writers read the pack, not the raw files. Evidence is
+   written at its **usage tier** (writing-commercial.md, "Usage tiers"); the draft review counts how much of each pack
+   was used.
+2. **Research before "not found".** A public fact is never asked — the researcher looks it up. A client fact is asked
+   only after the search order (facts.json → decisions-settled.md → evidence pack → proof sheet and Discovery Record);
+   a client fact with a public lookup (licence, manufacturer certification, business registration) is verified, not
+   asked. Every "not found" carries a research-log entry meeting the minimum effort (`scripts/research.py`); the
+   scripts refuse one that does not.
+3. **Decide by default, one review per step.** Every rule check runs once per step, in one checker pass, after all
+   pages of the section are written. Each finding (`page + rule + item`) is **Fix** (form only, fixed silently),
+   **Fix and list** (a content change made by default, listed under "Decided for you") or **Ask** — only four kinds:
+   page/URL decisions, legal or money claims, client-only facts not found after research, real conflicts. A finding is
+   raised once per section. One review sheet per section per step (`scripts/review.py`); an empty answer accepts the
+   recommended option. An Ask unanswered for 3 working days ships with its default — except a legal or money claim,
+   which is left out of the page until answered.
+4. **The Brand Guide is written once per section**, at the brief approval; drafts, draft review and ship never write it.
+5. **Location FAQs** follow the three-category recipe (`methodology/location-faq.md`); a location that cannot be
+   sourced arrives in the site plan as a merge proposal (the viability check); the minimums in location.md are targets
+   and an optional section is never a hold.
+6. **A pilot runs only when it is worth it** — a client's first section, a new industry, or the first section after a
+   spec or ruling change that affects writing (`gates.json` → `modes` → `pilot`).
+
 ---
 
 # C. Rule Register
@@ -951,6 +979,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-058 | APPROVED (metro hubs, when the metro area is a real category) |
 | CM-059 | APPROVED (homepage H1 lock lifts for a failing, unranked legacy H1 — Paul decides) |
 | CM-060 | APPROVED (FAQ: short first sentence, 40–60-word first paragraph; overrides the spec wording) |
+| CM-061 | APPROVED (evidence first, decide by default — rewrite 3 Phase 1) |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |

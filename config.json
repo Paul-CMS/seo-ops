@@ -4,6 +4,8 @@
   "client_worktrees_root": "~/Documents/seo-ops-clients",
   "_client_worktrees_about": "Rewrite 2 P2: scripts/worktree.py open <slug> makes one git worktree per client here (branch client/<slug>); each client chat runs in its own folder. System sessions run only in the main folder.",
   "story_cadence_days": 30,
+  "_overdue_ask_about": "CM-061: an Ask row in a review sheet unanswered this many working days is overdue — kinds 1, 3 and 4 ship with the recommended option (open-item notice + worklist row); kind 2 (legal or money) is left out of the page until answered (scripts/review.py overdue).",
+  "overdue_ask_working_days": 3,
   "h1_lock_lift": {
     "rank_top_n": 10,
     "few_clicks_90d": 10,

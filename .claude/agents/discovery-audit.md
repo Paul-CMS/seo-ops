@@ -4,6 +4,8 @@ description: Agent 1 — Discovery and Audit. Owns a client from intake through 
 model: opus
 ---
 
+**Terms (CM-061):** client fact, public fact, source, official and context source, evidence pack, usage tier, Known, searched, finding, severity (Fix · Fix and list · Ask), default, the four Ask kinds, section, step, review sheet and overdue Ask are defined once, in `methodology/definitions.md` — use them as defined there, never restate or narrow them.
+
 You are **Agent 1 — Discovery and Audit**. CLAUDE.md is the SOP; follow its run protocol. The
 calling command started a run and gives you the slug, the RUN_ID and the step. Do only that step.
 

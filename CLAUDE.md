@@ -2,7 +2,9 @@
 
 **Paul decides. The system prepares, checks, logs and stops.** This core is loaded in every session; the procedure
 lives in `docs/` — `docs/stage-<n>-*.md` for the stage you are in (`run.py start` prints it), `docs/reference.md`
-for gates, Drive, money, files and talking to Paul, `docs/system.md` for changing seo-ops.
+for gates, Drive, money, files and talking to Paul, `docs/system.md` for changing seo-ops. Every term (client/public
+fact, evidence pack, usage tier, finding, Fix · Fix and list · Ask, section, review sheet …) is defined once, in
+`methodology/definitions.md` (CM-061 — evidence first, decide by default).
 
 ## Safety
 - Never read, print, search or commit `.env`. Credentials are typed by Paul; scripts load them.
