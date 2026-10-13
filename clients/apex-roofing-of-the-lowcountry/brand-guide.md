@@ -92,6 +92,17 @@ variants 1 and 2 are not added on top in an SEO title (H1, H2s and body only).
 | /metal-roofing/ | service | Roofing Contractor; Roofers | Beaufort and Jasper Counties (H1); South Carolina Lowcountry; Lowcountry | build/services/SD - Metal Roofing - Apex Roofing of the Lowcountry.md (services, drafts approved 2026-10-12, SEM applied) | No |
 | /slate-roofing/ | service | Roofer | South Carolina Lowcountry (H1); Beaufort and Jasper Counties; Lowcountry | build/services/SD - Slate Roofing - Apex Roofing of the Lowcountry.md (services, drafts approved 2026-10-12, SEM applied) | No |
 | /skylights/ | service | Residential Roofer | Beaufort and Jasper Counties (H1); South Carolina Lowcountry; Lowcountry | build/services/SD - Skylights - Apex Roofing of the Lowcountry.md (services, drafts approved 2026-10-12, SEM applied) | No |
+| /hilton-head-island/ | location | Roofers (H1); Roofing Contractor (services H2); Roofer (FAQ H2); roofer / roofing contractor (opening) | Hilton Head Island (city); Beaufort County (opening) | build/locations/LB - Hilton Head Island - Apex Roofing of the Lowcountry.md (locations, briefs approved 2026-10-12; draft not yet written) | No |
+| /okatie/ | location | Roofers (H1); Roofer (services H2); Residential Roofer (FAQ H2); roofing contractor (opening) | Okatie (city); Beaufort and Jasper Counties (opening) | build/locations/LB - Okatie - Apex Roofing of the Lowcountry.md (locations, briefs approved 2026-10-12; draft not yet written) | No |
+| /pritchardville/ | location | Roofers (H1); Residential Roofer (services H2); Roofing Contractor (FAQ H2); roofing contractor (opening) | Pritchardville (city); Beaufort County (opening) | build/locations/LB - Pritchardville - Apex Roofing of the Lowcountry.md (locations, briefs approved 2026-10-12; draft not yet written) | No |
+| /beaufort/ | location | Roofers (H1); Roofing Contractor (services H2); Roofer (FAQ H2); roofer / roofing contractor (opening) | Beaufort (city); Beaufort County (opening) | build/locations/LB - Beaufort - Apex Roofing of the Lowcountry.md (locations, briefs approved 2026-10-12; draft not yet written) | No |
+| /port-royal/ | location | Roofers (H1); Roofer (services H2); Residential Roofer (FAQ H2); roofer / roofing contractor (opening) | Port Royal (city); Beaufort County (opening); Lowcountry (sibling H2) | build/locations/LB - Port Royal - Apex Roofing of the Lowcountry.md (locations, briefs approved 2026-10-12; draft not yet written) | No |
+| /ladys-island/ | location | Roofers (H1); Residential Roofer (services H2); Roofing Contractor (FAQ H2); roofer / roofing contractor (opening) | Lady's Island (city); Beaufort County (opening) | build/locations/LB - Lady's Island - Apex Roofing of the Lowcountry.md (locations, briefs approved 2026-10-12; draft not yet written) | No |
+| /st-helena-island/ | location | Roofers (H1); Roofing Contractor (services H2); Roofer (FAQ H2); roofer / roofing contractor (opening) | St. Helena Island (city); Beaufort County (opening) | build/locations/LB - St. Helena Island - Apex Roofing of the Lowcountry.md (locations, briefs approved 2026-10-12; draft not yet written) | No |
+| /fripp-island/ | location | Roofers (H1); Roofer (services H2); Residential Roofer (FAQ H2); roofer / roofing contractor (opening) | Fripp Island (city); Beaufort County (opening) | build/locations/LB - Fripp Island - Apex Roofing of the Lowcountry.md (locations, briefs approved 2026-10-12; draft not yet written) | No |
+| /hardeeville/ | location | Roofers (H1); Residential Roofer (services H2); Roofing Contractor (FAQ H2); roofer / roofing contractor (opening) | Hardeeville (city); Jasper County; Beaufort and Jasper Counties (opening); Lowcountry (sibling H2) | build/locations/LB - Hardeeville - Apex Roofing of the Lowcountry.md (locations, briefs approved 2026-10-12; draft not yet written) | No |
+| /ridgeland/ | location | Roofers (H1); Roofing Contractor (services H2); Roofer (FAQ H2); roofer / roofing contractor (opening) | Ridgeland (city); Jasper County (opening) | build/locations/LB - Ridgeland - Apex Roofing of the Lowcountry.md (locations, briefs approved 2026-10-12; draft not yet written) | No |
+| /levy/ | location | Roofers (H1); Roofer (services H2); Residential Roofer (FAQ H2); roofer / roofing contractor (opening) | Levy (city); Jasper County (opening) | build/locations/LB - Levy - Apex Roofing of the Lowcountry.md (locations, briefs approved 2026-10-12; draft not yet written) | No |
 
 Variants are those in the H1 and H2s (category variants from A3; area variants from the B2 pool). No page uses the
 reserved homepage variant (B1, "Hilton Head Island Metropolitan Area").
@@ -118,6 +129,17 @@ reserved homepage variant (B1, "Hilton Head Island Metropolitan Area").
 | URL | City | GBP landing page? | Status |
 |---|---|---|---|
 | /bluffton/ | Bluffton | Not recorded here (check Section F before schema) | Pilot drafts approved 2026-10-09; WordPress draft (not live); H1 variant "Roofers" |
+| /hilton-head-island/ | Hilton Head Island | No — GBP Website field points at the homepage (BG-A11); city map, no LocalBusiness schema | Locations briefs approved 2026-10-12; draft not yet written; H1 "Roofers on Hilton Head Island" |
+| /okatie/ | Okatie | No — GBP Website field points at the homepage (BG-A11); city map, no LocalBusiness schema | Locations briefs approved 2026-10-12; draft not yet written; H1 "Roofers in Okatie" |
+| /pritchardville/ | Pritchardville | No — GBP Website field points at the homepage (BG-A11); city map, no LocalBusiness schema | Locations briefs approved 2026-10-12; draft not yet written; H1 "Roofers in Pritchardville" |
+| /beaufort/ | Beaufort | No — GBP Website field points at the homepage (BG-A11); city map, no LocalBusiness schema | Locations briefs approved 2026-10-12; draft not yet written; H1 "Roofers in Beaufort" |
+| /port-royal/ | Port Royal | No — GBP Website field points at the homepage (BG-A11); city map, no LocalBusiness schema | Locations briefs approved 2026-10-12; draft not yet written; H1 "Roofers in Port Royal" |
+| /ladys-island/ | Lady's Island | No — GBP Website field points at the homepage (BG-A11); city map, no LocalBusiness schema | Locations briefs approved 2026-10-12; draft not yet written; H1 "Roofers on Lady's Island" |
+| /st-helena-island/ | St. Helena Island | No — GBP Website field points at the homepage (BG-A11); city map, no LocalBusiness schema | Locations briefs approved 2026-10-12; draft not yet written; H1 "Roofers on St. Helena Island" |
+| /fripp-island/ | Fripp Island | No — GBP Website field points at the homepage (BG-A11); city map, no LocalBusiness schema | Locations briefs approved 2026-10-12; draft not yet written; H1 "Roofers on Fripp Island" |
+| /hardeeville/ | Hardeeville | No — GBP Website field points at the homepage (BG-A11); city map, no LocalBusiness schema | Locations briefs approved 2026-10-12; draft not yet written; H1 "Roofers in Hardeeville" |
+| /ridgeland/ | Ridgeland | No — GBP Website field points at the homepage (BG-A11); city map, no LocalBusiness schema | Locations briefs approved 2026-10-12; draft not yet written; H1 "Roofers in Ridgeland" |
+| /levy/ | Levy | No — GBP Website field points at the homepage (BG-A11); city map, no LocalBusiness schema | Locations briefs approved 2026-10-12; draft not yet written; H1 "Roofers in Levy" |
 
 Only a verified GBP's actual landing URL gets LocalBusiness-type schema (BB-604).
 
@@ -204,9 +226,120 @@ Every FAQ question and H2 live on the site, with the page that owns it. No quest
 | FAQ: How long does a synthetic slate roof last? | /slate-roofing/ |
 | FAQ: Who makes synthetic slate, and does it look like real slate? | /slate-roofing/ |
 | H2: Where Do We Install and Repair Slate Roofs? | /slate-roofing/ |
+| H2: Which Roofing Services Does a Hilton Head Island Roofing Contractor Offer? | /hilton-head-island/ |
+| H2: What Does a Sea Island Mean for a Hilton Head Island Roof? | /hilton-head-island/ |
+| H2: What Do Hilton Head Island Homeowners Ask a Roofer Before a New Roof? | /hilton-head-island/ |
+| FAQ: Which roofing materials and colors do Hilton Head Island plantation communities approve? | /hilton-head-island/ |
+| FAQ: How does salt air affect roofs on Hilton Head Island? | /hilton-head-island/ |
+| FAQ: Does the Town's flood rule apply to a new roof on Hilton Head Island? | /hilton-head-island/ |
+| H2: Which Hilton Head Island Neighborhoods Do We Serve? | /hilton-head-island/ |
+| H2: What Are Some Things to Do on Hilton Head Island? | /hilton-head-island/ |
+| H2: What Are the Top Sites to See on Hilton Head Island? | /hilton-head-island/ |
+| H2: Which Towns Near Hilton Head Island Do We Also Serve? | /hilton-head-island/ |
+| H2: Which Roof Services Does an Okatie Roofer Offer? | /okatie/ |
+| H2: What Makes Okatie Different for Roofing? | /okatie/ |
+| H2: Which Questions Do Okatie Homeowners Ask a Residential Roofer? | /okatie/ |
+| FAQ: Do you work in Callawassie Island, Spring Island and other Okatie-area communities? | /okatie/ |
+| FAQ: Do I need ARC approval to replace my roof on Callawassie Island? | /okatie/ |
+| FAQ: Is my Okatie roofing permit handled by Beaufort County or Jasper County? | /okatie/ |
+| H2: Which Okatie Neighborhoods Do We Serve? | /okatie/ |
+| H2: What Are Some Things to Do in Okatie? | /okatie/ |
+| H2: What Are the Top Sites to See in Okatie? | /okatie/ |
+| H2: Which Towns Near Okatie Do We Also Serve? | /okatie/ |
+| H2: Which Roof Services Can a Residential Roofer Do in Pritchardville? | /pritchardville/ |
+| H2: Where Is Pritchardville, SC? | /pritchardville/ |
+| H2: Questions Pritchardville Homeowners Ask a Roofing Contractor | /pritchardville/ |
+| FAQ: Where should the rain off my roof go on a home near Pritchardville? | /pritchardville/ |
+| FAQ: Who issues the roof permit for a Pritchardville address? | /pritchardville/ |
+| FAQ: How is my yard left after a roof job in Pritchardville? | /pritchardville/ |
+| H2: Which Pritchardville Neighborhoods Do We Serve? | /pritchardville/ |
+| H2: What Are the Top Sites to See Near Pritchardville? | /pritchardville/ |
+| H2: Which Towns Near Pritchardville Do We Also Serve? | /pritchardville/ |
+| H2: What Roofing Services Does a Beaufort Roofing Contractor Offer? | /beaufort/ |
+| H2: What Makes Beaufort a Different Place to Roof? | /beaufort/ |
+| H2: What Do Owners of Historic Beaufort Homes Ask a Roofer? | /beaufort/ |
+| FAQ: Does a roof replacement in Beaufort's Historic District need review board approval? | /beaufort/ |
+| FAQ: Can a historic Beaufort home get a metal roof? | /beaufort/ |
+| FAQ: Does the Bailey Bill tax freeze apply if I replace the roof on an older Beaufort house? | /beaufort/ |
+| H2: Which Beaufort Neighborhoods Do We Serve? | /beaufort/ |
+| H2: What Are Some Things to Do in Beaufort? | /beaufort/ |
+| H2: What Are the Top Sites to See in Beaufort? | /beaufort/ |
+| H2: Which Towns Near Beaufort Do We Also Serve? | /beaufort/ |
+| H2: Which Roofing Services Does a Port Royal Roofer Offer? | /port-royal/ |
+| H2: What Should You Know About Roofing in a Low-Lying Town Like Port Royal? | /port-royal/ |
+| H2: What Should Port Royal Homeowners Ask a Residential Roofer? | /port-royal/ |
+| FAQ: Does my Port Royal home need historic review before a roof job? | /port-royal/ |
+| FAQ: Do you work on homes near Parris Island and in military housing? | /port-royal/ |
+| FAQ: Does a big roof job on a Port Royal home trigger the flood-zone 50% rule? | /port-royal/ |
+| H2: Which Port Royal Neighborhoods Do We Work In? | /port-royal/ |
+| H2: What Is There to Do in Port Royal? | /port-royal/ |
+| H2: Which Historic Sites Can You Visit in Port Royal? | /port-royal/ |
+| H2: Which Lowcountry Towns Beyond Port Royal Do We Also Serve? | /port-royal/ |
+| H2: Which Roof Services Does a Residential Roofer Offer on Lady's Island? | /ladys-island/ |
+| H2: What Makes Roofing on Lady's Island Different? | /ladys-island/ |
+| H2: What Do Lady's Island Homeowners Ask a Roofing Contractor? | /ladys-island/ |
+| FAQ: Is my Lady's Island home in the City of Beaufort or Beaufort County? | /ladys-island/ |
+| FAQ: Does a big re-roof on my Lady's Island home trigger Beaufort County's flood "substantial improvement" rule? | /ladys-island/ |
+| FAQ: Do you re-roof homes on Dataw Island, near Lady's Island? | /ladys-island/ |
+| H2: Which Lady's Island Neighborhoods Do We Serve? | /ladys-island/ |
+| H2: What Are Some Things to Do on Lady's Island? | /ladys-island/ |
+| H2: What Are the Top Sites to See on Lady's Island? | /ladys-island/ |
+| H2: Which Towns Near Lady's Island Do We Also Serve? | /ladys-island/ |
+| H2: Which Roof Services Can You Get From a St. Helena Island Roofing Contractor? | /st-helena-island/ |
+| H2: What Makes Roofing on St. Helena Island Different? | /st-helena-island/ |
+| H2: What Do St. Helena Island Homeowners Ask a Roofer? | /st-helena-island/ |
+| FAQ: Do you serve Harbor Island homes from St. Helena Island? | /st-helena-island/ |
+| FAQ: Does the Cultural Protection Overlay limit what I can do to my roof? | /st-helena-island/ |
+| FAQ: Who actually works on a St. Helena Island roof? | /st-helena-island/ |
+| H2: Which St. Helena Island Neighborhoods Do We Serve? | /st-helena-island/ |
+| H2: What Are Some Things to Do on St. Helena Island? | /st-helena-island/ |
+| H2: What Are the Top Sites to See on St. Helena Island? | /st-helena-island/ |
+| H2: Which Towns Near St. Helena Island Do We Also Serve? | /st-helena-island/ |
+| H2: Which Services Does a Fripp Island Roofer Offer? | /fripp-island/ |
+| H2: What Makes Roofing on Fripp Island Different? | /fripp-island/ |
+| H2: What Do Fripp Island Homeowners Ask a Residential Roofer? | /fripp-island/ |
+| FAQ: How does a roofing crew get onto gated Fripp Island? | /fripp-island/ |
+| FAQ: What should an oceanfront Fripp Island roof be built to withstand? | /fripp-island/ |
+| FAQ: Does the Fripp Island property owners' association review roof replacements? | /fripp-island/ |
+| H2: Which Fripp Island Neighborhoods Do We Serve? | /fripp-island/ |
+| H2: What Are Some Things to Do on Fripp Island? | /fripp-island/ |
+| H2: What Are the Top Sites to See on Fripp Island? | /fripp-island/ |
+| H2: Which Towns Near Fripp Island Do We Also Serve? | /fripp-island/ |
+| H2: Which Roof Services Does a Residential Roofer Offer in Hardeeville? | /hardeeville/ |
+| H2: How Does Hardeeville's Growth Shape Its Roofs? | /hardeeville/ |
+| H2: What Do Hardeeville Homeowners Ask a Roofing Contractor About a New Home's Roof? | /hardeeville/ |
+| FAQ: Should I have my new Hardeeville home's roof checked before the builder warranty ends? | /hardeeville/ |
+| FAQ: Who do I call if a storm damages my Hardeeville roof after hours? | /hardeeville/ |
+| FAQ: How will I know what was done on my Hardeeville roof? | /hardeeville/ |
+| H2: Which Hardeeville Neighborhoods Do We Serve? | /hardeeville/ |
+| H2: What Are Some Things to Do in Hardeeville? | /hardeeville/ |
+| H2: What Are the Top Sites to See in Hardeeville? | /hardeeville/ |
+| H2: Which Lowcountry Towns Near Hardeeville Do We Also Serve? | /hardeeville/ |
+| H2: Which Roofing Services Does a Ridgeland Roofing Contractor Offer? | /ridgeland/ |
+| H2: What Should You Know About Roofing in Ridgeland, the Jasper County Seat? | /ridgeland/ |
+| H2: What Do Ridgeland Homeowners Ask a Roofer Before Booking? | /ridgeland/ |
+| FAQ: Do I need a Town of Ridgeland or Jasper County permit to replace my roof? | /ridgeland/ |
+| FAQ: Do Ridgeland homeowners pay more because they are farther from Bluffton? | /ridgeland/ |
+| FAQ: Will the crew show up when they say they will for my Ridgeland roof? | /ridgeland/ |
+| H2: Which Ridgeland Neighborhoods Do We Serve? | /ridgeland/ |
+| H2: What Are Some Things to Do in Ridgeland? | /ridgeland/ |
+| H2: What Are the Top Sites to See in Ridgeland? | /ridgeland/ |
+| H2: Which Towns Near Ridgeland Do We Also Serve? | /ridgeland/ |
+| H2: What Can a Roofer Do for Your Levy Home? | /levy/ |
+| H2: What Should a Levy Homeowner Know About Where Levy Sits? | /levy/ |
+| H2: What Do Levy Homeowners Ask a Residential Roofer? | /levy/ |
+| FAQ: Do I need a Jasper County permit to replace my roof in Levy? | /levy/ |
+| FAQ: Can I finance a new roof on my Levy home? | /levy/ |
+| FAQ: Can I choose between CertainTeed and GAF shingles for my Levy roof? | /levy/ |
+| H2: Which Levy Neighborhoods Do We Serve? | /levy/ |
+| H2: Which Towns Near Levy Do We Also Serve? | /levy/ |
 
 Pilot pages (Roof Repair, Bluffton) and the services batch, from the approved drafts (written back 2026-10-12, run
 20261012-150342-build-474a). H3 service-type subheadings are not listed; they repeat type names by design.
+The locations section (11 pages), from the approved briefs (written back once at the brief approval, CM-061, run
+20261012-213607-build-27a0): the H2s and FAQ questions as briefed. Levy has no Things to Do or Top Sites H2 and
+Pritchardville no Things to Do H2 (sections dropped, researched and not found). The flood-rule questions on Hilton Head
+Island, Port Royal and Lady's Island are kept by Paul (settled `flood_rule_faq_overlap_kept`); each is worded for its own place.
 
 ## Section D — Verified facts
 Everything a writer may state. **Not here = does not exist.**

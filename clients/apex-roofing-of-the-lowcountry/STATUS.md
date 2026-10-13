@@ -1,16 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch locations)**
-- **What is happening now:** ready to start: Brand Guide write-back for section locations (B3, C1/C2, C3) from its approved briefs — once per section; drafts, the draft review and ship never write it
-- **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM; Client (via Paul) — For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-ro
-- **Next action:** `/build apex-roofing-of-the-lowcountry writeback locations` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open apex-roofing-of-the-lowcountry`) and types `/next apex-roofing-of-the-lowcountry` (agents: build (opus), brief-writer (sonnet), clerk (haiku))
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — build:writeback finished (run 20261012-213607-build-27a0) and that stage is in review mode; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
+- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
 
-_Generated 2026-10-12T21:34 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-13T07:01 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
+| Paul | build:writeback finished (run 20261012-213607-build-27a0) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry draft locations loc-hilton-head-island (draft and self-critique for loc-hilton-head-island (its own run)) | 2026-10-13 | /next apex-roofing-of-the-lowcountry |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
 | Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-replacement:service_scope |
@@ -34,8 +35,8 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Jonie | waiting for Jonie to publish the pages (H-2026-10-09-10-publish). When the worksheet comes back, this checks batch pilot's live pages against their approved files, adds alt text and updates the living handoff | 2026-10-12 | /build apex-roofing-of-the-lowcountry published pilot |
-| Jonie | blockers not cleared: H-2026-10-08-03-redirect-01 is issued; H-2026-10-08-03-redirect-02 is issued; H-2026-10-08-04-broken_link-01 is issued; H-2026-10-08-04-broken_link-02 is issued; H-2026-10-08-04-broken_link-03 is issued (+41 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-12 | /verify apex-roofing-of-the-lowcountry |
+| Jonie | waiting for Jonie to publish the pages (H-2026-10-09-10-publish). When the worksheet comes back, this checks batch pilot's live pages against their approved files, adds alt text and updates the living handoff | 2026-10-13 | /build apex-roofing-of-the-lowcountry published pilot |
+| Jonie | blockers not cleared: H-2026-10-08-03-redirect-01 is issued; H-2026-10-08-03-redirect-02 is issued; H-2026-10-08-04-broken_link-01 is issued; H-2026-10-08-04-broken_link-02 is issued; H-2026-10-08-04-broken_link-03 is issued (+41 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-13 | /verify apex-roofing-of-the-lowcountry |
 | Jonie | other handoff — 5 of 5 item(s) open | 2026-10-05 | H-2026-10-05-01-other |
 | Gwen | manual lookup handoff — 5 of 5 item(s) open | 2026-10-05 | H-2026-10-05-02-manual_lookup |
 | Jonie | redirect handoff — 2 of 2 item(s) open | 2026-10-08 | H-2026-10-08-03-redirect |
@@ -142,6 +143,7 @@ _None — every input on file has been read._
 - **F-013** → CR-018 (open) 2026-10-12 · build:brief: methodology/specs/service.md §3 #9 and §6 tell writers to leave service-area rows as '| [Link wheel: populate service-area links here] |', but the build rules (P11, stage-6 doc) allow only [NEED: …] and [LINK → /slug/ · reason] placeholders, and publish.py drafts refuses a placeholder without a NEED note. The two rules disagree on the service-areas table placeholder. — workaround: Briefs keep the spec's link-wheel row form (as the approved pilot and sibling briefs do); Finish fills the table before ship. Paul to settle the form at /system-review.
 - **F-018** (open, not yet reviewed) 2026-10-12 · build:brief: Brief step: the SOP says Build writes public research into build/evidence/<page>.facts.json, but there is no script for it. The guard blocks inline Python, and running a scratchpad script on the facts files was denied by the permission classifier (audit tampering). So the 2026-10-12 researcher findings (Lady's Island neighborhoods/things/top sites, Okatie neighborhoods+top sites, St. Helena things to do, Fripp neighborhoods, Levy county) are not on the grids. Needed: an evidence.py/facts.py subcommand that records a page fact with source and status. — workaround: Research kept in the run's research JSONs; each brief cites it as 'public research 2026-10-12 — not yet on the grid'. The gate already cleared all 11 pages (6 PASS, 5 WARN), so no page was held for this.
 - **F-019** (open, not yet reviewed) 2026-10-12 · build:brief: methodology/sources/sc-lowcountry.md: new official sources read this run should be added at /system-review — Callawassie Island POA Design Standards (https://www.callawassieisland.com/wp-content/uploads/2025/06/20240201ARC-Guidelines-.pdf), Town of Bluffton Flooding and Drainage Concerns (https://www.townofbluffton.sc.gov/444/Flooding-and-Drainage-Concerns), Beaufort County Council district maps (neighbourhood labels), Town of Ridgeland About page (incorporation 1894), Jasper County community centers / boat landings pages, City of Beaufort Bailey Bill FAQ (https://cityofbeaufort.org/m/faq?cat=28). The Town of Bluffton Neighborhoods PDF URL is still missing from the list; the Beaufort County Passive Parks page now 301s to a 403. — workaround: Cited directly in the page facts files and briefs for this client (research log RL-locations-1..12, round2.json).
+- **F-020** (open, not yet reviewed) 2026-10-13 · build:writeback: CM-061 writes C3 once, at the brief approval, but the location briefs give 'suggested headings (writer may re-word inside the rules)' and some FAQ questions say 'writer may re-word'. Drafts never write the Brand Guide, so any heading or FAQ the draft re-words leaves C3 out of step with the shipped page, and later sections check collisions against stale rows. — workaround: C3 records the H2s and FAQ questions exactly as briefed (locations, 107 rows). The draft checker pass should hold each draft to its briefed headings, or list any re-word as a Fix-and-list row so the next write-back (or a system fix) can correct C3.
 
 ## Spend so far
 
@@ -154,4 +156,4 @@ _None — every input on file has been read._
 | build:brief | 2 | 612,000 | $0.00 |
 | **total** | 2 | 612,000 | $0.00 |
 
-Last run: /build 2026-10-12T21:31 — Paul's answers recorded: 2a = option A (permit FAQs on Okatie, Levy, Pritchardville applied to the briefs); Section F address = 6 Sutton Ct, Bluffton, SC 29910. Evidence gate 11/11 PASS. Locations briefs ready for approval with the Brand Guide re-approval
+Last run: /build 2026-10-13T07:01 — Locations Brand Guide write-back (CM-061): B3 +11 rows, C2 +11 rows, C3 +107 rows (74 H2s, 33 FAQs) from the approved briefs, no duplicates, no approved value changed, fact rows unchanged, Drive copied; flag F-020 (C3 vs re-worded draft headings).

@@ -4179,3 +4179,53 @@ Approved version: clients/apex-roofing-of-the-lowcountry/build/locations/LB - Le
 - CHANGE #701 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (32).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha fdda09928475 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #702 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (32).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (32).md | result: done · renamed and moved, nothing deleted
 - CHANGE #703 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (32).md | new: Apex Roofing of the Lowcountry - Status.md · sha 95739bdee5cb | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261012-213607-build-27a0 · STARTED · /build · 2026-10-12T21:36:07-05:00
+Step: build:writeback · batch locations · session 4b4b1602-b1b8-4325-bb46-d6fdcde6c418
+Gates checked: discovery_signed_off, batch:locations:briefs
+- CHANGE #704 [brand_guide] clients/apex-roofing-of-the-lowcountry/brand-guide.md#B3 | B3 assignment log | old:  | new:  | result: APPLIED · local · 11 rows: the locations section pages, from the approved briefs (CM-061 write-back at the brief approval) | snapshots clients/apex-roofing-of-the-lowcountry/snapshots/20261012-213607-build-27a0/0704-old.md clients/apex-roofing-of-the-lowcountry/snapshots/20261012-213607-build-27a0/0704-new.md
+- CHANGE #705 [brand_guide] clients/apex-roofing-of-the-lowcountry/brand-guide.md#C2 | C2 location pages | old:  | new:  | result: APPLIED · local · 11 location rows (GBP landing page: No for all; H1 Roofers in/on <town>); C1 unchanged (no service pages in this section) | snapshots clients/apex-roofing-of-the-lowcountry/snapshots/20261012-213607-build-27a0/0705-old.md clients/apex-roofing-of-the-lowcountry/snapshots/20261012-213607-build-27a0/0705-new.md
+- CHANGE #706 [brand_guide] clients/apex-roofing-of-the-lowcountry/brand-guide.md#C3 | C3 heading and FAQ registry | old:  | new:  | result: APPLIED · local · 107 rows (74 H2s + 33 FAQ questions) for the 11 locations pages, as briefed; no question or H2 on two pages | snapshots clients/apex-roofing-of-the-lowcountry/snapshots/20261012-213607-build-27a0/0706-old.md clients/apex-roofing-of-the-lowcountry/snapshots/20261012-213607-build-27a0/0706-new.md
+- CHANGE #707 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Brand Guide - 2026-10-12 (7).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Brand Guide.md | new: _Archive/Apex Roofing of the Lowcountry - Brand Guide - 2026-10-12 (7).md | result: done · renamed and moved, nothing deleted
+- CHANGE #708 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Brand Guide.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Brand Guide - 2026-10-12 (7).md | new: Apex Roofing of the Lowcountry - Brand Guide.md · sha b2f6989b5fd7 | result: done · copied (Drive for desktop syncs it)
+- WRITE-BACK 2026-10-13T07:00 · run 20261012-213607-build-27a0 · batch locations: Brand Guide B3, C1/C2, C3 updated once for the section, from its approved briefs
+- FLAG 2026-10-13T07:00 · run 20261012-213607-build-27a0 · F-020 · CM-061 writes C3 once, at the brief approval, but the location briefs give 'suggested headings (writer may re-word inside the rules)' and some FAQ questions say 'writer may re-word'. Drafts never write the Brand Guide, so any heading or FAQ the draft re-words leaves C3 out of step with the shipped page, and later sections check collisions against stale rows. · workaround: C3 records the H2s and FAQ questions exactly as briefed (locations, 107 rows). The draft checker pass should hold each draft to its briefed headings, or list any re-word as a Fix-and-list row so the next write-back (or a system fix) can correct C3.
+### HANDOFF · /build · 2026-10-13 · run 20261012-213607-build-27a0
+**Step:** the locations section's one Brand Guide write-back (CM-061), at the brief approval (batch locations briefs approved by Paul 2026-10-12). Route A.
+
+**Done**
+- Brand Guide B3 (assignment log): 11 rows, one per location page (Hilton Head Island, Okatie, Pritchardville, Beaufort, Port Royal, Lady's Island, St. Helena Island, Fripp Island, Hardeeville, Ridgeland, Levy). Each row gives the category variants from the brief's variant chain (H1 "Roofers"; the services H2, FAQ H2 and opening variants), the area terms (the town, plus the county or "Beaufort and Jasper Counties" in the opening, and "Lowcountry" in the Port Royal and Hardeeville sibling H2s) and the approved brief file. Change #704.
+- Brand Guide C2 (location pages): 11 rows. GBP landing page: No for all (the GBP Website field points at the homepage, BG-A11). Status: briefs approved 2026-10-12, draft not yet written. C1 unchanged (no service pages in this section). Change #705.
+- Brand Guide C3 (heading and FAQ registry): 107 rows, 74 H2s and 33 FAQ questions (3 per page), as briefed. Levy has no Things to Do or Top Sites H2, and Pritchardville no Things to Do H2 (both dropped: researched, not found). No H2 or question appears twice, inside the section or against the existing 78 rows. Change #706.
+- Fact rows regenerated from facts.json (`facts.py render`): nothing changed.
+- Brand Guide copied to Drive (`drive.py upload`).
+- `status.py writeback apex-roofing-of-the-lowcountry locations` recorded (exit 0).
+
+**Checks**
+- No new row uses the reserved homepage variant (B1, "Hilton Head Island Metropolitan Area").
+- Every H1 matches the approved site plan ("Roofers in/on <town>").
+- The flood-rule questions on Hilton Head Island, Port Royal and Lady's Island are kept, as Paul decided (settled `flood_rule_faq_overlap_kept`). Each is worded for its own place.
+
+**Approved values**
+- Only B3, C2 and C3 were edited. They sit outside the approved Brand Guide sections, and the fact rows did not change. brand_guide_approved stands. It was already re-approved on the locations briefs line (2026-10-12).
+
+**Flag F-020**
+- C3 holds the headings as briefed, but the briefs let the writer re-word headings. Drafts never write the Brand Guide, so a re-worded heading would leave C3 out of date. Workaround: the draft review holds drafts to the briefed headings, or lists each re-word as a Fix-and-list row.
+
+**Open [NEED]s carried by the briefs (for the drafts, not this step)**
+- Hardeeville: verify the statute wording against the scstatehouse.gov text before quoting it.
+- Fripp Island FAQ 2: a cited FEMA source on high-wind roof installation.
+- Lady's Island FAQ 2: the Beaufort County Floodplain Administrator to confirm the cumulative period.
+
+**Next:** `/build apex-roofing-of-the-lowcountry write locations`: drafts, one fresh subagent per page, then the draft review.
+### END HANDOFF
+## RUN 20261012-213607-build-27a0 · FINISHED · 2026-10-13T07:01:00-05:00
+Changes: 5 · Summary: Locations Brand Guide write-back (CM-061): B3 +11 rows, C2 +11 rows, C3 +107 rows (74 H2s, 33 FAQs) from the approved briefs, no duplicates, no approved value changed, fact rows unchanged, Drive copied; flag F-020 (C3 vs re-worded draft headings).
+- CHANGE #709 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (23).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (23).md | result: done · renamed and moved, nothing deleted
+- CHANGE #710 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-12 (23).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 7690d1c26c46 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #711 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (33).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (33).md | result: done · renamed and moved, nothing deleted
+- CHANGE #712 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-12 (33).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 46ea6ece6a00 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #713 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (33).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-12 (33).md | result: done · renamed and moved, nothing deleted
+- CHANGE #714 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-12 (33).md | new: Apex Roofing of the Lowcountry - Status.md · sha 118691de9ca1 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #715 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - VA Worklist - 2026-10-12.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.md | new: _Archive/Apex Roofing of the Lowcountry - VA Worklist - 2026-10-12.md | result: done · renamed and moved, nothing deleted
+- CHANGE #716 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - VA Worklist - 2026-10-12.md | new: Apex Roofing of the Lowcountry - VA Worklist.md · sha 3b0b2f6a0b26 | result: done · copied (Drive for desktop syncs it)

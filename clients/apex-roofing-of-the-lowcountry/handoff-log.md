@@ -2382,3 +2382,33 @@ No drafts, no WordPress, no links, no schema, no gates set.
 - Briefs: Okatie FAQ 3, Levy FAQ 1 (jurisdiction folded into the permit answer), Pritchardville FAQ 2 resolved to option A; B alternatives and open markers removed; 3 FAQs per page kept (#684–686). CM-011 outbound rows updated to name the cited permit offices as Finish candidates (#687–689; Okatie row added).
 - Open: Paul's one-line approval of batch:locations:briefs with brand_guide_approved. Flag F-019 (sources list) is for a /system session.
 
+## /build · 2026-10-13 · run 20261012-213607-build-27a0
+
+**Step:** the locations section's one Brand Guide write-back (CM-061), at the brief approval (batch locations briefs approved by Paul 2026-10-12). Route A.
+
+**Done**
+- Brand Guide B3 (assignment log): 11 rows, one per location page (Hilton Head Island, Okatie, Pritchardville, Beaufort, Port Royal, Lady's Island, St. Helena Island, Fripp Island, Hardeeville, Ridgeland, Levy). Each row gives the category variants from the brief's variant chain (H1 "Roofers"; the services H2, FAQ H2 and opening variants), the area terms (the town, plus the county or "Beaufort and Jasper Counties" in the opening, and "Lowcountry" in the Port Royal and Hardeeville sibling H2s) and the approved brief file. Change #704.
+- Brand Guide C2 (location pages): 11 rows. GBP landing page: No for all (the GBP Website field points at the homepage, BG-A11). Status: briefs approved 2026-10-12, draft not yet written. C1 unchanged (no service pages in this section). Change #705.
+- Brand Guide C3 (heading and FAQ registry): 107 rows, 74 H2s and 33 FAQ questions (3 per page), as briefed. Levy has no Things to Do or Top Sites H2, and Pritchardville no Things to Do H2 (both dropped: researched, not found). No H2 or question appears twice, inside the section or against the existing 78 rows. Change #706.
+- Fact rows regenerated from facts.json (`facts.py render`): nothing changed.
+- Brand Guide copied to Drive (`drive.py upload`).
+- `status.py writeback apex-roofing-of-the-lowcountry locations` recorded (exit 0).
+
+**Checks**
+- No new row uses the reserved homepage variant (B1, "Hilton Head Island Metropolitan Area").
+- Every H1 matches the approved site plan ("Roofers in/on <town>").
+- The flood-rule questions on Hilton Head Island, Port Royal and Lady's Island are kept, as Paul decided (settled `flood_rule_faq_overlap_kept`). Each is worded for its own place.
+
+**Approved values**
+- Only B3, C2 and C3 were edited. They sit outside the approved Brand Guide sections, and the fact rows did not change. brand_guide_approved stands. It was already re-approved on the locations briefs line (2026-10-12).
+
+**Flag F-020**
+- C3 holds the headings as briefed, but the briefs let the writer re-word headings. Drafts never write the Brand Guide, so a re-worded heading would leave C3 out of date. Workaround: the draft review holds drafts to the briefed headings, or lists each re-word as a Fix-and-list row.
+
+**Open [NEED]s carried by the briefs (for the drafts, not this step)**
+- Hardeeville: verify the statute wording against the scstatehouse.gov text before quoting it.
+- Fripp Island FAQ 2: a cited FEMA source on high-wind roof installation.
+- Lady's Island FAQ 2: the Beaufort County Floodplain Administrator to confirm the cumulative period.
+
+**Next:** `/build apex-roofing-of-the-lowcountry write locations`: drafts, one fresh subagent per page, then the draft review.
+

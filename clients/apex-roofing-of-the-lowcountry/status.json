@@ -1553,6 +1553,10 @@
             "clients/apex-roofing-of-the-lowcountry/build/locations/LB - Ridgeland - Apex Roofing of the Lowcountry.md",
             "clients/apex-roofing-of-the-lowcountry/build/locations/LB - Levy - Apex Roofing of the Lowcountry.md"
           ]
+        },
+        "content_written_back": {
+          "at": "2026-10-13T07:00:13-05:00",
+          "run": "20261012-213607-build-27a0"
         }
       },
       {
@@ -1786,12 +1790,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261012-212825-build-fdce",
+    "run_id": "20261012-213607-build-27a0",
     "command": "build",
-    "finished": "2026-10-12T21:31:50-05:00",
-    "result": "Paul's answers recorded: 2a = option A (permit FAQs on Okatie, Levy, Pritchardville applied to the briefs); Section F address = 6 Sutton Ct, Bluffton, SC 29910. Evidence gate 11/11 PASS. Locations briefs ready for approval with the Brand Guide re-approval",
-    "changes": 7,
-    "step": "build:brief",
+    "finished": "2026-10-13T07:01:00-05:00",
+    "result": "Locations Brand Guide write-back (CM-061): B3 +11 rows, C2 +11 rows, C3 +107 rows (74 H2s, 33 FAQs) from the approved briefs, no duplicates, no approved value changed, fact rows unchanged, Drive copied; flag F-020 (C3 vs re-worded draft headings).",
+    "changes": 5,
+    "step": "build:writeback",
     "batch": "locations"
   },
   "spend": {
@@ -1813,7 +1817,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-12T21:34:48-05:00",
+  "updated": "2026-10-13T07:01:00-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -1932,6 +1936,12 @@
       "step": "build:brief",
       "first_run": "20261012-205526-build-9baf",
       "at": "2026-10-12T21:24:42-05:00"
+    },
+    "4b4b1602-b1b8-4325-bb46-d6fdcde6c418": {
+      "key": "batches:locations",
+      "step": "build:writeback",
+      "first_run": "20261012-213607-build-27a0",
+      "at": "2026-10-13T07:01:00-05:00"
     }
   },
   "wheel_pending": {
@@ -2134,5 +2144,10 @@
       "usd": 0.0,
       "at": "2026-10-12T21:31:50-05:00"
     }
-  ]
+  ],
+  "review_pause": {
+    "run_id": "20261012-213607-build-27a0",
+    "step": "build:writeback",
+    "at": "2026-10-13T07:01:00-05:00"
+  }
 }
