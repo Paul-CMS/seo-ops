@@ -1277,10 +1277,10 @@
         },
         "draft": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Levy - Apex Roofing of the Lowcountry.md",
-          "run": "20261013-132052-build-32e7",
-          "at": "2026-10-13T13:27:25-05:00",
-          "sha": "58b8f56ffc81",
-          "agent": "build-subagent-loc-levy-32e7"
+          "run": "20261013-133428-build-0964",
+          "at": "2026-10-13T13:36:56-05:00",
+          "sha": "4c39934f6444",
+          "agent": "build-subagent-loc-levy-0964"
         }
       },
       "pack": {
@@ -1867,10 +1867,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-132052-build-32e7",
+    "run_id": "20261013-133428-build-0964",
     "command": "build",
-    "finished": "2026-10-13T13:28:39-05:00",
-    "result": "Levy location draft written (737 words, grade 5.1) with three FAQs - Jasper County permit grounded in S.C. Code 6-9-30, Hearth financing, and an Apex-warranty trust answer - five H2s and all three FAQs reworded or replaced vs the brief for uniqueness, research rows RL-locations-42/43 logged, one map NEED left open.",
+    "finished": "2026-10-13T13:37:33-05:00",
+    "result": "Levy draft revised: financing fallback FAQ 2 replaced with a sourced SC Safe Home grant FAQ (RL-locations-44/45); grade 5.1, FAQ section 371 words, all checks pass, draft re-recorded.",
     "changes": 0,
     "step": "build:draft",
     "batch": "locations"
@@ -1894,7 +1894,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T13:28:39-05:00",
+  "updated": "2026-10-13T13:37:33-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2223,8 +2223,8 @@
     }
   ],
   "review_pause": {
-    "run_id": "20261013-132052-build-32e7",
+    "run_id": "20261013-133428-build-0964",
     "step": "build:draft",
-    "at": "2026-10-13T13:28:39-05:00"
+    "at": "2026-10-13T13:37:33-05:00"
   }
 }

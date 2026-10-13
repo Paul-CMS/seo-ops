@@ -42,11 +42,11 @@ Jasper County does. State law, S.C. Code § 6-9-30, puts the unincorporated part
 
 You can apply online through the County's permitting site, or on its paper Building Permit Application. The office is open Monday through Friday, 9 AM to 5 PM, at (843) 717-3650. Its Building Department is charged with inspecting work under the International Building Code. Ask the County what your job needs before a start date is set.
 
-### Financing a Levy roof replacement — does Apex offer it?
+### Grant money for a wind-rated roof — can Levy homeowners apply?
 
-Yes. Apex has offered financing for several years through Hearth, a company that specializes in home improvement loans. That lets a Levy homeowner pay for a new roof over time instead of all at once. The loan terms come from Hearth, not from Apex, so ask about them when you book your free estimate.
+Yes, if it qualifies. Levy is in Jasper County, one of 11 counties where the state's SC Safe Home program funds grants. Covered roof work includes a high wind-rated roof covering, roof deck attachment and a secondary water barrier. The home must be a freestanding single-family house you own and live in.
 
-The price of the roof itself depends mostly on its size and the material you choose. Architectural shingles and standing seam metal sit at very different price points. Your estimate puts a number on your own roof first, so you have a real figure to take to Hearth.
+It also needs an active homeowner's policy and no past storm damage or claim payouts. Grants top out at $7,500. Applications open twice a year; check the SC Department of Insurance's Safe Home page for dates. For costs a grant leaves, Apex offers Hearth financing and a free estimate.
 
 ### Whose crew comes back to Levy if a new roof ever leaks?
 

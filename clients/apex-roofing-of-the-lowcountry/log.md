@@ -5668,3 +5668,60 @@ Changes: 0 · Summary: Levy location draft written (737 words, grade 5.1) with t
 - CHANGE #804 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (15).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 7931e3fa97c2 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #805 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (15).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (15).md | result: done · renamed and moved, nothing deleted
 - CHANGE #806 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (15).md | new: Apex Roofing of the Lowcountry - Status.md · sha df696ed0f214 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261013-133428-build-0964 · STARTED · /build · 2026-10-13T13:34:28-05:00
+Step: build:draft · batch locations · session 4b4b1602-b1b8-4325-bb46-d6fdcde6c418
+Gates checked: discovery_signed_off, batch:locations:briefs, page_specs_approved
+- RESEARCH 2026-10-13T13:36 · run 20261013-133428-build-0964 · RL-locations-44 · fact:loc-levy:faq_safe_home_counties (public): found
+- RESEARCH 2026-10-13T13:36 · run 20261013-133428-build-0964 · RL-locations-45 · fact:loc-levy:faq_safe_home_roof_items (public): found
+- DRAFT 2026-10-13T13:36 · run 20261013-133428-build-0964 · loc-levy · clients/apex-roofing-of-the-lowcountry/build/locations/LD - Levy - Apex Roofing of the Lowcountry.md · agent build-subagent-loc-levy-0964
+### HANDOFF · /build · 2026-10-13 · run 20261013-133428-build-0964
+**Agent:** Build (Agent 2), Opus, fresh subagent for this one page (CM-043; agent id `build-subagent-loc-levy-0964`) · **Date:** 2026-10-13 · **Route:** A
+
+### Done
+- Revised `clients/apex-roofing-of-the-lowcountry/build/locations/LD - Levy - Apex Roofing of the Lowcountry.md` under Paul's settled `location_three_strong_faqs`. FAQ 2 used to be the generic financing fallback. It is now a local cost/decision FAQ about SC Safe Home. FAQs 1 and 3 and the rest of the page are unchanged.
+- The new FAQ 2 is "Grant money for a wind-rated roof — can Levy homeowners apply?" Its opening, "Grant", is not used on any sibling page.
+  - **Paragraph 1 (52 words):** Yes, if the home qualifies. Jasper County is one of the 11 funded counties. The roof items covered are a high wind-rated roof covering, roof deck attachment and a secondary water barrier. The home must be a freestanding single-family home the owner lives in.
+  - **Paragraph 2 (49 words):** The home needs an active homeowner's policy and no past storm damage or claim payouts. Grants top out at $7,500. Applications open twice a year, so the reader is sent to the DOI Safe Home page for dates. The answer closes with one sentence on Hearth financing and Apex's free estimate.
+- Left out on purpose:
+  - no application dates
+  - no approval timing
+  - no income-based award size
+  - no claim that Apex takes part in the program, files the application or does the inspection
+  - § 38-75-755 (optional; cut to keep the FAQ section under 375 words)
+  - no wind-rating code (Pritchardville) and no FEMA uplift (Fripp)
+- Research rows were logged with `research.py log`:
+  - **RL-locations-44:** the DOI SC Safe Home FAQ (doi.sc.gov/faq.aspx?TID=39), for the counties, grant tiers and home types.
+  - **RL-locations-45:** the DOI Safe Home grant page (doi.sc.gov/605/SC-Safe-Home/Grant), for the roof items, eligibility conditions and twice-a-year applications.
+- Recorded the draft with `status.py page-stage … --stage draft --run 20261013-133428-build-0964 --agent build-subagent-loc-levy-0964` (exit 0).
+
+### Checks
+- **Reading level (E10):** readability.py gives the page grade 5.1 over 535 words, with no paragraph over 10. FAQ 2 scores 5.7. E10 passes. The terms file is `scratchpad/terms-levy.txt` (F-016 workaround); "SC Safe Home", "Safe Home" and "SC Department of Insurance" were added to it.
+- **FAQ first paragraphs:** 54, 52 and 58 words, all within 40–60.
+- **E4:** the FAQ section is 371 words, under 375. Only FAQ 2 was trimmed to get there.
+- **Page length:** 737 body words.
+- **E5 (invention sweep):** every claim in FAQ 2 traces to RL-44 or RL-45, or to client-confirmed Hearth financing and the free estimate.
+- **Sentence uniqueness:** 0 sentences of 5+ words match any other draft under build/ (locations, pilot or services).
+- **placeholders.py:** 1 NEED (the city-level map) and 0 LINK.
+
+### For the drafts review
+1. **Fix and list:** FAQ 2 is replaced (financing fallback → SC Safe Home). Brand Guide C3 needs the new question at write-back.
+2. **Fix and list:** RL-44 and RL-45 are new public evidence that is not in the brief. The brief had listed Safe Home as "unverified"; it is now verified.
+3. **Note:** the Safe Home page currently says it is not accepting applications. The page states no dates, so it stays correct.
+4. Everything listed in the earlier handoff (run-20261013-132052-build-32e7) still applies: the warranty-term sentence, the review tier, LOC-15 and LOC-17.
+5. **Finish outbound candidates (CM-011):** doi.sc.gov/605/SC-Safe-Home/Grant and doi.sc.gov/faq.aspx?TID=39.
+
+### Not done
+- No publish, link table, schema or Brand Guide write-back.
+- Nothing approved.
+- No flag raised.
+- `run.py finish` is left to the calling command.
+### END HANDOFF
+## RUN 20261013-133428-build-0964 · FINISHED · 2026-10-13T13:37:33-05:00
+Changes: 0 · Summary: Levy draft revised: financing fallback FAQ 2 replaced with a sourced SC Safe Home grant FAQ (RL-locations-44/45); grade 5.1, FAQ section 371 words, all checks pass, draft re-recorded.
+- CHANGE #807 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (16).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (16).md | result: done · renamed and moved, nothing deleted
+- CHANGE #808 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (16).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 79e9a83ef191 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #809 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (16).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (16).md | result: done · renamed and moved, nothing deleted
+- CHANGE #810 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (16).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 199ff4f284c1 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #811 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (16).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (16).md | result: done · renamed and moved, nothing deleted
+- CHANGE #812 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (16).md | new: Apex Roofing of the Lowcountry - Status.md · sha cd653637f541 | result: done · copied (Drive for desktop syncs it)
