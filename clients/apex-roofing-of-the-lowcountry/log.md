@@ -4659,3 +4659,137 @@ Changes: 0 · Summary: Drafted the Port Royal location page (707 words, grade 5.
 - CHANGE #750 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (6).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 2fddaffb6aad | result: done · copied (Drive for desktop syncs it)
 - CHANGE #751 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (6).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (6).md | result: done · renamed and moved, nothing deleted
 - CHANGE #752 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (6).md | new: Apex Roofing of the Lowcountry - Status.md · sha 08d3c6397d3e | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-13T08:20 · after build:draft (run 20261013-081021-build-1bd6) · Paul typed /next
+
+## RUN 20261013-082022-build-66b5 · STARTED · /build · 2026-10-13T08:20:22-05:00
+Step: build:draft · batch locations · session 4b4b1602-b1b8-4325-bb46-d6fdcde6c418
+Gates checked: discovery_signed_off, batch:locations:briefs, page_specs_approved
+- RESEARCH 2026-10-13T08:26 · run 20261013-082022-build-66b5 · RL-locations-20 · fact:loc-ladys-island:faq_city_or_county (public): found
+- RESEARCH 2026-10-13T08:26 · run 20261013-082022-build-66b5 · RL-locations-21 · fact:loc-ladys-island:faq_flood_rule (public): partial
+- DRAFT 2026-10-13T08:26 · run 20261013-082022-build-66b5 · loc-ladys-island · clients/apex-roofing-of-the-lowcountry/build/locations/LD - Lady's Island - Apex Roofing of the Lowcountry.md · agent build-subagent-loc-ladys-island-66b5
+- FLAG 2026-10-13T08:27 · run 20261013-082022-build-66b5 · F-021 · Location drafts cannot re-read official PDFs (Port Royal flood guide, Beaufort County ch. 78 flood ordinance, Dataw Design Guidelines, Beaufort County District 9B map): WebFetch returns unreadable binary and no PDF text tool is installed, so drafts rest on earlier brief-time reads and some facts (e.g. the Beaufort County cumulative substantial-improvement period) stay unconfirmed. · workaround: Drafts state no unconfirmed figure, cite the brief-time reading, and tell the reader to ask the office; list each for the drafts review.
+### HANDOFF · /build · 2026-10-13 · run 20261013-082022-build-66b5
+**Agent:** Build (Agent 2), Opus, fresh subagent for this one page (CM-043; agent id `build-subagent-loc-ladys-island-66b5`) · **Date:** 2026-10-13 · **Route:** A
+
+### Done
+- Wrote `clients/apex-roofing-of-the-lowcountry/build/locations/LD - Lady's Island - Apex Roofing of the Lowcountry.md`. Sources: the approved brief (`LB - Lady's Island …`), the evidence pack (`packs/loc-ladys-island.md`) and Paul's rules of 2026-10-13 (settled `location_three_strong_faqs`).
+- Recorded the draft with `status.py page-stage … --stage draft --run 20261013-082022-build-66b5 --agent build-subagent-loc-ladys-island-66b5` (exit 0).
+- New public research logged:
+  - **RL-locations-20:** City of Beaufort Building Permits page, read 2026-10-13. "Reroof" is listed under Building Projects < $50,000, which "still require Building Code review". Community Development is 843-525-7011.
+  - **RL-locations-21** (partial): Beaufort County Flood Information page, read 2026-10-13. Elevation Certificates can be requested there. The page states no cumulative period.
+- Not re-verified (rests on the 2026-10-12 reads in `research-2026-10-12/loc-ladys-island.json`):
+  - The County flood ordinance PDF and the Dataw Design Guidelines PDF came back as binary on 2026-10-13, and this machine has no PDF text tool.
+  - So the cumulative look-back was **not** confirmed from an official source. The page names no period. It says only that the ordinance "adds up work done over time" and tells the reader to ask the County. No NEED was added.
+- No flag raised. Readability used a terms file in the scratchpad (the F-016 workaround).
+
+### The three FAQs (one per category, methodology/location-faq.md)
+1. **Cat. 2 · logistics:** "Does my Lady's Island address fall under the City of Beaufort or the County?"
+   - Wikipedia: small portions of the island are in the City, and most is unincorporated.
+   - City Building Permits page: a reroof still needs Building Code review; Community Development 843-525-7011.
+   - County addresses go to Beaufort County Building Codes.
+   - The page does not claim that Apex pulls a permit, and it does not mention the Historic District.
+2. **Cat. 1 · local decision:** "Could a new roof on a Lady's Island home set off Beaufort County's 50% flood rule?"
+   - Beaufort County Code ch. 78 (Flood Damage Prevention Ordinance): 50% of pre-work market value; market value from the assessor's building value or an appraisal; two exclusions.
+   - The County Flood Information page: Elevation Certificates.
+   - A City-address home is told to ask the City.
+   - No period, no flood zone, no claim that a re-roof reaches 50%.
+3. **Cat. 3 · trust:** "Will Apex re-roof our home on Dataw Island, near Lady's Island?"
+   - Apex works on Dataw (Paul Approved, `communities_outside_towns` / `dataw_nearby_islands`).
+   - Dataw Design Guidelines (Mar 2025):
+     - an ARB application is needed
+     - same color and material = signed application only
+     - a new color or material needs samples
+     - allowed: slate, standing seam metal, asphalt
+     - **mildew-resistant shingles required** (the local pain point)
+     - metal must have a non-glare finish
+     - shingle samples come from the approved list
+   - Apex facts:
+     - factory-certified installer of CertainTeed and GAF (client_confirmed)
+     - daily clean-up and magnet sweep (paul_approved)
+   - Review at its tier: clean-up topic, keyword match only. Written as an attributed example: "One homeowner wrote in 2026 that the clean-up was superb each day."
+   - The page does not say that Apex files the ARB application.
+
+### Rewords vs the brief / C3 (F-020: Brand Guide C3 still holds the briefed wording)
+- **FAQ 1:** "Is my Lady's Island home in the City of Beaufort or Beaufort County?" → "Does my Lady's Island address fall under the City of Beaufort or the County?" The briefed shape repeated Okatie's "Is my … Beaufort County or Jasper County?".
+- **FAQ 2:** "Does a big re-roof on my Lady's Island home trigger Beaufort County's flood 'substantial improvement' rule?" → "Could a new roof on a Lady's Island home set off Beaufort County's 50% flood rule?" The briefed shape repeated Port Royal's "Does a big roof job on a … home trigger …".
+- **FAQ 3:** "Do you re-roof homes on Dataw Island, near Lady's Island?" → "Will Apex re-roof our home on Dataw Island, near Lady's Island?" This avoids the "Do you work …" shape used by Okatie and Port Royal.
+- **H2 rewords:**
+
+| Section | Briefed H2 | Drafted H2 | Shape it avoided |
+|---|---|---|---|
+| Services | Which Roof Services Does a Residential Roofer Offer on Lady's Island? | Which Residential Roofer Services Can Lady's Island Homes Book? | Okatie / Hilton Head / Beaufort |
+| Local context | What Makes Roofing on Lady's Island Different? | Why Are So Many Lady's Island Homes in Newer Subdivisions? | "What Makes" (Okatie, Beaufort, Bluffton) |
+| FAQ | What Do Lady's Island Homeowners Ask a Roofing Contractor? | What Should You Ask a Roofing Contractor About a Lady's Island Re-Roof? | Exact Pritchardville shape |
+| Neighbourhoods | Which Lady's Island Neighborhoods Do We Serve? | What Lady's Island Neighborhoods Does Apex Cover? | Used on 4 pages |
+| Things to Do | What Are Some Things to Do on Lady's Island? | Where Can You Get Outdoors on Lady's Island? | Used on 4 pages |
+| Top Sites | What Are the Top Sites to See on Lady's Island? | Which Landmarks Stand Out on Lady's Island? | Used on 4 pages |
+| Sibling cities | Which Towns Near Lady's Island Do We Also Serve? | Where Else Does Apex Roof Homes Besides Lady's Island? | Used on 4 pages |
+
+- **FAQ order:** City/County comes first, because the flood answer depends on it.
+
+### Unique and not competing
+- **Opening angle:** the reader crosses the Woods swing bridge from downtown, the island has newer subdivisions, and the first thing to settle is City or County. **Local context:** plantation and timber tracts became subdivisions, plus 16 ft and the forest and wetlands. No sibling uses either.
+- **Exact-sentence check against every sibling and service draft:** only the NAP line, the link-table rows and the meta's briefed CTA match. The opening's "Call (843) 757-2739 for a free estimate." matched three siblings and was rewritten.
+- **Taken angles not used:** plantation boards, Town 49%, salt air, county line, ARC, wind rating, Town/County permit by address, evacuation, City HRB, metal-roof rules, terne, Town 50%, base housing, Old Village.
+- **What stays off other pages:**
+  - Beaufort: no Historic District mention.
+  - Port Royal: no Parris Island or Port Royal mention.
+  - St. Helena: Dataw is framed only as "near Lady's Island", with no St. Helena geography and no Harbor Island.
+  - Excluded names left out: Cat Island, Distant Island and Coosaw Point (Coosaw Point appears only as a Top Site).
+
+### Checks
+- **Size and reading level:**
+  - 736 words scored; under 1,000.
+  - Page grade 6.5. No paragraph over 10 after one fix: the FAQ lead-in was split.
+  - Read-aloud pass done.
+  - FAQ first paragraphs are 57, 51 and 52 words. The opening is 92 words.
+- **E1 portability:** pass. Every section names Lady's Island-only facts.
+- **E2:** at least 8 specific facts:
+  - Woods Bridge (1959, NRHP 2023)
+  - 16 ft
+  - forest and wetlands
+  - subdivision conversion
+  - City/County split
+  - County 50% rule
+  - 12 neighbourhoods
+  - Whitehall Park 9.72 acres
+  - Crystal Lake 25 acres
+  - airport 110 acres
+- **E3 variant chain:** title Roofing Contractor → H1 Roofers → opening "roofing contractor" and "roofer" → services H2 Residential Roofer → FAQ H2 Roofing Contractor. No repeat between consecutive elements, and the reserved variant is not used.
+- **E4:** every section is under 375 words.
+- **E5:**
+  - Every noun and number traces to the pack, the brief's cited sources or RL-20/21.
+  - None of these appear: price, response time, look-back period, flood zone, permit-pulling claim, ARB-filing claim, climate claim, hours or the 1988 date.
+- **E6:** no banned phrases.
+- **E7:** one H1; every H2 is a spoken question naming Lady's Island; no levels skipped.
+- **E8:** no cross-page links; both link-table placeholders are present.
+- **E9:** pass.
+- **Spec:**
+  - LOC-14 met (3 FAQs).
+  - LOC-15: 12 neighbourhoods.
+  - LOC-16: map NEED.
+  - LOC-17 met.
+  - LOC-19: NAP matches.
+  - LOC-20: order follows CM-023.
+  - LOC-22 met.
+  - LOC-26: WebPage + ItemList (recommendation only).
+- **Placeholders** (`placeholders.py scan`): 1 NEED (the map), 0 LINK.
+
+### For the drafts review
+1. **Fix and list:** 3 FAQ and 7 H2 rewords (table above). C3 needs an update at write-back (F-020).
+2. **Check:** the flood cumulative period is still unconfirmed by the Floodplain Administrator. The page states none. Optional before ship.
+3. **Check:** the flood and Dataw wording rests on the 2026-10-12 PDF reads. Neither PDF was re-readable on 2026-10-13, because no PDF text tool is installed. The system could add one.
+4. **Fix and list:** a clean-up review is used as an attributed example (keyword-match tier, 11 reviewers, not yet checked by meaning). It could become "Customers mention…" once the researcher checks it.
+5. **Finish outbound candidates (CM-011):** City of Beaufort Building Permits (/156), Beaufort County Flood Information page.
+
+### Not done
+No publish, link table, schema or Brand Guide write-back. Nothing approved. `run.py finish` is left to the calling command.
+### END HANDOFF
+## RUN 20261013-082022-build-66b5 · FINISHED · 2026-10-13T08:27:30-05:00
+Changes: 0 · Summary: Drafted the Lady's Island location page (736 words, grade 6.5) with three category FAQs (City or County for your address, Beaufort County's 50% flood rule, Dataw Island re-roofs under its Design Guidelines); logged City permit and County flood-info research (RL-locations-20/21); FAQ and H2 rewords listed for the drafts review; flagged the PDF-reading gap.
+- CHANGE #753 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (7).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (7).md | result: done · renamed and moved, nothing deleted
+- CHANGE #754 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (7).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha e2883258f029 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #755 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (7).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (7).md | result: done · renamed and moved, nothing deleted
+- CHANGE #756 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (7).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 5fc46f991312 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #757 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (7).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (7).md | result: done · renamed and moved, nothing deleted
+- CHANGE #758 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (7).md | new: Apex Roofing of the Lowcountry - Status.md · sha fff6812aa901 | result: done · copied (Drive for desktop syncs it)

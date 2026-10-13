@@ -931,7 +931,7 @@
       }
     },
     "loc-ladys-island": {
-      "state": "brief_written",
+      "state": "draft_written",
       "type": "location",
       "name": "Lady's Island",
       "url": "https://apexroofingtlc.com/ladys-island/",
@@ -963,6 +963,13 @@
           "run": "20261012-205526-build-9baf",
           "at": "2026-10-12T21:23:13-05:00",
           "sha": "804ba4848574"
+        },
+        "draft": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Lady's Island - Apex Roofing of the Lowcountry.md",
+          "run": "20261013-082022-build-66b5",
+          "at": "2026-10-13T08:26:25-05:00",
+          "sha": "de9300d10389",
+          "agent": "build-subagent-loc-ladys-island-66b5"
         }
       },
       "pack": {
@@ -1825,10 +1832,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-081021-build-1bd6",
+    "run_id": "20261013-082022-build-66b5",
     "command": "build",
-    "finished": "2026-10-13T08:17:50-05:00",
-    "result": "Drafted the Port Royal location page (707 words, grade 5.9) with three category FAQs (Town flood 50% rule, base housing near Parris Island, Old Village repair under the historic overlay), logged NPS and Military OneSource research, corrected the Camp Saxton date, and listed the FAQ and H2 rewords for the drafts review.",
+    "finished": "2026-10-13T08:27:30-05:00",
+    "result": "Drafted the Lady's Island location page (736 words, grade 6.5) with three category FAQs (City or County for your address, Beaufort County's 50% flood rule, Dataw Island re-roofs under its Design Guidelines); logged City permit and County flood-info research (RL-locations-20/21); FAQ and H2 rewords listed for the drafts review; flagged the PDF-reading gap.",
     "changes": 0,
     "step": "build:draft",
     "batch": "locations"
@@ -1852,7 +1859,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T08:17:50-05:00",
+  "updated": "2026-10-13T08:27:30-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2181,8 +2188,8 @@
     }
   ],
   "review_pause": {
-    "run_id": "20261013-081021-build-1bd6",
+    "run_id": "20261013-082022-build-66b5",
     "step": "build:draft",
-    "at": "2026-10-13T08:17:50-05:00"
+    "at": "2026-10-13T08:27:30-05:00"
   }
 }
