@@ -1,17 +1,15 @@
 # Evidence grid — Ridgeland (location)
 
-**Result: WARN** · Known 8 · Unknown 1 · Unverified 1 · Conflict 0 (CM-041)
+**Result: PASS** · Known 9 · Unknown 0 · Unverified 1 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
-
-- 1 required and 1 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'
 
 | Fact | Need | Mark | Value | Source |
 |---|---|---|---|---|
 | Phone | required | **Known** | (843) 757-2739 (GBP, site, BBB, HomeAdvisor) | Brand Guide A |
 | The city is actually served (Section E / proof sheet) | required | **Known** | Ridgeland, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06. | Brand Guide E (all 12 towns confirmed, Paul 2026-10-06); decisions-settled 'business' (12 towns) |
 | City-specific conditions (housing stock, terrain, weather, failure patterns) | required | **Known** | Town centre on a low ridge at 62 ft (page; infobox says 16 ft, so inconsistent) — name refers to some of the highest land in Jasper County. 2020 census population about 3,750; 1,151 housing units, 9.6% vacant; median age 36.4. Page has no c | https://en.wikipedia.org/wiki/Ridgeland,_South_Carolina (read 2026-10-11) |
-| 6-12 real neighborhoods | required | **Unknown** |  | searched, not found (3 source(s) on disk) |
+| 6-12 real neighborhoods | required | **Known** | Partial (target 6): Bee's Creek / The Groves at Bees Creek — new-home subdivision off Bees Creek Road, in Town of Ridgeland records (Planning Commission 2022-08-08 agenda: Lennar 'Bee's Creek Phase II' preliminary plat; 2026-09-14 packet ma | https://www.ridgelandsc.gov/pdfs/Planning-Commission-August-8th-2022-Agenda.pdf ; https://www.ridgelandsc.gov/pdfs/Planning-Commission-September-14-2026-Agenda-Packet.pdf (read 2026-10-12; research log RL-locations-9, run 20261012-205526-build-9baf); Paul's research 2026-10-12 (answers-round-2.md) |
 | Free estimate / offer | required | **Known** | Free estimates ("Yes, free estimates"). What free covers beyond that is not confirmed: W17 "Pre-estimate inspections … are always free. Independent inspection reports … are priced separately." | Paul answers B12; W10, W17 |
 | Things to Do (real, verifiable) | supporting | **Known** | Ridgeland farmers market (weekends, April to December); visit the historic sites Old House Plantation and Old Baptist Church. | https://jaspersc.org/2021/07/discover-ridgeland-and-hardeeville/ (read 2026-10-11) |
 | Top Sites (real, verifiable) | supporting | **Known** | Jasper County Courthouse (Ridgeland is the county seat); Old House Plantation (childhood home of Thomas Heyward Jr., Declaration of Independence signer); Old Baptist Church (former Union forces headquarters). | https://en.wikipedia.org/wiki/Ridgeland,_South_Carolina ; https://jaspersc.org/2021/07/discover-ridgeland-and-hardeeville/ (read 2026-10-11) |

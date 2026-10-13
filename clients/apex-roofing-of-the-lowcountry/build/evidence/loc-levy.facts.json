@@ -12,19 +12,19 @@
       "source": "https://en.wikipedia.org/wiki/Levy,_South_Carolina (read 2026-10-11)"
     },
     "neighborhoods": {
-      "value": "",
-      "status": "Unknown",
-      "source": "not found — tried: https://en.wikipedia.org/wiki/Levy,_South_Carolina (names none; Levy appears only in the Jasper County list of other communities)"
+      "value": "Partial (target 6) — nearby communities, not neighbourhoods of Levy: Limehouse (unincorporated Jasper County community at US 17 / SC 170, GNIS 1231480, next to Savannah National Wildlife Refuge). Bellinger Hill and Cook(s) Landing (Paul's research) are not confirmed as communities by a public source (the county lists 'Cooks Landing' only as a boat ramp) — not listed. Levy is unincorporated southern Jasper County, not Beaufort County.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Limehouse,_South_Carolina ; https://www.jaspercountysc.gov/recreation-culture/boating/boat-landings/ (read 2026-10-12; research log RL-locations-10, run 20261012-205526-build-9baf)"
     },
     "things_to_do": {
-      "value": "",
-      "status": "Unknown",
-      "source": "not found — tried: https://en.wikipedia.org/wiki/Levy,_South_Carolina (no attractions stated)"
+      "value": "Partial — community facility, not an attraction: Levy Limehouse Community Center (Jasper County, 470 Mitchell's Court, Hardeeville SC 29927; no description or hours). Nearby only (not at Levy): Savannah National Wildlife Refuge, Laurel Hill Wildlife Drive, off US 17 near Hardeeville.",
+      "status": "Internally Verified",
+      "source": "https://www.jaspercountysc.gov/recreation-culture/community-centers/ ; https://www.fws.gov/refuge/savannah/visit-us (read 2026-10-12; research log RL-locations-11, run 20261012-205526-build-9baf)"
     },
     "top_sites": {
       "value": "",
       "status": "Unknown",
-      "source": "not found — tried: https://en.wikipedia.org/wiki/Levy,_South_Carolina (no landmarks stated)"
+      "source": "not found — research log RL-locations-12 (run 20261012-205526-build-9baf, 2026-10-12): Wikipedia Levy (no landmarks), Jasper County recreation pages, NRHP Jasper County list (nearest: Old House Plantation and Jasper County Courthouse, both Ridgeland); area source list methodology/sources/sc-lowcountry.md"
     }
   },
   "recorded_by_run": "20261011-212524-build-5379"

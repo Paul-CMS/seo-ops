@@ -1,0 +1,1448 @@
+{
+ "page": "loc-okatie",
+ "type": "location",
+ "url": "https://apexroofingtlc.com/okatie/",
+ "section": "locations",
+ "built": "2026-10-12T21:09:46-05:00",
+ "services": [],
+ "places": [
+  "Okatie"
+ ],
+ "facts": [
+  {
+   "id": "a-brand-entity-gbp-name-exactly",
+   "label": "Brand entity (GBP name, exactly)",
+   "status": "paul_approved",
+   "value": "Apex Roofing of the Lowcountry — the public-facing name everywhere (\"LLC\" dropped; Paul 2026-10-06, Discovery Record C5)",
+   "source": ""
+  },
+  {
+   "id": "a-gbp-primary-category-the-category-entity",
+   "label": "GBP primary category = the category entity",
+   "status": "paul_approved",
+   "value": "Roofing contractor — Wikipedia: https://en.wikipedia.org/wiki/Roofer (lead names \"roofing contractor\")",
+   "source": ""
+  },
+  {
+   "id": "a-category-variants-4-6",
+   "label": "Category variants (4–6)",
+   "status": "paul_approved",
+   "value": "Roofing Contractor · Roofer · Roofers (all Wikipedia). Excluded by Paul 2026-10-05: Roof Mechanic. Residential Roofer — approved by Paul 2026-10-08 (site plan choice 4a; site wording, not Wikipedia; the business is residential only)",
+   "source": ""
+  },
+  {
+   "id": "a-storefront-or-sab",
+   "label": "Storefront or SAB",
+   "status": "paul_approved",
+   "value": "SAB based in Bluffton, SC — no office customers visit. Publicly shown: \"Bluffton, SC 29910\" only; the street address (6 Sutton Ct, Bluffton, SC 29910) stays hidden on the GBP (Paul option (a), 2026-10-07). The client's own answer named \"6 Sutton Ct, Bluffton, ",
+   "source": ""
+  },
+  {
+   "id": "a-area-entity",
+   "label": "Area entity",
+   "status": "paul_approved",
+   "value": "Hilton Head Island–Bluffton–Port Royal, SC Metropolitan Statistical Area — Wikipedia: https://en.wikipedia.org/wiki/Hilton_Head_Island_metropolitan_area",
+   "source": ""
+  },
+  {
+   "id": "a-area-variants-3-5",
+   "label": "Area variants (3–5)",
+   "status": "paul_approved",
+   "value": "Hilton Head Island Metropolitan Area (reserved, homepage SEO title) · Hilton Head Island–Bluffton–Port Royal Metropolitan Area · South Carolina Lowcountry · Lowcountry · Beaufort and Jasper Counties",
+   "source": ""
+  },
+  {
+   "id": "a-separator-standard",
+   "label": "Separator standard",
+   "status": "internally_verified",
+   "value": "` - `",
+   "source": ""
+  },
+  {
+   "id": "a-phone",
+   "label": "Phone",
+   "status": "paul_approved",
+   "value": "(843) 757-2739 (GBP, site, BBB, HomeAdvisor)",
+   "source": ""
+  },
+  {
+   "id": "a-primary-domain-canonical-host-form",
+   "label": "Primary domain (canonical host form)",
+   "status": "internally_verified",
+   "value": "https://apexroofingtlc.com/ (www and http forms 301 here in one hop)",
+   "source": ""
+  },
+  {
+   "id": "a-legal-entity-name",
+   "label": "Legal entity name",
+   "status": "submitted",
+   "value": "APEX ROOFING OF THE LOWCOUNTRY LLC (SC no. 493170, Good Standing — OpenCorporates copy; SOS primary not read, CAPTCHA). Paul 2026-10-06: the legal name is whatever the state registration shows",
+   "source": ""
+  },
+  {
+   "id": "a-exact-url-in-the-gbp-website-field",
+   "label": "Exact URL in the GBP Website field",
+   "status": "submitted",
+   "value": "http://www.apexroofingtlc.com/ (as recorded by Paul at intake). Client 2026-10-07: Paul has access to the GBP (\"Yes\")",
+   "source": ""
+  },
+  {
+   "id": "d-founding-year-years-in-business",
+   "label": "Founding year / years in business",
+   "status": "paul_approved",
+   "value": "2015 (\"Roll with 2015\"). Exact date not settled: BBB \"Business Started: 2015-11-11\"; LLC filing 2 Dec 2015; Paul: licence acquired in December. Site W2 \"over a decade ago\" agrees with 2015",
+   "source": "Paul answers B1; Discovery Record C2"
+  },
+  {
+   "id": "d-legal-entity-dba",
+   "label": "Legal entity + DBA",
+   "status": "submitted",
+   "value": "Legal: APEX ROOFING OF THE LOWCOUNTRY LLC (SC no. 493170) · public name: Apex Roofing of the Lowcountry",
+   "source": "Paul answers B5; OpenCorporates copy"
+  },
+  {
+   "id": "d-licence-numbers-and-classes",
+   "label": "Licence numbers and classes",
+   "status": "submitted",
+   "value": "SC License #57706 (issuer SC LLR; BBB shows expiry 2027-06-30) · Town of Bluffton License #0620033323. Both current: \"Both licenses are good … both legit.\" Class and holder name not known — GAF shows \"RBS 57706\" (not verified)",
+   "source": "Paul addendum 2026-10-07; W3–W5; BBB; GAF"
+  },
+  {
+   "id": "d-insurance-bonded-status",
+   "label": "Insurance / bonded status",
+   "status": "submitted",
+   "value": "Full general liability and workers' compensation insurance (W15) · bonded: not stated",
+   "source": "Paul answers B11"
+  },
+  {
+   "id": "d-certifications-authorizations-factory-training",
+   "label": "Certifications, authorizations, factory training",
+   "status": "client_confirmed",
+   "value": "\"we are certified factory installers of both CertainTeed and GAF. This is important as many homeowners do have a preference.\" No programme tier named for either. CertainTeed ShingleMaster (W3): current (Paul 2026-10-09)",
+   "source": "Returned sheet, Message 2; W3"
+  },
+  {
+   "id": "d-association-memberships",
+   "label": "Association memberships",
+   "status": "paul_approved",
+   "value": "BBB profile, A+ rating, since March 2021 (\"looks accurate\"). Accreditation not stated",
+   "source": "Paul answers A (Online)"
+  },
+  {
+   "id": "d-warranty-terms",
+   "label": "Warranty terms",
+   "status": "paul_approved",
+   "value": "Manufacturer: 50 year Limited Lifetime Warranty which is transferable. Workmanship: our lifetime no-leak warranty which is also transferable. SureStart PLUS extended warranty covering material and labor. Metal standing seam panels: 40-year warranty against cha",
+   "source": "Paul 2026-10-11 answer 4 (metal 40-year warranty correct); returned sheet Message 2; Paul answers B9"
+  },
+  {
+   "id": "d-guarantees-response-time-on-time-satisfaction",
+   "label": "Guarantees (response time, on-time, satisfaction)",
+   "status": "unknown",
+   "value": "None stated. No response time promised (see the emergency row)",
+   "source": "—"
+  },
+  {
+   "id": "d-awards-and-rankings",
+   "label": "Awards and rankings",
+   "status": "unknown",
+   "value": "None supplied",
+   "source": "—"
+  },
+  {
+   "id": "d-google-rating-and-review-count-date-checked",
+   "label": "Google rating and review count (date checked)",
+   "status": "internally_verified",
+   "value": "5.0 from 67 reviews (2026-10-05, GBP; 67 on the 2026-10-07 pull). Evidence for CM-020 condition 3 only — not a fact about the work (CM-027). Other platforms: HomeAdvisor 4.8 / 53 (Paul: looks accurate)",
+   "source": "Discovery Record (GBP); data/reviews (2026-10-07)"
+  },
+  {
+   "id": "d-team-size-trucks-jobs-completed",
+   "label": "Team size / trucks / jobs completed",
+   "status": "unknown",
+   "value": "Not supplied. Site: \"Our operations are handled by our in-house team\" (W24) — not confirmed",
+   "source": "W24"
+  },
+  {
+   "id": "d-financing-available-provider-terms",
+   "label": "Financing — available, provider, terms",
+   "status": "client_confirmed",
+   "value": "Yes — \"We've offered financing for several years through a company call Hearth. They specialize in home improvement loans.\" Terms not given",
+   "source": "Returned sheet, Message 2"
+  },
+  {
+   "id": "d-free-estimate-and-what-free-means",
+   "label": "Free estimate — and what free means",
+   "status": "paul_approved",
+   "value": "Free estimates (\"Yes, free estimates\"). What free covers beyond that is not confirmed: W17 \"Pre-estimate inspections … are always free. Independent inspection reports … are priced separately.\"",
+   "source": "Paul answers B12; W10, W17"
+  },
+  {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "status": "client_confirmed",
+   "value": "\"Ralph and Pierce are always on call and treat a emergency as high priority and especially for past customers.\" No after-hours fee stated; no response time",
+   "source": "Returned sheet, Message 1"
+  },
+  {
+   "id": "d-minimum-service-call-or-trip-charge",
+   "label": "Minimum service call or trip charge",
+   "status": "submitted",
+   "value": "No minimum call charge. Travel fee: to \"Any travel fee or places you won't go?\" the client answered \"No, just the immediate Lowcountry, but he dose travel to Brays Island and as far as Lobeco, SC\"",
+   "source": "Paul addendum q4; returned sheet, Message 1"
+  },
+  {
+   "id": "d-payment-methods",
+   "label": "Payment methods",
+   "status": "paul_approved",
+   "value": "\"Standard payment methods\" — no list to publish. HomeAdvisor shows \"Credit card accepted\" (found only)",
+   "source": "Paul addendum q5"
+  },
+  {
+   "id": "d-services-subcontracted-out",
+   "label": "Services subcontracted out",
+   "status": "paul_approved",
+   "value": "Correct: Apex itself works as a roofing subcontractor on new construction in Beaufort and Jasper County; no services subcontracted out stated",
+   "source": "Paul 2026-10-11 'correct' (answer 16); re-confirmed Paul 2026-10-12: yes, they are subcontracted by new constructions (answers.md §4, W16)"
+  },
+  {
+   "id": "d-named-staff-for-on-page-use",
+   "label": "Named staff for on-page use",
+   "status": "submitted",
+   "value": "Ralph Brehany and his son Pierce Brehany (father and son) — \"Founded by Ralph and Pierce Brehany\". No job titles published: sources conflict (BBB: Ralph \"President\", Pierce \"Owner\"; LinkedIn and reviews: Ralph \"Owner\") — Paul: no need to specify. No personal c",
+   "source": "Returned sheet, Message 1; Paul addendum q6; W1"
+  },
+  {
+   "id": "d-licensed-practitioner-for-health-claim-sign-off-medical-ch",
+   "label": "Licensed practitioner for health-claim sign-off *(medical / chiropractic)*",
+   "status": "internally_verified",
+   "value": "Not applicable — roofing",
+   "source": "—"
+  },
+  {
+   "id": "d-author-cm-039",
+   "label": "**Author (CM-039)**",
+   "status": "paul_approved",
+   "value": "Ralph Brehany — owner by Paul's direction: \"If no confirmed job title from search, assume father is the owner.\" The returned sheet names no owner",
+   "source": "Paul addendum q6"
+  },
+  {
+   "id": "d-services-offered",
+   "label": "Services offered",
+   "status": "paul_approved",
+   "value": "Roof repair · roof replacement · roof installation · roof inspections · emergency roof repair · metal roofing · slate roofing · skylights (keep all 8 for now)",
+   "source": "Paul answers A (services)"
+  },
+  {
+   "id": "d-residential-or-commercial",
+   "label": "Residential or commercial",
+   "status": "paul_approved",
+   "value": "Residential only, for now",
+   "source": "Paul answers B3; Discovery Record C4"
+  },
+  {
+   "id": "d-hours",
+   "label": "Hours",
+   "status": "paul_approved",
+   "value": "Monday–Saturday 8 AM–5 PM · Sunday closed",
+   "source": "Paul answers A (hours)"
+  },
+  {
+   "id": "d-public-email",
+   "label": "Public email",
+   "status": "paul_approved",
+   "value": "None — \"No public facing email address.\"",
+   "source": "Paul addendum q3"
+  },
+  {
+   "id": "d-price-ranges-slate-w19-metal-w20",
+   "label": "Price ranges (slate W19, metal W20)",
+   "status": "paul_approved",
+   "value": "Slate: natural \"$35,000 to $70,000 or more\", synthetic \"$18,000 to $35,000\" · standing seam \"$22,000 to $40,000 … versus $9,000 to $18,000 for shingles\". \"Fairly accurate\" — \"always room for fluctuation based on scale of project\"",
+   "source": "Paul answers B14"
+  },
+  {
+   "id": "d-products-installed",
+   "label": "Products installed",
+   "status": "submitted",
+   "value": "\"CertainTeed or GAF shingles, corrosion-resistant flashings, synthetic underlayment\" (W11) · \"We install Velux and FAKRO units\" (W18)",
+   "source": "W11, W18"
+  },
+  {
+   "id": "d-other-live-site-claims-not-yet-confirmed",
+   "label": "Other live site claims not yet confirmed",
+   "status": "submitted",
+   "value": "Projects in Sun City, Sea Pines, Palmetto Dunes, Hilton Head Plantation, Palmetto Bluff, Colleton River Plantation, Moss Creek, Belfair (W9) · \"Every project is documented photographically\" (W10) · Bluffton \"typically our first response\" (W21) · no Ridgeland p",
+   "source": "W9, W10, W21, W23, W25"
+  },
+  {
+   "id": "d-who-does-the-work",
+   "label": "Who does the work on the roof",
+   "status": "paul_approved",
+   "value": "Ralph and Pierce Brehany (father and son) both get on the roof",
+   "source": "Paul 2026-10-09 (settled w25_who_goes_on_the_roof; W25)"
+  },
+  {
+   "id": "d-job-photos",
+   "label": "Job photos",
+   "status": "paul_approved",
+   "value": "Photos of the work go to the customer, with progress photos each day on a longer job",
+   "source": "Paul 2026-10-09 (settled pilot_facts_2026_10_09; W10, reviews)"
+  },
+  {
+   "id": "d-repair-materials",
+   "label": "Repair materials",
+   "status": "paul_approved",
+   "value": "Corrosion-resistant flashing and synthetic underlayment on repairs",
+   "source": "Paul 2026-10-09 (settled pilot_facts_2026_10_09; W11)"
+  },
+  {
+   "id": "d-clean-up",
+   "label": "Clean-up",
+   "status": "paul_approved",
+   "value": "Clean-up each day and a magnet sweep for loose nails",
+   "source": "Paul 2026-10-09 (settled pilot_facts_2026_10_09; reviews; magnet per Paul)"
+  },
+  {
+   "id": "d-permits",
+   "label": "Permits",
+   "status": "paul_approved",
+   "value": "On a roof replacement, Apex gets the Town permit",
+   "source": "Paul 2026-10-09 (settled pilot_facts_2026_10_09; review 2026-08-15)"
+  },
+  {
+   "id": "d-synthetic-roofing-offered",
+   "label": "Synthetic roofing offered",
+   "status": "paul_approved",
+   "value": "Yes",
+   "source": "Paul 2026-10-09 (settled synthetic_roofing)"
+  },
+  {
+   "id": "d-price-replacement-standard-2026",
+   "label": "Roof replacement price standard, Lowcountry 2026",
+   "status": "paul_approved",
+   "value": "Whole-home typical ranges only, varying with roof size: architectural asphalt about $14,000–$20,000; standing seam metal about $24,000–$45,000+. Impact-resistant, wood and slate/tile: no whole-home range in the approved standard. Per-square prices are not used",
+   "source": "Paul 2026-10-12 (chat): no per-square prices; general whole-home price that varies with square footage"
+  },
+  {
+   "id": "d-communities-worked-outside-the-12-towns",
+   "label": "Communities worked outside the 12 towns",
+   "status": "paul_approved",
+   "value": "Apex works in Spring Island, Callawassie Island, Harbor Island, Dataw Island and Port Royal base housing (Paul: yes)",
+   "source": "Paul 2026-10-12 chat reply to the locations brief stop (build/locations/paul-answers-2026-10-12/answers.md §4)"
+  },
+  {
+   "id": "page:city_served",
+   "label": "city served",
+   "status": "Paul Approved",
+   "value": "Okatie, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06.",
+   "source": "Brand Guide E (all 12 towns confirmed, Paul 2026-10-06); decisions-settled 'business' (12 towns)"
+  },
+  {
+   "id": "page:local_context",
+   "label": "local context",
+   "status": "Internally Verified",
+   "value": "Unincorporated community stretching from south central Jasper County into western Beaufort County, named for the Okatee River (an estuary of Port Royal Sound); elevation 20 ft; predominantly low-density residential development since the 1990s, so housing is la",
+   "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina (read 2026-10-11)"
+  },
+  {
+   "id": "page:neighborhoods",
+   "label": "neighborhoods",
+   "status": "Internally Verified",
+   "value": "4 verified: Sun City Hilton Head (age-restricted planned community in the Okatie area of Beaufort and Jasper counties, unincorporated), Riverbend, Oldfield (Wikipedia; 'gated, on the Okatie River' only from non-official club pages), Callawassie Island (gated r",
+   "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina ; https://en.wikipedia.org/wiki/Sun_City_Hilton_Head (read 2026-10-11); https://en.wikipedia.org/wiki/Calla"
+  },
+  {
+   "id": "page:things_to_do",
+   "label": "things to do",
+   "status": "Internally Verified",
+   "value": "Hilton Head Island Recreation Association and the Beaufort-Jasper YMCA of the Lowcountry are listed on the page (fitness classes, youth programs). No attractions otherwise stated; thin.",
+   "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina (read 2026-10-11)"
+  },
+  {
+   "id": "page:top_sites",
+   "label": "top sites",
+   "status": "Internally Verified",
+   "value": "Altamaha Town Heritage Preserve (county passive park, about 100 acres of oak-hickory forest along the Okatie and Colleton Rivers off Old Bailey's Road near SC 170; NRHP 1994; 0.5-mile earthen trail); Callawassie Island Sugar Works (tabby ruins, 'the only sugar",
+   "source": "https://www.beaufortcountysc.gov/events/2025/03/03.13.2025 Trail Talk at Altamaha.html ; https://en.wikipedia.org/wiki/Callawassie_Island ; https://www.scpictur"
+  }
+ ],
+ "reviews": {
+  "practice: photos": {
+   "reviewers": 9,
+   "quotes": [
+    {
+     "date": "2026-08-15",
+     "quote": "As an unexpected benefit, each day I received photos, showing the completed work to date.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2023-12-29",
+     "quote": "Showed up on time, inspected the roof as requested and provided photos and a written report the next day.",
+     "row": "reviews.csv row 15"
+    },
+    {
+     "date": "2021-03-27",
+     "quote": "Before and after photos are really useful.",
+     "row": "reviews.csv row 25"
+    },
+    {
+     "date": "2020-03-11",
+     "quote": "Knowing that we were not able to check on the progress from Florida, Ralph kept us up to date with emails and photos - both before and after.",
+     "row": "reviews.csv row 36"
+    },
+    {
+     "date": "2019-12-31",
+     "quote": "He took pictures and explained in detail what could be done to repair it.",
+     "row": "reviews.csv row 40"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "practice: clean-up": {
+   "reviewers": 11,
+   "quotes": [
+    {
+     "date": "2026-08-31",
+     "quote": "Clean up was superb each day.",
+     "row": "reviews.csv row 2"
+    },
+    {
+     "date": "2026-08-15",
+     "quote": "The crew did a pretty good job of cleaning up much of the debris at the end of each workday.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2026-07-10",
+     "quote": "The crew we had did a great job in cleaning up after the job was done.",
+     "row": "reviews.csv row 5"
+    },
+    {
+     "date": "2024-02-21",
+     "quote": "The roofing crew were timely, efficient, and kept the worksite neat and tidy.",
+     "row": "reviews.csv row 13"
+    },
+    {
+     "date": "2020-06-30",
+     "quote": "Every detail was taken care of by the Apex team and the clean up was better than when they started.",
+     "row": "reviews.csv row 34"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "practice: communication": {
+   "reviewers": 23,
+   "quotes": [
+    {
+     "date": "2026-08-28",
+     "quote": "Very responsive and professional.",
+     "row": "reviews.csv row 3"
+    },
+    {
+     "date": "2026-08-15",
+     "quote": "Ralph explained to me all that would be done during the replacement.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2026-07-10",
+     "quote": "Ralph and his son Pierce communicated with us very well and was easy to work with on this job.",
+     "row": "reviews.csv row 5"
+    },
+    {
+     "date": "2025-06-04",
+     "quote": "They kept me updated on the progress and I could not have been more pleased with the results.",
+     "row": "reviews.csv row 10"
+    },
+    {
+     "date": "2025-03-03",
+     "quote": "Not only did Apex provide a beautiful roof, they also provided timely communication before, during, and after the job was completed.",
+     "row": "reviews.csv row 11"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "practice: speed": {
+   "reviewers": 18,
+   "quotes": [
+    {
+     "date": "2026-08-31",
+     "quote": "His crew showed up promptly every day and even dealt with rain during the process.",
+     "row": "reviews.csv row 2"
+    },
+    {
+     "date": "2026-05-17",
+     "quote": "The owner, Ralph, was very quick to respond with a very competitive quote.",
+     "row": "reviews.csv row 7"
+    },
+    {
+     "date": "2025-06-05",
+     "quote": "One of them was Apex, spoke with Ralph the owner and he had his son Pearce call, and he came by the next day.",
+     "row": "reviews.csv row 9"
+    },
+    {
+     "date": "2024-05-08",
+     "quote": "They are professional, prompt, personable, and have great communication skills!",
+     "row": "reviews.csv row 12"
+    },
+    {
+     "date": "2023-12-29",
+     "quote": "With the holidays coming up I wasn't sure how quickly Apex would be able to come and inspect our roof.",
+     "row": "reviews.csv row 15"
+    }
+   ],
+   "tier": "known",
+   "checked": true,
+   "checked_at": "2026-10-11"
+  },
+  "practice: warranty": {
+   "reviewers": 8,
+   "quotes": [
+    {
+     "date": "2026-08-15",
+     "quote": "Following the job completion, Ralph provided me with the warranties that come with all the GAF products that were applied to our roof, which I was not initially aware of but am very pleased with.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2025-03-03",
+     "quote": "The 10 year workmanship warranty shows confidence in the work done.",
+     "row": "reviews.csv row 11"
+    },
+    {
+     "date": "2024-05-08",
+     "quote": "All jobs are done very well and in a timely manner, backed by warranty; and if there is any issue, they respond and deal immediately!!",
+     "row": "reviews.csv row 12"
+    },
+    {
+     "date": "2020-03-11",
+     "quote": "The new roof includes a full 10 year warranty on workmanship!",
+     "row": "reviews.csv row 36"
+    },
+    {
+     "date": "2019-12-31",
+     "quote": "The next day I spoke with Ralph and he wanted to ensure I was happy with the work and he recapped their guarantee.",
+     "row": "reviews.csv row 40"
+    }
+   ],
+   "tier": "known",
+   "checked": true,
+   "checked_at": "2026-10-11"
+  },
+  "practice: insurance claims": {
+   "reviewers": 2,
+   "quotes": [
+    {
+     "date": "2020-06-30",
+     "quote": "He gave me an outstanding quote (sans insurance estimate) that was competitive while providing top of the line materials.",
+     "row": "reviews.csv row 34"
+    },
+    {
+     "date": "2018-10-19",
+     "quote": "Apex was the only roofer (from the three roofers contacted) who pointed out the wind damage on our old roof that our insurance company subsequently covered.",
+     "row": "reviews.csv row 58"
+    }
+   ],
+   "tier": "example",
+   "checked": true,
+   "checked_at": "2026-10-11"
+  },
+  "practice: permits": {
+   "reviewers": 2,
+   "quotes": [
+    {
+     "date": "2026-08-15",
+     "quote": "And he took care of obtaining the town and the HOA permits, and once he had those in hand, we set up the schedule to begin the job.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2019-01-16",
+     "quote": "They take care of permits and daily clean-up.",
+     "row": "reviews.csv row 55"
+    }
+   ],
+   "tier": "example",
+   "checked": false,
+   "checked_at": ""
+  },
+  "named staff: Ralph": {
+   "reviewers": 45,
+   "quotes": [
+    {
+     "date": "2026-08-31",
+     "quote": "The owner, Ralph, was extremely helpful explaining products and handling my MANY questions.",
+     "row": "reviews.csv row 2"
+    },
+    {
+     "date": "2026-08-15",
+     "quote": "I met with both owners of the company, Ralph and Pierce Brehany.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2026-07-10",
+     "quote": "Ralph and his son Pierce communicated with us very well and was easy to work with on this job.",
+     "row": "reviews.csv row 5"
+    },
+    {
+     "date": "2026-05-17",
+     "quote": "The owner, Ralph, was very quick to respond with a very competitive quote.",
+     "row": "reviews.csv row 7"
+    },
+    {
+     "date": "2025-07-30",
+     "quote": "Ralph responded immediately to our every concern.",
+     "row": "reviews.csv row 8"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "named staff: Pierce": {
+   "reviewers": 18,
+   "quotes": [
+    {
+     "date": "2026-08-28",
+     "quote": "Pierce was amazing!",
+     "row": "reviews.csv row 3"
+    },
+    {
+     "date": "2026-08-15",
+     "quote": "I met with both owners of the company, Ralph and Pierce Brehany.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2026-07-10",
+     "quote": "Ralph and his son Pierce communicated with us very well and was easy to work with on this job.",
+     "row": "reviews.csv row 5"
+    },
+    {
+     "date": "2024-05-08",
+     "quote": "Ralph, Pierce, and their crews are amazing!!",
+     "row": "reviews.csv row 12"
+    },
+    {
+     "date": "2024-01-03",
+     "quote": "Local Family Biz with Ralph and Son, Pierce, delivered best products and high level execution for our new roof installation.",
+     "row": "reviews.csv row 14"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "named staff: Brehany": {
+   "reviewers": 6,
+   "quotes": [
+    {
+     "date": "2026-08-15",
+     "quote": "I met with both owners of the company, Ralph and Pierce Brehany.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2021-12-13",
+     "quote": "When neither Brehany was on site, one crew leader was assigned.",
+     "row": "reviews.csv row 23"
+    },
+    {
+     "date": "2021-03-15",
+     "quote": "Ralph Brehany and Alex Mejia did an outstanding job.",
+     "row": "reviews.csv row 27"
+    },
+    {
+     "date": "2020-06-30",
+     "quote": "From start to finish Ralph Brehany was a refreshing joy to work with.",
+     "row": "reviews.csv row 34"
+    },
+    {
+     "date": "2020-03-11",
+     "quote": "Ralph Brehany is the exception to the rule!",
+     "row": "reviews.csv row 36"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "named staff: Alex": {
+   "reviewers": 3,
+   "quotes": [
+    {
+     "date": "2021-03-15",
+     "quote": "Ralph Brehany and Alex Mejia did an outstanding job.",
+     "row": "reviews.csv row 27"
+    },
+    {
+     "date": "2020-09-28",
+     "quote": "The crew, led by Alex, was terrific, and worked extremely hard to make it right.",
+     "row": "reviews.csv row 32"
+    },
+    {
+     "date": "2019-05-22",
+     "quote": "THANK YOU Ralph, Pierce, Alex and the crew!",
+     "row": "reviews.csv row 48"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  }
+ },
+ "questions": [
+  {
+   "kind": "PAA",
+   "q": "What is the 25% rule for roofing?",
+   "seen": 6,
+   "total_seen": 51
+  },
+  {
+   "kind": "PAA",
+   "q": "How to tell if a roofer is lying?",
+   "seen": 2,
+   "total_seen": 12
+  },
+  {
+   "kind": "PAA",
+   "q": "Is drip edge required in SC?",
+   "seen": 2,
+   "total_seen": 2
+  },
+  {
+   "kind": "PAA",
+   "q": "Can a slate roof last 200 years?",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "PAA",
+   "q": "Do roofing contractors need to be licensed in South Carolina?",
+   "seen": 1,
+   "total_seen": 2
+  },
+  {
+   "kind": "PAA",
+   "q": "How can I get my roof repaired if I have no money?",
+   "seen": 1,
+   "total_seen": 4
+  },
+  {
+   "kind": "PAA",
+   "q": "How much do slate roofs cost?",
+   "seen": 1,
+   "total_seen": 3
+  },
+  {
+   "kind": "PAA",
+   "q": "How much does a basic roof inspection cost?",
+   "seen": 1,
+   "total_seen": 2
+  },
+  {
+   "kind": "PAA",
+   "q": "How much does a metal roof cost for a 2000 sq ft home?",
+   "seen": 1,
+   "total_seen": 3
+  },
+  {
+   "kind": "PAA",
+   "q": "How much does it cost to replace a roof on a 2 200 square-foot house in California?",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "PAA",
+   "q": "How much does it cost to replace a roof on a 2000 square-foot house with hip roof in Texas?",
+   "seen": 1,
+   "total_seen": 2
+  },
+  {
+   "kind": "PAA",
+   "q": "How much is an emergency roof repair?",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "PAA",
+   "q": "How to emergency patch a roof?",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "PAA",
+   "q": "Is it cheaper to put a metal roof or shingles?",
+   "seen": 1,
+   "total_seen": 2
+  },
+  {
+   "kind": "PAA",
+   "q": "Is slate good for roofing?",
+   "seen": 1,
+   "total_seen": 3
+  },
+  {
+   "kind": "PAA",
+   "q": "What do they do for a roof inspection?",
+   "seen": 1,
+   "total_seen": 2
+  },
+  {
+   "kind": "PAA",
+   "q": "What is a major disadvantage of a slate roof?",
+   "seen": 1,
+   "total_seen": 3
+  },
+  {
+   "kind": "PAA",
+   "q": "What is the average cost to replace a roof on a 2000 square-foot home?",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "PAA",
+   "q": "What is the average price of a roof repair?",
+   "seen": 1,
+   "total_seen": 5
+  },
+  {
+   "kind": "PAA",
+   "q": "What is the cheapest cost to replace a roof?",
+   "seen": 1,
+   "total_seen": 2
+  },
+  {
+   "kind": "PAA",
+   "q": "Which metal roofing sheet is best?",
+   "seen": 1,
+   "total_seen": 1
+  }
+ ],
+ "site_gbp": [],
+ "public": [],
+ "research": [
+  {
+   "id": "RL-locations-4",
+   "page": "loc-okatie",
+   "gap": "fact:loc-okatie:top_sites",
+   "kind": "public",
+   "queries": "Altamaha Town Heritage Preserve Okatie Beaufort County Rural and Critical Land Preservation || Old Barrel Landing School Okatie Beaufort County historic || Callawassie Island Sugar Works Wikipedia Okatie",
+   "sources_tried": "methodology/sources/sc-lowcountry.md || https://en.wikipedia.org/wiki/Okatie,_South_Carolina || https://en.wikipedia.org/wiki/Callawassie_Island || https://www.scpictureproject.org/beaufort-county/old-barrel-landing-school.html",
+   "result": "found",
+   "excerpt": "Altamaha Town Heritage Preserve: 100-acre oak-hickory forested gem along the Okatie and Collecton Rivers; off Old Bailey's Road, Okatie; National Register 1994 (Beaufort County event page). Callawassie Sugar Works: the only sugar mill ruins known to exist in South Carolina (Wikipedia).",
+   "url": "https://www.beaufortcountysc.gov/events/2025/03/03.13.2025 Trail Talk at Altamaha.html",
+   "date": "2026-10-12",
+   "run": "20261012-205526-build-9baf"
+  }
+ ],
+ "settled": [
+  {
+   "key": "fact:loc-hilton-head-island:city_served",
+   "text": "answered by 'loc_towns_served'",
+   "at": "2026-10-11"
+  },
+  {
+   "key": "fact:loc-okatie:city_served",
+   "text": "answered by 'loc_towns_served'",
+   "at": "2026-10-11"
+  },
+  {
+   "key": "fact:loc-pritchardville:city_served",
+   "text": "answered by 'loc_towns_served'",
+   "at": "2026-10-11"
+  },
+  {
+   "key": "fact:loc-beaufort:city_served",
+   "text": "answered by 'loc_towns_served'",
+   "at": "2026-10-11"
+  },
+  {
+   "key": "fact:loc-port-royal:city_served",
+   "text": "answered by 'loc_towns_served'",
+   "at": "2026-10-11"
+  },
+  {
+   "key": "fact:loc-ladys-island:city_served",
+   "text": "answered by 'loc_towns_served'",
+   "at": "2026-10-11"
+  },
+  {
+   "key": "fact:loc-st-helena-island:city_served",
+   "text": "answered by 'loc_towns_served'",
+   "at": "2026-10-11"
+  },
+  {
+   "key": "fact:loc-fripp-island:city_served",
+   "text": "answered by 'loc_towns_served'",
+   "at": "2026-10-11"
+  },
+  {
+   "key": "fact:loc-hardeeville:city_served",
+   "text": "answered by 'loc_towns_served'",
+   "at": "2026-10-11"
+  },
+  {
+   "key": "fact:loc-ridgeland:city_served",
+   "text": "answered by 'loc_towns_served'",
+   "at": "2026-10-11"
+  },
+  {
+   "key": "fact:loc-levy:city_served",
+   "text": "answered by 'loc_towns_served'",
+   "at": "2026-10-11"
+  },
+  {
+   "key": "lowcountry_research_used",
+   "text": "Paul 2026-10-12 supplied public research for Pritchardville, Levy, Lady's Island (answers.md §1) and Ridgeland, Okatie (answers-round-2.md); researched and cited into the page facts files (research log, run 20261012-205526-build-9baf). Wording limits kept: Pritchardville 'and nearby New Riverside/Bl",
+   "at": "2026-10-12"
+  }
+ ],
+ "gaps": [],
+ "excerpts": [
+  {
+   "id": "R1",
+   "kind": "review",
+   "topic": "practice: photos",
+   "tier": "unchecked",
+   "text": "As an unexpected benefit, each day I received photos, showing the completed work to date."
+  },
+  {
+   "id": "R2",
+   "kind": "review",
+   "topic": "practice: photos",
+   "tier": "unchecked",
+   "text": "Showed up on time, inspected the roof as requested and provided photos and a written report the next day."
+  },
+  {
+   "id": "R3",
+   "kind": "review",
+   "topic": "practice: photos",
+   "tier": "unchecked",
+   "text": "Before and after photos are really useful."
+  },
+  {
+   "id": "R4",
+   "kind": "review",
+   "topic": "practice: photos",
+   "tier": "unchecked",
+   "text": "Knowing that we were not able to check on the progress from Florida, Ralph kept us up to date with emails and photos - both before and after."
+  },
+  {
+   "id": "R5",
+   "kind": "review",
+   "topic": "practice: photos",
+   "tier": "unchecked",
+   "text": "He took pictures and explained in detail what could be done to repair it."
+  },
+  {
+   "id": "R6",
+   "kind": "review",
+   "topic": "practice: clean-up",
+   "tier": "unchecked",
+   "text": "Clean up was superb each day."
+  },
+  {
+   "id": "R7",
+   "kind": "review",
+   "topic": "practice: clean-up",
+   "tier": "unchecked",
+   "text": "The crew did a pretty good job of cleaning up much of the debris at the end of each workday."
+  },
+  {
+   "id": "R8",
+   "kind": "review",
+   "topic": "practice: clean-up",
+   "tier": "unchecked",
+   "text": "The crew we had did a great job in cleaning up after the job was done."
+  },
+  {
+   "id": "R9",
+   "kind": "review",
+   "topic": "practice: clean-up",
+   "tier": "unchecked",
+   "text": "The roofing crew were timely, efficient, and kept the worksite neat and tidy."
+  },
+  {
+   "id": "R10",
+   "kind": "review",
+   "topic": "practice: clean-up",
+   "tier": "unchecked",
+   "text": "Every detail was taken care of by the Apex team and the clean up was better than when they started."
+  },
+  {
+   "id": "R11",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "unchecked",
+   "text": "Very responsive and professional."
+  },
+  {
+   "id": "R12",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "unchecked",
+   "text": "Ralph explained to me all that would be done during the replacement."
+  },
+  {
+   "id": "R13",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "unchecked",
+   "text": "Ralph and his son Pierce communicated with us very well and was easy to work with on this job."
+  },
+  {
+   "id": "R14",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "unchecked",
+   "text": "They kept me updated on the progress and I could not have been more pleased with the results."
+  },
+  {
+   "id": "R15",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "unchecked",
+   "text": "Not only did Apex provide a beautiful roof, they also provided timely communication before, during, and after the job was completed."
+  },
+  {
+   "id": "R16",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "His crew showed up promptly every day and even dealt with rain during the process."
+  },
+  {
+   "id": "R17",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "The owner, Ralph, was very quick to respond with a very competitive quote."
+  },
+  {
+   "id": "R18",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "One of them was Apex, spoke with Ralph the owner and he had his son Pearce call, and he came by the next day."
+  },
+  {
+   "id": "R19",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "They are professional, prompt, personable, and have great communication skills!"
+  },
+  {
+   "id": "R20",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "With the holidays coming up I wasn't sure how quickly Apex would be able to come and inspect our roof."
+  },
+  {
+   "id": "R21",
+   "kind": "review",
+   "topic": "practice: warranty",
+   "tier": "known",
+   "text": "Following the job completion, Ralph provided me with the warranties that come with all the GAF products that were applied to our roof, which I was not initially aware of but am very pleased with."
+  },
+  {
+   "id": "R22",
+   "kind": "review",
+   "topic": "practice: warranty",
+   "tier": "known",
+   "text": "The 10 year workmanship warranty shows confidence in the work done."
+  },
+  {
+   "id": "R23",
+   "kind": "review",
+   "topic": "practice: warranty",
+   "tier": "known",
+   "text": "All jobs are done very well and in a timely manner, backed by warranty; and if there is any issue, they respond and deal immediately!!"
+  },
+  {
+   "id": "R24",
+   "kind": "review",
+   "topic": "practice: warranty",
+   "tier": "known",
+   "text": "The new roof includes a full 10 year warranty on workmanship!"
+  },
+  {
+   "id": "R25",
+   "kind": "review",
+   "topic": "practice: warranty",
+   "tier": "known",
+   "text": "The next day I spoke with Ralph and he wanted to ensure I was happy with the work and he recapped their guarantee."
+  },
+  {
+   "id": "R26",
+   "kind": "review",
+   "topic": "practice: insurance claims",
+   "tier": "example",
+   "text": "He gave me an outstanding quote (sans insurance estimate) that was competitive while providing top of the line materials."
+  },
+  {
+   "id": "R27",
+   "kind": "review",
+   "topic": "practice: insurance claims",
+   "tier": "example",
+   "text": "Apex was the only roofer (from the three roofers contacted) who pointed out the wind damage on our old roof that our insurance company subsequently covered."
+  },
+  {
+   "id": "R28",
+   "kind": "review",
+   "topic": "practice: permits",
+   "tier": "example",
+   "text": "And he took care of obtaining the town and the HOA permits, and once he had those in hand, we set up the schedule to begin the job."
+  },
+  {
+   "id": "R29",
+   "kind": "review",
+   "topic": "practice: permits",
+   "tier": "example",
+   "text": "They take care of permits and daily clean-up."
+  },
+  {
+   "id": "R30",
+   "kind": "review",
+   "topic": "named staff: Ralph",
+   "tier": "unchecked",
+   "text": "The owner, Ralph, was extremely helpful explaining products and handling my MANY questions."
+  },
+  {
+   "id": "R31",
+   "kind": "review",
+   "topic": "named staff: Ralph",
+   "tier": "unchecked",
+   "text": "I met with both owners of the company, Ralph and Pierce Brehany."
+  },
+  {
+   "id": "R32",
+   "kind": "review",
+   "topic": "named staff: Ralph",
+   "tier": "unchecked",
+   "text": "Ralph and his son Pierce communicated with us very well and was easy to work with on this job."
+  },
+  {
+   "id": "R33",
+   "kind": "review",
+   "topic": "named staff: Ralph",
+   "tier": "unchecked",
+   "text": "The owner, Ralph, was very quick to respond with a very competitive quote."
+  },
+  {
+   "id": "R34",
+   "kind": "review",
+   "topic": "named staff: Ralph",
+   "tier": "unchecked",
+   "text": "Ralph responded immediately to our every concern."
+  },
+  {
+   "id": "R35",
+   "kind": "review",
+   "topic": "named staff: Pierce",
+   "tier": "unchecked",
+   "text": "Pierce was amazing!"
+  },
+  {
+   "id": "R36",
+   "kind": "review",
+   "topic": "named staff: Pierce",
+   "tier": "unchecked",
+   "text": "I met with both owners of the company, Ralph and Pierce Brehany."
+  },
+  {
+   "id": "R37",
+   "kind": "review",
+   "topic": "named staff: Pierce",
+   "tier": "unchecked",
+   "text": "Ralph and his son Pierce communicated with us very well and was easy to work with on this job."
+  },
+  {
+   "id": "R38",
+   "kind": "review",
+   "topic": "named staff: Pierce",
+   "tier": "unchecked",
+   "text": "Ralph, Pierce, and their crews are amazing!!"
+  },
+  {
+   "id": "R39",
+   "kind": "review",
+   "topic": "named staff: Pierce",
+   "tier": "unchecked",
+   "text": "Local Family Biz with Ralph and Son, Pierce, delivered best products and high level execution for our new roof installation."
+  },
+  {
+   "id": "R40",
+   "kind": "review",
+   "topic": "named staff: Brehany",
+   "tier": "unchecked",
+   "text": "I met with both owners of the company, Ralph and Pierce Brehany."
+  },
+  {
+   "id": "R41",
+   "kind": "review",
+   "topic": "named staff: Brehany",
+   "tier": "unchecked",
+   "text": "When neither Brehany was on site, one crew leader was assigned."
+  },
+  {
+   "id": "R42",
+   "kind": "review",
+   "topic": "named staff: Brehany",
+   "tier": "unchecked",
+   "text": "Ralph Brehany and Alex Mejia did an outstanding job."
+  },
+  {
+   "id": "R43",
+   "kind": "review",
+   "topic": "named staff: Brehany",
+   "tier": "unchecked",
+   "text": "From start to finish Ralph Brehany was a refreshing joy to work with."
+  },
+  {
+   "id": "R44",
+   "kind": "review",
+   "topic": "named staff: Brehany",
+   "tier": "unchecked",
+   "text": "Ralph Brehany is the exception to the rule!"
+  },
+  {
+   "id": "R45",
+   "kind": "review",
+   "topic": "named staff: Alex",
+   "tier": "unchecked",
+   "text": "Ralph Brehany and Alex Mejia did an outstanding job."
+  },
+  {
+   "id": "R46",
+   "kind": "review",
+   "topic": "named staff: Alex",
+   "tier": "unchecked",
+   "text": "The crew, led by Alex, was terrific, and worked extremely hard to make it right."
+  },
+  {
+   "id": "R47",
+   "kind": "review",
+   "topic": "named staff: Alex",
+   "tier": "unchecked",
+   "text": "THANK YOU Ralph, Pierce, Alex and the crew!"
+  },
+  {
+   "id": "P48",
+   "kind": "public",
+   "topic": "fact:loc-okatie:top_sites",
+   "tier": "official",
+   "text": "Altamaha Town Heritage Preserve: 100-acre oak-hickory forested gem along the Okatie and Collecton Rivers; off Old Bailey's Road, Okatie; National Register 1994 (Beaufort County event page). Callawassie Sugar Works: the only sugar mill ruins known to exist in South Carolina (Wikipedia)."
+  }
+ ],
+ "known": [
+  {
+   "id": "a-brand-entity-gbp-name-exactly",
+   "label": "Brand entity (GBP name, exactly)",
+   "value": "Apex Roofing of the Lowcountry — the public-facing name everywhere (\"LLC\" dropped; Paul 2026-10-06, Discovery Record C5)"
+  },
+  {
+   "id": "a-gbp-primary-category-the-category-entity",
+   "label": "GBP primary category = the category entity",
+   "value": "Roofing contractor — Wikipedia: https://en.wikipedia.org/wiki/Roofer (lead names \"roofing contractor\")"
+  },
+  {
+   "id": "a-category-variants-4-6",
+   "label": "Category variants (4–6)",
+   "value": "Roofing Contractor · Roofer · Roofers (all Wikipedia). Excluded by Paul 2026-10-05: Roof Mechanic. Residential Roofer — approved by Paul 2026-10-08 (site plan choice 4a; site wording, not Wikipedia; the business is residential only)"
+  },
+  {
+   "id": "a-storefront-or-sab",
+   "label": "Storefront or SAB",
+   "value": "SAB based in Bluffton, SC — no office customers visit. Publicly shown: \"Bluffton, SC 29910\" only; the street address (6 Sutton Ct, Bluffton, SC 29910) stays hidden on the GBP (Paul option (a), 2026-10-07). The client's own answer named \"6 Sutton Ct, Bluffton, "
+  },
+  {
+   "id": "a-area-entity",
+   "label": "Area entity",
+   "value": "Hilton Head Island–Bluffton–Port Royal, SC Metropolitan Statistical Area — Wikipedia: https://en.wikipedia.org/wiki/Hilton_Head_Island_metropolitan_area"
+  },
+  {
+   "id": "a-area-variants-3-5",
+   "label": "Area variants (3–5)",
+   "value": "Hilton Head Island Metropolitan Area (reserved, homepage SEO title) · Hilton Head Island–Bluffton–Port Royal Metropolitan Area · South Carolina Lowcountry · Lowcountry · Beaufort and Jasper Counties"
+  },
+  {
+   "id": "a-separator-standard",
+   "label": "Separator standard",
+   "value": "` - `"
+  },
+  {
+   "id": "a-phone",
+   "label": "Phone",
+   "value": "(843) 757-2739 (GBP, site, BBB, HomeAdvisor)"
+  },
+  {
+   "id": "a-primary-domain-canonical-host-form",
+   "label": "Primary domain (canonical host form)",
+   "value": "https://apexroofingtlc.com/ (www and http forms 301 here in one hop)"
+  },
+  {
+   "id": "d-founding-year-years-in-business",
+   "label": "Founding year / years in business",
+   "value": "2015 (\"Roll with 2015\"). Exact date not settled: BBB \"Business Started: 2015-11-11\"; LLC filing 2 Dec 2015; Paul: licence acquired in December. Site W2 \"over a decade ago\" agrees with 2015"
+  },
+  {
+   "id": "d-certifications-authorizations-factory-training",
+   "label": "Certifications, authorizations, factory training",
+   "value": "\"we are certified factory installers of both CertainTeed and GAF. This is important as many homeowners do have a preference.\" No programme tier named for either. CertainTeed ShingleMaster (W3): current (Paul 2026-10-09)"
+  },
+  {
+   "id": "d-association-memberships",
+   "label": "Association memberships",
+   "value": "BBB profile, A+ rating, since March 2021 (\"looks accurate\"). Accreditation not stated"
+  },
+  {
+   "id": "d-warranty-terms",
+   "label": "Warranty terms",
+   "value": "Manufacturer: 50 year Limited Lifetime Warranty which is transferable. Workmanship: our lifetime no-leak warranty which is also transferable. SureStart PLUS extended warranty covering material and labor. Metal standing seam panels: 40-year warranty against cha"
+  },
+  {
+   "id": "d-google-rating-and-review-count-date-checked",
+   "label": "Google rating and review count (date checked)",
+   "value": "5.0 from 67 reviews (2026-10-05, GBP; 67 on the 2026-10-07 pull). Evidence for CM-020 condition 3 only — not a fact about the work (CM-027). Other platforms: HomeAdvisor 4.8 / 53 (Paul: looks accurate)"
+  },
+  {
+   "id": "d-financing-available-provider-terms",
+   "label": "Financing — available, provider, terms",
+   "value": "Yes — \"We've offered financing for several years through a company call Hearth. They specialize in home improvement loans.\" Terms not given"
+  },
+  {
+   "id": "d-free-estimate-and-what-free-means",
+   "label": "Free estimate — and what free means",
+   "value": "Free estimates (\"Yes, free estimates\"). What free covers beyond that is not confirmed: W17 \"Pre-estimate inspections … are always free. Independent inspection reports … are priced separately.\""
+  },
+  {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "value": "\"Ralph and Pierce are always on call and treat a emergency as high priority and especially for past customers.\" No after-hours fee stated; no response time"
+  },
+  {
+   "id": "d-payment-methods",
+   "label": "Payment methods",
+   "value": "\"Standard payment methods\" — no list to publish. HomeAdvisor shows \"Credit card accepted\" (found only)"
+  },
+  {
+   "id": "d-services-subcontracted-out",
+   "label": "Services subcontracted out",
+   "value": "Correct: Apex itself works as a roofing subcontractor on new construction in Beaufort and Jasper County; no services subcontracted out stated"
+  },
+  {
+   "id": "d-licensed-practitioner-for-health-claim-sign-off-medical-ch",
+   "label": "Licensed practitioner for health-claim sign-off *(medical / chiropractic)*",
+   "value": "Not applicable — roofing"
+  },
+  {
+   "id": "d-author-cm-039",
+   "label": "**Author (CM-039)**",
+   "value": "Ralph Brehany — owner by Paul's direction: \"If no confirmed job title from search, assume father is the owner.\" The returned sheet names no owner"
+  },
+  {
+   "id": "d-services-offered",
+   "label": "Services offered",
+   "value": "Roof repair · roof replacement · roof installation · roof inspections · emergency roof repair · metal roofing · slate roofing · skylights (keep all 8 for now)"
+  },
+  {
+   "id": "d-residential-or-commercial",
+   "label": "Residential or commercial",
+   "value": "Residential only, for now"
+  },
+  {
+   "id": "d-hours",
+   "label": "Hours",
+   "value": "Monday–Saturday 8 AM–5 PM · Sunday closed"
+  },
+  {
+   "id": "d-public-email",
+   "label": "Public email",
+   "value": "None — \"No public facing email address.\""
+  },
+  {
+   "id": "d-price-ranges-slate-w19-metal-w20",
+   "label": "Price ranges (slate W19, metal W20)",
+   "value": "Slate: natural \"$35,000 to $70,000 or more\", synthetic \"$18,000 to $35,000\" · standing seam \"$22,000 to $40,000 … versus $9,000 to $18,000 for shingles\". \"Fairly accurate\" — \"always room for fluctuation based on scale of project\""
+  },
+  {
+   "id": "d-who-does-the-work",
+   "label": "Who does the work on the roof",
+   "value": "Ralph and Pierce Brehany (father and son) both get on the roof"
+  },
+  {
+   "id": "d-job-photos",
+   "label": "Job photos",
+   "value": "Photos of the work go to the customer, with progress photos each day on a longer job"
+  },
+  {
+   "id": "d-repair-materials",
+   "label": "Repair materials",
+   "value": "Corrosion-resistant flashing and synthetic underlayment on repairs"
+  },
+  {
+   "id": "d-clean-up",
+   "label": "Clean-up",
+   "value": "Clean-up each day and a magnet sweep for loose nails"
+  },
+  {
+   "id": "d-permits",
+   "label": "Permits",
+   "value": "On a roof replacement, Apex gets the Town permit"
+  },
+  {
+   "id": "d-synthetic-roofing-offered",
+   "label": "Synthetic roofing offered",
+   "value": "Yes"
+  },
+  {
+   "id": "d-price-replacement-standard-2026",
+   "label": "Roof replacement price standard, Lowcountry 2026",
+   "value": "Whole-home typical ranges only, varying with roof size: architectural asphalt about $14,000–$20,000; standing seam metal about $24,000–$45,000+. Impact-resistant, wood and slate/tile: no whole-home range in the approved standard. Per-square prices are not used"
+  },
+  {
+   "id": "d-communities-worked-outside-the-12-towns",
+   "label": "Communities worked outside the 12 towns",
+   "value": "Apex works in Spring Island, Callawassie Island, Harbor Island, Dataw Island and Port Royal base housing (Paul: yes)"
+  },
+  {
+   "id": "page:city_served",
+   "label": "city served",
+   "value": "Okatie, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06."
+  },
+  {
+   "id": "page:local_context",
+   "label": "local context",
+   "value": "Unincorporated community stretching from south central Jasper County into western Beaufort County, named for the Okatee River (an estuary of Port Royal Sound); elevation 20 ft; predominantly low-density residential development since the 1990s, so housing is la"
+  },
+  {
+   "id": "page:neighborhoods",
+   "label": "neighborhoods",
+   "value": "4 verified: Sun City Hilton Head (age-restricted planned community in the Okatie area of Beaufort and Jasper counties, unincorporated), Riverbend, Oldfield (Wikipedia; 'gated, on the Okatie River' only from non-official club pages), Callawassie Island (gated r"
+  },
+  {
+   "id": "page:things_to_do",
+   "label": "things to do",
+   "value": "Hilton Head Island Recreation Association and the Beaufort-Jasper YMCA of the Lowcountry are listed on the page (fitness classes, youth programs). No attractions otherwise stated; thin."
+  },
+  {
+   "id": "page:top_sites",
+   "label": "top sites",
+   "value": "Altamaha Town Heritage Preserve (county passive park, about 100 acres of oak-hickory forest along the Okatie and Colleton Rivers off Old Bailey's Road near SC 170; NRHP 1994; 0.5-mile earthen trail); Callawassie Island Sugar Works (tabby ruins, 'the only sugar"
+  },
+  {
+   "id": "practice: speed",
+   "label": "practice: speed",
+   "value": "His crew showed up promptly every day and even dealt with rain during the process."
+  },
+  {
+   "id": "practice: warranty",
+   "label": "practice: warranty",
+   "value": "Following the job completion, Ralph provided me with the warranties that come with all the GAF products that were applied to our roof, which I was not initially aware of but am very pleased with."
+  }
+ ]
+}

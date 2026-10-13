@@ -1,17 +1,15 @@
 # Evidence grid — Fripp Island (location)
 
-**Result: WARN** · Known 8 · Unknown 1 · Unverified 1 · Conflict 0 (CM-041)
+**Result: PASS** · Known 9 · Unknown 0 · Unverified 1 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
-
-- 1 required and 1 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'
 
 | Fact | Need | Mark | Value | Source |
 |---|---|---|---|---|
 | Phone | required | **Known** | (843) 757-2739 (GBP, site, BBB, HomeAdvisor) | Brand Guide A |
 | The city is actually served (Section E / proof sheet) | required | **Known** | Fripp Island, SC is served — one of the 12 towns claimed on the site, all confirmed by Paul 2026-10-06. | Brand Guide E (all 12 towns confirmed, Paul 2026-10-06); decisions-settled 'business' (12 towns) |
 | City-specific conditions (housing stock, terrain, weather, failure patterns) | required | **Known** | Barrier island and census-designated place in Beaufort County; elevation 0 ft; about three miles of Atlantic beachfront, some parts fully submerged at high tide; wide marsh and estuarine system separates it from St. Helena Island; most seaw | https://en.wikipedia.org/wiki/Fripp_Island,_South_Carolina (read 2026-10-11) |
-| 6-12 real neighborhoods | required | **Unknown** |  | searched, not found (3 source(s) on disk) |
+| 6-12 real neighborhoods | required | **Known** | FIPOA New Homeowners Manual 2026 (rev. Aug 2026, p.7) 'The following neighborhoods have supplemental management regimes': Beach Club Villas, CJFV Phases I-III (never spelled out; do not expand), Fiddlers Cove, North Hampton Court, Ocean Cot | https://www.mygreencondo.net/cloud_attachment/Y29uZG9fMjM2Ml9hY2NvdW50/condo_folders/1784900075972_901006587_1784900071_1NewHomeownersManual2026revAugust2026.pdf (read 2026-10-12; research log RL-locations-6, run 20261012-205526-build-9baf) |
 | Free estimate / offer | required | **Known** | Free estimates ("Yes, free estimates"). What free covers beyond that is not confirmed: W17 "Pre-estimate inspections … are always free. Independent inspection reports … are priced separately." | Paul answers B12; W10, W17 |
 | Things to Do (real, verifiable) | supporting | **Known** | Ocean Point Golf Links, Ocean Creek Golf Course (Davis Love III design), racquet club, marina, island-wide Audubon bird preserve and loggerhead turtle hatchery. The page calls it a private gated community; public access to these is not stat | https://en.wikipedia.org/wiki/Fripp_Island,_South_Carolina (read 2026-10-11) |
 | Top Sites (real, verifiable) | supporting | **Known** | Fripp Inlet Bridge (opened 1964, now toll-free); island-wide Audubon bird preserve; loggerhead turtle hatchery; all-faiths chapel. | https://en.wikipedia.org/wiki/Fripp_Island,_South_Carolina (read 2026-10-11) |

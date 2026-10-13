@@ -3,9 +3,10 @@
 Location brief · page `loc-okatie` · batch **locations** · Route A
 Run 20261012-150859-build-1044 · 2026-10-12 · one page per run (CM-043)
 Spec: `methodology/specs/location.md` (APPROVED 2026-10-08) · Site plan: APPROVED 2026-10-11 · Model: approved Bluffton brief/draft (pilot)
-Evidence gate: **PASS** (known 8 · unknown 1 [Top Sites] · unverified 1 [response time]) — see **Evidence gaps** below. Two required items still fall short of the spec: neighborhoods (4 verified, spec 6–12) and FAQ (1 conditional, spec 3–4).
+Evidence gate: **PASS** (re-run 2026-10-12, run 20261012-205526-build-9baf, after the public research and Paul's answers were recorded in the facts file: known 9 · unknown 0 · unverified 1 — response time: state none). Evidence pack: `build/locations/packs/<page>.md`.
+**Revised run 20261012-205526-build-9baf (2026-10-12) with Paul's answers** (`paul-answers-2026-10-12/`): Callawassie and Spring Island work confirmed; FAQ rebuilt to the three-category recipe (FAQ 1 communities, FAQ 2 Callawassie ARC, FAQ 3 permit — Paul's 2a choice open); Top Sites and Callawassie on the grid (gate PASS).
 
-Source key. **Grid** = `build/evidence/loc-okatie.grid.md` / facts file. **PR** = "public research 2026-10-12 — not yet on the grid" (`research-2026-10-12/loc-okatie.json`, read by the researcher on 2026-10-12). Anything the researcher marked weak or search-summary-only is in Evidence gaps, not in the page.
+Source key. **Grid** = `build/evidence/loc-okatie.grid.md` / facts file. **PR** = "public research 2026-10-12" (now on the grid, run 20261012-205526-build-9baf) (`research-2026-10-12/loc-okatie.json`, read by the researcher on 2026-10-12). Anything the researcher marked weak or search-summary-only is in Evidence gaps, not in the page.
 
 ---
 
@@ -59,7 +60,7 @@ Suggested headings (writer may re-word inside the rules; every H2 names its enti
 | 6 | H2 services table | H3 per service, **all 8**, no descriptions (LOC-12): Roof Repair · Roof Replacement · Roof Installation · Roof Inspections · Emergency Roof Repair · Metal Roofing · Slate Roofing · Skylights. Rows: `| [Link wheel: populate service links here] |`. One lead-in sentence at most | BG-D services (Paul Approved) |
 | 7 | H2 local context (3–5 sentences, no links) | Use only these facts, once: Okatie is **unincorporated**, stretching from south central Jasper County into western Beaufort County (the one sourced sentence that may carry the county line — **not** a FAQ, dropped by Paul); named for the **Okatee River, an estuary of Port Royal Sound**; elevation about **20 ft**; **predominantly low-density residential development since the 1990s**; **Sun City Hilton Head** is an age-restricted, unincorporated planned community in the Okatie area, built in three phases around golf courses and community centers (Wikipedia, Sun City Hilton Head). Tie to roofing in general terms only. **Do not** carry over Bluffton's climate/hurricane sentence: the Okatie source states no climate (Grid) — add one only with a cited Okatie-specific source. **No population figure** (Wikipedia's own numbers conflict). No failure patterns invented; no roof-lifespan figure. Keep Callawassie Island's size and gating for FAQ 1 so the two sections do not repeat | Internally Verified — https://en.wikipedia.org/wiki/Okatie,_South_Carolina (read 2026-10-11) · https://en.wikipedia.org/wiki/Sun_City_Hilton_Head (PR, read 2026-10-12) |
 | 8 | FAQ (H2 + H3 per question, first sentence answers in 40–60 words) | See §3 — **1 question usable conditionally; 2 slots are gaps** | — |
-| 9 | H2 neighborhoods (6–12) | Plain list items under the H2 — **not H-tagged**, no descriptions. **4 verified names** (§4). Below the spec's 6: say so; do not pad | §4 |
+| 9 | H2 neighborhoods (6–12) | Plain list items under the H2 — **not H-tagged**, no descriptions. **4 verified names** (§4). Below the target of 6: list four, do not pad, no placeholder (Fix and list) | §4 |
 | 10 | City map | `[Map: embed a city-level map of Okatie, SC here — not the Google Business Profile map]` — no H tag | spec #10 |
 | 11 | H2 Things to Do | **Beaufort-Jasper YMCA of the Lowcountry** and the **Hilton Head Island Recreation Association** — both listed on the Okatie Wikipedia page for fitness classes and youth programs (Grid, read 2026-10-11). Thin; the writer rereads the Okatie page and words each line exactly as the page does, naming no address or schedule the page does not give. Altamaha Town Heritage Preserve is **not** repeated here (it is a Top Site) | Grid (Known, thin) |
 | 12 | H2 Top Sites | **Callawassie Sugar Works** — NRHP-listed 27 May 2014; Wikipedia calls it "the only sugar mill ruins known to exist in South Carolina"; tabby ruins on gated Callawassie Island, so **say nothing about visiting** (public access not stated). **Altamaha Town Heritage Preserve** — NRHP-listed 1994; a 100-acre oak-hickory forest on the Okatie and Colleton Rivers; a Yamasee village and colonial cemetery site; county-run, with a 0.5-mile flat trail. *Old Barrel Landing School is not used* (see Evidence gaps) | PR — https://en.wikipedia.org/wiki/Callawassie_Sugar_Works ; https://en.wikipedia.org/wiki/Altamaha_Town ; Beaufort County page (read 2026-10-12) |
@@ -74,19 +75,19 @@ Suggested headings (writer may re-word inside the rules; every H2 names its enti
 
 ---
 
-## 3 · FAQ (site plan §3a — each with its reason; no question here repeats BG-C3 or a sibling)
+## 3 · FAQ (location-faq.md: three, one per category — revised 2026-10-12 with Paul's answers and research)
 
-The slot count in the site plan was 1 + 2 gaps. Facts-interview questions for the gap slots are in Evidence gaps (client questions only for client facts; public facts are looked up, never asked).
+Each question names Okatie or an Okatie-area community; none repeats BG-C3 or a sibling. First sentence of each answer answers alone (40–60 words, CM-060). No in-prose links (CM-005). Sources: Paul's answers (`paul-answers-2026-10-12/answers.md` §4, `answers-round-2.md`) and the round-2 research (`research-2026-10-12/round2.json`).
 
-| # | Question (H3) | Why it belongs on this page | Answer source / status |
-|---|---|---|---|
-| 1 | Do you work in Spring Island, Callawassie Island and other Okatie communities? *(site-plan wording; reword option in flag 2 — "Okatie-area")* | Named Okatie-area communities with their own access and owners' association | **Conditional.** The question is the client's fact: Apex's work in Callawassie Island / Spring Island / Oldfield / Sun City is **Submitted (W9) or unasked — not usable**. Draft the answer with a visible `[NEED: client confirms Apex works in Callawassie Island, Spring Island and the other Okatie communities it names]` and hold publication until confirmed. **Public facts the answer may carry** (PR, read 2026-10-12): Callawassie Island is a **gated residential community**, 880 acres, 717 home sites, reached by a half-mile causeway south of SC 170 or by boat (https://en.wikipedia.org/wiki/Callawassie_Island ; https://www.callawassieisland.com). Spring Island is a **private waterfront community** with its own property owners' association (https://www.springisland.com ; https://www.springislandtrust.org/sit19/spring-island). **Weigh Spring Island carefully:** its own site says it is "in Beaufort, SC"; only mailing addresses (Okatie, SC 29909) tie it to Okatie. Say "Okatie mailing address" at most; do not say Spring Island "is in Okatie". **No** claim about any community's architectural review or roof rules (none published on the pages read); the answer may tell owners to tell Apex which community they live in when they book the free estimate. First sentence 40–60 words, answers the question (a conditional "Yes" only after the client confirms) |
-| 2 | **[GAP — no usable question]** | — | See Evidence gaps. **Candidate (not usable): "How does a roofer get into a gated Okatie community?"** — the gate procedure is a client/community fact, unpublished. Held until the client answers (facts-interview item 2) |
-| 3 | **[GAP — no usable question]** | — | **Candidate rejected:** flood zone / elevation certificate (Beaufort County flood page) — true of every unincorporated Beaufort County town, fails the portability test; says nothing about roofs. **Candidate rejected:** historic-site roof limits — nothing sourced, "likely not answerable" (researcher) |
+| # | Question (H3) | Category · why it belongs on this page | Answer facts and source | Status |
+|---|---|---|---|---|
+| 1 | Do you work in Callawassie Island, Spring Island and other Okatie-area communities? *("Okatie-area" — Spring Island's own site says Beaufort, Okatie is its mailing address)* | 3 · local experience — named Okatie-area communities, each with its own owners' association and review | **Apex works in Callawassie Island and Spring Island — Paul Approved 2026-10-12** (fact `d-communities-worked-outside-the-12-towns`). Public facts: Callawassie Island is a gated residential community (880 acres, reached by a causeway south of SC 170; Wikipedia / callawassieisland.com); Spring Island has **its own rules** (Paul's research) — no public document found, so say only "Spring Island sets its own rules; ask its review office". **Do not name** Oldfield, Riverbend or Sun City Hilton Head as places Apex has worked (W9 is Submitted). **Never copy Callawassie's rules to Spring Island** | **Usable now** |
+| 2 | Do I need ARC approval to replace my roof on Callawassie Island? | 1 · local decision — the community's own published roof standards change the job here | Callawassie Island POA *Design Standards and Guidelines* (updated 12 Dec 2023; https://www.callawassieisland.com/wp-content/uploads/2025/06/20240201ARC-Guidelines-.pdf, read 2026-10-12): exterior changes without ARC approval are a violation; shingles must be **asphalt or fiberglass with a 40-year or approved "Lifetime" warranty**; cedar shakes or shingles, slate and metal are acceptable; vent pipes, vent flashing, roof vents and fans painted to match the roof; **raw aluminium or galvanised flashing not allowed**, flashing other than copper painted to harmonise; minimum roof pitch 6/12. Attribute every rule to "Callawassie's published guidelines". **These are community rules, not a promise of roof life.** Keep the ARC approval **separate from the county permit** (Paul): one sentence at most — "a building permit is a separate step". No Apex claim about filing the ARC application (not stated) | **Usable now** |
+| 3 | Is my Okatie roofing permit handled by Beaufort County or Jasper County? *(Option A — recommended; needs Paul's answer on the 2a reopen request)* | 2 · logistics — Okatie is unincorporated and spans **two** counties, so no single-county answer applies (true of no other Apex town) | Wikipedia: Okatie is "located in Beaufort and Jasper counties". Unincorporated Beaufort County addresses: Beaufort County Building Codes (https://www.beaufortcountysc.gov/building-codes/). Jasper County addresses: Jasper County Planning and Building — "A building permit is required for new construction, additions, alterations, repairs, roof replacement…" (https://www.jaspercountysc.gov/services/planning-and-building/, read 2026-10-12). The owner checks which county the parcel is in. **Do not** write that every Okatie permit goes through Beaufort County (a competitor's claim — Paul). No Apex-pulls-the-permit claim (settled `location_client_questions_skipped`) | **Open — Paul chooses** (reopen of `site_plan_open_choices` 2a). **Option B if 2a stands:** brand-level local fallback (Fix and list) — *Do you roof new construction in Okatie?* — Okatie has grown with planned communities since the 1990s (Wikipedia); Apex works as a roofing subcontractor on new construction in Beaufort and Jasper County (Paul Approved, W16, re-confirmed 2026-10-12); name no builder or community; distinct from Hardeeville's builder-warranty question |
 
-Count usable now: **0 unconditional · 1 conditional · 2 gaps** (spec: 3–4 — LOC-14 fails; flag 1).
+**Count:** 3 — FAQ 1 and 2 usable now; FAQ 3 usable as Option A or B once Paul answers the 2a reopen. LOC-14 met either way.
 
-Routed elsewhere (do not answer here): all generic FAQ rows (cost, drip edge, slate, metal, inspection price) → their service pages (PAA/fan-out routing); the Okatie county-line and permit questions are dropped (site plan choice 2a) — Bluffton = Beaufort County permit, Ridgeland = Jasper County permit.
+Routed elsewhere (do not answer here): all generic FAQ rows (cost, drip edge, slate, metal, inspection price) → their service pages (PAA/fan-out routing). Paul's proposed questions not used: "How much does roof replacement cost in Okatie?" (price — Roof Replacement owns it), "Can I switch from shingles to metal in my Okatie community?" (covered by FAQ 2's acceptable materials), "marsh-front roof details" and "flashing and ventilation on a newer home" (no Okatie source — blog list), "Is Okatie's rapid growth affecting new-construction roof quality?" (competitor claim, unverified).
 
 ---
 
@@ -101,7 +102,7 @@ Routed elsewhere (do not answer here): all generic FAQ rows (cost, drip edge, sl
 
 **Not used (weak):** River's End — 2003 Beaufort County minutes (search summary, not read in full), no current source saying "Okatie". Spring Island — Okatie only as a mailing address; its own site says "in Beaufort". **Excluded:** Rose Hill and Chechessee from the old page (Bluffton / Pritchardville per audit F-024), "Spring Island adjacent", SC-170 corridor, Okatie Highway residential (roads and areas). Nothing placed on another page's list (Hampton Hall, Palmetto Bluff → Bluffton; Mossy Creek → Port Royal).
 
-The grid marks neighborhoods **Known**, but its own value reads "3 named … fewer than 6 found"; research adds Callawassie Island → **4 verified**. LOC-15 (6–12) **still fails**. Writer lists the four, no `[NEED]` inside the list; the shortfall is Paul's decision (flag 3).
+The facts file now records **4 verified** (Sun City Hilton Head, Riverbend, Oldfield, Callawassie Island). The 6 is a target (CM-061 §8): the writer lists the four, no placeholder; the shortfall is a "Fix and list" item. Spring Island is named only in FAQ 1 as "Okatie-area", not in this list.
 
 ---
 
@@ -131,7 +132,7 @@ The grid marks neighborhoods **Known**, but its own value reads "3 named … few
 
 ## 7 · Must not appear (BG-D2, settled `not_on_the_site_until_confirmed`, CM-016, CM-049)
 
-ShingleMaster · commercial / "homes and businesses" · Georgia / "Coastal Georgia" · "payment arrangements" · any response time, "same-day", "24 hour", "fast" as a promise · "bonded" · a licence class · any price · Google rating · warranty terms · "best" / superlatives · service descriptions (LOC-12) · any cross-page link in prose, FAQ answers or local context (CM-005) · reviewer names · "Sun City customers" / "we have worked in Sun City, Callawassie, Oldfield or Spring Island" as fact (W9 Submitted) · any claim about gate or ARB/HOA rules for Okatie communities (unpublished) · "Spring Island is in Okatie" · a county-line FAQ (dropped) · the Okatie population figure (conflicting) · any hurricane/storm-season sentence for Okatie without a cited Okatie source · roof-age claim ("homes from the 1990s have old roofs").
+ShingleMaster · commercial / "homes and businesses" · Georgia / "Coastal Georgia" · "payment arrangements" · any response time, "same-day", "24 hour", "fast" as a promise · "bonded" · a licence class · any price · Google rating · warranty terms · "best" / superlatives · service descriptions (LOC-12) · any cross-page link in prose, FAQ answers or local context (CM-005) · reviewer names · "Sun City customers" / "we have worked in Sun City, Oldfield or Riverbend" as fact (W9 Submitted; Callawassie and Spring Island are Paul Approved 2026-10-12 — FAQ 1 only) · any claim about gate or ARB/HOA rules for Okatie communities (unpublished) · "Spring Island is in Okatie" · a Beaufort-only permit answer (FAQ 3 covers both counties, if Paul picks option A) · the Okatie population figure (conflicting) · any hurricane/storm-season sentence for Okatie without a cited Okatie source · roof-age claim ("homes from the 1990s have old roofs").
 
 ## 8 · Sibling context
 
@@ -143,35 +144,38 @@ ShingleMaster · commercial / "homes and businesses" · Georgia / "Coastal Georg
 
 ## Evidence gaps
 
+Gate **PASS** (re-run 2026-10-12, run 20261012-205526-build-9baf): known 9 · unknown 0 · unverified 1.
+
 | Fact (grid) | Need | Grid mark | Real status (incl. 2026-10-12 research) | What the writer does |
 |---|---|---|---|---|
 | Phone | required | Known | Paul Approved (BG-A8) | Use (843) 757-2739 |
 | City actually served | required | Known | Paul Approved (BG-E, 2026-10-06) | State Okatie is served |
-| City-specific conditions | required | Known | Internally Verified (Wikipedia Okatie, 2026-10-11); climate/hurricane **not** on the source; population figures inconsistent | Local context from §2 #7 only; no climate sentence, no population |
-| 6–12 real neighborhoods | required | Known | **Grid mark over-states it.** Source names 3 (Sun City Hilton Head, Riverbend, Oldfield); research adds Callawassie Island = **4 verified**. River's End and Spring Island weak | List the four; **LOC-15 fails**; see flag 3 |
+| City-specific conditions | required | Known | Internally Verified (Wikipedia Okatie); spans Beaufort and Jasper counties; climate/hurricane **not** on the source; population figures inconsistent | Local context from §2 #7 only; no climate sentence, no population |
+| 6–12 real neighborhoods | required | Known | **4 verified** on the grid (Sun City Hilton Head, Riverbend, Oldfield, Callawassie Island) | List the four (target 6 — Fix and list) |
 | Free estimate / offer | required | Known | Paul Approved ("free estimates"); W17 detail Submitted | "free estimates" only |
-| Things to Do | supporting | Known | Wikipedia (YMCA, Recreation Association) — thin. Altamaha Town (county page) and Widgeon Point / Camp St. Mary's: see below | §2 #11 only |
-| Top Sites | supporting | **Unknown** | **Now sourced (PR):** Callawassie Sugar Works (NRHP 2014), Altamaha Town Heritage Preserve (NRHP 1994). The grid mark stays Unknown until the facts file is updated | §2 #12; mark "public research 2026-10-12 — not yet on the grid" |
-| Response time / guarantees | supporting | **Unverified** | One review says "responded quickly" (keyword match, not checked); no response time is Paul Approved (CM-016) | **State none.** No "quickly" |
-| Emergency / after-hours | supporting | Known | Client Confirmed ("always on call … high priority") | Not needed on this page; if used, the client's words, no time |
+| Things to Do | supporting | Known | Wikipedia (YMCA, Recreation Association) — thin | §2 #11 only |
+| Top Sites | supporting | Known | On the grid: Altamaha Town Heritage Preserve (county page; NRHP 1994), Callawassie Island Sugar Works (Wikipedia — on a gated island, no visiting) | §2 #12; Old Barrel Landing School not used (weak source) |
+| Response time / guarantees | supporting | Unverified | One review says "responded quickly" (keyword match); no response time is Paul Approved (CM-016) | **State none** |
+| Emergency / after-hours | supporting | Known | Client Confirmed ("always on call … high priority") | Not needed on this page |
 | Google rating | supporting | Known | Evidence only | Leave off the page |
+| Apex works in Callawassie / Spring Island (FAQ 1) | — | — | Paul Approved 2026-10-12 (`d-communities-worked-outside-the-12-towns`) | State it; name no other community as worked |
+| Callawassie ARC standards (FAQ 2) | — | — | Official POA Design Standards (updated 12 Dec 2023), read 2026-10-12 | Attribute to the guidelines |
 
-**Held back (researcher marked weak / not adequate) — not for the writer:**
-- **Old Barrel Landing School** — source is scpictureproject.org (not an official, county or Wikipedia source); NRHP status not stated. Held. If Paul wants it, one county/SC SHPO source first.
-- **Widgeon Point Preserve** — county lists it as "Beaufort, SC", not stated as Okatie; search summary only. **Camp St. Mary's Park** — search summary only; pier/dock access only. Neither used.
-- **River's End** — 2003 minutes via search summary. **Spring Island** — mailing address only.
-- **Gate procedure, ARB/HOA roof rules** for Callawassie Island, Spring Island, Oldfield, Sun City Hilton Head — not published on pages read (Sun City site is an HOA portal). **Sun City Hilton Head** is W9 Submitted: no "do you work in Sun City" statement.
-- **Flood-zone FAQ** (Beaufort County flood page) — passes sourcing, fails portability; Jasper-County side not researched.
+**Held back — not for the writer:** Old Barrel Landing School (SC Picture Project only) · Widgeon Point Preserve and Camp St. Mary's Park (search summaries only) · River's End (2003 minutes via summary) · gate procedures for any gated community (unpublished) · Spring Island's own rules (no public document found) · Sun City Hilton Head as a place Apex has worked (W9 Submitted) · the flood-zone FAQ (fails portability).
 
-**Open facts-interview items for this page** (Paul sends client questions; CM-042). *searched:* `data/reviews/reviews.csv` (one Sun City mention, 2020), decisions-settled (W9 projects only, no Okatie entry), grid, research JSON — no client answer on disk.
-1. Does Apex work in Callawassie Island, Spring Island, Oldfield, Riverbend and Sun City Hilton Head? Which of them, in the client's words? (conditional FAQ 1; also needed before any neighborhood is described as served).
-2. For a gated community, who arranges gate access, and what should the homeowner do? (candidate FAQ 2; client process fact).
-3. Any recurring roof problem the client actually sees in Okatie communities built since the 1990s? (candidate FAQ 3 / local context; client observation only, nothing invented).
+**Open facts-interview items for this page:** none. Paul 2026-10-12 answered the community question (Callawassie and Spring Island: yes) and skipped the others (settled `location_client_questions_skipped`).
 
 ## Flags for Paul
 
-1. **FAQ count (LOC-14).** 1 conditional, 2 gaps; the three researched candidates are weak (gate access unpublished, flood zone generic, historic-site rules unsourced). Options: (a) answer the two client questions above in the facts interview before draft approval; (b) accept the page with one FAQ plus visible `[NEED]` slots, held from publication; (c) approve the gate-access question as FAQ 2 once the client answers.
-2. **FAQ 1 wording.** The site plan says "Spring Island, Callawassie Island and other Okatie communities", but Spring Island's own site says it is in Beaufort and only its mailing address is Okatie. Options: (a) keep the wording and answer with "Okatie mailing address"; (b) reword to "Do you work in Callawassie Island, Spring Island and other Okatie-area communities?" (recommended; "Okatie-area" is true).
-3. **Neighborhoods 4 of 6 (LOC-15).** Options: (a) ship the four and record the shortfall; (b) have the researcher read River's End and Spring Island in full for a county/POA source (both likely stay weak); (c) ask the client which Okatie communities it serves (also feeds flag 1).
-4. **Things to Do is thin.** Only the YMCA and Recreation Association (Wikipedia). Option: move Altamaha Town Heritage Preserve (trail, dawn to dusk) to Things to Do and leave Top Sites with Callawassie Sugar Works only. Recommended as written: Altamaha in Top Sites, because Sugar Works is inside a gated community and cannot be visited, so Top Sites would otherwise have one item.
-5. **Grid facts file is behind.** Top Sites (Unknown), Callawassie Island and Oldfield are not recorded on the grid; recording them needs a run that may write the facts file (not this brief). Neighborhoods and Top Sites marks may change once recorded.
+**Answered by Paul 2026-10-12 (applied):**
+- Apex works in Callawassie Island and Spring Island (yes) — FAQ 1 usable.
+- Callawassie roof standards from the research — FAQ 2, verified against the POA's own Design Standards (updated 12 Dec 2023). One nuance from the official text: the shingle rule is **asphalt or fiberglass shingles with a 40-year or approved "Lifetime" warranty**, plus a 6/12 minimum pitch.
+- Okatie spans Beaufort and Jasper counties — no Beaufort-only permit wording anywhere; permit and community approval kept separate.
+
+**Decided for you (recommended option; say if you want another):**
+1. FAQ 1 reads "Okatie-area communities" (Spring Island's own site says Beaufort; Okatie is its mailing address).
+2. Neighbourhoods: four verified, listed as four (target 6 — CM-061 §8).
+3. Top Sites: Altamaha Town Heritage Preserve and Callawassie Sugar Works (no visiting); Things to Do stays the two Wikipedia items.
+
+**Open — your choice (one line):**
+- **FAQ 3 (permit, category 2).** Your 2026-10-08 choice 2a kept permit FAQs to Bluffton and Ridgeland. The new location FAQ recipe (CM-061) makes "permits and who issues them" category 2, and your own research gives an Okatie-only answer (two counties). A reopen request is logged. **(A, recommended)** "Is my Okatie roofing permit handled by Beaufort County or Jasper County?" — answered per county from the official pages, no Apex-pulls-the-permit claim; **(B)** keep 2a and use the brand-level fallback "Do you roof new construction in Okatie?" (W16). The same choice covers Levy and Pritchardville.

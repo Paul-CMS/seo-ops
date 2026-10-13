@@ -12,19 +12,19 @@
       "source": "https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (read 2026-10-11)"
     },
     "neighborhoods": {
-      "value": "",
-      "status": "Unknown",
-      "source": "not found — tried: https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (names none; mentions Coosaw Point only as a historic site); Redfin listing pages name Cat Island, Coosaw Point, Islands of Beaufort but those are real-estate sources, not recorded as verified"
+      "value": "12 named in a Beaufort County Planning Commission staff report (CDPA-000015-2021, 2021-12-06; 'including, but not limited to'; county zoning district, some may since be annexed): Burckmeyer Beach, Captain Blythewood Landings, Tradewinds Plantation, Celadon, Brindlewood, Academy Estates, Magnolia Court, Deer Run, Royal Pines, Telfair, Christine Place, Spanish Moss. Not neighborhoods of Lady's Island: Cat Island, Distant Island (ambiguous), Dataw Island (own island, 'nearby islands' only, Paul 2026-10-12), Coosaw Point (historic site).",
+      "status": "Internally Verified",
+      "source": "https://www.beaufortcountysc.gov/planning-commission/agendas/2021/120621.pdf (read 2026-10-12, public research run 20261012-150859-build-1044; recorded run 20261012-205526-build-9baf)"
     },
     "things_to_do": {
-      "value": "",
-      "status": "Unknown",
-      "source": "not found — tried: https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (lists no attractions)"
+      "value": "Whitehall Park (9.72 acres of pine and live oak on a salt-marsh point on the Beaufort River, 120 White Hall Drive; owned by Beaufort County, maintained by the City of Beaufort); Crystal Lake Park (Beaufort County Land Preservation park, 124 Lady's Island Drive); White Hall Boat Landing (county public boat landing, 33 Sea Island Parkway). No hours.",
+      "status": "Internally Verified",
+      "source": "https://www.beaufortcountysc.gov/news/2023/04/whitehall-park-grand-opening-celebration.html ; https://www.beaufortcountysc.gov/planning/passive-parks/Passive%20Parks%20and%20Facilities.html ; https://www.beaufortcountysc.gov/public-works/boat-landings/white-hall-boat-landing.html (read 2026-10-12)"
     },
     "top_sites": {
-      "value": "",
-      "status": "Unknown",
-      "source": "not found — tried: https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (lists no landmarks; links only to the county NRHP list)"
+      "value": "Richard V. Woods Memorial Bridge (swing bridge between downtown Beaufort and Lady's Island, opened 1959, NRHP-listed 2023 — not the county table's 1988); Beaufort Executive Airport (general aviation, about 110 acres, 39 Airport Circle; also called Beaufort County Airport); Coosaw Point (historic site on the island's northeastern point).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Richard_V._Woods_Memorial_Bridge ; https://schpr.sc.gov/index.php/Detail/objects/S10817707078 ; https://aeronautics.sc.gov/airports/beaufort-executive-arw-airport ; https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (read 2026-10-12)"
     }
   },
   "recorded_by_run": "20261011-212524-build-5379"

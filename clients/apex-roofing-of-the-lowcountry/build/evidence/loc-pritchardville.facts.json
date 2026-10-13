@@ -12,14 +12,14 @@
       "source": "https://en.wikipedia.org/wiki/Pritchardville,_South_Carolina (read 2026-10-11)"
     },
     "neighborhoods": {
-      "value": "",
-      "status": "Unknown",
-      "source": "not found — tried: https://en.wikipedia.org/wiki/Pritchardville,_South_Carolina (names none); Beaufort County pages not yet searched for Pritchardville subdivisions"
+      "value": "Partial (target 6) — nearby planned communities, not inside a 'City of Pritchardville' (Pritchardville is unincorporated): Heritage at New Riverside and The Haven at New Riverside (labels on the official Beaufort County Council District 9B map, spelled with '@'). May River Preserve and New Riverside Village (Paul's research) are not on any official map read — not listed. Wording: 'Pritchardville and nearby New Riverside/Bluffton communities'.",
+      "status": "Internally Verified",
+      "source": "https://beaufortcountysc.gov/council/council-members/DistrictMaps/district9b.pdf (read 2026-10-12; research log RL-locations-7, run 20261012-205526-build-9baf); Paul's research 2026-10-12 (answers.md §1)"
     },
     "things_to_do": {
       "value": "",
       "status": "Unknown",
-      "source": "not found — tried: https://en.wikipedia.org/wiki/Pritchardville,_South_Carolina (names no attractions)"
+      "source": "researched, partial and unconfirmed — research log RL-locations-8 (run 20261012-205526-build-9baf, 2026-10-12): Town of Bluffton Parks page lists 'Pritchard Pocket Park' with no address or description (location in Pritchardville not confirmed); 'L Scott Stell Park' no source; Wikipedia Pritchardville names no attractions"
     },
     "top_sites": {
       "value": "St. Luke's Church, located nearby, listed on the National Register of Historic Places in 1987.",

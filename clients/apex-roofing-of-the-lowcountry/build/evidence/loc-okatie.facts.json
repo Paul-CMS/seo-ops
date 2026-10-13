@@ -12,9 +12,9 @@
       "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina (read 2026-10-11)"
     },
     "neighborhoods": {
-      "value": "3 named on the source: Sun City Hilton Head (age-restricted planned community in the Okatie area of Beaufort and Jasper counties, unincorporated), Riverbend, Oldfield. Okatie is unincorporated, so none are inside a town; fewer than 6 found.",
+      "value": "4 verified: Sun City Hilton Head (age-restricted planned community in the Okatie area of Beaufort and Jasper counties, unincorporated), Riverbend, Oldfield (Wikipedia; 'gated, on the Okatie River' only from non-official club pages), Callawassie Island (gated residential community, Okatie SC 29909, with its own published ARC Design Standards). Spring Island: Okatie only as a mailing address, its own site says Beaufort — 'Okatie-area' only (Apex works there, Paul 2026-10-12). Okatie is unincorporated and spans Beaufort and Jasper counties; fewer than 6 found (target).",
       "status": "Internally Verified",
-      "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina ; https://en.wikipedia.org/wiki/Sun_City_Hilton_Head (read 2026-10-11)"
+      "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina ; https://en.wikipedia.org/wiki/Sun_City_Hilton_Head (read 2026-10-11); https://en.wikipedia.org/wiki/Callawassie_Island ; https://www.callawassieisland.com/wp-content/uploads/2025/06/20240201ARC-Guidelines-.pdf (read 2026-10-12, run 20261012-205526-build-9baf)"
     },
     "things_to_do": {
       "value": "Hilton Head Island Recreation Association and the Beaufort-Jasper YMCA of the Lowcountry are listed on the page (fitness classes, youth programs). No attractions otherwise stated; thin.",
@@ -22,9 +22,9 @@
       "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina (read 2026-10-11)"
     },
     "top_sites": {
-      "value": "",
-      "status": "Unknown",
-      "source": "not found — tried: https://en.wikipedia.org/wiki/Okatie,_South_Carolina (page states no NRHP sites and lists only institutions: Beaufort-Jasper Water and Sewer Authority HQ, Beaufort-Jasper Academy for Career Excellence, John Paul II Catholic High School)"
+      "value": "Altamaha Town Heritage Preserve (county passive park, about 100 acres of oak-hickory forest along the Okatie and Colleton Rivers off Old Bailey's Road near SC 170; NRHP 1994; 0.5-mile earthen trail); Callawassie Island Sugar Works (tabby ruins, 'the only sugar mill ruins known to exist in South Carolina' — on gated Callawassie Island, not a place to visit); Old Barrel Landing School (one-room school on SC 170, restored 1995 — weak source, SC Picture Project).",
+      "status": "Internally Verified",
+      "source": "https://www.beaufortcountysc.gov/events/2025/03/03.13.2025 Trail Talk at Altamaha.html ; https://en.wikipedia.org/wiki/Callawassie_Island ; https://www.scpictureproject.org/beaufort-county/old-barrel-landing-school.html (read 2026-10-12; research log RL-locations-4, run 20261012-205526-build-9baf)"
     }
   },
   "recorded_by_run": "20261011-212524-build-5379"

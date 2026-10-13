@@ -640,8 +640,8 @@
         "why": [],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-hilton-head-island.grid.md",
         "sha": "581c11d45658",
-        "at": "2026-10-12T15:09:20-05:00",
-        "run": "20261012-150859-build-1044",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
         "gaps": [
           "response_time"
         ]
@@ -649,9 +649,28 @@
       "files": {
         "brief": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LB - Hilton Head Island - Apex Roofing of the Lowcountry.md",
-          "run": "20261012-150859-build-1044",
-          "at": "2026-10-12T15:35:28-05:00",
-          "sha": "40f6f1de5967"
+          "run": "20261012-205526-build-9baf",
+          "at": "2026-10-12T21:23:13-05:00",
+          "sha": "1c3dcb6bf3ff"
+        }
+      },
+      "pack": {
+        "file": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-hilton-head-island.md",
+        "json": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-hilton-head-island.json",
+        "sha": "d48b7e6cdb0e",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
+        "section": "locations",
+        "counts": {
+          "facts": 51,
+          "review_topics": 11,
+          "review_excerpts": 47,
+          "questions": 105,
+          "site_gbp": 0,
+          "public": 1,
+          "settled": 18,
+          "gaps": 0,
+          "excerpts": 47
         }
       }
     },
@@ -668,27 +687,45 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-okatie.grid.md",
-        "sha": "7f7c0506c98b",
-        "at": "2026-10-12T15:09:20-05:00",
-        "run": "20261012-150859-build-1044",
+        "sha": "994b3cd22cb6",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
         "gaps": [
-          "top_sites",
           "response_time"
         ]
       },
       "files": {
         "brief": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LB - Okatie - Apex Roofing of the Lowcountry.md",
-          "run": "20261012-150859-build-1044",
-          "at": "2026-10-12T15:35:28-05:00",
-          "sha": "8f3f60ce1208"
+          "run": "20261012-205526-build-9baf",
+          "at": "2026-10-12T21:23:13-05:00",
+          "sha": "8a513a4ade31"
+        }
+      },
+      "pack": {
+        "file": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-okatie.md",
+        "json": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-okatie.json",
+        "sha": "8995fab76bee",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
+        "section": "locations",
+        "counts": {
+          "facts": 51,
+          "review_topics": 11,
+          "review_excerpts": 47,
+          "questions": 21,
+          "site_gbp": 0,
+          "public": 0,
+          "settled": 12,
+          "gaps": 0,
+          "excerpts": 48
         }
       }
     },
@@ -703,22 +740,19 @@
       "h1": "Roofers in Pritchardville",
       "claims": [],
       "evidence": {
-        "result": "warn",
+        "result": "pass",
         "counts": {
-          "Known": 7,
-          "Unknown": 2,
+          "Known": 8,
+          "Unknown": 1,
           "Unverified": 1,
           "Conflict": 0
         },
-        "why": [
-          "1 required and 2 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
-        ],
+        "why": [],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-pritchardville.grid.md",
-        "sha": "997b13852e2e",
-        "at": "2026-10-12T15:09:20-05:00",
-        "run": "20261012-150859-build-1044",
+        "sha": "18eaa2ee987c",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
         "gaps": [
-          "neighborhoods",
           "things_to_do",
           "response_time"
         ]
@@ -726,9 +760,28 @@
       "files": {
         "brief": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LB - Pritchardville - Apex Roofing of the Lowcountry.md",
-          "run": "20261012-150859-build-1044",
-          "at": "2026-10-12T15:35:28-05:00",
-          "sha": "baf03402c7ce"
+          "run": "20261012-205526-build-9baf",
+          "at": "2026-10-12T21:23:13-05:00",
+          "sha": "ef7a75627dbc"
+        }
+      },
+      "pack": {
+        "file": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-pritchardville.md",
+        "json": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-pritchardville.json",
+        "sha": "61755dc03ea1",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
+        "section": "locations",
+        "counts": {
+          "facts": 51,
+          "review_topics": 11,
+          "review_excerpts": 47,
+          "questions": 21,
+          "site_gbp": 0,
+          "public": 0,
+          "settled": 12,
+          "gaps": 1,
+          "excerpts": 49
         }
       }
     },
@@ -753,8 +806,8 @@
         "why": [],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-beaufort.grid.md",
         "sha": "0cf781042306",
-        "at": "2026-10-12T15:09:20-05:00",
-        "run": "20261012-150859-build-1044",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
         "gaps": [
           "response_time"
         ]
@@ -762,9 +815,28 @@
       "files": {
         "brief": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LB - Beaufort - Apex Roofing of the Lowcountry.md",
-          "run": "20261012-150859-build-1044",
-          "at": "2026-10-12T15:35:28-05:00",
-          "sha": "47f2f54d0873"
+          "run": "20261012-205526-build-9baf",
+          "at": "2026-10-12T21:23:13-05:00",
+          "sha": "8d1b853a6cc3"
+        }
+      },
+      "pack": {
+        "file": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-beaufort.md",
+        "json": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-beaufort.json",
+        "sha": "2efc70219021",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
+        "section": "locations",
+        "counts": {
+          "facts": 51,
+          "review_topics": 11,
+          "review_excerpts": 47,
+          "questions": 20,
+          "site_gbp": 0,
+          "public": 6,
+          "settled": 17,
+          "gaps": 0,
+          "excerpts": 47
         }
       }
     },
@@ -788,9 +860,9 @@
         },
         "why": [],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-port-royal.grid.md",
-        "sha": "7380267a4582",
-        "at": "2026-10-12T15:09:20-05:00",
-        "run": "20261012-150859-build-1044",
+        "sha": "8b2cfa4adbeb",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
         "gaps": [
           "response_time"
         ]
@@ -798,9 +870,28 @@
       "files": {
         "brief": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LB - Port Royal - Apex Roofing of the Lowcountry.md",
-          "run": "20261012-150859-build-1044",
-          "at": "2026-10-12T15:35:28-05:00",
-          "sha": "5ca464e896db"
+          "run": "20261012-205526-build-9baf",
+          "at": "2026-10-12T21:23:13-05:00",
+          "sha": "3b100d25d028"
+        }
+      },
+      "pack": {
+        "file": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-port-royal.md",
+        "json": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-port-royal.json",
+        "sha": "d202bfdc33dd",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
+        "section": "locations",
+        "counts": {
+          "facts": 51,
+          "review_topics": 11,
+          "review_excerpts": 47,
+          "questions": 22,
+          "site_gbp": 0,
+          "public": 1,
+          "settled": 19,
+          "gaps": 0,
+          "excerpts": 47
         }
       }
     },
@@ -815,33 +906,47 @@
       "h1": "Roofers on Lady's Island",
       "claims": [],
       "evidence": {
-        "result": "warn",
+        "result": "pass",
         "counts": {
-          "Known": 6,
-          "Unknown": 3,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
-        "why": [
-          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
-        ],
+        "why": [],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-ladys-island.grid.md",
-        "sha": "eeea90bd284d",
-        "at": "2026-10-12T15:09:20-05:00",
-        "run": "20261012-150859-build-1044",
+        "sha": "3e4f2ed889cc",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
         "gaps": [
-          "neighborhoods",
-          "things_to_do",
-          "top_sites",
           "response_time"
         ]
       },
       "files": {
         "brief": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LB - Lady's Island - Apex Roofing of the Lowcountry.md",
-          "run": "20261012-150859-build-1044",
-          "at": "2026-10-12T15:35:28-05:00",
-          "sha": "e871b516fb68"
+          "run": "20261012-205526-build-9baf",
+          "at": "2026-10-12T21:23:13-05:00",
+          "sha": "804ba4848574"
+        }
+      },
+      "pack": {
+        "file": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-ladys-island.md",
+        "json": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-ladys-island.json",
+        "sha": "e423efd72d94",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
+        "section": "locations",
+        "counts": {
+          "facts": 51,
+          "review_topics": 11,
+          "review_excerpts": 47,
+          "questions": 15,
+          "site_gbp": 0,
+          "public": 0,
+          "settled": 14,
+          "gaps": 0,
+          "excerpts": 50
         }
       }
     },
@@ -858,27 +963,45 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-st-helena-island.grid.md",
-        "sha": "f763b6bfa1bb",
-        "at": "2026-10-12T15:09:20-05:00",
-        "run": "20261012-150859-build-1044",
+        "sha": "b32f6d3c34d0",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
         "gaps": [
-          "things_to_do",
           "response_time"
         ]
       },
       "files": {
         "brief": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LB - St. Helena Island - Apex Roofing of the Lowcountry.md",
-          "run": "20261012-150859-build-1044",
-          "at": "2026-10-12T15:35:28-05:00",
-          "sha": "1f3b1a67041d"
+          "run": "20261012-205526-build-9baf",
+          "at": "2026-10-12T21:23:14-05:00",
+          "sha": "0c54651971e6"
+        }
+      },
+      "pack": {
+        "file": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-st-helena-island.md",
+        "json": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-st-helena-island.json",
+        "sha": "06879987b94a",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
+        "section": "locations",
+        "counts": {
+          "facts": 51,
+          "review_topics": 11,
+          "review_excerpts": 47,
+          "questions": 23,
+          "site_gbp": 0,
+          "public": 0,
+          "settled": 11,
+          "gaps": 0,
+          "excerpts": 48
         }
       }
     },
@@ -893,31 +1016,47 @@
       "h1": "Roofers on Fripp Island",
       "claims": [],
       "evidence": {
-        "result": "warn",
+        "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
-        "why": [
-          "1 required and 1 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
-        ],
+        "why": [],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-fripp-island.grid.md",
-        "sha": "1d1a3c073185",
-        "at": "2026-10-12T15:09:20-05:00",
-        "run": "20261012-150859-build-1044",
+        "sha": "0e571ef0ada2",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
         "gaps": [
-          "neighborhoods",
           "response_time"
         ]
       },
       "files": {
         "brief": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LB - Fripp Island - Apex Roofing of the Lowcountry.md",
-          "run": "20261012-150859-build-1044",
-          "at": "2026-10-12T15:35:28-05:00",
-          "sha": "88343189099d"
+          "run": "20261012-205526-build-9baf",
+          "at": "2026-10-12T21:23:14-05:00",
+          "sha": "3f8567c8f19f"
+        }
+      },
+      "pack": {
+        "file": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-fripp-island.md",
+        "json": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-fripp-island.json",
+        "sha": "a71f1924e2d6",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
+        "section": "locations",
+        "counts": {
+          "facts": 51,
+          "review_topics": 11,
+          "review_excerpts": 47,
+          "questions": 19,
+          "site_gbp": 0,
+          "public": 0,
+          "settled": 12,
+          "gaps": 0,
+          "excerpts": 48
         }
       }
     },
@@ -942,8 +1081,8 @@
         "why": [],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-hardeeville.grid.md",
         "sha": "9e80f5a1d190",
-        "at": "2026-10-12T15:09:20-05:00",
-        "run": "20261012-150859-build-1044",
+        "at": "2026-10-12T21:09:46-05:00",
+        "run": "20261012-205526-build-9baf",
         "gaps": [
           "response_time"
         ]
@@ -951,9 +1090,28 @@
       "files": {
         "brief": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LB - Hardeeville - Apex Roofing of the Lowcountry.md",
-          "run": "20261012-150859-build-1044",
-          "at": "2026-10-12T15:35:28-05:00",
-          "sha": "a9a2b74e179e"
+          "run": "20261012-205526-build-9baf",
+          "at": "2026-10-12T21:23:14-05:00",
+          "sha": "7b032c281524"
+        }
+      },
+      "pack": {
+        "file": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-hardeeville.md",
+        "json": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-hardeeville.json",
+        "sha": "968f4f35072c",
+        "at": "2026-10-12T21:09:47-05:00",
+        "run": "20261012-205526-build-9baf",
+        "section": "locations",
+        "counts": {
+          "facts": 51,
+          "review_topics": 11,
+          "review_excerpts": 47,
+          "questions": 24,
+          "site_gbp": 0,
+          "public": 1,
+          "settled": 2,
+          "gaps": 0,
+          "excerpts": 47
         }
       }
     },
@@ -968,31 +1126,47 @@
       "h1": "Roofers in Ridgeland",
       "claims": [],
       "evidence": {
-        "result": "warn",
+        "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
-        "why": [
-          "1 required and 1 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
-        ],
+        "why": [],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-ridgeland.grid.md",
-        "sha": "99f19d73e9ab",
-        "at": "2026-10-12T15:09:20-05:00",
-        "run": "20261012-150859-build-1044",
+        "sha": "afee42733545",
+        "at": "2026-10-12T21:09:47-05:00",
+        "run": "20261012-205526-build-9baf",
         "gaps": [
-          "neighborhoods",
           "response_time"
         ]
       },
       "files": {
         "brief": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LB - Ridgeland - Apex Roofing of the Lowcountry.md",
-          "run": "20261012-150859-build-1044",
-          "at": "2026-10-12T15:35:28-05:00",
-          "sha": "867dfcfcc026"
+          "run": "20261012-205526-build-9baf",
+          "at": "2026-10-12T21:23:14-05:00",
+          "sha": "a47d262e6008"
+        }
+      },
+      "pack": {
+        "file": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-ridgeland.md",
+        "json": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-ridgeland.json",
+        "sha": "73fb87e6c6df",
+        "at": "2026-10-12T21:09:47-05:00",
+        "run": "20261012-205526-build-9baf",
+        "section": "locations",
+        "counts": {
+          "facts": 51,
+          "review_topics": 12,
+          "review_excerpts": 48,
+          "questions": 23,
+          "site_gbp": 0,
+          "public": 1,
+          "settled": 2,
+          "gaps": 0,
+          "excerpts": 49
         }
       }
     },
@@ -1007,23 +1181,19 @@
       "h1": "Roofers in Levy",
       "claims": [],
       "evidence": {
-        "result": "warn",
+        "result": "pass",
         "counts": {
-          "Known": 6,
-          "Unknown": 3,
+          "Known": 8,
+          "Unknown": 1,
           "Unverified": 1,
           "Conflict": 0
         },
-        "why": [
-          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
-        ],
+        "why": [],
         "grid": "clients/apex-roofing-of-the-lowcountry/build/evidence/loc-levy.grid.md",
-        "sha": "1d28e58d8915",
-        "at": "2026-10-12T15:09:20-05:00",
-        "run": "20261012-150859-build-1044",
+        "sha": "6ae452e69207",
+        "at": "2026-10-12T21:09:47-05:00",
+        "run": "20261012-205526-build-9baf",
         "gaps": [
-          "neighborhoods",
-          "things_to_do",
           "top_sites",
           "response_time"
         ]
@@ -1031,9 +1201,28 @@
       "files": {
         "brief": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LB - Levy - Apex Roofing of the Lowcountry.md",
-          "run": "20261012-150859-build-1044",
-          "at": "2026-10-12T15:35:28-05:00",
-          "sha": "87230758161d"
+          "run": "20261012-205526-build-9baf",
+          "at": "2026-10-12T21:23:14-05:00",
+          "sha": "e834df87de16"
+        }
+      },
+      "pack": {
+        "file": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-levy.md",
+        "json": "clients/apex-roofing-of-the-lowcountry/build/locations/packs/loc-levy.json",
+        "sha": "b978f27576c7",
+        "at": "2026-10-12T21:09:47-05:00",
+        "run": "20261012-205526-build-9baf",
+        "section": "locations",
+        "counts": {
+          "facts": 51,
+          "review_topics": 11,
+          "review_excerpts": 47,
+          "questions": 19,
+          "site_gbp": 0,
+          "public": 0,
+          "settled": 2,
+          "gaps": 1,
+          "excerpts": 49
         }
       }
     },
@@ -1576,11 +1765,11 @@
     }
   },
   "last_run": {
-    "run_id": "20261012-150859-build-1044",
+    "run_id": "20261012-205526-build-9baf",
     "command": "build",
-    "finished": "2026-10-12T15:35:58-05:00",
-    "result": "locations evidence gate (6 PASS, 5 WARN, 0 blocked) + 11 location briefs recorded; batch briefs collected for Paul's approval; F-018 flagged (no script to record researched page facts)",
-    "changes": 0,
+    "finished": "2026-10-12T21:24:42-05:00",
+    "result": "Locations batch briefs: 11/11 evidence gate PASS, all 11 briefs revised with Paul's 2026-10-12 answers; one open choice (2a permit FAQs on Okatie, Levy, Pritchardville) before the briefs approval",
+    "changes": 19,
     "step": "build:brief",
     "batch": "locations"
   },
@@ -1603,7 +1792,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-12T20:55:19-05:00",
+  "updated": "2026-10-12T21:24:42-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -1716,6 +1905,12 @@
       "step": "build:brief",
       "first_run": "20261012-150859-build-1044",
       "at": "2026-10-12T15:35:58-05:00"
+    },
+    "b088727d-066a-44e5-bac3-310fb0302f6b": {
+      "key": "batches:locations",
+      "step": "build:brief",
+      "first_run": "20261012-205526-build-9baf",
+      "at": "2026-10-12T21:24:42-05:00"
     }
   },
   "wheel_pending": {
@@ -1902,5 +2097,19 @@
     "at": "2026-10-09T20:15:29-05:00",
     "moves": 1,
     "dropped": []
+  },
+  "model_spend": [
+    {
+      "run": "20261012-205526-build-9baf",
+      "step": "build:brief",
+      "tokens": 497000,
+      "usd": 0.0,
+      "at": "2026-10-12T21:24:42-05:00"
+    }
+  ],
+  "review_pause": {
+    "run_id": "20261012-205526-build-9baf",
+    "step": "build:brief",
+    "at": "2026-10-12T21:24:42-05:00"
   }
 }

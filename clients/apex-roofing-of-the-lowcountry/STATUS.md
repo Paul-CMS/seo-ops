@@ -2,10 +2,10 @@
 
 - **Stage 4 of 8 — Audit**
 - **What is happening now:** waiting for Paul's approval — the audit and the reconciled Brand Guide are ready for your approval in one line — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts
-- **Waiting on:** Paul — the audit and the reconciled Brand Guide are ready for your approval in one line — the rec; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
+- **Waiting on:** Paul — the audit and the reconciled Brand Guide are ready for your approval in one line — the rec; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — reopened decision 'site_plan_open_choices': New evidence against choice 2a (permit FAQ on 
 - **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry brand_guide_approved --files "clients/apex-roofing-of-the-lowcountry/brand-guide.md#A+D+E+G"` (or asks for changes first)
 
-_Generated 2026-10-12T20:55 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-12T21:24 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -13,6 +13,7 @@ _Generated 2026-10-12T20:55 by the system — do not edit. Start every session i
 |---|---|---|---|
 | Paul | the audit and the reconciled Brand Guide are ready for your approval in one line — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts | 2026-10-12 | /approve apex-roofing-of-the-lowcountry brand_guide_approved |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
+| Paul | reopened decision 'site_plan_open_choices': New evidence against choice 2a (permit FAQ on Bluffton and Ridgeland only; Okatie and Pritchardville jurisdiction FAQs dropped): (1) methodology/location-faq.md (CM-061, governs location pages from 2026-10-12, after 2a) makes 'permits and who issues them' FAQ category 2 for every location page; (2) Paul's 2026-10-12 research gives page-specific permit facts: Jasper County requires a building permit for roof replacement and repairs (Levy), Okatie spans Beaufort and Jasper counties so no single-county answer applies, and Pritchardville is unincorporated next to Bluffton's New Riverside communities; his proposed questions include 'Do I need a Jasper County permit for roof replacement in Levy?' and 'Is my Okatie roofing permit handled by Beaufort County, Jasper County, or a municipality?'. Ask: allow a who-issues-the-permit FAQ on Levy, Okatie and Pritchardville (each answered from its own jurisdiction's source, no Apex-pulls-the-permit claim), or keep 2a and use the brand-level logistics fallback there. | 2026-10-12 | site_plan_open_choices |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
 | Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-replacement:service_scope |
 | Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-inspections:service_scope |
@@ -24,11 +25,11 @@ _Generated 2026-10-12T20:55 by the system — do not edit. Start every session i
 | Client (via Paul) | We have Warranty terms as "Manufacturer: "50 year Limited Lifetime Warranty which is transferable" · workmanship: "our lifetime no-leak warranty which is also transferable" (replaces W13's untermed "separately guaranteed") · SureStart PLUS extended warranty covering material and labor (W12) · metal  | 2026-10-11 | fact:d:warranty_terms |
 | Client (via Paul) | We have Licence numbers and classes as "SC License #57706 (issuer SC LLR; BBB shows expiry 2027-06-30) · Town of Bluffton License #0620033323. Both current: "Both licenses are good … both legit." Class and holder name not known — GAF shows "RBS 57706" (not verified)" (from Paul addendum 2026-10-07;  | 2026-10-11 | fact:d:licence_numbers |
 | Client (via Paul) | We have Insurance / bonded status as "Full general liability and workers' compensation insurance (W15) · bonded: not stated" (from Paul answers B11). Is that right? yes / partly — correction / no | 2026-10-11 | fact:d:insurance |
-| Client (via Paul) | We have Claim in 'New-Construction': Apex roofs new construction (subcontractor on new builds, W16) as "None stated. Apex itself works as a roofing subcontractor on new construction in Beaufort and Jasper County (W16): accurate" (from Paul answers B4). Is that right? yes / partly — correction / no | 2026-10-11 | fact:d:services_subcontracted |
 | Client (via Paul) | Core services the business wants more of — what should we say? If it depends, on what? | 2026-10-11 | fact:home:core_services |
 | Client (via Paul) | Awards and rankings — what should we say? If it depends, on what? | 2026-10-11 | fact:d:awards |
 | Client (via Paul) | Team size / trucks / jobs completed — what should we say? If it depends, on what? | 2026-10-11 | fact:d:team_size |
 | Client (via Paul) | Customers mention this about How and why the company started (owner's own account): "What more could you want than good work and a family owned business!" (None review(s)). Can we say that? yes / no — correction | 2026-10-11 | fact:about:company_story |
+| Paul | Brand Guide Section F address: HOLD (Paul 2026-10-12 round 2) — Apex is a service-area business; BBB shows one public address. Section F address stays empty and no address goes in schema until Paul decides. Location CTAs keep the website NAP per settled 'business' (street address shown on the website). Needed before Finish (schema), not before the location briefs. | 2026-10-12 | brand_guide_f_address |
 
 ## Waiting on (not blocking)
 
@@ -75,7 +76,6 @@ _Open, but the next action above goes ahead without them._
 - Drive: the Finding Register and URL Decision Map stay in the repo only (too large for the Drive connector) until Drive for desktop is set up — `clients/apex-roofing-of-the-lowcountry/audit/2026-10-07/deliverables/`.
 - Paul 2026-10-09: CertainTeed ShingleMaster is current - yes (Paul's answer). Brand Guide D status set to Paul Approved; the D value, D2 row and content risk R4 still read not confirmed and change at the next Brand Guide revision (re-opens brand_guide_approved). Not used in the pilot drafts.
 - Synthetic roofing offered: yes (Paul 2026-10-09). Port Royal base-housing detail is not recorded; FAQ 2 on Port Royal drafts without it
-- Paul 2026-10-08 site plan choices: 1a homepage keyword to metro level (roofing company hilton head island metro area); 2a permit FAQ on Bluffton and Ridgeland only (HHI, Okatie, Pritchardville jurisdiction FAQs dropped, FO 275/307 to blog list); 3b The Best SERP re-test run; 4a Residential Roofer approved as a category variant; 5a location FAQ gaps (now 18) sourced in the facts interview at each location batch evidence step
 - CM-020 SERP re-test (Paul yes, spent 0.006 USD, 3 Google top-10 reads from Hilton Head Island): condition 2 fails for Roof Repair (1/10 best titles), Roof Replacement (2/10), Skylights (2/10, mostly out-of-area results); only directory lists use best, Apex not in top 10. No page gets The Best; re-test after launch once pages rank.
 - Residential Roofer written into Brand Guide A3 (Paul approved it 2026-10-08, site plan choice 4a); entity and Brand Guide approvals re-stamped by the rewrite 2 migration
 - W25 answered by Paul 2026-10-09: father and son, Ralph and Pierce Brehany, both get on the roof. Founder line on Roof Repair kept (pilot SEM row 9 -> SEM-4); only the W25 [NEED] is removed when SEM-4 is applied.
@@ -99,6 +99,15 @@ _Open, but the next action above goes ahead without them._
 - Paul: keep the Emergency Roof Repair FAQ 'Is a leaking roof an emergency?' at 63 words; CM-060 60-word limit waived for this FAQ
 - Paul accepted the exclude-terms list used for the services readability checks (entity terms, named sources, area variant: Apex Roofing of the Lowcountry, Apex, CertainTeed, GAF, ShingleMaster, SureStart PLUS, DaVinci Roofscapes, Vermont, Beaufort and Jasper Counties, South Carolina, Lowcountry, S.C. Code of Regulations 8-1228, 2021 South Carolina Residential Code, R905.2.8.5, standing seam, Velux, FAKRO, Hilton Head Island–Bluffton–Port Royal metropolitan area, Hilton Head Island), per CM-047
 - Paul: Metal Roofing FAQ 'How much does a metal roof cost?' uses the most-confirmed regional ranges — standing seam about $16,600 to $32,000+ for a typical home; coastal Lowcountry about $30,000 to $45,000+; stated as published cost-guide ranges, not Apex's price; $24,000 removed from the Metal draft
+- Paul 2026-10-12 (answers.md §4, W16): yes — Apex is subcontracted on new construction. d-services-subcontracted-out stays Paul Approved; the Hardeeville sentence (same wording as Roof Installation) is usable.
+- Paul 2026-10-12 (answers.md §4): Apex works in Spring Island, Callawassie Island, Harbor Island, Dataw Island and Port Royal base housing — yes. Recorded as fact d-communities-worked-outside-the-12-towns. Closes the Port Royal base-housing detail left open under synthetic_roofing_offered (base housing worked: yes; synthetic material on base housing not stated).
+- Paul 2026-10-12 (answers.md §4): SKIP the Fripp Island contractor decal, the Jasper County business licence and every other location client question not answered in this round. The briefs make no claim on them (no decal, no Jasper licence, no Apex-pulls-the-City/County-permit claim outside Bluffton); not asked again.
+- Paul 2026-10-12 (answers.md §5): 'Mossy Creek extends into Beaufort' — skip (not sure). Not used on Port Royal or Beaufort.
+- Paul 2026-10-12 (answers.md §5): yes — 'Roofer' in the Fripp services H2 after 'Roofers' in the H1 is acceptable.
+- Paul 2026-10-12 (answers.md §2-3): Dataw Island stays on the Lady's Island page as a 'nearby islands' question (never part of Lady's Island); not an island page of its own. Apex works on Dataw (communities_outside_towns).
+- Paul 2026-10-12 (answers.md §2): yes, keep overlap — the flood substantial-improvement question stays on Hilton Head Island, Port Royal and Lady's Island, each answered from that jurisdiction's own source.
+- Paul 2026-10-12 (answers-round-2.md): Hilton Head Island — keep its FAQ as briefed (FAQ 3 the Town flood-rule question, option a); do not replace it.
+- Paul 2026-10-12 supplied public research for Pritchardville, Levy, Lady's Island (answers.md §1) and Ridgeland, Okatie (answers-round-2.md); researched and cited into the page facts files (research log, run 20261012-205526-build-9baf). Wording limits kept: Pritchardville 'and nearby New Riverside/Bluffton communities', never a City; no blanket historic restrictions; gutters do not fix flooding. Levy is unincorporated Jasper County (not Beaufort County); water-company history only; Jasper County permit FAQ, no exemption promise. Ridgeland postal address ≠ town limits; no inland-wear or '130 mph' claim. Okatie spans Beaufort and Jasper; no Beaufort-only permit answer; Callawassie rules not copied to Spring Island; permit and ARC approval kept separate.
 
 ## Open VA items
 
@@ -117,6 +126,12 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 - **H-2026-10-09-11-other** (Jonie) — other: 1 of 1 open, issued 2026-10-09
 - **H-2026-10-09-12-publish** (Jonie) — publish: 1 of 1 open, issued 2026-10-09
 
+## Data on file not used yet
+
+_Inputs the data manifest (methodology/data-manifest.json) says a step must read, where that step has not finished for this client yet._
+
+_None — every input on file has been read._
+
 ## Flagged for Paul (system)
 
 - **F-008** → CR-013 (open) 2026-10-11 · build:facts: evidence.py questions --all: a second call in the same round overwrites the question-set file with 0 questions, because the first call already opened every key (settled.ask) and the rewrite lists them only as 'already asked'. The first set's text survives only in log.md OPEN lines. — workaround: rebuilt the set by hand from the OPEN lines + grids into interviews/facts/...REVIEW.md and facts-round-all-2026-10-11.questions.json; settled.py filter + questions.py check passed
@@ -126,6 +141,7 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 - **F-012** → CR-017 (open) 2026-10-11 · build:brief: /next started build:brief for the services batch while Paul's 2026-10-11 facts answers (interviews/facts/... Facts Answers - all - 2026-10-11.md) were on disk but unrecorded: the evidence gate scored on stale facts (metal, slate, skylights BLOCK; scope gaps on the other 4) although the answers likely clear them. next.py / the brief gate does not check for an unrecorded facts-answers file. — workaround: Briefs written for the 4 WARN pages with [NEED] markers and a note that the 2026-10-11 answers await /interview facts-answers all; 3 BLOCK pages left unbriefed; re-run the gate after recording.
 - **F-013** → CR-018 (open) 2026-10-12 · build:brief: methodology/specs/service.md §3 #9 and §6 tell writers to leave service-area rows as '| [Link wheel: populate service-area links here] |', but the build rules (P11, stage-6 doc) allow only [NEED: …] and [LINK → /slug/ · reason] placeholders, and publish.py drafts refuses a placeholder without a NEED note. The two rules disagree on the service-areas table placeholder. — workaround: Briefs keep the spec's link-wheel row form (as the approved pilot and sibling briefs do); Finish fills the table before ship. Paul to settle the form at /system-review.
 - **F-018** (open, not yet reviewed) 2026-10-12 · build:brief: Brief step: the SOP says Build writes public research into build/evidence/<page>.facts.json, but there is no script for it. The guard blocks inline Python, and running a scratchpad script on the facts files was denied by the permission classifier (audit tampering). So the 2026-10-12 researcher findings (Lady's Island neighborhoods/things/top sites, Okatie neighborhoods+top sites, St. Helena things to do, Fripp neighborhoods, Levy county) are not on the grids. Needed: an evidence.py/facts.py subcommand that records a page fact with source and status. — workaround: Research kept in the run's research JSONs; each brief cites it as 'public research 2026-10-12 — not yet on the grid'. The gate already cleared all 11 pages (6 PASS, 5 WARN), so no page was held for this.
+- **F-019** (open, not yet reviewed) 2026-10-12 · build:brief: methodology/sources/sc-lowcountry.md: new official sources read this run should be added at /system-review — Callawassie Island POA Design Standards (https://www.callawassieisland.com/wp-content/uploads/2025/06/20240201ARC-Guidelines-.pdf), Town of Bluffton Flooding and Drainage Concerns (https://www.townofbluffton.sc.gov/444/Flooding-and-Drainage-Concerns), Beaufort County Council district maps (neighbourhood labels), Town of Ridgeland About page (incorporation 1894), Jasper County community centers / boat landings pages, City of Beaufort Bailey Bill FAQ (https://cityofbeaufort.org/m/faq?cat=28). The Town of Bluffton Neighborhoods PDF URL is still missing from the list; the Beaufort County Passive Parks page now 301s to a 403. — workaround: Cited directly in the page facts files and briefs for this client (research log RL-locations-1..12, round2.json).
 
 ## Spend so far
 
@@ -133,6 +149,9 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 
 ## Spend by step (model)
 
-_Nothing recorded yet (run.py finish --tokens --cost)._
+| Step | Runs | Tokens | USD |
+|---|---|---|---|
+| build:brief | 1 | 497,000 | $0.00 |
+| **total** | 1 | 497,000 | $0.00 |
 
-Last run: /build 2026-10-12T15:35 — locations evidence gate (6 PASS, 5 WARN, 0 blocked) + 11 location briefs recorded; batch briefs collected for Paul's approval; F-018 flagged (no script to record researched page facts)
+Last run: /build 2026-10-12T21:24 — Locations batch briefs: 11/11 evidence gate PASS, all 11 briefs revised with Paul's 2026-10-12 answers; one open choice (2a permit FAQs on Okatie, Levy, Pritchardville) before the briefs approval

@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-12T16:13:55-05:00",
+  "updated": "2026-10-12T20:59:28-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -389,7 +389,7 @@
       "value": "Correct: Apex itself works as a roofing subcontractor on new construction in Beaufort and Jasper County; no services subcontracted out stated",
       "status": "paul_approved",
       "status_text": null,
-      "source": "Paul 2026-10-11 'correct' (answer 16, /next 2026-10-12)",
+      "source": "Paul 2026-10-11 'correct' (answer 16); re-confirmed Paul 2026-10-12: yes, they are subcontracted by new constructions (answers.md §4, W16)",
       "quote": "",
       "date": "2026-10-12",
       "who": "Paul",
@@ -966,6 +966,21 @@
       "value": "Whole-home typical ranges only, varying with roof size: architectural asphalt about $14,000–$20,000; standing seam metal about $24,000–$45,000+. Impact-resistant, wood and slate/tile: no whole-home range in the approved standard. Per-square prices are not used on any page (Paul 2026-10-12).",
       "status": "paul_approved",
       "source": "Paul 2026-10-12 (chat): no per-square prices; general whole-home price that varies with square footage",
+      "quote": "",
+      "date": "2026-10-12",
+      "who": "Paul",
+      "count": null,
+      "was": "Unknown",
+      "status_text": null
+    },
+    {
+      "id": "d-communities-worked-outside-the-12-towns",
+      "section": "D",
+      "num": "",
+      "label": "Communities worked outside the 12 towns",
+      "value": "Apex works in Spring Island, Callawassie Island, Harbor Island, Dataw Island and Port Royal base housing (Paul: yes)",
+      "status": "paul_approved",
+      "source": "Paul 2026-10-12 chat reply to the locations brief stop (build/locations/paul-answers-2026-10-12/answers.md §4)",
       "quote": "",
       "date": "2026-10-12",
       "who": "Paul",

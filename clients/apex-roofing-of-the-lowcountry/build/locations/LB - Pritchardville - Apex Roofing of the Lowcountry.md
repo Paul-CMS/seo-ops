@@ -3,7 +3,8 @@
 Location brief · page `loc-pritchardville` · batch **locations** · Route A
 Run 20261012-150859-build-1044 · 2026-10-12 · Build agent (brief-writer) · one page per brief (CM-043)
 Spec: `methodology/specs/location.md` (APPROVED 2026-10-08) · Site plan: APPROVED 2026-10-11
-Evidence gate: **WARN** (known 7 · unknown 2 · unverified 1) — 1 required gap (neighborhoods) and 2 supporting (Things to Do; response time). See **Evidence gaps** below.
+Evidence gate: **PASS** (re-run 2026-10-12, run 20261012-205526-build-9baf: known 8 · unknown 1 · unverified 1). Unknown = Things to Do — researched to the minimum, partial and unconfirmed (RL-locations-8): a target, not a hold — the section is dropped (Fix and list, CM-061 §8). Unverified = response time: state none.
+**Revised run 20261012-205526-build-9baf (2026-10-12) with Paul's research** (`paul-answers-2026-10-12/`): 2 neighbourhoods on the grid; FAQ rebuilt to the three-category recipe (drainage, permit — Paul's 2a choice open, clean-up fallback); Things to Do dropped (researched, not found).
 Model: `build/pilot/LB - Bluffton …` (approved pilot). **This is the thinnest page in the batch** — read "What fails if nothing more is found" in the Evidence gaps section first.
 
 ---
@@ -39,7 +40,7 @@ Suggested headings (writer may re-word inside the rules; every H2 names its enti
 - Local context H2: *Where Is Pritchardville, SC?*
 - FAQ H2: *Questions Pritchardville Homeowners Ask a Roofing Contractor*
 - Neighborhoods H2: *Which Pritchardville Neighborhoods Do We Serve?*
-- Things to Do H2: *What Are Some Things to Do in Pritchardville?*
+- Things to Do H2: none (section dropped — researched, not found)
 - Top Sites H2: *What Are the Top Sites to See Near Pritchardville?*
 - Sibling cities H2: *Which Towns Near Pritchardville Do We Also Serve?*
 
@@ -55,12 +56,12 @@ Suggested headings (writer may re-word inside the rules; every H2 names its enti
 | 4 | H1 | `Roofers in Pritchardville` — exactly one H1 | — |
 | 5 | Opening paragraph (no H tag, 60–120 words) | **First sentence answers** who/what/where: Apex Roofing of the Lowcountry is a roofing contractor for homes in Pritchardville, SC, in Beaufort County. Phone **(843) 757-2739** and **free estimates** in the paragraph. **Angle (Pritchardville only):** an unincorporated community in Beaufort County on SC Highway 46 between Hardeeville and Bluffton, named for nearby Pritchard Farms; Apex is based in Bluffton, the town at the Bluffton end of SC 46, and there is **no travel fee** (settled `business`). **Buyer state (differs from Bluffton's *home base / owners who live out of town*):** a homeowner in a small unincorporated crossroads community who wants to know a Bluffton-based roofer covers their address, with no travel fee. **Do not say** Pritchardville is the nearest town to Apex's base, give a distance, a drive time, or "next to Bluffton" as a reason for speed — none is sourced and none may become a response-time promise (CM-016). No response time | Served: Paul Approved (BG-E, 12 towns) · based in Bluffton: Paul Approved (BG-A4) · no travel fee: settled `business` · location facts: Internally Verified, Wikipedia (read 2026-10-11) · free estimates: Paul Approved |
 | 6 | H2 services table | Intro line, then H3 per service, all 8, **no descriptions**: Roof Repair · Roof Replacement · Roof Installation · Roof Inspections · Emergency Roof Repair · Metal Roofing · Slate Roofing · Skylights. Then the row `| [Link wheel: populate service links here] |` | BG-C1 |
-| 7 | H2 local context | 3–5 sentences, **sourced facts only** (no population, elevation, climate, housing data or failure pattern exists for this town — none may be invented): (a) unincorporated community in Beaufort County between Hardeeville and Bluffton along SC Highway 46; (b) named for nearby Pritchard Farms; (c) early development came mainly from settlers who moved from Ohio (Wikipedia, citing the 1938 Federal Writers' Project guide — write as "settled chiefly by people from Ohio", not as a roofing condition); (d) SC 46 east of Pritchardville is named May River Road and runs into the Town of Bluffton (public research 2026-10-12 — not yet on the grid; source https://en.wikipedia.org/wiki/South_Carolina_Highway_46). No link. Do **not** put St. Luke's here (it is the Top Site). Three sentences is acceptable; do not pad to five | Internally Verified, Wikipedia (read 2026-10-11) · (d) public research 2026-10-12 |
-| 8 | FAQ (H2 + H3, 3–4, first sentence answers in 40–60 words) | **No sourced question exists** — see §3. Writer leaves the FAQ H2 with one line `[NEED: 3–4 Pritchardville questions, each with a source — see brief §3]` and writes no invented Q&A | — |
-| 9 | H2 neighborhoods (6–12, real) | **No verified name.** Writer leaves the H2 with `[NEED: 6–12 real Pritchardville neighborhoods, each with a public source — none found after two searches; client or Paul names communities, researcher verifies]` and no list items. The old live page's names (Sawmill Creek Road, SC-170 corridor, Okatie Highway residential, Chechessee residential) are roads, corridors and descriptive areas (F-024) and are **not carried over**. "New Riverside – Parcel 9" (Town of Bluffton review log) is not confirmed in Pritchardville — do not use | Unknown |
+| 7 | H2 local context | 3–5 sentences, **sourced facts only** (no population, elevation, climate, housing data or failure pattern exists for this town — none may be invented): (a) unincorporated community in Beaufort County between Hardeeville and Bluffton along SC Highway 46; (b) named for nearby Pritchard Farms; (c) early development came mainly from settlers who moved from Ohio (Wikipedia, citing the 1938 Federal Writers' Project guide — write as "settled chiefly by people from Ohio", not as a roofing condition); (d) SC 46 east of Pritchardville is named May River Road and runs into the Town of Bluffton (public research 2026-10-12; source https://en.wikipedia.org/wiki/South_Carolina_Highway_46). No link. Do **not** put St. Luke's here (it is the Top Site). Three sentences is acceptable; do not pad to five | Internally Verified, Wikipedia (read 2026-10-11) · (d) public research 2026-10-12 |
+| 8 | FAQ (H2 + H3, 3, first sentence answers in 40–60 words) | Three questions, one per category (location-faq.md) — see §3. FAQ 2 depends on Paul's answer to the 2a reopen (Option A permit / Option B fallback) | §3 |
+| 9 | H2 neighborhoods (6–12 target) | **Two verified names**, plain list items, not H-tagged: **Heritage at New Riverside** · **The Haven at New Riverside**. Lead-in: "Pritchardville and nearby New Riverside communities" — **never** "inside the City of Pritchardville" (it is unincorporated) and no claim that Apex has worked in either. Below the target of 6: list two, no placeholder (Fix and list, CM-061 §8). Not listed: May River Preserve and New Riverside Village (Paul's research, not on any official map read); the old live page's roads and corridors (F-024) | Internally Verified — Beaufort County Council District 9B map, https://beaufortcountysc.gov/council/council-members/DistrictMaps/district9b.pdf (read 2026-10-12, on the grid) |
 | 10 | City map | `[Map: embed a city-level map of Pritchardville, SC here — not the Google Business Profile map]` (same form as the approved Bluffton draft); no H tag | spec #10, LOC-16 |
-| 11 | H2 Things to Do | **No sourced item.** Writer leaves the H2 with `[NEED: one real Things to Do item in Pritchardville with a public source]` — or Paul drops the section (Flag 2). Pritchardville Elementary is a school, not an attraction; "L Scott Stell Park" appeared only in an unreliable aggregate and is **unconfirmed — do not use** | Unknown |
-| 12 | H2 Top Sites | One item: **St. Luke's Church** (Pritchardville, SC) — built 1824, transitional Georgian / Greek Revival; listed on the National Register of Historic Places on 10 November 1987; now St. Luke's Methodist, also called Bull Hill Church. Say "near Pritchardville" (Wikipedia places it about 4 miles north of Pritchardville; the NRHP county list gives its location as SC Highway 170, Pritchardville). Public research 2026-10-12 — not yet on the grid; source https://en.wikipedia.org/wiki/St._Luke%27s_Church_(Pritchardville,_South_Carolina) (grid already carries the NRHP 1987 fact). One item only; add nothing else | Internally Verified, Wikipedia (grid: read 2026-10-11; research read 2026-10-12) |
+| 11 | H2 Things to Do | **Dropped for this page (Fix and list, CM-061 §8).** Researched to the minimum (RL-locations-8): only "Pritchard Pocket Park" on the Town of Bluffton parks page, with no address — not confirmed in Pritchardville; "L Scott Stell Park" has no source. No H2, no placeholder | Unknown — researched, a target not a hold |
+| 12 | H2 Top Sites | One item: **St. Luke's Church** (Pritchardville, SC) — built 1824, transitional Georgian / Greek Revival; listed on the National Register of Historic Places on 10 November 1987; now St. Luke's Methodist, also called Bull Hill Church. Say "near Pritchardville" (Wikipedia places it about 4 miles north of Pritchardville; the NRHP county list gives its location as SC Highway 170, Pritchardville). Public research 2026-10-12; source https://en.wikipedia.org/wiki/St._Luke%27s_Church_(Pritchardville,_South_Carolina) (grid already carries the NRHP 1987 fact). One item only; add nothing else | Internally Verified, Wikipedia (grid: read 2026-10-11; research read 2026-10-12) |
 | 13 | H2 sibling cities | One lead line, then the row `| [Link wheel: populate sibling-city links here] |`. All 11 other towns: Bluffton, Hilton Head Island, Okatie, Beaufort, Port Royal, Lady's Island, St. Helena Island, Fripp Island, Hardeeville, Ridgeland, Levy | BG-E |
 | 14 | CTA with NAP (no H tag) | **Apex Roofing of the Lowcountry · 6 Sutton Ct, Bluffton, SC 29910 · (843) 757-2739** · free estimates · Monday–Saturday 8 AM–5 PM | BG-A1, A4, A8; BG-D hours |
 | — | Word ceiling | Under 1,000 words; this page will be well under | LOC-22 |
@@ -78,37 +79,30 @@ LOC-24 passes on 1–4 alone. The danger is not specificity; it is the FAQ, neig
 
 ---
 
-## 3 · FAQ (site plan §3a — **0 sourced questions, 3 gaps**)
+## 3 · FAQ (location-faq.md: three, one per category — revised 2026-10-12 with Paul's research)
 
-The site plan gives Pritchardville no FAQ topic (`faq_topics: []`, `faq_gaps: 3`). Nothing is routed here from the PAA or fan-out lists (no routed rows). The researcher's three candidates are all weak. **Do not hand any to the writer as usable.**
+The site plan gave Pritchardville no FAQ topic (`faq_gaps: 3`). Paul's research of 2026-10-12 (`paul-answers-2026-10-12/answers.md` §1, `lowcountry_proposed_paa_style_questions.csv` — editorially proposed, not observed PAA) and the round-2 check (`research-2026-10-12/round2.json`) supply category 1; categories 2 and 3 use Paul's open choice or the brand-level fallback. First sentence of each answer answers alone (40–60 words, CM-060). No in-prose links (CM-005). Wording rule for every answer: "Pritchardville and nearby New Riverside/Bluffton communities" — never "the City of Pritchardville".
 
-| Candidate (research 2026-10-12) | Why it fails | Status |
-|---|---|---|
-| Is Pritchardville part of Bluffton, Hardeeville or unincorporated Beaufort County, and does that change who I call about my roof? | Borders the annexation/permit topic Paul dropped (choice 2a: one permit/jurisdiction question per county — Bluffton owns Beaufort County). The answer would also be a Wikipedia jurisdiction fact with no roofing consequence and no official source naming who issues roof permits for Pritchardville | **Not usable.** Paul decides (Flag 1) |
-| Are the older homes and churches around Pritchardville historic, and does that affect roof work? | Only St. Luke's NRHP 1987 and the Ohio-settler history exist. No source says Pritchardville has a historic district or any roofing rule (researcher: "NOT answerable on roofing — weak"); the Beaufort County Historic Preservation Board agenda was seen only in a search summary | **Not usable** |
-| How do I find out if my Pritchardville home is in a flood zone? | Beaufort County flood page (read 2026-10-12) is real but applies to all unincorporated Beaufort County — fails the portability test (CM-015) and is not a roofing question | **Not usable** |
+| # | Question (H3) | Category · why it belongs on this page | Answer facts and source | Status |
+|---|---|---|---|---|
+| 1 | Where should the rain off my roof go on a home near Pritchardville? *(writer may re-word; keep the place)* | 1 · local decision — homes in Pritchardville and the nearby New Riverside communities sit next to Bluffton, whose Town publishes drainage guidance that names the roof | Town of Bluffton, *Flooding and Drainage Concerns* (https://www.townofbluffton.sc.gov/444/Flooding-and-Drainage-Concerns, read 2026-10-12): the roof and the driveway are impervious surfaces "that increase the amount of stormwater runoff"; "Clean the gutters and drainage downspouts attached to your roof twice a year"; "Direct flows from downspouts away from your foundation, without discharging flows to adjacent properties." Say it is **Bluffton-area guidance**, not a Pritchardville rule (Pritchardville is unincorporated Beaufort County). **Do not** say gutters alone fix flooding (Paul), and do not say Apex installs gutters (not one of the 8 services). Apex's part: the roof itself — flashing and roof edges are inspected on a roof inspection (one of the 8 services); no other claim | **Usable now** |
+| 2 | Who issues the roof permit for a Pritchardville address? *(Option A — recommended; needs Paul's answer on the 2a reopen request)* | 2 · logistics — Pritchardville is unincorporated, but the nearby New Riverside communities may sit inside the Town of Bluffton, so the office depends on the address | Pritchardville: unincorporated Beaufort County (Wikipedia) → Beaufort County Building Codes (https://www.beaufortcountysc.gov/building-codes/). Town of Bluffton issues its own permits and publishes a re-roof permit application (https://www.townofbluffton.sc.gov/228/Applications-Certificates-Forms-and-Perm). **No official source says which office covers New Riverside** (round 2): the answer tells the owner to check the address (Bluffton Explorer GIS or the Town / County building office) — no claim that a given community is inside the Town. No Apex-pulls-the-permit claim here (settled covers the Town of Bluffton only) | **Open — Paul chooses** (reopen of `site_plan_open_choices` 2a). **Option B if 2a stands:** brand-level local fallback (Fix and list) — *Can I get a free roof estimate in Pritchardville on a Saturday?* — free estimates; Monday–Saturday 8 AM–5 PM (BG-D); no response time, no travel-fee wording (Ridgeland's) |
+| 3 | How is my yard left after a roof job in Pritchardville? *(category 3 · trust — brand-level local fallback, location-faq.md; Fix and list)* | No sourced Pritchardville trust question exists (no review names Pritchardville; the historic question has no roofing source) | **Usable now, client facts only:** clean-up each day and a magnet sweep for loose nails (Paul Approved, `d-clean-up`); reviews mentioning clean-up are keyword matches only (11 reviewers in the pack, not checked by meaning): at most one attributed customer example, never "customers mention", no reviewer names (usage tiers, CM-057). No "spotless" or guarantee wording. Distinct from Hardeeville (storm after hours; photos) and St. Helena (who works on the roof) |
 
-Also rejected by the brief: "Does Apex serve Pritchardville?" and "Is there a travel fee to Pritchardville?" — city-swapped generic questions (F-021 failure pattern); the travel-fee topic belongs to Ridgeland's FAQ ("farther from Bluffton") and Bluffton owns "based in Bluffton" (C3). **Never** a permit question here (one per county; Beaufort County = Bluffton).
+**Count:** 3 — FAQ 1 and 3 usable now; FAQ 2 usable as Option A or B once Paul answers the 2a reopen. LOC-14 met either way.
 
-**What the writer does:** keep the FAQ H2 and write `[NEED: 3–4 Pritchardville questions, each with a source — see brief §3]`. No Q&A, no invented question.
-
-**What the facts interview could ask the client (client facts only; public facts are researched, never asked, CM-042):**
-1. What kinds of roof jobs do Ralph and Pierce most often see in Pritchardville (re-roof of an older home, new construction, metal, repair after a storm)? One real example is enough.
-2. Do Pritchardville homeowners ask them something that homeowners in Bluffton or Hardeeville do not? What is it, and what do they tell them?
-3. Do Ralph and Pierce work in particular Pritchardville communities or subdivisions (names) — see the neighborhoods gap.
-4. Has Apex done new-construction roofing (W16, subcontract work on new construction in Beaufort and Jasper Counties) in Pritchardville? Only confirm if true.
-
-Each answer becomes a settled fact (`run.py fact`) before a question is drafted around it.
+**Not used, and why:** "Does my New Riverside HOA need to approve a new roof?" — no public New Riverside architectural rule found; "Is metal or architectural-shingle roofing better…", "How much does roof replacement cost in Pritchardville?", "Can a roof leak be repaired without replacing the entire roof?", "How should I prepare my Pritchardville roof for hurricane season?" — generic or price questions owned by the service pages (blog list). The competitor FAQs in `lowcountry_extracted_faqs.csv` are not copied. The historic-homes question: St. Luke's Church (NRHP 1987) is a documented landmark, but **no source** sets a historic-preservation rule for Pritchardville homes — do not imply one (Paul).
 
 ---
 
-## 4 · Neighborhoods (spec #9, LOC-15: 6–12; F-024)
+## 4 · Neighborhoods (spec #9, LOC-15: 6–12 target; F-024)
 
 | Neighborhood | Status | Source |
 |---|---|---|
-| — none verified — | **Unknown** (second search done 2026-10-12: Wikipedia names none; realtor marketing pages name no sub-communities and are not citable; no Beaufort County plat list found) | — |
+| Heritage at New Riverside | Verified — label "Heritage @ New Riverside" on the official county district map; a nearby planned community, not inside a town called Pritchardville | https://beaufortcountysc.gov/council/council-members/DistrictMaps/district9b.pdf (read 2026-10-12) |
+| The Haven at New Riverside | Verified — label "The Haven @ New Riverside" on the same map | same |
 
-**Excluded:** roads, corridors and "areas" (F-024); the old live list; names that appear on another location page (Sun City Hilton Head → Okatie; Mossy Creek → Port Royal; Hampton Hall and Palmetto Bluff → Bluffton; Belfair, Colleton River Plantation and Moss Creek are Greater Bluffton and named on Bluffton's page only as also served).
+**Not listed:** May River Preserve and New Riverside Village (Paul's research; on no official map read — round 2) · Westbury Park, Gasciogne Bluff, Alston Park (labelled on the same district map, but their relation to Pritchardville is not stated) · roads, corridors and "areas" (F-024) · names on another location page (Sun City Hilton Head → Okatie; Mossy Creek → Port Royal; Hampton Hall and Palmetto Bluff → Bluffton; Belfair, Colleton River Plantation, Moss Creek → named on Bluffton's page only). Two names, below the target of 6: listed as two (Fix and list, CM-061 §8).
 
 ---
 
@@ -128,17 +122,17 @@ Each answer becomes a settled fact (`run.py fact`) before a question is drafted 
 | F-011 | LOC-07 | H1 drops "The Best" — matches BG-H2 |
 | F-012 (absorbs F-013) | LOC-06, LOC-09 | H1 "Roofers in Pritchardville" differs from the title's "Roofing Contractor"; first H2 uses "Residential Roofer" |
 | F-017 | LOC-10 | Opening: first sentence answers; phone and free estimates in the paragraph; Pritchardville-only angle |
-| F-019 | LOC-17, LOC-20 | Things to Do and Top Sites sections placed in CM-023 order; CTA has no H tag. **LOC-17 cannot pass until a Things to Do item is sourced** |
+| F-019 | LOC-17, LOC-20 | Things to Do and Top Sites sections placed in CM-023 order; CTA has no H tag. Things to Do dropped (researched, not found — target, CM-061 §8); Top Sites one item |
 | F-020 | LOC-19 | CTA carries the NAP (street address now shown on the website — Paul 2026-10-08) |
-| F-021 | LOC-14 | Old city-swapped FAQs are gone; no replacement is sourced yet — **LOC-14 will fail** |
-| F-024 | LOC-15 | Old roads/corridors list (Sawmill Creek Road, SC-170 corridor, Okatie Highway residential, Chechessee residential) is removed; no verified replacement — **LOC-15 will fail** |
-| F-025 | LOC-23 | Neighborhoods, if ever found, as list items, never H-tagged |
+| F-021 | LOC-14 | Old city-swapped FAQs are gone; three Pritchardville FAQs in §3 (FAQ 2 pending Paul's A/B) |
+| F-024 | LOC-15 | Old roads/corridors list (Sawmill Creek Road, SC-170 corridor, Okatie Highway residential, Chechessee residential) is removed; replaced by two verified New Riverside communities (target 6 — Fix and list) |
+| F-025 | LOC-23 | Neighborhoods as list items, never H-tagged |
 | F-001, F-002 | LOC-25 | No price, no ShingleMaster, no unsupported claim carried over |
 | F-029 | meta | New meta, 152 characters |
 
 ## 7 · Must not appear (BG-D2, settled `not_on_the_site_until_confirmed`, CM-016, CM-049, CM-057)
 
-ShingleMaster · commercial / "homes and businesses" · Georgia / "Coastal Georgia" · "payment arrangements" · any response time, "fast", "quickly", "same-day", "24 hour" as a promise (and "next to Bluffton" worded as a speed reason) · "nearest town", any distance or drive time to the Bluffton base (unsourced) · "bonded" · a licence class · any price · Google rating · a warranty term · "best" / superlatives · service descriptions (LOC-12) · any cross-page link in prose, FAQ answers or local context (CM-005) · reviewer names · a permit or annexation claim for Pritchardville (no official source) · "L Scott Stell Park", "New Riverside – Parcel 9", the old road/corridor list · population, elevation, climate or housing-stock figures for Pritchardville (none sourced) · "Pritchardville Elementary" as an attraction.
+ShingleMaster · commercial / "homes and businesses" · Georgia / "Coastal Georgia" · "payment arrangements" · any response time, "fast", "quickly", "same-day", "24 hour" as a promise (and "next to Bluffton" worded as a speed reason) · "nearest town", any distance or drive time to the Bluffton base (unsourced) · "bonded" · a licence class · any price · Google rating · a warranty term · "best" / superlatives · service descriptions (LOC-12) · any cross-page link in prose, FAQ answers or local context (CM-005) · reviewer names · an annexation claim, or a claim that a New Riverside community is inside the Town (no official source) · any historic-preservation restriction on Pritchardville homes · "gutters fix flooding" · "City of Pritchardville" · May River Preserve, New Riverside Village (no official source) · "L Scott Stell Park", "New Riverside – Parcel 9", the old road/corridor list · population, elevation, climate or housing-stock figures for Pritchardville (none sourced) · "Pritchardville Elementary" as an attraction.
 
 ## 8 · Sibling context
 
@@ -150,40 +144,38 @@ ShingleMaster · commercial / "homes and businesses" · Georgia / "Coastal Georg
 
 ## Evidence gaps
 
-Gate **WARN**: 1 required and 2 supporting gaps, 0 conflicts.
+Gate **PASS** (re-run 2026-10-12, run 20261012-205526-build-9baf): known 8 · unknown 1 · unverified 1.
 
 | Fact (grid) | Need | Grid mark | Real status (incl. 2026-10-12 research) | What the writer does |
 |---|---|---|---|---|
 | Phone | required | Known | Paul Approved (BG-A8) | Use (843) 757-2739 |
 | City actually served | required | Known | Paul Approved (BG-E, 12 towns) | State it |
-| City-specific conditions | required | Known | Internally Verified (Wikipedia, read 2026-10-11): location, namesake, Ohio settlers. No roofing-relevant condition exists. SC 46 / May River Road: public research 2026-10-12, not yet on the grid | Local context §2 #7 only; 3–4 sentences; no failure patterns, no climate or housing claims |
-| 6–12 real neighborhoods | required | **Unknown** | Second search found none (Wikipedia; realtor pages not citable; no county plat list). Only lead is "New Riverside – Parcel 9", unconfirmed | `[NEED: 6–12 real Pritchardville neighborhoods, each with a public source …]`; no names |
-| Free estimate / offer | required | Known | Paul Approved ("free estimates"); W17 detail Submitted | Say "free estimates" only |
-| Things to Do | supporting | **Unknown** | None sourced. Elementary school is not an attraction; "L Scott Stell Park" unconfirmed | `[NEED: one real Things to Do item in Pritchardville with a public source]` or Paul drops the section |
-| Top Sites | supporting | Known | St. Luke's Church, NRHP 1987 (Wikipedia, read 2026-10-11 and 2026-10-12). One item | List St. Luke's only |
-| Response time / guarantees | supporting | **Unverified** | **Unknown** (BG-D). The only evidence is one 2022 review ("responded quickly") — one reviewer, not enough (CM-057), and a response time is never stated (CM-016) | State none |
-| Emergency / after-hours | supporting | Known | Client Confirmed ("always on call … high priority") | Not needed on this page; if used, the client's words only |
-| Google rating | supporting | Known | Internally Verified, evidence only | Leave off the page |
+| City-specific conditions | required | Known | Internally Verified (Wikipedia): unincorporated, SC 46 between Hardeeville and Bluffton, Pritchard Farms, Ohio settlers; SC 46 / May River Road (public research 2026-10-12) | Local context §2 #7 only |
+| 6–12 real neighborhoods | required | Known | **2 verified** on the grid — Heritage at New Riverside, The Haven at New Riverside (county district map) | List the two with the "nearby New Riverside communities" lead-in (target 6 — Fix and list) |
+| Free estimate / offer | required | Known | Paul Approved ("free estimates"); W17 detail Submitted | "free estimates" only |
+| Things to Do | supporting | **Unknown** | Researched to the minimum (RL-locations-8): Pritchard Pocket Park unconfirmed; nothing else | **Section dropped** (Fix and list, CM-061 §8) |
+| Top Sites | supporting | Known | St. Luke's Church, NRHP 1987 — near Pritchardville | List St. Luke's only; no historic-rule claim |
+| Response time / guarantees | supporting | Unverified | One 2022 review only (CM-057); none stated (CM-016) | State none |
+| Emergency / after-hours | supporting | Known | Client Confirmed ("always on call … high priority") | Not needed on this page |
+| Google rating | supporting | Known | Evidence only | Leave off the page |
+| FAQ 1 drainage guidance | — | — | Town of Bluffton page, read 2026-10-12 (round 2) | "Bluffton-area guidance"; gutters do not fix flooding |
+| FAQ 3 clean-up | — | — | Paul Approved (`d-clean-up`); reviews keyword match only | Client practice; reviews attributed only |
 
-Also open (not on the grid): FAQ topics (0 of 3 sourced), BG-F NAP (CTA uses A1 + A4 + A8, as on Bluffton).
+**What the page passes now:** LOC-14 (3 FAQs, once Paul picks A or B for FAQ 2). LOC-15 and LOC-17 run below their targets (2 neighbourhoods; Things to Do dropped, one Top Site) — targets, not holds (CM-061 §8), listed for Paul as "Fix and list".
 
-**What fails if nothing more is found** (this page cannot reach a clean pass as things stand):
-- **LOC-14 fails** — 0 usable FAQ questions against the spec's 3–4.
-- **LOC-15 fails** — 0 verified neighborhoods against 6–12.
-- **LOC-17 partly fails** — Top Sites has 1 item, Things to Do has none; the section is present only as a `[NEED]`.
-- LOC-24 (3 specific facts) and LOC-13 (local context) can pass on the facts above; LOC-10, 11, 12, 16, 18, 19, 20, 21, 23 and the title/H1 checks are unaffected.
-- Any `[NEED]` left in the draft **blocks publication**, not the draft.
-
-**Facts-interview / research items (client questions only for client facts):**
-1. The four client questions in §3 (typical Pritchardville roof jobs; what homeowners there ask; communities worked; new-construction work). One real answer gives a fact; it does not by itself make a sourced FAQ.
-2. Neighborhoods: names from the client, then a researcher verification against a public source (county, Wikipedia, a POA site).
-3. Things to Do: public research only — never asked of the client.
+**Facts-interview / research items:** none. Paul 2026-10-12 supplied the research and skipped every other client question (settled `location_client_questions_skipped`).
 
 ## Flags for Paul
 
-1. **FAQ — 0 of 3 sourced.** Options: (a) run the facts interview (§3) and source three questions before the draft is approved; (b) accept the three weak candidates as written (jurisdiction, historic, flood) — the researcher advises against, and the jurisdiction one overlaps the dropped annexation topic; (c) accept the page with the FAQ section held as `[NEED]` (LOC-14 fails; publication of this page held); (d) reduce the target to fewer than 3 questions for this page (spec change — system session only).
-2. **Things to Do — nothing sourced.** Options: (a) writer leaves `[NEED: one real Things to Do item in Pritchardville with a public source]`; (b) Paul drops the section for this page (spec change — system session only; LOC-17 would then fail on the Things to Do half); (c) the researcher tries once more, e.g. Beaufort County parks pages for a park placed in Pritchardville (the "L Scott Stell Park" mention is unconfirmed).
-3. **Neighborhoods — none found after two searches (required fact).** Options: (a) Paul or the client names communities and the researcher verifies each from a public source; (b) Paul accepts the page without the section (LOC-15 fails and stays failed; the writer keeps only the `[NEED]`).
-4. **Opening wording — "nearest town to Apex's base."** The task named Pritchardville the nearest town in the list to Apex's Bluffton base along SC 46. No source gives distances, so this brief lets the writer say only that Pritchardville sits on SC 46 between Hardeeville and Bluffton, where Apex is based, with no travel fee. Options: (a) keep as written; (b) Paul approves a sourced distance claim (give the source) — still never a response-time promise.
-5. **Page thinness.** The page will have one Top Site, a 3–4 sentence local context, no FAQ, no neighborhoods and no Things to Do. Options: (a) proceed and publish only after the gaps close; (b) hold this page back from the batch's publish until 1–3 are answered.
-6. **No system-file change is proposed** — nothing was edited and no script or gate was touched; no `run.py flag` was needed for the workflow. The Build agent records the brief with `status.py page-stage`.
+**Answered by Paul 2026-10-12 (applied):**
+- Research used with your limits: "Pritchardville and nearby New Riverside/Bluffton communities", never a City; St. Luke's named as a landmark with no historic-restriction claim; drainage guidance used, with no "gutters fix flooding" claim. The round-2 check found the Town page says to clean gutters and direct downspouts away from the foundation — it does not say "connect roofing to gutters", so FAQ 1 uses the Town's own words.
+- Neighbourhoods: Heritage and The Haven at New Riverside are on an official county map; **May River Preserve and New Riverside Village are on no official map read**, so they are left out.
+
+**Decided for you (recommended option; say if you want another):**
+1. Things to Do dropped (researched to the minimum; nothing confirmed in Pritchardville).
+2. Neighbourhoods: two, below the target of six — listed as two.
+3. Opening keeps "on SC 46 between Hardeeville and Bluffton, where Apex is based, no travel fee" — no "nearest town", distance or drive time.
+4. FAQ 3 uses the brand-level fallback (daily clean-up and magnet sweep).
+
+**Open — your choice (one line):**
+- **FAQ 2 (permit, category 2)** — same choice as Okatie and Levy (reopen of 2a): **(A, recommended)** "Who issues the roof permit for a Pritchardville address?" — Beaufort County for unincorporated addresses, the Town of Bluffton inside its limits, check the address; **(B)** keep 2a and use the fallback "Can I get a free roof estimate in Pritchardville on a Saturday?".
