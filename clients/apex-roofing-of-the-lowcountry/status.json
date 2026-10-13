@@ -1603,7 +1603,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-12T15:35:58-05:00",
+  "updated": "2026-10-12T20:55:19-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -1902,10 +1902,5 @@
     "at": "2026-10-09T20:15:29-05:00",
     "moves": 1,
     "dropped": []
-  },
-  "review_pause": {
-    "run_id": "20261012-150859-build-1044",
-    "step": "build:brief",
-    "at": "2026-10-12T15:35:58-05:00"
   }
 }

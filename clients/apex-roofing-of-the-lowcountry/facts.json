@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-12T11:43:52-05:00",
+  "updated": "2026-10-12T16:13:55-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -386,14 +386,15 @@
       "section": "D",
       "num": "",
       "label": "Services subcontracted out",
-      "value": "None stated. Apex itself works as a roofing subcontractor on new construction in Beaufort and Jasper County (W16): accurate",
-      "status": "submitted",
-      "status_text": "W16 Paul Approved 2026-10-06 · services Apex subcontracts out: Unknown",
-      "source": "Paul answers B4",
+      "value": "Correct: Apex itself works as a roofing subcontractor on new construction in Beaufort and Jasper County; no services subcontracted out stated",
+      "status": "paul_approved",
+      "status_text": null,
+      "source": "Paul 2026-10-11 'correct' (answer 16, /next 2026-10-12)",
       "quote": "",
-      "date": "2026-10-06",
-      "who": "",
-      "count": null
+      "date": "2026-10-12",
+      "who": "Paul",
+      "count": null,
+      "was": "Submitted"
     },
     {
       "id": "d-named-staff-for-on-page-use",
