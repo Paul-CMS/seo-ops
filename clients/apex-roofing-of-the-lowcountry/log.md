@@ -6094,3 +6094,11 @@ Changes: 1 · Summary: h1 draft review applied (accept all): About H2 'Licences'
 - CHANGE #891 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (25).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 722ce627bf41 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #892 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (25).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (25).md | result: done · renamed and moved, nothing deleted
 - CHANGE #893 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (25).md | new: Apex Roofing of the Lowcountry - Status.md · sha 9d635e1d2e86 | result: done · copied (Drive for desktop syncs it)
+
+## APPROVAL · 2026-10-13T16:28:40-05:00 · batch h1 drafts · approved · by Paul
+Approved version: clients/apex-roofing-of-the-lowcountry/build/h1/HD - Homepage - Apex Roofing of the Lowcountry.md (sha cf51614e7124)
+Approved version: clients/apex-roofing-of-the-lowcountry/build/h1/AD - About - Apex Roofing of the Lowcountry.md (sha a2289078fc6c)
+Approved version: clients/apex-roofing-of-the-lowcountry/build/h1/drafts-review.csv (sha 99e0968a8466)
+SEM items to apply: none
+- CHANGE #894 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (26).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (26).md | result: done · renamed and moved, nothing deleted
+- CHANGE #895 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (26).md | new: Apex Roofing of the Lowcountry - Status.md · sha 4b67fe32e89c | result: done · copied (Drive for desktop syncs it)

@@ -1,9 +1,9 @@
 # Apex Roofing of the Lowcountry - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch h1)**
-- **What is happening now:** waiting for Paul's approval — the drafts for batch h1 are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): HD - Homepage - Apex Roofing of the Lowcountry.md: line 59 [NEED: 6–9 real Apex project photos from the client, each with its tow; line 124 [NEED: Google Maps share link for the GBP (Brand Guide F hasMap is emp | AD - About - Apex Roofing of the Lowcountry.md: line 15 [NEED: photo of Ralph and Pierce Brehany]; line 17 [NEED: their job titles, only if the client wants titles published]; line 41 [NEED: Ralph's or Pierce's own account of how and why they started Ape | drafts-review.csv: line 6 [NEED]; line 6 [NEED]; line 9 [NEED]; line 9 [NEED]; line 9 [NEED]
-- **Waiting on:** Paul — the drafts for batch h1 are ready: review each with the semantic review table (nothing fou; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
-- **Next action:** Paul types `/approve apex-roofing-of-the-lowcountry batch:h1:drafts` (or asks for changes first)
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each)**
+- **What is happening now:** Stage 6 (Pilot, services, locations, ship (one session each)) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open apex-roofing-of-the-lowcountry) and type /next apex-roofing-of-the-lowcountry. Next there: /build apex-roofing-of-the-lowcountry ship (every approved page as a WordPress draft in one run (services, locations, h1) — link tables complete, every target already has its final URL)
+- **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM; Client (via Paul) — For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-ro
+- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
 
 _Generated 2026-10-13T16:28 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
@@ -11,7 +11,6 @@ _Generated 2026-10-13T16:28 by the system — do not edit. Start every session i
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the drafts for batch h1 are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): HD - Homepage - Apex Roofing of the Lowcountry.md: line 59 [NEED: 6–9 real Apex project photos from the client, each with its tow; line 124 [NEED: Google Maps share link for the GBP (Brand Guide F hasMap is emp | AD - About - Apex Roofing of the Lowcountry.md: line 15 [NEED: photo of Ralph and Pierce Brehany]; line 17 [NEED: their job titles, only if the client wants titles published]; line 41 [NEED: Ralph's or Pierce's own account of how and why they started Ape | drafts-review.csv: line 6 [NEED]; line 6 [NEED]; line 9 [NEED]; line 9 [NEED]; line 9 [NEED] | 2026-10-13 | /approve apex-roofing-of-the-lowcountry batch:h1:drafts |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
 | Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-replacement:service_scope |
@@ -66,6 +65,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-12: batch locations briefs — approved
 - 2026-10-13: batch locations drafts — approved
 - 2026-10-13: batch h1 briefs — approved
+- 2026-10-13: batch h1 drafts — approved
 - Entity: category Roofing Contractor (variants Roofer, Roofers); area = Hilton Head Island–Bluffton–Port Royal metro area.
 - Titles: homepage SEO title uses "Hilton Head Island Metropolitan Area"; homepage H1 uses a familiar name (Lowcountry / South Carolina Lowcountry); service titles `Service Name - Apex Roofing of the Lowcountry` (no area); brand always in full.
 - Homepage: links all 8 services (Paul exception).
