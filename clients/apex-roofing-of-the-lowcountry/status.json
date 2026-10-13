@@ -682,7 +682,7 @@
       }
     },
     "loc-okatie": {
-      "state": "brief_written",
+      "state": "draft_written",
       "type": "location",
       "name": "Okatie",
       "url": "https://apexroofingtlc.com/okatie/",
@@ -714,6 +714,13 @@
           "run": "20261012-212825-build-fdce",
           "at": "2026-10-12T21:30:47-05:00",
           "sha": "e50919750bbc"
+        },
+        "draft": {
+          "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Okatie - Apex Roofing of the Lowcountry.md",
+          "run": "20261013-071514-build-3126",
+          "at": "2026-10-13T07:18:26-05:00",
+          "sha": "a90fe9310520",
+          "agent": "build-subagent-loc-okatie-3126"
         }
       },
       "pack": {
@@ -1797,10 +1804,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-070640-build-ff69",
+    "run_id": "20261013-071514-build-3126",
     "command": "build",
-    "finished": "2026-10-13T07:12:33-05:00",
-    "result": "Drafted the Hilton Head Island location page (about 900 words, grade 7.0, E1-E10 and spec checks pass, briefed headings and FAQs unchanged, one NEED for the city map) and recorded it with status.py page-stage.",
+    "finished": "2026-10-13T07:19:10-05:00",
+    "result": "Drafted loc-okatie (Okatie location page, about 820 words, grade 7.0) from its approved brief and evidence pack, with one map NEED and four neighborhoods against the target of six; draft recorded for the locations draft review.",
     "changes": 0,
     "step": "build:draft",
     "batch": "locations"
@@ -1824,7 +1831,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T07:12:33-05:00",
+  "updated": "2026-10-13T07:19:10-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2153,8 +2160,8 @@
     }
   ],
   "review_pause": {
-    "run_id": "20261013-070640-build-ff69",
+    "run_id": "20261013-071514-build-3126",
     "step": "build:draft",
-    "at": "2026-10-13T07:12:33-05:00"
+    "at": "2026-10-13T07:19:10-05:00"
   }
 }

@@ -4284,3 +4284,59 @@ Changes: 0 · Summary: Drafted the Hilton Head Island location page (about 900 w
 - CHANGE #720 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13.md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha ca59c1db50ec | result: done · copied (Drive for desktop syncs it)
 - CHANGE #721 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13.md | result: done · renamed and moved, nothing deleted
 - CHANGE #722 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13.md | new: Apex Roofing of the Lowcountry - Status.md · sha 158178c517e8 | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-13T07:15 · after build:draft (run 20261013-070640-build-ff69) · Paul typed /next
+
+## RUN 20261013-071514-build-3126 · STARTED · /build · 2026-10-13T07:15:14-05:00
+Step: build:draft · batch locations · session 4b4b1602-b1b8-4325-bb46-d6fdcde6c418
+Gates checked: discovery_signed_off, batch:locations:briefs, page_specs_approved
+- DRAFT 2026-10-13T07:18 · run 20261013-071514-build-3126 · loc-okatie · clients/apex-roofing-of-the-lowcountry/build/locations/LD - Okatie - Apex Roofing of the Lowcountry.md · agent build-subagent-loc-okatie-3126
+### HANDOFF · /build · 2026-10-13 · run 20261013-071514-build-3126
+**Agent:** Build (Agent 2), Opus, fresh subagent for this one page (CM-043; agent id `build-subagent-loc-okatie-3126`) · **Date:** 2026-10-13 · **Route:** A
+
+### Done
+- Drafted `clients/apex-roofing-of-the-lowcountry/build/locations/LD - Okatie - Apex Roofing of the Lowcountry.md` from the approved brief (LB - Okatie, briefs approved 2026-10-12), `methodology/specs/location.md`, `methodology/location-faq.md` and the evidence pack `build/locations/packs/loc-okatie.md`. About 820 words in the file (575 visitor-facing words scored by readability.py), under the 1,000 ceiling.
+- Recorded: `status.py page-stage apex-roofing-of-the-lowcountry loc-okatie --stage draft --run 20261013-071514-build-3126 --agent build-subagent-loc-okatie-3126` (exit 0).
+- Re-read the Okatie Wikipedia page (as the brief asked) for the Things to Do wording: YMCA "fitness classes, youth programs, and social activities"; residents "have access to" the Hilton Head Island Recreation Association (public recreation programs, community events).
+- No new flag. Readability `--exclude-terms` handled with a terms file in the scratchpad (same workaround as F-016).
+
+### Stage 0/1 (map and plan, from the approved brief)
+- Title `Apex Roofing of the Lowcountry - Roofing Contractor - Okatie, South Carolina` · meta 151 chars (brief wording) · H1 `Roofers in Okatie` · no "The Best" (BG-H2).
+- Variant chain: URL okatie → title Roofing Contractor → H1 Roofers → first H2 Roofer → opening residential roofing contractor + Okatie, SC / Jasper and Beaufort County → FAQ H2 Residential Roofer. Reserved B1 variant unused.
+- Order (CM-023): opening → services H2 (8 H3s, placeholder row) → local context H2 (5 sentences) → FAQ H2 (3 H3s, one per category) → neighborhoods H2 (4 list items) → map → Things to Do H2 (2) → Top Sites H2 (2) → sibling cities H2 (placeholder row) → CTA with NAP (no H tag).
+- Every H2 and FAQ question is the C3/briefed wording, unchanged (F-020: nothing re-worded).
+
+### Stage 3 self-critique
+- **E1 portability:** pass. Opening angle (unincorporated, crosses the Jasper/Beaufort line; post-1990s planned and gated communities; "which county, what does your community allow") and local context (Okatee River estuary of Port Royal Sound, ~20 ft, Sun City Hilton Head three phases) are Okatie-only. No Bluffton home-base angle, no "What Makes Roofing in … Different?" heading, no HOA-approval closing line; the Beaufort Building Codes sentence is re-worded from Bluffton's. Lead-ins for services, neighborhoods, siblings and the CTA line differ from Bluffton and Hilton Head Island.
+- **E2 specificity:** pass, 6+ (two counties, unincorporated; Okatee River / Port Royal Sound; 20 ft; Sun City three phases; Callawassie 880 acres, 717 home sites, causeway south of SC 170; Callawassie ARC rules dated 12 Dec 2023; Jasper County roof-replacement permit; NRHP 1994 and 2014).
+- **E3 variants:** pass — no consecutive repeat; assigned variants used.
+- **E4 chunks:** opening 91 · services ~66 · local context ~102 · FAQ ~331 · neighborhoods ~46 · Things to Do ~65 · Top Sites ~101 · siblings ~69 — all ≤ 375.
+- **E5 invention sweep:** pass. No price, lifespan, response time, warranty term, licence, rating, reviewer name, population or climate/hurricane sentence. Sun City, Riverbend, Oldfield named as places only, never as worked. Apex worked-in claim limited to Callawassie and Spring Island (Paul Approved). Callawassie rules attributed to its guidelines, not copied to Spring Island; Spring Island says only that it sets its own rules. No Apex-pulls-the-permit or ARC-filing claim; no Jasper licence claim; permit and ARC approval kept separate. Oldfield not called gated. The 6/12 pitch is explained as a general definition.
+- **E6 filler:** pass.
+- **E7 headers:** one H1; every H2 a spoken question naming Okatie; no skipped levels. COM-11: title remainder "Roofing Contractor" vs H1 remainder "Roofers" — pass.
+- **E8 links:** no link or `[LINK →]` in prose, FAQ or local context (the brief's optional /roof-replacement/ link not used); both link-table placeholder rows present.
+- **E9 human:** reads as a local roofer explaining the county line and community rules.
+- **E10 reading level:** page grade 7.0; no paragraph over 10 after one fix (Things to Do list was 10.2 → 8.4). Read-aloud pass done. FAQ first answer paragraphs about 55 / 45 / 52 words.
+- **Spec checks:** LOC-01–07, 09–14, 17–25 pass; LOC-08 N/A; LOC-15 below target (4 of 6 neighborhoods — Fix and list per brief); LOC-16 open (map NEED); LOC-26 recommendation only (WebPage + ItemList, no LocalBusiness); LOC-27 N/A.
+
+### Open items (placeholders.py: 1)
+1. `[NEED: city-level map embed of Okatie, SC — not the Google Business Profile map]` (NEED form, as on Hilton Head Island; the brief's `[Map: …]` wording is not allowed under P11).
+- Link-table rows `| [Link wheel: populate service links here] |` and `| [Link wheel: populate sibling-city links here] |`.
+
+### For the draft review
+- Neighborhoods: 4 listed, target 6 (Fix and list, CM-061 §8).
+- Things to Do is thin (two organisations from Wikipedia; whether either sits in Okatie is not stated — worded as "Okatie residents have access to").
+- Opening and local context both carry the county line and Sun City; checker may want one trimmed.
+- FAQ 3 and Bluffton's permit FAQ both mention Beaufort County Building Codes — compare wording.
+- Outbound authority candidates for Finish (CM-011): Beaufort County Building Codes and Jasper County Planning and Building pages (FAQ 3); Callawassie ARC guidelines PDF (FAQ 2).
+
+### Not done
+- No publish, no WordPress, no link table, no schema, no Brand Guide write-back (drafts never write it, CM-061).
+### END HANDOFF
+## RUN 20261013-071514-build-3126 · FINISHED · 2026-10-13T07:19:10-05:00
+Changes: 0 · Summary: Drafted loc-okatie (Okatie location page, about 820 words, grade 7.0) from its approved brief and evidence pack, with one map NEED and four neighborhoods against the target of six; draft recorded for the locations draft review.
+- CHANGE #723 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (2).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #724 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (2).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha cb8ee8886f5c | result: done · copied (Drive for desktop syncs it)
+- CHANGE #725 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (2).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #726 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (2).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 26004feb8239 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #727 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (2).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #728 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (2).md | new: Apex Roofing of the Lowcountry - Status.md · sha c31bf30bf1c9 | result: done · copied (Drive for desktop syncs it)
