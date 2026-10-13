@@ -1,16 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each)**
-- **What is happening now:** Stage 6 (Pilot, services, locations, ship (one session each)) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open apex-roofing-of-the-lowcountry) and type /next apex-roofing-of-the-lowcountry. Next there: /build apex-roofing-of-the-lowcountry ship (every approved page as a WordPress draft in one run (services, locations, h1) — link tables complete, every target already has its final URL)
-- **Waiting on:** Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM; Client (via Paul) — For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-ro
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — build:ship finished (run 20261013-163153-build-d38b) and that stage is in review mode — lo; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
 - **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
 
-_Generated 2026-10-13T16:28 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-13T16:33 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
+| Paul | build:ship finished (run 20261013-163153-build-d38b) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry ship (every approved page as a WordPress draft in one run (locations, h1) — link tables complete, every target already has its final URL) | 2026-10-13 | /next apex-roofing-of-the-lowcountry |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
 | Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-replacement:service_scope |
@@ -154,6 +155,7 @@ _None — every input on file has been read._
 - **F-023** (open, not yet reviewed) 2026-10-13 · build:brief: evidence_pack.py maps the review topic 'communication' to the facts.json key practice:explains, while the build agent instructions and the researcher use practice:communication; reviews.py checked under practice:communication does not mark the pack topic as checked. — workaround: Recorded the same by-meaning count (32) under both practice:communication and practice:explains in run 20261013-140538-build-1832.
 - **F-024** (open, not yet reviewed) 2026-10-13 · build:write: run.py finish for build:write (produces batch_written:h1) requires a brief AND a draft recorded from this run for every page. The h1 briefs were written in run 20261013-140538-build-1832 and approved by Paul 2026-10-13, and the write-back ran on them, so this run only had drafts to write. finish refuses (exit 12). Re-recording the approved briefs under this run would rewrite approved records just to satisfy the check. When briefs come from an earlier run and are already approved, the check should accept them. — workaround: Drafts recorded with their own agent ids, review sheet written (3 Ask), batch h1 recorded drafts_written, sheet copied to Drive, handoff and summary written. Run left unfinished. Paul decides: re-record the unchanged briefs under this run and finish, or abort the run (the drafts, sheet and records stay).
 - **F-025** (open, not yet reviewed) 2026-10-13 · build:review: review.py apply tells the agent to 're-record the files' after applying, but status.py page-stage --stage draft refuses in a build:review run ('a draft is recorded only by its own /build draft run or the batch's write run'). With F-024 the write run could not be finished either, so an edited draft has no run that can re-record it. — workaround: Edit applied to the draft file and logged as change #887; draft not re-recorded. build:review produces nothing, so finish is not blocked.
+- **F-026** (open, not yet reviewed) 2026-10-13 · build:ship: publish.py drafts --all refused the locations batch: its approved drafts file list (status.json batches.locations.drafts.files and files.drafts) includes build/locations/drafts-review.csv, which publish.py treats as a page file ('no header block'). The h1 batch has the same entry (build/h1/drafts-review.csv). Likely cause: status.py batch --state drafts_written --review-sheet adds the review sheet to the drafts file list; publish.py should skip review sheets (or status.py should not record them as drafts). — workaround: None applied in the client session. Services batch (7 pages) drafted; locations and h1 not shipped. Needs a /system fix to status.py or publish.py, then re-run /build apex-roofing-of-the-lowcountry ship.
 
 ## Spend so far
 
@@ -166,4 +168,4 @@ _None — every input on file has been read._
 | build:brief | 2 | 612,000 | $0.00 |
 | **total** | 2 | 612,000 | $0.00 |
 
-Last run: /build 2026-10-13T16:28 — h1 draft review applied (accept all): About H2 'Licences' → 'Licenses'; rows 2–9 already matched. Placeholders unchanged (5 valid NEEDs). F-025 flagged.
+Last run: /build 2026-10-13T16:33 — ship partial: link wheel planned (20 pages); 7 service pages drafted in WordPress; locations refused (drafts-review.csv recorded as a page file) — flagged F-026; h1 not shipped

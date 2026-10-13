@@ -214,7 +214,7 @@
       ]
     },
     "svc-roof-replacement": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "service",
       "name": "Roof Replacement",
       "url": "https://apexroofingtlc.com/roof-replacement/",
@@ -256,10 +256,42 @@
           "at": "2026-10-12T07:39:46-05:00",
           "sha": "2041f773ad56"
         }
+      },
+      "wp_id": 1625,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Replacement - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 21,
+          "text": "[NEED: same corrosion-resistant flashing and synthetic underlayment on a full replacement?]"
+        },
+        {
+          "line": 73,
+          "text": "[NEED: cited lifespan source for asphalt shingles in coastal SC]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1625",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/roof-replacement/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "svc-roof-installation": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "service",
       "name": "Roof Installation",
       "url": "https://apexroofingtlc.com/roof-installation/",
@@ -308,10 +340,50 @@
           "at": "2026-10-12T07:44:17-05:00",
           "sha": "f05e35730f85"
         }
+      },
+      "wp_id": 1626,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Installation - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 23,
+          "text": "[NEED: how Apex fits a builder's schedule on new construction (for example dry-in timing and return trips for trim-out), if it will be stated]"
+        },
+        {
+          "line": 43,
+          "text": "[NEED: does Apex install drip edge on every new roof? — client]"
+        },
+        {
+          "line": 47,
+          "text": "[NEED: typical install time on a new home, if a figure will be stated]"
+        },
+        {
+          "line": 51,
+          "text": "[NEED: synthetic underlayment on new installs too?]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1626",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/roof-installation/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "svc-roof-inspections": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "service",
       "name": "Roof Inspections",
       "url": "https://apexroofingtlc.com/roof-inspections/",
@@ -354,10 +426,54 @@
           "at": "2026-10-12T07:48:27-05:00",
           "sha": "32de7d0f9b9b"
         }
+      },
+      "wp_id": 1627,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Inspections - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 36,
+          "text": "[NEED: client confirms this inspection type]"
+        },
+        {
+          "line": 42,
+          "text": "[NEED: client confirms this inspection type]"
+        },
+        {
+          "line": 48,
+          "text": "[NEED: client confirms this inspection type]"
+        },
+        {
+          "line": 56,
+          "text": "[NEED: are inspections free, and is a stand-alone written inspection report priced separately?]"
+        },
+        {
+          "line": 64,
+          "text": "[NEED: cited source on how often a roof should be inspected — a roofing trade body's guidance (researcher)]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1627",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/roof-inspections/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "svc-emergency-roof-repair": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "service",
       "name": "Emergency Roof Repair",
       "url": "https://apexroofingtlc.com/emergency-roof-repair/",
@@ -405,10 +521,58 @@
           "at": "2026-10-12T07:52:14-05:00",
           "sha": "05b3df49bd27"
         }
+      },
+      "wp_id": 1628,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/services/SD - Emergency Roof Repair - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 18,
+          "text": "[NEED: does Apex tarp or patch temporarily in an emergency?]"
+        },
+        {
+          "line": 31,
+          "text": "[NEED: client confirms this emergency type]"
+        },
+        {
+          "line": 37,
+          "text": "[NEED: client confirms this emergency type]"
+        },
+        {
+          "line": 43,
+          "text": "[NEED: client confirms this emergency type]"
+        },
+        {
+          "line": 49,
+          "text": "[NEED: client confirms this emergency type]"
+        },
+        {
+          "line": 55,
+          "text": "[NEED: client confirms this emergency type]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1628",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/emergency-roof-repair/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "svc-metal-roofing": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "service",
       "name": "Metal Roofing",
       "url": "https://apexroofingtlc.com/metal-roofing/",
@@ -460,10 +624,48 @@
           "at": "2026-10-12T08:05:28-05:00",
           "sha": "1e473520baf0"
         }
+      },
+      "wp_id": 1629,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/services/SD - Metal Roofing - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 18,
+          "text": "[NEED: metal install steps — underlayment, panel seaming, trim]"
+        },
+        {
+          "line": 57,
+          "text": "[NEED: cited source on installing metal over existing shingles in SC — researcher]"
+        },
+        {
+          "line": 61,
+          "text": "[NEED: cited lifespan source for standing seam metal — researcher]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1629",
+        "how": "Publish at exactly https://apexroofingtlc.com/metal-roofing/",
+        "replaces": [
+          "https://apexroofingtlc.com/metal-roofing-2/"
+        ]
       }
     },
     "svc-slate-roofing": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "service",
       "name": "Slate Roofing",
       "url": "https://apexroofingtlc.com/slate-roofing/",
@@ -511,10 +713,38 @@
           "at": "2026-10-12T08:10:13-05:00",
           "sha": "e8516196313f"
         }
+      },
+      "wp_id": 1630,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/services/SD - Slate Roofing - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 18,
+          "text": "[NEED: slate install steps — underlayment, fastening, flashing, if they are to be described]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1630",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/slate-roofing/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "svc-skylights": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "service",
       "name": "Skylights",
       "url": "https://apexroofingtlc.com/skylights/",
@@ -556,6 +786,46 @@
           "at": "2026-10-12T08:18:52-05:00",
           "sha": "a41d7fd2b313"
         }
+      },
+      "wp_id": 1631,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/services/SD - Skylights - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 17,
+          "text": "[NEED: skylight install steps beyond cutting and framing the opening, if they are to be described]"
+        },
+        {
+          "line": 43,
+          "text": "[NEED: confirm Apex installs Velux and FAKRO — name the brands here only if yes]"
+        },
+        {
+          "line": 57,
+          "text": "[NEED: cited source on skylight energy performance — researcher]"
+        },
+        {
+          "line": 61,
+          "text": "[NEED: cited manufacturer guidance on skylights for standing seam metal roofs — researcher]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1631",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/skylights/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "loc-bluffton": {
@@ -1527,7 +1797,7 @@
           "svc-slate-roofing",
           "svc-skylights"
         ],
-        "state": "sem_applied",
+        "state": "drafted",
         "briefs": {
           "state": "approved",
           "by": "Paul",
@@ -2070,13 +2340,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-162715-build-f1d2",
+    "run_id": "20261013-163153-build-d38b",
     "command": "build",
-    "finished": "2026-10-13T16:28:11-05:00",
-    "result": "h1 draft review applied (accept all): About H2 'Licences' → 'Licenses'; rows 2–9 already matched. Placeholders unchanged (5 valid NEEDs). F-025 flagged.",
-    "changes": 1,
-    "step": "build:review",
-    "batch": "h1"
+    "finished": "2026-10-13T16:33:16-05:00",
+    "result": "ship partial: link wheel planned (20 pages); 7 service pages drafted in WordPress; locations refused (drafts-review.csv recorded as a page file) — flagged F-026; h1 not shipped",
+    "changes": 7,
+    "step": "build:ship",
+    "batch": null
   },
   "spend": {
     "dataforseo_usd": 0.591961
@@ -2097,7 +2367,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T16:28:40-05:00",
+  "updated": "2026-10-13T16:33:16-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2234,6 +2504,12 @@
       "step": "build:review",
       "first_run": "20261013-162715-build-f1d2",
       "at": "2026-10-13T16:28:11-05:00"
+    },
+    "ee07c17c-951f-4e4c-9b7d-2fcb7445e165": {
+      "key": "batches",
+      "step": "build:ship",
+      "first_run": "20261013-163153-build-d38b",
+      "at": "2026-10-13T16:33:16-05:00"
     }
   },
   "wheel_pending": {
@@ -2436,5 +2712,10 @@
       "usd": 0.0,
       "at": "2026-10-12T21:31:50-05:00"
     }
-  ]
+  ],
+  "review_pause": {
+    "run_id": "20261013-163153-build-d38b",
+    "step": "build:ship",
+    "at": "2026-10-13T16:33:16-05:00"
+  }
 }

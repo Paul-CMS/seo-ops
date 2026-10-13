@@ -3856,3 +3856,30 @@ Nothing approved. No WordPress, no link table, no schema, no Brand Guide write-b
 ## Next
 - Paul types the batch h1 drafts approval line from `next.py`. Ship is a later step and needs its own approval.
 
+## /build · 2026-10-13 · run 20261013-163153-build-d38b
+
+**Done**
+- `publish.py wheel` — exit 0: link wheel planned for 20 pages → `build/link-wheel.json`.
+- `publish.py drafts --run 20261013-163153-build-d38b --all` — exit 1. Before refusing, it created 7 WordPress drafts for
+  batch `services` (svc-roof-replacement, svc-roof-installation, svc-roof-inspections, svc-emergency-roof-repair,
+  svc-metal-roofing, svc-slate-roofing, svc-skylights). Batch `services` is now `drafted`. Nothing handed to Jonie.
+- Pilot pages (svc-roof-repair, loc-bluffton) were already drafted earlier.
+
+**Refused**
+- Batch `locations` (11 pages): `clients/apex-roofing-of-the-lowcountry/build/locations/drafts-review.csv: no header block.
+  Approved page files start with --- page_id / url / seo_title / meta_description --- (methodology/specs/README.md).`
+  The review sheet is in the batch's approved drafts file list, so publish.py treats it as a page file. The h1 batch has
+  the same entry (`build/h1/drafts-review.csv`), so it will hit the same refusal.
+- Flagged as F-026 for /system-review. No workaround applied: changing the approved file list in a client session would
+  change an approval record.
+
+**Not done (on purpose)**
+- Navigation (menu) handoff: not created. It should go out after every page is drafted.
+- VA Worklist publish handoff: not possible yet (pages_drafted not met).
+
+**Open waits (unchanged, not blocking this refusal)**: WordPress login decision; SEM-1 Roof Repair emergency FAQ link;
+client items for 7 pages.
+
+**Next**: a /system fix for F-026 (status.py should not record review sheets as drafts, or publish.py should skip
+them), then re-run `/build apex-roofing-of-the-lowcountry ship`. Then `/build apex-roofing-of-the-lowcountry handoff`.
+

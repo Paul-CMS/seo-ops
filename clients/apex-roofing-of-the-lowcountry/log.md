@@ -6102,3 +6102,49 @@ Approved version: clients/apex-roofing-of-the-lowcountry/build/h1/drafts-review.
 SEM items to apply: none
 - CHANGE #894 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (26).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (26).md | result: done · renamed and moved, nothing deleted
 - CHANGE #895 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (26).md | new: Apex Roofing of the Lowcountry - Status.md · sha 4b67fe32e89c | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261013-163153-build-d38b · STARTED · /build · 2026-10-13T16:31:53-05:00
+Step: build:ship · session ee07c17c-951f-4e4c-9b7d-2fcb7445e165
+Gates checked: discovery_signed_off, wordpress_connected
+- CHANGE #896 [page_content] https://apexroofingtlc.com/?page_id=1625 | new draft page | old: (none) | new: draft id 1625 (pages) · from clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Replacement - Apex Roofing of the Lowcountry.md sha e2ba9623be83 ·… | result: APPLIED · draft only (not live) · generated from the approved file | ref svc-roof-replacement
+- CHANGE #897 [page_content] https://apexroofingtlc.com/?page_id=1626 | new draft page | old: (none) | new: draft id 1626 (pages) · from clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Installation - Apex Roofing of the Lowcountry.md sha 2bf3fb325df8 … | result: APPLIED · draft only (not live) · generated from the approved file | ref svc-roof-installation
+- CHANGE #898 [page_content] https://apexroofingtlc.com/?page_id=1627 | new draft page | old: (none) | new: draft id 1627 (pages) · from clients/apex-roofing-of-the-lowcountry/build/services/SD - Roof Inspections - Apex Roofing of the Lowcountry.md sha a9bc725825e8 ·… | result: APPLIED · draft only (not live) · generated from the approved file | ref svc-roof-inspections
+- CHANGE #899 [page_content] https://apexroofingtlc.com/?page_id=1628 | new draft page | old: (none) | new: draft id 1628 (pages) · from clients/apex-roofing-of-the-lowcountry/build/services/SD - Emergency Roof Repair - Apex Roofing of the Lowcountry.md sha 8f4de51e7… | result: APPLIED · draft only (not live) · generated from the approved file | ref svc-emergency-roof-repair
+- CHANGE #900 [page_content] https://apexroofingtlc.com/?page_id=1629 | new draft page | old: (none) | new: draft id 1629 (pages) · from clients/apex-roofing-of-the-lowcountry/build/services/SD - Metal Roofing - Apex Roofing of the Lowcountry.md sha f84d71c049e2 · sl… | result: APPLIED · draft only (not live) · generated from the approved file | ref svc-metal-roofing
+- CHANGE #901 [page_content] https://apexroofingtlc.com/?page_id=1630 | new draft page | old: (none) | new: draft id 1630 (pages) · from clients/apex-roofing-of-the-lowcountry/build/services/SD - Slate Roofing - Apex Roofing of the Lowcountry.md sha 2c64e0af479b · sl… | result: APPLIED · draft only (not live) · generated from the approved file | ref svc-slate-roofing
+- CHANGE #902 [page_content] https://apexroofingtlc.com/?page_id=1631 | new draft page | old: (none) | new: draft id 1631 (pages) · from clients/apex-roofing-of-the-lowcountry/build/services/SD - Skylights - Apex Roofing of the Lowcountry.md sha 9a05a45ab5fd · slug s… | result: APPLIED · draft only (not live) · generated from the approved file | ref svc-skylights
+- FLAG 2026-10-13T16:32 · run 20261013-163153-build-d38b · F-026 · publish.py drafts --all refused the locations batch: its approved drafts file list (status.json batches.locations.drafts.files and files.drafts) includes build/locations/drafts-review.csv, which publish.py treats as a page file ('no header block'). The h1 batch has the same entry (build/h1/drafts-review.csv). Likely cause: status.py batch --state drafts_written --review-sheet adds the review sheet to the drafts file list; publish.py should skip review sheets (or status.py should not record them as drafts). · workaround: None applied in the client session. Services batch (7 pages) drafted; locations and h1 not shipped. Needs a /system fix to status.py or publish.py, then re-run /build apex-roofing-of-the-lowcountry ship.
+### HANDOFF · /build · 2026-10-13 · run 20261013-163153-build-d38b
+**Done**
+- `publish.py wheel` — exit 0: link wheel planned for 20 pages → `build/link-wheel.json`.
+- `publish.py drafts --run 20261013-163153-build-d38b --all` — exit 1. Before refusing, it created 7 WordPress drafts for
+  batch `services` (svc-roof-replacement, svc-roof-installation, svc-roof-inspections, svc-emergency-roof-repair,
+  svc-metal-roofing, svc-slate-roofing, svc-skylights). Batch `services` is now `drafted`. Nothing handed to Jonie.
+- Pilot pages (svc-roof-repair, loc-bluffton) were already drafted earlier.
+
+**Refused**
+- Batch `locations` (11 pages): `clients/apex-roofing-of-the-lowcountry/build/locations/drafts-review.csv: no header block.
+  Approved page files start with --- page_id / url / seo_title / meta_description --- (methodology/specs/README.md).`
+  The review sheet is in the batch's approved drafts file list, so publish.py treats it as a page file. The h1 batch has
+  the same entry (`build/h1/drafts-review.csv`), so it will hit the same refusal.
+- Flagged as F-026 for /system-review. No workaround applied: changing the approved file list in a client session would
+  change an approval record.
+
+**Not done (on purpose)**
+- Navigation (menu) handoff: not created. It should go out after every page is drafted.
+- VA Worklist publish handoff: not possible yet (pages_drafted not met).
+
+**Open waits (unchanged, not blocking this refusal)**: WordPress login decision; SEM-1 Roof Repair emergency FAQ link;
+client items for 7 pages.
+
+**Next**: a /system fix for F-026 (status.py should not record review sheets as drafts, or publish.py should skip
+them), then re-run `/build apex-roofing-of-the-lowcountry ship`. Then `/build apex-roofing-of-the-lowcountry handoff`.
+### END HANDOFF
+## RUN 20261013-163153-build-d38b · FINISHED · 2026-10-13T16:33:16-05:00
+Changes: 7 · Summary: ship partial: link wheel planned (20 pages); 7 service pages drafted in WordPress; locations refused (drafts-review.csv recorded as a page file) — flagged F-026; h1 not shipped
+- CHANGE #903 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (22).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (22).md | result: done · renamed and moved, nothing deleted
+- CHANGE #904 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (22).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 39e83d9367cf | result: done · copied (Drive for desktop syncs it)
+- CHANGE #905 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (26).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (26).md | result: done · renamed and moved, nothing deleted
+- CHANGE #906 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (26).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha b7046ba63e8c | result: done · copied (Drive for desktop syncs it)
+- CHANGE #907 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (27).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (27).md | result: done · renamed and moved, nothing deleted
+- CHANGE #908 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (27).md | new: Apex Roofing of the Lowcountry - Status.md · sha 6ff9601ccafe | result: done · copied (Drive for desktop syncs it)
