@@ -1150,6 +1150,10 @@ def main():
             ok, why = evidence_ok(st, a.page_id)
             if not ok:
                 die(f"no brief for a page the evidence gate has not cleared (CM-041): {why}")
+            pk = (st["pages"][a.page_id].get("pack") or {})
+            if not pk.get("file") or not (ROOT / pk["file"]).is_file():
+                die(f"no brief for {a.page_id} without its evidence pack (CM-061) — evidence_pack.py build {a.slug} "
+                    f"{b['id']} (the evidence gate builds it)")
             res = evidence_state(st, a.page_id)[0]
             if res in ("warn", "block") and not re.search(r"^#+\s*Evidence gaps", f.read_text(), re.M | re.I):
                 die(f"{a.page_id} cleared the evidence gate with {'a WARN' if res == 'warn' else 'your waiver'}: the brief "

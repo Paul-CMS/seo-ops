@@ -11,6 +11,10 @@ only** is never cited for a permit, code or any regulatory fact — only officia
 | A contractor's SC licence number, class, status, expiry | SC LLR licensee lookup — https://verify.llronline.com/LicLookup/LookupMain.aspx |
 | SC licensing boards (residential builders, contractors) | SC LLR — https://llr.sc.gov/ |
 | Which building code edition SC has adopted | SC Building Codes Council, part of SC LLR — https://llr.sc.gov/ *(council page not linked from the home page; find it there)* |
+| **Public lookup (CM-061):** a business's SC registration (legal name, status, registered agent) | SC Secretary of State business entity search — https://businessfilings.sc.gov/BusinessFiling/Entity/Search *(add the date when the researcher first reads it)* |
+
+Manufacturer certifications are verified in the manufacturer's own contractor finder — see `README.md` → Public
+lookups. Insurance is verified only from a public certificate; none → it stays a client fact.
 
 ## Beaufort County
 | What it answers | Source |

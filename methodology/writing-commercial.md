@@ -34,6 +34,26 @@ items in one step → apply only those and re-check.
   claim stays only if the copy names its authoritative source (EPA, CDC or similar); otherwise
   remove it. The self-critique lists every health claim with its source. No practitioner review.
 
+## Usage tiers (CM-061) — how evidence may be written
+
+The page's **evidence pack** (`build/<section>/packs/<page-id>.md`) is the only place the writer looks for facts; each
+excerpt carries its tier. Write every fact at its tier — no stronger, and no weaker when the evidence is there (a pack
+fact that is Known is used, never written around: "we take care to document the job" when the photos fact is Known is
+a Fix in the draft review).
+
+| Evidence | May be written as | Example |
+|---|---|---|
+| `client_confirmed` / `paul_approved` / `internally_verified` | A plain claim | "Apex sends progress photos at every stage." |
+| `customer_reported`, 3+ independent mentions, checked by meaning | "Customers mention…" | "Customers mention the clear photos Apex sends during the job." |
+| `customer_reported`, 1–2 mentions (or a keyword match not yet checked by meaning) | An **attributed customer example**, no company claim | "One Bluffton homeowner said the crew sent clear photos of the damage before starting." |
+| `site_stated` (the client's own site or GBP) | A legal or money claim → an Ask row (kind 2). Otherwise a plain claim, listed as "Fix and list" so Paul sees it | — |
+| A public fact from an official source | A plain statement, with the source recorded | "The Town of Hilton Head Island requires a permit for re-roofing." |
+| A context source | Area character only — never a rule, code, permit or claim | "Bluffton's Old Town is known for…" |
+
+- Prices, timelines and warranty terms from reviews are never stated as the company's own, at any tier — only as an
+  attributed example (CM-057).
+- Reviewer names are never used.
+
 ## B — Required inputs (all; list what is missing and stop)
 
 1. Brand Guide — A (entity), B (assigned variant + reserved homepage variant), C (siblings,

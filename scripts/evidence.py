@@ -276,6 +276,10 @@ def record(slug, run_id, pid):
     append(client_dir(slug) / "log.md", f"- EVIDENCE {now()[:16]} · run {run_id} · {pid}: {result.upper()} "
            f"(known {counts['Known']}, unknown {counts['Unknown']}, unverified {counts['Unverified']}, "
            f"conflict {counts['Conflict']})\n")
+    b = S.batch_of(st, pid)
+    if b:   # CM-061: the page's evidence pack is rebuilt with its grid, by script, before any brief
+        import evidence_pack
+        evidence_pack.build_one(slug, b["id"], pid, run_id)
     return result, counts, why, rel
 
 
@@ -314,9 +318,11 @@ def facts_pack(slug, run_id, bid):
         blocked = [p for p in b["pages"] if S.evidence_state(st, p)[0] == "block"]
         if not blocked:
             die(f"batch {bid}: no page is blocked by the evidence gate — the facts interview runs only on a block (CM-042).")
-    seen, qs, waiting, research = {}, [], {}, {}
+    import research as research_log
+    seen, qs, waiting, research, tiered, need_search = {}, [], {}, {}, {}, {}
     ents = settled.entries(slug)
     public = set(requirements().get("public_facts") or [])
+    lookup = set((requirements().get("verify_by_lookup") or {}).keys())
     for pid in blocked:
         rows, *_ = grid(slug, st, pid)
         for r in sorted(rows, key=lambda r: (r["need"] != "required", r["mark"] != "Conflict")):
@@ -326,9 +332,18 @@ def facts_pack(slug, run_id, bid):
             if (ents.get(k) or {}).get("state") in ("open", "answered"):   # asked once already — never again
                 waiting.setdefault(k, ents[k])
                 continue
-            if r["from"] in public:   # P6: a public fact is looked up by the researcher, never asked
+            if r.get("via") == "review_keyword":   # CM-061: reviews found it — written as an attributed customer
+                tiered.setdefault(r["label"], set()).add(pid)   # example (usage tier) until checked by meaning; never asked
+                continue
+            looked_up = r["from"] in lookup and research_log.find(slug, k)   # a lookup tried and not found → asked
+            if r["from"] in public or (r["from"] in lookup and not looked_up):   # P6: a public fact (or a client fact
+                # with a public lookup — licence, certification, registration; CM-061) is looked up, never asked first
                 research.setdefault(k, {"label": r["label"], "pages": [], "from": r["from"], "need": r["need"]})
                 research[k]["pages"].append(pid)
+                continue
+            log_row = research_log.find(slug, k)
+            if r["mark"] == "Unknown" and not r.get("value") and not log_row:   # CM-061: no client question without
+                need_search.setdefault(k, {"label": r["label"], "pages": []})["pages"].append(pid)   # the search order
                 continue
             gk = r["from"] if bid is None else k   # the facts round groups by fact, not by page
             if gk in seen:
@@ -339,6 +354,8 @@ def facts_pack(slug, run_id, bid):
             text, style = question(r)
             sr = r.get("searched") or {}
             searched = ["facts.json", "decisions-settled.md"] + list(sr.get("searched") or []) + ["proof sheet / Discovery Record"]
+            if log_row:
+                searched.append(f"research log {log_row['id']}")
             seen[gk] = {"text": text, "style": style, "kind": "client", "need": r["need"], "pages": [pid], "from": r["from"],
                         "key": k, "keys": [k], "fact_id": r.get("fact_id"), "searched": searched,
                         "best_answer": r["value"] if r["mark"] in ("Unverified", "Conflict") and r.get("value") else ""}
@@ -354,7 +371,7 @@ def facts_pack(slug, run_id, bid):
         rl.write_text("\n".join([f"# Research list — {('batch ' + bid) if bid else 'every page'} ({now()[:10]})", "",
                                   "Public facts (P6): the researcher agent looks each one up in official sources — "
                                   "methodology/sources/<state>-<area>.md first — and records it with its source in the page's "
-                                  "facts file, or 'not found' with the sources tried. Never asked of the client.", "",
+                                  "facts file — and logs every gap: research.py log (a 'not found' only at the minimum effort, CM-061). Never asked of the client.", "",
                                   "| Fact | Need | Pages | Key |", "|---|---|---|---|"]
                                  + [f"| {v['label']} | {v['need']} | {', '.join(v['pages'])} | {k} |" for k, v in research.items()])
                       + "\n")
@@ -388,6 +405,12 @@ def facts_pack(slug, run_id, bid):
     if research:
         lines += [f"- Public facts, not asked — the researcher looks them up (build/evidence/research-{label}.md): "
                   + ", ".join(v["label"] for v in research.values())]
+    if need_search:
+        lines += ["- Not asked yet — the client search order comes first (CM-061; research.py todo, then research.py "
+                  "log with every source tried): " + ", ".join(f"{v['label']} ({k})" for k, v in need_search.items())]
+    if tiered:
+        lines += ["- Found in reviews, written at its usage tier (an attributed customer example until the researcher "
+                  "checks it by meaning; CM-061) — not asked: " + ", ".join(sorted(tiered))]
     if answered:
         lines += [f"- {answered[0].upper()}{answered[1:]} (not asked again)"]
     if waiting:
@@ -400,7 +423,7 @@ def facts_pack(slug, run_id, bid):
     rel = str(f.relative_to(ROOT))
     st = S.load(slug)
     rec = {"file": rel, "at": now(), "run": run_id, "pages": blocked, "questions": len(qs),
-           "research": len(research)}
+           "research": len(research), "need_search": len(need_search)}
     if bid:
         S.batch(st, bid)["facts_interview"] = rec
     else:
@@ -409,6 +432,23 @@ def facts_pack(slug, run_id, bid):
     append(client_dir(slug) / "log.md", f"- FACTS INTERVIEW {now()[:16]} · run {run_id} · {('batch ' + bid) if bid else 'facts round (all pages)'} · "
            f"{len(qs)} question(s) for {', '.join(blocked)} · {rel}\n")
     return rel, len(qs), blocked
+
+
+NOT_FOUND = re.compile(r"\bnot found\b|\bnot_found\b", re.I)
+
+
+def unsupported_not_found(slug, pids):
+    """['page · key — why'] — every page fact recorded as 'not found' with no valid research-log entry (CM-061)."""
+    import research as research_log
+    out = []
+    for pid in pids:
+        pf, _ = page_facts(slug, pid)
+        for k, v in pf.items():
+            if NOT_FOUND.search(f"{v.get('value', '')} {v.get('source', '')} {v.get('status', '')}"):
+                fk = fact_key(pid, f"page:{k}")
+                if not research_log.find(slug, fk):
+                    out.append(f"{pid} · {k} — no valid research-log entry for {fk}")
+    return out
 
 
 def main():
@@ -443,6 +483,10 @@ def main():
         pids = [a.page]
     else:
         die("give --all, --batch or --page")
+    bad = unsupported_not_found(a.slug, pids)
+    if bad:
+        die("REFUSED — a page facts file says 'not found' without a research-log entry at the minimum effort (CM-061; "
+            "research.py log … --result not_found):\n  - " + "\n  - ".join(bad), 4)
     blocked = 0
     for pid in pids:
         result, counts, why, rel = record(a.slug, a.run, pid)

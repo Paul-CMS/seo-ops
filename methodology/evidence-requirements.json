@@ -409,5 +409,11 @@
     "page:neighborhoods",
     "page:county_cities"
   ],
+  "verify_by_lookup": {
+    "D:Licence numbers": "the state licensing board's licensee lookup (methodology/sources/<state>-<area>.md → State · public lookups)",
+    "D:Certifications": "the manufacturer's own contractor finder (methodology/sources/README.md → Public lookups)",
+    "D:Insurance": "a public certificate only (a state or board listing); none found → a client fact (an Ask, kind 2)"
+  },
+  "_verify_by_lookup_about": "CM-061 part 2 (rewrite 3 §4.1): client facts that have a public lookup are verified, not asked — the researcher looks them up first (research.py log). Only a lookup logged not_found at the minimum may then become an Ask (a legal or money claim, kind 2). Business registration (the state's business entity search) is looked up the same way when a page needs it.",
   "_public_facts_about": "Rewrite 2 P6 (Q5): facts about a place are public — the researcher agent looks them up in official sources (methodology/sources/<state>-<area>.md first) and cites them; they are never asked of the client. Every other fact is a client fact, asked only after the search order (facts.json, decisions-settled.md, reviews, site text, GBP, proof sheet and Discovery Record)."
 }

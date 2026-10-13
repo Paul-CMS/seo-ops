@@ -24,8 +24,17 @@ answers>"` — Paul adds it to `methodology/sources/` in `/system-review`.
    lookup, the state building code adoption, Wikipedia/Wikidata for places), then other official sources (.gov, the
    manufacturer, the code body). For each fact record the value with its source URL and the date you read it, in the
    page's facts file (`build/evidence/<page>.facts.json`: value, status `Internally Verified`, source) — or "not
-   found" with every source you tried. A not-found item goes to Paul as a decision only: drop the element, or keep
-   it general. Never ask the client a public fact. A source-list row marked **Local context only** (e.g. a chamber of
+   found". **Log every gap you research (CM-061):** `python3 scripts/research.py log <slug> --run <RUN_ID> --section
+   <section> --gap <facts key> --kind public --page <page> --queries "q1 || q2 || q3" --sources "methodology/sources/<file>
+   || <url> || Wikipedia: <place>" --result found|partial|not_found [--excerpt "…" --url <url>]`. "Not found" is
+   refused below the minimum: the area source list, at least 3 distinct web queries (one naming the official body), and
+   the place's Wikipedia/Wikidata entry; `evidence.py run` refuses a facts file that says "not found" without that
+   entry (`research.py todo <slug> --batch <id>` lists what is left). A public not-found is never a question: the
+   element is shortened or dropped by default (Fix and list). Never ask the client a public fact.
+   **Client facts with a public lookup are verified, not asked** — licence (the state board), manufacturer
+   certification (the contractor finder), business registration (the state entity search), insurance (a public
+   certificate only): `methodology/sources/README.md` → Public lookups. Log each the same way (`--kind public`); only a
+   logged not-found may become an Ask. A source-list row marked **Local context only** (e.g. a chamber of
    commerce) is cited only for things to do, landmarks and area character — never for a permit, code or any
    regulatory fact; those come only from official government sources.
 2. **Review facts by meaning** (CM-057). After `reviews.py extract`, read `data/reviews/review-facts.json` and
@@ -33,7 +42,7 @@ answers>"` — Paul adds it to `methodology/sources/` in `/system-review`.
    Drop false matches ("total cost" is not a price). Count different reviewers only (the `reviewer_key`); owner replies
    never count. **A keyword match never counts toward Known** (Paul, 2026-10-09): only what you record does —
    `python3 scripts/reviews.py checked <slug> --run <RUN_ID> --key fact:<key> --count <reviewers left> --note "<the
-   sentence they share>"`. Until then the match is a pre-filled yes/no line for Paul.
+   sentence they share>"`. Until then the match is written only as an attributed customer example (its usage tier, writing-commercial.md) — never a question for Paul (CM-061). Check every topic an evidence pack marks "keyword match only" with 3+ reviewers, then rebuild the packs (`evidence_pack.py build <slug> <section> --run <RUN_ID>`).
 3. **Competitor coverage** (`data/competitors/coverage.md`): group the H2s and FAQ topics into coverage ideas per
    service. Coverage only — never a client claim (CM-016).
 4. **Source lists**: when an area has no `methodology/sources/<state>-<area>.md`, draft its contents in your summary

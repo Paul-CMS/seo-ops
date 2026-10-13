@@ -15,6 +15,7 @@ client site. CLAUDE.md: run this after every change to the system; never commit 
 """
 import csv
 import json
+import re
 import os
 import shlex
 import shutil
@@ -177,6 +178,20 @@ class Agent:
                  and it["from"][5:] not in self.evidence_gaps.get(pid, set())}
         return self.w(f"build/evidence/{pid}.facts.json", json.dumps({"facts": facts}))
 
+    def search_order(self, rid, flag):
+        """CM-061: before a facts pack, the agent works the client search order and logs every client gap it could
+        not fill (research.py log, at the minimum); public gaps go to the researcher's list."""
+        S = self.slug
+        code, out = sh(f"python3 scripts/research.py todo {S} {flag}")
+        sec = {p: b["id"] for b in status(S)["build"]["batches"] for p in b["pages"]}
+        for line in out.splitlines():
+            m = re.match(r"^client\s+(\S+)\s+.*\((\S+)\)$", line)
+            if m:
+                self.sh(f'python3 scripts/research.py log {S} --run {rid} --section {sec[m.group(2)]} --gap {m.group(1)} '
+                        f'--kind client --page {m.group(2)} --result not_found --sources "facts.json || decisions-settled.md '
+                        f'|| the evidence pack || the proof sheet || the Discovery Record || the client\'s site search '
+                        f'|| GBP Q&A || GBP posts"')
+
     def do(self, command):
         wd = command.split()
         name, args = wd[0], wd[2:]
@@ -277,6 +292,7 @@ class Agent:
                     if (status(S)["pages"].get(p) or {}).get("type") in ("service", "location", "county", "homepage", "about"):
                         self.write_facts(p)
             self.sh(f"python3 scripts/evidence.py run {S} --run {rid} --all")
+            self.search_order(rid, "--all")
             self.sh(f"python3 scripts/evidence.py questions {S} --run {rid} --all")
             self.fin(rid, "facts round")
         elif (name, sub) == ("/build", "write"):   # P10: briefs, one draft per page (own sub-agent), the review
@@ -333,6 +349,7 @@ class Agent:
             self.fin(rid, f"batch {bid} {stage}")
         elif (name, sub) == ("/interview", "facts"):
             bid = args[1]; rid = self.start("interview", "facts", batch=bid)
+            self.search_order(rid, f"--batch {bid}")
             self.sh(f"python3 scripts/evidence.py questions {S} --run {rid} --batch {bid}"); self.fin(rid, f"facts pack {bid}")
         elif (name, sub) == ("/interview", "facts-answers"):
             bid = args[1]; rid = self.start("interview", "facts-answers", batch=bid)
@@ -2474,7 +2491,8 @@ def extra_scenarios():
     import importlib.util
     import types
     h = types.SimpleNamespace(SB=SB, sh=sh, check=check, status=status, Agent=Agent, paul=paul,
-                              new_session=new_session, nxt=nxt, walkthrough_full=t_walkthrough_full)
+                              new_session=new_session, nxt=nxt, walkthrough_full=t_walkthrough_full,
+                              build_ready=build_ready, REVIEWS_CSV=REVIEWS_CSV, walkthrough=walkthrough)
     out = []
     for f in sorted((REPO / "tests" / "checks").glob("*.py")):
         if f.name.startswith("_"):

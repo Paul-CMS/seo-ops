@@ -11,7 +11,7 @@ command started a run (RUN_ID) and checked the gates for the step it names. Do t
 
 **Never change the workflow (P3, Q2).** Scripts, gates, methodology, specs, CLAUDE.md, agents, commands, skills, templates and tests are system files: a client session cannot edit them (the guard blocks it). If a rule or script is wrong, flag it — `python3 scripts/run.py flag <slug> <RUN_ID> --text "…" --workaround "…"` — carry on with the current rules, and say so in your summary.
 
-**The read list limits which project files you load. It never limits web research for public facts. Follow Paul's instructions as written, never narrower.** (P6) A question is `public` (a place, a code, the trade, a manufacturer — the **researcher** agent looks it up and cites it; never asked) or `client` (asked only after facts.json → decisions-settled.md → reviews → site text → GBP → proof sheet and Discovery Record, with a `searched:` line and the best answer found). `python3 scripts/questions.py check <questions.json>` before any set reaches Paul.
+**The read list limits which project files you load. It never limits web research for public facts. Follow Paul's instructions as written, never narrower.** (P6) A question is `public` (a place, a code, the trade, a manufacturer — the **researcher** agent looks it up and cites it; never asked) or `client` (asked only after facts.json → decisions-settled.md → the evidence pack (reviews, site, GBP, interview transcripts) → proof sheet and Discovery Record, plus the client's site search and GBP Q&A and posts — logged with `research.py log … --kind client --result not_found`, CM-061; the facts round asks no client fact without that entry, and `research.py todo <slug> --batch <id>` lists what is left — with a `searched:` line and the best answer found). `python3 scripts/questions.py check <questions.json>` before any set reaches Paul.
 
 **Facts (P4):** every fact about the client lives in `clients/<slug>/facts.json`; read it by id (`python3 scripts/facts.py get <slug> --ids …`). Record an answer only with `run.py fact` — never edit the Brand Guide's Section A or D fact rows (they are generated). Run every question set through `python3 scripts/settled.py filter <slug> <questions.json>` before it reaches Paul.
 
@@ -99,6 +99,17 @@ review answers is Known: state it **only attributed** ("customers mention…", w
 A fact found only on the client's site is a yes/no. Report every page's result.
 A **blocked** page gets no brief: `/next` sends it to the facts interview (`/interview <slug> facts <id>`)
 or Paul waives it (`/approve <slug> evidence:<page> --reason "..."`, recorded with his name, date and reason).
+
+**Evidence packs (CM-061).** The same `evidence.py run` builds each page's **evidence pack**
+(`build/<section>/packs/<page_id>.md`, `evidence_pack.py`): facts, reviews (practice, service, place, named staff —
+quoted, counted by independent reviewer), PAA and fan-out questions seen for the page, site and GBP sentences, area
+source rows and research results, settled decisions, and the gaps. Then the **researcher** (Sonnet) checks by meaning
+every review topic the pack marks "keyword match only" with 3+ reviewers (`reviews.py checked <slug> --run <RUN_ID>
+--key <practice:photos|fact:…> --count <n>`) and the packs are rebuilt (`evidence_pack.py build <slug> <section> --run
+<RUN_ID>`). The pack is the brief and draft writers' only fact source; `status.py page-stage` refuses a brief for a page
+without one. Evidence is written at its usage tier (writing-commercial.md, "Usage tiers") — a fact the pack has is
+used, never asked: a review topic with 1–2 reviewers (or not yet checked) is an attributed customer example, never a
+question for Paul.
 
 ## Step: brief <id> — part 2: every cleared page's brief (Route A) or sanity check (Route B)
 One section/file per page, from the approved site plan; skip the blocked pages. The brief (`SB/LB/LBCH/HB/AB - <subject> - <Client>`):
