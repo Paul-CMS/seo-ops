@@ -2979,3 +2979,40 @@ No publish, link table, schema or Brand Guide write-back. Nothing approved. `run
 ### Not done
 No publish, link table, schema or Brand Guide write-back. Nothing approved. No flag raised. `run.py finish` is left to the calling command.
 
+## /build · 2026-10-13 · run 20261013-123131-build-3f60
+
+Agent: build-subagent-loc-port-royal-3f60 (one page only, CM-043). Route A.
+
+### What changed
+Only the second paragraph of the FAQ "Does a big roof job on a Port Royal home trigger the flood-zone 50% rule?" in
+`build/locations/LD - Port Royal - Apex Roofing of the Lowcountry.md`. Paul asked for this on 2026-10-13. Nothing else on the page changed.
+- Added: under chapter 9 of the Town code, permits count together for five years. A new roof plus other permitted work
+  on the same house in that time can add up toward the 50% line. Phased jobs are totaled from the first permit. Repairs after damage are also added up.
+- Removed: "The guide does not say how costs add up over time." This is now answered. The FAQ-map/ordinance sentence was
+  trimmed for length.
+- Kept: the first paragraph (Town flood guide, 50% rule, raise above base flood elevation), the permit-before-construction line,
+  "ask the Town's building office whether your address is in a flood zone", and the Apex plan-to-fit close. No flood
+  zone is claimed for any address, and a roof alone is not said to reach 50%.
+- Distinct from siblings: Lady's Island cites county ch. 78 with both periods and states neither. Hilton Head uses 49%.
+  Port Royal states the Town's own five-year count.
+
+### Source
+Town of Port Royal Code of Ordinances ch. 9, Sec. 9-21 (Ord. 2020-34, adopted March 10, 2021), Municode. Paul confirmed it.
+WebFetch of Municode returned only the page shell. The wording was checked against the Sec. 9-21 text saved in the session
+scratchpad (`dl/pr9def.txt`), which matches Paul's quote. Logged as RL-locations-28 (`research.py log`, public, found).
+
+### Checks
+- FAQ first paragraph: 59 words (40–60). The FAQ item is about 155 words, and the FAQ H2 section is under 375 for each item.
+- Readability (F-016 terms file in scratchpad): page 5.8 over 718 words. This FAQ is 6.0. No paragraph is over 10. E10 passes.
+- E4: pass. E5 invention sweep: no flood-zone designation, no claim that the roof reaches 50%, no new figure beyond the code.
+- `placeholders.py scan`: 1 NEED (map), unchanged. 0 LINK.
+- `status.py page-stage ... --stage draft` recorded with this run and agent id.
+
+### For the drafts review
+- Fix and list: the flood FAQ now states the Town's five-year cumulative count (Sec. 9-21). This closes item 6 of
+  run 20261013-081021-build-1bd6.
+- Finish outbound candidate (CM-011): the Municode Sec. 9-21 URL.
+
+### Not done
+No approval, publish, link table, schema or Brand Guide write-back. No flag raised.
+

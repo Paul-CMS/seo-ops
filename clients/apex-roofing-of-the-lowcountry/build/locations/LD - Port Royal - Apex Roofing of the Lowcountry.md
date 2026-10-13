@@ -42,7 +42,7 @@ Port Royal owners ask about the Town's flood rule, roof work on and near Parris 
 
 It can, if the roof is part of work that adds up to half the building's value. The Town of Port Royal's flood guide sets the rule. When additions, remodeling or repairs reach 50% of a building's market value, the whole building must be raised above the base flood elevation, the level a big flood is expected to reach.
 
-The Town has adopted FEMA's flood maps as part of its local flood damage prevention ordinance, and the same rule applies after substantial damage. In a flood zone, a building permit comes before any construction. The guide does not say how costs add up over time. Ask the Town's building office whether your address is in a flood zone and how it will count your job. Once you know, Apex can plan the roof work to fit.
+Under chapter 9 of the Town's code, permits count together for five years. So a new roof plus other permitted work on the same house in that time can add up toward the 50% line. A job done in phases is totaled from the first permit, and repairs after damage are added up too. In a flood zone, a building permit comes before any construction. Ask the Town's building office whether your address is in a flood zone and how it will count your job. Once you know, Apex can plan the roof work to fit.
 
 ### Do you work on Port Royal base housing and homes near Parris Island?
 

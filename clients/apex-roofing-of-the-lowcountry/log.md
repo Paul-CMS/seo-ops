@@ -4915,3 +4915,53 @@ Changes: 0 · Summary: Lady's Island draft revised: City/County FAQ replaced by 
 - CHANGE #762 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (8).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 7b5053cee21d | result: done · copied (Drive for desktop syncs it)
 - CHANGE #763 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (8).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (8).md | result: done · renamed and moved, nothing deleted
 - CHANGE #764 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (8).md | new: Apex Roofing of the Lowcountry - Status.md · sha 113a247522ba | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261013-123131-build-3f60 · STARTED · /build · 2026-10-13T12:31:31-05:00
+Step: build:draft · batch locations · session 4b4b1602-b1b8-4325-bb46-d6fdcde6c418
+Gates checked: discovery_signed_off, batch:locations:briefs, page_specs_approved
+- RESEARCH 2026-10-13T12:32 · run 20261013-123131-build-3f60 · RL-locations-28 · fact:loc-port-royal:faq_flood_rule (public): found
+- DRAFT 2026-10-13T12:32 · run 20261013-123131-build-3f60 · loc-port-royal · clients/apex-roofing-of-the-lowcountry/build/locations/LD - Port Royal - Apex Roofing of the Lowcountry.md · agent build-subagent-loc-port-royal-3f60
+### HANDOFF · /build · 2026-10-13 · run 20261013-123131-build-3f60
+Agent: build-subagent-loc-port-royal-3f60 (one page only, CM-043). Route A.
+
+### What changed
+Only the second paragraph of the FAQ "Does a big roof job on a Port Royal home trigger the flood-zone 50% rule?" in
+`build/locations/LD - Port Royal - Apex Roofing of the Lowcountry.md`. Paul asked for this on 2026-10-13. Nothing else on the page changed.
+- Added: under chapter 9 of the Town code, permits count together for five years. A new roof plus other permitted work
+  on the same house in that time can add up toward the 50% line. Phased jobs are totaled from the first permit. Repairs after damage are also added up.
+- Removed: "The guide does not say how costs add up over time." This is now answered. The FAQ-map/ordinance sentence was
+  trimmed for length.
+- Kept: the first paragraph (Town flood guide, 50% rule, raise above base flood elevation), the permit-before-construction line,
+  "ask the Town's building office whether your address is in a flood zone", and the Apex plan-to-fit close. No flood
+  zone is claimed for any address, and a roof alone is not said to reach 50%.
+- Distinct from siblings: Lady's Island cites county ch. 78 with both periods and states neither. Hilton Head uses 49%.
+  Port Royal states the Town's own five-year count.
+
+### Source
+Town of Port Royal Code of Ordinances ch. 9, Sec. 9-21 (Ord. 2020-34, adopted March 10, 2021), Municode. Paul confirmed it.
+WebFetch of Municode returned only the page shell. The wording was checked against the Sec. 9-21 text saved in the session
+scratchpad (`dl/pr9def.txt`), which matches Paul's quote. Logged as RL-locations-28 (`research.py log`, public, found).
+
+### Checks
+- FAQ first paragraph: 59 words (40–60). The FAQ item is about 155 words, and the FAQ H2 section is under 375 for each item.
+- Readability (F-016 terms file in scratchpad): page 5.8 over 718 words. This FAQ is 6.0. No paragraph is over 10. E10 passes.
+- E4: pass. E5 invention sweep: no flood-zone designation, no claim that the roof reaches 50%, no new figure beyond the code.
+- `placeholders.py scan`: 1 NEED (map), unchanged. 0 LINK.
+- `status.py page-stage ... --stage draft` recorded with this run and agent id.
+
+### For the drafts review
+- Fix and list: the flood FAQ now states the Town's five-year cumulative count (Sec. 9-21). This closes item 6 of
+  run 20261013-081021-build-1bd6.
+- Finish outbound candidate (CM-011): the Municode Sec. 9-21 URL.
+
+### Not done
+No approval, publish, link table, schema or Brand Guide write-back. No flag raised.
+### END HANDOFF
+## RUN 20261013-123131-build-3f60 · FINISHED · 2026-10-13T12:33:26-05:00
+Changes: 0 · Summary: Port Royal flood FAQ now states the Town code's five-year cumulative permit count toward the 50% rule (ch. 9 Sec. 9-21, Ord. 2020-34), logged as RL-locations-28; all other content unchanged, checks pass (grade 5.8, FAQ lead 59 words).
+- CHANGE #765 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (9).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #766 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (9).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 6e84359bd9f6 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #767 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (9).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #768 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (9).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha e0437a850756 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #769 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (9).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #770 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (9).md | new: Apex Roofing of the Lowcountry - Status.md · sha 7d1e59b71fd1 | result: done · copied (Drive for desktop syncs it)

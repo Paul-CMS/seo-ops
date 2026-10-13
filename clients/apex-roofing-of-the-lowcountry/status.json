@@ -904,10 +904,10 @@
         },
         "draft": {
           "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Port Royal - Apex Roofing of the Lowcountry.md",
-          "run": "20261013-081021-build-1bd6",
-          "at": "2026-10-13T08:16:34-05:00",
-          "sha": "db7ac995e295",
-          "agent": "build-subagent-loc-port-royal-1bd6"
+          "run": "20261013-123131-build-3f60",
+          "at": "2026-10-13T12:32:56-05:00",
+          "sha": "f783c95d8975",
+          "agent": "build-subagent-loc-port-royal-3f60"
         }
       },
       "pack": {
@@ -1832,10 +1832,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-122710-build-4b79",
+    "run_id": "20261013-123131-build-3f60",
     "command": "build",
-    "finished": "2026-10-13T12:31:27-05:00",
-    "result": "Lady's Island draft revised: City/County FAQ replaced by a sourced Woods swing-bridge logistics FAQ, flood FAQ updated to cite both of ch. 78's cumulative periods, Dataw placed off Lady's Island via Polowana Road, two H2s made unique; 6 research rows logged; draft recorded.",
+    "finished": "2026-10-13T12:33:26-05:00",
+    "result": "Port Royal flood FAQ now states the Town code's five-year cumulative permit count toward the 50% rule (ch. 9 Sec. 9-21, Ord. 2020-34), logged as RL-locations-28; all other content unchanged, checks pass (grade 5.8, FAQ lead 59 words).",
     "changes": 0,
     "step": "build:draft",
     "batch": "locations"
@@ -1859,7 +1859,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T12:31:27-05:00",
+  "updated": "2026-10-13T12:33:26-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2188,8 +2188,8 @@
     }
   ],
   "review_pause": {
-    "run_id": "20261013-122710-build-4b79",
+    "run_id": "20261013-123131-build-3f60",
     "step": "build:draft",
-    "at": "2026-10-13T12:31:27-05:00"
+    "at": "2026-10-13T12:33:26-05:00"
   }
 }
