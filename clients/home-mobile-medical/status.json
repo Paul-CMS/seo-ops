@@ -285,8 +285,9 @@
         "brief": {
           "file": "clients/home-mobile-medical/build/services/briefs/SB - Porch Lifts - Home Mobile Medical.md",
           "run": "20261014-144852-build-6004",
-          "at": "2026-10-14T14:58:49-05:00",
-          "sha": "ee6baf8acb5d"
+          "at": "2026-10-14T16:29:14-05:00",
+          "sha": "0ccbff99101d",
+          "ts": 1792013354.769679
         }
       }
     },
@@ -345,8 +346,9 @@
         "brief": {
           "file": "clients/home-mobile-medical/build/services/briefs/SB - Wheelchair Lifts - Home Mobile Medical.md",
           "run": "20261014-144852-build-6004",
-          "at": "2026-10-14T14:58:49-05:00",
-          "sha": "8d564a7cc185"
+          "at": "2026-10-14T16:29:14-05:00",
+          "sha": "be01ea8d9537",
+          "ts": 1792013354.844501
         }
       }
     },
@@ -401,8 +403,9 @@
         "brief": {
           "file": "clients/home-mobile-medical/build/services/briefs/SB - Stair Lift Repair - Home Mobile Medical.md",
           "run": "20261014-144852-build-6004",
-          "at": "2026-10-14T14:58:49-05:00",
-          "sha": "d7de27b7e627"
+          "at": "2026-10-14T16:29:14-05:00",
+          "sha": "a179b344e73b",
+          "ts": 1792013354.922055
         }
       }
     },
@@ -1870,9 +1873,9 @@
         ],
         "state": "briefs_written",
         "briefs": {
-          "state": "revise",
+          "state": "approved",
           "by": "Paul",
-          "at": "2026-10-14T16:24:10-05:00",
+          "at": "2026-10-14T16:31:06-05:00",
           "note": null,
           "files": {
             "clients/home-mobile-medical/build/services/briefs/SB - Curved Stair Lifts - Home Mobile Medical.md": "8a034552c71b",
@@ -2195,7 +2198,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T16:24:10-05:00",
+  "updated": "2026-10-14T16:31:06-05:00",
   "open_runs": {
     "20261014-144852-build-6004": {
       "step": "build:write",

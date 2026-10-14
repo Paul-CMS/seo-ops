@@ -1384,3 +1384,19 @@ Approved version: clients/home-mobile-medical/build/services/briefs/SB - Stair L
 - CHANGE #254 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (15).md | new: Home Mobile Medical - Document Checklist.md · sha fb612b93d250 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #255 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (15).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (15).md | result: done · renamed and moved, nothing deleted
 - CHANGE #256 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (15).md | new: Home Mobile Medical - Status.md · sha 5f5d96acd465 | result: done · copied (Drive for desktop syncs it)
+- BRIEF 2026-10-14T16:29 · run 20261014-144852-build-6004 · svc-porch-lifts · clients/home-mobile-medical/build/services/briefs/SB - Porch Lifts - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T16:29 · batch services · 4 page(s), one run each
+- BRIEF 2026-10-14T16:29 · run 20261014-144852-build-6004 · svc-wheelchair-lifts · clients/home-mobile-medical/build/services/briefs/SB - Wheelchair Lifts - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T16:29 · batch services · 4 page(s), one run each
+- BRIEF 2026-10-14T16:29 · run 20261014-144852-build-6004 · svc-repair-maintenance · clients/home-mobile-medical/build/services/briefs/SB - Stair Lift Repair - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T16:29 · batch services · 4 page(s), one run each
+
+## APPROVAL · 2026-10-14T16:31:06-05:00 · batch services briefs · approved · by Paul
+Approved version: clients/home-mobile-medical/build/services/briefs/SB - Curved Stair Lifts - Home Mobile Medical.md (sha 8a034552c71b)
+Approved version: clients/home-mobile-medical/build/services/briefs/SB - Porch Lifts - Home Mobile Medical.md (sha 0ccbff99101d)
+Approved version: clients/home-mobile-medical/build/services/briefs/SB - Wheelchair Lifts - Home Mobile Medical.md (sha be01ea8d9537)
+Approved version: clients/home-mobile-medical/build/services/briefs/SB - Stair Lift Repair - Home Mobile Medical.md (sha a179b344e73b)
+- CHANGE #257 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (16).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (16).md | result: done · renamed and moved, nothing deleted
+- CHANGE #258 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (16).md | new: Home Mobile Medical - Document Checklist.md · sha b9c25e0f356d | result: done · copied (Drive for desktop syncs it)
+- CHANGE #259 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (16).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (16).md | result: done · renamed and moved, nothing deleted
+- CHANGE #260 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (16).md | new: Home Mobile Medical - Status.md · sha a498c03262b7 | result: done · copied (Drive for desktop syncs it)

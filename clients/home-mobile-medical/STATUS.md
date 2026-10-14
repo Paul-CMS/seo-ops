@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — decide what to do with the unfinished run (resume, /verify, /rollback or abort); Jonie — wp setup handoff — 3 of 3 item(s) open; Jonie — seopress settings handoff — 4 of 4 item(s) open
 - **Next action:** `/verify home-mobile-medical` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-14T16:24 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T16:31 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -36,7 +36,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-14: page specs (global: location) — approved
 - 2026-10-14: batch pilot briefs — approved
 - 2026-10-14: batch pilot drafts — approved
-- 2026-10-14: batch services briefs — revise
+- 2026-10-14: batch services briefs — approved
 - Paul 2026-10-09 (Q1): client confirms no leads from any of the 36 retirement URLs (17 FL/MI, 5 discontinued-service, 14 SC legacy incl. /services/straight-stair-lifts/). CM-019 C4 passes; all 36 become 301s.
 - Paul Exception 2026-10-09 (Q8): citation link-destination check skipped; CM-019 C3 accepted on DataforSEO referring-domain evidence for the 36 URLs. Do not re-raise.
 - Paul 2026-10-09 (Q2, revised in rewrite 2): redirect the 36 to the appropriate URLs — FL/MI → /stair-lifts/, power chairs/scooter lifts → the homepage (was /services/), ramps → /porch-lifts/; SC legacy duplicates → their canonical root service/location page. No redirect points at /services/ or /service-area/, so there are no chains.
