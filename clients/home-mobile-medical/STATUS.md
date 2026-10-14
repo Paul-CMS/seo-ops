@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — decide what to do with the unfinished run (resume, /verify, /rollback or abort); Jonie — wp setup handoff — 3 of 3 item(s) open; Jonie — seopress settings handoff — 4 of 4 item(s) open
 - **Next action:** `/verify home-mobile-medical` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-14T15:15 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T16:23 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 

@@ -1799,20 +1799,28 @@
           "practitioner": null
         },
         "drafts": {
-          "state": "approved",
-          "by": "Paul",
-          "at": "2026-10-14T14:46:54-05:00",
-          "note": null,
-          "files": {
-            "clients/home-mobile-medical/build/pilot/drafts/svc-stair-lifts.md": "eb5499249a3e",
-            "clients/home-mobile-medical/build/pilot/drafts/loc-beaufort-sc.md": "06e9fd05337c",
-            "clients/home-mobile-medical/build/pilot/drafts-review.csv": "300bededfb1f"
-          },
-          "conditions": [],
-          "sensitive_review": "Paul Meisner",
-          "practitioner": null,
-          "sem_ids": [],
-          "writing_fp": "66993249914c"
+          "state": "revise",
+          "by": "integrity check",
+          "at": "2026-10-14T16:23:34-05:00",
+          "voided": true,
+          "files": {},
+          "note": "voided: the approved versions do not match the recorded pages — svc-stair-lifts: approved at version eb5499249a3e but recorded at 6563e71e2521; svc-stair-lifts: clients/home-mobile-medical/build/pilot/drafts/svc-stair-lifts.md is not the version recorded for it (edited after it was recorded); loc-beaufort-sc: approved at version 06e9fd05337c but recorded at 944e55dc48d4; loc-beaufort-sc: clients/home-mobile-medical/build/pilot/drafts/loc-beaufort-sc.md is not the version recorded for it (edited after it was recorded)",
+          "was": {
+            "state": "approved",
+            "by": "Paul",
+            "at": "2026-10-14T14:46:54-05:00",
+            "note": null,
+            "files": {
+              "clients/home-mobile-medical/build/pilot/drafts/svc-stair-lifts.md": "eb5499249a3e",
+              "clients/home-mobile-medical/build/pilot/drafts/loc-beaufort-sc.md": "06e9fd05337c",
+              "clients/home-mobile-medical/build/pilot/drafts-review.csv": "300bededfb1f"
+            },
+            "conditions": [],
+            "sensitive_review": "Paul Meisner",
+            "practitioner": null,
+            "sem_ids": [],
+            "writing_fp": "66993249914c"
+          }
         },
         "files": {
           "briefs": [
@@ -1862,19 +1870,27 @@
         ],
         "state": "briefs_written",
         "briefs": {
-          "state": "approved",
-          "by": "Paul",
-          "at": "2026-10-14T15:15:48-05:00",
-          "note": "Paul: approve now (as recorded)",
-          "files": {
-            "clients/home-mobile-medical/build/services/briefs/SB - Curved Stair Lifts - Home Mobile Medical.md": "8a034552c71b",
-            "clients/home-mobile-medical/build/services/briefs/SB - Porch Lifts - Home Mobile Medical.md": "0ccbff99101d",
-            "clients/home-mobile-medical/build/services/briefs/SB - Wheelchair Lifts - Home Mobile Medical.md": "be01ea8d9537",
-            "clients/home-mobile-medical/build/services/briefs/SB - Stair Lift Repair - Home Mobile Medical.md": "a179b344e73b"
-          },
-          "conditions": [],
-          "sensitive_review": null,
-          "practitioner": null
+          "state": "revise",
+          "by": "integrity check",
+          "at": "2026-10-14T16:23:34-05:00",
+          "voided": true,
+          "files": {},
+          "note": "voided: the approved versions do not match the recorded pages — svc-porch-lifts: approved at version 0ccbff99101d but recorded at ee6baf8acb5d; svc-porch-lifts: clients/home-mobile-medical/build/services/briefs/SB - Porch Lifts - Home Mobile Medical.md is not the version recorded for it (edited after it was recorded); svc-wheelchair-lifts: approved at version be01ea8d9537 but recorded at 8d564a7cc185; svc-wheelchair-lifts: clients/home-mobile-medical/build/services/briefs/SB - Wheelchair Lifts - Home Mobile Medical.md is not the version recorded for it (edited after it was recorded); svc-repair-maintenance: approved at version a179b344e73b but recorded at ",
+          "was": {
+            "state": "approved",
+            "by": "Paul",
+            "at": "2026-10-14T15:15:48-05:00",
+            "note": "Paul: approve now (as recorded)",
+            "files": {
+              "clients/home-mobile-medical/build/services/briefs/SB - Curved Stair Lifts - Home Mobile Medical.md": "8a034552c71b",
+              "clients/home-mobile-medical/build/services/briefs/SB - Porch Lifts - Home Mobile Medical.md": "0ccbff99101d",
+              "clients/home-mobile-medical/build/services/briefs/SB - Wheelchair Lifts - Home Mobile Medical.md": "be01ea8d9537",
+              "clients/home-mobile-medical/build/services/briefs/SB - Stair Lift Repair - Home Mobile Medical.md": "a179b344e73b"
+            },
+            "conditions": [],
+            "sensitive_review": null,
+            "practitioner": null
+          }
         },
         "drafts": null,
         "files": {
@@ -2187,7 +2203,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T15:15:48-05:00",
+  "updated": "2026-10-14T16:23:34-05:00",
   "open_runs": {
     "20261014-144852-build-6004": {
       "step": "build:write",
