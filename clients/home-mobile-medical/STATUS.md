@@ -1,17 +1,17 @@
 # Home Mobile Medical - Status
 
 - **Stage —**
-- **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:facts finished (run 20261014-140654-build-4002) and that stage is in review mode — l
-- **Next action:** `/next home-mobile-medical` once the wait above is over · model: Haiku chat
+- **What is happening now:** ready to start: apply your pilot corrections to the specs before the next batch
+- **Waiting on:** nobody
+- **Next action:** `/build home-mobile-medical pilot-corrections` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open home-mobile-medical`) and types `/next home-mobile-medical` · model: Haiku chat
 
-_Generated 2026-10-14T14:17 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T14:18 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:facts finished (run 20261014-140654-build-4002) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build home-mobile-medical pilot-corrections (apply your pilot corrections to the specs before the next batch) | 2026-10-14 | /next home-mobile-medical |
+| — | nothing | | |
 
 ## Waiting on (not blocking)
 

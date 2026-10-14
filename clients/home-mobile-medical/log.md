@@ -1175,3 +1175,56 @@ Changes: 0 · Summary: Facts-answers (batch all): 3 owner answers saved, written
 - CHANGE #207 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md | upload | old: previous version archived as Home Mobile Medical - Brand Guide - 2026-10-14 (2).md | new: Home Mobile Medical - Brand Guide.md · sha 4971136af402 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #208 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (8).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (8).md | result: done · renamed and moved, nothing deleted
 - CHANGE #209 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (8).md | new: Home Mobile Medical - Status.md · sha 30659e078b9a | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-14T14:18 · after build:facts (run 20261014-140654-build-4002) · Paul typed /next
+
+## MIGRATION · 2026-10-14T14:18:23-05:00 · URL move: references follow the new URL
+brand-guide.md:87: /services/ → https://homemobilemedical.com/
+brand-guide.md:89: /services/curved-stair-lifts/ → https://homemobilemedical.com/curved-stair-lifts/
+brand-guide.md:90: /services/porch-lifts/ → https://homemobilemedical.com/porch-lifts/
+brand-guide.md:91: /services/wheelchair-lifts/ → https://homemobilemedical.com/wheelchair-lifts/
+brand-guide.md:92: /services/stair-lifts/ → https://homemobilemedical.com/stair-lifts/
+brand-guide.md:103: /service-area/bluffton-sc/ → https://homemobilemedical.com/bluffton-sc/
+brand-guide.md:104: /service-area/hilton-head-island-sc/ → https://homemobilemedical.com/hilton-head-island-sc/
+brand-guide.md:105: /service-area/port-royal-sc/ → https://homemobilemedical.com/port-royal-sc/
+brand-guide.md:106: /service-area/ladys-island-sc/ → https://homemobilemedical.com/ladys-island-sc/
+brand-guide.md:107: /service-area/laurel-bay-sc/ → https://homemobilemedical.com/laurel-bay-sc/
+brand-guide.md:108: /service-area/daufuskie-island-sc/ → https://homemobilemedical.com/daufuskie-island-sc/
+brand-guide.md:109: /service-area/okatie-sc/ → https://homemobilemedical.com/okatie-sc/
+brand-guide.md:110: /service-area/yemassee-sc/ → https://homemobilemedical.com/yemassee-sc/
+brand-guide.md:111: /service-area/hardeeville-sc/ → https://homemobilemedical.com/hardeeville-sc/
+brand-guide.md:112: /service-area/ridgeland-sc/ → https://homemobilemedical.com/ridgeland-sc/
+brand-guide.md:113: /service-area/levy-sc/ → https://homemobilemedical.com/levy-sc/
+brand-guide.md:114: /service-area/walterboro-sc/ → https://homemobilemedical.com/walterboro-sc/
+brand-guide.md:115: /service-area/edisto-island-sc/ → https://homemobilemedical.com/edisto-island-sc/
+brand-guide.md:116: /service-area/charleston-sc/ → https://homemobilemedical.com/charleston-sc/
+brand-guide.md:117: /service-area/north-charleston-sc/ → https://homemobilemedical.com/north-charleston-sc/
+brand-guide.md:118: /service-area/mount-pleasant-sc/ → https://homemobilemedical.com/mount-pleasant-sc/
+brand-guide.md:119: /service-area/summerville-sc/ → https://homemobilemedical.com/summerville-sc/
+brand-guide.md:120: /service-area/goose-creek-sc/ → https://homemobilemedical.com/goose-creek-sc/
+brand-guide.md:121: /service-area/hanahan-sc/ → https://homemobilemedical.com/hanahan-sc/
+brand-guide.md:122: /service-area/moncks-corner-sc/ → https://homemobilemedical.com/moncks-corner-sc/
+brand-guide.md:123: /service-area/hollywood-sc/ → https://homemobilemedical.com/hollywood-sc/
+brand-guide.md:124: /service-area/kiawah-island-sc/ → https://homemobilemedical.com/kiawah-island-sc/
+brand-guide.md:125: /service-area/folly-island-sc/ → https://homemobilemedical.com/folly-island-sc/
+brand-guide.md (Section C prose): Canonical pattern `/service-area/{city-state}/` (D… → the root pattern
+H-2026-10-09-04-broken_link.csv H-2026-10-09-04-broken_link-01: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+H-2026-10-09-04-broken_link.csv H-2026-10-09-04-broken_link-02: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+H-2026-10-09-04-broken_link.csv H-2026-10-09-04-broken_link-03: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+H-2026-10-09-04-broken_link.csv H-2026-10-09-04-broken_link-04: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+H-2026-10-09-04-broken_link.csv H-2026-10-09-04-broken_link-05: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+H-2026-10-09-04-broken_link.csv H-2026-10-09-04-broken_link-06: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+H-2026-10-09-04-broken_link.csv H-2026-10-09-04-broken_link-07: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+H-2026-10-09-04-broken_link.csv H-2026-10-09-04-broken_link-08: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+H-2026-10-09-04-broken_link.csv H-2026-10-09-04-broken_link-09: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+build/blockers/broken_link-items.csv:2: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+build/blockers/broken_link-items.csv:3: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+build/blockers/broken_link-items.csv:4: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+build/blockers/broken_link-items.csv:5: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+build/blockers/broken_link-items.csv:6: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+build/blockers/broken_link-items.csv:7: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+build/blockers/broken_link-items.csv:8: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+build/blockers/broken_link-items.csv:9: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+build/blockers/broken_link-items.csv:10: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+build/blockers/redirect-items.csv:2: https://homemobilemedical.com/service-area/bluffton-sc/ → https://homemobilemedical.com/bluffton-sc/
+build/blockers/redirect-items.csv:3: https://homemobilemedical.com/service-area/charleston-sc/ → https://homemobilemedical.com/charleston-sc/
+build/blockers/redirect-items.csv:4: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/

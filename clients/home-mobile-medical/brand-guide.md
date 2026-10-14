@@ -84,45 +84,45 @@ Set by the site plan in Build. Source map: `Home Mobile Medical - URL Decision M
 ### C1 · Service pages
 | URL | Service name | H1 service variant | Status |
 |---|---|---|---|
-| /services/ | Services hub | | Planned (rewrite) |
+| /services/ | Services hub | | Dropped — 301 to https://homemobilemedical.com/ (URL move) |
 | /stair-lifts/ (replaces /services/stair-lifts/, 301) | Stair lifts — parent; straight stair lifts consolidated in · keyword "stair lifts" | stair lift installation (H1 "Stair Lift Installation in the Lowcountry"; no "The Best") | Brief approved 2026-10-14 (pilot) |
-| /services/curved-stair-lifts/ | Curved stair lifts | | Planned (rewrite) |
-| /services/porch-lifts/ | Porch lifts / vertical platform lifts (the outdoor offer) | | Planned (rewrite) |
-| /services/wheelchair-lifts/ | Wheelchair lifts | | Planned (rewrite) |
-| /services/straight-stair-lifts/ | → consolidated into /services/stair-lifts/ (301 after the CM-019 check) | | Planned |
+| /curved-stair-lifts/ | Curved stair lifts | | Planned (rewrite) |
+| /porch-lifts/ | Porch lifts / vertical platform lifts (the outdoor offer) | | Planned (rewrite) |
+| /wheelchair-lifts/ | Wheelchair lifts | | Planned (rewrite) |
+| /services/straight-stair-lifts/ | → consolidated into /stair-lifts/ (301 after the CM-019 check) | | Planned |
 | repair and maintenance | Stair-lift and lift repair and maintenance — page/URL decided in the site plan (existing: /hilton-head/stair-lift-repair/, /bluffton-sc/wheelchair-lift-repair/) | | Planned |
 
 Parent/child service pages with real subtype demand keep their URLs (Paul). Service pages share one area entity.
 
 ### C2 · Location pages
-Canonical pattern `/service-area/{city-state}/` (Decision 023). Hubs: `/service-area/` (Lowcountry) · `/service-area/charleston/` (Charleston metro area) · `/service-area/hhi-beaufort/` (Hilton Head Island–Bluffton–Port Royal metro area) — metro hubs pending L-008 and the county-hub spec. Merged location pages become mentions, not sections.
+Canonical pattern `/{city-state}/` at the root (Decision 023, revised in rewrite 2, Paul 2026-10-09; no folder). Hubs: `/charleston-metro/` (Charleston metro area) · `/hilton-head-bluffton-metro/` (Hilton Head Island–Bluffton–Port Royal metro area); the Lowcountry hub `/service-area/` is dropped (301 to the homepage) — metro hubs pending L-008 and the county-hub spec. Merged location pages become mentions, not sections.
 
 | URL | City | GBP landing page? | Status |
 |---|---|---|---|
 | /beaufort-sc/ (replaces /service-area/beaufort-sc/, 301) | Beaufort | No (GBP lands on the homepage) | Brief approved 2026-10-14 (pilot) · keyword "stair lifts Beaufort SC" · H1 "Stair Lift Installer in Beaufort" · area variant Beaufort County · category variant stair lift installer |
-| /service-area/bluffton-sc/ | Bluffton | No | Planned |
-| /service-area/hilton-head-island-sc/ | Hilton Head Island | No | Planned |
-| /service-area/port-royal-sc/ | Port Royal | No | Planned |
-| /service-area/ladys-island-sc/ | Lady's Island | No | Planned |
-| /service-area/laurel-bay-sc/ | Laurel Bay | No | Planned |
-| /service-area/daufuskie-island-sc/ | Daufuskie Island | No | Planned |
-| /service-area/okatie-sc/ | Okatie | No | Planned |
-| /service-area/yemassee-sc/ | Yemassee | No | Planned |
-| /service-area/hardeeville-sc/ | Hardeeville | No | Planned |
-| /service-area/ridgeland-sc/ | Ridgeland | No | Planned |
-| /service-area/levy-sc/ | Levy | No | Planned |
-| /service-area/walterboro-sc/ | Walterboro | No | Planned |
-| /service-area/edisto-island-sc/ | Edisto Island | No | Planned |
-| /service-area/charleston-sc/ | Charleston | No | Planned |
-| /service-area/north-charleston-sc/ | North Charleston | No | Planned |
-| /service-area/mount-pleasant-sc/ | Mount Pleasant | No | Planned |
-| /service-area/summerville-sc/ | Summerville | No | Planned |
-| /service-area/goose-creek-sc/ | Goose Creek | No | Planned |
-| /service-area/hanahan-sc/ | Hanahan | No | Planned |
-| /service-area/moncks-corner-sc/ | Moncks Corner | No | Planned |
-| /service-area/hollywood-sc/ | Hollywood | No | Planned |
-| /service-area/kiawah-island-sc/ | Kiawah Island | No | Planned |
-| /service-area/folly-island-sc/ | Folly Island | No | Planned |
+| /bluffton-sc/ | Bluffton | No | Planned |
+| /hilton-head-island-sc/ | Hilton Head Island | No | Planned |
+| /port-royal-sc/ | Port Royal | No | Planned |
+| /ladys-island-sc/ | Lady's Island | No | Planned |
+| /laurel-bay-sc/ | Laurel Bay | No | Planned |
+| /daufuskie-island-sc/ | Daufuskie Island | No | Planned |
+| /okatie-sc/ | Okatie | No | Planned |
+| /yemassee-sc/ | Yemassee | No | Planned |
+| /hardeeville-sc/ | Hardeeville | No | Planned |
+| /ridgeland-sc/ | Ridgeland | No | Planned |
+| /levy-sc/ | Levy | No | Planned |
+| /walterboro-sc/ | Walterboro | No | Planned |
+| /edisto-island-sc/ | Edisto Island | No | Planned |
+| /charleston-sc/ | Charleston | No | Planned |
+| /north-charleston-sc/ | North Charleston | No | Planned |
+| /mount-pleasant-sc/ | Mount Pleasant | No | Planned |
+| /summerville-sc/ | Summerville | No | Planned |
+| /goose-creek-sc/ | Goose Creek | No | Planned |
+| /hanahan-sc/ | Hanahan | No | Planned |
+| /moncks-corner-sc/ | Moncks Corner | No | Planned |
+| /hollywood-sc/ | Hollywood | No | Planned |
+| /kiawah-island-sc/ | Kiawah Island | No | Planned |
+| /folly-island-sc/ | Folly Island | No | Planned |
 
 Only a verified GBP's actual landing URL gets LocalBusiness-type schema (BB-604).
 
