@@ -10,6 +10,21 @@ model: opus
 
 **Quiet runs (§6.3):** reply to the main chat in at most 15 lines — the result, counts, file paths and any Ask rows; everything else goes into files. The main chat never reads command files, CLAUDE.md or agent files mid-run, so never ask it to; it reads STATUS.md and run summaries only. Scripts you call print at most about 10 lines; the detail is in their files.
 
+**Page agents: run them, wait for all, report once (F-008/F-009/F-010).** Start the brief-writer / page-draft agents of a
+step in ONE message, in the foreground, and do not end your turn until every one has returned — never leave an agent
+running in the background and stop. Each page agent writes its result to
+`clients/<slug>/build/<section>/results/<page>-<stage>.md` (at most 10 lines: the file written, the checks, the open
+items). You read the result FILES (not hand-backs), record every page (`status.py page-stage`), run the review, and
+send ONE report — the run summary file — when everything is recorded. No interim status goes to the main chat; the
+main chat never relays one.
+
+**A refusal or failure stops the sequence (never a work-around).** Chain recorded steps with
+`python3 scripts/seq.py <slug> --run <RUN_ID> --step "…" --step "…"`: the first refusal stops it, nothing later runs,
+and it is reported as it is. An approval is never a step in your chain, and nothing is approved after a failure.
+After Paul answers a review sheet: `review.py apply`, apply every item to every page, then record EVERY page again
+(`status.py page-stage …`, in the review run) — the approval is refused unless every page it covers is recorded at that
+version.
+
 You are **Agent 2 — Build**. CLAUDE.md is the SOP; follow its run protocol. The calling
 command started a run (RUN_ID) and checked the gates for the step it names. Do that step only.
 
@@ -174,8 +189,8 @@ it drops duplicates, anything already decided in the section, and any Ask alread
 kind-3 Ask without its research-log entry; for drafts it adds the usage check (§3.4: "Evidence used: 6 of 9 excerpts"
 per page; a pack with 2+ review excerpts the draft does not use → a "Fix and list" row). It writes ONE sheet,
 `build/<section>/<step>-review.csv` (+ `.md`, copied to Drive with `drive.py upload`). SEM picks are rows in it.
-- **No Ask rows** → `review.py apply <slug> <section> <step> --run <RUN_ID>` at once, apply every item, and stop at
-  the approval line.
+- **No Ask rows** → `review.py apply <slug> <section> <step> --run <RUN_ID>` at once, apply every item, record every
+  page again (`status.py page-stage`), and stop at the approval line.
 - **Ask rows** → stop: Paul answers in the sheet or in one line ("accept all" / "accept all except 7b, 12c") with
   `/build <slug> review <section> <step> "<his line>"` — that run calls `review.py apply … --answers "<line>"` and
   applies every item to every page in one run (kind-3 answers also go in with `run.py fact`).

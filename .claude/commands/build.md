@@ -23,6 +23,10 @@ Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps b
    clients, `--practitioner` for health) · After the pilot, Paul may switch `build:brief` to auto (`/approve <slug> mode:build:brief=auto`): later batches
    then stop for the drafts only. "Blockers cleared" (Jonie's handoff done and verified) and `pages_built` (every
    batch written back) are conditions the system meets — no approval.
+   **Quiet and whole (F-008/F-009/F-010):** the build agent runs its page agents and waits for all of them, reads their
+   results from files (`build/<section>/results/`), and reports once. The main chat relays nothing in between — only the
+   run's `…summary.md`, once. A refusal or failure in a multi-step command stops it and is reported as it is
+   (`scripts/seq.py`); an approval never runs after a failure, and never appears in a chain.
 5. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> --summary "..."`.
 
 Drafts reach WordPress only through `/build <slug> ship` — one run for every approved service and location page,

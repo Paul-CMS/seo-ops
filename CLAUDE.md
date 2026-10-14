@@ -27,6 +27,8 @@ fact, evidence pack, usage tier, finding, Fix · Fix and list · Ask, section, r
    Exit 4 → refuse and say what is missing; exit 3 → stop and ask Paul (resume, /verify, /rollback, abort).
    `--dry` is the free dry run: no agent is spawned until it passes. `run.py`/`publish.py` refuse client work in the
    main folder (§00).
+   A refusal or failure in a multi-step command stops it and is reported (`scripts/seq.py`); no later step runs and no
+   approval runs after a failure.
 2. Log every change as it happens (`run.py change`; the scripts log their own). Files reach Drive only via `drive.py`.
 3. Decisions: `run.py decision … --text` · settle once `--settle <key>` · ask once `--ask <key>`.
 4. `python3 scripts/run.py finish <slug> <RUN_ID> --summary "…" --handoff clients/<slug>/handoffs/run-<RUN_ID>.md

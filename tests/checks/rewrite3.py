@@ -353,6 +353,10 @@ def t_review(h):
     h.check("§5.3: one chat line answers the sheet — the named row takes Paul's option, every other row its default",
             code == 0 and pv["choice"] == "a" and pv["by"] == "Paul" and pv["action"] == "keep the page"
             and all(i["by"] == "default" for i in ap if i["item"] != "page viability"), ap)
+    for pid in ag.batch_pages("pilot"):   # the review run applies every item and records every page again
+        code, out = h.sh(f"python3 scripts/status.py page-stage {S_} {pid} --stage draft --file "
+                         f"'clients/{S_}/build/pilot/D-{pid}.md' --run {rid}")
+        h.check(f"rewrite6: the review run re-records the draft of {pid} (agent kept)", code == 0, out)
     ag.fin(rid, "review applied")
     st = h.status(S_)   # the F-017 / sem_applied class: a later batch state must not refuse the approval
     next(b for b in st["build"]["batches"] if b["id"] == "pilot")["state"] = "sem_applied"

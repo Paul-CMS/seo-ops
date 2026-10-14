@@ -30,6 +30,7 @@ import datetime as dt
 import json
 import re
 import sys
+import time
 
 import status as S
 from lib import ROOT, append, client_dir, config, die, now, read_json, today, write_json
@@ -381,7 +382,7 @@ def apply(slug, section, step, run_id, answers_line=None):
     st = S.load(slug)
     b = S.batch(st, section)
     rv = b.setdefault("review", {}).setdefault(step, {})
-    rv["applied"] = {"at": now(), "run": run_id, "answers": answers_line or "", "explicit": explicit,
+    rv["applied"] = {"at": now(), "ts": time.time(), "run": run_id, "answers": answers_line or "", "explicit": explicit,
                      "file": str(p["apply"].relative_to(ROOT))}
     S.save(slug, st)
     append(client_dir(slug) / "log.md", f"- REVIEW APPLIED {now()[:16]} · run {run_id} · {section} {step}: {len(out)} row(s) "

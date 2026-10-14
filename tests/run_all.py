@@ -1295,7 +1295,7 @@ def t_wordpress():
 
 
 
-def build_ready(slug, gaps=None):
+def build_ready(slug, gaps=None, plan=None):
     """A client with discovery signed off and the site plan approved, ready for the pilot batch."""
     sh(f'python3 scripts/status.py init {slug} --name "Test Co" --domain test.example --type full --industry roofing --route A')
     ag = Agent(slug); rid = ag.start("new-client"); ag.fin(rid, "set up")
@@ -1307,6 +1307,7 @@ def build_ready(slug, gaps=None):
     (ag.c / "status.json").write_text(json.dumps(st))
     ag.w("brand-guide.md", TEST_BG)
     ag.evidence_gaps = gaps or {}
+    ag.plan = plan
     if sh(f"python3 scripts/status.py require {slug} page_specs_approved")[0]:
         paul("/approve global specs")
     ag.do(f"/build {slug} plan")

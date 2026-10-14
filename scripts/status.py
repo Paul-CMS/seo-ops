@@ -35,6 +35,7 @@ only THAT gate stops counting as met. Later gates that depend on it stay open an
 flagged "upstream change — check whether it affects this"; Paul decides.
 """
 import argparse
+import datetime
 import json
 import re
 import sys
@@ -749,6 +750,78 @@ def per_page_files(st, b, stage):
     return files, probs
 
 
+STAGE_ONE = {"briefs": "brief", "drafts": "draft"}
+
+
+def _when(rec):
+    """When a record was made: its `ts` (sub-second) when it has one, else its `at` — None if neither reads."""
+    if rec.get("ts") is not None:
+        return rec["ts"]
+    try:
+        return datetime.datetime.fromisoformat(rec["at"]).timestamp()
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
+def page_version_problems(st, bid, stage, files, strict=True):
+    """[why, …] — an approval of a batch's briefs or drafts covers every page at the version the review answers
+    produced (CM-061; HMM run 20261014-144852-build-6004: one of four briefs was re-recorded, the approval signed all
+    four). Per page: a record exists; the file approved is the file recorded; its version is the recorded version; and
+    the record was made after the review's answers were applied. `files` is the {file: sha} the approval names.
+    strict=False (the integrity migration, over approvals made before this rule) judges the order only when both
+    records carry a sub-second `ts`, so an old approval is never voided on a second-resolution guess."""
+    b = batch(st, bid)
+    if not b or b.get("baseline") or (b.get(stage) or {}).get("baseline"):
+        return []
+    if stage == "drafts" and not (b.get("review") or {}).get("drafts"):
+        return []   # a batch under way with a semantic review table (before CM-061): apply-sem edits the drafts and pins their versions
+    one = STAGE_ONE[stage]
+    applied =(((b.get("review") or {}).get(stage) or {}).get("applied")) or {}
+    out = []
+    for pid in b.get("pages", []):
+        rec = page_stage(st, pid, one)
+        if not rec.get("file"):
+            out.append(f"{pid}: no {one} is recorded for it")
+            continue
+        f = rec["file"]
+        if f not in (files or {}):
+            out.append(f"{pid}: its recorded {one} ({f}) is not among the files approved")
+        elif files[f] != rec.get("sha"):
+            out.append(f"{pid}: approved at version {files[f]} but recorded at {rec.get('sha')}")
+        if ref_missing(f):
+            out.append(f"{pid}: {ref_missing(f)}")
+        elif sha12(ROOT / f) != rec.get("sha"):
+            out.append(f"{pid}: {f} is not the version recorded for it (edited after it was recorded)")
+        t_rec, t_app = _when(rec), _when(applied)
+        if applied and t_rec is not None and t_app is not None and t_rec < t_app \
+                and (strict or (rec.get("ts") is not None and applied.get("ts") is not None)):
+            out.append(f"{pid}: recorded before the review answers were applied")
+    return out
+
+
+def void_unreviewed_approvals(slug, st):
+    """Integrity migration (on /next): an approval of a batch's briefs or drafts whose recorded pages do not match the
+    versions it names is voided — the approval becomes a `revise` record (kept, with why) and is logged. Returns the
+    log lines. The caller saves."""
+    lines = []
+    for b in batches(st):
+        for stage in STAGES:
+            rec = b.get(stage)
+            if not rec or rec.get("state") not in GATES["met_decisions"] or rec.get("baseline") or not rec.get("files"):
+                continue
+            probs = [p for p in page_version_problems(st, b["id"], stage, rec["files"], strict=False)
+                     if "no brief is recorded" not in p and "no draft is recorded" not in p]
+            if not probs:
+                continue
+            b[stage] = {"state": "revise", "by": "integrity check", "at": now(), "voided": True, "files": {},
+                        "note": "voided: the approved versions do not match the recorded pages — " + "; ".join(probs)[:600],
+                        "was": rec}
+            lines.append(f"batch {b['id']} {stage}: " + "; ".join(probs))
+    for ln in lines:
+        append(client_dir(slug) / "log.md", f"- INTEGRITY {now()[:16]} · approval voided · {ln}\n")
+    return lines
+
+
 # ------------------------------------------------------------------ review / auto mode per stage (CM-044)
 def mode_stages():
     return GATES["modes"]["stages"]
@@ -1249,13 +1322,20 @@ def main():
         info = (st.get("open_runs") or {}).get(a.run) or {}
         want = f"build:{a.stage}"
         write_run = info.get("step") == "build:write" or (info.get("step") == want and info.get("pages") == "all")
-        if info.get("step") != want and not write_run:
-            die(f"a {a.stage} is recorded only by its own /build {a.stage} run or the batch's write run "
-                f"(this run is {info.get('step')}).")
         b = batch_of(st, a.page_id) or die(f"{a.page_id} is in no batch")
+        # F-011/HMM: after Paul answers a review sheet, the review run records every page again at the version the
+        # answers produced — the only way the approval can cover it (approve.py page_version_problems)
+        rv_applied = (((b.get("review") or {}).get(f"{a.stage}s") or {}).get("applied"))
+        review_run = info.get("step") == "build:review" and bool(rv_applied) and a.page_id in b["pages"]
+        if info.get("step") != want and not write_run and not review_run:
+            die(f"a {a.stage} is recorded only by its own /build {a.stage} run, the batch's write run, or (after the "
+                f"review answers are applied) the review run (this run is {info.get('step')}).")
+        prior = (st["pages"].get(a.page_id, {}).get("files") or {}).get(a.stage) or {}
+        if review_run and a.stage == "draft" and not a.agent:
+            a.agent = prior.get("agent")   # a re-record keeps the fresh sub-agent that wrote the page (CM-043)
         if write_run and a.stage == "draft" and not a.agent:
             die("in a write run each page's draft comes from its own fresh sub-agent (CM-043): pass --agent <its id>.")
-        if write_run:
+        if write_run or review_run:
             pass
         elif a.stage == "draft" and info.get("page") != a.page_id:
             die(f"run {a.run} was started for page {info.get('page')}; it cannot record {a.page_id}. "
@@ -1279,12 +1359,12 @@ def main():
             if res in ("warn", "block") and not re.search(r"^#+\s*Evidence gaps", f.read_text(), re.M | re.I):
                 die(f"{a.page_id} cleared the evidence gate with {'a WARN' if res == 'warn' else 'your waiver'}: the brief "
                     "must carry an 'Evidence gaps' section listing every gap from the grid.")
-            if batch_stage_ok(st, b["id"], "briefs", False)[0]:
+            if _approval_ok(b.get("briefs"), "briefs", False)[0]:   # F-011: Paul's recorded approval, never auto mode's "nothing to approve"
                 die(f"batch {b['id']} briefs are already approved; Paul re-opens them first (--decision revise).")
         else:
             in_write = write_run and (b["id"] == "pilot" or not briefs_need_approval(st, b["id"])) \
                 and not per_page_files(st, b, "brief")[1]   # P10: the pilot (one approval for both) or briefs on auto
-            if not in_write and not batch_stage_ok(st, b["id"], "briefs", False)[0]:
+            if not in_write and not review_run and not batch_stage_ok(st, b["id"], "briefs", False)[0]:
                 die(f"batch {b['id']}: the briefs are not approved yet — no drafts before Paul approves the briefs.")
             import publish
             bad = publish.placeholder_problems(f.read_text(encoding="utf-8"))
@@ -1294,7 +1374,7 @@ def main():
                 die(f"batch {b['id']} drafts are already approved; Paul re-opens them first (--decision revise).")
         p = st["pages"][a.page_id]
         p.setdefault("files", {})[a.stage] = {"file": a.file, "run": a.run, "at": now(), "sha": sha12(f),
-                                               **({"agent": a.agent} if a.agent else {})}
+                                               "ts": time.time(), **({"agent": a.agent} if a.agent else {})}
         p["state"] = "brief_written" if a.stage == "brief" else "draft_written"
         log_line = (f"- {a.stage.upper()} {now()[:16]} · run {a.run} · {a.page_id} · {a.file}"
                     + (f" · agent {a.agent}" if a.agent else "") + "\n")
@@ -1302,7 +1382,8 @@ def main():
             files, probs = per_page_files(st, b, "brief")
             if not probs:   # every page has its brief: collect them for Paul's one approval
                 b.setdefault("files", {})["briefs"] = files
-                b["briefs"] = None
+                if (b.get("briefs") or {}).get("state") in GATES["met_decisions"]:
+                    b["briefs"] = None   # F-011: a revise record stays — wiping it made auto mode read the batch as approved
                 set_batch_state(st, b, "briefs_written")
                 log_line += f"- BRIEFS COLLECTED {now()[:16]} · batch {b['id']} · {len(files)} page(s), one run each\n"
         save(a.slug, st)

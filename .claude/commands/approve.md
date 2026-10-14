@@ -31,6 +31,9 @@ This is Paul's decision, not yours. Do not add, soften or second-guess it.
    It refuses unless this /approve came from Paul in the last 20 minutes, and it refuses gates
    whose earlier gates are not met. If it refuses because the token expired or was used, ask
    Paul to type /approve again — never try to work around it.
+   An approval is a step of its own: never run it in the same command chain as another step, and never after a
+   refusal or failure (approve.py refuses while a failed sequence stands). A batch briefs or drafts approval is refused,
+   with nothing approved, unless every page it covers is recorded at the version the review answers produced.
 5. Drive is automatic: approve.py copies the regenerated Approval Record and Status into the client folder
    (archive-and-replace, logged) and gives every approved `- REVIEW` deliverable a Drive copy named `- APPROVED`
    with a stamped header (approved by Paul, date, sha). Nothing to upload by hand; the REVIEW copy stays.

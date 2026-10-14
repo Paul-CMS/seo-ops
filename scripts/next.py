@@ -462,6 +462,15 @@ def _walk(slug, cont):
         records.render(slug)
         git_commit(f"{slug}: {len(moved)} record(s) pointing at a moved URL updated on /next\n\n" + "\n".join(moved[:40]), slug=slug)
     st = S.load(slug)
+    voided = S.void_unreviewed_approvals(slug, st)   # an approval whose pages do not match the reviewed versions stops counting
+    if voided:
+        S.save(slug, st)
+        import records
+        from lib import git_commit
+        records.render(slug)
+        git_commit(f"{slug}: {len(voided)} approval(s) voided on /next — the approved pages do not match the reviewed versions\n\n"
+                   + "\n".join(voided[:20]), slug=slug)
+        st = S.load(slug)
     if cont and st.get("review_pause"):
         p = st.pop("review_pause")
         S.save(slug, st)

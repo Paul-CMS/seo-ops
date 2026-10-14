@@ -432,6 +432,12 @@ def prepare(a, st, target, multi):
                 if not files:
                     die(f"REFUSED ({target}) — name the exact files approved (--files): one per page in the batch"
                         + (" plus the semantic review table." if stage == "drafts" else "."))
+                bad = S.page_version_problems(st, bid, stage, files)
+                if bad:   # nothing is approved on any mismatch: every page at the version the review answers produced
+                    die(f"REFUSED ({target}) — the approval would cover pages that are not recorded at the version the "
+                        f"review answers produced; nothing is approved ({len(bad)} problem(s)):\n  - " + "\n  - ".join(bad)
+                        + f"\nRecord each page again (status.py page-stage … --run <the /build review run>) after the answers "
+                        "are applied, then approve.", 4)
                 if stage == "drafts":
                     applied = drafts_applied(target, b, sem)
                     if applied:
@@ -615,6 +621,11 @@ def main():
         die("REFUSED — with several approvals in one line, each uses the files its step recorded; "
             "--files is only for a single approval.")
     take_token(a.slug, a.targets, consume=False)                 # Paul's /approve first
+    broken = st.get("sequence_failure")   # a multi-step command failed and nobody resolved it: no approval runs after it
+    if broken:
+        die(f"REFUSED — a step failed earlier in a sequence and is not resolved: step {broken.get('step')} "
+            f"({broken.get('cmd')}) — {broken.get('why')}. Fix it and re-run the sequence (seq.py), or finish/abort the "
+            "run; an approval never runs after a failure.", 4)
     prepared = [prepare(a, st, t, multi) for t in a.targets]   # all checked before anything changes
     take_token(a.slug, a.targets)
     for apply, _, _ in prepared:

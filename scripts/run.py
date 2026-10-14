@@ -475,6 +475,7 @@ def main():
             S.save(a.slug, stx)
         st = S.load(a.slug)
         (st.get("open_runs") or {}).pop(a.run_id, None)
+        st.pop("sequence_failure", None)   # the run is over: its failed sequence is in its summary, not a standing block
         import stages
         stages.release_lock(a.slug, a.run_id)   # the client is free for the next chat
         step = (info or {}).get("step")
@@ -507,7 +508,7 @@ def main():
     elif a.cmd == "abort":
         open_run(a.slug, a.run_id)
         append(d / "log.md", f"## RUN {a.run_id} · ABORTED · {now()}\nReason (Paul): {redact(a.reason)}\n")
-        st = S.load(a.slug); (st.get("open_runs") or {}).pop(a.run_id, None); S.save(a.slug, st)
+        st = S.load(a.slug); (st.get("open_runs") or {}).pop(a.run_id, None); st.pop("sequence_failure", None); S.save(a.slug, st)
         import stages
         stages.release_lock(a.slug, a.run_id)
         import drive

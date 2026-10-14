@@ -16,6 +16,9 @@ Session model: Haiku · agents: build (Opus), brief-writer (Sonnet), clerk.
   (`build/<section>/<step>-review.csv`, `review.py`): Fix (form, silent) · Fix and list (decided for you) · Ask (only
   the four kinds). Paul answers in one line ("accept all except 7b") with `/build <slug> review <section> <step>
   "…"`; the approval follows (no `--sem`). At most two review sheets and two approval lines per section.
+- Page agents run in one message and are waited for; their results are files (`build/<section>/results/`); the build
+  agent reports once and the main chat relays nothing in between. After Paul answers a review sheet every page is
+  recorded again at the version the answers produced — `approve.py` refuses the briefs or drafts approval otherwise.
 - CM-043 holds: each page's draft comes from its own fresh subagent (`status.py page-stage … --agent <id>`, logged).
 - Writing never waits on a VA (P8): open handoffs are listed under "Waiting on (not blocking)".
 - The Brand Guide is written **once per section**, at its brief approval (`/build writeback <id>`, CM-061); drafts,
