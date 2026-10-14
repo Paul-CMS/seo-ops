@@ -153,4 +153,76 @@ def t_worklist_verify_reopens(h):
     h.sh(f'python3 scripts/run.py abort {S} {rid} --reason "test"')
 
 
-SCENARIOS = [t_worklist_fields_and_validator, t_worklist_verify_reopens]
+def t_worklist_apex_rules(h):
+    """Paul's (a)–(e): stale rows after a URL move, the Metal Roofing order, no title/meta rows for shipped pages, and
+    no open item owned by Jonie unless it is a VA task."""
+    d, sp = _client(h, "r3wl-apex")
+    st = json.loads(sp.read_text())
+    mr = "https://r3wl.example/metal-roofing/"
+    st["pages"]["svc-a"]["replaces"] = []
+    st["pages"]["svc-metal"] = {"type": "service", "name": "Metal Roofing", "url": mr, "wp_id": 21, "state": "handed_off",
+                                "file": st["pages"]["svc-a"]["file"], "replaces": ["https://r3wl.example/metal-roofing-2/"],
+                                "publish": {"replaces": ["https://r3wl.example/metal-roofing-2/"]},
+                                "open_items": [{"line": 5, "text": "[NEED: city-level map embed of Bluffton, SC]"},
+                                               {"line": 9, "text": "[NEED: cited lifespan source for standing-seam metal]"},
+                                               {"line": 11, "text": "[LINK → /roof-repair/ · reader wants repair]"}]}
+    sp.write_text(json.dumps(st))
+    H = "H-2026-10-"
+    _group(d, [_pub(1, "svc-a", 11, "https://r3wl.example/roof-repair/"), _pub(2, "loc-b", 12, "https://r3wl.example/bluffton/"),
+               {"ref": H + "14-01-publish-03", "url": "https://r3wl.example/?page_id=21", "field": "publish", "old": "(draft)", "new": mr,
+                "decision_map_ref": "svc-metal"},
+               {"ref": H + "14-01-publish-04", "url": "https://r3wl.example/metal-roofing-2/", "field": "301",
+                "old": "https://r3wl.example/metal-roofing", "new": mr, "decision_map_ref": "svc-metal"}]
+           + [{"ref": H + f"14-01-publish-{n:02d}", "url": "https://r3wl.example/?page_id=21", "field": "open item", "old": txt,
+               "new": "x", "decision_map_ref": "svc-metal"} for n, txt in
+              ((5, "[NEED: city-level map embed of Bluffton, SC]"), (6, "[NEED: cited lifespan source for standing-seam metal]"),
+               (7, "[LINK → /roof-repair/ · reader wants repair]"))])
+    _group(d, [{"ref": H + "10-08-04-broken_link-02", "url": "https://r3wl.example/bluffton/", "field": "link href (services list)",
+                "old": "https://r3wl.example/metal-roofing", "new": "https://r3wl.example/metal-roofing-2/", "decision_map_ref": ""},
+               {"ref": H + "10-08-04-broken_link-03", "url": "https://r3wl.example/", "field": "link href",
+                "old": "https://r3wl.example/contact", "new": "https://r3wl.example/contact/", "decision_map_ref": ""}],
+           "H-2026-10-08-04-broken_link.csv")
+    _group(d, [{"ref": H + "10-08-08-seo_title-01", "url": "https://r3wl.example/roof-repair/", "field": "SEOPress title",
+                "old": "Old", "new": "Roof Repair - Wl", "decision_map_ref": ""},
+               {"ref": H + "10-08-08-seo_title-06", "url": "https://r3wl.example/metal-roofing-2/", "field": "SEOPress title",
+                "old": "Old", "new": "Metal Roofing - Wl", "decision_map_ref": ""},
+               {"ref": H + "10-08-08-seo_title-09", "url": "https://r3wl.example/about/", "field": "SEOPress title",
+                "old": "About Us", "new": "About Wl", "decision_map_ref": ""}], "H-2026-10-08-08-seo_title.csv")
+    _group(d, [{"ref": H + "10-09-11-other-01", "url": mr, "field": "clear the slug", "old": "whatever holds /metal-roofing/ now",
+                "new": "nothing", "decision_map_ref": ""}], "H-2026-10-09-11-other.csv")
+    code, out = _check(h, "r3wl-apex")
+    rep = (d / "handoffs" / "worklist-check.md").read_text(encoding="utf-8")
+    h.check("§7a (a): the validator flags a link-fix row that acts on a URL the plan replaces (/metal-roofing-2/), and an SEO "
+            "title row for it", code == 4 and "broken_link-02" in rep and "seo_title-06" in rep and "which the approved plan replaces" in rep, rep)
+    h.check("§7a (d): it flags an SEO title row for a page shipped from its draft, and leaves rows for other pages alone",
+            "seo_title-01" in rep and "broken_link-03" not in rep and "seo_title-09" not in rep, rep)
+    code, out = h.sh("python3 scripts/worklist.py build r3wl-apex")
+    rows = list(csv.DictReader(open(d / "handoffs" / "VA-WORKLIST.csv", newline="", encoding="utf-8")))
+    by = {r["id"]: r for r in rows}
+    gone = {i for i, r in by.items() if r["status"] == "superseded"}
+    h.check("§7a: build supersedes exactly those rows, with their reasons, and keeps the rest open",
+            gone == {H + "10-08-04-broken_link-02", H + "10-08-08-seo_title-01", H + "10-08-08-seo_title-06"}
+            and "3 row(s) superseded" in out and "replaces with" in by[H + "10-08-04-broken_link-02"]["note"]
+            and "approved draft" in by[H + "10-08-08-seo_title-01"]["note"]
+            and by[H + "10-08-04-broken_link-03"]["status"] == "open" and by[H + "10-08-08-seo_title-09"]["status"] == "open", (out, gone))
+    code, out = _check(h, "r3wl-apex")
+    h.check("§7a: after the build the worklist passes", code == 0, out)
+    pub, red, clr = by[H + "14-01-publish-03"], by[H + "14-01-publish-04"], by[H + "10-09-11-other-01"]
+    ids = [r["id"] for r in rows if r["status"] != "superseded"]
+    h.check("§7a (b): Metal Roofing is clear /metal-roofing/ → publish at /metal-roofing/ → 301 from /metal-roofing-2/, in that order",
+            clr["id"] in pub["depends_on"] and pub["id"] in red["depends_on"]
+            and clr["section"].startswith("3") and pub["section"].startswith("4")
+            and ids.index(clr["id"]) < ids.index(pub["id"]) < ids.index(red["id"]), (clr, pub["depends_on"], red["depends_on"]))
+    items = {i: by[H + f"14-01-publish-{i:02d}"] for i in (5, 6, 7)}
+    h.check("§7a (e): an open item is Jonie's only when it is a VA task (the map embed); a cited source and a proposed link are Paul's",
+            items[5]["owner"] == "Jonie" and items[6]["owner"] == "Paul" and items[7]["owner"] == "Paul"
+            and "Not a VA task" in items[6]["how"] and "Not a VA task" not in items[5]["how"], items)
+    md = (d / "handoffs" / "VA-WORKLIST.md").read_text(encoding="utf-8")
+    h.check("§7a: superseded rows leave the working sections and are listed once under 'Superseded — do not do these'",
+            "## Superseded — do not do these" in md and md.split("## Superseded")[0].count("seo_title-06") == 0
+            and md.split("## Superseded")[1].count("seo_title-06") == 1, md[-700:])
+    code, out = h.sh("python3 scripts/worklist.py build r3wl-apex")
+    h.check("§7a: building again changes nothing (no second supersession)", "superseded by the approved plan" not in out, out)
+
+
+SCENARIOS = [t_worklist_fields_and_validator, t_worklist_verify_reopens, t_worklist_apex_rules]

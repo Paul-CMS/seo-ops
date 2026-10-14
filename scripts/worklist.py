@@ -95,8 +95,9 @@ def rows(slug):
         md = f.with_suffix(".md")
         who = re.search(r"\*\*For:\*\* (\w+)", md.read_text()) if md.exists() else None
         owner = who.group(1) if who else (S.GATES["change_kinds"].get(kind) or {}).get("owner", "Gwen")
-        sec = section_of(kind, hid, st)
+        sec0 = section_of(kind, hid, st)
         for r in read_csv(f):
+            sec = 3 if r.get("field", "").lower().startswith("clear the slug") else sec0   # §7a: slug changes precede publishing
             out.append({"section": sec, "ref": r["ref"], "owner": owner, "added": added, "kind": kind,
                         **{k: r.get(k, "") for k in COLS[5:]}, "_hid": hid})
     return out
@@ -132,6 +133,44 @@ def header(path):
         if ":" in line:
             k, v = line.split(":", 1)
             out[k.strip()] = v.strip()
+    return out
+
+
+VA_TASK = re.compile(r"\[Map\b|map embed|\bembed\b|\bimage\b|\balt text\b|\bupload\b|\bmenu\b|\bredirect\b|\bplugin\b", re.I)
+
+
+def open_item_owner(text):
+    """§7a (e): who resolves an open item. Jonie only for a VA task (a map embed, images, menus …); a proposed link
+    ([LINK → …]) and every missing fact, client answer or cited source is Paul's — the system's researcher looks up public
+    facts first. Never Jonie by default."""
+    return "Jonie" if VA_TASK.search(text or "") else "Paul"
+
+
+def derived(c):
+    """{ref: {by, reason}} — rows a recorded plan already makes pointless, so they are superseded, never left open:
+    (a) a row that acts on a URL a planned page replaces (a link fix to /metal-roofing-2/ when the page moves to
+        /metal-roofing/; an SEO title for the old URL) — the 301 and publish rows do the job;
+    (d) an SEO title or meta row for a page shipped from its approved draft — the publish row carries both values."""
+    out = {}
+    replaced = {}
+    for pid, p in c.st["pages"].items():
+        for u in list(p.get("replaces") or []) + list((p.get("publish") or {}).get("replaces") or []):
+            replaced[norm_url(u)] = pid
+    shipped = {norm_url(c.st["pages"][pid].get("url")): pid for pid in c.pub}
+    for r in c.raw:
+        if r["ref"] in c.sup or r["field"] in ("301", "publish", "open item") or r["field"].startswith("link table"):
+            continue
+        hit = replaced.get(norm_url(r["new"])) or replaced.get(norm_url(r["url"]))
+        if hit:
+            by = c.pub.get(hit, "")
+            out[r["ref"]] = {"by": by, "reason": f"derived: it acts on {r['new'] if norm_url(r['new']) in replaced else r['url']}, "
+                                                 f"which the approved plan replaces with {c.st['pages'][hit].get('url')} "
+                                                 f"(the publish row and its 301 do this)"}
+            continue
+        if re.search(r"title|meta", r["field"], re.I) and norm_url(r["url"]) in shipped:
+            pid = shipped[norm_url(r["url"])]
+            out[r["ref"]] = {"by": c.pub[pid], "reason": f"derived: the page is shipped from its approved draft, whose title and meta "
+                                                         f"description are in the publish row {c.pub[pid]}"}
     return out
 
 
@@ -181,12 +220,16 @@ def enrich(r, c):
                  "Add each 301 redirect row listed for this page at the same time.", "Tick this row done."]
         check = f"{r['new']} loads (200), is published (not a draft), and its page source shows the title above."
     elif field == "open item":
-        task = f"Resolve the open item on the {name} page before it is published"
+        owner = open_item_owner(r["old"])
+        task = f"Resolve the open item on the {name} page before it is published" + ("" if owner == "Jonie" else f" ({owner} decides)")
         where = " · ".join(x for x in (live, f"edit: {edit}" if edit else "") if x)
         values = r["new"] or r["old"]
-        steps = [f"Open the draft: {edit or r['url']} and find the line: {r['old'][:120]}", "Do what 'values' says "
-                 "(find the answer, or ask Paul — do not guess).", "Replace the [NEED: …] line with the answer and remove "
-                 "the 'Open items on this page' notice once none are left.", "Tick this row done."]
+        steps = ([f"Open the draft: {edit or r['url']} and find the line: {r['old'][:120]}", "Do what 'values' says.",
+                  "Replace the line with the result and remove the 'Open items on this page' notice once none are left.",
+                  "Tick this row done."] if owner == "Jonie" else
+                 [f"The line on the draft: {r['old'][:120]}", "Not a VA task: Paul supplies the answer or decision (the system's "
+                  "researcher looks up public facts first). Nothing to do here until it is settled.",
+                  "The page is revised in the next run and this row is then closed."])
         check = "The draft no longer contains that [NEED: …] line."
     elif field == "301":
         task = f"Add a 301 redirect from {r['url'] if kind != 'slug' else r['old']} to {r['new']}"
@@ -236,6 +279,8 @@ def enrich(r, c):
     if field == "publish":
         dep = [x["ref"] for x in c.raw if x["field"] == "open item" and x["decision_map_ref"] == r["decision_map_ref"]
                and x["ref"] not in c.sup]
+        dep += [x["ref"] for x in c.raw if x["field"].lower().startswith("clear the slug") and x["ref"] not in c.sup
+                and norm_url(x["url"]) == norm_url(r["new"])]   # §7a (b): clear the slug → publish → 301 from the old URL
     elif field == "301":
         tp = c.by_url.get(norm_url(r["new"]))
         dep = [c.pub[tp]] if tp in c.pub else []
@@ -254,6 +299,8 @@ def enrich(r, c):
         status = "open"
     elif status == "verified":
         status = "done"
+    if field == "open item":
+        r = {**r, "owner": open_item_owner(r["old"])}
     return {**r, "id": r["ref"], "task": task, "where": where, "how": " ".join(f"{i}. {s}" for i, s in enumerate(steps, 1)),
             "values": values, "depends_on": ", ".join(dep), "done_check": check, "source": src, "status": status, "note": note}
 
@@ -397,6 +444,15 @@ def problems(slug):
                 a, b = st["pages"].get(pid) or {}, st["pages"].get(target) or {}
                 if a.get("state") in LIVE_STATES and b.get("state") in LIVE_STATES:
                     err.append(("-", "links", f"{pid} → {target} link-table row can be handed over now (publish.py pending)"))
+    for ref, d in derived(c).items():
+        err.append((ref, "stale", d["reason"].replace("derived: ", "") + " — `worklist.py build` supersedes it"))
+    for r in live_rows:
+        if r["field"].lower().startswith("clear the slug"):
+            pr = [x for x in pubs if norm_url(x["new"]) == norm_url(r["url"])]
+            if pr and r["id"] not in pr[0]["depends_on"]:
+                err.append((pr[0]["id"], "order", f"does not depend on {r['id']}, which clears its slug first"))
+            if not pr:
+                err.append((r["id"], "order", f"clears {r['url']} but no publish row uses that URL"))
     for r in live_rows:
         for k in ("where", "how", "done_check", "task"):
             if not (r.get(k) or "").strip():
@@ -474,7 +530,19 @@ def order(rows_):
     return out
 
 
+def apply_derived(slug):
+    """Record the derived supersessions (a, d) in worklist-superseded.json — with their reasons, once. Returns them."""
+    c = Ctx(slug)
+    new = derived(c)
+    if new:
+        data = superseded(slug)
+        data.update({ref: {**d, "at": now()} for ref, d in new.items()})
+        write_json(client_dir(slug) / "handoffs" / "worklist-superseded.json", data)
+    return new
+
+
 def build(slug):
+    apply_derived(slug)
     st = S.load(slug)
     d = client_dir(slug) / "handoffs"
     d.mkdir(parents=True, exist_ok=True)
@@ -519,7 +587,7 @@ def build(slug):
         md += ["> **Sections 3 Redirects, 4 Publish and 5 After publish come in one handover**, once every service and "
                "location page is a WordPress draft" + (f" ({held} row(s) waiting)." if held else "."), ""]
     for sec, title in SECTIONS.items():
-        mine = [r for r in shown if r["section"] == sec]
+        mine = [r for r in shown if r["section"] == sec and r["status"] != "superseded"]
         if not mine:
             continue
         md += [f"## {sec} · {title}", "", GUIDE[sec], "",
@@ -532,6 +600,12 @@ def build(slug):
             md.append(f"| {r['id']} | {cell(r['task'])} | {cell(r['where'])} | {how} | {cell(r['values'])} | "
                       f"{cell(r['depends_on']) or '—'} | {cell(r['done_check'])} | {r['owner']} | "
                       f"{r['status']}{(' — ' + cell(r['note'])) if r.get('note') else ''} |")
+        md.append("")
+    gone = [r for r in shown if r["status"] == "superseded"]
+    if gone:
+        md += ["## Superseded — do not do these", "", "A newer decision replaced each row below. Skip them.", "",
+               "| ID | Was | Replaced by / why |", "|---|---|---|"]
+        md += [f"| {r['id']} | {(r['task'] or '').replace('|', '/')} | {(r['note'] or '').replace('|', '/')} |" for r in gone]
         md.append("")
     (d / "VA-WORKLIST.md").write_text("\n".join(md) + "\n")
     for f in d.glob("H-*.md"):   # the per-handoff documents are superseded by the worklist
@@ -555,7 +629,11 @@ def main():
         return cmd_check(a)
     if a.cmd == "supersede":
         return cmd_supersede(a)
+    pre = len(superseded(a.slug))
     r = build(a.slug)
+    done_now = len(superseded(a.slug)) - pre
+    if done_now:
+        print(f"{done_now} row(s) superseded by the approved plan (reasons in handoffs/worklist-superseded.json)")
     print("no VA items yet" if r is None else f"VA Worklist: {r['rows']} row(s), {r['done']} done"
           + (f", {r['held']} waiting for the handover" if r["held"] else ""))
 
