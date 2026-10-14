@@ -1769,11 +1769,11 @@
         "drafts": {
           "state": "approved",
           "by": "Paul",
-          "at": "2026-10-14T13:29:26-05:00",
+          "at": "2026-10-14T14:46:54-05:00",
           "note": null,
           "files": {
             "clients/home-mobile-medical/build/pilot/drafts/svc-stair-lifts.md": "eb5499249a3e",
-            "clients/home-mobile-medical/build/pilot/drafts/loc-beaufort-sc.md": "2534ab32a0c6",
+            "clients/home-mobile-medical/build/pilot/drafts/loc-beaufort-sc.md": "06e9fd05337c",
             "clients/home-mobile-medical/build/pilot/drafts-review.csv": "300bededfb1f"
           },
           "conditions": [],
@@ -2115,7 +2115,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T14:45:34-05:00",
+  "updated": "2026-10-14T14:46:54-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
@@ -2254,10 +2254,5 @@
   "url_drops": {
     "/service-area/": "https://homemobilemedical.com/",
     "/services/": "https://homemobilemedical.com/"
-  },
-  "review_pause": {
-    "run_id": "20261014-144522-build-adbe",
-    "step": "build:drafts",
-    "at": "2026-10-14T14:45:34-05:00"
   }
 }
