@@ -6206,3 +6206,103 @@ Changes: 13 · Summary: build:ship: link wheel planned (20 pages); WordPress dra
 - CHANGE #929 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (29).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 3bf0bd54f475 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #930 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (30).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (30).md | result: done · renamed and moved, nothing deleted
 - CHANGE #931 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (30).md | new: Apex Roofing of the Lowcountry - Status.md · sha 276094c087f8 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261013-203031-build-60ad · STARTED · /build · 2026-10-13T20:30:31-05:00
+Step: build:handoff · session 6452a1a1-8eb1-4af6-a6b8-9452a29eac2d
+Gates checked: discovery_signed_off, pages_drafted, wordpress_connected
+- CHANGE #932 [publish] https://apexroofingtlc.com/?page_id=1625 | publish | old: (draft) | new: [REDACTED]/roof-replacement/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-01
+- CHANGE #933 [publish] https://apexroofingtlc.com/?page_id=1625 | open item | old: [NEED: same corrosion-resistant flashing and synthetic underlayment on a full replacement?] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-02
+- CHANGE #934 [publish] https://apexroofingtlc.com/?page_id=1625 | open item | old: [NEED: cited lifespan source for asphalt shingles in coastal SC] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-03
+- CHANGE #935 [publish] https://apexroofingtlc.com/?page_id=1626 | publish | old: (draft) | new: [REDACTED]/roof-installation/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-04
+- CHANGE #936 [publish] https://apexroofingtlc.com/?page_id=1626 | open item | old: [NEED: how Apex fits a builder's schedule on new construction (for example dry-in timing and return trips for trim-out), if it will be stated] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-05
+- CHANGE #937 [publish] https://apexroofingtlc.com/?page_id=1626 | open item | old: [NEED: does Apex install drip edge on every new roof? — client] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-06
+- CHANGE #938 [publish] https://apexroofingtlc.com/?page_id=1626 | open item | old: [NEED: typical install time on a new home, if a figure will be stated] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-07
+- CHANGE #939 [publish] https://apexroofingtlc.com/?page_id=1626 | open item | old: [NEED: synthetic underlayment on new installs too?] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-08
+- CHANGE #940 [publish] https://apexroofingtlc.com/?page_id=1627 | publish | old: (draft) | new: [REDACTED]/roof-inspections/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-09
+- CHANGE #941 [publish] https://apexroofingtlc.com/?page_id=1627 | open item | old: [NEED: client confirms this inspection type] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-10
+- CHANGE #942 [publish] https://apexroofingtlc.com/?page_id=1627 | open item | old: [NEED: client confirms this inspection type] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-11
+- CHANGE #943 [publish] https://apexroofingtlc.com/?page_id=1627 | open item | old: [NEED: client confirms this inspection type] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-12
+- CHANGE #944 [publish] https://apexroofingtlc.com/?page_id=1627 | open item | old: [NEED: are inspections free, and is a stand-alone written inspection report priced separately?] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-13
+- CHANGE #945 [publish] https://apexroofingtlc.com/?page_id=1627 | open item | old: [NEED: cited source on how often a roof should be inspected — a roofing trade body's guidance (researcher)] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-14
+- CHANGE #946 [publish] https://apexroofingtlc.com/?page_id=1628 | publish | old: (draft) | new: [REDACTED]/emergency-roof-repair/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-15
+- CHANGE #947 [publish] https://apexroofingtlc.com/?page_id=1628 | open item | old: [NEED: does Apex tarp or patch temporarily in an emergency?] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-16
+- CHANGE #948 [publish] https://apexroofingtlc.com/?page_id=1628 | open item | old: [NEED: client confirms this emergency type] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-17
+- CHANGE #949 [publish] https://apexroofingtlc.com/?page_id=1628 | open item | old: [NEED: client confirms this emergency type] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-18
+- CHANGE #950 [publish] https://apexroofingtlc.com/?page_id=1628 | open item | old: [NEED: client confirms this emergency type] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-19
+- CHANGE #951 [publish] https://apexroofingtlc.com/?page_id=1628 | open item | old: [NEED: client confirms this emergency type] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-20
+- CHANGE #952 [publish] https://apexroofingtlc.com/?page_id=1628 | open item | old: [NEED: client confirms this emergency type] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-21
+- CHANGE #953 [publish] https://apexroofingtlc.com/?page_id=1629 | publish | old: (draft) | new: [REDACTED]/metal-roofing/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-22
+- CHANGE #954 [publish] https://apexroofingtlc.com/metal-roofing-2/ | 301 | old: [REDACTED]/metal-roofing-2/ | new: [REDACTED]/metal-roofing/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-23
+- CHANGE #955 [publish] https://apexroofingtlc.com/?page_id=1629 | open item | old: [NEED: metal install steps — underlayment, panel seaming, trim] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-24
+- CHANGE #956 [publish] https://apexroofingtlc.com/?page_id=1629 | open item | old: [NEED: cited source on installing metal over existing shingles in SC — researcher] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-25
+- CHANGE #957 [publish] https://apexroofingtlc.com/?page_id=1629 | open item | old: [NEED: cited lifespan source for standing seam metal — researcher] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-26
+- CHANGE #958 [publish] https://apexroofingtlc.com/?page_id=1630 | publish | old: (draft) | new: [REDACTED]/slate-roofing/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-27
+- CHANGE #959 [publish] https://apexroofingtlc.com/?page_id=1630 | open item | old: [NEED: slate install steps — underlayment, fastening, flashing, if they are to be described] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-28
+- CHANGE #960 [publish] https://apexroofingtlc.com/?page_id=1631 | publish | old: (draft) | new: [REDACTED]/skylights/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-29
+- CHANGE #961 [publish] https://apexroofingtlc.com/?page_id=1631 | open item | old: [NEED: skylight install steps beyond cutting and framing the opening, if they are to be described] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-30
+- CHANGE #962 [publish] https://apexroofingtlc.com/?page_id=1631 | open item | old: [NEED: confirm Apex installs Velux and FAKRO — name the brands here only if yes] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-31
+- CHANGE #963 [publish] https://apexroofingtlc.com/?page_id=1631 | open item | old: [NEED: cited source on skylight energy performance — researcher] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-32
+- CHANGE #964 [publish] https://apexroofingtlc.com/?page_id=1631 | open item | old: [NEED: cited manufacturer guidance on skylights for standing seam metal roofs — researcher] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-33
+- CHANGE #965 [publish] https://apexroofingtlc.com/?page_id=1632 | publish | old: (draft) | new: [REDACTED]/hilton-head-island/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-34
+- CHANGE #966 [publish] https://apexroofingtlc.com/?page_id=1632 | open item | old: [NEED: city-level map embed of Hilton Head Island, SC — not the Google Business Profile map] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-35
+- CHANGE #967 [publish] https://apexroofingtlc.com/?page_id=1633 | publish | old: (draft) | new: [REDACTED]/okatie/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-36
+- CHANGE #968 [publish] https://apexroofingtlc.com/?page_id=1633 | open item | old: [NEED: city-level map embed of Okatie, SC — not the Google Business Profile map] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-37
+- CHANGE #969 [publish] https://apexroofingtlc.com/?page_id=1634 | publish | old: (draft) | new: [REDACTED]/pritchardville/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-38
+- CHANGE #970 [publish] https://apexroofingtlc.com/?page_id=1634 | open item | old: [NEED: city-level map embed of Pritchardville, SC — not the Google Business Profile map] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-39
+- CHANGE #971 [publish] https://apexroofingtlc.com/?page_id=1635 | publish | old: (draft) | new: [REDACTED]/beaufort/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-40
+- CHANGE #972 [publish] https://apexroofingtlc.com/?page_id=1635 | open item | old: [LINK → /metal-roofing/ · reader wants Apex's metal-roofing service page] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-41
+- CHANGE #973 [publish] https://apexroofingtlc.com/?page_id=1635 | open item | old: [NEED: city-level map embed of Beaufort, SC — not the Google Business Profile map] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-42
+- CHANGE #974 [publish] https://apexroofingtlc.com/?page_id=1636 | publish | old: (draft) | new: [REDACTED]/port-royal/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-43
+- CHANGE #975 [publish] https://apexroofingtlc.com/?page_id=1636 | open item | old: [NEED: city-level map embed of Port Royal, SC — not the Google Business Profile map] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-44
+- CHANGE #976 [publish] https://apexroofingtlc.com/?page_id=1637 | publish | old: (draft) | new: [REDACTED]/ladys-island/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-45
+- CHANGE #977 [publish] https://apexroofingtlc.com/?page_id=1637 | open item | old: [NEED: city-level map embed of Lady's Island, SC — not the Google Business Profile map] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-46
+- CHANGE #978 [publish] https://apexroofingtlc.com/?page_id=1638 | publish | old: (draft) | new: [REDACTED]/st-helena-island/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-47
+- CHANGE #979 [publish] https://apexroofingtlc.com/?page_id=1638 | open item | old: [NEED: city-level map embed of St. Helena Island, SC — not the Google Business Profile map] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-48
+- CHANGE #980 [publish] https://apexroofingtlc.com/?page_id=1639 | publish | old: (draft) | new: [REDACTED]/fripp-island/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-49
+- CHANGE #981 [publish] https://apexroofingtlc.com/?page_id=1639 | open item | old: [NEED: city-level map embed of Fripp Island, SC — not the Google Business Profile map] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-50
+- CHANGE #982 [publish] https://apexroofingtlc.com/?page_id=1640 | publish | old: (draft) | new: [REDACTED]/hardeeville/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-51
+- CHANGE #983 [publish] https://apexroofingtlc.com/?page_id=1640 | open item | old: [NEED: city-level map embed of Hardeeville, SC — not the Google Business Profile map] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-52
+- CHANGE #984 [publish] https://apexroofingtlc.com/?page_id=1641 | publish | old: (draft) | new: [REDACTED]/ridgeland/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-53
+- CHANGE #985 [publish] https://apexroofingtlc.com/?page_id=1641 | open item | old: [NEED: city-level map embed of Ridgeland, SC — not the Google Business Profile map] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-54
+- CHANGE #986 [publish] https://apexroofingtlc.com/?page_id=1642 | publish | old: (draft) | new: [REDACTED]/levy/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-55
+- CHANGE #987 [publish] https://apexroofingtlc.com/?page_id=1642 | open item | old: [NEED: city-level map embed of Levy, SC — not the Google Business Profile map] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-56
+- CHANGE #988 [publish] https://apexroofingtlc.com/?page_id=1643 | publish | old: (draft) | new: [REDACTED]/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-57
+- CHANGE #989 [publish] https://apexroofingtlc.com/?page_id=1643 | open item | old: [NEED: 6–9 real Apex project photos from the client, each with its town and roof type, for the gallery] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-58
+- CHANGE #990 [publish] https://apexroofingtlc.com/?page_id=1643 | open item | old: [NEED: Google Maps share link for the GBP (Brand Guide F hasMap is empty)] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-59
+- CHANGE #991 [publish] https://apexroofingtlc.com/?page_id=1644 | publish | old: (draft) | new: [REDACTED]/about/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-60
+- CHANGE #992 [publish] https://apexroofingtlc.com/?page_id=1644 | open item | old: [NEED: photo of Ralph and Pierce Brehany] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-61
+- CHANGE #993 [publish] https://apexroofingtlc.com/?page_id=1644 | open item | old: [NEED: their job titles, only if the client wants titles published] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-62
+- CHANGE #994 [publish] https://apexroofingtlc.com/?page_id=1644 | open item | old: [NEED: Ralph's or Pierce's own account of how and why they started Apex in 2015 — open client question fact:about:company_story] | new:  | result: HANDOFF ISSUED to Jonie | ref H-2026-10-13-13-publish-63
+### HANDOFF · /build · 2026-10-13 · run 20261013-203031-build-60ad
+## Handoff Log
+
+**Done**
+- `publish.py handoff --run 20261013-203031-build-60ad apex-roofing-of-the-lowcountry` exited 0. Output: "H-2026-10-13-13-publish: 63 item(s) → clients/apex-roofing-of-the-lowcountry/handoffs/H-2026-10-13-13-publish.md and .csv"; "one living publish handoff for 20 page(s) in 3 batch(es) → Jonie publishes them together".
+- VA-WORKLIST.md and VA-WORKLIST.csv exist in clients/apex-roofing-of-the-lowcountry/handoffs/.
+
+**Refused**
+- None.
+
+**Not done**
+- VA-WORKLIST.csv has no "3 Redirects" or "5 After publish" section. Section rows found: 2 Blockers = 46, 4 Publish = 5, 6 Manual lookups = 11 (62 rows total). The brief for this step expected sections 3 Redirects, 4 Publish and 5 After publish; these two sections need checking before Jonie relies on the worklist.
+- The Blockers and Manual lookups sections are present in the worklist although this step did not ask for them.
+
+**Open waits**
+- Confirm why sections 3 Redirects and 5 After publish are absent from VA-WORKLIST.
+
+**Next**
+- Paul or the system session reviews the VA-WORKLIST section list against the expected 3 / 4 / 5 layout.
+- Jonie publishes the 20 pages in the living publish handoff H-2026-10-13-13-publish, per the handoff script output.
+### END HANDOFF
+## RUN 20261013-203031-build-60ad · FINISHED · 2026-10-13T20:30:57-05:00
+Changes: 63 · Summary: build:handoff: publish handoff H-2026-10-13-13-publish (63 items, 20 pages); VA-WORKLIST has sections 2, 4, 6 only (no 3 Redirects or 5 After publish)
+- CHANGE #995 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (24).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (24).md | result: done · renamed and moved, nothing deleted
+- CHANGE #996 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (24).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 49f17a40c6b8 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #997 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (30).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (30).md | result: done · renamed and moved, nothing deleted
+- CHANGE #998 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (30).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha c94677d4f97b | result: done · copied (Drive for desktop syncs it)
+- CHANGE #999 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (31).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (31).md | result: done · renamed and moved, nothing deleted
+- CHANGE #1000 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (31).md | new: Apex Roofing of the Lowcountry - Status.md · sha e97f8d813a7b | result: done · copied (Drive for desktop syncs it)
+- CHANGE #1001 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - VA Worklist - 2026-10-13.md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.md | new: _Archive/Apex Roofing of the Lowcountry - VA Worklist - 2026-10-13.md | result: done · renamed and moved, nothing deleted
+- CHANGE #1002 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - VA Worklist - 2026-10-13.md | new: Apex Roofing of the Lowcountry - VA Worklist.md · sha b9e0e0f17eab | result: done · copied (Drive for desktop syncs it)
+- CHANGE #1003 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - VA Worklist - 2026-10-09 (2).csv | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.csv | new: _Archive/Apex Roofing of the Lowcountry - VA Worklist - 2026-10-09 (2).csv | result: done · renamed and moved, nothing deleted
+- CHANGE #1004 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - VA Worklist.csv | upload | old: previous version archived as Apex Roofing of the Lowcountry - VA Worklist - 2026-10-09 (2).csv | new: Apex Roofing of the Lowcountry - VA Worklist.csv · sha 9c60a55a1879 | result: done · copied (Drive for desktop syncs it)

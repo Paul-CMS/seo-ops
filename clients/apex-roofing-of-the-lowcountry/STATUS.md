@@ -1,17 +1,17 @@
 # Apex Roofing of the Lowcountry - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each)**
-- **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:ship finished (run 20261013-202810-build-fa8e) and that stage is in review mode — lo; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
-- **Next action:** `/next apex-roofing-of-the-lowcountry` once the wait above is over
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
+- **What is happening now:** waiting for Jonie to publish the pages (H-2026-10-09-10-publish). When the worksheet comes back, this checks batch pilot's live pages against their approved files, adds alt text and updates the living handoff
+- **Waiting on:** Jonie — waiting for Jonie to publish the pages (H-2026-10-09-10-publish). When the worksheet comes; Paul — WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once w; Paul — SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM
+- **Next action:** `/build apex-roofing-of-the-lowcountry published pilot` once the wait above is over
 
-_Generated 2026-10-13T20:29 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-13T20:30 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:ship finished (run 20261013-202810-build-fa8e) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build apex-roofing-of-the-lowcountry handoff (every page is a WordPress draft: one living publish handoff to Jonie for all of them (with their redirects and the open technical blockers), published together) | 2026-10-13 | /next apex-roofing-of-the-lowcountry |
+| Jonie | waiting for Jonie to publish the pages (H-2026-10-09-10-publish). When the worksheet comes back, this checks batch pilot's live pages against their approved files, adds alt text and updates the living handoff | 2026-10-13 | /build apex-roofing-of-the-lowcountry published pilot |
 | Paul | WordPress: connected (SEOPress 10.0.1). The login is an Administrator; Paul decides once whether Jonie switches it to an Editor. (ref Decision Sheet) | 2026-10-08 | wordpress_login |
 | Paul | SEM-1: Paul wants the Roof Repair emergency-leak FAQ linked to /emergency-roof-repair/. CM-022 keeps links on service pages in tables/H3s, never in prose; an in-answer link is a contextual-link exception proposed in Finish for Paul's approval, and CM-005 bars Build from placing links. Applying SEM-1 in Build leaves a link placeholder in the answer; the link itself is proposed as the page's one CM-022 exception in Finish. Confirm that path, or name another. | 2026-10-09 | pilot_emergency_faq_link_cm022 |
 | Client (via Paul) | For 7 pages (svc-roof-repair, svc-roof-replacement, svc-roof-inspections, svc-emergency-roof-repair, svc-metal-roofing, svc-slate-roofing, svc-skylights): We have What the service includes (scope, inclusions) as "Live /roof-repair/ lists: shingle repair and replacement; flashing repair; ridge cap an | 2026-10-11 | fact:svc-roof-replacement:service_scope |
@@ -28,15 +28,6 @@ _Generated 2026-10-13T20:29 by the system — do not edit. Start every session i
 | Client (via Paul) | Team size / trucks / jobs completed — what should we say? If it depends, on what? | 2026-10-11 | fact:d:team_size |
 | Client (via Paul) | Customers mention this about How and why the company started (owner's own account): "What more could you want than good work and a family owned business!" (None review(s)). Can we say that? yes / no — correction | 2026-10-11 | fact:about:company_story |
 | Paul | h1 drafts review (build/h1/drafts-review.csv), 3 questions: (1) About H2 'Licences' -> 'Licenses' (rec. change); (2) homepage Testimonials H2 approved 'What Do Lowcountry Homeowners Say About Apex?' reworded in draft to 'What Do Homeowners Say About Working With Apex?' (rec. keep draft, CM-024); (3) homepage FAQ H2 approved 'What Do Homeowners Ask Lowcountry Roofers Before They Call?' reworded to 'What Do Homeowners Ask Roofers in Beaufort and Jasper Counties Before They Call?' (rec. keep draft). Brand Guide C3 holds the approved wording for all three; it changes only at a later write-back. | 2026-10-13 | h1_drafts_review_h2s |
-
-## Waiting on (not blocking)
-
-_Open, but the next action above goes ahead without them._
-
-| Who | What | Since | Reference |
-|---|---|---|---|
-| Jonie | waiting for Jonie to publish the pages (H-2026-10-09-10-publish). When the worksheet comes back, this checks batch pilot's live pages against their approved files, adds alt text and updates the living handoff | 2026-10-13 | /build apex-roofing-of-the-lowcountry published pilot |
-| Jonie | blockers not cleared: H-2026-10-08-03-redirect-01 is issued; H-2026-10-08-03-redirect-02 is issued; H-2026-10-08-04-broken_link-01 is issued; H-2026-10-08-04-broken_link-02 is issued; H-2026-10-08-04-broken_link-03 is issued (+41 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-13 | /verify apex-roofing-of-the-lowcountry |
 | Jonie | other handoff — 5 of 5 item(s) open | 2026-10-05 | H-2026-10-05-01-other |
 | Gwen | manual lookup handoff — 5 of 5 item(s) open | 2026-10-05 | H-2026-10-05-02-manual_lookup |
 | Jonie | redirect handoff — 2 of 2 item(s) open | 2026-10-08 | H-2026-10-08-03-redirect |
@@ -49,6 +40,19 @@ _Open, but the next action above goes ahead without them._
 | Jonie | publish handoff — 2 of 2 item(s) open | 2026-10-09 | H-2026-10-09-10-publish |
 | Jonie | other handoff — 1 of 1 item(s) open | 2026-10-09 | H-2026-10-09-11-other |
 | Jonie | publish handoff — 1 of 1 item(s) open | 2026-10-09 | H-2026-10-09-12-publish |
+| Jonie | publish handoff — 63 of 63 item(s) open | 2026-10-13 | H-2026-10-13-13-publish |
+
+## Waiting on (not blocking)
+
+_Open, but the next action above goes ahead without them._
+
+| Who | What | Since | Reference |
+|---|---|---|---|
+| Jonie | waiting for Jonie to publish the pages (H-2026-10-13-13-publish). When the worksheet comes back, this checks batch services's live pages against their approved files, adds alt text and updates the living handoff | 2026-10-13 | /build apex-roofing-of-the-lowcountry published services |
+| Jonie | waiting for Jonie to publish the pages (H-2026-10-13-13-publish). When the worksheet comes back, this checks batch locations's live pages against their approved files, adds alt text and updates the living handoff | 2026-10-13 | /build apex-roofing-of-the-lowcountry published locations |
+| Jonie | waiting for Jonie to publish the pages (H-2026-10-13-13-publish). When the worksheet comes back, this checks batch h1's live pages against their approved files, adds alt text and updates the living handoff | 2026-10-13 | /build apex-roofing-of-the-lowcountry published h1 |
+| Jonie | blockers not cleared: H-2026-10-08-03-redirect-01 is issued; H-2026-10-08-03-redirect-02 is issued; H-2026-10-08-04-broken_link-01 is issued; H-2026-10-08-04-broken_link-02 is issued; H-2026-10-08-04-broken_link-03 is issued (+41 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-13 | /verify apex-roofing-of-the-lowcountry |
+| Paul | batches not yet built and written back: pilot, services, locations, h1 | 2026-10-13 | /where apex-roofing-of-the-lowcountry |
 
 ## Settled decisions — never re-raised
 
@@ -132,6 +136,7 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Ape
 - **H-2026-10-09-10-publish** (Jonie) — publish: 2 of 2 open, issued 2026-10-09
 - **H-2026-10-09-11-other** (Jonie) — other: 1 of 1 open, issued 2026-10-09
 - **H-2026-10-09-12-publish** (Jonie) — publish: 1 of 1 open, issued 2026-10-09
+- **H-2026-10-13-13-publish** (Jonie) — publish: 63 of 63 open, issued 2026-10-13
 
 ## Data on file not used yet
 
@@ -167,4 +172,4 @@ _None — every input on file has been read._
 | build:brief | 2 | 612,000 | $0.00 |
 | **total** | 2 | 612,000 | $0.00 |
 
-Last run: /build 2026-10-13T20:29 — build:ship: link wheel planned (20 pages); WordPress drafts created for batches locations (11) and h1 (2); no handoff yet
+Last run: /build 2026-10-13T20:30 — build:handoff: publish handoff H-2026-10-13-13-publish (63 items, 20 pages); VA-WORKLIST has sections 2, 4, 6 only (no 3 Redirects or 5 After publish)

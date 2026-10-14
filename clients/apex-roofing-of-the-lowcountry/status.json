@@ -2228,7 +2228,7 @@
           "svc-slate-roofing",
           "svc-skylights"
         ],
-        "state": "drafted",
+        "state": "handed_off",
         "briefs": {
           "state": "approved",
           "by": "Paul",
@@ -2341,7 +2341,8 @@
         "content_written_back": {
           "at": "2026-10-12T15:06:32-05:00",
           "run": "20261012-150342-build-474a"
-        }
+        },
+        "handoff": "H-2026-10-13-13-publish"
       },
       {
         "id": "locations",
@@ -2360,7 +2361,7 @@
           "loc-ridgeland",
           "loc-levy"
         ],
-        "state": "drafted",
+        "state": "handed_off",
         "briefs": {
           "state": "approved",
           "by": "Paul",
@@ -2460,7 +2461,8 @@
             }
           }
         },
-        "sem_findings": 0
+        "sem_findings": 0,
+        "handoff": "H-2026-10-13-13-publish"
       },
       {
         "id": "h1",
@@ -2470,7 +2472,7 @@
           "home",
           "about"
         ],
-        "state": "drafted",
+        "state": "handed_off",
         "briefs": {
           "state": "approved",
           "by": "Paul",
@@ -2551,7 +2553,8 @@
           "at": "2026-10-13T14:52:20-05:00",
           "run": "20261013-144954-build-6134"
         },
-        "sem_findings": 0
+        "sem_findings": 0,
+        "handoff": "H-2026-10-13-13-publish"
       }
     ],
     "pilot_corrections_applied": {
@@ -2771,12 +2774,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-202810-build-fa8e",
+    "run_id": "20261013-203031-build-60ad",
     "command": "build",
-    "finished": "2026-10-13T20:29:22-05:00",
-    "result": "build:ship: link wheel planned (20 pages); WordPress drafts created for batches locations (11) and h1 (2); no handoff yet",
-    "changes": 13,
-    "step": "build:ship",
+    "finished": "2026-10-13T20:30:57-05:00",
+    "result": "build:handoff: publish handoff H-2026-10-13-13-publish (63 items, 20 pages); VA-WORKLIST has sections 2, 4, 6 only (no 3 Redirects or 5 After publish)",
+    "changes": 63,
+    "step": "build:handoff",
     "batch": null
   },
   "spend": {
@@ -2798,7 +2801,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T20:29:22-05:00",
+  "updated": "2026-10-13T20:30:57-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -3152,8 +3155,18 @@
     }
   ],
   "review_pause": {
-    "run_id": "20261013-202810-build-fa8e",
-    "step": "build:ship",
-    "at": "2026-10-13T20:29:22-05:00"
+    "run_id": "20261013-203031-build-60ad",
+    "step": "build:handoff",
+    "at": "2026-10-13T20:30:57-05:00"
+  },
+  "publish_handoff": {
+    "id": "H-2026-10-13-13-publish",
+    "at": "2026-10-13T20:30:40-05:00",
+    "run": "20261013-203031-build-60ad",
+    "batches": [
+      "services",
+      "locations",
+      "h1"
+    ]
   }
 }
