@@ -1,0 +1,681 @@
+{
+ "page": "loc-okatie-sc",
+ "type": "location",
+ "url": "https://homemobilemedical.com/okatie-sc/",
+ "section": "loc-hhi",
+ "built": "2026-10-14T10:19:58-05:00",
+ "services": [],
+ "places": [
+  "Okatie, SC"
+ ],
+ "facts": [
+  {
+   "id": "a-brand-entity-gbp-name-exactly",
+   "label": "Brand entity (GBP name, exactly)",
+   "status": "client_confirmed",
+   "value": "Home Mobile Medical",
+   "source": ""
+  },
+  {
+   "id": "a-gbp-primary-category-the-category-entity",
+   "label": "GBP primary category = the category entity",
+   "status": "paul_approved",
+   "value": "Mobility equipment supplier (supporting Wikimedia subject: Mobility aid, Q6887300). **Primary category only** — no \"Medical equipment supplier\" secondary (Paul 2026-10-07)",
+   "source": ""
+  },
+  {
+   "id": "a-category-variants-4-6",
+   "label": "Category variants (4–6)",
+   "status": "submitted",
+   "value": "Mobility equipment supplier · stair lift installer · stair lift and accessibility lift company · home accessibility lifts · accessibility equipment (grid query language). Excluded: \"medical equipment supplier\" (broad-DME signal, Decisions 007/038)",
+   "source": ""
+  },
+  {
+   "id": "a-storefront-or-sab",
+   "label": "Storefront or SAB",
+   "status": "client_confirmed",
+   "value": "Service-area business. Not customer-facing. The GBP address stays in the site footer only so the site and GBP cross-reference",
+   "source": ""
+  },
+  {
+   "id": "a-area-entity",
+   "label": "Area entity",
+   "status": "paul_approved",
+   "value": "South Carolina Lowcountry (Q3885311)",
+   "source": ""
+  },
+  {
+   "id": "a-area-variants-3-5",
+   "label": "Area variants (3–5)",
+   "status": "submitted",
+   "value": "South Carolina Lowcountry *(reserved)* · the Lowcountry · Beaufort County · Hilton Head Island–Bluffton–Port Royal area · Charleston area",
+   "source": ""
+  },
+  {
+   "id": "a-separator-standard",
+   "label": "Separator standard",
+   "status": "paul_approved",
+   "value": "` - `",
+   "source": ""
+  },
+  {
+   "id": "a-phone",
+   "label": "Phone",
+   "status": "client_confirmed",
+   "value": "(843) 476-1329",
+   "source": ""
+  },
+  {
+   "id": "a-primary-domain-canonical-host-form",
+   "label": "Primary domain (canonical host form)",
+   "status": "internally_verified",
+   "value": "https://homemobilemedical.com/",
+   "source": ""
+  },
+  {
+   "id": "a-legal-entity-name",
+   "label": "Legal entity name",
+   "status": "paul_approved",
+   "value": "Home Mobile Medical",
+   "source": ""
+  },
+  {
+   "id": "a-exact-url-in-the-gbp-website-field",
+   "label": "Exact URL in the GBP Website field",
+   "status": "paul_approved",
+   "value": "https://homemobilemedical.com/",
+   "source": ""
+  },
+  {
+   "id": "d-founding-year-years-in-business",
+   "label": "Founding year / years in business",
+   "status": "client_confirmed",
+   "value": "15+ years of **Jason Workens' experience** — never the brand's age (a directory says the business opened 2023)",
+   "source": "Decision 013"
+  },
+  {
+   "id": "d-history",
+   "label": "History",
+   "status": "client_confirmed",
+   "value": "Jason's former company, Beaufort Medical Equipment, was sold; Home Mobile Medical is not a rebrand of it",
+   "source": "Decision 003"
+  },
+  {
+   "id": "d-ownership",
+   "label": "Ownership",
+   "status": "client_confirmed",
+   "value": "Family-owned; locally owned and operated",
+   "source": "Decision 014; Paul 2026-10-07"
+  },
+  {
+   "id": "d-legal-entity-dba",
+   "label": "Legal entity + DBA",
+   "status": "paul_approved",
+   "value": "Home Mobile Medical; no DBA known",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-licence-numbers-and-classes",
+   "label": "Licence numbers and classes",
+   "status": "paul_approved",
+   "value": "None to publish",
+   "source": "Paul 2026-10-07 (none found)"
+  },
+  {
+   "id": "d-insurance-bonded-status",
+   "label": "Insurance / bonded status",
+   "status": "paul_approved",
+   "value": "None to publish",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-certifications-authorizations-factory-training",
+   "label": "Certifications, authorizations, factory training",
+   "status": "paul_approved",
+   "value": "None. No authorized/certified-dealer wording for any brand",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-brands-installed-and-repaired",
+   "label": "Brands installed and repaired",
+   "status": "paul_approved",
+   "value": "\"We install and repair stair lifts from leading brands such as Stannah, Bruno and Harmar.\" Independent; no authorized/certified-dealer wording",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-association-memberships",
+   "label": "Association memberships",
+   "status": "unknown",
+   "value": "None known",
+   "source": ""
+  },
+  {
+   "id": "d-warranty-terms",
+   "label": "Warranty terms",
+   "status": "client_confirmed",
+   "value": "Manufacturer's warranty only; no Home Mobile Medical warranty",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-guarantees",
+   "label": "Guarantees",
+   "status": "client_confirmed",
+   "value": "None",
+   "source": ""
+  },
+  {
+   "id": "d-awards-and-rankings",
+   "label": "Awards and rankings",
+   "status": "unknown",
+   "value": "None",
+   "source": ""
+  },
+  {
+   "id": "d-google-rating-and-review-count-date-checked",
+   "label": "Google rating and review count (date checked)",
+   "status": "internally_verified",
+   "value": "2.9 stars from 19 Google reviews (checked 2026-10-08)",
+   "source": "DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23"
+  },
+  {
+   "id": "d-team-size-trucks-jobs-completed",
+   "label": "Team size / trucks / jobs completed",
+   "status": "client_confirmed",
+   "value": "Jason plus one helper. Jason personally supervises every installation",
+   "source": "Paul 2026-10-07; Decision 015"
+  },
+  {
+   "id": "d-installation-time",
+   "label": "Installation time",
+   "status": "client_confirmed",
+   "value": "Usually one day, about 3–4 hours; same-day installation **in most cases**",
+   "source": "Paul 2026-10-07; Decision 016"
+  },
+  {
+   "id": "d-financing-available-provider-terms",
+   "label": "Financing — available, provider, terms",
+   "status": "client_confirmed",
+   "value": "Available. No provider, rates or terms published",
+   "source": "Decision 017"
+  },
+  {
+   "id": "d-free-estimate-and-what-free-means",
+   "label": "Free estimate — and what free means",
+   "status": "client_confirmed",
+   "value": "Free in-home estimate. Can also quote from a photo of the stairs (priced by stair count)",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-services",
+   "label": "Services",
+   "status": "client_confirmed",
+   "value": "Straight stair lifts · curved stair lifts · porch lifts / vertical platform lifts (outdoor access for raised entrances and decks) · wheelchair lifts · professional installation · sourcing new lifts for customers · maintenance · repairs (any stair lift or lift ",
+   "source": "Decision 005; Paul 2026-10-07"
+  },
+  {
+   "id": "d-not-offered",
+   "label": "Not offered",
+   "status": "client_confirmed",
+   "value": "Broad DME, rentals, hospital beds, power chairs, scooters, scooter lifts, scooter repair, lift chairs, mobility ramps, general wheelchairs; HMM is not a manufacturer",
+   "source": "Decisions 007, 008, 018"
+  },
+  {
+   "id": "d-safety-statement",
+   "label": "Safety statement",
+   "status": "paul_approved",
+   "value": "\"Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions.\"",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-email",
+   "label": "Email",
+   "status": "client_confirmed",
+   "value": "info@homemobilemedical.com",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-hours",
+   "label": "Hours",
+   "status": "client_confirmed",
+   "value": "Monday–Friday 9:00 AM–5:00 PM; Saturday–Sunday closed",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "status": "unknown",
+   "value": "[NEED]",
+   "source": ""
+  },
+  {
+   "id": "d-minimum-service-call-or-trip-charge",
+   "label": "Minimum service call or trip charge",
+   "status": "unknown",
+   "value": "[NEED]",
+   "source": ""
+  },
+  {
+   "id": "d-payment-methods",
+   "label": "Payment methods",
+   "status": "paul_approved",
+   "value": "General wording only (\"we accept common payment methods\"); no specific list",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-services-subcontracted-out",
+   "label": "Services subcontracted out",
+   "status": "unknown",
+   "value": "None known",
+   "source": ""
+  },
+  {
+   "id": "d-named-staff-for-on-page-use",
+   "label": "Named staff for on-page use",
+   "status": "client_confirmed",
+   "value": "Jason Workens, founder/owner",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-licensed-practitioner-for-health-claim-sign-off",
+   "label": "Licensed practitioner for health-claim sign-off",
+   "status": "paul_approved",
+   "value": "Not required (health-adjacent, CM-040)",
+   "source": ""
+  },
+  {
+   "id": "page:city_served",
+   "label": "city served",
+   "status": "Paul Approved",
+   "value": "Served — one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+   "source": "Brand Guide E; Paul 2026-10-07"
+  },
+  {
+   "id": "page:local_context",
+   "label": "local context",
+   "status": "Internally Verified",
+   "value": "Okatie is an unincorporated suburban community west of Hilton Head Island; Wikipedia gives 24.6% of residents aged 65 and over (its demographic figures cite the Bluffton QuickFacts page, so treat as approximate). Sun City Hilton Head, an age-restricted planned",
+   "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina · https://en.wikipedia.org/wiki/Sun_City_Hilton_Head · (Wikipedia, read 2026-10-14)"
+  },
+  {
+   "id": "page:neighborhoods",
+   "label": "neighborhoods",
+   "status": "Internally Verified",
+   "value": "Sun City Hilton Head, Riverbend, Oldfield",
+   "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina (Wikipedia, read 2026-10-14)"
+  },
+  {
+   "id": "page:place_entities",
+   "label": "place entities",
+   "status": "Internally Verified",
+   "value": "Sun City Hilton Head; South Carolina Highway 170 (Okatie Highway); Okatee River estuary (named in the Okatie article)",
+   "source": "https://en.wikipedia.org/wiki/Sun_City_Hilton_Head · https://en.wikipedia.org/wiki/South_Carolina_Highway_170 · https://en.wikipedia.org/wiki/Okatie,_South_Caro"
+  },
+  {
+   "id": "page:permit_office",
+   "label": "permit office",
+   "status": "Internally Verified",
+   "value": "Beaufort County Building Codes for unincorporated Okatie; parts of Okatie lie inside Bluffton, Hardeeville and Port Royal, whose town/city offices issue permits there, so the office depends on the parcel (county phone 843-255-2065)",
+   "source": "https://www.beaufortcountysc.gov/building-codes/ (Beaufort County, read 2026-10-14) · https://en.wikipedia.org/wiki/Okatie,_South_Carolina (Wikipedia, read 2026"
+  }
+ ],
+ "reviews": {
+  "practice: communication": {
+   "reviewers": 2,
+   "quotes": [
+    {
+     "date": "2022-11-02",
+     "quote": "They have been so very helpful in getting my uncle a wheelchair and explains the process of the dreadful paperwork required by him to get that wheelchair.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2020-05-26",
+     "quote": "wouldn’t even explain the problem ...",
+     "row": "reviews.csv row 18"
+    }
+   ],
+   "tier": "example",
+   "checked": false,
+   "checked_at": ""
+  },
+  "practice: speed": {
+   "reviewers": 1,
+   "quotes": [
+    {
+     "date": "2022-09-26",
+     "quote": "Jason was so nice and helpful and got me the chair the same day.",
+     "row": "reviews.csv row 8"
+    }
+   ],
+   "tier": "example",
+   "checked": false,
+   "checked_at": ""
+  },
+  "practice: insurance claims": {
+   "reviewers": 1,
+   "quotes": [
+    {
+     "date": "2020-05-26",
+     "quote": "Very rude and disrespectful to myself and my insurance provider for no reason ..",
+     "row": "reviews.csv row 18"
+    }
+   ],
+   "tier": "example",
+   "checked": false,
+   "checked_at": ""
+  }
+ },
+ "questions": [],
+ "site_gbp": [],
+ "public": [],
+ "research": [
+  {
+   "id": "RL-loc-hhi-13",
+   "page": "loc-okatie-sc",
+   "gap": "fact:loc-okatie-sc:local_context",
+   "kind": "public",
+   "queries": "Okatie Wikipedia age 65 || Sun City Hilton Head Wikipedia || Beaufort County Okatie flood",
+   "sources_tried": "place store methodology/places/sc/okatie/ (none on file) || methodology/sources/sc-lowcountry.md || Wikipedia: Okatie, Sun City Hilton Head",
+   "result": "partial",
+   "excerpt": "24.6% of residents aged 65 and over",
+   "url": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina",
+   "date": "2026-10-14",
+   "run": "20261014-100458-build-2be7"
+  },
+  {
+   "id": "RL-loc-hhi-14",
+   "page": "loc-okatie-sc",
+   "gap": "fact:loc-okatie-sc:neighborhoods",
+   "kind": "public",
+   "queries": "Okatie neighborhoods Wikipedia || Beaufort County Okatie communities",
+   "sources_tried": "place store methodology/places/sc/okatie/ (none on file) || methodology/sources/sc-lowcountry.md || Wikipedia: Okatie",
+   "result": "found",
+   "excerpt": "Sun City Hilton Head, Riverbend, and Oldfield",
+   "url": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina",
+   "date": "2026-10-14",
+   "run": "20261014-100458-build-2be7"
+  },
+  {
+   "id": "RL-loc-hhi-15",
+   "page": "loc-okatie-sc",
+   "gap": "fact:loc-okatie-sc:place_entities",
+   "kind": "public",
+   "queries": "Okatie landmarks Wikipedia || Sun City Hilton Head || SC Highway 170",
+   "sources_tried": "place store methodology/places/sc/okatie/ (none on file) || methodology/sources/sc-lowcountry.md || Wikipedia: Okatie, Sun City Hilton Head, SC 170",
+   "result": "partial",
+   "excerpt": "Sun City Hilton Head; Highway 170; Okatee River",
+   "url": "https://en.wikipedia.org/wiki/Sun_City_Hilton_Head",
+   "date": "2026-10-14",
+   "run": "20261014-100458-build-2be7"
+  },
+  {
+   "id": "RL-loc-hhi-16",
+   "page": "loc-okatie-sc",
+   "gap": "fact:loc-okatie-sc:permit_office",
+   "kind": "public",
+   "queries": "Beaufort County building permits Okatie || Beaufort County Building Codes unincorporated || Okatie Wikipedia annexed Bluffton Hardeeville",
+   "sources_tried": "place store methodology/places/sc/okatie/ (none on file) || methodology/sources/sc-lowcountry.md || https://www.beaufortcountysc.gov/building-codes/ || Wikipedia: Okatie",
+   "result": "partial",
+   "excerpt": "Portions of Okatie have been annexed by Bluffton, Hardeeville, and Port Royal",
+   "url": "https://www.beaufortcountysc.gov/building-codes/",
+   "date": "2026-10-14",
+   "run": "20261014-100458-build-2be7"
+  }
+ ],
+ "place": [],
+ "settled": [],
+ "gaps": [
+  {
+   "key": "emergency",
+   "label": "Emergency / after-hours reality",
+   "need": "supporting",
+   "from": "D:Emergency",
+   "kind": "client",
+   "fact_key": "fact:d:emergency"
+  }
+ ],
+ "excerpts": [
+  {
+   "id": "R1",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "example",
+   "text": "They have been so very helpful in getting my uncle a wheelchair and explains the process of the dreadful paperwork required by him to get that wheelchair."
+  },
+  {
+   "id": "R2",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "example",
+   "text": "wouldn’t even explain the problem ..."
+  },
+  {
+   "id": "R3",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "example",
+   "text": "Jason was so nice and helpful and got me the chair the same day."
+  },
+  {
+   "id": "R4",
+   "kind": "review",
+   "topic": "practice: insurance claims",
+   "tier": "example",
+   "text": "Very rude and disrespectful to myself and my insurance provider for no reason .."
+  },
+  {
+   "id": "P5",
+   "kind": "public",
+   "topic": "fact:loc-okatie-sc:local_context",
+   "tier": "official",
+   "text": "24.6% of residents aged 65 and over"
+  },
+  {
+   "id": "P6",
+   "kind": "public",
+   "topic": "fact:loc-okatie-sc:neighborhoods",
+   "tier": "official",
+   "text": "Sun City Hilton Head, Riverbend, and Oldfield"
+  },
+  {
+   "id": "P7",
+   "kind": "public",
+   "topic": "fact:loc-okatie-sc:place_entities",
+   "tier": "official",
+   "text": "Sun City Hilton Head; Highway 170; Okatee River"
+  },
+  {
+   "id": "P8",
+   "kind": "public",
+   "topic": "fact:loc-okatie-sc:permit_office",
+   "tier": "official",
+   "text": "Portions of Okatie have been annexed by Bluffton, Hardeeville, and Port Royal"
+  }
+ ],
+ "known": [
+  {
+   "id": "a-brand-entity-gbp-name-exactly",
+   "label": "Brand entity (GBP name, exactly)",
+   "value": "Home Mobile Medical"
+  },
+  {
+   "id": "a-gbp-primary-category-the-category-entity",
+   "label": "GBP primary category = the category entity",
+   "value": "Mobility equipment supplier (supporting Wikimedia subject: Mobility aid, Q6887300). **Primary category only** — no \"Medical equipment supplier\" secondary (Paul 2026-10-07)"
+  },
+  {
+   "id": "a-storefront-or-sab",
+   "label": "Storefront or SAB",
+   "value": "Service-area business. Not customer-facing. The GBP address stays in the site footer only so the site and GBP cross-reference"
+  },
+  {
+   "id": "a-area-entity",
+   "label": "Area entity",
+   "value": "South Carolina Lowcountry (Q3885311)"
+  },
+  {
+   "id": "a-separator-standard",
+   "label": "Separator standard",
+   "value": "` - `"
+  },
+  {
+   "id": "a-phone",
+   "label": "Phone",
+   "value": "(843) 476-1329"
+  },
+  {
+   "id": "a-primary-domain-canonical-host-form",
+   "label": "Primary domain (canonical host form)",
+   "value": "https://homemobilemedical.com/"
+  },
+  {
+   "id": "a-legal-entity-name",
+   "label": "Legal entity name",
+   "value": "Home Mobile Medical"
+  },
+  {
+   "id": "a-exact-url-in-the-gbp-website-field",
+   "label": "Exact URL in the GBP Website field",
+   "value": "https://homemobilemedical.com/"
+  },
+  {
+   "id": "d-founding-year-years-in-business",
+   "label": "Founding year / years in business",
+   "value": "15+ years of **Jason Workens' experience** — never the brand's age (a directory says the business opened 2023)"
+  },
+  {
+   "id": "d-history",
+   "label": "History",
+   "value": "Jason's former company, Beaufort Medical Equipment, was sold; Home Mobile Medical is not a rebrand of it"
+  },
+  {
+   "id": "d-ownership",
+   "label": "Ownership",
+   "value": "Family-owned; locally owned and operated"
+  },
+  {
+   "id": "d-legal-entity-dba",
+   "label": "Legal entity + DBA",
+   "value": "Home Mobile Medical; no DBA known"
+  },
+  {
+   "id": "d-licence-numbers-and-classes",
+   "label": "Licence numbers and classes",
+   "value": "None to publish"
+  },
+  {
+   "id": "d-insurance-bonded-status",
+   "label": "Insurance / bonded status",
+   "value": "None to publish"
+  },
+  {
+   "id": "d-certifications-authorizations-factory-training",
+   "label": "Certifications, authorizations, factory training",
+   "value": "None. No authorized/certified-dealer wording for any brand"
+  },
+  {
+   "id": "d-brands-installed-and-repaired",
+   "label": "Brands installed and repaired",
+   "value": "\"We install and repair stair lifts from leading brands such as Stannah, Bruno and Harmar.\" Independent; no authorized/certified-dealer wording"
+  },
+  {
+   "id": "d-warranty-terms",
+   "label": "Warranty terms",
+   "value": "Manufacturer's warranty only; no Home Mobile Medical warranty"
+  },
+  {
+   "id": "d-guarantees",
+   "label": "Guarantees",
+   "value": "None"
+  },
+  {
+   "id": "d-google-rating-and-review-count-date-checked",
+   "label": "Google rating and review count (date checked)",
+   "value": "2.9 stars from 19 Google reviews (checked 2026-10-08)"
+  },
+  {
+   "id": "d-team-size-trucks-jobs-completed",
+   "label": "Team size / trucks / jobs completed",
+   "value": "Jason plus one helper. Jason personally supervises every installation"
+  },
+  {
+   "id": "d-installation-time",
+   "label": "Installation time",
+   "value": "Usually one day, about 3–4 hours; same-day installation **in most cases**"
+  },
+  {
+   "id": "d-financing-available-provider-terms",
+   "label": "Financing — available, provider, terms",
+   "value": "Available. No provider, rates or terms published"
+  },
+  {
+   "id": "d-free-estimate-and-what-free-means",
+   "label": "Free estimate — and what free means",
+   "value": "Free in-home estimate. Can also quote from a photo of the stairs (priced by stair count)"
+  },
+  {
+   "id": "d-services",
+   "label": "Services",
+   "value": "Straight stair lifts · curved stair lifts · porch lifts / vertical platform lifts (outdoor access for raised entrances and decks) · wheelchair lifts · professional installation · sourcing new lifts for customers · maintenance · repairs (any stair lift or lift "
+  },
+  {
+   "id": "d-not-offered",
+   "label": "Not offered",
+   "value": "Broad DME, rentals, hospital beds, power chairs, scooters, scooter lifts, scooter repair, lift chairs, mobility ramps, general wheelchairs; HMM is not a manufacturer"
+  },
+  {
+   "id": "d-safety-statement",
+   "label": "Safety statement",
+   "value": "\"Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions.\""
+  },
+  {
+   "id": "d-email",
+   "label": "Email",
+   "value": "info@homemobilemedical.com"
+  },
+  {
+   "id": "d-hours",
+   "label": "Hours",
+   "value": "Monday–Friday 9:00 AM–5:00 PM; Saturday–Sunday closed"
+  },
+  {
+   "id": "d-payment-methods",
+   "label": "Payment methods",
+   "value": "General wording only (\"we accept common payment methods\"); no specific list"
+  },
+  {
+   "id": "d-named-staff-for-on-page-use",
+   "label": "Named staff for on-page use",
+   "value": "Jason Workens, founder/owner"
+  },
+  {
+   "id": "d-licensed-practitioner-for-health-claim-sign-off",
+   "label": "Licensed practitioner for health-claim sign-off",
+   "value": "Not required (health-adjacent, CM-040)"
+  },
+  {
+   "id": "page:city_served",
+   "label": "city served",
+   "value": "Served — one of the 24 South Carolina towns confirmed served (Brand Guide Section E)"
+  },
+  {
+   "id": "page:local_context",
+   "label": "local context",
+   "value": "Okatie is an unincorporated suburban community west of Hilton Head Island; Wikipedia gives 24.6% of residents aged 65 and over (its demographic figures cite the Bluffton QuickFacts page, so treat as approximate). Sun City Hilton Head, an age-restricted planned"
+  },
+  {
+   "id": "page:neighborhoods",
+   "label": "neighborhoods",
+   "value": "Sun City Hilton Head, Riverbend, Oldfield"
+  },
+  {
+   "id": "page:place_entities",
+   "label": "place entities",
+   "value": "Sun City Hilton Head; South Carolina Highway 170 (Okatie Highway); Okatee River estuary (named in the Okatie article)"
+  },
+  {
+   "id": "page:permit_office",
+   "label": "permit office",
+   "value": "Beaufort County Building Codes for unincorporated Okatie; parts of Okatie lie inside Bluffton, Hardeeville and Port Royal, whose town/city offices issue permits there, so the office depends on the parcel (county phone 843-255-2065)"
+  }
+ ]
+}

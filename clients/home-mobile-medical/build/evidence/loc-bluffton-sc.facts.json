@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served \u2014 one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "19.0% of Bluffton residents were 65 or older at the 2020 census (7.3% in 2010); population grew from 27,716 (2020) to an estimated 36,807 (2025). Humid subtropical climate, about 50.4 inches of rain a year; hurricanes are a summer and early-fall threat. Old Town is a historic district on the May River bluff (Bluffton Historic District, National Register), with homes from the 1800s.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Bluffton,_South_Carolina \u00b7 https://en.wikipedia.org/wiki/Bluffton_Historic_District \u00b7 (Wikipedia, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Old Town, Palmetto Bluff, Jones Estate, Buckwalter, Shultz Tract (the Town's five primary areas); Sun City (planned community nearby)",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Bluffton,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Church of the Cross (1857); Bluffton Historic District; Sun City Hilton Head; Heyward House Historical Center (named in Wikipedia Bluffton article)",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Church_of_the_Cross \u00b7 https://en.wikipedia.org/wiki/Bluffton_Historic_District \u00b7 https://en.wikipedia.org/wiki/Sun_City_Hilton_Head \u00b7 https://en.wikipedia.org/wiki/Bluffton,_South_Carolina \u00b7 (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "Town of Bluffton, Growth Management department, Building Safety (residential and commercial building permit applications; Town phone 843-706-4500). The page does not state the issuing office in a sentence; this follows its placement under Building Safety.",
+      "status": "Internally Verified",
+      "source": "https://www.townofbluffton.sc.gov/228/Applications-Certificates-Forms-and-Perm (Town of Bluffton, read 2026-10-14)"
+    }
+  }
+}

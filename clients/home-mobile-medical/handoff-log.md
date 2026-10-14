@@ -283,3 +283,33 @@ Generated from the safety log (clients/home-mobile-medical/log.md) — do not ed
 - Added the 301 /services/ → homepage (worklist section 3).
 - Pointed the three -sc-2 redirects (not yet done by Jonie) at the root URLs, so there are no chains.
 
+## /build · 2026-10-14 · run 20261014-100458-build-2be7
+
+**Step:** the one facts round (P10) for all 33 pages in the approved site plan.
+
+**Done**
+- reviews.py extract: 8 review topics. None was reported by 3 or more reviewers, so none needed checking by meaning.
+- Page facts files (build/evidence/<page>.facts.json):
+  - city_served on 26 location pages (Brand Guide E, Paul 2026-10-07).
+  - service_scope and service_process on the service pages, core_services (homepage) and company_story (about), all from Brand Guide D. Client Confirmed facts only (change #158).
+- Researcher (Sonnet) ran 5 parallel lookups for 28 location and hub pages: 100 public facts (59 found, 37 partial, 4 not found). Every one is logged in build/{pilot,loc-hhi,loc-charleston}/research-log.csv. The group with the hub-hhi-beaufort, Beaufort, Port Royal, Lady's Island and Laurel Bay pages first got an empty page list; it was resent and confirmed done (18 facts).
+- Not found: Levy neighborhoods, Levy place_entities, Laurel Bay neighborhoods, Folly neighborhoods. Under CM-061 §8 these sections are left out by default and never asked.
+- Google rating recorded with run.py fact: 2.9 stars from 19 reviews (DataforSEO pull 2026-10-08). Paul should know it is low. Some reviews date from the old medical-equipment era.
+- Client search order logged for 6 gaps (RL-evidence-1..4, RL-services-1..4): emergency, awards, associations, the repair process, and install time for curved, porch and wheelchair lifts.
+  - Awards and associations: none found (no BBB listing). They stay "None" and are not asked.
+- Grids re-run: 28 PASS, 5 WARN (service pages, supporting gaps only), 0 BLOCK.
+- evidence.py questions --all ran once and produced 1 generic question. I rewrote it pre-filled and added Q2 (after-hours) and Q3 (install times, pad and permit).
+  - The set is in interviews/facts/facts-round-all-2026-10-14.questions.json. settled.py filter kept 3; questions.py check passed.
+  - Q2 and Q3 were asked once with run.py decision --ask.
+
+**Facts round for Paul:** interviews/facts/Home Mobile Medical - Facts Interview - all - 2026-10-14 - REVIEW.md, 3 questions. Paul sends it; the answers go in with /interview home-mobile-medical facts-answers all.
+
+**Flags:** F-001. sc-lowcountry.md has no rows for Charleston, Berkeley, Dorchester, Colleton or Hampton counties and their towns; the HHI permit URL returns 404 when fetched; the Bluffton PDF has no URL; Census QuickFacts returns 403, so 65+ shares come from Wikipedia's 2020 census figures.
+
+**For the brief writers:**
+- Folly naming: the official site says "City of Folly Beach". The Discovery Record's Folly Island vs Folly Beach conflict is still open, and it is Paul's call.
+- Yemassee is mostly in Hampton County. Okatie spans Beaufort and Jasper.
+- Permit offices for Walterboro and Hollywood are partial: confirm with the town.
+
+**Not done:** none. The Brand Guide was not written (write-back happens at brief approval, CM-061 §6).
+

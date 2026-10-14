@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served — one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Beaufort's historic district covers 304 acres and is a National Historic Landmark; nearly 70 sites in the area are on the National Register of Historic Places (older homes). 20.8% of city residents were 65 or older (Wikipedia, citing Census); Beaufort County overall: 28.4% were 65+ in 2020. The city sits 'amid a marshy estuary'; US 21 is the major hurricane evacuation route and the 1893 hurricane caused extensive destruction; humid subtropical climate, 45.02 in average annual precipitation.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Beaufort,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_County,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Downtown, The Point (Old Point), The Bluff, The Old Commons, Northwest Quadrant (the five historic-district neighborhoods); Pigeon Point, Higginsonville, West End, Depot, Spanish Point, Mossy Oaks, Royal Oaks, First Boulevard, Cottage Farms (Battery Creek area).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Beaufort,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Beaufort Historic District (National Historic Landmark) - https://en.wikipedia.org/wiki/Beaufort_Historic_District · Beaufort Memorial Hospital (197-bed nonprofit hospital; named on the Beaufort page) · Marine Corps Air Station Beaufort - https://en.wikipedia.org/wiki/Marine_Corps_Air_Station_Beaufort · U.S. Naval Hospital Beaufort - https://en.wikipedia.org/wiki/Naval_Hospital_Beaufort · Richard V. Woods Memorial Bridge - https://en.wikipedia.org/wiki/Richard_V._Woods_Memorial_Bridge",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Beaufort,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_Historic_District (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Marine_Corps_Air_Station_Beaufort (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Naval_Hospital_Beaufort (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Richard_V._Woods_Memorial_Bridge (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "City of Beaufort Building Codes Department, 1911 Boundary Street, Beaufort SC 29902, 843-525-7070 (the city's department 'assists owners and development professionals through the permitting and construction process'; Building Permits section). Unincorporated Beaufort County is permitted by the county (see Lady's Island / Laurel Bay).",
+      "status": "Internally Verified",
+      "source": "https://cityofbeaufort.org/154/Building-Codes (City of Beaufort, read 2026-10-14)"
+    }
+  }
+}

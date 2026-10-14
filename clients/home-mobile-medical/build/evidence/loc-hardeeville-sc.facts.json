@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served \u2014 one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "In the 2020 census 40.1% of Hardeeville residents were 65 or older (median age 60.4); the city sits on the Atlantic coastal plain with very little change in elevation (about 20 ft average); 3,951 housing units in 2020, with newer age-targeted communities such as Latitude Margaritaville and the Jasper County portion of Sun City Hilton Head.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hardeeville,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Car Moorer Acres, Pine Arbor, Heritage Place, Deerfield Village, Hilton Head Lakes, Riverton Pointe (formerly Hampton Pointe), Hearthstone Lakes, Latitude Margaritaville, Sun City Hilton Head (Jasper County portion), Courtney Bend",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hardeeville,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Novant Health Coastal Carolina Medical Center (hospital, Hardeeville); Savannah National Wildlife Refuge (borders much of the city to the west); Sun City Hilton Head (age-restricted community)",
+      "status": "Internally Verified",
+      "source": "https://novanthealth.org/locations/medical-centers/coastal-carolina-hospital (Novant Health, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Savannah_National_Wildlife_Refuge (Wikipedia, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Sun_City_Hilton_Head (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "City of Hardeeville Building Safety Department (3345 Argent Blvd, Unit 102, Ridgeland SC 29936, 843-784-2231) takes building permits through the city building portal",
+      "status": "Internally Verified",
+      "source": "https://www.hardeevillesc.gov/2650/Building-Permits (City of Hardeeville, read 2026-10-14)"
+    }
+  }
+}

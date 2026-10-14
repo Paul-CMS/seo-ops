@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served \u2014 one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Okatie is an unincorporated suburban community west of Hilton Head Island; Wikipedia gives 24.6% of residents aged 65 and over (its demographic figures cite the Bluffton QuickFacts page, so treat as approximate). Sun City Hilton Head, an age-restricted planned community in the Okatie area, has close to 10,000 permanent residents. Okatie is named for the Okatee River, an estuary of Port Royal Sound.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina \u00b7 https://en.wikipedia.org/wiki/Sun_City_Hilton_Head \u00b7 (Wikipedia, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Sun City Hilton Head, Riverbend, Oldfield",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Okatie,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Sun City Hilton Head; South Carolina Highway 170 (Okatie Highway); Okatee River estuary (named in the Okatie article)",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Sun_City_Hilton_Head \u00b7 https://en.wikipedia.org/wiki/South_Carolina_Highway_170 \u00b7 https://en.wikipedia.org/wiki/Okatie,_South_Carolina \u00b7 (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "Beaufort County Building Codes for unincorporated Okatie; parts of Okatie lie inside Bluffton, Hardeeville and Port Royal, whose town/city offices issue permits there, so the office depends on the parcel (county phone 843-255-2065)",
+      "status": "Internally Verified",
+      "source": "https://www.beaufortcountysc.gov/building-codes/ (Beaufort County, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Okatie,_South_Carolina (Wikipedia, read 2026-10-14)"
+    }
+  }
+}

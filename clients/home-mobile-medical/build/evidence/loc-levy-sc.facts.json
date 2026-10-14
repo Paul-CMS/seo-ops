@@ -1,0 +1,19 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served \u2014 one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Levy is an unincorporated community in southern Jasper County at 13 ft elevation, reached by SC Highway 315; Jasper County: 22.6% of residents 65+, 89.1% rural (2020 census).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Levy,_South_Carolina (Wikipedia, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Jasper_County,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "Jasper County Planning and Building (358 Third Ave, Ridgeland; 843-717-3650) issues permits throughout the County; Levy is unincorporated, so no town permit office applies",
+      "status": "Internally Verified",
+      "source": "https://jaspercountysc.gov/services/planning-and-building (Jasper County, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Levy,_South_Carolina (Wikipedia, read 2026-10-14)"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served — one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Hollywood is a town in western Charleston County; elevation 30 ft; 2020 census population 5,339. 10.3% of residents were 65 or older in the 2000 census (no 2020 figure found). Incorporated 1949; truck farming was the base until the 1960s; by 2000 town limits covered 33 square miles, about sixteen miles along Highway 162 (spread-out, largely rural housing). No official flood-zone or hurricane fact found.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hollywood,_South_Carolina (Wikipedia, read 2026-10-14) · https://www.scencyclopedia.org/sce/entries/hollywood/ (South Carolina Encyclopedia, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Plantation at Stono Ferry (community with walking trails and a community dock). No official or encyclopedic neighborhood list found.",
+      "status": "Internally Verified",
+      "source": "https://www.postandcourier.com/lowcountryparent/love_where_you_live/love-where-you-live-hollywood-ravenel-and-meggett/article_54bc5002-5179-11ee-8bf1-b773e6579ad1.html (Post and Courier, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Serenity Park (7.2 acres, end of Trexler Avenue, 500 ft of Stono River frontage); Hollywood Town Hall (5150 Highway 165); West County Aquatic Center (Charleston County Parks pool)",
+      "status": "Internally Verified",
+      "source": "https://greenbelt.charlestoncounty.gov/projects/hollywood (Charleston County Greenbelt Program, read 2026-10-14) · https://www.townofhollywood.org/town-council/meeting/town-council-meeting-95 (Town of Hollywood, via search result, read 2026-10-14) · https://www.postandcourier.com/lowcountryparent/love_where_you_live/love-where-you-live-hollywood-ravenel-and-meggett/article_54bc5002-5179-11ee-8bf1-b773e6579ad1.html (Post and Courier, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "Town of Hollywood Town Hall takes building, zoning, tree and electrical permit applications (Town permits portal); the Town's pages say inspections are done by Charleston County Building Inspection Services (CC&I), and the County lists Hollywood among the towns whose building permits it issues. The Town's own pages conflict on who inspects - confirm with Town Hall (843-889-3222) before stating a single office.",
+      "status": "Internally Verified",
+      "source": "https://townofhollywood.org/applications---forms (Town of Hollywood, via search result; direct fetch 403, read 2026-10-14) · https://www.charlestoncounty.org/departments/building-inspection-services/forms/Construction-Data-Report-Request.pdf (Charleston County, via search result, read 2026-10-14)"
+    }
+  }
+}

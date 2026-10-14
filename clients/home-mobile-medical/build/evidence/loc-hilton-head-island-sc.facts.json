@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served \u2014 one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "39.6% of Hilton Head Island residents were 65 or older at the 2020 census (median age 59.3; population 37,661). Humid subtropical climate, about 51.4 inches of rain a year. Broad Creek, a tidal marsh, separates the two halves of the island; the 1893 Sea Islands hurricane brought a 16-foot storm surge. The Town's Building Service Center has Flood Hazard, Flood Elevation Certificates and Substantial Improvement & Damage pages.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hilton_Head_Island,_South_Carolina (Wikipedia, read 2026-10-14) \u00b7 https://hiltonheadislandsc.gov/permits (Town of Hilton Head Island, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Sea Pines (incl. Harbour Town), Hilton Head Plantation, Palmetto Dunes, Shipyard, Port Royal Plantation, Colleton River Plantation, Windmill Harbor, Mariner's Cove, Blue Heron Point",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hilton_Head_Island,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Sea Pines Resort; Harbour Town Golf Links; Mitchelville (Freedom Park community for formerly enslaved people); Hilton Head Island Airport; Hilton Head Medical Center & Clinics (named in Wikipedia article, no separate URL)",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Sea_Pines_Resort \u00b7 https://en.wikipedia.org/wiki/Harbour_Town_Golf_Links \u00b7 https://en.wikipedia.org/wiki/Mitchelville \u00b7 https://en.wikipedia.org/wiki/Hilton_Head_Island_Airport \u00b7 (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "Town of Hilton Head Island, Community Development Department, Building Service Center (One Town Center Court, 843-341-4757); permits via the Building & Development Citizen Self Service portal or emailed/delivered application",
+      "status": "Internally Verified",
+      "source": "https://hiltonheadislandsc.gov/permits \u00b7 https://hiltonheadislandsc.gov/building/permits/ (Town of Hilton Head Island, read 2026-10-14; the /building/permits/ URL returned a 404 page to the fetch tool)"
+    }
+  }
+}

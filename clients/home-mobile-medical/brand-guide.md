@@ -147,7 +147,7 @@ Everything a writer may state. **Not here = does not exist.**
 | Warranty terms | Manufacturer's warranty only; no Home Mobile Medical warranty | Client Confirmed | Paul 2026-10-07 |
 | Guarantees | None | Client Confirmed | |
 | Awards and rankings | None | Unknown | |
-| Google rating and review count (date checked) | [NEED: read from the GBP] | Unknown | |
+| Google rating and review count (date checked) | 2.9 stars from 19 Google reviews (checked 2026-10-08) | Internally Verified 2026-10-14 · was: Unknown | DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23 |
 | Team size / trucks / jobs completed | Jason plus one helper. Jason personally supervises every installation | Client Confirmed | Paul 2026-10-07; Decision 015 |
 | Installation time | Usually one day, about 3–4 hours; same-day installation **in most cases** | Client Confirmed | Paul 2026-10-07; Decision 016 |
 | Financing — available, provider, terms | Available. No provider, rates or terms published | Client Confirmed | Decision 017 |

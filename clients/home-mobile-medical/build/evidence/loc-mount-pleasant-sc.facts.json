@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served — one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Mount Pleasant is in Charleston County. 2020 census: 18.0% of residents were 65 or older (median age 41.6); 40,680 housing units (8.6% vacant). \"Mount Pleasant was hit by Hurricane Hugo, a Category Four hurricane\" in 1989. Old Village is the oldest neighborhood.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Mount_Pleasant,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Old Village (oldest neighborhood); Scanlonville; Riverside",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Mount_Pleasant,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Boone Hall Plantation; Patriots Point; Arthur Ravenel Jr. Bridge (2005); Palmetto Islands County Park; Mount Pleasant Pier",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Mount_Pleasant,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "Town of Mount Pleasant Building Inspection Division (Engineering & Development Services), 100 Ann Edwards Lane; building permits above the Building Official's valuation threshold or needing structural inspection \"must obtain a building permit\"; trade permits issued by Front Office staff.",
+      "status": "Internally Verified",
+      "source": "https://www.tompsc.com/151/Permit (Town of Mount Pleasant, read 2026-10-14)"
+    }
+  }
+}

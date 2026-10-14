@@ -1,0 +1,14 @@
+{
+  "facts": {
+    "county_cities": {
+      "value": "Beaufort County: Hilton Head Island (town), Bluffton (town), Port Royal (town), Lady's Island (unincorporated; small parts inside City of Beaufort), Laurel Bay (census-designated place), Daufuskie Island (unincorporated CDP, boat/ferry access only). Both counties: Okatie (unincorporated community spanning south-central Jasper to western Beaufort). Jasper County: Ridgeland (town, county seat), Levy (unincorporated community), Hardeeville (city, mostly Jasper with a small part in Beaufort). Hampton County: Yemassee (town, mostly in Hampton County, partly Beaufort; the Hampton-Beaufort line runs along the CSX roadbed through town). Note: Yemassee is outside the Hilton Head Island-Bluffton-Port Royal metro (Beaufort + Jasper counties).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Beaufort_County,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Ridgeland,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Levy,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Okatie,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Yemassee,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Hardeeville,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Daufuskie_Island (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Bluffton,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Hilton_Head_Island,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Port_Royal,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Laurel_Bay,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "local_context": {
+      "value": "The Hilton Head Island-Bluffton-Port Royal metro covers Beaufort and Jasper counties: 215,908 people at the 2020 census. Beaufort County: 28.4% of residents 65 or older in 2020 (Hilton Head Island town: 39.6% in 2020, up from 28.8% in 2010). Humid subtropical coast (Hilton Head Island: about 51.4 in of rain a year; July high about 90 F); the 1893 Sea Islands Hurricane's 16-ft storm surge killed over 1,000 people; Beaufort County notes FEMA digital flood insurance rate maps cover its coastal areas. Hilton Head Island's summer population can peak at 150,000.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hilton_Head_Island%E2%80%93Bluffton_metropolitan_area (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_County,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Hilton_Head_Island,_South_Carolina (Wikipedia, read 2026-10-14) · https://beaufortcountysc.gov/building-codes (Beaufort County, read 2026-10-14)"
+    }
+  }
+}

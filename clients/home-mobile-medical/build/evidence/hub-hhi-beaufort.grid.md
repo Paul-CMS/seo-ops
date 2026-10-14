@@ -1,0 +1,14 @@
+# Evidence grid — Hilton Head Island–Bluffton–Port Royal area hub (county)
+
+**Result: PASS** · Known 6 · Unknown 0 · Unverified 0 · Conflict 0 (CM-041)
+
+_The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
+
+| Fact | Need | Mark | Value | Source |
+|---|---|---|---|---|
+| Phone | required | **Known** | (843) 476-1329 | Brand Guide A |
+| Cities in the county actually served | required | **Known** | Beaufort County: Hilton Head Island (town), Bluffton (town), Port Royal (town), Lady's Island (unincorporated; small parts inside City of Beaufort), Laurel Bay (census-designated place), Daufuskie Island (unincorporated CDP, boat/ferry acce | https://en.wikipedia.org/wiki/Beaufort_County,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Ridgeland,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Levy,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Okatie,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Yemassee,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Hardeeville,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Daufuskie_Island (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Bluffton,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Hilton_Head_Island,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Port_Royal,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Laurel_Bay,_South_Carolina (Wikipedia, read 2026-10-14) |
+| County-specific conditions | required | **Known** | The Hilton Head Island-Bluffton-Port Royal metro covers Beaufort and Jasper counties: 215,908 people at the 2020 census. Beaufort County: 28.4% of residents 65 or older in 2020 (Hilton Head Island town: 39.6% in 2020, up from 28.8% in 2010) | https://en.wikipedia.org/wiki/Hilton_Head_Island%E2%80%93Bluffton_metropolitan_area (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_County,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Hilton_Head_Island,_South_Carolina (Wikipedia, read 2026-10-14) · https://beaufortcountysc.gov/building-codes (Beaufort County, read 2026-10-14) |
+| Free estimate / offer | supporting | **Known** | Free in-home estimate. Can also quote from a photo of the stairs (priced by stair count) | Paul 2026-10-07 |
+| Google rating and review count (date checked) | supporting | **Known** | 2.9 stars from 19 Google reviews (checked 2026-10-08) | DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23 |
+| Licence numbers and classes | supporting | **Known** | None to publish | Paul 2026-10-07 (none found) |

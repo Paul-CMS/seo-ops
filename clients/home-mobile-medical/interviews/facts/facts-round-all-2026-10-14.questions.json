@@ -1,0 +1,23 @@
+[
+  {
+    "text": "Repairs: when someone calls about a broken stair lift or lift, what happens, step by step (first call, visit, diagnosis, quote, parts, fix)? Is there a service-call or trip charge (and how much)?",
+    "kind": "client",
+    "key": "fact:svc-repair-maintenance:service_process",
+    "searched": "facts.json → decisions-settled.md → evidence pack → proof sheet (C6–C8) → Discovery Record → site search (only 'ongoing maintenance and support services') → GBP Q&A/posts (not readable) · research log RL-services-1",
+    "best_answer": "Repairs any stair lift or lift, any brand, within the service area (confirmed 2026-10-07); no steps or charge on record"
+  },
+  {
+    "text": "After hours: the office is open Mon–Fri 9–5. Is there any emergency or after-hours help for a lift that stops working — yes / no? If yes, what exactly (phone answered, next-day visit)?",
+    "kind": "client",
+    "key": "fact:d:emergency",
+    "searched": "facts.json → decisions-settled.md → evidence pack → proof sheet → Discovery Record → site search (only 'emergency protocols are part of our service' on the wheelchair-lifts page) → GBP Q&A/posts (not readable) · research log RL-evidence-2",
+    "best_answer": "No after-hours service stated anywhere; we'd say calls outside hours are returned the next business day"
+  },
+  {
+    "text": "Install times for the other lifts: stair lifts are usually one day (3–4 hours). How long from order to installed, and how long the install itself takes, for (a) a curved stair lift, (b) a porch lift, (c) a wheelchair lift? For porch and wheelchair lifts, who handles the concrete pad and any building permit — you, the customer, or it depends?",
+    "kind": "client",
+    "key": "fact:svc-curved-stair-lifts:install_time",
+    "searched": "facts.json → decisions-settled.md → evidence pack → proof sheet (D2) → Discovery Record → site search (duration given for stair lifts only) → GBP Q&A/posts (not readable) · research log RL-services-2, RL-services-3, RL-services-4",
+    "best_answer": "Not on record; until answered the pages say the install timeline is confirmed at the free in-home estimate"
+  }
+]

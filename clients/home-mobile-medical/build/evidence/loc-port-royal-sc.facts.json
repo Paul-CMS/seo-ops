@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served — one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Census QuickFacts for Port Royal town shows 10.6% of residents 65 or older (the QuickFacts page blocked the fetch tool, so the figure was read from the QuickFacts search result; re-confirm in a browser); Beaufort County overall: 28.4% were 65+ in 2020. Historic centre is the Old Village; the 1893 Sea Islands Hurricane destroyed much of the local phosphate industry; 4,764 housing units at the 2020 census (13.8% vacant); the town is on Port Royal Island at Port Royal Sound.",
+      "status": "Internally Verified",
+      "source": "https://census.gov/quickfacts/fact/table/portroyaltownsouthcarolina/PST045224 (US Census Bureau QuickFacts, via search result 2026-10-14) · https://en.wikipedia.org/wiki/Port_Royal,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_County,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Old Village (historic centre; Paris Avenue main commercial street); Mossy Creek (low-density residential north of Old Village); Preserve at Port Royal (apartments between the two).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Port_Royal,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Marine Corps Recruit Depot Parris Island - https://en.wikipedia.org/wiki/Marine_Corps_Recruit_Depot_Parris_Island · U.S. Naval Hospital Beaufort - https://en.wikipedia.org/wiki/Naval_Hospital_Beaufort · Port Royal Sound - https://en.wikipedia.org/wiki/Port_Royal_Sound · Port Royal Town Hall, 700 Paris Avenue - https://portroyal.org/161/Building-Official",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Port_Royal,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Port_Royal_Sound (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Naval_Hospital_Beaufort (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Marine_Corps_Recruit_Depot_Parris_Island (Wikipedia, read 2026-10-14) · https://portroyal.org/161/Building-Official (Town of Port Royal, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "Town of Port Royal Building Department (Town Hall, 700 Paris Avenue, Port Royal SC 29935, 843-986-2219): 'This Department issues Building Permits and Performs Inspections during construction and upon completion.'",
+      "status": "Internally Verified",
+      "source": "https://portroyal.org/161/Building-Official (Town of Port Royal, read 2026-10-14)"
+    }
+  }
+}

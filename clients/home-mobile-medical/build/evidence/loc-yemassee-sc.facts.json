@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served \u2014 one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Yemassee is split between Hampton and Beaufort counties by the CSX railroad line, most residents in Hampton County, about 44 miles north of Savannah and 54 miles west of Charleston; mean July high 90.1 F, about 53.6 inches of rain a year; Hampton County: 19.8% of residents 65+ (2020), 100% rural.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Yemassee,_South_Carolina (Wikipedia, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Hampton_County,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "No subdivision list found. Historic plantations inside town limits: Bindon, Cotton Hall, Tomotley (latter two annexed 2021); Pocotaligo (now part of Yemassee)",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Yemassee,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Auldbrass Plantation (Frank Lloyd Wright-designed, just outside town); Yemassee Amtrak station; Hampton Regional Medical Center (Varnville, in Hampton County)",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Auldbrass_Plantation (Wikipedia, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Yemassee_station (Wikipedia, read 2026-10-14) \u00b7 https://www.hamptonregional.org/ (Hampton Regional Medical Center, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "Hampton County Building Department (201 Jackson Ave West, Hampton SC; 803-914-2127) issues residential building permits; town approval (water/sewer, zoning) comes first. Beaufort County portion not checked. Town of Yemassee site blocked (403) so its own role was not confirmed",
+      "status": "Internally Verified",
+      "source": "https://hamptoncountysc.org/m/faq?cat=12 (Hampton County, read 2026-10-14) \u00b7 https://www.hamptoncountysc.org/DocumentCenter/View/2772/Mobile-Home-Permits-03_17_25 (Hampton County Building Department, read 2026-10-14)"
+    }
+  }
+}

@@ -54,3 +54,18 @@ Themes added by the discovery-audit agent, 2026-10-07. Quoted, never attributed;
 - Cleanliness of rental equipment, negative: a rented wheelchair returned with "gunk built up" (rentals are discontinued).
 
 **Usable for the lift pages:** almost nothing directly. The lift-related customer language has to come from the client (proof sheet, facts or stories interview, CM-042) or from new reviews.
+
+## Facts customers report (CM-057)
+
+Counted by different reviewers. 3+ = customer_reported: Known for the evidence gate, stated only as customers describe it ("customers mention…"). Prices, timelines and warranty terms only as a cited customer example, never as the company's. No reviewer names.
+
+| Fact | Reviewers | Example (date) |
+|---|---|---|
+| explains | 2 | "They have been so very helpful in getting my uncle a wheelchair and explains the process of the dreadful paperwork required by him to get that wheelchair." (2022-11-02) |
+| timeframe | 1 | "Jason was so nice and helpful and got me the chair the same day." (2022-09-26) |
+| pricing | 1 | "Be VERY CAUTIOUS of there pricing, rented a vertical lift chair for a month then after a brief web search was bale to BUY a better chair for $50 more." (2021-08-02) |
+| insurance | 1 | "Very rude and disrespectful to myself and my insurance provider for no reason .." (2020-05-26) |
+| guarantees | 1 | "Jason was so nice and helpful and got me the chair the same day." (2022-09-26) |
+| response time | 1 | "Jason was so nice and helpful and got me the chair the same day." (2022-09-26) |
+| clean up | 1 | "Very Nice & clean." (2022-05-10) |
+| prices ($ amounts) | 1 | "Be VERY CAUTIOUS of there pricing, rented a vertical lift chair for a month then after a brief web search was bale to BUY a better chair for $50 more." (2021-08-02) |

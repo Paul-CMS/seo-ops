@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served \u2014 one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Hanahan: 12.6% of residents were 65 or older (2020 census); elevation 16 ft; several neighborhoods have tidal water behind them with access to the Cooper River and Charleston Harbor; Goose Creek Reservoir sits in the middle of the city.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hanahan,_South_Carolina (Wikipedia, citing 2020 US Census) (read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Tanner Plantation (primarily residential portion of the city); Otranto Plantation (NRHP 1978).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Hanahan,_South_Carolina (Wikipedia) (read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Hanahan Recreation Complex; Goose Creek Reservoir; Hanahan Amphitheater (opened 2013); Yeamans Hall Club (1925, private golf); City Hall, 1255 Yeamans Hall Road.",
+      "status": "Internally Verified",
+      "source": "https://www.cityofhanahan.com/ (City of Hanahan, recreation complex); https://en.wikipedia.org/wiki/Hanahan,_South_Carolina (Wikipedia: reservoir, amphitheater, Yeamans Hall) (read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "City of Hanahan Building & Codes Department, 1255 Yeamans Hall Road; Permit Clerk (843) 576-5259, Chief Building Official (843) 576-5260.",
+      "status": "Internally Verified",
+      "source": "https://www.cityofhanahan.com/node/86 (City of Hanahan) (read 2026-10-14)"
+    }
+  }
+}

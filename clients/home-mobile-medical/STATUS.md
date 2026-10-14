@@ -1,17 +1,20 @@
 # Home Mobile Medical - Status
 
-- **Stage 5 of 8 — Build plan and blockers**
-- **What is happening now:** ready to start: one facts round for every page: the evidence grids, the researcher looks up every public fact, reviews attached (CM-057), then one pre-filled question set grouped by fact
-- **Waiting on:** nobody
-- **Next action:** `/build home-mobile-medical facts` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open home-mobile-medical`) and types `/next home-mobile-medical` (agents: build (opus), researcher (sonnet), clerk (haiku)) · model: Haiku chat
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — build:facts finished (run 20261014-100458-build-2be7) and that stage is in review mode — l; Client (via Paul) — How the service is delivered (steps, methods, equipment) — what should we say? If it depen; Client (via Paul) — Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2)
+- **Next action:** `/next home-mobile-medical` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-14T10:04 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T10:21 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Paul | build:facts finished (run 20261014-100458-build-2be7) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build home-mobile-medical write pilot (batch pilot in one run: every brief, then one draft per page (each from its own fresh sub-agent, CM-043), then the batch review side by side) | 2026-10-14 | /next home-mobile-medical |
+| Client (via Paul) | How the service is delivered (steps, methods, equipment) — what should we say? If it depends, on what? | 2026-10-14 | fact:svc-repair-maintenance:service_process |
+| Client (via Paul) | Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2) | 2026-10-14 | fact:d:emergency |
+| Client (via Paul) | Order-to-install and install times for curved, porch and wheelchair lifts; who handles pad and permit (facts round 2026-10-14, Q3) | 2026-10-14 | fact:svc-curved-stair-lifts:install_time |
 
 ## Waiting on (not blocking)
 
@@ -19,7 +22,8 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Jonie | blockers not cleared: H-2026-10-09-03-redirect-01 is issued; H-2026-10-09-03-redirect-02 is issued; H-2026-10-09-03-redirect-03 is issued; H-2026-10-09-04-broken_link-01 is issued; H-2026-10-09-04-broken_link-02 is issued (+9 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-09 | /verify home-mobile-medical |
+| Client (via Paul) | waiting for the answers to the facts round (clients/home-mobile-medical/interviews/facts/Home Mobile Medical - Facts Interview - all - 2026-10-14 - REVIEW.md; 3 fact(s) open) — when they arrive, each is recorded once (run.py fact / --settle) and the grids re-run | 2026-10-14 | /interview home-mobile-medical facts-answers all |
+| Jonie | blockers not cleared: H-2026-10-09-03-redirect-01 is issued; H-2026-10-09-03-redirect-02 is issued; H-2026-10-09-03-redirect-03 is issued; H-2026-10-09-04-broken_link-01 is issued; H-2026-10-09-04-broken_link-02 is issued (+9 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-14 | /verify home-mobile-medical |
 | Jonie | wp setup handoff — 3 of 3 item(s) open | 2026-10-07 | H-2026-10-07-01-wp_setup |
 | Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-07 | H-2026-10-07-02-seopress_settings |
 | Jonie | redirect handoff — 3 of 3 item(s) open | 2026-10-09 | H-2026-10-09-03-redirect |
@@ -54,21 +58,17 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Hom
 
 _Inputs the data manifest (methodology/data-manifest.json) says a step must read, where that step has not finished for this client yet._
 
-- **reviews** (1 file(s), e.g. `data/reviews/reviews.csv`) — read by build:evidence, build:facts
-- **reviews-raw** (2 file(s), e.g. `data/reviews/raw/reviews.json`) — read by the step that reads reviews
-- **review-mentions** (1 file(s), e.g. `data/reviews/mentions.csv`) — read by build:evidence, build:facts
 - **paa-questions** (2 file(s), e.g. `data/paa/paa-questions.csv`) — read by build:evidence, discovery:fanout
 - **paa-raw** (20 file(s), e.g. `data/paa/raw/curved-stair-lifts-beaufort.json`) — read by the step that reads paa-questions
 - **fanout-queries** (2 file(s), e.g. `data/fanout/fanout-queries.csv`) — read by build:evidence
 - **fanout-raw** (10 file(s), e.g. `data/fanout/raw/curved-stair-lifts-beaufort.json`) — read by the step that reads fanout-queries
 - **blog-inventory** (1 file(s), e.g. `inputs/Home Mobile Medical - CMS - blog-inventory - 2026-09-18.csv`) — read by blog:map
 - **entity-profile** (1 file(s), e.g. `inputs/Home Mobile Medical - MANUAL - entity-profile - 2026-09-18.md`) — read by discovery:discovery
-- **facts** (1 file(s), e.g. `facts.json`) — read by build:evidence, build:facts
-- **settled** (1 file(s), e.g. `decisions-settled.md`) — read by build:evidence, build:facts, build:brief, build:draft, build:drafts, build:write, build:plan
+- **interviews** (2 file(s), e.g. `interviews/facts/Home Mobile Medical - Facts Interview - all - 2026-10-14 - REVIEW.md`) — read by build:evidence, interview:facts-answers
 
 ## Flagged for Paul (system)
 
-_None._
+- **F-001** (open, not yet reviewed) 2026-10-14 · build:facts: methodology/sources/sc-lowcountry.md: no rows for Charleston County, Berkeley/Dorchester/Colleton/Hampton counties or their towns (researchers found official permit pages: charleston-sc.gov/856/Permit-Center, charlestoncounty.gov/departments/building-inspection-services, northcharleston.org Building-and-Permit-Inspections, tompsc.com/151/Permit, kiawahisland.gov/building_services.php, cityoffollybeach.com building_planning, goosecreeksc.gov building-permits, cityofhanahan.com/node/86, summervillesc.gov/289/Permitting); HHI permit URL listed returns 404 to fetch (hiltonheadislandsc.gov/permits works); Bluffton Neighborhoods PDF row has no URL; Census QuickFacts returns 403 to the fetch tool and the Census API needs a key, so 65+ shares come via Wikipedia (2020 census). — workaround: Researchers cited the official pages directly and Wikipedia for census figures; Paul adds the rows at /system-review.
 
 ## Spend so far
 
@@ -78,4 +78,4 @@ _None._
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /build 2026-10-09T12:24 — Technical Blocker Checklist written; 14 blocker rows to Jonie in 3 handoffs (redirect chains, internal links through 301s, Q5 status check); no High blocks crawling/indexing/measurement
+Last run: /build 2026-10-14T10:21 — Facts round: 100 public facts looked up, grids 28 pass/5 warn/0 block, 3-question set for Paul

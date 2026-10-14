@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served \u2014 one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "In the 2020 census 21.2% of Walterboro residents were 65+ (17.9% in 2010); 2,689 housing units (2020) and historic homes dating back to 1820; mean July high about 90.5 F and about 51.4 inches of precipitation a year.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Walterboro,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Catholic Hill (rural area, southern Walterboro, once Thompson's Crossroads); Hickory Valley (original settlement site)",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Walterboro,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "HCA Healthcare Colleton Hospital (Walterboro); Colleton County Courthouse (Robert Mills design); University of South Carolina Salkehatchie; Lowcountry Regional Airport",
+      "status": "Internally Verified",
+      "source": "https://www.hcahealthcarecolleton.com/ (HCA Healthcare Colleton Hospital, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Colleton_County_Courthouse (Wikipedia, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/University_of_South_Carolina_Salkehatchie (Wikipedia, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Lowcountry_Regional_Airport (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "City of Walterboro posts its own Building Permit Application (walterborosc.org); Colleton County Planning and Development (31 Klein St, Walterboro; 843-549-1709) is the county office. Official pages do not state which office issues inside city limits - confirm by phone",
+      "status": "Internally Verified",
+      "source": "https://www.walterborosc.org/building-permit-applications (City of Walterboro, read 2026-10-14) \u00b7 https://colletoncounty.org/sites/default/files/uploads/planning_dev/Applications/2023-zoning-permit-application.pdf (Colleton County Planning & Development, read 2026-10-14)"
+    }
+  }
+}

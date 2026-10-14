@@ -1,0 +1,14 @@
+{
+  "facts": {
+    "service_scope": {
+      "value": "Curved stair lifts sourced new for the customer and professionally installed; maintenance and repairs of any brand within the service area. Brands: Stannah, Bruno, Harmar (independent). Manufacturer's warranty only.",
+      "status": "Client Confirmed",
+      "source": "Brand Guide D (Services, Brands, Warranty); Decision 005; Paul 2026-10-07"
+    },
+    "service_process": {
+      "value": "Free in-home estimate (or a photo quote) → lift sourced new → professional installation supervised by Jason Workens to the manufacturer's installation instructions. [Lead time for a curved rail and install duration not confirmed for curved lifts — the one-day figure is the general installation time]",
+      "status": "Client Confirmed",
+      "source": "Brand Guide D (Free estimate, Team size, Safety statement); Paul 2026-10-07"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served \u2014 one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Ridgeland sits on a sandy ridge that is some of the highest land in Jasper County; 11.7% of town residents were 65 or older (2020, median age 36.4); Jasper County overall: 22.6% 65+ and 89.1% rural (2020 census).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Ridgeland,_South_Carolina (Wikipedia, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Jasper_County,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "No subdivision list found. Nearby Jasper County communities named by Wikipedia: Coosawhatchie, Gillisonville, Grahamville, Limehouse, Okatie, Old House, Pineland, Pocotaligo, Point South, Robertville, Switzerland, Tillman",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Ridgeland,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Jasper County Courthouse (Ridgeland, county seat); Thomas Heyward Academy (inside town limits, opened 1970); Ridgeland Correctional Institution; no hospital named for Ridgeland",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Jasper_County_Courthouse_(South_Carolina) (Wikipedia, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Ridgeland,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "Town of Ridgeland Planning and Community Development (town issues building permits; residential permit requirements and forms on the page)",
+      "status": "Internally Verified",
+      "source": "https://www.ridgelandsc.gov/planning-and-community-development/home (Town of Ridgeland, read 2026-10-14)"
+    }
+  }
+}

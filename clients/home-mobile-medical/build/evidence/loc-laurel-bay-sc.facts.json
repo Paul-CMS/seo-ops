@@ -1,0 +1,24 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served — one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Laurel Bay is a census-designated place and military housing complex in Beaufort County that primarily houses military families stationed at MCAS Beaufort, MCRD Parris Island and Naval Hospital Beaufort; the housing area opened in the mid-1950s (1,955 housing units in 2000); 5,082 residents at the 2020 census. Its 65+ share was 1.2% in the 2000 census (old figure); Beaufort County overall: 28.4% were 65+ in 2020. MCAS Beaufort is about 5 km from the housing complex.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Laurel_Bay,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_County,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Marine_Corps_Air_Station_Beaufort (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Marine Corps Air Station Beaufort - https://en.wikipedia.org/wiki/Marine_Corps_Air_Station_Beaufort · Marine Corps Recruit Depot Parris Island - https://en.wikipedia.org/wiki/Marine_Corps_Recruit_Depot_Parris_Island · U.S. Naval Hospital Beaufort - https://en.wikipedia.org/wiki/Naval_Hospital_Beaufort · Chester Field (National Register of Historic Places site within the housing area) - https://en.wikipedia.org/wiki/Chester_Field_(Laurel_Bay,_South_Carolina)",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Laurel_Bay,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Marine_Corps_Air_Station_Beaufort (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Naval_Hospital_Beaufort (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Marine_Corps_Recruit_Depot_Parris_Island (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "Beaufort County Building Codes (Building Inspections), 100 Ribaut Road, Beaufort SC 29901, 843-255-2065 - Laurel Bay is an unincorporated census-designated place, not a municipality (Wikipedia lists it among the county's CDPs, not its towns/cities), and the county issues building permits for unincorporated areas. Inference from those two pages; confirm for an on-base or federal-housing address.",
+      "status": "Internally Verified",
+      "source": "https://beaufortcountysc.gov/building-codes (Beaufort County, read 2026-10-14) · https://en.wikipedia.org/wiki/Laurel_Bay,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_County,_South_Carolina (Wikipedia, read 2026-10-14)"
+    }
+  }
+}

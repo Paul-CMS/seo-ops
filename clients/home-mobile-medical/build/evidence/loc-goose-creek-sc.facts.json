@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served \u2014 one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Goose Creek: 11.9% of residents were 65 or older (2020 census); elevation 13 ft in southern Berkeley County, bordered on the east by the Cooper River and Back River; about 42.8 sq mi; St. James Church and Otranto Plantation Indigo Vats are on the National Register.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Goose_Creek,_South_Carolina (Wikipedia, citing 2020 US Census) (read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Crowfield Plantation (golf community; the city site links Crowfield Golf and The Crowfield Collaborative). No official neighborhood list found; others (Liberty Hall Plantation, Boulder Bluff, Carnes Crossroads) appear only in realtor sources.",
+      "status": "Internally Verified",
+      "source": "https://www.goosecreeksc.gov/ (City of Goose Creek) (read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Central Creek Park; Joseph S. Daning Amphitheater; Marguerite H. Brown Municipal Center (City Hall, 519 N. Goose Creek Blvd); St. James-Goose Creek Church (NRHP); Naval Weapons Station (Joint Base Charleston).",
+      "status": "Internally Verified",
+      "source": "https://www.goosecreeksc.gov/recreation/central-creek-park (City of Goose Creek); https://www.goosecreeksc.gov/recreation/joseph-s-daning-amphitheater (City of Goose Creek); https://en.wikipedia.org/wiki/Goose_Creek,_South_Carolina (Wikipedia) (read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "City of Goose Creek, Building Inspection Division / Permits (Administration), 519 North Goose Creek Blvd, 843-797-6220.",
+      "status": "Internally Verified",
+      "source": "https://www.goosecreeksc.gov/government/departments/administration/building-permits (City of Goose Creek) (read 2026-10-14)"
+    }
+  }
+}

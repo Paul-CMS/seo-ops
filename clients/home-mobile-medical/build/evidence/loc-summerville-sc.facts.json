@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served \u2014 one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Summerville: 16.3% of residents were 65 or older in the 2020 census (up from 10.5% in 2010); elevation 43 ft, humid subtropical climate with about 52.7 in of rain a year; Summerville Historic District is on the National Register of Historic Places; the town sits in the Middleton Place-Summerville seismic zone.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Summerville,_South_Carolina (Wikipedia, citing 2020 US Census) (read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Nexton and Cane Bay Plantation are large Berkeley County master-planned communities with Summerville addresses; not confirmed to be inside Town limits (Nexton annexation vote was postponed, undated). No official neighborhood list found.",
+      "status": "Internally Verified",
+      "source": "https://www.postandcourier.com/business/real_estate/2-sc-housing-developments-in-top-50-master-planned-communities-in-us-both-are-in/article_24b6e9d8-b3f4-11ea-b53d-734aeecdc0f9.html (Post and Courier) (read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Colonial Dorchester State Historic Site (300 State Park Road, Summerville - tabby fort, St. George's bell tower, log wharf on the Ashley River); Summerville Azalea Park (Flowertown Festival site; walking tour); Summerville Medical Center; Summerville Historic District (NRHP).",
+      "status": "Internally Verified",
+      "source": "https://southcarolinaparks.com/colonial-dorchester (SC Parks); https://visitsummerville.com/walking-the-ville-azalea-park-sculptures-tour (Visit Summerville); https://en.wikipedia.org/wiki/Summerville,_South_Carolina (Wikipedia) (read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "Town of Summerville handles permits for parcels inside Town limits (Permitting page: 200 South Main Street, 843-871-6000, Building Permits guidelines section). Unincorporated parcels (the Summerville ZIP spans Dorchester, Berkeley, Charleston counties): Dorchester County Building Services, 500 N. Main St, (843) 832-0011. Confirm by parcel.",
+      "status": "Internally Verified",
+      "source": "https://www.summervillesc.gov/289/Permitting (Town of Summerville); https://dorchestercountysc.gov/government/planning-development (Dorchester County, seen only in a search result; fetch 403) (read 2026-10-14)"
+    }
+  }
+}

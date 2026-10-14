@@ -1,0 +1,1044 @@
+{
+ "page": "svc-wheelchair-lifts",
+ "type": "service",
+ "url": "https://homemobilemedical.com/wheelchair-lifts/",
+ "section": "services",
+ "built": "2026-10-14T10:19:58-05:00",
+ "services": [
+  "Wheelchair Lifts"
+ ],
+ "places": [],
+ "facts": [
+  {
+   "id": "a-brand-entity-gbp-name-exactly",
+   "label": "Brand entity (GBP name, exactly)",
+   "status": "client_confirmed",
+   "value": "Home Mobile Medical",
+   "source": ""
+  },
+  {
+   "id": "a-gbp-primary-category-the-category-entity",
+   "label": "GBP primary category = the category entity",
+   "status": "paul_approved",
+   "value": "Mobility equipment supplier (supporting Wikimedia subject: Mobility aid, Q6887300). **Primary category only** — no \"Medical equipment supplier\" secondary (Paul 2026-10-07)",
+   "source": ""
+  },
+  {
+   "id": "a-category-variants-4-6",
+   "label": "Category variants (4–6)",
+   "status": "submitted",
+   "value": "Mobility equipment supplier · stair lift installer · stair lift and accessibility lift company · home accessibility lifts · accessibility equipment (grid query language). Excluded: \"medical equipment supplier\" (broad-DME signal, Decisions 007/038)",
+   "source": ""
+  },
+  {
+   "id": "a-storefront-or-sab",
+   "label": "Storefront or SAB",
+   "status": "client_confirmed",
+   "value": "Service-area business. Not customer-facing. The GBP address stays in the site footer only so the site and GBP cross-reference",
+   "source": ""
+  },
+  {
+   "id": "a-area-entity",
+   "label": "Area entity",
+   "status": "paul_approved",
+   "value": "South Carolina Lowcountry (Q3885311)",
+   "source": ""
+  },
+  {
+   "id": "a-area-variants-3-5",
+   "label": "Area variants (3–5)",
+   "status": "submitted",
+   "value": "South Carolina Lowcountry *(reserved)* · the Lowcountry · Beaufort County · Hilton Head Island–Bluffton–Port Royal area · Charleston area",
+   "source": ""
+  },
+  {
+   "id": "a-separator-standard",
+   "label": "Separator standard",
+   "status": "paul_approved",
+   "value": "` - `",
+   "source": ""
+  },
+  {
+   "id": "a-phone",
+   "label": "Phone",
+   "status": "client_confirmed",
+   "value": "(843) 476-1329",
+   "source": ""
+  },
+  {
+   "id": "a-primary-domain-canonical-host-form",
+   "label": "Primary domain (canonical host form)",
+   "status": "internally_verified",
+   "value": "https://homemobilemedical.com/",
+   "source": ""
+  },
+  {
+   "id": "a-legal-entity-name",
+   "label": "Legal entity name",
+   "status": "paul_approved",
+   "value": "Home Mobile Medical",
+   "source": ""
+  },
+  {
+   "id": "a-exact-url-in-the-gbp-website-field",
+   "label": "Exact URL in the GBP Website field",
+   "status": "paul_approved",
+   "value": "https://homemobilemedical.com/",
+   "source": ""
+  },
+  {
+   "id": "d-founding-year-years-in-business",
+   "label": "Founding year / years in business",
+   "status": "client_confirmed",
+   "value": "15+ years of **Jason Workens' experience** — never the brand's age (a directory says the business opened 2023)",
+   "source": "Decision 013"
+  },
+  {
+   "id": "d-history",
+   "label": "History",
+   "status": "client_confirmed",
+   "value": "Jason's former company, Beaufort Medical Equipment, was sold; Home Mobile Medical is not a rebrand of it",
+   "source": "Decision 003"
+  },
+  {
+   "id": "d-ownership",
+   "label": "Ownership",
+   "status": "client_confirmed",
+   "value": "Family-owned; locally owned and operated",
+   "source": "Decision 014; Paul 2026-10-07"
+  },
+  {
+   "id": "d-legal-entity-dba",
+   "label": "Legal entity + DBA",
+   "status": "paul_approved",
+   "value": "Home Mobile Medical; no DBA known",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-licence-numbers-and-classes",
+   "label": "Licence numbers and classes",
+   "status": "paul_approved",
+   "value": "None to publish",
+   "source": "Paul 2026-10-07 (none found)"
+  },
+  {
+   "id": "d-insurance-bonded-status",
+   "label": "Insurance / bonded status",
+   "status": "paul_approved",
+   "value": "None to publish",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-certifications-authorizations-factory-training",
+   "label": "Certifications, authorizations, factory training",
+   "status": "paul_approved",
+   "value": "None. No authorized/certified-dealer wording for any brand",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-brands-installed-and-repaired",
+   "label": "Brands installed and repaired",
+   "status": "paul_approved",
+   "value": "\"We install and repair stair lifts from leading brands such as Stannah, Bruno and Harmar.\" Independent; no authorized/certified-dealer wording",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-association-memberships",
+   "label": "Association memberships",
+   "status": "unknown",
+   "value": "None known",
+   "source": ""
+  },
+  {
+   "id": "d-warranty-terms",
+   "label": "Warranty terms",
+   "status": "client_confirmed",
+   "value": "Manufacturer's warranty only; no Home Mobile Medical warranty",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-guarantees",
+   "label": "Guarantees",
+   "status": "client_confirmed",
+   "value": "None",
+   "source": ""
+  },
+  {
+   "id": "d-awards-and-rankings",
+   "label": "Awards and rankings",
+   "status": "unknown",
+   "value": "None",
+   "source": ""
+  },
+  {
+   "id": "d-google-rating-and-review-count-date-checked",
+   "label": "Google rating and review count (date checked)",
+   "status": "internally_verified",
+   "value": "2.9 stars from 19 Google reviews (checked 2026-10-08)",
+   "source": "DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23"
+  },
+  {
+   "id": "d-team-size-trucks-jobs-completed",
+   "label": "Team size / trucks / jobs completed",
+   "status": "client_confirmed",
+   "value": "Jason plus one helper. Jason personally supervises every installation",
+   "source": "Paul 2026-10-07; Decision 015"
+  },
+  {
+   "id": "d-installation-time",
+   "label": "Installation time",
+   "status": "client_confirmed",
+   "value": "Usually one day, about 3–4 hours; same-day installation **in most cases**",
+   "source": "Paul 2026-10-07; Decision 016"
+  },
+  {
+   "id": "d-financing-available-provider-terms",
+   "label": "Financing — available, provider, terms",
+   "status": "client_confirmed",
+   "value": "Available. No provider, rates or terms published",
+   "source": "Decision 017"
+  },
+  {
+   "id": "d-free-estimate-and-what-free-means",
+   "label": "Free estimate — and what free means",
+   "status": "client_confirmed",
+   "value": "Free in-home estimate. Can also quote from a photo of the stairs (priced by stair count)",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-services",
+   "label": "Services",
+   "status": "client_confirmed",
+   "value": "Straight stair lifts · curved stair lifts · porch lifts / vertical platform lifts (outdoor access for raised entrances and decks) · wheelchair lifts · professional installation · sourcing new lifts for customers · maintenance · repairs (any stair lift or lift ",
+   "source": "Decision 005; Paul 2026-10-07"
+  },
+  {
+   "id": "d-not-offered",
+   "label": "Not offered",
+   "status": "client_confirmed",
+   "value": "Broad DME, rentals, hospital beds, power chairs, scooters, scooter lifts, scooter repair, lift chairs, mobility ramps, general wheelchairs; HMM is not a manufacturer",
+   "source": "Decisions 007, 008, 018"
+  },
+  {
+   "id": "d-safety-statement",
+   "label": "Safety statement",
+   "status": "paul_approved",
+   "value": "\"Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions.\"",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-email",
+   "label": "Email",
+   "status": "client_confirmed",
+   "value": "info@homemobilemedical.com",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-hours",
+   "label": "Hours",
+   "status": "client_confirmed",
+   "value": "Monday–Friday 9:00 AM–5:00 PM; Saturday–Sunday closed",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "status": "unknown",
+   "value": "[NEED]",
+   "source": ""
+  },
+  {
+   "id": "d-minimum-service-call-or-trip-charge",
+   "label": "Minimum service call or trip charge",
+   "status": "unknown",
+   "value": "[NEED]",
+   "source": ""
+  },
+  {
+   "id": "d-payment-methods",
+   "label": "Payment methods",
+   "status": "paul_approved",
+   "value": "General wording only (\"we accept common payment methods\"); no specific list",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-services-subcontracted-out",
+   "label": "Services subcontracted out",
+   "status": "unknown",
+   "value": "None known",
+   "source": ""
+  },
+  {
+   "id": "d-named-staff-for-on-page-use",
+   "label": "Named staff for on-page use",
+   "status": "client_confirmed",
+   "value": "Jason Workens, founder/owner",
+   "source": "Paul 2026-10-07"
+  },
+  {
+   "id": "d-licensed-practitioner-for-health-claim-sign-off",
+   "label": "Licensed practitioner for health-claim sign-off",
+   "status": "paul_approved",
+   "value": "Not required (health-adjacent, CM-040)",
+   "source": ""
+  },
+  {
+   "id": "page:service_scope",
+   "label": "service scope",
+   "status": "Client Confirmed",
+   "value": "Wheelchair lifts sourced new and professionally installed; maintenance and repairs (wheelchair-lift repair confirmed) within the service area. Manufacturer's warranty only.",
+   "source": "Brand Guide D (Services, Warranty); Decision 005; client via Paul 2026-10-07 (C7)"
+  },
+  {
+   "id": "page:service_process",
+   "label": "service process",
+   "status": "Client Confirmed",
+   "value": "Free in-home estimate → lift sourced new → professional installation supervised by Jason Workens to the manufacturer's installation instructions. [Install duration, site prep and permits not confirmed for wheelchair lifts]",
+   "source": "Brand Guide D (Free estimate, Team size, Safety statement); Paul 2026-10-07"
+  }
+ ],
+ "reviews": {
+  "service: Wheelchair Lifts": {
+   "reviewers": 1,
+   "quotes": [
+    {
+     "date": "2022-10-08",
+     "quote": "Just ordered a new lift chair, bought a rollator and rented a wheelchair for temporary needs.",
+     "row": "reviews.csv row 6"
+    }
+   ],
+   "tier": "example",
+   "checked": false,
+   "checked_at": ""
+  },
+  "practice: communication": {
+   "reviewers": 2,
+   "quotes": [
+    {
+     "date": "2022-11-02",
+     "quote": "They have been so very helpful in getting my uncle a wheelchair and explains the process of the dreadful paperwork required by him to get that wheelchair.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2020-05-26",
+     "quote": "wouldn’t even explain the problem ...",
+     "row": "reviews.csv row 18"
+    }
+   ],
+   "tier": "example",
+   "checked": false,
+   "checked_at": ""
+  },
+  "practice: speed": {
+   "reviewers": 1,
+   "quotes": [
+    {
+     "date": "2022-09-26",
+     "quote": "Jason was so nice and helpful and got me the chair the same day.",
+     "row": "reviews.csv row 8"
+    }
+   ],
+   "tier": "example",
+   "checked": false,
+   "checked_at": ""
+  },
+  "practice: insurance claims": {
+   "reviewers": 1,
+   "quotes": [
+    {
+     "date": "2020-05-26",
+     "quote": "Very rude and disrespectful to myself and my insurance provider for no reason ..",
+     "row": "reviews.csv row 18"
+    }
+   ],
+   "tier": "example",
+   "checked": false,
+   "checked_at": ""
+  }
+ },
+ "questions": [
+  {
+   "kind": "PAA",
+   "q": "What are the best brands of wheelchair lifts?",
+   "seen": 2,
+   "total_seen": 2
+  },
+  {
+   "kind": "fan-out",
+   "q": "home wheelchair lift options",
+   "seen": 2,
+   "total_seen": 2
+  },
+  {
+   "kind": "fan-out",
+   "q": "how much do wheelchair lifts cost",
+   "seen": 2,
+   "total_seen": 2
+  },
+  {
+   "kind": "fan-out",
+   "q": "signs you need a wheelchair lift",
+   "seen": 2,
+   "total_seen": 2
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift maintenance tips",
+   "seen": 2,
+   "total_seen": 2
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift safety features",
+   "seen": 2,
+   "total_seen": 2
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift warranty information",
+   "seen": 2,
+   "total_seen": 2
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift weight capacity",
+   "seen": 2,
+   "total_seen": 2
+  },
+  {
+   "kind": "PAA",
+   "q": "Are wheelchair lifts ADA compliant?",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "PAA",
+   "q": "Is Charleston, SC wheelchair friendly?",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "PAA",
+   "q": "What are some good electric wheelchair lifts for home use?",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "PAA",
+   "q": "What are the different types of wheelchair lifts?",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "PAA",
+   "q": "What is the best wheelchair lift for the back of a van?",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "PAA",
+   "q": "What is the shuttle service in Charleston, SC?",
+   "seen": 1,
+   "total_seen": 2
+  },
+  {
+   "kind": "fan-out",
+   "q": "ada compliant wheelchair lifts",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "affordable wheelchair lifts beaufort",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "are wheelchair lifts covered by insurance",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "automatic wheelchair lifts charleston",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "best home wheelchair lift brands",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "best outdoor wheelchair lifts",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "best place to buy wheelchair lifts",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "best wheelchair lift brands",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "best wheelchair lifts charleston",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "best wheelchair lifts near me",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "custom wheelchair lifts charleston",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "custom wheelchair lifts for homes",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "electric wheelchair lift installation",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "handicap lifts charleston sc",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "home accessibility wheelchair lifts",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "home modifications wheelchair lifts",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "how long does wheelchair lift installation take",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "how long to install wheelchair lift",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "how to choose a wheelchair lift",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "how to install a wheelchair lift",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "how to install wheelchair lift",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "how to measure for wheelchair lift",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "how to operate wheelchair lifts safely",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "how wheelchair lifts work",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "hydraulic wheelchair lifts for homes",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "local wheelchair lift installers",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "portable wheelchair lifts charleston",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "portable wheelchair lifts for home",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "residential wheelchair lifts cost",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "vertical wheelchair lift cost",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift companies beaufort",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift companies charleston sc",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift companies near charleston",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift emergency backup",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift financing charleston",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift financing options",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift for stairs",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift grants beaufort",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift grants south carolina",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift installation beaufort",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift installation cost estimate",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift installation near me",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift installation reviews",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift local regulations charleston",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift parts near me",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift permits beaufort",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift permits charleston sc",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift price estimate charleston",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift prices beaufort",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift rental beaufort",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift rental charleston",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift repair beaufort",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift repair charleston",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift reviews 2024",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift reviews charleston",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift troubleshooting",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift vs elevator cost",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift vs ramp cost",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift vs stairlift",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lift with battery backup",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lifts beaufort",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lifts charleston cost",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair lifts for home use",
+   "seen": 1,
+   "total_seen": 1
+  },
+  {
+   "kind": "fan-out",
+   "q": "wheelchair ramps vs lifts",
+   "seen": 1,
+   "total_seen": 1
+  }
+ ],
+ "site_gbp": [],
+ "public": [],
+ "research": [],
+ "place": [],
+ "settled": [],
+ "gaps": [],
+ "excerpts": [
+  {
+   "id": "R1",
+   "kind": "review",
+   "topic": "service: Wheelchair Lifts",
+   "tier": "example",
+   "text": "Just ordered a new lift chair, bought a rollator and rented a wheelchair for temporary needs."
+  },
+  {
+   "id": "R2",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "example",
+   "text": "They have been so very helpful in getting my uncle a wheelchair and explains the process of the dreadful paperwork required by him to get that wheelchair."
+  },
+  {
+   "id": "R3",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "example",
+   "text": "wouldn’t even explain the problem ..."
+  },
+  {
+   "id": "R4",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "example",
+   "text": "Jason was so nice and helpful and got me the chair the same day."
+  },
+  {
+   "id": "R5",
+   "kind": "review",
+   "topic": "practice: insurance claims",
+   "tier": "example",
+   "text": "Very rude and disrespectful to myself and my insurance provider for no reason .."
+  }
+ ],
+ "known": [
+  {
+   "id": "a-brand-entity-gbp-name-exactly",
+   "label": "Brand entity (GBP name, exactly)",
+   "value": "Home Mobile Medical"
+  },
+  {
+   "id": "a-gbp-primary-category-the-category-entity",
+   "label": "GBP primary category = the category entity",
+   "value": "Mobility equipment supplier (supporting Wikimedia subject: Mobility aid, Q6887300). **Primary category only** — no \"Medical equipment supplier\" secondary (Paul 2026-10-07)"
+  },
+  {
+   "id": "a-storefront-or-sab",
+   "label": "Storefront or SAB",
+   "value": "Service-area business. Not customer-facing. The GBP address stays in the site footer only so the site and GBP cross-reference"
+  },
+  {
+   "id": "a-area-entity",
+   "label": "Area entity",
+   "value": "South Carolina Lowcountry (Q3885311)"
+  },
+  {
+   "id": "a-separator-standard",
+   "label": "Separator standard",
+   "value": "` - `"
+  },
+  {
+   "id": "a-phone",
+   "label": "Phone",
+   "value": "(843) 476-1329"
+  },
+  {
+   "id": "a-primary-domain-canonical-host-form",
+   "label": "Primary domain (canonical host form)",
+   "value": "https://homemobilemedical.com/"
+  },
+  {
+   "id": "a-legal-entity-name",
+   "label": "Legal entity name",
+   "value": "Home Mobile Medical"
+  },
+  {
+   "id": "a-exact-url-in-the-gbp-website-field",
+   "label": "Exact URL in the GBP Website field",
+   "value": "https://homemobilemedical.com/"
+  },
+  {
+   "id": "d-founding-year-years-in-business",
+   "label": "Founding year / years in business",
+   "value": "15+ years of **Jason Workens' experience** — never the brand's age (a directory says the business opened 2023)"
+  },
+  {
+   "id": "d-history",
+   "label": "History",
+   "value": "Jason's former company, Beaufort Medical Equipment, was sold; Home Mobile Medical is not a rebrand of it"
+  },
+  {
+   "id": "d-ownership",
+   "label": "Ownership",
+   "value": "Family-owned; locally owned and operated"
+  },
+  {
+   "id": "d-legal-entity-dba",
+   "label": "Legal entity + DBA",
+   "value": "Home Mobile Medical; no DBA known"
+  },
+  {
+   "id": "d-licence-numbers-and-classes",
+   "label": "Licence numbers and classes",
+   "value": "None to publish"
+  },
+  {
+   "id": "d-insurance-bonded-status",
+   "label": "Insurance / bonded status",
+   "value": "None to publish"
+  },
+  {
+   "id": "d-certifications-authorizations-factory-training",
+   "label": "Certifications, authorizations, factory training",
+   "value": "None. No authorized/certified-dealer wording for any brand"
+  },
+  {
+   "id": "d-brands-installed-and-repaired",
+   "label": "Brands installed and repaired",
+   "value": "\"We install and repair stair lifts from leading brands such as Stannah, Bruno and Harmar.\" Independent; no authorized/certified-dealer wording"
+  },
+  {
+   "id": "d-warranty-terms",
+   "label": "Warranty terms",
+   "value": "Manufacturer's warranty only; no Home Mobile Medical warranty"
+  },
+  {
+   "id": "d-guarantees",
+   "label": "Guarantees",
+   "value": "None"
+  },
+  {
+   "id": "d-google-rating-and-review-count-date-checked",
+   "label": "Google rating and review count (date checked)",
+   "value": "2.9 stars from 19 Google reviews (checked 2026-10-08)"
+  },
+  {
+   "id": "d-team-size-trucks-jobs-completed",
+   "label": "Team size / trucks / jobs completed",
+   "value": "Jason plus one helper. Jason personally supervises every installation"
+  },
+  {
+   "id": "d-installation-time",
+   "label": "Installation time",
+   "value": "Usually one day, about 3–4 hours; same-day installation **in most cases**"
+  },
+  {
+   "id": "d-financing-available-provider-terms",
+   "label": "Financing — available, provider, terms",
+   "value": "Available. No provider, rates or terms published"
+  },
+  {
+   "id": "d-free-estimate-and-what-free-means",
+   "label": "Free estimate — and what free means",
+   "value": "Free in-home estimate. Can also quote from a photo of the stairs (priced by stair count)"
+  },
+  {
+   "id": "d-services",
+   "label": "Services",
+   "value": "Straight stair lifts · curved stair lifts · porch lifts / vertical platform lifts (outdoor access for raised entrances and decks) · wheelchair lifts · professional installation · sourcing new lifts for customers · maintenance · repairs (any stair lift or lift "
+  },
+  {
+   "id": "d-not-offered",
+   "label": "Not offered",
+   "value": "Broad DME, rentals, hospital beds, power chairs, scooters, scooter lifts, scooter repair, lift chairs, mobility ramps, general wheelchairs; HMM is not a manufacturer"
+  },
+  {
+   "id": "d-safety-statement",
+   "label": "Safety statement",
+   "value": "\"Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions.\""
+  },
+  {
+   "id": "d-email",
+   "label": "Email",
+   "value": "info@homemobilemedical.com"
+  },
+  {
+   "id": "d-hours",
+   "label": "Hours",
+   "value": "Monday–Friday 9:00 AM–5:00 PM; Saturday–Sunday closed"
+  },
+  {
+   "id": "d-payment-methods",
+   "label": "Payment methods",
+   "value": "General wording only (\"we accept common payment methods\"); no specific list"
+  },
+  {
+   "id": "d-named-staff-for-on-page-use",
+   "label": "Named staff for on-page use",
+   "value": "Jason Workens, founder/owner"
+  },
+  {
+   "id": "d-licensed-practitioner-for-health-claim-sign-off",
+   "label": "Licensed practitioner for health-claim sign-off",
+   "value": "Not required (health-adjacent, CM-040)"
+  },
+  {
+   "id": "page:service_scope",
+   "label": "service scope",
+   "value": "Wheelchair lifts sourced new and professionally installed; maintenance and repairs (wheelchair-lift repair confirmed) within the service area. Manufacturer's warranty only."
+  },
+  {
+   "id": "page:service_process",
+   "label": "service process",
+   "value": "Free in-home estimate → lift sourced new → professional installation supervised by Jason Workens to the manufacturer's installation instructions. [Install duration, site prep and permits not confirmed for wheelchair lifts]"
+  }
+ ]
+}

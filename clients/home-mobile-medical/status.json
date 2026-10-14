@@ -112,7 +112,48 @@
       "live_url": "https://homemobilemedical.com/services/stair-lifts/",
       "replaces": [
         "https://homemobilemedical.com/services/stair-lifts/"
-      ]
+      ],
+      "evidence": {
+        "result": "warn",
+        "counts": {
+          "Known": 9,
+          "Unknown": 0,
+          "Unverified": 3,
+          "Conflict": 0
+        },
+        "why": [
+          "0 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+        ],
+        "grid": "clients/home-mobile-medical/build/evidence/svc-stair-lifts.grid.md",
+        "sha": "324cb9ead5b1",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "timeframe",
+          "pricing",
+          "guarantees"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/pilot/packs/svc-stair-lifts.md",
+        "json": "clients/home-mobile-medical/build/pilot/packs/svc-stair-lifts.json",
+        "sha": "8acd3610a16c",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "pilot",
+        "counts": {
+          "facts": 41,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 0,
+          "excerpts": 4
+        }
+      }
     },
     "svc-curved-stair-lifts": {
       "type": "service",
@@ -123,7 +164,48 @@
       "live_url": "https://homemobilemedical.com/services/curved-stair-lifts/",
       "replaces": [
         "https://homemobilemedical.com/services/curved-stair-lifts/"
-      ]
+      ],
+      "evidence": {
+        "result": "warn",
+        "counts": {
+          "Known": 9,
+          "Unknown": 0,
+          "Unverified": 3,
+          "Conflict": 0
+        },
+        "why": [
+          "0 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+        ],
+        "grid": "clients/home-mobile-medical/build/evidence/svc-curved-stair-lifts.grid.md",
+        "sha": "59a8fd73c1d2",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "timeframe",
+          "pricing",
+          "guarantees"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/services/packs/svc-curved-stair-lifts.md",
+        "json": "clients/home-mobile-medical/build/services/packs/svc-curved-stair-lifts.json",
+        "sha": "971c1542c5f9",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "services",
+        "counts": {
+          "facts": 41,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 70,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 0,
+          "excerpts": 4
+        }
+      }
     },
     "svc-porch-lifts": {
       "type": "service",
@@ -134,7 +216,48 @@
       "live_url": "https://homemobilemedical.com/services/porch-lifts/",
       "replaces": [
         "https://homemobilemedical.com/services/porch-lifts/"
-      ]
+      ],
+      "evidence": {
+        "result": "warn",
+        "counts": {
+          "Known": 9,
+          "Unknown": 0,
+          "Unverified": 3,
+          "Conflict": 0
+        },
+        "why": [
+          "0 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+        ],
+        "grid": "clients/home-mobile-medical/build/evidence/svc-porch-lifts.grid.md",
+        "sha": "a8a668d5c7e5",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "timeframe",
+          "pricing",
+          "guarantees"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/services/packs/svc-porch-lifts.md",
+        "json": "clients/home-mobile-medical/build/services/packs/svc-porch-lifts.json",
+        "sha": "05e2c40f9b03",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "services",
+        "counts": {
+          "facts": 41,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 0,
+          "excerpts": 4
+        }
+      }
     },
     "svc-wheelchair-lifts": {
       "type": "service",
@@ -145,14 +268,97 @@
       "live_url": "https://homemobilemedical.com/services/wheelchair-lifts/",
       "replaces": [
         "https://homemobilemedical.com/services/wheelchair-lifts/"
-      ]
+      ],
+      "evidence": {
+        "result": "warn",
+        "counts": {
+          "Known": 9,
+          "Unknown": 0,
+          "Unverified": 3,
+          "Conflict": 0
+        },
+        "why": [
+          "0 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+        ],
+        "grid": "clients/home-mobile-medical/build/evidence/svc-wheelchair-lifts.grid.md",
+        "sha": "0ce00025f8e2",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "timeframe",
+          "pricing",
+          "guarantees"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/services/packs/svc-wheelchair-lifts.md",
+        "json": "clients/home-mobile-medical/build/services/packs/svc-wheelchair-lifts.json",
+        "sha": "501587fd0ac5",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "services",
+        "counts": {
+          "facts": 41,
+          "review_topics": 4,
+          "review_excerpts": 5,
+          "questions": 78,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 0,
+          "excerpts": 5
+        }
+      }
     },
     "svc-repair-maintenance": {
       "type": "service",
       "name": "Stair Lift and Lift Repair and Maintenance",
       "url": "https://homemobilemedical.com/stair-lift-repair/",
       "group": "lifts",
-      "state": "planned"
+      "state": "planned",
+      "evidence": {
+        "result": "warn",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 3,
+          "Conflict": 0
+        },
+        "why": [
+          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+        ],
+        "grid": "clients/home-mobile-medical/build/evidence/svc-repair-maintenance.grid.md",
+        "sha": "f92b09d6c077",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "service_process",
+          "timeframe",
+          "pricing",
+          "guarantees"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/services/packs/svc-repair-maintenance.md",
+        "json": "clients/home-mobile-medical/build/services/packs/svc-repair-maintenance.json",
+        "sha": "2ab38165ed18",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "services",
+        "counts": {
+          "facts": 40,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 4
+        }
+      }
     },
     "hub-hhi-beaufort": {
       "type": "county",
@@ -163,7 +369,42 @@
       "live_url": "https://homemobilemedical.com/service-area/hhi-beaufort/",
       "replaces": [
         "https://homemobilemedical.com/service-area/hhi-beaufort/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 6,
+          "Unknown": 0,
+          "Unverified": 0,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/hub-hhi-beaufort.grid.md",
+        "sha": "a3236ffd4287",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": []
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-hhi/packs/hub-hhi-beaufort.md",
+        "json": "clients/home-mobile-medical/build/loc-hhi/packs/hub-hhi-beaufort.json",
+        "sha": "0b0320d266f2",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-hhi",
+        "counts": {
+          "facts": 41,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 0,
+          "excerpts": 6
+        }
+      }
     },
     "loc-beaufort-sc": {
       "type": "location",
@@ -174,7 +415,45 @@
       "live_url": "https://homemobilemedical.com/service-area/beaufort-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/beaufort-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-beaufort-sc.grid.md",
+        "sha": "a1f5a36144d1",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/pilot/packs/loc-beaufort-sc.md",
+        "json": "clients/home-mobile-medical/build/pilot/packs/loc-beaufort-sc.json",
+        "sha": "dd38b8212678",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "pilot",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-bluffton-sc": {
       "type": "location",
@@ -185,7 +464,45 @@
       "live_url": "https://homemobilemedical.com/service-area/bluffton-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/bluffton-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-bluffton-sc.grid.md",
+        "sha": "b3a2a4f4a5e1",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-bluffton-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-bluffton-sc.json",
+        "sha": "bf9fd7c4f49d",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-hhi",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-hilton-head-island-sc": {
       "type": "location",
@@ -196,7 +513,45 @@
       "live_url": "https://homemobilemedical.com/service-area/hilton-head-island-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/hilton-head-island-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-hilton-head-island-sc.grid.md",
+        "sha": "a98dbd524656",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-hilton-head-island-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-hilton-head-island-sc.json",
+        "sha": "870aeba25333",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-hhi",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-port-royal-sc": {
       "type": "location",
@@ -207,7 +562,45 @@
       "live_url": "https://homemobilemedical.com/service-area/port-royal-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/port-royal-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-port-royal-sc.grid.md",
+        "sha": "7038a1565453",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-port-royal-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-port-royal-sc.json",
+        "sha": "3931ed2b9d09",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-hhi",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-ladys-island-sc": {
       "type": "location",
@@ -218,7 +611,45 @@
       "live_url": "https://homemobilemedical.com/service-area/ladys-island-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/ladys-island-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-ladys-island-sc.grid.md",
+        "sha": "f354b0ed684c",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-ladys-island-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-ladys-island-sc.json",
+        "sha": "afbfb5c45331",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-hhi",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-laurel-bay-sc": {
       "type": "location",
@@ -229,7 +660,46 @@
       "live_url": "https://homemobilemedical.com/service-area/laurel-bay-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/laurel-bay-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 7,
+          "Unknown": 2,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-laurel-bay-sc.grid.md",
+        "sha": "9e6e19a98bbf",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "neighborhoods",
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-laurel-bay-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-laurel-bay-sc.json",
+        "sha": "04495544aa8f",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-hhi",
+        "counts": {
+          "facts": 43,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 7
+        }
+      }
     },
     "loc-daufuskie-island-sc": {
       "type": "location",
@@ -240,7 +710,45 @@
       "live_url": "https://homemobilemedical.com/service-area/daufuskie-island-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/daufuskie-island-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-daufuskie-island-sc.grid.md",
+        "sha": "8d7b143cbf69",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-daufuskie-island-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-daufuskie-island-sc.json",
+        "sha": "8bcb1be34916",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-hhi",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-okatie-sc": {
       "type": "location",
@@ -251,7 +759,45 @@
       "live_url": "https://homemobilemedical.com/service-area/okatie-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/okatie-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-okatie-sc.grid.md",
+        "sha": "e760c448f53a",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-okatie-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-okatie-sc.json",
+        "sha": "1825cfb84930",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-hhi",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-hardeeville-sc": {
       "type": "location",
@@ -262,7 +808,45 @@
       "live_url": "https://homemobilemedical.com/service-area/hardeeville-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/hardeeville-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-hardeeville-sc.grid.md",
+        "sha": "ceebcfa91c90",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-hardeeville-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-hardeeville-sc.json",
+        "sha": "9e07c85e0565",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-hhi",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-ridgeland-sc": {
       "type": "location",
@@ -273,7 +857,45 @@
       "live_url": "https://homemobilemedical.com/service-area/ridgeland-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/ridgeland-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-ridgeland-sc.grid.md",
+        "sha": "5c2fb5839a74",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-ridgeland-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-ridgeland-sc.json",
+        "sha": "479d5620e6c4",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-hhi",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-levy-sc": {
       "type": "location",
@@ -284,7 +906,47 @@
       "live_url": "https://homemobilemedical.com/service-area/levy-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/levy-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 6,
+          "Unknown": 3,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-levy-sc.grid.md",
+        "sha": "776605c1d71b",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "neighborhoods",
+          "place_entities",
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-levy-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-levy-sc.json",
+        "sha": "a5108d0eeb2c",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-hhi",
+        "counts": {
+          "facts": 42,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 3,
+          "excerpts": 6
+        }
+      }
     },
     "loc-yemassee-sc": {
       "type": "location",
@@ -295,7 +957,45 @@
       "live_url": "https://homemobilemedical.com/service-area/yemassee-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/yemassee-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-yemassee-sc.grid.md",
+        "sha": "d97857b0e04c",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-yemassee-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-yemassee-sc.json",
+        "sha": "d05aae41ce48",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-hhi",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "hub-charleston": {
       "type": "county",
@@ -306,7 +1006,42 @@
       "live_url": "https://homemobilemedical.com/service-area/charleston/",
       "replaces": [
         "https://homemobilemedical.com/service-area/charleston/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 6,
+          "Unknown": 0,
+          "Unverified": 0,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/hub-charleston.grid.md",
+        "sha": "92da3add69c3",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": []
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-charleston/packs/hub-charleston.md",
+        "json": "clients/home-mobile-medical/build/loc-charleston/packs/hub-charleston.json",
+        "sha": "783192844b1b",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-charleston",
+        "counts": {
+          "facts": 41,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 0,
+          "excerpts": 6
+        }
+      }
     },
     "loc-charleston-sc": {
       "type": "location",
@@ -317,7 +1052,45 @@
       "live_url": "https://homemobilemedical.com/service-area/charleston-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/charleston-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-charleston-sc.grid.md",
+        "sha": "e5e5593a8016",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-charleston-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-charleston-sc.json",
+        "sha": "0cfb6b975c7c",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-charleston",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-north-charleston-sc": {
       "type": "location",
@@ -328,7 +1101,45 @@
       "live_url": "https://homemobilemedical.com/service-area/north-charleston-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/north-charleston-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-north-charleston-sc.grid.md",
+        "sha": "10401d0d28dd",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-north-charleston-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-north-charleston-sc.json",
+        "sha": "9765d27b3056",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-charleston",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-mount-pleasant-sc": {
       "type": "location",
@@ -339,7 +1150,45 @@
       "live_url": "https://homemobilemedical.com/service-area/mount-pleasant-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/mount-pleasant-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-mount-pleasant-sc.grid.md",
+        "sha": "210468362b15",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-mount-pleasant-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-mount-pleasant-sc.json",
+        "sha": "725d501c0520",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-charleston",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-summerville-sc": {
       "type": "location",
@@ -350,7 +1199,45 @@
       "live_url": "https://homemobilemedical.com/service-area/summerville-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/summerville-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-summerville-sc.grid.md",
+        "sha": "302b808feeca",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-summerville-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-summerville-sc.json",
+        "sha": "1384877a0c3c",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-charleston",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-goose-creek-sc": {
       "type": "location",
@@ -361,7 +1248,45 @@
       "live_url": "https://homemobilemedical.com/service-area/goose-creek-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/goose-creek-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-goose-creek-sc.grid.md",
+        "sha": "a2ad07253173",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-goose-creek-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-goose-creek-sc.json",
+        "sha": "22a7e5417f5a",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-charleston",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-hanahan-sc": {
       "type": "location",
@@ -372,7 +1297,45 @@
       "live_url": "https://homemobilemedical.com/service-area/hanahan-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/hanahan-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-hanahan-sc.grid.md",
+        "sha": "9b74bdf10525",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-hanahan-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-hanahan-sc.json",
+        "sha": "9d5829c7f0c9",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-charleston",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-moncks-corner-sc": {
       "type": "location",
@@ -383,7 +1346,45 @@
       "live_url": "https://homemobilemedical.com/service-area/moncks-corner-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/moncks-corner-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-moncks-corner-sc.grid.md",
+        "sha": "37a821cb7885",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-moncks-corner-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-moncks-corner-sc.json",
+        "sha": "461cff9d3e98",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-charleston",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-hollywood-sc": {
       "type": "location",
@@ -394,7 +1395,45 @@
       "live_url": "https://homemobilemedical.com/service-area/hollywood-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/hollywood-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-hollywood-sc.grid.md",
+        "sha": "0e42e008a85c",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-hollywood-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-hollywood-sc.json",
+        "sha": "38a6b10f5f7f",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-charleston",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-kiawah-island-sc": {
       "type": "location",
@@ -405,7 +1444,45 @@
       "live_url": "https://homemobilemedical.com/service-area/kiawah-island-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/kiawah-island-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-kiawah-island-sc.grid.md",
+        "sha": "17b7dde72f99",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-kiawah-island-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-kiawah-island-sc.json",
+        "sha": "50b98475b644",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-charleston",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-folly-island-sc": {
       "type": "location",
@@ -416,7 +1493,46 @@
       "live_url": "https://homemobilemedical.com/service-area/folly-island-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/folly-island-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 7,
+          "Unknown": 2,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-folly-island-sc.grid.md",
+        "sha": "c14bbc23bef1",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "neighborhoods",
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-folly-island-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-folly-island-sc.json",
+        "sha": "06f7bb9f9691",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-charleston",
+        "counts": {
+          "facts": 43,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 7
+        }
+      }
     },
     "loc-walterboro-sc": {
       "type": "location",
@@ -427,7 +1543,45 @@
       "live_url": "https://homemobilemedical.com/service-area/walterboro-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/walterboro-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-walterboro-sc.grid.md",
+        "sha": "824004236046",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-walterboro-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-walterboro-sc.json",
+        "sha": "f614e789e71f",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-charleston",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "loc-edisto-island-sc": {
       "type": "location",
@@ -438,21 +1592,134 @@
       "live_url": "https://homemobilemedical.com/service-area/edisto-island-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/edisto-island-sc/"
-      ]
+      ],
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/loc-edisto-island-sc.grid.md",
+        "sha": "4a828843c6ab",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "response_time",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-edisto-island-sc.md",
+        "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-edisto-island-sc.json",
+        "sha": "64e628509a79",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "loc-charleston",
+        "counts": {
+          "facts": 44,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 1,
+          "excerpts": 8
+        }
+      }
     },
     "homepage": {
       "type": "homepage",
       "name": "Homepage",
       "url": "https://homemobilemedical.com/",
       "group": "final",
-      "state": "planned"
+      "state": "planned",
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 10,
+          "Unknown": 1,
+          "Unverified": 0,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/homepage.grid.md",
+        "sha": "c20121cabe04",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "awards"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/final/packs/homepage.md",
+        "json": "clients/home-mobile-medical/build/final/packs/homepage.json",
+        "sha": "f2a7ab7110cb",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "final",
+        "counts": {
+          "facts": 40,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 1,
+          "excerpts": 4
+        }
+      }
     },
     "about": {
       "type": "about",
       "name": "About",
       "url": "https://homemobilemedical.com/about/",
       "group": "final",
-      "state": "planned"
+      "state": "planned",
+      "evidence": {
+        "result": "pass",
+        "counts": {
+          "Known": 6,
+          "Unknown": 2,
+          "Unverified": 0,
+          "Conflict": 0
+        },
+        "why": [],
+        "grid": "clients/home-mobile-medical/build/evidence/about.grid.md",
+        "sha": "0caef2eef259",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "gaps": [
+          "associations",
+          "awards"
+        ]
+      },
+      "pack": {
+        "file": "clients/home-mobile-medical/build/final/packs/about.md",
+        "json": "clients/home-mobile-medical/build/final/packs/about.json",
+        "sha": "80b615ae10e0",
+        "at": "2026-10-14T10:19:58-05:00",
+        "run": "20261014-100458-build-2be7",
+        "section": "final",
+        "counts": {
+          "facts": 40,
+          "review_topics": 3,
+          "review_excerpts": 4,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 4
+        }
+      }
     }
   },
   "build": {
@@ -561,7 +1828,22 @@
         "files": {}
       }
     ],
-    "pilot_corrections_applied": null
+    "pilot_corrections_applied": null,
+    "facts_round": {
+      "file": "clients/home-mobile-medical/interviews/facts/Home Mobile Medical - Facts Interview - all - 2026-10-14 - REVIEW.md",
+      "at": "2026-10-14T10:20:02-05:00",
+      "run": "20261014-100458-build-2be7",
+      "pages": [
+        "svc-stair-lifts",
+        "svc-curved-stair-lifts",
+        "svc-porch-lifts",
+        "svc-wheelchair-lifts",
+        "svc-repair-maintenance"
+      ],
+      "questions": 1,
+      "research": 0,
+      "need_search": 0
+    }
   },
   "audit_steps": {
     "S01": {
@@ -737,12 +2019,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261009-122052-build-8f9c",
+    "run_id": "20261014-100458-build-2be7",
     "command": "build",
-    "finished": "2026-10-09T12:24:54-05:00",
-    "result": "Technical Blocker Checklist written; 14 blocker rows to Jonie in 3 handoffs (redirect chains, internal links through 301s, Q5 status check); no High blocks crawling/indexing/measurement",
-    "changes": 21,
-    "step": "build:blockers",
+    "finished": "2026-10-14T10:21:13-05:00",
+    "result": "Facts round: 100 public facts looked up, grids 28 pass/5 warn/0 block, 3-question set for Paul",
+    "changes": 1,
+    "step": "build:facts",
     "batch": null
   },
   "spend": {
@@ -764,7 +2046,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T10:04:43-05:00",
+  "updated": "2026-10-14T10:21:13-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
@@ -820,6 +2102,12 @@
       "step": "build:blockers",
       "first_run": "20261009-122052-build-8f9c",
       "at": "2026-10-09T12:24:54-05:00"
+    },
+    "31f16b03-b772-499d-8b3b-b721a7f758ed": {
+      "key": "build-plan",
+      "step": "build:facts",
+      "first_run": "20261014-100458-build-2be7",
+      "at": "2026-10-14T10:21:13-05:00"
     }
   },
   "blocker_handoffs": [
@@ -834,5 +2122,19 @@
       "hub-lowcountry"
     ]
   },
-  "global_seen": 1
+  "global_seen": 1,
+  "specs_pinned": {
+    "methodology/specs/README.md": "13bde3165a59",
+    "methodology/specs/about.md": "633163a215ae",
+    "methodology/specs/blog-post.md": "bb60f76bddb0",
+    "methodology/specs/county-hub.md": "4ed0d3bfb1d8",
+    "methodology/specs/homepage.md": "645431d1fd4c",
+    "methodology/specs/location.md": "1212fa3e9365",
+    "methodology/specs/service.md": "0d679dadad45"
+  },
+  "review_pause": {
+    "run_id": "20261014-100458-build-2be7",
+    "step": "build:facts",
+    "at": "2026-10-14T10:21:13-05:00"
+  }
 }

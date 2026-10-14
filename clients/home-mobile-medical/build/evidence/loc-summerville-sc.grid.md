@@ -1,0 +1,22 @@
+# Evidence grid — Summerville, SC (location)
+
+**Result: PASS** · Known 8 · Unknown 1 · Unverified 1 · Conflict 0 (CM-041)
+
+_The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
+
+| Fact | Need | Mark | Value | Source |
+|---|---|---|---|---|
+| Phone | required | **Known** | (843) 476-1329 | Brand Guide A |
+| The city is actually served (Section E / proof sheet) | required | **Known** | Served — one of the 24 South Carolina towns confirmed served (Brand Guide Section E) | Brand Guide E; Paul 2026-10-07 |
+| City-specific conditions (housing stock, terrain, weather, failure patterns) | required | **Known** | Summerville: 16.3% of residents were 65 or older in the 2020 census (up from 10.5% in 2010); elevation 43 ft, humid subtropical climate with about 52.7 in of rain a year; Summerville Historic District is on the National Register of Historic | https://en.wikipedia.org/wiki/Summerville,_South_Carolina (Wikipedia, citing 2020 US Census) (read 2026-10-14) |
+| Up to 12 real neighborhoods (fewer than 3: the section is dropped and they are named in local context) | required | **Known** | Nexton and Cane Bay Plantation are large Berkeley County master-planned communities with Summerville addresses; not confirmed to be inside Town limits (Nexton annexation vote was postponed, undated). No official neighborhood list found. | https://www.postandcourier.com/business/real_estate/2-sc-housing-developments-in-top-50-master-planned-communities-in-us-both-are-in/article_24b6e9d8-b3f4-11ea-b53d-734aeecdc0f9.html (Post and Courier) (read 2026-10-14) |
+| Free estimate / offer | required | **Known** | Free in-home estimate. Can also quote from a photo of the stairs (priced by stair count) | Paul 2026-10-07 |
+| 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) | supporting | **Known** | Colonial Dorchester State Historic Site (300 State Park Road, Summerville - tabby fort, St. George's bell tower, log wharf on the Ashley River); Summerville Azalea Park (Flowertown Festival site; walking tour); Summerville Medical Center; S | https://southcarolinaparks.com/colonial-dorchester (SC Parks); https://visitsummerville.com/walking-the-ville-azalea-park-sculptures-tour (Visit Summerville); https://en.wikipedia.org/wiki/Summerville,_South_Carolina (Wikipedia) (read 2026-10-14) |
+| Which office issues permits here, with its official page (for the Serving section) | supporting | **Known** | Town of Summerville handles permits for parcels inside Town limits (Permitting page: 200 South Main Street, 843-871-6000, Building Permits guidelines section). Unincorporated parcels (the Summerville ZIP spans Dorchester, Berkeley, Charlest | https://www.summervillesc.gov/289/Permitting (Town of Summerville); https://dorchestercountysc.gov/government/planning-development (Dorchester County, seen only in a search result; fetch 403) (read 2026-10-14) |
+| Response time / guarantees for this area | supporting | **Unverified** | None |  |
+| Emergency / after-hours reality | supporting | **Unknown** | [NEED] | searched, not found (2 source(s) on disk) |
+| Google rating and review count (date checked) | supporting | **Known** | 2.9 stars from 19 Google reviews (checked 2026-10-08) | DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23 |
+
+**Sources searched before asking (CM-057):** data/rankings/rankings-summary.md, data/reviews/reviews.csv
+
+**Not on disk:** data/crawl/page-text.csv, data/gbp/ (a GBP export), data/local-grid/, data/reviews/reviews-summary.md

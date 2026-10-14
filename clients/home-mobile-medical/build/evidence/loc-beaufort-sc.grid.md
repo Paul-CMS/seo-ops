@@ -1,0 +1,22 @@
+# Evidence grid — Beaufort, SC (location)
+
+**Result: PASS** · Known 8 · Unknown 1 · Unverified 1 · Conflict 0 (CM-041)
+
+_The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
+
+| Fact | Need | Mark | Value | Source |
+|---|---|---|---|---|
+| Phone | required | **Known** | (843) 476-1329 | Brand Guide A |
+| The city is actually served (Section E / proof sheet) | required | **Known** | Served — one of the 24 South Carolina towns confirmed served (Brand Guide Section E) | Brand Guide E; Paul 2026-10-07 |
+| City-specific conditions (housing stock, terrain, weather, failure patterns) | required | **Known** | Beaufort's historic district covers 304 acres and is a National Historic Landmark; nearly 70 sites in the area are on the National Register of Historic Places (older homes). 20.8% of city residents were 65 or older (Wikipedia, citing Census | https://en.wikipedia.org/wiki/Beaufort,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_County,_South_Carolina (Wikipedia, read 2026-10-14) |
+| Up to 12 real neighborhoods (fewer than 3: the section is dropped and they are named in local context) | required | **Known** | Downtown, The Point (Old Point), The Bluff, The Old Commons, Northwest Quadrant (the five historic-district neighborhoods); Pigeon Point, Higginsonville, West End, Depot, Spanish Point, Mossy Oaks, Royal Oaks, First Boulevard, Cottage Farms | https://en.wikipedia.org/wiki/Beaufort,_South_Carolina (Wikipedia, read 2026-10-14) |
+| Free estimate / offer | required | **Known** | Free in-home estimate. Can also quote from a photo of the stairs (priced by stair count) | Paul 2026-10-07 |
+| 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) | supporting | **Known** | Beaufort Historic District (National Historic Landmark) - https://en.wikipedia.org/wiki/Beaufort_Historic_District · Beaufort Memorial Hospital (197-bed nonprofit hospital; named on the Beaufort page) · Marine Corps Air Station Beaufort - h | https://en.wikipedia.org/wiki/Beaufort,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_Historic_District (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Marine_Corps_Air_Station_Beaufort (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Naval_Hospital_Beaufort (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Richard_V._Woods_Memorial_Bridge (Wikipedia, read 2026-10-14) |
+| Which office issues permits here, with its official page (for the Serving section) | supporting | **Known** | City of Beaufort Building Codes Department, 1911 Boundary Street, Beaufort SC 29902, 843-525-7070 (the city's department 'assists owners and development professionals through the permitting and construction process'; Building Permits sectio | https://cityofbeaufort.org/154/Building-Codes (City of Beaufort, read 2026-10-14) |
+| Response time / guarantees for this area | supporting | **Unverified** | None |  |
+| Emergency / after-hours reality | supporting | **Unknown** | [NEED] | searched, not found (2 source(s) on disk) |
+| Google rating and review count (date checked) | supporting | **Known** | 2.9 stars from 19 Google reviews (checked 2026-10-08) | DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23 |
+
+**Sources searched before asking (CM-057):** data/rankings/rankings-summary.md, data/reviews/reviews.csv
+
+**Not on disk:** data/crawl/page-text.csv, data/gbp/ (a GBP export), data/local-grid/, data/reviews/reviews-summary.md

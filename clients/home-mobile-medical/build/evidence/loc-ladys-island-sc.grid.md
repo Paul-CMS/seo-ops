@@ -1,0 +1,22 @@
+# Evidence grid — Lady's Island, SC (location)
+
+**Result: PASS** · Known 8 · Unknown 1 · Unverified 1 · Conflict 0 (CM-041)
+
+_The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
+
+| Fact | Need | Mark | Value | Source |
+|---|---|---|---|---|
+| Phone | required | **Known** | (843) 476-1329 | Brand Guide A |
+| The city is actually served (Section E / proof sheet) | required | **Known** | Served — one of the 24 South Carolina towns confirmed served (Brand Guide Section E) | Brand Guide E; Paul 2026-10-07 |
+| City-specific conditions (housing stock, terrain, weather, failure patterns) | required | **Known** | Lady's Island is a predominantly residential Sea Island, elevation about 16 ft, mostly unincorporated with small parts in the City of Beaufort; former plantation and timber land became residential subdivisions after the late 20th century; 1 | https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_County,_South_Carolina (Wikipedia, read 2026-10-14) · https://www.beaufortsc.org/islands-and-towns/ladys-island/ (Beaufort Area Visitors Bureau, local context only, read 2026-10-14) |
+| Up to 12 real neighborhoods (fewer than 3: the section is dropped and they are named in local context) | required | **Known** | Cat Island; Distant Island (Beaufort Area Visitors Bureau); Coosaw Point (formerly Laurel Hill; Beaufort County Staff Review Team agendas list 53 and 52 residential lots); Whitehall (City of Beaufort sketch plan, mixed-use waterfront); Brin | https://www.beaufortsc.org/islands-and-towns/ladys-island/ (Beaufort Area Visitors Bureau, local context only, read 2026-10-14) · https://www.beaufortcountysc.gov/zoning/staff-review-team/agendas/2024/SRT AGENDA - 3-20-2024.pdf (Beaufort County, via search result 2026-10-14) · https://beaufortcountysc.gov/zoning/staff-review-team/agendas/2020/SRT AGENDA - 11-25-2020.pdf (Beaufort County, via search result 2026-10-14) · https://explorebeaufortsc.com/?p=6616 (Explore Beaufort, Whitehall, via search result 2026-10-14) |
+| Free estimate / offer | required | **Known** | Free in-home estimate. Can also quote from a photo of the stairs (priced by stair count) | Paul 2026-10-07 |
+| 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) | supporting | **Known** | Richard V. Woods Memorial Bridge (Beaufort River, downtown Beaufort to Lady's Island, swing bridge opened 1959) - https://en.wikipedia.org/wiki/Richard_V._Woods_Memorial_Bridge · Beaufort Executive Airport (on Lady's Island) - https://en.wi | https://en.wikipedia.org/wiki/Richard_V._Woods_Memorial_Bridge (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_County_Airport (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (Wikipedia, read 2026-10-14) |
+| Which office issues permits here, with its official page (for the Serving section) | supporting | **Known** | Beaufort County Building Codes (Building Inspections), 100 Ribaut Road, Beaufort SC 29901, 843-255-2065 - issues building permits for unincorporated Beaufort County; most of Lady's Island is unincorporated, but small parts are inside the Ci | https://beaufortcountysc.gov/building-codes (Beaufort County, read 2026-10-14) · https://en.wikipedia.org/wiki/Lady%27s_Island_(South_Carolina) (Wikipedia, read 2026-10-14) |
+| Response time / guarantees for this area | supporting | **Unverified** | None |  |
+| Emergency / after-hours reality | supporting | **Unknown** | [NEED] | searched, not found (2 source(s) on disk) |
+| Google rating and review count (date checked) | supporting | **Known** | 2.9 stars from 19 Google reviews (checked 2026-10-08) | DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23 |
+
+**Sources searched before asking (CM-057):** data/rankings/rankings-summary.md, data/reviews/reviews.csv
+
+**Not on disk:** data/crawl/page-text.csv, data/gbp/ (a GBP export), data/local-grid/, data/reviews/reviews-summary.md

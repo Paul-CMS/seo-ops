@@ -1,0 +1,14 @@
+{
+  "facts": {
+    "county_cities": {
+      "value": "Charleston County: Charleston (county seat; metro article also lists Berkeley), Mount Pleasant, Hollywood, Kiawah Island, Folly Island (City of Folly Beach), Edisto Island (mostly; unincorporated, southern tip in Colleton). North Charleston: spans Berkeley, Charleston and Dorchester counties. Summerville: mostly Dorchester, small parts in Berkeley and Charleston. Berkeley County: Goose Creek, Hanahan, Moncks Corner (county seat). Colleton County: Walterboro (also the southern tip of Edisto Island; Edisto Beach is a separate Colleton town). Metro area = Berkeley, Charleston, Dorchester counties.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Charleston,_South_Carolina_metropolitan_area (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Summerville,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Goose_Creek,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Hanahan,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Moncks_Corner,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Walterboro,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Edisto_Island,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Charleston,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/North_Charleston,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Mount_Pleasant,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Hollywood,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Kiawah_Island,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Folly_Beach,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "local_context": {
+      "value": "Charleston metropolitan area: Berkeley, Charleston and Dorchester counties; 799,636 residents in the 2020 census. Humid subtropical climate (average annual relative humidity about 72.7%); \"Hurricanes are a major threat to the area during the summer and early fall\"; Hurricane Hugo struck as a Category 4 on September 21, 1989. 65+ share, 2020 census: Charleston 15.9%, North Charleston 11.8%, Mount Pleasant 18.0%.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Charleston,_South_Carolina_metropolitan_area (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Charleston,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/North_Charleston,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Mount_Pleasant,_South_Carolina (Wikipedia, read 2026-10-14)"
+    }
+  }
+}

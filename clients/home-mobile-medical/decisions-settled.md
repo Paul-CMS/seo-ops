@@ -15,4 +15,10 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **cm019-c3-citation-check-waived** (2026-10-09, Paul): Paul Exception 2026-10-09 (Q8): citation link-destination check skipped; CM-019 C3 accepted on DataforSEO referring-domain evidence for the 36 URLs. Do not re-raise.
 - **redirect-targets-default** (2026-10-09, Paul (REWRITE-2-DECISIONS.md c)): Paul 2026-10-09 (Q2, revised in rewrite 2): redirect the 36 to the appropriate URLs — FL/MI → /stair-lifts/, power chairs/scooter lifts → the homepage (was /services/), ramps → /porch-lifts/; SC legacy duplicates → their canonical root service/location page. No redirect points at /services/ or /service-area/, so there are no chains.
 
+## Open questions — asked once, waiting for an answer
+
+- **fact:svc-repair-maintenance:service_process** (asked 2026-10-14, waiting on Client (via Paul)): How the service is delivered (steps, methods, equipment) — what should we say? If it depends, on what?
+- **fact:d:emergency** (asked 2026-10-14, waiting on Client (via Paul)): Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2)
+- **fact:svc-curved-stair-lifts:install_time** (asked 2026-10-14, waiting on Client (via Paul)): Order-to-install and install times for curved, porch and wheelchair lifts; who handles pad and permit (facts round 2026-10-14, Q3)
+
 Process defects (reopenings): **1** — a decision asked before the information that shapes it existed; fix the order, not the decision.

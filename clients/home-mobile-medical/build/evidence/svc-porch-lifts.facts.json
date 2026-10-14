@@ -1,0 +1,14 @@
+{
+  "facts": {
+    "service_scope": {
+      "value": "Porch lifts / vertical platform lifts for outdoor access to raised entrances and decks, sourced new and professionally installed; maintenance and repairs within the service area. Manufacturer's warranty only.",
+      "status": "Client Confirmed",
+      "source": "Brand Guide D (Services, Warranty); Decision 005; Paul 2026-10-07 (C9)"
+    },
+    "service_process": {
+      "value": "Free in-home estimate → lift sourced new → professional installation supervised by Jason Workens to the manufacturer's installation instructions. [Install duration, site prep (pad/footing) and permits not confirmed for porch lifts]",
+      "status": "Client Confirmed",
+      "source": "Brand Guide D (Free estimate, Team size, Safety statement); Paul 2026-10-07"
+    }
+  }
+}

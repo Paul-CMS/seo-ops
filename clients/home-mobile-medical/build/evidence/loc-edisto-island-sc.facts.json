@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served \u2014 one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Edisto Island lies mostly in Charleston County, with Edisto Beach (a separate town) in Colleton County; Edisto Beach (2010): 45.4% of year-round residents 65+, median age 63.3, 87.2% of 2,181 housing units rental or vacation; Hurricane Hugo spared the island in 1989. No 65+ share is published for the Edisto Island CDP itself in the sources read; the Edisto Beach figures are for the neighbouring town.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Edisto_Island,_South_Carolina (Wikipedia, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Edisto_Beach,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Edisto Beach (separate town), Wyndham Oceanridge, Frogmore, Fig Island, Oak Island, Cassina Point, Botany Bay",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Edisto_Island,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Edisto Beach State Park; Edisto Island Presbyterian Church; Edisto Island Baptist Church, Trinity Church and Botany Bay named in the Edisto Island article; no hospital on the island",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Edisto_Beach_State_Park (Wikipedia, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Edisto_Island_Presbyterian_Church (Wikipedia, read 2026-10-14) \u00b7 https://en.wikipedia.org/wiki/Edisto_Island,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "Charleston County Building Inspection Services (843-202-6930) issues construction permits (page confirms unincorporated county service only by reference); the Town of Edisto Beach has its own building department (843-869-2505) for property inside that town. Edisto Island parcel jurisdiction not stated on official pages",
+      "status": "Internally Verified",
+      "source": "https://www.charlestoncounty.gov/departments/building-inspection-services/ (Charleston County, read 2026-10-14) \u00b7 https://www.townofedistobeach.com/sites/default/files/uploads/building_department/building_permit_application_requirements_2021.pdf (Town of Edisto Beach, read 2026-10-14)"
+    }
+  }
+}

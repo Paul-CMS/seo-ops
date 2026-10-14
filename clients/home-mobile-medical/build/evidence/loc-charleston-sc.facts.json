@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served — one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Charleston has a humid subtropical climate; average annual relative humidity is about 72.7% (78.9% in August); \"Hurricanes are a major threat to the area during the summer and early fall\" (Hurricane Hugo, Category 4, September 21, 1989). City elevation is 3 ft. 15.9% of residents were 65 or older in the 2020 census. 77,479 dwelling units (12.7% vacant). Historic stock: the Pink House, 17 Chalmers Street, built 1694-1712, \"is the oldest stone building in Charleston\".",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Charleston,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "City districts named in the article: Downtown/The Peninsula, West Ashley, Johns Island, James Island, Cainhoy Peninsula, Daniel Island (6 districts; no finer neighborhood list found in an official source)",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Charleston,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Medical University of South Carolina Medical Center; Roper Hospital; Ralph H. Johnson VA Medical Center; Arthur Ravenel Jr. Bridge (opened July 16, 2005, links downtown Charleston with Mount Pleasant). Also named: Waterfront Park, The Battery, City Market, Rainbow Row, Fort Sumter National Monument.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Charleston,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "City of Charleston Permit Center (2 George Street, Ground Floor, Charleston, SC 29401; 843-577-5550; permits@charleston-sc.gov) handles building permits inside City limits; permits and inspections via the City's Customer Self Service portal. Charleston County Building Inspection Services is the separate office for unincorporated areas.",
+      "status": "Internally Verified",
+      "source": "https://charleston-sc.gov/856/Permit-Center (City of Charleston, read 2026-10-14) · https://www.charlestoncounty.gov/departments/building-inspection-services (Charleston County, read 2026-10-14)"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served — one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "North Charleston spans parts of Berkeley, Charleston and Dorchester counties. 2020 census: 11.8% of residents were 65 or older; 50,563 housing units (9.2% vacant). Airport-station climate normals: about 51 inches of precipitation a year, wettest in mid-summer. Planned community Park Circle dates from 1912.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/North_Charleston,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Park Circle; Noisette; Russelldale; Ferndale; Morningside; Liberty Park; Palmetto Heights; Singing Pines; Dewey Hill; Whitehall; Windsor Hill; Liberty Homes",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/North_Charleston,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Trident Regional Medical Center (\"North Charleston's major hospital\"); Charleston Southern University; North Charleston Coliseum; H.L. Hunley Museum; Park Circle; Riverfront Park",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/North_Charleston,_South_Carolina (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "City of North Charleston Building Department, 3rd floor City Hall One Stop Shop, 2500 City Hall Lane (843-740-2582); building applications begin in the Zoning Department and are submitted online. Not Charleston County. (Page text read via search result; direct fetch of the URL returned 404 on 2026-10-14 - re-check.)",
+      "status": "Internally Verified",
+      "source": "https://www.northcharleston.org/Business/Construction-and-Development/Building-and-Permit-Inspections.aspx (City of North Charleston, read 2026-10-14) · https://www.northcharleston.org/Business/Construction-and-Development/Zoning-Information-and-Verification.aspx (City of North Charleston, read 2026-10-14)"
+    }
+  }
+}

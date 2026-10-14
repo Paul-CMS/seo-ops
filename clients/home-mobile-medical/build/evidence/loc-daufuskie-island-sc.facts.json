@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "city_served": {
+      "value": "Served \u2014 one of the 24 South Carolina towns confirmed served (Brand Guide Section E)",
+      "status": "Paul Approved",
+      "source": "Brand Guide E; Paul 2026-10-07"
+    },
+    "local_context": {
+      "value": "Daufuskie Island is accessible only by ferry or barge; no bridge connects it to the mainland. 557 residents at the 2020 census (just over 400 full-time). Residents use golf carts and bicycles, with some regular vehicles. Beaufort County's March 2026 Melrose Landing repair notice says work depends on weather and supplies. The island has a federally designated historic district.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Daufuskie_Island \u00b7 https://en.wikipedia.org/wiki/Daufuskie_Island_Historic_District \u00b7 https://beaufortcountysc.gov/news/2026/03/daufuskie-islands-melrose-landing-repairs-begin.php (Beaufort County, read via search result 2026-10-14)"
+    },
+    "neighborhoods": {
+      "value": "Haig Point Club, Melrose, Oak Ridge, Bloody Point",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Daufuskie_Island (Wikipedia, read 2026-10-14)"
+    },
+    "place_entities": {
+      "value": "Haig Point Range Lights (1873); Bloody Point Range Lights (1883); First Union African Baptist Church; Daufuskie Island Historic District",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Haig_Point_Range_Lights \u00b7 https://en.wikipedia.org/wiki/Bloody_Point_Range_Lights \u00b7 https://en.wikipedia.org/wiki/Daufuskie_Island_Historic_District \u00b7 https://en.wikipedia.org/wiki/Daufuskie_Island \u00b7 (Wikipedia, read 2026-10-14)"
+    },
+    "permit_office": {
+      "value": "Beaufort County Building Codes (Building Inspections) \u2014 the county issues building permits for new construction, substantial improvements and additions; Daufuskie is unincorporated, so the county office is the expected issuer (county page does not name Daufuskie; phone 843-255-2065, 100 Ribaut Rd, Beaufort)",
+      "status": "Internally Verified",
+      "source": "https://www.beaufortcountysc.gov/building-codes/ (Beaufort County, read 2026-10-14)"
+    }
+  }
+}

@@ -613,3 +613,261 @@ Approved version: clients/home-mobile-medical/build/Home Mobile Medical - Site P
 
 ## APPROVAL · 2026-10-14T10:00:26-05:00 · page specs (global: location) · approved · by Paul
 Approved version: methodology/specs/location.md (sha 1212fa3e9365)
+
+## RUN 20261014-100458-build-2be7 · STARTED · /build · 2026-10-14T10:04:58-05:00
+Step: build:facts · session 31f16b03-b772-499d-8b3b-b721a7f758ed
+Gates checked: discovery_signed_off, site_plan, page_specs_approved
+- REVIEW FACTS 2026-10-14T10:07 · run 20261014-100458-build-2be7 · 8 fact(s)/topic(s) found in reviews, 0 with 3+ different reviewers (customer_reported, CM-057) · data/reviews/review-facts.json
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · svc-stair-lifts: BLOCK (known 6, unknown 3, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-beaufort-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · svc-curved-stair-lifts: BLOCK (known 6, unknown 3, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · svc-porch-lifts: BLOCK (known 6, unknown 3, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · svc-wheelchair-lifts: BLOCK (known 6, unknown 3, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · svc-repair-maintenance: BLOCK (known 6, unknown 3, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · hub-hhi-beaufort: BLOCK (known 3, unknown 3, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-bluffton-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-hilton-head-island-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-port-royal-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-ladys-island-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-laurel-bay-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-daufuskie-island-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-okatie-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-hardeeville-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-ridgeland-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-levy-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-yemassee-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · hub-charleston: BLOCK (known 3, unknown 3, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-charleston-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-north-charleston-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-mount-pleasant-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-summerville-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-goose-creek-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-hanahan-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-moncks-corner-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-hollywood-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-kiawah-island-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-folly-island-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-walterboro-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-edisto-island-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · homepage: WARN (known 8, unknown 3, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · about: WARN (known 5, unknown 3, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · svc-stair-lifts: BLOCK (known 6, unknown 3, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-beaufort-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · svc-curved-stair-lifts: BLOCK (known 6, unknown 3, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · svc-porch-lifts: BLOCK (known 6, unknown 3, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · svc-wheelchair-lifts: BLOCK (known 6, unknown 3, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · svc-repair-maintenance: BLOCK (known 6, unknown 3, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · hub-hhi-beaufort: BLOCK (known 3, unknown 3, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-bluffton-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-hilton-head-island-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-port-royal-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-ladys-island-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-laurel-bay-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-daufuskie-island-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-okatie-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-hardeeville-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-ridgeland-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-levy-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-yemassee-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · hub-charleston: BLOCK (known 3, unknown 3, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-charleston-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-north-charleston-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-mount-pleasant-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-summerville-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-goose-creek-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-hanahan-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-moncks-corner-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-hollywood-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-kiawah-island-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-folly-island-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-walterboro-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · loc-edisto-island-sc: BLOCK (known 2, unknown 7, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · homepage: WARN (known 8, unknown 3, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T10:07 · run 20261014-100458-build-2be7 · about: WARN (known 5, unknown 3, unverified 0, conflict 0)
+- CHANGE #158 [evidence] clients/home-mobile-medical/build/evidence/ | page_facts | old:  | new: city_served on 26 location pages (Brand Guide E); service_scope/service_process on 5 service pages, core_services, company_story — from Brand Guide D, Client C… | result: done
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-1 · fact:loc-hilton-head-island-sc:local_context (public): found
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-2 · fact:loc-hilton-head-island-sc:neighborhoods (public): found
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-3 · fact:loc-hilton-head-island-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-4 · fact:loc-hilton-head-island-sc:permit_office (public): found
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-5 · fact:loc-bluffton-sc:local_context (public): found
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-6 · fact:loc-bluffton-sc:neighborhoods (public): found
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-7 · fact:loc-bluffton-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-8 · fact:loc-bluffton-sc:permit_office (public): found
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-9 · fact:loc-daufuskie-island-sc:local_context (public): found
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-10 · fact:loc-daufuskie-island-sc:neighborhoods (public): found
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-11 · fact:loc-daufuskie-island-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-12 · fact:loc-daufuskie-island-sc:permit_office (public): partial
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-13 · fact:loc-okatie-sc:local_context (public): partial
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-14 · fact:loc-okatie-sc:neighborhoods (public): found
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-15 · fact:loc-okatie-sc:place_entities (public): partial
+- RESEARCH 2026-10-14T10:13 · run 20261014-100458-build-2be7 · RL-loc-hhi-16 · fact:loc-okatie-sc:permit_office (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-17 · fact:loc-hardeeville-sc:local_context (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-18 · fact:loc-hardeeville-sc:neighborhoods (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-19 · fact:loc-hardeeville-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-20 · fact:loc-hardeeville-sc:permit_office (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-21 · fact:loc-ridgeland-sc:local_context (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-22 · fact:loc-ridgeland-sc:neighborhoods (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-23 · fact:loc-ridgeland-sc:place_entities (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-24 · fact:loc-ridgeland-sc:permit_office (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-25 · fact:loc-levy-sc:local_context (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-26 · fact:loc-levy-sc:neighborhoods (public): not_found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-27 · fact:loc-levy-sc:place_entities (public): not_found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-28 · fact:loc-levy-sc:permit_office (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-29 · fact:loc-yemassee-sc:local_context (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-30 · fact:loc-yemassee-sc:neighborhoods (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-31 · fact:loc-yemassee-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-32 · fact:loc-yemassee-sc:permit_office (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-1 · fact:loc-walterboro-sc:local_context (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-2 · fact:loc-walterboro-sc:neighborhoods (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-3 · fact:loc-walterboro-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-4 · fact:loc-walterboro-sc:permit_office (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-5 · fact:loc-edisto-island-sc:local_context (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-6 · fact:loc-edisto-island-sc:neighborhoods (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-7 · fact:loc-edisto-island-sc:place_entities (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-8 · fact:loc-edisto-island-sc:permit_office (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-pilot-1 · fact:loc-beaufort-sc:local_context (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-pilot-2 · fact:loc-beaufort-sc:neighborhoods (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-pilot-3 · fact:loc-beaufort-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-pilot-4 · fact:loc-beaufort-sc:permit_office (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-33 · fact:loc-port-royal-sc:local_context (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-34 · fact:loc-port-royal-sc:neighborhoods (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-35 · fact:loc-port-royal-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-36 · fact:loc-port-royal-sc:permit_office (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-37 · fact:loc-ladys-island-sc:local_context (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-38 · fact:loc-ladys-island-sc:neighborhoods (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-39 · fact:loc-ladys-island-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-40 · fact:loc-ladys-island-sc:permit_office (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-41 · fact:loc-laurel-bay-sc:local_context (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-42 · fact:loc-laurel-bay-sc:neighborhoods (public): not_found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-43 · fact:loc-laurel-bay-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-44 · fact:loc-laurel-bay-sc:permit_office (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-45 · fact:hub-hhi-beaufort:county_cities (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-hhi-46 · fact:hub-hhi-beaufort:local_context (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-9 · fact:loc-summerville-sc:local_context (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-10 · fact:loc-summerville-sc:neighborhoods (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-11 · fact:loc-summerville-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-12 · fact:loc-summerville-sc:permit_office (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-13 · fact:loc-goose-creek-sc:local_context (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-14 · fact:loc-goose-creek-sc:neighborhoods (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-15 · fact:loc-goose-creek-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-16 · fact:loc-goose-creek-sc:permit_office (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-17 · fact:loc-hanahan-sc:local_context (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-18 · fact:loc-hanahan-sc:neighborhoods (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-19 · fact:loc-hanahan-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-20 · fact:loc-hanahan-sc:permit_office (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-21 · fact:loc-moncks-corner-sc:local_context (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-22 · fact:loc-moncks-corner-sc:neighborhoods (public): partial
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-23 · fact:loc-moncks-corner-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:14 · run 20261014-100458-build-2be7 · RL-loc-charleston-24 · fact:loc-moncks-corner-sc:permit_office (public): partial
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-25 · fact:loc-charleston-sc:local_context (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-26 · fact:loc-charleston-sc:neighborhoods (public): partial
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-27 · fact:loc-charleston-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-28 · fact:loc-charleston-sc:permit_office (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-29 · fact:loc-north-charleston-sc:local_context (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-30 · fact:loc-north-charleston-sc:neighborhoods (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-31 · fact:loc-north-charleston-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-32 · fact:loc-north-charleston-sc:permit_office (public): partial
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-33 · fact:loc-mount-pleasant-sc:local_context (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-34 · fact:loc-mount-pleasant-sc:neighborhoods (public): partial
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-35 · fact:loc-mount-pleasant-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-36 · fact:loc-mount-pleasant-sc:permit_office (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-37 · fact:loc-hollywood-sc:local_context (public): partial
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-38 · fact:loc-hollywood-sc:neighborhoods (public): partial
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-39 · fact:loc-hollywood-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-40 · fact:loc-hollywood-sc:permit_office (public): partial
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-41 · fact:loc-kiawah-island-sc:local_context (public): partial
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-42 · fact:loc-kiawah-island-sc:neighborhoods (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-43 · fact:loc-kiawah-island-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-44 · fact:loc-kiawah-island-sc:permit_office (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-45 · fact:loc-folly-island-sc:local_context (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-46 · fact:loc-folly-island-sc:neighborhoods (public): not_found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-47 · fact:loc-folly-island-sc:place_entities (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-48 · fact:loc-folly-island-sc:permit_office (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-49 · fact:hub-charleston:county_cities (public): found
+- RESEARCH 2026-10-14T10:18 · run 20261014-100458-build-2be7 · RL-loc-charleston-50 · fact:hub-charleston:local_context (public): found
+- FACT 2026-10-14T10:19 · run 20261014-100458-build-2be7 · d-google-rating-and-review-count-date-checked (value, status, source) · internally_verified · 2.9 stars from 19 Google reviews (checked 2026-10-08) · source DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23 · by Paul
+- RESEARCH 2026-10-14T10:19 · run 20261014-100458-build-2be7 · RL-evidence-1 · fact:d:google_rating (client): found
+- RESEARCH 2026-10-14T10:19 · run 20261014-100458-build-2be7 · RL-evidence-2 · fact:d:emergency (client): not_found
+- RESEARCH 2026-10-14T10:19 · run 20261014-100458-build-2be7 · RL-evidence-3 · fact:d:awards (client): not_found
+- RESEARCH 2026-10-14T10:19 · run 20261014-100458-build-2be7 · RL-evidence-4 · fact:d:association (client): not_found
+- RESEARCH 2026-10-14T10:19 · run 20261014-100458-build-2be7 · RL-services-1 · fact:svc-repair-maintenance:service_process (client): not_found
+- FLAG 2026-10-14T10:19 · run 20261014-100458-build-2be7 · F-001 · methodology/sources/sc-lowcountry.md: no rows for Charleston County, Berkeley/Dorchester/Colleton/Hampton counties or their towns (researchers found official permit pages: charleston-sc.gov/856/Permit-Center, charlestoncounty.gov/departments/building-inspection-services, northcharleston.org Building-and-Permit-Inspections, tompsc.com/151/Permit, kiawahisland.gov/building_services.php, cityoffollybeach.com building_planning, goosecreeksc.gov building-permits, cityofhanahan.com/node/86, summervillesc.gov/289/Permitting); HHI permit URL listed returns 404 to fetch (hiltonheadislandsc.gov/permits works); Bluffton Neighborhoods PDF row has no URL; Census QuickFacts returns 403 to the fetch tool and the Census API needs a key, so 65+ shares come via Wikipedia (2020 census). · workaround: Researchers cited the official pages directly and Wikipedia for census figures; Paul adds the rows at /system-review.
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · svc-stair-lifts: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-beaufort-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · svc-curved-stair-lifts: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · svc-porch-lifts: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · svc-wheelchair-lifts: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · svc-repair-maintenance: WARN (known 8, unknown 1, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · hub-hhi-beaufort: PASS (known 6, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-bluffton-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-hilton-head-island-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-port-royal-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-ladys-island-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-laurel-bay-sc: PASS (known 7, unknown 2, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-daufuskie-island-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-okatie-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-hardeeville-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-ridgeland-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-levy-sc: PASS (known 6, unknown 3, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-yemassee-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · hub-charleston: PASS (known 6, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-charleston-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-north-charleston-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-mount-pleasant-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-summerville-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-goose-creek-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-hanahan-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-moncks-corner-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-hollywood-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-kiawah-island-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-folly-island-sc: PASS (known 7, unknown 2, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-walterboro-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · loc-edisto-island-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · homepage: PASS (known 10, unknown 1, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T10:19 · run 20261014-100458-build-2be7 · about: PASS (known 6, unknown 2, unverified 0, conflict 0)
+- OPEN fact:svc-repair-maintenance:service_process · 2026-10-14T10:20:02-05:00 · run 20261014-100458-build-2be7 · by Client (via Paul) · How the service is delivered (steps, methods, equipment) — what should we say? If it depends, on what?
+- FACTS INTERVIEW 2026-10-14T10:20 · run 20261014-100458-build-2be7 · facts round (all pages) · 1 question(s) for svc-stair-lifts, svc-curved-stair-lifts, svc-porch-lifts, svc-wheelchair-lifts, svc-repair-maintenance · clients/home-mobile-medical/interviews/facts/Home Mobile Medical - Facts Interview - all - 2026-10-14 - REVIEW.md
+- RESEARCH 2026-10-14T10:20 · run 20261014-100458-build-2be7 · RL-services-2 · fact:svc-curved-stair-lifts:install_time (client): not_found
+- RESEARCH 2026-10-14T10:20 · run 20261014-100458-build-2be7 · RL-services-3 · fact:svc-porch-lifts:install_time (client): not_found
+- RESEARCH 2026-10-14T10:20 · run 20261014-100458-build-2be7 · RL-services-4 · fact:svc-wheelchair-lifts:install_time (client): not_found
+- OPEN fact:d:emergency · 2026-10-14T10:20:37-05:00 · run 20261014-100458-build-2be7 · by Client (via Paul) · Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2)
+- OPEN fact:svc-curved-stair-lifts:install_time · 2026-10-14T10:20:37-05:00 · run 20261014-100458-build-2be7 · by Client (via Paul) · Order-to-install and install times for curved, porch and wheelchair lifts; who handles pad and permit (facts round 2026-10-14, Q3)
+### HANDOFF · /build · 2026-10-14 · run 20261014-100458-build-2be7
+**Step:** the one facts round (P10) for all 33 pages in the approved site plan.
+
+**Done**
+- reviews.py extract: 8 review topics. None was reported by 3 or more reviewers, so none needed checking by meaning.
+- Page facts files (build/evidence/<page>.facts.json):
+  - city_served on 26 location pages (Brand Guide E, Paul 2026-10-07).
+  - service_scope and service_process on the service pages, core_services (homepage) and company_story (about), all from Brand Guide D. Client Confirmed facts only (change #158).
+- Researcher (Sonnet) ran 5 parallel lookups for 28 location and hub pages: 100 public facts (59 found, 37 partial, 4 not found). Every one is logged in build/{pilot,loc-hhi,loc-charleston}/research-log.csv. The group with the hub-hhi-beaufort, Beaufort, Port Royal, Lady's Island and Laurel Bay pages first got an empty page list; it was resent and confirmed done (18 facts).
+- Not found: Levy neighborhoods, Levy place_entities, Laurel Bay neighborhoods, Folly neighborhoods. Under CM-061 §8 these sections are left out by default and never asked.
+- Google rating recorded with run.py fact: 2.9 stars from 19 reviews (DataforSEO pull 2026-10-08). Paul should know it is low. Some reviews date from the old medical-equipment era.
+- Client search order logged for 6 gaps (RL-evidence-1..4, RL-services-1..4): emergency, awards, associations, the repair process, and install time for curved, porch and wheelchair lifts.
+  - Awards and associations: none found (no BBB listing). They stay "None" and are not asked.
+- Grids re-run: 28 PASS, 5 WARN (service pages, supporting gaps only), 0 BLOCK.
+- evidence.py questions --all ran once and produced 1 generic question. I rewrote it pre-filled and added Q2 (after-hours) and Q3 (install times, pad and permit).
+  - The set is in interviews/facts/facts-round-all-2026-10-14.questions.json. settled.py filter kept 3; questions.py check passed.
+  - Q2 and Q3 were asked once with run.py decision --ask.
+
+**Facts round for Paul:** interviews/facts/Home Mobile Medical - Facts Interview - all - 2026-10-14 - REVIEW.md, 3 questions. Paul sends it; the answers go in with /interview home-mobile-medical facts-answers all.
+
+**Flags:** F-001. sc-lowcountry.md has no rows for Charleston, Berkeley, Dorchester, Colleton or Hampton counties and their towns; the HHI permit URL returns 404 when fetched; the Bluffton PDF has no URL; Census QuickFacts returns 403, so 65+ shares come from Wikipedia's 2020 census figures.
+
+**For the brief writers:**
+- Folly naming: the official site says "City of Folly Beach". The Discovery Record's Folly Island vs Folly Beach conflict is still open, and it is Paul's call.
+- Yemassee is mostly in Hampton County. Okatie spans Beaufort and Jasper.
+- Permit offices for Walterboro and Hollywood are partial: confirm with the town.
+
+**Not done:** none. The Brand Guide was not written (write-back happens at brief approval, CM-061 §6).
+### END HANDOFF
+## RUN 20261014-100458-build-2be7 · FINISHED · 2026-10-14T10:21:13-05:00
+Changes: 1 · Summary: Facts round: 100 public facts looked up, grids 28 pass/5 warn/0 block, 3-question set for Paul
+- CHANGE #159 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-09 (4).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-09 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #160 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-09 (4).md | new: Home Mobile Medical - Handoff Log.md · sha e61a80462cf5 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #161 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14.md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14.md | result: done · renamed and moved, nothing deleted
+- CHANGE #162 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14.md | new: Home Mobile Medical - Document Checklist.md · sha 1b92ff22d5cf | result: done · copied (Drive for desktop syncs it)
+- CHANGE #163 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Brand Guide - 2026-10-07.md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md | new: _Archive/Home Mobile Medical - Brand Guide - 2026-10-07.md | result: done · renamed and moved, nothing deleted
+- CHANGE #164 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md | upload | old: previous version archived as Home Mobile Medical - Brand Guide - 2026-10-07.md | new: Home Mobile Medical - Brand Guide.md · sha 8ffe9fc32f05 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #165 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14.md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14.md | result: done · renamed and moved, nothing deleted
+- CHANGE #166 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14.md | new: Home Mobile Medical - Status.md · sha d339e15de5ca | result: done · copied (Drive for desktop syncs it)
