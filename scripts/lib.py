@@ -61,10 +61,14 @@ def read_json(path, default=None):
     return json.loads(p.read_text())
 
 
+def json_text(data):
+    return json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+
+
 def write_json(path, data):
     p = Path(path)
     tmp = p.with_suffix(p.suffix + ".tmp")
-    tmp.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+    tmp.write_text(json_text(data))
     os.replace(tmp, p)
 
 
@@ -267,6 +271,29 @@ def require_client_folder(slug="<slug>"):
     die(f"REFUSED — Client work runs in the client's folder: `python3 scripts/worktree.py open {slug}`. "
         f"This is the main folder ({ROOT}); it is for system sessions only. Open the client's folder, start a chat "
         f"there, and run the command there.", 4)
+
+
+def require_main_folder(what="global approvals"):
+    """Global approvals (/approve global …) are typed in the main folder only — they change system files, never a
+    client's folder. config client_work_in_main_folder is the test sandbox's switch (one folder), never set for real."""
+    if config().get("client_work_in_main_folder") or ROOT.resolve() == main_root().resolve():
+        return
+    die(f"REFUSED — {what} are typed in the main folder, not in a client folder. Open the main folder "
+        f"({main_root()}) and type the /approve global … line there. This folder is {ROOT}. "
+        "Each client picks the approval up on its own next /next.", 4)
+
+
+def pull_main():
+    """A client folder reads global approvals from main: bring this branch up to origin/main (never forces).
+    '' when nothing to do or done; a plain message when the pull conflicts."""
+    if ROOT.resolve() == main_root().resolve() or not config().get("git_push_after_run") \
+            or _git("remote", "get-url", "origin").returncode != 0:
+        return ""
+    pr = _git("pull", "--rebase", "--autostash", "-q", "origin", "main")
+    if pr.returncode != 0:
+        _git("rebase", "--abort")
+        return "NOT UPDATED from main — this folder conflicts with newer work there. Tell Paul; a system session resolves it."
+    return ""
 
 
 def git_branch():

@@ -689,7 +689,8 @@ def lists(slug):
     rs, c = full_rows(slug)
     st = c.st
     d = client_dir(slug) / "handoffs"
-    order = {pid: i for i, pid in enumerate(st["pages"])}
+    d.mkdir(parents=True, exist_ok=True)   # a client with no handoffs/ yet
+    order ={pid: i for i, pid in enumerate(st["pages"])}
     mine = [r for r in rs if r["field"] == "open item" and r["status"] not in ("superseded", "done")]
     res = sorted((r for r in mine if open_item_kind(r["old"]) == "researcher"), key=lambda r: order.get(r["decision_map_ref"], 99))
     cli = sorted((r for r in mine if open_item_kind(r["old"]) == "client"), key=lambda r: order.get(r["decision_map_ref"], 99))

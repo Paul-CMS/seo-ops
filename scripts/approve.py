@@ -19,6 +19,10 @@
     approve.py <slug> schema-offline --reason T          Wikipedia/Wikidata unreachable: let THIS open /finish schema
                run build once without the live entity check (CM-053); every other check still runs
 
+Global approvals (global specs / mode: / model:) run only in the main folder, check everything before writing,
+write only system files (spec stamp, config.json) all-or-nothing, and never touch client records: each client
+applies them on its own next /next (status.apply_global).
+
 Refuses unless Paul typed /approve in this session within the last 20 minutes: the
 UserPromptSubmit hook writes a one-time token when — and only when — a real user prompt
 starts with "/approve". Claude cannot create that token (the guard hook blocks it).
@@ -28,19 +32,23 @@ command recorded with `status.py mark`). No files → refused. If one of those f
 later, only this approval stops counting (status.py).
 """
 import argparse
+import os
 import re
 import time
 from pathlib import Path
 
 import status as S
-from lib import ROOT, append, machine, client_dir, die, git_commit, now, read_json, ref_missing, ref_sha, sha12, write_json
+from lib import (ROOT, append, machine, client_dir, die, git_commit, json_text, now, read_json, ref_missing, ref_sha,
+                 require_main_folder, sha12, write_json)
 
 TOKEN = ROOT / ".claude" / "state" / "approve-token.json"
 MAX_AGE = 20 * 60
 
 
-def take_token(slug, targets, consume=True):
-    """Check Paul's /approve token names this client and every target; mark it used if consume."""
+def take_token(slug, targets, consume=True, into=None):
+    """Check Paul's /approve token names this client and every target; mark it used if consume. With `into` (a
+    {path: text} dict of staged writes) the used token is staged there instead of written — a global approval writes
+    the token in the same all-or-nothing step as everything else."""
     if isinstance(targets, str):
         targets = [targets]
     if machine().get("can_approve") is False:
@@ -62,8 +70,40 @@ def take_token(slug, targets, consume=True):
     if consume:
         tok["used"] = True
         tok["used_for"] = f"{slug} {' '.join(targets)}"
-        write_json(TOKEN, tok)
+        if into is None:
+            write_json(TOKEN, tok)
+        else:
+            into[TOKEN] = json_text(tok)
     return tok
+
+
+def commit_writes(changes):
+    """All or nothing: write every {path: text}; on any error put every file back as it was and refuse. The staged
+    /approve token is one of the files, so a failed approval does not use it up."""
+    old = {p: (p.read_text(encoding="utf-8") if p.exists() else None) for p in changes}
+    done = []
+    try:
+        for p, text in changes.items():
+            tmp = p.with_suffix(p.suffix + ".tmp")
+            tmp.write_text(text, encoding="utf-8")
+            os.replace(tmp, p)
+            done.append(p)
+    except Exception as e:  # noqa: BLE001
+        for p in changes:
+            p.with_suffix(p.suffix + ".tmp").unlink(missing_ok=True)
+        for p in done:
+            if old[p] is None:
+                p.unlink(missing_ok=True)
+            else:
+                p.write_text(old[p], encoding="utf-8")
+        die(f"REFUSED — could not write {p.name}: {e}. Nothing was changed and the /approve is not used up.")
+
+
+def stage_global(cfg, changes, kind, **fields):
+    """Record a global approval in config.json (global_approvals); each client applies it on its own next /next."""
+    log = cfg.setdefault("global_approvals", [])
+    log.append({"n": max([e.get("n", 0) for e in log] or [0]) + 1, "kind": kind, "by": "Paul", "at": now(), **fields})
+    changes[ROOT / "config.json"] = json_text(cfg)
 
 
 def file_map(paths):
@@ -254,7 +294,7 @@ def parse_mode(target):
 
 def global_mode(a):
     """/approve global mode:<stage>=auto — every client; auto needs the stage to have passed the pilot
-    for at least one client. Recorded in config.json and in every client's status.json and log.md."""
+    for at least one client. Writes config.json only; each client records it on its own next /next."""
     if len(a.targets) != 1 or not a.targets[0].startswith("mode:"):
         die("REFUSED — 'global' takes exactly one mode:<stage>=auto|review.")
     target = a.targets[0]
@@ -264,26 +304,20 @@ def global_mode(a):
     slugs = sorted(p.parent.name for p in CLIENTS.glob("*/status.json"))
     if mode == "auto" and not any(S.pilot_passed(S.load(s), step)[0] for s in slugs):
         die(f"REFUSED ({target}) — no client has passed the pilot for {step} yet.")
-    take_token("global", target)
+    changes = {}
+    take_token("global", target, into=changes)
     cfg = config()
     old = ((cfg.get("stage_modes") or {}).get(step) or {}).get("mode", S.GATES["modes"]["default"])
     rec = {"mode": mode, "by": "Paul", "at": now(), "note": a.note, "was": old}
     cfg.setdefault("stage_modes", {})[step] = rec
-    write_json(ROOT / "config.json", cfg)
-    for s in slugs:
-        st = S.load(s)
-        st.setdefault("mode_history", []).append({"step": step, "scope": "global", **rec})
-        S.save(s, st)
-        own = (st.get("modes") or {}).get(step)
-        append(client_dir(s) / "log.md", f"\n## MODE · {now()} · {step}: {old} → {mode} · GLOBAL · by Paul\n"
-               + (f"(this client keeps its own setting: {own['mode']})\n" if own else "")
-               + (f"Note: {a.note}\n" if a.note else ""))
-    print(git_commit(f"global: {step} → {mode} by Paul", paths=["config.json", "clients/"]))
+    stage_global(cfg, changes, "mode", step=step, mode=mode, was=old, note=a.note)
+    commit_writes(changes)
+    print(git_commit(f"global: {step} → {mode} by Paul", paths=["config.json"]))
 
 
 def global_model(a):
     """/approve global model:build:draft=sonnet|opus (rewrite 2 §4: the Sonnet drafting test) — Paul's choice of model
-    for one job, for every client. Recorded in config.json model_overrides and logged; next.py and stages.py print it."""
+    for one job, for every client. Recorded in config.json model_overrides; next.py and stages.py print it."""
     target = a.targets[0]
     m = re.match(r"^model:([a-z0-9:-]+)=(haiku|sonnet|opus)$", target)
     if not m:
@@ -292,27 +326,29 @@ def global_model(a):
     keys = {r.get("key") or step for step, rs in (S.GATES.get("models") or {}).items() for r in rs}
     if key not in keys:
         die(f"REFUSED ({target}) — no job '{key}' in gates.json → models ({', '.join(sorted(keys))})")
-    take_token("global", target)
+    take_token("global", target, consume=False)
+    changes = {}
+    take_token("global", target, into=changes)
     from lib import config
     cfg = config()
     old = ((cfg.get("model_overrides") or {}).get(key) or {}).get("model")
     cfg.setdefault("model_overrides", {})[key] = {"model": model, "by": "Paul", "at": now(), "note": a.note, "was": old}
-    write_json(ROOT / "config.json", cfg)
-    from lib import CLIENTS
-    for s in sorted(p.parent.name for p in CLIENTS.glob("*/status.json")):
-        append(client_dir(s) / "log.md", f"\n## MODEL · {now()} · {key}: {old or 'default'} → {model} · GLOBAL · by Paul\n")
-    print(git_commit(f"global: model for {key} → {model} by Paul", paths=["config.json", "clients/"]))
+    stage_global(cfg, changes, "model", key=key, model=model, was=old, note=a.note)
+    commit_writes(changes)
+    print(git_commit(f"global: model for {key} → {model} by Paul", paths=["config.json"]))
 
 
 def global_specs(a, only=None):
     """/approve global specs (R3): the page specs are methodology, approved once for every client. Each spec's status
     line is rewritten to APPROVED; config.json records each spec's sha (status line excluded). A changed spec makes
-    page_specs_approved unmet until Paul approves again (pilot corrections re-stamp themselves: status.py)."""
-    take_token("global", f"specs:{only}" if only else "specs")
-    from lib import CLIENTS, config
-    import re as _re
+    page_specs_approved unmet until Paul approves again (pilot corrections re-stamp themselves: status.py).
+    Every check runs first; then the spec stamps, config.json and the token are written together or not at all.
+    No client file is touched — each client records the approval on its own next /next."""
+    target = f"specs:{only}" if only else "specs"
+    take_token("global", target, consume=False)
+    from lib import config
     stamp = f"**Status:** APPROVED — {now()[:10]}, Paul"
-    files = {}
+    files, changes = {}, {}
     wanted = [r for r in S.spec_files() if not only or Path(r).stem == only]
     if not wanted:
         die(f"REFUSED — no page spec named '{only}'. Specs: " + ", ".join(Path(r).stem for r in S.spec_files()))
@@ -321,20 +357,15 @@ def global_specs(a, only=None):
         text = f.read_text(encoding="utf-8")
         new = S.STATUS_LINE.sub(stamp, text, count=1) if S.STATUS_LINE.search(text) else text
         if new != text:
-            f.write_text(new, encoding="utf-8")
-        files[rel] = S.spec_sha(rel)
+            changes[f] = new
+        files[rel] = S.spec_sha(rel)   # the status line is not part of the sha
+    take_token("global", target, into=changes)
     cfg = config()
     old = (cfg.get("specs_approval") or {}).get("files") or {}
     cfg["specs_approval"] = {"by": "Paul", "at": now(), "note": a.note, "files": {**old, **files} if only else files}   # CR-023
-    write_json(ROOT / "config.json", cfg)
-    for s in sorted(x.parent.name for x in CLIENTS.glob("*/status.json")):
-        append(client_dir(s) / "log.md", f"\n## APPROVAL · {now()} · page specs (global{': ' + only if only else ''}) · approved · by Paul\n"
-               + "".join(f"Approved version: {r} (sha {h})\n" for r, h in files.items()))
-        st = S.load(s)
-        S.log_conditions(s, st)
-        import records
-        records.render(s)
-    print(git_commit("global: page specs approved by Paul", paths=["config.json", "clients/", "methodology/specs/"]))
+    stage_global(cfg, changes, "specs", only=only, files=files, note=a.note)
+    commit_writes(changes)
+    print(git_commit("global: page specs approved by Paul", paths=["config.json", "methodology/specs/"]))
     print(f"page specs approved: {', '.join(Path(r).name for r in files)}")
 
 
@@ -566,6 +597,7 @@ def main():
     ap.add_argument("--reason", help="evidence:<page> waivers: why Paul waives the gate")
     a = ap.parse_args()
     if a.slug == "global":
+        require_main_folder("global approvals")   # they change system files only; each client applies them on its /next
         if a.targets == ["specs"]:
             return global_specs(a)
         if len(a.targets) == 1 and a.targets[0].startswith("specs:"):

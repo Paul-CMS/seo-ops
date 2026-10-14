@@ -20,6 +20,10 @@ Read the part you need. The stage files (`docs/stage-<n>-*.md`) say what each st
 - **Models (§4, Q12).** `gates.json → models` names the agent and model for each job; `stages.py list` prints them;
   Paul changes one only with `/approve global model:<job>=<model>` (e.g. `model:build:draft=sonnet`, the Sonnet
   drafting test; `build/compare/` holds the side-by-side pages).
+- **Global approvals** (`/approve global …`: specs, mode, model) are typed in the main folder only; a client folder
+  refuses them and says so. All checks run first, then the system files (spec stamp, `config.json`, the token) are
+  written together or not at all. They never write a client's records: each client records the approval on its own
+  next `/next`, in its own folder (`config.json → global_approvals`; the client's `global_seen` counter).
 
 ## Implementation — what can change, and how
 Each change kind's gate, channel and owner are in `gates.json → change_kinds`. Safe fixes after the audit approval;

@@ -448,6 +448,12 @@ def main():
 def _walk(slug, cont):
     global PAUSE, SLUG
     SLUG = slug
+    applied = S.apply_global(slug)   # global approvals reach a client here, in its own folder — never written from main
+    if applied:
+        import records
+        from lib import git_commit
+        records.render(slug)
+        git_commit(f"{slug}: global approval(s) {', '.join(str(e['n']) for e in applied)} applied on /next", slug=slug)
     st = S.load(slug)
     if cont and st.get("review_pause"):
         p = st.pop("review_pause")

@@ -467,6 +467,38 @@ def log_conditions(slug, st):
     return new
 
 
+def apply_global(slug):
+    """A global approval (/approve global …, typed in the main folder) writes system files only: config.json's
+    global_approvals list. Each client records it here, on its own next /next, in its own folder: the log line, the
+    mode history, and the entry number it has seen (st['global_seen']). Returns the entries applied."""
+    import lib
+    lib.pull_main()   # a client folder reads config.json from its own branch: bring it up to main first
+    st = load(slug)
+    seen = st.get("global_seen", 0)
+    new = [e for e in (config().get("global_approvals") or []) if e.get("n", 0) > seen]
+    if not new:
+        return []
+    text = ""
+    for e in new:
+        note = f"Note: {e['note']}\n" if e.get("note") else ""
+        if e["kind"] == "specs":
+            text += (f"\n## APPROVAL · {e['at']} · page specs (global{': ' + e['only'] if e.get('only') else ''}) · approved · by Paul\n"
+                     + "".join(f"Approved version: {r} (sha {h})\n" for r, h in (e.get("files") or {}).items()) + note)
+        elif e["kind"] == "mode":
+            st.setdefault("mode_history", []).append({"step": e["step"], "scope": "global", "mode": e["mode"], "by": "Paul",
+                                                      "at": e["at"], "note": e.get("note"), "was": e.get("was")})
+            own = (st.get("modes") or {}).get(e["step"])
+            text += (f"\n## MODE · {e['at']} · {e['step']}: {e.get('was')} → {e['mode']} · GLOBAL · by Paul\n"
+                     + (f"(this client keeps its own setting: {own['mode']})\n" if own else "") + note)
+        elif e["kind"] == "model":
+            text += f"\n## MODEL · {e['at']} · {e['key']}: {e.get('was') or 'default'} → {e['model']} · GLOBAL · by Paul\n" + note
+    append(path(slug).parent / "log.md", text)
+    st["global_seen"] = max(e["n"] for e in new)
+    save(slug, st)
+    log_conditions(slug, st)
+    return new
+
+
 # ------------------------------------------------------------------ gate logic
 def _decided(st, gate):
     if gate in GATES["conditions"]:

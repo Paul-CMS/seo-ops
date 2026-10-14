@@ -1546,8 +1546,10 @@ def t_modes():
           and len(st.get("mode_history", [])) == 5 and lm.count("## MODE") == 5, st.get("modes"))
     code, out = paul("/approve global mode:build:ship=auto")
     cfg = json.loads((SB / "config.json").read_text())
+    glob_before = "GLOBAL" in (SB / "clients/md-co/log.md").read_text()   # a global approval writes no client record
+    sh("python3 scripts/next.py md-co")                                    # the client records it on its own /next
     check("modes: a global switch is allowed once a client has passed the pilot, and recorded",
-          code == 0 and cfg["stage_modes"]["build:ship"]["mode"] == "auto"
+          code == 0 and cfg["stage_modes"]["build:ship"]["mode"] == "auto" and not glob_before
           and "GLOBAL" in (SB / "clients/md-co/log.md").read_text(), out)
     _, out = sh("python3 scripts/status.py modes md-co")
     check("modes: the global setting applies to every client", "build:ship           auto   (global)" in out, out)
