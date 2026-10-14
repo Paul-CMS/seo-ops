@@ -245,6 +245,14 @@ def main():
             for hid in set(where.values()) - set(groups):
                 groups[hid] = []
         for hid, back in sorted(groups.items()):
+            if hid == "page-decisions":   # rows added by a page decision (pagedec.py)
+                import pagedec
+                for r in back:
+                    stt = (r.get("status") or "").strip().lower()
+                    if stt in ("done", "blocked", "deviated"):
+                        pagedec.set_row(a.slug, r["ref"], stt, r.get("note", ""))
+                print(f"page-decisions: ingested {len(back)} row(s)")
+                continue
             ingest_one(a, d, hid, back, whole=bool(a.handoff))
         import worklist
         worklist.build(a.slug)

@@ -23,6 +23,6 @@
     "required": ["page", "rule", "item", "finding", "severity", "category"],
     "ask": ["kind", "options", "recommended", "plain_why"],
     "fix_and_list": ["decided_for_you"],
-    "optional": ["url", "fact_key", "fact_id", "decision_key", "log", "sources", "note"]
+    "optional": ["page_actions", "url", "fact_key", "fact_id", "decision_key", "log", "sources", "note"]
   }
 }

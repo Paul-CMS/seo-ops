@@ -92,7 +92,12 @@ source · status`. **`worklist.py check <slug>` runs before any handover** (`pub
 error; the Drive copy waits for a passing check): publish rows match a real draft and the approved URL, no page missing
 or twice; redirects resolve, target a planned page with a draft, no chains, loops or duplicates, and depend on their
 target's publish row; open-item notices and rows match; a stale row is marked `worklist.py supersede`, never left open.
-`/verify` reopens a done row whose `done_check` fails. `worklist_title_max_chars` and `worklist_meta_chars` are in
+**Page decisions** (`pagedec.py`: drop, hold, stale drafts, a reworded open item) live in `clients/<slug>/page-decisions.json`
+and the Worklist follows them: a dropped page loses its publish and open-item rows and gains a "trash draft" Setup row and a
+301; a held page just loses its rows. A kind-1 Ask finding carries `page_actions` (option letter → the decision), so
+`review.py apply` records the page decision Paul picked in the sheet. Open items split by who resolves them: Jonie only for a VA
+task (a map embed); cited sources are the researcher's (`handoffs/researcher-list.md`); real client questions go in one
+pre-filled list grouped by page (`handoffs/client-questions.md`, ready for Paul to send). `/verify` reopens a done row whose `done_check` fails. `worklist_title_max_chars` and `worklist_meta_chars` are in
 `config.json`.
 
 ## Talking to Paul

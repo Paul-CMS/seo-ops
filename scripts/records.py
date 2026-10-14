@@ -123,6 +123,13 @@ def settled_register(slug):
     out += ["", "## Settled", ""]
     rows = [(k, e) for k, e in ents.items() if e.get("state") == "settled"]
     out += [f"- **{k}** ({e['at'][:10]}, {e.get('by') or '—'}): {e['text']}" for k, e in rows] or ["_None yet._"]
+    import pagedec
+    pds = pagedec.load(slug)
+    if pds:
+        out += ["", "## Page decisions — the VA Worklist follows these", ""]
+        out += [f"- **{r['id']}** ({r['at'][:10]}, {r['by']}): {r['action']} {r['page']}"
+                + (f" → {r['into']}" if r.get("into") else "") + f" — {r['reason']}" + (f" ({r['source']})" if r.get("source") else "")
+                for r in pds]
     opn = [(k, e) for k, e in ents.items() if e.get("state") == "open"]
     if opn:
         out += ["", "## Open questions — asked once, waiting for an answer", ""]

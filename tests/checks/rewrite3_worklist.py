@@ -214,8 +214,8 @@ def t_worklist_apex_rules(h):
             and clr["section"].startswith("3") and pub["section"].startswith("4")
             and ids.index(clr["id"]) < ids.index(pub["id"]) < ids.index(red["id"]), (clr, pub["depends_on"], red["depends_on"]))
     items = {i: by[H + f"14-01-publish-{i:02d}"] for i in (5, 6, 7)}
-    h.check("§7a (e): an open item is Jonie's only when it is a VA task (the map embed); a cited source and a proposed link are Paul's",
-            items[5]["owner"] == "Jonie" and items[6]["owner"] == "Paul" and items[7]["owner"] == "Paul"
+    h.check("§7a (e): an open item is Jonie's only when it is a VA task (the map embed); a cited source is the researcher's and a proposed link is Paul's",
+            items[5]["owner"] == "Jonie" and items[6]["owner"] == "Researcher" and items[7]["owner"] == "Paul"
             and "Not a VA task" in items[6]["how"] and "Not a VA task" not in items[5]["how"], items)
     md = (d / "handoffs" / "VA-WORKLIST.md").read_text(encoding="utf-8")
     h.check("§7a: superseded rows leave the working sections and are listed once under 'Superseded — do not do these'",

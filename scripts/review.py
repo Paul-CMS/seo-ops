@@ -366,6 +366,13 @@ def apply(slug, section, step, run_id, answers_line=None):
             item["open_item"] = (f"[NEED: {r['item']} — legal or money claim left out until answered ({today()})]" if choice == "omit"
                                  else f"[NEED: confirm {r['item']} — shipped with the default \"{action[:80]}\" after "
                                       f"{config().get('overdue_ask_working_days', 3)} working days ({today()})]")
+        pa = ((r.get("_finding") or {}).get("page_actions") or {}).get(choice)
+        if pa:   # a page decision (kind 1) answered here: record it so the Worklist follows it
+            import pagedec
+            rec, _new = pagedec.record(slug, r["page"], pa["action"], pa.get("reason") or action, by="Paul" if by == "Paul" else by,
+                                       source=f"{section} {step} review sheet, row {r['id']}{choice}", into=pa.get("into"),
+                                       redirect_from=pa.get("redirect_from"), wp_ids=pa.get("wp_ids"), run_id=run_id)
+            item["page_decision"] = rec["id"]
         out.append(item)
         ledger[r["key"]] = {"step": step, "at": now(), "choice": choice, "action": action[:200], "by": by}
     write_json(p["apply"], {"made": now(), "run": run_id, "section": section, "step": step, "answers": answers_line or "",

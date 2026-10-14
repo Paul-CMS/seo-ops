@@ -254,7 +254,7 @@ def place_fetch(url):
 WORKLIST_WEB = {   # what the worklist validator sees for each old URL (status code, no redirect followed)
     "https://r3wl.example/old-a/": 301, "https://r3wl.example/old-b/": 200, "https://r3wl.example/old-c/": 301,
     "https://r3wl.example/old-x/": 200, "https://r3wl.example/old-y/": 200,
-    "https://r3wl.example/metal-roofing-2/": 200,
+    "https://r3wl.example/metal-roofing-2/": 200, "https://r3wl.example/levy/": 200,
 }
 
 

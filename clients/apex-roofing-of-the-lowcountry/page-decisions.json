@@ -1,0 +1,91 @@
+[
+  {
+    "id": "PD-01",
+    "page": "loc-levy",
+    "action": "drop",
+    "reason": "No Levy page: mention Levy on the Hardeeville page; 301 /levy/ to /hardeeville/; trash draft 1642",
+    "by": "Paul",
+    "source": "Paul 2026-10-12, Apex location answers 25c; recorded 2026-10-14 on Paul's instruction (the answers file is not in the repo)",
+    "at": "2026-10-14T07:00:20-05:00",
+    "into": "loc-hardeeville",
+    "redirect_from": [
+      "https://apexroofingtlc.com/levy/"
+    ],
+    "wp_ids": [
+      1642
+    ],
+    "supersedes": null,
+    "match": null,
+    "rows": {},
+    "run": null
+  },
+  {
+    "id": "PD-02",
+    "page": "loc-pritchardville",
+    "action": "hold",
+    "reason": "Held out of this batch: draft 1634 kept but not published; the live /pritchardville/ page is left untouched",
+    "by": "Paul",
+    "source": "Paul 2026-10-12, Apex location answers 40b; recorded 2026-10-14 on Paul's instruction",
+    "at": "2026-10-14T07:00:20-05:00",
+    "into": null,
+    "redirect_from": [],
+    "wp_ids": [],
+    "supersedes": null,
+    "match": null,
+    "rows": {},
+    "run": null
+  },
+  {
+    "id": "PD-03",
+    "page": "svc-roof-repair",
+    "action": "stale_drafts",
+    "reason": "Drafts 1614 (source sha 87ad2344) and 1620 (fc7c7933) do not match the latest approved Roof Repair file (8affd945); trash them and ship a fresh draft from the approved file",
+    "by": "Paul",
+    "source": "checked 2026-10-14 against the pilot approval (batch pilot drafts)",
+    "at": "2026-10-14T07:00:20-05:00",
+    "into": null,
+    "redirect_from": [],
+    "wp_ids": [
+      1614,
+      1620
+    ],
+    "supersedes": null,
+    "match": null,
+    "rows": {},
+    "run": null
+  },
+  {
+    "id": "PD-04",
+    "page": "loc-bluffton",
+    "action": "stale_drafts",
+    "reason": "Draft 1615 (source sha 77aebd7b) does not match the approved Bluffton file (29f915db); draft 1621 does and stays",
+    "by": "Paul",
+    "source": "checked 2026-10-14 against the pilot approval",
+    "at": "2026-10-14T07:00:20-05:00",
+    "into": null,
+    "redirect_from": [],
+    "wp_ids": [
+      1615
+    ],
+    "supersedes": null,
+    "match": null,
+    "rows": {},
+    "run": null
+  },
+  {
+    "id": "PD-05",
+    "page": "loc-bluffton",
+    "action": "rewrite_open_item",
+    "reason": "Bluffton map embed rewritten in the standard map-embed format, using the exact line in the approved file",
+    "by": "Paul",
+    "source": "Paul 2026-10-14",
+    "at": "2026-10-14T07:00:20-05:00",
+    "into": null,
+    "redirect_from": [],
+    "wp_ids": [],
+    "supersedes": "H-2026-10-09-12-publish-01",
+    "match": "map",
+    "rows": {},
+    "run": null
+  }
+]

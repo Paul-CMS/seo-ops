@@ -108,5 +108,45 @@
     "by": "H-2026-10-13-13-publish-60",
     "reason": "derived: the page is shipped from its approved draft, whose title and meta description are in the publish row H-2026-10-13-13-publish-60",
     "at": "2026-10-14T06:34:15-05:00"
+  },
+  "H-2026-10-13-13-publish-55": {
+    "by": "PD-01-trash-1642",
+    "reason": "derived: page decision PD-01 — drop loc-levy: No Levy page: mention Levy on the Hardeeville page; 301 /levy/ to /hardeeville/; trash draft 1642",
+    "at": "2026-10-14T07:00:20-05:00"
+  },
+  "H-2026-10-13-13-publish-56": {
+    "by": "PD-01-trash-1642",
+    "reason": "derived: page decision PD-01 — drop loc-levy: No Levy page: mention Levy on the Hardeeville page; 301 /levy/ to /hardeeville/; trash draft 1642",
+    "at": "2026-10-14T07:00:20-05:00"
+  },
+  "H-2026-10-13-13-publish-38": {
+    "by": "",
+    "reason": "derived: page decision PD-02 — hold loc-pritchardville: Held out of this batch: draft 1634 kept but not published; the live /pritchardville/ page is left untouched",
+    "at": "2026-10-14T07:00:20-05:00"
+  },
+  "H-2026-10-13-13-publish-39": {
+    "by": "",
+    "reason": "derived: page decision PD-02 — hold loc-pritchardville: Held out of this batch: draft 1634 kept but not published; the live /pritchardville/ page is left untouched",
+    "at": "2026-10-14T07:00:20-05:00"
+  },
+  "H-2026-10-09-09-publish-01": {
+    "by": "PD-03-trash-1614",
+    "reason": "derived: page decision PD-03 — draft 1614 does not match the latest approved file, so it is trashed",
+    "at": "2026-10-14T07:00:20-05:00"
+  },
+  "H-2026-10-09-10-publish-01": {
+    "by": "PD-03-trash-1620",
+    "reason": "derived: page decision PD-03 — draft 1620 does not match the latest approved file, so it is trashed",
+    "at": "2026-10-14T07:00:20-05:00"
+  },
+  "H-2026-10-09-09-publish-02": {
+    "by": "PD-04-trash-1615",
+    "reason": "derived: page decision PD-04 — draft 1615 does not match the latest approved file, so it is trashed",
+    "at": "2026-10-14T07:00:20-05:00"
+  },
+  "H-2026-10-09-12-publish-01": {
+    "by": "PD-05-open-1",
+    "reason": "derived: page decision PD-05 — reworded in the standard format",
+    "at": "2026-10-14T07:00:20-05:00"
   }
 }
