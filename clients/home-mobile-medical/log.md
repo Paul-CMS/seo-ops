@@ -948,3 +948,14 @@ Human review: Paul Meisner
 - CHANGE #180 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (4).md | new: Home Mobile Medical - Document Checklist.md · sha d9fe7be9d947 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #181 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (4).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (4).md | result: done · renamed and moved, nothing deleted
 - CHANGE #182 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (4).md | new: Home Mobile Medical - Status.md · sha 7385a5df75af | result: done · copied (Drive for desktop syncs it)
+
+## APPROVAL · 2026-10-14T13:29:26-05:00 · batch pilot drafts · approved · by Paul
+Approved version: clients/home-mobile-medical/build/pilot/drafts/svc-stair-lifts.md (sha eb5499249a3e)
+Approved version: clients/home-mobile-medical/build/pilot/drafts/loc-beaufort-sc.md (sha 2534ab32a0c6)
+Approved version: clients/home-mobile-medical/build/pilot/drafts-review.csv (sha 300bededfb1f)
+SEM items to apply: none
+Human review: Paul Meisner
+- CHANGE #183 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (5).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #184 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (5).md | new: Home Mobile Medical - Document Checklist.md · sha 9ca21a6f2d12 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #185 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (5).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #186 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (5).md | new: Home Mobile Medical - Status.md · sha f8703cc3ec79 | result: done · copied (Drive for desktop syncs it)
