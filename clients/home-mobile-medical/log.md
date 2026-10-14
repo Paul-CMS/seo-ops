@@ -1491,3 +1491,46 @@ Changes: 0 · Summary: Porch lifts draft written from its approved brief and rec
 - CHANGE #274 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (19).md | new: Home Mobile Medical - Document Checklist.md · sha 9fc1ddc9665d | result: done · copied (Drive for desktop syncs it)
 - CHANGE #275 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (19).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (19).md | result: done · renamed and moved, nothing deleted
 - CHANGE #276 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (19).md | new: Home Mobile Medical - Status.md · sha 83ca68f4d39e | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261014-163836-build-20c8 · STARTED · /build · 2026-10-14T16:38:36-05:00
+Step: build:draft · batch services · session e7bff2e3-fc09-491a-bd8d-f8a36153a33c
+Gates checked: discovery_signed_off, batch:services:briefs, page_specs_approved
+- DRAFT 2026-10-14T16:40 · run 20261014-163836-build-20c8 · svc-wheelchair-lifts · clients/home-mobile-medical/build/services/drafts/svc-wheelchair-lifts.md · agent build-svc-wheelchair-lifts
+### HANDOFF · /build · 2026-10-14 · run 20261014-163836-build-20c8
+**What I did**
+- Wrote the svc-wheelchair-lifts draft from its approved brief (SB - Wheelchair Lifts) and evidence pack: clients/home-mobile-medical/build/services/drafts/svc-wheelchair-lifts.md.
+- Recorded it: `status.py page-stage home-mobile-medical svc-wheelchair-lifts --stage draft --run 20261014-163836-build-20c8 --agent build-svc-wheelchair-lifts` → "draft recorded".
+- Self-checks (E1–E10 + service spec): readability page grade 5.9 over 685 words, only paragraph over 10 is the verbatim safety line (exempt, pilot corrections); placeholders scan clean; sweep found no ramp, Beaufort Medical Equipment, guarantee, licence, certification, technician, "15+ years", "same day" or "3–4 hours" wording; meta 150 characters; one H1, no city in any H tag, no prose links; 4 FAQs.
+
+**What was decided, and why**
+- Followed the brief: H1 "Wheelchair Lift Installation in the Lowcountry"; opening uses "home accessibility lifts" + "Charleston area"; buyer state = a household that already uses a wheelchair.
+- Settled install-time wording word for word in the delivery H2 and FAQ 2; FAQ 2's second sentence is page-specific (where the lift will stand in the home).
+- "No trip charge" sits in FAQ 1 (and the delivery H2 and CTA); warranty FAQ here (manufacturer's only); porch-vs-wheelchair comparison owned here (H3 + FAQ 3).
+- FAQ 3 and 4 first sentences kept under 40 words to hold every paragraph under grade 10 (same trade-off as the porch page).
+- The optional `[LINK → /porch-lifts/ …]` was not placed; no in-prose links.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Safety line paragraph grade 14.1 — exempt (pilot corrections, Ask 1 = A) | — | nothing |
+| FAQ 3 and 4 first sentences under the 40–60 word target (reading grade traded) | checker pass | draft review |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Draft | clients/home-mobile-medical/build/services/drafts/svc-wheelchair-lifts.md | recorded, awaiting the section's draft review |
+
+**What I could not check**
+- The repair page draft (svc-repair-maintenance) was not on disk / not in my read list; collisions with it go to the checker pass.
+
+**Anything the next agent would otherwise get wrong**
+- The settled install-time sentences repeat across curved, porch and wheelchair by design (verbatim), not an E1 failure.
+### END HANDOFF
+## RUN 20261014-163836-build-20c8 · FINISHED · 2026-10-14T16:40:47-05:00
+Changes: 0 · Summary: Wheelchair lifts draft written from its approved brief and recorded (svc-wheelchair-lifts); four FAQs; no ramps; checks pass. Sibling-collision check waits for the repair draft.
+- CHANGE #277 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (11).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (11).md | result: done · renamed and moved, nothing deleted
+- CHANGE #278 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-14 (11).md | new: Home Mobile Medical - Handoff Log.md · sha 33c48405b198 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #279 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (20).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (20).md | result: done · renamed and moved, nothing deleted
+- CHANGE #280 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (20).md | new: Home Mobile Medical - Document Checklist.md · sha 256e7504862c | result: done · copied (Drive for desktop syncs it)
+- CHANGE #281 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (20).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (20).md | result: done · renamed and moved, nothing deleted
+- CHANGE #282 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (20).md | new: Home Mobile Medical - Status.md · sha ec6859bd432f | result: done · copied (Drive for desktop syncs it)

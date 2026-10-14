@@ -312,7 +312,7 @@
       "name": "Wheelchair Lifts",
       "url": "https://homemobilemedical.com/wheelchair-lifts/",
       "group": "lifts",
-      "state": "brief_written",
+      "state": "draft_written",
       "live_url": "https://homemobilemedical.com/services/wheelchair-lifts/",
       "replaces": [
         "https://homemobilemedical.com/services/wheelchair-lifts/"
@@ -365,6 +365,14 @@
           "at": "2026-10-14T16:29:14-05:00",
           "sha": "be01ea8d9537",
           "ts": 1792013354.844501
+        },
+        "draft": {
+          "file": "clients/home-mobile-medical/build/services/drafts/svc-wheelchair-lifts.md",
+          "run": "20261014-163836-build-20c8",
+          "at": "2026-10-14T16:40:23-05:00",
+          "sha": "a003548edfd0",
+          "ts": 1792014023.78411,
+          "agent": "build-svc-wheelchair-lifts"
         }
       }
     },
@@ -2187,10 +2195,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261014-163624-build-5523",
+    "run_id": "20261014-163836-build-20c8",
     "command": "build",
-    "finished": "2026-10-14T16:38:28-05:00",
-    "result": "Porch lifts draft written from its approved brief and recorded (svc-porch-lifts); no ramps; four FAQs; checks pass. Sibling-collision check waits for the wheelchair and repair drafts.",
+    "finished": "2026-10-14T16:40:47-05:00",
+    "result": "Wheelchair lifts draft written from its approved brief and recorded (svc-wheelchair-lifts); four FAQs; no ramps; checks pass. Sibling-collision check waits for the repair draft.",
     "changes": 0,
     "step": "build:draft",
     "batch": "services"
@@ -2214,7 +2222,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T16:38:28-05:00",
+  "updated": "2026-10-14T16:40:47-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
@@ -2361,8 +2369,8 @@
     "/services/": "https://homemobilemedical.com/"
   },
   "review_pause": {
-    "run_id": "20261014-163624-build-5523",
+    "run_id": "20261014-163836-build-20c8",
     "step": "build:draft",
-    "at": "2026-10-14T16:38:28-05:00"
+    "at": "2026-10-14T16:40:47-05:00"
   }
 }
