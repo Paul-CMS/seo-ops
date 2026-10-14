@@ -1,6 +1,6 @@
 # Apex Roofing of the Lowcountry - Document Checklist
 
-Generated 2026-10-13T20:17 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-13T20:29 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -34,7 +34,7 @@ Generated 2026-10-13T20:17 from status.json — do not edit. `[x]` done · `[-]`
 - [x] Client set up (/new-client finished)
 - [x] The client's facts are in — the returned proof sheet is recorded, or Paul approved the client's direct answers
 - [x] Every registered audit step has an outcome (Done / Skipped / Failed)
-- [ ] Every page in the site plan is a WordPress draft — ready for the one living publish handoff (CM-055) — batches not yet in WordPress as drafts: locations
+- [x] Every page in the site plan is a WordPress draft — ready for the one living publish handoff (CM-055)
 - [ ] Every page in the site plan is built, verified and written back — batches not yet built and written back: pilot, services, locations, h1
 - [x] WordPress connected (/wp-check passed in the last 30 days)
 - [x] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded)

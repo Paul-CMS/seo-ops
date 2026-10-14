@@ -6158,3 +6158,51 @@ Reason (Paul): Paul typed /abort; ship run never drafted anything, to be restart
 - CHANGE #910 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (27).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 5ed98ea65dd0 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #911 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (28).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (28).md | result: done · renamed and moved, nothing deleted
 - CHANGE #912 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (28).md | new: Apex Roofing of the Lowcountry - Status.md · sha 13ef0c7f5884 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261013-202810-build-fa8e · STARTED · /build · 2026-10-13T20:28:10-05:00
+Step: build:ship · session 6452a1a1-8eb1-4af6-a6b8-9452a29eac2d
+Gates checked: discovery_signed_off, wordpress_connected
+- CHANGE #913 [page_content] https://apexroofingtlc.com/?page_id=1632 | new draft page | old: (none) | new: draft id 1632 (pages) · from clients/apex-roofing-of-the-lowcountry/build/locations/LD - Hilton Head Island - Apex Roofing of the Lowcountry.md sha b8a592ababa… | result: APPLIED · draft only (not live) · generated from the approved file | ref loc-hilton-head-island
+- CHANGE #914 [page_content] https://apexroofingtlc.com/?page_id=1633 | new draft page | old: (none) | new: draft id 1633 (pages) · from clients/apex-roofing-of-the-lowcountry/build/locations/LD - Okatie - Apex Roofing of the Lowcountry.md sha 8b3cc5d1b612 · slug oka… | result: APPLIED · draft only (not live) · generated from the approved file | ref loc-okatie
+- CHANGE #915 [page_content] https://apexroofingtlc.com/?page_id=1634 | new draft page | old: (none) | new: draft id 1634 (pages) · from clients/apex-roofing-of-the-lowcountry/build/locations/LD - Pritchardville - Apex Roofing of the Lowcountry.md sha 4e34c38fbf8d · … | result: APPLIED · draft only (not live) · generated from the approved file | ref loc-pritchardville
+- CHANGE #916 [page_content] https://apexroofingtlc.com/?page_id=1635 | new draft page | old: (none) | new: draft id 1635 (pages) · from clients/apex-roofing-of-the-lowcountry/build/locations/LD - Beaufort - Apex Roofing of the Lowcountry.md sha e8528595a2b0 · slug b… | result: APPLIED · draft only (not live) · generated from the approved file | ref loc-beaufort
+- CHANGE #917 [page_content] https://apexroofingtlc.com/?page_id=1636 | new draft page | old: (none) | new: draft id 1636 (pages) · from clients/apex-roofing-of-the-lowcountry/build/locations/LD - Port Royal - Apex Roofing of the Lowcountry.md sha 53065236d913 · slug… | result: APPLIED · draft only (not live) · generated from the approved file | ref loc-port-royal
+- CHANGE #918 [page_content] https://apexroofingtlc.com/?page_id=1637 | new draft page | old: (none) | new: draft id 1637 (pages) · from clients/apex-roofing-of-the-lowcountry/build/locations/LD - Lady's Island - Apex Roofing of the Lowcountry.md sha 977e1edd596e · s… | result: APPLIED · draft only (not live) · generated from the approved file | ref loc-ladys-island
+- CHANGE #919 [page_content] https://apexroofingtlc.com/?page_id=1638 | new draft page | old: (none) | new: draft id 1638 (pages) · from clients/apex-roofing-of-the-lowcountry/build/locations/LD - St. Helena Island - Apex Roofing of the Lowcountry.md sha 0a9840448b5b… | result: APPLIED · draft only (not live) · generated from the approved file | ref loc-st-helena-island
+- CHANGE #920 [page_content] https://apexroofingtlc.com/?page_id=1639 | new draft page | old: (none) | new: draft id 1639 (pages) · from clients/apex-roofing-of-the-lowcountry/build/locations/LD - Fripp Island - Apex Roofing of the Lowcountry.md sha b69d330227e5 · sl… | result: APPLIED · draft only (not live) · generated from the approved file | ref loc-fripp-island
+- CHANGE #921 [page_content] https://apexroofingtlc.com/?page_id=1640 | new draft page | old: (none) | new: draft id 1640 (pages) · from clients/apex-roofing-of-the-lowcountry/build/locations/LD - Hardeeville - Apex Roofing of the Lowcountry.md sha e85d2ad501a4 · slu… | result: APPLIED · draft only (not live) · generated from the approved file | ref loc-hardeeville
+- CHANGE #922 [page_content] https://apexroofingtlc.com/?page_id=1641 | new draft page | old: (none) | new: draft id 1641 (pages) · from clients/apex-roofing-of-the-lowcountry/build/locations/LD - Ridgeland - Apex Roofing of the Lowcountry.md sha 4d90b7ae96a0 · slug … | result: APPLIED · draft only (not live) · generated from the approved file | ref loc-ridgeland
+- CHANGE #923 [page_content] https://apexroofingtlc.com/?page_id=1642 | new draft page | old: (none) | new: draft id 1642 (pages) · from clients/apex-roofing-of-the-lowcountry/build/locations/LD - Levy - Apex Roofing of the Lowcountry.md sha be3c2536f26a · slug levy-… | result: APPLIED · draft only (not live) · generated from the approved file | ref loc-levy
+- CHANGE #924 [page_content] https://apexroofingtlc.com/?page_id=1643 | new draft page | old: (none) | new: draft id 1643 (pages) · from clients/apex-roofing-of-the-lowcountry/build/h1/HD - Homepage - Apex Roofing of the Lowcountry.md sha cf51614e7124 · slug  | result: APPLIED · draft only (not live) · generated from the approved file | ref home
+- CHANGE #925 [page_content] https://apexroofingtlc.com/?page_id=1644 | new draft page | old: (none) | new: draft id 1644 (pages) · from clients/apex-roofing-of-the-lowcountry/build/h1/AD - About - Apex Roofing of the Lowcountry.md sha a2289078fc6c · slug about-new | result: APPLIED · draft only (not live) · generated from the approved file | ref about
+### HANDOFF · /build · 2026-10-13 · run 20261013-202810-build-fa8e
+## Handoff Log
+
+**Done**
+- `publish.py wheel` ran (exit 0): link wheel planned for 20 pages, written to clients/apex-roofing-of-the-lowcountry/build/link-wheel.json.
+- `publish.py drafts --run 20261013-202810-build-fa8e --all` ran (exit 0): 11 WordPress drafts created for batch `locations`; 2 WordPress drafts created for batch `h1`. Nothing handed to Jonie yet.
+
+**Refused**
+- None.
+
+**Not done**
+- No handoff to the VA Worklist yet. Every service and location page is published together from one living handoff once all batches are drafted (CM-055).
+- The helper output did not print WordPress draft ids per batch. Ids are not listed here.
+- The services batch (page ids 1625–1631) was not drafted in this run; no duplicate drafts were created for it.
+
+**Open waits**
+- Paul to decide on the single VA handoff (`/build apex-roofing-of-the-lowcountry handoff`).
+
+**Next**
+- `/build apex-roofing-of-the-lowcountry handoff` once Paul approves.
+### END HANDOFF
+## RUN 20261013-202810-build-fa8e · FINISHED · 2026-10-13T20:29:22-05:00
+Changes: 13 · Summary: build:ship: link wheel planned (20 pages); WordPress drafts created for batches locations (11) and h1 (2); no handoff yet
+
+## CONDITION · 2026-10-13T20:29:22-05:00 · Every page in the site plan is a WordPress draft — ready for the one living publish handoff (CM-055) — met (system-verified)
+- CHANGE #926 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (23).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | new: _Archive/Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (23).md | result: done · renamed and moved, nothing deleted
+- CHANGE #927 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Handoff Log.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Handoff Log - 2026-10-13 (23).md | new: Apex Roofing of the Lowcountry - Handoff Log.md · sha 053116978e6e | result: done · copied (Drive for desktop syncs it)
+- CHANGE #928 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (29).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | new: _Archive/Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (29).md | result: done · renamed and moved, nothing deleted
+- CHANGE #929 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Document Checklist.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Document Checklist - 2026-10-13 (29).md | new: Apex Roofing of the Lowcountry - Document Checklist.md · sha 3bf0bd54f475 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #930 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/_Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (30).md | archive | old: drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | new: _Archive/Apex Roofing of the Lowcountry - Status - 2026-10-13 (30).md | result: done · renamed and moved, nothing deleted
+- CHANGE #931 [drive_file] drive:Apex Roofing of the Lowcountry - TMS/Apex Roofing of the Lowcountry - Status.md | upload | old: previous version archived as Apex Roofing of the Lowcountry - Status - 2026-10-13 (30).md | new: Apex Roofing of the Lowcountry - Status.md · sha 276094c087f8 | result: done · copied (Drive for desktop syncs it)

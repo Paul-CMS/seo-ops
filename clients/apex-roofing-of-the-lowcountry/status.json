@@ -890,7 +890,7 @@
       ]
     },
     "loc-hilton-head-island": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "location",
       "name": "Hilton Head Island",
       "url": "https://apexroofingtlc.com/hilton-head-island/",
@@ -949,10 +949,45 @@
           "gaps": 0,
           "excerpts": 47
         }
+      },
+      "wp_id": 1632,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Hilton Head Island - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 74,
+          "text": "[NEED: city-level map embed of Hilton Head Island, SC — not the Google Business Profile map]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/roof-repair/",
+        "https://apexroofingtlc.com/roof-replacement/",
+        "https://apexroofingtlc.com/roof-installation/",
+        "https://apexroofingtlc.com/roof-inspections/",
+        "https://apexroofingtlc.com/emergency-roof-repair/",
+        "https://apexroofingtlc.com/metal-roofing/",
+        "https://apexroofingtlc.com/slate-roofing/",
+        "https://apexroofingtlc.com/skylights/",
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1632",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/hilton-head-island/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "loc-okatie": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "location",
       "name": "Okatie",
       "url": "https://apexroofingtlc.com/okatie/",
@@ -1011,10 +1046,45 @@
           "gaps": 0,
           "excerpts": 48
         }
+      },
+      "wp_id": 1633,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Okatie - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 73,
+          "text": "[NEED: city-level map embed of Okatie, SC — not the Google Business Profile map]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/roof-repair/",
+        "https://apexroofingtlc.com/roof-replacement/",
+        "https://apexroofingtlc.com/roof-installation/",
+        "https://apexroofingtlc.com/roof-inspections/",
+        "https://apexroofingtlc.com/emergency-roof-repair/",
+        "https://apexroofingtlc.com/metal-roofing/",
+        "https://apexroofingtlc.com/slate-roofing/",
+        "https://apexroofingtlc.com/skylights/",
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1633",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/okatie/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "loc-pritchardville": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "location",
       "name": "Pritchardville",
       "url": "https://apexroofingtlc.com/pritchardville/",
@@ -1074,10 +1144,45 @@
           "gaps": 1,
           "excerpts": 49
         }
+      },
+      "wp_id": 1634,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Pritchardville - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 59,
+          "text": "[NEED: city-level map embed of Pritchardville, SC — not the Google Business Profile map]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/roof-repair/",
+        "https://apexroofingtlc.com/roof-replacement/",
+        "https://apexroofingtlc.com/roof-installation/",
+        "https://apexroofingtlc.com/roof-inspections/",
+        "https://apexroofingtlc.com/emergency-roof-repair/",
+        "https://apexroofingtlc.com/metal-roofing/",
+        "https://apexroofingtlc.com/slate-roofing/",
+        "https://apexroofingtlc.com/skylights/",
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1634",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/pritchardville/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "loc-beaufort": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "location",
       "name": "Beaufort",
       "url": "https://apexroofingtlc.com/beaufort/",
@@ -1136,10 +1241,49 @@
           "gaps": 0,
           "excerpts": 47
         }
+      },
+      "wp_id": 1635,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Beaufort - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 51,
+          "text": "[LINK → /metal-roofing/ · reader wants Apex's metal-roofing service page]"
+        },
+        {
+          "line": 76,
+          "text": "[NEED: city-level map embed of Beaufort, SC — not the Google Business Profile map]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/roof-repair/",
+        "https://apexroofingtlc.com/roof-replacement/",
+        "https://apexroofingtlc.com/roof-installation/",
+        "https://apexroofingtlc.com/roof-inspections/",
+        "https://apexroofingtlc.com/emergency-roof-repair/",
+        "https://apexroofingtlc.com/metal-roofing/",
+        "https://apexroofingtlc.com/slate-roofing/",
+        "https://apexroofingtlc.com/skylights/",
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1635",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/beaufort/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "loc-port-royal": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "location",
       "name": "Port Royal",
       "url": "https://apexroofingtlc.com/port-royal/",
@@ -1198,10 +1342,45 @@
           "gaps": 0,
           "excerpts": 47
         }
+      },
+      "wp_id": 1636,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Port Royal - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 69,
+          "text": "[NEED: city-level map embed of Port Royal, SC — not the Google Business Profile map]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/roof-repair/",
+        "https://apexroofingtlc.com/roof-replacement/",
+        "https://apexroofingtlc.com/roof-installation/",
+        "https://apexroofingtlc.com/roof-inspections/",
+        "https://apexroofingtlc.com/emergency-roof-repair/",
+        "https://apexroofingtlc.com/metal-roofing/",
+        "https://apexroofingtlc.com/slate-roofing/",
+        "https://apexroofingtlc.com/skylights/",
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1636",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/port-royal/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "loc-ladys-island": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "location",
       "name": "Lady's Island",
       "url": "https://apexroofingtlc.com/ladys-island/",
@@ -1260,10 +1439,45 @@
           "gaps": 0,
           "excerpts": 50
         }
+      },
+      "wp_id": 1637,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Lady's Island - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 76,
+          "text": "[NEED: city-level map embed of Lady's Island, SC — not the Google Business Profile map]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/roof-repair/",
+        "https://apexroofingtlc.com/roof-replacement/",
+        "https://apexroofingtlc.com/roof-installation/",
+        "https://apexroofingtlc.com/roof-inspections/",
+        "https://apexroofingtlc.com/emergency-roof-repair/",
+        "https://apexroofingtlc.com/metal-roofing/",
+        "https://apexroofingtlc.com/slate-roofing/",
+        "https://apexroofingtlc.com/skylights/",
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1637",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/ladys-island/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "loc-st-helena-island": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "location",
       "name": "St. Helena Island",
       "url": "https://apexroofingtlc.com/st-helena-island/",
@@ -1322,10 +1536,45 @@
           "gaps": 0,
           "excerpts": 48
         }
+      },
+      "wp_id": 1638,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - St. Helena Island - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 70,
+          "text": "[NEED: city-level map embed of St. Helena Island, SC — not the Google Business Profile map]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/roof-repair/",
+        "https://apexroofingtlc.com/roof-replacement/",
+        "https://apexroofingtlc.com/roof-installation/",
+        "https://apexroofingtlc.com/roof-inspections/",
+        "https://apexroofingtlc.com/emergency-roof-repair/",
+        "https://apexroofingtlc.com/metal-roofing/",
+        "https://apexroofingtlc.com/slate-roofing/",
+        "https://apexroofingtlc.com/skylights/",
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1638",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/st-helena-island/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "loc-fripp-island": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "location",
       "name": "Fripp Island",
       "url": "https://apexroofingtlc.com/fripp-island/",
@@ -1384,10 +1633,45 @@
           "gaps": 0,
           "excerpts": 48
         }
+      },
+      "wp_id": 1639,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Fripp Island - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 72,
+          "text": "[NEED: city-level map embed of Fripp Island, SC — not the Google Business Profile map]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/roof-repair/",
+        "https://apexroofingtlc.com/roof-replacement/",
+        "https://apexroofingtlc.com/roof-installation/",
+        "https://apexroofingtlc.com/roof-inspections/",
+        "https://apexroofingtlc.com/emergency-roof-repair/",
+        "https://apexroofingtlc.com/metal-roofing/",
+        "https://apexroofingtlc.com/slate-roofing/",
+        "https://apexroofingtlc.com/skylights/",
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1639",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/fripp-island/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "loc-hardeeville": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "location",
       "name": "Hardeeville",
       "url": "https://apexroofingtlc.com/hardeeville/",
@@ -1446,10 +1730,45 @@
           "gaps": 0,
           "excerpts": 47
         }
+      },
+      "wp_id": 1640,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Hardeeville - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 73,
+          "text": "[NEED: city-level map embed of Hardeeville, SC — not the Google Business Profile map]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/roof-repair/",
+        "https://apexroofingtlc.com/roof-replacement/",
+        "https://apexroofingtlc.com/roof-installation/",
+        "https://apexroofingtlc.com/roof-inspections/",
+        "https://apexroofingtlc.com/emergency-roof-repair/",
+        "https://apexroofingtlc.com/metal-roofing/",
+        "https://apexroofingtlc.com/slate-roofing/",
+        "https://apexroofingtlc.com/skylights/",
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/ridgeland/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1640",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/hardeeville/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "loc-ridgeland": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "location",
       "name": "Ridgeland",
       "url": "https://apexroofingtlc.com/ridgeland/",
@@ -1508,10 +1827,45 @@
           "gaps": 0,
           "excerpts": 49
         }
+      },
+      "wp_id": 1641,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Ridgeland - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 65,
+          "text": "[NEED: city-level map embed of Ridgeland, SC — not the Google Business Profile map]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/roof-repair/",
+        "https://apexroofingtlc.com/roof-replacement/",
+        "https://apexroofingtlc.com/roof-installation/",
+        "https://apexroofingtlc.com/roof-inspections/",
+        "https://apexroofingtlc.com/emergency-roof-repair/",
+        "https://apexroofingtlc.com/metal-roofing/",
+        "https://apexroofingtlc.com/slate-roofing/",
+        "https://apexroofingtlc.com/skylights/",
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/levy/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1641",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/ridgeland/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "loc-levy": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "location",
       "name": "Levy",
       "url": "https://apexroofingtlc.com/levy/",
@@ -1571,10 +1925,45 @@
           "gaps": 1,
           "excerpts": 49
         }
+      },
+      "wp_id": 1642,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/locations/LD - Levy - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 63,
+          "text": "[NEED: city-level map embed of Levy, SC — not the Google Business Profile map]"
+        }
+      ],
+      "links_placed": [
+        "https://apexroofingtlc.com/roof-repair/",
+        "https://apexroofingtlc.com/roof-replacement/",
+        "https://apexroofingtlc.com/roof-installation/",
+        "https://apexroofingtlc.com/roof-inspections/",
+        "https://apexroofingtlc.com/emergency-roof-repair/",
+        "https://apexroofingtlc.com/metal-roofing/",
+        "https://apexroofingtlc.com/slate-roofing/",
+        "https://apexroofingtlc.com/skylights/",
+        "https://apexroofingtlc.com/bluffton/",
+        "https://apexroofingtlc.com/hilton-head-island/",
+        "https://apexroofingtlc.com/okatie/",
+        "https://apexroofingtlc.com/pritchardville/",
+        "https://apexroofingtlc.com/beaufort/",
+        "https://apexroofingtlc.com/port-royal/",
+        "https://apexroofingtlc.com/ladys-island/",
+        "https://apexroofingtlc.com/st-helena-island/",
+        "https://apexroofingtlc.com/fripp-island/",
+        "https://apexroofingtlc.com/hardeeville/",
+        "https://apexroofingtlc.com/ridgeland/"
+      ],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1642",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/levy/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     },
     "home": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "homepage",
       "name": "Homepage",
       "url": "https://apexroofingtlc.com/",
@@ -1636,10 +2025,29 @@
           "sha": "723742a223d9",
           "agent": "build-subagent-home-074c"
         }
+      },
+      "wp_id": 1643,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/h1/HD - Homepage - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 59,
+          "text": "[NEED: 6–9 real Apex project photos from the client, each with its town and roof type, for the gallery]"
+        },
+        {
+          "line": 124,
+          "text": "[NEED: Google Maps share link for the GBP (Brand Guide F hasMap is empty)]"
+        }
+      ],
+      "links_placed": [],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1643",
+        "how": "Publish at exactly https://apexroofingtlc.com/",
+        "replaces": []
       }
     },
     "about": {
-      "state": "draft_written",
+      "state": "drafted",
       "type": "about",
       "name": "About",
       "url": "https://apexroofingtlc.com/about/",
@@ -1700,6 +2108,29 @@
           "sha": "c80794517282",
           "agent": "build-subagent-about-074c"
         }
+      },
+      "wp_id": 1644,
+      "wp_type": "pages",
+      "file": "clients/apex-roofing-of-the-lowcountry/build/h1/AD - About - Apex Roofing of the Lowcountry.md",
+      "open_items": [
+        {
+          "line": 15,
+          "text": "[NEED: photo of Ralph and Pierce Brehany]"
+        },
+        {
+          "line": 17,
+          "text": "[NEED: their job titles, only if the client wants titles published]"
+        },
+        {
+          "line": 41,
+          "text": "[NEED: Ralph's or Pierce's own account of how and why they started Apex in 2015 — open client question fact:about:company_story]"
+        }
+      ],
+      "links_placed": [],
+      "publish": {
+        "draft_link": "https://apexroofingtlc.com/?page_id=1644",
+        "how": "Replace the content of the live page at https://apexroofingtlc.com/about/ with this draft's blocks (keep that URL), then trash the draft",
+        "replaces": []
       }
     }
   },
@@ -1929,7 +2360,7 @@
           "loc-ridgeland",
           "loc-levy"
         ],
-        "state": "drafts_written",
+        "state": "drafted",
         "briefs": {
           "state": "approved",
           "by": "Paul",
@@ -2039,7 +2470,7 @@
           "home",
           "about"
         ],
-        "state": "drafts_written",
+        "state": "drafted",
         "briefs": {
           "state": "approved",
           "by": "Paul",
@@ -2340,11 +2771,11 @@
     }
   },
   "last_run": {
-    "run_id": "20261013-163153-build-d38b",
+    "run_id": "20261013-202810-build-fa8e",
     "command": "build",
-    "finished": "2026-10-13T16:33:16-05:00",
-    "result": "ship partial: link wheel planned (20 pages); 7 service pages drafted in WordPress; locations refused (drafts-review.csv recorded as a page file) — flagged F-026; h1 not shipped",
-    "changes": 7,
+    "finished": "2026-10-13T20:29:22-05:00",
+    "result": "build:ship: link wheel planned (20 pages); WordPress drafts created for batches locations (11) and h1 (2); no handoff yet",
+    "changes": 13,
     "step": "build:ship",
     "batch": null
   },
@@ -2367,7 +2798,7 @@
     "next": "Your new pages are going live in stages."
   },
   "created": "2026-10-05T21:09:07-05:00",
-  "updated": "2026-10-13T20:17:20-05:00",
+  "updated": "2026-10-13T20:29:22-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-05T21:10:52-05:00",
@@ -2375,7 +2806,8 @@
     "proof_sheet_returned": "2026-10-07T15:20:21-05:00",
     "audit_steps_complete": "2026-10-07T20:25:32-05:00",
     "discovery_signed_off": "2026-10-08T12:21:53-05:00",
-    "page_specs_approved": "2026-10-08T13:15:46-05:00"
+    "page_specs_approved": "2026-10-08T13:15:46-05:00",
+    "pages_drafted": "2026-10-13T20:29:22-05:00"
   },
   "wordpress": {
     "check": {
@@ -2510,6 +2942,12 @@
       "step": "build:ship",
       "first_run": "20261013-163153-build-d38b",
       "at": "2026-10-13T16:33:16-05:00"
+    },
+    "6452a1a1-8eb1-4af6-a6b8-9452a29eac2d": {
+      "key": "batches",
+      "step": "build:ship",
+      "first_run": "20261013-202810-build-fa8e",
+      "at": "2026-10-13T20:29:22-05:00"
     }
   },
   "wheel_pending": {
@@ -2714,8 +3152,8 @@
     }
   ],
   "review_pause": {
-    "run_id": "20261013-163153-build-d38b",
+    "run_id": "20261013-202810-build-fa8e",
     "step": "build:ship",
-    "at": "2026-10-13T16:33:16-05:00"
+    "at": "2026-10-13T20:29:22-05:00"
   }
 }

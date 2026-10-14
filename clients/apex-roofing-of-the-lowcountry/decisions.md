@@ -101,6 +101,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 - 2026-10-07T20:25 — Every registered audit step has an outcome (Done / Skipped / Failed) — met (system-verified)
 - 2026-10-08T12:21 — Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — met (system-verified)
 - 2026-10-08T13:15 — Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)
+- 2026-10-13T20:29 — Every page in the site plan is a WordPress draft — ready for the one living publish handoff (CM-055) — met (system-verified)
 
 ## Runs aborted (Paul's call)
 
