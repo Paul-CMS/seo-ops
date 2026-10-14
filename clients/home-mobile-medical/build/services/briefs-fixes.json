@@ -1,0 +1,16 @@
+{
+  "made": "2026-10-14T15:00:05-05:00",
+  "run": "20261014-144852-build-6004",
+  "fixes": [
+    {
+      "page": "svc-curved-stair-lifts",
+      "rule": "CM-024 variants",
+      "item": "opening category variant",
+      "finding": "The curved opening reuses 'stair lift installer', the category variant already in the pilot /stair-lifts/ opening; curved and repair also share the opening area variant 'Hilton Head Island-Bluffton-Port Royal area'.",
+      "severity": "fix",
+      "category": "variant_repetition",
+      "decided_for_you": "Writer picks an unused A3/B2 variant for the curved opening.",
+      "url": "https://homemobilemedical.com/curved-stair-lifts/"
+    }
+  ]
+}

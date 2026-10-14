@@ -1326,3 +1326,35 @@ Human review: Paul Meisner
 - CHANGE #240 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (12).md | new: Home Mobile Medical - Document Checklist.md · sha d1c14e809af0 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #241 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (12).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (12).md | result: done · renamed and moved, nothing deleted
 - CHANGE #242 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (12).md | new: Home Mobile Medical - Status.md · sha c13cb5cc99b4 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261014-144852-build-6004 · STARTED · /build · 2026-10-14T14:48:52-05:00
+Step: build:write · batch services · session fc0c547a-9071-4271-a821-8c1fde609fe8
+Gates checked: discovery_signed_off, batch:services:briefs_ready, page_specs_approved
+- EVIDENCE 2026-10-14T14:49 · run 20261014-144852-build-6004 · svc-curved-stair-lifts: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T14:49 · run 20261014-144852-build-6004 · svc-porch-lifts: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T14:49 · run 20261014-144852-build-6004 · svc-wheelchair-lifts: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T14:49 · run 20261014-144852-build-6004 · svc-repair-maintenance: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- FLAG 2026-10-14T14:58 · run 20261014-144852-build-6004 · F-008 · Build agent started per-page brief agents in the background and stopped before they finished, leaving the run unrecorded (briefs on disk, none recorded, no review, run not finished). · workaround: Resume the write step in a fresh build agent that records the briefs first; do not start new background brief agents without waiting for their results.
+- FLAG 2026-10-14T14:58 · run 20261014-144852-build-6004 · F-009 · Main chat relayed the same interim status about eight times (subagent hand-backs repeated). · workaround: Relay each agent hand-back once; report only changes in state.
+- FLAG 2026-10-14T14:58 · run 20261014-144852-build-6004 · F-010 · Main chat could not see the child agents' results (brief-writer reports arrived only as hand-backs to the build agent). · workaround: Have the build agent write each child result to a file and report the file path to the main chat.
+- BRIEF 2026-10-14T14:58 · run 20261014-144852-build-6004 · svc-curved-stair-lifts · clients/home-mobile-medical/build/services/briefs/SB - Curved Stair Lifts - Home Mobile Medical.md
+- BRIEF 2026-10-14T14:58 · run 20261014-144852-build-6004 · svc-porch-lifts · clients/home-mobile-medical/build/services/briefs/SB - Porch Lifts - Home Mobile Medical.md
+- BRIEF 2026-10-14T14:58 · run 20261014-144852-build-6004 · svc-wheelchair-lifts · clients/home-mobile-medical/build/services/briefs/SB - Wheelchair Lifts - Home Mobile Medical.md
+- BRIEF 2026-10-14T14:58 · run 20261014-144852-build-6004 · svc-repair-maintenance · clients/home-mobile-medical/build/services/briefs/SB - Stair Lift Repair - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T14:58 · batch services · 4 page(s), one run each
+- REVIEW SHEET 2026-10-14T15:00 · run 20261014-144852-build-6004 · services briefs: 1 Ask, 8 decided for you, 1 fixed silently, 0 not raised (duplicate, decided or answered) · clients/home-mobile-medical/build/services/briefs-review.csv
+- SETTLED svc-repair-maintenance:legacy-repair-redirects · 2026-10-14T15:00:09-05:00 · run 20261014-144852-build-6004 · by Paul · Legacy repair URLs: /hilton-head/stair-lift-repair/ -> 301 to /stair-lift-repair/; /bluffton-sc/wheelchair-lift-repair/ -> 301 to /stair-lift-repair/ (the repair page covers any stair lift or lift, incl. porch and wheelchair lift repair, FAQ 4). Services brief review row 1, option a. 301s go with the publish handoff.
+- CHANGE #243 [drive_file] drive:Home Mobile Medical - TMS/02 - Build/briefs-review.md | upload | old: (new file) | new: briefs-review.md · sha 70fb32ae04e1 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #244 [drive_file] drive:Home Mobile Medical - TMS/02 - Build/briefs-review.csv | upload | old: (new file) | new: briefs-review.csv · sha 38dccb53832b | result: done · copied (Drive for desktop syncs it)
+- REVIEW APPLIED 2026-10-14T15:07 · run 20261014-144852-build-6004 · services briefs: 9 row(s) (2 answered by Paul, the rest by default) · clients/home-mobile-medical/build/services/briefs-apply.json
+
+## APPROVAL · 2026-10-14T15:14:31-05:00 · batch services briefs · revise · by Paul
+Approved version: clients/home-mobile-medical/build/services/briefs/SB - Curved Stair Lifts - Home Mobile Medical.md (sha 8a034552c71b)
+Approved version: clients/home-mobile-medical/build/services/briefs/SB - Porch Lifts - Home Mobile Medical.md (sha 0ccbff99101d)
+Approved version: clients/home-mobile-medical/build/services/briefs/SB - Wheelchair Lifts - Home Mobile Medical.md (sha be01ea8d9537)
+Approved version: clients/home-mobile-medical/build/services/briefs/SB - Stair Lift Repair - Home Mobile Medical.md (sha a179b344e73b)
+Note: Paul: revise the services briefs with the review answers applied (ramps out, three porch FAQs dropped, redirects recorded)
+- CHANGE #245 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (13).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (13).md | result: done · renamed and moved, nothing deleted
+- CHANGE #246 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (13).md | new: Home Mobile Medical - Document Checklist.md · sha 16cf7b900b74 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #247 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (13).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (13).md | result: done · renamed and moved, nothing deleted
+- CHANGE #248 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (13).md | new: Home Mobile Medical - Status.md · sha d5bcf18c703e | result: done · copied (Drive for desktop syncs it)

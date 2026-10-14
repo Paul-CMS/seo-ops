@@ -1,0 +1,90 @@
+[
+  {
+    "page": "svc-repair-maintenance", "rule": "CM-001 url-decision", "item": "legacy repair URLs 301",
+    "finding": "Two legacy city-folder repair URLs exist: /hilton-head/stair-lift-repair/ and /bluffton-sc/wheelchair-lift-repair/ (Brand Guide C1). The brief left their fate to Paul.",
+    "severity": "ask", "category": "ask", "kind": "1",
+    "plain_why": "Each old URL needs one destination; the repair brief covers any stair lift or lift, including porch and wheelchair lift repair (FAQ 4). Paul decided 2026-10-14: option a.",
+    "options": ["301 both /hilton-head/stair-lift-repair/ and /bluffton-sc/wheelchair-lift-repair/ to /stair-lift-repair/", "301 each to its city root page (/hilton-head-island-sc/, /bluffton-sc/)", "leave both as they are"],
+    "recommended": "a",
+    "decision_key": "svc-repair-maintenance:legacy-repair-redirects",
+    "note": "Decided by Paul 2026-10-14 (option a); the 301s go with the publish handoff"
+  },
+  {
+    "page": "svc-porch-lifts", "rule": "BB-316 faq-collision", "item": "FAQ 5 warranty",
+    "finding": "Porch FAQ 5 'Does a Porch Lift Come With a Warranty?' and wheelchair FAQ 4 'Does a Wheelchair Lift Come With a Warranty?' are the same question with the same answer (manufacturer's warranty only).",
+    "severity": "fix_and_list", "category": "collision",
+    "plain_why": "The same FAQ on two sibling pages competes with itself and reads as copy-paste.",
+    "decided_for_you": "Keep the warranty FAQ on /wheelchair-lifts/ (its fan-out was seen 2x); drop porch FAQ 5 and keep the warranty sentence in the porch delivery H2 only.",
+    "options": ["drop porch FAQ 5; warranty stays in the porch delivery H2", "keep the warranty FAQ on both pages"],
+    "recommended": "a"
+  },
+  {
+    "page": "svc-porch-lifts", "rule": "BB-316 faq-collision", "item": "FAQ 4 who installs near me",
+    "finding": "'Who Installs Porch Lifts Near Me?' (porch FAQ 4) repeats the pattern and answer of 'Who Installs Curved Stair Lifts Near Me?' (curved FAQ 4): family-owned, locally owned and operated, Jason supervises every installation.",
+    "severity": "fix_and_list", "category": "collision",
+    "plain_why": "Two sibling FAQs with the same template and the same answer fail the portability test (E1).",
+    "decided_for_you": "Keep the 'near me' FAQ on /curved-stair-lifts/; drop porch FAQ 4 (the porch opening already answers who installs porch lifts here). The porch page keeps 5 FAQs before the warranty change, 4 after.",
+    "options": ["drop porch FAQ 4; keep it on the curved page", "keep both, each answer rewritten around its own lift"],
+    "recommended": "a"
+  },
+  {
+    "page": "svc-curved-stair-lifts", "rule": "BB-316 faq-overlap", "item": "FAQ 1 curved cost vs parent cost FAQ",
+    "finding": "'How Much Does a Curved Stair Lift Cost?' overlaps the general stair lift cost FAQ already on /stair-lifts/ (C3).",
+    "severity": "fix_and_list", "category": "collision",
+    "plain_why": "Two pages answering the same cost question split the answer; the curved angle (priced for the staircase, mostly by stair count) is distinct and routed here (PAA #1, fan-outs #16, #41).",
+    "decided_for_you": "Keep the FAQ, worded only around the curved staircase (priced for your stairs by stair count, photo quote, free estimate); the writer must not reuse any sentence from the parent's cost answer.",
+    "options": ["keep it, curved angle only, no shared wording", "drop it and leave cost to /stair-lifts/"],
+    "recommended": "a"
+  },
+  {
+    "page": "svc-porch-lifts", "rule": "C8 faq-fit", "item": "FAQ 6 do you install ramps",
+    "finding": "'Do You Install Ramps?' is not in the PAA or fan-out routing for this page.",
+    "severity": "fix_and_list", "category": "other_content",
+    "plain_why": "The old ramps URLs 301 to /porch-lifts/ (settled redirect-targets-default), so arriving searchers expect ramps; the answer is the Brand Guide D 'not offered' fact.",
+    "decided_for_you": "Keep the FAQ: 'No, Home Mobile Medical does not install mobility ramps', then one sentence on porch lifts for raised entrances and decks; no comparison.",
+    "options": ["keep the ramps FAQ", "drop it"],
+    "recommended": "a"
+  },
+  {
+    "page": "svc-porch-lifts", "rule": "BB-316 heading-collision", "item": "H3 porch lift or wheelchair lift",
+    "finding": "Porch H3 'Porch Lift or Wheelchair Lift?' and wheelchair H3 'Wheelchair Lifts and Porch Lifts' plus wheelchair FAQ 3 cover the same distinction on two pages.",
+    "severity": "fix_and_list", "category": "collision",
+    "plain_why": "One page should own the comparison; the wheelchair brief already claims it (H3 and FAQ 3).",
+    "decided_for_you": "Drop the porch H3 'Porch Lift or Wheelchair Lift?'; the porch page keeps one boundary sentence inside the raised-entrance H3. /wheelchair-lifts/ owns the comparison.",
+    "options": ["drop the porch H3; one boundary sentence stays", "keep the H3 on both pages"],
+    "recommended": "a"
+  },
+  {
+    "page": "svc-wheelchair-lifts", "rule": "BB-316 faq-overlap", "item": "FAQ 5 does the estimate cost anything",
+    "finding": "FAQ 5 'Does a Wheelchair Lift Estimate Cost Anything?' is not routed and overlaps FAQ 1 (cost: price set at the free in-home estimate) and the delivery H2 item 1.",
+    "severity": "fix_and_list", "category": "faq_fallback",
+    "plain_why": "The same fact (free estimate, no trip charge) would appear three times on one page.",
+    "decided_for_you": "Drop FAQ 5; add 'no trip charge' to FAQ 1's second sentence. The page keeps 4 FAQs.",
+    "options": ["drop FAQ 5 and fold 'no trip charge' into FAQ 1", "keep FAQ 5"],
+    "recommended": "a"
+  },
+  {
+    "page": "svc-wheelchair-lifts", "rule": "E1 portability", "item": "install time FAQ shared across three pages",
+    "finding": "The same settled install-time answer (a couple of hours, often two per day, confirmed at the estimate) is an FAQ on curved (FAQ 3), porch (FAQ 3) and wheelchair (FAQ 2).",
+    "severity": "fix_and_list", "category": "portability",
+    "plain_why": "Each is routed to its own page, but three identical answers fail the swap test.",
+    "decided_for_you": "Keep all three (each routed); the settled fact stays word for word, and each answer's second sentence is about its own lift (the staircase, the raised entrance or deck, the wheelchair user's home). No shared second sentence.",
+    "options": ["keep all three, second sentence page-specific", "keep the FAQ on curved only; porch and wheelchair state install time in the delivery H2"],
+    "recommended": "a"
+  },
+  {
+    "page": "svc-porch-lifts", "rule": "BB-316 heading-collision", "item": "H3 porch lift maintenance and repair",
+    "finding": "Porch H3 'Porch Lift Maintenance and Repair' and wheelchair H3 'Wheelchair Lift Maintenance and Repair' copy the pilot's H3 'Stair Lift Maintenance and Repair' pattern and overlap the repair page's H3 'Porch Lift and Wheelchair Lift Repairs'.",
+    "severity": "fix_and_list", "category": "collision",
+    "plain_why": "The repair page owns repair detail; four near-identical repair headings across siblings blur which page answers repair searches.",
+    "decided_for_you": "Porch and wheelchair keep one short repair paragraph under a non-repeating H3 ('Servicing After Installation'), worded differently on each page; the repair page keeps its H3.",
+    "options": ["rename both H3s and keep one short paragraph each", "keep the headings as written"],
+    "recommended": "a"
+  },
+  {
+    "page": "svc-curved-stair-lifts", "rule": "CM-024 variants", "item": "opening category variant",
+    "finding": "The curved opening reuses 'stair lift installer', the category variant already in the pilot /stair-lifts/ opening; curved and repair also share the opening area variant 'Hilton Head Island-Bluffton-Port Royal area'.",
+    "severity": "fix", "category": "variant_repetition",
+    "decided_for_you": "Writer picks an unused A3/B2 variant for the curved opening."
+  }
+]

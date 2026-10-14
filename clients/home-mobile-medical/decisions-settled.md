@@ -10,6 +10,7 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - 2026-10-14 — page specs (global: location): approved
 - 2026-10-14 — batch pilot briefs: approved
 - 2026-10-14 — batch pilot drafts: approved
+- 2026-10-14 — batch services briefs: revise
 
 ## Settled
 
@@ -23,5 +24,6 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **d:emergency** (2026-10-14, Client (via Paul)): Our office is open Monday through Friday, 9 a.m. to 5 p.m. True emergencies are handled after hours; after-hours availability depends on current demand. Urgent non-emergency calls are scheduled as soon as possible.
 - **svc-curved-stair-lifts:install_time** (2026-10-14, Client (via Paul)): Stair lift installations typically take a couple of hours, and we can often complete two per day for curved, porch and wheelchair lifts. The actual timeline depends on project scope and is confirmed during your free in-home estimate.
 - **bme-mention** (2026-10-14, Paul): Beaufort Medical Equipment (Jason's former company) is not mentioned anywhere on the site or in drafts, including the Beaufort page. The Brand Guide history row stays internal.
+- **svc-repair-maintenance:legacy-repair-redirects** (2026-10-14, Paul): Legacy repair URLs: /hilton-head/stair-lift-repair/ -> 301 to /stair-lift-repair/; /bluffton-sc/wheelchair-lift-repair/ -> 301 to /stair-lift-repair/ (the repair page covers any stair lift or lift, incl. porch and wheelchair lift repair, FAQ 4). Services brief review row 1, option a. 301s go with the publish handoff.
 
 Process defects (reopenings): **1** — a decision asked before the information that shapes it existed; fix the order, not the decision.

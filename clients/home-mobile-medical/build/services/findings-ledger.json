@@ -1,0 +1,65 @@
+{
+  "svc-repair-maintenance|cm-001-url-decision|legacy-repair-urls-301": {
+    "step": "briefs",
+    "at": "2026-10-14T15:07:38-05:00",
+    "choice": "a",
+    "action": "301 both /hilton-head/stair-lift-repair/ and /bluffton-sc/wheelchair-lift-repair/ to /stair-lift-repair/",
+    "by": "Paul"
+  },
+  "svc-curved-stair-lifts|bb-316-faq-overlap|faq-1-curved-cost-vs-parent-cost-faq": {
+    "step": "briefs",
+    "at": "2026-10-14T15:07:38-05:00",
+    "choice": "a",
+    "action": "keep it, curved angle only, no shared wording",
+    "by": "default"
+  },
+  "svc-porch-lifts|bb-316-faq-collision|faq-5-warranty": {
+    "step": "briefs",
+    "at": "2026-10-14T15:07:38-05:00",
+    "choice": "a",
+    "action": "drop porch FAQ 5; warranty stays in the porch delivery H2",
+    "by": "default"
+  },
+  "svc-porch-lifts|bb-316-faq-collision|faq-4-who-installs-near-me": {
+    "step": "briefs",
+    "at": "2026-10-14T15:07:38-05:00",
+    "choice": "a",
+    "action": "drop porch FAQ 4; keep it on the curved page",
+    "by": "default"
+  },
+  "svc-porch-lifts|c8-faq-fit|faq-6-do-you-install-ramps": {
+    "step": "briefs",
+    "at": "2026-10-14T15:07:38-05:00",
+    "choice": "other",
+    "action": "Drop the 'Do You Install Ramps?' FAQ and put no ramps mention anywhere on the porch lifts page: services are lift services only, ramps are a no, and the brand guide and earlier collected information d",
+    "by": "Paul"
+  },
+  "svc-porch-lifts|bb-316-heading-collision|h3-porch-lift-or-wheelchair-lift": {
+    "step": "briefs",
+    "at": "2026-10-14T15:07:38-05:00",
+    "choice": "a",
+    "action": "drop the porch H3; one boundary sentence stays",
+    "by": "default"
+  },
+  "svc-porch-lifts|bb-316-heading-collision|h3-porch-lift-maintenance-and-repair": {
+    "step": "briefs",
+    "at": "2026-10-14T15:07:38-05:00",
+    "choice": "a",
+    "action": "rename both H3s and keep one short paragraph each",
+    "by": "default"
+  },
+  "svc-wheelchair-lifts|bb-316-faq-overlap|faq-5-does-the-estimate-cost-anything": {
+    "step": "briefs",
+    "at": "2026-10-14T15:07:38-05:00",
+    "choice": "a",
+    "action": "drop FAQ 5 and fold 'no trip charge' into FAQ 1",
+    "by": "default"
+  },
+  "svc-wheelchair-lifts|e1-portability|install-time-faq-shared-across-three-pages": {
+    "step": "briefs",
+    "at": "2026-10-14T15:07:38-05:00",
+    "choice": "a",
+    "action": "keep all three, second sentence page-specific",
+    "by": "default"
+  }
+}

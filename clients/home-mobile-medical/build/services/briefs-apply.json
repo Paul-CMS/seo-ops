@@ -1,0 +1,108 @@
+{
+  "made": "2026-10-14T15:07:38-05:00",
+  "run": "20261014-144852-build-6004",
+  "section": "services",
+  "step": "briefs",
+  "answers": "accept all except 5; for 5, drop the 'Do You Install Ramps?' FAQ and put no ramps mention anywhere on the porch lifts page: services are lift services only, ramps are a no, and the brand guide and earlier collected information do not include ramps",
+  "items": [
+    {
+      "id": "1",
+      "page": "svc-repair-maintenance",
+      "url": "https://homemobilemedical.com/stair-lift-repair/",
+      "item": "legacy repair URLs 301",
+      "severity": "ask",
+      "kind": "1",
+      "choice": "a",
+      "action": "301 both /hilton-head/stair-lift-repair/ and /bluffton-sc/wheelchair-lift-repair/ to /stair-lift-repair/",
+      "by": "Paul"
+    },
+    {
+      "id": "2",
+      "page": "svc-curved-stair-lifts",
+      "url": "https://homemobilemedical.com/curved-stair-lifts/",
+      "item": "FAQ 1 curved cost vs parent cost FAQ",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "keep it, curved angle only, no shared wording",
+      "by": "default"
+    },
+    {
+      "id": "3",
+      "page": "svc-porch-lifts",
+      "url": "https://homemobilemedical.com/porch-lifts/",
+      "item": "FAQ 5 warranty",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "drop porch FAQ 5; warranty stays in the porch delivery H2",
+      "by": "default"
+    },
+    {
+      "id": "4",
+      "page": "svc-porch-lifts",
+      "url": "https://homemobilemedical.com/porch-lifts/",
+      "item": "FAQ 4 who installs near me",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "drop porch FAQ 4; keep it on the curved page",
+      "by": "default"
+    },
+    {
+      "id": "5",
+      "page": "svc-porch-lifts",
+      "url": "https://homemobilemedical.com/porch-lifts/",
+      "item": "FAQ 6 do you install ramps",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "other",
+      "action": "Drop the 'Do You Install Ramps?' FAQ and put no ramps mention anywhere on the porch lifts page: services are lift services only, ramps are a no, and the brand guide and earlier collected information do not include ramps (Paul, 2026-10-14)",
+      "by": "Paul"
+    },
+    {
+      "id": "6",
+      "page": "svc-porch-lifts",
+      "url": "https://homemobilemedical.com/porch-lifts/",
+      "item": "H3 porch lift or wheelchair lift",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "drop the porch H3; one boundary sentence stays",
+      "by": "default"
+    },
+    {
+      "id": "7",
+      "page": "svc-porch-lifts",
+      "url": "https://homemobilemedical.com/porch-lifts/",
+      "item": "H3 porch lift maintenance and repair",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "rename both H3s and keep one short paragraph each",
+      "by": "default"
+    },
+    {
+      "id": "8",
+      "page": "svc-wheelchair-lifts",
+      "url": "https://homemobilemedical.com/wheelchair-lifts/",
+      "item": "FAQ 5 does the estimate cost anything",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "drop FAQ 5 and fold 'no trip charge' into FAQ 1",
+      "by": "default"
+    },
+    {
+      "id": "9",
+      "page": "svc-wheelchair-lifts",
+      "url": "https://homemobilemedical.com/wheelchair-lifts/",
+      "item": "install time FAQ shared across three pages",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "keep all three, second sentence page-specific",
+      "by": "default"
+    }
+  ]
+}

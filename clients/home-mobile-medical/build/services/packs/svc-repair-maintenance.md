@@ -1,6 +1,6 @@
 # Evidence pack — Stair Lift and Lift Repair and Maintenance (service)
 
-Section **services** · https://homemobilemedical.com/stair-lift-repair/ · built 2026-10-14T14:16 by evidence_pack.py (CM-061).
+Section **services** · https://homemobilemedical.com/stair-lift-repair/ · built 2026-10-14T14:49 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 

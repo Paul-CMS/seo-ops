@@ -175,7 +175,7 @@
       "name": "Curved Stair Lifts",
       "url": "https://homemobilemedical.com/curved-stair-lifts/",
       "group": "lifts",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/services/curved-stair-lifts/",
       "replaces": [
         "https://homemobilemedical.com/services/curved-stair-lifts/"
@@ -193,8 +193,8 @@
         ],
         "grid": "clients/home-mobile-medical/build/evidence/svc-curved-stair-lifts.grid.md",
         "sha": "59a8fd73c1d2",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T14:49:42-05:00",
+        "run": "20261014-144852-build-6004",
         "gaps": [
           "timeframe",
           "pricing",
@@ -204,9 +204,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/services/packs/svc-curved-stair-lifts.md",
         "json": "clients/home-mobile-medical/build/services/packs/svc-curved-stair-lifts.json",
-        "sha": "d9e949502f56",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "b2163d394596",
+        "at": "2026-10-14T14:49:42-05:00",
+        "run": "20261014-144852-build-6004",
         "section": "services",
         "counts": {
           "facts": 44,
@@ -220,6 +220,14 @@
           "gaps": 0,
           "excerpts": 4
         }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/services/briefs/SB - Curved Stair Lifts - Home Mobile Medical.md",
+          "run": "20261014-144852-build-6004",
+          "at": "2026-10-14T14:58:49-05:00",
+          "sha": "1c5471d9c401"
+        }
       }
     },
     "svc-porch-lifts": {
@@ -227,7 +235,7 @@
       "name": "Porch Lifts / Vertical Platform Lifts",
       "url": "https://homemobilemedical.com/porch-lifts/",
       "group": "lifts",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/services/porch-lifts/",
       "replaces": [
         "https://homemobilemedical.com/services/porch-lifts/"
@@ -245,8 +253,8 @@
         ],
         "grid": "clients/home-mobile-medical/build/evidence/svc-porch-lifts.grid.md",
         "sha": "a8a668d5c7e5",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T14:49:42-05:00",
+        "run": "20261014-144852-build-6004",
         "gaps": [
           "timeframe",
           "pricing",
@@ -256,9 +264,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/services/packs/svc-porch-lifts.md",
         "json": "clients/home-mobile-medical/build/services/packs/svc-porch-lifts.json",
-        "sha": "05716f34c192",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "656a10790b6b",
+        "at": "2026-10-14T14:49:42-05:00",
+        "run": "20261014-144852-build-6004",
         "section": "services",
         "counts": {
           "facts": 44,
@@ -272,6 +280,14 @@
           "gaps": 0,
           "excerpts": 4
         }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/services/briefs/SB - Porch Lifts - Home Mobile Medical.md",
+          "run": "20261014-144852-build-6004",
+          "at": "2026-10-14T14:58:49-05:00",
+          "sha": "ee6baf8acb5d"
+        }
       }
     },
     "svc-wheelchair-lifts": {
@@ -279,7 +295,7 @@
       "name": "Wheelchair Lifts",
       "url": "https://homemobilemedical.com/wheelchair-lifts/",
       "group": "lifts",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/services/wheelchair-lifts/",
       "replaces": [
         "https://homemobilemedical.com/services/wheelchair-lifts/"
@@ -297,8 +313,8 @@
         ],
         "grid": "clients/home-mobile-medical/build/evidence/svc-wheelchair-lifts.grid.md",
         "sha": "0ce00025f8e2",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T14:49:42-05:00",
+        "run": "20261014-144852-build-6004",
         "gaps": [
           "timeframe",
           "pricing",
@@ -308,9 +324,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/services/packs/svc-wheelchair-lifts.md",
         "json": "clients/home-mobile-medical/build/services/packs/svc-wheelchair-lifts.json",
-        "sha": "d5a3b96c33b2",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "db6775588f74",
+        "at": "2026-10-14T14:49:42-05:00",
+        "run": "20261014-144852-build-6004",
         "section": "services",
         "counts": {
           "facts": 44,
@@ -324,6 +340,14 @@
           "gaps": 0,
           "excerpts": 5
         }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/services/briefs/SB - Wheelchair Lifts - Home Mobile Medical.md",
+          "run": "20261014-144852-build-6004",
+          "at": "2026-10-14T14:58:49-05:00",
+          "sha": "8d564a7cc185"
+        }
       }
     },
     "svc-repair-maintenance": {
@@ -331,7 +355,7 @@
       "name": "Stair Lift and Lift Repair and Maintenance",
       "url": "https://homemobilemedical.com/stair-lift-repair/",
       "group": "lifts",
-      "state": "planned",
+      "state": "brief_written",
       "evidence": {
         "result": "warn",
         "counts": {
@@ -345,8 +369,8 @@
         ],
         "grid": "clients/home-mobile-medical/build/evidence/svc-repair-maintenance.grid.md",
         "sha": "2115b90c2ffc",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T14:49:42-05:00",
+        "run": "20261014-144852-build-6004",
         "gaps": [
           "timeframe",
           "pricing",
@@ -356,9 +380,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/services/packs/svc-repair-maintenance.md",
         "json": "clients/home-mobile-medical/build/services/packs/svc-repair-maintenance.json",
-        "sha": "7e7692f480f2",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "0ecdf564cf76",
+        "at": "2026-10-14T14:49:42-05:00",
+        "run": "20261014-144852-build-6004",
         "section": "services",
         "counts": {
           "facts": 43,
@@ -371,6 +395,14 @@
           "settled": 2,
           "gaps": 0,
           "excerpts": 4
+        }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/services/briefs/SB - Stair Lift Repair - Home Mobile Medical.md",
+          "run": "20261014-144852-build-6004",
+          "at": "2026-10-14T14:58:49-05:00",
+          "sha": "d7de27b7e627"
         }
       }
     },
@@ -1828,10 +1860,50 @@
           "svc-wheelchair-lifts",
           "svc-repair-maintenance"
         ],
-        "state": "planned",
-        "briefs": null,
+        "state": "briefs_written",
+        "briefs": {
+          "state": "revise",
+          "by": "Paul",
+          "at": "2026-10-14T15:14:31-05:00",
+          "note": "Paul: revise the services briefs with the review answers applied (ramps out, three porch FAQs dropped, redirects recorded)",
+          "files": {
+            "clients/home-mobile-medical/build/services/briefs/SB - Curved Stair Lifts - Home Mobile Medical.md": "8a034552c71b",
+            "clients/home-mobile-medical/build/services/briefs/SB - Porch Lifts - Home Mobile Medical.md": "0ccbff99101d",
+            "clients/home-mobile-medical/build/services/briefs/SB - Wheelchair Lifts - Home Mobile Medical.md": "be01ea8d9537",
+            "clients/home-mobile-medical/build/services/briefs/SB - Stair Lift Repair - Home Mobile Medical.md": "a179b344e73b"
+          },
+          "conditions": [],
+          "sensitive_review": null,
+          "practitioner": null
+        },
         "drafts": null,
-        "files": {}
+        "files": {
+          "briefs": [
+            "clients/home-mobile-medical/build/services/briefs/SB - Curved Stair Lifts - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/services/briefs/SB - Porch Lifts - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/services/briefs/SB - Wheelchair Lifts - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/services/briefs/SB - Stair Lift Repair - Home Mobile Medical.md"
+          ]
+        },
+        "review": {
+          "briefs": {
+            "sheet": "clients/home-mobile-medical/build/services/briefs-review.csv",
+            "md": "clients/home-mobile-medical/build/services/briefs-review.md",
+            "at": "2026-10-14T15:00:05-05:00",
+            "run": "20261014-144852-build-6004",
+            "asks": 1,
+            "listed": 8,
+            "fixes": 1,
+            "dropped": 0,
+            "applied": {
+              "at": "2026-10-14T15:07:38-05:00",
+              "run": "20261014-144852-build-6004",
+              "answers": "accept all except 5; for 5, drop the 'Do You Install Ramps?' FAQ and put no ramps mention anywhere on the porch lifts page: services are lift services only, ramps are a no, and the brand guide and earlier collected information do not include ramps",
+              "explicit": 2,
+              "file": "clients/home-mobile-medical/build/services/briefs-apply.json"
+            }
+          }
+        }
       },
       {
         "id": "loc-hhi",
@@ -2115,8 +2187,18 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T14:46:54-05:00",
-  "open_runs": {},
+  "updated": "2026-10-14T15:14:31-05:00",
+  "open_runs": {
+    "20261014-144852-build-6004": {
+      "step": "build:write",
+      "batch": "services",
+      "page": null,
+      "started": "2026-10-14T14:48:52-05:00",
+      "started_ts": 1792007332.9900632,
+      "session": "fc0c547a-9071-4271-a821-8c1fde609fe8",
+      "pages": null
+    }
+  },
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
   },

@@ -1,25 +1,17 @@
 # Home Mobile Medical - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
-- **What is happening now:** Stage 6 (Pilot, services, locations, ship (one session each)) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open home-mobile-medical) and type /next home-mobile-medical. Next there: /build home-mobile-medical write services (batch services in one run: every brief, then one draft per page (each from its own fresh sub-agent, CM-043), then the batch review side by side)
-- **Waiting on:** nobody
-- **Next action:** `/next home-mobile-medical` once the wait above is over · model: Haiku chat
+- **Stage —**
+- **What is happening now:** run 20261014-144852-build-6004 (build:write) started 2026-10-14T14:48 and has not finished
+- **Waiting on:** Paul — decide what to do with the unfinished run (resume, /verify, /rollback or abort); Jonie — wp setup handoff — 3 of 3 item(s) open; Jonie — seopress settings handoff — 4 of 4 item(s) open
+- **Next action:** `/verify home-mobile-medical` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-14T14:46 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T15:14 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
-
-## Waiting on (not blocking)
-
-_Open, but the next action above goes ahead without them._
-
-| Who | What | Since | Reference |
-|---|---|---|---|
-| Jonie | blockers not cleared: H-2026-10-09-03-redirect-01 is issued; H-2026-10-09-03-redirect-02 is issued; H-2026-10-09-03-redirect-03 is issued; H-2026-10-09-04-broken_link-01 is issued; H-2026-10-09-04-broken_link-02 is issued (+9 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-14 | /verify home-mobile-medical |
+| Paul | decide what to do with the unfinished run (resume, /verify, /rollback or abort) | 2026-10-14 | 20261014-144852-build-6004 |
 | Jonie | wp setup handoff — 3 of 3 item(s) open | 2026-10-07 | H-2026-10-07-01-wp_setup |
 | Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-07 | H-2026-10-07-02-seopress_settings |
 | Jonie | redirect handoff — 3 of 3 item(s) open | 2026-10-09 | H-2026-10-09-03-redirect |
@@ -27,6 +19,14 @@ _Open, but the next action above goes ahead without them._
 | Jonie | other handoff — 2 of 2 item(s) open | 2026-10-09 | H-2026-10-09-05-other |
 | Jonie | redirect handoff — 1 of 1 item(s) open | 2026-10-09 | H-2026-10-09-06-redirect |
 | Jonie | redirect handoff — 1 of 1 item(s) open | 2026-10-09 | H-2026-10-09-07-redirect |
+
+## Waiting on (not blocking)
+
+_Open, but the next action above goes ahead without them._
+
+| Who | What | Since | Reference |
+|---|---|---|---|
+| Paul | run 20261014-144852-build-6004 never finished — you decide: resume it, /verify it, /rollback it, or abort it | 2026-10-14 | /where home-mobile-medical |
 
 ## Settled decisions — never re-raised
 
@@ -36,6 +36,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-14: page specs (global: location) — approved
 - 2026-10-14: batch pilot briefs — approved
 - 2026-10-14: batch pilot drafts — approved
+- 2026-10-14: batch services briefs — revise
 - Paul 2026-10-09 (Q1): client confirms no leads from any of the 36 retirement URLs (17 FL/MI, 5 discontinued-service, 14 SC legacy incl. /services/straight-stair-lifts/). CM-019 C4 passes; all 36 become 301s.
 - Paul Exception 2026-10-09 (Q8): citation link-destination check skipped; CM-019 C3 accepted on DataforSEO referring-domain evidence for the 36 URLs. Do not re-raise.
 - Paul 2026-10-09 (Q2, revised in rewrite 2): redirect the 36 to the appropriate URLs — FL/MI → /stair-lifts/, power chairs/scooter lifts → the homepage (was /services/), ramps → /porch-lifts/; SC legacy duplicates → their canonical root service/location page. No redirect points at /services/ or /service-area/, so there are no chains.
@@ -46,6 +47,7 @@ _Open, but the next action above goes ahead without them._
 - Our office is open Monday through Friday, 9 a.m. to 5 p.m. True emergencies are handled after hours; after-hours availability depends on current demand. Urgent non-emergency calls are scheduled as soon as possible.
 - Stair lift installations typically take a couple of hours, and we can often complete two per day for curved, porch and wheelchair lifts. The actual timeline depends on project scope and is confirmed during your free in-home estimate.
 - Beaufort Medical Equipment (Jason's former company) is not mentioned anywhere on the site or in drafts, including the Beaufort page. The Brand Guide history row stays internal.
+- Legacy repair URLs: /hilton-head/stair-lift-repair/ -> 301 to /stair-lift-repair/; /bluffton-sc/wheelchair-lift-repair/ -> 301 to /stair-lift-repair/ (the repair page covers any stair lift or lift, incl. porch and wheelchair lift repair, FAQ 4). Services brief review row 1, option a. 301s go with the publish handoff.
 
 ## Open VA items
 
@@ -79,6 +81,9 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-005** (open, not yet reviewed) 2026-10-14 · build:write: Draft writers put a '## Writer notes' section in the page file and publish.py drafts does not strip it, so the notes would reach the WordPress draft. Also: review.py sheet counts Fix rows as 'fixed silently' before review.py apply has run. — workaround: Recorded as Fix rows (formatting) in the pilot drafts findings; remove the Writer notes section when review.py apply runs after Paul's answer, before ship.
 - **F-006** (open, not yet reviewed) 2026-10-14 · build:review: review.py apply crashes (ValueError in LETTERS.index) when a row's 'recommended' is an uppercase letter (pilot drafts row 1 had 'A'); defaults are not lowercased before lookup. — workaround: Passed Paul's answer explicitly as '1a' in --answers ('accept all, 1a'), which parse_answers lowercases.
 - **F-007** (open, not yet reviewed) 2026-10-14 · build:facts: evidence.py questions --all overwrote the open facts-round file 'Home Mobile Medical - Facts Interview - all - 2026-10-14 - REVIEW.md' (Q1-Q3, already asked and waiting) with an empty 0-question version on a same-day re-run; it should not replace a set that is still open. Also settled.py filter reports the still-open fact:svc-repair-maintenance:service_process as 'already answered'. — workaround: Left the file changed (restore was blocked by the permission system); the sent version is intact in git HEAD (f5c00c6) and in facts-round-all-2026-10-14.questions.json. Paul or the main chat can restore it with git checkout of that one file.
+- **F-008** (open, not yet reviewed) 2026-10-14 · build:write: Build agent started per-page brief agents in the background and stopped before they finished, leaving the run unrecorded (briefs on disk, none recorded, no review, run not finished). — workaround: Resume the write step in a fresh build agent that records the briefs first; do not start new background brief agents without waiting for their results.
+- **F-009** (open, not yet reviewed) 2026-10-14 · build:write: Main chat relayed the same interim status about eight times (subagent hand-backs repeated). — workaround: Relay each agent hand-back once; report only changes in state.
+- **F-010** (open, not yet reviewed) 2026-10-14 · build:write: Main chat could not see the child agents' results (brief-writer reports arrived only as hand-backs to the build agent). — workaround: Have the build agent write each child result to a file and report the file path to the main chat.
 
 ## Spend so far
 
