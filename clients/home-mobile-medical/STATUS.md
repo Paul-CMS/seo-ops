@@ -1,17 +1,17 @@
 # Home Mobile Medical - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
-- **What is happening now:** Stage 6 (Pilot, services, locations, ship (one session each)) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open home-mobile-medical) and type /next home-mobile-medical. Next there: /build home-mobile-medical write services (batch services in one run: every brief, then one draft per page (each from its own fresh sub-agent, CM-043), then the batch review side by side)
-- **Waiting on:** nobody
-- **Next action:** `/next home-mobile-medical` once the wait above is over · model: Haiku chat
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
+- **What is happening now:** waiting for Paul's approval — the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): loc-beaufort-sc.md: line 40 [NEED: permit requirement per lift type and who handles pad and permit; line 59 [NEED: city-level Google map of Beaufort, SC embedded here, no H tag —
+- **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (nothing 
+- **Next action:** Paul types `/approve home-mobile-medical batch:pilot:drafts --review "<who reviewed it>"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-14T14:19 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T14:32 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Paul | the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): loc-beaufort-sc.md: line 40 [NEED: permit requirement per lift type and who handles pad and permit; line 59 [NEED: city-level Google map of Beaufort, SC embedded here, no H tag — | 2026-10-14 | /approve home-mobile-medical batch:pilot:drafts |
 
 ## Waiting on (not blocking)
 
@@ -45,6 +45,7 @@ _Open, but the next action above goes ahead without them._
 - When you call about a broken stair lift or lift, we first take your call, schedule a visit, diagnose the problem, provide a quote, order parts if needed, and complete the repair. There is no service call or trip charge. We repair any brand of stair lift or lift in our service area.
 - Our office is open Monday through Friday, 9 a.m. to 5 p.m. True emergencies are handled after hours; after-hours availability depends on current demand. Urgent non-emergency calls are scheduled as soon as possible.
 - Stair lift installations typically take a couple of hours, and we can often complete two per day for curved, porch and wheelchair lifts. The actual timeline depends on project scope and is confirmed during your free in-home estimate.
+- Beaufort Medical Equipment (Jason's former company) is not mentioned anywhere on the site or in drafts, including the Beaufort page. The Brand Guide history row stays internal.
 
 ## Open VA items
 
@@ -87,4 +88,4 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /build 2026-10-14T14:19 — Pilot corrections: none from Paul; 5 accepted pilot defaults carried forward in build/pilot-corrections.md; 1 open question
+Last run: /build 2026-10-14T14:32 — No BME mentions: decision settled; Beaufort FAQ 3 removed from pilot draft.

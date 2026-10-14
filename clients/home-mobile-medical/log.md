@@ -1255,3 +1255,27 @@ Changes: 0 · Summary: Pilot corrections: none from Paul; 5 accepted pilot defau
 - CHANGE #219 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.md | upload | old: previous version archived as Home Mobile Medical - VA Worklist - 2026-10-14.md | new: Home Mobile Medical - VA Worklist.md · sha c728c796be79 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #220 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - VA Worklist - 2026-10-14.csv | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.csv | new: _Archive/Home Mobile Medical - VA Worklist - 2026-10-14.csv | result: done · renamed and moved, nothing deleted
 - CHANGE #221 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.csv | upload | old: previous version archived as Home Mobile Medical - VA Worklist - 2026-10-14.csv | new: Home Mobile Medical - VA Worklist.csv · sha 46ee3b69081c | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261014-143231-build-f825 · STARTED · /build · 2026-10-14T14:32:31-05:00
+Step: build:pilot-corrections · session c2bdc5c2-5a67-42d5-84e8-bf06c732f070
+Gates checked: discovery_signed_off, batch:pilot:briefs
+- SETTLED bme-mention · 2026-10-14T14:32:35-05:00 · run 20261014-143231-build-f825 · by Paul · Beaufort Medical Equipment (Jason's former company) is not mentioned anywhere on the site or in drafts, including the Beaufort page. The Brand Guide history row stays internal.
+- CHANGE #222 [x] x | x | old:  | new:  | result: x
+- CHANGE #223 [draft-edit] build/pilot/drafts/loc-beaufort-sc.md | faq3-former-company | old: FAQ 3: Is Home Mobile Medical the Same Company as Beaufort Medical Equipment? | new:  | result: removed per Paul: no BME mentions
+### HANDOFF · /build · 2026-10-14 · run 20261014-143231-build-f825
+## Handoff Log
+
+- **Paul's decision (chat):** no mentions of Beaufort Medical Equipment (BME), Jason's former company, anywhere on the site or in drafts, including the Beaufort page. Settled as `bme-mention`.
+- **Draft changed:** `build/pilot/drafts/loc-beaufort-sc.md`. FAQ 3 "Is Home Mobile Medical the Same Company as Beaufort Medical Equipment?" removed. Logged as change #223.
+- **Still mentions BME (internal only, not public copy):** Brand Guide D history row; `build/evidence/about.facts.json` and `about.grid.md`; `build/loc-hhi/packs/*`. Check before any brief or draft is written from them.
+- **Open:** `build/pilot-corrections.md` still lists "whether other Beaufort County pages may also name the former company" as open. The settled answer is no, so that line is superseded by `bme-mention`.
+- **Logging error:** a test `run.py change` with placeholder values (kind x, url x) was written to the changes log as entry #222 during this run. The log is append-only, so it cannot be removed here. It needs noting in the next system session.
+### END HANDOFF
+## RUN 20261014-143231-build-f825 · FINISHED · 2026-10-14T14:32:54-05:00
+Changes: 2 · Summary: No BME mentions: decision settled; Beaufort FAQ 3 removed from pilot draft.
+- CHANGE #224 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (7).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (7).md | result: done · renamed and moved, nothing deleted
+- CHANGE #225 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-14 (7).md | new: Home Mobile Medical - Handoff Log.md · sha 385f3e1efa5e | result: done · copied (Drive for desktop syncs it)
+- CHANGE #226 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (10).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #227 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (10).md | new: Home Mobile Medical - Document Checklist.md · sha 94bdb6e02a49 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #228 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (10).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #229 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (10).md | new: Home Mobile Medical - Status.md · sha 81a5e9004e98 | result: done · copied (Drive for desktop syncs it)

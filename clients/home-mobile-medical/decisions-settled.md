@@ -22,5 +22,6 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **svc-repair-maintenance:service_process** (2026-10-14, Client (via Paul)): When you call about a broken stair lift or lift, we first take your call, schedule a visit, diagnose the problem, provide a quote, order parts if needed, and complete the repair. There is no service call or trip charge. We repair any brand of stair lift or lift in our service area.
 - **d:emergency** (2026-10-14, Client (via Paul)): Our office is open Monday through Friday, 9 a.m. to 5 p.m. True emergencies are handled after hours; after-hours availability depends on current demand. Urgent non-emergency calls are scheduled as soon as possible.
 - **svc-curved-stair-lifts:install_time** (2026-10-14, Client (via Paul)): Stair lift installations typically take a couple of hours, and we can often complete two per day for curved, porch and wheelchair lifts. The actual timeline depends on project scope and is confirmed during your free in-home estimate.
+- **bme-mention** (2026-10-14, Paul): Beaufort Medical Equipment (Jason's former company) is not mentioned anywhere on the site or in drafts, including the Beaufort page. The Brand Guide history row stays internal.
 
 Process defects (reopenings): **1** — a decision asked before the information that shapes it existed; fix the order, not the decision.

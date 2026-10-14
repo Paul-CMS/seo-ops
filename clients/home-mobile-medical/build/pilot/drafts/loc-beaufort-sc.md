@@ -39,12 +39,6 @@ It depends on where the home is. Inside Beaufort city limits, permits go through
 
 [NEED: permit requirement per lift type and who handles pad and permit — facts round Q3]
 
-### Is Home Mobile Medical the Same Company as Beaufort Medical Equipment?
-
-No, Home Mobile Medical is not Beaufort Medical Equipment, and it is not a rebrand of it. Beaufort Medical Equipment was Jason Workens' former company, and it was sold. Home Mobile Medical is family-owned, locally owned and operated, and focuses on stair lifts and accessibility lifts.
-
-It does not rent equipment or sell medical supplies. Jason brings 15+ years of his own experience to the work.
-
 ## Beaufort Neighborhoods
 
 Beaufort has many neighborhoods. The first five below make up the Beaufort Historic District. The rest lie in other parts of the city.
