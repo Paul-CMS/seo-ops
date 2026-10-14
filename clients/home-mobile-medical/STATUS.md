@@ -1,17 +1,16 @@
 # Home Mobile Medical - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** waiting for Paul's approval — the pilot's briefs and drafts are ready for one approval (and, in the same line, later batches' briefs switch to auto, so each later batch stops once, for its drafts): review the drafts with the semantic review table (nothing found). Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): loc-beaufort-sc.md: line 40 [NEED: permit requirement per lift type and who handles pad and permit; line 65 [NEED: city-level Google map of Beaufort, SC embedded here, no H tag —
-- **Waiting on:** Paul — the pilot's briefs and drafts are ready for one approval (and, in the same line, later bat; Client (via Paul) — How the service is delivered (steps, methods, equipment) — what should we say? If it depen; Client (via Paul) — Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2)
-- **Next action:** Paul types `/approve home-mobile-medical batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto --review "<who reviewed it>"` (or asks for changes first) · model: Haiku chat
+- **What is happening now:** ready to start: Brand Guide write-back for section pilot (B3, C1/C2, C3) from its approved briefs — once per section; drafts, the draft review and ship never write it
+- **Waiting on:** Client (via Paul) — How the service is delivered (steps, methods, equipment) — what should we say? If it depen; Client (via Paul) — Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2); Client (via Paul) — Order-to-install and install times for curved, porch and wheelchair lifts; who handles pad
+- **Next action:** `/build home-mobile-medical writeback pilot` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open home-mobile-medical`) and types `/next home-mobile-medical` (agents: build (opus), brief-writer (sonnet), clerk (haiku)) · model: Haiku chat
 
-_Generated 2026-10-14T13:17 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T13:28 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the pilot's briefs and drafts are ready for one approval (and, in the same line, later batches' briefs switch to auto, so each later batch stops once, for its drafts): review the drafts with the semantic review table (nothing found). Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): loc-beaufort-sc.md: line 40 [NEED: permit requirement per lift type and who handles pad and permit; line 65 [NEED: city-level Google map of Beaufort, SC embedded here, no H tag — | 2026-10-14 | /approve home-mobile-medical batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto |
 | Client (via Paul) | How the service is delivered (steps, methods, equipment) — what should we say? If it depends, on what? | 2026-10-14 | fact:svc-repair-maintenance:service_process |
 | Client (via Paul) | Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2) | 2026-10-14 | fact:d:emergency |
 | Client (via Paul) | Order-to-install and install times for curved, porch and wheelchair lifts; who handles pad and permit (facts round 2026-10-14, Q3) | 2026-10-14 | fact:svc-curved-stair-lifts:install_time |
@@ -38,6 +37,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-09: Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest) — approved
 - 2026-10-14: site plan — approved
 - 2026-10-14: page specs (global: location) — approved
+- 2026-10-14: batch pilot briefs — approved
 - Paul 2026-10-09 (Q1): client confirms no leads from any of the 36 retirement URLs (17 FL/MI, 5 discontinued-service, 14 SC legacy incl. /services/straight-stair-lifts/). CM-019 C4 passes; all 36 become 301s.
 - Paul Exception 2026-10-09 (Q8): citation link-destination check skipped; CM-019 C3 accepted on DataforSEO referring-domain evidence for the 36 URLs. Do not re-raise.
 - Paul 2026-10-09 (Q2, revised in rewrite 2): redirect the 36 to the appropriate URLs — FL/MI → /stair-lifts/, power chairs/scooter lifts → the homepage (was /services/), ramps → /porch-lifts/; SC legacy duplicates → their canonical root service/location page. No redirect points at /services/ or /service-area/, so there are no chains.
