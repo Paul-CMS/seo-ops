@@ -1972,9 +1972,21 @@ def t_decide_once():
     spec = SB / "methodology" / "specs" / "service.md"
     old = spec.read_text()
     spec.write_text(old + "\nA new rule.\n")
-    code, out = sh("python3 scripts/status.py require fd-co page_specs_approved")
-    check("R3: a spec changed after Paul approved it re-opens the specs approval (once, globally)",
-          code == 4 and "service.md" in out and "/approve global specs" in out, out)
+    code0, out0 = sh("python3 scripts/status.py require fd-co page_specs_approved")
+    check("CR-023: a client mid-stage keeps the spec version it started with (a changed spec does not block it)",
+          code0 == 0 and "specs_pinned" in json.dumps(status("fd-co")), out0)
+    sh('python3 scripts/status.py init spec-new-co --name "Spec New" --domain sn.example --type full --industry roofing')
+    code, out = sh("python3 scripts/status.py require spec-new-co page_specs_approved")
+    check("R3/CR-023: a changed spec blocks new work, naming that one spec and its own approve line",
+          code == 4 and "service.md" in out and "/approve global specs:service" in out and "homepage.md" not in out, out)
+    paul("/approve global specs:service")
+    code, out = sh("python3 scripts/status.py require spec-new-co page_specs_approved")
+    cfgs = json.loads((SB / "config.json").read_text())["specs_approval"]["files"]
+    check("CR-023: approving one spec file approves only that file; the others' approvals stand",
+          code == 0 and "**Status:** APPROVED" in spec.read_text() and len(cfgs) >= 6, (out, list(cfgs)))
+    sh("python3 scripts/status.py specs-adopt fd-co")
+    check("CR-023: specs-adopt moves a client to the currently approved versions",
+          status("fd-co")["specs_pinned"].get("methodology/specs/service.md") == cfgs["methodology/specs/service.md"])
     code, out = sh("python3 scripts/status.py require fd-co entity_approved proof_sheet_approved")
     req = json.loads((SB / "scripts" / "gates.json").read_text())["gates"]
     check("R3: a spec change never voids an approval already given (the specs gate the steps that score or write pages)",

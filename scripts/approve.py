@@ -304,16 +304,19 @@ def global_model(a):
     print(git_commit(f"global: model for {key} → {model} by Paul", paths=["config.json", "clients/"]))
 
 
-def global_specs(a):
+def global_specs(a, only=None):
     """/approve global specs (R3): the page specs are methodology, approved once for every client. Each spec's status
     line is rewritten to APPROVED; config.json records each spec's sha (status line excluded). A changed spec makes
     page_specs_approved unmet until Paul approves again (pilot corrections re-stamp themselves: status.py)."""
-    take_token("global", "specs")
+    take_token("global", f"specs:{only}" if only else "specs")
     from lib import CLIENTS, config
     import re as _re
     stamp = f"**Status:** APPROVED — {now()[:10]}, Paul"
     files = {}
-    for rel in S.spec_files():
+    wanted = [r for r in S.spec_files() if not only or Path(r).stem == only]
+    if not wanted:
+        die(f"REFUSED — no page spec named '{only}'. Specs: " + ", ".join(Path(r).stem for r in S.spec_files()))
+    for rel in wanted:
         f = ROOT / rel
         text = f.read_text(encoding="utf-8")
         new = S.STATUS_LINE.sub(stamp, text, count=1) if S.STATUS_LINE.search(text) else text
@@ -321,10 +324,11 @@ def global_specs(a):
             f.write_text(new, encoding="utf-8")
         files[rel] = S.spec_sha(rel)
     cfg = config()
-    cfg["specs_approval"] = {"by": "Paul", "at": now(), "note": a.note, "files": files}
+    old = (cfg.get("specs_approval") or {}).get("files") or {}
+    cfg["specs_approval"] = {"by": "Paul", "at": now(), "note": a.note, "files": {**old, **files} if only else files}   # CR-023
     write_json(ROOT / "config.json", cfg)
     for s in sorted(x.parent.name for x in CLIENTS.glob("*/status.json")):
-        append(client_dir(s) / "log.md", f"\n## APPROVAL · {now()} · page specs (global) · approved · by Paul\n"
+        append(client_dir(s) / "log.md", f"\n## APPROVAL · {now()} · page specs (global{': ' + only if only else ''}) · approved · by Paul\n"
                + "".join(f"Approved version: {r} (sha {h})\n" for r, h in files.items()))
         st = S.load(s)
         S.log_conditions(s, st)
@@ -564,6 +568,8 @@ def main():
     if a.slug == "global":
         if a.targets == ["specs"]:
             return global_specs(a)
+        if len(a.targets) == 1 and a.targets[0].startswith("specs:"):
+            return global_specs(a, only=a.targets[0].split(":", 1)[1])
         if len(a.targets) == 1 and a.targets[0].startswith("model:"):
             return global_model(a)
         return global_mode(a)

@@ -14,7 +14,7 @@ def t_definitions(h):
     h.check("CM-061: the ruling is in rulings.md and readable by ID", code == 0 and "Evidence first, decide by default" in out
             and "APPROVED" in out, out[:300])
     d = _read(h, "methodology/definitions.md")
-    terms = ["Client fact", "Public fact", "Source", "Official source", "Context source", "Evidence pack",
+    terms = ["Client fact", "Public fact", "Place fact", "Place × niche fact", "Source", "Official source", "Context source", "Evidence pack",
              "Review mention", "Fact status", "Usage tier", "Known", "Searched", "Finding", "Severity", "Default", "Ask",
              "Section", "Step", "Review sheet", "Overdue Ask"]
     missing = [t for t in terms if f"**{t}**" not in d]

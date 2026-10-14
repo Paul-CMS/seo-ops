@@ -237,6 +237,7 @@ def status_md(slug):
         nxt = f"Paul types `{nx['command']}` (or asks for changes first)"
     else:
         nxt = f"`{nx['command']}` once the wait above is over"
+    nxt += f" · model: {nx.get('session_model', 'haiku').title()} chat"   # §6.2: the required model, in STATUS.md too
     who_waits = "; ".join(f"{w[0]} — {w[1][:90]}" for w in waits[:3]) or "nobody"
     total, failed = _spend(slug)
     out = [f"# {c['name']} - Status", "",

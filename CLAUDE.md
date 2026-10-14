@@ -15,7 +15,8 @@ fact, evidence pack, usage tier, finding, Fix · Fix and list · Ask, section, r
 
 ## Every session
 - Client work runs in the client's own folder (`python3 scripts/worktree.py open <slug>`), one chat per client,
-  one session per stage, on the stage's model (stage chats: Haiku). System work runs on Opus in `~/Documents/seo-ops`.
+  one session per stage, on the stage's model (stage chats: Haiku). System work runs in `~/Documents/seo-ops`: Sonnet to build a written spec, Opus only when Paul says it is design work
+  (one models table: `gates.json` → `models`).
 - Start with `python3 scripts/records.py top <slug>` and `clients/<slug>/decisions-settled.md`; never re-raise
   anything settled. Read only the step's read list (`run.py start` prints it); rules by ID with
   `python3 scripts/rulings.py CM-…` — never `rulings.md` whole. The read list never limits web research for
@@ -24,6 +25,8 @@ fact, evidence pack, usage tier, finding, Fix · Fix and list · Ask, section, r
 ## The run protocol
 1. `python3 scripts/run.py start <slug> <command> [--step S] [--batch B|--page P|--pages all]`.
    Exit 4 → refuse and say what is missing; exit 3 → stop and ask Paul (resume, /verify, /rollback, abort).
+   `--dry` is the free dry run: no agent is spawned until it passes. `run.py`/`publish.py` refuse client work in the
+   main folder (§00).
 2. Log every change as it happens (`run.py change`; the scripts log their own). Files reach Drive only via `drive.py`.
 3. Decisions: `run.py decision … --text` · settle once `--settle <key>` · ask once `--ask <key>`.
 4. `python3 scripts/run.py finish <slug> <RUN_ID> --summary "…" --handoff clients/<slug>/handoffs/run-<RUN_ID>.md

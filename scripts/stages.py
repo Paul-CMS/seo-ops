@@ -202,6 +202,31 @@ def session_conflict(slug, step, batch=None, sid=None):
     return None
 
 
+def session_model(sid=None):
+    """§6.2: the model family (haiku / sonnet / opus) the SessionStart hook recorded for this chat, or None when the
+    hook could not see it (then the requirement is printed, not enforced)."""
+    import json
+    sid = sid or current_session()
+    if not sid:
+        return None
+    try:
+        raw = str(json.loads((SESSIONS_DIR / f"{sid}.json").read_text()).get("model") or "").lower()
+    except Exception:
+        return None
+    return next((m for m in ("haiku", "sonnet", "opus") if m in raw), None)
+
+
+def model_conflict(step, sid=None):
+    """§6.2: None if this chat's model is the one the step's stage requires (or cannot be seen); else the refusal."""
+    st = stage_of(step) if step else None
+    seen = session_model(sid)
+    if not st or not seen or seen == st["session_model"]:
+        return None
+    need = st["session_model"].title()
+    return (f"Stage {st['n']} ({st['name']}) runs on {need}; this chat is on {seen.title()}. Never switch a chat's "
+            f"model mid-session — start a new chat on {need} in the client folder and type /next.")
+
+
 def stage_doc(step):
     """docs/stage-<n>-*.md for the step's stage (P12: the procedure, loaded only by that stage), or None."""
     st = stage_of(step) if step else None

@@ -286,7 +286,7 @@ def condition_met(st, name):
     if name == "blockers_cleared":
         return blockers_cleared(st)
     if name == "page_specs_approved":
-        return specs_approved()
+        return specs_approved(st)
     if name == "audit_steps_complete":
         import steps
         left = steps.missing(st)
@@ -330,16 +330,29 @@ def spec_sha(rel):
     return hashlib.sha256(text.encode()).hexdigest()[:12]
 
 
-def specs_approved():
+def specs_approved(st=None):
+    """CR-023: approval is per spec file. A spec edited since its approval blocks new work (a client that has not
+    started) but not a client mid-stage: it keeps the version it started with, pinned by sha in its status
+    (st['specs_pinned'], set by pin_specs at run start) until Paul moves it over (status.py specs-adopt)."""
     rec = config().get("specs_approval") or {}
     files = rec.get("files") or {}
     if not files:
         return False, "the page specs are not approved yet — Paul approves them once, for every client: /approve global specs"
-    changed = [f for f in spec_files() if files.get(f) != spec_sha(f)]
+    pinned = (st or {}).get("specs_pinned") or {}
+    changed = [f for f in spec_files() if files.get(f) != spec_sha(f) and f not in pinned]
     if changed:
-        return False, ("page spec(s) changed since you approved them: " + ", ".join(Path(f).name for f in changed)
-                       + " — /approve global specs")
+        return False, ("page spec(s) not approved in their current version: " + ", ".join(Path(f).name for f in changed)
+                       + " — " + " ".join(f"/approve global specs:{Path(f).stem}" for f in changed))
     return True, ""
+
+
+def pin_specs(st):
+    """CR-023: record the approved version of every spec this client starts work with (by sha), once."""
+    files = (config().get("specs_approval") or {}).get("files") or {}
+    pins = st.setdefault("specs_pinned", {})
+    for f, sha in files.items():
+        pins.setdefault(f, sha)
+    return pins
 
 
 WRITING_EXTRA = ["methodology/writing-commercial.md", "methodology/location-faq.md"]
@@ -920,6 +933,7 @@ def main():
     s = sub.add_parser("modes"); s.add_argument("slug")
     s = sub.add_parser("pilot"); s.add_argument("slug")
     s = sub.add_parser("writeback"); s.add_argument("slug"); s.add_argument("batch_id"); s.add_argument("--run", required=True)
+    s = sub.add_parser("specs-adopt"); s.add_argument("slug")   # CR-023: move a client to the currently approved specs
     s = sub.add_parser("pilot-corrections"); s.add_argument("slug"); s.add_argument("--note", required=True)
     s = sub.add_parser("blockers-none"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s = sub.add_parser("mark"); s.add_argument("slug"); s.add_argument("name")
@@ -1276,6 +1290,12 @@ def main():
         append(client_dir(a.slug) / "log.md", f"- WRITE-BACK {now()[:16]} · run {a.run} · batch {a.batch_id}: Brand Guide "
                "B3, C1/C2, C3 updated once for the section, from its approved briefs\n")
         print(f"batch {a.batch_id}: Brand Guide write-back recorded")
+    elif a.cmd == "specs-adopt":
+        st = load(a.slug)
+        st["specs_pinned"] = {}
+        pin_specs(st)
+        save(a.slug, st)
+        print(f"{a.slug}: now on the currently approved page specs ({len(st['specs_pinned'])} files pinned)")
     elif a.cmd == "pilot-corrections":
         if not batch_stage_ok(st, "pilot", "briefs", False)[0]:
             die("the pilot briefs are not approved yet")

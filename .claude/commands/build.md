@@ -11,7 +11,9 @@ Steps: `blockers` · `plan` · `facts` (P10: ONE facts round for every page — 
 Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps build` lists them; `run.py start` checks them.
 
 1. `python3 scripts/run.py start <slug> build --step <step> [--batch <id>|--page <id>]` → note the RUN_ID and pass it
-   literally to every later step. Exit 4 → refuse and explain; exit 3 → stop and ask Paul.
+   literally to every later step. Exit 4 → refuse and explain; exit 3 → stop and ask Paul. (§6.3: `run.py start … --dry`
+   is the free dry run — it checks gates, model, session and folder and records nothing; no agent is spawned until
+   `start` has passed. Scripts print at most about 10 lines; agents reply in at most 15.)
 2. Route: `--route`, else status.json `client.route`, else ask Paul (A = the system writes,
    B = Paul provides finished content).
 3. Use a **fresh build subagent** for every run, with slug, RUN_ID, the step, the route and (for `draft`) the one page.

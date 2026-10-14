@@ -42,6 +42,8 @@ interview or an email — goes in with `python3 scripts/run.py fact <slug> <RUN_
 paul_approved|client_confirmed|… --source "…"` (`facts.py list <slug>` shows the ids; a new fact adds `--label`). A
 decision goes in with `run.py decision … --settle <key>`. Before any question set reaches Paul:
 `python3 scripts/settled.py filter <slug> <questions.json>` — it drops what is already answered and names it in one line.
+   **Quiet runs (§6.3):** never read command files, CLAUDE.md or agent files mid-run — they are loaded once; read
+   STATUS.md and run summaries only. Relay an agent's reply (at most 15 lines) as it is.
 7. Also stop whenever the command you are running stops for Paul (cost confirmation, outline
    check, a STOP from a script). Never run more than one paid step without Paul seeing the cost.
 

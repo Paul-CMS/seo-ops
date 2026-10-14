@@ -34,6 +34,9 @@ from pathlib import Path
 import status as S
 from lib import ROOT, _git, append, client_dir, die, git_commit, now, read_json, redact, ref_missing, require_client_folder
 
+COMPACT_TOKENS = 120_000
+COMPACT_LINE = ("/compact Keep: the handoff file, items done with commit IDs, items left, open decisions, the current "
+                "client and step. Drop: file contents, test output, diffs, agent transcripts.")
 RUN_LINE = re.compile(r"^## RUN (\S+) · (STARTED|FINISHED|ABORTED) · ")
 
 
@@ -241,6 +244,8 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("start"); s.add_argument("slug"); s.add_argument("command")
     s.add_argument("--step"); s.add_argument("--batch"); s.add_argument("--page"); s.add_argument("--note")
+    s.add_argument("--dry", action="store_true", help="§6.3: the free dry run — every check, no run recorded; the "
+                   "command spawns an agent only after this passes")
     s.add_argument("--pages", choices=["all"], help="P10: a brief or draft run for every page of the batch, one sub-agent each")
     s = sub.add_parser("note"); s.add_argument("slug"); s.add_argument("run_id"); s.add_argument("text")
     s = sub.add_parser("decision"); s.add_argument("slug"); s.add_argument("run_id")
@@ -343,6 +348,10 @@ def main():
         if refusal:
             print(f"REFUSED — {refusal}")
             sys.exit(4)
+        wrong = stages.model_conflict(key)   # §6.2: the stage's model, when the session hook can see this chat's
+        if wrong:
+            print(f"REFUSED — {wrong}")
+            sys.exit(4)
         sid = stages.current_session()
         held = stages.lock_holder(a.slug, sid) if sid else None   # P2: one chat per client at a time
         if held:
@@ -352,11 +361,16 @@ def main():
                   f"in {held.get('worktree')}, since {since}). Finish there first. If that chat is gone, Paul runs "
                   f"`python3 scripts/run.py unlock {a.slug}` in his own terminal.")
             sys.exit(4)
+        if a.dry:
+            print(f"dry run passed — /{a.command} can start for {a.slug}: gates met, model, session and folder checked. "
+                  "Spawn the agent now; nothing was recorded.")
+            return
         run_id = (f"{now()[:19].replace('-', '').replace(':', '').replace('T', '-')}-{a.command}"
                   f"-{secrets.token_hex(2)}")
         if sid:
             stages.take_lock(a.slug, sid, run_id)   # held while this run is open (finish/abort release it)
         st = S.load(a.slug)
+        S.pin_specs(st)   # CR-023: this client keeps the spec versions it starts with until Paul moves it over
         st.setdefault("open_runs", {})[run_id] = {"step": key, "batch": a.batch, "page": a.page, "started": now(),
                                                   "started_ts": time.time(), "session": sid, "pages": a.pages}
         S.save(a.slug, st)
@@ -369,6 +383,10 @@ def main():
         doc = stages.stage_doc(key)   # P12: the stage's procedure file comes first
         if doc:
             rl = [doc] + [x for x in rl if x != doc]
+        need = (stages.stage_of(key) or {}).get("session_model")
+        if need:
+            print(f"Model for this step: {need.title()} chat" + ("" if stages.session_model(sid)
+                  else " (the session hook could not see this chat's model — check it yourself)"))
         if rl:
             print("Read for this step (only these): " + " · ".join(x.replace("<slug>", a.slug) for x in rl))
         print(run_id)   # always the last line
@@ -480,6 +498,8 @@ def main():
         print("Drive: " + ("copy pending sync (no local Drive folder — recorded once)" if "pending" in m
                            else f"{m.get('copied', 0)} record(s) copied, {m.get('unchanged', 0)} unchanged"))
         print(git_commit(f"{a.slug}: /{cmd} finished ({len(ch)} changes)\n\n{a.summary}", slug=a.slug))
+        if (a.tokens or 0) >= COMPACT_TOKENS:   # §6.4: a clean point — suggest, never force
+            print(COMPACT_LINE)
     elif a.cmd == "abort":
         open_run(a.slug, a.run_id)
         append(d / "log.md", f"## RUN {a.run_id} · ABORTED · {now()}\nReason (Paul): {redact(a.reason)}\n")
