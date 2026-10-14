@@ -1,16 +1,17 @@
 # Home Mobile Medical - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** ready to start: Brand Guide write-back for section pilot (B3, C1/C2, C3) from its approved briefs — once per section; drafts, the draft review and ship never write it
-- **Waiting on:** Client (via Paul) — How the service is delivered (steps, methods, equipment) — what should we say? If it depen; Client (via Paul) — Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2); Client (via Paul) — Order-to-install and install times for curved, porch and wheelchair lifts; who handles pad
-- **Next action:** `/build home-mobile-medical writeback pilot` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open home-mobile-medical`) and types `/next home-mobile-medical` (agents: build (opus), brief-writer (sonnet), clerk (haiku)) · model: Haiku chat
+- **Stage —**
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — build:writeback finished (run 20261014-133132-build-f0c5) and that stage is in review mode; Client (via Paul) — How the service is delivered (steps, methods, equipment) — what should we say? If it depen; Client (via Paul) — Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2)
+- **Next action:** `/next home-mobile-medical` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-14T13:29 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T13:33 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
+| Paul | build:writeback finished (run 20261014-133132-build-f0c5) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build home-mobile-medical pilot-corrections (apply your pilot corrections to the specs before the next batch) | 2026-10-14 | /next home-mobile-medical |
 | Client (via Paul) | How the service is delivered (steps, methods, equipment) — what should we say? If it depends, on what? | 2026-10-14 | fact:svc-repair-maintenance:service_process |
 | Client (via Paul) | Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2) | 2026-10-14 | fact:d:emergency |
 | Client (via Paul) | Order-to-install and install times for curved, porch and wheelchair lifts; who handles pad and permit (facts round 2026-10-14, Q3) | 2026-10-14 | fact:svc-curved-stair-lifts:install_time |
@@ -84,4 +85,4 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /build 2026-10-14T13:17 — Pilot drafts review applied: accept all, Ask 1 = A; BB-316 Beaufort FAQ reframed; Writer notes removed
+Last run: /build 2026-10-14T13:33 — Pilot Brand Guide write-back: B3, C1/C2, C3 (21 rows) from approved briefs; recorded once

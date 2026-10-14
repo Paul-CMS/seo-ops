@@ -961,3 +961,33 @@ Human review: Paul Meisner
 - CHANGE #186 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (5).md | new: Home Mobile Medical - Status.md · sha f8703cc3ec79 | result: done · copied (Drive for desktop syncs it)
 
 ## MODE · 2026-10-14T13:29:45-05:00 · build:brief: review → auto · this client · by Paul
+
+## RUN 20261014-133132-build-f0c5 · STARTED · /build · 2026-10-14T13:31:32-05:00
+Step: build:writeback · batch pilot · session d461cc9d-b724-4b0b-88b0-0c1f5085ab5c
+Gates checked: discovery_signed_off, batch:pilot:briefs
+- CHANGE #187 [drive_file] drive:Home Mobile Medical - TMS/brand-guide.md | upload | old: (new file) | new: brand-guide.md · sha ded5e8aed622 | result: done · copied (Drive for desktop syncs it)
+- WRITE-BACK 2026-10-14T13:33 · run 20261014-133132-build-f0c5 · batch pilot: Brand Guide B3, C1/C2, C3 updated once for the section, from its approved briefs
+### HANDOFF · /build · 2026-10-14 · run 20261014-133132-build-f0c5
+**Gate:** `status.py writeback` checks only `batch:pilot:briefs` (approved 2026-10-14) and a one-per-section guard. The 3 open facts (svc-repair-maintenance:service_process, d:emergency, svc-curved-stair-lifts:install_time) and the uncleared blockers do not gate this step; no refusal.
+
+**Written back to brand-guide.md (from the approved pilot briefs SB - Stair Lifts, LB - Beaufort SC):**
+- B3: two rows — /stair-lifts/ (service; category stair lift installer; area the Lowcountry) and /beaufort-sc/ (location; category stair lift installer; area Beaufort County), with their brief files.
+- C1: /stair-lifts/ row — final URL (replaces /services/stair-lifts/), keyword "stair lifts", H1 variant "stair lift installation", H1 "Stair Lift Installation in the Lowcountry", no "The Best"; brief approved.
+- C2: /beaufort-sc/ row — final URL (replaces /service-area/beaufort-sc/), keyword "stair lifts Beaufort SC", H1 "Stair Lift Installer in Beaufort", variants; brief approved.
+- C3: 21 rows — 4 H2 + 4 H3 + 5 FAQ for /stair-lifts/; 5 H2 + 3 FAQ for /beaufort-sc/.
+- `records.py render` run; Brand Guide copied to Drive (`drive.py upload`); `status.py writeback home-mobile-medical pilot` recorded.
+
+**Not done:** the C1 row for /services/straight-stair-lifts/ still says "consolidated into /services/stair-lifts/" (should read /stair-lifts/). The edit was blocked by the permission classifier; left for Paul or the next write-back.
+
+**Open / waiting (not blocking):** 3 open facts with the client; blocker handoffs issued, not returned.
+### END HANDOFF
+## RUN 20261014-133132-build-f0c5 · FINISHED · 2026-10-14T13:33:30-05:00
+Changes: 1 · Summary: Pilot Brand Guide write-back: B3, C1/C2, C3 (21 rows) from approved briefs; recorded once
+- CHANGE #188 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (3).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #189 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-14 (3).md | new: Home Mobile Medical - Handoff Log.md · sha a624e79bf4b1 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #190 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (6).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #191 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (6).md | new: Home Mobile Medical - Document Checklist.md · sha 19fd1f8bf8a9 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #192 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Brand Guide - 2026-10-14.md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md | new: _Archive/Home Mobile Medical - Brand Guide - 2026-10-14.md | result: done · renamed and moved, nothing deleted
+- CHANGE #193 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md | upload | old: previous version archived as Home Mobile Medical - Brand Guide - 2026-10-14.md | new: Home Mobile Medical - Brand Guide.md · sha ded5e8aed622 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #194 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (6).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #195 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (6).md | new: Home Mobile Medical - Status.md · sha 3613ea8fc5a2 | result: done · copied (Drive for desktop syncs it)

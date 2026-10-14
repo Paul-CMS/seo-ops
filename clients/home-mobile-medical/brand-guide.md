@@ -71,8 +71,10 @@ No other page may claim the reserved area variant. This is the only cross-page v
 | Page URL | Page type | Category variant | Area variant | Content file (SD/LD) | Shipped |
 |---|---|---|---|---|---|
 | / | homepage | | *(reserved)* | | |
+| /stair-lifts/ | service | stair lift installer (opening also: Beaufort County) | the Lowcountry (H1) | SB - Stair Lifts - Home Mobile Medical (build/pilot/briefs/) | |
+| /beaufort-sc/ | location | stair lift installer (H1); opening also: stair lift and accessibility lift company, home accessibility lifts | Beaufort County (opening) | LB - Beaufort SC - Home Mobile Medical (build/pilot/briefs/) | |
 
-No rows yet: the pre-seo-ops build files (homepage build sheet, service and location drafts) were lost (Paul 2026-10-06).
+Pilot rows written back 2026-10-14 (run 20261014-133132-build-f0c5) from the approved pilot briefs. The pre-seo-ops build files were lost (Paul 2026-10-06).
 
 ## Section C — Page inventory
 
@@ -83,7 +85,7 @@ Set by the site plan in Build. Source map: `Home Mobile Medical - URL Decision M
 | URL | Service name | H1 service variant | Status |
 |---|---|---|---|
 | /services/ | Services hub | | Planned (rewrite) |
-| /services/stair-lifts/ | Stair lifts — parent; straight stair lifts consolidated in | | Planned (rewrite) |
+| /stair-lifts/ (replaces /services/stair-lifts/, 301) | Stair lifts — parent; straight stair lifts consolidated in · keyword "stair lifts" | stair lift installation (H1 "Stair Lift Installation in the Lowcountry"; no "The Best") | Brief approved 2026-10-14 (pilot) |
 | /services/curved-stair-lifts/ | Curved stair lifts | | Planned (rewrite) |
 | /services/porch-lifts/ | Porch lifts / vertical platform lifts (the outdoor offer) | | Planned (rewrite) |
 | /services/wheelchair-lifts/ | Wheelchair lifts | | Planned (rewrite) |
@@ -97,7 +99,7 @@ Canonical pattern `/service-area/{city-state}/` (Decision 023). Hubs: `/service-
 
 | URL | City | GBP landing page? | Status |
 |---|---|---|---|
-| /service-area/beaufort-sc/ | Beaufort | No (GBP lands on the homepage) | Planned |
+| /beaufort-sc/ (replaces /service-area/beaufort-sc/, 301) | Beaufort | No (GBP lands on the homepage) | Brief approved 2026-10-14 (pilot) · keyword "stair lifts Beaufort SC" · H1 "Stair Lift Installer in Beaufort" · area variant Beaufort County · category variant stair lift installer |
 | /service-area/bluffton-sc/ | Bluffton | No | Planned |
 | /service-area/hilton-head-island-sc/ | Hilton Head Island | No | Planned |
 | /service-area/port-royal-sc/ | Port Royal | No | Planned |
@@ -129,6 +131,27 @@ Filled from the site plan and each approved page.
 
 | Question or H2 | Page that owns it |
 |---|---|
+| H2: How Does a Stair Lift Go From Quote to Working Lift? | /stair-lifts/ |
+| H2: What Types of Stair Lifts and Stair Lift Services Are Available? | /stair-lifts/ |
+| H3: Straight Stair Lifts | /stair-lifts/ |
+| H3: Curved Stair Lifts (summary; detail on the curved page) | /stair-lifts/ |
+| H3: Stair Lift Maintenance and Repair (summary; detail on the repair page) | /stair-lifts/ |
+| H3: Stair Lift Brands | /stair-lifts/ |
+| H2: What Do People Ask About Stair Lifts? | /stair-lifts/ |
+| FAQ: How Much Does a Stair Lift Cost? | /stair-lifts/ |
+| FAQ: Who Makes Stair Lifts? | /stair-lifts/ |
+| FAQ: How Long Does It Take to Install a Stair Lift? | /stair-lifts/ |
+| FAQ: Can I Get a Stair Lift Quote From a Photo? | /stair-lifts/ |
+| FAQ: What Is the Difference Between Straight and Curved Stair Lifts? | /stair-lifts/ |
+| H2: Where Does Home Mobile Medical Install Stair Lifts? | /stair-lifts/ |
+| H2: Accessibility Lift Services in Beaufort | /beaufort-sc/ |
+| H2: Beaufort's Older Homes and Marshland Setting | /beaufort-sc/ |
+| H2: Serving Beaufort | /beaufort-sc/ |
+| H2: Beaufort Stair Lift Questions | /beaufort-sc/ |
+| FAQ: How much does a stair lift cost in Beaufort? | /beaufort-sc/ |
+| FAQ: Do I need a permit for a lift in Beaufort? | /beaufort-sc/ |
+| FAQ: Is Home Mobile Medical the same company as Beaufort Medical Equipment? | /beaufort-sc/ |
+| H2: Beaufort Neighborhoods | /beaufort-sc/ |
 
 ## Section D — Verified facts
 Everything a writer may state. **Not here = does not exist.**
