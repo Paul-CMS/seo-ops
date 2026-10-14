@@ -8,7 +8,10 @@
   "overdue_ask_working_days": 3,
   "_worklist_about": "Rewrite 3 §7a: the worklist validator (scripts/worklist.py check). Title length ceiling and the meta description range in characters; Paul tunes them here.",
   "worklist_title_max_chars": 70,
-  "worklist_meta_chars": [150, 160],
+  "worklist_meta_chars": [
+    150,
+    160
+  ],
   "location_similarity_threshold": 0.7,
   "_similarity_about": "Rewrite 3 §4 (CM-062): scripts/similarity.py flags a location-page sentence at or above this word-overlap with a sentence on another location page once the city names are masked.",
   "h1_lock_lift": {
@@ -215,7 +218,7 @@
   ],
   "specs_approval": {
     "by": "Paul",
-    "at": "2026-10-08T13:15:46-05:00",
+    "at": "2026-10-14T10:00:26-05:00",
     "note": null,
     "files": {
       "methodology/specs/README.md": "13bde3165a59",
@@ -223,7 +226,7 @@
       "methodology/specs/blog-post.md": "bb60f76bddb0",
       "methodology/specs/county-hub.md": "4ed0d3bfb1d8",
       "methodology/specs/homepage.md": "645431d1fd4c",
-      "methodology/specs/location.md": "bf5b163f4357",
+      "methodology/specs/location.md": "1212fa3e9365",
       "methodology/specs/service.md": "0d679dadad45"
     }
   },
@@ -233,5 +236,18 @@
     "Google Drive (the v3 folder only, R8)",
     "Claude Browser (in-app browser)"
   ],
-  "_mcp_allowed_about": "Rewrite 2 P12: the connector tools seo-ops uses. Paul runs /context in a seo-ops session and disables, in the project settings, every connector listed there that is not named here; each loaded connector adds to every request's cost. DataforSEO stays blocked (blocked_tool_prefixes); paid calls go through scripts/dfs.py."
+  "_mcp_allowed_about": "Rewrite 2 P12: the connector tools seo-ops uses. Paul runs /context in a seo-ops session and disables, in the project settings, every connector listed there that is not named here; each loaded connector adds to every request's cost. DataforSEO stays blocked (blocked_tool_prefixes); paid calls go through scripts/dfs.py.",
+  "global_approvals": [
+    {
+      "n": 1,
+      "kind": "specs",
+      "by": "Paul",
+      "at": "2026-10-14T10:00:26-05:00",
+      "only": "location",
+      "files": {
+        "methodology/specs/location.md": "1212fa3e9365"
+      },
+      "note": null
+    }
+  ]
 }
