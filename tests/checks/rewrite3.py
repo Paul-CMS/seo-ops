@@ -177,7 +177,7 @@ def t_research(h):
             and "Wikipedia" in out, out)
     code, out = log("--gap fact:loc-springfield:neighborhoods --kind public --page loc-springfield --result not_found",
                     '--queries "springfield neighborhoods || City of Springfield neighborhood map || springfield subdivisions list"',
-                    '--sources "methodology/sources/sc-lowcountry.md || https://springfield.example.gov || Wikipedia: Springfield"')
+                    '--sources "methodology/places/ || methodology/sources/sc-lowcountry.md || https://springfield.example.gov || Wikipedia: Springfield"')
     h.check("§4.2: a public 'not found' at the minimum is logged with its id", code == 0 and "RL-pilot-1" in out, out)
     row = next(csv.DictReader(open(h.SB / f"clients/{S_}/build/pilot/research-log.csv")))
     h.check("§4.2: the research log has the columns gap, kind, queries, sources_tried, result, excerpt, url, date",
@@ -196,7 +196,7 @@ def t_research(h):
             code == 4 and "things_to_do" in out and "research-log" in out, out)
     log("--gap fact:loc-springfield:things_to_do --kind public --page loc-springfield --result not_found",
         '--queries "things to do springfield || Town of Springfield parks || springfield attractions"',
-        '--sources "methodology/sources/sc-lowcountry.md || Wikidata: Springfield"')
+        '--sources "methodology/places/ || methodology/sources/sc-lowcountry.md || Wikidata: Springfield"')
     code, out = h.sh(f"python3 scripts/evidence.py run {S_} --run {rid} --batch pilot")
     h.check("§4.2: with the logged search the gate runs", code == 0, out)
     # the facts round asks no client fact without its search
@@ -234,7 +234,7 @@ def t_research(h):
     log2 = lambda *a: h.sh(f"python3 scripts/research.py log {S_} --run {rid} --section pilot " + " ".join(a))
     log2("--gap fact:d:licence_numbers --kind public --result not_found",
          '--queries "Test Co licence || State licensing board Test Co || Test Co contractor licence number"',
-         '--sources "methodology/sources/sc-lowcountry.md (SC LLR lookup) || Wikipedia: (no entry)"')
+         '--sources "methodology/places/ || methodology/sources/sc-lowcountry.md (SC LLR lookup) || Wikipedia: (no entry)"')
     h.sh(f"python3 scripts/evidence.py questions {S_} --run {rid} --all")
     fr = (h.SB / h.status(S_)["build"]["facts_round"]["file"]).read_text()
     h.check("§4.1: only a lookup logged not_found at the minimum may then be asked",
@@ -465,7 +465,7 @@ def t_location_faq_viability(h):
     for gap in ("neighborhoods", "local_context"):
         h.sh(f"python3 scripts/research.py log {S_} --run {rid} --section pilot --gap fact:loc-springfield:{gap} --kind public "
              f'--page loc-springfield --result not_found --queries "springfield {gap} || City of Springfield {gap} || '
-             f'springfield {gap} list" --sources "methodology/sources/sc-lowcountry.md || Wikipedia: Springfield"')
+             f'springfield {gap} list" --sources "methodology/places/ || methodology/sources/sc-lowcountry.md || Wikipedia: Springfield"')
     h.sh(f"python3 scripts/evidence.py run {S_} --run {rid} --batch pilot")
     st = h.status(S_)
     grid = (h.SB / st["pages"]["loc-springfield"]["evidence"]["grid"]).read_text()

@@ -239,6 +239,18 @@ def schema_fetch(url, method="GET"):
     return None, "fake web: no network in tests"
 
 
+PLACE_WEB = {   # the public pages the place-store tests cite (places.py verify)
+    "https://springfield.example.gov/permits": "<html><body><h1>Permits</h1><p>A roofing permit is required for any "
+    "re-roof. Repairs under 25 percent of the roof do not need one.</p></body></html>",
+    "https://springfield.example.gov/hoa": "<html><body><p>The Oak Park HOA requires approval of roof colours before any work.</p></body></html>",
+    "https://springfield.example.gov/wind": "<html><body><p>Design wind speed in Springfield is 150 mph.</p></body></html>",
+}
+
+
+def place_fetch(url):
+    return (200, PLACE_WEB[url]) if url in PLACE_WEB else (404, "")
+
+
 def install():
     try:
         import build_schema
@@ -258,6 +270,11 @@ def install():
             return BASE, "Basic fake"
         wp.creds = creds
     except SystemExit:
+        pass
+    try:
+        import places
+        places.fetch = place_fetch
+    except ImportError:
         pass
     try:
         import verify

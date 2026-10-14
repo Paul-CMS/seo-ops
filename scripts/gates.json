@@ -540,6 +540,7 @@
         "clients/<slug>/data/crawl/ page-text.csv, data/gbp/ and data/local-grid/ (site_stated and GBP excerpts, through the evidence pack)",
         "clients/<slug>/interviews/ (facts answers and transcripts, through the evidence pack)",
         "methodology/sources/<state>-<area>.md (public facts and the public lookups for licences and certifications)",
+        "methodology/places/<state>/<place>/ (the place store: verified place and place × niche facts, through the evidence pack)",
         "methodology/writing-commercial.md (Usage tiers)",
         "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts",
         "clients/<slug>/decisions-settled.md"
@@ -1061,6 +1062,7 @@
         "clients/<slug>/facts.json (facts.py get)",
         "clients/<slug>/data/reviews/review-facts.json",
         "methodology/sources/<state>-<area>.md (the researcher)",
+        "methodology/places/<state>/<place>/ (the place store — the first stop for a public fact; places.py)",
         "clients/<slug>/data/reviews/reviews.csv + mentions.csv (through the evidence packs)",
         "clients/<slug>/data/gbp/ (GBP Q&A and posts — the client research order)",
         "the returned proof sheet and the approved Discovery Record",
@@ -1514,6 +1516,13 @@
         "role": "content QA",
         "agent": "finish-qa",
         "model": "opus"
+      }
+    ],
+    "places:ingest": [
+      {
+        "role": "place-fact meaning check, Deep Research ingest",
+        "agent": "researcher",
+        "model": "sonnet"
       }
     ],
     "blog:map": [

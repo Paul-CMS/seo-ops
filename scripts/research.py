@@ -9,9 +9,10 @@ log entry showing the queries and sources tried, at or above the minimum effort.
     research.py check <slug>                                      every not_found entry meets the minimum (exit 4)
     research.py show <slug> <entry id>                            one entry
 
+A gap uses at most 6 searches (MAX_SEARCHES): the script refuses a log with more.
 KEY is the gap's facts key (evidence.py fact_key: fact:d:<fact> or fact:<page>:<key>). Minimum before "not found"
 (methodology/definitions.md, "Searched"):
-  public  the area source list for the place (methodology/sources/…), at least 3 distinct web queries — one naming the
+  public  the place store (methodology/places/), the area source list for the place (methodology/sources/…), at least 3 distinct web queries — one naming the
           official body (town, city, county, state, board, department …) — and the place's Wikipedia/Wikidata entry
   client  every source in the search order (facts.json, decisions-settled.md, the evidence pack, the proof sheet, the
           Discovery Record), plus the client's site search, plus the client's GBP Q&A and GBP posts
@@ -32,6 +33,7 @@ CLIENT_MIN = {"facts.json": "facts.json", "decisions-settled": "decisions-settle
               "gbp q&a": "the GBP Q&A", "gbp posts": "the GBP posts"}
 OFFICIAL = re.compile(r"\b(town|city|county|state|board|department|dept|council|commission|agency|bureau|office|"
                       r"llr|\.gov|government|official|code|permit office|building official)\b", re.I)
+MAX_SEARCHES = 6   # §3.2: the ceiling per gap — then "not found" with the log
 SPLIT = re.compile(r"\s*\|\|\s*")
 
 
@@ -60,6 +62,8 @@ def problems(row):
     qs, srcs = _split(row.get("queries")), _split(row.get("sources_tried"))
     low = " ".join(srcs).lower()
     why = []
+    if len(qs) > MAX_SEARCHES:
+        why.append(f"{len(qs)} searches for one gap — at most {MAX_SEARCHES} (CM-061); log the best {MAX_SEARCHES}")
     if kind not in ("public", "client"):
         why.append("kind must be public or client")
     if res not in ("found", "partial", "not_found"):
@@ -71,6 +75,8 @@ def problems(row):
             why.append("a public result names its URL")
         return why
     if kind == "public":
+        if "methodology/places/" not in low and "place store" not in low:
+            why.append("the place store (methodology/places/<state>/<place>/) was not tried")
         if "methodology/sources/" not in low:
             why.append("the area source list (methodology/sources/<state>-<area>.md) was not tried")
         if len({q.lower() for q in qs}) < 3:

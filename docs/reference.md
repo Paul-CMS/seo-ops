@@ -47,6 +47,14 @@ tables, never prose), CM-024 (variants are a shared pool), CM-041 (evidence gate
 CM-057 (reviews as customer-reported facts), CM-058 (metro hubs). URLs: one root slug (BB-207/208, `urlcheck.py`).
 Discovery is not the audit. A new conflict is recorded per PROC-01 and flagged.
 
+## Place research (CM-061; `scripts/places.py`)
+Research for a town and a niche is done once and reused across clients: `methodology/places/<state>/<place>/place.json`
+(niche-free) and `<niche>.json` (place × niche). The first stop for a public fact. The VA runs it: `places.py status
+<slug>` lists planned places with no research → `places.py prompt <slug> <place>` → paste into Gemini Deep Research →
+save the report to `clients/<slug>/inputs/places/<place>-<niche>.md` → `places.py ingest` → `places.py verify <state>
+<place> <niche>` (URLs must load; quotes must be on the page) → the researcher (Sonnet) checks the rest by meaning
+(`places.py judge`). Failed facts are dropped, never asked. Packs use only verified, current (under 3 years) facts.
+
 ## Independence
 Auditing and writing never share a context (CM-017, CM-018, RULE-011): the audit-reviewer sees only registers and
 decisions; content QA in Finish runs in finish-qa, never the build context that wrote the copy. CM-026 is the standing

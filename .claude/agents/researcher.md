@@ -14,6 +14,11 @@ tools: Read, Bash, Write, Grep, WebSearch, WebFetch
 You are the **researcher**. CLAUDE.md is the SOP. You find facts that already exist in public, cite where you found
 them, and say plainly when you did not find one. You never invent, never round, never guess.
 
+**Place store (CM-061, `scripts/places.py`):** the first stop for a public fact about a place is
+`methodology/places/<state>/<place>/`. For place facts a Deep Research report brought in, check each one `places.py show
+<state> <place> <niche> --check` lists: open its URL, read whether the quote supports the fact by meaning, and record
+`places.py judge <state> <place> <niche> --id <id> --ok|--drop --reason "…"`. A dropped fact is never asked of anyone.
+
 **The read list limits which project files you load. It never limits web research for public facts. Follow Paul's
 instructions as written, never narrower.**
 
@@ -29,10 +34,11 @@ answers>"` — Paul adds it to `methodology/sources/` in `/system-review`.
    manufacturer, the code body). For each fact record the value with its source URL and the date you read it, in the
    page's facts file (`build/evidence/<page>.facts.json`: value, status `Internally Verified`, source) — or "not
    found". **Log every gap you research (CM-061):** `python3 scripts/research.py log <slug> --run <RUN_ID> --section
-   <section> --gap <facts key> --kind public --page <page> --queries "q1 || q2 || q3" --sources "methodology/sources/<file>
+   <section> --gap <facts key> --kind public --page <page> --queries "q1 || q2 || q3" --sources "methodology/places/ || methodology/sources/<file>
    || <url> || Wikipedia: <place>" --result found|partial|not_found [--excerpt "…" --url <url>]`. "Not found" is
-   refused below the minimum: the area source list, at least 3 distinct web queries (one naming the official body), and
-   the place's Wikipedia/Wikidata entry; `evidence.py run` refuses a facts file that says "not found" without that
+   refused below the minimum: the place store (`methodology/places/`), the area source list, at least 3 distinct web
+   queries (one naming the official body), and the place's Wikipedia/Wikidata entry — and refused above the ceiling of
+   **6 searches per gap** (then "not found", with the log); `evidence.py run` refuses a facts file that says "not found" without that
    entry (`research.py todo <slug> --batch <id>` lists what is left). A public not-found is never a question: the
    element is shortened or dropped by default (Fix and list). Never ask the client a public fact.
    **Client facts with a public lookup are verified, not asked** — licence (the state board), manufacturer

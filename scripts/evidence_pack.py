@@ -219,6 +219,21 @@ def area_rows(places):
     return out
 
 
+def place_rows(slug, places):
+    """§5: verified, current facts for these places from the place store (place layer + this client's niche layer)."""
+    import places as P
+    info = P.client_info(slug)
+    if not info["state"]:
+        return []
+    out = []
+    for pl in places:
+        for layer, f in P.usable(info["state"], pl, info["niche"]):
+            tier = "official" if f.get("source_type") in P.OFFICIAL_TYPES else "context"
+            out.append({"place": pl, "layer": layer, "id": f["id"], "fact": f["fact"], "applies_to": f["applies_to"],
+                        "source_url": f["source_url"], "publisher": f["publisher"], "date": f["date"], "tier": tier})
+    return out
+
+
 def research_rows(slug, section, pid):
     p = client_dir(slug) / "build" / section / "research-log.csv"
     if not p.is_file():
@@ -270,6 +285,7 @@ def build_one(slug, section, pid, run_id=None, st=None):
             "questions": questions(slug, services, places),
             "site_gbp": site_gbp(slug, services, places),
             "public": area_rows(places), "research": research_rows(slug, section, pid),
+            "place": place_rows(slug, places),
             "settled": settled_rows(slug, pid, services, places),
             "gaps": gaps(slug, st, pid)}
     ex = []
@@ -281,6 +297,8 @@ def build_one(slug, section, pid, run_id=None, st=None):
     for r in pack["research"]:
         ex.append({"id": f"P{len(ex) + 1}", "kind": "public", "topic": r.get("gap", ""), "tier": "official",
                    "text": _norm(r.get("excerpt"))})
+    for r in pack["place"]:
+        ex.append({"id": f"L{len(ex) + 1}", "kind": "place", "topic": r["place"], "tier": r["tier"], "text": r["fact"]})
     pack["excerpts"] = ex
     pack["known"] = [{"id": f["id"], "label": f["label"], "value": f["value"]} for f in pack["facts"]
                      if f["status"].lower().replace(" ", "_").startswith(("client_confirmed", "paul_approved",
@@ -295,7 +313,7 @@ def build_one(slug, section, pid, run_id=None, st=None):
     counts = {"facts": len(pack["facts"]), "review_topics": len(pack["reviews"]),
               "review_excerpts": sum(len(v["quotes"]) for v in pack["reviews"].values()),
               "questions": len(pack["questions"]), "site_gbp": len(pack["site_gbp"]), "public": len(pack["public"]),
-              "settled": len(pack["settled"]), "gaps": len(pack["gaps"]), "excerpts": len(ex)}
+              "place": len(pack["place"]), "settled": len(pack["settled"]), "gaps": len(pack["gaps"]), "excerpts": len(ex)}
     st = S.load(slug)
     st["pages"][pid]["pack"] = {"file": str(md.relative_to(ROOT)), "json": str(js.relative_to(ROOT)), "sha": sha12(md),
                                 "at": now(), "run": run_id, "section": section, "counts": counts}
@@ -330,6 +348,10 @@ def render(st, p):
             for r in p["research"]]
     if not p["public"] and not p["research"]:
         out.append("_No area source list rows or research results for this place yet._")
+    out += ["", "## Place research (the place store: official facts are plain statements; context only for area character)", ""]
+    out += [f"- [{r['tier']}] {r['place']} ({r['layer']}, applies to {r['applies_to']}): {r['fact']} — {r['publisher']}, "
+            f"{r['source_url']} ({r['date']})" for r in p.get("place", [])] or [
+        "_Nothing in the place store yet for this page's place (places.py status lists what is missing)._"]
     out += ["", "## Settled decisions touching this page", ""]
     out += [f"- {s['at']} · `{s['key']}` — {s['text']}" for s in p["settled"]] or ["_None._"]
     out += ["", "## Gaps — the only things research looks for", ""]
