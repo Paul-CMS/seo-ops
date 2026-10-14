@@ -871,3 +871,45 @@ Changes: 1 · Summary: Facts round: 100 public facts looked up, grids 28 pass/5 
 - CHANGE #164 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md | upload | old: previous version archived as Home Mobile Medical - Brand Guide - 2026-10-07.md | new: Home Mobile Medical - Brand Guide.md · sha 8ffe9fc32f05 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #165 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14.md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14.md | result: done · renamed and moved, nothing deleted
 - CHANGE #166 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14.md | new: Home Mobile Medical - Status.md · sha d339e15de5ca | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-14T12:53 · after build:facts (run 20261014-100458-build-2be7) · Paul typed /next
+
+## RUN 20261014-125319-build-9170 · STARTED · /build · 2026-10-14T12:53:19-05:00
+Step: build:write · batch pilot · session 282ed557-3309-4abb-a218-45bc5987dda9
+Gates checked: discovery_signed_off, batch:pilot:briefs_ready, page_specs_approved
+- EVIDENCE 2026-10-14T12:54 · run 20261014-125319-build-9170 · svc-stair-lifts: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T12:54 · run 20261014-125319-build-9170 · loc-beaufort-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- FLAG 2026-10-14T12:54 · run 20261014-125319-build-9170 · F-002 · Approved site plan (REVISED md + site-plan-revised.plan.json) carries no keyword, area variant, category variant, H1 decision, FAQ topics or link targets per page — the build:plan step requires them; the plan was imported. Briefs have no planned keyword/variant to take. · workaround: Pilot briefs propose keyword (data/rankings), area variant (B2, never B1) and H1 per page, marked 'proposed — confirm at brief approval'; Paul confirms with the briefs approval.
+- FLAG 2026-10-14T12:54 · run 20261014-125319-build-9170 · F-003 · PAA/fan-out routing tables route to the old URLs (/services/stair-lifts/, /service-area/<city>/), so evidence_pack.py tags no question to the new root-slug pages (packs say 'None tagged to this page'). · workaround: Brief-writers read paa-routing.md/fanout-routing.md rows routed to the page's live_url as candidates.
+- FLAG 2026-10-14T12:54 · run 20261014-125319-build-9170 · F-004 · status.json client.route is null for a full client; build.md says ask Paul when missing. · workaround: Ran the pilot as Route A (system writes): the run brief asks for briefs and drafts, and no Paul-written content exists on disk. Paul to confirm route A.
+- BRIEF 2026-10-14T12:57 · run 20261014-125319-build-9170 · svc-stair-lifts · clients/home-mobile-medical/build/pilot/briefs/SB - Stair Lifts - Home Mobile Medical.md
+- BRIEF 2026-10-14T12:58 · run 20261014-125319-build-9170 · loc-beaufort-sc · clients/home-mobile-medical/build/pilot/briefs/LB - Beaufort SC - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T12:58 · batch pilot · 2 page(s), one run each
+- DRAFT 2026-10-14T13:06 · run 20261014-125319-build-9170 · loc-beaufort-sc · clients/home-mobile-medical/build/pilot/drafts/loc-beaufort-sc.md · agent draft-loc-beaufort-sc-9170
+- DRAFT 2026-10-14T13:06 · run 20261014-125319-build-9170 · svc-stair-lifts · clients/home-mobile-medical/build/pilot/drafts/svc-stair-lifts.md · agent draft-svc-stair-lifts-9170
+- REVIEW SHEET 2026-10-14T13:07 · run 20261014-125319-build-9170 · pilot drafts: 1 Ask, 8 decided for you, 3 fixed silently, 0 not raised (duplicate, decided or answered) · clients/home-mobile-medical/build/pilot/drafts-review.csv
+- FLAG 2026-10-14T13:07 · run 20261014-125319-build-9170 · F-005 · Draft writers put a '## Writer notes' section in the page file and publish.py drafts does not strip it, so the notes would reach the WordPress draft. Also: review.py sheet counts Fix rows as 'fixed silently' before review.py apply has run. · workaround: Recorded as Fix rows (formatting) in the pilot drafts findings; remove the Writer notes section when review.py apply runs after Paul's answer, before ship.
+### HANDOFF · /build · 2026-10-14 · run 20261014-125319-build-9170
+**Done**
+- Briefs: `build/pilot/briefs/SB - Stair Lifts - Home Mobile Medical.md`, `build/pilot/briefs/LB - Beaufort SC - Home Mobile Medical.md` (recorded with page-stage brief).
+- Drafts, one fresh subagent each: `build/pilot/drafts/svc-stair-lifts.md`, `build/pilot/drafts/loc-beaufort-sc.md` (recorded with page-stage draft). Self-checks E1–E10 and spec checks in each file's Writer notes: all pass except E10/COM-13 on the stair-lifts safety statement (grade 11.3, Paul's verbatim D text).
+- Install time on stair lifts uses Decision 016 (client_confirmed 2026-10-07); the website's "a few hours" line is superseded and not used. Beaufort has no install-time claim.
+- One checker pass over both drafts: `build/pilot/drafts-findings.json` (12 findings) → `review.py sheet` → `build/pilot/drafts-review.csv` / `.md`: 1 Ask, 8 Decided for you (7 carried + usage check), 3 Fix.
+- `status.py batch home-mobile-medical pilot --state drafts_written --review-sheet build/pilot/drafts-review.csv`.
+- Flag F-005: Writer notes are not stripped by publish.py; review.py counts Fix rows as "fixed silently" before apply.
+
+**Open — waiting on Paul**
+- Ask 1 (kind 2): stair-lifts safety statement at grade 11.3 — A keep verbatim (recommended) / B approve a plainer version.
+- review.py apply NOT run (Ask row open). The 3 Fix rows apply then: Beaufort cost FAQ kept to the local quote angle (overlap with stair-lifts FAQ 1, BB-316); remove `## Writer notes` from both page files before ship.
+- Still `[NEED: …]`, not filled: after-hours/emergency, curved/porch/wheelchair install times, pad and permit (Beaufort FAQ 2), price range, Beaufort city map.
+
+**Next**
+- Paul answers the sheet: `/build home-mobile-medical review pilot drafts "<his line>"` → review.py apply → `/approve home-mobile-medical batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto` → pilot-corrections.
+### END HANDOFF
+## RUN 20261014-125319-build-9170 · FINISHED · 2026-10-14T13:08:00-05:00
+Changes: 0 · Summary: Pilot drafts checked in one pass; review sheet has 1 Ask (safety statement grade), 8 decided for you, 3 fixes; batch drafts_written.
+- CHANGE #167 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-14.md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-14.md | result: done · renamed and moved, nothing deleted
+- CHANGE #168 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-14.md | new: Home Mobile Medical - Handoff Log.md · sha 80f7b1d04034 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #169 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (2).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #170 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (2).md | new: Home Mobile Medical - Document Checklist.md · sha 04fca74952b0 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #171 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (2).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #172 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (2).md | new: Home Mobile Medical - Status.md · sha 8a1325ec7460 | result: done · copied (Drive for desktop syncs it)

@@ -313,3 +313,21 @@ Generated from the safety log (clients/home-mobile-medical/log.md) — do not ed
 
 **Not done:** none. The Brand Guide was not written (write-back happens at brief approval, CM-061 §6).
 
+## /build · 2026-10-14 · run 20261014-125319-build-9170
+
+**Done**
+- Briefs: `build/pilot/briefs/SB - Stair Lifts - Home Mobile Medical.md`, `build/pilot/briefs/LB - Beaufort SC - Home Mobile Medical.md` (recorded with page-stage brief).
+- Drafts, one fresh subagent each: `build/pilot/drafts/svc-stair-lifts.md`, `build/pilot/drafts/loc-beaufort-sc.md` (recorded with page-stage draft). Self-checks E1–E10 and spec checks in each file's Writer notes: all pass except E10/COM-13 on the stair-lifts safety statement (grade 11.3, Paul's verbatim D text).
+- Install time on stair lifts uses Decision 016 (client_confirmed 2026-10-07); the website's "a few hours" line is superseded and not used. Beaufort has no install-time claim.
+- One checker pass over both drafts: `build/pilot/drafts-findings.json` (12 findings) → `review.py sheet` → `build/pilot/drafts-review.csv` / `.md`: 1 Ask, 8 Decided for you (7 carried + usage check), 3 Fix.
+- `status.py batch home-mobile-medical pilot --state drafts_written --review-sheet build/pilot/drafts-review.csv`.
+- Flag F-005: Writer notes are not stripped by publish.py; review.py counts Fix rows as "fixed silently" before apply.
+
+**Open — waiting on Paul**
+- Ask 1 (kind 2): stair-lifts safety statement at grade 11.3 — A keep verbatim (recommended) / B approve a plainer version.
+- review.py apply NOT run (Ask row open). The 3 Fix rows apply then: Beaufort cost FAQ kept to the local quote angle (overlap with stair-lifts FAQ 1, BB-316); remove `## Writer notes` from both page files before ship.
+- Still `[NEED: …]`, not filled: after-hours/emergency, curved/porch/wheelchair install times, pad and permit (Beaufort FAQ 2), price range, Beaufort city map.
+
+**Next**
+- Paul answers the sheet: `/build home-mobile-medical review pilot drafts "<his line>"` → review.py apply → `/approve home-mobile-medical batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto` → pilot-corrections.
+

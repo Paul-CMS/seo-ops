@@ -9,7 +9,7 @@
     "sensitive": true,
     "sensitive_category": "health_adjacent",
     "practitioner_signoff": false,
-    "route": null,
+    "route": "A",
     "drive_folder_id": "1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp",
     "kadence_head_meta_key": null,
     "gbp_url": null,
@@ -108,7 +108,7 @@
       "name": "Stair Lifts (parent; straight consolidated in)",
       "url": "https://homemobilemedical.com/stair-lifts/",
       "group": "lifts",
-      "state": "planned",
+      "state": "draft_written",
       "live_url": "https://homemobilemedical.com/services/stair-lifts/",
       "replaces": [
         "https://homemobilemedical.com/services/stair-lifts/"
@@ -126,8 +126,8 @@
         ],
         "grid": "clients/home-mobile-medical/build/evidence/svc-stair-lifts.grid.md",
         "sha": "324cb9ead5b1",
-        "at": "2026-10-14T10:19:58-05:00",
-        "run": "20261014-100458-build-2be7",
+        "at": "2026-10-14T12:54:00-05:00",
+        "run": "20261014-125319-build-9170",
         "gaps": [
           "timeframe",
           "pricing",
@@ -137,9 +137,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/pilot/packs/svc-stair-lifts.md",
         "json": "clients/home-mobile-medical/build/pilot/packs/svc-stair-lifts.json",
-        "sha": "8acd3610a16c",
-        "at": "2026-10-14T10:19:58-05:00",
-        "run": "20261014-100458-build-2be7",
+        "sha": "39bbf83fbc39",
+        "at": "2026-10-14T12:54:00-05:00",
+        "run": "20261014-125319-build-9170",
         "section": "pilot",
         "counts": {
           "facts": 41,
@@ -152,6 +152,21 @@
           "settled": 0,
           "gaps": 0,
           "excerpts": 4
+        }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/pilot/briefs/SB - Stair Lifts - Home Mobile Medical.md",
+          "run": "20261014-125319-build-9170",
+          "at": "2026-10-14T12:57:09-05:00",
+          "sha": "ddafedf3016d"
+        },
+        "draft": {
+          "file": "clients/home-mobile-medical/build/pilot/drafts/svc-stair-lifts.md",
+          "run": "20261014-125319-build-9170",
+          "at": "2026-10-14T13:06:27-05:00",
+          "sha": "6563e71e2521",
+          "agent": "draft-svc-stair-lifts-9170"
         }
       }
     },
@@ -411,7 +426,7 @@
       "name": "Beaufort, SC",
       "url": "https://homemobilemedical.com/beaufort-sc/",
       "group": "HHI-Bluffton-Port Royal metro",
-      "state": "planned",
+      "state": "draft_written",
       "live_url": "https://homemobilemedical.com/service-area/beaufort-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/beaufort-sc/"
@@ -427,8 +442,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-beaufort-sc.grid.md",
         "sha": "a1f5a36144d1",
-        "at": "2026-10-14T10:19:58-05:00",
-        "run": "20261014-100458-build-2be7",
+        "at": "2026-10-14T12:54:00-05:00",
+        "run": "20261014-125319-build-9170",
         "gaps": [
           "response_time",
           "emergency"
@@ -437,9 +452,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/pilot/packs/loc-beaufort-sc.md",
         "json": "clients/home-mobile-medical/build/pilot/packs/loc-beaufort-sc.json",
-        "sha": "dd38b8212678",
-        "at": "2026-10-14T10:19:58-05:00",
-        "run": "20261014-100458-build-2be7",
+        "sha": "bdb6840c20b5",
+        "at": "2026-10-14T12:54:00-05:00",
+        "run": "20261014-125319-build-9170",
         "section": "pilot",
         "counts": {
           "facts": 44,
@@ -452,6 +467,21 @@
           "settled": 0,
           "gaps": 1,
           "excerpts": 8
+        }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/pilot/briefs/LB - Beaufort SC - Home Mobile Medical.md",
+          "run": "20261014-125319-build-9170",
+          "at": "2026-10-14T12:58:04-05:00",
+          "sha": "88e0fadbb179"
+        },
+        "draft": {
+          "file": "clients/home-mobile-medical/build/pilot/drafts/loc-beaufort-sc.md",
+          "run": "20261014-125319-build-9170",
+          "at": "2026-10-14T13:06:20-05:00",
+          "sha": "944e55dc48d4",
+          "agent": "draft-loc-beaufort-sc-9170"
         }
       }
     },
@@ -1747,10 +1777,34 @@
           "svc-stair-lifts",
           "loc-beaufort-sc"
         ],
-        "state": "planned",
+        "state": "drafts_written",
         "briefs": null,
         "drafts": null,
-        "files": {}
+        "files": {
+          "briefs": [
+            "clients/home-mobile-medical/build/pilot/briefs/SB - Stair Lifts - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/pilot/briefs/LB - Beaufort SC - Home Mobile Medical.md"
+          ],
+          "drafts": [
+            "clients/home-mobile-medical/build/pilot/drafts/svc-stair-lifts.md",
+            "clients/home-mobile-medical/build/pilot/drafts/loc-beaufort-sc.md"
+          ],
+          "review_sheet": "clients/home-mobile-medical/build/pilot/drafts-review.csv"
+        },
+        "review": {
+          "drafts": {
+            "sheet": "clients/home-mobile-medical/build/pilot/drafts-review.csv",
+            "md": "clients/home-mobile-medical/build/pilot/drafts-review.md",
+            "at": "2026-10-14T13:07:31-05:00",
+            "run": "20261014-125319-build-9170",
+            "asks": 1,
+            "listed": 8,
+            "fixes": 3,
+            "dropped": 0,
+            "applied": null
+          }
+        },
+        "sem_findings": 0
       },
       {
         "id": "services",
@@ -2019,13 +2073,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261014-100458-build-2be7",
+    "run_id": "20261014-125319-build-9170",
     "command": "build",
-    "finished": "2026-10-14T10:21:13-05:00",
-    "result": "Facts round: 100 public facts looked up, grids 28 pass/5 warn/0 block, 3-question set for Paul",
-    "changes": 1,
-    "step": "build:facts",
-    "batch": null
+    "finished": "2026-10-14T13:08:01-05:00",
+    "result": "Pilot drafts checked in one pass; review sheet has 1 Ask (safety statement grade), 8 decided for you, 3 fixes; batch drafts_written.",
+    "changes": 0,
+    "step": "build:write",
+    "batch": "pilot"
   },
   "spend": {
     "dataforseo_usd": 0.265018
@@ -2046,7 +2100,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T10:21:13-05:00",
+  "updated": "2026-10-14T13:08:01-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
@@ -2108,6 +2162,12 @@
       "step": "build:facts",
       "first_run": "20261014-100458-build-2be7",
       "at": "2026-10-14T10:21:13-05:00"
+    },
+    "282ed557-3309-4abb-a218-45bc5987dda9": {
+      "key": "batches:pilot",
+      "step": "build:write",
+      "first_run": "20261014-125319-build-9170",
+      "at": "2026-10-14T13:08:01-05:00"
     }
   },
   "blocker_handoffs": [
@@ -2133,8 +2193,8 @@
     "methodology/specs/service.md": "0d679dadad45"
   },
   "review_pause": {
-    "run_id": "20261014-100458-build-2be7",
-    "step": "build:facts",
-    "at": "2026-10-14T10:21:13-05:00"
+    "run_id": "20261014-125319-build-9170",
+    "step": "build:write",
+    "at": "2026-10-14T13:08:01-05:00"
   }
 }

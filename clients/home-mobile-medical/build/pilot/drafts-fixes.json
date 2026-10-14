@@ -1,0 +1,36 @@
+{
+  "made": "2026-10-14T13:07:31-05:00",
+  "run": "20261014-125319-build-9170",
+  "fixes": [
+    {
+      "page": "loc-beaufort-sc",
+      "rule": "BB-316",
+      "item": "faq-cost-overlap",
+      "finding": "Beaufort FAQ 'How Is a Stair Lift Priced for a Beaufort Home?' overlaps in intent with the stair-lifts FAQ 1 'How Much Does a Stair Lift Cost?'. Wording and answers differ, but both answer cost.",
+      "severity": "fix",
+      "category": "wording",
+      "page_actions": "Keep the stair-lifts FAQ as the cost answer; keep the Beaufort question framed on what a Beaufort home changes about the quote (photo of the stairs, stair count, home visit) so the two do not answer the same question.",
+      "url": "https://homemobilemedical.com/beaufort-sc/"
+    },
+    {
+      "page": "loc-beaufort-sc",
+      "rule": "P11",
+      "item": "writer-notes-section",
+      "finding": "The draft file ends with a '## Writer notes' section; publish.py does not strip it.",
+      "severity": "fix",
+      "category": "formatting",
+      "page_actions": "Remove the '## Writer notes' section from the page file before ship (keep the notes in the run log).",
+      "url": "https://homemobilemedical.com/beaufort-sc/"
+    },
+    {
+      "page": "svc-stair-lifts",
+      "rule": "P11",
+      "item": "writer-notes-section",
+      "finding": "The draft file ends with a '## Writer notes' section; publish.py does not strip it.",
+      "severity": "fix",
+      "category": "formatting",
+      "page_actions": "Remove the '## Writer notes' section from the page file before ship (keep the notes in the run log).",
+      "url": "https://homemobilemedical.com/stair-lifts/"
+    }
+  ]
+}

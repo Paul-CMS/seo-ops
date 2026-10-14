@@ -2,14 +2,14 @@
 
 Quick ones — answer by reply, voice memo or a five-minute call. "I don't know" is a fine answer.
 
-1. **Repairs:** when someone calls about a broken stair lift or lift, what happens, step by step (first call, visit, diagnosis, quote, parts, fix)? Is there a service-call or trip charge, and how much?
+1. **Repairs:** when someone calls about a broken stair lift or lift, what happens, step by step (first call, visit, diagnosis, quote, parts, fix)? Is there a service-call or trip charge, and how much? -  exactly steps are as you suggested. no extra zervice call or trip charge.
    *What we have:* you repair any stair lift or lift, any brand, in the service area. No steps or charge on record.
-   *Can we say this on your website?* yes / only in general terms / no
-2. **After hours:** the office is open Mon–Fri 9–5. Is there any emergency or after-hours help for a lift that stops working? yes / no. If yes, what exactly?
+   *Can we say this on your website?* yes 
+2. **After hours:** the office is open Mon–Fri 9–5. Is there any emergency or after-hours help for a lift that stops working? yes / no. If yes, what exactly? no after hours...true emergencies are handled after hours, adn after hours call availibilty depends on curretn demand, etc. if ugrent but no emergency, we schedule asap. so yes to urgent services, but akso kind of no. advertis ebut keep the fine line.
    *What we found:* nothing on record. Unless you say otherwise, we'll write that calls outside hours are returned the next business day. yes / no / correction
 3. **Install times for the other lifts:** stair lifts usually take one day (3–4 hours). For (a) a curved stair lift, (b) a porch lift, (c) a wheelchair lift: how long from order to installed, and how long does the install itself take? For porch and wheelchair lifts, who handles the concrete pad and any building permit: you, the customer, or it depends?
    *What we found:* nothing on record. Until you answer, the pages say the timeline is confirmed at the free in-home estimate.
-
+lifts themslebes are a quick isntal no matter which one, we can handle mutliple isntall per day, so adjsut workding accordingly.
 <!-- System notes (removed before sending):
 - The one facts round (P10) for every page with a gap: 5 page(s), grouped by fact
 - Each question → the fact it fills:

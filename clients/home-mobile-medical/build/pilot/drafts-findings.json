@@ -1,0 +1,119 @@
+[
+  {
+    "page": "svc-stair-lifts",
+    "rule": "E10/COM-13",
+    "item": "safety-statement-grade",
+    "finding": "The safety statement ('Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions.') reads at grade 11.3; the paragraph limit is 10. It is Paul's approved word-for-word Section D text, so the checker did not change it.",
+    "severity": "ask",
+    "category": "reading_grade",
+    "kind": "2",
+    "options": [
+      "A: keep the approved statement word for word and accept grade 11.3 for this one paragraph",
+      "B: Paul approves a plainer version, e.g. 'Safety comes first. Jason follows the manufacturer's installation instructions and the highest industry standards on every install.'"
+    ],
+    "recommended": "A",
+    "plain_why": "It is a safety claim about the client in Paul's approved wording; only Paul can change it.",
+    "fact_key": "D:Safety statement"
+  },
+  {
+    "page": "loc-beaufort-sc",
+    "rule": "BB-316",
+    "item": "faq-cost-overlap",
+    "finding": "Beaufort FAQ 'How Is a Stair Lift Priced for a Beaufort Home?' overlaps in intent with the stair-lifts FAQ 1 'How Much Does a Stair Lift Cost?'. Wording and answers differ, but both answer cost.",
+    "severity": "fix",
+    "category": "wording",
+    "page_actions": "Keep the stair-lifts FAQ as the cost answer; keep the Beaufort question framed on what a Beaufort home changes about the quote (photo of the stairs, stair count, home visit) so the two do not answer the same question."
+  },
+  {
+    "page": "svc-stair-lifts",
+    "rule": "E5",
+    "item": "install-time-source",
+    "finding": "Install time uses Decision 016 (client_confirmed 2026-10-07): usually one day, about 3-4 hours, same day in most cases, qualified to a straight staircase. The live website's 'a few hours' line is the superseded source and is not used. No time is given for curved, porch or wheelchair lifts ([NEED] stays open in the facts round).",
+    "severity": "fix_and_list",
+    "category": "other_content",
+    "decided_for_you": "Used the Decision 016 wording in the installation step and FAQ 3; the website's 'a few hours' wording is superseded and left out.",
+    "decision_key": "016"
+  },
+  {
+    "page": "svc-stair-lifts",
+    "rule": "F-002/F-003",
+    "item": "proposed-plan-values",
+    "finding": "The approved site plan has no keyword, variants or H1 for this page; the brief proposed them and the draft uses them (H1 'Stair Lift Installation in the Lowcountry').",
+    "severity": "fix_and_list",
+    "category": "other_content",
+    "decided_for_you": "Used the brief's proposed keyword, area/category variants, H1 and FAQ topics. Paul confirms or overrides at the drafts approval."
+  },
+  {
+    "page": "loc-beaufort-sc",
+    "rule": "F-002/F-003",
+    "item": "proposed-plan-values",
+    "finding": "The approved site plan has no keyword, variants, H1 or FAQ topics for this page; the brief proposed them and the draft uses them (H1 'Stair Lift Installer in Beaufort').",
+    "severity": "fix_and_list",
+    "category": "other_content",
+    "decided_for_you": "Used the brief's proposed keyword, area/category variants, H1 and the three FAQ topics. Paul confirms or overrides at the drafts approval."
+  },
+  {
+    "page": "svc-stair-lifts",
+    "rule": "C8",
+    "item": "faq5-definition",
+    "finding": "FAQ 'What Is the Difference Between Straight and Curved Stair Lifts?' is answered with general trade knowledge (straight = no turns; curved = turns or landings), not a pack fact.",
+    "severity": "fix_and_list",
+    "category": "other_content",
+    "decided_for_you": "Kept a definitional answer only, with no price or time comparison."
+  },
+  {
+    "page": "loc-beaufort-sc",
+    "rule": "location-faq",
+    "item": "faq1-fallback",
+    "finding": "The pack has no Beaufort-specific cost fact (no HOA, flood or wind rule), so FAQ 1 (local cost or decision) uses the brand-level local fallback.",
+    "severity": "fix_and_list",
+    "category": "faq_fallback",
+    "decided_for_you": "FAQ 1 uses the brand-level local fallback (photo quote by stair count, free in-home estimate)."
+  },
+  {
+    "page": "loc-beaufort-sc",
+    "rule": "location-faq",
+    "item": "faq3-former-company",
+    "finding": "FAQ 3 'Is Home Mobile Medical the Same Company as Beaufort Medical Equipment?' names Jason's former company. Decision 003 says only that HMM is not a rebrand of it.",
+    "severity": "fix_and_list",
+    "category": "other_content",
+    "decided_for_you": "Kept the FAQ: the former company was sold and HMM is not a rebrand of it; 15+ years is Jason's own experience. Paul can drop it at the approval.",
+    "decision_key": "003"
+  },
+  {
+    "page": "loc-beaufort-sc",
+    "rule": "BB-302",
+    "item": "title-gbp-category",
+    "finding": "SEO title uses the GBP primary category: 'Home Mobile Medical - Mobility Equipment Supplier - Beaufort, South Carolina'. The proposed category variant is used for the H1 and opening only.",
+    "severity": "fix_and_list",
+    "category": "other_content",
+    "decided_for_you": "Title follows BB-302 with the GBP primary category."
+  },
+  {
+    "page": "loc-beaufort-sc",
+    "rule": "LOC-29",
+    "item": "recent-work-dropped",
+    "finding": "No review names Beaufort the city, so the optional Recent work section has no evidence.",
+    "severity": "fix_and_list",
+    "category": "optional_section",
+    "decided_for_you": "Dropped the Recent work section."
+  },
+  {
+    "page": "loc-beaufort-sc",
+    "rule": "P11",
+    "item": "writer-notes-section",
+    "finding": "The draft file ends with a '## Writer notes' section; publish.py does not strip it.",
+    "severity": "fix",
+    "category": "formatting",
+    "page_actions": "Remove the '## Writer notes' section from the page file before ship (keep the notes in the run log)."
+  },
+  {
+    "page": "svc-stair-lifts",
+    "rule": "P11",
+    "item": "writer-notes-section",
+    "finding": "The draft file ends with a '## Writer notes' section; publish.py does not strip it.",
+    "severity": "fix",
+    "category": "formatting",
+    "page_actions": "Remove the '## Writer notes' section from the page file before ship (keep the notes in the run log)."
+  }
+]
