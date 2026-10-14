@@ -175,7 +175,7 @@
       "name": "Curved Stair Lifts",
       "url": "https://homemobilemedical.com/curved-stair-lifts/",
       "group": "lifts",
-      "state": "brief_written",
+      "state": "draft_written",
       "live_url": "https://homemobilemedical.com/services/curved-stair-lifts/",
       "replaces": [
         "https://homemobilemedical.com/services/curved-stair-lifts/"
@@ -227,6 +227,14 @@
           "run": "20261014-144852-build-6004",
           "at": "2026-10-14T15:14:41-05:00",
           "sha": "8a034552c71b"
+        },
+        "draft": {
+          "file": "clients/home-mobile-medical/build/services/drafts/svc-curved-stair-lifts.md",
+          "run": "20261014-163404-build-b049",
+          "at": "2026-10-14T16:35:50-05:00",
+          "sha": "1f2f5bfc5ea8",
+          "ts": 1792013750.707592,
+          "agent": "build-svc-curved-stair-lifts"
         }
       }
     },
@@ -2171,13 +2179,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261014-144522-build-adbe",
+    "run_id": "20261014-163404-build-b049",
     "command": "build",
-    "finished": "2026-10-14T14:45:34-05:00",
-    "result": "Pilot drafts revised per Paul: Beaufort permit section, building-codes sentence and map placeholder removed; former-company mention on About page only (separate step); defaults approved.",
-    "changes": 3,
-    "step": "build:drafts",
-    "batch": "pilot"
+    "finished": "2026-10-14T16:36:15-05:00",
+    "result": "Curved stair lifts draft written from its approved brief and recorded (svc-curved-stair-lifts); E1–E10 and SVC checks pass; the sibling-collision check waits for the other service drafts.",
+    "changes": 0,
+    "step": "build:draft",
+    "batch": "services"
   },
   "spend": {
     "dataforseo_usd": 0.265018
@@ -2198,7 +2206,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T16:33:48-05:00",
+  "updated": "2026-10-14T16:36:15-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
@@ -2290,6 +2298,12 @@
       "step": "build:drafts",
       "first_run": "20261014-144522-build-adbe",
       "at": "2026-10-14T14:45:34-05:00"
+    },
+    "e7bff2e3-fc09-491a-bd8d-f8a36153a33c": {
+      "key": "batches:services",
+      "step": "build:draft",
+      "first_run": "20261014-163404-build-b049",
+      "at": "2026-10-14T16:36:15-05:00"
     }
   },
   "blocker_handoffs": [
@@ -2337,5 +2351,10 @@
   "url_drops": {
     "/service-area/": "https://homemobilemedical.com/",
     "/services/": "https://homemobilemedical.com/"
+  },
+  "review_pause": {
+    "run_id": "20261014-163404-build-b049",
+    "step": "build:draft",
+    "at": "2026-10-14T16:36:15-05:00"
   }
 }

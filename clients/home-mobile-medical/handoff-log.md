@@ -443,3 +443,33 @@ Step: build:drafts · batch: pilot · session: Haiku
 - Removal of the building-codes sentence needs Paul's confirmation.
 - About-page mention: separate step.
 
+## /build · 2026-10-14 · run 20261014-163404-build-b049
+
+**What I did**
+- Drafted svc-curved-stair-lifts (Route A) from the approved brief and its evidence pack, in this run's own context (CM-043). One page only.
+- Recorded it: `status.py page-stage home-mobile-medical svc-curved-stair-lifts --stage draft --agent build-svc-curved-stair-lifts` → "draft recorded".
+- Ran readability.py (page grade 7.0; the only paragraph over 10 is the verbatim safety line, exempt per pilot-corrections) and placeholders.py (no placeholders).
+
+**What was decided, and why**
+- Kept every Paul constraint from the brief review: no ramps (no not-offered product list at all); settled install-time wording word for word (delivery H2 and FAQ 3); manufacturer's warranty only, no guarantee; no Beaufort Medical Equipment; no service-call/trip-charge wording (not needed on this page); cost FAQ worded around the curved staircase only, no sentence shared with the /stair-lifts/ cost answer.
+- One H3 under the types H2 (the pack names one type); no second H3 invented.
+- The free estimate is not attributed to Jason personally (the pack does not say who does it); Jason is named only as supervising every installation.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Order-to-installed lead time for a curved lift (unknown, left out) | Client via Paul | Nothing — page stands without it |
+| Sibling collision check against the porch, wheelchair and repair drafts | Build agent, draft review (one checker pass) | The services draft review sheet |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Draft | clients/home-mobile-medical/build/services/drafts/svc-curved-stair-lifts.md | Recorded (draft), awaiting the section's draft review |
+| Brief | clients/home-mobile-medical/build/services/briefs/SB - Curved Stair Lifts - Home Mobile Medical.md | Approved |
+
+**What I could not check**
+- The sibling drafts (porch, wheelchair, repair) were not on disk; I checked against their briefs only.
+
+**Anything the next agent would otherwise get wrong**
+- The settled install sentence repeats in the delivery H2 and FAQ 3 by design (brief: word for word in both); FAQ 3's second sentence is curved-only. The safety line's grade-14 reading is accepted, not a finding.
+
