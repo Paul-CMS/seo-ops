@@ -88,6 +88,23 @@ def parse(path):
     return meta
 
 
+def page_files(files):
+    """F-026: an approved list may also hold review sheets, CSVs and other non-page files — only a file that starts
+    with a page header block (--- … page_id: …) is a page."""
+    out = []
+    for f in files:
+        if "Semantic Review" in f or not str(f).endswith((".md", ".txt")):
+            continue
+        try:
+            head = (ROOT / f).read_text(encoding="utf-8")[:2000]
+        except (OSError, UnicodeDecodeError):
+            continue
+        m = re.match(r"^---\n(.*?)\n---\n", head, re.S)
+        if m and re.search(r"^page_id\s*:", m.group(1), re.M):
+            out.append(f)
+    return out
+
+
 def slug_of(url):
     path = urllib.parse.urlparse(url).path.strip("/")
     return path.split("/")[-1] if path else ""
@@ -274,7 +291,7 @@ def cmd_drafts(a):
         if not ok:
             die(f"REFUSED — {why}", 4)
         wheel = load_wheel(a.slug)
-    files = [f for f in (b.get("files") or {}).get("drafts", []) if "Semantic Review" not in f]
+    files = page_files((b.get("files") or {}).get("drafts", []))
     by_page, bad = {}, []
     for f in files:
         m = parse(f)

@@ -1134,7 +1134,8 @@ def main():
             if rv.get("sheet") != a.review_sheet:
                 die(f"batch {a.batch_id}: {a.review_sheet} is not this section's draft review sheet (review.py sheet "
                     f"{a.slug} {a.batch_id} drafts) — recorded: {rv.get('sheet') or 'none'}")
-            b.setdefault("files", {})["drafts"] = fs + [a.review_sheet]
+            b.setdefault("files", {})["drafts"] = fs   # F-026: the sheet is not a draft
+            b["files"]["review_sheet"] = a.review_sheet
             b["sem_findings"] = 0
             b["drafts"] = None
         elif a.state == "drafts_written":

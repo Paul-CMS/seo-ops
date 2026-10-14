@@ -328,6 +328,16 @@ def t_review(h):
     sheet = f"clients/{S_}/build/pilot/drafts-review.csv"
     code, out = h.sh(f"python3 scripts/status.py batch {S_} pilot --state drafts_written --review-sheet {sheet}")
     h.check("§5.3: the drafts are recorded with the review sheet (no SEM table, no --sem)", code == 0, out)
+    bf = next(x for x in h.status(S_)["build"]["batches"] if x["id"] == "pilot")["files"]
+    h.check("F-026: the review sheet is recorded as the review sheet, never as a draft",
+            bf.get("review_sheet") == sheet and sheet not in bf["drafts"], bf)
+    pg = ag.w("build/locations/SD-loc-a.md",
+              "---\npage_id: loc-a\nurl: https://x.example/a/\nseo_title: T\nmeta_description: M\n---\n# A\n")
+    cs = ag.w("build/locations/drafts-review.csv", "id,page\n1,loc-a\n")
+    code, out = h.sh("python3 -I -c \"import sys; sys.path.insert(0, 'scripts'); import publish; "
+                     f"print(publish.page_files(['{pg}', '{cs}', '{sheet}']))\"")
+    h.check("F-026: Apex's case — publish ignores the review sheet CSV in an approved list, keeps the page",
+            code == 0 and out.strip().splitlines()[-1] == f"['{pg}']", out)
     ag.fin(rid, "pilot written and reviewed")
     n = h.nxt(S_)
     h.check("§5.3: /next asks Paul to answer the sheet in one line before any approval",

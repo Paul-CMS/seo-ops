@@ -211,7 +211,7 @@ def check_sem(target, b, sem):
     """--sem must name only SEM items that are rows in this batch's review table (the last drafts file)."""
     if not sem:
         return
-    table = ((b.get("files") or {}).get("drafts") or [None])[-1]
+    table = (b.get("files") or {}).get("review_sheet") or ((b.get("files") or {}).get("drafts") or [None])[-1]
     have = table_sem_ids(table)
     if not have:
         die(f"REFUSED ({target}) — the batch's semantic review table ({table or 'not recorded'}) has no SEM rows to pick from.")
@@ -379,7 +379,8 @@ def prepare(a, st, target, multi):
                 die("Use batch:<id>:briefs or batch:<id>:drafts (SEM items are picked with the drafts: --sem 1,3,4)")
             b = S.batch(st, bid) or die(f"No batch {bid}.")
             if not files:
-                files = file_map((b.get("files") or {}).get(stage) or [])
+                bf = b.get("files") or {}
+                files = file_map((bf.get(stage) or []) + ([bf["review_sheet"]] if stage == "drafts" and bf.get("review_sheet") else []))
             if stage == "drafts":
                 check_sem(target, b, sem)
             rv = (b.get("review") or {}).get(stage)
