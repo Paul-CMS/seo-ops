@@ -1,11 +1,11 @@
 # Home Mobile Medical - Status
 
-- **Stage —**
-- **What is happening now:** ready to start: apply your pilot corrections to the specs before the next batch
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
+- **What is happening now:** Stage 6 (Pilot, services, locations, ship (one session each)) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open home-mobile-medical) and type /next home-mobile-medical. Next there: /build home-mobile-medical write services (batch services in one run: every brief, then one draft per page (each from its own fresh sub-agent, CM-043), then the batch review side by side)
 - **Waiting on:** nobody
-- **Next action:** `/build home-mobile-medical pilot-corrections` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open home-mobile-medical`) and types `/next home-mobile-medical` · model: Haiku chat
+- **Next action:** `/next home-mobile-medical` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-14T14:18 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T14:19 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -87,4 +87,4 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /interview 2026-10-14T14:17 — Facts-answers (batch all): 3 owner answers saved, written to Brand Guide D, settled. Evidence gate re-run: no page blocked; service pages WARN on 3 supporting gaps each. Brand Guide changed, needs Paul re-approval. Open: install lead time and pad/permit.
+Last run: /build 2026-10-14T14:19 — Pilot corrections: none from Paul; 5 accepted pilot defaults carried forward in build/pilot-corrections.md; 1 open question

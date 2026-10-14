@@ -404,3 +404,12 @@ Recorded as Unknown in Brand Guide D: row "Order-to-installed lead time; pad and
 2. Decide on the two open items: send a follow-up question for lead time and pad/permit, or accept the current wording (the pages say the install timeline is confirmed at the free in-home estimate).
 3. Check the Brand Guide's D2 section: the homepage and service wording may still need the "no after-hours" and "same-day in most cases" lines re-checked when briefs are drafted.
 
+## /build · 2026-10-14 · run 20261014-141838-build-9492
+
+- Source of Paul's notes: drafts review "accept all, Ask 1 = A" (run 20261014-131553-build-b121); briefs and drafts approved 2026-10-14 13:28/13:29 as written, SEM none; brief mode → auto.
+- Paul wrote no corrections. No spec element or check changed for this client; nothing flagged for /system-review.
+- build/pilot-corrections.md written: "none" under Paul's corrections, plus 5 accepted pilot answers/defaults carried forward (safety line kept verbatim at grade 11.3 — C5/CM-047; location cost FAQ uses the quote angle — BB-316; Recent work dropped without a town review — LOC-29; title with GBP primary category — LOC-02; install time from settled facts only).
+- Open for Paul (one line, default given): may other Beaufort County pages also name Beaufort Medical Equipment? Default: no, Beaufort page only.
+- `status.py pilot-corrections` recorded. Later batches (services, loc-hhi, loc-charleston, final) may start.
+- Settled decisions untouched.
+

@@ -1228,3 +1228,30 @@ build/blockers/broken_link-items.csv:10: https://homemobilemedical.com/service-a
 build/blockers/redirect-items.csv:2: https://homemobilemedical.com/service-area/bluffton-sc/ → https://homemobilemedical.com/bluffton-sc/
 build/blockers/redirect-items.csv:3: https://homemobilemedical.com/service-area/charleston-sc/ → https://homemobilemedical.com/charleston-sc/
 build/blockers/redirect-items.csv:4: https://homemobilemedical.com/service-area/beaufort-sc/ → https://homemobilemedical.com/beaufort-sc/
+
+## RUN 20261014-141838-build-9492 · STARTED · /build · 2026-10-14T14:18:38-05:00
+Step: build:pilot-corrections · session c2bdc5c2-5a67-42d5-84e8-bf06c732f070
+Gates checked: discovery_signed_off, batch:pilot:briefs
+### HANDOFF · /build · 2026-10-14 · run 20261014-141838-build-9492
+- Source of Paul's notes: drafts review "accept all, Ask 1 = A" (run 20261014-131553-build-b121); briefs and drafts approved 2026-10-14 13:28/13:29 as written, SEM none; brief mode → auto.
+- Paul wrote no corrections. No spec element or check changed for this client; nothing flagged for /system-review.
+- build/pilot-corrections.md written: "none" under Paul's corrections, plus 5 accepted pilot answers/defaults carried forward (safety line kept verbatim at grade 11.3 — C5/CM-047; location cost FAQ uses the quote angle — BB-316; Recent work dropped without a town review — LOC-29; title with GBP primary category — LOC-02; install time from settled facts only).
+- Open for Paul (one line, default given): may other Beaufort County pages also name Beaufort Medical Equipment? Default: no, Beaufort page only.
+- `status.py pilot-corrections` recorded. Later batches (services, loc-hhi, loc-charleston, final) may start.
+- Settled decisions untouched.
+### END HANDOFF
+### END HANDOFF
+## RUN 20261014-141838-build-9492 · FINISHED · 2026-10-14T14:19:42-05:00
+Changes: 0 · Summary: Pilot corrections: none from Paul; 5 accepted pilot defaults carried forward in build/pilot-corrections.md; 1 open question
+- CHANGE #210 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (6).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #211 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-14 (6).md | new: Home Mobile Medical - Handoff Log.md · sha b2530c52c820 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #212 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (9).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #213 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (9).md | new: Home Mobile Medical - Document Checklist.md · sha 8726631ef017 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #214 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Brand Guide - 2026-10-14 (3).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md | new: _Archive/Home Mobile Medical - Brand Guide - 2026-10-14 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #215 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md | upload | old: previous version archived as Home Mobile Medical - Brand Guide - 2026-10-14 (3).md | new: Home Mobile Medical - Brand Guide.md · sha 55e993be2b2f | result: done · copied (Drive for desktop syncs it)
+- CHANGE #216 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (9).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #217 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (9).md | new: Home Mobile Medical - Status.md · sha 9358723b4dcb | result: done · copied (Drive for desktop syncs it)
+- CHANGE #218 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - VA Worklist - 2026-10-14.md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.md | new: _Archive/Home Mobile Medical - VA Worklist - 2026-10-14.md | result: done · renamed and moved, nothing deleted
+- CHANGE #219 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.md | upload | old: previous version archived as Home Mobile Medical - VA Worklist - 2026-10-14.md | new: Home Mobile Medical - VA Worklist.md · sha c728c796be79 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #220 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - VA Worklist - 2026-10-14.csv | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.csv | new: _Archive/Home Mobile Medical - VA Worklist - 2026-10-14.csv | result: done · renamed and moved, nothing deleted
+- CHANGE #221 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.csv | upload | old: previous version archived as Home Mobile Medical - VA Worklist - 2026-10-14.csv | new: Home Mobile Medical - VA Worklist.csv · sha 46ee3b69081c | result: done · copied (Drive for desktop syncs it)
