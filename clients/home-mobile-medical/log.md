@@ -1576,3 +1576,52 @@ Changes: 0 · Summary: Repair page draft written from its approved brief and rec
 - CHANGE #286 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (21).md | new: Home Mobile Medical - Document Checklist.md · sha 140d5fdecd49 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #287 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (21).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (21).md | result: done · renamed and moved, nothing deleted
 - CHANGE #288 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (21).md | new: Home Mobile Medical - Status.md · sha 447cfd15cdc2 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261014-164325-build-3b84 · STARTED · /build · 2026-10-14T16:43:25-05:00
+Step: build:drafts · batch services · session e7bff2e3-fc09-491a-bd8d-f8a36153a33c
+Gates checked: discovery_signed_off, batch:services:drafts_ready
+- REVIEW SHEET 2026-10-14T16:46 · run 20261014-164325-build-3b84 · services drafts: 0 Ask, 11 decided for you, 11 fixed silently, 3 not raised (duplicate, decided or answered) · clients/home-mobile-medical/build/services/drafts-review.csv
+- FLAG 2026-10-14T16:46 · run 20261014-164325-build-3b84 · F-012 · review.py usage check (§3.4) recommends using 'the strongest excerpt' even when every pack excerpt is off-service (general wheelchairs, lift chairs, rentals — not offered) or a negative review; evidence_pack keyword matching put the same 4 off-topic excerpts on all four service packs. · workaround: Pre-empted the auto usage rows with page+usage+review-evidence findings decided 'leave as written' (drafts-findings.json); review.py dropped its own rows as duplicates.
+### HANDOFF · /build · 2026-10-14 · run 20261014-164325-build-3b84
+**What I did**
+- Ran the one checker pass over the four services drafts side by side (curved, porch, wheelchair, repair): sibling collisions, Paul's constraints, usage check, Stage 4 semantics, SVC-15 FAQ lengths.
+- Wrote findings to `clients/home-mobile-medical/build/services/drafts-findings.json`; `review.py sheet` built `build/services/drafts-review.csv` (+ .md, .json, drafts-fixes.json): 0 Ask, 11 Fix and list, 11 Fix (silent), 3 not raised (the auto usage rows, superseded).
+- `status.py batch home-mobile-medical services --state drafts_written --review-sheet …drafts-review.csv`.
+- Flagged F-012 (usage check pushes off-service/negative review excerpts).
+- No draft changed; nothing applied or approved.
+
+**What was decided, and why**
+- Paul's constraints hold in all four drafts: no ramps; no Beaufort Medical Equipment; manufacturer's warranty only, no guarantee; settled install-time wording word for word (curved, porch, wheelchair); repair page covers any stair lift or lift, any brand; emergency wording general only.
+- Exception: wheelchair uses "no trip charge" three times, not the settled "no service-call or trip charge" → Fix and list (settled phrase in FAQ 1 and closing only).
+- Settled install-time block appears twice on each install page and is the second sentence of the delivery paragraph and of the FAQ on all three → keep it once, in the FAQ, word for word, unsplit (Paul's word-for-word constraint outranks brief row 9's "no shared second sentence").
+- Usage: every pack excerpt is off-service (wheelchair/lift chair/rental) or a 2020 complaint → "leave as written" on curved, porch, wheelchair.
+- Other Fix and list: shared "Maybe…" openings (porch, wheelchair), wheelchair first sentence mirrors curved, porch repeats curved's supervise sentence, wheelchair FAQ 3 names no real difference.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Apply the sheet (`review.py apply … drafts`), apply 11 Fix-and-list + 11 Fix items, re-record every page | Build (next run) | `batch:services:drafts` approval |
+| Lead time and pad/permit (d-lead-time-and-pad-permit) still unknown; drafts leave them out | Client via Paul | nothing |
+| F-012 usage check flag | Paul, /system-review | nothing |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Review sheet | clients/home-mobile-medical/build/services/drafts-review.csv (.md) | written, 0 Ask |
+| Silent fixes | clients/home-mobile-medical/build/services/drafts-fixes.json | to apply |
+| Findings | clients/home-mobile-medical/build/services/drafts-findings.json | input |
+
+**What I could not check**
+- Reading grade per page (not computed); pilot-corrections.md and Brand Guide C1–C3 were not opened (briefs' variant tables used).
+
+**Anything the next agent would otherwise get wrong**
+- Do not split or shorten the settled install-time sentences to satisfy the 40–60-word FAQ first-sentence rule or brief row 9; the safety line and the brands line are approved wording too.
+### END HANDOFF
+## RUN 20261014-164325-build-3b84 · FINISHED · 2026-10-14T16:47:29-05:00
+Changes: 0 · Summary: Services drafts reviewed as one batch: 0 Asks, 11 Fix and list, 11 Fix; sheet built-drafts-review.csv for Paul's acceptance; nothing applied or approved yet.
+- CHANGE #289 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (13).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (13).md | result: done · renamed and moved, nothing deleted
+- CHANGE #290 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-14 (13).md | new: Home Mobile Medical - Handoff Log.md · sha 509ce72585a1 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #291 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (22).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (22).md | result: done · renamed and moved, nothing deleted
+- CHANGE #292 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (22).md | new: Home Mobile Medical - Document Checklist.md · sha 6e017b038dd4 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #293 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (22).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (22).md | result: done · renamed and moved, nothing deleted
+- CHANGE #294 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (22).md | new: Home Mobile Medical - Status.md · sha 10d45a553dcf | result: done · copied (Drive for desktop syncs it)

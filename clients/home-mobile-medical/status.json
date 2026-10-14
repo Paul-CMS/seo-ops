@@ -1903,7 +1903,7 @@
           "svc-wheelchair-lifts",
           "svc-repair-maintenance"
         ],
-        "state": "briefs_written",
+        "state": "drafts_written",
         "briefs": {
           "state": "approved",
           "by": "Paul",
@@ -1926,7 +1926,14 @@
             "clients/home-mobile-medical/build/services/briefs/SB - Porch Lifts - Home Mobile Medical.md",
             "clients/home-mobile-medical/build/services/briefs/SB - Wheelchair Lifts - Home Mobile Medical.md",
             "clients/home-mobile-medical/build/services/briefs/SB - Stair Lift Repair - Home Mobile Medical.md"
-          ]
+          ],
+          "drafts": [
+            "clients/home-mobile-medical/build/services/drafts/svc-curved-stair-lifts.md",
+            "clients/home-mobile-medical/build/services/drafts/svc-porch-lifts.md",
+            "clients/home-mobile-medical/build/services/drafts/svc-wheelchair-lifts.md",
+            "clients/home-mobile-medical/build/services/drafts/svc-repair-maintenance.md"
+          ],
+          "review_sheet": "clients/home-mobile-medical/build/services/drafts-review.csv"
         },
         "review": {
           "briefs": {
@@ -1945,8 +1952,20 @@
               "explicit": 2,
               "file": "clients/home-mobile-medical/build/services/briefs-apply.json"
             }
+          },
+          "drafts": {
+            "sheet": "clients/home-mobile-medical/build/services/drafts-review.csv",
+            "md": "clients/home-mobile-medical/build/services/drafts-review.md",
+            "at": "2026-10-14T16:46:42-05:00",
+            "run": "20261014-164325-build-3b84",
+            "asks": 0,
+            "listed": 11,
+            "fixes": 11,
+            "dropped": 3,
+            "applied": null
           }
-        }
+        },
+        "sem_findings": 0
       },
       {
         "id": "loc-hhi",
@@ -2203,12 +2222,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261014-164054-build-4d84",
+    "run_id": "20261014-164325-build-3b84",
     "command": "build",
-    "finished": "2026-10-14T16:43:11-05:00",
-    "result": "Repair page draft written from its approved brief and recorded (svc-repair-maintenance); repair steps, no trip charge, any brand; legacy 301s noted for the publish handoff. Sibling-collision check on all four drafts is next.",
+    "finished": "2026-10-14T16:47:29-05:00",
+    "result": "Services drafts reviewed as one batch: 0 Asks, 11 Fix and list, 11 Fix; sheet built-drafts-review.csv for Paul's acceptance; nothing applied or approved yet.",
     "changes": 0,
-    "step": "build:draft",
+    "step": "build:drafts",
     "batch": "services"
   },
   "spend": {
@@ -2230,7 +2249,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T16:43:11-05:00",
+  "updated": "2026-10-14T16:47:29-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
@@ -2377,8 +2396,8 @@
     "/services/": "https://homemobilemedical.com/"
   },
   "review_pause": {
-    "run_id": "20261014-164054-build-4d84",
-    "step": "build:draft",
-    "at": "2026-10-14T16:43:11-05:00"
+    "run_id": "20261014-164325-build-3b84",
+    "step": "build:drafts",
+    "at": "2026-10-14T16:47:29-05:00"
   }
 }

@@ -565,3 +565,39 @@ Step: build:drafts · batch: pilot · session: Haiku
 **Anything the next agent would otherwise get wrong**
 - The two legacy repair URLs must get their 301s in the publish handoff even though the draft has no `replaces:` line — add them from decisions-settled.md (`svc-repair-maintenance:legacy-repair-redirects`).
 
+## /build · 2026-10-14 · run 20261014-164325-build-3b84
+
+**What I did**
+- Ran the one checker pass over the four services drafts side by side (curved, porch, wheelchair, repair): sibling collisions, Paul's constraints, usage check, Stage 4 semantics, SVC-15 FAQ lengths.
+- Wrote findings to `clients/home-mobile-medical/build/services/drafts-findings.json`; `review.py sheet` built `build/services/drafts-review.csv` (+ .md, .json, drafts-fixes.json): 0 Ask, 11 Fix and list, 11 Fix (silent), 3 not raised (the auto usage rows, superseded).
+- `status.py batch home-mobile-medical services --state drafts_written --review-sheet …drafts-review.csv`.
+- Flagged F-012 (usage check pushes off-service/negative review excerpts).
+- No draft changed; nothing applied or approved.
+
+**What was decided, and why**
+- Paul's constraints hold in all four drafts: no ramps; no Beaufort Medical Equipment; manufacturer's warranty only, no guarantee; settled install-time wording word for word (curved, porch, wheelchair); repair page covers any stair lift or lift, any brand; emergency wording general only.
+- Exception: wheelchair uses "no trip charge" three times, not the settled "no service-call or trip charge" → Fix and list (settled phrase in FAQ 1 and closing only).
+- Settled install-time block appears twice on each install page and is the second sentence of the delivery paragraph and of the FAQ on all three → keep it once, in the FAQ, word for word, unsplit (Paul's word-for-word constraint outranks brief row 9's "no shared second sentence").
+- Usage: every pack excerpt is off-service (wheelchair/lift chair/rental) or a 2020 complaint → "leave as written" on curved, porch, wheelchair.
+- Other Fix and list: shared "Maybe…" openings (porch, wheelchair), wheelchair first sentence mirrors curved, porch repeats curved's supervise sentence, wheelchair FAQ 3 names no real difference.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Apply the sheet (`review.py apply … drafts`), apply 11 Fix-and-list + 11 Fix items, re-record every page | Build (next run) | `batch:services:drafts` approval |
+| Lead time and pad/permit (d-lead-time-and-pad-permit) still unknown; drafts leave them out | Client via Paul | nothing |
+| F-012 usage check flag | Paul, /system-review | nothing |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Review sheet | clients/home-mobile-medical/build/services/drafts-review.csv (.md) | written, 0 Ask |
+| Silent fixes | clients/home-mobile-medical/build/services/drafts-fixes.json | to apply |
+| Findings | clients/home-mobile-medical/build/services/drafts-findings.json | input |
+
+**What I could not check**
+- Reading grade per page (not computed); pilot-corrections.md and Brand Guide C1–C3 were not opened (briefs' variant tables used).
+
+**Anything the next agent would otherwise get wrong**
+- Do not split or shorten the settled install-time sentences to satisfy the 40–60-word FAQ first-sentence rule or brief row 9; the safety line and the brands line are approved wording too.
+

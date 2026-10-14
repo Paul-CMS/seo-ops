@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (nothing 
 - **Next action:** Paul types `/approve home-mobile-medical batch:pilot:drafts --review "<who reviewed it>"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-14T16:43 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T16:47 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -85,6 +85,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-009** (open, not yet reviewed) 2026-10-14 · build:write: Main chat relayed the same interim status about eight times (subagent hand-backs repeated). — workaround: Relay each agent hand-back once; report only changes in state.
 - **F-010** (open, not yet reviewed) 2026-10-14 · build:write: Main chat could not see the child agents' results (brief-writer reports arrived only as hand-backs to the build agent). — workaround: Have the build agent write each child result to a file and report the file path to the main chat.
 - **F-011** (open, not yet reviewed) 2026-10-14 · build:write: After the batch briefs revise decision was committed, status.py page-stage still refuses the other three briefs with 'batch services briefs are already approved'. Only the curved brief recorded; batch shows briefs_written. — workaround: Stop; do not record the other briefs or start drafts until the revise state is fixed in the system session.
+- **F-012** (open, not yet reviewed) 2026-10-14 · build:drafts: review.py usage check (§3.4) recommends using 'the strongest excerpt' even when every pack excerpt is off-service (general wheelchairs, lift chairs, rentals — not offered) or a negative review; evidence_pack keyword matching put the same 4 off-topic excerpts on all four service packs. — workaround: Pre-empted the auto usage rows with page+usage+review-evidence findings decided 'leave as written' (drafts-findings.json); review.py dropped its own rows as duplicates.
 
 ## Spend so far
 
@@ -94,4 +95,4 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /build 2026-10-14T16:43 — Repair page draft written from its approved brief and recorded (svc-repair-maintenance); repair steps, no trip charge, any brand; legacy 301s noted for the publish handoff. Sibling-collision check on all four drafts is next.
+Last run: /build 2026-10-14T16:47 — Services drafts reviewed as one batch: 0 Asks, 11 Fix and list, 11 Fix; sheet built-drafts-review.csv for Paul's acceptance; nothing applied or approved yet.

@@ -1,0 +1,105 @@
+{
+  "made": "2026-10-14T16:46:42-05:00",
+  "run": "20261014-164325-build-3b84",
+  "fixes": [
+    {
+      "page": "svc-curved-stair-lifts",
+      "rule": "e-wording",
+      "item": "opening accessibility equipment line",
+      "finding": "'That look is where this accessibility equipment work begins.' is a stilted line built to carry the category variant.",
+      "severity": "fix",
+      "category": "wording",
+      "url": "https://homemobilemedical.com/curved-stair-lifts/"
+    },
+    {
+      "page": "svc-curved-stair-lifts",
+      "rule": "e-wording",
+      "item": "faq 4 ownership and crew repeated",
+      "finding": "FAQ 4 says family-owned and locally owned in two back-to-back sentences, and repeats 'Jason and his helper do the work' from the delivery H2.",
+      "severity": "fix",
+      "category": "wording",
+      "url": "https://homemobilemedical.com/curved-stair-lifts/"
+    },
+    {
+      "page": "svc-curved-stair-lifts",
+      "rule": "e-wording",
+      "item": "types h2 lede repeats h3",
+      "finding": "The 'Which Stairs Need a Curved Stair Lift?' lede and its only H3 say the same thing (turns or landing; sourced new and installed).",
+      "severity": "fix",
+      "category": "wording",
+      "url": "https://homemobilemedical.com/curved-stair-lifts/"
+    },
+    {
+      "page": "svc-curved-stair-lifts",
+      "rule": "svc-15",
+      "item": "faq first sentence length",
+      "finding": "FAQ first sentences under the spec's 40-60 words: cost (30), chair lifts for curved stairs (31), near me (21). The install-time FAQ (23) is settled wording and stays as is.",
+      "severity": "fix",
+      "category": "length",
+      "url": "https://homemobilemedical.com/curved-stair-lifts/"
+    },
+    {
+      "page": "svc-porch-lifts",
+      "rule": "svc-15",
+      "item": "faq first sentence length",
+      "finding": "FAQ first sentences under 40 words: what is a porch lift (26), cost (21). Install-time (23) is settled wording and stays.",
+      "severity": "fix",
+      "category": "length",
+      "url": "https://homemobilemedical.com/porch-lifts/"
+    },
+    {
+      "page": "svc-wheelchair-lifts",
+      "rule": "svc-15",
+      "item": "faq first sentence length",
+      "finding": "FAQ first sentences under 40 words: difference (29), warranty (14). Install-time (23) is settled wording and stays.",
+      "severity": "fix",
+      "category": "length",
+      "url": "https://homemobilemedical.com/wheelchair-lifts/"
+    },
+    {
+      "page": "svc-repair-maintenance",
+      "rule": "svc-15",
+      "item": "faq first sentence length",
+      "finding": "FAQ first sentences under 40 words: repair a lift you did not install (23), porch and wheelchair repairs (14), help quickly (24; settled emergency wording stays general).",
+      "severity": "fix",
+      "category": "length",
+      "url": "https://homemobilemedical.com/stair-lift-repair/"
+    },
+    {
+      "page": "svc-porch-lifts",
+      "rule": "internal-link",
+      "item": "repair page mention",
+      "finding": "'Full repair and maintenance details are on Home Mobile Medical's repair page.' names the page with no link placeholder.",
+      "severity": "fix",
+      "category": "internal_link",
+      "url": "https://homemobilemedical.com/porch-lifts/"
+    },
+    {
+      "page": "svc-wheelchair-lifts",
+      "rule": "internal-link",
+      "item": "repair page mention",
+      "finding": "'Home Mobile Medical's repair page covers each step…' names the page with no link placeholder.",
+      "severity": "fix",
+      "category": "internal_link",
+      "url": "https://homemobilemedical.com/wheelchair-lifts/"
+    },
+    {
+      "page": "svc-repair-maintenance",
+      "rule": "e-wording",
+      "item": "service areas lede",
+      "finding": "The service-areas lede ('…in the 24 South Carolina towns listed below. They run from Daufuskie Island … to … Moncks Corner') repeats the porch lede's pattern and end points.",
+      "severity": "fix",
+      "category": "wording",
+      "url": "https://homemobilemedical.com/stair-lift-repair/"
+    },
+    {
+      "page": "svc-porch-lifts",
+      "rule": "e-wording",
+      "item": "meta description",
+      "finding": "Meta description mirrors curved's ('… installation across the Lowcountry, plus repair and maintenance').",
+      "severity": "fix",
+      "category": "wording",
+      "url": "https://homemobilemedical.com/porch-lifts/"
+    }
+  ]
+}
