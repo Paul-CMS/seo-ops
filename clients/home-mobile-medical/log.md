@@ -610,3 +610,6 @@ Approved version: clients/home-mobile-medical/build/Home Mobile Medical - Site P
 - CHANGE #155 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.md | upload | old: previous version archived as Home Mobile Medical - VA Worklist - 2026-10-09 (2).md | new: Home Mobile Medical - VA Worklist.md · sha 1deb557dad9b | result: done · copied (Drive for desktop syncs it)
 - CHANGE #156 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - VA Worklist - 2026-10-09 (2).csv | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.csv | new: _Archive/Home Mobile Medical - VA Worklist - 2026-10-09 (2).csv | result: done · renamed and moved, nothing deleted
 - CHANGE #157 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - VA Worklist.csv | upload | old: previous version archived as Home Mobile Medical - VA Worklist - 2026-10-09 (2).csv | new: Home Mobile Medical - VA Worklist.csv · sha 8cc9063e0a09 | result: done · copied (Drive for desktop syncs it)
+
+## APPROVAL · 2026-10-14T10:00:26-05:00 · page specs (global: location) · approved · by Paul
+Approved version: methodology/specs/location.md (sha 1212fa3e9365)

@@ -1,6 +1,6 @@
 # Home Mobile Medical - Document Checklist
 
-Generated 2026-10-14T07:32 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-14T10:04 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -43,7 +43,7 @@ Generated 2026-10-14T07:32 from status.json — do not edit. `[x]` done · `[-]`
 - [x] WordPress connected (/wp-check passed in the last 30 days)
 - [x] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded)
 - [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — blockers not cleared: H-2026-10-09-03-redirect-01 is issued; H-2026-10-09-03-redirect-02 is issued; H-2026-10-09-03-redirect-03 is issued; H-2026-10-09-04-broken_link-01 is issued; H-2026-10-09-04-broken_link-02 is issued (+9 more)
-- [ ] Page specs approved by Paul once, globally (methodology/specs) and unchanged since — page spec(s) not approved in their current version: location.md — /approve global specs:location
+- [x] Page specs approved by Paul once, globally (methodology/specs) and unchanged since
 
 ## Decisions (Paul)
 

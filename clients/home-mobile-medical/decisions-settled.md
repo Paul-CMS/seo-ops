@@ -7,6 +7,7 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - 2026-10-08 — page specs (global): approved
 - 2026-10-09 — audit_approved: approved
 - 2026-10-14 — site plan: approved
+- 2026-10-14 — page specs (global: location): approved
 
 ## Settled
 
