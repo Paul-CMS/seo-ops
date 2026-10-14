@@ -1,0 +1,65 @@
+{
+  "svc-stair-lifts|e10-com-13|safety-statement-grade": {
+    "step": "drafts",
+    "at": "2026-10-14T13:16:19-05:00",
+    "choice": "a",
+    "action": "A: keep the approved statement word for word and accept grade 11.3 for this one paragraph",
+    "by": "Paul"
+  },
+  "loc-beaufort-sc|f-002-f-003|proposed-plan-values": {
+    "step": "drafts",
+    "at": "2026-10-14T13:16:19-05:00",
+    "choice": "a",
+    "action": "Used the brief's proposed keyword, area/category variants, H1 and the three FAQ topics. Paul confirms or overrides at the drafts approval.",
+    "by": "default"
+  },
+  "loc-beaufort-sc|location-faq|faq1-fallback": {
+    "step": "drafts",
+    "at": "2026-10-14T13:16:19-05:00",
+    "choice": "a",
+    "action": "FAQ 1 uses the brand-level local fallback (photo quote by stair count, free in-home estimate).",
+    "by": "default"
+  },
+  "loc-beaufort-sc|location-faq|faq3-former-company": {
+    "step": "drafts",
+    "at": "2026-10-14T13:16:19-05:00",
+    "choice": "a",
+    "action": "Kept the FAQ: the former company was sold and HMM is not a rebrand of it; 15+ years is Jason's own experience. Paul can drop it at the approval.",
+    "by": "default"
+  },
+  "loc-beaufort-sc|bb-302|title-gbp-category": {
+    "step": "drafts",
+    "at": "2026-10-14T13:16:19-05:00",
+    "choice": "a",
+    "action": "Title follows BB-302 with the GBP primary category.",
+    "by": "default"
+  },
+  "loc-beaufort-sc|loc-29|recent-work-dropped": {
+    "step": "drafts",
+    "at": "2026-10-14T13:16:19-05:00",
+    "choice": "a",
+    "action": "Dropped the Recent work section.",
+    "by": "default"
+  },
+  "svc-stair-lifts|e5|install-time-source": {
+    "step": "drafts",
+    "at": "2026-10-14T13:16:19-05:00",
+    "choice": "a",
+    "action": "Used the Decision 016 wording in the installation step and FAQ 3; the website's 'a few hours' wording is superseded and left out.",
+    "by": "default"
+  },
+  "svc-stair-lifts|f-002-f-003|proposed-plan-values": {
+    "step": "drafts",
+    "at": "2026-10-14T13:16:19-05:00",
+    "choice": "a",
+    "action": "Used the brief's proposed keyword, area/category variants, H1 and FAQ topics. Paul confirms or overrides at the drafts approval.",
+    "by": "default"
+  },
+  "svc-stair-lifts|c8|faq5-definition": {
+    "step": "drafts",
+    "at": "2026-10-14T13:16:19-05:00",
+    "choice": "a",
+    "action": "Kept a definitional answer only, with no price or time comparison.",
+    "by": "default"
+  }
+}

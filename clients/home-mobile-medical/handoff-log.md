@@ -331,3 +331,16 @@ Generated from the safety log (clients/home-mobile-medical/log.md) — do not ed
 **Next**
 - Paul answers the sheet: `/build home-mobile-medical review pilot drafts "<his line>"` → review.py apply → `/approve home-mobile-medical batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto` → pilot-corrections.
 
+## /build · 2026-10-14 · run 20261014-131553-build-b121
+
+- Paul's line: "accept all", with Ask 1 = A.
+- review.py apply → build/pilot/drafts-apply.json: 9 rows recorded (row 1 answered by Paul = a/A; rows 2–9 decided-for-you, accepted by default). Ledger: build/pilot/findings-ledger.json.
+- Ask 1 (svc-stair-lifts safety statement, grade 11.3): A, approved Section D text kept word for word, unchanged.
+- Rows 2–9: already in the drafts as decided; no text change needed.
+- Fix rows (drafts-fixes.json) applied:
+  - loc-beaufort-sc BB-316: cost FAQ reframed as "How Do I Get a Stair Lift Quote for My Beaufort Home?" (photo, free in-home estimate, stair count). The stair-lifts FAQ "How Much Does a Stair Lift Cost?" stays the cost answer. New answer grade 5.5.
+  - loc-beaufort-sc and svc-stair-lifts P11: "## Writer notes" removed from both page files; the notes are kept in handoffs/run-20261014-131553-build-b121.writer-notes.md.
+- Flag F-006: review.py apply crashed on the uppercase recommended value "A" (LETTERS.index). Workaround: the answers were passed as "accept all, 1a".
+- Not done: the drafts were not re-recorded with the page-stage command (the coordinator said not to call it). If the drafts approval is pinned to file versions, the coordinator must re-record both drafts.
+- Open placeholders (Beaufort): [NEED: permit/pad — facts round Q3], [NEED: city map]. Link-wheel rows stay placeholders for ship.
+

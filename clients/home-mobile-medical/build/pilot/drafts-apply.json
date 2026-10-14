@@ -1,0 +1,108 @@
+{
+  "made": "2026-10-14T13:16:19-05:00",
+  "run": "20261014-131553-build-b121",
+  "section": "pilot",
+  "step": "drafts",
+  "answers": "accept all, 1a",
+  "items": [
+    {
+      "id": "1",
+      "page": "svc-stair-lifts",
+      "url": "https://homemobilemedical.com/stair-lifts/",
+      "item": "safety-statement-grade",
+      "severity": "ask",
+      "kind": "2",
+      "choice": "a",
+      "action": "A: keep the approved statement word for word and accept grade 11.3 for this one paragraph",
+      "by": "Paul"
+    },
+    {
+      "id": "2",
+      "page": "loc-beaufort-sc",
+      "url": "https://homemobilemedical.com/beaufort-sc/",
+      "item": "proposed-plan-values",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Used the brief's proposed keyword, area/category variants, H1 and the three FAQ topics. Paul confirms or overrides at the drafts approval.",
+      "by": "default"
+    },
+    {
+      "id": "3",
+      "page": "loc-beaufort-sc",
+      "url": "https://homemobilemedical.com/beaufort-sc/",
+      "item": "faq1-fallback",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "FAQ 1 uses the brand-level local fallback (photo quote by stair count, free in-home estimate).",
+      "by": "default"
+    },
+    {
+      "id": "4",
+      "page": "loc-beaufort-sc",
+      "url": "https://homemobilemedical.com/beaufort-sc/",
+      "item": "faq3-former-company",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Kept the FAQ: the former company was sold and HMM is not a rebrand of it; 15+ years is Jason's own experience. Paul can drop it at the approval.",
+      "by": "default"
+    },
+    {
+      "id": "5",
+      "page": "loc-beaufort-sc",
+      "url": "https://homemobilemedical.com/beaufort-sc/",
+      "item": "title-gbp-category",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Title follows BB-302 with the GBP primary category.",
+      "by": "default"
+    },
+    {
+      "id": "6",
+      "page": "loc-beaufort-sc",
+      "url": "https://homemobilemedical.com/beaufort-sc/",
+      "item": "recent-work-dropped",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Dropped the Recent work section.",
+      "by": "default"
+    },
+    {
+      "id": "7",
+      "page": "svc-stair-lifts",
+      "url": "https://homemobilemedical.com/stair-lifts/",
+      "item": "install-time-source",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Used the Decision 016 wording in the installation step and FAQ 3; the website's 'a few hours' wording is superseded and left out.",
+      "by": "default"
+    },
+    {
+      "id": "8",
+      "page": "svc-stair-lifts",
+      "url": "https://homemobilemedical.com/stair-lifts/",
+      "item": "proposed-plan-values",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Used the brief's proposed keyword, area/category variants, H1 and FAQ topics. Paul confirms or overrides at the drafts approval.",
+      "by": "default"
+    },
+    {
+      "id": "9",
+      "page": "svc-stair-lifts",
+      "url": "https://homemobilemedical.com/stair-lifts/",
+      "item": "faq5-definition",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Kept a definitional answer only, with no price or time comparison.",
+      "by": "default"
+    }
+  ]
+}

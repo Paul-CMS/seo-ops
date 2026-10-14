@@ -913,3 +913,29 @@ Changes: 0 · Summary: Pilot drafts checked in one pass; review sheet has 1 Ask 
 - CHANGE #170 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (2).md | new: Home Mobile Medical - Document Checklist.md · sha 04fca74952b0 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #171 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (2).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (2).md | result: done · renamed and moved, nothing deleted
 - CHANGE #172 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (2).md | new: Home Mobile Medical - Status.md · sha 8a1325ec7460 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261014-131553-build-b121 · STARTED · /build · 2026-10-14T13:15:53-05:00
+Step: build:review · batch pilot · session 282ed557-3309-4abb-a218-45bc5987dda9
+Gates checked: discovery_signed_off
+- REVIEW APPLIED 2026-10-14T13:16 · run 20261014-131553-build-b121 · pilot drafts: 9 row(s) (1 answered by Paul, the rest by default) · clients/home-mobile-medical/build/pilot/drafts-apply.json
+- FLAG 2026-10-14T13:16 · run 20261014-131553-build-b121 · F-006 · review.py apply crashes (ValueError in LETTERS.index) when a row's 'recommended' is an uppercase letter (pilot drafts row 1 had 'A'); defaults are not lowercased before lookup. · workaround: Passed Paul's answer explicitly as '1a' in --answers ('accept all, 1a'), which parse_answers lowercases.
+### HANDOFF · /build · 2026-10-14 · run 20261014-131553-build-b121
+- Paul's line: "accept all", with Ask 1 = A.
+- review.py apply → build/pilot/drafts-apply.json: 9 rows recorded (row 1 answered by Paul = a/A; rows 2–9 decided-for-you, accepted by default). Ledger: build/pilot/findings-ledger.json.
+- Ask 1 (svc-stair-lifts safety statement, grade 11.3): A, approved Section D text kept word for word, unchanged.
+- Rows 2–9: already in the drafts as decided; no text change needed.
+- Fix rows (drafts-fixes.json) applied:
+  - loc-beaufort-sc BB-316: cost FAQ reframed as "How Do I Get a Stair Lift Quote for My Beaufort Home?" (photo, free in-home estimate, stair count). The stair-lifts FAQ "How Much Does a Stair Lift Cost?" stays the cost answer. New answer grade 5.5.
+  - loc-beaufort-sc and svc-stair-lifts P11: "## Writer notes" removed from both page files; the notes are kept in handoffs/run-20261014-131553-build-b121.writer-notes.md.
+- Flag F-006: review.py apply crashed on the uppercase recommended value "A" (LETTERS.index). Workaround: the answers were passed as "accept all, 1a".
+- Not done: the drafts were not re-recorded with the page-stage command (the coordinator said not to call it). If the drafts approval is pinned to file versions, the coordinator must re-record both drafts.
+- Open placeholders (Beaufort): [NEED: permit/pad — facts round Q3], [NEED: city map]. Link-wheel rows stay placeholders for ship.
+### END HANDOFF
+## RUN 20261014-131553-build-b121 · FINISHED · 2026-10-14T13:17:25-05:00
+Changes: 0 · Summary: Pilot drafts review applied: accept all, Ask 1 = A; BB-316 Beaufort FAQ reframed; Writer notes removed
+- CHANGE #173 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (2).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #174 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-14 (2).md | new: Home Mobile Medical - Handoff Log.md · sha 690f154ea3f0 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #175 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (3).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #176 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (3).md | new: Home Mobile Medical - Document Checklist.md · sha d5c1ee0f0411 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #177 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (3).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #178 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (3).md | new: Home Mobile Medical - Status.md · sha 6727c8d044d2 | result: done · copied (Drive for desktop syncs it)

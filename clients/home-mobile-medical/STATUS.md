@@ -1,17 +1,17 @@
 # Home Mobile Medical - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** waiting for Paul's approval — the pilot drafts review sheet has 1 question(s) for you and 8 decided for you (clients/home-mobile-medical/build/pilot/drafts-review.md): reply "accept all", or "accept all except 7b, 12c" — an empty answer takes the recommended option
-- **Waiting on:** Paul — the pilot drafts review sheet has 1 question(s) for you and 8 decided for you (clients/hom; Client (via Paul) — How the service is delivered (steps, methods, equipment) — what should we say? If it depen; Client (via Paul) — Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2)
-- **Next action:** Paul types `/build home-mobile-medical review pilot drafts "accept all"` (or asks for changes first) · model: Haiku chat
+- **What is happening now:** waiting for Paul's approval — the pilot's briefs and drafts are ready for one approval (and, in the same line, later batches' briefs switch to auto, so each later batch stops once, for its drafts): review the drafts with the semantic review table (nothing found). Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): loc-beaufort-sc.md: line 40 [NEED: permit requirement per lift type and who handles pad and permit; line 65 [NEED: city-level Google map of Beaufort, SC embedded here, no H tag —
+- **Waiting on:** Paul — the pilot's briefs and drafts are ready for one approval (and, in the same line, later bat; Client (via Paul) — How the service is delivered (steps, methods, equipment) — what should we say? If it depen; Client (via Paul) — Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2)
+- **Next action:** Paul types `/approve home-mobile-medical batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto --review "<who reviewed it>"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-14T13:08 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T13:17 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the pilot drafts review sheet has 1 question(s) for you and 8 decided for you (clients/home-mobile-medical/build/pilot/drafts-review.md): reply "accept all", or "accept all except 7b, 12c" — an empty answer takes the recommended option | 2026-10-14 | /build home-mobile-medical review pilot drafts "accept all" |
+| Paul | the pilot's briefs and drafts are ready for one approval (and, in the same line, later batches' briefs switch to auto, so each later batch stops once, for its drafts): review the drafts with the semantic review table (nothing found). Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): loc-beaufort-sc.md: line 40 [NEED: permit requirement per lift type and who handles pad and permit; line 65 [NEED: city-level Google map of Beaufort, SC embedded here, no H tag — | 2026-10-14 | /approve home-mobile-medical batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto |
 | Client (via Paul) | How the service is delivered (steps, methods, equipment) — what should we say? If it depends, on what? | 2026-10-14 | fact:svc-repair-maintenance:service_process |
 | Client (via Paul) | Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2) | 2026-10-14 | fact:d:emergency |
 | Client (via Paul) | Order-to-install and install times for curved, porch and wheelchair lifts; who handles pad and permit (facts round 2026-10-14, Q3) | 2026-10-14 | fact:svc-curved-stair-lifts:install_time |
@@ -73,6 +73,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-003** (open, not yet reviewed) 2026-10-14 · build:write: PAA/fan-out routing tables route to the old URLs (/services/stair-lifts/, /service-area/<city>/), so evidence_pack.py tags no question to the new root-slug pages (packs say 'None tagged to this page'). — workaround: Brief-writers read paa-routing.md/fanout-routing.md rows routed to the page's live_url as candidates.
 - **F-004** (open, not yet reviewed) 2026-10-14 · build:write: status.json client.route is null for a full client; build.md says ask Paul when missing. — workaround: Ran the pilot as Route A (system writes): the run brief asks for briefs and drafts, and no Paul-written content exists on disk. Paul to confirm route A.
 - **F-005** (open, not yet reviewed) 2026-10-14 · build:write: Draft writers put a '## Writer notes' section in the page file and publish.py drafts does not strip it, so the notes would reach the WordPress draft. Also: review.py sheet counts Fix rows as 'fixed silently' before review.py apply has run. — workaround: Recorded as Fix rows (formatting) in the pilot drafts findings; remove the Writer notes section when review.py apply runs after Paul's answer, before ship.
+- **F-006** (open, not yet reviewed) 2026-10-14 · build:review: review.py apply crashes (ValueError in LETTERS.index) when a row's 'recommended' is an uppercase letter (pilot drafts row 1 had 'A'); defaults are not lowercased before lookup. — workaround: Passed Paul's answer explicitly as '1a' in --answers ('accept all, 1a'), which parse_answers lowercases.
 
 ## Spend so far
 
@@ -82,4 +83,4 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /build 2026-10-14T13:08 — Pilot drafts checked in one pass; review sheet has 1 Ask (safety statement grade), 8 decided for you, 3 fixes; batch drafts_written.
+Last run: /build 2026-10-14T13:17 — Pilot drafts review applied: accept all, Ask 1 = A; BB-316 Beaufort FAQ reframed; Writer notes removed
