@@ -106,3 +106,4 @@ Generated from status.json and the safety log — do not edit. Record a decision
 
 - 2026-10-12T20:55 20261012-161352-build-02ea — Paul 2026-10-12: abort (option 4) — stalled build:brief run, 0 changes logged; a fresh locations brief run replaces it
 - 2026-10-13T16:27 20261013-160308-build-074c — Finish refused: h1 briefs were approved in run 20261013-140538-build-1832 (F-024). Drafts, review sheet and records are kept.
+- 2026-10-13T20:17 20261013-201518-build-8803 — Paul typed /abort; ship run never drafted anything, to be restarted cleanly
