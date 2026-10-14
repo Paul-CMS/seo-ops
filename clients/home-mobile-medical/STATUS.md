@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (nothing 
 - **Next action:** Paul types `/approve home-mobile-medical batch:pilot:drafts --review "<who reviewed it>"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-14T16:40 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T16:43 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -94,4 +94,4 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /build 2026-10-14T16:40 — Wheelchair lifts draft written from its approved brief and recorded (svc-wheelchair-lifts); four FAQs; no ramps; checks pass. Sibling-collision check waits for the repair draft.
+Last run: /build 2026-10-14T16:43 — Repair page draft written from its approved brief and recorded (svc-repair-maintenance); repair steps, no trip charge, any brand; legacy 301s noted for the publish handoff. Sibling-collision check on all four drafts is next.

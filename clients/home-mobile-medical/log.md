@@ -1534,3 +1534,45 @@ Changes: 0 · Summary: Wheelchair lifts draft written from its approved brief an
 - CHANGE #280 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (20).md | new: Home Mobile Medical - Document Checklist.md · sha 256e7504862c | result: done · copied (Drive for desktop syncs it)
 - CHANGE #281 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (20).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (20).md | result: done · renamed and moved, nothing deleted
 - CHANGE #282 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (20).md | new: Home Mobile Medical - Status.md · sha ec6859bd432f | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261014-164054-build-4d84 · STARTED · /build · 2026-10-14T16:40:55-05:00
+Step: build:draft · batch services · session e7bff2e3-fc09-491a-bd8d-f8a36153a33c
+Gates checked: discovery_signed_off, batch:services:briefs, page_specs_approved
+- DRAFT 2026-10-14T16:42 · run 20261014-164054-build-4d84 · svc-repair-maintenance · clients/home-mobile-medical/build/services/drafts/svc-repair-maintenance.md · agent build-svc-repair-maintenance
+### HANDOFF · /build · 2026-10-14 · run 20261014-164054-build-4d84
+**What I did**
+- Wrote the draft for svc-repair-maintenance (/stair-lift-repair/) from its approved brief and evidence pack, in its own run (CM-043): H1 "Stair Lift and Lift Servicing in the Lowcountry", opening, delivery H2 (the six settled repair steps in order), types H2 (4 H3s), FAQ H2 (5 questions from the brief), service-areas H2 with the link-wheel placeholder row, CTA.
+- Recorded it: `status.py page-stage … --stage draft --agent build-svc-repair-maintenance` → "draft recorded".
+- Self-check: readability.py page grade 4.8, no paragraph over 10 (E10 passes); placeholders.py: none.
+
+**What was decided, and why**
+- Followed Paul's settled decisions: steps first call → visit → diagnosis → quote → parts → fix; no service-call or trip charge; any brand, any stair lift or lift incl. porch and wheelchair lifts (FAQ 4); after-hours in general terms only (no promise, no response time); hours Mon–Fri 9–5; no repair warranty or guarantee; no Beaufort Medical Equipment; no prices.
+- FAQ answers: to keep each paragraph at or under grade 10, the 40–60-word answer runs over two short sentences on FAQs 3–5; sentence one still answers alone (C7). The checker pass may list this against the "first sentence 40–60 words" wording.
+- Safety statement left out (it speaks of installations; brief recommendation). No reviews used (pack has none about repair; brief).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Legacy 301s /hilton-head/stair-lift-repair/ and /bluffton-sc/wheelchair-lift-repair/ → /stair-lift-repair/ (Paul, settled 2026-10-14). Not in page copy and not in the draft's `replaces:` field (the site plan JSON lists none for this page); the publish handoff must pair them | Build coordinator / ship | Nothing until ship |
+| Draft review (one checker pass for the services section) | Build coordinator | batch:services:drafts approval |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Draft | clients/home-mobile-medical/build/services/drafts/svc-repair-maintenance.md | Recorded (draft) |
+| Brief | clients/home-mobile-medical/build/services/briefs/SB - Stair Lift Repair - Home Mobile Medical.md | Approved |
+
+**What I could not check**
+- Sibling cross-checks beyond reading the three install drafts (no shared H2, H3 or FAQ found); the full collision check is the section's checker pass.
+
+**Anything the next agent would otherwise get wrong**
+- The two legacy repair URLs must get their 301s in the publish handoff even though the draft has no `replaces:` line — add them from decisions-settled.md (`svc-repair-maintenance:legacy-repair-redirects`).
+### END HANDOFF
+## RUN 20261014-164054-build-4d84 · FINISHED · 2026-10-14T16:43:11-05:00
+Changes: 0 · Summary: Repair page draft written from its approved brief and recorded (svc-repair-maintenance); repair steps, no trip charge, any brand; legacy 301s noted for the publish handoff. Sibling-collision check on all four drafts is next.
+- CHANGE #283 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (12).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (12).md | result: done · renamed and moved, nothing deleted
+- CHANGE #284 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-14 (12).md | new: Home Mobile Medical - Handoff Log.md · sha 1fc2395b3845 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #285 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (21).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (21).md | result: done · renamed and moved, nothing deleted
+- CHANGE #286 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (21).md | new: Home Mobile Medical - Document Checklist.md · sha 140d5fdecd49 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #287 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (21).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (21).md | result: done · renamed and moved, nothing deleted
+- CHANGE #288 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (21).md | new: Home Mobile Medical - Status.md · sha 447cfd15cdc2 | result: done · copied (Drive for desktop syncs it)
