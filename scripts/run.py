@@ -32,7 +32,7 @@ import sys
 from pathlib import Path
 
 import status as S
-from lib import ROOT, append, client_dir, die, git_commit, now, read_json, redact, ref_missing
+from lib import ROOT, _git, append, client_dir, die, git_commit, now, read_json, redact, ref_missing, require_client_folder
 
 RUN_LINE = re.compile(r"^## RUN (\S+) · (STARTED|FINISHED|ABORTED) · ")
 
@@ -49,6 +49,21 @@ def runs(slug):
 
 def unfinished(slug):
     return [r for r, s in runs(slug).items() if s == "STARTED"]
+
+
+def origin_open_runs(slug):
+    """§00: open runs recorded on origin/main for this client (a run started in another folder and committed there).
+    No remote, or nothing readable = [] (best effort; a lost connection never blocks work)."""
+    if _git("remote", "get-url", "origin").returncode != 0:
+        return []
+    _git("fetch", "-q", "origin", "main")
+    r = _git("show", f"origin/main:clients/{slug}/status.json")
+    if r.returncode != 0:
+        return []
+    try:
+        return sorted(json.loads(r.stdout).get("open_runs") or {})
+    except ValueError:
+        return []
 
 
 def open_run(slug, run_id):
@@ -273,6 +288,8 @@ def main():
                   + f"\n{'':26} produces: {', '.join(v.get('produces', [])) or '—'}")
         return
     d = client_dir(a.slug)
+    if a.cmd in ("start", "abort", "finish", "note", "decision", "change", "fact", "flag"):
+        require_client_folder(a.slug)   # §00: never client work in the main folder
 
     if a.cmd == "unlock":   # P2: Paul only, in his own terminal (the guard blocks Claude from running it)
         import stages
@@ -297,6 +314,13 @@ def main():
             print("\nAsk Paul how to proceed: resume it, verify what it changed (/verify),"
                   " roll it back (/rollback), or abort it (run.py abort, Paul's call).")
             sys.exit(3)
+        elsewhere = ([r for r in origin_open_runs(a.slug) if r not in (S.load(a.slug).get("open_runs") or {})]
+                     if a.cmd == "start" else [])
+        if elsewhere:
+            print(f"REFUSED — {a.slug} already has an open run recorded on origin from another folder: "
+                  + ", ".join(elsewhere) + ". Work continues in the folder that started it "
+                  f"(`python3 scripts/worktree.py open {a.slug}`); if that chat is gone, Paul aborts it there.")
+            sys.exit(4)
         if a.cmd == "check":
             print("no unfinished runs"); return
 

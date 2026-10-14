@@ -259,6 +259,16 @@ def main_root():
     return ROOT
 
 
+def require_client_folder(slug="<slug>"):
+    """§00: client work runs only in the client's own folder (a worktree). The main folder is for system sessions.
+    config client_work_in_main_folder is the test sandbox's switch only; the real config never sets it."""
+    if config().get("client_work_in_main_folder") or ROOT.resolve() != main_root().resolve():
+        return
+    die(f"REFUSED — Client work runs in the client's folder: `python3 scripts/worktree.py open {slug}`. "
+        f"This is the main folder ({ROOT}); it is for system sessions only. Open the client's folder, start a chat "
+        f"there, and run the command there.", 4)
+
+
 def git_branch():
     r = _git("rev-parse", "--abbrev-ref", "HEAD")
     return r.stdout.strip() if r.returncode == 0 else ""

@@ -55,7 +55,7 @@ from pathlib import Path
 import placeholders
 import run as R
 import status as S
-from lib import ROOT, client_dir, config, die, now, sha12
+from lib import ROOT, client_dir, config, die, now, require_client_folder, sha12
 
 PLACEHOLDER = re.compile(r"^\|\s*\[Link wheel: populate ([a-z -]+?) links here\]\s*\|\s*$", re.I)
 TABLE_KEYS = {"service-area": "service_areas", "service areas": "service_areas", "service": "services",
@@ -526,6 +526,8 @@ def main():
     s = sub.add_parser("handoff"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s = sub.add_parser("pending"); s.add_argument("slug"); s.add_argument("--run", required=True)
     a = ap.parse_args()
+    if getattr(a, "slug", None):
+        require_client_folder(a.slug)   # §00: never client work in the main folder
     if a.cmd == "wheel":
         cmd_wheel(a)
     elif a.cmd == "drafts":
