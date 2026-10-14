@@ -1,6 +1,6 @@
 # Evidence pack — Walterboro, SC (location)
 
-Section **loc-charleston** · https://homemobilemedical.com/walterboro-sc/ · built 2026-10-14T10:19 by evidence_pack.py (CM-061).
+Section **loc-charleston** · https://homemobilemedical.com/walterboro-sc/ · built 2026-10-14T14:08 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 

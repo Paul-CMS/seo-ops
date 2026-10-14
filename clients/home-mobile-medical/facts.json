@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-14T10:19:31-05:00",
+  "updated": "2026-10-14T14:07:55-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",

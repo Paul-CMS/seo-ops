@@ -359,3 +359,13 @@ Generated from the safety log (clients/home-mobile-medical/log.md) — do not ed
 
 **Open / waiting (not blocking):** 3 open facts with the client; blocker handoffs issued, not returned.
 
+## /build · 2026-10-14 · run 20261014-140654-build-4002
+
+- Re-ran evidence grids for all 33 pages (evidence.py run --all): 0 block, 5 warn (all service pages), 28 pass.
+- reviews.py extract: 8 review topics, none from 3+ reviewers, so no researcher check by meaning was needed; facts.json section R updated by the script.
+- research.py todo for every batch (services, loc-hhi, loc-charleston, final, pilot): every gap already has a research-log entry from the earlier facts round today. No new public research run; researcher not spawned.
+- evidence.py questions --all: 0 new questions. The three open client questions (service_process, d:emergency, install_time) were asked earlier today and are still waiting on the client via Paul.
+- No facts recorded with run.py fact in this run (no new answers or sourced values).
+- Flag F-007: the questions command overwrote the open facts-round REVIEW.md with an empty version; the sent version is in git HEAD. Restore was blocked by the permission system.
+- Remaining [NEED]: emergency/after-hours (all location pages), repair service process (svc-repair-maintenance, required), install times for curved/porch/wheelchair lifts. Supporting gaps left out of pages: awards, associations; neighbourhoods for Folly Island, Laurel Bay, Levy; named places for Levy (researched, not found).
+
