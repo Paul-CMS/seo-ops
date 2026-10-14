@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — decide what to do with the unfinished run (resume, /verify, /rollback or abort); Jonie — wp setup handoff — 3 of 3 item(s) open; Jonie — seopress settings handoff — 4 of 4 item(s) open
 - **Next action:** `/verify home-mobile-medical` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-14T15:14 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T15:15 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -36,7 +36,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-14: page specs (global: location) — approved
 - 2026-10-14: batch pilot briefs — approved
 - 2026-10-14: batch pilot drafts — approved
-- 2026-10-14: batch services briefs — revise
+- 2026-10-14: batch services briefs — approved
 - Paul 2026-10-09 (Q1): client confirms no leads from any of the 36 retirement URLs (17 FL/MI, 5 discontinued-service, 14 SC legacy incl. /services/straight-stair-lifts/). CM-019 C4 passes; all 36 become 301s.
 - Paul Exception 2026-10-09 (Q8): citation link-destination check skipped; CM-019 C3 accepted on DataforSEO referring-domain evidence for the 36 URLs. Do not re-raise.
 - Paul 2026-10-09 (Q2, revised in rewrite 2): redirect the 36 to the appropriate URLs — FL/MI → /stair-lifts/, power chairs/scooter lifts → the homepage (was /services/), ramps → /porch-lifts/; SC legacy duplicates → their canonical root service/location page. No redirect points at /services/ or /service-area/, so there are no chains.
@@ -84,6 +84,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-008** (open, not yet reviewed) 2026-10-14 · build:write: Build agent started per-page brief agents in the background and stopped before they finished, leaving the run unrecorded (briefs on disk, none recorded, no review, run not finished). — workaround: Resume the write step in a fresh build agent that records the briefs first; do not start new background brief agents without waiting for their results.
 - **F-009** (open, not yet reviewed) 2026-10-14 · build:write: Main chat relayed the same interim status about eight times (subagent hand-backs repeated). — workaround: Relay each agent hand-back once; report only changes in state.
 - **F-010** (open, not yet reviewed) 2026-10-14 · build:write: Main chat could not see the child agents' results (brief-writer reports arrived only as hand-backs to the build agent). — workaround: Have the build agent write each child result to a file and report the file path to the main chat.
+- **F-011** (open, not yet reviewed) 2026-10-14 · build:write: After the batch briefs revise decision was committed, status.py page-stage still refuses the other three briefs with 'batch services briefs are already approved'. Only the curved brief recorded; batch shows briefs_written. — workaround: Stop; do not record the other briefs or start drafts until the revise state is fixed in the system session.
 
 ## Spend so far
 

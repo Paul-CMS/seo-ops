@@ -225,8 +225,8 @@
         "brief": {
           "file": "clients/home-mobile-medical/build/services/briefs/SB - Curved Stair Lifts - Home Mobile Medical.md",
           "run": "20261014-144852-build-6004",
-          "at": "2026-10-14T14:58:49-05:00",
-          "sha": "1c5471d9c401"
+          "at": "2026-10-14T15:14:41-05:00",
+          "sha": "8a034552c71b"
         }
       }
     },
@@ -1862,10 +1862,10 @@
         ],
         "state": "briefs_written",
         "briefs": {
-          "state": "revise",
+          "state": "approved",
           "by": "Paul",
-          "at": "2026-10-14T15:14:31-05:00",
-          "note": "Paul: revise the services briefs with the review answers applied (ramps out, three porch FAQs dropped, redirects recorded)",
+          "at": "2026-10-14T15:15:48-05:00",
+          "note": "Paul: approve now (as recorded)",
           "files": {
             "clients/home-mobile-medical/build/services/briefs/SB - Curved Stair Lifts - Home Mobile Medical.md": "8a034552c71b",
             "clients/home-mobile-medical/build/services/briefs/SB - Porch Lifts - Home Mobile Medical.md": "0ccbff99101d",
@@ -2187,7 +2187,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T15:14:31-05:00",
+  "updated": "2026-10-14T15:15:48-05:00",
   "open_runs": {
     "20261014-144852-build-6004": {
       "step": "build:write",
