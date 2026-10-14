@@ -1279,3 +1279,39 @@ Changes: 2 · Summary: No BME mentions: decision settled; Beaufort FAQ 3 removed
 - CHANGE #227 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (10).md | new: Home Mobile Medical - Document Checklist.md · sha 94bdb6e02a49 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #228 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (10).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (10).md | result: done · renamed and moved, nothing deleted
 - CHANGE #229 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (10).md | new: Home Mobile Medical - Status.md · sha 81a5e9004e98 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261014-144522-build-adbe · STARTED · /build · 2026-10-14T14:45:22-05:00
+Step: build:drafts · batch pilot · session a2e498fb-336b-428f-a097-8546a6c645e0
+Gates checked: discovery_signed_off, batch:pilot:drafts_ready
+Note: Paul's revision: permit section, building-codes sentence and map placeholder removed from loc-beaufort-sc; GBP maps VA; former company only on About page (separate step)
+- CHANGE #230 [draft] https://homemobilemedical.com/beaufort-sc/ | Beaufort draft: permit FAQ section and its NEED line | old:  | new:  | result: removed (Paul: no permits, cannot verify in time) | ref clients/home-mobile-medical/build/pilot/drafts/loc-beaufort-sc.md
+- CHANGE #231 [draft] https://homemobilemedical.com/beaufort-sc/ | Beaufort draft: building-codes sentence in Serving Beaufort | old:  | new:  | result: removed (permit pointer; goes with the permit removal; Paul to confirm) | ref clients/home-mobile-medical/build/pilot/drafts/loc-beaufort-sc.md
+- CHANGE #232 [draft] https://homemobilemedical.com/beaufort-sc/ | Beaufort draft: city Google map NEED line | old:  | new:  | result: removed (Paul: VA handles GBP maps) | ref clients/home-mobile-medical/build/pilot/drafts/loc-beaufort-sc.md
+- DECISION 2026-10-14T14:45 · run 20261014-144522-build-adbe · Paul's answers on the pilot drafts: (1) no permit mentions anywhere; (2) VA handles GBP maps; (3) former-company mention on the About page only, not on location pages; About page is a separate later step; (4) no former-company mention on any other page; (5) SEO title, FAQ topics, H1 and fallback defaults approved as drafted.
+### HANDOFF · /build · 2026-10-14 · run 20261014-144522-build-adbe
+Step: build:drafts · batch: pilot · session: Haiku
+
+## What changed
+- `build/pilot/drafts/loc-beaufort-sc.md`
+  1. Permit FAQ section ("Do I Need a Permit for a Lift in Beaufort?") and its NEED line removed. Paul: no permit mentions; cannot verify in time.
+  2. Sentence in "Serving Beaufort" pointing to the City of Beaufort Building Codes Department (local building rules) removed as a permit pointer. Paul to confirm.
+  3. City-level Google map NEED line removed. Paul: VA handles GBP maps.
+
+## Paul's answers recorded
+- No permit mentions on any page.
+- Former company (Beaufort Medical Equipment): on the About page only, not on location pages. The About-page wording is a separate later step.
+- Defaults in the drafts review (SEO title with GBP category, FAQ topics, H1, FAQ 1 fallback) approved as drafted.
+
+## Open after this run
+- The Beaufort draft's FAQ 3 (former company) is not in the file; the review sheet listed it as kept. Nothing to remove here.
+- Removal of the building-codes sentence needs Paul's confirmation.
+- About-page mention: separate step.
+### END HANDOFF
+## RUN 20261014-144522-build-adbe · FINISHED · 2026-10-14T14:45:34-05:00
+Changes: 3 · Summary: Pilot drafts revised per Paul: Beaufort permit section, building-codes sentence and map placeholder removed; former-company mention on About page only (separate step); defaults approved.
+- CHANGE #233 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (8).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (8).md | result: done · renamed and moved, nothing deleted
+- CHANGE #234 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-14 (8).md | new: Home Mobile Medical - Handoff Log.md · sha 388c88895918 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #235 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (11).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (11).md | result: done · renamed and moved, nothing deleted
+- CHANGE #236 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (11).md | new: Home Mobile Medical - Document Checklist.md · sha a009d2f18536 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #237 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (11).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (11).md | result: done · renamed and moved, nothing deleted
+- CHANGE #238 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (11).md | new: Home Mobile Medical - Status.md · sha cefd56292942 | result: done · copied (Drive for desktop syncs it)

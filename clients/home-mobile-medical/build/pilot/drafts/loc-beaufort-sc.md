@@ -23,8 +23,7 @@ Beaufort sits amid a marshy estuary. Its climate is humid subtropical, with an a
 
 ## Serving Beaufort
 
-In Beaufort, Jason Workens and one helper do the work. Jason personally supervises every installation. Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions. You can book the free estimate at your Beaufort home. Or send a photo of the stairs instead. Hours are Monday–Friday, 9:00 AM–5:00 PM. Saturday and Sunday are closed. Is your home inside Beaufort city limits? Then check local building rules with the [City of Beaufort Building Codes Department](https://cityofbeaufort.org/154/Building-Codes) on Boundary Street.
-
+In Beaufort, Jason Workens and one helper do the work. Jason personally supervises every installation. Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions. You can book the free estimate at your Beaufort home. Or send a photo of the stairs instead. Hours are Monday–Friday, 9:00 AM–5:00 PM. Saturday and Sunday are closed.
 ## Beaufort Stair Lift Questions
 
 ### How Do I Get a Stair Lift Quote for My Beaufort Home?
@@ -32,12 +31,6 @@ In Beaufort, Jason Workens and one helper do the work. Jason personally supervis
 Send Home Mobile Medical a photo of your stairs, or book a free in-home estimate at your Beaufort home. Either way, the quote starts with your own staircase. The team counts the stairs first, because the stair count sets the price. A home visit lets them see the staircase in person before you decide.
 
 Financing is available if you want to spread the cost.
-
-### Do I Need a Permit for a Lift in Beaufort?
-
-It depends on where the home is. Inside Beaufort city limits, permits go through the City of Beaufort Building Codes Department. In unincorporated Beaufort County, such as Lady's Island or Laurel Bay, the county issues them. The city department helps owners through the permitting and construction process and can be reached at 843-525-7070.
-
-[NEED: permit requirement per lift type and who handles pad and permit — facts round Q3]
 
 ## Beaufort Neighborhoods
 
@@ -55,8 +48,6 @@ Beaufort has many neighborhoods. The first five below make up the Beaufort Histo
 - Spanish Point
 - Mossy Oaks
 - Royal Oaks
-
-[NEED: city-level Google map of Beaufort, SC embedded here, no H tag — not the GBP map]
 
 ## Other Cities Home Mobile Medical Serves Near Beaufort
 

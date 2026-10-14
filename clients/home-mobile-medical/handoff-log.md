@@ -423,3 +423,23 @@ Recorded as Unknown in Brand Guide D: row "Order-to-installed lead time; pad and
 - **Open:** `build/pilot-corrections.md` still lists "whether other Beaufort County pages may also name the former company" as open. The settled answer is no, so that line is superseded by `bme-mention`.
 - **Logging error:** a test `run.py change` with placeholder values (kind x, url x) was written to the changes log as entry #222 during this run. The log is append-only, so it cannot be removed here. It needs noting in the next system session.
 
+## /build · 2026-10-14 · run 20261014-144522-build-adbe
+
+Step: build:drafts · batch: pilot · session: Haiku
+
+## What changed
+- `build/pilot/drafts/loc-beaufort-sc.md`
+  1. Permit FAQ section ("Do I Need a Permit for a Lift in Beaufort?") and its NEED line removed. Paul: no permit mentions; cannot verify in time.
+  2. Sentence in "Serving Beaufort" pointing to the City of Beaufort Building Codes Department (local building rules) removed as a permit pointer. Paul to confirm.
+  3. City-level Google map NEED line removed. Paul: VA handles GBP maps.
+
+## Paul's answers recorded
+- No permit mentions on any page.
+- Former company (Beaufort Medical Equipment): on the About page only, not on location pages. The About-page wording is a separate later step.
+- Defaults in the drafts review (SEO title with GBP category, FAQ topics, H1, FAQ 1 fallback) approved as drafted.
+
+## Open after this run
+- The Beaufort draft's FAQ 3 (former company) is not in the file; the review sheet listed it as kept. Nothing to remove here.
+- Removal of the building-codes sentence needs Paul's confirmation.
+- About-page mention: separate step.
+
