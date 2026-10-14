@@ -226,8 +226,9 @@ def place_rows(slug, places):
     if not info["state"]:
         return []
     out = []
-    for pl in places:
-        for layer, f in P.usable(info["state"], pl, info["niche"]):
+    for full in places:
+        pl, stt = P.split_place(full, info["state"])
+        for layer, f in P.usable(stt, pl, info["niche"]):
             tier = "official" if f.get("source_type") in P.OFFICIAL_TYPES else "context"
             out.append({"place": pl, "layer": layer, "id": f["id"], "fact": f["fact"], "applies_to": f["applies_to"],
                         "source_url": f["source_url"], "publisher": f["publisher"], "date": f["date"], "tier": tier})
@@ -365,7 +366,8 @@ def render(st, p):
 # ------------------------------------------------------------------ §8 viability
 def viability(slug, section=None):
     """[(pid, score, of, missing, verdict)] for the location pages of a section (or of every section): neighbourhoods,
-    places and things to do, local conditions, and the three FAQ categories, from each pack (§8)."""
+    named place entities, local conditions, the Serving facts, and the three FAQ categories, from each pack and the place
+    store (§8; CM-062)."""
     st = S.load(slug)
     bs = [S.batch(st, section) or die(f"no section {section}")] if section else S.batches(st)
     out = []
@@ -374,17 +376,19 @@ def viability(slug, section=None):
             continue
         pk = read_json(client_dir(slug) / "build" / sec / "packs" / f"{pid}.json")
         if not pk:
-            out.append((pid, 0, 6, ["no evidence pack yet — evidence.py run <slug> --run <RUN_ID> --all builds every pack"],
+            out.append((pid, 0, 7, ["no evidence pack yet — evidence.py run <slug> --run <RUN_ID> --all builds every pack"],
                         "no pack"))
             continue
         gap = {g["key"] for g in pk["gaps"]}
         qs = pk["questions"]
+        pub = bool(pk["public"]) or bool(pk.get("place"))   # area source list rows or verified place-store facts
         items = {
-            "neighbourhoods": "neighborhoods" not in gap,
-            "places and things to do": not ({"things_to_do", "top_sites"} <= gap),
-            "local conditions": "local_context" not in gap or bool(pk["public"]),
-            "FAQ 1 · local cost or decision": bool(pk["public"]) or any(re.search(r"cost|price|hoa|arb|historic|flood|code", q["q"], re.I) for q in qs),
-            "FAQ 2 · logistics in this area": bool(pk["public"]) or any(re.search(r"permit|how long|fast|storm|season|access", q["q"], re.I) for q in qs),
+            "neighbourhoods": "neighborhoods" not in gap or len([r for r in pk.get("place", []) if r["layer"] == "place"]) >= 3,
+            "named place entities": "place_entities" not in gap or len(pk.get("place", [])) >= 3,
+            "local conditions": "local_context" not in gap or pub,
+            "serving facts (permit office, access, response)": "permit_office" not in gap or pub,
+            "FAQ 1 · local cost or decision": pub or any(re.search(r"cost|price|hoa|arb|historic|flood|code", q["q"], re.I) for q in qs),
+            "FAQ 2 · logistics in this area": pub or any(re.search(r"permit|how long|fast|storm|season|access", q["q"], re.I) for q in qs),
             "FAQ 3 · trust in this area": bool(pk["reviews"]),
         }
         miss = [k for k, ok in items.items() if not ok]

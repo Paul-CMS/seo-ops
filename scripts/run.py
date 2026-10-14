@@ -427,11 +427,13 @@ def main():
                     row = r
             facts.save(a.slug, data["facts"])
         facts.render(a.slug)
+        import settled
+        closed = settled.reconcile(a.slug, a.run_id)   # §7: an open question this fact answers is closed, never asked again
         what = "new" if not old else ", ".join(k for k in ("value", "status", "source", "quote", "count")
                                                 if old.get(k) != row.get(k)) or "unchanged"
         append(d / "log.md", f"- FACT {now()[:16]} · run {a.run_id} · {a.id} ({what}) · {row['status']} · "
                f"{redact(str(row['value']))[:200]} · source {redact(str(row.get('source') or '—'))[:120]} · by {a.who}\n")
-        print(f"fact {a.id}: {what} — {row['status']}")
+        print(f"fact {a.id}: {what} — {row['status']}" + (f" · closed open question(s): {', '.join(k for k, _ in closed)}" if closed else ""))
     elif a.cmd == "flag":   # P3: a client session never changes the workflow — it flags the issue for Paul
         open_run(a.slug, a.run_id)
         import changereq
@@ -491,6 +493,8 @@ def main():
         S.log_conditions(a.slug, st)
         import drive
         import records
+        import settled
+        settled.reconcile(a.slug, a.run_id)   # §7: no question stays open once something answers it
         records.render(a.slug)
         if not a.handoff:
             print("note: no --handoff section given — the Handoff Log has nothing from this run")

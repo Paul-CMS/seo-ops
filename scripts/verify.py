@@ -231,16 +231,31 @@ def main():
 
     lines = [f"# Verify — {a.slug} — run {a.run}", "", "| # | Ref | Kind | URL | Result | Detail |", "|---|---|---|---|---|---|"]
     counts = {"PASS": 0, "FAIL": 0, "CHECK": 0}
+    reopen = {}
     for c in targets:
         res, detail = check(c)
         counts[res] += 1
+        if res == "FAIL" and c.get("channel") == "handoff" and c.get("ref") in done_refs:
+            reopen[c["ref"]] = detail
         lines.append(f"| {c['n']} | {c.get('ref') or ''} | {c['kind']} | {c['url']} | {res} | {detail} |")
         R.log_change(a.slug, a.run, "verify", c["url"], f"change #{c['n']} {c['kind']}", c["old"], c["new"],
                      f"VERIFY {res} — {detail}", ref=c.get("ref"), channel="local")
+    if reopen:   # rewrite 3 §7a: a done row whose done_check fails comes back as open, with the reason
+        import handoff
+        import worklist
+        for hid in sorted({ref.rsplit("-", 1)[0] for ref in reopen}):
+            rows_ = handoff.read_csv(d / "handoffs" / f"{hid}.csv")
+            for r in rows_:
+                if r["ref"] in reopen:
+                    r["status"], r["note"] = "issued", f"reopened by /verify {a.run}: {reopen[r['ref']]}"
+            handoff.write_csv(d / "handoffs" / f"{hid}.csv", rows_)
+        worklist.build(a.slug)
+        lines.append(f"\nReopened as open on the worklist: {', '.join(sorted(reopen))}")
     out = d / "handoffs" / f"verify-{a.run}.md"
     out.write_text("\n".join([lines[0], "", f"PASS {counts['PASS']} · FAIL {counts['FAIL']} · "
                               f"needs a person {counts['CHECK']}", ""] + lines[2:]) + "\n")
-    print(f"PASS {counts['PASS']} · FAIL {counts['FAIL']} · CHECK {counts['CHECK']} → {out.relative_to(d.parent.parent)}")
+    print(f"PASS {counts['PASS']} · FAIL {counts['FAIL']} · CHECK {counts['CHECK']} → {out.relative_to(d.parent.parent)}"
+          + (f" · {len(reopen)} done row(s) reopened" if reopen else ""))
 
 
 if __name__ == "__main__":

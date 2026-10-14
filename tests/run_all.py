@@ -492,7 +492,7 @@ def page_file(pid, version):
               "loc": "| [Link wheel: populate service links here] |\n\n| [Link wheel: populate sibling-city links here] |",
               "hub": "| [Link wheel: populate service links here] |"}.get(pid.split("-")[0], "")
     return (f"---\npage_id: {pid}\nurl: https://test.example/{pid}/\nseo_title: {pid} - Test Co\n"
-            f"meta_description: The approved description for {pid}, naming the area and two services.\n"
+            f"meta_description: {(f'The approved description for {pid}, naming the area and two services. Call Test Co today for a free, no-pressure estimate on roofing in Greene County.').ljust(152, '.')[:158]}\n"
             + ("replaces: https://test.example/old-roofing/\nkeyword: roof repair\n" if pid == "svc-roof-repair" else "")
             + f"---\n# {pid.replace('-', ' ').title()} in Greene County\n\nThe opening answer for {pid} ({version}). "
             f"Call today.\n\n## What does {pid} cost?\n\nCost depends on **size** and pitch.\n\n"
@@ -2353,7 +2353,7 @@ def t_research_before_asking():
     fact only when 3+ different reviewers say it."""
     S = "rb-co"
     gaps = {"svc-roof-repair": {"service_scope", "service_process", "timeframe", "pricing"},
-            "loc-springfield": {"neighborhoods", "local_context", "things_to_do", "city_served"}}
+            "loc-springfield": {"neighborhoods", "local_context", "place_entities", "city_served"}}
     ag = build_ready(S, gaps)
     ag.w("data/reviews/reviews.csv", REVIEWS_CSV)
     ag.w("data/crawl/page-text.csv", PAGE_TEXT_CSV)
@@ -2411,8 +2411,8 @@ def t_research_before_asking():
           "Emergency / after-hours reality" in asked and "searched: facts.json → decisions-settled.md" in pack
           and "key fact:d:emergency" in pack, pack)
     check("P6: a public fact (the city's neighborhoods, local context) is never asked — it goes to the research list",
-          "6-12 real neighborhoods" not in asked and "City-specific conditions" not in asked
-          and "6-12 real neighborhoods" in (ag.c / "build/evidence/research-pilot.md").read_text(), asked)
+          "Up to 12 real neighborhoods" not in asked and "City-specific conditions" not in asked
+          and "Up to 12 real neighborhoods" in (ag.c / "build/evidence/research-pilot.md").read_text(), asked)
     lm = lambda: (ag.c / "log.md").read_text()
     check("decide once: every facts question is asked once, under its key", "- OPEN fact:d:emergency" in lm())
     # a second pack in a new run does not ask it again

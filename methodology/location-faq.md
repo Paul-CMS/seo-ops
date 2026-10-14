@@ -1,8 +1,7 @@
 # Location FAQ recipe (CM-061 part 5; rewrite 3 §7)
 
-Governs every location page from 2026-10-12 (adapted from Bradley's local FAQ prompt). The wording in
-`methodology/specs/location.md` is updated later, with CR-023; where they differ, this file governs. Answer form:
-CM-060 (sentence one answers alone in short plain words; the first answer paragraph is 40–60 words).
+Governs every location page from 2026-10-12 (adapted from Bradley's local FAQ prompt); `methodology/specs/location.md`
+(CM-062) carries the same recipe in its element 9. Answer form: CM-060 (sentence one answers alone in short plain words; the first answer paragraph is 40–60 words).
 
 ## Three FAQs, one per category
 
@@ -15,7 +14,9 @@ CM-060 (sentence one answers alone in short plain words; the first answer paragr
 ## Where the questions come from, in order
 1. **PAA and fan-out questions already in the page's evidence pack** (`build/<section>/packs/<page>.md` → Questions).
    Use these first; no new lookup is needed when the pack has them.
-2. Local conditions from the area source lists (`methodology/sources/`).
+2. **Angle 8 of the place research** — locally specific questions from official FAQs, news and community sources
+   (`methodology/places/<state>/<place>/<niche>.json` → `questions`), then the local conditions in the area source
+   lists (`methodology/sources/`).
 3. Review language for that place (the pack's Reviews → `place:` topic).
 
 - A generic question is reframed with the place or a local term — "What is the 25% rule for roofing?" becomes "Does the
@@ -27,13 +28,14 @@ CM-060 (sentence one answers alone in short plain words; the first answer paragr
   (`dfs.py`, estimate first; over $2 → ask Paul).
 
 ## Minimums are targets (§8)
-The minimums in `location.md` (neighbourhoods, things to do, top sites …) are **targets**. An optional section that
+The minimums in `location.md` (neighbourhoods, named place entities, the Serving facts …) are **targets**. An optional section that
 cannot be sourced — its public facts logged `not_found` at the minimum (`research.py log`) — is shortened or dropped
 as "Fix and list". **No page is held for an optional section**: a researched public gap never blocks the evidence gate.
 
 ## Viability check — before the site plan reaches Paul
 After the site plan is registered (`status.py plan`), the evidence gate builds every page's pack (`evidence.py run
 <slug> --run <RUN_ID> --all`); then `python3 scripts/evidence_pack.py viability <slug> --all` scores each planned
-location from its pack: neighbourhoods, places and things to do, local conditions, and the three FAQ categories. A place
+location from its pack and the place store: neighbourhoods, named place entities, local conditions, the Serving facts
+(permit office, access, response), and the three FAQ categories. A place
 where most cannot be filled arrives in the site plan as a **merge proposal** into the nearest planned city page (a 301
 if a URL exists) — an Ask (kind 1, a page decision) with the merge as the recommended option.

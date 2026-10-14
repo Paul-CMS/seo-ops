@@ -48,6 +48,9 @@ def t_places(h):
     h.check("§5.2: places.py prompt fills the template from the Brand Guide and the site plan, and prints at most 10 lines",
             code == 0 and "{" not in pt and "Springfield, SC" in pt and "LOCAL research" in pt and "Wikidata ID" in pt
             and len(out.splitlines()) <= 10 and "Gemini Deep Research" in out, (out, pt[:300]))
+    code, out = h.sh(f'python3 scripts/places.py prompt {S_} "Springfield, SC"')
+    h.check("§5.2: a place written with its state in the site plan (\"Beaufort, SC\") is read as place + state",
+            code == 0 and "prompt for Springfield, SC" in out and pf.exists() and "Springfield, SC, SC" not in pf.read_text(), out)
     code, out = h.sh(f"python3 scripts/places.py prompt {S_} Springfield --stdout")
     h.check("§5.3: --stdout prints the whole prompt, angles 1 to 8 and the output format",
             "8. Questions people in Springfield ask" in out and "Output format (required, used for import)" in out, out[-300:])

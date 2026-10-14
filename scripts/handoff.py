@@ -261,6 +261,8 @@ def ingest_one(a, d, hid, back, whole=True):
             problems.append(f"invented ref {ref!r} — not in the handoff"); continue
         seen.add(ref)
         stt = (r.get("status") or "").strip().lower()
+        if stt in ("", "open", "issued", "superseded"):   # untouched (or replaced) rows are not a problem
+            continue
         if stt not in ("done", "blocked", "deviated"):
             problems.append(f"{ref}: invalid status {stt!r} — treated as not done"); continue
         if stt in ("blocked", "deviated") and not r.get("note"):

@@ -478,6 +478,13 @@ def cmd_handoff(a):
     S.save(a.slug, st)
     print(f"{hid}: one living publish handoff for {sum(len(b['pages']) for b in todo)} page(s) in "
           f"{len(todo)} batch(es) → Jonie publishes them together")
+    import subprocess   # rewrite 3 §7a: the validator runs before any handover and refuses it on any error
+    r = subprocess.run([sys.executable, str(ROOT / "scripts" / "worklist.py"), "check", a.slug], capture_output=True, text=True)
+    print(r.stdout.strip())
+    if r.returncode != 0:
+        print("NOT HANDED OVER: fix the errors (worklist.py supersede for a stale row; the site plan or the draft for the "
+              "rest), then run `python3 scripts/worklist.py check " + a.slug + "`. The worklist is not copied to Drive until it passes.")
+        sys.exit(4)
 
 
 def cmd_pending(a):

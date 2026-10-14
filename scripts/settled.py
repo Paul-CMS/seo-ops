@@ -25,6 +25,7 @@ process defect (a decision asked at the wrong time — fix the order, not the de
 
     settled.py show <slug>          the register as the agents see it
     settled.py filter <slug> <questions.json>   drop every question already answered (P4) — run before Paul sees a set
+    settled.py reconcile <slug>     close every open question a settled decision or a Known fact already answers
 """
 import re
 import sys
@@ -69,12 +70,35 @@ def words(key):
     return [w for w in re.split(r"[_.:\-]+", key.lower()) if w and w not in STOP]
 
 
+def wordset(text):
+    return {w for w in re.split(r"[^a-z0-9]+", (text or "").lower()) if w and w not in STOP}
+
+
+def fuzzy(wa, wb):
+    """Two word sets name one thing: at least two shared words covering two thirds of the shorter, or one word each, equal."""
+    shared = wa & wb
+    if not shared:
+        return False
+    small = min(len(wa), len(wb))
+    return (len(shared) >= 2 and len(shared) / small >= 0.67) or (small == 1 and wa == wb)
+
+
+def name_words(key):
+    """The words a key names: a facts-interview key (fact:<d|page>:<fact>) is named by its last part only."""
+    return wordset(key.split(":")[-1] if key.startswith("fact:") else key)
+
+
 def related(a, b):
-    """Two keys that name the same decision: equal, one starts with the other, or most words shared."""
+    """Two keys that name the same decision: equal, one starts with the other, or most words shared. Two facts-interview
+    keys name one fact exactly (evidence.py) and are only related when equal; a facts-interview key and any other key
+    (a settled decision, a question asked under another name) are compared by the fact's name (rewrite 3 §7: W16)."""
     if a == b:
         return True
-    if a.startswith("fact:") or b.startswith("fact:"):   # facts-interview keys name one fact exactly (evidence.py)
+    fa, fb = a.startswith("fact:"), b.startswith("fact:")
+    if fa and fb:
         return False
+    if fa or fb:
+        return fuzzy(name_words(a), name_words(b))
     if a.startswith(b + "_") or b.startswith(a + "_"):
         return True
     wa, wb = set(words(a)), set(words(b))
@@ -172,6 +196,40 @@ def defects(slug):
 
 
 KNOWN_FACT = ("client_confirmed", "paul_approved", "internally_verified")
+ON_PURPOSE = re.compile(r"still open on purpose: (.+?) — ")
+
+
+def known_fact_for(fx_rows, key):
+    """The Known fact (facts.json row) that is the answer to this key, by the fact's name — or None."""
+    kw = name_words(key)
+    for f in fx_rows:
+        if f.get("status") in KNOWN_FACT and fuzzy(kw, wordset(f["id"]) | wordset(f.get("label"))):
+            return f
+    return None
+
+
+def reconcile(slug, run_id="reconcile"):
+    """Rewrite 3 §7: a question is open only while nothing answers it. Close every open question that a settled or
+    answered decision, or a Known fact in facts.json, already answers — whatever key the answer was recorded under
+    (Apex: W16 stayed 'waiting' after Paul confirmed it as fact d-services-subcontracted-out; synthetic_roofing_offered
+    stayed open after Paul settled synthetic_roofing). Questions left open on purpose are kept. Returns [(key, by)]."""
+    import facts
+    ents = entries(slug)
+    kept = {k.strip() for m in ON_PURPOSE.finditer(_log(slug)) for k in m.group(1).split(",")}
+    rows = facts.load(slug)["facts"]
+    closed = []
+    for k, e in ents.items():
+        if e.get("state") != "open" or k in kept:
+            continue
+        by = next((s for s, se in ents.items() if s != k and se.get("state") in ("settled", "answered") and related(s, k)), None)
+        if not by:
+            f = known_fact_for(rows, k)
+            by = f"fact {f['id']}" if f else None
+        if by:
+            append(client_dir(slug) / "log.md", f"- CLOSED {k} · {now()} · run {run_id} · by {by} · already answered by "
+                   f"'{by}' — closed so it is not asked again\n")
+            closed.append((k, by))
+    return closed
 
 
 def _norm(t):
@@ -193,7 +251,7 @@ def filter_questions(slug, questions):
                     done_texts[_norm(t)] = (k, (e.get("at") or e.get("answered_at") or e.get("asked_at") or "")[:10])
     kept, dropped = [], []
     for q in questions:
-        ids = [q.get(x) for x in ("fact_id", "id", "key") if q.get(x)]
+        ids = [q.get(x) for x in ("fact_id", "id", "key") if q.get(x)] + list(q.get("keys") or [])
         why = None
         for i in ids:
             f = fx.get(i)
@@ -204,6 +262,13 @@ def filter_questions(slug, questions):
             if e and e.get("state") in ("settled", "answered"):
                 why = f"{i} ({(e.get('at') or e.get('answered_at') or '')[5:10]})"
                 break
+        if not why:   # answered under another name: a Known fact or a settled decision about the same thing
+            for i in ids:
+                f = known_fact_for(list(fx.values()), i)
+                s = next((k for k, e in ents.items() if e.get("state") in ("settled", "answered") and related(k, i)), None)
+                if f or s:
+                    why = f"{f['id'] if f else s}"
+                    break
         if not why:
             hit = done_texts.get(_norm(q.get("text")))
             if hit:
@@ -217,6 +282,10 @@ def main():
     if len(sys.argv) == 3 and sys.argv[1] == "show":
         import records
         print(records.settled_register(sys.argv[2]), end="")
+    elif len(sys.argv) == 3 and sys.argv[1] == "reconcile":
+        done = reconcile(sys.argv[2])
+        print(f"{len(done)} open question(s) closed: " + ", ".join(f"{k} (by {b})" for k, b in done) if done
+              else "no open question is already answered")
     elif len(sys.argv) == 4 and sys.argv[1] == "filter":   # settled.py filter <slug> <questions.json> (agents' sets)
         import json
         qs = json.loads(open(sys.argv[3]).read())

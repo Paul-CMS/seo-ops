@@ -23,7 +23,7 @@ import sys
 
 import status as S
 import steps
-from lib import client_dir, now
+from lib import ROOT, client_dir, now
 
 HANDOFF = re.compile(r"^### HANDOFF · (.+?)\n(.*?)^### END HANDOFF", re.M | re.S)
 
@@ -84,6 +84,13 @@ def checklist(st):
             detail = (h or {}).get("reason") or ", ".join((h or {}).get("outputs") or [])
             out.append(f"| {box} | {r['id']} {r['step'][:70]} | {(h or {}).get('outcome', '—')} | {detail} |")
         out.append("")
+    if st["client"]["type"] != "blog-only":   # CR-024: the homepage's 90-day Search Console export is a standard intake document
+        gsc = sorted((ROOT / "clients" / st["client"]["slug"] / "inputs").glob("*GSC*queries-homepage-90d*"))
+        out += ["## Intake documents", "",
+                (f"- [x] Search Console homepage queries, last 90 days — {gsc[-1].name}" if gsc else
+                 "- [ ] Search Console homepage queries, last 90 days — ask for it: Search Console → Performance → Queries, "
+                 "filter Page = the homepage, last 90 days, export; name it '<Client> - GSC - queries-homepage-90d - <date>.csv' and "
+                 "put it in inputs/ (scripts/h1lock.py --gsc reads it; without it CM-059 condition (c) cannot be checked)"), ""]
     out += ["## Conditions", ""]
     for c in S.GATES["conditions"]:
         if st["client"]["type"] == "blog-only" and c != "client_setup":

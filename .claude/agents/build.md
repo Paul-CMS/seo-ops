@@ -66,7 +66,7 @@ records why); then batches of about 5 — **service pages by service cluster**, 
 hub with its cities)**; homepage and about last.
 **Viability check (CM-061 §8), before the plan reaches Paul:** register the plan, then `evidence.py run <slug> --run
 <RUN_ID> --all` (every page's grid and evidence pack) and `python3 scripts/evidence_pack.py viability <slug> --all`.
-A location where most of neighbourhoods, places and things to do, local conditions and the three FAQ categories
+A location where most of neighbourhoods, named place entities, local conditions, the Serving facts and the three FAQ categories
 (`methodology/location-faq.md`) cannot be filled arrives in the plan as a **merge proposal** into the nearest planned
 city page (a 301 if a URL exists) — an Ask (kind 1) with the merge recommended. The location minimums are targets: no
 page is held for an optional section. Write `<Client> - Site Plan - REVIEW.md` in

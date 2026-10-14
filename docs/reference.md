@@ -86,6 +86,15 @@ step". Credentials: never ask in chat — show `python3 scripts/wp.py env-lines 
 build/ finish/ blog/ handoffs/ interviews/` · `data/` (summaries agents read) · `inputs/` (raw, git-ignored).
 `status.json → client_view` is the only client-facing part, generated from `methodology/client-phrases.json`.
 
+## VA Worklist (`scripts/worklist.py`; rewrite 3 §7a)
+One worklist per client; every row has `id · section · task · where · how · values · depends_on · done_check · owner ·
+source · status`. **`worklist.py check <slug>` runs before any handover** (`publish.py handoff` runs it and refuses on an
+error; the Drive copy waits for a passing check): publish rows match a real draft and the approved URL, no page missing
+or twice; redirects resolve, target a planned page with a draft, no chains, loops or duplicates, and depend on their
+target's publish row; open-item notices and rows match; a stale row is marked `worklist.py supersede`, never left open.
+`/verify` reopens a done row whose `done_check` fails. `worklist_title_max_chars` and `worklist_meta_chars` are in
+`config.json`.
+
 ## Talking to Paul
 Plain language: what was done, what waits on whom, the next command — start from `records.py top <slug>`; never
 re-explain history. When refusing, say which gate is missing and what it would unlock. Never claim a check passed if

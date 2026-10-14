@@ -6,6 +6,11 @@
   "story_cadence_days": 30,
   "_overdue_ask_about": "CM-061: an Ask row in a review sheet unanswered this many working days is overdue — kinds 1, 3 and 4 ship with the recommended option (open-item notice + worklist row); kind 2 (legal or money) is left out of the page until answered (scripts/review.py overdue).",
   "overdue_ask_working_days": 3,
+  "_worklist_about": "Rewrite 3 §7a: the worklist validator (scripts/worklist.py check). Title length ceiling and the meta description range in characters; Paul tunes them here.",
+  "worklist_title_max_chars": 70,
+  "worklist_meta_chars": [150, 160],
+  "location_similarity_threshold": 0.7,
+  "_similarity_about": "Rewrite 3 §4 (CM-062): scripts/similarity.py flags a location-page sentence at or above this word-overlap with a sentence on another location page once the city names are masked.",
   "h1_lock_lift": {
     "rank_top_n": 10,
     "few_clicks_90d": 10,

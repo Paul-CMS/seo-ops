@@ -209,6 +209,9 @@ def build_sheet(slug, section, step, findings, run_id):
     usage_lines = []
     usage_lines, extra = usage_findings(slug, section, st, "draft" if step == "drafts" else "brief")   # §3.4
     findings = list(findings) + extra
+    if step == "drafts" and any((st["pages"].get(x) or {}).get("type") == "location" for x in b["pages"]):
+        import similarity   # CM-062: the cross-page swap test, by script, once per section
+        findings += similarity.findings(slug, section, st)
     if step == "drafts":
         prev = read_json(paths(slug, section, "briefs")["json"]) or {}   # a brief Ask still open is carried, once
         if prev and not (b.get("review") or {}).get("briefs", {}).get("applied"):

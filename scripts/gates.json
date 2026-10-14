@@ -447,6 +447,7 @@
         "python3 scripts/rulings.py --index, then the IDs the step needs (never rulings.md whole, P12)",
         "clients/<slug>/brand-guide.md",
         "clients/<slug>/decisions-settled.md",
+        "clients/<slug>/inputs/*GSC*queries-homepage-90d*.csv (the homepage's 90-day Search Console export, CR-024: h1lock.py --gsc)",
         "clients/<slug>/data/crawl/crawl-summary.csv + page-text.csv (never the raw crawl tables)",
         "clients/<slug>/data/reviews/reviews-summary.md + customer-language.md",
         "clients/<slug>/data/backlinks/backlinks-per-url.csv",

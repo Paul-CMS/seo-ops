@@ -93,7 +93,7 @@ signs you need roof repair,roof repair Springfield,1,,0.00,,0.00
 
 
 def packs_client(h, slug, gaps=None):
-    ag = h.build_ready(slug, gaps or {"loc-springfield": {"neighborhoods", "things_to_do"},
+    ag = h.build_ready(slug, gaps or {"loc-springfield": {"neighborhoods", "place_entities"},
                                       "svc-roof-repair": {"service_scope"}})
     ag.w("data/reviews/reviews.csv", h.REVIEWS_CSV)
     ag.w("data/paa/paa-questions.csv", PAA_CSV)
@@ -130,7 +130,7 @@ def t_packs(h):
     h.check("§3.2: a location pack takes the questions seen for its place",
             "Do I need a permit to replace a roof in Springfield?" in loc, loc.split("## Questions")[1][:400])
     h.check("§3.2: the gaps are the evidence items with no excerpt yet, with who looks for each",
-            "## Gaps" in loc and "6-12 real neighborhoods" in loc and "researcher (public fact — never asked)" in loc,
+            "## Gaps" in loc and "Up to 12 real neighborhoods" in loc and "researcher (public fact — never asked)" in loc,
             loc.split("## Gaps")[1][:600])
     js = json.loads((h.SB / pk["json"]).read_text())
     h.check("§3.2: the pack's JSON holds its excerpts for the usage check", any(e["kind"] == "review" for e in js["excerpts"]))
@@ -165,7 +165,7 @@ CLIENT_SOURCES = ("facts.json || decisions-settled.md || the evidence pack || th
 def t_research(h):
     """§4: research before "not found" — the log, its minimum, and the scripts that refuse what falls short."""
     S_ = "r3-research-co"
-    ag, code, out = packs_client(h, S_, {"loc-springfield": {"neighborhoods", "things_to_do"},
+    ag, code, out = packs_client(h, S_, {"loc-springfield": {"neighborhoods", "place_entities"},
                                          "svc-roof-repair": {"pricing"}})
     h.new_session()
     rid = ag.start("build", "facts")
@@ -189,12 +189,12 @@ def t_research(h):
     # evidence.py refuses a facts file that says "not found" without a log entry
     pf = h.SB / f"clients/{S_}/build/evidence/loc-springfield.facts.json"
     d = json.loads(pf.read_text())
-    d["facts"]["things_to_do"] = {"value": "", "status": "Unknown", "source": "not found (researcher)"}
+    d["facts"]["place_entities"] = {"value": "", "status": "Unknown", "source": "not found (researcher)"}
     pf.write_text(json.dumps(d))
     code, out = h.sh(f"python3 scripts/evidence.py run {S_} --run {rid} --batch pilot")
     h.check("§4.2: evidence.py refuses a page fact recorded 'not found' without a valid research-log entry",
-            code == 4 and "things_to_do" in out and "research-log" in out, out)
-    log("--gap fact:loc-springfield:things_to_do --kind public --page loc-springfield --result not_found",
+            code == 4 and "place_entities" in out and "research-log" in out, out)
+    log("--gap fact:loc-springfield:place_entities --kind public --page loc-springfield --result not_found",
         '--queries "things to do springfield || Town of Springfield parks || springfield attractions"',
         '--sources "methodology/places/ || methodology/sources/sc-lowcountry.md || Wikidata: Springfield"')
     code, out = h.sh(f"python3 scripts/evidence.py run {S_} --run {rid} --batch pilot")
@@ -456,7 +456,7 @@ def t_location_faq_viability(h):
     reads = " ".join(json.loads(_read(h, "scripts/gates.json"))["steps"]["build:write"]["reads"])
     h.check("§7: brief and draft writers read the FAQ recipe", "methodology/location-faq.md" in reads)
     S_ = "r3-viab-co"
-    ag, code, out = packs_client(h, S_, {"loc-springfield": {"neighborhoods", "local_context", "things_to_do", "top_sites"}})
+    ag, code, out = packs_client(h, S_, {"loc-springfield": {"neighborhoods", "local_context", "place_entities"}})
     st = h.status(S_)
     h.check("§8 setup: two required public gaps block the location page", st["pages"]["loc-springfield"]["evidence"]["result"] == "block",
             st["pages"]["loc-springfield"]["evidence"])
@@ -476,7 +476,7 @@ def t_location_faq_viability(h):
             "shorten or drop the element (Fix and list)" in pack, pack.split("## Gaps")[-1][:500])
     code, out = h.sh(f"python3 scripts/evidence_pack.py viability {S_} --all")
     h.check("§8: the viability check scores each location from its pack and proposes a merge for an unsourceable one",
-            code == 0 and "loc-springfield" in out and "/6" in out and "MERGE PROPOSAL" in out and "Merge proposals" in out, out)
+            code == 0 and "loc-springfield" in out and "/7" in out and "MERGE PROPOSAL" in out and "Merge proposals" in out, out)
     ag.fin(rid, "viability")
 
 

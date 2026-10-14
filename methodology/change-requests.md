@@ -219,6 +219,7 @@ Raised while building CR-002 (homepage.md left unchanged). Left OPEN for a later
 Raised in a system session by Paul.
 What happens now: no client has a Search Console export in inputs/, so CM-059 condition (c) — few clicks for the homepage's main keyword over 90 days — cannot be checked (Home Mobile Medical Q4: CANNOT TELL YET).
 What is proposed: at intake, every client's document checklist includes a Search Console Performance → Queries export, filtered to the homepage, last 90 days (named '<Client> - GSC - queries-homepage-90d - <date>.csv', read by scripts/h1lock.py --gsc).
+Built in rewrite 3 §7 (it was part of Paul's handoff): the Document Checklist has an "Intake documents" row for it, the data manifest lists it (read by discovery:audit), and discovery:audit's read list names it. Awaiting Paul's accept, then DONE.
 
 ---
 

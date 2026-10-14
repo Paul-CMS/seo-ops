@@ -712,6 +712,32 @@ Decided by Paul. Every term is defined once, in `methodology/definitions.md`.
 6. **A pilot runs only when it is worth it** — a client's first section, a new industry, or the first section after a
    spec or ruling change that affects writing (`gates.json` → `modes` → `pilot`).
 
+## CM-062 · Location page structure: place entities woven in, a Serving section, no Things to Do or Top Sites
+**ID** CM-062 · **Status** APPROVED · **Date** 2026-10-14 · **Reason** Things to Do and Top Sites were generic lists that could not be sourced for most small places, held pages, and repeated across cities; the same local evidence is stronger woven into the text and the schema, and "how the client works here" had no home. · **Source** Paul, 2026-10-14 (rewrite 3 §0 answers 1 and 2, recommended options) · **Supersedes** the BB-315 element order and its Things to Do and Top Sites sections for new location pages (BB-315 remains the rule for everything else, CM-023 for H2 handling); `methodology/specs/location.md` carries the new order once Paul types `/approve global specs:location`
+
+Decided by Paul.
+1. **No Things to Do and no Top Sites sections.** The place entities stay: at least 3–4 named, verifiable places per
+   page are woven into the local-context text, and go into the schema as `about` entries (`@type Thing`, `@id` the
+   Wikidata URI, `sameAs` Wikipedia, Wikidata and grokipedia — BB-606, which allows `about` on location pages). They are
+   not put in `mentions`: on a location page `mentions` is the service-catalog ItemList in Bradley's v1.1 node set.
+2. **"Recent work in [City]"** is an optional section built from a review that names the city: a 3–4 sentence story
+   at its usage tier (an attributed customer example, or "Customers mention…" at 3+ mentions), no reviewer name; dropped
+   silently when no such review exists.
+3. **New element order** for location pages: URL, title, H1 → opening → services table → Local context (up to two short
+   paragraphs, 3–4 named place entities) → Serving [City] (how the client works here; one informational outbound
+   link to the official town or county page) → FAQ (three, one per category) → Neighbourhoods (up to 12; fewer than 3:
+   dropped and named in local context) → Recent work (optional) → city map → sibling cities → CTA (name, phone, hours
+   matching GBP exactly; address only on the GBP landing page).
+4. **Ownership, no overlap within a page:** rules as questions belong in the FAQ; Serving says only how the client
+   handles them; Local context never describes the client; the opening never covers conditions or logistics.
+5. **No overlap between pages:** a swap test per paragraph (swap the city for a neighbouring one: still true → rewrite it,
+   a Fix) and a script check across all location pages after drafting (`scripts/similarity.py`, run by `review.py`),
+   whose too-similar sentences are rewritten as a Fix.
+6. **No static star rating or review count** on location pages, and no rating schema (CM-027).
+7. **Apex** keeps the structure its location pages were drafted in (Paul, 2026-10-14); the earlier spec is kept at
+   `methodology/specs/legacy/location-2026-10-08.md` for any Apex session. The new structure starts with Home Mobile
+   Medical.
+
 ---
 
 # C. Rule Register

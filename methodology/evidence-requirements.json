@@ -103,7 +103,7 @@
       },
       {
         "key": "neighborhoods",
-        "label": "6-12 real neighborhoods",
+        "label": "Up to 12 real neighborhoods (fewer than 3: the section is dropped and they are named in local context)",
         "need": "required",
         "from": "page:neighborhoods"
       },
@@ -114,16 +114,16 @@
         "from": "D:Free estimate"
       },
       {
-        "key": "things_to_do",
-        "label": "Things to Do (real, verifiable)",
+        "key": "place_entities",
+        "label": "3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections)",
         "need": "supporting",
-        "from": "page:things_to_do"
+        "from": "page:place_entities"
       },
       {
-        "key": "top_sites",
-        "label": "Top Sites (real, verifiable)",
+        "key": "permit_office",
+        "label": "Which office issues permits here, with its official page (for the Serving section)",
         "need": "supporting",
-        "from": "page:top_sites"
+        "from": "page:permit_office"
       },
       {
         "key": "response_time",
@@ -404,8 +404,8 @@
   "review_min_independent": 3,
   "public_facts": [
     "page:local_context",
-    "page:things_to_do",
-    "page:top_sites",
+    "page:place_entities",
+    "page:permit_office",
     "page:neighborhoods",
     "page:county_cities"
   ],

@@ -6,7 +6,7 @@
 Visitor-facing copy targets grade 7–8 (Flesch-Kincaid). Counted: the meta description and every prose
 paragraph, FAQ answers included. Not counted: the header block's seo_title (excluded by CM-047), headings
 (too short for a formula; the H1 restate test COM-11 covers the H1), tables, short list items (names:
-neighborhoods, Things to Do, Top Sites), link-wheel placeholders, [NEED: …] markers, and every term in
+neighborhoods, place entities), link-wheel placeholders, [NEED: …] markers, and every term in
 --exclude-terms (the category and area entity terms, service names, named sources such as "Environmental
 Protection Agency") — so the check never pushes a writer to drop an entity or a CM-040 source.
 

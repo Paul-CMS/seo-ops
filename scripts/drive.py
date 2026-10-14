@@ -178,7 +178,12 @@ def mirror(slug, run_id, closed_ok=False):
         pending(slug, run_id, closed_ok)
         return {"pending": 1}
     out = {"copied": 0, "unchanged": 0}
+    import worklist
+    blocked = S.load(slug).get("publish_handoff") and not worklist.check_passed(slug)   # §7a: no unchecked handover
     for _, local, name in records(slug):
+        if blocked and "VA Worklist" in name:
+            out["held_back"] = "VA Worklist (worklist.py check has not passed for these rows)"
+            continue
         if local.exists():
             r = copy_in(slug, run_id, local, "", name, closed_ok=closed_ok)
             out[r] = out.get(r, 0) + 1

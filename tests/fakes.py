@@ -251,6 +251,16 @@ def place_fetch(url):
     return (200, PLACE_WEB[url]) if url in PLACE_WEB else (404, "")
 
 
+WORKLIST_WEB = {   # what the worklist validator sees for each old URL (status code, no redirect followed)
+    "https://r3wl.example/old-a/": 301, "https://r3wl.example/old-b/": 200, "https://r3wl.example/old-c/": 301,
+    "https://r3wl.example/old-x/": 200, "https://r3wl.example/old-y/": 200,
+}
+
+
+def worklist_fetch(url):
+    return WORKLIST_WEB.get(url, 404)
+
+
 def install():
     try:
         import build_schema
@@ -270,6 +280,11 @@ def install():
             return BASE, "Basic fake"
         wp.creds = creds
     except SystemExit:
+        pass
+    try:
+        import worklist
+        worklist.fetch = worklist_fetch
+    except ImportError:
         pass
     try:
         import places

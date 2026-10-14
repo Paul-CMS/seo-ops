@@ -155,9 +155,9 @@ so the VA does not need to learn it by heart. This guide covers only setup and t
    It should print the client's `… - TMS` folder inside your v3 path. *Not set up* or *not there*
    means the path in `machine.json` is wrong, or Drive isn't syncing.
 
-3. **Claude:** in the Claude app's Code tab, start a new session with **`~/Documents/seo-ops`** as
-   the folder. The first message should be the seo-ops reminder about one session per stage. Type
-   `/where <client-slug>`. It should tell you where that client stands.
+3. **Claude:** in the Claude app's Code tab, start a new session in the client's own folder
+   (`python3 scripts/worktree.py open <client-slug>` prints it). The first message should be the seo-ops reminder
+   about one session per stage. Type `/where <client-slug>`. It should tell you where that client stands.
 
 4. **WordPress**, for each client you'll work on: in a session, type `/wp-check <client-slug>`. It
    must pass before any WordPress work.
@@ -185,6 +185,29 @@ so the VA does not need to learn it by heart. This guide covers only setup and t
 4. If it says *"Start a new session"*, the stage changed. Open a new session (step 2) and type
    `/next <client-slug>` again.
 
+**The folder rule.** Client work runs **only in the client's own folder** (`python3 scripts/worktree.py open
+<client-slug>` prints it). `~/Documents/seo-ops` itself is for system sessions only — if `run.py` or `publish.py`
+says *"Client work runs in the client's folder"*, you are in the wrong folder: close that chat, open the client's
+folder, start a new chat there and type `/next <client-slug>` again. Never start a run for a client from two folders,
+and never run a script by its full path into `~/Documents/seo-ops`.
+
+### Place research — Deep Research for a new town (before location pages)
+
+Research for a town and a niche is done once and reused by every client. When `/next` says place research is
+missing (or to check): 
+
+1. In the client's folder, run `python3 scripts/places.py status <client-slug>` — it lists the planned towns with no
+   place or niche research and gives the command for each.
+2. For each town: `python3 scripts/places.py prompt <client-slug> "<Town>"` — it writes the prompt to
+   `clients/<client-slug>/build/places/prompts/<town>-<niche>.md`. Open that file and paste the whole prompt into
+   **Gemini Deep Research**.
+3. Save Gemini's report (Markdown, with its tables) as `clients/<client-slug>/inputs/places/<town>-<niche>.md`
+   (lowercase, hyphens, for example `okatie-roofing.md`).
+4. `python3 scripts/places.py ingest <client-slug> clients/<client-slug>/inputs/places/<town>-<niche>.md` — it sorts
+   the tables into the store. Then run the `verify` command it prints; the system checks every link loads and every
+   quote is on its page, and drops what fails. A researcher agent checks the rest by meaning. Nothing in this step
+   is ever sent to a client.
+
 ### When it stops at a decision (`/approve …`)
 
 1. The session prints a line like `/approve apex-roofing-of-the-lowcountry audit_approved brand_guide_approved`
@@ -207,12 +230,33 @@ so the VA does not need to learn it by heart. This guide covers only setup and t
 ### The VA Worklist — one document per client
 
 Everything a person has to do for a client is one row of its **VA Worklist** (Drive: "<Client> - VA Worklist",
-in the client folder; repo: `clients/<slug>/handoffs/VA-WORKLIST.md` and `.csv`). Sections: 1 Setup · 2 Blockers ·
+in the client folder; repo: `clients/<slug>/handoffs/VA-WORKLIST.md` and `.csv`). It opens with a one-page cover (what
+it is, the order to work in, who owns what, how to tick rows) and then has one section per type: 1 Setup · 2 Blockers ·
 3 Redirects · 4 Publish · 5 After publish · 6 Manual lookups. Setup, Blockers and Manual lookups can be worked any
 time; Redirects, Publish and After publish arrive in one handover, once every service and location page is a
-WordPress draft — then every page is published together. Tick `status` in the CSV (done / blocked / deviated, a note
-on every blocked or deviated row) and give it back; the next `/next` reads it. Never publish a page that shows an
-"Open items on this page" notice until its row is resolved.
+WordPress draft — then every page is published together. The system does not hand a worklist over until its checker
+(`worklist.py check`) passes, so every row is complete on its own.
+
+**Every row has the same fields:**
+
+| Field | What it tells you |
+|---|---|
+| `id` | The row's name — quote it when you ask about it |
+| `task` | One action in plain words ("Publish the Okatie page") |
+| `where` | The live URL **and** the WordPress edit link — start there |
+| `how` | Numbered steps; follow them in order |
+| `values` | Exactly what to type: slug, SEOPress title, meta description, redirect from → to, menu label, alt text |
+| `depends_on` | Rows that must be done first (a redirect waits for its target page to be published) |
+| `done_check` | How to confirm it worked (the URL loads; the old URL answers 301 to the new one; the title shows in the page source) |
+| `owner` | Jonie, Gwen or Paul |
+| `status` | `open` · `done` · `superseded` (a newer decision replaced it — skip it) |
+
+**Ticking:** work the rows from top to bottom inside each section. Check the current value first (`old`): already
+done → mark `done` and write `already done` in `note`; something else there → change nothing, mark `blocked` and
+say what you found. Set `status` to **done**, **blocked** or **deviated** (a `note` on every blocked or deviated row)
+and give the CSV back. Never add rows and never publish a page that shows an "Open items on this page" notice until
+its row is resolved. The next `/next` reads your ticks and **checks every done row against its `done_check`** — a row
+whose check fails comes back as `open`, with the reason in `note`.
 
 ### If something in the workflow looks wrong
 
@@ -233,6 +277,7 @@ the message. Don't try to fix it yourself.
 ### Never
 
 - Never type `/approve`, and never edit `machine.json` to allow approvals.
+- Never run client work in `~/Documents/seo-ops` — only in the client's own folder (the folder rule above).
 - Never edit `status.json`, `log.md`, `changes.jsonl`, or the generated records (`handoff-log.md`,
   `decisions.md`, `approval-record.md`, `document-checklist.md`, `STATUS.md`, `decisions-settled.md`).
   Scripts write them.

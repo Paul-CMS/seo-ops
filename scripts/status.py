@@ -330,6 +330,18 @@ def spec_sha(rel):
     return hashlib.sha256(text.encode()).hexdigest()[:12]
 
 
+SPEC_TYPE = {"service.md": "service", "location.md": "location", "county-hub.md": "county", "homepage.md": "homepage",
+             "about.md": "about"}
+
+
+def spec_started(st, rel):
+    """CR-023: the client already has a page of this spec's type drafted — it keeps the spec version it started with
+    (Apex's location pages keep the structure they were drafted in), whether or not a pin was recorded."""
+    typ = SPEC_TYPE.get(Path(rel).name)
+    return bool(st and typ and any(p.get("type") == typ and ((p.get("files") or {}).get("draft") or p.get("file"))
+                                   for p in (st.get("pages") or {}).values()))
+
+
 def specs_approved(st=None):
     """CR-023: approval is per spec file. A spec edited since its approval blocks new work (a client that has not
     started) but not a client mid-stage: it keeps the version it started with, pinned by sha in its status
@@ -339,7 +351,7 @@ def specs_approved(st=None):
     if not files:
         return False, "the page specs are not approved yet — Paul approves them once, for every client: /approve global specs"
     pinned = (st or {}).get("specs_pinned") or {}
-    changed = [f for f in spec_files() if files.get(f) != spec_sha(f) and f not in pinned]
+    changed = [f for f in spec_files() if files.get(f) != spec_sha(f) and f not in pinned and not spec_started(st, f)]
     if changed:
         return False, ("page spec(s) not approved in their current version: " + ", ".join(Path(f).name for f in changed)
                        + " — " + " ".join(f"/approve global specs:{Path(f).stem}" for f in changed))

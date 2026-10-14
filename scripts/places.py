@@ -125,7 +125,13 @@ ROUTE = {"1": "niche", "2": "niche", "3": "niche", "5": "niche", "6": "place", "
 
 
 def slugify(t):
-    return re.sub(r"[^a-z0-9]+", "-", (t or "").lower()).strip("-")
+    return re.sub(r"[^a-z0-9]+", "-", re.sub(r"['’`]", "", (t or "").lower())).strip("-")
+
+
+def split_place(name, state=None):
+    """'Beaufort, SC' -> ('Beaufort', 'SC'); 'Okatie' -> ('Okatie', state). A site plan may carry the state in the city."""
+    m = re.match(r"^(.*?),\s*([A-Za-z]{2})\s*$", (name or "").strip())
+    return (m.group(1).strip(), m.group(2).upper()) if m else ((name or "").strip(), (state or "").upper() or None)
 
 
 def place_dir(state, place):
@@ -170,11 +176,13 @@ def client_info(slug, place=None, state=None):
     if len(industry.split()) > 3 and primary:   # a long industry line is not a niche: use the primary category
         industry = primary.lower()
     niche = slugify(industry)
-    services = [p.get("name") for p in st["pages"].values() if p.get("type") == "service" and p.get("name")]
+    services = [re.sub(r"\s*\([^)]*\)", "", p["name"]).strip() for p in st["pages"].values()
+                if p.get("type") == "service" and p.get("name")]   # "Stair Lifts (parent; …)" → "Stair Lifts"
     county = ""
     for p in st["pages"].values():
         if p.get("type") == "location" and (p.get("city") or p.get("name")) == place and p.get("group"):
-            county = re.sub(r"\s+County$", "", p["group"].strip())
+            if re.search(r"County$", p["group"].strip()):   # a metro hub (HMM) is not a county: left for the prompt's wording
+                county = re.sub(r"\s+County$", "", p["group"].strip())
     if not state:
         state = c.get("state")
     if not state:
@@ -191,12 +199,14 @@ def planned_places(st):
 
 
 def cmd_prompt(a):
-    info = client_info(a.slug, a.place, a.state)
+    full = a.place
+    a.place, hint = split_place(a.place, a.state)
+    info = client_info(a.slug, full, hint or a.state)
     if not info["state"]:
         die("REFUSED — the state is not recorded for this client and the Brand Guide names none. Add --state SC (two letters).", 4)
     txt = PROMPT.format(PLACE=a.place, STATE=info["state"], NICHE=info["industry"] or info["niche"],
                         PRIMARY_CATEGORY=info["primary"], SERVICES=", ".join(info["services"]) or "see the site plan",
-                        COUNTY=info["county"] or "[county — not in the site plan]", YEAR=today()[:4])
+                        COUNTY=info["county"], YEAR=today()[:4]).replace("unincorporated  County", "unincorporated county")
     out = client_dir(a.slug) / "build" / "places" / "prompts" / f"{slugify(a.place)}-{info['niche']}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(txt, encoding="utf-8")
@@ -426,7 +436,8 @@ def cmd_status(a):
         die("REFUSED — the state is not recorded for this client; pass it to `places.py prompt --state`.", 4)
     todo = []
     for pl in planned_places(st):
-        p, n = have(info["state"], pl, info["niche"])
+        name, stt = split_place(pl, info["state"])
+        p, n = have(stt, name, info["niche"])
         if not (p and n):
             todo.append((pl, "place" if not p else "", "niche" if not n else ""))
     print(f"{len(planned_places(st))} planned place(s) · {len(todo)} missing research" if todo else
