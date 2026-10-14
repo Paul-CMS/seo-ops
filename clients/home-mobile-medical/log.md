@@ -1448,3 +1448,46 @@ Changes: 0 · Summary: Curved stair lifts draft written from its approved brief 
 - CHANGE #268 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (18).md | new: Home Mobile Medical - Document Checklist.md · sha c10fcfdb1bd5 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #269 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (18).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (18).md | result: done · renamed and moved, nothing deleted
 - CHANGE #270 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (18).md | new: Home Mobile Medical - Status.md · sha 2ed91ace9325 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261014-163624-build-5523 · STARTED · /build · 2026-10-14T16:36:24-05:00
+Step: build:draft · batch services · session e7bff2e3-fc09-491a-bd8d-f8a36153a33c
+Gates checked: discovery_signed_off, batch:services:briefs, page_specs_approved
+- DRAFT 2026-10-14T16:38 · run 20261014-163624-build-5523 · svc-porch-lifts · clients/home-mobile-medical/build/services/drafts/svc-porch-lifts.md · agent build-svc-porch-lifts
+### HANDOFF · /build · 2026-10-14 · run 20261014-163624-build-5523
+**What I did**
+- Wrote the svc-porch-lifts draft from its approved brief (SB - Porch Lifts) and evidence pack: clients/home-mobile-medical/build/services/drafts/svc-porch-lifts.md.
+- Recorded it: `status.py page-stage home-mobile-medical svc-porch-lifts --stage draft --agent build-svc-porch-lifts` → "draft recorded".
+- Self-checks: readability page grade 5.9 (731 words); placeholders scan clean (no [NEED] or [LINK] needed); sweep found no ramp, Beaufort Medical, guarantee, Medicare, insurance, licence, certification, "same day", "3–4 hours", health or "technician" wording.
+
+**What was decided, and why**
+- Followed the brief exactly: H1 "Vertical Platform Lift Installation in the Lowcountry"; opening uses "home accessibility lifts" + "Beaufort County"; 4 FAQs; boundary sentence about wheelchair lifts only inside the raised-entrance H3; warranty only in the delivery H2.
+- Settled install-time wording (svc-curved-stair-lifts:install_time) used word for word in the delivery H2 and the install FAQ; it begins "Stair lift installations…" because it is verbatim.
+- FAQ first sentences shortened below 40 words where needed to keep every paragraph under grade 10 (C5 over the 40–60 target).
+- Used "15+ years of Jason Workens' experience" once (Decision 013 wording).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Safety line paragraph reads grade 14.1 — exempt (pilot-corrections, Ask 1 = A) | — | nothing |
+| H3 "Servicing After Installation" names no entity (COM-01) — heading set by brief review row 7 | checker pass | draft review |
+| FAQ 1 and 2 first sentences under 40 words (reading grade traded against SVC FAQ length) | checker pass | draft review |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Draft | clients/home-mobile-medical/build/services/drafts/svc-porch-lifts.md | recorded, awaiting the section's draft review |
+
+**What I could not check**
+- Sibling drafts other than curved (wheelchair, repair) were not in my read list; heading/FAQ collisions with them go to the checker pass.
+
+**Anything the next agent would otherwise get wrong**
+- The repeated settled install-time sentences across curved and porch are required verbatim, not an E1 portability failure.
+### END HANDOFF
+## RUN 20261014-163624-build-5523 · FINISHED · 2026-10-14T16:38:28-05:00
+Changes: 0 · Summary: Porch lifts draft written from its approved brief and recorded (svc-porch-lifts); no ramps; four FAQs; checks pass. Sibling-collision check waits for the wheelchair and repair drafts.
+- CHANGE #271 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (10).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #272 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-14 (10).md | new: Home Mobile Medical - Handoff Log.md · sha 0c28a119517b | result: done · copied (Drive for desktop syncs it)
+- CHANGE #273 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (19).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (19).md | result: done · renamed and moved, nothing deleted
+- CHANGE #274 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (19).md | new: Home Mobile Medical - Document Checklist.md · sha 9fc1ddc9665d | result: done · copied (Drive for desktop syncs it)
+- CHANGE #275 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (19).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (19).md | result: done · renamed and moved, nothing deleted
+- CHANGE #276 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (19).md | new: Home Mobile Medical - Status.md · sha 83ca68f4d39e | result: done · copied (Drive for desktop syncs it)
