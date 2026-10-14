@@ -137,6 +137,12 @@ def main():
             if a.kind == "redirect":
                 row["url"] = full_url(row["url"], domain, i, "from URL")
                 row["new"] = full_url(row["new"], domain, i, "to URL")
+                import urlmoves   # no chains: a target that moved (or is itself redirected) is pointed at its final URL
+                mv, dr = urlmoves.moves(a.slug, st)
+                fin = {**dr, **mv}.get(urlmoves.path_of(row["new"]))
+                if fin:
+                    print(f"row {i}: target {row['new']} moved — the 301 goes straight to {fin} (no chain)")
+                    row["new"] = fin
                 row["field"] = "301"
                 row["old"] = row["old"] or row["url"]
             rows.append(row)

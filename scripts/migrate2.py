@@ -286,12 +286,15 @@ def migrate_urls(slug, dry):
     for b in st["build"]["batches"]:
         b["pages"] = [x for x in b["pages"] if x not in DROP.get(slug, {})]
     st["rewrite2_urls"] = {"at": now(), "moves": len(moves), "dropped": [x[0] for x in drops]}
+    st["url_drops"] = {**(st.get("url_drops") or {}), **{o: to for _, o, to in drops}}   # the records that follow a move read these
     S.save(slug, st)
     after = snapshot(S.load(slug))
     lost = [f"{w}: {f}" for w, fs in before.items() for f, ok in fs.items()
             if ok and not after.get(w, {}).get(f) and w != "site plan"]
     if lost:
         die(f"{slug}: STOP — approvals other than the site plan would be lost: {', '.join(lost)}")
+    import urlmoves   # every record that pointed at an old URL follows the move (fix set 2026-10-14)
+    urlmoves.apply(slug)
     append(d / "log.md", f"\n## MIGRATION · {now()} · rewrite 2 P7 + P10: URLs and batches\n{WHY[slug]}\n"
            + "\n".join(r.strip() for r in report) + "\nThe site plan file changed: Paul re-approves it once.\n")
     import subprocess

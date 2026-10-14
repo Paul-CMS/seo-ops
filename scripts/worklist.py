@@ -481,6 +481,10 @@ def problems(slug):
             if linkers:
                 warn.append(f"{len(linkers)} page(s) still link to {pid}, which is not being published ({', '.join(linkers[:4])}…) — "
                             "revise those drafts in a build run")
+    import urlmoves   # a record pointing at a moved URL is an error the URL check reports (fix set 2026-10-14)
+    moved = {**urlmoves.moves(slug, st)[1], **urlmoves.moves(slug, st)[0]}
+    for where, msg in urlmoves.stale(slug):
+        err.append(("-", "stale", f"{where} {msg}"))
     old_urls, targets = {}, {}
     for r in live_rows:
         if r["field"] != "301":
@@ -501,7 +505,11 @@ def problems(slug):
         elif code not in REDIRECT_OK and not gone:
             err.append((r["id"], "redirect", f"{old} answers {code} and is not recorded as already gone"))
         tp = c.by_url.get(new)
-        if not tp:
+        hop = moved.get(urlmoves.path_of(r["new"]))
+        if hop:   # the target is an old URL that itself redirects: a chain (the 301 must go straight to the final URL)
+            err.append((r["id"], "redirect", f"chain: target {r['new']} is itself redirected (the page moved) to {hop} — "
+                        f"point this row straight at {hop} (`urlmoves.py apply {slug}` or handoff.py retarget)"))
+        elif not tp:
             err.append((r["id"], "superseded", f"target {r['new']} is no longer a planned page — mark the row superseded "
                         f"(worklist.py supersede) or retarget it"))
         elif not st["pages"][tp].get("wp_id"):

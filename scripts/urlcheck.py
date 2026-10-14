@@ -2,6 +2,7 @@
 """urlcheck.py — Bradley's URL rule for every planned service, location and hub page (rewrite 2 P7, Q6).
 
     urlcheck.py <slug> <plan.json>      exit 1 and list every problem; 0 when every URL is fine
+    urlcheck.py refs <slug>             exit 1 and list every record that still points at a moved URL (urlmoves.py fixes them)
 
 Run by `status.py plan` (a site plan is refused until it passes) and by the import (the baseline is not exempt).
 Refused, per page:
@@ -75,6 +76,11 @@ def problems(pages):
 
 
 def main():
+    if len(sys.argv) == 3 and sys.argv[1] == "refs":
+        import urlmoves
+        bad = urlmoves.stale(sys.argv[2])
+        print("\n".join(f"{w}: {m}" for w, m in bad) or "no record points at a moved URL")
+        sys.exit(1 if bad else 0)
     if len(sys.argv) != 3:
         sys.exit(__doc__)
     plan = json.loads(open(sys.argv[2]).read())

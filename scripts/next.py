@@ -454,6 +454,13 @@ def _walk(slug, cont):
         from lib import git_commit
         records.render(slug)
         git_commit(f"{slug}: global approval(s) {', '.join(str(e['n']) for e in applied)} applied on /next", slug=slug)
+    import urlmoves   # a URL moved: every record that points at the old URL follows it, here, in the client's own folder
+    moved = urlmoves.apply(slug)
+    if moved:
+        import records
+        from lib import git_commit
+        records.render(slug)
+        git_commit(f"{slug}: {len(moved)} record(s) pointing at a moved URL updated on /next\n\n" + "\n".join(moved[:40]), slug=slug)
     st = S.load(slug)
     if cont and st.get("review_pause"):
         p = st.pop("review_pause")
