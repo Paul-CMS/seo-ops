@@ -461,10 +461,10 @@
       "approval": {
         "state": "approved",
         "by": "Paul",
-        "at": "2026-10-09T12:40:09-05:00",
+        "at": "2026-10-14T07:32:03-05:00",
         "note": null,
         "files": {
-          "clients/home-mobile-medical/build/Home Mobile Medical - Site Plan - REVISED.md": "acd2d040d2df"
+          "clients/home-mobile-medical/build/Home Mobile Medical - Site Plan - REVISED.md": "99199b5f08eb"
         },
         "conditions": [],
         "sensitive_review": null,
@@ -750,20 +750,21 @@
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
-    "phase": "Planning your new pages",
+    "phase": "Writing your pages",
     "done": [
       "We confirmed how search engines should understand your business",
       "We prepared a fact sheet for you to confirm",
       "You returned the fact sheet — thank you",
       "We finished reviewing your website",
       "Your business details are confirmed",
-      "Research is complete and page work has started"
+      "Research is complete and page work has started",
+      "Your new page plan is ready"
     ],
     "waiting_on_client": [],
-    "next": "We are planning every service and location page."
+    "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-09T22:27:37-05:00",
+  "updated": "2026-10-14T07:32:03-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"

@@ -1,6 +1,6 @@
 # Home Mobile Medical - Document Checklist
 
-Generated 2026-10-09T22:27 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-14T07:32 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -29,6 +29,10 @@ Generated 2026-10-09T22:27 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S17 Fresh-context review of Finding Register + URL Decision Map | done | clients/home-mobile-medical/audit/2026-10-07/ |
 | [x] | S18 Render deliverables | done | Rendered from the registers after S17 review and the five reviewer fixes: Finding Register, URL Decision Map, Recommendations, Evidence Manifest (REVIEW) in audit/2026-10-07/deliverables/ |
 
+## Intake documents
+
+- [ ] Search Console homepage queries, last 90 days — ask for it: Search Console → Performance → Queries, filter Page = the homepage, last 90 days, export; name it '<Client> - GSC - queries-homepage-90d - <date>.csv' and put it in inputs/ (scripts/h1lock.py --gsc reads it; without it CM-059 condition (c) cannot be checked)
+
 ## Conditions
 
 - [x] Client set up (/new-client finished)
@@ -39,7 +43,7 @@ Generated 2026-10-09T22:27 from status.json — do not edit. `[x]` done · `[-]`
 - [x] WordPress connected (/wp-check passed in the last 30 days)
 - [x] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded)
 - [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — blockers not cleared: H-2026-10-09-03-redirect-01 is issued; H-2026-10-09-03-redirect-02 is issued; H-2026-10-09-03-redirect-03 is issued; H-2026-10-09-04-broken_link-01 is issued; H-2026-10-09-04-broken_link-02 is issued (+9 more)
-- [x] Page specs approved by Paul once, globally (methodology/specs) and unchanged since
+- [ ] Page specs approved by Paul once, globally (methodology/specs) and unchanged since — page spec(s) not approved in their current version: location.md — /approve global specs:location
 
 ## Decisions (Paul)
 
