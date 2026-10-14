@@ -1,6 +1,6 @@
 # Evidence grid — Yemassee, SC (location)
 
-**Result: PASS** · Known 8 · Unknown 1 · Unverified 1 · Conflict 0 (CM-041)
+**Result: PASS** · Known 9 · Unknown 0 · Unverified 1 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
 
@@ -14,9 +14,5 @@ _The grid holds only the facts, so its fingerprint changes only when a fact chan
 | 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) | supporting | **Known** | Auldbrass Plantation (Frank Lloyd Wright-designed, just outside town); Yemassee Amtrak station; Hampton Regional Medical Center (Varnville, in Hampton County) | https://en.wikipedia.org/wiki/Auldbrass_Plantation (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Yemassee_station (Wikipedia, read 2026-10-14) · https://www.hamptonregional.org/ (Hampton Regional Medical Center, read 2026-10-14) |
 | Which office issues permits here, with its official page (for the Serving section) | supporting | **Known** | Hampton County Building Department (201 Jackson Ave West, Hampton SC; 803-914-2127) issues residential building permits; town approval (water/sewer, zoning) comes first. Beaufort County portion not checked. Town of Yemassee site blocked (40 | https://hamptoncountysc.org/m/faq?cat=12 (Hampton County, read 2026-10-14) · https://www.hamptoncountysc.org/DocumentCenter/View/2772/Mobile-Home-Permits-03_17_25 (Hampton County Building Department, read 2026-10-14) |
 | Response time / guarantees for this area | supporting | **Unverified** | None |  |
-| Emergency / after-hours reality | supporting | **Unknown** | [NEED] | searched, not found (2 source(s) on disk) |
+| Emergency / after-hours reality | supporting | **Known** | Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current demand. Use general terms only; do not  | Facts interview 2026-10-14, owner reply Q2 (general terms only) |
 | Google rating and review count (date checked) | supporting | **Known** | 2.9 stars from 19 Google reviews (checked 2026-10-08) | DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23 |
-
-**Sources searched before asking (CM-057):** data/rankings/rankings-summary.md, data/reviews/reviews.csv
-
-**Not on disk:** data/crawl/page-text.csv, data/gbp/ (a GBP export), data/local-grid/, data/reviews/reviews-summary.md

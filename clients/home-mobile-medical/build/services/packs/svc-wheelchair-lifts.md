@@ -1,6 +1,6 @@
 # Evidence pack — Wheelchair Lifts (service)
 
-Section **services** · https://homemobilemedical.com/wheelchair-lifts/ · built 2026-10-14T14:07 by evidence_pack.py (CM-061).
+Section **services** · https://homemobilemedical.com/wheelchair-lifts/ · built 2026-10-14T14:16 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -41,12 +41,15 @@ _The only place the writer looks for facts. Write every excerpt at its usage tie
 | d-safety-statement | Safety statement | paul_approved | "Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions." | Paul 2026-10-07 |
 | d-email | Email | client_confirmed | info@homemobilemedical.com | Paul 2026-10-07 |
 | d-hours | Hours | client_confirmed | Monday–Friday 9:00 AM–5:00 PM; Saturday–Sunday closed | Paul 2026-10-07 |
-| d-emergency-after-hours-reality | Emergency / after-hours reality | unknown | [NEED] |  |
-| d-minimum-service-call-or-trip-charge | Minimum service call or trip charge | unknown | [NEED] |  |
+| d-emergency-after-hours-reality | Emergency / after-hours reality | client_confirmed | Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current demand. Use general terms only; do not promise a specific a | Facts interview 2026-10-14, owner reply Q2 (general terms only) |
+| d-minimum-service-call-or-trip-charge | Minimum service call or trip charge | client_confirmed | None. No service-call or trip charge. | Facts interview 2026-10-14, owner reply Q1 |
 | d-payment-methods | Payment methods | paul_approved | General wording only ("we accept common payment methods"); no specific list | Paul 2026-10-07 |
 | d-services-subcontracted-out | Services subcontracted out | unknown | None known |  |
 | d-named-staff-for-on-page-use | Named staff for on-page use | client_confirmed | Jason Workens, founder/owner | Paul 2026-10-07 |
 | d-licensed-practitioner-for-health-claim-sign-off | Licensed practitioner for health-claim sign-off | paul_approved | Not required (health-adjacent, CM-040) |  |
+| svc-repair-maintenance:service_process | Repair process: steps and charge | client_confirmed | When someone calls about a broken stair lift or lift: first call, visit, diagnosis, quote, parts, fix. No service-call or trip charge. Repairs any stair lift or lift, any brand, within the service area. | Facts interview 2026-10-14, owner reply Q1; website wording allowed (yes) |
+| d-install-time-other-lifts | Install time: curved, porch and wheelchair lifts | client_confirmed | The installation itself is quick for curved, porch and wheelchair lifts, the same as stair lifts. More than one installation can be done in a day, so the schedule is adjusted to fit. | Facts interview 2026-10-14, owner reply Q3 (partial) |
+| d-lead-time-and-pad-permit | Order-to-installed lead time; pad and permit for porch and wheelchair lifts | unknown | [NEED] Order-to-installed lead time for curved, porch and wheelchair lifts. [NEED] Who handles the concrete pad and building permit for porch and wheelchair lifts (you, the customer, or it depends). | Facts interview 2026-10-14, owner reply Q3: not answered |
 | page:service_scope | service scope | Client Confirmed | Wheelchair lifts sourced new and professionally installed; maintenance and repairs (wheelchair-lift repair confirmed) within the service area. Manufacturer's warranty only. | Brand Guide D (Services, Warranty); Decision 005; client via Paul 2026-10-07 (C7) |
 | page:service_process | service process | Client Confirmed | Free in-home estimate → lift sourced new → professional installation supervised by Jason Workens to the manufacturer's installation instructions. [Install duration, site prep and permits not confirmed for wheelchair lifts] | Brand Guide D (Free estimate, Team size, Safety statement); Paul 2026-10-07 |
 
@@ -120,7 +123,8 @@ _Nothing in the place store yet for this page's place (places.py status lists wh
 
 ## Settled decisions touching this page
 
-_None._
+- 2026-10-14 · `fact:svc-curved-stair-lifts:install_time` — Installation itself is quick for every lift type (curved, porch, wheelchair); multiple installs per day possible. Order-to-installed lead time and pad/permit responsibility not answered.
+- 2026-10-14 · `svc-curved-stair-lifts:install_time` — Stair lift installations typically take a couple of hours, and we can often complete two per day for curved, porch and wheelchair lifts. The actual timeline depends on project scope and is confirmed during your free in-home estimate.
 
 ## Gaps — the only things research looks for
 

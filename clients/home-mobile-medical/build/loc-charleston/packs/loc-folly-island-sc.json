@@ -3,7 +3,7 @@
  "type": "location",
  "url": "https://homemobilemedical.com/folly-island-sc/",
  "section": "loc-charleston",
- "built": "2026-10-14T14:08:00-05:00",
+ "built": "2026-10-14T14:16:54-05:00",
  "services": [],
  "places": [
   "Folly Island, SC"
@@ -243,16 +243,16 @@
   {
    "id": "d-emergency-after-hours-reality",
    "label": "Emergency / after-hours reality",
-   "status": "unknown",
-   "value": "[NEED]",
-   "source": ""
+   "status": "client_confirmed",
+   "value": "Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current demand. Use general terms only; do not promise a specific a",
+   "source": "Facts interview 2026-10-14, owner reply Q2 (general terms only)"
   },
   {
    "id": "d-minimum-service-call-or-trip-charge",
    "label": "Minimum service call or trip charge",
-   "status": "unknown",
-   "value": "[NEED]",
-   "source": ""
+   "status": "client_confirmed",
+   "value": "None. No service-call or trip charge.",
+   "source": "Facts interview 2026-10-14, owner reply Q1"
   },
   {
    "id": "d-payment-methods",
@@ -281,6 +281,27 @@
    "status": "paul_approved",
    "value": "Not required (health-adjacent, CM-040)",
    "source": ""
+  },
+  {
+   "id": "svc-repair-maintenance:service_process",
+   "label": "Repair process: steps and charge",
+   "status": "client_confirmed",
+   "value": "When someone calls about a broken stair lift or lift: first call, visit, diagnosis, quote, parts, fix. No service-call or trip charge. Repairs any stair lift or lift, any brand, within the service area.",
+   "source": "Facts interview 2026-10-14, owner reply Q1; website wording allowed (yes)"
+  },
+  {
+   "id": "d-install-time-other-lifts",
+   "label": "Install time: curved, porch and wheelchair lifts",
+   "status": "client_confirmed",
+   "value": "The installation itself is quick for curved, porch and wheelchair lifts, the same as stair lifts. More than one installation can be done in a day, so the schedule is adjusted to fit.",
+   "source": "Facts interview 2026-10-14, owner reply Q3 (partial)"
+  },
+  {
+   "id": "d-lead-time-and-pad-permit",
+   "label": "Order-to-installed lead time; pad and permit for porch and wheelchair lifts",
+   "status": "unknown",
+   "value": "[NEED] Order-to-installed lead time for curved, porch and wheelchair lifts. [NEED] Who handles the concrete pad and building permit for porch and wheelchair lifts (you, the customer, or it depends).",
+   "source": "Facts interview 2026-10-14, owner reply Q3: not answered"
   },
   {
    "id": "page:city_served",
@@ -411,14 +432,6 @@
    "from": "page:neighborhoods",
    "kind": "researched",
    "fact_key": "fact:loc-folly-island-sc:neighborhoods"
-  },
-  {
-   "key": "emergency",
-   "label": "Emergency / after-hours reality",
-   "need": "supporting",
-   "from": "D:Emergency",
-   "kind": "client",
-   "fact_key": "fact:d:emergency"
   }
  ],
  "excerpts": [
@@ -619,6 +632,16 @@
    "value": "Monday–Friday 9:00 AM–5:00 PM; Saturday–Sunday closed"
   },
   {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "value": "Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current demand. Use general terms only; do not promise a specific a"
+  },
+  {
+   "id": "d-minimum-service-call-or-trip-charge",
+   "label": "Minimum service call or trip charge",
+   "value": "None. No service-call or trip charge."
+  },
+  {
    "id": "d-payment-methods",
    "label": "Payment methods",
    "value": "General wording only (\"we accept common payment methods\"); no specific list"
@@ -632,6 +655,16 @@
    "id": "d-licensed-practitioner-for-health-claim-sign-off",
    "label": "Licensed practitioner for health-claim sign-off",
    "value": "Not required (health-adjacent, CM-040)"
+  },
+  {
+   "id": "svc-repair-maintenance:service_process",
+   "label": "Repair process: steps and charge",
+   "value": "When someone calls about a broken stair lift or lift: first call, visit, diagnosis, quote, parts, fix. No service-call or trip charge. Repairs any stair lift or lift, any brand, within the service area."
+  },
+  {
+   "id": "d-install-time-other-lifts",
+   "label": "Install time: curved, porch and wheelchair lifts",
+   "value": "The installation itself is quick for curved, porch and wheelchair lifts, the same as stair lifts. More than one installation can be done in a day, so the schedule is adjusted to fit."
   },
   {
    "id": "page:city_served",

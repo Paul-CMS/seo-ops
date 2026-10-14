@@ -180,12 +180,15 @@ Everything a writer may state. **Not here = does not exist.**
 | Safety statement | "Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions." | Paul Approved | Paul 2026-10-07 |
 | Email | info@homemobilemedical.com | Client Confirmed | Paul 2026-10-07 |
 | Hours | Monday–Friday 9:00 AM–5:00 PM; Saturday–Sunday closed | Client Confirmed | Paul 2026-10-07 |
-| Emergency / after-hours reality | [NEED] | Unknown | |
-| Minimum service call or trip charge | [NEED] | Unknown | |
+| Emergency / after-hours reality | Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current demand. Use general terms only; do not promise a specific after-hours response. | Client Confirmed | Facts interview 2026-10-14, owner reply Q2 (general terms only) |
+| Minimum service call or trip charge | None. No service-call or trip charge. | Client Confirmed | Facts interview 2026-10-14, owner reply Q1 |
 | Payment methods | General wording only ("we accept common payment methods"); no specific list | Paul Approved | Paul 2026-10-07 |
 | Services subcontracted out | None known | Unknown | |
 | Named staff for on-page use | Jason Workens, founder/owner | Client Confirmed | Paul 2026-10-07 |
 | Licensed practitioner for health-claim sign-off | Not required (health-adjacent, CM-040) | Paul Approved | |
+| Repair process: steps and charge | When someone calls about a broken stair lift or lift: first call, visit, diagnosis, quote, parts, fix. No service-call or trip charge. Repairs any stair lift or lift, any brand, within the service area. | Client Confirmed | Facts interview 2026-10-14, owner reply Q1; website wording allowed (yes) |
+| Install time: curved, porch and wheelchair lifts | The installation itself is quick for curved, porch and wheelchair lifts, the same as stair lifts. More than one installation can be done in a day, so the schedule is adjusted to fit. | Client Confirmed | Facts interview 2026-10-14, owner reply Q3 (partial) |
+| Order-to-installed lead time; pad and permit for porch and wheelchair lifts | [NEED] Order-to-installed lead time for curved, porch and wheelchair lifts. [NEED] Who handles the concrete pad and building permit for porch and wheelchair lifts (you, the customer, or it depends). | Unknown | Facts interview 2026-10-14, owner reply Q3: not answered |
 
 ### D2 · Unsupported claims
 | Claim (verbatim) | Where it appears | Client answer | Action |

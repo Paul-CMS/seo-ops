@@ -1,6 +1,6 @@
 # Evidence grid — Beaufort, SC (location)
 
-**Result: PASS** · Known 8 · Unknown 1 · Unverified 1 · Conflict 0 (CM-041)
+**Result: PASS** · Known 9 · Unknown 0 · Unverified 1 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
 
@@ -14,9 +14,5 @@ _The grid holds only the facts, so its fingerprint changes only when a fact chan
 | 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) | supporting | **Known** | Beaufort Historic District (National Historic Landmark) - https://en.wikipedia.org/wiki/Beaufort_Historic_District · Beaufort Memorial Hospital (197-bed nonprofit hospital; named on the Beaufort page) · Marine Corps Air Station Beaufort - h | https://en.wikipedia.org/wiki/Beaufort,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_Historic_District (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Marine_Corps_Air_Station_Beaufort (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Naval_Hospital_Beaufort (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Richard_V._Woods_Memorial_Bridge (Wikipedia, read 2026-10-14) |
 | Which office issues permits here, with its official page (for the Serving section) | supporting | **Known** | City of Beaufort Building Codes Department, 1911 Boundary Street, Beaufort SC 29902, 843-525-7070 (the city's department 'assists owners and development professionals through the permitting and construction process'; Building Permits sectio | https://cityofbeaufort.org/154/Building-Codes (City of Beaufort, read 2026-10-14) |
 | Response time / guarantees for this area | supporting | **Unverified** | None |  |
-| Emergency / after-hours reality | supporting | **Unknown** | [NEED] | searched, not found (2 source(s) on disk) |
+| Emergency / after-hours reality | supporting | **Known** | Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current demand. Use general terms only; do not  | Facts interview 2026-10-14, owner reply Q2 (general terms only) |
 | Google rating and review count (date checked) | supporting | **Known** | 2.9 stars from 19 Google reviews (checked 2026-10-08) | DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23 |
-
-**Sources searched before asking (CM-057):** data/rankings/rankings-summary.md, data/reviews/reviews.csv
-
-**Not on disk:** data/crawl/page-text.csv, data/gbp/ (a GBP export), data/local-grid/, data/reviews/reviews-summary.md

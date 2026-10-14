@@ -1,6 +1,6 @@
 # Evidence pack — Yemassee, SC (location)
 
-Section **loc-hhi** · https://homemobilemedical.com/yemassee-sc/ · built 2026-10-14T14:08 by evidence_pack.py (CM-061).
+Section **loc-hhi** · https://homemobilemedical.com/yemassee-sc/ · built 2026-10-14T14:16 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -41,12 +41,15 @@ _The only place the writer looks for facts. Write every excerpt at its usage tie
 | d-safety-statement | Safety statement | paul_approved | "Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions." | Paul 2026-10-07 |
 | d-email | Email | client_confirmed | info@homemobilemedical.com | Paul 2026-10-07 |
 | d-hours | Hours | client_confirmed | Monday–Friday 9:00 AM–5:00 PM; Saturday–Sunday closed | Paul 2026-10-07 |
-| d-emergency-after-hours-reality | Emergency / after-hours reality | unknown | [NEED] |  |
-| d-minimum-service-call-or-trip-charge | Minimum service call or trip charge | unknown | [NEED] |  |
+| d-emergency-after-hours-reality | Emergency / after-hours reality | client_confirmed | Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current demand. Use general terms only; do not promise a specific a | Facts interview 2026-10-14, owner reply Q2 (general terms only) |
+| d-minimum-service-call-or-trip-charge | Minimum service call or trip charge | client_confirmed | None. No service-call or trip charge. | Facts interview 2026-10-14, owner reply Q1 |
 | d-payment-methods | Payment methods | paul_approved | General wording only ("we accept common payment methods"); no specific list | Paul 2026-10-07 |
 | d-services-subcontracted-out | Services subcontracted out | unknown | None known |  |
 | d-named-staff-for-on-page-use | Named staff for on-page use | client_confirmed | Jason Workens, founder/owner | Paul 2026-10-07 |
 | d-licensed-practitioner-for-health-claim-sign-off | Licensed practitioner for health-claim sign-off | paul_approved | Not required (health-adjacent, CM-040) |  |
+| svc-repair-maintenance:service_process | Repair process: steps and charge | client_confirmed | When someone calls about a broken stair lift or lift: first call, visit, diagnosis, quote, parts, fix. No service-call or trip charge. Repairs any stair lift or lift, any brand, within the service area. | Facts interview 2026-10-14, owner reply Q1; website wording allowed (yes) |
+| d-install-time-other-lifts | Install time: curved, porch and wheelchair lifts | client_confirmed | The installation itself is quick for curved, porch and wheelchair lifts, the same as stair lifts. More than one installation can be done in a day, so the schedule is adjusted to fit. | Facts interview 2026-10-14, owner reply Q3 (partial) |
+| d-lead-time-and-pad-permit | Order-to-installed lead time; pad and permit for porch and wheelchair lifts | unknown | [NEED] Order-to-installed lead time for curved, porch and wheelchair lifts. [NEED] Who handles the concrete pad and building permit for porch and wheelchair lifts (you, the customer, or it depends). | Facts interview 2026-10-14, owner reply Q3: not answered |
 | page:city_served | city served | Paul Approved | Served — one of the 24 South Carolina towns confirmed served (Brand Guide Section E) | Brand Guide E; Paul 2026-10-07 |
 | page:local_context | local context | Internally Verified | Yemassee is split between Hampton and Beaufort counties by the CSX railroad line, most residents in Hampton County, about 44 miles north of Savannah and 54 miles west of Charleston; mean July high 90.1 F, about 53.6 inches of rain a year; Hampton County: 19.8% | https://en.wikipedia.org/wiki/Yemassee,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Hampton_County,_South_Carolina (Wikipedia, r |
 | page:neighborhoods | neighborhoods | Internally Verified | No subdivision list found. Historic plantations inside town limits: Bindon, Cotton Hall, Tomotley (latter two annexed 2021); Pocotaligo (now part of Yemassee) | https://en.wikipedia.org/wiki/Yemassee,_South_Carolina (Wikipedia, read 2026-10-14) |
@@ -96,4 +99,4 @@ _None._
 
 ## Gaps — the only things research looks for
 
-- Emergency / after-hours reality (supporting, `D:Emergency`) → client search order, then an Ask (kind 3) only with a research-log entry
+_None._

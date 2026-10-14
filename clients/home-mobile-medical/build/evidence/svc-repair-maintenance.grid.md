@@ -1,16 +1,16 @@
 # Evidence grid — Stair Lift and Lift Repair and Maintenance (service)
 
-**Result: WARN** · Known 8 · Unknown 1 · Unverified 3 · Conflict 0 (CM-041)
+**Result: WARN** · Known 9 · Unknown 0 · Unverified 3 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
 
-- 1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'
+- 0 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'
 
 | Fact | Need | Mark | Value | Source |
 |---|---|---|---|---|
 | Phone | required | **Known** | (843) 476-1329 | Brand Guide A |
 | What the service includes (scope, inclusions) | required | **Known** | Repairs of any stair lift or lift within the service coverage, any brand (not only HMM installs); ongoing maintenance and support. No maintenance plans, prices or response times published. | Brand Guide D (Services); claims proof list C6–C8, client via Paul 2026-10-07 |
-| How the service is delivered (steps, methods, equipment) | required | **Unknown** |  | searched, not found (2 source(s) on disk) |
+| How the service is delivered (steps, methods, equipment) | required | **Known** | Repair steps: first call, visit, diagnosis, quote, parts, fix. No service-call or trip charge. Website wording allowed: yes. | answer 2026-10-14 (Client (via Paul); decisions-settled.md fact:svc-repair-maintenance:service_process) |
 | Free estimate / offer — and what free means | required | **Known** | Free in-home estimate. Can also quote from a photo of the stairs (priced by stair count) | Paul 2026-10-07 |
 | Typical job duration or timeline | supporting | **Unverified** | "Jason was so nice and helpful and got me the chair the same day." | keyword match in 1 review(s), not yet checked by meaning — Google review 2022-09-26 (data/reviews/reviews.csv row 8) |
 | Price range, or what drives the cost | supporting | **Unverified** | "Be VERY CAUTIOUS of there pricing, rented a vertical lift chair for a month then after a brief web search was bale to BUY a better chair for $50 more." | keyword match in 1 review(s), not yet checked by meaning — Google review 2021-08-02 (data/reviews/reviews.csv row 15) |

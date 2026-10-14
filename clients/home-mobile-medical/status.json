@@ -126,8 +126,8 @@
         ],
         "grid": "clients/home-mobile-medical/build/evidence/svc-stair-lifts.grid.md",
         "sha": "324cb9ead5b1",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
           "timeframe",
           "pricing",
@@ -137,12 +137,12 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/pilot/packs/svc-stair-lifts.md",
         "json": "clients/home-mobile-medical/build/pilot/packs/svc-stair-lifts.json",
-        "sha": "f7b98ce7e4fb",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "0b841b742f81",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "pilot",
         "counts": {
-          "facts": 41,
+          "facts": 44,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -193,8 +193,8 @@
         ],
         "grid": "clients/home-mobile-medical/build/evidence/svc-curved-stair-lifts.grid.md",
         "sha": "59a8fd73c1d2",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
           "timeframe",
           "pricing",
@@ -204,19 +204,19 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/services/packs/svc-curved-stair-lifts.md",
         "json": "clients/home-mobile-medical/build/services/packs/svc-curved-stair-lifts.json",
-        "sha": "c52d672df790",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "d9e949502f56",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "services",
         "counts": {
-          "facts": 41,
+          "facts": 44,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 70,
           "site_gbp": 0,
           "public": 0,
           "place": 0,
-          "settled": 0,
+          "settled": 2,
           "gaps": 0,
           "excerpts": 4
         }
@@ -245,8 +245,8 @@
         ],
         "grid": "clients/home-mobile-medical/build/evidence/svc-porch-lifts.grid.md",
         "sha": "a8a668d5c7e5",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
           "timeframe",
           "pricing",
@@ -256,12 +256,12 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/services/packs/svc-porch-lifts.md",
         "json": "clients/home-mobile-medical/build/services/packs/svc-porch-lifts.json",
-        "sha": "cc995e085634",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "05716f34c192",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "services",
         "counts": {
-          "facts": 41,
+          "facts": 44,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -297,8 +297,8 @@
         ],
         "grid": "clients/home-mobile-medical/build/evidence/svc-wheelchair-lifts.grid.md",
         "sha": "0ce00025f8e2",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
           "timeframe",
           "pricing",
@@ -308,19 +308,19 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/services/packs/svc-wheelchair-lifts.md",
         "json": "clients/home-mobile-medical/build/services/packs/svc-wheelchair-lifts.json",
-        "sha": "ae6ca97edcac",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "d5a3b96c33b2",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "services",
         "counts": {
-          "facts": 41,
+          "facts": 44,
           "review_topics": 4,
           "review_excerpts": 5,
           "questions": 78,
           "site_gbp": 0,
           "public": 0,
           "place": 0,
-          "settled": 0,
+          "settled": 2,
           "gaps": 0,
           "excerpts": 5
         }
@@ -335,20 +335,19 @@
       "evidence": {
         "result": "warn",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 3,
           "Conflict": 0
         },
         "why": [
-          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+          "0 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/home-mobile-medical/build/evidence/svc-repair-maintenance.grid.md",
-        "sha": "f92b09d6c077",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "2115b90c2ffc",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "service_process",
           "timeframe",
           "pricing",
           "guarantees"
@@ -357,20 +356,20 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/services/packs/svc-repair-maintenance.md",
         "json": "clients/home-mobile-medical/build/services/packs/svc-repair-maintenance.json",
-        "sha": "f965ad8a18c6",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "7e7692f480f2",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "services",
         "counts": {
-          "facts": 40,
+          "facts": 43,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
           "site_gbp": 0,
           "public": 0,
           "place": 0,
-          "settled": 0,
-          "gaps": 1,
+          "settled": 2,
+          "gaps": 0,
           "excerpts": 4
         }
       }
@@ -396,19 +395,19 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/hub-hhi-beaufort.grid.md",
         "sha": "a3236ffd4287",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": []
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/hub-hhi-beaufort.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/hub-hhi-beaufort.json",
-        "sha": "fc0ac4928385",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "3f0da5c57741",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-hhi",
         "counts": {
-          "facts": 41,
+          "facts": 44,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -434,30 +433,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-beaufort-sc.grid.md",
-        "sha": "a1f5a36144d1",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "7146235d6505",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/pilot/packs/loc-beaufort-sc.md",
         "json": "clients/home-mobile-medical/build/pilot/packs/loc-beaufort-sc.json",
-        "sha": "cb6d85284573",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "7d7ba1498f80",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "pilot",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -465,7 +463,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       },
@@ -498,30 +496,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-bluffton-sc.grid.md",
-        "sha": "b3a2a4f4a5e1",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "8814e02a7efa",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-bluffton-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-bluffton-sc.json",
-        "sha": "794c26efc5b4",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "4c1160658e5d",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-hhi",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -529,7 +526,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -547,30 +544,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-hilton-head-island-sc.grid.md",
-        "sha": "a98dbd524656",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "230f26e02465",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-hilton-head-island-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-hilton-head-island-sc.json",
-        "sha": "a1a16ed6e81d",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "975306b24a8a",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-hhi",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -578,7 +574,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -596,30 +592,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-port-royal-sc.grid.md",
-        "sha": "7038a1565453",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "c93ea7b3b9d1",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-port-royal-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-port-royal-sc.json",
-        "sha": "c5399bdc6d85",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "f5bf53934dea",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-hhi",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -627,7 +622,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -645,30 +640,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-ladys-island-sc.grid.md",
-        "sha": "f354b0ed684c",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "8521ff5d665f",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-ladys-island-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-ladys-island-sc.json",
-        "sha": "aad606da9a56",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "6f5f84e6a0c2",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-hhi",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -676,7 +670,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -694,31 +688,30 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 7,
-          "Unknown": 2,
+          "Known": 8,
+          "Unknown": 1,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-laurel-bay-sc.grid.md",
-        "sha": "9e6e19a98bbf",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "f96978f2357c",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
           "neighborhoods",
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-laurel-bay-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-laurel-bay-sc.json",
-        "sha": "567654b13479",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "cd0365603ef7",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-hhi",
         "counts": {
-          "facts": 43,
+          "facts": 46,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -726,7 +719,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 2,
+          "gaps": 1,
           "excerpts": 7
         }
       }
@@ -744,30 +737,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-daufuskie-island-sc.grid.md",
-        "sha": "8d7b143cbf69",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "c82935668478",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-daufuskie-island-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-daufuskie-island-sc.json",
-        "sha": "0a3635bbbe11",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "6b4e644089b3",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-hhi",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -775,7 +767,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -793,30 +785,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-okatie-sc.grid.md",
-        "sha": "e760c448f53a",
-        "at": "2026-10-14T14:07:59-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "0ba527ccf2bc",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-okatie-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-okatie-sc.json",
-        "sha": "1cec4192a344",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "8aadefee16f1",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-hhi",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -824,7 +815,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -842,30 +833,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-hardeeville-sc.grid.md",
-        "sha": "ceebcfa91c90",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "31b254a2de92",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-hardeeville-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-hardeeville-sc.json",
-        "sha": "e0aa31f6dda9",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "9eda01964df7",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-hhi",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -873,7 +863,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -891,30 +881,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-ridgeland-sc.grid.md",
-        "sha": "5c2fb5839a74",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "b13418ca288e",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-ridgeland-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-ridgeland-sc.json",
-        "sha": "ce0358354be8",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "b1009bd42302",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-hhi",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -922,7 +911,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -940,32 +929,31 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 6,
-          "Unknown": 3,
+          "Known": 7,
+          "Unknown": 2,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-levy-sc.grid.md",
-        "sha": "776605c1d71b",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "3c0bf5124ea8",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
           "neighborhoods",
           "place_entities",
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-levy-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-levy-sc.json",
-        "sha": "e0a83e62baad",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "9376796f4ffc",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-hhi",
         "counts": {
-          "facts": 42,
+          "facts": 45,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -973,7 +961,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 3,
+          "gaps": 2,
           "excerpts": 6
         }
       }
@@ -991,30 +979,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-yemassee-sc.grid.md",
-        "sha": "d97857b0e04c",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "a76bf261ce36",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-yemassee-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-yemassee-sc.json",
-        "sha": "9a9e3912e9e6",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "2708460315a6",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-hhi",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1022,7 +1009,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -1048,19 +1035,19 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/hub-charleston.grid.md",
         "sha": "92da3add69c3",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": []
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-charleston/packs/hub-charleston.md",
         "json": "clients/home-mobile-medical/build/loc-charleston/packs/hub-charleston.json",
-        "sha": "43944853129a",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "8c5da5a10f20",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-charleston",
         "counts": {
-          "facts": 41,
+          "facts": 44,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1086,30 +1073,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-charleston-sc.grid.md",
-        "sha": "e5e5593a8016",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "a0ff02f99f76",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-charleston-sc.md",
         "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-charleston-sc.json",
-        "sha": "334a4fccbf38",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "bbc9e9936934",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-charleston",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1117,7 +1103,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -1135,30 +1121,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-north-charleston-sc.grid.md",
-        "sha": "10401d0d28dd",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "0c8ff4d95dc6",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-north-charleston-sc.md",
         "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-north-charleston-sc.json",
-        "sha": "d58f5a5c2bac",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "6d764cf1912e",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-charleston",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1166,7 +1151,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -1184,30 +1169,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-mount-pleasant-sc.grid.md",
-        "sha": "210468362b15",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "b260e8434503",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-mount-pleasant-sc.md",
         "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-mount-pleasant-sc.json",
-        "sha": "7130e2e53bb4",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "366eeaa214f9",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-charleston",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1215,7 +1199,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -1233,30 +1217,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-summerville-sc.grid.md",
-        "sha": "302b808feeca",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "af4e2e9930a9",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-summerville-sc.md",
         "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-summerville-sc.json",
-        "sha": "de969efdbfe7",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "cabb873dcf71",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-charleston",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1264,7 +1247,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -1282,30 +1265,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-goose-creek-sc.grid.md",
-        "sha": "a2ad07253173",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "cb401aae932f",
+        "at": "2026-10-14T14:16:53-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-goose-creek-sc.md",
         "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-goose-creek-sc.json",
-        "sha": "b371cae41370",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "aadf458182bb",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-charleston",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1313,7 +1295,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -1331,30 +1313,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-hanahan-sc.grid.md",
-        "sha": "9b74bdf10525",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "3c2cefeaad0d",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-hanahan-sc.md",
         "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-hanahan-sc.json",
-        "sha": "fc6aba51efa1",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "c02619842318",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-charleston",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1362,7 +1343,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -1380,30 +1361,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-moncks-corner-sc.grid.md",
-        "sha": "37a821cb7885",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "6a1dbf309582",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-moncks-corner-sc.md",
         "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-moncks-corner-sc.json",
-        "sha": "64fdc51483de",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "6e4ae0cef4e4",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-charleston",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1411,7 +1391,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -1429,30 +1409,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-hollywood-sc.grid.md",
-        "sha": "0e42e008a85c",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "3253b07bd9e9",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-hollywood-sc.md",
         "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-hollywood-sc.json",
-        "sha": "8fbc0b2650f0",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "a075e566b1bb",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-charleston",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1460,7 +1439,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -1478,30 +1457,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-kiawah-island-sc.grid.md",
-        "sha": "17b7dde72f99",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "8f0a6f0da543",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-kiawah-island-sc.md",
         "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-kiawah-island-sc.json",
-        "sha": "42806f73313d",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "e2d226ae2b6d",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-charleston",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1509,7 +1487,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -1527,31 +1505,30 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 7,
-          "Unknown": 2,
+          "Known": 8,
+          "Unknown": 1,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-folly-island-sc.grid.md",
-        "sha": "c14bbc23bef1",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "596875ef6b7c",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
           "neighborhoods",
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-folly-island-sc.md",
         "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-folly-island-sc.json",
-        "sha": "8e98bc6bb740",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "b9a62df5cd1a",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-charleston",
         "counts": {
-          "facts": 43,
+          "facts": 46,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1559,7 +1536,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 2,
+          "gaps": 1,
           "excerpts": 7
         }
       }
@@ -1577,30 +1554,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-walterboro-sc.grid.md",
-        "sha": "824004236046",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "eeadd93acd14",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-walterboro-sc.md",
         "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-walterboro-sc.json",
-        "sha": "3f33b810f45f",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "03c63b8ccb8d",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-charleston",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1608,7 +1584,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -1626,30 +1602,29 @@
       "evidence": {
         "result": "pass",
         "counts": {
-          "Known": 8,
-          "Unknown": 1,
+          "Known": 9,
+          "Unknown": 0,
           "Unverified": 1,
           "Conflict": 0
         },
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-edisto-island-sc.grid.md",
-        "sha": "4a828843c6ab",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "77f40acc67eb",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
-          "response_time",
-          "emergency"
+          "response_time"
         ]
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-charleston/packs/loc-edisto-island-sc.md",
         "json": "clients/home-mobile-medical/build/loc-charleston/packs/loc-edisto-island-sc.json",
-        "sha": "b728040615b7",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "8e1446472636",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "loc-charleston",
         "counts": {
-          "facts": 44,
+          "facts": 47,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1657,7 +1632,7 @@
           "public": 0,
           "place": 0,
           "settled": 0,
-          "gaps": 1,
+          "gaps": 0,
           "excerpts": 8
         }
       }
@@ -1679,8 +1654,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/homepage.grid.md",
         "sha": "c20121cabe04",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
           "awards"
         ]
@@ -1688,12 +1663,12 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/final/packs/homepage.md",
         "json": "clients/home-mobile-medical/build/final/packs/homepage.json",
-        "sha": "b2404e40781e",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "8312af779e9a",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "final",
         "counts": {
-          "facts": 40,
+          "facts": 43,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
@@ -1723,8 +1698,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/about.grid.md",
         "sha": "0caef2eef259",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "gaps": [
           "associations",
           "awards"
@@ -1733,19 +1708,19 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/final/packs/about.md",
         "json": "clients/home-mobile-medical/build/final/packs/about.json",
-        "sha": "2c79c2c62596",
-        "at": "2026-10-14T14:08:00-05:00",
-        "run": "20261014-140654-build-4002",
+        "sha": "5dd4464b0902",
+        "at": "2026-10-14T14:16:54-05:00",
+        "run": "20261014-141534-interview-b760",
         "section": "final",
         "counts": {
-          "facts": 40,
+          "facts": 43,
           "review_topics": 3,
           "review_excerpts": 4,
           "questions": 0,
           "site_gbp": 0,
           "public": 0,
           "place": 0,
-          "settled": 0,
+          "settled": 1,
           "gaps": 2,
           "excerpts": 4
         }
@@ -2110,13 +2085,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261014-140654-build-4002",
-    "command": "build",
-    "finished": "2026-10-14T14:14:22-05:00",
-    "result": "Facts round re-check: all 33 page grids re-run (none blocked; 5 service pages warn, 28 pass). No new questions. Question sheet restored from f5c00c6 after F-007. Repair process, emergency hours and curved/porch/wheelchair install times were answered by Paul via decisions and settled after this re-check.",
+    "run_id": "20261014-141534-interview-b760",
+    "command": "interview",
+    "finished": "2026-10-14T14:17:07-05:00",
+    "result": "Facts-answers (batch all): 3 owner answers saved, written to Brand Guide D, settled. Evidence gate re-run: no page blocked; service pages WARN on 3 supporting gaps each. Brand Guide changed, needs Paul re-approval. Open: install lead time and pad/permit.",
     "changes": 0,
-    "step": "build:facts",
-    "batch": null
+    "step": "interview:facts-answers",
+    "batch": "all"
   },
   "spend": {
     "dataforseo_usd": 0.265018
@@ -2137,7 +2112,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T14:14:22-05:00",
+  "updated": "2026-10-14T14:17:07-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
@@ -2217,6 +2192,12 @@
       "step": "build:facts",
       "first_run": "20261014-140654-build-4002",
       "at": "2026-10-14T14:14:22-05:00"
+    },
+    "c2bdc5c2-5a67-42d5-84e8-bf06c732f070": {
+      "key": "batches:all",
+      "step": "interview:facts-answers",
+      "first_run": "20261014-141534-interview-b760",
+      "at": "2026-10-14T14:17:07-05:00"
     }
   },
   "blocker_handoffs": [

@@ -1086,3 +1086,92 @@ Changes: 0 · Summary: Facts round re-check: all 33 page grids re-run (none bloc
 - CHANGE #199 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (7).md | new: Home Mobile Medical - Document Checklist.md · sha 52785f4ec8c8 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #200 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (7).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (7).md | result: done · renamed and moved, nothing deleted
 - CHANGE #201 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (7).md | new: Home Mobile Medical - Status.md · sha 0c533641b763 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261014-141534-interview-b760 · STARTED · /interview · 2026-10-14T14:15:34-05:00
+Step: interview:facts-answers · batch all · session c2bdc5c2-5a67-42d5-84e8-bf06c732f070
+Gates checked: discovery_signed_off
+- FACT 2026-10-14T14:16 · run 20261014-141534-interview-b760 · d-emergency-after-hours-reality (value, status, source) · client_confirmed · Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current · source Facts interview 2026-10-14, owner reply Q2 (general terms only) · by Paul
+- FACT 2026-10-14T14:16 · run 20261014-141534-interview-b760 · d-minimum-service-call-or-trip-charge (value, status, source) · client_confirmed · None. No service-call or trip charge. · source Facts interview 2026-10-14, owner reply Q1 · by Paul
+- FACT 2026-10-14T14:16 · run 20261014-141534-interview-b760 · svc-repair-maintenance:service_process (new) · client_confirmed · When someone calls about a broken stair lift or lift: first call, visit, diagnosis, quote, parts, fix. No service-call or trip charge. Repairs any stair lift or lift, any brand, within the service are · source Facts interview 2026-10-14, owner reply Q1; website wording allowed (yes) · by Paul
+- FACT 2026-10-14T14:16 · run 20261014-141534-interview-b760 · d-install-time-other-lifts (new) · client_confirmed · The installation itself is quick for curved, porch and wheelchair lifts, the same as stair lifts. More than one installation can be done in a day, so the schedule is adjusted to fit. · source Facts interview 2026-10-14, owner reply Q3 (partial) · by Paul
+- FACT 2026-10-14T14:16 · run 20261014-141534-interview-b760 · d-lead-time-and-pad-permit (new) · unknown · [NEED] Order-to-installed lead time for curved, porch and wheelchair lifts. [NEED] Who handles the concrete pad and building permit for porch and wheelchair lifts (you, the customer, or it depends). · source Facts interview 2026-10-14, owner reply Q3: not answered · by Paul
+- SETTLED fact:svc-repair-maintenance:service_process · 2026-10-14T14:16:34-05:00 · run 20261014-141534-interview-b760 · by Client (via Paul) · Repair steps: first call, visit, diagnosis, quote, parts, fix. No service-call or trip charge. Website wording allowed: yes.
+- SETTLED fact:d:emergency · 2026-10-14T14:16:34-05:00 · run 20261014-141534-interview-b760 · by Client (via Paul) · True emergencies are handled after hours; urgent non-emergency calls are scheduled as soon as possible; after-hours availability depends on current demand. Publish in general terms only; do not promise after-hours response.
+- SETTLED fact:svc-curved-stair-lifts:install_time · 2026-10-14T14:16:34-05:00 · run 20261014-141534-interview-b760 · by Client (via Paul) · Installation itself is quick for every lift type (curved, porch, wheelchair); multiple installs per day possible. Order-to-installed lead time and pad/permit responsibility not answered.
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · svc-stair-lifts: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-beaufort-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · svc-curved-stair-lifts: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · svc-porch-lifts: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · svc-wheelchair-lifts: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · svc-repair-maintenance: WARN (known 9, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · hub-hhi-beaufort: PASS (known 6, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-bluffton-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-hilton-head-island-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-port-royal-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-ladys-island-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-laurel-bay-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-daufuskie-island-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-okatie-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-hardeeville-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-ridgeland-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-levy-sc: PASS (known 7, unknown 2, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-yemassee-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · hub-charleston: PASS (known 6, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-charleston-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-north-charleston-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-mount-pleasant-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-summerville-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-goose-creek-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-hanahan-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-moncks-corner-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-hollywood-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-kiawah-island-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-folly-island-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-walterboro-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · loc-edisto-island-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · homepage: PASS (known 10, unknown 1, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T14:16 · run 20261014-141534-interview-b760 · about: PASS (known 6, unknown 2, unverified 0, conflict 0)
+### HANDOFF · /interview · 2026-10-14 · run 20261014-141534-interview-b760
+## Handoff Log
+
+**Step:** facts-answers, batch `all` (the 2026-10-14 facts round, 3 questions).
+**Reply saved:** `clients/home-mobile-medical/interviews/facts/Home Mobile Medical - Facts Interview - all - 2026-10-14 - REPLY.md` (as given).
+
+**Answers and where they went**
+
+| Key | Answer (short) | Brand Guide D | Settled |
+|---|---|---|---|
+| `fact:svc-repair-maintenance:service_process` | Steps as suggested (first call, visit, diagnosis, quote, parts, fix). No service-call or trip charge. Website wording: yes. | New row "Repair process: steps and charge" (Client Confirmed); trip-charge row changed from [NEED] to "None" (Client Confirmed) | Yes, by Client (via Paul) |
+| `fact:d:emergency` | No standing after-hours service. True emergencies handled after hours; urgent non-emergency calls scheduled ASAP; after-hours availability depends on current demand. Advertise in general terms only. | "Emergency / after-hours reality" row changed from [NEED] to general-terms wording (Client Confirmed) | Yes, by Client (via Paul) |
+| `fact:svc-curved-stair-lifts:install_time` | Installation itself is quick for curved, porch and wheelchair lifts; more than one install per day possible. **Partial.** | New row "Install time: curved, porch and wheelchair lifts" (Client Confirmed) | Yes, with open items left open |
+
+**Still open (not answered):**
+- Order-to-installed lead time for curved, porch and wheelchair lifts.
+- Who handles the concrete pad and building permit for porch and wheelchair lifts (owner, customer, or depends).
+
+Recorded as Unknown in Brand Guide D: row "Order-to-installed lead time; pad and permit for porch and wheelchair lifts".
+
+**Gate re-run:** `python3 scripts/evidence.py run home-mobile-medical --run 20261014-141534-interview-b760 --all`
+- Before: the five service pages were blocked on the three questions.
+- After: no page is blocked. The five service pages (svc-repair-maintenance, svc-curved-stair-lifts, svc-porch-lifts, svc-wheelchair-lifts, svc-stair-lifts) now WARN with 3 supporting unverified gaps each; the brief must list them under "Evidence gaps".
+- All location, hub, homepage and about pages PASS (some with 1–2 unverified or unknown supporting facts).
+
+**Brand Guide changed:** Section D was edited, so `brand_guide_approved` is void until Paul re-approves. `/next` gives the approval line.
+
+**Facts pack note:** `evidence.py run --batch all` is not a valid batch name, so the gate was re-run with `--all`.
+
+**Next for Paul**
+1. Re-approve the Brand Guide (sees the new D rows first).
+2. Decide on the two open items: send a follow-up question for lead time and pad/permit, or accept the current wording (the pages say the install timeline is confirmed at the free in-home estimate).
+3. Check the Brand Guide's D2 section: the homepage and service wording may still need the "no after-hours" and "same-day in most cases" lines re-checked when briefs are drafted.
+### END HANDOFF
+## RUN 20261014-141534-interview-b760 · FINISHED · 2026-10-14T14:17:07-05:00
+Changes: 0 · Summary: Facts-answers (batch all): 3 owner answers saved, written to Brand Guide D, settled. Evidence gate re-run: no page blocked; service pages WARN on 3 supporting gaps each. Brand Guide changed, needs Paul re-approval. Open: install lead time and pad/permit.
+- CHANGE #202 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (5).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #203 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-14 (5).md | new: Home Mobile Medical - Handoff Log.md · sha d5887139c52b | result: done · copied (Drive for desktop syncs it)
+- CHANGE #204 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (8).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (8).md | result: done · renamed and moved, nothing deleted
+- CHANGE #205 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (8).md | new: Home Mobile Medical - Document Checklist.md · sha c99ce6913f45 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #206 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Brand Guide - 2026-10-14 (2).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md | new: _Archive/Home Mobile Medical - Brand Guide - 2026-10-14 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #207 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md | upload | old: previous version archived as Home Mobile Medical - Brand Guide - 2026-10-14 (2).md | new: Home Mobile Medical - Brand Guide.md · sha 4971136af402 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #208 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (8).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (8).md | result: done · renamed and moved, nothing deleted
+- CHANGE #209 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (8).md | new: Home Mobile Medical - Status.md · sha 30659e078b9a | result: done · copied (Drive for desktop syncs it)

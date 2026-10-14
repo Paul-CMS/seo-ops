@@ -1,6 +1,6 @@
 # Evidence grid — Hardeeville, SC (location)
 
-**Result: PASS** · Known 8 · Unknown 1 · Unverified 1 · Conflict 0 (CM-041)
+**Result: PASS** · Known 9 · Unknown 0 · Unverified 1 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
 
@@ -14,9 +14,5 @@ _The grid holds only the facts, so its fingerprint changes only when a fact chan
 | 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) | supporting | **Known** | Novant Health Coastal Carolina Medical Center (hospital, Hardeeville); Savannah National Wildlife Refuge (borders much of the city to the west); Sun City Hilton Head (age-restricted community) | https://novanthealth.org/locations/medical-centers/coastal-carolina-hospital (Novant Health, read 2026-10-14) · https://en.wikipedia.org/wiki/Savannah_National_Wildlife_Refuge (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Sun_City_Hilton_Head (Wikipedia, read 2026-10-14) |
 | Which office issues permits here, with its official page (for the Serving section) | supporting | **Known** | City of Hardeeville Building Safety Department (3345 Argent Blvd, Unit 102, Ridgeland SC 29936, 843-784-2231) takes building permits through the city building portal | https://www.hardeevillesc.gov/2650/Building-Permits (City of Hardeeville, read 2026-10-14) |
 | Response time / guarantees for this area | supporting | **Unverified** | None |  |
-| Emergency / after-hours reality | supporting | **Unknown** | [NEED] | searched, not found (2 source(s) on disk) |
+| Emergency / after-hours reality | supporting | **Known** | Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current demand. Use general terms only; do not  | Facts interview 2026-10-14, owner reply Q2 (general terms only) |
 | Google rating and review count (date checked) | supporting | **Known** | 2.9 stars from 19 Google reviews (checked 2026-10-08) | DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23 |
-
-**Sources searched before asking (CM-057):** data/rankings/rankings-summary.md, data/reviews/reviews.csv
-
-**Not on disk:** data/crawl/page-text.csv, data/gbp/ (a GBP export), data/local-grid/, data/reviews/reviews-summary.md

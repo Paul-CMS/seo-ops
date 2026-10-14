@@ -1,6 +1,6 @@
 # Evidence pack — Hilton Head Island–Bluffton–Port Royal area hub (county)
 
-Section **loc-hhi** · https://homemobilemedical.com/hilton-head-bluffton-metro/ · built 2026-10-14T14:07 by evidence_pack.py (CM-061).
+Section **loc-hhi** · https://homemobilemedical.com/hilton-head-bluffton-metro/ · built 2026-10-14T14:16 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -41,12 +41,15 @@ _The only place the writer looks for facts. Write every excerpt at its usage tie
 | d-safety-statement | Safety statement | paul_approved | "Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions." | Paul 2026-10-07 |
 | d-email | Email | client_confirmed | info@homemobilemedical.com | Paul 2026-10-07 |
 | d-hours | Hours | client_confirmed | Monday–Friday 9:00 AM–5:00 PM; Saturday–Sunday closed | Paul 2026-10-07 |
-| d-emergency-after-hours-reality | Emergency / after-hours reality | unknown | [NEED] |  |
-| d-minimum-service-call-or-trip-charge | Minimum service call or trip charge | unknown | [NEED] |  |
+| d-emergency-after-hours-reality | Emergency / after-hours reality | client_confirmed | Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current demand. Use general terms only; do not promise a specific a | Facts interview 2026-10-14, owner reply Q2 (general terms only) |
+| d-minimum-service-call-or-trip-charge | Minimum service call or trip charge | client_confirmed | None. No service-call or trip charge. | Facts interview 2026-10-14, owner reply Q1 |
 | d-payment-methods | Payment methods | paul_approved | General wording only ("we accept common payment methods"); no specific list | Paul 2026-10-07 |
 | d-services-subcontracted-out | Services subcontracted out | unknown | None known |  |
 | d-named-staff-for-on-page-use | Named staff for on-page use | client_confirmed | Jason Workens, founder/owner | Paul 2026-10-07 |
 | d-licensed-practitioner-for-health-claim-sign-off | Licensed practitioner for health-claim sign-off | paul_approved | Not required (health-adjacent, CM-040) |  |
+| svc-repair-maintenance:service_process | Repair process: steps and charge | client_confirmed | When someone calls about a broken stair lift or lift: first call, visit, diagnosis, quote, parts, fix. No service-call or trip charge. Repairs any stair lift or lift, any brand, within the service area. | Facts interview 2026-10-14, owner reply Q1; website wording allowed (yes) |
+| d-install-time-other-lifts | Install time: curved, porch and wheelchair lifts | client_confirmed | The installation itself is quick for curved, porch and wheelchair lifts, the same as stair lifts. More than one installation can be done in a day, so the schedule is adjusted to fit. | Facts interview 2026-10-14, owner reply Q3 (partial) |
+| d-lead-time-and-pad-permit | Order-to-installed lead time; pad and permit for porch and wheelchair lifts | unknown | [NEED] Order-to-installed lead time for curved, porch and wheelchair lifts. [NEED] Who handles the concrete pad and building permit for porch and wheelchair lifts (you, the customer, or it depends). | Facts interview 2026-10-14, owner reply Q3: not answered |
 | page:county_cities | county cities | Internally Verified | Beaufort County: Hilton Head Island (town), Bluffton (town), Port Royal (town), Lady's Island (unincorporated; small parts inside City of Beaufort), Laurel Bay (census-designated place), Daufuskie Island (unincorporated CDP, boat/ferry access only). Both count | https://en.wikipedia.org/wiki/Beaufort_County,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Ridgeland,_South_Carolina (Wikipedia, |
 | page:local_context | local context | Internally Verified | The Hilton Head Island-Bluffton-Port Royal metro covers Beaufort and Jasper counties: 215,908 people at the 2020 census. Beaufort County: 28.4% of residents 65 or older in 2020 (Hilton Head Island town: 39.6% in 2020, up from 28.8% in 2010). Humid subtropical  | https://en.wikipedia.org/wiki/Hilton_Head_Island%E2%80%93Bluffton_metropolitan_area (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_County |
 

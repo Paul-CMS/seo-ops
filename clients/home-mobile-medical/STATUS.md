@@ -2,17 +2,16 @@
 
 - **Stage —**
 - **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:facts finished (run 20261014-140654-build-4002) and that stage is in review mode — l; Client (via Paul) — Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2)
+- **Waiting on:** Paul — build:facts finished (run 20261014-140654-build-4002) and that stage is in review mode — l
 - **Next action:** `/next home-mobile-medical` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-14T14:14 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T14:17 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
 | Paul | build:facts finished (run 20261014-140654-build-4002) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build home-mobile-medical pilot-corrections (apply your pilot corrections to the specs before the next batch) | 2026-10-14 | /next home-mobile-medical |
-| Client (via Paul) | Any emergency or after-hours help for a stopped lift? (facts round 2026-10-14, Q2) | 2026-10-14 | fact:d:emergency |
 
 ## Waiting on (not blocking)
 
@@ -40,6 +39,9 @@ _Open, but the next action above goes ahead without them._
 - Paul 2026-10-09 (Q1): client confirms no leads from any of the 36 retirement URLs (17 FL/MI, 5 discontinued-service, 14 SC legacy incl. /services/straight-stair-lifts/). CM-019 C4 passes; all 36 become 301s.
 - Paul Exception 2026-10-09 (Q8): citation link-destination check skipped; CM-019 C3 accepted on DataforSEO referring-domain evidence for the 36 URLs. Do not re-raise.
 - Paul 2026-10-09 (Q2, revised in rewrite 2): redirect the 36 to the appropriate URLs — FL/MI → /stair-lifts/, power chairs/scooter lifts → the homepage (was /services/), ramps → /porch-lifts/; SC legacy duplicates → their canonical root service/location page. No redirect points at /services/ or /service-area/, so there are no chains.
+- Repair steps: first call, visit, diagnosis, quote, parts, fix. No service-call or trip charge. Website wording allowed: yes.
+- True emergencies are handled after hours; urgent non-emergency calls are scheduled as soon as possible; after-hours availability depends on current demand. Publish in general terms only; do not promise after-hours response.
+- Installation itself is quick for every lift type (curved, porch, wheelchair); multiple installs per day possible. Order-to-installed lead time and pad/permit responsibility not answered.
 - When you call about a broken stair lift or lift, we first take your call, schedule a visit, diagnose the problem, provide a quote, order parts if needed, and complete the repair. There is no service call or trip charge. We repair any brand of stair lift or lift in our service area.
 - Our office is open Monday through Friday, 9 a.m. to 5 p.m. True emergencies are handled after hours; after-hours availability depends on current demand. Urgent non-emergency calls are scheduled as soon as possible.
 - Stair lift installations typically take a couple of hours, and we can often complete two per day for curved, porch and wheelchair lifts. The actual timeline depends on project scope and is confirmed during your free in-home estimate.
@@ -66,7 +68,6 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **fanout-raw** (10 file(s), e.g. `data/fanout/raw/curved-stair-lifts-beaufort.json`) — read by the step that reads fanout-queries
 - **blog-inventory** (1 file(s), e.g. `inputs/Home Mobile Medical - CMS - blog-inventory - 2026-09-18.csv`) — read by blog:map
 - **entity-profile** (1 file(s), e.g. `inputs/Home Mobile Medical - MANUAL - entity-profile - 2026-09-18.md`) — read by discovery:discovery
-- **interviews** (2 file(s), e.g. `interviews/facts/Home Mobile Medical - Facts Interview - all - 2026-10-14 - REVIEW.md`) — read by build:evidence, interview:facts-answers
 
 ## Flagged for Paul (system)
 
@@ -86,4 +87,4 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 
 _Nothing recorded yet (run.py finish --tokens --cost)._
 
-Last run: /build 2026-10-14T14:14 — Facts round re-check: all 33 page grids re-run (none blocked; 5 service pages warn, 28 pass). No new questions. Question sheet restored from f5c00c6 after F-007. Repair process, emergency hours and curved/porch/wheelchair install times were answered by Paul via decisions and settled after this re-check.
+Last run: /interview 2026-10-14T14:17 — Facts-answers (batch all): 3 owner answers saved, written to Brand Guide D, settled. Evidence gate re-run: no page blocked; service pages WARN on 3 supporting gaps each. Brand Guide changed, needs Paul re-approval. Open: install lead time and pad/permit.

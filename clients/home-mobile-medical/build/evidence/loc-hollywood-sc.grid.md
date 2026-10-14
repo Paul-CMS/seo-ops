@@ -1,6 +1,6 @@
 # Evidence grid — Hollywood, SC (location)
 
-**Result: PASS** · Known 8 · Unknown 1 · Unverified 1 · Conflict 0 (CM-041)
+**Result: PASS** · Known 9 · Unknown 0 · Unverified 1 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
 
@@ -14,9 +14,5 @@ _The grid holds only the facts, so its fingerprint changes only when a fact chan
 | 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) | supporting | **Known** | Serenity Park (7.2 acres, end of Trexler Avenue, 500 ft of Stono River frontage); Hollywood Town Hall (5150 Highway 165); West County Aquatic Center (Charleston County Parks pool) | https://greenbelt.charlestoncounty.gov/projects/hollywood (Charleston County Greenbelt Program, read 2026-10-14) · https://www.townofhollywood.org/town-council/meeting/town-council-meeting-95 (Town of Hollywood, via search result, read 2026-10-14) · https://www.postandcourier.com/lowcountryparent/love_where_you_live/love-where-you-live-hollywood-ravenel-and-meggett/article_54bc5002-5179-11ee-8bf1-b773e6579ad1.html (Post and Courier, read 2026-10-14) |
 | Which office issues permits here, with its official page (for the Serving section) | supporting | **Known** | Town of Hollywood Town Hall takes building, zoning, tree and electrical permit applications (Town permits portal); the Town's pages say inspections are done by Charleston County Building Inspection Services (CC&I), and the County lists Holl | https://townofhollywood.org/applications---forms (Town of Hollywood, via search result; direct fetch 403, read 2026-10-14) · https://www.charlestoncounty.org/departments/building-inspection-services/forms/Construction-Data-Report-Request.pdf (Charleston County, via search result, read 2026-10-14) |
 | Response time / guarantees for this area | supporting | **Unverified** | None |  |
-| Emergency / after-hours reality | supporting | **Unknown** | [NEED] | searched, not found (2 source(s) on disk) |
+| Emergency / after-hours reality | supporting | **Known** | Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current demand. Use general terms only; do not  | Facts interview 2026-10-14, owner reply Q2 (general terms only) |
 | Google rating and review count (date checked) | supporting | **Known** | 2.9 stars from 19 Google reviews (checked 2026-10-08) | DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23 |
-
-**Sources searched before asking (CM-057):** data/rankings/rankings-summary.md, data/reviews/reviews.csv
-
-**Not on disk:** data/crawl/page-text.csv, data/gbp/ (a GBP export), data/local-grid/, data/reviews/reviews-summary.md

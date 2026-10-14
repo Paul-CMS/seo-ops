@@ -1,6 +1,6 @@
 # Evidence grid — Laurel Bay, SC (location)
 
-**Result: PASS** · Known 7 · Unknown 2 · Unverified 1 · Conflict 0 (CM-041)
+**Result: PASS** · Known 8 · Unknown 1 · Unverified 1 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
 
@@ -14,7 +14,7 @@ _The grid holds only the facts, so its fingerprint changes only when a fact chan
 | 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) | supporting | **Known** | Marine Corps Air Station Beaufort - https://en.wikipedia.org/wiki/Marine_Corps_Air_Station_Beaufort · Marine Corps Recruit Depot Parris Island - https://en.wikipedia.org/wiki/Marine_Corps_Recruit_Depot_Parris_Island · U.S. Naval Hospital Be | https://en.wikipedia.org/wiki/Laurel_Bay,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Marine_Corps_Air_Station_Beaufort (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Naval_Hospital_Beaufort (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Marine_Corps_Recruit_Depot_Parris_Island (Wikipedia, read 2026-10-14) |
 | Which office issues permits here, with its official page (for the Serving section) | supporting | **Known** | Beaufort County Building Codes (Building Inspections), 100 Ribaut Road, Beaufort SC 29901, 843-255-2065 - Laurel Bay is an unincorporated census-designated place, not a municipality (Wikipedia lists it among the county's CDPs, not its towns | https://beaufortcountysc.gov/building-codes (Beaufort County, read 2026-10-14) · https://en.wikipedia.org/wiki/Laurel_Bay,_South_Carolina (Wikipedia, read 2026-10-14) · https://en.wikipedia.org/wiki/Beaufort_County,_South_Carolina (Wikipedia, read 2026-10-14) |
 | Response time / guarantees for this area | supporting | **Unverified** | None |  |
-| Emergency / after-hours reality | supporting | **Unknown** | [NEED] | searched, not found (2 source(s) on disk) |
+| Emergency / after-hours reality | supporting | **Known** | Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current demand. Use general terms only; do not  | Facts interview 2026-10-14, owner reply Q2 (general terms only) |
 | Google rating and review count (date checked) | supporting | **Known** | 2.9 stars from 19 Google reviews (checked 2026-10-08) | DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23 |
 
 **Sources searched before asking (CM-057):** data/rankings/rankings-summary.md, data/reviews/reviews.csv

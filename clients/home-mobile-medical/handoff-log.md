@@ -369,3 +369,38 @@ Generated from the safety log (clients/home-mobile-medical/log.md) — do not ed
 - Flag F-007: the questions command overwrote the open facts-round REVIEW.md with an empty version; the sent version is in git HEAD. Restore was blocked by the permission system.
 - Remaining [NEED]: emergency/after-hours (all location pages), repair service process (svc-repair-maintenance, required), install times for curved/porch/wheelchair lifts. Supporting gaps left out of pages: awards, associations; neighbourhoods for Folly Island, Laurel Bay, Levy; named places for Levy (researched, not found).
 
+## /interview · 2026-10-14 · run 20261014-141534-interview-b760
+
+## Handoff Log
+
+**Step:** facts-answers, batch `all` (the 2026-10-14 facts round, 3 questions).
+**Reply saved:** `clients/home-mobile-medical/interviews/facts/Home Mobile Medical - Facts Interview - all - 2026-10-14 - REPLY.md` (as given).
+
+**Answers and where they went**
+
+| Key | Answer (short) | Brand Guide D | Settled |
+|---|---|---|---|
+| `fact:svc-repair-maintenance:service_process` | Steps as suggested (first call, visit, diagnosis, quote, parts, fix). No service-call or trip charge. Website wording: yes. | New row "Repair process: steps and charge" (Client Confirmed); trip-charge row changed from [NEED] to "None" (Client Confirmed) | Yes, by Client (via Paul) |
+| `fact:d:emergency` | No standing after-hours service. True emergencies handled after hours; urgent non-emergency calls scheduled ASAP; after-hours availability depends on current demand. Advertise in general terms only. | "Emergency / after-hours reality" row changed from [NEED] to general-terms wording (Client Confirmed) | Yes, by Client (via Paul) |
+| `fact:svc-curved-stair-lifts:install_time` | Installation itself is quick for curved, porch and wheelchair lifts; more than one install per day possible. **Partial.** | New row "Install time: curved, porch and wheelchair lifts" (Client Confirmed) | Yes, with open items left open |
+
+**Still open (not answered):**
+- Order-to-installed lead time for curved, porch and wheelchair lifts.
+- Who handles the concrete pad and building permit for porch and wheelchair lifts (owner, customer, or depends).
+
+Recorded as Unknown in Brand Guide D: row "Order-to-installed lead time; pad and permit for porch and wheelchair lifts".
+
+**Gate re-run:** `python3 scripts/evidence.py run home-mobile-medical --run 20261014-141534-interview-b760 --all`
+- Before: the five service pages were blocked on the three questions.
+- After: no page is blocked. The five service pages (svc-repair-maintenance, svc-curved-stair-lifts, svc-porch-lifts, svc-wheelchair-lifts, svc-stair-lifts) now WARN with 3 supporting unverified gaps each; the brief must list them under "Evidence gaps".
+- All location, hub, homepage and about pages PASS (some with 1–2 unverified or unknown supporting facts).
+
+**Brand Guide changed:** Section D was edited, so `brand_guide_approved` is void until Paul re-approves. `/next` gives the approval line.
+
+**Facts pack note:** `evidence.py run --batch all` is not a valid batch name, so the gate was re-run with `--all`.
+
+**Next for Paul**
+1. Re-approve the Brand Guide (sees the new D rows first).
+2. Decide on the two open items: send a follow-up question for lead time and pad/permit, or accept the current wording (the pages say the install timeline is confirmed at the free in-home estimate).
+3. Check the Brand Guide's D2 section: the homepage and service wording may still need the "no after-hours" and "same-day in most cases" lines re-checked when briefs are drafted.
+

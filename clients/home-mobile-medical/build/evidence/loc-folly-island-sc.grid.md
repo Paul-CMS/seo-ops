@@ -1,6 +1,6 @@
 # Evidence grid — Folly Island, SC (location)
 
-**Result: PASS** · Known 7 · Unknown 2 · Unverified 1 · Conflict 0 (CM-041)
+**Result: PASS** · Known 8 · Unknown 1 · Unverified 1 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
 
@@ -14,7 +14,7 @@ _The grid holds only the facts, so its fingerprint changes only when a fact chan
 | 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) | supporting | **Known** | Folly Beach Fishing Pier and Folly Beach County Park (Charleston County Parks); Morris Island Lighthouse (Save the Light); Folly Boat (on Folly Road); Center Street | https://en.wikipedia.org/wiki/Folly_Beach,_South_Carolina (Wikipedia, read 2026-10-14) · https://www.savethelight.org (Save the Light, via search result, read 2026-10-14) · https://www.ccprc.com/parks/park-facility-rules/folly-beach-pier-rules/ (Charleston County Park & Recreation Commission, via search result, read 2026-10-14) |
 | Which office issues permits here, with its official page (for the Serving section) | supporting | **Known** | City of Folly Beach Building & Planning Department issues building permits ("Building permits are required for all new construction, remodeling, and repairs"); permits@follybeach.gov, (843) 588-2447; new-construction packages submitted elec | https://cityoffollybeach.com/departments/building_planning/index.php (City of Folly Beach, read 2026-10-14) · https://cityoffollybeach.com/quick_links/apply_permits_licenses_str.php (City of Folly Beach, read 2026-10-14) |
 | Response time / guarantees for this area | supporting | **Unverified** | None |  |
-| Emergency / after-hours reality | supporting | **Unknown** | [NEED] | searched, not found (2 source(s) on disk) |
+| Emergency / after-hours reality | supporting | **Known** | Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current demand. Use general terms only; do not  | Facts interview 2026-10-14, owner reply Q2 (general terms only) |
 | Google rating and review count (date checked) | supporting | **Known** | 2.9 stars from 19 Google reviews (checked 2026-10-08) | DataforSEO Google reviews pull 2026-10-08 (data/reviews/raw/reviews.json); reviews.csv 19 rows, 2017-04-02 to 2023-03-23 |
 
 **Sources searched before asking (CM-057):** data/rankings/rankings-summary.md, data/reviews/reviews.csv

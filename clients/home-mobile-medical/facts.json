@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-14T14:07:55-05:00",
+  "updated": "2026-10-14T14:16:29-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -470,28 +470,30 @@
       "section": "D",
       "num": "",
       "label": "Emergency / after-hours reality",
-      "value": "[NEED]",
-      "status": "unknown",
-      "status_text": "Unknown",
-      "source": "",
+      "value": "Office hours are Monday–Friday 9 AM–5 PM. True emergencies are handled after hours. Urgent calls that are not emergencies are scheduled as soon as possible. After-hours availability depends on current demand. Use general terms only; do not promise a specific after-hours response.",
+      "status": "client_confirmed",
+      "status_text": "Client Confirmed",
+      "source": "Facts interview 2026-10-14, owner reply Q2 (general terms only)",
       "quote": "",
-      "date": "",
-      "who": "",
-      "count": null
+      "date": "2026-10-14",
+      "who": "Paul",
+      "count": null,
+      "was": "Unknown"
     },
     {
       "id": "d-minimum-service-call-or-trip-charge",
       "section": "D",
       "num": "",
       "label": "Minimum service call or trip charge",
-      "value": "[NEED]",
-      "status": "unknown",
-      "status_text": "Unknown",
-      "source": "",
+      "value": "None. No service-call or trip charge.",
+      "status": "client_confirmed",
+      "status_text": "Client Confirmed",
+      "source": "Facts interview 2026-10-14, owner reply Q1",
       "quote": "",
-      "date": "",
-      "who": "",
-      "count": null
+      "date": "2026-10-14",
+      "who": "Paul",
+      "count": null,
+      "was": "Unknown"
     },
     {
       "id": "d-payment-methods",
@@ -660,6 +662,50 @@
       "date": "2026-10-14",
       "who": "reviews.py extract",
       "count": 1
+    },
+    {
+      "id": "svc-repair-maintenance:service_process",
+      "section": "D",
+      "num": "",
+      "label": "Repair process: steps and charge",
+      "value": "When someone calls about a broken stair lift or lift: first call, visit, diagnosis, quote, parts, fix. No service-call or trip charge. Repairs any stair lift or lift, any brand, within the service area.",
+      "status": "client_confirmed",
+      "source": "Facts interview 2026-10-14, owner reply Q1; website wording allowed (yes)",
+      "quote": "",
+      "date": "2026-10-14",
+      "who": "Paul",
+      "count": null,
+      "was": "Unknown",
+      "status_text": "Client Confirmed"
+    },
+    {
+      "id": "d-install-time-other-lifts",
+      "section": "D",
+      "num": "",
+      "label": "Install time: curved, porch and wheelchair lifts",
+      "value": "The installation itself is quick for curved, porch and wheelchair lifts, the same as stair lifts. More than one installation can be done in a day, so the schedule is adjusted to fit.",
+      "status": "client_confirmed",
+      "source": "Facts interview 2026-10-14, owner reply Q3 (partial)",
+      "quote": "",
+      "date": "2026-10-14",
+      "who": "Paul",
+      "count": null,
+      "was": "Unknown",
+      "status_text": "Client Confirmed"
+    },
+    {
+      "id": "d-lead-time-and-pad-permit",
+      "section": "D",
+      "num": "",
+      "label": "Order-to-installed lead time; pad and permit for porch and wheelchair lifts",
+      "value": "[NEED] Order-to-installed lead time for curved, porch and wheelchair lifts. [NEED] Who handles the concrete pad and building permit for porch and wheelchair lifts (you, the customer, or it depends).",
+      "status": "unknown",
+      "source": "Facts interview 2026-10-14, owner reply Q3: not answered",
+      "quote": "",
+      "date": "2026-10-14",
+      "who": "Paul",
+      "count": null,
+      "status_text": "Unknown"
     }
   ]
 }
