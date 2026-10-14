@@ -2198,18 +2198,8 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T16:31:06-05:00",
-  "open_runs": {
-    "20261014-144852-build-6004": {
-      "step": "build:write",
-      "batch": "services",
-      "page": null,
-      "started": "2026-10-14T14:48:52-05:00",
-      "started_ts": 1792007332.9900632,
-      "session": "fc0c547a-9071-4271-a821-8c1fde609fe8",
-      "pages": null
-    }
-  },
+  "updated": "2026-10-14T16:33:48-05:00",
+  "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
   },

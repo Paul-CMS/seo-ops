@@ -58,3 +58,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 - 2026-10-08T07:57 — Every registered audit step has an outcome (Done / Skipped / Failed) — met (system-verified)
 - 2026-10-08T13:15 — Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)
 - 2026-10-09T07:39 — Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — met (system-verified)
+
+## Runs aborted (Paul's call)
+
+- 2026-10-14T16:33 20261014-144852-build-6004 — Paul aborted: briefs approved, drafts to start in a new run

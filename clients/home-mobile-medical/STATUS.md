@@ -1,24 +1,17 @@
 # Home Mobile Medical - Status
 
-- **Stage —**
-- **What is happening now:** run 20261014-144852-build-6004 (build:write) started 2026-10-14T14:48 and has not finished
-- **Waiting on:** Paul — decide what to do with the unfinished run (resume, /verify, /rollback or abort); Jonie — wp setup handoff — 3 of 3 item(s) open; Jonie — seopress settings handoff — 4 of 4 item(s) open
-- **Next action:** `/verify home-mobile-medical` once the wait above is over · model: Haiku chat
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
+- **What is happening now:** waiting for Paul's approval — the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. No placeholders in the drafts
+- **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (nothing 
+- **Next action:** Paul types `/approve home-mobile-medical batch:pilot:drafts --review "<who reviewed it>"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-14T16:31 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T16:33 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | decide what to do with the unfinished run (resume, /verify, /rollback or abort) | 2026-10-14 | 20261014-144852-build-6004 |
-| Jonie | wp setup handoff — 3 of 3 item(s) open | 2026-10-07 | H-2026-10-07-01-wp_setup |
-| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-07 | H-2026-10-07-02-seopress_settings |
-| Jonie | redirect handoff — 3 of 3 item(s) open | 2026-10-09 | H-2026-10-09-03-redirect |
-| Jonie | broken link handoff — 9 of 9 item(s) open | 2026-10-09 | H-2026-10-09-04-broken_link |
-| Jonie | other handoff — 2 of 2 item(s) open | 2026-10-09 | H-2026-10-09-05-other |
-| Jonie | redirect handoff — 1 of 1 item(s) open | 2026-10-09 | H-2026-10-09-06-redirect |
-| Jonie | redirect handoff — 1 of 1 item(s) open | 2026-10-09 | H-2026-10-09-07-redirect |
+| Paul | the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. No placeholders in the drafts | 2026-10-14 | /approve home-mobile-medical batch:pilot:drafts |
 
 ## Waiting on (not blocking)
 
@@ -26,7 +19,14 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | run 20261014-144852-build-6004 never finished — you decide: resume it, /verify it, /rollback it, or abort it | 2026-10-14 | /where home-mobile-medical |
+| Jonie | blockers not cleared: H-2026-10-09-03-redirect-01 is issued; H-2026-10-09-03-redirect-02 is issued; H-2026-10-09-03-redirect-03 is issued; H-2026-10-09-04-broken_link-01 is issued; H-2026-10-09-04-broken_link-02 is issued (+9 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-14 | /verify home-mobile-medical |
+| Jonie | wp setup handoff — 3 of 3 item(s) open | 2026-10-07 | H-2026-10-07-01-wp_setup |
+| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-07 | H-2026-10-07-02-seopress_settings |
+| Jonie | redirect handoff — 3 of 3 item(s) open | 2026-10-09 | H-2026-10-09-03-redirect |
+| Jonie | broken link handoff — 9 of 9 item(s) open | 2026-10-09 | H-2026-10-09-04-broken_link |
+| Jonie | other handoff — 2 of 2 item(s) open | 2026-10-09 | H-2026-10-09-05-other |
+| Jonie | redirect handoff — 1 of 1 item(s) open | 2026-10-09 | H-2026-10-09-06-redirect |
+| Jonie | redirect handoff — 1 of 1 item(s) open | 2026-10-09 | H-2026-10-09-07-redirect |
 
 ## Settled decisions — never re-raised
 
