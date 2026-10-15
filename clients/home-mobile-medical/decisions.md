@@ -20,6 +20,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 | 2026-10-14T16:24 | batch services briefs | revise |
 | 2026-10-14T16:31 | batch services briefs | approved |
 | 2026-10-14T21:06 | batch services drafts | approved |
+| 2026-10-14T21:51 | batch pilot drafts | approved |
 | 2026-10-07T17:21 | import from Drive | confirmed |
 
 ## Decisions logged during runs

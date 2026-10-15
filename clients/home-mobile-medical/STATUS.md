@@ -1,17 +1,17 @@
 # Home Mobile Medical - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** waiting for Paul's approval — the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. No placeholders in the drafts
-- **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (nothing 
-- **Next action:** Paul types `/approve home-mobile-medical batch:pilot:drafts --review "<who reviewed it>"` (or asks for changes first) · model: Haiku chat
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch loc-hhi)**
+- **What is happening now:** Stage 6 (Pilot, services, locations, ship (one session each)) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open home-mobile-medical) and type /next home-mobile-medical. Next there: /build home-mobile-medical write loc-hhi (batch loc-hhi in one run: every brief, then one draft per page (each from its own fresh sub-agent, CM-043), then the batch review side by side)
+- **Waiting on:** nobody
+- **Next action:** `/next home-mobile-medical` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-14T21:46 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T21:51 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. No placeholders in the drafts | 2026-10-14 | /approve home-mobile-medical batch:pilot:drafts |
+| — | nothing | | |
 
 ## Waiting on (not blocking)
 
