@@ -1919,7 +1919,23 @@
           "sensitive_review": null,
           "practitioner": null
         },
-        "drafts": null,
+        "drafts": {
+          "state": "approved",
+          "by": "Paul",
+          "at": "2026-10-14T21:06:30-05:00",
+          "note": null,
+          "files": {
+            "clients/home-mobile-medical/build/services/drafts/svc-curved-stair-lifts.md": "69d71f59c3e6",
+            "clients/home-mobile-medical/build/services/drafts/svc-porch-lifts.md": "68f38704df99",
+            "clients/home-mobile-medical/build/services/drafts/svc-wheelchair-lifts.md": "9403656204f6",
+            "clients/home-mobile-medical/build/services/drafts/svc-repair-maintenance.md": "19807c07fce8"
+          },
+          "conditions": [],
+          "sensitive_review": "Paul Meisner",
+          "practitioner": null,
+          "sem_ids": [],
+          "writing_fp": "66993249914c"
+        },
         "files": {
           "briefs": [
             "clients/home-mobile-medical/build/services/briefs/SB - Curved Stair Lifts - Home Mobile Medical.md",
@@ -2256,7 +2272,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T21:00:27-05:00",
+  "updated": "2026-10-14T21:06:30-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
@@ -2401,10 +2417,5 @@
   "url_drops": {
     "/service-area/": "https://homemobilemedical.com/",
     "/services/": "https://homemobilemedical.com/"
-  },
-  "review_pause": {
-    "run_id": "20261014-164325-build-3b84",
-    "step": "build:drafts",
-    "at": "2026-10-14T16:47:29-05:00"
   }
 }

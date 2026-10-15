@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (nothing 
 - **Next action:** Paul types `/approve home-mobile-medical batch:pilot:drafts --review "<who reviewed it>"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-14T21:00 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-14T21:06 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -37,6 +37,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-14: batch pilot briefs — approved
 - 2026-10-14: batch pilot drafts — approved
 - 2026-10-14: batch services briefs — approved
+- 2026-10-14: batch services drafts — approved
 - Paul 2026-10-09 (Q1): client confirms no leads from any of the 36 retirement URLs (17 FL/MI, 5 discontinued-service, 14 SC legacy incl. /services/straight-stair-lifts/). CM-019 C4 passes; all 36 become 301s.
 - Paul Exception 2026-10-09 (Q8): citation link-destination check skipped; CM-019 C3 accepted on DataforSEO referring-domain evidence for the 36 URLs. Do not re-raise.
 - Paul 2026-10-09 (Q2, revised in rewrite 2): redirect the 36 to the appropriate URLs — FL/MI → /stair-lifts/, power chairs/scooter lifts → the homepage (was /services/), ramps → /porch-lifts/; SC legacy duplicates → their canonical root service/location page. No redirect points at /services/ or /service-area/, so there are no chains.
