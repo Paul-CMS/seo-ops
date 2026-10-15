@@ -1,0 +1,130 @@
+{
+  "made": "2026-10-14T20:58:57-05:00",
+  "run": "20261014-205855-build-59c9",
+  "section": "services",
+  "step": "drafts",
+  "answers": "accept all",
+  "items": [
+    {
+      "id": "1",
+      "page": "svc-curved-stair-lifts",
+      "url": "https://homemobilemedical.com/curved-stair-lifts/",
+      "item": "review evidence",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "leave the draft as written (no excerpt fits)",
+      "by": "default"
+    },
+    {
+      "id": "2",
+      "page": "svc-curved-stair-lifts",
+      "url": "https://homemobilemedical.com/curved-stair-lifts/",
+      "item": "settled install-time wording twice on the page",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "keep it once, in the FAQ; delivery H2 gets a curved-specific line",
+      "by": "default"
+    },
+    {
+      "id": "3",
+      "page": "svc-porch-lifts",
+      "url": "https://homemobilemedical.com/porch-lifts/",
+      "item": "review evidence",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "leave the draft as written (no excerpt fits)",
+      "by": "default"
+    },
+    {
+      "id": "4",
+      "page": "svc-porch-lifts",
+      "url": "https://homemobilemedical.com/porch-lifts/",
+      "item": "settled install-time wording twice on the page",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "keep it once, in the FAQ; delivery H2 gets a porch-specific line",
+      "by": "default"
+    },
+    {
+      "id": "5",
+      "page": "svc-porch-lifts",
+      "url": "https://homemobilemedical.com/porch-lifts/",
+      "item": "opening angle maybe pattern",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "reword the porch scenario sentence",
+      "by": "default"
+    },
+    {
+      "id": "6",
+      "page": "svc-porch-lifts",
+      "url": "https://homemobilemedical.com/porch-lifts/",
+      "item": "supervises every installation sentence",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "reword the porch sentence",
+      "by": "default"
+    },
+    {
+      "id": "7",
+      "page": "svc-wheelchair-lifts",
+      "url": "https://homemobilemedical.com/wheelchair-lifts/",
+      "item": "review evidence",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "leave the draft as written (no excerpt fits)",
+      "by": "default"
+    },
+    {
+      "id": "8",
+      "page": "svc-wheelchair-lifts",
+      "url": "https://homemobilemedical.com/wheelchair-lifts/",
+      "item": "settled install-time wording twice on the page",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "keep it once, in the FAQ; delivery H2 gets a wheelchair-specific line",
+      "by": "default"
+    },
+    {
+      "id": "9",
+      "page": "svc-wheelchair-lifts",
+      "url": "https://homemobilemedical.com/wheelchair-lifts/",
+      "item": "opening first sentence and maybe pattern",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "rewrite the first sentence and scenario line",
+      "by": "default"
+    },
+    {
+      "id": "10",
+      "page": "svc-wheelchair-lifts",
+      "url": "https://homemobilemedical.com/wheelchair-lifts/",
+      "item": "no trip charge wording",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "settled phrase in FAQ 1 and closing only",
+      "by": "default"
+    },
+    {
+      "id": "11",
+      "page": "svc-wheelchair-lifts",
+      "url": "https://homemobilemedical.com/wheelchair-lifts/",
+      "item": "faq 3 wheelchair vs porch difference",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "rewrite as described, no new fact",
+      "by": "default"
+    }
+  ]
+}

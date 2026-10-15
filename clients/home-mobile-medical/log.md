@@ -1625,3 +1625,48 @@ Changes: 0 · Summary: Services drafts reviewed as one batch: 0 Asks, 11 Fix and
 - CHANGE #292 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (22).md | new: Home Mobile Medical - Document Checklist.md · sha 6e017b038dd4 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #293 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (22).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (22).md | result: done · renamed and moved, nothing deleted
 - CHANGE #294 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (22).md | new: Home Mobile Medical - Status.md · sha 10d45a553dcf | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261014-205855-build-59c9 · STARTED · /build · 2026-10-14T20:58:55-05:00
+Step: build:review · batch services · session e7bff2e3-fc09-491a-bd8d-f8a36153a33c
+Gates checked: discovery_signed_off
+- REVIEW APPLIED 2026-10-14T20:58 · run 20261014-205855-build-59c9 · services drafts: 11 row(s) (0 answered by Paul, the rest by default) · clients/home-mobile-medical/build/services/drafts-apply.json
+- DRAFT 2026-10-14T20:59 · run 20261014-205855-build-59c9 · svc-curved-stair-lifts · clients/home-mobile-medical/build/services/drafts/svc-curved-stair-lifts.md · agent build-apply-svc-curved-stair-lifts
+- DRAFT 2026-10-14T20:59 · run 20261014-205855-build-59c9 · svc-porch-lifts · clients/home-mobile-medical/build/services/drafts/svc-porch-lifts.md · agent build-apply-svc-porch-lifts
+- DRAFT 2026-10-14T21:00 · run 20261014-205855-build-59c9 · svc-wheelchair-lifts · clients/home-mobile-medical/build/services/drafts/svc-wheelchair-lifts.md · agent build-apply-svc-wheelchair-lifts
+- DRAFT 2026-10-14T21:00 · run 20261014-205855-build-59c9 · svc-repair-maintenance · clients/home-mobile-medical/build/services/drafts/svc-repair-maintenance.md · agent build-apply-svc-repair-maintenance
+### HANDOFF · /build · 2026-10-14 · run 20261014-205855-build-59c9
+**What I did**
+- Applied the 11 accepted rows of the services drafts review sheet ("accept all") to the drafts and recorded all four pages again (`status.py page-stage … --stage draft`, agent `build-apply-<page>`).
+- Curved stair lifts: item 2 (settled install-time wording now only in the FAQ; the delivery H2 has a curved-specific line). Item 1 needed no edit.
+- Porch lifts: items 4 (settled install-time wording only in the FAQ), 5 (scenario without "Maybe"), 6 (supervision sentence in porch's own words). Item 3 needed no edit.
+- Wheelchair lifts: items 8 (settled wording only in the FAQ), 9 (new first sentence and scenario without "Maybe"), 10 ("no service-call or trip charge" in FAQ 1 and the closing only; the delivery H2's extra line removed), 11 (FAQ 3 rewritten as the sheet says, with no indoor claim). Item 7 needed no edit.
+- Stair lift repair: the sheet has no rows for it. Its draft is unchanged and was recorded again.
+
+**What was decided, and why**
+- Every edit follows the sheet's recommended option. No new facts were added: each new line restates a pack fact (estimate first, Jason supervises, lift sourced new).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Drafts approval for the services section | Paul | ship |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Drafts | clients/home-mobile-medical/build/services/drafts/ | Applied, recorded |
+| Review sheet | clients/home-mobile-medical/build/services/drafts-review.md | Answered: accept all |
+
+**What I could not check**
+- Nothing published. The link-wheel table rows are still placeholders, as intended.
+
+**Anything the next agent would otherwise get wrong**
+- The settled install-time wording now appears once per page, in the FAQ. Do not add it back to the delivery H2s.
+### END HANDOFF
+## RUN 20261014-205855-build-59c9 · FINISHED · 2026-10-14T21:00:27-05:00
+Changes: 0 · Summary: Accepted services drafts review (accept all) applied to curved (1), porch (3), wheelchair (4); all four drafts recorded again; repair unchanged.
+- CHANGE #295 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (14).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (14).md | result: done · renamed and moved, nothing deleted
+- CHANGE #296 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-14 (14).md | new: Home Mobile Medical - Handoff Log.md · sha 0f8424c00c79 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #297 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (23).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (23).md | result: done · renamed and moved, nothing deleted
+- CHANGE #298 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (23).md | new: Home Mobile Medical - Document Checklist.md · sha f56708262251 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #299 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (23).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (23).md | result: done · renamed and moved, nothing deleted
+- CHANGE #300 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (23).md | new: Home Mobile Medical - Status.md · sha c7e928db7a2b | result: done · copied (Drive for desktop syncs it)

@@ -61,5 +61,82 @@
     "choice": "a",
     "action": "keep all three, second sentence page-specific",
     "by": "default"
+  },
+  "svc-curved-stair-lifts|usage|review-evidence": {
+    "step": "drafts",
+    "at": "2026-10-14T20:58:57-05:00",
+    "choice": "a",
+    "action": "leave the draft as written (no excerpt fits)",
+    "by": "default"
+  },
+  "svc-curved-stair-lifts|bb-316-collision|settled-install-time-wording-twice-on-the-page": {
+    "step": "drafts",
+    "at": "2026-10-14T20:58:57-05:00",
+    "choice": "a",
+    "action": "keep it once, in the FAQ; delivery H2 gets a curved-specific line",
+    "by": "default"
+  },
+  "svc-porch-lifts|usage|review-evidence": {
+    "step": "drafts",
+    "at": "2026-10-14T20:58:57-05:00",
+    "choice": "a",
+    "action": "leave the draft as written (no excerpt fits)",
+    "by": "default"
+  },
+  "svc-porch-lifts|bb-316-collision|settled-install-time-wording-twice-on-the-page": {
+    "step": "drafts",
+    "at": "2026-10-14T20:58:57-05:00",
+    "choice": "a",
+    "action": "keep it once, in the FAQ; delivery H2 gets a porch-specific line",
+    "by": "default"
+  },
+  "svc-porch-lifts|e1-portability|opening-angle-maybe-pattern": {
+    "step": "drafts",
+    "at": "2026-10-14T20:58:57-05:00",
+    "choice": "a",
+    "action": "reword the porch scenario sentence",
+    "by": "default"
+  },
+  "svc-porch-lifts|bb-316-collision|supervises-every-installation-sentence": {
+    "step": "drafts",
+    "at": "2026-10-14T20:58:57-05:00",
+    "choice": "a",
+    "action": "reword the porch sentence",
+    "by": "default"
+  },
+  "svc-wheelchair-lifts|usage|review-evidence": {
+    "step": "drafts",
+    "at": "2026-10-14T20:58:57-05:00",
+    "choice": "a",
+    "action": "leave the draft as written (no excerpt fits)",
+    "by": "default"
+  },
+  "svc-wheelchair-lifts|bb-316-collision|settled-install-time-wording-twice-on-the-page": {
+    "step": "drafts",
+    "at": "2026-10-14T20:58:57-05:00",
+    "choice": "a",
+    "action": "keep it once, in the FAQ; delivery H2 gets a wheelchair-specific line",
+    "by": "default"
+  },
+  "svc-wheelchair-lifts|e1-portability|opening-first-sentence-and-maybe-pattern": {
+    "step": "drafts",
+    "at": "2026-10-14T20:58:57-05:00",
+    "choice": "a",
+    "action": "rewrite the first sentence and scenario line",
+    "by": "default"
+  },
+  "svc-wheelchair-lifts|settled-wording|no-trip-charge-wording": {
+    "step": "drafts",
+    "at": "2026-10-14T20:58:57-05:00",
+    "choice": "a",
+    "action": "settled phrase in FAQ 1 and closing only",
+    "by": "default"
+  },
+  "svc-wheelchair-lifts|stage-4-semantic|faq-3-wheelchair-vs-porch-difference": {
+    "step": "drafts",
+    "at": "2026-10-14T20:58:57-05:00",
+    "choice": "a",
+    "action": "rewrite as described, no new fact",
+    "by": "default"
   }
 }

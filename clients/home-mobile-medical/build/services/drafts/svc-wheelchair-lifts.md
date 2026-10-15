@@ -7,17 +7,17 @@ replaces: https://homemobilemedical.com/services/wheelchair-lifts/
 ---
 # Wheelchair Lift Installation in the Lowcountry
 
-Home Mobile Medical sources new wheelchair lifts and installs them in homes across the Charleston area and the other South Carolina towns it serves. It is family-owned, locally owned and operated, and its whole trade is home accessibility lifts. Maybe someone in your house already uses a wheelchair. Now the home needs a lift to match. You want one local person to look at the house and see the job through. Jason Workens, the founder and owner, supervises every install himself. Start with a free in-home estimate. Call (843) 476-1329.
+When someone at home uses a wheelchair, Home Mobile Medical sources a new wheelchair lift for that house and puts it in, for families in the Charleston area and throughout its South Carolina service area. It is family-owned, locally owned and operated, and its whole trade is home accessibility lifts. Someone in your house already uses a wheelchair, and now the home needs a lift to match. You want one local person to look at the house and see the job through. Jason Workens, the founder and owner, supervises every install himself. Start with a free in-home estimate. Call (843) 476-1329.
 
 ## What Happens Between the Estimate and a Working Wheelchair Lift?
 
 Three things happen: Home Mobile Medical visits for a free in-home estimate, buys a new wheelchair lift for your home, and installs it with Jason Workens in charge.
 
-The visit costs nothing. There is no trip charge. It is when the place for the lift in your home is seen and the price is set.
+The visit costs nothing. It is when the place for the lift in your home is seen and the price is set.
 
 The lift is bought new for you. Home Mobile Medical does not make wheelchair lifts, and it does not rent them.
 
-Then the lift goes in. Stair lift installations typically take a couple of hours, and we can often complete two per day for curved, porch and wheelchair lifts. The actual timeline depends on project scope and is confirmed during your free in-home estimate. Jason supervises every installation, and he and his helper do the work.
+Then the lift goes in, at the spot in your home chosen during the estimate. Jason supervises every installation, and he and his helper do the work.
 
 Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions.
 
@@ -45,7 +45,7 @@ The four questions below come up most about wheelchair lifts: the cost, the inst
 
 ### How Much Does a Wheelchair Lift Cost?
 
-The cost of a wheelchair lift is set at a free in-home estimate, because the price depends on your home, on where the lift has to go and on which new lift is sourced for it, so you get a figure for your own house rather than a list price. The estimate is free, with no trip charge. Financing is available once you have that figure.
+The cost of a wheelchair lift is set at a free in-home estimate, because the price depends on your home, on where the lift has to go and on which new lift is sourced for it, so you get a figure for your own house rather than a list price. The estimate is free, with no service-call or trip charge. Financing is available once you have that figure.
 
 ### How Long Does It Take to Install a Wheelchair Lift?
 
@@ -53,7 +53,7 @@ Stair lift installations typically take a couple of hours, and we can often comp
 
 ### What Is the Difference Between a Wheelchair Lift and a Porch Lift?
 
-A porch lift is the outdoor kind, set at a raised entrance or deck, while a wheelchair lift carries a person in a wheelchair from one level to another. A porch lift is also called a vertical platform lift. Home Mobile Medical offers each one as its own service. Which one your home needs is decided during the free in-home estimate.
+A porch lift, also called a vertical platform lift, is the kind set outside at a raised entrance or deck, while a wheelchair lift is any lift that carries a person seated in a wheelchair between levels, and Home Mobile Medical offers each as its own service. Which one your home needs is settled at the free in-home estimate.
 
 ### Does a Wheelchair Lift Come With a Warranty?
 
@@ -65,4 +65,4 @@ Home Mobile Medical installs wheelchair lifts in the 24 South Carolina towns lis
 
 | [Link wheel: populate service-area links here] |
 
-For a wheelchair lift in your home, call Home Mobile Medical at (843) 476-1329 and set up a free in-home estimate, with no trip charge. Office hours are Monday to Friday, 9:00 AM to 5:00 PM. The office is closed on weekends.
+For a wheelchair lift in your home, call Home Mobile Medical at (843) 476-1329 and set up a free in-home estimate, with no service-call or trip charge. Office hours are Monday to Friday, 9:00 AM to 5:00 PM. The office is closed on weekends.

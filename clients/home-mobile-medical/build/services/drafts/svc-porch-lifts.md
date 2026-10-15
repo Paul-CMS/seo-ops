@@ -7,7 +7,7 @@ replaces: https://homemobilemedical.com/services/porch-lifts/
 ---
 # Vertical Platform Lift Installation in the Lowcountry
 
-Home Mobile Medical sources new porch lifts, also called vertical platform lifts, and installs them at raised entrances and decks for homes in Beaufort County and the rest of its service area. It is a family-owned business, locally owned and operated, and its work is home accessibility lifts. Maybe your front door sits at the top of porch steps. Or the deck is the way you come and go. A porch lift rises from the ground to that level. It all starts with a free in-home estimate at your entrance. Call (843) 476-1329.
+Home Mobile Medical sources new porch lifts, also called vertical platform lifts, and installs them at raised entrances and decks for homes in Beaufort County and the rest of its service area. It is a family-owned business, locally owned and operated, and its work is home accessibility lifts. Your front door sits at the top of porch steps, or the deck is how you come and go. A porch lift rises from the ground to that level. It all starts with a free in-home estimate at your entrance. Call (843) 476-1329.
 
 ## How Does a Porch Lift Go From Estimate to Installed?
 
@@ -17,7 +17,7 @@ First comes the visit. Home Mobile Medical looks at your raised entrance or deck
 
 Then the lift is sourced. Home Mobile Medical does not make lifts or rent them out. Each porch lift is bought new for the home it will serve.
 
-Next is the install. Stair lift installations typically take a couple of hours, and we can often complete two per day for curved, porch and wheelchair lifts. The actual timeline depends on project scope and is confirmed during your free in-home estimate. Jason Workens, the founder and owner, personally supervises every installation. He and his helper do the work. The job draws on 15+ years of Jason Workens' experience.
+Next is the install, at the entrance or deck seen during the estimate. Jason Workens, who founded and owns Home Mobile Medical, oversees each porch lift install in person. He and his helper do the work. The job draws on 15+ years of Jason Workens' experience.
 
 Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions.
 

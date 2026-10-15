@@ -17,7 +17,7 @@ It starts with the staircase. Home Mobile Medical gives a free in-home estimate,
 
 Next, the lift is sourced new for you. It is not a rental, and Home Mobile Medical is not a manufacturer. We install and repair stair lifts from leading brands such as Stannah, Bruno and Harmar.
 
-Then comes the install. Stair lift installations typically take a couple of hours, and we can often complete two per day for curved, porch and wheelchair lifts. The actual timeline depends on project scope and is confirmed during your free in-home estimate. Jason and his helper do the work. Jason Workens, the founder and owner, personally supervises every installation.
+Then comes the install, which follows the estimate and the lift chosen for your turns and landing. Jason and his helper do the work. Jason Workens, the founder and owner, personally supervises every installation.
 
 Safety comes first. Jason holds every installation to the highest industry standards and the manufacturer's installation instructions.
 

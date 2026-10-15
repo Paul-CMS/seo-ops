@@ -601,3 +601,32 @@ Step: build:drafts · batch: pilot · session: Haiku
 **Anything the next agent would otherwise get wrong**
 - Do not split or shorten the settled install-time sentences to satisfy the 40–60-word FAQ first-sentence rule or brief row 9; the safety line and the brands line are approved wording too.
 
+## /build · 2026-10-14 · run 20261014-205855-build-59c9
+
+**What I did**
+- Applied the 11 accepted rows of the services drafts review sheet ("accept all") to the drafts and recorded all four pages again (`status.py page-stage … --stage draft`, agent `build-apply-<page>`).
+- Curved stair lifts: item 2 (settled install-time wording now only in the FAQ; the delivery H2 has a curved-specific line). Item 1 needed no edit.
+- Porch lifts: items 4 (settled install-time wording only in the FAQ), 5 (scenario without "Maybe"), 6 (supervision sentence in porch's own words). Item 3 needed no edit.
+- Wheelchair lifts: items 8 (settled wording only in the FAQ), 9 (new first sentence and scenario without "Maybe"), 10 ("no service-call or trip charge" in FAQ 1 and the closing only; the delivery H2's extra line removed), 11 (FAQ 3 rewritten as the sheet says, with no indoor claim). Item 7 needed no edit.
+- Stair lift repair: the sheet has no rows for it. Its draft is unchanged and was recorded again.
+
+**What was decided, and why**
+- Every edit follows the sheet's recommended option. No new facts were added: each new line restates a pack fact (estimate first, Jason supervises, lift sourced new).
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Drafts approval for the services section | Paul | ship |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Drafts | clients/home-mobile-medical/build/services/drafts/ | Applied, recorded |
+| Review sheet | clients/home-mobile-medical/build/services/drafts-review.md | Answered: accept all |
+
+**What I could not check**
+- Nothing published. The link-wheel table rows are still placeholders, as intended.
+
+**Anything the next agent would otherwise get wrong**
+- The settled install-time wording now appears once per page, in the FAQ. Do not add it back to the delivery H2s.
+
