@@ -1988,7 +1988,11 @@
             }
           }
         },
-        "sem_findings": 0
+        "sem_findings": 0,
+        "content_written_back": {
+          "at": "2026-10-14T21:14:46-05:00",
+          "run": "20261014-211328-build-a865"
+        }
       },
       {
         "id": "loc-hhi",
@@ -2245,12 +2249,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261014-205855-build-59c9",
+    "run_id": "20261014-211328-build-a865",
     "command": "build",
-    "finished": "2026-10-14T21:00:27-05:00",
-    "result": "Accepted services drafts review (accept all) applied to curved (1), porch (3), wheelchair (4); all four drafts recorded again; repair unchanged.",
-    "changes": 0,
-    "step": "build:review",
+    "finished": "2026-10-14T21:15:14-05:00",
+    "result": "Services Brand Guide write-back: B3 +4, C1 4 updated, C3 +44 rows from the four approved service briefs; pilot C3 Beaufort FAQ flagged for Paul (conflicts with settled bme-mention).",
+    "changes": 1,
+    "step": "build:writeback",
     "batch": "services"
   },
   "spend": {
@@ -2272,7 +2276,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T21:06:30-05:00",
+  "updated": "2026-10-14T21:15:14-05:00",
   "open_runs": {},
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
@@ -2417,5 +2421,10 @@
   "url_drops": {
     "/service-area/": "https://homemobilemedical.com/",
     "/services/": "https://homemobilemedical.com/"
+  },
+  "review_pause": {
+    "run_id": "20261014-211328-build-a865",
+    "step": "build:writeback",
+    "at": "2026-10-14T21:15:14-05:00"
   }
 }

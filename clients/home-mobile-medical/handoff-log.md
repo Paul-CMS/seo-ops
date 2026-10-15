@@ -630,3 +630,35 @@ Step: build:drafts · batch: pilot · session: Haiku
 **Anything the next agent would otherwise get wrong**
 - The settled install-time wording now appears once per page, in the FAQ. Do not add it back to the delivery H2s.
 
+## /build · 2026-10-14 · run 20261014-211328-build-a865
+
+**What I did**
+- Wrote the services section's one Brand Guide write-back (CM-061) into `brand-guide.md` from the four approved service briefs: B3 +4 rows, C1 4 rows updated, C3 +44 rows. C2 was not changed.
+- Logged the change (change #305), then recorded the write-back with `status.py writeback home-mobile-medical services`.
+
+**What was decided, and why**
+- B3 uses the pilot's format. Category variants are the brief's opening variants. Area variants are listed as "the Lowcountry (H1); opening: …".
+- C1: the three install rows now show the replacing URL with its 301, the keyword, the H1 service variant and the H1, with status "Brief approved 2026-10-14 (services)". The repair placeholder row became `/stair-lift-repair/`, with the two legacy repair URLs noted as 301s (settled: svc-repair-maintenance:legacy-repair-redirects). The `/services/` and `/services/straight-stair-lifts/` rows were left as they were.
+- C2: no change. Service pages have no location rows, and no brief assigns a C2 value.
+- C3: every H2, H3 and FAQ question the briefs assign, in the same "H2:/H3:/FAQ:" format as the pilot rows. The pilot entries were not touched. I checked for duplicate rows and found none.
+- Left out: the curved brief's optional second H3 "Straight Stairs" ("only if the writer needs it"). It is not an assigned heading. If the approved draft uses it, add it to C3.
+
+**Unresolved — and who owns it**
+| Item | Owner | Blocking what |
+|---|---|---|
+| Curved page: add "H3: Straight Stairs" to C3 if the approved draft uses it | next Build run | nothing |
+| Drive copy of the Brand Guide (`drive.py upload`) was not made in this run | coordinator / run.py finish | nothing |
+
+**What the next step needs, and where it is**
+| Artifact | Path | Status |
+|---|---|---|
+| Brand Guide (B3, C1, C3 updated) | clients/home-mobile-medical/brand-guide.md | written back |
+| Services briefs | clients/home-mobile-medical/build/services/briefs/ | approved, unchanged |
+
+**What I could not check**
+- The drafts, which this run's read list did not include. C3 records the headings the briefs assign, not what the drafts actually use.
+
+**Anything the next agent would otherwise get wrong**
+- Different service pages already share some variants, which is allowed (CM-024, horizontal): "home accessibility lifts" (porch, wheelchair), "Charleston area" in the openings (curved, wheelchair) and "the Lowcountry" in every service H1. The location section should pick its openings from the rest of the B2/A3 pool where it can.
+- The pilot's C3 row "FAQ: Is Home Mobile Medical the same company as Beaufort Medical Equipment?" (/beaufort-sc/) conflicts with the settled decision bme-mention (Beaufort Medical Equipment is never mentioned). I was told not to touch the pilot rows, so it is left for Paul.
+

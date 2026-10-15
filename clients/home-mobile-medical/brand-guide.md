@@ -73,8 +73,12 @@ No other page may claim the reserved area variant. This is the only cross-page v
 | / | homepage | | *(reserved)* | | |
 | /stair-lifts/ | service | stair lift installer (opening also: Beaufort County) | the Lowcountry (H1) | SB - Stair Lifts - Home Mobile Medical (build/pilot/briefs/) | |
 | /beaufort-sc/ | location | stair lift installer (H1); opening also: stair lift and accessibility lift company, home accessibility lifts | Beaufort County (opening) | LB - Beaufort SC - Home Mobile Medical (build/pilot/briefs/) | |
+| /curved-stair-lifts/ | service | accessibility equipment (opening) | the Lowcountry (H1); opening: Charleston area | SB - Curved Stair Lifts - Home Mobile Medical (build/services/briefs/) | |
+| /porch-lifts/ | service | home accessibility lifts (opening) | the Lowcountry (H1); opening: Beaufort County | SB - Porch Lifts - Home Mobile Medical (build/services/briefs/) | |
+| /wheelchair-lifts/ | service | home accessibility lifts (opening) | the Lowcountry (H1); opening: Charleston area | SB - Wheelchair Lifts - Home Mobile Medical (build/services/briefs/) | |
+| /stair-lift-repair/ | service | stair lift and accessibility lift company (opening) | the Lowcountry (H1); opening: Hilton Head Island–Bluffton–Port Royal area | SB - Stair Lift Repair - Home Mobile Medical (build/services/briefs/) | |
 
-Pilot rows written back 2026-10-14 (run 20261014-133132-build-f0c5) from the approved pilot briefs. The pre-seo-ops build files were lost (Paul 2026-10-06).
+Pilot rows written back 2026-10-14 (run 20261014-133132-build-f0c5) from the approved pilot briefs. Services rows written back 2026-10-14 (run 20261014-211328-build-a865) from the approved services briefs. The pre-seo-ops build files were lost (Paul 2026-10-06).
 
 ## Section C — Page inventory
 
@@ -86,11 +90,11 @@ Set by the site plan in Build. Source map: `Home Mobile Medical - URL Decision M
 |---|---|---|---|
 | /services/ | Services hub | | Dropped — 301 to https://homemobilemedical.com/ (URL move) |
 | /stair-lifts/ (replaces /services/stair-lifts/, 301) | Stair lifts — parent; straight stair lifts consolidated in · keyword "stair lifts" | stair lift installation (H1 "Stair Lift Installation in the Lowcountry"; no "The Best") | Brief approved 2026-10-14 (pilot) |
-| /curved-stair-lifts/ | Curved stair lifts | | Planned (rewrite) |
-| /porch-lifts/ | Porch lifts / vertical platform lifts (the outdoor offer) | | Planned (rewrite) |
-| /wheelchair-lifts/ | Wheelchair lifts | | Planned (rewrite) |
+| /curved-stair-lifts/ (replaces /services/curved-stair-lifts/, 301) | Curved stair lifts · keyword "curved stair lifts" | curved stair lift installation (H1 "Curved Stair Lift Installation in the Lowcountry"; no "The Best") | Brief approved 2026-10-14 (services) |
+| /porch-lifts/ (replaces /services/porch-lifts/, 301) | Porch lifts / vertical platform lifts (the outdoor offer) · keyword "porch lifts" | vertical platform lift installation (H1 "Vertical Platform Lift Installation in the Lowcountry"; no "The Best") | Brief approved 2026-10-14 (services) |
+| /wheelchair-lifts/ (replaces /services/wheelchair-lifts/, 301) | Wheelchair lifts · keyword "wheelchair lifts" | wheelchair lift installation (H1 "Wheelchair Lift Installation in the Lowcountry"; no "The Best") | Brief approved 2026-10-14 (services) |
 | /services/straight-stair-lifts/ | → consolidated into /stair-lifts/ (301 after the CM-019 check) | | Planned |
-| repair and maintenance | Stair-lift and lift repair and maintenance — page/URL decided in the site plan (existing: /hilton-head/stair-lift-repair/, /bluffton-sc/wheelchair-lift-repair/) | | Planned |
+| /stair-lift-repair/ (new root page; /hilton-head/stair-lift-repair/ and /bluffton-sc/wheelchair-lift-repair/ 301 here) | Stair-lift and lift repair and maintenance · keyword "stair lift repair" | stair lift and lift servicing (H1 "Stair Lift and Lift Servicing in the Lowcountry"; no "The Best") | Brief approved 2026-10-14 (services) |
 
 Parent/child service pages with real subtype demand keep their URLs (Paul). Service pages share one area entity.
 
@@ -152,6 +156,50 @@ Filled from the site plan and each approved page.
 | FAQ: Do I need a permit for a lift in Beaufort? | /beaufort-sc/ |
 | FAQ: Is Home Mobile Medical the same company as Beaufort Medical Equipment? | /beaufort-sc/ |
 | H2: Beaufort Neighborhoods | /beaufort-sc/ |
+| H2: What Does Getting a Curved Stair Lift Involve? | /curved-stair-lifts/ |
+| H2: Which Stairs Need a Curved Stair Lift? | /curved-stair-lifts/ |
+| H3: Stairs That Turn or Have a Landing | /curved-stair-lifts/ |
+| H2: What Do People Ask About Curved Stair Lifts? | /curved-stair-lifts/ |
+| FAQ: How Much Does a Curved Stair Lift Cost? | /curved-stair-lifts/ |
+| FAQ: Do They Make Chair Lifts for Curved Stairs? | /curved-stair-lifts/ |
+| FAQ: How Long Does It Take to Install a Curved Stair Lift? | /curved-stair-lifts/ |
+| FAQ: Who Installs Curved Stair Lifts Near Me? | /curved-stair-lifts/ |
+| H2: Where Does Home Mobile Medical Install Curved Stair Lifts? | /curved-stair-lifts/ |
+| H2: How Does a Porch Lift Go From Estimate to Installed? | /porch-lifts/ |
+| H2: What Kinds of Porch Lift Jobs Does Home Mobile Medical Take On? | /porch-lifts/ |
+| H3: Porch Lifts for Raised Entrances | /porch-lifts/ |
+| H3: Porch Lifts for Decks | /porch-lifts/ |
+| H3: Servicing After Installation | /porch-lifts/ |
+| H2: What Do People Ask About Porch Lifts? | /porch-lifts/ |
+| FAQ: What Is a Porch Lift? | /porch-lifts/ |
+| FAQ: How Much Does a Porch Lift Cost? | /porch-lifts/ |
+| FAQ: How Long Does It Take to Install a Porch Lift? | /porch-lifts/ |
+| FAQ: How Do I Know Which Porch Lift Fits My Home? | /porch-lifts/ |
+| H2: Where Does Home Mobile Medical Install Porch Lifts? | /porch-lifts/ |
+| H2: What Happens Between the Estimate and a Working Wheelchair Lift? | /wheelchair-lifts/ |
+| H2: Which Wheelchair Lift Services Does Home Mobile Medical Offer? | /wheelchair-lifts/ |
+| H3: Wheelchair Lift Sourcing and Installation | /wheelchair-lifts/ |
+| H3: Keeping a Wheelchair Lift Running | /wheelchair-lifts/ |
+| H3: Wheelchair Lifts and Porch Lifts | /wheelchair-lifts/ |
+| H2: What Do People Ask About Wheelchair Lifts? | /wheelchair-lifts/ |
+| FAQ: How Much Does a Wheelchair Lift Cost? | /wheelchair-lifts/ |
+| FAQ: How Long Does It Take to Install a Wheelchair Lift? | /wheelchair-lifts/ |
+| FAQ: What Is the Difference Between a Wheelchair Lift and a Porch Lift? | /wheelchair-lifts/ |
+| FAQ: Does a Wheelchair Lift Come With a Warranty? | /wheelchair-lifts/ |
+| H2: Where Does Home Mobile Medical Install Wheelchair Lifts? | /wheelchair-lifts/ |
+| H2: What Happens From the First Call to a Finished Fix? | /stair-lift-repair/ |
+| H2: Which Lifts and Repair Needs Does Home Mobile Medical Handle? | /stair-lift-repair/ |
+| H3: Stair Lift Repairs | /stair-lift-repair/ |
+| H3: Porch Lift and Wheelchair Lift Repairs | /stair-lift-repair/ |
+| H3: Ongoing Maintenance and Support | /stair-lift-repair/ |
+| H3: Lifts We Did Not Install | /stair-lift-repair/ |
+| H2: What Do People Ask About Lift Repair? | /stair-lift-repair/ |
+| FAQ: What Should I Do When My Stair Lift Stops Working? | /stair-lift-repair/ |
+| FAQ: How Much Does It Cost to Repair a Stair Lift? | /stair-lift-repair/ |
+| FAQ: Can You Repair a Stair Lift You Did Not Install? | /stair-lift-repair/ |
+| FAQ: Do You Repair Porch Lifts and Wheelchair Lifts Too? | /stair-lift-repair/ |
+| FAQ: What If My Lift Breaks and I Need Help Quickly? | /stair-lift-repair/ |
+| H2: Where Does Home Mobile Medical Repair Lifts? | /stair-lift-repair/ |
 
 ## Section D — Verified facts
 Everything a writer may state. **Not here = does not exist.**
