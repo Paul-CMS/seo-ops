@@ -662,3 +662,18 @@ Step: build:drafts · batch: pilot · session: Haiku
 - Different service pages already share some variants, which is allowed (CM-024, horizontal): "home accessibility lifts" (porch, wheelchair), "Charleston area" in the openings (curved, wheelchair) and "the Lowcountry" in every service H1. The location section should pick its openings from the rest of the B2/A3 pool where it can.
 - The pilot's C3 row "FAQ: Is Home Mobile Medical the same company as Beaufort Medical Equipment?" (/beaufort-sc/) conflicts with the settled decision bme-mention (Beaufort Medical Equipment is never mentioned). I was told not to touch the pilot rows, so it is left for Paul.
 
+## /build · 2026-10-14 · run 20261014-214606-build-12a6
+
+**What I did**
+- Re-recorded both pilot drafts at their current versions with `status.py page-stage … --stage draft` (no content changed, no agent re-drafted):
+  - svc-stair-lifts → `build/pilot/drafts/svc-stair-lifts.md` — draft recorded
+  - loc-beaufort-sc → `build/pilot/drafts/loc-beaufort-sc.md` — draft recorded
+- Aborted run 20261014-144852-build-6004 was already ABORTED in the log (16:33); nothing to abort.
+
+**What is waiting on Paul**
+- The pilot drafts approval line, once Paul is ready:
+  `/approve home-mobile-medical batch:pilot:drafts --review "<who reviewed it>"`
+
+**Not blocking**
+- Jonie's handoffs (blockers, WP setup, seopress) do not block writing.
+

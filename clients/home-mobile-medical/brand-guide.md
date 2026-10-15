@@ -154,7 +154,6 @@ Filled from the site plan and each approved page.
 | H2: Beaufort Stair Lift Questions | /beaufort-sc/ |
 | FAQ: How much does a stair lift cost in Beaufort? | /beaufort-sc/ |
 | FAQ: Do I need a permit for a lift in Beaufort? | /beaufort-sc/ |
-| FAQ: Is Home Mobile Medical the same company as Beaufort Medical Equipment? | /beaufort-sc/ |
 | H2: Beaufort Neighborhoods | /beaufort-sc/ |
 | H2: What Does Getting a Curved Stair Lift Involve? | /curved-stair-lifts/ |
 | H2: Which Stairs Need a Curved Stair Lift? | /curved-stair-lifts/ |

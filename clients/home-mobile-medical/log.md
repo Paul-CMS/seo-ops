@@ -1729,3 +1729,34 @@ Changes: 1 · Summary: Services Brand Guide write-back: B3 +4, C1 4 updated, C3 
 - CHANGE #311 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md | upload | old: previous version archived as Home Mobile Medical - Brand Guide - 2026-10-14 (4).md | new: Home Mobile Medical - Brand Guide.md · sha 8b841bf828ba | result: done · copied (Drive for desktop syncs it)
 - CHANGE #312 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (25).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (25).md | result: done · renamed and moved, nothing deleted
 - CHANGE #313 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (25).md | new: Home Mobile Medical - Status.md · sha 08523b82d1b3 | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-14T21:38 · after build:writeback (run 20261014-211328-build-a865) · Paul typed /next
+
+## RUN 20261014-214606-build-12a6 · STARTED · /build · 2026-10-14T21:46:06-05:00
+Step: build:review · batch pilot · session 8f832a3f-79c9-48ec-a395-89d5f9c19ead
+Gates checked: discovery_signed_off
+- DRAFT 2026-10-14T21:46 · run 20261014-214606-build-12a6 · svc-stair-lifts · clients/home-mobile-medical/build/pilot/drafts/svc-stair-lifts.md · agent draft-svc-stair-lifts-9170
+- DRAFT 2026-10-14T21:46 · run 20261014-214606-build-12a6 · loc-beaufort-sc · clients/home-mobile-medical/build/pilot/drafts/loc-beaufort-sc.md · agent draft-loc-beaufort-sc-9170
+### HANDOFF · /build · 2026-10-14 · run 20261014-214606-build-12a6
+**What I did**
+- Re-recorded both pilot drafts at their current versions with `status.py page-stage … --stage draft` (no content changed, no agent re-drafted):
+  - svc-stair-lifts → `build/pilot/drafts/svc-stair-lifts.md` — draft recorded
+  - loc-beaufort-sc → `build/pilot/drafts/loc-beaufort-sc.md` — draft recorded
+- Aborted run 20261014-144852-build-6004 was already ABORTED in the log (16:33); nothing to abort.
+
+**What is waiting on Paul**
+- The pilot drafts approval line, once Paul is ready:
+  `/approve home-mobile-medical batch:pilot:drafts --review "<who reviewed it>"`
+
+**Not blocking**
+- Jonie's handoffs (blockers, WP setup, seopress) do not block writing.
+### END HANDOFF
+## RUN 20261014-214606-build-12a6 · FINISHED · 2026-10-14T21:46:15-05:00
+Changes: 0 · Summary: Re-recorded pilot drafts svc-stair-lifts and loc-beaufort-sc at current versions; no content change
+- CHANGE #314 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (16).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | new: _Archive/Home Mobile Medical - Handoff Log - 2026-10-14 (16).md | result: done · renamed and moved, nothing deleted
+- CHANGE #315 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Handoff Log.md | upload | old: previous version archived as Home Mobile Medical - Handoff Log - 2026-10-14 (16).md | new: Home Mobile Medical - Handoff Log.md · sha 2856b8285182 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #316 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (26).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | new: _Archive/Home Mobile Medical - Document Checklist - 2026-10-14 (26).md | result: done · renamed and moved, nothing deleted
+- CHANGE #317 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (26).md | new: Home Mobile Medical - Document Checklist.md · sha c6a520851200 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #318 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Brand Guide - 2026-10-14 (5).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md | new: _Archive/Home Mobile Medical - Brand Guide - 2026-10-14 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #319 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Brand Guide.md | upload | old: previous version archived as Home Mobile Medical - Brand Guide - 2026-10-14 (5).md | new: Home Mobile Medical - Brand Guide.md · sha 33aaad508630 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #320 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (26).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (26).md | result: done · renamed and moved, nothing deleted
+- CHANGE #321 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (26).md | new: Home Mobile Medical - Status.md · sha 26df93593b8d | result: done · copied (Drive for desktop syncs it)
