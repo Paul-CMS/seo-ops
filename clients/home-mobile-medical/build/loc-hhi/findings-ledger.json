@@ -1,0 +1,72 @@
+{
+  "all|cm-061-pack-evidence|truncated-pack-values-f-013": {
+    "step": "briefs",
+    "at": "2026-10-14T22:04:42-05:00",
+    "choice": "a",
+    "action": "Each draft writer reads the full value of its page: keys from build/evidence/<page>.facts.json (the pack's own source) and uses what the cut hid (e.g. the full permit URL, the fourth place entity, the",
+    "by": "default"
+  },
+  "all|f-002-f-003-plan-values|proposed-keyword-h1-variants": {
+    "step": "briefs",
+    "at": "2026-10-14T22:04:42-05:00",
+    "choice": "a",
+    "action": "Use each brief's proposed values as written.",
+    "by": "default"
+  },
+  "all|location-faq-md-fallback|brand-level-faq-fallbacks": {
+    "step": "briefs",
+    "at": "2026-10-14T22:04:42-05:00",
+    "choice": "a",
+    "action": "Keep the fallbacks; each answer leads with the town and the page's lift type and shares no sentence with a sibling.",
+    "by": "default"
+  },
+  "all|location-md-11-loc-29|recent-work-dropped-thin-sections": {
+    "step": "briefs",
+    "at": "2026-10-14T22:04:42-05:00",
+    "choice": "a",
+    "action": "Drop Recent work silently; shrink or drop the thin sections as each brief says.",
+    "by": "default"
+  },
+  "hub-hhi-beaufort|bb-316-faq-collision|faq-3-rent-or-sell-equipment": {
+    "step": "briefs",
+    "at": "2026-10-14T22:04:42-05:00",
+    "choice": "a",
+    "action": "drop hub FAQ 3, keep it on Ridgeland",
+    "by": "default"
+  },
+  "loc-daufuskie-island-sc|cm-016-no-invention|island-logistics": {
+    "step": "briefs",
+    "at": "2026-10-14T22:04:42-05:00",
+    "choice": "a",
+    "action": "Written without the claim.",
+    "by": "default"
+  },
+  "loc-okatie-sc|bb-316-faq-collision|faq-3-urgent-lift-problem": {
+    "step": "briefs",
+    "at": "2026-10-14T22:04:42-05:00",
+    "choice": "a",
+    "action": "keep, answered in Okatie's own words",
+    "by": "default"
+  },
+  "loc-okatie-sc|cm-061-ask-kind-3|permit-need-and-pad-permit-responsibility": {
+    "step": "briefs",
+    "at": "2026-10-14T22:04:42-05:00",
+    "choice": "a",
+    "action": "No claim on permit need per lift type or who pulls it; the FAQ names only the issuing office the pack gives. The open fact stays on the facts-round list.",
+    "by": "default"
+  },
+  "loc-port-royal-sc|usage-tier|census-10-6-age-65": {
+    "step": "briefs",
+    "at": "2026-10-14T22:04:42-05:00",
+    "choice": "a",
+    "action": "Drop the 10.6% figure; the paragraph keeps the Beaufort County 28.4% figure attributed to the 2020 census as a county figure, or leaves the age sentence out.",
+    "by": "default"
+  },
+  "loc-yemassee-sc|bb-316-faq-collision|faq-3-do-you-serve": {
+    "step": "briefs",
+    "at": "2026-10-14T22:04:42-05:00",
+    "choice": "a",
+    "action": "reword Yemassee FAQ 3 to the two-county question",
+    "by": "default"
+  }
+}

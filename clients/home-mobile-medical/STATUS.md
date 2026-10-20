@@ -1,25 +1,17 @@
 # Home Mobile Medical - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch loc-hhi)**
-- **What is happening now:** Stage 6 (Pilot, services, locations, ship (one session each)) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open home-mobile-medical) and type /next home-mobile-medical. Next there: /build home-mobile-medical write loc-hhi (batch loc-hhi in one run: every brief, then one draft per page (each from its own fresh sub-agent, CM-043), then the batch review side by side)
-- **Waiting on:** nobody
-- **Next action:** `/next home-mobile-medical` once the wait above is over · model: Haiku chat
+- **Stage —**
+- **What is happening now:** run 20261014-215429-build-9289 (build:write) started 2026-10-14T21:54 and has not finished
+- **Waiting on:** Paul — decide what to do with the unfinished run (resume, /verify, /rollback or abort); Jonie — wp setup handoff — 3 of 3 item(s) open; Jonie — seopress settings handoff — 4 of 4 item(s) open
+- **Next action:** `/verify home-mobile-medical` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-14T21:51 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-20T13:32 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
-
-## Waiting on (not blocking)
-
-_Open, but the next action above goes ahead without them._
-
-| Who | What | Since | Reference |
-|---|---|---|---|
-| Jonie | blockers not cleared: H-2026-10-09-03-redirect-01 is issued; H-2026-10-09-03-redirect-02 is issued; H-2026-10-09-03-redirect-03 is issued; H-2026-10-09-04-broken_link-01 is issued; H-2026-10-09-04-broken_link-02 is issued (+9 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-14 | /verify home-mobile-medical |
+| Paul | decide what to do with the unfinished run (resume, /verify, /rollback or abort) | 2026-10-14 | 20261014-215429-build-9289 |
 | Jonie | wp setup handoff — 3 of 3 item(s) open | 2026-10-07 | H-2026-10-07-01-wp_setup |
 | Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-07 | H-2026-10-07-02-seopress_settings |
 | Jonie | redirect handoff — 3 of 3 item(s) open | 2026-10-09 | H-2026-10-09-03-redirect |
@@ -27,6 +19,14 @@ _Open, but the next action above goes ahead without them._
 | Jonie | other handoff — 2 of 2 item(s) open | 2026-10-09 | H-2026-10-09-05-other |
 | Jonie | redirect handoff — 1 of 1 item(s) open | 2026-10-09 | H-2026-10-09-06-redirect |
 | Jonie | redirect handoff — 1 of 1 item(s) open | 2026-10-09 | H-2026-10-09-07-redirect |
+
+## Waiting on (not blocking)
+
+_Open, but the next action above goes ahead without them._
+
+| Who | What | Since | Reference |
+|---|---|---|---|
+| Paul | run 20261014-215429-build-9289 never finished — you decide: resume it, /verify it, /rollback it, or abort it | 2026-10-14 | /where home-mobile-medical |
 
 ## Settled decisions — never re-raised
 
@@ -87,10 +87,15 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-010** (open, not yet reviewed) 2026-10-14 · build:write: Main chat could not see the child agents' results (brief-writer reports arrived only as hand-backs to the build agent). — workaround: Have the build agent write each child result to a file and report the file path to the main chat.
 - **F-011** (open, not yet reviewed) 2026-10-14 · build:write: After the batch briefs revise decision was committed, status.py page-stage still refuses the other three briefs with 'batch services briefs are already approved'. Only the curved brief recorded; batch shows briefs_written. — workaround: Stop; do not record the other briefs or start drafts until the revise state is fixed in the system session.
 - **F-012** (open, not yet reviewed) 2026-10-14 · build:drafts: review.py usage check (§3.4) recommends using 'the strongest excerpt' even when every pack excerpt is off-service (general wheelchairs, lift chairs, rentals — not offered) or a negative review; evidence_pack keyword matching put the same 4 off-topic excerpts on all four service packs. — workaround: Pre-empted the auto usage rows with page+usage+review-evidence findings decided 'leave as written' (drafts-findings.json); review.py dropped its own rows as duplicates.
+- **F-013** (open, not yet reviewed) 2026-10-14 · build:write: evidence_pack.py truncates page: fact values at about 250 characters in packs/<page>.md and .json (e.g. loc-hilton-head-island-sc local_context cut at 'the 1893 Sea Island'); the full value is in build/evidence/<page>.facts.json. Brief writers lost facts (place entities, permit URLs, neighbourhoods) on 8 of 12 loc-hhi pages. — workaround: Draft writers read the full value of each page: key from build/evidence/<page>.facts.json (the pack's own source); nothing else added.
 
 ## Spend so far
 
 - DataforSEO: $0.27
+
+## Spend by stage (model)
+
+_Nothing recorded yet._
 
 ## Spend by step (model)
 

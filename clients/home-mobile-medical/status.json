@@ -447,7 +447,7 @@
       "name": "Hilton Head Island–Bluffton–Port Royal area hub",
       "url": "https://homemobilemedical.com/hilton-head-bluffton-metro/",
       "group": "HHI-Bluffton-Port Royal metro",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/service-area/hhi-beaufort/",
       "replaces": [
         "https://homemobilemedical.com/service-area/hhi-beaufort/"
@@ -463,16 +463,16 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/hub-hhi-beaufort.grid.md",
         "sha": "a3236ffd4287",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "gaps": []
       },
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/hub-hhi-beaufort.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/hub-hhi-beaufort.json",
-        "sha": "3f0da5c57741",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "673dcaecef11",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "section": "loc-hhi",
         "counts": {
           "facts": 44,
@@ -485,6 +485,15 @@
           "settled": 0,
           "gaps": 0,
           "excerpts": 6
+        }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/loc-hhi/briefs/LBCH - Hilton Head Island-Bluffton-Port Royal Metro - Home Mobile Medical.md",
+          "run": "20261014-215429-build-9289",
+          "at": "2026-10-14T22:05:02-05:00",
+          "sha": "d7b5a9f6b70a",
+          "ts": 1792033502.9146109
         }
       }
     },
@@ -557,7 +566,7 @@
       "name": "Bluffton, SC",
       "url": "https://homemobilemedical.com/bluffton-sc/",
       "group": "HHI-Bluffton-Port Royal metro",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/service-area/bluffton-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/bluffton-sc/"
@@ -573,8 +582,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-bluffton-sc.grid.md",
         "sha": "8814e02a7efa",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "gaps": [
           "response_time"
         ]
@@ -582,9 +591,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-bluffton-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-bluffton-sc.json",
-        "sha": "4c1160658e5d",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "e4a0438b17a0",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "section": "loc-hhi",
         "counts": {
           "facts": 47,
@@ -598,6 +607,15 @@
           "gaps": 0,
           "excerpts": 8
         }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Bluffton SC - Home Mobile Medical.md",
+          "run": "20261014-215429-build-9289",
+          "at": "2026-10-14T22:05:02-05:00",
+          "sha": "6162d2f1eaab",
+          "ts": 1792033502.992502
+        }
       }
     },
     "loc-hilton-head-island-sc": {
@@ -605,7 +623,7 @@
       "name": "Hilton Head Island, SC",
       "url": "https://homemobilemedical.com/hilton-head-island-sc/",
       "group": "HHI-Bluffton-Port Royal metro",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/service-area/hilton-head-island-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/hilton-head-island-sc/"
@@ -621,8 +639,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-hilton-head-island-sc.grid.md",
         "sha": "230f26e02465",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "gaps": [
           "response_time"
         ]
@@ -630,9 +648,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-hilton-head-island-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-hilton-head-island-sc.json",
-        "sha": "975306b24a8a",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "316523ba0018",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "section": "loc-hhi",
         "counts": {
           "facts": 47,
@@ -646,6 +664,15 @@
           "gaps": 0,
           "excerpts": 8
         }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Hilton Head Island SC - Home Mobile Medical.md",
+          "run": "20261014-215429-build-9289",
+          "at": "2026-10-14T22:05:03-05:00",
+          "sha": "31b8028c8cd6",
+          "ts": 1792033503.0702348
+        }
       }
     },
     "loc-port-royal-sc": {
@@ -653,7 +680,7 @@
       "name": "Port Royal, SC",
       "url": "https://homemobilemedical.com/port-royal-sc/",
       "group": "HHI-Bluffton-Port Royal metro",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/service-area/port-royal-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/port-royal-sc/"
@@ -669,8 +696,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-port-royal-sc.grid.md",
         "sha": "c93ea7b3b9d1",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "gaps": [
           "response_time"
         ]
@@ -678,9 +705,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-port-royal-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-port-royal-sc.json",
-        "sha": "f5bf53934dea",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "e8b19b57b4a3",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "section": "loc-hhi",
         "counts": {
           "facts": 47,
@@ -694,6 +721,15 @@
           "gaps": 0,
           "excerpts": 8
         }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Port Royal SC - Home Mobile Medical.md",
+          "run": "20261014-215429-build-9289",
+          "at": "2026-10-14T22:05:03-05:00",
+          "sha": "fe51b5b9af64",
+          "ts": 1792033503.147988
+        }
       }
     },
     "loc-ladys-island-sc": {
@@ -701,7 +737,7 @@
       "name": "Lady's Island, SC",
       "url": "https://homemobilemedical.com/ladys-island-sc/",
       "group": "HHI-Bluffton-Port Royal metro",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/service-area/ladys-island-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/ladys-island-sc/"
@@ -717,8 +753,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-ladys-island-sc.grid.md",
         "sha": "8521ff5d665f",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "gaps": [
           "response_time"
         ]
@@ -726,9 +762,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-ladys-island-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-ladys-island-sc.json",
-        "sha": "6f5f84e6a0c2",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "424ee27b4a91",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "section": "loc-hhi",
         "counts": {
           "facts": 47,
@@ -742,6 +778,15 @@
           "gaps": 0,
           "excerpts": 8
         }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Ladys Island SC - Home Mobile Medical.md",
+          "run": "20261014-215429-build-9289",
+          "at": "2026-10-14T22:05:03-05:00",
+          "sha": "70cb6169c77c",
+          "ts": 1792033503.313322
+        }
       }
     },
     "loc-laurel-bay-sc": {
@@ -749,7 +794,7 @@
       "name": "Laurel Bay, SC",
       "url": "https://homemobilemedical.com/laurel-bay-sc/",
       "group": "HHI-Bluffton-Port Royal metro",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/service-area/laurel-bay-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/laurel-bay-sc/"
@@ -765,8 +810,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-laurel-bay-sc.grid.md",
         "sha": "f96978f2357c",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "gaps": [
           "neighborhoods",
           "response_time"
@@ -775,9 +820,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-laurel-bay-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-laurel-bay-sc.json",
-        "sha": "cd0365603ef7",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "e36969d9c0e5",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "section": "loc-hhi",
         "counts": {
           "facts": 46,
@@ -791,6 +836,15 @@
           "gaps": 1,
           "excerpts": 7
         }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Laurel Bay SC - Home Mobile Medical.md",
+          "run": "20261014-215429-build-9289",
+          "at": "2026-10-14T22:05:03-05:00",
+          "sha": "42a590047b1a",
+          "ts": 1792033503.421582
+        }
       }
     },
     "loc-daufuskie-island-sc": {
@@ -798,7 +852,7 @@
       "name": "Daufuskie Island, SC",
       "url": "https://homemobilemedical.com/daufuskie-island-sc/",
       "group": "HHI-Bluffton-Port Royal metro",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/service-area/daufuskie-island-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/daufuskie-island-sc/"
@@ -814,8 +868,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-daufuskie-island-sc.grid.md",
         "sha": "c82935668478",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "gaps": [
           "response_time"
         ]
@@ -823,9 +877,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-daufuskie-island-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-daufuskie-island-sc.json",
-        "sha": "6b4e644089b3",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "e5f7bcd7744f",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "section": "loc-hhi",
         "counts": {
           "facts": 47,
@@ -839,6 +893,15 @@
           "gaps": 0,
           "excerpts": 8
         }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Daufuskie Island SC - Home Mobile Medical.md",
+          "run": "20261014-215429-build-9289",
+          "at": "2026-10-14T22:05:03-05:00",
+          "sha": "734aafe42de3",
+          "ts": 1792033503.500801
+        }
       }
     },
     "loc-okatie-sc": {
@@ -846,7 +909,7 @@
       "name": "Okatie, SC",
       "url": "https://homemobilemedical.com/okatie-sc/",
       "group": "HHI-Bluffton-Port Royal metro",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/service-area/okatie-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/okatie-sc/"
@@ -862,8 +925,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-okatie-sc.grid.md",
         "sha": "0ba527ccf2bc",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "gaps": [
           "response_time"
         ]
@@ -871,9 +934,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-okatie-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-okatie-sc.json",
-        "sha": "8aadefee16f1",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "e8df1b7f53a2",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "section": "loc-hhi",
         "counts": {
           "facts": 47,
@@ -887,6 +950,15 @@
           "gaps": 0,
           "excerpts": 8
         }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Okatie SC - Home Mobile Medical.md",
+          "run": "20261014-215429-build-9289",
+          "at": "2026-10-14T22:05:03-05:00",
+          "sha": "277a6dc9371f",
+          "ts": 1792033503.577549
+        }
       }
     },
     "loc-hardeeville-sc": {
@@ -894,7 +966,7 @@
       "name": "Hardeeville, SC",
       "url": "https://homemobilemedical.com/hardeeville-sc/",
       "group": "HHI-Bluffton-Port Royal metro",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/service-area/hardeeville-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/hardeeville-sc/"
@@ -910,8 +982,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-hardeeville-sc.grid.md",
         "sha": "31b254a2de92",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "gaps": [
           "response_time"
         ]
@@ -919,9 +991,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-hardeeville-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-hardeeville-sc.json",
-        "sha": "9eda01964df7",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "a65fcac2b0ad",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "section": "loc-hhi",
         "counts": {
           "facts": 47,
@@ -935,6 +1007,15 @@
           "gaps": 0,
           "excerpts": 8
         }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Hardeeville SC - Home Mobile Medical.md",
+          "run": "20261014-215429-build-9289",
+          "at": "2026-10-14T22:05:03-05:00",
+          "sha": "1c92f470815c",
+          "ts": 1792033503.6548722
+        }
       }
     },
     "loc-ridgeland-sc": {
@@ -942,7 +1023,7 @@
       "name": "Ridgeland, SC",
       "url": "https://homemobilemedical.com/ridgeland-sc/",
       "group": "HHI-Bluffton-Port Royal metro",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/service-area/ridgeland-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/ridgeland-sc/"
@@ -958,8 +1039,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-ridgeland-sc.grid.md",
         "sha": "b13418ca288e",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "gaps": [
           "response_time"
         ]
@@ -967,9 +1048,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-ridgeland-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-ridgeland-sc.json",
-        "sha": "b1009bd42302",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "dfed3f460582",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "section": "loc-hhi",
         "counts": {
           "facts": 47,
@@ -983,6 +1064,15 @@
           "gaps": 0,
           "excerpts": 8
         }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Ridgeland SC - Home Mobile Medical.md",
+          "run": "20261014-215429-build-9289",
+          "at": "2026-10-14T22:05:03-05:00",
+          "sha": "17d1ab50aa51",
+          "ts": 1792033503.728611
+        }
       }
     },
     "loc-levy-sc": {
@@ -990,7 +1080,7 @@
       "name": "Levy, SC",
       "url": "https://homemobilemedical.com/levy-sc/",
       "group": "HHI-Bluffton-Port Royal metro",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/service-area/levy-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/levy-sc/"
@@ -1006,8 +1096,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-levy-sc.grid.md",
         "sha": "3c0bf5124ea8",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "gaps": [
           "neighborhoods",
           "place_entities",
@@ -1017,9 +1107,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-levy-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-levy-sc.json",
-        "sha": "9376796f4ffc",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "72f9d1f154a1",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "section": "loc-hhi",
         "counts": {
           "facts": 45,
@@ -1033,6 +1123,15 @@
           "gaps": 2,
           "excerpts": 6
         }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Levy SC - Home Mobile Medical.md",
+          "run": "20261014-215429-build-9289",
+          "at": "2026-10-14T22:05:03-05:00",
+          "sha": "c36d553929df",
+          "ts": 1792033503.8107
+        }
       }
     },
     "loc-yemassee-sc": {
@@ -1040,7 +1139,7 @@
       "name": "Yemassee, SC",
       "url": "https://homemobilemedical.com/yemassee-sc/",
       "group": "HHI-Bluffton-Port Royal metro",
-      "state": "planned",
+      "state": "brief_written",
       "live_url": "https://homemobilemedical.com/service-area/yemassee-sc/",
       "replaces": [
         "https://homemobilemedical.com/service-area/yemassee-sc/"
@@ -1056,8 +1155,8 @@
         "why": [],
         "grid": "clients/home-mobile-medical/build/evidence/loc-yemassee-sc.grid.md",
         "sha": "a76bf261ce36",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "gaps": [
           "response_time"
         ]
@@ -1065,9 +1164,9 @@
       "pack": {
         "file": "clients/home-mobile-medical/build/loc-hhi/packs/loc-yemassee-sc.md",
         "json": "clients/home-mobile-medical/build/loc-hhi/packs/loc-yemassee-sc.json",
-        "sha": "2708460315a6",
-        "at": "2026-10-14T14:16:53-05:00",
-        "run": "20261014-141534-interview-b760",
+        "sha": "2173a056ee23",
+        "at": "2026-10-14T21:55:37-05:00",
+        "run": "20261014-215429-build-9289",
         "section": "loc-hhi",
         "counts": {
           "facts": 47,
@@ -1080,6 +1179,15 @@
           "settled": 0,
           "gaps": 0,
           "excerpts": 8
+        }
+      },
+      "files": {
+        "brief": {
+          "file": "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Yemassee SC - Home Mobile Medical.md",
+          "run": "20261014-215429-build-9289",
+          "at": "2026-10-14T22:05:03-05:00",
+          "sha": "85126543f399",
+          "ts": 1792033503.9058502
         }
       }
     },
@@ -1885,7 +1993,8 @@
         "content_written_back": {
           "at": "2026-10-14T13:33:13-05:00",
           "run": "20261014-133132-build-f0c5"
-        }
+        },
+        "route": "briefs"
       },
       {
         "id": "services",
@@ -1986,7 +2095,8 @@
         "content_written_back": {
           "at": "2026-10-14T21:14:46-05:00",
           "run": "20261014-211328-build-a865"
-        }
+        },
+        "route": "briefs"
       },
       {
         "id": "loc-hhi",
@@ -2006,10 +2116,46 @@
           "loc-levy-sc",
           "loc-yemassee-sc"
         ],
-        "state": "planned",
+        "state": "briefs_written",
         "briefs": null,
         "drafts": null,
-        "files": {}
+        "files": {
+          "briefs": [
+            "clients/home-mobile-medical/build/loc-hhi/briefs/LBCH - Hilton Head Island-Bluffton-Port Royal Metro - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Bluffton SC - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Hilton Head Island SC - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Port Royal SC - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Ladys Island SC - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Laurel Bay SC - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Daufuskie Island SC - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Okatie SC - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Hardeeville SC - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Ridgeland SC - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Levy SC - Home Mobile Medical.md",
+            "clients/home-mobile-medical/build/loc-hhi/briefs/LB - Yemassee SC - Home Mobile Medical.md"
+          ]
+        },
+        "review": {
+          "briefs": {
+            "sheet": "clients/home-mobile-medical/build/loc-hhi/briefs-review.csv",
+            "md": "clients/home-mobile-medical/build/loc-hhi/briefs-review.md",
+            "at": "2026-10-14T22:04:35-05:00",
+            "run": "20261014-215429-build-9289",
+            "asks": 0,
+            "listed": 10,
+            "fixes": 1,
+            "dropped": 0,
+            "applied": {
+              "at": "2026-10-14T22:04:42-05:00",
+              "ts": 1792033482.7767491,
+              "run": "20261014-215429-build-9289",
+              "answers": "",
+              "explicit": 0,
+              "file": "clients/home-mobile-medical/build/loc-hhi/briefs-apply.json"
+            }
+          }
+        },
+        "route": "briefs"
       },
       {
         "id": "loc-charleston",
@@ -2033,7 +2179,8 @@
         "state": "planned",
         "briefs": null,
         "drafts": null,
-        "files": {}
+        "files": {},
+        "route": "outline"
       },
       {
         "id": "final",
@@ -2046,12 +2193,14 @@
         "state": "planned",
         "briefs": null,
         "drafts": null,
-        "files": {}
+        "files": {},
+        "route": "outline"
       }
     ],
     "pilot_corrections_applied": {
       "at": "2026-10-14T14:19:31-05:00",
-      "note": "No corrections from Paul (accept all, Ask 1 = A, briefs and drafts approved as written). 5 accepted pilot defaults carried forward in build/pilot-corrections.md; no spec change, nothing flagged."
+      "note": "No corrections from Paul (accept all, Ask 1 = A, briefs and drafts approved as written). 5 accepted pilot defaults carried forward in build/pilot-corrections.md; no spec change, nothing flagged.",
+      "none": true
     },
     "facts_round": {
       "file": "clients/home-mobile-medical/interviews/facts/Home Mobile Medical - Facts Interview - all - 2026-10-14 - REVIEW.md",
@@ -2270,8 +2419,18 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-06T11:22:01-05:00",
-  "updated": "2026-10-14T21:51:22-05:00",
-  "open_runs": {},
+  "updated": "2026-10-20T13:32:15-05:00",
+  "open_runs": {
+    "20261014-215429-build-9289": {
+      "step": "build:write",
+      "batch": "loc-hhi",
+      "page": null,
+      "started": "2026-10-14T21:54:29-05:00",
+      "started_ts": 1792032869.857053,
+      "session": "1fd4a97d-cbae-436d-8782-c6e83b3c1815",
+      "pages": null
+    }
+  },
   "imported_conditions": {
     "proof_sheet_returned": "imported — Home Mobile Medical - TMS (v3, Drive 1Hlfhaelu3mvsAItJgg0Zpi7T2_ccrNRp) + Paul's decisions in run 20261006-112201-new-client-fb9a"
   },
@@ -2421,5 +2580,9 @@
   "url_drops": {
     "/service-area/": "https://homemobilemedical.com/",
     "/services/": "https://homemobilemedical.com/"
+  },
+  "rewrite4_routes": {
+    "at": "2026-10-20T13:32:15-05:00",
+    "rule": "REWRITE-4-PLAN.md D5"
   }
 }

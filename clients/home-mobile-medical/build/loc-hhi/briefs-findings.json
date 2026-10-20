@@ -1,0 +1,84 @@
+[
+  {
+    "page": "hub-hhi-beaufort", "rule": "BB-316 faq-collision", "item": "FAQ 3 rent or sell equipment",
+    "finding": "Hub FAQ 3 'Does Home Mobile Medical rent wheelchairs or sell scooters and hospital beds?' asks the same question as Ridgeland FAQ 3 'Does Home Mobile Medical rent or sell medical equipment in Ridgeland?' with the same answer.",
+    "severity": "fix_and_list", "category": "collision",
+    "plain_why": "One home per question; the same FAQ on the hub and a town page competes with itself.",
+    "decided_for_you": "Keep it on /ridgeland-sc/ (its assigned trust theme); drop hub FAQ 3. The hub keeps two FAQs (coverage, paying for a lift); the 'stair lifts and accessibility lifts only' line stays in the hub opening as a plain statement.",
+    "options": ["drop hub FAQ 3, keep it on Ridgeland", "keep it on the hub, give Ridgeland another trust FAQ"],
+    "recommended": "a"
+  },
+  {
+    "page": "loc-yemassee-sc", "rule": "BB-316 faq-collision", "item": "FAQ 3 do you serve",
+    "finding": "Yemassee FAQ 3 'Does Home Mobile Medical serve homes in Yemassee?' repeats hub FAQ 1 'Does Home Mobile Medical serve my town near Hilton Head Island and Bluffton?'.",
+    "severity": "fix_and_list", "category": "collision",
+    "plain_why": "The coverage question belongs to the hub; the town page needs a question only Yemassee raises.",
+    "decided_for_you": "Yemassee FAQ 3 becomes 'Does Home Mobile Medical serve both the Hampton County and Beaufort County sides of Yemassee?' — answered from Brand Guide E (Yemassee is a confirmed served town) and the pack's two-county fact; no response-time or travel claim.",
+    "options": ["reword Yemassee FAQ 3 to the two-county question", "keep both"],
+    "recommended": "a"
+  },
+  {
+    "page": "loc-okatie-sc", "rule": "BB-316 faq-collision", "item": "FAQ 3 urgent lift problem",
+    "finding": "Okatie FAQ 3 'Who Do I Call About an Urgent Lift Problem in Okatie?' is close in meaning to /stair-lift-repair/ FAQ 'What If My Lift Breaks and I Need Help Quickly?' (C3).",
+    "severity": "fix_and_list", "category": "collision",
+    "plain_why": "A town FAQ must say something the service FAQ does not.",
+    "decided_for_you": "Keep the Okatie FAQ but answer it locally: the number to call, office hours, and the settled general-terms emergency wording in its own sentences; no sentence copied from the repair page, no promise of after-hours response.",
+    "options": ["keep, answered in Okatie's own words", "replace with another trust theme"],
+    "recommended": "a"
+  },
+  {
+    "page": "loc-okatie-sc", "rule": "CM-061 ask-kind-3", "item": "permit need and pad/permit responsibility",
+    "finding": "The Okatie brief raised a kind-3 Ask on whether a lift needs a permit and who handles pad and permit. This was asked in the facts round (Q3, 2026-10-14) and is not answered; every other page leaves it out.",
+    "severity": "fix_and_list", "category": "already_asked",
+    "plain_why": "An Ask already asked is not asked again; the page is written without the claim, as on every sibling.",
+    "decided_for_you": "No claim on permit need per lift type or who pulls it; the FAQ names only the issuing office the pack gives. The open fact stays on the facts-round list."
+  },
+  {
+    "page": "all", "rule": "CM-061 pack-evidence", "item": "truncated pack values (F-013)",
+    "finding": "The evidence packs cut page: fact values at about 250 characters, so briefs for Bluffton, Hilton Head Island, Port Royal, Lady's Island, Laurel Bay, Daufuskie Island, Okatie and Hardeeville used only part of their local context, place entities, neighbourhoods or permit URL.",
+    "severity": "fix_and_list", "category": "pack_evidence_added",
+    "plain_why": "A Known fact the pack has must be used, not written around.",
+    "decided_for_you": "Each draft writer reads the full value of its page: keys from build/evidence/<page>.facts.json (the pack's own source) and uses what the cut hid (e.g. the full permit URL, the fourth place entity, the Laurel Bay housing figure) at its usage tier. Nothing outside that file is added. Flag F-013 logged."
+  },
+  {
+    "page": "loc-port-royal-sc", "rule": "usage-tier", "item": "Census 10.6% age 65+",
+    "finding": "The Port Royal brief plans '10.6% of residents 65 or older', read from a search-result snippet because QuickFacts blocked the fetch.",
+    "severity": "fix_and_list", "category": "claim_softened",
+    "plain_why": "A figure read only from a search snippet is not a checked official source.",
+    "decided_for_you": "Drop the 10.6% figure; the paragraph keeps the Beaufort County 28.4% figure attributed to the 2020 census as a county figure, or leaves the age sentence out."
+  },
+  {
+    "page": "all", "rule": "F-002/F-003 plan-values", "item": "proposed keyword, H1, variants",
+    "finding": "The approved site plan has no keyword, H1 or variant values for the 12 loc-hhi pages; each brief proposes them in its Proposed plan values table (service + town keyword pattern of the approved Beaufort page; H1 '[Service Variant] in [City]'; no reserved variant; Jasper County towns never 'Beaufort County').",
+    "severity": "fix_and_list", "category": "proposed_values",
+    "plain_why": "Briefs are on auto after the pilot; the values follow the pilot pattern and are written back to C2 once.",
+    "decided_for_you": "Use each brief's proposed values as written."
+  },
+  {
+    "page": "all", "rule": "location-faq.md fallback", "item": "brand-level FAQ fallbacks",
+    "finding": "Pages with no town-specific cost fact use the pilot quote angle for FAQ 1 (all 11 towns); trust FAQs on Hilton Head Island, Laurel Bay, Levy, Okatie and Yemassee are brand-level facts asked for the town.",
+    "severity": "fix_and_list", "category": "faq_fallback",
+    "plain_why": "Pilot corrections carry the quote angle forward; each FAQ is tied to the page's own lift emphasis so no two read alike.",
+    "decided_for_you": "Keep the fallbacks; each answer leads with the town and the page's lift type and shares no sentence with a sibling."
+  },
+  {
+    "page": "all", "rule": "location.md #11 / LOC-29", "item": "Recent work dropped; thin sections",
+    "finding": "No review names any loc-hhi town, so Recent work is dropped on all 11 town pages. Levy (no neighbourhoods, 2 place entities), Laurel Bay (no neighbourhoods) and Ridgeland and Okatie (3 place entities) are under the location minimums.",
+    "severity": "fix_and_list", "category": "optional_dropped",
+    "plain_why": "Location minimums are targets; no page is held for an optional section and nothing is invented.",
+    "decided_for_you": "Drop Recent work silently; shrink or drop the thin sections as each brief says."
+  },
+  {
+    "page": "loc-daufuskie-island-sc", "rule": "CM-016 no-invention", "item": "island logistics",
+    "finding": "How a lift and crew reach ferry-only Daufuskie Island is a client fact not in the pack.",
+    "severity": "fix_and_list", "category": "public_not_found_dropped",
+    "plain_why": "Never invent a fact; the page states the ferry/barge fact and the photo quote, nothing about crew transport or extra cost.",
+    "decided_for_you": "Written without the claim."
+  },
+  {
+    "page": "all", "rule": "spec heading case", "item": "FAQ question case",
+    "finding": "FAQ questions mix Title Case (Hilton Head Island, Laurel Bay, Levy, Okatie) and sentence case (the rest and the approved Beaufort page).",
+    "severity": "fix", "category": "formatting",
+    "decided_for_you": "Draft writers use sentence case for FAQ questions, as on /beaufort-sc/; H2s stay Title Case."
+  }
+]

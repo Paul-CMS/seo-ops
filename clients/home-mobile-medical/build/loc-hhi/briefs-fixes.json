@@ -1,0 +1,16 @@
+{
+  "made": "2026-10-14T22:04:35-05:00",
+  "run": "20261014-215429-build-9289",
+  "fixes": [
+    {
+      "page": "all",
+      "rule": "spec heading case",
+      "item": "FAQ question case",
+      "finding": "FAQ questions mix Title Case (Hilton Head Island, Laurel Bay, Levy, Okatie) and sentence case (the rest and the approved Beaufort page).",
+      "severity": "fix",
+      "category": "formatting",
+      "decided_for_you": "Draft writers use sentence case for FAQ questions, as on /beaufort-sc/; H2s stay Title Case.",
+      "url": ""
+    }
+  ]
+}

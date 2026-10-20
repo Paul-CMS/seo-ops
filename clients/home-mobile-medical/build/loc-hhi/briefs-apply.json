@@ -1,0 +1,119 @@
+{
+  "made": "2026-10-14T22:04:42-05:00",
+  "run": "20261014-215429-build-9289",
+  "section": "loc-hhi",
+  "step": "briefs",
+  "answers": "",
+  "items": [
+    {
+      "id": "1",
+      "page": "all",
+      "url": "",
+      "item": "truncated pack values (F-013)",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Each draft writer reads the full value of its page: keys from build/evidence/<page>.facts.json (the pack's own source) and uses what the cut hid (e.g. the full permit URL, the fourth place entity, the Laurel Bay housing figure) at its usage tier. Nothing outside that file is added. Flag F-013 logged.",
+      "by": "default"
+    },
+    {
+      "id": "2",
+      "page": "all",
+      "url": "",
+      "item": "proposed keyword, H1, variants",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Use each brief's proposed values as written.",
+      "by": "default"
+    },
+    {
+      "id": "3",
+      "page": "all",
+      "url": "",
+      "item": "brand-level FAQ fallbacks",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Keep the fallbacks; each answer leads with the town and the page's lift type and shares no sentence with a sibling.",
+      "by": "default"
+    },
+    {
+      "id": "4",
+      "page": "all",
+      "url": "",
+      "item": "Recent work dropped; thin sections",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Drop Recent work silently; shrink or drop the thin sections as each brief says.",
+      "by": "default"
+    },
+    {
+      "id": "5",
+      "page": "hub-hhi-beaufort",
+      "url": "https://homemobilemedical.com/hilton-head-bluffton-metro/",
+      "item": "FAQ 3 rent or sell equipment",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "drop hub FAQ 3, keep it on Ridgeland",
+      "by": "default"
+    },
+    {
+      "id": "6",
+      "page": "loc-daufuskie-island-sc",
+      "url": "https://homemobilemedical.com/daufuskie-island-sc/",
+      "item": "island logistics",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Written without the claim.",
+      "by": "default"
+    },
+    {
+      "id": "7",
+      "page": "loc-okatie-sc",
+      "url": "https://homemobilemedical.com/okatie-sc/",
+      "item": "FAQ 3 urgent lift problem",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "keep, answered in Okatie's own words",
+      "by": "default"
+    },
+    {
+      "id": "8",
+      "page": "loc-okatie-sc",
+      "url": "https://homemobilemedical.com/okatie-sc/",
+      "item": "permit need and pad/permit responsibility",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "No claim on permit need per lift type or who pulls it; the FAQ names only the issuing office the pack gives. The open fact stays on the facts-round list.",
+      "by": "default"
+    },
+    {
+      "id": "9",
+      "page": "loc-port-royal-sc",
+      "url": "https://homemobilemedical.com/port-royal-sc/",
+      "item": "Census 10.6% age 65+",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Drop the 10.6% figure; the paragraph keeps the Beaufort County 28.4% figure attributed to the 2020 census as a county figure, or leaves the age sentence out.",
+      "by": "default"
+    },
+    {
+      "id": "10",
+      "page": "loc-yemassee-sc",
+      "url": "https://homemobilemedical.com/yemassee-sc/",
+      "item": "FAQ 3 do you serve",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "reword Yemassee FAQ 3 to the two-county question",
+      "by": "default"
+    }
+  ]
+}

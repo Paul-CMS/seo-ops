@@ -1771,3 +1771,65 @@ Human review: Paul Meisner
 - CHANGE #323 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Document Checklist.md | upload | old: previous version archived as Home Mobile Medical - Document Checklist - 2026-10-14 (27).md | new: Home Mobile Medical - Document Checklist.md · sha bd3ea5e8d42a | result: done · copied (Drive for desktop syncs it)
 - CHANGE #324 [drive_file] drive:Home Mobile Medical - TMS/_Archive/Home Mobile Medical - Status - 2026-10-14 (27).md | archive | old: drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | new: _Archive/Home Mobile Medical - Status - 2026-10-14 (27).md | result: done · renamed and moved, nothing deleted
 - CHANGE #325 [drive_file] drive:Home Mobile Medical - TMS/Home Mobile Medical - Status.md | upload | old: previous version archived as Home Mobile Medical - Status - 2026-10-14 (27).md | new: Home Mobile Medical - Status.md · sha 6bac5bae1007 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261014-215429-build-9289 · STARTED · /build · 2026-10-14T21:54:29-05:00
+Step: build:write · batch loc-hhi · session 1fd4a97d-cbae-436d-8782-c6e83b3c1815
+Gates checked: discovery_signed_off, batch:loc-hhi:briefs_ready, page_specs_approved
+- EVIDENCE 2026-10-14T21:55 · run 20261014-215429-build-9289 · hub-hhi-beaufort: PASS (known 6, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-14T21:55 · run 20261014-215429-build-9289 · loc-bluffton-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T21:55 · run 20261014-215429-build-9289 · loc-hilton-head-island-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T21:55 · run 20261014-215429-build-9289 · loc-port-royal-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T21:55 · run 20261014-215429-build-9289 · loc-ladys-island-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T21:55 · run 20261014-215429-build-9289 · loc-laurel-bay-sc: PASS (known 8, unknown 1, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T21:55 · run 20261014-215429-build-9289 · loc-daufuskie-island-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T21:55 · run 20261014-215429-build-9289 · loc-okatie-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T21:55 · run 20261014-215429-build-9289 · loc-hardeeville-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T21:55 · run 20261014-215429-build-9289 · loc-ridgeland-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T21:55 · run 20261014-215429-build-9289 · loc-levy-sc: PASS (known 7, unknown 2, unverified 1, conflict 0)
+- EVIDENCE 2026-10-14T21:55 · run 20261014-215429-build-9289 · loc-yemassee-sc: PASS (known 9, unknown 0, unverified 1, conflict 0)
+- FLAG 2026-10-14T22:03 · run 20261014-215429-build-9289 · F-013 · evidence_pack.py truncates page: fact values at about 250 characters in packs/<page>.md and .json (e.g. loc-hilton-head-island-sc local_context cut at 'the 1893 Sea Island'); the full value is in build/evidence/<page>.facts.json. Brief writers lost facts (place entities, permit URLs, neighbourhoods) on 8 of 12 loc-hhi pages. · workaround: Draft writers read the full value of each page: key from build/evidence/<page>.facts.json (the pack's own source); nothing else added.
+- BRIEF 2026-10-14T22:03 · run 20261014-215429-build-9289 · hub-hhi-beaufort · clients/home-mobile-medical/build/loc-hhi/briefs/LBCH - Hilton Head Island-Bluffton-Port Royal Metro - Home Mobile Medical.md
+- BRIEF 2026-10-14T22:03 · run 20261014-215429-build-9289 · loc-bluffton-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Bluffton SC - Home Mobile Medical.md
+- BRIEF 2026-10-14T22:03 · run 20261014-215429-build-9289 · loc-hilton-head-island-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Hilton Head Island SC - Home Mobile Medical.md
+- BRIEF 2026-10-14T22:03 · run 20261014-215429-build-9289 · loc-port-royal-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Port Royal SC - Home Mobile Medical.md
+- BRIEF 2026-10-14T22:03 · run 20261014-215429-build-9289 · loc-ladys-island-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Ladys Island SC - Home Mobile Medical.md
+- BRIEF 2026-10-14T22:03 · run 20261014-215429-build-9289 · loc-laurel-bay-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Laurel Bay SC - Home Mobile Medical.md
+- BRIEF 2026-10-14T22:03 · run 20261014-215429-build-9289 · loc-daufuskie-island-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Daufuskie Island SC - Home Mobile Medical.md
+- BRIEF 2026-10-14T22:03 · run 20261014-215429-build-9289 · loc-okatie-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Okatie SC - Home Mobile Medical.md
+- BRIEF 2026-10-14T22:03 · run 20261014-215429-build-9289 · loc-hardeeville-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Hardeeville SC - Home Mobile Medical.md
+- BRIEF 2026-10-14T22:03 · run 20261014-215429-build-9289 · loc-ridgeland-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Ridgeland SC - Home Mobile Medical.md
+- BRIEF 2026-10-14T22:03 · run 20261014-215429-build-9289 · loc-levy-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Levy SC - Home Mobile Medical.md
+- BRIEF 2026-10-14T22:03 · run 20261014-215429-build-9289 · loc-yemassee-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Yemassee SC - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T22:03 · batch loc-hhi · 12 page(s), one run each
+- REVIEW SHEET 2026-10-14T22:04 · run 20261014-215429-build-9289 · loc-hhi briefs: 0 Ask, 10 decided for you, 1 fixed silently, 0 not raised (duplicate, decided or answered) · clients/home-mobile-medical/build/loc-hhi/briefs-review.csv
+- REVIEW APPLIED 2026-10-14T22:04 · run 20261014-215429-build-9289 · loc-hhi briefs: 10 row(s) (0 answered by Paul, the rest by default) · clients/home-mobile-medical/build/loc-hhi/briefs-apply.json
+- BRIEF 2026-10-14T22:05 · run 20261014-215429-build-9289 · hub-hhi-beaufort · clients/home-mobile-medical/build/loc-hhi/briefs/LBCH - Hilton Head Island-Bluffton-Port Royal Metro - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T22:05 · batch loc-hhi · 12 page(s), one run each
+- BRIEF 2026-10-14T22:05 · run 20261014-215429-build-9289 · loc-bluffton-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Bluffton SC - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T22:05 · batch loc-hhi · 12 page(s), one run each
+- BRIEF 2026-10-14T22:05 · run 20261014-215429-build-9289 · loc-hilton-head-island-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Hilton Head Island SC - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T22:05 · batch loc-hhi · 12 page(s), one run each
+- BRIEF 2026-10-14T22:05 · run 20261014-215429-build-9289 · loc-port-royal-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Port Royal SC - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T22:05 · batch loc-hhi · 12 page(s), one run each
+- BRIEF 2026-10-14T22:05 · run 20261014-215429-build-9289 · loc-ladys-island-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Ladys Island SC - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T22:05 · batch loc-hhi · 12 page(s), one run each
+- BRIEF 2026-10-14T22:05 · run 20261014-215429-build-9289 · loc-laurel-bay-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Laurel Bay SC - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T22:05 · batch loc-hhi · 12 page(s), one run each
+- BRIEF 2026-10-14T22:05 · run 20261014-215429-build-9289 · loc-daufuskie-island-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Daufuskie Island SC - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T22:05 · batch loc-hhi · 12 page(s), one run each
+- BRIEF 2026-10-14T22:05 · run 20261014-215429-build-9289 · loc-okatie-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Okatie SC - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T22:05 · batch loc-hhi · 12 page(s), one run each
+- BRIEF 2026-10-14T22:05 · run 20261014-215429-build-9289 · loc-hardeeville-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Hardeeville SC - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T22:05 · batch loc-hhi · 12 page(s), one run each
+- BRIEF 2026-10-14T22:05 · run 20261014-215429-build-9289 · loc-ridgeland-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Ridgeland SC - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T22:05 · batch loc-hhi · 12 page(s), one run each
+- BRIEF 2026-10-14T22:05 · run 20261014-215429-build-9289 · loc-levy-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Levy SC - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T22:05 · batch loc-hhi · 12 page(s), one run each
+- BRIEF 2026-10-14T22:05 · run 20261014-215429-build-9289 · loc-yemassee-sc · clients/home-mobile-medical/build/loc-hhi/briefs/LB - Yemassee SC - Home Mobile Medical.md
+- BRIEFS COLLECTED 2026-10-14T22:05 · batch loc-hhi · 12 page(s), one run each
+- MIGRATION 2026-10-20T13:32 · Rewrite 4 · section pilot: briefs route (briefs approved or under way — finishes on the old route)
+- MIGRATION 2026-10-20T13:32 · Rewrite 4 · section services: briefs route (briefs approved or under way — finishes on the old route)
+- MIGRATION 2026-10-20T13:32 · Rewrite 4 · section loc-hhi: briefs route (briefs approved or under way — finishes on the old route)
+- MIGRATION 2026-10-20T13:32 · Rewrite 4 · section loc-charleston: outline route (no brief)
+- MIGRATION 2026-10-20T13:32 · Rewrite 4 · section final: outline route (no brief)
+- MIGRATION 2026-10-20T13:32 · Rewrite 4 · pilot: recorded as 'no corrections' (from its note)

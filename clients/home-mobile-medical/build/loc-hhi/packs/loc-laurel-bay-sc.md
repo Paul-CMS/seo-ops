@@ -1,6 +1,6 @@
 # Evidence pack — Laurel Bay, SC (location)
 
-Section **loc-hhi** · https://homemobilemedical.com/laurel-bay-sc/ · built 2026-10-14T14:16 by evidence_pack.py (CM-061).
+Section **loc-hhi** · https://homemobilemedical.com/laurel-bay-sc/ · built 2026-10-14T21:55 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
