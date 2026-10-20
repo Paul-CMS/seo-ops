@@ -81,8 +81,9 @@ The only Google Doc the system creates is the proof sheet's client copy (HTML). 
 
 ## Money and credentials
 DataforSEO: whole-run estimate first, over $2 → Paul, more than the balance → stop. Other spend needs Paul's approval
-with provider, cost and renewal (RULE-014). Model spend per run: `run.py finish --tokens --cost` → STATUS.md "Spend by
-step". Credentials: never ask in chat — show `python3 scripts/wp.py env-lines <slug>` and link `[.env](.env)`.
+with provider, cost and renewal (RULE-014). Model spend per run: `run.py finish` measures it itself from Claude Code's
+transcripts (`scripts/usage.py run|client <slug>`, prices in `scripts/model_prices.json`; `--tokens/--cost` only to override) → STATUS.md "Spend by
+stage" and "Spend by step". Credentials: never ask in chat — show `python3 scripts/wp.py env-lines <slug>` and link `[.env](.env)`.
 
 ## Per-client files
 `status.json` (gates, pages, build) · `log.md` (safety log) · `changes.jsonl` · `snapshots/` · `facts.json` (every fact)

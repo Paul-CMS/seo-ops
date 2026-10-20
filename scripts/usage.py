@@ -1,0 +1,253 @@
+#!/usr/bin/env python3
+"""usage.py — what a run (or a client) cost in model tokens, measured from Claude Code's own transcripts.
+
+    usage.py run <slug> <RUN_ID> [--json]     tokens and USD for one run, per model
+    usage.py client <slug> [--json]           every run of a client, per stage and per step, and the ten dearest runs
+    usage.py baseline <slug> [<slug> …] [--write FILE]   the REWRITE-4-BASELINE.md tables (cost per stage, top 10 runs)
+
+The safety log records each run's start, end and session id. Claude Code keeps every session's token usage in
+~/.claude/projects/<project>/<session>.jsonl and its subagents' in <session>/subagents/*.jsonl. A run's usage is
+every assistant message in that session (and its subagents) between the run's start and finish. Each API message is
+counted once (a message is repeated in the transcript while it streams). Prices: scripts/model_prices.json.
+Read-only; no network. A run with no session id, or whose transcript is gone, is reported as "no data", never as $0.
+Set SEO_OPS_CLAUDE_PROJECTS to read another transcripts folder (the tests do).
+"""
+import argparse
+import datetime as dt
+import json
+import os
+import re
+import sys
+from pathlib import Path
+
+from lib import ROOT, client_dir, die, read_json
+
+PRICES = ROOT / "scripts" / "model_prices.json"
+FIELDS = ("input", "cache_write_5m", "cache_write_1h", "cache_read", "output")
+RUN_LINE = re.compile(r"^## RUN (\S+) · (STARTED|FINISHED|ABORTED) · (?:/(\S+) · )?(\S+)\s*$")
+SESSION = re.compile(r"session ([\w-]+)")
+
+
+def projects_dir():
+    return Path(os.environ.get("SEO_OPS_CLAUDE_PROJECTS") or Path.home() / ".claude" / "projects")
+
+
+def ts(s):
+    return dt.datetime.fromisoformat(s.replace("Z", "+00:00")).astimezone(dt.timezone.utc)
+
+
+def prices():
+    return (read_json(PRICES, {}) or {}).get("models", {})
+
+
+def price_for(model):
+    """The price row for a model id (date suffix ignored, longest listed prefix wins), or None."""
+    m = re.sub(r"-\d{8}$", "", model or "")
+    best = None
+    for k, v in prices().items():
+        if m == k or m.startswith(k + "-") or m.startswith(k):
+            if best is None or len(k) > len(best[0]):
+                best = (k, v)
+    return best[1] if best else None
+
+
+def cost(model, t):
+    p = price_for(model)
+    if not p:
+        return 0.0
+    return sum(t.get(f, 0) * p[f if f != "input" else "input"] for f in FIELDS) / 1e6
+
+
+def run_log(slug):
+    """{run_id: {command, step, session, start, end, state}} from the client's safety log."""
+    out = {}
+    cur = None
+    p = client_dir(slug) / "log.md"
+    if not p.exists():
+        return out
+    for line in p.read_text(encoding="utf-8").splitlines():
+        m = RUN_LINE.match(line)
+        if m:
+            rid, state, cmd, when = m.groups()
+            r = out.setdefault(rid, {"id": rid, "command": None, "step": None, "session": None, "start": None,
+                                     "end": None, "state": None})
+            r["state"] = state
+            if state == "STARTED":
+                r["command"], r["start"], cur = cmd, when, r
+            else:
+                r["end"], cur = when, None
+            continue
+        if cur and line.startswith("Step: "):
+            cur["step"] = line[6:].split(" · ")[0].strip()
+            s = SESSION.search(line)
+            cur["session"] = s.group(1) if s else None
+    return out
+
+
+def transcripts(sid):
+    """Every transcript file of one session: the session's own and its subagents'."""
+    found = []
+    for proj in projects_dir().glob("*"):
+        f = proj / f"{sid}.jsonl"
+        if f.is_file():
+            found.append(f)
+            found += sorted((proj / sid / "subagents").glob("*.jsonl"))
+    return found
+
+
+def read_usage(files, start, end):
+    """{model: {field: tokens}} for the API messages stamped between start and end (UTC datetimes)."""
+    msgs = {}
+    for f in files:
+        for line in f.read_text(encoding="utf-8", errors="replace").splitlines():
+            try:
+                o = json.loads(line)
+            except ValueError:
+                continue
+            m = o.get("message")
+            if not isinstance(m, dict) or not m.get("usage") or not o.get("timestamp"):
+                continue
+            when = ts(o["timestamp"])
+            if (start and when < start) or (end and when > end):
+                continue
+            msgs[(f.name, m.get("id") or o.get("uuid") or line[:80])] = (m.get("model") or "?", m["usage"])
+    out = {}
+    for model, u in msgs.values():
+        if model == "<synthetic>":
+            continue
+        cc = u.get("cache_creation") or {}
+        w1h = int(cc.get("ephemeral_1h_input_tokens") or 0)
+        w5m = int(cc.get("ephemeral_5m_input_tokens") or 0)
+        if not cc:
+            w5m = int(u.get("cache_creation_input_tokens") or 0)
+        t = out.setdefault(model, dict.fromkeys(FIELDS, 0))
+        t["input"] += int(u.get("input_tokens") or 0)
+        t["output"] += int(u.get("output_tokens") or 0)
+        t["cache_read"] += int(u.get("cache_read_input_tokens") or 0)
+        t["cache_write_5m"] += w5m
+        t["cache_write_1h"] += w1h
+    return out
+
+
+def summarise(by_model):
+    rows = {m: {**t, "usd": round(cost(m, t), 4), "priced": price_for(m) is not None} for m, t in by_model.items()}
+    tot = {f: sum(r[f] for r in rows.values()) for f in FIELDS}
+    return {"by_model": rows, "tokens": sum(tot.values()), "usd": round(sum(r["usd"] for r in rows.values()), 4),
+            "unpriced": sorted(m for m, r in rows.items() if not r["priced"]), **{"total_" + f: v for f, v in tot.items()}}
+
+
+def run_usage(slug, run_id, end_now=False):
+    """The measured usage of one run, or None when there is no session id or no transcript for it."""
+    r = run_log(slug).get(run_id)
+    if not r or not r["session"] or not r["start"]:
+        return None
+    files = transcripts(r["session"])
+    if not files:
+        return None
+    end = ts(dt.datetime.now(dt.timezone.utc).isoformat()) if (end_now or not r["end"]) else ts(r["end"])
+    by = read_usage(files, ts(r["start"]), end)
+    if not by:
+        return None
+    return {**summarise(by), "run": run_id, "step": r["step"], "command": r["command"]}
+
+
+def fmt_run(u):
+    lines = [f"run {u['run']} · {u.get('step') or '?'}: {u['tokens']:,} tokens · ${u['usd']:.2f}"]
+    for m, r in sorted(u["by_model"].items(), key=lambda kv: -kv[1]["usd"]):
+        lines.append(f"  {m}: in {r['input']:,} · cache-write {r['cache_write_5m'] + r['cache_write_1h']:,} · "
+                     f"cache-read {r['cache_read']:,} · out {r['output']:,} · ${r['usd']:.2f}"
+                     + ("" if r["priced"] else "  (UNPRICED model — add it to model_prices.json)"))
+    return "\n".join(lines)
+
+
+def client_usage(slug):
+    """[{run, step, stage, usage|None}] for every run in the log, and the per-stage and per-step totals."""
+    import stages
+    rows = []
+    for rid, r in run_log(slug).items():
+        if r["state"] == "STARTED" and not r["end"]:
+            pass
+        u = run_usage(slug, rid)
+        st = stages.stage_of(r["step"] or "") if r["step"] else None
+        rows.append({"run": rid, "step": r["step"], "command": r["command"],
+                     "stage": (f"{st['id']}" if st else "any"), "usage": u})
+    by_stage, by_step = {}, {}
+    for row in rows:
+        u = row["usage"]
+        for key, d in ((row["stage"], by_stage), (row["step"] or "?", by_step)):
+            t = d.setdefault(key, {"runs": 0, "measured": 0, "tokens": 0, "usd": 0.0})
+            t["runs"] += 1
+            if u:
+                t["measured"] += 1; t["tokens"] += u["tokens"]; t["usd"] += u["usd"]
+    return rows, by_stage, by_step
+
+
+def baseline_md(slugs):
+    """REWRITE-4-BASELINE.md, rendered from the measured runs — the figure every later phase is judged against."""
+    out = ["# REWRITE-4 baseline — what the current route costs", "",
+           f"_Generated {dt.date.today()} by `python3 scripts/usage.py baseline {' '.join(slugs)}` from Claude Code's "
+           "transcripts, priced with `scripts/model_prices.json` (cache-write prices inferred). Do not edit by hand — "
+           "regenerate. A run with no session id or no transcript on this Mac is counted as a run but has no cost "
+           "(unmeasured); the totals are therefore a floor._", ""]
+    grand = 0.0
+    for slug in slugs:
+        rows, by_stage, by_step = client_usage(slug)
+        tot = sum(t["usd"] for t in by_stage.values())
+        grand += tot
+        out += [f"## {slug}", "",
+                f"**${tot:.2f}** measured over {sum(t['measured'] for t in by_stage.values())} of {len(rows)} run(s); "
+                f"{sum(t['tokens'] for t in by_stage.values()):,} tokens (input + cache write + cache read + output).", "",
+                "### Cost per stage", "", "| Stage | Runs measured | Tokens | USD |", "|---|---|---|---|"]
+        out += [f"| {k} | {t['measured']} of {t['runs']} | {t['tokens']:,} | ${t['usd']:.2f} |"
+                for k, t in sorted(by_stage.items(), key=lambda kv: -kv[1]["usd"])]
+        out += ["", "### Cost per step", "", "| Step | Runs measured | Tokens | USD |", "|---|---|---|---|"]
+        out += [f"| {k} | {t['measured']} of {t['runs']} | {t['tokens']:,} | ${t['usd']:.2f} |"
+                for k, t in sorted(by_step.items(), key=lambda kv: -kv[1]["usd"])]
+        out += ["", "### Ten dearest runs", "", "| Run | Step | Tokens | USD | Models |", "|---|---|---|---|---|"]
+        for r in sorted((r for r in rows if r["usage"]), key=lambda r: -r["usage"]["usd"])[:10]:
+            u = r["usage"]
+            out.append(f"| {r['run']} | {r['step']} | {u['tokens']:,} | ${u['usd']:.2f} | "
+                       + ", ".join(f"{m} ${x['usd']:.2f}" for m, x in sorted(u["by_model"].items(), key=lambda kv: -kv[1]["usd"])) + " |")
+        un = [r["run"] for r in rows if not r["usage"]]
+        out += ["", f"Unmeasured runs ({len(un)}): " + (", ".join(un) if un else "none"), ""]
+    out += ["---", f"**All clients: ${grand:.2f}**", ""]
+    return "\n".join(out)
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    s = sub.add_parser("run"); s.add_argument("slug"); s.add_argument("run_id"); s.add_argument("--json", action="store_true")
+    s = sub.add_parser("client"); s.add_argument("slug"); s.add_argument("--json", action="store_true")
+    s = sub.add_parser("baseline"); s.add_argument("slugs", nargs="+"); s.add_argument("--write")
+    a = ap.parse_args()
+    if a.cmd == "baseline":
+        text = baseline_md(a.slugs)
+        if a.write:
+            Path(a.write).write_text(text, encoding="utf-8")
+            print(f"wrote {a.write}")
+        else:
+            print(text)
+        return
+    if a.cmd == "run":
+        u = run_usage(a.slug, a.run_id)
+        if not u:
+            print(f"no data for run {a.run_id}: it has no session id in the log, or that session's transcript is not on this Mac")
+            sys.exit(1)
+        print(json.dumps(u, indent=2) if a.json else fmt_run(u))
+        return
+    rows, by_stage, by_step = client_usage(a.slug)
+    if a.json:
+        print(json.dumps({"runs": rows, "by_stage": by_stage, "by_step": by_step}, indent=2)); return
+    tot = sum(t["usd"] for t in by_stage.values())
+    print(f"{a.slug}: ${tot:.2f} measured over {sum(t['measured'] for t in by_stage.values())} of {len(rows)} run(s)\n")
+    print("by stage:")
+    for k, t in sorted(by_stage.items(), key=lambda kv: -kv[1]["usd"]):
+        print(f"  {k:12} {t['measured']}/{t['runs']} runs · {t['tokens']:,} tokens · ${t['usd']:.2f}")
+    print("\ndearest runs:")
+    for row in sorted((r for r in rows if r["usage"]), key=lambda r: -r["usage"]["usd"])[:10]:
+        print(f"  ${row['usage']['usd']:7.2f}  {row['usage']['tokens']:>12,}  {row['run']}  ({row['step']})")
+
+
+if __name__ == "__main__":
+    main()

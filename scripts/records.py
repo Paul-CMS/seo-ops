@@ -298,6 +298,17 @@ def status_md(slug):
         k = r.get("step") or "?"
         t = by.setdefault(k, [0, 0, 0.0])
         t[0] += 1; t[1] += int(r.get("tokens") or 0); t[2] += float(r.get("usd") or 0)
+    import stages   # Phase 0: the same spend, rolled up by stage (the unit Paul plans and pays by)
+    bs = {}
+    for r in ms:
+        stg = stages.stage_of(r.get("step") or "")
+        t = bs.setdefault(f"{stages.stages().index(stg) + 1} · {stg['name']}" if stg else "any stage", [0, 0, 0.0])
+        t[0] += 1; t[1] += int(r.get("tokens") or 0); t[2] += float(r.get("usd") or 0)
+    out += ["", "## Spend by stage (model)", ""]
+    out += (["| Stage | Runs | Tokens | USD |", "|---|---|---|---|"]
+            + [f"| {k} | {n} | {tok:,} | ${usd:.2f} |" for k, (n, tok, usd) in sorted(bs.items())]
+            + [f"| **total** | {sum(v[0] for v in bs.values())} | {sum(v[1] for v in bs.values()):,} | "
+               f"${sum(v[2] for v in bs.values()):.2f} |"]) if bs else ["_Nothing recorded yet._"]
     out += ["", "## Spend by step (model)", ""]
     out += (["| Step | Runs | Tokens | USD |", "|---|---|---|---|"]
             + [f"| {k} | {n} | {tok:,} | ${usd:.2f} |" for k, (n, tok, usd) in sorted(by.items(), key=lambda kv: -kv[1][2])]

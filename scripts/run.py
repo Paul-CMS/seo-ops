@@ -267,7 +267,7 @@ def main():
     s = sub.add_parser("finish"); s.add_argument("slug"); s.add_argument("run_id")
     s.add_argument("--summary", required=True)
     s.add_argument("--handoff", help="Markdown file with this run's Handoff Log section (templates/handoff-log.md)")
-    s.add_argument("--tokens", type=int, help="P12: the tokens this run used (Claude Code's usage, or the session's own count)")
+    s.add_argument("--tokens", type=int, help="the tokens this run used; left out, usage.py measures them from Claude Code's transcripts")
     s.add_argument("--cost", type=float, help="P12: the model cost of this run in USD, if known")
     s = sub.add_parser("abort"); s.add_argument("slug"); s.add_argument("run_id")
     s.add_argument("--reason", required=True)
@@ -460,6 +460,17 @@ def main():
                 sys.exit(12)
         ch = changes(a.slug, a.run_id)
         cmd = re.sub(r"-[0-9a-f]{4}$", "", a.run_id.split("-", 2)[-1])
+        measured = None
+        if a.tokens is None and a.cost is None:   # Phase 0: the figures come from Claude Code's own transcripts
+            import usage
+            try:
+                measured = usage.run_usage(a.slug, a.run_id, end_now=True)
+            except Exception as e:   # a measuring problem never blocks finishing a run
+                print(f"note: usage not measured ({e})")
+            if measured:
+                a.tokens, a.cost = measured["tokens"], measured["usd"]
+            else:
+                print("note: no token usage found for this run (no session id, or its transcript is not on this Mac)")
         if a.handoff:
             body = Path(a.handoff).read_text(encoding="utf-8").strip()
             # records.py writes the section heading; drop the file's own (old template) so it isn't doubled
@@ -467,11 +478,17 @@ def main():
             append(d / "log.md", f"### HANDOFF · /{cmd} · {now()[:10]} · run {a.run_id}\n{redact(body)}\n### END HANDOFF\n")
         append(d / "log.md", f"## RUN {a.run_id} · FINISHED · {now()}\n"
                f"Changes: {len(ch)} · Summary: {redact(a.summary)}\n"
-               + (f"Spend: {a.tokens or 0} tokens · ${a.cost or 0:.2f}\n" if a.tokens or a.cost else ""))
+               + (f"Spend: {a.tokens or 0} tokens · ${a.cost or 0:.2f}{' (measured)' if measured else ''}\n"
+                  if a.tokens or a.cost else ""))
         if a.tokens or a.cost:   # P12: measure where the money goes
             stx = S.load(a.slug)
             stx.setdefault("model_spend", []).append({"run": a.run_id, "step": (info or {}).get("step"),
-                                                      "tokens": a.tokens or 0, "usd": a.cost or 0.0, "at": now()})
+                                                      "tokens": a.tokens or 0, "usd": a.cost or 0.0, "at": now(),
+                                                      **({"measured": True, "by_model": {
+                                                          m: {"usd": r["usd"], "in": r["input"], "out": r["output"],
+                                                              "cache_read": r["cache_read"],
+                                                              "cache_write": r["cache_write_5m"] + r["cache_write_1h"]}
+                                                          for m, r in measured["by_model"].items()}} if measured else {})})
             S.save(a.slug, stx)
         st = S.load(a.slug)
         (st.get("open_runs") or {}).pop(a.run_id, None)
@@ -503,7 +520,7 @@ def main():
         print("Drive: " + ("copy pending sync (no local Drive folder — recorded once)" if "pending" in m
                            else f"{m.get('copied', 0)} record(s) copied, {m.get('unchanged', 0)} unchanged"))
         print(git_commit(f"{a.slug}: /{cmd} finished ({len(ch)} changes)\n\n{a.summary}", slug=a.slug))
-        if (a.tokens or 0) >= COMPACT_TOKENS:   # §6.4: a clean point — suggest, never force
+        if not measured and (a.tokens or 0) >= COMPACT_TOKENS:   # measured totals include cache reads, not the chat's size; §6.4: a clean point — suggest, never force
             print(COMPACT_LINE)
     elif a.cmd == "abort":
         open_run(a.slug, a.run_id)
