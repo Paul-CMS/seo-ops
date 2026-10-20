@@ -292,6 +292,15 @@ def status_md(slug):
              + (f" — workaround: {r['workaround']}" if r.get("workaround") else "") for r, cid, state in fl]
             or ["_None._"])
     out += ["", "## Spend so far", "", f"- DataforSEO: ${total:.2f}" + (f" (of which failed tasks ${failed:.2f})" if failed else "")]
+    import usage   # Rewrite 4 Phase 2: direct API calls (llm.py) beside the session spend
+    api = usage.llm_costs(slug)
+    step_of = {rid: (r.get("step") or "?") for rid, r in usage.run_log(slug).items()}
+    out.append(f"- Claude API (llm.py): ${sum(v['usd'] for v in api.values()):.2f} over "
+               f"{sum(v['calls'] for v in api.values())} call(s)")
+    api_step = {}
+    for rid, v in api.items():
+        k = step_of.get(rid, "?")
+        api_step[k] = api_step.get(k, 0.0) + v["usd"]
     ms = st.get("model_spend") or []   # P12: model cost per step (run.py finish --tokens/--cost)
     by = {}
     for r in ms:
@@ -304,16 +313,24 @@ def status_md(slug):
         stg = stages.stage_of(r.get("step") or "")
         t = bs.setdefault(f"{stages.stages().index(stg) + 1} · {stg['name']}" if stg else "any stage", [0, 0, 0.0])
         t[0] += 1; t[1] += int(r.get("tokens") or 0); t[2] += float(r.get("usd") or 0)
-    out += ["", "## Spend by stage (model)", ""]
-    out += (["| Stage | Runs | Tokens | USD |", "|---|---|---|---|"]
-            + [f"| {k} | {n} | {tok:,} | ${usd:.2f} |" for k, (n, tok, usd) in sorted(bs.items())]
+    api_stage = {}
+    for k, usd in api_step.items():
+        stg = stages.stage_of(k if k != "?" else "")
+        key = f"{stages.stages().index(stg) + 1} · {stg['name']}" if stg else "any stage"
+        api_stage[key] = api_stage.get(key, 0.0) + usd
+        bs.setdefault(key, [0, 0, 0.0])
+        by.setdefault(k, [0, 0, 0.0])
+    out += ["", "## Spend by stage (model)", "", "_Session = the chats and their agents; API = llm.py's direct calls._", ""]
+    out += (["| Stage | Runs | Tokens | Session USD | API USD |", "|---|---|---|---|---|"]
+            + [f"| {k} | {n} | {tok:,} | ${usd:.2f} | ${api_stage.get(k, 0):.2f} |" for k, (n, tok, usd) in sorted(bs.items())]
             + [f"| **total** | {sum(v[0] for v in bs.values())} | {sum(v[1] for v in bs.values()):,} | "
-               f"${sum(v[2] for v in bs.values()):.2f} |"]) if bs else ["_Nothing recorded yet._"]
+               f"${sum(v[2] for v in bs.values()):.2f} | ${sum(api_stage.values()):.2f} |"]) if bs else ["_Nothing recorded yet._"]
     out += ["", "## Spend by step (model)", ""]
-    out += (["| Step | Runs | Tokens | USD |", "|---|---|---|---|"]
-            + [f"| {k} | {n} | {tok:,} | ${usd:.2f} |" for k, (n, tok, usd) in sorted(by.items(), key=lambda kv: -kv[1][2])]
+    out += (["| Step | Runs | Tokens | Session USD | API USD |", "|---|---|---|---|---|"]
+            + [f"| {k} | {n} | {tok:,} | ${usd:.2f} | ${api_step.get(k, 0):.2f} |"
+               for k, (n, tok, usd) in sorted(by.items(), key=lambda kv: -(kv[1][2] + api_step.get(kv[0], 0)))]
             + [f"| **total** | {sum(v[0] for v in by.values())} | {sum(v[1] for v in by.values()):,} | "
-               f"${sum(v[2] for v in by.values()):.2f} |"]) if by else ["_Nothing recorded yet (run.py finish --tokens --cost)._"]
+               f"${sum(v[2] for v in by.values()):.2f} | ${sum(api_step.values()):.2f} |"]) if by else ["_Nothing recorded yet (run.py finish --tokens --cost)._"]
     if lr:
         out += ["", f"Last run: /{lr.get('command')} {lr.get('finished', '')[:16]} — {lr.get('result')}"]
     return "\n".join(out) + "\n"

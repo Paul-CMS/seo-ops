@@ -4,7 +4,8 @@
 side built 2026-10-20 (cost split 20fbba5; brief-free route, D5 routes, pilot rule, three fact states, build.md 28 → 12 KB);
 left for Paul: run HMM locations in its client session (one review sheet, one approval line) and the Sonnet drafting
 test there. Phase 1 built 2026-10-20 (render.py, pipeline.py inventory, clerk retired, script-written handoff lines
-capped at 25, outline.py formula). Next: Phase 2. Each
+capped at 25, outline.py formula). Phase 2 built 2026-10-20 (llm.py; five jobs on the API with the agent route as
+the no-key fallback); left for Paul: type `ANTHROPIC_API_KEY` into `.env`. Next: Phase 3. Each
 phase runs in its own `/system` session, in order, starting with Phase 0. Phases marked **design** run on Opus; the rest on Sonnet, from
 this file as the written spec (CLAUDE.md → models).
 
@@ -102,6 +103,23 @@ in `~/.claude/projects/<project>/<session>.jsonl` and `<session>/subagents/*.jso
   - conformance judgment columns for kept pages (Sonnet)
   - mechanical QA explanations
 - **Done when:** these jobs run without an agent session and each has a regression check on HMM data.
+- **Built 2026-10-20.** `scripts/llm.py` (stdlib urllib; structured output via `output_config.format` JSON schema;
+  the fixed prompt + the job's context cached; `ANTHROPIC_API_KEY` from `.env`, sent only in the header; every call →
+  `clients/<slug>/llm-costs.jsonl` + `status.json spend.llm_usd`; `config.json llm_run_cap_usd` = $1.00 per run, exit
+  5 CONFIRM above it until `--confirmed`; fake mode `SEO_OPS_LLM_FAKE`). Jobs: `paa.py route` / `fanout.py route`
+  (Haiku; run by `pipeline.py` after S19/S21), `reviews.py meaning` (after S06), `places.py judge-all`, `outline.py faq`
+  (→ `build/<section>/faq-picks.json`, shown in each outline), `conformance.py judge` (kept pages →
+  `audit/conformance-judgment.csv`). **Until a real key is in `.env` (missing, or a 401) nothing fails**: each job says
+  once "no API key — ran on the agent route" and its agent does the work as before. `usage.py` and STATUS.md show the
+  API spend beside the session spend. Tests: `tests/checks/rewrite4_phase2.py` on HMM's saved data
+  (`tests/fixtures/hmm`, copied read-only): PAA 35/35 and fan-out 352/352 rows reproduce the agent's routing; HMM's 8
+  review candidates read by meaning (explains 2 → 1 reviewer, "same day" is not a guarantee); FAQ candidates for
+  Beaufort and Charleston from HMM's 124 location-routed fan-out rows; the 21 kept blog posts judged on all 22 BLG
+  checks, the agent's S15 scorecard written back exactly.
+  **Not done here:** mechanical QA explanations (they belong with `qa.py`, Phase 5); `places.py judge` has no HMM data
+  to regress on (HMM's place research was never ingested), so its check uses a test place until Phase 6 stores Beaufort.
+  The regression checks prove the plumbing on HMM's real rows; the model's own agreement with the agent is measured on
+  the first live run once Paul types the key.
 
 ### Phase 3 — Slim audit (design, Opus)
 - **Redirect pre-screen script** (`pagedec.py screen`): CM-019 conditions 1–3 computed from rankings, backlinks,

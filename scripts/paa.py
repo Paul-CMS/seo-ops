@@ -5,6 +5,7 @@ before the site plan.
     paa.py estimate <slug> --services-file F --cities "Spring Hill,Franklin,..." --state Tennessee [--cap 20]
     paa.py run      <slug> --run R --services-file F --cities ... --state ... [--cap 20] [--confirmed]
                     [--registry c3.txt]
+    paa.py route    <slug> --run R [--confirmed]   fill every empty Intent / Route / Note (llm.py route-questions)
 
 Queries are "<service> <city>" for each core service × the primary city plus the top 3
 service-area cities (the order given in --cities; the first is the primary city). The run is
@@ -12,8 +13,9 @@ capped at --cap queries (default 20); expanding beyond the cap needs Paul's OK.
 Outputs in clients/<slug>/data/paa/ (raw/ git-ignored):
   paa-questions.csv   question, source queries, times seen, closest C3 match + similarity
   queries.csv         every query run and how many PAA questions it returned
-  paa-routing.md      the routing worksheet: Intent and Route columns are filled by the
-                      discovery-audit agent (a judgment, not a script); C3 duplicates pre-marked drop.
+  paa-routing.md      the routing worksheet: Intent and Route are filled by `paa.py route` (llm.py
+                      route-questions, Haiku — Rewrite 4 Phase 2); with no API key the discovery-audit agent fills
+                      them as before. C3 duplicates pre-marked drop.
                       A re-run keeps the Intent / Route / Note already filled in, matched by question
                       text (lowercase, collapsed spaces, end punctuation ignored); routed questions that
                       no longer appear are listed at the bottom so nothing the agent wrote is lost.
@@ -27,7 +29,7 @@ from difflib import SequenceMatcher
 
 import dfs
 import run as R
-from lib import client_dir
+from lib import client_dir, now
 
 SERP = "serp/google/organic/live/advanced"
 
@@ -65,6 +67,93 @@ def old_routing(path):
     return out
 
 
+LLM_LINE = "Intent and Route filled by scripts/llm.py"
+
+
+def planned_pages(slug):
+    """[{name, type, url (path)}] for the service, location and hub pages on record — what a route may name."""
+    import urllib.parse
+    import status as S
+    out = []
+    for pid, p in S.load(slug)["pages"].items():
+        if p.get("type") in ("service", "location", "county") and p.get("url"):
+            path = urllib.parse.urlparse(p["url"]).path or "/"
+            out.append({"name": p.get("name") or pid, "type": p["type"], "url": path})
+    return out
+
+
+def route_worksheet(slug, run_id, path, service_label, confirmed=False):
+    """Fill the empty Intent / Route / Note cells of a routing worksheet (paa-routing.md, fanout-routing.md) with one
+    llm.py route-questions job (Rewrite 4 Phase 2). A filled cell — the agent's, Paul's, a pre-marked drop — is never
+    overwritten. No key: nothing is written and the agent fills them as before."""
+    import llm
+    from lib import die as _die
+    if not path.exists():
+        _die(f"no {path.name} for {slug} — run the pull first", 4)
+    lines = path.read_text().splitlines()
+    hi = next((i for i, l in enumerate(lines) if l.startswith("|") and "| Intent |" in l and "| Route |" in l), None)
+    if hi is None:
+        _die(f"{path.name} has no table with Intent and Route columns", 4)
+    head = [c.strip() for c in lines[hi].strip().strip("|").split("|")]
+    col = {h: i for i, h in enumerate(head)}
+    qcol = "Question" if "Question" in col else "Query"
+    rows = {}
+    for i in range(hi + 2, len(lines)):
+        if not lines[i].startswith("|"):
+            break
+        cells = [c.strip() for c in lines[i].strip().strip("|").split("|")]
+        if len(cells) == len(head) and cells[0].isdigit():
+            rows[cells[0]] = (i, cells)
+    todo = [(n, c) for n, (i, c) in rows.items() if not c[col["Route"]] and not c[col["Intent"]]]
+    pages = planned_pages(slug)
+    def get(c, *names):
+        return next((c[col[x]] for x in names if x in col), "")
+    items = [{"id": n, "question": c[col[qcol]], "seen": get(c, "Seen"), "group": get(c, "Group"),
+              "source": get(c, "Seeds", "Source queries"),
+              "closest_existing": get(c, "Closest C3", "Closest C3 heading/FAQ")} for n, c in todo]
+    import status as S
+    context = {"business": S.load(slug)["client"].get("name", ""), "pages": pages,
+               "page_rule": "page is one of these URLs" if pages else
+               "no pages are planned yet: page is the service name or the city name the answer belongs to"}
+    if not items:
+        print(f"{path.name}: every row already has an Intent or Route — nothing to route")
+        return 0
+    ans = llm.attempt(slug, run_id, "route-questions", context, items, f"{path.name} routing ({len(items)} row(s))",
+                      f"the discovery-audit agent fills Intent and Route in {path.name}", confirmed)
+    if ans is None:
+        return 0
+    urls = {p["url"] for p in pages}
+    filled = bad = 0
+    for n, (i, c) in rows.items():
+        a = ans.get(n)
+        if not a or (c[col["Route"]] or c[col["Intent"]]):
+            continue
+        page = (a.get("page") or "").strip()
+        if a["route"] in ("service", "location"):
+            if urls and page not in urls:
+                bad += 1
+                continue
+            route = f"{service_label if a['route'] == 'service' else 'location FAQ'} — {page}"
+        else:
+            route = a["route"]
+        c[col["Intent"]], c[col["Route"]] = a["intent"], route
+        if "Note" in col and not c[col["Note"]]:
+            c[col["Note"]] = cell(a.get("note") or "")
+        lines[i] = "| " + " | ".join(c) + " |"
+        filled += 1
+    stamp = (f"{LLM_LINE} (route-questions, {llm.JOBS['route-questions']['model']}) for {filled} row(s), {now()[:10]}; "
+             "a filled row is never overwritten — edit any row by hand.")
+    lines = [l for l in lines if not l.startswith(LLM_LINE)]
+    lines[1:1] = ["", stamp, ""]
+    path.write_text(re.sub(r"\n{3,}", "\n\n", "\n".join(lines)) + "\n")
+    R.log_change(slug, run_id, "llm_judgment", path.name, "Intent/Route", "", f"{filled} row(s) routed", "DONE",
+                 channel="local")
+    print(f"{path.name}: {filled} of {len(items)} row(s) routed by llm.py"
+          + (f" · {bad} named a page that is not planned — left for the agent" if bad else "")
+          + (f" · {len(items) - filled - bad} not answered — left for the agent" if len(items) - filled - bad > 0 else ""))
+    return filled
+
+
 def queries(services, cities):
     """Primary city first for every service, then the other cities — so a cap keeps full
     coverage of the primary city before spreading out."""
@@ -85,7 +174,13 @@ def main():
         if n == "run":
             s.add_argument("--run", required=True); s.add_argument("--confirmed", action="store_true")
             s.add_argument("--registry")
+    s = sub.add_parser("route"); s.add_argument("slug"); s.add_argument("--run", required=True)
+    s.add_argument("--confirmed", action="store_true")
     a = ap.parse_args()
+    if a.cmd == "route":
+        R.open_run(a.slug, a.run)
+        route_worksheet(a.slug, a.run, client_dir(a.slug) / "data" / "paa" / "paa-routing.md", "service FAQ", a.confirmed)
+        return
     services = [l.strip().lower() for l in open(a.services_file) if l.strip()]
     cities = [c.strip() for c in a.cities.split(",") if c.strip()][: a.max_cities]
     search_from = dict(p.split("=", 1) for p in a.search_from.split(";") if "=" in p)
@@ -160,7 +255,8 @@ def main():
         rows.append((v, best, score))
     md = ["# PAA routing — People Also Ask questions", "",
           f"{len(run_qs)} queries ({', '.join(cities)}) → {len(seen)} distinct questions (deduplicated). "
-          "Written by scripts/paa.py; **the discovery-audit agent fills Intent and Route** for every row.", "",
+          "Written by scripts/paa.py; Intent and Route are filled by `paa.py route` (llm.py), or by the "
+          "discovery-audit agent when there is no API key.", "",
           "Intent: informational · problem-aware · commercial investigation · comparison · transactional.  ",
           "Route: **service FAQ** (name the page) · **location FAQ** (name the city page) · **blog topic** · **drop** "
           "(off-topic, or already in the C3 registry — similarity ≥ 0.85 is pre-marked).", "",

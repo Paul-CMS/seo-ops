@@ -15,8 +15,13 @@ Session model: Haiku · agents: researcher (Sonnet), discovery-audit (Opus).
   failure stops it. `--dry` is free and writes nothing in the client's folder.
 - Every paid script: whole-run estimate first; over $2 → ask Paul.
 - Reviews: `reviews.py run` (the pull is checked against Google's count), then `reviews.py extract` — a fact 3+
-  different reviewers report is a `customer_reported` candidate (CM-057). A keyword match never counts: the
-  researcher reads each by meaning and records it (`reviews.py checked`); until then it is a yes/no line for Paul.
+  different reviewers report is a `customer_reported` candidate (CM-057). A keyword match never counts: every match
+  is read by meaning — `reviews.py meaning` (on the Claude API, Rewrite 4 Phase 2; `pipeline.py` runs it after S06),
+  or, with no API key, the researcher (`reviews.py checked`); until then it is a yes/no line for Paul.
+- PAA and fan-out routing: `paa.py route` / `fanout.py route` fill Intent and Route on the Claude API (Haiku;
+  `pipeline.py` runs them after S19/S21). A filled row is never overwritten. No API key yet (or the API answers 401): the script says "no API key — ran on the agent route" and the agent does it as before.
+- Direct API calls (`scripts/llm.py`): every call is logged to `llm-costs.jsonl`; a job over the per-run cap
+  (`config.json llm_run_cap_usd`) stops with CONFIRM — ask Paul, then re-run with `--confirmed`.
 - Competitor coverage (`crawl.py competitors`): the top 3 pages' H2s and FAQ topics per service — ideas only, never
   client claims (CM-016).
 - Data is saved once per client and reused (re-run if older than 60 days). Agents read the summaries, never raw exports.

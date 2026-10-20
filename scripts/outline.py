@@ -4,6 +4,9 @@
     outline.py build <slug> <section> --run R [--page P]   write and record the outline of every page in the section
                                                           that cleared the evidence gate (or one page)
     outline.py show <slug> <page>                          print a page's outline path and whether it is current
+    outline.py faq <slug> <section> --run R [--confirmed]  FAQ fit picks for every page of the section on the Claude API
+                                                          (llm.py faq-picks, Sonnet — Rewrite 4 Phase 2) →
+                                                          build/<section>/faq-picks.json, shown in each outline
 
 A section on the outline route (status.py: batch "route" = "outline"; every section without approved briefs —
 status.py assign_routes on /next, D5) has no brief. Inside its /build write run, after the evidence gate, this script writes
@@ -20,8 +23,9 @@ clients/<slug>/build/<section>/outlines/<page>.md from what is already approved 
 Phase 1: a keyword, H1, service/category variant or area variant the plan row leaves empty is assigned by formula
 from the Brand Guide (A2/A3 categories, B1 reserved, B2 pool, C1 service rows) and the page spec's §3 formats —
 `## Assigned by formula` in the outline, and recorded in the page's `assigned` — so the writer never chooses them
-(HMM's location rows carry none). Whatever the Brand Guide cannot support (and H2 wording, FAQ picks) the writer
-chooses and reports in its results file; each choice is a "Fix and list" row on the section's one draft review sheet (CM-061).
+(HMM's location rows carry none). FAQ picks come from `outline.py faq` (Phase 2) when it has run; with no API key the
+writer picks from the candidates as before. Whatever the Brand Guide cannot support (and H2 wording, FAQ picks not made
+by `outline.py faq`) the writer chooses and reports in its results file; each choice is a "Fix and list" row on the section's one draft review sheet (CM-061).
 Zero model tokens. The draft is written from the outline + pack + spec + pilot corrections, one fresh subagent per
 page (CM-043).
 """
@@ -220,6 +224,114 @@ def formula(st, pid, ent):
     return out
 
 
+# ------------------------------------------------------------------ FAQ fit picks on the Claude API (Phase 2)
+ROUTE_FILES = ("data/paa/paa-routing.md", "data/fanout/fanout-routing.md")
+
+
+def routed(slug):
+    """[(question, route, source)] from the routing worksheets' rows routed to a service or a location page."""
+    out = []
+    for rel in ROUTE_FILES:
+        f = client_dir(slug) / rel
+        if not f.is_file():
+            continue
+        lines = f.read_text(encoding="utf-8").splitlines()
+        head = next((l for l in lines if l.startswith("|") and "| Route |" in l), None)
+        if not head:
+            continue
+        cols = [c.strip() for c in head.strip().strip("|").split("|")]
+        q = cols.index("Question") if "Question" in cols else cols.index("Query") if "Query" in cols else None
+        r = cols.index("Route")
+        for l in lines:
+            c = [x.strip() for x in l.strip().strip("|").split("|")]
+            if l.startswith("|") and len(c) == len(cols) and c[0].isdigit() and q is not None and " — /" in c[r]:
+                out.append((c[q], c[r], ("PAA" if "paa" in rel else "fan-out") + f" #{c[0]}"))
+    return out
+
+
+def faq_candidates(slug, st, pid):
+    """[{id, question, source, seen}] for one page: the pack's questions, then the worksheet rows routed to its URL (or,
+    for a location page, to its city's page under an older URL)."""
+    p = st["pages"][pid]
+    pk = (p.get("pack") or {}).get("json")
+    pack = read_json(ROOT / pk, {}) if pk else {}
+    out, seen = [], set()
+
+    def add(q, src, n=""):
+        k = re.sub(r"[^a-z0-9 ]", "", q.lower()).strip()
+        if q and k not in seen:
+            seen.add(k)
+            out.append({"id": f"q{len(out) + 1}", "question": q, "source": src, "seen": str(n)})
+    for x in (pack or {}).get("questions") or []:
+        add(x.get("q") or "", f"pack {x.get('kind', '')}".strip(), x.get("seen", ""))
+    mine = _path(p.get("url"))
+    city = (p.get("city") or (p.get("name") or "").split(",")[0]).strip().lower()
+    cslug = re.sub(r"[^a-z0-9]+", "-", city).strip("-")
+    for q, route, src in routed(slug):
+        target = route.split(" — ", 1)[1].strip().strip("/")
+        if target == mine or (p.get("type") == "location" and cslug and target.split("/")[-1].startswith(cslug)):
+            add(q, f"{src} ({route.split(' — ')[0]})")
+    return out[:40]
+
+
+def faq(slug, section, run_id, confirmed=False):
+    """FAQ fit picks for every page of a section in one llm.py faq-picks job. Picks are candidates only — a question
+    that is not in the list is never kept. No API key: nothing is written; the writer picks from the outline's
+    candidates and reports each, as before."""
+    import llm
+    import run as R
+    R.open_run(slug, run_id)
+    st = S.load(slug)
+    b = S.batch(st, section) or die(f"no section {section} in the site plan")
+    bg = brand_guide(slug)
+    items, cands = [], {}
+    for pid in b["pages"]:
+        p = st["pages"][pid]
+        c = faq_candidates(slug, st, pid)
+        if not c:
+            continue
+        cands[pid] = {x["id"]: x for x in c}
+        items.append({"id": pid, "type": p.get("type", ""), "name": p.get("name") or pid, "url": p.get("url", ""),
+                      "city": p.get("city") or "", "candidates": c,
+                      **({"categories": [f"{n} = {c_}: {w}" for n, (c_, w) in enumerate(LOC_FAQ, 1)]}
+                         if p.get("type") == "location" else {})})
+    if not items:
+        print(f"section {section}: no FAQ candidates for any page (no routed PAA or fan-out rows, no pack questions)")
+        return
+    owned = sorted({h for h, _ in used_elsewhere(bg, "")})[:200]
+    ans = llm.attempt(slug, run_id, "faq-picks", {"business": st["client"].get("name", ""), "owned_elsewhere": owned},
+                      items, f"FAQ picks for section {section} ({len(items)} page(s))",
+                      "the writer picks the FAQs from the outline's candidates and reports each", confirmed)
+    if ans is None:
+        return
+    out = {}
+    for pid, a in ans.items():
+        keep, cats = [], set()
+        for k in a.get("picks") or []:
+            c = cands.get(pid, {}).get(k.get("candidate"))
+            if not c or (st["pages"][pid].get("type") == "location" and (k["category"] not in ("1", "2", "3")
+                                                                         or k["category"] in cats)):
+                continue
+            cats.add(k["category"])
+            keep.append({"question": c["question"], "category": k["category"], "source": c["source"],
+                         "why": k.get("why", "")})
+        out[pid] = keep
+    d = client_dir(slug) / "build" / section
+    d.mkdir(parents=True, exist_ok=True)
+    from lib import write_json
+    write_json(d / "faq-picks.json", {"made": now(), "run": run_id, "model": llm.JOBS["faq-picks"]["model"],
+                                      "pages": out})
+    R.log_change(slug, run_id, "llm_judgment", f"build/{section}/faq-picks.json", "FAQ picks", "",
+                 f"{sum(len(v) for v in out.values())} pick(s) for {len(out)} page(s)", "DONE", channel="local")
+    print(f"section {section}: FAQ picks for {len(out)} of {len(items)} page(s) on the Claude API → "
+          f"build/{section}/faq-picks.json (each outline shows them)")
+
+
+def faq_picks(slug, section, pid):
+    f = client_dir(slug) / "build" / section / "faq-picks.json"
+    return ((read_json(f, {}) or {}).get("pages") or {}).get(pid) if f.is_file() else None
+
+
 def render(slug, st, b, pid, pack, run_id):
     p = st["pages"][pid]
     ptype = p.get("type", "")
@@ -263,6 +375,11 @@ def render(slug, st, b, pid, pack, run_id):
     out += ([f"- Assigned to this page by formula: {' · '.join(mine)}"] if mine else []) + [""]
     out += ["## Page order (the spec, §3 — every row is a requirement)", "", "| # | Element | Requirement |", "|---|---|---|"]
     out += [f"| {n} | {e} | {r} |" for n, e, r in elements] or ["| — | the spec has no element table | |"]
+    picks = faq_picks(slug, b["id"], pid)
+    if picks:
+        out += ["", "## FAQ picks (outline.py faq on the Claude API — use these, in this order; report each)", ""]
+        out += [f"- {('cat ' + k['category'] + ' · ') if k.get('category') else ''}{k['question']} — {k['source']}"
+                for k in picks]
     out += ["", "## FAQ candidates", ""]
     if ptype == "location":
         out += ["Three questions, one per category (none already owned below):", ""]
@@ -355,9 +472,14 @@ def main():
     s = sub.add_parser("build"); s.add_argument("slug"); s.add_argument("section"); s.add_argument("--run", required=True)
     s.add_argument("--page")
     s = sub.add_parser("show"); s.add_argument("slug"); s.add_argument("page")
+    s = sub.add_parser("faq"); s.add_argument("slug"); s.add_argument("section"); s.add_argument("--run", required=True)
+    s.add_argument("--confirmed", action="store_true")
     a = ap.parse_args()
     if a.cmd == "build":
         build(a.slug, a.section, a.run, a.page)
+        return
+    if a.cmd == "faq":
+        faq(a.slug, a.section, a.run, a.confirmed)
         return
     st = S.load(a.slug)
     rec = S.page_stage(st, a.page, "outline")

@@ -133,11 +133,12 @@ always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 
 - **S11 GSC/GA4:** only if access exists.
 - **S19 People Also Ask:** `python3 scripts/paa.py estimate|run <slug> --run <RUN_ID> --services-file
   <services.txt> --cities "<primary>,<c2>,<c3>,<c4>" --state "<State>" [--cap 20]
-  [--registry <C3 headings/FAQs, one per line>]` → `data/paa/paa-routing.md`. **You (the
-  discovery-audit agent) route every question:** fill Intent (informational / problem-aware /
-  commercial investigation / comparison / transactional) and Route (service FAQ — name the page ·
-  location FAQ — name the city page · blog topic · drop). Drop anything already in C3. Going
-  past the cap needs Paul's OK.
+  [--registry <C3 headings/FAQs, one per line>]` → `data/paa/paa-routing.md`. **Routing runs on the API:**
+  `python3 scripts/paa.py route <slug> --run <RUN_ID>` fills Intent and Route (Haiku; `pipeline.py` runs it). Read
+  the result; correct a row by hand only when it is wrong (a filled row is never overwritten). Only when it says
+  "no API key — ran on the agent route" do **you** route every question: Intent (informational / problem-aware /
+  commercial investigation / comparison / transactional) and Route (service FAQ — name the page · location FAQ — name
+  the city page · blog topic · drop). Drop anything already in C3. Going past the cap needs Paul's OK.
 - **S20 SEOPress site-wide settings:** not a WordPress site (the client's cms in `status.py show`) → `skipped` "not WordPress". Otherwise: if the WordPress credentials are in place, run `/wp-check <slug>` now —
   readable settings are saved as evidence; otherwise it issues Jonie's one-time VA check (record S20 when it
   returns). No WordPress access yet → `skipped` with the reason.
@@ -148,7 +149,8 @@ always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 
 - **S21 query fan-out (CM-045):** after S19, `python3 scripts/fanout.py estimate|run <slug> --run <RUN_ID>
   --services-file <services.txt> --cities "<primary>,<c2>,<c3>,<c4>" [--cap 10] [--per-seed 40]
   [--registry <C3 file>] --paa clients/<slug>/data/paa/paa-questions.csv` → `data/fanout/fanout-routing.md`.
-  About $0.07 for the default 10 seeds (over $2 asks Paul). **Route every query** like the PAA rows (service
+  About $0.07 for the default 10 seeds (over $2 asks Paul). Routing: `python3 scripts/fanout.py route <slug> --run
+  <RUN_ID>` (the API, as for PAA); with no API key **route every query** yourself like the PAA rows (service
   H2/FAQ · location FAQ · blog topic · drop); a query that repeats a PAA question routes with it. These are
   an LLM's brainstorm, not demand: never give them a volume (CM-012) and never use them as evidence for
   CM-019, CM-020 or CM-021.
@@ -169,7 +171,9 @@ Run the **seo-technical-audit** skill procedure, in this order:
    audit cannot start until Paul approved the specs, once, globally): **one scorecard file per page type**
    (`scorecard-<type>.csv`, a row per page, one column per check ID HP-/SVC-/LOC-/HUB-/ABT-/BLG-), results placed in
    the nine categories (analysis-rules.md). A failed check is Medium (CM-028). Titles and H1s are scored against the
-   settled Decision Sheet formats, never re-decided.
+   settled Decision Sheet formats, never re-decided. Pages the URL map **keeps**: run `python3 scripts/conformance.py
+   judge <slug> --run <RUN_ID>` (the API scores their judgment checks → `audit/conformance-judgment.csv`) and copy
+   its results into the scorecards; score them yourself only when it says "no API key — ran on the agent route".
 5. S16 **technical** findings.
 
 **Severity:** CM-028 (High / Medium / Low only). **One finding per issue, listing every affected URL.**

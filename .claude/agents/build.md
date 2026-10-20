@@ -68,8 +68,9 @@ the Discovery Record, Brand Guide E and cited public research; never upgrade a s
 <RUN_ID> --batch <id>` scores each page pass / warn / block and rebuilds its **evidence pack**
 (`build/<section>/packs/<page>.md`): facts in three states (confirmed · sourced public · unknown), reviews at their
 usage tier, questions, site/GBP, public and place facts, gaps. The **researcher** checks by meaning every review topic
-marked "keyword match only" with 3+ reviewers (`reviews.py checked …`), then `evidence_pack.py build <slug> <id> --run
-<RUN_ID>`. A blocked page is not written: `/next` sends it to the facts interview or Paul's waiver.
+marked "keyword match only" with 3+ reviewers (`reviews.py meaning`, else `reviews.py checked …`), then
+`evidence_pack.py build <slug> <id> --run <RUN_ID>`. FAQ picks: `outline.py faq <slug> <id> --run <RUN_ID>` (the API;
+each outline then lists them — the writer uses those and reports each). A blocked page is not written: `/next` sends it to the facts interview or Paul's waiver.
 
 ## Step: write <id> — the whole section in ONE run, ONE stop (outline route)
 1. The evidence gate (above).

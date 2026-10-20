@@ -16,7 +16,9 @@ them, and say plainly when you did not find one. You never invent, never round, 
 
 **Place store (CM-061, `scripts/places.py`):** the first stop for a public fact about a place is
 `methodology/places/<state>/<place>/`. For place facts a Deep Research report brought in, check each one `places.py show
-<state> <place> <niche> --check` lists: open its URL, read whether the quote supports the fact by meaning, and record
+<state> <place> <niche> --check` lists, first run `places.py judge-all <state> <place> <niche> --slug <slug> --run
+<RUN_ID>` (the API reads them by meaning). For what is still listed after it — unclear, or every fact when it says "no
+API key — ran on the agent route" — open its URL, read whether the quote supports the fact by meaning, and record
 `places.py judge <state> <place> <niche> --id <id> --ok|--drop --reason "…"`. A dropped fact is never asked of anyone.
 
 **The read list limits which project files you load. It never limits web research for public facts. Follow Paul's
@@ -47,7 +49,9 @@ answers>"` — Paul adds it to `methodology/sources/` in `/system-review`.
    logged not-found may become an Ask. A source-list row marked **Local context only** (e.g. a chamber of
    commerce) is cited only for things to do, landmarks and area character — never for a permit, code or any
    regulatory fact; those come only from official government sources.
-2. **Review facts by meaning** (CM-057). After `reviews.py extract`, read `data/reviews/review-facts.json` and
+2. **Review facts by meaning** (CM-057). First `python3 scripts/reviews.py meaning <slug> --run <RUN_ID>` (the API
+   reads every match; a candidate it records is done). Only for what it left — or everything when it says "no API key
+   — ran on the agent route" — after `reviews.py extract`, read `data/reviews/review-facts.json` and
    `data/reviews/reviews.csv` (never the raw pull) and check each candidate: does the sentence really say the fact?
    Drop false matches ("total cost" is not a price). Count different reviewers only (the `reviewer_key`); owner replies
    never count. **A keyword match never counts toward Known** (Paul, 2026-10-09): only what you record does —

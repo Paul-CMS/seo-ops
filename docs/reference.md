@@ -56,8 +56,9 @@ Research for a town and a niche is done once and reused across clients: `methodo
 (niche-free) and `<niche>.json` (place × niche). The first stop for a public fact. The VA runs it: `places.py status
 <slug>` lists planned places with no research → `places.py prompt <slug> <place>` → paste into Gemini Deep Research →
 save the report to `clients/<slug>/inputs/places/<place>-<niche>.md` → `places.py ingest` → `places.py verify <state>
-<place> <niche>` (URLs must load; quotes must be on the page) → the researcher (Sonnet) checks the rest by meaning
-(`places.py judge`). Failed facts are dropped, never asked. Packs use only verified, current (under 3 years) facts.
+<place> <niche>` (URLs must load; quotes must be on the page) → the rest are checked by meaning on the Claude API
+(`places.py judge-all <state> <place> <niche> --slug <slug> --run <RUN_ID>`, Sonnet); with no API key, or for a fact the
+API calls unclear, the researcher (Sonnet) reads it (`places.py judge`). Failed facts are dropped, never asked. Packs use only verified, current (under 3 years) facts.
 
 ## Independence
 Auditing and writing never share a context (CM-017, CM-018, RULE-011): the audit-reviewer sees only registers and

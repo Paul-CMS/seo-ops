@@ -13,6 +13,8 @@
                         report" table in customer-language.md, and facts.json as customer_reported candidates
                         (section R: never a Brand Guide row, so no approval changes). A keyword match never counts as
                         Known: the researcher reads each by meaning and records it —
+    reviews.py meaning  <slug> --run R [--confirmed]   every match read by meaning on the Claude API (llm.py
+                        review-meaning, Sonnet — Rewrite 4 Phase 2); with no API key the researcher does it instead:
     reviews.py checked  <slug> --run R --key fact:<key> --count N   (N different reviewers left; Known at 3+)
 
 Pulls the newest reviews (up to --depth, max 200 here) through DataforSEO Business Data.
@@ -226,28 +228,20 @@ def main():
     s = sub.add_parser("summarize"); s.add_argument("slug")
     s.add_argument("--services-file"); s.add_argument("--cities", default="")
     s = sub.add_parser("extract"); s.add_argument("slug"); s.add_argument("--run", required=True)
+    s = sub.add_parser("meaning"); s.add_argument("slug"); s.add_argument("--run", required=True)
+    s.add_argument("--confirmed", action="store_true")
     s = sub.add_parser("checked"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s.add_argument("--key", required=True, help="the candidate's key, e.g. fact:service_scope or practice:photos")
     s.add_argument("--count", type=int, required=True, help="different reviewers left after dropping false matches")
     s.add_argument("--note", default="")
     a = ap.parse_args()
+    if a.cmd == "meaning":
+        R.open_run(a.slug, a.run)
+        meaning(a.slug, a.run, a.confirmed)
+        return
     if a.cmd == "checked":   # the researcher has read the matches by meaning (Paul 2026-10-09)
         R.open_run(a.slug, a.run)
-        import facts
-        from lib import append
-        data = facts.load(a.slug)
-        row = next((r for r in data["facts"] if r.get("section") == "R" and r.get("key") == a.key), None)
-        if not row:   # a page-level fact (its terms name the page's service or city): the researcher found it
-            row = {"id": "r-" + re.sub(r"[^a-z0-9]+", "-", a.key.lower()).strip("-"), "section": "R", "key": a.key,
-                   "label": a.key.split(":", 1)[-1].replace("_", " "), "value": a.note, "status": "customer_reported",
-                   "status_text": None, "source": "Google reviews (read by the researcher; data/reviews/reviews.csv)",
-                   "quote": "", "date": now()[:10], "who": "researcher", "count": a.count}
-            data["facts"].append(row)
-        row.update({"meaning_checked": True, "count": a.count, "checked_at": now(), "checked_note": a.note,
-                    "who": "researcher"})
-        facts.save(a.slug, data["facts"])
-        append(client_dir(a.slug) / "log.md", f"- REVIEW FACT CHECKED {now()[:16]} · run {a.run} · {a.key}: "
-               f"{a.count} different reviewer(s) after reading by meaning" + (f" · {a.note}" if a.note else "") + "\n")
+        mark_checked(a.slug, a.run, a.key, a.count, a.note, "researcher")
         print(f"{a.key}: checked by meaning — {a.count} reviewer(s)"
               + (" → counts as Known (CM-057)" if a.count >= 3 else " → below 3, stays a yes/no line"))
         return
@@ -370,8 +364,9 @@ def _rows(slug):
         return list(csv.DictReader(fh))
 
 
-def extract(slug, run_id):
-    """{fact or topic: {count, quotes[{date, quote, row}]}} — counted by different reviewers (CM-057)."""
+def extract(slug, run_id, write=True):
+    """{fact or topic: {count, quotes[{date, quote, row}]}} — counted by different reviewers (CM-057).
+    write=False: only the matches (each with every hit, `_hits`), nothing written — for the meaning check."""
     import facts
     import sources
     reqs = read_json(sources.REQ) or {}
@@ -387,7 +382,8 @@ def extract(slug, run_id):
         people = {h["reviewer"] for h in hits}
         if people:
             found[key] = {"label": label, "count": len(people),
-                          "quotes": [{"date": h["date"], "quote": h["quote"], "row": h["label"]} for h in hits[:8]]}
+                          "quotes": [{"date": h["date"], "quote": h["quote"], "row": h["label"]} for h in hits[:8]],
+                          "_hits": hits}
 
     for key in (reqs.get("find") or {}):
         res = sources.search(slug, key, {}, docs, limit=None)
@@ -424,6 +420,10 @@ def extract(slug, run_id):
             add(f"staff:{w}", f"person named {w}", [{"reviewer": r, "date": d_["date"], "label": d_["label"],
                  "quote": next((x for x in sources.SENT.split(d_["text"]) if w in x), "").strip()[:220]}
                 for r, d_ in by.items()])
+    if not write:
+        return found, need
+    for f in found.values():
+        f.pop("_hits", None)
     d = out_dir(slug)
     write_json(d / "review-facts.json", {"made": now(), "min_reviewers": need, "facts": found})
     # customer-language.md: the "Facts customers report" table (replaced each time)
@@ -455,6 +455,60 @@ def extract(slug, run_id):
     append(client_dir(slug) / "log.md", f"- REVIEW FACTS {now()[:16]} · run {run_id} · {len(found)} fact(s)/topic(s) found "
            f"in reviews, {strong} with {need}+ different reviewers (customer_reported, CM-057) · data/reviews/review-facts.json\n")
     return found, strong, need
+
+
+# ------------------------------------------------------------------ CM-057 by meaning, on the Claude API (Phase 2)
+def mark_checked(slug, run_id, key, count, note, who):
+    """The same record `reviews.py checked` writes: the candidate read by meaning, N different reviewers left."""
+    import facts
+    from lib import append
+    data = facts.load(slug)
+    row = next((r for r in data["facts"] if r.get("section") == "R" and r.get("key") == key), None)
+    if not row:   # a page-level fact (its terms name the page's service or city)
+        row = {"id": "r-" + re.sub(r"[^a-z0-9]+", "-", key.lower()).strip("-"), "section": "R", "key": key,
+               "label": key.split(":", 1)[-1].replace("_", " "), "value": note, "status": "customer_reported",
+               "status_text": None, "source": "Google reviews (read by meaning; data/reviews/reviews.csv)",
+               "quote": "", "date": now()[:10], "who": who, "count": count}
+        data["facts"].append(row)
+    row.update({"meaning_checked": True, "count": count, "checked_at": now(), "checked_note": note, "who": who})
+    facts.save(slug, data["facts"])
+    append(client_dir(slug) / "log.md", f"- REVIEW FACT CHECKED {now()[:16]} · run {run_id} · {key}: "
+           f"{count} different reviewer(s) after reading by meaning ({who})" + (f" · {note}" if note else "") + "\n")
+
+
+def meaning(slug, run_id, confirmed=False):
+    """Every keyword match read by meaning in one llm.py review-meaning job (Sonnet): the sentences that state the
+    fact are kept, the reviewers behind them counted (3+ = Known, CM-057). No key: the researcher reads them
+    (`reviews.py checked`), as before."""
+    import llm
+    found, need = extract(slug, run_id, write=False)
+    sid, items = {}, []
+    for key, f in sorted(found.items()):
+        sents = []
+        for n, h in enumerate(f["_hits"], 1):
+            i = f"{len(sid) + 1}"
+            sid[i] = (key, h["reviewer"])
+            sents.append({"sentence_id": i, "text": h["quote"]})
+        items.append({"id": key, "label": f["label"], "sentences": sents})
+    if not items:
+        print("no review matches to read by meaning")
+        return
+    ans = llm.attempt(slug, run_id, "review-meaning", {"rule": "CM-057: 3+ different reviewers = customer_reported"},
+                      items, f"review facts by meaning ({len(items)} fact(s))",
+                      "the researcher reads each match by meaning (reviews.py checked)", confirmed)
+    if ans is None:
+        return
+    who = f"llm.py review-meaning ({llm.JOBS['review-meaning']['model']})"
+    strong = 0
+    for key, a in sorted(ans.items()):
+        people = {sid[x][1] for x in a.get("stating") or [] if x in sid and sid[x][0] == key}
+        mark_checked(slug, run_id, key, len(people), (a.get("note") or "")[:200], who)
+        strong += len(people) >= need
+    left = len(items) - len(ans)
+    R.log_change(slug, run_id, "llm_judgment", "data/reviews", "review facts by meaning", "",
+                 f"{len(ans)} read, {strong} with {need}+ reviewers", "DONE", channel="local")
+    print(f"{len(ans)} review fact(s) read by meaning on the Claude API · {strong} reported by {need}+ different "
+          "reviewers (customer_reported)" + (f" · {left} not answered — the researcher reads them" if left else ""))
 
 
 if __name__ == "__main__":

@@ -8,6 +8,9 @@ niche is done once and reused across clients.
                                                               parse the report's tables into the two layers
     places.py verify <state> <place> <niche>                  every URL loads (else dropped); the quote is on its page
                                                               (else listed for the Sonnet meaning check)
+    places.py judge-all <state> <place> <niche> --slug S --run R [--confirmed]
+                                                              the meaning check on the Claude API (llm.py place-judge,
+                                                              Sonnet - Rewrite 4 Phase 2); no API key -> the researcher:
     places.py judge  <state> <place> <niche> --id ID --ok|--drop [--reason R]   record the Sonnet check's answer
     places.py status <slug>                                   planned places missing place or niche research, with the
                                                               prompt command for each
@@ -391,7 +394,8 @@ def cmd_verify(a):
         total = [x + y for x, y in zip(total, r)]
     commit(a.state, a.place, "verified")
     print(f"{a.place}, {a.state.upper()}: {total[0]} verified · {total[1]} dropped (URL failed) · {total[2]} for the "
-          f"Sonnet meaning check (places.py show … --check lists them; places.py judge records each)")
+          f"Sonnet meaning check (places.py judge-all reads them on the API; with no key, places.py show … --check "
+          f"lists them and places.py judge records each)")
 
 
 def cmd_judge(a):
@@ -411,6 +415,74 @@ def cmd_judge(a):
         print(f"{a.id}: {'dropped' if a.drop else 'verified'}")
         return
     die(f"no fact {a.id} in {a.place}")
+
+
+def passage(body, quote, fact, width=1500):
+    """The stretch of the page's plain text that shares the most words with the quote and the fact."""
+    words = set(w for w in re.findall(r"[a-z0-9]+", _plain(f"{quote} {fact}")) if len(w) > 3)
+    if not body or not words:
+        return (body or "")[:width]
+    toks = body.split(" ")
+    span, step, best, at = width // 6, max(20, width // 12), -1, 0
+    for i in range(0, max(1, len(toks)), step):
+        win = " ".join(toks[i:i + span])
+        sc = sum(w in win for w in words)
+        if sc > best:
+            best, at = sc, i
+    return " ".join(toks[at:at + span])[:width]
+
+
+def cmd_judge_all(a):
+    """Every fact left for the meaning check, read on the Claude API (llm.py place-judge, Sonnet - Rewrite 4 Phase 2):
+    supported -> verified; not supported -> dropped (never asked); unclear -> left for the researcher. No API key: the
+    researcher reads them and records each with `places.py judge`, as before."""
+    import llm
+    import run as R
+    R.open_run(a.slug, a.run)
+    layers = [(None, load_layer(a.state, a.place))]
+    if a.niche:
+        layers.append((slugify(a.niche), load_layer(a.state, a.place, slugify(a.niche))))
+    cache, items, where = {}, [], {}
+    for niche, layer in layers:
+        for f in layer["facts"]:
+            if f.get("verified") != "check":
+                continue
+            code, body = cache.setdefault(f["source_url"], fetch(f["source_url"]))
+            if code != 200:
+                continue
+            items.append({"id": f["id"], "fact": f["fact"], "applies_to": f.get("applies_to", ""),
+                          "quote": f.get("quote", ""), "passage": passage(_plain(body), f.get("quote", ""), f["fact"])})
+            where[f["id"]] = niche
+    if not items:
+        print(f"{a.place}, {a.state.upper()}: nothing waits for the meaning check")
+        return
+    ans = llm.attempt(a.slug, a.run, "place-judge", {"place": a.place, "state": a.state.upper(), "niche": a.niche or ""},
+                      items, f"place facts by meaning - {a.place}, {a.state.upper()} ({len(items)})",
+                      "the researcher reads each one and records it (places.py judge)", a.confirmed)
+    if ans is None:
+        return
+    who = f"meaning checked by llm.py place-judge ({llm.JOBS['place-judge']['model']})"
+    n = {"supported": 0, "not_supported": 0, "unclear": 0}
+    for niche, layer in layers:
+        for f in list(layer["facts"]):
+            r = ans.get(f["id"]) if f["id"] in where and where[f["id"]] == niche else None
+            if not r:
+                continue
+            n[r["verdict"]] += 1
+            if r["verdict"] == "supported":
+                f["verified"], f["verified_how"], f["verified_on"] = True, f"{who}: {r['reason']}", today()
+            elif r["verdict"] == "not_supported":
+                f["verified"] = "dropped"
+                layer["dropped"].append({**f, "reason": f"{who}: {r['reason']}"})
+                layer["facts"].remove(f)
+            else:
+                f["verified_how"] = (f"URL loads; quote not found word for word; unclear on the API ({r['reason']}) - "
+                                     "the researcher reads it")
+        save_layer(a.state, a.place, niche, layer)
+    commit(a.state, a.place, "meaning checked on the API")
+    print(f"{a.place}, {a.state.upper()}: {n['supported']} verified · {n['not_supported']} dropped · {n['unclear']} "
+          f"unclear (left for the researcher: places.py show … --check)"
+          + (f" · {len(items) - len(ans)} not answered" if len(items) > len(ans) else ""))
 
 
 # ------------------------------------------------------------------ use in packs and status
@@ -474,11 +546,15 @@ def main():
     s = sub.add_parser("judge"); s.add_argument("state"); s.add_argument("place"); s.add_argument("niche", nargs="?")
     s.add_argument("--id", required=True); g = s.add_mutually_exclusive_group(required=True)
     g.add_argument("--ok", action="store_true"); g.add_argument("--drop", action="store_true"); s.add_argument("--reason")
+    s = sub.add_parser("judge-all"); s.add_argument("state"); s.add_argument("place"); s.add_argument("niche", nargs="?")
+    s.add_argument("--slug", required=True, help="the client whose run pays (llm-costs.jsonl)")
+    s.add_argument("--run", required=True); s.add_argument("--confirmed", action="store_true")
     s = sub.add_parser("status"); s.add_argument("slug")
     s = sub.add_parser("show"); s.add_argument("state"); s.add_argument("place"); s.add_argument("niche", nargs="?")
     s.add_argument("--check", action="store_true")
     a = ap.parse_args()
-    {"prompt": cmd_prompt, "ingest": cmd_ingest, "verify": cmd_verify, "judge": cmd_judge, "status": cmd_status,
+    {"prompt": cmd_prompt, "ingest": cmd_ingest, "verify": cmd_verify, "judge": cmd_judge, "judge-all": cmd_judge_all,
+     "status": cmd_status,
      "show": cmd_show}[a.cmd](a)
 
 

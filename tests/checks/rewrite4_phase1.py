@@ -151,7 +151,7 @@ def fake(argv, timeout=None):
     script = Path(argv[1]).name if len(argv) > 1 else ""
     slug_dir = HERE.parent / "clients" / sys.argv[1]
     if script in EST:
-        sub = [a for a in argv[2:] if a in ("estimate", "run", "call", "text", "extract", "summary")]
+        sub = [a for a in argv[2:] if a in ("estimate", "run", "call", "text", "extract", "summary", "meaning", "route")]
         m = json.loads(MODE.read_text()) if MODE.exists() else {}
         with open(LOG, "a") as fh:
             fh.write(f"{script[:-3]} {sub[0] if sub else ''}\n")
@@ -213,8 +213,8 @@ def t_pipeline_data(h):
     code, out = _pl(h, S, f"--run {rid} --state SC --confirmed")
     runs = [c for c in _calls(h) if not c.endswith("estimate")]
     h.check("pipeline: --confirmed runs the steps in order, once each (the crawl on file is reused, not paid again)",
-            code == 0 and runs == ["crawl text", "reviews run", "reviews extract", "rankings run", "dfs call",
-                                   "backlinks summary", "paa run", "competitors run"], (out, runs))
+            code == 0 and runs == ["crawl text", "reviews run", "reviews extract", "reviews meaning", "rankings run",
+                                   "dfs call", "backlinks summary", "paa run", "paa route", "competitors run"], (out, runs))
     steps = h.status(S).get("audit_steps") or {}
     h.check("pipeline: every outcome is recorded by the script — pulls done, the file-based steps skipped with a reason",
             all((steps.get(s) or {}).get("outcome") == "done" for s in ("S05b", "S06", "S07", "S08", "S19"))
@@ -230,7 +230,7 @@ def t_pipeline_data(h):
             code == 5 and "S21 $0.07" in out and "CONFIRM" in out, out)
     code, out = _pl(h, S, f"--run {rid} --state SC --fanout --confirmed")
     h.check("pipeline: --fanout --confirmed runs only the new step",
-            code == 0 and [c for c in _calls(h) if not c.endswith("estimate")] == ["fanout run"]
+            code == 0 and [c for c in _calls(h) if not c.endswith("estimate")] == ["fanout run", "fanout route"]
             and (h.status(S)["audit_steps"].get("S21") or {}).get("outcome") == "done", (out, _calls(h)))
     code, out = _pl(h, S, f"--state SC")
     h.check("pipeline: a run needs --run (or --dry)", code != 0 and "--run" in out, out)

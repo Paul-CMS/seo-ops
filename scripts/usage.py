@@ -13,6 +13,9 @@ every assistant message in that session (and its subagents) between the run's st
 counted once (a message is repeated in the transcript while it streams). Prices: scripts/model_prices.json.
 By agent (Rewrite 4 Phase 4): the session's own transcript is "main" (the stage chat); each subagent transcript is
 named by the agentType in its <agent-…>.meta.json ("subagent" when the file says nothing).
+API calls (Rewrite 4 Phase 2): what scripts/llm.py spent on direct Claude API calls is logged per call in
+clients/<slug>/llm-costs.jsonl with its run id; it is shown beside the session spend ("API (llm.py)") for the run, each
+stage and step, and the client — never added into the session figure, so both stay readable.
 Read-only; no network. A run with no session id, or whose transcript is gone, is reported as "no data", never as $0.
 Set SEO_OPS_CLAUDE_PROJECTS to read another transcripts folder (the tests do).
 """
@@ -182,12 +185,36 @@ def run_usage(slug, run_id, end_now=False):
     return {**summarise(by), "by_agent": agents, "run": run_id, "step": r["step"], "command": r["command"]}
 
 
+def llm_costs(slug, run_id=None):
+    """{run_id: {calls, usd, tokens, by_model: {model: usd}}} from llm-costs.jsonl (or one run's, run_id given)."""
+    p = client_dir(slug) / "llm-costs.jsonl"
+    out = {}
+    for line in (p.read_text(encoding="utf-8").splitlines() if p.exists() else []):
+        try:
+            r = json.loads(line)
+        except ValueError:
+            continue
+        t = out.setdefault(r.get("run_id") or "?", {"calls": 0, "usd": 0.0, "tokens": 0, "by_model": {}})
+        usd = float(r.get("actual_usd") or 0)
+        t["calls"] += 1; t["usd"] = round(t["usd"] + usd, 6)
+        t["tokens"] += sum(int(v or 0) for v in (r.get("tokens") or {}).values())
+        t["by_model"][r.get("model") or "?"] = round(t["by_model"].get(r.get("model") or "?", 0) + usd, 6)
+    return out.get(run_id) if run_id else out
+
+
+def api_line(a):
+    return (f"API (llm.py): ${a['usd']:.4f} over {a['calls']} call(s), {a['tokens']:,} tokens"
+            if a else "API (llm.py): none")
+
+
 def fmt_run(u, by_agent=False):
     lines = [f"run {u['run']} · {u.get('step') or '?'}: {u['tokens']:,} tokens · ${u['usd']:.2f}"]
     for m, r in sorted(u["by_model"].items(), key=lambda kv: -kv[1]["usd"]):
         lines.append(f"  {m}: in {r['input']:,} · cache-write {r['cache_write_5m'] + r['cache_write_1h']:,} · "
                      f"cache-read {r['cache_read']:,} · out {r['output']:,} · ${r['usd']:.2f}"
                      + ("" if r["priced"] else "  (UNPRICED model — add it to model_prices.json)"))
+    if u.get("api") is not None:
+        lines.append(api_line(u["api"]))
     if by_agent:
         lines.append("by agent (main = the stage chat):")
         for a, r in sorted(u["by_agent"].items(), key=lambda kv: -kv[1]["usd"]):
@@ -220,21 +247,24 @@ def client_usage(slug):
     """[{run, step, stage, usage|None}] for every run in the log, and the per-stage and per-step totals."""
     import stages
     rows = []
+    api = llm_costs(slug)
     for rid, r in run_log(slug).items():
         if r["state"] == "STARTED" and not r["end"]:
             pass
         u = run_usage(slug, rid)
         st = stages.stage_of(r["step"] or "") if r["step"] else None
         rows.append({"run": rid, "step": r["step"], "command": r["command"],
-                     "stage": (f"{st['id']}" if st else "any"), "usage": u})
+                     "stage": (f"{st['id']}" if st else "any"), "usage": u, "api": api.get(rid)})
     by_stage, by_step = {}, {}
     for row in rows:
         u = row["usage"]
         for key, d in ((row["stage"], by_stage), (row["step"] or "?", by_step)):
-            t = d.setdefault(key, {"runs": 0, "measured": 0, "tokens": 0, "usd": 0.0})
+            t = d.setdefault(key, {"runs": 0, "measured": 0, "tokens": 0, "usd": 0.0, "api_usd": 0.0, "api_calls": 0})
             t["runs"] += 1
             if u:
                 t["measured"] += 1; t["tokens"] += u["tokens"]; t["usd"] += u["usd"]
+            if row["api"]:
+                t["api_usd"] = round(t["api_usd"] + row["api"]["usd"], 6); t["api_calls"] += row["api"]["calls"]
     return rows, by_stage, by_step
 
 
@@ -292,9 +322,12 @@ def main():
         return
     if a.cmd == "run":
         u = run_usage(a.slug, a.run_id)
+        api = llm_costs(a.slug, a.run_id)
         if not u:
-            print(f"no data for run {a.run_id}: it has no session id in the log, or that session's transcript is not on this Mac")
+            print(f"no data for run {a.run_id}: it has no session id in the log, or that session's transcript is not on this Mac"
+                  + (f"\n{api_line(api)}" if api else ""))
             sys.exit(1)
+        u["api"] = api
         if a.json and not a.by_agent:
             u = {k: v for k, v in u.items() if k != "by_agent"}
         print(json.dumps(u, indent=2) if a.json else fmt_run(u, a.by_agent))
@@ -304,10 +337,13 @@ def main():
         print(json.dumps({"runs": rows, "by_stage": by_stage, "by_step": by_step,
                           **({"by_agent": agent_totals(rows)} if a.by_agent else {})}, indent=2)); return
     tot = sum(t["usd"] for t in by_stage.values())
-    print(f"{a.slug}: ${tot:.2f} measured over {sum(t['measured'] for t in by_stage.values())} of {len(rows)} run(s)\n")
+    api_tot = sum(v["usd"] for v in llm_costs(a.slug).values())
+    print(f"{a.slug}: ${tot:.2f} measured over {sum(t['measured'] for t in by_stage.values())} of {len(rows)} run(s)"
+          f" · API (llm.py) ${api_tot:.4f}\n")
     print("by stage:")
     for k, t in sorted(by_stage.items(), key=lambda kv: -kv[1]["usd"]):
-        print(f"  {k:12} {t['measured']}/{t['runs']} runs · {t['tokens']:,} tokens · ${t['usd']:.2f}")
+        print(f"  {k:12} {t['measured']}/{t['runs']} runs · {t['tokens']:,} tokens · ${t['usd']:.2f}"
+              + (f" · API ${t['api_usd']:.4f} ({t['api_calls']} call(s))" if t["api_calls"] else ""))
     print("\ndearest runs:")
     for row in sorted((r for r in rows if r["usage"]), key=lambda r: -r["usage"]["usd"])[:10]:
         print(f"  ${row['usage']['usd']:7.2f}  {row['usage']['tokens']:>12,}  {row['run']}  ({row['step']})")

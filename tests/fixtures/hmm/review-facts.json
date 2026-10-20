@@ -1,0 +1,99 @@
+{
+  "made": "2026-10-14T14:07:55-05:00",
+  "min_reviewers": 3,
+  "facts": {
+    "fact:timeframe": {
+      "label": "timeframe",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2022-09-26",
+          "quote": "Jason was so nice and helpful and got me the chair the same day.",
+          "row": "reviews.csv row 8"
+        }
+      ]
+    },
+    "fact:pricing": {
+      "label": "pricing",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2021-08-02",
+          "quote": "Be VERY CAUTIOUS of there pricing, rented a vertical lift chair for a month then after a brief web search was bale to BUY a better chair for $50 more.",
+          "row": "reviews.csv row 15"
+        }
+      ]
+    },
+    "fact:insurance": {
+      "label": "insurance",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2020-05-26",
+          "quote": "Very rude and disrespectful to myself and my insurance provider for no reason ..",
+          "row": "reviews.csv row 18"
+        }
+      ]
+    },
+    "fact:guarantees": {
+      "label": "guarantees",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2022-09-26",
+          "quote": "Jason was so nice and helpful and got me the chair the same day.",
+          "row": "reviews.csv row 8"
+        }
+      ]
+    },
+    "fact:response_time": {
+      "label": "response time",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2022-09-26",
+          "quote": "Jason was so nice and helpful and got me the chair the same day.",
+          "row": "reviews.csv row 8"
+        }
+      ]
+    },
+    "practice:clean-up": {
+      "label": "clean up",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2022-05-10",
+          "quote": "Very Nice & clean.",
+          "row": "reviews.csv row 12"
+        }
+      ]
+    },
+    "practice:explains": {
+      "label": "explains",
+      "count": 2,
+      "quotes": [
+        {
+          "date": "2022-11-02",
+          "quote": "They have been so very helpful in getting my uncle a wheelchair and explains the process of the dreadful paperwork required by him to get that wheelchair.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2020-05-26",
+          "quote": "wouldn’t even explain the problem ...",
+          "row": "reviews.csv row 18"
+        }
+      ]
+    },
+    "prices ($ amounts)": {
+      "label": "prices ($ amounts)",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2021-08-02",
+          "quote": "Be VERY CAUTIOUS of there pricing, rented a vertical lift chair for a month then after a brief web search was bale to BUY a better chair for $50 more.",
+          "row": "reviews.csv row 15"
+        }
+      ]
+    }
+  }
+}

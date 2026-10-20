@@ -5,6 +5,7 @@ alongside People Also Ask (S19). Feeds the site plan's coverage check and the Bl
     fanout.py estimate <slug> --services-file F --cities "Gettysburg,Hanover,..." [--per-seed 40] [--cap 10]
     fanout.py run      <slug> --run R --services-file F --cities ... [--per-seed 40] [--cap 10] [--confirmed]
                        [--registry c3.txt] [--paa clients/<slug>/data/paa/paa-questions.csv]
+    fanout.py route    <slug> --run R [--confirmed]   fill every empty Intent / Route / Note (llm.py route-questions)
 
 What it is: for each seed ("<service> <city>", spread round-robin over services × cities so every
 service and every given city appears before any pair repeats one — capped at --cap seeds) one
@@ -21,8 +22,9 @@ Outputs in clients/<slug>/data/fanout/ (raw/ git-ignored):
   fanout-queries.csv   query, group (the service(s) of its seeds), seeds, times seen, also in PAA?,
                        closest C3 match + similarity
   seeds.csv            seed, service, city, queries returned
-  fanout-routing.md    the routing worksheet: Intent and Route filled by the discovery-audit agent
-                       (service H2/FAQ · location FAQ · blog topic · drop); C3 and PAA duplicates pre-marked
+  fanout-routing.md    the routing worksheet: Intent and Route filled by `fanout.py route` (llm.py, Haiku; with
+                       no API key, by the discovery-audit agent) — service H2/FAQ · location FAQ · blog topic · drop;
+                       C3 and PAA duplicates pre-marked
 Cost: whole-run estimate first (dfs.run_guard: balance, $2 threshold). Price (dfs_prices.json, checked
 2026-10-05): $0.0006 per task + gpt-4.1-mini tokens — at most ~$0.0072 a call, ~$0.07 for the default
 10 seeds. 180 s timeout, no retry (a retry after a timeout could bill twice).
@@ -118,7 +120,15 @@ def main():
         if n == "run":
             s.add_argument("--run", required=True); s.add_argument("--confirmed", action="store_true")
             s.add_argument("--registry"); s.add_argument("--paa")
+    s = sub.add_parser("route"); s.add_argument("slug"); s.add_argument("--run", required=True)
+    s.add_argument("--confirmed", action="store_true")
     a = ap.parse_args()
+    if a.cmd == "route":
+        import paa
+        R.open_run(a.slug, a.run)
+        paa.route_worksheet(a.slug, a.run, client_dir(a.slug) / "data" / "fanout" / "fanout-routing.md",
+                            "service H2/FAQ", a.confirmed)
+        return
     services = [l.strip().lower() for l in open(a.services_file) if l.strip()]
     cities = [c.strip() for c in a.cities.split(",") if c.strip()]
     pairs = seed_pairs(services, cities)
@@ -175,8 +185,8 @@ def main():
         for v, c3, c3s, pq, pqs in rows:
             w.writerow([v["query"], v["group"], " | ".join(dict.fromkeys(v["seeds"])), v["count"], pq, f"{pqs:.2f}", c3, f"{c3s:.2f}"])
     md = ["# Fan-out routing — LLM query fan-out (S21)", "",
-          f"{len(run_seeds)} seeds → {len(seen)} distinct queries. Written by scripts/fanout.py; **the discovery-audit "
-          "agent fills Intent and Route** for every row.", "",
+          f"{len(run_seeds)} seeds → {len(seen)} distinct queries. Written by scripts/fanout.py; Intent and Route are "
+          "filled by `fanout.py route` (llm.py), or by the discovery-audit agent when there is no API key.", "",
           "**These are an LLM's brainstorm of likely searches, not observed demand.** No volume, never evidence for a "
           "destructive or superlative decision (CM-019, CM-020, CM-021), never cited with a number (CM-012). Use them "
           "to check coverage: every kept row is answered by a page (H2 or FAQ) or a blog topic.", "",

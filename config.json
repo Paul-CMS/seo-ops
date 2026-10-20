@@ -1,5 +1,7 @@
 {
   "dfs_confirm_threshold_usd": 2.0,
+  "llm_run_cap_usd": 1.0,
+  "_llm_about": "Rewrite 4 Phase 2 (D1): scripts/llm.py refuses (exit 5, CONFIRM) a job whose estimate plus what this run already spent on llm.py is above llm_run_cap_usd, until Paul says yes (--confirmed). Paul tunes it here.",
   "git_push_after_run": true,
   "client_worktrees_root": "~/Documents/seo-ops-clients",
   "_client_worktrees_about": "Rewrite 2 P2: scripts/worktree.py open <slug> makes one git worktree per client here (branch client/<slug>); each client chat runs in its own folder. System sessions run only in the main folder.",

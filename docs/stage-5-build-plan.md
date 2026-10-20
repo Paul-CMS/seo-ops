@@ -16,5 +16,8 @@ Session model: Haiku · agents: build (Opus), researcher (Sonnet).
   industry, or the first section after a spec or writing-rule change; otherwise all pages are drafted in one run.
 - **Viability check** before the plan reaches Paul (`evidence_pack.py viability <slug> --all`): a location that
   cannot be sourced is proposed as a merge (kind-1 Ask). Location FAQs: `methodology/location-faq.md`.
+- **FAQ fit picks** (Rewrite 4 Phase 2): `python3 scripts/outline.py faq <slug> <section> --run <RUN_ID>` picks each
+  page's FAQs from its candidates on the Claude API (Sonnet) → `build/<section>/faq-picks.json`; each outline shows
+  them. No API key yet (or the API answers 401): the script says "no API key — ran on the agent route" and the writer picks them as before.
 - Batches: one per kind (all services; all locations and hubs; home and about) — split only above 15 pages.
 - The facts round's question set goes to Paul once; `/interview <slug> facts-answers all` records the answers.

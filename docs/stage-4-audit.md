@@ -15,6 +15,9 @@ Session model: Haiku · agents: discovery-audit (Opus), audit-reviewer (Opus) �
   site plan; STATUS.md via `render.py status`). A file an approval covers is never rendered over.
 - Mechanical checks first: `python3 scripts/conformance.py <slug>` scores every check with no judgment
   (`methodology/specs/check-kinds.json`), run by `pipeline.py` or the stage chat; the Opus agent fills only the judgment columns.
+- S15, once the URL Decision Map exists: `python3 scripts/conformance.py judge <slug> --run <RUN_ID>` scores the
+  judgment checks of every **kept** page on the Claude API (Sonnet) → `audit/conformance-judgment.csv`; the agent
+  reads it instead of scoring those pages. No API key yet (or the API answers 401): the script says "no API key — ran on the agent route" and the agent does it as before.
 - Gate B questions: kinds and `searched:` lines, `settled.py filter`, `questions.py check` (P6).
 - The audit-reviewer sees only the registers and decisions, never the analysis conversation (CM-018; CM-026 standing).
 - Conflicts are recorded per PROC-01, never resolved inside the work.

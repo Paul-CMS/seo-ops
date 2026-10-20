@@ -17,6 +17,9 @@ What it replaces: a Haiku clerk running a dozen scripts one by one, and an agent
        nothing after it runs.
     3. every outcome recorded by this script (steps.py record), never by an agent: done · skipped (with the reason)
        · failed (with what went wrong). S09/S10/S11/S20 are recorded only from the files on disk.
+       After S06, S19 and S21 the narrow judgment runs on the Claude API (Rewrite 4 Phase 2, scripts/llm.py):
+       reviews.py meaning, paa.py route, fanout.py route. No API key → each says so once and leaves the work to its
+       agent, as before; nothing fails.
   audit phase (S12: the free, offline part of the audit)
     ingest_evidence.py → crosscheck.py → conformance.py → S12 recorded → the Evidence Manifest rendered (render.py).
     Fills the manifest's tool/date/geography/scope columns from the previous manifest of the same file.
@@ -106,7 +109,8 @@ def data_steps(x):
         ("S06", "reviews", py("scripts/reviews.py", "estimate", slug), r"at most \$([\d.]+)",
          py("scripts/reviews.py", "run", slug, "--run", rid, "--keyword", x.keyword, "--location", x.location,
             "--services-file", sv, "--cities", cit, "--confirmed"),
-         [py("scripts/reviews.py", "extract", slug, "--run", rid)], lambda: False, ["data/reviews/reviews-summary.md"]),
+         [py("scripts/reviews.py", "extract", slug, "--run", rid), py("scripts/reviews.py", "meaning", slug, "--run", rid)],
+         lambda: False, ["data/reviews/reviews-summary.md"]),
         ("S07", "rankings", py("scripts/rankings.py", "estimate", slug, "--services-file", sv, "--cities", cit, *st_args),
          r"Total at most \$([\d.]+)", py("scripts/rankings.py", "run", slug, "--run", rid, "--services-file", sv,
                                        "--cities", cit, *st_args, "--confirmed"), [], lambda: False,
@@ -115,10 +119,12 @@ def data_steps(x):
          None, [], lambda: False, ["data/backlinks/backlinks-per-url.csv"]),
         ("S19", "People Also Ask", py("scripts/paa.py", "estimate", slug, "--services-file", sv, "--cities", cit, *st_args),
          r"= \$([\d.]+)", py("scripts/paa.py", "run", slug, "--run", rid, "--services-file", sv, "--cities", cit,
-                             *st_args, "--confirmed"), [], lambda: False, ["data/paa/paa-routing.md"]),
+                             *st_args, "--confirmed"), [py("scripts/paa.py", "route", slug, "--run", rid)], lambda: False,
+         ["data/paa/paa-routing.md"]),
         ("S21", "query fan-out", py("scripts/fanout.py", "estimate", slug, "--services-file", sv, "--cities", cit),
          r"= \$([\d.]+)", py("scripts/fanout.py", "run", slug, "--run", rid, "--services-file", sv, "--cities", cit,
-                             "--paa", f"clients/{slug}/data/paa/paa-questions.csv", "--confirmed"), [], lambda: False,
+                             "--paa", f"clients/{slug}/data/paa/paa-questions.csv", "--confirmed"),
+         [py("scripts/fanout.py", "route", slug, "--run", rid)], lambda: False,
          ["data/fanout/fanout-routing.md"]),
         ("COMP", "competitor coverage", py("scripts/competitors.py", "estimate", slug, "--keywords-file", sv),
          r"at most \$([\d.]+)", py("scripts/competitors.py", "run", slug, "--run", rid, "--location", x.location,
