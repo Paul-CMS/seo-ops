@@ -103,7 +103,12 @@ Later informal answers in any run: save them verbatim the same way and `status.p
 nothing changed) and `status.py mark <slug> proof_sheet_returned --file <it>`. That meets the
 **condition** `proof_sheet_returned` (the system checks the recorded file; nobody approves it).
 
-**data** (S06–S11, S19–S21) — while the client has the sheet. Each paid script: `estimate` first, show
+**data** (S06–S11, S19–S21) — while the client has the sheet. **Fast path (Rewrite 4 Phase 1): no agent runs the pulls.**
+`python3 scripts/pipeline.py <slug> inventory --run <RUN_ID> --state <ST> [--cities "A,B,C,D"] [--fanout]` prints one combined
+estimate and stops (exit 5); after Paul's one yes the same command with `--confirmed` runs crawl → page text → reviews →
+rankings → backlinks → People Also Ask (→ fan-out with `--fanout`) → competitor coverage and records every outcome itself
+(exit 10 = the crawl is still running: run it again). What stays yours is the judgment: routing the PAA and fan-out
+questions, `reviews.py checked`. The per-script notes below are for one step run alone. Each paid script: `estimate` first, show
 Paul the cost, then `run ... --confirmed` only after his yes (over $2, or an unconfirmed price,
 always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 days old.
 - **S06 reviews:** `python3 scripts/reviews.py estimate|run <slug> --run <RUN_ID> --keyword "<GBP name>"
@@ -152,8 +157,9 @@ step's outcome.
 
 **audit** (S12–S18) — the crawl (S05) and data steps must have outcomes.
 Run the **seo-technical-audit** skill procedure, in this order:
-1. S12 ingest + cross-checks (`ingest_evidence.py clients/<slug>/inputs/crawl <audit dir>` — it also takes
-   `data/` and the other inputs itself; `crosscheck.py` adds host consistency, orphans and sitemap checks).
+1. S12 ingest + cross-checks: `python3 scripts/pipeline.py <slug> inventory --run <RUN_ID> --phase audit` (ingest, cross-checks,
+   conformance, the outcome and the rendered Evidence Manifest — no agent; it keeps the manifest's setting columns you
+   already wrote).
    Read `data/crawl/crawl-summary.csv` and `page-text.csv`, never the raw crawl tables. CONTRADICTED blocks the related finding.
 2. S13 **entity** — the site against the Brand Guide: semantic triple, NAP, brand search,
    supporting assets.
@@ -178,7 +184,8 @@ that fails HP-06 stays locked (HP-08) unless CM-059's three conditions hold: run
 decision (default: no H1 change) — never a recommendation made on your own.
 Refuse your own output if a finding lacks an evidence locator, or the URL Decision Map has
 fewer rows than the site has pages. The command then runs the **audit-reviewer** (S17). S18:
-render the deliverables; the Evidence Manifest includes `steps.py manifest <slug>`.
+the deliverables are rendered by `python3 scripts/render.py all <slug> --run <RUN_ID>` (never typed: change the register row
+and render again); the Evidence Manifest already includes every step outcome.
 Then `status.py mark <slug> audit_deliverables --file <Finding Register> --file <URL Decision Map> --file <Recommendations> --file <Evidence Manifest>`.
 Paul: `/approve <slug> audit_approved`.
 
@@ -200,10 +207,11 @@ File names per `methodology/naming-convention.md`; every Drive copy goes through
 fact (CM-016); never set a gate; never contact the client. Write your Handoff Log section last, to `clients/<slug>/handoffs/run-<RUN_ID>.md` (passed to `run.py finish --handoff`).
 
 ## Cost discipline (R1)
-You run on Opus because the step needs judgment. Hand every mechanical sub-task — running a script and
-recording what it printed, paid pulls after Paul's cost yes, step outcomes, marks, handoff files from a finished
-list, Drive copies — to the **clerk** subagent (Haiku) with the exact command and the RUN_ID. Read only the
-step's read list and `clients/<slug>/decisions-settled.md` (never re-raise anything settled there — new
+You run on Opus because the step needs judgment. Every mechanical sub-task — a script run, a paid pull after Paul's cost yes, a step
+outcome, a mark, a handoff file, a Drive copy, a rendered file — is a script (`pipeline.py`, `render.py`, `steps.py`,
+`status.py mark`, `handoff.py`, `drive.py`); run it yourself and never spawn an agent for it, never retype what a
+script writes. Your Handoff Log section is 25 lines at most (`run.py finish` refuses a longer one); the scripts add the
+change, decision, fact and step lines. Read only the step's read list and `clients/<slug>/decisions-settled.md` (never re-raise anything settled there — new
 contradicting evidence is one `run.py decision ... --reopen <key> --text "<reason>"`, nothing more).
 When you stop, write a plain-language summary for Paul (15 lines or fewer: what was done, open choices with
 options, what is ready to approve) to `clients/<slug>/handoffs/run-<RUN_ID>.summary.md`; the main session relays it.

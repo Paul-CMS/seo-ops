@@ -17,8 +17,11 @@ clients/<slug>/build/<section>/outlines/<page>.md from what is already approved 
   - links: the table rows the page carries (services, locations, siblings, hub), left for Finish;
   - the claims list: the pack's facts in the writer's three states (confirmed · sourced public · unknown) and the
     Brand Guide's D2 claims never to reuse.
-Whatever the outline leaves open (keyword, H1 wording, variants, H2 wording, FAQ picks) the writer chooses and
-reports in its results file; each choice is a "Fix and list" row on the section's one draft review sheet (CM-061).
+Phase 1: a keyword, H1, service/category variant or area variant the plan row leaves empty is assigned by formula
+from the Brand Guide (A2/A3 categories, B1 reserved, B2 pool, C1 service rows) and the page spec's §3 formats —
+`## Assigned by formula` in the outline, and recorded in the page's `assigned` — so the writer never chooses them
+(HMM's location rows carry none). Whatever the Brand Guide cannot support (and H2 wording, FAQ picks) the writer
+chooses and reports in its results file; each choice is a "Fix and list" row on the section's one draft review sheet (CM-061).
 Zero model tokens. The draft is written from the outline + pack + spec + pilot corrections, one fresh subagent per
 page (CM-043).
 """
@@ -123,6 +126,100 @@ def link_rows(st, pid):
     return {}
 
 
+SMALL = {"in", "of", "the", "and", "a", "an", "to", "for", "near"}
+
+
+def title_case(s):
+    words = s.split()
+    return " ".join(w if (i and w.lower() in SMALL) else w[:1].upper() + w[1:] for i, w in enumerate(words))
+
+
+def _clean(v):
+    """A Brand Guide cell value without its status tag, parenthetical notes or template blanks."""
+    v = re.sub(r"\[[^\]]*\]|\*\([^)]*\)\*|\([^)]*\)|\*\*|`", "", v or "")
+    v = re.sub(r"_{3,}", "", v)
+    return v.strip(" .;·—-")
+
+
+def bg_entity(bg):
+    """The entity values the formulas read, parsed from the Brand Guide: primary category (A2), category variants (A3),
+    the homepage's reserved variants (B1), the area rotation pool (B2), and the service rows of C1."""
+    a = {r[0]: r for r in table_rows(md_section(bg, r"Section A")) if len(r) >= 3}
+    cat = _clean((a.get("2") or ["", "", ""])[2].split(" (")[0].split(" —")[0])
+    raw3 = (a.get("3") or ["", "", ""])[2].split("Excluded")[0]
+    variants = [v for v in (_clean(x) for x in raw3.split(" · ")) if v]
+    res = {}
+    for ln in code_block(md_section(bg, r"B1\b")):
+        k, _, v = ln.partition(":")
+        res[k.strip().upper()] = _clean(v)
+    pool = [re.sub(r"^\d+\.\s*", "", x).strip() for x in code_block(md_section(bg, r"B2\b"))]
+    c1 = {}
+    for r in table_rows(md_section(bg, r"C1\b")):
+        if len(r) >= 3 and r[0].startswith("/"):
+            path = r[0].split()[0].strip("/")
+            kw = re.search(r'keyword\s+"([^"]+)"', r[1])
+            c1[path] = {"keyword": kw.group(1) if kw else "", "variant": _clean(r[2].split(" (H1")[0])}
+    return {"category": cat, "variants": variants, "reserved_area": res.get("HOMEPAGE AREA VARIANT", ""),
+            "reserved_cat": res.get("HOMEPAGE CATEGORY VARIANT", ""), "pool": [p for p in pool if p], "c1": c1}
+
+
+def _path(url):
+    return (url or "").split("://")[-1].split("/", 1)[-1].strip("/")
+
+
+def _abbr(p):
+    name = p.get("name") or ""
+    m = re.search(r",\s*([A-Za-z]{2})\b", name) or re.search(r"-([a-z]{2})/?$", p.get("url", ""))
+    return m.group(1).upper() if m else ""
+
+
+def formula(st, pid, ent):
+    """{field: (value, how)} for the plan values the site-plan row left empty — assigned by formula from the Brand Guide
+    and the spec (Rewrite 4 Phase 1), so the writer never chooses them. A field the Brand Guide cannot support is left
+    out: it stays open and the writer reports it as a Fix and list row."""
+    pages = st["pages"]
+    p = pages[pid]
+    t = p.get("type")
+    out = {}
+    services = [q for q in pages.values() if q.get("type") == "service"]
+    core = next((ent["c1"][_path(q["url"])]["keyword"] for q in services if ent["c1"].get(_path(q["url"]), {}).get("keyword")), "") \
+        or next((q["keyword"] for q in services if q.get("keyword")), "") or (services[0].get("name", "").lower() if services else "")
+    cat_h1 = next((v for v in ent["variants"] if v.lower() not in (ent["category"].lower(), ent["reserved_cat"].lower())), "")
+    pool = [x for x in ent["pool"] if x.lower() != ent["reserved_area"].lower()]
+    if t == "service":
+        row = ent["c1"].get(_path(p.get("url")), {})
+        kw = row.get("keyword") or (p.get("name") or "").lower()
+        out["keyword"] = (kw, "BG C1 keyword for this URL, else the service name (service spec §3.4)" if row.get("keyword")
+                          else "the service name, lower case (no BG C1 keyword for this URL)")
+        sv = p.get("service_variant") or row.get("variant") or (p.get("name") or "").lower()
+        if pool and sv:
+            out["h1"] = (f"{title_case(sv)} in {pool[0]}", "service spec §3.4: [Service Variant] in [Area Variant]; "
+                         "BG C1 service variant + the first B2 area variant (never a city, never the reserved one)")
+            out["area_variant"] = (pool[0], "first B2 rotation entry (the H1 slot)")
+        if sv:
+            out["service_variant"] = (sv, "BG C1 H1 service variant, else the service name")
+    elif t == "location":
+        # A county hub is never assigned: its H1 would repeat the same-named city's (Charleston area hub vs Charleston),
+        # and its format still waits on Paul's ruling (county-hub spec §3.4). It stays open for the writer and the sheet.
+        city = p.get("city") or (p.get("name") or "").split(",")[0]
+        if core and city:
+            out["keyword"] = (" ".join(x for x in (core, city, _abbr(p)) if x), "location spec: core service keyword + city + "
+                              "state abbreviation (the Beaufort pilot's pattern)")
+        if cat_h1 and city:
+            out["h1"] = (f"{title_case(cat_h1)} in {city}", "location spec §3.4: [Service Variant] in [City], no state; the first "
+                         "A3 category variant that is neither the GBP category (title slot) nor the homepage's reserved one")
+            out["category_variant"] = (cat_h1, "the same A3 variant (the H1 slot)")
+        grp = p.get("group")
+        hub = next((q for q in pages.values() if q.get("type") == "county" and q.get("group") == grp), None) if grp else None
+        words = lambda v: set(re.findall(r"\w+", v.lower())) - SMALL - {"area", "hub", "county", "service"}
+        hub_words = words(hub.get("name") or "") if hub else set()
+        best = max(pool, key=lambda v: len(words(v) & hub_words), default="") if hub_words else ""
+        if best and words(best) & hub_words:
+            # only a pool entry that names this page's own hub: a rotation could put a city in the wrong county
+            out["area_variant"] = (best, "the B2 entry that names this page's hub (opening slot)")
+    return out
+
+
 def render(slug, st, b, pid, pack, run_id):
     p = st["pages"][pid]
     ptype = p.get("type", "")
@@ -143,10 +240,16 @@ def render(slug, st, b, pid, pack, run_id):
            "", "## Fixed by the approved site plan", "", "| Field | Value |", "|---|---|"]
     fixed = [(lab, p[k]) for k, lab in PLAN_FIELDS if p.get(k)]
     out += [f"| {lab} | {', '.join(v) if isinstance(v, list) else v} |" for lab, v in fixed]
+    assigned = {k: va for k, va in formula(st, pid, bg_entity(bg)).items() if not p.get(k)}
+    if assigned:
+        out += ["", "## Assigned by formula (outline.py — the site-plan row left these empty; use them as given)", "",
+                "| Field | Value | Formula and source |", "|---|---|---|"]
+        out += [f"| {lab} | {assigned[k][0]} | {assigned[k][1]} |" for k, lab in PLAN_FIELDS if k in assigned]
     wanted = ("keyword", "h1", "service_variant") if ptype == "service" else ("keyword", "h1")
-    open_ = [lab for k, lab in PLAN_FIELDS if k in wanted and not p.get(k)]
+    open_ = [lab for k, lab in PLAN_FIELDS if k in wanted and not p.get(k) and k not in assigned]
     if open_:
-        out.append(f"| Open — the writer chooses, reports it, and it is listed on the review sheet | {', '.join(open_)} |")
+        out += ["", f"Open — the Brand Guide gives no formula input, so the writer chooses, reports it, and it is listed on the "
+                f"review sheet: {', '.join(open_)}"]
     out += ["", "## Variants", ""]
     res = code_block(md_section(bg, r"B1\b"))
     pool = code_block(md_section(bg, r"B2\b"))
@@ -155,7 +258,9 @@ def render(slug, st, b, pid, pack, run_id):
             else f"- Reserved for this page: {' · '.join(res) or 'none recorded'}",
             f"- Area rotation pool (B2): {' · '.join(pool) or 'none recorded'}",
             f"- Category variants (A3): {cat or 'none recorded'}",
-            "- No variant at two consecutive steps URL → title → H1 → first H2 (BB-108, CM-024).", ""]
+            "- No variant at two consecutive steps URL → title → H1 → first H2 (BB-108, CM-024)."]
+    mine = [f"{lab.lower()} {assigned[k][0]}" for k, lab in PLAN_FIELDS[4:6] if k in assigned]
+    out += ([f"- Assigned to this page by formula: {' · '.join(mine)}"] if mine else []) + [""]
     out += ["## Page order (the spec, §3 — every row is a requirement)", "", "| # | Element | Requirement |", "|---|---|---|"]
     out += [f"| {n} | {e} | {r} |" for n, e, r in elements] or ["| — | the spec has no element table | |"]
     out += ["", "## FAQ candidates", ""]
@@ -225,6 +330,8 @@ def build(slug, section, run_id, page=None):
             continue
         pack = read_json(ROOT / pk["json"], {}) or {}
         text = render(slug, st, b, pid, pack, run_id)
+        st["pages"][pid]["assigned"] = {k: v for k, (v, _) in formula(st, pid, bg_entity(brand_guide(slug))).items()
+                                        if not st["pages"][pid].get(k)}
         d = client_dir(slug) / "build" / section / "outlines"
         d.mkdir(parents=True, exist_ok=True)
         f = d / f"{pid}.md"

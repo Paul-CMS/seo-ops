@@ -20,5 +20,5 @@ Spec: `wordpress/wordpress-site-setup.md`.
    Paul fixes the FIX items and runs `/wp-check` again.
 5. `--pilot` pass → tell Paul he may approve the pilot for this site: `/approve <slug> wordpress_pilot_approved`.
    After that the system writes titles, keyword, social, robots, canonical and schema directly.
-6. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then
+6. Write the Handoff Log section (25 lines at most; the scripts add the change, decision and step lines) to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then
    `run.py finish <slug> <RUN_ID> --handoff <that file> --summary "..."`.

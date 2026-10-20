@@ -62,8 +62,9 @@ def t_outline_route_walk(h):
             "## Page order" in o and "Local context" in o and "stair lifts Beaufort SC" in o
             and "Stair Lifts (https://test.example/stair-lifts/)" in o and "Bluffton, SC" in o
             and "## Claims" in o and " confirmed · " in o and "### Unknown" in o and "## The writer reports" in o, o[:1500])
-    h.check("r4: an open plan value is left to the writer and the review sheet",
-            "| Open — the writer chooses" in o and "H1" in o.split("| Open — the writer chooses")[1].split("\n")[0], o[:900])
+    h.check("r4: a plan value the Brand Guide cannot give by formula is left to the writer and the review sheet",
+            "Open — the Brand Guide gives no formula input" in o
+            and "H1" in o.split("Open — the Brand Guide gives no formula input")[1].split("\n")[0], o[:900])
     pk = (ag.c / "build/locs/packs/loc-beaufort.md").read_text()
     h.check("r4: the pack shows the writer three fact states, never the statuses",
             "### Confirmed — a plain claim" in pk and "### Sourced public" in pk and "### Unknown" in pk

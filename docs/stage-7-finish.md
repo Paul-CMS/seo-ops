@@ -2,7 +2,7 @@
 
 _Stage file (rewrite 2 P12). Loaded by this stage's command and agents; `run.py start` prints it with the read list. The core rules are in CLAUDE.md; gates, Drive, money and files in docs/reference.md._
 
-Session model: Haiku · agents: finish (Sonnet), finish-qa (Opus), clerk.
+Session model: Haiku · agents: finish (Sonnet), finish-qa (Opus).
 
 | Step | Command | Ends at |
 |---|---|---|

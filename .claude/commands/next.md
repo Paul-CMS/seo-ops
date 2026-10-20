@@ -10,7 +10,7 @@ Arguments: $ARGUMENTS
 1. `python3 scripts/records.py top <slug>` — print its four lines first (stage, what is happening now, waiting on,
    next action); never re-explain history. Then `python3 scripts/next.py <slug>` — it prints `{"kind", "command", "why", "stage", "session_model", "agents"}`.
    Start every reply with the stage line, e.g. **Stage 5 of 8 — Build plan and blockers · session: Haiku · agents:
-   build (Opus), clerk (Haiku)**. Judgment work goes to the named Opus agent; mechanical work to `clerk`. Relay an
+   build (Opus), researcher (Sonnet)**. Judgment work goes to the named agent; mechanical work is a script you run yourself (never an agent). Relay an
    agent's `clients/<slug>/handoffs/run-<RUN_ID>.summary.md` as written — don't re-explain history.
 2. **kind = run:** say in one line what you are about to run and why, then carry out that
    command exactly as its own file in `.claude/commands/` describes (all its gates, logging and

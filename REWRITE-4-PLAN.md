@@ -3,7 +3,8 @@
 **Status:** APPROVED by Paul, 2026-10-20, with all six §1 defaults (D1–D6). Phase 0 built (4ae11e3). Phase 4 system
 side built 2026-10-20 (cost split 20fbba5; brief-free route, D5 routes, pilot rule, three fact states, build.md 28 → 12 KB);
 left for Paul: run HMM locations in its client session (one review sheet, one approval line) and the Sonnet drafting
-test there; then Phase 1. Each
+test there. Phase 1 built 2026-10-20 (render.py, pipeline.py inventory, clerk retired, script-written handoff lines
+capped at 25, outline.py formula). Next: Phase 2. Each
 phase runs in its own `/system` session, in order, starting with Phase 0. Phases marked **design** run on Opus; the rest on Sonnet, from
 this file as the written spec (CLAUDE.md → models).
 
@@ -59,7 +60,35 @@ in `~/.claude/projects/<project>/<session>.jsonl` and `<session>/subagents/*.jso
 - **Retire the clerk agent for anything a script can run.** The stage chat calls scripts itself; the clerk is
   removed from agent files' "Cost discipline" sections.
 - Logs and handoffs: scripts write the CHANGE/DECISION lines; agent-written handoff sections capped at 25 lines.
+- **Added by Paul, 2026-10-20 — `outline.py` assigns keyword, H1 and variants by formula.** When the site-plan row leaves
+  them empty (HMM's locations rows have none), `outline.py` assigns them from the Brand Guide and the page spec, so the
+  writer never chooses them. Rules (each shown beside its value in the outline's `## Assigned by formula`, and recorded in
+  the page's `assigned`):
+  - *Location:* keyword = core service keyword (Brand Guide C1 `keyword "…"`, first service row) + city + state
+    abbreviation; H1 = `[category variant] in [City]`, no state, where the variant is the first A3 category variant that
+    is neither the GBP primary category (the title slot) nor the homepage's reserved B1 variant (BB-304, CM-024);
+    area variant (opening) = the B2 pool entry that names the page's own hub, else left open — never a rotation, which
+    could put a city in the wrong county.
+  - *Service:* keyword = C1 `keyword` for the URL, else the service name; H1 = `[service variant] in [first B2 area
+    variant]` (variant from C1, else the plan's `service_variant`, else the name; never a city, never B1's reserved one).
+  - *Never assigned:* county hubs (the same-named city's H1 would repeat; the format still waits on Paul's ruling), the
+    homepage (H1 lock, HP-08) and about. A value the approved plan fixes is never overridden; one the Brand Guide cannot
+    support stays open for the writer and the review sheet. Check against HMM: Bluffton → keyword "stair lifts Bluffton
+    SC", H1 "Stair Lift Installer in Bluffton" — the Beaufort pilot's approved pattern.
+- **Built 2026-10-20.** `scripts/render.py` (manifest · urlmap · findings · auditsheet · blockers · siteplan · status ·
+  all · check; `--out`; refuses to render over a file an approval covers); `scripts/pipeline.py <slug> inventory`
+  (`--phase data|audit|all`, `--confirmed`, `--dry`, `--fanout`; one combined estimate → exit 5; first failure stops;
+  outcomes recorded by the script; exit 10 = crawl still running); the clerk agent removed (agent file, stage and model
+  rows, docs); `run.py finish` refuses an agent handoff over 25 lines and adds the script-written record (changes by
+  kind, decisions/facts/flags, step outcomes); tests in `tests/checks/rewrite4_phase1.py`.
 - **Done when:** a dry run of `pipeline.py inventory` on HMM's saved data reproduces the S12 outputs with no agent.
+  **Result:** `pipeline.py home-mobile-medical inventory --dry` runs with no agent and writes nothing in HMM's folder. It
+  reproduces what the scripts derive from the files on disk. It cannot
+  reproduce the audit's hand-edited manifest rows (Local Dominator PDFs read in Drive, typed MANUAL exports) or the
+  files that were added after the audit on 2026-10-07 (fan-out, later pulls): 10 of the audit's 27 manifest files match
+  exactly (all 8 crawl exports, the citation tracker, the blog inventory) and 3 of 8 cross-check lines. A script re-run of a **live** audit keeps the manifest's setting columns and the
+  recognised type of an unchanged file, so a re-run does not lose that hand work. Not reproduced here: the S13–S18
+  judgment, which Phase 3 slims.
 
 ### Phase 2 — Direct API calls for narrow judgment (Sonnet; needs D1)
 - `scripts/llm.py`: one call = model + a short fixed prompt + a JSON schema + the input file; prompt caching on the

@@ -27,7 +27,7 @@ Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps b
    results from files (`build/<section>/results/`), and reports once. The main chat relays nothing in between — only the
    run's `…summary.md`, once. A refusal or failure in a multi-step command stops it and is reported as it is
    (`scripts/seq.py`); an approval never runs after a failure, and never appears in a chain.
-5. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> --summary "..."`.
+5. Write the Handoff Log section (25 lines at most; the scripts add the change, decision and step lines) to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> --summary "..."`.
 
 Drafts reach WordPress only through `/build <slug> ship` — one run for every approved service and location page,
 always as WordPress drafts; nothing waits on Jonie or on the technical blockers (CM-055, P8). Every VA item is one

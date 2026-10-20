@@ -17,4 +17,4 @@ Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps f
 3. Linking exceptions (one contextual link, outbound authority links — CM-022) are listed
    separately for Paul to approve; never applied without his yes.
 4. Give Paul the exact line from `next.py`: `link_wheel_approved` after the wheel verifies; `release_approved` after QA clears.
-5. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> ...`.
+5. Write the Handoff Log section (25 lines at most; the scripts add the change, decision and step lines) to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> ...`.

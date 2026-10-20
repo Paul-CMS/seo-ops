@@ -1855,13 +1855,13 @@ def t_readability():
 def t_models():
     import re as _re
     want = {"discovery-audit": "opus", "audit-reviewer": "opus", "build": "opus", "finish": "sonnet", "blog": "opus",
-            "clerk": "haiku", "researcher": "sonnet"}
+            "researcher": "sonnet"}
     got = {}
     for f in (SB / ".claude" / "agents").glob("*.md"):
         m = _re.search(r"^model:\s*(\S+)", f.read_text().split("\n---", 2)[0], _re.M)
         got[f.stem] = m.group(1) if m else None
-    check("Q12: every agent has a preset model — Opus for judgment, Sonnet for research, Haiku (clerk) for mechanics",
-          all(got.get(k) == v for k, v in want.items()) and set(got.values()) <= {"haiku", "sonnet", "opus"}, got)
+    check("Q12: every agent has a preset model — Opus for judgment, Sonnet for research; no clerk (mechanics are scripts, Rewrite 4 Phase 1)",
+          all(got.get(k) == v for k, v in want.items()) and "clerk" not in got and set(got.values()) <= {"haiku", "sonnet", "opus"}, got)
     g = json.loads((SB / "scripts" / "gates.json").read_text())
     check("R1: every stage's session runs on Haiku (no Sonnet, no Fable)",
           {s["session_model"] for s in g["stages"]} == {"haiku"}, [s["session_model"] for s in g["stages"]])
@@ -1876,7 +1876,7 @@ def t_models():
           n.get("stage", "").startswith("2 of ") and n.get("session_model") == "haiku"
           and "discovery-audit (opus)" in n.get("agents", ""), n)
     _, out = sh("python3 scripts/stages.py list")
-    check("stages.py lists every stage with its models", "clerk (haiku)" in out and "build (opus)" in out, out)
+    check("stages.py lists every stage with its models", "researcher (sonnet)" in out and "build (opus)" in out and "clerk" not in out, out)
 
 
 def t_settled_and_status():

@@ -91,6 +91,13 @@ stage" and "Spend by step". Credentials: never ask in chat — show `python3 scr
 build/ finish/ blog/ handoffs/ interviews/` · `data/` (summaries agents read) · `inputs/` (raw, git-ignored).
 `status.json → client_view` is the only client-facing part, generated from `methodology/client-phrases.json`.
 
+## Scripts do the clerical work (Rewrite 4 Phase 1)
+No clerk agent: the stage chat runs scripts itself. `pipeline.py <slug> inventory` (crawl → pulls → S12; one combined
+estimate, `--confirmed`, `--dry`), `render.py` (every Markdown deliverable and STATUS.md from its CSV/JSON; never typed,
+never rendered over an approved file), `outline.py` (a keyword, H1 or variant the plan row leaves empty is assigned by
+formula). Logs: scripts write the CHANGE/DECISION/FACT/step lines; `run.py finish` adds them to the handoff and refuses an
+agent-written handoff over 25 lines (`config.json → handoff_max_lines`).
+
 ## VA Worklist (`scripts/worklist.py`; rewrite 3 §7a)
 One worklist per client; every row has `id · section · task · where · how · values · depends_on · done_check · owner ·
 source · status`. **`worklist.py check <slug>` runs before any handover** (`publish.py handoff` runs it and refuses on an

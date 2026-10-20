@@ -32,7 +32,7 @@ fact, evidence pack, usage tier, finding, Fix · Fix and list · Ask, section, r
 2. Log every change as it happens (`run.py change`; the scripts log their own). Files reach Drive only via `drive.py`.
 3. Decisions: `run.py decision … --text` · settle once `--settle <key>` · ask once `--ask <key>`.
 4. `python3 scripts/run.py finish <slug> <RUN_ID> --summary "…" --handoff clients/<slug>/handoffs/run-<RUN_ID>.md
-   [--tokens N --cost USD]` — records, Drive copy and the run's one commit of this client's folder.
+   [--tokens N --cost USD]` — records, Drive copy and the run's one commit of this client's folder. Handoff ≤ 25 lines.
 
 ## Facts — answered once
 Every fact goes in one way: `run.py fact <slug> <RUN_ID> --id … --value … --status … --source …`, the moment Paul or

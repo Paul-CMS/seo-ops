@@ -38,4 +38,4 @@ Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps i
    `/blog <slug> publish <id>`; Jonie publishes them.
 5. When a VA returns a worksheet: `handoff.py ingest <slug> --run <RUN_ID> --handoff <H-ID> --returned <csv>`,
    report invented refs and silent omissions, then `/verify`.
-6. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> --summary "<n> applied, <n> skipped, <n> handed off, <n> stopped" ...`.
+6. Write the Handoff Log section (25 lines at most; the scripts add the change, decision and step lines) to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> --summary "<n> applied, <n> skipped, <n> handed off, <n> stopped" ...`.

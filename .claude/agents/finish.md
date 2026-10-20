@@ -80,10 +80,11 @@ URL change · LocalBusiness on a non-GBP page · flag against superseded rules �
 Write your Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md` before you stop (the command passes it to `run.py finish --handoff`).
 
 ## Cost discipline (R1)
-You run on Opus because the step needs judgment. Hand every mechanical sub-task — running a script and
-recording what it printed, paid pulls after Paul's cost yes, step outcomes, marks, handoff files from a finished
-list, Drive copies — to the **clerk** subagent (Haiku) with the exact command and the RUN_ID. Read only the
-step's read list and `clients/<slug>/decisions-settled.md` (never re-raise anything settled there — new
+You run on Opus because the step needs judgment. Every mechanical sub-task — a script run, a paid pull after Paul's cost yes, a step
+outcome, a mark, a handoff file, a Drive copy, a rendered file — is a script (`pipeline.py`, `render.py`, `steps.py`,
+`status.py mark`, `handoff.py`, `drive.py`); run it yourself and never spawn an agent for it, never retype what a
+script writes. Your Handoff Log section is 25 lines at most (`run.py finish` refuses a longer one); the scripts add the
+change, decision, fact and step lines. Read only the step's read list and `clients/<slug>/decisions-settled.md` (never re-raise anything settled there — new
 contradicting evidence is one `run.py decision ... --reopen <key> --text "<reason>"`, nothing more).
 When you stop, write a plain-language summary for Paul (15 lines or fewer: what was done, open choices with
 options, what is ready to approve) to `clients/<slug>/handoffs/run-<RUN_ID>.summary.md`; the main session relays it.

@@ -1231,9 +1231,7 @@
       "n": 1,
       "name": "Setup",
       "session_model": "haiku",
-      "agents": [
-        "clerk"
-      ],
+      "agents": [],
       "steps": [
         "new-client"
       ]
@@ -1244,8 +1242,7 @@
       "name": "Discovery",
       "session_model": "haiku",
       "agents": [
-        "discovery-audit",
-        "clerk"
+        "discovery-audit"
       ],
       "steps": [
         "discovery:discovery",
@@ -1260,7 +1257,6 @@
       "name": "Data",
       "session_model": "haiku",
       "agents": [
-        "clerk",
         "researcher",
         "discovery-audit"
       ],
@@ -1277,8 +1273,7 @@
       "session_model": "haiku",
       "agents": [
         "discovery-audit",
-        "audit-reviewer",
-        "clerk"
+        "audit-reviewer"
       ],
       "steps": [
         "discovery:audit",
@@ -1292,8 +1287,7 @@
       "session_model": "haiku",
       "agents": [
         "build",
-        "researcher",
-        "clerk"
+        "researcher"
       ],
       "steps": [
         "build:blockers",
@@ -1308,8 +1302,7 @@
       "session_model": "haiku",
       "agents": [
         "build",
-        "brief-writer",
-        "clerk"
+        "brief-writer"
       ],
       "per_batch": true,
       "steps": [
@@ -1335,8 +1328,7 @@
       "session_model": "haiku",
       "agents": [
         "finish",
-        "finish-qa",
-        "clerk"
+        "finish-qa"
       ],
       "steps": [
         "finish:wheel",
@@ -1352,8 +1344,7 @@
       "name": "Blog",
       "session_model": "haiku",
       "agents": [
-        "blog",
-        "clerk"
+        "blog"
       ],
       "steps": [
         "blog:map",
@@ -1390,15 +1381,8 @@
       "why": "R3 (2026-10-08): now a condition — met from evidence, never approved"
     }
   },
-  "_models_about": "Rewrite 2 §4 (Q12): the model for each job. Opus where the judgment is hard to check, Sonnet for structured assembly, research and extraction, Haiku for orchestration and mechanics. Every stage session runs on Haiku. The agent's frontmatter model must match its role here (tests check it); a role marked 'override' passes the model to the Agent call. Paul changes a role only with /approve global model:<step>=<model> (recorded in config.json model_overrides).",
+  "_models_about": "Rewrite 2 §4 (Q12): the model for each job. Opus where the judgment is hard to check, Sonnet for structured assembly, research and extraction, Haiku for orchestration (the stage chat); mechanics are scripts, no agent (Rewrite 4 Phase 1). Every stage session runs on Haiku. The agent's frontmatter model must match its role here (tests check it); a role marked 'override' passes the model to the Agent call. Paul changes a role only with /approve global model:<step>=<model> (recorded in config.json model_overrides).",
   "models": {
-    "new-client": [
-      {
-        "role": "setup",
-        "agent": "clerk",
-        "model": "haiku"
-      }
-    ],
     "discovery:discovery": [
       {
         "role": "research and entity proposal",
@@ -1408,29 +1392,12 @@
     ],
     "discovery:data": [
       {
-        "role": "data pulls",
-        "agent": "clerk",
-        "model": "haiku"
-      },
-      {
         "role": "review facts by meaning, competitor summaries",
         "agent": "researcher",
         "model": "sonnet"
       }
     ],
-    "crawl": [
-      {
-        "role": "crawl",
-        "agent": "clerk",
-        "model": "haiku"
-      }
-    ],
     "discovery:audit": [
-      {
-        "role": "conformance (auto checks)",
-        "agent": "clerk",
-        "model": "haiku"
-      },
       {
         "role": "judgment columns and findings",
         "agent": "discovery-audit",
@@ -1450,11 +1417,6 @@
       }
     ],
     "build:facts": [
-      {
-        "role": "grids and the question set",
-        "agent": "clerk",
-        "model": "haiku"
-      },
       {
         "role": "public facts",
         "agent": "researcher",
@@ -1485,13 +1447,6 @@
         "agent": "build",
         "model": "opus",
         "key": "build:draft"
-      }
-    ],
-    "build:ship": [
-      {
-        "role": "ship and worklist",
-        "agent": "clerk",
-        "model": "haiku"
       }
     ],
     "finish:wheel": [

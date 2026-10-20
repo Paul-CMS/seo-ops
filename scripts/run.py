@@ -32,7 +32,7 @@ import sys
 from pathlib import Path
 
 import status as S
-from lib import ROOT, _git, append, client_dir, die, git_commit, now, read_json, redact, ref_missing, require_client_folder
+from lib import ROOT, _git, append, client_dir, config, die, git_commit, now, read_json, redact, ref_missing, require_client_folder
 
 COMPACT_TOKENS = 120_000
 COMPACT_LINE = ("/compact Keep: the handoff file, items done with commit IDs, items left, open decisions, the current "
@@ -78,6 +78,39 @@ def changes(slug, run_id=None):
     p = client_dir(slug) / "changes.jsonl"
     rows = [json.loads(l) for l in p.read_text().splitlines() if l.strip()]
     return [r for r in rows if run_id is None or r["run_id"] == run_id]
+
+
+HANDOFF_MAX = 25   # lines of agent-written handoff (config.json handoff_max_lines overrides)
+RECORD_LINES = ("DECISION", "FACT", "FLAG")
+
+
+def handoff_lines(text):
+    """Lines of agent-written handoff: the body without blank lines or its own heading."""
+    body = re.sub(r"\A#{1,3} [^\n]*\n+", "", text.strip())
+    return len([ln for ln in body.splitlines() if ln.strip()])
+
+
+def run_record(slug, run_id, ch, st):
+    """The script-written part of a run's handoff (Rewrite 4 Phase 1): what changed, by kind; the decisions, facts and
+    flags logged in this run; the audit steps it recorded. At most 12 lines; every line comes from a record, none from
+    an agent."""
+    out = []
+    if ch:
+        kinds = {}
+        for c in ch:
+            kinds[c["kind"]] = kinds.get(c["kind"], 0) + 1
+        out.append(f"**Changes (script):** {len(ch)} — " + ", ".join(f"{k} ×{n}" for k, n in sorted(kinds.items(), key=lambda kv: -kv[1])))
+    log = (client_dir(slug) / "log.md").read_text(encoding="utf-8")
+    mine = [ln for ln in log.splitlines() if ln.startswith("- ") and f"run {run_id}" in ln
+            and ln[2:].split(" ", 1)[0] in RECORD_LINES]
+    for ln in mine[:6]:
+        out.append(_short(ln, 200))
+    if len(mine) > 6:
+        out.append(f"- … and {len(mine) - 6} more decision/fact/flag line(s) in log.md")
+    steps = [f"{sid} {rec['outcome']}" for sid, rec in (st.get("audit_steps") or {}).items() if rec.get("run") == run_id]
+    if steps:
+        out.append("**Steps recorded (script):** " + ", ".join(steps))
+    return "\n".join(out[:12])
 
 
 def _short(v, n=160):
@@ -464,6 +497,14 @@ def main():
                 sys.exit(12)
         ch = changes(a.slug, a.run_id)
         cmd = re.sub(r"-[0-9a-f]{4}$", "", a.run_id.split("-", 2)[-1])
+        if a.handoff:   # Rewrite 4 Phase 1: the agent writes the judgment, at most HANDOFF_MAX lines; scripts write the rest
+            n_lines = handoff_lines(Path(a.handoff).read_text(encoding="utf-8"))
+            cap = int(config().get("handoff_max_lines", HANDOFF_MAX))
+            if n_lines > cap:
+                print(f"NOT FINISHED — the handoff has {n_lines} lines; the cap is {cap}. Cut it to what the next chat needs: "
+                      "what is done, what is not, the open Asks, the files. The change, decision, fact and step lines are "
+                      "written by the scripts and added to the handoff for you — do not retype them.")
+                sys.exit(4)
         measured = None
         if a.tokens is None and a.cost is None:   # Phase 0: the figures come from Claude Code's own transcripts
             import usage
@@ -475,11 +516,16 @@ def main():
                 a.tokens, a.cost = measured["tokens"], measured["usd"]
             else:
                 print("note: no token usage found for this run (no session id, or its transcript is not on this Mac)")
+        body = ""
         if a.handoff:
             body = Path(a.handoff).read_text(encoding="utf-8").strip()
             # records.py writes the section heading; drop the file's own (old template) so it isn't doubled
             body = re.sub(r"\A#{1,3} [^\n]*\n+", "", body)
-            append(d / "log.md", f"### HANDOFF · /{cmd} · {now()[:10]} · run {a.run_id}\n{redact(body)}\n### END HANDOFF\n")
+        record = "" if cmd == "drive-mirror" else run_record(a.slug, a.run_id, ch, S.load(a.slug))   # Rewrite 4 Phase 1: written by the script, never typed; a records mirror is bookkeeping
+        if body or record:
+            append(d / "log.md", f"### HANDOFF · /{cmd} · {now()[:10]} · run {a.run_id}\n"
+                   + (redact(body) + "\n" if body else "") + (("\n" if body else "") + redact(record) + "\n" if record else "")
+                   + "### END HANDOFF\n")
         append(d / "log.md", f"## RUN {a.run_id} · FINISHED · {now()}\n"
                f"Changes: {len(ch)} · Summary: {redact(a.summary)}\n"
                + (f"Spend: {a.tokens or 0} tokens · ${a.cost or 0:.2f}{' (measured)' if measured else ''}\n"
@@ -521,7 +567,7 @@ def main():
         import settled
         settled.reconcile(a.slug, a.run_id)   # §7: no question stays open once something answers it
         records.render(a.slug)
-        if not a.handoff:
+        if not a.handoff and not record:
             print("note: no --handoff section given — the Handoff Log has nothing from this run")
         m = drive.mirror(a.slug, a.run_id, closed_ok=True)   # R4: the records reach Drive by file copy, no agent
         print("Drive: " + ("copy pending sync (no local Drive folder — recorded once)" if "pending" in m

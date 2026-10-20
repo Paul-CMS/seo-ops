@@ -2,13 +2,17 @@
 
 _Stage file (rewrite 2 P12). Loaded by this stage's command and agents; `run.py start` prints it with the read list. The core rules are in CLAUDE.md; gates, Drive, money and files in docs/reference.md._
 
-Session model: Haiku · agents: clerk, researcher (Sonnet), discovery-audit (Opus).
+Session model: Haiku · agents: researcher (Sonnet), discovery-audit (Opus).
 
 | Step | Command | Ends at |
 |---|---|---|
 | Crawl (S05) and page text (S05b) | `/crawl` | — |
 | Reviews → customer language and review facts (CM-057), rankings, backlinks, citations, grid, GSC, People Also Ask, query fan-out (S06–S11, S19–S21), competitor coverage (P6) — one cost yes | `/discovery data` | — |
 
+- **`python3 scripts/pipeline.py <slug> inventory --run <RUN_ID> …`** runs the whole inventory with no agent (Rewrite 4
+  Phase 1): one combined estimate (exit 5 until Paul says yes), then `--confirmed` runs crawl → page text → reviews →
+  rankings → backlinks → PAA → competitor coverage (S21 only with `--fanout`) and records every outcome; the first
+  failure stops it. `--dry` is free and writes nothing in the client's folder.
 - Every paid script: whole-run estimate first; over $2 → ask Paul.
 - Reviews: `reviews.py run` (the pull is checked against Google's count), then `reviews.py extract` — a fact 3+
   different reviewers report is a `customer_reported` candidate (CM-057). A keyword match never counts: the

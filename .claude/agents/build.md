@@ -43,8 +43,10 @@ Per page (from the URL Decision Map): id, type, final URL, **keyword**, area var
 category variant, the **H1 decision** with the "The Best" test (CM-020; `scripts/dfs.py`, estimate first; never touch
 an H1 already top 3), FAQ topics with a one-line *why it applies here* (location pages: three, one per category,
 `methodology/location-faq.md`), link targets. These go in the plan JSON page row (`keyword`, `h1`, `area_variant`,
-`category_variant`, `faq`, `claims`) — `outline.py` carries them to the writer as fixed; anything left out the writer
-proposes on the draft review sheet. URLs: one root slug (CM-058); a changed URL carries `live_url` and `replaces`;
+`category_variant`, `faq`, `claims`) — `outline.py` carries them to the writer as fixed. **A keyword, H1 or variant the row
+leaves empty is assigned by `outline.py` by formula** (Brand Guide A2/A3/B1/B2/C1 + the spec's §3 formats; a county hub is
+never assigned) — write a value into the row only when the formula would be wrong (e.g. a "The Best" decision, CM-020).
+What the formula cannot give stays open for the writer. URLs: one root slug (CM-058); a changed URL carries `live_url` and `replaces`;
 `urlcheck.py` must pass. Report: duplicates, variant conflicts (CM-013), FAQ overlap (BB-316, C3), claims in keywords
 and variants (CM-049 → `"claims"`), coverage of routed PAA and fan-out rows (CM-045).
 Batches: one per kind (all services; all locations and hubs; home and about), split only above 15 pages; `pilot` (1
@@ -103,8 +105,9 @@ After every page is written, check all of them once: E1–E10, the spec's checks
 siblings (`similarity.py` runs in `review.py`), heading/FAQ collisions with C3 and each other, Stage 4 semantics, the
 usage tiers. One JSON finding per **page + rule + item** (`methodology/review-severities.json`):
 - **Fix** — form only: fix it silently.
-- **Fix and list** — a content change made by default, with `decided_for_you`. **Every value a writer chose that the
-  plan did not fix** (keyword, H1, variants, H2s, FAQ picks) is one Fix and list row per page, so Paul sees it once.
+- **Fix and list** — a content change made by default, with `decided_for_you`. **Every value a writer chose that neither
+  the plan nor `outline.py`'s formula fixed** (open H1 or keyword, H2s, FAQ picks) is one Fix and list row per page, so Paul
+  sees it once. Values assigned by formula are the outline's, not the writer's: no row.
 - **Ask** — only the four kinds (1 page/URL · 2 legal or money claim · 3 client-only fact not found after research,
   with its research-log entry · 4 real conflict), with options and a recommended default.
 `python3 scripts/review.py sheet <slug> <id> drafts --findings <findings.json> --run <RUN_ID>` writes the one sheet

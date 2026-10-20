@@ -22,4 +22,4 @@ Follow CLAUDE.md. Use the **expert-interview** skill; it holds the method for al
    - **stories-answers** — transcript → story bank entries; `interview.py check <slug> bank`; `status.py mark <slug> story_bank --file clients/<slug>/interviews/story-bank.md`.
    - **voice** — transcript → `voice-dna-<author>.md`; `interview.py check <slug> voice`; `status.py mark <slug> voice_dna --file <it>`.
 3. Nothing goes to the client automatically — Paul sends every question set.
-4. Write the Handoff Log section to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> --summary "..."`.
+4. Write the Handoff Log section (25 lines at most; the scripts add the change, decision and step lines) to `clients/<slug>/handoffs/run-<RUN_ID>.md`, then `run.py finish <slug> <RUN_ID> --handoff <that file> --summary "..."`.

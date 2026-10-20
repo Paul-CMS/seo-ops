@@ -2,7 +2,7 @@
 """next.py — what happens next for a client, read from status.json and the safety log.
 
     next.py <slug>            one line of JSON: {"kind": run|decision|wait|review, "command": ..., "why": ...,
-                              "stage": "n of N — name", "session_model": "haiku", "agents": "build (opus), clerk (haiku)"}
+                              "stage": "n of N — name", "session_model": "haiku", "agents": "build (opus), researcher (sonnet)"}
                               (R1: start the stage's session on session_model; the agents' models are fixed)
     next.py <slug> --continue only at the start of a /next Paul typed: clears a review pause (logged)
 
