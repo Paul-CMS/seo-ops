@@ -239,12 +239,16 @@ def evidence_and_briefs(st, slug, b):
     CM-056), then writes every cleared page's brief. A blocked page gets no brief: facts interview → owner's answers →
     gate re-runs (then one more brief run for those pages), or Paul's waiver."""
     bid = b["id"]
+    outline = S.route(b) == "outline"   # Rewrite 4: no brief — the write run runs the gate, then outlines by script
     if any(not S.evidence_state(st, p)[0] for p in b["pages"]):
+        if outline:
+            out("run", f"/build {slug} write {bid}", f"section {bid} in one run: the evidence gate per page, an outline "
+                "per cleared page by script (no brief), one draft per page (each its own fresh sub-agent), the review")
         out("run", f"/build {slug} brief {bid}", f"briefs for batch {bid} in one run: the evidence gate per page "
             "(sources on disk searched first), then a brief for every page it clears")
     blocked = [p for p in b["pages"] if not S.evidence_ok(st, p)[0]]
-    todo = [p for p in b["pages"] if p not in blocked and not S.page_stage(st, p, "brief")]
-    if todo:
+    todo = [p for p in b["pages"] if p not in blocked and not S.page_stage(st, p, S.plan_stage(b))]
+    if todo and not outline:
         out("run", f"/build {slug} brief {bid}", f"briefs for {', '.join(todo)} (one run for the batch)")
     if blocked:
         waive = " · ".join(f'/approve {slug} evidence:{p} --reason "<why you waive it>"' for p in blocked)
@@ -289,14 +293,18 @@ def build_batch(st, slug, b):
     if bid != "pilot" and not S.check(st, "pilot_corrections")[0]:
         out("run", f"/build {slug} pilot-corrections", "apply your pilot corrections to the specs before the next batch")
     files = b.get("files") or {}
+    outline = S.route(b) == "outline"
     write_flow = bid == "pilot" or not S.briefs_need_approval(st, bid)   # P10
     if state == "planned" and write_flow and all(S.evidence_ok(st, p)[0] for p in b["pages"]):
         out("run", f"/build {slug} write {bid}",
-            f"batch {bid} in one run: every brief, then one draft per page (each from its own fresh sub-agent, "
-            "CM-043), then the batch review side by side")
+            (f"section {bid} in one run: an outline per page by script from the approved plan and the spec (no brief), "
+             "one draft per page (each from its own fresh sub-agent, CM-043), then the one draft review sheet"
+             if outline else
+             f"batch {bid} in one run: every brief, then one draft per page (each from its own fresh sub-agent, "
+             "CM-043), then the batch review side by side"))
     if state == "planned":
         evidence_and_briefs(st, slug, b)
-    if not S.check(st, f"batch:{bid}:briefs")[0]:
+    if not outline and not S.check(st, f"batch:{bid}:briefs")[0]:
         review_sheet(st, slug, b, "briefs")
     if state in ("drafts_written", "sem_check_failed") and not S.check(st, f"batch:{bid}:drafts")[0]:
         review_sheet(st, slug, b, "drafts")
@@ -307,14 +315,17 @@ def build_batch(st, slug, b):
             "the pilot's briefs and drafts are ready for one approval (and, in the same line, later batches' briefs "
             "switch to auto, so each later batch stops once, for its drafts): review the drafts with the semantic "
             "review table " + (f"({n} SEM item(s) found)" if n else "(nothing found)") + open_items_note(st, b))
-    if not S.check(st, f"batch:{bid}:briefs")[0]:
+    if not outline and not S.check(st, f"batch:{bid}:briefs")[0]:
         out("decision", f"/approve {slug} batch:{bid}:briefs{bg_reapproval(st)} --files {q(files.get('briefs') or [])}",
             f"the briefs for batch {bid} are ready for your approval (outline before prose; one brief per page, "
             "each written in its own run)")
-    if not b.get("content_written_back"):   # CM-061 §6: once per section, at the brief approval — the next section reads it
+    if not b.get("content_written_back") and (not outline or state in ("drafts_written", "sem_check_failed")):
+        # CM-061 §6: once per section — at the brief approval, or (outline route) from the reviewed drafts, before
+        # their one approval line; the next section reads it
         out("run", f"/build {slug} writeback {bid}",
-            f"Brand Guide write-back for section {bid} (B3, C1/C2, C3) from its approved briefs — once per section; "
-            "drafts, the draft review and ship never write it")
+            f"Brand Guide write-back for section {bid} (B3, C1/C2, C3) from its "
+            + ("reviewed drafts, before their one approval" if outline else "approved briefs")
+            + " — once per section; ship never writes it")
     if state == "briefs_written":
         for pid in b["pages"]:    # CM-043: one page per run
             if not S.page_stage(st, pid, "draft"):
@@ -462,6 +473,14 @@ def _walk(slug, cont):
         records.render(slug)
         git_commit(f"{slug}: {len(moved)} record(s) pointing at a moved URL updated on /next\n\n" + "\n".join(moved[:40]), slug=slug)
     st = S.load(slug)
+    routed = S.assign_routes(slug, st)   # Rewrite 4 (D5): which sections keep briefs and which take the outline route
+    if routed:
+        S.save(slug, st)
+        import records
+        from lib import git_commit
+        records.render(slug)
+        git_commit(f"{slug}: Rewrite 4 routes set on /next\n\n" + "\n".join(routed), slug=slug)
+        st = S.load(slug)
     voided = S.void_unreviewed_approvals(slug, st)   # an approval whose pages do not match the reviewed versions stops counting
     if voided:
         S.save(slug, st)

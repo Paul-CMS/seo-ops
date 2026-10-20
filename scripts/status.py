@@ -385,6 +385,32 @@ def _approved_sections(st):
             and not (b.get("drafts") or {}).get("baseline")]
 
 
+CLEAN_PILOTS = 3
+
+
+def clean_pilots(st):
+    """CM-061 §9 (Rewrite 4): the slugs of the last 3 other clients' approved pilots when every one had no corrections
+    (status.py pilot-corrections --none) and was approved at today's writing fingerprint — else []."""
+    me = st["client"].get("slug", st.get("slug"))
+    done = []
+    for d in sorted(p for p in (ROOT / "clients").iterdir() if (p / "status.json").is_file()):
+        if d.name == me:
+            continue
+        try:
+            o = load(d.name)
+        except SystemExit:
+            continue
+        rec = (batch(o, "pilot") or {}).get("drafts") or {}
+        if rec.get("state") in GATES["met_decisions"] and not rec.get("baseline"):
+            pc = (o.get("build") or {}).get("pilot_corrections_applied") or {}
+            done.append((rec.get("at", ""), d.name, bool(pc.get("none")), rec.get("writing_fp")))
+    last = sorted(done, reverse=True)[:CLEAN_PILOTS]
+    fp = writing_fp()
+    if len(last) == CLEAN_PILOTS and all(none and wfp == fp for _, _, none, wfp in last):
+        return [name for _, name, _, _ in last]
+    return []
+
+
 def pilot_needed(st):
     """(needed, reason) — gates.json → modes → pilot (CM-061 §9)."""
     rule = (GATES["modes"].get("pilot") or {}).get("rule", "always")
@@ -405,6 +431,11 @@ def pilot_needed(st):
     if not mine and not others:
         return True, f"a new industry ({ind or 'not set'}): no client has an approved section in it yet"
     if not mine:
+        clean = clean_pilots(st)
+        if clean:
+            return False, ("no pilot: the last 3 clients' pilots (" + ", ".join(clean) + ") had no corrections and the "
+                           "specs and writing rules are unchanged since (CM-061 §9) — every page of the section is "
+                           "drafted in one run")
         return True, "this client's first section"
     last = max(mine, key=lambda b: b["drafts"].get("at", ""))
     if last["drafts"].get("writing_fp") and last["drafts"]["writing_fp"] != writing_fp():
@@ -634,9 +665,24 @@ def _approval_ok(rec, label_, check_files=True):
     return True, ""
 
 
+def route(b):
+    """Rewrite 4 Phase 4 (D2, D5): 'outline' — no brief; outline.py derives each page's outline at draft time and the
+    section stops once, for its drafts. 'briefs' — the old route, kept by a section whose briefs were approved before
+    (assign_routes, on /next, marks which is which). A section with no route recorded is on the old route."""
+    return (b or {}).get("route") or "briefs"
+
+
+def plan_stage(b):
+    """The per-page file written before the draft: the outline (outline route) or the brief."""
+    return "outline" if route(b) == "outline" else "brief"
+
+
 def briefs_need_approval(st, bid):
     """R3: after the pilot, once Paul has switched build:brief to auto (only possible after the pilot passed),
-    a batch's briefs are not a stop — Paul approves the drafts only. The pilot's briefs are always approved."""
+    a batch's briefs are not a stop — Paul approves the drafts only. The pilot's briefs are always approved.
+    A section on the outline route has no briefs at all."""
+    if route(batch(st, bid)) == "outline":
+        return False
     return bid == "pilot" or stage_mode(st, "build:brief") != "auto"
 
 
@@ -645,7 +691,7 @@ def batch_stage_ok(st, bid, stage, check_files=True):
     if not b:
         return False, f"batch {bid} is not in the site plan"
     if stage == "briefs" and not b.get(stage) and not briefs_need_approval(st, bid):
-        _, probs = per_page_files(st, b, "brief")
+        _, probs = per_page_files(st, b, plan_stage(b))
         return (not probs), ("" if not probs else f"batch {bid} briefs: " + "; ".join(probs))
     ok, why = _approval_ok(b.get(stage), f"batch {bid} {stage}", check_files)
     if not ok:
@@ -740,7 +786,8 @@ def per_page_files(st, b, stage):
     for pid in b["pages"]:
         rec = page_stage(st, pid, stage)
         if not rec.get("file"):
-            probs.append(f"{pid} has no {stage} yet (/build <slug> {stage} {b['id']} {pid})")
+            probs.append(f"{pid} has no {stage} yet (" + ("outline.py writes it in the section's write run)"
+                                                          if stage == "outline" else f"/build <slug> {stage} {b['id']} {pid})"))
             continue
         who = (rec.get("run"), rec.get("agent"))   # P10: one fresh sub-agent per page inside one run keeps CM-043
         if stage == "draft" and who in runs:
@@ -797,6 +844,32 @@ def page_version_problems(st, bid, stage, files, strict=True):
                 and (strict or (rec.get("ts") is not None and applied.get("ts") is not None)):
             out.append(f"{pid}: recorded before the review answers were applied")
     return out
+
+
+def assign_routes(slug, st):
+    """Rewrite 4 migration (D5, on /next, once per client): a section with no route recorded keeps the brief route when
+    its briefs are approved, any of its pages has a brief, or it is past 'planned'; every other section takes the
+    outline route (config build_route, default 'outline'). A pilot Paul made no corrections to is marked so (CM-061
+    §9). Returns the log lines; the caller saves."""
+    if st.get("rewrite4_routes"):
+        return []
+    lines = []
+    for b in batches(st):
+        if b.get("route"):
+            continue
+        started = (b.get("briefs") or {}).get("state") in GATES["met_decisions"] or b.get("state", "planned") != "planned" \
+            or any(page_stage(st, p, "brief") for p in b.get("pages", []))
+        b["route"] = "briefs" if started else (config().get("build_route") or "outline")
+        lines.append(f"section {b['id']}: {b['route']} route"
+                     + (" (briefs approved or under way — finishes on the old route)" if started else " (no brief)"))
+    pc = (st.get("build") or {}).get("pilot_corrections_applied") or {}
+    if pc and "none" not in pc and re.match(r"\s*no corrections", pc.get("note", ""), re.I):
+        pc["none"] = True
+        lines.append("pilot: recorded as 'no corrections' (from its note)")
+    st["rewrite4_routes"] = {"at": now(), "rule": "REWRITE-4-PLAN.md D5"}
+    for ln in lines:
+        append(client_dir(slug) / "log.md", f"- MIGRATION {now()[:16]} · Rewrite 4 · {ln}\n")
+    return lines
 
 
 def void_unreviewed_approvals(slug, st):
@@ -1052,6 +1125,8 @@ def main():
     s = sub.add_parser("writeback"); s.add_argument("slug"); s.add_argument("batch_id"); s.add_argument("--run", required=True)
     s = sub.add_parser("specs-adopt"); s.add_argument("slug")   # CR-023: move a client to the currently approved specs
     s = sub.add_parser("pilot-corrections"); s.add_argument("slug"); s.add_argument("--note", required=True)
+    s.add_argument("--none", action="store_true", help="Paul made no corrections to the pilot (CM-061 §9: three such "
+                   "pilots in a row at the same writing rules end the pilot for later clients)")
     s = sub.add_parser("blockers-none"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s = sub.add_parser("mark"); s.add_argument("slug"); s.add_argument("name")
     s.add_argument("--file", required=True, action="append")
@@ -1212,10 +1287,13 @@ def main():
             die("the pilot batch must have exactly 1 service + 1 location page")
         for pid, p in pages.items():
             st["pages"].setdefault(pid, {"state": "planned"}).update(
-                {k: p[k] for k in ("type", "name", "url", "group", "city", "service_variant", "h1", "replaces", "nav", "claims") if k in p})
+                {k: p[k] for k in ("type", "name", "url", "group", "city", "service_variant", "h1", "replaces", "nav", "claims",
+                                   "keyword", "category_variant", "area_variant", "faq", "h2s") if k in p})   # Rewrite 4: outline.py
         st["build"] = {"site_plan": {"file": a.file, "approval": None},
                        "batches": [{**{k: b[k] for k in ("id", "kind", "label", "pages")},
                                     "state": "planned", "briefs": None, "drafts": None,
+                                    # Rewrite 4 (D2): a new section has no brief — outline.py derives the outline
+                                    "route": b.get("route") or config().get("build_route") or "outline",
                                     "files": {}}
                                    for b in plan["batches"]],
                        "pilot_corrections_applied": None,
@@ -1244,7 +1322,7 @@ def main():
                         "drafted": "drafts", "handed_off": "drafts", "corrections_requested": "drafts", "published": "drafts",
                         "verified": "drafts", "written_back": "drafts"}.get(a.state)
         pilot_write = (a.state == "drafts_written" and a.batch_id == "pilot"
-                       and not per_page_files(st, b, "brief")[1])   # P10: pilot briefs + drafts approved together
+                       and not per_page_files(st, b, plan_stage(b))[1])   # P10: pilot briefs + drafts approved together
         if stage_needed and not pilot_write and not batch_stage_ok(st, a.batch_id, stage_needed, False)[0]:
             die(f"batch {a.batch_id}: {stage_needed} are not approved yet")
         fs = [f.strip() for f in (a.files or "").split(",") if f.strip()]
@@ -1347,6 +1425,9 @@ def main():
         f = ROOT / a.file
         if not f.is_file():
             die(f"{a.file} not found")
+        if a.stage == "brief" and route(b) == "outline":
+            die(f"section {b['id']} is on the outline route (Rewrite 4): no brief — outline.py writes each page's "
+                "outline in the write run.", 4)
         if a.stage == "brief":
             ok, why = evidence_ok(st, a.page_id)
             if not ok:
@@ -1363,7 +1444,7 @@ def main():
                 die(f"batch {b['id']} briefs are already approved; Paul re-opens them first (--decision revise).")
         else:
             in_write = write_run and (b["id"] == "pilot" or not briefs_need_approval(st, b["id"])) \
-                and not per_page_files(st, b, "brief")[1]   # P10: the pilot (one approval for both) or briefs on auto
+                and not per_page_files(st, b, plan_stage(b))[1]   # P10: the pilot, briefs on auto, or the outline route
             if not in_write and not review_run and not batch_stage_ok(st, b["id"], "briefs", False)[0]:
                 die(f"batch {b['id']}: the briefs are not approved yet — no drafts before Paul approves the briefs.")
             import publish
@@ -1402,10 +1483,20 @@ def main():
             print(f"  {step:20} {m:6} ({src})  pilot {'passed' if ok else ('—' if not spec.get('pilot') else 'not yet')}")
     elif a.cmd == "writeback":   # CM-061 §6: ONE Brand Guide write-back per section, at the brief approval
         b = batch(st, a.batch_id) or die(f"no batch {a.batch_id}")
-        ok, why = check(st, f"batch:{a.batch_id}:briefs")
-        if not ok:
-            die("REFUSED — the Brand Guide is written once per section, at the brief approval (CM-061): "
-                + "; ".join(why), 4)
+        if route(b) == "outline":   # Rewrite 4: no briefs — written once, from the drafts, before their one approval
+            _, probs = per_page_files(st, b, "draft")
+            rv = (b.get("review") or {}).get("drafts") or {}
+            why = probs + ([] if b.get("state") in ("drafts_written", "sem_applied", "sem_check_failed") else
+                           [f"section {a.batch_id} is not written yet (state {b.get('state')})"])
+            why += [f"the {a.batch_id} drafts review sheet is not applied yet"] if rv and not rv.get("applied") else []
+            if why:
+                die("REFUSED — on the outline route the Brand Guide is written once per section, from its drafts after "
+                    "the review answers and before the drafts approval (Rewrite 4): " + "; ".join(why), 4)
+        else:
+            ok, why = check(st, f"batch:{a.batch_id}:briefs")
+            if not ok:
+                die("REFUSED — the Brand Guide is written once per section, at the brief approval (CM-061): "
+                    + "; ".join(why), 4)
         if b.get("content_written_back"):
             die(f"REFUSED — section {a.batch_id} already wrote the Brand Guide ({b['content_written_back']['at'][:16]}, "
                 f"run {b['content_written_back']['run']}). It is written once per section (CM-061); drafts, the draft "
@@ -1413,7 +1504,8 @@ def main():
         b["content_written_back"] = {"at": now(), "run": a.run}
         save(a.slug, st)
         append(client_dir(a.slug) / "log.md", f"- WRITE-BACK {now()[:16]} · run {a.run} · batch {a.batch_id}: Brand Guide "
-               "B3, C1/C2, C3 updated once for the section, from its approved briefs\n")
+               "B3, C1/C2, C3 updated once for the section, from its "
+               + ("reviewed drafts" if route(b) == "outline" else "approved briefs") + "\n")
         print(f"batch {a.batch_id}: Brand Guide write-back recorded")
     elif a.cmd == "specs-adopt":
         st = load(a.slug)
@@ -1422,9 +1514,11 @@ def main():
         save(a.slug, st)
         print(f"{a.slug}: now on the currently approved page specs ({len(st['specs_pinned'])} files pinned)")
     elif a.cmd == "pilot-corrections":
-        if not batch_stage_ok(st, "pilot", "briefs", False)[0]:
-            die("the pilot briefs are not approved yet")
-        st["build"]["pilot_corrections_applied"] = {"at": now(), "note": a.note}
+        pstage = "drafts" if route(batch(st, "pilot")) == "outline" else "briefs"
+        if not batch_stage_ok(st, "pilot", pstage, False)[0]:
+            die(f"the pilot {pstage} are not approved yet")
+        st["build"]["pilot_corrections_applied"] = {"at": now(), "note": a.note,
+                                                    **({"none": True} if a.none else {})}
         save(a.slug, st); print("pilot corrections recorded")
         cfg = config()
         rec = cfg.get("specs_approval") or {}

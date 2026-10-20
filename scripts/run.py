@@ -183,10 +183,14 @@ def _missing_one(slug, st, info, want):
                         "evidence.py questions <slug> --run <RUN_ID> --all")
     elif want.startswith("batch_written:"):   # P10: briefs, one draft per page (each its own sub-agent), the review
         b = S.batch(st, want.split(":", 1)[1]) or {}
-        left = [p for p in b.get("pages", []) for stg in ("brief", "draft") if S.page_stage(st, p, stg).get("run") != info["id"]]
+        first = S.plan_stage(b)   # Rewrite 4: the outline route writes outlines by script, never briefs
+        left = [p for p in b.get("pages", []) for stg in (first, "draft") if S.page_stage(st, p, stg).get("run") != info["id"]]
         if left:
-            miss.append(f"a brief and a draft from this run for {', '.join(sorted(set(left)))} — status.py page-stage "
-                        "<slug> <page> --stage brief|draft --file <f> --run <RUN_ID> [--agent <id>]")
+            miss.append(f"{'an outline' if first == 'outline' else 'a brief'} and a draft from this run for "
+                        f"{', '.join(sorted(set(left)))} — "
+                        + (f"outline.py build <slug> {b.get('id')} --run <RUN_ID>, then " if first == "outline" else "")
+                        + f"status.py page-stage <slug> <page> --stage {'draft' if first == 'outline' else 'brief|draft'} "
+                        "--file <f> --run <RUN_ID> [--agent <id>]")
         elif b.get("state") not in ("drafts_written", "sem_applied", "sem_check_failed"):
             miss.append(f"the batch review for {b.get('id')} — status.py batch <slug> {b.get('id')} --state drafts_written "
                         "--sem-table <file> --sem-findings <n>")

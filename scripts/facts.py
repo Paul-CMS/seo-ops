@@ -27,6 +27,19 @@ LABELS = {"client_confirmed": "Client Confirmed", "paul_approved": "Paul Approve
           "internally_verified": "Internally Verified", "customer_reported": "Customer Reported",
           "submitted": "Submitted", "unknown": "Unknown", "disputed": "Disputed"}
 SECTIONS = {"A": ("#", "Field", "Value", "Status"), "D": ("Fact", "Value", "Status", "Source")}
+# Rewrite 4 Phase 4: the writer sees three states, never the statuses. The usage tiers are applied here, by script.
+# customer_reported is not a company claim: the pack's Reviews section says how a review may be used.
+WRITER_STATES = ("confirmed", "sourced public", "unknown")
+
+
+def writer_state(status):
+    """The state a writer sees for a fact status: confirmed · sourced public · unknown (→ [NEED: …] or left out)."""
+    s = (status or "").strip().lower().replace(" ", "_")
+    if s.startswith(("client_confirmed", "paul_approved")):
+        return "confirmed"
+    if s.startswith("internally_verified"):
+        return "sourced public"
+    return "unknown"
 
 
 def path(slug):

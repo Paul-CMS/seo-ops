@@ -413,6 +413,9 @@ def prepare(a, st, target, multi):
             if stage not in S.STAGES:
                 die("Use batch:<id>:briefs or batch:<id>:drafts (SEM items are picked with the drafts: --sem 1,3,4)")
             b = S.batch(st, bid) or die(f"No batch {bid}.")
+            if stage == "briefs" and S.route(b) == "outline":
+                die(f"REFUSED ({target}) — section {bid} is on the outline route (Rewrite 4): it has no briefs; approve "
+                    f"its drafts (batch:{bid}:drafts) after the one draft review sheet.", 4)
             if not files:
                 bf = b.get("files") or {}
                 files = file_map((bf.get(stage) or []) + ([bf["review_sheet"]] if stage == "drafts" and bf.get("review_sheet") else []))

@@ -1,6 +1,9 @@
 # Rewrite 4 — smaller, cheaper, entity-first (implementation plan)
 
-**Status:** APPROVED by Paul, 2026-10-20, with all six §1 defaults (D1–D6). Phase 0 built (4ae11e3); Phase 4 next. Each
+**Status:** APPROVED by Paul, 2026-10-20, with all six §1 defaults (D1–D6). Phase 0 built (4ae11e3). Phase 4 system
+side built 2026-10-20 (cost split 20fbba5; brief-free route, D5 routes, pilot rule, three fact states, build.md 28 → 12 KB);
+left for Paul: run HMM locations in its client session (one review sheet, one approval line) and the Sonnet drafting
+test there; then Phase 1. Each
 phase runs in its own `/system` session, in order, starting with Phase 0. Phases marked **design** run on Opus; the rest on Sonnet, from
 this file as the written spec (CLAUDE.md → models).
 

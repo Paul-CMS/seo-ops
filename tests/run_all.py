@@ -46,6 +46,7 @@ def make_sandbox():
     cfg = json.loads((SB / "config.json").read_text())
     cfg["git_push_after_run"] = False
     cfg["client_work_in_main_folder"] = True   # §00: the sandbox is one folder; real installs refuse client work in the main folder
+    cfg["build_route"] = "briefs"   # the legacy walkthroughs keep the brief route; the Rewrite 4 checks set "route": "outline"
     cfg.pop("specs_approval", None)   # a fresh install: Paul's real global specs approval is not the sandbox's
     # R4: a fake local v3 folder (Drive for desktop) inside the sandbox — never the real Drive
     v3 = SB / "fake-drive" / "v3"

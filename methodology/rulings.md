@@ -689,7 +689,7 @@ reading level (CM-047, E10) applies to the whole answer as usual.
 
 Decided by Paul. Every term is defined once, in `methodology/definitions.md`.
 1. **Evidence first.** Every input on file is listed in `methodology/data-manifest.json` with the steps that must read
-   it. Before any brief, `scripts/evidence_pack.py` builds one evidence pack per page (facts, reviews, PAA and fan-out
+   it. Before any outline or brief, `scripts/evidence_pack.py` builds one evidence pack per page (facts, reviews, PAA and fan-out
    questions, site and GBP, public facts, settled decisions, gaps); writers read the pack, not the raw files. Evidence is
    written at its **usage tier** (writing-commercial.md, "Usage tiers"); the draft review counts how much of each pack
    was used.
@@ -705,12 +705,15 @@ Decided by Paul. Every term is defined once, in `methodology/definitions.md`.
    raised once per section. One review sheet per section per step (`scripts/review.py`); an empty answer accepts the
    recommended option. An Ask unanswered for 3 working days ships with its default — except a legal or money claim,
    which is left out of the page until answered.
-4. **The Brand Guide is written once per section**, at the brief approval; drafts, draft review and ship never write it.
+4. **The Brand Guide is written once per section**, at the brief approval — or, on the outline route (no brief;
+   Rewrite 4, D2, Paul 2026-10-20), from the reviewed drafts, before their one approval. Ship never writes it.
 5. **Location FAQs** follow the three-category recipe (`methodology/location-faq.md`); a location that cannot be
    sourced arrives in the site plan as a merge proposal (the viability check); the minimums in location.md are targets
    and an optional section is never a hold.
 6. **A pilot runs only when it is worth it** — a client's first section, a new industry, or the first section after a
-   spec or ruling change that affects writing (`gates.json` → `modes` → `pilot`).
+   spec or ruling change that affects writing (`gates.json` → `modes` → `pilot`). No pilot, even for a client's
+   first section, once the last 3 clients' pilots had no corrections at unchanged specs and writing rules
+   (Rewrite 4, Paul 2026-10-20; `status.py pilot-corrections --none` records a pilot with none).
 
 ## CM-062 · Location page structure: place entities woven in, a Serving section, no Things to Do or Top Sites
 **ID** CM-062 · **Status** APPROVED · **Date** 2026-10-14 · **Reason** Things to Do and Top Sites were generic lists that could not be sourced for most small places, held pages, and repeated across cities; the same local evidence is stronger woven into the text and the schema, and "how the client works here" had no home. · **Source** Paul, 2026-10-14 (rewrite 3 §0 answers 1 and 2, recommended options) · **Supersedes** the BB-315 element order and its Things to Do and Top Sites sections for new location pages (BB-315 remains the rule for everything else, CM-023 for H2 handling); `methodology/specs/location.md` carries the new order once Paul types `/approve global specs:location`

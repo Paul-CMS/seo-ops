@@ -28,6 +28,7 @@ import json
 import re
 import sys
 
+import facts
 import status as S
 from lib import ROOT, append, client_dir, die, now, read_json, sha12
 
@@ -45,6 +46,9 @@ PRACTICES = {   # topic -> (regex, the facts.json R keys whose meaning check cov
     "permits": (r"\bpermits?\b", ["practice:permits"]),
 }
 MAX_QUOTES = 5
+FACT_STATES = (("confirmed", "a plain claim"),
+               ("sourced public", "a plain statement; the source is recorded"),
+               ("unknown", "never claimed: write [NEED: …] where the page needs it, or leave it out"))
 TIER_NOTE = {"known": "Customers mention… (3+ independent reviewers, checked by meaning)",
              "example": "attributed customer example only — no company claim",
              "unchecked": "keyword match only — an attributed example until the researcher checks it by meaning"}
@@ -289,6 +293,8 @@ def build_one(slug, section, pid, run_id=None, st=None):
             "place": place_rows(slug, places),
             "settled": settled_rows(slug, pid, services, places),
             "gaps": gaps(slug, st, pid)}
+    for f in pack["facts"]:
+        f["state"] = facts.writer_state(f["status"])   # Rewrite 4: what the writer sees
     ex = []
     for t, v in pack["reviews"].items():
         for q in v["quotes"]:
@@ -328,9 +334,14 @@ def render(st, p):
            f"Section **{p['section']}** · {p.get('url') or ''} · built {p['built'][:16]} by evidence_pack.py (CM-061).", "",
            "_The only place the writer looks for facts. Write every excerpt at its usage tier "
            "(methodology/writing-commercial.md, \"Usage tiers\"). Reviewer names never appear on a page._", ""]
-    out += ["## Facts", "", "| Id | Fact | Status | Value | Source |", "|---|---|---|---|---|"]
-    out += [f"| {f['id']} | {f['label']} | {f['status']} | {f['value'].replace('|', '/')} | {f['source'].replace('|', '/')} |"
-            for f in p["facts"]] or ["| — | none | | | |"]
+    out += ["## Facts", "",
+            "_Three states (Rewrite 4): the usage tier is already applied — write each fact as its heading says._", ""]
+    for state, how in FACT_STATES:
+        rows = [f for f in p["facts"] if facts.writer_state(f["status"]) == state]
+        out += [f"### {state.capitalize()} — {how}", "", "| Id | Fact | Value | Source |", "|---|---|---|---|"]
+        out += [f"| {f['id']} | {f['label']} | {f['value'].replace('|', '/')} | {f['source'].replace('|', '/')} |"
+                for f in rows] or ["| — | none | | |"]
+        out.append("")
     out += ["", "## Reviews", ""]
     if not p["reviews"]:
         out.append("_No review on file mentions this page's service, place or a practice._")

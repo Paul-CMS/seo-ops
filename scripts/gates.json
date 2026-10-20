@@ -585,7 +585,7 @@
         "page_stage:{page}:draft"
       ],
       "reads": [
-        "the approved brief for this page",
+        "the page's outline (build/<section>/outlines/<page>.md, written by outline.py in the write run) — on a brief-route section, its approved brief instead",
         "methodology/writing-commercial.md",
         "methodology/specs/<type>.md + methodology/specs/README.md (common checks)",
         "clients/<slug>/brand-guide.md (A–D, H2, I)",
@@ -1095,7 +1095,7 @@
         "methodology/writing-commercial.md (Usage tiers)",
         "methodology/review-severities.json (Fix · Fix and list · Ask; the four Ask kinds)",
         "clients/<slug>/decisions-settled.md",
-        "the approved brief for this page",
+        "the page's outline (build/<section>/outlines/<page>.md, written by outline.py in the write run) — on a brief-route section, its approved brief instead",
         "methodology/writing-commercial.md",
         "methodology/specs/<type>.md + methodology/specs/README.md (common checks)",
         "clients/<slug>/brand-guide.md (A–D, H2, I)",
@@ -1106,7 +1106,8 @@
         "clients/<slug>/brand-guide.md (C1–C3)",
         "the pages approved in earlier batches",
         "methodology/location-faq.md (location pages: three FAQs, one per category — CM-061)",
-        "python3 scripts/rulings.py CM-017 CM-043 (never rulings.md whole, P12)"
+        "python3 scripts/rulings.py CM-017 CM-043 (never rulings.md whole, P12)",
+        "docs/build-brief-route.md (only for a section on the brief route — status.py show)"
       ]
     },
     "build:review": {
@@ -1215,7 +1216,7 @@
     },
     "pilot": {
       "rule": "auto",
-      "_about": "CM-061 part 6 (rewrite 3 §9): a pilot (1 service + 1 location, briefs and drafts, one approval) runs only for a client's first section, a new industry, or the first section after a change to the specs or the writing rules (methodology/specs/*.md, writing-commercial.md, location-faq.md — the fingerprint each drafts approval records). Otherwise all pages of a section are drafted in one run. status.py pilot <slug> prints the decision and the reason; status.py plan refuses a plan without a pilot when one is needed. 'always' = the old rule.",
+      "_about": "CM-061 part 6 (rewrite 3 §9): a pilot (1 service + 1 location, briefs and drafts, one approval) runs only for a client's first section, a new industry, or the first section after a change to the specs or the writing rules (methodology/specs/*.md, writing-commercial.md, location-faq.md — the fingerprint each drafts approval records). Otherwise all pages of a section are drafted in one run. status.py pilot <slug> prints the decision and the reason; status.py plan refuses a plan without a pilot when one is needed. 'always' = the old rule. Rewrite 4 (Paul, 2026-10-20): no pilot, even for a client's first section, once the last 3 clients' pilots had no corrections (status.py pilot-corrections --none) at today's writing fingerprint.",
       "when": [
         "first_section",
         "new_industry",
