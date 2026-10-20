@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 """usage.py — what a run (or a client) cost in model tokens, measured from Claude Code's own transcripts.
 
-    usage.py run <slug> <RUN_ID> [--json]     tokens and USD for one run, per model
-    usage.py client <slug> [--json]           every run of a client, per stage and per step, and the ten dearest runs
-    usage.py baseline <slug> [<slug> …] [--write FILE]   the REWRITE-4-BASELINE.md tables (cost per stage, top 10 runs)
+    usage.py run <slug> <RUN_ID> [--by-agent] [--json]   tokens and USD for one run, per model (and per agent)
+    usage.py client <slug> [--by-agent] [--json]         every run of a client, per stage and per step, the ten dearest
+                                                         runs (and the cost by agent)
+    usage.py baseline <slug> [<slug> …] [--write FILE]   the REWRITE-4-BASELINE.md tables (cost per stage, by agent,
+                                                         top 10 runs)
 
 The safety log records each run's start, end and session id. Claude Code keeps every session's token usage in
 ~/.claude/projects/<project>/<session>.jsonl and its subagents' in <session>/subagents/*.jsonl. A run's usage is
 every assistant message in that session (and its subagents) between the run's start and finish. Each API message is
 counted once (a message is repeated in the transcript while it streams). Prices: scripts/model_prices.json.
+By agent (Rewrite 4 Phase 4): the session's own transcript is "main" (the stage chat); each subagent transcript is
+named by the agentType in its <agent-…>.meta.json ("subagent" when the file says nothing).
 Read-only; no network. A run with no session id, or whose transcript is gone, is reported as "no data", never as $0.
 Set SEO_OPS_CLAUDE_PROJECTS to read another transcripts folder (the tests do).
 """
@@ -95,8 +99,17 @@ def transcripts(sid):
     return found
 
 
-def read_usage(files, start, end):
-    """{model: {field: tokens}} for the API messages stamped between start and end (UTC datetimes)."""
+def agent_of(f):
+    """'main' for a session's own transcript, else the subagent's agentType from its .meta.json."""
+    if f.parent.name != "subagents":
+        return "main"
+    meta = read_json(f.with_name(f.stem + ".meta.json"), {}) or {}
+    return meta.get("agentType") or "subagent"
+
+
+def read_usage(files, start, end, by_agent=False):
+    """{model: {field: tokens}} for the API messages stamped between start and end (UTC datetimes);
+    with by_agent, {agent: ({model: {field: tokens}}, transcripts with a message in the window)}."""
     msgs = {}
     for f in files:
         for line in f.read_text(encoding="utf-8", errors="replace").splitlines():
@@ -110,9 +123,20 @@ def read_usage(files, start, end):
             when = ts(o["timestamp"])
             if (start and when < start) or (end and when > end):
                 continue
-            msgs[(f.name, m.get("id") or o.get("uuid") or line[:80])] = (m.get("model") or "?", m["usage"])
+            msgs[(f.name, m.get("id") or o.get("uuid") or line[:80])] = (agent_of(f), m.get("model") or "?", m["usage"])
+    if by_agent:
+        split, seen = {}, {}
+        for (fname, _), (agent, model, u) in msgs.items():
+            split.setdefault(agent, []).append((model, u))
+            seen.setdefault(agent, set()).add(fname)
+        return {a: (tally(v), len(seen[a])) for a, v in split.items()}
+    return tally((model, u) for _, model, u in msgs.values())
+
+
+def tally(msgs):
+    """{model: {field: tokens}} from (model, usage) pairs."""
     out = {}
-    for model, u in msgs.values():
+    for model, u in msgs:
         if model == "<synthetic>":
             continue
         cc = u.get("cache_creation") or {}
@@ -145,19 +169,51 @@ def run_usage(slug, run_id, end_now=False):
     if not files:
         return None
     end = ts(dt.datetime.now(dt.timezone.utc).isoformat()) if (end_now or not r["end"]) else ts(r["end"])
-    by = read_usage(files, ts(r["start"]), end)
-    if not by:
+    split = {a: v for a, v in read_usage(files, ts(r["start"]), end, by_agent=True).items() if v[0]}
+    if not split:
         return None
-    return {**summarise(by), "run": run_id, "step": r["step"], "command": r["command"]}
+    by = {}
+    for per_model, _ in split.values():
+        for m, t in per_model.items():
+            acc = by.setdefault(m, dict.fromkeys(FIELDS, 0))
+            for f in FIELDS:
+                acc[f] += t[f]
+    agents = {a: {**summarise(t), "transcripts": n} for a, (t, n) in split.items()}
+    return {**summarise(by), "by_agent": agents, "run": run_id, "step": r["step"], "command": r["command"]}
 
 
-def fmt_run(u):
+def fmt_run(u, by_agent=False):
     lines = [f"run {u['run']} · {u.get('step') or '?'}: {u['tokens']:,} tokens · ${u['usd']:.2f}"]
     for m, r in sorted(u["by_model"].items(), key=lambda kv: -kv[1]["usd"]):
         lines.append(f"  {m}: in {r['input']:,} · cache-write {r['cache_write_5m'] + r['cache_write_1h']:,} · "
                      f"cache-read {r['cache_read']:,} · out {r['output']:,} · ${r['usd']:.2f}"
                      + ("" if r["priced"] else "  (UNPRICED model — add it to model_prices.json)"))
+    if by_agent:
+        lines.append("by agent (main = the stage chat):")
+        for a, r in sorted(u["by_agent"].items(), key=lambda kv: -kv[1]["usd"]):
+            lines.append(f"  {a}: {r['transcripts']} transcript(s) · {r['tokens']:,} tokens · ${r['usd']:.2f} · "
+                         + ", ".join(f"{m} ${x['usd']:.2f}" for m, x in sorted(r["by_model"].items(), key=lambda kv: -kv[1]["usd"])))
     return "\n".join(lines)
+
+
+def agent_totals(rows):
+    """{agent: {runs, transcripts, tokens, usd, by_model: {model: usd}}} over a client's measured runs."""
+    out = {}
+    for row in rows:
+        for a, r in ((row["usage"] or {}).get("by_agent") or {}).items():
+            t = out.setdefault(a, {"runs": 0, "transcripts": 0, "tokens": 0, "usd": 0.0, "by_model": {}})
+            t["runs"] += 1; t["transcripts"] += r["transcripts"]; t["tokens"] += r["tokens"]; t["usd"] += r["usd"]
+            for m, x in r["by_model"].items():
+                t["by_model"][m] = t["by_model"].get(m, 0.0) + x["usd"]
+    return out
+
+
+def agent_table(agents):
+    lines = ["| Agent | Runs | Transcripts | Tokens | USD | Models |", "|---|---|---|---|---|---|"]
+    for a, t in sorted(agents.items(), key=lambda kv: -kv[1]["usd"]):
+        lines.append(f"| {a} | {t['runs']} | {t['transcripts']} | {t['tokens']:,} | ${t['usd']:.2f} | "
+                     + ", ".join(f"{m} ${v:.2f}" for m, v in sorted(t["by_model"].items(), key=lambda kv: -kv[1])) + " |")
+    return lines
 
 
 def client_usage(slug):
@@ -203,6 +259,9 @@ def baseline_md(slugs):
         out += ["", "### Cost per step", "", "| Step | Runs measured | Tokens | USD |", "|---|---|---|---|"]
         out += [f"| {k} | {t['measured']} of {t['runs']} | {t['tokens']:,} | ${t['usd']:.2f} |"
                 for k, t in sorted(by_step.items(), key=lambda kv: -kv[1]["usd"])]
+        out += ["", "### Cost by agent", "",
+                "_main = the stage chat itself; every other row is a subagent, named by its agent type._", ""]
+        out += agent_table(agent_totals(rows))
         out += ["", "### Ten dearest runs", "", "| Run | Step | Tokens | USD | Models |", "|---|---|---|---|---|"]
         for r in sorted((r for r in rows if r["usage"]), key=lambda r: -r["usage"]["usd"])[:10]:
             u = r["usage"]
@@ -218,7 +277,9 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("run"); s.add_argument("slug"); s.add_argument("run_id"); s.add_argument("--json", action="store_true")
+    s.add_argument("--by-agent", action="store_true", help="split the cost by the main chat and each subagent type")
     s = sub.add_parser("client"); s.add_argument("slug"); s.add_argument("--json", action="store_true")
+    s.add_argument("--by-agent", action="store_true", help="add the cost by agent across the client's runs")
     s = sub.add_parser("baseline"); s.add_argument("slugs", nargs="+"); s.add_argument("--write")
     a = ap.parse_args()
     if a.cmd == "baseline":
@@ -234,11 +295,14 @@ def main():
         if not u:
             print(f"no data for run {a.run_id}: it has no session id in the log, or that session's transcript is not on this Mac")
             sys.exit(1)
-        print(json.dumps(u, indent=2) if a.json else fmt_run(u))
+        if a.json and not a.by_agent:
+            u = {k: v for k, v in u.items() if k != "by_agent"}
+        print(json.dumps(u, indent=2) if a.json else fmt_run(u, a.by_agent))
         return
     rows, by_stage, by_step = client_usage(a.slug)
     if a.json:
-        print(json.dumps({"runs": rows, "by_stage": by_stage, "by_step": by_step}, indent=2)); return
+        print(json.dumps({"runs": rows, "by_stage": by_stage, "by_step": by_step,
+                          **({"by_agent": agent_totals(rows)} if a.by_agent else {})}, indent=2)); return
     tot = sum(t["usd"] for t in by_stage.values())
     print(f"{a.slug}: ${tot:.2f} measured over {sum(t['measured'] for t in by_stage.values())} of {len(rows)} run(s)\n")
     print("by stage:")
@@ -247,6 +311,10 @@ def main():
     print("\ndearest runs:")
     for row in sorted((r for r in rows if r["usage"]), key=lambda r: -r["usage"]["usd"])[:10]:
         print(f"  ${row['usage']['usd']:7.2f}  {row['usage']['tokens']:>12,}  {row['run']}  ({row['step']})")
+    if a.by_agent:
+        print("\nby agent (main = the stage chat):")
+        for ag, t in sorted(agent_totals(rows).items(), key=lambda kv: -kv[1]["usd"]):
+            print(f"  {ag:16} {t['runs']} runs · {t['transcripts']} transcript(s) · {t['tokens']:,} tokens · ${t['usd']:.2f}")
 
 
 if __name__ == "__main__":

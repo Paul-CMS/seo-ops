@@ -36,6 +36,18 @@ _Generated 2026-10-20 by `python3 scripts/usage.py baseline home-mobile-medical 
 | wp-check | 0 of 2 | 0 | $0.00 |
 | discovery:data | 0 of 1 | 0 | $0.00 |
 
+### Cost by agent
+
+_main = the stage chat itself; every other row is a subagent, named by its agent type._
+
+| Agent | Runs | Transcripts | Tokens | USD | Models |
+|---|---|---|---|---|---|
+| build | 15 | 22 | 48,730,942 | $22.55 | claude-opus-5-5 $22.55 |
+| discovery-audit | 1 | 1 | 7,609,449 | $2.53 | claude-opus-5-5 $2.53 |
+| researcher | 1 | 5 | 4,667,505 | $1.69 | claude-sonnet-5-5 $1.69 |
+| main | 20 | 20 | 23,544,147 | $1.28 | claude-opus-5-5 $0.97, claude-haiku-5-5 $0.30 |
+| brief-writer | 2 | 6 | 2,120,951 | $1.24 | claude-sonnet-5-5 $1.24 |
+
 ### Ten dearest runs
 
 | Run | Step | Tokens | USD | Models |
@@ -99,6 +111,18 @@ Unmeasured runs (8): 20261006-112201-new-client-fb9a, 20261007-172152-wp-check-1
 | discovery:audit | 0 of 2 | 0 | $0.00 |
 | discovery:reconcile | 0 of 2 | 0 | $0.00 |
 | discovery:signoff | 0 of 1 | 0 | $0.00 |
+
+### Cost by agent
+
+_main = the stage chat itself; every other row is a subagent, named by its agent type._
+
+| Agent | Runs | Transcripts | Tokens | USD | Models |
+|---|---|---|---|---|---|
+| build | 60 | 67 | 265,223,585 | $105.56 | claude-opus-5-5 $105.56 |
+| main | 66 | 66 | 44,213,879 | $7.39 | claude-opus-5-5 $6.34, claude-haiku-4-5-20251001 $0.70, claude-haiku-5-5 $0.35 |
+| researcher | 6 | 11 | 19,186,430 | $5.94 | claude-sonnet-5-5 $5.94 |
+| brief-writer | 1 | 11 | 5,508,547 | $3.06 | claude-sonnet-5-5 $3.06 |
+| clerk | 3 | 3 | 259,505 | $0.05 | claude-haiku-4-5-20251001 $0.05, claude-haiku-5-5 $0.00 |
 
 ### Ten dearest runs
 

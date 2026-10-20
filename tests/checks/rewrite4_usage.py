@@ -52,11 +52,37 @@ def t_usage_measured(h):
             abs(opus.get("usd", 0) - 0.032) < 1e-6 and abs(u["by_model"]["claude-haiku-5-5-20260101"]["usd"] - 0.6) < 1e-6
             and abs(u["usd"] - 0.632) < 1e-6, out)
     h.check("usage: a model with no price is flagged, never silently $0", u.get("unpriced") == ["claude-mystery-9"], out)
+    h.check("usage: plain --json leaves out the agent split", "by_agent" not in u, out)
+    # Phase 4: the per-agent split — main chat vs each subagent, named by agentType in its .meta.json
+    (proj / sid / "subagents" / "agent-1.meta.json").write_text(json.dumps({"agentType": "build"}))
+    (proj / sid / "subagents" / "agent-2.jsonl").write_text(
+        _msg(_z(inside), "b1", "claude-sonnet-5-5", i=1_000_000) + "\n")   # no meta file → "subagent"
+    (proj / sid / "subagents" / "agent-3.jsonl").write_text(
+        _msg(_z(outside), "c1", "claude-sonnet-5-5", i=1_000_000) + "\n")   # outside the run → not counted at all
+    (proj / sid / "subagents" / "agent-3.meta.json").write_text(json.dumps({"agentType": "researcher"}))
+    code, out = h.sh(f"{env} python3 scripts/usage.py run {S} 20261001-100000-build-aaaa --json --by-agent")
+    u = json.loads(out) if code == 0 else {}
+    ag = u.get("by_agent") or {}
+    h.check("usage --by-agent: the main chat and each subagent type are split, priced, with their transcript count",
+            set(ag) == {"main", "build", "subagent"} and abs(ag["main"]["usd"] - 0.032) < 1e-6
+            and abs(ag["build"]["usd"] - 0.6) < 1e-6 and abs(ag["subagent"]["usd"] - 2.0) < 1e-6
+            and ag["build"]["transcripts"] == 1 and ag["main"]["transcripts"] == 1, out)
+    h.check("usage --by-agent: the agents add up to the run total", abs(sum(a["usd"] for a in ag.values()) - u["usd"]) < 1e-6,
+            out)
+    code, out = h.sh(f"{env} python3 scripts/usage.py run {S} 20261001-100000-build-aaaa --by-agent")
+    h.check("usage --by-agent: the text view lists each agent", code == 0 and "by agent" in out and "build: 1 transcript(s)" in out,
+            out)
+    code, out = h.sh(f"{env} python3 scripts/usage.py client {S} --by-agent")
+    h.check("usage client --by-agent: totals per agent across runs", code == 0 and "by agent" in out and "subagent" in out
+            and "researcher" not in out, out)
+    code, out = h.sh(f"{env} python3 scripts/usage.py baseline {S}")
+    h.check("usage: the baseline has a cost-by-agent table", code == 0 and "### Cost by agent" in out and "| build | 1 | 1 |" in out,
+            out)
     code, out = h.sh(f"{env} python3 scripts/usage.py run {S} 20261001-120000-wp-check-bbbb")
     h.check("usage: a run with no session id is 'no data', not $0", code == 1 and "no data" in out, out)
     code, out = h.sh(f"{env} python3 scripts/usage.py client {S}")
     h.check("usage: client view totals the runs by stage", code == 0 and "build-plan" not in out and "batches" in out
-            and "$0.63" in out, out)
+            and "$2.63" in out, out)   # $0.63 + the unnamed subagent's $2.00
     code, out = h.sh(f"{env} python3 scripts/usage.py baseline {S}")
     h.check("usage: the baseline file is rendered from the runs",
             code == 0 and "### Cost per stage" in out and "20261001-100000-build-aaaa" in out and "Unmeasured runs (1)" in out, out)
@@ -85,6 +111,7 @@ def t_usage_finish_fills(h):
     h.check("usage finish: --tokens/--cost are filled from the transcripts and recorded per model",
             spend.get("measured") and spend.get("tokens") == 1_100_000 and abs(spend.get("usd", 0) - 3.0) < 1e-6
             and "claude-sonnet-5-5" in spend.get("by_model", {}), (out, spend))
+    h.check("usage finish: the run's cost by agent is recorded", spend.get("by_agent") == {"main": 3.0}, spend)
     log = (SB / f"clients/{S}/log.md").read_text()
     h.check("usage finish: the log's Spend line says it was measured", "Spend: 1100000 tokens · $3.00 (measured)" in log, out)
     status_md = (SB / f"clients/{S}/STATUS.md").read_text()

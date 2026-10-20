@@ -95,7 +95,9 @@ in `~/.claude/projects/<project>/<session>.jsonl` and `<session>/subagents/*.jso
 - **Per-agent cost split first** (Phase 0 follow-up): `usage.py run|client --by-agent` splits each run's cost by
   the main chat and each subagent transcript (`<session>/subagents/*.jsonl`, named by agent type where the transcript
   says so), and the baseline gains a "cost by agent" table. It decides whether the Sonnet test or a cheaper
-  coordinator saves more.
+  coordinator saves more. **Built 2026-10-20 — result:** the `build` subagent (Opus) is $105.56 of Apex's $122.00
+  and $22.55 of HMM's $29.28; the main chat is $7.39 and $1.28. The writer's model and context are where the money
+  is — the Sonnet drafting test and the brief-free route come first; a cheaper coordinator saves at most ~$9.
 - **No brief step.** The outline (element order from the spec, H2s, FAQ picks, links, the claims list) is
   **derived by a script at draft time** from the approved site-plan row + the spec — the approved plan file does not
   change, so HMM's approved site plan stays valid (no re-approval). The draft is written from that outline + evidence

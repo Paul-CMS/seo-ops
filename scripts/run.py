@@ -488,7 +488,10 @@ def main():
                                                           m: {"usd": r["usd"], "in": r["input"], "out": r["output"],
                                                               "cache_read": r["cache_read"],
                                                               "cache_write": r["cache_write_5m"] + r["cache_write_1h"]}
-                                                          for m, r in measured["by_model"].items()}} if measured else {})})
+                                                          for m, r in measured["by_model"].items()},
+                                                          "by_agent": {ag: round(r["usd"], 4) for ag, r in
+                                                                       (measured.get("by_agent") or {}).items()}}
+                                                         if measured else {})})
             S.save(a.slug, stx)
         st = S.load(a.slug)
         (st.get("open_runs") or {}).pop(a.run_id, None)
