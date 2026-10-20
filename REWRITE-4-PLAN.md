@@ -1,6 +1,6 @@
 # Rewrite 4 — smaller, cheaper, entity-first (implementation plan)
 
-**Status:** APPROVED by Paul, 2026-10-20, with all six §1 defaults (D1–D6). Nothing below is built yet. Each
+**Status:** APPROVED by Paul, 2026-10-20, with all six §1 defaults (D1–D6). Phase 0 built (4ae11e3); Phase 4 next. Each
 phase runs in its own `/system` session, in order, starting with Phase 0. Phases marked **design** run on Opus; the rest on Sonnet, from
 this file as the written spec (CLAUDE.md → models).
 
@@ -91,10 +91,18 @@ in `~/.claude/projects/<project>/<session>.jsonl` and `<session>/subagents/*.jso
 - **Done when:** the audit re-run on HMM's saved data reproduces its 36 decided 301s and the reviewer's 7
   withdrawals, at a measured fraction of the Phase 0 baseline.
 
-### Phase 4 — Slim build (design, Opus; needs D2, D5)
-- **No brief step.** The site-plan row carries the outline (element order from the spec, H2s, FAQ picks, links, the
-  claims list). The draft is written from plan row + evidence pack + spec + pilot corrections, one fresh subagent per
-  page (CM-043 holds). Steps become: drafts → draft review → ship. One review sheet and one approval per section.
+### Phase 4 — Slim build (design, Opus; needs D2, D5) — runs SECOND, right after Phase 0 (Paul, 2026-10-20)
+- **Per-agent cost split first** (Phase 0 follow-up): `usage.py run|client --by-agent` splits each run's cost by
+  the main chat and each subagent transcript (`<session>/subagents/*.jsonl`, named by agent type where the transcript
+  says so), and the baseline gains a "cost by agent" table. It decides whether the Sonnet test or a cheaper
+  coordinator saves more.
+- **No brief step.** The outline (element order from the spec, H2s, FAQ picks, links, the claims list) is
+  **derived by a script at draft time** from the approved site-plan row + the spec — the approved plan file does not
+  change, so HMM's approved site plan stays valid (no re-approval). The draft is written from that outline + evidence
+  pack + spec + pilot corrections, one fresh subagent per page (CM-043 holds). Steps become: drafts → draft review →
+  ship. One review sheet and one approval per section; the Brand Guide write-back moves to the draft approval.
+- **In flight (D5):** a section whose briefs are already approved (HMM services) finishes on the old route; every
+  section with no approved briefs (HMM locations and later) takes the new route. `migrate` marks which is which.
 - **Pilot rule** (CM-061 §9): add "no pilot once the specs and writing rules are unchanged across the last 3
   clients' pilots with no corrections" (HMM's pilot: no corrections).
 - **Sonnet drafting test**: run the existing `model:build:draft=sonnet` test on HMM's locations section; Paul compares
@@ -102,8 +110,10 @@ in `~/.claude/projects/<project>/<session>.jsonl` and `<session>/subagents/*.jso
 - **Writer-facing fact states**: the pack shows three states — confirmed · sourced public · unknown (→ `[NEED]`).
   The eight statuses stay inside `facts.json`; usage tiers are applied by `evidence_pack.py`, not by the writer.
 - Trim `build.md` (28 KB) to the remaining steps; target under 12 KB.
-- **Done when:** HMM's locations section goes from approved plan to shipped drafts with one review sheet and one
-  approval line.
+- **Done when:** the tests run an HMM locations dry run from the approved plan to the draft review sheet with no
+  brief step; then Paul runs HMM locations in its client session, ending in one review sheet and one approval line,
+  and `usage.py` shows its cost per page against the Apex brief + draft baseline ($77.41 for its services and
+  locations).
 
 ### Phase 5 — Finish folds into the plan (design, Opus)
 - `scripts/wheel.py`: the Bradley link wheel from the site plan (service ↔ every location, hub ↔ its cities,
@@ -134,8 +144,11 @@ in `~/.claude/projects/<project>/<session>.jsonl` and `<session>/subagents/*.jso
   inside its script.
 - Target: each agent file under 12 KB; each step's read list under 30 KB. Measured with `usage.py` against Phase 0.
 
-Order and dependencies: 0 → 1 → 2 → 3 → 4 → 5 (6 can run any time after 1; 7 last). Phase 4 should not start
-mid-section for a live client.
+Order and dependencies (reordered by Paul, 2026-10-20, from the Phase 0 baseline): **0 ✓ → 4 → 1 → 2 → 3 → 5**
+(6 can run any time after 1; 7 last). Why: briefs + drafts were $77.41 of Apex's $122.00 measured, and HMM's
+locations section is next; the audit is a small share of measured spend (its discovery and audit runs predate the
+transcripts on this Mac, so its true cost is measured on the next client). Phase 4 should not start mid-section for
+a live client.
 
 ---
 
