@@ -4,9 +4,10 @@ Agents never type a rendered file; to change one, change the register row and re
 
     render.py manifest  <slug> [--run R]   Evidence Manifest        ← 00-manifest.csv + 00-crosschecks.md + step outcomes
     render.py urlmap    <slug> [--run R]   URL Decision Map view     ← url-decision-map.csv
-    render.py findings  <slug> [--run R]   Finding Register view     ← findings.csv (latest revision of each finding)
-    render.py auditsheet <slug> [--run R]  the audit review sheet    ← the two registers: what Paul decides, what is listed
-    render.py blockers  <slug> [--run R]   Technical Blocker Checklist ← findings.csv + the blocker handoffs
+    render.py auditsheet <slug> [--run R]  the audit review sheet    ← audit-review.json (review.py sheet <slug> audit);
+                                                                       before it exists, a preview from the two registers
+    render.py blockers  <slug> [--run R]   Technical Blocker Checklist ← findings.csv (CM-061 severity) + the blocker
+                                                                       handoffs — written at the audit (S16)
     render.py siteplan  <slug> [--run R]   site plan view            ← the plan JSON (build/site-plan*.plan.json)
     render.py status    <slug>             STATUS.md and the living records (records.py)
     render.py all       <slug> [--run R]   every one of these whose source file exists
@@ -15,7 +16,10 @@ Agents never type a rendered file; to change one, change the register row and re
 
 Audit files are written to clients/<slug>/audit/<date>/deliverables/, build files to clients/<slug>/build/, named
 "<Client> - <Artifact> - REVIEW.md" (naming-convention.md). Free, offline, deterministic: the same sources always
-give the same file. With --run each render is recorded as one change in the safety log. A file an approval covers is never rendered over
+give the same file. With --run each render is recorded as one change in the safety log.
+The audit's deliverables (Rewrite 4 Phase 3) are its registers (CSV) + the audit review sheet + the Evidence Manifest:
+there is no Recommendations document and no Markdown Finding Register (the audit is internal; the client sees only the
+questions they need to confirm, client-questions.csv). A file an approval covers is never rendered over
 (that would void the approval): --out looks at a new version, --force is for when Paul asked for the revision.
 """
 import argparse
@@ -27,8 +31,7 @@ from pathlib import Path
 import status as S
 from lib import ROOT, client_dir, die, now, read_json
 
-NAMES = {"manifest": "Evidence Manifest", "urlmap": "URL Decision Map", "findings": "Finding Register",
-         "auditsheet": "Audit Review Sheet", "blockers": "Technical Blocker Checklist", "siteplan": "Site Plan"}
+NAMES = {"manifest": "Evidence Manifest", "urlmap": "URL Decision Map", "auditsheet": "Audit Review Sheet", "blockers": "Technical Blocker Checklist", "siteplan": "Site Plan"}
 csv.field_size_limit(10 ** 8)
 
 
@@ -94,8 +97,17 @@ def out_path(slug, kind, st):
     return d / name
 
 
+SEVERITY = {"ask": "Ask", "fix and list": "Fix and list", "fix": "Fix",
+            "high": "Fix and list", "medium": "Fix and list", "low": "Fix"}   # High/Medium/Low: audits before CM-061
+
+
+def severity(r):
+    """The CM-061 severity of a finding row (Priority column); an older High/Medium/Low row maps onto it."""
+    return SEVERITY.get((r.get("Priority") or "").strip().lower(), "")
+
+
 def sev(r):
-    return {"High": 0, "Medium": 1, "Low": 2}.get(r.get("Priority", ""), 3)
+    return {"Ask": 0, "Fix and list": 1, "Fix": 2}.get(severity(r), 3)
 
 
 # ------------------------------------------------------------------ renderers (each returns (lines, [source files]))
@@ -168,27 +180,6 @@ def r_urlmap(slug, st):
     return out, [str(f.relative_to(ROOT))]
 
 
-def r_findings(slug, st):
-    a = need_audit(slug)
-    f = a / "findings.csv"
-    if not f.is_file():
-        die(f"{f.relative_to(ROOT)} is missing — the audit writes the Finding Register first")
-    rows = sorted(latest(read_csv(f)), key=lambda r: (sev(r), r["Finding ID"]))
-    out = head(st, NAMES["findings"], ["findings.csv"], "Latest revision of each finding (CM-028 severity).")
-    pr = {}
-    for r in rows:
-        pr[r.get("Priority", "?")] = pr.get(r.get("Priority", "?"), 0) + 1
-    out += [f"{len(rows)} finding(s): " + " · ".join(f"{n} {k}" for k, n in sorted(pr.items(), key=lambda kv: sev({'Priority': kv[0]}))), ""]
-    for p in ("High", "Medium", "Low"):
-        grp = [r for r in rows if r.get("Priority") == p]
-        if grp:
-            out += [f"## {p}", ""] + table(["ID", "Where", "Observation", "Evidence", "Recommendation", "Owner", "Status"],
-                                           [[r["Finding ID"], (r.get("Affected URL / Entity", ""), 80), (r.get("Observation", ""), 260),
-                                             (r.get("Evidence / Locator", ""), 120), (r.get("Recommendation", ""), 200),
-                                             r.get("Owner", ""), (r.get("Status", ""), 40)] for r in grp]) + [""]
-    return out, [str(f.relative_to(ROOT))]
-
-
 def _paul_rows(urlrows):
     return [r for r in urlrows if re.search(r"redirect|needs evidence|merge|consolidat", r.get("Proposed Action", ""), re.I)
             and not (r.get("Paul Decision") or "").strip()]
@@ -196,6 +187,9 @@ def _paul_rows(urlrows):
 
 def r_auditsheet(slug, st):
     a = need_audit(slug)
+    js = a / "audit-review.json"
+    if js.is_file():
+        return _auditsheet_json(slug, st, a, js)
     fr, ur = a / "findings.csv", a / "url-decision-map.csv"
     if not (fr.is_file() and ur.is_file()):
         die("the audit review sheet needs findings.csv and url-decision-map.csv — the audit writes both first")
@@ -229,30 +223,74 @@ def r_auditsheet(slug, st):
     return out, [str(fr.relative_to(ROOT)), str(ur.relative_to(ROOT))]
 
 
+def _auditsheet_json(slug, st, a, js):
+    """The audit's one review sheet (review.py sheet <slug> audit) as Markdown: Paul's Asks, the client's questions,
+    what was decided by default. Answer in audit-review.csv or in one line; review.py apply records it."""
+    data = read_json(js, {}) or {}
+    rows = data.get("rows") or []
+    asks = [r for r in rows if r.get("severity") == "ask" and not (r.get("_finding") or {}).get("client")]
+    client = [r for r in rows if (r.get("_finding") or {}).get("client")]
+    listed = [r for r in rows if r.get("severity") == "fix_and_list"]
+    out = head(st, NAMES["auditsheet"], ["audit-review.json", "redirect-screen.csv", "audit step outcomes"])
+    out += ["One sheet, one approval line (CM-061). Answer in `audit-review.csv` (an empty answer accepts the recommended "
+            "option) or in one line: \"accept all\" or \"accept all except 3b\". Fix rows are not here: they are the "
+            "Technical Blocker Checklist, handed to the VA once the audit is approved.", "",
+            f"## Questions for Paul ({len(asks)})", ""]
+    kinds = {"1": "URL decision", "2": "legal or money claim", "3": "client fact", "4": "conflict"}
+    out += table(["#", "Kind", "Where", "What", "Why it matters", "Options", "Recommended"],
+                 [[r["id"], kinds.get(r.get("kind"), r.get("kind")), (r.get("url") or r.get("page"), 90), (r["finding"], 200),
+                   (r.get("plain_why", ""), 160), (r.get("options", ""), 200), f"**{r.get('recommended', '')}**"] for r in asks]) \
+        if asks else ["_None._"]
+    out += ["", f"## For the client to confirm ({len(client)}) — `client-questions.csv`, sent by Paul", "",
+            "The only part of the audit the client sees. A client answer is never taken by default.", ""]
+    out += table(["#", "Question", "Best answer found", "Searched"],
+                 [[r["id"], (r["finding"], 260), (r.get("options", ""), 120), ((r.get("_finding") or {}).get("searched", ""), 160)]
+                  for r in client]) if client else ["_None._"]
+    out += ["", f"## Decided for you ({len(listed)}) — change any by naming its number", ""]
+    out += [f"- **{r['id']}.** {r['page']} · {cell(r['item'], 60)}: {cell(r['finding'], 160)} → **{cell(r['decided_for_you'], 200)}**"
+            for r in listed] or ["_None._"]
+    sc = a / "redirect-screen.csv"
+    if sc.is_file():
+        rs = read_csv(sc)
+        out += ["", "## Redirect pre-screen (CM-019 C1–C3, `pagedec.py screen`)", "",
+                " · ".join(f"{sum(r['result'] == x for r in rs)} {x}" for x in ("pass", "fail", "needs evidence"))
+                + f" of {len(rs)} URL(s). A `fail` URL is never redirected."]
+    out += ["", f"_Fix rows (to the blocker checklist): {data.get('fixes', 0)}. Not raised (duplicate or already answered): "
+                f"{len(data.get('dropped') or [])}._"]
+    have = st.get("audit_steps") or {}
+    import steps
+    gaps = [r["id"] for r in steps.registry() if r["id"] not in have and r["id"] not in steps.OPTIONAL]
+    out += ["", "## Evidence", "", "Every registered step has an outcome." if not gaps else
+            "**Steps with no outcome yet: " + ", ".join(gaps) + "** — the audit cannot be approved until each is Done, Skipped or Failed."]
+    return out, [str(js.relative_to(ROOT))]
+
+
 def r_blockers(slug, st):
+    """S16 writes it at the audit (Rewrite 4 Phase 3); Build's blockers step only issues the handoff."""
     a = need_audit(slug)
     f = a / "findings.csv"
     if not f.is_file():
         die("the checklist is built from the audit's findings.csv — the audit writes it first")
-    finds = sorted(latest(read_csv(f)), key=lambda r: (sev(r), r["Finding ID"]))
-    out = head(st, NAMES["blockers"], ["findings.csv", "status.json (blocker handoffs)"],
-               "Severity scale: CM-028.")
-    out += ["\"Blockers cleared\" is a condition: it is met when the VA returns every blocker handoff `done` and `/verify` "
-            "passes every row. Nobody approves it.", ""]
-    high = [r for r in finds if r.get("Priority") == "High"]
-    va = [r for r in finds if re.search(r"jonie|gwen|\bva\b", r.get("Owner", ""), re.I) and r.get("Priority") != "High"]
-    other = [r for r in finds if r not in high and r not in va]
-    out += [f"## 1 · High findings ({len(high)})", "", "Fixed by a page rebuild, the structural step or the Blog Decision "
-            "Map unless the owner column names the VA.", ""]
+    finds = [r for r in sorted(latest(read_csv(f)), key=lambda r: (sev(r), r["Finding ID"]))
+             if not re.search(r"withdrawn|superseded", r.get("Status", ""), re.I)]
+    out = head(st, NAMES["blockers"], ["findings.csv", "status.json (blocker handoffs)"], "Severity: CM-061.")
+    out += ["Written at the audit (S16). \"Blockers cleared\" is a condition: it is met when the VA returns every blocker "
+            "handoff `done` and `/verify` passes every row. Nobody approves it.", ""]
+    fix = [r for r in finds if severity(r) == "Fix"]
+    listed = [r for r in finds if severity(r) == "Fix and list"]
+    asks = [r for r in finds if severity(r) == "Ask"]
+    out += [f"## 1 · Fix — the VA's handoff ({len(fix)})", "", "Form and technical hygiene with no content decision: one "
+            "blocker handoff (`handoff.py create --blockers`) once the audit is approved.", ""]
+    out += table(["ID", "Issue", "Affected", "Fix", "Owner"], [[r["Finding ID"], (r.get("Observation", ""), 200),
+                 (r.get("Affected URL / Entity", ""), 120), (r.get("Recommendation", ""), 160), r.get("Owner", "")]
+                 for r in fix]) if fix else ["_None._"]
+    out += ["", f"## 2 · Fix and list — fixed by the page rebuild or the structural step ({len(listed)})", ""]
     out += table(["ID", "What breaks", "Pages", "Fixed by"], [[r["Finding ID"], (r.get("Observation", ""), 200),
                  (r.get("Affected URL / Entity", ""), 100), (r.get("Owner", "") + " — " + r.get("Recommendation", ""), 200)]
-                 for r in high]) if high else ["_None._"]
-    out += ["", f"## 2 · Handed to the VA ({len(va)})", ""]
-    out += table(["ID", "Issue", "Affected", "Owner", "Status"], [[r["Finding ID"], (r.get("Observation", ""), 200),
-                 (r.get("Affected URL / Entity", ""), 120), r.get("Owner", ""), (r.get("Status", ""), 40)] for r in va]) if va else ["_None._"]
-    out += ["", f"## 3 · Everything else ({len(other)})", ""]
-    out += table(["ID", "Priority", "Where it goes", "Owner"], [[r["Finding ID"], r.get("Priority", ""),
-                 (r.get("Recommendation", ""), 200), r.get("Owner", "")] for r in other]) if other else ["_None._"]
+                 for r in listed]) if listed else ["_None._"]
+    out += ["", f"## 3 · Waiting on an Ask in the audit review sheet ({len(asks)})", ""]
+    out += table(["ID", "Question", "Owner"], [[r["Finding ID"], (r.get("Observation", ""), 200), r.get("Owner", "")]
+                 for r in asks]) if asks else ["_None._"]
     hs = st.get("blocker_handoffs") or []
     ids = list(hs) if isinstance(hs, (list, tuple)) else list(hs)
     out += ["", "## 4 · Blocker handoffs", ""]
@@ -282,7 +320,7 @@ def r_siteplan(slug, st):
     return out, [str(p.relative_to(ROOT))]
 
 
-RENDERERS = {"manifest": r_manifest, "urlmap": r_urlmap, "findings": r_findings, "auditsheet": r_auditsheet,
+RENDERERS = {"manifest": r_manifest, "urlmap": r_urlmap, "auditsheet": r_auditsheet,
              "blockers": r_blockers, "siteplan": r_siteplan}
 
 

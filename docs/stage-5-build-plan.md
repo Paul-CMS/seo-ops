@@ -6,7 +6,7 @@ Session model: Haiku · agents: build (Opus), researcher (Sonnet).
 
 | Step | Command | Ends at |
 |---|---|---|
-| Technical blockers — one handoff to Jonie (worklist section 2); never holds up writing, gates release only | `/build blockers` + `/verify` | condition **blockers_cleared** |
+| Technical blockers — the audit wrote the checklist (S16); this issues one handoff to Jonie (worklist section 2) as soon as the audit is approved (D3); never holds up writing, gates release only | `/build blockers` + `/verify` | condition **blockers_cleared** |
 | **Site plan** — every service, location and hub page in one pass; URL check (P7), competitor coverage | `/build plan` | **site_plan** |
 | **One facts round** for every page (P10): grids, the researcher clears public facts, reviews attached, one question set grouped by fact | `/build facts` | answers recorded once (`run.py fact`) |
 

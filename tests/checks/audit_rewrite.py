@@ -1,5 +1,5 @@
 """Audit rewrite (#12, #13, R5): ingest takes the data/ outputs into the manifest, the three new
-crawl cross-checks (host form, orphan candidates, sitemap), one scorecard file per page type in
+crawl cross-checks (host form, orphan candidates, sitemap), S15 as triage (CM-063, no scorecards) in
 the audit procedure, and scripts/grid_pdf.py (Local Dominator PDFs read once into a summary).
 
 Run alone: python3 tests/run_all.py -k audit_rewrite
@@ -171,22 +171,22 @@ def t_crosschecks(h):
     h.check("--sitemap FILE is used when the client has none", "[CONFIRMED] Sitemap" in md4, out + md4[-500:])
 
 
-# ------------------------------------------------------------------ #13 scorecards
+# ------------------------------------------------------------------ #13 scorecards → CM-063 triage
 def t_scorecards_per_type(h):
     sk = h.SB / ".claude/skills/seo-technical-audit"
     texts = {"SKILL.md": (sk / "SKILL.md").read_text(),
              "analysis-rules.md": (sk / "references/analysis-rules.md").read_text(),
              "review-selfcheck.md": (sk / "references/review-selfcheck.md").read_text(),
-             "audit-reviewer.md": (h.SB / ".claude/agents/audit-reviewer.md").read_text()}
-    types = ("homepage", "service", "location", "county", "about", "blog")
-    h.check("the audit procedure and the reviewer expect one scorecard file per page type",
-            "scorecard-<type>.csv" in texts["SKILL.md"]
-            and all(f"scorecard-{t}.csv" in texts["analysis-rules.md"] for t in types)
-            and all(f"scorecard-{t}.csv" in texts["audit-reviewer.md"] for t in types)
-            and "one file per page type" in texts["review-selfcheck.md"],
+             "audit-reviewer.md": (h.SB / ".claude/agents/audit-reviewer.md").read_text(),
+             "discovery-audit.md": (h.SB / ".claude/agents/discovery-audit.md").read_text()}
+    h.check("CM-063: S15 is triage — no audit doc asks for a scorecard file (per type or combined)",
+            not any(x in v for v in texts.values() for x in ("scorecard-<type>.csv", "scorecard-homepage.csv",
+                                                                "conformance-scorecard.csv", "scorecard.csv`")),
             {k: "scorecard-" in v for k, v in texts.items()})
-    h.check("no audit doc asks for a single combined scorecard",
-            not any("conformance-scorecard.csv" in v or "scorecard.csv`" in v for v in texts.values()))
+    h.check("CM-063: the procedure names the triage and the screen, the reviewer its scope script",
+            "conformance.py triage" in texts["SKILL.md"] and "pagedec.py screen" in texts["SKILL.md"]
+            and "review.py scope" in texts["audit-reviewer.md"] and "review.py scope" in texts["review-selfcheck.md"]
+            and not (sk / "references/gate-b-questions.md").exists())
 
 
 # ------------------------------------------------------------------ R5 grid_pdf.py

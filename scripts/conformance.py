@@ -2,8 +2,16 @@
 """conformance.py — score every spec check that needs no judgment (rewrite 2 P12: mechanical checks off Opus).
 
     conformance.py <slug> [--crawl-date YYYY-MM-DD]
-    conformance.py judge <slug> --run R [--confirmed]   the judgment checks for the KEPT pages on the Claude API
-                                                         (llm.py conformance-judge, Sonnet — Rewrite 4 Phase 2)
+    conformance.py judge <slug> --run R [--confirmed]   the judgment checks for the pages Build will NOT rewrite, on
+                                                         the Claude API (llm.py conformance-judge, Sonnet — Phase 2)
+    conformance.py triage <slug> [--run R]              S15 triage (Rewrite 4 Phase 3): one column in the URL Decision
+                                                         Map, "Conformance Triage" = rebuild / light fix / keep
+
+S15 is triage, not a scorecard (Rewrite 4 Phase 3). A page Build rewrites (service, location, county hub and about pages
+the map improves or creates) is `rebuild` and is never spec-scored. Only the pages Build will not rewrite are scored in
+full — blog posts, kept utility pages (auto checks only: they have no spec), Route B pages and the homepage under the H1
+lock (HP-08) — and become `light fix` (a failed check) or `keep`. Redirected and held URLs get no triage. There are no
+per-type scorecard files.
 
 Reads the crawl tables (inputs/crawl/*internal_all*, *h1_all*, *h2_all*), the page-text capture
 (data/crawl/page-text.csv, if any), the site plan / page register (status.json pages) and facts.json (brand name,
@@ -11,8 +19,8 @@ phone). Which checks are auto is listed in methodology/specs/check-kinds.json; e
 left for the audit agent. Writes clients/<slug>/audit/conformance.csv (page, type, check, result PASS|FAIL|N/A,
 detail) and conformance.md (a summary per page type). Free, offline, deterministic.
 
-`judge` (S15, after the URL Decision Map exists): every page the map keeps (Proposed Action "Keep…", never a 301 row)
-whose type has a spec is scored on the spec's judgment checks — every check the spec lists that is not auto — from the
+`judge` (S15, after the URL Decision Map exists): every page in the scoring set (triage 'score', see above) whose type
+has a spec is scored on the spec's judgment checks — every check the spec lists that is not auto — from the
 crawl's title, meta, H1, H2s and the page-text capture, in one llm.py job. Writes audit/conformance-judgment.csv (page,
 url, type, check, result PASS|FAIL|NE|N/A, detail, who) and adds "## Judgment checks (kept pages)" to conformance.md.
 The audit agent reads the file instead of scoring those pages itself. No API key: nothing is written; the agent scores
@@ -134,20 +142,115 @@ def judgment_checks(spec):
     return out
 
 
-def kept_pages(slug):
-    """[(url, page_type, spec)] from the newest URL Decision Map: rows kept as they are (not 301 rows)."""
+# ------------------------------------------------------------------ S15 triage (Rewrite 4 Phase 3)
+TRIAGE_COL = "Conformance Triage"
+REBUILT = ("service.md", "location.md", "county-hub.md", "about.md")
+
+
+def _map_file(slug):
     maps = sorted((client_dir(slug) / "audit").glob("*/url-decision-map.csv"))
-    if not maps:
+    return maps[-1] if maps else None
+
+
+def _route_b(st):
+    return {norm_url(p.get("url")) for p in st["pages"].values()
+            if p.get("url") and str(p.get("route") or "").strip().upper() in ("B", "ROUTE B")}
+
+
+def triage_class(row, st, route_b=frozenset()):
+    """(class, why) for one URL Decision Map row: 'rebuild' (Build rewrites it — never spec-scored), 'score' (Build will
+    not rewrite it: blog posts, kept utility pages, Route B pages, the homepage under the H1 lock HP-08 — scored in
+    full, then light fix or keep), or None (the URL is going or held: a 301, a merge, an existing 301, a held URL)."""
+    import pagedec
+    act = re.sub(r"\s+", " ", (row.get("Proposed Action") or "").strip().lower())
+    spec = spec_for(row.get("Page Type"))
+    if not row.get("Current URL") or pagedec.destructive(act) or re.match(r"^(keep (existing )?301|hold)\b", act) \
+            or "301" in (row.get("Page Type") or ""):
+        return None, "the URL is redirected or held — not scored"
+    if norm_url(row["Current URL"]) in route_b or "route b" in act:
+        return "score", "Route B — Paul writes it; Build lists issues only"
+    if spec == "homepage.md":
+        return ("rebuild", "the H1 lock was lifted (CM-059)") if st["client"].get("h1_lock_lifted") else \
+            ("score", "homepage under the H1 lock (HP-08) — kept, scored in full")
+    if spec in REBUILT and re.match(r"^(improve|rebuild|create)\b", act):
+        return "rebuild", "Build rewrites it to its spec"
+    if spec == "blog-post.md":
+        return "score", "blog post — Build does not rewrite it"
+    return "score", ("kept " + ("page with a spec" if spec else "utility page (auto checks only)"))
+
+
+def scoring_set(slug):
+    """[(url, page_type, spec)] — the pages scored in full (triage 'score' with a spec); None before the map exists."""
+    f = _map_file(slug)
+    if not f:
         return None
-    with open(maps[-1], newline="", encoding="utf-8-sig") as fh:
-        rows = list(csv.DictReader(fh))
-    out = []
-    for r in rows:
-        act = (r.get("Proposed Action") or "").strip().lower()
+    import pagedec
+    st = S.load(slug)
+    rb = _route_b(st)
+    out, seen = [], set()
+    for r in pagedec.map_rows(slug):
+        cls, _ = triage_class(r, st, rb)
         spec = spec_for(r.get("Page Type"))
-        if act.startswith("keep") and "301" not in act and spec and r.get("Current URL"):
+        if cls == "score" and spec and norm_url(r["Current URL"]) not in seen:
+            seen.add(norm_url(r["Current URL"]))
             out.append((r["Current URL"], r.get("Page Type"), spec))
     return out
+
+
+kept_pages = scoring_set   # Phase 2 name
+
+
+def _fails(path):
+    out = {}
+    if path.is_file():
+        with open(path, newline="", encoding="utf-8-sig") as fh:
+            for r in csv.DictReader(fh):
+                if r.get("result") == "FAIL":
+                    out.setdefault(norm_url(r.get("url") or r.get("page")), []).append(r["check"])
+    return out
+
+
+def triage(slug, run_id=None):
+    """S15 triage: one column in the URL Decision Map — rebuild / light fix / keep — written by this script alone.
+    A scored page with any failed check (auto: conformance.csv; judgment: conformance-judgment.csv) is 'light fix',
+    else 'keep'. Also writes audit/conformance-triage.csv (url, action, type, triage, why, failed checks)."""
+    f = _map_file(slug) or die(f"no URL Decision Map for {slug} yet — triage runs after S14 writes it", 4)
+    st = S.load(slug)
+    import render
+    if str(f.relative_to(ROOT)) in render.approved_paths(st):
+        die(f"{f.relative_to(ROOT)} is covered by an approval — the triage column is not added to an approved map", 4)
+    rb = _route_b(st)
+    d = client_dir(slug) / "audit"
+    fails = _fails(d / "conformance.csv")
+    for k, v in _fails(d / "conformance-judgment.csv").items():
+        fails.setdefault(k, []).extend(v)
+    with open(f, newline="", encoding="utf-8-sig") as fh:
+        rd = csv.DictReader(fh)
+        cols, rows = list(rd.fieldnames), list(rd)
+    if TRIAGE_COL not in cols:
+        cols.insert(cols.index("Proposed Action") + 1 if "Proposed Action" in cols else len(cols), TRIAGE_COL)
+    out, n = [], {}
+    for r in rows:
+        cls, why = triage_class(r, st, rb)
+        bad = sorted(set(fails.get(norm_url(r.get("Current URL")), []))) if cls == "score" else []
+        val = "" if cls is None else "rebuild" if cls == "rebuild" else ("light fix" if bad else "keep")
+        r[TRIAGE_COL] = val
+        n[val or "—"] = n.get(val or "—", 0) + 1
+        out.append({"url_id": r.get("URL ID", ""), "url": r.get("Current URL", ""), "action": r.get("Proposed Action", ""),
+                    "type": r.get("Page Type", ""), "triage": val, "why": why, "failed_checks": " ".join(bad)})
+    with open(f, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=cols)
+        w.writeheader()
+        w.writerows(rows)
+    with open(d / "conformance-triage.csv", "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(out[0]) if out else ["url_id"])
+        w.writeheader()
+        w.writerows(out)
+    if run_id:
+        import run as R
+        R.log_change(slug, run_id, "audit_triage", str(f.relative_to(ROOT)), TRIAGE_COL, "",
+                     ", ".join(f"{v} {k}" for k, v in sorted(n.items())), "DONE", channel="local")
+    return n
 
 
 def judge(slug, run_id, confirmed=False):
@@ -233,6 +336,18 @@ def main():
         ap.add_argument("slug"); ap.add_argument("--run", required=True); ap.add_argument("--confirmed", action="store_true")
         a = ap.parse_args(sys.argv[2:])
         judge(a.slug, a.run, a.confirmed)
+        return
+    if len(sys.argv) > 1 and sys.argv[1] == "triage":
+        import argparse
+        ap = argparse.ArgumentParser(prog="conformance.py triage")
+        ap.add_argument("slug"); ap.add_argument("--run")
+        a = ap.parse_args(sys.argv[2:])
+        if a.run:
+            import run as R
+            R.open_run(a.slug, a.run)
+        n = triage(a.slug, a.run)
+        print("S15 triage written to the URL Decision Map (Conformance Triage): "
+              + " · ".join(f"{v} {k}" for k, v in sorted(n.items())) + f" · clients/{a.slug}/audit/conformance-triage.csv")
         return
     if len(sys.argv) < 2:
         sys.exit(__doc__)

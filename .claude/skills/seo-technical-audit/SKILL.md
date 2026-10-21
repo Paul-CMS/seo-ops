@@ -1,238 +1,93 @@
 ---
 name: "seo-technical-audit"
-description: "Run a full technical and local SEO audit (the Analysis step) against a client's exports, then the Review self-check and recommendation package, following the GOV-02 Audit and Recommendations SOP. Use this whenever a technical SEO audit, site audit, crawl analysis, or audit recommendation package is requested for a local-business client; when Screaming Frog, site-auditor, citation tracker, Search Console or local grid exports need analyzing into findings; when someone mentions Analysis, Review, a finding register, a URL decision map, or an evidence manifest; or when an existing audit needs a self-check pass before it goes to the client. Produces an append-only finding register, reconciled inventories, a clarification question set routed to the VA or to Paul, and a rendered recommendation package. Stops at the client-confirmation boundary and implements nothing."
+description: "Run a full technical and local SEO audit (the Analysis step) against a client's exports, then the fresh-context review and the audit's one review sheet. Use this whenever a technical SEO audit, site audit, crawl analysis or audit review is requested for a local-business client; when Screaming Frog, site-auditor, citation tracker, Search Console or local grid exports need analyzing into findings; when someone mentions a finding register, a URL decision map, a redirect screen or an evidence manifest; or when an existing audit needs its fresh-context review. Produces an append-only finding register, the URL Decision Map, the audit review sheet and the client's confirm list. Implements nothing."
 ---
 
-# Technical SEO Audit — Analysis and Review
+# Technical SEO Audit — the slim audit (CM-063)
 
-Implements GOV-02 Analysis and Review. Intake is a prerequisite, not part of this skill;
-Client confirmation is the hard boundary.
+**This skill diagnoses and decides by default. It never implements.** No schema, no drafted titles or meta
+descriptions, no executable redirect rules, no content, no citation orders, no live changes. If an output could be
+pasted into a CMS and shipped, the boundary has been crossed.
 
-**This skill diagnoses and recommends. It never implements.** No schema, no drafted
-titles or meta descriptions, no executable redirect rules, no content, no citation
-orders, no live changes of any kind. If an output could be pasted into a CMS and
-shipped, the boundary has been crossed.
+**The scripts do the clerical and the mechanical work; you do only the judgment.** Rules live in
+`methodology/rulings.md` (cite IDs: `python3 scripts/rulings.py CM-…`, never the file whole). Standing configuration is
+in `methodology/agency-profile.md`: DataforSEO OnPage crawl (no JavaScript rendering) converted to Screaming
+Frog-shaped tables; missing rendered data is never a finding.
 
-## Step zero — the Agency Profile
+Read with this file: `references/finding-standard.md` (the record, severity, Asks) and `references/analysis-rules.md`
+(what to look at). Everything else in `references/` is background the scripts already apply.
 
-Before anything else, read the Agency Profile supplied with the evidence (or ask for it).
-It states the standing crawl configuration and tool stack, and it is what stops this skill
-re-deriving the same limitations on every audit.
+## Order of work
 
-In seo-ops the Agency Profile is `methodology/agency-profile.md`. Current standing
-configuration: **DataforSEO OnPage API crawl (basic mode, no JavaScript rendering), converted
-to Screaming Frog-shaped tables by `scripts/crawl.py`; free Screaming Frog (no rendering, no
-custom extraction, 500-URL cap) is the fallback.** The crawl's settings are in the
-`DFS - crawl-config` file next to the exports. None of these are findings — missing
-JavaScript-rendered data is never a finding. Record the configuration once in the evidence
-manifest and move on.
+| Step | Who | What |
+|---|---|---|
+| S12 | `pipeline.py <slug> inventory --phase audit` | ingest → cross-checks → auto conformance → **redirect screen** → Evidence Manifest |
+| S13 entity | you | the site against the Brand Guide: triple, NAP, brand search, supporting assets |
+| S14 architecture | you + `pagedec.py screen --check` | the URL Decision Map — every URL typed and decided |
+| S15 triage | `conformance.py triage` (+ `judge`) | rebuild / light fix / keep — no scorecards |
+| S16 technical | you + `render.py blockers` | technical findings; the Fix rows are the blocker checklist |
+| S17 review | `audit-reviewer` (fresh context) | `review.py scope <slug> audit` lists what it must open |
+| S18 sheet | `review.py sheet <slug> audit`, `render.py all` | the one review sheet; the client's confirm list |
 
-## Read first
+Read `00-crosschecks.md` first: anything `CONTRADICTED` blocks the related finding outright.
 
-- `references/authority-and-classification.md` — authority hierarchy, classification,
-  the publication gate, conflict records, rules in force. **Read this one first.**
-- `references/evidence-intake.md` — what to load, export fingerprints, readiness check
-- `references/reconciliation.md` — cross-checks and known tool defects
-- `references/finding-standard.md` — the finding record, classification, severity
-- `references/analysis-rules.md` — the nine categories, conformance scorecards, and the
-  rule IDs each category cites
-- `references/gate-b-questions.md` — the clarification stop
-- `references/review-selfcheck.md` — fresh-session review and package
+## S14 — the URL Decision Map
 
-**Rules live in `methodology/rulings.md`** (precedence: rulings > Bradley Standard >
-everything else). This skill and its references cite rule IDs (CM-###, RULE-###, BB-###)
-and never restate them. `authority-and-classification.md`, `analysis-rules.md` and
-`finding-standard.md` say which IDs apply where. Read them before writing any finding,
-not after.
+Read `redirect-screen.md`. For every URL the screen has already computed CM-019 conditions 1–3 from rankings,
+backlinks, GSC/GA4, the GBP website field and the citation domains:
+- **fail** → never a destructive candidate. Keep it live (`Improve`, `Keep`, or `Needs Evidence - keep live (fails C…)`),
+  never with a redirect label or a target.
+- **pass** → may be a redirect/merge candidate when the page has no place in the entity model; condition 4 (no leads)
+  is the client's and goes on the client list by itself (the sheet asks it once for all of them).
+- **needs evidence** → yours: find the missing evidence or keep it live.
 
-**Register alignment:** `findings.csv` and `url-decision-map.csv` use the exact column
-names and order of the Finding Register and URL Decision Map tabs in the Source and
-Control Register workbook, so rows paste straight in. Columns prefixed `ext_` are this
-skill's append-only additions and are dropped when pasting.
+Then decide what only judgment can: **entity mismatches** (a page for another area, a discontinued service, a
+duplicate entity), the target of each redirect, holds. Never delete, always 301 (CM-001). Blog redirects need observed
+conflict (CM-021). The map has a row for every page. Before S15: `python3 scripts/pagedec.py screen <slug> --check`
+must pass (it refuses every destructive row on a failing URL — the withdrawals HMM's reviewer had to make).
 
-**Document status:** only documents with status `APPROVED` or `PILOT` may be cited as
-operational rule. The Rule Register, Delta and GOV-06 are consolidated into
-`methodology/rulings.md` and in force there.
+## S15 — triage, not scorecards
 
----
+`python3 scripts/conformance.py judge <slug> --run <RUN_ID>` (the API scores the pages Build will not rewrite), then
+`python3 scripts/conformance.py triage <slug> --run <RUN_ID>` writes the `Conformance Triage` column. Pages Build
+rewrites are `rebuild` and are never scored. A `light fix` page's failed checks become findings (one finding per
+check, listing every page). With no API key, judge says so and you score the scoring set's judgment checks yourself
+into `audit/conformance-judgment.csv`, then run triage.
 
-## Phase 0 — Load, pin, check
+A live homepage H1 that fails HP-06 stays locked (HP-08) unless CM-059's three conditions hold: `h1lock.py check` and
+put its table to Paul as an Ask (kind 1; default: no H1 change).
 
-Load the methodology and guidelines file, the brand/truth file, the intake record (Client Control Record), and the evidence folder. Record versions in `README.md`.
+## Findings
 
-**If the methodology file is not found, stop.** An audit run on general SEO knowledge
-looks identical to one run on the client's methodology and is not the same thing.
+One row per issue in `findings.csv`, listing every affected URL, with an evidence locator — refuse, don't warn.
+Severity is CM-061's (`finding-standard.md`): **Fix** · **Fix and list** · **Ask**. Append-only: a correction is a new
+row with a higher `ext_revision`. Conflicts between sources go in `conflicts.csv` (PROC-01) and become kind-4 Asks.
 
-```bash
-python3 scripts/init_audit.py <client-slug>
-python3 scripts/ingest_evidence.py <evidence_dir> <audit_dir>   # evidence_dir = clients/<slug>/inputs/crawl
-python3 scripts/crosscheck.py   <evidence_dir> <audit_dir>
-```
+There is no clarification stop: a question becomes an Ask row in the one sheet. A public fact is never asked (the
+researcher looks it up); a client fact carries its `searched:` line (`ext_searched`) and goes to the client list.
 
-`ingest_evidence.py` fingerprints the crawl exports **and** takes the client's other evidence
-into the same manifest, one row per file: every data-step output under `clients/<slug>/data/`
-(reviews, rankings, backlinks, local grid, PAA, fan-out, citations, GSC — whatever exists) and
-the files under `clients/<slug>/inputs/` outside the crawl folder (SEOPress / WordPress settings,
-Local Dominator PDFs, the sitemap URL list, live-page captures). Do not hand-add rows for them.
-`crosscheck.py` also checks the crawl itself: **host consistency** (crawled URLs, canonicals and
-internal link targets on one http/https · www/bare form), **orphan candidates** (crawl or sitemap
-pages with zero internal inlinks) and **sitemap vs crawl** (sitemap URLs not crawled or non-200;
-indexable 200 pages missing from the sitemap). The sitemap check needs a sitemap URL list
-(`*sitemap*.txt` / `.xml` / `.csv` in `inputs/`); without one it is a LIMITATION.
+## S17 and S18
 
-**Local grid PDFs are never read directly** — `python3 scripts/grid_pdf.py <slug>` (repo root)
-extracts their text once and writes `data/local-grid/local-grid-summary.md`; read that.
-
-Fill the manifest's `tool_settings`, `date_window`, `geography_device` and `scope_limits`
-— the exports don't contain them and they decide whether findings are safe. Then run the
-readiness check from `evidence-intake.md`. It halts on four fatal conditions and
-otherwise records limitations and proceeds.
-
-Read `00-crosschecks.md` before anything else. **Anything marked `CONTRADICTED` blocks
-the related finding outright** — that is not advisory.
-
-**Never report our own tool constraints as defects.** Empty rendered columns, absent H2
-extraction and a ~500-URL crawl are our licence, not the site's problem. State them once in
-Assumptions and Limitations. A finding that would depend on rendered output is `Needs
-Evidence`.
-
-**Verify source titles against content.** The gap-prevention control loop requires it,
-and it has already failed once: three of the four Bradley transcripts in the Source
-Library are misnamed. Never cite a source by filename without opening it.
-
-## Analysis — Two passes
-
-GOV-02's §1–9 is a document structure, not an execution order. Dependencies run
-differently: architecture analysis built on a URL list that the technical pass is still
-changing produces findings that don't reconcile at the exit gate.
-
-**Pass 1 — Inventories.** URLs, services, locations, conversions, citations, backlinks.
-Enumeration only, no findings. Freeze the URL inventory before Pass 2.
-
-**Pass 2 — Reconcile, then analyze.** The reconciliation *is* the orphan and duplicate
-analysis — crawl vs sitemap vs GSC vs analytics vs backlinks vs GBP vs citations vs CMS.
-Then run the analysis categories against the frozen inventories, following
-`analysis-rules.md`, in this priority order:
-
-1. **Entity** — who the business is, what it provides, where (§3, §4)
-2. **Architecture** — the URL Decision Map (§5)
-3. **Page conformance** — every page scored against its spec in `methodology/specs/`
-   (`analysis-rules.md` §0): **one scorecard file per page type**,
-   `inventories/scorecard-<type>.csv` (`homepage`, `service`, `location`, `county`, `about`,
-   `blog`), never one combined file
-4. **Technical findings** (§1, §2, §8, §9)
-
-Every finding is a row in `findings.csv` with all fields populated. **Never write a
-finding without an evidence locator** — refuse, don't warn. That single control is what
-makes the register worth reviewing.
-
-Every finding carries a `Classification` (RULE-001) and a severity (CM-028). Check the
-**publication gate** (`authority-and-classification.md`; CM-009) on every destructive or
-spend recommendation and record it in `ext_publication_gate`. Destructive candidates:
-CM-001 / CM-019.
-
-Conflicts between sources go in `conflicts.csv` per PROC-01.
-
-Append-only: a correction is a new row that supersedes, never an edit in place.
-
-### Analysis exit gate
-
-- Every category complete, or `N/A` with rationale
-- URL, service, location, GBP, citation, backlink, conversion inventories reconcile
-- Every finding has evidence, classification, confidence, alternatives, risk,
-  recommendation
-- Nothing implemented, nothing purchased
-
-## Gate B — Clarification stop
-
-Raise a question **only** if the answer would change a finding's severity, change its
-direction, or determine whether a destructive recommendation is viable. Everything else
-is a row in Assumptions & Limitations, not a question.
-
-Two routes: **VA** for evidence integrity (was rendering on, was this filtered, is this
-the full set), **Paul** for scope and decisions. When Paul can't answer, he marks it
-`cannot answer — client` — it moves to the client-confirmation list and the blocked findings carry
-`client_confirmation_required` with confidence `Assumed`. The skill never asks the client
-directly.
-
-Eight per route, one batch, each stating the finding IDs it blocks, why the answer
-changes them, a proposed default, and the consequence of that default.
-
-**If nothing passes the trigger test, there is no gate — go straight to Review.** That
-is the expected outcome on clean evidence.
-
-If answers don't come back, proceed on the defaults, log each in `decisions.md`,
-downgrade the affected findings to `Assumed`, and surface every one in Assumptions &
-Limitations.
-
-**Record the Gate B outcome** (questions raised, or "no questions — gate skipped") in
-`decisions.md` before Review.
-
-## Review — Self-check and package
-
-**Run in a fresh context** (the `audit-reviewer` subagent). Load the register,
-inventories, manifest, cross-checks, decisions, answers, methodology and Intake record.
-Do **not** load the Analysis conversation or any narrative it wrote about its own
-reasoning — that re-imports the reasoning the review exists to challenge.
-
-Claude doing both analysis and review is the standing exception **CM-026**; `decisions.md`
-cites CM-026 rather than logging a new exception.
-
-For each High finding: re-derive from the evidence, state the strongest case
-that it's wrong, then run the challenge list in `review-selfcheck.md`. Confirm, revise
-by superseding row, or withdraw.
-
-Then render the package: executive summary, prioritized register, URL decision map,
-measurement plan, assumptions and limitations, change preview, Client confirmation
-client-confirmation list.
+The command runs the `audit-reviewer` on the registers only (CM-026). Then `python3 scripts/review.py sheet <slug>
+audit --run <RUN_ID>` and `python3 scripts/render.py all <slug> --run <RUN_ID>`. Deliverables: the registers (CSV),
+the audit review sheet and the Evidence Manifest — no Recommendations document, no Markdown register. The audit is
+internal; the client sees only `client-questions.csv`, sent by Paul.
 
 ## Working record
 
 ```
 clients/<slug>/audit/<date>/
-  README.md              state: stage, versions loaded, blocked on, handoffs
-  decisions.md           append-only: exceptions, defaults, N/As, deviations
-  00-manifest.csv        evidence manifest
-  00-crosschecks.md      cross-check results
-  00-unrecognised.md     exports that couldn't be fingerprinted
-  inventories/*.csv
-  inventories/scorecard-<type>.csv   one per page type: homepage, service, location, county, about, blog
-  findings.csv           append-only, one row per finding revision
-  url-decision-map.csv
-  questions/questions.csv
-  deliverables/          rendered per stage exit
+  decisions.md  00-manifest.csv  00-crosschecks.md  conflicts.csv
+  redirect-screen.csv/.md    the CM-019 screen (script)
+  findings.csv               append-only, one row per finding revision
+  url-decision-map.csv       + Conformance Triage (script column)
+  review-scope.csv           the reviewer's rows (script)
+  audit-review.csv/.json     the one review sheet; client-questions.csv
+  deliverables/              rendered: Evidence Manifest, URL Decision Map view, Audit Review Sheet
 ```
-
-CSV for registers because they get sorted, filtered and handed to people without Claude.
-Markdown for state and decisions because they're read, not queried.
-
-**Deliverables are rendered, never edited.** To change a recommendation, change the
-finding row and re-render. Editing a deliverable directly makes the record and the
-deliverable diverge, and reproducibility is the property the whole SOP rests on.
-
-`decisions.md` is the traceability spine — every Paul Exception, rule ID cited for an
-exception (e.g. CM-026), Gate B outcome, applied default, `N/A` rationale and deviation,
-timestamped, with affected finding IDs. Append-only,
-never summarized. It maps to the DEC register.
 
 ## Stop conditions
 
-Stop and escalate when:
-- identity, ownership, address, eligibility, legal claim, revenue dependency, access
-  authority or data provenance is disputed
-- evidence required for a destructive recommendation is unavailable
-- a requested action crosses from analysis into implementation
-- platform policy may control and current official guidance hasn't been checked
-- regulated content lacks a qualified reviewer (sensitive categories: CM-025)
-- spend, subscription, external submission or vendor commitment lacks approval
-
-## Known open items
-
-These are gaps in GOV-02 v0.9 that this skill works around:
-
-- **Severity** is ratified as CM-028 (shown in `finding-standard.md`). The workbook's
-  Finding Register uses `Priority`, not `Severity`; it carries the same value.
-- **RULE-013 is missing** — do not infer its content (see `rulings.md`).
-- **Independent review** is performed by Claude under the standing exception CM-026
-- **Phase 0 readiness check** is an addition to GOV-02, not in the source SOP
-- **Two-pass Analysis ordering** deviates from the §1–9 document order
+Stop and escalate when identity, ownership, address, a legal claim or data provenance is disputed; when evidence for
+a destructive recommendation is unavailable (keep it live); when an action would cross into implementation; when
+regulated content lacks a qualified reviewer (CM-025); when spend or an external submission lacks approval.

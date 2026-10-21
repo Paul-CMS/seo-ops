@@ -67,14 +67,14 @@ def t_render(h):
     code, out = h.sh(f"python3 scripts/render.py urlmap {S}")
     h.check("render: with no audit folder yet it says so and writes nothing", code != 0 and "no audit folder" in out, out)
     _audit(h, ag)
-    for k in ("manifest", "urlmap", "findings", "auditsheet", "blockers", "siteplan"):
+    for k in ("manifest", "urlmap", "auditsheet", "blockers", "siteplan"):
         code, out = h.sh(f"python3 scripts/render.py {k} {S}")
         h.check(f"render: {k} renders from its source files", code == 0 and "rendered from" in out, out)
     dl = ag.c / "audit/2026-10-07/deliverables"
     names = sorted(p.name for p in dl.glob("*.md"))
     h.check("render: the files carry the naming convention (<Client> - <Artifact> - REVIEW.md)",
             names == ["Rn Co - Audit Review Sheet - REVIEW.md", "Rn Co - Evidence Manifest - REVIEW.md",
-                      "Rn Co - Finding Register - REVIEW.md", "Rn Co - URL Decision Map - REVIEW.md"]
+                      "Rn Co - URL Decision Map - REVIEW.md"]
             and (ag.c / "build/Rn Co - Technical Blocker Checklist - REVIEW.md").is_file()
             and (ag.c / "build/Rn Co - Site Plan - REVIEW.md").is_file(), names)
     man = (dl / "Rn Co - Evidence Manifest - REVIEW.md").read_text()
@@ -84,49 +84,51 @@ def t_render(h):
     um = (dl / "Rn Co - URL Decision Map - REVIEW.md").read_text()
     h.check("render: the URL Decision Map view counts the decisions and lists every row",
             "| Redirect (301) | 2 |" in um and "**Total** | **3**" in um and um.count("| U-00") == 3, um[:1500])
-    fr = (dl / "Rn Co - Finding Register - REVIEW.md").read_text()
-    h.check("render: the Finding Register shows the latest revision of each finding, High first",
-            "Two hops (revised)" in fr and "| Two hops |" not in fr and fr.index("## High") < fr.index("## Medium") < fr.index("## Low"), fr)
+    code, out = h.sh(f"python3 scripts/render.py findings {S}")
+    h.check("render (Phase 3): there is no Markdown Finding Register any more — the register is findings.csv",
+            code != 0 and not (dl / "Rn Co - Finding Register - REVIEW.md").exists(), out)
     sheet = (dl / "Rn Co - Audit Review Sheet - REVIEW.md").read_text()
     h.check("render: the audit review sheet asks only about the undecided destructive row (U-003 is decided)",
             "Ask — Paul decides (1)" in sheet and "| U-002 |" in sheet and "| U-003 |" not in sheet
             and "F-003" in sheet.split("findings that need Paul")[1].split("##")[0], sheet[:1800])
     bl = (ag.c / "build/Rn Co - Technical Blocker Checklist - REVIEW.md").read_text()
-    h.check("render: the blocker checklist splits High findings from the VA's rows",
-            "## 1 · High findings (1)" in bl and "## 2 · Handed to the VA (1)" in bl and "F-002" in bl.split("## 2")[1], bl[:1500])
+    h.check("render: the blocker checklist is on CM-061 — Fix rows are the VA's handoff, the rest is fixed by the rebuild "
+            "(an older High/Medium/Low register maps onto it)",
+            "## 1 · Fix — the VA's handoff (1)" in bl and "F-002" in bl.split("## 2")[0] and "Two hops (revised)" in bl
+            and "## 2 · Fix and list — fixed by the page rebuild or the structural step (2)" in bl, bl[:1500])
     sp = (ag.c / "build/Rn Co - Site Plan - REVIEW.md").read_text()
     h.check("render: the site plan view lists sections with their route and every page", "| svc | service | 1 | outline |" in sp
             and "Beaufort, SC" in sp and "stair lifts" in sp, sp)
     strip = lambda t: re.sub(r"Rendered \d{4}-\d\d-\d\dT\d\d:\d\d", "Rendered T", t)
-    before = strip(fr)
-    h.sh(f"python3 scripts/render.py findings {S}")
-    h.check("render: the same sources give the same file (deterministic)", strip((dl / "Rn Co - Finding Register - REVIEW.md").read_text()) == before)
+    before = strip(um)
+    h.sh(f"python3 scripts/render.py urlmap {S}")
+    h.check("render: the same sources give the same file (deterministic)", strip((dl / "Rn Co - URL Decision Map - REVIEW.md").read_text()) == before)
     code, out = h.sh(f"python3 scripts/render.py check {S}")
     h.check("render check: every rendered file is current", code == 0 and "current" in out, out)
     import os
     import time
-    src = ag.c / "audit/2026-10-07/findings.csv"
+    src = ag.c / "audit/2026-10-07/url-decision-map.csv"
     os.utime(src, (time.time() + 60, time.time() + 60))
     code, out = h.sh(f"python3 scripts/render.py check {S}")
-    h.check("render check: a source newer than its rendered file is STALE (exit 4)", code == 4 and "STALE" in out and "findings.csv" in out, out)
+    h.check("render check: a source newer than its rendered file is STALE (exit 4)", code == 4 and "STALE" in out and "url-decision-map.csv" in out, out)
     # an approved file is never rendered over
     st = h.status(S)
-    rel = f"clients/{S}/audit/2026-10-07/deliverables/Rn Co - Finding Register - REVIEW.md"
+    rel = f"clients/{S}/audit/2026-10-07/deliverables/Rn Co - URL Decision Map - REVIEW.md"
     st["gates"]["audit_approved"] = {"state": "approved", "by": "Paul", "files": {rel: "x" * 12}}
     (ag.c / "status.json").write_text(json.dumps(st))
-    before = (dl / "Rn Co - Finding Register - REVIEW.md").read_bytes()
-    code, out = h.sh(f"python3 scripts/render.py findings {S}")
+    before = (dl / "Rn Co - URL Decision Map - REVIEW.md").read_bytes()
+    code, out = h.sh(f"python3 scripts/render.py urlmap {S}")
     h.check("render: a file an approval covers is refused (exit 4), not overwritten",
-            code == 4 and "covered by an approval" in out and (dl / "Rn Co - Finding Register - REVIEW.md").read_bytes() == before, out)
+            code == 4 and "covered by an approval" in out and (dl / "Rn Co - URL Decision Map - REVIEW.md").read_bytes() == before, out)
     code, out = h.sh(f"python3 scripts/render.py all {S}")
     h.check("render all: the same refusal, never silently skipped", code == 4 and "covered by an approval" in out, out)
     scratch = h.SB / "scratch-render"
-    code, out = h.sh(f"python3 scripts/render.py findings {S} --out {scratch}")
+    code, out = h.sh(f"python3 scripts/render.py urlmap {S} --out {scratch}")
     h.check("render --out: looks at the new version in another folder; nothing in the client's folder changes",
-            code == 0 and (scratch / "Rn Co - Finding Register - REVIEW.md").is_file()
-            and (dl / "Rn Co - Finding Register - REVIEW.md").read_bytes() == before, out)
+            code == 0 and (scratch / "Rn Co - URL Decision Map - REVIEW.md").is_file()
+            and (dl / "Rn Co - URL Decision Map - REVIEW.md").read_bytes() == before, out)
     rid = ag.start("crawl")
-    code, out = h.sh(f"python3 scripts/render.py findings {S} --force --run {rid}")
+    code, out = h.sh(f"python3 scripts/render.py urlmap {S} --force --run {rid}")
     ch = [json.loads(l) for l in (ag.c / "changes.jsonl").read_text().splitlines() if l.strip()]
     h.check("render --force --run: re-rendered over the approval and logged as one change",
             code == 0 and any(c["kind"] == "rendered" and c["run_id"] == rid for c in ch), (out, ch[-2:]))
@@ -216,10 +218,12 @@ def t_pipeline_data(h):
             code == 0 and runs == ["crawl text", "reviews run", "reviews extract", "reviews meaning", "rankings run",
                                    "dfs call", "backlinks summary", "paa run", "paa route", "competitors run"], (out, runs))
     steps = h.status(S).get("audit_steps") or {}
-    h.check("pipeline: every outcome is recorded by the script — pulls done, the file-based steps skipped with a reason",
+    h.check("pipeline: every outcome is recorded by the script — pulls done, the file-based steps skipped with a reason, "
+            "fan-out skipped as off by default (D6) so the audit can still be complete",
             all((steps.get(s) or {}).get("outcome") == "done" for s in ("S05b", "S06", "S07", "S08", "S19"))
             and all((steps.get(s) or {}).get("outcome") == "skipped" and steps[s].get("reason") for s in ("S09", "S10", "S11", "S20"))
-            and "S21" not in steps and "S05" not in steps, steps)
+            and (steps.get("S21") or {}).get("outcome") == "skipped" and "D6" in steps["S21"].get("reason", "")
+            and "S05" not in steps, steps)
     h.check("pipeline: it prints at most ten lines", out.count("\n") + 1 <= 10, out)
     log.unlink(missing_ok=True)
     code, out = _pl(h, S, f"--run {rid} --state SC --confirmed")

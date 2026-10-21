@@ -217,7 +217,8 @@ class Agent:
             rid = self.start("discovery", "audit")
             for s in ("S12", "S13", "S14", "S15", "S16", "S17", "S18"): self.step(rid, s)
             self.mark("audit_deliverables", *[self.w(f"audit/Test Co - {n} - REVIEW.md") for n in
-                                              ("Finding Register", "URL Decision Map", "Recommendations", "Evidence Manifest")])
+                                              ("Audit Review Sheet", "URL Decision Map", "Evidence Manifest")])
+            self.mark("blocker_checklist", self.w("build/Test Co - Technical Blocker Checklist - REVIEW.md"))   # S16 (CM-063)
             self.fin(rid, "audit")
         elif (name, sub) == ("/discovery", "sheet-returned"):
             rid = self.start("discovery", "sheet-returned")
@@ -229,8 +230,7 @@ class Agent:
             f = self.w("discovery/Test Co - MANUAL - client-answers - 2026-10-08.md", "Owner said: residential only.\n")
             self.mark("facts_direct", f); self.mark("proof_sheet", f); self.fin(rid, "facts answered directly")
         elif (name, sub) == ("/build", "blockers"):
-            rid = self.start("build", "blockers")
-            self.mark("blocker_checklist", self.w("build/Test Co - Technical Blocker Checklist - REVIEW.md"))
+            rid = self.start("build", "blockers")   # the audit wrote the checklist (CM-063): this only hands off
             items = self.w("build/blockers.csv", "url,field,old,new,reason,decision_map_ref\n"
                            "https://test.example/sitemap.xml,sitemap,missing pages,all pages listed,F-003,\n")
             self.sh(f"python3 scripts/handoff.py create {S} --run {rid} --kind sitemap --items {items} --blockers")
@@ -620,9 +620,12 @@ def t_walkthrough_full():
     check("the site plan runs without waiting for the blockers to clear", i_plan < i_blk, (i_plan, i_blk))
     disc = [l for l in log[:next(i for i, l in enumerate(log) if "/build wt-full" in l)]
             if l.startswith("decision") and "global specs" not in l]
-    check("R3: discovery + audit take two approvals (Decision Sheet + entity + facts; audit + Brand Guide)",
+    bg = [l for l in log if l.startswith("decision") and "brand_guide_approved" in l]
+    check("R3 + D3: Approval 1 (Decision Sheet + entity + facts), then the audit on its own before the blocker handoff, "
+          "then the Brand Guide on its own",
           len(disc) == 2 and "entity_approved proof_sheet_approved" in disc[0]
-          and "audit_approved brand_guide_approved" in disc[1], disc)
+          and "audit_approved" in disc[1] and "brand_guide_approved" not in disc[1]
+          and bg and "audit_approved" not in bg[0] and log.index(bg[0]) > log.index(disc[1]), (disc, bg[:1]))
     check("R3: the page specs are approved once, globally, before the audit",
           sum("/approve global specs" in l for l in log) == 1, [l for l in log if "specs" in l])
     check("R3: no discovery sign-off or blockers approval is asked (both are conditions)",

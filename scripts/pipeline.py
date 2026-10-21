@@ -21,7 +21,8 @@ What it replaces: a Haiku clerk running a dozen scripts one by one, and an agent
        reviews.py meaning, paa.py route, fanout.py route. No API key → each says so once and leaves the work to its
        agent, as before; nothing fails.
   audit phase (S12: the free, offline part of the audit)
-    ingest_evidence.py → crosscheck.py → conformance.py → S12 recorded → the Evidence Manifest rendered (render.py).
+    ingest_evidence.py → crosscheck.py → conformance.py → pagedec.py screen (CM-019 C1–C3, Phase 3) → S12 recorded → the
+    Evidence Manifest rendered (render.py). S21 with no --fanout is recorded skipped in the data phase (D6).
     Fills the manifest's tool/date/geography/scope columns from the previous manifest of the same file.
 
 --dry never makes a paid call and writes nothing in the client's folder: it prints the estimate, then runs the audit
@@ -163,7 +164,8 @@ def due(x):
     for sid, label, est, pat, run, post, reuse, outs in data_steps(x):
         if sid == "S21" and not x.a.fanout:
             continue
-        if reuse() or (recent(recorded.get(sid)) and not (sid == "S05" and x.a.new_crawl)):
+        off = sid == "S21" and (recorded.get(sid) or {}).get("outcome") == "skipped"   # D6: skipped while off
+        if reuse() or (recent(recorded.get(sid)) and not off and not (sid == "S05" and x.a.new_crawl)):
             continue
         out.append((sid, label, est, pat, run, post, outs))
     return out
@@ -206,6 +208,9 @@ def record_from_files(x, rid):
             "S11": ("inputs/*GSC*", "no Search Console / GA4 access on file"),
             "S20": ("inputs/seopress-settings*", "no SEOPress settings check on file (not WordPress, or no access yet)")}
     n = 0
+    if "S21" not in have and not x.a.fanout:   # D6: off by default — an outcome, so the audit can still be complete
+        record(x.slug, rid, "S21", "skipped", "query fan-out is off by default (D6) — pipeline.py … --fanout runs it")
+        n += 1
     for sid, (pat, why) in spec.items():
         if sid in have:
             continue
@@ -351,7 +356,13 @@ def run_audit(x, rid):
         record(x.slug, rid, "S12", "failed", f"conformance exit {c3}: {o3[-200:]}")
         print(f"STOPPED at conformance (exit {c3}): {o3[-300:]}")
         sys.exit(c3)
-    record(x.slug, rid, "S12", "done", "", [str((ad / f).relative_to(ROOT)) for f in ("00-manifest.csv", "00-crosschecks.md")])
+    c4, o4 = sh(py("scripts/pagedec.py", "screen", x.slug) + (["--run", rid] if rid else []))   # Phase 3: CM-019 C1–C3
+    if c4:
+        record(x.slug, rid, "S12", "failed", f"redirect screen exit {c4}: {o4[-200:]}")
+        print(f"STOPPED at the redirect screen (exit {c4}): {o4[-300:]}")
+        sys.exit(c4)
+    record(x.slug, rid, "S12", "done", "", [str((ad / f).relative_to(ROOT)) for f in ("00-manifest.csv", "00-crosschecks.md",
+                                                                                      "redirect-screen.csv")])
     import render
     try:
         p, _ = render.render_one(x.slug, "manifest", rid)
@@ -359,7 +370,7 @@ def run_audit(x, rid):
     except SystemExit as e:
         shown = "Evidence Manifest left as it is (covered by an approval)" if e.code == 4 else "Evidence Manifest not rendered"
     bad = len(re.findall(r"\[CONTRADICTED\]", (ad / "00-crosschecks.md").read_text(encoding="utf-8")))
-    return [f"S12 done: manifest + cross-checks ({bad} contradicted) + conformance in {ad.relative_to(ROOT)}"
+    return [f"S12 done: manifest + cross-checks ({bad} contradicted) + conformance + redirect screen in {ad.relative_to(ROOT)}"
             + (f"; kept {kept} setting cell(s)" if kept else ""), shown]
 
 

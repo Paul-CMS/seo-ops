@@ -6,6 +6,20 @@
     review.py apply <slug> <section> <briefs|drafts> --run R [--answers "accept all except 7b, 12c"]
                     record the answers (an empty answer = the recommended option) → build/<section>/<step>-apply.json,
                     the list the agent applies to every page in one run
+    review.py sheet <slug> audit --run R
+                    the audit's ONE review sheet (Rewrite 4 Phase 3; Gate B is gone): kind-1 Asks from every destructive
+                    URL Decision Map row (with the pagedec.py screen's CM-019 C1–C3; refused while a destructive row
+                    fails the screen), one client question for C4 (no leads), and each finding by its CM-061 severity
+                    (Priority = Fix · Fix and list · Ask; an Ask carries ext_ask_kind, ext_options, ext_default and, for a
+                    client fact, ext_searched) → audit/<date>/audit-review.csv + .json, and client-questions.csv —
+                    the kind-3 rows only, the one thing the client ever sees (Paul sends it). Fix rows go to the
+                    Technical Blocker Checklist, never the sheet. render.py auditsheet renders the Markdown view.
+    review.py apply <slug> audit --run R [--answers "..."]
+                    records the answers (empty = the recommended option; the client's C4 question is never defaulted);
+                    a decided URL row gets a superseding URL Decision Map row (Paul Decision); each Ask is settled once.
+                    audit_approved is refused until the sheet is applied.
+    review.py scope <slug> audit   the S17 reviewer's rows: every destructive URL row, every Ask finding, a sample of
+                    the rest → audit/<date>/review-scope.csv
     review.py overdue <slug> [--run R --apply]   Ask rows unanswered for N working days (config.json
                     overdue_ask_working_days): kinds 1, 3, 4 ship with the recommended option and an open-item notice;
                     kind 2 (legal or money) is left out of the page until answered
@@ -444,13 +458,302 @@ def overdue(slug, run_id=None, do_apply=False, until=None):
     return out
 
 
+# ------------------------------------------------------------------ the audit's one review sheet (Rewrite 4 Phase 3)
+AUDIT_SEV = {"fix": "fix", "fix and list": "fix_and_list", "fix_and_list": "fix_and_list", "ask": "ask",
+             "low": "fix", "medium": "fix_and_list", "high": "fix_and_list"}   # High/Medium/Low: audits before CM-061
+C4_KEY = "audit_cm019_c4_no_leads"
+
+
+def audit_paths(slug):
+    from render import audit_dir
+    a = audit_dir(slug) or die(f"no audit folder yet for {slug} — the audit writes its registers first", 4)
+    return {"dir": a, "csv": a / "audit-review.csv", "json": a / "audit-review.json", "apply": a / "audit-apply.json",
+            "client": a / "client-questions.csv", "scope": a / "review-scope.csv"}
+
+
+def _audit_regs(slug):
+    import pagedec
+    from render import latest, read_csv
+    a = audit_paths(slug)["dir"]
+    f = a / "findings.csv"
+    finds = sorted(latest(read_csv(f)), key=lambda r: r["Finding ID"]) if f.is_file() else []
+    return finds, pagedec.map_rows(slug)
+
+
+def _split_opts(v):
+    return [re.sub(r"^[a-j]\)\s*", "", o).strip() for o in re.split(r"\s+·\s+|\n", v or "") if o.strip()]
+
+
+def audit_findings(slug):
+    """Every audit item as a review finding: kind-1 Asks from the destructive URL Decision Map rows (with the screen's
+    CM-019 C1–C3), one kind-3 client question for C4 (no leads), and each finding row by its CM-061 severity."""
+    import pagedec
+    finds, urls = _audit_regs(slug)
+    if not urls:
+        die("the audit review sheet needs the URL Decision Map (url-decision-map.csv) — S14 writes it first", 4)
+    bad = pagedec.screen_check(slug)
+    if bad:
+        die("REFUSED — destructive rows on URLs that fail the CM-019 screen (pagedec.py screen --check): "
+            + ", ".join(f"{u} ({w[:60]})" for u, _, _, w in bad) + ". Keep each live (Needs Evidence, no target) in a "
+            "superseding row first.", 4)
+    scr = pagedec.screen_index(slug)
+    out, c4 = [], []
+    for r in urls:
+        act = (r.get("Proposed Action") or "").strip()
+        if not pagedec.destructive(act) or (r.get("Paul Decision") or "").strip():
+            continue
+        s = scr.get(pagedec.url_key(r.get("Current URL"))) or {}
+        res = s.get("result", "needs evidence")
+        tgt = (r.get("Target URL") or "").strip()
+        go = re.sub(r"\s*(→|->)?\s*needs evidence.*$", "", act, flags=re.I) + (f" → {tgt}" if tgt else "")
+        keep_default = res != "pass" or "needs evidence" in act.lower()
+        out.append({"page": r.get("URL ID", ""), "url": r.get("Current URL", ""), "rule": "CM-019", "item": "URL decision",
+                    "severity": "ask", "kind": "1", "category": "ask", "decision_key": f"url_{r.get('URL ID', '')}",
+                    "finding": f"{act}" + (f" → {tgt}" if tgt else "") + f" · screen {res}: C1 {s.get('c1', '?')}, "
+                               f"C2 {s.get('c2', '?')}, C3 {s.get('c3', '?')}",
+                    "plain_why": (s.get("c1_detail", "") + "; " + s.get("c2_detail", "") + "; " + s.get("c3_detail", ""))[:300]
+                                 + ". Never delete, always 301; C4 (no leads) is the client's.",
+                    "options": [f"{go} — once the client confirms no leads (C4)", "keep it live (no redirect)"],
+                    "recommended": "b" if keep_default else "a", "url_row": r.get("URL ID", "")})
+        if not keep_default:
+            c4.append(r.get("Current URL", ""))
+    if c4:
+        out.append({"page": "client", "url": "", "rule": "CM-019", "item": "no leads from the pages we plan to redirect",
+                    "severity": "ask", "kind": "3", "category": "ask", "decision_key": C4_KEY, "client": True,
+                    "never_default": True,
+                    "finding": f"Did any of these {len(c4)} page(s) bring you calls, forms or customers in the last 12 "
+                               "months? " + "; ".join(c4),
+                    "plain_why": "CM-019 condition 4: a page that brought leads stays live.",
+                    "searched": "facts.json, decisions-settled.md; no Search Console, GA4 or CRM data on file (S11) — "
+                                "only the client knows its leads",
+                    "options": ["none of them brought leads", "some did (name them — those stay live)"], "recommended": "a"})
+    for f in finds:
+        sev = AUDIT_SEV.get((f.get("Priority") or "").strip().lower())
+        st_ = (f.get("Status") or "").lower()
+        if not sev or "withdrawn" in st_ or "superseded" in st_:
+            continue
+        base = {"page": f["Finding ID"], "url": (f.get("Affected URL / Entity") or "")[:200], "rule": f["Finding ID"],
+                "item": (f.get("Category") or "finding")[:80], "finding": (f.get("Observation") or "")[:400],
+                "plain_why": f.get("ext_plain_why") or (f.get("Risk if Deferred") or "")[:300], "severity": sev,
+                "category": "other_content" if sev != "fix" else "formatting"}
+        if sev == "ask":
+            base.update({"kind": str(f.get("ext_ask_kind") or ""), "options": _split_opts(f.get("ext_options")),
+                         "recommended": (f.get("ext_default") or "").strip()[:1] or "a",
+                         "decision_key": f.get("ext_decision_key") or f"audit_{f['Finding ID']}",
+                         "searched": f.get("ext_searched") or "", "sources": re.findall(r"SRC-\d+", f.get("Evidence / Locator") or ""),
+                         "client": str(f.get("ext_ask_kind") or "") == "3"})
+        else:
+            base["decided_for_you"] = (f.get("Recommendation") or "")[:300]
+        out.append(base)
+    return out
+
+
+def build_audit_sheet(slug, run_id):
+    """audit/<date>/audit-review.csv + .json (one sheet: Asks, then Decided for you) and client-questions.csv (kind-3
+    rows only — the only thing the client ever sees, sent by Paul)."""
+    import settled
+    p = audit_paths(slug)
+    ents = settled.entries(slug)
+    rows, fixes, dropped, problems, seen = [], [], [], [], set()
+    for f in audit_findings(slug):
+        k = fkey(f)
+        if k in seen:
+            dropped.append((f, "duplicate — the same item is raised once"))
+            continue
+        seen.add(k)
+        if f["severity"] == "fix":
+            fixes.append(f)
+            continue
+        if f["severity"] == "ask":
+            kind = f.get("kind")
+            if kind not in SEV["ask"]["kinds"]:
+                if f.get("recommended") and f.get("options"):
+                    f = {**f, "severity": "fix_and_list", "decided_for_you": f["options"][ord(f["recommended"]) - 97]
+                         if ord(f["recommended"]) - 97 < len(f["options"]) else f["options"][0],
+                         "note": "not one of the four Ask kinds — decided by default"}
+                else:
+                    problems.append(f"{f['page']}: an Ask must be one of the four kinds (1 URL · 2 legal/money · 3 client fact · 4 conflict)")
+                    continue
+            elif len(f.get("options") or []) < 2:
+                problems.append(f"{f['page']}: an Ask needs at least two options and a recommended default (ext_options, ext_default)")
+                continue
+            elif kind == "3" and not f.get("searched"):
+                problems.append(f"{f['page']}: a client question needs its searched: line (ext_searched — questions.py)")
+                continue
+            elif kind == "4" and len(set(f.get("sources") or [])) < 2:
+                problems.append(f"{f['page']}: a conflict names the two sources that disagree (two SRC- ids)")
+                continue
+            if f["severity"] == "ask":
+                if f.get("url_row"):   # one key per URL row: exact match only (url_U-009 is not url_U-010)
+                    e = ents.get(f["decision_key"]) or {}
+                    why = (f"answered in decisions-settled.md ({f['decision_key']})" if e.get("state") in ("settled", "answered")
+                           else f"already asked ({f['decision_key']}) — waiting" if e.get("state") == "open" else None)
+                else:
+                    why = answered(slug, f, ents)
+                if why:
+                    dropped.append((f, why))
+                    continue
+        rows.append({"severity": f["severity"], "kind": str(f.get("kind") or ""), "key": k, "_finding": f})
+    if problems:
+        die("REFUSED — audit findings break the review rules (methodology/review-severities.json, CM-061):\n  - "
+            + "\n  - ".join(problems), 4)
+    rows.sort(key=lambda r: (r["severity"] != "ask", r["kind"], r["_finding"]["page"]))
+    out = []
+    for i, r in enumerate(rows, 1):
+        f = r["_finding"]
+        opts = f.get("options") or ([f["decided_for_you"], "keep it as it was"] if f.get("decided_for_you") else [])
+        out.append({**r, "id": str(i), "page": f["page"], "url": f.get("url", ""), "item": f["item"], "finding": f["finding"],
+                    "plain_why": f.get("plain_why", ""), "decided_for_you": f.get("decided_for_you", "") if r["severity"] != "ask" else "",
+                    "options": " · ".join(f"{LETTERS[j]}) {o}" for j, o in enumerate(opts)),
+                    "recommended": f.get("recommended") or "a", "answer": "",
+                    "note": "; ".join(x for x in (f.get("note", ""), f"Ask kind {r['kind']}" if r["kind"] else "",
+                                                  "for the client (Paul sends)" if f.get("client") else "") if x)})
+    with open(p["csv"], "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=COLS, extrasaction="ignore")
+        w.writeheader()
+        w.writerows(out)
+    client = [r for r in out if r["_finding"].get("client")]
+    with open(p["client"], "w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(["id", "question", "options", "best answer", "searched"])
+        for r in client:
+            w.writerow([r["id"], r["finding"], r["options"], r["recommended"], r["_finding"].get("searched", "")])
+    write_json(p["json"], {"made": now(), "run": run_id, "step": "audit", "rows": out, "fixes": len(fixes),
+                           "dropped": [{"page": f["page"], "item": f["item"], "why": why} for f, why in dropped]})
+    asks = [r for r in out if r["severity"] == "ask"]
+    st = S.load(slug)
+    st["audit_review"] = {"sheet": str(p["csv"].relative_to(ROOT)), "at": now(), "run": run_id, "asks": len(asks),
+                          "client": len(client), "listed": len(out) - len(asks), "fixes": len(fixes), "applied": None}
+    S.save(slug, st)
+    append(client_dir(slug) / "log.md", f"- REVIEW SHEET {now()[:16]} · run {run_id} · audit: {len(asks)} Ask "
+           f"({len(client)} for the client), {len(out) - len(asks)} decided for you, {len(fixes)} Fix (blocker checklist), "
+           f"{len(dropped)} not raised · {p['csv'].relative_to(ROOT)}\n")
+    return p, out, fixes, dropped
+
+
+def apply_audit(slug, run_id, answers_line=None):
+    """Record the audit sheet's answers (an empty answer = the recommended option, except the client's C4 question,
+    which waits for the client). A kind-1 URL row answered gets a superseding URL Decision Map row (Paul Decision);
+    every decided Ask is settled once."""
+    import settled
+    p = audit_paths(slug)
+    data = read_json(p["json"]) or die(f"no audit review sheet for {slug} — review.py sheet {slug} audit first")
+    over = parse_answers(answers_line)
+    cells = {}
+    if p["csv"].is_file():
+        with open(p["csv"], newline="", encoding="utf-8-sig") as fh:
+            cells = {r["id"]: (r.get("answer") or "").strip() for r in csv.DictReader(fh)}
+    ids = {r["id"] for r in data["rows"]}
+    bad = [i for i in over if i not in ids]
+    if bad:
+        die(f"REFUSED — no row {', '.join(bad)} in the audit review sheet", 4)
+    items, explicit, url_rows = [], 0, {}
+    for r in data["rows"]:
+        f = r["_finding"]
+        opts = [re.sub(r"^[a-j]\)\s*", "", o) for o in r["options"].split(" · ")] if r["options"] else []
+        cell = cells.get(r["id"], "")
+        if r["id"] in over:
+            choice, by = over[r["id"]], "Paul"
+        elif cell and re.fullmatch(r"[a-j]", cell.lower()[:1]) and (len(cell) == 1 or not cell[1].isalpha()):
+            choice, by = cell.lower()[0], "Paul"
+        elif cell:
+            choice, by = "other", "Paul"
+        elif f.get("never_default"):
+            items.append({"id": r["id"], "item": r["item"], "choice": None, "by": "waiting for the client",
+                          "action": "not decided by default — the client answers it (Paul sends client-questions.csv)"})
+            continue
+        else:
+            choice, by = r["recommended"] or "a", "default"
+        explicit += by == "Paul"
+        if choice == "other":
+            action = cell
+        else:
+            idx = LETTERS.index(choice)
+            if idx >= len(opts):
+                die(f"REFUSED — row {r['id']} has no option {choice} ({r['options']})", 4)
+            action = opts[idx]
+        items.append({"id": r["id"], "page": r["page"], "url": r["url"], "item": r["item"], "severity": r["severity"],
+                      "kind": r.get("kind", ""), "choice": choice, "action": action, "by": by})
+        if f.get("url_row"):
+            url_rows[f["url_row"]] = (choice, action, by, r["id"])
+        if r["severity"] == "ask" and f.get("decision_key") and run_id:
+            try:
+                settled.settle(slug, run_id, f["decision_key"], f"{r['item']} ({r['page']}): {action}"[:300],
+                               by="Paul" if by == "Paul" else "Paul (default accepted)")
+            except SystemExit:
+                pass   # already settled under this key
+    if url_rows:
+        _url_decisions(slug, url_rows)
+    write_json(p["apply"], {"made": now(), "run": run_id, "answers": answers_line or "", "items": items})
+    st = S.load(slug)
+    st.setdefault("audit_review", {})["applied"] = {"at": now(), "run": run_id, "answers": answers_line or "",
+                                                     "explicit": explicit, "file": str(p["apply"].relative_to(ROOT))}
+    S.save(slug, st)
+    append(client_dir(slug) / "log.md", f"- REVIEW APPLIED {now()[:16]} · run {run_id} · audit: {len(items)} row(s) "
+           f"({explicit} answered by Paul, {sum(1 for i in items if i['by'] == 'default')} by default, "
+           f"{sum(1 for i in items if i['choice'] is None)} waiting for the client) · {p['apply'].relative_to(ROOT)}\n")
+    return items
+
+
+def _url_decisions(slug, url_rows):
+    """Append one superseding URL Decision Map row per decided URL (append-only register): Paul Decision filled; a
+    'keep it live' answer also clears the destructive action and its target."""
+    from render import read_csv
+    f = audit_paths(slug)["dir"] / "url-decision-map.csv"
+    with open(f, newline="", encoding="utf-8-sig") as fh:
+        cols = list(csv.DictReader(fh).fieldnames)
+    last = {}
+    for r in read_csv(f):
+        last[r.get("URL ID")] = r
+    add = []
+    for uid, (choice, action, by, rid) in url_rows.items():
+        r = dict(last.get(uid) or {})
+        if not r:
+            continue
+        r["Paul Decision"] = f"{action} — {'Paul' if by == 'Paul' else 'default accepted'} {today()} (audit review row {rid})"
+        if choice == "b":
+            r["Proposed Action"], r["Target URL"] = "Keep live — decided in the audit review", ""
+        if "ext_revision" in cols:
+            r["ext_revision"] = str(int(r.get("ext_revision") or 1) + 1)
+        add.append(r)
+    with open(f, "a", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
+        w.writerows(add)
+
+
+def reviewer_scope(slug, sample_share=0.25, minimum=5):
+    """The rows the fresh-context reviewer (S17) must open: every destructive URL Decision Map row, every Ask finding,
+    and an evenly spaced sample of the rest (CM-026 unchanged: it reads the registers only). → audit/<date>/review-scope.csv"""
+    import pagedec
+    finds, urls = _audit_regs(slug)
+    out = [("url-map", r.get("URL ID", ""), "destructive", r.get("Proposed Action", "")[:80])
+           for r in urls if pagedec.destructive(r.get("Proposed Action"))]
+    asks = [f for f in finds if (f.get("Priority") or "").strip().lower() == "ask"
+            or (f.get("Paul Approval Needed") or "").strip().lower().startswith("yes")
+            or (f.get("Client Confirmation Needed") or "").strip().lower().startswith("yes")]
+    out += [("findings", f["Finding ID"], "ask", (f.get("Observation") or "")[:80]) for f in asks]
+    rest = [f for f in finds if f not in asks and "withdrawn" not in (f.get("Status") or "").lower()]
+    n = min(len(rest), max(minimum, -(-int(len(rest) * sample_share * 100) // 100)))
+    pick = [rest[round(i * (len(rest) - 1) / max(1, n - 1))] for i in range(n)] if n else []
+    seen = set()
+    out += [("findings", f["Finding ID"], "sample", (f.get("Observation") or "")[:80]) for f in pick
+            if not (f["Finding ID"] in seen or seen.add(f["Finding ID"]))]
+    p = audit_paths(slug)["scope"]
+    with open(p, "w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(["register", "id", "why", "what"])
+        w.writerows(out)
+    return out, p
+
+
 def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
-    s = sub.add_parser("sheet"); s.add_argument("slug"); s.add_argument("section"); s.add_argument("step", choices=STEPS)
-    s.add_argument("--findings", required=True); s.add_argument("--run", required=True)
-    s = sub.add_parser("apply"); s.add_argument("slug"); s.add_argument("section"); s.add_argument("step", choices=STEPS)
+    s = sub.add_parser("sheet"); s.add_argument("slug"); s.add_argument("section"); s.add_argument("step", nargs="?", choices=STEPS)
+    s.add_argument("--findings"); s.add_argument("--run", required=True)
+    s = sub.add_parser("apply"); s.add_argument("slug"); s.add_argument("section"); s.add_argument("step", nargs="?", choices=STEPS)
     s.add_argument("--run", required=True); s.add_argument("--answers")
+    s = sub.add_parser("scope"); s.add_argument("slug"); s.add_argument("what", choices=["audit"])
     s = sub.add_parser("overdue"); s.add_argument("slug"); s.add_argument("--run"); s.add_argument("--apply", action="store_true")
     s = sub.add_parser("usage"); s.add_argument("slug"); s.add_argument("section")
     a = ap.parse_args()
@@ -459,6 +762,29 @@ def main():
             die("--run is required to change anything")
         import run as R
         R.open_run(a.slug, a.run)
+    if a.cmd == "scope":
+        out, p = reviewer_scope(a.slug)
+        n = {w: sum(1 for x in out if x[2] == w) for w in ("destructive", "ask", "sample")}
+        print(f"S17 reviewer scope: {n['destructive']} destructive URL row(s), {n['ask']} Ask finding(s), {n['sample']} "
+              f"sampled → {p.relative_to(ROOT)}")
+        return
+    if a.cmd in ("sheet", "apply") and a.section == "audit":
+        if a.cmd == "sheet":
+            p, out, fixes, dropped = build_audit_sheet(a.slug, a.run)
+            asks = [r for r in out if r["severity"] == "ask"]
+            cl = [r for r in asks if r["_finding"].get("client")]
+            print(f"audit review: {len(asks) - len(cl)} question(s) for Paul, {len(cl)} for the client "
+                  f"({p['client'].name}), {len(out) - len(asks)} decided for you, {len(fixes)} Fix (to the blocker "
+                  f"checklist), {len(dropped)} not raised → {p['csv'].relative_to(ROOT)}")
+        else:
+            items = apply_audit(a.slug, a.run, a.answers)
+            print(f"audit review: {len(items)} row(s) recorded → {audit_paths(a.slug)['apply'].relative_to(ROOT)}"
+                  + (f" · {sum(1 for i in items if i['choice'] is None)} waiting for the client" if any(i['choice'] is None for i in items) else ""))
+        return
+    if a.cmd in ("sheet", "apply") and not a.step:
+        die("name the step: review.py sheet|apply <slug> <section> briefs|drafts (or <slug> audit)")
+    if a.cmd == "sheet" and not a.findings:
+        die("--findings F.json is required for a section's sheet")
     if a.cmd == "sheet":
         f = ROOT / a.findings if not a.findings.startswith("/") else __import__("pathlib").Path(a.findings)
         findings = json.loads(f.read_text(encoding="utf-8"))

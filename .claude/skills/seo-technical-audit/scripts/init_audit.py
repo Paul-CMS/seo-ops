@@ -82,9 +82,8 @@ README = """# Audit — {client}
 | Analysis — inventories | not started | | |
 | Analysis — reconciliation | not started | | |
 | Analysis — analysis | not started | | |
-| Gate B — questions | not started | | |
 | Review — self-check | not started | | |
-| Review — package | not started | | |
+| Audit review sheet | not started | | |
 | client-confirmation boundary | blocked | | Not part of this skill |
 
 ## Blocked on

@@ -37,8 +37,8 @@ Every approval names its files. When a step produces the thing Paul approves, re
 A Markdown file can be named by sections — `brand-guide.md#A+B1+B2` covers only `## Section A`, `### B1`
 and `### B2`; edits elsewhere in the file leave the approval standing.
 (artifacts: `entity_record`, `proof_sheet`, `facts_direct`, `proof_sheet_returned`, `audit_deliverables`,
-`reconciled`). `/next` then shows Paul the exact `/approve` line. Two approvals cover discovery and the audit (R3):
-Approval 1 = entity + Decision Sheet + client facts; Approval 2 = audit + reconciled Brand Guide.
+`blocker_checklist`, `reconciled`). `/next` then shows Paul the exact `/approve` line. Two approvals cover discovery and the audit (R3):
+Approval 1 = entity + Decision Sheet + client facts; Approval 2a = the audit (as soon as it is done, D3); Approval 2b = the reconciled Brand Guide.
 
 ## Decide once (R6)
 Read `clients/<slug>/decisions-settled.md` first. Everything there is settled: apply it, never ask it again, never
@@ -146,7 +146,7 @@ always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 
   "<primary city>,<State>,United States" --keywords-file <services.txt>` (one SERP per service, in the same cost yes)
   → `data/competitors/coverage.md`: the top 3 pages' H2s and FAQ topics. Coverage ideas for the site plan only —
   never a client claim (CM-016). The **researcher** agent groups them into ideas per service.
-- **S21 query fan-out (CM-045):** after S19, `python3 scripts/fanout.py estimate|run <slug> --run <RUN_ID>
+- **S21 query fan-out (CM-045) — off by default (D6):** only with `--fanout` (otherwise `pipeline.py` records it skipped); after S19, `python3 scripts/fanout.py estimate|run <slug> --run <RUN_ID>
   --services-file <services.txt> --cities "<primary>,<c2>,<c3>,<c4>" [--cap 10] [--per-seed 40]
   [--registry <C3 file>] --paa clients/<slug>/data/paa/paa-questions.csv` → `data/fanout/fanout-routing.md`.
   About $0.07 for the default 10 seeds (over $2 asks Paul). Routing: `python3 scripts/fanout.py route <slug> --run
@@ -157,41 +157,41 @@ always asks). Check `steps.py fresh <slug> <S##>` first and reuse data under 60 
 Save everything once under `clients/<slug>/` with the evidence naming convention; record every
 step's outcome.
 
-**audit** (S12–S18) — the crawl (S05) and data steps must have outcomes.
-Run the **seo-technical-audit** skill procedure, in this order:
-1. S12 ingest + cross-checks: `python3 scripts/pipeline.py <slug> inventory --run <RUN_ID> --phase audit` (ingest, cross-checks,
-   conformance, the outcome and the rendered Evidence Manifest — no agent; it keeps the manifest's setting columns you
-   already wrote).
-   Read `data/crawl/crawl-summary.csv` and `page-text.csv`, never the raw crawl tables. CONTRADICTED blocks the related finding.
-2. S13 **entity** — the site against the Brand Guide: semantic triple, NAP, brand search,
-   supporting assets.
-3. S14 **architecture** — the URL Decision Map, every page typed, every destructive candidate
-   under CM-019 (all four conditions or `Needs Evidence`; never on a Working Hypothesis alone).
-4. S15 **page conformance** — every page scored against its spec in `methodology/specs/<type>.md` (the
-   audit cannot start until Paul approved the specs, once, globally): **one scorecard file per page type**
-   (`scorecard-<type>.csv`, a row per page, one column per check ID HP-/SVC-/LOC-/HUB-/ABT-/BLG-), results placed in
-   the nine categories (analysis-rules.md). A failed check is Medium (CM-028). Titles and H1s are scored against the
-   settled Decision Sheet formats, never re-decided. Pages the URL map **keeps**: run `python3 scripts/conformance.py
-   judge <slug> --run <RUN_ID>` (the API scores their judgment checks → `audit/conformance-judgment.csv`) and copy
-   its results into the scorecards; score them yourself only when it says "no API key — ran on the agent route".
-5. S16 **technical** findings.
+**audit** (S12–S18) — the crawl (S05) and data steps must have outcomes. The slim audit, **CM-063**: follow the
+**seo-technical-audit** skill (`SKILL.md`, `finding-standard.md`, `analysis-rules.md` — nothing else from it).
+1. S12: `python3 scripts/pipeline.py <slug> inventory --run <RUN_ID> --phase audit` (ingest, cross-checks, auto
+   conformance, the redirect screen, the Evidence Manifest — no agent; it keeps the manifest's setting columns you
+   already wrote). Read `00-crosschecks.md` (CONTRADICTED blocks the related finding), `redirect-screen.md`,
+   `data/crawl/crawl-summary.csv` and `page-text.csv` — never the raw crawl tables.
+2. S13 **entity** — the site against the Brand Guide: semantic triple, NAP, brand search, supporting assets.
+3. S14 **URL Decision Map** — every page typed and decided. The screen has settled CM-019 C1–C3: a `fail` URL is never a
+   destructive candidate; you decide only `needs evidence` rows and entity mismatches (another area, a discontinued
+   service, a duplicate entity). Then `python3 scripts/pagedec.py screen <slug> --check` must pass.
+4. S15 **triage** — `python3 scripts/conformance.py judge <slug> --run <RUN_ID>` (the API scores the pages Build will
+   not rewrite; with "no API key" you score that set's judgment checks into `audit/conformance-judgment.csv`), then
+   `python3 scripts/conformance.py triage <slug> --run <RUN_ID>`. No scorecard files. A `light fix` page's failed checks
+   are findings (one per check, every page listed).
+5. S16 **technical** findings; `python3 scripts/render.py blockers <slug> --run <RUN_ID>` writes the Technical Blocker
+   Checklist from the Fix rows.
 
-**Severity:** CM-028 (High / Medium / Low only). **One finding per issue, listing every affected URL.**
-**Gate B:** after Analysis, run the clarification stop (seo-technical-audit `gate-b-questions.md`). Every question
-gets its kind and `searched:` line in a questions JSON; public ones go to the researcher instead of Paul; then
-`python3 scripts/settled.py filter <slug> <file>` and `python3 scripts/questions.py check <file>` must pass (P6);
-record its outcome in `decisions.md` (questions raised with their routes, or "no questions — gate
-skipped") before the review. A missing "The Best"
-is never a finding by itself (CM-020); missing JavaScript-rendered data is never a finding. A live homepage H1
-that fails HP-06 stays locked (HP-08) unless CM-059's three conditions hold: run `python3 scripts/h1lock.py check
-<slug> --keyword "<main keyword>" --hp06 fail [--gsc <GSC queries export>]` and put its table to Paul as a Gate B
-decision (default: no H1 change) — never a recommendation made on your own.
-Refuse your own output if a finding lacks an evidence locator, or the URL Decision Map has
-fewer rows than the site has pages. The command then runs the **audit-reviewer** (S17). S18:
-the deliverables are rendered by `python3 scripts/render.py all <slug> --run <RUN_ID>` (never typed: change the register row
-and render again); the Evidence Manifest already includes every step outcome.
-Then `status.py mark <slug> audit_deliverables --file <Finding Register> --file <URL Decision Map> --file <Recommendations> --file <Evidence Manifest>`.
-Paul: `/approve <slug> audit_approved`.
+**Severity** is CM-061's: Fix · Fix and list · Ask (`finding-standard.md`) — one finding per issue, every affected URL,
+an evidence locator or no finding. URL decisions need no finding: each destructive map row becomes a kind-1 Ask by
+itself. A client fact is a kind-3 Ask with its `ext_searched` line (`questions.py` rules; a public fact goes to the
+researcher, never to Paul). There is no Gate B. A missing "The Best" is never a finding (CM-020); missing
+JavaScript-rendered data is never a finding. A live homepage H1 that fails HP-06 stays locked (HP-08) unless CM-059's
+three conditions hold: `python3 scripts/h1lock.py check <slug> --keyword "<main keyword>" --hp06 fail [--gsc <GSC
+queries export>]` and make its table a kind-1 Ask (default: no H1 change).
+Refuse your own output if a finding lacks an evidence locator, or the URL Decision Map has fewer rows than the site
+has pages. The command then runs the **audit-reviewer** (S17) on `python3 scripts/review.py scope <slug> audit`.
+S18: `python3 scripts/review.py sheet <slug> audit --run <RUN_ID>` (the one review sheet + `client-questions.csv`),
+`python3 scripts/render.py all <slug> --run <RUN_ID>`, then
+`status.py mark <slug> audit_deliverables --file <audit-review.csv> --file <findings.csv> --file <url-decision-map.csv> --file <Audit Review Sheet .md> --file <Evidence Manifest .md>`
+and `status.py mark <slug> blocker_checklist --file <Technical Blocker Checklist .md>`.
+
+**review** (any session) — Paul answered the audit review sheet ("accept all" or "accept all except 3b", or in the CSV):
+`python3 scripts/review.py apply <slug> audit --run <RUN_ID> --answers "<his line>"`. A decided URL row gets its
+superseding map row; the client's questions wait for the client. Then Paul: `/approve <slug> audit_approved` (D3: on its
+own — safe fixes and the blocker handoff start; the Brand Guide follows).
 
 **reconcile** — Parse whatever the client returned
 (`client-intake/references/proof-sheet.md` §6): `Client Confirmed` + date, keep `was:` values,
@@ -200,8 +200,8 @@ list. Changing only a row's status never voids the entity approval. Only a chang
 then only when the client corrected an entity fact: say so as one reopen request (`--reopen <key>`), never as a new
 question.
 `status.py mark <slug> reconciled --file clients/<slug>/brand-guide.md#A+D+E+G` (the reconciled client facts —
-not B3/C, which Build writes back to, and not F, which Finish completes). Paul: Approval 2
-(`/approve <slug> audit_approved brand_guide_approved`). The owner named on the returned sheet goes in the Brand Guide
+not B3/C, which Build writes back to, and not F, which Finish completes). Paul: Approval 2b
+(`/approve <slug> brand_guide_approved` — the audit was approved on its own, D3). The owner named on the returned sheet goes in the Brand Guide
 author field (CM-039) unless the Decision Sheet already settled the author.
 
 Discovery is then **signed off automatically** (a condition — no summary, no approval). **You never start Build.**

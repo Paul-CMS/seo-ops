@@ -5,7 +5,8 @@ side built 2026-10-20 (cost split 20fbba5; brief-free route, D5 routes, pilot ru
 left for Paul: run HMM locations in its client session (one review sheet, one approval line) and the Sonnet drafting
 test there. Phase 1 built 2026-10-20 (render.py, pipeline.py inventory, clerk retired, script-written handoff lines
 capped at 25, outline.py formula). Phase 2 built 2026-10-20 (llm.py; five jobs on the API with the agent route as
-the no-key fallback); left for Paul: type `ANTHROPIC_API_KEY` into `.env`. Next: Phase 3. Each
+the no-key fallback); left for Paul: type `ANTHROPIC_API_KEY` into `.env`. Phase 3 built 2026-10-20 (slim audit, CM-063;
+the cost fraction is measured on the next real audit). Next: Phase 5. Each
 phase runs in its own `/system` session, in order, starting with Phase 0. Phases marked **design** run on Opus; the rest on Sonnet, from
 this file as the written spec (CLAUDE.md → models).
 
@@ -140,6 +141,20 @@ in `~/.claude/projects/<project>/<session>.jsonl` and `<session>/subagents/*.jso
   (today about 66 KB).
 - **Done when:** the audit re-run on HMM's saved data reproduces its 36 decided 301s and the reviewer's 7
   withdrawals, at a measured fraction of the Phase 0 baseline.
+- **Built 2026-10-20** (ruling CM-063). `pagedec.py screen [--check]` → `audit/<date>/redirect-screen.csv/.md`, run by
+  `pipeline.py --phase audit`; `conformance.py triage` (the `Conformance Triage` column; `judge` scores only the
+  scoring set); `review.py sheet|apply <slug> audit` (one sheet: kind-1 Asks from every destructive URL row, one
+  client C4 question, findings by CM-061 severity — older High/Medium/Low rows map onto it; `client-questions.csv`;
+  apply appends superseding map rows and settles each Ask; `/approve audit_approved` refused until applied) and
+  `review.py scope <slug> audit` (S17); new step `discovery:review`; `render.py` drops the Finding Register, renders
+  the sheet from its JSON and the blocker checklist on CM-061 at the audit (`discovery:audit` produces
+  `blocker_checklist`; `build:blockers` only hands off, gated on `audit_approved`); D3 in `gates.json` / `next.py`;
+  D6 confirmed and fixed (S21 recorded skipped when off, so `audit_steps_complete` can be met; `--fanout` later still
+  runs it); skill trimmed (SKILL.md, finding-standard, analysis-rules, review-selfcheck rewritten; gate-b-questions
+  removed): the audit read list is 17.5 KB of system files (was ~66 KB). Tests: `tests/checks/rewrite4_phase3.py` on
+  HMM's saved audit (`tests/fixtures/hmm/audit`): the screen passes all 36 decided 301s and `--check` refuses exactly
+  the reviewer's 7 withdrawals (5 on C1, 2 on C2+C3); of the 43 destructive rows first written, 0 need the agent.
+  **Not measured yet:** the cost fraction — it needs a real-agent audit (the next client, or a dry run on Paul's yes).
 
 ### Phase 4 — Slim build (design, Opus; needs D2, D5) — runs SECOND, right after Phase 0 (Paul, 2026-10-20)
 - **Per-agent cost split first** (Phase 0 follow-up): `usage.py run|client --by-agent` splits each run's cost by

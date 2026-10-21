@@ -74,7 +74,7 @@ The only Google Doc the system creates is the proof sheet's client copy (HTML). 
 | Artifact | Drive location |
 |---|---|
 | Evidence | `01 - Discovery and Audit/Evidence/` |
-| Discovery Record, Proof Sheet, Finding Register, URL Decision Map, Recommendations, Evidence Manifest | `01 - Discovery and Audit/Deliverables/` |
+| Discovery Record, Proof Sheet, Audit Review Sheet, URL Decision Map, Evidence Manifest (older audits: Finding Register, Recommendations) | `01 - Discovery and Audit/Deliverables/` |
 | Briefs, approved drafts, Technical Blocker Checklist | `02 - Build/` |
 | Link Wheel Tables, schema, QA Punch-List | `03 - Finish/` |
 | Blog Decision Map, posts, refresh schedule | `04 - Blog/` |

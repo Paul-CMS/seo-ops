@@ -12,7 +12,7 @@ A question set is a JSON list of {"text", "kind", "searched", "best_answer"?, "k
                   facts.json → decisions-settled.md → reviews → the live site text → GBP data → the proof sheet and the
                   Discovery Record. `searched` lists what was searched; `best_answer` pre-fills what was found, so most
                   questions are a yes / no.
-Used by evidence.py (the facts pack) and by the audit's Gate B question writer. Run settled.py filter first (P4).
+Used by evidence.py (the facts pack) and by the audit's client questions (review.py sheet <slug> audit). Run settled.py filter first (P4).
 """
 import json
 import sys

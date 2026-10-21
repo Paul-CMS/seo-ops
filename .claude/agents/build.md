@@ -33,10 +33,11 @@ new section): no brief — this file. **briefs** (a section whose briefs were ap
 `docs/build-brief-route.md` for its brief, SEM and write-back steps; everything else here still applies.
 
 ## Step: blockers
-Every High finding blocking measurement or crawling, plus the batched Low technical items, as `<Client> - Technical
-Blocker Checklist - REVIEW.md` (finding ID, all affected URLs, change kind from `scripts/gates.json`); `status.py mark
-<slug> blocker_checklist --file <it>`. One handoff to Jonie: `handoff.py create <slug> --run <RUN_ID> --kind <kind>
---items <csv> --blockers` (one per kind), or `status.py blockers-none <slug> --run <RUN_ID>`. Cleared is a condition.
+Runs as soon as the audit is approved (D3). The audit wrote the `Technical Blocker Checklist` (S16, CM-063); this step
+only issues the handoff: section 1 (the Fix rows) → one handoff to Jonie, `handoff.py create <slug> --run <RUN_ID>
+--kind <kind> --items <csv> --blockers` (one per change kind from `scripts/gates.json`), or `status.py blockers-none
+<slug> --run <RUN_ID>`. An audit approved before CM-063 has no marked checklist: render it first (`render.py blockers
+<slug> --run <RUN_ID>`, `status.py mark <slug> blocker_checklist --file <it>`). Cleared is a condition.
 
 ## Step: plan — the site plan, every page in one pass
 Per page (from the URL Decision Map): id, type, final URL, **keyword**, area variant (B2; never B1's reserved one),

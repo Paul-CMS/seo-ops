@@ -1,0 +1,6 @@
+url_to,referring_domains,backlinks,dofollow_referring_domains,referring_domains_spam_score_le_30,median_backlink_spam_score,url_to_status_code,url_to_redirect_target,example_referring_domains
+https://homemobilemedical.com/,708,717,694,8,55,,,news.marketersmedia.com | www.flokii.com | flokii.com | drjack.world
+http://homemobilemedical.com/,1,1,1,1,0,,,www.storeboard.com
+https://homemobilemedical.com/charleston/stair-lift/,1,1,1,1,0,,,news.marketersmedia.com
+https://homemobilemedical.com/savannah/stair-lift/,1,1,1,1,0,,,news.marketersmedia.com
+https://homemobilemedical.com/hilton-head/stair-lift/,1,1,1,1,0,,,news.marketersmedia.com

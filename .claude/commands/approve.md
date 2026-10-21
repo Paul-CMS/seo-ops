@@ -23,8 +23,8 @@ This is Paul's decision, not yours. Do not add, soften or second-guess it.
    - `python3 scripts/approve.py <slug> batch:<id>:briefs|drafts --decision <d> [--files ...] [--sem 1,3,4|none] [--review ...] [--practitioner ...]`
    - `python3 scripts/approve.py <slug> page:<id> --decision <d> --file <f> [--review "..."] [--practitioner "..."]`
    - `python3 scripts/approve.py <slug> import --proposal clients/<slug>/import-proposal.json`
-   - several decisions in one line (Approval 1 `entity_approved proof_sheet_approved`, Approval 2 `audit_approved
-     brand_guide_approved`): `python3 scripts/approve.py <slug> <gate> <gate> --decision <d>` — each uses the files its
+   - several decisions in one line (Approval 1 `entity_approved proof_sheet_approved`; `audit_approved` and
+     `brand_guide_approved` are separate since D3, but may still share a line): `python3 scripts/approve.py <slug> <gate> <gate> --decision <d>` — each uses the files its
      step recorded; a decision named in the same line counts as approved for the other's prerequisites.
    - `python3 scripts/approve.py global specs` — the page specs, once, for every client.
    - `python3 scripts/approve.py <slug>|global mode:<stage>=auto|review`

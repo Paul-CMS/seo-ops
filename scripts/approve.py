@@ -566,6 +566,10 @@ def prepare(a, st, target, multi):
         if not files:
             die(f"REFUSED ({g}) — this approval must name the files it covers. Nothing is recorded for "
                 f"{S.plain(g)} yet (the producing command marks them), so pass --files.")
+        ar = st.get("audit_review") or {}
+        if g == "audit_approved" and ar and not ar.get("applied"):   # Rewrite 4 Phase 3: the approval follows the sheet
+            die(f"REFUSED ({g}) — the audit review sheet ({ar.get('sheet')}) is not applied yet: answer it (\"accept all\" "
+                f"or \"accept all except 3b\") and the system applies it (/discovery {a.slug} review) first.")
         missing = [r for r in S.requires(st, g) if not S._decided(st, r) and r not in a.targets]
         if missing:
             die(f"REFUSED ({g}) — these come first: "

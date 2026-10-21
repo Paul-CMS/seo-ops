@@ -1,5 +1,5 @@
 {
-  "_about": "Every gate a command can require, named by what it means. DECISIONS ('gates') are Paul's, set only by scripts/approve.py through his /approve; 'met' means Approved or Approved with Conditions and the files recorded with THAT approval are unchanged (an edit voids only that decision; later ones are flagged 'upstream change'). CONDITIONS are facts the scripts check themselves and log in log.md the first time they are met; nobody approves them. Each decision names its artifact (the status.json mark listing the files the approval covers) and its producer (the command that writes them). R3 (Paul, 2026-10-08): two approvals for discovery + audit. Approval 1 = entity_approved + proof_sheet_approved in one /approve line ('with' names the decision approved in the same line); Approval 2 = audit_approved + brand_guide_approved. discovery_signed_off and blockers_cleared are conditions. page_specs_approved is a global condition Paul meets once with /approve global specs.",
+  "_about": "Every gate a command can require, named by what it means. DECISIONS ('gates') are Paul's, set only by scripts/approve.py through his /approve; 'met' means Approved or Approved with Conditions and the files recorded with THAT approval are unchanged (an edit voids only that decision; later ones are flagged 'upstream change'). CONDITIONS are facts the scripts check themselves and log in log.md the first time they are met; nobody approves them. Each decision names its artifact (the status.json mark listing the files the approval covers) and its producer (the command that writes them). R3 (Paul, 2026-10-08): two approvals for discovery + audit. Approval 1 = entity_approved + proof_sheet_approved in one /approve line ('with' names the decision approved in the same line); Approval 2 = audit_approved on its own as soon as the audit is done (D3, Rewrite 4 Phase 3, 2026-10-20: the URL decisions, safe fixes and the blocker handoff no longer wait for the client), then brand_guide_approved when the client's facts are reconciled. discovery_signed_off and blockers_cleared are conditions. page_specs_approved is a global condition Paul meets once with /approve global specs.",
   "gates": {
     "entity_approved": {
       "label": "Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant)",
@@ -22,8 +22,8 @@
       "with": "entity_approved"
     },
     "audit_approved": {
-      "label": "Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)",
-      "plain": "the audit deliverables",
+      "label": "Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here)",
+      "plain": "the audit (its review sheet, registers and Evidence Manifest)",
       "requires": [
         "entity_approved",
         "audit_steps_complete"
@@ -38,8 +38,7 @@
         "proof_sheet_returned"
       ],
       "artifact": "reconciled",
-      "producer": "/discovery {slug} reconcile",
-      "with": "audit_approved"
+      "producer": "/discovery {slug} reconcile"
     },
     "link_wheel_approved": {
       "label": "Link wheel built and verified — schema may start",
@@ -152,7 +151,7 @@
       "label": "Technical blockers cleared — every blocker handoff returned done and /verify passed it",
       "plain": "the technical blockers cleared (Jonie's handoff done and verified)",
       "requires": [
-        "discovery_signed_off"
+        "audit_approved"
       ],
       "producer": "/build {slug} blockers",
       "wait_for": "Jonie to return the technical blocker handoff (then /verify checks it)"
@@ -340,7 +339,7 @@
     "entity_record": "the Decision Sheet and the Discovery Record with the entity foundation (Brand Guide A/B proposal)",
     "proof_sheet": "the client proof sheet (.md; the Google Doc client copy is separate) — or the client's direct answers",
     "proof_sheet_returned": "the client's returned proof sheet, saved as given",
-    "audit_deliverables": "the Finding Register, URL Decision Map, Recommendations and Evidence Manifest",
+    "audit_deliverables": "the audit review sheet (audit-review.csv + its rendered view), the registers (findings.csv, url-decision-map.csv) and the Evidence Manifest",
     "reconciled": "the reconciled Brand Guide (clients/<slug>/brand-guide.md)",
     "blocker_checklist": "the Technical Blocker Checklist",
     "site_plan": "the site plan (.md, registered with status.py plan)",
@@ -437,25 +436,38 @@
       ],
       "produces": [
         "steps:S12,S13,S14,S15,S16,S17,S18",
-        "audit_deliverables"
+        "audit_deliverables",
+        "blocker_checklist"
       ],
       "reads": [
-        "methodology/audit-steps.md",
+        "docs/stage-4-audit.md",
         ".claude/skills/seo-technical-audit/SKILL.md",
-        ".claude/skills/seo-technical-audit/references/*.md",
-        "methodology/specs/*.md",
+        ".claude/skills/seo-technical-audit/references/finding-standard.md",
+        ".claude/skills/seo-technical-audit/references/analysis-rules.md",
         "python3 scripts/rulings.py --index, then the IDs the step needs (never rulings.md whole, P12)",
         "clients/<slug>/brand-guide.md",
         "clients/<slug>/decisions-settled.md",
+        "clients/<slug>/audit/<date>/redirect-screen.md (pagedec.py screen: decide only the needs-evidence rows)",
+        "clients/<slug>/audit/conformance.md + conformance-triage.csv (S15 triage; never a scorecard)",
         "clients/<slug>/inputs/*GSC*queries-homepage-90d*.csv (the homepage's 90-day Search Console export, CR-024: h1lock.py --gsc)",
         "clients/<slug>/data/crawl/crawl-summary.csv + page-text.csv (never the raw crawl tables)",
-        "clients/<slug>/data/reviews/reviews-summary.md + customer-language.md",
+        "clients/<slug>/data/reviews/reviews-summary.md",
         "clients/<slug>/data/backlinks/backlinks-per-url.csv",
         "clients/<slug>/data/local-grid/local-grid-summary.md",
-        "clients/<slug>/data/rankings/ (summaries)",
-        "clients/<slug>/data/paa/paa-routing.md",
-        "clients/<slug>/data/fanout/fanout-routing.md",
+        "clients/<slug>/data/rankings/rankings-summary.md",
         "clients/<slug>/inputs/ (an imported client's exports: crawl tables, technical audit, citation tracker, grid links, old URL map)"
+      ]
+    },
+    "discovery:review": {
+      "gates": [
+        "entity_approved"
+      ],
+      "produces": [],
+      "reads": [
+        "clients/<slug>/audit/<date>/audit-review.csv (Paul's answers) and audit-review.json",
+        "Paul's one answer line (\"accept all\" or \"accept all except 3b\")",
+        "methodology/review-severities.json (Fix · Fix and list · Ask; the four Ask kinds)",
+        "clients/<slug>/decisions-settled.md"
       ]
     },
     "discovery:reconcile": {
@@ -487,14 +499,11 @@
     },
     "build:blockers": {
       "gates": [
-        "discovery_signed_off"
+        "audit_approved"
       ],
-      "produces": [
-        "blocker_checklist"
-      ],
+      "produces": [],
       "reads": [
-        "the approved Finding Register",
-        "python3 scripts/rulings.py CM-028 (never rulings.md whole, P12)",
+        "clients/<slug>/build/<Client> - Technical Blocker Checklist - REVIEW.md (written at the audit, S16 — section 1 is the handoff)",
         "scripts/gates.json (change_kinds)",
         "clients/<slug>/decisions-settled.md"
       ]
@@ -1144,6 +1153,9 @@
       "discovery:audit": {
         "pilot": null
       },
+      "discovery:review": {
+        "pilot": null
+      },
       "discovery:reconcile": {
         "pilot": null
       },
@@ -1277,6 +1289,7 @@
       ],
       "steps": [
         "discovery:audit",
+        "discovery:review",
         "discovery:reconcile"
       ]
     },

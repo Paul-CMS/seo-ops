@@ -216,22 +216,47 @@ def approval_one(st, slug):
         "answer is settled for good and the data pulls can start")
 
 
+def audit_review(st, slug):
+    """The audit's one review sheet (Rewrite 4 Phase 3), not yet applied — Paul answers it in one line, or the system
+    applies the defaults. audit_approved comes after."""
+    ar = st.get("audit_review") or {}
+    if not ar or ar.get("applied") or "audit_deliverables" not in (st.get("marks") or {}):
+        return
+    if ar.get("asks"):
+        out("decision", f'/discovery {slug} review "accept all"',
+            f"the audit review sheet has {ar['asks']} question(s) ({ar.get('client', 0)} for the client — Paul sends "
+            f"client-questions.csv) and {ar.get('listed', 0)} decided for you ({ar.get('sheet')}): reply \"accept all\", or "
+            "\"accept all except 3b\" — an empty answer takes the recommended option; the client's questions wait for "
+            "the client")
+    out("run", f"/discovery {slug} review", f"apply the audit review — nothing to ask; {ar.get('listed', 0)} decided for you")
+
+
 def approval_two(st, slug):
-    """Approval 2 (R3): the audit + the reconciled Brand Guide in one line; the sign-off is then a condition."""
-    want = [g for g in ("audit_approved", "brand_guide_approved") if not S.gate_met(st, g)[0]]
-    if not want:
+    """Approval 2 (D3, Rewrite 4 Phase 3): the audit on its own, as soon as it is done — the URL decisions, safe fixes
+    and the blocker handoff unlock there; the reconciled Brand Guide when the client's facts are back. The discovery
+    sign-off is then a condition."""
+    if not S.gate_met(st, "audit_approved")[0]:
+        audit_review(st, slug)
+        if "audit_deliverables" in (st.get("marks") or {}):
+            out("decision", approve_line(st, slug, ["audit_approved"]),
+                f"the audit is ready for your approval on its own — {covers(st, ['audit_approved'])}. Safe fixes and the "
+                "technical blocker handoff start at once; the Brand Guide follows when the client's facts are back")
+        return
+    if "blocker_checklist" in (st.get("marks") or {}) and not st.get("blocker_handoffs") and not st.get("blockers_none") \
+            and not S.condition_met(st, "blockers_cleared")[0]:
+        out("run", f"/build {slug} blockers", "hand the technical blockers to Jonie (one handoff from the checklist "
+            "the audit wrote) — they are fixed while the client's facts come back")
+    if S.gate_met(st, "brand_guide_approved")[0]:
         return
     if not S.condition_met(st, "proof_sheet_returned")[0]:
-        alone = (f" Or approve the audit alone now (safe fixes can start): {approve_line(st, slug, ['audit_approved'])}"
-                 if "audit_approved" in want else "")
         out("wait", f"/discovery {slug} sheet-returned",
             "waiting for the client's facts (the returned proof sheet) — when they arrive, this records them, then "
-            "reconcile, and the audit and Brand Guide come to you together in one approval." + alone)
-    if "brand_guide_approved" in want and "reconciled" not in (st.get("marks") or {}):
+            "reconcile, and the Brand Guide comes to you for approval")
+    if "reconciled" not in (st.get("marks") or {}):
         out("run", f"/discovery {slug} reconcile", "reconcile the client's facts into the Brand Guide")
-    out("decision", approve_line(st, slug, want),
-        f"the audit and the reconciled Brand Guide are ready for your approval in one line — {covers(st, want)}. "
-        "Discovery is then signed off automatically and Build starts")
+    out("decision", approve_line(st, slug, ["brand_guide_approved"]),
+        f"the reconciled Brand Guide is ready for your approval — {covers(st, ['brand_guide_approved'])}. Discovery is "
+        "then signed off automatically and Build starts")
 
 
 def evidence_and_briefs(st, slug, b):

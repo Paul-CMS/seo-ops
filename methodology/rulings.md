@@ -741,6 +741,30 @@ Decided by Paul.
    `methodology/specs/legacy/location-2026-10-08.md` for any Apex session. The new structure starts with Home Mobile
    Medical.
 
+## CM-063 · The slim audit: screen first, triage, decide by default, one review sheet
+**ID** CM-063 · **Status** APPROVED · **Date** 2026-10-20 · **Reason** HMM's audit reviewer withdrew 7 redirect candidates that rankings or backlinks already ruled out, scored every page against a spec that Build was about to rewrite anyway, and the audit shipped a Recommendations document and a Markdown register that nobody outside the agency reads. · **Source** Paul, REWRITE-4-PLAN.md Phase 3 and D3 (approved 2026-10-20) · **Supersedes** CM-028 for audit findings (an older audit keeps its High/Medium/Low register); the Gate B clarification stop; the per-type conformance scorecards; the Recommendations document; Approval 2 as one line (R3)
+
+Decided by Paul.
+1. **Screen first.** `scripts/pagedec.py screen` computes CM-019 conditions 1–3 for every URL from rankings, backlinks,
+   Search Console / GA4 (when given), the GBP website field and the citation domains → pass · fail · needs evidence.
+   A `fail` URL is never a destructive candidate (`--check` refuses one). The audit agent decides only the
+   `needs evidence` rows and entity mismatches. Condition 4 stays the client's.
+2. **S15 is triage.** `scripts/conformance.py triage` writes one URL Decision Map column: rebuild · light fix · keep.
+   Only pages Build will not rewrite (blog posts, kept utility pages, Route B pages, the homepage under HP-08) are
+   scored in full (`conformance.py judge`). There are no scorecard files.
+3. **Severity is CM-061's.** Every audit finding is Fix (the VA's technical hygiene → the Technical Blocker Checklist,
+   which S16 writes at the audit), Fix and list (decided by default — mostly fixed by the rebuild), or Ask (the four
+   kinds; most are kind 1, URL decisions).
+4. **One review sheet** (`review.py sheet <slug> audit`) replaces Gate B and the Recommendations document. The
+   deliverables are the registers (CSV), that sheet and the Evidence Manifest, all rendered. The audit is internal: the
+   client sees only `client-questions.csv` (the kind-3 rows), sent by Paul.
+5. **The reviewer (S17, CM-026 unchanged)** opens every destructive URL row and every Ask, plus a sample of the rest
+   (`review.py scope <slug> audit`), from the registers only.
+6. **D3:** `audit_approved` is its own approval as soon as the audit is done; safe fixes and the blocker handoff
+   unlock there. `brand_guide_approved` follows when the client's facts are reconciled; the discovery sign-off still
+   needs both.
+7. Audits approved before this ruling (Home Mobile Medical, Apex) keep their documents and approvals.
+
 ---
 
 # C. Rule Register
@@ -979,7 +1003,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-025 | APPROVED |
 | CM-026 | APPROVED |
 | CM-027 | APPROVED (first bullet amended by CM-057) |
-| CM-028 | APPROVED |
+| CM-028 | APPROVED (audit findings: SUPERSEDED → CM-063) |
 | CM-029 | NOTED (merged into CM-022) |
 | CM-030 | OPEN |
 | CM-031 | OPEN |
@@ -1009,6 +1033,8 @@ conflicts follow PROC-01 and are ruled here).
 | CM-059 | APPROVED (homepage H1 lock lifts for a failing, unranked legacy H1 — Paul decides) |
 | CM-060 | APPROVED (FAQ: short first sentence, 40–60-word first paragraph; overrides the spec wording) |
 | CM-061 | APPROVED (evidence first, decide by default — rewrite 3 Phase 1) |
+| CM-062 | APPROVED (location page structure) |
+| CM-063 | APPROVED (the slim audit: screen, triage, CM-061 severity, one review sheet, D3 — Rewrite 4 Phase 3) |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |
