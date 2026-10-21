@@ -8,6 +8,7 @@
     handoff.py ingest <slug> --run R --returned returned.csv [--handoff H-ID]
                       the returned VA Worklist (P9): every row is routed to its group by ref; --handoff for one group
     handoff.py list   <slug> [--open]
+    handoff.py kinds                     every change kind: the decision(s) it needs, its channel and owner (read lists)
 
 items.csv columns: url, field, old, new, reason, decision_map_ref   (slug rows may add new_url)
   - Owner is set by the kind (gates.json change_kinds → owner): WordPress, technical, redirect and
@@ -92,7 +93,15 @@ def main():
     s = sub.add_parser("list"); s.add_argument("slug"); s.add_argument("--open", action="store_true")
     s = sub.add_parser("retarget"); s.add_argument("slug"); s.add_argument("--run", required=True)
     s.add_argument("--ref", required=True); s.add_argument("--new", required=True); s.add_argument("--reason", required=True)
+    sub.add_parser("kinds")
     a = ap.parse_args()
+    if a.cmd == "kinds":   # Phase 7: the change kinds table for a read list (never gates.json whole)
+        print("| kind | needs | channel | owner |\n|---|---|---|---|")
+        for k, v in KINDS.items():
+            g = v.get("gate")
+            print(f"| {k} | {' + '.join([g] if isinstance(g, str) else list(g or [])) or 'the client set-up'} "
+                  f"| {v['channel']} | {v.get('owner', 'Gwen')} |")
+        return
     d = hdir(a.slug)
 
     if a.cmd == "list":
@@ -117,11 +126,11 @@ def main():
                 f"else → Gwen). To send it to {a.to} instead, add --owner-reason.")
         a.to = a.to or owner
         domain = re.sub(r"^https?://|/$", "", st["client"]["domain"])
-        gate = KINDS[a.kind]["gate"]
-        if gate != "page_approval":
-            ok, rs = S.gate_met(st, gate)
-            if not ok:
-                die(f"REFUSED — {S.label(gate)}: " + "; ".join(rs), 4)
+        ok, rs = S.kind_met(st, a.kind)
+        if not ok:
+            g = KINDS[a.kind].get("gate")
+            names = [x for x in ([g] if isinstance(g, str) else list(g or [])) if x != "page_approval"]
+            die(f"REFUSED — {' + '.join(S.label(x) for x in names) or 'client set-up'}: " + "; ".join(rs), 4)
         items = read_csv(a.items)
         if not items:
             die("no items")

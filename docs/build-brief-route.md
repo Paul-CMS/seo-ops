@@ -2,7 +2,7 @@
 
 _Reference for `.claude/agents/build.md`. A section is on this route only when `status.py show` lists it with
 `route briefs` (Rewrite 4, D5: its briefs were approved or under way when the outline route arrived — e.g. HMM's
-pilot and services). Every other section is on the outline route (build.md → "Step: write")._
+pilot and services). Every other section is on the outline route (`docs/build-procedure.md` → write)._
 
 ## Step: brief <id> — every cleared page's brief (Route A) or sanity check (Route B)
 After the evidence gate (build.md → "The evidence gate"), one file per page from the approved site plan; skip blocked

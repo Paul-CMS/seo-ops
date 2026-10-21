@@ -1,12 +1,10 @@
 {
-  "_about": "Every gate a command can require, named by what it means. DECISIONS ('gates') are Paul's, set only by scripts/approve.py through his /approve; 'met' means Approved or Approved with Conditions and the files recorded with THAT approval are unchanged (an edit voids only that decision; later ones are flagged 'upstream change'). CONDITIONS are facts the scripts check themselves and log in log.md the first time they are met; nobody approves them. Each decision names its artifact (the status.json mark listing the files the approval covers) and its producer (the command that writes them). R3 (Paul, 2026-10-08): two approvals for discovery + audit. Approval 1 = entity_approved + proof_sheet_approved in one /approve line ('with' names the decision approved in the same line); Approval 2 = audit_approved on its own as soon as the audit is done (D3, Rewrite 4 Phase 3, 2026-10-20: the URL decisions, safe fixes and the blocker handoff no longer wait for the client), then brand_guide_approved when the client's facts are reconciled. discovery_signed_off and blockers_cleared are conditions. page_specs_approved is a global condition Paul meets once with /approve global specs.",
+  "_about": "Every gate a command can require, named by what it means. DECISIONS ('gates') are Paul's, set only by scripts/approve.py through his /approve; 'met' means Approved or Approved with Conditions and the files recorded with THAT approval are unchanged (an edit voids only that decision; later ones are flagged 'upstream change'). CONDITIONS are facts the scripts check themselves and log in log.md the first time they are met; nobody approves them. Each decision names its artifact (the status.json mark listing the files the approval covers) and its producer (the command that writes them). R3 (Paul, 2026-10-08): two approvals for discovery + audit. Approval 1 = entity_approved + proof_sheet_approved in one /approve line ('with' names the decision approved in the same line); Approval 2 = audit_approved on its own as soon as the audit is done (D3, Rewrite 4 Phase 3, 2026-10-20: the URL decisions, safe fixes and the blocker handoff no longer wait for the client), then brand_guide_approved when the client's facts are reconciled. discovery_signed_off and blockers_cleared are conditions. A change kind's gate is one decision, a list of decisions, or none (the client set-up is always checked). page_specs_approved is a global condition Paul meets once with /approve global specs.",
   "gates": {
     "entity_approved": {
       "label": "Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant)",
       "plain": "the Decision Sheet and the entity foundation",
-      "requires": [
-        "client_setup"
-      ],
+      "requires": [],
       "artifact": "entity_record",
       "producer": "/discovery {slug} discovery",
       "producer_blog_only": "/blog {slug} intake"
@@ -25,8 +23,7 @@
       "label": "Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here)",
       "plain": "the audit (its review sheet, registers and Evidence Manifest)",
       "requires": [
-        "entity_approved",
-        "audit_steps_complete"
+        "entity_approved"
       ],
       "artifact": "audit_deliverables",
       "producer": "/discovery {slug} audit"
@@ -87,11 +84,6 @@
     }
   },
   "conditions": {
-    "client_setup": {
-      "label": "Client set up (/new-client finished)",
-      "plain": "the client has been set up with /new-client",
-      "producer": "/new-client"
-    },
     "proof_sheet_returned": {
       "label": "The client's facts are in — the returned proof sheet is recorded, or Paul approved the client's direct answers",
       "plain": "the client's returned proof sheet",
@@ -100,11 +92,6 @@
       ],
       "producer": "/discovery {slug} sheet-returned",
       "wait_for": "the client to return the proof sheet"
-    },
-    "audit_steps_complete": {
-      "label": "Every registered audit step has an outcome (Done / Skipped / Failed)",
-      "plain": "an outcome for every audit step",
-      "producer": "/discovery {slug} audit"
     },
     "pages_drafted": {
       "label": "Every page in the site plan is a WordPress draft — ready for the one living publish handoff (CM-055)",
@@ -153,82 +140,80 @@
       "global": true
     }
   },
-  "derived": {
-    "safe_fixes_allowed": {
-      "label": "Safe fixes allowed (audit approved): broken links, alt text, image URLs, sitemap, robots.txt, meta description duplicates, speed",
-      "plain": "the audit approval (safe fixes)",
-      "requires": [
-        "audit_approved"
-      ]
-    },
-    "structural_changes_allowed": {
-      "label": "Structural changes allowed (entity + Brand Guide approved): redirects, URL/slug changes, consolidations, SEO titles and H1s",
-      "plain": "the entity foundation and the reconciled Brand Guide (structural changes)",
-      "requires": [
-        "entity_approved",
-        "brand_guide_approved"
-      ]
-    }
-  },
   "change_kinds": {
     "alt_text": {
-      "gate": "safe_fixes_allowed",
+      "gate": "audit_approved",
       "channel": "wp",
       "owner": "Jonie"
     },
     "image_url": {
-      "gate": "safe_fixes_allowed",
+      "gate": "audit_approved",
       "channel": "wp",
       "owner": "Jonie"
     },
     "broken_link": {
-      "gate": "safe_fixes_allowed",
+      "gate": "audit_approved",
       "channel": "wp",
       "owner": "Jonie"
     },
     "sitemap": {
-      "gate": "safe_fixes_allowed",
+      "gate": "audit_approved",
       "channel": "handoff",
       "owner": "Jonie"
     },
     "robots_txt": {
-      "gate": "safe_fixes_allowed",
+      "gate": "audit_approved",
       "channel": "handoff",
       "owner": "Jonie"
     },
     "speed": {
-      "gate": "safe_fixes_allowed",
+      "gate": "audit_approved",
       "channel": "handoff",
       "owner": "Jonie"
     },
     "meta_description": {
-      "gate": "safe_fixes_allowed",
+      "gate": "audit_approved",
       "channel": "wp",
       "owner": "Jonie"
     },
     "seo_title": {
-      "gate": "structural_changes_allowed",
+      "gate": [
+        "entity_approved",
+        "brand_guide_approved"
+      ],
       "channel": "wp_after_pilot",
       "owner": "Jonie"
     },
     "h1": {
-      "gate": "structural_changes_allowed",
+      "gate": [
+        "entity_approved",
+        "brand_guide_approved"
+      ],
       "channel": "content",
       "owner": "Jonie"
     },
     "slug": {
-      "gate": "structural_changes_allowed",
+      "gate": [
+        "entity_approved",
+        "brand_guide_approved"
+      ],
       "channel": "handoff",
       "always_with": "redirect",
       "owner": "Jonie"
     },
     "redirect": {
-      "gate": "structural_changes_allowed",
+      "gate": [
+        "entity_approved",
+        "brand_guide_approved"
+      ],
       "channel": "handoff",
       "owner": "Jonie"
     },
     "consolidation": {
-      "gate": "structural_changes_allowed",
+      "gate": [
+        "entity_approved",
+        "brand_guide_approved"
+      ],
       "channel": "handoff",
       "owner": "Jonie"
     },
@@ -243,7 +228,10 @@
       "owner": "Jonie"
     },
     "schema": {
-      "gate": "structural_changes_allowed",
+      "gate": [
+        "entity_approved",
+        "brand_guide_approved"
+      ],
       "channel": "wp_after_pilot",
       "owner": "Jonie"
     },
@@ -263,7 +251,6 @@
       "owner": "Gwen"
     },
     "other": {
-      "gate": "client_setup",
       "channel": "handoff",
       "owner": "Gwen"
     },
@@ -278,37 +265,46 @@
       "owner": "Jonie"
     },
     "seo_keyword": {
-      "gate": "structural_changes_allowed",
+      "gate": [
+        "entity_approved",
+        "brand_guide_approved"
+      ],
       "channel": "wp_after_pilot",
       "owner": "Jonie"
     },
     "social": {
-      "gate": "structural_changes_allowed",
+      "gate": [
+        "entity_approved",
+        "brand_guide_approved"
+      ],
       "channel": "wp_after_pilot",
       "owner": "Jonie"
     },
     "meta_robots": {
-      "gate": "structural_changes_allowed",
+      "gate": [
+        "entity_approved",
+        "brand_guide_approved"
+      ],
       "channel": "wp_after_pilot",
       "owner": "Jonie"
     },
     "canonical": {
-      "gate": "structural_changes_allowed",
+      "gate": [
+        "entity_approved",
+        "brand_guide_approved"
+      ],
       "channel": "wp_after_pilot",
       "owner": "Jonie"
     },
     "seopress_settings": {
-      "gate": "client_setup",
       "channel": "handoff",
       "owner": "Jonie"
     },
     "wp_setup": {
-      "gate": "client_setup",
       "channel": "handoff",
       "owner": "Jonie"
     },
     "manual_lookup": {
-      "gate": "client_setup",
       "channel": "handoff",
       "owner": "Gwen"
     }
@@ -355,9 +351,7 @@
       ]
     },
     "discovery:discovery": {
-      "gates": [
-        "client_setup"
-      ],
+      "gates": [],
       "produces": [
         "steps:S01,S02,S03",
         "entity_record"
@@ -367,7 +361,7 @@
         ".claude/skills/client-intake/references/discovery.md",
         "templates/decision-sheet.md",
         "templates/brand-guide.md (A, B)",
-        "sop-source/BB-Standard-v1.0.md (BB-1xx entity rules)",
+        "python3 scripts/rulings.py BB-1xx (the Bradley Standard's entity rules; never the Standard whole)",
         "python3 scripts/rulings.py CM-016 CM-020 PROC-01 (never rulings.md whole, P12)",
         "clients/<slug>/inputs/public-site-* (a saved copy of the client's site, if captured) and inputs/*entity-profile* (an earlier entity profile, if any)",
         "clients/<slug>/decisions-settled.md"
@@ -375,7 +369,6 @@
     },
     "discovery:proof-sheet": {
       "gates": [
-        "client_setup",
         "marked:entity_record"
       ],
       "produces": [
@@ -478,9 +471,7 @@
       ]
     },
     "crawl": {
-      "gates": [
-        "client_setup"
-      ],
+      "gates": [],
       "produces": [
         "steps:S05"
       ],
@@ -495,7 +486,7 @@
       "produces": [],
       "reads": [
         "clients/<slug>/build/<Client> - Technical Blocker Checklist - REVIEW.md (written at the audit, S16 — section 1 is the handoff)",
-        "scripts/gates.json (change_kinds)",
+        "python3 scripts/handoff.py kinds (the change kinds: decision, channel, owner)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -529,6 +520,7 @@
         "evidence_batch:{batch}"
       ],
       "reads": [
+        "docs/build-procedure.md (the agent's procedure for this step)",
         "the approved site plan (the batch's pages)",
         "clients/<slug>/brand-guide.md (A, D, E)",
         "the returned proof sheet and the approved Discovery Record",
@@ -542,7 +534,7 @@
         "clients/<slug>/interviews/ (facts answers and transcripts, through the evidence pack)",
         "methodology/sources/<state>-<area>.md (public facts and the public lookups for licences and certifications)",
         "methodology/places/<state>/<place>/ (the place store: verified place and place × niche facts, through the evidence pack)",
-        "methodology/writing-commercial.md (Usage tiers)",
+        "python3 scripts/rulings.py --section methodology/writing-commercial.md \"Usage tiers\" (how evidence may be written)",
         "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts",
         "clients/<slug>/decisions-settled.md"
       ]
@@ -570,7 +562,7 @@
         "python3 scripts/rulings.py CM-041 CM-057 (never rulings.md whole, P12)",
         "clients/<slug>/build/pilot-corrections.md (if present — this client's pilot corrections, P3)",
         "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts",
-        "methodology/writing-commercial.md (Usage tiers)",
+        "python3 scripts/rulings.py --section methodology/writing-commercial.md \"Usage tiers\" (how evidence may be written)",
         "methodology/location-faq.md (location pages: three FAQs, one per category — CM-061)",
         "clients/<slug>/decisions-settled.md"
       ]
@@ -592,7 +584,6 @@
         "the drafts already written in this batch and the pages approved in earlier batches (sibling context)",
         "clients/<slug>/build/pilot-corrections.md (if present — this client's pilot corrections, P3)",
         "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts (written at its usage tier)",
-        "methodology/writing-commercial.md (Usage tiers)",
         "methodology/location-faq.md (location pages: three FAQs, one per category — CM-061)",
         "clients/<slug>/decisions-settled.md"
       ]
@@ -648,24 +639,25 @@
     },
     "implement:safe": {
       "gates": [
-        "safe_fixes_allowed",
+        "audit_approved",
         "wordpress_connected"
       ],
       "produces": [],
       "reads": [
         "the approved Finding Register / Technical Blocker Checklist",
-        "scripts/gates.json (change_kinds)"
+        "python3 scripts/handoff.py kinds (the change kinds: decision, channel, owner)"
       ]
     },
     "implement:structural": {
       "gates": [
-        "structural_changes_allowed",
+        "entity_approved",
+        "brand_guide_approved",
         "wordpress_connected"
       ],
       "produces": [],
       "reads": [
         "the approved URL Decision Map",
-        "scripts/gates.json (change_kinds)"
+        "python3 scripts/handoff.py kinds (the change kinds: decision, channel, owner)"
       ]
     },
     "implement:page": {
@@ -790,9 +782,7 @@
       ]
     },
     "blog:intake": {
-      "gates": [
-        "client_setup"
-      ],
+      "gates": [],
       "produces": [
         "steps:S03",
         "entity_record"
@@ -800,7 +790,7 @@
       "reads": [
         "methodology/agency-profile.md",
         "templates/brand-guide.md (A, B)",
-        "sop-source/BB-Standard-v1.0.md (BB-1xx entity rules)",
+        "python3 scripts/rulings.py BB-1xx (the Bradley Standard's entity rules; never the Standard whole)",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -825,6 +815,7 @@
       ],
       "produces": [],
       "reads": [
+        "docs/build-procedure.md (the agent's procedure for this step)",
         "every approved page file (all batches)",
         "clients/<slug>/build/ site plan JSON",
         "clients/<slug>/decisions-settled.md",
@@ -841,6 +832,7 @@
         "batch_state:{batch}:written_back|corrections_requested"
       ],
       "reads": [
+        "docs/build-procedure.md (the agent's procedure for this step)",
         "the returned publish worksheet",
         "the verify report",
         "methodology/specs/<type>.md (alt-text format)",
@@ -860,9 +852,7 @@
       ]
     },
     "wp-check": {
-      "gates": [
-        "client_setup"
-      ],
+      "gates": [],
       "produces": [],
       "reads": [
         "wordpress/wordpress-site-setup.md"
@@ -880,9 +870,7 @@
       ]
     },
     "drive-mirror": {
-      "gates": [
-        "client_setup"
-      ],
+      "gates": [],
       "produces": [],
       "reads": [
         "scripts/drive.py (docstring: archive-and-replace)"
@@ -978,7 +966,6 @@
     },
     "discovery:facts-direct": {
       "gates": [
-        "client_setup",
         "marked:entity_record"
       ],
       "produces": [
@@ -1002,6 +989,7 @@
         "publish_handoff"
       ],
       "reads": [
+        "docs/build-procedure.md (the agent's procedure for this step)",
         "status.json (the drafted pages)",
         "the technical blocker handoff(s)",
         "clients/<slug>/decisions-settled.md",
@@ -1016,6 +1004,7 @@
       ],
       "produces": [],
       "reads": [
+        "docs/build-procedure.md (the agent's procedure for this step)",
         "the section's approved briefs (variants, H2s and FAQ questions each page will use) — CM-061: the Brand Guide is written once per section, at the brief approval",
         "clients/<slug>/brand-guide.md (B3, C1, C2, C3)",
         "clients/<slug>/decisions-settled.md"
@@ -1054,33 +1043,24 @@
         "batch_written:{batch}"
       ],
       "reads": [
+        "docs/build-procedure.md (the agent's procedure for this step)",
         "the approved site plan (the batch's pages and their siblings)",
-        "clients/<slug>/brand-guide.md",
+        "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts",
         "clients/<slug>/build/evidence/<page>.grid.md for each page (written by this run's evidence gate)",
-        "methodology/specs/<type>.md for each page type in the batch",
+        "the page's outline (build/<section>/outlines/<page>.md, written by outline.py in the write run) — on a brief-route section, its approved brief instead",
+        "methodology/specs/<type>.md for each page type in the batch + methodology/specs/README.md (common checks)",
+        "methodology/writing-commercial.md (Stage 0–4, E1–E10, Usage tiers)",
+        "methodology/location-faq.md (location pages: three FAQs, one per category — CM-061)",
+        "methodology/review-severities.json (Fix · Fix and list · Ask; the four Ask kinds)",
+        "clients/<slug>/brand-guide.md (A–D, H2, I)",
         "clients/<slug>/data/reviews/customer-language.md",
         "clients/<slug>/data/paa/paa-routing.md",
         "clients/<slug>/data/fanout/fanout-routing.md",
-        "the pages approved in earlier batches (sibling context)",
-        "the audit findings for these pages",
-        "python3 scripts/rulings.py CM-041 CM-057 (never rulings.md whole, P12)",
-        "clients/<slug>/build/pilot-corrections.md (if present — this client's pilot corrections, P3)",
-        "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts",
-        "methodology/writing-commercial.md (Usage tiers)",
-        "methodology/review-severities.json (Fix · Fix and list · Ask; the four Ask kinds)",
-        "clients/<slug>/decisions-settled.md",
-        "the page's outline (build/<section>/outlines/<page>.md, written by outline.py in the write run) — on a brief-route section, its approved brief instead",
-        "methodology/writing-commercial.md",
-        "methodology/specs/<type>.md + methodology/specs/README.md (common checks)",
-        "clients/<slug>/brand-guide.md (A–D, H2, I)",
         "the drafts already written in this batch and the pages approved in earlier batches (sibling context)",
-        "every draft in the batch (one per page, each from its own run)",
-        "methodology/writing-commercial.md (E1, Stage 4)",
-        "methodology/specs/<type>.md",
-        "clients/<slug>/brand-guide.md (C1–C3)",
-        "the pages approved in earlier batches",
-        "methodology/location-faq.md (location pages: three FAQs, one per category — CM-061)",
-        "python3 scripts/rulings.py CM-017 CM-043 (never rulings.md whole, P12)",
+        "the audit findings for these pages",
+        "clients/<slug>/build/pilot-corrections.md (if present — this client's pilot corrections, P3)",
+        "python3 scripts/rulings.py CM-041 CM-057 CM-017 CM-043 (never rulings.md whole, P12)",
+        "clients/<slug>/decisions-settled.md",
         "docs/build-brief-route.md (only for a section on the brief route — status.py show)"
       ]
     },
@@ -1090,10 +1070,11 @@
       ],
       "produces": [],
       "reads": [
+        "docs/build-procedure.md (the agent's procedure for this step)",
         "clients/<slug>/build/<section>/<step>-review.csv (Paul's answers) and <step>-review.json",
         "Paul's one answer line (\"accept all\" or \"accept all except 7b, 12c\")",
         "clients/<slug>/build/<section>/packs/<page>.md — the page's evidence pack (evidence_pack.py; CM-061): the only place to look for facts",
-        "methodology/writing-commercial.md (Usage tiers)",
+        "python3 scripts/rulings.py --section methodology/writing-commercial.md \"Usage tiers\" (how evidence may be written)",
         "methodology/review-severities.json (Fix · Fix and list · Ask; the four Ask kinds)",
         "clients/<slug>/decisions-settled.md"
       ]
@@ -1353,6 +1334,22 @@
     "link_wheel_approved": {
       "label": "Link wheel built and verified — schema may start",
       "why": "CM-064 (Rewrite 4 Phase 5, 2026-10-20): the wheel is built by script (wheel.py) from the approved site plan and placed when each draft is generated; QA and schema run before the one VA worklist — nothing to approve"
+    },
+    "client_setup": {
+      "label": "Client set up (/new-client finished)",
+      "why": "Phase 7 (Paul, 2026-10-21): never false for a client with a status.json — now a check inside run.py start, handoff.py and wp.py (status.client_set_up)"
+    },
+    "audit_steps_complete": {
+      "label": "Every registered audit step has an outcome",
+      "why": "Phase 7 (Paul, 2026-10-21): only ever a prerequisite of audit_approved — now a refusal inside approve.py and a /next step (status.audit_steps_left)"
+    },
+    "safe_fixes_allowed": {
+      "label": "Safe fixes allowed (audit approved)",
+      "why": "Phase 7 (Paul, 2026-10-21): identical to audit_approved — change_kinds and implement:safe name audit_approved"
+    },
+    "structural_changes_allowed": {
+      "label": "Structural changes allowed (entity + Brand Guide approved)",
+      "why": "Phase 7 (Paul, 2026-10-21): a pair of decisions — change_kinds and implement:structural name entity_approved + brand_guide_approved"
     }
   },
   "_models_about": "Rewrite 2 §4 (Q12): the model for each job. Opus where the judgment is hard to check, Sonnet for structured assembly, research and extraction, Haiku for orchestration (the stage chat); mechanics are scripts, no agent (Rewrite 4 Phase 1). Every stage session runs on Haiku. The agent's frontmatter model must match its role here (tests check it); a role marked 'override' passes the model to the Agent call. Paul changes a role only with /approve global model:<step>=<model> (recorded in config.json model_overrides).",

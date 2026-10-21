@@ -22,6 +22,8 @@ Platform requirements and legal/truth constraints still bound every rule (PROC-0
 **ID** · **Status** (APPROVED / OPEN / PILOT / REJECTED / DEFERRED / NOTED / SUPERSEDED) ·
 **Date** · **Reason** · **Supersedes** — then the rule text.
 
+**Enforced by / Proved by** (Rewrite 4 Phase 7, 2026-10-21): the ruling is a script's check and a test proves it; only the clauses no script enforces keep their prose. The earlier full text is in `methodology/archive/rulings-full-2026-10-21.md`.
+
 Status meanings: `APPROVED` governs · `PILOT` in limited use with enhanced QA · `OPEN`
 unresolved, follow the current production rule and do not treat as settled · `REJECTED`
 the stated position is not the rule · `DEFERRED` parked, do not recommend · `NOTED`
@@ -393,52 +395,18 @@ Decided by Paul (first client run, Gettysburg Mold Remediation Pros).
    `status.py sensitivity <slug> <category>|none --run <RUN_ID>` (logged as a decision).
 
 ## CM-041 · Evidence gate before every brief
-**ID** CM-041 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** A brief written on missing or unconfirmed facts produces a draft full of NEED markers or, worse, a confident invention; checking the facts per page before the brief catches it where it is cheapest. · **Source** Semantic Mastery Content Pipeline Suite (content-pipeline-pages evidence gate), adapted · **Supersedes** — (operationalizes CM-016, CM-015 and the Brand Guide's "Unknown/Disputed blocks")
+**ID** CM-041 · **Status** APPROVED · **Date** 2026-10-05 · **Enforced by** `scripts/evidence.py` (grid, score, questions), `status.py page-stage`, `approve.py` (`evidence:<page>` waiver) · **Proved by** `tests/run_all.py` t_evidence_gate · full text: `methodology/archive/rulings-full-2026-10-21.md`
 
-Decided by Paul.
-1. Before any brief, every page in the batch gets an **evidence grid**: the facts its spec needs
-   (`methodology/evidence-requirements.json`, per page type — services, areas, proof points,
-   credentials, timeframes, offer, local facts), each marked from Brand Guide Sections A and D and
-   the page's facts file (sourced from the returned proof sheet, the Discovery Record and cited
-   research): **Known** (Client Confirmed / Paul Approved / Internally Verified with a source),
-   **Unverified** (Submitted, or no status or no source), **Conflict** (Disputed), **Unknown**
-   (empty). `scripts/evidence.py` marks and scores; nobody types a result.
-2. Result per page (**starting values, tuned by Paul in evidence-requirements.json**; a gap is
-   Unknown, Unverified or Conflict):
-   - **block** — any *required* fact in Conflict; or **2 or more** required facts are gaps; or
-     fewer than **3** Known facts in total (CM-015 could not pass).
-   - **pass** — no required gap, no Conflict anywhere, at most **2** supporting gaps, 3+ Known.
-   - **warn** — anything else: the brief is written and carries an `Evidence gaps` section listing
-     every gap (the script refuses the brief without it).
-3. **The gate runs before the brief stop; a blocked page gets no brief.** On a block: the facts
-   interview (CM-042) and a re-run of the gate on the answers, **or** Paul's waiver —
-   `/approve <slug> evidence:<page> --reason "..."` — recorded with his name, date and reason in
-   status.json and log.md. A waiver covers exactly the grid it was given for; when the facts change,
-   the gate re-scores and an old waiver no longer counts.
-4. Differences from the source (deliberate): their gate counts Unverified and Conflict as covered
-   and blocks only when four core fields are all Unknown; ours treats them as gaps and blocks
-   earlier. No word-count or Content Maxima Matrix input.
+Every page gets an evidence grid before it is written; a blocked page is not written until the facts interview (CM-042) clears it or Paul waives it; thresholds in `methodology/evidence-requirements.json`.
 
 ## CM-042 · Three interviews: facts, stories, voice
-**ID** CM-042 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** One "expert interview" was doing three jobs with three different destinations — filling fact gaps, collecting first-hand stories, and capturing how the author sounds — so none of them had a trigger, a home or a check. · **Source** Semantic Mastery Content Pipeline Suite (owner-interview, expert-interview, voice-interview / voice-extractor), adapted without the Retell phone agents · **Supersedes** the expert-interview skill's single Mode A / Mode B process
+**ID** CM-042 · **Status** APPROVED · **Date** 2026-10-05 · **Enforced by** `scripts/evidence.py` (facts pack: blocked pages only, ≤ 15 questions), `interview.py` (stories cadence and start, story-bank checks, Voice DNA floor, one file per author) · **Proved by** `tests/run_all.py` t_evidence_gate, t_interviews · full text: `methodology/archive/rulings-full-2026-10-21.md`
 
-Decided by Paul. Skill `expert-interview`, command `/interview`.
-1. **Facts** — triggered **only** by an evidence-gate block (CM-041). Questions come from the gaps of
-   the blocked pages (Describe / Verify, at most 15, shared facts asked once; `evidence.py questions`).
-   Paul sends them. Answers update Brand Guide Section D (`Client Confirmed`, source "Facts interview
-   <date>") or the page's facts file; the gate re-runs. A Brand Guide edit re-opens
-   `brand_guide_approved` for Paul. Customer language is still never a fact (CM-027).
-2. **Stories** — on a schedule once the facts exist (`brand_guide_approved`): **one round of 3–5
-   questions every 30 days** (starting value; `config.json` `story_cadence_days`). Answers go to the
-   client's **story bank** (`clients/<slug>/interviews/story-bank.md`): verbatim quote, specificity 3–5
-   only, publish public / framing-only / internal, status fresh / used / retired. The blog writer uses
-   it for information gain and names the entries used. A business fact in a story goes to the facts
-   track, never straight into Section D.
-3. **Voice** — a **Voice DNA** file for the blog author (the owner by default, CM-039) from a recorded
-   or transcribed conversation: every rule backed by a quote, spoken-source limits respected, under
-   ~2,000 author words → UNDER FLOOR (Paul accepts before use). The blog writer uses exactly one file
-   per author at draft; house rules beat the voice.
-4. Nothing goes to a client automatically; no phone bot or automatic calls.
+Three interviews — facts (on an evidence-gate block), stories (a round every `story_cadence_days` once `brand_guide_approved`), voice (Voice DNA for the blog author, CM-039). Not enforced, still prose:
+- Facts answers go to Brand Guide Section D as `Client Confirmed`, source "Facts interview <date>" (or the page's facts file); a Brand Guide edit re-opens `brand_guide_approved`. Customer language is never a fact (CM-027).
+- The blog writer uses the story bank for information gain and names the entries used. A business fact in a story goes to the facts track, never straight into Section D.
+- House rules beat the voice.
+- Nothing goes to a client automatically; no phone bot or automatic calls.
 
 ## CM-043 · One page per run, inside batches
 **ID** CM-043 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** Writing several pages in one context lets one page's wording bleed into the next and makes each later page worse as the context fills; a fresh context per page keeps each one clean. · **Source** Semantic Mastery Content Pipeline Suite (content-pipeline-pages: one slug per invocation), adapted · **Supersedes** CM-017's "one working context per client, not per page" for writing runs (CM-017's other clauses stand)
@@ -459,21 +427,9 @@ Decided by Paul.
    (`apply-sem`) stays one batch-level run: it applies only approved edits and re-checks them.
 
 ## CM-044 · Review or auto, per stage
-**ID** CM-044 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** Once a stage has proved itself on the pilot, pausing after every run costs Paul time without adding a check; before that, every stage should pause. · **Source** Semantic Mastery Content Pipeline Suite (gate_mode review / auto), tightened · **Supersedes** —
+**ID** CM-044 · **Status** APPROVED · **Date** 2026-10-05 · **Enforced by** `scripts/approve.py` (`mode:<stage>=auto|review`), `run.py`, `status.py` (gates.json → `modes`) · **Proved by** `tests/run_all.py` t_modes · full text: `methodology/archive/rulings-full-2026-10-21.md`
 
-Decided by Paul.
-1. Every producing stage (`scripts/gates.json` → `modes`) has a mode: **review** — the `/next` loop
-   stops after the stage so Paul can look, and he types `/next` to go on — or **auto** — it chains to
-   the next stage.
-2. **Default review.** A stage may switch to auto **only after it has passed the pilot** (each stage's
-   pilot is named in gates.json; a stage with no pilot always stays in review), and **only by Paul**:
-   `/approve <slug> mode:<stage>=auto` for one client or `/approve global mode:<stage>=auto` for all
-   (a global auto needs at least one client past the pilot). A client's own setting beats the global
-   one. Every switch is recorded in status.json and log.md (and config.json for a global switch).
-3. **Decision gates (Paul's `/approve`) can never be auto.** approve.py refuses a mode on any gate,
-   condition, page, batch or evidence decision; `/next` stops at every decision in either mode.
-4. Difference from the source (deliberate): their switch is advice only ("once you trust it"); ours is
-   enforced after the pilot.
+Every producing stage starts in review; auto only after its pilot and only by Paul; a decision is never auto.
 
 ## CM-045 · Query fan-out is coverage research, not demand
 **ID** CM-045 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** People Also Ask shows only the questions Google chooses to display; an LLM fan-out of likely searches finds more angles a page or post should answer. It is a brainstorm, so it must never pass as measured demand. · **Source** Semantic Mastery Content Pipeline Suite (dataforseo-fanout-queries), adapted · **Supersedes** — (extends CM-012)
@@ -500,13 +456,9 @@ solutions, near me, for, local), rewrite the H1 with a different service variant
 source's title format and its "Ads headline" H1 — BB-302, BB-305 and CM-014 stand.
 
 ## CM-047 · Reading level grade 7–8
-**ID** CM-047 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** Local customers read on a phone, often in a hurry; copy that needs a second read loses them. · **Source** Semantic Mastery Content Pipeline Suite (content-pipeline-pages reading-level), adapted with a measure (L-006 P2) · **Supersedes** —
+**ID** CM-047 · **Status** APPROVED · **Date** 2026-10-05 · **Enforced by** `scripts/readability.py`, `qa.py` (reading checks) · **Proved by** `tests/run_all.py` t_readability · full text: `methodology/archive/rulings-full-2026-10-21.md`
 
-Decided by Paul. All visitor-facing copy (opening, body, FAQ answers, meta description, CTA, blog posts)
-at grade 7–8; **the SEO title is excluded**. Self-critique E10 (commercial and blog), common check COM-13,
-BLG-20: `scripts/readability.py` (Flesch-Kincaid) — page average ≤ 8.9, no paragraph over grade 10 —
-then a read-aloud pass. Headings, tables, name lists, entity terms and named sources (CM-040) are left out
-of the count, so the check never pushes a writer to drop an entity or a source. Starting values; Paul tunes them.
+Visitor-facing copy at grade 7–8 (the SEO title, headings, entity terms and named sources are not counted). Not enforced, still the writer's: a read-aloud pass after the check.
 
 ## CM-048 · FAQ answers: answer first, then (optionally) the company and next step
 **ID** CM-048 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** "Call us for a quote" is not an answer, and the same sales line under every FAQ is the portable boilerplate CM-015 fails. · **Source** Semantic Mastery Content Pipeline Suite (content-pipeline-pages faqs), adapted (L-006 P3) · **Supersedes** — (extends BB-316, WC-C7)
@@ -542,31 +494,11 @@ Also decided: `build_schema.py` refuses — never crashes on — a missing logo 
 URI (fixed 2026-10-05). The other L-007 proposals: CM-051.
 
 ## CM-051 · Schema builder checks (from the Local Schema comparison)
-**ID** CM-051 · **Status** APPROVED — part 4 PILOT · **Date** 2026-10-05 · **Reason** The builder trusted every Wikidata ID it was given and could ship working text or forbidden markup; each check below stops a mistake before it reaches a live page. · **Source** Semantic Mastery Local Schema bundle (Apache-2.0), L-007 items 1–7 · **Supersedes** — (enforces BB-606, BB-603; CM-050 stands)
+**ID** CM-051 · **Status** APPROVED — part 4 PILOT · **Date** 2026-10-05 · **Enforced by** `.claude/skills/bb-schema-builder/scripts/build_schema.py` via `scripts/schema.py` (parts 1–6: entity check, country, output check, served areas behind `area_served_extended`, `.script.html`, never `aggregateRating`/`review` or a Wikipedia `@id`) · **Proved by** `tests/run_all.py` t_schema_gate · full text: `methodology/archive/rulings-full-2026-10-21.md`
 
-Decided by Paul, one by one. All in `.claude/skills/bb-schema-builder/scripts/build_schema.py`; any failure writes nothing.
-1. **Entity check over HTTP** on every run, `--check` included: with a Wikipedia URL, the page's own
-   Wikidata item must equal the configured Q-ID; without one, the Q-ID must exist and its label match the
-   entity's name; a Grokipedia URL must resolve. Paced calls. A mismatch or an unreachable source refuses
-   the build — never built on an unchecked entity.
-2. **Country from the config** (`business.address.addressCountry` or `country`), "US" when neither is set
-   — no longer hard-coded.
-3. **Output check:** no working text in any string (`[NEED`, TODO, TBD, "Brand Guide", "DataforSEO",
-   `[Placeholder]`, template braces).
-4. **Served areas — PILOT:** `City` / `Place` / `AdministrativeArea` only; `addressCountry` only inside a
-   `PostalAddress`; optional Wikipedia `sameAs` on a city. The new types and the city link are behind
-   `area_served_extended: true` in one client's config; **they become the default for all clients only
-   after Paul sees that client's output pass validator.schema.org and approves it.** Until then every
-   client gets woodlawn's `City` + `State`.
-5. **Ready-to-paste files:** each page is also written as `<name>.script.html` (inside
-   `<script type="application/ld+json">`); the raw `.jsonld` stays for the validator.
-6. **Never** (refused by the output check and written into schema-rules.md and SKILL.md):
-   `aggregateRating` / `review` on anything (self-serving reviews; CM-027); a Wikipedia URL as an `@id`.
-7. **Patterns with no rule yet** (about, contact, small-site, franchisor, multi-GBP) are listed in
-   schema-rules.md "Not observed, still open", each needing Paul's ruling. **BB-601's two-node homepage
-   stands**; the small-site three-node pattern is open question CM-052.
-8. **Held, not adopted:** typed cross-page references (`{"@type", "@id"}`). Revisit only if a validator
-   test shows a real improvement over woodlawntrees.com's bare `@id`.
+Parts 1–6 are the builder's checks; any failure writes nothing. Part 4 (extended served-area types) becomes the default only after Paul approves one client's validated output. Not enforced, still prose:
+7. **Patterns with no rule yet** (about, contact, small-site, franchisor, multi-GBP) are listed in schema-rules.md "Not observed, still open", each needing Paul's ruling. **BB-601's two-node homepage stands**; the small-site three-node pattern is open question CM-052.
+8. **Held, not adopted:** typed cross-page references (`{"@type", "@id"}`). Revisit only if a validator test shows a real improvement over woodlawntrees.com's bare `@id`.
 
 ## CM-052 · Small-site homepage: Bradley's three-node pattern
 **ID** CM-052 · **Status** OPEN · **Date** 2026-10-05 · **Reason** Bradley's 2026-09-26 written guidance gives very small sites a third homepage node (`Service`) plus `makesOffer` / `knowsAbout` on the LocalBusiness; BB-601 v1.1 (observed on woodlawntrees.com) says exactly two nodes. · **Source** Semantic Mastery Local Schema bundle (sparse-site homepage patterns) · **Supersedes** —
@@ -575,14 +507,9 @@ Question for Paul, to decide when a small site comes in: does a site with too fe
 services on service pages get the third node? **Until ruled: BB-601's two-node homepage, no exceptions.**
 
 ## CM-053 · Schema build when Wikipedia / Wikidata is unreachable
-**ID** CM-053 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** CM-051's live entity check refuses every build when Wikipedia or Wikidata is down; a short outage should not stop all schema work, but skipping the check must stay Paul's call. · **Source** Paul, after the CM-051 round · **Supersedes** — (narrows CM-051 part 1)
+**ID** CM-053 · **Status** APPROVED · **Date** 2026-10-05 · **Enforced by** `scripts/approve.py` (`schema-offline`, one open build:handoff run), `schema.py --offline` · **Proved by** `tests/run_all.py` t_schema_offline · full text: `methodology/archive/rulings-full-2026-10-21.md`
 
-Decided by Paul. The default stays: unreachable → the build refuses. Paul may approve
-`/approve <slug> schema-offline --reason "..."` for **the one open `/finish schema` run**; that run may then
-build once with `--offline <slug>`, which skips **only the live entity check** (the Q-ID and Wikipedia URL
-formats, the entry gate and the output check still run). Recorded in status.json and log.md with Paul's
-name, date and reason, and the use is logged; a second build, or another run, needs a new approval.
-The entity check is re-run when the sites are back.
+An unreachable Wikipedia/Wikidata refuses the schema build; only Paul's schema-offline approval skips the live entity check, once, in one run.
 
 ## CM-054 · Briefs: one run and one approval per batch
 **ID** CM-054 · **Status** REJECTED (Paul, 2026-10-09: conflicts with rewrite 2 P10 — briefs and drafts for all pages of a kind in one run, parallel per-page agents) · **Date** 2026-10-09 · **Reason** One run per brief, each behind its own evidence-gate run, made a five-page service batch take a day; the brief is an outline, so the bleed CM-043 guards against matters far less there than in prose. · **Source** Paul, design brief 2026-10-09 (problem 6) · **Supersedes** CM-043 point 2 for briefs only (drafts stay one page per run)
@@ -596,18 +523,9 @@ Proposed in the design-brief session; not approved by Paul.
 3. **One approval per batch** (`batch:<id>:briefs`), unchanged. Drafts: CM-043 stands — one page per run.
 
 ## CM-055 · Publish together; nothing waits on a VA handoff
-**ID** CM-055 · **Status** APPROVED (Paul, 2026-10-09) · **Date** 2026-10-09 · **Reason** Waiting for Jonie to publish each batch before the next batch could be written stalled every client at the pilot; the pages link to each other, so they are best published together anyway. · **Source** Paul, design brief 2026-10-09 (problems 3 and 7); memory "publish only after all drafts" · **Supersedes** CLAUDE.md §4 "one publish handoff to Jonie per batch" and §5 "service batches written back before any location batch"
-Decided by Paul.
-1. **Drafting never waits on a handoff.** No batch step requires the technical blockers to be cleared or any page to
-   be published. A batch's `ship` run only creates its WordPress drafts; the next batch goes straight on.
-   Service before location is kept, by Paul's **drafts approval** of the service batch, not by publishing.
-2. **One living handoff.** When every page in the site plan is a WordPress draft (condition `pages_drafted`),
-   `/build <slug> handoff` writes **one** publish handoff for every page: publish rows, the paired redirects, and the
-   technical blockers (which still go to Jonie as soon as they are found, and are listed here for reference). Each
-   `/build published` updates the same document's status column as Jonie publishes.
-3. **Published together.** Because every planned page goes live in the same publish, link tables carry every planned
-   page that has a URL. Drafts stay WordPress drafts; Jonie publishes (the system never publishes).
-4. `blockers_cleared` still gates release (`release_approved`), nothing earlier.
+**ID** CM-055 · **Status** APPROVED · **Date** 2026-10-09 · **Enforced by** `scripts/publish.py` (drafts, handoff), `status.py` (condition `pages_drafted`) · **Proved by** `tests/run_all.py` t_walkthrough_full, t_pilot_order, t_writing_never_waits · full text: `methodology/archive/rulings-full-2026-10-21.md`
+
+Drafting never waits on a VA handoff; one living publish handoff once every page is a draft; Jonie publishes every page together; `blockers_cleared` gates only the release.
 
 ## CM-056 · Research before asking; a review can answer a fact
 **ID** CM-056 · **Status** REPLACED → CM-057 (Paul, 2026-10-09; never in force) · **Date** 2026-10-09 · **Reason** The evidence gate read only the Brand Guide and the page facts file, so facts the client's own reviews and site already answered became questions — and answered questions came back in later sessions. · **Source** Paul, design brief 2026-10-09 (problems 1, 4, 5); ruling 1a · **Supersedes** — (amends CM-027 for the evidence gate; extends CM-041, CM-042)
@@ -629,21 +547,9 @@ Proposed in the design-brief session; not approved by Paul.
    what is new (`--distinct`).
 
 ## CM-057 · Reviews as customer-reported facts
-**ID** CM-057 · **Status** APPROVED · **Date** 2026-10-09 · **Reason** Facts the client's own reviews already answered (who goes on the roof, photos, clean-up, permits) were still asked of Paul, and CM-027 kept every review out of the facts. · **Source** Paul, REWRITE-2-DECISIONS.md (b); rewrite 2 P5 · **Supersedes** CM-027's first bullet (CM-027's other bullets stand); replaces the proposed CM-056
+**ID** CM-057 · **Status** APPROVED · **Date** 2026-10-09 · **Enforced by** `scripts/reviews.py` (extract, checked, meaning), `evidence.py` (3+ independent reviewers, no keyword-only Known, site/GBP hit Unverified as yes/no); reviewer names and rating schema kept out (`data_rewrite`, schema) · **Proved by** `tests/checks/rewrite2.py` t_p5_reviews, `tests/run_all.py` t_research_before_asking, `tests/checks/rewrite4_phase2.py` t_hmm_review_meaning, `tests/checks/data_rewrite.py` t_reviews · full text: `methodology/archive/rulings-full-2026-10-21.md`
 
-Decided by Paul, in Paul's wording.
-Review content may enter `facts.json` as `customer_reported`, with the quote and the number of reviews that support
-it. It counts as Known for the evidence gate when 3 or more independent reviews support it and nothing conflicts.
-"Independent" means different reviewers: the same reviewer twice does not count, and owner replies do not count.
-The writer states it only as customers describe it ("customers mention…") until Paul or the client confirms it; one
-confirmation makes it a plain fact. Prices, timelines and warranty terms from reviews are never stated as the
-company's; they appear only as a cited customer example. A hit on the client's own site or GBP stays Unverified and
-becomes a one-line yes/no question. Reviewer names stay out of deliverables, and self-serving rating claims stay
-out of schema (CM-027 unchanged).
-
-Clarified by Paul, 2026-10-09 (later the same day): a keyword match alone never counts toward Known. A review
-match counts only after the researcher has read it by meaning and recorded it (`reviews.py checked`); until then it is
-a pre-filled yes/no line for Paul.
+Review content may enter `facts.json` as `customer_reported` (supersedes CM-027's first bullet). Not enforced, still prose: the writer states it only as customers describe it ("customers mention…") until Paul or the client confirms it; one confirmation makes it a plain fact. Prices, timelines and warranty terms from reviews are never stated as the company's; they appear only as a cited customer example.
 
 ## CM-058 · A hub may be a metro area, when the metro area is a real category
 **ID** CM-058 · **Status** APPROVED · **Date** 2026-10-09 · **Reason** Home Mobile Medical's hubs each span several counties but match an official metropolitan area; a county-only rule would split a real category. · **Source** Paul, REWRITE-2-DECISIONS.md (c), accepting L-008 (CR-001) · **Supersedes** — (settles the open Coastal default in methodology/specs/county-hub.md §1 for metro hubs)
@@ -660,22 +566,9 @@ Checked 2026-10-09: Charleston metropolitan area (SC) — Wikidata Q5084207; Hil
 metropolitan area — Wikidata Q17020871.
 
 ## CM-059 · The homepage H1 lock lifts for a failing, unranked legacy H1 — Paul's decision, every time
-**ID** CM-059 · **Status** APPROVED · **Date** 2026-10-12 · **Reason** The BB-313 §3 lock kept legacy homepage H1s that predate the Standard, fail HP-06 and earn nothing (Home Mobile Medical CF-LOCAL-001; Apex CF-LOCAL-002). · **Source** Paul, /system-review 2026-10-12, accepting CR-002 with edits · **Supersedes** — (narrows BB-313 §3 and HP-08 for the homepage only; the CM-020 top-3 rule for every page stands)
+**ID** CM-059 · **Status** APPROVED · **Date** 2026-10-12 · **Enforced by** `scripts/h1lock.py` (`check`, `followup`), `conformance.py` (h1_lock_lifted) · **Proved by** `tests/checks/cm059_h1lock.py` t_h1_lock · full text: `methodology/archive/rulings-full-2026-10-21.md`
 
-Decided by Paul.
-1. The homepage H1 stays locked once live (BB-313 §3, HP-08) **unless all three hold**: (a) the live H1 fails HP-06;
-   (b) the homepage is **not in the organic top 10** (`config.json h1_lock_lift.rank_top_n`) for its main keyword
-   (CM-020's definition: the highest-volume keyword the URL ranks for that matches its service/area entity); and
-   (c) it has **few Search Console clicks** for that keyword over the last 90 days (fewer than
-   `config.json h1_lock_lift.few_clicks_90d`).
-2. Meeting all three never changes anything by itself. The audit puts it to Paul as a decision with the numbers,
-   made by `python3 scripts/h1lock.py check <slug> --keyword "…" --hp06 fail [--gsc <GSC queries export>]`: the live
-   H1, the organic and local-pack positions, the 90-day clicks, the thresholds. A number the data cannot show is a
-   `[NEED: …]`, and an unknown condition is not met. Only Paul's answer lifts the lock — once, in the homepage batch.
-3. The old H1 is logged for rollback (the change's safety-log row and the URL Decision Map + Brand Guide H), and a
-   30-day check — organic position and 90-day clicks against the baseline — goes on the VA Worklist the day the new
-   H1 is live: `python3 scripts/h1lock.py followup <slug> --run R --keyword "…" --old-h1 "…" --changed YYYY-MM-DD`.
-   If both got worse, Paul decides whether to roll back. After the change the lock applies again.
+The homepage H1 lock lifts only by Paul's answer, and only when the live H1 fails HP-06, is outside the organic top 10 and has few 90-day clicks (thresholds in `config.json h1_lock_lift`). Not enforced, still Paul's: after the 30-day check, if both numbers got worse he decides whether to roll back; after the change the lock applies again.
 
 ## CM-060 · FAQ answers: a short first sentence, a 40–60-word first paragraph
 **ID** CM-060 · **Status** APPROVED · **Date** 2026-10-12 · **Reason** "First sentence is the full answer (40–60 words)" asks for one long sentence, against grade 7–8 (CM-047) and C5's short sentences (apex F-015). · **Source** Paul, /system-review 2026-10-12, accepting CR-020 · **Supersedes** — the "first sentence … (40–60 words)" wording in methodology/specs service.md, location.md, homepage.md and blog-post.md (the spec text is updated later, with CR-023 or /approve global specs; this ruling governs now)
@@ -685,35 +578,9 @@ Decided by Paul. In every FAQ answer, sentence one answers the question on its o
 reading level (CM-047, E10) applies to the whole answer as usual.
 
 ## CM-061 · Evidence first, decide by default
-**ID** CM-061 · **Status** APPROVED · **Date** 2026-10-12 · **Reason** Data is pulled but not used: the evidence and draft steps read none of the review, PAA or fan-out files, "not found" needs no proof, every rule is escalated, the same finding is raised by several checkers, and the Brand Guide is written several times per run (Apex locations: 53 questions for 11 pages; reviews mention photos, yet photos went to Paul as a question). · **Source** Paul, rewrite 3 handoff (Phase 1), 2026-10-12 · **Supersedes** — the batch-review, SEM-pick and write-back parts of `.claude/agents/build.md` and the specs where they differ; the spec wording is updated later, with CR-023 (this ruling governs now)
+**ID** CM-061 · **Status** APPROVED · **Date** 2026-10-12 · **Enforced by** `scripts/evidence_pack.py`, `manifest.py`, `research.py`, `evidence.py`, `review.py` (sheet, apply, overdue, usage), `questions.py check`, `status.py` (write-back once per section, `pilot`) · **Proved by** `tests/checks/rewrite3.py` (t_packs, t_research, t_review, t_brand_guide_once, …), `tests/checks/rewrite4_build.py` t_clean_pilots, `tests/checks/rewrite2.py` · full text: `methodology/archive/rulings-full-2026-10-21.md`
 
-Decided by Paul. Every term is defined once, in `methodology/definitions.md`.
-1. **Evidence first.** Every input on file is listed in `methodology/data-manifest.json` with the steps that must read
-   it. Before any outline or brief, `scripts/evidence_pack.py` builds one evidence pack per page (facts, reviews, PAA and fan-out
-   questions, site and GBP, public facts, settled decisions, gaps); writers read the pack, not the raw files. Evidence is
-   written at its **usage tier** (writing-commercial.md, "Usage tiers"); the draft review counts how much of each pack
-   was used.
-2. **Research before "not found".** A public fact is never asked — the researcher looks it up. A client fact is asked
-   only after the search order (facts.json → decisions-settled.md → evidence pack → proof sheet and Discovery Record);
-   a client fact with a public lookup (licence, manufacturer certification, business registration) is verified, not
-   asked. Every "not found" carries a research-log entry meeting the minimum effort (`scripts/research.py`); the
-   scripts refuse one that does not.
-3. **Decide by default, one review per step.** Every rule check runs once per step, in one checker pass, after all
-   pages of the section are written. Each finding (`page + rule + item`) is **Fix** (form only, fixed silently),
-   **Fix and list** (a content change made by default, listed under "Decided for you") or **Ask** — only four kinds:
-   page/URL decisions, legal or money claims, client-only facts not found after research, real conflicts. A finding is
-   raised once per section. One review sheet per section per step (`scripts/review.py`); an empty answer accepts the
-   recommended option. An Ask unanswered for 3 working days ships with its default — except a legal or money claim,
-   which is left out of the page until answered.
-4. **The Brand Guide is written once per section**, at the brief approval — or, on the outline route (no brief;
-   Rewrite 4, D2, Paul 2026-10-20), from the reviewed drafts, before their one approval. Ship never writes it.
-5. **Location FAQs** follow the three-category recipe (`methodology/location-faq.md`); a location that cannot be
-   sourced arrives in the site plan as a merge proposal (the viability check); the minimums in location.md are targets
-   and an optional section is never a hold.
-6. **A pilot runs only when it is worth it** — a client's first section, a new industry, or the first section after a
-   spec or ruling change that affects writing (`gates.json` → `modes` → `pilot`). No pilot, even for a client's
-   first section, once the last 3 clients' pilots had no corrections at unchanged specs and writing rules
-   (Rewrite 4, Paul 2026-10-20; `status.py pilot-corrections --none` records a pilot with none).
+Evidence first, decide by default — every term is in `methodology/definitions.md` (evidence pack, usage tier, Fix · Fix and list · Ask and its four kinds, the 3-day default, the research minimum, the pilot rule).
 
 ## CM-062 · Location page structure: place entities woven in, a Serving section, no Things to Do or Top Sites
 **ID** CM-062 · **Status** APPROVED · **Date** 2026-10-14 · **Reason** Things to Do and Top Sites were generic lists that could not be sourced for most small places, held pages, and repeated across cities; the same local evidence is stronger woven into the text and the schema, and "how the client works here" had no home. · **Source** Paul, 2026-10-14 (rewrite 3 §0 answers 1 and 2, recommended options) · **Supersedes** the BB-315 element order and its Things to Do and Top Sites sections for new location pages (BB-315 remains the rule for everything else, CM-023 for H2 handling); `methodology/specs/location.md` carries the new order once Paul types `/approve global specs:location`
@@ -742,54 +609,14 @@ Decided by Paul.
    Medical.
 
 ## CM-063 · The slim audit: screen first, triage, decide by default, one review sheet
-**ID** CM-063 · **Status** APPROVED · **Date** 2026-10-20 · **Reason** HMM's audit reviewer withdrew 7 redirect candidates that rankings or backlinks already ruled out, scored every page against a spec that Build was about to rewrite anyway, and the audit shipped a Recommendations document and a Markdown register that nobody outside the agency reads. · **Source** Paul, REWRITE-4-PLAN.md Phase 3 and D3 (approved 2026-10-20) · **Supersedes** CM-028 for audit findings (an older audit keeps its High/Medium/Low register); the Gate B clarification stop; the per-type conformance scorecards; the Recommendations document; Approval 2 as one line (R3)
+**ID** CM-063 · **Status** APPROVED · **Date** 2026-10-20 · **Enforced by** `scripts/pagedec.py screen` (`--check`), `conformance.py` (triage, judge), `review.py` (sheet, apply, scope) `<slug> audit`, `render.py` · **Proved by** `tests/checks/rewrite4_phase3.py`, `tests/checks/audit_rewrite.py` · full text: `methodology/archive/rulings-full-2026-10-21.md`
 
-Decided by Paul.
-1. **Screen first.** `scripts/pagedec.py screen` computes CM-019 conditions 1–3 for every URL from rankings, backlinks,
-   Search Console / GA4 (when given), the GBP website field and the citation domains → pass · fail · needs evidence.
-   A `fail` URL is never a destructive candidate (`--check` refuses one). The audit agent decides only the
-   `needs evidence` rows and entity mismatches. Condition 4 stays the client's.
-2. **S15 is triage.** `scripts/conformance.py triage` writes one URL Decision Map column: rebuild · light fix · keep.
-   Only pages Build will not rewrite (blog posts, kept utility pages, Route B pages, the homepage under HP-08) are
-   scored in full (`conformance.py judge`). There are no scorecard files.
-3. **Severity is CM-061's.** Every audit finding is Fix (the VA's technical hygiene → the Technical Blocker Checklist,
-   which S16 writes at the audit), Fix and list (decided by default — mostly fixed by the rebuild), or Ask (the four
-   kinds; most are kind 1, URL decisions).
-4. **One review sheet** (`review.py sheet <slug> audit`) replaces Gate B and the Recommendations document. The
-   deliverables are the registers (CSV), that sheet and the Evidence Manifest, all rendered. The audit is internal: the
-   client sees only `client-questions.csv` (the kind-3 rows), sent by Paul.
-5. **The reviewer (S17, CM-026 unchanged)** opens every destructive URL row and every Ask, plus a sample of the rest
-   (`review.py scope <slug> audit`), from the registers only.
-6. **D3:** `audit_approved` is its own approval as soon as the audit is done; safe fixes and the blocker handoff
-   unlock there. `brand_guide_approved` follows when the client's facts are reconciled; the discovery sign-off still
-   needs both.
-7. Audits approved before this ruling (Home Mobile Medical, Apex) keep their documents and approvals.
+The slim audit: CM-019 C1–C3 screened by script (a failing URL is never a destructive candidate), S15 as triage, CM-061 severity, one review sheet; the fresh-context reviewer (CM-026, unchanged) opens every destructive row and every Ask. Audits approved before 2026-10-20 (HMM, Apex) keep their documents.
 
 ## CM-064 · Finish folds into the plan: the wheel, schema and QA by script, published together
-**ID** CM-064 · **Status** APPROVED · **Date** 2026-10-20 · **Reason** The link wheel, the schema and the mechanical QA follow fixed rules from the approved site plan and the Brand Guide; a Finish agent and a separate wheel approval after publishing only delayed them and cost tokens. Paul's rule: every page stays a draft until all are drafted, then they are published together. · **Source** Paul, REWRITE-4-PLAN.md Phase 5 (approved 2026-10-20); memory "publish only after all drafts" · **Supersedes** the gate `link_wheel_approved`; the steps `/finish wheel` and `/finish schema`; CM-022's "exceptions are proposed only in Finish" (now in the site plan); the county-hub spec's open "wheel position"
+**ID** CM-064 · **Status** APPROVED · **Date** 2026-10-20 · **Enforced by** `scripts/wheel.py`, `schema.py`, `qa.py`, `publish.py` (links and schema, handoff); gates.json (`link_wheel_approved` retired) · **Proved by** `tests/checks/rewrite4_phase5.py` · full text: `methodology/archive/rulings-full-2026-10-21.md`
 
-Decided by Paul.
-1. **The wheel is a script** (`scripts/wheel.py`) from the approved site plan: service → every location; location →
-   every service, and its hub then every other location (the sibling table); hub → its own cities and every service;
-   homepage → every service (at most 6, HP-11) and every hub, plus any city with no hub. Anchors are formulas (the
-   target's H1, "[service variant] in [City]"). The rows are filled into each page's link-table placeholder when its
-   WordPress draft is generated; the approved file never changes.
-2. **`[LINK → /slug/ · reason]` is only for pages not yet planned.** A marker to a planned page is resolved when the
-   draft is generated: an approved exception links the words; otherwise the marker is dropped and the words kept (the
-   table carries the link, CM-005).
-3. **CM-022 exceptions are proposed in the site plan** (the plan row's `link_exceptions`), each a kind-1 Ask
-   (`wheel.py asks`), never applied without Paul's answer (`linkx:<page>:<n>`).
-4. **Schema is a script** (`scripts/schema.py`): the BB-6xx v1.1 node sets from the Brand Guide (A, D, F) and the
-   plan, built by the bb-schema-builder emitter; the asset gate is kept (no partial schema); LocalBusiness only on the
-   verified GBP landing page (BB-604); a county hub is a plain WebPage; about, contact and blog are not built until
-   Paul rules. A validator checks every graph.
-5. **Mechanical QA is a script** (`scripts/qa.py`): placeholders, links, title/H1/meta formats, reading grade, schema
-   valid; after publishing, the live page against its approved file and its schema. `finish-qa` (Opus) reads only a
-   sensitive client's pages (CM-025) or a sample (`qa.py sample`).
-6. **Ship:** every page drafted → QA (errors refuse) → schema in place (the drafts' head-code field, else worklist
-   rows) → one VA worklist → Jonie publishes every page together. `release_approved` stays, after the live QA.
-7. In flight: sections already written (HMM pilot, services, loc-hhi) keep what they have — nothing approved is
-   re-rendered; a client handed over before this ruling (Apex) gets its schema as one addition to the worklist.
+The link wheel, schema (LocalBusiness only on the verified GBP landing page) and mechanical QA are scripts that ship with the drafts; CM-022 exceptions are kind-1 Asks in the site plan; every page is published together; `release_approved` stays. Sections written before 2026-10-20 (HMM pilot, services, loc-hhi; Apex) keep what they have.
 
 ---
 

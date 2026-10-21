@@ -93,7 +93,7 @@ def checklist(st):
                  "put it in inputs/ (scripts/h1lock.py --gsc reads it; without it CM-059 condition (c) cannot be checked)"), ""]
     out += ["## Conditions", ""]
     for c in S.GATES["conditions"]:
-        if st["client"]["type"] == "blog-only" and c != "client_setup":
+        if st["client"]["type"] == "blog-only" and c != "wordpress_connected":
             continue
         ok, why = S.condition_met(st, c)
         out.append(f"- {'[x]' if ok else '[ ]'} {S.label(c)}" + ("" if ok else f" — {why}"))

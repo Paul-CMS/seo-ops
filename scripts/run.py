@@ -370,8 +370,9 @@ def main():
         st = S.load(a.slug)
         key, spec = step_spec(st, a.command, a.step)
         gates = resolve(st, spec, a, key)
-        if gates:
-            reasons = []
+        setup_ok, setup_why = (True, "") if key in ("new-client", "verify", "rollback") else S.client_set_up(st)
+        if gates or not setup_ok:   # Phase 7: the client set-up is a check here, not a gate on every step
+            reasons = [] if setup_ok else [setup_why]
             for g in gates:
                 ok, rs = S.check(st, g)
                 if not ok:

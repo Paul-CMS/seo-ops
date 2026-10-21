@@ -11,7 +11,9 @@ link_wheel_approved retired; QA and schema at the handoff); left for Paul: fill 
 logo, schema subtype, citation URLs) before its handoff. Phase 6 tooling built 2026-10-21 (niches.py + angles.md for
 roofing, stair lifts, mold; Wikidata identity; Prompt B from the niche module at full|lite depth; status order; footprint.py
 for Prompt C); left for the VA: run the real Beaufort × stair lifts and Charleston × roofing reports in Gemini, and Prompt A
-for the three niches. Next: Phase 7. Each
+for the three niches. Phase 7 built 2026-10-21 (four gates folded into script checks; 12 rulings reduced to their
+enforcing script and test, full text archived; agent procedures moved into the stage docs; `usage.py reads` — the
+before/after table is in REWRITE-4-BASELINE.md); left: the brief-route retirement list below, after HMM loc-hhi. Each
 phase runs in its own `/system` session, in order, starting with Phase 0. Phases marked **design** run on Opus; the rest on Sonnet, from
 this file as the written spec (CLAUDE.md → models).
 
@@ -235,6 +237,21 @@ in `~/.claude/projects/<project>/<session>.jsonl` and `<session>/subagents/*.jso
 - Review the 22 gates: keep the decisions Paul makes; any condition that is never false in practice becomes a check
   inside its script.
 - Target: each agent file under 12 KB; each step's read list under 30 KB. Measured with `usage.py` against Phase 0.
+- **Built 2026-10-21.** Gates (Paul approved the keep/fold list): `client_setup` → `status.client_set_up` (run.py start,
+  handoff.py, wp.py); `audit_steps_complete` → `status.audit_steps_left` (approve.py at audit_approved, /next);
+  `safe_fixes_allowed` → `audit_approved`; `structural_changes_allowed` → `entity_approved` + `brand_guide_approved` (a
+  change kind's gate may be a list). All eight decisions, the site plan and the seven other conditions are kept.
+  Rulings: CM-041, 044, 047, 053, 055, 059, 061, 063, 064 one line each; CM-042, 051, 057 keep only their unenforced
+  clauses; full text in `methodology/archive/rulings-full-2026-10-21.md`. Read lists: `handoff.py kinds` (not gates.json),
+  `rulings.py BB-1xx` (not the whole Standard), `rulings.py --section` (one section of a methodology file).
+- **Still over 30 KB, and why:** the page-writing steps (build:write, build:draft, build:drafts, build:apply-sem) read the
+  writing standard and the page spec whole — trimming those is a change to the approved specs and writing rules (a
+  re-approval and a pilot for every client); build:plan reads every spec. Both are Paul's call, not a pruning.
+- **Retire after HMM loc-hhi is finished (the last section on the brief route, D5):** the `brief-writer` agent
+  (`.claude/agents/brief-writer.md`; its pointer to build.md "brief part 2" was already stale), `docs/build-brief-route.md`,
+  the brief-route steps `build:brief`, `build:draft` (the standalone step; the `build:draft` model key stays),
+  `build:drafts`, `build:apply-sem`, `build:pilot-corrections`' gate on `batch:pilot:briefs`, the `briefs` route in `status.py route` and approve.py's `batch:<id>:briefs` path, and the `build:write` /
+  `models` rows that name the brief-writer. A migration (`migrate2.py`) first checks no client has a section on that route.
 
 Order and dependencies (reordered by Paul, 2026-10-20, from the Phase 0 baseline): **0 ✓ → 4 → 1 → 2 → 3 → 5**
 (6 can run any time after 1; 7 last). Why: briefs + drafts were $77.41 of Apex's $122.00 measured, and HMM's

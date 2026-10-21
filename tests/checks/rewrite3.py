@@ -428,7 +428,7 @@ def t_brand_guide_once(h):
     g = json.loads(_read(h, "scripts/gates.json"))["steps"]["build:writeback"]
     h.check("§6: build:writeback is gated on the briefs approval", "batch:{batch}:briefs" in g["gates"]
             and "batch:{batch}:drafts" not in g["gates"], g)
-    bm = _read(h, ".claude/agents/build.md")
+    bm = _read(h, ".claude/agents/build.md") + _read(h, "docs/build-procedure.md")   # Phase 7: the procedure moved there
     h.check("§6: drafts, the draft review and ship never write the Brand Guide (the agent's instructions)",
             "Drafts, the draft review and ship never write the Brand Guide" in bm and "No Brand Guide write-back here" in bm)
     src = _read(h, "scripts/next.py")

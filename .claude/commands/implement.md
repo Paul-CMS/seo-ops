@@ -5,7 +5,7 @@ argument-hint: <slug> [safe|structural|page <page_id>|wheel|schema]
 
 Arguments: $ARGUMENTS
 
-Follow `docs/reference.md` → Implementation. Each change's kind, gate, channel and owner are in `scripts/gates.json` → `change_kinds`.
+Follow `docs/reference.md` → Implementation. Each change's kind, gate, channel and owner: `python3 scripts/handoff.py kinds`.
 
 Steps (`--step`): `safe` (broken links, alt text, image URLs, sitemap, robots.txt, meta description duplicates, speed) · `structural` (redirects, slugs/URL changes, consolidations, SEO titles, H1s) · `page` (`--page <id>`: one page — blog posts, single fixes) · `wheel` (link tables) · `schema`. Batches go out with `/build ship <id>`.
 Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps implement` lists them; `run.py start` checks them.

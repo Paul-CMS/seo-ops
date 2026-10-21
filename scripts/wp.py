@@ -275,8 +275,7 @@ def require(slug, run_id, kind, page_id=None, post=None, live=False, backup=None
     if spec["channel"] == "wp_after_pilot" and not pilot_approved(st) and not is_draft:
         die(f"{kind}: this site has not passed the WordPress pilot yet, so this goes out as a VA handoff to "
             "Jonie (handoff.py). After /wp-check --pilot passes, Paul approves wordpress_pilot_approved.")
-    gate = spec["gate"]
-    ok, rs = (S.page_approved(st, page_id or "") if gate == "page_approval" else S.gate_met(st, gate))
+    ok, rs = (S.page_approved(st, page_id or "") if spec.get("gate") == "page_approval" else S.kind_met(st, kind))
     if not ok:
         die(f"REFUSED — " + (rs if isinstance(rs, str) else "; ".join(rs)), 4)
     if post and post.get("status") == "publish" and not (live and backup):

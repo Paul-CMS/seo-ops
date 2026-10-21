@@ -90,7 +90,7 @@ def client_view_problems(text):
     probs = []
     if re.search(RULE_IDS, text):
         probs.append(f"rule ID {re.search(RULE_IDS, text).group(0)!r}")
-    names = set(GATES["gates"]) | set(GATES["conditions"]) | set(GATES["derived"]) | {"site_plan"}
+    names = set(GATES["gates"]) | set(GATES["conditions"]) | set(GATES["retired_gates"]) | {"site_plan"}
     for n in names:
         if re.search(r"\b" + re.escape(n) + r"\b", text):
             probs.append(f"gate name {n!r}")
@@ -239,13 +239,12 @@ def mark_files(st, name):
 
 
 def plain(gate):
-    spec = GATES["gates"].get(gate) or GATES["derived"].get(gate) or GATES["conditions"].get(gate) or {}
+    spec = GATES["gates"].get(gate) or GATES["conditions"].get(gate) or {}
     return spec.get("plain") or spec.get("label") or gate
 
 
 def label(gate):
-    return (GATES["gates"].get(gate) or GATES["derived"].get(gate)
-            or GATES["conditions"].get(gate) or {}).get("label", gate)
+    return (GATES["gates"].get(gate) or GATES["conditions"].get(gate) or {}).get("label", gate)
 
 
 def requires(st, gate):
@@ -256,15 +255,43 @@ def requires(st, gate):
 
 
 # ------------------------------------------------------------------ conditions
+def client_set_up(st):
+    """(ok, why) — /new-client finished. Phase 7 (Paul, 2026-10-21): a check inside run.py start, handoff.py and
+    wp.py, no longer a gate — it was never false for a client with a status.json."""
+    if "client_setup" in (st.get("imported_conditions") or {}):
+        return True, ""
+    log = path(st["client"]["slug"]).parent / "log.md"
+    ok = log.exists() and re.search(r"^## RUN \S+-new-client\S* · FINISHED", log.read_text(), re.M)
+    return bool(ok), ("" if ok else "the client has not been set up yet — run /new-client first")
+
+
+def audit_steps_left(st):
+    """(ok, why) — every registered audit step has an outcome. Phase 7: a check inside approve.py at
+    audit_approved, no longer a condition of its own."""
+    if "audit_steps_complete" in (st.get("imported_conditions") or {}):
+        return True, ""
+    import steps
+    left = steps.missing(st)
+    return not left, ("" if not left else "audit steps with no outcome yet: " + ", ".join(x["id"] for x in left))
+
+
+def kind_met(st, kind):
+    """(ok, [reasons]) for a change kind (gates.json change_kinds → gate: one name, a list, or none): the client is
+    set up and each named decision is met. 'page_approval' is checked per page by the caller."""
+    ok, why = client_set_up(st)
+    reasons = [] if ok else [why]
+    g = GATES["change_kinds"][kind].get("gate")
+    for name in ([g] if isinstance(g, str) else list(g or [])):
+        if name != "page_approval":
+            reasons += [r for r in gate_met(st, name)[1] if r not in reasons]
+    return not reasons, reasons
+
+
 def condition_met(st, name):
     """(ok, why) — checked from evidence, never approved."""
     slug = st["client"]["slug"]
     if name in (st.get("imported_conditions") or {}):
         return True, ""
-    if name == "client_setup":
-        log = path(slug).parent / "log.md"
-        ok = log.exists() and re.search(r"^## RUN \S+-new-client\S* · FINISHED", log.read_text(), re.M)
-        return bool(ok), ("" if ok else "the client has not been set up yet — run /new-client first")
     if name == "wordpress_connected":
         chk = (st.get("wordpress") or {}).get("check") or {}
         if not chk.get("passed"):
@@ -288,10 +315,6 @@ def condition_met(st, name):
         return blockers_cleared(st)
     if name == "page_specs_approved":
         return specs_approved(st)
-    if name == "audit_steps_complete":
-        import steps
-        left = steps.missing(st)
-        return not left, ("" if not left else "audit steps with no outcome yet: " + ", ".join(x["id"] for x in left))
     if name == "pages_drafted":   # CM-055: every page is a WordPress draft — one living handoff, published together
         bs = [b for b in batches(st) if b.get("kind") in ("service", "location", "county") or b["id"] == "pilot"]
         left = [b["id"] for b in bs if b.get("state") not in DRAFTED_OR_LATER]   # P9: homepage/about may follow later
@@ -549,11 +572,6 @@ def _own_ok(st, gate):
 def gate_met(st, gate):
     """Return (ok, [reasons]). The gate's own files are checked; earlier gates only need their
     decision (an edit upstream is a flag, not a block)."""
-    if gate in GATES["derived"]:
-        reasons = []
-        for r in GATES["derived"][gate]["requires"]:
-            reasons += gate_met(st, r)[1]
-        return not reasons, reasons
     if gate not in GATES["gates"] and gate not in GATES["conditions"]:
         return False, [f"unknown gate {gate}"]
     reasons = []
@@ -996,7 +1014,7 @@ def render_show(st):
     out.append("")
     out.append("Conditions (checked by the system):")
     for g in GATES["conditions"]:
-        if st["client"]["type"] == "blog-only" and g not in ("client_setup", "wordpress_connected"):
+        if st["client"]["type"] == "blog-only" and g != "wordpress_connected":
             continue
         ok, why = condition_met(st, g)
         out.append(f"  [{'MET ' if ok else '----'}] {g:24} {label(g)}" + ("" if ok else f" — {why}"))
@@ -1019,9 +1037,6 @@ def render_show(st):
             for u in upstream_changes(st, g):
                 out.append(f"         ! upstream change — {plain(u)} changed after it was approved; "
                            "check whether it affects this")
-    for g in GATES["derived"]:
-        ok, _ = gate_met(st, g)
-        out.append(f"  [{'MET ' if ok else '----'}] {g:24} {label(g)}")
     if st["pages"]:
         out.append("")
         out.append("Pages:")

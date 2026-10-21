@@ -323,7 +323,7 @@ def t_d3_and_reads(h):
             "with" not in g["gates"]["brand_guide_approved"] and g["steps"]["build:blockers"]["gates"] == ["audit_approved"]
             and g["conditions"]["blockers_cleared"]["requires"] == ["audit_approved"]
             and {"audit_approved", "brand_guide_approved"} <= set(g["conditions"]["discovery_signed_off"]["requires"])
-            and g["derived"]["safe_fixes_allowed"]["requires"] == ["audit_approved"]
+            and g["change_kinds"]["alt_text"]["gate"] == "audit_approved"
             and "blocker_checklist" in g["steps"]["discovery:audit"]["produces"]
             and "discovery:review" in g["steps"])
     import glob

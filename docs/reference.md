@@ -11,9 +11,11 @@ Read the part you need. The stage files (`docs/stage-<n>-*.md`) say what each st
   approve several decisions (`/approve <slug> a b c`); a decision named in the same line counts for the others'
   prerequisites. Values: `approved` · `approved_with_conditions` · `revise` · `deferred` · `rejected` · `blocked`.
 - **Conditions** — facts the scripts check from evidence, never approved, logged the first time they are met:
-  `client_setup`, `proof_sheet_returned`, `audit_steps_complete`, `discovery_signed_off`, `blockers_cleared`,
-  `page_specs_approved` (global, `/approve global specs`), `pages_drafted` (every service and location page is a
-  WordPress draft), `pages_built`, `wordpress_connected`.
+  `proof_sheet_returned`, `discovery_signed_off`, `blockers_cleared`, `page_specs_approved` (global,
+  `/approve global specs`), `pages_drafted` (every service and location page is a WordPress draft), `pages_built`,
+  `wordpress_connected`. Checks inside scripts, not gates (Phase 7): the client is set up (`run.py start`, every
+  step but /new-client, /verify, /rollback) and every audit step has an outcome (`approve.py` at `audit_approved`).
+  Safe fixes need `audit_approved`; structural changes need `entity_approved` + `brand_guide_approved`.
 - **Review or auto, per stage (CM-044).** Every producing stage is in review (the `/next` loop stops after it) or auto.
   Default review; auto only after the stage passed the pilot, only by Paul (`/approve <slug>|global mode:<stage>=auto`).
   Decisions can never be auto. The pilot's approval line switches `build:brief` to auto (P10).
@@ -26,7 +28,7 @@ Read the part you need. The stage files (`docs/stage-<n>-*.md`) say what each st
   next `/next`, in its own folder (`config.json → global_approvals`; the client's `global_seen` counter).
 
 ## Implementation — what can change, and how
-Each change kind's gate, channel and owner are in `gates.json → change_kinds`. Safe fixes after the audit approval;
+Each change kind's gate, channel and owner: `python3 scripts/handoff.py kinds` (from `gates.json → change_kinds`). Safe fixes after the audit approval;
 structural changes (redirects, slugs, titles, H1s) after the entity and Brand Guide approvals, always as handoffs;
 page content only as WordPress drafts from approved files, with their link tables (wheel.py) and schema (schema.py) put in place at ship (CM-064).
 - **The system never publishes.** Every service and location page is made a WordPress **draft** in one ship run (P9):

@@ -167,6 +167,10 @@ def gate_step(st, slug, gate):
     for r in S.requires(st, gate):
         if r in S.GATES["conditions"]:
             condition_step(st, slug, r)
+    if gate == "audit_approved":   # Phase 7: was the audit_steps_complete condition
+        ok, why = S.audit_steps_left(st)
+        if not ok:
+            out("run", f"/discovery {slug} audit", why)
     rec = st["gates"].get(gate) or {}
     marks = st.get("marks") or {}
     if rec.get("state") in S.GATES["met_decisions"]:
@@ -527,7 +531,9 @@ def _walk(slug, cont):
             "/rollback it, or abort it")
     c = st["client"]
 
-    condition_step(st, slug, "client_setup")
+    ok, why = S.client_set_up(st)
+    if not ok:
+        out("run", "/new-client", why)
     if c["type"] == "blog-only":
         gate_step(st, slug, "entity_approved")
         gate_step(st, slug, "blog_topics_approved")

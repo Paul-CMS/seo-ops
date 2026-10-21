@@ -36,3 +36,5 @@ Session model: Haiku · agents: build (Opus; draft-writer on Sonnet after Paul's
 - Route B (Paul writes): the build agent lists issues against the rules and never rewrites Paul's copy.
 - Sensitive clients: content needs the human review recorded; health claims need the practitioner's sign-off (CM-025).
 - Homepage and about last, or with the ship when approved.
+
+- **The agent's procedure** (write run, review, write-back, ship, handoff, published): `docs/build-procedure.md`.

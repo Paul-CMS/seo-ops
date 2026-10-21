@@ -4,8 +4,12 @@
     usage.py run <slug> <RUN_ID> [--by-agent] [--json]   tokens and USD for one run, per model (and per agent)
     usage.py client <slug> [--by-agent] [--json]         every run of a client, per stage and per step, the ten dearest
                                                          runs (and the cost by agent)
-    usage.py baseline <slug> [<slug> …] [--write FILE]   the REWRITE-4-BASELINE.md tables (cost per stage, by agent,
-                                                         top 10 runs)
+    usage.py baseline <slug> [<slug> …] [--write FILE] [--reads-before REV]
+                                                         the REWRITE-4-BASELINE.md tables (cost per stage, by agent,
+                                                         top 10 runs; with --reads-before, the Phase 7 size table)
+    usage.py reads [--before REV] [--client SLUG] [--json]
+                                                         every step's read-list size and every agent file, now and at
+                                                         a git revision (Phase 7 targets: < 30 KB, < 12 KB)
 
 The safety log records each run's start, end and session id. Claude Code keeps every session's token usage in
 ~/.claude/projects/<project>/<session>.jsonl and its subagents' in <session>/subagents/*.jsonl. A run's usage is
@@ -303,6 +307,138 @@ def baseline_md(slugs):
     return "\n".join(out)
 
 
+# ------------------------------------------------------------------ read lists (Rewrite 4 Phase 7)
+READS_TARGET_KB, AGENT_TARGET_KB = 30, 12
+PLACEHOLDERS = ("<date>", "<type>", "<state>", "<place>", "<niche>", "<section>", "<page>", "<author>")
+
+
+def _tree(rev):
+    """(read(rel) -> text or None, files: [rel]) for the working tree (rev None) or a git revision."""
+    import subprocess
+    if rev is None:
+        def read(rel):
+            p = ROOT / rel
+            return p.read_text(encoding="utf-8", errors="replace") if p.is_file() else None
+        return read, None
+
+    def read(rel):
+        r = subprocess.run(["git", "show", f"{rev}:{rel}"], cwd=ROOT, capture_output=True)
+        return r.stdout.decode("utf-8", "replace") if r.returncode == 0 else None
+    out = subprocess.run(["git", "ls-tree", "-r", "--name-only", rev], cwd=ROOT, capture_output=True, text=True).stdout
+    return read, [x for x in out.splitlines() if not x.startswith("clients/")]
+
+
+def _glob(files, pat):
+    import fnmatch
+    if files is None:
+        return sorted(str(p.relative_to(ROOT)) for p in ROOT.glob(pat) if p.is_file())
+    pat = pat.rstrip("/")
+    return [f for f in files if fnmatch.fnmatch(f, pat) or f.startswith(pat + "/")]
+
+
+def read_sizes(rev=None, slug="home-mobile-medical"):
+    """Per step: the bytes of its read list's system files (the stage doc first, `rulings.py` output by ID, other
+    commands run; client files apart, from this client's folder) and of its agent file(s). A file named with a
+    placeholder (<type>, <page> …) counts its largest instance; a section note ("(A, B)") still counts the whole file,
+    so the figure is a ceiling. Entries that name no file ("the approved site plan") are counted as unresolved."""
+    import subprocess
+    import rulings as RU
+    read, files = _tree(rev)
+    g = json.loads(read("scripts/gates.json"))
+    rtext = read("methodology/rulings.md") or ""
+    secs = RU.sections(rtext)
+    bbs = RU.bb_sections(read("sop-source/BB-Standard-v1.0.md") or "")
+    stage_of = {s: st for st in g.get("stages", []) for s in st["steps"]}
+    out = {}
+    for step, spec in g["steps"].items():
+        st = stage_of.get(step)
+        reads = list(spec.get("reads") or [])
+        if st:
+            doc = _glob(files, f"docs/stage-{st['n']}-*.md")
+            reads = doc[:1] + [r for r in reads if r not in doc[:1]]
+        sys_b = cl_b = unres = 0
+        seen = set()
+        for e in reads:
+            m = re.match(r"python3 scripts/rulings\.py ((?:[A-Z][\w-]*-[\w]+[ ,]*)+)", e)
+            if m or "rulings.py --index" in e:
+                ids = m.group(1).replace(",", " ").split() if m else []
+                body = "\n".join(secs[i][1] for i in ids if i in secs) + "\n".join(bbs[i] for i in ids if i in bbs) \
+                    if m else "\n".join(f"{k} · {t}" for k, (t, _) in secs.items())
+                sys_b += len(body.encode())
+                continue
+            if e.startswith("python3 scripts/"):
+                if rev is None:
+                    import shlex
+                    cmd = shlex.split(re.sub(r" \([^\"]*\)$", "", e))
+                    r = subprocess.run(cmd, cwd=ROOT, capture_output=True)
+                    sys_b += len(r.stdout) if r.returncode == 0 else 0
+                    unres += r.returncode != 0
+                else:
+                    unres += 1
+                continue
+            p = e.split(" ")[0].replace("<slug>", slug)
+            if not ("/" in p or p.endswith((".md", ".json"))):
+                unres += 1
+                continue
+            pat = p
+            for ph in PLACEHOLDERS:
+                pat = pat.replace(ph, "*")
+            client = p.startswith("clients/")
+            hits = _glob(None if client else files, pat)
+            if not hits and not client:
+                hits = _glob(files, pat.rstrip("/") + "/**")
+            if any(ph in p for ph in PLACEHOLDERS) and hits:
+                sizes = {h: len((ROOT / h).read_bytes()) if client else len((read(h) or "").encode()) for h in hits}
+                hits = [max(sizes, key=sizes.get)]
+            if not hits:
+                unres += 1
+                continue
+            for h in hits:
+                if h in seen:
+                    continue
+                seen.add(h)
+                if client:
+                    cl_b += (ROOT / h).stat().st_size
+                else:
+                    sys_b += len((read(h) or "").encode())
+        agents = [x["agent"] for x in (g.get("models") or {}).get(step, [])] or (st or {}).get("agents", [])[:1]
+        ag_b = max([len((read(f".claude/agents/{a}.md") or "").encode()) for a in agents] or [0])
+        out[step] = {"reads": sys_b, "client": cl_b, "agent": ag_b, "agents": agents, "unresolved": unres}
+    return out
+
+
+def agent_sizes(rev=None):
+    read, files = _tree(rev)
+    names = _glob(files, ".claude/agents/*.md")
+    return {Path(n).stem: len((read(n) or "").encode()) for n in names}
+
+
+def reads_md(before, slug="home-mobile-medical"):
+    """The before/after table: every step's read list and every agent file, against the Phase 7 targets."""
+    b, a = read_sizes(before, slug), read_sizes(None, slug)
+    ab, aa = agent_sizes(before), agent_sizes(None)
+    kb = lambda n: f"{n / 1024:.1f}"
+    out = [f"## Phase 7 — governance size, before ({before}) and after",
+           "", f"_`python3 scripts/usage.py reads --before {before}`. Read list = the stage doc + the step's system files "
+           f"(methodology, docs, skills, templates, `rulings.py` output by ID, commands run), in KB; client files are the "
+           f"job's input and are left out. Targets: read list < {READS_TARGET_KB} KB, agent file < {AGENT_TARGET_KB} KB. "
+           "A file named with a section note still counts whole, so every figure is a ceiling._", "",
+           "### Agent files", "", "| Agent | Before KB | After KB |", "|---|---|---|"]
+    for n in sorted(set(ab) | set(aa), key=lambda n: -ab.get(n, 0)):
+        flag = " ⚠" if aa.get(n, 0) / 1024 >= AGENT_TARGET_KB else ""
+        out.append(f"| {n} | {kb(ab.get(n, 0))} | {kb(aa.get(n, 0))}{flag} |")
+    out += ["", "### Read list per step", "",
+            "| Step | Read list before KB | after KB | Agent file before KB | after KB |", "|---|---|---|---|---|"]
+    for s in sorted(set(b) | set(a), key=lambda s: -(b.get(s) or {}).get("reads", 0)):
+        x, y = b.get(s) or {}, a.get(s) or {}
+        flag = " ⚠" if y.get("reads", 0) / 1024 >= READS_TARGET_KB else ""
+        out.append(f"| {s} | {kb(x.get('reads', 0))} | {kb(y.get('reads', 0))}{flag} | {kb(x.get('agent', 0))} | "
+                   f"{kb(y.get('agent', 0))} |")
+    over = [s for s, y in a.items() if y["reads"] / 1024 >= READS_TARGET_KB]
+    out += ["", f"Steps still at or over {READS_TARGET_KB} KB: " + (", ".join(sorted(over)) or "none"), ""]
+    return "\n".join(out)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -311,9 +447,21 @@ def main():
     s = sub.add_parser("client"); s.add_argument("slug"); s.add_argument("--json", action="store_true")
     s.add_argument("--by-agent", action="store_true", help="add the cost by agent across the client's runs")
     s = sub.add_parser("baseline"); s.add_argument("slugs", nargs="+"); s.add_argument("--write")
+    s.add_argument("--reads-before", help="a git revision: add the Phase 7 read-list and agent-file table against it")
+    s = sub.add_parser("reads"); s.add_argument("--before", help="a git revision to compare with")
+    s.add_argument("--client", default="home-mobile-medical"); s.add_argument("--json", action="store_true")
     a = ap.parse_args()
+    if a.cmd == "reads":
+        if a.json:
+            print(json.dumps({"after": read_sizes(None, a.client), "agents": agent_sizes(None),
+                              **({"before": read_sizes(a.before, a.client)} if a.before else {})}, indent=2))
+        else:
+            print(reads_md(a.before or "HEAD", a.client))
+        return
     if a.cmd == "baseline":
         text = baseline_md(a.slugs)
+        if a.reads_before:
+            text = text.rstrip("\n") + "\n\n" + reads_md(a.reads_before) + "\n"
         if a.write:
             Path(a.write).write_text(text, encoding="utf-8")
             print(f"wrote {a.write}")

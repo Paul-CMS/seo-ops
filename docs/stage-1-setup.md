@@ -6,7 +6,7 @@ Session model: Haiku · no agent — the stage chat runs the scripts.
 
 | Step | Command | Ends at |
 |---|---|---|
-| Intake, the client's Drive folder (v3 only), CMS detection, document checklist (S01) | `/new-client` | condition **client_setup** |
+| Intake, the client's Drive folder (v3 only), CMS detection, document checklist (S01) | `/new-client` | the client set-up (checked by `run.py start` for every later step) |
 
 - Open the client's own folder first: `python3 scripts/worktree.py open <slug>`; the chat runs there.
 - **Sensitive clients (CM-025, CM-040)** are matched by category (health, health-adjacent trades, legal, insurance,
