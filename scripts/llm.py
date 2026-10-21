@@ -12,6 +12,7 @@ to chunk. The jobs are called from the scripts that own the data, never by an ag
     route-questions    Haiku   paa.py route · fanout.py route          Intent + Route for the S19/S21 worksheets
     review-meaning     Sonnet  reviews.py meaning                      which review sentences state each fact (CM-057)
     place-judge        Sonnet  places.py judge-all                     does the source passage support the fact?
+    niche-judge        Sonnet  niches.py judge-all                     the same, for niche entity and state facts (Phase 6)
     faq-picks          Sonnet  outline.py faq                          FAQ fit picks per planned page
     conformance-judge  Sonnet  conformance.py judge                    the judgment checks for kept pages (S15)
     qa-explain         Haiku   qa.py explain                           plain explanation, fix and owner per QA row (Phase 5)
@@ -134,6 +135,27 @@ For every item return:
 Rules: use only the passage; never your own knowledge of the place. Numbers, dates, editions and names must match
 exactly to be supported. A fact that is broader than the passage (all of the town, when the passage names one
 neighbourhood) is not supported. Return one result for every item id and nothing else.""",
+    },
+    "niche-judge": {
+        "model": "claude-sonnet-5-5", "effort": "low", "chunk": 10, "out_per_item": 80, "max_tokens": 6000,
+        "item": _item({"verdict": {"type": "string", "enum": ["supported", "not_supported", "unclear"]}, "reason": S}),
+        "prompt": """You verify industry research for a niche module that every local business in a trade reuses. Each
+item is one fact found by a research tool about a service, its standards, its state licensing or its programmes, with the
+short quote the tool said supports it, and the passage of text taken from the source page itself (the page loaded; the
+quote was not found word for word, so you read it by meaning).
+
+For every item return:
+- verdict:
+  "supported" — the passage states the fact, in substance, for the service and the scope given (a state rule is a
+    state rule, a code edition is that edition). Paraphrase is fine; small wording differences are fine.
+  "not_supported" — the passage does not say it, says something different (another service, state, edition, year or
+    number), or contradicts it.
+  "unclear" — the passage is too short, garbled, or about the topic but does not settle the specific claim.
+- reason: at most 20 words, quoting the deciding words of the passage where you can.
+
+Rules: use only the passage; never your own knowledge of the trade. Standard numbers, code editions, dates, board names
+and programme names must match exactly to be supported. A fact that is broader than the passage (every state, when the
+passage names one) is not supported. Return one result for every item id and nothing else.""",
     },
     "faq-picks": {
         "model": "claude-sonnet-5-5", "effort": "low", "chunk": 6, "out_per_item": 260, "max_tokens": 8000,

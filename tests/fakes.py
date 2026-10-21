@@ -249,7 +249,69 @@ PLACE_WEB = {   # the public pages the place-store tests cite (places.py verify)
 }
 
 
+PLACE_WEB.update({   # Phase 6: the pages the niche (Prompt A) and brand footprint (Prompt C) tests cite
+    "https://niche.example.org/asme": "<html><body><p>ASME A18.1 is the safety standard for platform lifts and stairway "
+    "chairlifts in the United States.</p></body></html>",
+    "https://niche.example.org/license": "<html><body><p>The State Board of Contractors licenses lift installers under a "
+    "limited-energy licence and publishes a lookup page.</p></body></html>",
+    "https://niche.example.org/faq": "<html><body><p>Does Medicare pay for a stair lift? Medicare Part B does not cover "
+    "stair lifts.</p></body></html>",
+    "https://en.wikipedia.org/wiki/Mobility_aid": "<html><body><p>A mobility aid is a device designed to assist walking "
+    "or otherwise improve the mobility of people with a mobility impairment.</p></body></html>",
+    "https://en.wikipedia.org/wiki/Stairlift": "<html><body><p>A stairlift is a mechanical device for lifting people "
+    "up and down stairs.</p></body></html>",
+    "https://en.wikipedia.org/wiki/Vertical_platform_lift": "<html><body><p>A vertical platform lift is a type of platform "
+    "lift used to carry a wheelchair user.</p></body></html>",
+    "https://www.facebook.com/homemobilemed": "<html><body><h1>Home Mobile Medical</h1><p>Beaufort, SC</p></body></html>",
+    "https://www.yelp.com/biz/home-mobile-medical": "<html><body><h1>Home Mobile Medical</h1><p>2127 Boundary St</p></body></html>",
+    "https://www.hotfrog.com/company/hmm": "<html><body><h1>Home Mobile Medical</h1></body></html>",
+    "https://www.manta.com/c/hmm": "<html><body><h1>Welcome</h1></body></html>",
+    "https://sos.example.gov/hmm": "<html><body><p>Home Mobile Medical, LLC — active</p></body></html>",
+    "https://thegazette.example/hmm-story": "<html><body><p>Home Mobile Medical opens a showroom.</p></body></html>",
+})
+PLACE_BLOCKED = {"https://www.linkedin.com/company/home-mobile-medical": 999}
+WD_LABELS = {"Q1000": "Stairlift", "Q1001": "Mobility aid", "Q1002": "Wheelchair elevator"}
+WD_ITEMS = {   # Phase 6: a faked Wikidata API — two Beauforts (NC first), a county that shares the name, Bluffton in two counties
+    "Q1000101": ("Beaufort", ["Q2000101"], "Beaufort, North Carolina", ""),
+    "Q1000102": ("Beaufort", ["Q2000102"], "Beaufort, South Carolina", "https://cityofbeaufort.example.gov"),
+    "Q1000103": ("Beaufort County", ["Q3000102"], "", ""),
+    "Q1000201": ("Bluffton", ["Q2000102", "Q2000103"], "Bluffton, South Carolina", ""),
+    "Q2000101": ("Beaufort County", ["Q3000101"], "", ""), "Q2000102": ("Beaufort County", ["Q3000102"], "", ""),
+    "Q2000103": ("Jasper County", ["Q3000102"], "", ""),
+    "Q3000101": ("North Carolina", ["Q30"], "", ""), "Q3000102": ("South Carolina", ["Q30"], "", ""),
+    "Q30": ("United States of America", [], "", ""),
+}
+WD_SEARCH = {"Beaufort": ["Q1000101", "Q1000103", "Q1000102"], "Bluffton": ["Q1000201"], "Atlantis": []}
+
+
+def _wd_entity(qid):
+    label, parents, enwiki, site = WD_ITEMS[qid]
+    claims = {"P131": [{"rank": "normal", "mainsnak": {"datavalue": {"value": {"id": p}}}} for p in parents]}
+    if site:
+        claims["P856"] = [{"rank": "normal", "mainsnak": {"datavalue": {"value": site}}}]
+    return {"id": qid, "labels": {"en": {"value": label}}, "claims": claims,
+            "sitelinks": {"enwiki": {"title": enwiki}} if enwiki else {}}
+
+
+def wikidata_api(url):
+    from urllib.parse import parse_qs, urlparse
+    q = {k: v[0] for k, v in parse_qs(urlparse(url).query).items()}
+    if q.get("action") == "wbsearchentities":
+        return 200, json.dumps({"search": [{"id": i, "label": WD_ITEMS[i][0]} for i in WD_SEARCH.get(q["search"], [])]})
+    if q.get("action") == "wbgetentities":
+        return 200, json.dumps({"entities": {i: _wd_entity(i) for i in q["ids"].split("|") if i in WD_ITEMS}})
+    return 400, ""
+
+
 def place_fetch(url):
+    if url.startswith("https://www.wikidata.org/w/api.php"):
+        return wikidata_api(url)
+    m = re.match(r"https://www\.wikidata\.org/wiki/Special:EntityData/(Q\d+)\.json$", url)
+    if m:
+        lab = WD_LABELS.get(m.group(1))
+        return (200, json.dumps({"entities": {m.group(1): {"labels": {"en": {"value": lab}}}}})) if lab else (404, "")
+    if url in PLACE_BLOCKED:
+        return PLACE_BLOCKED[url], ""
     return (200, PLACE_WEB[url]) if url in PLACE_WEB else (404, "")
 
 

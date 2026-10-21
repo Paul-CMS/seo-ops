@@ -51,14 +51,29 @@ tables, never prose), CM-024 (variants are a shared pool), CM-041 (evidence gate
 CM-057 (reviews as customer-reported facts), CM-058 (metro hubs). URLs: one root slug (BB-207/208, `urlcheck.py`).
 Discovery is not the audit. A new conflict is recorded per PROC-01 and flagged.
 
-## Place research (CM-061; `scripts/places.py`)
-Research for a town and a niche is done once and reused across clients: `methodology/places/<state>/<place>/place.json`
-(niche-free) and `<niche>.json` (place × niche). The first stop for a public fact. The VA runs it: `places.py status
-<slug>` lists planned places with no research → `places.py prompt <slug> <place>` → paste into Gemini Deep Research →
-save the report to `clients/<slug>/inputs/places/<place>-<niche>.md` → `places.py ingest` → `places.py verify <state>
-<place> <niche>` (URLs must load; quotes must be on the page) → the rest are checked by meaning on the Claude API
-(`places.py judge-all <state> <place> <niche> --slug <slug> --run <RUN_ID>`, Sonnet); with no API key, or for a fact the
-API calls unclear, the researcher (Sonnet) reads it (`places.py judge`). Failed facts are dropped, never asked. Packs use only verified, current (under 3 years) facts.
+## Research layers (CM-061; Rewrite 4 §3) — `places.py`, `niches.py`, `footprint.py`
+Research by **entity**, once, at the level where a fact is true; never a service × city. All three prompts run in Gemini
+Deep Research (the VA); the scripts verify (every URL loads, the quote is on the page), then Sonnet checks meaning on the
+Claude API (the researcher when there is no key). Failed facts are dropped, never asked.
+- **Niche** (once per niche, all clients) — `methodology/niches/<niche>/`: `angles.md` (written by hand; the niche module for
+  the place prompt) and `entities.json` (service entities, attributes, state licensing, official FAQs). `niches.py prompt
+  <slug>` (Prompt A) → report to `clients/<slug>/inputs/niches/<niche>.md` → `niches.py ingest` → `niches.py verify <niche>`
+  (a Wikidata ID is checked against the Wikidata API; a label that differs waits for `niches.py entity`) → `niches.py
+  judge-all <niche> --slug <slug> --run <RUN_ID>` (`judge` without a key).
+- **Place** (once per town, all niches) — `methodology/places/<state>/<place>/place.json`. `places.py identity <state> <place>`
+  fills the identity from the Wikidata API (free, no LLM): official name, county, Wikidata ID, Wikipedia URL, website and the
+  Russian Doll chain place → county → state → country; `identity-all <slug>` does every planned town.
+- **Place × niche** (once per pair, all clients in the niche) — `<niche>.json` beside it. The first stop for a public fact.
+  `places.py status <slug>` lists what is missing **in the order to do it: the core GBP city first (from the Brand Guide's
+  confirmed NAP), then the other towns by planned-page priority** → `places.py prompt <slug> <place>` (Prompt B, built from the
+  niche's `angles.md`; `--depth auto` = the core GBP city **full**, every other planned town **lite**, D4; `--depth full|lite`
+  overrides) → save the report to `clients/<slug>/inputs/places/<place>-<niche>.md` → `places.py ingest` → `places.py verify
+  <state> <place> <niche>` → `places.py judge-all <state> <place> <niche> --slug <slug> --run <RUN_ID>` (`places.py judge`
+  without a key). A niche with no `angles.md` is refused. Packs use only verified, current (under 3 years) facts. A town where
+  even the lite prompt comes back thin becomes a merge proposal (viability check, CM-061 §8).
+- **Brand** (optional, once per client) — `footprint.py prompt <slug>` (Prompt C) → `clients/<slug>/inputs/footprint/report.md`
+  → `footprint.py ingest <slug> <report>` → `build/footprint/section-f-proposal.md`: sameAs and citation rows for Section F,
+  the NAP mismatches and the history rows. A proposal only: Paul approves, the Brand Guide is not edited by it.
 
 ## Independence
 Auditing and writing never share a context (CM-017, CM-018, RULE-011): the audit-reviewer sees only registers and

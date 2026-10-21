@@ -8,7 +8,10 @@ capped at 25, outline.py formula). Phase 2 built 2026-10-20 (llm.py; five jobs o
 the no-key fallback); left for Paul: type `ANTHROPIC_API_KEY` into `.env`. Phase 3 built 2026-10-20 (slim audit, CM-063;
 the cost fraction is measured on the next real audit). Phase 5 built 2026-10-20 (CM-064: wheel.py, schema.py, qa.py;
 link_wheel_approved retired; QA and schema at the handoff); left for Paul: fill HMM's Brand Guide Section F (ID page,
-logo, schema subtype, citation URLs) before its handoff. Next: Phase 6. Each
+logo, schema subtype, citation URLs) before its handoff. Phase 6 tooling built 2026-10-21 (niches.py + angles.md for
+roofing, stair lifts, mold; Wikidata identity; Prompt B from the niche module at full|lite depth; status order; footprint.py
+for Prompt C); left for the VA: run the real Beaufort × stair lifts and Charleston × roofing reports in Gemini, and Prompt A
+for the three niches. Next: Phase 7. Each
 phase runs in its own `/system` session, in order, starting with Phase 0. Phases marked **design** run on Opus; the rest on Sonnet, from
 this file as the written spec (CLAUDE.md → models).
 

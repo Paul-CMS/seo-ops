@@ -2,8 +2,15 @@
 """places.py — the place research store and the Deep Research flow (CM-061; rewrite 3 §5). Research for a town and a
 niche is done once and reused across clients.
 
-    places.py prompt <slug> <place> [--state SC] [--stdout]   fill the Deep Research prompt from the Brand Guide and
-                                                              the approved site plan → build/places/prompts/<place>-<niche>.md
+    places.py prompt <slug> <place> [--state SC] [--depth auto|full|lite] [--stdout]
+                                                              fill the Deep Research prompt (Prompt B) from the Brand Guide,
+                                                              the approved site plan and the niche's angles.md
+                                                              (methodology/niches/<niche>/) → build/places/prompts/<place>-<niche>.md
+                                                              full: the niche's angles 1-5 + 6-8; lite: three FAQ-category
+                                                              angles + 6-8. auto = the core GBP city full, other towns lite (D4)
+    places.py identity <state> <place>                        place.json identity from the Wikidata API (free, no LLM):
+                                                              official name, county, Wikidata ID, Wikipedia URL, the
+                                                              Russian Doll chain (identity-all <slug>: every planned place)
     places.py ingest <slug> <report.md> [--place P --state SC --niche N]
                                                               parse the report's tables into the two layers
     places.py verify <state> <place> <niche>                  every URL loads (else dropped); the quote is on its page
@@ -12,8 +19,9 @@ niche is done once and reused across clients.
                                                               the meaning check on the Claude API (llm.py place-judge,
                                                               Sonnet - Rewrite 4 Phase 2); no API key -> the researcher:
     places.py judge  <state> <place> <niche> --id ID --ok|--drop [--reason R]   record the Sonnet check's answer
-    places.py status <slug>                                   planned places missing place or niche research, with the
-                                                              prompt command for each
+    places.py status <slug>                                   planned places missing place or niche research, in the order
+                                                              to do them (core GBP city, then planned-page priority), with
+                                                              the prompt command for each
     places.py show   <state> <place> [<niche>]                the store's facts for a place
 
 Layers (methodology/places/<state>/<place>/):  place.json = niche-free (identity, official limits, county,
@@ -28,6 +36,7 @@ import re
 import sys
 import urllib.request
 
+import niches
 from lib import ROOT, client_dir, die, git_commit, read_json, today, write_json
 
 STORE = ROOT / "methodology" / "places"
@@ -44,7 +53,7 @@ STATES = {"alabama": "AL", "arizona": "AZ", "arkansas": "AR", "california": "CA"
           "washington": "WA", "west virginia": "WV", "wisconsin": "WI", "wyoming": "WY"}
 FIELDS = ["id", "fact", "applies_to", "source_url", "publisher", "source_type", "date", "quote"]
 
-PROMPT = """You are researching {PLACE}, {STATE} for a {NICHE} business (primary category:
+FRAME = """You are researching {PLACE}, {STATE} for a {NICHE} business (primary category:
 {PRIMARY_CATEGORY}; services: {SERVICES}). This is LOCAL research seen through
 that niche: everything you report must be about how {NICHE} work and {NICHE}
 customers are affected in {PLACE} specifically, current as of {YEAR}. Do not
@@ -53,47 +62,15 @@ research the services themselves, and say nothing about any specific company.
 Scope: {PLACE} means the area inside {PLACE}'s official limits. Where a rule
 differs for unincorporated {COUNTY} County addresses near {PLACE}, report both
 and say which applies where.
-
+{LITE}
 Research these angles. For each, look for current official sources first.
 
-1. Permits and approvals for {NICHE} work in {PLACE} ({YEAR})
-   - Which office issues permits for {NICHE} work (town, city or county), with
-     its official page.
-   - Which {NICHE} jobs need a permit and which don't (repair vs replacement
-     thresholds, any percentage rules), required inspections, and typical fees
-     if officially published.
-   - Contractor licensing: state licence type required for {NICHE} work, and
-     any local business licence {PLACE} requires.
-   - Building code edition in force and any local amendments that affect
-     {NICHE} work (wind, impact, fire, energy, flood).
-
-2. Community and design rules affecting {NICHE} work
-   - Historic districts or design-review boards in {PLACE} and what they
-     require for {NICHE} work (materials, colours, approval steps).
-   - Named HOAs, POAs or ARBs inside {PLACE} with published rules about
-     {NICHE} work. Name each community and its rule, with the source.
-   - Contractor access rules: gates, passes, decals, work-hour limits.
-
-3. Environment and conditions that affect {NICHE} in {PLACE}
-   - Climate factors relevant to {NICHE}: hurricane and wind exposure (design
-     wind speed if published), salt air, humidity, heat, storms, flooding.
-   - Named storms or weather events in the last 10 years that affected {PLACE}
-     and are relevant to {NICHE}.
-   - Flood zones and elevation rules (including any "substantial improvement"
-     rule) that change {NICHE} work.
-
-4. Housing stock and property types
-   - Age and type of homes, common construction and materials relevant to
-     {NICHE}, oceanfront or waterfront exposure, historic homes, gated
-     communities, second homes or vacation rentals.
-
-5. Money and incentives relevant to {NICHE} in {PLACE}
-   - Local, county, state or utility rebates, tax credits or programmes that
-     apply to {NICHE} work here.
-   - Insurance factors specific to this area that affect {NICHE}, from official
-     or insurer sources only.
-
-6. Places and entities (for local relevance)
+"""
+LITE_NOTE = """
+This is a LITE run: research only the angles listed below (the niche angles 4 and 5
+are not part of it). Keep each table short; "not found" is an acceptable answer.
+"""
+FIXED = """6. Places and entities (for local relevance)
    - Neighbourhoods and subdivisions inside {PLACE} limits (confirm each is
      inside).
    - Landmarks, waterways, districts and main roads, preferring ones tied to
@@ -118,7 +95,7 @@ Rules:
   say "not found" and list what you searched.
 
 Output format (required, used for import):
-For each angle 1–8, a table with columns:
+For each angle above, a table with columns:
 id | fact (one sentence) | applies_to (all of {PLACE} / named community /
 unincorporated) | source_url | publisher | source_type (official / code body /
 manufacturer / news / context) | date | short supporting quote (max 25 words)
@@ -186,19 +163,68 @@ def client_info(slug, place=None, state=None):
         if p.get("type") == "location" and (p.get("city") or p.get("name")) == place and p.get("group"):
             if re.search(r"County$", p["group"].strip()):   # a metro hub (HMM) is not a county: left for the prompt's wording
                 county = re.sub(r"\s+County$", "", p["group"].strip())
+    core = core_city(bgt)
     if not state:
         state = c.get("state")
+    if not state and core:
+        state = core[1]
     if not state:
         low = bgt.lower()
         counts = {abbr: low.count(name) for name, abbr in STATES.items() if name in low}
         state = max(counts, key=counts.get) if counts else None
     return {"niche": niche, "industry": industry, "primary": primary or industry,
-            "services": services, "county": county, "state": (state or "").upper() or None, "st": st}
+            "services": services, "county": county, "state": (state or "").upper() or None, "st": st, "core": core}
+
+
+def core_city(bgt):
+    """(city, 'SC') of the GBP address — the Brand Guide's confirmed NAP row — or None. The core GBP city anchors the
+    homepage, the primary service page and the area entity, so it is researched first and at full depth (D4)."""
+    row = next((l for l in bgt.splitlines() if re.search(r"Confirmed NAP", l)), "")
+    m = re.search(r",\s*([^,·|]+?),\s*([A-Z]{2})\s+\d{5}", row)
+    return (m.group(1).strip(), m.group(2)) if m else None
 
 
 def planned_places(st):
     return sorted({p.get("city") or p.get("name") for p in st["pages"].values()
                    if p.get("type") == "location" and (p.get("city") or p.get("name"))})
+
+
+def is_core(name, core):
+    return bool(core) and split_place(name)[0].lower() == core[0].lower()
+
+
+def ordered_places(st, core=None):
+    """Planned places in the order the research is done: the core GBP city first, then the towns by planned-page
+    priority — the build plan's batch order (the pilot first), then the order of the site plan. A core GBP city with
+    no location page planned still leads the list."""
+    batches = (st.get("build") or {}).get("batches") or []
+    first = {}
+    for i, b in enumerate(batches):
+        for pid in b.get("pages", []):
+            first.setdefault(pid, i)
+    rows = []
+    for n, (pid, p) in enumerate(st["pages"].items()):
+        name = p.get("city") or p.get("name")
+        if p.get("type") == "location" and name:
+            rows.append((0 if is_core(name, core) else 1, first.get(pid, len(batches)), n, name))
+    out = []
+    for *_, name in sorted(rows):
+        if name not in out:
+            out.append(name)
+    if core and not any(is_core(x, core) for x in out):
+        out.insert(0, f"{core[0]}, {core[1]}")
+    return out
+
+
+def build_prompt(vals, mod, depth):
+    """Prompt B: the fixed frame, the niche's angles (full: its 1–5; lite: its three FAQ-category angles), then the
+    fixed angles 6–8, the rules and the output format. `mod` is niches.load_angles()."""
+    angles = mod["lite"] if depth == "lite" else mod["full"]
+    head = FRAME.replace("{LITE}", LITE_NOTE if depth == "lite" else "")
+    text = head + niches.render_angles(angles, vals) + FIXED
+    for k, v in vals.items():
+        text = text.replace("{" + k + "}", v)
+    return text.replace("unincorporated  County", "unincorporated county")
 
 
 def cmd_prompt(a):
@@ -207,16 +233,26 @@ def cmd_prompt(a):
     info = client_info(a.slug, full, hint or a.state)
     if not info["state"]:
         die("REFUSED — the state is not recorded for this client and the Brand Guide names none. Add --state SC (two letters).", 4)
-    txt = PROMPT.format(PLACE=a.place, STATE=info["state"], NICHE=info["industry"] or info["niche"],
-                        PRIMARY_CATEGORY=info["primary"], SERVICES=", ".join(info["services"]) or "see the site plan",
-                        COUNTY=info["county"], YEAR=today()[:4]).replace("unincorporated  County", "unincorporated county")
+    mod = niches.load_angles(info["niche"])
+    if not mod:
+        die(f"REFUSED — there is no niche module for '{info['niche']}': methodology/niches/<niche>/angles.md (one per niche, "
+            f"written once; see methodology/niches/README.md). The place prompt is built from it, never from another "
+            f"trade's angles.", 4)
+    core = is_core(a.place, info["core"])
+    depth = a.depth if a.depth != "auto" else ("full" if core or not info["core"] else "lite")
+    vals = {"PLACE": a.place, "STATE": info["state"], "NICHE": info["industry"] or info["niche"],
+            "PRIMARY_CATEGORY": info["primary"], "SERVICES": ", ".join(info["services"]) or "see the site plan",
+            "COUNTY": info["county"], "YEAR": today()[:4]}
+    txt = build_prompt(vals, mod, depth)
     out = client_dir(a.slug) / "build" / "places" / "prompts" / f"{slugify(a.place)}-{info['niche']}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(txt, encoding="utf-8")
     if a.stdout:
         print(txt)
         return
-    print(f"prompt for {a.place}, {info['state']} ({info['industry']}) → {out.relative_to(ROOT)}\n"
+    why = "core GBP city" if core else ("every other planned town" if info["core"] else "the GBP city is not known")
+    print(f"prompt for {a.place}, {info['state']} ({info['industry']}) — {depth} depth ({why}; niche module "
+          f"{mod['dir'].name}) → {out.relative_to(ROOT)}\n"
           f"Paste it into Gemini Deep Research, then save the report as "
           f"clients/{a.slug}/inputs/places/{slugify(a.place)}-{info['niche']}.md and run: "
           f"python3 scripts/places.py ingest {a.slug} clients/{a.slug}/inputs/places/{slugify(a.place)}-{info['niche']}.md")
@@ -227,15 +263,16 @@ def _cells(line):
     return [c.strip() for c in line.strip().strip("|").split("|")]
 
 
-def parse_report(text):
-    """→ ([(angle, row dict)], [(angle, what was searched)]) from the report's tables."""
+def parse_report(text, extra=()):
+    """→ ([(angle, row dict)], [(angle, what was searched)]) from the report's tables. `extra`: more columns to keep
+    (Prompt A's "entity or service" as `entity`)."""
     facts, nf = [], []
     angle, head, nf_table = None, None, False
     for line in text.splitlines():
         s = line.strip()
         if not s.startswith("|"):
             head = None
-            m = re.match(r"^(?:#{1,6}\s*|\*\*)?\s*(?:angle\s*)?([1-8])\s*[.):\-—]", s, re.I)
+            m = re.match(r"^(?:#{1,6}\s*|\*\*)?\s*(?:angle\s*|section\s*)?([1-8])\s*[.):\-—]", s, re.I)
             if m:
                 angle = m.group(1)
             nf_table = bool(re.search(r"not found", s, re.I))
@@ -248,9 +285,10 @@ def parse_report(text):
             if any(x.startswith("fact") for x in low) and any("source" in x for x in low):
                 head = [re.sub(r"[^a-z_]", "", x.split("(")[0].strip().replace(" ", "_")) for x in low]
                 head = [{"short_supporting_quote": "quote", "supporting_quote": "quote", "source": "source_url",
-                         "url": "source_url", "applies": "applies_to"}.get(h, h) for h in head]
+                         "url": "source_url", "applies": "applies_to", "entity_or_service": "entity",
+                         "service": "entity"}.get(h, h) for h in head]
                 nf_table = False
-            elif low and low[0].startswith("angle"):
+            elif low and low[0].startswith(("angle", "section")):
                 head, nf_table = ["angle", "searched"], True
             else:
                 head = []
@@ -259,7 +297,7 @@ def parse_report(text):
             nf.append((cells[0], cells[1] if len(cells) > 1 else ""))
         elif head and angle:
             row = {h: cells[i] for i, h in enumerate(head) if i < len(cells)}
-            row = {k: row.get(k, "") for k in FIELDS} | {"angle": angle}
+            row = {k: row.get(k, "") for k in (*FIELDS, *extra)} | {"angle": angle}
             if row["fact"] and row["source_url"] and not re.match(r"^(not found|none)", row["fact"], re.I):
                 facts.append((angle, row))
     return facts, nf
@@ -330,7 +368,11 @@ def cmd_ingest(a):
             for rx, key in ((r"Q\d+", "wikidata"), (r"https?://\S*wikipedia\.org/\S+", "wikipedia")):
                 hit = re.search(rx, row["fact"] + " " + row["source_url"])
                 if hit:
-                    pl["identity"][key] = hit.group(0).rstrip(").,")
+                    val = hit.group(0).rstrip(").,")
+                    if pl["identity"].get("source") == "wikidata-api" and pl["identity"].get(key) not in (None, val):
+                        pl["identity"][f"report_{key}"] = val   # the API's identity stands; the report's is shown beside it
+                    else:
+                        pl["identity"][key] = val
         dest = ROUTE.get(angle) or ("niche" if _niche_relevant(row, info) else "place")
         (new_n if dest == "niche" else new_p).append(row)
     added_p, added_n = _merge(pl, new_p), _merge(ni, new_n)
@@ -432,18 +474,13 @@ def passage(body, quote, fact, width=1500):
     return " ".join(toks[at:at + span])[:width]
 
 
-def cmd_judge_all(a):
-    """Every fact left for the meaning check, read on the Claude API (llm.py place-judge, Sonnet - Rewrite 4 Phase 2):
-    supported -> verified; not supported -> dropped (never asked); unclear -> left for the researcher. No API key: the
-    researcher reads them and records each with `places.py judge`, as before."""
+def judge_layers(slug, run_id, job, context, layers, purpose, route, confirmed, save, where_label):
+    """The meaning check on the API for every fact of the layers [(key, layer)] left at "check": supported → verified;
+    not supported → dropped (never asked); unclear → left for the researcher. `save(key, layer)` stores a changed layer.
+    Returns (n, items) or None when the job ran on its agent route (no key). Shared by places.py and niches.py."""
     import llm
-    import run as R
-    R.open_run(a.slug, a.run)
-    layers = [(None, load_layer(a.state, a.place))]
-    if a.niche:
-        layers.append((slugify(a.niche), load_layer(a.state, a.place, slugify(a.niche))))
     cache, items, where = {}, [], {}
-    for niche, layer in layers:
+    for key, layer in layers:
         for f in layer["facts"]:
             if f.get("verified") != "check":
                 continue
@@ -452,20 +489,18 @@ def cmd_judge_all(a):
                 continue
             items.append({"id": f["id"], "fact": f["fact"], "applies_to": f.get("applies_to", ""),
                           "quote": f.get("quote", ""), "passage": passage(_plain(body), f.get("quote", ""), f["fact"])})
-            where[f["id"]] = niche
+            where[f["id"]] = key
     if not items:
-        print(f"{a.place}, {a.state.upper()}: nothing waits for the meaning check")
-        return
-    ans = llm.attempt(a.slug, a.run, "place-judge", {"place": a.place, "state": a.state.upper(), "niche": a.niche or ""},
-                      items, f"place facts by meaning - {a.place}, {a.state.upper()} ({len(items)})",
-                      "the researcher reads each one and records it (places.py judge)", a.confirmed)
+        print(f"{where_label}: nothing waits for the meaning check")
+        return None
+    ans = llm.attempt(slug, run_id, job, context, items, f"{purpose} ({len(items)})", route, confirmed)
     if ans is None:
-        return
-    who = f"meaning checked by llm.py place-judge ({llm.JOBS['place-judge']['model']})"
+        return None
+    who = f"meaning checked by llm.py {job} ({llm.JOBS[job]['model']})"
     n = {"supported": 0, "not_supported": 0, "unclear": 0}
-    for niche, layer in layers:
+    for key, layer in layers:
         for f in list(layer["facts"]):
-            r = ans.get(f["id"]) if f["id"] in where and where[f["id"]] == niche else None
+            r = ans.get(f["id"]) if f["id"] in where and where[f["id"]] == key else None
             if not r:
                 continue
             n[r["verdict"]] += 1
@@ -478,11 +513,174 @@ def cmd_judge_all(a):
             else:
                 f["verified_how"] = (f"URL loads; quote not found word for word; unclear on the API ({r['reason']}) - "
                                      "the researcher reads it")
-        save_layer(a.state, a.place, niche, layer)
-    commit(a.state, a.place, "meaning checked on the API")
-    print(f"{a.place}, {a.state.upper()}: {n['supported']} verified · {n['not_supported']} dropped · {n['unclear']} "
-          f"unclear (left for the researcher: places.py show … --check)"
+        save(key, layer)
+    print(f"{where_label}: {n['supported']} verified · {n['not_supported']} dropped · {n['unclear']} "
+          f"unclear (left for the researcher: show … --check)"
           + (f" · {len(items) - len(ans)} not answered" if len(items) > len(ans) else ""))
+    return n
+
+
+def cmd_judge_all(a):
+    """Every fact left for the meaning check, read on the Claude API (llm.py place-judge, Sonnet - Rewrite 4 Phase 2):
+    supported -> verified; not supported -> dropped (never asked); unclear -> left for the researcher. No API key: the
+    researcher reads them and records each with `places.py judge`, as before."""
+    import run as R
+    R.open_run(a.slug, a.run)
+    layers = [(None, load_layer(a.state, a.place))]
+    if a.niche:
+        layers.append((slugify(a.niche), load_layer(a.state, a.place, slugify(a.niche))))
+    n = judge_layers(a.slug, a.run, "place-judge", {"place": a.place, "state": a.state.upper(), "niche": a.niche or ""},
+                     layers, f"place facts by meaning - {a.place}, {a.state.upper()}",
+                     "the researcher reads each one and records it (places.py judge)", a.confirmed,
+                     lambda niche, layer: save_layer(a.state, a.place, niche, layer), f"{a.place}, {a.state.upper()}")
+    if n is not None:
+        commit(a.state, a.place, "meaning checked on the API")
+
+
+# ------------------------------------------------------------------ identity from Wikidata (free, no LLM)
+WD_API = "https://www.wikidata.org/w/api.php"
+COUNTY_RX = re.compile(r"\b(county|parish|borough)$", re.I)
+COUNTRY = ("united states", "united states of america")
+
+
+def wd_api(**params):
+    """One Wikidata API call → dict ({} when it fails). Goes through fetch(), the one network hook tests replace."""
+    import urllib.parse
+    code, body = fetch(f"{WD_API}?{urllib.parse.urlencode({**params, 'format': 'json'})}")
+    try:
+        return json.loads(body) if code == 200 else {}
+    except ValueError:
+        return {}
+
+
+def _wd_entities(ids, cache):
+    need = [i for i in ids if i not in cache]
+    if need:
+        cache.update(wd_api(action="wbgetentities", ids="|".join(need), props="labels|claims|sitelinks", languages="en",
+                            sitefilter="enwiki").get("entities") or {})
+    return [cache.get(i) or {} for i in ids]
+
+
+def _claim_ids(ent, prop):
+    out = []
+    for c in (ent.get("claims") or {}).get(prop, []):
+        v = ((c.get("mainsnak") or {}).get("datavalue") or {}).get("value")
+        if c.get("rank") != "deprecated" and isinstance(v, dict) and v.get("id"):
+            out.append(v["id"])
+    return out
+
+
+def _claim_text(ent, prop):
+    for c in (ent.get("claims") or {}).get(prop, []):
+        v = ((c.get("mainsnak") or {}).get("datavalue") or {}).get("value")
+        if isinstance(v, str):
+            return v
+    return ""
+
+
+def _label(ent):
+    return ((ent.get("labels") or {}).get("en") or {}).get("value", "")
+
+
+def wd_chain(qid, cache, state_name):
+    """The Russian Doll chain of a Wikidata place, smallest first: [{name, wikidata, type}] by following "located in
+    the administrative territorial entity" (P131) up to the country. All parents of the first step are kept as
+    `counties` (a town in two counties), the chain follows the first."""
+    chain, counties, cur = [], [], qid
+    for depth in range(7):
+        ent = _wd_entities([cur], cache)[0]
+        name = _label(ent)
+        kind = ("country" if name.lower() in COUNTRY else "state" if name.lower() == (state_name or "").lower()
+                else "county" if COUNTY_RX.search(name) else "place" if depth == 0 else "district")
+        chain.append({"name": name, "wikidata": cur, "type": kind})
+        parents = _claim_ids(ent, "P131")
+        if depth == 0:
+            _wd_entities(parents, cache)
+            counties = [{"name": _label(cache.get(x) or {}), "wikidata": x} for x in parents
+                        if COUNTY_RX.search(_label(cache.get(x) or {}))]
+        if kind == "country" or not parents:
+            break
+        cur = parents[0]
+    return chain, counties
+
+
+def wd_identity(state, place):
+    """The identity of a place from the Wikidata API: official name, county, Wikidata ID, Wikipedia URL, website and the
+    Russian Doll chain (place → county → state → country). The candidate must sit inside the state — a "Beaufort" in
+    another state is never taken. None when there is no confident match."""
+    import urllib.parse
+    state_name = next((n for n, ab in STATES.items() if ab == state.upper()), state).title()
+    found = wd_api(action="wbsearchentities", search=place, language="en", type="item", limit=10).get("search") or []
+    ids = [r["id"] for r in found if r.get("id")]
+    cache = {}
+    ents = dict(zip(ids, _wd_entities(ids, cache)))
+    plain = lambda t: re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).strip()
+    best = []
+    for qid in ids:
+        label = _label(ents[qid])
+        if not label or plain(place) not in plain(label):
+            continue
+        chain, counties = wd_chain(qid, cache, state_name)
+        if chain[0]["type"] != "county" and any(c["type"] == "state" for c in chain):   # a county that shares the name is not the town
+            best.append((plain(label) != plain(place), qid, chain, counties))
+    if not best:
+        return None
+    best.sort(key=lambda b: b[0])
+    _, qid, chain, counties = best[0]
+    ent = ents[qid]
+    title = ((ent.get("sitelinks") or {}).get("enwiki") or {}).get("title", "")
+    return {"official_name": chain[0]["name"], "wikidata": qid,
+            "wikipedia": "https://en.wikipedia.org/wiki/" + urllib.parse.quote(title.replace(" ", "_"), safe="_,()'") if title else "",
+            "county": counties[0]["name"] if counties else "", "counties": counties,
+            "website": _claim_text(ent, "P856"), "chain": chain, "source": "wikidata-api", "checked": today(),
+            "other_matches": len(best) - 1}
+
+
+def fill_identity(state, place):
+    """Store the Wikidata identity in place.json. → (identity, note) · (None, why)."""
+    ident = wd_identity(state, place)
+    if not ident:
+        return None, f"no Wikidata item named {place} sits inside {state.upper()} — angle 7 of the report may still name it"
+    pl = load_layer(state, place)
+    pl["place"] = place
+    old = pl["identity"].get("wikidata")
+    if old and old != ident["wikidata"] and pl["identity"].get("source") != "wikidata-api":
+        ident["report_wikidata"] = old   # the Deep Research report named another item: shown, never silently kept
+    pl["identity"].update(ident)
+    if pl["identity"].get("report_wikidata") == ident["wikidata"]:
+        del pl["identity"]["report_wikidata"]
+    save_layer(state, place, None, pl)
+    commit(state, place, "identity from Wikidata")
+    return pl["identity"], ""
+
+
+def _say_identity(place, ident):
+    chain = " → ".join(c["name"] for c in ident["chain"])
+    extra = (f" · the report named {ident['report_wikidata']} — check" if ident.get("report_wikidata") else "") + (
+        f" · {ident['other_matches']} other match(es) in the state, the closest name taken" if ident.get("other_matches") else "")
+    return f"{place}: {ident['wikidata']} · {chain}{extra}"
+
+
+def cmd_identity(a):
+    ident, why = fill_identity(a.state, a.place)
+    if not ident:
+        die(f"{a.place}, {a.state.upper()}: {why}", 4)
+    print(_say_identity(f"{a.place}, {a.state.upper()}", ident))
+
+
+def cmd_identity_all(a):
+    info = client_info(a.slug)
+    if not info["state"]:
+        die("REFUSED — the state is not recorded for this client; pass it with --state.", 4)
+    done = miss = 0
+    for pl in ordered_places(info["st"], info["core"]):
+        name, stt = split_place(pl, info["state"])
+        if (load_layer(stt, name)["identity"] or {}).get("source") == "wikidata-api":
+            continue
+        ident, why = fill_identity(stt, name)
+        done, miss = done + bool(ident), miss + (not ident)
+        print(_say_identity(pl, ident) if ident else f"{pl}: {why}")
+    print(f"identity: {done} filled from Wikidata · {miss} not found" if done or miss else "every planned place has its identity")
 
 
 # ------------------------------------------------------------------ use in packs and status
@@ -502,27 +700,43 @@ def have(state, place, niche):
 
 
 def cmd_status(a):
+    """The research still to do, in the order to do it: the core GBP city first (full depth), then the other planned
+    towns by planned-page priority (lite depth, D4)."""
     info = client_info(a.slug)
     st = info["st"]
     if not info["state"]:
         die("REFUSED — the state is not recorded for this client; pass it to `places.py prompt --state`.", 4)
-    todo = []
-    for pl in planned_places(st):
+    order = ordered_places(st, info["core"])
+    todo, no_ident = [], []
+    for pl in order:
         name, stt = split_place(pl, info["state"])
         p, n = have(stt, name, info["niche"])
+        depth = "core GBP city · full" if is_core(pl, info["core"]) else "lite"
         if not (p and n):
-            todo.append((pl, "place" if not p else "", "niche" if not n else ""))
-    print(f"{len(planned_places(st))} planned place(s) · {len(todo)} missing research" if todo else
-          "every planned place has place and niche research")
-    for pl, mp, mn in todo[:8]:
-        print(f"  {pl}: missing {' + '.join(x for x in (mp, mn) if x)} → python3 scripts/places.py prompt {a.slug} \"{pl}\"")
+            todo.append((pl, "place" if not p else "", "niche" if not n else "", depth))
+        if not p or (load_layer(stt, name)["identity"] or {}).get("source") != "wikidata-api":
+            no_ident.append(pl)
+    mod = niches.load_angles(info["niche"])
+    head = (f"{len(order)} planned place(s) · {len(todo)} missing research" if todo else
+            "every planned place has place and niche research")
+    print(head + (f" · core GBP city: {info['core'][0]}" if info["core"] else " · GBP city not found in the Brand Guide NAP")
+          + ("" if mod else f" · NO niche module for '{info['niche']}' (methodology/niches/<niche>/angles.md)"))
+    cmd = lambda pl: f'python3 scripts/places.py prompt {a.slug} "{pl}"'
+    for i, (pl, mp, mn, depth) in enumerate(todo[:8], 1):
+        print(f"  {i}. {pl} [{depth}]: missing {' + '.join(x for x in (mp, mn) if x)} → {cmd(pl)}")
     if len(todo) > 8:
         print(f"  … and {len(todo) - 8} more (places.py status lists them in build/places/status.md)")
+    if no_ident:
+        print(f"identity from Wikidata (free, no LLM) not filled for {len(no_ident)} place(s) → "
+              f"python3 scripts/places.py identity-all {a.slug}")
     out = client_dir(a.slug) / "build" / "places" / "status.md"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text("# Place research status\n\n" + "\n".join(
-        f"- {pl}: missing {' + '.join(x for x in (mp, mn) if x)} → `python3 scripts/places.py prompt {a.slug} \"{pl}\"`"
-        for pl, mp, mn in todo) + "\n", encoding="utf-8")
+    lines = [f"{i}. {pl} [{depth}]: missing {' + '.join(x for x in (mp, mn) if x)} → `{cmd(pl)}`"
+             for i, (pl, mp, mn, depth) in enumerate(todo, 1)]
+    tail = (f"\nIdentity not yet filled from Wikidata: {', '.join(no_ident)} → "
+            f"`python3 scripts/places.py identity-all {a.slug}`\n") if no_ident else ""
+    out.write_text("# Place research status\n\nIn this order: the core GBP city first, then the planned pages' priority.\n\n"
+                   + "\n".join(lines) + "\n" + tail, encoding="utf-8")
 
 
 def cmd_show(a):
@@ -540,6 +754,8 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("prompt"); s.add_argument("slug"); s.add_argument("place"); s.add_argument("--state")
     s.add_argument("--stdout", action="store_true")
+    s.add_argument("--depth", choices=["auto", "full", "lite"], default="auto",
+                   help="auto: the core GBP city full, every other planned town lite (D4)")
     s = sub.add_parser("ingest"); s.add_argument("slug"); s.add_argument("report"); s.add_argument("--place")
     s.add_argument("--state"); s.add_argument("--niche")
     s = sub.add_parser("verify"); s.add_argument("state"); s.add_argument("place"); s.add_argument("niche", nargs="?")
@@ -550,11 +766,13 @@ def main():
     s.add_argument("--slug", required=True, help="the client whose run pays (llm-costs.jsonl)")
     s.add_argument("--run", required=True); s.add_argument("--confirmed", action="store_true")
     s = sub.add_parser("status"); s.add_argument("slug")
+    s = sub.add_parser("identity"); s.add_argument("state"); s.add_argument("place")
+    s = sub.add_parser("identity-all"); s.add_argument("slug")
     s = sub.add_parser("show"); s.add_argument("state"); s.add_argument("place"); s.add_argument("niche", nargs="?")
     s.add_argument("--check", action="store_true")
     a = ap.parse_args()
     {"prompt": cmd_prompt, "ingest": cmd_ingest, "verify": cmd_verify, "judge": cmd_judge, "judge-all": cmd_judge_all,
-     "status": cmd_status,
+     "status": cmd_status, "identity": cmd_identity, "identity-all": cmd_identity_all,
      "show": cmd_show}[a.cmd](a)
 
 

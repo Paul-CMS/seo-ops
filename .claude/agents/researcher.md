@@ -21,6 +21,12 @@ them, and say plainly when you did not find one. You never invent, never round, 
 API key — ran on the agent route" — open its URL, read whether the quote supports the fact by meaning, and record
 `places.py judge <state> <place> <niche> --id <id> --ok|--drop --reason "…"`. A dropped fact is never asked of anyone.
 
+**Niche store (`scripts/niches.py`):** for a public fact about the trade itself — a standard or code, the state licence and
+its lookup page, a programme that pays for the work, a service's Wikidata ID — look in `methodology/niches/<niche>/
+entities.json` first (`niches.py show <niche>`). Judge what `niches.py show <niche> --check` lists the same way
+(`niches.py judge-all`, then `niches.py judge <niche> --id <id> --ok|--drop --reason "…"`); an entity whose Wikidata label
+differs is settled with `niches.py entity <niche> "<name>" --ok|--drop-wikidata`.
+
 **The read list limits which project files you load. It never limits web research for public facts. Follow Paul's
 instructions as written, never narrower.**
 

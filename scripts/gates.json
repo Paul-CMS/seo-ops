@@ -472,6 +472,7 @@
         "the returned proof sheet",
         "clients/<slug>/brand-guide.md",
         "templates/brand-guide.md",
+        "clients/<slug>/data/footprint/footprint.json and build/footprint/section-f-proposal.md (Prompt C, when it was run — proposed Section F rows)",
         "python3 scripts/rulings.py CM-016 CM-027 CM-039 (never rulings.md whole, P12)",
         "clients/<slug>/decisions-settled.md"
       ]
@@ -1036,6 +1037,7 @@
         "clients/<slug>/data/reviews/review-facts.json",
         "methodology/sources/<state>-<area>.md (the researcher)",
         "methodology/places/<state>/<place>/ (the place store — the first stop for a public fact; places.py)",
+        "methodology/niches/<niche>/ (the niche store — standards, state licensing, programmes and service entities for the trade; niches.py show)",
         "clients/<slug>/data/reviews/reviews.csv + mentions.csv (through the evidence packs)",
         "clients/<slug>/data/gbp/ (GBP Q&A and posts — the client research order)",
         "the returned proof sheet and the approved Discovery Record",
