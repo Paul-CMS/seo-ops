@@ -765,6 +765,32 @@ Decided by Paul.
    needs both.
 7. Audits approved before this ruling (Home Mobile Medical, Apex) keep their documents and approvals.
 
+## CM-064 · Finish folds into the plan: the wheel, schema and QA by script, published together
+**ID** CM-064 · **Status** APPROVED · **Date** 2026-10-20 · **Reason** The link wheel, the schema and the mechanical QA follow fixed rules from the approved site plan and the Brand Guide; a Finish agent and a separate wheel approval after publishing only delayed them and cost tokens. Paul's rule: every page stays a draft until all are drafted, then they are published together. · **Source** Paul, REWRITE-4-PLAN.md Phase 5 (approved 2026-10-20); memory "publish only after all drafts" · **Supersedes** the gate `link_wheel_approved`; the steps `/finish wheel` and `/finish schema`; CM-022's "exceptions are proposed only in Finish" (now in the site plan); the county-hub spec's open "wheel position"
+
+Decided by Paul.
+1. **The wheel is a script** (`scripts/wheel.py`) from the approved site plan: service → every location; location →
+   every service, and its hub then every other location (the sibling table); hub → its own cities and every service;
+   homepage → every service (at most 6, HP-11) and every hub, plus any city with no hub. Anchors are formulas (the
+   target's H1, "[service variant] in [City]"). The rows are filled into each page's link-table placeholder when its
+   WordPress draft is generated; the approved file never changes.
+2. **`[LINK → /slug/ · reason]` is only for pages not yet planned.** A marker to a planned page is resolved when the
+   draft is generated: an approved exception links the words; otherwise the marker is dropped and the words kept (the
+   table carries the link, CM-005).
+3. **CM-022 exceptions are proposed in the site plan** (the plan row's `link_exceptions`), each a kind-1 Ask
+   (`wheel.py asks`), never applied without Paul's answer (`linkx:<page>:<n>`).
+4. **Schema is a script** (`scripts/schema.py`): the BB-6xx v1.1 node sets from the Brand Guide (A, D, F) and the
+   plan, built by the bb-schema-builder emitter; the asset gate is kept (no partial schema); LocalBusiness only on the
+   verified GBP landing page (BB-604); a county hub is a plain WebPage; about, contact and blog are not built until
+   Paul rules. A validator checks every graph.
+5. **Mechanical QA is a script** (`scripts/qa.py`): placeholders, links, title/H1/meta formats, reading grade, schema
+   valid; after publishing, the live page against its approved file and its schema. `finish-qa` (Opus) reads only a
+   sensitive client's pages (CM-025) or a sample (`qa.py sample`).
+6. **Ship:** every page drafted → QA (errors refuse) → schema in place (the drafts' head-code field, else worklist
+   rows) → one VA worklist → Jonie publishes every page together. `release_approved` stays, after the live QA.
+7. In flight: sections already written (HMM pilot, services, loc-hhi) keep what they have — nothing approved is
+   re-rendered; a client handed over before this ruling (Apex) gets its schema as one addition to the worklist.
+
 ---
 
 # C. Rule Register
@@ -997,7 +1023,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-019 | APPROVED |
 | CM-020 | APPROVED |
 | CM-021 | APPROVED |
-| CM-022 | APPROVED (blog part SUPERSEDED → CM-038) |
+| CM-022 | APPROVED (blog part SUPERSEDED → CM-038; "proposed only in Finish" SUPERSEDED → CM-064: in the site plan) |
 | CM-023 | APPROVED |
 | CM-024 | APPROVED |
 | CM-025 | APPROVED |
@@ -1035,6 +1061,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-061 | APPROVED (evidence first, decide by default — rewrite 3 Phase 1) |
 | CM-062 | APPROVED (location page structure) |
 | CM-063 | APPROVED (the slim audit: screen, triage, CM-061 severity, one review sheet, D3 — Rewrite 4 Phase 3) |
+| CM-064 | APPROVED (Finish folds into the plan: wheel.py, schema.py, qa.py; published together; link_wheel_approved retired — Rewrite 4 Phase 5) |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |

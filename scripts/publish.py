@@ -4,11 +4,17 @@
 The system NEVER publishes. It generates drafts one-way from the approved SD/LD/... files (the file
 stays the source; never edit the draft by hand), and hands publishing to Jonie.
 
-    publish.py wheel  <slug>                          plan the link wheel from the site plan → build/link-wheel.json
-    publish.py drafts  <slug> --run R --batch B       one WordPress draft per page in the batch — no handoff yet (CM-055)
+    publish.py wheel  <slug>                          the link wheel from the site plan (wheel.py plan) → build/link-wheel.json
+    publish.py drafts  <slug> --run R --batch B       one WordPress draft per page in the batch — no handoff yet (CM-055);
+                                                      link tables filled from the wheel computed now, [LINK → …] markers to
+                                                      planned pages resolved (CM-064)
     publish.py drafts  <slug> --run R --page P        one approved blog post as a WordPress post draft + its publish handoff
-    publish.py handoff <slug> --run R                 once every batch is drafted: ONE living publish handoff to Jonie for
-                                                      every service, location, hub, home and about page (CM-055)
+    publish.py handoff <slug> --run R [--schema-offline]
+                                                      once every batch is drafted (CM-055, CM-064): the mechanical QA
+                                                      (qa.py, refuses on an error) → the schema of every page (schema.py, no
+                                                      partial schema) on the drafts' head-code field or as worklist rows →
+                                                      ONE living publish handoff for every page, published together.
+                                                      Handed over before CM-064: the schema is added on its own.
     publish.py check   <file>                         placeholders without a [NEED: ...] note (exit 1 if any)
     publish.py blocks  <file>                         print the block markup a file turns into (for checking)
     publish.py pending <slug> --run R                 link-table rows that can now be filled on published pages → handoff
@@ -49,6 +55,7 @@ import html
 import json
 import re
 import sys
+import time
 import urllib.parse
 from pathlib import Path
 
@@ -57,10 +64,10 @@ import run as R
 import status as S
 from lib import ROOT, client_dir, config, die, now, require_client_folder, sha12
 
-PLACEHOLDER = re.compile(r"^\|\s*\[Link wheel: populate ([a-z -]+?) links here\]\s*\|\s*$", re.I)
-TABLE_KEYS = {"service-area": "service_areas", "service areas": "service_areas", "service": "services",
-              "services": "services", "sibling-city": "siblings", "sibling city": "siblings",
-              "sibling": "siblings", "related-service": "related", "related service": "related"}
+import wheel as W   # CM-064: the link wheel is wheel.py's; these names stay for the scripts that import them
+
+PLACEHOLDER = W.PLACEHOLDER
+TABLE_KEYS = W.TABLE_OF
 
 
 # ------------------------------------------------------------------ the approved file
@@ -163,7 +170,7 @@ def to_blocks(body, tables=None):
             i += 1; continue
         pm = PLACEHOLDER.match(ln.strip())
         if pm:
-            key = TABLE_KEYS.get(pm.group(1).lower().strip(), pm.group(1).lower())
+            key = W.table_key(pm.group(1))
             rows = tables.get(key) or []
             if rows:
                 out.append(table_block([["Link"]] + [[f"[{a}]({u})"] for a, u in rows]))
@@ -207,27 +214,28 @@ def to_blocks(body, tables=None):
 
 # ------------------------------------------------------------------ link wheel
 def site_pages(st):
-    return {pid: p for pid, p in st["pages"].items() if p.get("type") in ("service", "location", "county", "homepage", "about")}
+    return W.pages_of(st)
 
 
-def plan_wheel(st):
-    """BB-205/206, CM-005: each service page → every location page; each location page → every
-    service page + every other location page. Anchors per the Finish agent's rules."""
-    pages = site_pages(st)
-    svcs = {k: p for k, p in pages.items() if p["type"] == "service"}
-    locs = {k: p for k, p in pages.items() if p["type"] in ("location", "county")}
-    main_variant = next((p.get("service_variant") for p in svcs.values() if p.get("service_variant")), None)
-    wheel = {}
-    for sid, sp in svcs.items():
-        sv = sp.get("service_variant") or sp.get("name") or sid
-        wheel[sid] = {"service_areas": [(f"{sv} in {lp.get('city') or lp.get('name') or lid}", lp.get("url"), lid)
-                                        for lid, lp in locs.items()]}
-    for lid, lp in locs.items():
-        wheel[lid] = {"services": [(sp.get("h1") or sp.get("service_variant") or sp.get("name") or sid, sp.get("url"), sid)
-                                   for sid, sp in svcs.items()],
-                      "siblings": [(f"{main_variant or 'Services'} in {op.get('city') or op.get('name') or oid}", op.get("url"), oid)
-                                   for oid, op in locs.items() if oid != lid]}
-    return wheel
+def plan_wheel(st, slug):
+    """The wheel (CM-064) — wheel.py's formulas, computed from the approved site plan when the draft is generated."""
+    return W.plan(st, slug)[0]
+
+
+def shipped(slug, st, pid, meta):
+    """The approved file as it ships: [LINK → …] markers to planned pages resolved (CM-064); the file never changes."""
+    if (st["pages"].get(pid) or {}).get("type") == "blog":   # blog links are CM-038's, not the wheel's
+        return {**meta, "marker_actions": []}
+    body, acts = W.resolve_markers(slug, st, pid, meta["body"])
+    return {**meta, "body": body, "marker_actions": acts}
+
+
+def shipped_text(slug, st, pid, f):
+    """The whole approved file as it ships (same lines; markers resolved) — for the open-items scan."""
+    text = (ROOT / f).read_text(encoding="utf-8")
+    if (st["pages"].get(pid) or {}).get("type") == "blog":
+        return text
+    return W.resolve_markers(slug, st, pid, text)[0]
 
 
 def live_or_batch(st, target, batch_pages):
@@ -256,18 +264,20 @@ def tables_for(st, wheel, pid, batch_pages, together=False):
 # ------------------------------------------------------------------ commands
 def cmd_wheel(a):
     st = S.load(a.slug)
-    wheel = plan_wheel(st)
-    p = client_dir(a.slug) / "build" / "link-wheel.json"
-    p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(wheel, indent=1))
+    p, wheel, probs = W.write_plan(a.slug, st)
     print(f"link wheel planned for {len(wheel)} pages → {p.relative_to(ROOT)}")
+    for lvl, pid, txt in probs[:8]:
+        print(f"  {lvl.upper()} {pid}: {txt}")
 
 
-def load_wheel(slug):
-    p = client_dir(slug) / "build" / "link-wheel.json"
-    if not p.exists():
-        die("No link wheel yet — run publish.py wheel <slug> (it is planned from the approved site plan).")
-    return json.loads(p.read_text())
+def load_wheel(slug, st=None):
+    """Always fresh from the approved plan (CM-064): written to build/link-wheel.json for the record, then used."""
+    st = st or S.load(slug)
+    p, wheel, probs = W.write_plan(slug, st)
+    errs = [f"{pid}: {txt}" for lvl, pid, txt in probs if lvl == "error"]
+    if errs:
+        die("REFUSED — the link wheel cannot be placed (wheel.py check):\n  - " + "\n  - ".join(errs[:12]), 4)
+    return wheel
 
 
 def cmd_drafts(a):
@@ -290,7 +300,7 @@ def cmd_drafts(a):
         ok, why = S.batch_stage_ok(st, a.batch, "drafts")
         if not ok:
             die(f"REFUSED — {why}", 4)
-        wheel = load_wheel(a.slug)
+        wheel = load_wheel(a.slug, st)
     files = page_files((b.get("files") or {}).get("drafts", []))
     by_page, bad = {}, []
     for f in files:
@@ -306,6 +316,11 @@ def cmd_drafts(a):
     rows_pub, rows_redirect, pend_all = [], [], {}
     for pid in b["pages"]:
         f, m = by_page[pid]
+        m = shipped(a.slug, st, pid, m)   # CM-064: [LINK → …] to a planned page — linked (approved exception) or dropped
+        for x in m["marker_actions"]:
+            R.log_change(a.slug, a.run, "page_content", m["url"], "inline link marker", x["marker"],
+                         f"linked → {x['target']}" if x["action"] == "linked" else "(marker removed, words kept)",
+                         f"APPLIED · draft only · {x.get('key') or x.get('why', '')}", ref=pid, channel="local")
         tables, pending = tables_for(st, wheel, pid, b["pages"], together=not a.page)
         content = to_blocks(m["body"], tables)
         # P7: every old URL this page replaces gets its 301 next to its publish — from the file's header and from the
@@ -313,7 +328,7 @@ def cmd_drafts(a):
         m["replaces"] = sorted({u for u in (m.get("replaces") or []) + ((st["pages"].get(pid) or {}).get("replaces") or [])
                                 if u and u.rstrip("/") != m["url"].rstrip("/")})
         # P11: every open placeholder is a visible notice at the top of the draft and a row for Jonie
-        open_items = placeholders.scan(ROOT / f)
+        open_items = placeholders.scan_text(shipped_text(a.slug, st, pid, f))
         if open_items:
             content = placeholders.notice_block(open_items) + "\n\n" + content
         slug_name = slug_of(m["url"])
@@ -332,13 +347,14 @@ def cmd_drafts(a):
                      f"draft id {d['id']} ({ptype}) · from {f} sha {sha12(ROOT / f)} · slug {body['slug']}",
                      "APPLIED · draft only (not live) · generated from the approved file", ref=pid, channel="wp")
         page = st["pages"].setdefault(pid, {})
-        placed = {TABLE_KEYS.get(x.group(1).lower().strip(), x.group(1).lower())
+        placed = {W.table_key(x.group(1))
                   for x in (PLACEHOLDER.match(l.strip()) for l in m["body"].split("\n")) if x}
         how = (f"Replace the content of the live page at {m['url']} with this draft's blocks (keep that URL), "
                "then trash the draft" if in_place else f"Publish at exactly {m['url']}")
         page.update({"wp_id": d["id"], "wp_type": ptype, "url": m["url"], "file": f, "state": "drafted",
                      "open_items": [{"line": i["line"], "text": i["text"]} for i in open_items],
                      "links_placed": [u for k, rows in tables.items() if k in placed for _, u in rows],
+                     "markers": [{k: x[k] for k in ("marker", "action", "target") if k in x} for x in m["marker_actions"]],
                      "publish": {"draft_link": d.get("link", ""), "how": how, "replaces": m["replaces"]}})
         pending = [x for x in pending if x[0] in placed]
         rows_pub.append({"url": d.get("link", ""), "field": "publish", "old": "(draft)", "new": m["url"],
@@ -416,6 +432,73 @@ def cmd_drafts_all(a):
           "handover (/build <slug> handoff)")
 
 
+def links_and_schema(a, st, report_only=False):
+    """CM-064 — before the one worklist: the mechanical QA of every page as it ships (qa.py, errors refuse), the schema
+    of every page (schema.py: the asset gate, the entity check, the validator — no partial schema), then the schema is
+    put in place: written to each draft's Kadence head-code field when the key is known (drafts only), otherwise one
+    worklist row per page for Jonie. Returns those rows."""
+    import qa
+    import schema
+    import wp
+    rows = qa.run_checks(a.slug, "ship")
+    path, errs, warns = qa.write(a.slug, "ship", rows)
+    if errs and not report_only:
+        die(f"REFUSED — the mechanical QA found {errs} error(s) (and {warns} warning(s)): "
+            f"{path.with_suffix('.md').relative_to(ROOT)}. Nothing was handed over. Fix the site plan or the approved "
+            "file (Paul re-approves), then run the handoff again.", 4)
+    print(f"mechanical QA: {errs} error(s), {warns} warning(s) → {path.with_suffix('.md').relative_to(ROOT)}"
+          + (" (report only — these pages were handed over before CM-064)" if report_only else ""))
+    code, index = schema.build(a.slug, st, offline=getattr(a, "schema_offline", False))
+    if code:
+        die("REFUSED — no schema could be built, so nothing was handed over (pages go live with their schema, "
+            "never without; no partial schema). See the lines above.", 4)
+    d = schema.out_dir(a.slug)
+    st = S.load(a.slug)
+    key = wp.kadence_key(st)
+    out = []
+    for pid, e in index["pages"].items():
+        p = st["pages"].get(pid) or {}
+        f = d / e["file"]
+        text = f.read_text(encoding="utf-8")
+        if key and p.get("wp_id"):
+            wp.call(a.slug, f"wp/v2/{p.get('wp_type', 'pages')}/{p['wp_id']}", "POST", {"meta": {key: text}})
+            R.log_change(a.slug, a.run, "schema", (p.get("publish") or {}).get("draft_link", ""), key, "(none)",
+                         f"sha {sha12(f)} · {', '.join(map(str, e['nodes']))}", "APPLIED · draft only (not live)",
+                         ref=pid, channel="wp", new_file=str(f.relative_to(ROOT)))
+        else:
+            out.append({"url": (p.get("publish") or {}).get("draft_link", ""), "field": "schema",
+                        "old": "(none)", "new": str(f.relative_to(ROOT)),
+                        "reason": f"paste this file's whole <script> block into the page's head-code field before "
+                                  f"publishing ({', '.join(map(str, e['nodes']))})", "decision_map_ref": pid})
+    st = S.load(a.slug)
+    from lib import ref_sha
+    st.setdefault("marks", {})["schema_built"] = {"files": {str((d / "index.json").relative_to(ROOT)): ref_sha(str((d / "index.json").relative_to(ROOT)))},
+                                                  "at": now(), "ts": time.time(), "run": a.run}
+    S.save(a.slug, st)
+    where = "written to each draft's head-code field" if key else f"{len(out)} worklist row(s) for Jonie"
+    print(f"schema: {len(index['pages'])} page(s) built and valid · {where}")
+    return out
+
+
+def schema_only(a, st):
+    """A client whose pages were handed over before CM-064 (in flight: nothing approved is re-rendered): the QA is a
+    report, the schema is built and added — to the drafts' head-code field, or as one addition to the worklist."""
+    import csv
+    import handoff
+    rows = links_and_schema(a, st, report_only=True)
+    if not rows:
+        return
+    d = client_dir(a.slug) / "handoffs"
+    tmp = d / "_schema-addition.csv"
+    with open(tmp, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=["url", "field", "old", "new", "reason", "decision_map_ref"])
+        w.writeheader(); w.writerows(rows)
+    sys.argv = ["handoff.py", "create", a.slug, "--run", a.run, "--kind", "publish", "--items", str(tmp.relative_to(ROOT)),
+                "--title", f"{S.load(a.slug)['client']['name']} - Publish Handoff - schema for every page (addition)"]
+    handoff.main()
+    tmp.unlink()
+
+
 def cmd_handoff(a):
     """CM-055: one living publish handoff for every drafted page, once every batch is drafted."""
     import csv
@@ -426,9 +509,13 @@ def cmd_handoff(a):
     if not ok:
         die(f"REFUSED — not every page is a WordPress draft yet: {why}. Pages are published together (CM-055).", 4)
     todo = [b for b in S.batches(st) if b.get("state") == "drafted"]
+    if not todo and (st.get("publish_handoff") or {}).get("id") and "schema_built" not in (st.get("marks") or {}):
+        return schema_only(a, st)   # handed over before CM-064: the drafts stay as they are; schema is added
     if not todo:
         die("nothing to hand off — every drafted batch is already in the living publish handoff "
             f"({(st.get('publish_handoff') or {}).get('id')})")
+    schema_rows = links_and_schema(a, st)   # CM-064: QA and schema before the one worklist; refuses on any error
+    st = S.load(a.slug)
     rows = []
     for b in todo:
         for pid in b["pages"]:
@@ -436,6 +523,7 @@ def cmd_handoff(a):
             pub = p.get("publish") or {}
             rows.append({"url": pub.get("draft_link", ""), "field": "publish", "old": "(draft)", "new": p["url"],
                          "reason": pub.get("how") or f"Publish at exactly {p['url']}", "decision_map_ref": pid})
+            rows += [r for r in schema_rows if r["decision_map_ref"] == pid]
             rows += [{"url": old, "field": "301", "old": old, "new": p["url"],
                       "reason": f"replaced by {pid} — do it together with the publish", "decision_map_ref": pid}
                      for old in pub.get("replaces") or []]
@@ -531,6 +619,7 @@ def main():
     s = sub.add_parser("blocks"); s.add_argument("file")
     s = sub.add_parser("check"); s.add_argument("file")
     s = sub.add_parser("handoff"); s.add_argument("slug"); s.add_argument("--run", required=True)
+    s.add_argument("--schema-offline", action="store_true", help="CM-053: Paul approved schema-offline for this run")
     s = sub.add_parser("pending"); s.add_argument("slug"); s.add_argument("--run", required=True)
     a = ap.parse_args()
     if getattr(a, "slug", None):

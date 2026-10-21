@@ -293,7 +293,7 @@ def enrich(r, c):
             who = {"researcher": "the system's researcher finds a citable official or trade-body source and records it",
                    "client": "Paul sends this to the client in the client question list (handoffs/client-questions.md) and "
                              "records the answer",
-                   "decision": "Paul decides whether to add this proposed link (CM-022, in Finish)",
+                   "decision": "Paul decides whether to add this proposed link (CM-022 — a kind-1 Ask in the site plan, CM-064)",
                    "lookup": "Gwen looks it up (GBP manager → Share → Copy link) and records it in note"}[okind]
             task = f"Resolve the open item on the {name} page before it is published ({owner} decides)" if okind != "lookup" \
                 else f"Look up for the {name} page: {r['old'][:80]}"
@@ -302,6 +302,14 @@ def enrich(r, c):
                      f"Not a VA task for Jonie: {who}." if okind != "lookup" else f"{who}.",
                      "The page is revised in the next run and this row is then closed."]
             check = "The draft no longer contains that line."
+    elif field == "schema":   # CM-064: built by schema.py, pasted by Jonie when the head-code key is not known yet
+        task = f"Add the schema to the {name} page's head-code field (before publishing)"
+        where = " · ".join(x for x in (r["url"], f"edit: {edit}" if edit else "") if x)
+        values = f"the whole contents of {r['new']} (a <script type=\"application/ld+json\"> block) — {r['reason']}"
+        steps = [f"Open the draft: {edit or r['url']}.", f"Open the file {r['new']} (Drive: 03 - Finish/schema) and copy "
+                 "ALL of it, from <script to </script>.", "Paste it into the Kadence head-code field of this page "
+                 "(not the content). Change nothing in it.", "Update the draft (do not publish yet) and tick this row done."]
+        check = f"Once published, the page source of {live or 'the page'} contains that JSON-LD block exactly."
     elif field == "301":
         task = f"Add a 301 redirect from {r['url'] if kind != 'slug' else r['old']} to {r['new']}"
         where = f"SEOPress → Redirections on {c.base or 'the site'} · old URL: {r['url']}"
@@ -348,8 +356,8 @@ def enrich(r, c):
         check = f"The change is visible at {r['url'] or 'the place named in where'}."
     dep = []
     if field == "publish":
-        dep = [x["ref"] for x in c.raw if x["field"] == "open item" and x["decision_map_ref"] == r["decision_map_ref"]
-               and x["ref"] not in c.sup]
+        dep = [x["ref"] for x in c.raw if x["field"] in ("open item", "schema") and x["decision_map_ref"] == r["decision_map_ref"]
+               and x["ref"] not in c.sup]   # CM-064: a page goes live with its schema
         dep += [x["ref"] for x in c.raw if x["field"].lower().startswith("clear the slug") and x["ref"] not in c.sup
                 and norm_url(x["url"]) == norm_url(r["new"])]   # §7a (b): clear the slug → publish → 301 from the old URL
     elif field == "301":

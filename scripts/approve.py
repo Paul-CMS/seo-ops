@@ -16,7 +16,7 @@
                client (R3); each spec's status line becomes APPROVED; a later change to a spec re-opens it
     approve.py <slug> entity_approved proof_sheet_approved   Approval 1 in one line (R3); every answer in the approved
                Decision Sheet is then settled (decisions-settled.md) and never asked again
-    approve.py <slug> schema-offline --reason T          Wikipedia/Wikidata unreachable: let THIS open /finish schema
+    approve.py <slug> schema-offline --reason T          Wikipedia/Wikidata unreachable: let THIS open /build handoff
                run build once without the live entity check (CM-053); every other check still runs
 
 Global approvals (global specs / mode: / model:) run only in the main folder, check everything before writing,
@@ -494,9 +494,9 @@ def prepare(a, st, target, multi):
     if target == "schema-offline":   # CM-053: one run, Paul's name and reason, only the live entity check skipped
         if not a.reason:
             die("REFUSED (schema-offline) — say why: --reason \"...\" (e.g. which site was down, since when)")
-        runs = [rid for rid, info in (st.get("open_runs") or {}).items() if info.get("step") == "finish:schema"]
+        runs = [rid for rid, info in (st.get("open_runs") or {}).items() if info.get("step") == "build:handoff"]   # CM-064: schema is built at the handoff
         if not runs:
-            die("REFUSED (schema-offline) — it covers one open /finish schema run, and none is open. Start the run, "
+            die("REFUSED (schema-offline) — it covers one open /build handoff run, and none is open. Start the run, "
                 "let the build refuse on the unreachable check, then approve.")
         rid = sorted(runs)[-1]
         rec = {"by": "Paul", "at": now(), "reason": a.reason, "run": rid, "used": None}

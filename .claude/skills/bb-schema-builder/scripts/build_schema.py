@@ -9,7 +9,7 @@ not the pattern described in the derived documents. See sop-source/BB-Standard-S
 
 --check runs the entry gate and the entity check only, and reports what is wrong, emitting nothing.
 --offline <slug> skips ONLY the live entity check, and only with Paul's approval for the open
-/finish schema run (/approve <slug> schema-offline --reason "...", CM-053) — once, logged with his name.
+/build handoff run (/approve <slug> schema-offline --reason "...", CM-053) — once, logged with his name.
 The Q-ID / Wikipedia URL formats are still checked offline, and the entry gate and output check still run.
 
 Three checks, in order (CM-051); any failure writes nothing:
@@ -188,7 +188,7 @@ def _ops():
 
 
 def offline_approval(slug):
-    """Paul's /approve <slug> schema-offline for the open /finish schema run, not used yet — else refuse."""
+    """Paul's /approve <slug> schema-offline for the open /build handoff run, not used yet — else refuse."""
     R, S = _ops()
     rec = S.load(slug).get("schema_offline") or {}
     why = None

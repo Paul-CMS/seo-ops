@@ -55,6 +55,9 @@ service + 1 location) first only when `status.py pilot <slug>` says it is needed
 **Viability check (CM-061 §8):** register, then `evidence.py run <slug> --run <RUN_ID> --all` and `evidence_pack.py
 viability <slug> --all`; an unsourceable location arrives as a merge proposal (kind-1 Ask). Write `<Client> - Site Plan
 - REVIEW.md` and the JSON in `clients/<slug>/build/`, register with `status.py plan <slug> --file <md> --json <json>`.
+**Links (CM-064):** the wheel is `wheel.py`'s (never listed by hand); `wheel.py check <slug>` must pass. A CM-022
+exception (one contextual link, 1–2 outbound authority links, each with its reason) goes in the page row as
+`link_exceptions`; `wheel.py asks <slug>` turns each into a kind-1 Ask in the site plan's REVIEW.md.
 Paul approves once: `/approve <slug> site_plan`.
 
 ## Step: facts — one facts round for every page (P10)
@@ -96,7 +99,8 @@ nothing for Paul. Facts at their state: confirmed → plain claim; sourced publi
 …]` or left out; reviews only at the pack's tier; a fact the pack has is used, never written around. Location pages:
 the CM-062 order, the swap test per paragraph, FAQ owns the rules asked, Serving only how the client handles them,
 Local context never describes the client.
-**Placeholders (P11):** only `[NEED: …]` and `[LINK → /slug/ · reason]`; link tables stay as Finish placeholders; never
+**Placeholders (P11):** only `[NEED: …]` and `[LINK → /slug/ · reason]` (a page not yet planned — CM-064); every link
+table the outline lists stays a `| [Link wheel: populate … links here] |` row, filled from the wheel at ship; never
 an instruction in brackets (`placeholders.py scan <file>`).
 **Results file** (`results/<page>-draft.md`, at most 25 lines): the draft path; then **Chosen** — keyword, SEO title, meta
 description, H1, the variants used where, every H2, each FAQ question with its category and source, the place entities
@@ -130,8 +134,10 @@ every planned page). Menu changes: `handoff.py create … --kind navigation`. No
 approved file (Paul re-approves) and regenerate.
 
 ## Step: handoff
-`publish.py handoff <slug> --run <RUN_ID>` — one living publish handoff to Jonie (publish together, never change
-wording; 301s under each row); `drive.py upload … --to "02 - Build"`.
+`publish.py handoff <slug> --run <RUN_ID>` — the mechanical QA (`qa.py`, an error refuses: fix the plan or the approved
+file), the schema of every page (`schema.py`: an unmet asset gate refuses and lists Section F's gaps for Paul; Wikipedia
+down → `/approve <slug> schema-offline`, then `--schema-offline`), then one living publish handoff to Jonie (publish
+together, never change wording; 301s and the schema under each row); `drive.py upload … --to "02 - Build"`.
 
 ## Step: published <id>
 `handoff.py ingest … --returned <csv>`; `verify.py <slug> --run <RUN_ID> --batch <id>` — every difference goes to Paul

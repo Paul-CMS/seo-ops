@@ -28,7 +28,7 @@ Read the part you need. The stage files (`docs/stage-<n>-*.md`) say what each st
 ## Implementation — what can change, and how
 Each change kind's gate, channel and owner are in `gates.json → change_kinds`. Safe fixes after the audit approval;
 structural changes (redirects, slugs, titles, H1s) after the entity and Brand Guide approvals, always as handoffs;
-page content only as WordPress drafts from approved files; link tables and schema in Finish.
+page content only as WordPress drafts from approved files, with their link tables (wheel.py) and schema (schema.py) put in place at ship (CM-064).
 - **The system never publishes.** Every service and location page is made a WordPress **draft** in one ship run (P9):
   exact slug, SEOPress title/meta/keyword/social, content as blocks, link tables complete. A draft with an open
   placeholder carries a visible "Open items on this page" notice and a worklist row (P11).
@@ -76,7 +76,7 @@ The only Google Doc the system creates is the proof sheet's client copy (HTML). 
 | Evidence | `01 - Discovery and Audit/Evidence/` |
 | Discovery Record, Proof Sheet, Audit Review Sheet, URL Decision Map, Evidence Manifest (older audits: Finding Register, Recommendations) | `01 - Discovery and Audit/Deliverables/` |
 | Briefs, approved drafts, Technical Blocker Checklist | `02 - Build/` |
-| Link Wheel Tables, schema, QA Punch-List | `03 - Finish/` |
+| Schema files, QA Punch-List | `03 - Finish/` |
 | Blog Decision Map, posts, refresh schedule | `04 - Blog/` |
 | Brand Guide, Approval Record, Document Checklist, Handoff Log, Status, VA Worklist | client folder root |
 

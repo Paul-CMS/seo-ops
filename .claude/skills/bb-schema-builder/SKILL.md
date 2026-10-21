@@ -11,6 +11,10 @@ the observed implementation governs — see `sop-source/BB-Standard-Schema-Secti
 
 ## When this runs
 
+**CM-064 (Rewrite 4 Phase 5):** this skill is the spec of `scripts/schema.py`, which builds every page's schema by
+script at `/build handoff` — the config from the Brand Guide (A, D, F) and the plan, this emitter, then a validator —
+and puts it on the drafts (or in the VA worklist). Nobody runs `build_schema.py` by hand in a client session.
+
 **After** content is final and approved for that page type, and **after** the URL is
 settled. Schema describes a page that will not change again.
 
@@ -44,7 +48,7 @@ built on an unchecked entity. Give every entity its Wikipedia URL where one exis
 check exact.
 
 **Wikipedia or Wikidata down (CM-053).** The build still refuses by default. Paul may let **the one open
-`/finish schema` run** build without the live check: `/approve <slug> schema-offline --reason "..."`, then
+`/build handoff` run** (where schema is built, CM-064) build without the live check: `/approve <slug> schema-offline --reason "..."`, then
 `build_schema.py <config> <out> --offline <slug>`. Only the live entity check is skipped — the Q-ID and
 Wikipedia URL formats, the entry gate and the output check all still run. The approval is used once,
 recorded in status.json and log.md with Paul's name, date and reason; re-run the full build when the sites

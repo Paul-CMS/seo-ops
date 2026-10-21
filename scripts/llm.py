@@ -14,6 +14,7 @@ to chunk. The jobs are called from the scripts that own the data, never by an ag
     place-judge        Sonnet  places.py judge-all                     does the source passage support the fact?
     faq-picks          Sonnet  outline.py faq                          FAQ fit picks per planned page
     conformance-judge  Sonnet  conformance.py judge                    the judgment checks for kept pages (S15)
+    qa-explain         Haiku   qa.py explain                           plain explanation, fix and owner per QA row (Phase 5)
 
 Key: ANTHROPIC_API_KEY in .env, typed by Paul (D1). It is loaded here, sent only in the request header, never
 printed or logged. **No key yet, or the API answers 401:** nothing fails — the job falls back to its agent route and
@@ -160,6 +161,25 @@ How many and which:
 Never pick a question another page already owns, a near-duplicate of another pick, a question about another service or
 another city, or one whose answer needs a price, a programme rule or a legal claim nobody has sourced — unless the
 candidate says the fact is on file. Return one result for every page id and nothing else.""",
+    },
+    "qa-explain": {
+        "model": "claude-haiku-5-5", "effort": "low", "chunk": 40, "out_per_item": 90, "max_tokens": 8000,
+        "item": _item({"explain": S, "fix": S, "who": {"type": "string", "enum": ["Jonie", "Paul", "writer", "system"]}}),
+        "prompt": """You explain mechanical QA results for a local service business's new website pages, before they are
+published, to the people who act on them: Jonie (the VA who builds and publishes pages in WordPress), Paul (the
+account manager who decides) and the writer (who revises an approved page file). Each item is one failed or flagged
+check: the page, its URL, the check's name and rule ID, and the script's own one-line detail.
+
+For every item return:
+- explain: at most 25 words, plain English: what is wrong and why it matters to a visitor or to search — no jargon,
+  no rule IDs, never more than the detail says.
+- fix: at most 25 words: the one concrete action, naming the exact text, URL or file from the detail.
+- who: "Jonie" for a WordPress task (publishing, the head-code field, images, a link that did not render), "Paul" for
+  a decision (a missing Brand Guide value, an exception, a waiver), "writer" for a change to the approved page file,
+  "system" for a problem only a script change fixes.
+
+Rules: never invent a value the detail does not give — say what is missing instead. Never soften an error into a
+suggestion. Return one result for every item id and nothing else.""",
     },
     "conformance-judge": {
         "model": "claude-sonnet-5-5", "effort": "low", "chunk": 3, "out_per_item": 900, "max_tokens": 12000,

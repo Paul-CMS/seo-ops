@@ -110,24 +110,17 @@ def never_reuse(bg):
 
 
 def link_rows(st, pid):
-    """{label: [(name, url)]} — the pages this page's tables link to (rows are filled at Finish)."""
-    pages = st["pages"]
-    me = pages[pid]
-    def of(t, same_group=False):
-        return [(p.get("name") or q, p.get("url", "")) for q, p in pages.items()
-                if q != pid and p.get("type") == t and (not same_group or p.get("group") == me.get("group"))]
-    t = me.get("type")
-    if t == "location":
-        return {"Services table (H3 links to every service page)": of("service"),
-                "Sibling cities (every other location page)": of("location"),
-                "Hub for this group (reached through the sibling table)": of("county", True)}
-    if t == "service":
-        return {"Service-areas table (every location page)": of("location") + of("county")}
-    if t == "county":
-        return {"Cities in this hub": of("location", True), "Services": of("service")}
-    if t == "homepage":
-        return {"Services (part 6)": of("service"), "Areas grid": of("county") + of("location")}
-    return {}
+    """{label: [(anchor — target name, url)]} — the wheel's rows for this page (wheel.py, CM-064), each table under the
+    placeholder row the writer leaves for it."""
+    import wheel
+    rows = (wheel.plan(st, st["client"]["slug"])[0].get(pid)) or {}
+    label = {"service_areas": "service-area", "services": "service", "siblings": "sibling-city", "hub": "hub"}
+    out = {}
+    for key, rs in rows.items():
+        what = {"siblings": " (its hub first, then every other location)"}.get(key, "")
+        out[f"`| [Link wheel: populate {label.get(key, key)} links here] |`{what}"] = [
+            (f"{a} — {(st['pages'].get(t) or {}).get('name') or t}", u) for a, u, t in rs]
+    return out
 
 
 SMALL = {"in", "of", "the", "and", "a", "an", "to", "for", "near"}
@@ -394,7 +387,8 @@ def render(slug, st, b, pid, pack, run_id):
     for h_, o in used:
         owners.setdefault(o, []).append(h_)
     out += [f"- {o}: " + " · ".join(hs) for o, hs in owners.items()] or ["- none yet"]
-    out += ["", "## Links — table rows only, left as placeholders for Finish (no cross-page link in prose)", ""]
+    out += ["", "## Links — the wheel (wheel.py, CM-064): write each table as its placeholder row; the rows are "
+            "filled when the draft is generated. No cross-page link in prose", ""]
     for label, rows in link_rows(st, pid).items():
         out.append(f"- {label}: " + (" · ".join(f"{n} ({u})" for n, u in rows) if rows else "none planned"))
     out += ["", "## Claims", ""]

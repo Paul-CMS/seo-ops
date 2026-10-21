@@ -124,6 +124,63 @@ def live_parts(body):
     return norm(strip_tags(h1.group(1))) if h1 else "", heads, paras, links, imgs
 
 
+def page_diffs(slug, st, pid):
+    """(approved meta, [differences], [(pid, image src) without alt text], live HTML) for one published page:
+    the live page against its approved file as it ships (link-wheel markers resolved, CM-064). qa.py uses it too."""
+    import publish
+    alt_needed = []
+    p = st["pages"].get(pid) or {}
+    meta = publish.shipped(slug, st, pid, publish.parse(p["file"]))
+    diffs = []
+    code, _, body = fetch(meta["url"])
+    if code != 200:
+        diffs.append(f"URL {meta['url']} answers {code}")
+    else:
+        h1, heads, text, links, imgs = live_parts(body)
+        want_heads, want_text = expected(meta)
+        if page_title(body) != meta["seo_title"]:
+            diffs.append(f"SEO title is {page_title(body)!r}, approved {meta['seo_title']!r}")
+        if page_desc(body) != meta["meta_description"]:
+            diffs.append(f"meta description is {page_desc(body)!r}, approved {meta['meta_description']!r}")
+        for prop, want in (("og:title", meta["seo_title"]), ("og:description", meta["meta_description"]),
+                           ("twitter:title", meta["seo_title"]), ("twitter:description", meta["meta_description"])):
+            got = meta_prop(body, prop)
+            if got != want:
+                diffs.append(f"{prop} is {got!r}, approved {want!r}")
+        want_kw = meta.get("keyword") or p.get("keyword") or ""
+        if want_kw and p.get("wp_id"):
+            try:
+                import wp
+                got_kw = wp.seo_read(slug, p["wp_id"])["keyword"]
+                if got_kw != want_kw:
+                    diffs.append(f"target keyword is {got_kw!r}, approved {want_kw!r}")
+            except Exception as e:  # noqa: BLE001
+                diffs.append(f"target keyword could not be read back ({e})")
+        if h1 != norm(meta["h1"]):
+            diffs.append(f"H1 is {h1!r}, approved {meta['h1']!r}")
+        live_heads = [h for h in heads if h[1] != "Link"]
+        if live_heads != want_heads:
+            missing = [h for h in want_heads if h not in live_heads]
+            extra = [h for h in live_heads if h not in want_heads]
+            diffs.append("heading structure differs" + (f"; missing {missing}" if missing else "")
+                         + (f"; not in the approved file {extra}" if extra else "")
+                         + ("; same headings in a different order or level" if not missing and not extra else ""))
+        if text != want_text:
+            wa, la = want_text.split(". "), text.split(". ")
+            first = next((i for i, (x, y) in enumerate(zip(wa, la)) if x != y), min(len(wa), len(la)))
+            diffs.append(f"body text differs from the approved file at: "
+                         f"{(la[first] if first < len(la) else '(text missing)')[:120]!r}")
+        import placeholders   # P11: a live page never carries a placeholder or the open-items notice
+        left = placeholders.live_hits(strip_tags(re.sub(r"<(script|style|head)\b.*?</\1>", "", body, flags=re.S | re.I)))
+        if left:
+            diffs.append(f"placeholder text on the live page: {', '.join(left[:6])}")
+        miss_links = [u for u in p.get("links_placed", []) if u not in links]
+        if miss_links:
+            diffs.append(f"link-table links missing: {', '.join(miss_links[:6])}")
+        alt_needed += [(pid, src) for src, alt in imgs if not alt.strip()]
+    return meta, diffs, alt_needed, body
+
+
 def verify_batch(a, d):
     import publish
     import status as S
@@ -136,54 +193,8 @@ def verify_batch(a, d):
     fails, alt_needed = 0, []
     for pid in b["pages"]:
         p = st["pages"].get(pid) or {}
-        meta = publish.parse(p["file"])
-        diffs = []
-        code, _, body = fetch(meta["url"])
-        if code != 200:
-            diffs.append(f"URL {meta['url']} answers {code}")
-        else:
-            h1, heads, text, links, imgs = live_parts(body)
-            want_heads, want_text = expected(meta)
-            if page_title(body) != meta["seo_title"]:
-                diffs.append(f"SEO title is {page_title(body)!r}, approved {meta['seo_title']!r}")
-            if page_desc(body) != meta["meta_description"]:
-                diffs.append(f"meta description is {page_desc(body)!r}, approved {meta['meta_description']!r}")
-            for prop, want in (("og:title", meta["seo_title"]), ("og:description", meta["meta_description"]),
-                               ("twitter:title", meta["seo_title"]), ("twitter:description", meta["meta_description"])):
-                got = meta_prop(body, prop)
-                if got != want:
-                    diffs.append(f"{prop} is {got!r}, approved {want!r}")
-            want_kw = meta.get("keyword") or p.get("keyword") or ""
-            if want_kw and p.get("wp_id"):
-                try:
-                    import wp
-                    got_kw = wp.seo_read(a.slug, p["wp_id"])["keyword"]
-                    if got_kw != want_kw:
-                        diffs.append(f"target keyword is {got_kw!r}, approved {want_kw!r}")
-                except Exception as e:  # noqa: BLE001
-                    diffs.append(f"target keyword could not be read back ({e})")
-            if h1 != norm(meta["h1"]):
-                diffs.append(f"H1 is {h1!r}, approved {meta['h1']!r}")
-            live_heads = [h for h in heads if h[1] != "Link"]
-            if live_heads != want_heads:
-                missing = [h for h in want_heads if h not in live_heads]
-                extra = [h for h in live_heads if h not in want_heads]
-                diffs.append("heading structure differs" + (f"; missing {missing}" if missing else "")
-                             + (f"; not in the approved file {extra}" if extra else "")
-                             + ("; same headings in a different order or level" if not missing and not extra else ""))
-            if text != want_text:
-                wa, la = want_text.split(". "), text.split(". ")
-                first = next((i for i, (x, y) in enumerate(zip(wa, la)) if x != y), min(len(wa), len(la)))
-                diffs.append(f"body text differs from the approved file at: "
-                             f"{(la[first] if first < len(la) else '(text missing)')[:120]!r}")
-            import placeholders   # P11: a live page never carries a placeholder or the open-items notice
-            left = placeholders.live_hits(strip_tags(re.sub(r"<(script|style|head)\b.*?</\1>", "", body, flags=re.S | re.I)))
-            if left:
-                diffs.append(f"placeholder text on the live page: {', '.join(left[:6])}")
-            miss_links = [u for u in p.get("links_placed", []) if u not in links]
-            if miss_links:
-                diffs.append(f"link-table links missing: {', '.join(miss_links[:6])}")
-            alt_needed += [(pid, src) for src, alt in imgs if not alt.strip()]
+        meta, diffs, alts, _ = page_diffs(a.slug, st, pid)
+        alt_needed += alts
         res = "FAIL" if diffs else "PASS"
         fails += bool(diffs)
         lines.append(f"## {pid} — {meta['url']} — {res}")

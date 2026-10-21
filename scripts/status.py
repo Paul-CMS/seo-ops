@@ -128,7 +128,7 @@ def client_view(st):
             phase = "articles"
         order = ["entity_approved", "proof_sheet_approved", "proof_sheet_returned", "audit_approved",
                  "brand_guide_approved", "discovery_signed_off", "site_plan", "pages_live",
-                 "link_wheel_approved", "release_approved"]
+                 "release_approved"]
         if decided("proof_sheet_approved") and not condition_met(st, "proof_sheet_returned")[0]:
             waiting.append(P["waiting"]["proof_sheet"])
     live = sum(1 for p in st["pages"].values() if p.get("type") != "blog"
@@ -1288,7 +1288,7 @@ def main():
         for pid, p in pages.items():
             st["pages"].setdefault(pid, {"state": "planned"}).update(
                 {k: p[k] for k in ("type", "name", "url", "group", "city", "service_variant", "h1", "replaces", "nav", "claims",
-                                   "keyword", "category_variant", "area_variant", "faq", "h2s") if k in p})   # Rewrite 4: outline.py
+                                   "keyword", "category_variant", "area_variant", "faq", "h2s", "link_exceptions") if k in p})   # Rewrite 4: outline.py; CM-064: wheel.py asks
         st["build"] = {"site_plan": {"file": a.file, "approval": None},
                        "batches": [{**{k: b[k] for k in ("id", "kind", "label", "pages")},
                                     "state": "planned", "briefs": None, "drafts": None,

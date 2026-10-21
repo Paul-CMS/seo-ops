@@ -219,6 +219,8 @@ def dfs_request(endpoint, body=None, method=None, timeout=90, retries=3):
 # The fake encyclopedia for the schema entity check: Wikipedia title -> Wikidata item; known Grokipedia pages.
 WIKI = {"Roof": "Q83180", "Pruning": "Q500094", "Springfield, Missouri": "Q135615"}
 WIKIDATA_LABELS = {v: k for k, v in WIKI.items()}
+WIKIDATA_LABELS.update({"Q6887300": "mobility aid", "Q3885311": "South Carolina Lowcountry", "Q1456": "South Carolina",
+                        "Q495682": "Beaufort County", "Q1581": "Missouri"})   # HMM's Section F entities (Rewrite 4 Phase 5)
 GROK = {"https://grokipedia.com/page/Roof"}
 
 

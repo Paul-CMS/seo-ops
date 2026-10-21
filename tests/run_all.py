@@ -224,7 +224,7 @@ class Agent:
             rid = self.start("discovery", "sheet-returned")
             self.mark("proof_sheet_returned", self.w("discovery/Test Co - Client Proof Sheet - RETURNED.md")); self.fin(rid, "returned")
         elif (name, sub) == ("/discovery", "reconcile"):
-            rid = self.start("discovery", "reconcile"); self.mark("reconciled", self.w("brand-guide.md", TEST_BG)); self.fin(rid, "reconciled")
+            rid = self.start("discovery", "reconcile"); self.mark("reconciled", self.w("brand-guide.md", TEST_BG_SHIP)); self.fin(rid, "reconciled")
         elif (name, sub) == ("/discovery", "facts-direct"):
             rid = self.start("discovery", "facts-direct"); self.step(rid, "S04")
             f = self.w("discovery/Test Co - MANUAL - client-answers - 2026-10-08.md", "Owner said: residential only.\n")
@@ -385,6 +385,9 @@ class Agent:
             items, st_ = wp_state().get("items", {}), status(S)
             self.ship_seen.append(("all", {pid: (items.get(str(p.get("wp_id"))) or {}).get("status")
                                            for pid, p in st_["pages"].items() if p.get("wp_id")}))
+            bgp = self.c / "brand-guide.md"   # CM-064: Paul has filled Section F before the pages ship (schema.py)
+            if bgp.exists() and bgp.read_text() == TEST_BG:
+                bgp.write_text(TEST_BG_SHIP)
             self.sh(f"python3 tests/fakes.py publish wheel {S}")
             self.sh(f"python3 tests/fakes.py publish drafts {S} --run {rid} --all")
             self.fin(rid, "WordPress drafts for every approved page")
@@ -418,11 +421,9 @@ class Agent:
                 (self.c / "status.json").write_text(json.dumps(stj, indent=2))
             self.fin(rid, f"published check {bid}")
         elif name == "/finish":
-            rid = self.start("finish", sub)
-            m = {"wheel": ("link_wheel", "finish/Test Co - Link Wheel Tables - REVIEW.md"),
-                 "schema": ("schema_built", "finish/schema/index.md"),
-                 "qa": ("release_qa", "finish/Test Co - QA Punch-List - REVIEW.md")}[sub]
-            self.mark(m[0], self.w(m[1])); self.fin(rid, f"finish {sub}")
+            rid = self.start("finish", sub)   # CM-064: only qa is left in Finish (the wheel and schema ship with the drafts)
+            self.finish_qa = sh(f"python3 tests/fakes.py qa check {S} --stage live")
+            self.mark("release_qa", self.w("finish/Test Co - QA Punch-List - REVIEW.md")); self.fin(rid, f"finish {sub}")
         elif (name, sub) == ("/blog", "publish"):
             pid = args[1]; rid = self.start("blog", "publish", page=pid)
             self.sh(f"python3 tests/fakes.py publish drafts {S} --run {rid} --page {pid}"); self.fin(rid, f"publish {pid}")
@@ -486,16 +487,42 @@ TEST_BG = """# Test Co - Brand Guide
 ## Section E — Service area truth
 """
 
+TEST_BG_SHIP = (TEST_BG.replace("| 8 | Phone | (417) 555-0100 | Client Confirmed |\n",
+                                "| 8 | Phone | (417) 555-0100 | Client Confirmed |\n| 11 | Exact URL in the GBP Website field | https://test.example/ | Paul Approved |\n")
+                .replace("| Named staff for on-page use | Pat Test, owner | Client Confirmed | Client Proof Sheet - RETURNED |\n",
+                         "| Named staff for on-page use | Pat Test, owner | Client Confirmed | Client Proof Sheet - RETURNED |\n| Email | pat@test.example | Client Confirmed | Client Proof Sheet - RETURNED |\n")
+                + """
+## Section F — Schema inputs
+
+| Asset | Value | Status |
+|---|---|---|
+| ID page URL (becomes the business entity @id) | https://test.example/about/ | Paul Approved |
+| Full citation list → sameAs | https://www.yelp.com/biz/test-co · https://www.facebook.com/testco | Internally Verified |
+| Google Maps share link → hasMap | https://maps.app.goo.gl/testco | Paul Approved |
+| Confirmed NAP exactly as it must appear | Test Co · 1 Main St, Springfield, MO 65801 · (417) 555-0100 | Paul Approved |
+| Confirmed GBP category → schema subtype | Roofing contractor → RoofingContractor | Paul Approved |
+| Logo files with pixel dimensions | https://test.example/logo.png (400×400) | Internally Verified |
+| Business description (schema) | Roof repair and replacement in Greene County, Missouri. | Paul Approved |
+| Brand description (schema) | Family roofing company in Greene County. | Paul Approved |
+| **Wikidata URI — category entity** | https://www.wikidata.org/wiki/Q83180 (Roof) | Internally Verified |
+| **Wikidata URI — area entity** | Springfield, Missouri https://www.wikidata.org/wiki/Q135615 | Paul Approved |
+| **Wikidata URI — state** | Missouri https://www.wikidata.org/wiki/Q1581 | Internally Verified |
+""")   # CM-064: what schema.py reads (A11, D email, Section F)
+
 
 def page_file(pid, version):
     """An approved page file in the writer's output format (header block + markdown)."""
     tables = {"svc": "| [Link wheel: populate service-area links here] |",
               "loc": "| [Link wheel: populate service links here] |\n\n| [Link wheel: populate sibling-city links here] |",
-              "hub": "| [Link wheel: populate service links here] |"}.get(pid.split("-")[0], "")
+              "hub": "| [Link wheel: populate service-area links here] |\n\n| [Link wheel: populate service links here] |",
+              "home": "| [Link wheel: populate service links here] |\n\n| [Link wheel: populate service-area links here] |"
+              }.get(pid.split("-")[0], "")
+    h1 = (f"Roof Repair in {pid.split('-', 1)[1].replace('-', ' ').title()}" if pid.startswith("loc-")
+          else f"{pid.replace('-', ' ').title()} in Greene County")   # the spec's formats (qa.py checks them, CM-064)
     return (f"---\npage_id: {pid}\nurl: https://test.example/{pid}/\nseo_title: {pid} - Test Co\n"
             f"meta_description: {(f'The approved description for {pid}, naming the area and two services. Call Test Co today for a free, no-pressure estimate on roofing in Greene County.').ljust(152, '.')[:158]}\n"
             + ("replaces: https://test.example/old-roofing/\nkeyword: roof repair\n" if pid == "svc-roof-repair" else "")
-            + f"---\n# {pid.replace('-', ' ').title()} in Greene County\n\nThe opening answer for {pid} ({version}). "
+            + f"---\n# {h1}\n\nThe opening answer for {pid} ({version}). "
             f"Call today.\n\n## What does {pid} cost?\n\nCost depends on **size** and pitch.\n\n"
             f"- Inspection\n- Repair\n\n## {pid} FAQs\n\n### How long does it take?\n\nMost jobs take one day.\n\n"
             f"{tables}\n")
@@ -778,7 +805,7 @@ def t_voiding():
     f = SB / "clients" / "wt-full" / "discovery" / "Test Co - Discovery Record - REVIEW.md"
     f.write_text(f.read_text() + "typo fix\n")
     c1, o1 = sh("python3 scripts/status.py require wt-full entity_approved")
-    c2, o2 = sh("python3 scripts/status.py require wt-full discovery_signed_off link_wheel_approved")
+    c2, o2 = sh("python3 scripts/status.py require wt-full discovery_signed_off release_approved")
     _, show = sh("python3 scripts/status.py show wt-full")
     check("editing an approved file voids that decision", c1 == 4 and "re-approve" in o1, o1)
     check("later decisions stay met (not blocked)", c2 == 0, o2)
@@ -1774,9 +1801,9 @@ def t_schema_offline():
     ag = Agent(S); rid = ag.start("new-client"); ag.fin(rid, "set up")
     st = status(S)
     for g in ("entity_approved", "proof_sheet_approved", "audit_approved", "brand_guide_approved", "discovery_signed_off",
-              "link_wheel_approved"):
+              ):
         st["gates"][g] = {"state": "approved", "files": {}}
-    st["imported_conditions"] = {"proof_sheet_returned": "test", "pages_built": "test"}
+    st["imported_conditions"] = {"proof_sheet_returned": "test", "pages_built": "test", "pages_drafted": "test", "wordpress_connected": "test"}
     st["audit_steps"] = {f"S{i:02d}": {"outcome": "done"} for i in range(1, 22)}
     (ag.c / "status.json").write_text(json.dumps(st))
     d = SB / "tests" / ".state" / "schema-off"; d.mkdir(parents=True, exist_ok=True)
@@ -1789,7 +1816,7 @@ def t_schema_offline():
     def build(extra=""):
         n[0] += 1
         return sh(f"python3 tests/fakes.py build_schema {d / 'cfg.json'} {d / f'out{n[0]}'} {extra}")
-    rid = ag.start("finish", "schema")
+    rid = ag.start("build", "handoff")   # CM-064: schema is built at the handoff
     code, out = build()
     check("offline: an unreachable Wikipedia still refuses the build by default", code == 2 and "try again" in out, out[-300:])
     code, out = build(f"--offline {S}")
@@ -1817,10 +1844,10 @@ def t_schema_offline():
           status(S)["schema_offline"].get("used") and "SCHEMA OFFLINE" in (ag.c / "log.md").read_text())
     code, out = build(f"--offline {S}")
     check("offline: a second build in the same run needs a new approval", code == 2 and "already used" in out, out[-300:])
-    ag.mark("schema_built", ag.w("finish/schema/index.md")); ag.fin(rid, "schema")
+    ag.sh(f"python3 scripts/run.py abort {S} {rid} --reason test")
     code, out = paul(f'/approve {S} schema-offline --reason "still down"')
     check("offline: approving with no /finish schema run open is refused", code != 0 and "none is open" in out, out)
-    rid2 = ag.start("finish", "schema")
+    rid2 = ag.start("build", "handoff")
     code, out = build(f"--offline {S}")
     check("offline: an approval does not carry over to another run", code == 2 and "OFFLINE REFUSED" in out, out[-300:])
     bad = schema_cfg(); bad["service_pages"][0]["entities"] = [{"name": "Roof", "wikidata": "Q83180"}]
@@ -1828,7 +1855,7 @@ def t_schema_offline():
     paul(f'/approve {S} schema-offline --reason "outage again"')
     code, out = build(f"--offline {S}")
     check("offline: the Q-ID format is still checked offline", code == 2 and "must be https://www.wikidata.org/wiki/Q" in out, out[-300:])
-    ag.mark("schema_built", ag.w("finish/schema/index.md")); ag.fin(rid2, "schema")
+    ag.sh(f"python3 scripts/run.py abort {S} {rid2} --reason test")
 
 
 def t_readability():

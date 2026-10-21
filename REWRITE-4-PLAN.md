@@ -6,7 +6,9 @@ left for Paul: run HMM locations in its client session (one review sheet, one ap
 test there. Phase 1 built 2026-10-20 (render.py, pipeline.py inventory, clerk retired, script-written handoff lines
 capped at 25, outline.py formula). Phase 2 built 2026-10-20 (llm.py; five jobs on the API with the agent route as
 the no-key fallback); left for Paul: type `ANTHROPIC_API_KEY` into `.env`. Phase 3 built 2026-10-20 (slim audit, CM-063;
-the cost fraction is measured on the next real audit). Next: Phase 5. Each
+the cost fraction is measured on the next real audit). Phase 5 built 2026-10-20 (CM-064: wheel.py, schema.py, qa.py;
+link_wheel_approved retired; QA and schema at the handoff); left for Paul: fill HMM's Brand Guide Section F (ID page,
+logo, schema subtype, citation URLs) before its handoff. Next: Phase 6. Each
 phase runs in its own `/system` session, in order, starting with Phase 0. Phases marked **design** run on Opus; the rest on Sonnet, from
 this file as the written spec (CLAUDE.md → models).
 
@@ -193,6 +195,26 @@ in `~/.claude/projects/<project>/<session>.jsonl` and `<session>/subagents/*.jso
 - Ship: all pages drafted → links + schema in place → one VA worklist → publish together (Paul's memory: publish only
   after all drafts). `link_wheel_approved` is removed; `release_approved` stays.
 - **Done when:** a dry ship on HMM's pilot pages produces the wheel rows and valid schema with no agent.
+- **Built 2026-10-20** (ruling CM-064). `scripts/wheel.py` (plan · show · check · asks · fill): service → every location,
+  location → every service + its hub first then every other location, hub → its own cities + every service, homepage →
+  every service (≤ 6, HP-11) + every hub + any city with no hub; anchors by formula; rows filled into each page's
+  placeholder when the draft is generated (`publish.py drafts`, always fresh); `[LINK → …]` to a planned page is linked
+  (approved exception, `linkx:<page>:<n>`) or dropped; CM-022 exceptions are the plan row's `link_exceptions` → kind-1
+  Asks. `scripts/schema.py` (config · gate · build · validate): Brand Guide A/D/F + the plan → the bb-schema-builder
+  emitter → a validator (node sets, BB-604, @id references, no NAP off the business, the builder's output check); hubs a
+  plain WebPage, about/contact/blog not built; no invented founding year. `scripts/qa.py` (check · explain · sample):
+  placeholders, links, title/H1/meta formats, reading grade, schema valid, live vs approved file (verify.py's
+  `page_diffs`) and the live schema; `qa-explain` on llm.py (Haiku) with the no-key fallback; finish-qa on a sensitive
+  client's pages or a sample. Ship: `publish.py handoff` runs QA (errors refuse) and the schema build (no partial
+  schema), writes it to the drafts' head-code field (or worklist `schema` rows the publish row waits on), then the one
+  living handoff; a client handed over before CM-064 (Apex) gets its schema as one addition. `link_wheel_approved`,
+  `/finish wheel` and `/finish schema` are gone; `release_approved` follows `/finish qa`; schema-offline (CM-053) now
+  covers the open `/build handoff` run. Tests: `tests/checks/rewrite4_phase5.py` on HMM's saved plan, Brand Guide and pilot
+  pages (`tests/fixtures/hmm/plan`): the wheel (24 cities, hub first, homepage areas), valid schema on the pilot with
+  Section F faked (the real one is refused: ID page, logo, subtype, citation URLs missing), the dry ship's WordPress
+  drafts carrying the rows, markers and asks, and QA with its fallback. **Not changed:** the page specs (a spec edit
+  re-opens Paul's global approval and the pilot rule) — CM-064 settles the county hub's wheel position; the outline now
+  tells each writer the exact table rows.
 
 ### Phase 6 — Shared research layers (Sonnet; needs D4) — see §3
 - `methodology/niches/<niche>/`: `entities.json` (service entities) and `angles.md` (the niche module for the

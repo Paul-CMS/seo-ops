@@ -592,8 +592,7 @@ def _walk(slug, cont):
     condition_step(st, slug, "pages_built")
 
     # ---- Finish and blog
-    gate_step(st, slug, "link_wheel_approved")
-    condition_step(st, slug, "blockers_cleared")
+    condition_step(st, slug, "blockers_cleared")   # CM-064: no wheel approval — the wheel and schema ship with the drafts
     gate_step(st, slug, "release_approved")
     gate_step(st, slug, "blog_map_approved")
     blog_posts(st, slug)

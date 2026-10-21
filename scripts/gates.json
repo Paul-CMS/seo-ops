@@ -40,27 +40,18 @@
       "artifact": "reconciled",
       "producer": "/discovery {slug} reconcile"
     },
-    "link_wheel_approved": {
-      "label": "Link wheel built and verified — schema may start",
-      "plain": "the link wheel (built and verified)",
-      "requires": [
-        "pages_built"
-      ],
-      "artifact": "link_wheel",
-      "producer": "/finish {slug} wheel"
-    },
     "release_approved": {
-      "label": "Schema built and QA cleared — release",
-      "plain": "release (schema built, QA cleared)",
+      "label": "Release — the published pages pass QA (schema built at the handoff)",
+      "plain": "release (published pages checked, QA cleared)",
       "requires": [
-        "link_wheel_approved",
+        "pages_built",
         "blockers_cleared"
       ],
       "artifact": "release_qa",
       "producer": "/finish {slug} qa",
       "before": {
         "mark": "schema_built",
-        "producer": "/finish {slug} schema"
+        "producer": "/build {slug} handoff"
       }
     },
     "blog_map_approved": {
@@ -343,9 +334,8 @@
     "reconciled": "the reconciled Brand Guide (clients/<slug>/brand-guide.md)",
     "blocker_checklist": "the Technical Blocker Checklist",
     "site_plan": "the site plan (.md, registered with status.py plan)",
-    "link_wheel": "the Link Wheel Tables and the wheel verification",
-    "schema_built": "the validated schema files",
-    "release_qa": "the QA Punch-List and acceptance sheets",
+    "schema_built": "the validated schema files (schema.py, at the handoff)",
+    "release_qa": "the QA Punch-List (qa.py, live) and acceptance sheets",
     "blog_map": "the Blog Decision Map",
     "topics": "the Blog Topic List",
     "wordpress_pilot": "the WordPress pilot report (/wp-check --pilot)",
@@ -699,7 +689,7 @@
     },
     "implement:schema": {
       "gates": [
-        "link_wheel_approved",
+        "pages_drafted",
         "wordpress_connected"
       ],
       "produces": [],
@@ -721,48 +711,18 @@
         "the rollback plan (rollback.py plan)"
       ]
     },
-    "finish:wheel": {
-      "gates": [
-        "pages_built"
-      ],
-      "produces": [
-        "link_wheel"
-      ],
-      "reads": [
-        "clients/<slug>/build/link-wheel.json",
-        ".claude/skills/updated-link-strategy/SKILL.md",
-        ".claude/skills/link-implementation-qa/SKILL.md",
-        "python3 scripts/rulings.py CM-011 CM-022 (never rulings.md whole, P12)",
-        "clients/<slug>/decisions-settled.md"
-      ]
-    },
-    "finish:schema": {
-      "gates": [
-        "link_wheel_approved"
-      ],
-      "produces": [
-        "schema_built"
-      ],
-      "reads": [
-        ".claude/skills/bb-schema-builder/SKILL.md",
-        "sop-source/BB-Standard-Schema-Section-v1.1.md",
-        "clients/<slug>/brand-guide.md (F)",
-        "clients/<slug>/decisions-settled.md"
-      ]
-    },
     "finish:qa": {
       "gates": [
-        "link_wheel_approved"
+        "pages_built"
       ],
       "produces": [
         "release_qa"
       ],
       "reads": [
+        "clients/<slug>/finish/qa/qa-live.md (qa.py check --stage live)",
+        "clients/<slug>/finish/qa/finish-qa-pages.txt (qa.py sample)",
         ".claude/skills/link-implementation-qa/SKILL.md",
-        "the approved URL Decision Map",
-        "methodology/specs/*.md (checks)",
         "clients/<slug>/brand-guide.md (B3, C, H2)",
-        "status.py urls <slug> --published",
         "clients/<slug>/decisions-settled.md"
       ]
     },
@@ -866,7 +826,8 @@
       "reads": [
         "every approved page file (all batches)",
         "clients/<slug>/build/ site plan JSON",
-        "clients/<slug>/decisions-settled.md"
+        "clients/<slug>/decisions-settled.md",
+        "clients/<slug>/build/link-wheel.json (wheel.py, written by the run)"
       ]
     },
     "build:published": {
@@ -1042,7 +1003,9 @@
       "reads": [
         "status.json (the drafted pages)",
         "the technical blocker handoff(s)",
-        "clients/<slug>/decisions-settled.md"
+        "clients/<slug>/decisions-settled.md",
+        "clients/<slug>/brand-guide.md (A, D, F — schema.py)",
+        "clients/<slug>/finish/qa/qa-ship.md (written by the run)"
       ]
     },
     "build:writeback": {
@@ -1185,12 +1148,6 @@
       },
       "build:published": {
         "pilot": "batch:pilot:drafts"
-      },
-      "finish:wheel": {
-        "pilot": null
-      },
-      "finish:schema": {
-        "pilot": null
       },
       "finish:qa": {
         "pilot": null
@@ -1344,8 +1301,6 @@
         "finish-qa"
       ],
       "steps": [
-        "finish:wheel",
-        "finish:schema",
         "finish:qa",
         "implement:wheel",
         "implement:schema"
@@ -1392,6 +1347,10 @@
     "blockers_cleared": {
       "label": "Technical blocker checklist cleared and tracking stable",
       "why": "R3 (2026-10-08): now a condition — met from evidence, never approved"
+    },
+    "link_wheel_approved": {
+      "label": "Link wheel built and verified — schema may start",
+      "why": "CM-064 (Rewrite 4 Phase 5, 2026-10-20): the wheel is built by script (wheel.py) from the approved site plan and placed when each draft is generated; QA and schema run before the one VA worklist — nothing to approve"
     }
   },
   "_models_about": "Rewrite 2 §4 (Q12): the model for each job. Opus where the judgment is hard to check, Sonnet for structured assembly, research and extraction, Haiku for orchestration (the stage chat); mechanics are scripts, no agent (Rewrite 4 Phase 1). Every stage session runs on Haiku. The agent's frontmatter model must match its role here (tests check it); a role marked 'override' passes the model to the Agent call. Paul changes a role only with /approve global model:<step>=<model> (recorded in config.json model_overrides).",
@@ -1462,23 +1421,9 @@
         "key": "build:draft"
       }
     ],
-    "finish:wheel": [
-      {
-        "role": "link wheel",
-        "agent": "finish",
-        "model": "sonnet"
-      }
-    ],
-    "finish:schema": [
-      {
-        "role": "schema (script-driven)",
-        "agent": "finish",
-        "model": "sonnet"
-      }
-    ],
     "finish:qa": [
       {
-        "role": "QA crawl",
+        "role": "release QA — runs qa.py (mechanical, no judgment) and the QA crawl",
         "agent": "finish",
         "model": "sonnet"
       },

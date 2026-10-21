@@ -11,8 +11,13 @@ Session model: Haiku · agents: build (Opus; draft-writer on Sonnet after Paul's
 | **Pilot** (only when `status.py pilot` says so) — 1 service + 1 location, in ONE run | `/build write pilot` | ONE line: `/approve <slug> batch:pilot:drafts` → pilot corrections (`--none` when Paul changed nothing) |
 | **All service pages** in one run | `/build write <services batch>` | the draft review sheet → `writeback` → `batch:<id>:drafts` |
 | **All location and hub pages** in one run | `/build write <locations batch>` | the draft review sheet → `writeback` → `batch:<id>:drafts` |
-| **Ship everything** — every approved page as a WordPress draft, link tables complete | `/build ship` | condition **pages_drafted** |
-| The VA Worklist handover (Redirects, Publish, After publish), then each returned worklist checked | `/build handoff`, `/build published <id>` | condition **pages_built** |
+| **Ship everything** — every approved page as a WordPress draft, link tables filled from the wheel (`wheel.py`, CM-064) | `/build ship` | condition **pages_drafted** |
+| The VA Worklist handover: mechanical QA (`qa.py`, errors refuse) → schema of every page (`schema.py`, no partial schema) → Redirects, Publish (all pages together, each with its schema), After publish; then each returned worklist checked | `/build handoff`, `/build published <id>` | condition **pages_built** |
+
+- **CM-064 — Finish folds into the plan.** The wheel and the schema are scripts, from the approved site plan and the
+  Brand Guide; nobody approves them separately. Every page stays a draft until all are drafted, then all are published
+  together (Paul's rule). In-flight sections keep what they already have — nothing approved is re-rendered.
+  Brand Guide Section F must be complete before the handoff (`schema.py gate <slug>` lists what is missing).
 
 - **CM-061 — one review per step.** After all pages of a section are written, one checker pass; one review sheet
   (`build/<section>/<step>-review.csv`, `review.py`): Fix (form, silent) · Fix and list (decided for you) · Ask (only
