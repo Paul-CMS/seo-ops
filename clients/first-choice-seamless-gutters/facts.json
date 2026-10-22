@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-22T08:51:28-05:00",
+  "updated": "2026-10-22T10:19:54-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -201,10 +201,10 @@
       "section": "D",
       "num": "",
       "label": "Licence numbers and classes",
-      "value": "[NEED: licence number and class — site claims licensed, no number shown; state/Polk County lookup pending]",
+      "value": "[NEED: licence number and class — site claims licensed, no number shown; Paul has none; asked on the proof sheet; state/Polk County lookup pending]",
       "status": "unknown",
       "status_text": null,
-      "source": "searched: site, BBB (licensing not listed), web search 2026-10-22",
+      "source": "searched: site, BBB (licensing not listed), web search 2026-10-22; Paul 2026-10-22: none provided",
       "quote": "We’re fully licensed and insured",
       "date": "2026-10-22",
       "who": "Paul",
@@ -500,6 +500,20 @@
       "who": "Paul",
       "count": null,
       "was": "Unknown",
+      "status_text": null
+    },
+    {
+      "id": "website-street-address",
+      "section": "D",
+      "num": "",
+      "label": "Street address shown on the website",
+      "value": "[NEED: website address — Paul confirming from client billing]",
+      "status": "unknown",
+      "source": "Paul, 2026-10-22: confirming from the client's billing address; candidates 3517 Century Blvd, Lakeland 33811 (site schema, press release) and 1575 Lemon Ave (HomeAdvisor snippet) not chosen",
+      "quote": "",
+      "date": "2026-10-22",
+      "who": "Paul",
+      "count": null,
       "status_text": null
     }
   ]

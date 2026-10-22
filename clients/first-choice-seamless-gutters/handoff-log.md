@@ -153,3 +153,18 @@ Run: 20261022-083823-wp-check-75b9
 - … and 15 more decision/fact/flag line(s) in log.md
 **Steps recorded (script):** S01 done, S02 done, S03 done
 
+## /discovery · 2026-10-22 · run 20261022-101800-discovery-68d2
+
+- Built: `discovery/First Choice Seamless Gutters - Client Proof Sheet - REVIEW.md` (Access 1 · Block A 4 groups, 11 services, 21 towns · Block B 11 quoted claims · Block C 5 documents, 6 facts, 3 positioning). Return by Thu 29 Oct 2026; default = build with what's there.
+- Questions: `discovery/proof-sheet-questions.json` — settled.py filter kept 17/17; questions.py check passed. No public fact asked.
+- Applied Paul's settlements (category Gutter service, area Polk County, GBP stays SAB, grid Local Dominator) — none on the sheet.
+- Facts: `website-street-address` = [NEED: website address — Paul confirming from client billing] (3517 Century Blvd / 1575 Lemon Ave not chosen); `d-licence-numbers-and-classes` stays [NEED] (Paul: none provided).
+- Paul fills before sending: the website-address row and the agency GBP manager email (none on record).
+- Client Google Doc (`- CLIENT COPY`, HTML via connector) not created: waits for those two fills. Drive copy of the .md: pending sync.
+- S04 recorded done; `status.py mark proof_sheet` set. Next: Approval 1 (`entity_approved proof_sheet_approved`) once Paul's open address choice is closed.
+
+**Changes (script):** 1 — audit_step ×1
+- FACT 2026-10-22T10:19 · run 20261022-101800-discovery-68d2 · website-street-address (new) · unknown · [NEED: website address — Paul confirming from client billing] · source Paul, 2026-10-22: confir…
+- FACT 2026-10-22T10:19 · run 20261022-101800-discovery-68d2 · d-licence-numbers-and-classes (value, source) · unknown · [NEED: licence number and class — site claims licensed, no number shown; Paul …
+**Steps recorded (script):** S04 done
+

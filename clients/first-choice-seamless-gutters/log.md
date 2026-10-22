@@ -242,3 +242,32 @@ Step: discovery:discovery · session 0a110021-8e6f-410a-8d0a-23c86a395f69
 ## RUN 20261022-084632-discovery-42fd · FINISHED · 2026-10-22T08:54:23-05:00
 Changes: 12 · Summary: Discovery done: Discovery Record, Decision Sheet (25 rows with defaults), Brand Guide A/B1/B2, 5 proof-sheet questions. 4 open choices.
 Spend: 6414949 tokens · $1.98 (measured)
+
+## RUN 20261022-101800-discovery-68d2 · STARTED · /discovery · 2026-10-22T10:18:00-05:00
+Step: discovery:proof-sheet · session 0a110021-8e6f-410a-8d0a-23c86a395f69
+Gates checked: marked:entity_record
+- SETTLED category_entity · 2026-10-22T10:18:03-05:00 · run 20261022-101800-discovery-68d2 · by Paul · Primary GBP category and category entity: Gutter service (Paul, 2026-10-22).
+- SETTLED area_entity · 2026-10-22T10:18:03-05:00 · run 20261022-101800-discovery-68d2 · by Paul · Area entity: Polk County, Florida (Paul, 2026-10-22).
+- SETTLED gbp_storefront_sab · 2026-10-22T10:18:03-05:00 · run 20261022-101800-discovery-68d2 · by Paul · GBP stays a service area business; do not edit the GBP unless required (re-verification risk). Website displays an address.
+- SETTLED tools_grid · 2026-10-22T10:18:04-05:00 · run 20261022-101800-discovery-68d2 · by Paul · Grid tool: Local Dominator (Paul, 2026-10-22).
+- OPEN address_display_website · 2026-10-22T10:18:04-05:00 · run 20261022-101800-discovery-68d2 · by Paul · Which address displays on the website: 3517 Century Blvd, Lakeland (site schema, press release) or 1575 Lemon Ave (HomeAdvisor)? Paul will check the client billing address; keep [NEED] until then.
+- FACT 2026-10-22T10:19 · run 20261022-101800-discovery-68d2 · website-street-address (new) · unknown · [NEED: website address — Paul confirming from client billing] · source Paul, 2026-10-22: confirming from the client's billing address; candidates 3517 Century Blvd, Lakeland 33811 (site schem · by Paul
+- FACT 2026-10-22T10:19 · run 20261022-101800-discovery-68d2 · d-licence-numbers-and-classes (value, source) · unknown · [NEED: licence number and class — site claims licensed, no number shown; Paul has none; asked on the proof sheet; state/Polk County lookup pending] · source searched: site, BBB (licensing not listed), web search 2026-10-22; Paul 2026-10-22: none provided · by Paul
+- CHANGE #20 [audit_step] S04 | Proof sheet built (Markdown + client Google Doc) | old:  | new: done | result: DONE — Proof sheet Markdown built from the Decision Sheet and Discovery Record; 17 client questions filtered and checked; client Google Doc waits for Paul's two fills (website address, agency email)
+### HANDOFF · /discovery · 2026-10-22 · run 20261022-101800-discovery-68d2
+- Built: `discovery/First Choice Seamless Gutters - Client Proof Sheet - REVIEW.md` (Access 1 · Block A 4 groups, 11 services, 21 towns · Block B 11 quoted claims · Block C 5 documents, 6 facts, 3 positioning). Return by Thu 29 Oct 2026; default = build with what's there.
+- Questions: `discovery/proof-sheet-questions.json` — settled.py filter kept 17/17; questions.py check passed. No public fact asked.
+- Applied Paul's settlements (category Gutter service, area Polk County, GBP stays SAB, grid Local Dominator) — none on the sheet.
+- Facts: `website-street-address` = [NEED: website address — Paul confirming from client billing] (3517 Century Blvd / 1575 Lemon Ave not chosen); `d-licence-numbers-and-classes` stays [NEED] (Paul: none provided).
+- Paul fills before sending: the website-address row and the agency GBP manager email (none on record).
+- Client Google Doc (`- CLIENT COPY`, HTML via connector) not created: waits for those two fills. Drive copy of the .md: pending sync.
+- S04 recorded done; `status.py mark proof_sheet` set. Next: Approval 1 (`entity_approved proof_sheet_approved`) once Paul's open address choice is closed.
+
+**Changes (script):** 1 — audit_step ×1
+- FACT 2026-10-22T10:19 · run 20261022-101800-discovery-68d2 · website-street-address (new) · unknown · [NEED: website address — Paul confirming from client billing] · source Paul, 2026-10-22: confir…
+- FACT 2026-10-22T10:19 · run 20261022-101800-discovery-68d2 · d-licence-numbers-and-classes (value, source) · unknown · [NEED: licence number and class — site claims licensed, no number shown; Paul …
+**Steps recorded (script):** S04 done
+### END HANDOFF
+## RUN 20261022-101800-discovery-68d2 · FINISHED · 2026-10-22T10:21:01-05:00
+Changes: 1 · Summary: Client proof sheet built (17 client questions, return by 29 Oct 2026). Open: website street address and agency GBP manager email.
+Spend: 3051206 tokens · $1.09 (measured)

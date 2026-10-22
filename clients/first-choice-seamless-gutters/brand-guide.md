@@ -97,7 +97,7 @@ Everything a writer may state. **Not here = does not exist.**
 |---|---|---|---|
 | Founding year / years in business | Business started 11/24/2021 per BBB (self-reported to BBB); site gives no year | Submitted 2026-10-22 · was: Unknown | BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22 — "Business Started: 11/24/2021" |
 | Legal entity + DBA | First Choice Seamless Gutters Inc.; BBB primary name 'First Choice Seamless Gutters'; site also 'First Choice Seamless Gutter Inc' | Submitted 2026-10-22 · was: Unknown | BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-10-22 — "First Choice Seamless Gutter Inc provides the ultimate in home protection" |
-| Licence numbers and classes | [NEED: licence number and class — site claims licensed, no number shown; state/Polk County lookup pending] | Unknown 2026-10-22 | searched: site, BBB (licensing not listed), web search 2026-10-22 — "We’re fully licensed and insured" |
+| Licence numbers and classes | [NEED: licence number and class — site claims licensed, no number shown; Paul has none; asked on the proof sheet; state/Polk County lookup pending] | Unknown 2026-10-22 | searched: site, BBB (licensing not listed), web search 2026-10-22; Paul 2026-10-22: none provided — "We’re fully licensed and insured" |
 | Insurance / bonded status | Site claims 'fully licensed and insured' (no carrier/bond shown) | Submitted 2026-10-22 · was: Unknown | firstchoiceseamlessgutters.net homepage, read 2026-10-22 — "We’re fully licensed and insured, ensuring our clients’ protection on every project." |
 | Certifications, authorizations, factory training | | | |
 | Association memberships | BBB Accredited Business since 8/12/2025, A+ rating | Internally Verified 2026-10-22 · was: Unknown | BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22 — "Date of BBB Accreditation: 8/12/2025" |
@@ -118,6 +118,7 @@ Everything a writer may state. **Not here = does not exist.**
 | Google Business Profile link | https://maps.app.goo.gl/c5prGD6rMCwptG3x6 | Submitted 2026-10-22 · was: Unknown | Paul, intake answer |
 | Content management system | WordPress | Client Confirmed 2026-10-22 · was: Unknown | Paul, intake answer |
 | Google Search Console access | Access exists (Paul reports) | Submitted 2026-10-22 · was: Unknown | Paul, intake answer |
+| Street address shown on the website | [NEED: website address — Paul confirming from client billing] | Unknown 2026-10-22 | Paul, 2026-10-22: confirming from the client's billing address; candidates 3517 Century Blvd, Lakeland 33811 (site schema, press release) and 1575 Lemon Ave (HomeAdvisor snippet) not chosen |
 
 ### D2 · Unsupported claims
 Claims the site makes publicly that the client could not substantiate. Writers must not repeat
