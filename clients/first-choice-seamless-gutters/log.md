@@ -49,3 +49,30 @@ Run: 20261022-073424-new-client-ad26
 ## RUN 20261022-073424-new-client-ad26 · FINISHED · 2026-10-22T07:41:40-05:00
 Changes: 1 · Summary: Client set up
 Spend: 1774002 tokens · $0.02 (measured)
+
+## RUN 20261022-074155-wp-check-2653 · STARTED · /wp-check · 2026-10-22T07:41:55-05:00
+Step: wp-check · session ed73169c-b95a-4945-a39b-8dd5b655ebb1
+### HANDOFF · /wp-check · 2026-10-22 · run 20261022-074155-wp-check-2653
+Run: 20261022-074155-wp-check-2653
+
+## Result
+- WordPress connection: **not connected**. Nothing live was changed. The check's two test drafts were created and trashed.
+- Blocking item: the three WordPress credential lines are not yet in the client's local settings file. Paul adds them himself.
+
+## Paul's part (FIX)
+- Run `python3 scripts/wp.py env-lines first-choice-seamless-gutters` and follow its output.
+- Add the three lines: site address, the `[REDACTED]` Editor username, and the Application Password (24 characters, keep the spaces).
+- The Application Password's name is only a label in WordPress; it is not needed in the file.
+- Then run `/wp-check first-choice-seamless-gutters` again.
+
+## Jonie's part (wp_setup handoff — not yet confirmed as sent)
+- Create the `[REDACTED]` Editor user and its Application Password (wordpress/wordpress-site-setup.md §1).
+- Password name in WordPress: `[REDACTED]`.
+
+## Open from the new-client run
+- Google Analytics 4 access: not answered.
+- Phone, legal entity name, service-area towns, founding year: not yet asked.
+### END HANDOFF
+## RUN 20261022-074155-wp-check-2653 · FINISHED · 2026-10-22T07:42:00-05:00
+Changes: 0 · Summary: WordPress check: not connected — credentials not yet in local settings; nothing live changed
+Spend: 219123 tokens · $0.00 (measured)

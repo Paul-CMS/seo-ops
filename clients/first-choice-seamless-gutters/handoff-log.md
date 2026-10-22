@@ -31,3 +31,25 @@ Run: 20261022-073424-new-client-ad26
 - FACT 2026-10-22T07:41 · run 20261022-073424-new-client-ad26 · cms (new) · client_confirmed · WordPress · source Paul, intake answer · by Paul
 - FACT 2026-10-22T07:41 · run 20261022-073424-new-client-ad26 · gsc-access (new) · submitted · Access exists (Paul reports) · source Paul, intake answer · by Paul
 
+## /wp-check · 2026-10-22 · run 20261022-074155-wp-check-2653
+
+Run: 20261022-074155-wp-check-2653
+
+## Result
+- WordPress connection: **not connected**. Nothing live was changed. The check's two test drafts were created and trashed.
+- Blocking item: the three WordPress credential lines are not yet in the client's local settings file. Paul adds them himself.
+
+## Paul's part (FIX)
+- Run `python3 scripts/wp.py env-lines first-choice-seamless-gutters` and follow its output.
+- Add the three lines: site address, the `[REDACTED]` Editor username, and the Application Password (24 characters, keep the spaces).
+- The Application Password's name is only a label in WordPress; it is not needed in the file.
+- Then run `/wp-check first-choice-seamless-gutters` again.
+
+## Jonie's part (wp_setup handoff — not yet confirmed as sent)
+- Create the `[REDACTED]` Editor user and its Application Password (wordpress/wordpress-site-setup.md §1).
+- Password name in WordPress: `[REDACTED]`.
+
+## Open from the new-client run
+- Google Analytics 4 access: not answered.
+- Phone, legal entity name, service-area towns, founding year: not yet asked.
+
