@@ -5,6 +5,7 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 ## Paul's approvals
 
 - 2026-10-08 — page specs (global): approved
+- 2026-10-14 — page specs (global: location): approved
 
 ## Settled
 

@@ -64,7 +64,7 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-07T16:05:24-05:00",
-  "updated": "2026-10-09T16:01:31-05:00",
+  "updated": "2026-10-22T07:07:52-05:00",
   "open_runs": {},
   "retired_gates": {
     "discovery_signed_off": {
@@ -80,5 +80,6 @@
   },
   "conditions_logged": {
     "page_specs_approved": "2026-10-08T13:15:46-05:00"
-  }
+  },
+  "global_seen": 1
 }

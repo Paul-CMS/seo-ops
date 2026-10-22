@@ -27,3 +27,6 @@ Reason (Paul): Paul, 2026-10-09 (REWRITE-2-DECISIONS.md e): the run logged only 
 - CHANGE #3 [drive_file] drive:Red Rover Roofing - TMS/_Archive/Red Rover Roofing - Document Checklist - 2026-09-24.md | archive | old: drive:Red Rover Roofing - TMS/Red Rover Roofing - Document Checklist.md | new: _Archive/Red Rover Roofing - Document Checklist - 2026-09-24.md | result: done · renamed and moved, nothing deleted
 - CHANGE #4 [drive_file] drive:Red Rover Roofing - TMS/Red Rover Roofing - Document Checklist.md | upload | old: previous version archived as Red Rover Roofing - Document Checklist - 2026-09-24.md | new: Red Rover Roofing - Document Checklist.md · sha 6b627712bb5c | result: done · copied (Drive for desktop syncs it)
 - CHANGE #5 [drive_file] drive:Red Rover Roofing - TMS/Red Rover Roofing - Status.md | upload | old: (new file) | new: Red Rover Roofing - Status.md · sha d19ed2e26d76 | result: done · copied (Drive for desktop syncs it)
+
+## APPROVAL · 2026-10-14T10:00:26-05:00 · page specs (global: location) · approved · by Paul
+Approved version: methodology/specs/location.md (sha 1212fa3e9365)
