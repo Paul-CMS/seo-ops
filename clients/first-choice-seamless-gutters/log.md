@@ -141,3 +141,39 @@ Run: 20261022-075837-wp-check-fa1d
 ## RUN 20261022-075837-wp-check-fa1d · FINISHED · 2026-10-22T07:58:45-05:00
 Changes: 0 · Summary: WordPress check: credentials OK; REST API not reached (certificate check on this Mac); nothing live changed
 Spend: 243529 tokens · $0.00 (measured)
+
+## RUN 20261022-083823-wp-check-75b9 · STARTED · /wp-check · 2026-10-22T08:38:23-05:00
+Step: wp-check · session ed73169c-b95a-4945-a39b-8dd5b655ebb1
+- CHANGE #2 [wp_check] https://www.firstchoiceseamlessgutters.net/?page_id=1328 | test draft page | old: (none) | new: draft id 1328 | result: APPLIED · test draft (trashed at the end of the check)
+- CHANGE #3 [wp_check] https://www.firstchoiceseamlessgutters.net/?p=1329 | test draft post | old: (none) | new: draft id 1329 | result: APPLIED · test draft (trashed at the end of the check)
+- CHANGE #4 [seopress_settings] SEOPress → Titles & Metas | screenshot or note | old:  | new: (record what is set — change nothing) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-22-01-seopress_settings-01
+- CHANGE #5 [seopress_settings] SEOPress → XML/HTML Sitemap | screenshot or note | old:  | new: (record what is set — change nothing) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-22-01-seopress_settings-02
+- CHANGE #6 [seopress_settings] SEOPress → Social Networks → Knowledge Graph | screenshot or note | old:  | new: (record what is set — change nothing) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-22-01-seopress_settings-03
+- CHANGE #7 [seopress_settings] SEOPress → Advanced | screenshot or note | old:  | new: (record what is set — change nothing) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-22-01-seopress_settings-04
+### HANDOFF · /wp-check · 2026-10-22 · run 20261022-083823-wp-check-75b9
+Run: 20261022-083823-wp-check-75b9
+
+## Result: connected (WordPress connected for 30 days)
+- Credentials: OK. The three WordPress lines are in the client's settings file.
+- REST API: OK ([REDACTED]/wp-json/).
+- Login and role: OK. Logged in as paulmeisner (Editor).
+- Draft creation: OK (draft page and draft post).
+- SEOPress 6.8+ per-page fields: OK. Written and read back on a test draft; both test drafts trashed.
+- Nothing was published. No pilot was run (no --pilot).
+
+## Notes to act on
+- **Username mismatch:** the setup asked for the dedicated `seo-ops` Editor user, but the check logged in as `paulmeisner`. Confirm which user the settings file holds before the pilot.
+- **SEOPress site-wide settings** cannot be read as Editor. One-time VA check for Jonie: title templates, sitemap settings, noindexed post types, and SEOPress's schema (Knowledge Graph) for the audit.
+- **Kadence head-code field:** meta key not set yet. Found during the pilot step; set the key with `status.py set` and in the must-use plugin.
+- **SEOPress settings handoff** written by the script: `H-2026-10-22-01-seopress_settings` (4 items, .md and .csv in the handoffs folder).
+
+## Jonie's part (wp_setup handoff — not yet sent)
+- Create the `seo-ops` Editor user and its Application Password (wordpress/wordpress-site-setup.md §1), if the settings file is not already using it.
+
+**Changes (script):** 6 — seopress_settings ×4, wp_check ×2
+### END HANDOFF
+## RUN 20261022-083823-wp-check-75b9 · FINISHED · 2026-10-22T08:39:04-05:00
+Changes: 6 · Summary: WordPress connected; drafts only, nothing published; username to confirm (seo-ops vs paulmeisner)
+Spend: 250802 tokens · $0.00 (measured)
+
+## CONDITION · 2026-10-22T08:39:04-05:00 · WordPress connected (/wp-check passed in the last 30 days) — met (system-verified)

@@ -15,3 +15,4 @@ _None yet._
 ## Conditions met (system-verified)
 
 - 2026-10-22T07:34 — Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)
+- 2026-10-22T08:39 — WordPress connected (/wp-check passed in the last 30 days) — met (system-verified)

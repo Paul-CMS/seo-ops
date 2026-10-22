@@ -103,3 +103,26 @@ Run: 20261022-075837-wp-check-fa1d
 ## Jonie's part (wp_setup handoff — not yet sent)
 - Create the `seo-ops` Editor user and its Application Password (wordpress/wordpress-site-setup.md §1).
 
+## /wp-check · 2026-10-22 · run 20261022-083823-wp-check-75b9
+
+Run: 20261022-083823-wp-check-75b9
+
+## Result: connected (WordPress connected for 30 days)
+- Credentials: OK. The three WordPress lines are in the client's settings file.
+- REST API: OK ([REDACTED]/wp-json/).
+- Login and role: OK. Logged in as paulmeisner (Editor).
+- Draft creation: OK (draft page and draft post).
+- SEOPress 6.8+ per-page fields: OK. Written and read back on a test draft; both test drafts trashed.
+- Nothing was published. No pilot was run (no --pilot).
+
+## Notes to act on
+- **Username mismatch:** the setup asked for the dedicated `seo-ops` Editor user, but the check logged in as `paulmeisner`. Confirm which user the settings file holds before the pilot.
+- **SEOPress site-wide settings** cannot be read as Editor. One-time VA check for Jonie: title templates, sitemap settings, noindexed post types, and SEOPress's schema (Knowledge Graph) for the audit.
+- **Kadence head-code field:** meta key not set yet. Found during the pilot step; set the key with `status.py set` and in the must-use plugin.
+- **SEOPress settings handoff** written by the script: `H-2026-10-22-01-seopress_settings` (4 items, .md and .csv in the handoffs folder).
+
+## Jonie's part (wp_setup handoff — not yet sent)
+- Create the `seo-ops` Editor user and its Application Password (wordpress/wordpress-site-setup.md §1), if the settings file is not already using it.
+
+**Changes (script):** 6 — seopress_settings ×4, wp_check ×2
+

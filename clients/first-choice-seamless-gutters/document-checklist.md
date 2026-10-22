@@ -1,6 +1,6 @@
 # First Choice Seamless Gutters - Document Checklist
 
-Generated 2026-10-22T07:58 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-22T08:39 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -38,7 +38,7 @@ Generated 2026-10-22T07:58 from status.json — do not edit. `[x]` done · `[-]`
 - [ ] The client's facts are in — the returned proof sheet is recorded, or Paul approved the client's direct answers — the client has not returned the proof sheet yet (when it arrives: /discovery first-choice-seamless-gutters sheet-returned)
 - [ ] Every page in the site plan is a WordPress draft — ready for the one living publish handoff (CM-055) — no site plan yet
 - [ ] Every page in the site plan is built, verified and written back — no site plan yet
-- [ ] WordPress connected (/wp-check passed in the last 30 days) — the last /wp-check failed — fix what it reported (clients/first-choice-seamless-gutters/wordpress/wp-check-2026-10-22.md) and run /wp-check first-choice-seamless-gutters again
+- [x] WordPress connected (/wp-check passed in the last 30 days)
 - [ ] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — discovery is not signed off yet — still open: the Decision Sheet and the entity foundation, the client proof sheet (or the client's direct answers), the client's returned proof sheet, the audit (its review sheet, registers and Evidence Manifest), the reconciled Brand Guide
 - [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — the technical blocker checklist is not written yet
 - [x] Page specs approved by Paul once, globally (methodology/specs) and unchanged since

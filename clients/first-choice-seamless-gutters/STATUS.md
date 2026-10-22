@@ -5,7 +5,7 @@
 - **Waiting on:** nobody
 - **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-22T07:58 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-22T08:39 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -19,7 +19,7 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
 
 ## Settled decisions — never re-raised
 
@@ -30,7 +30,7 @@ _Open, but the next action above goes ahead without them._
 
 _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "First Choice Seamless Gutters - VA Worklist")._
 
-_None._
+- **H-2026-10-22-01-seopress_settings** (Jonie) — seopress settings: 4 of 4 open, issued 2026-10-22
 
 ## Data on file not used yet
 
@@ -55,15 +55,15 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | Stage | Runs | Tokens | Session USD | API USD |
 |---|---|---|---|---|
 | 1 · Setup | 1 | 1,774,002 | $0.02 | $0.00 |
-| any stage | 4 | 927,378 | $0.01 | $0.00 |
-| **total** | 5 | 2,701,380 | $0.04 | $0.00 |
+| any stage | 5 | 1,178,180 | $0.01 | $0.00 |
+| **total** | 6 | 2,952,182 | $0.04 | $0.00 |
 
 ## Spend by step (model)
 
 | Step | Runs | Tokens | Session USD | API USD |
 |---|---|---|---|---|
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
-| wp-check | 4 | 927,378 | $0.01 | $0.00 |
-| **total** | 5 | 2,701,380 | $0.04 | $0.00 |
+| wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
+| **total** | 6 | 2,952,182 | $0.04 | $0.00 |
 
-Last run: /wp-check 2026-10-22T07:58 — WordPress check: credentials OK; REST API not reached (certificate check on this Mac); nothing live changed
+Last run: /wp-check 2026-10-22T08:39 — WordPress connected; drafts only, nothing published; username to confirm (seo-ops vs paulmeisner)
