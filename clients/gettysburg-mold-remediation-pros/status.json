@@ -110,7 +110,7 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-03T15:35:57-05:00",
-  "updated": "2026-10-09T18:08:52-05:00",
+  "updated": "2026-10-22T07:08:02-05:00",
   "open_runs": {},
   "conditions_logged": {
     "client_setup": "2026-10-03T15:37:04-05:00",
@@ -135,5 +135,6 @@
       "retired": "2026-10-08T12:21:53-05:00",
       "why": "R3: now a condition, met from evidence"
     }
-  }
+  },
+  "global_seen": 1
 }

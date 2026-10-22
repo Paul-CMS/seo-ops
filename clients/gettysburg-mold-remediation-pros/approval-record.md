@@ -10,7 +10,7 @@ Generated from the seo-ops system (clients/gettysburg-mold-remediation-pros/stat
 
 - Decision: **pending**
 
-## Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)
+## Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here)
 
 - Decision: **pending**
 
@@ -18,11 +18,7 @@ Generated from the seo-ops system (clients/gettysburg-mold-remediation-pros/stat
 
 - Decision: **pending**
 
-## Link wheel built and verified — schema may start
-
-- Decision: **pending**
-
-## Schema built and QA cleared — release
+## Release — the published pages pass QA (schema built at the handoff)
 
 - Decision: **pending**
 

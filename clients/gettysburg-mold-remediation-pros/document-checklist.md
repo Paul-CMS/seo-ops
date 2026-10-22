@@ -1,6 +1,6 @@
 # Gettysburg Mold Remediation Pros - Document Checklist
 
-Generated 2026-10-09T20:16 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-22T07:08 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -21,23 +21,25 @@ Generated 2026-10-09T20:16 from status.json — do not edit. `[x]` done · `[-]`
 | [ ] | S19 People Also Ask: core services × primary city + top 3 cities, capped ( | — |  |
 | [ ] | S20 SEOPress site-wide settings (title templates, sitemap, noindexed post  | — |  |
 | [ ] | S21 Query fan-out (CM-045): core services × primary city + top 3 cities, c | — |  |
-| [ ] | S12 Ingest + cross-checks | — |  |
+| [ ] | S12 Ingest + cross-checks + redirect pre-screen | — |  |
 | [ ] | S13 Entity analysis: site vs Brand Guide (triple, NAP, brand search, suppo | — |  |
-| [ ] | S14 Architecture: every page typed, keep/merge/redirect per CM-019 | — |  |
-| [ ] | S15 Page conformance: every page scored against its spec (check IDs HP/SVC | — |  |
-| [ ] | S16 Technical findings (Low batched into one handoff) | — |  |
-| [ ] | S17 Fresh-context review of Finding Register + URL Decision Map | — |  |
-| [ ] | S18 Render deliverables | — |  |
+| [ ] | S14 Architecture: every page typed; the screen decides CM-019 C1–C3, the a | — |  |
+| [ ] | S15 Page conformance triage (CM-063): rebuild / light fix / keep; only pag | — |  |
+| [ ] | S16 Technical findings (Fix rows → the Technical Blocker Checklist, writte | — |  |
+| [ ] | S17 Fresh-context review: every destructive URL row, every Ask, a sample o | — |  |
+| [ ] | S18 The audit review sheet + render | — |  |
+
+## Intake documents
+
+- [ ] Search Console homepage queries, last 90 days — ask for it: Search Console → Performance → Queries, filter Page = the homepage, last 90 days, export; name it '<Client> - GSC - queries-homepage-90d - <date>.csv' and put it in inputs/ (scripts/h1lock.py --gsc reads it; without it CM-059 condition (c) cannot be checked)
 
 ## Conditions
 
-- [x] Client set up (/new-client finished)
 - [ ] The client's facts are in — the returned proof sheet is recorded, or Paul approved the client's direct answers — the client has not returned the proof sheet yet (when it arrives: /discovery gettysburg-mold-remediation-pros sheet-returned)
-- [ ] Every registered audit step has an outcome (Done / Skipped / Failed) — audit steps with no outcome yet: S04, S05, S06, S07, S08, S09, S10, S11, S19, S20, S21, S12, S13, S14, S15, S16, S17, S18
 - [ ] Every page in the site plan is a WordPress draft — ready for the one living publish handoff (CM-055) — no site plan yet
 - [ ] Every page in the site plan is built, verified and written back — no site plan yet
 - [ ] WordPress connected (/wp-check passed in the last 30 days) — the last /wp-check failed — fix what it reported (clients/gettysburg-mold-remediation-pros/wordpress/wp-check-2026-10-03.md) and run /wp-check gettysburg-mold-remediation-pros again
-- [ ] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — discovery is not signed off yet — still open: the Decision Sheet and the entity foundation, the client proof sheet (or the client's direct answers), the client's returned proof sheet, the audit deliverables, the reconciled Brand Guide
+- [ ] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — discovery is not signed off yet — still open: the Decision Sheet and the entity foundation, the client proof sheet (or the client's direct answers), the client's returned proof sheet, the audit (its review sheet, registers and Evidence Manifest), the reconciled Brand Guide
 - [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — the technical blocker checklist is not written yet
 - [x] Page specs approved by Paul once, globally (methodology/specs) and unchanged since
 
@@ -45,9 +47,8 @@ Generated 2026-10-09T20:16 from status.json — do not edit. `[x]` done · `[-]`
 
 - [ ] Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant)
 - [ ] Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly
-- [ ] Audit deliverables approved (Finding Register, URL Decision Map, Recommendations, Evidence Manifest)
+- [ ] Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here)
 - [ ] Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
-- [ ] Link wheel built and verified — schema may start
-- [ ] Schema built and QA cleared — release
+- [ ] Release — the published pages pass QA (schema built at the handoff)
 - [ ] Blog Decision Map approved — redirects and blog briefs may start
 - [ ] WordPress pilot passed for this site — the system may write titles, keyword, social, robots, canonical and schema directly

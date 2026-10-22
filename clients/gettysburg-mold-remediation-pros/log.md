@@ -162,3 +162,6 @@ Approved version: methodology/specs/service.md (sha 0d679dadad45)
 
 ## MIGRATION · 2026-10-09T18:08:52-05:00 · rewrite 2 P4: facts.json
 31 facts from Brand Guide A and D · 0 approval stamp(s) re-stamped on the value-only hash · 0 lost
+
+## APPROVAL · 2026-10-14T10:00:26-05:00 · page specs (global: location) · approved · by Paul
+Approved version: methodology/specs/location.md (sha 1212fa3e9365)

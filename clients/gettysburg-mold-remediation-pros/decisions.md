@@ -7,6 +7,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 | When | What | Decision |
 |---|---|---|
 | 2026-10-08T13:15 | page specs (global) | approved |
+| 2026-10-14T10:00 | page specs (global: location) | approved |
 
 ## Decisions logged during runs
 
