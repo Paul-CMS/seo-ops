@@ -126,3 +126,30 @@ Run: 20261022-083823-wp-check-75b9
 
 **Changes (script):** 6 — seopress_settings ×4, wp_check ×2
 
+## /discovery · 2026-10-22 · run 20261022-084632-discovery-42fd
+
+- Public research: site (home, about, areas, contact, sitemaps), GBP public page + reviews, 3 Maps links (same place),
+  BBB, MarketersMedia press release, Wikipedia/Wikidata. Blocked: Sunbiz, Yelp, HomeAdvisor (403), Facebook (login),
+  DBPR/Polk licence search (forms) → Gwen handoff H-2026-10-22-02-manual_lookup (8 rows).
+- Facts recorded (21) via run.py fact: GBP name, phone, canonical host (www), legal entity (BBB), founding 11/24/2021
+  (BBB), owners Adrian + Rachel Buehl (BBB), rating 5.0/138, BBB A+ accredited 8/12/2025, site claims (warranty,
+  licensed/insured, free estimate, response, hours); licence and financing stay [NEED].
+- Conflicts recorded, not resolved (PROC-01): GBP primary category (intake "Seamless gutters" vs Maps "gutter_service");
+  base town Lakeland vs Winter Haven; street addresses in schema/press release (3517 Century Blvd) and HomeAdvisor
+  (1575 Lemon Ave) vs SAB; second BBB phone (863) 320-2842; GBP Website field www vs non-www.
+- Entity proposal: category Rain gutter (Q152833); area Polk County, FL = Lakeland–Winter Haven MSA (Q501043), outliers
+  Plant City (Hillsborough) and Sebring (Highlands); Central Florida (Q2920358) the alternative.
+- Written: Discovery Record - REVIEW, Decision Sheet - REVIEW (4 open choices), Brand Guide §A derivation + B1/B2,
+  discovery/discovery-questions.json (5 client questions, filter + check passed). Drive uploads pending (sync off).
+- Marked entity_record. Next: /discovery proof-sheet (S04), then Approval 1.
+
+**Changes (script):** 12 — manual_lookup ×8, audit_step ×3, brand_guide ×1
+- FACT 2026-10-22T08:51 · run 20261022-084632-discovery-42fd · a-brand-entity-gbp-name-exactly (value, status, source, quote) · internally_verified · First Choice Seamless Gutters Inc. · source GBP (…
+- FACT 2026-10-22T08:51 · run 20261022-084632-discovery-42fd · a-gbp-primary-category-the-category-entity (value, status, source, quote) · disputed · CONFLICT (PROC-01): Paul intake 'Seamless gutters…
+- FACT 2026-10-22T08:51 · run 20261022-084632-discovery-42fd · a-category-variants-4-6 (value, status, source, quote) · submitted · Proposed: Gutter Service · Seamless Gutters · Rain Gutters · Gutter…
+- FACT 2026-10-22T08:51 · run 20261022-084632-discovery-42fd · a-area-entity (value, status, source, quote) · submitted · Proposed: Polk County, Florida = Lakeland–Winter Haven MSA (Q501043). Path: W…
+- FACT 2026-10-22T08:51 · run 20261022-084632-discovery-42fd · a-area-variants-3-5 (value, status, source) · submitted · Proposed: Polk County, FL · Polk County, Florida · Lakeland–Winter Haven · Lak…
+- FACT 2026-10-22T08:51 · run 20261022-084632-discovery-42fd · a-phone (value, status, source, quote) · internally_verified · (863) 330-3243 (site, GBP, schema agree; BBB also lists 'Other Phone' (86…
+- … and 15 more decision/fact/flag line(s) in log.md
+**Steps recorded (script):** S01 done, S02 done, S03 done
+

@@ -1,14 +1,14 @@
 # First Choice Seamless Gutters - Document Checklist
 
-Generated 2026-10-22T08:39 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-22T08:54 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
 | | Step | Outcome | Reason / output |
 |---|---|---|---|
-| [ ] | S01 Intake facts: website, GBP link, storefront/SAB, exact GBP Website-fie | — |  |
-| [ ] | S02 Public discovery: live site, GBP, social, review profiles, Secretary o | — |  |
-| [ ] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | — |  |
+| [x] | S01 Intake facts: website, GBP link, storefront/SAB, exact GBP Website-fie | done | intake facts present in status.json/facts.json (SAB, GBP link, Website-field URL, GSC access, CMS); nothing missing for discovery |
+| [x] | S02 Public discovery: live site, GBP, social, review profiles, Secretary o | done | site, GBP, BBB, press release read; Sunbiz/Yelp/HomeAdvisor blocked (403), Facebook login wall, licence boards form-only -> manual_lookup H-2026-10-22-02 |
+| [x] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | done | category entity Rain gutter Q152833 (GBP primary disputed), area entity proposal Polk County/Lakeland-Winter Haven MSA Q501043, variants, Wikidata URIs |
 | [ ] | S04 Proof sheet built (Markdown + client Google Doc) | — |  |
 | [ ] | S05 Site crawl (max pages = sitemap size × 1.5, min 20, max 1000; 1000 whe | — |  |
 | [ ] | S05b Page text capture: the body text of every crawled HTML page (the basic | — |  |

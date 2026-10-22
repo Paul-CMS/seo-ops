@@ -16,26 +16,30 @@ publication.
 
 | # | Field | Value | Status |
 |---|---|---|---|
-| 1 | Brand entity (GBP name, exactly) | First Choice Seamless Gutters (from Paul, unverified against GBP) | Submitted |
-| 2 | GBP primary category = the category entity | Seamless gutters (from Paul, unverified) | Submitted |
-| 3 | Category variants (4–6) | | |
+| 1 | Brand entity (GBP name, exactly) | First Choice Seamless Gutters Inc. | Internally Verified 2026-10-22 · was: Submitted |
+| 2 | GBP primary category = the category entity | CONFLICT (PROC-01): Paul intake 'Seamless gutters' · Google Maps place data category id 'gutter_service' (display 'Gutter service') — dashboard check pending (Gwen manual_lookup) | Disputed 2026-10-22 · was: Submitted |
+| 3 | Category variants (4–6) | Proposed: Gutter Service · Seamless Gutters · Rain Gutters · Gutter Contractor · Gutter Installation (Wikipedia entity: Rain gutter, Q152833) | Submitted 2026-10-22 · was: Unknown |
 | 4 | Storefront or SAB | Service area business (travels to customers) | Submitted 2026-10-22 · was: Unknown |
-| 5 | Area entity | | |
-| 6 | Area variants (3–5) | | |
+| 5 | Area entity | Proposed: Polk County, Florida = Lakeland–Winter Haven MSA (Q501043). Path: Winter Haven → Polk County → 'comprises the Lakeland–Winter Haven metropolitan statistical area'. Contains 19 of 20 site towns; outliers Plant City (Hillsborough) and Sebring (Highlands, GBP only) | Submitted 2026-10-22 · was: Unknown |
+| 6 | Area variants (3–5) | Proposed: Polk County, FL · Polk County, Florida · Lakeland–Winter Haven · Lakeland–Winter Haven metropolitan area | Submitted 2026-10-22 · was: Unknown |
 | 7 | Separator standard | ` - ` | |
-| 8 | Phone | | |
-| 9 | Primary domain (canonical host form) | firstchoiceseamlessgutters.net (from Paul, unverified) | Submitted |
-| 10 | Legal entity name | | |
+| 8 | Phone | (863) 330-3243 (site, GBP, schema agree; BBB also lists 'Other Phone' (863) 320-2842) | Internally Verified 2026-10-22 · was: Unknown |
+| 9 | Primary domain (canonical host form) | https://www.firstchoiceseamlessgutters.net/ (non-www 301 → www; canonical tag www) | Internally Verified 2026-10-22 · was: Submitted |
+| 10 | Legal entity name | First Choice Seamless Gutters Inc. (BBB: Corporation, incorporated 11/24/2021) — Sunbiz record not read (403), Gwen manual_lookup | Submitted 2026-10-22 · was: Unknown |
 | 11 | Exact URL in the GBP Website field | https://firstchoiceseamlessgutters.net/ | Submitted 2026-10-22 · was: Unknown |
 
 **Area entity derivation** (BB-105) — record the path, not just the answer:
 
 ```
-City served:
--> County:
--> Region:
-Contains all N cities served? yes / no
-Smallest true container:
+City served: Winter Haven, FL (Q1778769) — "Based in Winter Haven" (site); BBB Winter Haven, FL 33881
+-> County: Polk County, Florida (Q501043) — "Polk County comprises the Lakeland–Winter Haven metropolitan statistical area (MSA)." (Wikipedia)
+-> Region: Lakeland–Winter Haven MSA (= Polk County exactly; Wikipedia redirects the MSA to the county);
+   next level up: Central Florida (Q2920358), the "usual" 13-county definition incl. Polk and Hillsborough, not Highlands
+Contains all N cities served? Site lists 20 towns: 19 in Polk; Plant City is in Hillsborough County (Tampa Bay area).
+   GBP "Location" list (15) adds Sebring (Highlands County) and Lakeland Highlands (Polk). -> no, 2 outliers
+Smallest true container: Polk County / Lakeland–Winter Haven MSA for every Polk town (PROPOSED — Decision Sheet
+   area_entity; Plant City and Sebring go to the client as towns_served questions). Central Florida would contain
+   Plant City but not Sebring. State: Florida (Q812). PROPOSAL — Paul decides (agency profile §4).
 ```
 
 **Paul approved this section on:** ____________
@@ -44,17 +48,18 @@ Smallest true container:
 
 ### B1 · Reserved for the homepage
 ```
-HOMEPAGE AREA VARIANT:      ________________ [status]
-HOMEPAGE CATEGORY VARIANT:  ________________ [status]
+HOMEPAGE AREA VARIANT:      Polk County, FL          [Submitted 2026-10-22 — proposal, Decision Sheet homepage_title_variant]
+HOMEPAGE CATEGORY VARIANT:  Gutter Service           [Submitted 2026-10-22 — proposal; waits on the GBP primary category conflict]
 ```
+Homepage H1 area variant (proposal, Decision Sheet homepage_h1_variant): Lakeland–Winter Haven.
 No other page may claim the reserved area variant. This is the only cross-page variant rule.
 
 ### B2 · Rotation pool
 Every area variant except the reserved one. Reuse across service pages is correct.
 ```
-1.
-2.
-3.
+1. Polk County, Florida                         [Submitted 2026-10-22 — proposal]
+2. Lakeland–Winter Haven                        [Submitted 2026-10-22 — proposal]
+3. Lakeland–Winter Haven metropolitan area      [Submitted 2026-10-22 — proposal]
 4.
 ```
 
@@ -90,24 +95,24 @@ Everything a writer may state. **Not here = does not exist.**
 
 | Fact | Value | Status | Source |
 |---|---|---|---|
-| Founding year / years in business | | | |
-| Legal entity + DBA | | | |
-| Licence numbers and classes | | | |
-| Insurance / bonded status | | | |
+| Founding year / years in business | Business started 11/24/2021 per BBB (self-reported to BBB); site gives no year | Submitted 2026-10-22 · was: Unknown | BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22 — "Business Started: 11/24/2021" |
+| Legal entity + DBA | First Choice Seamless Gutters Inc.; BBB primary name 'First Choice Seamless Gutters'; site also 'First Choice Seamless Gutter Inc' | Submitted 2026-10-22 · was: Unknown | BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-10-22 — "First Choice Seamless Gutter Inc provides the ultimate in home protection" |
+| Licence numbers and classes | [NEED: licence number and class — site claims licensed, no number shown; state/Polk County lookup pending] | Unknown 2026-10-22 | searched: site, BBB (licensing not listed), web search 2026-10-22 — "We’re fully licensed and insured" |
+| Insurance / bonded status | Site claims 'fully licensed and insured' (no carrier/bond shown) | Submitted 2026-10-22 · was: Unknown | firstchoiceseamlessgutters.net homepage, read 2026-10-22 — "We’re fully licensed and insured, ensuring our clients’ protection on every project." |
 | Certifications, authorizations, factory training | | | |
-| Association memberships | | | |
-| Warranty terms | | | |
-| Guarantees (response time, on-time, satisfaction) | | | |
-| Awards and rankings | | | |
-| Google rating and review count — exactly as Google shows them on the day, with the date ("4.9 · 67 reviews, 2026-10-07"; never a rounded 5.0) | | | |
+| Association memberships | BBB Accredited Business since 8/12/2025, A+ rating | Internally Verified 2026-10-22 · was: Unknown | BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22 — "Date of BBB Accreditation: 8/12/2025" |
+| Warranty terms | 10-Year Workmanship Guarantee/Warranty (site claim; terms not published) | Submitted 2026-10-22 · was: Unknown | firstchoiceseamlessgutters.net homepage, read 2026-10-22 — "backed by a 10-Year Workmanship Guarantee" |
+| Guarantees (response time, on-time, satisfaction) | Site: 'we’ll contact you within 24 hours' (form); 'Fast Response Times' (no figure) | Submitted 2026-10-22 · was: Unknown | firstchoiceseamlessgutters.net homepage, read 2026-10-22 — "Fill out the form below and we’ll contact you within 24 hours" |
+| Awards and rankings | 'Best Gutter Installer in Lakeland, Florida' by GutterPro HQ, 2025 — company-distributed press release (MarketersMedia), unverified | Submitted 2026-10-22 · was: Unknown | markets.financialcontent.com/chroniclejournal/article/marketersmedia-2025-12-3-first-choice-seamless-gutters-named-best-gutter-installer-in-lakeland-florida — "officially named the Best Gutter Installer in Lakeland, Florida by GutterPro HQ for 2025" |
+| Google rating and review count — exactly as Google shows them on the day, with the date ("4.9 · 67 reviews, 2026-10-07"; never a rounded 5.0) | 5 out of 5 (138 reviews), 2026-10-22 (site says '95+ 5 Star Google Reviews') | Internally Verified 2026-10-22 · was: Unknown | GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22 — "5 out of 5 (138 reviews)" |
 | Team size / trucks / jobs completed | | | |
-| Financing — available, provider, terms | | | |
-| Free estimate — and what free means | | | |
-| Emergency / after-hours reality | | | |
+| Financing — available, provider, terms | [NEED: financing — none found on site, GBP or BBB] | Unknown 2026-10-22 | searched: site, GBP, BBB 2026-10-22 |
+| Free estimate — and what free means | Free, no-obligation estimate with free on-site inspection; 'no hidden fees' | Submitted 2026-10-22 · was: Unknown | firstchoiceseamlessgutters.net homepage, read 2026-10-22; firstchoiceseamlessgutters.net/contact/ — "Every project starts with a free on-site inspection and a detailed estimate." |
+| Emergency / after-hours reality | Site: 'Available 7 Days a Week'; GBP hours 7 AM–8 PM Mon–Sun; no emergency claim found | Submitted 2026-10-22 · was: Unknown | GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-10-22 — "Available 7 Days a Week" |
 | Minimum service call or trip charge | | | |
 | Payment methods | | | |
 | Services subcontracted out | | | |
-| Named staff for on-page use | | | |
+| Named staff for on-page use | BBB owners: Adrian Buehl, Rachel Buehl. Reviews name Adrian, April, Matt, Isaac, James (roles unknown) | Submitted 2026-10-22 · was: Unknown | BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22; GBP reviews read 2026-10-22 — "Adrian Buehl, Owner" |
 | Licensed practitioner for health-claim sign-off *(medical / chiropractic)* | | | |
 | Blog author — a real person (CM-039; from the Decision Sheet) | | | |
 | Google Business Profile link | https://maps.app.goo.gl/c5prGD6rMCwptG3x6 | Submitted 2026-10-22 · was: Unknown | Paul, intake answer |

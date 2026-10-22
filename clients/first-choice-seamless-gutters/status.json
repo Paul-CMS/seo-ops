@@ -45,17 +45,55 @@
       "state": "pending"
     }
   },
-  "marks": {},
+  "marks": {
+    "entity_record": {
+      "files": {
+        "clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Decision Sheet - REVIEW.md": "ce29d3052f4a",
+        "clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Discovery Record - REVIEW.md": "6450d5aa5471",
+        "clients/first-choice-seamless-gutters/brand-guide.md#A+B1+B2": "16728ee8bc60"
+      },
+      "at": "2026-10-22T08:53:54-05:00",
+      "ts": 1792677234.229951
+    }
+  },
   "pages": {},
   "build": null,
-  "audit_steps": {},
+  "audit_steps": {
+    "S01": {
+      "outcome": "done",
+      "reason": "intake facts present in status.json/facts.json (SAB, GBP link, Website-field URL, GSC access, CMS); nothing missing for discovery",
+      "outputs": [
+        "clients/first-choice-seamless-gutters/facts.json"
+      ],
+      "at": "2026-10-22T08:53:54-05:00",
+      "run": "20261022-084632-discovery-42fd"
+    },
+    "S02": {
+      "outcome": "done",
+      "reason": "site, GBP, BBB, press release read; Sunbiz/Yelp/HomeAdvisor blocked (403), Facebook login wall, licence boards form-only -> manual_lookup H-2026-10-22-02",
+      "outputs": [
+        "clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Discovery Record - REVIEW.md"
+      ],
+      "at": "2026-10-22T08:53:54-05:00",
+      "run": "20261022-084632-discovery-42fd"
+    },
+    "S03": {
+      "outcome": "done",
+      "reason": "category entity Rain gutter Q152833 (GBP primary disputed), area entity proposal Polk County/Lakeland-Winter Haven MSA Q501043, variants, Wikidata URIs",
+      "outputs": [
+        "clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Decision Sheet - REVIEW.md"
+      ],
+      "at": "2026-10-22T08:53:54-05:00",
+      "run": "20261022-084632-discovery-42fd"
+    }
+  },
   "last_run": {
-    "run_id": "20261022-083823-wp-check-75b9",
-    "command": "wp-check",
-    "finished": "2026-10-22T08:39:04-05:00",
-    "result": "WordPress connected; drafts only, nothing published; username to confirm (seo-ops vs paulmeisner)",
-    "changes": 6,
-    "step": "wp-check",
+    "run_id": "20261022-084632-discovery-42fd",
+    "command": "discovery",
+    "finished": "2026-10-22T08:54:23-05:00",
+    "result": "Discovery done: Discovery Record, Decision Sheet (25 rows with defaults), Brand Guide A/B1/B2, 5 proof-sheet questions. 4 open choices.",
+    "changes": 12,
+    "step": "discovery:discovery",
     "batch": null
   },
   "spend": {
@@ -69,7 +107,7 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-22T08:39:04-05:00",
+  "updated": "2026-10-22T08:54:23-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -206,6 +244,34 @@
       "by_agent": {
         "main": 0.0033
       }
+    },
+    {
+      "run": "20261022-084632-discovery-42fd",
+      "step": "discovery:discovery",
+      "tokens": 6414949,
+      "usd": 1.9824,
+      "at": "2026-10-22T08:54:23-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0069,
+          "in": 12,
+          "out": 2222,
+          "cache_read": 465009,
+          "cache_write": 5489
+        },
+        "claude-opus-5-5": {
+          "usd": 1.9755,
+          "in": 96,
+          "out": 507,
+          "cache_read": 5779820,
+          "cache_write": 161794
+        }
+      },
+      "by_agent": {
+        "main": 0.0069,
+        "discovery-audit": 1.9755
+      }
     }
   ],
   "sessions": {
@@ -214,6 +280,12 @@
       "step": "new-client",
       "first_run": "20261022-073424-new-client-ad26",
       "at": "2026-10-22T07:41:40-05:00"
+    },
+    "0a110021-8e6f-410a-8d0a-23c86a395f69": {
+      "key": "discovery",
+      "step": "discovery:discovery",
+      "first_run": "20261022-084632-discovery-42fd",
+      "at": "2026-10-22T08:54:23-05:00"
     }
   },
   "wordpress": {
@@ -226,5 +298,10 @@
       "needs_settings_handoff": true
     },
     "settings_check_issued": "2026-10-22T08:38:58-05:00"
+  },
+  "review_pause": {
+    "run_id": "20261022-084632-discovery-42fd",
+    "step": "discovery:discovery",
+    "at": "2026-10-22T08:54:23-05:00"
   }
 }
