@@ -85,3 +85,21 @@ Run: 20261022-075244-wp-check-8211
 ## Jonie's part (wp_setup handoff — not yet sent)
 - Create the `seo-ops` Editor user and its Application Password (wordpress/wordpress-site-setup.md §1).
 
+## /wp-check · 2026-10-22 · run 20261022-075837-wp-check-fa1d
+
+Run: 20261022-075837-wp-check-fa1d
+
+## Result
+- Credentials: **OK**. The three WordPress lines are now found in the client's settings file.
+- REST API reachable: **FIX**. The check could not reach the site because the certificate could not be verified from this machine (SSL: certificate verify failed, unable to get local issuer certificate). The same error appeared earlier on the platform check.
+- Nothing live was changed. The check's two test drafts were created and trashed.
+
+## Paul's part (FIX)
+- Open [REDACTED]/ in a browser. If it loads with no security warning, the problem is this Mac's certificate setup, not the site.
+- If Python can't verify certificates on this Mac, the usual fix is to run the "Install Certificates.command" file in the Python application folder. This changes a system setting, so Paul runs it himself.
+- If the browser shows a certificate warning, the site's certificate needs fixing by whoever hosts it.
+- Then run `/wp-check first-choice-seamless-gutters` again.
+
+## Jonie's part (wp_setup handoff — not yet sent)
+- Create the `seo-ops` Editor user and its Application Password (wordpress/wordpress-site-setup.md §1).
+

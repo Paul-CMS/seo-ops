@@ -118,3 +118,26 @@ Run: 20261022-075244-wp-check-8211
 ## RUN 20261022-075244-wp-check-8211 · FINISHED · 2026-10-22T07:52:49-05:00
 Changes: 0 · Summary: WordPress check: still not connected — credentials not found in local settings; nothing live changed
 Spend: 236634 tokens · $0.00 (measured)
+
+## RUN 20261022-075837-wp-check-fa1d · STARTED · /wp-check · 2026-10-22T07:58:37-05:00
+Step: wp-check · session ed73169c-b95a-4945-a39b-8dd5b655ebb1
+### HANDOFF · /wp-check · 2026-10-22 · run 20261022-075837-wp-check-fa1d
+Run: 20261022-075837-wp-check-fa1d
+
+## Result
+- Credentials: **OK**. The three WordPress lines are now found in the client's settings file.
+- REST API reachable: **FIX**. The check could not reach the site because the certificate could not be verified from this machine (SSL: certificate verify failed, unable to get local issuer certificate). The same error appeared earlier on the platform check.
+- Nothing live was changed. The check's two test drafts were created and trashed.
+
+## Paul's part (FIX)
+- Open [REDACTED]/ in a browser. If it loads with no security warning, the problem is this Mac's certificate setup, not the site.
+- If Python can't verify certificates on this Mac, the usual fix is to run the "Install Certificates.command" file in the Python application folder. This changes a system setting, so Paul runs it himself.
+- If the browser shows a certificate warning, the site's certificate needs fixing by whoever hosts it.
+- Then run `/wp-check first-choice-seamless-gutters` again.
+
+## Jonie's part (wp_setup handoff — not yet sent)
+- Create the `seo-ops` Editor user and its Application Password (wordpress/wordpress-site-setup.md §1).
+### END HANDOFF
+## RUN 20261022-075837-wp-check-fa1d · FINISHED · 2026-10-22T07:58:45-05:00
+Changes: 0 · Summary: WordPress check: credentials OK; REST API not reached (certificate check on this Mac); nothing live changed
+Spend: 243529 tokens · $0.00 (measured)
