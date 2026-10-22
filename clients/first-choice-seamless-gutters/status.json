@@ -50,9 +50,9 @@
   "build": null,
   "audit_steps": {},
   "last_run": {
-    "run_id": "20261022-074529-wp-check-d203",
+    "run_id": "20261022-075244-wp-check-8211",
     "command": "wp-check",
-    "finished": "2026-10-22T07:45:34-05:00",
+    "finished": "2026-10-22T07:52:49-05:00",
     "result": "WordPress check: still not connected — credentials not found in local settings; nothing live changed",
     "changes": 0,
     "step": "wp-check",
@@ -69,7 +69,7 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-22T07:45:34-05:00",
+  "updated": "2026-10-22T07:52:49-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00"
@@ -145,6 +145,26 @@
       "by_agent": {
         "main": 0.0028
       }
+    },
+    {
+      "run": "20261022-075244-wp-check-8211",
+      "step": "wp-check",
+      "tokens": 236634,
+      "usd": 0.0029,
+      "at": "2026-10-22T07:52:49-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0029,
+          "in": 4,
+          "out": 765,
+          "cache_read": 235107,
+          "cache_write": 758
+        }
+      },
+      "by_agent": {
+        "main": 0.0029
+      }
     }
   ],
   "sessions": {
@@ -157,7 +177,7 @@
   },
   "wordpress": {
     "check": {
-      "at": "2026-10-22T07:45:30-05:00",
+      "at": "2026-10-22T07:52:45-05:00",
       "passed": false,
       "report": "clients/first-choice-seamless-gutters/wordpress/wp-check-2026-10-22.md",
       "settings_readable": null

@@ -69,3 +69,19 @@ Run: 20261022-074529-wp-check-d203
 ## Jonie's part (wp_setup handoff — not yet sent)
 - Create the `[REDACTED]` Editor user and its Application Password (wordpress/wordpress-site-setup.md §1).
 
+## /wp-check · 2026-10-22 · run 20261022-075244-wp-check-8211
+
+Run: 20261022-075244-wp-check-8211
+
+## Result
+- WordPress connection: **not connected**. Nothing live was changed. The check's two test drafts were created and trashed.
+- Blocking item: the three WordPress credential lines are still not found in the client's local settings file.
+- The settings file now exists in the client folder (created by copying the example file).
+
+## Paul's part (FIX)
+- Open the settings file in a text editor and add the three lines from `python3 scripts/wp.py env-lines first-choice-seamless-gutters`.
+- Save it, then run `/wp-check first-choice-seamless-gutters` again.
+
+## Jonie's part (wp_setup handoff — not yet sent)
+- Create the `seo-ops` Editor user and its Application Password (wordpress/wordpress-site-setup.md §1).
+
