@@ -1,0 +1,69 @@
+{
+  "schema": 4,
+  "client": {
+    "slug": "first-choice-seamless-gutters",
+    "name": "First Choice Seamless Gutters",
+    "domain": "firstchoiceseamlessgutters.net",
+    "type": "full",
+    "industry": "seamless gutters",
+    "sensitive": false,
+    "sensitive_category": null,
+    "practitioner_signoff": false,
+    "route": null,
+    "drive_folder_id": null,
+    "kadence_head_meta_key": null,
+    "gbp_url": null,
+    "gbp_website_url": null,
+    "address_type": null,
+    "state": null,
+    "imported": false,
+    "notes": null
+  },
+  "gates": {
+    "entity_approved": {
+      "state": "pending"
+    },
+    "proof_sheet_approved": {
+      "state": "pending"
+    },
+    "audit_approved": {
+      "state": "pending"
+    },
+    "brand_guide_approved": {
+      "state": "pending"
+    },
+    "release_approved": {
+      "state": "pending"
+    },
+    "blog_map_approved": {
+      "state": "pending"
+    },
+    "blog_topics_approved": {
+      "state": "pending"
+    },
+    "wordpress_pilot_approved": {
+      "state": "pending"
+    }
+  },
+  "marks": {},
+  "pages": {},
+  "build": null,
+  "audit_steps": {},
+  "last_run": null,
+  "spend": {
+    "dataforseo_usd": 0.0
+  },
+  "client_view": {
+    "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
+    "phase": "Getting started",
+    "done": [],
+    "waiting_on_client": [],
+    "next": "We are researching your business before we ask you anything."
+  },
+  "created": "2026-10-22T07:34:19-05:00",
+  "updated": "2026-10-22T07:34:20-05:00",
+  "global_seen": 1,
+  "conditions_logged": {
+    "page_specs_approved": "2026-10-22T07:34:20-05:00"
+  }
+}
