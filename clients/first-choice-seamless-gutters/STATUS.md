@@ -1,11 +1,11 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 1 of 8 — Setup**
-- **What is happening now:** ready to start: the client has not been set up yet — run /new-client first
+- **Stage 2 of 8 — Discovery**
+- **What is happening now:** Stage 1 (Setup) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open first-choice-seamless-gutters) and type /next first-choice-seamless-gutters. Next there: /discovery first-choice-seamless-gutters discovery (public research, the entity foundation and the Decision Sheet (every identity and format decision with a recommended default))
 - **Waiting on:** nobody
-- **Next action:** `/new-client` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` · model: Haiku chat
+- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-22T07:34 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-22T07:41 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -24,6 +24,7 @@ _Open, but the next action above goes ahead without them._
 ## Settled decisions — never re-raised
 
 - 2026-10-14: page specs (global: location) — approved
+- Drive copy pending sync — the local Drive folder ~/Library/CloudStorage/GoogleDrive-paul@coastalmarketingstrategies.com/My Drive/v3. CMS Technical SEO Audit 2026 is not there (Drive for desktop signed out or not syncing?). Files stay in the repo until Drive for desktop syncs; nothing is retyped into the connector.
 
 ## Open VA items
 
@@ -35,6 +36,7 @@ _None._
 
 _Inputs the data manifest (methodology/data-manifest.json) says a step must read, where that step has not finished for this client yet._
 
+- **facts** (1 file(s), e.g. `facts.json`) — read by build:evidence, build:facts
 - **settled** (1 file(s), e.g. `decisions-settled.md`) — read by build:evidence, build:facts, build:brief, build:draft, build:drafts, build:write, build:plan
 
 ## Flagged for Paul (system)
@@ -50,8 +52,16 @@ _None._
 
 _Session = the chats and their agents; API = llm.py's direct calls._
 
-_Nothing recorded yet._
+| Stage | Runs | Tokens | Session USD | API USD |
+|---|---|---|---|---|
+| 1 · Setup | 1 | 1,774,002 | $0.02 | $0.00 |
+| **total** | 1 | 1,774,002 | $0.02 | $0.00 |
 
 ## Spend by step (model)
 
-_Nothing recorded yet (run.py finish --tokens --cost)._
+| Step | Runs | Tokens | Session USD | API USD |
+|---|---|---|---|---|
+| new-client | 1 | 1,774,002 | $0.02 | $0.00 |
+| **total** | 1 | 1,774,002 | $0.02 | $0.00 |
+
+Last run: /new-client 2026-10-22T07:41 — Client set up
