@@ -76,3 +76,24 @@ Run: 20261022-074155-wp-check-2653
 ## RUN 20261022-074155-wp-check-2653 · FINISHED · 2026-10-22T07:42:00-05:00
 Changes: 0 · Summary: WordPress check: not connected — credentials not yet in local settings; nothing live changed
 Spend: 219123 tokens · $0.00 (measured)
+
+## RUN 20261022-074529-wp-check-d203 · STARTED · /wp-check · 2026-10-22T07:45:29-05:00
+Step: wp-check · session ed73169c-b95a-4945-a39b-8dd5b655ebb1
+### HANDOFF · /wp-check · 2026-10-22 · run 20261022-074529-wp-check-d203
+Run: 20261022-074529-wp-check-d203
+
+## Result
+- WordPress connection: **not connected**. Nothing live was changed. The check's two test drafts were created and trashed.
+- Blocking item: the three WordPress credential lines are still not in the client's local settings file.
+
+## Paul's part (FIX)
+- Run `python3 scripts/wp.py env-lines first-choice-seamless-gutters` and follow its output.
+- Add the three lines (site address, the `[REDACTED]` username, the Application Password with its spaces) to the settings file.
+- Then run `/wp-check first-choice-seamless-gutters` again.
+
+## Jonie's part (wp_setup handoff — not yet sent)
+- Create the `[REDACTED]` Editor user and its Application Password (wordpress/wordpress-site-setup.md §1).
+### END HANDOFF
+## RUN 20261022-074529-wp-check-d203 · FINISHED · 2026-10-22T07:45:34-05:00
+Changes: 0 · Summary: WordPress check: still not connected — credentials not found in local settings; nothing live changed
+Spend: 228092 tokens · $0.00 (measured)

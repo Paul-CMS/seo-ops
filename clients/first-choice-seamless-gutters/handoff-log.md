@@ -53,3 +53,19 @@ Run: 20261022-074155-wp-check-2653
 - Google Analytics 4 access: not answered.
 - Phone, legal entity name, service-area towns, founding year: not yet asked.
 
+## /wp-check · 2026-10-22 · run 20261022-074529-wp-check-d203
+
+Run: 20261022-074529-wp-check-d203
+
+## Result
+- WordPress connection: **not connected**. Nothing live was changed. The check's two test drafts were created and trashed.
+- Blocking item: the three WordPress credential lines are still not in the client's local settings file.
+
+## Paul's part (FIX)
+- Run `python3 scripts/wp.py env-lines first-choice-seamless-gutters` and follow its output.
+- Add the three lines (site address, the `[REDACTED]` username, the Application Password with its spaces) to the settings file.
+- Then run `/wp-check first-choice-seamless-gutters` again.
+
+## Jonie's part (wp_setup handoff — not yet sent)
+- Create the `[REDACTED]` Editor user and its Application Password (wordpress/wordpress-site-setup.md §1).
+
