@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 4 of 8 — Audit**
-- **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — discovery:data finished (run 20261023-064343-discovery-0e30) and that stage is in review m
-- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
+- **What is happening now:** waiting for Paul's approval — the audit review sheet has 5 question(s) (0 for the client — Paul sends client-questions.csv) and 32 decided for you (clients/first-choice-seamless-gutters/audit/2026-10-23/audit-review.csv): reply "accept all", or "accept all except 3b" — an empty answer takes the recommended option; the client's questions wait for the client
+- **Waiting on:** Paul — the audit review sheet has 5 question(s) (0 for the client — Paul sends client-questions.c
+- **Next action:** Paul types `/discovery first-choice-seamless-gutters review "accept all"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-23T12:53 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-23T13:17 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | discovery:data finished (run 20261023-064343-discovery-0e30) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /discovery first-choice-seamless-gutters audit (the audit: entity → architecture → page conformance → technical, then the fresh-context review) | 2026-10-23 | /next first-choice-seamless-gutters |
+| Paul | the audit review sheet has 5 question(s) (0 for the client — Paul sends client-questions.csv) and 32 decided for you (clients/first-choice-seamless-gutters/audit/2026-10-23/audit-review.csv): reply "accept all", or "accept all except 3b" — an empty answer takes the recommended option; the client's questions wait for the client | 2026-10-23 | /discovery first-choice-seamless-gutters review "accept all" |
 
 ## Waiting on (not blocking)
 
@@ -72,17 +72,10 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **reviews-raw** (2 file(s), e.g. `data/reviews/raw/reviews.json`) — read by the step that reads reviews
 - **review-mentions** (1 file(s), e.g. `data/reviews/mentions.csv`) — read by build:evidence, build:facts
 - **review-facts** (1 file(s), e.g. `data/reviews/review-facts.json`) — read by build:evidence, build:facts
-- **customer-language** (2 file(s), e.g. `data/reviews/customer-language.md`) — read by discovery:audit, build:brief, build:write
 - **paa-questions** (2 file(s), e.g. `data/paa/paa-questions.csv`) — read by build:evidence, discovery:fanout
 - **paa-raw** (20 file(s), e.g. `data/paa/raw/aluminum-gutters-lakeland.json`) — read by the step that reads paa-questions
 - **paa-routing** (1 file(s), e.g. `data/paa/paa-routing.md`) — read by build:plan, blog:map, build:brief, build:write
-- **rankings** (5 file(s), e.g. `data/rankings/best-variants.csv`) — read by build:plan, discovery:audit
-- **rankings-raw** (2 file(s), e.g. `data/rankings/raw/best-variants.json`) — read by the step that reads rankings
-- **backlinks** (2 file(s), e.g. `data/backlinks/backlinks-per-url.csv`) — read by discovery:audit
 - **competitors** (2 file(s), e.g. `data/competitors/coverage.json`) — read by build:plan
-- **crawl-page-text** (2 file(s), e.g. `data/crawl/crawl-summary.csv`) — read by discovery:audit, build:evidence
-- **crawl-raw** (1 file(s), e.g. `inputs/crawl/crawl-state.json`) — read by the step that reads crawl-page-text
-- **imported-exports** (14 file(s), e.g. `inputs/crawl/First Choice Seamless Gutters - DFS - all_inlinks - 2026-10-22.csv`) — read by discovery:audit
 - **proof-sheet** (1 file(s), e.g. `discovery/First Choice Seamless Gutters - Client Proof Sheet - REVIEW.md`) — read by build:evidence, build:facts, discovery:reconcile
 - **discovery-record** (1 file(s), e.g. `discovery/First Choice Seamless Gutters - Discovery Record - REVIEW.md`) — read by build:evidence, build:facts
 - **facts** (1 file(s), e.g. `facts.json`) — read by build:evidence, build:facts
@@ -93,6 +86,8 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-001** (open, not yet reviewed) 2026-10-22 · crawl: config.json drive.local_root points at My Drive/v3. CMS Technical SEO Audit 2026, but the folder is under Shared drives/CMS SERVICE PAGE AUDITS/, so drive.py cannot find it and uploads stay pending — workaround: Paul to fix local_root in a system session (/system); crawl files stay local until then
 - **F-002** (open, not yet reviewed) 2026-10-23 · discovery:data: pipeline.py inventory S06 reviews fails: DataforSEO task 40501 Invalid Field 'location_name' ($0 spent). Steps S07, S08, S19 and competitor coverage were not run. — workaround: Paul to fix the reviews request field in a system session (/system); no client data affected
 - **F-003** (open, not yet reviewed) 2026-10-23 · discovery:data: pipeline.py inventory S08 backlinks fails: No such file or directory clients/first-choice-seamless-gutters/data/backlinks/raw/backlinks-2026-10-23.json (the raw folder is not created before the write). The DataforSEO call ran ($0.0272) and its result was not saved. S19 and competitor coverage not run. — workaround: Paul to make the script create the backlinks raw folder before writing, in a system session; check whether the $0.0272 backlinks response can be re-downloaded free before any retry
+- **F-004** (open, not yet reviewed) 2026-10-23 · discovery:audit: pagedec.py screen marks C3 'pass' when no citation tracker export is on file ('no citation tracker on file'), while CM-019 says any missing condition is Needs Evidence; C1 likewise passes on rankings alone with no GSC on file. — workaround: Audit proposes no redirect except Plant City (held, C4 still required); recorded as DEC-LOCAL-003 in audit/2026-10-23/decisions.md.
+- **F-005** (open, not yet reviewed) 2026-10-23 · discovery:audit: COM-T (titles 60 characters or fewer) cannot be met by the settled title formats with the settled variants: the homepage title 'Gutter Service in Polk County, FL - First Choice Seamless Gutters' is 65 characters, and location titles 'Gutter Service in <Town>, FL - First Choice Seamless Gutters' run about 60-68. HP-03 forbids dropping an entity term for length. The check gives no precedence rule. — workaround: S17 review keeps the settled title as the default and states that COM-T still fails (F-020 r2); anyone may override.
 
 ## Spend so far
 
@@ -108,19 +103,21 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 1 · Setup | 1 | 1,774,002 | $0.02 | $0.00 |
 | 2 · Discovery | 3 | 11,117,410 | $3.80 | $0.00 |
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
+| 4 · Audit | 1 | 17,111,940 | $6.47 | $0.00 |
 | any stage | 5 | 1,178,180 | $0.01 | $0.00 |
-| **total** | 11 | 14,069,592 | $4.47 | $0.00 |
+| **total** | 12 | 31,181,532 | $10.94 | $0.00 |
 
 ## Spend by step (model)
 
 | Step | Runs | Tokens | Session USD | API USD |
 |---|---|---|---|---|
+| discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
 | discovery:data | 1 | 0 | $0.62 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 11 | 14,069,592 | $4.47 | $0.00 |
+| **total** | 12 | 31,181,532 | $10.94 | $0.00 |
 
-Last run: /discovery 2026-10-23T12:53 — Data pulls done: reviews, rankings, backlinks, PAA, competitors; about $0.62 total
+Last run: /discovery 2026-10-23T13:17 — Audit S12-S18 done: 50-row URL map (0 redirects, Plant City held), 43 findings (6 Fix, 32 Fix and list, 5 Ask), review sheet ready for Paul

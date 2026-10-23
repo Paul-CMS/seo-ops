@@ -221,3 +221,22 @@ Open: flag F-003 (backlinks raw folder) is logged for the system session; confir
 - FLAG 2026-10-23T12:20 · run 20261023-064343-discovery-0e30 · F-003 · pipeline.py inventory S08 backlinks fails: No such file or directory clients/first-choice-seamless-gutters/data/backlinks/raw/ba…
 **Steps recorded (script):** S06 done, S07 done, S08 done, S19 done, S21 skipped, S09 skipped, S10 skipped, S11 skipped, S20 skipped
 
+## /discovery · 2026-10-23 · run 20261023-125720-discovery-f174
+
+- S12: pipeline inventory --phase audit; re-run after capturing live public evidence (inputs/public-site-2026-10-23/, SRC-055–060: sitemap, homepage, Lake Wales, 2 sitemap-only posts, robots).
+- S13–S14: 50-row URL Decision Map (audit/2026-10-23/url-decision-map.csv); 0 destructive rows; Plant City (U019) Hold; screen --check passed.
+- S15: judge had no API key — agent scored homepage + 2 posts into audit/conformance-judgment.csv; triage 31 rebuild · 11 light fix · 1 keep.
+- S16: findings.csv; Technical Blocker Checklist rendered (6 Fix).
+- S17: audit-reviewer — 25 confirmed, 6 revised, 7 withdrawn (review-summary.md). Active: 43 findings (6 Fix, 32 Fix and list, 5 Ask).
+- S18: review.py sheet (5 questions for Paul, 0 client), render.py all; marked audit_deliverables and blocker_checklist.
+- Asks (defaults): Plant City hold (a) · homepage H1 no change (a) · warranty, licence, $150 offer stay live until the returned proof sheet (a).
+- Urgent Fix: F-008 vendor-domain estimate links (2 pages → another business), F-011 broken header tel link (43 pages).
+- Proof-sheet questions not re-asked (DEC-LOCAL-006); audit decisions in audit/2026-10-23/decisions.md.
+- Flags: F-004 (screen C3 pass without citation export), F-005 (settled homepage title vs COM-T).
+- Waiting on: Paul — /discovery review, then audit_approved; client — returned proof sheet; Paul — GSC homepage 90-day export.
+
+**Changes (script):** 21 — audit_step ×9, rendered ×7, audit_screen ×3, audit_triage ×2
+- FLAG 2026-10-23T13:09 · run 20261023-125720-discovery-f174 · F-004 · pagedec.py screen marks C3 'pass' when no citation tracker export is on file ('no citation tracker on file'), while CM-019 says …
+- FLAG 2026-10-23T13:15 · run 20261023-125720-discovery-f174 · F-005 · COM-T (titles 60 characters or fewer) cannot be met by the settled title formats with the settled variants: the homepage title '…
+**Steps recorded (script):** S12 done, S13 done, S14 done, S15 done, S16 done, S17 done, S18 done
+

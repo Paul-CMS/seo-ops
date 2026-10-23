@@ -1,6 +1,6 @@
 # First Choice Seamless Gutters - Document Checklist
 
-Generated 2026-10-23T12:53 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-23T13:17 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -21,13 +21,13 @@ Generated 2026-10-23T12:53 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S19 People Also Ask: core services × primary city + top 3 cities, capped ( | done | data/paa/paa-routing.md |
 | [-] | S20 SEOPress site-wide settings (title templates, sitemap, noindexed post  | skipped | no SEOPress settings check on file (not WordPress, or no access yet) |
 | [-] | S21 Query fan-out (CM-045): core services × primary city + top 3 cities, c | skipped | query fan-out is off by default (D6) — pipeline.py … --fanout runs it |
-| [ ] | S12 Ingest + cross-checks + redirect pre-screen | — |  |
-| [ ] | S13 Entity analysis: site vs Brand Guide (triple, NAP, brand search, suppo | — |  |
-| [ ] | S14 Architecture: every page typed; the screen decides CM-019 C1–C3, the a | — |  |
-| [ ] | S15 Page conformance triage (CM-063): rebuild / light fix / keep; only pag | — |  |
-| [ ] | S16 Technical findings (Fix rows → the Technical Blocker Checklist, writte | — |  |
-| [ ] | S17 Fresh-context review: every destructive URL row, every Ask, a sample o | — |  |
-| [ ] | S18 The audit review sheet + render | — |  |
+| [x] | S12 Ingest + cross-checks + redirect pre-screen | done | pipeline inventory --phase audit (re-run after capturing sitemap + live pages, SRC-055..060) |
+| [x] | S13 Entity analysis: site vs Brand Guide (triple, NAP, brand search, suppo | done | entity: base town x3, brand string x3, warranty/licence/offer claims (kind-2 Asks), GBP host, citations |
+| [x] | S14 Architecture: every page typed; the screen decides CM-019 C1–C3, the a | done | 50 URL rows; 0 destructive; Plant City held (kind-1 Ask); screen --check passed |
+| [x] | S15 Page conformance triage (CM-063): rebuild / light fix / keep; only pag | done | judge: no API key, agent scored 3 pages into conformance-judgment.csv; triage 31 rebuild, 11 light fix, 1 keep |
+| [x] | S16 Technical findings (Fix rows → the Technical Blocker Checklist, writte | done | 6 Fix rows rendered to the Technical Blocker Checklist |
+| [x] | S17 Fresh-context review: every destructive URL row, every Ask, a sample o | done | clients/first-choice-seamless-gutters/audit/2026-10-23 |
+| [x] | S18 The audit review sheet + render | done | review sheet (5 Asks for Paul, 0 client) + render all; deliverables marked |
 
 ## Intake documents
 
@@ -40,7 +40,7 @@ Generated 2026-10-23T12:53 from status.json — do not edit. `[x]` done · `[-]`
 - [ ] Every page in the site plan is built, verified and written back — no site plan yet
 - [x] WordPress connected (/wp-check passed in the last 30 days)
 - [ ] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — discovery is not signed off yet — still open: the client's returned proof sheet, the audit (its review sheet, registers and Evidence Manifest), the reconciled Brand Guide
-- [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — the technical blocker checklist is not written yet
+- [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — the blocker items have not been handed to Jonie yet (handoff.py create … --blockers)
 - [x] Page specs approved by Paul once, globally (methodology/specs) and unchanged since
 
 ## Decisions (Paul)

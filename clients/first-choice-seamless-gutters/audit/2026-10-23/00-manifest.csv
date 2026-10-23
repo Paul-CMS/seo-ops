@@ -1,0 +1,61 @@
+source_id,file,recognised_as,category,rows,columns,sha256_12,file_modified,tool_settings,date_window,geography_device,scope_limits,size_bytes,file_date
+SRC-001,First Choice Seamless Gutters - DFS - all_inlinks - 2026-10-22.csv,screamingfrog.all_inlinks,crawl,1772,9,edc84cc23aa1,2026-10-22T20:14:01,,,,,316459,2026-10-22
+SRC-002,First Choice Seamless Gutters - DFS - crawl-config - 2026-10-22.md,dataforseo.crawl_config,crawl,,,b66f117def59,2026-10-22T20:14:01,,,,,772,2026-10-22
+SRC-003,First Choice Seamless Gutters - DFS - duplicate_content - 2026-10-22.csv,dataforseo.duplicate_content,crawl,0,3,5daacbe1e167,2026-10-22T20:14:01,,,,,43,2026-10-22
+SRC-004,First Choice Seamless Gutters - DFS - duplicate_descriptions - 2026-10-22.csv,dataforseo.duplicate_tags,crawl,0,4,53b593445947,2026-10-22T20:14:01,,,,,55,2026-10-22
+SRC-005,First Choice Seamless Gutters - DFS - duplicate_titles - 2026-10-22.csv,dataforseo.duplicate_tags,crawl,0,4,53b593445947,2026-10-22T20:14:01,,,,,55,2026-10-22
+SRC-006,First Choice Seamless Gutters - DFS - external_all - 2026-10-22.csv,screamingfrog.external_all,crawl,45,6,934ac91d7460,2026-10-22T20:14:01,,,,,5517,2026-10-22
+SRC-007,First Choice Seamless Gutters - DFS - h1_all - 2026-10-22.csv,screamingfrog.h1_all,crawl,47,8,3801abbef63e,2026-10-22T20:14:01,,,,,5770,2026-10-22
+SRC-008,First Choice Seamless Gutters - DFS - h2_all - 2026-10-22.csv,screamingfrog.h2_all,crawl,47,64,7d05590534b5,2026-10-22T20:14:01,,,,,28257,2026-10-22
+SRC-009,First Choice Seamless Gutters - DFS - internal_all - 2026-10-22.csv,screamingfrog.internal_all,crawl,47,30,45aa48645df3,2026-10-22T20:14:01,,,,,27314,2026-10-22
+SRC-010,First Choice Seamless Gutters - DFS - links_all - 2026-10-22.csv,screamingfrog.links_all,crawl,47,10,03abc53f2bf6,2026-10-22T20:14:01,,,,,4767,2026-10-22
+SRC-011,First Choice Seamless Gutters - DFS - meta_description_all - 2026-10-22.csv,screamingfrog.meta_description_all,crawl,47,6,5c2f01c2a5fc,2026-10-22T20:14:01,,,,,11438,2026-10-22
+SRC-012,First Choice Seamless Gutters - DFS - non_indexable - 2026-10-22.csv,dataforseo.non_indexable,crawl,0,2,4321a8051aa3,2026-10-22T20:14:01,,,,,30,2026-10-22
+SRC-013,First Choice Seamless Gutters - DFS - page_titles_all - 2026-10-22.csv,screamingfrog.page_titles_all,crawl,47,6,d5db04718975,2026-10-22T20:14:01,,,,,6802,2026-10-22
+SRC-014,First Choice Seamless Gutters - DFS - redirect_chains - 2026-10-22.csv,dataforseo.redirect_chains,crawl,0,6,bd46e157bfd0,2026-10-22T20:14:01,,,,,56,2026-10-22
+SRC-015,data/backlinks/backlinks-per-url.csv,data.backlinks (S08),backlinks,4,4,beed6bfd24a1,2026-10-23T12:48:57,,,,,429,2026-10-23
+SRC-016,data/backlinks/payload-backlinks-p1.json,data.backlinks (S08),backlinks,1,,80570f545d0f,2026-10-23T12:20:15,,,,,192,2026-10-23
+SRC-017,data/backlinks/raw/ (1 files),data.backlinks (S08) raw,backlinks,1,,,2026-10-23T12:48:57,,,,,178778,2026-10-23
+SRC-018,data/competitors/coverage.json,data.competitors,other,3,,ff6f28e3dfce,2026-10-23T12:52:58,,,,,13741,2026-10-23
+SRC-019,data/competitors/coverage.md,data.competitors,other,,,c98a5b4b386d,2026-10-23T12:52:58,,,,,9325,2026-10-23
+SRC-020,data/crawl/crawl-summary.csv,data.crawl,other,47,19,6d3f6062118b,2026-10-22T20:14:01,,,,,19873,2026-10-22
+SRC-021,data/crawl/page-text.csv,data.crawl,other,41,6,f1fb42d7220a,2026-10-22T20:16:03,,,,,202680,2026-10-22
+SRC-022,data/paa/paa-questions.csv,data.paa (S19),content_research,59,5,f1476e7faa52,2026-10-23T12:51:25,,,,,5445,2026-10-23
+SRC-023,data/paa/paa-routing.md,data.paa (S19),content_research,,,88b0926a94b1,2026-10-23T12:51:25,,,,,7545,2026-10-23
+SRC-024,data/paa/queries.csv,data.paa (S19),content_research,20,2,5dde234f18ae,2026-10-23T12:51:25,,,,,660,2026-10-23
+SRC-025,data/paa/raw/ (20 files),data.paa (S19) raw,content_research,20,,,2026-10-23T12:51:25,,,,,635667,2026-10-23
+SRC-026,data/rankings/best-variants.csv,data.rankings (S07),rankings,55,3,230aaf80ab2a,2026-10-23T12:20:15,,,,,2163,2026-10-23
+SRC-027,data/rankings/cannibalization.csv,data.rankings (S07),rankings,5,4,dd5beea3c226,2026-10-23T12:20:13,,,,,724,2026-10-23
+SRC-028,data/rankings/ranked-keywords.csv,data.rankings (S07),rankings,28,5,1dd3d34ecc09,2026-10-23T12:20:13,,,,,2650,2026-10-23
+SRC-029,data/rankings/rankings-summary.md,data.rankings (S07),rankings,,,ec36fdd7c08e,2026-10-23T12:20:15,,,,,2831,2026-10-23
+SRC-030,data/rankings/raw/ (2 files),data.rankings (S07) raw,rankings,2,,,2026-10-23T12:20:15,,,,,139275,2026-10-23
+SRC-031,data/rankings/url-rankings.csv,data.rankings (S07),rankings,8,4,134f2062a4d2,2026-10-23T12:20:13,,,,,654,2026-10-23
+SRC-032,data/reviews/customer-language.md,data.reviews (S06),reviews,,,f90e961b946a,2026-10-23T12:20:11,,,,,7686,2026-10-23
+SRC-033,data/reviews/mentions.csv,data.reviews (S06),reviews,138,5,19a0408ab90b,2026-10-23T12:20:10,,,,,9401,2026-10-23
+SRC-034,data/reviews/raw/ (2 files),data.reviews (S06) raw,reviews,2,,,2026-10-23T12:20:10,,,,,217016,2026-10-23
+SRC-035,data/reviews/review-facts.json,data.reviews (S06),reviews,3,,1dbfa616f92a,2026-10-23T12:20:11,,,,,17184,2026-10-23
+SRC-036,data/reviews/reviews-summary.md,data.reviews (S06),reviews,,,e2b0ace41d5d,2026-10-23T12:20:10,,,,,1158,2026-10-23
+SRC-037,data/reviews/reviews.csv,data.reviews (S06),reviews,138,6,80b9006aa5e9,2026-10-23T12:20:10,,,,,42062,2026-10-23
+SRC-038,data/services.txt,data.client_lists,intake,11,,34f5c9e42b6d,2026-10-23T06:44:15,,,,,199,2026-10-23
+SRC-039,inputs/crawl/First Choice Seamless Gutters - DFS - all_inlinks - 2026-10-22.csv,screamingfrog.all_inlinks,crawl,1772,9,edc84cc23aa1,2026-10-22T20:14:01,,,,,316459,2026-10-22
+SRC-040,inputs/crawl/First Choice Seamless Gutters - DFS - crawl-config - 2026-10-22.md,inputs.crawl,other,,,b66f117def59,2026-10-22T20:14:01,,,,,772,2026-10-22
+SRC-041,inputs/crawl/First Choice Seamless Gutters - DFS - duplicate_content - 2026-10-22.csv,dataforseo.duplicate_content,crawl,0,3,5daacbe1e167,2026-10-22T20:14:01,,,,,43,2026-10-22
+SRC-042,inputs/crawl/First Choice Seamless Gutters - DFS - duplicate_descriptions - 2026-10-22.csv,dataforseo.duplicate_tags,crawl,0,4,53b593445947,2026-10-22T20:14:01,,,,,55,2026-10-22
+SRC-043,inputs/crawl/First Choice Seamless Gutters - DFS - duplicate_titles - 2026-10-22.csv,dataforseo.duplicate_tags,crawl,0,4,53b593445947,2026-10-22T20:14:01,,,,,55,2026-10-22
+SRC-044,inputs/crawl/First Choice Seamless Gutters - DFS - external_all - 2026-10-22.csv,screamingfrog.external_all,crawl,45,6,934ac91d7460,2026-10-22T20:14:01,,,,,5517,2026-10-22
+SRC-045,inputs/crawl/First Choice Seamless Gutters - DFS - h1_all - 2026-10-22.csv,screamingfrog.h1_all,crawl,47,8,3801abbef63e,2026-10-22T20:14:01,,,,,5770,2026-10-22
+SRC-046,inputs/crawl/First Choice Seamless Gutters - DFS - h2_all - 2026-10-22.csv,screamingfrog.h2_all,crawl,47,64,7d05590534b5,2026-10-22T20:14:01,,,,,28257,2026-10-22
+SRC-047,inputs/crawl/First Choice Seamless Gutters - DFS - internal_all - 2026-10-22.csv,screamingfrog.internal_all,crawl,47,30,45aa48645df3,2026-10-22T20:14:01,,,,,27314,2026-10-22
+SRC-048,inputs/crawl/First Choice Seamless Gutters - DFS - links_all - 2026-10-22.csv,screamingfrog.links_all,crawl,47,10,03abc53f2bf6,2026-10-22T20:14:01,,,,,4767,2026-10-22
+SRC-049,inputs/crawl/First Choice Seamless Gutters - DFS - meta_description_all - 2026-10-22.csv,screamingfrog.meta_description_all,crawl,47,6,5c2f01c2a5fc,2026-10-22T20:14:01,,,,,11438,2026-10-22
+SRC-050,inputs/crawl/First Choice Seamless Gutters - DFS - non_indexable - 2026-10-22.csv,dataforseo.non_indexable,crawl,0,2,4321a8051aa3,2026-10-22T20:14:01,,,,,30,2026-10-22
+SRC-051,inputs/crawl/First Choice Seamless Gutters - DFS - page_titles_all - 2026-10-22.csv,screamingfrog.page_titles_all,crawl,47,6,d5db04718975,2026-10-22T20:14:01,,,,,6802,2026-10-22
+SRC-052,inputs/crawl/First Choice Seamless Gutters - DFS - redirect_chains - 2026-10-22.csv,dataforseo.redirect_chains,crawl,0,6,bd46e157bfd0,2026-10-22T20:14:01,,,,,56,2026-10-22
+SRC-053,inputs/crawl/crawl-state.json,inputs.crawl,other,14,,11905e36aa6e,2026-10-22T20:14:01,,,,,4627,2026-10-22
+SRC-054,inputs/crawl/raw/ (6 files),inputs.crawl raw,other,6,,,2026-10-22T20:14:01,,,,,1536425,2026-10-22
+SRC-055,inputs/public-site-2026-10-23/gutter-guards-winter-haven-fl-2026-10-23.html,inputs.public-site-2026-10-23,other,,,42470ee564f7,2026-10-23T13:02:35,,,,,148665,2026-10-23
+SRC-056,inputs/public-site-2026-10-23/gutter-services-lakeland-fl-2026-10-23.html,inputs.public-site-2026-10-23,other,,,daa4ba19b8ec,2026-10-23T13:02:35,,,,,149416,2026-10-23
+SRC-057,inputs/public-site-2026-10-23/home-2026-10-23.html,inputs.public-site-2026-10-23,other,,,c2472f13162d,2026-10-23T13:02:33,,,,,347540,2026-10-23
+SRC-058,inputs/public-site-2026-10-23/lake-wales-fl-2026-10-23.html,inputs.public-site-2026-10-23,other,,,d937f51e7bd7,2026-10-23T13:02:33,,,,,248711,2026-10-23
+SRC-059,inputs/public-site-2026-10-23/robots-2026-10-23.txt,inputs.public-site-2026-10-23,other,10,,fb33d9e69f35,2026-10-23T13:02:36,,,,,288,2026-10-23
+SRC-060,inputs/public-site-2026-10-23/sitemap-urls.txt,sitemap.urls,crawl,44,,14946068e344,2026-10-23T13:02:33,,,,,3076,2026-10-23

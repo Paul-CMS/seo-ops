@@ -1,0 +1,18 @@
+register,id,why,what
+findings,F-003,ask,A '10-Year Workmanship Guarantee' / '10-Year Workmanship Warranty' is claimed on
+findings,F-004,ask,'Licensed & Insured' / 'fully licensed and insured' is claimed on 8 pages; no li
+findings,F-005,ask,The homepage offers 'Special Offer — $150 off full house installations for Milit
+findings,F-015,ask,"Plant City is in Hillsborough County, outside the Polk County area entity. The p"
+findings,F-017,ask,"The live homepage H1 'Seamless Gutters in Lakeland, FL You Can Trust' fails HP-0"
+findings,F-001,sample,"The site states three different base towns: homepage 'Based in Lakeland, FL' and"
+findings,F-008,sample,The 'get free estimate' button on 7 location pages links to https://firstchoice.
+findings,F-012,sample,Three URLs are in the XML sitemap but were not reached by the crawl: the two blo
+findings,F-018,sample,Titles and H1s on the 31 pages Build rebuilds do not follow the settled formats:
+findings,F-022,sample,HP-03: Homepage title uses '|' instead of the Section A separator ' - '.
+findings,F-026,sample,HP-11: Services are introduced by H2 'Our Services' and each service is itself a
+findings,F-030,sample,HP-18: The footer carries H2s (Quick Links · Contact Us · Follow Us).
+findings,F-034,sample,"HP-24: Homepage schema is one LocalBusiness node: no WebSite node, no ID-page @i"
+findings,F-038,sample,"BLG-01: /gutter-services-lakeland-fl/ targets 'gutter services Lakeland FL', the"
+findings,F-042,sample,"BLG-10: The Lakeland post has 15 internal links in the main content (cap 5, max "
+findings,F-046,sample,"BLG-17: The Lakeland post is a sales page in post form (emergency pitch, the ful"
+findings,F-050,sample,No Search Console export is on file although access exists (settled tools.gsc_ga

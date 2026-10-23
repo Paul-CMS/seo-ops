@@ -1,0 +1,51 @@
+url_id,url,action,type,triage,why,failed_checks
+U001,https://www.firstchoiceseamlessgutters.net/,Keep — H1 lock (HP-08) unless Paul lifts it (F-017); title and light fixes per findings,Homepage,light fix,"homepage under the H1 lock (HP-08) — kept, scored in full",COM-T HP-01 HP-02 HP-03 HP-06 HP-09 HP-10 HP-11 HP-12 HP-13 HP-15 HP-18 HP-19 HP-21 HP-23 HP-24
+U002,https://www.firstchoiceseamlessgutters.net/about/,Improve — rebuild to the about spec,About,rebuild,Build rewrites it to its spec,
+U003,https://www.firstchoiceseamlessgutters.net/areas-we-serve/,"Keep — service-area index (no county hub: the area entity is the homepage's, F-016)",Utility — service-area index,light fix,kept utility page (auto checks only),COM-M
+U004,https://www.firstchoiceseamlessgutters.net/areas-we-serve/auburndale-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U005,https://www.firstchoiceseamlessgutters.net/areas-we-serve/bartow-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U006,https://www.firstchoiceseamlessgutters.net/areas-we-serve/davenport-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U007,https://www.firstchoiceseamlessgutters.net/areas-we-serve/dundee-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U008,https://www.firstchoiceseamlessgutters.net/areas-we-serve/eagle-lake-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U009,https://www.firstchoiceseamlessgutters.net/areas-we-serve/fort-meade-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U010,https://www.firstchoiceseamlessgutters.net/areas-we-serve/frostproof-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U011,https://www.firstchoiceseamlessgutters.net/areas-we-serve/haines-city-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U012,https://www.firstchoiceseamlessgutters.net/areas-we-serve/highland-city-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U013,https://www.firstchoiceseamlessgutters.net/areas-we-serve/kathleen-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U014,https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-alfred-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U015,https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-hamilton-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U016,https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-wales-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U017,https://www.firstchoiceseamlessgutters.net/areas-we-serve/lakeland-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U018,https://www.firstchoiceseamlessgutters.net/areas-we-serve/mulberry-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U019,https://www.firstchoiceseamlessgutters.net/areas-we-serve/plant-city-fl/,Hold — until the returned proof sheet answers towns_outside_polk (F-015),Location,,the URL is redirected or held — not scored,
+U020,https://www.firstchoiceseamlessgutters.net/areas-we-serve/polk-city-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U021,https://www.firstchoiceseamlessgutters.net/areas-we-serve/wahneta-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U022,https://www.firstchoiceseamlessgutters.net/areas-we-serve/waverly-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U023,https://www.firstchoiceseamlessgutters.net/areas-we-serve/winter-haven-fl/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U024,https://www.firstchoiceseamlessgutters.net/contact/,Keep — light fixes per findings,Utility — contact,light fix,kept utility page (auto checks only),COM-M COM-N
+U025,https://www.firstchoiceseamlessgutters.net/contact,Keep existing 301 — fix the 36 internal links that use it (F-010),Existing 301 (to /contact/),,the URL is redirected or held — not scored,
+U026,https://www.firstchoiceseamlessgutters.net/services/,Keep — light fixes per findings,Utility — services index,light fix,kept utility page (auto checks only),COM-M COM-N
+U027,https://www.firstchoiceseamlessgutters.net/services/seamless-gutter-installation/,"Improve — rebuild to the service spec (all 11 kept, F-014)",Service,rebuild,Build rewrites it to its spec,
+U028,https://www.firstchoiceseamlessgutters.net/services/gutter-installation/,"Improve — rebuild to the service spec (all 11 kept, F-014)",Service,rebuild,Build rewrites it to its spec,
+U029,https://www.firstchoiceseamlessgutters.net/services/gutter-repair/,"Improve — rebuild to the service spec (all 11 kept, F-014)",Service,rebuild,Build rewrites it to its spec,
+U030,https://www.firstchoiceseamlessgutters.net/services/commercial-gutters/,"Improve — rebuild to the service spec (all 11 kept, F-014)",Service,rebuild,Build rewrites it to its spec,
+U031,https://www.firstchoiceseamlessgutters.net/services/gutter-downspouts/,"Improve — rebuild to the service spec (all 11 kept, F-014)",Service,rebuild,Build rewrites it to its spec,
+U032,https://www.firstchoiceseamlessgutters.net/services/gutter-guards/,"Improve — rebuild to the service spec (all 11 kept, F-014)",Service,rebuild,Build rewrites it to its spec,
+U033,https://www.firstchoiceseamlessgutters.net/services/gutter-maintenance/,"Improve — rebuild to the service spec (all 11 kept, F-014)",Service,rebuild,Build rewrites it to its spec,
+U034,https://www.firstchoiceseamlessgutters.net/services/gutter-cleaning/,"Improve — rebuild to the service spec (all 11 kept, F-014)",Service,rebuild,Build rewrites it to its spec,
+U035,https://www.firstchoiceseamlessgutters.net/services/copper-gutters/,"Improve — rebuild to the service spec (all 11 kept, F-014)",Service,rebuild,Build rewrites it to its spec,
+U036,https://www.firstchoiceseamlessgutters.net/services/galvalume-gutters/,"Improve — rebuild to the service spec (all 11 kept, F-014)",Service,rebuild,Build rewrites it to its spec,
+U037,https://www.firstchoiceseamlessgutters.net/services/aluminum-gutters/,"Improve — rebuild to the service spec (all 11 kept, F-014)",Service,rebuild,Build rewrites it to its spec,
+U038,https://www.firstchoiceseamlessgutters.net/terms-conditions/,Keep — light fixes per findings,Utility — legal,light fix,kept utility page (auto checks only),COM-M
+U039,https://www.firstchoiceseamlessgutters.net/terms-conditions/accessibility-statement/,Keep — light fixes per findings,Utility — legal,light fix,kept utility page (auto checks only),COM-M
+U040,https://www.firstchoiceseamlessgutters.net/terms-conditions/cookie-policy/,Keep — light fixes per findings,Utility — legal,light fix,kept utility page (auto checks only),COM-M
+U041,https://www.firstchoiceseamlessgutters.net/terms-conditions/copyright-policy/,Keep — light fixes per findings,Utility — legal,light fix,kept utility page (auto checks only),COM-M
+U042,https://www.firstchoiceseamlessgutters.net/terms-conditions/privacy-policy/,Keep — light fixes per findings,Utility — legal,light fix,kept utility page (auto checks only),COM-M
+U043,https://www.firstchoiceseamlessgutters.net/areas-we-serve/dundee-fl/link,Keep existing 301 — the placeholder link on the source page is fixed (F-009),"Existing 301 (link artefact — a placeholder href=""link"", not a page)",,the URL is redirected or held — not scored,
+U044,https://www.firstchoiceseamlessgutters.net/areas-we-serve/eagle-lake-fl/link,Keep existing 301 — the placeholder link on the source page is fixed (F-009),"Existing 301 (link artefact — a placeholder href=""link"", not a page)",,the URL is redirected or held — not scored,
+U045,https://www.firstchoiceseamlessgutters.net/areas-we-serve/fort-meade-fl/link,Keep existing 301 — the placeholder link on the source page is fixed (F-009),"Existing 301 (link artefact — a placeholder href=""link"", not a page)",,the URL is redirected or held — not scored,
+U046,https://www.firstchoiceseamlessgutters.net/areas-we-serve/frostproof-fl/link,Keep existing 301 — the placeholder link on the source page is fixed (F-009),"Existing 301 (link artefact — a placeholder href=""link"", not a page)",,the URL is redirected or held — not scored,
+U047,https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-wales-fl/link,Hold — not a page; the placeholder link on the Lake Wales page is fixed (F-009),"404 link artefact (a placeholder href=""link"", not a page)",,the URL is redirected or held — not scored,
+U048,https://www.firstchoiceseamlessgutters.net/gutter-guards-winter-haven-fl/,Keep — disposition in Blog Decision Map (CM-021),Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-06 BLG-13 BLG-16
+U049,https://www.firstchoiceseamlessgutters.net/gutter-services-lakeland-fl/,Keep — disposition in Blog Decision Map (CM-021),Blog post,light fix,blog post — Build does not rewrite it,BLG-01 BLG-03 BLG-05 BLG-06 BLG-10 BLG-13 BLG-15 BLG-16 BLG-17 BLG-18 BLG-22
+U050,https://www.firstchoiceseamlessgutters.net/category/uncategorized/,Keep — no change in the audit (archive settings sit with the SEOPress settings handoff),Utility — taxonomy archive,keep,kept utility page (auto checks only),
