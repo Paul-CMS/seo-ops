@@ -258,3 +258,17 @@ Open: flag F-004 (citation export missing; the C3 screen counted it as a pass) i
 - FACT 2026-10-23T13:52 · run 20261023-135245-discovery-56df · offer-military-seniors-150 (new) · paul_approved · $150 off full house installations for Military & Seniors: confirmed and still running…
 - FACT 2026-10-23T13:52 · run 20261023-135245-discovery-56df · plant-city-served (new) · paul_approved · Not in the established service area; no Plant City page. Cities listed stay as the established…
 
+## /build · 2026-10-23 · run 20261023-135747-build-82bb
+
+**Stage 5 — Build plan and blockers.** Issued the technical blocker handoff from the audit checklist, section 1 (Fix rows).
+
+- Handoff H-2026-10-23-03-broken_link (Jonie, blocker): 10 rows covering F-008, F-009, F-010, F-011.
+  Source: audit/2026-10-23/findings.csv; rendered checklist "Technical Blocker Checklist - REVIEW.md".
+- Not issued in this run:
+  - F-013 (homepage Wednesday hours in LocalBusiness schema): the schema kind needs entity_approved + brand_guide_approved. Not yet met.
+  - F-048 (Lakeland post author "wittycow" in Article schema): no Jonie kind is open at audit_approved. Needs a decision on the owner and channel.
+- "Blockers cleared" stays open until Jonie returns H-2026-10-23-03-broken_link done and /verify passes it.
+- Not yet run: `/verify` (runs once the handoff is marked done).
+
+**Changes (script):** 10 — broken_link ×10
+

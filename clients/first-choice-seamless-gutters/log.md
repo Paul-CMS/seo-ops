@@ -555,3 +555,43 @@ Approved version: clients/first-choice-seamless-gutters/audit/2026-10-23/deliver
 - CHANGE #105 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-23 (4).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 86dbfb25432a | result: done · copied (Drive for desktop syncs it)
 - CHANGE #106 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-23 (4).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-23 (4).md | result: done · renamed and moved, nothing deleted
 - CHANGE #107 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-23 (4).md | new: First Choice Seamless Gutters - Status.md · sha b8ae64913ab8 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261023-135747-build-82bb · STARTED · /build · 2026-10-23T13:57:47-05:00
+Step: build:blockers · session 4ab6c933-a0e4-4a95-a86c-95672f9e3e5b
+Gates checked: audit_approved
+- CHANGE #108 [broken_link] https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-wales-fl/ | href | old: https://firstchoice.gutterinstallerwebsites.com/contact/ | new: https://www.firstchoiceseamlessgutters.net/contact/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-23-03-broken_link-01
+- CHANGE #109 [broken_link] https://www.firstchoiceseamlessgutters.net/areas-we-serve/lakeland-fl/ | href | old: https://firstchoice.gutterinstallerwebsites.com/contact/ | new: https://www.firstchoiceseamlessgutters.net/contact/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-23-03-broken_link-02
+- CHANGE #110 [broken_link] https://www.firstchoiceseamlessgutters.net/areas-we-serve/dundee-fl/ | href | old: link | new: per anchor (see reason) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-23-03-broken_link-03
+- CHANGE #111 [broken_link] https://www.firstchoiceseamlessgutters.net/areas-we-serve/eagle-lake-fl/ | href | old: link | new: per anchor (see reason) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-23-03-broken_link-04
+- CHANGE #112 [broken_link] https://www.firstchoiceseamlessgutters.net/areas-we-serve/fort-meade-fl/ | href | old: link | new: per anchor (see reason) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-23-03-broken_link-05
+- CHANGE #113 [broken_link] https://www.firstchoiceseamlessgutters.net/areas-we-serve/frostproof-fl/ | href | old: link | new: per anchor (see reason) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-23-03-broken_link-06
+- CHANGE #114 [broken_link] https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-wales-fl/ | href | old: link | new: per anchor (see reason) | result: HANDOFF ISSUED to Jonie | ref H-2026-10-23-03-broken_link-07
+- CHANGE #115 [broken_link] https://www.firstchoiceseamlessgutters.net/contact/ | href | old: https://www.firstchoiceseamlessgutters.net/contact | new: https://www.firstchoiceseamlessgutters.net/contact/ | result: HANDOFF ISSUED to Jonie | ref H-2026-10-23-03-broken_link-08
+- CHANGE #116 [broken_link] https://www.firstchoiceseamlessgutters.net/ | href | old: http:8633303243 | new: tel:+18633303243 | result: HANDOFF ISSUED to Jonie | ref H-2026-10-23-03-broken_link-09
+- CHANGE #117 [broken_link] https://www.firstchoiceseamlessgutters.net/gutter-services-lakeland-fl/ | href | old: http://(863) 330-3243 | new: tel:+18633303243 | result: HANDOFF ISSUED to Jonie | ref H-2026-10-23-03-broken_link-10
+### HANDOFF · /build · 2026-10-23 · run 20261023-135747-build-82bb
+**Stage 5 — Build plan and blockers.** Issued the technical blocker handoff from the audit checklist, section 1 (Fix rows).
+
+- Handoff H-2026-10-23-03-broken_link (Jonie, blocker): 10 rows covering F-008, F-009, F-010, F-011.
+  Source: audit/2026-10-23/findings.csv; rendered checklist "Technical Blocker Checklist - REVIEW.md".
+- Not issued in this run:
+  - F-013 (homepage Wednesday hours in LocalBusiness schema): the schema kind needs entity_approved + brand_guide_approved. Not yet met.
+  - F-048 (Lakeland post author "wittycow" in Article schema): no Jonie kind is open at audit_approved. Needs a decision on the owner and channel.
+- "Blockers cleared" stays open until Jonie returns H-2026-10-23-03-broken_link done and /verify passes it.
+- Not yet run: `/verify` (runs once the handoff is marked done).
+
+**Changes (script):** 10 — broken_link ×10
+### END HANDOFF
+## RUN 20261023-135747-build-82bb · FINISHED · 2026-10-23T13:58:35-05:00
+Changes: 10 · Summary: Blocker handoff H-2026-10-23-03-broken_link issued to Jonie (10 rows: F-008..F-011). F-013 and F-048 not issued: their kinds need entity/brand approval or an owner decision.
+Spend: 1357600 tokens · $0.02 (measured)
+- CHANGE #118 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-23 (4).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-23 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #119 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-23 (4).md | new: First Choice Seamless Gutters - Handoff Log.md · sha 03c01c217107 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #120 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-23 (5).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-23 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #121 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-23 (5).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 3d188849863b | result: done · copied (Drive for desktop syncs it)
+- CHANGE #122 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-23 (5).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-23 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #123 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-23 (5).md | new: First Choice Seamless Gutters - Status.md · sha e6929d903e02 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #124 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-23.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | new: _Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-23.md | result: done · renamed and moved, nothing deleted
+- CHANGE #125 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | upload | old: previous version archived as First Choice Seamless Gutters - VA Worklist - 2026-10-23.md | new: First Choice Seamless Gutters - VA Worklist.md · sha 2dcf62afbf03 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #126 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-23.csv | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.csv | new: _Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-23.csv | result: done · renamed and moved, nothing deleted
+- CHANGE #127 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.csv | upload | old: previous version archived as First Choice Seamless Gutters - VA Worklist - 2026-10-23.csv | new: First Choice Seamless Gutters - VA Worklist.csv · sha 69a0c8bccaae | result: done · copied (Drive for desktop syncs it)

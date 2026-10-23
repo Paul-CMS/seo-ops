@@ -292,12 +292,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261023-135245-discovery-56df",
-    "command": "discovery",
-    "finished": "2026-10-23T13:53:12-05:00",
-    "result": "Audit review answered: Plant City no page, H1 unchanged, warranty live, licence resolved, offer live",
-    "changes": 0,
-    "step": "discovery:review",
+    "run_id": "20261023-135747-build-82bb",
+    "command": "build",
+    "finished": "2026-10-23T13:58:35-05:00",
+    "result": "Blocker handoff H-2026-10-23-03-broken_link issued to Jonie (10 rows: F-008..F-011). F-013 and F-048 not issued: their kinds need entity/brand approval or an owner decision.",
+    "changes": 10,
+    "step": "build:blockers",
     "batch": null
   },
   "spend": {
@@ -317,7 +317,7 @@
     "next": "Once you return the fact sheet, we finish your business profile."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-23T13:55:27-05:00",
+  "updated": "2026-10-23T13:58:35-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -609,6 +609,26 @@
       "by_agent": {
         "main": 0.0113
       }
+    },
+    {
+      "run": "20261023-135747-build-82bb",
+      "step": "build:blockers",
+      "tokens": 1357600,
+      "usd": 0.0229,
+      "at": "2026-10-23T13:58:35-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0229,
+          "in": 24,
+          "out": 8570,
+          "cache_read": 1322262,
+          "cache_write": 26744
+        }
+      },
+      "by_agent": {
+        "main": 0.0229
+      }
     }
   ],
   "sessions": {
@@ -635,6 +655,12 @@
       "step": "discovery:audit",
       "first_run": "20261023-125720-discovery-f174",
       "at": "2026-10-23T13:17:15-05:00"
+    },
+    "4ab6c933-a0e4-4a95-a86c-95672f9e3e5b": {
+      "key": "build-plan",
+      "step": "build:blockers",
+      "first_run": "20261023-135747-build-82bb",
+      "at": "2026-10-23T13:58:35-05:00"
     }
   },
   "wordpress": {
@@ -676,5 +702,13 @@
       "explicit": 5,
       "file": "clients/first-choice-seamless-gutters/audit/2026-10-23/audit-apply.json"
     }
+  },
+  "blocker_handoffs": [
+    "H-2026-10-23-03-broken_link"
+  ],
+  "review_pause": {
+    "run_id": "20261023-135747-build-82bb",
+    "step": "build:blockers",
+    "at": "2026-10-23T13:58:35-05:00"
   }
 }
