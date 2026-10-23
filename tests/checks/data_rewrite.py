@@ -294,6 +294,17 @@ def t_backlinks(h):
             and home.get("top_referring_domains") == "a.com; b.org; c.net"
             and rows.get("https://test.example/roof-repair/", {}).get("referring_domains") == "1"
             and rows.get("https://test.example/gutters/", {}).get("backlinks") == "9", out + str(rows))
+
+    raw = ag.c / "data" / "backlinks" / "raw"
+    for f in raw.glob("*.json"):
+        f.unlink()
+    raw.rmdir()   # a fresh client folder: raw/ is git-ignored, so it is not there
+    p = ag.w("data/backlinks/payload-backlinks-p1.json", '[{"target": "test.example", "limit": 1000}]')
+    out_f = f"clients/bl-co/data/backlinks/raw/backlinks-2026-10-23.json"
+    code, out = h.sh(f'python3 tests/dr_wrap.py dfs call bl-co backlinks/backlinks/live --payload {p} '
+                     f'--purpose "S08 backlinks" --out {out_f} --confirmed')
+    h.check("F-003: dfs.py call --out creates the missing raw/ folder before the paid call, so the answer is saved",
+            code == 0 and (h.SB / out_f).is_file(), out[-400:])
     _done(h)
 
 

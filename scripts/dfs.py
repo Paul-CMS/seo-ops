@@ -29,6 +29,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from pathlib import Path
 
 from lib import ROOT, append, client_dir, config, die, load_env, now, redact
 
@@ -294,6 +295,8 @@ def main():
             est = a.estimate if a.estimate is not None else estimate(
                 a.endpoint, len(payload), sum(int(t.get("limit", 100)) for t in payload),
                 depth=max([int(t.get("depth", 0)) for t in payload] + [0]) or None)
+            if a.out:   # F-003: a paid /live answer cannot be fetched again for free — the folder exists before we pay
+                Path(a.out).parent.mkdir(parents=True, exist_ok=True)
             resp = paid_post(a.slug, a.endpoint, payload, a.purpose, est, a.confirmed)
             text = json.dumps(resp, indent=1)
             if a.out:
@@ -304,6 +307,8 @@ def main():
             if a.endpoint in PRICES or "task_post" in a.endpoint or a.endpoint.endswith("/live"):
                 die(f"{a.endpoint} is a paid endpoint. Use 'dfs.py call'.")
             body = json.loads(open(a.payload).read()) if a.payload else None
+            if a.out:
+                Path(a.out).parent.mkdir(parents=True, exist_ok=True)
             resp = request(a.endpoint, None if a.get else body, "GET" if a.get else None)
             if resp.get("cost"):
                 print(f"WARNING: this call cost ${resp['cost']} — it should have gone through 'call'.",
