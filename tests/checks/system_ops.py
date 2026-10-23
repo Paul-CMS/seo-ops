@@ -108,6 +108,12 @@ def t_sync_main(h):
     shutil.rmtree(tmp)
 
 
+def t_pycache_ignored(h):
+    paths = ["scripts/__pycache__/lib.cpython-315.pyc", "tests/checks/__pycache__/x.pyc", "scripts/x.pyc"]
+    left = [p for p in paths if subprocess.run(["git", "check-ignore", "-q", p], cwd=REPO).returncode != 0]
+    h.check("Python's bytecode cache is ignored, so it never blocks changereq.py start", not left, left)
+
+
 def t_lowcountry_sources(h):
     src = (REPO / "methodology" / "sources" / "sc-lowcountry.md").read_text()
     urls = ["hiltonheadislandsc.gov/building/permits/", "cityofbeaufort.org/154/Building-Codes",
@@ -148,4 +154,4 @@ def t_cm060(h):
             "first answer paragraph" in body and "40–60 words" in body and "| CM-060 | APPROVED" in rul, body[:300])
 
 
-SCENARIOS = [t_where_rename, t_sync_main, t_lowcountry_sources, t_readability_terms, t_cm060]
+SCENARIOS = [t_where_rename, t_sync_main, t_pycache_ignored, t_lowcountry_sources, t_readability_terms, t_cm060]

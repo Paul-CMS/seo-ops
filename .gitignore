@@ -27,6 +27,10 @@ Thumbs.db
 .vscode/
 .idea/
 
+# --- Python bytecode cache ---
+__pycache__/
+*.pyc
+
 # --- seo-ops runtime state ---
 machine.json
 .claude/state/
