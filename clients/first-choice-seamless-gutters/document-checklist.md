@@ -1,6 +1,6 @@
 # First Choice Seamless Gutters - Document Checklist
 
-Generated 2026-10-23T06:41 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-23T12:53 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -12,15 +12,15 @@ Generated 2026-10-23T06:41 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S04 Proof sheet built (Markdown + client Google Doc) | done | Proof sheet revised: website address filled (3517 Century Blvd, Lakeland), GBP Manager request removed, licence row trade/contractor only, local business tax receipt request added after Polk County/Lakeland official check; 17/17 questions kept, check passed |
 | [x] | S05 Site crawl (max pages = sitemap size × 1.5, min 20, max 1000; 1000 whe | done | clients/first-choice-seamless-gutters/inputs/crawl/ |
 | [ ] | S05b Page text capture: the body text of every crawled HTML page (the basic | — |  |
-| [ ] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | — |  |
-| [ ] | S07 Rankings + cannibalization: every ranked keyword per URL (top 100), co | — |  |
-| [ ] | S08 Backlinks pull: referring domains per URL | — |  |
-| [ ] | S09 Citations | — |  |
-| [ ] | S10 Local grid | — |  |
-| [ ] | S11 Search Console / GA4 | — |  |
-| [ ] | S19 People Also Ask: core services × primary city + top 3 cities, capped ( | — |  |
-| [ ] | S20 SEOPress site-wide settings (title templates, sitemap, noindexed post  | — |  |
-| [ ] | S21 Query fan-out (CM-045): core services × primary city + top 3 cities, c | — |  |
+| [x] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | done | data/reviews/reviews-summary.md |
+| [x] | S07 Rankings + cannibalization: every ranked keyword per URL (top 100), co | done | data/rankings/rankings-summary.md |
+| [x] | S08 Backlinks pull: referring domains per URL | done | data/backlinks/backlinks-per-url.csv |
+| [-] | S09 Citations | skipped | no citation tracker upload on file yet |
+| [-] | S10 Local grid | skipped | no local-grid report on file yet |
+| [-] | S11 Search Console / GA4 | skipped | no Search Console / GA4 access on file |
+| [x] | S19 People Also Ask: core services × primary city + top 3 cities, capped ( | done | data/paa/paa-routing.md |
+| [-] | S20 SEOPress site-wide settings (title templates, sitemap, noindexed post  | skipped | no SEOPress settings check on file (not WordPress, or no access yet) |
+| [-] | S21 Query fan-out (CM-045): core services × primary city + top 3 cities, c | skipped | query fan-out is off by default (D6) — pipeline.py … --fanout runs it |
 | [ ] | S12 Ingest + cross-checks + redirect pre-screen | — |  |
 | [ ] | S13 Entity analysis: site vs Brand Guide (triple, NAP, brand search, suppo | — |  |
 | [ ] | S14 Architecture: every page typed; the screen decides CM-019 C1–C3, the a | — |  |

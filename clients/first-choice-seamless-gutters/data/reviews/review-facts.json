@@ -1,0 +1,518 @@
+{
+  "made": "2026-10-23T12:20:11-05:00",
+  "min_reviewers": 3,
+  "facts": {
+    "fact:timeframe": {
+      "label": "timeframe",
+      "count": 4,
+      "quotes": [
+        {
+          "date": "2023-05-26",
+          "quote": "They showed up on time and had the job finished in one day.",
+          "row": "reviews.csv row 103"
+        },
+        {
+          "date": "2023-01-12",
+          "quote": "Shows up on time, work done in a day as promised.",
+          "row": "reviews.csv row 114"
+        },
+        {
+          "date": "2022-09-16",
+          "quote": "Got the job completed in one day.",
+          "row": "reviews.csv row 118"
+        },
+        {
+          "date": "2022-05-28",
+          "quote": "No mess left behind and even waited on site for a T-storm for over 1/2 hour.",
+          "row": "reviews.csv row 124"
+        }
+      ]
+    },
+    "fact:pricing": {
+      "label": "pricing",
+      "count": 37,
+      "quotes": [
+        {
+          "date": "2026-08-30",
+          "quote": "Shows up on time, great communication, great work and fair pricing.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2026-07-27",
+          "quote": "Pricing was very fair too, which we definitely appreciated.",
+          "row": "reviews.csv row 6"
+        },
+        {
+          "date": "2026-04-14",
+          "quote": "Their price was reasonable and had several payment options.",
+          "row": "reviews.csv row 9"
+        },
+        {
+          "date": "2026-04-10",
+          "quote": "They saved me over $900.00.",
+          "row": "reviews.csv row 11"
+        },
+        {
+          "date": "2026-03-28",
+          "quote": "beat every single quote I received and not by a little the difference was honestly shocking compared to the ridiculous prices other companies were giving me.",
+          "row": "reviews.csv row 16"
+        },
+        {
+          "date": "2026-03-25",
+          "quote": "Adrian came right out, provided great options and a great price!",
+          "row": "reviews.csv row 18"
+        },
+        {
+          "date": "2026-03-15",
+          "quote": "Good price, good service, good gutters.",
+          "row": "reviews.csv row 22"
+        },
+        {
+          "date": "2026-02-10",
+          "quote": "Very quick response, professional team, good pricing, and they installed gutters beautifully on my home.",
+          "row": "reviews.csv row 28"
+        }
+      ]
+    },
+    "fact:guarantees": {
+      "label": "guarantees",
+      "count": 29,
+      "quotes": [
+        {
+          "date": "2026-08-30",
+          "quote": "Shows up on time, great communication, great work and fair pricing.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2026-04-01",
+          "quote": "On time great job!!!",
+          "row": "reviews.csv row 13"
+        },
+        {
+          "date": "2026-04-01",
+          "quote": "The team was professional, on time, and did an amazing job with our gutters.",
+          "row": "reviews.csv row 14"
+        },
+        {
+          "date": "2026-03-27",
+          "quote": "Communication was clear, they responded quickly, and everything was handled in a professional and friendly manner.",
+          "row": "reviews.csv row 17"
+        },
+        {
+          "date": "2026-02-12",
+          "quote": "Adrian responded quickly.",
+          "row": "reviews.csv row 27"
+        },
+        {
+          "date": "2026-01-26",
+          "quote": "This is an awesome company, April was very helpful in getting us what we wanted for our situation, the crew showed up on time and was very helpful in answering questions.",
+          "row": "reviews.csv row 31"
+        },
+        {
+          "date": "2026-01-22",
+          "quote": "On time, quality work and good pricing.",
+          "row": "reviews.csv row 32"
+        },
+        {
+          "date": "2026-01-20",
+          "quote": "The guys were very professional and right on time.",
+          "row": "reviews.csv row 33"
+        }
+      ]
+    },
+    "fact:response_time": {
+      "label": "response time",
+      "count": 2,
+      "quotes": [
+        {
+          "date": "2026-03-27",
+          "quote": "Communication was clear, they responded quickly, and everything was handled in a professional and friendly manner.",
+          "row": "reviews.csv row 17"
+        },
+        {
+          "date": "2026-02-12",
+          "quote": "Adrian responded quickly.",
+          "row": "reviews.csv row 27"
+        }
+      ]
+    },
+    "fact:founding": {
+      "label": "founding",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2025-10-22",
+          "quote": "This is a very nice family-owned business.",
+          "row": "reviews.csv row 47"
+        }
+      ]
+    },
+    "fact:staff": {
+      "label": "staff",
+      "count": 20,
+      "quotes": [
+        {
+          "date": "2025-05-19",
+          "quote": "The owner, Will, was professional, efficient, and made sure the job was completed and installed quickly.",
+          "row": "reviews.csv row 72"
+        },
+        {
+          "date": "2025-02-18",
+          "quote": "James and his son are the sole owners and workers in this business and do high quality work as well as offer many different options to customize your gutters and downspouts.",
+          "row": "reviews.csv row 77"
+        },
+        {
+          "date": "2024-12-18",
+          "quote": "James and his son did our gutters today and they did an awesome job, we couldn't be happier.",
+          "row": "reviews.csv row 78"
+        },
+        {
+          "date": "2024-09-23",
+          "quote": "James and his son did a fantastic job putting in a new gutter and downspouts.",
+          "row": "reviews.csv row 80"
+        },
+        {
+          "date": "2024-08-26",
+          "quote": "James and his son did an extraordinary and a beautiful job.",
+          "row": "reviews.csv row 82"
+        },
+        {
+          "date": "2024-06-19",
+          "quote": "I can't express enough just how efficient  Mr Gaudette and his son are.",
+          "row": "reviews.csv row 85"
+        },
+        {
+          "date": "2024-05-29",
+          "quote": "James and his son are professional and efficient.",
+          "row": "reviews.csv row 90"
+        },
+        {
+          "date": "2024-05-08",
+          "quote": "James and his son installed our gutters today.",
+          "row": "reviews.csv row 91"
+        }
+      ]
+    },
+    "fact:company_story": {
+      "label": "company story",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2025-10-22",
+          "quote": "This is a very nice family-owned business.",
+          "row": "reviews.csv row 47"
+        }
+      ]
+    },
+    "practice:photos": {
+      "label": "photos",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2023-08-23",
+          "quote": "Once the work was completed he sent pictures, which I can say he did an excellent job.",
+          "row": "reviews.csv row 100"
+        }
+      ]
+    },
+    "practice:clean-up": {
+      "label": "clean up",
+      "count": 9,
+      "quotes": [
+        {
+          "date": "2026-03-28",
+          "quote": "The gutters are clean, seamless, and actually make my house look more polished and put together.",
+          "row": "reviews.csv row 16"
+        },
+        {
+          "date": "2026-03-25",
+          "quote": "Our gutters were installed within a couple days, fast, great team, cleaned up and the gutters look great!",
+          "row": "reviews.csv row 18"
+        },
+        {
+          "date": "2026-01-02",
+          "quote": "Very nice job fast and clean looks good thankyou .I would tell all.",
+          "row": "reviews.csv row 36"
+        },
+        {
+          "date": "2025-06-11",
+          "quote": "They are a pleasure to work with they were very curtius and went right to work after arriving cleaned up and completed in 2 hrs highly recommend",
+          "row": "reviews.csv row 68"
+        },
+        {
+          "date": "2024-10-26",
+          "quote": "Showed up on time, gave us the best price and left the job-site clean.",
+          "row": "reviews.csv row 79"
+        },
+        {
+          "date": "2024-06-14",
+          "quote": "Job was done quickly and cleaned up after.",
+          "row": "reviews.csv row 87"
+        },
+        {
+          "date": "2023-05-26",
+          "quote": "They cleaned up very well afterwards and the gutters look great!",
+          "row": "reviews.csv row 103"
+        },
+        {
+          "date": "2023-03-25",
+          "quote": "They did excellent work on the gutters with leaf guards and cleaning up.",
+          "row": "reviews.csv row 108"
+        }
+      ]
+    },
+    "practice:explains": {
+      "label": "explains",
+      "count": 4,
+      "quotes": [
+        {
+          "date": "2025-08-20",
+          "quote": "They cleaned their work area and walked me through the project to insure total satisfaction.",
+          "row": "reviews.csv row 51"
+        },
+        {
+          "date": "2025-08-12",
+          "quote": "They came out took measurements and explained the whole process.",
+          "row": "reviews.csv row 53"
+        },
+        {
+          "date": "2025-08-09",
+          "quote": "Mrs April explains the process from start to finish after the job is done she will walk around to make sure the job is done right and your happy with the the new gutters .Her staff is very humble and respectful and infor",
+          "row": "reviews.csv row 54"
+        },
+        {
+          "date": "2022-03-30",
+          "quote": "Owner takes his time to explain everything from start to finish.",
+          "row": "reviews.csv row 130"
+        }
+      ]
+    },
+    "prices ($ amounts)": {
+      "label": "prices ($ amounts)",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2026-04-10",
+          "quote": "They saved me over $900.00.",
+          "row": "reviews.csv row 11"
+        }
+      ]
+    },
+    "materials": {
+      "label": "materials",
+      "count": 77,
+      "quotes": [
+        {
+          "date": "2026-10-19",
+          "quote": "I would certainly recommend First Choice Gutters to my friends and family members.",
+          "row": "reviews.csv row 2"
+        },
+        {
+          "date": "2026-08-30",
+          "quote": "Had them come out three separate times to complete my projects for the gutters into my rain capturing system and always a great job.",
+          "row": "reviews.csv row 4"
+        },
+        {
+          "date": "2026-07-27",
+          "quote": "We just had new gutters installed and we’re really happy with how everything turned out.",
+          "row": "reviews.csv row 6"
+        },
+        {
+          "date": "2026-06-20",
+          "quote": "Only problems with the gutters on my new house..Dont drain properly, wasn't installed correctly.",
+          "row": "reviews.csv row 7"
+        },
+        {
+          "date": "2026-04-10",
+          "quote": "If you are looking for an honest company I would highly recommend First Choice Seamless Gutters.",
+          "row": "reviews.csv row 11"
+        },
+        {
+          "date": "2026-04-01",
+          "quote": "The team was professional, on time, and did an amazing job with our gutters.",
+          "row": "reviews.csv row 14"
+        },
+        {
+          "date": "2026-03-28",
+          "quote": "If you’re shopping around for gutters, seriously stop here.",
+          "row": "reviews.csv row 16"
+        },
+        {
+          "date": "2026-03-27",
+          "quote": "They did an excellent job on my gutters and made the whole process easy.",
+          "row": "reviews.csv row 17"
+        }
+      ]
+    },
+    "staff:Adrian": {
+      "label": "person named Adrian",
+      "count": 8,
+      "quotes": [
+        {
+          "date": "2026-04-14",
+          "quote": "Many that’s to Adrian and his crew for their amazing service.",
+          "row": "reviews.csv row 9"
+        },
+        {
+          "date": "2026-04-10",
+          "quote": "Adrian was easy to work with and professional at all times.",
+          "row": "reviews.csv row 12"
+        },
+        {
+          "date": "2026-03-25",
+          "quote": "Adrian came right out, provided great options and a great price!",
+          "row": "reviews.csv row 18"
+        },
+        {
+          "date": "2026-02-12",
+          "quote": "Adrian responded quickly.",
+          "row": "reviews.csv row 27"
+        },
+        {
+          "date": "2026-01-06",
+          "quote": "Adrian was friendly, professional and very helpful.",
+          "row": "reviews.csv row 34"
+        },
+        {
+          "date": "2025-08-07",
+          "quote": "I didn't even know Adrian and Michael, the owners, would be here.",
+          "row": "reviews.csv row 55"
+        },
+        {
+          "date": "2025-06-01",
+          "quote": "Adrian and his team were amazing.",
+          "row": "reviews.csv row 70"
+        },
+        {
+          "date": "2025-05-16",
+          "quote": "Adrian was a pleasure to do business with and we are extremely happy with our new gutters!",
+          "row": "reviews.csv row 74"
+        }
+      ]
+    },
+    "staff:Inc": {
+      "label": "person named Inc",
+      "count": 4,
+      "quotes": [
+        {
+          "date": "2026-03-28",
+          "quote": "First Choice Seamless Gutters Inc.",
+          "row": "reviews.csv row 16"
+        },
+        {
+          "date": "2026-02-10",
+          "quote": "Highly recommend First Choice Seamless Gutters Inc.",
+          "row": "reviews.csv row 28"
+        },
+        {
+          "date": "2024-05-29",
+          "quote": "I strongly recommend First Choice Seamless Gutters Inc.",
+          "row": "reviews.csv row 90"
+        },
+        {
+          "date": "2023-03-03",
+          "quote": "Having completed more than a few jobs for my company, Danny Sadler, Inc.",
+          "row": "reviews.csv row 109"
+        }
+      ]
+    },
+    "staff:James": {
+      "label": "person named James",
+      "count": 26,
+      "quotes": [
+        {
+          "date": "2025-02-18",
+          "quote": "James and his son are the sole owners and workers in this business and do high quality work as well as offer many different options to customize your gutters and downspouts.",
+          "row": "reviews.csv row 77"
+        },
+        {
+          "date": "2024-12-18",
+          "quote": "James and his son did our gutters today and they did an awesome job, we couldn't be happier.",
+          "row": "reviews.csv row 78"
+        },
+        {
+          "date": "2024-09-23",
+          "quote": "James and his son did a fantastic job putting in a new gutter and downspouts.",
+          "row": "reviews.csv row 80"
+        },
+        {
+          "date": "2024-09-12",
+          "quote": "James was very communicative and professional during the quote and scheduling process.",
+          "row": "reviews.csv row 81"
+        },
+        {
+          "date": "2024-08-26",
+          "quote": "James and his son did an extraordinary and a beautiful job.",
+          "row": "reviews.csv row 82"
+        },
+        {
+          "date": "2024-06-19",
+          "quote": "James and son checked all of the boxes.",
+          "row": "reviews.csv row 86"
+        },
+        {
+          "date": "2024-06-01",
+          "quote": "James was professional, kept his commitments & communicated through the whole process.",
+          "row": "reviews.csv row 89"
+        },
+        {
+          "date": "2024-05-29",
+          "quote": "James and his son are professional and efficient.",
+          "row": "reviews.csv row 90"
+        }
+      ]
+    },
+    "staff:Landon": {
+      "label": "person named Landon",
+      "count": 5,
+      "quotes": [
+        {
+          "date": "2024-09-12",
+          "quote": "He and Landon came out as scheduled for the installation and did a fantastic job.",
+          "row": "reviews.csv row 81"
+        },
+        {
+          "date": "2024-03-07",
+          "quote": "James & Landon have done it again !!",
+          "row": "reviews.csv row 93"
+        },
+        {
+          "date": "2023-03-25",
+          "quote": "I ABSOLUTELY recommend James and Landon for your gutter needs.",
+          "row": "reviews.csv row 108"
+        },
+        {
+          "date": "2023-02-05",
+          "quote": "Randall, and his son, Landon, provided exemplary service.",
+          "row": "reviews.csv row 112"
+        },
+        {
+          "date": "2023-02-05",
+          "quote": "Amazing job done by Randall and his son Landon",
+          "row": "reviews.csv row 113"
+        }
+      ]
+    },
+    "staff:Randall": {
+      "label": "person named Randall",
+      "count": 3,
+      "quotes": [
+        {
+          "date": "2023-07-18",
+          "quote": "Randall does a great job and is very professional",
+          "row": "reviews.csv row 101"
+        },
+        {
+          "date": "2023-02-05",
+          "quote": "Randall was contracted to replace our front gutters, as well as add gutters alongside our house.",
+          "row": "reviews.csv row 112"
+        },
+        {
+          "date": "2023-02-05",
+          "quote": "Amazing job done by Randall and his son Landon",
+          "row": "reviews.csv row 113"
+        }
+      ]
+    }
+  }
+}

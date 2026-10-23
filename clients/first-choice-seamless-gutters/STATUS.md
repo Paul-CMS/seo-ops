@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 3 of 8 — Data**
-- **What is happening now:** ready to start: reviews, rankings, People Also Ask, backlinks, citations, grid, GSC — one cost yes for the whole step
-- **Waiting on:** nobody
-- **Next action:** `/discovery first-choice-seamless-gutters data` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: researcher (sonnet), discovery-audit (opus)) · model: Haiku chat
+- **Stage 4 of 8 — Audit**
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — discovery:data finished (run 20261023-064343-discovery-0e30) and that stage is in review m
+- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-23T06:41 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-23T12:53 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Paul | discovery:data finished (run 20261023-064343-discovery-0e30) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /discovery first-choice-seamless-gutters audit (the audit: entity → architecture → page conformance → technical, then the fresh-context review) | 2026-10-23 | /next first-choice-seamless-gutters |
 
 ## Waiting on (not blocking)
 
@@ -68,6 +68,18 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Fir
 
 _Inputs the data manifest (methodology/data-manifest.json) says a step must read, where that step has not finished for this client yet._
 
+- **reviews** (1 file(s), e.g. `data/reviews/reviews.csv`) — read by build:evidence, build:facts
+- **reviews-raw** (2 file(s), e.g. `data/reviews/raw/reviews.json`) — read by the step that reads reviews
+- **review-mentions** (1 file(s), e.g. `data/reviews/mentions.csv`) — read by build:evidence, build:facts
+- **review-facts** (1 file(s), e.g. `data/reviews/review-facts.json`) — read by build:evidence, build:facts
+- **customer-language** (2 file(s), e.g. `data/reviews/customer-language.md`) — read by discovery:audit, build:brief, build:write
+- **paa-questions** (2 file(s), e.g. `data/paa/paa-questions.csv`) — read by build:evidence, discovery:fanout
+- **paa-raw** (20 file(s), e.g. `data/paa/raw/aluminum-gutters-lakeland.json`) — read by the step that reads paa-questions
+- **paa-routing** (1 file(s), e.g. `data/paa/paa-routing.md`) — read by build:plan, blog:map, build:brief, build:write
+- **rankings** (5 file(s), e.g. `data/rankings/best-variants.csv`) — read by build:plan, discovery:audit
+- **rankings-raw** (2 file(s), e.g. `data/rankings/raw/best-variants.json`) — read by the step that reads rankings
+- **backlinks** (2 file(s), e.g. `data/backlinks/backlinks-per-url.csv`) — read by discovery:audit
+- **competitors** (2 file(s), e.g. `data/competitors/coverage.json`) — read by build:plan
 - **crawl-page-text** (2 file(s), e.g. `data/crawl/crawl-summary.csv`) — read by discovery:audit, build:evidence
 - **crawl-raw** (1 file(s), e.g. `inputs/crawl/crawl-state.json`) — read by the step that reads crawl-page-text
 - **imported-exports** (14 file(s), e.g. `inputs/crawl/First Choice Seamless Gutters - DFS - all_inlinks - 2026-10-22.csv`) — read by discovery:audit
@@ -79,10 +91,12 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 ## Flagged for Paul (system)
 
 - **F-001** (open, not yet reviewed) 2026-10-22 · crawl: config.json drive.local_root points at My Drive/v3. CMS Technical SEO Audit 2026, but the folder is under Shared drives/CMS SERVICE PAGE AUDITS/, so drive.py cannot find it and uploads stay pending — workaround: Paul to fix local_root in a system session (/system); crawl files stay local until then
+- **F-002** (open, not yet reviewed) 2026-10-23 · discovery:data: pipeline.py inventory S06 reviews fails: DataforSEO task 40501 Invalid Field 'location_name' ($0 spent). Steps S07, S08, S19 and competitor coverage were not run. — workaround: Paul to fix the reviews request field in a system session (/system); no client data affected
+- **F-003** (open, not yet reviewed) 2026-10-23 · discovery:data: pipeline.py inventory S08 backlinks fails: No such file or directory clients/first-choice-seamless-gutters/data/backlinks/raw/backlinks-2026-10-23.json (the raw folder is not created before the write). The DataforSEO call ran ($0.0272) and its result was not saved. S19 and competitor coverage not run. — workaround: Paul to make the script create the backlinks raw folder before writing, in a system session; check whether the $0.0272 backlinks response can be re-downloaded free before any retry
 
 ## Spend so far
 
-- DataforSEO: $0.01
+- DataforSEO: $0.25 (of which failed tasks $0.00)
 - Claude API (llm.py): $0.00 over 0 call(s)
 
 ## Spend by stage (model)
@@ -93,9 +107,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 |---|---|---|---|---|
 | 1 · Setup | 1 | 1,774,002 | $0.02 | $0.00 |
 | 2 · Discovery | 3 | 11,117,410 | $3.80 | $0.00 |
-| 3 · Data | 1 | 0 | $0.01 | $0.00 |
+| 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | any stage | 5 | 1,178,180 | $0.01 | $0.00 |
-| **total** | 10 | 14,069,592 | $3.85 | $0.00 |
+| **total** | 11 | 14,069,592 | $4.47 | $0.00 |
 
 ## Spend by step (model)
 
@@ -103,9 +117,10 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 |---|---|---|---|---|
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
+| discovery:data | 1 | 0 | $0.62 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 10 | 14,069,592 | $3.85 | $0.00 |
+| **total** | 11 | 14,069,592 | $4.47 | $0.00 |
 
-Last run: /crawl 2026-10-23T06:41 — Crawled 47 URLs, 41 pages' text captured, $0.0099
+Last run: /discovery 2026-10-23T12:53 — Data pulls done: reviews, rankings, backlinks, PAA, competitors; about $0.62 total

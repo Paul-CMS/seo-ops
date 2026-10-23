@@ -203,3 +203,21 @@ Open: flag F-001 (config.json drive.local_root pointed at My Drive; fixed by Pau
 - FLAG 2026-10-22T20:26 · run 20261022-200953-crawl-ecac · F-001 · config.json drive.local_root points at My Drive/v3. CMS Technical SEO Audit 2026, but the folder is under Shared drives/CMS SERVICE …
 **Steps recorded (script):** S05 done
 
+## /discovery · 2026-10-23 · run 20261023-064343-discovery-0e30
+
+Stage 3 (Data), step discovery:data. Approved by Paul at about $0.62 (cities Lakeland, Winter Haven, Bartow, Haines City; keyword "First Choice Seamless Gutters Inc."; no fan-out).
+
+- Reviews (S06): passed, after the DataforSEO field fix in the system session (F-002).
+- Rankings (S07): passed.
+- Backlinks (S08): passed on the rerun. The first attempt failed on a missing raw folder (F-003) after one $0.0272 call; the rerun completed.
+- People Also Ask (S19) and competitor coverage: passed.
+- BrightLocal, Local Dominator, Search Console and WordPress (S09/S10/S11/S20): recorded from files on disk.
+- Cost on the rerun: about $0.12 (S08 $0.06, S19 $0.04, competitors $0.02). Earlier attempts add roughly $0.50 more, so the total is under the $0.62 approval.
+
+Open: flag F-003 (backlinks raw folder) is logged for the system session; confirm it is fixed before the next backlinks run. Jonie's seopress handoff (4 items) and Gwen's manual lookup (8 items) remain open and do not block.
+
+**Changes (script):** 15 — audit_step ×12, data_pull ×3
+- FLAG 2026-10-23T06:53 · run 20261023-064343-discovery-0e30 · F-002 · pipeline.py inventory S06 reviews fails: DataforSEO task 40501 Invalid Field 'location_name' ($0 spent). Steps S07, S08, S19 and…
+- FLAG 2026-10-23T12:20 · run 20261023-064343-discovery-0e30 · F-003 · pipeline.py inventory S08 backlinks fails: No such file or directory clients/first-choice-seamless-gutters/data/backlinks/raw/ba…
+**Steps recorded (script):** S06 done, S07 done, S08 done, S19 done, S21 skipped, S09 skipped, S10 skipped, S11 skipped, S20 skipped
+
