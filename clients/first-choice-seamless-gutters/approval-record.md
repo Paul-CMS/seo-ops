@@ -18,7 +18,13 @@ Generated from the seo-ops system (clients/first-choice-seamless-gutters/status.
 
 ## Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here)
 
-- Decision: **pending**
+- Decision: **approved**
+- Decided by: Paul · 2026-10-23T13:55:27-05:00
+- Approved version: `clients/first-choice-seamless-gutters/audit/2026-10-23/audit-review.csv` (sha df3da7b1c4a1)
+- Approved version: `clients/first-choice-seamless-gutters/audit/2026-10-23/findings.csv` (sha c05b7ff1051e)
+- Approved version: `clients/first-choice-seamless-gutters/audit/2026-10-23/url-decision-map.csv` (sha 6e84a65ead38)
+- Approved version: `clients/first-choice-seamless-gutters/audit/2026-10-23/deliverables/First Choice Seamless Gutters - Audit Review Sheet - REVIEW.md` (sha 5c7a054db7a5)
+- Approved version: `clients/first-choice-seamless-gutters/audit/2026-10-23/deliverables/First Choice Seamless Gutters - Evidence Manifest - REVIEW.md` (sha 3983b61e663b)
 
 ## Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 

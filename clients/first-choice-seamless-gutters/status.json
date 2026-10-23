@@ -43,7 +43,18 @@
       }
     },
     "audit_approved": {
-      "state": "pending"
+      "state": "approved",
+      "by": "Paul",
+      "at": "2026-10-23T13:55:27-05:00",
+      "note": null,
+      "conditions": [],
+      "files": {
+        "clients/first-choice-seamless-gutters/audit/2026-10-23/audit-review.csv": "df3da7b1c4a1",
+        "clients/first-choice-seamless-gutters/audit/2026-10-23/findings.csv": "c05b7ff1051e",
+        "clients/first-choice-seamless-gutters/audit/2026-10-23/url-decision-map.csv": "6e84a65ead38",
+        "clients/first-choice-seamless-gutters/audit/2026-10-23/deliverables/First Choice Seamless Gutters - Audit Review Sheet - REVIEW.md": "5c7a054db7a5",
+        "clients/first-choice-seamless-gutters/audit/2026-10-23/deliverables/First Choice Seamless Gutters - Evidence Manifest - REVIEW.md": "3983b61e663b"
+      }
     },
     "brand_guide_approved": {
       "state": "pending"
@@ -297,7 +308,8 @@
     "phase": "Confirming your business details",
     "done": [
       "We confirmed how search engines should understand your business",
-      "We prepared a fact sheet for you to confirm"
+      "We prepared a fact sheet for you to confirm",
+      "We finished reviewing your website"
     ],
     "waiting_on_client": [
       "Your answers on the fact sheet we sent"
@@ -305,7 +317,7 @@
     "next": "Once you return the fact sheet, we finish your business profile."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-23T13:53:12-05:00",
+  "updated": "2026-10-23T13:55:27-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -664,10 +676,5 @@
       "explicit": 5,
       "file": "clients/first-choice-seamless-gutters/audit/2026-10-23/audit-apply.json"
     }
-  },
-  "review_pause": {
-    "run_id": "20261023-135245-discovery-56df",
-    "step": "discovery:review",
-    "at": "2026-10-23T13:53:12-05:00"
   }
 }
