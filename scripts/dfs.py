@@ -35,6 +35,30 @@ from lib import ROOT, append, client_dir, config, die, load_env, now, redact
 API = "https://api.dataforseo.com/v3/"
 PRICES = json.loads((ROOT / "scripts" / "dfs_prices.json").read_text())
 
+US_STATES = {
+    "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR", "California": "CA", "Colorado": "CO",
+    "Connecticut": "CT", "Delaware": "DE", "District of Columbia": "DC", "Florida": "FL", "Georgia": "GA",
+    "Hawaii": "HI", "Idaho": "ID", "Illinois": "IL", "Indiana": "IN", "Iowa": "IA", "Kansas": "KS",
+    "Kentucky": "KY", "Louisiana": "LA", "Maine": "ME", "Maryland": "MD", "Massachusetts": "MA",
+    "Michigan": "MI", "Minnesota": "MN", "Mississippi": "MS", "Missouri": "MO", "Montana": "MT",
+    "Nebraska": "NE", "Nevada": "NV", "New Hampshire": "NH", "New Jersey": "NJ", "New Mexico": "NM",
+    "New York": "NY", "North Carolina": "NC", "North Dakota": "ND", "Ohio": "OH", "Oklahoma": "OK",
+    "Oregon": "OR", "Pennsylvania": "PA", "Rhode Island": "RI", "South Carolina": "SC", "South Dakota": "SD",
+    "Tennessee": "TN", "Texas": "TX", "Utah": "UT", "Vermont": "VT", "Virginia": "VA", "Washington": "WA",
+    "West Virginia": "WV", "Wisconsin": "WI", "Wyoming": "WY"}
+
+
+def location_name(loc):
+    """DataforSEO names places 'Lakeland,Florida,United States'; a two-letter state ('Lakeland,FL,United States')
+    is refused as Invalid Field 'location_name' (F-002, 2026-10-23). Spell the state out; anything else as given."""
+    parts = [p.strip() for p in (loc or "").split(",")]
+    if len(parts) >= 2 and parts[-1] == "United States":
+        full = {ab: name for name, ab in US_STATES.items()}.get(parts[-2].upper())
+        if full:
+            parts[-2] = full
+        return ",".join(parts)
+    return loc
+
 
 class DfsError(Exception):
     pass
@@ -226,6 +250,9 @@ def log_cost(slug, endpoint, purpose, est, actual, extra=None, failed_usd=0.0, f
 def paid_post(slug, endpoint, payload, purpose, est, confirmed=False, extra=None, timeout=90, retries=3):
     """retries=1 for slow paid endpoints (LLM responses): a retry after a timeout can bill twice."""
     spend_guard(est, confirmed, endpoint, slug)
+    for t in payload if isinstance(payload, list) else []:
+        if isinstance(t, dict) and t.get("location_name"):
+            t["location_name"] = location_name(t["location_name"])
     resp = request(endpoint, payload, timeout=timeout, retries=retries)
     actual = resp.get("cost")
     f_usd, f_n = failed_cost(resp)

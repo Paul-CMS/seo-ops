@@ -29,6 +29,8 @@ def req(endpoint, body=None, method=None, timeout=90, retries=3):
                       for i in range(n - 1)]
             return {"status_code": 20000, "cost": round(sum(t["cost"] for t in tasks), 4), "tasks": tasks}
     if endpoint == "business_data/google/reviews/task_post":
+        with open(HERE / ".state" / "dr_locations.txt", "a") as fh:
+            fh.write(f"{body[0].get('location_name')}\n")
         return {"status_code": 20000, "cost": 0.015, "tasks": [{"status_code": 20100, "id": "rv-task", "cost": 0.015}]}
     if endpoint.startswith("business_data/google/reviews/task_get/"):
         res = json.loads((HERE / ".state" / "dr_reviews.json").read_text())
@@ -63,7 +65,7 @@ def _setup(h, slug, mode=None, balance=10.0, cost=0.003):
 
 
 def _done(h):
-    for f in ("dfs.json", "dr_mode.json", "dr_reviews.json"):
+    for f in ("dfs.json", "dr_mode.json", "dr_reviews.json", "dr_locations.txt"):
         (h.SB / "tests" / ".state" / f).unlink(missing_ok=True)
 
 
@@ -126,6 +128,31 @@ def t_reviews(h):
     h.check("reviews: summarize rebuilds every output from the saved raw export, with no new call",
             code == 0 and (d / "reviews-summary.md").exists() and costs.count("reviews/task_post") == 1, out)
     ag.fin(rid, "reviews")
+    _done(h)
+
+
+def t_location_state(h):
+    import sys
+    sys.path.insert(0, str(h.SB / "scripts"))
+    cases = {"Lakeland,FL,United States": "Lakeland,Florida,United States",
+             "Bluffton, sc, United States": "Bluffton,South Carolina,United States",
+             "Springfield,Missouri,United States": "Springfield,Missouri,United States",
+             "United States": "United States", "": ""}
+    code, out = h.sh("python3 -c \"import sys, json; sys.path.insert(0, 'scripts'); import dfs; "
+                     f"print(json.dumps([dfs.location_name(t) for t in {list(cases)!r}]))\"")
+    got = json.loads(out.splitlines()[-1]) if code == 0 else []
+    h.check("F-002: dfs.location_name spells a two-letter state out (DataforSEO refuses 'Lakeland,FL,United States')",
+            got == list(cases.values()), out)
+
+    ag = _setup(h, "ls-co")
+    (h.SB / "tests" / ".state" / "dr_reviews.json").write_text(json.dumps(REVIEWS))
+    rid = ag.start("verify")
+    code, out = h.sh(f'python3 tests/dr_wrap.py reviews run ls-co --run {rid} --keyword "Ls Co" '
+                     f'--location "Lakeland,FL,United States" --confirmed --max-wait 5')
+    sent = h.SB / "tests" / ".state" / "dr_locations.txt"
+    sent = sent.read_text().split("\n")[-2] if sent.exists() else ""
+    h.check("F-002: the reviews pull sends 'Lakeland,Florida,United States' to DataforSEO when given FL",
+            code == 0 and sent == "Lakeland,Florida,United States", f"sent={sent!r} {out[-300:]}")
     _done(h)
 
 
@@ -270,4 +297,4 @@ def t_backlinks(h):
     _done(h)
 
 
-SCENARIOS = [t_reviews, t_fanout_spread, t_paa_routing, t_failed_costs, t_backlinks]
+SCENARIOS = [t_reviews, t_location_state, t_fanout_spread, t_paa_routing, t_failed_costs, t_backlinks]

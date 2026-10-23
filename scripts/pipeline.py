@@ -2,7 +2,7 @@
 """pipeline.py — the inventory, run by script with no agent (Rewrite 4 Phase 1).
 
     pipeline.py <slug> inventory [--run R] [--phase data|audit|all] [--confirmed] [--dry] [--fanout]
-                                 [--cities "A,B,C,D"] [--state ST] [--location "City,ST,United States"]
+                                 [--cities "A,B,C,D"] [--state ST] [--location "City,State,United States"]
                                  [--services-file F] [--keyword "GBP name"] [--new-crawl] [--out DIR]
 
 What it replaces: a Haiku clerk running a dozen scripts one by one, and an agent recording each outcome.
