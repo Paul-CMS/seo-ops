@@ -21,10 +21,26 @@
   },
   "gates": {
     "entity_approved": {
-      "state": "pending"
+      "state": "approved",
+      "by": "Paul",
+      "at": "2026-10-22T19:57:24-05:00",
+      "note": null,
+      "conditions": [],
+      "files": {
+        "clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Decision Sheet - REVIEW.md": "ce29d3052f4a",
+        "clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Discovery Record - REVIEW.md": "6450d5aa5471",
+        "clients/first-choice-seamless-gutters/brand-guide.md#A+B1+B2": "16728ee8bc60"
+      }
     },
     "proof_sheet_approved": {
-      "state": "pending"
+      "state": "approved",
+      "by": "Paul",
+      "at": "2026-10-22T19:57:24-05:00",
+      "note": null,
+      "conditions": [],
+      "files": {
+        "clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Client Proof Sheet - REVIEW.md": "2cdca30e1974"
+      }
     },
     "audit_approved": {
       "state": "pending"
@@ -117,13 +133,18 @@
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
-    "phase": "Getting started",
-    "done": [],
-    "waiting_on_client": [],
-    "next": "We are researching your business before we ask you anything."
+    "phase": "Confirming your business details",
+    "done": [
+      "We confirmed how search engines should understand your business",
+      "We prepared a fact sheet for you to confirm"
+    ],
+    "waiting_on_client": [
+      "Your answers on the fact sheet we sent"
+    ],
+    "next": "Once you return the fact sheet, we finish your business profile."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-22T19:52:10-05:00",
+  "updated": "2026-10-22T19:57:24-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -378,10 +399,5 @@
       "needs_settings_handoff": true
     },
     "settings_check_issued": "2026-10-22T08:38:58-05:00"
-  },
-  "review_pause": {
-    "run_id": "20261022-194949-discovery-47cc",
-    "step": "discovery:proof-sheet",
-    "at": "2026-10-22T19:52:10-05:00"
   }
 }

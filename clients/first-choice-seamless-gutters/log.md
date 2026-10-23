@@ -299,3 +299,32 @@ Gates checked: marked:entity_record
 ## RUN 20261022-194949-discovery-47cc · FINISHED · 2026-10-22T19:52:10-05:00
 Changes: 1 · Summary: Proof sheet revised: address 3517 Century Blvd; GBP manager ask removed; licence asks trade licence only; local business tax receipt line added (checked on official pages).
 Spend: 1651255 tokens · $0.72 (measured)
+
+## APPROVAL · 2026-10-22T19:57:24-05:00 · entity_approved · approved · by Paul
+Approved version: clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Decision Sheet - REVIEW.md (sha ce29d3052f4a)
+Approved version: clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Discovery Record - REVIEW.md (sha 6450d5aa5471)
+Approved version: clients/first-choice-seamless-gutters/brand-guide.md#A+B1+B2 (sha 16728ee8bc60)
+
+## APPROVAL · 2026-10-22T19:57:24-05:00 · proof_sheet_approved · approved · by Paul
+Approved version: clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Client Proof Sheet - REVIEW.md (sha 2cdca30e1974)
+- SETTLED category_variants · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Category variants (4–6, real search terms, BB-109): Gutter Service · Seamless Gutters · Rain Gutters · Gutter Contractor · Gutter Installation (recommended default)
+- SETTLED scope_descriptor · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Scope descriptor (e.g. residential, commercial): **residential** (description only; commercial stays a service page) (recommended default)
+- SETTLED area_variants · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Area variants (3–5): Polk County, FL · Polk County, Florida · Lakeland–Winter Haven · Lakeland–Winter Haven metropolitan area (recommended default)
+- SETTLED homepage_title_variant · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Area variant reserved for the homepage SEO title (exclusive, CM-024): **Polk County, FL** (recommended default)
+- SETTLED homepage_h1_variant · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Area variant for the homepage H1: **Lakeland–Winter Haven** (recommended default)
+- SETTLED title_format.homepage · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · SEO-title format — homepage: `Category Variant in Area - Brand` (recommended default)
+- SETTLED title_format.service · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · SEO-title format — service pages: `Service Name - Brand` (recommended default)
+- SETTLED title_format.location · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · SEO-title format — location pages: `Category Variant in City, ST - Brand` (recommended default)
+- SETTLED title_format.about · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · SEO-title format — about page: `About Brand - Category in Area` (recommended default)
+- SETTLED title_format.blog · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · SEO-title format — blog posts: `Post Title - Brand` (recommended default)
+- SETTLED brand_in_titles · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Brand written in full in every title (no abbreviation): yes — **First Choice Seamless Gutters** (legal suffix "Inc." left out of titles; kept in schema `legalName`) (recommended default)
+- SETTLED service_list · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Services offered: The 11 site services: Seamless Gutter Installation · Gutter Installation · Gutter Repair · Commercial Gutters · Gutter Downspouts · Gutter Guards · Gutter Maintenance · Gutter Cleaning · Copper Gutters · Galvalume Gutters · Aluminum Gutters — client confirms on the proof sheet; folding is the audit's call (recommended default)
+- SETTLED towns_served · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Towns served: The 19 Polk towns on the site + Lakeland Highlands (GBP); Plant City and Sebring only if the client confirms (recommended default)
+- SETTLED address_display.gbp · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Street address shown on the GBP?: **no** (SAB, as now) (recommended default)
+- SETTLED the_best_policy · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · "The Best" in H1s (CM-020): per page, by CM-020 (recommended default)
+- SETTLED blog_author · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Blog author (a real person, CM-039): the owner named on the returned facts (candidate: Adrian Buehl) (recommended default)
+- SETTLED sensitive_category · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Sensitive category (CM-025, CM-040): not sensitive (recommended default)
+- SETTLED cms · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · The site's CMS: WordPress (recommended default)
+- SETTLED wordpress_login · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · WordPress login for the system: dedicated Editor (recommended default)
+- SETTLED tools.citations · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Citations data this audit: BrightLocal (recommended default)
+- SETTLED tools.gsc_ga4 · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Search Console / Analytics access: use Search Console (access exists); GA4 not used unless shared (recommended default)

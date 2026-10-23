@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 2 of 8 — Discovery**
-- **What is happening now:** waiting for Paul's approval — Discovery is ready for your approval in one line — the Decision Sheet and the entity foundation: First Choice Seamless Gutters - Decision Sheet - REVIEW.md, First Choice Seamless Gutters - Discovery Record - REVIEW.md, brand-guide.md#A+B1+B2; the client proof sheet (or the client's direct answers): First Choice Seamless Gutters - Client Proof Sheet - REVIEW.md. Once approved, every Decision Sheet answer is settled for good and the data pulls can start
-- **Waiting on:** Paul — Discovery is ready for your approval in one line — the Decision Sheet and the entity found
-- **Next action:** Paul types `/approve first-choice-seamless-gutters entity_approved proof_sheet_approved` (or asks for changes first) · model: Haiku chat
+- **Stage 3 of 8 — Data**
+- **What is happening now:** Stage 2 (Discovery) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open first-choice-seamless-gutters) and type /next first-choice-seamless-gutters. Next there: /crawl first-choice-seamless-gutters (crawl the site while the client has the proof sheet)
+- **Waiting on:** nobody
+- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-22T19:52 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-22T19:57 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | Discovery is ready for your approval in one line — the Decision Sheet and the entity foundation: First Choice Seamless Gutters - Decision Sheet - REVIEW.md, First Choice Seamless Gutters - Discovery Record - REVIEW.md, brand-guide.md#A+B1+B2; the client proof sheet (or the client's direct answers): First Choice Seamless Gutters - Client Proof Sheet - REVIEW.md. Once approved, every Decision Sheet answer is settled for good and the data pulls can start | 2026-10-22 | /approve first-choice-seamless-gutters entity_approved proof_sheet_approved |
+| — | nothing | | |
 
 ## Waiting on (not blocking)
 
@@ -25,6 +25,8 @@ _Open, but the next action above goes ahead without them._
 ## Settled decisions — never re-raised
 
 - 2026-10-14: page specs (global: location) — approved
+- 2026-10-22: Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant) — approved
+- 2026-10-22: Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly — approved
 - Drive copy pending sync — the local Drive folder ~/Library/CloudStorage/GoogleDrive-paul@coastalmarketingstrategies.com/My Drive/v3. CMS Technical SEO Audit 2026 is not there (Drive for desktop signed out or not syncing?). Files stay in the repo until Drive for desktop syncs; nothing is retyped into the connector.
 - Primary GBP category and category entity: Gutter service (Paul, 2026-10-22).
 - Area entity: Polk County, Florida (Paul, 2026-10-22).
@@ -33,6 +35,27 @@ _Open, but the next action above goes ahead without them._
 - Website street address: 3517 Century Blvd, Lakeland (Paul, 2026-10-22).
 - Agency is already a Manager on the client GBP; the proof sheet must not ask the client to add us. (Paul, 2026-10-22)
 - Paul note: Florida has no general state business license to operate. Proof sheet asks for the trade/contractor licence only, not a business license. Local business tax receipt (county/city) is a separate item to verify, not asked as a business license. (Paul, 2026-10-22)
+- Category variants (4–6, real search terms, BB-109): Gutter Service · Seamless Gutters · Rain Gutters · Gutter Contractor · Gutter Installation (recommended default)
+- Scope descriptor (e.g. residential, commercial): **residential** (description only; commercial stays a service page) (recommended default)
+- Area variants (3–5): Polk County, FL · Polk County, Florida · Lakeland–Winter Haven · Lakeland–Winter Haven metropolitan area (recommended default)
+- Area variant reserved for the homepage SEO title (exclusive, CM-024): **Polk County, FL** (recommended default)
+- Area variant for the homepage H1: **Lakeland–Winter Haven** (recommended default)
+- SEO-title format — homepage: `Category Variant in Area - Brand` (recommended default)
+- SEO-title format — service pages: `Service Name - Brand` (recommended default)
+- SEO-title format — location pages: `Category Variant in City, ST - Brand` (recommended default)
+- SEO-title format — about page: `About Brand - Category in Area` (recommended default)
+- SEO-title format — blog posts: `Post Title - Brand` (recommended default)
+- Brand written in full in every title (no abbreviation): yes — **First Choice Seamless Gutters** (legal suffix "Inc." left out of titles; kept in schema `legalName`) (recommended default)
+- Services offered: The 11 site services: Seamless Gutter Installation · Gutter Installation · Gutter Repair · Commercial Gutters · Gutter Downspouts · Gutter Guards · Gutter Maintenance · Gutter Cleaning · Copper Gutters · Galvalume Gutters · Aluminum Gutters — client confirms on the proof sheet; folding is the audit's call (recommended default)
+- Towns served: The 19 Polk towns on the site + Lakeland Highlands (GBP); Plant City and Sebring only if the client confirms (recommended default)
+- Street address shown on the GBP?: **no** (SAB, as now) (recommended default)
+- "The Best" in H1s (CM-020): per page, by CM-020 (recommended default)
+- Blog author (a real person, CM-039): the owner named on the returned facts (candidate: Adrian Buehl) (recommended default)
+- Sensitive category (CM-025, CM-040): not sensitive (recommended default)
+- The site's CMS: WordPress (recommended default)
+- WordPress login for the system: dedicated Editor (recommended default)
+- Citations data this audit: BrightLocal (recommended default)
+- Search Console / Analytics access: use Search Console (access exists); GA4 not used unless shared (recommended default)
 
 ## Open VA items
 
