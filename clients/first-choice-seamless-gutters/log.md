@@ -334,3 +334,62 @@ Step: crawl · session d6aa4d6c-81f8-4c49-a72a-eca5dd15aa0c
 - UNLOCK 2026-10-22T20:08 · client lock removed (Paul)
 ## RUN 20261022-195904-crawl-722b · ABORTED · 2026-10-22T20:09:49-05:00
 Reason (Paul): Paul chose abort; crawl never ran (DFS credentials missing), restarting fresh
+
+## RUN 20261022-200953-crawl-ecac · STARTED · /crawl · 2026-10-22T20:09:53-05:00
+Step: crawl · session d6aa4d6c-81f8-4c49-a72a-eca5dd15aa0c
+- NOTE 20:11:13 crawl: task posted for firstchoiceseamlessgutters.net (basic, max 66 pages — set with --max-pages, 2000 ms between hits) · cost $0.0099 · task 10230111-1266-0216-0000-a87ee2322998
+- NOTE 20:11:15 crawl: resuming existing task 10230111-1266-0216-0000-a87ee2322998 at phase 'crawling' — no new charge
+- NOTE 20:11:16 crawl: crawling — 0/66 pages (0%), 0 in queue
+- NOTE 20:12:18 crawl: crawling — 17/66 pages (25%), 24 in queue
+- NOTE 20:12:49 crawl: crawling — 30/66 pages (45%), 16 in queue
+- NOTE 20:13:20 crawl: crawling — 44/66 pages (66%), 2 in queue
+- NOTE 20:13:51 crawl: crawl finished: 47 pages, stop reason empty_queue
+- NOTE 20:13:53 crawl: downloaded pages (47)
+- NOTE 20:13:57 crawl: downloaded links (2085)
+- NOTE 20:14:01 crawl: all result sets downloaded (no charge for downloads)
+- NOTE 20:14:01 crawl: converted: First Choice Seamless Gutters - DFS - internal_all - 2026-10-22.csv (47 rows); First Choice Seamless Gutters - DFS - links_all - 2026-10-22.csv (47 rows); First Choice Seamless Gutters - DFS - page_titles_all - 2026-10-22.csv (47 rows); First Choice Seamless Gutters - DFS - meta_description_all - 2026-10-22.csv (47 rows); First Choice Seamless Gutters - DFS - h1_all - 2026-10-22.csv (47 rows); First Choice Seamless Gutters - DFS - h2_all - 2026-10-22.csv (47 rows); First Choice Seamless Gutters - DFS - all_inlinks - 2026-10-22.csv (1772 rows); First Choice Seamless Gutters - DFS - external_all - 2026-10-22.csv (45 rows); First Choice Seamless Gutters - DFS - duplicate_titles - 2026-10-22.csv (0 rows); First Choice Seamless Gutters - DFS - duplicate_descriptions - 2026-10-22.csv (0 rows); First Choice Seamless Gutters - DFS - duplicate_content - 2026-10-22.csv (0 rows); First Choice Seamless Gutters - DFS - redirect_chains - 2026-10-22.csv (0 rows); First Choice Seamless Gutters - DFS - non_indexable - 2026-10-22.csv (0 rows); data/crawl/crawl-summary.csv (47 rows) — the file agents read
+- NOTE 20:16:03 crawl: S05b page text: 41 of 41 pages captured (0 disallowed by robots.txt, 0 failed) · first 800 words each · data/crawl/page-text.csv · no charge
+- CHANGE #22 [audit_step] S05 | Site crawl (max pages = sitemap size × 1.5, min 20, max 1000 | old:  | new: done | result: DONE
+- FLAG 2026-10-22T20:26 · run 20261022-200953-crawl-ecac · F-001 · config.json drive.local_root points at My Drive/v3. CMS Technical SEO Audit 2026, but the folder is under Shared drives/CMS SERVICE PAGE AUDITS/, so drive.py cannot find it and uploads stay pending · workaround: Paul to fix local_root in a system session (/system); crawl files stay local until then
+- CHANGE #23 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - all_inlinks - 2026-10-22.csv | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - all_inlinks - 2026-10-22.csv · sha edc84cc23aa1 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #24 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - duplicate_content - 2026-10-22.csv | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - duplicate_content - 2026-10-22.csv · sha 5daacbe1e167 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #25 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - duplicate_descriptions - 2026-10-22.csv | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - duplicate_descriptions - 2026-10-22.csv · sha 53b593445947 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #26 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - duplicate_titles - 2026-10-22.csv | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - duplicate_titles - 2026-10-22.csv · sha 53b593445947 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #27 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - external_all - 2026-10-22.csv | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - external_all - 2026-10-22.csv · sha 934ac91d7460 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #28 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - h1_all - 2026-10-22.csv | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - h1_all - 2026-10-22.csv · sha 3801abbef63e | result: done · copied (Drive for desktop syncs it)
+- CHANGE #29 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - h2_all - 2026-10-22.csv | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - h2_all - 2026-10-22.csv · sha 7d05590534b5 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #30 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - internal_all - 2026-10-22.csv | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - internal_all - 2026-10-22.csv · sha 45aa48645df3 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #31 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - links_all - 2026-10-22.csv | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - links_all - 2026-10-22.csv · sha 03abc53f2bf6 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #32 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - meta_description_all - 2026-10-22.csv | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - meta_description_all - 2026-10-22.csv · sha 5c2f01c2a5fc | result: done · copied (Drive for desktop syncs it)
+- CHANGE #33 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - non_indexable - 2026-10-22.csv | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - non_indexable - 2026-10-22.csv · sha 4321a8051aa3 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #34 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - page_titles_all - 2026-10-22.csv | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - page_titles_all - 2026-10-22.csv · sha d5db04718975 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #35 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - redirect_chains - 2026-10-22.csv | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - redirect_chains - 2026-10-22.csv · sha bd46e157bfd0 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #36 [drive_file] drive:First Choice Seamless Gutters - TMS/01 - Discovery and Audit/Evidence/First Choice Seamless Gutters - DFS - crawl-config - 2026-10-22.md | upload | old: (new file) | new: First Choice Seamless Gutters - DFS - crawl-config - 2026-10-22.md · sha b66f117def59 | result: done · copied (Drive for desktop syncs it)
+### HANDOFF · /crawl · 2026-10-23 · run 20261022-200953-crawl-ecac
+Stage 3 (Data), step S05 crawl. Client domain: https://www.firstchoiceseamlessgutters.net/ (canonical www).
+
+- Settings: basic mode, max pages 66 (sitemap 44 URLs × 1.5), confirmed by Paul.
+- Result: 47 URLs in the crawl tables; 41 pages' body text captured (S05b, no charge).
+- Cost: $0.0099 (one DataforSEO call). Balance after: about $69.15.
+- Tables: internal_all, links_all, page_titles_all, meta_description_all, h1_all, h2_all, all_inlinks (1,772 rows), external_all, plus duplicate_titles, duplicate_descriptions, duplicate_content, redirect_chains, non_indexable (all 0 rows) and the crawl-config .md.
+- Local files: clients/first-choice-seamless-gutters/inputs/crawl/ (git-ignored). Agent-readable: data/crawl/crawl-summary.csv and data/crawl/page-text.csv.
+- Drive: all 14 files copied to Shared drives / CMS SERVICE PAGE AUDITS / v3. CMS Technical SEO Audit 2026 / First Choice Seamless Gutters - TMS.
+
+Earlier attempts: run 20261022-195904-crawl-722b stopped before any spend (DFS credentials missing from .env) and was aborted with Paul's approval.
+
+Open: flag F-001 (config.json drive.local_root pointed at My Drive; fixed by Paul in a system session).
+
+**Changes (script):** 15 — drive_file ×14, audit_step ×1
+- FLAG 2026-10-22T20:26 · run 20261022-200953-crawl-ecac · F-001 · config.json drive.local_root points at My Drive/v3. CMS Technical SEO Audit 2026, but the folder is under Shared drives/CMS SERVICE …
+**Steps recorded (script):** S05 done
+### END HANDOFF
+## RUN 20261022-200953-crawl-ecac · FINISHED · 2026-10-23T06:41:34-05:00
+Changes: 15 · Summary: Crawled 47 URLs, 41 pages' text captured, $0.0099
+Spend: 0 tokens · $0.01
+- CHANGE #37 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: (new file) | new: First Choice Seamless Gutters - Handoff Log.md · sha 50a68bd972dd | result: done · copied (Drive for desktop syncs it)
+- CHANGE #38 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Approval Record.md | upload | old: (new file) | new: First Choice Seamless Gutters - Approval Record.md · sha a2f30bfc3a49 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #39 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: (new file) | new: First Choice Seamless Gutters - Document Checklist.md · sha 3fdf3d5737ac | result: done · copied (Drive for desktop syncs it)
+- CHANGE #40 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Brand Guide.md | upload | old: (new file) | new: First Choice Seamless Gutters - Brand Guide.md · sha ab9b63ec1f53 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #41 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: (new file) | new: First Choice Seamless Gutters - Status.md · sha ff7cc5f467aa | result: done · copied (Drive for desktop syncs it)
+- CHANGE #42 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | upload | old: (new file) | new: First Choice Seamless Gutters - VA Worklist.md · sha 8cefdfa66db9 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #43 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.csv | upload | old: (new file) | new: First Choice Seamless Gutters - VA Worklist.csv · sha da6c0066750f | result: done · copied (Drive for desktop syncs it)

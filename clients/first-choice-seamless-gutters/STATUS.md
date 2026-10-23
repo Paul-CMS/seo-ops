@@ -1,11 +1,11 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 3 of 8 — Data**
-- **What is happening now:** ready to start: crawl the site while the client has the proof sheet
+- **What is happening now:** ready to start: reviews, rankings, People Also Ask, backlinks, citations, grid, GSC — one cost yes for the whole step
 - **Waiting on:** nobody
-- **Next action:** `/crawl first-choice-seamless-gutters` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: researcher (sonnet), discovery-audit (opus)) · model: Haiku chat
+- **Next action:** `/discovery first-choice-seamless-gutters data` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: researcher (sonnet), discovery-audit (opus)) · model: Haiku chat
 
-_Generated 2026-10-22T20:09 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-23T06:41 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -68,6 +68,9 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Fir
 
 _Inputs the data manifest (methodology/data-manifest.json) says a step must read, where that step has not finished for this client yet._
 
+- **crawl-page-text** (2 file(s), e.g. `data/crawl/crawl-summary.csv`) — read by discovery:audit, build:evidence
+- **crawl-raw** (1 file(s), e.g. `inputs/crawl/crawl-state.json`) — read by the step that reads crawl-page-text
+- **imported-exports** (14 file(s), e.g. `inputs/crawl/First Choice Seamless Gutters - DFS - all_inlinks - 2026-10-22.csv`) — read by discovery:audit
 - **proof-sheet** (1 file(s), e.g. `discovery/First Choice Seamless Gutters - Client Proof Sheet - REVIEW.md`) — read by build:evidence, build:facts, discovery:reconcile
 - **discovery-record** (1 file(s), e.g. `discovery/First Choice Seamless Gutters - Discovery Record - REVIEW.md`) — read by build:evidence, build:facts
 - **facts** (1 file(s), e.g. `facts.json`) — read by build:evidence, build:facts
@@ -75,11 +78,11 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 
 ## Flagged for Paul (system)
 
-_None._
+- **F-001** (open, not yet reviewed) 2026-10-22 · crawl: config.json drive.local_root points at My Drive/v3. CMS Technical SEO Audit 2026, but the folder is under Shared drives/CMS SERVICE PAGE AUDITS/, so drive.py cannot find it and uploads stay pending — workaround: Paul to fix local_root in a system session (/system); crawl files stay local until then
 
 ## Spend so far
 
-- DataforSEO: $0.00
+- DataforSEO: $0.01
 - Claude API (llm.py): $0.00 over 0 call(s)
 
 ## Spend by stage (model)
@@ -90,8 +93,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 |---|---|---|---|---|
 | 1 · Setup | 1 | 1,774,002 | $0.02 | $0.00 |
 | 2 · Discovery | 3 | 11,117,410 | $3.80 | $0.00 |
+| 3 · Data | 1 | 0 | $0.01 | $0.00 |
 | any stage | 5 | 1,178,180 | $0.01 | $0.00 |
-| **total** | 9 | 14,069,592 | $3.84 | $0.00 |
+| **total** | 10 | 14,069,592 | $3.85 | $0.00 |
 
 ## Spend by step (model)
 
@@ -101,6 +105,7 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
-| **total** | 9 | 14,069,592 | $3.84 | $0.00 |
+| crawl | 1 | 0 | $0.01 | $0.00 |
+| **total** | 10 | 14,069,592 | $3.85 | $0.00 |
 
-Last run: /discovery 2026-10-22T19:52 — Proof sheet revised: address 3517 Century Blvd; GBP manager ask removed; licence asks trade licence only; local business tax receipt line added (checked on official pages).
+Last run: /crawl 2026-10-23T06:41 — Crawled 47 URLs, 41 pages' text captured, $0.0099

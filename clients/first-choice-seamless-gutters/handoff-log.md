@@ -184,3 +184,22 @@ Run: 20261022-083823-wp-check-75b9
 - FACT 2026-10-22T19:49 · run 20261022-194949-discovery-47cc · website-street-address (value, status, source) · paul_approved · 3517 Century Blvd, Lakeland, FL · source Paul, 2026-10-22 (confirmed fo…
 **Steps recorded (script):** S04 done
 
+## /crawl · 2026-10-23 · run 20261022-200953-crawl-ecac
+
+Stage 3 (Data), step S05 crawl. Client domain: https://www.firstchoiceseamlessgutters.net/ (canonical www).
+
+- Settings: basic mode, max pages 66 (sitemap 44 URLs × 1.5), confirmed by Paul.
+- Result: 47 URLs in the crawl tables; 41 pages' body text captured (S05b, no charge).
+- Cost: $0.0099 (one DataforSEO call). Balance after: about $69.15.
+- Tables: internal_all, links_all, page_titles_all, meta_description_all, h1_all, h2_all, all_inlinks (1,772 rows), external_all, plus duplicate_titles, duplicate_descriptions, duplicate_content, redirect_chains, non_indexable (all 0 rows) and the crawl-config .md.
+- Local files: clients/first-choice-seamless-gutters/inputs/crawl/ (git-ignored). Agent-readable: data/crawl/crawl-summary.csv and data/crawl/page-text.csv.
+- Drive: all 14 files copied to Shared drives / CMS SERVICE PAGE AUDITS / v3. CMS Technical SEO Audit 2026 / First Choice Seamless Gutters - TMS.
+
+Earlier attempts: run 20261022-195904-crawl-722b stopped before any spend (DFS credentials missing from .env) and was aborted with Paul's approval.
+
+Open: flag F-001 (config.json drive.local_root pointed at My Drive; fixed by Paul in a system session).
+
+**Changes (script):** 15 — drive_file ×14, audit_step ×1
+- FLAG 2026-10-22T20:26 · run 20261022-200953-crawl-ecac · F-001 · config.json drive.local_root points at My Drive/v3. CMS Technical SEO Audit 2026, but the folder is under Shared drives/CMS SERVICE …
+**Steps recorded (script):** S05 done
+

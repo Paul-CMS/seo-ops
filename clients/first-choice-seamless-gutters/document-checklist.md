@@ -1,6 +1,6 @@
 # First Choice Seamless Gutters - Document Checklist
 
-Generated 2026-10-22T20:09 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-23T06:41 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -10,7 +10,7 @@ Generated 2026-10-22T20:09 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S02 Public discovery: live site, GBP, social, review profiles, Secretary o | done | site, GBP, BBB, press release read; Sunbiz/Yelp/HomeAdvisor blocked (403), Facebook login wall, licence boards form-only -> manual_lookup H-2026-10-22-02 |
 | [x] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | done | category entity Rain gutter Q152833 (GBP primary disputed), area entity proposal Polk County/Lakeland-Winter Haven MSA Q501043, variants, Wikidata URIs |
 | [x] | S04 Proof sheet built (Markdown + client Google Doc) | done | Proof sheet revised: website address filled (3517 Century Blvd, Lakeland), GBP Manager request removed, licence row trade/contractor only, local business tax receipt request added after Polk County/Lakeland official check; 17/17 questions kept, check passed |
-| [ ] | S05 Site crawl (max pages = sitemap size × 1.5, min 20, max 1000; 1000 whe | — |  |
+| [x] | S05 Site crawl (max pages = sitemap size × 1.5, min 20, max 1000; 1000 whe | done | clients/first-choice-seamless-gutters/inputs/crawl/ |
 | [ ] | S05b Page text capture: the body text of every crawled HTML page (the basic | — |  |
 | [ ] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | — |  |
 | [ ] | S07 Rankings + cannibalization: every ranked keyword per URL (top 100), co | — |  |
