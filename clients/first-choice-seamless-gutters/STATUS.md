@@ -1,11 +1,11 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 3 of 8 — Data**
-- **What is happening now:** Stage 2 (Discovery) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open first-choice-seamless-gutters) and type /next first-choice-seamless-gutters. Next there: /crawl first-choice-seamless-gutters (crawl the site while the client has the proof sheet)
+- **What is happening now:** ready to start: crawl the site while the client has the proof sheet
 - **Waiting on:** nobody
-- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
+- **Next action:** `/crawl first-choice-seamless-gutters` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: researcher (sonnet), discovery-audit (opus)) · model: Haiku chat
 
-_Generated 2026-10-22T19:57 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-22T20:09 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 

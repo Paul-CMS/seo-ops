@@ -18,3 +18,7 @@ _None yet._
 
 - 2026-10-22T07:34 — Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)
 - 2026-10-22T08:39 — WordPress connected (/wp-check passed in the last 30 days) — met (system-verified)
+
+## Runs aborted (Paul's call)
+
+- 2026-10-22T20:09 20261022-195904-crawl-722b — Paul chose abort; crawl never ran (DFS credentials missing), restarting fresh

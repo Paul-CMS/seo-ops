@@ -328,3 +328,9 @@ Approved version: clients/first-choice-seamless-gutters/discovery/First Choice S
 - SETTLED wordpress_login · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · WordPress login for the system: dedicated Editor (recommended default)
 - SETTLED tools.citations · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Citations data this audit: BrightLocal (recommended default)
 - SETTLED tools.gsc_ga4 · 2026-10-22T19:57:24-05:00 · run approval-1 · by Paul (Approval 1) · Search Console / Analytics access: use Search Console (access exists); GA4 not used unless shared (recommended default)
+
+## RUN 20261022-195904-crawl-722b · STARTED · /crawl · 2026-10-22T19:59:04-05:00
+Step: crawl · session d6aa4d6c-81f8-4c49-a72a-eca5dd15aa0c
+- UNLOCK 2026-10-22T20:08 · client lock removed (Paul)
+## RUN 20261022-195904-crawl-722b · ABORTED · 2026-10-22T20:09:49-05:00
+Reason (Paul): Paul chose abort; crawl never ran (DFS credentials missing), restarting fresh
