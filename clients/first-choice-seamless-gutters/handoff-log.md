@@ -240,3 +240,21 @@ Open: flag F-003 (backlinks raw folder) is logged for the system session; confir
 - FLAG 2026-10-23T13:15 · run 20261023-125720-discovery-f174 · F-005 · COM-T (titles 60 characters or fewer) cannot be met by the settled title formats with the settled variants: the homepage title '…
 **Steps recorded (script):** S12 done, S13 done, S14 done, S15 done, S16 done, S17 done, S18 done
 
+## /discovery · 2026-10-23 · run 20261023-135245-discovery-56df
+
+Paul answered the five audit Asks (2026-10-23):
+- Plant City (F-015, ask 1): no city page. Plant City is outside the established service area, so the city list stays as it is. Option a applies: 301 to /areas-we-serve/ once the citation check (C3) is run and no-leads (C4) is confirmed.
+- Homepage H1 (F-017, ask 2): option a, no change; the lock holds.
+- 10-year warranty (F-003, ask 3): option a, leave it live. The owner's public review response (data/reviews/raw/reviews.json) confirms the 10-year installation warranty; recorded as fact d-warranty-terms (client_confirmed).
+- Licensed and insured (F-004, ask 4): resolved. Licence not required in Florida for these services; recorded as d-licence-numbers-and-classes. Not re-raised.
+- $150 military/seniors offer (F-005, ask 5): option a, leave it live. Confirmed still running; recorded as offer-military-seniors-150.
+
+The other 32 rows took the recommended option.
+Urgent Fix items unchanged: F-008 (estimate links to a domain now showing another business, Lake Wales and Lakeland) and F-011 (broken header Call Us link, 43 pages).
+Open: flag F-004 (citation export missing; the C3 screen counted it as a pass) is still open.
+
+- FACT 2026-10-23T13:52 · run 20261023-135245-discovery-56df · d-warranty-terms (value, status, source) · client_confirmed · 10-year installation warranty; the company corrects any problem with its g…
+- FACT 2026-10-23T13:52 · run 20261023-135245-discovery-56df · d-licence-numbers-and-classes (value, status, source) · paul_approved · Not required in Florida for these services; no licence number to…
+- FACT 2026-10-23T13:52 · run 20261023-135245-discovery-56df · offer-military-seniors-150 (new) · paul_approved · $150 off full house installations for Military & Seniors: confirmed and still running…
+- FACT 2026-10-23T13:52 · run 20261023-135245-discovery-56df · plant-city-served (new) · paul_approved · Not in the established service area; no Plant City page. Cities listed stay as the established…
+

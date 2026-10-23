@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 4 of 8 — Audit**
-- **What is happening now:** waiting for Paul's approval — the audit review sheet has 5 question(s) (0 for the client — Paul sends client-questions.csv) and 32 decided for you (clients/first-choice-seamless-gutters/audit/2026-10-23/audit-review.csv): reply "accept all", or "accept all except 3b" — an empty answer takes the recommended option; the client's questions wait for the client
-- **Waiting on:** Paul — the audit review sheet has 5 question(s) (0 for the client — Paul sends client-questions.c
-- **Next action:** Paul types `/discovery first-choice-seamless-gutters review "accept all"` (or asks for changes first) · model: Haiku chat
+- **What is happening now:** waiting for Paul's approval — the audit is ready for your approval on its own — the audit (its review sheet, registers and Evidence Manifest): audit-review.csv, findings.csv, url-decision-map.csv, First Choice Seamless Gutters - Audit Review Sheet - REVIEW.md, First Choice Seamless Gutters - Evidence Manifest - REVIEW.md. Safe fixes and the technical blocker handoff start at once; the Brand Guide follows when the client's facts are back
+- **Waiting on:** Paul — the audit is ready for your approval on its own — the audit (its review sheet, registers a
+- **Next action:** Paul types `/approve first-choice-seamless-gutters audit_approved --files "clients/first-choice-seamless-gutters/audit/2026-10-23/audit-review.csv,clients/first-choice-seamless-gutters/audit/2026-10-23/findings.csv,clients/first-choice-seamless-gutters/audit/2026-10-23/url-decision-map.csv,clients/first-choice-seamless-gutters/audit/2026-10-23/deliverables/First Choice Seamless Gutters - Audit Review Sheet - REVIEW.md,clients/first-choice-seamless-gutters/audit/2026-10-23/deliverables/First Choice Seamless Gutters - Evidence Manifest - REVIEW.md"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-23T13:17 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-23T13:53 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the audit review sheet has 5 question(s) (0 for the client — Paul sends client-questions.csv) and 32 decided for you (clients/first-choice-seamless-gutters/audit/2026-10-23/audit-review.csv): reply "accept all", or "accept all except 3b" — an empty answer takes the recommended option; the client's questions wait for the client | 2026-10-23 | /discovery first-choice-seamless-gutters review "accept all" |
+| Paul | the audit is ready for your approval on its own — the audit (its review sheet, registers and Evidence Manifest): audit-review.csv, findings.csv, url-decision-map.csv, First Choice Seamless Gutters - Audit Review Sheet - REVIEW.md, First Choice Seamless Gutters - Evidence Manifest - REVIEW.md. Safe fixes and the technical blocker handoff start at once; the Brand Guide follows when the client's facts are back | 2026-10-23 | /approve first-choice-seamless-gutters audit_approved |
 
 ## Waiting on (not blocking)
 
@@ -56,6 +56,11 @@ _Open, but the next action above goes ahead without them._
 - WordPress login for the system: dedicated Editor (recommended default)
 - Citations data this audit: BrightLocal (recommended default)
 - Search Console / Analytics access: use Search Console (access exists); GA4 not used unless shared (recommended default)
+- 5. Architecture, services, locations, page types (F-015): Hold until the client answers: served, rebuild; not served, 301 to /areas-we-serve/ once C3 is checked against the citation export and C4 (no leads) is confirmed
+- 6. On-page and content structure (F-017): No H1 change — the lock holds
+- 3. Brand, entity and verified truth (F-003): Leave it live until the returned proof sheet answers warranty_terms; rebuilt pages state it only once confirmed
+- 3. Brand, entity and verified truth (F-004): Leave it live until the returned proof sheet answers; rebuilt pages state it only with the licence number
+- 3. Brand, entity and verified truth (F-005): Leave it live until the client confirms it is still running
 
 ## Open VA items
 
@@ -103,9 +108,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 1 · Setup | 1 | 1,774,002 | $0.02 | $0.00 |
 | 2 · Discovery | 3 | 11,117,410 | $3.80 | $0.00 |
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
-| 4 · Audit | 1 | 17,111,940 | $6.47 | $0.00 |
+| 4 · Audit | 2 | 17,892,793 | $6.48 | $0.00 |
 | any stage | 5 | 1,178,180 | $0.01 | $0.00 |
-| **total** | 12 | 31,181,532 | $10.94 | $0.00 |
+| **total** | 13 | 31,962,385 | $10.95 | $0.00 |
 
 ## Spend by step (model)
 
@@ -117,7 +122,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:data | 1 | 0 | $0.62 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
+| discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 12 | 31,181,532 | $10.94 | $0.00 |
+| **total** | 13 | 31,962,385 | $10.95 | $0.00 |
 
-Last run: /discovery 2026-10-23T13:17 — Audit S12-S18 done: 50-row URL map (0 redirects, Plant City held), 43 findings (6 Fix, 32 Fix and list, 5 Ask), review sheet ready for Paul
+Last run: /discovery 2026-10-23T13:53 — Audit review answered: Plant City no page, H1 unchanged, warranty live, licence resolved, offer live

@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-23T12:20:11-05:00",
+  "updated": "2026-10-23T13:52:48-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -201,14 +201,15 @@
       "section": "D",
       "num": "",
       "label": "Licence numbers and classes",
-      "value": "[NEED: licence number and class — site claims licensed, no number shown; Paul has none; asked on the proof sheet; state/Polk County lookup pending]",
-      "status": "unknown",
+      "value": "Not required in Florida for these services; no licence number to show. Settled: not an open question.",
+      "status": "paul_approved",
       "status_text": null,
-      "source": "searched: site, BBB (licensing not listed), web search 2026-10-22; Paul 2026-10-22: none provided",
+      "source": "Paul, 2026-10-23",
       "quote": "We’re fully licensed and insured",
-      "date": "2026-10-22",
+      "date": "2026-10-23",
       "who": "Paul",
-      "count": null
+      "count": null,
+      "was": "Unknown"
     },
     {
       "id": "d-insurance-bonded-status",
@@ -259,15 +260,15 @@
       "section": "D",
       "num": "",
       "label": "Warranty terms",
-      "value": "10-Year Workmanship Guarantee/Warranty (site claim; terms not published)",
-      "status": "submitted",
+      "value": "10-year installation warranty; the company corrects any problem with its gutters free of cost (owner's public review response, Google).",
+      "status": "client_confirmed",
       "status_text": null,
-      "source": "firstchoiceseamlessgutters.net homepage, read 2026-10-22",
+      "source": "owner review response in data/reviews/raw/reviews.json; confirmed by Paul 2026-10-23",
       "quote": "backed by a 10-Year Workmanship Guarantee",
-      "date": "2026-10-22",
+      "date": "2026-10-23",
       "who": "Paul",
       "count": null,
-      "was": "Unknown"
+      "was": "Submitted"
     },
     {
       "id": "d-guarantees-response-time-on-time-satisfaction",
@@ -754,6 +755,36 @@
       "date": "2026-10-23",
       "who": "reviews.py extract",
       "count": 3
+    },
+    {
+      "id": "offer-military-seniors-150",
+      "section": "D",
+      "num": "",
+      "label": "Military and seniors offer",
+      "value": "$150 off full house installations for Military & Seniors: confirmed and still running.",
+      "status": "paul_approved",
+      "source": "Paul, 2026-10-23",
+      "quote": "",
+      "date": "2026-10-23",
+      "who": "Paul",
+      "count": null,
+      "was": "Unknown",
+      "status_text": null
+    },
+    {
+      "id": "plant-city-served",
+      "section": "D",
+      "num": "",
+      "label": "Plant City served",
+      "value": "Not in the established service area; no Plant City page. Cities listed stay as the established service area.",
+      "status": "paul_approved",
+      "source": "Paul, 2026-10-23",
+      "quote": "",
+      "date": "2026-10-23",
+      "who": "Paul",
+      "count": null,
+      "was": "Unknown",
+      "status_text": null
     }
   ]
 }
