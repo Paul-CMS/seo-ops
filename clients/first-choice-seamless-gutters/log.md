@@ -271,3 +271,31 @@ Gates checked: marked:entity_record
 ## RUN 20261022-101800-discovery-68d2 · FINISHED · 2026-10-22T10:21:01-05:00
 Changes: 1 · Summary: Client proof sheet built (17 client questions, return by 29 Oct 2026). Open: website street address and agency GBP manager email.
 Spend: 3051206 tokens · $1.09 (measured)
+
+## RUN 20261022-194949-discovery-47cc · STARTED · /discovery · 2026-10-22T19:49:49-05:00
+Step: discovery:proof-sheet · session 0a110021-8e6f-410a-8d0a-23c86a395f69
+Gates checked: marked:entity_record
+- FACT 2026-10-22T19:49 · run 20261022-194949-discovery-47cc · website-street-address (value, status, source) · paul_approved · 3517 Century Blvd, Lakeland, FL · source Paul, 2026-10-22 (confirmed for website display; billing address check) · by Paul
+- SETTLED address_display_website · 2026-10-22T19:49:52-05:00 · run 20261022-194949-discovery-47cc · by Paul · Website street address: 3517 Century Blvd, Lakeland (Paul, 2026-10-22).
+- CLOSED address_display_website · 2026-10-22T19:49:52-05:00 · run 20261022-194949-discovery-47cc · by address_display_website · answered by 'address_display_website'
+- SETTLED gbp_manager_access · 2026-10-22T19:49:52-05:00 · run 20261022-194949-discovery-47cc · by Paul · Agency is already a Manager on the client GBP; the proof sheet must not ask the client to add us. (Paul, 2026-10-22)
+- SETTLED licence_note_florida · 2026-10-22T19:49:52-05:00 · run 20261022-194949-discovery-47cc · by Paul · Paul note: Florida has no general state business license to operate. Proof sheet asks for the trade/contractor licence only, not a business license. Local business tax receipt (county/city) is a separate item to verify, not asked as a business license. (Paul, 2026-10-22)
+- CHANGE #21 [audit_step] S04 | Proof sheet built (Markdown + client Google Doc) | old:  | new: done | result: DONE — Proof sheet revised: website address filled (3517 Century Blvd, Lakeland), GBP Manager request removed, licence row trade/contractor only, local business tax receipt request added after Polk County/Lakeland official check; 17/17 questions kept, check passed
+### HANDOFF · /discovery · 2026-10-22 · run 20261022-194949-discovery-47cc
+- Proof sheet revised: `discovery/First Choice Seamless Gutters - Client Proof Sheet - REVIEW.md`; questions in `discovery/proof-sheet-questions.json`.
+- Website street address filled: 3517 Century Blvd, Lakeland, FL (fact website-street-address, paul_approved). No billing mention remains.
+- The GBP Manager request was removed (gbp_manager_access settled). The GBP was not edited.
+- Licence row (Block B) and question licence_number now ask only for the trade or contractor licence: number and class. No business licence is requested (licence_note_florida settled).
+- Local business tax receipt: the public check CONFIRMED it for Polk County (polktaxes.com/services/local-business-taxes/) and for the City of Lakeland (lakelandgov.net business-tax page). Both require one for a business located or operating there. Fla. Stat. ch. 205 authorises both taxes. Winter Haven's page lists the receipt only as a step in opening a business. A neutral document request was added under C.
+- Not checked: whether 3517 Century Blvd is inside Lakeland city limits, and whether Florida DBPR requires a state licence for gutter work. No official page on that was found.
+- settled.py filter kept 17/17 questions. questions.py check passed. Return-by date, 11 services, 21 towns and 11 claims are unchanged.
+- Still [NEED]: licence number and class (asked in Block B).
+- Step S04 is recorded as done. `status.py mark proof_sheet` was set again. Approval 1 (entity_approved, proof_sheet_approved) is ready for Paul.
+
+**Changes (script):** 1 — audit_step ×1
+- FACT 2026-10-22T19:49 · run 20261022-194949-discovery-47cc · website-street-address (value, status, source) · paul_approved · 3517 Century Blvd, Lakeland, FL · source Paul, 2026-10-22 (confirmed fo…
+**Steps recorded (script):** S04 done
+### END HANDOFF
+## RUN 20261022-194949-discovery-47cc · FINISHED · 2026-10-22T19:52:10-05:00
+Changes: 1 · Summary: Proof sheet revised: address 3517 Century Blvd; GBP manager ask removed; licence asks trade licence only; local business tax receipt line added (checked on official pages).
+Spend: 1651255 tokens · $0.72 (measured)

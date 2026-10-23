@@ -7,11 +7,6 @@ About ten minutes. **If we don't hear back by Thursday 29 October, we'll build w
 
 ---
 
-## Access — one thing to do
-| Please | Done? |
-|---|---|
-| Add us as a **Manager** on your Google Business Profile (Business Profile → ⋮ → Business Profile settings → Managers → Add → [NEED: agency GBP manager email — Paul to fill]) | |
-
 ## A — Confirm this
 *Tick ✓ if right, ✗ and fix it if wrong.*
 
@@ -28,7 +23,7 @@ About ten minutes. **If we don't hear back by Thursday 29 October, we'll build w
 | What we have | Correct? | Fix it here |
 |---|---|---|
 | Main phone: (863) 330-3243 *(your website and Google profile)* | | |
-| Street address shown on the website: [NEED: website address — Paul confirming from client billing] | | |
+| Street address shown on the website: 3517 Century Blvd, Lakeland, FL *(your website)* | | |
 | Hours: 7 AM – 8 PM, Monday to Sunday *(from your Google profile)* | | |
 | Customers come to you, or you go to them? We have: you go to the customer's home, no walk-in office *(your Google profile shows a service area, no address)* | | |
 
@@ -79,7 +74,7 @@ licence or insurance claims until you confirm them — that's the only reason we
 |---|---|
 | Your website says both "Based in Lakeland, FL" and "Based in Winter Haven" *(homepage)*. Which town are you based in? | Lakeland / Winter Haven / other: |
 | Plant City is on your website and Google profile, and Sebring is on your Google profile — both are outside Polk County. Do you work there regularly? | Plant City yes / no · Sebring yes / no |
-| "We're fully licensed and insured" *(homepage)* — which licence do you hold (state or Polk County), and what is its number? | Licence type: ______ Number: ______ |
+| "We're fully licensed and insured" *(homepage)* — which trade or contractor licence do you hold, and what are its number and class? | Licence: ______ Number: ______ Class: ______ |
 | "fully licensed and insured" *(homepage)* — is the insurance part accurate? | yes / no — correction: |
 | "backed by a 10-Year Workmanship Guarantee" *(homepage)* — is that accurate, and is it in writing? | yes / no — correction: |
 | "Business Started: 11/24/2021" *(your BBB profile)* — is that when you started trading? | yes / no — correct date: |
@@ -90,7 +85,7 @@ licence or insurance claims until you confirm them — that's the only reason we
 | "named the Best Gutter Installer in Lakeland, Florida by GutterPro HQ for 2025" *(press release, December 2025)* | yes / no — correction: |
 
 ## C — We need this from you
-- **Documents:** certificate of insurance · licence copy · logo files (largest size you have) · a photo of the owner · job photos
+- **Documents:** certificate of insurance · contractor licence copy · your current local business tax receipt (Polk County, and your city's if you hold one) · logo files (largest size you have) · a photo of the owner · job photos
 - **Facts** (a word or two each):
   1. Is there a minimum job charge or trip charge?
   2. What happens when a customer calls at 7pm on a Saturday?
@@ -111,11 +106,15 @@ Questions? Reply to the email this came with.
 - Question set: discovery/proof-sheet-questions.json — settled.py filter kept 17/17; questions.py check passed.
 - Settled by Paul this run, not on the sheet: primary category = Gutter service; area = Polk County, Florida; GBP stays SAB
   (address type row is a confirm of the SAB setup only); grid tool = Local Dominator.
-- Open for Paul, not the client: which street address the website shows — Paul confirms from the client billing address.
-  Candidates NOT chosen: 3517 Century Blvd, Lakeland 33811 (site schema, press release) · 1575 Lemon Ave (HomeAdvisor).
-  Fact website-street-address = [NEED]. Replace the [NEED] row before sending, or remove it.
-- Agency GBP manager email: no address on record in agency-profile — Paul fills before sending.
-- Licence number and class: [NEED] (Paul: none provided); asked in Block B.
+- Revised in run 20261022-194949-discovery-47cc: website street address = 3517 Century Blvd, Lakeland, FL (fact
+  website-street-address, paul_approved; address_display_website settled). GBP Manager request removed
+  (gbp_manager_access settled; GBP not edited). Licence row asks for the trade/contractor licence only, no business
+  license (licence_note_florida settled).
+- Local business tax receipt request added after a public check on 2026-10-22. Polk County Tax Collector
+  (polktaxes.com/services/local-business-taxes/) and City of Lakeland (lakelandgov.net business-tax page) require a
+  receipt for businesses located and/or operating there; Fla. Stat. ch. 205 authorises both. The Winter Haven page
+  lists the receipt only as a step in opening a business.
+- Licence number and class: [NEED] (Paul: none provided); asked in Block B. DBPR rule for gutter work not checked.
 - Not asked (public or audit observations): BBB "Other Phone" (863) 320-2842; site "95+ 5 Star Google Reviews" vs GBP 138;
   schema Wednesday hours "00:00"; "bbc accredited" typo; singular "Seamless Gutter Inc" on the homepage; legal name and
   incorporation record (Sunbiz, Gwen manual_lookup); GBP Website field and secondary categories (Gwen).

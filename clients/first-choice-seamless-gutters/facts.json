@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-22T10:19:54-05:00",
+  "updated": "2026-10-22T19:49:52-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -507,14 +507,15 @@
       "section": "D",
       "num": "",
       "label": "Street address shown on the website",
-      "value": "[NEED: website address — Paul confirming from client billing]",
-      "status": "unknown",
-      "source": "Paul, 2026-10-22: confirming from the client's billing address; candidates 3517 Century Blvd, Lakeland 33811 (site schema, press release) and 1575 Lemon Ave (HomeAdvisor snippet) not chosen",
+      "value": "3517 Century Blvd, Lakeland, FL",
+      "status": "paul_approved",
+      "source": "Paul, 2026-10-22 (confirmed for website display; billing address check)",
       "quote": "",
       "date": "2026-10-22",
       "who": "Paul",
       "count": null,
-      "status_text": null
+      "status_text": null,
+      "was": "Unknown"
     }
   ]
 }

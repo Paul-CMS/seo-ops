@@ -2,17 +2,16 @@
 
 - **Stage 2 of 8 — Discovery**
 - **What is happening now:** waiting for Paul's approval — Discovery is ready for your approval in one line — the Decision Sheet and the entity foundation: First Choice Seamless Gutters - Decision Sheet - REVIEW.md, First Choice Seamless Gutters - Discovery Record - REVIEW.md, brand-guide.md#A+B1+B2; the client proof sheet (or the client's direct answers): First Choice Seamless Gutters - Client Proof Sheet - REVIEW.md. Once approved, every Decision Sheet answer is settled for good and the data pulls can start
-- **Waiting on:** Paul — Discovery is ready for your approval in one line — the Decision Sheet and the entity found; Paul — Which address displays on the website: 3517 Century Blvd, Lakeland (site schema, press rel
+- **Waiting on:** Paul — Discovery is ready for your approval in one line — the Decision Sheet and the entity found
 - **Next action:** Paul types `/approve first-choice-seamless-gutters entity_approved proof_sheet_approved` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-22T10:21 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-22T19:52 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
 | Paul | Discovery is ready for your approval in one line — the Decision Sheet and the entity foundation: First Choice Seamless Gutters - Decision Sheet - REVIEW.md, First Choice Seamless Gutters - Discovery Record - REVIEW.md, brand-guide.md#A+B1+B2; the client proof sheet (or the client's direct answers): First Choice Seamless Gutters - Client Proof Sheet - REVIEW.md. Once approved, every Decision Sheet answer is settled for good and the data pulls can start | 2026-10-22 | /approve first-choice-seamless-gutters entity_approved proof_sheet_approved |
-| Paul | Which address displays on the website: 3517 Century Blvd, Lakeland (site schema, press release) or 1575 Lemon Ave (HomeAdvisor)? Paul will check the client billing address; keep [NEED] until then. | 2026-10-22 | address_display_website |
 
 ## Waiting on (not blocking)
 
@@ -31,6 +30,9 @@ _Open, but the next action above goes ahead without them._
 - Area entity: Polk County, Florida (Paul, 2026-10-22).
 - GBP stays a service area business; do not edit the GBP unless required (re-verification risk). Website displays an address.
 - Grid tool: Local Dominator (Paul, 2026-10-22).
+- Website street address: 3517 Century Blvd, Lakeland (Paul, 2026-10-22).
+- Agency is already a Manager on the client GBP; the proof sheet must not ask the client to add us. (Paul, 2026-10-22)
+- Paul note: Florida has no general state business license to operate. Proof sheet asks for the trade/contractor licence only, not a business license. Local business tax receipt (county/city) is a separate item to verify, not asked as a business license. (Paul, 2026-10-22)
 
 ## Open VA items
 
@@ -64,18 +66,18 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | Stage | Runs | Tokens | Session USD | API USD |
 |---|---|---|---|---|
 | 1 · Setup | 1 | 1,774,002 | $0.02 | $0.00 |
-| 2 · Discovery | 2 | 9,466,155 | $3.08 | $0.00 |
+| 2 · Discovery | 3 | 11,117,410 | $3.80 | $0.00 |
 | any stage | 5 | 1,178,180 | $0.01 | $0.00 |
-| **total** | 8 | 12,418,337 | $3.12 | $0.00 |
+| **total** | 9 | 14,069,592 | $3.84 | $0.00 |
 
 ## Spend by step (model)
 
 | Step | Runs | Tokens | Session USD | API USD |
 |---|---|---|---|---|
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
-| discovery:proof-sheet | 1 | 3,051,206 | $1.09 | $0.00 |
+| discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
-| **total** | 8 | 12,418,337 | $3.12 | $0.00 |
+| **total** | 9 | 14,069,592 | $3.84 | $0.00 |
 
-Last run: /discovery 2026-10-22T10:21 — Client proof sheet built (17 client questions, return by 29 Oct 2026). Open: website street address and agency GBP manager email.
+Last run: /discovery 2026-10-22T19:52 — Proof sheet revised: address 3517 Century Blvd; GBP manager ask removed; licence asks trade licence only; local business tax receipt line added (checked on official pages).

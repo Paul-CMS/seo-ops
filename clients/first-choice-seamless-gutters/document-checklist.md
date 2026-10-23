@@ -1,6 +1,6 @@
 # First Choice Seamless Gutters - Document Checklist
 
-Generated 2026-10-22T10:21 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-22T19:52 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -9,7 +9,7 @@ Generated 2026-10-22T10:21 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S01 Intake facts: website, GBP link, storefront/SAB, exact GBP Website-fie | done | intake facts present in status.json/facts.json (SAB, GBP link, Website-field URL, GSC access, CMS); nothing missing for discovery |
 | [x] | S02 Public discovery: live site, GBP, social, review profiles, Secretary o | done | site, GBP, BBB, press release read; Sunbiz/Yelp/HomeAdvisor blocked (403), Facebook login wall, licence boards form-only -> manual_lookup H-2026-10-22-02 |
 | [x] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | done | category entity Rain gutter Q152833 (GBP primary disputed), area entity proposal Polk County/Lakeland-Winter Haven MSA Q501043, variants, Wikidata URIs |
-| [x] | S04 Proof sheet built (Markdown + client Google Doc) | done | Proof sheet Markdown built from the Decision Sheet and Discovery Record; 17 client questions filtered and checked; client Google Doc waits for Paul's two fills (website address, agency email) |
+| [x] | S04 Proof sheet built (Markdown + client Google Doc) | done | Proof sheet revised: website address filled (3517 Century Blvd, Lakeland), GBP Manager request removed, licence row trade/contractor only, local business tax receipt request added after Polk County/Lakeland official check; 17/17 questions kept, check passed |
 | [ ] | S05 Site crawl (max pages = sitemap size × 1.5, min 20, max 1000; 1000 whe | — |  |
 | [ ] | S05b Page text capture: the body text of every crawled HTML page (the basic | — |  |
 | [ ] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | — |  |

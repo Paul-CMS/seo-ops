@@ -118,7 +118,7 @@ Everything a writer may state. **Not here = does not exist.**
 | Google Business Profile link | https://maps.app.goo.gl/c5prGD6rMCwptG3x6 | Submitted 2026-10-22 · was: Unknown | Paul, intake answer |
 | Content management system | WordPress | Client Confirmed 2026-10-22 · was: Unknown | Paul, intake answer |
 | Google Search Console access | Access exists (Paul reports) | Submitted 2026-10-22 · was: Unknown | Paul, intake answer |
-| Street address shown on the website | [NEED: website address — Paul confirming from client billing] | Unknown 2026-10-22 | Paul, 2026-10-22: confirming from the client's billing address; candidates 3517 Century Blvd, Lakeland 33811 (site schema, press release) and 1575 Lemon Ave (HomeAdvisor snippet) not chosen |
+| Street address shown on the website | 3517 Century Blvd, Lakeland, FL | Paul Approved 2026-10-22 · was: Unknown | Paul, 2026-10-22 (confirmed for website display; billing address check) |
 
 ### D2 · Unsupported claims
 Claims the site makes publicly that the client could not substantiate. Writers must not repeat
