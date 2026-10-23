@@ -17,8 +17,10 @@ so the VA does not need to learn it by heart. This guide covers only setup and t
 
 1. **GitHub:** add the VA as a collaborator on `github.com/Paul-CMS/seo-ops`: Settings →
    Collaborators → Add people, with **Write** access.
-2. **Google Drive:** share the folder **`v3. CMS Technical SEO Audit 2026`** with the VA's Google
-   account as **Editor**. Share nothing else. The system only ever touches v3.
+2. **Google Drive:** add the VA's Google account as a member of the shared drive **`CMS SERVICE PAGE
+   AUDITS`**, as **Content manager** (drive.google.com → *Shared drives* → right-click it → *Manage
+   members*). v3, **`v3. CMS Technical SEO Audit 2026`**, lives in that shared drive. The system only
+   ever touches v3.
 3. **Claude:** the VA needs a Claude plan that includes Claude Code and the Opus model (Max, Team or
    Enterprise). On a Team or Enterprise plan, add them to the organization.
 4. **Credentials:** decide what to give the VA, and send it through a password manager (never by
@@ -67,10 +69,11 @@ so the VA does not need to learn it by heart. This guide covers only setup and t
    the GitHub account Paul invited, and accept the invitation email from GitHub if you haven't yet.
 
 3. **Google Drive for desktop:** install it from https://www.google.com/drive/download/ and sign in
-   with the Google account Paul shared v3 with.
-   - Open https://drive.google.com → *Shared with me* → right-click **v3. CMS Technical SEO Audit
-     2026** → *Organize* → *Add shortcut* → *My Drive*. The folder then appears on your Mac.
+   with the Google account Paul added to the shared drive.
    - Open Drive for desktop's settings and choose **Stream files**.
+   - In Finder, open *Google Drive* → *Shared drives* → **CMS SERVICE PAGE AUDITS**. You should see
+     **v3. CMS Technical SEO Audit 2026** with the client folders inside. Do not add a shortcut to v3 in
+     *My Drive*; the system reads v3 from *Shared drives* only.
 
 4. **Claude desktop app:** install it from https://claude.ai/download, sign in, and open the **Code** tab.
 
@@ -101,14 +104,15 @@ so the VA does not need to learn it by heart. This guide covers only setup and t
 
 ### B3. Tell the system about this Mac — `machine.json`
 
-1. Find your local path to v3. In Finder, open *Google Drive* → *My Drive*, then right-click
+1. Find your local path to v3. In Finder, open *Google Drive* → *Shared drives* → *CMS SERVICE PAGE
+   AUDITS*, then right-click
    **v3. CMS Technical SEO Audit 2026** while holding **Option** → *Copy "v3…" as Pathname*.
 2. In `~/Documents/seo-ops`, create a file named **`machine.json`** (TextEdit → Format → *Make Plain
    Text*, or ask Claude to create it). Paste your path in place of the example:
 
    ```json
    {
-     "drive_local_root": "/Users/YOU/Library/CloudStorage/GoogleDrive-you@example.com/My Drive/v3. CMS Technical SEO Audit 2026",
+     "drive_local_root": "/Users/YOU/Library/CloudStorage/GoogleDrive-you@example.com/Shared drives/CMS SERVICE PAGE AUDITS/v3. CMS Technical SEO Audit 2026",
      "can_approve": false,
      "can_change_system": false
    }
@@ -315,7 +319,7 @@ python3 scripts/status.py view <slug>
 | Symptom | Fix |
 |---|---|
 | `REFUSED — this Mac runs the stages but does not approve` | Expected. Send the `/approve` line to Paul. |
-| `Drive for desktop is not set up` / `folder … is not there` | Check the path in `machine.json`, and that Drive for desktop is signed in and shows v3 under My Drive. |
+| `Drive for desktop is not set up` / `folder … is not there` | Check the path in `machine.json`, and that Drive for desktop is signed in and shows v3 under *Shared drives* → *CMS SERVICE PAGE AUDITS*. A v3 under *My Drive* is the wrong folder. |
 | `push failed (commit is safe locally)` | `git pull`, then `git push`. A conflict → send it to Paul. |
 | A `/next` refusal saying something is missing (exit 4) | Do what the message says first. Never work around it. |
 | WordPress 401 / `wp-check` fails | The Application Password in `.env` is wrong or was revoked. Ask Paul for a new one. |

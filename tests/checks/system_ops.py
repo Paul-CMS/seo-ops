@@ -119,6 +119,10 @@ def t_drive_shared_root(h):
     raw = json.loads((REPO / "config.json").read_text())["drive"]["local_root"]
     h.check("Paul 2026-10-23: config.json drive.local_root is v3 in the shared drive, not the empty My Drive copy",
             "/Shared drives/CMS SERVICE PAGE AUDITS/v3. CMS Technical SEO Audit 2026" in raw and "/My Drive/" not in raw, raw)
+    va = (REPO / "VA-SETUP.md").read_text()
+    h.check("Paul 2026-10-23: VA setup makes the VA a shared-drive member and its machine.json example points there",
+            "Manage\n   members" in va and "/Shared drives/CMS SERVICE PAGE AUDITS/v3. CMS Technical SEO Audit 2026\"" in va
+            and "/My Drive/v3" not in va and "Add shortcut" not in va)
 
 
 def t_lowcountry_sources(h):
