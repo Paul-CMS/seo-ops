@@ -114,6 +114,13 @@ def t_pycache_ignored(h):
     h.check("Python's bytecode cache is ignored, so it never blocks changereq.py start", not left, left)
 
 
+def t_drive_shared_root(h):
+    import json
+    raw = json.loads((REPO / "config.json").read_text())["drive"]["local_root"]
+    h.check("Paul 2026-10-23: config.json drive.local_root is v3 in the shared drive, not the empty My Drive copy",
+            "/Shared drives/CMS SERVICE PAGE AUDITS/v3. CMS Technical SEO Audit 2026" in raw and "/My Drive/" not in raw, raw)
+
+
 def t_lowcountry_sources(h):
     src = (REPO / "methodology" / "sources" / "sc-lowcountry.md").read_text()
     urls = ["hiltonheadislandsc.gov/building/permits/", "cityofbeaufort.org/154/Building-Codes",
@@ -154,4 +161,4 @@ def t_cm060(h):
             "first answer paragraph" in body and "40–60 words" in body and "| CM-060 | APPROVED" in rul, body[:300])
 
 
-SCENARIOS = [t_where_rename, t_sync_main, t_pycache_ignored, t_lowcountry_sources, t_readability_terms, t_cm060]
+SCENARIOS = [t_where_rename, t_sync_main, t_pycache_ignored, t_drive_shared_root, t_lowcountry_sources, t_readability_terms, t_cm060]
