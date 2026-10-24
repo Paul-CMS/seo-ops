@@ -5,7 +5,7 @@
 - **Waiting on:** Client (via Paul) — waiting for the client's facts (the returned proof sheet) — when they arrive, this records; Jonie — seopress settings handoff — 4 of 4 item(s) open; Gwen — manual lookup handoff — 8 of 8 item(s) open
 - **Next action:** `/discovery first-choice-seamless-gutters sheet-returned` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-23T13:58 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-23T21:26 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -15,6 +15,7 @@ _Generated 2026-10-23T13:58 by the system — do not edit. Start every session i
 | Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
 | Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
 | Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
+| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
 
 ## Waiting on (not blocking)
 
@@ -72,6 +73,7 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Fir
 - **H-2026-10-22-01-seopress_settings** (Jonie) — seopress settings: 4 of 4 open, issued 2026-10-22
 - **H-2026-10-22-02-manual_lookup** (Gwen) — manual lookup: 8 of 8 open, issued 2026-10-22
 - **H-2026-10-23-03-broken_link** (Jonie) — broken link: 10 of 10 open, issued 2026-10-23
+- **H-2026-10-23-04-other** (Gwen) — other: 1 of 1 open, issued 2026-10-23
 
 ## Data on file not used yet
 
@@ -113,9 +115,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 2 · Discovery | 3 | 11,117,410 | $3.80 | $0.00 |
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 2 | 17,892,793 | $6.48 | $0.00 |
-| 5 · Build plan and blockers | 1 | 1,357,600 | $0.02 | $0.00 |
+| 5 · Build plan and blockers | 2 | 1,617,331 | $0.03 | $0.00 |
 | any stage | 5 | 1,178,180 | $0.01 | $0.00 |
-| **total** | 14 | 33,319,985 | $10.97 | $0.00 |
+| **total** | 15 | 33,579,716 | $10.98 | $0.00 |
 
 ## Spend by step (model)
 
@@ -125,11 +127,11 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
 | discovery:data | 1 | 0 | $0.62 | $0.00 |
+| build:blockers | 2 | 1,617,331 | $0.03 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
-| build:blockers | 1 | 1,357,600 | $0.02 | $0.00 |
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 14 | 33,319,985 | $10.97 | $0.00 |
+| **total** | 15 | 33,579,716 | $10.98 | $0.00 |
 
-Last run: /build 2026-10-23T13:58 — Blocker handoff H-2026-10-23-03-broken_link issued to Jonie (10 rows: F-008..F-011). F-013 and F-048 not issued: their kinds need entity/brand approval or an owner decision.
+Last run: /build 2026-10-23T21:26 — Blocker handoff H-2026-10-23-04-other issued to Gwen (F-013 homepage Wednesday hours). F-048 waits for the proof sheet's blog author.

@@ -1,6 +1,6 @@
 # First Choice Seamless Gutters - VA Worklist
 
-**One living worklist for every VA item** · client First Choice Seamless Gutters (firstchoiceseamlessgutters.net) · updated 2026-10-23 · **Progress:** 0 of 22 row(s) done
+**One living worklist for every VA item** · client First Choice Seamless Gutters (firstchoiceseamlessgutters.net) · updated 2026-10-23 · **Progress:** 0 of 23 row(s) done
 
 ## Start here
 
@@ -39,6 +39,7 @@ Technical blockers. Fix each one as written; check the current value first. Thes
 | H-2026-10-23-03-broken_link-08 | Broken link: href | https://www.firstchoiceseamlessgutters.net/contact/ | 1. Open https://www.firstchoiceseamlessgutters.net/contact/.<br>2. Check the current value first ('old': https://www.firstchoiceseamlessgutters.net/contact). Already done → mark done and say so.<br>3. Make the change: https://www.firstchoiceseamlessgutters.net/contact/.<br>4. Tick this row done; note anything unexpected. | https://www.firstchoiceseamlessgutters.net/contact/ | — | The change is visible at https://www.firstchoiceseamlessgutters.net/contact/. | Jonie | open |
 | H-2026-10-23-03-broken_link-09 | Broken link: href | https://www.firstchoiceseamlessgutters.net/ | 1. Open https://www.firstchoiceseamlessgutters.net/.<br>2. Check the current value first ('old': http:8633303243). Already done → mark done and say so.<br>3. Make the change: tel:+18633303243.<br>4. Tick this row done; note anything unexpected. | tel:+18633303243 | — | The change is visible at https://www.firstchoiceseamlessgutters.net/. | Jonie | open |
 | H-2026-10-23-03-broken_link-10 | Broken link: href | https://www.firstchoiceseamlessgutters.net/gutter-services-lakeland-fl/ | 1. Open https://www.firstchoiceseamlessgutters.net/gutter-services-lakeland-fl/.<br>2. Check the current value first ('old': http://(863) 330-3243). Already done → mark done and say so.<br>3. Make the change: tel:+18633303243.<br>4. Tick this row done; note anything unexpected. | tel:+18633303243 | — | The change is visible at https://www.firstchoiceseamlessgutters.net/gutter-services-lakeland-fl/. | Jonie | open |
+| H-2026-10-23-04-other-01 | Other: openingHoursSpecification Wednesday | https://www.firstchoiceseamlessgutters.net/ | 1. Open https://www.firstchoiceseamlessgutters.net/.<br>2. Check the current value first ('old': 00:00:00). Already done → mark done and say so.<br>3. Make the change: 07:00.<br>4. Tick this row done; note anything unexpected. | 07:00 | — | The change is visible at https://www.firstchoiceseamlessgutters.net/. | Gwen | open |
 
 ## 6 · Manual lookups
 

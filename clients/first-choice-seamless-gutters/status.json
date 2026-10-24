@@ -292,11 +292,11 @@
     }
   },
   "last_run": {
-    "run_id": "20261023-135747-build-82bb",
+    "run_id": "20261023-212602-build-55fa",
     "command": "build",
-    "finished": "2026-10-23T13:58:35-05:00",
-    "result": "Blocker handoff H-2026-10-23-03-broken_link issued to Jonie (10 rows: F-008..F-011). F-013 and F-048 not issued: their kinds need entity/brand approval or an owner decision.",
-    "changes": 10,
+    "finished": "2026-10-23T21:26:08-05:00",
+    "result": "Blocker handoff H-2026-10-23-04-other issued to Gwen (F-013 homepage Wednesday hours). F-048 waits for the proof sheet's blog author.",
+    "changes": 1,
     "step": "build:blockers",
     "batch": null
   },
@@ -317,7 +317,7 @@
     "next": "Once you return the fact sheet, we finish your business profile."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-23T13:58:35-05:00",
+  "updated": "2026-10-23T21:26:08-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -629,6 +629,26 @@
       "by_agent": {
         "main": 0.0229
       }
+    },
+    {
+      "run": "20261023-212602-build-55fa",
+      "step": "build:blockers",
+      "tokens": 259731,
+      "usd": 0.0033,
+      "at": "2026-10-23T21:26:08-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0033,
+          "in": 4,
+          "out": 1086,
+          "cache_read": 257941,
+          "cache_write": 700
+        }
+      },
+      "by_agent": {
+        "main": 0.0033
+      }
     }
   ],
   "sessions": {
@@ -704,11 +724,12 @@
     }
   },
   "blocker_handoffs": [
-    "H-2026-10-23-03-broken_link"
+    "H-2026-10-23-03-broken_link",
+    "H-2026-10-23-04-other"
   ],
   "review_pause": {
-    "run_id": "20261023-135747-build-82bb",
+    "run_id": "20261023-212602-build-55fa",
     "step": "build:blockers",
-    "at": "2026-10-23T13:58:35-05:00"
+    "at": "2026-10-23T21:26:08-05:00"
   }
 }

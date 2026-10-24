@@ -272,3 +272,14 @@ Open: flag F-004 (citation export missing; the C3 screen counted it as a pass) i
 
 **Changes (script):** 10 — broken_link ×10
 
+## /build · 2026-10-23 · run 20261023-212602-build-55fa
+
+**Stage 5 — Build plan and blockers.** Paul assigned the blockers to Jonie and Gwen (his VAs). He said the returned proof sheet will name the blog author, so F-048 waits for that.
+
+- Issued H-2026-10-23-04-other to Gwen (blocker, 1 row): F-013, the homepage Wednesday opening time (00:00:00 to 07:00) in the existing local-business setting. Routed as kind `other` because the schema kind waits on entity and brand-guide approval. The full schema is rebuilt in Finish.
+- Still open, not issued: F-048 (blog author "wittycow" on the Lakeland post). Waits for the proof sheet's blog author.
+- Earlier: H-2026-10-23-03-broken_link to Jonie, 10 rows (F-008 to F-011).
+- "Blockers cleared" stays open until both handoffs are marked done and `/verify` passes them.
+
+**Changes (script):** 1 — other ×1
+

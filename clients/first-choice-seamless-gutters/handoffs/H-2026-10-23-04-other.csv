@@ -1,0 +1,2 @@
+ref,url,field,old,new,reason,decision_map_ref,status,note
+H-2026-10-23-04-other-01,https://www.firstchoiceseamlessgutters.net/,openingHoursSpecification Wednesday,00:00:00,07:00,F-013: homepage LocalBusiness schema gives Wednesday opening as 00:00:00 (every other day 07:00). GBP shows 7 AM to 8 PM every day. Correct in the existing local-business setting only; the full schema is rebuilt in Finish. Check the live value first.,F-013,issued,
