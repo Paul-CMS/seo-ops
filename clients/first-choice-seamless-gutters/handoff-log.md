@@ -446,3 +446,26 @@ Still open:
 - The "by" on the two public items records Paul as the decider because he directed the resolution; no client attribution was made.
 - Open: broken-link blocker handoffs with the VA (H-2026-10-23-03-broken_link-01 to -05, +6 more).
 
+## /build · 2026-10-24 · run 20261024-210703-build-c2ee
+
+- First pass stopped before the outlines (client.route unset). Paul chose route A (status.py set); run resumed under the same RUN_ID.
+- Evidence gate: svc-gutter-cleaning PASS (known 11 · unknown 1), loc-lakeland PASS (known 8 · unknown 2).
+- Review meaning check (no API key → researcher, `reviews.py checked`): clean-up 4, explains 22, response_time 36,
+  James 26, Adrian 8, Landon 5, Randall 3, Inc 0 (false staff name). Packs rebuilt (`evidence_pack.py build`).
+- `outline.py faq` had no API key: writers used the plan's FAQ picks / the outline's candidates.
+- Outlines: build/pilot/outlines/svc-gutter-cleaning.md, loc-lakeland.md (outline.py).
+- Drafts (one fresh build subagent each, recorded with page-stage --agent): build/pilot/drafts/svc-gutter-cleaning.md
+  (agent ac6baece3cb254cf5, 1 NEED) · build/pilot/drafts/loc-lakeland.md (agent a1830ac2b3155f813, 4 NEEDs).
+- Review: build/pilot/drafts-review.csv/.md (copied to Drive) — 1 Ask (kind 2: permit-pull, loc-lakeland), 15 decided
+  for you, 3 fixed silently (applied with the answers). Batch pilot → drafts_written.
+- Flags: F-009 (service review topics can never be meaning-checked; staff "Inc"), F-010 (spec LOC-02 vs settled
+  title_format.location; no placeholder form for the map embed).
+- Not done here, by instruction: review.py apply, the write-back, any approval.
+- Open: decision key client_route still shows as an open question in records although route A is set.
+- Next: Paul answers the sheet — `/build first-choice-seamless-gutters review pilot drafts "<answer line>"`; then
+  the write-back, then `/approve first-choice-seamless-gutters batch:pilot:drafts`, then pilot corrections.
+
+**Changes (script):** 1 — drive_file ×1
+- FLAG 2026-10-24T21:41 · run 20261024-210703-build-c2ee · F-009 · evidence_pack.py review_topics gives 'service: <name>' topics no facts.json R key, so a service review topic can never be checked by…
+- FLAG 2026-10-24T21:48 · run 20261024-210703-build-c2ee · F-010 · Spec LOC-02 (location SEO title 'Brand - GB Category - City, Full State Name') conflicts with Paul's settled title_format.location (…
+

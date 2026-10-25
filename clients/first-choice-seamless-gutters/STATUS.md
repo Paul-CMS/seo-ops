@@ -1,17 +1,18 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** ready to start: section pilot in one run: an outline per page by script from the approved plan and the spec (no brief), one draft per page (each from its own fresh sub-agent, CM-043), then the one draft review sheet
-- **Waiting on:** nobody
-- **Next action:** `/build first-choice-seamless-gutters write pilot` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), brief-writer (sonnet)) · model: Haiku chat
+- **What is happening now:** waiting for Paul's approval — the pilot drafts review sheet has 1 question(s) for you and 15 decided for you (clients/first-choice-seamless-gutters/build/pilot/drafts-review.md): reply "accept all", or "accept all except 7b, 12c" — an empty answer takes the recommended option
+- **Waiting on:** Paul — the pilot drafts review sheet has 1 question(s) for you and 15 decided for you (clients/fi; Paul — Build route for this client: A (the system writes the pages) or B (Paul provides finished 
+- **Next action:** Paul types `/build first-choice-seamless-gutters review pilot drafts "accept all"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-24T21:06 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T21:48 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Paul | the pilot drafts review sheet has 1 question(s) for you and 15 decided for you (clients/first-choice-seamless-gutters/build/pilot/drafts-review.md): reply "accept all", or "accept all except 7b, 12c" — an empty answer takes the recommended option | 2026-10-24 | /build first-choice-seamless-gutters review pilot drafts "accept all" |
+| Paul | Build route for this client: A (the system writes the pages) or B (Paul provides finished content)? status.json client.route is unset; build.md step 2 says ask Paul. The pilot write step stopped before outlines and drafts. | 2026-10-24 | client_route |
 
 ## Waiting on (not blocking)
 
@@ -112,6 +113,8 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-006** (open, not yet reviewed) 2026-10-24 · discovery:sheet-returned: naming-convention §2 names the returned proof sheet '<Client> - Client Proof Sheet - RETURNED.md', but returns can arrive as a form JSON export; no rule for a non-Markdown return. — workaround: Saved verbatim with its own extension: '<Client> - Client Proof Sheet - RETURNED.json'; marked proof_sheet_returned with it.
 - **F-007** (open, not yet reviewed) 2026-10-24 · build:plan: Viability check (evidence_pack.py viability) runs in build:plan before the facts round's research, with no place store (methodology/places/ missing) and no FL source list; it proposed merges for 17 of 19 unresearched Polk towns. location-faq.md §8 allows a merge only when public facts are logged not_found — the order is wrong for a new state/industry. — workaround: Kept all 19 locations in the plan; merge proposals reported as premature; re-run viability after /build facts and bring any real merge to Paul as a kind-1 Ask.
 - **F-008** (open, not yet reviewed) 2026-10-24 · interview:facts: evidence.py questions returns 0 questions for svc-gutter-cleaning scope and process after research.py log records them as partial, so the gate's gaps never reach the owner pack — workaround: pack hand-written with the two site-text questions; check before Paul sends
+- **F-009** (open, not yet reviewed) 2026-10-24 · build:write: evidence_pack.py review_topics gives 'service: <name>' topics no facts.json R key, so a service review topic can never be checked by meaning and stays 'unchecked'; for svc-gutter-cleaning most of its 9 matches are installation clean-up, not the gutter-cleaning service. Also staff_names() took 'Inc' (from 'Inc.' in company names) as a staff member. — workaround: Researcher recorded staff:Inc count 0; the service topic stays at the keyword-match tier (attributed example only) and the writer is told not to treat it as reviewers praising gutter cleaning.
+- **F-010** (open, not yet reviewed) 2026-10-24 · build:write: Spec LOC-02 (location SEO title 'Brand - GB Category - City, Full State Name') conflicts with Paul's settled title_format.location ('Category Variant in City, ST - Brand'); also the GB category is the homepage's reserved variant (CM-024). And P11 allows no placeholder form for the spec's city-level map embed. — workaround: Pilot uses the settled title format; the map embed is a [NEED: …] open item for ship; both listed on the pilot draft review sheet.
 
 ## Spend so far
 
@@ -129,15 +132,16 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 7 | 6,726,259 | $0.19 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 8 | 18,419,863 | $4.33 | $0.00 |
 | any stage | 6 | 5,246,914 | $1.43 | $0.00 |
-| **total** | 26 | 58,305,769 | $16.99 | $0.00 |
+| **total** | 27 | 69,999,373 | $21.13 | $0.00 |
 
 ## Spend by step (model)
 
 | Step | Runs | Tokens | Session USD | API USD |
 |---|---|---|---|---|
 | discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
+| build:write | 1 | 11,693,604 | $4.14 | $0.00 |
 | build:plan | 2 | 11,232,842 | $3.51 | $0.00 |
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
@@ -151,6 +155,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 26 | 58,305,769 | $16.99 | $0.00 |
+| **total** | 27 | 69,999,373 | $21.13 | $0.00 |
 
-Last run: /interview 2026-10-24T21:06 — Lakeland gate resolved: city served, local conditions, neighborhoods settled from file sources. Both pilot pages PASS.
+Last run: /build 2026-10-24T21:48 — Pilot write (route A): evidence PASS x2, review meaning check, 2 outlines, 2 drafts (fresh agent each), one draft review sheet: 1 Ask (kind 2 permit), 15 decided, 3 silent fixes. Flags F-009, F-010.

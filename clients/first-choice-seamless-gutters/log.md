@@ -1098,3 +1098,57 @@ Spend: 367554 tokens · $0.01 (measured)
 - CHANGE #250 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (14).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 6a28dd2834fb | result: done · copied (Drive for desktop syncs it)
 - CHANGE #251 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (14).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (14).md | result: done · renamed and moved, nothing deleted
 - CHANGE #252 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (14).md | new: First Choice Seamless Gutters - Status.md · sha 4ea6a4b27e9c | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261024-210703-build-c2ee · STARTED · /build · 2026-10-24T21:07:03-05:00
+Step: build:write · batch pilot · session a06784a5-10d9-4b97-a5ce-6d937ae6d307
+Gates checked: discovery_signed_off, batch:pilot:briefs_ready, page_specs_approved
+- OPEN client_route · 2026-10-24T21:07:40-05:00 · run 20261024-210703-build-c2ee · by Paul · Build route for this client: A (the system writes the pages) or B (Paul provides finished content)? status.json client.route is unset; build.md step 2 says ask Paul. The pilot write step stopped before outlines and drafts.
+- EVIDENCE 2026-10-24T21:38 · run 20261024-210703-build-c2ee · svc-gutter-cleaning: PASS (known 11, unknown 1, unverified 0, conflict 0)
+- EVIDENCE 2026-10-24T21:38 · run 20261024-210703-build-c2ee · loc-lakeland: PASS (known 8, unknown 2, unverified 0, conflict 0)
+- REVIEW FACT CHECKED 2026-10-24T21:41 · run 20261024-210703-build-c2ee · practice:clean-up: 4 different reviewer(s) after reading by meaning (researcher) · 4 reviewers say crew cleaned up after the job; dropped 6b730a62a6 ('leaf guards and cleaning up' = gutter cleaning)
+- REVIEW FACT CHECKED 2026-10-24T21:41 · run 20261024-210703-build-c2ee · practice:explains: 22 different reviewer(s) after reading by meaning (researcher) · 22 reviewers: communication excellent/responsive/explained process; none dropped as false
+- REVIEW FACT CHECKED 2026-10-24T21:41 · run 20261024-210703-build-c2ee · fact:response_time: 36 different reviewer(s) after reading by meaning (researcher) · 36 reviewers on arrival/response/scheduling (on time, quick to respond/come out); 4 speak only of job done fast (7f8500a35b, 5e902d3dcb, d915986507, 7f9dcc01b6) and were dropped
+- REVIEW FACT CHECKED 2026-10-24T21:41 · run 20261024-210703-build-c2ee · staff:James: 26 different reviewer(s) after reading by meaning (researcher) · 26 reviewers name James (often 'James and his son') as doing/managing the work; none dropped
+- REVIEW FACT CHECKED 2026-10-24T21:41 · run 20261024-210703-build-c2ee · staff:Adrian: 8 different reviewer(s) after reading by meaning (researcher) · 8 reviewers name Adrian as the company contact/owner; none dropped
+- REVIEW FACT CHECKED 2026-10-24T21:41 · run 20261024-210703-build-c2ee · staff:Landon: 5 different reviewer(s) after reading by meaning (researcher) · 5 reviewers name Landon (James/Randall's son) as on the crew; none dropped
+- REVIEW FACT CHECKED 2026-10-24T21:41 · run 20261024-210703-build-c2ee · staff:Randall: 3 different reviewer(s) after reading by meaning (researcher) · 3 reviewers name Randall as doing the work (two as father of Landon); none dropped
+- REVIEW FACT CHECKED 2026-10-24T21:41 · run 20261024-210703-build-c2ee · staff:Inc: 0 different reviewer(s) after reading by meaning (researcher) · false staff name: 'Inc' is from 'First Choice Seamless Gutters Inc.' and 'Danny Sadler, Inc.'; no reviewer names a staff member Inc
+- FLAG 2026-10-24T21:41 · run 20261024-210703-build-c2ee · F-009 · evidence_pack.py review_topics gives 'service: <name>' topics no facts.json R key, so a service review topic can never be checked by meaning and stays 'unchecked'; for svc-gutter-cleaning most of its 9 matches are installation clean-up, not the gutter-cleaning service. Also staff_names() took 'Inc' (from 'Inc.' in company names) as a staff member. · workaround: Researcher recorded staff:Inc count 0; the service topic stays at the keyword-match tier (attributed example only) and the writer is told not to treat it as reviewers praising gutter cleaning.
+- EVIDENCE PACKS 2026-10-24T21:41 · run 20261024-210703-build-c2ee · section pilot · 2 page(s) · build/pilot/packs/
+- OUTLINES 2026-10-24T21:41 · run 20261024-210703-build-c2ee · section pilot · 2 page(s) by outline.py (no brief, Rewrite 4)
+- DRAFT 2026-10-24T21:45 · run 20261024-210703-build-c2ee · svc-gutter-cleaning · clients/first-choice-seamless-gutters/build/pilot/drafts/svc-gutter-cleaning.md · agent ac6baece3cb254cf5
+- DRAFT 2026-10-24T21:45 · run 20261024-210703-build-c2ee · loc-lakeland · clients/first-choice-seamless-gutters/build/pilot/drafts/loc-lakeland.md · agent a1830ac2b3155f813
+- REVIEW SHEET 2026-10-24T21:47 · run 20261024-210703-build-c2ee · pilot drafts: 1 Ask, 15 decided for you, 3 fixed silently, 0 not raised (duplicate, decided or answered) · clients/first-choice-seamless-gutters/build/pilot/drafts-review.csv
+- CHANGE #253 [drive_file] drive:First Choice Seamless Gutters - TMS/02 - Build/drafts-review.md | upload | old: (new file) | new: drafts-review.md · sha c042b15bc324 | result: done · copied (Drive for desktop syncs it)
+- FLAG 2026-10-24T21:48 · run 20261024-210703-build-c2ee · F-010 · Spec LOC-02 (location SEO title 'Brand - GB Category - City, Full State Name') conflicts with Paul's settled title_format.location ('Category Variant in City, ST - Brand'); also the GB category is the homepage's reserved variant (CM-024). And P11 allows no placeholder form for the spec's city-level map embed. · workaround: Pilot uses the settled title format; the map embed is a [NEED: …] open item for ship; both listed on the pilot draft review sheet.
+### HANDOFF · /build · 2026-10-24 · run 20261024-210703-build-c2ee
+- First pass stopped before the outlines (client.route unset). Paul chose route A (status.py set); run resumed under the same RUN_ID.
+- Evidence gate: svc-gutter-cleaning PASS (known 11 · unknown 1), loc-lakeland PASS (known 8 · unknown 2).
+- Review meaning check (no API key → researcher, `reviews.py checked`): clean-up 4, explains 22, response_time 36,
+  James 26, Adrian 8, Landon 5, Randall 3, Inc 0 (false staff name). Packs rebuilt (`evidence_pack.py build`).
+- `outline.py faq` had no API key: writers used the plan's FAQ picks / the outline's candidates.
+- Outlines: build/pilot/outlines/svc-gutter-cleaning.md, loc-lakeland.md (outline.py).
+- Drafts (one fresh build subagent each, recorded with page-stage --agent): build/pilot/drafts/svc-gutter-cleaning.md
+  (agent ac6baece3cb254cf5, 1 NEED) · build/pilot/drafts/loc-lakeland.md (agent a1830ac2b3155f813, 4 NEEDs).
+- Review: build/pilot/drafts-review.csv/.md (copied to Drive) — 1 Ask (kind 2: permit-pull, loc-lakeland), 15 decided
+  for you, 3 fixed silently (applied with the answers). Batch pilot → drafts_written.
+- Flags: F-009 (service review topics can never be meaning-checked; staff "Inc"), F-010 (spec LOC-02 vs settled
+  title_format.location; no placeholder form for the map embed).
+- Not done here, by instruction: review.py apply, the write-back, any approval.
+- Open: decision key client_route still shows as an open question in records although route A is set.
+- Next: Paul answers the sheet — `/build first-choice-seamless-gutters review pilot drafts "<answer line>"`; then
+  the write-back, then `/approve first-choice-seamless-gutters batch:pilot:drafts`, then pilot corrections.
+
+**Changes (script):** 1 — drive_file ×1
+- FLAG 2026-10-24T21:41 · run 20261024-210703-build-c2ee · F-009 · evidence_pack.py review_topics gives 'service: <name>' topics no facts.json R key, so a service review topic can never be checked by…
+- FLAG 2026-10-24T21:48 · run 20261024-210703-build-c2ee · F-010 · Spec LOC-02 (location SEO title 'Brand - GB Category - City, Full State Name') conflicts with Paul's settled title_format.location (…
+### END HANDOFF
+## RUN 20261024-210703-build-c2ee · FINISHED · 2026-10-24T21:48:28-05:00
+Changes: 1 · Summary: Pilot write (route A): evidence PASS x2, review meaning check, 2 outlines, 2 drafts (fresh agent each), one draft review sheet: 1 Ask (kind 2 permit), 15 decided, 3 silent fixes. Flags F-009, F-010.
+Spend: 11693604 tokens · $4.14 (measured)
+- CHANGE #254 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (11).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (11).md | result: done · renamed and moved, nothing deleted
+- CHANGE #255 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-24 (11).md | new: First Choice Seamless Gutters - Handoff Log.md · sha 8b95e16840a3 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #256 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (15).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (15).md | result: done · renamed and moved, nothing deleted
+- CHANGE #257 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (15).md | new: First Choice Seamless Gutters - Document Checklist.md · sha aa1c4aa3f84c | result: done · copied (Drive for desktop syncs it)
+- CHANGE #258 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (15).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (15).md | result: done · renamed and moved, nothing deleted
+- CHANGE #259 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (15).md | new: First Choice Seamless Gutters - Status.md · sha e5f799fd5087 | result: done · copied (Drive for desktop syncs it)

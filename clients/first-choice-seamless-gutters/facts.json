@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-24T20:48:06-05:00",
+  "updated": "2026-10-24T21:41:05-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -572,8 +572,11 @@
       "source": "Google reviews (2 different reviewers; data/reviews/review-facts.json)",
       "quote": "Communication was clear, they responded quickly, and everything was handled in a professional and friendly manner.",
       "date": "2026-10-23",
-      "who": "reviews.py extract",
-      "count": 2
+      "who": "researcher",
+      "count": 36,
+      "meaning_checked": true,
+      "checked_at": "2026-10-24T21:41:05-05:00",
+      "checked_note": "36 reviewers on arrival/response/scheduling (on time, quick to respond/come out); 4 speak only of job done fast (7f8500a35b, 5e902d3dcb, d915986507, 7f9dcc01b6) and were dropped"
     },
     {
       "id": "r-fact-founding",
@@ -642,8 +645,11 @@
       "source": "Google reviews (9 different reviewers; data/reviews/review-facts.json)",
       "quote": "The gutters are clean, seamless, and actually make my house look more polished and put together.",
       "date": "2026-10-23",
-      "who": "reviews.py extract",
-      "count": 9
+      "who": "researcher",
+      "count": 4,
+      "meaning_checked": true,
+      "checked_at": "2026-10-24T21:41:04-05:00",
+      "checked_note": "4 reviewers say crew cleaned up after the job; dropped 6b730a62a6 ('leaf guards and cleaning up' = gutter cleaning)"
     },
     {
       "id": "r-practice-explains",
@@ -656,8 +662,11 @@
       "source": "Google reviews (4 different reviewers; data/reviews/review-facts.json)",
       "quote": "They cleaned their work area and walked me through the project to insure total satisfaction.",
       "date": "2026-10-23",
-      "who": "reviews.py extract",
-      "count": 4
+      "who": "researcher",
+      "count": 22,
+      "meaning_checked": true,
+      "checked_at": "2026-10-24T21:41:05-05:00",
+      "checked_note": "22 reviewers: communication excellent/responsive/explained process; none dropped as false"
     },
     {
       "id": "r-prices-amounts",
@@ -698,8 +707,11 @@
       "source": "Google reviews (8 different reviewers; data/reviews/review-facts.json)",
       "quote": "Many that’s to Adrian and his crew for their amazing service.",
       "date": "2026-10-23",
-      "who": "reviews.py extract",
-      "count": 8
+      "who": "researcher",
+      "count": 8,
+      "meaning_checked": true,
+      "checked_at": "2026-10-24T21:41:05-05:00",
+      "checked_note": "8 reviewers name Adrian as the company contact/owner; none dropped"
     },
     {
       "id": "r-staff-inc",
@@ -712,8 +724,11 @@
       "source": "Google reviews (4 different reviewers; data/reviews/review-facts.json)",
       "quote": "First Choice Seamless Gutters Inc.",
       "date": "2026-10-23",
-      "who": "reviews.py extract",
-      "count": 4
+      "who": "researcher",
+      "count": 0,
+      "meaning_checked": true,
+      "checked_at": "2026-10-24T21:41:05-05:00",
+      "checked_note": "false staff name: 'Inc' is from 'First Choice Seamless Gutters Inc.' and 'Danny Sadler, Inc.'; no reviewer names a staff member Inc"
     },
     {
       "id": "r-staff-james",
@@ -726,8 +741,11 @@
       "source": "Google reviews (26 different reviewers; data/reviews/review-facts.json)",
       "quote": "James and his son are the sole owners and workers in this business and do high quality work as well as offer many different options to customize your gutters and downspouts.",
       "date": "2026-10-23",
-      "who": "reviews.py extract",
-      "count": 26
+      "who": "researcher",
+      "count": 26,
+      "meaning_checked": true,
+      "checked_at": "2026-10-24T21:41:05-05:00",
+      "checked_note": "26 reviewers name James (often 'James and his son') as doing/managing the work; none dropped"
     },
     {
       "id": "r-staff-landon",
@@ -740,8 +758,11 @@
       "source": "Google reviews (5 different reviewers; data/reviews/review-facts.json)",
       "quote": "He and Landon came out as scheduled for the installation and did a fantastic job.",
       "date": "2026-10-23",
-      "who": "reviews.py extract",
-      "count": 5
+      "who": "researcher",
+      "count": 5,
+      "meaning_checked": true,
+      "checked_at": "2026-10-24T21:41:05-05:00",
+      "checked_note": "5 reviewers name Landon (James/Randall's son) as on the crew; none dropped"
     },
     {
       "id": "r-staff-randall",
@@ -754,8 +775,11 @@
       "source": "Google reviews (3 different reviewers; data/reviews/review-facts.json)",
       "quote": "Randall does a great job and is very professional",
       "date": "2026-10-23",
-      "who": "reviews.py extract",
-      "count": 3
+      "who": "researcher",
+      "count": 3,
+      "meaning_checked": true,
+      "checked_at": "2026-10-24T21:41:05-05:00",
+      "checked_note": "3 reviewers name Randall as doing the work (two as father of Landon); none dropped"
     },
     {
       "id": "offer-military-seniors-150",

@@ -60,4 +60,8 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **fact:loc-lakeland:local_context** (2026-10-24, Paul (public research, resolved 2026-10-24)): Rainy season May 25 to Oct 10 and hurricane season Jun 1 to Nov 30 (National Weather Service). Lakeland averages about 56.8 inches of rain a year, wettest June to September (Wikipedia). Housing stock, tree debris and failure patterns are not sourced and are not stated.
 - **fact:loc-lakeland:neighborhoods** (2026-10-24, Paul (public research, resolved 2026-10-24)): Lakeland neighborhoods and historic districts: Beacon Hill-Alta Vista, Biltmore-Cumberland, Dixieland, East Lake Morton, Lake Hunter Terrace, Munn Park, South Lake Morton, Moorehead, Orangewood (Wikipedia, Lakeland, Florida).
 
+## Open questions — asked once, waiting for an answer
+
+- **client_route** (asked 2026-10-24, waiting on Paul): Build route for this client: A (the system writes the pages) or B (Paul provides finished content)? status.json client.route is unset; build.md step 2 says ask Paul. The pilot write step stopped before outlines and drafts.
+
 Process defects (reopenings): **1** — a decision asked before the information that shapes it existed; fix the order, not the decision.

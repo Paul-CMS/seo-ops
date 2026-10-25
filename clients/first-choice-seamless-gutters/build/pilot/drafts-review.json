@@ -1,0 +1,563 @@
+{
+  "made": "2026-10-24T21:47:53-05:00",
+  "run": "20261024-210703-build-c2ee",
+  "step": "drafts",
+  "section": "pilot",
+  "rows": [
+    {
+      "severity": "ask",
+      "kind": "2",
+      "key": "loc-lakeland|cm-016|permit-pull",
+      "note": "Ask kind 2",
+      "_finding": {
+        "page": "loc-lakeland",
+        "rule": "CM-016",
+        "item": "permit-pull",
+        "severity": "ask",
+        "category": "permit",
+        "kind": 2,
+        "finding": "[NEED: whether First Choice checks or pulls the permit for a Lakeland job when one is needed]. Not in the facts; a permit claim is a legal claim.",
+        "plain_why": "Whether the company pulls permits is a legal claim only you or the client can confirm.",
+        "options": [
+          "Leave it out: the page points to the city permit page only",
+          "Ask the client and state the answer"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/"
+      },
+      "id": "1",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "permit-pull",
+      "finding": "[NEED: whether First Choice checks or pulls the permit for a Lakeland job when one is needed]. Not in the facts; a permit claim is a legal claim.",
+      "plain_why": "Whether the company pulls permits is a legal claim only you or the client can confirm.",
+      "decided_for_you": "",
+      "options": "a) Leave it out: the page points to the city permit page only · b) Ask the client and state the answer",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "loc-lakeland|cm-061|writer-chosen-values",
+      "note": "",
+      "_finding": {
+        "page": "loc-lakeland",
+        "rule": "CM-061",
+        "item": "writer-chosen-values",
+        "severity": "fix_and_list",
+        "category": "other_content",
+        "finding": "Values the writer chose that the plan did not fix: SEO title 'Gutter Contractor in Lakeland, FL - First Choice Seamless Gutters'; meta description; first H2 variant 'Gutter Installation'; opening triple; H2s 'What Makes Lakeland Hard on Gutters?', 'How Does First Choice Serve Lakeland Homeowners?', 'Lakeland Gutter Questions', 'Which Lakeland Neighborhoods Does First Choice Serve?', 'Which Other Cities Near Lakeland Does First Choice Serve?'; place entities Lake Morton, Lake Mirror Park, Dixieland Historic District, Florida Southern College, Lakeland Highlands; outbound link to the City of Lakeland Building Inspection FAQ; 'Recent work' section left out (no review names Lakeland).",
+        "plain_why": "Every value the plan left open is shown once so you can change any of it.",
+        "decided_for_you": "Keep the writer's values as drafted.",
+        "options": [
+          "Keep as drafted",
+          "Change the named value(s)"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/"
+      },
+      "id": "2",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "writer-chosen-values",
+      "finding": "Values the writer chose that the plan did not fix: SEO title 'Gutter Contractor in Lakeland, FL - First Choice Seamless Gutters'; meta description; first H2 variant 'Gutter Installation'; opening triple; H2s 'What Makes Lakeland Hard on Gutters?', 'How Does First Choice Serve Lakeland Homeowners?', 'Lakeland Gutter Questions', 'Which Lakeland Neighborhoods Does First Choice Serve?', 'Which Other Cities Near Lakeland Does First Choice Serve?'; place entities Lake Morton, Lake Mirror Park, Dixieland Historic District, Florida Southern College, Lakeland Highlands; outbound link to the City of Lakeland Building Inspection FAQ; 'Recent work' section left out (no review names Lakeland).",
+      "plain_why": "Every value the plan left open is shown once so you can change any of it.",
+      "decided_for_you": "Keep the writer's values as drafted.",
+      "options": "a) Keep as drafted · b) Change the named value(s)",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "loc-lakeland|loc-02|seo-title-format",
+      "note": "",
+      "_finding": {
+        "page": "loc-lakeland",
+        "rule": "LOC-02",
+        "item": "seo-title-format",
+        "severity": "fix_and_list",
+        "category": "other_content",
+        "finding": "The title follows settled title_format.location ('Category Variant in City, ST - Brand'); spec LOC-02 says 'Brand - GB Category - City, Full State Name', and the GB category 'Gutter Service' is the homepage's reserved variant.",
+        "plain_why": "Your settled decision governs; the spec mismatch is flagged for a system session.",
+        "decided_for_you": "Keep the settled format.",
+        "options": [
+          "Keep the settled format",
+          "Use the spec format"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/"
+      },
+      "id": "3",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "seo-title-format",
+      "finding": "The title follows settled title_format.location ('Category Variant in City, ST - Brand'); spec LOC-02 says 'Brand - GB Category - City, Full State Name', and the GB category 'Gutter Service' is the homepage's reserved variant.",
+      "plain_why": "Your settled decision governs; the spec mismatch is flagged for a system session.",
+      "decided_for_you": "Keep the settled format.",
+      "options": "a) Keep the settled format · b) Use the spec format",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "loc-lakeland|cm-062|faq3-tree-canopy",
+      "note": "",
+      "_finding": {
+        "page": "loc-lakeland",
+        "rule": "CM-062",
+        "item": "faq3-tree-canopy",
+        "severity": "fix_and_list",
+        "category": "portability",
+        "finding": "FAQ 3 'How do Lakeland's tree canopy and summer storms affect gutters?' — the pack has no source for a Lakeland tree canopy, and the answer is generic (it would read the same on any city page).",
+        "plain_why": "It fails the swap test, and the question implies an unsourced local fact.",
+        "decided_for_you": "Reword to 'How do Lakeland's summer storms affect gutters?' and open the answer with the sourced Lakeland facts (wettest June to September, overlapping hurricane season) in one sentence.",
+        "options": [
+          "Reword as recommended",
+          "Keep as drafted"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/"
+      },
+      "id": "4",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "faq3-tree-canopy",
+      "finding": "FAQ 3 'How do Lakeland's tree canopy and summer storms affect gutters?' — the pack has no source for a Lakeland tree canopy, and the answer is generic (it would read the same on any city page).",
+      "plain_why": "It fails the swap test, and the question implies an unsourced local fact.",
+      "decided_for_you": "Reword to 'How do Lakeland's summer storms affect gutters?' and open the answer with the sourced Lakeland facts (wettest June to September, overlapping hurricane season) in one sentence.",
+      "options": "a) Reword as recommended · b) Keep as drafted",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "loc-lakeland|cm-016|faq1-hoa-review",
+      "note": "",
+      "_finding": {
+        "page": "loc-lakeland",
+        "rule": "CM-016",
+        "item": "faq1-hoa-review",
+        "severity": "fix_and_list",
+        "category": "claim_softened",
+        "finding": "FAQ 1 ends 'One customer said First Choice scheduled and finished their installation soon after their HOA approval came through.' That review (row 16) does not name Lakeland.",
+        "plain_why": "On a Lakeland page it reads as a Lakeland customer.",
+        "decided_for_you": "Cut the sentence.",
+        "options": [
+          "Cut it",
+          "Keep it"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/"
+      },
+      "id": "5",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "faq1-hoa-review",
+      "finding": "FAQ 1 ends 'One customer said First Choice scheduled and finished their installation soon after their HOA approval came through.' That review (row 16) does not name Lakeland.",
+      "plain_why": "On a Lakeland page it reads as a Lakeland customer.",
+      "decided_for_you": "Cut the sentence.",
+      "options": "a) Cut it · b) Keep it",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "loc-lakeland|cm-016|need-response-time",
+      "note": "",
+      "_finding": {
+        "page": "loc-lakeland",
+        "rule": "CM-016",
+        "item": "need-response-time",
+        "severity": "fix_and_list",
+        "category": "other_content",
+        "finding": "[NEED: typical travel or response time to a Lakeland address] — not in the facts; the page already states the confirmed 24-hour form reply and the Lakeland base.",
+        "plain_why": "An open NEED becomes an open item at ship; the paragraph reads complete without it.",
+        "decided_for_you": "Leave it out (remove the NEED).",
+        "options": [
+          "Leave it out",
+          "Keep the NEED for the client"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/"
+      },
+      "id": "6",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "need-response-time",
+      "finding": "[NEED: typical travel or response time to a Lakeland address] — not in the facts; the page already states the confirmed 24-hour form reply and the Lakeland base.",
+      "plain_why": "An open NEED becomes an open item at ship; the paragraph reads complete without it.",
+      "decided_for_you": "Leave it out (remove the NEED).",
+      "options": "a) Leave it out · b) Keep the NEED for the client",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "loc-lakeland|cm-016|need-storm-scheduling",
+      "note": "",
+      "_finding": {
+        "page": "loc-lakeland",
+        "rule": "CM-016",
+        "item": "need-storm-scheduling",
+        "severity": "fix_and_list",
+        "category": "other_content",
+        "finding": "[NEED: how First Choice schedules Lakeland installs and repairs during the rainy and hurricane seasons] — not in the facts.",
+        "plain_why": "An open NEED becomes an open item at ship; the section reads complete without it.",
+        "decided_for_you": "Leave it out (remove the NEED).",
+        "options": [
+          "Leave it out",
+          "Keep the NEED for the client"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/"
+      },
+      "id": "7",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "need-storm-scheduling",
+      "finding": "[NEED: how First Choice schedules Lakeland installs and repairs during the rainy and hurricane seasons] — not in the facts.",
+      "plain_why": "An open NEED becomes an open item at ship; the section reads complete without it.",
+      "decided_for_you": "Leave it out (remove the NEED).",
+      "options": "a) Leave it out · b) Keep the NEED for the client",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "loc-lakeland|loc-map|map-embed-need",
+      "note": "",
+      "_finding": {
+        "page": "loc-lakeland",
+        "rule": "LOC-map",
+        "item": "map-embed-need",
+        "severity": "fix_and_list",
+        "category": "other_content",
+        "finding": "The spec's city-level Google Maps embed is left as [NEED: city-level Google Maps embed of Lakeland, FL] — no allowed placeholder form exists for a map element (flagged for a system session).",
+        "plain_why": "The embed is added at ship; until then it is an open item.",
+        "decided_for_you": "Keep it as an open item for the ship step.",
+        "options": [
+          "Keep as open item",
+          "Drop the map"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/"
+      },
+      "id": "8",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "map-embed-need",
+      "finding": "The spec's city-level Google Maps embed is left as [NEED: city-level Google Maps embed of Lakeland, FL] — no allowed placeholder form exists for a map element (flagged for a system session).",
+      "plain_why": "The embed is added at ship; until then it is an open item.",
+      "decided_for_you": "Keep it as an open item for the ship step.",
+      "options": "a) Keep as open item · b) Drop the map",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "loc-lakeland|site-stated|award-opening",
+      "note": "",
+      "_finding": {
+        "page": "loc-lakeland",
+        "rule": "site-stated",
+        "item": "award-opening",
+        "severity": "fix_and_list",
+        "category": "site_stated_used",
+        "finding": "The opening names the GutterPro HQ 2025 'Best Gutter Installer in Lakeland, Florida' award — client confirmed; the only public source is a company press release.",
+        "plain_why": "Confirmed by the client but weakly sourced in public, and it leads the page.",
+        "decided_for_you": "Keep it in the opening.",
+        "options": [
+          "Keep",
+          "Move it lower or cut"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/"
+      },
+      "id": "9",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "award-opening",
+      "finding": "The opening names the GutterPro HQ 2025 'Best Gutter Installer in Lakeland, Florida' award — client confirmed; the only public source is a company press release.",
+      "plain_why": "Confirmed by the client but weakly sourced in public, and it leads the page.",
+      "decided_for_you": "Keep it in the opening.",
+      "options": "a) Keep · b) Move it lower or cut",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "svc-gutter-cleaning|cm-061|writer-chosen-values",
+      "note": "",
+      "_finding": {
+        "page": "svc-gutter-cleaning",
+        "rule": "CM-061",
+        "item": "writer-chosen-values",
+        "severity": "fix_and_list",
+        "category": "other_content",
+        "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (rain gutters + seamless gutter contractor + Lakeland–Winter Haven metropolitan area); H2s 'How Does First Choice Seamless Gutters Clean Rain Gutters?', 'What Does a Gutter Cleaning Include, and What Is Separate?', 'What Do Polk County Homeowners Ask a Gutter Contractor About Cleaning?', 'Where Does First Choice Seamless Gutters Offer Gutter Cleaning?'; five H3 sub-services; closing CTA.",
+        "plain_why": "Every value the plan left open is shown once so you can change any of it.",
+        "decided_for_you": "Keep the writer's values as drafted.",
+        "options": [
+          "Keep as drafted",
+          "Change the named value(s)"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/"
+      },
+      "id": "10",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "writer-chosen-values",
+      "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (rain gutters + seamless gutter contractor + Lakeland–Winter Haven metropolitan area); H2s 'How Does First Choice Seamless Gutters Clean Rain Gutters?', 'What Does a Gutter Cleaning Include, and What Is Separate?', 'What Do Polk County Homeowners Ask a Gutter Contractor About Cleaning?', 'Where Does First Choice Seamless Gutters Offer Gutter Cleaning?'; five H3 sub-services; closing CTA.",
+      "plain_why": "Every value the plan left open is shown once so you can change any of it.",
+      "decided_for_you": "Keep the writer's values as drafted.",
+      "options": "a) Keep as drafted · b) Change the named value(s)",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "svc-gutter-cleaning|e3|faq-rainy-season-need",
+      "note": "",
+      "_finding": {
+        "page": "svc-gutter-cleaning",
+        "rule": "E3",
+        "item": "faq-rainy-season-need",
+        "severity": "fix_and_list",
+        "category": "pack_evidence_added",
+        "finding": "FAQ 'When is the best time of year to clean gutters in Florida?' carries [NEED: Florida rainy-season dates]. The public fact is already sourced: NWS Tampa Bay puts the rainy season at about May 25 to October 10 (research log RL-pilot-4, weather.gov/tbw/RainySeason).",
+        "plain_why": "A public fact is looked up, never left open; it is already in the research log.",
+        "decided_for_you": "Fill the NEED with 'about late May (the National Weather Service puts the rainy season at May 25 to October 10)' and use that NWS page as the page's one outbound authority link.",
+        "options": [
+          "Fill from the NWS fact and link it",
+          "Leave the NEED open"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/"
+      },
+      "id": "11",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "faq-rainy-season-need",
+      "finding": "FAQ 'When is the best time of year to clean gutters in Florida?' carries [NEED: Florida rainy-season dates]. The public fact is already sourced: NWS Tampa Bay puts the rainy season at about May 25 to October 10 (research log RL-pilot-4, weather.gov/tbw/RainySeason).",
+      "plain_why": "A public fact is looked up, never left open; it is already in the research log.",
+      "decided_for_you": "Fill the NEED with 'about late May (the National Weather Service puts the rainy season at May 25 to October 10)' and use that NWS page as the page's one outbound authority link.",
+      "options": "a) Fill from the NWS fact and link it · b) Leave the NEED open",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "svc-gutter-cleaning|cm-016|faq-florida-trees-claim",
+      "note": "",
+      "_finding": {
+        "page": "svc-gutter-cleaning",
+        "rule": "CM-016",
+        "item": "faq-florida-trees-claim",
+        "severity": "fix_and_list",
+        "category": "claim_softened",
+        "finding": "'since Florida trees do not all shed in one short fall season' is not in the pack.",
+        "plain_why": "No source supports it; the answer works without it.",
+        "decided_for_you": "Cut the clause; keep 'your trees matter more than the calendar'.",
+        "options": [
+          "Cut the clause",
+          "Keep it"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/"
+      },
+      "id": "12",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "faq-florida-trees-claim",
+      "finding": "'since Florida trees do not all shed in one short fall season' is not in the pack.",
+      "plain_why": "No source supports it; the answer works without it.",
+      "decided_for_you": "Cut the clause; keep 'your trees matter more than the calendar'.",
+      "options": "a) Cut the clause · b) Keep it",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "svc-gutter-cleaning|cm-016|faq-twice-a-year-claim",
+      "note": "",
+      "_finding": {
+        "page": "svc-gutter-cleaning",
+        "rule": "CM-016",
+        "item": "faq-twice-a-year-claim",
+        "severity": "fix_and_list",
+        "category": "claim_softened",
+        "finding": "'Most Polk County homes need gutter cleaning at least twice a year' is general trade guidance, not in the pack.",
+        "plain_why": "An unsourced number stated as fact about Polk County homes.",
+        "decided_for_you": "Reword to 'How often depends on the trees over your roof; homes under trees need it more often' and drop the number.",
+        "options": [
+          "Drop the number",
+          "Keep 'at least twice a year'"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/"
+      },
+      "id": "13",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "faq-twice-a-year-claim",
+      "finding": "'Most Polk County homes need gutter cleaning at least twice a year' is general trade guidance, not in the pack.",
+      "plain_why": "An unsourced number stated as fact about Polk County homes.",
+      "decided_for_you": "Reword to 'How often depends on the trees over your roof; homes under trees need it more often' and drop the number.",
+      "options": "a) Drop the number · b) Keep 'at least twice a year'",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "svc-gutter-cleaning|site-stated|fine-debris-overflow",
+      "note": "",
+      "_finding": {
+        "page": "svc-gutter-cleaning",
+        "rule": "site-stated",
+        "item": "fine-debris-overflow",
+        "severity": "fix_and_list",
+        "category": "site_stated_used",
+        "finding": "Stated plainly from the client's own site (Frostproof page): fine debris in outlets, elbows and downspouts overflows in the next heavy storm.",
+        "plain_why": "A claim from the client's site, not a confirmed fact.",
+        "decided_for_you": "Keep it as written.",
+        "options": [
+          "Keep",
+          "Soften or cut"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/"
+      },
+      "id": "14",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "fine-debris-overflow",
+      "finding": "Stated plainly from the client's own site (Frostproof page): fine debris in outlets, elbows and downspouts overflows in the next heavy storm.",
+      "plain_why": "A claim from the client's site, not a confirmed fact.",
+      "decided_for_you": "Keep it as written.",
+      "options": "a) Keep · b) Soften or cut",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "svc-gutter-cleaning|site-stated|guards-reduce-cleaning",
+      "note": "",
+      "_finding": {
+        "page": "svc-gutter-cleaning",
+        "rule": "site-stated",
+        "item": "guards-reduce-cleaning",
+        "severity": "fix_and_list",
+        "category": "site_stated_used",
+        "finding": "Stated plainly from the client's own site (Dundee page): gutter guards cut how often gutters need cleaning.",
+        "plain_why": "A claim from the client's site, not a confirmed fact.",
+        "decided_for_you": "Keep it as written.",
+        "options": [
+          "Keep",
+          "Soften or cut"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/"
+      },
+      "id": "15",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "guards-reduce-cleaning",
+      "finding": "Stated plainly from the client's own site (Dundee page): gutter guards cut how often gutters need cleaning.",
+      "plain_why": "A claim from the client's site, not a confirmed fact.",
+      "decided_for_you": "Keep it as written.",
+      "options": "a) Keep · b) Soften or cut",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "severity": "fix_and_list",
+      "kind": "",
+      "key": "svc-gutter-cleaning|cm-024|faq-h2-area-variant",
+      "note": "",
+      "_finding": {
+        "page": "svc-gutter-cleaning",
+        "rule": "CM-024",
+        "item": "faq-h2-area-variant",
+        "severity": "fix_and_list",
+        "category": "other_content",
+        "finding": "FAQ H2 uses the area 'Polk County' — the only B2 area without a city name that is not reserved for the homepage.",
+        "plain_why": "The writer chose the variant; the plan did not fix it.",
+        "decided_for_you": "Keep 'Polk County' in the FAQ H2.",
+        "options": [
+          "Keep",
+          "Choose another variant"
+        ],
+        "recommended": "a",
+        "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/"
+      },
+      "id": "16",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "faq-h2-area-variant",
+      "finding": "FAQ H2 uses the area 'Polk County' — the only B2 area without a city name that is not reserved for the homepage.",
+      "plain_why": "The writer chose the variant; the plan did not fix it.",
+      "decided_for_you": "Keep 'Polk County' in the FAQ H2.",
+      "options": "a) Keep · b) Choose another variant",
+      "recommended": "a",
+      "answer": ""
+    },
+    {
+      "id": "U1",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "evidence used",
+      "finding": "Evidence used: 7 of 55 excerpts",
+      "plain_why": "",
+      "decided_for_you": "",
+      "options": "",
+      "recommended": "",
+      "answer": "",
+      "note": "usage check (§3.4)",
+      "severity": "info"
+    },
+    {
+      "id": "U2",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "evidence used",
+      "finding": "Evidence used: 8 of 54 excerpts",
+      "plain_why": "",
+      "decided_for_you": "",
+      "options": "",
+      "recommended": "",
+      "answer": "",
+      "note": "usage check (§3.4)",
+      "severity": "info"
+    }
+  ],
+  "dropped": [],
+  "usage": [
+    {
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "used": 7,
+      "total": 55
+    },
+    {
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "used": 8,
+      "total": 54
+    }
+  ]
+}

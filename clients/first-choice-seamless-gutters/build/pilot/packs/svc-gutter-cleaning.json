@@ -3,7 +3,7 @@
  "type": "service",
  "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
  "section": "pilot",
- "built": "2026-10-24T21:06:33-05:00",
+ "built": "2026-10-24T21:41:17-05:00",
  "services": [
   "Gutter Cleaning",
   "Gutter and Downspout Cleaning"
@@ -423,9 +423,9 @@
      "row": "reviews.csv row 108"
     }
    ],
-   "tier": "unchecked",
-   "checked": false,
-   "checked_at": ""
+   "tier": "known",
+   "checked": true,
+   "checked_at": "2026-10-24"
   },
   "practice: communication": {
    "reviewers": 23,
@@ -456,9 +456,9 @@
      "row": "reviews.csv row 30"
     }
    ],
-   "tier": "unchecked",
-   "checked": false,
-   "checked_at": ""
+   "tier": "known",
+   "checked": true,
+   "checked_at": "2026-10-24"
   },
   "practice: speed": {
    "reviewers": 40,
@@ -489,9 +489,9 @@
      "row": "reviews.csv row 16"
     }
    ],
-   "tier": "unchecked",
-   "checked": false,
-   "checked_at": ""
+   "tier": "known",
+   "checked": true,
+   "checked_at": "2026-10-24"
   },
   "named staff: Adrian": {
    "reviewers": 8,
@@ -522,9 +522,9 @@
      "row": "reviews.csv row 34"
     }
    ],
-   "tier": "unchecked",
-   "checked": false,
-   "checked_at": ""
+   "tier": "known",
+   "checked": true,
+   "checked_at": "2026-10-24"
   },
   "named staff: Inc": {
    "reviewers": 4,
@@ -550,9 +550,9 @@
      "row": "reviews.csv row 109"
     }
    ],
-   "tier": "unchecked",
-   "checked": false,
-   "checked_at": ""
+   "tier": "example",
+   "checked": true,
+   "checked_at": "2026-10-24"
   },
   "named staff: James": {
    "reviewers": 26,
@@ -583,9 +583,9 @@
      "row": "reviews.csv row 82"
     }
    ],
-   "tier": "unchecked",
-   "checked": false,
-   "checked_at": ""
+   "tier": "known",
+   "checked": true,
+   "checked_at": "2026-10-24"
   },
   "named staff: Landon": {
    "reviewers": 5,
@@ -616,9 +616,9 @@
      "row": "reviews.csv row 113"
     }
    ],
-   "tier": "unchecked",
-   "checked": false,
-   "checked_at": ""
+   "tier": "known",
+   "checked": true,
+   "checked_at": "2026-10-24"
   },
   "named staff: Randall": {
    "reviewers": 3,
@@ -639,9 +639,9 @@
      "row": "reviews.csv row 113"
     }
    ],
-   "tier": "unchecked",
-   "checked": false,
-   "checked_at": ""
+   "tier": "known",
+   "checked": true,
+   "checked_at": "2026-10-24"
   }
  },
  "questions": [
@@ -853,259 +853,259 @@
    "id": "R7",
    "kind": "review",
    "topic": "practice: clean-up",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Our gutters were installed within a couple days, fast, great team, cleaned up and the gutters look great!"
   },
   {
    "id": "R8",
    "kind": "review",
    "topic": "practice: clean-up",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "They are a pleasure to work with they were very curtius and went right to work after arriving cleaned up and completed in 2 hrs highly recommend"
   },
   {
    "id": "R9",
    "kind": "review",
    "topic": "practice: clean-up",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Job was done quickly and cleaned up after."
   },
   {
    "id": "R10",
    "kind": "review",
    "topic": "practice: clean-up",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "They cleaned up very well afterwards and the gutters look great!"
   },
   {
    "id": "R11",
    "kind": "review",
    "topic": "practice: clean-up",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "They did excellent work on the gutters with leaf guards and cleaning up."
   },
   {
    "id": "R12",
    "kind": "review",
    "topic": "practice: communication",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Shows up on time, great communication, great work and fair pricing."
   },
   {
    "id": "R13",
    "kind": "review",
    "topic": "practice: communication",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Her communication was great, she provided a lot of insight on what looked the best, and provided thorough info."
   },
   {
    "id": "R14",
    "kind": "review",
    "topic": "practice: communication",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "They were quick to come out, easy to communicate with, and once my HOA approval came through, they wasted no time getting the installation scheduled and completed."
   },
   {
    "id": "R15",
    "kind": "review",
    "topic": "practice: communication",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Communication was clear, they responded quickly, and everything was handled in a professional and friendly manner."
   },
   {
    "id": "R16",
    "kind": "review",
    "topic": "practice: communication",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Very responsive and communicative."
   },
   {
    "id": "R17",
    "kind": "review",
    "topic": "practice: speed",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Came quickly after being called and everyone is very friendly!"
   },
   {
    "id": "R18",
    "kind": "review",
    "topic": "practice: speed",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Shows up on time, great communication, great work and fair pricing."
   },
   {
    "id": "R19",
    "kind": "review",
    "topic": "practice: speed",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "On time great job!!!"
   },
   {
    "id": "R20",
    "kind": "review",
    "topic": "practice: speed",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "The team was professional, on time, and did an amazing job with our gutters."
   },
   {
    "id": "R21",
    "kind": "review",
    "topic": "practice: speed",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "They were quick to come out, easy to communicate with, and once my HOA approval came through, they wasted no time getting the installation scheduled and completed."
   },
   {
    "id": "R22",
    "kind": "review",
    "topic": "named staff: Adrian",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Many that’s to Adrian and his crew for their amazing service."
   },
   {
    "id": "R23",
    "kind": "review",
    "topic": "named staff: Adrian",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Adrian was easy to work with and professional at all times."
   },
   {
    "id": "R24",
    "kind": "review",
    "topic": "named staff: Adrian",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Adrian came right out, provided great options and a great price!"
   },
   {
    "id": "R25",
    "kind": "review",
    "topic": "named staff: Adrian",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Adrian responded quickly."
   },
   {
    "id": "R26",
    "kind": "review",
    "topic": "named staff: Adrian",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Adrian was friendly, professional and very helpful."
   },
   {
    "id": "R27",
    "kind": "review",
    "topic": "named staff: Inc",
-   "tier": "unchecked",
+   "tier": "example",
    "text": "First Choice Seamless Gutters Inc."
   },
   {
    "id": "R28",
    "kind": "review",
    "topic": "named staff: Inc",
-   "tier": "unchecked",
+   "tier": "example",
    "text": "Highly recommend First Choice Seamless Gutters Inc."
   },
   {
    "id": "R29",
    "kind": "review",
    "topic": "named staff: Inc",
-   "tier": "unchecked",
+   "tier": "example",
    "text": "I strongly recommend First Choice Seamless Gutters Inc."
   },
   {
    "id": "R30",
    "kind": "review",
    "topic": "named staff: Inc",
-   "tier": "unchecked",
+   "tier": "example",
    "text": "Having completed more than a few jobs for my company, Danny Sadler, Inc."
   },
   {
    "id": "R31",
    "kind": "review",
    "topic": "named staff: James",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "James and his son are the sole owners and workers in this business and do high quality work as well as offer many different options to customize your gutters and downspouts."
   },
   {
    "id": "R32",
    "kind": "review",
    "topic": "named staff: James",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "James and his son did our gutters today and they did an awesome job, we couldn't be happier."
   },
   {
    "id": "R33",
    "kind": "review",
    "topic": "named staff: James",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "James and his son did a fantastic job putting in a new gutter and downspouts."
   },
   {
    "id": "R34",
    "kind": "review",
    "topic": "named staff: James",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "James was very communicative and professional during the quote and scheduling process."
   },
   {
    "id": "R35",
    "kind": "review",
    "topic": "named staff: James",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "James and his son did an extraordinary and a beautiful job."
   },
   {
    "id": "R36",
    "kind": "review",
    "topic": "named staff: Landon",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "He and Landon came out as scheduled for the installation and did a fantastic job."
   },
   {
    "id": "R37",
    "kind": "review",
    "topic": "named staff: Landon",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "James & Landon have done it again !!"
   },
   {
    "id": "R38",
    "kind": "review",
    "topic": "named staff: Landon",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "I ABSOLUTELY recommend James and Landon for your gutter needs."
   },
   {
    "id": "R39",
    "kind": "review",
    "topic": "named staff: Landon",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Randall, and his son, Landon, provided exemplary service."
   },
   {
    "id": "R40",
    "kind": "review",
    "topic": "named staff: Landon",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Amazing job done by Randall and his son Landon"
   },
   {
    "id": "R41",
    "kind": "review",
    "topic": "named staff: Randall",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Randall does a great job and is very professional"
   },
   {
    "id": "R42",
    "kind": "review",
    "topic": "named staff: Randall",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Randall was contracted to replace our front gutters, as well as add gutters alongside our house."
   },
   {
    "id": "R43",
    "kind": "review",
    "topic": "named staff: Randall",
-   "tier": "unchecked",
+   "tier": "known",
    "text": "Amazing job done by Randall and his son Landon"
   },
   {
@@ -1328,6 +1328,41 @@
    "id": "gutter-maintenance-consolidated",
    "label": "Gutter Maintenance (standalone service)",
    "value": "Not a standalone service. Its maintenance scope is folded into the Gutter Repair and Gutter Cleaning pages; no /services/gutter-maintenance/ page. The old URL is redirected (never deleted) to the closer of the two."
+  },
+  {
+   "id": "practice: clean-up",
+   "label": "practice: clean-up",
+   "value": "Our gutters were installed within a couple days, fast, great team, cleaned up and the gutters look great!"
+  },
+  {
+   "id": "practice: communication",
+   "label": "practice: communication",
+   "value": "Shows up on time, great communication, great work and fair pricing."
+  },
+  {
+   "id": "practice: speed",
+   "label": "practice: speed",
+   "value": "Came quickly after being called and everyone is very friendly!"
+  },
+  {
+   "id": "named staff: Adrian",
+   "label": "named staff: Adrian",
+   "value": "Many that’s to Adrian and his crew for their amazing service."
+  },
+  {
+   "id": "named staff: James",
+   "label": "named staff: James",
+   "value": "James and his son are the sole owners and workers in this business and do high quality work as well as offer many different options to customize your gutters and downspouts."
+  },
+  {
+   "id": "named staff: Landon",
+   "label": "named staff: Landon",
+   "value": "He and Landon came out as scheduled for the installation and did a fantastic job."
+  },
+  {
+   "id": "named staff: Randall",
+   "label": "named staff: Randall",
+   "value": "Randall does a great job and is very professional"
   }
  ]
 }

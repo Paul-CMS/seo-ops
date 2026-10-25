@@ -1,0 +1,33 @@
+{
+  "made": "2026-10-24T21:47:53-05:00",
+  "run": "20261024-210703-build-c2ee",
+  "fixes": [
+    {
+      "page": "loc-lakeland",
+      "rule": "wording",
+      "item": "faq1-colour-spelling",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "FAQ 1 question 'colour' → 'color' (US page; the answer already says color).",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/"
+    },
+    {
+      "page": "loc-lakeland",
+      "rule": "wording",
+      "item": "faq2-question-wording",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "FAQ 2 question 'Who issues permits for gutter work at a Lakeland address — City of Lakeland?' → 'Who issues permits for gutter work at a Lakeland address?'",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/"
+    },
+    {
+      "page": "loc-lakeland",
+      "rule": "wording",
+      "item": "cta-legal-name",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Closing CTA uses the legal name 'First Choice Seamless Gutters Inc.' → the brand name 'First Choice Seamless Gutters'.",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/"
+    }
+  ]
+}
