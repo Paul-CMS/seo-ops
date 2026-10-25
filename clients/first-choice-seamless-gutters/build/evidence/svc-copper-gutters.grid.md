@@ -1,16 +1,16 @@
 # Evidence grid — Copper Gutters (service)
 
-**Result: BLOCK** · Known 7 · Unknown 1 · Unverified 4 · Conflict 0 (CM-041)
+**Result: WARN** · Known 9 · Unknown 1 · Unverified 2 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
 
-- 2 required facts are not known (block at 2)
+- 0 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'
 
 | Fact | Need | Mark | Value | Source |
 |---|---|---|---|---|
 | Phone | required | **Known** | (863) 330-3243 (site, GBP, schema agree; BBB also lists 'Other Phone' (863) 320-2842) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Contact_and_hours_0) |
-| What the service includes (scope, inclusions) | required | **Unverified** | "Installed With Real Storm Behavior in Mind At First Choice Seamless Gutters , we design copper gutter systems around how homes in this area actually shed water." | client site https://www.firstchoiceseamlessgutters.net/services/copper-gutters/ (data/crawl/page-text.csv row 29) |
-| How the service is delivered (steps, methods, equipment) | required | **Unverified** | "Installed With Real Storm Behavior in Mind At First Choice Seamless Gutters , we design copper gutter systems around how homes in this area actually shed water." | client site https://www.firstchoiceseamlessgutters.net/services/copper-gutters/ (data/crawl/page-text.csv row 29) |
+| What the service includes (scope, inclusions) | required | **Known** | Yes, still true: Installed With Real Storm Behavior in Mind. We design copper gutter systems around how homes in this area actually shed water. (Paul, 2026-10-24) | answer 2026-10-24 (Paul (confirmed site text); decisions-settled.md fact:svc-copper-gutters:service_scope) |
+| How the service is delivered (steps, methods, equipment) | required | **Known** | Yes, still true: Installed With Real Storm Behavior in Mind. We design copper gutter systems around how homes in this area actually shed water. (Paul, 2026-10-24) | answer 2026-10-24 (Paul (confirmed site text); decisions-settled.md fact:svc-copper-gutters:service_process) |
 | Free estimate / offer — and what free means | required | **Known** | Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees' | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_9) |
 | Typical job duration or timeline | supporting | **Unverified** | "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) | client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2) |
 | Price range, or what drives the cost | supporting | **Unverified** | "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) | client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2) |

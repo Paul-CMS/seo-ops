@@ -1,36 +1,28 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
-- **What is happening now:** waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - services - 2026-10-24 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve first-choice-seamless-gutters evidence:svc-seamless-gutter-installation --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-installation --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-repair --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-commercial-gutters --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-downspouts --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-guards --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-copper-gutters --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-galvalume-gutters --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-aluminum-gutters --reason "<why you waive it>"
-- **Waiting on:** Client (via Paul) — waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutt; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
-- **Next action:** `/interview first-choice-seamless-gutters facts-answers services` once the wait above is over · model: Haiku chat
+- **What is happening now:** ready to start: the evidence gate blocked svc-seamless-gutter-installation, svc-gutter-installation, svc-gutter-repair, svc-gutter-downspouts, svc-gutter-guards, svc-galvalume-gutters, svc-aluminum-gutters — targeted questions for the owner (you send them). Or waive instead: /approve first-choice-seamless-gutters evidence:svc-seamless-gutter-installation --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-installation --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-repair --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-downspouts --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-guards --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-galvalume-gutters --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-aluminum-gutters --reason "<why you waive it>"
+- **Waiting on:** Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7
+- **Next action:** `/interview first-choice-seamless-gutters facts services` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), brief-writer (sonnet)) · model: Haiku chat
 
-_Generated 2026-10-24T22:05 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T22:14 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Client (via Paul) | waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - services - 2026-10-24 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve first-choice-seamless-gutters evidence:svc-seamless-gutter-installation --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-installation --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-repair --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-commercial-gutters --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-downspouts --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-guards --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-copper-gutters --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-galvalume-gutters --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-aluminum-gutters --reason "<why you waive it>" | 2026-10-24 | /interview first-choice-seamless-gutters facts-answers services |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-seamless-gutter-installation:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-seamless-gutter-installation:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-installation:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-gutter-installation:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-repair:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-gutter-repair:pricing |
-| Client (via Paul) | Your website says this about What the service includes (scope, inclusions): "We install and service commercial gutter systems that are sized for higher volume, reinforced where needed, and routed to move water safely away from the building perimeter." (client site https://www.firstchoiceseamlessgutt | 2026-10-24 | fact:svc-commercial-gutters:service_scope |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-commercial-gutters:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-commercial-gutters:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-downspouts:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-gutter-downspouts:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-guards:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-gutter-guards:pricing |
-| Client (via Paul) | Your website says this about What the service includes (scope, inclusions): "Installed With Real Storm Behavior in Mind At First Choice Seamless Gutters , we design copper gutter systems around how homes in this area actually shed water." (client site https://www.firstchoiceseamlessgutters.net/servi | 2026-10-24 | fact:svc-copper-gutters:service_scope |
-| Client (via Paul) | Your website says this about How the service is delivered (steps, methods, equipment): "Installed With Real Storm Behavior in Mind At First Choice Seamless Gutters , we design copper gutter systems around how homes in this area actually shed water." (client site https://www.firstchoiceseamlessgutter | 2026-10-24 | fact:svc-copper-gutters:service_process |
-| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
-| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
-| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
-| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
 
 ## Waiting on (not blocking)
 
@@ -39,7 +31,10 @@ _Open, but the next action above goes ahead without them._
 | Who | What | Since | Reference |
 |---|---|---|---|
 | Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-24 | /verify first-choice-seamless-gutters |
-| Paul | batches not yet built and written back: pilot, services, locations-west, locations-east, about | 2026-10-24 | /where first-choice-seamless-gutters |
+| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
+| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
+| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
+| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
 
 ## Settled decisions — never re-raised
 
@@ -98,6 +93,9 @@ _Open, but the next action above goes ahead without them._
 - Lakeland neighborhoods and historic districts: Beacon Hill-Alta Vista, Biltmore-Cumberland, Dixieland, East Lake Morton, Lake Hunter Terrace, Munn Park, South Lake Morton, Moorehead, Orangewood (Wikipedia, Lakeland, Florida).
 - Route A: the system writes the pages.
 - The city-level Google Maps embed on the Lakeland page is replaced by the VA when the page is in draft. The placeholder stays in the draft until then.
+- Yes, still true: We install and service commercial gutter systems that are sized for higher volume, reinforced where needed, and routed to move water safely away from the building perimeter. (Paul, 2026-10-24)
+- Yes, still true: Installed With Real Storm Behavior in Mind. We design copper gutter systems around how homes in this area actually shed water. (Paul, 2026-10-24)
+- Yes, still true: Installed With Real Storm Behavior in Mind. We design copper gutter systems around how homes in this area actually shed water. (Paul, 2026-10-24)
 
 ## Open VA items
 
@@ -151,9 +149,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 12 | 22,546,947 | $5.45 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 13 | 23,283,973 | $5.46 | $0.00 |
 | any stage | 7 | 5,927,813 | $1.64 | $0.00 |
-| **total** | 32 | 74,807,356 | $22.46 | $0.00 |
+| **total** | 33 | 75,544,382 | $22.47 | $0.00 |
 
 ## Spend by step (model)
 
@@ -171,12 +169,12 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | build:writeback | 1 | 1,809,174 | $0.55 | $0.00 |
 | build:pilot-corrections | 1 | 680,899 | $0.21 | $0.00 |
 | interview:facts | 5 | 5,553,408 | $0.17 | $0.00 |
+| interview:facts-answers | 4 | 2,204,142 | $0.04 | $0.00 |
 | build:blockers | 2 | 1,617,331 | $0.03 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
-| interview:facts-answers | 3 | 1,467,116 | $0.02 | $0.00 |
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 32 | 74,807,356 | $22.46 | $0.00 |
+| **total** | 33 | 75,544,382 | $22.47 | $0.00 |
 
-Last run: /interview 2026-10-24T22:05 — Facts pack for blocked services batch written (15 questions, 9 pages); not sent; Paul to review, reword and send or waive
+Last run: /interview 2026-10-24T22:14 — Paul confirmed 3 site claims (commercial/copper scope, copper process); settled; gate re-run: commercial and copper WARN, 7 services still BLOCK

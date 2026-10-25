@@ -1,15 +1,15 @@
 # Evidence grid — Commercial Gutters (service)
 
-**Result: BLOCK** · Known 7 · Unknown 2 · Unverified 3 · Conflict 0 (CM-041)
+**Result: WARN** · Known 8 · Unknown 2 · Unverified 2 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
 
-- 2 required facts are not known (block at 2)
+- 1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'
 
 | Fact | Need | Mark | Value | Source |
 |---|---|---|---|---|
 | Phone | required | **Known** | (863) 330-3243 (site, GBP, schema agree; BBB also lists 'Other Phone' (863) 320-2842) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Contact_and_hours_0) |
-| What the service includes (scope, inclusions) | required | **Unverified** | "We install and service commercial gutter systems that are sized for higher volume, reinforced where needed, and routed to move water safely away from the building perimeter." | client site https://www.firstchoiceseamlessgutters.net/areas-we-serve/highland-city-fl/ (data/crawl/page-text.csv row 13) |
+| What the service includes (scope, inclusions) | required | **Known** | Yes, still true: We install and service commercial gutter systems that are sized for higher volume, reinforced where needed, and routed to move water safely away from the building perimeter. (Paul, 2026-10-24) | answer 2026-10-24 (Paul (confirmed site text); decisions-settled.md fact:svc-commercial-gutters:service_scope) |
 | How the service is delivered (steps, methods, equipment) | required | **Unknown** |  | searched, not found (4 source(s) on disk) |
 | Free estimate / offer — and what free means | required | **Known** | Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees' | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_9) |
 | Typical job duration or timeline | supporting | **Unverified** | "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) | client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2) |

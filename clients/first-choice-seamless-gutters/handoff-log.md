@@ -530,3 +530,14 @@ Still open:
 
 - FLAG 2026-10-24T22:05 · run 20261024-220530-interview-f675 · F-011 · evidence.py questions (facts pack, batch services) repeats the same wording for every page: 'Typical job duration' and 'Price ra…
 
+## /interview · 2026-10-24 · run 20261024-221346-interview-5ad3
+
+## What happened
+- Paul answered the pack: all site claims still true. He confirmed them himself, not the owner.
+- Settled 3 keys: commercial service_scope, copper service_scope, copper service_process.
+- Left open: timeframe and pricing (site line was the phone and nav text, no real value).
+- Gate re-run: commercial and copper WARN; the other 7 services still BLOCK.
+
+## Next
+- Owner must give real timeframe and pricing, or Paul waives per page.
+

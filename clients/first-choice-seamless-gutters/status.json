@@ -170,8 +170,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-seamless-gutter-installation.grid.md",
         "sha": "0bc6d27ab272",
-        "at": "2026-10-24T20:29:09-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "at": "2026-10-24T22:13:56-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "gaps": [
           "service_scope",
           "service_process",
@@ -183,9 +183,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-seamless-gutter-installation.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-seamless-gutter-installation.json",
-        "sha": "271385ee90c8",
-        "at": "2026-10-24T20:29:09-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "77d829fc58c6",
+        "at": "2026-10-24T22:13:56-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "section": "services",
         "counts": {
           "facts": 42,
@@ -235,8 +235,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-installation.grid.md",
         "sha": "91adb6537dff",
-        "at": "2026-10-24T20:29:09-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "at": "2026-10-24T22:13:56-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "gaps": [
           "service_scope",
           "service_process",
@@ -248,9 +248,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-installation.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-installation.json",
-        "sha": "501db661680f",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "3e01c684b0d3",
+        "at": "2026-10-24T22:13:56-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "section": "services",
         "counts": {
           "facts": 42,
@@ -300,8 +300,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-repair.grid.md",
         "sha": "c369b81976ac",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "at": "2026-10-24T22:13:56-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "gaps": [
           "service_scope",
           "service_process",
@@ -313,9 +313,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-repair.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-repair.json",
-        "sha": "2ff6969adbe1",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "28ad67de4232",
+        "at": "2026-10-24T22:13:56-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "section": "services",
         "counts": {
           "facts": 42,
@@ -352,22 +352,21 @@
         "How long does a commercial gutter installation take? — logistics question for business owners [NEED: client practice]"
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 7,
+          "Known": 8,
           "Unknown": 2,
-          "Unverified": 3,
+          "Unverified": 2,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "1 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-commercial-gutters.grid.md",
-        "sha": "dfd47060da8e",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "fc920690a646",
+        "at": "2026-10-24T22:13:56-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "gaps": [
-          "service_scope",
           "service_process",
           "timeframe",
           "pricing",
@@ -377,9 +376,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-commercial-gutters.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-commercial-gutters.json",
-        "sha": "246a57712f1a",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "5ac4a1d2247a",
+        "at": "2026-10-24T22:13:56-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "section": "services",
         "counts": {
           "facts": 42,
@@ -389,7 +388,7 @@
           "site_gbp": 12,
           "public": 0,
           "place": 0,
-          "settled": 1,
+          "settled": 2,
           "gaps": 2,
           "excerpts": 50
         }
@@ -429,8 +428,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-downspouts.grid.md",
         "sha": "73108c33a7db",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "at": "2026-10-24T22:13:56-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "gaps": [
           "service_scope",
           "service_process",
@@ -442,9 +441,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-downspouts.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-downspouts.json",
-        "sha": "71e4e8e47bea",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "f0c02b7c1214",
+        "at": "2026-10-24T22:13:57-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "section": "services",
         "counts": {
           "facts": 42,
@@ -493,8 +492,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-guards.grid.md",
         "sha": "ea9c64bef04d",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "at": "2026-10-24T22:13:57-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "gaps": [
           "service_scope",
           "service_process",
@@ -506,9 +505,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-guards.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-guards.json",
-        "sha": "1552d0a9d8b9",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "f4b12559324d",
+        "at": "2026-10-24T22:13:57-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "section": "services",
         "counts": {
           "facts": 42,
@@ -518,7 +517,7 @@
           "site_gbp": 12,
           "public": 0,
           "place": 0,
-          "settled": 1,
+          "settled": 2,
           "gaps": 3,
           "excerpts": 54
         }
@@ -624,23 +623,21 @@
         "Should copper gutters be soldered? — PAA #31"
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 7,
+          "Known": 9,
           "Unknown": 1,
-          "Unverified": 4,
+          "Unverified": 2,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "0 required and 3 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-copper-gutters.grid.md",
-        "sha": "ca629e1f71b8",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "645975b52235",
+        "at": "2026-10-24T22:13:57-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "gaps": [
-          "service_scope",
-          "service_process",
           "timeframe",
           "pricing",
           "certifications"
@@ -649,9 +646,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-copper-gutters.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-copper-gutters.json",
-        "sha": "80a95ede33c8",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "51301570eb45",
+        "at": "2026-10-24T22:13:57-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "section": "services",
         "counts": {
           "facts": 42,
@@ -661,7 +658,7 @@
           "site_gbp": 12,
           "public": 0,
           "place": 0,
-          "settled": 1,
+          "settled": 3,
           "gaps": 1,
           "excerpts": 50
         }
@@ -700,8 +697,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-galvalume-gutters.grid.md",
         "sha": "2acc7da0ccb6",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "at": "2026-10-24T22:13:57-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "gaps": [
           "service_scope",
           "service_process",
@@ -713,9 +710,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-galvalume-gutters.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-galvalume-gutters.json",
-        "sha": "9d28fb861c0d",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "f436c2b0171a",
+        "at": "2026-10-24T22:13:57-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "section": "services",
         "counts": {
           "facts": 42,
@@ -764,8 +761,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-aluminum-gutters.grid.md",
         "sha": "28b4b5785124",
-        "at": "2026-10-24T20:29:10-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "at": "2026-10-24T22:13:57-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "gaps": [
           "service_scope",
           "service_process",
@@ -777,9 +774,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-aluminum-gutters.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-aluminum-gutters.json",
-        "sha": "b6a74655c0ba",
-        "at": "2026-10-24T20:29:11-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "803f97a7b1a4",
+        "at": "2026-10-24T22:13:57-05:00",
+        "run": "20261024-221346-interview-5ad3",
         "section": "services",
         "counts": {
           "facts": 42,
@@ -2448,12 +2445,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261024-220530-interview-f675",
+    "run_id": "20261024-221346-interview-5ad3",
     "command": "interview",
-    "finished": "2026-10-24T22:05:47-05:00",
-    "result": "Facts pack for blocked services batch written (15 questions, 9 pages); not sent; Paul to review, reword and send or waive",
+    "finished": "2026-10-24T22:14:09-05:00",
+    "result": "Paul confirmed 3 site claims (commercial/copper scope, copper process); settled; gate re-run: commercial and copper WARN, 7 services still BLOCK",
     "changes": 0,
-    "step": "interview:facts",
+    "step": "interview:facts-answers",
     "batch": "services"
   },
   "spend": {
@@ -2475,7 +2472,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T22:05:47-05:00",
+  "updated": "2026-10-24T22:14:09-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -3212,6 +3209,26 @@
       },
       "by_agent": {
         "main": 0.0064
+      }
+    },
+    {
+      "run": "20261024-221346-interview-5ad3",
+      "step": "interview:facts-answers",
+      "tokens": 737026,
+      "usd": 0.0117,
+      "at": "2026-10-24T22:14:09-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0117,
+          "in": 12,
+          "out": 3404,
+          "cache_read": 719843,
+          "cache_write": 13767
+        }
+      },
+      "by_agent": {
+        "main": 0.0117
       }
     }
   ],
