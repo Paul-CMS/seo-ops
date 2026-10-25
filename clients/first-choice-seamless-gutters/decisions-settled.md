@@ -10,6 +10,7 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - 2026-10-23 — audit_approved: approved
 - 2026-10-24 — brand_guide_approved: approved
 - 2026-10-24 — site plan: approved
+- 2026-10-24 — batch pilot drafts: approved
 
 ## Settled
 

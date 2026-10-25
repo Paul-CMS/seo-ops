@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** waiting for Paul's approval — the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): loc-lakeland.md: line 50 [NEED: city-level Google Maps embed of Lakeland, FL (not the GBP map) 
-- **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (nothing 
-- **Next action:** Paul types `/approve first-choice-seamless-gutters batch:pilot:drafts` (or asks for changes first) · model: Haiku chat
+- **Stage —**
+- **What is happening now:** ready to start: apply your pilot corrections to the specs before the next batch
+- **Waiting on:** nobody
+- **Next action:** `/build first-choice-seamless-gutters pilot-corrections` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` · model: Haiku chat
 
-_Generated 2026-10-24T22:00 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T22:01 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): loc-lakeland.md: line 50 [NEED: city-level Google Maps embed of Lakeland, FL (not the GBP map)  | 2026-10-24 | /approve first-choice-seamless-gutters batch:pilot:drafts |
+| — | nothing | | |
 
 ## Waiting on (not blocking)
 
@@ -33,6 +33,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-23: Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here) — approved
 - 2026-10-24: Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims) — approved
 - 2026-10-24: site plan — approved
+- 2026-10-24: batch pilot drafts — approved
 - Drive copy pending sync — the local Drive folder ~/Library/CloudStorage/GoogleDrive-paul@coastalmarketingstrategies.com/My Drive/v3. CMS Technical SEO Audit 2026 is not there (Drive for desktop signed out or not syncing?). Files stay in the repo until Drive for desktop syncs; nothing is retyped into the connector.
 - Primary GBP category and category entity: Gutter service (Paul, 2026-10-22).
 - Area entity: Polk County, Florida (Paul, 2026-10-22).
