@@ -3,7 +3,7 @@
  "type": "location",
  "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
  "section": "pilot",
- "built": "2026-10-24T21:02:00-05:00",
+ "built": "2026-10-24T21:04:05-05:00",
  "services": [],
  "places": [
   "Lakeland"
@@ -899,7 +899,60 @@
   }
  ],
  "public": [],
- "research": [],
+ "research": [
+  {
+   "id": "RL-pilot-1",
+   "page": "loc-lakeland",
+   "gap": "fact:loc-lakeland:permit_office",
+   "kind": "public",
+   "queries": "Lakeland building permits residential gutters",
+   "sources_tried": "https://www.lakelandgov.net/departments/community-economic-development/building-inspection/faqs/",
+   "result": "found",
+   "excerpt": "City of Lakeland Building Inspection issues permits inside city limits (863-834-6012). Polk County Building Department for addresses outside city limits. FAQ does not mention gutters.",
+   "url": "https://www.lakelandgov.net/departments/community-economic-development/building-inspection/faqs/",
+   "date": "2026-10-24",
+   "run": "20261024-210357-interview-1566"
+  },
+  {
+   "id": "RL-pilot-2",
+   "page": "loc-lakeland",
+   "gap": "fact:loc-lakeland:place_entities",
+   "kind": "public",
+   "queries": "Lakeland Florida notable places parks districts",
+   "sources_tried": "https://en.wikipedia.org/wiki/Lakeland,_Florida",
+   "result": "found",
+   "excerpt": "Named Lakeland places: Lake Mirror Park, Dixieland Historic District, Florida Southern College, Lake Morton.",
+   "url": "https://en.wikipedia.org/wiki/Lakeland,_Florida",
+   "date": "2026-10-24",
+   "run": "20261024-210357-interview-1566"
+  },
+  {
+   "id": "RL-pilot-3",
+   "page": "loc-lakeland",
+   "gap": "fact:loc-lakeland:neighborhoods",
+   "kind": "public",
+   "queries": "Lakeland Florida neighborhoods historic districts",
+   "sources_tried": "https://en.wikipedia.org/wiki/Lakeland,_Florida",
+   "result": "partial",
+   "excerpt": "Named Lakeland neighborhoods: Beacon Hill-Alta Vista, Biltmore-Cumberland, Dixieland, East Lake Morton, Lake Hunter Terrace, Munn Park, South Lake Morton, Moorehead, Orangewood. City list pages returned 404.",
+   "url": "https://en.wikipedia.org/wiki/Lakeland,_Florida",
+   "date": "2026-10-24",
+   "run": "20261024-210357-interview-1566"
+  },
+  {
+   "id": "RL-pilot-4",
+   "page": "loc-lakeland",
+   "gap": "fact:loc-lakeland:city_conditions",
+   "kind": "public",
+   "queries": "Lakeland Florida rainy season hurricane season rainfall",
+   "sources_tried": "https://www.weather.gov/tbw/RainySeason",
+   "result": "partial",
+   "excerpt": "Rainy season May 25 to Oct 10; hurricane season Jun 1 to Nov 30 (NWS). Lakeland averages about 56.8 in rain a year, wettest Jun to Sep. No source found for tree debris or housing age.",
+   "url": "https://www.weather.gov/tbw/RainySeason",
+   "date": "2026-10-24",
+   "run": "20261024-210357-interview-1566"
+  }
+ ],
  "place": [],
  "settled": [
   {
@@ -1296,6 +1349,34 @@
    "topic": "site/GBP",
    "tier": "site_stated",
    "text": "Commercial Gutter Services in Lakeland, FL – Serving Commercial Properties Across Polk County Commercial buildings require gutter systems designed to handle high water volume and long-term use."
+  },
+  {
+   "id": "P51",
+   "kind": "public",
+   "topic": "fact:loc-lakeland:permit_office",
+   "tier": "official",
+   "text": "City of Lakeland Building Inspection issues permits inside city limits (863-834-6012). Polk County Building Department for addresses outside city limits. FAQ does not mention gutters."
+  },
+  {
+   "id": "P52",
+   "kind": "public",
+   "topic": "fact:loc-lakeland:place_entities",
+   "tier": "official",
+   "text": "Named Lakeland places: Lake Mirror Park, Dixieland Historic District, Florida Southern College, Lake Morton."
+  },
+  {
+   "id": "P53",
+   "kind": "public",
+   "topic": "fact:loc-lakeland:neighborhoods",
+   "tier": "official",
+   "text": "Named Lakeland neighborhoods: Beacon Hill-Alta Vista, Biltmore-Cumberland, Dixieland, East Lake Morton, Lake Hunter Terrace, Munn Park, South Lake Morton, Moorehead, Orangewood. City list pages returned 404."
+  },
+  {
+   "id": "P54",
+   "kind": "public",
+   "topic": "fact:loc-lakeland:city_conditions",
+   "tier": "official",
+   "text": "Rainy season May 25 to Oct 10; hurricane season Jun 1 to Nov 30 (NWS). Lakeland averages about 56.8 in rain a year, wettest Jun to Sep. No source found for tree debris or housing age."
   }
  ],
  "known": [

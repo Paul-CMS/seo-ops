@@ -1,6 +1,6 @@
 # Evidence pack — Lakeland (location)
 
-Section **pilot** · https://www.firstchoiceseamlessgutters.net/lakeland-fl/ · built 2026-10-24T21:02 by evidence_pack.py (CM-061).
+Section **pilot** · https://www.firstchoiceseamlessgutters.net/lakeland-fl/ · built 2026-10-24T21:04 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -193,7 +193,10 @@ Usage tier: attributed customer example only — no company claim
 
 ## Public facts
 
-_No area source list rows or research results for this place yet._
+- research-log: fact:loc-lakeland:permit_office — "City of Lakeland Building Inspection issues permits inside city limits (863-834-6012). Polk County Building Department for addresses outside city limits. FAQ does not mention gutters." (https://www.lakelandgov.net/departments/community-economic-development/building-inspection/faqs/, 2026-10-24)
+- research-log: fact:loc-lakeland:place_entities — "Named Lakeland places: Lake Mirror Park, Dixieland Historic District, Florida Southern College, Lake Morton." (https://en.wikipedia.org/wiki/Lakeland,_Florida, 2026-10-24)
+- research-log: fact:loc-lakeland:neighborhoods — "Named Lakeland neighborhoods: Beacon Hill-Alta Vista, Biltmore-Cumberland, Dixieland, East Lake Morton, Lake Hunter Terrace, Munn Park, South Lake Morton, Moorehead, Orangewood. City list pages return" (https://en.wikipedia.org/wiki/Lakeland,_Florida, 2026-10-24)
+- research-log: fact:loc-lakeland:city_conditions — "Rainy season May 25 to Oct 10; hurricane season Jun 1 to Nov 30 (NWS). Lakeland averages about 56.8 in rain a year, wettest Jun to Sep. No source found for tree debris or housing age." (https://www.weather.gov/tbw/RainySeason, 2026-10-24)
 
 ## Place research (the place store: official facts are plain statements; context only for area character)
 

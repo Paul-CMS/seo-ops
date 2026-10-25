@@ -1040,3 +1040,33 @@ Spend: 2057912 tokens · $0.12 (measured)
 - CHANGE #238 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (12).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 1cc1cf4a3a06 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #239 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (12).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (12).md | result: done · renamed and moved, nothing deleted
 - CHANGE #240 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (12).md | new: First Choice Seamless Gutters - Status.md · sha 7b2a649f55b7 | result: done · copied (Drive for desktop syncs it)
+- EVIDENCE PACKS 2026-10-24T21:03 · run 20261024-210035-interview-d9f2 · section pilot · 1 page(s) · build/pilot/packs/
+
+## RUN 20261024-210357-interview-1566 · STARTED · /interview · 2026-10-24T21:03:57-05:00
+Step: interview:facts · batch pilot · session a06784a5-10d9-4b97-a5ce-6d937ae6d307
+Gates checked: discovery_signed_off
+- RESEARCH 2026-10-24T21:04 · run 20261024-210357-interview-1566 · RL-pilot-1 · fact:loc-lakeland:permit_office (public): found
+- RESEARCH 2026-10-24T21:04 · run 20261024-210357-interview-1566 · RL-pilot-2 · fact:loc-lakeland:place_entities (public): found
+- RESEARCH 2026-10-24T21:04 · run 20261024-210357-interview-1566 · RL-pilot-3 · fact:loc-lakeland:neighborhoods (public): partial
+- RESEARCH 2026-10-24T21:04 · run 20261024-210357-interview-1566 · RL-pilot-4 · fact:loc-lakeland:city_conditions (public): partial
+- EVIDENCE PACKS 2026-10-24T21:04 · run 20261024-210357-interview-1566 · section pilot · 1 page(s) · build/pilot/packs/
+- EVIDENCE 2026-10-24T21:04 · run 20261024-210357-interview-1566 · svc-gutter-cleaning: PASS (known 11, unknown 1, unverified 0, conflict 0)
+- EVIDENCE 2026-10-24T21:04 · run 20261024-210357-interview-1566 · loc-lakeland: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- FACTS INTERVIEW 2026-10-24T21:04 · run 20261024-210357-interview-1566 · batch pilot · 0 question(s) for loc-lakeland · clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md
+### HANDOFF · /interview · 2026-10-24 · run 20261024-210357-interview-1566
+- The earlier research log wrote to build/Serving, build/Local context and similar folders, but the pack reads build/pilot/research-log.csv. The four Lakeland findings were re-logged under section pilot (RL-pilot-1 to -4). The place and neighborhood findings are partial where noted.
+- Rebuilt: build/pilot/packs/loc-lakeland.md and .json (evidence_pack.py build, page loc-lakeland). Public facts now list the four research results.
+- Gaps still listed in the pack: place_entities and permit_office. Both were logged found, but the pack's gap matcher still shows them, so the log keys may not match. Not fixed here.
+- Evidence gate re-run: loc-lakeland still BLOCK (known 5, unknown 2, unverified 3). The city-served, city-conditions and neighborhoods items are unverified. svc-gutter-cleaning still PASS.
+- Waive option if Paul chooses: /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "..."
+- Open: broken-link blocker handoffs with the VA (H-2026-10-23-03-broken_link-01 to -05, +6 more).
+### END HANDOFF
+## RUN 20261024-210357-interview-1566 · FINISHED · 2026-10-24T21:04:22-05:00
+Changes: 0 · Summary: Lakeland pack rebuilt with public research rows; loc-lakeland still blocked on unverified items
+Spend: 1043012 tokens · $0.01 (measured)
+- CHANGE #241 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (9).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #242 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-24 (9).md | new: First Choice Seamless Gutters - Handoff Log.md · sha 130adc15b7df | result: done · copied (Drive for desktop syncs it)
+- CHANGE #243 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (13).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (13).md | result: done · renamed and moved, nothing deleted
+- CHANGE #244 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (13).md | new: First Choice Seamless Gutters - Document Checklist.md · sha c6a7f8ade8fc | result: done · copied (Drive for desktop syncs it)
+- CHANGE #245 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (13).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (13).md | result: done · renamed and moved, nothing deleted
+- CHANGE #246 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (13).md | new: First Choice Seamless Gutters - Status.md · sha 9453a9c6feff | result: done · copied (Drive for desktop syncs it)
