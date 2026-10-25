@@ -1,17 +1,24 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** Stage 5 (Build plan and blockers) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open first-choice-seamless-gutters) and type /next first-choice-seamless-gutters. Next there: /interview first-choice-seamless-gutters facts pilot (the evidence gate blocked svc-gutter-cleaning, loc-lakeland — targeted questions for the owner (you send them). Or waive instead: /approve first-choice-seamless-gutters evidence:svc-gutter-cleaning --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "<why you waive it>")
-- **Waiting on:** nobody
-- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
+- **What is happening now:** waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve first-choice-seamless-gutters evidence:svc-gutter-cleaning --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "<why you waive it>"
+- **Waiting on:** Client (via Paul) — waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutt; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
+- **Next action:** `/interview first-choice-seamless-gutters facts-answers pilot` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-24T20:39 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T20:43 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Client (via Paul) | waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve first-choice-seamless-gutters evidence:svc-gutter-cleaning --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "<why you waive it>" | 2026-10-24 | /interview first-choice-seamless-gutters facts-answers pilot |
+| Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-cleaning:timeframe |
+| Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-gutter-cleaning:pricing |
+| Client (via Paul) | We have Emergency / after-hours reality as "Site: 'Available 7 Days a Week'; GBP hours 7 AM–8 PM Mon–Sun; no emergency claim found" (from GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-10- | 2026-10-24 | fact:d:emergency |
+| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
+| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
+| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
+| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
 
 ## Waiting on (not blocking)
 
@@ -20,10 +27,7 @@ _Open, but the next action above goes ahead without them._
 | Who | What | Since | Reference |
 |---|---|---|---|
 | Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-24 | /verify first-choice-seamless-gutters |
-| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
-| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
-| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
-| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
+| Paul | batches not yet built and written back: pilot, services, locations-west, locations-east, about | 2026-10-24 | /where first-choice-seamless-gutters |
 
 ## Settled decisions — never re-raised
 
@@ -92,6 +96,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **paa-questions** (2 file(s), e.g. `data/paa/paa-questions.csv`) — read by build:evidence, discovery:fanout
 - **paa-raw** (20 file(s), e.g. `data/paa/raw/aluminum-gutters-lakeland.json`) — read by the step that reads paa-questions
 - **discovery-record** (1 file(s), e.g. `discovery/First Choice Seamless Gutters - Discovery Record - REVIEW.md`) — read by build:evidence, build:facts
+- **interviews** (1 file(s), e.g. `interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md`) — read by build:evidence, interview:facts-answers
 - **facts** (1 file(s), e.g. `facts.json`) — read by build:evidence, build:facts
 
 ## Flagged for Paul (system)
@@ -120,8 +125,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 1 | 466,815 | $0.01 | $0.00 |
 | any stage | 6 | 5,246,914 | $1.43 | $0.00 |
-| **total** | 19 | 51,579,510 | $16.80 | $0.00 |
+| **total** | 20 | 52,046,325 | $16.81 | $0.00 |
 
 ## Spend by step (model)
 
@@ -139,6 +145,7 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 19 | 51,579,510 | $16.80 | $0.00 |
+| interview:facts | 1 | 466,815 | $0.01 | $0.00 |
+| **total** | 20 | 52,046,325 | $16.81 | $0.00 |
 
-Last run: /build 2026-10-24T20:38 — Site plan revised with Paul's choices A-C (keep 4 unincorporated pages, no Lakeland Highlands page, The Best on Cleaning + Guards); counts unchanged at 30 pages / 5 batches; urlcheck pass, wheel 0 errors 0 Asks
+Last run: /interview 2026-10-24T20:43 — Facts question pack for pilot batch written: 3 questions, 2 blocked pages. Paul to send.

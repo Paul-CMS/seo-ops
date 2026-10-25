@@ -52,4 +52,10 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **plan_lakeland_highlands_page** (2026-10-24, Paul): Site plan choice B (Paul): no Lakeland Highlands page; named in Lakeland's local context.
 - **the_best_plan_pages** (2026-10-24, Paul): Site plan choice C (Paul): 'The Best' in the H1 on Gutter Cleaning and Gutter Guards only.
 
+## Open questions — asked once, waiting for an answer
+
+- **fact:svc-gutter-cleaning:timeframe** (asked 2026-10-24, waiting on Client (via Paul)): Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien
+- **fact:svc-gutter-cleaning:pricing** (asked 2026-10-24, waiting on Client (via Paul)): Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no —
+- **fact:d:emergency** (asked 2026-10-24, waiting on Client (via Paul)): We have Emergency / after-hours reality as "Site: 'Available 7 Days a Week'; GBP hours 7 AM–8 PM Mon–Sun; no emergency claim found" (from GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-10-
+
 Process defects (reopenings): **1** — a decision asked before the information that shapes it existed; fix the order, not the decision.
