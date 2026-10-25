@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 4 of 8 — Audit**
-- **What is happening now:** waiting for Paul's approval — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md. Discovery is then signed off automatically and Build starts
-- **Waiting on:** Paul — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-
-- **Next action:** Paul types `/approve first-choice-seamless-gutters brand_guide_approved --files "clients/first-choice-seamless-gutters/brand-guide.md"` (or asks for changes first) · model: Haiku chat
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
+- **What is happening now:** waiting for Paul's approval — the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): loc-lakeland.md: line 50 [NEED: city-level Google Maps embed of Lakeland, FL (not the GBP map) 
+- **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (nothing 
+- **Next action:** Paul types `/approve first-choice-seamless-gutters batch:pilot:drafts` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-24T21:58 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T22:00 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md. Discovery is then signed off automatically and Build starts | 2026-10-24 | /approve first-choice-seamless-gutters brand_guide_approved |
+| Paul | the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): loc-lakeland.md: line 50 [NEED: city-level Google Maps embed of Lakeland, FL (not the GBP map)  | 2026-10-24 | /approve first-choice-seamless-gutters batch:pilot:drafts |
 
 ## Waiting on (not blocking)
 
