@@ -15,7 +15,7 @@ First Choice Seamless Gutters installs new rain gutters after a free on-site ins
 
 [NEED: the installation steps, from taking down old gutters to the final water test, and the equipment the crew uses — client, service process]
 
-You pick the gutter material. First Choice installs aluminum, Galvalume and copper gutters, as well as seamless gutters. Ask to compare them during the free estimate. Downspouts and gutter guards are services the company also installs, so they can be planned with the new gutters.
+You pick the gutter material, and the choices are set out below. Downspouts and gutter guards are services the company also installs, so they can be planned with the new gutters.
 
 What you get from a new installation:
 
@@ -42,6 +42,26 @@ Partial gutter replacement covers one side of the house or one problem run. One 
 ### First-Time Gutters on a Home Without Them
 
 First-time gutter installation adds gutters and downspouts to a home that was built without them. Without gutters, rain drops straight off the roof edge. It splashes dirt onto the walls and digs grooves in the soil below. New gutters catch that water and move it to downspouts.
+
+## What Gutter Materials Can You Choose?
+
+First Choice installs four kinds of gutters: three metals, plus seamless gutters. Each one has its own page with the detail, and you can compare them during the free estimate.
+
+### [Aluminum Gutters](https://www.firstchoiceseamlessgutters.net/aluminum-gutters/)
+
+Aluminum is a light metal that will not rust. It is a sound choice for most homes.
+
+### [Galvalume Gutters](https://www.firstchoiceseamlessgutters.net/galvalume-gutters/)
+
+Galvalume is steel with a coating that fights rust. It fits homeowners who want a steel gutter instead of aluminum.
+
+### [Copper Gutters](https://www.firstchoiceseamlessgutters.net/copper-gutters/)
+
+Copper is a warm-colored metal that costs more than aluminum. It fits homes where the look of the gutters matters most.
+
+### [Seamless Gutters](https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/)
+
+Seamless gutters are made so each straight run is one piece, with no joints in the middle. They fit homeowners who want fewer seams that can leak.
 
 ## What Do Homeowners in Polk County, Florida Ask About New Rain Gutters?
 

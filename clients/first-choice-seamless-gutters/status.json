@@ -2479,18 +2479,18 @@
           "drafts": {
             "sheet": "clients/first-choice-seamless-gutters/build/services/drafts-review.csv",
             "md": "clients/first-choice-seamless-gutters/build/services/drafts-review.md",
-            "at": "2026-10-24T22:37:39-05:00",
-            "run": "20261024-221856-build-c8ed",
+            "at": "2026-10-25T14:24:04-05:00",
+            "run": "20261025-142019-build-47a3",
             "asks": 0,
-            "listed": 55,
-            "fixes": 5,
-            "dropped": 0,
+            "listed": 0,
+            "fixes": 0,
+            "dropped": 55,
             "applied": {
-              "at": "2026-10-25T13:57:52-05:00",
-              "ts": 1792954672.5740001,
-              "run": "20261025-135749-build-dc55",
-              "answers": "accept all except 4b, 10b, 19b, 34b, 41b",
-              "explicit": 5,
+              "at": "2026-10-25T14:24:10-05:00",
+              "ts": 1792956250.091362,
+              "run": "20261025-142019-build-47a3",
+              "answers": "",
+              "explicit": 0,
               "file": "clients/first-choice-seamless-gutters/build/services/drafts-apply.json"
             }
           }
@@ -2741,12 +2741,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261025-135749-build-dc55",
+    "run_id": "20261025-142019-build-47a3",
     "command": "build",
-    "finished": "2026-10-25T14:01:53-05:00",
-    "result": "Services drafts: 55/55 review answers applied; 5 H1s switched to Polk County, Florida (plan still lists old H1s); write-back next",
-    "changes": 9,
-    "step": "build:review",
+    "finished": "2026-10-25T14:28:31-05:00",
+    "result": "Services drafts: five FAQ/meta/H1 fixes and installation materials section in the drafts; verify read the drafts directly (no logged changes); pages not yet recorded",
+    "changes": 0,
+    "step": "build:drafts",
     "batch": "services"
   },
   "spend": {
@@ -2768,7 +2768,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-25T14:01:53-05:00",
+  "updated": "2026-10-25T14:28:31-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -3582,6 +3582,34 @@
         "main": 0.0084,
         "build": 1.5304
       }
+    },
+    {
+      "run": "20261025-142019-build-47a3",
+      "step": "build:drafts",
+      "tokens": 5487361,
+      "usd": 1.0397,
+      "at": "2026-10-25T14:28:31-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0326,
+          "in": 28,
+          "out": 9237,
+          "cache_read": 2510461,
+          "cache_write": 14365
+        },
+        "claude-opus-5-5": {
+          "usd": 1.0071,
+          "in": 58,
+          "out": 265,
+          "cache_read": 2867325,
+          "cache_write": 85622
+        }
+      },
+      "by_agent": {
+        "main": 0.0326,
+        "build": 1.0071
+      }
     }
   ],
   "sessions": {
@@ -3683,5 +3711,10 @@
   "blocker_handoffs": [
     "H-2026-10-23-03-broken_link",
     "H-2026-10-23-04-other"
-  ]
+  ],
+  "review_pause": {
+    "run_id": "20261025-142019-build-47a3",
+    "step": "build:drafts",
+    "at": "2026-10-25T14:28:31-05:00"
+  }
 }

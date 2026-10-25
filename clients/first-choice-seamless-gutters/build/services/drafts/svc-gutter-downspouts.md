@@ -53,23 +53,23 @@ A downspout is worth replacing when it is crushed, split at a seam, pulling off 
 
 ### What is the rule of thumb for how many downspouts a gutter needs?
 
-The usual rule of thumb is one downspout for every gutter run, plus another when the run is long or drains a big roof. One downspout can only clear so much water. Past that, the gutter spills over its front edge. At the free on-site inspection, First Choice can look at how much roof drains into each of your gutters.
+The usual rule of thumb is one downspout for every gutter run, plus another when the run is long or drains a big roof, because one downspout can only clear so much water at a time. Past that, the gutter spills over its front edge. At the free on-site inspection, First Choice can look at how much roof drains into each of your gutters.
 
 ### Can you put a 3x4 downspout on a 5-inch gutter?
 
-Often, yes, when the outlet is cut to the larger size; it depends on the gutter's profile. It drains faster than a 2x3 because its opening is twice as big. Leaves and grit pass through instead of plugging the pipe.
+Often, yes, when the outlet is cut to the larger size, though it depends on the gutter's profile, and a 3x4 downspout drains a 5-inch gutter faster than a 2x3 does because its opening is twice as big. Leaves and grit pass through instead of plugging the pipe.
 
 ### What can I use instead of a downspout?
 
-The main options instead of a standard downspout are a rain chain and a buried drain. A rain chain guides water down a hanging chain of cups or links. A buried drain takes the water from the gutter outlet underground. Rain chains splash and can overflow in a heavy storm, so they suit a porch better than a main gutter run.
+The main options in place of a standard downspout are a rain chain, which guides water down a hanging chain of cups or links, and a buried drain, which takes the water from the gutter outlet under the ground. Rain chains splash and can spill over in a heavy storm. They suit a porch better than a main gutter run.
 
 ### How much does it cost to replace a downspout?
 
-The cost to replace a downspout depends on its height, its size, its metal and the extras it needs. A 3x4 costs more than a 2x3, and copper costs more than aluminum. Each elbow, extension or buried drain adds to the price. First Choice measures the job at a free on-site inspection and estimate, free even if you don't book.
+The cost to replace a downspout depends on its height, its size, its metal and the extras it needs, so a 3x4 costs more than a 2x3, and a copper downspout costs more than an aluminum one. Each elbow, extension or buried drain adds to the price. First Choice measures the job at a free on-site inspection and estimate, free even if you don't book.
 
 ### Where should downspouts drain on a Florida lot?
 
-On a Florida lot, downspouts should drain onto ground that slopes away from the house, several feet out from the wall. They should never point at the foundation, a neighbor's yard or a septic drain field. Bare soil washes out when water pours on one spot. An extension, a splash block or a buried drain spreads the flow.
+On a Florida lot, downspouts should drain onto ground that slopes away from the house, several feet out from the wall, and they should never point at the foundation, a neighbor's yard or a septic drain field. Bare soil washes out when water pours on one spot. An extension, a splash block or a buried drain spreads the flow.
 
 ## Which Polk County Towns Does First Choice Serve for Downspout Work?
 

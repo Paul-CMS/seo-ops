@@ -1,1769 +1,9 @@
 {
-  "made": "2026-10-24T22:37:39-05:00",
-  "run": "20261024-221856-build-c8ed",
+  "made": "2026-10-25T14:24:04-05:00",
+  "run": "20261025-142019-build-47a3",
   "step": "drafts",
   "section": "services",
   "rows": [
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-aluminum-gutters|cm-061|writer-chosen-values",
-      "note": "",
-      "_finding": {
-        "page": "svc-aluminum-gutters",
-        "rule": "CM-061",
-        "item": "writer-chosen-values",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "Values the writer chose that the plan did not fix: meta description (names .027 / .032 gauge); opening triple (aluminum gutter systems + gutter contractor + Polk County, Florida) and buyer state (quote names a gauge); H2s 'What Happens When First Choice Seamless Gutters Installs an Aluminum Gutter System?', 'Which Kinds of Aluminum Gutters Can a Home Have?', 'What Should Polk County, Florida Homeowners Ask About Aluminum Gutter Installation?', 'Where Does First Choice Seamless Gutters Install Aluminum Gutters?'; H3s K-Style, Half-Round, 5-Inch and 6-Inch, Aluminum Downspouts, Aluminum Gutter Colors; FAQ H2 pair Aluminum Gutter Installation + Polk County, Florida; one attributed review (advice on what looks best, row 5); award, BBB and Google left out; no outbound link; closing CTA.",
-        "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-        "decided_for_you": "Keep the writer's values as drafted.",
-        "options": [
-          "Keep as drafted",
-          "Change the named value(s)"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/aluminum-gutters/"
-      },
-      "id": "1",
-      "page": "svc-aluminum-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/aluminum-gutters/",
-      "item": "writer-chosen-values",
-      "finding": "Values the writer chose that the plan did not fix: meta description (names .027 / .032 gauge); opening triple (aluminum gutter systems + gutter contractor + Polk County, Florida) and buyer state (quote names a gauge); H2s 'What Happens When First Choice Seamless Gutters Installs an Aluminum Gutter System?', 'Which Kinds of Aluminum Gutters Can a Home Have?', 'What Should Polk County, Florida Homeowners Ask About Aluminum Gutter Installation?', 'Where Does First Choice Seamless Gutters Install Aluminum Gutters?'; H3s K-Style, Half-Round, 5-Inch and 6-Inch, Aluminum Downspouts, Aluminum Gutter Colors; FAQ H2 pair Aluminum Gutter Installation + Polk County, Florida; one attributed review (advice on what looks best, row 5); award, BBB and Google left out; no outbound link; closing CTA.",
-      "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-      "decided_for_you": "Keep the writer's values as drafted.",
-      "options": "a) Keep as drafted · b) Change the named value(s)",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-aluminum-gutters|cm-016|trade-statements",
-      "note": "",
-      "_finding": {
-        "page": "svc-aluminum-gutters",
-        "rule": "CM-016",
-        "item": "trade-statements",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "General statements not in the pack: widths 'most often 5 inches and 6 inches'; K-style 'holds more water than a round gutter of the same width'; half-round 'hang from brackets'; 'baked-on painted finish in many colors'; .032 'less likely to sag'; aluminum 'cost less than copper'; aluminum corrodes where it touches copper or bare steel.",
-        "plain_why": "Unsourced trade points stated as fact.",
-        "decided_for_you": "Keep them as general trade points (they explain the buyer's quote and make no company claim); 'most often' → 'commonly'.",
-        "options": [
-          "Keep with the one wording change",
-          "Cut the comparisons"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/aluminum-gutters/"
-      },
-      "id": "2",
-      "page": "svc-aluminum-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/aluminum-gutters/",
-      "item": "trade-statements",
-      "finding": "General statements not in the pack: widths 'most often 5 inches and 6 inches'; K-style 'holds more water than a round gutter of the same width'; half-round 'hang from brackets'; 'baked-on painted finish in many colors'; .032 'less likely to sag'; aluminum 'cost less than copper'; aluminum corrodes where it touches copper or bare steel.",
-      "plain_why": "Unsourced trade points stated as fact.",
-      "decided_for_you": "Keep them as general trade points (they explain the buyer's quote and make no company claim); 'most often' → 'commonly'.",
-      "options": "a) Keep with the one wording change · b) Cut the comparisons",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-aluminum-gutters|svc-13|buyer-state-overlap",
-      "note": "",
-      "_finding": {
-        "page": "svc-aluminum-gutters",
-        "rule": "SVC-13",
-        "item": "buyer-state-overlap",
-        "severity": "fix_and_list",
-        "category": "semantic",
-        "finding": "The opening's second buyer state, 'Or you wonder if aluminum is good enough next to copper or steel', is the Galvalume page's buyer state (choosing the metal).",
-        "plain_why": "Each service page's opening should own its own buyer state.",
-        "decided_for_you": "Cut that sentence; this page keeps the gauge-on-a-quote state.",
-        "options": [
-          "Cut the sentence",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/aluminum-gutters/"
-      },
-      "id": "3",
-      "page": "svc-aluminum-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/aluminum-gutters/",
-      "item": "buyer-state-overlap",
-      "finding": "The opening's second buyer state, 'Or you wonder if aluminum is good enough next to copper or steel', is the Galvalume page's buyer state (choosing the metal).",
-      "plain_why": "Each service page's opening should own its own buyer state.",
-      "decided_for_you": "Cut that sentence; this page keeps the gauge-on-a-quote state.",
-      "options": "a) Cut the sentence · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-aluminum-gutters|svc-12|h1-metro-variant-city-names",
-      "note": "",
-      "_finding": {
-        "page": "svc-aluminum-gutters",
-        "rule": "SVC-12",
-        "item": "h1-metro-variant-city-names",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "The plan-fixed H1 'Aluminum Rain Gutters in Lakeland–Winter Haven' contains two city names inside the metro variant; SVC-07/SVC-12 say no city in any H tag.",
-        "plain_why": "Your approved plan governs; the spec mismatch should go to a system session.",
-        "decided_for_you": "Keep the plan's H1; flag the spec/plan mismatch for a system session.",
-        "options": [
-          "Keep the plan's H1",
-          "Switch to 'Polk County, Florida'"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/aluminum-gutters/"
-      },
-      "id": "4",
-      "page": "svc-aluminum-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/aluminum-gutters/",
-      "item": "h1-metro-variant-city-names",
-      "finding": "The plan-fixed H1 'Aluminum Rain Gutters in Lakeland–Winter Haven' contains two city names inside the metro variant; SVC-07/SVC-12 say no city in any H tag.",
-      "plain_why": "Your approved plan governs; the spec mismatch should go to a system session.",
-      "decided_for_you": "Keep the plan's H1; flag the spec/plan mismatch for a system session.",
-      "options": "a) Keep the plan's H1 · b) Switch to 'Polk County, Florida'",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-aluminum-gutters|cm-061|site-process-available",
-      "note": "",
-      "_finding": {
-        "page": "svc-aluminum-gutters",
-        "rule": "CM-061",
-        "item": "site-process-available",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "The process, scope and profile NEEDs stay open (gate waived). The live /services/aluminum-gutters/ page states 'Every aluminum gutter project includes' seamless aluminum gutters custom-formed on site, hidden hangers and downspouts sized for stormwater, plus a process (roofline walkthrough, seamless machine in the driveway, runs cut to length, seams and corners sealed, a flush test). It is site_stated and not in the pack.",
-        "plain_why": "The site text could fill the NEEDs, but the live site carries claims the client has corrected (D2).",
-        "decided_for_you": "Keep the NEEDs open.",
-        "options": [
-          "Keep the NEEDs",
-          "Fill from the live page text as a site_stated plain claim"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/aluminum-gutters/"
-      },
-      "id": "5",
-      "page": "svc-aluminum-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/aluminum-gutters/",
-      "item": "site-process-available",
-      "finding": "The process, scope and profile NEEDs stay open (gate waived). The live /services/aluminum-gutters/ page states 'Every aluminum gutter project includes' seamless aluminum gutters custom-formed on site, hidden hangers and downspouts sized for stormwater, plus a process (roofline walkthrough, seamless machine in the driveway, runs cut to length, seams and corners sealed, a flush test). It is site_stated and not in the pack.",
-      "plain_why": "The site text could fill the NEEDs, but the live site carries claims the client has corrected (D2).",
-      "decided_for_you": "Keep the NEEDs open.",
-      "options": "a) Keep the NEEDs · b) Fill from the live page text as a site_stated plain claim",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-commercial-gutters|cm-061|writer-chosen-values",
-      "note": "",
-      "_finding": {
-        "page": "svc-commercial-gutters",
-        "rule": "CM-061",
-        "item": "writer-chosen-values",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (rain gutters for business buildings + gutter contractor + Polk County, Florida) and buyer state (roof water landing on a walkway or entrance); H2s 'How Does First Choice Seamless Gutters Install Commercial Rain Gutters?', 'What Kinds of Commercial Gutter Work Does First Choice Handle?', 'What Do Polk County Business Owners Ask About Commercial Gutter Installation?', 'Where Does First Choice Seamless Gutters Install Commercial Gutters?'; four H3s; 'What a business owner gets' list; FAQ H2 pair Gutter Installation + Polk County; Google rating (5/5, 138 reviews, 2026-10-22) and BBB used; $150 offer and award left out; no outbound link; closing CTA.",
-        "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-        "decided_for_you": "Keep the writer's values as drafted.",
-        "options": [
-          "Keep as drafted",
-          "Change the named value(s)"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/"
-      },
-      "id": "6",
-      "page": "svc-commercial-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/",
-      "item": "writer-chosen-values",
-      "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (rain gutters for business buildings + gutter contractor + Polk County, Florida) and buyer state (roof water landing on a walkway or entrance); H2s 'How Does First Choice Seamless Gutters Install Commercial Rain Gutters?', 'What Kinds of Commercial Gutter Work Does First Choice Handle?', 'What Do Polk County Business Owners Ask About Commercial Gutter Installation?', 'Where Does First Choice Seamless Gutters Install Commercial Gutters?'; four H3s; 'What a business owner gets' list; FAQ H2 pair Gutter Installation + Polk County; Google rating (5/5, 138 reviews, 2026-10-22) and BBB used; $150 offer and award left out; no outbound link; closing CTA.",
-      "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-      "decided_for_you": "Keep the writer's values as drafted.",
-      "options": "a) Keep as drafted · b) Change the named value(s)",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-commercial-gutters|cm-016|guarantee-scope-commercial",
-      "note": "",
-      "_finding": {
-        "page": "svc-commercial-gutters",
-        "rule": "CM-016",
-        "item": "guarantee-scope-commercial",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "Bullet 'A written 10-year workmanship guarantee'. The client confirmed the guarantee company-wide on the proof sheet (residential context); nothing confirms it covers commercial jobs.",
-        "plain_why": "A guarantee is a legal claim and its scope here is unconfirmed; leaving it off this one page is the safe default and needs no question.",
-        "decided_for_you": "Cut the bullet from the commercial page; it comes back if the client confirms commercial jobs are covered.",
-        "options": [
-          "Cut it",
-          "Keep it (client confirms commercial coverage)"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/"
-      },
-      "id": "7",
-      "page": "svc-commercial-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/",
-      "item": "guarantee-scope-commercial",
-      "finding": "Bullet 'A written 10-year workmanship guarantee'. The client confirmed the guarantee company-wide on the proof sheet (residential context); nothing confirms it covers commercial jobs.",
-      "plain_why": "A guarantee is a legal claim and its scope here is unconfirmed; leaving it off this one page is the safe default and needs no question.",
-      "decided_for_you": "Cut the bullet from the commercial page; it comes back if the client confirms commercial jobs are covered.",
-      "options": "a) Cut it · b) Keep it (client confirms commercial coverage)",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-commercial-gutters|cm-016|trade-statements",
-      "note": "",
-      "_finding": {
-        "page": "svc-commercial-gutters",
-        "rule": "CM-016",
-        "item": "trade-statements",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "General statements not in the pack: FAQ 'commercial-grade gutters ... are most often wider, made of thicker metal, and joined to larger downspouts'; 'box gutters can often hold more water'; 'A large, flat or low-slope roof can send far more water to one edge than a house roof does'; 'Gutters that are too small spill over in a heavy Florida storm'.",
-        "plain_why": "Unsourced trade claims stated as fact.",
-        "decided_for_you": "'are most often wider, made of thicker metal, and joined to larger downspouts' → 'can be wider, of heavier metal, and paired with larger downspouts'; cut 'so box gutters can often hold more water'; keep the rest as general points worded with 'can'.",
-        "options": [
-          "Soften as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/"
-      },
-      "id": "8",
-      "page": "svc-commercial-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/",
-      "item": "trade-statements",
-      "finding": "General statements not in the pack: FAQ 'commercial-grade gutters ... are most often wider, made of thicker metal, and joined to larger downspouts'; 'box gutters can often hold more water'; 'A large, flat or low-slope roof can send far more water to one edge than a house roof does'; 'Gutters that are too small spill over in a heavy Florida storm'.",
-      "plain_why": "Unsourced trade claims stated as fact.",
-      "decided_for_you": "'are most often wider, made of thicker metal, and joined to larger downspouts' → 'can be wider, of heavier metal, and paired with larger downspouts'; cut 'so box gutters can often hold more water'; keep the rest as general points worded with 'can'.",
-      "options": "a) Soften as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-commercial-gutters|com-12|need-commercial-timeline",
-      "note": "",
-      "_finding": {
-        "page": "svc-commercial-gutters",
-        "rule": "COM-12",
-        "item": "need-commercial-timeline",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "FAQ 'How long does a commercial gutter installation take?' ends with [NEED: typical commercial installation timeline]. The timeframe question is already open with the client (fact:svc-commercial-gutters:timeframe); the answer reads complete on its duration drivers (COM-12: fact unknown → teach the general point).",
-        "plain_why": "An open NEED becomes an open item at ship; the answer stands without it.",
-        "decided_for_you": "Leave it out (remove the NEED); add the client's answer at write-back if it arrives.",
-        "options": [
-          "Leave it out",
-          "Keep the NEED"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/"
-      },
-      "id": "9",
-      "page": "svc-commercial-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/",
-      "item": "need-commercial-timeline",
-      "finding": "FAQ 'How long does a commercial gutter installation take?' ends with [NEED: typical commercial installation timeline]. The timeframe question is already open with the client (fact:svc-commercial-gutters:timeframe); the answer reads complete on its duration drivers (COM-12: fact unknown → teach the general point).",
-      "plain_why": "An open NEED becomes an open item at ship; the answer stands without it.",
-      "decided_for_you": "Leave it out (remove the NEED); add the client's answer at write-back if it arrives.",
-      "options": "a) Leave it out · b) Keep the NEED",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-commercial-gutters|svc-12|h1-metro-variant-city-names",
-      "note": "",
-      "_finding": {
-        "page": "svc-commercial-gutters",
-        "rule": "SVC-12",
-        "item": "h1-metro-variant-city-names",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "The plan-fixed H1 'Commercial Gutter Systems in Lakeland–Winter Haven metropolitan area' contains two city names inside the metro variant; SVC-07/SVC-12 say no city in any H tag.",
-        "plain_why": "Your approved plan governs; the spec mismatch should go to a system session.",
-        "decided_for_you": "Keep the plan's H1; flag the spec/plan mismatch for a system session.",
-        "options": [
-          "Keep the plan's H1",
-          "Switch to 'Polk County, Florida'"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/"
-      },
-      "id": "10",
-      "page": "svc-commercial-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/",
-      "item": "h1-metro-variant-city-names",
-      "finding": "The plan-fixed H1 'Commercial Gutter Systems in Lakeland–Winter Haven metropolitan area' contains two city names inside the metro variant; SVC-07/SVC-12 say no city in any H tag.",
-      "plain_why": "Your approved plan governs; the spec mismatch should go to a system session.",
-      "decided_for_you": "Keep the plan's H1; flag the spec/plan mismatch for a system session.",
-      "options": "a) Keep the plan's H1 · b) Switch to 'Polk County, Florida'",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-commercial-gutters|e1|trust-stack-repeat",
-      "note": "",
-      "_finding": {
-        "page": "svc-commercial-gutters",
-        "rule": "E1",
-        "item": "trust-stack-repeat",
-        "severity": "fix_and_list",
-        "category": "portability",
-        "finding": "The trust block (owners and insured; BBB A+; Google rating; customers mention communication / on time / clean site) reads nearly the same on 8 of the 9 service pages.",
-        "plain_why": "The same block on every page is copied content.",
-        "decided_for_you": "Keep owners and insured, the Google rating (it stays only here) and the reviews line; cut the BBB sentence.",
-        "options": [
-          "Trim as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/"
-      },
-      "id": "11",
-      "page": "svc-commercial-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/",
-      "item": "trust-stack-repeat",
-      "finding": "The trust block (owners and insured; BBB A+; Google rating; customers mention communication / on time / clean site) reads nearly the same on 8 of the 9 service pages.",
-      "plain_why": "The same block on every page is copied content.",
-      "decided_for_you": "Keep owners and insured, the Google rating (it stays only here) and the reviews line; cut the BBB sentence.",
-      "options": "a) Trim as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-commercial-gutters|cm-061|site-process-available",
-      "note": "",
-      "_finding": {
-        "page": "svc-commercial-gutters",
-        "rule": "CM-061",
-        "item": "site-process-available",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "The process, sizes and service-task NEEDs stay open (gate waived). The live /services/commercial-gutters/ page states a step-by-step plan (stormwater evaluation, on-site fabrication in the right gauge and width, reinforced hardware, oversized downspouts away from entrances). It is site_stated; only its scope line was confirmed by Paul.",
-        "plain_why": "The site text could fill the NEEDs, but the live site carries claims the client has corrected (D2).",
-        "decided_for_you": "Keep the NEEDs open.",
-        "options": [
-          "Keep the NEEDs",
-          "Fill from the live page text as a site_stated plain claim"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/"
-      },
-      "id": "12",
-      "page": "svc-commercial-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/",
-      "item": "site-process-available",
-      "finding": "The process, sizes and service-task NEEDs stay open (gate waived). The live /services/commercial-gutters/ page states a step-by-step plan (stormwater evaluation, on-site fabrication in the right gauge and width, reinforced hardware, oversized downspouts away from entrances). It is site_stated; only its scope line was confirmed by Paul.",
-      "plain_why": "The site text could fill the NEEDs, but the live site carries claims the client has corrected (D2).",
-      "decided_for_you": "Keep the NEEDs open.",
-      "options": "a) Keep the NEEDs · b) Fill from the live page text as a site_stated plain claim",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-copper-gutters|cm-061|writer-chosen-values",
-      "note": "",
-      "_finding": {
-        "page": "svc-copper-gutters",
-        "rule": "CM-061",
-        "item": "writer-chosen-values",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (gutter contractor + copper gutter installation + Polk County, Florida) and buyer state (loves copper, unsure it is worth the price); H2s 'How Does First Choice Seamless Gutters Plan and Install Copper Gutters?', 'What Kinds of Copper Gutters and Downspouts Can You Choose From?', 'What Do Polk County Homeowners Ask About Copper Rain Gutters?', 'Which Polk County Towns Can Get Copper Gutters From First Choice Seamless Gutters?'; H3s Half-Round, K-Style, Copper Downspouts; 'What you get' list; FAQ H2 pair Polk County + Rain Gutters; award, BBB and Google all used; no outbound link; closing CTA.",
-        "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-        "decided_for_you": "Keep the writer's values as drafted.",
-        "options": [
-          "Keep as drafted",
-          "Change the named value(s)"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/"
-      },
-      "id": "13",
-      "page": "svc-copper-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/",
-      "item": "writer-chosen-values",
-      "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (gutter contractor + copper gutter installation + Polk County, Florida) and buyer state (loves copper, unsure it is worth the price); H2s 'How Does First Choice Seamless Gutters Plan and Install Copper Gutters?', 'What Kinds of Copper Gutters and Downspouts Can You Choose From?', 'What Do Polk County Homeowners Ask About Copper Rain Gutters?', 'Which Polk County Towns Can Get Copper Gutters From First Choice Seamless Gutters?'; H3s Half-Round, K-Style, Copper Downspouts; 'What you get' list; FAQ H2 pair Polk County + Rain Gutters; award, BBB and Google all used; no outbound link; closing CTA.",
-      "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-      "decided_for_you": "Keep the writer's values as drafted.",
-      "options": "a) Keep as drafted · b) Change the named value(s)",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-copper-gutters|cm-016|trade-statements",
-      "note": "",
-      "_finding": {
-        "page": "svc-copper-gutters",
-        "rule": "CM-016",
-        "item": "trade-statements",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "General statements not in the pack: 'Copper gutters often last far longer than aluminum or steel gutters'; 'copper costs more at first than aluminum but lasts much longer'; half-round 'holds a little less water than a K-style gutter' and K-style 'carries more water'; patina colour sequence; galvanic corrosion; soldering is 'normal'.",
-        "plain_why": "Unsourced longevity and capacity comparisons stated as fact.",
-        "decided_for_you": "Longevity: 'copper does not rust, and its patina protects the metal' with no comparison to other metals (both FAQs); cut the two capacity sentences (see the swap-test row). Keep patina, galvanic corrosion and soldering as general trade points.",
-        "options": [
-          "Soften as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/"
-      },
-      "id": "14",
-      "page": "svc-copper-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/",
-      "item": "trade-statements",
-      "finding": "General statements not in the pack: 'Copper gutters often last far longer than aluminum or steel gutters'; 'copper costs more at first than aluminum but lasts much longer'; half-round 'holds a little less water than a K-style gutter' and K-style 'carries more water'; patina colour sequence; galvanic corrosion; soldering is 'normal'.",
-      "plain_why": "Unsourced longevity and capacity comparisons stated as fact.",
-      "decided_for_you": "Longevity: 'copper does not rust, and its patina protects the metal' with no comparison to other metals (both FAQs); cut the two capacity sentences (see the swap-test row). Keep patina, galvanic corrosion and soldering as general trade points.",
-      "options": "a) Soften as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-copper-gutters|cm-016|need-copper-lifespan-public",
-      "note": "",
-      "_finding": {
-        "page": "svc-copper-gutters",
-        "rule": "CM-016",
-        "item": "need-copper-lifespan-public",
-        "severity": "fix_and_list",
-        "category": "public_not_found",
-        "finding": "FAQ 'How long do copper gutters last?' carries [NEED: typical copper gutter lifespan in years, from a public source — researcher]. It is a public fact, so it is never left for the client, and no official source is in the research log for it.",
-        "plain_why": "A public NEED cannot ship; the answer works without a number.",
-        "decided_for_you": "Remove the NEED; answer without a figure (the researcher may add one from a manufacturer or official source later).",
-        "options": [
-          "Remove the NEED",
-          "Send to the researcher first"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/"
-      },
-      "id": "15",
-      "page": "svc-copper-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/",
-      "item": "need-copper-lifespan-public",
-      "finding": "FAQ 'How long do copper gutters last?' carries [NEED: typical copper gutter lifespan in years, from a public source — researcher]. It is a public fact, so it is never left for the client, and no official source is in the research log for it.",
-      "plain_why": "A public NEED cannot ship; the answer works without a number.",
-      "decided_for_you": "Remove the NEED; answer without a figure (the researcher may add one from a manufacturer or official source later).",
-      "options": "a) Remove the NEED · b) Send to the researcher first",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-copper-gutters|e1|swap-test-aluminum",
-      "note": "",
-      "_finding": {
-        "page": "svc-copper-gutters",
-        "rule": "E1",
-        "item": "swap-test-aluminum",
-        "severity": "fix_and_list",
-        "category": "portability",
-        "finding": "The Half-Round and K-Style H3s read almost the same as the aluminum page's ('shaped like a pipe cut down the middle/in half', 'flat back ... like crown molding', the same capacity comparison). Swap the metal name and they fit either page.",
-        "plain_why": "Passages that read the same on two sibling pages weaken both.",
-        "decided_for_you": "Merge into one H3 'Half-Round and K-Style Copper Gutters' that leads with what is copper-specific (half-round as the traditional copper shape on classic-style homes) and drops the capacity sentences; the aluminum page keeps its two H3s.",
-        "options": [
-          "Merge as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/"
-      },
-      "id": "16",
-      "page": "svc-copper-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/",
-      "item": "swap-test-aluminum",
-      "finding": "The Half-Round and K-Style H3s read almost the same as the aluminum page's ('shaped like a pipe cut down the middle/in half', 'flat back ... like crown molding', the same capacity comparison). Swap the metal name and they fit either page.",
-      "plain_why": "Passages that read the same on two sibling pages weaken both.",
-      "decided_for_you": "Merge into one H3 'Half-Round and K-Style Copper Gutters' that leads with what is copper-specific (half-round as the traditional copper shape on classic-style homes) and drops the capacity sentences; the aluminum page keeps its two H3s.",
-      "options": "a) Merge as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-copper-gutters|site-stated|soldered-joins",
-      "note": "",
-      "_finding": {
-        "page": "svc-copper-gutters",
-        "rule": "site-stated",
-        "item": "soldered-joins",
-        "severity": "fix_and_list",
-        "category": "site_stated_used",
-        "finding": "'Seams and corners joined by [NEED: how First Choice joins copper seams and corners, soldered or another method]'. The live /services/copper-gutters/ page states joints are 'soldered instead of caulked' and downspouts, elbows and fittings are soldered. Paul already confirmed this page's site text on scope and process as still true; the method is a process claim, not a legal or money claim.",
-        "plain_why": "The evidence is on the client's own site for this very page, so the tier allows a plain claim, listed for you.",
-        "decided_for_you": "Fill the bullet as 'Soldered seams, corners and downspout joints' (site_stated, listed here).",
-        "options": [
-          "Fill from the site text",
-          "Keep the NEED"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/"
-      },
-      "id": "17",
-      "page": "svc-copper-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/",
-      "item": "soldered-joins",
-      "finding": "'Seams and corners joined by [NEED: how First Choice joins copper seams and corners, soldered or another method]'. The live /services/copper-gutters/ page states joints are 'soldered instead of caulked' and downspouts, elbows and fittings are soldered. Paul already confirmed this page's site text on scope and process as still true; the method is a process claim, not a legal or money claim.",
-      "plain_why": "The evidence is on the client's own site for this very page, so the tier allows a plain claim, listed for you.",
-      "decided_for_you": "Fill the bullet as 'Soldered seams, corners and downspout joints' (site_stated, listed here).",
-      "options": "a) Fill from the site text · b) Keep the NEED",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-copper-gutters|e1|trust-stack-repeat",
-      "note": "",
-      "_finding": {
-        "page": "svc-copper-gutters",
-        "rule": "E1",
-        "item": "trust-stack-repeat",
-        "severity": "fix_and_list",
-        "category": "portability",
-        "finding": "The trust paragraph (customers mention on time / communication / clean site; 24-hour form; owners; GutterPro award; BBB A+; Google 5/5) reads nearly the same on 8 of the 9 service pages, and is the longest version here.",
-        "plain_why": "The same block on every page is copied content.",
-        "decided_for_you": "Keep the reviews line, the form reply and owners; cut the award, BBB and Google sentences (they stay on Seamless/Guards, Gutter Installation and Commercial).",
-        "options": [
-          "Trim as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/"
-      },
-      "id": "18",
-      "page": "svc-copper-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/",
-      "item": "trust-stack-repeat",
-      "finding": "The trust paragraph (customers mention on time / communication / clean site; 24-hour form; owners; GutterPro award; BBB A+; Google 5/5) reads nearly the same on 8 of the 9 service pages, and is the longest version here.",
-      "plain_why": "The same block on every page is copied content.",
-      "decided_for_you": "Keep the reviews line, the form reply and owners; cut the award, BBB and Google sentences (they stay on Seamless/Guards, Gutter Installation and Commercial).",
-      "options": "a) Trim as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-copper-gutters|svc-12|h1-metro-variant-city-names",
-      "note": "",
-      "_finding": {
-        "page": "svc-copper-gutters",
-        "rule": "SVC-12",
-        "item": "h1-metro-variant-city-names",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "The plan-fixed H1 'Copper Gutter Systems in Lakeland–Winter Haven' contains two city names inside the metro variant; SVC-07/SVC-12 say no city in any H tag.",
-        "plain_why": "Your approved plan governs; the spec mismatch should go to a system session.",
-        "decided_for_you": "Keep the plan's H1; flag the spec/plan mismatch for a system session.",
-        "options": [
-          "Keep the plan's H1",
-          "Switch to 'Polk County, Florida'"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/"
-      },
-      "id": "19",
-      "page": "svc-copper-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/",
-      "item": "h1-metro-variant-city-names",
-      "finding": "The plan-fixed H1 'Copper Gutter Systems in Lakeland–Winter Haven' contains two city names inside the metro variant; SVC-07/SVC-12 say no city in any H tag.",
-      "plain_why": "Your approved plan governs; the spec mismatch should go to a system session.",
-      "decided_for_you": "Keep the plan's H1; flag the spec/plan mismatch for a system session.",
-      "options": "a) Keep the plan's H1 · b) Switch to 'Polk County, Florida'",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-galvalume-gutters|cm-061|writer-chosen-values",
-      "note": "",
-      "_finding": {
-        "page": "svc-galvalume-gutters",
-        "rule": "CM-061",
-        "item": "writer-chosen-values",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (Galvalume gutters + gutter contractor + Lakeland–Winter Haven area) and buyer state (needs new gutters, choosing the metal); H2s 'How Does a Galvalume Gutter Job Work With First Choice Seamless Gutters?', 'Which Parts of a Galvalume Gutter System Can First Choice Seamless Gutters Handle?', 'What Do Florida Homeowners Ask About Galvalume Rain Gutters?', 'Where Does First Choice Seamless Gutters Install Galvalume Gutters?'; four H3s; 'What you get' list; FAQ H2 area 'Florida' (not a B2 variant); one attributed review naming owner Adrian (row 18); no outbound link; closing CTA.",
-        "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-        "decided_for_you": "Keep the writer's values as drafted.",
-        "options": [
-          "Keep as drafted",
-          "Change the named value(s)"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/"
-      },
-      "id": "20",
-      "page": "svc-galvalume-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/",
-      "item": "writer-chosen-values",
-      "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (Galvalume gutters + gutter contractor + Lakeland–Winter Haven area) and buyer state (needs new gutters, choosing the metal); H2s 'How Does a Galvalume Gutter Job Work With First Choice Seamless Gutters?', 'Which Parts of a Galvalume Gutter System Can First Choice Seamless Gutters Handle?', 'What Do Florida Homeowners Ask About Galvalume Rain Gutters?', 'Where Does First Choice Seamless Gutters Install Galvalume Gutters?'; four H3s; 'What you get' list; FAQ H2 area 'Florida' (not a B2 variant); one attributed review naming owner Adrian (row 18); no outbound link; closing CTA.",
-      "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-      "decided_for_you": "Keep the writer's values as drafted.",
-      "options": "a) Keep as drafted · b) Change the named value(s)",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-galvalume-gutters|cm-016|trade-statements",
-      "note": "",
-      "_finding": {
-        "page": "svc-galvalume-gutters",
-        "rule": "CM-016",
-        "item": "trade-statements",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "General statements not in the pack: the aluminum-zinc coat 'is expected to last longer than the zinc-only coat on plain galvanized steel gutters'; steel 'dents less' from a ladder or branch; aluminum 'can never rust'; rust starts at cut or scratched coating and under wet leaves.",
-        "plain_why": "Unsourced comparisons stated as fact.",
-        "decided_for_you": "Cut the 'expected to last longer than ... galvanized' clause; keep stiffness, no-rust aluminum and cut-edge rust as general trade points.",
-        "options": [
-          "Soften as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/"
-      },
-      "id": "21",
-      "page": "svc-galvalume-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/",
-      "item": "trade-statements",
-      "finding": "General statements not in the pack: the aluminum-zinc coat 'is expected to last longer than the zinc-only coat on plain galvanized steel gutters'; steel 'dents less' from a ladder or branch; aluminum 'can never rust'; rust starts at cut or scratched coating and under wet leaves.",
-      "plain_why": "Unsourced comparisons stated as fact.",
-      "decided_for_you": "Cut the 'expected to last longer than ... galvanized' clause; keep stiffness, no-rust aluminum and cut-edge rust as general trade points.",
-      "options": "a) Soften as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-galvalume-gutters|cm-016|need-coating-makeup-public",
-      "note": "",
-      "_finding": {
-        "page": "svc-galvalume-gutters",
-        "rule": "CM-016",
-        "item": "need-coating-makeup-public",
-        "severity": "fix_and_list",
-        "category": "public_not_found",
-        "finding": "FAQ 'What is Galvalume steel?' carries [NEED: exact makeup of the Galvalume coating, with an official or manufacturer source]. It is a public fact, so it is never left for the client, and no source is in the research log for it.",
-        "plain_why": "A public NEED cannot ship; 'made mostly of aluminum and zinc' already answers the question.",
-        "decided_for_you": "Remove the NEED; keep 'a coat made mostly of aluminum and zinc' (the researcher may add the exact makeup from the licensor's or a manufacturer's site later).",
-        "options": [
-          "Remove the NEED",
-          "Send to the researcher first"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/"
-      },
-      "id": "22",
-      "page": "svc-galvalume-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/",
-      "item": "need-coating-makeup-public",
-      "finding": "FAQ 'What is Galvalume steel?' carries [NEED: exact makeup of the Galvalume coating, with an official or manufacturer source]. It is a public fact, so it is never left for the client, and no source is in the research log for it.",
-      "plain_why": "A public NEED cannot ship; 'made mostly of aluminum and zinc' already answers the question.",
-      "decided_for_you": "Remove the NEED; keep 'a coat made mostly of aluminum and zinc' (the researcher may add the exact makeup from the licensor's or a manufacturer's site later).",
-      "options": "a) Remove the NEED · b) Send to the researcher first",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-galvalume-gutters|sem-8|other-service-h3s",
-      "note": "",
-      "_finding": {
-        "page": "svc-galvalume-gutters",
-        "rule": "SEM-8",
-        "item": "other-service-h3s",
-        "severity": "fix_and_list",
-        "category": "semantic",
-        "finding": "The types H2 includes 'Gutter Guards on Galvalume Gutters' and 'Repairs on Existing Galvalume Gutters'. Both are other services with their own pages (SVC-01), and each holds only general text plus a client NEED.",
-        "plain_why": "Sections whose intent belongs to another service page are routed there, not kept.",
-        "decided_for_you": "Cut both H3s and their two NEEDs; keep Galvalume Gutter Runs and Downspouts for Galvalume Gutters, and trim the H2's intro to the gutter runs and downspouts.",
-        "options": [
-          "Cut the two H3s",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/"
-      },
-      "id": "23",
-      "page": "svc-galvalume-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/",
-      "item": "other-service-h3s",
-      "finding": "The types H2 includes 'Gutter Guards on Galvalume Gutters' and 'Repairs on Existing Galvalume Gutters'. Both are other services with their own pages (SVC-01), and each holds only general text plus a client NEED.",
-      "plain_why": "Sections whose intent belongs to another service page are routed there, not kept.",
-      "decided_for_you": "Cut both H3s and their two NEEDs; keep Galvalume Gutter Runs and Downspouts for Galvalume Gutters, and trim the H2's intro to the gutter runs and downspouts.",
-      "options": "a) Cut the two H3s · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-galvalume-gutters|e1|trust-stack-repeat",
-      "note": "",
-      "_finding": {
-        "page": "svc-galvalume-gutters",
-        "rule": "E1",
-        "item": "trust-stack-repeat",
-        "severity": "fix_and_list",
-        "category": "portability",
-        "finding": "The reviews line plus the BBB A+ line repeat the block found on 8 of the 9 service pages.",
-        "plain_why": "The same block on every page is copied content.",
-        "decided_for_you": "Keep the reviews line and the Adrian 'options' example; cut the BBB sentence (it stays on Gutter Installation only).",
-        "options": [
-          "Trim as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/"
-      },
-      "id": "24",
-      "page": "svc-galvalume-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/",
-      "item": "trust-stack-repeat",
-      "finding": "The reviews line plus the BBB A+ line repeat the block found on 8 of the 9 service pages.",
-      "plain_why": "The same block on every page is copied content.",
-      "decided_for_you": "Keep the reviews line and the Adrian 'options' example; cut the BBB sentence (it stays on Gutter Installation only).",
-      "options": "a) Trim as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-galvalume-gutters|cm-061|site-process-available",
-      "note": "",
-      "_finding": {
-        "page": "svc-galvalume-gutters",
-        "rule": "CM-061",
-        "item": "site-process-available",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "The process, scope, profile and downspout NEEDs stay open (gate waived). The live /services/galvalume-gutters/ page states a process (full evaluation of roofline and runoff, forming on site to protect the coating, corrosion-resistant hangers, calibrated slope, downspouts placed away from the foundation). It is site_stated and not in the pack.",
-        "plain_why": "The site text could fill the NEEDs, but the live site carries claims the client has corrected (D2).",
-        "decided_for_you": "Keep the NEEDs open.",
-        "options": [
-          "Keep the NEEDs",
-          "Fill from the live page text as a site_stated plain claim"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/"
-      },
-      "id": "25",
-      "page": "svc-galvalume-gutters",
-      "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/",
-      "item": "site-process-available",
-      "finding": "The process, scope, profile and downspout NEEDs stay open (gate waived). The live /services/galvalume-gutters/ page states a process (full evaluation of roofline and runoff, forming on site to protect the coating, corrosion-resistant hangers, calibrated slope, downspouts placed away from the foundation). It is site_stated and not in the pack.",
-      "plain_why": "The site text could fill the NEEDs, but the live site carries claims the client has corrected (D2).",
-      "decided_for_you": "Keep the NEEDs open.",
-      "options": "a) Keep the NEEDs · b) Fill from the live page text as a site_stated plain claim",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-downspouts|cm-061|writer-chosen-values",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-downspouts",
-        "rule": "CM-061",
-        "item": "writer-chosen-values",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (brand + gutter contractor + Lakeland–Winter Haven) and buyer state (gutters catch rain but the downspout dumps it by the wall); H2s 'How Does First Choice Seamless Gutters Fit Downspouts to Rain Gutters?', 'Which Downspout Sizes, Materials and Drainage Add-Ons Suit a Gutter Installation?', 'Which Downspout Questions Come Up Most With Seamless Gutters in Polk County?', 'Which Polk County Towns Does First Choice Serve for Downspout Work?'; five H3s; the three-jobs list; FAQ H2 pair Seamless Gutters + Polk County; two attributed downspout review examples; 'no hidden fees' left out; no outbound link; closing CTA.",
-        "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-        "decided_for_you": "Keep the writer's values as drafted.",
-        "options": [
-          "Keep as drafted",
-          "Change the named value(s)"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/"
-      },
-      "id": "26",
-      "page": "svc-gutter-downspouts",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/",
-      "item": "writer-chosen-values",
-      "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (brand + gutter contractor + Lakeland–Winter Haven) and buyer state (gutters catch rain but the downspout dumps it by the wall); H2s 'How Does First Choice Seamless Gutters Fit Downspouts to Rain Gutters?', 'Which Downspout Sizes, Materials and Drainage Add-Ons Suit a Gutter Installation?', 'Which Downspout Questions Come Up Most With Seamless Gutters in Polk County?', 'Which Polk County Towns Does First Choice Serve for Downspout Work?'; five H3s; the three-jobs list; FAQ H2 pair Seamless Gutters + Polk County; two attributed downspout review examples; 'no hidden fees' left out; no outbound link; closing CTA.",
-      "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-      "decided_for_you": "Keep the writer's values as drafted.",
-      "options": "a) Keep as drafted · b) Change the named value(s)",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-downspouts|cm-016|trade-statements",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-downspouts",
-        "rule": "CM-016",
-        "item": "trade-statements",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "General statements not in the pack: 2x3 and 3x4 as 'the two common sizes', a 3x4 'harder to plug with leaves'; FAQ 'Yes, a 3x4 downspout can go on a 5-inch gutter'; copper joined to other metals corrodes; rain chains 'can overflow in a heavy storm'; never drain toward 'a septic drain field'; 'Sandy soil washes out fast' and the opening's 'digs a hole in the sand' (read as a claim about Polk soil). The add-on H3s (splash blocks, underground drains) read as services offered while which ones First Choice installs is a [NEED].",
-        "plain_why": "Unsourced trade and soil claims stated as fact.",
-        "decided_for_you": "3x4 FAQ: open with 'Often, yes, when the outlet is cut to the larger size; it depends on the gutter's profile'; 'Sandy soil washes out fast' → 'Bare soil washes out'; opening 'in the sand' → 'in the yard'. Keep the part descriptions as general options under the existing scope NEED.",
-        "options": [
-          "Soften as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/"
-      },
-      "id": "27",
-      "page": "svc-gutter-downspouts",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/",
-      "item": "trade-statements",
-      "finding": "General statements not in the pack: 2x3 and 3x4 as 'the two common sizes', a 3x4 'harder to plug with leaves'; FAQ 'Yes, a 3x4 downspout can go on a 5-inch gutter'; copper joined to other metals corrodes; rain chains 'can overflow in a heavy storm'; never drain toward 'a septic drain field'; 'Sandy soil washes out fast' and the opening's 'digs a hole in the sand' (read as a claim about Polk soil). The add-on H3s (splash blocks, underground drains) read as services offered while which ones First Choice installs is a [NEED].",
-      "plain_why": "Unsourced trade and soil claims stated as fact.",
-      "decided_for_you": "3x4 FAQ: open with 'Often, yes, when the outlet is cut to the larger size; it depends on the gutter's profile'; 'Sandy soil washes out fast' → 'Bare soil washes out'; opening 'in the sand' → 'in the yard'. Keep the part descriptions as general options under the existing scope NEED.",
-      "options": "a) Soften as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-downspouts|cm-016|need-downspout-rule-public",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-downspouts",
-        "rule": "CM-016",
-        "item": "need-downspout-rule-public",
-        "severity": "fix_and_list",
-        "category": "public_not_found",
-        "finding": "FAQ 'What is the rule of thumb ...' carries [NEED: spacing rule of thumb ... from a trade source (researcher)]. It is a public fact, so it is never left for the client, and no official source is in the research log for it.",
-        "plain_why": "A public NEED cannot ship; the answer works without a number.",
-        "decided_for_you": "Remove the NEED; the answer stays without a figure (the researcher may add one from an official or manufacturer source later).",
-        "options": [
-          "Remove the NEED",
-          "Send to the researcher first"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/"
-      },
-      "id": "28",
-      "page": "svc-gutter-downspouts",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/",
-      "item": "need-downspout-rule-public",
-      "finding": "FAQ 'What is the rule of thumb ...' carries [NEED: spacing rule of thumb ... from a trade source (researcher)]. It is a public fact, so it is never left for the client, and no official source is in the research log for it.",
-      "plain_why": "A public NEED cannot ship; the answer works without a number.",
-      "decided_for_you": "Remove the NEED; the answer stays without a figure (the researcher may add one from an official or manufacturer source later).",
-      "options": "a) Remove the NEED · b) Send to the researcher first",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-downspouts|cm-016|cta-offer-wording",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-downspouts",
-        "rule": "CM-016",
-        "item": "cta-offer-wording",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "CTA: 'When new downspouts come with a full-house gutter installation, military members and seniors get $150 off.' The confirmed offer is $150 off full-house installations; tying it to downspouts reshapes a money claim.",
-        "plain_why": "A money claim must read exactly as confirmed.",
-        "decided_for_you": "Reword to 'Military members and seniors get $150 off a full-house gutter installation.'",
-        "options": [
-          "Reword",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/"
-      },
-      "id": "29",
-      "page": "svc-gutter-downspouts",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/",
-      "item": "cta-offer-wording",
-      "finding": "CTA: 'When new downspouts come with a full-house gutter installation, military members and seniors get $150 off.' The confirmed offer is $150 off full-house installations; tying it to downspouts reshapes a money claim.",
-      "plain_why": "A money claim must read exactly as confirmed.",
-      "decided_for_you": "Reword to 'Military members and seniors get $150 off a full-house gutter installation.'",
-      "options": "a) Reword · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-downspouts|e1|trust-stack-repeat",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-downspouts",
-        "rule": "E1",
-        "item": "trust-stack-repeat",
-        "severity": "fix_and_list",
-        "category": "portability",
-        "finding": "The trust paragraph (customers mention quick / on time / replies / tidy yard; 24-hour form; owners and insured; BBB A+; Google 5/5) reads nearly the same on 8 of the 9 service pages.",
-        "plain_why": "The same block on every page is copied content.",
-        "decided_for_you": "Keep the reviews line, owners and insured; cut the BBB and Google sentences (they stay on Gutter Installation and Commercial).",
-        "options": [
-          "Trim as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/"
-      },
-      "id": "30",
-      "page": "svc-gutter-downspouts",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/",
-      "item": "trust-stack-repeat",
-      "finding": "The trust paragraph (customers mention quick / on time / replies / tidy yard; 24-hour form; owners and insured; BBB A+; Google 5/5) reads nearly the same on 8 of the 9 service pages.",
-      "plain_why": "The same block on every page is copied content.",
-      "decided_for_you": "Keep the reviews line, owners and insured; cut the BBB and Google sentences (they stay on Gutter Installation and Commercial).",
-      "options": "a) Trim as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-downspouts|cm-061|site-process-available",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-downspouts",
-        "rule": "CM-061",
-        "item": "site-process-available",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "The process and add-on NEEDs stay open (gate waived). The live /services/gutter-downspouts/ page states an inspection of roofline, runs and ground, a flush test, and 'a complete downspout service includes precise placement, oversized outlets when needed, strong mounting'. It is site_stated and not in the pack.",
-        "plain_why": "The site text could fill the NEEDs, but the live site carries claims the client has corrected (D2).",
-        "decided_for_you": "Keep the NEEDs open.",
-        "options": [
-          "Keep the NEEDs",
-          "Fill from the live page text as a site_stated plain claim"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/"
-      },
-      "id": "31",
-      "page": "svc-gutter-downspouts",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/",
-      "item": "site-process-available",
-      "finding": "The process and add-on NEEDs stay open (gate waived). The live /services/gutter-downspouts/ page states an inspection of roofline, runs and ground, a flush test, and 'a complete downspout service includes precise placement, oversized outlets when needed, strong mounting'. It is site_stated and not in the pack.",
-      "plain_why": "The site text could fill the NEEDs, but the live site carries claims the client has corrected (D2).",
-      "decided_for_you": "Keep the NEEDs open.",
-      "options": "a) Keep the NEEDs · b) Fill from the live page text as a site_stated plain claim",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-guards|cm-061|writer-chosen-values",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-guards",
-        "rule": "CM-061",
-        "item": "writer-chosen-values",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (gutter guards + gutter contractor + Polk County, Florida) and buyer state (gutters full again weeks after cleaning, or worried guards cause trouble); H2s 'How Does First Choice Seamless Gutters Add Gutter Guards to Rain Gutters?', 'Which Kinds of Gutter Guards Work on Rain Gutters?', 'Are Gutter Guards Worth It on Seamless Gutters in Polk County, Florida?', 'Which Polk County Towns Can Get Gutter Guards From First Choice?'; H3s Micro-Mesh, Screen, Gutter Hoods, Foam and Brush Inserts; one attributed review (guards added weeks after new gutters, row 93); $150 offer left out; no outbound link; closing CTA.",
-        "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-        "decided_for_you": "Keep the writer's values as drafted.",
-        "options": [
-          "Keep as drafted",
-          "Change the named value(s)"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-guards/"
-      },
-      "id": "32",
-      "page": "svc-gutter-guards",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-guards/",
-      "item": "writer-chosen-values",
-      "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (gutter guards + gutter contractor + Polk County, Florida) and buyer state (gutters full again weeks after cleaning, or worried guards cause trouble); H2s 'How Does First Choice Seamless Gutters Add Gutter Guards to Rain Gutters?', 'Which Kinds of Gutter Guards Work on Rain Gutters?', 'Are Gutter Guards Worth It on Seamless Gutters in Polk County, Florida?', 'Which Polk County Towns Can Get Gutter Guards From First Choice?'; H3s Micro-Mesh, Screen, Gutter Hoods, Foam and Brush Inserts; one attributed review (guards added weeks after new gutters, row 93); $150 offer left out; no outbound link; closing CTA.",
-      "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-      "decided_for_you": "Keep the writer's values as drafted.",
-      "options": "a) Keep as drafted · b) Change the named value(s)",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-guards|cm-016|trade-statements",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-guards",
-        "rule": "CM-016",
-        "item": "trade-statements",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "General statements not in the pack: roofers FAQ 'fitting it against the shingle maker's instructions may affect the shingle warranty' (a claim about manufacturers' warranties); leaf-guard FAQ 'Some sellers call hood styles leaf guards and mesh styles gutter guards'; downsides FAQ 'a guard that is fitted badly can ... lift roof shingles'; screens 'cost less than mesh' and 'screens on a one-story home cost far less than mesh on a two-story home'.",
-        "plain_why": "Unsourced claims about third-party warranties and prices.",
-        "decided_for_you": "Roofers FAQ: replace the warranty clause with 'so check the shingle maker's instructions'; cut the 'Some sellers call ...' sentence; 'cost far less' → 'usually cost less'. Keep the four guard-type descriptions as general trade points under the existing NEED.",
-        "options": [
-          "Soften as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-guards/"
-      },
-      "id": "33",
-      "page": "svc-gutter-guards",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-guards/",
-      "item": "trade-statements",
-      "finding": "General statements not in the pack: roofers FAQ 'fitting it against the shingle maker's instructions may affect the shingle warranty' (a claim about manufacturers' warranties); leaf-guard FAQ 'Some sellers call hood styles leaf guards and mesh styles gutter guards'; downsides FAQ 'a guard that is fitted badly can ... lift roof shingles'; screens 'cost less than mesh' and 'screens on a one-story home cost far less than mesh on a two-story home'.",
-      "plain_why": "Unsourced claims about third-party warranties and prices.",
-      "decided_for_you": "Roofers FAQ: replace the warranty clause with 'so check the shingle maker's instructions'; cut the 'Some sellers call ...' sentence; 'cost far less' → 'usually cost less'. Keep the four guard-type descriptions as general trade points under the existing NEED.",
-      "options": "a) Soften as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-guards|svc-12|h1-metro-variant-city-names",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-guards",
-        "rule": "SVC-12",
-        "item": "h1-metro-variant-city-names",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "The plan-fixed H1 'The Best Gutter Protection Systems in Lakeland–Winter Haven' contains two city names inside the metro variant; SVC-07/SVC-12 say no city in any H tag. 'The Best' matches settled the_best_plan_pages.",
-        "plain_why": "Your approved plan governs; the spec mismatch should go to a system session.",
-        "decided_for_you": "Keep the plan's H1; flag the spec/plan mismatch for a system session.",
-        "options": [
-          "Keep the plan's H1",
-          "Switch to 'Polk County, Florida'"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-guards/"
-      },
-      "id": "34",
-      "page": "svc-gutter-guards",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-guards/",
-      "item": "h1-metro-variant-city-names",
-      "finding": "The plan-fixed H1 'The Best Gutter Protection Systems in Lakeland–Winter Haven' contains two city names inside the metro variant; SVC-07/SVC-12 say no city in any H tag. 'The Best' matches settled the_best_plan_pages.",
-      "plain_why": "Your approved plan governs; the spec mismatch should go to a system session.",
-      "decided_for_you": "Keep the plan's H1; flag the spec/plan mismatch for a system session.",
-      "options": "a) Keep the plan's H1 · b) Switch to 'Polk County, Florida'",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-guards|e1|trust-stack-repeat",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-guards",
-        "rule": "E1",
-        "item": "trust-stack-repeat",
-        "severity": "fix_and_list",
-        "category": "portability",
-        "finding": "'Customers mention crews who show up on time, clear communication, and a clean work site' is the same sentence pattern as on 7 sibling pages.",
-        "plain_why": "The same line on every page is copied content; this page has a guard-specific review to use.",
-        "decided_for_you": "Reword to 'Customers mention a clean work site at the end of the job; one homeowner praised the work on their gutters with leaf guards and the clean-up.' (clean-up tier known; row 108). Keep insured, the guarantee and the GutterPro award.",
-        "options": [
-          "Reword as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-guards/"
-      },
-      "id": "35",
-      "page": "svc-gutter-guards",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-guards/",
-      "item": "trust-stack-repeat",
-      "finding": "'Customers mention crews who show up on time, clear communication, and a clean work site' is the same sentence pattern as on 7 sibling pages.",
-      "plain_why": "The same line on every page is copied content; this page has a guard-specific review to use.",
-      "decided_for_you": "Reword to 'Customers mention a clean work site at the end of the job; one homeowner praised the work on their gutters with leaf guards and the clean-up.' (clean-up tier known; row 108). Keep insured, the guarantee and the GutterPro award.",
-      "options": "a) Reword as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-guards|cm-061|site-process-available",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-guards",
-        "rule": "CM-061",
-        "item": "site-process-available",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "The process, scope and guard-type NEEDs stay open (gate waived). The live /services/gutter-guards/ page states the job begins with a full evaluation of the gutter system to choose the guard style for the home and trees. It is site_stated and not in the pack; it does not name guard types or brands.",
-        "plain_why": "The site text fills only part of one NEED, and the live site carries claims the client has corrected (D2).",
-        "decided_for_you": "Keep the NEEDs open.",
-        "options": [
-          "Keep the NEEDs",
-          "Fill the evaluation step from the live page text as a site_stated plain claim"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-guards/"
-      },
-      "id": "36",
-      "page": "svc-gutter-guards",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-guards/",
-      "item": "site-process-available",
-      "finding": "The process, scope and guard-type NEEDs stay open (gate waived). The live /services/gutter-guards/ page states the job begins with a full evaluation of the gutter system to choose the guard style for the home and trees. It is site_stated and not in the pack; it does not name guard types or brands.",
-      "plain_why": "The site text fills only part of one NEED, and the live site carries claims the client has corrected (D2).",
-      "decided_for_you": "Keep the NEEDs open.",
-      "options": "a) Keep the NEEDs · b) Fill the evaluation step from the live page text as a site_stated plain claim",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-installation|cm-061|writer-chosen-values",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-installation",
-        "rule": "CM-061",
-        "item": "writer-chosen-values",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (gutter contractor + gutter installation + Polk County, Florida) and buyer state (repairs no longer hold, or no gutters at all); H2s 'How Does First Choice Seamless Gutters Install New Rain Gutters?', 'What Kinds of Gutter Replacement and New Gutter Jobs Are There?', 'What Do Homeowners in Polk County, Florida Ask About New Rain Gutters?', 'Where Does First Choice Seamless Gutters Install and Replace Gutters?'; H3s Full-House Gutter Replacement, Partial Gutter Replacement, First-Time Gutters on a Home Without Them, Gutter Material Choices for a New System; 'What you get' list; FAQ H2 pair Rain Gutters + Polk County, Florida; BBB A+ line used, Google rating left out; no outbound link; closing CTA.",
-        "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-        "decided_for_you": "Keep the writer's values as drafted.",
-        "options": [
-          "Keep as drafted",
-          "Change the named value(s)"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/"
-      },
-      "id": "37",
-      "page": "svc-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/",
-      "item": "writer-chosen-values",
-      "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (gutter contractor + gutter installation + Polk County, Florida) and buyer state (repairs no longer hold, or no gutters at all); H2s 'How Does First Choice Seamless Gutters Install New Rain Gutters?', 'What Kinds of Gutter Replacement and New Gutter Jobs Are There?', 'What Do Homeowners in Polk County, Florida Ask About New Rain Gutters?', 'Where Does First Choice Seamless Gutters Install and Replace Gutters?'; H3s Full-House Gutter Replacement, Partial Gutter Replacement, First-Time Gutters on a Home Without Them, Gutter Material Choices for a New System; 'What you get' list; FAQ H2 pair Rain Gutters + Polk County, Florida; BBB A+ line used, Google rating left out; no outbound link; closing CTA.",
-      "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-      "decided_for_you": "Keep the writer's values as drafted.",
-      "options": "a) Keep as drafted · b) Change the named value(s)",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-installation|cm-016|free-correction-claim",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-installation",
-        "rule": "CM-016",
-        "item": "free-correction-claim",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "'If a problem later shows up with gutters the company put in, it corrects the problem free of cost' and the bullet 'Free correction of any problem with the gutters the company installed' come from an owner's public reply to a review, not from the client's warranty answer. As written it is a guarantee broader than the confirmed 10-Year Workmanship Guarantee ('any problem').",
-        "plain_why": "A guarantee is a legal claim; the confirmed written guarantee already covers the point, so cutting this loses nothing.",
-        "decided_for_you": "Cut the sentence and the bullet; keep the 10-year workmanship guarantee in writing.",
-        "options": [
-          "Cut both",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/"
-      },
-      "id": "38",
-      "page": "svc-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/",
-      "item": "free-correction-claim",
-      "finding": "'If a problem later shows up with gutters the company put in, it corrects the problem free of cost' and the bullet 'Free correction of any problem with the gutters the company installed' come from an owner's public reply to a review, not from the client's warranty answer. As written it is a guarantee broader than the confirmed 10-Year Workmanship Guarantee ('any problem').",
-      "plain_why": "A guarantee is a legal claim; the confirmed written guarantee already covers the point, so cutting this loses nothing.",
-      "decided_for_you": "Cut the sentence and the bullet; keep the 10-year workmanship guarantee in writing.",
-      "options": "a) Cut both · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-installation|e1|swap-test-seamless",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-installation",
-        "rule": "E1",
-        "item": "swap-test-seamless",
-        "severity": "fix_and_list",
-        "category": "portability",
-        "finding": "Fails the swap test against svc-seamless-gutter-installation (same two customer examples, same delivery opening, same full-house $150 H3, same materials list, same CTA close). On this page the 'Gutter Material Choices for a New System' H3 also repeats the delivery H2's own material line.",
-        "plain_why": "Passages that read the same on two sibling pages weaken both.",
-        "decided_for_you": "Keep the front-plus-side example (Partial Gutter Replacement); cut the HOA sentence (it stays on the seamless page). Cut the 'Gutter Material Choices for a New System' H3 and add its 'compare them during the free estimate' line to the delivery H2's material paragraph. Reword the CTA's last two sentences so they differ from every sibling.",
-        "options": [
-          "Apply as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/"
-      },
-      "id": "39",
-      "page": "svc-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/",
-      "item": "swap-test-seamless",
-      "finding": "Fails the swap test against svc-seamless-gutter-installation (same two customer examples, same delivery opening, same full-house $150 H3, same materials list, same CTA close). On this page the 'Gutter Material Choices for a New System' H3 also repeats the delivery H2's own material line.",
-      "plain_why": "Passages that read the same on two sibling pages weaken both.",
-      "decided_for_you": "Keep the front-plus-side example (Partial Gutter Replacement); cut the HOA sentence (it stays on the seamless page). Cut the 'Gutter Material Choices for a New System' H3 and add its 'compare them during the free estimate' line to the delivery H2's material paragraph. Reword the CTA's last two sentences so they differ from every sibling.",
-      "options": "a) Apply as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-installation|cm-016|trade-statements",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-installation",
-        "rule": "CM-016",
-        "item": "trade-statements",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "General statements not in the pack: 'Yes, plenty of houses have no gutters, since many homes are built without them' (and the splash/groove list repeated from the First-Time H3); 'That last sign often means the gutters are too small'; 'Store-bought gutters also come in short pieces'; cost FAQ 'New rain gutters in Florida are priced by the job, and the total comes from five things' reads as the company's pricing method (pricing is still an open client question).",
-        "plain_why": "Unsourced claims stated as fact; the pricing line implies a client fact nobody has confirmed.",
-        "decided_for_you": "'Is it common' FAQ: open with 'Some houses are built without gutters' and drop the repeated splash/groove list; cost FAQ: 'The price of new rain gutters depends mainly on ...' (drop 'priced by the job' and 'five things'); 'often means' → 'can mean'. The rest stays as general trade points.",
-        "options": [
-          "Soften as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/"
-      },
-      "id": "40",
-      "page": "svc-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/",
-      "item": "trade-statements",
-      "finding": "General statements not in the pack: 'Yes, plenty of houses have no gutters, since many homes are built without them' (and the splash/groove list repeated from the First-Time H3); 'That last sign often means the gutters are too small'; 'Store-bought gutters also come in short pieces'; cost FAQ 'New rain gutters in Florida are priced by the job, and the total comes from five things' reads as the company's pricing method (pricing is still an open client question).",
-      "plain_why": "Unsourced claims stated as fact; the pricing line implies a client fact nobody has confirmed.",
-      "decided_for_you": "'Is it common' FAQ: open with 'Some houses are built without gutters' and drop the repeated splash/groove list; cost FAQ: 'The price of new rain gutters depends mainly on ...' (drop 'priced by the job' and 'five things'); 'often means' → 'can mean'. The rest stays as general trade points.",
-      "options": "a) Soften as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-installation|svc-12|h1-metro-variant-city-names",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-installation",
-        "rule": "SVC-12",
-        "item": "h1-metro-variant-city-names",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "The plan-fixed H1 'Gutter Replacement in Lakeland–Winter Haven' uses the B2 metro variant, which contains two city names; SVC-07/SVC-12 say no city in any H tag. The approved site plan fixed this H1 (also on Commercial, Gutter Guards, Copper, Aluminum).",
-        "plain_why": "Your approved plan governs; the spec mismatch should go to a system session.",
-        "decided_for_you": "Keep the plan's H1; flag the spec/plan mismatch for a system session.",
-        "options": [
-          "Keep the plan's H1",
-          "Switch to 'Polk County, Florida'"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/"
-      },
-      "id": "41",
-      "page": "svc-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/",
-      "item": "h1-metro-variant-city-names",
-      "finding": "The plan-fixed H1 'Gutter Replacement in Lakeland–Winter Haven' uses the B2 metro variant, which contains two city names; SVC-07/SVC-12 say no city in any H tag. The approved site plan fixed this H1 (also on Commercial, Gutter Guards, Copper, Aluminum).",
-      "plain_why": "Your approved plan governs; the spec mismatch should go to a system session.",
-      "decided_for_you": "Keep the plan's H1; flag the spec/plan mismatch for a system session.",
-      "options": "a) Keep the plan's H1 · b) Switch to 'Polk County, Florida'",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-installation|e1|trust-stack-repeat",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-installation",
-        "rule": "E1",
-        "item": "trust-stack-repeat",
-        "severity": "fix_and_list",
-        "category": "portability",
-        "finding": "The trust block (customers mention on time / communication / clean yard; owners and insured; GutterPro award; BBB A+) reads nearly the same on 8 of the 9 service pages.",
-        "plain_why": "The same block on every page is copied content; each fact can live on fewer pages.",
-        "decided_for_you": "This page keeps the reviews line, owners and insured, and the BBB A+ line (BBB stays only here); cut the GutterPro award sentence (it stays on Seamless and Gutter Guards).",
-        "options": [
-          "Trim as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/"
-      },
-      "id": "42",
-      "page": "svc-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/",
-      "item": "trust-stack-repeat",
-      "finding": "The trust block (customers mention on time / communication / clean yard; owners and insured; GutterPro award; BBB A+) reads nearly the same on 8 of the 9 service pages.",
-      "plain_why": "The same block on every page is copied content; each fact can live on fewer pages.",
-      "decided_for_you": "This page keeps the reviews line, owners and insured, and the BBB A+ line (BBB stays only here); cut the GutterPro award sentence (it stays on Seamless and Gutter Guards).",
-      "options": "a) Trim as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-installation|cm-061|site-process-available",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-installation",
-        "rule": "CM-061",
-        "item": "site-process-available",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "The service_process NEED stays open (gate waived). The live /services/gutter-installation/ page describes a process (roofline and fascia inspection, on-site fabrication, hanger spacing, reinforced miters, downspout placement, a final test). It is site_stated, not in the pack, and mixes in 'trained specialists, not subcontractors' (subcontracting is an open fact).",
-        "plain_why": "The site text could fill the NEED, but the live site carries claims the client has corrected (D2).",
-        "decided_for_you": "Keep the NEED open.",
-        "options": [
-          "Keep the NEED",
-          "Fill from the live page text as a site_stated plain claim (no specialist or subcontractor line)"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/"
-      },
-      "id": "43",
-      "page": "svc-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/",
-      "item": "site-process-available",
-      "finding": "The service_process NEED stays open (gate waived). The live /services/gutter-installation/ page describes a process (roofline and fascia inspection, on-site fabrication, hanger spacing, reinforced miters, downspout placement, a final test). It is site_stated, not in the pack, and mixes in 'trained specialists, not subcontractors' (subcontracting is an open fact).",
-      "plain_why": "The site text could fill the NEED, but the live site carries claims the client has corrected (D2).",
-      "decided_for_you": "Keep the NEED open.",
-      "options": "a) Keep the NEED · b) Fill from the live page text as a site_stated plain claim (no specialist or subcontractor line)",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-repair|cm-061|writer-chosen-values",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-repair",
-        "rule": "CM-061",
-        "item": "writer-chosen-values",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "Values the writer chose that the plan did not fix: meta description (names gutter maintenance); opening triple (gutter contractor + gutter repair + Lakeland–Winter Haven) and buyer state (visible storm damage); H2s 'What Happens During a Seamless Gutter Repair Visit?', 'Which Gutter Problems Can Be Repaired Instead of Replaced?', 'What Should Polk County Homeowners Know Before Paying for Rain Gutter Repair?', 'Which Polk County Towns Can Book a Gutter Repair Visit?'; five H3s incl. 'Storm Damage and After-Hours Gutter Repairs'; 'What you get' list; FAQ H2 pair Rain Gutter + Polk County; warranty left out (repair coverage not confirmed); BBB line used; no outbound link; closing CTA.",
-        "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-        "decided_for_you": "Keep the writer's values as drafted.",
-        "options": [
-          "Keep as drafted",
-          "Change the named value(s)"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-repair/"
-      },
-      "id": "44",
-      "page": "svc-gutter-repair",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-repair/",
-      "item": "writer-chosen-values",
-      "finding": "Values the writer chose that the plan did not fix: meta description (names gutter maintenance); opening triple (gutter contractor + gutter repair + Lakeland–Winter Haven) and buyer state (visible storm damage); H2s 'What Happens During a Seamless Gutter Repair Visit?', 'Which Gutter Problems Can Be Repaired Instead of Replaced?', 'What Should Polk County Homeowners Know Before Paying for Rain Gutter Repair?', 'Which Polk County Towns Can Book a Gutter Repair Visit?'; five H3s incl. 'Storm Damage and After-Hours Gutter Repairs'; 'What you get' list; FAQ H2 pair Rain Gutter + Polk County; warranty left out (repair coverage not confirmed); BBB line used; no outbound link; closing CTA.",
-      "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-      "decided_for_you": "Keep the writer's values as drafted.",
-      "options": "a) Keep as drafted · b) Change the named value(s)",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-repair|site-stated|pitch-hangers-outlets-capacity",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-repair",
-        "rule": "site-stated",
-        "item": "pitch-hangers-outlets-capacity",
-        "severity": "fix_and_list",
-        "category": "site_stated_used",
-        "finding": "Stated plainly from the client's own site: a repair can restore the gutter by correcting pitch, reinforcing hangers or clearing restricted outlets before replacement (Highland City page); overflow in one hard rain points to capacity, pitch or drainage routing, which can be corrected (Dundee page).",
-        "plain_why": "Claims from the client's site, not confirmed facts.",
-        "decided_for_you": "Keep them as written.",
-        "options": [
-          "Keep",
-          "Soften or cut"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-repair/"
-      },
-      "id": "45",
-      "page": "svc-gutter-repair",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-repair/",
-      "item": "pitch-hangers-outlets-capacity",
-      "finding": "Stated plainly from the client's own site: a repair can restore the gutter by correcting pitch, reinforcing hangers or clearing restricted outlets before replacement (Highland City page); overflow in one hard rain points to capacity, pitch or drainage routing, which can be corrected (Dundee page).",
-      "plain_why": "Claims from the client's site, not confirmed facts.",
-      "decided_for_you": "Keep them as written.",
-      "options": "a) Keep · b) Soften or cut",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-repair|cm-016|trade-statements",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-repair",
-        "rule": "CM-016",
-        "item": "trade-statements",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "General statements not in the pack: 'Most gutter problems trace back to a few causes'; 'Fixing a few loose hangers costs far less than replacing a bent section'; FAQ 'The most common gutter problems are overflow, leaks and sagging'; the drip 'stains the wall, wets the fascia ... soaks the ground by the foundation'; standing water 'pulls the gutter down further'.",
-        "plain_why": "Unsourced ranking and price comparisons stated as fact.",
-        "decided_for_you": "'The most common gutter problems are' → 'Three common gutter problems are'; 'far less' → 'less'; cut 'Most gutter problems trace back to a few causes.' Keep the descriptions of leaks, sagging and pitch as general points.",
-        "options": [
-          "Soften as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-repair/"
-      },
-      "id": "46",
-      "page": "svc-gutter-repair",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-repair/",
-      "item": "trade-statements",
-      "finding": "General statements not in the pack: 'Most gutter problems trace back to a few causes'; 'Fixing a few loose hangers costs far less than replacing a bent section'; FAQ 'The most common gutter problems are overflow, leaks and sagging'; the drip 'stains the wall, wets the fascia ... soaks the ground by the foundation'; standing water 'pulls the gutter down further'.",
-      "plain_why": "Unsourced ranking and price comparisons stated as fact.",
-      "decided_for_you": "'The most common gutter problems are' → 'Three common gutter problems are'; 'far less' → 'less'; cut 'Most gutter problems trace back to a few causes.' Keep the descriptions of leaks, sagging and pitch as general points.",
-      "options": "a) Soften as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-repair|e1|trust-stack-repeat",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-repair",
-        "rule": "E1",
-        "item": "trust-stack-repeat",
-        "severity": "fix_and_list",
-        "category": "portability",
-        "finding": "The trust block (customers mention quick / on time / communication / clean yard; owners and insured; BBB A+) reads nearly the same on 8 of the 9 service pages.",
-        "plain_why": "The same block on every page is copied content.",
-        "decided_for_you": "Keep the reviews line, the 24-hour form reply, owners and insured; cut the BBB sentence (it stays on Gutter Installation only).",
-        "options": [
-          "Trim as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-repair/"
-      },
-      "id": "47",
-      "page": "svc-gutter-repair",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-repair/",
-      "item": "trust-stack-repeat",
-      "finding": "The trust block (customers mention quick / on time / communication / clean yard; owners and insured; BBB A+) reads nearly the same on 8 of the 9 service pages.",
-      "plain_why": "The same block on every page is copied content.",
-      "decided_for_you": "Keep the reviews line, the 24-hour form reply, owners and insured; cut the BBB sentence (it stays on Gutter Installation only).",
-      "options": "a) Trim as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-gutter-repair|cm-061|site-process-available",
-      "note": "",
-      "_finding": {
-        "page": "svc-gutter-repair",
-        "rule": "CM-061",
-        "item": "site-process-available",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "The service_process NEED stays open (gate waived). The live /services/gutter-repair/ page states a repair process that begins with a full system inspection of seams, corners, slope, brackets, end caps and downspout connections. It is site_stated and not in the pack.",
-        "plain_why": "The site text could fill the NEED, but the live site carries claims the client has corrected (D2).",
-        "decided_for_you": "Keep the NEED open.",
-        "options": [
-          "Keep the NEED",
-          "Fill from the live page text as a site_stated plain claim"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/gutter-repair/"
-      },
-      "id": "48",
-      "page": "svc-gutter-repair",
-      "url": "https://www.firstchoiceseamlessgutters.net/gutter-repair/",
-      "item": "site-process-available",
-      "finding": "The service_process NEED stays open (gate waived). The live /services/gutter-repair/ page states a repair process that begins with a full system inspection of seams, corners, slope, brackets, end caps and downspout connections. It is site_stated and not in the pack.",
-      "plain_why": "The site text could fill the NEED, but the live site carries claims the client has corrected (D2).",
-      "decided_for_you": "Keep the NEED open.",
-      "options": "a) Keep the NEED · b) Fill from the live page text as a site_stated plain claim",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-seamless-gutter-installation|cm-061|writer-chosen-values",
-      "note": "",
-      "_finding": {
-        "page": "svc-seamless-gutter-installation",
-        "rule": "CM-061",
-        "item": "writer-chosen-values",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (seamless gutters + gutter contractor + Lakeland–Winter Haven) and buyer state (comparing quotes, is seamless worth it); H2s 'How Does a Seamless Gutter Installation Work, From Estimate to Clean-Up?', 'What Kinds of Seamless Gutter Jobs Does First Choice Seamless Gutters Take On?', 'What Should Polk County Homeowners Know Before Buying Seamless Gutters?', 'Which Polk County Towns Get Seamless Gutter Installation From First Choice?'; H3s Full-House Seamless Gutter Installation, Replacing Sectional Gutters With Seamless Gutters, Adding Seamless Gutters to Part of a Home, Seamless Gutter Materials and Options; FAQ H2 pair Seamless Gutters + Polk County; FAQ first sentences 30–50 words; BBB and Google rating left out; no outbound link (no official source in the pack); closing CTA.",
-        "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-        "decided_for_you": "Keep the writer's values as drafted.",
-        "options": [
-          "Keep as drafted",
-          "Change the named value(s)"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/"
-      },
-      "id": "49",
-      "page": "svc-seamless-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/",
-      "item": "writer-chosen-values",
-      "finding": "Values the writer chose that the plan did not fix: meta description; opening triple (seamless gutters + gutter contractor + Lakeland–Winter Haven) and buyer state (comparing quotes, is seamless worth it); H2s 'How Does a Seamless Gutter Installation Work, From Estimate to Clean-Up?', 'What Kinds of Seamless Gutter Jobs Does First Choice Seamless Gutters Take On?', 'What Should Polk County Homeowners Know Before Buying Seamless Gutters?', 'Which Polk County Towns Get Seamless Gutter Installation From First Choice?'; H3s Full-House Seamless Gutter Installation, Replacing Sectional Gutters With Seamless Gutters, Adding Seamless Gutters to Part of a Home, Seamless Gutter Materials and Options; FAQ H2 pair Seamless Gutters + Polk County; FAQ first sentences 30–50 words; BBB and Google rating left out; no outbound link (no official source in the pack); closing CTA.",
-      "plain_why": "Every value the plan left open is shown once so you can change any of it.",
-      "decided_for_you": "Keep the writer's values as drafted.",
-      "options": "a) Keep as drafted · b) Change the named value(s)",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-seamless-gutter-installation|cm-016|meta-guarantee-scope",
-      "note": "",
-      "_finding": {
-        "page": "svc-seamless-gutter-installation",
-        "rule": "CM-016",
-        "item": "meta-guarantee-scope",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "Meta says 'with a written 10-year guarantee'. The confirmed fact is a 10-Year Workmanship Guarantee; without 'workmanship' it reads as a product or material warranty.",
-        "plain_why": "A guarantee is a legal claim; it must say exactly what the client confirmed.",
-        "decided_for_you": "Reword to '... aluminum, Galvalume or copper gutters, backed by a written 10-year workmanship guarantee. Free on-site estimate.' (kept within 150–160 characters).",
-        "options": [
-          "Add 'workmanship'",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/"
-      },
-      "id": "50",
-      "page": "svc-seamless-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/",
-      "item": "meta-guarantee-scope",
-      "finding": "Meta says 'with a written 10-year guarantee'. The confirmed fact is a 10-Year Workmanship Guarantee; without 'workmanship' it reads as a product or material warranty.",
-      "plain_why": "A guarantee is a legal claim; it must say exactly what the client confirmed.",
-      "decided_for_you": "Reword to '... aluminum, Galvalume or copper gutters, backed by a written 10-year workmanship guarantee. Free on-site estimate.' (kept within 150–160 characters).",
-      "options": "a) Add 'workmanship' · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-seamless-gutter-installation|cm-057|options-review-tier",
-      "note": "",
-      "_finding": {
-        "page": "svc-seamless-gutter-installation",
-        "rule": "CM-057",
-        "item": "options-review-tier",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "'Customers mention being given many options to customize their gutters and downspouts.' Only two reviews carry the options point (rows 77 and 18); the 26-reviewer tier belongs to the 'James' topic, not to options.",
-        "plain_why": "Two reviewers support an attributed example, not 'customers mention'.",
-        "decided_for_you": "Reword to 'One homeowner said the team offered many options to customize the gutters and downspouts.'",
-        "options": [
-          "Reword as an attributed example",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/"
-      },
-      "id": "51",
-      "page": "svc-seamless-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/",
-      "item": "options-review-tier",
-      "finding": "'Customers mention being given many options to customize their gutters and downspouts.' Only two reviews carry the options point (rows 77 and 18); the 26-reviewer tier belongs to the 'James' topic, not to options.",
-      "plain_why": "Two reviewers support an attributed example, not 'customers mention'.",
-      "decided_for_you": "Reword to 'One homeowner said the team offered many options to customize the gutters and downspouts.'",
-      "options": "a) Reword as an attributed example · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-seamless-gutter-installation|cm-016|trade-statements",
-      "note": "",
-      "_finding": {
-        "page": "svc-seamless-gutter-installation",
-        "rule": "CM-016",
-        "item": "trade-statements",
-        "severity": "fix_and_list",
-        "category": "claim_softened",
-        "finding": "General trade statements not in the pack: sectional gutters have 'a joint every few feet' that seeps 'as the sealant ages'; FAQ downsides (higher cost than a DIY kit, special machine, a bent run is often replaced whole); FAQ 'How are seamless gutters made?' says 'most often aluminum' and 'often done right in the driveway on the day of the job'.",
-        "plain_why": "Unsourced trade points; the driveway line will read as First Choice's own process, which is still a [NEED].",
-        "decided_for_you": "Keep the plain definitions (one piece per run, joints only at corners and downspouts) and the downsides as general points worded with 'can'; cut 'most often aluminum' and the driveway sentence from the 'made' answer.",
-        "options": [
-          "Soften as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/"
-      },
-      "id": "52",
-      "page": "svc-seamless-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/",
-      "item": "trade-statements",
-      "finding": "General trade statements not in the pack: sectional gutters have 'a joint every few feet' that seeps 'as the sealant ages'; FAQ downsides (higher cost than a DIY kit, special machine, a bent run is often replaced whole); FAQ 'How are seamless gutters made?' says 'most often aluminum' and 'often done right in the driveway on the day of the job'.",
-      "plain_why": "Unsourced trade points; the driveway line will read as First Choice's own process, which is still a [NEED].",
-      "decided_for_you": "Keep the plain definitions (one piece per run, joints only at corners and downspouts) and the downsides as general points worded with 'can'; cut 'most often aluminum' and the driveway sentence from the 'made' answer.",
-      "options": "a) Soften as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-seamless-gutter-installation|c3|faq-highest-rated-overlap",
-      "note": "",
-      "_finding": {
-        "page": "svc-seamless-gutter-installation",
-        "rule": "C3",
-        "item": "faq-highest-rated-overlap",
-        "severity": "fix_and_list",
-        "category": "collision",
-        "finding": "FAQ 'What is the highest rated gutter system for a home?' ends with a material comparison ('Aluminum is the most common pick. Galvalume is a coated steel. Copper is picked for its look and long life.') that the Galvalume page answers in full ('What is the best gutter material for Florida homes?'). 'Most common pick' and 'long life' are also unsourced.",
-        "plain_why": "Two service pages answering the same material question compete with each other.",
-        "decided_for_you": "Cut the three material sentences; the answer stands on system type (seamless, sized, enough downspouts, guards where trees drop leaves).",
-        "options": [
-          "Cut the material sentences",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/"
-      },
-      "id": "53",
-      "page": "svc-seamless-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/",
-      "item": "faq-highest-rated-overlap",
-      "finding": "FAQ 'What is the highest rated gutter system for a home?' ends with a material comparison ('Aluminum is the most common pick. Galvalume is a coated steel. Copper is picked for its look and long life.') that the Galvalume page answers in full ('What is the best gutter material for Florida homes?'). 'Most common pick' and 'long life' are also unsourced.",
-      "plain_why": "Two service pages answering the same material question compete with each other.",
-      "decided_for_you": "Cut the three material sentences; the answer stands on system type (seamless, sized, enough downspouts, guards where trees drop leaves).",
-      "options": "a) Cut the material sentences · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-seamless-gutter-installation|e1|swap-test-gutter-installation",
-      "note": "",
-      "_finding": {
-        "page": "svc-seamless-gutter-installation",
-        "rule": "E1",
-        "item": "swap-test-gutter-installation",
-        "severity": "fix_and_list",
-        "category": "portability",
-        "finding": "Fails the swap test against svc-gutter-installation: both pages use the same two customer examples (HOA approval, row 16; front gutters plus side gutters, row 112), the same delivery opening (free inspection → 10-year written guarantee), a full-house H3 carrying the $150 offer, a materials H3 listing the same metals, and the same CTA close ('Military members and seniors save $150 on a full-house installation. Prefer to write? Send the form, and you will hear back within 24 hours.').",
-        "plain_why": "Passages that read the same on two sibling pages weaken both.",
-        "decided_for_you": "This page keeps the HOA example; the front-plus-side example moves to Gutter Installation only (its review is the 'gutter replacement' match), so the 'Adding Seamless Gutters to Part of a Home' H3 drops that sentence. Reword the CTA's last two sentences so they differ from every sibling.",
-        "options": [
-          "Split the examples and reword the CTA as described",
-          "Keep as drafted"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/"
-      },
-      "id": "54",
-      "page": "svc-seamless-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/",
-      "item": "swap-test-gutter-installation",
-      "finding": "Fails the swap test against svc-gutter-installation: both pages use the same two customer examples (HOA approval, row 16; front gutters plus side gutters, row 112), the same delivery opening (free inspection → 10-year written guarantee), a full-house H3 carrying the $150 offer, a materials H3 listing the same metals, and the same CTA close ('Military members and seniors save $150 on a full-house installation. Prefer to write? Send the form, and you will hear back within 24 hours.').",
-      "plain_why": "Passages that read the same on two sibling pages weaken both.",
-      "decided_for_you": "This page keeps the HOA example; the front-plus-side example moves to Gutter Installation only (its review is the 'gutter replacement' match), so the 'Adding Seamless Gutters to Part of a Home' H3 drops that sentence. Reword the CTA's last two sentences so they differ from every sibling.",
-      "options": "a) Split the examples and reword the CTA as described · b) Keep as drafted",
-      "recommended": "a",
-      "answer": ""
-    },
-    {
-      "severity": "fix_and_list",
-      "kind": "",
-      "key": "svc-seamless-gutter-installation|cm-061|site-process-available",
-      "note": "",
-      "_finding": {
-        "page": "svc-seamless-gutter-installation",
-        "rule": "CM-061",
-        "item": "site-process-available",
-        "severity": "fix_and_list",
-        "category": "other_content",
-        "finding": "The service_process and service_scope NEEDs stay open (evidence gate waived). The live /services/seamless-gutter-installation/ page (crawl page-text.csv) does describe a process (gutters fabricated on site, pitched to the roof's water flow). It is site_stated and not in the pack.",
-        "plain_why": "The site text could fill the NEEDs as a plain claim, but the live site carries other claims the client has corrected (D2), so it stays open by default.",
-        "decided_for_you": "Keep the two NEEDs open.",
-        "options": [
-          "Keep the NEEDs",
-          "Fill from the live page text as a site_stated plain claim"
-        ],
-        "recommended": "a",
-        "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/"
-      },
-      "id": "55",
-      "page": "svc-seamless-gutter-installation",
-      "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/",
-      "item": "site-process-available",
-      "finding": "The service_process and service_scope NEEDs stay open (evidence gate waived). The live /services/seamless-gutter-installation/ page (crawl page-text.csv) does describe a process (gutters fabricated on site, pitched to the roof's water flow). It is site_stated and not in the pack.",
-      "plain_why": "The site text could fill the NEEDs as a plain claim, but the live site carries other claims the client has corrected (D2), so it stays open by default.",
-      "decided_for_you": "Keep the two NEEDs open.",
-      "options": "a) Keep the NEEDs · b) Fill from the live page text as a site_stated plain claim",
-      "recommended": "a",
-      "answer": ""
-    },
     {
       "id": "U1",
       "page": "svc-seamless-gutter-installation",
@@ -1811,7 +51,7 @@
       "page": "svc-commercial-gutters",
       "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/",
       "item": "evidence used",
-      "finding": "Evidence used: 3 of 50 excerpts",
+      "finding": "Evidence used: 4 of 50 excerpts",
       "plain_why": "",
       "decided_for_you": "",
       "options": "",
@@ -1891,7 +131,338 @@
       "severity": "info"
     }
   ],
-  "dropped": [],
+  "dropped": [
+    {
+      "page": "svc-seamless-gutter-installation",
+      "rule": "CM-061",
+      "item": "writer-chosen-values",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-seamless-gutter-installation",
+      "rule": "CM-016",
+      "item": "meta-guarantee-scope",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-seamless-gutter-installation",
+      "rule": "CM-057",
+      "item": "options-review-tier",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-seamless-gutter-installation",
+      "rule": "CM-016",
+      "item": "trade-statements",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-seamless-gutter-installation",
+      "rule": "C3",
+      "item": "faq-highest-rated-overlap",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-seamless-gutter-installation",
+      "rule": "E1",
+      "item": "swap-test-gutter-installation",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-seamless-gutter-installation",
+      "rule": "CM-061",
+      "item": "site-process-available",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-installation",
+      "rule": "CM-061",
+      "item": "writer-chosen-values",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-installation",
+      "rule": "CM-016",
+      "item": "free-correction-claim",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-installation",
+      "rule": "E1",
+      "item": "swap-test-seamless",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-installation",
+      "rule": "CM-016",
+      "item": "trade-statements",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-installation",
+      "rule": "SVC-12",
+      "item": "h1-metro-variant-city-names",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-installation",
+      "rule": "E1",
+      "item": "trust-stack-repeat",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-installation",
+      "rule": "CM-061",
+      "item": "site-process-available",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-repair",
+      "rule": "CM-061",
+      "item": "writer-chosen-values",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-repair",
+      "rule": "site-stated",
+      "item": "pitch-hangers-outlets-capacity",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-repair",
+      "rule": "CM-016",
+      "item": "trade-statements",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-repair",
+      "rule": "E1",
+      "item": "trust-stack-repeat",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-repair",
+      "rule": "CM-061",
+      "item": "site-process-available",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-commercial-gutters",
+      "rule": "CM-061",
+      "item": "writer-chosen-values",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-commercial-gutters",
+      "rule": "CM-016",
+      "item": "guarantee-scope-commercial",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-commercial-gutters",
+      "rule": "CM-016",
+      "item": "trade-statements",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-commercial-gutters",
+      "rule": "COM-12",
+      "item": "need-commercial-timeline",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-commercial-gutters",
+      "rule": "SVC-12",
+      "item": "h1-metro-variant-city-names",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-commercial-gutters",
+      "rule": "E1",
+      "item": "trust-stack-repeat",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-commercial-gutters",
+      "rule": "CM-061",
+      "item": "site-process-available",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-downspouts",
+      "rule": "CM-061",
+      "item": "writer-chosen-values",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-downspouts",
+      "rule": "CM-016",
+      "item": "trade-statements",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-downspouts",
+      "rule": "CM-016",
+      "item": "need-downspout-rule-public",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-downspouts",
+      "rule": "CM-016",
+      "item": "cta-offer-wording",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-downspouts",
+      "rule": "E1",
+      "item": "trust-stack-repeat",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-downspouts",
+      "rule": "CM-061",
+      "item": "site-process-available",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-guards",
+      "rule": "CM-061",
+      "item": "writer-chosen-values",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-guards",
+      "rule": "CM-016",
+      "item": "trade-statements",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-guards",
+      "rule": "SVC-12",
+      "item": "h1-metro-variant-city-names",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-guards",
+      "rule": "E1",
+      "item": "trust-stack-repeat",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-gutter-guards",
+      "rule": "CM-061",
+      "item": "site-process-available",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-copper-gutters",
+      "rule": "CM-061",
+      "item": "writer-chosen-values",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-copper-gutters",
+      "rule": "CM-016",
+      "item": "trade-statements",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-copper-gutters",
+      "rule": "CM-016",
+      "item": "need-copper-lifespan-public",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-copper-gutters",
+      "rule": "E1",
+      "item": "swap-test-aluminum",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-copper-gutters",
+      "rule": "site-stated",
+      "item": "soldered-joins",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-copper-gutters",
+      "rule": "E1",
+      "item": "trust-stack-repeat",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-copper-gutters",
+      "rule": "SVC-12",
+      "item": "h1-metro-variant-city-names",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-galvalume-gutters",
+      "rule": "CM-061",
+      "item": "writer-chosen-values",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-galvalume-gutters",
+      "rule": "CM-016",
+      "item": "trade-statements",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-galvalume-gutters",
+      "rule": "CM-016",
+      "item": "need-coating-makeup-public",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-galvalume-gutters",
+      "rule": "SEM-8",
+      "item": "other-service-h3s",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-galvalume-gutters",
+      "rule": "E1",
+      "item": "trust-stack-repeat",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-galvalume-gutters",
+      "rule": "CM-061",
+      "item": "site-process-available",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-aluminum-gutters",
+      "rule": "CM-061",
+      "item": "writer-chosen-values",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-aluminum-gutters",
+      "rule": "CM-016",
+      "item": "trade-statements",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-aluminum-gutters",
+      "rule": "SVC-13",
+      "item": "buyer-state-overlap",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-aluminum-gutters",
+      "rule": "SVC-12",
+      "item": "h1-metro-variant-city-names",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    },
+    {
+      "page": "svc-aluminum-gutters",
+      "rule": "CM-061",
+      "item": "site-process-available",
+      "why": "decided earlier in this section (drafts, 2026-10-25) — never raised again"
+    }
+  ],
   "usage": [
     {
       "page": "svc-seamless-gutter-installation",
@@ -1914,7 +485,7 @@
     {
       "page": "svc-commercial-gutters",
       "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/",
-      "used": 3,
+      "used": 4,
       "total": 50
     },
     {

@@ -54,23 +54,23 @@ Storm damage can bend a gutter, tear it loose or knock a downspout off the wall 
 
 ### How much does it cost to fix gutters?
 
-The cost to fix gutters depends on what broke and how much of the gutter it affects. Fixing a few loose hangers costs less than replacing a bent section. Roof height, the feet of gutter, the number of downspouts and the gutter metal also change the price. First Choice Seamless Gutters prices the job after a free on-site inspection, with no hidden fees.
+The cost to fix gutters depends on what broke and how much of the gutter it affects, so fixing a few loose hangers costs less than replacing a bent section, and the price also changes with the roof and the gutter. Roof height, the feet of gutter, the number of downspouts and the gutter metal also change the price. First Choice Seamless Gutters prices the job after a free on-site inspection, with no hidden fees.
 
 ### What is the most common problem with gutters?
 
-Three common gutter problems are overflow, leaks and sagging, and one often leads to the next. A blocked outlet makes water sit in the gutter. The weight loosens the hangers, and the sagging run starts to drip at its corners and seams. A gutter that overflows in one hard rain is often too small, sloped wrong or draining to the wrong spot.
+Three common gutter problems are overflow, leaks and sagging, and one often leads to the next, because a blocked outlet makes water sit in the gutter and that weight loosens the hangers until the run sags and drips. The sagging run leaks first at its corners and seams. A gutter that overflows in one hard rain is often too small, sloped wrong or draining to the wrong spot.
 
 ### Can a handyman fix a gutter?
 
-A handyman can often handle a small gutter fix, like one loose hanger or a drip on a low, one-story gutter. A gutter contractor is the better call when a whole run sags, the slope is wrong, or water spills over in hard rain. The same goes for a gutter on a two-story roof. Those jobs need the slope and drainage checked.
+A handyman can often handle a small gutter fix, like one loose hanger or a drip on a low, one-story gutter, but a gutter contractor is the better call when a whole run sags, the slope is wrong, or water spills over in hard rain. The same goes for a gutter on a two-story roof. Those jobs need the slope and drainage checked.
 
 ### Should a damaged gutter be repaired or replaced?
 
-Repair a damaged gutter when the problem is in one place, such as a loose hanger, a leaking corner or a blocked outlet. Replace it when the damage runs its whole length, the same spots keep failing, or the gutter is too small for the roof. A free inspection shows which one your home needs. If replacement makes sense, military members and seniors get $150 off a full-house installation.
+Repair a gutter when the problem is in one place, like a loose hanger, a leaking corner or a blocked outlet, and replace it when the damage runs its whole length, the same spots keep failing, or the gutter is too small for the roof. A free inspection shows which one your home needs. If replacement makes sense, military members and seniors get $150 off a full-house installation.
 
 ### What does routine gutter maintenance include?
 
-Routine gutter maintenance means keeping the gutters clear and checking three things: tight hangers, dry corners and seams, and a slope that still runs toward the downspouts. Small problems caught early cost less than repairs after a storm. First Choice Seamless Gutters handles those fixes as gutter repair, not as a separate service.
+Routine gutter care means keeping the gutters clear and checking that the hangers are tight, the corners and seams are dry, and the slope still runs to the downspouts, since small problems caught early cost less than repairs after a storm. First Choice Seamless Gutters handles those fixes as gutter repair. It is not a separate service.
 
 ## Which Polk County Towns Can Book a Gutter Repair Visit?
 

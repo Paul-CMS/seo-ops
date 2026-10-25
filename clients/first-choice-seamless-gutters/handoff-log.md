@@ -586,3 +586,16 @@ Still open:
 
 **Changes (script):** 9 — draft-review-apply ×9
 
+## /build · 2026-10-25 · run 20261025-142019-build-47a3
+
+## Fixes and revisions recorded
+- seamless-gutter-installation: 'galvalume' → 'Galvalume' (materials H3 body); meta (158 chars, all entities) left as revised.
+- gutter-repair: 5 FAQ first sentences now 38–45 words; page grade 7.8; E10 passes.
+- gutter-downspouts: 5 FAQ first sentences now 36–39 words; page grade 7.0.
+- galvalume-gutters: opening split — "…coating that fights rust. Because it is steel, it is stiffer than aluminum."
+- aluminum-gutters: 2 FAQ first sentences now 41 and 35 words; page grade 7.1.
+- CM-005: the four H3 links on gutter-installation are allowed (CM-022 names "table/H3 links"); not changed.
+- Review sheet regenerated: 0 Asks, 0 listed, 55 not raised (decided earlier); review.py apply ran (0 rows).
+- REFUSED: status.py page-stage — "a draft is recorded only by its own /build draft run, the batch's write run, or the review run". No page re-recorded; run NOT finished; stopped here.
+- Pre-existing E10 paragraph overs left as-is (outside the fixes): aluminum cost FAQ, downspouts process H2, galvalume x2, seamless meta + highest-rated FAQ.
+

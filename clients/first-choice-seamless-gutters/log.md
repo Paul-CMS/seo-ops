@@ -1520,3 +1520,30 @@ Spend: 3799242 tokens · $1.54 (measured)
 - CHANGE #350 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (32).md | new: First Choice Seamless Gutters - Status.md · sha 7db9620df7a6 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #351 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-24 (2).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | new: _Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-24 (2).md | result: done · renamed and moved, nothing deleted
 - CHANGE #352 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | upload | old: previous version archived as First Choice Seamless Gutters - VA Worklist - 2026-10-24 (2).md | new: First Choice Seamless Gutters - VA Worklist.md · sha 03f8248a8cfa | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261025-142019-build-47a3 · STARTED · /build · 2026-10-25T14:20:19-05:00
+Step: build:drafts · batch services · session 0d92262f-4340-4709-aadd-eed9aac00f99
+Gates checked: discovery_signed_off, batch:services:drafts_ready
+- REVIEW SHEET 2026-10-25T14:24 · run 20261025-142019-build-47a3 · services drafts: 0 Ask, 0 decided for you, 0 fixed silently, 55 not raised (duplicate, decided or answered) · clients/first-choice-seamless-gutters/build/services/drafts-review.csv
+- REVIEW APPLIED 2026-10-25T14:24 · run 20261025-142019-build-47a3 · services drafts: 0 row(s) (0 answered by Paul, the rest by default) · clients/first-choice-seamless-gutters/build/services/drafts-apply.json
+### HANDOFF · /build · 2026-10-25 · run 20261025-142019-build-47a3
+## Fixes and revisions recorded
+- seamless-gutter-installation: 'galvalume' → 'Galvalume' (materials H3 body); meta (158 chars, all entities) left as revised.
+- gutter-repair: 5 FAQ first sentences now 38–45 words; page grade 7.8; E10 passes.
+- gutter-downspouts: 5 FAQ first sentences now 36–39 words; page grade 7.0.
+- galvalume-gutters: opening split — "…coating that fights rust. Because it is steel, it is stiffer than aluminum."
+- aluminum-gutters: 2 FAQ first sentences now 41 and 35 words; page grade 7.1.
+- CM-005: the four H3 links on gutter-installation are allowed (CM-022 names "table/H3 links"); not changed.
+- Review sheet regenerated: 0 Asks, 0 listed, 55 not raised (decided earlier); review.py apply ran (0 rows).
+- REFUSED: status.py page-stage — "a draft is recorded only by its own /build draft run, the batch's write run, or the review run". No page re-recorded; run NOT finished; stopped here.
+- Pre-existing E10 paragraph overs left as-is (outside the fixes): aluminum cost FAQ, downspouts process H2, galvalume x2, seamless meta + highest-rated FAQ.
+### END HANDOFF
+## RUN 20261025-142019-build-47a3 · FINISHED · 2026-10-25T14:28:31-05:00
+Changes: 0 · Summary: Services drafts: five FAQ/meta/H1 fixes and installation materials section in the drafts; verify read the drafts directly (no logged changes); pages not yet recorded
+Spend: 5487361 tokens · $1.04 (measured)
+- CHANGE #353 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-25.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-25.md | result: done · renamed and moved, nothing deleted
+- CHANGE #354 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-25.md | new: First Choice Seamless Gutters - Handoff Log.md · sha 190c6b4b5ba4 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #355 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-25.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-25.md | result: done · renamed and moved, nothing deleted
+- CHANGE #356 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-25.md | new: First Choice Seamless Gutters - Document Checklist.md · sha 05f8473e30ba | result: done · copied (Drive for desktop syncs it)
+- CHANGE #357 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-25.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-25.md | result: done · renamed and moved, nothing deleted
+- CHANGE #358 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-25.md | new: First Choice Seamless Gutters - Status.md · sha af75a007592a | result: done · copied (Drive for desktop syncs it)

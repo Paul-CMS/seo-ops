@@ -2,7 +2,7 @@
 page_id: svc-seamless-gutter-installation
 url: https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/
 seo_title: Seamless Gutter Installation - First Choice Seamless Gutters
-meta_description: Seamless gutter installation in Polk County: aluminum, Galvalume or copper gutters, backed by a written 10-year workmanship guarantee. Free on-site estimate.
+meta_description: Seamless gutter installation in Polk County, Florida: aluminum, Galvalume or copper, backed by a written 10-year workmanship guarantee. Free on-site estimate.
 replaces: https://www.firstchoiceseamlessgutters.net/services/seamless-gutter-installation/
 ---
 # Continuous Rain Gutters in Polk County, Florida
@@ -41,7 +41,7 @@ Seamless gutters can go on one side of a house or over one doorway, not only the
 
 ### Seamless Gutter Materials and Options
 
-First Choice Seamless Gutters installs aluminum, galvalume and copper gutters. Each metal has its own page on this site. One homeowner said the team offered many options to customize the gutters and downspouts.
+First Choice Seamless Gutters installs aluminum, Galvalume and copper gutters. Each metal has its own page on this site. One homeowner said the team offered many options to customize the gutters and downspouts.
 
 ## What Should Polk County Homeowners Know Before Buying Seamless Gutters?
 

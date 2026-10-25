@@ -53,7 +53,7 @@ Aluminum gutters come with a baked-on painted finish in many colors. You can mat
 
 ### Are aluminum gutters good?
 
-Yes, aluminum gutters are a good choice for most homes, because they are light, they do not rust, they come in many colors, and they cost less than copper. Their weak spot is dents: a ladder or a falling branch can bend a thin gutter. A thicker gauge holds up better.
+Yes, aluminum gutters are a good choice for most homes, because they are light, they do not rust, they come in many colors, and they cost less than copper, though a ladder or a falling branch can dent a thin gutter. A thicker gauge holds up better.
 
 ### What is the difference between .027 and .032 aluminum gutters?
 
@@ -61,7 +61,7 @@ The difference is thickness: .027 aluminum gutters are 0.027 inches thick, and .
 
 ### Do aluminum gutters rust?
 
-No, aluminum gutters do not rust, because rust forms only on metals that contain iron, and aluminum has none. Aluminum can still wear in other ways. Its paint can fade over time. It can also corrode where it touches copper or bare steel, so the parts that hold it up matter.
+No, aluminum gutters do not rust, because rust forms only on metals with iron in them, and aluminum has none, but it can still wear in other ways, and its paint can fade with time. It can also corrode where it touches copper or bare steel. So the parts that hold it up matter.
 
 ### What do aluminum gutters cost for a home?
 
