@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 4 of 8 — Audit**
-- **What is happening now:** waiting for Paul's approval — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md. Discovery is then signed off automatically and Build starts
-- **Waiting on:** Paul — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-
-- **Next action:** Paul types `/approve first-choice-seamless-gutters brand_guide_approved --files "clients/first-choice-seamless-gutters/brand-guide.md"` (or asks for changes first) · model: Haiku chat
+- **Stage 5 of 8 — Build plan and blockers**
+- **What is happening now:** Stage 4 (Audit) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open first-choice-seamless-gutters) and type /next first-choice-seamless-gutters. Next there: /build first-choice-seamless-gutters plan (site plan for every service and location page, in one pass)
+- **Waiting on:** nobody
+- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-24T20:18 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T20:20 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md. Discovery is then signed off automatically and Build starts | 2026-10-24 | /approve first-choice-seamless-gutters brand_guide_approved |
+| — | nothing | | |
 
 ## Waiting on (not blocking)
 
@@ -30,6 +30,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-24: Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant) — approved
 - 2026-10-22: Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly — approved
 - 2026-10-23: Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here) — approved
+- 2026-10-24: Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims) — approved
 - Drive copy pending sync — the local Drive folder ~/Library/CloudStorage/GoogleDrive-paul@coastalmarketingstrategies.com/My Drive/v3. CMS Technical SEO Audit 2026 is not there (Drive for desktop signed out or not syncing?). Files stay in the repo until Drive for desktop syncs; nothing is retyped into the connector.
 - Primary GBP category and category entity: Gutter service (Paul, 2026-10-22).
 - Area entity: Polk County, Florida (Paul, 2026-10-22).

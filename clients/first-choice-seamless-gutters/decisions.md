@@ -11,6 +11,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 | 2026-10-22T19:57 | proof_sheet_approved | approved |
 | 2026-10-23T13:55 | audit_approved | approved |
 | 2026-10-24T20:18 | entity_approved | approved |
+| 2026-10-24T20:20 | brand_guide_approved | approved |
 
 ## Decisions logged during runs
 
@@ -21,6 +22,7 @@ _None yet._
 - 2026-10-22T07:34 — Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)
 - 2026-10-22T08:39 — WordPress connected (/wp-check passed in the last 30 days) — met (system-verified)
 - 2026-10-24T20:02 — The client's facts are in — the returned proof sheet is recorded, or Paul approved the client's direct answers — met (system-verified)
+- 2026-10-24T20:20 — Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — met (system-verified)
 
 ## Runs aborted (Paul's call)
 

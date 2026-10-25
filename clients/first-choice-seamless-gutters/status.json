@@ -57,7 +57,14 @@
       }
     },
     "brand_guide_approved": {
-      "state": "pending"
+      "state": "approved",
+      "by": "Paul",
+      "at": "2026-10-24T20:20:14-05:00",
+      "note": null,
+      "conditions": [],
+      "files": {
+        "clients/first-choice-seamless-gutters/brand-guide.md": "124537f13b25"
+      }
     },
     "release_approved": {
       "state": "pending"
@@ -319,23 +326,26 @@
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
-    "phase": "Reviewing your website",
+    "phase": "Planning your new pages",
     "done": [
       "We confirmed how search engines should understand your business",
       "We prepared a fact sheet for you to confirm",
       "You returned the fact sheet — thank you",
-      "We finished reviewing your website"
+      "We finished reviewing your website",
+      "Your business details are confirmed",
+      "Research is complete and page work has started"
     ],
     "waiting_on_client": [],
-    "next": "We are finishing the review of your website."
+    "next": "We are planning every service and location page."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T20:18:49-05:00",
+  "updated": "2026-10-24T20:20:14-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
     "wordpress_connected": "2026-10-22T08:39:04-05:00",
-    "proof_sheet_returned": "2026-10-24T20:02:15-05:00"
+    "proof_sheet_returned": "2026-10-24T20:02:15-05:00",
+    "discovery_signed_off": "2026-10-24T20:20:14-05:00"
   },
   "specs_pinned": {
     "methodology/specs/README.md": "13bde3165a59",
