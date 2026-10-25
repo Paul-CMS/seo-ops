@@ -511,3 +511,22 @@ Still open:
 - Recorded `status.py pilot-corrections --none` (CM-061 §9 counter).
 - No flags raised. No approval, ship, unlock or abort done.
 
+## /interview · 2026-10-24 · run 20261024-220530-interview-f675
+
+## What happened
+- Evidence gate blocked 9 service pages in batch `services` (CM-041).
+- Generated the facts pack: `clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - services - 2026-10-24 - REVIEW.md` (15 questions, 9 pages).
+- Nothing sent. Paul reviews and sends, or waives per page.
+
+## Problems in the pack (not fixed by hand)
+- Same question wording repeats for every page (duration and price each appear 6 times, quoting the same site text). Flagged as a script bug.
+- Q1/Q3/Q5/Q8/Q10/Q12 quote a phone number and nav text as "what your website says". Paul should trim or reword before sending.
+- Certifications, authorizations and training are researched, not asked (research-services.md).
+- Scope and process questions for copper, commercial and the rest (Q7, Q14, Q15) are the real gaps; the rest are repeats.
+
+## Next
+- Paul: send the pack (or reword), or waive per page with `/approve first-choice-seamless-gutters evidence:<page> --reason "..."`.
+- After answers: `/interview first-choice-seamless-gutters facts-answers services`.
+
+- FLAG 2026-10-24T22:05 · run 20261024-220530-interview-f675 · F-011 · evidence.py questions (facts pack, batch services) repeats the same wording for every page: 'Typical job duration' and 'Price ra…
+

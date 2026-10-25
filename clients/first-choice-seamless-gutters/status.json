@@ -2183,7 +2183,26 @@
         "briefs": null,
         "drafts": null,
         "route": "outline",
-        "files": {}
+        "files": {},
+        "facts_interview": {
+          "file": "clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - services - 2026-10-24 - REVIEW.md",
+          "at": "2026-10-24T22:05:32-05:00",
+          "run": "20261024-220530-interview-f675",
+          "pages": [
+            "svc-seamless-gutter-installation",
+            "svc-gutter-installation",
+            "svc-gutter-repair",
+            "svc-commercial-gutters",
+            "svc-gutter-downspouts",
+            "svc-gutter-guards",
+            "svc-copper-gutters",
+            "svc-galvalume-gutters",
+            "svc-aluminum-gutters"
+          ],
+          "questions": 15,
+          "research": 1,
+          "need_search": 14
+        }
       },
       {
         "id": "locations-west",
@@ -2429,13 +2448,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261024-220333-build-d450",
-    "command": "build",
-    "finished": "2026-10-24T22:04:17-05:00",
-    "result": "Pilot corrections: none (Paul approved pilot drafts as drafted, no review-sheet notes); build/pilot-corrections.md written, status.py pilot-corrections --none recorded.",
+    "run_id": "20261024-220530-interview-f675",
+    "command": "interview",
+    "finished": "2026-10-24T22:05:47-05:00",
+    "result": "Facts pack for blocked services batch written (15 questions, 9 pages); not sent; Paul to review, reword and send or waive",
     "changes": 0,
-    "step": "build:pilot-corrections",
-    "batch": null
+    "step": "interview:facts",
+    "batch": "services"
   },
   "spend": {
     "dataforseo_usd": 0.262668
@@ -2456,7 +2475,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T22:04:17-05:00",
+  "updated": "2026-10-24T22:05:47-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -3174,6 +3193,26 @@
       "by_agent": {
         "build": 0.2102
       }
+    },
+    {
+      "run": "20261024-220530-interview-f675",
+      "step": "interview:facts",
+      "tokens": 294265,
+      "usd": 0.0064,
+      "at": "2026-10-24T22:05:47-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0064,
+          "in": 6,
+          "out": 2466,
+          "cache_read": 279785,
+          "cache_write": 12008
+        }
+      },
+      "by_agent": {
+        "main": 0.0064
+      }
     }
   ],
   "sessions": {
@@ -3224,6 +3263,12 @@
       "step": "interview:facts",
       "first_run": "20261024-204250-interview-bece",
       "at": "2026-10-24T20:43:04-05:00"
+    },
+    "0d92262f-4340-4709-aadd-eed9aac00f99": {
+      "key": "batches:services",
+      "step": "interview:facts",
+      "first_run": "20261024-220530-interview-f675",
+      "at": "2026-10-24T22:05:47-05:00"
     }
   },
   "wordpress": {
