@@ -2,6 +2,15 @@
  "client": "first-choice-seamless-gutters",
  "run": "20261024-202120-build-2ab2",
  "date": "2026-10-24",
+ "revised": {
+  "run": "20261024-203609-build-ddb9",
+  "date": "2026-10-24",
+  "settled": {
+   "plan_unincorporated_pages": "A: keep Highland City, Kathleen, Wahneta and Waverly location pages (no merge)",
+   "plan_lakeland_highlands_page": "B: no Lakeland Highlands page; named in Lakeland's local context only",
+   "the_best_plan_pages": "C: 'The Best' in the H1 on Gutter Cleaning and Gutter Guards only"
+  }
+ },
  "pages": [
   {
    "id": "svc-seamless-gutter-installation",

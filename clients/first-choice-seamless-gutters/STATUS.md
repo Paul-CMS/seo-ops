@@ -2,18 +2,16 @@
 
 - **Stage 5 of 8 — Build plan and blockers**
 - **What is happening now:** waiting for Paul's approval — the site plan is ready for your approval
-- **Waiting on:** Paul — the site plan is ready for your approval; Paul — Site plan choice A: keep the Highland City, Kathleen, Wahneta and Waverly location pages (; Paul — Site plan choice B: Lakeland Highlands (on the GBP list, no page) — no page, named in Lake
+- **Waiting on:** Paul — the site plan is ready for your approval
 - **Next action:** Paul types `/approve first-choice-seamless-gutters site_plan --files "clients/first-choice-seamless-gutters/build/First Choice Seamless Gutters - Site Plan - REVIEW.md"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-24T20:30 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T20:38 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
 | Paul | the site plan is ready for your approval | 2026-10-24 | /approve first-choice-seamless-gutters site_plan |
-| Paul | Site plan choice A: keep the Highland City, Kathleen, Wahneta and Waverly location pages (recommended; approved Decision Map says rebuild) or merge each into the nearest city page with a 301 (client's proof-sheet note). | 2026-10-24 | plan_unincorporated_pages |
-| Paul | Site plan choice B: Lakeland Highlands (on the GBP list, no page) — no page, named in Lakeland's local context (recommended), or a new location page. | 2026-10-24 | plan_lakeland_highlands_page |
 
 ## Waiting on (not blocking)
 
@@ -69,6 +67,9 @@ _Open, but the next action above goes ahead without them._
 - 3. Brand, entity and verified truth (F-004): Leave it live until the returned proof sheet answers; rebuilt pages state it only with the licence number
 - 3. Brand, entity and verified truth (F-005): Leave it live until the client confirms it is still running
 - F-014 Gutter Maintenance: consolidate into the Gutter Repair and Gutter Cleaning pages; no standalone /services/gutter-maintenance/ page. The old URL redirects (never deleted) to the closest of the two (Paul, 2026-10-24)
+- Site plan choice A (Paul): keep the Highland City, Kathleen, Wahneta and Waverly location pages.
+- Site plan choice B (Paul): no Lakeland Highlands page; named in Lakeland's local context.
+- Site plan choice C (Paul): 'The Best' in the H1 on Gutter Cleaning and Gutter Guards only.
 
 ## Open VA items
 
@@ -117,16 +118,16 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 2 · Discovery | 3 | 11,117,410 | $3.80 | $0.00 |
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
-| 5 · Build plan and blockers | 3 | 10,247,951 | $2.59 | $0.00 |
+| 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
 | any stage | 6 | 5,246,914 | $1.43 | $0.00 |
-| **total** | 18 | 48,977,288 | $15.86 | $0.00 |
+| **total** | 19 | 51,579,510 | $16.80 | $0.00 |
 
 ## Spend by step (model)
 
 | Step | Runs | Tokens | Session USD | API USD |
 |---|---|---|---|---|
 | discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
-| build:plan | 1 | 8,630,620 | $2.57 | $0.00 |
+| build:plan | 2 | 11,232,842 | $3.51 | $0.00 |
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
 | discovery:sheet-returned | 1 | 4,068,734 | $1.41 | $0.00 |
@@ -137,6 +138,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 18 | 48,977,288 | $15.85 | $0.00 |
+| **total** | 19 | 51,579,510 | $16.80 | $0.00 |
 
-Last run: /build 2026-10-24T20:30 — Site plan registered: 30 pages (10 service, 19 location, 1 about) in 5 batches with pilot; root-slug URLs with 301s; 2 open choices for Paul; flag F-007 (viability before research)
+Last run: /build 2026-10-24T20:38 — Site plan revised with Paul's choices A-C (keep 4 unincorporated pages, no Lakeland Highlands page, The Best on Cleaning + Guards); counts unchanged at 30 pages / 5 batches; urlcheck pass, wheel 0 errors 0 Asks

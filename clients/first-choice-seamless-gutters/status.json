@@ -130,10 +130,10 @@
     },
     "site_plan": {
       "files": {
-        "clients/first-choice-seamless-gutters/build/First Choice Seamless Gutters - Site Plan - REVIEW.md": "b26e36f1f09d"
+        "clients/first-choice-seamless-gutters/build/First Choice Seamless Gutters - Site Plan - REVIEW.md": "7141f5f6b7aa"
       },
-      "at": "2026-10-24T20:30:05-05:00",
-      "ts": 1792891805.8639412
+      "at": "2026-10-24T20:38:18-05:00",
+      "ts": 1792892298.330932
     }
   },
   "pages": {
@@ -2331,11 +2331,11 @@
     }
   },
   "last_run": {
-    "run_id": "20261024-202120-build-2ab2",
+    "run_id": "20261024-203609-build-ddb9",
     "command": "build",
-    "finished": "2026-10-24T20:30:37-05:00",
-    "result": "Site plan registered: 30 pages (10 service, 19 location, 1 about) in 5 batches with pilot; root-slug URLs with 301s; 2 open choices for Paul; flag F-007 (viability before research)",
-    "changes": 3,
+    "finished": "2026-10-24T20:38:34-05:00",
+    "result": "Site plan revised with Paul's choices A-C (keep 4 unincorporated pages, no Lakeland Highlands page, The Best on Cleaning + Guards); counts unchanged at 30 pages / 5 batches; urlcheck pass, wheel 0 errors 0 Asks",
+    "changes": 1,
     "step": "build:plan",
     "batch": null
   },
@@ -2357,7 +2357,7 @@
     "next": "We are planning every service and location page."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T20:30:37-05:00",
+  "updated": "2026-10-24T20:38:34-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -2775,6 +2775,34 @@
         "main": 0.0042,
         "build": 2.5618
       }
+    },
+    {
+      "run": "20261024-203609-build-ddb9",
+      "step": "build:plan",
+      "tokens": 2602222,
+      "usd": 0.9451,
+      "at": "2026-10-24T20:38:34-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0058,
+          "in": 8,
+          "out": 1896,
+          "cache_read": 418437,
+          "cache_write": 3169
+        },
+        "claude-opus-5-5": {
+          "usd": 0.9393,
+          "in": 48,
+          "out": 529,
+          "cache_read": 2075437,
+          "cache_write": 102698
+        }
+      },
+      "by_agent": {
+        "main": 0.0058,
+        "build": 0.9393
+      }
     }
   ],
   "sessions": {
@@ -2866,8 +2894,8 @@
     "H-2026-10-23-04-other"
   ],
   "review_pause": {
-    "run_id": "20261024-202120-build-2ab2",
+    "run_id": "20261024-203609-build-ddb9",
     "step": "build:plan",
-    "at": "2026-10-24T20:30:37-05:00"
+    "at": "2026-10-24T20:38:34-05:00"
   }
 }

@@ -836,3 +836,40 @@ Spend: 8630620 tokens · $2.57 (measured)
 - CHANGE #188 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | upload | old: previous version archived as First Choice Seamless Gutters - VA Worklist - 2026-10-24.md | new: First Choice Seamless Gutters - VA Worklist.md · sha edee51ec28a2 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #189 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-23 (3).csv | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.csv | new: _Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-23 (3).csv | result: done · renamed and moved, nothing deleted
 - CHANGE #190 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.csv | upload | old: previous version archived as First Choice Seamless Gutters - VA Worklist - 2026-10-23 (3).csv | new: First Choice Seamless Gutters - VA Worklist.csv · sha 3f5ca4199cf4 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261024-203609-build-ddb9 · STARTED · /build · 2026-10-24T20:36:09-05:00
+Step: build:plan · session ef220716-a92e-41ef-a4f9-7514a7b5c6e8
+Gates checked: discovery_signed_off
+- SETTLED plan_unincorporated_pages · 2026-10-24T20:36:12-05:00 · run 20261024-203609-build-ddb9 · by Paul · Site plan choice A (Paul): keep the Highland City, Kathleen, Wahneta and Waverly location pages.
+- CLOSED plan_unincorporated_pages · 2026-10-24T20:36:12-05:00 · run 20261024-203609-build-ddb9 · by plan_unincorporated_pages · answered by 'plan_unincorporated_pages'
+- SETTLED plan_lakeland_highlands_page · 2026-10-24T20:36:12-05:00 · run 20261024-203609-build-ddb9 · by Paul · Site plan choice B (Paul): no Lakeland Highlands page; named in Lakeland's local context.
+- CLOSED plan_lakeland_highlands_page · 2026-10-24T20:36:12-05:00 · run 20261024-203609-build-ddb9 · by plan_lakeland_highlands_page · answered by 'plan_lakeland_highlands_page'
+- SETTLED the_best_plan_pages · 2026-10-24T20:36:12-05:00 · run 20261024-203609-build-ddb9 · by Paul · Site plan choice C (Paul): 'The Best' in the H1 on Gutter Cleaning and Gutter Guards only.
+- CHANGE #191 [site_plan_revision] clients/first-choice-seamless-gutters/build/site-plan.json | site plan + review sheet | old:  | new: Choices A-C applied: keep 4 unincorporated pages; no Lakeland Highlands page; The Best on Cleaning + Guards only; open choices closed | result: ok
+### HANDOFF · /build · 2026-10-24 · run 20261024-203609-build-ddb9
+- Applied Paul's three settled site-plan choices; nothing else changed.
+  - A (plan_unincorporated_pages): Highland City, Kathleen, Wahneta, Waverly location pages kept; no merge, no 301s.
+  - B (plan_lakeland_highlands_page): no Lakeland Highlands page; named in Lakeland's local context only.
+  - C (the_best_plan_pages): "The Best" in the H1 on Gutter Cleaning and Gutter Guards only.
+- All three matched the first plan's recommendations, so page rows were already correct: counts unchanged.
+  - 30 pages: 10 service, 19 location, 1 About. Batches: pilot 2, services 9, locations-west 9, locations-east 9, about 1.
+- `build/site-plan.json`: added a `revised` block recording the run and the three settled keys. No page row changed.
+- Review sheet: section 1 is now "Choices settled by Paul (closed)" with A, B, C closed; section 4 notes A and B;
+  section 6 caveat now records Paul's confirmation; section 9 says the four unincorporated pages are not re-raised.
+- Plan re-registered (`status.py plan`); change #191 logged.
+- Checks re-run: urlcheck passes; wheel plan 722 rows on 29 pages; wheel check 0 errors; wheel asks 0 kind-1 Asks.
+- Still open (unchanged by this run): viability re-check after `/build facts`; Jonie SEOPress handoff (4 items);
+  Gwen manual lookup handoff (8 items); flag F-007 (viability ordering).
+- Nothing approved. Next: Paul reviews and approves the site plan (`/approve first-choice-seamless-gutters site_plan`), then `/build facts`.
+
+**Changes (script):** 1 — site_plan_revision ×1
+### END HANDOFF
+## RUN 20261024-203609-build-ddb9 · FINISHED · 2026-10-24T20:38:34-05:00
+Changes: 1 · Summary: Site plan revised with Paul's choices A-C (keep 4 unincorporated pages, no Lakeland Highlands page, The Best on Cleaning + Guards); counts unchanged at 30 pages / 5 batches; urlcheck pass, wheel 0 errors 0 Asks
+Spend: 2602222 tokens · $0.95 (measured)
+- CHANGE #192 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (3).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #193 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-24 (3).md | new: First Choice Seamless Gutters - Handoff Log.md · sha ba18b4880cd7 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #194 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (5).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #195 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (5).md | new: First Choice Seamless Gutters - Document Checklist.md · sha ccf3fd4b6b05 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #196 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (5).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #197 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (5).md | new: First Choice Seamless Gutters - Status.md · sha b567730b9fde | result: done · copied (Drive for desktop syncs it)

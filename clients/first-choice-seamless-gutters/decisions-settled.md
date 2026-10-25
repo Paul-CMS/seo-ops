@@ -47,10 +47,8 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **audit_licence_claim** (2026-10-23, Paul (default accepted)): 3. Brand, entity and verified truth (F-004): Leave it live until the returned proof sheet answers; rebuilt pages state it only with the licence number
 - **audit_military_offer** (2026-10-23, Paul (default accepted)): 3. Brand, entity and verified truth (F-005): Leave it live until the client confirms it is still running
 - **audit_gutter_maintenance** (2026-10-24, Paul): F-014 Gutter Maintenance: consolidate into the Gutter Repair and Gutter Cleaning pages; no standalone /services/gutter-maintenance/ page. The old URL redirects (never deleted) to the closest of the two (Paul, 2026-10-24)
-
-## Open questions — asked once, waiting for an answer
-
-- **plan_unincorporated_pages** (asked 2026-10-24, waiting on Paul): Site plan choice A: keep the Highland City, Kathleen, Wahneta and Waverly location pages (recommended; approved Decision Map says rebuild) or merge each into the nearest city page with a 301 (client's proof-sheet note).
-- **plan_lakeland_highlands_page** (asked 2026-10-24, waiting on Paul): Site plan choice B: Lakeland Highlands (on the GBP list, no page) — no page, named in Lakeland's local context (recommended), or a new location page.
+- **plan_unincorporated_pages** (2026-10-24, Paul): Site plan choice A (Paul): keep the Highland City, Kathleen, Wahneta and Waverly location pages.
+- **plan_lakeland_highlands_page** (2026-10-24, Paul): Site plan choice B (Paul): no Lakeland Highlands page; named in Lakeland's local context.
+- **the_best_plan_pages** (2026-10-24, Paul): Site plan choice C (Paul): 'The Best' in the H1 on Gutter Cleaning and Gutter Guards only.
 
 Process defects (reopenings): **1** — a decision asked before the information that shapes it existed; fix the order, not the decision.

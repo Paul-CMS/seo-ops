@@ -1,6 +1,7 @@
 # First Choice Seamless Gutters - Site Plan - REVIEW
 
 Run 20261024-202120-build-2ab2 · 2026-10-24 · Build, step `plan` · data file: `build/site-plan.json`
+Revised in run 20261024-203609-build-ddb9 · 2026-10-24: Paul's answers to choices A, B and C applied (section 1). Page and batch counts are unchanged.
 
 **30 pages, written in 5 batches:** 10 service pages, 19 location pages, 1 About page. No county hub (F-016).
 The homepage is not in the plan: it keeps its light-fix route and its H1 lock (F-017, F-020, F-033).
@@ -15,14 +16,17 @@ The homepage is not in the plan: it keeps its light-fix route and its H1 lock (F
 
 There are 18 location pages after the pilot. That is more than the 15-page cap, so they are split into two batches by area (P10).
 
-## 1. Open choices for Paul
+## 1. Choices settled by Paul (closed)
 
-| # | Choice | Options | Recommended |
-|---|---|---|---|
-| A | **Unincorporated places.** Highland City, Kathleen, Wahneta and Waverly are not incorporated towns. The client's note on the proof sheet suggests listing them under areas served instead of giving each its own page (Brand Guide Section E). | **a)** Keep all four pages. The approved URL Decision Map says to rebuild them, and Highland City already ranks #16 for "gutters highland". **b)** Merge each one into the nearest planned city page, with a 301: Highland City and Kathleen → Lakeland, Wahneta → Winter Haven, Waverly → Lake Wales. | **a)**, unless the viability check below shows a page cannot be sourced |
-| B | **Lakeland Highlands.** It is on the GBP location list but has no page today. | **a)** No page. It is named in Lakeland's local context and on the service-area index. **b)** A new location page. | **a)** |
+No choice is open on this plan.
 
-The viability check results are in section 9. Any location that check proposes to merge appears there as a kind-1 Ask.
+| # | Choice | Paul's answer | Settled key | Status |
+|---|---|---|---|---|
+| A | **Unincorporated places** (Highland City, Kathleen, Wahneta, Waverly) | Keep all four location pages. No merge into nearby city pages, no 301s. | plan_unincorporated_pages | Closed |
+| B | **Lakeland Highlands** (on the GBP list, no page today) | No page. It is named in Lakeland's local context only. | plan_lakeland_highlands_page | Closed |
+| C | **"The Best" in H1s** (CM-020, section 6) | "The Best" in the H1 on Gutter Cleaning and Gutter Guards only. | the_best_plan_pages | Closed |
+
+The viability check results are in section 9. Choice A settles the four unincorporated pages as kept.
 
 ## 2. URL changes (P7, CM-058). Every rebuilt page moves to one root slug
 
@@ -72,6 +76,8 @@ Commercial is written as a service; the site describes the business as residenti
 - H1 format: `[Category variant] in [City]`, with no state. It alternates between "Rain Gutters" and "Seamless Gutters", so H1 and title never share a term (COM-11).
 - Lakeland uses "Rain Gutters" because the locked homepage H1 already reads "Seamless Gutters in Lakeland, FL…".
 - Keyword: `gutters <city> fl`. This follows the ranked queries "gutters lakeland" (390), "gutters winter haven" (50), "gutters davenport" (30), "gutters highland" (30) and "gutters hamilton" (30).
+- Lakeland Highlands has no page (choice B). The Lakeland page names it in its local context.
+- Highland City, Kathleen, Wahneta and Waverly keep their own pages (choice A).
 - No location is a GBP landing page: the GBP is a service-area business and its website field is the homepage. So no page gets LocalBusiness schema and no page shows an address.
 
 | City | URL | Batch | Keyword | H1 |
@@ -129,7 +135,7 @@ fail on them. The format is settled, so this is a note, not a question.
 | All 19 locations | No volume for "best … <city> fl" | "best gutter installation lakeland fl": 0 of 8 use "best"; Winter Haven: 1 of 9 | No |
 
 Caveat: the "near me" SERPs for cleaning and guards came back with mostly out-of-area results (Jacksonville, SC). They are
-national listicle pages, which is why so many titles use "best". Paul may override to No.
+national listicle pages, which is why so many titles use "best". Paul confirmed both Yes decisions (choice C, settled the_best_plan_pages).
 
 ## 7. FAQ plan
 
@@ -194,10 +200,12 @@ Every place is missing the same items: named place entities, the Serving facts, 
 and the researcher looks them up in the facts round.
 
 location-faq.md §8 only allows a merge when the public facts are logged `not_found` at the minimum, so a merge would be premature. The check is
-re-run after the facts round. Any place still below the bar then comes back to Paul as a kind-1 Ask (merge, with a 301). This is flagged as an ordering
-issue: the check ran before the research it depends on.
+re-run after the facts round. Any place still below the bar then comes back to Paul as a kind-1 Ask (merge, with a 301), only if its public facts
+are logged `not_found`. Highland City, Kathleen, Wahneta and Waverly are kept by choice A, so being unincorporated is not raised again. This is flagged
+as an ordering issue: the check ran before the research it depends on.
 
 Evidence gate (for information, not a decision): 29 pages are blocked and About is a warn. This is expected before the facts round. The gaps
 are Section D [NEED]s and place facts. The `/build facts` step clears the public facts and sends Paul one question set.
 
 **Link wheel:** `wheel.py plan` wrote 722 rows across 29 pages. `wheel.py check` found 0 errors. `wheel.py asks` produced 0 kind-1 Asks.
+Re-run in run 20261024-203609-build-ddb9 after choices A–C: `urlcheck.py` passes; `wheel.py plan` 722 rows on 29 pages; `wheel.py check` 0 errors; `wheel.py asks` 0 kind-1 Asks.

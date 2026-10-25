@@ -346,3 +346,22 @@ Still open:
 **Changes (script):** 3 — site_plan ×2, paa_routing ×1
 - FLAG 2026-10-24T20:30 · run 20261024-202120-build-2ab2 · F-007 · Viability check (evidence_pack.py viability) runs in build:plan before the facts round's research, with no place store (methodology/…
 
+## /build · 2026-10-24 · run 20261024-203609-build-ddb9
+
+- Applied Paul's three settled site-plan choices; nothing else changed.
+  - A (plan_unincorporated_pages): Highland City, Kathleen, Wahneta, Waverly location pages kept; no merge, no 301s.
+  - B (plan_lakeland_highlands_page): no Lakeland Highlands page; named in Lakeland's local context only.
+  - C (the_best_plan_pages): "The Best" in the H1 on Gutter Cleaning and Gutter Guards only.
+- All three matched the first plan's recommendations, so page rows were already correct: counts unchanged.
+  - 30 pages: 10 service, 19 location, 1 About. Batches: pilot 2, services 9, locations-west 9, locations-east 9, about 1.
+- `build/site-plan.json`: added a `revised` block recording the run and the three settled keys. No page row changed.
+- Review sheet: section 1 is now "Choices settled by Paul (closed)" with A, B, C closed; section 4 notes A and B;
+  section 6 caveat now records Paul's confirmation; section 9 says the four unincorporated pages are not re-raised.
+- Plan re-registered (`status.py plan`); change #191 logged.
+- Checks re-run: urlcheck passes; wheel plan 722 rows on 29 pages; wheel check 0 errors; wheel asks 0 kind-1 Asks.
+- Still open (unchanged by this run): viability re-check after `/build facts`; Jonie SEOPress handoff (4 items);
+  Gwen manual lookup handoff (8 items); flag F-007 (viability ordering).
+- Nothing approved. Next: Paul reviews and approves the site plan (`/approve first-choice-seamless-gutters site_plan`), then `/build facts`.
+
+**Changes (script):** 1 — site_plan_revision ×1
+
