@@ -541,3 +541,22 @@ Still open:
 ## Next
 - Owner must give real timeframe and pricing, or Paul waives per page.
 
+## /build · 2026-10-24 · run 20261024-221856-build-c8ed
+
+- Route A, section `services` on the outline route. Evidence gate re-run: 7 pages BLOCK carried by Paul's valid waivers (grid sha unchanged; `status.py require evidence:<page>` met for all 9), commercial and copper WARN.
+- `outline.py build` wrote 9 outlines (build/services/outlines/). FAQ picks fixed by the approved plan; `outline.py faq` not run (no API key route).
+- `reviews.py meaning`: no API key. Researcher check skipped — service review topics cannot be marked checked (flag F-012); writers used them as attributed examples only.
+- 9 fresh `build` page agents, one per page, all returned; every draft recorded with `status.py page-stage … --stage draft`.
+- Drafts: build/services/drafts/<page>.md · results: build/services/results/<page>-draft.md (each lists Chosen values and Evidence gaps).
+- Open [NEED] gaps are mostly service_process / service_scope (client facts, waived); no timeframe or price invented; no "licensed", no founding year.
+- Review: one checker pass (fresh build agent) → build/services/drafts-findings.json (60 rows: 5 Fix, 55 Fix and list, 0 Ask).
+- `review.py sheet` → build/services/drafts-review.csv / .md (0 questions, 55 decided, 5 fixed silently); copied to Drive 02 - Build.
+- `status.py batch services --state drafts_written --review-sheet …` done.
+- Flag F-013: plan-fixed H1s on 5 service pages use the "Lakeland–Winter Haven" area variant (city names in an H tag vs SVC-07/SVC-12); kept the approved plan.
+- Not done (stops here for Paul): `review.py apply` (defaults not yet applied to the drafts), re-record, Brand Guide write-back, approval. No ship.
+- Next: Paul answers the sheet with `/build first-choice-seamless-gutters review services drafts "accept all"` (or "accept all except N…"); that run applies, records, writes back, then prints the approval line.
+
+**Changes (script):** 2 — drive_file ×2
+- FLAG 2026-10-24T22:20 · run 20261024-221856-build-c8ed · F-012 · evidence_pack.review_topics gives 'service: <name>' topics an empty key list, so a researcher's reviews.py checked can never move th…
+- FLAG 2026-10-24T22:37 · run 20261024-221856-build-c8ed · F-013 · Approved site plan fixes service-page H1 area variant 'Lakeland–Winter Haven' (B2 pool) on 5 service pages; it contains city names, …
+

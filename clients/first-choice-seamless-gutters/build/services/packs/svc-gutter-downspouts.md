@@ -1,6 +1,6 @@
 # Evidence pack — Gutter Downspouts (service)
 
-Section **services** · https://www.firstchoiceseamlessgutters.net/gutter-downspouts/ · built 2026-10-24T22:13 by evidence_pack.py (CM-061).
+Section **services** · https://www.firstchoiceseamlessgutters.net/gutter-downspouts/ · built 2026-10-24T22:19 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 

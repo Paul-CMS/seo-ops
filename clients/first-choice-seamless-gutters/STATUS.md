@@ -1,16 +1,17 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
-- **What is happening now:** ready to start: section services in one run: an outline per page by script from the approved plan and the spec (no brief), one draft per page (each from its own fresh sub-agent, CM-043), then the one draft review sheet
-- **Waiting on:** Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7
-- **Next action:** `/build first-choice-seamless-gutters write services` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), brief-writer (sonnet)) · model: Haiku chat
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — build:write finished (run 20261024-221856-build-c8ed) and that stage is in review mode — l; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
+- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-24T22:18 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T22:38 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
+| Paul | build:write finished (run 20261024-221856-build-c8ed) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build first-choice-seamless-gutters review services drafts (apply the services drafts review — nothing to ask; 55 decided for you) | 2026-10-24 | /next first-choice-seamless-gutters |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-seamless-gutter-installation:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-seamless-gutter-installation:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-installation:timeframe |
@@ -132,6 +133,8 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-009** (open, not yet reviewed) 2026-10-24 · build:write: evidence_pack.py review_topics gives 'service: <name>' topics no facts.json R key, so a service review topic can never be checked by meaning and stays 'unchecked'; for svc-gutter-cleaning most of its 9 matches are installation clean-up, not the gutter-cleaning service. Also staff_names() took 'Inc' (from 'Inc.' in company names) as a staff member. — workaround: Researcher recorded staff:Inc count 0; the service topic stays at the keyword-match tier (attributed example only) and the writer is told not to treat it as reviewers praising gutter cleaning.
 - **F-010** (open, not yet reviewed) 2026-10-24 · build:write: Spec LOC-02 (location SEO title 'Brand - GB Category - City, Full State Name') conflicts with Paul's settled title_format.location ('Category Variant in City, ST - Brand'); also the GB category is the homepage's reserved variant (CM-024). And P11 allows no placeholder form for the spec's city-level map embed. — workaround: Pilot uses the settled title format; the map embed is a [NEED: …] open item for ship; both listed on the pilot draft review sheet.
 - **F-011** (open, not yet reviewed) 2026-10-24 · interview:facts: evidence.py questions (facts pack, batch services) repeats the same wording for every page: 'Typical job duration' and 'Price range' each appear 6 times quoting the same site text, and the first one quotes the phone number and nav text. Duplicate-by-wording should be collapsed in the pack, keeping one settle key per fact. — workaround: Pack left as generated; Paul told to review before sending and may waive instead of sending.
+- **F-012** (open, not yet reviewed) 2026-10-24 · build:write: evidence_pack.review_topics gives 'service: <name>' topics an empty key list, so a researcher's reviews.py checked can never move them from 'keyword match only' to known (4 service topics with 3+ reviewers in the services packs: Gutter Installation 32, Gutter Downspouts 4, Gutter Guards 4, Seamless Gutter Installation 3). reviews.py meaning has no API key and falls back to the researcher. — workaround: Writers use those topics only at the pack's stated tier (attributed customer example, no company claim); no researcher check run this time since it cannot change the packs.
+- **F-013** (open, not yet reviewed) 2026-10-24 · build:write: Approved site plan fixes service-page H1 area variant 'Lakeland–Winter Haven' (B2 pool) on 5 service pages; it contains city names, which spec service.md SVC-07/SVC-12 forbid in H tags. The B2 pool itself offers this variant. — workaround: Kept the approved plan H1s (never overrule the plan in a client session); noted in the review findings for Paul.
 
 ## Spend so far
 
@@ -149,16 +152,16 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 13 | 23,283,973 | $5.46 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 14 | 50,820,535 | $20.19 | $0.00 |
 | any stage | 7 | 5,927,813 | $1.64 | $0.00 |
-| **total** | 33 | 75,544,382 | $22.47 | $0.00 |
+| **total** | 34 | 103,080,944 | $37.20 | $0.00 |
 
 ## Spend by step (model)
 
 | Step | Runs | Tokens | Session USD | API USD |
 |---|---|---|---|---|
+| build:write | 2 | 39,230,166 | $18.88 | $0.00 |
 | discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
-| build:write | 1 | 11,693,604 | $4.14 | $0.00 |
 | build:plan | 2 | 11,232,842 | $3.51 | $0.00 |
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
@@ -175,6 +178,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 33 | 75,544,382 | $22.47 | $0.00 |
+| **total** | 34 | 103,080,944 | $37.20 | $0.00 |
 
-Last run: /interview 2026-10-24T22:14 — Paul confirmed 3 site claims (commercial/copper scope, copper process); settled; gate re-run: commercial and copper WARN, 7 services still BLOCK
+Last run: /build 2026-10-24T22:38 — Services write run: 9 drafts, one review sheet (0 Ask, 55 decided, 5 fixed); waits on Paul's review answer

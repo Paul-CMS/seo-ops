@@ -1405,3 +1405,58 @@ Grid: clients/first-choice-seamless-gutters/build/evidence/svc-aluminum-gutters.
 Reason: Owner keeps site timeframe and pricing wording as written; revisit later (see later-rewrites.md)
 - CHANGE #326 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (30).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (30).md | result: done · renamed and moved, nothing deleted
 - CHANGE #327 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (30).md | new: First Choice Seamless Gutters - Status.md · sha 390769904637 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261024-221856-build-c8ed · STARTED · /build · 2026-10-24T22:18:56-05:00
+Step: build:write · batch services · session 0d92262f-4340-4709-aadd-eed9aac00f99
+Gates checked: discovery_signed_off, batch:services:briefs_ready, page_specs_approved
+- EVIDENCE 2026-10-24T22:19 · run 20261024-221856-build-c8ed · svc-seamless-gutter-installation: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T22:19 · run 20261024-221856-build-c8ed · svc-gutter-installation: BLOCK (known 7, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-24T22:19 · run 20261024-221856-build-c8ed · svc-gutter-repair: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T22:19 · run 20261024-221856-build-c8ed · svc-commercial-gutters: WARN (known 8, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T22:19 · run 20261024-221856-build-c8ed · svc-gutter-downspouts: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T22:19 · run 20261024-221856-build-c8ed · svc-gutter-guards: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T22:19 · run 20261024-221856-build-c8ed · svc-copper-gutters: WARN (known 9, unknown 1, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T22:19 · run 20261024-221856-build-c8ed · svc-galvalume-gutters: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T22:19 · run 20261024-221856-build-c8ed · svc-aluminum-gutters: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- OUTLINES 2026-10-24T22:19 · run 20261024-221856-build-c8ed · section services · 9 page(s) by outline.py (no brief, Rewrite 4)
+- FLAG 2026-10-24T22:20 · run 20261024-221856-build-c8ed · F-012 · evidence_pack.review_topics gives 'service: <name>' topics an empty key list, so a researcher's reviews.py checked can never move them from 'keyword match only' to known (4 service topics with 3+ reviewers in the services packs: Gutter Installation 32, Gutter Downspouts 4, Gutter Guards 4, Seamless Gutter Installation 3). reviews.py meaning has no API key and falls back to the researcher. · workaround: Writers use those topics only at the pack's stated tier (attributed customer example, no company claim); no researcher check run this time since it cannot change the packs.
+- DRAFT 2026-10-24T22:27 · run 20261024-221856-build-c8ed · svc-seamless-gutter-installation · clients/first-choice-seamless-gutters/build/services/drafts/svc-seamless-gutter-installation.md · agent aa384b9aa2c44ea8c
+- DRAFT 2026-10-24T22:27 · run 20261024-221856-build-c8ed · svc-gutter-installation · clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-installation.md · agent a634207b2227b6c5b
+- DRAFT 2026-10-24T22:27 · run 20261024-221856-build-c8ed · svc-gutter-repair · clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-repair.md · agent a13b8bede78c957d5
+- DRAFT 2026-10-24T22:27 · run 20261024-221856-build-c8ed · svc-commercial-gutters · clients/first-choice-seamless-gutters/build/services/drafts/svc-commercial-gutters.md · agent a8791df177657f827
+- DRAFT 2026-10-24T22:27 · run 20261024-221856-build-c8ed · svc-gutter-downspouts · clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-downspouts.md · agent a0def2110da4e15de
+- DRAFT 2026-10-24T22:27 · run 20261024-221856-build-c8ed · svc-gutter-guards · clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-guards.md · agent ad861fca2bd6cc559
+- DRAFT 2026-10-24T22:27 · run 20261024-221856-build-c8ed · svc-copper-gutters · clients/first-choice-seamless-gutters/build/services/drafts/svc-copper-gutters.md · agent a3e8cbdbe24e9a73e
+- DRAFT 2026-10-24T22:27 · run 20261024-221856-build-c8ed · svc-galvalume-gutters · clients/first-choice-seamless-gutters/build/services/drafts/svc-galvalume-gutters.md · agent a213093ee82e45f28
+- DRAFT 2026-10-24T22:27 · run 20261024-221856-build-c8ed · svc-aluminum-gutters · clients/first-choice-seamless-gutters/build/services/drafts/svc-aluminum-gutters.md · agent ac1b69f5a14f495c4
+- FLAG 2026-10-24T22:37 · run 20261024-221856-build-c8ed · F-013 · Approved site plan fixes service-page H1 area variant 'Lakeland–Winter Haven' (B2 pool) on 5 service pages; it contains city names, which spec service.md SVC-07/SVC-12 forbid in H tags. The B2 pool itself offers this variant. · workaround: Kept the approved plan H1s (never overrule the plan in a client session); noted in the review findings for Paul.
+- REVIEW SHEET 2026-10-24T22:37 · run 20261024-221856-build-c8ed · services drafts: 0 Ask, 55 decided for you, 5 fixed silently, 0 not raised (duplicate, decided or answered) · clients/first-choice-seamless-gutters/build/services/drafts-review.csv
+- CHANGE #328 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/drafts-review - 2026-10-24.md | archive | old: drive:First Choice Seamless Gutters - TMS/02 - Build/drafts-review.md | new: _Archive/drafts-review - 2026-10-24.md | result: done · renamed and moved, nothing deleted
+- CHANGE #329 [drive_file] drive:First Choice Seamless Gutters - TMS/02 - Build/drafts-review.md | upload | old: previous version archived as drafts-review - 2026-10-24.md | new: drafts-review.md · sha d9f40c916fde | result: done · copied (Drive for desktop syncs it)
+### HANDOFF · /build · 2026-10-24 · run 20261024-221856-build-c8ed
+- Route A, section `services` on the outline route. Evidence gate re-run: 7 pages BLOCK carried by Paul's valid waivers (grid sha unchanged; `status.py require evidence:<page>` met for all 9), commercial and copper WARN.
+- `outline.py build` wrote 9 outlines (build/services/outlines/). FAQ picks fixed by the approved plan; `outline.py faq` not run (no API key route).
+- `reviews.py meaning`: no API key. Researcher check skipped — service review topics cannot be marked checked (flag F-012); writers used them as attributed examples only.
+- 9 fresh `build` page agents, one per page, all returned; every draft recorded with `status.py page-stage … --stage draft`.
+- Drafts: build/services/drafts/<page>.md · results: build/services/results/<page>-draft.md (each lists Chosen values and Evidence gaps).
+- Open [NEED] gaps are mostly service_process / service_scope (client facts, waived); no timeframe or price invented; no "licensed", no founding year.
+- Review: one checker pass (fresh build agent) → build/services/drafts-findings.json (60 rows: 5 Fix, 55 Fix and list, 0 Ask).
+- `review.py sheet` → build/services/drafts-review.csv / .md (0 questions, 55 decided, 5 fixed silently); copied to Drive 02 - Build.
+- `status.py batch services --state drafts_written --review-sheet …` done.
+- Flag F-013: plan-fixed H1s on 5 service pages use the "Lakeland–Winter Haven" area variant (city names in an H tag vs SVC-07/SVC-12); kept the approved plan.
+- Not done (stops here for Paul): `review.py apply` (defaults not yet applied to the drafts), re-record, Brand Guide write-back, approval. No ship.
+- Next: Paul answers the sheet with `/build first-choice-seamless-gutters review services drafts "accept all"` (or "accept all except N…"); that run applies, records, writes back, then prints the approval line.
+
+**Changes (script):** 2 — drive_file ×2
+- FLAG 2026-10-24T22:20 · run 20261024-221856-build-c8ed · F-012 · evidence_pack.review_topics gives 'service: <name>' topics an empty key list, so a researcher's reviews.py checked can never move th…
+- FLAG 2026-10-24T22:37 · run 20261024-221856-build-c8ed · F-013 · Approved site plan fixes service-page H1 area variant 'Lakeland–Winter Haven' (B2 pool) on 5 service pages; it contains city names, …
+### END HANDOFF
+## RUN 20261024-221856-build-c8ed · FINISHED · 2026-10-24T22:38:35-05:00
+Changes: 2 · Summary: Services write run: 9 drafts, one review sheet (0 Ask, 55 decided, 5 fixed); waits on Paul's review answer
+Spend: 27536562 tokens · $14.74 (measured)
+- CHANGE #330 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (18).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (18).md | result: done · renamed and moved, nothing deleted
+- CHANGE #331 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-24 (18).md | new: First Choice Seamless Gutters - Handoff Log.md · sha 1198b985a173 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #332 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (26).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (26).md | result: done · renamed and moved, nothing deleted
+- CHANGE #333 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (26).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 76ca294dae8f | result: done · copied (Drive for desktop syncs it)
+- CHANGE #334 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (31).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (31).md | result: done · renamed and moved, nothing deleted
+- CHANGE #335 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (31).md | new: First Choice Seamless Gutters - Status.md · sha 657c37f98c19 | result: done · copied (Drive for desktop syncs it)

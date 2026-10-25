@@ -1,0 +1,51 @@
+{
+  "made": "2026-10-24T22:37:39-05:00",
+  "run": "20261024-221856-build-c8ed",
+  "fixes": [
+    {
+      "page": "svc-seamless-gutter-installation",
+      "rule": "wording",
+      "item": "galvalume-capital",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "'galvalume' → 'Galvalume' in the meta description and the materials H3 (trade name; every sibling capitalises it).",
+      "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/"
+    },
+    {
+      "page": "svc-gutter-repair",
+      "rule": "BB-316",
+      "item": "faq-first-sentence-length",
+      "severity": "fix",
+      "category": "length",
+      "finding": "All five FAQ first sentences run 17–27 words against the spec's 40–60 (more than 25% short). Lengthen each first sentence to about 35–45 words by carrying the answer's next point into it, keeping the page grade ≤ 8.9.",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-repair/"
+    },
+    {
+      "page": "svc-gutter-downspouts",
+      "rule": "BB-316",
+      "item": "faq-first-sentence-length",
+      "severity": "fix",
+      "category": "length",
+      "finding": "All five FAQ first sentences run 16–24 words against the spec's 40–60. Lengthen each first sentence to about 35–45 words by carrying the answer's next point into it, keeping the page grade ≤ 8.9.",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/"
+    },
+    {
+      "page": "svc-galvalume-gutters",
+      "rule": "wording",
+      "item": "opening-logic",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Opening: 'Galvalume is steel with a coating that fights rust, so it is stiffer than aluminum' makes the coating the reason for stiffness → 'Galvalume is steel with a coating that fights rust. Because it is steel, it is stiffer than aluminum.'",
+      "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/"
+    },
+    {
+      "page": "svc-aluminum-gutters",
+      "rule": "BB-316",
+      "item": "faq-first-sentence-length",
+      "severity": "fix",
+      "category": "length",
+      "finding": "FAQ first sentences 'Are aluminum gutters good?' (29 words) and 'Do aluminum gutters rust?' (19 words) are more than 25% under the spec's 40–60. Lengthen each to about 35–45 words, keeping the page grade ≤ 8.9.",
+      "url": "https://www.firstchoiceseamlessgutters.net/aluminum-gutters/"
+    }
+  ]
+}
