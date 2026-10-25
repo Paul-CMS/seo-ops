@@ -1006,3 +1006,37 @@ Spend: 428337 tokens · $0.01 (measured)
 - CHANGE #232 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (11).md | new: First Choice Seamless Gutters - Document Checklist.md · sha ad8f24712e50 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #233 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (11).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (11).md | result: done · renamed and moved, nothing deleted
 - CHANGE #234 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (11).md | new: First Choice Seamless Gutters - Status.md · sha 40b3154e80db | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261024-210035-interview-d9f2 · STARTED · /interview · 2026-10-24T21:00:35-05:00
+Step: interview:facts · batch pilot · session a06784a5-10d9-4b97-a5ce-6d937ae6d307
+Gates checked: discovery_signed_off
+- RESEARCH 2026-10-24T21:01 · run 20261024-210035-interview-d9f2 · RL-Serving-1 · fact:loc-lakeland:permit_office (public): found
+- RESEARCH 2026-10-24T21:01 · run 20261024-210035-interview-d9f2 · RL-Local context-1 · fact:loc-lakeland:place_entities (public): found
+- RESEARCH 2026-10-24T21:01 · run 20261024-210035-interview-d9f2 · RL-Local conditions-1 · fact:loc-lakeland:city_conditions (public): partial
+- RESEARCH 2026-10-24T21:01 · run 20261024-210035-interview-d9f2 · RL-Neighborhoods-1 · fact:loc-lakeland:neighborhoods (public): partial
+- RESEARCH 2026-10-24T21:01 · run 20261024-210035-interview-d9f2 · RL-Credentials-1 · fact:d:certifications (public): partial
+- EVIDENCE 2026-10-24T21:02 · run 20261024-210035-interview-d9f2 · svc-gutter-cleaning: PASS (known 11, unknown 1, unverified 0, conflict 0)
+- EVIDENCE 2026-10-24T21:02 · run 20261024-210035-interview-d9f2 · loc-lakeland: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- FACTS INTERVIEW 2026-10-24T21:02 · run 20261024-210035-interview-d9f2 · batch pilot · 0 question(s) for loc-lakeland · clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md
+### HANDOFF · /interview · 2026-10-24 · run 20261024-210035-interview-d9f2
+- Researcher logged all five public gaps (summary: clients/first-choice-seamless-gutters/build/evidence/research-pilot.md):
+  - Permit office for Lakeland: FOUND. City of Lakeland Building Inspection (inside city limits). https://www.lakelandgov.net/departments/community-economic-development/building-inspection/faqs/
+  - Named places: FOUND. Lake Mirror Park, Dixieland Historic District, Florida Southern College, Lake Morton. https://en.wikipedia.org/wiki/Lakeland,_Florida
+  - City-specific conditions: PARTIAL. NWS rainy season (May 25 to Oct 10) and hurricane season (Jun 1 to Nov 30). No source found for tree debris or housing age. https://www.weather.gov/tbw/RainySeason
+  - Neighborhoods: PARTIAL. Nine named districts from Wikipedia (Beacon Hill-Alta Vista, Biltmore-Cumberland, Dixieland, East Lake Morton, Lake Hunter Terrace, Munn Park, South Lake Morton, Moorehead, Orangewood). City list pages returned 404.
+  - Certifications (svc-gutter-cleaning): PARTIAL. BBB Accredited A+ since 8/12/2025. No DBPR licence number or manufacturer certification found. DBPR lookup is interactive and was not queried.
+- Research log accepted all five entries. The places store (methodology/places/) is not in this worktree, so places were not checked against it.
+- Evidence gate re-run: loc-lakeland still BLOCK (city served, city-specific conditions, neighborhoods unverified). svc-gutter-cleaning still PASS.
+- The research findings did not move the gate. The gate reads the page evidence pack, which needs the place and public rows rebuilt by the build step before the gate sees them. Not hand-edited.
+- Waive option if Paul chooses: /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "..."
+- Open: broken-link blocker handoffs with the VA (H-2026-10-23-03-broken_link-01 to -05, +6 more).
+### END HANDOFF
+## RUN 20261024-210035-interview-d9f2 · FINISHED · 2026-10-24T21:02:36-05:00
+Changes: 0 · Summary: Public research logged for Lakeland (permit office, places, neighborhoods found; conditions and certification partial). loc-lakeland still blocked: gate reads the pack, not yet rebuilt.
+Spend: 2057912 tokens · $0.12 (measured)
+- CHANGE #235 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (8).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (8).md | result: done · renamed and moved, nothing deleted
+- CHANGE #236 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-24 (8).md | new: First Choice Seamless Gutters - Handoff Log.md · sha 5e029cdbed48 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #237 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (12).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (12).md | result: done · renamed and moved, nothing deleted
+- CHANGE #238 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (12).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 1cc1cf4a3a06 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #239 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (12).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (12).md | result: done · renamed and moved, nothing deleted
+- CHANGE #240 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (12).md | new: First Choice Seamless Gutters - Status.md · sha 7b2a649f55b7 | result: done · copied (Drive for desktop syncs it)

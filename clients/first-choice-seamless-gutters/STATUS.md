@@ -1,17 +1,21 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** ready to start: the evidence gate blocked loc-lakeland — targeted questions for the owner (you send them). Or waive instead: /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "<why you waive it>"
-- **Waiting on:** nobody
-- **Next action:** `/interview first-choice-seamless-gutters facts pilot` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), brief-writer (sonnet)) · model: Haiku chat
+- **What is happening now:** waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "<why you waive it>"
+- **Waiting on:** Client (via Paul) — waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutt; Jonie — seopress settings handoff — 4 of 4 item(s) open; Gwen — manual lookup handoff — 8 of 8 item(s) open
+- **Next action:** `/interview first-choice-seamless-gutters facts-answers pilot` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-24T20:59 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T21:02 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Client (via Paul) | waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "<why you waive it>" | 2026-10-24 | /interview first-choice-seamless-gutters facts-answers pilot |
+| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
+| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
+| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
+| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
 
 ## Waiting on (not blocking)
 
@@ -20,10 +24,7 @@ _Open, but the next action above goes ahead without them._
 | Who | What | Since | Reference |
 |---|---|---|---|
 | Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-24 | /verify first-choice-seamless-gutters |
-| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
-| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
-| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
-| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
+| Paul | batches not yet built and written back: pilot, services, locations-west, locations-east, about | 2026-10-24 | /where first-choice-seamless-gutters |
 
 ## Settled decisions — never re-raised
 
@@ -126,9 +127,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 4 | 3,257,781 | $0.05 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 5 | 5,315,693 | $0.17 | $0.00 |
 | any stage | 6 | 5,246,914 | $1.43 | $0.00 |
-| **total** | 23 | 54,837,291 | $16.85 | $0.00 |
+| **total** | 24 | 56,895,203 | $16.97 | $0.00 |
 
 ## Spend by step (model)
 
@@ -141,13 +142,13 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:sheet-returned | 1 | 4,068,734 | $1.41 | $0.00 |
 | discovery:reconcile | 1 | 2,698,218 | $0.90 | $0.00 |
 | discovery:data | 1 | 0 | $0.62 | $0.00 |
-| interview:facts | 2 | 2,158,219 | $0.03 | $0.00 |
+| interview:facts | 3 | 4,216,131 | $0.15 | $0.00 |
 | build:blockers | 2 | 1,617,331 | $0.03 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
 | interview:facts-answers | 2 | 1,099,562 | $0.02 | $0.00 |
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 23 | 54,837,291 | $16.85 | $0.00 |
+| **total** | 24 | 56,895,203 | $16.97 | $0.00 |
 
-Last run: /interview 2026-10-24T20:59 — Owner answered Gutter Cleaning scope and process; svc-gutter-cleaning PASS. loc-lakeland still blocked on public research.
+Last run: /interview 2026-10-24T21:02 — Public research logged for Lakeland (permit office, places, neighborhoods found; conditions and certification partial). loc-lakeland still blocked: gate reads the pack, not yet rebuilt.

@@ -4,7 +4,6 @@ Public facts (P6): the researcher agent looks each one up in official sources â€
 
 | Fact | Need | Pages | Key |
 |---|---|---|---|
-| Certifications, authorizations, training | supporting | svc-gutter-cleaning | fact:d:certifications |
 | City-specific conditions (housing stock, terrain, weather, failure patterns) | required | loc-lakeland | fact:loc-lakeland:local_context |
 | Up to 12 real neighborhoods (fewer than 3: the section is dropped and they are named in local context) | required | loc-lakeland | fact:loc-lakeland:neighborhoods |
 | 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) | supporting | loc-lakeland | fact:loc-lakeland:place_entities |
