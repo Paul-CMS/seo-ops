@@ -302,3 +302,26 @@ Open: flag F-004 (citation export missing; the C3 screen counted it as a pass) i
 - FACT 2026-10-24T20:00 · run 20261024-195727-discovery-1534 · d-named-staff-for-on-page-use (value, status, source, quote) · client_confirmed · Owners: Adrian Buehl and Rachel Buehl (client confirme…
 - … and 22 more decision/fact/flag line(s) in log.md
 
+## /discovery · 2026-10-24 · run 20261024-201520-discovery-2ca6
+
+Your two answers are applied to the Brand Guide and the reconciliation note (2026-10-24).
+
+- Plant City: not served for now. Fact plant-city-served updated (Paul Approved 2026-10-24). The client's "Yes" is recorded but not applied.
+  It is out of the area entity row (A5) and the derivation. Section E lists it under exclusions. D3 has a new row: /areas-we-serve/plant-city-fl/
+  301s to /areas-we-serve/ under F-015, once the citation check and C4 (no leads) are confirmed. The page is never deleted.
+- Gutter Maintenance: it is no longer a standalone service. A new fact row, gutter-maintenance-consolidated (Section D), says its scope moves
+  into Gutter Repair and Gutter Cleaning. The D3 row now sends the old URL to a 301 handoff, pointing at the closer of the two pages. Section G
+  says to position only the 10 kept services.
+- The reconciliation note's two "needs a call" lines are replaced with your dated answers.
+- Changes #152 and #153 are logged. Nothing is approved and run.py finish was not run.
+
+Still open:
+- The Brand Guide approval waits on you.
+- Build has to choose the redirect target for /services/gutter-maintenance/ (Repair or Cleaning).
+- decisions-settled.md still shows audit_plant_city as reopened until the records regenerate at finish.
+
+**Changes (script):** 2 — local_file ×2
+- FACT 2026-10-24T20:16 · run 20261024-201520-discovery-2ca6 · plant-city-served (value, source) · paul_approved · Not served for now: Plant City is listed nowhere (no Plant City page, not in towns s…
+- FACT 2026-10-24T20:16 · run 20261024-201520-discovery-2ca6 · gutter-maintenance-consolidated (new) · paul_approved · Not a standalone service. Its maintenance scope is folded into the Gutter Repair…
+- FACT 2026-10-24T20:16 · run 20261024-201520-discovery-2ca6 · a-area-entity (value, source) · submitted · Proposed: Polk County, Florida = Lakeland–Winter Haven MSA (Q501043). Path: Winter Haven → P…
+

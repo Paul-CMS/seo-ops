@@ -121,33 +121,3 @@ as answered — (863) 330-3243 agrees across site, GBP and schema; the BBB "Othe
 Sunbiz entity record · FL DBPR licence search · Polk County contractor licence · GBP dashboard (primary + secondary
 categories, service areas, open date, Website field) · Yelp · Facebook About · HomeAdvisor profile. See the run's
 `manual_lookup` handoff. Until returned, these fields keep their public-copy confidence (never verified).
-
-## 10 · Reconciliation — returned proof sheet (2026-10-24, run 20261024-195727-discovery-1534)
-
-Return: `First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json` (form export v1, verbatim). Partly answered.
-
-**Site-wide implications (first):**
-- Licence: "no license number needed in fl." — no licence to cite, so the *licensed* half of "fully licensed and insured"
-  (8 pages, F-004) cannot be substantiated; Brand Guide D2/D3. Insurance confirmed (certificate not sent).
-- Base town: Lakeland, FL — homepage "Based in Winter Haven" and both blog posts "Based in nearby Bartow" are wrong (F-001, F-045).
-- Business age: BBB "Business Started 11/24/2021" is not when they started; client says "well over 25 plus years", no
-  year given. Reviews from 2023–2025 name James, Randall, Landon and "Will" as owners or workers while the confirmed owners
-  are Adrian and Rachel Buehl — the 25 years may span an earlier business; no page states an age until a year is given.
-- Plant City: client says served (Yes) — contradicts Paul's fact plant-city-served (not served, 2026-10-23); reopen
-  logged on audit_plant_city. Sebring: not served.
-- Gutter Maintenance: client marked Stop (the other 10 services Keep) — /services/gutter-maintenance/ needs a call (F-014).
-
-**Changed (was → now):** founding (BBB 2021 → "25+ years", year [NEED]); base town (Lakeland / Winter Haven / Bartow on
-the site → Lakeland). Upgraded to Client Confirmed: GBP name, legal name, phone, SAB, hours, owners, insurance, warranty
-(10-year, in writing), 24-hour response, free inspection, family owned, $150 military/seniors offer, GutterPro HQ award
-(its only source is still a self-issued release).
-
-**Still blank:** minimum/trip charge, after-hours, payment methods, financing, staff roles ("answers follow");
-subcontracting ("n/a" — unclear); travel fee; job wanted most; what customers get wrong; documents (none sent: COI, logo,
-owner photo, job photos, tax receipt, written warranty). They stay [NEED].
-
-**New claims to substantiate:** question_6 came back as ten third-person marketing bullets (Brand Guide G) — "within an
-hour", "shocking margins", competitor 1–2-year warranties, no arrival windows, HOA samples. towns_excluded came back as a
-note addressed to the agency (Brand Guide E note). Neither reads as the client's own words.
-
-**Blog author:** Adrian Buehl, owner (settled blog_author applied; owners confirmed on the sheet) — F-048's author.

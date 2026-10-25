@@ -20,7 +20,7 @@ publication.
 | 2 | GBP primary category = the category entity | CONFLICT (PROC-01): Paul intake 'Seamless gutters' · Google Maps place data category id 'gutter_service' (display 'Gutter service') — dashboard check pending (Gwen manual_lookup) | Disputed 2026-10-22 · was: Submitted |
 | 3 | Category variants (4–6) | Proposed: Gutter Service · Seamless Gutters · Rain Gutters · Gutter Contractor · Gutter Installation (Wikipedia entity: Rain gutter, Q152833) | Submitted 2026-10-22 · was: Unknown |
 | 4 | Storefront or SAB | Service area business (travels to customers) | Client Confirmed 2026-10-24 · was: Submitted |
-| 5 | Area entity | Proposed: Polk County, Florida = Lakeland–Winter Haven MSA (Q501043). Path: Winter Haven → Polk County → 'comprises the Lakeland–Winter Haven metropolitan statistical area'. Contains 19 of 20 site towns; outliers Plant City (Hillsborough) and Sebring (Highlands, GBP only) | Submitted 2026-10-22 · was: Unknown |
+| 5 | Area entity | Proposed: Polk County, Florida = Lakeland–Winter Haven MSA (Q501043). Path: Winter Haven → Polk County → 'comprises the Lakeland–Winter Haven metropolitan statistical area'. Contains all 20 places served. Not served: Plant City (Hillsborough; Paul, 2026-10-24) and Sebring (Highlands; client, 2026-10-24) | Submitted 2026-10-24 · was: Unknown |
 | 6 | Area variants (3–5) | Proposed: Polk County, FL · Polk County, Florida · Lakeland–Winter Haven · Lakeland–Winter Haven metropolitan area | Submitted 2026-10-22 · was: Unknown |
 | 7 | Separator standard | ` - ` | |
 | 8 | Phone | (863) 330-3243 (site, GBP, schema agree; BBB also lists 'Other Phone' (863) 320-2842) | Client Confirmed 2026-10-24 · was: Internally Verified |
@@ -38,8 +38,9 @@ City served: Winter Haven, FL (Q1778769) — "Based in Winter Haven" (site); BBB
 Contains all N cities served? Site lists 20 towns: 19 in Polk; Plant City is in Hillsborough County (Tampa Bay area).
    GBP "Location" list (15) adds Sebring (Highlands County) and Lakeland Highlands (Polk). -> no, 2 outliers
 Smallest true container: Polk County / Lakeland–Winter Haven MSA for every Polk town (PROPOSED — Decision Sheet
-   area_entity; Plant City and Sebring go to the client as towns_served questions). Central Florida would contain
-   Plant City but not Sebring. State: Florida (Q812). PROPOSAL — Paul decides (agency profile §4).
+   area_entity). Both outliers are out of the service area: Plant City not served for now (Paul, 2026-10-24,
+   audit_plant_city — client's 'Yes' recorded, not applied); Sebring not served (client). So Polk County contains
+   every place served. State: Florida (Q812). PROPOSAL — Paul decides (agency profile §4).
 ```
 
 **Paul approved this section on:** ____________
@@ -120,11 +121,12 @@ Everything a writer may state. **Not here = does not exist.**
 | Google Search Console access | Access exists (Paul reports) | Submitted 2026-10-22 · was: Unknown | Paul, intake answer |
 | Street address shown on the website | 3517 Century Blvd, Lakeland, FL | Paul Approved 2026-10-22 · was: Unknown | Paul, 2026-10-22 (confirmed for website display; billing address check) |
 | Military and seniors offer | $150 off full house installations for Military & Seniors: confirmed and still running. | Client Confirmed 2026-10-24 · was: Paul Approved | Paul, 2026-10-23; Client proof sheet returned 2026-10-24 (RETURNED.json, claim_8) — "Yes, accurate" |
-| Plant City served | Not in the established service area; no Plant City page. Cities listed stay as the established service area. | Paul Approved 2026-10-23 · was: Unknown | Paul, 2026-10-23 |
+| Plant City served | Not served for now: Plant City is listed nowhere (no Plant City page, not in towns served, not in the service area). The client's 'Yes' (claim_1_plant, 2026-10-24) is recorded but not applied. | Paul Approved 2026-10-24 · was: Unknown | Paul, 2026-10-24 (settled audit_plant_city) |
 | Base town (where the business is based) | Lakeland, FL | Client Confirmed 2026-10-24 · was: Unknown | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_0 / claim_0_detail) — "Lakeland, FL" |
 | Family owned and operated | Yes — family owned and operated | Client Confirmed 2026-10-24 · was: Unknown | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_6) — "Yes, accurate" |
 | Opening hours | 7 AM – 8 PM, Monday to Sunday | Client Confirmed 2026-10-24 · was: Unknown | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Contact_and_hours_2) — "Yes, correct" |
 | Services (client keep/stop) | Keep (10): Seamless Gutter Installation, Gutter Installation, Gutter Repair, Commercial Gutters, Gutter Downspouts, Gutter Guards, Gutter Cleaning, Copper Gutters, Galvalume Gutters, Aluminum Gutters. Stop: Gutter Maintenance. None added; none marked 'want more' | Client Confirmed 2026-10-24 · was: Unknown | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, service_0..10_keep, service_6_stop) — "service_6_stop: true" |
+| Gutter Maintenance (standalone service) | Not a standalone service. Its maintenance scope is folded into the Gutter Repair and Gutter Cleaning pages; no /services/gutter-maintenance/ page. The old URL is redirected (never deleted) to the closer of the two. | Paul Approved 2026-10-24 · was: Unknown | Paul, 2026-10-24 (settled audit_gutter_maintenance, F-014) |
 
 ### D2 · Unsupported claims
 Claims the site makes publicly that the client could not substantiate. Writers must not repeat
@@ -145,13 +147,15 @@ Every live page that still carries a D2 claim or an unconfirmed fact, until it i
 | / · /areas-we-serve/fort-meade-fl/ · /areas-we-serve/polk-city-fl/ · /services/copper-gutters/ · /services/galvalume-gutters/ · /services/gutter-cleaning/ · /services/gutter-installation/ · /services/gutter-maintenance/ | "licensed" (no licence held) | D2 row 1 / F-004 (settled audit_licence_claim) | Build rebuild; live pages until then — Paul |
 | / | "Based in Winter Haven" | D2 row 2 / F-001 | Build rebuild (homepage) |
 | /gutter-guards-winter-haven-fl/ · /gutter-services-lakeland-fl/ | "Based in nearby Bartow" | D2 row 3 / F-001, F-045 | Blog (Block 5) |
-| /services/gutter-maintenance/ | A service the client wants to stop getting calls for (service_6_stop) | services-client fact / F-014 | Paul — fold or redirect (open) |
+| /services/gutter-maintenance/ | A service the client wants to stop getting calls for (service_6_stop) | services-client fact / F-014 (settled audit_gutter_maintenance, 2026-10-24) | Build: maintenance scope folded into /services/gutter-repair/ and /services/gutter-cleaning/; old URL 301 to the closer of the two (VA redirect handoff, never deleted) |
+| /areas-we-serve/plant-city-fl/ | Plant City presented as served (not served for now) | plant-city-served fact / F-015 (settled audit_plant_city, 2026-10-24) | Build: 301 to /areas-we-serve/ per F-015 once the citation check (C3) and C4 (no leads) are confirmed; never deleted |
 
 ## Section E — Service area truth
 ```
 TOWNS AT THE EDGES (the furthest towns served, any direction): [NEED: not asked as edges] — all 20 Polk County places confirmed (towns-served-client, 2026-10-24)
-CITIES CLAIMED ON SITE: Auburndale, Bartow, Davenport, Dundee, Eagle Lake, Haines City, Lake Alfred, Lake Wales, Lakeland, Polk City, Waverly, Winter Haven, Fort Meade, Frostproof, Highland City, Kathleen, Lake Hamilton, Mulberry, Wahneta (+ Lakeland Highlands on the GBP) — all confirmed by the client; Plant City: client says served — DISPUTED with Paul's fact plant-city-served (reopen logged, Paul decides)
-EXPLICIT EXCLUSIONS: Sebring — not served (client, claim_1_sebring)
+CITIES CLAIMED ON SITE: Auburndale, Bartow, Davenport, Dundee, Eagle Lake, Haines City, Lake Alfred, Lake Wales, Lakeland, Polk City, Waverly, Winter Haven, Fort Meade, Frostproof, Highland City, Kathleen, Lake Hamilton, Mulberry, Wahneta (+ Lakeland Highlands on the GBP) — all confirmed by the client
+EXPLICIT EXCLUSIONS: Sebring — not served (client, claim_1_sebring); Plant City — not served for now, listed nowhere,
+  no Plant City page (Paul, 2026-10-24, audit_plant_city; the client's 'Yes' on claim_1_plant is recorded, not applied)
 TRAVEL FEE BEYOND: [NEED: travel fee — not answered]
 ```
 Note (client-written, towns_excluded, 2026-10-24 — a caution, not a fact change): all 20 places are inside Polk County, which
@@ -192,6 +196,9 @@ promise is within 24 hours); "eliminating unpredictable arrival windows"; HOA co
 downspouts engineered by roof pitch; Galvalume "specialty" and storm claims. Already confirmed elsewhere: the 10-year
 workmanship guarantee in writing (claim_4) and $150 off for military and seniors (claim_8). On-site seamless
 fabrication fits the trade but is not yet confirmed as the client's own statement.
+Services to position (Paul, 2026-10-24, audit_gutter_maintenance): the 10 the client keeps. Gutter Maintenance is not
+a standalone service — never position or promote it on its own; its maintenance scope is written into the Gutter
+Repair and Gutter Cleaning pages. Plant City is never named as a place served (audit_plant_city).
 
 ## Section H — Constraints, exceptions and the superlative opener
 

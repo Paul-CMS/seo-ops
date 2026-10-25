@@ -692,3 +692,48 @@ Spend: 4068734 tokens · $1.41 (measured)
 - CHANGE #149 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-23 (7).md | new: First Choice Seamless Gutters - Status.md · sha 151edcf3ee7d | result: done · copied (Drive for desktop syncs it)
 - CHANGE #150 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-23 (3).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | new: _Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-23 (3).md | result: done · renamed and moved, nothing deleted
 - CHANGE #151 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | upload | old: previous version archived as First Choice Seamless Gutters - VA Worklist - 2026-10-23 (3).md | new: First Choice Seamless Gutters - VA Worklist.md · sha 2a17ee1362ca | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-24T20:13 · after build:blockers (run 20261023-212602-build-55fa) · Paul typed /next
+
+## RUN 20261024-201520-discovery-2ca6 · STARTED · /discovery · 2026-10-24T20:15:20-05:00
+Step: discovery:reconcile · session 92ecb36d-2400-485a-9f0a-68f9a697cd89
+Gates checked: proof_sheet_returned
+- SETTLED audit_gutter_maintenance · 2026-10-24T20:15:24-05:00 · run 20261024-201520-discovery-2ca6 · by Paul · F-014 Gutter Maintenance: consolidate into the Gutter Repair and Gutter Cleaning pages; no standalone /services/gutter-maintenance/ page. The old URL redirects (never deleted) to the closest of the two (Paul, 2026-10-24)
+- SETTLED audit_plant_city · 2026-10-24T20:15:27-05:00 · run 20261024-201520-discovery-2ca6 · by Paul · Plant City: keep not served for now — listed nowhere, no Plant City page; the client's Yes is recorded but not applied (Paul, 2026-10-24)
+- FACT 2026-10-24T20:16 · run 20261024-201520-discovery-2ca6 · plant-city-served (value, source) · paul_approved · Not served for now: Plant City is listed nowhere (no Plant City page, not in towns served, not in the service area). The client's 'Yes' (claim_1_plant, 2026-10-24) is recorded but not applied. · source Paul, 2026-10-24 (settled audit_plant_city) · by Paul
+- FACT 2026-10-24T20:16 · run 20261024-201520-discovery-2ca6 · gutter-maintenance-consolidated (new) · paul_approved · Not a standalone service. Its maintenance scope is folded into the Gutter Repair and Gutter Cleaning pages; no /services/gutter-maintenance/ page. The old URL is redirected (never deleted) to the clos · source Paul, 2026-10-24 (settled audit_gutter_maintenance, F-014) · by Paul
+- FACT 2026-10-24T20:16 · run 20261024-201520-discovery-2ca6 · a-area-entity (value, source) · submitted · Proposed: Polk County, Florida = Lakeland–Winter Haven MSA (Q501043). Path: Winter Haven → Polk County → 'comprises the Lakeland–Winter Haven metropolitan statistical area'. Contains all 20 places ser · source en.wikipedia.org/wiki/Polk_County,_Florida; Decision Sheet; Paul 2026-10-24 (audit_plant_city) · by Paul
+- CHANGE #152 [local_file] clients/first-choice-seamless-gutters/brand-guide.md | A derivation, D3, E, G | old:  | new:  | result: ok | ref audit_plant_city, audit_gutter_maintenance | snapshots clients/first-choice-seamless-gutters/snapshots/20261024-201520-discovery-2ca6/0152-old.md clients/first-choice-seamless-gutters/snapshots/20261024-201520-discovery-2ca6/0152-new.md
+- CHANGE #153 [local_file] clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Reconciliation - REVIEW.md | site-wide implications (Plant City, Gutter Maintenance) | old:  | new:  | result: ok | ref audit_plant_city, audit_gutter_maintenance | snapshots clients/first-choice-seamless-gutters/snapshots/20261024-201520-discovery-2ca6/0153-old.md clients/first-choice-seamless-gutters/snapshots/20261024-201520-discovery-2ca6/0153-new.md
+### HANDOFF · /discovery · 2026-10-24 · run 20261024-201520-discovery-2ca6
+Your two answers are applied to the Brand Guide and the reconciliation note (2026-10-24).
+
+- Plant City: not served for now. Fact plant-city-served updated (Paul Approved 2026-10-24). The client's "Yes" is recorded but not applied.
+  It is out of the area entity row (A5) and the derivation. Section E lists it under exclusions. D3 has a new row: /areas-we-serve/plant-city-fl/
+  301s to /areas-we-serve/ under F-015, once the citation check and C4 (no leads) are confirmed. The page is never deleted.
+- Gutter Maintenance: it is no longer a standalone service. A new fact row, gutter-maintenance-consolidated (Section D), says its scope moves
+  into Gutter Repair and Gutter Cleaning. The D3 row now sends the old URL to a 301 handoff, pointing at the closer of the two pages. Section G
+  says to position only the 10 kept services.
+- The reconciliation note's two "needs a call" lines are replaced with your dated answers.
+- Changes #152 and #153 are logged. Nothing is approved and run.py finish was not run.
+
+Still open:
+- The Brand Guide approval waits on you.
+- Build has to choose the redirect target for /services/gutter-maintenance/ (Repair or Cleaning).
+- decisions-settled.md still shows audit_plant_city as reopened until the records regenerate at finish.
+
+**Changes (script):** 2 — local_file ×2
+- FACT 2026-10-24T20:16 · run 20261024-201520-discovery-2ca6 · plant-city-served (value, source) · paul_approved · Not served for now: Plant City is listed nowhere (no Plant City page, not in towns s…
+- FACT 2026-10-24T20:16 · run 20261024-201520-discovery-2ca6 · gutter-maintenance-consolidated (new) · paul_approved · Not a standalone service. Its maintenance scope is folded into the Gutter Repair…
+- FACT 2026-10-24T20:16 · run 20261024-201520-discovery-2ca6 · a-area-entity (value, source) · submitted · Proposed: Polk County, Florida = Lakeland–Winter Haven MSA (Q501043). Path: Winter Haven → P…
+### END HANDOFF
+## RUN 20261024-201520-discovery-2ca6 · FINISHED · 2026-10-24T20:17:44-05:00
+Changes: 2 · Summary: Brand Guide revised for Paul's answers: Plant City kept not served; Gutter Maintenance consolidated into Repair and Cleaning (301 to closer page, Build)
+Spend: 2698218 tokens · $0.90 (measured)
+- CHANGE #154 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24.md | result: done · renamed and moved, nothing deleted
+- CHANGE #155 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-24.md | new: First Choice Seamless Gutters - Handoff Log.md · sha 2459c258d7f8 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #156 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24.md | result: done · renamed and moved, nothing deleted
+- CHANGE #157 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24.md | new: First Choice Seamless Gutters - Document Checklist.md · sha 85fc213d37a5 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #158 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Brand Guide - 2026-10-24.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Brand Guide.md | new: _Archive/First Choice Seamless Gutters - Brand Guide - 2026-10-24.md | result: done · renamed and moved, nothing deleted
+- CHANGE #159 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Brand Guide.md | upload | old: previous version archived as First Choice Seamless Gutters - Brand Guide - 2026-10-24.md | new: First Choice Seamless Gutters - Brand Guide.md · sha 124537f13b25 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #160 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24.md | result: done · renamed and moved, nothing deleted
+- CHANGE #161 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24.md | new: First Choice Seamless Gutters - Status.md · sha e38fde0bf93e | result: done · copied (Drive for desktop syncs it)
