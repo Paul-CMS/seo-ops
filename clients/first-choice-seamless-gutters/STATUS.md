@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 4 of 8 — Audit**
-- **What is happening now:** waiting for Paul's approval — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md. Discovery is then signed off automatically and Build starts
-- **Waiting on:** Paul — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-
-- **Next action:** Paul types `/approve first-choice-seamless-gutters brand_guide_approved --files "clients/first-choice-seamless-gutters/brand-guide.md"` (or asks for changes first) · model: Haiku chat
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
+- **What is happening now:** ready to start: the evidence gate blocked svc-gutter-cleaning, loc-lakeland — targeted questions for the owner (you send them). Or waive instead: /approve first-choice-seamless-gutters evidence:svc-gutter-cleaning --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "<why you waive it>"
+- **Waiting on:** nobody
+- **Next action:** `/interview first-choice-seamless-gutters facts pilot` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), brief-writer (sonnet)) · model: Haiku chat
 
-_Generated 2026-10-24T20:48 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T20:52 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md. Discovery is then signed off automatically and Build starts | 2026-10-24 | /approve first-choice-seamless-gutters brand_guide_approved |
+| — | nothing | | |
 
 ## Waiting on (not blocking)
 
