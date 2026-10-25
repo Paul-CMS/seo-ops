@@ -560,3 +560,29 @@ Still open:
 - FLAG 2026-10-24T22:20 · run 20261024-221856-build-c8ed · F-012 · evidence_pack.review_topics gives 'service: <name>' topics an empty key list, so a researcher's reviews.py checked can never move th…
 - FLAG 2026-10-24T22:37 · run 20261024-221856-build-c8ed · F-013 · Approved site plan fixes service-page H1 area variant 'Lakeland–Winter Haven' (B2 pool) on 5 service pages; it contains city names, …
 
+## /build · 2026-10-25 · run 20261025-135749-build-dc55
+
+- Paul's line: "accept all except 4b, 10b, 19b, 34b, 41b" (recorded in build/services/drafts-apply.json, 55 items).
+- Applied 55 of 55 to the 9 services drafts in build/services/drafts/. Not one item was skipped.
+  The no-change rows (Keep as drafted, Keep the NEEDs, Keep) changed nothing, as intended.
+- H1s switched to Polk County, Florida (option b, Paul):
+  svc-aluminum-gutters → "Aluminum Rain Gutters in Polk County, Florida"
+  svc-commercial-gutters → "Commercial Gutter Systems in Polk County, Florida"
+  svc-copper-gutters → "Copper Gutter Systems in Polk County, Florida"
+  svc-gutter-guards → "The Best Gutter Protection Systems in Polk County, Florida"
+  svc-gutter-installation → "Gutter Replacement in Polk County, Florida"
+- PLAN vs DRAFTS: the approved site plan still has the old Lakeland–Winter Haven H1s for these 5 pages.
+  The drafts and the plan no longer match. Paul should decide whether to update the plan.
+- Follow-on edits I made (worth a look):
+  #39 gutter-installation: cutting the materials H3 left the H2 intro saying "four kinds", so it now says
+  "three kinds" and the material-change sentence is gone. The CTA's last two sentences were reworded.
+  #50 seamless meta: the sheet's wording ran to 166 characters, so ", Florida" came out to reach 157 (limit 150–160).
+  #54 seamless: the CTA's last two sentences were reworded. #16 copper: Half-Round and K-Style were merged into one H3.
+- Seen but not changed (outside the 55): the 5 "fixed silently" form fixes in drafts-fixes.json (run c8ed) are
+  not in the drafts, e.g. lowercase "galvalume" in the seamless materials H3, the Galvalume opening still saying
+  "so it is stiffer", and FAQ first sentences still short on repair, downspouts and aluminum.
+- Records: all 9 pages re-recorded (status.py page-stage), with change records #336–#344 (local; old copies in the run snapshot).
+- Not done (separate steps): Brand Guide write-back, /approve batch:services:drafts, ship.
+
+**Changes (script):** 9 — draft-review-apply ×9
+

@@ -13,7 +13,7 @@ First Choice Seamless Gutters repairs gutters that drip at a corner, pull away f
 
 A seamless gutter repair visit from First Choice Seamless Gutters starts with a free on-site inspection to find why the gutter leaks, sags or overflows, then a detailed estimate for the fix. The inspection and estimate cost nothing, whether or not you go ahead. There is no obligation and no hidden fees.
 
-Most gutter problems trace back to a few causes. Often, a repair restores the gutter by correcting its pitch, reinforcing the hangers, or clearing restricted outlets, before a full replacement is needed. If water spills over even in one hard rain, the cause is usually the gutter's capacity, its pitch, or where the water is routed. Each of those can be corrected.
+Often, a repair restores the gutter by correcting its pitch, reinforcing the hangers, or clearing restricted outlets, before a full replacement is needed. If water spills over even in one hard rain, the cause is usually the gutter's capacity, its pitch, or where the water is routed. Each of those can be corrected.
 
 [NEED: the repair steps, tools and materials First Choice Seamless Gutters uses on a repair visit (for example, how a leaking seam or corner is sealed, which hangers are fitted, how pitch is reset) — client, service_process]
 
@@ -24,7 +24,7 @@ What you get from a repair visit:
 - A repair aimed at the cause, such as pitch, hangers or a blocked outlet
 - A straight answer when a section is past repair
 
-Customers mention crews that come out quickly and arrive on time, clear communication from the first call, and a clean yard when the work is done. Send the website form and you will hear back within 24 hours. Adrian and Rachel Buehl own and run the business as a family, and it is insured. The BBB lists it as an Accredited Business with an A+ rating, accredited since August 12, 2025.
+Customers mention crews that come out quickly and arrive on time, clear communication from the first call, and a clean yard when the work is done. Send the website form and you will hear back within 24 hours. Adrian and Rachel Buehl own and run the business as a family, and it is insured.
 
 ## Which Gutter Problems Can Be Repaired Instead of Replaced?
 
@@ -54,11 +54,11 @@ Storm damage can bend a gutter, tear it loose or knock a downspout off the wall 
 
 ### How much does it cost to fix gutters?
 
-The cost to fix gutters depends on what broke and how much of the gutter it affects. Fixing a few loose hangers costs far less than replacing a bent section. Roof height, the feet of gutter, the number of downspouts and the gutter metal also change the price. First Choice Seamless Gutters prices the job after a free on-site inspection, with no hidden fees.
+The cost to fix gutters depends on what broke and how much of the gutter it affects. Fixing a few loose hangers costs less than replacing a bent section. Roof height, the feet of gutter, the number of downspouts and the gutter metal also change the price. First Choice Seamless Gutters prices the job after a free on-site inspection, with no hidden fees.
 
 ### What is the most common problem with gutters?
 
-The most common gutter problems are overflow, leaks and sagging, and one often leads to the next. A blocked outlet makes water sit in the gutter. The weight loosens the hangers, and the sagging run starts to drip at its corners and seams. A gutter that overflows in one hard rain is often too small, sloped wrong or draining to the wrong spot.
+Three common gutter problems are overflow, leaks and sagging, and one often leads to the next. A blocked outlet makes water sit in the gutter. The weight loosens the hangers, and the sagging run starts to drip at its corners and seams. A gutter that overflows in one hard rain is often too small, sloped wrong or draining to the wrong spot.
 
 ### Can a handyman fix a gutter?
 

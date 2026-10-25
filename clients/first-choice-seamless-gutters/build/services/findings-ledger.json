@@ -1,0 +1,387 @@
+{
+  "svc-aluminum-gutters|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "svc-aluminum-gutters|cm-016|trade-statements": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep with the one wording change",
+    "by": "default"
+  },
+  "svc-aluminum-gutters|svc-13|buyer-state-overlap": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Cut the sentence",
+    "by": "default"
+  },
+  "svc-aluminum-gutters|svc-12|h1-metro-variant-city-names": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "b",
+    "action": "Switch to 'Polk County, Florida'",
+    "by": "Paul"
+  },
+  "svc-aluminum-gutters|cm-061|site-process-available": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep the NEEDs",
+    "by": "default"
+  },
+  "svc-commercial-gutters|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "svc-commercial-gutters|cm-016|guarantee-scope-commercial": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Cut it",
+    "by": "default"
+  },
+  "svc-commercial-gutters|cm-016|trade-statements": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Soften as described",
+    "by": "default"
+  },
+  "svc-commercial-gutters|com-12|need-commercial-timeline": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Leave it out",
+    "by": "default"
+  },
+  "svc-commercial-gutters|svc-12|h1-metro-variant-city-names": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "b",
+    "action": "Switch to 'Polk County, Florida'",
+    "by": "Paul"
+  },
+  "svc-commercial-gutters|e1|trust-stack-repeat": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Trim as described",
+    "by": "default"
+  },
+  "svc-commercial-gutters|cm-061|site-process-available": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep the NEEDs",
+    "by": "default"
+  },
+  "svc-copper-gutters|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "svc-copper-gutters|cm-016|trade-statements": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Soften as described",
+    "by": "default"
+  },
+  "svc-copper-gutters|cm-016|need-copper-lifespan-public": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Remove the NEED",
+    "by": "default"
+  },
+  "svc-copper-gutters|e1|swap-test-aluminum": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Merge as described",
+    "by": "default"
+  },
+  "svc-copper-gutters|site-stated|soldered-joins": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Fill from the site text",
+    "by": "default"
+  },
+  "svc-copper-gutters|e1|trust-stack-repeat": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Trim as described",
+    "by": "default"
+  },
+  "svc-copper-gutters|svc-12|h1-metro-variant-city-names": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "b",
+    "action": "Switch to 'Polk County, Florida'",
+    "by": "Paul"
+  },
+  "svc-galvalume-gutters|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "svc-galvalume-gutters|cm-016|trade-statements": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Soften as described",
+    "by": "default"
+  },
+  "svc-galvalume-gutters|cm-016|need-coating-makeup-public": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Remove the NEED",
+    "by": "default"
+  },
+  "svc-galvalume-gutters|sem-8|other-service-h3s": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Cut the two H3s",
+    "by": "default"
+  },
+  "svc-galvalume-gutters|e1|trust-stack-repeat": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Trim as described",
+    "by": "default"
+  },
+  "svc-galvalume-gutters|cm-061|site-process-available": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep the NEEDs",
+    "by": "default"
+  },
+  "svc-gutter-downspouts|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "svc-gutter-downspouts|cm-016|trade-statements": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Soften as described",
+    "by": "default"
+  },
+  "svc-gutter-downspouts|cm-016|need-downspout-rule-public": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Remove the NEED",
+    "by": "default"
+  },
+  "svc-gutter-downspouts|cm-016|cta-offer-wording": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Reword",
+    "by": "default"
+  },
+  "svc-gutter-downspouts|e1|trust-stack-repeat": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Trim as described",
+    "by": "default"
+  },
+  "svc-gutter-downspouts|cm-061|site-process-available": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep the NEEDs",
+    "by": "default"
+  },
+  "svc-gutter-guards|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "svc-gutter-guards|cm-016|trade-statements": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Soften as described",
+    "by": "default"
+  },
+  "svc-gutter-guards|svc-12|h1-metro-variant-city-names": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "b",
+    "action": "Switch to 'Polk County, Florida'",
+    "by": "Paul"
+  },
+  "svc-gutter-guards|e1|trust-stack-repeat": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Reword as described",
+    "by": "default"
+  },
+  "svc-gutter-guards|cm-061|site-process-available": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep the NEEDs",
+    "by": "default"
+  },
+  "svc-gutter-installation|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "svc-gutter-installation|cm-016|free-correction-claim": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Cut both",
+    "by": "default"
+  },
+  "svc-gutter-installation|e1|swap-test-seamless": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Apply as described",
+    "by": "default"
+  },
+  "svc-gutter-installation|cm-016|trade-statements": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Soften as described",
+    "by": "default"
+  },
+  "svc-gutter-installation|svc-12|h1-metro-variant-city-names": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "b",
+    "action": "Switch to 'Polk County, Florida'",
+    "by": "Paul"
+  },
+  "svc-gutter-installation|e1|trust-stack-repeat": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Trim as described",
+    "by": "default"
+  },
+  "svc-gutter-installation|cm-061|site-process-available": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep the NEED",
+    "by": "default"
+  },
+  "svc-gutter-repair|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "svc-gutter-repair|site-stated|pitch-hangers-outlets-capacity": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep",
+    "by": "default"
+  },
+  "svc-gutter-repair|cm-016|trade-statements": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Soften as described",
+    "by": "default"
+  },
+  "svc-gutter-repair|e1|trust-stack-repeat": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Trim as described",
+    "by": "default"
+  },
+  "svc-gutter-repair|cm-061|site-process-available": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep the NEED",
+    "by": "default"
+  },
+  "svc-seamless-gutter-installation|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "svc-seamless-gutter-installation|cm-016|meta-guarantee-scope": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Add 'workmanship'",
+    "by": "default"
+  },
+  "svc-seamless-gutter-installation|cm-057|options-review-tier": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Reword as an attributed example",
+    "by": "default"
+  },
+  "svc-seamless-gutter-installation|cm-016|trade-statements": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Soften as described",
+    "by": "default"
+  },
+  "svc-seamless-gutter-installation|c3|faq-highest-rated-overlap": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Cut the material sentences",
+    "by": "default"
+  },
+  "svc-seamless-gutter-installation|e1|swap-test-gutter-installation": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Split the examples and reword the CTA as described",
+    "by": "default"
+  },
+  "svc-seamless-gutter-installation|cm-061|site-process-available": {
+    "step": "drafts",
+    "at": "2026-10-25T13:57:52-05:00",
+    "choice": "a",
+    "action": "Keep the NEEDs",
+    "by": "default"
+  }
+}

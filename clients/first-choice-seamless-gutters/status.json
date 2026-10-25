@@ -225,10 +225,10 @@
         },
         "draft": {
           "file": "clients/first-choice-seamless-gutters/build/services/drafts/svc-seamless-gutter-installation.md",
-          "run": "20261024-221856-build-c8ed",
-          "at": "2026-10-24T22:27:56-05:00",
-          "sha": "00b5993b3819",
-          "ts": 1792898876.17999,
+          "run": "20261025-135749-build-dc55",
+          "at": "2026-10-25T14:01:19-05:00",
+          "sha": "8fec8af1ed90",
+          "ts": 1792954879.128978,
           "agent": "aa384b9aa2c44ea8c"
         }
       }
@@ -322,10 +322,10 @@
         },
         "draft": {
           "file": "clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-installation.md",
-          "run": "20261024-221856-build-c8ed",
-          "at": "2026-10-24T22:27:56-05:00",
-          "sha": "ba6213a4db29",
-          "ts": 1792898876.333816,
+          "run": "20261025-135749-build-dc55",
+          "at": "2026-10-25T14:01:19-05:00",
+          "sha": "a44dc78f01bf",
+          "ts": 1792954879.006421,
           "agent": "a634207b2227b6c5b"
         }
       }
@@ -419,10 +419,10 @@
         },
         "draft": {
           "file": "clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-repair.md",
-          "run": "20261024-221856-build-c8ed",
-          "at": "2026-10-24T22:27:56-05:00",
-          "sha": "aadb18e14469",
-          "ts": 1792898876.39716,
+          "run": "20261025-135749-build-dc55",
+          "at": "2026-10-25T14:01:19-05:00",
+          "sha": "f173303cae7a",
+          "ts": 1792954879.0675662,
           "agent": "a13b8bede78c957d5"
         }
       }
@@ -501,10 +501,10 @@
         },
         "draft": {
           "file": "clients/first-choice-seamless-gutters/build/services/drafts/svc-commercial-gutters.md",
-          "run": "20261024-221856-build-c8ed",
-          "at": "2026-10-24T22:27:56-05:00",
-          "sha": "83514f0e5998",
-          "ts": 1792898876.4596841,
+          "run": "20261025-135749-build-dc55",
+          "at": "2026-10-25T14:01:18-05:00",
+          "sha": "4784c4a479e4",
+          "ts": 1792954878.700426,
           "agent": "a8791df177657f827"
         }
       }
@@ -598,10 +598,10 @@
         },
         "draft": {
           "file": "clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-downspouts.md",
-          "run": "20261024-221856-build-c8ed",
-          "at": "2026-10-24T22:27:56-05:00",
-          "sha": "1f2bb047dbc3",
-          "ts": 1792898876.524083,
+          "run": "20261025-135749-build-dc55",
+          "at": "2026-10-25T14:01:18-05:00",
+          "sha": "1e39f9954cdd",
+          "ts": 1792954878.884128,
           "agent": "a0def2110da4e15de"
         }
       }
@@ -694,10 +694,10 @@
         },
         "draft": {
           "file": "clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-guards.md",
-          "run": "20261024-221856-build-c8ed",
-          "at": "2026-10-24T22:27:56-05:00",
-          "sha": "ffcbdf5c95c9",
-          "ts": 1792898876.586854,
+          "run": "20261025-135749-build-dc55",
+          "at": "2026-10-25T14:01:18-05:00",
+          "sha": "3ef16968f986",
+          "ts": 1792954878.94473,
           "agent": "ad861fca2bd6cc559"
         }
       }
@@ -854,10 +854,10 @@
         },
         "draft": {
           "file": "clients/first-choice-seamless-gutters/build/services/drafts/svc-copper-gutters.md",
-          "run": "20261024-221856-build-c8ed",
-          "at": "2026-10-24T22:27:56-05:00",
-          "sha": "c2f8be3c23a2",
-          "ts": 1792898876.649892,
+          "run": "20261025-135749-build-dc55",
+          "at": "2026-10-25T14:01:18-05:00",
+          "sha": "b9e40430eae0",
+          "ts": 1792954878.76291,
           "agent": "a3e8cbdbe24e9a73e"
         }
       }
@@ -950,10 +950,10 @@
         },
         "draft": {
           "file": "clients/first-choice-seamless-gutters/build/services/drafts/svc-galvalume-gutters.md",
-          "run": "20261024-221856-build-c8ed",
-          "at": "2026-10-24T22:27:56-05:00",
-          "sha": "e84979011f26",
-          "ts": 1792898876.7135391,
+          "run": "20261025-135749-build-dc55",
+          "at": "2026-10-25T14:01:18-05:00",
+          "sha": "ca08c99182c6",
+          "ts": 1792954878.823623,
           "agent": "a213093ee82e45f28"
         }
       }
@@ -1046,10 +1046,10 @@
         },
         "draft": {
           "file": "clients/first-choice-seamless-gutters/build/services/drafts/svc-aluminum-gutters.md",
-          "run": "20261024-221856-build-c8ed",
-          "at": "2026-10-24T22:27:56-05:00",
-          "sha": "1986262afd8f",
-          "ts": 1792898876.776129,
+          "run": "20261025-135749-build-dc55",
+          "at": "2026-10-25T14:01:11-05:00",
+          "sha": "e8c127ca9ebb",
+          "ts": 1792954871.5964139,
           "agent": "ac1b69f5a14f495c4"
         }
       }
@@ -2485,7 +2485,14 @@
             "listed": 55,
             "fixes": 5,
             "dropped": 0,
-            "applied": null
+            "applied": {
+              "at": "2026-10-25T13:57:52-05:00",
+              "ts": 1792954672.5740001,
+              "run": "20261025-135749-build-dc55",
+              "answers": "accept all except 4b, 10b, 19b, 34b, 41b",
+              "explicit": 5,
+              "file": "clients/first-choice-seamless-gutters/build/services/drafts-apply.json"
+            }
           }
         },
         "sem_findings": 0
@@ -2734,12 +2741,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261024-221856-build-c8ed",
+    "run_id": "20261025-135749-build-dc55",
     "command": "build",
-    "finished": "2026-10-24T22:38:35-05:00",
-    "result": "Services write run: 9 drafts, one review sheet (0 Ask, 55 decided, 5 fixed); waits on Paul's review answer",
-    "changes": 2,
-    "step": "build:write",
+    "finished": "2026-10-25T14:01:53-05:00",
+    "result": "Services drafts: 55/55 review answers applied; 5 H1s switched to Polk County, Florida (plan still lists old H1s); write-back next",
+    "changes": 9,
+    "step": "build:review",
     "batch": "services"
   },
   "spend": {
@@ -2761,7 +2768,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T22:38:35-05:00",
+  "updated": "2026-10-25T14:01:53-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -3547,6 +3554,34 @@
         "main": 0.0044,
         "build": 14.7312
       }
+    },
+    {
+      "run": "20261025-135749-build-dc55",
+      "step": "build:review",
+      "tokens": 3799242,
+      "usd": 1.5388,
+      "at": "2026-10-25T14:01:53-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0084,
+          "in": 8,
+          "out": 2311,
+          "cache_read": 659248,
+          "cache_write": 3441
+        },
+        "claude-opus-5-5": {
+          "usd": 1.5304,
+          "in": 54,
+          "out": 11563,
+          "cache_read": 2982127,
+          "cache_write": 140490
+        }
+      },
+      "by_agent": {
+        "main": 0.0084,
+        "build": 1.5304
+      }
     }
   ],
   "sessions": {
@@ -3648,10 +3683,5 @@
   "blocker_handoffs": [
     "H-2026-10-23-03-broken_link",
     "H-2026-10-23-04-other"
-  ],
-  "review_pause": {
-    "run_id": "20261024-221856-build-c8ed",
-    "step": "build:write",
-    "at": "2026-10-24T22:38:35-05:00"
-  }
+  ]
 }

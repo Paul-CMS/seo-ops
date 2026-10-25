@@ -26,11 +26,11 @@ What you get from First Choice Seamless Gutters:
 - The 10-Year Workmanship Guarantee, in writing
 - A crew from a family-owned, insured company owned by Adrian and Rachel Buehl
 
-Customers mention crews that show up on time, clear communication from quote to finish, and a work site left clean. One homeowner said Adrian came right out and laid out good options. The company has held a BBB A+ rating as an Accredited Business since August 12, 2025.
+Customers mention crews that show up on time, clear communication from quote to finish, and a work site left clean. One homeowner said Adrian came right out and laid out good options.
 
 ## Which Parts of a Galvalume Gutter System Can First Choice Seamless Gutters Handle?
 
-First Choice Seamless Gutters can handle each part of a Galvalume gutter system. There are three parts. The gutter runs catch rain at the roof edge. The downspouts carry it to the ground. Guards keep leaves out. First Choice offers gutter installation, downspouts, gutter guards and gutter repair, so one company can take care of all of it.
+First Choice Seamless Gutters handles the two main parts of a Galvalume gutter system: the gutter runs, which catch rain at the roof edge, and the downspouts, which carry it to the ground.
 
 ### Galvalume Gutter Runs
 
@@ -40,23 +40,15 @@ Galvalume gutter runs are the long channels that catch rain at the roof edge. Th
 
 Downspouts move the water from the gutter to the ground and away from the house. A strong gutter still overflows if its downspouts are too few or too small. [NEED: whether First Choice fits matching Galvalume downspouts or another metal — client to confirm]
 
-### Gutter Guards on Galvalume Gutters
-
-Gutter guards cover the top of the gutter so leaves stay out. That matters on a steel gutter, because wet leaves that sit in the channel for weeks hold water against the coating. First Choice Seamless Gutters installs gutter guards. [NEED: which gutter guards First Choice fits on Galvalume gutters — client to confirm]
-
-### Repairs on Existing Galvalume Gutters
-
-A Galvalume gutter that leaks at a seam, sags or shows rust at a cut edge can often be fixed instead of replaced. First Choice Seamless Gutters offers gutter repair, and the free inspection shows which one your gutters need. [NEED: whether First Choice repairs Galvalume gutters it did not install — client to confirm]
-
 ## What Do Florida Homeowners Ask About Galvalume Rain Gutters?
 
 ### What is Galvalume steel?
 
-Galvalume steel is plain steel with a thin coat of metal made mostly of aluminum and zinc, so the steel gives the gutter its strength and the coat keeps water and air off that steel to slow down rust on the gutter. The steel is the frame. The coat is the shield. [NEED: exact makeup of the Galvalume coating, with an official or manufacturer source — public fact, researcher]
+Galvalume steel is plain steel with a thin coat of metal made mostly of aluminum and zinc, so the steel gives the gutter its strength and the coat keeps water and air off that steel to slow down rust on the gutter. The steel is the frame. The coat is the shield.
 
 ### Are Galvalume gutters better than aluminum or galvanized gutters?
 
-Galvalume is not better in every way, but as steel it is stiff and dents less than aluminum, and its coat of aluminum and zinc is expected to last longer than the zinc-only coat on plain galvanized steel gutters. Aluminum still wins on weight. It also can never rust. First Choice Seamless Gutters can talk through both metals at your free on-site estimate.
+Galvalume is not better in every way, but as steel it is stiff and dents less than aluminum. Aluminum still wins on weight. It also can never rust. First Choice Seamless Gutters can talk through both metals at your free on-site estimate.
 
 ### What is the best gutter material for Florida homes?
 

@@ -1,17 +1,16 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
-- **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:write finished (run 20261024-221856-build-c8ed) and that stage is in review mode — l; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
-- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
+- **What is happening now:** ready to start: Brand Guide write-back for section services (B3, C1/C2, C3) from its reviewed drafts, before their one approval — once per section; ship never writes it
+- **Waiting on:** Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7
+- **Next action:** `/build first-choice-seamless-gutters writeback services` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), brief-writer (sonnet)) · model: Haiku chat
 
-_Generated 2026-10-24T22:38 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-25T14:01 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:write finished (run 20261024-221856-build-c8ed) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build first-choice-seamless-gutters review services drafts (apply the services drafts review — nothing to ask; 55 decided for you) | 2026-10-24 | /next first-choice-seamless-gutters |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-seamless-gutter-installation:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-seamless-gutter-installation:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-installation:timeframe |
@@ -31,7 +30,7 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-24 | /verify first-choice-seamless-gutters |
+| Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-25 | /verify first-choice-seamless-gutters |
 | Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
 | Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
 | Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
@@ -152,9 +151,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 14 | 50,820,535 | $20.19 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 15 | 54,619,777 | $21.73 | $0.00 |
 | any stage | 7 | 5,927,813 | $1.64 | $0.00 |
-| **total** | 34 | 103,080,944 | $37.20 | $0.00 |
+| **total** | 35 | 106,880,186 | $38.74 | $0.00 |
 
 ## Spend by step (model)
 
@@ -163,12 +162,12 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | build:write | 2 | 39,230,166 | $18.88 | $0.00 |
 | discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
 | build:plan | 2 | 11,232,842 | $3.51 | $0.00 |
+| build:review | 3 | 5,822,887 | $2.10 | $0.00 |
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
 | discovery:sheet-returned | 1 | 4,068,734 | $1.41 | $0.00 |
 | discovery:reconcile | 1 | 2,698,218 | $0.90 | $0.00 |
 | discovery:data | 1 | 0 | $0.62 | $0.00 |
-| build:review | 2 | 2,023,645 | $0.56 | $0.00 |
 | build:writeback | 1 | 1,809,174 | $0.55 | $0.00 |
 | build:pilot-corrections | 1 | 680,899 | $0.21 | $0.00 |
 | interview:facts | 5 | 5,553,408 | $0.17 | $0.00 |
@@ -178,6 +177,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 34 | 103,080,944 | $37.20 | $0.00 |
+| **total** | 35 | 106,880,186 | $38.74 | $0.00 |
 
-Last run: /build 2026-10-24T22:38 — Services write run: 9 drafts, one review sheet (0 Ask, 55 decided, 5 fixed); waits on Paul's review answer
+Last run: /build 2026-10-25T14:01 — Services drafts: 55/55 review answers applied; 5 H1s switched to Polk County, Florida (plan still lists old H1s); write-back next
