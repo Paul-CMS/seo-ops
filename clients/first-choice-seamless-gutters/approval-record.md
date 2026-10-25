@@ -48,3 +48,37 @@ Generated from the seo-ops system (clients/first-choice-seamless-gutters/status.
 
 - Decision: **pending**
 
+## Page content approvals
+
+| Page | Type | Decision | By | Date | Human review | Practitioner |
+|---|---|---|---|---|---|---|
+| Seamless Gutter Installation | service | pending |  |  |  |  |
+| Gutter Installation | service | pending |  |  |  |  |
+| Gutter Repair | service | pending |  |  |  |  |
+| Commercial Gutters | service | pending |  |  |  |  |
+| Gutter Downspouts | service | pending |  |  |  |  |
+| Gutter Guards | service | pending |  |  |  |  |
+| Gutter Cleaning | service | pending |  |  |  |  |
+| Copper Gutters | service | pending |  |  |  |  |
+| Galvalume Gutters | service | pending |  |  |  |  |
+| Aluminum Gutters | service | pending |  |  |  |  |
+| Lakeland | location | pending |  |  |  |  |
+| Winter Haven | location | pending |  |  |  |  |
+| Auburndale | location | pending |  |  |  |  |
+| Bartow | location | pending |  |  |  |  |
+| Polk City | location | pending |  |  |  |  |
+| Kathleen | location | pending |  |  |  |  |
+| Highland City | location | pending |  |  |  |  |
+| Mulberry | location | pending |  |  |  |  |
+| Eagle Lake | location | pending |  |  |  |  |
+| Wahneta | location | pending |  |  |  |  |
+| Davenport | location | pending |  |  |  |  |
+| Haines City | location | pending |  |  |  |  |
+| Lake Alfred | location | pending |  |  |  |  |
+| Lake Hamilton | location | pending |  |  |  |  |
+| Dundee | location | pending |  |  |  |  |
+| Lake Wales | location | pending |  |  |  |  |
+| Waverly | location | pending |  |  |  |  |
+| Frostproof | location | pending |  |  |  |  |
+| Fort Meade | location | pending |  |  |  |  |
+| About | about | pending |  |  |  |  |

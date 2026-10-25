@@ -1,17 +1,19 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 5 of 8 — Build plan and blockers**
-- **What is happening now:** Stage 4 (Audit) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open first-choice-seamless-gutters) and type /next first-choice-seamless-gutters. Next there: /build first-choice-seamless-gutters plan (site plan for every service and location page, in one pass)
-- **Waiting on:** nobody
-- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
+- **What is happening now:** waiting for Paul's approval — the site plan is ready for your approval
+- **Waiting on:** Paul — the site plan is ready for your approval; Paul — Site plan choice A: keep the Highland City, Kathleen, Wahneta and Waverly location pages (; Paul — Site plan choice B: Lakeland Highlands (on the GBP list, no page) — no page, named in Lake
+- **Next action:** Paul types `/approve first-choice-seamless-gutters site_plan --files "clients/first-choice-seamless-gutters/build/First Choice Seamless Gutters - Site Plan - REVIEW.md"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-24T20:20 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T20:30 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Paul | the site plan is ready for your approval | 2026-10-24 | /approve first-choice-seamless-gutters site_plan |
+| Paul | Site plan choice A: keep the Highland City, Kathleen, Wahneta and Waverly location pages (recommended; approved Decision Map says rebuild) or merge each into the nearest city page with a 301 (client's proof-sheet note). | 2026-10-24 | plan_unincorporated_pages |
+| Paul | Site plan choice B: Lakeland Highlands (on the GBP list, no page) — no page, named in Lakeland's local context (recommended), or a new location page. | 2026-10-24 | plan_lakeland_highlands_page |
 
 ## Waiting on (not blocking)
 
@@ -19,6 +21,7 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
+| Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-24 | /verify first-choice-seamless-gutters |
 | Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
 | Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
 | Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
@@ -86,11 +89,8 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **review-facts** (1 file(s), e.g. `data/reviews/review-facts.json`) — read by build:evidence, build:facts
 - **paa-questions** (2 file(s), e.g. `data/paa/paa-questions.csv`) — read by build:evidence, discovery:fanout
 - **paa-raw** (20 file(s), e.g. `data/paa/raw/aluminum-gutters-lakeland.json`) — read by the step that reads paa-questions
-- **paa-routing** (1 file(s), e.g. `data/paa/paa-routing.md`) — read by build:plan, blog:map, build:brief, build:write
-- **competitors** (2 file(s), e.g. `data/competitors/coverage.json`) — read by build:plan
 - **discovery-record** (1 file(s), e.g. `discovery/First Choice Seamless Gutters - Discovery Record - REVIEW.md`) — read by build:evidence, build:facts
 - **facts** (1 file(s), e.g. `facts.json`) — read by build:evidence, build:facts
-- **settled** (1 file(s), e.g. `decisions-settled.md`) — read by build:evidence, build:facts, build:brief, build:draft, build:drafts, build:write, build:plan
 
 ## Flagged for Paul (system)
 
@@ -100,10 +100,11 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-004** (open, not yet reviewed) 2026-10-23 · discovery:audit: pagedec.py screen marks C3 'pass' when no citation tracker export is on file ('no citation tracker on file'), while CM-019 says any missing condition is Needs Evidence; C1 likewise passes on rankings alone with no GSC on file. — workaround: Audit proposes no redirect except Plant City (held, C4 still required); recorded as DEC-LOCAL-003 in audit/2026-10-23/decisions.md.
 - **F-005** (open, not yet reviewed) 2026-10-23 · discovery:audit: COM-T (titles 60 characters or fewer) cannot be met by the settled title formats with the settled variants: the homepage title 'Gutter Service in Polk County, FL - First Choice Seamless Gutters' is 65 characters, and location titles 'Gutter Service in <Town>, FL - First Choice Seamless Gutters' run about 60-68. HP-03 forbids dropping an entity term for length. The check gives no precedence rule. — workaround: S17 review keeps the settled title as the default and states that COM-T still fails (F-020 r2); anyone may override.
 - **F-006** (open, not yet reviewed) 2026-10-24 · discovery:sheet-returned: naming-convention §2 names the returned proof sheet '<Client> - Client Proof Sheet - RETURNED.md', but returns can arrive as a form JSON export; no rule for a non-Markdown return. — workaround: Saved verbatim with its own extension: '<Client> - Client Proof Sheet - RETURNED.json'; marked proof_sheet_returned with it.
+- **F-007** (open, not yet reviewed) 2026-10-24 · build:plan: Viability check (evidence_pack.py viability) runs in build:plan before the facts round's research, with no place store (methodology/places/ missing) and no FL source list; it proposed merges for 17 of 19 unresearched Polk towns. location-faq.md §8 allows a merge only when public facts are logged not_found — the order is wrong for a new state/industry. — workaround: Kept all 19 locations in the plan; merge proposals reported as premature; re-run viability after /build facts and bring any real merge to Paul as a kind-1 Ask.
 
 ## Spend so far
 
-- DataforSEO: $0.25 (of which failed tasks $0.00)
+- DataforSEO: $0.26 (of which failed tasks $0.00)
 - Claude API (llm.py): $0.00 over 0 call(s)
 
 ## Spend by stage (model)
@@ -116,15 +117,16 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 2 · Discovery | 3 | 11,117,410 | $3.80 | $0.00 |
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
-| 5 · Build plan and blockers | 2 | 1,617,331 | $0.03 | $0.00 |
+| 5 · Build plan and blockers | 3 | 10,247,951 | $2.59 | $0.00 |
 | any stage | 6 | 5,246,914 | $1.43 | $0.00 |
-| **total** | 17 | 40,346,668 | $13.29 | $0.00 |
+| **total** | 18 | 48,977,288 | $15.86 | $0.00 |
 
 ## Spend by step (model)
 
 | Step | Runs | Tokens | Session USD | API USD |
 |---|---|---|---|---|
 | discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
+| build:plan | 1 | 8,630,620 | $2.57 | $0.00 |
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
 | discovery:sheet-returned | 1 | 4,068,734 | $1.41 | $0.00 |
@@ -135,6 +137,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 17 | 40,346,668 | $13.29 | $0.00 |
+| **total** | 18 | 48,977,288 | $15.85 | $0.00 |
 
-Last run: /discovery 2026-10-24T20:17 — Brand Guide revised for Paul's answers: Plant City kept not served; Gutter Maintenance consolidated into Repair and Cleaning (301 to closer page, Build)
+Last run: /build 2026-10-24T20:30 — Site plan registered: 30 pages (10 service, 19 location, 1 about) in 5 batches with pilot; root-slug URLs with 301s; 2 open choices for Paul; flag F-007 (viability before research)

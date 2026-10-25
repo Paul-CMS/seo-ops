@@ -127,10 +127,2028 @@
       },
       "at": "2026-10-24T20:17:41-05:00",
       "ts": 1792891061.3502238
+    },
+    "site_plan": {
+      "files": {
+        "clients/first-choice-seamless-gutters/build/First Choice Seamless Gutters - Site Plan - REVIEW.md": "b26e36f1f09d"
+      },
+      "at": "2026-10-24T20:30:05-05:00",
+      "ts": 1792891805.8639412
     }
   },
-  "pages": {},
-  "build": null,
+  "pages": {
+    "svc-seamless-gutter-installation": {
+      "state": "planned",
+      "type": "service",
+      "name": "Seamless Gutter Installation",
+      "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/",
+      "group": "Installation",
+      "service_variant": "Continuous Rain Gutters",
+      "h1": "Continuous Rain Gutters in Polk County, Florida",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/services/seamless-gutter-installation/"
+      ],
+      "claims": [],
+      "keyword": "seamless gutter installation",
+      "area_variant": "Polk County, Florida",
+      "faq": [
+        "How can you tell if gutters are seamless? — PAA #40; the page's own product, answers what the buyer is paying for",
+        "What are the downsides of seamless gutters? — PAA #10; honest trade-off question asked before buying",
+        "How are seamless gutters made? — PAA #38 reframed (not DIY); explains one continuous run cut to length",
+        "What is the highest rated gutter system for a home? — PAA #2 (seen 4); answered by system type, no brand ranking"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 7,
+          "Unknown": 3,
+          "Unverified": 2,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-seamless-gutter-installation.grid.md",
+        "sha": "0bc6d27ab272",
+        "at": "2026-10-24T20:29:09-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "timeframe",
+          "pricing",
+          "certifications"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-seamless-gutter-installation.md",
+        "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-seamless-gutter-installation.json",
+        "sha": "271385ee90c8",
+        "at": "2026-10-24T20:29:09-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "services",
+        "counts": {
+          "facts": 42,
+          "review_topics": 10,
+          "review_excerpts": 41,
+          "questions": 8,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 3,
+          "excerpts": 53
+        }
+      }
+    },
+    "svc-gutter-installation": {
+      "state": "planned",
+      "type": "service",
+      "name": "Gutter Installation",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/",
+      "group": "Installation",
+      "service_variant": "Gutter Replacement",
+      "h1": "Gutter Replacement in Lakeland–Winter Haven",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/services/gutter-installation/"
+      ],
+      "claims": [],
+      "keyword": "gutter installation",
+      "area_variant": "Lakeland–Winter Haven",
+      "faq": [
+        "When should house gutters be replaced? — PAA #41; the replacement decision this page owns",
+        "What do new rain gutters cost in Florida? — PAA #1 (seen 5) with #33/#47/#59/#15 merged; names the cost drivers, no price unless confirmed",
+        "Is it common for a house not to have gutters? — PAA #39; first-time installs on Polk homes without gutters",
+        "Can I install my own gutters? — PAA #12; DIY versus professional install",
+        "How is a gutter installation estimate worked out? — PAA #11; ties to the confirmed free on-site estimate"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 7,
+          "Unknown": 2,
+          "Unverified": 3,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-installation.grid.md",
+        "sha": "91adb6537dff",
+        "at": "2026-10-24T20:29:09-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "timeframe",
+          "pricing",
+          "certifications"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-installation.md",
+        "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-installation.json",
+        "sha": "501db661680f",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "services",
+        "counts": {
+          "facts": 42,
+          "review_topics": 11,
+          "review_excerpts": 45,
+          "questions": 11,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 2,
+          "gaps": 2,
+          "excerpts": 57
+        }
+      }
+    },
+    "svc-gutter-repair": {
+      "state": "planned",
+      "type": "service",
+      "name": "Gutter Repair",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-repair/",
+      "group": "Repair and upkeep",
+      "service_variant": "Leaking and Sagging Gutter Repair",
+      "h1": "Leaking and Sagging Gutter Repair in Polk County, Florida",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/services/gutter-repair/"
+      ],
+      "claims": [],
+      "keyword": "gutter repair",
+      "area_variant": "Polk County, Florida",
+      "faq": [
+        "How much does it cost to fix gutters? — PAA #13; cost question, names what drives the cost",
+        "What is the most common problem with gutters? — PAA #24; leaks, sagging, loose hangers",
+        "Can a handyman fix a gutter? — PAA #14; when a repair needs a gutter contractor",
+        "Should a damaged gutter be repaired or replaced? — competitor coverage (H2O Gutters, Angi); the repair-versus-replace decision",
+        "What does routine gutter maintenance include? — folded Gutter Maintenance scope (settled audit_gutter_maintenance): hangers, resealing, slope checks"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 7,
+          "Unknown": 3,
+          "Unverified": 2,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-repair.grid.md",
+        "sha": "c369b81976ac",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "timeframe",
+          "pricing",
+          "certifications"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-repair.md",
+        "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-repair.json",
+        "sha": "2ff6969adbe1",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "services",
+        "counts": {
+          "facts": 42,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 7,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 2,
+          "gaps": 3,
+          "excerpts": 50
+        }
+      }
+    },
+    "svc-commercial-gutters": {
+      "state": "planned",
+      "type": "service",
+      "name": "Commercial Gutters",
+      "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/",
+      "group": "Specialty",
+      "service_variant": "Commercial Gutter Systems",
+      "h1": "Commercial Gutter Systems in Lakeland–Winter Haven metropolitan area",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/services/commercial-gutters/"
+      ],
+      "claims": [],
+      "keyword": "commercial gutters",
+      "area_variant": "Lakeland–Winter Haven metropolitan area",
+      "faq": [
+        "What are commercial-grade gutters? — PAA #16; defines the product this page owns",
+        "What is the difference between box gutters and K-style gutters on a commercial roof? — competitor coverage (commercial box gutters)",
+        "What size gutters does a large commercial roof need? — sizing question for big roof areas, from the commercial PAA set",
+        "How long does a commercial gutter installation take? — logistics question for business owners [NEED: client practice]"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 7,
+          "Unknown": 2,
+          "Unverified": 3,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-commercial-gutters.grid.md",
+        "sha": "dfd47060da8e",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "timeframe",
+          "pricing",
+          "certifications"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-commercial-gutters.md",
+        "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-commercial-gutters.json",
+        "sha": "246a57712f1a",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "services",
+        "counts": {
+          "facts": 42,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 4,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 2,
+          "excerpts": 50
+        }
+      }
+    },
+    "svc-gutter-downspouts": {
+      "state": "planned",
+      "type": "service",
+      "name": "Gutter Downspouts",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/",
+      "group": "Repair and upkeep",
+      "service_variant": "Downspout Installation and Drainage",
+      "h1": "Downspout Installation and Drainage in Polk County, Florida",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/services/gutter-downspouts/"
+      ],
+      "claims": [],
+      "keyword": "gutter downspouts",
+      "area_variant": "Polk County, Florida",
+      "faq": [
+        "What is the rule of thumb for how many downspouts a gutter needs? — PAA #46",
+        "Can you put a 3x4 downspout on a 5-inch gutter? — PAA #17 (commercial query, sizing belongs here)",
+        "What can I use instead of a downspout? — PAA #6 (seen 2); rain chains, extensions, buried drains",
+        "How much does it cost to replace a downspout? — PAA #18 with #45 merged; names the cost drivers",
+        "Where should downspouts drain on a Florida lot? — sandy-soil erosion and foundation question from the downspouts set"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 7,
+          "Unknown": 3,
+          "Unverified": 2,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-downspouts.grid.md",
+        "sha": "73108c33a7db",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "timeframe",
+          "pricing",
+          "certifications"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-downspouts.md",
+        "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-downspouts.json",
+        "sha": "71e4e8e47bea",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "services",
+        "counts": {
+          "facts": 42,
+          "review_topics": 10,
+          "review_excerpts": 42,
+          "questions": 7,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 3,
+          "excerpts": 54
+        }
+      }
+    },
+    "svc-gutter-guards": {
+      "state": "planned",
+      "type": "service",
+      "name": "Gutter Guards",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-guards/",
+      "group": "Repair and upkeep",
+      "service_variant": "Gutter Protection Systems",
+      "h1": "The Best Gutter Protection Systems in Lakeland–Winter Haven",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/services/gutter-guards/"
+      ],
+      "claims": [],
+      "keyword": "gutter guards",
+      "area_variant": "Lakeland–Winter Haven",
+      "faq": [
+        "What are the downsides of gutter guards? — PAA #7 (seen 2); honest trade-off",
+        "How much should I expect to pay for gutter guards? — PAA #21 with #49 merged; names the cost drivers",
+        "What is the difference between a leaf guard and a gutter guard? — PAA #50",
+        "What do roofers say about gutter guards? — PAA #53; shingle and warranty concerns"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 7,
+          "Unknown": 3,
+          "Unverified": 2,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-guards.grid.md",
+        "sha": "ea9c64bef04d",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "timeframe",
+          "pricing",
+          "certifications"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-guards.md",
+        "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-guards.json",
+        "sha": "1552d0a9d8b9",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "services",
+        "counts": {
+          "facts": 42,
+          "review_topics": 10,
+          "review_excerpts": 42,
+          "questions": 7,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 3,
+          "excerpts": 54
+        }
+      }
+    },
+    "svc-gutter-cleaning": {
+      "state": "planned",
+      "type": "service",
+      "name": "Gutter Cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "group": "Repair and upkeep",
+      "service_variant": "Gutter and Downspout Cleaning",
+      "h1": "The Best Gutter and Downspout Cleaning in Polk County, Florida",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/services/gutter-cleaning/",
+        "https://www.firstchoiceseamlessgutters.net/services/gutter-maintenance/"
+      ],
+      "claims": [],
+      "keyword": "gutter cleaning",
+      "area_variant": "Polk County, Florida",
+      "faq": [
+        "How much does gutter cleaning cost? — PAA #9 with #51/#55 merged (seen 4); names the cost drivers, no price unless confirmed",
+        "What is the best time of year to clean gutters in Florida? — PAA #27 with #52/#54 merged; Florida has no leaf-fall winter",
+        "How often should gutters be cleaned in Polk County? — competitor coverage (H2O Gutters) and the folded maintenance scope",
+        "What are the signs gutters need cleaning? — competitor coverage (Men In Kilts)",
+        "Do telescopic gutter cleaners work? — PAA #25; DIY tool versus professional cleaning"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 7,
+          "Unknown": 3,
+          "Unverified": 2,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-cleaning.grid.md",
+        "sha": "1e0b8ee10f8c",
+        "at": "2026-10-24T20:29:09-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "timeframe",
+          "pricing",
+          "certifications"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/pilot/packs/svc-gutter-cleaning.md",
+        "json": "clients/first-choice-seamless-gutters/build/pilot/packs/svc-gutter-cleaning.json",
+        "sha": "3142b9203a5e",
+        "at": "2026-10-24T20:29:09-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "pilot",
+        "counts": {
+          "facts": 42,
+          "review_topics": 10,
+          "review_excerpts": 43,
+          "questions": 8,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 2,
+          "gaps": 3,
+          "excerpts": 55
+        }
+      }
+    },
+    "svc-copper-gutters": {
+      "state": "planned",
+      "type": "service",
+      "name": "Copper Gutters",
+      "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/",
+      "group": "Materials",
+      "service_variant": "Copper Gutter Systems",
+      "h1": "Copper Gutter Systems in Lakeland–Winter Haven",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/services/copper-gutters/"
+      ],
+      "claims": [],
+      "keyword": "copper gutters",
+      "area_variant": "Lakeland–Winter Haven",
+      "faq": [
+        "How long do copper gutters last? — PAA #30",
+        "Are copper gutters worth the cost? — PAA #57 with #28/#56/#58 merged; names the cost drivers",
+        "Can copper and aluminum gutters be mixed? — PAA #29; galvanic corrosion",
+        "Should copper gutters be soldered? — PAA #31"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 7,
+          "Unknown": 1,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-copper-gutters.grid.md",
+        "sha": "ca629e1f71b8",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "timeframe",
+          "pricing",
+          "certifications"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-copper-gutters.md",
+        "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-copper-gutters.json",
+        "sha": "80a95ede33c8",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "services",
+        "counts": {
+          "facts": 42,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 8,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 1,
+          "excerpts": 50
+        }
+      }
+    },
+    "svc-galvalume-gutters": {
+      "state": "planned",
+      "type": "service",
+      "name": "Galvalume Gutters",
+      "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/",
+      "group": "Materials",
+      "service_variant": "Galvalume Steel Gutters",
+      "h1": "Galvalume Steel Gutters in Polk County, Florida",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/services/galvalume-gutters/"
+      ],
+      "claims": [],
+      "keyword": "galvalume gutters",
+      "area_variant": "Polk County, Florida",
+      "faq": [
+        "What is the best gutter material for Florida homes? — PAA #32; Galvalume page answers the material choice",
+        "Are Galvalume gutters better than aluminum or galvanized gutters? — PAA #34",
+        "What is Galvalume steel? — definition the buyer needs first",
+        "Do Galvalume gutters rust in Florida humidity? — coverage (aluminum FAQ 'do gutters rust') reframed for steel"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 7,
+          "Unknown": 3,
+          "Unverified": 2,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-galvalume-gutters.grid.md",
+        "sha": "2acc7da0ccb6",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "timeframe",
+          "pricing",
+          "certifications"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-galvalume-gutters.md",
+        "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-galvalume-gutters.json",
+        "sha": "9d28fb861c0d",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "services",
+        "counts": {
+          "facts": 42,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 4,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 3,
+          "excerpts": 50
+        }
+      }
+    },
+    "svc-aluminum-gutters": {
+      "state": "planned",
+      "type": "service",
+      "name": "Aluminum Gutters",
+      "url": "https://www.firstchoiceseamlessgutters.net/aluminum-gutters/",
+      "group": "Materials",
+      "service_variant": "Aluminum Rain Gutters",
+      "h1": "Aluminum Rain Gutters in Lakeland–Winter Haven",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/services/aluminum-gutters/"
+      ],
+      "claims": [],
+      "keyword": "aluminum gutters",
+      "area_variant": "Lakeland–Winter Haven",
+      "faq": [
+        "Are aluminum gutters good? — PAA #35",
+        "What is the difference between .027 and .032 aluminum gutters? — PAA #36",
+        "Do aluminum gutters rust? — competitor coverage (Gutter Supply FAQ)",
+        "What do aluminum gutters cost for a home? — PAA #37; names the cost drivers"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 7,
+          "Unknown": 3,
+          "Unverified": 2,
+          "Conflict": 0
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-aluminum-gutters.grid.md",
+        "sha": "28b4b5785124",
+        "at": "2026-10-24T20:29:10-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "timeframe",
+          "pricing",
+          "certifications"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-aluminum-gutters.md",
+        "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-aluminum-gutters.json",
+        "sha": "b6a74655c0ba",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "services",
+        "counts": {
+          "facts": 42,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 4,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 3,
+          "excerpts": 50
+        }
+      }
+    },
+    "loc-lakeland": {
+      "state": "planned",
+      "type": "location",
+      "name": "Lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "group": "West and north Polk",
+      "city": "Lakeland",
+      "h1": "Rain Gutters in Lakeland",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/lakeland-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters lakeland fl",
+      "category_variant": "Rain Gutters",
+      "faq": [
+        "1 · Local cost or decision: Does a Lakeland historic district or HOA limit gutter colour or profile? (Lakeland has locally designated historic districts — verify)",
+        "2 · Logistics here: Who issues permits for gutter work at a Lakeland address — City of Lakeland? (and whether gutter work needs one)",
+        "3 · Trust here: How do Lakeland's tree canopy and summer storms affect gutters? (base town, client confirmed)"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lakeland.grid.md",
+        "sha": "3c159016ca70",
+        "at": "2026-10-24T20:29:09-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/pilot/packs/loc-lakeland.md",
+        "json": "clients/first-choice-seamless-gutters/build/pilot/packs/loc-lakeland.json",
+        "sha": "3d72376e9a47",
+        "at": "2026-10-24T20:29:09-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "pilot",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 36,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 4,
+          "gaps": 2,
+          "excerpts": 50
+        }
+      }
+    },
+    "loc-winter-haven": {
+      "state": "planned",
+      "type": "location",
+      "name": "Winter Haven",
+      "url": "https://www.firstchoiceseamlessgutters.net/winter-haven-fl/",
+      "group": "West and north Polk",
+      "city": "Winter Haven",
+      "h1": "Seamless Gutters in Winter Haven",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/winter-haven-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters winter haven fl",
+      "category_variant": "Seamless Gutters",
+      "faq": [
+        "1 · Local cost or decision: Where should downspouts discharge on a Chain of Lakes lakefront lot in Winter Haven?",
+        "2 · Logistics here: Who issues permits for gutter work at a Winter Haven address — City of Winter Haven? (and whether gutter work needs one)",
+        "3 · Trust here: How do summer afternoon storms overload gutters on Winter Haven homes?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-winter-haven.grid.md",
+        "sha": "2ce8a39d449a",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-winter-haven.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-winter-haven.json",
+        "sha": "c48c3cc9bfc1",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-west",
+        "counts": {
+          "facts": 44,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 28,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 2,
+          "gaps": 2,
+          "excerpts": 50
+        }
+      }
+    },
+    "loc-auburndale": {
+      "state": "planned",
+      "type": "location",
+      "name": "Auburndale",
+      "url": "https://www.firstchoiceseamlessgutters.net/auburndale-fl/",
+      "group": "West and north Polk",
+      "city": "Auburndale",
+      "h1": "Rain Gutters in Auburndale",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/auburndale-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters auburndale fl",
+      "category_variant": "Rain Gutters",
+      "faq": [
+        "1 · Local cost or decision: Do Auburndale HOA subdivisions need approval for new gutter colours?",
+        "2 · Logistics here: Who issues permits for gutter work at a Auburndale address — City of Auburndale? (and whether gutter work needs one)",
+        "3 · Trust here: What wears out gutters and fascia on older Auburndale block homes?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-auburndale.grid.md",
+        "sha": "6bdbb74b30a2",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-auburndale.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-auburndale.json",
+        "sha": "e0eb00dbeb72",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-west",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 50
+        }
+      }
+    },
+    "loc-bartow": {
+      "state": "planned",
+      "type": "location",
+      "name": "Bartow",
+      "url": "https://www.firstchoiceseamlessgutters.net/bartow-fl/",
+      "group": "West and north Polk",
+      "city": "Bartow",
+      "h1": "Seamless Gutters in Bartow",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/bartow-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters bartow fl",
+      "category_variant": "Seamless Gutters",
+      "faq": [
+        "1 · Local cost or decision: Which gutter profile suits Bartow's historic homes? (Bartow historic district — verify)",
+        "2 · Logistics here: Who issues permits for gutter work at a Bartow address — City of Bartow? (and whether gutter work needs one)",
+        "3 · Trust here: What damage do Bartow's heavy summer rains do to undersized gutters?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-bartow.grid.md",
+        "sha": "495663ef7a43",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-bartow.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-bartow.json",
+        "sha": "b08949e5e5c7",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-west",
+        "counts": {
+          "facts": 43,
+          "review_topics": 10,
+          "review_excerpts": 39,
+          "questions": 0,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 51
+        }
+      }
+    },
+    "loc-polk-city": {
+      "state": "planned",
+      "type": "location",
+      "name": "Polk City",
+      "url": "https://www.firstchoiceseamlessgutters.net/polk-city-fl/",
+      "group": "West and north Polk",
+      "city": "Polk City",
+      "h1": "Rain Gutters in Polk City",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/polk-city-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters polk city fl",
+      "category_variant": "Rain Gutters",
+      "faq": [
+        "1 · Local cost or decision: How should gutters drain on large rural lots and sandy soil around Polk City?",
+        "2 · Logistics here: Who issues permits for gutter work at a Polk City address — City of Polk City? (and whether gutter work needs one)",
+        "3 · Trust here: How quickly can First Choice reach Polk City after a storm? (client facts only)"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 3,
+          "Unverified": 3,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-polk-city.grid.md",
+        "sha": "c4fc9afa6f92",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-polk-city.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-polk-city.json",
+        "sha": "7f21c42ea2dc",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-west",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 6,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 3,
+          "excerpts": 44
+        }
+      }
+    },
+    "loc-kathleen": {
+      "state": "planned",
+      "type": "location",
+      "name": "Kathleen",
+      "url": "https://www.firstchoiceseamlessgutters.net/kathleen-fl/",
+      "group": "West and north Polk",
+      "city": "Kathleen",
+      "h1": "Seamless Gutters in Kathleen",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/kathleen-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters kathleen fl",
+      "category_variant": "Seamless Gutters",
+      "faq": [
+        "1 · Local cost or decision: Can detached garages, barns and workshops in Kathleen get gutters too?",
+        "2 · Logistics here: Who issues permits for gutter work at a Kathleen address — Polk County (unincorporated)? (and whether gutter work needs one)",
+        "3 · Trust here: What do Kathleen homeowners on acreage ask about gutter upkeep?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-kathleen.grid.md",
+        "sha": "23e3f3ed4b09",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-kathleen.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-kathleen.json",
+        "sha": "bf7c5d19f7a9",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-west",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 6,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 44
+        }
+      }
+    },
+    "loc-highland-city": {
+      "state": "planned",
+      "type": "location",
+      "name": "Highland City",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/",
+      "group": "West and north Polk",
+      "city": "Highland City",
+      "h1": "Rain Gutters in Highland City",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/highland-city-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters highland city fl",
+      "category_variant": "Rain Gutters",
+      "faq": [
+        "1 · Local cost or decision: Do Highland City subdivisions have HOA rules on gutter colour?",
+        "2 · Logistics here: Who issues permits for gutter work at a Highland City address — Polk County (unincorporated)? (and whether gutter work needs one)",
+        "3 · Trust here: How do Highland City's storms and oaks clog gutters?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-highland-city.grid.md",
+        "sha": "2ebb51059dd7",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-highland-city.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-highland-city.json",
+        "sha": "8a5dce4d7b57",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-west",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 8,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 46
+        }
+      }
+    },
+    "loc-mulberry": {
+      "state": "planned",
+      "type": "location",
+      "name": "Mulberry",
+      "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/",
+      "group": "West and north Polk",
+      "city": "Mulberry",
+      "h1": "Seamless Gutters in Mulberry",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/mulberry-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters mulberry fl",
+      "category_variant": "Seamless Gutters",
+      "faq": [
+        "1 · Local cost or decision: What changes the cost of gutters on older Mulberry homes?",
+        "2 · Logistics here: Who issues permits for gutter work at a Mulberry address — City of Mulberry? (and whether gutter work needs one)",
+        "3 · Trust here: What gutter problems are most common in Mulberry homes?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 3,
+          "Unverified": 3,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-mulberry.grid.md",
+        "sha": "53bc595c956a",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-mulberry.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-mulberry.json",
+        "sha": "5749687594b6",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-west",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 5,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 3,
+          "excerpts": 43
+        }
+      }
+    },
+    "loc-eagle-lake": {
+      "state": "planned",
+      "type": "location",
+      "name": "Eagle Lake",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/",
+      "group": "West and north Polk",
+      "city": "Eagle Lake",
+      "h1": "Rain Gutters in Eagle Lake",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/eagle-lake-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters eagle lake fl",
+      "category_variant": "Rain Gutters",
+      "faq": [
+        "1 · Local cost or decision: Where should downspouts drain on lakefront lots in Eagle Lake?",
+        "2 · Logistics here: Who issues permits for gutter work at a Eagle Lake address — City of Eagle Lake? (and whether gutter work needs one)",
+        "3 · Trust here: How do Eagle Lake's summer storms test gutter capacity?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-eagle-lake.grid.md",
+        "sha": "7130390fdece",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-eagle-lake.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-eagle-lake.json",
+        "sha": "b2e448a0bef2",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-west",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 5,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 43
+        }
+      }
+    },
+    "loc-wahneta": {
+      "state": "planned",
+      "type": "location",
+      "name": "Wahneta",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/",
+      "group": "West and north Polk",
+      "city": "Wahneta",
+      "h1": "Seamless Gutters in Wahneta",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/wahneta-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters wahneta fl",
+      "category_variant": "Seamless Gutters",
+      "faq": [
+        "1 · Local cost or decision: What changes the price of gutters on smaller Wahneta homes?",
+        "2 · Logistics here: Who issues permits for gutter work at a Wahneta address — Polk County (unincorporated)? (and whether gutter work needs one)",
+        "3 · Trust here: What gutter problems do Wahneta homeowners run into most?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 3,
+          "Unverified": 3,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-wahneta.grid.md",
+        "sha": "bc550f7a6a70",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-wahneta.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-wahneta.json",
+        "sha": "deca196b2fcf",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-west",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 4,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 3,
+          "excerpts": 42
+        }
+      }
+    },
+    "loc-davenport": {
+      "state": "planned",
+      "type": "location",
+      "name": "Davenport",
+      "url": "https://www.firstchoiceseamlessgutters.net/davenport-fl/",
+      "group": "East Ridge and south Polk",
+      "city": "Davenport",
+      "h1": "Rain Gutters in Davenport",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/davenport-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters davenport fl",
+      "category_variant": "Rain Gutters",
+      "faq": [
+        "1 · Local cost or decision: Do Davenport vacation-home communities need ARB approval for gutters?",
+        "2 · Logistics here: Who issues permits for gutter work at a Davenport address — City of Davenport? (and whether gutter work needs one)",
+        "3 · Trust here: How do Davenport rental-home owners keep gutters maintained while away?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-davenport.grid.md",
+        "sha": "d3dc46707ccc",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-davenport.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-davenport.json",
+        "sha": "4e22c769925c",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-east",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 4,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 42
+        }
+      }
+    },
+    "loc-haines-city": {
+      "state": "planned",
+      "type": "location",
+      "name": "Haines City",
+      "url": "https://www.firstchoiceseamlessgutters.net/haines-city-fl/",
+      "group": "East Ridge and south Polk",
+      "city": "Haines City",
+      "h1": "Seamless Gutters in Haines City",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/haines-city-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters haines city fl",
+      "category_variant": "Seamless Gutters",
+      "faq": [
+        "1 · Local cost or decision: Do Haines City HOA communities restrict gutter colour or style?",
+        "2 · Logistics here: Who issues permits for gutter work at a Haines City address — City of Haines City? (and whether gutter work needs one)",
+        "3 · Trust here: What do Haines City homeowners ask most about gutter overflow?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-haines-city.grid.md",
+        "sha": "e118a640ff6f",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-haines-city.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-haines-city.json",
+        "sha": "cbede986eb8e",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-east",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 6,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 44
+        }
+      }
+    },
+    "loc-lake-alfred": {
+      "state": "planned",
+      "type": "location",
+      "name": "Lake Alfred",
+      "url": "https://www.firstchoiceseamlessgutters.net/lake-alfred-fl/",
+      "group": "East Ridge and south Polk",
+      "city": "Lake Alfred",
+      "h1": "Rain Gutters in Lake Alfred",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-alfred-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters lake alfred fl",
+      "category_variant": "Rain Gutters",
+      "faq": [
+        "1 · Local cost or decision: What changes the gutter job on older Lake Alfred homes near the lakes?",
+        "2 · Logistics here: Who issues permits for gutter work at a Lake Alfred address — City of Lake Alfred? (and whether gutter work needs one)",
+        "3 · Trust here: How do Lake Alfred storms and citrus-belt trees affect gutters?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lake-alfred.grid.md",
+        "sha": "39bba80529a6",
+        "at": "2026-10-24T20:29:11-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-alfred.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-alfred.json",
+        "sha": "ae003366c82d",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-east",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 4,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 42
+        }
+      }
+    },
+    "loc-lake-hamilton": {
+      "state": "planned",
+      "type": "location",
+      "name": "Lake Hamilton",
+      "url": "https://www.firstchoiceseamlessgutters.net/lake-hamilton-fl/",
+      "group": "East Ridge and south Polk",
+      "city": "Lake Hamilton",
+      "h1": "Seamless Gutters in Lake Hamilton",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-hamilton-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters lake hamilton fl",
+      "category_variant": "Seamless Gutters",
+      "faq": [
+        "1 · Local cost or decision: Where should downspouts drain on Lake Hamilton lakefront lots?",
+        "2 · Logistics here: Who issues permits for gutter work at a Lake Hamilton address — Town of Lake Hamilton? (and whether gutter work needs one)",
+        "3 · Trust here: What gutter problems are common around Lake Hamilton?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lake-hamilton.grid.md",
+        "sha": "4c8fa79ae597",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-hamilton.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-hamilton.json",
+        "sha": "bced44287206",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-east",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 4,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 42
+        }
+      }
+    },
+    "loc-dundee": {
+      "state": "planned",
+      "type": "location",
+      "name": "Dundee",
+      "url": "https://www.firstchoiceseamlessgutters.net/dundee-fl/",
+      "group": "East Ridge and south Polk",
+      "city": "Dundee",
+      "h1": "Rain Gutters in Dundee",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/dundee-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters dundee fl",
+      "category_variant": "Rain Gutters",
+      "faq": [
+        "1 · Local cost or decision: What changes the gutter price on Dundee's ridge homes?",
+        "2 · Logistics here: Who issues permits for gutter work at a Dundee address — Town of Dundee? (and whether gutter work needs one)",
+        "3 · Trust here: How do Dundee's summer storms affect gutters on ridge-top homes?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-dundee.grid.md",
+        "sha": "bfb823ce1d37",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-dundee.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-dundee.json",
+        "sha": "5a09298e2f58",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-east",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 5,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 43
+        }
+      }
+    },
+    "loc-lake-wales": {
+      "state": "planned",
+      "type": "location",
+      "name": "Lake Wales",
+      "url": "https://www.firstchoiceseamlessgutters.net/lake-wales-fl/",
+      "group": "East Ridge and south Polk",
+      "city": "Lake Wales",
+      "h1": "Seamless Gutters in Lake Wales",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-wales-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters lake wales fl",
+      "category_variant": "Seamless Gutters",
+      "faq": [
+        "1 · Local cost or decision: Does a Lake Wales historic district limit gutter choices? (verify)",
+        "2 · Logistics here: Who issues permits for gutter work at a Lake Wales address — City of Lake Wales? (and whether gutter work needs one)",
+        "3 · Trust here: Why do Lake Wales Ridge homes see more wind-driven rain at the gutters?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lake-wales.grid.md",
+        "sha": "62d6b6f452a4",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-wales.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-wales.json",
+        "sha": "6a4fba135dd0",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-east",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 7,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 45
+        }
+      }
+    },
+    "loc-waverly": {
+      "state": "planned",
+      "type": "location",
+      "name": "Waverly",
+      "url": "https://www.firstchoiceseamlessgutters.net/waverly-fl/",
+      "group": "East Ridge and south Polk",
+      "city": "Waverly",
+      "h1": "Rain Gutters in Waverly",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/waverly-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters waverly fl",
+      "category_variant": "Rain Gutters",
+      "faq": [
+        "1 · Local cost or decision: What changes the gutter job on Waverly's rural homes?",
+        "2 · Logistics here: Who issues permits for gutter work at a Waverly address — Polk County (unincorporated)? (and whether gutter work needs one)",
+        "3 · Trust here: How quickly can First Choice reach Waverly? (client facts only)"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-waverly.grid.md",
+        "sha": "df2a82cf62e3",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-waverly.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-waverly.json",
+        "sha": "731350db6105",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-east",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 3,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 41
+        }
+      }
+    },
+    "loc-frostproof": {
+      "state": "planned",
+      "type": "location",
+      "name": "Frostproof",
+      "url": "https://www.firstchoiceseamlessgutters.net/frostproof-fl/",
+      "group": "East Ridge and south Polk",
+      "city": "Frostproof",
+      "h1": "Seamless Gutters in Frostproof",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/frostproof-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters frostproof fl",
+      "category_variant": "Seamless Gutters",
+      "faq": [
+        "1 · Local cost or decision: What drives gutter cost on Frostproof homes near Lake Clinch and Reedy Lake?",
+        "2 · Logistics here: Who issues permits for gutter work at a Frostproof address — City of Frostproof? (and whether gutter work needs one)",
+        "3 · Trust here: Does First Choice serve Frostproof at the south edge of Polk County? (client facts only)"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-frostproof.grid.md",
+        "sha": "1ae1c492c4b3",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-frostproof.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-frostproof.json",
+        "sha": "70d400fb3169",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-east",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 4,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 42
+        }
+      }
+    },
+    "loc-fort-meade": {
+      "state": "planned",
+      "type": "location",
+      "name": "Fort Meade",
+      "url": "https://www.firstchoiceseamlessgutters.net/fort-meade-fl/",
+      "group": "East Ridge and south Polk",
+      "city": "Fort Meade",
+      "h1": "Rain Gutters in Fort Meade",
+      "replaces": [
+        "https://www.firstchoiceseamlessgutters.net/areas-we-serve/fort-meade-fl/"
+      ],
+      "claims": [],
+      "keyword": "gutters fort meade fl",
+      "category_variant": "Rain Gutters",
+      "faq": [
+        "1 · Local cost or decision: Which gutters suit Fort Meade's older and historic homes? (verify)",
+        "2 · Logistics here: Who issues permits for gutter work at a Fort Meade address — City of Fort Meade? (and whether gutter work needs one)",
+        "3 · Trust here: What gutter problems are common in Fort Meade homes?"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 4,
+          "Conflict": 0
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-fort-meade.grid.md",
+        "sha": "94f6c0c27524",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "emergency"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-fort-meade.md",
+        "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-fort-meade.json",
+        "sha": "f7aae45b4ffc",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "locations-east",
+        "counts": {
+          "facts": 43,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 5,
+          "public": 0,
+          "place": 0,
+          "settled": 0,
+          "gaps": 2,
+          "excerpts": 43
+        }
+      }
+    },
+    "about": {
+      "state": "planned",
+      "type": "about",
+      "name": "About",
+      "url": "https://www.firstchoiceseamlessgutters.net/about/",
+      "claims": [],
+      "category_variant": "Gutter Contractor",
+      "area_variant": "Lakeland–Winter Haven",
+      "faq": [],
+      "evidence": {
+        "result": "warn",
+        "counts": {
+          "Known": 5,
+          "Unknown": 2,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [
+          "1 required and 2 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+        ],
+        "grid": "clients/first-choice-seamless-gutters/build/evidence/about.grid.md",
+        "sha": "b6d261c24b0d",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "gaps": [
+          "company_story",
+          "certifications",
+          "team"
+        ]
+      },
+      "pack": {
+        "file": "clients/first-choice-seamless-gutters/build/about/packs/about.md",
+        "json": "clients/first-choice-seamless-gutters/build/about/packs/about.json",
+        "sha": "a553f1f2a1da",
+        "at": "2026-10-24T20:29:12-05:00",
+        "run": "20261024-202120-build-2ab2",
+        "section": "about",
+        "counts": {
+          "facts": 42,
+          "review_topics": 9,
+          "review_excerpts": 38,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 2,
+          "excerpts": 38
+        }
+      }
+    }
+  },
+  "build": {
+    "site_plan": {
+      "file": "clients/first-choice-seamless-gutters/build/First Choice Seamless Gutters - Site Plan - REVIEW.md",
+      "approval": null
+    },
+    "batches": [
+      {
+        "id": "pilot",
+        "kind": "service",
+        "label": "Pilot — Gutter Cleaning + Lakeland",
+        "pages": [
+          "svc-gutter-cleaning",
+          "loc-lakeland"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "route": "outline",
+        "files": {}
+      },
+      {
+        "id": "services",
+        "kind": "service",
+        "label": "All service pages",
+        "pages": [
+          "svc-seamless-gutter-installation",
+          "svc-gutter-installation",
+          "svc-gutter-repair",
+          "svc-commercial-gutters",
+          "svc-gutter-downspouts",
+          "svc-gutter-guards",
+          "svc-copper-gutters",
+          "svc-galvalume-gutters",
+          "svc-aluminum-gutters"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "route": "outline",
+        "files": {}
+      },
+      {
+        "id": "locations-west",
+        "kind": "location",
+        "label": "Location pages — West and north Polk",
+        "pages": [
+          "loc-winter-haven",
+          "loc-auburndale",
+          "loc-bartow",
+          "loc-polk-city",
+          "loc-kathleen",
+          "loc-highland-city",
+          "loc-mulberry",
+          "loc-eagle-lake",
+          "loc-wahneta"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "route": "outline",
+        "files": {}
+      },
+      {
+        "id": "locations-east",
+        "kind": "location",
+        "label": "Location pages — East Ridge and south Polk",
+        "pages": [
+          "loc-davenport",
+          "loc-haines-city",
+          "loc-lake-alfred",
+          "loc-lake-hamilton",
+          "loc-dundee",
+          "loc-lake-wales",
+          "loc-waverly",
+          "loc-frostproof",
+          "loc-fort-meade"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "route": "outline",
+        "files": {}
+      },
+      {
+        "id": "about",
+        "kind": "about",
+        "label": "About page (last)",
+        "pages": [
+          "about"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "route": "outline",
+        "files": {}
+      }
+    ],
+    "pilot_corrections_applied": null
+  },
   "audit_steps": {
     "S01": {
       "outcome": "done",
@@ -313,16 +2331,16 @@
     }
   },
   "last_run": {
-    "run_id": "20261024-201520-discovery-2ca6",
-    "command": "discovery",
-    "finished": "2026-10-24T20:17:44-05:00",
-    "result": "Brand Guide revised for Paul's answers: Plant City kept not served; Gutter Maintenance consolidated into Repair and Cleaning (301 to closer page, Build)",
-    "changes": 2,
-    "step": "discovery:reconcile",
+    "run_id": "20261024-202120-build-2ab2",
+    "command": "build",
+    "finished": "2026-10-24T20:30:37-05:00",
+    "result": "Site plan registered: 30 pages (10 service, 19 location, 1 about) in 5 batches with pilot; root-slug URLs with 301s; 2 open choices for Paul; flag F-007 (viability before research)",
+    "changes": 3,
+    "step": "build:plan",
     "batch": null
   },
   "spend": {
-    "dataforseo_usd": 0.250668
+    "dataforseo_usd": 0.262668
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
@@ -339,7 +2357,7 @@
     "next": "We are planning every service and location page."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T20:20:14-05:00",
+  "updated": "2026-10-24T20:30:37-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -729,6 +2747,34 @@
         "main": 0.0108,
         "discovery-audit": 0.8884
       }
+    },
+    {
+      "run": "20261024-202120-build-2ab2",
+      "step": "build:plan",
+      "tokens": 8630620,
+      "usd": 2.566,
+      "at": "2026-10-24T20:30:37-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0042,
+          "in": 6,
+          "out": 1685,
+          "cache_read": 280980,
+          "cache_write": 2827
+        },
+        "claude-opus-5-5": {
+          "usd": 2.5618,
+          "in": 106,
+          "out": 1477,
+          "cache_read": 8163718,
+          "cache_write": 179821
+        }
+      },
+      "by_agent": {
+        "main": 0.0042,
+        "build": 2.5618
+      }
     }
   ],
   "sessions": {
@@ -767,6 +2813,12 @@
       "step": "discovery:reconcile",
       "first_run": "20261024-201520-discovery-2ca6",
       "at": "2026-10-24T20:17:44-05:00"
+    },
+    "ef220716-a92e-41ef-a4f9-7514a7b5c6e8": {
+      "key": "build-plan",
+      "step": "build:plan",
+      "first_run": "20261024-202120-build-2ab2",
+      "at": "2026-10-24T20:30:37-05:00"
     }
   },
   "wordpress": {
@@ -812,5 +2864,10 @@
   "blocker_handoffs": [
     "H-2026-10-23-03-broken_link",
     "H-2026-10-23-04-other"
-  ]
+  ],
+  "review_pause": {
+    "run_id": "20261024-202120-build-2ab2",
+    "step": "build:plan",
+    "at": "2026-10-24T20:30:37-05:00"
+  }
 }

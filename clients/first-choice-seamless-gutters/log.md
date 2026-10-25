@@ -761,3 +761,78 @@ Approved version: clients/first-choice-seamless-gutters/brand-guide.md (sha 1245
 - CHANGE #173 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (3).md | new: First Choice Seamless Gutters - Document Checklist.md · sha a08cd91b7005 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #174 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (3).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (3).md | result: done · renamed and moved, nothing deleted
 - CHANGE #175 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (3).md | new: First Choice Seamless Gutters - Status.md · sha a0f34af91290 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261024-202120-build-2ab2 · STARTED · /build · 2026-10-24T20:21:20-05:00
+Step: build:plan · session ef220716-a92e-41ef-a4f9-7514a7b5c6e8
+Gates checked: discovery_signed_off
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · svc-gutter-cleaning: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-lakeland: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · svc-seamless-gutter-installation: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · svc-gutter-installation: BLOCK (known 7, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · svc-gutter-repair: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · svc-commercial-gutters: BLOCK (known 7, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · svc-gutter-downspouts: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · svc-gutter-guards: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · svc-copper-gutters: BLOCK (known 7, unknown 1, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · svc-galvalume-gutters: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · svc-aluminum-gutters: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-winter-haven: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-auburndale: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-bartow: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-polk-city: BLOCK (known 4, unknown 3, unverified 3, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-kathleen: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-highland-city: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-mulberry: BLOCK (known 4, unknown 3, unverified 3, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-eagle-lake: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-wahneta: BLOCK (known 4, unknown 3, unverified 3, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-davenport: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-haines-city: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-lake-alfred: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-lake-hamilton: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-dundee: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-lake-wales: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-waverly: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-frostproof: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · loc-fort-meade: BLOCK (known 4, unknown 2, unverified 4, conflict 0)
+- EVIDENCE 2026-10-24T20:29 · run 20261024-202120-build-2ab2 · about: WARN (known 5, unknown 2, unverified 1, conflict 0)
+- FLAG 2026-10-24T20:30 · run 20261024-202120-build-2ab2 · F-007 · Viability check (evidence_pack.py viability) runs in build:plan before the facts round's research, with no place store (methodology/places/ missing) and no FL source list; it proposed merges for 17 of 19 unresearched Polk towns. location-faq.md §8 allows a merge only when public facts are logged not_found — the order is wrong for a new state/industry. · workaround: Kept all 19 locations in the plan; merge proposals reported as premature; re-run viability after /build facts and bring any real merge to Paul as a kind-1 Ask.
+- OPEN plan_unincorporated_pages · 2026-10-24T20:30:16-05:00 · run 20261024-202120-build-2ab2 · by Paul · Site plan choice A: keep the Highland City, Kathleen, Wahneta and Waverly location pages (recommended; approved Decision Map says rebuild) or merge each into the nearest city page with a 301 (client's proof-sheet note).
+- OPEN plan_lakeland_highlands_page · 2026-10-24T20:30:16-05:00 · run 20261024-202120-build-2ab2 · by Paul · Site plan choice B: Lakeland Highlands (on the GBP list, no page) — no page, named in Lakeland's local context (recommended), or a new location page.
+- CHANGE #176 [site_plan] local:clients/first-choice-seamless-gutters/build/site-plan.json | file | old:  | new:  | result: created | snapshots  clients/first-choice-seamless-gutters/snapshots/20261024-202120-build-2ab2/0176-new.json
+- CHANGE #177 [site_plan] local:clients/first-choice-seamless-gutters/build/First Choice Seamless Gutters - Site Plan - REVIEW.md | file | old:  | new:  | result: created | snapshots  clients/first-choice-seamless-gutters/snapshots/20261024-202120-build-2ab2/0177-new.md
+- CHANGE #178 [paa_routing] local:clients/first-choice-seamless-gutters/data/paa/paa-routing.md | Intent/Route/Note | old:  | new:  | result: filled 59 rows (46 service FAQ, 11 drop, 2 blog)
+### HANDOFF · /build · 2026-10-24 · run 20261024-202120-build-2ab2
+- Site plan registered (status.py plan): `build/First Choice Seamless Gutters - Site Plan - REVIEW.md` + `build/site-plan.json`.
+- 30 pages: 10 service, 19 location, 1 About; no county hub (F-016); homepage stays on its light-fix route (H1 lock).
+- Batches: pilot (Gutter Cleaning + Lakeland; pilot needed — new industry), services 9, locations-west 9, locations-east 9, about 1.
+- URLs: all 29 service/location URLs move to root slugs (folders dropped, slugs kept); each lists its live URL in `replaces`
+  so the 301s ship with publish. urlcheck passes.
+- Gutter Maintenance → 301 to /gutter-cleaning/ (closer page; listed in that row's `replaces`). Plant City not in plan (F-015 hold).
+- "The Best" (CM-020): yes on Gutter Cleaning and Gutter Guards; no elsewhere. 6 SERP calls, $0.012 (data/rankings/raw/best-serp/).
+- PAA routing filled in data/paa/paa-routing.md: 46 service FAQ, 11 drop, 2 blog. No fan-out file exists.
+- CM-013: 3 B2 area variants for 10 service pages (variant list exhausted — reuse is correct per CM-024).
+- Evidence gate run --all: 29 BLOCK, About WARN (expected before the facts round).
+- Viability: Lakeland and Winter Haven viable; 17 others marked "merge proposal" only because no place research exists yet.
+  Plan keeps all 19; re-run viability after /build facts. Flag F-007 raised (ordering).
+- Link wheel: 722 rows, wheel check 0 errors, 0 kind-1 Asks.
+- Open choices for Paul (asked): plan_unincorporated_pages (recommend keep), plan_lakeland_highlands_page (recommend no page).
+- Next: Paul reviews and approves `/approve first-choice-seamless-gutters site_plan`; then `/build facts`.
+
+**Changes (script):** 3 — site_plan ×2, paa_routing ×1
+- FLAG 2026-10-24T20:30 · run 20261024-202120-build-2ab2 · F-007 · Viability check (evidence_pack.py viability) runs in build:plan before the facts round's research, with no place store (methodology/…
+### END HANDOFF
+## RUN 20261024-202120-build-2ab2 · FINISHED · 2026-10-24T20:30:37-05:00
+Changes: 3 · Summary: Site plan registered: 30 pages (10 service, 19 location, 1 about) in 5 batches with pilot; root-slug URLs with 301s; 2 open choices for Paul; flag F-007 (viability before research)
+Spend: 8630620 tokens · $2.57 (measured)
+- CHANGE #179 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (2).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #180 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-24 (2).md | new: First Choice Seamless Gutters - Handoff Log.md · sha e9574c8faac5 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #181 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Approval Record - 2026-10-24 (2).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Approval Record.md | new: _Archive/First Choice Seamless Gutters - Approval Record - 2026-10-24 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #182 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Approval Record.md | upload | old: previous version archived as First Choice Seamless Gutters - Approval Record - 2026-10-24 (2).md | new: First Choice Seamless Gutters - Approval Record.md · sha b179d87623a9 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #183 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (4).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #184 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (4).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 21546763dc74 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #185 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (4).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #186 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (4).md | new: First Choice Seamless Gutters - Status.md · sha d3cbc56828c2 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #187 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-24.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | new: _Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-24.md | result: done · renamed and moved, nothing deleted
+- CHANGE #188 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | upload | old: previous version archived as First Choice Seamless Gutters - VA Worklist - 2026-10-24.md | new: First Choice Seamless Gutters - VA Worklist.md · sha edee51ec28a2 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #189 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-23 (3).csv | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.csv | new: _Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-23 (3).csv | result: done · renamed and moved, nothing deleted
+- CHANGE #190 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.csv | upload | old: previous version archived as First Choice Seamless Gutters - VA Worklist - 2026-10-23 (3).csv | new: First Choice Seamless Gutters - VA Worklist.csv · sha 3f5ca4199cf4 | result: done · copied (Drive for desktop syncs it)

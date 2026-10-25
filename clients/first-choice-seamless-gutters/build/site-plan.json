@@ -1,0 +1,767 @@
+{
+ "client": "first-choice-seamless-gutters",
+ "run": "20261024-202120-build-2ab2",
+ "date": "2026-10-24",
+ "pages": [
+  {
+   "id": "svc-seamless-gutter-installation",
+   "type": "service",
+   "name": "Seamless Gutter Installation",
+   "url": "https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/services/seamless-gutter-installation/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/services/seamless-gutter-installation/"
+   ],
+   "group": "Installation",
+   "service_variant": "Continuous Rain Gutters",
+   "keyword": "seamless gutter installation",
+   "h1": "Continuous Rain Gutters in Polk County, Florida",
+   "area_variant": "Polk County, Florida",
+   "title": "Seamless Gutter Installation - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "How can you tell if gutters are seamless? — PAA #40; the page's own product, answers what the buyer is paying for",
+    "What are the downsides of seamless gutters? — PAA #10; honest trade-off question asked before buying",
+    "How are seamless gutters made? — PAA #38 reframed (not DIY); explains one continuous run cut to length",
+    "What is the highest rated gutter system for a home? — PAA #2 (seen 4); answered by system type, no brand ranking"
+   ],
+   "claims": []
+  },
+  {
+   "id": "svc-gutter-installation",
+   "type": "service",
+   "name": "Gutter Installation",
+   "url": "https://www.firstchoiceseamlessgutters.net/gutter-installation/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/services/gutter-installation/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/services/gutter-installation/"
+   ],
+   "group": "Installation",
+   "service_variant": "Gutter Replacement",
+   "keyword": "gutter installation",
+   "h1": "Gutter Replacement in Lakeland–Winter Haven",
+   "area_variant": "Lakeland–Winter Haven",
+   "title": "Gutter Installation - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "When should house gutters be replaced? — PAA #41; the replacement decision this page owns",
+    "What do new rain gutters cost in Florida? — PAA #1 (seen 5) with #33/#47/#59/#15 merged; names the cost drivers, no price unless confirmed",
+    "Is it common for a house not to have gutters? — PAA #39; first-time installs on Polk homes without gutters",
+    "Can I install my own gutters? — PAA #12; DIY versus professional install",
+    "How is a gutter installation estimate worked out? — PAA #11; ties to the confirmed free on-site estimate"
+   ],
+   "claims": []
+  },
+  {
+   "id": "svc-gutter-repair",
+   "type": "service",
+   "name": "Gutter Repair",
+   "url": "https://www.firstchoiceseamlessgutters.net/gutter-repair/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/services/gutter-repair/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/services/gutter-repair/"
+   ],
+   "group": "Repair and upkeep",
+   "service_variant": "Leaking and Sagging Gutter Repair",
+   "keyword": "gutter repair",
+   "h1": "Leaking and Sagging Gutter Repair in Polk County, Florida",
+   "area_variant": "Polk County, Florida",
+   "title": "Gutter Repair - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "How much does it cost to fix gutters? — PAA #13; cost question, names what drives the cost",
+    "What is the most common problem with gutters? — PAA #24; leaks, sagging, loose hangers",
+    "Can a handyman fix a gutter? — PAA #14; when a repair needs a gutter contractor",
+    "Should a damaged gutter be repaired or replaced? — competitor coverage (H2O Gutters, Angi); the repair-versus-replace decision",
+    "What does routine gutter maintenance include? — folded Gutter Maintenance scope (settled audit_gutter_maintenance): hangers, resealing, slope checks"
+   ],
+   "claims": []
+  },
+  {
+   "id": "svc-commercial-gutters",
+   "type": "service",
+   "name": "Commercial Gutters",
+   "url": "https://www.firstchoiceseamlessgutters.net/commercial-gutters/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/services/commercial-gutters/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/services/commercial-gutters/"
+   ],
+   "group": "Specialty",
+   "service_variant": "Commercial Gutter Systems",
+   "keyword": "commercial gutters",
+   "h1": "Commercial Gutter Systems in Lakeland–Winter Haven metropolitan area",
+   "area_variant": "Lakeland–Winter Haven metropolitan area",
+   "title": "Commercial Gutters - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "What are commercial-grade gutters? — PAA #16; defines the product this page owns",
+    "What is the difference between box gutters and K-style gutters on a commercial roof? — competitor coverage (commercial box gutters)",
+    "What size gutters does a large commercial roof need? — sizing question for big roof areas, from the commercial PAA set",
+    "How long does a commercial gutter installation take? — logistics question for business owners [NEED: client practice]"
+   ],
+   "claims": []
+  },
+  {
+   "id": "svc-gutter-downspouts",
+   "type": "service",
+   "name": "Gutter Downspouts",
+   "url": "https://www.firstchoiceseamlessgutters.net/gutter-downspouts/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/services/gutter-downspouts/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/services/gutter-downspouts/"
+   ],
+   "group": "Repair and upkeep",
+   "service_variant": "Downspout Installation and Drainage",
+   "keyword": "gutter downspouts",
+   "h1": "Downspout Installation and Drainage in Polk County, Florida",
+   "area_variant": "Polk County, Florida",
+   "title": "Gutter Downspouts - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "What is the rule of thumb for how many downspouts a gutter needs? — PAA #46",
+    "Can you put a 3x4 downspout on a 5-inch gutter? — PAA #17 (commercial query, sizing belongs here)",
+    "What can I use instead of a downspout? — PAA #6 (seen 2); rain chains, extensions, buried drains",
+    "How much does it cost to replace a downspout? — PAA #18 with #45 merged; names the cost drivers",
+    "Where should downspouts drain on a Florida lot? — sandy-soil erosion and foundation question from the downspouts set"
+   ],
+   "claims": []
+  },
+  {
+   "id": "svc-gutter-guards",
+   "type": "service",
+   "name": "Gutter Guards",
+   "url": "https://www.firstchoiceseamlessgutters.net/gutter-guards/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/services/gutter-guards/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/services/gutter-guards/"
+   ],
+   "group": "Repair and upkeep",
+   "service_variant": "Gutter Protection Systems",
+   "keyword": "gutter guards",
+   "h1": "The Best Gutter Protection Systems in Lakeland–Winter Haven",
+   "area_variant": "Lakeland–Winter Haven",
+   "title": "Gutter Guards - First Choice Seamless Gutters",
+   "the_best": true,
+   "faq": [
+    "What are the downsides of gutter guards? — PAA #7 (seen 2); honest trade-off",
+    "How much should I expect to pay for gutter guards? — PAA #21 with #49 merged; names the cost drivers",
+    "What is the difference between a leaf guard and a gutter guard? — PAA #50",
+    "What do roofers say about gutter guards? — PAA #53; shingle and warranty concerns"
+   ],
+   "claims": []
+  },
+  {
+   "id": "svc-gutter-cleaning",
+   "type": "service",
+   "name": "Gutter Cleaning",
+   "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/services/gutter-cleaning/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/services/gutter-cleaning/",
+    "https://www.firstchoiceseamlessgutters.net/services/gutter-maintenance/"
+   ],
+   "group": "Repair and upkeep",
+   "service_variant": "Gutter and Downspout Cleaning",
+   "keyword": "gutter cleaning",
+   "h1": "The Best Gutter and Downspout Cleaning in Polk County, Florida",
+   "area_variant": "Polk County, Florida",
+   "title": "Gutter Cleaning - First Choice Seamless Gutters",
+   "the_best": true,
+   "faq": [
+    "How much does gutter cleaning cost? — PAA #9 with #51/#55 merged (seen 4); names the cost drivers, no price unless confirmed",
+    "What is the best time of year to clean gutters in Florida? — PAA #27 with #52/#54 merged; Florida has no leaf-fall winter",
+    "How often should gutters be cleaned in Polk County? — competitor coverage (H2O Gutters) and the folded maintenance scope",
+    "What are the signs gutters need cleaning? — competitor coverage (Men In Kilts)",
+    "Do telescopic gutter cleaners work? — PAA #25; DIY tool versus professional cleaning"
+   ],
+   "claims": []
+  },
+  {
+   "id": "svc-copper-gutters",
+   "type": "service",
+   "name": "Copper Gutters",
+   "url": "https://www.firstchoiceseamlessgutters.net/copper-gutters/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/services/copper-gutters/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/services/copper-gutters/"
+   ],
+   "group": "Materials",
+   "service_variant": "Copper Gutter Systems",
+   "keyword": "copper gutters",
+   "h1": "Copper Gutter Systems in Lakeland–Winter Haven",
+   "area_variant": "Lakeland–Winter Haven",
+   "title": "Copper Gutters - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "How long do copper gutters last? — PAA #30",
+    "Are copper gutters worth the cost? — PAA #57 with #28/#56/#58 merged; names the cost drivers",
+    "Can copper and aluminum gutters be mixed? — PAA #29; galvanic corrosion",
+    "Should copper gutters be soldered? — PAA #31"
+   ],
+   "claims": []
+  },
+  {
+   "id": "svc-galvalume-gutters",
+   "type": "service",
+   "name": "Galvalume Gutters",
+   "url": "https://www.firstchoiceseamlessgutters.net/galvalume-gutters/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/services/galvalume-gutters/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/services/galvalume-gutters/"
+   ],
+   "group": "Materials",
+   "service_variant": "Galvalume Steel Gutters",
+   "keyword": "galvalume gutters",
+   "h1": "Galvalume Steel Gutters in Polk County, Florida",
+   "area_variant": "Polk County, Florida",
+   "title": "Galvalume Gutters - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "What is the best gutter material for Florida homes? — PAA #32; Galvalume page answers the material choice",
+    "Are Galvalume gutters better than aluminum or galvanized gutters? — PAA #34",
+    "What is Galvalume steel? — definition the buyer needs first",
+    "Do Galvalume gutters rust in Florida humidity? — coverage (aluminum FAQ 'do gutters rust') reframed for steel"
+   ],
+   "claims": []
+  },
+  {
+   "id": "svc-aluminum-gutters",
+   "type": "service",
+   "name": "Aluminum Gutters",
+   "url": "https://www.firstchoiceseamlessgutters.net/aluminum-gutters/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/services/aluminum-gutters/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/services/aluminum-gutters/"
+   ],
+   "group": "Materials",
+   "service_variant": "Aluminum Rain Gutters",
+   "keyword": "aluminum gutters",
+   "h1": "Aluminum Rain Gutters in Lakeland–Winter Haven",
+   "area_variant": "Lakeland–Winter Haven",
+   "title": "Aluminum Gutters - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "Are aluminum gutters good? — PAA #35",
+    "What is the difference between .027 and .032 aluminum gutters? — PAA #36",
+    "Do aluminum gutters rust? — competitor coverage (Gutter Supply FAQ)",
+    "What do aluminum gutters cost for a home? — PAA #37; names the cost drivers"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-lakeland",
+   "type": "location",
+   "name": "Lakeland",
+   "city": "Lakeland",
+   "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/lakeland-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/lakeland-fl/"
+   ],
+   "group": "West and north Polk",
+   "keyword": "gutters lakeland fl",
+   "h1": "Rain Gutters in Lakeland",
+   "category_variant": "Rain Gutters",
+   "title": "Gutter Contractor in Lakeland, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: Does a Lakeland historic district or HOA limit gutter colour or profile? (Lakeland has locally designated historic districts — verify)",
+    "2 · Logistics here: Who issues permits for gutter work at a Lakeland address — City of Lakeland? (and whether gutter work needs one)",
+    "3 · Trust here: How do Lakeland's tree canopy and summer storms affect gutters? (base town, client confirmed)"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-winter-haven",
+   "type": "location",
+   "name": "Winter Haven",
+   "city": "Winter Haven",
+   "url": "https://www.firstchoiceseamlessgutters.net/winter-haven-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/winter-haven-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/winter-haven-fl/"
+   ],
+   "group": "West and north Polk",
+   "keyword": "gutters winter haven fl",
+   "h1": "Seamless Gutters in Winter Haven",
+   "category_variant": "Seamless Gutters",
+   "title": "Gutter Contractor in Winter Haven, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: Where should downspouts discharge on a Chain of Lakes lakefront lot in Winter Haven?",
+    "2 · Logistics here: Who issues permits for gutter work at a Winter Haven address — City of Winter Haven? (and whether gutter work needs one)",
+    "3 · Trust here: How do summer afternoon storms overload gutters on Winter Haven homes?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-auburndale",
+   "type": "location",
+   "name": "Auburndale",
+   "city": "Auburndale",
+   "url": "https://www.firstchoiceseamlessgutters.net/auburndale-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/auburndale-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/auburndale-fl/"
+   ],
+   "group": "West and north Polk",
+   "keyword": "gutters auburndale fl",
+   "h1": "Rain Gutters in Auburndale",
+   "category_variant": "Rain Gutters",
+   "title": "Gutter Contractor in Auburndale, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: Do Auburndale HOA subdivisions need approval for new gutter colours?",
+    "2 · Logistics here: Who issues permits for gutter work at a Auburndale address — City of Auburndale? (and whether gutter work needs one)",
+    "3 · Trust here: What wears out gutters and fascia on older Auburndale block homes?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-bartow",
+   "type": "location",
+   "name": "Bartow",
+   "city": "Bartow",
+   "url": "https://www.firstchoiceseamlessgutters.net/bartow-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/bartow-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/bartow-fl/"
+   ],
+   "group": "West and north Polk",
+   "keyword": "gutters bartow fl",
+   "h1": "Seamless Gutters in Bartow",
+   "category_variant": "Seamless Gutters",
+   "title": "Gutter Contractor in Bartow, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: Which gutter profile suits Bartow's historic homes? (Bartow historic district — verify)",
+    "2 · Logistics here: Who issues permits for gutter work at a Bartow address — City of Bartow? (and whether gutter work needs one)",
+    "3 · Trust here: What damage do Bartow's heavy summer rains do to undersized gutters?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-polk-city",
+   "type": "location",
+   "name": "Polk City",
+   "city": "Polk City",
+   "url": "https://www.firstchoiceseamlessgutters.net/polk-city-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/polk-city-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/polk-city-fl/"
+   ],
+   "group": "West and north Polk",
+   "keyword": "gutters polk city fl",
+   "h1": "Rain Gutters in Polk City",
+   "category_variant": "Rain Gutters",
+   "title": "Gutter Contractor in Polk City, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: How should gutters drain on large rural lots and sandy soil around Polk City?",
+    "2 · Logistics here: Who issues permits for gutter work at a Polk City address — City of Polk City? (and whether gutter work needs one)",
+    "3 · Trust here: How quickly can First Choice reach Polk City after a storm? (client facts only)"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-kathleen",
+   "type": "location",
+   "name": "Kathleen",
+   "city": "Kathleen",
+   "url": "https://www.firstchoiceseamlessgutters.net/kathleen-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/kathleen-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/kathleen-fl/"
+   ],
+   "group": "West and north Polk",
+   "keyword": "gutters kathleen fl",
+   "h1": "Seamless Gutters in Kathleen",
+   "category_variant": "Seamless Gutters",
+   "title": "Gutter Contractor in Kathleen, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: Can detached garages, barns and workshops in Kathleen get gutters too?",
+    "2 · Logistics here: Who issues permits for gutter work at a Kathleen address — Polk County (unincorporated)? (and whether gutter work needs one)",
+    "3 · Trust here: What do Kathleen homeowners on acreage ask about gutter upkeep?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-highland-city",
+   "type": "location",
+   "name": "Highland City",
+   "city": "Highland City",
+   "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/highland-city-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/highland-city-fl/"
+   ],
+   "group": "West and north Polk",
+   "keyword": "gutters highland city fl",
+   "h1": "Rain Gutters in Highland City",
+   "category_variant": "Rain Gutters",
+   "title": "Gutter Contractor in Highland City, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: Do Highland City subdivisions have HOA rules on gutter colour?",
+    "2 · Logistics here: Who issues permits for gutter work at a Highland City address — Polk County (unincorporated)? (and whether gutter work needs one)",
+    "3 · Trust here: How do Highland City's storms and oaks clog gutters?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-mulberry",
+   "type": "location",
+   "name": "Mulberry",
+   "city": "Mulberry",
+   "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/mulberry-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/mulberry-fl/"
+   ],
+   "group": "West and north Polk",
+   "keyword": "gutters mulberry fl",
+   "h1": "Seamless Gutters in Mulberry",
+   "category_variant": "Seamless Gutters",
+   "title": "Gutter Contractor in Mulberry, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: What changes the cost of gutters on older Mulberry homes?",
+    "2 · Logistics here: Who issues permits for gutter work at a Mulberry address — City of Mulberry? (and whether gutter work needs one)",
+    "3 · Trust here: What gutter problems are most common in Mulberry homes?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-eagle-lake",
+   "type": "location",
+   "name": "Eagle Lake",
+   "city": "Eagle Lake",
+   "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/eagle-lake-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/eagle-lake-fl/"
+   ],
+   "group": "West and north Polk",
+   "keyword": "gutters eagle lake fl",
+   "h1": "Rain Gutters in Eagle Lake",
+   "category_variant": "Rain Gutters",
+   "title": "Gutter Contractor in Eagle Lake, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: Where should downspouts drain on lakefront lots in Eagle Lake?",
+    "2 · Logistics here: Who issues permits for gutter work at a Eagle Lake address — City of Eagle Lake? (and whether gutter work needs one)",
+    "3 · Trust here: How do Eagle Lake's summer storms test gutter capacity?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-wahneta",
+   "type": "location",
+   "name": "Wahneta",
+   "city": "Wahneta",
+   "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/wahneta-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/wahneta-fl/"
+   ],
+   "group": "West and north Polk",
+   "keyword": "gutters wahneta fl",
+   "h1": "Seamless Gutters in Wahneta",
+   "category_variant": "Seamless Gutters",
+   "title": "Gutter Contractor in Wahneta, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: What changes the price of gutters on smaller Wahneta homes?",
+    "2 · Logistics here: Who issues permits for gutter work at a Wahneta address — Polk County (unincorporated)? (and whether gutter work needs one)",
+    "3 · Trust here: What gutter problems do Wahneta homeowners run into most?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-davenport",
+   "type": "location",
+   "name": "Davenport",
+   "city": "Davenport",
+   "url": "https://www.firstchoiceseamlessgutters.net/davenport-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/davenport-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/davenport-fl/"
+   ],
+   "group": "East Ridge and south Polk",
+   "keyword": "gutters davenport fl",
+   "h1": "Rain Gutters in Davenport",
+   "category_variant": "Rain Gutters",
+   "title": "Gutter Contractor in Davenport, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: Do Davenport vacation-home communities need ARB approval for gutters?",
+    "2 · Logistics here: Who issues permits for gutter work at a Davenport address — City of Davenport? (and whether gutter work needs one)",
+    "3 · Trust here: How do Davenport rental-home owners keep gutters maintained while away?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-haines-city",
+   "type": "location",
+   "name": "Haines City",
+   "city": "Haines City",
+   "url": "https://www.firstchoiceseamlessgutters.net/haines-city-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/haines-city-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/haines-city-fl/"
+   ],
+   "group": "East Ridge and south Polk",
+   "keyword": "gutters haines city fl",
+   "h1": "Seamless Gutters in Haines City",
+   "category_variant": "Seamless Gutters",
+   "title": "Gutter Contractor in Haines City, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: Do Haines City HOA communities restrict gutter colour or style?",
+    "2 · Logistics here: Who issues permits for gutter work at a Haines City address — City of Haines City? (and whether gutter work needs one)",
+    "3 · Trust here: What do Haines City homeowners ask most about gutter overflow?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-lake-alfred",
+   "type": "location",
+   "name": "Lake Alfred",
+   "city": "Lake Alfred",
+   "url": "https://www.firstchoiceseamlessgutters.net/lake-alfred-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-alfred-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-alfred-fl/"
+   ],
+   "group": "East Ridge and south Polk",
+   "keyword": "gutters lake alfred fl",
+   "h1": "Rain Gutters in Lake Alfred",
+   "category_variant": "Rain Gutters",
+   "title": "Gutter Contractor in Lake Alfred, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: What changes the gutter job on older Lake Alfred homes near the lakes?",
+    "2 · Logistics here: Who issues permits for gutter work at a Lake Alfred address — City of Lake Alfred? (and whether gutter work needs one)",
+    "3 · Trust here: How do Lake Alfred storms and citrus-belt trees affect gutters?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-lake-hamilton",
+   "type": "location",
+   "name": "Lake Hamilton",
+   "city": "Lake Hamilton",
+   "url": "https://www.firstchoiceseamlessgutters.net/lake-hamilton-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-hamilton-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-hamilton-fl/"
+   ],
+   "group": "East Ridge and south Polk",
+   "keyword": "gutters lake hamilton fl",
+   "h1": "Seamless Gutters in Lake Hamilton",
+   "category_variant": "Seamless Gutters",
+   "title": "Gutter Contractor in Lake Hamilton, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: Where should downspouts drain on Lake Hamilton lakefront lots?",
+    "2 · Logistics here: Who issues permits for gutter work at a Lake Hamilton address — Town of Lake Hamilton? (and whether gutter work needs one)",
+    "3 · Trust here: What gutter problems are common around Lake Hamilton?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-dundee",
+   "type": "location",
+   "name": "Dundee",
+   "city": "Dundee",
+   "url": "https://www.firstchoiceseamlessgutters.net/dundee-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/dundee-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/dundee-fl/"
+   ],
+   "group": "East Ridge and south Polk",
+   "keyword": "gutters dundee fl",
+   "h1": "Rain Gutters in Dundee",
+   "category_variant": "Rain Gutters",
+   "title": "Gutter Contractor in Dundee, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: What changes the gutter price on Dundee's ridge homes?",
+    "2 · Logistics here: Who issues permits for gutter work at a Dundee address — Town of Dundee? (and whether gutter work needs one)",
+    "3 · Trust here: How do Dundee's summer storms affect gutters on ridge-top homes?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-lake-wales",
+   "type": "location",
+   "name": "Lake Wales",
+   "city": "Lake Wales",
+   "url": "https://www.firstchoiceseamlessgutters.net/lake-wales-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-wales-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-wales-fl/"
+   ],
+   "group": "East Ridge and south Polk",
+   "keyword": "gutters lake wales fl",
+   "h1": "Seamless Gutters in Lake Wales",
+   "category_variant": "Seamless Gutters",
+   "title": "Gutter Contractor in Lake Wales, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: Does a Lake Wales historic district limit gutter choices? (verify)",
+    "2 · Logistics here: Who issues permits for gutter work at a Lake Wales address — City of Lake Wales? (and whether gutter work needs one)",
+    "3 · Trust here: Why do Lake Wales Ridge homes see more wind-driven rain at the gutters?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-waverly",
+   "type": "location",
+   "name": "Waverly",
+   "city": "Waverly",
+   "url": "https://www.firstchoiceseamlessgutters.net/waverly-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/waverly-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/waverly-fl/"
+   ],
+   "group": "East Ridge and south Polk",
+   "keyword": "gutters waverly fl",
+   "h1": "Rain Gutters in Waverly",
+   "category_variant": "Rain Gutters",
+   "title": "Gutter Contractor in Waverly, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: What changes the gutter job on Waverly's rural homes?",
+    "2 · Logistics here: Who issues permits for gutter work at a Waverly address — Polk County (unincorporated)? (and whether gutter work needs one)",
+    "3 · Trust here: How quickly can First Choice reach Waverly? (client facts only)"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-frostproof",
+   "type": "location",
+   "name": "Frostproof",
+   "city": "Frostproof",
+   "url": "https://www.firstchoiceseamlessgutters.net/frostproof-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/frostproof-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/frostproof-fl/"
+   ],
+   "group": "East Ridge and south Polk",
+   "keyword": "gutters frostproof fl",
+   "h1": "Seamless Gutters in Frostproof",
+   "category_variant": "Seamless Gutters",
+   "title": "Gutter Contractor in Frostproof, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: What drives gutter cost on Frostproof homes near Lake Clinch and Reedy Lake?",
+    "2 · Logistics here: Who issues permits for gutter work at a Frostproof address — City of Frostproof? (and whether gutter work needs one)",
+    "3 · Trust here: Does First Choice serve Frostproof at the south edge of Polk County? (client facts only)"
+   ],
+   "claims": []
+  },
+  {
+   "id": "loc-fort-meade",
+   "type": "location",
+   "name": "Fort Meade",
+   "city": "Fort Meade",
+   "url": "https://www.firstchoiceseamlessgutters.net/fort-meade-fl/",
+   "live_url": "https://www.firstchoiceseamlessgutters.net/areas-we-serve/fort-meade-fl/",
+   "replaces": [
+    "https://www.firstchoiceseamlessgutters.net/areas-we-serve/fort-meade-fl/"
+   ],
+   "group": "East Ridge and south Polk",
+   "keyword": "gutters fort meade fl",
+   "h1": "Rain Gutters in Fort Meade",
+   "category_variant": "Rain Gutters",
+   "title": "Gutter Contractor in Fort Meade, FL - First Choice Seamless Gutters",
+   "the_best": false,
+   "faq": [
+    "1 · Local cost or decision: Which gutters suit Fort Meade's older and historic homes? (verify)",
+    "2 · Logistics here: Who issues permits for gutter work at a Fort Meade address — City of Fort Meade? (and whether gutter work needs one)",
+    "3 · Trust here: What gutter problems are common in Fort Meade homes?"
+   ],
+   "claims": []
+  },
+  {
+   "id": "about",
+   "type": "about",
+   "name": "About",
+   "url": "https://www.firstchoiceseamlessgutters.net/about/",
+   "category_variant": "Gutter Contractor",
+   "area_variant": "Lakeland–Winter Haven",
+   "title": "About First Choice Seamless Gutters - Gutter Service in Lakeland–Winter Haven",
+   "claims": [],
+   "faq": []
+  }
+ ],
+ "batches": [
+  {
+   "id": "pilot",
+   "kind": "service",
+   "label": "Pilot — Gutter Cleaning + Lakeland",
+   "pages": [
+    "svc-gutter-cleaning",
+    "loc-lakeland"
+   ]
+  },
+  {
+   "id": "services",
+   "kind": "service",
+   "label": "All service pages",
+   "pages": [
+    "svc-seamless-gutter-installation",
+    "svc-gutter-installation",
+    "svc-gutter-repair",
+    "svc-commercial-gutters",
+    "svc-gutter-downspouts",
+    "svc-gutter-guards",
+    "svc-copper-gutters",
+    "svc-galvalume-gutters",
+    "svc-aluminum-gutters"
+   ]
+  },
+  {
+   "id": "locations-west",
+   "kind": "location",
+   "label": "Location pages — West and north Polk",
+   "pages": [
+    "loc-winter-haven",
+    "loc-auburndale",
+    "loc-bartow",
+    "loc-polk-city",
+    "loc-kathleen",
+    "loc-highland-city",
+    "loc-mulberry",
+    "loc-eagle-lake",
+    "loc-wahneta"
+   ]
+  },
+  {
+   "id": "locations-east",
+   "kind": "location",
+   "label": "Location pages — East Ridge and south Polk",
+   "pages": [
+    "loc-davenport",
+    "loc-haines-city",
+    "loc-lake-alfred",
+    "loc-lake-hamilton",
+    "loc-dundee",
+    "loc-lake-wales",
+    "loc-waverly",
+    "loc-frostproof",
+    "loc-fort-meade"
+   ]
+  },
+  {
+   "id": "about",
+   "kind": "about",
+   "label": "About page (last)",
+   "pages": [
+    "about"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1099 @@
+{
+ "page": "loc-davenport",
+ "type": "location",
+ "url": "https://www.firstchoiceseamlessgutters.net/davenport-fl/",
+ "section": "locations-east",
+ "built": "2026-10-24T20:29:11-05:00",
+ "services": [],
+ "places": [
+  "Davenport"
+ ],
+ "facts": [
+  {
+   "id": "a-brand-entity-gbp-name-exactly",
+   "label": "Brand entity (GBP name, exactly)",
+   "status": "client_confirmed",
+   "value": "First Choice Seamless Gutters Inc.",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_0)",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-gbp-primary-category-the-category-entity",
+   "label": "GBP primary category = the category entity",
+   "status": "disputed",
+   "value": "CONFLICT (PROC-01): Paul intake 'Seamless gutters' · Google Maps place data category id 'gutter_service' (display 'Gutter service') — dashboard check pending (Gwen manual_lookup)",
+   "source": "Paul intake; Maps URL from maps.app.goo.gl/ccL5rnpD3uyDpunG9 (site footer link), read 2026-10-22",
+   "state": "unknown"
+  },
+  {
+   "id": "a-category-variants-4-6",
+   "label": "Category variants (4–6)",
+   "status": "submitted",
+   "value": "Proposed: Gutter Service · Seamless Gutters · Rain Gutters · Gutter Contractor · Gutter Installation (Wikipedia entity: Rain gutter, Q152833)",
+   "source": "en.wikipedia.org/wiki/Rain_gutter; BBB categories; site services; Decision Sheet",
+   "state": "unknown"
+  },
+  {
+   "id": "a-storefront-or-sab",
+   "label": "Storefront or SAB",
+   "status": "client_confirmed",
+   "value": "Service area business (travels to customers)",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Contact_and_hours_3)",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-area-entity",
+   "label": "Area entity",
+   "status": "submitted",
+   "value": "Proposed: Polk County, Florida = Lakeland–Winter Haven MSA (Q501043). Path: Winter Haven → Polk County → 'comprises the Lakeland–Winter Haven metropolitan statistical area'. Contains all 20 places served. Not served: Plant City (Hillsborough; Paul, 2026-10-24)",
+   "source": "en.wikipedia.org/wiki/Polk_County,_Florida; Decision Sheet; Paul 2026-10-24 (audit_plant_city)",
+   "state": "unknown"
+  },
+  {
+   "id": "a-area-variants-3-5",
+   "label": "Area variants (3–5)",
+   "status": "submitted",
+   "value": "Proposed: Polk County, FL · Polk County, Florida · Lakeland–Winter Haven · Lakeland–Winter Haven metropolitan area",
+   "source": "en.wikipedia.org/wiki/Polk_County,_Florida; Decision Sheet",
+   "state": "unknown"
+  },
+  {
+   "id": "a-separator-standard",
+   "label": "Separator standard",
+   "status": "unknown",
+   "value": "` - `",
+   "source": "",
+   "state": "unknown"
+  },
+  {
+   "id": "a-phone",
+   "label": "Phone",
+   "status": "client_confirmed",
+   "value": "(863) 330-3243 (site, GBP, schema agree; BBB also lists 'Other Phone' (863) 320-2842)",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Contact_and_hours_0)",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-primary-domain-canonical-host-form",
+   "label": "Primary domain (canonical host form)",
+   "status": "internally_verified",
+   "value": "https://www.firstchoiceseamlessgutters.net/ (non-www 301 → www; canonical tag www)",
+   "source": "live HTTP check 2026-10-22",
+   "state": "sourced public"
+  },
+  {
+   "id": "a-legal-entity-name",
+   "label": "Legal entity name",
+   "status": "client_confirmed",
+   "value": "First Choice Seamless Gutters Inc. (BBB: Corporation, incorporated 11/24/2021) — Sunbiz record not read (403), Gwen manual_lookup",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_1)",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-exact-url-in-the-gbp-website-field",
+   "label": "Exact URL in the GBP Website field",
+   "status": "submitted",
+   "value": "https://firstchoiceseamlessgutters.net/",
+   "source": "Paul, intake answer",
+   "state": "unknown"
+  },
+  {
+   "id": "d-founding-year-years-in-business",
+   "label": "Founding year / years in business",
+   "status": "client_confirmed",
+   "value": "In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: [NEED: founding year]",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_5 / claim_5_detail)",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-legal-entity-dba",
+   "label": "Legal entity + DBA",
+   "status": "client_confirmed",
+   "value": "First Choice Seamless Gutters Inc., a corporation (client confirmed); BBB primary name 'First Choice Seamless Gutters'; site also 'First Choice Seamless Gutter Inc' (typo, singular)",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_0/1)",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-licence-numbers-and-classes",
+   "label": "Licence numbers and classes",
+   "status": "paul_approved",
+   "value": "Not required in Florida for these services; no licence number to show. Settled: not an open question.",
+   "source": "Paul, 2026-10-23",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-insurance-bonded-status",
+   "label": "Insurance / bonded status",
+   "status": "client_confirmed",
+   "value": "Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate: [NEED: certificate of insurance — not sent]",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_3)",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-certifications-authorizations-factory-training",
+   "label": "Certifications, authorizations, factory training",
+   "status": "unknown",
+   "value": "",
+   "source": "",
+   "state": "unknown"
+  },
+  {
+   "id": "d-association-memberships",
+   "label": "Association memberships",
+   "status": "internally_verified",
+   "value": "BBB Accredited Business since 8/12/2025, A+ rating",
+   "source": "BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22",
+   "state": "sourced public"
+  },
+  {
+   "id": "d-warranty-terms",
+   "label": "Warranty terms",
+   "status": "client_confirmed",
+   "value": "10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Written terms not on file: [NEED: copy of the written warranty]",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_4); owner review response in data/re",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-guarantees-response-time-on-time-satisfaction",
+   "label": "Guarantees (response time, on-time, satisfaction)",
+   "status": "client_confirmed",
+   "value": "Form enquiries answered within 24 hours (client confirmed). Client note: 'We pride ourselves on great customer communication and excellent customer care.'",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_7 / claim_7_detail)",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-awards-and-rankings",
+   "label": "Awards and rankings",
+   "status": "client_confirmed",
+   "value": "'Best Gutter Installer in Lakeland, Florida' by GutterPro HQ, 2025 — client says accurate; only public source is a company-distributed press release (MarketersMedia, Dec 2025)",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_10); markets.financialcontent.com Ma",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-google-rating-and-review-count-exactly-as-google-shows-the",
+   "label": "Google rating and review count — exactly as Google shows them on the day, with the date (\"4.9 · 67 reviews, 2026-10-07\"; never a rounded 5.0)",
+   "status": "internally_verified",
+   "value": "5 out of 5 (138 reviews), 2026-10-22 (site says '95+ 5 Star Google Reviews')",
+   "source": "GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22",
+   "state": "sourced public"
+  },
+  {
+   "id": "d-team-size-trucks-jobs-completed",
+   "label": "Team size / trucks / jobs completed",
+   "status": "unknown",
+   "value": "",
+   "source": "",
+   "state": "unknown"
+  },
+  {
+   "id": "d-financing-available-provider-terms",
+   "label": "Financing — available, provider, terms",
+   "status": "unknown",
+   "value": "[NEED: financing — none found on site, GBP or BBB; client wrote 'answers follow']",
+   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "state": "unknown"
+  },
+  {
+   "id": "d-free-estimate-and-what-free-means",
+   "label": "Free estimate — and what free means",
+   "status": "client_confirmed",
+   "value": "Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees'",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_9)",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "status": "submitted",
+   "value": "Site: 'Available 7 Days a Week'; GBP hours 7 AM–8 PM Mon–Sun; no emergency claim found",
+   "source": "GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-1",
+   "state": "unknown"
+  },
+  {
+   "id": "d-minimum-service-call-or-trip-charge",
+   "label": "Minimum service call or trip charge",
+   "status": "unknown",
+   "value": "[NEED: minimum or trip charge — client wrote 'answers follow']",
+   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "state": "unknown"
+  },
+  {
+   "id": "d-payment-methods",
+   "label": "Payment methods",
+   "status": "unknown",
+   "value": "[NEED: payment methods — client wrote 'answers follow']",
+   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "state": "unknown"
+  },
+  {
+   "id": "d-services-subcontracted-out",
+   "label": "Services subcontracted out",
+   "status": "unknown",
+   "value": "[NEED: subcontracting — client answered 'n/a'; confirm it means nothing is subcontracted]",
+   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "state": "unknown"
+  },
+  {
+   "id": "d-named-staff-for-on-page-use",
+   "label": "Named staff for on-page use",
+   "status": "client_confirmed",
+   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow']",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2; question_5)",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-licensed-practitioner-for-health-claim-sign-off-medical-ch",
+   "label": "Licensed practitioner for health-claim sign-off *(medical / chiropractic)*",
+   "status": "unknown",
+   "value": "",
+   "source": "",
+   "state": "unknown"
+  },
+  {
+   "id": "d-blog-author-a-real-person-cm-039-from-the-decision-sheet",
+   "label": "Blog author — a real person (CM-039; from the Decision Sheet)",
+   "status": "paul_approved",
+   "value": "Adrian Buehl, owner",
+   "source": "Settled blog_author (Paul, Approval 1, 2026-10-22: the owner named on the returned facts, candidate Adrian Buehl); owners confirmed on Client proof sheet return",
+   "state": "confirmed"
+  },
+  {
+   "id": "gbp-share-link",
+   "label": "Google Business Profile link",
+   "status": "submitted",
+   "value": "https://maps.app.goo.gl/c5prGD6rMCwptG3x6",
+   "source": "Paul, intake answer",
+   "state": "unknown"
+  },
+  {
+   "id": "cms",
+   "label": "Content management system",
+   "status": "client_confirmed",
+   "value": "WordPress",
+   "source": "Paul, intake answer",
+   "state": "confirmed"
+  },
+  {
+   "id": "gsc-access",
+   "label": "Google Search Console access",
+   "status": "submitted",
+   "value": "Access exists (Paul reports)",
+   "source": "Paul, intake answer",
+   "state": "unknown"
+  },
+  {
+   "id": "website-street-address",
+   "label": "Street address shown on the website",
+   "status": "paul_approved",
+   "value": "3517 Century Blvd, Lakeland, FL",
+   "source": "Paul, 2026-10-22 (confirmed for website display; billing address check)",
+   "state": "confirmed"
+  },
+  {
+   "id": "offer-military-seniors-150",
+   "label": "Military and seniors offer",
+   "status": "client_confirmed",
+   "value": "$150 off full house installations for Military & Seniors: confirmed and still running.",
+   "source": "Paul, 2026-10-23; Client proof sheet returned 2026-10-24 (RETURNED.json, claim_8)",
+   "state": "confirmed"
+  },
+  {
+   "id": "plant-city-served",
+   "label": "Plant City served",
+   "status": "paul_approved",
+   "value": "Not served for now: Plant City is listed nowhere (no Plant City page, not in towns served, not in the service area). The client's 'Yes' (claim_1_plant, 2026-10-24) is recorded but not applied.",
+   "source": "Paul, 2026-10-24 (settled audit_plant_city)",
+   "state": "confirmed"
+  },
+  {
+   "id": "base-town",
+   "label": "Base town (where the business is based)",
+   "status": "client_confirmed",
+   "value": "Lakeland, FL",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_0 / claim_0_detail)",
+   "state": "confirmed"
+  },
+  {
+   "id": "family-owned",
+   "label": "Family owned and operated",
+   "status": "client_confirmed",
+   "value": "Yes — family owned and operated",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_6)",
+   "state": "confirmed"
+  },
+  {
+   "id": "opening-hours",
+   "label": "Opening hours",
+   "status": "client_confirmed",
+   "value": "7 AM – 8 PM, Monday to Sunday",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Contact_and_hours_2)",
+   "state": "confirmed"
+  },
+  {
+   "id": "towns-served-client",
+   "label": "Towns served (client)",
+   "status": "client_confirmed",
+   "value": "All 20 Polk County places on the sheet confirmed: Auburndale, Bartow, Davenport, Dundee, Eagle Lake, Haines City, Lake Alfred, Lake Wales, Lakeland, Polk City, Waverly, Winter Haven; Fort Meade, Frostproof, Highland City, Kathleen, Lake Hamilton, Mulberry, Wah",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded",
+   "state": "confirmed"
+  },
+  {
+   "id": "services-client",
+   "label": "Services (client keep/stop)",
+   "status": "client_confirmed",
+   "value": "Keep (10): Seamless Gutter Installation, Gutter Installation, Gutter Repair, Commercial Gutters, Gutter Downspouts, Gutter Guards, Gutter Cleaning, Copper Gutters, Galvalume Gutters, Aluminum Gutters. Stop: Gutter Maintenance. None added; none marked 'want mor",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, service_0..10_keep, service_6_stop)",
+   "state": "confirmed"
+  },
+  {
+   "id": "gutter-maintenance-consolidated",
+   "label": "Gutter Maintenance (standalone service)",
+   "status": "paul_approved",
+   "value": "Not a standalone service. Its maintenance scope is folded into the Gutter Repair and Gutter Cleaning pages; no /services/gutter-maintenance/ page. The old URL is redirected (never deleted) to the closer of the two.",
+   "source": "Paul, 2026-10-24 (settled audit_gutter_maintenance, F-014)",
+   "state": "confirmed"
+  }
+ ],
+ "reviews": {
+  "practice: photos": {
+   "reviewers": 1,
+   "quotes": [
+    {
+     "date": "2023-08-23",
+     "quote": "Once the work was completed he sent pictures, which I can say he did an excellent job.",
+     "row": "reviews.csv row 100"
+    }
+   ],
+   "tier": "example",
+   "checked": false,
+   "checked_at": ""
+  },
+  "practice: clean-up": {
+   "reviewers": 5,
+   "quotes": [
+    {
+     "date": "2026-03-25",
+     "quote": "Our gutters were installed within a couple days, fast, great team, cleaned up and the gutters look great!",
+     "row": "reviews.csv row 18"
+    },
+    {
+     "date": "2025-06-11",
+     "quote": "They are a pleasure to work with they were very curtius and went right to work after arriving cleaned up and completed in 2 hrs highly recommend",
+     "row": "reviews.csv row 68"
+    },
+    {
+     "date": "2024-06-14",
+     "quote": "Job was done quickly and cleaned up after.",
+     "row": "reviews.csv row 87"
+    },
+    {
+     "date": "2023-05-26",
+     "quote": "They cleaned up very well afterwards and the gutters look great!",
+     "row": "reviews.csv row 103"
+    },
+    {
+     "date": "2023-03-25",
+     "quote": "They did excellent work on the gutters with leaf guards and cleaning up.",
+     "row": "reviews.csv row 108"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "practice: communication": {
+   "reviewers": 23,
+   "quotes": [
+    {
+     "date": "2026-08-30",
+     "quote": "Shows up on time, great communication, great work and fair pricing.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2026-08-18",
+     "quote": "Her communication was great, she provided a lot of insight on what looked the best, and provided thorough info.",
+     "row": "reviews.csv row 5"
+    },
+    {
+     "date": "2026-03-28",
+     "quote": "They were quick to come out, easy to communicate with, and once my HOA approval came through, they wasted no time getting the installation scheduled and completed.",
+     "row": "reviews.csv row 16"
+    },
+    {
+     "date": "2026-03-27",
+     "quote": "Communication was clear, they responded quickly, and everything was handled in a professional and friendly manner.",
+     "row": "reviews.csv row 17"
+    },
+    {
+     "date": "2026-02-05",
+     "quote": "Very responsive and communicative.",
+     "row": "reviews.csv row 30"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "practice: speed": {
+   "reviewers": 40,
+   "quotes": [
+    {
+     "date": "2026-08-31",
+     "quote": "Came quickly after being called and everyone is very friendly!",
+     "row": "reviews.csv row 3"
+    },
+    {
+     "date": "2026-08-30",
+     "quote": "Shows up on time, great communication, great work and fair pricing.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2026-04-01",
+     "quote": "On time great job!!!",
+     "row": "reviews.csv row 13"
+    },
+    {
+     "date": "2026-04-01",
+     "quote": "The team was professional, on time, and did an amazing job with our gutters.",
+     "row": "reviews.csv row 14"
+    },
+    {
+     "date": "2026-03-28",
+     "quote": "They were quick to come out, easy to communicate with, and once my HOA approval came through, they wasted no time getting the installation scheduled and completed.",
+     "row": "reviews.csv row 16"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "named staff: Adrian": {
+   "reviewers": 8,
+   "quotes": [
+    {
+     "date": "2026-04-14",
+     "quote": "Many that’s to Adrian and his crew for their amazing service.",
+     "row": "reviews.csv row 9"
+    },
+    {
+     "date": "2026-04-10",
+     "quote": "Adrian was easy to work with and professional at all times.",
+     "row": "reviews.csv row 12"
+    },
+    {
+     "date": "2026-03-25",
+     "quote": "Adrian came right out, provided great options and a great price!",
+     "row": "reviews.csv row 18"
+    },
+    {
+     "date": "2026-02-12",
+     "quote": "Adrian responded quickly.",
+     "row": "reviews.csv row 27"
+    },
+    {
+     "date": "2026-01-06",
+     "quote": "Adrian was friendly, professional and very helpful.",
+     "row": "reviews.csv row 34"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "named staff: Inc": {
+   "reviewers": 4,
+   "quotes": [
+    {
+     "date": "2026-03-28",
+     "quote": "First Choice Seamless Gutters Inc.",
+     "row": "reviews.csv row 16"
+    },
+    {
+     "date": "2026-02-10",
+     "quote": "Highly recommend First Choice Seamless Gutters Inc.",
+     "row": "reviews.csv row 28"
+    },
+    {
+     "date": "2024-05-29",
+     "quote": "I strongly recommend First Choice Seamless Gutters Inc.",
+     "row": "reviews.csv row 90"
+    },
+    {
+     "date": "2023-03-03",
+     "quote": "Having completed more than a few jobs for my company, Danny Sadler, Inc.",
+     "row": "reviews.csv row 109"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "named staff: James": {
+   "reviewers": 26,
+   "quotes": [
+    {
+     "date": "2025-02-18",
+     "quote": "James and his son are the sole owners and workers in this business and do high quality work as well as offer many different options to customize your gutters and downspouts.",
+     "row": "reviews.csv row 77"
+    },
+    {
+     "date": "2024-12-18",
+     "quote": "James and his son did our gutters today and they did an awesome job, we couldn't be happier.",
+     "row": "reviews.csv row 78"
+    },
+    {
+     "date": "2024-09-23",
+     "quote": "James and his son did a fantastic job putting in a new gutter and downspouts.",
+     "row": "reviews.csv row 80"
+    },
+    {
+     "date": "2024-09-12",
+     "quote": "James was very communicative and professional during the quote and scheduling process.",
+     "row": "reviews.csv row 81"
+    },
+    {
+     "date": "2024-08-26",
+     "quote": "James and his son did an extraordinary and a beautiful job.",
+     "row": "reviews.csv row 82"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "named staff: Landon": {
+   "reviewers": 5,
+   "quotes": [
+    {
+     "date": "2024-09-12",
+     "quote": "He and Landon came out as scheduled for the installation and did a fantastic job.",
+     "row": "reviews.csv row 81"
+    },
+    {
+     "date": "2024-03-07",
+     "quote": "James & Landon have done it again !!",
+     "row": "reviews.csv row 93"
+    },
+    {
+     "date": "2023-03-25",
+     "quote": "I ABSOLUTELY recommend James and Landon for your gutter needs.",
+     "row": "reviews.csv row 108"
+    },
+    {
+     "date": "2023-02-05",
+     "quote": "Randall, and his son, Landon, provided exemplary service.",
+     "row": "reviews.csv row 112"
+    },
+    {
+     "date": "2023-02-05",
+     "quote": "Amazing job done by Randall and his son Landon",
+     "row": "reviews.csv row 113"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "named staff: Randall": {
+   "reviewers": 3,
+   "quotes": [
+    {
+     "date": "2023-07-18",
+     "quote": "Randall does a great job and is very professional",
+     "row": "reviews.csv row 101"
+    },
+    {
+     "date": "2023-02-05",
+     "quote": "Randall was contracted to replace our front gutters, as well as add gutters alongside our house.",
+     "row": "reviews.csv row 112"
+    },
+    {
+     "date": "2023-02-05",
+     "quote": "Amazing job done by Randall and his son Landon",
+     "row": "reviews.csv row 113"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  }
+ },
+ "questions": [],
+ "site_gbp": [
+  {
+   "kind": "site",
+   "quote": "Based in Winter Haven, our gutter company is proud to serve property owners throughout Lakeland, Bartow, Haines City, Davenport, Auburndale, FL, and all of Central Florida.",
+   "label": "client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)"
+  },
+  {
+   "kind": "site",
+   "quote": "Areas We Serve in Polk County and Central Florida First Choice Seamless Gutters proudly serves homeowners across Polk County and Central Florida, including Lakeland, Winter Haven, Bartow, Haines City, Davenport, and nearby communities.",
+   "label": "client site https://www.firstchoiceseamlessgutters.net/areas-we-serve/ (data/crawl/page-text.csv row 4)"
+  },
+  {
+   "kind": "site",
+   "quote": "Gutter Services in Davenport, FL We provide expert gutter services in Davenport, FL for both residential and commercial properties.",
+   "label": "client site https://www.firstchoiceseamlessgutters.net/areas-we-serve/davenport-fl/ (data/crawl/page-text.csv row 7)"
+  },
+  {
+   "kind": "site",
+   "quote": "In addition to Haines City, we provide gutter installation, repair, and maintenance throughout Central Florida, including Davenport , Lake Alfred , Winter Haven , and Dundee .",
+   "label": "client site https://www.firstchoiceseamlessgutters.net/areas-we-serve/haines-city-fl/ (data/crawl/page-text.csv row 12)"
+  }
+ ],
+ "public": [],
+ "research": [],
+ "place": [],
+ "settled": [],
+ "gaps": [
+  {
+   "key": "place_entities",
+   "label": "3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections)",
+   "need": "supporting",
+   "from": "page:place_entities",
+   "kind": "public",
+   "fact_key": "fact:loc-davenport:place_entities"
+  },
+  {
+   "key": "permit_office",
+   "label": "Which office issues permits here, with its official page (for the Serving section)",
+   "need": "supporting",
+   "from": "page:permit_office",
+   "kind": "public",
+   "fact_key": "fact:loc-davenport:permit_office"
+  }
+ ],
+ "excerpts": [
+  {
+   "id": "R1",
+   "kind": "review",
+   "topic": "practice: photos",
+   "tier": "example",
+   "text": "Once the work was completed he sent pictures, which I can say he did an excellent job."
+  },
+  {
+   "id": "R2",
+   "kind": "review",
+   "topic": "practice: clean-up",
+   "tier": "unchecked",
+   "text": "Our gutters were installed within a couple days, fast, great team, cleaned up and the gutters look great!"
+  },
+  {
+   "id": "R3",
+   "kind": "review",
+   "topic": "practice: clean-up",
+   "tier": "unchecked",
+   "text": "They are a pleasure to work with they were very curtius and went right to work after arriving cleaned up and completed in 2 hrs highly recommend"
+  },
+  {
+   "id": "R4",
+   "kind": "review",
+   "topic": "practice: clean-up",
+   "tier": "unchecked",
+   "text": "Job was done quickly and cleaned up after."
+  },
+  {
+   "id": "R5",
+   "kind": "review",
+   "topic": "practice: clean-up",
+   "tier": "unchecked",
+   "text": "They cleaned up very well afterwards and the gutters look great!"
+  },
+  {
+   "id": "R6",
+   "kind": "review",
+   "topic": "practice: clean-up",
+   "tier": "unchecked",
+   "text": "They did excellent work on the gutters with leaf guards and cleaning up."
+  },
+  {
+   "id": "R7",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "unchecked",
+   "text": "Shows up on time, great communication, great work and fair pricing."
+  },
+  {
+   "id": "R8",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "unchecked",
+   "text": "Her communication was great, she provided a lot of insight on what looked the best, and provided thorough info."
+  },
+  {
+   "id": "R9",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "unchecked",
+   "text": "They were quick to come out, easy to communicate with, and once my HOA approval came through, they wasted no time getting the installation scheduled and completed."
+  },
+  {
+   "id": "R10",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "unchecked",
+   "text": "Communication was clear, they responded quickly, and everything was handled in a professional and friendly manner."
+  },
+  {
+   "id": "R11",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "unchecked",
+   "text": "Very responsive and communicative."
+  },
+  {
+   "id": "R12",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "unchecked",
+   "text": "Came quickly after being called and everyone is very friendly!"
+  },
+  {
+   "id": "R13",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "unchecked",
+   "text": "Shows up on time, great communication, great work and fair pricing."
+  },
+  {
+   "id": "R14",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "unchecked",
+   "text": "On time great job!!!"
+  },
+  {
+   "id": "R15",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "unchecked",
+   "text": "The team was professional, on time, and did an amazing job with our gutters."
+  },
+  {
+   "id": "R16",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "unchecked",
+   "text": "They were quick to come out, easy to communicate with, and once my HOA approval came through, they wasted no time getting the installation scheduled and completed."
+  },
+  {
+   "id": "R17",
+   "kind": "review",
+   "topic": "named staff: Adrian",
+   "tier": "unchecked",
+   "text": "Many that’s to Adrian and his crew for their amazing service."
+  },
+  {
+   "id": "R18",
+   "kind": "review",
+   "topic": "named staff: Adrian",
+   "tier": "unchecked",
+   "text": "Adrian was easy to work with and professional at all times."
+  },
+  {
+   "id": "R19",
+   "kind": "review",
+   "topic": "named staff: Adrian",
+   "tier": "unchecked",
+   "text": "Adrian came right out, provided great options and a great price!"
+  },
+  {
+   "id": "R20",
+   "kind": "review",
+   "topic": "named staff: Adrian",
+   "tier": "unchecked",
+   "text": "Adrian responded quickly."
+  },
+  {
+   "id": "R21",
+   "kind": "review",
+   "topic": "named staff: Adrian",
+   "tier": "unchecked",
+   "text": "Adrian was friendly, professional and very helpful."
+  },
+  {
+   "id": "R22",
+   "kind": "review",
+   "topic": "named staff: Inc",
+   "tier": "unchecked",
+   "text": "First Choice Seamless Gutters Inc."
+  },
+  {
+   "id": "R23",
+   "kind": "review",
+   "topic": "named staff: Inc",
+   "tier": "unchecked",
+   "text": "Highly recommend First Choice Seamless Gutters Inc."
+  },
+  {
+   "id": "R24",
+   "kind": "review",
+   "topic": "named staff: Inc",
+   "tier": "unchecked",
+   "text": "I strongly recommend First Choice Seamless Gutters Inc."
+  },
+  {
+   "id": "R25",
+   "kind": "review",
+   "topic": "named staff: Inc",
+   "tier": "unchecked",
+   "text": "Having completed more than a few jobs for my company, Danny Sadler, Inc."
+  },
+  {
+   "id": "R26",
+   "kind": "review",
+   "topic": "named staff: James",
+   "tier": "unchecked",
+   "text": "James and his son are the sole owners and workers in this business and do high quality work as well as offer many different options to customize your gutters and downspouts."
+  },
+  {
+   "id": "R27",
+   "kind": "review",
+   "topic": "named staff: James",
+   "tier": "unchecked",
+   "text": "James and his son did our gutters today and they did an awesome job, we couldn't be happier."
+  },
+  {
+   "id": "R28",
+   "kind": "review",
+   "topic": "named staff: James",
+   "tier": "unchecked",
+   "text": "James and his son did a fantastic job putting in a new gutter and downspouts."
+  },
+  {
+   "id": "R29",
+   "kind": "review",
+   "topic": "named staff: James",
+   "tier": "unchecked",
+   "text": "James was very communicative and professional during the quote and scheduling process."
+  },
+  {
+   "id": "R30",
+   "kind": "review",
+   "topic": "named staff: James",
+   "tier": "unchecked",
+   "text": "James and his son did an extraordinary and a beautiful job."
+  },
+  {
+   "id": "R31",
+   "kind": "review",
+   "topic": "named staff: Landon",
+   "tier": "unchecked",
+   "text": "He and Landon came out as scheduled for the installation and did a fantastic job."
+  },
+  {
+   "id": "R32",
+   "kind": "review",
+   "topic": "named staff: Landon",
+   "tier": "unchecked",
+   "text": "James & Landon have done it again !!"
+  },
+  {
+   "id": "R33",
+   "kind": "review",
+   "topic": "named staff: Landon",
+   "tier": "unchecked",
+   "text": "I ABSOLUTELY recommend James and Landon for your gutter needs."
+  },
+  {
+   "id": "R34",
+   "kind": "review",
+   "topic": "named staff: Landon",
+   "tier": "unchecked",
+   "text": "Randall, and his son, Landon, provided exemplary service."
+  },
+  {
+   "id": "R35",
+   "kind": "review",
+   "topic": "named staff: Landon",
+   "tier": "unchecked",
+   "text": "Amazing job done by Randall and his son Landon"
+  },
+  {
+   "id": "R36",
+   "kind": "review",
+   "topic": "named staff: Randall",
+   "tier": "unchecked",
+   "text": "Randall does a great job and is very professional"
+  },
+  {
+   "id": "R37",
+   "kind": "review",
+   "topic": "named staff: Randall",
+   "tier": "unchecked",
+   "text": "Randall was contracted to replace our front gutters, as well as add gutters alongside our house."
+  },
+  {
+   "id": "R38",
+   "kind": "review",
+   "topic": "named staff: Randall",
+   "tier": "unchecked",
+   "text": "Amazing job done by Randall and his son Landon"
+  },
+  {
+   "id": "S39",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Based in Winter Haven, our gutter company is proud to serve property owners throughout Lakeland, Bartow, Haines City, Davenport, Auburndale, FL, and all of Central Florida."
+  },
+  {
+   "id": "S40",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Areas We Serve in Polk County and Central Florida First Choice Seamless Gutters proudly serves homeowners across Polk County and Central Florida, including Lakeland, Winter Haven, Bartow, Haines City, Davenport, and nearby communities."
+  },
+  {
+   "id": "S41",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Gutter Services in Davenport, FL We provide expert gutter services in Davenport, FL for both residential and commercial properties."
+  },
+  {
+   "id": "S42",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "In addition to Haines City, we provide gutter installation, repair, and maintenance throughout Central Florida, including Davenport , Lake Alfred , Winter Haven , and Dundee ."
+  }
+ ],
+ "known": [
+  {
+   "id": "a-brand-entity-gbp-name-exactly",
+   "label": "Brand entity (GBP name, exactly)",
+   "value": "First Choice Seamless Gutters Inc."
+  },
+  {
+   "id": "a-storefront-or-sab",
+   "label": "Storefront or SAB",
+   "value": "Service area business (travels to customers)"
+  },
+  {
+   "id": "a-phone",
+   "label": "Phone",
+   "value": "(863) 330-3243 (site, GBP, schema agree; BBB also lists 'Other Phone' (863) 320-2842)"
+  },
+  {
+   "id": "a-primary-domain-canonical-host-form",
+   "label": "Primary domain (canonical host form)",
+   "value": "https://www.firstchoiceseamlessgutters.net/ (non-www 301 → www; canonical tag www)"
+  },
+  {
+   "id": "a-legal-entity-name",
+   "label": "Legal entity name",
+   "value": "First Choice Seamless Gutters Inc. (BBB: Corporation, incorporated 11/24/2021) — Sunbiz record not read (403), Gwen manual_lookup"
+  },
+  {
+   "id": "d-founding-year-years-in-business",
+   "label": "Founding year / years in business",
+   "value": "In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: [NEED: founding year]"
+  },
+  {
+   "id": "d-legal-entity-dba",
+   "label": "Legal entity + DBA",
+   "value": "First Choice Seamless Gutters Inc., a corporation (client confirmed); BBB primary name 'First Choice Seamless Gutters'; site also 'First Choice Seamless Gutter Inc' (typo, singular)"
+  },
+  {
+   "id": "d-licence-numbers-and-classes",
+   "label": "Licence numbers and classes",
+   "value": "Not required in Florida for these services; no licence number to show. Settled: not an open question."
+  },
+  {
+   "id": "d-insurance-bonded-status",
+   "label": "Insurance / bonded status",
+   "value": "Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate: [NEED: certificate of insurance — not sent]"
+  },
+  {
+   "id": "d-association-memberships",
+   "label": "Association memberships",
+   "value": "BBB Accredited Business since 8/12/2025, A+ rating"
+  },
+  {
+   "id": "d-warranty-terms",
+   "label": "Warranty terms",
+   "value": "10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Written terms not on file: [NEED: copy of the written warranty]"
+  },
+  {
+   "id": "d-guarantees-response-time-on-time-satisfaction",
+   "label": "Guarantees (response time, on-time, satisfaction)",
+   "value": "Form enquiries answered within 24 hours (client confirmed). Client note: 'We pride ourselves on great customer communication and excellent customer care.'"
+  },
+  {
+   "id": "d-awards-and-rankings",
+   "label": "Awards and rankings",
+   "value": "'Best Gutter Installer in Lakeland, Florida' by GutterPro HQ, 2025 — client says accurate; only public source is a company-distributed press release (MarketersMedia, Dec 2025)"
+  },
+  {
+   "id": "d-google-rating-and-review-count-exactly-as-google-shows-the",
+   "label": "Google rating and review count — exactly as Google shows them on the day, with the date (\"4.9 · 67 reviews, 2026-10-07\"; never a rounded 5.0)",
+   "value": "5 out of 5 (138 reviews), 2026-10-22 (site says '95+ 5 Star Google Reviews')"
+  },
+  {
+   "id": "d-free-estimate-and-what-free-means",
+   "label": "Free estimate — and what free means",
+   "value": "Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees'"
+  },
+  {
+   "id": "d-named-staff-for-on-page-use",
+   "label": "Named staff for on-page use",
+   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow']"
+  },
+  {
+   "id": "d-blog-author-a-real-person-cm-039-from-the-decision-sheet",
+   "label": "Blog author — a real person (CM-039; from the Decision Sheet)",
+   "value": "Adrian Buehl, owner"
+  },
+  {
+   "id": "cms",
+   "label": "Content management system",
+   "value": "WordPress"
+  },
+  {
+   "id": "website-street-address",
+   "label": "Street address shown on the website",
+   "value": "3517 Century Blvd, Lakeland, FL"
+  },
+  {
+   "id": "offer-military-seniors-150",
+   "label": "Military and seniors offer",
+   "value": "$150 off full house installations for Military & Seniors: confirmed and still running."
+  },
+  {
+   "id": "plant-city-served",
+   "label": "Plant City served",
+   "value": "Not served for now: Plant City is listed nowhere (no Plant City page, not in towns served, not in the service area). The client's 'Yes' (claim_1_plant, 2026-10-24) is recorded but not applied."
+  },
+  {
+   "id": "base-town",
+   "label": "Base town (where the business is based)",
+   "value": "Lakeland, FL"
+  },
+  {
+   "id": "family-owned",
+   "label": "Family owned and operated",
+   "value": "Yes — family owned and operated"
+  },
+  {
+   "id": "opening-hours",
+   "label": "Opening hours",
+   "value": "7 AM – 8 PM, Monday to Sunday"
+  },
+  {
+   "id": "towns-served-client",
+   "label": "Towns served (client)",
+   "value": "All 20 Polk County places on the sheet confirmed: Auburndale, Bartow, Davenport, Dundee, Eagle Lake, Haines City, Lake Alfred, Lake Wales, Lakeland, Polk City, Waverly, Winter Haven; Fort Meade, Frostproof, Highland City, Kathleen, Lake Hamilton, Mulberry, Wah"
+  },
+  {
+   "id": "services-client",
+   "label": "Services (client keep/stop)",
+   "value": "Keep (10): Seamless Gutter Installation, Gutter Installation, Gutter Repair, Commercial Gutters, Gutter Downspouts, Gutter Guards, Gutter Cleaning, Copper Gutters, Galvalume Gutters, Aluminum Gutters. Stop: Gutter Maintenance. None added; none marked 'want mor"
+  },
+  {
+   "id": "gutter-maintenance-consolidated",
+   "label": "Gutter Maintenance (standalone service)",
+   "value": "Not a standalone service. Its maintenance scope is folded into the Gutter Repair and Gutter Cleaning pages; no /services/gutter-maintenance/ page. The old URL is redirected (never deleted) to the closer of the two."
+  }
+ ]
+}
