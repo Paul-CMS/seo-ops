@@ -23,9 +23,9 @@ That rain falls on very different parts of Lakeland. Some homes face Lake Morton
 
 ## How Does First Choice Serve Lakeland Homeowners?
 
-First Choice Seamless Gutters is based in Lakeland, so a Lakeland job is close to home. The team works 7 AM to 8 PM, Monday to Sunday, and offers emergency after-hours service. Requests sent through the website form get an answer within 24 hours. [NEED: typical travel or response time to a Lakeland address]
+First Choice Seamless Gutters is based in Lakeland, so a Lakeland job is close to home. The team works 7 AM to 8 PM, Monday to Sunday, and offers emergency after-hours service. Requests sent through the website form get an answer within 24 hours.
 
-Lakeland's permit rules are on the [City of Lakeland Building Inspection](https://www.lakelandgov.net/departments/community-economic-development/building-inspection/faqs/) page. [NEED: whether First Choice checks or pulls the permit for a Lakeland job when one is needed] [NEED: how First Choice schedules Lakeland installs and repairs during the rainy and hurricane seasons]
+Lakeland's permit rules are on the [City of Lakeland Building Inspection](https://www.lakelandgov.net/departments/community-economic-development/building-inspection/faqs/) page.
 
 ## Lakeland Gutter Questions
 
@@ -33,15 +33,13 @@ Lakeland's permit rules are on the [City of Lakeland Building Inspection](https:
 
 A Lakeland historic district or HOA can limit gutter color or profile. Lakeland has historic districts, such as the Dixieland Historic District, and some neighborhoods have an HOA. Before you choose a gutter color or profile, check your HOA's rules. If your home is in a historic district, check with the City of Lakeland too.
 
-One customer said First Choice scheduled and finished their installation soon after their HOA approval came through.
-
 ### Who issues permits for gutter work at a Lakeland address — City of Lakeland?
 
 Inside Lakeland city limits, City of Lakeland Building Inspection issues building permits. For a Lakeland address outside city limits, the Polk County Building Department handles permits instead. The city's permit FAQ does not mention gutters. Call Building Inspection at 863-834-6012 to ask whether your job needs one.
 
-### How do Lakeland's tree canopy and summer storms affect gutters?
+### How do Lakeland's summer storms affect gutters?
 
-Heavy summer storms show every weak spot in a Lakeland gutter system. A gutter packed with leaves, a blocked downspout or a sagging run spills water at the roof edge. Trees over the roof drop leaves and twigs that build up between cleanings. Homes under big trees need their gutters checked more often.
+Lakeland's wettest months, June to September, overlap with hurricane season, so heavy summer storms show every weak spot in a Lakeland gutter system. A gutter packed with leaves, a blocked downspout or a sagging run spills water at the roof edge. Trees over the roof drop leaves and twigs that build up between cleanings. Homes under big trees need their gutters checked more often.
 
 First Choice is based in Lakeland. Customers mention crews who show up on time and clean up when the job is done.
 

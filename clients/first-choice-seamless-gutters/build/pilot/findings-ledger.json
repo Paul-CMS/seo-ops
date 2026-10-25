@@ -1,0 +1,114 @@
+{
+  "loc-lakeland|cm-016|permit-pull": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Leave it out: the page points to the city permit page only",
+    "by": "Paul"
+  },
+  "loc-lakeland|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "loc-lakeland|loc-02|seo-title-format": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Keep the settled format",
+    "by": "default"
+  },
+  "loc-lakeland|cm-062|faq3-tree-canopy": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Reword as recommended",
+    "by": "default"
+  },
+  "loc-lakeland|cm-016|faq1-hoa-review": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Cut it",
+    "by": "default"
+  },
+  "loc-lakeland|cm-016|need-response-time": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Leave it out",
+    "by": "default"
+  },
+  "loc-lakeland|cm-016|need-storm-scheduling": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Leave it out",
+    "by": "default"
+  },
+  "loc-lakeland|loc-map|map-embed-need": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Keep as open item",
+    "by": "default"
+  },
+  "loc-lakeland|site-stated|award-opening": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Keep",
+    "by": "default"
+  },
+  "svc-gutter-cleaning|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "svc-gutter-cleaning|e3|faq-rainy-season-need": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Fill from the NWS fact and link it",
+    "by": "default"
+  },
+  "svc-gutter-cleaning|cm-016|faq-florida-trees-claim": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Cut the clause",
+    "by": "default"
+  },
+  "svc-gutter-cleaning|cm-016|faq-twice-a-year-claim": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Drop the number",
+    "by": "default"
+  },
+  "svc-gutter-cleaning|site-stated|fine-debris-overflow": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Keep",
+    "by": "default"
+  },
+  "svc-gutter-cleaning|site-stated|guards-reduce-cleaning": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Keep",
+    "by": "default"
+  },
+  "svc-gutter-cleaning|cm-024|faq-h2-area-variant": {
+    "step": "drafts",
+    "at": "2026-10-24T21:51:56-05:00",
+    "choice": "a",
+    "action": "Keep",
+    "by": "default"
+  }
+}

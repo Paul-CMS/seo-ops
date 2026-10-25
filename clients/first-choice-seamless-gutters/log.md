@@ -1152,3 +1152,36 @@ Spend: 11693604 tokens · $4.14 (measured)
 - CHANGE #257 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (15).md | new: First Choice Seamless Gutters - Document Checklist.md · sha aa1c4aa3f84c | result: done · copied (Drive for desktop syncs it)
 - CHANGE #258 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (15).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (15).md | result: done · renamed and moved, nothing deleted
 - CHANGE #259 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (15).md | new: First Choice Seamless Gutters - Status.md · sha e5f799fd5087 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261024-215156-build-ae21 · STARTED · /build · 2026-10-24T21:51:56-05:00
+Step: build:review · batch pilot · session a06784a5-10d9-4b97-a5ce-6d937ae6d307
+Gates checked: discovery_signed_off
+- REVIEW APPLIED 2026-10-24T21:51 · run 20261024-215156-build-ae21 · pilot drafts: 16 row(s) (1 answered by Paul, the rest by default) · clients/first-choice-seamless-gutters/build/pilot/drafts-apply.json
+- DRAFT 2026-10-24T21:53 · run 20261024-215156-build-ae21 · loc-lakeland · clients/first-choice-seamless-gutters/build/pilot/drafts/loc-lakeland.md · agent a1830ac2b3155f813
+- DRAFT 2026-10-24T21:53 · run 20261024-215156-build-ae21 · svc-gutter-cleaning · clients/first-choice-seamless-gutters/build/pilot/drafts/svc-gutter-cleaning.md · agent ac6baece3cb254cf5
+- EVIDENCE 2026-10-24T21:53 · run 20261024-215156-build-ae21 · svc-gutter-cleaning: PASS (known 11, unknown 1, unverified 0, conflict 0)
+- EVIDENCE 2026-10-24T21:53 · run 20261024-215156-build-ae21 · loc-lakeland: PASS (known 8, unknown 2, unverified 0, conflict 0)
+- EVIDENCE 2026-10-24T21:53 · run 20261024-215156-build-ae21 · svc-gutter-cleaning: PASS (known 11, unknown 1, unverified 0, conflict 0)
+- EVIDENCE 2026-10-24T21:53 · run 20261024-215156-build-ae21 · loc-lakeland: PASS (known 8, unknown 2, unverified 0, conflict 0)
+### HANDOFF · /build · 2026-10-24 · run 20261024-215156-build-ae21
+- Applied all 16 rows of build/pilot/drafts-apply.json (Paul: "accept all 1a"); none deferred or skipped.
+- loc-lakeland: 1 permit-pull — permit NEED removed, page points to the City permit FAQ only (Paul, option a).
+  4 FAQ 3 reworded to "How do Lakeland's summer storms affect gutters?", answer opens with the sourced
+  wettest-months (June to September) / hurricane-season overlap. 5 HOA review sentence cut. 6 and 7 response-time
+  and storm-scheduling NEEDs removed. 2, 3, 9 kept as drafted. 8 map-embed NEED kept as the open item for ship.
+- svc-gutter-cleaning: 11 rainy-season NEED filled ("about late May", NWS May 25 to October 10) with the NWS
+  RainySeason page as the page's one outbound authority link. 12 "Florida trees" clause cut. 13 "twice a year"
+  number dropped, reworded to depend on the trees over the roof. 10, 14, 15, 16 kept.
+- Both drafts re-recorded (status.py page-stage --stage draft); placeholders: loc-lakeland 1 (map embed), svc 0.
+- Evidence gate re-run for batch pilot: svc-gutter-cleaning PASS, loc-lakeland PASS.
+- Next: the pilot write-back (/build writeback pilot), then Paul's drafts approval line. Nothing approved here.
+### END HANDOFF
+## RUN 20261024-215156-build-ae21 · FINISHED · 2026-10-24T21:53:30-05:00
+Changes: 0 · Summary: Pilot drafts review applied: 16 of 16 rows (accept all 1a) on loc-lakeland and svc-gutter-cleaning; both re-recorded; evidence gate PASS for both.
+Spend: 1803092 tokens · $0.56 (measured)
+- CHANGE #260 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (12).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (12).md | result: done · renamed and moved, nothing deleted
+- CHANGE #261 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-24 (12).md | new: First Choice Seamless Gutters - Handoff Log.md · sha deace6d74631 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #262 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (16).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (16).md | result: done · renamed and moved, nothing deleted
+- CHANGE #263 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (16).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 2c081fe471ca | result: done · copied (Drive for desktop syncs it)
+- CHANGE #264 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (16).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (16).md | result: done · renamed and moved, nothing deleted
+- CHANGE #265 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (16).md | new: First Choice Seamless Gutters - Status.md · sha 247e5fc084e2 | result: done · copied (Drive for desktop syncs it)

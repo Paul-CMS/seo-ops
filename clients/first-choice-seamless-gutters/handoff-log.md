@@ -469,3 +469,17 @@ Still open:
 - FLAG 2026-10-24T21:41 · run 20261024-210703-build-c2ee · F-009 · evidence_pack.py review_topics gives 'service: <name>' topics no facts.json R key, so a service review topic can never be checked by…
 - FLAG 2026-10-24T21:48 · run 20261024-210703-build-c2ee · F-010 · Spec LOC-02 (location SEO title 'Brand - GB Category - City, Full State Name') conflicts with Paul's settled title_format.location (…
 
+## /build · 2026-10-24 · run 20261024-215156-build-ae21
+
+- Applied all 16 rows of build/pilot/drafts-apply.json (Paul: "accept all 1a"); none deferred or skipped.
+- loc-lakeland: 1 permit-pull — permit NEED removed, page points to the City permit FAQ only (Paul, option a).
+  4 FAQ 3 reworded to "How do Lakeland's summer storms affect gutters?", answer opens with the sourced
+  wettest-months (June to September) / hurricane-season overlap. 5 HOA review sentence cut. 6 and 7 response-time
+  and storm-scheduling NEEDs removed. 2, 3, 9 kept as drafted. 8 map-embed NEED kept as the open item for ship.
+- svc-gutter-cleaning: 11 rainy-season NEED filled ("about late May", NWS May 25 to October 10) with the NWS
+  RainySeason page as the page's one outbound authority link. 12 "Florida trees" clause cut. 13 "twice a year"
+  number dropped, reworded to depend on the trees over the roof. 10, 14, 15, 16 kept.
+- Both drafts re-recorded (status.py page-stage --stage draft); placeholders: loc-lakeland 1 (map embed), svc 0.
+- Evidence gate re-run for batch pilot: svc-gutter-cleaning PASS, loc-lakeland PASS.
+- Next: the pilot write-back (/build writeback pilot), then Paul's drafts approval line. Nothing approved here.
+

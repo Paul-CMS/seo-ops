@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** waiting for Paul's approval — the pilot drafts review sheet has 1 question(s) for you and 15 decided for you (clients/first-choice-seamless-gutters/build/pilot/drafts-review.md): reply "accept all", or "accept all except 7b, 12c" — an empty answer takes the recommended option
-- **Waiting on:** Paul — the pilot drafts review sheet has 1 question(s) for you and 15 decided for you (clients/fi; Paul — Build route for this client: A (the system writes the pages) or B (Paul provides finished 
-- **Next action:** Paul types `/build first-choice-seamless-gutters review pilot drafts "accept all"` (or asks for changes first) · model: Haiku chat
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — build:write finished (run 20261024-210703-build-c2ee) and that stage is in review mode — l; Paul — Build route for this client: A (the system writes the pages) or B (Paul provides finished 
+- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-24T21:48 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T21:53 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the pilot drafts review sheet has 1 question(s) for you and 15 decided for you (clients/first-choice-seamless-gutters/build/pilot/drafts-review.md): reply "accept all", or "accept all except 7b, 12c" — an empty answer takes the recommended option | 2026-10-24 | /build first-choice-seamless-gutters review pilot drafts "accept all" |
+| Paul | build:write finished (run 20261024-210703-build-c2ee) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build first-choice-seamless-gutters writeback pilot (Brand Guide write-back for section pilot (B3, C1/C2, C3) from its reviewed drafts, before their one approval — once per section; ship never writes it) | 2026-10-24 | /next first-choice-seamless-gutters |
 | Paul | Build route for this client: A (the system writes the pages) or B (Paul provides finished content)? status.json client.route is unset; build.md step 2 says ask Paul. The pilot write step stopped before outlines and drafts. | 2026-10-24 | client_route |
 
 ## Waiting on (not blocking)
@@ -132,9 +132,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 8 | 18,419,863 | $4.33 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 9 | 20,222,955 | $4.89 | $0.00 |
 | any stage | 6 | 5,246,914 | $1.43 | $0.00 |
-| **total** | 27 | 69,999,373 | $21.13 | $0.00 |
+| **total** | 28 | 71,802,465 | $21.69 | $0.00 |
 
 ## Spend by step (model)
 
@@ -148,6 +148,7 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:sheet-returned | 1 | 4,068,734 | $1.41 | $0.00 |
 | discovery:reconcile | 1 | 2,698,218 | $0.90 | $0.00 |
 | discovery:data | 1 | 0 | $0.62 | $0.00 |
+| build:review | 1 | 1,803,092 | $0.56 | $0.00 |
 | interview:facts | 4 | 5,259,143 | $0.16 | $0.00 |
 | build:blockers | 2 | 1,617,331 | $0.03 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
@@ -155,6 +156,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 27 | 69,999,373 | $21.13 | $0.00 |
+| **total** | 28 | 71,802,465 | $21.69 | $0.00 |
 
-Last run: /build 2026-10-24T21:48 — Pilot write (route A): evidence PASS x2, review meaning check, 2 outlines, 2 drafts (fresh agent each), one draft review sheet: 1 Ask (kind 2 permit), 15 decided, 3 silent fixes. Flags F-009, F-010.
+Last run: /build 2026-10-24T21:53 — Pilot drafts review applied: 16 of 16 rows (accept all 1a) on loc-lakeland and svc-gutter-cleaning; both re-recorded; evidence gate PASS for both.

@@ -58,11 +58,11 @@ The cost of gutter cleaning depends on how many feet of gutter your home has, ho
 
 ### When is the best time of year to clean gutters in Florida?
 
-In Florida, the best time to clean gutters is shortly before the rainy season starts [NEED: Florida rainy-season dates for Polk County from the National Weather Service — public fact, researcher] and again after the trees over your roof drop their heaviest load of leaves, since Florida trees do not all shed in one short fall season. So your trees matter more than the calendar.
+In Florida, the best time to clean gutters is shortly before the rainy season starts, about late May (the [National Weather Service](https://www.weather.gov/tbw/RainySeason) puts the rainy season at May 25 to October 10), and again after the trees over your roof drop their heaviest load of leaves. So your trees matter more than the calendar.
 
 ### How often should gutters be cleaned in Polk County?
 
-Most Polk County homes need gutter cleaning at least twice a year, and homes with trees over the roof may need it every few months, because leaves and fine grit build up in outlets and downspouts even when the gutters look clear from the ground. Gutter guards can stretch the time between cleanings.
+How often depends on the trees over your roof; homes under trees need it more often, because leaves and fine grit build up in outlets and downspouts even when the gutters look clear from the ground. Gutter guards can stretch the time between cleanings.
 
 ### What are the signs my gutters need cleaning?
 

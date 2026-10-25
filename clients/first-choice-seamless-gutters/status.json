@@ -557,8 +557,8 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-cleaning.grid.md",
         "sha": "206623d2b410",
-        "at": "2026-10-24T21:38:48-05:00",
-        "run": "20261024-210703-build-c2ee",
+        "at": "2026-10-24T21:53:18-05:00",
+        "run": "20261024-215156-build-ae21",
         "gaps": [
           "certifications"
         ]
@@ -566,9 +566,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/pilot/packs/svc-gutter-cleaning.md",
         "json": "clients/first-choice-seamless-gutters/build/pilot/packs/svc-gutter-cleaning.json",
-        "sha": "1854326bbdb2",
-        "at": "2026-10-24T21:41:17-05:00",
-        "run": "20261024-210703-build-c2ee",
+        "sha": "8bf0e54c4ba5",
+        "at": "2026-10-24T21:53:18-05:00",
+        "run": "20261024-215156-build-ae21",
         "section": "pilot",
         "counts": {
           "facts": 42,
@@ -595,10 +595,10 @@
         },
         "draft": {
           "file": "clients/first-choice-seamless-gutters/build/pilot/drafts/svc-gutter-cleaning.md",
-          "run": "20261024-210703-build-c2ee",
-          "at": "2026-10-24T21:45:50-05:00",
-          "sha": "3db81028a32f",
-          "ts": 1792896350.2171772,
+          "run": "20261024-215156-build-ae21",
+          "at": "2026-10-24T21:53:14-05:00",
+          "sha": "2a329ea0b11e",
+          "ts": 1792896794.5281239,
           "agent": "ac6baece3cb254cf5"
         }
       }
@@ -825,8 +825,8 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lakeland.grid.md",
         "sha": "cb4317841434",
-        "at": "2026-10-24T21:38:48-05:00",
-        "run": "20261024-210703-build-c2ee",
+        "at": "2026-10-24T21:53:18-05:00",
+        "run": "20261024-215156-build-ae21",
         "gaps": [
           "place_entities",
           "permit_office"
@@ -835,9 +835,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/pilot/packs/loc-lakeland.md",
         "json": "clients/first-choice-seamless-gutters/build/pilot/packs/loc-lakeland.json",
-        "sha": "af966ba5afd3",
-        "at": "2026-10-24T21:41:17-05:00",
-        "run": "20261024-210703-build-c2ee",
+        "sha": "95d0180bf207",
+        "at": "2026-10-24T21:53:18-05:00",
+        "run": "20261024-215156-build-ae21",
         "section": "pilot",
         "counts": {
           "facts": 43,
@@ -864,10 +864,10 @@
         },
         "draft": {
           "file": "clients/first-choice-seamless-gutters/build/pilot/drafts/loc-lakeland.md",
-          "run": "20261024-210703-build-c2ee",
-          "at": "2026-10-24T21:45:50-05:00",
-          "sha": "534e6f02ca45",
-          "ts": 1792896350.2818,
+          "run": "20261024-215156-build-ae21",
+          "at": "2026-10-24T21:53:14-05:00",
+          "sha": "0706395855cb",
+          "ts": 1792896794.465255,
           "agent": "a1830ac2b3155f813"
         }
       }
@@ -2133,7 +2133,14 @@
             "listed": 15,
             "fixes": 3,
             "dropped": 0,
-            "applied": null
+            "applied": {
+              "at": "2026-10-24T21:51:56-05:00",
+              "ts": 1792896716.3776698,
+              "run": "20261024-215156-build-ae21",
+              "answers": "accept all 1a",
+              "explicit": 1,
+              "file": "clients/first-choice-seamless-gutters/build/pilot/drafts-apply.json"
+            }
           }
         },
         "sem_findings": 0
@@ -2399,12 +2406,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261024-210703-build-c2ee",
+    "run_id": "20261024-215156-build-ae21",
     "command": "build",
-    "finished": "2026-10-24T21:48:28-05:00",
-    "result": "Pilot write (route A): evidence PASS x2, review meaning check, 2 outlines, 2 drafts (fresh agent each), one draft review sheet: 1 Ask (kind 2 permit), 15 decided, 3 silent fixes. Flags F-009, F-010.",
-    "changes": 1,
-    "step": "build:write",
+    "finished": "2026-10-24T21:53:30-05:00",
+    "result": "Pilot drafts review applied: 16 of 16 rows (accept all 1a) on loc-lakeland and svc-gutter-cleaning; both re-recorded; evidence gate PASS for both.",
+    "changes": 0,
+    "step": "build:review",
     "batch": "pilot"
   },
   "spend": {
@@ -2426,7 +2433,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T21:48:28-05:00",
+  "updated": "2026-10-24T21:53:30-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -3055,6 +3062,34 @@
         "main": 0.0254,
         "build": 3.9647,
         "researcher": 0.1515
+      }
+    },
+    {
+      "run": "20261024-215156-build-ae21",
+      "step": "build:review",
+      "tokens": 1803092,
+      "usd": 0.5619,
+      "at": "2026-10-24T21:53:30-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0054,
+          "in": 4,
+          "out": 1418,
+          "cache_read": 424796,
+          "cache_write": 2283
+        },
+        "claude-opus-5-5": {
+          "usd": 0.5565,
+          "in": 32,
+          "out": 509,
+          "cache_read": 1317510,
+          "cache_write": 56540
+        }
+      },
+      "by_agent": {
+        "main": 0.0054,
+        "build": 0.5565
       }
     }
   ],

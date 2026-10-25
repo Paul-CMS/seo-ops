@@ -1,0 +1,185 @@
+{
+  "made": "2026-10-24T21:51:56-05:00",
+  "run": "20261024-215156-build-ae21",
+  "section": "pilot",
+  "step": "drafts",
+  "answers": "accept all 1a",
+  "items": [
+    {
+      "id": "1",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "permit-pull",
+      "severity": "ask",
+      "kind": "2",
+      "choice": "a",
+      "action": "Leave it out: the page points to the city permit page only",
+      "by": "Paul"
+    },
+    {
+      "id": "2",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "writer-chosen-values",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Keep as drafted",
+      "by": "default"
+    },
+    {
+      "id": "3",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "seo-title-format",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Keep the settled format",
+      "by": "default"
+    },
+    {
+      "id": "4",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "faq3-tree-canopy",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Reword as recommended",
+      "by": "default"
+    },
+    {
+      "id": "5",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "faq1-hoa-review",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Cut it",
+      "by": "default"
+    },
+    {
+      "id": "6",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "need-response-time",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Leave it out",
+      "by": "default"
+    },
+    {
+      "id": "7",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "need-storm-scheduling",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Leave it out",
+      "by": "default"
+    },
+    {
+      "id": "8",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "map-embed-need",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Keep as open item",
+      "by": "default"
+    },
+    {
+      "id": "9",
+      "page": "loc-lakeland",
+      "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
+      "item": "award-opening",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Keep",
+      "by": "default"
+    },
+    {
+      "id": "10",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "writer-chosen-values",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Keep as drafted",
+      "by": "default"
+    },
+    {
+      "id": "11",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "faq-rainy-season-need",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Fill from the NWS fact and link it",
+      "by": "default"
+    },
+    {
+      "id": "12",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "faq-florida-trees-claim",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Cut the clause",
+      "by": "default"
+    },
+    {
+      "id": "13",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "faq-twice-a-year-claim",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Drop the number",
+      "by": "default"
+    },
+    {
+      "id": "14",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "fine-debris-overflow",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Keep",
+      "by": "default"
+    },
+    {
+      "id": "15",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "guards-reduce-cleaning",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Keep",
+      "by": "default"
+    },
+    {
+      "id": "16",
+      "page": "svc-gutter-cleaning",
+      "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
+      "item": "faq-h2-area-variant",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Keep",
+      "by": "default"
+    }
+  ]
+}
