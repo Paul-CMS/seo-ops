@@ -1,6 +1,6 @@
 # First Choice Seamless Gutters - Document Checklist
 
-Generated 2026-10-25T14:28 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-25T14:33 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -48,7 +48,7 @@ Generated 2026-10-25T14:28 from status.json — do not edit. `[x]` done · `[-]`
 - [x] Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant)
 - [x] Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly
 - [x] Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here)
-- [x] Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
+- [ ] Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 - [ ] Release — the published pages pass QA (schema built at the handoff)
 - [ ] Blog Decision Map approved — redirects and blog briefs may start
 - [ ] WordPress pilot passed for this site — the system may write titles, keyword, social, robots, canonical and schema directly

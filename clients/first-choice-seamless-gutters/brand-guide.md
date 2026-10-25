@@ -70,6 +70,15 @@ Every area variant except the reserved one. Reuse across service pages is correc
 | / | homepage | | *(reserved)* | | |
 | /gutter-cleaning/ | service | title: Gutter Cleaning (service name) · H1: Gutter and Downspout Cleaning · opening: rain gutters + seamless gutter contractor · first H2: Rain Gutters · FAQ H2: Gutter Contractor | H1: Polk County, Florida · opening: Lakeland–Winter Haven metropolitan area · FAQ H2: Polk County | build/pilot/drafts/svc-gutter-cleaning.md (SD, reviewed draft, write-back run 20261024-215625-build-f067) | no |
 | /lakeland-fl/ | location | title: Gutter Contractor · H1: Rain Gutters · first H2: Gutter Installation · opening: seamless gutters | city: Lakeland (title "Lakeland, FL", H1) · opening: Polk County, Florida | build/pilot/drafts/loc-lakeland.md (LD, reviewed draft, write-back run 20261024-215625-build-f067) | no |
+| /seamless-gutter-installation/ | service | title: Seamless Gutter Installation (service name) · H1: Continuous Rain Gutters · opening: seamless gutters + gutter contractor · first H2: Seamless Gutter Installation · FAQ H2: Seamless Gutters | H1: Polk County, Florida · opening: Lakeland–Winter Haven area · FAQ H2: Polk County | build/services/drafts/svc-seamless-gutter-installation.md (SD, reviewed draft, write-back run 20261025-143023-build-18ec) | no |
+| /gutter-installation/ | service | title: Gutter Installation (service name) · H1: Gutter Replacement · opening: gutter contractor + gutter installation · first H2: Rain Gutters · FAQ H2: Rain Gutters | H1: Polk County, Florida · opening: Polk County, Florida · FAQ H2: Polk County, Florida | build/services/drafts/svc-gutter-installation.md (SD, reviewed draft, write-back run 20261025-143023-build-18ec) | no |
+| /gutter-repair/ | service | title: Gutter Repair (service name) · H1: Leaking and Sagging Gutter Repair · opening: gutter contractor + gutter repair · first H2: Seamless Gutter · FAQ H2: Rain Gutter | H1: Polk County, Florida · opening: Lakeland–Winter Haven area · FAQ H2: Polk County | build/services/drafts/svc-gutter-repair.md (SD, reviewed draft, write-back run 20261025-143023-build-18ec) | no |
+| /commercial-gutters/ | service | title: Commercial Gutters (service name) · H1: Commercial Gutter Systems · opening: rain gutters + gutter contractor · first H2: Commercial Rain Gutters · FAQ H2: Gutter Installation | H1: Polk County, Florida · opening: Polk County, Florida · FAQ H2: Polk County | build/services/drafts/svc-commercial-gutters.md (SD, reviewed draft, write-back run 20261025-143023-build-18ec) | no |
+| /gutter-downspouts/ | service | title: Gutter Downspouts (service name) · H1: Downspout Installation and Drainage · opening: gutter contractor · first H2: Rain Gutters · types H2: Gutter Installation · FAQ H2: Seamless Gutters | H1: Polk County, Florida · opening: Lakeland–Winter Haven area · FAQ H2: Polk County | build/services/drafts/svc-gutter-downspouts.md (SD, reviewed draft, write-back run 20261025-143023-build-18ec) | no |
+| /gutter-guards/ | service | title: Gutter Guards (service name) · H1: The Best Gutter Protection Systems · opening: gutter guards + gutter contractor · first H2: Gutter Guards + Rain Gutters · FAQ H2: Seamless Gutters | H1: Polk County, Florida · opening: Polk County, Florida · FAQ H2: Polk County, Florida · areas H2: Polk County | build/services/drafts/svc-gutter-guards.md (SD, reviewed draft, write-back run 20261025-143023-build-18ec) | no |
+| /copper-gutters/ | service | title: Copper Gutters (service name) · H1: Copper Gutter Systems · opening: gutter contractor + copper gutter installation · first H2: Copper Gutters · FAQ H2: Rain Gutters | H1: Polk County, Florida · opening: Polk County, Florida · FAQ H2: Polk County | build/services/drafts/svc-copper-gutters.md (SD, reviewed draft, write-back run 20261025-143023-build-18ec) | no |
+| /galvalume-gutters/ | service | title: Galvalume Gutters (service name) · H1: Galvalume Steel Gutters · opening: Galvalume gutters + gutter contractor · first H2: Galvalume Gutter Job · FAQ H2: Galvalume Rain Gutters | H1: Polk County, Florida · opening: Lakeland–Winter Haven area · FAQ H2: Florida | build/services/drafts/svc-galvalume-gutters.md (SD, reviewed draft, write-back run 20261025-143023-build-18ec) | no |
+| /aluminum-gutters/ | service | title: Aluminum Gutters (service name) · H1: Aluminum Rain Gutters · opening: aluminum gutter systems + gutter contractor · first H2: Aluminum Gutter System · FAQ H2: Aluminum Gutter Installation | H1: Polk County, Florida · opening: Polk County, Florida · FAQ H2: Polk County, Florida | build/services/drafts/svc-aluminum-gutters.md (SD, reviewed draft, write-back run 20261025-143023-build-18ec) | no |
 
 ## Section C — Page inventory
 
@@ -81,6 +90,15 @@ Every area variant except the reserved one. Reuse across service pages is correc
 | URL | Service name | H1 service variant | Status |
 |---|---|---|---|
 | /gutter-cleaning/ | Gutter Cleaning | The Best Gutter and Downspout Cleaning in Polk County, Florida ("The Best" settled the_best_plan_pages) | Draft reviewed (pilot), not approved, not shipped — 2026-10-24 |
+| /seamless-gutter-installation/ | Seamless Gutter Installation | Continuous Rain Gutters in Polk County, Florida | Draft reviewed (services), not approved, not shipped — 2026-10-25 |
+| /gutter-installation/ | Gutter Installation | Gutter Replacement in Polk County, Florida | Draft reviewed (services), not approved, not shipped — 2026-10-25 |
+| /gutter-repair/ | Gutter Repair | Leaking and Sagging Gutter Repair in Polk County, Florida | Draft reviewed (services), not approved, not shipped — 2026-10-25 |
+| /commercial-gutters/ | Commercial Gutters | Commercial Gutter Systems in Polk County, Florida | Draft reviewed (services), not approved, not shipped — 2026-10-25 |
+| /gutter-downspouts/ | Gutter Downspouts | Downspout Installation and Drainage in Polk County, Florida | Draft reviewed (services), not approved, not shipped — 2026-10-25 |
+| /gutter-guards/ | Gutter Guards | The Best Gutter Protection Systems in Polk County, Florida ("The Best" settled the_best_plan_pages) | Draft reviewed (services), not approved, not shipped — 2026-10-25 |
+| /copper-gutters/ | Copper Gutters | Copper Gutter Systems in Polk County, Florida | Draft reviewed (services), not approved, not shipped — 2026-10-25 |
+| /galvalume-gutters/ | Galvalume Gutters | Galvalume Steel Gutters in Polk County, Florida | Draft reviewed (services), not approved, not shipped — 2026-10-25 |
+| /aluminum-gutters/ | Aluminum Gutters | Aluminum Rain Gutters in Polk County, Florida | Draft reviewed (services), not approved, not shipped — 2026-10-25 |
 
 ### C2 · Location pages
 | URL | City | GBP landing page? | Status |
@@ -112,6 +130,82 @@ Every FAQ question and H2 live on the site, with the page that owns it. No quest
 | FAQ: Does a Lakeland historic district or HOA limit gutter colour or profile? | /lakeland-fl/ |
 | FAQ: Who issues permits for gutter work at a Lakeland address — City of Lakeland? | /lakeland-fl/ |
 | FAQ: How do Lakeland's summer storms affect gutters? | /lakeland-fl/ |
+| H2: How Does a Seamless Gutter Installation Work, From Estimate to Clean-Up? | /seamless-gutter-installation/ |
+| H2: What Kinds of Seamless Gutter Jobs Does First Choice Seamless Gutters Take On? | /seamless-gutter-installation/ |
+| H2: What Should Polk County Homeowners Know Before Buying Seamless Gutters? | /seamless-gutter-installation/ |
+| H2: Which Polk County Towns Get Seamless Gutter Installation From First Choice? | /seamless-gutter-installation/ |
+| FAQ: How can you tell if gutters are seamless? | /seamless-gutter-installation/ |
+| FAQ: What are the downsides of seamless gutters? | /seamless-gutter-installation/ |
+| FAQ: How are seamless gutters made? | /seamless-gutter-installation/ |
+| FAQ: What is the highest rated gutter system for a home? | /seamless-gutter-installation/ |
+| H2: How Does First Choice Seamless Gutters Install New Rain Gutters? | /gutter-installation/ |
+| H2: What Kinds of Gutter Replacement and New Gutter Jobs Are There? | /gutter-installation/ |
+| H2: What Gutter Materials Can You Choose? | /gutter-installation/ |
+| H2: What Do Homeowners in Polk County, Florida Ask About New Rain Gutters? | /gutter-installation/ |
+| H2: Where Does First Choice Seamless Gutters Install and Replace Gutters? | /gutter-installation/ |
+| FAQ: When should house gutters be replaced? | /gutter-installation/ |
+| FAQ: What do new rain gutters cost in Florida? | /gutter-installation/ |
+| FAQ: Is it common for a house not to have gutters? | /gutter-installation/ |
+| FAQ: Can I install my own gutters? | /gutter-installation/ |
+| FAQ: How is a gutter installation estimate worked out? | /gutter-installation/ |
+| H2: What Happens During a Seamless Gutter Repair Visit? | /gutter-repair/ |
+| H2: Which Gutter Problems Can Be Repaired Instead of Replaced? | /gutter-repair/ |
+| H2: What Should Polk County Homeowners Know Before Paying for Rain Gutter Repair? | /gutter-repair/ |
+| H2: Which Polk County Towns Can Book a Gutter Repair Visit? | /gutter-repair/ |
+| FAQ: How much does it cost to fix gutters? | /gutter-repair/ |
+| FAQ: What is the most common problem with gutters? | /gutter-repair/ |
+| FAQ: Can a handyman fix a gutter? | /gutter-repair/ |
+| FAQ: Should a damaged gutter be repaired or replaced? | /gutter-repair/ |
+| FAQ: What does routine gutter maintenance include? | /gutter-repair/ |
+| H2: How Does First Choice Seamless Gutters Install Commercial Rain Gutters? | /commercial-gutters/ |
+| H2: What Kinds of Commercial Gutter Work Does First Choice Handle? | /commercial-gutters/ |
+| H2: What Do Polk County Business Owners Ask About Commercial Gutter Installation? | /commercial-gutters/ |
+| H2: Where Does First Choice Seamless Gutters Install Commercial Gutters? | /commercial-gutters/ |
+| FAQ: What are commercial-grade gutters? | /commercial-gutters/ |
+| FAQ: What is the difference between box gutters and K-style gutters on a commercial roof? | /commercial-gutters/ |
+| FAQ: What size gutters does a large commercial roof need? | /commercial-gutters/ |
+| FAQ: How long does a commercial gutter installation take? | /commercial-gutters/ |
+| H2: How Does First Choice Seamless Gutters Fit Downspouts to Rain Gutters? | /gutter-downspouts/ |
+| H2: Which Downspout Sizes, Materials and Drainage Add-Ons Suit a Gutter Installation? | /gutter-downspouts/ |
+| H2: Which Downspout Questions Come Up Most With Seamless Gutters in Polk County? | /gutter-downspouts/ |
+| H2: Which Polk County Towns Does First Choice Serve for Downspout Work? | /gutter-downspouts/ |
+| FAQ: What is the rule of thumb for how many downspouts a gutter needs? | /gutter-downspouts/ |
+| FAQ: Can you put a 3x4 downspout on a 5-inch gutter? | /gutter-downspouts/ |
+| FAQ: What can I use instead of a downspout? | /gutter-downspouts/ |
+| FAQ: How much does it cost to replace a downspout? | /gutter-downspouts/ |
+| FAQ: Where should downspouts drain on a Florida lot? | /gutter-downspouts/ |
+| H2: How Does First Choice Seamless Gutters Add Gutter Guards to Rain Gutters? | /gutter-guards/ |
+| H2: Which Kinds of Gutter Guards Work on Rain Gutters? | /gutter-guards/ |
+| H2: Are Gutter Guards Worth It on Seamless Gutters in Polk County, Florida? | /gutter-guards/ |
+| H2: Which Polk County Towns Can Get Gutter Guards From First Choice? | /gutter-guards/ |
+| FAQ: What are the downsides of gutter guards? | /gutter-guards/ |
+| FAQ: How much should I expect to pay for gutter guards? | /gutter-guards/ |
+| FAQ: What is the difference between a leaf guard and a gutter guard? | /gutter-guards/ |
+| FAQ: What do roofers say about gutter guards? | /gutter-guards/ |
+| H2: How Does First Choice Seamless Gutters Plan and Install Copper Gutters? | /copper-gutters/ |
+| H2: What Kinds of Copper Gutters and Downspouts Can You Choose From? | /copper-gutters/ |
+| H2: What Do Polk County Homeowners Ask About Copper Rain Gutters? | /copper-gutters/ |
+| H2: Which Polk County Towns Can Get Copper Gutters From First Choice Seamless Gutters? | /copper-gutters/ |
+| FAQ: How long do copper gutters last? | /copper-gutters/ |
+| FAQ: Are copper gutters worth the cost? | /copper-gutters/ |
+| FAQ: Can copper and aluminum gutters be mixed? | /copper-gutters/ |
+| FAQ: Should copper gutters be soldered? | /copper-gutters/ |
+| H2: How Does a Galvalume Gutter Job Work With First Choice Seamless Gutters? | /galvalume-gutters/ |
+| H2: Which Parts of a Galvalume Gutter System Can First Choice Seamless Gutters Handle? | /galvalume-gutters/ |
+| H2: What Do Florida Homeowners Ask About Galvalume Rain Gutters? | /galvalume-gutters/ |
+| H2: Where Does First Choice Seamless Gutters Install Galvalume Gutters? | /galvalume-gutters/ |
+| FAQ: What is Galvalume steel? | /galvalume-gutters/ |
+| FAQ: Are Galvalume gutters better than aluminum or galvanized gutters? | /galvalume-gutters/ |
+| FAQ: What is the best gutter material for Florida homes? | /galvalume-gutters/ |
+| FAQ: Do Galvalume gutters rust in Florida humidity? | /galvalume-gutters/ |
+| H2: What Happens When First Choice Seamless Gutters Installs an Aluminum Gutter System? | /aluminum-gutters/ |
+| H2: Which Kinds of Aluminum Gutters Can a Home Have? | /aluminum-gutters/ |
+| H2: What Should Polk County, Florida Homeowners Ask About Aluminum Gutter Installation? | /aluminum-gutters/ |
+| H2: Where Does First Choice Seamless Gutters Install Aluminum Gutters? | /aluminum-gutters/ |
+| FAQ: Are aluminum gutters good? | /aluminum-gutters/ |
+| FAQ: What is the difference between .027 and .032 aluminum gutters? | /aluminum-gutters/ |
+| FAQ: Do aluminum gutters rust? | /aluminum-gutters/ |
+| FAQ: What do aluminum gutters cost for a home? | /aluminum-gutters/ |
 
 ## Section D — Verified facts
 Everything a writer may state. **Not here = does not exist.**

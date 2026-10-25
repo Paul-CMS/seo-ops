@@ -2495,7 +2495,11 @@
             }
           }
         },
-        "sem_findings": 0
+        "sem_findings": 0,
+        "content_written_back": {
+          "at": "2026-10-25T14:33:07-05:00",
+          "run": "20261025-143023-build-18ec"
+        }
       },
       {
         "id": "locations-west",
@@ -2741,12 +2745,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261025-142837-build-a824",
+    "run_id": "20261025-143023-build-18ec",
     "command": "build",
-    "finished": "2026-10-25T14:28:54-05:00",
-    "result": "Nine services drafts recorded as drafted; review accept-all; H1 changes in drafts; plan/draft H1 mismatch open",
-    "changes": 0,
-    "step": "build:review",
+    "finished": "2026-10-25T14:33:36-05:00",
+    "result": "Services Brand Guide write-back: 9 B3, 9 C1, 76 C3 rows from the reviewed drafts; no collisions; awaiting batch:services:drafts approval",
+    "changes": 3,
+    "step": "build:writeback",
     "batch": "services"
   },
   "spend": {
@@ -2768,7 +2772,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-25T14:28:54-05:00",
+  "updated": "2026-10-25T14:33:36-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -3630,6 +3634,34 @@
       "by_agent": {
         "main": 0.0115
       }
+    },
+    {
+      "run": "20261025-143023-build-18ec",
+      "step": "build:writeback",
+      "tokens": 3307502,
+      "usd": 1.2911,
+      "at": "2026-10-25T14:33:36-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0042,
+          "in": 6,
+          "out": 1739,
+          "cache_read": 278969,
+          "cache_write": 2610
+        },
+        "claude-opus-5-5": {
+          "usd": 1.2869,
+          "in": 58,
+          "out": 825,
+          "cache_read": 2884638,
+          "cache_write": 138657
+        }
+      },
+      "by_agent": {
+        "main": 0.0042,
+        "build": 1.2869
+      }
     }
   ],
   "sessions": {
@@ -3686,6 +3718,12 @@
       "step": "interview:facts",
       "first_run": "20261024-220530-interview-f675",
       "at": "2026-10-24T22:05:47-05:00"
+    },
+    "4a6865b0-a0c4-4da4-a7a8-8d4801693f5a": {
+      "key": "batches:services",
+      "step": "build:writeback",
+      "first_run": "20261025-143023-build-18ec",
+      "at": "2026-10-25T14:33:36-05:00"
     }
   },
   "wordpress": {
@@ -3733,8 +3771,8 @@
     "H-2026-10-23-04-other"
   ],
   "review_pause": {
-    "run_id": "20261025-142019-build-47a3",
-    "step": "build:drafts",
-    "at": "2026-10-25T14:28:31-05:00"
+    "run_id": "20261025-143023-build-18ec",
+    "step": "build:writeback",
+    "at": "2026-10-25T14:33:36-05:00"
   }
 }

@@ -611,3 +611,27 @@ Still open:
 - Paragraphs still over grade 10: aluminum cost FAQ, downspouts process H2, two sections on the Galvalume page, seamless meta and "highest rated" FAQ.
 - Brand Guide write-back and ship not run.
 
+## /build · 2026-10-25 · run 20261025-143023-build-18ec
+
+## What happened
+- The services section's one Brand Guide write-back, from the nine reviewed drafts (review applied "accept all", run a824).
+- B3: 9 rows added (category and area variant per position: title, H1, opening, first H2, FAQ H2), each pointing to its draft.
+- C1: 9 service rows added with the drafts' H1s (all area "Polk County, Florida"; "The Best" only on Gutter Guards, settled).
+- C2: no change (no location pages in this section).
+- C3: 76 rows added (37 H2, 39 FAQ). Checked: no duplicates within the section or with the pilot's 18 rows.
+- `status.py writeback` recorded (no refusal); change #363 logged; records rendered; brand-guide.md copied to Drive.
+- Values come from the drafts, not the result files: five H1s switched to "Polk County, Florida" by Paul's earlier answer.
+
+## Still open (not blocking this step)
+- The approved site plan still lists Lakeland–Winter Haven H1s for five pages; the Brand Guide now holds the draft H1s.
+- On those five pages (aluminum, commercial, copper, gutter guards, gutter installation) the opening paragraph also uses
+  "Polk County, Florida", the same area variant as the H1. This is noted only; it was not raised as a finding.
+- 27 [NEED] placeholders across the nine drafts (service process/scope mostly); the open timeframe and pricing questions.
+- Technical blockers (H-2026-10-23-03 broken_link, 11 items) still issued; ship waits on them, not the approval.
+
+## Next
+- Paul: `/approve first-choice-seamless-gutters batch:services:drafts` (the write-back changed no approved value).
+- Then `/build write locations-west`.
+
+**Changes (script):** 3 — drive_file ×2, brand_guide_writeback ×1
+
