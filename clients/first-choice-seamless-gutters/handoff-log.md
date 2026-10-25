@@ -375,3 +375,17 @@ Still open:
 - Next: when the owner's answers come back, run /interview first-choice-seamless-gutters facts-answers pilot.
 - Still open (not blocking this run): broken-link blocker handoffs issued to VA (H-2026-10-23-03-broken_link-01 to -05, +6 more); /verify runs when they return.
 
+## /interview · 2026-10-24 · run 20261024-204753-interview-c729
+
+- Owner answers (relayed by Paul 2026-10-24) saved: clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Answers - pilot - 2026-10-24.md
+- Settled under keys: fact:svc-gutter-cleaning:timeframe, fact:svc-gutter-cleaning:pricing, fact:d:emergency. Fact d-emergency-after-hours-reality recorded as client_confirmed.
+- Q1 (timeframe) and Q2 (pricing): site statements confirmed true. No specific duration given.
+- Q3 (after-hours): available 7 days, emergency after-hours available, GBP hours correct.
+- Paul's note on maintenance wording (advertise cleaning instead): consistent with settled gutter-maintenance-consolidated. Wording change on the cleaning page is for Build; any change to the settled decision needs a revision.
+- Evidence gate re-run (pilot): still BLOCK.
+  - svc-gutter-cleaning: 2 required facts unknown: "What the service includes (scope)" and "How the service is delivered (steps, methods, equipment)". These were not in the answered pack; the owner still needs asking.
+  - loc-lakeland: 3 required facts unverified or unknown: city served (site claim, not yet confirmed as a fact); city-specific conditions and neighborhoods (public research, not the client); permit office and named places (public research).
+- Open: owner questions on service scope and delivery (not yet asked). Public research for loc-lakeland via the researcher.
+
+- FACT 2026-10-24T20:48 · run 20261024-204753-interview-c729 · d-emergency-after-hours-reality (value, status, source) · client_confirmed · Available 7 days a week; emergency after-hours service avai…
+

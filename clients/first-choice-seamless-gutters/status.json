@@ -549,32 +549,30 @@
       "evidence": {
         "result": "block",
         "counts": {
-          "Known": 7,
+          "Known": 9,
           "Unknown": 3,
-          "Unverified": 2,
+          "Unverified": 0,
           "Conflict": 0
         },
         "why": [
           "2 required facts are not known (block at 2)"
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-cleaning.grid.md",
-        "sha": "1e0b8ee10f8c",
-        "at": "2026-10-24T20:29:09-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "3fd5705014c2",
+        "at": "2026-10-24T20:48:08-05:00",
+        "run": "20261024-204753-interview-c729",
         "gaps": [
           "service_scope",
           "service_process",
-          "timeframe",
-          "pricing",
           "certifications"
         ]
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/pilot/packs/svc-gutter-cleaning.md",
         "json": "clients/first-choice-seamless-gutters/build/pilot/packs/svc-gutter-cleaning.json",
-        "sha": "3142b9203a5e",
-        "at": "2026-10-24T20:29:09-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "71c8fe3bcc2b",
+        "at": "2026-10-24T20:48:08-05:00",
+        "run": "20261024-204753-interview-c729",
         "section": "pilot",
         "counts": {
           "facts": 42,
@@ -584,7 +582,7 @@
           "site_gbp": 12,
           "public": 0,
           "place": 0,
-          "settled": 2,
+          "settled": 5,
           "gaps": 3,
           "excerpts": 55
         }
@@ -804,33 +802,32 @@
       "evidence": {
         "result": "block",
         "counts": {
-          "Known": 4,
+          "Known": 5,
           "Unknown": 2,
-          "Unverified": 4,
+          "Unverified": 3,
           "Conflict": 0
         },
         "why": [
           "3 required facts are not known (block at 2)"
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lakeland.grid.md",
-        "sha": "3c159016ca70",
-        "at": "2026-10-24T20:29:09-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "adb3c79951cb",
+        "at": "2026-10-24T20:48:08-05:00",
+        "run": "20261024-204753-interview-c729",
         "gaps": [
           "city_served",
           "local_context",
           "neighborhoods",
           "place_entities",
-          "permit_office",
-          "emergency"
+          "permit_office"
         ]
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/pilot/packs/loc-lakeland.md",
         "json": "clients/first-choice-seamless-gutters/build/pilot/packs/loc-lakeland.json",
-        "sha": "3d72376e9a47",
-        "at": "2026-10-24T20:29:09-05:00",
-        "run": "20261024-202120-build-2ab2",
+        "sha": "5c33a5f23fd9",
+        "at": "2026-10-24T20:48:08-05:00",
+        "run": "20261024-204753-interview-c729",
         "section": "pilot",
         "counts": {
           "facts": 43,
@@ -840,7 +837,7 @@
           "site_gbp": 12,
           "public": 0,
           "place": 0,
-          "settled": 4,
+          "settled": 5,
           "gaps": 2,
           "excerpts": 50
         }
@@ -2354,12 +2351,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261024-204250-interview-bece",
+    "run_id": "20261024-204753-interview-c729",
     "command": "interview",
-    "finished": "2026-10-24T20:43:04-05:00",
-    "result": "Facts question pack for pilot batch written: 3 questions, 2 blocked pages. Paul to send.",
+    "finished": "2026-10-24T20:48:23-05:00",
+    "result": "Owner facts answers recorded (timeframe, pricing, after-hours); gate still blocks svc-gutter-cleaning (scope, delivery unasked) and loc-lakeland (public research)",
     "changes": 0,
-    "step": "interview:facts",
+    "step": "interview:facts-answers",
     "batch": "pilot"
   },
   "spend": {
@@ -2381,7 +2378,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T20:43:04-05:00",
+  "updated": "2026-10-24T20:48:23-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -2846,6 +2843,26 @@
       },
       "by_agent": {
         "main": 0.0064
+      }
+    },
+    {
+      "run": "20261024-204753-interview-c729",
+      "step": "interview:facts-answers",
+      "tokens": 671225,
+      "usd": 0.0122,
+      "at": "2026-10-24T20:48:23-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0122,
+          "in": 12,
+          "out": 4530,
+          "cache_read": 649506,
+          "cache_write": 17177
+        }
+      },
+      "by_agent": {
+        "main": 0.0122
       }
     }
   ],

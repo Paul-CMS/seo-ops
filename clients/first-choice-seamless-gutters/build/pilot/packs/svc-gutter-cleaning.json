@@ -3,7 +3,7 @@
  "type": "service",
  "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
  "section": "pilot",
- "built": "2026-10-24T20:29:09-05:00",
+ "built": "2026-10-24T20:48:08-05:00",
  "services": [
   "Gutter Cleaning",
   "Gutter and Downspout Cleaning"
@@ -205,10 +205,10 @@
   {
    "id": "d-emergency-after-hours-reality",
    "label": "Emergency / after-hours reality",
-   "status": "submitted",
-   "value": "Site: 'Available 7 Days a Week'; GBP hours 7 AM–8 PM Mon–Sun; no emergency claim found",
-   "source": "GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-1",
-   "state": "unknown"
+   "status": "client_confirmed",
+   "value": "Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct.",
+   "source": "Client answer via Paul 2026-10-24 (interviews/facts/First Choice Seamless Gutters - Facts Answers - pilot - 2026-10-24.md)",
+   "state": "confirmed"
   },
   {
    "id": "d-minimum-service-call-or-trip-charge",
@@ -769,6 +769,21 @@
    "key": "audit_gutter_maintenance",
    "text": "F-014 Gutter Maintenance: consolidate into the Gutter Repair and Gutter Cleaning pages; no standalone /services/gutter-maintenance/ page. The old URL redirects (never deleted) to the closest of the two (Paul, 2026-10-24)",
    "at": "2026-10-24"
+  },
+  {
+   "key": "the_best_plan_pages",
+   "text": "Site plan choice C (Paul): 'The Best' in the H1 on Gutter Cleaning and Gutter Guards only.",
+   "at": "2026-10-24"
+  },
+  {
+   "key": "fact:svc-gutter-cleaning:timeframe",
+   "text": "Site statement still true per client. Client gave no specific job duration.",
+   "at": "2026-10-24"
+  },
+  {
+   "key": "fact:svc-gutter-cleaning:pricing",
+   "text": "Site statement true per client: honest pricing, no hidden fees, free no-obligation estimate.",
+   "at": "2026-10-24"
   }
  ],
  "gaps": [
@@ -1259,6 +1274,11 @@
    "id": "d-free-estimate-and-what-free-means",
    "label": "Free estimate — and what free means",
    "value": "Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees'"
+  },
+  {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "value": "Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct."
   },
   {
    "id": "d-named-staff-for-on-page-use",

@@ -1,6 +1,6 @@
 # Evidence pack — Gutter Cleaning (service)
 
-Section **pilot** · https://www.firstchoiceseamlessgutters.net/gutter-cleaning/ · built 2026-10-24T20:29 by evidence_pack.py (CM-061).
+Section **pilot** · https://www.firstchoiceseamlessgutters.net/gutter-cleaning/ · built 2026-10-24T20:48 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -24,6 +24,7 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | d-guarantees-response-time-on-time-satisfaction | Guarantees (response time, on-time, satisfaction) | Form enquiries answered within 24 hours (client confirmed). Client note: 'We pride ourselves on great customer communication and excellent customer care.' | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_7 / claim_7_detail) |
 | d-awards-and-rankings | Awards and rankings | 'Best Gutter Installer in Lakeland, Florida' by GutterPro HQ, 2025 — client says accurate; only public source is a company-distributed press release (MarketersMedia, Dec 2025) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_10); markets.financialcontent.com Ma |
 | d-free-estimate-and-what-free-means | Free estimate — and what free means | Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees' | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_9) |
+| d-emergency-after-hours-reality | Emergency / after-hours reality | Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct. | Client answer via Paul 2026-10-24 (interviews/facts/First Choice Seamless Gutters - Facts Answers - pilot - 2026-10-24.md) |
 | d-named-staff-for-on-page-use | Named staff for on-page use | Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow'] | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2; question_5) |
 | d-blog-author-a-real-person-cm-039-from-the-decision-sheet | Blog author — a real person (CM-039; from the Decision Sheet) | Adrian Buehl, owner | Settled blog_author (Paul, Approval 1, 2026-10-22: the owner named on the returned facts, candidate Adrian Buehl); owners confirmed on Client proof sheet return |
 | cms | Content management system | WordPress | Paul, intake answer |
@@ -57,7 +58,6 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | d-certifications-authorizations-factory-training | Certifications, authorizations, factory training |  |  |
 | d-team-size-trucks-jobs-completed | Team size / trucks / jobs completed |  |  |
 | d-financing-available-provider-terms | Financing — available, provider, terms | [NEED: financing — none found on site, GBP or BBB; client wrote 'answers follow'] | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest |
-| d-emergency-after-hours-reality | Emergency / after-hours reality | Site: 'Available 7 Days a Week'; GBP hours 7 AM–8 PM Mon–Sun; no emergency claim found | GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-1 |
 | d-minimum-service-call-or-trip-charge | Minimum service call or trip charge | [NEED: minimum or trip charge — client wrote 'answers follow'] | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest |
 | d-payment-methods | Payment methods | [NEED: payment methods — client wrote 'answers follow'] | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest |
 | d-services-subcontracted-out | Services subcontracted out | [NEED: subcontracting — client answered 'n/a'; confirm it means nothing is subcontracted] | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest |
@@ -189,6 +189,9 @@ _Nothing in the place store yet for this page's place (places.py status lists wh
 
 - 2026-10-22 · `service_list` — Services offered: The 11 site services: Seamless Gutter Installation · Gutter Installation · Gutter Repair · Commercial Gutters · Gutter Downspouts · Gutter Guards · Gutter Maintenance · Gutter Cleaning · Copper Gutters · Galvalume Gutters · Aluminum Gutters — client confirms on the proof sheet; fol
 - 2026-10-24 · `audit_gutter_maintenance` — F-014 Gutter Maintenance: consolidate into the Gutter Repair and Gutter Cleaning pages; no standalone /services/gutter-maintenance/ page. The old URL redirects (never deleted) to the closest of the two (Paul, 2026-10-24)
+- 2026-10-24 · `the_best_plan_pages` — Site plan choice C (Paul): 'The Best' in the H1 on Gutter Cleaning and Gutter Guards only.
+- 2026-10-24 · `fact:svc-gutter-cleaning:timeframe` — Site statement still true per client. Client gave no specific job duration.
+- 2026-10-24 · `fact:svc-gutter-cleaning:pricing` — Site statement true per client: honest pricing, no hidden fees, free no-obligation estimate.
 
 ## Gaps — the only things research looks for
 

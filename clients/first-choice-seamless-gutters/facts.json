@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-24T20:16:20-05:00",
+  "updated": "2026-10-24T20:48:06-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -363,15 +363,15 @@
       "section": "D",
       "num": "",
       "label": "Emergency / after-hours reality",
-      "value": "Site: 'Available 7 Days a Week'; GBP hours 7 AM–8 PM Mon–Sun; no emergency claim found",
-      "status": "submitted",
+      "value": "Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct.",
+      "status": "client_confirmed",
       "status_text": null,
-      "source": "GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-10-22",
+      "source": "Client answer via Paul 2026-10-24 (interviews/facts/First Choice Seamless Gutters - Facts Answers - pilot - 2026-10-24.md)",
       "quote": "Available 7 Days a Week",
-      "date": "2026-10-22",
+      "date": "2026-10-24",
       "who": "Paul",
       "count": null,
-      "was": "Unknown"
+      "was": "Submitted"
     },
     {
       "id": "d-minimum-service-call-or-trip-charge",
