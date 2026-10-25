@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 5 of 8 — Build plan and blockers**
-- **What is happening now:** waiting for Paul's approval — the site plan is ready for your approval
-- **Waiting on:** Paul — the site plan is ready for your approval
-- **Next action:** Paul types `/approve first-choice-seamless-gutters site_plan --files "clients/first-choice-seamless-gutters/build/First Choice Seamless Gutters - Site Plan - REVIEW.md"` (or asks for changes first) · model: Haiku chat
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
+- **What is happening now:** Stage 5 (Build plan and blockers) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open first-choice-seamless-gutters) and type /next first-choice-seamless-gutters. Next there: /interview first-choice-seamless-gutters facts pilot (the evidence gate blocked svc-gutter-cleaning, loc-lakeland — targeted questions for the owner (you send them). Or waive instead: /approve first-choice-seamless-gutters evidence:svc-gutter-cleaning --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "<why you waive it>")
+- **Waiting on:** nobody
+- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-24T20:38 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T20:39 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the site plan is ready for your approval | 2026-10-24 | /approve first-choice-seamless-gutters site_plan |
+| — | nothing | | |
 
 ## Waiting on (not blocking)
 
@@ -32,6 +32,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-22: Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly — approved
 - 2026-10-23: Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here) — approved
 - 2026-10-24: Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims) — approved
+- 2026-10-24: site plan — approved
 - Drive copy pending sync — the local Drive folder ~/Library/CloudStorage/GoogleDrive-paul@coastalmarketingstrategies.com/My Drive/v3. CMS Technical SEO Audit 2026 is not there (Drive for desktop signed out or not syncing?). Files stay in the repo until Drive for desktop syncs; nothing is retyped into the connector.
 - Primary GBP category and category entity: Gutter service (Paul, 2026-10-22).
 - Area entity: Polk County, Florida (Paul, 2026-10-22).

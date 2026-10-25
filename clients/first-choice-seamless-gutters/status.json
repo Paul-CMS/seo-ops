@@ -2053,7 +2053,18 @@
   "build": {
     "site_plan": {
       "file": "clients/first-choice-seamless-gutters/build/First Choice Seamless Gutters - Site Plan - REVIEW.md",
-      "approval": null
+      "approval": {
+        "state": "approved",
+        "by": "Paul",
+        "at": "2026-10-24T20:39:43-05:00",
+        "note": null,
+        "files": {
+          "clients/first-choice-seamless-gutters/build/First Choice Seamless Gutters - Site Plan - REVIEW.md": "7141f5f6b7aa"
+        },
+        "conditions": [],
+        "sensitive_review": null,
+        "practitioner": null
+      }
     },
     "batches": [
       {
@@ -2344,20 +2355,21 @@
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
-    "phase": "Planning your new pages",
+    "phase": "Writing your pages",
     "done": [
       "We confirmed how search engines should understand your business",
       "We prepared a fact sheet for you to confirm",
       "You returned the fact sheet — thank you",
       "We finished reviewing your website",
       "Your business details are confirmed",
-      "Research is complete and page work has started"
+      "Research is complete and page work has started",
+      "Your new page plan is ready"
     ],
     "waiting_on_client": [],
-    "next": "We are planning every service and location page."
+    "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T20:38:34-05:00",
+  "updated": "2026-10-24T20:39:43-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -2892,10 +2904,5 @@
   "blocker_handoffs": [
     "H-2026-10-23-03-broken_link",
     "H-2026-10-23-04-other"
-  ],
-  "review_pause": {
-    "run_id": "20261024-203609-build-ddb9",
-    "step": "build:plan",
-    "at": "2026-10-24T20:38:34-05:00"
-  }
+  ]
 }
