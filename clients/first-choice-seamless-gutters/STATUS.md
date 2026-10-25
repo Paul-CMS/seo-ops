@@ -1,18 +1,17 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:write finished (run 20261024-210703-build-c2ee) and that stage is in review mode — l; Paul — Build route for this client: A (the system writes the pages) or B (Paul provides finished 
-- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
+- **Stage 4 of 8 — Audit**
+- **What is happening now:** waiting for Paul's approval — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md. Discovery is then signed off automatically and Build starts
+- **Waiting on:** Paul — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-
+- **Next action:** Paul types `/approve first-choice-seamless-gutters brand_guide_approved --files "clients/first-choice-seamless-gutters/brand-guide.md"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-24T21:55 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T21:58 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:write finished (run 20261024-210703-build-c2ee) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build first-choice-seamless-gutters writeback pilot (Brand Guide write-back for section pilot (B3, C1/C2, C3) from its reviewed drafts, before their one approval — once per section; ship never writes it) | 2026-10-24 | /next first-choice-seamless-gutters |
-| Paul | Build route for this client: A (the system writes the pages) or B (Paul provides finished content)? status.json client.route is unset; build.md step 2 says ask Paul. The pilot write step stopped before outlines and drafts. | 2026-10-24 | client_route |
+| Paul | the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md. Discovery is then signed off automatically and Build starts | 2026-10-24 | /approve first-choice-seamless-gutters brand_guide_approved |
 
 ## Waiting on (not blocking)
 
@@ -80,6 +79,7 @@ _Open, but the next action above goes ahead without them._
 - Lakeland is served. The proof sheet confirms all 20 Polk County places, including Lakeland, and Lakeland is the base town.
 - Rainy season May 25 to Oct 10 and hurricane season Jun 1 to Nov 30 (National Weather Service). Lakeland averages about 56.8 inches of rain a year, wettest June to September (Wikipedia). Housing stock, tree debris and failure patterns are not sourced and are not stated.
 - Lakeland neighborhoods and historic districts: Beacon Hill-Alta Vista, Biltmore-Cumberland, Dixieland, East Lake Morton, Lake Hunter Terrace, Munn Park, South Lake Morton, Moorehead, Orangewood (Wikipedia, Lakeland, Florida).
+- Route A: the system writes the pages.
 - The city-level Google Maps embed on the Lakeland page is replaced by the VA when the page is in draft. The placeholder stays in the draft until then.
 
 ## Open VA items
@@ -133,9 +133,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 10 | 20,443,508 | $4.89 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 11 | 22,252,682 | $5.44 | $0.00 |
 | any stage | 6 | 5,246,914 | $1.43 | $0.00 |
-| **total** | 29 | 72,023,018 | $21.69 | $0.00 |
+| **total** | 30 | 73,832,192 | $22.24 | $0.00 |
 
 ## Spend by step (model)
 
@@ -150,6 +150,7 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:reconcile | 1 | 2,698,218 | $0.90 | $0.00 |
 | discovery:data | 1 | 0 | $0.62 | $0.00 |
 | build:review | 2 | 2,023,645 | $0.56 | $0.00 |
+| build:writeback | 1 | 1,809,174 | $0.55 | $0.00 |
 | interview:facts | 4 | 5,259,143 | $0.16 | $0.00 |
 | build:blockers | 2 | 1,617,331 | $0.03 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
@@ -157,6 +158,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 29 | 72,023,018 | $21.69 | $0.00 |
+| **total** | 30 | 73,832,192 | $22.24 | $0.00 |
 
-Last run: /build 2026-10-24T21:55 — Paul: VA replaces the Lakeland map embed in draft; placeholder stays until then
+Last run: /build 2026-10-24T21:58 — Route A settled; pilot Brand Guide write-back (B3 2 rows, C1 1, C2 1, C3 18) from the reviewed drafts, before the drafts approval.

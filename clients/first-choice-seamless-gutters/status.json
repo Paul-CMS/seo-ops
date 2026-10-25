@@ -2143,7 +2143,11 @@
             }
           }
         },
-        "sem_findings": 0
+        "sem_findings": 0,
+        "content_written_back": {
+          "at": "2026-10-24T21:57:56-05:00",
+          "run": "20261024-215625-build-f067"
+        }
       },
       {
         "id": "services",
@@ -2406,12 +2410,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261024-215547-build-55dc",
+    "run_id": "20261024-215625-build-f067",
     "command": "build",
-    "finished": "2026-10-24T21:55:51-05:00",
-    "result": "Paul: VA replaces the Lakeland map embed in draft; placeholder stays until then",
-    "changes": 0,
-    "step": "build:review",
+    "finished": "2026-10-24T21:58:08-05:00",
+    "result": "Route A settled; pilot Brand Guide write-back (B3 2 rows, C1 1, C2 1, C3 18) from the reviewed drafts, before the drafts approval.",
+    "changes": 2,
+    "step": "build:writeback",
     "batch": "pilot"
   },
   "spend": {
@@ -2433,7 +2437,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T21:55:51-05:00",
+  "updated": "2026-10-24T21:58:08-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -3111,6 +3115,26 @@
       "by_agent": {
         "main": 0.0027
       }
+    },
+    {
+      "run": "20261024-215625-build-f067",
+      "step": "build:writeback",
+      "tokens": 1809174,
+      "usd": 0.5475,
+      "at": "2026-10-24T21:58:08-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-opus-5-5": {
+          "usd": 0.5475,
+          "in": 40,
+          "out": 239,
+          "cache_read": 1771226,
+          "cache_write": 37669
+        }
+      },
+      "by_agent": {
+        "build": 0.5475
+      }
     }
   ],
   "sessions": {
@@ -3208,8 +3232,8 @@
     "H-2026-10-23-04-other"
   ],
   "review_pause": {
-    "run_id": "20261024-210703-build-c2ee",
-    "step": "build:write",
-    "at": "2026-10-24T21:48:28-05:00"
+    "run_id": "20261024-215625-build-f067",
+    "step": "build:writeback",
+    "at": "2026-10-24T21:58:08-05:00"
   }
 }

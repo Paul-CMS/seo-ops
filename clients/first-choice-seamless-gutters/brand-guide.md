@@ -68,6 +68,8 @@ Every area variant except the reserved one. Reuse across service pages is correc
 | Page URL | Page type | Category variant | Area variant | Content file (SD/LD) | Shipped |
 |---|---|---|---|---|---|
 | / | homepage | | *(reserved)* | | |
+| /gutter-cleaning/ | service | title: Gutter Cleaning (service name) · H1: Gutter and Downspout Cleaning · opening: rain gutters + seamless gutter contractor · first H2: Rain Gutters · FAQ H2: Gutter Contractor | H1: Polk County, Florida · opening: Lakeland–Winter Haven metropolitan area · FAQ H2: Polk County | build/pilot/drafts/svc-gutter-cleaning.md (SD, reviewed draft, write-back run 20261024-215625-build-f067) | no |
+| /lakeland-fl/ | location | title: Gutter Contractor · H1: Rain Gutters · first H2: Gutter Installation · opening: seamless gutters | city: Lakeland (title "Lakeland, FL", H1) · opening: Polk County, Florida | build/pilot/drafts/loc-lakeland.md (LD, reviewed draft, write-back run 20261024-215625-build-f067) | no |
 
 ## Section C — Page inventory
 
@@ -78,10 +80,12 @@ Every area variant except the reserved one. Reuse across service pages is correc
 ### C1 · Service pages
 | URL | Service name | H1 service variant | Status |
 |---|---|---|---|
+| /gutter-cleaning/ | Gutter Cleaning | The Best Gutter and Downspout Cleaning in Polk County, Florida ("The Best" settled the_best_plan_pages) | Draft reviewed (pilot), not approved, not shipped — 2026-10-24 |
 
 ### C2 · Location pages
 | URL | City | GBP landing page? | Status |
 |---|---|---|---|
+| /lakeland-fl/ | Lakeland | No — the GBP Website field is the homepage (A11) | Draft reviewed (pilot), not approved, not shipped — 2026-10-24; map embed left for the VA (settled loc-lakeland:map-embed) |
 
 Only a verified GBP's actual landing URL gets LocalBusiness-type schema (BB-604).
 
@@ -90,6 +94,24 @@ Every FAQ question and H2 live on the site, with the page that owns it. No quest
 
 | Question or H2 | Page that owns it |
 |---|---|
+| H2: How Does First Choice Seamless Gutters Clean Rain Gutters? | /gutter-cleaning/ |
+| H2: What Does a Gutter Cleaning Include, and What Is Separate? | /gutter-cleaning/ |
+| H2: What Do Polk County Homeowners Ask a Gutter Contractor About Cleaning? | /gutter-cleaning/ |
+| H2: Where Does First Choice Seamless Gutters Offer Gutter Cleaning? | /gutter-cleaning/ |
+| FAQ: How much does gutter cleaning cost? | /gutter-cleaning/ |
+| FAQ: When is the best time of year to clean gutters in Florida? | /gutter-cleaning/ |
+| FAQ: How often should gutters be cleaned in Polk County? | /gutter-cleaning/ |
+| FAQ: What are the signs my gutters need cleaning? | /gutter-cleaning/ |
+| FAQ: Do telescopic gutter cleaners work? | /gutter-cleaning/ |
+| H2: Gutter Installation, Repair and Cleaning in Lakeland | /lakeland-fl/ |
+| H2: What Makes Lakeland Hard on Gutters? | /lakeland-fl/ |
+| H2: How Does First Choice Serve Lakeland Homeowners? | /lakeland-fl/ |
+| H2: Lakeland Gutter Questions | /lakeland-fl/ |
+| H2: Which Lakeland Neighborhoods Does First Choice Serve? | /lakeland-fl/ |
+| H2: Which Other Cities Near Lakeland Does First Choice Serve? | /lakeland-fl/ |
+| FAQ: Does a Lakeland historic district or HOA limit gutter colour or profile? | /lakeland-fl/ |
+| FAQ: Who issues permits for gutter work at a Lakeland address — City of Lakeland? | /lakeland-fl/ |
+| FAQ: How do Lakeland's summer storms affect gutters? | /lakeland-fl/ |
 
 ## Section D — Verified facts
 Everything a writer may state. **Not here = does not exist.**
