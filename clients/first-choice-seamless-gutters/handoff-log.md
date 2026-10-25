@@ -283,3 +283,22 @@ Open: flag F-004 (citation export missing; the C3 screen counted it as a pass) i
 
 **Changes (script):** 1 — other ×1
 
+## /discovery · 2026-10-24 · run 20261024-195727-discovery-1534
+
+- Returned sheet saved verbatim: discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json (form export v1); marked proof_sheet_returned; Drive copy made.
+- Facts: 27 recorded — 20 Client Confirmed (A rows, owners, insurance, warranty in writing, 24 h response, free inspection, award, base town Lakeland, family owned, hours, Sebring not served, 20 Polk towns, 10 services kept / Gutter Maintenance stop, listings, $150 offer), 1 Paul Approved (blog author Adrian Buehl, per settled blog_author), 1 Disputed (Plant City), 1 Submitted (question_6 text), 4 [NEED] (minimum charge, payment, financing, subcontracting "n/a").
+- Reconciled: Brand Guide D2 (4 unsupported claims), D3 (4 content-risk rows), E (service area + towns note), G (positioning [NEED] + claims to substantiate); Discovery Record §10. Marked reconciled (brand-guide.md#A+D+E+G).
+- Reopen logged: audit_plant_city — client says Plant City served; Paul's fact says not served.
+- Open for Paul: Plant City; Gutter Maintenance page (client: stop); "licensed" on 8 live pages (no licence held, F-004); founding year (client "25+ years" vs BBB 2021 and review-named owners James/Randall/Will); question_6 and towns_excluded read as not client-written.
+- Still blank: after-hours, payment, financing, minimum charge, staff roles, travel fee, job wanted most, customer misconception, all documents.
+- Next: Paul reviews the Brand Guide → Approval 2b (brand_guide_approved). Build not started.
+
+**Changes (script):** 3 — drive_file ×2, reconcile ×1
+- FACT 2026-10-24T20:00 · run 20261024-195727-discovery-1534 · a-brand-entity-gbp-name-exactly (status, source, quote) · client_confirmed · First Choice Seamless Gutters Inc. · source Client proof sh…
+- FACT 2026-10-24T20:00 · run 20261024-195727-discovery-1534 · a-legal-entity-name (status, source, quote) · client_confirmed · First Choice Seamless Gutters Inc. (BBB: Corporation, incorporated 11/2…
+- FACT 2026-10-24T20:00 · run 20261024-195727-discovery-1534 · a-phone (status, source, quote) · client_confirmed · (863) 330-3243 (site, GBP, schema agree; BBB also lists 'Other Phone' (863) 320-284…
+- FACT 2026-10-24T20:00 · run 20261024-195727-discovery-1534 · a-storefront-or-sab (status, source, quote) · client_confirmed · Service area business (travels to customers) · source Client proof shee…
+- FACT 2026-10-24T20:00 · run 20261024-195727-discovery-1534 · d-legal-entity-dba (value, status, source, quote) · client_confirmed · First Choice Seamless Gutters Inc., a corporation (client confirm…
+- FACT 2026-10-24T20:00 · run 20261024-195727-discovery-1534 · d-named-staff-for-on-page-use (value, status, source, quote) · client_confirmed · Owners: Adrian Buehl and Rachel Buehl (client confirme…
+- … and 22 more decision/fact/flag line(s) in log.md
+

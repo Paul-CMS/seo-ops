@@ -19,6 +19,7 @@ _None yet._
 
 - 2026-10-22T07:34 — Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)
 - 2026-10-22T08:39 — WordPress connected (/wp-check passed in the last 30 days) — met (system-verified)
+- 2026-10-24T20:02 — The client's facts are in — the returned proof sheet is recorded, or Paul approved the client's direct answers — met (system-verified)
 
 ## Runs aborted (Paul's call)
 

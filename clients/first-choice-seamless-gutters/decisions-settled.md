@@ -40,10 +40,13 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **wordpress_login** (2026-10-22, Paul (Approval 1)): WordPress login for the system: dedicated Editor (recommended default)
 - **tools.citations** (2026-10-22, Paul (Approval 1)): Citations data this audit: BrightLocal (recommended default)
 - **tools.gsc_ga4** (2026-10-22, Paul (Approval 1)): Search Console / Analytics access: use Search Console (access exists); GA4 not used unless shared (recommended default)
-- **audit_plant_city** (2026-10-23, Paul (default accepted)): 5. Architecture, services, locations, page types (F-015): Hold until the client answers: served, rebuild; not served, 301 to /areas-we-serve/ once C3 is checked against the citation export and C4 (no leads) is confirmed
 - **h1_lock_homepage** (2026-10-23, Paul (default accepted)): 6. On-page and content structure (F-017): No H1 change — the lock holds
 - **audit_warranty_claim** (2026-10-23, Paul (default accepted)): 3. Brand, entity and verified truth (F-003): Leave it live until the returned proof sheet answers warranty_terms; rebuilt pages state it only once confirmed
 - **audit_licence_claim** (2026-10-23, Paul (default accepted)): 3. Brand, entity and verified truth (F-004): Leave it live until the returned proof sheet answers; rebuilt pages state it only with the licence number
 - **audit_military_offer** (2026-10-23, Paul (default accepted)): 3. Brand, entity and verified truth (F-005): Leave it live until the client confirms it is still running
 
-Process defects (reopenings): **0**
+## Reopened — waiting for Paul
+
+- **audit_plant_city** (reopened 2026-10-24): New evidence: the returned proof sheet (2026-10-24, claim_1_plant) answers 'Yes' — the client says they work in Plant City regularly. This contradicts Paul's fact plant-city-served (not in the established service area, no Plant City page, 2026-10-23). Under audit_plant_city a 'served' answer means rebuild; Paul's fact means not served. Paul to choose: keep not-served (Plant City listed nowhere / 301 per F-015 once C3 and C4 are checked) or accept the client's answer (Plant City listed as served, page kept per F-015). — was: 5. Architecture, services, locations, page types (F-015): Hold until the client answers: served, rebuild; not served, 301 to /areas-we-serve/ once C3 is checked against the citation export and C4 (no leads) is confirmed
+
+Process defects (reopenings): **1** — a decision asked before the information that shapes it existed; fix the order, not the decision.

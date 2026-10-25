@@ -1,21 +1,18 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage —**
-- **What is happening now:** waiting for the client's facts (the returned proof sheet) — when they arrive, this records them, then reconcile, and the Brand Guide comes to you for approval
-- **Waiting on:** Client (via Paul) — waiting for the client's facts (the returned proof sheet) — when they arrive, this records; Jonie — seopress settings handoff — 4 of 4 item(s) open; Gwen — manual lookup handoff — 8 of 8 item(s) open
-- **Next action:** `/discovery first-choice-seamless-gutters sheet-returned` once the wait above is over · model: Haiku chat
+- **Stage 2 of 8 — Discovery**
+- **What is happening now:** waiting for Paul's approval — Discovery is ready for your approval in one line — the Decision Sheet and the entity foundation: First Choice Seamless Gutters - Decision Sheet - REVIEW.md, First Choice Seamless Gutters - Discovery Record - REVIEW.md, brand-guide.md#A+B1+B2. Once approved, every Decision Sheet answer is settled for good and the data pulls can start
+- **Waiting on:** Paul — Discovery is ready for your approval in one line — the Decision Sheet and the entity found; Paul — reopened decision 'audit_plant_city': New evidence: the returned proof sheet (2026-10-24, 
+- **Next action:** Paul types `/approve first-choice-seamless-gutters entity_approved --files "clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Decision Sheet - REVIEW.md,clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Discovery Record - REVIEW.md,clients/first-choice-seamless-gutters/brand-guide.md#A+B1+B2"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-23T21:26 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T20:02 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Client (via Paul) | waiting for the client's facts (the returned proof sheet) — when they arrive, this records them, then reconcile, and the Brand Guide comes to you for approval | 2026-10-23 | /discovery first-choice-seamless-gutters sheet-returned |
-| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
-| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
-| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
-| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
+| Paul | Discovery is ready for your approval in one line — the Decision Sheet and the entity foundation: First Choice Seamless Gutters - Decision Sheet - REVIEW.md, First Choice Seamless Gutters - Discovery Record - REVIEW.md, brand-guide.md#A+B1+B2. Once approved, every Decision Sheet answer is settled for good and the data pulls can start | 2026-10-24 | /approve first-choice-seamless-gutters entity_approved |
+| Paul | reopened decision 'audit_plant_city': New evidence: the returned proof sheet (2026-10-24, claim_1_plant) answers 'Yes' — the client says they work in Plant City regularly. This contradicts Paul's fact plant-city-served (not in the established service area, no Plant City page, 2026-10-23). Under audit_plant_city a 'served' answer means rebuild; Paul's fact means not served. Paul to choose: keep not-served (Plant City listed nowhere / 301 per F-015 once C3 and C4 are checked) or accept the client's answer (Plant City listed as served, page kept per F-015). | 2026-10-24 | audit_plant_city |
 
 ## Waiting on (not blocking)
 
@@ -23,7 +20,10 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
+| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
+| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
+| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
 
 ## Settled decisions — never re-raised
 
@@ -60,7 +60,6 @@ _Open, but the next action above goes ahead without them._
 - WordPress login for the system: dedicated Editor (recommended default)
 - Citations data this audit: BrightLocal (recommended default)
 - Search Console / Analytics access: use Search Console (access exists); GA4 not used unless shared (recommended default)
-- 5. Architecture, services, locations, page types (F-015): Hold until the client answers: served, rebuild; not served, 301 to /areas-we-serve/ once C3 is checked against the citation export and C4 (no leads) is confirmed
 - 6. On-page and content structure (F-017): No H1 change — the lock holds
 - 3. Brand, entity and verified truth (F-003): Leave it live until the returned proof sheet answers warranty_terms; rebuilt pages state it only once confirmed
 - 3. Brand, entity and verified truth (F-004): Leave it live until the returned proof sheet answers; rebuilt pages state it only with the licence number
@@ -87,7 +86,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **paa-raw** (20 file(s), e.g. `data/paa/raw/aluminum-gutters-lakeland.json`) — read by the step that reads paa-questions
 - **paa-routing** (1 file(s), e.g. `data/paa/paa-routing.md`) — read by build:plan, blog:map, build:brief, build:write
 - **competitors** (2 file(s), e.g. `data/competitors/coverage.json`) — read by build:plan
-- **proof-sheet** (1 file(s), e.g. `discovery/First Choice Seamless Gutters - Client Proof Sheet - REVIEW.md`) — read by build:evidence, build:facts, discovery:reconcile
+- **proof-sheet** (2 file(s), e.g. `discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json`) — read by build:evidence, build:facts, discovery:reconcile
 - **discovery-record** (1 file(s), e.g. `discovery/First Choice Seamless Gutters - Discovery Record - REVIEW.md`) — read by build:evidence, build:facts
 - **facts** (1 file(s), e.g. `facts.json`) — read by build:evidence, build:facts
 - **settled** (1 file(s), e.g. `decisions-settled.md`) — read by build:evidence, build:facts, build:brief, build:draft, build:drafts, build:write, build:plan
@@ -99,6 +98,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-003** (open, not yet reviewed) 2026-10-23 · discovery:data: pipeline.py inventory S08 backlinks fails: No such file or directory clients/first-choice-seamless-gutters/data/backlinks/raw/backlinks-2026-10-23.json (the raw folder is not created before the write). The DataforSEO call ran ($0.0272) and its result was not saved. S19 and competitor coverage not run. — workaround: Paul to make the script create the backlinks raw folder before writing, in a system session; check whether the $0.0272 backlinks response can be re-downloaded free before any retry
 - **F-004** (open, not yet reviewed) 2026-10-23 · discovery:audit: pagedec.py screen marks C3 'pass' when no citation tracker export is on file ('no citation tracker on file'), while CM-019 says any missing condition is Needs Evidence; C1 likewise passes on rankings alone with no GSC on file. — workaround: Audit proposes no redirect except Plant City (held, C4 still required); recorded as DEC-LOCAL-003 in audit/2026-10-23/decisions.md.
 - **F-005** (open, not yet reviewed) 2026-10-23 · discovery:audit: COM-T (titles 60 characters or fewer) cannot be met by the settled title formats with the settled variants: the homepage title 'Gutter Service in Polk County, FL - First Choice Seamless Gutters' is 65 characters, and location titles 'Gutter Service in <Town>, FL - First Choice Seamless Gutters' run about 60-68. HP-03 forbids dropping an entity term for length. The check gives no precedence rule. — workaround: S17 review keeps the settled title as the default and states that COM-T still fails (F-020 r2); anyone may override.
+- **F-006** (open, not yet reviewed) 2026-10-24 · discovery:sheet-returned: naming-convention §2 names the returned proof sheet '<Client> - Client Proof Sheet - RETURNED.md', but returns can arrive as a form JSON export; no rule for a non-Markdown return. — workaround: Saved verbatim with its own extension: '<Client> - Client Proof Sheet - RETURNED.json'; marked proof_sheet_returned with it.
 
 ## Spend so far
 
@@ -116,8 +116,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 2 | 17,892,793 | $6.48 | $0.00 |
 | 5 · Build plan and blockers | 2 | 1,617,331 | $0.03 | $0.00 |
-| any stage | 5 | 1,178,180 | $0.01 | $0.00 |
-| **total** | 15 | 33,579,716 | $10.98 | $0.00 |
+| any stage | 6 | 5,246,914 | $1.43 | $0.00 |
+| **total** | 16 | 37,648,450 | $12.39 | $0.00 |
 
 ## Spend by step (model)
 
@@ -126,12 +126,13 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
+| discovery:sheet-returned | 1 | 4,068,734 | $1.41 | $0.00 |
 | discovery:data | 1 | 0 | $0.62 | $0.00 |
 | build:blockers | 2 | 1,617,331 | $0.03 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 15 | 33,579,716 | $10.98 | $0.00 |
+| **total** | 16 | 37,648,450 | $12.39 | $0.00 |
 
-Last run: /build 2026-10-23T21:26 — Blocker handoff H-2026-10-23-04-other issued to Gwen (F-013 homepage Wednesday hours). F-048 waits for the proof sheet's blog author.
+Last run: /discovery 2026-10-24T20:02 — Returned proof sheet saved and recorded (27 facts); Brand Guide reconciled (D2, D3, E, G) for Approval 2b; Plant City reopen and 3 other choices open for Paul.
