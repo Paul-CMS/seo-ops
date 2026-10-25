@@ -1185,3 +1185,23 @@ Spend: 1803092 tokens · $0.56 (measured)
 - CHANGE #263 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (16).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 2c081fe471ca | result: done · copied (Drive for desktop syncs it)
 - CHANGE #264 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (16).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (16).md | result: done · renamed and moved, nothing deleted
 - CHANGE #265 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (16).md | new: First Choice Seamless Gutters - Status.md · sha 247e5fc084e2 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261024-215547-build-55dc · STARTED · /build · 2026-10-24T21:55:47-05:00
+Step: build:review · batch pilot · session a06784a5-10d9-4b97-a5ce-6d937ae6d307
+Gates checked: discovery_signed_off
+- SETTLED loc-lakeland:map-embed · 2026-10-24T21:55:47-05:00 · run 20261024-215547-build-55dc · by Paul · The city-level Google Maps embed on the Lakeland page is replaced by the VA when the page is in draft. The placeholder stays in the draft until then.
+### HANDOFF · /build · 2026-10-24 · run 20261024-215547-build-55dc
+- Paul decided: the city-level Google Maps embed on the Lakeland page is replaced by the VA when the page is in draft. The [NEED] placeholder stays in build/pilot/drafts/loc-lakeland.md until then.
+- Recorded as a settled decision (loc-lakeland:map-embed).
+- Open for the VA worklist: replace the Lakeland map embed in the draft before ship. Ship is not run until it is done.
+- No other change. Both pilot drafts still pass the evidence gate (svc-gutter-cleaning PASS, loc-lakeland PASS).
+### END HANDOFF
+## RUN 20261024-215547-build-55dc · FINISHED · 2026-10-24T21:55:51-05:00
+Changes: 0 · Summary: Paul: VA replaces the Lakeland map embed in draft; placeholder stays until then
+Spend: 220553 tokens · $0.00 (measured)
+- CHANGE #266 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (13).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (13).md | result: done · renamed and moved, nothing deleted
+- CHANGE #267 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-24 (13).md | new: First Choice Seamless Gutters - Handoff Log.md · sha 647bd2a62219 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #268 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (17).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (17).md | result: done · renamed and moved, nothing deleted
+- CHANGE #269 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (17).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 7964fab76350 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #270 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (17).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (17).md | result: done · renamed and moved, nothing deleted
+- CHANGE #271 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (17).md | new: First Choice Seamless Gutters - Status.md · sha ab878833abc1 | result: done · copied (Drive for desktop syncs it)

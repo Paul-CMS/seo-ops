@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — build:write finished (run 20261024-210703-build-c2ee) and that stage is in review mode — l; Paul — Build route for this client: A (the system writes the pages) or B (Paul provides finished 
 - **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-24T21:53 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T21:55 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -80,6 +80,7 @@ _Open, but the next action above goes ahead without them._
 - Lakeland is served. The proof sheet confirms all 20 Polk County places, including Lakeland, and Lakeland is the base town.
 - Rainy season May 25 to Oct 10 and hurricane season Jun 1 to Nov 30 (National Weather Service). Lakeland averages about 56.8 inches of rain a year, wettest June to September (Wikipedia). Housing stock, tree debris and failure patterns are not sourced and are not stated.
 - Lakeland neighborhoods and historic districts: Beacon Hill-Alta Vista, Biltmore-Cumberland, Dixieland, East Lake Morton, Lake Hunter Terrace, Munn Park, South Lake Morton, Moorehead, Orangewood (Wikipedia, Lakeland, Florida).
+- The city-level Google Maps embed on the Lakeland page is replaced by the VA when the page is in draft. The placeholder stays in the draft until then.
 
 ## Open VA items
 
@@ -132,9 +133,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 9 | 20,222,955 | $4.89 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 10 | 20,443,508 | $4.89 | $0.00 |
 | any stage | 6 | 5,246,914 | $1.43 | $0.00 |
-| **total** | 28 | 71,802,465 | $21.69 | $0.00 |
+| **total** | 29 | 72,023,018 | $21.69 | $0.00 |
 
 ## Spend by step (model)
 
@@ -148,7 +149,7 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:sheet-returned | 1 | 4,068,734 | $1.41 | $0.00 |
 | discovery:reconcile | 1 | 2,698,218 | $0.90 | $0.00 |
 | discovery:data | 1 | 0 | $0.62 | $0.00 |
-| build:review | 1 | 1,803,092 | $0.56 | $0.00 |
+| build:review | 2 | 2,023,645 | $0.56 | $0.00 |
 | interview:facts | 4 | 5,259,143 | $0.16 | $0.00 |
 | build:blockers | 2 | 1,617,331 | $0.03 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
@@ -156,6 +157,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 28 | 71,802,465 | $21.69 | $0.00 |
+| **total** | 29 | 72,023,018 | $21.69 | $0.00 |
 
-Last run: /build 2026-10-24T21:53 — Pilot drafts review applied: 16 of 16 rows (accept all 1a) on loc-lakeland and svc-gutter-cleaning; both re-recorded; evidence gate PASS for both.
+Last run: /build 2026-10-24T21:55 — Paul: VA replaces the Lakeland map embed in draft; placeholder stays until then

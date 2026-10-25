@@ -483,3 +483,10 @@ Still open:
 - Evidence gate re-run for batch pilot: svc-gutter-cleaning PASS, loc-lakeland PASS.
 - Next: the pilot write-back (/build writeback pilot), then Paul's drafts approval line. Nothing approved here.
 
+## /build · 2026-10-24 · run 20261024-215547-build-55dc
+
+- Paul decided: the city-level Google Maps embed on the Lakeland page is replaced by the VA when the page is in draft. The [NEED] placeholder stays in build/pilot/drafts/loc-lakeland.md until then.
+- Recorded as a settled decision (loc-lakeland:map-embed).
+- Open for the VA worklist: replace the Lakeland map embed in the draft before ship. Ship is not run until it is done.
+- No other change. Both pilot drafts still pass the evidence gate (svc-gutter-cleaning PASS, loc-lakeland PASS).
+

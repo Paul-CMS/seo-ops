@@ -59,6 +59,7 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **fact:loc-lakeland:city_served** (2026-10-24, Client (via Paul)): Lakeland is served. The proof sheet confirms all 20 Polk County places, including Lakeland, and Lakeland is the base town.
 - **fact:loc-lakeland:local_context** (2026-10-24, Paul (public research, resolved 2026-10-24)): Rainy season May 25 to Oct 10 and hurricane season Jun 1 to Nov 30 (National Weather Service). Lakeland averages about 56.8 inches of rain a year, wettest June to September (Wikipedia). Housing stock, tree debris and failure patterns are not sourced and are not stated.
 - **fact:loc-lakeland:neighborhoods** (2026-10-24, Paul (public research, resolved 2026-10-24)): Lakeland neighborhoods and historic districts: Beacon Hill-Alta Vista, Biltmore-Cumberland, Dixieland, East Lake Morton, Lake Hunter Terrace, Munn Park, South Lake Morton, Moorehead, Orangewood (Wikipedia, Lakeland, Florida).
+- **loc-lakeland:map-embed** (2026-10-24, Paul): The city-level Google Maps embed on the Lakeland page is replaced by the VA when the page is in draft. The placeholder stays in the draft until then.
 
 ## Open questions — asked once, waiting for an answer
 

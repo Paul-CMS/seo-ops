@@ -2406,10 +2406,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261024-215156-build-ae21",
+    "run_id": "20261024-215547-build-55dc",
     "command": "build",
-    "finished": "2026-10-24T21:53:30-05:00",
-    "result": "Pilot drafts review applied: 16 of 16 rows (accept all 1a) on loc-lakeland and svc-gutter-cleaning; both re-recorded; evidence gate PASS for both.",
+    "finished": "2026-10-24T21:55:51-05:00",
+    "result": "Paul: VA replaces the Lakeland map embed in draft; placeholder stays until then",
     "changes": 0,
     "step": "build:review",
     "batch": "pilot"
@@ -2433,7 +2433,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T21:53:30-05:00",
+  "updated": "2026-10-24T21:55:51-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -3090,6 +3090,26 @@
       "by_agent": {
         "main": 0.0054,
         "build": 0.5565
+      }
+    },
+    {
+      "run": "20261024-215547-build-55dc",
+      "step": "build:review",
+      "tokens": 220553,
+      "usd": 0.0027,
+      "at": "2026-10-24T21:55:51-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0027,
+          "in": 2,
+          "out": 612,
+          "cache_read": 218946,
+          "cache_write": 993
+        }
+      },
+      "by_agent": {
+        "main": 0.0027
       }
     }
   ],
