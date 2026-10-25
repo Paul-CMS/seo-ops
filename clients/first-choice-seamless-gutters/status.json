@@ -256,7 +256,20 @@
           "timeframe",
           "pricing",
           "certifications"
-        ]
+        ],
+        "waiver": {
+          "by": "Paul",
+          "at": "2026-10-24T22:17:48-05:00",
+          "reason": "Owner keeps site timeframe and pricing wording as written; revisit later (see later-rewrites.md)",
+          "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-installation.grid.md",
+          "grid_sha": "91adb6537dff",
+          "counts": {
+            "Known": 7,
+            "Unknown": 2,
+            "Unverified": 3,
+            "Conflict": 0
+          }
+        }
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-installation.md",
@@ -2485,7 +2498,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T22:17:35-05:00",
+  "updated": "2026-10-24T22:17:48-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
