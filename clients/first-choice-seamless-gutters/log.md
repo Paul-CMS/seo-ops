@@ -950,3 +950,32 @@ Approved version: clients/first-choice-seamless-gutters/brand-guide.md (sha 2f67
 - CHANGE #220 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (9).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 0448812e0b29 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #221 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (9).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (9).md | result: done · renamed and moved, nothing deleted
 - CHANGE #222 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (9).md | new: First Choice Seamless Gutters - Status.md · sha a1e40e1cbe0b | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261024-205237-interview-c961 · STARTED · /interview · 2026-10-24T20:52:37-05:00
+Step: interview:facts · batch pilot · session a06784a5-10d9-4b97-a5ce-6d937ae6d307
+Gates checked: discovery_signed_off
+- FACTS INTERVIEW 2026-10-24T20:52 · run 20261024-205237-interview-c961 · batch pilot · 0 question(s) for svc-gutter-cleaning, loc-lakeland · clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md
+- RESEARCH 2026-10-24T20:53 · run 20261024-205237-interview-c961 · RL-Service scope-1 · fact:svc-gutter-cleaning:service_scope (client): partial
+- RESEARCH 2026-10-24T20:53 · run 20261024-205237-interview-c961 · RL-Service process-1 · fact:svc-gutter-cleaning:service_process (client): partial
+- FACTS INTERVIEW 2026-10-24T20:53 · run 20261024-205237-interview-c961 · batch pilot · 0 question(s) for svc-gutter-cleaning, loc-lakeland · clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md
+- FLAG 2026-10-24T20:53 · run 20261024-205237-interview-c961 · F-008 · evidence.py questions returns 0 questions for svc-gutter-cleaning scope and process after research.py log records them as partial, so the gate's gaps never reach the owner pack · workaround: pack hand-written with the two site-text questions; check before Paul sends
+### HANDOFF · /interview · 2026-10-24 · run 20261024-205237-interview-c961
+- Evidence gate still blocks svc-gutter-cleaning (service scope and service process unknown) and loc-lakeland (public research).
+- Client research logged as partial: RL-Service scope-1 and RL-Service process-1. The site text describes scope (clearing outlets, checking elbows, flushing downspouts); no method or equipment found.
+- evidence.py questions returned 0 questions after the partial log. The two gap questions were added by hand to the pack; the generator behaviour is flagged F-008 for the system review.
+- Pack for Paul to send: clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md (2 questions: scope confirm; process and equipment).
+- Public research still open for loc-lakeland (researcher): 3-4 named places, permit office. Certifications for svc-gutter-cleaning also still open.
+- Waive option if Paul chooses: /approve first-choice-seamless-gutters evidence:svc-gutter-cleaning --reason "..." and evidence:loc-lakeland --reason "..."
+- Next: when the owner answers, run /interview first-choice-seamless-gutters facts-answers pilot.
+
+- FLAG 2026-10-24T20:53 · run 20261024-205237-interview-c961 · F-008 · evidence.py questions returns 0 questions for svc-gutter-cleaning scope and process after research.py log records them as partia…
+### END HANDOFF
+## RUN 20261024-205237-interview-c961 · FINISHED · 2026-10-24T20:53:27-05:00
+Changes: 0 · Summary: Facts pack for pilot: 2 client questions for Gutter Cleaning (scope, process) added by hand; loc-lakeland research still open; gate still blocked
+Spend: 1691404 tokens · $0.02 (measured)
+- CHANGE #223 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (6).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #224 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-24 (6).md | new: First Choice Seamless Gutters - Handoff Log.md · sha bae9542c5cb6 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #225 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (10).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #226 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (10).md | new: First Choice Seamless Gutters - Document Checklist.md · sha cd8856f93c8c | result: done · copied (Drive for desktop syncs it)
+- CHANGE #227 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (10).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #228 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (10).md | new: First Choice Seamless Gutters - Status.md · sha d9403060273d | result: done · copied (Drive for desktop syncs it)

@@ -389,3 +389,15 @@ Still open:
 
 - FACT 2026-10-24T20:48 · run 20261024-204753-interview-c729 · d-emergency-after-hours-reality (value, status, source) · client_confirmed · Available 7 days a week; emergency after-hours service avai…
 
+## /interview · 2026-10-24 · run 20261024-205237-interview-c961
+
+- Evidence gate still blocks svc-gutter-cleaning (service scope and service process unknown) and loc-lakeland (public research).
+- Client research logged as partial: RL-Service scope-1 and RL-Service process-1. The site text describes scope (clearing outlets, checking elbows, flushing downspouts); no method or equipment found.
+- evidence.py questions returned 0 questions after the partial log. The two gap questions were added by hand to the pack; the generator behaviour is flagged F-008 for the system review.
+- Pack for Paul to send: clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md (2 questions: scope confirm; process and equipment).
+- Public research still open for loc-lakeland (researcher): 3-4 named places, permit office. Certifications for svc-gutter-cleaning also still open.
+- Waive option if Paul chooses: /approve first-choice-seamless-gutters evidence:svc-gutter-cleaning --reason "..." and evidence:loc-lakeland --reason "..."
+- Next: when the owner answers, run /interview first-choice-seamless-gutters facts-answers pilot.
+
+- FLAG 2026-10-24T20:53 · run 20261024-205237-interview-c961 · F-008 · evidence.py questions returns 0 questions for svc-gutter-cleaning scope and process after research.py log records them as partia…
+

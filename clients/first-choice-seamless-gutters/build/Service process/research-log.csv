@@ -1,0 +1,2 @@
+id,page,gap,kind,queries,sources_tried,result,excerpt,url,date,run
+RL-Service process-1,svc-gutter-cleaning,fact:svc-gutter-cleaning:service_process,client,gutter cleaning process site text,data/crawl/page-text.csv (client site),partial,"Site: cleaning includes clearing outlets, checking elbows, flushing downspouts; no equipment or step-by-step method found.",https://www.firstchoiceseamlessgutters.net/,2026-10-24,20261024-205237-interview-c961

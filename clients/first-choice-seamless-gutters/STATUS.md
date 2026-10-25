@@ -1,17 +1,21 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** ready to start: the evidence gate blocked svc-gutter-cleaning, loc-lakeland — targeted questions for the owner (you send them). Or waive instead: /approve first-choice-seamless-gutters evidence:svc-gutter-cleaning --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "<why you waive it>"
-- **Waiting on:** nobody
-- **Next action:** `/interview first-choice-seamless-gutters facts pilot` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), brief-writer (sonnet)) · model: Haiku chat
+- **What is happening now:** waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve first-choice-seamless-gutters evidence:svc-gutter-cleaning --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "<why you waive it>"
+- **Waiting on:** Client (via Paul) — waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutt; Jonie — seopress settings handoff — 4 of 4 item(s) open; Gwen — manual lookup handoff — 8 of 8 item(s) open
+- **Next action:** `/interview first-choice-seamless-gutters facts-answers pilot` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-24T20:52 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T20:53 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Client (via Paul) | waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve first-choice-seamless-gutters evidence:svc-gutter-cleaning --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "<why you waive it>" | 2026-10-24 | /interview first-choice-seamless-gutters facts-answers pilot |
+| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
+| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
+| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
+| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
 
 ## Waiting on (not blocking)
 
@@ -20,10 +24,7 @@ _Open, but the next action above goes ahead without them._
 | Who | What | Since | Reference |
 |---|---|---|---|
 | Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-24 | /verify first-choice-seamless-gutters |
-| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
-| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
-| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
-| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
+| Paul | batches not yet built and written back: pilot, services, locations-west, locations-east, about | 2026-10-24 | /where first-choice-seamless-gutters |
 
 ## Settled decisions — never re-raised
 
@@ -106,6 +107,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-005** (open, not yet reviewed) 2026-10-23 · discovery:audit: COM-T (titles 60 characters or fewer) cannot be met by the settled title formats with the settled variants: the homepage title 'Gutter Service in Polk County, FL - First Choice Seamless Gutters' is 65 characters, and location titles 'Gutter Service in <Town>, FL - First Choice Seamless Gutters' run about 60-68. HP-03 forbids dropping an entity term for length. The check gives no precedence rule. — workaround: S17 review keeps the settled title as the default and states that COM-T still fails (F-020 r2); anyone may override.
 - **F-006** (open, not yet reviewed) 2026-10-24 · discovery:sheet-returned: naming-convention §2 names the returned proof sheet '<Client> - Client Proof Sheet - RETURNED.md', but returns can arrive as a form JSON export; no rule for a non-Markdown return. — workaround: Saved verbatim with its own extension: '<Client> - Client Proof Sheet - RETURNED.json'; marked proof_sheet_returned with it.
 - **F-007** (open, not yet reviewed) 2026-10-24 · build:plan: Viability check (evidence_pack.py viability) runs in build:plan before the facts round's research, with no place store (methodology/places/ missing) and no FL source list; it proposed merges for 17 of 19 unresearched Polk towns. location-faq.md §8 allows a merge only when public facts are logged not_found — the order is wrong for a new state/industry. — workaround: Kept all 19 locations in the plan; merge proposals reported as premature; re-run viability after /build facts and bring any real merge to Paul as a kind-1 Ask.
+- **F-008** (open, not yet reviewed) 2026-10-24 · interview:facts: evidence.py questions returns 0 questions for svc-gutter-cleaning scope and process after research.py log records them as partial, so the gate's gaps never reach the owner pack — workaround: pack hand-written with the two site-text questions; check before Paul sends
 
 ## Spend so far
 
@@ -123,9 +125,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 2 | 1,138,040 | $0.02 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 3 | 2,829,444 | $0.04 | $0.00 |
 | any stage | 6 | 5,246,914 | $1.43 | $0.00 |
-| **total** | 21 | 52,717,550 | $16.82 | $0.00 |
+| **total** | 22 | 54,408,954 | $16.84 | $0.00 |
 
 ## Spend by step (model)
 
@@ -138,13 +140,13 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:sheet-returned | 1 | 4,068,734 | $1.41 | $0.00 |
 | discovery:reconcile | 1 | 2,698,218 | $0.90 | $0.00 |
 | discovery:data | 1 | 0 | $0.62 | $0.00 |
+| interview:facts | 2 | 2,158,219 | $0.03 | $0.00 |
 | build:blockers | 2 | 1,617,331 | $0.03 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | interview:facts-answers | 1 | 671,225 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| interview:facts | 1 | 466,815 | $0.01 | $0.00 |
-| **total** | 21 | 52,717,550 | $16.82 | $0.00 |
+| **total** | 22 | 54,408,954 | $16.84 | $0.00 |
 
-Last run: /interview 2026-10-24T20:48 — Owner facts answers recorded (timeframe, pricing, after-hours); gate still blocks svc-gutter-cleaning (scope, delivery unasked) and loc-lakeland (public research)
+Last run: /interview 2026-10-24T20:53 — Facts pack for pilot: 2 client questions for Gutter Cleaning (scope, process) added by hand; loc-lakeland research still open; gate still blocked
