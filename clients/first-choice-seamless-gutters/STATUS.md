@@ -1,9 +1,9 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
-- **What is happening now:** ready to start: the evidence gate blocked svc-aluminum-gutters — targeted questions for the owner (you send them). Or waive instead: /approve first-choice-seamless-gutters evidence:svc-aluminum-gutters --reason "<why you waive it>"
+- **What is happening now:** ready to start: section services in one run: an outline per page by script from the approved plan and the spec (no brief), one draft per page (each from its own fresh sub-agent, CM-043), then the one draft review sheet
 - **Waiting on:** Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7
-- **Next action:** `/interview first-choice-seamless-gutters facts services` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), brief-writer (sonnet)) · model: Haiku chat
+- **Next action:** `/build first-choice-seamless-gutters write services` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), brief-writer (sonnet)) · model: Haiku chat
 
 _Generated 2026-10-24T22:18 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
