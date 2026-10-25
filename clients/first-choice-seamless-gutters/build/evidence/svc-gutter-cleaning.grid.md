@@ -1,16 +1,14 @@
 # Evidence grid — Gutter Cleaning (service)
 
-**Result: BLOCK** · Known 9 · Unknown 3 · Unverified 0 · Conflict 0 (CM-041)
+**Result: PASS** · Known 11 · Unknown 1 · Unverified 0 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
-
-- 2 required facts are not known (block at 2)
 
 | Fact | Need | Mark | Value | Source |
 |---|---|---|---|---|
 | Phone | required | **Known** | (863) 330-3243 (site, GBP, schema agree; BBB also lists 'Other Phone' (863) 320-2842) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Contact_and_hours_0) |
-| What the service includes (scope, inclusions) | required | **Unknown** |  | searched, not found (4 source(s) on disk) |
-| How the service is delivered (steps, methods, equipment) | required | **Unknown** |  | searched, not found (4 source(s) on disk) |
+| What the service includes (scope, inclusions) | required | **Known** | Yes. Cleaning includes removing debris, clearing outlets, checking elbows, flushing downspouts, and checking water exits. Repairs are separate and not in the cleaning price. Underground drains are separate. | answer 2026-10-24 (Client (via Paul); decisions-settled.md fact:svc-gutter-cleaning:service_scope) |
+| How the service is delivered (steps, methods, equipment) | required | **Known** | Ladders; debris removed by hand or gutter scoop; hose rinse and downspout flush; blower for loose dry debris when appropriate. No pressure washing indoors; outside washing is a separate service. | answer 2026-10-24 (Client (via Paul); decisions-settled.md fact:svc-gutter-cleaning:service_process) |
 | Free estimate / offer — and what free means | required | **Known** | Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees' | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_9) |
 | Typical job duration or timeline | supporting | **Known** | Site statement still true per client. Client gave no specific job duration. | answer 2026-10-24 (Client (via Paul); decisions-settled.md fact:svc-gutter-cleaning:timeframe) |
 | Price range, or what drives the cost | supporting | **Known** | Site statement true per client: honest pricing, no hidden fees, free no-obligation estimate. | answer 2026-10-24 (Client (via Paul); decisions-settled.md fact:svc-gutter-cleaning:pricing) |

@@ -1,6 +1,6 @@
 # Evidence pack — Gutter Cleaning (service)
 
-Section **pilot** · https://www.firstchoiceseamlessgutters.net/gutter-cleaning/ · built 2026-10-24T20:48 by evidence_pack.py (CM-061).
+Section **pilot** · https://www.firstchoiceseamlessgutters.net/gutter-cleaning/ · built 2026-10-24T20:59 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -192,9 +192,9 @@ _Nothing in the place store yet for this page's place (places.py status lists wh
 - 2026-10-24 · `the_best_plan_pages` — Site plan choice C (Paul): 'The Best' in the H1 on Gutter Cleaning and Gutter Guards only.
 - 2026-10-24 · `fact:svc-gutter-cleaning:timeframe` — Site statement still true per client. Client gave no specific job duration.
 - 2026-10-24 · `fact:svc-gutter-cleaning:pricing` — Site statement true per client: honest pricing, no hidden fees, free no-obligation estimate.
+- 2026-10-24 · `fact:svc-gutter-cleaning:service_scope` — Yes. Cleaning includes removing debris, clearing outlets, checking elbows, flushing downspouts, and checking water exits. Repairs are separate and not in the cleaning price. Underground drains are separate.
+- 2026-10-24 · `fact:svc-gutter-cleaning:service_process` — Ladders; debris removed by hand or gutter scoop; hose rinse and downspout flush; blower for loose dry debris when appropriate. No pressure washing indoors; outside washing is a separate service.
 
 ## Gaps — the only things research looks for
 
-- What the service includes (scope, inclusions) (required, `page:service_scope`) → client search order, then an Ask (kind 3) only with a research-log entry
-- How the service is delivered (steps, methods, equipment) (required, `page:service_process`) → client search order, then an Ask (kind 3) only with a research-log entry
 - Certifications, authorizations, training (supporting, `D:Certifications`) → researcher (verify by public lookup — never asked)

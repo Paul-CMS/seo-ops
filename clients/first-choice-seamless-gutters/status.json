@@ -547,32 +547,28 @@
         "Do telescopic gutter cleaners work? — PAA #25; DIY tool versus professional cleaning"
       ],
       "evidence": {
-        "result": "block",
+        "result": "pass",
         "counts": {
-          "Known": 9,
-          "Unknown": 3,
+          "Known": 11,
+          "Unknown": 1,
           "Unverified": 0,
           "Conflict": 0
         },
-        "why": [
-          "2 required facts are not known (block at 2)"
-        ],
+        "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-cleaning.grid.md",
-        "sha": "3fd5705014c2",
-        "at": "2026-10-24T20:48:08-05:00",
-        "run": "20261024-204753-interview-c729",
+        "sha": "206623d2b410",
+        "at": "2026-10-24T20:59:44-05:00",
+        "run": "20261024-205937-interview-aca1",
         "gaps": [
-          "service_scope",
-          "service_process",
           "certifications"
         ]
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/pilot/packs/svc-gutter-cleaning.md",
         "json": "clients/first-choice-seamless-gutters/build/pilot/packs/svc-gutter-cleaning.json",
-        "sha": "71c8fe3bcc2b",
-        "at": "2026-10-24T20:48:08-05:00",
-        "run": "20261024-204753-interview-c729",
+        "sha": "1cedd44a9686",
+        "at": "2026-10-24T20:59:44-05:00",
+        "run": "20261024-205937-interview-aca1",
         "section": "pilot",
         "counts": {
           "facts": 42,
@@ -582,8 +578,8 @@
           "site_gbp": 12,
           "public": 0,
           "place": 0,
-          "settled": 5,
-          "gaps": 3,
+          "settled": 7,
+          "gaps": 1,
           "excerpts": 55
         }
       }
@@ -812,8 +808,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lakeland.grid.md",
         "sha": "adb3c79951cb",
-        "at": "2026-10-24T20:48:08-05:00",
-        "run": "20261024-204753-interview-c729",
+        "at": "2026-10-24T20:59:45-05:00",
+        "run": "20261024-205937-interview-aca1",
         "gaps": [
           "city_served",
           "local_context",
@@ -825,9 +821,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/pilot/packs/loc-lakeland.md",
         "json": "clients/first-choice-seamless-gutters/build/pilot/packs/loc-lakeland.json",
-        "sha": "5c33a5f23fd9",
-        "at": "2026-10-24T20:48:08-05:00",
-        "run": "20261024-204753-interview-c729",
+        "sha": "4ddbfb4c86c9",
+        "at": "2026-10-24T20:59:45-05:00",
+        "run": "20261024-205937-interview-aca1",
         "section": "pilot",
         "counts": {
           "facts": 43,
@@ -2351,12 +2347,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261024-205237-interview-c961",
+    "run_id": "20261024-205937-interview-aca1",
     "command": "interview",
-    "finished": "2026-10-24T20:53:27-05:00",
-    "result": "Facts pack for pilot: 2 client questions for Gutter Cleaning (scope, process) added by hand; loc-lakeland research still open; gate still blocked",
+    "finished": "2026-10-24T20:59:51-05:00",
+    "result": "Owner answered Gutter Cleaning scope and process; svc-gutter-cleaning PASS. loc-lakeland still blocked on public research.",
     "changes": 0,
-    "step": "interview:facts",
+    "step": "interview:facts-answers",
     "batch": "pilot"
   },
   "spend": {
@@ -2378,7 +2374,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T20:53:27-05:00",
+  "updated": "2026-10-24T20:59:51-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -2883,6 +2879,26 @@
       },
       "by_agent": {
         "main": 0.0225
+      }
+    },
+    {
+      "run": "20261024-205937-interview-aca1",
+      "step": "interview:facts-answers",
+      "tokens": 428337,
+      "usd": 0.0062,
+      "at": "2026-10-24T20:59:51-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0062,
+          "in": 6,
+          "out": 2377,
+          "cache_read": 421843,
+          "cache_write": 4111
+        }
+      },
+      "by_agent": {
+        "main": 0.0062
       }
     }
   ],

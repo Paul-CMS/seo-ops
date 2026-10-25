@@ -54,5 +54,7 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **fact:svc-gutter-cleaning:timeframe** (2026-10-24, Client (via Paul)): Site statement still true per client. Client gave no specific job duration.
 - **fact:svc-gutter-cleaning:pricing** (2026-10-24, Client (via Paul)): Site statement true per client: honest pricing, no hidden fees, free no-obligation estimate.
 - **fact:d:emergency** (2026-10-24, Client (via Paul)): Available 7 days a week. Emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct.
+- **fact:svc-gutter-cleaning:service_scope** (2026-10-24, Client (via Paul)): Yes. Cleaning includes removing debris, clearing outlets, checking elbows, flushing downspouts, and checking water exits. Repairs are separate and not in the cleaning price. Underground drains are separate.
+- **fact:svc-gutter-cleaning:service_process** (2026-10-24, Client (via Paul)): Ladders; debris removed by hand or gutter scoop; hose rinse and downspout flush; blower for loose dry debris when appropriate. No pressure washing indoors; outside washing is a separate service.
 
 Process defects (reopenings): **1** — a decision asked before the information that shapes it existed; fix the order, not the decision.

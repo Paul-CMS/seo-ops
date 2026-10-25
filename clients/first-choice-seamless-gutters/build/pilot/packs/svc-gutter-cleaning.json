@@ -3,7 +3,7 @@
  "type": "service",
  "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
  "section": "pilot",
- "built": "2026-10-24T20:48:08-05:00",
+ "built": "2026-10-24T20:59:44-05:00",
  "services": [
   "Gutter Cleaning",
   "Gutter and Downspout Cleaning"
@@ -784,25 +784,19 @@
    "key": "fact:svc-gutter-cleaning:pricing",
    "text": "Site statement true per client: honest pricing, no hidden fees, free no-obligation estimate.",
    "at": "2026-10-24"
+  },
+  {
+   "key": "fact:svc-gutter-cleaning:service_scope",
+   "text": "Yes. Cleaning includes removing debris, clearing outlets, checking elbows, flushing downspouts, and checking water exits. Repairs are separate and not in the cleaning price. Underground drains are separate.",
+   "at": "2026-10-24"
+  },
+  {
+   "key": "fact:svc-gutter-cleaning:service_process",
+   "text": "Ladders; debris removed by hand or gutter scoop; hose rinse and downspout flush; blower for loose dry debris when appropriate. No pressure washing indoors; outside washing is a separate service.",
+   "at": "2026-10-24"
   }
  ],
  "gaps": [
-  {
-   "key": "service_scope",
-   "label": "What the service includes (scope, inclusions)",
-   "need": "required",
-   "from": "page:service_scope",
-   "kind": "client",
-   "fact_key": "fact:svc-gutter-cleaning:service_scope"
-  },
-  {
-   "key": "service_process",
-   "label": "How the service is delivered (steps, methods, equipment)",
-   "need": "required",
-   "from": "page:service_process",
-   "kind": "client",
-   "fact_key": "fact:svc-gutter-cleaning:service_process"
-  },
   {
    "key": "certifications",
    "label": "Certifications, authorizations, training",

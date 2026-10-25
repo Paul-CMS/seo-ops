@@ -1,6 +1,6 @@
 # Evidence pack — Lakeland (location)
 
-Section **pilot** · https://www.firstchoiceseamlessgutters.net/lakeland-fl/ · built 2026-10-24T20:48 by evidence_pack.py (CM-061).
+Section **pilot** · https://www.firstchoiceseamlessgutters.net/lakeland-fl/ · built 2026-10-24T20:59 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
