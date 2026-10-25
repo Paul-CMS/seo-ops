@@ -5,10 +5,10 @@ Generated from the seo-ops system (clients/first-choice-seamless-gutters/status.
 ## Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant)
 
 - Decision: **approved**
-- Decided by: Paul · 2026-10-22T19:57:24-05:00
+- Decided by: Paul · 2026-10-24T20:18:49-05:00
 - Approved version: `clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Decision Sheet - REVIEW.md` (sha ce29d3052f4a)
 - Approved version: `clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Discovery Record - REVIEW.md` (sha 6450d5aa5471)
-- Approved version: `clients/first-choice-seamless-gutters/brand-guide.md#A+B1+B2` (sha 16728ee8bc60)
+- Approved version: `clients/first-choice-seamless-gutters/brand-guide.md#A+B1+B2` (sha 9f6a2308d702)
 
 ## Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly
 

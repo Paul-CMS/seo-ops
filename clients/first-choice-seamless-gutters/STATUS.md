@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 2 of 8 — Discovery**
-- **What is happening now:** waiting for Paul's approval — Discovery is ready for your approval in one line — the Decision Sheet and the entity foundation: First Choice Seamless Gutters - Decision Sheet - REVIEW.md, First Choice Seamless Gutters - Discovery Record - REVIEW.md, brand-guide.md#A+B1+B2. Once approved, every Decision Sheet answer is settled for good and the data pulls can start
-- **Waiting on:** Paul — Discovery is ready for your approval in one line — the Decision Sheet and the entity found
-- **Next action:** Paul types `/approve first-choice-seamless-gutters entity_approved --files "clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Decision Sheet - REVIEW.md,clients/first-choice-seamless-gutters/discovery/First Choice Seamless Gutters - Discovery Record - REVIEW.md,clients/first-choice-seamless-gutters/brand-guide.md#A+B1+B2"` (or asks for changes first) · model: Haiku chat
+- **Stage 4 of 8 — Audit**
+- **What is happening now:** waiting for Paul's approval — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md. Discovery is then signed off automatically and Build starts
+- **Waiting on:** Paul — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-
+- **Next action:** Paul types `/approve first-choice-seamless-gutters brand_guide_approved --files "clients/first-choice-seamless-gutters/brand-guide.md"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-24T20:17 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T20:18 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | Discovery is ready for your approval in one line — the Decision Sheet and the entity foundation: First Choice Seamless Gutters - Decision Sheet - REVIEW.md, First Choice Seamless Gutters - Discovery Record - REVIEW.md, brand-guide.md#A+B1+B2. Once approved, every Decision Sheet answer is settled for good and the data pulls can start | 2026-10-24 | /approve first-choice-seamless-gutters entity_approved |
+| Paul | the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md. Discovery is then signed off automatically and Build starts | 2026-10-24 | /approve first-choice-seamless-gutters brand_guide_approved |
 
 ## Waiting on (not blocking)
 
@@ -27,7 +27,7 @@ _Open, but the next action above goes ahead without them._
 ## Settled decisions — never re-raised
 
 - 2026-10-14: page specs (global: location) — approved
-- 2026-10-22: Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant) — approved
+- 2026-10-24: Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant) — approved
 - 2026-10-22: Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly — approved
 - 2026-10-23: Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here) — approved
 - Drive copy pending sync — the local Drive folder ~/Library/CloudStorage/GoogleDrive-paul@coastalmarketingstrategies.com/My Drive/v3. CMS Technical SEO Audit 2026 is not there (Drive for desktop signed out or not syncing?). Files stay in the repo until Drive for desktop syncs; nothing is retyped into the connector.
