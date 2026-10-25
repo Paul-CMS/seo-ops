@@ -1393,3 +1393,9 @@ Grid: clients/first-choice-seamless-gutters/build/evidence/svc-gutter-guards.gri
 Reason: Owner keeps site timeframe and pricing wording as written; revisit later (see later-rewrites.md)
 - CHANGE #322 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (28).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (28).md | result: done · renamed and moved, nothing deleted
 - CHANGE #323 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (28).md | new: First Choice Seamless Gutters - Status.md · sha 245227dfaa0e | result: done · copied (Drive for desktop syncs it)
+
+## WAIVER · 2026-10-24T22:18:26-05:00 · evidence gate · page svc-galvalume-gutters · by Paul
+Grid: clients/first-choice-seamless-gutters/build/evidence/svc-galvalume-gutters.grid.md (sha 2acc7da0ccb6) · was BLOCK: 2 required facts are not known (block at 2)
+Reason: Owner keeps site timeframe and pricing wording as written; revisit later (see later-rewrites.md)
+- CHANGE #324 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (29).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (29).md | result: done · renamed and moved, nothing deleted
+- CHANGE #325 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (29).md | new: First Choice Seamless Gutters - Status.md · sha 4f2bc408e7f1 | result: done · copied (Drive for desktop syncs it)

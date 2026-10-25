@@ -770,7 +770,20 @@
           "timeframe",
           "pricing",
           "certifications"
-        ]
+        ],
+        "waiver": {
+          "by": "Paul",
+          "at": "2026-10-24T22:18:26-05:00",
+          "reason": "Owner keeps site timeframe and pricing wording as written; revisit later (see later-rewrites.md)",
+          "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-galvalume-gutters.grid.md",
+          "grid_sha": "2acc7da0ccb6",
+          "counts": {
+            "Known": 7,
+            "Unknown": 3,
+            "Unverified": 2,
+            "Conflict": 0
+          }
+        }
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-galvalume-gutters.md",
@@ -2537,7 +2550,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T22:18:17-05:00",
+  "updated": "2026-10-24T22:18:26-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
