@@ -1,21 +1,17 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "<why you waive it>"
-- **Waiting on:** Client (via Paul) — waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutt; Jonie — seopress settings handoff — 4 of 4 item(s) open; Gwen — manual lookup handoff — 8 of 8 item(s) open
-- **Next action:** `/interview first-choice-seamless-gutters facts-answers pilot` once the wait above is over · model: Haiku chat
+- **What is happening now:** ready to start: section pilot in one run: an outline per page by script from the approved plan and the spec (no brief), one draft per page (each from its own fresh sub-agent, CM-043), then the one draft review sheet
+- **Waiting on:** nobody
+- **Next action:** `/build first-choice-seamless-gutters write pilot` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), brief-writer (sonnet)) · model: Haiku chat
 
-_Generated 2026-10-24T21:04 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T21:06 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Client (via Paul) | waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - pilot - 2026-10-24 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "<why you waive it>" | 2026-10-24 | /interview first-choice-seamless-gutters facts-answers pilot |
-| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
-| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
-| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
-| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
+| — | nothing | | |
 
 ## Waiting on (not blocking)
 
@@ -24,7 +20,10 @@ _Open, but the next action above goes ahead without them._
 | Who | What | Since | Reference |
 |---|---|---|---|
 | Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-24 | /verify first-choice-seamless-gutters |
-| Paul | batches not yet built and written back: pilot, services, locations-west, locations-east, about | 2026-10-24 | /where first-choice-seamless-gutters |
+| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
+| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
+| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
+| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
 
 ## Settled decisions — never re-raised
 
@@ -77,6 +76,9 @@ _Open, but the next action above goes ahead without them._
 - Available 7 days a week. Emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct.
 - Yes. Cleaning includes removing debris, clearing outlets, checking elbows, flushing downspouts, and checking water exits. Repairs are separate and not in the cleaning price. Underground drains are separate.
 - Ladders; debris removed by hand or gutter scoop; hose rinse and downspout flush; blower for loose dry debris when appropriate. No pressure washing indoors; outside washing is a separate service.
+- Lakeland is served. The proof sheet confirms all 20 Polk County places, including Lakeland, and Lakeland is the base town.
+- Rainy season May 25 to Oct 10 and hurricane season Jun 1 to Nov 30 (National Weather Service). Lakeland averages about 56.8 inches of rain a year, wettest June to September (Wikipedia). Housing stock, tree debris and failure patterns are not sourced and are not stated.
+- Lakeland neighborhoods and historic districts: Beacon Hill-Alta Vista, Biltmore-Cumberland, Dixieland, East Lake Morton, Lake Hunter Terrace, Munn Park, South Lake Morton, Moorehead, Orangewood (Wikipedia, Lakeland, Florida).
 
 ## Open VA items
 
@@ -127,9 +129,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 6 | 6,358,705 | $0.18 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 7 | 6,726,259 | $0.19 | $0.00 |
 | any stage | 6 | 5,246,914 | $1.43 | $0.00 |
-| **total** | 25 | 57,938,215 | $16.98 | $0.00 |
+| **total** | 26 | 58,305,769 | $16.99 | $0.00 |
 
 ## Spend by step (model)
 
@@ -145,10 +147,10 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | interview:facts | 4 | 5,259,143 | $0.16 | $0.00 |
 | build:blockers | 2 | 1,617,331 | $0.03 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
-| interview:facts-answers | 2 | 1,099,562 | $0.02 | $0.00 |
+| interview:facts-answers | 3 | 1,467,116 | $0.02 | $0.00 |
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 25 | 57,938,215 | $16.98 | $0.00 |
+| **total** | 26 | 58,305,769 | $16.99 | $0.00 |
 
-Last run: /interview 2026-10-24T21:04 — Lakeland pack rebuilt with public research rows; loc-lakeland still blocked on unverified items
+Last run: /interview 2026-10-24T21:06 — Lakeland gate resolved: city served, local conditions, neighborhoods settled from file sources. Both pilot pages PASS.

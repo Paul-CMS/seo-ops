@@ -435,3 +435,14 @@ Still open:
 - Waive option if Paul chooses: /approve first-choice-seamless-gutters evidence:loc-lakeland --reason "..."
 - Open: broken-link blocker handoffs with the VA (H-2026-10-23-03-broken_link-01 to -05, +6 more).
 
+## /interview · 2026-10-24 · run 20261024-210625-interview-355e
+
+- Paul asked for the block to be resolved with what is on file. Three page facts for loc-lakeland settled as decisions, each with its source:
+  - city_served: client proof sheet confirms all 20 Polk County places, including Lakeland (settled as Client via Paul).
+  - local_context: NWS rainy and hurricane season dates; Lakeland rainfall (Wikipedia). Housing stock, tree debris and failure patterns are not sourced and are stated as not stated. Settled as Paul, public research.
+  - neighborhoods: nine named Lakeland neighborhoods and historic districts (Wikipedia). Settled as Paul, public research.
+- Evidence gate: svc-gutter-cleaning PASS; loc-lakeland PASS (known 8, unknown 2, unverified 0).
+- Note: the local_context item settles a weather-only view. Paul should see it at Brand Guide or page review before publication.
+- The "by" on the two public items records Paul as the decider because he directed the resolution; no client attribution was made.
+- Open: broken-link blocker handoffs with the VA (H-2026-10-23-03-broken_link-01 to -05, +6 more).
+

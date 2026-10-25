@@ -1070,3 +1070,31 @@ Spend: 1043012 tokens · $0.01 (measured)
 - CHANGE #244 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (13).md | new: First Choice Seamless Gutters - Document Checklist.md · sha c6a7f8ade8fc | result: done · copied (Drive for desktop syncs it)
 - CHANGE #245 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (13).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (13).md | result: done · renamed and moved, nothing deleted
 - CHANGE #246 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (13).md | new: First Choice Seamless Gutters - Status.md · sha 9453a9c6feff | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261024-210625-interview-355e · STARTED · /interview · 2026-10-24T21:06:25-05:00
+Step: interview:facts-answers · batch pilot · session a06784a5-10d9-4b97-a5ce-6d937ae6d307
+Gates checked: discovery_signed_off
+- SETTLED fact:loc-lakeland:city_served · 2026-10-24T21:06:33-05:00 · run 20261024-210625-interview-355e · by Client (via Paul) · Lakeland is served. The proof sheet confirms all 20 Polk County places, including Lakeland, and Lakeland is the base town.
+- SETTLED fact:loc-lakeland:local_context · 2026-10-24T21:06:33-05:00 · run 20261024-210625-interview-355e · by Paul (public research, resolved 2026-10-24) · Rainy season May 25 to Oct 10 and hurricane season Jun 1 to Nov 30 (National Weather Service). Lakeland averages about 56.8 inches of rain a year, wettest June to September (Wikipedia). Housing stock, tree debris and failure patterns are not sourced and are not stated.
+- SETTLED fact:loc-lakeland:neighborhoods · 2026-10-24T21:06:33-05:00 · run 20261024-210625-interview-355e · by Paul (public research, resolved 2026-10-24) · Lakeland neighborhoods and historic districts: Beacon Hill-Alta Vista, Biltmore-Cumberland, Dixieland, East Lake Morton, Lake Hunter Terrace, Munn Park, South Lake Morton, Moorehead, Orangewood (Wikipedia, Lakeland, Florida).
+- EVIDENCE 2026-10-24T21:06 · run 20261024-210625-interview-355e · svc-gutter-cleaning: PASS (known 11, unknown 1, unverified 0, conflict 0)
+- EVIDENCE 2026-10-24T21:06 · run 20261024-210625-interview-355e · loc-lakeland: PASS (known 8, unknown 2, unverified 0, conflict 0)
+### HANDOFF · /interview · 2026-10-24 · run 20261024-210625-interview-355e
+- Paul asked for the block to be resolved with what is on file. Three page facts for loc-lakeland settled as decisions, each with its source:
+  - city_served: client proof sheet confirms all 20 Polk County places, including Lakeland (settled as Client via Paul).
+  - local_context: NWS rainy and hurricane season dates; Lakeland rainfall (Wikipedia). Housing stock, tree debris and failure patterns are not sourced and are stated as not stated. Settled as Paul, public research.
+  - neighborhoods: nine named Lakeland neighborhoods and historic districts (Wikipedia). Settled as Paul, public research.
+- Evidence gate: svc-gutter-cleaning PASS; loc-lakeland PASS (known 8, unknown 2, unverified 0).
+- Note: the local_context item settles a weather-only view. Paul should see it at Brand Guide or page review before publication.
+- The "by" on the two public items records Paul as the decider because he directed the resolution; no client attribution was made.
+- Open: broken-link blocker handoffs with the VA (H-2026-10-23-03-broken_link-01 to -05, +6 more).
+### END HANDOFF
+## RUN 20261024-210625-interview-355e · FINISHED · 2026-10-24T21:06:40-05:00
+Changes: 0 · Summary: Lakeland gate resolved: city served, local conditions, neighborhoods settled from file sources. Both pilot pages PASS.
+Spend: 367554 tokens · $0.01 (measured)
+- CHANGE #247 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (10).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #248 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-24 (10).md | new: First Choice Seamless Gutters - Handoff Log.md · sha eec0cbd8795e | result: done · copied (Drive for desktop syncs it)
+- CHANGE #249 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (14).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (14).md | result: done · renamed and moved, nothing deleted
+- CHANGE #250 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (14).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 6a28dd2834fb | result: done · copied (Drive for desktop syncs it)
+- CHANGE #251 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (14).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (14).md | result: done · renamed and moved, nothing deleted
+- CHANGE #252 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (14).md | new: First Choice Seamless Gutters - Status.md · sha 4ea6a4b27e9c | result: done · copied (Drive for desktop syncs it)

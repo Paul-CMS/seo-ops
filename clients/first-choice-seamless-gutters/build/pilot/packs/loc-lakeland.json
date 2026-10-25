@@ -3,7 +3,7 @@
  "type": "location",
  "url": "https://www.firstchoiceseamlessgutters.net/lakeland-fl/",
  "section": "pilot",
- "built": "2026-10-24T21:04:05-05:00",
+ "built": "2026-10-24T21:06:33-05:00",
  "services": [],
  "places": [
   "Lakeland"
@@ -978,6 +978,21 @@
   {
    "key": "plan_lakeland_highlands_page",
    "text": "Site plan choice B (Paul): no Lakeland Highlands page; named in Lakeland's local context.",
+   "at": "2026-10-24"
+  },
+  {
+   "key": "fact:loc-lakeland:city_served",
+   "text": "Lakeland is served. The proof sheet confirms all 20 Polk County places, including Lakeland, and Lakeland is the base town.",
+   "at": "2026-10-24"
+  },
+  {
+   "key": "fact:loc-lakeland:local_context",
+   "text": "Rainy season May 25 to Oct 10 and hurricane season Jun 1 to Nov 30 (National Weather Service). Lakeland averages about 56.8 inches of rain a year, wettest June to September (Wikipedia). Housing stock, tree debris and failure patterns are not sourced and are not stated.",
+   "at": "2026-10-24"
+  },
+  {
+   "key": "fact:loc-lakeland:neighborhoods",
+   "text": "Lakeland neighborhoods and historic districts: Beacon Hill-Alta Vista, Biltmore-Cumberland, Dixieland, East Lake Morton, Lake Hunter Terrace, Munn Park, South Lake Morton, Moorehead, Orangewood (Wikipedia, Lakeland, Florida).",
    "at": "2026-10-24"
   }
  ],

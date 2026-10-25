@@ -1,6 +1,6 @@
 # Evidence pack — Lakeland (location)
 
-Section **pilot** · https://www.firstchoiceseamlessgutters.net/lakeland-fl/ · built 2026-10-24T21:04 by evidence_pack.py (CM-061).
+Section **pilot** · https://www.firstchoiceseamlessgutters.net/lakeland-fl/ · built 2026-10-24T21:06 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -209,6 +209,9 @@ _Nothing in the place store yet for this page's place (places.py status lists wh
 - 2026-10-22 · `homepage_h1_variant` — Area variant for the homepage H1: **Lakeland–Winter Haven** (recommended default)
 - 2026-10-22 · `towns_served` — Towns served: The 19 Polk towns on the site + Lakeland Highlands (GBP); Plant City and Sebring only if the client confirms (recommended default)
 - 2026-10-24 · `plan_lakeland_highlands_page` — Site plan choice B (Paul): no Lakeland Highlands page; named in Lakeland's local context.
+- 2026-10-24 · `fact:loc-lakeland:city_served` — Lakeland is served. The proof sheet confirms all 20 Polk County places, including Lakeland, and Lakeland is the base town.
+- 2026-10-24 · `fact:loc-lakeland:local_context` — Rainy season May 25 to Oct 10 and hurricane season Jun 1 to Nov 30 (National Weather Service). Lakeland averages about 56.8 inches of rain a year, wettest June to September (Wikipedia). Housing stock, tree debris and failure patterns are not sourced and are not stated.
+- 2026-10-24 · `fact:loc-lakeland:neighborhoods` — Lakeland neighborhoods and historic districts: Beacon Hill-Alta Vista, Biltmore-Cumberland, Dixieland, East Lake Morton, Lake Hunter Terrace, Munn Park, South Lake Morton, Moorehead, Orangewood (Wikipedia, Lakeland, Florida).
 
 ## Gaps — the only things research looks for
 

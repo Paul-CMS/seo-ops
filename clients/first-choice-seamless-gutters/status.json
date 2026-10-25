@@ -557,8 +557,8 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-cleaning.grid.md",
         "sha": "206623d2b410",
-        "at": "2026-10-24T21:04:05-05:00",
-        "run": "20261024-210357-interview-1566",
+        "at": "2026-10-24T21:06:33-05:00",
+        "run": "20261024-210625-interview-355e",
         "gaps": [
           "certifications"
         ]
@@ -566,9 +566,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/pilot/packs/svc-gutter-cleaning.md",
         "json": "clients/first-choice-seamless-gutters/build/pilot/packs/svc-gutter-cleaning.json",
-        "sha": "633e17b4fcf7",
-        "at": "2026-10-24T21:04:05-05:00",
-        "run": "20261024-210357-interview-1566",
+        "sha": "35801274c7b2",
+        "at": "2026-10-24T21:06:33-05:00",
+        "run": "20261024-210625-interview-355e",
         "section": "pilot",
         "counts": {
           "facts": 42,
@@ -796,24 +796,19 @@
         "3 · Trust here: How do Lakeland's tree canopy and summer storms affect gutters? (base town, client confirmed)"
       ],
       "evidence": {
-        "result": "block",
+        "result": "pass",
         "counts": {
-          "Known": 5,
+          "Known": 8,
           "Unknown": 2,
-          "Unverified": 3,
+          "Unverified": 0,
           "Conflict": 0
         },
-        "why": [
-          "3 required facts are not known (block at 2)"
-        ],
+        "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lakeland.grid.md",
-        "sha": "adb3c79951cb",
-        "at": "2026-10-24T21:04:05-05:00",
-        "run": "20261024-210357-interview-1566",
+        "sha": "cb4317841434",
+        "at": "2026-10-24T21:06:33-05:00",
+        "run": "20261024-210625-interview-355e",
         "gaps": [
-          "city_served",
-          "local_context",
-          "neighborhoods",
           "place_entities",
           "permit_office"
         ]
@@ -821,9 +816,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/pilot/packs/loc-lakeland.md",
         "json": "clients/first-choice-seamless-gutters/build/pilot/packs/loc-lakeland.json",
-        "sha": "a30bc31e49ad",
-        "at": "2026-10-24T21:04:05-05:00",
-        "run": "20261024-210357-interview-1566",
+        "sha": "02ba63867e8a",
+        "at": "2026-10-24T21:06:33-05:00",
+        "run": "20261024-210625-interview-355e",
         "section": "pilot",
         "counts": {
           "facts": 43,
@@ -833,7 +828,7 @@
           "site_gbp": 12,
           "public": 0,
           "place": 0,
-          "settled": 5,
+          "settled": 8,
           "gaps": 2,
           "excerpts": 54
         }
@@ -2346,12 +2341,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261024-210357-interview-1566",
+    "run_id": "20261024-210625-interview-355e",
     "command": "interview",
-    "finished": "2026-10-24T21:04:22-05:00",
-    "result": "Lakeland pack rebuilt with public research rows; loc-lakeland still blocked on unverified items",
+    "finished": "2026-10-24T21:06:41-05:00",
+    "result": "Lakeland gate resolved: city served, local conditions, neighborhoods settled from file sources. Both pilot pages PASS.",
     "changes": 0,
-    "step": "interview:facts",
+    "step": "interview:facts-answers",
     "batch": "pilot"
   },
   "spend": {
@@ -2373,7 +2368,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-24T21:04:22-05:00",
+  "updated": "2026-10-24T21:06:41-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -2946,6 +2941,26 @@
       },
       "by_agent": {
         "main": 0.0133
+      }
+    },
+    {
+      "run": "20261024-210625-interview-355e",
+      "step": "interview:facts-answers",
+      "tokens": 367554,
+      "usd": 0.005,
+      "at": "2026-10-24T21:06:40-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.005,
+          "in": 4,
+          "out": 1564,
+          "cache_read": 363203,
+          "cache_write": 2783
+        }
+      },
+      "by_agent": {
+        "main": 0.005
       }
     }
   ],
