@@ -1,11 +1,11 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage —**
-- **What is happening now:** ready to start: apply your pilot corrections to the specs before the next batch
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
+- **What is happening now:** Stage 6 (Pilot, services, locations, ship (one session each)) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open first-choice-seamless-gutters) and type /next first-choice-seamless-gutters. Next there: /interview first-choice-seamless-gutters facts services (the evidence gate blocked svc-seamless-gutter-installation, svc-gutter-installation, svc-gutter-repair, svc-commercial-gutters, svc-gutter-downspouts, svc-gutter-guards, svc-copper-gutters, svc-galvalume-gutters, svc-aluminum-gutters — targeted questions for the owner (you send them). Or waive instead: /approve first-choice-seamless-gutters evidence:svc-seamless-gutter-installation --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-installation --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-repair --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-commercial-gutters --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-downspouts --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-gutter-guards --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-copper-gutters --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-galvalume-gutters --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:svc-aluminum-gutters --reason "<why you waive it>")
 - **Waiting on:** nobody
-- **Next action:** `/build first-choice-seamless-gutters pilot-corrections` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` · model: Haiku chat
+- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-24T22:01 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-24T22:04 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -135,8 +135,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
 | 6 · Pilot, services, locations, ship (one session each) | 11 | 22,252,682 | $5.44 | $0.00 |
-| any stage | 6 | 5,246,914 | $1.43 | $0.00 |
-| **total** | 30 | 73,832,192 | $22.24 | $0.00 |
+| any stage | 7 | 5,927,813 | $1.64 | $0.00 |
+| **total** | 31 | 74,513,091 | $22.45 | $0.00 |
 
 ## Spend by step (model)
 
@@ -152,6 +152,7 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:data | 1 | 0 | $0.62 | $0.00 |
 | build:review | 2 | 2,023,645 | $0.56 | $0.00 |
 | build:writeback | 1 | 1,809,174 | $0.55 | $0.00 |
+| build:pilot-corrections | 1 | 680,899 | $0.21 | $0.00 |
 | interview:facts | 4 | 5,259,143 | $0.16 | $0.00 |
 | build:blockers | 2 | 1,617,331 | $0.03 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
@@ -159,6 +160,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 30 | 73,832,192 | $22.24 | $0.00 |
+| **total** | 31 | 74,513,091 | $22.45 | $0.00 |
 
-Last run: /build 2026-10-24T21:58 — Route A settled; pilot Brand Guide write-back (B3 2 rows, C1 1, C2 1, C3 18) from the reviewed drafts, before the drafts approval.
+Last run: /build 2026-10-24T22:04 — Pilot corrections: none (Paul approved pilot drafts as drafted, no review-sheet notes); build/pilot-corrections.md written, status.py pilot-corrections --none recorded.

@@ -1256,3 +1256,23 @@ SEM items to apply: none
 - CHANGE #289 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (20).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 1032bddcc35c | result: done · copied (Drive for desktop syncs it)
 - CHANGE #290 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (20).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (20).md | result: done · renamed and moved, nothing deleted
 - CHANGE #291 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (20).md | new: First Choice Seamless Gutters - Status.md · sha e769c87494d7 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261024-220333-build-d450 · STARTED · /build · 2026-10-24T22:03:33-05:00
+Step: build:pilot-corrections · session a06784a5-10d9-4b97-a5ce-6d937ae6d307
+Gates checked: discovery_signed_off, batch:pilot:briefs
+### HANDOFF · /build · 2026-10-24 · run 20261024-220333-build-d450
+- Read: decisions.md, approval-record.md, log.md approval entry (2026-10-24T22:01, "batch pilot drafts", SEM items to apply: none), build/pilot/drafts-review.csv, decisions-settled.md.
+- Paul approved both pilot drafts (svc-gutter-cleaning, loc-lakeland) as drafted; the review sheet (rows 1-16, U1-U2) has no answer and no note from Paul.
+- Wrote build/pilot-corrections.md: corrections none; nothing flagged for a global spec.
+- Recorded `status.py pilot-corrections --none` (CM-061 §9 counter).
+- No flags raised. No approval, ship, unlock or abort done.
+### END HANDOFF
+## RUN 20261024-220333-build-d450 · FINISHED · 2026-10-24T22:04:17-05:00
+Changes: 0 · Summary: Pilot corrections: none (Paul approved pilot drafts as drafted, no review-sheet notes); build/pilot-corrections.md written, status.py pilot-corrections --none recorded.
+Spend: 680899 tokens · $0.21 (measured)
+- CHANGE #292 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (15).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-24 (15).md | result: done · renamed and moved, nothing deleted
+- CHANGE #293 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-24 (15).md | new: First Choice Seamless Gutters - Handoff Log.md · sha 1c8936ebbb81 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #294 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (21).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-24 (21).md | result: done · renamed and moved, nothing deleted
+- CHANGE #295 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-24 (21).md | new: First Choice Seamless Gutters - Document Checklist.md · sha d714504d647c | result: done · copied (Drive for desktop syncs it)
+- CHANGE #296 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-24 (21).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-24 (21).md | result: done · renamed and moved, nothing deleted
+- CHANGE #297 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-24 (21).md | new: First Choice Seamless Gutters - Status.md · sha 77412fbee54b | result: done · copied (Drive for desktop syncs it)

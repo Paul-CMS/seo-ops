@@ -503,3 +503,11 @@ Still open:
 
 **Changes (script):** 2 — brand_guide_writeback ×1, drive_file ×1
 
+## /build · 2026-10-24 · run 20261024-220333-build-d450
+
+- Read: decisions.md, approval-record.md, log.md approval entry (2026-10-24T22:01, "batch pilot drafts", SEM items to apply: none), build/pilot/drafts-review.csv, decisions-settled.md.
+- Paul approved both pilot drafts (svc-gutter-cleaning, loc-lakeland) as drafted; the review sheet (rows 1-16, U1-U2) has no answer and no note from Paul.
+- Wrote build/pilot-corrections.md: corrections none; nothing flagged for a global spec.
+- Recorded `status.py pilot-corrections --none` (CM-061 §9 counter).
+- No flags raised. No approval, ship, unlock or abort done.
+
