@@ -152,9 +152,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 16 | 60,107,138 | $22.77 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 17 | 61,122,027 | $22.78 | $0.00 |
 | any stage | 7 | 5,927,813 | $1.64 | $0.00 |
-| **total** | 36 | 112,367,547 | $39.78 | $0.00 |
+| **total** | 37 | 113,382,436 | $39.79 | $0.00 |
 
 ## Spend by step (model)
 
@@ -163,7 +163,7 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | build:write | 2 | 39,230,166 | $18.88 | $0.00 |
 | discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
 | build:plan | 2 | 11,232,842 | $3.51 | $0.00 |
-| build:review | 3 | 5,822,887 | $2.10 | $0.00 |
+| build:review | 4 | 6,837,776 | $2.11 | $0.00 |
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
 | discovery:sheet-returned | 1 | 4,068,734 | $1.41 | $0.00 |
@@ -179,6 +179,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 36 | 112,367,547 | $39.78 | $0.00 |
+| **total** | 37 | 113,382,436 | $39.79 | $0.00 |
 
-Last run: /build 2026-10-25T14:28 — Services drafts: five FAQ/meta/H1 fixes and installation materials section in the drafts; verify read the drafts directly (no logged changes); pages not yet recorded
+Last run: /build 2026-10-25T14:28 — Nine services drafts recorded as drafted; review accept-all; H1 changes in drafts; plan/draft H1 mismatch open

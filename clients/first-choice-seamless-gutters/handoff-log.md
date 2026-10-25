@@ -599,3 +599,15 @@ Still open:
 - REFUSED: status.py page-stage — "a draft is recorded only by its own /build draft run, the batch's write run, or the review run". No page re-recorded; run NOT finished; stopped here.
 - Pre-existing E10 paragraph overs left as-is (outside the fixes): aluminum cost FAQ, downspouts process H2, galvalume x2, seamless meta + highest-rated FAQ.
 
+## /build · 2026-10-25 · run 20261025-142837-build-a824
+
+## What happened
+- Recorded the nine service drafts as drafted (draft stage) with status.py page-stage.
+- Review answers: "accept all". The five H1 changes from Paul's earlier answer (4b, 10b, 19b, 34b, 41b: switch H1 to "Polk County, Florida") are already in the drafts; the regenerated sheet has no rows for them, so they could not be named in the answer.
+- Earlier apply record (55 answers, including the H1 choices) is in commit 4a6e14c.
+
+## Still open
+- Approved site plan still lists the old Lakeland–Winter Haven H1s for the five pages; plan and drafts differ.
+- Paragraphs still over grade 10: aluminum cost FAQ, downspouts process H2, two sections on the Galvalume page, seamless meta and "highest rated" FAQ.
+- Brand Guide write-back and ship not run.
+
