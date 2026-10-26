@@ -29,8 +29,8 @@ Generated from the seo-ops system (clients/first-choice-seamless-gutters/status.
 ## Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 
 - Decision: **approved**
-- Decided by: Paul · 2026-10-25T20:19:34-05:00
-- Approved version: `clients/first-choice-seamless-gutters/brand-guide.md#A+D+E+G` (sha 15c906621520)
+- Decided by: Paul · 2026-10-25T20:31:57-05:00
+- Approved version: `clients/first-choice-seamless-gutters/brand-guide.md#A+D+E+G` (sha 8448769c0f1c)
 
 ## Release — the published pages pass QA (schema built at the handoff)
 

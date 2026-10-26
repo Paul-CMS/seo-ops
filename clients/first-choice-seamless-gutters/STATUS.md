@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 4 of 8 — Audit**
-- **What is happening now:** waiting for Paul's approval — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts
-- **Waiting on:** Paul — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
-- **Next action:** Paul types `/approve first-choice-seamless-gutters brand_guide_approved --files "clients/first-choice-seamless-gutters/brand-guide.md#A+D+E+G"` (or asks for changes first) · model: Haiku chat
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
+- **What is happening now:** waiting for Paul's approval — the drafts for batch services are ready: review each with the semantic review table (nothing found) and approve them together. No placeholders in the drafts
+- **Waiting on:** Paul — the drafts for batch services are ready: review each with the semantic review table (nothi; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
+- **Next action:** Paul types `/approve first-choice-seamless-gutters batch:services:drafts` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-25T20:30 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-25T20:31 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts | 2026-10-25 | /approve first-choice-seamless-gutters brand_guide_approved |
+| Paul | the drafts for batch services are ready: review each with the semantic review table (nothing found) and approve them together. No placeholders in the drafts | 2026-10-25 | /approve first-choice-seamless-gutters batch:services:drafts |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-seamless-gutter-installation:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-seamless-gutter-installation:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-installation:timeframe |
