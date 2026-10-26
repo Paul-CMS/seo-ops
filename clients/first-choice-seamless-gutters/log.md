@@ -1791,3 +1791,68 @@ Approved version: clients/first-choice-seamless-gutters/brand-guide.md#A+D+E+G (
 - CHANGE #411 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-25 (7).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 252026c340be | result: done · copied (Drive for desktop syncs it)
 - CHANGE #412 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-25 (8).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-25 (8).md | result: done · renamed and moved, nothing deleted
 - CHANGE #413 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-25 (8).md | new: First Choice Seamless Gutters - Status.md · sha 0e8c0d6d6ff9 | result: done · copied (Drive for desktop syncs it)
+
+## MODEL · 2026-10-26T11:01:01-05:00 · build:draft: default → sonnet · GLOBAL · by Paul
+
+## RUN 20261026-110346-build-402f · STARTED · /build · 2026-10-26T11:03:46-05:00
+Step: build:revise · batch services · session 32a35d0f-b6be-4ab7-a5f6-914c553b9356
+Gates checked: discovery_signed_off
+- FLAG 2026-10-26T11:04 · run 20261026-110346-build-402f · F-015 · next.py --continue crashed with AttributeError: module 'status' has no attribute 'drafts_drifted' (next.py -> records.py -> status_md -> next.py circular import during STATUS.md render). A second plain next.py run worked. · workaround: Ran plain next.py again; it printed the next step. Check whether --continue was logged before re-running it.
+- CHANGE #414 [draft] https://www.firstchoiceseamlessgutters.net/aluminum-gutters/ | draft text (Paul's hand edits) | old:  | new:  | result: done · Paul edited the draft by hand outside a run; recorded again here | snapshots clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0414-old.md clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0414-new.md
+- CHANGE #415 [draft] https://www.firstchoiceseamlessgutters.net/commercial-gutters/ | draft text (Paul's hand edits) | old:  | new:  | result: done · Paul edited the draft by hand outside a run; recorded again here | snapshots clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0415-old.md clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0415-new.md
+- CHANGE #416 [draft] https://www.firstchoiceseamlessgutters.net/copper-gutters/ | draft text (Paul's hand edits) | old:  | new:  | result: done · Paul edited the draft by hand outside a run; recorded again here | snapshots clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0416-old.md clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0416-new.md
+- CHANGE #417 [draft] https://www.firstchoiceseamlessgutters.net/galvalume-gutters/ | draft text (Paul's hand edits) | old:  | new:  | result: done · Paul edited the draft by hand outside a run; recorded again here | snapshots clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0417-old.md clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0417-new.md
+- CHANGE #418 [draft] https://www.firstchoiceseamlessgutters.net/gutter-downspouts/ | draft text (Paul's hand edits) | old:  | new:  | result: done · Paul edited the draft by hand outside a run; recorded again here | snapshots clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0418-old.md clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0418-new.md
+- CHANGE #419 [draft] https://www.firstchoiceseamlessgutters.net/gutter-guards/ | draft text (Paul's hand edits) | old:  | new:  | result: done · Paul edited the draft by hand outside a run; recorded again here | snapshots clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0419-old.md clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0419-new.md
+- CHANGE #420 [draft] https://www.firstchoiceseamlessgutters.net/gutter-installation/ | draft text (Paul's hand edits) | old:  | new:  | result: done · Paul edited the draft by hand outside a run; recorded again here | snapshots clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0420-old.md clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0420-new.md
+- CHANGE #421 [draft] https://www.firstchoiceseamlessgutters.net/gutter-repair/ | draft text (Paul's hand edits) | old:  | new:  | result: done · Paul edited the draft by hand outside a run; recorded again here | snapshots clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0421-old.md clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0421-new.md
+- CHANGE #422 [draft] https://www.firstchoiceseamlessgutters.net/seamless-gutter-installation/ | draft text (Paul's hand edits) | old:  | new:  | result: done · Paul edited the draft by hand outside a run; recorded again here | snapshots clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0422-old.md clients/first-choice-seamless-gutters/snapshots/20261026-110346-build-402f/0422-new.md
+- DRAFT 2026-10-26T11:05 · run 20261026-110346-build-402f · svc-aluminum-gutters · clients/first-choice-seamless-gutters/build/services/drafts/svc-aluminum-gutters.md · agent ac1b69f5a14f495c4
+- DRAFT 2026-10-26T11:05 · run 20261026-110346-build-402f · svc-commercial-gutters · clients/first-choice-seamless-gutters/build/services/drafts/svc-commercial-gutters.md · agent a8791df177657f827
+- DRAFT 2026-10-26T11:05 · run 20261026-110346-build-402f · svc-copper-gutters · clients/first-choice-seamless-gutters/build/services/drafts/svc-copper-gutters.md · agent a3e8cbdbe24e9a73e
+- DRAFT 2026-10-26T11:05 · run 20261026-110346-build-402f · svc-galvalume-gutters · clients/first-choice-seamless-gutters/build/services/drafts/svc-galvalume-gutters.md · agent a213093ee82e45f28
+- DRAFT 2026-10-26T11:05 · run 20261026-110346-build-402f · svc-gutter-downspouts · clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-downspouts.md · agent a0def2110da4e15de
+- DRAFT 2026-10-26T11:05 · run 20261026-110346-build-402f · svc-gutter-guards · clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-guards.md · agent ad861fca2bd6cc559
+- DRAFT 2026-10-26T11:05 · run 20261026-110346-build-402f · svc-gutter-installation · clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-installation.md · agent a634207b2227b6c5b
+- DRAFT 2026-10-26T11:05 · run 20261026-110346-build-402f · svc-gutter-repair · clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-repair.md · agent a13b8bede78c957d5
+- DRAFT 2026-10-26T11:05 · run 20261026-110346-build-402f · svc-seamless-gutter-installation · clients/first-choice-seamless-gutters/build/services/drafts/svc-seamless-gutter-installation.md · agent aa384b9aa2c44ea8c
+### HANDOFF · /build · 2026-10-26 · run 20261026-110346-build-402f
+Paul edited the 9 service drafts by hand, outside a run (CM-067). This run records the edited versions again. No agent wrote copy. Nothing is approved and nothing went to WordPress.
+
+## What Paul changed (per page, against the last recorded version)
+- svc-aluminum-gutters: [NEED] placeholders for installation steps, scope and profiles replaced with text; two Q&A answers reworded.
+- svc-commercial-gutters: steps and sizing filled in; service-scope line filled in.
+- svc-copper-gutters: profile and downspout-style line filled in.
+- svc-galvalume-gutters: intro and installation steps, scope and downspout pairing filled in.
+- svc-gutter-downspouts: install method, sizes, add-ons, cost and grounding text filled in.
+- svc-gutter-guards: pre-install cleaning, attachment and guard types filled in.
+- svc-gutter-installation: installation steps filled in; new "What Gutter Materials Can You Choose?" section with links to the four material pages; $150 offer line added.
+- svc-gutter-repair: repair steps and sealant filled in; several sentences rewritten.
+- svc-seamless-gutter-installation: install steps and job scope filled in; meta description reworded.
+
+## Check before approval
+These new claims are Paul's words, not yet in facts.json or confirmed by the client. Confirm them, or take them out, before approval:
+- "UV-resistant sealant" (repair), "metal-compatible hidden hangers" (Galvalume)
+- "two common sizes" 2x3 and 3x4; "3x4 drains a 5-inch gutter faster" (downspouts)
+- copper is "half-round and K-style"; drainage add-ons "splash blocks, flexible extensions, rain chains, underground drains"
+- guards "attach under the first row of shingles or to the fascia board"; crew cleans gutters before guards go on
+- Galvalume downspouts as "the standard pairing"
+
+## Status
+- 9 drafts recorded again (page-stage, draft). Change log #414–#422.
+- Blockers still open (Jonie's broken-link handoffs). /verify waits; it does not block this step.
+
+**Changes (script):** 9 — draft ×9
+- FLAG 2026-10-26T11:04 · run 20261026-110346-build-402f · F-015 · next.py --continue crashed with AttributeError: module 'status' has no attribute 'drafts_drifted' (next.py -> records.py -> status_m…
+### END HANDOFF
+## RUN 20261026-110346-build-402f · FINISHED · 2026-10-26T11:05:17-05:00
+Changes: 9 · Summary: Build revise, services: Paul's hand edits to 9 service drafts recorded again (changes #414-#422); confirm the new process claims before approval
+Spend: 1680724 tokens · $0.03 (measured)
+- CHANGE #423 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-25 (7).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-25 (7).md | result: done · renamed and moved, nothing deleted
+- CHANGE #424 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-25 (7).md | new: First Choice Seamless Gutters - Handoff Log.md · sha 8262017b3ec9 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #425 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-25 (8).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-25 (8).md | result: done · renamed and moved, nothing deleted
+- CHANGE #426 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-25 (8).md | new: First Choice Seamless Gutters - Document Checklist.md · sha d4cada5c902c | result: done · copied (Drive for desktop syncs it)
+- CHANGE #427 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-25 (9).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-25 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #428 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-25 (9).md | new: First Choice Seamless Gutters - Status.md · sha a23f0fed7913 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #429 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-25.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | new: _Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-25.md | result: done · renamed and moved, nothing deleted
+- CHANGE #430 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | upload | old: previous version archived as First Choice Seamless Gutters - VA Worklist - 2026-10-25.md | new: First Choice Seamless Gutters - VA Worklist.md · sha da3ced562f0e | result: done · copied (Drive for desktop syncs it)

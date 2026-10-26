@@ -719,3 +719,33 @@ Next
 - FACT 2026-10-25T20:23 · run 20261025-202228-discovery-6767 · d-insurance-bonded-status (value, status, source) · client_confirmed · Insured (confirmed by Paul from a Google review, 2026-10-25). Cer…
 - FACT 2026-10-25T20:23 · run 20261025-202228-discovery-6767 · d-warranty-terms (value, status, source) · client_confirmed · 10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google…
 
+## /build · 2026-10-26 · run 20261026-110346-build-402f
+
+Paul edited the 9 service drafts by hand, outside a run (CM-067). This run records the edited versions again. No agent wrote copy. Nothing is approved and nothing went to WordPress.
+
+## What Paul changed (per page, against the last recorded version)
+- svc-aluminum-gutters: [NEED] placeholders for installation steps, scope and profiles replaced with text; two Q&A answers reworded.
+- svc-commercial-gutters: steps and sizing filled in; service-scope line filled in.
+- svc-copper-gutters: profile and downspout-style line filled in.
+- svc-galvalume-gutters: intro and installation steps, scope and downspout pairing filled in.
+- svc-gutter-downspouts: install method, sizes, add-ons, cost and grounding text filled in.
+- svc-gutter-guards: pre-install cleaning, attachment and guard types filled in.
+- svc-gutter-installation: installation steps filled in; new "What Gutter Materials Can You Choose?" section with links to the four material pages; $150 offer line added.
+- svc-gutter-repair: repair steps and sealant filled in; several sentences rewritten.
+- svc-seamless-gutter-installation: install steps and job scope filled in; meta description reworded.
+
+## Check before approval
+These new claims are Paul's words, not yet in facts.json or confirmed by the client. Confirm them, or take them out, before approval:
+- "UV-resistant sealant" (repair), "metal-compatible hidden hangers" (Galvalume)
+- "two common sizes" 2x3 and 3x4; "3x4 drains a 5-inch gutter faster" (downspouts)
+- copper is "half-round and K-style"; drainage add-ons "splash blocks, flexible extensions, rain chains, underground drains"
+- guards "attach under the first row of shingles or to the fascia board"; crew cleans gutters before guards go on
+- Galvalume downspouts as "the standard pairing"
+
+## Status
+- 9 drafts recorded again (page-stage, draft). Change log #414–#422.
+- Blockers still open (Jonie's broken-link handoffs). /verify waits; it does not block this step.
+
+**Changes (script):** 9 — draft ×9
+- FLAG 2026-10-26T11:04 · run 20261026-110346-build-402f · F-015 · next.py --continue crashed with AttributeError: module 'status' has no attribute 'drafts_drifted' (next.py -> records.py -> status_m…
+

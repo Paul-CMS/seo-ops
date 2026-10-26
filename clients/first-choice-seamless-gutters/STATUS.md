@@ -5,13 +5,13 @@
 - **Waiting on:** Paul — the drafts for batch services are ready: review each with the semantic review table (nothi; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
 - **Next action:** Paul types `/approve first-choice-seamless-gutters batch:services:drafts` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-25T20:31 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-26T11:05 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the drafts for batch services are ready: review each with the semantic review table (nothing found) and approve them together. No placeholders in the drafts | 2026-10-25 | /approve first-choice-seamless-gutters batch:services:drafts |
+| Paul | the drafts for batch services are ready: review each with the semantic review table (nothing found) and approve them together. No placeholders in the drafts | 2026-10-26 | /approve first-choice-seamless-gutters batch:services:drafts |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-seamless-gutter-installation:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-seamless-gutter-installation:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-installation:timeframe |
@@ -31,7 +31,7 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-25 | /verify first-choice-seamless-gutters |
+| Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-26 | /verify first-choice-seamless-gutters |
 | Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
 | Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
 | Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
@@ -137,6 +137,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-012** (open, not yet reviewed) 2026-10-24 · build:write: evidence_pack.review_topics gives 'service: <name>' topics an empty key list, so a researcher's reviews.py checked can never move them from 'keyword match only' to known (4 service topics with 3+ reviewers in the services packs: Gutter Installation 32, Gutter Downspouts 4, Gutter Guards 4, Seamless Gutter Installation 3). reviews.py meaning has no API key and falls back to the researcher. — workaround: Writers use those topics only at the pack's stated tier (attributed customer example, no company claim); no researcher check run this time since it cannot change the packs.
 - **F-013** (open, not yet reviewed) 2026-10-24 · build:write: Approved site plan fixes service-page H1 area variant 'Lakeland–Winter Haven' (B2 pool) on 5 service pages; it contains city names, which spec service.md SVC-07/SVC-12 forbid in H tags. The B2 pool itself offers this variant. — workaround: Kept the approved plan H1s (never overrule the plan in a client session); noted in the review findings for Paul.
 - **F-014** (open, not yet reviewed) 2026-10-25 · discovery:reconcile: status.py show reports discovery_signed_off MET while brand_guide_approved is VOID (Brand Guide changed after approval); the condition says it needs the Brand Guide approved — workaround: Treat Discovery as not signed off until Paul re-approves brand_guide_approved; reported to Paul
+- **F-015** (open, not yet reviewed) 2026-10-26 · build:revise: next.py --continue crashed with AttributeError: module 'status' has no attribute 'drafts_drifted' (next.py -> records.py -> status_md -> next.py circular import during STATUS.md render). A second plain next.py run worked. — workaround: Ran plain next.py again; it printed the next step. Check whether --continue was logged before re-running it.
 
 ## Spend so far
 
@@ -155,8 +156,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 4 · Audit | 6 | 28,801,394 | $10.27 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
 | 6 · Pilot, services, locations, ship (one session each) | 18 | 64,429,529 | $24.07 | $0.00 |
-| any stage | 7 | 5,927,813 | $1.64 | $0.00 |
-| **total** | 41 | 124,900,321 | $43.98 | $0.00 |
+| any stage | 8 | 7,608,537 | $1.67 | $0.00 |
+| **total** | 42 | 126,581,045 | $44.00 | $0.00 |
 
 ## Spend by step (model)
 
@@ -176,11 +177,12 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | build:pilot-corrections | 1 | 680,899 | $0.21 | $0.00 |
 | interview:facts | 5 | 5,553,408 | $0.17 | $0.00 |
 | interview:facts-answers | 4 | 2,204,142 | $0.04 | $0.00 |
+| build:revise | 1 | 1,680,724 | $0.03 | $0.00 |
 | build:blockers | 2 | 1,617,331 | $0.03 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 41 | 124,900,321 | $43.98 | $0.00 |
+| **total** | 42 | 126,581,045 | $44.00 | $0.00 |
 
-Last run: /discovery 2026-10-25T20:30 — Insured and 10-year written warranty confirmed from a Google review (Paul, 2026-10-25); rows set to Client Confirmed; Brand Guide sections A, D, E, G marked reconciled; re-approval needed.
+Last run: /build 2026-10-26T11:05 — Build revise, services: Paul's hand edits to 9 service drafts recorded again (changes #414-#422); confirm the new process claims before approval
