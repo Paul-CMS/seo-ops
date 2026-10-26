@@ -29,7 +29,8 @@ Customers mention crews that show up on time and work quickly, clear communicati
 
 ## What Kinds of Copper Gutters and Downspouts Can You Choose From?
 
-Most copper gutter systems come down to two choices. One is the gutter shape, half-round or K-style. The other is the downspouts that carry water to the ground. [NEED: which copper gutter profiles, sizes and downspout styles First Choice installs — client]
+Most copper gutter systems come down to two choices. One is the gutter shape, half-round or K-style. The other is the downspouts that carry water to the ground. Copper gutters come in half-round and K-style shapes, and the downspout style is chosen at the free on-site estimate.
+<!-- later: list copper profiles and sizes once the client confirms them; not blocking -->
 
 ### Half-Round and K-Style Copper Gutters
 

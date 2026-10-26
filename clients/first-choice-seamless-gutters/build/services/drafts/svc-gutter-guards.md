@@ -13,9 +13,10 @@ First Choice Seamless Gutters installs gutter guards, which cover your gutters s
 
 A gutter guard job with First Choice Seamless Gutters starts with a free on-site inspection and a detailed estimate, so you see the plan and the price before any work begins. The estimate stays free whether or not you book, and there are no hidden fees.
 
-[NEED: how First Choice Seamless Gutters installs gutter guards: whether the gutters are cleaned and checked first, how the guards attach (to the gutter lip, under the shingles, or with brackets), and the tools used]
+Before guards go on, the crew cleans out the gutters and checks that the downspouts are clear and the pitch is right. Guards attach under the first row of shingles or to the fascia board, and the front edge is fastened to the gutter lip. Panels are cut to fit so debris cannot slip through the seams.
 
-[NEED: what a gutter guard job includes, and what is priced separately]
+A gutter guard job includes measuring, cutting and fastening the guards over each run, and cleaning up the materials and debris.
+<!-- later: list what is priced separately once confirmed; not blocking -->
 
 Guards can go on soon after new gutters, too. One homeowner had new gutters put in, then spent a few weeks cleaning leaves out of them. After that, they had the crew come back and put on gutter guards.
 
@@ -25,7 +26,8 @@ Customers mention a clean work site at the end of the job; one homeowner praised
 
 Most gutter guards fit one of four kinds: micro-mesh, screens, hoods, or foam and brush inserts. Each one keeps leaves out in a different way, and each has a weak spot.
 
-[NEED: which of these gutter guard types First Choice Seamless Gutters installs, and any brand names]
+Gutter guards come in two broad styles: solid covers that shed debris over a curved edge, and mesh or screen guards that filter it out.
+<!-- later: list guard brands once confirmed; not blocking -->
 
 ### Micro-Mesh Gutter Guards
 

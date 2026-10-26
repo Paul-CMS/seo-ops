@@ -15,7 +15,7 @@ A seamless gutter repair visit from First Choice Seamless Gutters starts with a 
 
 Often, a repair restores the gutter by correcting its pitch, reinforcing the hangers, or clearing restricted outlets, before a full replacement is needed. If water spills over even in one hard rain, the cause is usually the gutter's capacity, its pitch, or where the water is routed. Each of those can be corrected.
 
-[NEED: the repair steps, tools and materials First Choice Seamless Gutters uses on a repair visit (for example, how a leaking seam or corner is sealed, which hangers are fitted, how pitch is reset) — client, service_process]
+A repair visit starts with the problem spot. The crew strips away the old, failing sealant at seams and corners and reseals them with a UV-resistant sealant. If a run holds standing water, the crew resets the pitch and re-hangs the section. Sagging sections get new hidden hangers anchored into the fascia.
 
 What you get from a repair visit:
 

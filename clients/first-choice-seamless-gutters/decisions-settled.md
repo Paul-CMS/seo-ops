@@ -65,6 +65,7 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **fact:svc-commercial-gutters:service_scope** (2026-10-24, Paul (confirmed site text)): Yes, still true: We install and service commercial gutter systems that are sized for higher volume, reinforced where needed, and routed to move water safely away from the building perimeter. (Paul, 2026-10-24)
 - **fact:svc-copper-gutters:service_scope** (2026-10-24, Paul (confirmed site text)): Yes, still true: Installed With Real Storm Behavior in Mind. We design copper gutter systems around how homes in this area actually shed water. (Paul, 2026-10-24)
 - **fact:svc-copper-gutters:service_process** (2026-10-24, Paul (confirmed site text)): Yes, still true: Installed With Real Storm Behavior in Mind. We design copper gutter systems around how homes in this area actually shed water. (Paul, 2026-10-24)
+- **area_state** (2026-10-25, Paul): Service area state: Florida (Q812). Polk County, Florida is the area entity; state confirmed by Paul (2026-10-25). Brand Guide Section A derivation tagged Paul Approved.
 
 ## Open questions — asked once, waiting for an answer
 

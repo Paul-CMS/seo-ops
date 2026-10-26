@@ -1622,3 +1622,56 @@ Spend: 3307502 tokens · $1.29 (measured)
 - CHANGE #371 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Brand Guide.md | upload | old: previous version archived as First Choice Seamless Gutters - Brand Guide - 2026-10-24 (4).md | new: First Choice Seamless Gutters - Brand Guide.md · sha f24f9d242d97 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #372 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-25 (3).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-25 (3).md | result: done · renamed and moved, nothing deleted
 - CHANGE #373 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-25 (3).md | new: First Choice Seamless Gutters - Status.md · sha 45c87a77d2db | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-25T20:02 · after build:writeback (run 20261025-143023-build-18ec) · Paul typed /next
+
+## RUN 20261025-200645-discovery-96bd · STARTED · /discovery · 2026-10-25T20:06:45-05:00
+Step: discovery:reconcile · session 87fb89ff-8f48-43b2-8c5e-354f4f1d8103
+Gates checked: proof_sheet_returned
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-financing-available-provider-terms (value, source) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24  · by Paul
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-minimum-service-call-or-trip-charge (value, source) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24  · by Paul
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-payment-methods (value, source) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24  · by Paul
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-services-subcontracted-out (value, source) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24  · by Paul
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-founding-year-years-in-business (value, source) · client_confirmed · In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: Unknown — not · source Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, cl · by Paul
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-insurance-bonded-status (value, source) · client_confirmed · Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate of insurance: Unknown — not provided by client (Paul, 2026-10-25) · source Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, cl · by Paul
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-warranty-terms (value, source) · client_confirmed · 10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Copy of the written warranty terms: Unknown — not provided by clie · source Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, cl · by Paul
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-named-staff-for-on-page-use (value, source) · client_confirmed · Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: Unknown — not provided by client (Paul, 2026-10-25) · source Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, co · by Paul
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · towns-served-client (value, source) · client_confirmed · All 20 Polk County places on the sheet confirmed: Auburndale, Bartow, Davenport, Dundee, Eagle Lake, Haines City, Lake Alfred, Lake Wales, Lakeland, Polk City, Waverly, Winter Haven; Fort Meade, Frost · source Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, co · by Paul
+- SETTLED area_state · 2026-10-25T20:08:50-05:00 · run 20261025-200645-discovery-96bd · by Paul · Service area state: Florida (Q812). Polk County, Florida is the area entity; state confirmed by Paul (2026-10-25). Brand Guide Section A derivation tagged Paul Approved.
+### HANDOFF · /discovery · 2026-10-25 · run 20261025-200645-discovery-96bd
+- Paul 2026-10-25: service area state = Florida → settled `area_state`; Section A derivation tagged
+  `[Paul Approved 2026-10-25]` (status tag only; entity_approved stays MET).
+- Paul 2026-10-25: "no answers, mark them unknown" → all 15 open `[NEED: …]` markers in brand-guide.md now read
+  "Unknown — not provided by client (Paul, 2026-10-25)". No figure, date or claim written (CM-016).
+- Whole-row Unknown (run.py fact, status unknown): financing, minimum/trip charge, payment methods, subcontracting
+  (client's 'n/a' kept in the source, not interpreted).
+- Part-row Unknown (run.py fact, status kept Client Confirmed — the client did confirm the rest of the row):
+  founding year (25+ years stays), certificate of insurance (insured stays), copy of the written warranty
+  (10-year workmanship guarantee in writing stays), roles of April/Matt/Isaac/James (owners stay), travel fee
+  (towns-served-client).
+- Hand-edited free text (not generated rows): D2 rows "licensed and insured" and "Business Started 2021" (25+ years
+  may now be written; exact year Unknown); Section E towns at the edges, travel fee; Section G own sentence,
+  most-wanted job, common customer mistake.
+- `status.py mark reconciled --file brand-guide.md#A+D+E+G` recorded. brand_guide_approved is VOID → Paul re-approves.
+- No service draft uses an Unknown field: drafts state only "insured" and the 10-year written guarantee (both
+  Client Confirmed). Evidence packs in build/*/packs/ still show the old `[NEED]` text until Build regenerates them.
+- Nothing published; WordPress not touched; no draft pushed; no gate set.
+
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-financing-available-provider-terms (value, source) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026…
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-minimum-service-call-or-trip-charge (value, source) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 202…
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-payment-methods (value, source) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026-10-25: no answers,…
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-services-subcontracted-out (value, source) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026-10-25: …
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-founding-year-years-in-business (value, source) · client_confirmed · In business 'well over 25 plus years' (client). Client says BBB '…
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-insurance-bonded-status (value, source) · client_confirmed · Insured: client confirms the insurance part of 'fully licensed and insure…
+- … and 3 more decision/fact/flag line(s) in log.md
+### END HANDOFF
+## RUN 20261025-200645-discovery-96bd · FINISHED · 2026-10-25T20:09:36-05:00
+Changes: 0 · Summary: Florida settled (area_state); 15 NEED markers set to Unknown per Paul; Brand Guide reconciled for re-approval
+Spend: 3180222 tokens · $1.21 (measured)
+- CHANGE #374 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-25 (4).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-25 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #375 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-25 (4).md | new: First Choice Seamless Gutters - Handoff Log.md · sha 82ef58b83166 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #376 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-25 (3).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-25 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #377 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-25 (3).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 8cef5d4b439a | result: done · copied (Drive for desktop syncs it)
+- CHANGE #378 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Brand Guide - 2026-10-25.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Brand Guide.md | new: _Archive/First Choice Seamless Gutters - Brand Guide - 2026-10-25.md | result: done · renamed and moved, nothing deleted
+- CHANGE #379 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Brand Guide.md | upload | old: previous version archived as First Choice Seamless Gutters - Brand Guide - 2026-10-25.md | new: First Choice Seamless Gutters - Brand Guide.md · sha 89234d634637 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #380 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-25 (4).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-25 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #381 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-25 (4).md | new: First Choice Seamless Gutters - Status.md · sha 54eee0605a6b | result: done · copied (Drive for desktop syncs it)

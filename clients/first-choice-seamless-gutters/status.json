@@ -123,10 +123,10 @@
     },
     "reconciled": {
       "files": {
-        "clients/first-choice-seamless-gutters/brand-guide.md": "124537f13b25"
+        "clients/first-choice-seamless-gutters/brand-guide.md#A+D+E+G": "2841eaa7a4f5"
       },
-      "at": "2026-10-24T20:17:41-05:00",
-      "ts": 1792891061.3502238
+      "at": "2026-10-25T20:09:18-05:00",
+      "ts": 1792976958.315488
     },
     "site_plan": {
       "files": {
@@ -2745,13 +2745,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261025-143023-build-18ec",
-    "command": "build",
-    "finished": "2026-10-25T14:33:36-05:00",
-    "result": "Services Brand Guide write-back: 9 B3, 9 C1, 76 C3 rows from the reviewed drafts; no collisions; awaiting batch:services:drafts approval",
-    "changes": 3,
-    "step": "build:writeback",
-    "batch": "services"
+    "run_id": "20261025-200645-discovery-96bd",
+    "command": "discovery",
+    "finished": "2026-10-25T20:09:36-05:00",
+    "result": "Florida settled (area_state); 15 NEED markers set to Unknown per Paul; Brand Guide reconciled for re-approval",
+    "changes": 0,
+    "step": "discovery:reconcile",
+    "batch": null
   },
   "spend": {
     "dataforseo_usd": 0.262668
@@ -2772,7 +2772,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-25T14:33:36-05:00",
+  "updated": "2026-10-25T20:09:36-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -3662,6 +3662,34 @@
         "main": 0.0042,
         "build": 1.2869
       }
+    },
+    {
+      "run": "20261025-200645-discovery-96bd",
+      "step": "discovery:reconcile",
+      "tokens": 3180222,
+      "usd": 1.2133,
+      "at": "2026-10-25T20:09:36-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0036,
+          "in": 4,
+          "out": 1891,
+          "cache_read": 207991,
+          "cache_write": 2623
+        },
+        "claude-opus-5-5": {
+          "usd": 1.2097,
+          "in": 54,
+          "out": 341,
+          "cache_read": 2840401,
+          "cache_write": 126917
+        }
+      },
+      "by_agent": {
+        "main": 0.0036,
+        "discovery-audit": 1.2097
+      }
     }
   ],
   "sessions": {
@@ -3724,6 +3752,12 @@
       "step": "build:writeback",
       "first_run": "20261025-143023-build-18ec",
       "at": "2026-10-25T14:33:36-05:00"
+    },
+    "87fb89ff-8f48-43b2-8c5e-354f4f1d8103": {
+      "key": "audit",
+      "step": "discovery:reconcile",
+      "first_run": "20261025-200645-discovery-96bd",
+      "at": "2026-10-25T20:09:36-05:00"
     }
   },
   "wordpress": {
@@ -3771,8 +3805,8 @@
     "H-2026-10-23-04-other"
   ],
   "review_pause": {
-    "run_id": "20261025-143023-build-18ec",
-    "step": "build:writeback",
-    "at": "2026-10-25T14:33:36-05:00"
+    "run_id": "20261025-200645-discovery-96bd",
+    "step": "discovery:reconcile",
+    "at": "2026-10-25T20:09:36-05:00"
   }
 }

@@ -40,7 +40,7 @@ Contains all N cities served? Site lists 20 towns: 19 in Polk; Plant City is in 
 Smallest true container: Polk County / Lakeland–Winter Haven MSA for every Polk town (PROPOSED — Decision Sheet
    area_entity). Both outliers are out of the service area: Plant City not served for now (Paul, 2026-10-24,
    audit_plant_city — client's 'Yes' recorded, not applied); Sebring not served (client). So Polk County contains
-   every place served. State: Florida (Q812). PROPOSAL — Paul decides (agency profile §4).
+   every place served. State: Florida (Q812). PROPOSAL — Paul decides (agency profile §4). [Paul Approved 2026-10-25 — Paul confirmed Florida; settled area_state]
 ```
 
 **Paul approved this section on:** ____________
@@ -212,24 +212,24 @@ Everything a writer may state. **Not here = does not exist.**
 
 | Fact | Value | Status | Source |
 |---|---|---|---|
-| Founding year / years in business | In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: [NEED: founding year] | Client Confirmed 2026-10-24 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_5 / claim_5_detail) — "we have been in business for well over 25 plus years" |
+| Founding year / years in business | In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: Unknown — not provided by client (Paul, 2026-10-25) | Client Confirmed 2026-10-25 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_5 / claim_5_detail); founding year: Paul, 2026-10-25: no answers, mark unknown — "we have been in business for well over 25 plus years" |
 | Legal entity + DBA | First Choice Seamless Gutters Inc., a corporation (client confirmed); BBB primary name 'First Choice Seamless Gutters'; site also 'First Choice Seamless Gutter Inc' (typo, singular) | Client Confirmed 2026-10-24 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_0/1) — "Yes, correct" |
 | Licence numbers and classes | Not required in Florida for these services; no licence number to show. Settled: not an open question. | Paul Approved 2026-10-23 · was: Unknown | Paul, 2026-10-23 — "We’re fully licensed and insured" |
-| Insurance / bonded status | Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate: [NEED: certificate of insurance — not sent] | Client Confirmed 2026-10-24 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_3) — "Yes, accurate" |
+| Insurance / bonded status | Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate of insurance: Unknown — not provided by client (Paul, 2026-10-25) | Client Confirmed 2026-10-25 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_3); certificate: Paul, 2026-10-25: no answers, mark unknown — "Yes, accurate" |
 | Certifications, authorizations, factory training | | | |
 | Association memberships | BBB Accredited Business since 8/12/2025, A+ rating | Internally Verified 2026-10-22 · was: Unknown | BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22 — "Date of BBB Accreditation: 8/12/2025" |
-| Warranty terms | 10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Written terms not on file: [NEED: copy of the written warranty] | Client Confirmed 2026-10-24 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_4); owner review response in data/reviews/raw/reviews.json — "Yes, and in writing" |
+| Warranty terms | 10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Copy of the written warranty terms: Unknown — not provided by client (Paul, 2026-10-25) | Client Confirmed 2026-10-25 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_4); owner review response in data/reviews/raw/reviews.json; written copy: Paul, 2026-10-25: no answers, mark unknown — "Yes, and in writing" |
 | Guarantees (response time, on-time, satisfaction) | Form enquiries answered within 24 hours (client confirmed). Client note: 'We pride ourselves on great customer communication and excellent customer care.' | Client Confirmed 2026-10-24 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_7 / claim_7_detail) — "Yes, accurate" |
 | Awards and rankings | 'Best Gutter Installer in Lakeland, Florida' by GutterPro HQ, 2025 — client says accurate; only public source is a company-distributed press release (MarketersMedia, Dec 2025) | Client Confirmed 2026-10-24 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_10); markets.financialcontent.com MarketersMedia release 2025-12-03 — "Yes, accurate" |
 | Google rating and review count — exactly as Google shows them on the day, with the date ("4.9 · 67 reviews, 2026-10-07"; never a rounded 5.0) | 5 out of 5 (138 reviews), 2026-10-22 (site says '95+ 5 Star Google Reviews') | Internally Verified 2026-10-22 · was: Unknown | GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22 — "5 out of 5 (138 reviews)" |
 | Team size / trucks / jobs completed | | | |
-| Financing — available, provider, terms | [NEED: financing — none found on site, GBP or BBB; client wrote 'answers follow'] | Unknown 2026-10-24 | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, question_3) |
+| Financing — available, provider, terms | Unknown — not provided by client (Paul, 2026-10-25) | Unknown 2026-10-25 | Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_3: 'answers follow') |
 | Free estimate — and what free means | Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees' | Client Confirmed 2026-10-24 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_9) — "Yes, accurate" |
 | Emergency / after-hours reality | Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct. | Client Confirmed 2026-10-24 · was: Submitted | Client answer via Paul 2026-10-24 (interviews/facts/First Choice Seamless Gutters - Facts Answers - pilot - 2026-10-24.md) — "Available 7 Days a Week" |
-| Minimum service call or trip charge | [NEED: minimum or trip charge — client wrote 'answers follow'] | Unknown 2026-10-24 | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, question_0) |
-| Payment methods | [NEED: payment methods — client wrote 'answers follow'] | Unknown 2026-10-24 | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, question_2) |
-| Services subcontracted out | [NEED: subcontracting — client answered 'n/a'; confirm it means nothing is subcontracted] | Unknown 2026-10-24 | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, question_4) — "n/a" |
-| Named staff for on-page use | Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow'] | Client Confirmed 2026-10-24 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2; question_5) — "Yes, correct" |
+| Minimum service call or trip charge | Unknown — not provided by client (Paul, 2026-10-25) | Unknown 2026-10-25 | Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_0: 'answers follow') |
+| Payment methods | Unknown — not provided by client (Paul, 2026-10-25) | Unknown 2026-10-25 | Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_2: 'answers follow') |
+| Services subcontracted out | Unknown — not provided by client (Paul, 2026-10-25) | Unknown 2026-10-25 | Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_4: client wrote 'n/a', not interpreted) — "n/a" |
+| Named staff for on-page use | Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: Unknown — not provided by client (Paul, 2026-10-25) | Client Confirmed 2026-10-25 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2; question_5); staff roles: Paul, 2026-10-25: no answers, mark unknown — "Yes, correct" |
 | Licensed practitioner for health-claim sign-off *(medical / chiropractic)* | | | |
 | Blog author — a real person (CM-039; from the Decision Sheet) | Adrian Buehl, owner | Paul Approved 2026-10-24 · was: Unknown | Settled blog_author (Paul, Approval 1, 2026-10-22: the owner named on the returned facts, candidate Adrian Buehl); owners confirmed on Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2) |
 | Google Business Profile link | https://maps.app.goo.gl/c5prGD6rMCwptG3x6 | Submitted 2026-10-22 · was: Unknown | Paul, intake answer |
@@ -250,10 +250,10 @@ them; the content-risk list tracks where they are live.
 
 | Claim (verbatim) | Where it appears | Client answer | Action |
 |---|---|---|---|
-| "fully licensed and insured" / "Licensed & Insured" — the *licensed* part | 8 pages (F-004) | "no license number needed in fl." (claim_2_detail, 2026-10-24); no licence held to cite | Do not write "licensed". "Insured" may be written (claim_3 confirmed); certificate still [NEED] |
+| "fully licensed and insured" / "Licensed & Insured" — the *licensed* part | 8 pages (F-004) | "no license number needed in fl." (claim_2_detail, 2026-10-24); no licence held to cite | Do not write "licensed". "Insured" may be written (claim_3 confirmed); certificate of insurance: Unknown — not provided by client (Paul, 2026-10-25) |
 | "Based in Winter Haven" | Homepage (F-001) | Based in Lakeland, FL (claim_0, 2026-10-24) | Do not repeat; base town = Lakeland |
 | "Based in nearby Bartow" | Both blog posts (F-001, F-045) | Based in Lakeland, FL (claim_0, 2026-10-24) | Do not repeat; base town = Lakeland |
-| "Business Started: 11/24/2021" (BBB, not the site) | BBB profile | Not when they started trading; "well over 25 plus years" (claim_5, 2026-10-24) | Write no founding year or "since 2021"; "25+ years" waits on the founding year [NEED] |
+| "Business Started: 11/24/2021" (BBB, not the site) | BBB profile | Not when they started trading; "well over 25 plus years" (claim_5, 2026-10-24) | Write no founding year or "since 2021"; "25+ years" may be written (client confirmed); exact founding year: Unknown — not provided by client (Paul, 2026-10-25) |
 
 ### D3 · Content-risk list
 Every live page that still carries a D2 claim or an unconfirmed fact, until it is rebuilt or corrected.
@@ -268,11 +268,11 @@ Every live page that still carries a D2 claim or an unconfirmed fact, until it i
 
 ## Section E — Service area truth
 ```
-TOWNS AT THE EDGES (the furthest towns served, any direction): [NEED: not asked as edges] — all 20 Polk County places confirmed (towns-served-client, 2026-10-24)
+TOWNS AT THE EDGES (the furthest towns served, any direction): Unknown — not provided by client (Paul, 2026-10-25) — all 20 Polk County places confirmed (towns-served-client, 2026-10-24)
 CITIES CLAIMED ON SITE: Auburndale, Bartow, Davenport, Dundee, Eagle Lake, Haines City, Lake Alfred, Lake Wales, Lakeland, Polk City, Waverly, Winter Haven, Fort Meade, Frostproof, Highland City, Kathleen, Lake Hamilton, Mulberry, Wahneta (+ Lakeland Highlands on the GBP) — all confirmed by the client
 EXPLICIT EXCLUSIONS: Sebring — not served (client, claim_1_sebring); Plant City — not served for now, listed nowhere,
   no Plant City page (Paul, 2026-10-24, audit_plant_city; the client's 'Yes' on claim_1_plant is recorded, not applied)
-TRAVEL FEE BEYOND: [NEED: travel fee — not answered]
+TRAVEL FEE BEYOND: Unknown — not provided by client (Paul, 2026-10-25)
 ```
 Note (client-written, towns_excluded, 2026-10-24 — a caution, not a fact change): all 20 places are inside Polk County, which
 has the same boundaries as the Lakeland–Winter Haven MSA; Davenport and Haines City ZIP codes reach into Four Corners
@@ -301,10 +301,10 @@ is addressed to the agency, not written as the client's own answer.
 
 ## Section G — Positioning (client's own words)
 ```
-WHAT WE DO THAT OTHERS HERE DO NOT: [NEED: the client's own sentence] — question_6 came back as ten third-person
+WHAT WE DO THAT OTHERS HERE DO NOT: Unknown — not provided by client (Paul, 2026-10-25) — question_6 came back as ten third-person
   marketing bullets (fact positioning-client-text, Submitted), not the client's words
-JOB WE MOST WANT MORE OF: [NEED: client wrote "answers follow"]
-MOST COMMON THING CUSTOMERS GET WRONG ABOUT THIS TRADE: [NEED: client wrote "answers follow"]
+JOB WE MOST WANT MORE OF: Unknown — not provided by client (Paul, 2026-10-25)
+MOST COMMON THING CUSTOMERS GET WRONG ABOUT THIS TRADE: Unknown — not provided by client (Paul, 2026-10-25)
 ```
 New claims to substantiate before any page states them (question_6, 2026-10-24): beats competing regional quotes "by
 shocking margins"; competitors offer "1- to 2-year warranties"; calls returned "often within an hour" (the confirmed

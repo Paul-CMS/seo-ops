@@ -7,13 +7,15 @@ replaces: https://www.firstchoiceseamlessgutters.net/services/gutter-installatio
 ---
 # Gutter Replacement in Polk County, Florida
 
+> **Special offer:** $150 off full-house installations for military members and seniors.
+
 First Choice Seamless Gutters replaces worn-out gutters and puts gutters on homes that never had them. Maybe you have sealed the same leaking corner twice, or a run has started to pull away from the roof. Maybe rain pours off the roof edge because there are no gutters at all. Either way, patching is no longer the answer. This family-owned gutter contractor handles gutter installation across Polk County, Florida, and backs the work with a 10-year workmanship guarantee in writing. The on-site inspection and estimate are free, whether or not you book. Military members and seniors get $150 off a full-house installation. Call (863) 330-3243.
 
 ## How Does First Choice Seamless Gutters Install New Rain Gutters?
 
 First Choice Seamless Gutters installs new rain gutters after a free on-site inspection and a detailed estimate. The finished job carries a 10-year workmanship guarantee in writing.
 
-[NEED: the installation steps, from taking down old gutters to the final water test, and the equipment the crew uses — client, service process]
+The crew takes down and hauls away the old gutters, checks the fascia for rot, forms new seamless channels on site, hangs them, seals the joints, and water-tests the system before leaving.
 
 You pick the gutter material, and the choices are set out below. Downspouts and gutter guards are services the company also installs, so they can be planned with the new gutters.
 

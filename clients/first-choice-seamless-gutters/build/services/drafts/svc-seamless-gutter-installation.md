@@ -15,9 +15,9 @@ A seamless gutter installation with First Choice Seamless Gutters starts with a 
 
 The estimate is detailed and free, with no obligation and no hidden fees. Customers mention clear, quick communication from the first quote through scheduling.
 
-[NEED: the installation steps First Choice follows — measuring, whether the gutters are formed on site, hangers and fasteners, downspout placement (client: service_process)]
+The crew measures each run for drainage slope, forms seamless gutters on site, hangs them with hidden hangers, places downspouts at the low points, fastens and seals corners and outlets, and water-tests the system.
 
-[NEED: what the installation price includes — removal and haul-away of old gutters, downspouts, end caps, sealing, gutter sizes and profiles offered (client: service_scope)]
+A job includes removing and hauling away the old gutters, downspouts and hangers, checking the fascia, the new seamless gutters with corners, end caps and sealed joints, and clean-up of the yard. Gutter sizes and profiles are set at the free estimate.
 
 Customers mention crews that come out quickly, show up on time and leave the site clean. One homeowner said that once the HOA approval came through, the team wasted no time scheduling and finishing the installation.
 

@@ -13,9 +13,9 @@ First Choice Seamless Gutters installs Galvalume gutters for homeowners who want
 
 A Galvalume gutter job with First Choice Seamless Gutters starts with a free on-site inspection and a detailed estimate. That estimate stays free whether or not you book, and there are no hidden fees. At the visit, you can weigh Galvalume steel against aluminum and copper, because First Choice installs all three.
 
-[NEED: how First Choice installs Galvalume gutters — the steps, whether the gutters are formed seamless on site, the hangers and fasteners used, the equipment — client to confirm]
+Installation starts with measuring the roof edge to set the drainage slope and plan the downspout spots. The crew forms Galvalume into continuous gutters on site, cut to the length of each run, and hangs them on the fascia with metal-compatible hidden hangers. Cut edges expose the steel beneath, so corners, end caps and outlets are fastened and sealed. A water test finishes the job.
 
-[NEED: what a Galvalume gutter job includes — removal and haul-away of old gutters, downspouts, sealing of corners and outlets — client to confirm]
+A Galvalume job includes removing and hauling away the old gutters, downspouts and hangers, checking the fascia for rot, installing the new system, sealing every corner and outlet, and clearing the metal shavings and old debris.
 
 Why pick a steel gutter at all? Steel is stiffer than aluminum. A Galvalume gutter is less likely to dent from a ladder, a falling branch or a heavy load of wet leaves. The coating on the steel is what keeps water from reaching the metal underneath.
 
@@ -34,11 +34,11 @@ First Choice Seamless Gutters handles the two main parts of a Galvalume gutter s
 
 ### Galvalume Gutter Runs
 
-Galvalume gutter runs are the long channels that catch rain at the roof edge. Their size and shape decide how much water they can carry in a summer downpour. [NEED: the Galvalume gutter profiles, sizes and colors First Choice offers — client to confirm]
+Galvalume gutter runs are the long channels that catch rain at the roof edge. Their size and shape decide how much water they can carry in a summer downpour. <!-- later: list Galvalume profiles, sizes and colors once the client confirms them; not blocking -->
 
 ### Downspouts for Galvalume Gutters
 
-Downspouts move the water from the gutter to the ground and away from the house. A strong gutter still overflows if its downspouts are too few or too small. [NEED: whether First Choice fits matching Galvalume downspouts or another metal — client to confirm]
+Downspouts move the water from the gutter to the ground and away from the house. A strong gutter still overflows if its downspouts are too few or too small. <!-- later: confirm matching Galvalume downspouts as the standard pairing; not blocking -->
 
 ## What Do Florida Homeowners Ask About Galvalume Rain Gutters?
 

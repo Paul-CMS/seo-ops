@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 4 of 8 — Audit**
-- **What is happening now:** waiting for Paul's approval — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md. Discovery is then signed off automatically and Build starts
+- **What is happening now:** waiting for Paul's approval — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts
 - **Waiting on:** Paul — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
-- **Next action:** Paul types `/approve first-choice-seamless-gutters brand_guide_approved --files "clients/first-choice-seamless-gutters/brand-guide.md"` (or asks for changes first) · model: Haiku chat
+- **Next action:** Paul types `/approve first-choice-seamless-gutters brand_guide_approved --files "clients/first-choice-seamless-gutters/brand-guide.md#A+D+E+G"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-25T14:33 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-25T20:09 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md. Discovery is then signed off automatically and Build starts | 2026-10-25 | /approve first-choice-seamless-gutters brand_guide_approved |
+| Paul | the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts | 2026-10-25 | /approve first-choice-seamless-gutters brand_guide_approved |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-seamless-gutter-installation:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-seamless-gutter-installation:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-installation:timeframe |
@@ -97,6 +97,7 @@ _Open, but the next action above goes ahead without them._
 - Yes, still true: We install and service commercial gutter systems that are sized for higher volume, reinforced where needed, and routed to move water safely away from the building perimeter. (Paul, 2026-10-24)
 - Yes, still true: Installed With Real Storm Behavior in Mind. We design copper gutter systems around how homes in this area actually shed water. (Paul, 2026-10-24)
 - Yes, still true: Installed With Real Storm Behavior in Mind. We design copper gutter systems around how homes in this area actually shed water. (Paul, 2026-10-24)
+- Service area state: Florida (Q812). Polk County, Florida is the area entity; state confirmed by Paul (2026-10-25). Brand Guide Section A derivation tagged Paul Approved.
 
 ## Open VA items
 
@@ -150,11 +151,11 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 1 · Setup | 1 | 1,774,002 | $0.02 | $0.00 |
 | 2 · Discovery | 3 | 11,117,410 | $3.80 | $0.00 |
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
-| 4 · Audit | 3 | 20,591,011 | $7.38 | $0.00 |
+| 4 · Audit | 4 | 23,771,233 | $8.59 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
 | 6 · Pilot, services, locations, ship (one session each) | 18 | 64,429,529 | $24.07 | $0.00 |
 | any stage | 7 | 5,927,813 | $1.64 | $0.00 |
-| **total** | 38 | 116,689,938 | $41.08 | $0.00 |
+| **total** | 39 | 119,870,160 | $42.30 | $0.00 |
 
 ## Spend by step (model)
 
@@ -164,12 +165,12 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
 | build:plan | 2 | 11,232,842 | $3.51 | $0.00 |
 | build:review | 4 | 6,837,776 | $2.11 | $0.00 |
+| discovery:reconcile | 2 | 5,878,440 | $2.11 | $0.00 |
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | build:writeback | 2 | 5,116,676 | $1.84 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
 | discovery:sheet-returned | 1 | 4,068,734 | $1.41 | $0.00 |
 | build:drafts | 1 | 5,487,361 | $1.04 | $0.00 |
-| discovery:reconcile | 1 | 2,698,218 | $0.90 | $0.00 |
 | discovery:data | 1 | 0 | $0.62 | $0.00 |
 | build:pilot-corrections | 1 | 680,899 | $0.21 | $0.00 |
 | interview:facts | 5 | 5,553,408 | $0.17 | $0.00 |
@@ -179,6 +180,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 38 | 116,689,938 | $41.08 | $0.00 |
+| **total** | 39 | 119,870,160 | $42.30 | $0.00 |
 
-Last run: /build 2026-10-25T14:33 — Services Brand Guide write-back: 9 B3, 9 C1, 76 C3 rows from the reviewed drafts; no collisions; awaiting batch:services:drafts approval
+Last run: /discovery 2026-10-25T20:09 — Florida settled (area_state); 15 NEED markers set to Unknown per Paul; Brand Guide reconciled for re-approval

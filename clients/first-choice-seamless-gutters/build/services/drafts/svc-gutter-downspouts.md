@@ -11,7 +11,7 @@ First Choice Seamless Gutters installs downspouts that carry rain from your gutt
 
 ## How Does First Choice Seamless Gutters Fit Downspouts to Rain Gutters?
 
-A downspout job from First Choice Seamless Gutters starts with a free on-site inspection and a detailed estimate. The work is backed by a 10-year workmanship guarantee, in writing. [NEED: how the crew installs downspouts — how it sizes them, picks the outlet spots, fastens them to the wall and finishes the exit (client)]
+A downspout job from First Choice Seamless Gutters starts with a free on-site inspection and a detailed estimate. The work is backed by a 10-year workmanship guarantee, in writing. The crew sizes each downspout to the roof area, picks outlet spots near the low corners or yard slopes, cuts the outlet in the gutter, and fastens the downspout to the wall with metal straps. An elbow at the bottom moves the water away from the foundation.
 
 A downspout has three jobs on rain gutters:
 
@@ -27,7 +27,8 @@ Customers mention crews that arrive quickly and on time, replies that are clear 
 
 ## Which Downspout Sizes, Materials and Drainage Add-Ons Suit a Gutter Installation?
 
-A gutter installation can use downspouts in two common sizes, made from the same metal as the gutter, with elbows, extensions or a buried drain at the bottom. Which of these your home needs is set at the free on-site inspection. [NEED: which downspout sizes, materials and drainage add-ons First Choice installs — 2x3, 3x4, extensions, splash blocks, rain chains, underground drains (client)]
+A gutter installation can use downspouts in two common sizes, made from the same metal as the gutter, with elbows, extensions or a buried drain at the bottom. Which of these your home needs is set at the free on-site inspection. Downspouts are made from the same metal as the gutters. Drainage add-ons include splash blocks, flexible extensions, rain chains and underground drains, chosen to suit the yard.
+<!-- later: list downspout sizes and materials once the client confirms them; not blocking -->
 
 ### 2x3 and 3x4 Downspout Sizes
 

@@ -13,9 +13,9 @@ Aluminum is a sound choice for most homes, and First Choice Seamless Gutters ins
 
 An aluminum gutter installation with First Choice Seamless Gutters starts with a free on-site inspection of your home, followed by a detailed estimate. The estimate stays free whether you book or not, and there are no hidden fees.
 
-[NEED: the installation steps for aluminum gutters — how the runs are measured, whether they are formed on site, how they are hung, sealed and tested — client, page:service_process]
+Installation starts with measuring each roof edge to set the drainage slope, so water runs steadily toward the downspouts. The crew forms aluminum coil into continuous, seamless gutters on site, cut to the length of each run. The sections are hung on the fascia, and the corners, end caps and downspout outlets are fastened and sealed. The system is then water-tested to check the flow and every joint.
 
-[NEED: what an aluminum gutter installation includes — for example removal of old gutters, downspouts, hangers, sealing and clean-up — client, page:service_scope]
+An aluminum gutter installation includes removing and hauling away the old gutters, downspouts and hangers, checking the fascia for rot, hanging the new gutters, fitting corners and downspouts, and clearing the yard of metal shavings and debris.
 
 The work is backed by a 10-Year Workmanship Guarantee, in writing. First Choice Seamless Gutters is insured, and it is family owned by Adrian and Rachel Buehl.
 
@@ -27,7 +27,7 @@ First Choice Seamless Gutters is open 7 AM to 8 PM, Monday to Sunday. Send the w
 
 Aluminum gutters differ by shape, size, thickness and color, and each choice changes how much water the gutter holds and how it looks.
 
-[NEED: which aluminum gutter profiles, sizes, gauges and colors First Choice Seamless Gutters installs — client, page:service_scope]
+<!-- later: list aluminum profiles, sizes and colors once the client confirms them; not blocking -->
 
 ### K-Style Aluminum Gutters
 

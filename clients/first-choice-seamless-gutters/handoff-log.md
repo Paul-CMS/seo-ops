@@ -635,3 +635,31 @@ Still open:
 
 **Changes (script):** 3 — drive_file ×2, brand_guide_writeback ×1
 
+## /discovery · 2026-10-25 · run 20261025-200645-discovery-96bd
+
+- Paul 2026-10-25: service area state = Florida → settled `area_state`; Section A derivation tagged
+  `[Paul Approved 2026-10-25]` (status tag only; entity_approved stays MET).
+- Paul 2026-10-25: "no answers, mark them unknown" → all 15 open `[NEED: …]` markers in brand-guide.md now read
+  "Unknown — not provided by client (Paul, 2026-10-25)". No figure, date or claim written (CM-016).
+- Whole-row Unknown (run.py fact, status unknown): financing, minimum/trip charge, payment methods, subcontracting
+  (client's 'n/a' kept in the source, not interpreted).
+- Part-row Unknown (run.py fact, status kept Client Confirmed — the client did confirm the rest of the row):
+  founding year (25+ years stays), certificate of insurance (insured stays), copy of the written warranty
+  (10-year workmanship guarantee in writing stays), roles of April/Matt/Isaac/James (owners stay), travel fee
+  (towns-served-client).
+- Hand-edited free text (not generated rows): D2 rows "licensed and insured" and "Business Started 2021" (25+ years
+  may now be written; exact year Unknown); Section E towns at the edges, travel fee; Section G own sentence,
+  most-wanted job, common customer mistake.
+- `status.py mark reconciled --file brand-guide.md#A+D+E+G` recorded. brand_guide_approved is VOID → Paul re-approves.
+- No service draft uses an Unknown field: drafts state only "insured" and the 10-year written guarantee (both
+  Client Confirmed). Evidence packs in build/*/packs/ still show the old `[NEED]` text until Build regenerates them.
+- Nothing published; WordPress not touched; no draft pushed; no gate set.
+
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-financing-available-provider-terms (value, source) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026…
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-minimum-service-call-or-trip-charge (value, source) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 202…
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-payment-methods (value, source) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026-10-25: no answers,…
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-services-subcontracted-out (value, source) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026-10-25: …
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-founding-year-years-in-business (value, source) · client_confirmed · In business 'well over 25 plus years' (client). Client says BBB '…
+- FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-insurance-bonded-status (value, source) · client_confirmed · Insured: client confirms the insurance part of 'fully licensed and insure…
+- … and 3 more decision/fact/flag line(s) in log.md
+

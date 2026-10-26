@@ -13,7 +13,7 @@ First Choice Seamless Gutters installs and services rain gutters for business bu
 
 First Choice Seamless Gutters builds each commercial rain gutter system around three jobs: carry a higher volume of water, hold up under that load, and send the water away from the building's edge. The gutters are sized for higher volume. They are reinforced where the run needs it. The downspouts are routed to move water safely away from the building perimeter.
 
-Every commercial job starts with a free on-site inspection and a detailed estimate. It costs nothing, whether or not you go ahead, and there are no hidden fees. [NEED: the steps, methods and equipment First Choice uses on a commercial installation — client]
+Every commercial job starts with a free on-site inspection and a detailed estimate. It costs nothing, whether or not you go ahead, and there are no hidden fees. On a commercial installation, the crew measures each roof edge, sets the drainage slope, forms seamless gutters on site, hangs and seals the system, and water-tests it before leaving.
 
 What a business owner gets from a commercial gutter job:
 
@@ -29,7 +29,7 @@ First Choice Seamless Gutters handles two kinds of commercial gutter work: new c
 
 ### Commercial Gutter Installation Sized for Higher Volume
 
-A commercial gutter installation starts with size. A large, flat or low-slope roof can send far more water to one edge than a house roof does. Gutters that are too small can spill over in a heavy Florida storm. First Choice sizes each commercial system for that higher volume. [NEED: the gutter sizes, materials and profiles First Choice installs on commercial buildings — client]
+A commercial gutter installation starts with size. A large, flat or low-slope roof can send far more water to one edge than a house roof does. Gutters that are too small can spill over in a heavy Florida storm. First Choice sizes each commercial system for that higher volume. The system is sized for the roof area and the storm water it has to carry.
 
 ### Reinforced Commercial Gutter Runs
 
@@ -41,7 +41,7 @@ Downspout routing decides where the roof water ends up. On a commercial building
 
 ### Service on Existing Commercial Gutter Systems
 
-Service on existing commercial gutter systems is for buildings that have gutters that still spill over, leak or drain toward the walls. First Choice looks at the system during the free on-site inspection. Then you get a detailed estimate for the work it finds. [NEED: which service tasks First Choice offers on commercial gutters, such as repair, resizing or cleaning — client]
+Service on existing commercial gutter systems is for buildings that have gutters that still spill over, leak or drain toward the walls. First Choice looks at the system during the free on-site inspection. Then you get a detailed estimate for the work it finds. Service on existing commercial gutter systems can include repair or resizing, depending on what the inspection finds.
 
 ## What Do Polk County Business Owners Ask About Commercial Gutter Installation?
 
