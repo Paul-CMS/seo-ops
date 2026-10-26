@@ -1,17 +1,16 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
-- **What is happening now:** waiting for Paul's approval — the drafts for batch services are ready: review each with the semantic review table (nothing found) and approve them together. No placeholders in the drafts
-- **Waiting on:** Paul — the drafts for batch services are ready: review each with the semantic review table (nothi; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
-- **Next action:** Paul types `/approve first-choice-seamless-gutters batch:services:drafts` (or asks for changes first) · model: Haiku chat
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch locations-west)**
+- **What is happening now:** ready to start: the evidence gate blocked loc-winter-haven, loc-auburndale, loc-bartow, loc-polk-city, loc-kathleen, loc-highland-city, loc-mulberry, loc-eagle-lake, loc-wahneta — targeted questions for the owner (you send them). Or waive instead: /approve first-choice-seamless-gutters evidence:loc-winter-haven --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-auburndale --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-bartow --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-polk-city --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-kathleen --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-highland-city --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-mulberry --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-eagle-lake --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-wahneta --reason "<why you waive it>"
+- **Waiting on:** Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7
+- **Next action:** `/interview first-choice-seamless-gutters facts locations-west` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), draft-writer (opus), brief-writer (sonnet)) · model: Haiku chat
 
-_Generated 2026-10-26T11:05 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-26T11:08 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the drafts for batch services are ready: review each with the semantic review table (nothing found) and approve them together. No placeholders in the drafts | 2026-10-26 | /approve first-choice-seamless-gutters batch:services:drafts |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-seamless-gutter-installation:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-seamless-gutter-installation:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-installation:timeframe |
@@ -46,6 +45,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-25: Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims) — approved
 - 2026-10-24: site plan — approved
 - 2026-10-24: batch pilot drafts — approved
+- 2026-10-26: batch services drafts — approved
 - Drive copy pending sync — the local Drive folder ~/Library/CloudStorage/GoogleDrive-paul@coastalmarketingstrategies.com/My Drive/v3. CMS Technical SEO Audit 2026 is not there (Drive for desktop signed out or not syncing?). Files stay in the repo until Drive for desktop syncs; nothing is retyped into the connector.
 - Primary GBP category and category entity: Gutter service (Paul, 2026-10-22).
 - Area entity: Polk County, Florida (Paul, 2026-10-22).

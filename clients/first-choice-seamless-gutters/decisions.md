@@ -18,6 +18,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 | 2026-10-24T22:01 | batch pilot drafts | approved |
 | 2026-10-25T20:19 | brand_guide_approved | approved |
 | 2026-10-25T20:31 | brand_guide_approved | approved |
+| 2026-10-26T11:08 | batch services drafts | approved |
 
 ## Decisions logged during runs
 

@@ -1856,3 +1856,20 @@ Spend: 1680724 tokens · $0.03 (measured)
 - CHANGE #428 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-25 (9).md | new: First Choice Seamless Gutters - Status.md · sha a23f0fed7913 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #429 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-25.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | new: _Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-25.md | result: done · renamed and moved, nothing deleted
 - CHANGE #430 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | upload | old: previous version archived as First Choice Seamless Gutters - VA Worklist - 2026-10-25.md | new: First Choice Seamless Gutters - VA Worklist.md · sha da3ced562f0e | result: done · copied (Drive for desktop syncs it)
+
+## APPROVAL · 2026-10-26T11:08:32-05:00 · batch services drafts · approved · by Paul
+Approved version: clients/first-choice-seamless-gutters/build/services/drafts/svc-seamless-gutter-installation.md (sha 3bb2bd5de934)
+Approved version: clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-installation.md (sha 75022c5efdfc)
+Approved version: clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-repair.md (sha c629d466d2e4)
+Approved version: clients/first-choice-seamless-gutters/build/services/drafts/svc-commercial-gutters.md (sha b495b43c9d1d)
+Approved version: clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-downspouts.md (sha 1557fb50e5e6)
+Approved version: clients/first-choice-seamless-gutters/build/services/drafts/svc-gutter-guards.md (sha 0740b10d48da)
+Approved version: clients/first-choice-seamless-gutters/build/services/drafts/svc-copper-gutters.md (sha 88be1d175dfe)
+Approved version: clients/first-choice-seamless-gutters/build/services/drafts/svc-galvalume-gutters.md (sha 32b1b4e6c68d)
+Approved version: clients/first-choice-seamless-gutters/build/services/drafts/svc-aluminum-gutters.md (sha 152f34af60dc)
+Approved version: clients/first-choice-seamless-gutters/build/services/drafts-review.csv (sha 6f161168d0a3)
+SEM items to apply: none
+- CHANGE #431 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26.md | result: done · renamed and moved, nothing deleted
+- CHANGE #432 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26.md | new: First Choice Seamless Gutters - Document Checklist.md · sha f3c4f6516fd1 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #433 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26.md | result: done · renamed and moved, nothing deleted
+- CHANGE #434 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26.md | new: First Choice Seamless Gutters - Status.md · sha a312260df20b | result: done · copied (Drive for desktop syncs it)
