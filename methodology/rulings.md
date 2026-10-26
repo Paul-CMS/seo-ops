@@ -633,6 +633,11 @@ A change Paul makes himself after approving the Brand Guide — a fact he gives 
 
 When a chat cannot do what Paul asked (its stage is done), it hands his words on with `next.py <slug> --carry "…"`; the next chat's /next shows them first (`paul_said`, STATUS.md) and does them without asking again. A change to a draft already recorded is made in a revision run (`build:revise`, allowed in any chat), logged, and the page recorded again; a draft found changed outside a run sends /next to that revision run instead of a refused approval.
 
+## CM-068 · Industry standard fills a client's scope and process until the client answers
+**ID** CM-068 · **Status** APPROVED · **Date** 2026-10-25 · **Reason** first-choice-seamless-gutters: seven service pages blocked on the client's scope and process and needed seven waivers, then 20 `[NEED]` lines and a gap fill from competitor text; Paul: research what the trade does, nothing invented (CR-047) · **Enforced by** `methodology/evidence-requirements.json` (`standard_fill`), `evidence.py` (standard_rows; a filled gap is not a hold), `evidence_pack.py` (the Industry standard section) · **Proved by** `tests/checks/cm068_standard.py`
+
+When a page's service scope or process is a client gap, the researcher writes what the trade itself says — from manufacturer guides, trade associations, the state building code and official data for the place, each statement cited — and the writer uses it as how the work is done, never as the client's own claim, with no number or step the source lacks. It is not a hold at the evidence gate. Pricing, timeframes, licence, insurance, warranty, years, staff and certifications are never filled (CM-016 holds). The client's answer replaces the fill (later-rewrites.md; a run.py fact Updated line, CM-066).
+
 ---
 
 # C. Rule Register
@@ -907,6 +912,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-065 | APPROVED (lean agents: short tool lists, draft-writer for every page draft, mechanical work in the Haiku chat) |
 | CM-066 | APPROVED (Paul's own changes keep his approval: Updated lines, write-back never voids, no step back to Stage 4) |
 | CM-067 | APPROVED (Paul's words carry across chats; drafts change only in a revision run) |
+| CM-068 | APPROVED (industry-standard fill for a client's scope and process, cited, until the client answers) |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |

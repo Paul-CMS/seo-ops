@@ -67,6 +67,18 @@ answers>"` — Paul adds it to `methodology/sources/` in `/system-review`.
    service. Coverage only — never a client claim (CM-016).
 4. **Source lists**: when an area has no `methodology/sources/<state>-<area>.md`, draft its contents in your summary
    and flag it (above); Paul adds the file.
+5. **Industry standard (CM-068)** — for each page whose `service_scope` or `service_process` is a client gap (the grid
+   says Unknown), write what the trade itself says, as a professional in it would: what the service includes and how the
+   work is done, made specific to the page's place where an official source supports it (the state building code's
+   wind or drainage rules, official rainfall or storm data for the county). Sources only: manufacturer installation
+   guides and spec sheets, trade associations and their manuals, the state building code, government and university
+   extension pages. Never a competitor's page (coverage only), never a forum, never anything you cannot cite. 2–5
+   statements per gap, each a plain sentence about the work (never "we" and never a claim about the client), with no
+   number, material or step the source does not give. Write `clients/<slug>/build/evidence/<page>.standard.json`:
+   `{"standard": {"service_scope": [{"text": "…", "publisher": "…", "url": "https://…", "read": "YYYY-MM-DD"}],
+   "service_process": [...]}}` and log each gap (`research.py log … --kind public --gap fact:<page>:<key> --result
+   found|not_found`). Pricing, timeframes, licence, insurance, warranty, years in business, staff and certifications are
+   the client's alone: never filled. `evidence.py run` then treats a filled gap as not a hold.
 
 Report in ten lines or fewer: what you found (with sources), what you did not find (with the sources tried), and
 what goes to Paul as a decision.

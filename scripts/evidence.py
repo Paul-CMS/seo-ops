@@ -74,6 +74,21 @@ def brand_facts(slug):
     return out
 
 
+def standard_rows(slug, pid):
+    """CM-068: {gap key: [{text, publisher, url, read}]} — the researcher's cited industry-standard text for a page's
+    client gaps (build/evidence/<page>.standard.json). An entry without a web source is ignored: nothing unsourced fills."""
+    data = read_json(client_dir(slug) / "build" / "evidence" / f"{pid}.standard.json") or {}
+    allowed = {f.split(":", 1)[1] for f in (requirements().get("standard_fill") or [])}   # never pricing, timeframes, claims
+    out = {}
+    for key, items in (data.get("standard") or {}).items():
+        if key not in allowed:
+            continue
+        ok = [i for i in items or [] if str(i.get("text") or "").strip() and str(i.get("url") or "").startswith("http")]
+        if ok:
+            out[key] = ok
+    return out
+
+
 def page_facts(slug, pid):
     p = client_dir(slug) / "build" / "evidence" / f"{pid}.facts.json"
     return (read_json(p) or {}).get("facts", {}), p
@@ -174,7 +189,7 @@ def research(slug, it, page, docs):
 
 # ------------------------------------------------------------------ scoring
 def score(rows, th):
-    gap = lambda r: r["mark"] != "Known" and not r.get("researched")   # CM-061 §8: a researched public gap never holds
+    gap = lambda r: r["mark"] != "Known" and not r.get("researched") and not r.get("standard")   # CM-061 §8, CM-068
     req_gaps = [r for r in rows if r["need"] == "required" and gap(r)]
     sup_gaps = [r for r in rows if r["need"] != "required" and gap(r)]
     conflicts = [r for r in rows if r["mark"] == "Conflict"]
@@ -233,6 +248,10 @@ def grid(slug, st, pid):
             hit = research_log.find(slug, fk)  # hold — the element is shortened or dropped (Fix and list)
             if hit:
                 rows[-1]["researched"] = hit["id"]
+        if rows[-1]["mark"] != "Known" and it["from"] in set(reqs.get("standard_fill") or []):
+            std = standard_rows(slug, pid).get(it["key"])
+            if std:   # CM-068: cited industry-standard text fills the gap until the client answers — not a hold
+                rows[-1]["standard"] = len(std)
     result, counts, why = score(rows, reqs["thresholds"])
     return rows, result, counts, why
 
@@ -258,6 +277,9 @@ def render(st, pid, rows, result, counts, why):
             src = "not searchable on disk — ask"
         if r.get("researched"):
             src = f"researched, not found ({r['researched']}) — a target, not a hold: shortened or dropped (Fix and list)"
+        if r.get("standard"):
+            src = (f"industry standard, {r['standard']} cited statement(s) (CM-068) — written as trade practice until the "
+                   "client answers; not a hold")
         out.append(f"| {r['label']} | {r['need']} | **{r['mark']}** | {v} | {src} |")
     if searched or missing:
         out += ["", "**Sources searched before asking (CM-057):** " + (", ".join(sorted(searched)) or "none on disk"),

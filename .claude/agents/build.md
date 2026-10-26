@@ -49,8 +49,10 @@ Read: the page's **outline** (`build/<section>/outlines/<page>.md`), its **evide
 if present, and the approved pages of earlier sections (never reuse an opening angle, heading or FAQ). Write by
 writing-commercial.md Stage 0–3 with self-critique E1–E10 and the spec's checks — the self-critique is yours; you raise
 nothing for Paul. Facts at their state: confirmed → plain claim; sourced public → plain statement; unknown → `[NEED:
-…]` or left out; reviews only at the pack's tier; a fact the pack has is used, never written around. Location pages:
-CM-062 (order, swap test, ownership).
+…]` or left out; reviews only at the pack's tier; a fact the pack has is used, never written around. A gap the pack's
+**Industry standard** section fills (CM-068) is written from it as how the trade does the work ("a seamless install
+starts with …"), never as the client's own claim and never with a number or step the source lacks — no `[NEED]` there;
+list each use under **Standard fills** in the results file. Location pages: CM-062 (order, swap test, ownership).
 **Placeholders (P11):** only `[NEED: …]` and `[LINK → /slug/ · reason]` (a page not yet planned — CM-064); every link
 table the outline lists stays a `| [Link wheel: populate … links here] |` row, filled from the wheel at ship; never
 an instruction in brackets (`placeholders.py scan <file>`).

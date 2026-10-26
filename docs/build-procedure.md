@@ -6,8 +6,11 @@ _Phase 7 (2026-10-21): moved here from `.claude/agents/build.md`; read only by t
 from the returned proof sheet, the Discovery Record, Brand Guide E and cited public research; never upgrade a status).
 `evidence.py run <slug> --run <RUN_ID> --batch <id>` scores each page and rebuilds its evidence pack
 (`build/<section>/packs/<page>.md`). The **researcher** checks by meaning every review topic marked "keyword match only"
-with 3+ reviewers (`reviews.py meaning`, else `reviews.py checked …`), then `evidence_pack.py build <slug> <id> --run
-<RUN_ID>`; FAQ picks: `outline.py faq <slug> <id> --run <RUN_ID>`. A blocked page is not written.
+with 3+ reviewers (`reviews.py meaning`, else `reviews.py checked …`), and writes the **industry standard** for every
+page whose service scope or process is a client gap (researcher job 5, CM-068 — then `evidence.py run` again: a filled
+gap is not a hold, so no waiver is needed for it), then `evidence_pack.py build <slug> <id> --run <RUN_ID>`; FAQ picks:
+`outline.py faq <slug> <id> --run <RUN_ID>`. A blocked page is not written. Each page that used a standard fill is
+listed in `clients/<slug>/later-rewrites.md` (the client's answer replaces it, CM-066 Updated line).
 
 **write <id>** — the whole section in ONE run, ONE stop (outline route):
 1. The evidence gate.
@@ -24,7 +27,8 @@ with 3+ reviewers (`reviews.py meaning`, else `reviews.py checked …`), then `e
 
 **The review** — one checker pass for the section (CM-061): E1–E10, the spec's checks, portability and the swap test across
 siblings (`similarity.py` in `review.py`), heading/FAQ collisions with C3 and each other, Stage 4 semantics, the usage
-tiers. One JSON finding per page + rule + item, severity per `methodology/review-severities.json` and definitions.md;
+tiers, and every industry-standard fill (CM-068): it reads as trade practice, matches its cited statement, and claims
+nothing for the client — else a Fix. One JSON finding per page + rule + item, severity per `methodology/review-severities.json` and definitions.md;
 every value a writer chose that neither the plan nor `outline.py`'s formula fixed is one Fix and list row per page.
 `review.py sheet <slug> <id> drafts --findings <findings.json> --run <RUN_ID>` writes the one sheet (`drive.py upload` it).
 Overdue Asks: `review.py overdue <slug> --run <RUN_ID> --apply`. The approval: `/approve <slug> batch:<id>:drafts`

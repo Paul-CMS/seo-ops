@@ -271,7 +271,7 @@ def gaps(slug, st, pid):
     for r in rows:
         if r["mark"] != "Unknown":
             continue
-        kind = ("researched" if r.get("researched") else "public" if r["from"] in public
+        kind = ("standard" if r.get("standard") else "researched" if r.get("researched") else "public" if r["from"] in public
                 else ("lookup" if r["from"] in lookup else "client"))
         out.append({"key": r["key"], "label": r["label"], "need": r["need"], "from": r["from"], "kind": kind,
                     "fact_key": r["fact_key"]})
@@ -292,7 +292,8 @@ def build_one(slug, section, pid, run_id=None, st=None):
             "public": area_rows(places), "research": research_rows(slug, section, pid),
             "place": place_rows(slug, places),
             "settled": settled_rows(slug, pid, services, places),
-            "gaps": gaps(slug, st, pid)}
+            "gaps": gaps(slug, st, pid),
+            "standard": __import__("evidence").standard_rows(slug, pid)}
     for f in pack["facts"]:
         f["state"] = facts.writer_state(f["status"])   # Rewrite 4: what the writer sees
     ex = []
@@ -364,12 +365,20 @@ def render(st, p):
     out += [f"- [{r['tier']}] {r['place']} ({r['layer']}, applies to {r['applies_to']}): {r['fact']} — {r['publisher']}, "
             f"{r['source_url']} ({r['date']})" for r in p.get("place", [])] or [
         "_Nothing in the place store yet for this page's place (places.py status lists what is missing)._"]
+    out += ["", "## Industry standard — until the client answers (CM-068)", "",
+            "_How the trade does this work, from the cited sources. Write it as standard practice (\"a seamless gutter "
+            "install starts with …\"), never as the client's own claim (\"we always …\"), and add no number or "
+            "material the source does not give. The client's answer replaces it (later-rewrites.md)._", ""]
+    out += [f"- **{k}** — {i['text']} — {i.get('publisher') or 'source'}, {i['url']} ({i.get('read') or 'date not given'})"
+            for k, items in (p.get("standard") or {}).items() for i in items] or [
+        "_None for this page — its scope and process come from the client, or stay a `[NEED: …]`._"]
     out += ["", "## Settled decisions touching this page", ""]
     out += [f"- {s['at']} · `{s['key']}` — {s['text']}" for s in p["settled"]] or ["_None._"]
     out += ["", "## Gaps — the only things research looks for", ""]
     who = {"public": "researcher (public fact — never asked)", "lookup": "researcher (verify by public lookup — never asked)",
            "client": "client search order, then an Ask (kind 3) only with a research-log entry",
-           "researched": "researched, not found — shorten or drop the element (Fix and list); never a hold"}
+           "researched": "researched, not found — shorten or drop the element (Fix and list); never a hold",
+           "standard": "industry standard filled it (see that section) — not a hold; the client's answer replaces it"}
     out += [f"- {g['label']} ({g['need']}, `{g['from']}`) → {who[g['kind']]}" for g in p["gaps"]] or ["_None._"]
     return "\n".join(out) + "\n"
 

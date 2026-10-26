@@ -413,3 +413,13 @@ Paul, 2026-10-25 system session, after first-choice-seamless-gutters (12 chats, 
 - CR-044 · 2026-10-25 · DONE · system session · commit 0354c3e
 
 - CR-045 · 2026-10-25 · DONE · system session · commit 0354c3e
+
+- CR-046 · 2026-10-25 · DONE · system session · commit 67f7812
+
+## CR-047 · 2026-10-25 · Industry-standard fill for client gaps (scope, process) instead of NEED placeholders
+Raised in a system session by Paul.
+Paul, 2026-10-25: NEED items are fine to keep, but the system should research industry-standard text to fill them - nothing made up, location- and service-specific, as a professional in the trade would write it - used until the client returns its answers.
+
+---
+
+- CR-047 · 2026-10-25 · ACCEPTED · Paul · Paul, 2026-10-25: asked for it in the system session
