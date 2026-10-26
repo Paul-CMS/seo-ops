@@ -749,3 +749,18 @@ These new claims are Paul's words, not yet in facts.json or confirmed by the cli
 **Changes (script):** 9 — draft ×9
 - FLAG 2026-10-26T11:04 · run 20261026-110346-build-402f · F-015 · next.py --continue crashed with AttributeError: module 'status' has no attribute 'drafts_drifted' (next.py -> records.py -> status_m…
 
+## /build · 2026-10-26 · run 20261026-110943-build-66b7
+
+- Step: ship, run through seq.py: `publish.py wheel` then `publish.py drafts --all`.
+- Step 1 done: `publish.py wheel first-choice-seamless-gutters` rebuilt build/link-wheel.json (script output, no copy touched).
+- Step 2 REFUSED (exit 4): "REFUSED — every service and location page ships together — still waiting for:
+  locations-west (drafts not approved yet), locations-east (drafts not approved yet)".
+- The sequence stopped there. Nothing was pushed to WordPress; no page is a WordPress draft from this run.
+- Approved pages that would ship once the rule is met: 10 service pages (pilot svc-gutter-cleaning + services batch of 9)
+  and loc-lakeland (pilot). about is planned, not approved.
+- Not worked around (ship is all-or-nothing by design, CM-055/P9). Nothing approved, nothing published, no copy edited.
+- Note: a first seq.py call was mistyped (`--step ship`) and crashed before running anything; no state was written by it.
+- Next: `/build first-choice-seamless-gutters write locations-west`, then locations-east, their reviews, write-backs and
+  approvals; then `/build first-choice-seamless-gutters ship`.
+- Not blocking writing (P8): the technical blocker handoff H-2026-10-23-03 (11 items) is still issued; /verify when Jonie returns it.
+

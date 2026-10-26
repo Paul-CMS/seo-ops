@@ -1873,3 +1873,31 @@ SEM items to apply: none
 - CHANGE #432 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26.md | new: First Choice Seamless Gutters - Document Checklist.md · sha f3c4f6516fd1 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #433 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26.md | result: done · renamed and moved, nothing deleted
 - CHANGE #434 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26.md | new: First Choice Seamless Gutters - Status.md · sha a312260df20b | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261026-110943-build-66b7 · STARTED · /build · 2026-10-26T11:09:43-05:00
+Step: build:ship · session 32a35d0f-b6be-4ab7-a5f6-914c553b9356
+Gates checked: discovery_signed_off, wordpress_connected
+- SEQUENCE STOPPED 2026-10-26T11:10 · step 2 of 2 failed (exit 4): python3 scripts/publish.py drafts first-choice-seamless-gutters --run 20261026-110943-build-66b7 --all · REFUSED — every service and location page ships together — still waiting for: locations-west (drafts not approved yet), locations-east (drafts not approved yet) · not run: 0
+### HANDOFF · /build · 2026-10-26 · run 20261026-110943-build-66b7
+- Step: ship, run through seq.py: `publish.py wheel` then `publish.py drafts --all`.
+- Step 1 done: `publish.py wheel first-choice-seamless-gutters` rebuilt build/link-wheel.json (script output, no copy touched).
+- Step 2 REFUSED (exit 4): "REFUSED — every service and location page ships together — still waiting for:
+  locations-west (drafts not approved yet), locations-east (drafts not approved yet)".
+- The sequence stopped there. Nothing was pushed to WordPress; no page is a WordPress draft from this run.
+- Approved pages that would ship once the rule is met: 10 service pages (pilot svc-gutter-cleaning + services batch of 9)
+  and loc-lakeland (pilot). about is planned, not approved.
+- Not worked around (ship is all-or-nothing by design, CM-055/P9). Nothing approved, nothing published, no copy edited.
+- Note: a first seq.py call was mistyped (`--step ship`) and crashed before running anything; no state was written by it.
+- Next: `/build first-choice-seamless-gutters write locations-west`, then locations-east, their reviews, write-backs and
+  approvals; then `/build first-choice-seamless-gutters ship`.
+- Not blocking writing (P8): the technical blocker handoff H-2026-10-23-03 (11 items) is still issued; /verify when Jonie returns it.
+### END HANDOFF
+## RUN 20261026-110943-build-66b7 · FINISHED · 2026-10-26T11:10:31-05:00
+Changes: 0 · Summary: Ship refused: link wheel rebuilt, drafts push refused (exit 4) until locations-west and locations-east drafts are approved; nothing sent to WordPress
+Spend: 851430 tokens · $0.29 (measured)
+- CHANGE #435 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-26.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-26.md | result: done · renamed and moved, nothing deleted
+- CHANGE #436 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-26.md | new: First Choice Seamless Gutters - Handoff Log.md · sha e83393bbe2fd | result: done · copied (Drive for desktop syncs it)
+- CHANGE #437 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (2).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #438 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26 (2).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 1045748585c8 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #439 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26 (2).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #440 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (2).md | new: First Choice Seamless Gutters - Status.md · sha 694d9f100fee | result: done · copied (Drive for desktop syncs it)
