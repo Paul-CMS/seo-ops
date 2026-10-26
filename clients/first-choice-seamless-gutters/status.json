@@ -2741,8 +2741,8 @@
         "files": {},
         "facts_interview": {
           "file": "clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - locations-east - 2026-10-26 - REVIEW.md",
-          "at": "2026-10-26T11:15:14-05:00",
-          "run": "20261026-111511-interview-3edf",
+          "at": "2026-10-26T16:30:15-05:00",
+          "run": "20261026-163013-interview-7173",
           "pages": [
             "loc-davenport",
             "loc-haines-city",
@@ -2993,13 +2993,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261026-121738-build-762d",
-    "command": "build",
-    "finished": "2026-10-26T12:20:22-05:00",
-    "result": "Locations-west Brand Guide write-back: 9 B3, 9 C2, 75 C3 rows from the reviewed drafts; no collisions; awaiting batch:locations-west:drafts approval",
-    "changes": 3,
-    "step": "build:writeback",
-    "batch": "locations-west"
+    "run_id": "20261026-163013-interview-7173",
+    "command": "interview",
+    "finished": "2026-10-26T16:30:30-05:00",
+    "result": "Facts pack for locations-east: 0 client questions; gaps are public facts for the researcher; nothing to send",
+    "changes": 0,
+    "step": "interview:facts",
+    "batch": "locations-east"
   },
   "spend": {
     "dataforseo_usd": 0.262668
@@ -3020,7 +3020,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-26T13:06:40-05:00",
+  "updated": "2026-10-26T16:30:30-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -4203,6 +4203,26 @@
         "main": 0.0031,
         "build": 0.5959
       }
+    },
+    {
+      "run": "20261026-163013-interview-7173",
+      "step": "interview:facts",
+      "tokens": 476547,
+      "usd": 0.0067,
+      "at": "2026-10-26T16:30:30-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0067,
+          "in": 10,
+          "out": 2221,
+          "cache_read": 469908,
+          "cache_write": 4408
+        }
+      },
+      "by_agent": {
+        "main": 0.0067
+      }
     }
   ],
   "sessions": {
@@ -4301,6 +4321,12 @@
       "step": "build:write",
       "first_run": "20261026-120219-build-bc47",
       "at": "2026-10-26T12:15:52-05:00"
+    },
+    "54d382f3-b5fa-4ccd-93bc-3a1a03c63ed0": {
+      "key": "batches:locations-east",
+      "step": "interview:facts",
+      "first_run": "20261026-163013-interview-7173",
+      "at": "2026-10-26T16:30:30-05:00"
     }
   },
   "wordpress": {

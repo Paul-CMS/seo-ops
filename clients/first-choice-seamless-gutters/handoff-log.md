@@ -855,3 +855,12 @@ Open: permit responsibility per town; named HOA communities; named historic dist
 
 **Changes (script):** 3 — drive_file ×2, brand_guide_writeback ×1
 
+## /interview · 2026-10-26 · run 20261026-163013-interview-7173
+
+- Facts interview, batch locations-east (9 blocked pages: loc-davenport, loc-haines-city, loc-lake-alfred, loc-lake-hamilton, loc-dundee, loc-lake-wales, loc-waverly, loc-frostproof, loc-fort-meade).
+- evidence.py questions produced 0 client questions. The gaps are public facts (city conditions, neighborhoods, places, permit office) that the researcher looks up (build/evidence/research-locations-east.md), not Paul or the client. plant-city-served was already answered.
+- The REVIEW pack has no questions, so there is nothing for Paul to send. Do not send it.
+- Pack file: clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - locations-east - 2026-10-26 - REVIEW.md
+- Pack bug to fix in a system session: the "Public facts, not asked" note repeats the same items many times.
+- Still open: a waiver or research path for the 9 blocked pages (evidence gate, CM-041); the 20 open client facts (facts-answers all).
+
