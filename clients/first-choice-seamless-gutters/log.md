@@ -2199,3 +2199,47 @@ Spend: 17600983 tokens · $10.49 (measured)
 - CHANGE #473 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26 (8).md | new: First Choice Seamless Gutters - Document Checklist.md · sha e77f94e2efb6 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #474 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26 (8).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26 (8).md | result: done · renamed and moved, nothing deleted
 - CHANGE #475 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (8).md | new: First Choice Seamless Gutters - Status.md · sha 5ea1dec3716e | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-26T12:17 · after build:write (run 20261026-120219-build-bc47) · Paul typed /next
+
+## RUN 20261026-121738-build-762d · STARTED · /build · 2026-10-26T12:17:38-05:00
+Step: build:writeback · batch locations-west · session c767bc50-4e7a-4ae1-8e1b-f9d425582651
+Gates checked: discovery_signed_off, batch:locations-west:briefs
+- WRITE-BACK 2026-10-26T12:19 · run 20261026-121738-build-762d · batch locations-west: Brand Guide B3, C1/C2, C3 updated once for the section, from its reviewed drafts
+- CHANGE #476 [brand_guide_writeback] clients/first-choice-seamless-gutters/brand-guide.md | B3, C1, C2, C3 | old:  | new: locations-west section: 9 B3 rows, 0 C1 rows (no service pages), 9 C2 rows, 75 C3 rows (48 H2, 27 FAQ) from the reviewed drafts; no collisions with C3 | result: applied
+- CHANGE #477 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/brand-guide - 2026-10-25.md | archive | old: drive:First Choice Seamless Gutters - TMS/brand-guide.md | new: _Archive/brand-guide - 2026-10-25.md | result: done · renamed and moved, nothing deleted
+- CHANGE #478 [drive_file] drive:First Choice Seamless Gutters - TMS/brand-guide.md | upload | old: previous version archived as brand-guide - 2026-10-25.md | new: brand-guide.md · sha d799f6b51a9a | result: done · copied (Drive for desktop syncs it)
+### HANDOFF · /build · 2026-10-26 · run 20261026-121738-build-762d
+## What happened
+- The locations-west section's one Brand Guide write-back, from the nine reviewed drafts (review applied, 0 Ask rows, run bc47).
+- B3: 9 location rows added (title, H1, first H2, opening category variant; city, opening area and sibling-section area
+  variant), each pointing to its draft.
+- C1: no change (no service pages in this section).
+- C2: 9 location rows added (Winter Haven, Auburndale, Bartow, Polk City, Kathleen, Highland City, Mulberry, Eagle Lake,
+  Wahneta); none is the GBP landing page (A11 — the GBP Website field is the homepage).
+- C3: 75 rows added (48 H2, 27 FAQ). Checked: no exact duplicates within the section or with the 94 earlier rows.
+- `status.py writeback` recorded (no refusal); change #476 logged; records rendered; brand-guide.md copied to Drive.
+- brand_guide_approved still MET; no approved value changed (only B3 and C, the system's own sections).
+- No facts added; no new [NEED]s from this step.
+
+## Still open (not blocking this step)
+- 18 [NEED] placeholders across the nine drafts (travel/response time, local permit and runoff rules, others).
+- Every draft opening says "Seamless Gutters" only as part of the company name; the opening variants are recorded in B3.
+- Technical blockers (H-2026-10-23-03 broken_link, 11 items) still issued; ship waits on them, not the approval.
+
+## Next
+- Paul: `/approve first-choice-seamless-gutters batch:locations-west:drafts` (the write-back changed no approved value).
+- Then `/build write locations-east`.
+
+**Changes (script):** 3 — drive_file ×2, brand_guide_writeback ×1
+### END HANDOFF
+## RUN 20261026-121738-build-762d · FINISHED · 2026-10-26T12:20:22-05:00
+Changes: 3 · Summary: Locations-west Brand Guide write-back: 9 B3, 9 C2, 75 C3 rows from the reviewed drafts; no collisions; awaiting batch:locations-west:drafts approval
+Spend: 1521082 tokens · $0.60 (measured)
+- CHANGE #479 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-26 (7).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-26 (7).md | result: done · renamed and moved, nothing deleted
+- CHANGE #480 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-26 (7).md | new: First Choice Seamless Gutters - Handoff Log.md · sha fdecfa683374 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #481 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (9).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #482 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26 (9).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 1ec149df04b3 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #483 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Brand Guide - 2026-10-25 (4).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Brand Guide.md | new: _Archive/First Choice Seamless Gutters - Brand Guide - 2026-10-25 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #484 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Brand Guide.md | upload | old: previous version archived as First Choice Seamless Gutters - Brand Guide - 2026-10-25 (4).md | new: First Choice Seamless Gutters - Brand Guide.md · sha d799f6b51a9a | result: done · copied (Drive for desktop syncs it)
+- CHANGE #485 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26 (9).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #486 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (9).md | new: First Choice Seamless Gutters - Status.md · sha 692f960e1854 | result: done · copied (Drive for desktop syncs it)

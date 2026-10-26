@@ -2691,7 +2691,11 @@
             }
           }
         },
-        "sem_findings": 0
+        "sem_findings": 0,
+        "content_written_back": {
+          "at": "2026-10-26T12:19:58-05:00",
+          "run": "20261026-121738-build-762d"
+        }
       },
       {
         "id": "locations-east",
@@ -2967,12 +2971,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261026-120219-build-bc47",
+    "run_id": "20261026-121738-build-762d",
     "command": "build",
-    "finished": "2026-10-26T12:15:52-05:00",
-    "result": "locations-west: 9 location drafts written and reviewed (0 Ask, 26 decided, 86 fixed); 18 NEEDs left",
-    "changes": 1,
-    "step": "build:write",
+    "finished": "2026-10-26T12:20:22-05:00",
+    "result": "Locations-west Brand Guide write-back: 9 B3, 9 C2, 75 C3 rows from the reviewed drafts; no collisions; awaiting batch:locations-west:drafts approval",
+    "changes": 3,
+    "step": "build:writeback",
     "batch": "locations-west"
   },
   "spend": {
@@ -2994,7 +2998,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-26T12:15:52-05:00",
+  "updated": "2026-10-26T12:20:22-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -4149,6 +4153,34 @@
         "build": 2.5486,
         "researcher": 0.1006
       }
+    },
+    {
+      "run": "20261026-121738-build-762d",
+      "step": "build:writeback",
+      "tokens": 1521082,
+      "usd": 0.599,
+      "at": "2026-10-26T12:20:22-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0031,
+          "in": 4,
+          "out": 1078,
+          "cache_read": 216544,
+          "cache_write": 1768
+        },
+        "claude-opus-5-5": {
+          "usd": 0.5959,
+          "in": 52,
+          "out": 439,
+          "cache_read": 1233143,
+          "cache_write": 68054
+        }
+      },
+      "by_agent": {
+        "main": 0.0031,
+        "build": 0.5959
+      }
     }
   ],
   "sessions": {
@@ -4294,8 +4326,8 @@
     "H-2026-10-23-04-other"
   ],
   "review_pause": {
-    "run_id": "20261026-120219-build-bc47",
-    "step": "build:write",
-    "at": "2026-10-26T12:15:52-05:00"
+    "run_id": "20261026-121738-build-762d",
+    "step": "build:writeback",
+    "at": "2026-10-26T12:20:22-05:00"
   }
 }

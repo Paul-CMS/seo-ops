@@ -79,6 +79,15 @@ Every area variant except the reserved one. Reuse across service pages is correc
 | /copper-gutters/ | service | title: Copper Gutters (service name) · H1: Copper Gutter Systems · opening: gutter contractor + copper gutter installation · first H2: Copper Gutters · FAQ H2: Rain Gutters | H1: Polk County, Florida · opening: Polk County, Florida · FAQ H2: Polk County | build/services/drafts/svc-copper-gutters.md (SD, reviewed draft, write-back run 20261025-143023-build-18ec) | no |
 | /galvalume-gutters/ | service | title: Galvalume Gutters (service name) · H1: Galvalume Steel Gutters · opening: Galvalume gutters + gutter contractor · first H2: Galvalume Gutter Job · FAQ H2: Galvalume Rain Gutters | H1: Polk County, Florida · opening: Lakeland–Winter Haven area · FAQ H2: Florida | build/services/drafts/svc-galvalume-gutters.md (SD, reviewed draft, write-back run 20261025-143023-build-18ec) | no |
 | /aluminum-gutters/ | service | title: Aluminum Gutters (service name) · H1: Aluminum Rain Gutters · opening: aluminum gutter systems + gutter contractor · first H2: Aluminum Gutter System · FAQ H2: Aluminum Gutter Installation | H1: Polk County, Florida · opening: Polk County, Florida · FAQ H2: Polk County, Florida | build/services/drafts/svc-aluminum-gutters.md (SD, reviewed draft, write-back run 20261025-143023-build-18ec) | no |
+| /winter-haven-fl/ | location | title: Rain Gutters · H1: Seamless Gutters · first H2: Gutter Contractor · opening: gutter installation | city: Winter Haven (title "Winter Haven, FL", H1) · opening: Lakeland–Winter Haven metropolitan area · sibling H2: Polk County | build/locations-west/drafts/loc-winter-haven.md (LD, reviewed draft, write-back run 20261026-121738-build-762d) | no |
+| /auburndale-fl/ | location | title: Gutter Contractor · H1: Rain Gutters · first H2: Seamless Gutter · opening: gutter installation | city: Auburndale (title "Auburndale, FL", H1) · sibling H2: Polk County, Florida | build/locations-west/drafts/loc-auburndale.md (LD, reviewed draft, write-back run 20261026-121738-build-762d) | no |
+| /bartow-fl/ | location | title: Rain Gutters · H1: Seamless Gutters · first H2: Gutter Contractor · opening: gutter installation | city: Bartow (title "Bartow, FL", H1) · opening: Polk County, Florida · sibling section body: Polk County, Florida | build/locations-west/drafts/loc-bartow.md (LD, reviewed draft, write-back run 20261026-121738-build-762d) | no |
+| /polk-city-fl/ | location | title: Gutter Contractor · H1: Rain Gutters · first H2: Gutter Installation · opening: seamless gutters | city: Polk City (title "Polk City, FL", H1) · opening: Polk County, Florida · sibling H2: Polk County, Florida | build/locations-west/drafts/loc-polk-city.md (LD, reviewed draft, write-back run 20261026-121738-build-762d) | no |
+| /kathleen-fl/ | location | title: Gutter Contractor · H1: Seamless Gutters · first H2: Rain Gutter · opening: gutter installation | city: Kathleen (title "Kathleen, FL", H1) · opening: Lakeland–Winter Haven area · sibling H2: Polk County | build/locations-west/drafts/loc-kathleen.md (LD, reviewed draft, write-back run 20261026-121738-build-762d) | no |
+| /highland-city-fl/ | location | title: Gutter Contractor · H1: Rain Gutters · first H2: Seamless Gutter · opening: gutter installation | city: Highland City (title "Highland City, FL", H1) · opening: Polk County, Florida · sibling-table lead: Polk County, Florida | build/locations-west/drafts/loc-highland-city.md (LD, reviewed draft, write-back run 20261026-121738-build-762d) | no |
+| /mulberry-fl/ | location | title: Rain Gutters · H1: Seamless Gutters · first H2: Gutter Contractor · local-context H2: Rain Gutters · FAQ H2: Gutter Installation · opening: gutter installation | city: Mulberry (title "Mulberry, FL", H1) · opening: Polk County, Florida · sibling H2: Polk County | build/locations-west/drafts/loc-mulberry.md (LD, reviewed draft, write-back run 20261026-121738-build-762d) | no |
+| /eagle-lake-fl/ | location | title: Gutter Contractor · H1: Rain Gutters · first H2: Seamless Gutter · opening: gutter installation | city: Eagle Lake (title "Eagle Lake, FL", H1) · opening: Polk County, Florida · sibling H2: Polk County | build/locations-west/drafts/loc-eagle-lake.md (LD, reviewed draft, write-back run 20261026-121738-build-762d) | no |
+| /wahneta-fl/ | location | title: Gutter Contractor · H1: Seamless Gutters · first H2: Rain Gutter · opening: rain gutters | city: Wahneta (title "Wahneta, FL", H1) · opening: Polk County, Florida · sibling H2: Polk County | build/locations-west/drafts/loc-wahneta.md (LD, reviewed draft, write-back run 20261026-121738-build-762d) | no |
 
 ## Section C — Page inventory
 
@@ -104,6 +113,15 @@ Every area variant except the reserved one. Reuse across service pages is correc
 | URL | City | GBP landing page? | Status |
 |---|---|---|---|
 | /lakeland-fl/ | Lakeland | No — the GBP Website field is the homepage (A11) | Draft reviewed (pilot), not approved, not shipped — 2026-10-24; map embed left for the VA (settled loc-lakeland:map-embed) |
+| /winter-haven-fl/ | Winter Haven | No — the GBP Website field is the homepage (A11) | Draft reviewed (locations-west), not approved, not shipped — 2026-10-26 |
+| /auburndale-fl/ | Auburndale | No — the GBP Website field is the homepage (A11) | Draft reviewed (locations-west), not approved, not shipped — 2026-10-26 |
+| /bartow-fl/ | Bartow | No — the GBP Website field is the homepage (A11) | Draft reviewed (locations-west), not approved, not shipped — 2026-10-26 |
+| /polk-city-fl/ | Polk City | No — the GBP Website field is the homepage (A11) | Draft reviewed (locations-west), not approved, not shipped — 2026-10-26 |
+| /kathleen-fl/ | Kathleen | No — the GBP Website field is the homepage (A11) | Draft reviewed (locations-west), not approved, not shipped — 2026-10-26 |
+| /highland-city-fl/ | Highland City | No — the GBP Website field is the homepage (A11) | Draft reviewed (locations-west), not approved, not shipped — 2026-10-26 |
+| /mulberry-fl/ | Mulberry | No — the GBP Website field is the homepage (A11) | Draft reviewed (locations-west), not approved, not shipped — 2026-10-26 |
+| /eagle-lake-fl/ | Eagle Lake | No — the GBP Website field is the homepage (A11) | Draft reviewed (locations-west), not approved, not shipped — 2026-10-26 |
+| /wahneta-fl/ | Wahneta | No — the GBP Website field is the homepage (A11) | Draft reviewed (locations-west), not approved, not shipped — 2026-10-26 |
 
 Only a verified GBP's actual landing URL gets LocalBusiness-type schema (BB-604).
 
@@ -206,6 +224,81 @@ Every FAQ question and H2 live on the site, with the page that owns it. No quest
 | FAQ: What is the difference between .027 and .032 aluminum gutters? | /aluminum-gutters/ |
 | FAQ: Do aluminum gutters rust? | /aluminum-gutters/ |
 | FAQ: What do aluminum gutters cost for a home? | /aluminum-gutters/ |
+| H2: Which Gutter Contractor Services Does First Choice Offer in Winter Haven? | /winter-haven-fl/ |
+| H2: Why Are Winter Haven's Lakes and Rainy Summers Hard on Gutters? | /winter-haven-fl/ |
+| H2: What Should Winter Haven Homeowners Expect When They Book First Choice? | /winter-haven-fl/ |
+| H2: What Do Winter Haven Homeowners Ask About Their Gutters? | /winter-haven-fl/ |
+| FAQ: Where should downspouts discharge on a Chain of Lakes lakefront lot in Winter Haven? | /winter-haven-fl/ |
+| FAQ: Who issues permits for gutter work at a Winter Haven address — City of Winter Haven? | /winter-haven-fl/ |
+| FAQ: How do summer afternoon storms overload gutters on Winter Haven homes? | /winter-haven-fl/ |
+| H2: Which Winter Haven Historic Districts and Neighborhoods Does First Choice Serve? | /winter-haven-fl/ |
+| H2: Where Else in Polk County Does First Choice Install Gutters Besides Winter Haven? | /winter-haven-fl/ |
+| H2: Which Seamless Gutter Services Can Auburndale Homeowners Book? | /auburndale-fl/ |
+| H2: What Do Auburndale's Lakes and Summer Storms Mean for Gutters? | /auburndale-fl/ |
+| H2: How Does First Choice Seamless Gutters Handle a Job in Auburndale? | /auburndale-fl/ |
+| H2: What Do Auburndale Homeowners Ask About Gutter Work? | /auburndale-fl/ |
+| FAQ: Do Auburndale HOA subdivisions need approval for new gutter colors? | /auburndale-fl/ |
+| FAQ: Who issues permits for gutter work at an Auburndale address — City of Auburndale? | /auburndale-fl/ |
+| FAQ: What wears out gutters and fascia on older Auburndale homes? | /auburndale-fl/ |
+| H2: Which Other Polk County, Florida Towns Does First Choice Serve Besides Auburndale? | /auburndale-fl/ |
+| H2: What Can a Gutter Contractor Do for a Bartow Home? | /bartow-fl/ |
+| H2: What Should You Know About Bartow's Old Homes, Flat Land and Rain? | /bartow-fl/ |
+| H2: What Is It Like to Book First Choice Seamless Gutters in Bartow? | /bartow-fl/ |
+| H2: Bartow Gutter Questions Homeowners Ask | /bartow-fl/ |
+| FAQ: Which gutter profile suits Bartow's historic homes? | /bartow-fl/ |
+| FAQ: Does gutter work at a Bartow address need a City of Bartow permit, and who issues it? | /bartow-fl/ |
+| FAQ: What damage do Bartow's heavy summer rains do to undersized gutters? | /bartow-fl/ |
+| H2: Which Bartow Historic Districts Can Book First Choice Seamless Gutters? | /bartow-fl/ |
+| H2: What Have Bartow Customers Said About Their New Gutters? | /bartow-fl/ |
+| H2: Where Else Around Bartow Does First Choice Seamless Gutters Work? | /bartow-fl/ |
+| H2: Which Gutter Installation and Repair Services Can Polk City Homes Book? | /polk-city-fl/ |
+| H2: How Do Polk City's Summer Storms and Rolling Ground Test a Gutter? | /polk-city-fl/ |
+| H2: How Does First Choice Handle Permits and HOAs in Polk City? | /polk-city-fl/ |
+| H2: What Do Polk City Homeowners Ask About Their Gutters? | /polk-city-fl/ |
+| FAQ: How should gutters drain on large rural lots and sandy soil around Polk City? | /polk-city-fl/ |
+| FAQ: Who issues permits for gutter work at a Polk City address — City of Polk City? | /polk-city-fl/ |
+| FAQ: How quickly can First Choice reach Polk City after a storm? | /polk-city-fl/ |
+| H2: Where Else in Polk County, Florida Does First Choice Serve? | /polk-city-fl/ |
+| H2: What Rain Gutter Services Can a Kathleen Home Book? | /kathleen-fl/ |
+| H2: How Do Kathleen's Rainy Season and Rural Lots Affect Gutters? | /kathleen-fl/ |
+| H2: How Does First Choice Handle Gutter Jobs in Kathleen? | /kathleen-fl/ |
+| H2: What Do Kathleen Homeowners Ask About Their Gutters? | /kathleen-fl/ |
+| FAQ: Can detached garages, barns and workshops in Kathleen get gutters too? | /kathleen-fl/ |
+| FAQ: Which office handles permits for gutter work at a Kathleen home? | /kathleen-fl/ |
+| FAQ: What do Kathleen homeowners on acreage ask about gutter upkeep? | /kathleen-fl/ |
+| H2: Where Else in Polk County Does First Choice Work Besides Kathleen? | /kathleen-fl/ |
+| H2: Which Seamless Gutter Services Can Highland City Homes Book? | /highland-city-fl/ |
+| H2: Where Is Highland City, and What Weather Do Its Roofs Face? | /highland-city-fl/ |
+| H2: What Should Highland City Homeowners Expect When They Book First Choice? | /highland-city-fl/ |
+| H2: Which Questions Come Up Before Gutter Work in Highland City? | /highland-city-fl/ |
+| FAQ: Do Highland City subdivisions have HOA rules on gutter color? | /highland-city-fl/ |
+| FAQ: Who issues permits for gutter work at a Highland City address — Polk County? | /highland-city-fl/ |
+| FAQ: How do Highland City's storms clog gutters? | /highland-city-fl/ |
+| H2: Which Towns Around Highland City Does First Choice Also Serve? | /highland-city-fl/ |
+| H2: What Can a Gutter Contractor Do for a Mulberry Home? | /mulberry-fl/ |
+| H2: How Do Mulberry's Summer Storms Test Rain Gutters? | /mulberry-fl/ |
+| H2: What Should Mulberry Homeowners Expect When They Book First Choice? | /mulberry-fl/ |
+| H2: What Do Mulberry Homeowners Ask About Gutter Installation? | /mulberry-fl/ |
+| FAQ: What changes the cost of gutters on older Mulberry homes? | /mulberry-fl/ |
+| FAQ: Does gutter work in Mulberry need a City of Mulberry permit? | /mulberry-fl/ |
+| FAQ: What gutter problems are most common in Mulberry homes? | /mulberry-fl/ |
+| H2: Where Else in Polk County Does First Choice Install Gutters Besides Mulberry? | /mulberry-fl/ |
+| H2: Which Seamless Gutter Services Can Eagle Lake Homes Book? | /eagle-lake-fl/ |
+| H2: What Do Eagle Lake's Rainy Season and Lakes Mean for Gutters? | /eagle-lake-fl/ |
+| H2: How Does First Choice Handle Gutter Jobs in Eagle Lake? | /eagle-lake-fl/ |
+| H2: What Do Eagle Lake Homeowners Ask Before Booking Gutter Work? | /eagle-lake-fl/ |
+| FAQ: Where should downspouts drain on lakefront lots in Eagle Lake? | /eagle-lake-fl/ |
+| FAQ: Who issues permits for gutter work at an Eagle Lake address — City of Eagle Lake? | /eagle-lake-fl/ |
+| FAQ: How do Eagle Lake's summer storms test gutter capacity? | /eagle-lake-fl/ |
+| H2: Which Polk County Towns Besides Eagle Lake Does First Choice Serve? | /eagle-lake-fl/ |
+| H2: Which Rain Gutter Services Can Wahneta Homeowners Book? | /wahneta-fl/ |
+| H2: What Does Wahneta's Rainy Season Mean for a Home's Gutters? | /wahneta-fl/ |
+| H2: How Does First Choice Work With Wahneta Homeowners? | /wahneta-fl/ |
+| H2: What Do Wahneta Homeowners Ask About Gutters? | /wahneta-fl/ |
+| FAQ: What changes the price of gutters on smaller Wahneta homes? | /wahneta-fl/ |
+| FAQ: Who handles building permits in Wahneta, which has no town government? | /wahneta-fl/ |
+| FAQ: What gutter problems do Wahneta homeowners run into most? | /wahneta-fl/ |
+| H2: Which Polk County Towns Around Wahneta Can Book First Choice? | /wahneta-fl/ |
 
 ## Section D — Verified facts
 Everything a writer may state. **Not here = does not exist.**

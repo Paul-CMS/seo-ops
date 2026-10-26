@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch locations-west)**
-- **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:write finished (run 20261026-120219-build-bc47) and that stage is in review mode — l; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
-- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
+- **What is happening now:** waiting for Paul's approval — the drafts for batch locations-west are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): loc-winter-haven.md: line 26 [NEED: typical travel or response time from Lakeland to a Winter Haven; line 36 [NEED: any City of Winter Haven or Polk County rule on piping roof run; line 57 [NEED: city-level Google Maps embed of Winter Haven, FL (not the GBP m | loc-auburndale.md: line 26 [NEED: typical drive or response time from Lakeland to an Auburndale j; line 34 [NEED: whether Chapter 15, Article 4 sets rules for gutter color or ex; line 46 [NEED: city-level Google Maps embed of Auburndale, FL (not the GBP map | loc-bartow.md: line 54 [NEED: city-level Google Maps embed of Bartow, FL (not the GBP map)] | loc-polk-city.md: line 44 [NEED: typical time for a First Choice crew to reach a Polk City home ; line 48 [NEED: city-level Google Maps embed of Polk City, FL (not the GBP map) | loc-kathleen.md: line 24 [NEED: city-level Google Maps embed of Kathleen, FL (not the GBP map)]; line 28 [NEED: typical travel or response time from Lakeland to a Kathleen add; line 40 [NEED: client confirmation that First Choice installs gutters on detac | loc-highland-city.md: line 48 [NEED: city-level Google Maps embed of Highland City, FL (not the GBP  | loc-mulberry.md: line 26 [NEED: usual travel or response time from Lakeland to a Mulberry addre; line 52 [NEED: city-level Google Maps embed of Mulberry, FL (not the GBP map)  | loc-eagle-lake.md: line 48 [NEED: city-level Google Maps embed of Eagle Lake, FL (not the GBP map | loc-wahneta.md: line 26 [NEED: typical travel or response time from Lakeland to a Wahneta addr; line 52 [NEED: city-level Google Maps embed of Wahneta, FL (not the GBP map) —
+- **Waiting on:** Paul — the drafts for batch locations-west are ready: review each with the semantic review table ; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
+- **Next action:** Paul types `/approve first-choice-seamless-gutters batch:locations-west:drafts` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-26T12:15 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-26T12:20 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:write finished (run 20261026-120219-build-bc47) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build first-choice-seamless-gutters writeback locations-west (Brand Guide write-back for section locations-west (B3, C1/C2, C3) from its reviewed drafts, before their one approval — once per section; ship never writes it) | 2026-10-26 | /next first-choice-seamless-gutters |
+| Paul | the drafts for batch locations-west are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): loc-winter-haven.md: line 26 [NEED: typical travel or response time from Lakeland to a Winter Haven; line 36 [NEED: any City of Winter Haven or Polk County rule on piping roof run; line 57 [NEED: city-level Google Maps embed of Winter Haven, FL (not the GBP m | loc-auburndale.md: line 26 [NEED: typical drive or response time from Lakeland to an Auburndale j; line 34 [NEED: whether Chapter 15, Article 4 sets rules for gutter color or ex; line 46 [NEED: city-level Google Maps embed of Auburndale, FL (not the GBP map | loc-bartow.md: line 54 [NEED: city-level Google Maps embed of Bartow, FL (not the GBP map)] | loc-polk-city.md: line 44 [NEED: typical time for a First Choice crew to reach a Polk City home ; line 48 [NEED: city-level Google Maps embed of Polk City, FL (not the GBP map) | loc-kathleen.md: line 24 [NEED: city-level Google Maps embed of Kathleen, FL (not the GBP map)]; line 28 [NEED: typical travel or response time from Lakeland to a Kathleen add; line 40 [NEED: client confirmation that First Choice installs gutters on detac | loc-highland-city.md: line 48 [NEED: city-level Google Maps embed of Highland City, FL (not the GBP  | loc-mulberry.md: line 26 [NEED: usual travel or response time from Lakeland to a Mulberry addre; line 52 [NEED: city-level Google Maps embed of Mulberry, FL (not the GBP map)  | loc-eagle-lake.md: line 48 [NEED: city-level Google Maps embed of Eagle Lake, FL (not the GBP map | loc-wahneta.md: line 26 [NEED: typical travel or response time from Lakeland to a Wahneta addr; line 52 [NEED: city-level Google Maps embed of Wahneta, FL (not the GBP map) — | 2026-10-26 | /approve first-choice-seamless-gutters batch:locations-west:drafts |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-seamless-gutter-installation:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-seamless-gutter-installation:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-installation:timeframe |
@@ -171,9 +171,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 6 | 28,801,394 | $10.27 | $0.00 |
 | 5 · Build plan and blockers | 5 | 18,662,785 | $5.58 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 22 | 83,658,359 | $34.86 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 23 | 85,179,441 | $35.46 | $0.00 |
 | any stage | 9 | 7,875,119 | $1.67 | $0.00 |
-| **total** | 48 | 151,889,069 | $56.84 | $0.00 |
+| **total** | 49 | 153,410,151 | $57.44 | $0.00 |
 
 ## Spend by step (model)
 
@@ -183,10 +183,10 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
 | discovery:reconcile | 4 | 10,908,601 | $3.79 | $0.00 |
 | build:plan | 2 | 11,232,842 | $3.51 | $0.00 |
+| build:writeback | 3 | 6,637,758 | $2.44 | $0.00 |
 | build:review | 4 | 6,837,776 | $2.11 | $0.00 |
 | build:facts | 1 | 5,812,612 | $2.05 | $0.00 |
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
-| build:writeback | 2 | 5,116,676 | $1.84 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
 | discovery:sheet-returned | 1 | 4,068,734 | $1.41 | $0.00 |
 | build:drafts | 1 | 5,487,361 | $1.04 | $0.00 |
@@ -202,6 +202,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
 | answers | 1 | 266,582 | $0.00 | $0.00 |
-| **total** | 48 | 151,889,069 | $56.84 | $0.00 |
+| **total** | 49 | 153,410,151 | $57.44 | $0.00 |
 
-Last run: /build 2026-10-26T12:15 — locations-west: 9 location drafts written and reviewed (0 Ask, 26 decided, 86 fixed); 18 NEEDs left
+Last run: /build 2026-10-26T12:20 — Locations-west Brand Guide write-back: 9 B3, 9 C2, 75 C3 rows from the reviewed drafts; no collisions; awaiting batch:locations-west:drafts approval
