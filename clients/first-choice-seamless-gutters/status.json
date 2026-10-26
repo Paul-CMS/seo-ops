@@ -2582,7 +2582,26 @@
         "briefs": null,
         "drafts": null,
         "route": "outline",
-        "files": {}
+        "files": {},
+        "facts_interview": {
+          "file": "clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - locations-east - 2026-10-26 - REVIEW.md",
+          "at": "2026-10-26T11:15:14-05:00",
+          "run": "20261026-111511-interview-3edf",
+          "pages": [
+            "loc-davenport",
+            "loc-haines-city",
+            "loc-lake-alfred",
+            "loc-lake-hamilton",
+            "loc-dundee",
+            "loc-lake-wales",
+            "loc-waverly",
+            "loc-frostproof",
+            "loc-fort-meade"
+          ],
+          "questions": 0,
+          "research": 36,
+          "need_search": 0
+        }
       },
       {
         "id": "about",
@@ -2786,13 +2805,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261026-111314-interview-9c3d",
+    "run_id": "20261026-111511-interview-3edf",
     "command": "interview",
-    "finished": "2026-10-26T11:13:28-05:00",
-    "result": "Facts pack for locations-west: 0 owner questions, all gaps are public facts for the researcher",
+    "finished": "2026-10-26T11:15:22-05:00",
+    "result": "facts locations-east: 0 client questions (gaps are public facts or already answered)",
     "changes": 0,
     "step": "interview:facts",
-    "batch": "locations-west"
+    "batch": "locations-east"
   },
   "spend": {
     "dataforseo_usd": 0.262668
@@ -2813,7 +2832,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-26T11:13:28-05:00",
+  "updated": "2026-10-26T11:15:22-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -3855,6 +3874,26 @@
       "by_agent": {
         "main": 0.0065
       }
+    },
+    {
+      "run": "20261026-111511-interview-3edf",
+      "step": "interview:facts",
+      "tokens": 301682,
+      "usd": 0.0052,
+      "at": "2026-10-26T11:15:22-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0052,
+          "in": 6,
+          "out": 1707,
+          "cache_read": 293130,
+          "cache_write": 6839
+        }
+      },
+      "by_agent": {
+        "main": 0.0052
+      }
     }
   ],
   "sessions": {
@@ -3935,6 +3974,12 @@
       "step": "interview:facts",
       "first_run": "20261026-111314-interview-9c3d",
       "at": "2026-10-26T11:13:28-05:00"
+    },
+    "84069bc5-471d-4587-b416-1dcd6a16c7ce": {
+      "key": "batches:locations-east",
+      "step": "interview:facts",
+      "first_run": "20261026-111511-interview-3edf",
+      "at": "2026-10-26T11:15:22-05:00"
     }
   },
   "wordpress": {

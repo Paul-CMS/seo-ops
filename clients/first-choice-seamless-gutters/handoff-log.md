@@ -771,3 +771,11 @@ These new claims are Paul's words, not yet in facts.json or confirmed by the cli
 - Nothing to send to the client from this batch. The pack file is kept as a record only.
 - Next: the evidence gate still blocks these pages until the researcher facts are in or Paul waives them with an approve line for evidence of each page.
 
+## /interview · 2026-10-26 · run 20261026-111511-interview-3edf
+
+- Ran `evidence.py questions` for batch locations-east: 9 blocked pages (loc-davenport, loc-haines-city, loc-lake-alfred, loc-lake-hamilton, loc-dundee, loc-lake-wales, loc-waverly, loc-frostproof, loc-fort-meade).
+- Result: 0 client questions. Every gap is either a public fact (researcher looks it up in build/evidence/research-locations-east.md) or already answered (plant-city-served, settled).
+- Pack written to clients/first-choice-seamless-gutters/interviews/facts/ (locations-east REVIEW.md, 2026-10-26). Nothing to send to the owner.
+- No facts changed, no decisions settled, no Brand Guide edits.
+- Open: the blocked pages still need the researcher pass before the evidence gate can clear; facts-answers is not needed for this batch unless the research leaves a gap.
+
