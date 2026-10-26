@@ -2,7 +2,7 @@
 
 _Stage file (rewrite 2 P12). Loaded by this stage's command and agents; `run.py start` prints it with the read list. The core rules are in CLAUDE.md; gates, Drive, money and files in docs/reference.md._
 
-Session model: Haiku · agents: build (Opus; draft-writer on Sonnet after Paul's yes), researcher (Sonnet).
+Session model: Haiku · agents: build (Opus), draft-writer (the page writer: Opus, or Sonnet after Paul's yes), researcher (Sonnet).
 
 **Rewrite 4 (D2, D5): no brief.** Each section is on a route (`status.py show`). **outline** — every section without approved briefs: the write run builds the evidence packs, `outline.py` writes each page's outline by script from the approved plan row + the spec (the approved plan file never changes), one fresh subagent drafts each page, one draft review sheet, one approval line. **briefs** — a section whose briefs were approved before (HMM pilot and services) finishes the old way: `docs/build-brief-route.md`.
 

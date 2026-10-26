@@ -355,3 +355,51 @@ Workaround used: None applied in the client session. Services batch (7 pages) dr
 - CR-040 · 2026-10-13 · ACCEPTED · Paul
 
 - CR-040 · 2026-10-13 · DONE · system session · commit eacc53e
+
+## CR-041 · 2026-10-25 · Agents load a short tool list; page drafts run as draft-writer
+Raised in a system session by Paul.
+Paul, 2026-10-25 system session, after first-choice-seamless-gutters (12 chats, ~$63 API-equivalent, 96% Opus agents). build and discovery-audit agents start at 66-71k tokens because they inherit every app tool (browser, docs, simulator); restricted agents start near 10k. Give every agent a tools list; page drafts always draft-writer (model from the models table).
+
+---
+
+## CR-042 · 2026-10-25 · Sonnet for page drafts (Paul's own /approve global model:build:draft=sonnet)
+Raised in a system session by Paul.
+Paul, 2026-10-25 system session, after first-choice-seamless-gutters (12 chats, ~$63 API-equivalent, 96% Opus agents). Recommendation only: the switch is Paul's /approve line; nothing to build.
+
+---
+
+## CR-043 · 2026-10-25 · Mechanical edits stay in the Haiku chat, never a new Opus agent
+Raised in a system session by Paul.
+Paul, 2026-10-25 system session, after first-choice-seamless-gutters (12 chats, ~$63 API-equivalent, 96% Opus agents). 'Set five Brand Guide rows to Unknown' ($1.03) and 'Mark insured confirmed' ($1.17) each spawned a full Opus discovery-audit agent for run.py fact calls.
+
+---
+
+## CR-044 · 2026-10-25 · Paul's own fact changes and the system's write-back never void the Brand Guide approval
+Raised in a system session by Paul.
+Paul, 2026-10-25 system session, after first-choice-seamless-gutters (12 chats, ~$63 API-equivalent, 96% Opus agents). brand_guide_approved was approved 5 times: whole-file approvals were voided by the services write-back (B3/C) and by Paul's own fact answers. Paul: add an Updated line with the new fact, no re-approval; only drafts that use the fact are flagged.
+
+---
+
+## CR-045 · 2026-10-25 · A void Brand Guide never sends a client in Build back to Stage 4
+Raised in a system session by Paul.
+Paul, 2026-10-25 system session, after first-choice-seamless-gutters (12 chats, ~$63 API-equivalent, 96% Opus agents). after the services write-back voided the approval, next.py showed 'Stage 4 of 8 - Audit' and the new chat told Paul the service pages had not gone through Build.
+
+---
+
+## CR-046 · 2026-10-25 · Paul's words carry across chats; draft edits are recorded, never a side edit
+Raised in a system session by Paul.
+Paul, 2026-10-25 system session, after first-choice-seamless-gutters (12 chats, ~$63 API-equivalent, 96% Opus agents). a finished chat filled the gaps in nine drafts with a one-off script (no run, not re-recorded); Paul's 'drafts approved, push to WordPress' was lost when he opened the next chat; the drafts approval then refused with 18 version problems.
+
+---
+
+- CR-041 · 2026-10-25 · ACCEPTED · Paul · Paul, 2026-10-25: yes, build all six
+
+- CR-043 · 2026-10-25 · ACCEPTED · Paul · Paul, 2026-10-25: yes, build all six
+
+- CR-044 · 2026-10-25 · ACCEPTED · Paul · Paul, 2026-10-25: yes, build all six
+
+- CR-045 · 2026-10-25 · ACCEPTED · Paul · Paul, 2026-10-25: yes, build all six
+
+- CR-046 · 2026-10-25 · ACCEPTED · Paul · Paul, 2026-10-25: yes, build all six
+
+- CR-042 · 2026-10-25 · ACCEPTED · Paul · Paul, 2026-10-25: yes - the switch itself is his /approve global model:build:draft=sonnet; no code

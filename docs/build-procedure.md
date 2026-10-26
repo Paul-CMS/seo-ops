@@ -13,8 +13,9 @@ with 3+ reviewers (`reviews.py meaning`, else `reviews.py checked …`), then `e
 1. The evidence gate.
 2. `outline.py build <slug> <id> --run <RUN_ID>` — one outline per cleared page, by script. Never edit an outline; if it is
    wrong, flag it.
-3. **One fresh subagent per page**, all in one message (CM-043): `build` (Opus), or `draft-writer` (Sonnet) after Paul's
-   `model:build:draft=sonnet`. Each writes one page ("Writing one page" in build.md), then is recorded:
+3. **One fresh subagent per page**, all in one message (CM-043): always `draft-writer` (CM-065: four tools, a small
+   context — never `build`), started with the Agent tool's `model` set to the drafts model in the run's models line
+   (Opus; Sonnet after Paul's `model:build:draft=sonnet`). Each writes one page ("Writing one page" in build.md), then is recorded:
    `status.py page-stage <slug> <page> --stage draft --file <f> --run <RUN_ID> --agent <its id>`.
 4. **The review** (below) in the same run → `status.py batch <slug> <id> --state drafts_written --review-sheet
    build/<id>/drafts-review.csv`.

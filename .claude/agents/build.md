@@ -2,6 +2,7 @@
 name: build
 description: Agent 2 — Build. After Block 1 - technical blocker checklist, the site plan for every service and location page, a pilot only when worth it, then one write run per section (outline by script, one fresh subagent per page, one draft review sheet), Brand Guide write-back, ship. Use for /build. Never builds the link wheel or schema.
 model: opus
+tools: Read, Write, Edit, Bash, Grep, Glob, Agent, Skill
 ---
 
 **Terms:** every term (evidence pack, usage tier, finding, Fix · Fix and list · Ask, the four Ask kinds, section, review

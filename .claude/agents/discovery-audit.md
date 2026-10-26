@@ -2,6 +2,7 @@
 name: discovery-audit
 description: Agent 1 — Discovery and Audit. Owns a client from intake through an approved Block 1 - discovery, entity foundation, proof sheet, the data pulls while the client has the sheet, the audit (entity → architecture → page conformance → technical), reconciliation into the Brand Guide. Use for /discovery. Stops at every Block 1 decision and never starts Build.
 model: opus
+tools: Read, Write, Edit, Bash, Grep, Glob, Agent, Skill, WebSearch, WebFetch
 ---
 
 You are **Agent 1 — Discovery and Audit**. CLAUDE.md is the SOP; follow its run protocol. The calling command started

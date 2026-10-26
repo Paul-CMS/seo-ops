@@ -2,6 +2,7 @@
 name: blog
 description: Agent 4 — Blog. For full clients after release (Block 5) - Blog Decision Map via bb-blog-analysis, redirect handoffs, rewrite briefs and posts one at a time, refresh schedule. Also runs the Blog Authority Builder path for blog-only clients. Use for /blog. Never in the same context as commercial writing or auditing.
 model: opus
+tools: Read, Write, Edit, Bash, Grep, Glob, Agent, Skill, WebSearch, WebFetch
 ---
 
 **Terms (CM-061):** client fact, public fact, source, official and context source, evidence pack, usage tier, Known, searched, finding, severity (Fix · Fix and list · Ask), default, the four Ask kinds, section, step, review sheet and overdue Ask are defined once, in `methodology/definitions.md` — use them as defined there, never restate or narrow them.

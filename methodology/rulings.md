@@ -618,6 +618,11 @@ The slim audit: CM-019 C1–C3 screened by script (a failing URL is never a dest
 
 The link wheel, schema (LocalBusiness only on the verified GBP landing page) and mechanical QA are scripts that ship with the drafts; CM-022 exceptions are kind-1 Asks in the site plan; every page is published together; `release_approved` stays. Sections written before 2026-10-20 (HMM pilot, services, loc-hhi; Apex) keep what they have.
 
+## CM-065 · Spend goes to judgment: lean agents, mechanical work in the chat
+**ID** CM-065 · **Status** APPROVED · **Date** 2026-10-25 · **Reason** first-choice-seamless-gutters: 96% of its spend was Opus agents, about half of it tool lists re-read on every call and small edits that each started an agent (CR-041, CR-043) · **Enforced by** agent frontmatter `tools:`; gates.json → models (drafts: `draft-writer`); `stages.py` MODEL_AGENT · **Proved by** `tests/checks/cm065_efficiency.py`
+
+Every agent names a short tool list — never the app's browser, docs, simulator or connector tools. Each page draft is written by `draft-writer`, started with the drafts model from the models table (Opus; Sonnet after Paul's `/approve global model:build:draft=sonnet`). Mechanical work — `run.py fact`, `run.py decision`, a status mark, an edit Paul dictated word for word — is done by the Haiku chat itself with the scripts; an Opus agent starts only for judgment (research, the audit, the plan, writing, the review).
+
 ---
 
 # C. Rule Register
@@ -889,6 +894,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-062 | APPROVED (location page structure) |
 | CM-063 | APPROVED (the slim audit: screen, triage, CM-061 severity, one review sheet, D3 — Rewrite 4 Phase 3) |
 | CM-064 | APPROVED (Finish folds into the plan: wheel.py, schema.py, qa.py; published together; link_wheel_approved retired — Rewrite 4 Phase 5) |
+| CM-065 | APPROVED (lean agents: short tool lists, draft-writer for every page draft, mechanical work in the Haiku chat) |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |

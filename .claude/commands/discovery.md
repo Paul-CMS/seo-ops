@@ -19,7 +19,9 @@ Gates come from `scripts/gates.json` (steps) — `python3 scripts/run.py steps d
 
 1. `python3 scripts/run.py start <slug> discovery --step <step> [--batch <id>|--page <id>]` → note the RUN_ID it prints and pass it literally to every later step (shell variables do not persist between commands). Exit 4 → refuse in
    plain language (which gate, what it unlocks). Exit 3 → stop and ask Paul.
-2. Use the **discovery-audit** subagent for the step, giving it the slug, `<RUN_ID>` and the step.
+2. Use the **discovery-audit** subagent for the step, giving it the slug, `<RUN_ID>` and the step. Paul's answers alone
+   (facts, unknowns, a settled choice) are not a step for an agent: record them yourself in an `answers` run (CM-065,
+   `/next` → "Every answer is recorded …").
 3. For `audit`: when the subagent has `findings.csv` and the URL Decision Map (screen `--check` passed, triage
    written), use the **audit-reviewer** subagent (a fresh context) on the registers, scoped by `review.py scope <slug>
    audit` (step S17). Never let the agent that wrote the findings review them. Then the discovery-audit subagent

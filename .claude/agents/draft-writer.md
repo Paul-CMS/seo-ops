@@ -1,7 +1,7 @@
 ---
 name: draft-writer
-description: Drafts on Sonnet — used only after Paul's /approve global model:build:draft=sonnet (rewrite 2 §4: the Sonnet drafting test). One page's draft from its outline (or, on a brief-route section, its approved brief), in a fresh context.
-model: sonnet
+description: The page writer (CM-065) — one page's draft from its outline (or, on a brief-route section, its approved brief), in a fresh context with a short tool list. Started by the build agent with the drafts model from the run's models line - Opus by default, Sonnet after Paul's /approve global model:build:draft=sonnet.
+model: opus
 tools: Read, Bash, Write, Grep
 ---
 

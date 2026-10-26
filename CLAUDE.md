@@ -36,7 +36,7 @@ fact, evidence pack, usage tier, finding, Fix · Fix and list · Ask, section, r
 
 ## Facts — answered once
 Every fact goes in one way: `run.py fact <slug> <RUN_ID> --id … --value … --status … --source …`, the moment Paul or
-the client answers (`facts.py get <slug> --ids …` to read). Brand Guide fact rows are generated. Before a question
+the client answers (in the chat's own `answers` run, no agent — CM-065) (`facts.py get <slug> --ids …` to read). Brand Guide fact rows are generated. Before a question
 set reaches Paul: `settled.py filter` (drops what is answered) and `questions.py check` (a public fact is looked up,
 never asked; a client question carries its `searched:` line). Never invent a fact — write `[NEED: …]` (CM-016).
 

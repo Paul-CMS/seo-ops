@@ -236,7 +236,7 @@ def stage_doc(step):
     return str(hits[0].relative_to(ROOT)) if hits else None
 
 
-MODEL_AGENT = {("build:draft", "sonnet"): "draft-writer", ("build:draft", "opus"): "build"}
+MODEL_AGENT = {("build:draft", "sonnet"): "draft-writer", ("build:draft", "opus"): "draft-writer"}   # CM-065: one lean page writer
 
 
 def step_models(step):

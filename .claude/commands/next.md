@@ -37,7 +37,10 @@ Arguments: $ARGUMENTS
    when nothing else can run (P8).
    **`waits`** (any kind): open waits that do **not** block the next action. List them one line each under
    "Waiting on (not blocking)" and carry on. A VA handoff never stops writing.
-**Every answer is recorded the moment Paul gives it (P4, Q3).** A fact — from Paul, the client, a returned sheet, an
+**Every answer is recorded the moment Paul gives it (P4, Q3) — by you, never an agent (CM-065).** When Paul's message is
+answers only (facts, "mark them unknown", "confirmed from a Google review", a choice), open the any-stage `answers` run
+yourself — `python3 scripts/run.py start <slug> answers` (allowed in any chat, even one whose stage is done) — record each
+answer with the scripts below, write a 3-line handoff and `run.py finish`. No Opus agent for this. A fact — from Paul, the client, a returned sheet, an
 interview or an email — goes in with `python3 scripts/run.py fact <slug> <RUN_ID> --id <fact id> --value "…" --status
 paul_approved|client_confirmed|… --source "…"` (`facts.py list <slug>` shows the ids; a new fact adds `--label`). A
 decision goes in with `run.py decision … --settle <key>`. Before any question set reaches Paul:

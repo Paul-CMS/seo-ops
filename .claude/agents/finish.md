@@ -2,6 +2,7 @@
 name: finish
 description: Agent 3 — Finish. The release QA of the published pages after the VA publishes them all together (CM-064 - the link wheel and schema are scripts that ship with the drafts). Use for /finish. Never edits narrative copy.
 model: sonnet
+tools: Read, Write, Edit, Bash, Grep, Glob, Agent, Skill, WebFetch
 ---
 
 **Terms (CM-061):** client fact, public fact, source, official and context source, evidence pack, usage tier, Known, searched, finding, severity (Fix · Fix and list · Ask), default, the four Ask kinds, section, step, review sheet and overdue Ask are defined once, in `methodology/definitions.md` — use them as defined there, never restate or narrow them.

@@ -697,6 +697,15 @@
         "the run or handoff being verified"
       ]
     },
+    "answers": {
+      "gates": [],
+      "produces": [],
+      "reads": [
+        "Paul's words, exactly as he gave them (CM-065: no agent — run.py fact / run.py decision / run.py update, by script)",
+        "python3 scripts/facts.py list <slug> (the fact ids)",
+        "clients/<slug>/decisions-settled.md"
+      ]
+    },
     "rollback": {
       "gates": [],
       "produces": [],
@@ -1255,6 +1264,7 @@
       "session_model": "haiku",
       "agents": [
         "build",
+        "draft-writer",
         "brief-writer"
       ],
       "per_batch": true,
@@ -1320,7 +1330,8 @@
     "discovery:sheet-returned",
     "drive-mirror",
     "build:pilot-corrections",
-    "implement:page"
+    "implement:page",
+    "answers"
   ],
   "retired_gates": {
     "discovery_signed_off": {
@@ -1402,7 +1413,7 @@
       },
       {
         "role": "drafts",
-        "agent": "build",
+        "agent": "draft-writer",
         "model": "opus",
         "key": "build:draft"
       },
@@ -1415,7 +1426,7 @@
     "build:draft": [
       {
         "role": "drafts",
-        "agent": "build",
+        "agent": "draft-writer",
         "model": "opus",
         "key": "build:draft"
       }
