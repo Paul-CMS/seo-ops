@@ -252,6 +252,25 @@
         "methodology/specs/location.md": "1212fa3e9365"
       },
       "note": null
+    },
+    {
+      "n": 2,
+      "kind": "model",
+      "by": "Paul",
+      "at": "2026-10-26T11:01:01-05:00",
+      "key": "build:draft",
+      "model": "sonnet",
+      "was": null,
+      "note": null
     }
-  ]
+  ],
+  "model_overrides": {
+    "build:draft": {
+      "model": "sonnet",
+      "by": "Paul",
+      "at": "2026-10-26T11:01:01-05:00",
+      "note": null,
+      "was": null
+    }
+  }
 }
