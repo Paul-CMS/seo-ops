@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — build:facts finished (run 20261026-113830-build-374a) and that stage is in review mode — l; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
 - **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-26T11:47 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-26T11:59 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -24,10 +24,6 @@ _Generated 2026-10-26T11:47 by the system — do not edit. Start every session i
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-gutter-downspouts:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-guards:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-gutter-guards:pricing |
-| Client (via Paul) | Permits: for gutter installs in the 9 west towns, do you pull the permit, does the homeowner, or is none needed? Same everywhere or by town? | 2026-10-26 | fact:locations-west:permit_handling |
-| Client (via Paul) | HOA approval: do you help homeowners get HOA approval as standard (samples, forms)? Which HOA communities in these towns most? | 2026-10-26 | fact:locations-west:hoa_approval |
-| Client (via Paul) | Historic homes: worked in Winter Haven (Interlaken, Pope Avenue, Winter Haven Heights) or Bartow historic districts? Anything done differently on older houses? | 2026-10-26 | fact:locations-west:historic_homes |
-| Client (via Paul) | Neighbourhoods or subdivisions where you have done gutter jobs, per town: Winter Haven, Auburndale, Bartow, Polk City, Kathleen, Highland City, Mulberry, Eagle Lake, Wahneta. | 2026-10-26 | fact:locations-west:neighborhoods_worked |
 | Client (via Paul) | For 3 pages (svc-copper-gutters, svc-galvalume-gutters, svc-aluminum-gutters): Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers  | 2026-10-26 | fact:svc-copper-gutters:timeframe |
 | Client (via Paul) | For 3 pages (svc-copper-gutters, svc-galvalume-gutters, svc-aluminum-gutters): Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers  | 2026-10-26 | fact:svc-galvalume-gutters:timeframe |
 | Client (via Paul) | For 3 pages (svc-copper-gutters, svc-galvalume-gutters, svc-aluminum-gutters): Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers  | 2026-10-26 | fact:svc-aluminum-gutters:timeframe |
@@ -43,7 +39,7 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Client (via Paul) | waiting for the answers to the facts round (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - all - 2026-10-26 - REVIEW.md; 24 fact(s) open) — when they arrive, each is recorded once (run.py fact / --settle) and the grids re-run | 2026-10-26 | /interview first-choice-seamless-gutters facts-answers all |
+| Client (via Paul) | waiting for the answers to the facts round (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - all - 2026-10-26 - REVIEW.md; 20 fact(s) open) — when they arrive, each is recorded once (run.py fact / --settle) and the grids re-run | 2026-10-26 | /interview first-choice-seamless-gutters facts-answers all |
 | Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-26 | /verify first-choice-seamless-gutters |
 | Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
 | Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
@@ -112,6 +108,10 @@ _Open, but the next action above goes ahead without them._
 - Yes, still true: Installed With Real Storm Behavior in Mind. We design copper gutter systems around how homes in this area actually shed water. (Paul, 2026-10-24)
 - Yes, still true: Installed With Real Storm Behavior in Mind. We design copper gutter systems around how homes in this area actually shed water. (Paul, 2026-10-24)
 - Service area state: Florida (Q812). Polk County, Florida is the area entity; state confirmed by Paul (2026-10-25). Brand Guide Section A derivation tagged Paul Approved.
+- We assist with building permits. Who pulls the permit, and whether gutter-only work needs one, is not stated; not settled.
+- Yes. Helping with HOA approval is standard practice. Named HOA communities not given.
+- Yes, we have worked on historic homes. Different approach: half-round or custom profiles instead of standard K-style; rebuild built-in Yankee/box gutters (reline, solder, rebuild wood trough); roof straps or hidden hangers into rafter tails, not spikes into fascia; custom-sized 6-inch half-round with downspouts tucked to corner trim; slow work with rubber ladder pads; flashing slides under the roof deck without crushing historic trim. Named districts not confirmed.
+- Worked in pretty much every subdivision of the listed cities; no individual neighbourhood names given.
 
 ## Open VA items
 
@@ -169,8 +169,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 4 · Audit | 6 | 28,801,394 | $10.27 | $0.00 |
 | 5 · Build plan and blockers | 5 | 18,662,785 | $5.58 | $0.00 |
 | 6 · Pilot, services, locations, ship (one session each) | 21 | 66,057,376 | $24.37 | $0.00 |
-| any stage | 8 | 7,608,537 | $1.67 | $0.00 |
-| **total** | 46 | 134,021,504 | $46.35 | $0.00 |
+| any stage | 9 | 7,875,119 | $1.67 | $0.00 |
+| **total** | 47 | 134,288,086 | $46.35 | $0.00 |
 
 ## Spend by step (model)
 
@@ -198,6 +198,7 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 46 | 134,021,504 | $46.35 | $0.00 |
+| answers | 1 | 266,582 | $0.00 | $0.00 |
+| **total** | 47 | 134,288,086 | $46.35 | $0.00 |
 
-Last run: /build 2026-10-26T11:47 — locations-west facts round: research cleared all 9 pages (6 PASS, 3 WARN, 0 block); 4 owner questions written to the REVIEW file
+Last run: /answers 2026-10-26T11:59 — West facts answers recorded (4)

@@ -805,3 +805,9 @@ These new claims are Paul's words, not yet in facts.json or confirmed by the cli
 - FLAG 2026-10-26T11:46 · run 20261026-113830-build-374a · F-019 · evidence.py questions writes nothing when no page blocks, so owner-only Serving-section facts (permit handling, HOA approval, neighb…
 - FLAG 2026-10-26T11:46 · run 20261026-113830-build-374a · F-020 · No Florida area source list: suggest methodology/sources/fl-polk.md with Polk County Building Division https://www.polkfl.gov/servic…
 
+## /answers · 2026-10-26 · run 20261026-115900-answers-8ab0
+
+Paul forwarded the owner's answers to the locations-west facts questions (email, 2026-10-26).
+Settled: HOA approval standard (yes); historic-home practice (yes, detailed); neighbourhoods broad (no names); permit: assists with permits, who pulls it not stated.
+Open: permit responsibility per town; named HOA communities; named historic districts and neighbourhoods.
+
