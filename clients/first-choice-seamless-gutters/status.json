@@ -123,10 +123,10 @@
     },
     "reconciled": {
       "files": {
-        "clients/first-choice-seamless-gutters/brand-guide.md#A+D+E+G": "15c906621520"
+        "clients/first-choice-seamless-gutters/brand-guide.md#A+D+E+G": "8448769c0f1c"
       },
-      "at": "2026-10-25T20:13:56-05:00",
-      "ts": 1792977236.164147
+      "at": "2026-10-25T20:30:34-05:00",
+      "ts": 1792978234.11319
     },
     "site_plan": {
       "files": {
@@ -2745,11 +2745,11 @@
     }
   },
   "last_run": {
-    "run_id": "20261025-201113-discovery-816f",
+    "run_id": "20261025-202228-discovery-6767",
     "command": "discovery",
-    "finished": "2026-10-25T20:14:18-05:00",
-    "result": "Reconcile pass 2: five Brand Guide rows set fully Unknown (founding year, insurance, warranty, staff roles, travel fee); D2/D3/G aligned; reconciled marked; brand_guide_approved void awaiting Paul",
-    "changes": 3,
+    "finished": "2026-10-25T20:30:37-05:00",
+    "result": "Insured and 10-year written warranty confirmed from a Google review (Paul, 2026-10-25); rows set to Client Confirmed; Brand Guide sections A, D, E, G marked reconciled; re-approval needed.",
+    "changes": 1,
     "step": "discovery:reconcile",
     "batch": null
   },
@@ -2772,7 +2772,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-25T20:19:34-05:00",
+  "updated": "2026-10-25T20:30:37-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -3718,6 +3718,34 @@
         "main": 0.0031,
         "discovery-audit": 0.8008
       }
+    },
+    {
+      "run": "20261025-202228-discovery-6767",
+      "step": "discovery:reconcile",
+      "tokens": 2471861,
+      "usd": 0.8742,
+      "at": "2026-10-25T20:30:37-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0087,
+          "in": 12,
+          "out": 2861,
+          "cache_read": 616628,
+          "cache_write": 5752
+        },
+        "claude-opus-5-5": {
+          "usd": 0.8655,
+          "in": 42,
+          "out": 222,
+          "cache_read": 1743920,
+          "cache_write": 102424
+        }
+      },
+      "by_agent": {
+        "main": 0.0087,
+        "discovery-audit": 0.8655
+      }
     }
   ],
   "sessions": {
@@ -3831,5 +3859,10 @@
   "blocker_handoffs": [
     "H-2026-10-23-03-broken_link",
     "H-2026-10-23-04-other"
-  ]
+  ],
+  "review_pause": {
+    "run_id": "20261025-202228-discovery-6767",
+    "step": "discovery:reconcile",
+    "at": "2026-10-25T20:30:37-05:00"
+  }
 }

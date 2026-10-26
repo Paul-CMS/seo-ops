@@ -215,10 +215,10 @@ Everything a writer may state. **Not here = does not exist.**
 | Founding year / years in business | Unknown — not provided by client (Paul, 2026-10-25) | Unknown 2026-10-25 · was: Client Confirmed | Paul, 2026-10-25: set fully Unknown until the client returns the answer (asked on returned proof sheet claim_5) |
 | Legal entity + DBA | First Choice Seamless Gutters Inc., a corporation (client confirmed); BBB primary name 'First Choice Seamless Gutters'; site also 'First Choice Seamless Gutter Inc' (typo, singular) | Client Confirmed 2026-10-24 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_0/1) — "Yes, correct" |
 | Licence numbers and classes | Not required in Florida for these services; no licence number to show. Settled: not an open question. | Paul Approved 2026-10-23 · was: Unknown | Paul, 2026-10-23 — "We’re fully licensed and insured" |
-| Insurance / bonded status | Unknown — not provided by client (Paul, 2026-10-25) | Unknown 2026-10-25 · was: Client Confirmed | Paul, 2026-10-25: set fully Unknown (insured status and certificate of insurance) until the client returns them (returned proof sheet claim_3) |
+| Insurance / bonded status | Insured (confirmed by Paul from a Google review, 2026-10-25). Certificate of insurance: not on file. | Client Confirmed 2026-10-25 · was: Unknown | Google review, confirmed by Paul 2026-10-25 |
 | Certifications, authorizations, factory training | | | |
 | Association memberships | BBB Accredited Business since 8/12/2025, A+ rating | Internally Verified 2026-10-22 · was: Unknown | BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22 — "Date of BBB Accreditation: 8/12/2025" |
-| Warranty terms | Unknown — not provided by client (Paul, 2026-10-25) | Unknown 2026-10-25 · was: Client Confirmed | Paul, 2026-10-25: set fully Unknown (written warranty copy and 10-year written guarantee) until the client returns them (returned proof sheet claim_4) |
+| Warranty terms | 10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google review, 2026-10-25). Written copy: not on file. | Client Confirmed 2026-10-25 · was: Unknown | Google review, confirmed by Paul 2026-10-25 |
 | Guarantees (response time, on-time, satisfaction) | Form enquiries answered within 24 hours (client confirmed). Client note: 'We pride ourselves on great customer communication and excellent customer care.' | Client Confirmed 2026-10-24 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_7 / claim_7_detail) — "Yes, accurate" |
 | Awards and rankings | 'Best Gutter Installer in Lakeland, Florida' by GutterPro HQ, 2025 — client says accurate; only public source is a company-distributed press release (MarketersMedia, Dec 2025) | Client Confirmed 2026-10-24 · was: Submitted | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_10); markets.financialcontent.com MarketersMedia release 2025-12-03 — "Yes, accurate" |
 | Google rating and review count — exactly as Google shows them on the day, with the date ("4.9 · 67 reviews, 2026-10-07"; never a rounded 5.0) | 5 out of 5 (138 reviews), 2026-10-22 (site says '95+ 5 Star Google Reviews') | Internally Verified 2026-10-22 · was: Unknown | GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22 — "5 out of 5 (138 reviews)" |
@@ -252,7 +252,7 @@ them; the content-risk list tracks where they are live.
 
 | Claim (verbatim) | Where it appears | Client answer | Action |
 |---|---|---|---|
-| "fully licensed and insured" / "Licensed & Insured" — the *licensed* and *insured* parts | 8 pages (F-004) | "no license number needed in fl." (claim_2_detail, 2026-10-24); no licence held to cite; insurance status and certificate of insurance: Unknown — not provided by client (Paul, 2026-10-25) | Do not write "licensed" or "insured" until the client returns the certificate |
+| "fully licensed and insured" / "Licensed & Insured" — the *licensed* part only | 8 pages (F-004) | "no license number needed in fl." (claim_2_detail, 2026-10-24); no licence held to cite. The *insured* part is resolved: Insured — Client Confirmed (Google review, confirmed by Paul 2026-10-25; certificate of insurance not on file) | Do not write "licensed"; "insured" may be written |
 | "Based in Winter Haven" | Homepage (F-001) | Based in Lakeland, FL (claim_0, 2026-10-24) | Do not repeat; base town = Lakeland |
 | "Based in nearby Bartow" | Both blog posts (F-001, F-045) | Based in Lakeland, FL (claim_0, 2026-10-24) | Do not repeat; base town = Lakeland |
 | "Business Started: 11/24/2021" (BBB, not the site) | BBB profile | Not when they started trading (claim_5, 2026-10-24); founding year / years in business: Unknown — not provided by client (Paul, 2026-10-25) | Write no founding year, no years-in-business figure and no "since 2021" |
@@ -262,7 +262,7 @@ Every live page that still carries a D2 claim or an unconfirmed fact, until it i
 
 | Page URL | Claim or fact | Source (D2 row / audit finding) | Fixed by (batch or handoff) |
 |---|---|---|---|
-| / · /areas-we-serve/fort-meade-fl/ · /areas-we-serve/polk-city-fl/ · /services/copper-gutters/ · /services/galvalume-gutters/ · /services/gutter-cleaning/ · /services/gutter-installation/ · /services/gutter-maintenance/ | "licensed" (no licence held); "insured" (insurance status Unknown, Paul, 2026-10-25) | D2 row 1 / F-004 (settled audit_licence_claim) | Build rebuild; live pages until then — Paul |
+| / · /areas-we-serve/fort-meade-fl/ · /areas-we-serve/polk-city-fl/ · /services/copper-gutters/ · /services/galvalume-gutters/ · /services/gutter-cleaning/ · /services/gutter-installation/ · /services/gutter-maintenance/ | "licensed" (no licence held). "Insured" is resolved — Client Confirmed (Google review, confirmed by Paul 2026-10-25) | D2 row 1 / F-004 (settled audit_licence_claim) | Build rebuild; live pages until then — Paul |
 | / | "Based in Winter Haven" | D2 row 2 / F-001 | Build rebuild (homepage) |
 | /gutter-guards-winter-haven-fl/ · /gutter-services-lakeland-fl/ | "Based in nearby Bartow" | D2 row 3 / F-001, F-045 | Blog (Block 5) |
 | /services/gutter-maintenance/ | A service the client wants to stop getting calls for (service_6_stop) | services-client fact / F-014 (settled audit_gutter_maintenance, 2026-10-24) | Build: maintenance scope folded into /services/gutter-repair/ and /services/gutter-cleaning/; old URL 301 to the closer of the two (VA redirect handoff, never deleted) |
@@ -312,7 +312,8 @@ New claims to substantiate before any page states them (question_6, 2026-10-24):
 shocking margins"; competitors offer "1- to 2-year warranties"; calls returned "often within an hour" (the confirmed
 promise is within 24 hours); "eliminating unpredictable arrival windows"; HOA colour and metal samples at the door;
 downspouts engineered by roof pitch; Galvalume "specialty" and storm claims. Already confirmed elsewhere: $150 off for military and seniors (claim_8). Warranty terms
-(claim_4): Unknown — not provided by client (Paul, 2026-10-25). On-site seamless
+(claim_4): 10-Year Workmanship Guarantee, in writing — Client Confirmed (Google review, confirmed by Paul 2026-10-25;
+written copy not on file). On-site seamless
 fabrication fits the trade but is not yet confirmed as the client's own statement.
 Services to position (Paul, 2026-10-24, audit_gutter_maintenance): the 10 the client keeps. Gutter Maintenance is not
 a standalone service — never position or promote it on its own; its maintenance scope is written into the Gutter

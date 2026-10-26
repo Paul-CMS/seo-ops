@@ -1,17 +1,17 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
-- **What is happening now:** waiting for Paul's approval — the drafts for batch services are ready: review each with the semantic review table (nothing found) and approve them together. No placeholders in the drafts
-- **Waiting on:** Paul — the drafts for batch services are ready: review each with the semantic review table (nothi; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
-- **Next action:** Paul types `/approve first-choice-seamless-gutters batch:services:drafts` (or asks for changes first) · model: Haiku chat
+- **Stage 4 of 8 — Audit**
+- **What is happening now:** waiting for Paul's approval — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts
+- **Waiting on:** Paul — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
+- **Next action:** Paul types `/approve first-choice-seamless-gutters brand_guide_approved --files "clients/first-choice-seamless-gutters/brand-guide.md#A+D+E+G"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-25T20:19 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-25T20:30 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the drafts for batch services are ready: review each with the semantic review table (nothing found) and approve them together. No placeholders in the drafts | 2026-10-25 | /approve first-choice-seamless-gutters batch:services:drafts |
+| Paul | the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts | 2026-10-25 | /approve first-choice-seamless-gutters brand_guide_approved |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-seamless-gutter-installation:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-seamless-gutter-installation:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-installation:timeframe |
@@ -152,11 +152,11 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 1 · Setup | 1 | 1,774,002 | $0.02 | $0.00 |
 | 2 · Discovery | 3 | 11,117,410 | $3.80 | $0.00 |
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
-| 4 · Audit | 5 | 26,329,533 | $9.40 | $0.00 |
+| 4 · Audit | 6 | 28,801,394 | $10.27 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
 | 6 · Pilot, services, locations, ship (one session each) | 18 | 64,429,529 | $24.07 | $0.00 |
 | any stage | 7 | 5,927,813 | $1.64 | $0.00 |
-| **total** | 40 | 122,428,460 | $43.10 | $0.00 |
+| **total** | 41 | 124,900,321 | $43.98 | $0.00 |
 
 ## Spend by step (model)
 
@@ -164,8 +164,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 |---|---|---|---|---|
 | build:write | 2 | 39,230,166 | $18.88 | $0.00 |
 | discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
+| discovery:reconcile | 4 | 10,908,601 | $3.79 | $0.00 |
 | build:plan | 2 | 11,232,842 | $3.51 | $0.00 |
-| discovery:reconcile | 3 | 8,436,740 | $2.92 | $0.00 |
 | build:review | 4 | 6,837,776 | $2.11 | $0.00 |
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | build:writeback | 2 | 5,116,676 | $1.84 | $0.00 |
@@ -181,6 +181,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 40 | 122,428,460 | $43.10 | $0.00 |
+| **total** | 41 | 124,900,321 | $43.98 | $0.00 |
 
-Last run: /discovery 2026-10-25T20:14 — Reconcile pass 2: five Brand Guide rows set fully Unknown (founding year, insurance, warranty, staff roles, travel fee); D2/D3/G aligned; reconciled marked; brand_guide_approved void awaiting Paul
+Last run: /discovery 2026-10-25T20:30 — Insured and 10-year written warranty confirmed from a Google review (Paul, 2026-10-25); rows set to Client Confirmed; Brand Guide sections A, D, E, G marked reconciled; re-approval needed.

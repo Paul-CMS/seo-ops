@@ -698,3 +698,24 @@ Next
 - FACT 2026-10-25T20:12 · run 20261025-201113-discovery-816f · d-travel-fee (new) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026-10-25: set fully Unknown until th…
 - … and 2 more decision/fact/flag line(s) in log.md
 
+## /discovery · 2026-10-25 · run 20261025-202228-discovery-6767
+
+- Paul confirmed both claims from a Google review (2026-10-25). Recorded with run.py fact:
+  - d-insurance-bonded-status: Unknown → Client Confirmed — "Insured … Certificate of insurance: not on file."
+  - d-warranty-terms: Unknown → Client Confirmed — "10-Year Workmanship Guarantee, in writing … Written copy: not on file."
+  - Source on both: "Google review, confirmed by Paul 2026-10-25". Brand Guide D rows regenerated from facts.json.
+- Hand edits to brand-guide.md (change #399): D2 row 1 now covers only the *licensed* part ("insured" may be
+  written); D3 row 1 marks "insured" resolved; Section G warranty note (claim_4) states the confirmed guarantee.
+  No Unknown wording remains for either claim. "Licensed" stays unsupported (no licence held).
+- Approval effect: brand_guide_approved (brand-guide.md#A+D+E+G) now shows VOID on the status screen — the
+  approved sections changed. Not re-approved; Paul decides.
+- Drafts using the claims (copy not changed): "insured" in all 9 service drafts and the gutter-cleaning pilot
+  draft; the 10-year written guarantee in aluminum, copper, galvalume, downspouts, gutter-guards,
+  gutter-installation and seamless-gutter-installation. Both claims now read "confirmed" to the writer.
+- Gaps kept as notes, not asked: certificate of insurance and written warranty copy are not on file.
+- Nothing approved, published or sent to WordPress.
+
+**Changes (script):** 1 — brand_guide ×1
+- FACT 2026-10-25T20:23 · run 20261025-202228-discovery-6767 · d-insurance-bonded-status (value, status, source) · client_confirmed · Insured (confirmed by Paul from a Google review, 2026-10-25). Cer…
+- FACT 2026-10-25T20:23 · run 20261025-202228-discovery-6767 · d-warranty-terms (value, status, source) · client_confirmed · 10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google…
+

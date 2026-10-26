@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-25T20:12:27-05:00",
+  "updated": "2026-10-25T20:23:09-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -216,15 +216,15 @@
       "section": "D",
       "num": "",
       "label": "Insurance / bonded status",
-      "value": "Unknown — not provided by client (Paul, 2026-10-25)",
-      "status": "unknown",
+      "value": "Insured (confirmed by Paul from a Google review, 2026-10-25). Certificate of insurance: not on file.",
+      "status": "client_confirmed",
       "status_text": null,
-      "source": "Paul, 2026-10-25: set fully Unknown (insured status and certificate of insurance) until the client returns them (returned proof sheet claim_3)",
+      "source": "Google review, confirmed by Paul 2026-10-25",
       "quote": "",
       "date": "2026-10-25",
       "who": "Paul",
       "count": null,
-      "was": "Client Confirmed"
+      "was": "Unknown"
     },
     {
       "id": "d-certifications-authorizations-factory-training",
@@ -260,15 +260,15 @@
       "section": "D",
       "num": "",
       "label": "Warranty terms",
-      "value": "Unknown — not provided by client (Paul, 2026-10-25)",
-      "status": "unknown",
+      "value": "10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google review, 2026-10-25). Written copy: not on file.",
+      "status": "client_confirmed",
       "status_text": null,
-      "source": "Paul, 2026-10-25: set fully Unknown (written warranty copy and 10-year written guarantee) until the client returns them (returned proof sheet claim_4)",
+      "source": "Google review, confirmed by Paul 2026-10-25",
       "quote": "",
       "date": "2026-10-25",
       "who": "Paul",
       "count": null,
-      "was": "Client Confirmed"
+      "was": "Unknown"
     },
     {
       "id": "d-guarantees-response-time-on-time-satisfaction",
