@@ -262,6 +262,9 @@ def status_md(slug):
            f"_Generated {S.now()[:16]} by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), "
            "one session per stage._", "",
            "## Waiting on", "", "| Who | What | Since | Reference |", "|---|---|---|---|"]
+    if nx.get("paul_said"):   # CM-067: what Paul asked in the last chat — the next chat does it first, never re-asks
+        i = out.index("## Waiting on")
+        out[i:i] = ["## Paul said in the last chat — do this first", ""] + [f"- {t}" for t in nx["paul_said"]] + [""]
     out += [f"| {w} | {t} | {s} | {r} |" for w, t, s, r in waits] or ["| — | nothing | | |"]
     out += ["", "## Waiting on (not blocking)", "", "_Open, but the next action above goes ahead without them._", "",
             "| Who | What | Since | Reference |", "|---|---|---|---|"]

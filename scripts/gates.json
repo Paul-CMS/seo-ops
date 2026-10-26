@@ -706,6 +706,17 @@
         "clients/<slug>/decisions-settled.md"
       ]
     },
+    "build:revise": {
+      "gates": [
+        "discovery_signed_off"
+      ],
+      "produces": [],
+      "reads": [
+        "Paul's words — the change he asked for (CM-067: a draft changes only in a run, and is recorded again in it)",
+        "the drafts the change touches (clients/<slug>/build/<section>/drafts/)",
+        "clients/<slug>/decisions-settled.md"
+      ]
+    },
     "rollback": {
       "gates": [],
       "produces": [],
@@ -1331,7 +1342,8 @@
     "drive-mirror",
     "build:pilot-corrections",
     "implement:page",
-    "answers"
+    "answers",
+    "build:revise"
   ],
   "retired_gates": {
     "discovery_signed_off": {

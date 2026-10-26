@@ -628,6 +628,11 @@ Every agent names a short tool list — never the app's browser, docs, simulator
 
 A change Paul makes himself after approving the Brand Guide — a fact he gives (`run.py fact`), a line he dictates (`run.py update`) — is one dated line under "Updates since approval", which overrides earlier text on the same point; his approval is carried forward and logged (APPROVAL KEPT). The section's write-back (B3, C) never touches it: brand_guide_approved covers A, D, E and G. Only an edit nobody recorded as his (an agent's hand edit) needs his re-approval — and once Build is under way it is asked at Build's stage, on the next approval line or before ship, never as a step back to Stage 4. Drafts written before the change are checked only where they state the changed fact.
 
+## CM-067 · Paul's words carry to the next chat; drafts change only in a run
+**ID** CM-067 · **Status** APPROVED · **Date** 2026-10-25 · **Reason** first-choice-seamless-gutters: a finished chat filled nine drafts' gaps with a one-off script and Paul's "drafts approved, push them to WordPress" was lost at the next chat; the approval then refused 18 version problems (CR-046) · **Enforced by** `next.py` (`--carry`, `--carried`, `paul_said`; drift → `/build <slug> revise <section>`), `status.py` (drafts_drifted; page-stage in a `build:revise` run), `records.py` (STATUS.md), gates.json (`build:revise`, any chat) · **Proved by** `tests/checks/cm067_carry.py`
+
+When a chat cannot do what Paul asked (its stage is done), it hands his words on with `next.py <slug> --carry "…"`; the next chat's /next shows them first (`paul_said`, STATUS.md) and does them without asking again. A change to a draft already recorded is made in a revision run (`build:revise`, allowed in any chat), logged, and the page recorded again; a draft found changed outside a run sends /next to that revision run instead of a refused approval.
+
 ---
 
 # C. Rule Register
@@ -901,6 +906,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-064 | APPROVED (Finish folds into the plan: wheel.py, schema.py, qa.py; published together; link_wheel_approved retired — Rewrite 4 Phase 5) |
 | CM-065 | APPROVED (lean agents: short tool lists, draft-writer for every page draft, mechanical work in the Haiku chat) |
 | CM-066 | APPROVED (Paul's own changes keep his approval: Updated lines, write-back never voids, no step back to Stage 4) |
+| CM-067 | APPROVED (Paul's words carry across chats; drafts change only in a revision run) |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |

@@ -935,6 +935,19 @@ def _when(rec):
         return None
 
 
+def drafts_drifted(st, bid):
+    """CM-067: pages of a section whose draft file differs from the version recorded for it — an edit made outside a run."""
+    b = batch(st, bid) or {}
+    if not (b.get("review") or {}).get("drafts"):
+        return []   # a batch on the semantic review table (before CM-061): apply-sem pins the drafts' versions itself
+    out = []
+    for pid in b.get("pages", []):
+        rec = page_stage(st, pid, "draft")
+        if rec.get("file") and (ROOT / rec["file"]).is_file() and sha12(ROOT / rec["file"]) != rec.get("sha"):
+            out.append(pid)
+    return out
+
+
 def page_version_problems(st, bid, stage, files, strict=True):
     """[why, …] — an approval of a batch's briefs or drafts covers every page at the version the review answers
     produced (CM-061; HMM run 20261014-144852-build-6004: one of four briefs was re-recorded, the approval signed all
@@ -1529,9 +1542,11 @@ def main():
         # answers produced — the only way the approval can cover it (approve.py page_version_problems)
         rv_applied = (((b.get("review") or {}).get(f"{a.stage}s") or {}).get("applied"))
         review_run = info.get("step") == "build:review" and bool(rv_applied) and a.page_id in b["pages"]
+        # CM-067: a change Paul asked for after the drafts were recorded is made in a revision run and recorded again in it
+        review_run = review_run or (info.get("step") == "build:revise" and a.stage == "draft" and a.page_id in b["pages"])
         if info.get("step") != want and not write_run and not review_run:
-            die(f"a {a.stage} is recorded only by its own /build {a.stage} run, the batch's write run, or (after the "
-                f"review answers are applied) the review run (this run is {info.get('step')}).")
+            die(f"a {a.stage} is recorded only by its own /build {a.stage} run, the batch's write run, (after the "
+                f"review answers are applied) the review run, or a revision run (this run is {info.get('step')}).")
         prior = (st["pages"].get(a.page_id, {}).get("files") or {}).get(a.stage) or {}
         if review_run and a.stage == "draft" and not a.agent:
             a.agent = prior.get("agent")   # a re-record keeps the fresh sub-agent that wrote the page (CM-043)

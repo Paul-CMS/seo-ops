@@ -403,3 +403,13 @@ Paul, 2026-10-25 system session, after first-choice-seamless-gutters (12 chats, 
 - CR-046 · 2026-10-25 · ACCEPTED · Paul · Paul, 2026-10-25: yes, build all six
 
 - CR-042 · 2026-10-25 · ACCEPTED · Paul · Paul, 2026-10-25: yes - the switch itself is his /approve global model:build:draft=sonnet; no code
+
+- CR-041 · 2026-10-25 · DONE · system session · commit d3fb3f7
+
+- CR-042 · 2026-10-25 · DONE · system session · commit d3fb3f7
+
+- CR-043 · 2026-10-25 · DONE · system session · commit d3fb3f7
+
+- CR-044 · 2026-10-25 · DONE · system session · commit 0354c3e
+
+- CR-045 · 2026-10-25 · DONE · system session · commit 0354c3e

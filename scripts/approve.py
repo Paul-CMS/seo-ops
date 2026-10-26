@@ -439,8 +439,8 @@ def prepare(a, st, target, multi):
                 if bad:   # nothing is approved on any mismatch: every page at the version the review answers produced
                     die(f"REFUSED ({target}) — the approval would cover pages that are not recorded at the version the "
                         f"review answers produced; nothing is approved ({len(bad)} problem(s)):\n  - " + "\n  - ".join(bad)
-                        + f"\nRecord each page again (status.py page-stage … --run <the /build review run>) after the answers "
-                        "are applied, then approve.", 4)
+                        + f"\nA draft edited after it was recorded is recorded again in a revision run: /build {a.slug} "
+                        f"revise {bid} (CM-067) — then approve. Nothing for you to review twice: the run lists what changed.", 4)
                 if stage == "drafts":
                     applied = drafts_applied(target, b, sem)
                     if applied:

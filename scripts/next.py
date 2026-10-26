@@ -5,6 +5,8 @@
                               "stage": "n of N — name", "session_model": "haiku", "agents": "build (opus), researcher (sonnet)"}
                               (R1: start the stage's session on session_model; the agents' models are fixed)
     next.py <slug> --continue only at the start of a /next Paul typed: clears a review pause (logged)
+    next.py <slug> --carry "<Paul's words>"   CM-067: a chat that cannot do what Paul asked hands his words to the next
+    next.py <slug> --carried                  CM-067: the next chat did them (clears the carry)
 
 kind=run      -> /next runs this command now
 kind=decision -> stop: Paul decides. "command" is the exact /approve line to type.
@@ -350,6 +352,11 @@ def build_batch(st, slug, b):
         review_sheet(st, slug, b, "briefs")
     if state in ("drafts_written", "sem_check_failed") and not S.check(st, f"batch:{bid}:drafts")[0]:
         review_sheet(st, slug, b, "drafts")
+        drift = S.drafts_drifted(st, bid)
+        if drift:   # CM-067: an edit made outside a run is recorded in a revision run before the write-back and approval
+            out("run", f"/build {slug} revise {bid}", f"{len(drift)} draft(s) changed after they were recorded "
+                f"({', '.join(drift[:5])}{' …' if len(drift) > 5 else ''}) — record them again in a revision run (it "
+                "logs what changed), then the approval line")
     if bid == "pilot" and state in ("drafts_written", "sem_check_failed") and not S.check(st, "batch:pilot:briefs")[0]:
         n = b.get("sem_findings") or 0   # P10: the pilot's briefs and drafts are approved together, in one line
         out("decision", f"/approve {slug} batch:pilot:briefs batch:pilot:drafts mode:build:brief=auto{bg_reapproval(st)}"
@@ -468,7 +475,30 @@ def compute(slug, cont=False):
     if rec["kind"] == "wait" and waits:   # nothing can run: the first wait met on the way is the answer
         rec, waits = waits[0], waits[1:] + ([rec] if rec["why"] != "nothing left to do" else [])
     rec["waits"] = [{"command": w["command"], "why": w["why"]} for w in waits]
+    said = S.load(slug).get("carry") or []
+    if said:   # CM-067: what Paul asked in an earlier chat that it could not do — the new chat acts on it first
+        rec["paul_said"] = [f"{c['at'][:16]} · {c['text']}" for c in said]
     return rec
+
+
+def carry(slug, text):
+    """CM-067: a chat that cannot do what Paul asked (its stage is done, a new session is needed) records his words;
+    the next chat's /next shows them first (paul_said) and STATUS.md lists them. Cleared with --carried once done."""
+    from lib import append, client_dir, now
+    st = S.load(slug)
+    st.setdefault("carry", []).append({"at": now(), "text": " ".join(text.split())})
+    S.save(slug, st)
+    append(client_dir(slug) / "log.md", f"- PAUL SAID {now()[:16]} · carried to the next chat · {' '.join(text.split())}\n")
+
+
+def carried(slug):
+    from lib import append, client_dir, now
+    st = S.load(slug)
+    done = st.pop("carry", [])
+    S.save(slug, st)
+    if done:
+        append(client_dir(slug) / "log.md", f"- PAUL SAID {now()[:16]} · done in this chat · {len(done)} item(s)\n")
+    return done
 
 
 def _survey(slug):
@@ -495,7 +525,15 @@ def _survey(slug):
 
 
 def main():
-    print(json.dumps(compute(sys.argv[1], "--continue" in sys.argv[2:])))
+    args = sys.argv[2:]
+    if "--carry" in args:   # CM-067
+        carry(sys.argv[1], args[args.index("--carry") + 1])
+        print("carried: the next chat's /next shows Paul's words first")
+        return
+    if "--carried" in args:
+        print(f"cleared {len(carried(sys.argv[1]))} carried item(s)")
+        return
+    print(json.dumps(compute(sys.argv[1], "--continue" in args)))
 
 
 def _walk(slug, cont):

@@ -9,6 +9,8 @@ Arguments: $ARGUMENTS
    — it clears a review pause and logs that Paul continued. Never pass `--continue` anywhere else.
 1. `python3 scripts/records.py top <slug>` — print its four lines first (stage, what is happening now, waiting on,
    next action); never re-explain history. Then `python3 scripts/next.py <slug>` — it prints `{"kind", "command", "why", "stage", "session_model", "agents"}`.
+   **`paul_said`** in that JSON (CM-067): what Paul asked in an earlier chat that it could not do. Do it first, as
+   he said it — never ask it again — then `python3 scripts/next.py <slug> --carried`.
    Start every reply with the stage line, e.g. **Stage 5 of 8 — Build plan and blockers · session: Haiku · agents:
    build (Opus), researcher (Sonnet)**. Judgment work goes to the named agent; mechanical work is a script you run yourself (never an agent). Relay an
    agent's `clients/<slug>/handoffs/run-<RUN_ID>.summary.md` as written — don't re-explain history.
@@ -31,12 +33,19 @@ Arguments: $ARGUMENTS
 4. **kind = review:** stop (CM-044). The stage that just finished is in review mode: tell Paul what it produced
    (the files, the result) and that `/next` continues. A stage Paul has switched to auto never pauses; a
    decision is never auto.
-5. **kind = new_session:** stop (R2). Say: "Stage <x> is done in this session. Open a new chat on <Model> in
+5. **kind = new_session:** stop (R2). First, if Paul asked for something this chat cannot now do (an approval he
+   gave in words, "push them to WordPress"), hand his words on: `python3 scripts/next.py <slug> --carry "<his words>"`
+   (CM-067) — the next chat starts with them. Then say: "Stage <x> is done in this session. Open a new chat on <Model> in
    the client's folder (`python3 scripts/worktree.py open <slug>`) and type `/next <slug>`." Never try to run the step here — `run.py start` refuses it.
 6. **kind = wait:** stop. Say who or what it is waiting on (client, VA handoff, unfinished run). This comes only
    when nothing else can run (P8).
    **`waits`** (any kind): open waits that do **not** block the next action. List them one line each under
    "Waiting on (not blocking)" and carry on. A VA handoff never stops writing.
+**A draft changes only inside a run (CM-067).** When Paul asks for a change to drafts already recorded — fill a gap,
+use his text, reword a line — open `python3 scripts/run.py start <slug> build --step revise --batch <id>` (any chat),
+make the change, log it (`run.py change`), and record each changed page again: `status.py page-stage <slug> <page>
+--stage draft --file <f> --run <RUN_ID>`. Never edit a draft with a one-off script outside a run: the approval then
+refuses every page.
 **Every answer is recorded the moment Paul gives it (P4, Q3) — by you, never an agent (CM-065).** When Paul's message is
 answers only (facts, "mark them unknown", "confirmed from a Google review", a choice), open the any-stage `answers` run
 yourself — `python3 scripts/run.py start <slug> answers` (allowed in any chat, even one whose stage is done) — record each
