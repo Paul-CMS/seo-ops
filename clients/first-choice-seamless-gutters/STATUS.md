@@ -5,7 +5,7 @@
 - **Waiting on:** Client (via Paul) — waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutt; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
 - **Next action:** `/interview first-choice-seamless-gutters facts-answers locations-west` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-26T11:15 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-26T11:38 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -141,6 +141,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-013** (open, not yet reviewed) 2026-10-24 · build:write: Approved site plan fixes service-page H1 area variant 'Lakeland–Winter Haven' (B2 pool) on 5 service pages; it contains city names, which spec service.md SVC-07/SVC-12 forbid in H tags. The B2 pool itself offers this variant. — workaround: Kept the approved plan H1s (never overrule the plan in a client session); noted in the review findings for Paul.
 - **F-014** (open, not yet reviewed) 2026-10-25 · discovery:reconcile: status.py show reports discovery_signed_off MET while brand_guide_approved is VOID (Brand Guide changed after approval); the condition says it needs the Brand Guide approved — workaround: Treat Discovery as not signed off until Paul re-approves brand_guide_approved; reported to Paul
 - **F-015** (open, not yet reviewed) 2026-10-26 · build:revise: next.py --continue crashed with AttributeError: module 'status' has no attribute 'drafts_drifted' (next.py -> records.py -> status_md -> next.py circular import during STATUS.md render). A second plain next.py run worked. — workaround: Ran plain next.py again; it printed the next step. Check whether --continue was logged before re-running it.
+- **F-016** (open, not yet reviewed) 2026-10-26 · build:write: run.py start build --step write --batch pilot passed its gates although batch pilot drafts were approved by Paul 2026-10-24 (both pages draft_written, approved=yes); a write would overwrite approved drafts. The write step should refuse on an approved batch (use revise for changes, CM-067). — workaround: Build agent wrote nothing; run finished with 0 changes; pilot drafts untouched.
 
 ## Spend so far
 

@@ -34,3 +34,4 @@ _None yet._
 ## Runs aborted (Paul's call)
 
 - 2026-10-22T20:09 20261022-195904-crawl-722b — Paul chose abort; crawl never ran (DFS credentials missing), restarting fresh
+- 2026-10-26T11:38 20261026-112857-build-c842 — Paul: pilot pages already approved 2026-10-24; aborting the open pilot write run. Next: facts/research and drafts for locations-west and east.
