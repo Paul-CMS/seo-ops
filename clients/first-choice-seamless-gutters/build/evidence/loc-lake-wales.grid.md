@@ -1,15 +1,15 @@
 # Evidence grid — Lake Wales (location)
 
-**Result: BLOCK** · Known 5 · Unknown 2 · Unverified 3 · Conflict 0 (CM-041)
+**Result: BLOCK** · Known 6 · Unknown 2 · Unverified 2 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
 
-- 3 required facts are not known (block at 2)
+- 2 required facts are not known (block at 2)
 
 | Fact | Need | Mark | Value | Source |
 |---|---|---|---|---|
 | Phone | required | **Known** | (863) 330-3243 (site, GBP, schema agree; BBB also lists 'Other Phone' (863) 320-2842) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Contact_and_hours_0) |
-| The city is actually served (Section E / proof sheet) | required | **Unverified** | "Auburndale Bartow Eagle Lake Fort Meade Highland City Kathleen Lake Wales Lakeland Polk City Wahneta Davenport Dundee Frostproof Haines City Lake Alfred Lake Hamilton Mulberry Plant City Waverly Winter Haven Don’t see…" (+6 more) | client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2) |
+| The city is actually served (Section E / proof sheet) | required | **Known** | Yes, we serve this city (Polk County, which the business serves). | answer 2026-10-26 (Paul; decisions-settled.md fact:loc-lake-wales:city_served) |
 | City-specific conditions (housing stock, terrain, weather, failure patterns) | required | **Unverified** | "Why Lake Wales Gutters Need Extra Attention Storms rolling across the ridge often bring strong wind and heavy rain, especially near areas like Bok Tower Gardens where debris gets pushed directly into gutter lines." | client site https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-wales-fl/ (data/crawl/page-text.csv row 17) |
 | Up to 12 real neighborhoods (fewer than 3: the section is dropped and they are named in local context) | required | **Unverified** | "REQUEST A QUOTE Aluminum Gutters Commercial Gutters Copper Gutters Galvalume Gutters Gutter Cleaning Gutter Downspouts Gutter Guards Gutter Installation Gutter Maintenance Gutter Repair Seamless Gutter Installation Pr…" | client site https://www.firstchoiceseamlessgutters.net/areas-we-serve/lake-wales-fl/ (data/crawl/page-text.csv row 17) |
 | Free estimate / offer | required | **Known** | Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees' | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_9) |

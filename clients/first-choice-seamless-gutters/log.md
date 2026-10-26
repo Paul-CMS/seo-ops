@@ -2282,3 +2282,58 @@ Spend: 476547 tokens · $0.01 (measured)
 - CHANGE #494 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26 (11).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 2df5d69b0554 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #495 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26 (11).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26 (11).md | result: done · renamed and moved, nothing deleted
 - CHANGE #496 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (11).md | new: First Choice Seamless Gutters - Status.md · sha 1d153970d74b | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261026-164329-answers-12fd · STARTED · /answers · 2026-10-26T16:43:29-05:00
+Step: answers · session 54d382f3-b5fa-4ccd-93bc-3a1a03c63ed0
+- SETTLED fact:loc-davenportity_served · 2026-10-26T16:43:33-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-haines-cityity_served · 2026-10-26T16:43:33-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-lake-alfredity_served · 2026-10-26T16:43:33-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-lake-hamiltonity_served · 2026-10-26T16:43:33-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-dundeeity_served · 2026-10-26T16:43:33-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-lake-walesity_served · 2026-10-26T16:43:33-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-waverlyity_served · 2026-10-26T16:43:33-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-frostproofity_served · 2026-10-26T16:43:34-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-fort-meadeity_served · 2026-10-26T16:43:34-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- EVIDENCE 2026-10-26T16:43 · run 20261026-164329-answers-12fd · loc-davenport: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T16:43 · run 20261026-164329-answers-12fd · loc-haines-city: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T16:43 · run 20261026-164329-answers-12fd · loc-lake-alfred: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T16:43 · run 20261026-164329-answers-12fd · loc-lake-hamilton: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T16:43 · run 20261026-164329-answers-12fd · loc-dundee: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T16:43 · run 20261026-164329-answers-12fd · loc-lake-wales: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T16:43 · run 20261026-164329-answers-12fd · loc-waverly: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T16:43 · run 20261026-164329-answers-12fd · loc-frostproof: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T16:43 · run 20261026-164329-answers-12fd · loc-fort-meade: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- SETTLED fact:loc-davenport:city_served · 2026-10-26T16:44:09-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-haines-city:city_served · 2026-10-26T16:44:09-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-lake-alfred:city_served · 2026-10-26T16:44:09-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-lake-hamilton:city_served · 2026-10-26T16:44:10-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-dundee:city_served · 2026-10-26T16:44:10-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-lake-wales:city_served · 2026-10-26T16:44:10-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-waverly:city_served · 2026-10-26T16:44:10-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-frostproof:city_served · 2026-10-26T16:44:10-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- SETTLED fact:loc-fort-meade:city_served · 2026-10-26T16:44:10-05:00 · run 20261026-164329-answers-12fd · by Paul · Yes, we serve this city (Polk County, which the business serves).
+- EVIDENCE 2026-10-26T16:44 · run 20261026-164329-answers-12fd · loc-davenport: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T16:44 · run 20261026-164329-answers-12fd · loc-haines-city: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T16:44 · run 20261026-164329-answers-12fd · loc-lake-alfred: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T16:44 · run 20261026-164329-answers-12fd · loc-lake-hamilton: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T16:44 · run 20261026-164329-answers-12fd · loc-dundee: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T16:44 · run 20261026-164329-answers-12fd · loc-lake-wales: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T16:44 · run 20261026-164329-answers-12fd · loc-waverly: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T16:44 · run 20261026-164329-answers-12fd · loc-frostproof: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T16:44 · run 20261026-164329-answers-12fd · loc-fort-meade: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+### HANDOFF · /answers · 2026-10-26 · run 20261026-164329-answers-12fd
+- Paul confirmed the city-served fact for the nine locations-east pages: yes, served (all are in Polk County, which the business serves). Settled under fact:loc-<page>:city_served for davenport, haines-city, lake-alfred, lake-hamilton, dundee, lake-wales, waverly, frostproof, fort-meade.
+- Two earlier settlements used a mangled key (fact:loc-<page>ity_served) because of a typo in my shell command. Nothing reads those keys. They are still in decisions-settled.md as stray entries and should be removed in a system session.
+- evidence.py run --batch locations-east: each page now has 6 known, 2 unverified, 2 unknown. Still BLOCK (block at 2 required gaps).
+- Remaining required gaps per page: local context (city-specific conditions) and neighborhoods. Both are public facts for the researcher (build/evidence/research-locations-east.md), not owner questions.
+- Supporting gaps (named places, permit office) are also public-fact research items.
+### END HANDOFF
+## RUN 20261026-164329-answers-12fd · FINISHED · 2026-10-26T16:44:24-05:00
+Changes: 0 · Summary: Paul confirmed city served for the 9 east pages; gate still blocks on local context and neighborhoods (research)
+Spend: 1663939 tokens · $0.02 (measured)
+- CHANGE #497 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-26 (9).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-26 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #498 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-26 (9).md | new: First Choice Seamless Gutters - Handoff Log.md · sha 9b7ee53e8068 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #499 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (12).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (12).md | result: done · renamed and moved, nothing deleted
+- CHANGE #500 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26 (12).md | new: First Choice Seamless Gutters - Document Checklist.md · sha b24b0b0e3953 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #501 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26 (12).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26 (12).md | result: done · renamed and moved, nothing deleted
+- CHANGE #502 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (12).md | new: First Choice Seamless Gutters - Status.md · sha e1d3a4568320 | result: done · copied (Drive for desktop syncs it)

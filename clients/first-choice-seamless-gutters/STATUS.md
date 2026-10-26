@@ -1,17 +1,16 @@
 # First Choice Seamless Gutters - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch all)**
-- **What is happening now:** waiting for the answers to the facts round (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - all - 2026-10-26 - REVIEW.md; 20 fact(s) open) — when they arrive, each is recorded once (run.py fact / --settle) and the grids re-run
-- **Waiting on:** Client (via Paul) — waiting for the answers to the facts round (clients/first-choice-seamless-gutters/intervie; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
-- **Next action:** `/interview first-choice-seamless-gutters facts-answers all` once the wait above is over · model: Haiku chat
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch locations-east)**
+- **What is happening now:** ready to start: the evidence gate blocked loc-davenport, loc-haines-city, loc-lake-alfred, loc-lake-hamilton, loc-dundee, loc-lake-wales, loc-waverly, loc-frostproof, loc-fort-meade — targeted questions for the owner (you send them). Or waive instead: /approve first-choice-seamless-gutters evidence:loc-davenport --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-haines-city --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lake-alfred --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lake-hamilton --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-dundee --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lake-wales --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-waverly --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-frostproof --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-fort-meade --reason "<why you waive it>"
+- **Waiting on:** Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7
+- **Next action:** `/interview first-choice-seamless-gutters facts locations-east` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), draft-writer (opus), brief-writer (sonnet)) · model: Haiku chat
 
-_Generated 2026-10-26T16:30 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-26T16:44 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Client (via Paul) | waiting for the answers to the facts round (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - all - 2026-10-26 - REVIEW.md; 20 fact(s) open) — when they arrive, each is recorded once (run.py fact / --settle) and the grids re-run | 2026-10-26 | /interview first-choice-seamless-gutters facts-answers all |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-seamless-gutter-installation:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-seamless-gutter-installation:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-installation:timeframe |
@@ -32,10 +31,6 @@ _Generated 2026-10-26T16:30 by the system — do not edit. Start every session i
 | Client (via Paul) | For 3 pages (svc-copper-gutters, svc-galvalume-gutters, svc-aluminum-gutters): Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoic | 2026-10-26 | fact:svc-aluminum-gutters:pricing |
 | Client (via Paul) | Your website says this about Founding year / years in business: "Family Owned & Operated Experience the personal touch and reliability of a locally owned, family business." (+13 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — c | 2026-10-26 | fact:d:founding_year |
 | Client (via Paul) | Your website says this about How and why the company started (owner's own account): "Family Owned & Operated Experience the personal touch and reliability of a locally owned, family business." (+13 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Stil | 2026-10-26 | fact:about:company_story |
-| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
-| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
-| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
-| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
 
 ## Waiting on (not blocking)
 
@@ -43,9 +38,12 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Client (via Paul) | waiting for the owner's answers to the facts interview (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - locations-east - 2026-10-26 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve first-choice-seamless-gutters evidence:loc-davenport --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-haines-city --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lake-alfred --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lake-hamilton --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-dundee --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lake-wales --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-waverly --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-frostproof --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-fort-meade --reason "<why you waive it>" | 2026-10-26 | /interview first-choice-seamless-gutters facts-answers locations-east |
+| Client (via Paul) | waiting for the answers to the facts round (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - all - 2026-10-26 - REVIEW.md; 20 fact(s) open) — when they arrive, each is recorded once (run.py fact / --settle) and the grids re-run | 2026-10-26 | /interview first-choice-seamless-gutters facts-answers all |
 | Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-26 | /verify first-choice-seamless-gutters |
-| Paul | batches not yet built and written back: pilot, services, locations-west, locations-east, about | 2026-10-26 | /where first-choice-seamless-gutters |
+| Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
+| Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
+| Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
+| Gwen | other handoff — 1 of 1 item(s) open | 2026-10-23 | H-2026-10-23-04-other |
 
 ## Settled decisions — never re-raised
 
@@ -114,6 +112,24 @@ _Open, but the next action above goes ahead without them._
 - Yes. Helping with HOA approval is standard practice. Named HOA communities not given.
 - Yes, we have worked on historic homes. Different approach: half-round or custom profiles instead of standard K-style; rebuild built-in Yankee/box gutters (reline, solder, rebuild wood trough); roof straps or hidden hangers into rafter tails, not spikes into fascia; custom-sized 6-inch half-round with downspouts tucked to corner trim; slow work with rubber ladder pads; flashing slides under the roof deck without crushing historic trim. Named districts not confirmed.
 - Worked in pretty much every subdivision of the listed cities; no individual neighbourhood names given.
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
+- Yes, we serve this city (Polk County, which the business serves).
 
 ## Open VA items
 
@@ -174,8 +190,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 4 · Audit | 6 | 28,801,394 | $10.27 | $0.00 |
 | 5 · Build plan and blockers | 5 | 18,662,785 | $5.58 | $0.00 |
 | 6 · Pilot, services, locations, ship (one session each) | 24 | 85,655,988 | $35.47 | $0.00 |
-| any stage | 9 | 7,875,119 | $1.67 | $0.00 |
-| **total** | 50 | 153,886,698 | $57.45 | $0.00 |
+| any stage | 10 | 9,539,058 | $1.69 | $0.00 |
+| **total** | 51 | 155,550,637 | $57.47 | $0.00 |
 
 ## Spend by step (model)
 
@@ -199,11 +215,11 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | interview:facts-answers | 4 | 2,204,142 | $0.04 | $0.00 |
 | build:revise | 1 | 1,680,724 | $0.03 | $0.00 |
 | build:blockers | 2 | 1,617,331 | $0.03 | $0.00 |
+| answers | 2 | 1,930,521 | $0.03 | $0.00 |
 | new-client | 1 | 1,774,002 | $0.02 | $0.00 |
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| answers | 1 | 266,582 | $0.00 | $0.00 |
-| **total** | 50 | 153,886,698 | $57.45 | $0.00 |
+| **total** | 51 | 155,550,637 | $57.47 | $0.00 |
 
-Last run: /interview 2026-10-26T16:30 — Facts pack for locations-east: 0 client questions; gaps are public facts for the researcher; nothing to send
+Last run: /answers 2026-10-26T16:44 — Paul confirmed city served for the 9 east pages; gate still blocks on local context and neighborhoods (research)

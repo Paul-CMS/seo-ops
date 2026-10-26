@@ -1,15 +1,15 @@
 # Evidence grid — Haines City (location)
 
-**Result: BLOCK** · Known 5 · Unknown 2 · Unverified 3 · Conflict 0 (CM-041)
+**Result: BLOCK** · Known 6 · Unknown 2 · Unverified 2 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
 
-- 3 required facts are not known (block at 2)
+- 2 required facts are not known (block at 2)
 
 | Fact | Need | Mark | Value | Source |
 |---|---|---|---|---|
 | Phone | required | **Known** | (863) 330-3243 (site, GBP, schema agree; BBB also lists 'Other Phone' (863) 320-2842) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Contact_and_hours_0) |
-| The city is actually served (Section E / proof sheet) | required | **Unverified** | "Based in Winter Haven, our gutter company is proud to serve property owners throughout Lakeland, Bartow, Haines City, Davenport, Auburndale, FL, and all of Central Florida." (+5 more) | client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2) |
+| The city is actually served (Section E / proof sheet) | required | **Known** | Yes, we serve this city (Polk County, which the business serves). | answer 2026-10-26 (Paul; decisions-settled.md fact:loc-haines-city:city_served) |
 | City-specific conditions (housing stock, terrain, weather, failure patterns) | required | **Unverified** | "Why Haines City Gutters Need Extra Attention During Heavy Rain Haines City sits along active Central Florida storm paths where rainfall intensity matters more than duration." | client site https://www.firstchoiceseamlessgutters.net/areas-we-serve/haines-city-fl/ (data/crawl/page-text.csv row 12) |
 | Up to 12 real neighborhoods (fewer than 3: the section is dropped and they are named in local context) | required | **Unverified** | "Areas We Serve in Polk County and Central Florida First Choice Seamless Gutters proudly serves homeowners across Polk County and Central Florida, including Lakeland, Winter Haven, Bartow, Haines City, Davenport, and n…" (+2 more) | client site https://www.firstchoiceseamlessgutters.net/areas-we-serve/ (data/crawl/page-text.csv row 4) |
 | Free estimate / offer | required | **Known** | Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees' | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_9) |

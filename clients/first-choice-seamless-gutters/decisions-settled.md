@@ -72,6 +72,24 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **fact:locations-west:hoa_approval** (2026-10-26, Client (via Paul)): Yes. Helping with HOA approval is standard practice. Named HOA communities not given.
 - **fact:locations-west:historic_homes** (2026-10-26, Client (via Paul)): Yes, we have worked on historic homes. Different approach: half-round or custom profiles instead of standard K-style; rebuild built-in Yankee/box gutters (reline, solder, rebuild wood trough); roof straps or hidden hangers into rafter tails, not spikes into fascia; custom-sized 6-inch half-round with downspouts tucked to corner trim; slow work with rubber ladder pads; flashing slides under the roof deck without crushing historic trim. Named districts not confirmed.
 - **fact:locations-west:neighborhoods_worked** (2026-10-26, Client (via Paul)): Worked in pretty much every subdivision of the listed cities; no individual neighbourhood names given.
+- **fact:loc-davenportity_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-haines-cityity_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-lake-alfredity_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-lake-hamiltonity_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-dundeeity_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-lake-walesity_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-waverlyity_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-frostproofity_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-fort-meadeity_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-davenport:city_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-haines-city:city_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-lake-alfred:city_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-lake-hamilton:city_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-dundee:city_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-lake-wales:city_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-waverly:city_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-frostproof:city_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
+- **fact:loc-fort-meade:city_served** (2026-10-26, Paul): Yes, we serve this city (Polk County, which the business serves).
 
 ## Open questions — asked once, waiting for an answer
 
