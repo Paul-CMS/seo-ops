@@ -2636,7 +2636,29 @@
         ],
         "state": "drafts_written",
         "briefs": null,
-        "drafts": null,
+        "drafts": {
+          "state": "approved",
+          "by": "Paul",
+          "at": "2026-10-26T13:06:40-05:00",
+          "note": null,
+          "files": {
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-winter-haven.md": "029cb34df5c2",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-auburndale.md": "cf2e3c611d0d",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-bartow.md": "64e087a2de1d",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-polk-city.md": "d445aa97bdf7",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-kathleen.md": "65238ee95d50",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-highland-city.md": "97bd2f9a85da",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-mulberry.md": "e353927cc6fd",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-eagle-lake.md": "65715268e884",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-wahneta.md": "7a0335289790",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts-review.csv": "c233651a3995"
+          },
+          "conditions": [],
+          "sensitive_review": null,
+          "practitioner": null,
+          "sem_ids": [],
+          "writing_fp": "66993249914c"
+        },
         "route": "outline",
         "files": {
           "drafts": [
@@ -2998,7 +3020,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-26T12:20:22-05:00",
+  "updated": "2026-10-26T13:06:40-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -4324,10 +4346,5 @@
   "blocker_handoffs": [
     "H-2026-10-23-03-broken_link",
     "H-2026-10-23-04-other"
-  ],
-  "review_pause": {
-    "run_id": "20261026-121738-build-762d",
-    "step": "build:writeback",
-    "at": "2026-10-26T12:20:22-05:00"
-  }
+  ]
 }

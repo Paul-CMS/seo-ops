@@ -2243,3 +2243,20 @@ Spend: 1521082 tokens · $0.60 (measured)
 - CHANGE #484 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Brand Guide.md | upload | old: previous version archived as First Choice Seamless Gutters - Brand Guide - 2026-10-25 (4).md | new: First Choice Seamless Gutters - Brand Guide.md · sha d799f6b51a9a | result: done · copied (Drive for desktop syncs it)
 - CHANGE #485 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26 (9).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26 (9).md | result: done · renamed and moved, nothing deleted
 - CHANGE #486 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (9).md | new: First Choice Seamless Gutters - Status.md · sha 692f960e1854 | result: done · copied (Drive for desktop syncs it)
+
+## APPROVAL · 2026-10-26T13:06:40-05:00 · batch locations-west drafts · approved · by Paul
+Approved version: clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-winter-haven.md (sha 029cb34df5c2)
+Approved version: clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-auburndale.md (sha cf2e3c611d0d)
+Approved version: clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-bartow.md (sha 64e087a2de1d)
+Approved version: clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-polk-city.md (sha d445aa97bdf7)
+Approved version: clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-kathleen.md (sha 65238ee95d50)
+Approved version: clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-highland-city.md (sha 97bd2f9a85da)
+Approved version: clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-mulberry.md (sha e353927cc6fd)
+Approved version: clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-eagle-lake.md (sha 65715268e884)
+Approved version: clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-wahneta.md (sha 7a0335289790)
+Approved version: clients/first-choice-seamless-gutters/build/locations-west/drafts-review.csv (sha c233651a3995)
+SEM items to apply: none
+- CHANGE #487 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (10).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #488 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26 (10).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 893d5403103d | result: done · copied (Drive for desktop syncs it)
+- CHANGE #489 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26 (10).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #490 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (10).md | new: First Choice Seamless Gutters - Status.md · sha d6238a047a55 | result: done · copied (Drive for desktop syncs it)

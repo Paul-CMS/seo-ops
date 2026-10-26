@@ -12,6 +12,7 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - 2026-10-24 — site plan: approved
 - 2026-10-24 — batch pilot drafts: approved
 - 2026-10-26 — batch services drafts: approved
+- 2026-10-26 — batch locations-west drafts: approved
 
 ## Settled
 
