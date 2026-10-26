@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
 - **Next action:** Paul types `/approve first-choice-seamless-gutters brand_guide_approved --files "clients/first-choice-seamless-gutters/brand-guide.md#A+D+E+G"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-25T20:09 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-25T20:14 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -136,6 +136,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-011** (open, not yet reviewed) 2026-10-24 · interview:facts: evidence.py questions (facts pack, batch services) repeats the same wording for every page: 'Typical job duration' and 'Price range' each appear 6 times quoting the same site text, and the first one quotes the phone number and nav text. Duplicate-by-wording should be collapsed in the pack, keeping one settle key per fact. — workaround: Pack left as generated; Paul told to review before sending and may waive instead of sending.
 - **F-012** (open, not yet reviewed) 2026-10-24 · build:write: evidence_pack.review_topics gives 'service: <name>' topics an empty key list, so a researcher's reviews.py checked can never move them from 'keyword match only' to known (4 service topics with 3+ reviewers in the services packs: Gutter Installation 32, Gutter Downspouts 4, Gutter Guards 4, Seamless Gutter Installation 3). reviews.py meaning has no API key and falls back to the researcher. — workaround: Writers use those topics only at the pack's stated tier (attributed customer example, no company claim); no researcher check run this time since it cannot change the packs.
 - **F-013** (open, not yet reviewed) 2026-10-24 · build:write: Approved site plan fixes service-page H1 area variant 'Lakeland–Winter Haven' (B2 pool) on 5 service pages; it contains city names, which spec service.md SVC-07/SVC-12 forbid in H tags. The B2 pool itself offers this variant. — workaround: Kept the approved plan H1s (never overrule the plan in a client session); noted in the review findings for Paul.
+- **F-014** (open, not yet reviewed) 2026-10-25 · discovery:reconcile: status.py show reports discovery_signed_off MET while brand_guide_approved is VOID (Brand Guide changed after approval); the condition says it needs the Brand Guide approved — workaround: Treat Discovery as not signed off until Paul re-approves brand_guide_approved; reported to Paul
 
 ## Spend so far
 
@@ -151,11 +152,11 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 1 · Setup | 1 | 1,774,002 | $0.02 | $0.00 |
 | 2 · Discovery | 3 | 11,117,410 | $3.80 | $0.00 |
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
-| 4 · Audit | 4 | 23,771,233 | $8.59 | $0.00 |
+| 4 · Audit | 5 | 26,329,533 | $9.40 | $0.00 |
 | 5 · Build plan and blockers | 4 | 12,850,173 | $3.54 | $0.00 |
 | 6 · Pilot, services, locations, ship (one session each) | 18 | 64,429,529 | $24.07 | $0.00 |
 | any stage | 7 | 5,927,813 | $1.64 | $0.00 |
-| **total** | 39 | 119,870,160 | $42.30 | $0.00 |
+| **total** | 40 | 122,428,460 | $43.10 | $0.00 |
 
 ## Spend by step (model)
 
@@ -164,8 +165,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | build:write | 2 | 39,230,166 | $18.88 | $0.00 |
 | discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
 | build:plan | 2 | 11,232,842 | $3.51 | $0.00 |
+| discovery:reconcile | 3 | 8,436,740 | $2.92 | $0.00 |
 | build:review | 4 | 6,837,776 | $2.11 | $0.00 |
-| discovery:reconcile | 2 | 5,878,440 | $2.11 | $0.00 |
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | build:writeback | 2 | 5,116,676 | $1.84 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
@@ -180,6 +181,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 39 | 119,870,160 | $42.30 | $0.00 |
+| **total** | 40 | 122,428,460 | $43.10 | $0.00 |
 
-Last run: /discovery 2026-10-25T20:09 — Florida settled (area_state); 15 NEED markers set to Unknown per Paul; Brand Guide reconciled for re-approval
+Last run: /discovery 2026-10-25T20:14 — Reconcile pass 2: five Brand Guide rows set fully Unknown (founding year, insurance, warranty, staff roles, travel fee); D2/D3/G aligned; reconciled marked; brand_guide_approved void awaiting Paul

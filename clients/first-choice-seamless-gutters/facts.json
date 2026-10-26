@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-25T20:08:19-05:00",
+  "updated": "2026-10-25T20:12:27-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -171,15 +171,15 @@
       "section": "D",
       "num": "",
       "label": "Founding year / years in business",
-      "value": "In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: Unknown — not provided by client (Paul, 2026-10-25)",
-      "status": "client_confirmed",
+      "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+      "status": "unknown",
       "status_text": null,
-      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_5 / claim_5_detail); founding year: Paul, 2026-10-25: no answers, mark unknown",
-      "quote": "we have been in business for well over 25 plus years",
+      "source": "Paul, 2026-10-25: set fully Unknown until the client returns the answer (asked on returned proof sheet claim_5)",
+      "quote": "",
       "date": "2026-10-25",
       "who": "Paul",
       "count": null,
-      "was": "Submitted"
+      "was": "Client Confirmed"
     },
     {
       "id": "d-legal-entity-dba",
@@ -216,15 +216,15 @@
       "section": "D",
       "num": "",
       "label": "Insurance / bonded status",
-      "value": "Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate of insurance: Unknown — not provided by client (Paul, 2026-10-25)",
-      "status": "client_confirmed",
+      "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+      "status": "unknown",
       "status_text": null,
-      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_3); certificate: Paul, 2026-10-25: no answers, mark unknown",
-      "quote": "Yes, accurate",
+      "source": "Paul, 2026-10-25: set fully Unknown (insured status and certificate of insurance) until the client returns them (returned proof sheet claim_3)",
+      "quote": "",
       "date": "2026-10-25",
       "who": "Paul",
       "count": null,
-      "was": "Submitted"
+      "was": "Client Confirmed"
     },
     {
       "id": "d-certifications-authorizations-factory-training",
@@ -260,15 +260,15 @@
       "section": "D",
       "num": "",
       "label": "Warranty terms",
-      "value": "10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Copy of the written warranty terms: Unknown — not provided by client (Paul, 2026-10-25)",
-      "status": "client_confirmed",
+      "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+      "status": "unknown",
       "status_text": null,
-      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_4); owner review response in data/reviews/raw/reviews.json; written copy: Paul, 2026-10-25: no answers, mark unknown",
-      "quote": "Yes, and in writing",
+      "source": "Paul, 2026-10-25: set fully Unknown (written warranty copy and 10-year written guarantee) until the client returns them (returned proof sheet claim_4)",
+      "quote": "",
       "date": "2026-10-25",
       "who": "Paul",
       "count": null,
-      "was": "Submitted"
+      "was": "Client Confirmed"
     },
     {
       "id": "d-guarantees-response-time-on-time-satisfaction",
@@ -420,10 +420,10 @@
       "section": "D",
       "num": "",
       "label": "Named staff for on-page use",
-      "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: Unknown — not provided by client (Paul, 2026-10-25)",
+      "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Other staff roles: see row 'Roles of April, Matt, Isaac, James'.",
       "status": "client_confirmed",
       "status_text": null,
-      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2; question_5); staff roles: Paul, 2026-10-25: no answers, mark unknown",
+      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2); staff roles split to d-staff-roles (Paul, 2026-10-25)",
       "quote": "Yes, correct",
       "date": "2026-10-25",
       "who": "Paul",
@@ -891,9 +891,9 @@
       "section": "E",
       "num": "",
       "label": "Towns served (client)",
-      "value": "All 20 Polk County places on the sheet confirmed: Auburndale, Bartow, Davenport, Dundee, Eagle Lake, Haines City, Lake Alfred, Lake Wales, Lakeland, Polk City, Waverly, Winter Haven; Fort Meade, Frostproof, Highland City, Kathleen, Lake Hamilton, Mulberry, Wahneta; Lakeland Highlands. No town excluded. Travel fee: Unknown — not provided by client (Paul, 2026-10-25)",
+      "value": "All 20 Polk County places on the sheet confirmed: Auburndale, Bartow, Davenport, Dundee, Eagle Lake, Haines City, Lake Alfred, Lake Wales, Lakeland, Polk City, Waverly, Winter Haven; Fort Meade, Frostproof, Highland City, Kathleen, Lake Hamilton, Mulberry, Wahneta; Lakeland Highlands. No town excluded. Travel fee: see row 'Travel fee'.",
       "status": "client_confirmed",
-      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded); travel fee: Paul, 2026-10-25: no answers, mark unknown",
+      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded); travel fee split to d-travel-fee (Paul, 2026-10-25)",
       "quote": "Yes, correct",
       "date": "2026-10-25",
       "who": "Paul",
@@ -959,6 +959,34 @@
       "who": "Paul",
       "count": null,
       "was": "Unknown",
+      "status_text": null
+    },
+    {
+      "id": "d-staff-roles",
+      "section": "D",
+      "num": "",
+      "label": "Roles of April, Matt, Isaac, James",
+      "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+      "status": "unknown",
+      "source": "Paul, 2026-10-25: set fully Unknown until the client returns them (returned proof sheet question_5)",
+      "quote": "",
+      "date": "2026-10-25",
+      "who": "Paul",
+      "count": null,
+      "status_text": null
+    },
+    {
+      "id": "d-travel-fee",
+      "section": "D",
+      "num": "",
+      "label": "Travel fee",
+      "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+      "status": "unknown",
+      "source": "Paul, 2026-10-25: set fully Unknown until the client returns it (returned proof sheet towns_excluded / question_0)",
+      "quote": "",
+      "date": "2026-10-25",
+      "who": "Paul",
+      "count": null,
       "status_text": null
     }
   ]

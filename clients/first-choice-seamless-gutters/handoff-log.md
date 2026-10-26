@@ -663,3 +663,38 @@ Still open:
 - FACT 2026-10-25T20:08 · run 20261025-200645-discovery-96bd · d-insurance-bonded-status (value, source) · client_confirmed · Insured: client confirms the insurance part of 'fully licensed and insure…
 - … and 3 more decision/fact/flag line(s) in log.md
 
+## /discovery · 2026-10-25 · run 20261025-201113-discovery-816f
+
+What was done (Paul's instruction, 2026-10-25: five rows fully Unknown, client returns answers later)
+- Set fully Unknown (status unknown, value "Unknown — not provided by client (Paul, 2026-10-25)", quote cleared):
+  d-founding-year-years-in-business, d-insurance-bonded-status, d-warranty-terms.
+- New rows, Unknown: d-staff-roles (Roles of April, Matt, Isaac, James), d-travel-fee (Travel fee).
+- Split, not wiped: d-named-staff-for-on-page-use keeps the client-confirmed owners (Adrian and Rachel Buehl,
+  used by many packs); towns-served-client keeps the 20 confirmed towns. Their embedded "Unknown" sentences now
+  point to the new rows.
+- Hand-written Brand Guide text aligned: D2 row 1 (no "insured"), D2 row 4 (no founding year or years figure),
+  D3 row 1 (adds "insured"), G (warranty no longer listed as confirmed). Changes #382-384.
+- status.py mark reconciled --file brand-guide.md#A+D+E+G. brand_guide_approved is VOID, waiting on Paul.
+
+Drafts that now consume an Unknown field (not edited; Build's call)
+- "insured": svc-gutter-cleaning (pilot, approved), svc-aluminum, svc-commercial, svc-copper, svc-galvalume,
+  svc-gutter-downspouts, svc-gutter-guards, svc-gutter-repair, svc-seamless-gutter-installation.
+- 10-year written guarantee: svc-aluminum, svc-copper, svc-galvalume, svc-gutter-downspouts, svc-gutter-guards,
+  svc-gutter-installation, svc-seamless-gutter-installation.
+- Founding year, staff roles, travel fee: no draft uses them. loc-lakeland: none.
+
+Flag
+- F-014: discovery_signed_off shows MET while brand_guide_approved is VOID. Workaround: treat as not signed off.
+
+Next
+- Paul: /approve first-choice-seamless-gutters brand_guide_approved (2b) once happy; then Build corrects the drafts above.
+
+**Changes (script):** 3 — brand_guide ×3
+- FACT 2026-10-25T20:12 · run 20261025-201113-discovery-816f · d-founding-year-years-in-business (value, status, source, quote) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · sourc…
+- FACT 2026-10-25T20:12 · run 20261025-201113-discovery-816f · d-insurance-bonded-status (value, status, source, quote) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, …
+- FACT 2026-10-25T20:12 · run 20261025-201113-discovery-816f · d-warranty-terms (value, status, source, quote) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026-10-2…
+- FACT 2026-10-25T20:12 · run 20261025-201113-discovery-816f · d-staff-roles (new) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026-10-25: set fully Unknown until t…
+- FACT 2026-10-25T20:12 · run 20261025-201113-discovery-816f · d-named-staff-for-on-page-use (value, source) · client_confirmed · Owners: Adrian Buehl and Rachel Buehl (client confirmed). Other staff…
+- FACT 2026-10-25T20:12 · run 20261025-201113-discovery-816f · d-travel-fee (new) · unknown · Unknown — not provided by client (Paul, 2026-10-25) · source Paul, 2026-10-25: set fully Unknown until th…
+- … and 2 more decision/fact/flag line(s) in log.md
+

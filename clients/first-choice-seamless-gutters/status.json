@@ -123,10 +123,10 @@
     },
     "reconciled": {
       "files": {
-        "clients/first-choice-seamless-gutters/brand-guide.md#A+D+E+G": "2841eaa7a4f5"
+        "clients/first-choice-seamless-gutters/brand-guide.md#A+D+E+G": "15c906621520"
       },
-      "at": "2026-10-25T20:09:18-05:00",
-      "ts": 1792976958.315488
+      "at": "2026-10-25T20:13:56-05:00",
+      "ts": 1792977236.164147
     },
     "site_plan": {
       "files": {
@@ -2745,11 +2745,11 @@
     }
   },
   "last_run": {
-    "run_id": "20261025-200645-discovery-96bd",
+    "run_id": "20261025-201113-discovery-816f",
     "command": "discovery",
-    "finished": "2026-10-25T20:09:36-05:00",
-    "result": "Florida settled (area_state); 15 NEED markers set to Unknown per Paul; Brand Guide reconciled for re-approval",
-    "changes": 0,
+    "finished": "2026-10-25T20:14:18-05:00",
+    "result": "Reconcile pass 2: five Brand Guide rows set fully Unknown (founding year, insurance, warranty, staff roles, travel fee); D2/D3/G aligned; reconciled marked; brand_guide_approved void awaiting Paul",
+    "changes": 3,
     "step": "discovery:reconcile",
     "batch": null
   },
@@ -2772,7 +2772,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-25T20:09:36-05:00",
+  "updated": "2026-10-25T20:14:18-05:00",
   "global_seen": 1,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -3690,6 +3690,34 @@
         "main": 0.0036,
         "discovery-audit": 1.2097
       }
+    },
+    {
+      "run": "20261025-201113-discovery-816f",
+      "step": "discovery:reconcile",
+      "tokens": 2558300,
+      "usd": 0.8039,
+      "at": "2026-10-25T20:14:18-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0031,
+          "in": 4,
+          "out": 954,
+          "cache_read": 219944,
+          "cache_write": 1978
+        },
+        "claude-opus-5-5": {
+          "usd": 0.8008,
+          "in": 52,
+          "out": 321,
+          "cache_read": 2266891,
+          "cache_write": 68156
+        }
+      },
+      "by_agent": {
+        "main": 0.0031,
+        "discovery-audit": 0.8008
+      }
     }
   ],
   "sessions": {
@@ -3805,8 +3833,8 @@
     "H-2026-10-23-04-other"
   ],
   "review_pause": {
-    "run_id": "20261025-200645-discovery-96bd",
+    "run_id": "20261025-201113-discovery-816f",
     "step": "discovery:reconcile",
-    "at": "2026-10-25T20:09:36-05:00"
+    "at": "2026-10-25T20:14:18-05:00"
   }
 }
