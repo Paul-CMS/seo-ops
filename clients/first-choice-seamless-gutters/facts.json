@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-26T11:39:20-05:00",
+  "updated": "2026-10-26T12:04:31-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -780,8 +780,11 @@
       "source": "Google reviews (2 different reviewers; data/reviews/review-facts.json)",
       "quote": "Communication was clear, they responded quickly, and everything was handled in a professional and friendly manner.",
       "date": "2026-10-26",
-      "who": "reviews.py extract",
-      "count": 2
+      "who": "researcher",
+      "count": 56,
+      "meaning_checked": true,
+      "checked_at": "2026-10-26T12:04:30-05:00",
+      "checked_note": "arrived on time, came out quickly, responded fast, scheduled/finished promptly"
     },
     {
       "id": "r-fact-founding",
@@ -850,8 +853,11 @@
       "source": "Google reviews (9 different reviewers; data/reviews/review-facts.json)",
       "quote": "The gutters are clean, seamless, and actually make my house look more polished and put together.",
       "date": "2026-10-26",
-      "who": "reviews.py extract",
-      "count": 9
+      "who": "researcher",
+      "count": 12,
+      "meaning_checked": true,
+      "checked_at": "2026-10-26T12:04:30-05:00",
+      "checked_note": "cleaned up after the job, left site spotless/no mess"
     },
     {
       "id": "r-practice-explains",
@@ -864,8 +870,11 @@
       "source": "Google reviews (4 different reviewers; data/reviews/review-facts.json)",
       "quote": "They cleaned their work area and walked me through the project to insure total satisfaction.",
       "date": "2026-10-26",
-      "who": "reviews.py extract",
-      "count": 4
+      "who": "researcher",
+      "count": 41,
+      "meaning_checked": true,
+      "checked_at": "2026-10-26T12:04:30-05:00",
+      "checked_note": "clear communication, kept customer informed, answered questions, explained options/process"
     },
     {
       "id": "r-prices-amounts",
@@ -920,8 +929,11 @@
       "source": "Google reviews (8 different reviewers; data/reviews/review-facts.json)",
       "quote": "Many that’s to Adrian and his crew for their amazing service.",
       "date": "2026-10-26",
-      "who": "reviews.py extract",
-      "count": 8
+      "who": "researcher",
+      "count": 8,
+      "meaning_checked": true,
+      "checked_at": "2026-10-26T12:04:30-05:00",
+      "checked_note": "Adrian named as owner/estimator/leading the crew"
     },
     {
       "id": "r-staff-inc",
@@ -934,8 +946,11 @@
       "source": "Google reviews (4 different reviewers; data/reviews/review-facts.json)",
       "quote": "First Choice Seamless Gutters Inc.",
       "date": "2026-10-26",
-      "who": "reviews.py extract",
-      "count": 4
+      "who": "researcher",
+      "count": 0,
+      "meaning_checked": true,
+      "checked_at": "2026-10-26T12:04:31-05:00",
+      "checked_note": "not a staff name (from 'Inc.')"
     },
     {
       "id": "r-staff-james",
@@ -948,8 +963,11 @@
       "source": "Google reviews (26 different reviewers; data/reviews/review-facts.json)",
       "quote": "James and his son are the sole owners and workers in this business and do high quality work as well as offer many different options to customize your gutters and downspouts.",
       "date": "2026-10-26",
-      "who": "reviews.py extract",
-      "count": 26
+      "who": "researcher",
+      "count": 26,
+      "meaning_checked": true,
+      "checked_at": "2026-10-26T12:04:30-05:00",
+      "checked_note": "James (with his son) named as doing or leading the work"
     },
     {
       "id": "r-staff-landon",
@@ -962,8 +980,11 @@
       "source": "Google reviews (5 different reviewers; data/reviews/review-facts.json)",
       "quote": "He and Landon came out as scheduled for the installation and did a fantastic job.",
       "date": "2026-10-26",
-      "who": "reviews.py extract",
-      "count": 5
+      "who": "researcher",
+      "count": 5,
+      "meaning_checked": true,
+      "checked_at": "2026-10-26T12:04:31-05:00",
+      "checked_note": "Landon named as working with James/Randall on install"
     },
     {
       "id": "r-staff-randall",
@@ -976,8 +997,11 @@
       "source": "Google reviews (3 different reviewers; data/reviews/review-facts.json)",
       "quote": "Randall does a great job and is very professional",
       "date": "2026-10-26",
-      "who": "reviews.py extract",
-      "count": 3
+      "who": "researcher",
+      "count": 3,
+      "meaning_checked": true,
+      "checked_at": "2026-10-26T12:04:31-05:00",
+      "checked_note": "Randall named as doing the work (with son Landon)"
     }
   ]
 }

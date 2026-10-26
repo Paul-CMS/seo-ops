@@ -1,0 +1,862 @@
+{
+  "made": "2026-10-26T12:12:45-05:00",
+  "run": "20261026-120219-build-bc47",
+  "fixes": [
+    {
+      "page": "loc-bartow",
+      "rule": "P11",
+      "item": "need-trailing-period",
+      "severity": "fix",
+      "category": "placeholder_format",
+      "finding": "Stray period after the permit NEED ('…homeowner].'). Moot if the NEED is cut.",
+      "url": "https://www.firstchoiceseamlessgutters.net/bartow-fl/"
+    },
+    {
+      "page": "loc-polk-city",
+      "rule": "E1",
+      "item": "sab-jargon",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "'It is a service area business, so the crew comes to your home.' — internal GBP term; → 'The crew comes to your home.'",
+      "url": "https://www.firstchoiceseamlessgutters.net/polk-city-fl/"
+    },
+    {
+      "page": "loc-highland-city",
+      "rule": "E1",
+      "item": "faq1-colour-spelling",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "FAQ 1 H3 'gutter colour' on a US page while the answer says 'color' → 'gutter color'.",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "E1",
+      "item": "opening-yes",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Opening starts 'Yes, Wahneta homeowners can book …' with no question before it → 'Wahneta homeowners can book …'.",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-auburndale",
+      "rule": "LOC-31",
+      "item": "sentence c099f87a",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Its work comes with a 10-year workmanship guarantee in writing.\" is 80% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Its work comes with a 10-year workmanship guarantee in writing, and the company is insured.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/auburndale-fl/"
+    },
+    {
+      "page": "loc-auburndale",
+      "rule": "LOC-31",
+      "item": "sentence e8299e01",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Military members and seniors save $150 on a full-house installation.\" is 100% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Military members and seniors save $150 on a full-house installation.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/auburndale-fl/"
+    },
+    {
+      "page": "loc-auburndale",
+      "rule": "LOC-31",
+      "item": "sentence 92c50f52",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"The National Weather Service puts West Central Florida's rainy season at May 25 to October 10, with frequent thunderstorms, damaging winds a\" is 74% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"The National Weather Service puts this area's rainy season at May 25 to October 10, with frequent th\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/auburndale-fl/"
+    },
+    {
+      "page": "loc-auburndale",
+      "rule": "LOC-31",
+      "item": "sentence d35cb027",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"The land is mostly flat, with some gently rolling hills.\" is 75% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"The land is mostly flat, with a few gently rolling hills.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/auburndale-fl/"
+    },
+    {
+      "page": "loc-auburndale",
+      "rule": "LOC-31",
+      "item": "sentence 40f1542f",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"First Choice Seamless Gutters runs its Auburndale jobs from its base in Lakeland.\" is 82% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"First Choice Seamless Gutters drives to Winter Haven jobs from its base in Lakeland.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/auburndale-fl/"
+    },
+    {
+      "page": "loc-auburndale",
+      "rule": "LOC-31",
+      "item": "sentence 329f85e5",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"[NEED: typical drive or response time from Lakeland to an Auburndale job] The team works 7 AM to 8 PM, Monday to Sunday, and emergency after\" is 75% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"[NEED: typical travel or response time from Lakeland to a Winter Haven address] The crew works 7 AM \"",
+      "url": "https://www.firstchoiceseamlessgutters.net/auburndale-fl/"
+    },
+    {
+      "page": "loc-bartow",
+      "rule": "LOC-31",
+      "item": "sentence e8299e01",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Military members and seniors save $150 on a full-house installation.\" is 100% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Military members and seniors save $150 on a full-house installation.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/bartow-fl/"
+    },
+    {
+      "page": "loc-bartow",
+      "rule": "LOC-31",
+      "item": "sentence 1ebf80a8",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"On ground that flat, water that spills off a roof has little slope to carry it away from the house.\" is 72% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"On flat ground like this, water that spills off a roof edge has little slope to carry it away.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/bartow-fl/"
+    },
+    {
+      "page": "loc-bartow",
+      "rule": "LOC-31",
+      "item": "sentence e0949523",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"First Choice has worked in subdivisions all over Bartow.\" is 100% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"First Choice has worked in subdivisions all over Winter Haven.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/bartow-fl/"
+    },
+    {
+      "page": "loc-bartow",
+      "rule": "LOC-31",
+      "item": "sentence 3b46162f",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"To book a free on-site estimate for your Bartow home, call First Choice Seamless Gutters Inc.\" is 83% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"For a free estimate on your Winter Haven home, call First Choice Seamless Gutters Inc.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/bartow-fl/"
+    },
+    {
+      "page": "loc-bartow",
+      "rule": "LOC-31",
+      "item": "sentence 7b85b9de",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Its work comes with a written 10-year workmanship guarantee.\" is 78% the same as one on loc-auburndale once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-auburndale: \"Its work comes with a 10-year workmanship guarantee in writing.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/bartow-fl/"
+    },
+    {
+      "page": "loc-bartow",
+      "rule": "LOC-31",
+      "item": "sentence 2ce586ed",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Call (863) 330-3243 to set up a free estimate at your Bartow home.\" is 73% the same as one on loc-auburndale once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-auburndale: \"Call (863) 330-3243 to set a time for your free Auburndale estimate.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/bartow-fl/"
+    },
+    {
+      "page": "loc-polk-city",
+      "rule": "LOC-31",
+      "item": "sentence 4a4773c8",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Military members and seniors get $150 off a full-house installation.\" is 70% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Military members and seniors save $150 on a full-house installation.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/polk-city-fl/"
+    },
+    {
+      "page": "loc-polk-city",
+      "rule": "LOC-31",
+      "item": "sentence a2ad78dc",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Polk City homeowners can book all ten First Choice gutter services, and each one has its own page.\" is 78% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Winter Haven homeowners can choose from ten First Choice gutter services, and each one has its own p\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/polk-city-fl/"
+    },
+    {
+      "page": "loc-polk-city",
+      "rule": "LOC-31",
+      "item": "sentence e92b349c",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"First Choice Seamless Gutters drives to Polk City jobs from its base in Lakeland.\" is 100% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"First Choice Seamless Gutters drives to Winter Haven jobs from its base in Lakeland.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/polk-city-fl/"
+    },
+    {
+      "page": "loc-polk-city",
+      "rule": "LOC-31",
+      "item": "sentence d57e057c",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"To book a free on-site estimate at your Polk City home, call First Choice Seamless Gutters Inc.\" is 83% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"For a free estimate on your Winter Haven home, call First Choice Seamless Gutters Inc.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/polk-city-fl/"
+    },
+    {
+      "page": "loc-polk-city",
+      "rule": "LOC-31",
+      "item": "sentence b717a13a",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Call (863) 330-3243 to set up a free estimate for your Polk City home.\" is 73% the same as one on loc-auburndale once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-auburndale: \"Call (863) 330-3243 to set a time for your free Auburndale estimate.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/polk-city-fl/"
+    },
+    {
+      "page": "loc-polk-city",
+      "rule": "LOC-31",
+      "item": "sentence 607a088d",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"A message sent through the website form gets a reply within 24 hours.\" is 82% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"A request sent through the website form gets a reply within 24 hours.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/polk-city-fl/"
+    },
+    {
+      "page": "loc-polk-city",
+      "rule": "LOC-31",
+      "item": "sentence 270ff474",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"First Choice Seamless Gutters also works in these Polk County, Florida cities and towns near Polk City.\" is 86% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"First Choice Seamless Gutters also works in these Polk County, Florida cities and towns.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/polk-city-fl/"
+    },
+    {
+      "page": "loc-polk-city",
+      "rule": "LOC-31",
+      "item": "sentence 241228cd",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"at (863) 330-3243, 7 AM – 8 PM, Monday to Sunday.\" is 90% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"at (863) 330-3243, open 7 AM – 8 PM, Monday to Sunday.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/polk-city-fl/"
+    },
+    {
+      "page": "loc-kathleen",
+      "rule": "LOC-31",
+      "item": "sentence b5a7f579",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Kathleen homeowners can book gutter installation, repair and cleaning from First Choice Seamless Gutters, a family-owned company based in La\" is 94% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Winter Haven homeowners can book gutter installation, repair and cleaning from First Choice Seamless\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/kathleen-fl/"
+    },
+    {
+      "page": "loc-kathleen",
+      "rule": "LOC-31",
+      "item": "sentence e8299e01",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Military members and seniors save $150 on a full-house installation.\" is 100% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Military members and seniors save $150 on a full-house installation.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/kathleen-fl/"
+    },
+    {
+      "page": "loc-kathleen",
+      "rule": "LOC-31",
+      "item": "sentence cdb3bb9f",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"To set up your free Kathleen estimate, call (863) 330-3243.\" is 75% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Call (863) 330-3243 to set up your free estimate anywhere in the Lakeland–Winter Haven metropolitan \"",
+      "url": "https://www.firstchoiceseamlessgutters.net/kathleen-fl/"
+    },
+    {
+      "page": "loc-kathleen",
+      "rule": "LOC-31",
+      "item": "sentence f34e322a",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"A request sent through the website form gets an answer within 24 hours.\" is 82% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"A request sent through the website form gets a reply within 24 hours.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/kathleen-fl/"
+    },
+    {
+      "page": "loc-kathleen",
+      "rule": "LOC-31",
+      "item": "sentence d10e577d",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"First Choice Seamless Gutters serves homes all over Kathleen.\" is 90% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"First Choice Seamless Gutters serves homes and businesses all over Bartow.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/kathleen-fl/"
+    },
+    {
+      "page": "loc-kathleen",
+      "rule": "LOC-31",
+      "item": "sentence 72b15e32",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"First Choice Seamless Gutters also works in these Polk County, Florida cities and towns.\" is 100% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"First Choice Seamless Gutters also works in these Polk County, Florida cities and towns.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/kathleen-fl/"
+    },
+    {
+      "page": "loc-kathleen",
+      "rule": "LOC-31",
+      "item": "sentence e382ffd2",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"A Kathleen visit starts with a free on-site inspection and a detailed estimate.\" is 78% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"A Polk City job starts with a free on-site inspection and a detailed estimate.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/kathleen-fl/"
+    },
+    {
+      "page": "loc-kathleen",
+      "rule": "LOC-31",
+      "item": "sentence 1b4296e5",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Those months bring heavy rain and frequent lightning.\" is 100% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"Those months bring heavy rain and frequent lightning.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/kathleen-fl/"
+    },
+    {
+      "page": "loc-kathleen",
+      "rule": "LOC-31",
+      "item": "sentence fb2cdcdd",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"From late May through June, hail and damaging winds are common too.\" is 100% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"From late May through June, hail and damaging winds are common too.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/kathleen-fl/"
+    },
+    {
+      "page": "loc-kathleen",
+      "rule": "LOC-31",
+      "item": "sentence f54baf2f",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"takes calls at (863) 330-3243 from 7 AM – 8 PM, Monday to Sunday.\" is 75% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"at (863) 330-3243, 7 AM – 8 PM, Monday to Sunday.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/kathleen-fl/"
+    },
+    {
+      "page": "loc-highland-city",
+      "rule": "LOC-31",
+      "item": "sentence 24423b5a",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Its workmanship comes with a 10-year guarantee in writing.\" is 70% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Its work comes with a 10-year workmanship guarantee in writing, and the company is insured.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/"
+    },
+    {
+      "page": "loc-highland-city",
+      "rule": "LOC-31",
+      "item": "sentence 4a4773c8",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Military members and seniors get $150 off a full-house installation.\" is 70% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Military members and seniors save $150 on a full-house installation.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/"
+    },
+    {
+      "page": "loc-highland-city",
+      "rule": "LOC-31",
+      "item": "sentence 31451890",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Requests sent through the website form get a reply within 24 hours.\" is 82% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Requests sent through the website form get an answer within 24 hours.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/"
+    },
+    {
+      "page": "loc-highland-city",
+      "rule": "LOC-31",
+      "item": "sentence 510558e7",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Call (863) 330-3243 to set up a visit to your Highland City home.\" is 73% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"Call (863) 330-3243 to set up a free estimate at your Bartow home.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/"
+    },
+    {
+      "page": "loc-highland-city",
+      "rule": "LOC-31",
+      "item": "sentence 72b15e32",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"First Choice Seamless Gutters also works in these Polk County, Florida cities and towns.\" is 100% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"First Choice Seamless Gutters also works in these Polk County, Florida cities and towns.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/"
+    },
+    {
+      "page": "loc-highland-city",
+      "rule": "LOC-31",
+      "item": "sentence 3082a345",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"answers (863) 330-3243 from 7 AM – 8 PM, Monday to Sunday.\" is 75% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"at (863) 330-3243, open 7 AM – 8 PM, Monday to Sunday.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/"
+    },
+    {
+      "page": "loc-highland-city",
+      "rule": "LOC-31",
+      "item": "sentence 431b5286",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Every Highland City job starts with a free on-site inspection and a detailed estimate.\" is 89% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"A Polk City job starts with a free on-site inspection and a detailed estimate.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/"
+    },
+    {
+      "page": "loc-highland-city",
+      "rule": "LOC-31",
+      "item": "sentence d99d9287",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"The estimate stays free whether or not you book.\" is 100% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"The estimate stays free whether you book or not.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/"
+    },
+    {
+      "page": "loc-highland-city",
+      "rule": "LOC-31",
+      "item": "sentence 88173e49",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Heavy rain and frequent lightning are common in those months.\" is 75% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"Those months bring heavy rain and frequent lightning.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/"
+    },
+    {
+      "page": "loc-highland-city",
+      "rule": "LOC-31",
+      "item": "sentence fb2cdcdd",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"From late May through June, hail and damaging winds are common too.\" is 100% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"From late May through June, hail and damaging winds are common too.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/"
+    },
+    {
+      "page": "loc-highland-city",
+      "rule": "LOC-31",
+      "item": "sentence c9078565",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"One customer wrote that once the HOA approval came through, the crew wasted no time getting the installation scheduled and done.\" is 79% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"One customer said that once the HOA approval came through, the crew wasted no time getting the work \"",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/"
+    },
+    {
+      "page": "loc-highland-city",
+      "rule": "LOC-31",
+      "item": "sentence 12de94cc",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Highland City is unincorporated, so it has no city building office.\" is 82% the same as one on loc-kathleen once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-kathleen: \"Kathleen is unincorporated, so it has no city building office of its own.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/"
+    },
+    {
+      "page": "loc-mulberry",
+      "rule": "LOC-31",
+      "item": "sentence 11350450",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Military members and seniors take $150 off a full-house installation.\" is 70% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Military members and seniors save $150 on a full-house installation.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/"
+    },
+    {
+      "page": "loc-mulberry",
+      "rule": "LOC-31",
+      "item": "sentence 411579c4",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"[NEED: usual travel or response time from Lakeland to a Mulberry address] First Choice is open 7 AM to 8 PM, Monday to Sunday, and emergency\" is 72% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"[NEED: typical travel or response time from Lakeland to a Winter Haven address] The crew works 7 AM \"",
+      "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/"
+    },
+    {
+      "page": "loc-mulberry",
+      "rule": "LOC-31",
+      "item": "sentence cfb078e3",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"To book a free on-site estimate for your Mulberry home, call First Choice Seamless Gutters Inc.\" is 83% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"For a free estimate on your Winter Haven home, call First Choice Seamless Gutters Inc.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/"
+    },
+    {
+      "page": "loc-mulberry",
+      "rule": "LOC-31",
+      "item": "sentence ff935f3d",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Call (863) 330-3243 to set up a free look at your Mulberry home.\" is 82% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"Call (863) 330-3243 to set up a free estimate at your Bartow home.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/"
+    },
+    {
+      "page": "loc-mulberry",
+      "rule": "LOC-31",
+      "item": "sentence 31ddd272",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"A Mulberry home can book any of the ten gutter services below.\" is 90% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"A Bartow home or business can book any of the ten gutter services below.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/"
+    },
+    {
+      "page": "loc-mulberry",
+      "rule": "LOC-31",
+      "item": "sentence f34e322a",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"A request sent through the website form gets an answer within 24 hours.\" is 82% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"A request sent through the website form gets a reply within 24 hours.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/"
+    },
+    {
+      "page": "loc-mulberry",
+      "rule": "LOC-31",
+      "item": "sentence 21274878",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"First Choice Seamless Gutters also works in these Polk County cities and towns.\" is 92% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"First Choice Seamless Gutters also works in these Polk County, Florida cities and towns.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/"
+    },
+    {
+      "page": "loc-mulberry",
+      "rule": "LOC-31",
+      "item": "sentence 241228cd",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"at (863) 330-3243, 7 AM – 8 PM, Monday to Sunday.\" is 90% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"at (863) 330-3243, open 7 AM – 8 PM, Monday to Sunday.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/"
+    },
+    {
+      "page": "loc-mulberry",
+      "rule": "LOC-31",
+      "item": "sentence c322791e",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"A Mulberry job starts with a free on-site inspection and a detailed estimate.\" is 100% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"A Polk City job starts with a free on-site inspection and a detailed estimate.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/"
+    },
+    {
+      "page": "loc-mulberry",
+      "rule": "LOC-31",
+      "item": "sentence a59fe358",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Installed work carries a 10-Year Workmanship Guarantee in writing.\" is 88% the same as one on loc-kathleen once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-kathleen: \"The work carries a 10-year workmanship guarantee, in writing.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/"
+    },
+    {
+      "page": "loc-mulberry",
+      "rule": "LOC-31",
+      "item": "sentence c23aa649",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Customers mention a crew that comes out quickly and keeps them informed.\" is 73% the same as one on loc-highland-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-highland-city: \"Customers mention that the crew comes out quickly and keeps in touch.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence 3b03c663",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Eagle Lake homeowners can book gutter installation, repair and cleaning from First Choice Seamless Gutters.\" is 72% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Winter Haven homeowners can book gutter installation, repair and cleaning from First Choice Seamless\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence 4a4773c8",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Military members and seniors get $150 off a full-house installation.\" is 70% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Military members and seniors save $150 on a full-house installation.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence 5b0b19d0",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"First Choice Seamless Gutters reaches Eagle Lake from its base in Lakeland.\" is 73% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"First Choice Seamless Gutters drives to Winter Haven jobs from its base in Lakeland.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence 9d15b9bb",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Requests sent through the website form get an answer within 24 hours.\" is 100% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Requests sent through the website form get an answer within 24 hours.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence d17e74e2",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"To book a free on-site estimate for your Eagle Lake home, call First Choice Seamless Gutters Inc.\" is 83% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"For a free estimate on your Winter Haven home, call First Choice Seamless Gutters Inc.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence 6c376c74",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Hours are 7 AM – 8 PM, Monday to Sunday.\" is 100% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Hours are 7 AM – 8 PM, Monday to Sunday.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence 701072a8",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Call (863) 330-3243 to book your free Eagle Lake estimate.\" is 70% the same as one on loc-auburndale once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-auburndale: \"Call (863) 330-3243 to set a time for your free Auburndale estimate.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence 72b15e32",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"First Choice Seamless Gutters also works in these Polk County, Florida cities and towns.\" is 100% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"First Choice Seamless Gutters also works in these Polk County, Florida cities and towns.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence 4cbdaed5",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Each job starts with a free on-site inspection and a detailed estimate.\" is 78% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"A Polk City job starts with a free on-site inspection and a detailed estimate.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence a410e906",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Eagle Lake homes can book all ten First Choice gutter services, and each one has its own page.\" is 88% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"Polk City homeowners can book all ten First Choice gutter services, and each one has its own page.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence 9538f3bc",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Inside Eagle Lake city limits, the City of Eagle Lake Building Department issues building permits.\" is 73% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"Inside Polk City limits, the City of Polk City's Community Development department issues building pe\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence a79d2103",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"The work is backed by a 10-Year Workmanship Guarantee in writing.\" is 75% the same as one on loc-kathleen once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-kathleen: \"The work carries a 10-year workmanship guarantee, in writing.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence 26a2a6f7",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"The crew works 7 AM to 8 PM, Monday to Sunday, and offers emergency service after hours.\" is 71% the same as one on loc-kathleen once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-kathleen: \"First Choice Seamless Gutters works 7 AM to 8 PM, Monday to Sunday, and offers emergency after-hours\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence 976edf98",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"That estimate costs nothing, even if you decide not to book.\" is 100% the same as one on loc-mulberry once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-mulberry: \"That estimate costs nothing, even if you decide not to book.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-eagle-lake",
+      "rule": "LOC-31",
+      "item": "sentence 9bdbc7f4",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"The city sits about 157 feet above sea level and has a humid subtropical climate.\" is 71% the same as one on loc-mulberry once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-mulberry: \"Mulberry has a humid subtropical climate and sits about 112 feet above sea level.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence 0c7a69ea",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"First Choice Seamless Gutters drives to Wahneta from its base in Lakeland.\" is 90% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"First Choice Seamless Gutters drives to Winter Haven jobs from its base in Lakeland.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence 36b99793",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"To book a free on-site gutter estimate for your Wahneta home, call First Choice Seamless Gutters Inc.\" is 77% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"For a free estimate on your Winter Haven home, call First Choice Seamless Gutters Inc.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence 6c376c74",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Hours are 7 AM – 8 PM, Monday to Sunday.\" is 100% the same as one on loc-winter-haven once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-winter-haven: \"Hours are 7 AM – 8 PM, Monday to Sunday.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence 3e8511c3",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Call (863) 330-3243 to set a time for your free Wahneta estimate.\" is 100% the same as one on loc-auburndale once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-auburndale: \"Call (863) 330-3243 to set a time for your free Auburndale estimate.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence ea0a0f8c",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"One customer said that once their HOA approval came through, the crew wasted no time scheduling and finishing the install.\" is 74% the same as one on loc-auburndale once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-auburndale: \"One customer said that once the HOA approval came through, the team wasted no time scheduling and fi\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence a642a3a2",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"First Choice Seamless Gutters also works in these towns across Polk County, Florida.\" is 85% the same as one on loc-bartow once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-bartow: \"First Choice Seamless Gutters also works in these Polk County, Florida cities and towns.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence 9a747204",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Your Wahneta job starts with a free on-site inspection and a detailed estimate.\" is 100% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"A Polk City job starts with a free on-site inspection and a detailed estimate.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence 9ff4ba17",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Military members and seniors get $150 off a full-house install.\" is 80% the same as one on loc-polk-city once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-polk-city: \"Military members and seniors get $150 off a full-house installation.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence 19dc3987",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"The work carries a 10-year workmanship guarantee in writing.\" is 100% the same as one on loc-kathleen once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-kathleen: \"The work carries a 10-year workmanship guarantee, in writing.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence 42df1641",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"The crew works 7 AM to 8 PM, Monday to Sunday, and offers emergency after-hours service.\" is 71% the same as one on loc-kathleen once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-kathleen: \"First Choice Seamless Gutters works 7 AM to 8 PM, Monday to Sunday, and offers emergency after-hours\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence 7c462439",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"The county's permit details are on the Polk County Building Division page.\" is 78% the same as one on loc-kathleen once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-kathleen: \"Polk County's permit rules are on the Polk County Building Division page.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence d38550cd",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"The division works from the County Administration Building at 330 W.\" is 100% the same as one on loc-kathleen once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-kathleen: \"The division works from the County Administration Building at 330 W.\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence 49f961bd",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"Yes, Wahneta homeowners can book First Choice Seamless Gutters for rain gutter installation, repair and cleaning.\" is 80% the same as one on loc-eagle-lake once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-eagle-lake: \"Eagle Lake homeowners can book gutter installation, repair and cleaning from First Choice Seamless G\"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    },
+    {
+      "page": "loc-wahneta",
+      "rule": "LOC-31",
+      "item": "sentence 667df359",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "Sentence \"The National Weather Service office in Tampa Bay puts the West Central Florida rainy season at May 25 to October 10.\" is 88% the same as one on loc-eagle-lake once the city name is masked — swap the city for a neighbour and it is still true. Rewrite it with this city's own fact.",
+      "note": "also on loc-eagle-lake: \"The National Weather Service office for Tampa Bay sets the West Central Florida rainy season at May \"",
+      "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/"
+    }
+  ]
+}

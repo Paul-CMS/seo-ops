@@ -1132,7 +1132,7 @@
       }
     },
     "loc-winter-haven": {
-      "state": "planned",
+      "state": "draft_written",
       "type": "location",
       "name": "Winter Haven",
       "url": "https://www.firstchoiceseamlessgutters.net/winter-haven-fl/",
@@ -1161,16 +1161,16 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-winter-haven.grid.md",
         "sha": "1715c8618dc7",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "gaps": []
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-winter-haven.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-winter-haven.json",
-        "sha": "d01fd2f3fd2e",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "bca629fd6d58",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "section": "locations-west",
         "counts": {
           "facts": 51,
@@ -1180,14 +1180,33 @@
           "site_gbp": 12,
           "public": 0,
           "place": 0,
-          "settled": 2,
+          "settled": 4,
           "gaps": 0,
           "excerpts": 54
+        }
+      },
+      "assigned": {},
+      "files": {
+        "outline": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/outlines/loc-winter-haven.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:04:43-05:00",
+          "sha": "09964aa96e07",
+          "ts": 1793034283.6957362,
+          "pack_sha": "bca629fd6d58"
+        },
+        "draft": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-winter-haven.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:15:19-05:00",
+          "sha": "029cb34df5c2",
+          "ts": 1793034919.629565,
+          "agent": "a192f6b379b286aae"
         }
       }
     },
     "loc-auburndale": {
-      "state": "planned",
+      "state": "draft_written",
       "type": "location",
       "name": "Auburndale",
       "url": "https://www.firstchoiceseamlessgutters.net/auburndale-fl/",
@@ -1216,16 +1235,16 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-auburndale.grid.md",
         "sha": "6f2dd01fda89",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "gaps": []
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-auburndale.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-auburndale.json",
-        "sha": "fad6f1c5d3ac",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "e4d7616914e0",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1235,14 +1254,33 @@
           "site_gbp": 12,
           "public": 0,
           "place": 0,
-          "settled": 0,
+          "settled": 1,
           "gaps": 0,
           "excerpts": 54
+        }
+      },
+      "assigned": {},
+      "files": {
+        "outline": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/outlines/loc-auburndale.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:04:43-05:00",
+          "sha": "f709f59b2adc",
+          "ts": 1793034283.699284,
+          "pack_sha": "e4d7616914e0"
+        },
+        "draft": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-auburndale.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:15:19-05:00",
+          "sha": "cf2e3c611d0d",
+          "ts": 1793034919.710304,
+          "agent": "ada5202bba8c2aaf3"
         }
       }
     },
     "loc-bartow": {
-      "state": "planned",
+      "state": "draft_written",
       "type": "location",
       "name": "Bartow",
       "url": "https://www.firstchoiceseamlessgutters.net/bartow-fl/",
@@ -1271,16 +1309,16 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-bartow.grid.md",
         "sha": "7bfca8889a3f",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "gaps": []
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-bartow.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-bartow.json",
-        "sha": "cb56cad06e0e",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "b76f1c01aec5",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1290,14 +1328,33 @@
           "site_gbp": 12,
           "public": 0,
           "place": 0,
-          "settled": 0,
+          "settled": 2,
           "gaps": 0,
           "excerpts": 55
+        }
+      },
+      "assigned": {},
+      "files": {
+        "outline": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/outlines/loc-bartow.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:04:43-05:00",
+          "sha": "b6853355932a",
+          "ts": 1793034283.7026439,
+          "pack_sha": "b76f1c01aec5"
+        },
+        "draft": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-bartow.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:15:19-05:00",
+          "sha": "64e087a2de1d",
+          "ts": 1793034919.789123,
+          "agent": "a111b1d689575e8d1"
         }
       }
     },
     "loc-polk-city": {
-      "state": "planned",
+      "state": "draft_written",
       "type": "location",
       "name": "Polk City",
       "url": "https://www.firstchoiceseamlessgutters.net/polk-city-fl/",
@@ -1326,16 +1383,16 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-polk-city.grid.md",
         "sha": "510f462dc781",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "gaps": []
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-polk-city.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-polk-city.json",
-        "sha": "2dddcccb2d0f",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "62caef9ace3e",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1345,14 +1402,33 @@
           "site_gbp": 6,
           "public": 0,
           "place": 0,
-          "settled": 0,
+          "settled": 1,
           "gaps": 0,
           "excerpts": 48
+        }
+      },
+      "assigned": {},
+      "files": {
+        "outline": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/outlines/loc-polk-city.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:04:43-05:00",
+          "sha": "f475305d29e9",
+          "ts": 1793034283.706272,
+          "pack_sha": "62caef9ace3e"
+        },
+        "draft": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-polk-city.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:15:19-05:00",
+          "sha": "d445aa97bdf7",
+          "ts": 1793034919.868063,
+          "agent": "ad4b449c503c785bb"
         }
       }
     },
     "loc-kathleen": {
-      "state": "planned",
+      "state": "draft_written",
       "type": "location",
       "name": "Kathleen",
       "url": "https://www.firstchoiceseamlessgutters.net/kathleen-fl/",
@@ -1381,16 +1457,16 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-kathleen.grid.md",
         "sha": "ba292c8751d6",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "gaps": []
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-kathleen.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-kathleen.json",
-        "sha": "86ab60a137e2",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "3b2cd330557b",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1400,14 +1476,33 @@
           "site_gbp": 6,
           "public": 0,
           "place": 0,
-          "settled": 1,
+          "settled": 2,
           "gaps": 0,
           "excerpts": 48
+        }
+      },
+      "assigned": {},
+      "files": {
+        "outline": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/outlines/loc-kathleen.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:04:43-05:00",
+          "sha": "d392466afa2a",
+          "ts": 1793034283.709722,
+          "pack_sha": "3b2cd330557b"
+        },
+        "draft": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-kathleen.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:15:19-05:00",
+          "sha": "65238ee95d50",
+          "ts": 1793034919.949665,
+          "agent": "a0734da326a9d39fa"
         }
       }
     },
     "loc-highland-city": {
-      "state": "planned",
+      "state": "draft_written",
       "type": "location",
       "name": "Highland City",
       "url": "https://www.firstchoiceseamlessgutters.net/highland-city-fl/",
@@ -1436,16 +1531,16 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-highland-city.grid.md",
         "sha": "7c68ebd21d58",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "gaps": []
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-highland-city.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-highland-city.json",
-        "sha": "3e77a282a46c",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "8d687d26f4e4",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1455,14 +1550,33 @@
           "site_gbp": 8,
           "public": 0,
           "place": 0,
-          "settled": 1,
+          "settled": 2,
           "gaps": 0,
           "excerpts": 50
+        }
+      },
+      "assigned": {},
+      "files": {
+        "outline": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/outlines/loc-highland-city.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:04:43-05:00",
+          "sha": "58212ea7dc96",
+          "ts": 1793034283.713071,
+          "pack_sha": "8d687d26f4e4"
+        },
+        "draft": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-highland-city.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:15:20-05:00",
+          "sha": "97bd2f9a85da",
+          "ts": 1793034920.030852,
+          "agent": "aa5f2a4d669a9bc8b"
         }
       }
     },
     "loc-mulberry": {
-      "state": "planned",
+      "state": "draft_written",
       "type": "location",
       "name": "Mulberry",
       "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/",
@@ -1493,8 +1607,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-mulberry.grid.md",
         "sha": "a11c161b2dce",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "gaps": [
           "neighborhoods",
           "permit_office"
@@ -1503,9 +1617,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-mulberry.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-mulberry.json",
-        "sha": "11bed717cf40",
-        "at": "2026-10-26T11:46:57-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "9006fb6ad58c",
+        "at": "2026-10-26T12:04:40-05:00",
+        "run": "20261026-120219-build-bc47",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1515,14 +1629,33 @@
           "site_gbp": 5,
           "public": 0,
           "place": 0,
-          "settled": 0,
+          "settled": 1,
           "gaps": 0,
           "excerpts": 47
+        }
+      },
+      "assigned": {},
+      "files": {
+        "outline": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/outlines/loc-mulberry.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:04:43-05:00",
+          "sha": "44c835d85e0a",
+          "ts": 1793034283.719809,
+          "pack_sha": "9006fb6ad58c"
+        },
+        "draft": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-mulberry.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:15:20-05:00",
+          "sha": "e353927cc6fd",
+          "ts": 1793034920.111299,
+          "agent": "a4886c9b872630ff7"
         }
       }
     },
     "loc-eagle-lake": {
-      "state": "planned",
+      "state": "draft_written",
       "type": "location",
       "name": "Eagle Lake",
       "url": "https://www.firstchoiceseamlessgutters.net/eagle-lake-fl/",
@@ -1553,8 +1686,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-eagle-lake.grid.md",
         "sha": "b0a747242345",
-        "at": "2026-10-26T11:46:57-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "gaps": [
           "neighborhoods"
         ]
@@ -1562,9 +1695,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-eagle-lake.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-eagle-lake.json",
-        "sha": "9daad05accd0",
-        "at": "2026-10-26T11:46:57-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "5ff233e5c91a",
+        "at": "2026-10-26T12:04:40-05:00",
+        "run": "20261026-120219-build-bc47",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1574,14 +1707,33 @@
           "site_gbp": 5,
           "public": 0,
           "place": 0,
-          "settled": 0,
+          "settled": 1,
           "gaps": 0,
           "excerpts": 47
+        }
+      },
+      "assigned": {},
+      "files": {
+        "outline": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/outlines/loc-eagle-lake.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:04:43-05:00",
+          "sha": "b3a954ff8813",
+          "ts": 1793034283.7243211,
+          "pack_sha": "5ff233e5c91a"
+        },
+        "draft": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-eagle-lake.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:15:20-05:00",
+          "sha": "65715268e884",
+          "ts": 1793034920.190367,
+          "agent": "a296ed2d7c816f94d"
         }
       }
     },
     "loc-wahneta": {
-      "state": "planned",
+      "state": "draft_written",
       "type": "location",
       "name": "Wahneta",
       "url": "https://www.firstchoiceseamlessgutters.net/wahneta-fl/",
@@ -1612,8 +1764,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-wahneta.grid.md",
         "sha": "d6cacef9e407",
-        "at": "2026-10-26T11:46:57-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-26T12:04:39-05:00",
+        "run": "20261026-120219-build-bc47",
         "gaps": [
           "neighborhoods",
           "place_entities"
@@ -1622,9 +1774,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-wahneta.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-wahneta.json",
-        "sha": "ac93b036a043",
-        "at": "2026-10-26T11:46:57-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "352d39b775ad",
+        "at": "2026-10-26T12:04:40-05:00",
+        "run": "20261026-120219-build-bc47",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1634,9 +1786,28 @@
           "site_gbp": 4,
           "public": 0,
           "place": 0,
-          "settled": 1,
+          "settled": 2,
           "gaps": 0,
           "excerpts": 45
+        }
+      },
+      "assigned": {},
+      "files": {
+        "outline": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/outlines/loc-wahneta.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:04:43-05:00",
+          "sha": "51b323ff8dc6",
+          "ts": 1793034283.72782,
+          "pack_sha": "352d39b775ad"
+        },
+        "draft": {
+          "file": "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-wahneta.md",
+          "run": "20261026-120219-build-bc47",
+          "at": "2026-10-26T12:15:20-05:00",
+          "sha": "7a0335289790",
+          "ts": 1793034920.2692428,
+          "agent": "a74d0ead1244b891c"
         }
       }
     },
@@ -2463,11 +2634,24 @@
           "loc-eagle-lake",
           "loc-wahneta"
         ],
-        "state": "planned",
+        "state": "drafts_written",
         "briefs": null,
         "drafts": null,
         "route": "outline",
-        "files": {},
+        "files": {
+          "drafts": [
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-winter-haven.md",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-auburndale.md",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-bartow.md",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-polk-city.md",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-kathleen.md",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-highland-city.md",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-mulberry.md",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-eagle-lake.md",
+            "clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-wahneta.md"
+          ],
+          "review_sheet": "clients/first-choice-seamless-gutters/build/locations-west/drafts-review.csv"
+        },
         "facts_interview": {
           "file": "clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - locations-west - 2026-10-26 - REVIEW.md",
           "at": "2026-10-26T11:13:16-05:00",
@@ -2486,7 +2670,28 @@
           "questions": 0,
           "research": 36,
           "need_search": 0
-        }
+        },
+        "review": {
+          "drafts": {
+            "sheet": "clients/first-choice-seamless-gutters/build/locations-west/drafts-review.csv",
+            "md": "clients/first-choice-seamless-gutters/build/locations-west/drafts-review.md",
+            "at": "2026-10-26T12:12:45-05:00",
+            "run": "20261026-120219-build-bc47",
+            "asks": 0,
+            "listed": 26,
+            "fixes": 86,
+            "dropped": 0,
+            "applied": {
+              "at": "2026-10-26T12:13:04-05:00",
+              "ts": 1793034784.586283,
+              "run": "20261026-120219-build-bc47",
+              "answers": "",
+              "explicit": 0,
+              "file": "clients/first-choice-seamless-gutters/build/locations-west/drafts-apply.json"
+            }
+          }
+        },
+        "sem_findings": 0
       },
       {
         "id": "locations-east",
@@ -2762,13 +2967,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261026-115900-answers-8ab0",
-    "command": "answers",
-    "finished": "2026-10-26T11:59:10-05:00",
-    "result": "West facts answers recorded (4)",
-    "changes": 0,
-    "step": "answers",
-    "batch": null
+    "run_id": "20261026-120219-build-bc47",
+    "command": "build",
+    "finished": "2026-10-26T12:15:52-05:00",
+    "result": "locations-west: 9 location drafts written and reviewed (0 Ask, 26 decided, 86 fixed); 18 NEEDs left",
+    "changes": 1,
+    "step": "build:write",
+    "batch": "locations-west"
   },
   "spend": {
     "dataforseo_usd": 0.262668
@@ -2789,7 +2994,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-26T11:59:10-05:00",
+  "updated": "2026-10-26T12:15:52-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -3907,6 +4112,43 @@
       "by_agent": {
         "main": 0.0041
       }
+    },
+    {
+      "run": "20261026-120219-build-bc47",
+      "step": "build:write",
+      "tokens": 17600983,
+      "usd": 10.4885,
+      "at": "2026-10-26T12:15:52-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0031,
+          "in": 4,
+          "out": 1338,
+          "cache_read": 197008,
+          "cache_write": 2487
+        },
+        "claude-opus-5-5": {
+          "usd": 10.3848,
+          "in": 550,
+          "out": 12757,
+          "cache_read": 15845986,
+          "cache_write": 1391658
+        },
+        "claude-sonnet-5-5": {
+          "usd": 0.1006,
+          "in": 14,
+          "out": 253,
+          "cache_read": 119237,
+          "cache_write": 29691
+        }
+      },
+      "by_agent": {
+        "main": 0.0031,
+        "draft-writer": 7.8362,
+        "build": 2.5486,
+        "researcher": 0.1006
+      }
     }
   ],
   "sessions": {
@@ -3999,6 +4241,12 @@
       "step": "build:facts",
       "first_run": "20261026-113830-build-374a",
       "at": "2026-10-26T11:47:07-05:00"
+    },
+    "c767bc50-4e7a-4ae1-8e1b-f9d425582651": {
+      "key": "batches:locations-west",
+      "step": "build:write",
+      "first_run": "20261026-120219-build-bc47",
+      "at": "2026-10-26T12:15:52-05:00"
     }
   },
   "wordpress": {
@@ -4046,8 +4294,8 @@
     "H-2026-10-23-04-other"
   ],
   "review_pause": {
-    "run_id": "20261026-113830-build-374a",
-    "step": "build:facts",
-    "at": "2026-10-26T11:47:07-05:00"
+    "run_id": "20261026-120219-build-bc47",
+    "step": "build:write",
+    "at": "2026-10-26T12:15:52-05:00"
   }
 }

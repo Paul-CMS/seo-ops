@@ -2115,3 +2115,87 @@ Spend: 266582 tokens · $0.00 (measured)
 - CHANGE #466 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26 (7).md | new: First Choice Seamless Gutters - Document Checklist.md · sha fb1705f0aeb5 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #467 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26 (7).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26 (7).md | result: done · renamed and moved, nothing deleted
 - CHANGE #468 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (7).md | new: First Choice Seamless Gutters - Status.md · sha fcf9d9553a9e | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-26T12:02 · after build:facts (run 20261026-113830-build-374a) · Paul typed /next
+
+## RUN 20261026-120219-build-bc47 · STARTED · /build · 2026-10-26T12:02:19-05:00
+Step: build:write · batch locations-west · session c767bc50-4e7a-4ae1-8e1b-f9d425582651
+Gates checked: discovery_signed_off, batch:locations-west:briefs_ready, page_specs_approved
+- EVIDENCE 2026-10-26T12:02 · run 20261026-120219-build-bc47 · loc-winter-haven: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T12:02 · run 20261026-120219-build-bc47 · loc-auburndale: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T12:02 · run 20261026-120219-build-bc47 · loc-bartow: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T12:02 · run 20261026-120219-build-bc47 · loc-polk-city: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T12:02 · run 20261026-120219-build-bc47 · loc-kathleen: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T12:02 · run 20261026-120219-build-bc47 · loc-highland-city: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T12:02 · run 20261026-120219-build-bc47 · loc-mulberry: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T12:02 · run 20261026-120219-build-bc47 · loc-eagle-lake: WARN (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-26T12:02 · run 20261026-120219-build-bc47 · loc-wahneta: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- REVIEW FACT CHECKED 2026-10-26T12:04 · run 20261026-120219-build-bc47 · fact:response_time: 56 different reviewer(s) after reading by meaning (researcher) · arrived on time, came out quickly, responded fast, scheduled/finished promptly
+- REVIEW FACT CHECKED 2026-10-26T12:04 · run 20261026-120219-build-bc47 · practice:explains: 41 different reviewer(s) after reading by meaning (researcher) · clear communication, kept customer informed, answered questions, explained options/process
+- REVIEW FACT CHECKED 2026-10-26T12:04 · run 20261026-120219-build-bc47 · practice:clean-up: 12 different reviewer(s) after reading by meaning (researcher) · cleaned up after the job, left site spotless/no mess
+- REVIEW FACT CHECKED 2026-10-26T12:04 · run 20261026-120219-build-bc47 · staff:James: 26 different reviewer(s) after reading by meaning (researcher) · James (with his son) named as doing or leading the work
+- REVIEW FACT CHECKED 2026-10-26T12:04 · run 20261026-120219-build-bc47 · staff:Adrian: 8 different reviewer(s) after reading by meaning (researcher) · Adrian named as owner/estimator/leading the crew
+- REVIEW FACT CHECKED 2026-10-26T12:04 · run 20261026-120219-build-bc47 · staff:Landon: 5 different reviewer(s) after reading by meaning (researcher) · Landon named as working with James/Randall on install
+- REVIEW FACT CHECKED 2026-10-26T12:04 · run 20261026-120219-build-bc47 · staff:Randall: 3 different reviewer(s) after reading by meaning (researcher) · Randall named as doing the work (with son Landon)
+- REVIEW FACT CHECKED 2026-10-26T12:04 · run 20261026-120219-build-bc47 · staff:Inc: 0 different reviewer(s) after reading by meaning (researcher) · not a staff name (from 'Inc.')
+- EVIDENCE 2026-10-26T12:04 · run 20261026-120219-build-bc47 · loc-winter-haven: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T12:04 · run 20261026-120219-build-bc47 · loc-auburndale: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T12:04 · run 20261026-120219-build-bc47 · loc-bartow: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T12:04 · run 20261026-120219-build-bc47 · loc-polk-city: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T12:04 · run 20261026-120219-build-bc47 · loc-kathleen: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T12:04 · run 20261026-120219-build-bc47 · loc-highland-city: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T12:04 · run 20261026-120219-build-bc47 · loc-mulberry: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T12:04 · run 20261026-120219-build-bc47 · loc-eagle-lake: WARN (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-26T12:04 · run 20261026-120219-build-bc47 · loc-wahneta: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE PACKS 2026-10-26T12:04 · run 20261026-120219-build-bc47 · section locations-west · 9 page(s) · build/locations-west/packs/
+- OUTLINES 2026-10-26T12:04 · run 20261026-120219-build-bc47 · section locations-west · 9 page(s) by outline.py (no brief, Rewrite 4)
+- DRAFT 2026-10-26T12:10 · run 20261026-120219-build-bc47 · loc-winter-haven · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-winter-haven.md · agent ad1ca58064cbb975f
+- DRAFT 2026-10-26T12:10 · run 20261026-120219-build-bc47 · loc-auburndale · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-auburndale.md · agent afb4ae2037492393f
+- DRAFT 2026-10-26T12:10 · run 20261026-120219-build-bc47 · loc-bartow · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-bartow.md · agent a475a7224e5b11bd3
+- DRAFT 2026-10-26T12:10 · run 20261026-120219-build-bc47 · loc-polk-city · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-polk-city.md · agent ab411f8d194aff588
+- DRAFT 2026-10-26T12:10 · run 20261026-120219-build-bc47 · loc-kathleen · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-kathleen.md · agent a94e36284d0bc55a2
+- DRAFT 2026-10-26T12:10 · run 20261026-120219-build-bc47 · loc-highland-city · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-highland-city.md · agent a9e463de0348302b2
+- DRAFT 2026-10-26T12:10 · run 20261026-120219-build-bc47 · loc-mulberry · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-mulberry.md · agent ab3d6ac9fe27f433d
+- DRAFT 2026-10-26T12:10 · run 20261026-120219-build-bc47 · loc-eagle-lake · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-eagle-lake.md · agent a571da87c02a22f30
+- DRAFT 2026-10-26T12:10 · run 20261026-120219-build-bc47 · loc-wahneta · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-wahneta.md · agent a5c1ef3239041ff9e
+- REVIEW SHEET 2026-10-26T12:12 · run 20261026-120219-build-bc47 · locations-west drafts: 0 Ask, 26 decided for you, 86 fixed silently, 0 not raised (duplicate, decided or answered) · clients/first-choice-seamless-gutters/build/locations-west/drafts-review.csv
+- REVIEW APPLIED 2026-10-26T12:13 · run 20261026-120219-build-bc47 · locations-west drafts: 26 row(s) (0 answered by Paul, the rest by default) · clients/first-choice-seamless-gutters/build/locations-west/drafts-apply.json
+- DRAFT 2026-10-26T12:15 · run 20261026-120219-build-bc47 · loc-winter-haven · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-winter-haven.md · agent a192f6b379b286aae
+- DRAFT 2026-10-26T12:15 · run 20261026-120219-build-bc47 · loc-auburndale · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-auburndale.md · agent ada5202bba8c2aaf3
+- DRAFT 2026-10-26T12:15 · run 20261026-120219-build-bc47 · loc-bartow · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-bartow.md · agent a111b1d689575e8d1
+- DRAFT 2026-10-26T12:15 · run 20261026-120219-build-bc47 · loc-polk-city · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-polk-city.md · agent ad4b449c503c785bb
+- DRAFT 2026-10-26T12:15 · run 20261026-120219-build-bc47 · loc-kathleen · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-kathleen.md · agent a0734da326a9d39fa
+- DRAFT 2026-10-26T12:15 · run 20261026-120219-build-bc47 · loc-highland-city · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-highland-city.md · agent aa5f2a4d669a9bc8b
+- DRAFT 2026-10-26T12:15 · run 20261026-120219-build-bc47 · loc-mulberry · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-mulberry.md · agent a4886c9b872630ff7
+- DRAFT 2026-10-26T12:15 · run 20261026-120219-build-bc47 · loc-eagle-lake · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-eagle-lake.md · agent a296ed2d7c816f94d
+- DRAFT 2026-10-26T12:15 · run 20261026-120219-build-bc47 · loc-wahneta · clients/first-choice-seamless-gutters/build/locations-west/drafts/loc-wahneta.md · agent a74d0ead1244b891c
+- CHANGE #469 [drive_file] drive:First Choice Seamless Gutters - TMS/02 - Build/locations-west drafts-review.md | upload | old: (new file) | new: locations-west drafts-review.md · sha eec17d83971e | result: done · copied (Drive for desktop syncs it)
+- FLAG 2026-10-26T12:15 · run 20261026-120219-build-bc47 · F-021 · Review meaning checks recorded at run c2ee (reviews.py checked → facts.json R rows meaning_checked) were gone by this run: every R row had meaning_checked None, so packs showed speed/communication/staff topics as 'keyword match only'. Likely reviews.py extract (facts run 374a) rewrites the R rows without keeping meaning_checked. · workaround: Researcher re-checked all 8 keys by meaning this run (response_time 56, explains 41, clean-up 12, James 26, Adrian 8, Landon 5, Randall 3, Inc 0); packs rebuilt.
+- FLAG 2026-10-26T12:15 · run 20261026-120219-build-bc47 · F-022 · evidence_pack.py cuts long page-fact values (local_context, neighborhoods, place_entities, permit_office) mid-sentence in packs/<page>.md and .json; four writers had to read build/evidence/<page>.facts.json for the full values, outside the pack. · workaround: Writers used the facts.json values (same facts, same sources); no fact added beyond them.
+- FLAG 2026-10-26T12:15 · run 20261026-120219-build-bc47 · F-023 · similarity.py (LOC-31) raised 82 silent sentence fixes across 9 location drafts, most of them the client's confirmed boilerplate (guarantee, $150 offer, hours, CTA, form reply) that cannot carry a city fact; the swap test is meant for place claims. It also flags both pages of a pair. · workaround: Each page's apply agent reworded its flagged sentences, keeping every confirmed fact; no facts changed.
+### HANDOFF · /build · 2026-10-26 · run 20261026-120219-build-bc47
+- Evidence gate: 6 PASS (Winter Haven, Auburndale, Bartow, Polk City, Kathleen, Highland City), 3 WARN (Mulberry, Eagle Lake, Wahneta), 0 blocked.
+- Review meaning check (no API key → researcher, reviews.py checked): response_time 56, explains 41, clean-up 12, James 26, Adrian 8, Landon 5, Randall 3, Inc 0. Packs rebuilt (evidence_pack.py build). outline.py faq: no API key, writers used the plan's FAQ picks.
+- Outlines: 9 by outline.py (build/locations-west/outlines/).
+- Drafts: 9 fresh draft-writer agents (Opus), one per page, each recorded with page-stage --agent. Results in build/locations-west/results/.
+- Review: one checker pass → drafts-review.csv/.md (copied to Drive "02 - Build" as "locations-west drafts-review.md"): 0 Ask, 26 decided for you, 86 fixed silently (82 of them similarity LOC-31 rewordings).
+- Decided for you (defaults applied, review.py apply): writer values kept (9); "who pulls the permit" NEED cut on all 9 (settled answer: "we assist with building permits"); older-home sentence cut on Kathleen, Mulberry, Wahneta (swap test); public-gap NEEDs cut on Mulberry and Wahneta; Mulberry permit-page NEEDs cut; Kathleen Neighbourhoods H2 dropped (Fox Branch is only planned); Highland City FAQ 3 reworded without "oaks".
+- Apply: 9 fresh agents, one per page; every page recorded again; batch locations-west → drafts_written.
+- Placeholders left: 18 NEEDs — 9 city map embeds, travel/response time (Winter Haven, Auburndale, Kathleen, Mulberry, Wahneta, Polk City storm FAQ), Winter Haven lake-discharge rule, Auburndale Lakes District colour rule, Kathleen outbuilding gutters. Link tables stay wheel rows.
+- Flags: F-021 (meaning checks lost from facts.json R rows), F-022 (pack truncates long page facts), F-023 (LOC-31 flags confirmed boilerplate).
+- Not done here: the Brand Guide write-back (its own step, as for services), approval, ship.
+- Next: /build first-choice-seamless-gutters writeback locations-west, then /approve first-choice-seamless-gutters batch:locations-west:drafts.
+
+**Changes (script):** 1 — drive_file ×1
+- FLAG 2026-10-26T12:15 · run 20261026-120219-build-bc47 · F-021 · Review meaning checks recorded at run c2ee (reviews.py checked → facts.json R rows meaning_checked) were gone by this run: every R r…
+- FLAG 2026-10-26T12:15 · run 20261026-120219-build-bc47 · F-022 · evidence_pack.py cuts long page-fact values (local_context, neighborhoods, place_entities, permit_office) mid-sentence in packs/<pag…
+- FLAG 2026-10-26T12:15 · run 20261026-120219-build-bc47 · F-023 · similarity.py (LOC-31) raised 82 silent sentence fixes across 9 location drafts, most of them the client's confirmed boilerplate (gu…
+### END HANDOFF
+## RUN 20261026-120219-build-bc47 · FINISHED · 2026-10-26T12:15:52-05:00
+Changes: 1 · Summary: locations-west: 9 location drafts written and reviewed (0 Ask, 26 decided, 86 fixed); 18 NEEDs left
+Spend: 17600983 tokens · $10.49 (measured)
+- CHANGE #470 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-26 (6).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-26 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #471 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-26 (6).md | new: First Choice Seamless Gutters - Handoff Log.md · sha 0987f0e5d979 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #472 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (8).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (8).md | result: done · renamed and moved, nothing deleted
+- CHANGE #473 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26 (8).md | new: First Choice Seamless Gutters - Document Checklist.md · sha e77f94e2efb6 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #474 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26 (8).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26 (8).md | result: done · renamed and moved, nothing deleted
+- CHANGE #475 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (8).md | new: First Choice Seamless Gutters - Status.md · sha 5ea1dec3716e | result: done · copied (Drive for desktop syncs it)

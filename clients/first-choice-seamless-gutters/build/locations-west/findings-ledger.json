@@ -1,0 +1,184 @@
+{
+  "loc-auburndale|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "loc-auburndale|cm-016|permit-who-pulls-need": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut the NEED",
+    "by": "default"
+  },
+  "loc-bartow|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "loc-bartow|cm-016|permit-who-pulls-need": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut the NEED",
+    "by": "default"
+  },
+  "loc-eagle-lake|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "loc-eagle-lake|cm-016|permit-who-pulls-need": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut the NEED",
+    "by": "default"
+  },
+  "loc-highland-city|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "loc-highland-city|cm-016|permit-who-pulls-need": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut the NEED",
+    "by": "default"
+  },
+  "loc-highland-city|cm-016|faq3-oaks": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Reword without oaks",
+    "by": "default"
+  },
+  "loc-kathleen|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "loc-kathleen|cm-016|permit-who-pulls-need": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut the NEED",
+    "by": "default"
+  },
+  "loc-kathleen|cm-062|older-home-approach-portability": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut the sentence",
+    "by": "default"
+  },
+  "loc-kathleen|loc-10|neighbourhoods-section": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Drop the section",
+    "by": "default"
+  },
+  "loc-mulberry|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "loc-mulberry|cm-016|permit-who-pulls-need": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut the NEED",
+    "by": "default"
+  },
+  "loc-mulberry|cm-062|older-home-approach-portability": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut the sentence",
+    "by": "default"
+  },
+  "loc-mulberry|p6|public-gap-needs": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut both NEEDs",
+    "by": "default"
+  },
+  "loc-mulberry|p6|permit-page-needs": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut both NEEDs",
+    "by": "default"
+  },
+  "loc-polk-city|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "loc-polk-city|cm-016|permit-who-pulls-need": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut the NEED",
+    "by": "default"
+  },
+  "loc-wahneta|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "loc-wahneta|cm-016|permit-who-pulls-need": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut the NEED",
+    "by": "default"
+  },
+  "loc-wahneta|cm-062|older-home-approach-portability": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut the sentences",
+    "by": "default"
+  },
+  "loc-wahneta|p6|public-gap-needs": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut both NEEDs",
+    "by": "default"
+  },
+  "loc-winter-haven|cm-061|writer-chosen-values": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Keep as drafted",
+    "by": "default"
+  },
+  "loc-winter-haven|cm-016|permit-who-pulls-need": {
+    "step": "drafts",
+    "at": "2026-10-26T12:13:04-05:00",
+    "choice": "a",
+    "action": "Cut the NEED",
+    "by": "default"
+  }
+}

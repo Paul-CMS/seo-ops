@@ -2,16 +2,16 @@
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch locations-west)**
 - **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:facts finished (run 20261026-113830-build-374a) and that stage is in review mode — l; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
+- **Waiting on:** Paul — build:write finished (run 20261026-120219-build-bc47) and that stage is in review mode — l; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
 - **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-26T11:59 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-26T12:15 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:facts finished (run 20261026-113830-build-374a) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build first-choice-seamless-gutters write locations-west (section locations-west in one run: an outline per page by script from the approved plan and the spec (no brief), one draft per page (each from its own fresh sub-agent, CM-043), then the one draft review sheet) | 2026-10-26 | /next first-choice-seamless-gutters |
+| Paul | build:write finished (run 20261026-120219-build-bc47) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /build first-choice-seamless-gutters writeback locations-west (Brand Guide write-back for section locations-west (B3, C1/C2, C3) from its reviewed drafts, before their one approval — once per section; ship never writes it) | 2026-10-26 | /next first-choice-seamless-gutters |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-seamless-gutter-installation:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-seamless-gutter-installation:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-installation:timeframe |
@@ -151,6 +151,9 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-018** (open, not yet reviewed) 2026-10-26 · build:facts: Parallel researchers writing research.py log at once lost 7 rows of build/locations-west/research-log.csv (mulberry/eagle-lake place+permit, wahneta neighborhoods/place/permit); research.py log needs a file lock. — workaround: Build agent re-logged the 7 rows from the researchers' facts files and reports (RL-locations-west-30..36).
 - **F-019** (open, not yet reviewed) 2026-10-26 · build:facts: evidence.py questions writes nothing when no page blocks, so owner-only Serving-section facts (permit handling, HOA approval, neighbourhoods worked) get no question set; the earlier REVIEW file shipped with no question text. — workaround: Question set written by hand to the locations-west REVIEW file after settled.py filter and questions.py check (build/locations-west/questions.json).
 - **F-020** (open, not yet reviewed) 2026-10-26 · build:facts: No Florida area source list: suggest methodology/sources/fl-polk.md with Polk County Building Division https://www.polkfl.gov/services/building, NWS Tampa Bay https://www.weather.gov/tbw/rainyseason, Polk County parks https://www.polkfl.gov/park/, and the city building pages found this run. — workaround: Researchers used .gov and Wikipedia directly.
+- **F-021** (open, not yet reviewed) 2026-10-26 · build:write: Review meaning checks recorded at run c2ee (reviews.py checked → facts.json R rows meaning_checked) were gone by this run: every R row had meaning_checked None, so packs showed speed/communication/staff topics as 'keyword match only'. Likely reviews.py extract (facts run 374a) rewrites the R rows without keeping meaning_checked. — workaround: Researcher re-checked all 8 keys by meaning this run (response_time 56, explains 41, clean-up 12, James 26, Adrian 8, Landon 5, Randall 3, Inc 0); packs rebuilt.
+- **F-022** (open, not yet reviewed) 2026-10-26 · build:write: evidence_pack.py cuts long page-fact values (local_context, neighborhoods, place_entities, permit_office) mid-sentence in packs/<page>.md and .json; four writers had to read build/evidence/<page>.facts.json for the full values, outside the pack. — workaround: Writers used the facts.json values (same facts, same sources); no fact added beyond them.
+- **F-023** (open, not yet reviewed) 2026-10-26 · build:write: similarity.py (LOC-31) raised 82 silent sentence fixes across 9 location drafts, most of them the client's confirmed boilerplate (guarantee, $150 offer, hours, CTA, form reply) that cannot carry a city fact; the swap test is meant for place claims. It also flags both pages of a pair. — workaround: Each page's apply agent reworded its flagged sentences, keeping every confirmed fact; no facts changed.
 
 ## Spend so far
 
@@ -168,15 +171,15 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 6 | 28,801,394 | $10.27 | $0.00 |
 | 5 · Build plan and blockers | 5 | 18,662,785 | $5.58 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 21 | 66,057,376 | $24.37 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 22 | 83,658,359 | $34.86 | $0.00 |
 | any stage | 9 | 7,875,119 | $1.67 | $0.00 |
-| **total** | 47 | 134,288,086 | $46.35 | $0.00 |
+| **total** | 48 | 151,889,069 | $56.84 | $0.00 |
 
 ## Spend by step (model)
 
 | Step | Runs | Tokens | Session USD | API USD |
 |---|---|---|---|---|
-| build:write | 2 | 39,230,166 | $18.88 | $0.00 |
+| build:write | 3 | 56,831,149 | $29.37 | $0.00 |
 | discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
 | discovery:reconcile | 4 | 10,908,601 | $3.79 | $0.00 |
 | build:plan | 2 | 11,232,842 | $3.51 | $0.00 |
@@ -199,6 +202,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
 | answers | 1 | 266,582 | $0.00 | $0.00 |
-| **total** | 47 | 134,288,086 | $46.35 | $0.00 |
+| **total** | 48 | 151,889,069 | $56.84 | $0.00 |
 
-Last run: /answers 2026-10-26T11:59 — West facts answers recorded (4)
+Last run: /build 2026-10-26T12:15 — locations-west: 9 location drafts written and reviewed (0 Ask, 26 decided, 86 fixed); 18 NEEDs left

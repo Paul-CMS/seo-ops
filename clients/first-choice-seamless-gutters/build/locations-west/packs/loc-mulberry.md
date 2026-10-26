@@ -1,6 +1,6 @@
 # Evidence pack — Mulberry (location)
 
-Section **locations-west** · https://www.firstchoiceseamlessgutters.net/mulberry-fl/ · built 2026-10-26T11:46 by evidence_pack.py (CM-061).
+Section **locations-west** · https://www.firstchoiceseamlessgutters.net/mulberry-fl/ · built 2026-10-26T12:04 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -76,8 +76,8 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 
 ## Reviews
 
-### practice: speed — 40 independent reviewer(s) · keyword match only (not yet checked by meaning)
-Usage tier: keyword match only — an attributed example until the researcher checks it by meaning
+### practice: speed — 40 independent reviewer(s) · checked by meaning 2026-10-26
+Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 
 - "Came quickly after being called and everyone is very friendly!" (2026-08-31; reviews.csv row 3)
 - "Shows up on time, great communication, great work and fair pricing." (2026-08-30; reviews.csv row 4)
@@ -85,8 +85,8 @@ Usage tier: keyword match only — an attributed example until the researcher ch
 - "The team was professional, on time, and did an amazing job with our gutters." (2026-04-01; reviews.csv row 14)
 - "They were quick to come out, easy to communicate with, and once my HOA approval came through, they wasted no time getting the installation scheduled and completed." (2026-03-28; reviews.csv row 16)
 
-### named staff: James — 26 independent reviewer(s) · keyword match only (not yet checked by meaning)
-Usage tier: keyword match only — an attributed example until the researcher checks it by meaning
+### named staff: James — 26 independent reviewer(s) · checked by meaning 2026-10-26
+Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 
 - "James and his son are the sole owners and workers in this business and do high quality work as well as offer many different options to customize your gutters and downspouts." (2025-02-18; reviews.csv row 77)
 - "James and his son did our gutters today and they did an awesome job, we couldn't be happier." (2024-12-18; reviews.csv row 78)
@@ -94,8 +94,8 @@ Usage tier: keyword match only — an attributed example until the researcher ch
 - "James was very communicative and professional during the quote and scheduling process." (2024-09-12; reviews.csv row 81)
 - "James and his son did an extraordinary and a beautiful job." (2024-08-26; reviews.csv row 82)
 
-### practice: communication — 23 independent reviewer(s) · keyword match only (not yet checked by meaning)
-Usage tier: keyword match only — an attributed example until the researcher checks it by meaning
+### practice: communication — 23 independent reviewer(s) · checked by meaning 2026-10-26
+Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 
 - "Shows up on time, great communication, great work and fair pricing." (2026-08-30; reviews.csv row 4)
 - "Her communication was great, she provided a lot of insight on what looked the best, and provided thorough info." (2026-08-18; reviews.csv row 5)
@@ -103,8 +103,8 @@ Usage tier: keyword match only — an attributed example until the researcher ch
 - "Communication was clear, they responded quickly, and everything was handled in a professional and friendly manner." (2026-03-27; reviews.csv row 17)
 - "Very responsive and communicative." (2026-02-05; reviews.csv row 30)
 
-### named staff: Adrian — 8 independent reviewer(s) · keyword match only (not yet checked by meaning)
-Usage tier: keyword match only — an attributed example until the researcher checks it by meaning
+### named staff: Adrian — 8 independent reviewer(s) · checked by meaning 2026-10-26
+Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 
 - "Many that’s to Adrian and his crew for their amazing service." (2026-04-14; reviews.csv row 9)
 - "Adrian was easy to work with and professional at all times." (2026-04-10; reviews.csv row 12)
@@ -112,8 +112,8 @@ Usage tier: keyword match only — an attributed example until the researcher ch
 - "Adrian responded quickly." (2026-02-12; reviews.csv row 27)
 - "Adrian was friendly, professional and very helpful." (2026-01-06; reviews.csv row 34)
 
-### practice: clean-up — 5 independent reviewer(s) · keyword match only (not yet checked by meaning)
-Usage tier: keyword match only — an attributed example until the researcher checks it by meaning
+### practice: clean-up — 5 independent reviewer(s) · checked by meaning 2026-10-26
+Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 
 - "Our gutters were installed within a couple days, fast, great team, cleaned up and the gutters look great!" (2026-03-25; reviews.csv row 18)
 - "They are a pleasure to work with they were very curtius and went right to work after arriving cleaned up and completed in 2 hrs highly recommend" (2025-06-11; reviews.csv row 68)
@@ -121,8 +121,8 @@ Usage tier: keyword match only — an attributed example until the researcher ch
 - "They cleaned up very well afterwards and the gutters look great!" (2023-05-26; reviews.csv row 103)
 - "They did excellent work on the gutters with leaf guards and cleaning up." (2023-03-25; reviews.csv row 108)
 
-### named staff: Landon — 5 independent reviewer(s) · keyword match only (not yet checked by meaning)
-Usage tier: keyword match only — an attributed example until the researcher checks it by meaning
+### named staff: Landon — 5 independent reviewer(s) · checked by meaning 2026-10-26
+Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 
 - "He and Landon came out as scheduled for the installation and did a fantastic job." (2024-09-12; reviews.csv row 81)
 - "James & Landon have done it again !!" (2024-03-07; reviews.csv row 93)
@@ -130,16 +130,16 @@ Usage tier: keyword match only — an attributed example until the researcher ch
 - "Randall, and his son, Landon, provided exemplary service." (2023-02-05; reviews.csv row 112)
 - "Amazing job done by Randall and his son Landon" (2023-02-05; reviews.csv row 113)
 
-### named staff: Inc — 4 independent reviewer(s) · keyword match only (not yet checked by meaning)
-Usage tier: keyword match only — an attributed example until the researcher checks it by meaning
+### named staff: Inc — 4 independent reviewer(s) · checked by meaning 2026-10-26
+Usage tier: attributed customer example only — no company claim
 
 - "First Choice Seamless Gutters Inc." (2026-03-28; reviews.csv row 16)
 - "Highly recommend First Choice Seamless Gutters Inc." (2026-02-10; reviews.csv row 28)
 - "I strongly recommend First Choice Seamless Gutters Inc." (2024-05-29; reviews.csv row 90)
 - "Having completed more than a few jobs for my company, Danny Sadler, Inc." (2023-03-03; reviews.csv row 109)
 
-### named staff: Randall — 3 independent reviewer(s) · keyword match only (not yet checked by meaning)
-Usage tier: keyword match only — an attributed example until the researcher checks it by meaning
+### named staff: Randall — 3 independent reviewer(s) · checked by meaning 2026-10-26
+Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 
 - "Randall does a great job and is very professional" (2023-07-18; reviews.csv row 101)
 - "Randall was contracted to replace our front gutters, as well as add gutters alongside our house." (2023-02-05; reviews.csv row 112)
@@ -181,7 +181,7 @@ _None for this page — its scope and process come from the client, or stay a `[
 
 ## Settled decisions touching this page
 
-_None._
+- 2026-10-26 · `fact:locations-west:neighborhoods_worked` — Worked in pretty much every subdivision of the listed cities; no individual neighbourhood names given.
 
 ## Gaps — the only things research looks for
 

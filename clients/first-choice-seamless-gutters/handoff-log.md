@@ -811,3 +811,22 @@ Paul forwarded the owner's answers to the locations-west facts questions (email,
 Settled: HOA approval standard (yes); historic-home practice (yes, detailed); neighbourhoods broad (no names); permit: assists with permits, who pulls it not stated.
 Open: permit responsibility per town; named HOA communities; named historic districts and neighbourhoods.
 
+## /build · 2026-10-26 · run 20261026-120219-build-bc47
+
+- Evidence gate: 6 PASS (Winter Haven, Auburndale, Bartow, Polk City, Kathleen, Highland City), 3 WARN (Mulberry, Eagle Lake, Wahneta), 0 blocked.
+- Review meaning check (no API key → researcher, reviews.py checked): response_time 56, explains 41, clean-up 12, James 26, Adrian 8, Landon 5, Randall 3, Inc 0. Packs rebuilt (evidence_pack.py build). outline.py faq: no API key, writers used the plan's FAQ picks.
+- Outlines: 9 by outline.py (build/locations-west/outlines/).
+- Drafts: 9 fresh draft-writer agents (Opus), one per page, each recorded with page-stage --agent. Results in build/locations-west/results/.
+- Review: one checker pass → drafts-review.csv/.md (copied to Drive "02 - Build" as "locations-west drafts-review.md"): 0 Ask, 26 decided for you, 86 fixed silently (82 of them similarity LOC-31 rewordings).
+- Decided for you (defaults applied, review.py apply): writer values kept (9); "who pulls the permit" NEED cut on all 9 (settled answer: "we assist with building permits"); older-home sentence cut on Kathleen, Mulberry, Wahneta (swap test); public-gap NEEDs cut on Mulberry and Wahneta; Mulberry permit-page NEEDs cut; Kathleen Neighbourhoods H2 dropped (Fox Branch is only planned); Highland City FAQ 3 reworded without "oaks".
+- Apply: 9 fresh agents, one per page; every page recorded again; batch locations-west → drafts_written.
+- Placeholders left: 18 NEEDs — 9 city map embeds, travel/response time (Winter Haven, Auburndale, Kathleen, Mulberry, Wahneta, Polk City storm FAQ), Winter Haven lake-discharge rule, Auburndale Lakes District colour rule, Kathleen outbuilding gutters. Link tables stay wheel rows.
+- Flags: F-021 (meaning checks lost from facts.json R rows), F-022 (pack truncates long page facts), F-023 (LOC-31 flags confirmed boilerplate).
+- Not done here: the Brand Guide write-back (its own step, as for services), approval, ship.
+- Next: /build first-choice-seamless-gutters writeback locations-west, then /approve first-choice-seamless-gutters batch:locations-west:drafts.
+
+**Changes (script):** 1 — drive_file ×1
+- FLAG 2026-10-26T12:15 · run 20261026-120219-build-bc47 · F-021 · Review meaning checks recorded at run c2ee (reviews.py checked → facts.json R rows meaning_checked) were gone by this run: every R r…
+- FLAG 2026-10-26T12:15 · run 20261026-120219-build-bc47 · F-022 · evidence_pack.py cuts long page-fact values (local_context, neighborhoods, place_entities, permit_office) mid-sentence in packs/<pag…
+- FLAG 2026-10-26T12:15 · run 20261026-120219-build-bc47 · F-023 · similarity.py (LOC-31) raised 82 silent sentence fixes across 9 location drafts, most of them the client's confirmed boilerplate (gu…
+
