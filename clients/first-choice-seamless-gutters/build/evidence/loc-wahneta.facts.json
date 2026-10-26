@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "Wahneta is an unincorporated census-designated place in central Polk County (2020 census: 4,409), ZIP 33880, elevation 131 ft. NWS Tampa Bay: the West Central Florida rainy (thunderstorm) season runs May 25 to October 10; late May through June, hail, damaging winds, waterspouts, heavy rainfall and frequent lightning are common (https://www.weather.gov/tbw/rainyseason). Nearby Lake Gwyn Park was a dry lakebed after a Depression-era drainage canal and has been restored as a wetland that sends clean water to the Peace River (Polk County parks page). No official housing-age figure found.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Wahneta,_Florida ; https://www.polkfl.gov/es/park/lake-gwyn-park/ ; https://www.weather.gov/tbw/rainyseason, read 2026-10-26"
+    },
+    "neighborhoods": {
+      "value": "not found",
+      "status": "Needs Review",
+      "source": "searched: Wikipedia Wahneta, Florida; polkfl.gov; web (one real-estate page names Wahneta Farms, a rural plat, but it is a sales page: https://movewithmomentum.com/neighborhoods/wahneta-farms-winter-haven), read 2026-10-26"
+    },
+    "place_entities": {
+      "value": "1) Wahneta Park, 118 Rifle Range Road, Wahneta 33880 (Polk County park; ball fields, basketball and tennis courts, playground). 2) Lake Gwyn Park (Polk County park near Wahneta, restored wetland, bird watching). Only two found; no Wikipedia/Wikidata entries for either. Place Wikidata: Wahneta Q1940053.",
+      "status": "Needs Review",
+      "source": "https://www.polkfl.gov/park/wahneta-park/ ; https://www.polkfl.gov/es/park/lake-gwyn-park/ ; https://en.wikipedia.org/wiki/Wahneta,_Florida, read 2026-10-26"
+    },
+    "permit_office": {
+      "value": "Polk County Building Division (Wahneta is unincorporated). County Administration Building, 330 W. Church St., Bartow; (863) 534-6080; online via the Polk County Access Portal.",
+      "status": "Internally Verified",
+      "source": "https://www.polkfl.gov/services/building, read 2026-10-26"
+    },
+    "city_served": {
+      "value": "Wahneta is served: the client confirmed all 20 Polk County places on the proof sheet, Wahneta among them; no town excluded.",
+      "status": "Client Confirmed",
+      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded) - facts.json towns-served-client"
+    }
+  }
+}

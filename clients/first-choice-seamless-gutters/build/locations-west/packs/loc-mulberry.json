@@ -3,7 +3,7 @@
  "type": "location",
  "url": "https://www.firstchoiceseamlessgutters.net/mulberry-fl/",
  "section": "locations-west",
- "built": "2026-10-24T20:29:11-05:00",
+ "built": "2026-10-26T11:46:56-05:00",
  "services": [],
  "places": [
   "Mulberry"
@@ -100,10 +100,10 @@
   {
    "id": "d-founding-year-years-in-business",
    "label": "Founding year / years in business",
-   "status": "client_confirmed",
-   "value": "In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: [NEED: founding year]",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_5 / claim_5_detail)",
-   "state": "confirmed"
+   "status": "unknown",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: set fully Unknown until the client returns the answer (asked on returned proof sheet claim_5)",
+   "state": "unknown"
   },
   {
    "id": "d-legal-entity-dba",
@@ -125,8 +125,8 @@
    "id": "d-insurance-bonded-status",
    "label": "Insurance / bonded status",
    "status": "client_confirmed",
-   "value": "Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate: [NEED: certificate of insurance — not sent]",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_3)",
+   "value": "Insured (confirmed by Paul from a Google review, 2026-10-25). Certificate of insurance: not on file.",
+   "source": "Google review, confirmed by Paul 2026-10-25",
    "state": "confirmed"
   },
   {
@@ -149,8 +149,8 @@
    "id": "d-warranty-terms",
    "label": "Warranty terms",
    "status": "client_confirmed",
-   "value": "10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Written terms not on file: [NEED: copy of the written warranty]",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_4); owner review response in data/re",
+   "value": "10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google review, 2026-10-25). Written copy: not on file.",
+   "source": "Google review, confirmed by Paul 2026-10-25",
    "state": "confirmed"
   },
   {
@@ -189,8 +189,8 @@
    "id": "d-financing-available-provider-terms",
    "label": "Financing — available, provider, terms",
    "status": "unknown",
-   "value": "[NEED: financing — none found on site, GBP or BBB; client wrote 'answers follow']",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_3: 'answers follow')",
    "state": "unknown"
   },
   {
@@ -204,41 +204,41 @@
   {
    "id": "d-emergency-after-hours-reality",
    "label": "Emergency / after-hours reality",
-   "status": "submitted",
-   "value": "Site: 'Available 7 Days a Week'; GBP hours 7 AM–8 PM Mon–Sun; no emergency claim found",
-   "source": "GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-1",
-   "state": "unknown"
+   "status": "client_confirmed",
+   "value": "Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct.",
+   "source": "Client answer via Paul 2026-10-24 (interviews/facts/First Choice Seamless Gutters - Facts Answers - pilot - 2026-10-24.md)",
+   "state": "confirmed"
   },
   {
    "id": "d-minimum-service-call-or-trip-charge",
    "label": "Minimum service call or trip charge",
    "status": "unknown",
-   "value": "[NEED: minimum or trip charge — client wrote 'answers follow']",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_0: 'answers follow')",
    "state": "unknown"
   },
   {
    "id": "d-payment-methods",
    "label": "Payment methods",
    "status": "unknown",
-   "value": "[NEED: payment methods — client wrote 'answers follow']",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_2: 'answers follow')",
    "state": "unknown"
   },
   {
    "id": "d-services-subcontracted-out",
    "label": "Services subcontracted out",
    "status": "unknown",
-   "value": "[NEED: subcontracting — client answered 'n/a'; confirm it means nothing is subcontracted]",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_4: client wrote 'n/a', not int",
    "state": "unknown"
   },
   {
    "id": "d-named-staff-for-on-page-use",
    "label": "Named staff for on-page use",
    "status": "client_confirmed",
-   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow']",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2; question_5)",
+   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Other staff roles: see row 'Roles of April, Matt, Isaac, James'.",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2); staff roles split ",
    "state": "confirmed"
   },
   {
@@ -351,6 +351,62 @@
    "status": "paul_approved",
    "value": "Not a standalone service. Its maintenance scope is folded into the Gutter Repair and Gutter Cleaning pages; no /services/gutter-maintenance/ page. The old URL is redirected (never deleted) to the closer of the two.",
    "source": "Paul, 2026-10-24 (settled audit_gutter_maintenance, F-014)",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-staff-roles",
+   "label": "Roles of April, Matt, Isaac, James",
+   "status": "unknown",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: set fully Unknown until the client returns them (returned proof sheet question_5)",
+   "state": "unknown"
+  },
+  {
+   "id": "d-travel-fee",
+   "label": "Travel fee",
+   "status": "unknown",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: set fully Unknown until the client returns it (returned proof sheet towns_excluded / question_0)",
+   "state": "unknown"
+  },
+  {
+   "id": "page:local_context",
+   "label": "local context",
+   "status": "Internally Verified",
+   "value": "Mulberry has a humid subtropical climate (Koppen Cfa); elevation 112 ft. NWS Tampa Bay: the West Central Florida rainy (thunderstorm) season runs May 25 to October 10; late May through June, hail, damaging winds, waterspouts, heavy rainfall and frequent lightn",
+   "source": "https://en.wikipedia.org/wiki/Mulberry,_Florida ; https://www.weather.gov/tbw/rainyseason, read 2026-10-26",
+   "state": "sourced public"
+  },
+  {
+   "id": "page:neighborhoods",
+   "label": "neighborhoods",
+   "status": "Needs Review",
+   "value": "PARTIAL, listing-site sources only (no official list found): Belmont Woods (manufactured-home community), Turner Oaks (subdivision off Hwy 60), Bradley Junction (community). Fewer than 3 confirmed by an official source.",
+   "source": "https://www.homesbymarco.com/subdivisions/belmont-woods-in-mulberry-fl ; https://evemetlis.realgeeks.com/property/P4939145/, read 2026-10-26",
+   "state": "unknown"
+  },
+  {
+   "id": "page:place_entities",
+   "label": "place entities",
+   "status": "Internally Verified",
+   "value": "1) Mulberry Phosphate Museum (in the city's original railroad depot, est. 1986) - https://en.wikipedia.org/wiki/Mulberry_Phosphate_Museum - Wikidata Q16935287. 2) Alafia River Reserve (334-acre reserve) - Wikidata Q4705554 (Wikipedia: Alafia River Reserve, not",
+   "source": "https://en.wikipedia.org/wiki/Mulberry,_Florida ; https://en.wikipedia.org/wiki/Mulberry_Phosphate_Museum ; https://www.wikidata.org/wiki/Q4705554, read 2026-10",
+   "state": "sourced public"
+  },
+  {
+   "id": "page:permit_office",
+   "label": "permit office",
+   "status": "Needs Review",
+   "value": "City of Mulberry Building Department, City Hall, 104 S Church Ave, Mulberry FL 33860, (863) 425-1125. Page: https://www.cityofmulberryfl.org/building-department . PARTIAL: address, phone and page URL come from third-party directories; the city site returned HT",
+   "source": "https://www.cityofmulberryfl.org/building-department (unread, 403); https://permitsaige.com/directory/fl/mulberry-fl, read 2026-10-26",
+   "state": "unknown"
+  },
+  {
+   "id": "page:city_served",
+   "label": "city served",
+   "status": "Client Confirmed",
+   "value": "Mulberry is served: the client confirmed all 20 Polk County places on the proof sheet, Mulberry among them; no town excluded.",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded",
    "state": "confirmed"
   }
  ],
@@ -647,35 +703,64 @@
   }
  ],
  "public": [],
- "research": [],
- "place": [],
- "settled": [],
- "gaps": [
+ "research": [
   {
-   "key": "local_context",
-   "label": "City-specific conditions (housing stock, terrain, weather, failure patterns)",
-   "need": "required",
-   "from": "page:local_context",
+   "id": "RL-locations-west-13",
+   "page": "loc-mulberry",
+   "gap": "fact:loc-mulberry:local_context",
    "kind": "public",
-   "fact_key": "fact:loc-mulberry:local_context"
+   "queries": "Mulberry Florida Wikipedia climate history || NWS Tampa Bay rainy season west central Florida || Mulberry FL cityofmulberryfl.org housing climate",
+   "sources_tried": "methodology/places/ || Wikipedia: Mulberry, Florida || https://www.weather.gov/tbw/rainyseason",
+   "result": "found",
+   "excerpt": "NWS: rainy season May 25 to October 10",
+   "url": "https://www.weather.gov/tbw/rainyseason",
+   "date": "2026-10-26",
+   "run": "20261026-113830-build-374a"
   },
   {
-   "key": "place_entities",
-   "label": "3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections)",
-   "need": "supporting",
-   "from": "page:place_entities",
+   "id": "RL-locations-west-17",
+   "page": "loc-mulberry",
+   "gap": "fact:loc-mulberry:neighborhoods",
    "kind": "public",
-   "fact_key": "fact:loc-mulberry:place_entities"
+   "queries": "Mulberry Florida neighborhoods subdivisions Cultural Center Phosphate Museum || Mulberry FL subdivision names Polk County || City of Mulberry cityofmulberryfl.org subdivisions",
+   "sources_tried": "methodology/places/ || Wikipedia: Mulberry, Florida || https://www.cityofmulberryfl.org/building-department",
+   "result": "partial",
+   "excerpt": "Belmont Woods; Turner Oaks; Bradley Junction (listing sites)",
+   "url": "https://www.homesbymarco.com/subdivisions/belmont-woods-in-mulberry-fl",
+   "date": "2026-10-26",
+   "run": "20261026-113830-build-374a"
   },
   {
-   "key": "permit_office",
-   "label": "Which office issues permits here, with its official page (for the Serving section)",
-   "need": "supporting",
-   "from": "page:permit_office",
+   "id": "RL-locations-west-30",
+   "page": "loc-mulberry",
+   "gap": "fact:loc-mulberry:place_entities",
    "kind": "public",
-   "fact_key": "fact:loc-mulberry:permit_office"
+   "queries": "Mulberry Florida Wikipedia || Mulberry Phosphate Museum || Alafia River Reserve Wikidata",
+   "sources_tried": "methodology/places/ || Wikipedia: Mulberry, Florida || https://en.wikipedia.org/wiki/Mulberry_Phosphate_Museum || https://www.wikidata.org/wiki/Q4705554",
+   "result": "found",
+   "excerpt": "Mulberry Phosphate Museum Q16935287; Alafia River Reserve Q4705554; Mulberry Murals Initiative; Mulberry Cultural Center",
+   "url": "https://en.wikipedia.org/wiki/Mulberry,_Florida",
+   "date": "2026-10-26",
+   "run": "20261026-113830-build-374a"
+  },
+  {
+   "id": "RL-locations-west-31",
+   "page": "loc-mulberry",
+   "gap": "fact:loc-mulberry:permit_office",
+   "kind": "public",
+   "queries": "City of Mulberry FL building department permits || cityofmulberryfl.org building department || Mulberry FL building permit office address phone",
+   "sources_tried": "methodology/places/ || https://www.cityofmulberryfl.org/building-department (403) || https://permitsaige.com/directory/fl/mulberry-fl || Wikipedia: Mulberry, Florida",
+   "result": "partial",
+   "excerpt": "City of Mulberry Building Department, 104 S Church Ave, (863) 425-1125; city page 403, address from directory",
+   "url": "https://www.cityofmulberryfl.org/building-department",
+   "date": "2026-10-26",
+   "run": "20261026-113830-build-374a"
   }
  ],
+ "place": [],
+ "settled": [],
+ "gaps": [],
+ "standard": {},
  "excerpts": [
   {
    "id": "R1",
@@ -977,6 +1062,34 @@
    "topic": "site/GBP",
    "tier": "site_stated",
    "text": "We also help homeowners in nearby communities like Dover, Lakeland , Mulberry , and Thonotosassa, while keeping Plant City as a primary focus across Polk County."
+  },
+  {
+   "id": "P44",
+   "kind": "public",
+   "topic": "fact:loc-mulberry:local_context",
+   "tier": "official",
+   "text": "NWS: rainy season May 25 to October 10"
+  },
+  {
+   "id": "P45",
+   "kind": "public",
+   "topic": "fact:loc-mulberry:neighborhoods",
+   "tier": "official",
+   "text": "Belmont Woods; Turner Oaks; Bradley Junction (listing sites)"
+  },
+  {
+   "id": "P46",
+   "kind": "public",
+   "topic": "fact:loc-mulberry:place_entities",
+   "tier": "official",
+   "text": "Mulberry Phosphate Museum Q16935287; Alafia River Reserve Q4705554; Mulberry Murals Initiative; Mulberry Cultural Center"
+  },
+  {
+   "id": "P47",
+   "kind": "public",
+   "topic": "fact:loc-mulberry:permit_office",
+   "tier": "official",
+   "text": "City of Mulberry Building Department, 104 S Church Ave, (863) 425-1125; city page 403, address from directory"
   }
  ],
  "known": [
@@ -1006,11 +1119,6 @@
    "value": "First Choice Seamless Gutters Inc. (BBB: Corporation, incorporated 11/24/2021) — Sunbiz record not read (403), Gwen manual_lookup"
   },
   {
-   "id": "d-founding-year-years-in-business",
-   "label": "Founding year / years in business",
-   "value": "In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: [NEED: founding year]"
-  },
-  {
    "id": "d-legal-entity-dba",
    "label": "Legal entity + DBA",
    "value": "First Choice Seamless Gutters Inc., a corporation (client confirmed); BBB primary name 'First Choice Seamless Gutters'; site also 'First Choice Seamless Gutter Inc' (typo, singular)"
@@ -1023,7 +1131,7 @@
   {
    "id": "d-insurance-bonded-status",
    "label": "Insurance / bonded status",
-   "value": "Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate: [NEED: certificate of insurance — not sent]"
+   "value": "Insured (confirmed by Paul from a Google review, 2026-10-25). Certificate of insurance: not on file."
   },
   {
    "id": "d-association-memberships",
@@ -1033,7 +1141,7 @@
   {
    "id": "d-warranty-terms",
    "label": "Warranty terms",
-   "value": "10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Written terms not on file: [NEED: copy of the written warranty]"
+   "value": "10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google review, 2026-10-25). Written copy: not on file."
   },
   {
    "id": "d-guarantees-response-time-on-time-satisfaction",
@@ -1056,9 +1164,14 @@
    "value": "Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees'"
   },
   {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "value": "Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct."
+  },
+  {
    "id": "d-named-staff-for-on-page-use",
    "label": "Named staff for on-page use",
-   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow']"
+   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Other staff roles: see row 'Roles of April, Matt, Isaac, James'."
   },
   {
    "id": "d-blog-author-a-real-person-cm-039-from-the-decision-sheet",
@@ -1114,6 +1227,21 @@
    "id": "gutter-maintenance-consolidated",
    "label": "Gutter Maintenance (standalone service)",
    "value": "Not a standalone service. Its maintenance scope is folded into the Gutter Repair and Gutter Cleaning pages; no /services/gutter-maintenance/ page. The old URL is redirected (never deleted) to the closer of the two."
+  },
+  {
+   "id": "page:local_context",
+   "label": "local context",
+   "value": "Mulberry has a humid subtropical climate (Koppen Cfa); elevation 112 ft. NWS Tampa Bay: the West Central Florida rainy (thunderstorm) season runs May 25 to October 10; late May through June, hail, damaging winds, waterspouts, heavy rainfall and frequent lightn"
+  },
+  {
+   "id": "page:place_entities",
+   "label": "place entities",
+   "value": "1) Mulberry Phosphate Museum (in the city's original railroad depot, est. 1986) - https://en.wikipedia.org/wiki/Mulberry_Phosphate_Museum - Wikidata Q16935287. 2) Alafia River Reserve (334-acre reserve) - Wikidata Q4705554 (Wikipedia: Alafia River Reserve, not"
+  },
+  {
+   "id": "page:city_served",
+   "label": "city served",
+   "value": "Mulberry is served: the client confirmed all 20 Polk County places on the proof sheet, Mulberry among them; no town excluded."
   }
  ]
 }

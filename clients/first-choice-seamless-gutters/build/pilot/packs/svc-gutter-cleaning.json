@@ -3,7 +3,7 @@
  "type": "service",
  "url": "https://www.firstchoiceseamlessgutters.net/gutter-cleaning/",
  "section": "pilot",
- "built": "2026-10-24T21:53:18-05:00",
+ "built": "2026-10-26T11:46:55-05:00",
  "services": [
   "Gutter Cleaning",
   "Gutter and Downspout Cleaning"
@@ -101,10 +101,10 @@
   {
    "id": "d-founding-year-years-in-business",
    "label": "Founding year / years in business",
-   "status": "client_confirmed",
-   "value": "In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: [NEED: founding year]",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_5 / claim_5_detail)",
-   "state": "confirmed"
+   "status": "unknown",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: set fully Unknown until the client returns the answer (asked on returned proof sheet claim_5)",
+   "state": "unknown"
   },
   {
    "id": "d-legal-entity-dba",
@@ -126,8 +126,8 @@
    "id": "d-insurance-bonded-status",
    "label": "Insurance / bonded status",
    "status": "client_confirmed",
-   "value": "Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate: [NEED: certificate of insurance — not sent]",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_3)",
+   "value": "Insured (confirmed by Paul from a Google review, 2026-10-25). Certificate of insurance: not on file.",
+   "source": "Google review, confirmed by Paul 2026-10-25",
    "state": "confirmed"
   },
   {
@@ -150,8 +150,8 @@
    "id": "d-warranty-terms",
    "label": "Warranty terms",
    "status": "client_confirmed",
-   "value": "10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Written terms not on file: [NEED: copy of the written warranty]",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_4); owner review response in data/re",
+   "value": "10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google review, 2026-10-25). Written copy: not on file.",
+   "source": "Google review, confirmed by Paul 2026-10-25",
    "state": "confirmed"
   },
   {
@@ -190,8 +190,8 @@
    "id": "d-financing-available-provider-terms",
    "label": "Financing — available, provider, terms",
    "status": "unknown",
-   "value": "[NEED: financing — none found on site, GBP or BBB; client wrote 'answers follow']",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_3: 'answers follow')",
    "state": "unknown"
   },
   {
@@ -214,32 +214,32 @@
    "id": "d-minimum-service-call-or-trip-charge",
    "label": "Minimum service call or trip charge",
    "status": "unknown",
-   "value": "[NEED: minimum or trip charge — client wrote 'answers follow']",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_0: 'answers follow')",
    "state": "unknown"
   },
   {
    "id": "d-payment-methods",
    "label": "Payment methods",
    "status": "unknown",
-   "value": "[NEED: payment methods — client wrote 'answers follow']",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_2: 'answers follow')",
    "state": "unknown"
   },
   {
    "id": "d-services-subcontracted-out",
    "label": "Services subcontracted out",
    "status": "unknown",
-   "value": "[NEED: subcontracting — client answered 'n/a'; confirm it means nothing is subcontracted]",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_4: client wrote 'n/a', not int",
    "state": "unknown"
   },
   {
    "id": "d-named-staff-for-on-page-use",
    "label": "Named staff for on-page use",
    "status": "client_confirmed",
-   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow']",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2; question_5)",
+   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Other staff roles: see row 'Roles of April, Matt, Isaac, James'.",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2); staff roles split ",
    "state": "confirmed"
   },
   {
@@ -345,6 +345,22 @@
    "value": "Not a standalone service. Its maintenance scope is folded into the Gutter Repair and Gutter Cleaning pages; no /services/gutter-maintenance/ page. The old URL is redirected (never deleted) to the closer of the two.",
    "source": "Paul, 2026-10-24 (settled audit_gutter_maintenance, F-014)",
    "state": "confirmed"
+  },
+  {
+   "id": "d-staff-roles",
+   "label": "Roles of April, Matt, Isaac, James",
+   "status": "unknown",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: set fully Unknown until the client returns them (returned proof sheet question_5)",
+   "state": "unknown"
+  },
+  {
+   "id": "d-travel-fee",
+   "label": "Travel fee",
+   "status": "unknown",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: set fully Unknown until the client returns it (returned proof sheet towns_excluded / question_0)",
+   "state": "unknown"
   }
  ],
  "reviews": {
@@ -423,9 +439,9 @@
      "row": "reviews.csv row 108"
     }
    ],
-   "tier": "known",
-   "checked": true,
-   "checked_at": "2026-10-24"
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
   },
   "practice: communication": {
    "reviewers": 23,
@@ -456,9 +472,9 @@
      "row": "reviews.csv row 30"
     }
    ],
-   "tier": "known",
-   "checked": true,
-   "checked_at": "2026-10-24"
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
   },
   "practice: speed": {
    "reviewers": 40,
@@ -489,9 +505,9 @@
      "row": "reviews.csv row 16"
     }
    ],
-   "tier": "known",
-   "checked": true,
-   "checked_at": "2026-10-24"
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
   },
   "named staff: Adrian": {
    "reviewers": 8,
@@ -522,9 +538,9 @@
      "row": "reviews.csv row 34"
     }
    ],
-   "tier": "known",
-   "checked": true,
-   "checked_at": "2026-10-24"
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
   },
   "named staff: Inc": {
    "reviewers": 4,
@@ -550,9 +566,9 @@
      "row": "reviews.csv row 109"
     }
    ],
-   "tier": "example",
-   "checked": true,
-   "checked_at": "2026-10-24"
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
   },
   "named staff: James": {
    "reviewers": 26,
@@ -583,9 +599,9 @@
      "row": "reviews.csv row 82"
     }
    ],
-   "tier": "known",
-   "checked": true,
-   "checked_at": "2026-10-24"
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
   },
   "named staff: Landon": {
    "reviewers": 5,
@@ -616,9 +632,9 @@
      "row": "reviews.csv row 113"
     }
    ],
-   "tier": "known",
-   "checked": true,
-   "checked_at": "2026-10-24"
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
   },
   "named staff: Randall": {
    "reviewers": 3,
@@ -639,9 +655,9 @@
      "row": "reviews.csv row 113"
     }
    ],
-   "tier": "known",
-   "checked": true,
-   "checked_at": "2026-10-24"
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
   }
  },
  "questions": [
@@ -806,6 +822,7 @@
    "fact_key": "fact:d:certifications"
   }
  ],
+ "standard": {},
  "excerpts": [
   {
    "id": "R1",
@@ -853,259 +870,259 @@
    "id": "R7",
    "kind": "review",
    "topic": "practice: clean-up",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Our gutters were installed within a couple days, fast, great team, cleaned up and the gutters look great!"
   },
   {
    "id": "R8",
    "kind": "review",
    "topic": "practice: clean-up",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "They are a pleasure to work with they were very curtius and went right to work after arriving cleaned up and completed in 2 hrs highly recommend"
   },
   {
    "id": "R9",
    "kind": "review",
    "topic": "practice: clean-up",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Job was done quickly and cleaned up after."
   },
   {
    "id": "R10",
    "kind": "review",
    "topic": "practice: clean-up",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "They cleaned up very well afterwards and the gutters look great!"
   },
   {
    "id": "R11",
    "kind": "review",
    "topic": "practice: clean-up",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "They did excellent work on the gutters with leaf guards and cleaning up."
   },
   {
    "id": "R12",
    "kind": "review",
    "topic": "practice: communication",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Shows up on time, great communication, great work and fair pricing."
   },
   {
    "id": "R13",
    "kind": "review",
    "topic": "practice: communication",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Her communication was great, she provided a lot of insight on what looked the best, and provided thorough info."
   },
   {
    "id": "R14",
    "kind": "review",
    "topic": "practice: communication",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "They were quick to come out, easy to communicate with, and once my HOA approval came through, they wasted no time getting the installation scheduled and completed."
   },
   {
    "id": "R15",
    "kind": "review",
    "topic": "practice: communication",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Communication was clear, they responded quickly, and everything was handled in a professional and friendly manner."
   },
   {
    "id": "R16",
    "kind": "review",
    "topic": "practice: communication",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Very responsive and communicative."
   },
   {
    "id": "R17",
    "kind": "review",
    "topic": "practice: speed",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Came quickly after being called and everyone is very friendly!"
   },
   {
    "id": "R18",
    "kind": "review",
    "topic": "practice: speed",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Shows up on time, great communication, great work and fair pricing."
   },
   {
    "id": "R19",
    "kind": "review",
    "topic": "practice: speed",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "On time great job!!!"
   },
   {
    "id": "R20",
    "kind": "review",
    "topic": "practice: speed",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "The team was professional, on time, and did an amazing job with our gutters."
   },
   {
    "id": "R21",
    "kind": "review",
    "topic": "practice: speed",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "They were quick to come out, easy to communicate with, and once my HOA approval came through, they wasted no time getting the installation scheduled and completed."
   },
   {
    "id": "R22",
    "kind": "review",
    "topic": "named staff: Adrian",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Many that’s to Adrian and his crew for their amazing service."
   },
   {
    "id": "R23",
    "kind": "review",
    "topic": "named staff: Adrian",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Adrian was easy to work with and professional at all times."
   },
   {
    "id": "R24",
    "kind": "review",
    "topic": "named staff: Adrian",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Adrian came right out, provided great options and a great price!"
   },
   {
    "id": "R25",
    "kind": "review",
    "topic": "named staff: Adrian",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Adrian responded quickly."
   },
   {
    "id": "R26",
    "kind": "review",
    "topic": "named staff: Adrian",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Adrian was friendly, professional and very helpful."
   },
   {
    "id": "R27",
    "kind": "review",
    "topic": "named staff: Inc",
-   "tier": "example",
+   "tier": "unchecked",
    "text": "First Choice Seamless Gutters Inc."
   },
   {
    "id": "R28",
    "kind": "review",
    "topic": "named staff: Inc",
-   "tier": "example",
+   "tier": "unchecked",
    "text": "Highly recommend First Choice Seamless Gutters Inc."
   },
   {
    "id": "R29",
    "kind": "review",
    "topic": "named staff: Inc",
-   "tier": "example",
+   "tier": "unchecked",
    "text": "I strongly recommend First Choice Seamless Gutters Inc."
   },
   {
    "id": "R30",
    "kind": "review",
    "topic": "named staff: Inc",
-   "tier": "example",
+   "tier": "unchecked",
    "text": "Having completed more than a few jobs for my company, Danny Sadler, Inc."
   },
   {
    "id": "R31",
    "kind": "review",
    "topic": "named staff: James",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "James and his son are the sole owners and workers in this business and do high quality work as well as offer many different options to customize your gutters and downspouts."
   },
   {
    "id": "R32",
    "kind": "review",
    "topic": "named staff: James",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "James and his son did our gutters today and they did an awesome job, we couldn't be happier."
   },
   {
    "id": "R33",
    "kind": "review",
    "topic": "named staff: James",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "James and his son did a fantastic job putting in a new gutter and downspouts."
   },
   {
    "id": "R34",
    "kind": "review",
    "topic": "named staff: James",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "James was very communicative and professional during the quote and scheduling process."
   },
   {
    "id": "R35",
    "kind": "review",
    "topic": "named staff: James",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "James and his son did an extraordinary and a beautiful job."
   },
   {
    "id": "R36",
    "kind": "review",
    "topic": "named staff: Landon",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "He and Landon came out as scheduled for the installation and did a fantastic job."
   },
   {
    "id": "R37",
    "kind": "review",
    "topic": "named staff: Landon",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "James & Landon have done it again !!"
   },
   {
    "id": "R38",
    "kind": "review",
    "topic": "named staff: Landon",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "I ABSOLUTELY recommend James and Landon for your gutter needs."
   },
   {
    "id": "R39",
    "kind": "review",
    "topic": "named staff: Landon",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Randall, and his son, Landon, provided exemplary service."
   },
   {
    "id": "R40",
    "kind": "review",
    "topic": "named staff: Landon",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Amazing job done by Randall and his son Landon"
   },
   {
    "id": "R41",
    "kind": "review",
    "topic": "named staff: Randall",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Randall does a great job and is very professional"
   },
   {
    "id": "R42",
    "kind": "review",
    "topic": "named staff: Randall",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Randall was contracted to replace our front gutters, as well as add gutters alongside our house."
   },
   {
    "id": "R43",
    "kind": "review",
    "topic": "named staff: Randall",
-   "tier": "known",
+   "tier": "unchecked",
    "text": "Amazing job done by Randall and his son Landon"
   },
   {
@@ -1220,11 +1237,6 @@
    "value": "First Choice Seamless Gutters Inc. (BBB: Corporation, incorporated 11/24/2021) — Sunbiz record not read (403), Gwen manual_lookup"
   },
   {
-   "id": "d-founding-year-years-in-business",
-   "label": "Founding year / years in business",
-   "value": "In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: [NEED: founding year]"
-  },
-  {
    "id": "d-legal-entity-dba",
    "label": "Legal entity + DBA",
    "value": "First Choice Seamless Gutters Inc., a corporation (client confirmed); BBB primary name 'First Choice Seamless Gutters'; site also 'First Choice Seamless Gutter Inc' (typo, singular)"
@@ -1237,7 +1249,7 @@
   {
    "id": "d-insurance-bonded-status",
    "label": "Insurance / bonded status",
-   "value": "Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate: [NEED: certificate of insurance — not sent]"
+   "value": "Insured (confirmed by Paul from a Google review, 2026-10-25). Certificate of insurance: not on file."
   },
   {
    "id": "d-association-memberships",
@@ -1247,7 +1259,7 @@
   {
    "id": "d-warranty-terms",
    "label": "Warranty terms",
-   "value": "10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Written terms not on file: [NEED: copy of the written warranty]"
+   "value": "10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google review, 2026-10-25). Written copy: not on file."
   },
   {
    "id": "d-guarantees-response-time-on-time-satisfaction",
@@ -1277,7 +1289,7 @@
   {
    "id": "d-named-staff-for-on-page-use",
    "label": "Named staff for on-page use",
-   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow']"
+   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Other staff roles: see row 'Roles of April, Matt, Isaac, James'."
   },
   {
    "id": "d-blog-author-a-real-person-cm-039-from-the-decision-sheet",
@@ -1328,41 +1340,6 @@
    "id": "gutter-maintenance-consolidated",
    "label": "Gutter Maintenance (standalone service)",
    "value": "Not a standalone service. Its maintenance scope is folded into the Gutter Repair and Gutter Cleaning pages; no /services/gutter-maintenance/ page. The old URL is redirected (never deleted) to the closer of the two."
-  },
-  {
-   "id": "practice: clean-up",
-   "label": "practice: clean-up",
-   "value": "Our gutters were installed within a couple days, fast, great team, cleaned up and the gutters look great!"
-  },
-  {
-   "id": "practice: communication",
-   "label": "practice: communication",
-   "value": "Shows up on time, great communication, great work and fair pricing."
-  },
-  {
-   "id": "practice: speed",
-   "label": "practice: speed",
-   "value": "Came quickly after being called and everyone is very friendly!"
-  },
-  {
-   "id": "named staff: Adrian",
-   "label": "named staff: Adrian",
-   "value": "Many that’s to Adrian and his crew for their amazing service."
-  },
-  {
-   "id": "named staff: James",
-   "label": "named staff: James",
-   "value": "James and his son are the sole owners and workers in this business and do high quality work as well as offer many different options to customize your gutters and downspouts."
-  },
-  {
-   "id": "named staff: Landon",
-   "label": "named staff: Landon",
-   "value": "He and Landon came out as scheduled for the installation and did a fantastic job."
-  },
-  {
-   "id": "named staff: Randall",
-   "label": "named staff: Randall",
-   "value": "Randall does a great job and is very professional"
   }
  ]
 }

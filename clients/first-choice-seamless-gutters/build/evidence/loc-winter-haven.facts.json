@@ -1,0 +1,50 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "Winter Haven (Wikipedia): average rainfall 46.12 in/yr; June-September averages 26.63 in, more than half the annual total; terrain 'flatland interspersed with gently rolling hills'; fifty lakes within city borders, most sinkhole 'solution lakes'; headwaters of the Peace River; four historic districts (Interlaken, Pope Avenue, Winter Haven Heights, downtown), with Interlaken homes mostly 1910s-1920s Colonial Revival (Wikipedia/NPS); 2020 Census: 21,902 housing units. NWS Tampa Bay: West Central Florida rainy season runs May 25 to October 10, with frequent thunderstorms, lightning, damaging winds and heavy rainfall.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Winter_Haven,_Florida, read 2026-10-26; https://www.weather.gov/tbw/rainyseason, read 2026-10-26; https://en.wikipedia.org/wiki/Interlaken_Historic_Residential_District, read 2026-10-26"
+    },
+    "neighborhoods": {
+      "value": "Interlaken Historic Residential District (NRHP 2002); Winter Haven Heights Historic Residential District (NRHP 2000); Pope Avenue Historic District (NRHP 2001); Downtown Winter Haven Historic District (NRHP 2002). Only 4 named historic districts found; no official city neighborhood list found.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Winter_Haven,_Florida, read 2026-10-26; https://en.wikipedia.org/wiki/Interlaken_Historic_Residential_District, read 2026-10-26; https://en.wikipedia.org/wiki/Pope_Avenue_Historic_District, read 2026-10-26; https://en.wikipedia.org/wiki/Winter_Haven_Heights_Historic_Residential_District, read 2026-10-26"
+    },
+    "place_entities": {
+      "value": [
+        {
+          "name": "Legoland Florida",
+          "wikipedia": "https://en.wikipedia.org/wiki/Legoland_Florida",
+          "wikidata": "Q646122"
+        },
+        {
+          "name": "Polk State College",
+          "wikipedia": "https://en.wikipedia.org/wiki/Polk_State_College",
+          "wikidata": "Q7225469"
+        },
+        {
+          "name": "Lake Howard",
+          "wikipedia": "https://en.wikipedia.org/wiki/Lake_Howard_(Winter_Haven,_Florida)",
+          "wikidata": "Q14686051"
+        },
+        {
+          "name": "Interlaken Historic Residential District",
+          "wikipedia": "https://en.wikipedia.org/wiki/Interlaken_Historic_Residential_District",
+          "wikidata": "Q6046862"
+        }
+      ],
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Winter_Haven,_Florida, read 2026-10-26; Wikidata ids via Wikipedia API pageprops, read 2026-10-26"
+    },
+    "permit_office": {
+      "value": "City of Winter Haven Building & Permitting Division, 490 Third Street NW, Winter Haven, FL 33881, 863-291-5695; applications via the city's Accela Citizen Access portal; page lists a Re-Roof Affidavit form. Page does not say whether gutter-only work needs a permit.",
+      "status": "Internally Verified",
+      "source": "https://mywinterhaven.com/473/Building-Permits-Licenses, read 2026-10-26"
+    },
+    "city_served": {
+      "value": "Winter Haven is served: the client confirmed all 20 Polk County places on the proof sheet, Winter Haven among them; no town excluded.",
+      "status": "Client Confirmed",
+      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded) - facts.json towns-served-client"
+    }
+  }
+}

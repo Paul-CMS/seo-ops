@@ -779,3 +779,29 @@ These new claims are Paul's words, not yet in facts.json or confirmed by the cli
 - No facts changed, no decisions settled, no Brand Guide edits.
 - Open: the blocked pages still need the researcher pass before the evidence gate can clear; facts-answers is not needed for this batch unless the research leaves a gap.
 
+## /build · 2026-10-26 · run 20261026-113830-build-374a
+
+- Grids: evidence.py run (9 pages BLOCK at start: local context, neighbourhoods, city served not Known).
+- reviews.py extract: 18 topics, 12 with 3+ reviewers.
+- Researcher (Sonnet) x3 in parallel, 36 research-log rows (RL-locations-west-1..36), facts files build/evidence/loc-*.facts.json:
+  local context (NWS Tampa Bay rainy season, Wikipedia terrain/history), neighbourhoods, place entities (Wikidata Q-ids), permit office.
+- City served: recorded from the returned proof sheet (all 20 places confirmed), status Client Confirmed — not asked.
+- Grids after research: 6 PASS (winter-haven, auburndale, bartow, polk-city, kathleen, highland-city), 3 WARN
+  (mulberry: neighbourhoods + permit page partial; eagle-lake: neighbourhoods partial; wahneta: neighbourhoods not found,
+  2 place entities only). 0 BLOCK.
+- evidence.py questions: "no page is blocked" (writes nothing). Owner-only facts written by hand as 4 client questions:
+  build/locations-west/questions.json → settled.py filter kept 4/4 → questions.py check passed → REVIEW file
+  interviews/facts/First Choice Seamless Gutters - Facts Interview - locations-west - 2026-10-26 - REVIEW.md (4 questions verified).
+- Open questions logged (--ask): fact:locations-west:permit_handling, :hoa_approval, :historic_homes, :neighborhoods_worked.
+- Flags: F-018 (research-log lost 7 rows under parallel writes; re-logged), F-019 (questions step writes no set without a
+  block), F-020 (suggest a Florida/Polk source list).
+- Caveats for the writer: some neighbourhoods are from listing sites only (polk-city, kathleen, highland-city, mulberry,
+  eagle-lake); Mulberry and Polk City city sites returned 403 (address/phone from directories/search excerpts);
+  Auburndale neighbourhoods seen in agenda snippets only; no Census median year built found anywhere.
+- Next: Paul sends the 4 questions; pages may also be written now (no block) — /build first-choice-seamless-gutters write locations-west.
+
+- FLAG 2026-10-26T11:38 · run 20261026-113830-build-374a · F-017 · Facts interview review files for locations-west and locations-east (interviews/facts/*REVIEW.md, 2026-10-26) contain no question tex…
+- FLAG 2026-10-26T11:46 · run 20261026-113830-build-374a · F-018 · Parallel researchers writing research.py log at once lost 7 rows of build/locations-west/research-log.csv (mulberry/eagle-lake place…
+- FLAG 2026-10-26T11:46 · run 20261026-113830-build-374a · F-019 · evidence.py questions writes nothing when no page blocks, so owner-only Serving-section facts (permit handling, HOA approval, neighb…
+- FLAG 2026-10-26T11:46 · run 20261026-113830-build-374a · F-020 · No Florida area source list: suggest methodology/sources/fl-polk.md with Polk County Building Division https://www.polkfl.gov/servic…
+

@@ -1954,3 +1954,143 @@ Reason (Paul): Paul: pilot pages already approved 2026-10-24; aborting the open 
 - CHANGE #454 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26 (5).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 150eda1a0998 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #455 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26 (5).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26 (5).md | result: done · renamed and moved, nothing deleted
 - CHANGE #456 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (5).md | new: First Choice Seamless Gutters - Status.md · sha 55231116eaa4 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261026-113830-build-374a · STARTED · /build · 2026-10-26T11:38:30-05:00
+Step: build:facts · batch locations-west · session 6de7e354-6b90-4e32-9c41-127810225da6
+Gates checked: discovery_signed_off, site_plan, page_specs_approved
+- FLAG 2026-10-26T11:38 · run 20261026-113830-build-374a · F-017 · Facts interview review files for locations-west and locations-east (interviews/facts/*REVIEW.md, 2026-10-26) contain no question text, only system notes. Paul could not see the questions to answer, and Claude wrongly said nothing was answerable. Fix: the facts step must write each owner-facing question into the review file. Also: run.py start let a write run start on an already-approved batch (pilot), F-016. · workaround: Paul gives facts directly via run.py fact; drafts wait until the question text is in the file
+- EVIDENCE 2026-10-26T11:39 · run 20261026-113830-build-374a · loc-winter-haven: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:39 · run 20261026-113830-build-374a · loc-auburndale: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:39 · run 20261026-113830-build-374a · loc-bartow: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:39 · run 20261026-113830-build-374a · loc-polk-city: BLOCK (known 5, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T11:39 · run 20261026-113830-build-374a · loc-kathleen: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:39 · run 20261026-113830-build-374a · loc-highland-city: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:39 · run 20261026-113830-build-374a · loc-mulberry: BLOCK (known 5, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T11:39 · run 20261026-113830-build-374a · loc-eagle-lake: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:39 · run 20261026-113830-build-374a · loc-wahneta: BLOCK (known 5, unknown 3, unverified 2, conflict 0)
+- REVIEW FACTS 2026-10-26T11:39 · run 20261026-113830-build-374a · 18 fact(s)/topic(s) found in reviews, 12 with 3+ different reviewers (customer_reported, CM-057) · data/reviews/review-facts.json
+- RESEARCH 2026-10-26T11:42 · run 20261026-113830-build-374a · RL-locations-west-1 · fact:loc-polk-city:local_context (public): found
+- RESEARCH 2026-10-26T11:42 · run 20261026-113830-build-374a · RL-locations-west-2 · fact:loc-polk-city:place_entities (public): found
+- RESEARCH 2026-10-26T11:42 · run 20261026-113830-build-374a · RL-locations-west-3 · fact:loc-polk-city:permit_office (public): found
+- RESEARCH 2026-10-26T11:42 · run 20261026-113830-build-374a · RL-locations-west-4 · fact:loc-polk-city:neighborhoods (public): partial
+- RESEARCH 2026-10-26T11:42 · run 20261026-113830-build-374a · RL-locations-west-5 · fact:loc-kathleen:local_context (public): found
+- RESEARCH 2026-10-26T11:42 · run 20261026-113830-build-374a · RL-locations-west-6 · fact:loc-kathleen:place_entities (public): partial
+- RESEARCH 2026-10-26T11:42 · run 20261026-113830-build-374a · RL-locations-west-7 · fact:loc-kathleen:permit_office (public): found
+- RESEARCH 2026-10-26T11:42 · run 20261026-113830-build-374a · RL-locations-west-8 · fact:loc-kathleen:neighborhoods (public): partial
+- RESEARCH 2026-10-26T11:42 · run 20261026-113830-build-374a · RL-locations-west-9 · fact:loc-highland-city:local_context (public): found
+- RESEARCH 2026-10-26T11:42 · run 20261026-113830-build-374a · RL-locations-west-10 · fact:loc-highland-city:place_entities (public): found
+- RESEARCH 2026-10-26T11:42 · run 20261026-113830-build-374a · RL-locations-west-11 · fact:loc-highland-city:permit_office (public): found
+- RESEARCH 2026-10-26T11:42 · run 20261026-113830-build-374a · RL-locations-west-12 · fact:loc-highland-city:neighborhoods (public): partial
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-13 · fact:loc-mulberry:local_context (public): found
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-14 · fact:loc-winter-haven:local_context (public): found
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-15 · fact:loc-eagle-lake:local_context (public): found
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-16 · fact:loc-wahneta:local_context (public): found
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-17 · fact:loc-mulberry:neighborhoods (public): partial
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-18 · fact:loc-eagle-lake:neighborhoods (public): partial
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-19 · fact:loc-winter-haven:neighborhoods (public): partial
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-20 · fact:loc-winter-haven:place_entities (public): found
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-21 · fact:loc-winter-haven:permit_office (public): found
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-22 · fact:loc-auburndale:local_context (public): partial
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-23 · fact:loc-auburndale:neighborhoods (public): partial
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-24 · fact:loc-auburndale:place_entities (public): found
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-25 · fact:loc-auburndale:permit_office (public): found
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-26 · fact:loc-bartow:local_context (public): found
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-27 · fact:loc-bartow:neighborhoods (public): partial
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-28 · fact:loc-bartow:place_entities (public): found
+- RESEARCH 2026-10-26T11:43 · run 20261026-113830-build-374a · RL-locations-west-29 · fact:loc-bartow:permit_office (public): found
+- RESEARCH 2026-10-26T11:45 · run 20261026-113830-build-374a · RL-locations-west-30 · fact:loc-mulberry:place_entities (public): found
+- RESEARCH 2026-10-26T11:45 · run 20261026-113830-build-374a · RL-locations-west-31 · fact:loc-mulberry:permit_office (public): partial
+- RESEARCH 2026-10-26T11:45 · run 20261026-113830-build-374a · RL-locations-west-32 · fact:loc-eagle-lake:place_entities (public): found
+- RESEARCH 2026-10-26T11:45 · run 20261026-113830-build-374a · RL-locations-west-33 · fact:loc-eagle-lake:permit_office (public): found
+- RESEARCH 2026-10-26T11:45 · run 20261026-113830-build-374a · RL-locations-west-34 · fact:loc-wahneta:place_entities (public): partial
+- RESEARCH 2026-10-26T11:45 · run 20261026-113830-build-374a · RL-locations-west-35 · fact:loc-wahneta:permit_office (public): found
+- RESEARCH 2026-10-26T11:45 · run 20261026-113830-build-374a · RL-locations-west-36 · fact:loc-wahneta:neighborhoods (public): not_found
+- EVIDENCE 2026-10-26T11:45 · run 20261026-113830-build-374a · loc-winter-haven: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:45 · run 20261026-113830-build-374a · loc-auburndale: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:45 · run 20261026-113830-build-374a · loc-bartow: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:45 · run 20261026-113830-build-374a · loc-polk-city: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:45 · run 20261026-113830-build-374a · loc-kathleen: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:45 · run 20261026-113830-build-374a · loc-highland-city: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:45 · run 20261026-113830-build-374a · loc-mulberry: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T11:45 · run 20261026-113830-build-374a · loc-eagle-lake: WARN (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-26T11:45 · run 20261026-113830-build-374a · loc-wahneta: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- OPEN fact:locations-west:permit_handling · 2026-10-26T11:46:29-05:00 · run 20261026-113830-build-374a · by Client (via Paul) · Permits: for gutter installs in the 9 west towns, do you pull the permit, does the homeowner, or is none needed? Same everywhere or by town?
+- OPEN fact:locations-west:hoa_approval · 2026-10-26T11:46:29-05:00 · run 20261026-113830-build-374a · by Client (via Paul) · HOA approval: do you help homeowners get HOA approval as standard (samples, forms)? Which HOA communities in these towns most?
+- OPEN fact:locations-west:historic_homes · 2026-10-26T11:46:29-05:00 · run 20261026-113830-build-374a · by Client (via Paul) · Historic homes: worked in Winter Haven (Interlaken, Pope Avenue, Winter Haven Heights) or Bartow historic districts? Anything done differently on older houses?
+- OPEN fact:locations-west:neighborhoods_worked · 2026-10-26T11:46:29-05:00 · run 20261026-113830-build-374a · by Client (via Paul) · Neighbourhoods or subdivisions where you have done gutter jobs, per town: Winter Haven, Auburndale, Bartow, Polk City, Kathleen, Highland City, Mulberry, Eagle Lake, Wahneta.
+- FLAG 2026-10-26T11:46 · run 20261026-113830-build-374a · F-018 · Parallel researchers writing research.py log at once lost 7 rows of build/locations-west/research-log.csv (mulberry/eagle-lake place+permit, wahneta neighborhoods/place/permit); research.py log needs a file lock. · workaround: Build agent re-logged the 7 rows from the researchers' facts files and reports (RL-locations-west-30..36).
+- FLAG 2026-10-26T11:46 · run 20261026-113830-build-374a · F-019 · evidence.py questions writes nothing when no page blocks, so owner-only Serving-section facts (permit handling, HOA approval, neighbourhoods worked) get no question set; the earlier REVIEW file shipped with no question text. · workaround: Question set written by hand to the locations-west REVIEW file after settled.py filter and questions.py check (build/locations-west/questions.json).
+- FLAG 2026-10-26T11:46 · run 20261026-113830-build-374a · F-020 · No Florida area source list: suggest methodology/sources/fl-polk.md with Polk County Building Division https://www.polkfl.gov/services/building, NWS Tampa Bay https://www.weather.gov/tbw/rainyseason, Polk County parks https://www.polkfl.gov/park/, and the city building pages found this run. · workaround: Researchers used .gov and Wikipedia directly.
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · svc-gutter-cleaning: PASS (known 11, unknown 1, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-lakeland: PASS (known 8, unknown 2, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · svc-seamless-gutter-installation: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · svc-gutter-installation: BLOCK (known 7, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · svc-gutter-repair: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · svc-commercial-gutters: WARN (known 8, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · svc-gutter-downspouts: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · svc-gutter-guards: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · svc-copper-gutters: WARN (known 9, unknown 1, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · svc-galvalume-gutters: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · svc-aluminum-gutters: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-winter-haven: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-auburndale: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-bartow: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-polk-city: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-kathleen: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-highland-city: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-mulberry: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-eagle-lake: WARN (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-wahneta: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-davenport: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-haines-city: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-lake-alfred: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-lake-hamilton: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-dundee: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-lake-wales: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-waverly: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-frostproof: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · loc-fort-meade: BLOCK (known 5, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-26T11:46 · run 20261026-113830-build-374a · about: BLOCK (known 4, unknown 2, unverified 2, conflict 0)
+- OPEN fact:svc-copper-gutters:timeframe · 2026-10-26T11:46:58-05:00 · run 20261026-113830-build-374a · by Client (via Paul) · For 3 pages (svc-copper-gutters, svc-galvalume-gutters, svc-aluminum-gutters): Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers 
+- OPEN fact:svc-galvalume-gutters:timeframe · 2026-10-26T11:46:58-05:00 · run 20261026-113830-build-374a · by Client (via Paul) · For 3 pages (svc-copper-gutters, svc-galvalume-gutters, svc-aluminum-gutters): Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers 
+- OPEN fact:svc-aluminum-gutters:timeframe · 2026-10-26T11:46:58-05:00 · run 20261026-113830-build-374a · by Client (via Paul) · For 3 pages (svc-copper-gutters, svc-galvalume-gutters, svc-aluminum-gutters): Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers 
+- OPEN fact:svc-copper-gutters:pricing · 2026-10-26T11:46:58-05:00 · run 20261026-113830-build-374a · by Client (via Paul) · For 3 pages (svc-copper-gutters, svc-galvalume-gutters, svc-aluminum-gutters): Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoic
+- OPEN fact:svc-galvalume-gutters:pricing · 2026-10-26T11:46:58-05:00 · run 20261026-113830-build-374a · by Client (via Paul) · For 3 pages (svc-copper-gutters, svc-galvalume-gutters, svc-aluminum-gutters): Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoic
+- OPEN fact:svc-aluminum-gutters:pricing · 2026-10-26T11:46:59-05:00 · run 20261026-113830-build-374a · by Client (via Paul) · For 3 pages (svc-copper-gutters, svc-galvalume-gutters, svc-aluminum-gutters): Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoic
+- OPEN fact:d:founding_year · 2026-10-26T11:46:59-05:00 · run 20261026-113830-build-374a · by Client (via Paul) · Your website says this about Founding year / years in business: "Family Owned & Operated Experience the personal touch and reliability of a locally owned, family business." (+13 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — c
+- OPEN fact:about:company_story · 2026-10-26T11:46:59-05:00 · run 20261026-113830-build-374a · by Client (via Paul) · Your website says this about How and why the company started (owner's own account): "Family Owned & Operated Experience the personal touch and reliability of a locally owned, family business." (+13 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Stil
+- FACTS INTERVIEW 2026-10-26T11:46 · run 20261026-113830-build-374a · facts round (all pages) · 4 question(s) for svc-seamless-gutter-installation, svc-gutter-installation, svc-gutter-repair, svc-commercial-gutters, svc-gutter-downspouts, svc-gutter-guards, svc-copper-gutters, svc-galvalume-gutters, svc-aluminum-gutters, loc-mulberry, loc-eagle-lake, loc-wahneta, loc-davenport, loc-haines-city, loc-lake-alfred, loc-lake-hamilton, loc-dundee, loc-lake-wales, loc-waverly, loc-frostproof, loc-fort-meade, about · clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - all - 2026-10-26 - REVIEW.md
+### HANDOFF · /build · 2026-10-26 · run 20261026-113830-build-374a
+- Grids: evidence.py run (9 pages BLOCK at start: local context, neighbourhoods, city served not Known).
+- reviews.py extract: 18 topics, 12 with 3+ reviewers.
+- Researcher (Sonnet) x3 in parallel, 36 research-log rows (RL-locations-west-1..36), facts files build/evidence/loc-*.facts.json:
+  local context (NWS Tampa Bay rainy season, Wikipedia terrain/history), neighbourhoods, place entities (Wikidata Q-ids), permit office.
+- City served: recorded from the returned proof sheet (all 20 places confirmed), status Client Confirmed — not asked.
+- Grids after research: 6 PASS (winter-haven, auburndale, bartow, polk-city, kathleen, highland-city), 3 WARN
+  (mulberry: neighbourhoods + permit page partial; eagle-lake: neighbourhoods partial; wahneta: neighbourhoods not found,
+  2 place entities only). 0 BLOCK.
+- evidence.py questions: "no page is blocked" (writes nothing). Owner-only facts written by hand as 4 client questions:
+  build/locations-west/questions.json → settled.py filter kept 4/4 → questions.py check passed → REVIEW file
+  interviews/facts/First Choice Seamless Gutters - Facts Interview - locations-west - 2026-10-26 - REVIEW.md (4 questions verified).
+- Open questions logged (--ask): fact:locations-west:permit_handling, :hoa_approval, :historic_homes, :neighborhoods_worked.
+- Flags: F-018 (research-log lost 7 rows under parallel writes; re-logged), F-019 (questions step writes no set without a
+  block), F-020 (suggest a Florida/Polk source list).
+- Caveats for the writer: some neighbourhoods are from listing sites only (polk-city, kathleen, highland-city, mulberry,
+  eagle-lake); Mulberry and Polk City city sites returned 403 (address/phone from directories/search excerpts);
+  Auburndale neighbourhoods seen in agenda snippets only; no Census median year built found anywhere.
+- Next: Paul sends the 4 questions; pages may also be written now (no block) — /build first-choice-seamless-gutters write locations-west.
+
+- FLAG 2026-10-26T11:38 · run 20261026-113830-build-374a · F-017 · Facts interview review files for locations-west and locations-east (interviews/facts/*REVIEW.md, 2026-10-26) contain no question tex…
+- FLAG 2026-10-26T11:46 · run 20261026-113830-build-374a · F-018 · Parallel researchers writing research.py log at once lost 7 rows of build/locations-west/research-log.csv (mulberry/eagle-lake place…
+- FLAG 2026-10-26T11:46 · run 20261026-113830-build-374a · F-019 · evidence.py questions writes nothing when no page blocks, so owner-only Serving-section facts (permit handling, HOA approval, neighb…
+- FLAG 2026-10-26T11:46 · run 20261026-113830-build-374a · F-020 · No Florida area source list: suggest methodology/sources/fl-polk.md with Polk County Building Division https://www.polkfl.gov/servic…
+### END HANDOFF
+## RUN 20261026-113830-build-374a · FINISHED · 2026-10-26T11:47:07-05:00
+Changes: 0 · Summary: locations-west facts round: research cleared all 9 pages (6 PASS, 3 WARN, 0 block); 4 owner questions written to the REVIEW file
+Spend: 5812612 tokens · $2.05 (measured)
+- CHANGE #457 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-26 (4).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-26 (4).md | result: done · renamed and moved, nothing deleted
+- CHANGE #458 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-26 (4).md | new: First Choice Seamless Gutters - Handoff Log.md · sha 95a080b1febf | result: done · copied (Drive for desktop syncs it)
+- CHANGE #459 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (6).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #460 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26 (6).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 874b24b79361 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #461 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26 (6).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #462 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (6).md | new: First Choice Seamless Gutters - Status.md · sha 5fd23e20bb79 | result: done · copied (Drive for desktop syncs it)

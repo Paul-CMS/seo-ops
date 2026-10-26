@@ -107,3 +107,4 @@ Counted by different reviewers. 3+ = customer_reported: Known for the evidence g
 | company story | 1 | "This is a very nice family-owned business." (2025-10-22) |
 | photos | 1 | "Once the work was completed he sent pictures, which I can say he did an excellent job." (2023-08-23) |
 | prices ($ amounts) | 1 | "They saved me over $900.00." (2026-04-10) |
+| Bartow | 1 | "James and his son did an excellent job on installing our new gutters on our new home in Bartow Florida." (2023-02-24) |

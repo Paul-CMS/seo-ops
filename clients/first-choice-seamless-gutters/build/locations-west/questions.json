@@ -1,0 +1,34 @@
+[
+  {
+    "key": "fact:locations-west:permit_handling",
+    "kind": "client",
+    "text": "Permits: when you install new gutters in these towns, do you pull a building permit yourselves, does the homeowner, or is no permit needed for gutter-only work? Is it the same everywhere, or different by town? (Winter Haven, Auburndale, Bartow, Polk City, Mulberry and Eagle Lake have their own city building departments; Kathleen, Highland City and Wahneta go through the Polk County Building Division.)",
+    "searched": "facts.json → decisions-settled.md → reviews (0 mention a permit) → site text (no permit statement) → GBP data (none on disk) → proof sheet / Discovery Record (not asked)",
+    "best_answer": "",
+    "pages": ["loc-winter-haven", "loc-auburndale", "loc-bartow", "loc-polk-city", "loc-kathleen", "loc-highland-city", "loc-mulberry", "loc-eagle-lake", "loc-wahneta"]
+  },
+  {
+    "key": "fact:locations-west:hoa_approval",
+    "kind": "client",
+    "text": "HOA approval: two of your Google reviews say you helped the homeowner get HOA approval before the install. Is that something you do as standard (for example bringing colour and metal samples, or filling in the HOA form)? Which HOA communities in these towns do you deal with most?",
+    "searched": "facts.json (site claim 'HOA colour/metal samples at the door', unsubstantiated) → decisions-settled.md → reviews (2 reviewers mention HOA approval) → site text → GBP data (none on disk) → proof sheet / Discovery Record",
+    "best_answer": "Yes, we help with HOA approval (2 reviews say so)",
+    "pages": ["loc-winter-haven", "loc-auburndale", "loc-bartow", "loc-polk-city", "loc-kathleen", "loc-highland-city", "loc-mulberry", "loc-eagle-lake", "loc-wahneta"]
+  },
+  {
+    "key": "fact:locations-west:historic_homes",
+    "kind": "client",
+    "text": "Older and historic homes: have you worked on homes in Winter Haven's historic neighbourhoods (Interlaken, Pope Avenue, Winter Haven Heights) or Bartow's historic districts? Is there anything you do differently on those older houses (gutter style, fascia repair, matching the look)?",
+    "searched": "facts.json → decisions-settled.md → reviews (none name these districts) → site text (Winter Haven page mentions mature trees in historic areas; no client practice stated) → GBP data (none on disk) → proof sheet / Discovery Record",
+    "best_answer": "",
+    "pages": ["loc-winter-haven", "loc-bartow"]
+  },
+  {
+    "key": "fact:locations-west:neighborhoods_worked",
+    "kind": "client",
+    "text": "Where you have done jobs: for each of these towns, name any neighbourhoods or subdivisions where you have installed or repaired gutters - Winter Haven, Auburndale, Bartow, Polk City, Kathleen, Highland City, Mulberry, Eagle Lake, Wahneta. A few names per town is plenty; skip any town you rarely work in.",
+    "searched": "facts.json → decisions-settled.md → reviews (only 1 review names Bartow; none name the other 8 towns) → site text (area pages name no client jobs) → GBP data (none on disk) → proof sheet / Discovery Record (towns confirmed, no neighbourhoods)",
+    "best_answer": "",
+    "pages": ["loc-winter-haven", "loc-auburndale", "loc-bartow", "loc-polk-city", "loc-kathleen", "loc-highland-city", "loc-mulberry", "loc-eagle-lake", "loc-wahneta"]
+  }
+]

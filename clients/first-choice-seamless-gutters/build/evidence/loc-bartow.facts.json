@@ -1,0 +1,50 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "Bartow (Wikipedia): county seat of Polk County; 'a terrain consisting of flatland interspersed with gently rolling hills'; sandy soils; average annual precipitation about 50.88 in with heaviest rain June-September; described as in 'lightning alley'; hurricane-force winds reach the Polk area less than once every ten years on average (Hurricane Donna 1960 was the last before 2004); 2020 Census: 7,682 housing units, 8.5% vacant; three National Register historic districts (listed 1993): Bartow Downtown Commercial, Northeast Bartow Residential (built from 1886), South Bartow Residential (204 contributing properties); Wikipedia says a city board regulates new construction in historic districts. NWS Tampa Bay: rainy season May 25 to October 10.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Bartow,_Florida, read 2026-10-26; https://www.weather.gov/tbw/rainyseason, read 2026-10-26; https://en.wikipedia.org/wiki/Northeast_Bartow_Residential_District, read 2026-10-26"
+    },
+    "neighborhoods": {
+      "value": "South Bartow Residential District; Northeast Bartow Residential District; Bartow Downtown Commercial District (all NRHP, 1993). Only 3 found; no official city neighborhood list found.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Bartow,_Florida, read 2026-10-26; https://en.wikipedia.org/wiki/South_Bartow_Residential_District, read 2026-10-26; https://en.wikipedia.org/wiki/Northeast_Bartow_Residential_District, read 2026-10-26"
+    },
+    "place_entities": {
+      "value": [
+        {
+          "name": "Old Polk County Courthouse (1909)",
+          "wikipedia": "https://en.wikipedia.org/wiki/Old_Polk_County_Courthouse_(Florida)",
+          "wikidata": "Q7084750"
+        },
+        {
+          "name": "Bartow Downtown Commercial District",
+          "wikipedia": "https://en.wikipedia.org/wiki/Bartow_Downtown_Commercial_District",
+          "wikidata": "Q4865774"
+        },
+        {
+          "name": "Northeast Bartow Residential District",
+          "wikipedia": "https://en.wikipedia.org/wiki/Northeast_Bartow_Residential_District",
+          "wikidata": "Q7057833"
+        },
+        {
+          "name": "Lake Hancock (north of Bartow)",
+          "wikipedia": "https://en.wikipedia.org/wiki/Lake_Hancock_(Florida)",
+          "wikidata": "Q6476084"
+        }
+      ],
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Bartow,_Florida, read 2026-10-26; Wikidata ids via Wikipedia API pageprops, read 2026-10-26"
+    },
+    "permit_office": {
+      "value": "City of Bartow Building Department (with Planning) at City Hall, 450 N Wilson Avenue, Bartow, FL 33830, general line (863) 534-0100; applications and inspection requests via the city's Building Department page. Unincorporated Polk parcels go to the Polk County Building Division instead (county permitting line (863) 534-6080, per county page polkfl.gov/services/building).",
+      "status": "Internally Verified",
+      "source": "https://www.cityofbartow.net/568/Development-Services-Permitting, read 2026-10-26; https://www.polkfl.gov/services/building, read 2026-10-26"
+    },
+    "city_served": {
+      "value": "Bartow is served: the client confirmed all 20 Polk County places on the proof sheet, Bartow among them; no town excluded.",
+      "status": "Client Confirmed",
+      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded) - facts.json towns-served-client"
+    }
+  }
+}

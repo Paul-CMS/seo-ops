@@ -1,6 +1,6 @@
 # Evidence grid — Lake Alfred (location)
 
-**Result: BLOCK** · Known 4 · Unknown 2 · Unverified 4 · Conflict 0 (CM-041)
+**Result: BLOCK** · Known 5 · Unknown 2 · Unverified 3 · Conflict 0 (CM-041)
 
 _The grid holds only the facts, so its fingerprint changes only when a fact changes (a waiver is tied to it)._
 
@@ -16,7 +16,7 @@ _The grid holds only the facts, so its fingerprint changes only when a fact chan
 | 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) | supporting | **Unknown** |  | not searchable on disk — ask |
 | Which office issues permits here, with its official page (for the Serving section) | supporting | **Unknown** |  | not searchable on disk — ask |
 | Response time / guarantees for this area | supporting | **Known** | Form enquiries answered within 24 hours (client confirmed). Client note: 'We pride ourselves on great customer communication and excellent customer care.' | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_7 / claim_7_detail) |
-| Emergency / after-hours reality | supporting | **Unverified** | Site: 'Available 7 Days a Week'; GBP hours 7 AM–8 PM Mon–Sun; no emergency claim found | GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-10-22 |
+| Emergency / after-hours reality | supporting | **Known** | Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct. | Client answer via Paul 2026-10-24 (interviews/facts/First Choice Seamless Gutters - Facts Answers - pilot - 2026-10-24.md) |
 | Google rating and review count (date checked) | supporting | **Known** | 5 out of 5 (138 reviews), 2026-10-22 (site says '95+ 5 Star Google Reviews') | GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22 |
 
 **Sources searched before asking (CM-057):** data/crawl/page-text.csv, data/rankings/rankings-summary.md, data/reviews/reviews-summary.md, data/reviews/reviews.csv

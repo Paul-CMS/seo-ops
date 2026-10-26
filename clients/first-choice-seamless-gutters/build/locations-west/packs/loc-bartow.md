@@ -1,6 +1,6 @@
 # Evidence pack — Bartow (location)
 
-Section **locations-west** · https://www.firstchoiceseamlessgutters.net/bartow-fl/ · built 2026-10-24T20:29 by evidence_pack.py (CM-061).
+Section **locations-west** · https://www.firstchoiceseamlessgutters.net/bartow-fl/ · built 2026-10-26T11:46 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -16,15 +16,15 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | a-storefront-or-sab | Storefront or SAB | Service area business (travels to customers) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Contact_and_hours_3) |
 | a-phone | Phone | (863) 330-3243 (site, GBP, schema agree; BBB also lists 'Other Phone' (863) 320-2842) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Contact_and_hours_0) |
 | a-legal-entity-name | Legal entity name | First Choice Seamless Gutters Inc. (BBB: Corporation, incorporated 11/24/2021) — Sunbiz record not read (403), Gwen manual_lookup | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_1) |
-| d-founding-year-years-in-business | Founding year / years in business | In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: [NEED: founding year] | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_5 / claim_5_detail) |
 | d-legal-entity-dba | Legal entity + DBA | First Choice Seamless Gutters Inc., a corporation (client confirmed); BBB primary name 'First Choice Seamless Gutters'; site also 'First Choice Seamless Gutter Inc' (typo, singular) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_0/1) |
 | d-licence-numbers-and-classes | Licence numbers and classes | Not required in Florida for these services; no licence number to show. Settled: not an open question. | Paul, 2026-10-23 |
-| d-insurance-bonded-status | Insurance / bonded status | Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate: [NEED: certificate of insurance — not sent] | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_3) |
-| d-warranty-terms | Warranty terms | 10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Written terms not on file: [NEED: copy of the written warranty] | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_4); owner review response in data/re |
+| d-insurance-bonded-status | Insurance / bonded status | Insured (confirmed by Paul from a Google review, 2026-10-25). Certificate of insurance: not on file. | Google review, confirmed by Paul 2026-10-25 |
+| d-warranty-terms | Warranty terms | 10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google review, 2026-10-25). Written copy: not on file. | Google review, confirmed by Paul 2026-10-25 |
 | d-guarantees-response-time-on-time-satisfaction | Guarantees (response time, on-time, satisfaction) | Form enquiries answered within 24 hours (client confirmed). Client note: 'We pride ourselves on great customer communication and excellent customer care.' | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_7 / claim_7_detail) |
 | d-awards-and-rankings | Awards and rankings | 'Best Gutter Installer in Lakeland, Florida' by GutterPro HQ, 2025 — client says accurate; only public source is a company-distributed press release (MarketersMedia, Dec 2025) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_10); markets.financialcontent.com Ma |
 | d-free-estimate-and-what-free-means | Free estimate — and what free means | Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees' | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_9) |
-| d-named-staff-for-on-page-use | Named staff for on-page use | Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow'] | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2; question_5) |
+| d-emergency-after-hours-reality | Emergency / after-hours reality | Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct. | Client answer via Paul 2026-10-24 (interviews/facts/First Choice Seamless Gutters - Facts Answers - pilot - 2026-10-24.md) |
+| d-named-staff-for-on-page-use | Named staff for on-page use | Owners: Adrian Buehl and Rachel Buehl (client confirmed). Other staff roles: see row 'Roles of April, Matt, Isaac, James'. | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2); staff roles split  |
 | d-blog-author-a-real-person-cm-039-from-the-decision-sheet | Blog author — a real person (CM-039; from the Decision Sheet) | Adrian Buehl, owner | Settled blog_author (Paul, Approval 1, 2026-10-22: the owner named on the returned facts, candidate Adrian Buehl); owners confirmed on Client proof sheet return |
 | cms | Content management system | WordPress | Paul, intake answer |
 | website-street-address | Street address shown on the website | 3517 Century Blvd, Lakeland, FL | Paul, 2026-10-22 (confirmed for website display; billing address check) |
@@ -36,6 +36,7 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | towns-served-client | Towns served (client) | All 20 Polk County places on the sheet confirmed: Auburndale, Bartow, Davenport, Dundee, Eagle Lake, Haines City, Lake Alfred, Lake Wales, Lakeland, Polk City, Waverly, Winter Haven; Fort Meade, Frostproof, Highland City, Kathleen, Lake Hamilton, Mulberry, Wah | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded |
 | services-client | Services (client keep/stop) | Keep (10): Seamless Gutter Installation, Gutter Installation, Gutter Repair, Commercial Gutters, Gutter Downspouts, Gutter Guards, Gutter Cleaning, Copper Gutters, Galvalume Gutters, Aluminum Gutters. Stop: Gutter Maintenance. None added; none marked 'want mor | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, service_0..10_keep, service_6_stop) |
 | gutter-maintenance-consolidated | Gutter Maintenance (standalone service) | Not a standalone service. Its maintenance scope is folded into the Gutter Repair and Gutter Cleaning pages; no /services/gutter-maintenance/ page. The old URL is redirected (never deleted) to the closer of the two. | Paul, 2026-10-24 (settled audit_gutter_maintenance, F-014) |
+| page:city_served | city served | Bartow is served: the client confirmed all 20 Polk County places on the proof sheet, Bartow among them; no town excluded. | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded |
 
 ### Sourced public — a plain statement; the source is recorded
 
@@ -44,6 +45,10 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | a-primary-domain-canonical-host-form | Primary domain (canonical host form) | https://www.firstchoiceseamlessgutters.net/ (non-www 301 → www; canonical tag www) | live HTTP check 2026-10-22 |
 | d-association-memberships | Association memberships | BBB Accredited Business since 8/12/2025, A+ rating | BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22 |
 | d-google-rating-and-review-count-exactly-as-google-shows-the | Google rating and review count — exactly as Google shows them on the day, with the date ("4.9 · 67 reviews, 2026-10-07"; never a rounded 5.0) | 5 out of 5 (138 reviews), 2026-10-22 (site says '95+ 5 Star Google Reviews') | GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22 |
+| page:local_context | local context | Bartow (Wikipedia): county seat of Polk County; 'a terrain consisting of flatland interspersed with gently rolling hills'; sandy soils; average annual precipitation about 50.88 in with heaviest rain June-September; described as in 'lightning alley'; hurricane- | https://en.wikipedia.org/wiki/Bartow,_Florida, read 2026-10-26; https://www.weather.gov/tbw/rainyseason, read 2026-10-26; https://en.wikipedia.org/wiki/Northeas |
+| page:neighborhoods | neighborhoods | South Bartow Residential District; Northeast Bartow Residential District; Bartow Downtown Commercial District (all NRHP, 1993). Only 3 found; no official city neighborhood list found. | https://en.wikipedia.org/wiki/Bartow,_Florida, read 2026-10-26; https://en.wikipedia.org/wiki/South_Bartow_Residential_District, read 2026-10-26; https://en.wik |
+| page:place_entities | place entities | [{'name': 'Old Polk County Courthouse (1909)', 'wikipedia': 'https://en.wikipedia.org/wiki/Old_Polk_County_Courthouse_(Florida)', 'wikidata': 'Q7084750'}, {'name': 'Bartow Downtown Commercial District', 'wikipedia': 'https://en.wikipedia.org/wiki/Bartow_Downto | https://en.wikipedia.org/wiki/Bartow,_Florida, read 2026-10-26; Wikidata ids via Wikipedia API pageprops, read 2026-10-26 |
+| page:permit_office | permit office | City of Bartow Building Department (with Planning) at City Hall, 450 N Wilson Avenue, Bartow, FL 33830, general line (863) 534-0100; applications and inspection requests via the city's Building Department page. Unincorporated Polk parcels go to the Polk County | https://www.cityofbartow.net/568/Development-Services-Permitting, read 2026-10-26; https://www.polkfl.gov/services/building, read 2026-10-26 |
 
 ### Unknown — never claimed: write [NEED: …] where the page needs it, or leave it out
 
@@ -55,16 +60,18 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | a-area-variants-3-5 | Area variants (3–5) | Proposed: Polk County, FL · Polk County, Florida · Lakeland–Winter Haven · Lakeland–Winter Haven metropolitan area | en.wikipedia.org/wiki/Polk_County,_Florida; Decision Sheet |
 | a-separator-standard | Separator standard | ` - ` |  |
 | a-exact-url-in-the-gbp-website-field | Exact URL in the GBP Website field | https://firstchoiceseamlessgutters.net/ | Paul, intake answer |
+| d-founding-year-years-in-business | Founding year / years in business | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns the answer (asked on returned proof sheet claim_5) |
 | d-certifications-authorizations-factory-training | Certifications, authorizations, factory training |  |  |
 | d-team-size-trucks-jobs-completed | Team size / trucks / jobs completed |  |  |
-| d-financing-available-provider-terms | Financing — available, provider, terms | [NEED: financing — none found on site, GBP or BBB; client wrote 'answers follow'] | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest |
-| d-emergency-after-hours-reality | Emergency / after-hours reality | Site: 'Available 7 Days a Week'; GBP hours 7 AM–8 PM Mon–Sun; no emergency claim found | GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-1 |
-| d-minimum-service-call-or-trip-charge | Minimum service call or trip charge | [NEED: minimum or trip charge — client wrote 'answers follow'] | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest |
-| d-payment-methods | Payment methods | [NEED: payment methods — client wrote 'answers follow'] | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest |
-| d-services-subcontracted-out | Services subcontracted out | [NEED: subcontracting — client answered 'n/a'; confirm it means nothing is subcontracted] | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest |
+| d-financing-available-provider-terms | Financing — available, provider, terms | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_3: 'answers follow') |
+| d-minimum-service-call-or-trip-charge | Minimum service call or trip charge | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_0: 'answers follow') |
+| d-payment-methods | Payment methods | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_2: 'answers follow') |
+| d-services-subcontracted-out | Services subcontracted out | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_4: client wrote 'n/a', not int |
 | d-licensed-practitioner-for-health-claim-sign-off-medical-ch | Licensed practitioner for health-claim sign-off *(medical / chiropractic)* |  |  |
 | gbp-share-link | Google Business Profile link | https://maps.app.goo.gl/c5prGD6rMCwptG3x6 | Paul, intake answer |
 | gsc-access | Google Search Console access | Access exists (Paul reports) | Paul, intake answer |
+| d-staff-roles | Roles of April, Matt, Isaac, James | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns them (returned proof sheet question_5) |
+| d-travel-fee | Travel fee | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns it (returned proof sheet towns_excluded / question_0) |
 
 
 ## Reviews
@@ -169,11 +176,20 @@ _None tagged to this page._
 
 ## Public facts
 
-_No area source list rows or research results for this place yet._
+- research-log: fact:loc-bartow:local_context — "about 50.88 inches precipitation; heaviest June through September" (https://en.wikipedia.org/wiki/Bartow,_Florida, 2026-10-26)
+- research-log: fact:loc-bartow:neighborhoods — "three NRHP districts listed 1993" (https://en.wikipedia.org/wiki/Bartow,_Florida, 2026-10-26)
+- research-log: fact:loc-bartow:place_entities — "Old Polk County Courthouse Q7084750; Lake Hancock Q6476084" (https://en.wikipedia.org/wiki/Old_Polk_County_Courthouse_(Florida), 2026-10-26)
+- research-log: fact:loc-bartow:permit_office — "Building and Planning Departments at City Hall, 450 North Wilson Avenue" (https://www.cityofbartow.net/568/Development-Services-Permitting, 2026-10-26)
 
 ## Place research (the place store: official facts are plain statements; context only for area character)
 
 _Nothing in the place store yet for this page's place (places.py status lists what is missing)._
+
+## Industry standard — until the client answers (CM-068)
+
+_How the trade does this work, from the cited sources. Write it as standard practice ("a seamless gutter install starts with …"), never as the client's own claim ("we always …"), and add no number or material the source does not give. The client's answer replaces it (later-rewrites.md)._
+
+_None for this page — its scope and process come from the client, or stay a `[NEED: …]`._
 
 ## Settled decisions touching this page
 
@@ -181,5 +197,4 @@ _None._
 
 ## Gaps — the only things research looks for
 
-- 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) (supporting, `page:place_entities`) → researcher (public fact — never asked)
-- Which office issues permits here, with its official page (for the Serving section) (supporting, `page:permit_office`) → researcher (public fact — never asked)
+_None._

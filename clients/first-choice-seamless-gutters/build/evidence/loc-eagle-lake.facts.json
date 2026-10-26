@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "Eagle Lake has a humid subtropical climate (Koppen Cfa); elevation 157 ft. NWS Tampa Bay: the West Central Florida rainy (thunderstorm) season runs May 25 to October 10; late May through June, hail, damaging winds, waterspouts, heavy rainfall and frequent lightning are common (https://www.weather.gov/tbw/rainyseason). The city sits on Eagle Lake, near Lake McLeod; incorporated October 1921 as Town of Eagle Lake, reincorporated November 1975; earlier industries were a brickyard, turpentine mill and citrus packing houses. No official housing-age figure found.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Eagle_Lake,_Florida ; https://www.weather.gov/tbw/rainyseason, read 2026-10-26"
+    },
+    "neighborhoods": {
+      "value": "PARTIAL, developer/listing-site sources only: Landings at Eagle Lake (Bingham Road), Eagle Hammock, Ranches at Lake McLeod (Bomber Road, 1,160-lot project, planned), Lake Meadows. No official list found.",
+      "status": "Needs Review",
+      "source": "https://www.growthspotter.com/?p=3655 ; https://www.homesbymarco.com/models/richmond-model-4201671/landings-at-eagle-lake-in-eagle-lake-fl ; https://movewithmomentum.com/home-value/lake-meadows, read 2026-10-26"
+    },
+    "place_entities": {
+      "value": "1) Eagle Lake (the lake the city is named for; boat ramp, municipal park with pavilion, playground, beach, restrooms). 2) Lake McLeod (nearby, boat ramp). 3) Crystal Beach Pavilion (historic, mid-1950s to 1960s, southwest shore; per Wikipedia). 4) Eagle Lake municipal park / City Hall complex (skate park, courts). City Wikipedia page https://en.wikipedia.org/wiki/Eagle_Lake,_Florida, Wikidata Q1969826. No Wikidata entries found for the lake or parks; Lake McLeod has no Wikipedia article.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Eagle_Lake,_Florida, read 2026-10-26"
+    },
+    "permit_office": {
+      "value": "City of Eagle Lake Building Department, City Hall, 75 N. 7th Street, Eagle Lake FL 33839, (863) 229-5032; online permitting via the Polk County Accela portal (https://aca-prod.accela.com/POLKCO/Login.aspx). Appointments recommended for in-person visits.",
+      "status": "Internally Verified",
+      "source": "https://www.eaglelakefl.gov/building, read 2026-10-26"
+    },
+    "city_served": {
+      "value": "Eagle Lake is served: the client confirmed all 20 Polk County places on the proof sheet, Eagle Lake among them; no town excluded.",
+      "status": "Client Confirmed",
+      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded) - facts.json towns-served-client"
+    }
+  }
+}

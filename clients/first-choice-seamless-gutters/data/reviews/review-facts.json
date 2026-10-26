@@ -1,5 +1,5 @@
 {
-  "made": "2026-10-23T12:20:11-05:00",
+  "made": "2026-10-26T11:39:20-05:00",
   "min_reviewers": 3,
   "facts": {
     "fact:timeframe": {
@@ -341,6 +341,17 @@
           "date": "2026-03-27",
           "quote": "They did an excellent job on my gutters and made the whole process easy.",
           "row": "reviews.csv row 17"
+        }
+      ]
+    },
+    "place:Bartow": {
+      "label": "Bartow",
+      "count": 1,
+      "quotes": [
+        {
+          "date": "2023-02-24",
+          "quote": "James and his son did an excellent job on installing our new gutters on our new home in Bartow Florida.",
+          "row": "reviews.csv row 110"
         }
       ]
     },

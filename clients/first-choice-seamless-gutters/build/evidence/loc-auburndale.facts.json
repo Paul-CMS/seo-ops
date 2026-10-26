@@ -1,0 +1,53 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "Auburndale (Wikipedia): humid subtropical zone; terrain 'flatland interspersed with gently rolling hills'; 2020 Census: 6,295 housing units, 9.1% vacant; Auburndale City Hall built 1927 (NRHP 2013). Lake setting: Lake Ariana Park (city parks page) on Lake Ariana; a developer page places the city between Lakes Juliana, Mattie, Arietta and Van (non-official). NWS Tampa Bay: West Central Florida rainy season May 25 to October 10, with frequent thunderstorms, lightning, damaging winds and heavy rainfall. No Auburndale-specific rainfall or housing-age figure found from an official source.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Auburndale,_Florida, read 2026-10-26; https://en.wikipedia.org/wiki/Auburndale_City_Hall, read 2026-10-26; https://auburndalefl.com/parks/, read 2026-10-26; https://www.weather.gov/tbw/rainyseason, read 2026-10-26"
+    },
+    "neighborhoods": {
+      "value": "Partial, from City of Auburndale planning records: The Lakes District (master-planned area, city Land Development Regulations Ch. 15 Art. 4); Cadence Crossing (subdivision near K-Ville Ave and Polk Parkway, 157 single-family units); Auburn Village (55+ affordable community). Named in city commission agendas/minutes (search-snippet level; open the agenda PDFs before relying on details). Downtown Auburndale verified on city parks page. Fewer than 3 fully verified, so name them in local context rather than a section.",
+      "status": "Internally Verified",
+      "source": "https://auburndalefl.com/wp-content/uploads/2026/04/LDR-CH15-Article-4-The-Lakes-District-4-15-26.pdf; https://auburndalefl.com/wp-content/uploads/2025/05/UTF-8City-of-Auburndale-City-Commission-Meeting-Agenda-5-5-2025-2.pdf; https://auburndalefl.com/parks/, read 2026-10-26"
+    },
+    "place_entities": {
+      "value": [
+        {
+          "name": "Auburndale City Hall (NRHP 2013, built 1927)",
+          "wikipedia": "https://en.wikipedia.org/wiki/Auburndale_City_Hall",
+          "wikidata": "Q18148328"
+        },
+        {
+          "name": "Lake Myrtle Sports Complex",
+          "wikipedia": "https://en.wikipedia.org/wiki/Lake_Myrtle_Sports_Complex",
+          "wikidata": "Q6477052",
+          "city_page": "https://auburndalefl.com/parks/"
+        },
+        {
+          "name": "Lake Ariana Park (formerly Max Beach)",
+          "wikipedia": null,
+          "wikidata": null,
+          "city_page": "https://auburndalefl.com/parks/"
+        },
+        {
+          "name": "Downtown City Park (Historic Depot, bandstand)",
+          "wikipedia": null,
+          "wikidata": null,
+          "city_page": "https://auburndalefl.com/?p=3114"
+        }
+      ],
+      "status": "Internally Verified",
+      "source": "https://auburndalefl.com/parks/, read 2026-10-26; https://en.wikipedia.org/wiki/Auburndale_City_Hall, read 2026-10-26"
+    },
+    "permit_office": {
+      "value": "City of Auburndale Construction Services, 108 East Park Street, Auburndale, FL 33823, 863-965-5530, permit@auburndalefl.com; issues building permits for construction in the city.",
+      "status": "Internally Verified",
+      "source": "https://auburndalefl.com/construction-services/, read 2026-10-26; https://auburndalefl.com/?p=20776, read 2026-10-26"
+    },
+    "city_served": {
+      "value": "Auburndale is served: the client confirmed all 20 Polk County places on the proof sheet, Auburndale among them; no town excluded.",
+      "status": "Client Confirmed",
+      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded) - facts.json towns-served-client"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "NWS Tampa Bay: the rainy season runs May 25 to October 10 for West Central Florida outside Southwest Florida, peaks July through early September; heavy rainfall, frequent lightning, and from late May through June hail and damaging winds are common. Wikipedia (Highland City, Florida) lists Highland City as a census-designated place in Polk County at 121 ft (37 m) elevation, described as a working-class area with many mobile homes; the Fort Fraser Trail (7.75 miles, opened December 9, 2006) passes through. No official source found for housing-stock age or drainage.",
+      "status": "Internally Verified",
+      "source": "https://www.weather.gov/tbw/rainyseason ; https://en.wikipedia.org/wiki/Highland_City,_Florida, read 2026-10-26"
+    },
+    "neighborhoods": {
+      "value": "Fox Tree (off Crews Lake Drive), Fallin Crest. Source: zipdatamaps.com neighborhood pages only; no official list; fewer than 3 verified, so name them in local context only.",
+      "status": "Internally Verified",
+      "source": "https://www.zipdatamaps.com/neighborhood/florida/highland-city/fox-tree ; https://www.zipdatamaps.com/neighborhood/florida/highland-city/fallin-crest, read 2026-10-26"
+    },
+    "place_entities": {
+      "value": "Fort Fraser Trail (7.75-mile paved trail, Highland City trailhead on 4th Street SE; Wikipedia https://en.wikipedia.org/wiki/Fort_Fraser_Trail, Wikidata Q24191725; county page https://www.polkfl.gov/park/fort-fraiser-trail); Fort Fraser (US Army fort established 1837; Wikipedia https://en.wikipedia.org/wiki/Fort_Fraser_(Florida), Wikidata Q5471172); Lake Hancock / Circle B Bar Reserve (near the trail's north end, north of Bartow, not in Highland City itself; Wikidata Q6476084 / Q5121390); Lakeland Highlands (neighbouring community, Wikidata Q2421989)",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Highland_City,_Florida ; https://www.polkfl.gov/park/fort-fraiser-trail, read 2026-10-26"
+    },
+    "permit_office": {
+      "value": "Highland City is an unincorporated CDP, so residential building permits come from the Polk County Building Division (330 W. Church St., Bartow; (863) 534-6080; online Accela portal). Basis: county Building Division page title/search excerpts plus the CDP's non-municipal status; page text could not be fetched.",
+      "status": "Internally Verified",
+      "source": "https://www.polkfl.gov/services/building, read 2026-10-26"
+    },
+    "city_served": {
+      "value": "Highland City is served: the client confirmed all 20 Polk County places on the proof sheet, Highland City among them; no town excluded.",
+      "status": "Client Confirmed",
+      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded) - facts.json towns-served-client"
+    }
+  }
+}

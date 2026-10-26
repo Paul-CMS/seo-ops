@@ -1,6 +1,6 @@
 # Evidence pack — About (about)
 
-Section **about** · https://www.firstchoiceseamlessgutters.net/about/ · built 2026-10-24T20:29 by evidence_pack.py (CM-061).
+Section **about** · https://www.firstchoiceseamlessgutters.net/about/ · built 2026-10-26T11:46 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -16,15 +16,15 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | a-storefront-or-sab | Storefront or SAB | Service area business (travels to customers) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Contact_and_hours_3) |
 | a-phone | Phone | (863) 330-3243 (site, GBP, schema agree; BBB also lists 'Other Phone' (863) 320-2842) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Contact_and_hours_0) |
 | a-legal-entity-name | Legal entity name | First Choice Seamless Gutters Inc. (BBB: Corporation, incorporated 11/24/2021) — Sunbiz record not read (403), Gwen manual_lookup | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_1) |
-| d-founding-year-years-in-business | Founding year / years in business | In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: [NEED: founding year] | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_5 / claim_5_detail) |
 | d-legal-entity-dba | Legal entity + DBA | First Choice Seamless Gutters Inc., a corporation (client confirmed); BBB primary name 'First Choice Seamless Gutters'; site also 'First Choice Seamless Gutter Inc' (typo, singular) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_0/1) |
 | d-licence-numbers-and-classes | Licence numbers and classes | Not required in Florida for these services; no licence number to show. Settled: not an open question. | Paul, 2026-10-23 |
-| d-insurance-bonded-status | Insurance / bonded status | Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate: [NEED: certificate of insurance — not sent] | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_3) |
-| d-warranty-terms | Warranty terms | 10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Written terms not on file: [NEED: copy of the written warranty] | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_4); owner review response in data/re |
+| d-insurance-bonded-status | Insurance / bonded status | Insured (confirmed by Paul from a Google review, 2026-10-25). Certificate of insurance: not on file. | Google review, confirmed by Paul 2026-10-25 |
+| d-warranty-terms | Warranty terms | 10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google review, 2026-10-25). Written copy: not on file. | Google review, confirmed by Paul 2026-10-25 |
 | d-guarantees-response-time-on-time-satisfaction | Guarantees (response time, on-time, satisfaction) | Form enquiries answered within 24 hours (client confirmed). Client note: 'We pride ourselves on great customer communication and excellent customer care.' | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_7 / claim_7_detail) |
 | d-awards-and-rankings | Awards and rankings | 'Best Gutter Installer in Lakeland, Florida' by GutterPro HQ, 2025 — client says accurate; only public source is a company-distributed press release (MarketersMedia, Dec 2025) | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_10); markets.financialcontent.com Ma |
 | d-free-estimate-and-what-free-means | Free estimate — and what free means | Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees' | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_9) |
-| d-named-staff-for-on-page-use | Named staff for on-page use | Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow'] | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2; question_5) |
+| d-emergency-after-hours-reality | Emergency / after-hours reality | Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct. | Client answer via Paul 2026-10-24 (interviews/facts/First Choice Seamless Gutters - Facts Answers - pilot - 2026-10-24.md) |
+| d-named-staff-for-on-page-use | Named staff for on-page use | Owners: Adrian Buehl and Rachel Buehl (client confirmed). Other staff roles: see row 'Roles of April, Matt, Isaac, James'. | Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2); staff roles split  |
 | d-blog-author-a-real-person-cm-039-from-the-decision-sheet | Blog author — a real person (CM-039; from the Decision Sheet) | Adrian Buehl, owner | Settled blog_author (Paul, Approval 1, 2026-10-22: the owner named on the returned facts, candidate Adrian Buehl); owners confirmed on Client proof sheet return |
 | cms | Content management system | WordPress | Paul, intake answer |
 | website-street-address | Street address shown on the website | 3517 Century Blvd, Lakeland, FL | Paul, 2026-10-22 (confirmed for website display; billing address check) |
@@ -54,16 +54,18 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | a-area-variants-3-5 | Area variants (3–5) | Proposed: Polk County, FL · Polk County, Florida · Lakeland–Winter Haven · Lakeland–Winter Haven metropolitan area | en.wikipedia.org/wiki/Polk_County,_Florida; Decision Sheet |
 | a-separator-standard | Separator standard | ` - ` |  |
 | a-exact-url-in-the-gbp-website-field | Exact URL in the GBP Website field | https://firstchoiceseamlessgutters.net/ | Paul, intake answer |
+| d-founding-year-years-in-business | Founding year / years in business | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns the answer (asked on returned proof sheet claim_5) |
 | d-certifications-authorizations-factory-training | Certifications, authorizations, factory training |  |  |
 | d-team-size-trucks-jobs-completed | Team size / trucks / jobs completed |  |  |
-| d-financing-available-provider-terms | Financing — available, provider, terms | [NEED: financing — none found on site, GBP or BBB; client wrote 'answers follow'] | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest |
-| d-emergency-after-hours-reality | Emergency / after-hours reality | Site: 'Available 7 Days a Week'; GBP hours 7 AM–8 PM Mon–Sun; no emergency claim found | GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-1 |
-| d-minimum-service-call-or-trip-charge | Minimum service call or trip charge | [NEED: minimum or trip charge — client wrote 'answers follow'] | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest |
-| d-payment-methods | Payment methods | [NEED: payment methods — client wrote 'answers follow'] | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest |
-| d-services-subcontracted-out | Services subcontracted out | [NEED: subcontracting — client answered 'n/a'; confirm it means nothing is subcontracted] | searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest |
+| d-financing-available-provider-terms | Financing — available, provider, terms | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_3: 'answers follow') |
+| d-minimum-service-call-or-trip-charge | Minimum service call or trip charge | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_0: 'answers follow') |
+| d-payment-methods | Payment methods | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_2: 'answers follow') |
+| d-services-subcontracted-out | Services subcontracted out | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_4: client wrote 'n/a', not int |
 | d-licensed-practitioner-for-health-claim-sign-off-medical-ch | Licensed practitioner for health-claim sign-off *(medical / chiropractic)* |  |  |
 | gbp-share-link | Google Business Profile link | https://maps.app.goo.gl/c5prGD6rMCwptG3x6 | Paul, intake answer |
 | gsc-access | Google Search Console access | Access exists (Paul reports) | Paul, intake answer |
+| d-staff-roles | Roles of April, Matt, Isaac, James | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns them (returned proof sheet question_5) |
+| d-travel-fee | Travel fee | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns it (returned proof sheet towns_excluded / question_0) |
 
 
 ## Reviews
@@ -158,9 +160,21 @@ _No area source list rows or research results for this place yet._
 
 _Nothing in the place store yet for this page's place (places.py status lists what is missing)._
 
+## Industry standard — until the client answers (CM-068)
+
+_How the trade does this work, from the cited sources. Write it as standard practice ("a seamless gutter install starts with …"), never as the client's own claim ("we always …"), and add no number or material the source does not give. The client's answer replaces it (later-rewrites.md)._
+
+_None for this page — its scope and process come from the client, or stay a `[NEED: …]`._
+
 ## Settled decisions touching this page
 
 - 2026-10-22 · `title_format.about` — SEO-title format — about page: `About Brand - Category in Area` (recommended default)
+- 2026-10-24 · `fact:svc-gutter-cleaning:timeframe` — Site statement still true per client. Client gave no specific job duration.
+- 2026-10-24 · `fact:svc-gutter-cleaning:pricing` — Site statement true per client: honest pricing, no hidden fees, free no-obligation estimate.
+- 2026-10-24 · `fact:loc-lakeland:local_context` — Rainy season May 25 to Oct 10 and hurricane season Jun 1 to Nov 30 (National Weather Service). Lakeland averages about 56.8 inches of rain a year, wettest June to September (Wikipedia). Housing stock, tree debris and failure patterns are not sourced and are not stated.
+- 2026-10-24 · `fact:svc-commercial-gutters:service_scope` — Yes, still true: We install and service commercial gutter systems that are sized for higher volume, reinforced where needed, and routed to move water safely away from the building perimeter. (Paul, 2026-10-24)
+- 2026-10-24 · `fact:svc-copper-gutters:service_scope` — Yes, still true: Installed With Real Storm Behavior in Mind. We design copper gutter systems around how homes in this area actually shed water. (Paul, 2026-10-24)
+- 2026-10-24 · `fact:svc-copper-gutters:service_process` — Yes, still true: Installed With Real Storm Behavior in Mind. We design copper gutter systems around how homes in this area actually shed water. (Paul, 2026-10-24)
 
 ## Gaps — the only things research looks for
 

@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "Mulberry has a humid subtropical climate (Koppen Cfa); elevation 112 ft. NWS Tampa Bay: the West Central Florida rainy (thunderstorm) season runs May 25 to October 10; late May through June, hail, damaging winds, waterspouts, heavy rainfall and frequent lightning are common (https://www.weather.gov/tbw/rainyseason). Phosphate rock was found in the Peace River in 1886 and mining replaced logging; the phosphate industry still dominates the economy, and Mosaic's Nichols mine is about two miles east of the city. Water covers 0.70 sq mi of the city's area. No official median year built was found.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Mulberry,_Florida ; https://www.weather.gov/tbw/rainyseason, read 2026-10-26"
+    },
+    "neighborhoods": {
+      "value": "PARTIAL, listing-site sources only (no official list found): Belmont Woods (manufactured-home community), Turner Oaks (subdivision off Hwy 60), Bradley Junction (community). Fewer than 3 confirmed by an official source.",
+      "status": "Needs Review",
+      "source": "https://www.homesbymarco.com/subdivisions/belmont-woods-in-mulberry-fl ; https://evemetlis.realgeeks.com/property/P4939145/, read 2026-10-26"
+    },
+    "place_entities": {
+      "value": "1) Mulberry Phosphate Museum (in the city's original railroad depot, est. 1986) - https://en.wikipedia.org/wiki/Mulberry_Phosphate_Museum - Wikidata Q16935287. 2) Alafia River Reserve (334-acre reserve) - Wikidata Q4705554 (Wikipedia: Alafia River Reserve, not separately fetched). 3) Mulberry Murals Initiative (public art, founded 2018; Wikipedia: Mulberry, Florida, no own entry). 4) Mulberry Cultural Center (opened fall 2015; per Wikipedia, no own entry). Wikipedia/Wikidata for the city: Q2153870.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Mulberry,_Florida ; https://en.wikipedia.org/wiki/Mulberry_Phosphate_Museum ; https://www.wikidata.org/wiki/Q4705554, read 2026-10-26"
+    },
+    "permit_office": {
+      "value": "City of Mulberry Building Department, City Hall, 104 S Church Ave, Mulberry FL 33860, (863) 425-1125. Page: https://www.cityofmulberryfl.org/building-department . PARTIAL: address, phone and page URL come from third-party directories; the city site returned HTTP 403 to the reader and could not be read.",
+      "status": "Needs Review",
+      "source": "https://www.cityofmulberryfl.org/building-department (unread, 403); https://permitsaige.com/directory/fl/mulberry-fl, read 2026-10-26"
+    },
+    "city_served": {
+      "value": "Mulberry is served: the client confirmed all 20 Polk County places on the proof sheet, Mulberry among them; no town excluded.",
+      "status": "Client Confirmed",
+      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded) - facts.json towns-served-client"
+    }
+  }
+}

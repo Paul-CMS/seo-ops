@@ -3,7 +3,7 @@
  "type": "location",
  "url": "https://www.firstchoiceseamlessgutters.net/waverly-fl/",
  "section": "locations-east",
- "built": "2026-10-24T20:29:12-05:00",
+ "built": "2026-10-26T11:46:57-05:00",
  "services": [],
  "places": [
   "Waverly"
@@ -100,10 +100,10 @@
   {
    "id": "d-founding-year-years-in-business",
    "label": "Founding year / years in business",
-   "status": "client_confirmed",
-   "value": "In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: [NEED: founding year]",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_5 / claim_5_detail)",
-   "state": "confirmed"
+   "status": "unknown",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: set fully Unknown until the client returns the answer (asked on returned proof sheet claim_5)",
+   "state": "unknown"
   },
   {
    "id": "d-legal-entity-dba",
@@ -125,8 +125,8 @@
    "id": "d-insurance-bonded-status",
    "label": "Insurance / bonded status",
    "status": "client_confirmed",
-   "value": "Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate: [NEED: certificate of insurance — not sent]",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_3)",
+   "value": "Insured (confirmed by Paul from a Google review, 2026-10-25). Certificate of insurance: not on file.",
+   "source": "Google review, confirmed by Paul 2026-10-25",
    "state": "confirmed"
   },
   {
@@ -149,8 +149,8 @@
    "id": "d-warranty-terms",
    "label": "Warranty terms",
    "status": "client_confirmed",
-   "value": "10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Written terms not on file: [NEED: copy of the written warranty]",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_4); owner review response in data/re",
+   "value": "10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google review, 2026-10-25). Written copy: not on file.",
+   "source": "Google review, confirmed by Paul 2026-10-25",
    "state": "confirmed"
   },
   {
@@ -189,8 +189,8 @@
    "id": "d-financing-available-provider-terms",
    "label": "Financing — available, provider, terms",
    "status": "unknown",
-   "value": "[NEED: financing — none found on site, GBP or BBB; client wrote 'answers follow']",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_3: 'answers follow')",
    "state": "unknown"
   },
   {
@@ -204,41 +204,41 @@
   {
    "id": "d-emergency-after-hours-reality",
    "label": "Emergency / after-hours reality",
-   "status": "submitted",
-   "value": "Site: 'Available 7 Days a Week'; GBP hours 7 AM–8 PM Mon–Sun; no emergency claim found",
-   "source": "GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-1",
-   "state": "unknown"
+   "status": "client_confirmed",
+   "value": "Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct.",
+   "source": "Client answer via Paul 2026-10-24 (interviews/facts/First Choice Seamless Gutters - Facts Answers - pilot - 2026-10-24.md)",
+   "state": "confirmed"
   },
   {
    "id": "d-minimum-service-call-or-trip-charge",
    "label": "Minimum service call or trip charge",
    "status": "unknown",
-   "value": "[NEED: minimum or trip charge — client wrote 'answers follow']",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_0: 'answers follow')",
    "state": "unknown"
   },
   {
    "id": "d-payment-methods",
    "label": "Payment methods",
    "status": "unknown",
-   "value": "[NEED: payment methods — client wrote 'answers follow']",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_2: 'answers follow')",
    "state": "unknown"
   },
   {
    "id": "d-services-subcontracted-out",
    "label": "Services subcontracted out",
    "status": "unknown",
-   "value": "[NEED: subcontracting — client answered 'n/a'; confirm it means nothing is subcontracted]",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_4: client wrote 'n/a', not int",
    "state": "unknown"
   },
   {
    "id": "d-named-staff-for-on-page-use",
    "label": "Named staff for on-page use",
    "status": "client_confirmed",
-   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow']",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2; question_5)",
+   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Other staff roles: see row 'Roles of April, Matt, Isaac, James'.",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2); staff roles split ",
    "state": "confirmed"
   },
   {
@@ -352,6 +352,22 @@
    "value": "Not a standalone service. Its maintenance scope is folded into the Gutter Repair and Gutter Cleaning pages; no /services/gutter-maintenance/ page. The old URL is redirected (never deleted) to the closer of the two.",
    "source": "Paul, 2026-10-24 (settled audit_gutter_maintenance, F-014)",
    "state": "confirmed"
+  },
+  {
+   "id": "d-staff-roles",
+   "label": "Roles of April, Matt, Isaac, James",
+   "status": "unknown",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: set fully Unknown until the client returns them (returned proof sheet question_5)",
+   "state": "unknown"
+  },
+  {
+   "id": "d-travel-fee",
+   "label": "Travel fee",
+   "status": "unknown",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: set fully Unknown until the client returns it (returned proof sheet towns_excluded / question_0)",
+   "state": "unknown"
   }
  ],
  "reviews": {
@@ -639,7 +655,13 @@
  "public": [],
  "research": [],
  "place": [],
- "settled": [],
+ "settled": [
+  {
+   "key": "plan_unincorporated_pages",
+   "text": "Site plan choice A (Paul): keep the Highland City, Kathleen, Wahneta and Waverly location pages.",
+   "at": "2026-10-24"
+  }
+ ],
  "gaps": [
   {
    "key": "place_entities",
@@ -658,6 +680,7 @@
    "fact_key": "fact:loc-waverly:permit_office"
   }
  ],
+ "standard": {},
  "excerpts": [
   {
    "id": "R1",
@@ -974,11 +997,6 @@
    "value": "First Choice Seamless Gutters Inc. (BBB: Corporation, incorporated 11/24/2021) — Sunbiz record not read (403), Gwen manual_lookup"
   },
   {
-   "id": "d-founding-year-years-in-business",
-   "label": "Founding year / years in business",
-   "value": "In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: [NEED: founding year]"
-  },
-  {
    "id": "d-legal-entity-dba",
    "label": "Legal entity + DBA",
    "value": "First Choice Seamless Gutters Inc., a corporation (client confirmed); BBB primary name 'First Choice Seamless Gutters'; site also 'First Choice Seamless Gutter Inc' (typo, singular)"
@@ -991,7 +1009,7 @@
   {
    "id": "d-insurance-bonded-status",
    "label": "Insurance / bonded status",
-   "value": "Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate: [NEED: certificate of insurance — not sent]"
+   "value": "Insured (confirmed by Paul from a Google review, 2026-10-25). Certificate of insurance: not on file."
   },
   {
    "id": "d-association-memberships",
@@ -1001,7 +1019,7 @@
   {
    "id": "d-warranty-terms",
    "label": "Warranty terms",
-   "value": "10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Written terms not on file: [NEED: copy of the written warranty]"
+   "value": "10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google review, 2026-10-25). Written copy: not on file."
   },
   {
    "id": "d-guarantees-response-time-on-time-satisfaction",
@@ -1024,9 +1042,14 @@
    "value": "Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees'"
   },
   {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "value": "Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct."
+  },
+  {
    "id": "d-named-staff-for-on-page-use",
    "label": "Named staff for on-page use",
-   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow']"
+   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Other staff roles: see row 'Roles of April, Matt, Isaac, James'."
   },
   {
    "id": "d-blog-author-a-real-person-cm-039-from-the-decision-sheet",

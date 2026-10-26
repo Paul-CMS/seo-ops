@@ -3,7 +3,7 @@
  "type": "location",
  "url": "https://www.firstchoiceseamlessgutters.net/polk-city-fl/",
  "section": "locations-west",
- "built": "2026-10-24T20:29:11-05:00",
+ "built": "2026-10-26T11:46:56-05:00",
  "services": [],
  "places": [
   "Polk City"
@@ -100,10 +100,10 @@
   {
    "id": "d-founding-year-years-in-business",
    "label": "Founding year / years in business",
-   "status": "client_confirmed",
-   "value": "In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: [NEED: founding year]",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_5 / claim_5_detail)",
-   "state": "confirmed"
+   "status": "unknown",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: set fully Unknown until the client returns the answer (asked on returned proof sheet claim_5)",
+   "state": "unknown"
   },
   {
    "id": "d-legal-entity-dba",
@@ -125,8 +125,8 @@
    "id": "d-insurance-bonded-status",
    "label": "Insurance / bonded status",
    "status": "client_confirmed",
-   "value": "Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate: [NEED: certificate of insurance — not sent]",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_3)",
+   "value": "Insured (confirmed by Paul from a Google review, 2026-10-25). Certificate of insurance: not on file.",
+   "source": "Google review, confirmed by Paul 2026-10-25",
    "state": "confirmed"
   },
   {
@@ -149,8 +149,8 @@
    "id": "d-warranty-terms",
    "label": "Warranty terms",
    "status": "client_confirmed",
-   "value": "10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Written terms not on file: [NEED: copy of the written warranty]",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, claim_4); owner review response in data/re",
+   "value": "10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google review, 2026-10-25). Written copy: not on file.",
+   "source": "Google review, confirmed by Paul 2026-10-25",
    "state": "confirmed"
   },
   {
@@ -189,8 +189,8 @@
    "id": "d-financing-available-provider-terms",
    "label": "Financing — available, provider, terms",
    "status": "unknown",
-   "value": "[NEED: financing — none found on site, GBP or BBB; client wrote 'answers follow']",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_3: 'answers follow')",
    "state": "unknown"
   },
   {
@@ -204,41 +204,41 @@
   {
    "id": "d-emergency-after-hours-reality",
    "label": "Emergency / after-hours reality",
-   "status": "submitted",
-   "value": "Site: 'Available 7 Days a Week'; GBP hours 7 AM–8 PM Mon–Sun; no emergency claim found",
-   "source": "GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22; firstchoiceseamlessgutters.net homepage, read 2026-1",
-   "state": "unknown"
+   "status": "client_confirmed",
+   "value": "Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct.",
+   "source": "Client answer via Paul 2026-10-24 (interviews/facts/First Choice Seamless Gutters - Facts Answers - pilot - 2026-10-24.md)",
+   "state": "confirmed"
   },
   {
    "id": "d-minimum-service-call-or-trip-charge",
    "label": "Minimum service call or trip charge",
    "status": "unknown",
-   "value": "[NEED: minimum or trip charge — client wrote 'answers follow']",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_0: 'answers follow')",
    "state": "unknown"
   },
   {
    "id": "d-payment-methods",
    "label": "Payment methods",
    "status": "unknown",
-   "value": "[NEED: payment methods — client wrote 'answers follow']",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_2: 'answers follow')",
    "state": "unknown"
   },
   {
    "id": "d-services-subcontracted-out",
    "label": "Services subcontracted out",
    "status": "unknown",
-   "value": "[NEED: subcontracting — client answered 'n/a'; confirm it means nothing is subcontracted]",
-   "source": "searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, quest",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: no answers, mark unknown; searched: site, GBP, BBB 2026-10-22; Client proof sheet returned 2026-10-24 (question_4: client wrote 'n/a', not int",
    "state": "unknown"
   },
   {
    "id": "d-named-staff-for-on-page-use",
    "label": "Named staff for on-page use",
    "status": "client_confirmed",
-   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow']",
-   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2; question_5)",
+   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Other staff roles: see row 'Roles of April, Matt, Isaac, James'.",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Who_you_are_2); staff roles split ",
    "state": "confirmed"
   },
   {
@@ -351,6 +351,62 @@
    "status": "paul_approved",
    "value": "Not a standalone service. Its maintenance scope is folded into the Gutter Repair and Gutter Cleaning pages; no /services/gutter-maintenance/ page. The old URL is redirected (never deleted) to the closer of the two.",
    "source": "Paul, 2026-10-24 (settled audit_gutter_maintenance, F-014)",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-staff-roles",
+   "label": "Roles of April, Matt, Isaac, James",
+   "status": "unknown",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: set fully Unknown until the client returns them (returned proof sheet question_5)",
+   "state": "unknown"
+  },
+  {
+   "id": "d-travel-fee",
+   "label": "Travel fee",
+   "status": "unknown",
+   "value": "Unknown — not provided by client (Paul, 2026-10-25)",
+   "source": "Paul, 2026-10-25: set fully Unknown until the client returns it (returned proof sheet towns_excluded / question_0)",
+   "state": "unknown"
+  },
+  {
+   "id": "page:local_context",
+   "label": "local context",
+   "status": "Internally Verified",
+   "value": "NWS Tampa Bay: the rainy season runs May 25 to October 10 for West Central Florida outside Southwest Florida, peaks July through early September; heavy rainfall, frequent lightning, and from late May through June hail and damaging winds are common. Wikipedia (",
+   "source": "https://www.weather.gov/tbw/rainyseason ; https://en.wikipedia.org/wiki/Polk_City,_Florida, read 2026-10-26",
+   "state": "sourced public"
+  },
+  {
+   "id": "page:neighborhoods",
+   "label": "neighborhoods",
+   "status": "Internally Verified",
+   "value": "Mount Olive Shores, Mount Olive Shores North, Country Trails (named as Polk City neighborhoods on Redfin's Polk City pages; not confirmed by an official page; Polk City has fewer than 4 verified, so name them in local context only)",
+   "source": "https://www.redfin.com/city/15017/FL/Polk-City/waterfront, read 2026-10-26",
+   "state": "sourced public"
+  },
+  {
+   "id": "page:place_entities",
+   "label": "place entities",
+   "status": "Internally Verified",
+   "value": "Fantasy of Flight (aviation attraction, closed as a daily attraction April 2014; Wikipedia https://en.wikipedia.org/wiki/Fantasy_of_Flight, Wikidata Q1395903); General James A. Van Fleet State Trail (southern trailhead in Polk City, 7683 Berkley Road; Wikipedi",
+   "source": "https://en.wikipedia.org/wiki/Polk_City,_Florida ; https://www.floridastateparks.org/trail/Van-Fleet, read 2026-10-26",
+   "state": "sourced public"
+  },
+  {
+   "id": "page:permit_office",
+   "label": "permit office",
+   "status": "Internally Verified",
+   "value": "The City of Polk City's own Community Development (building) department issues building permits inside city limits; it processes permits electronically on Polk County's Accela portal (aca-prod.accela.com/POLKCO/). Official city page content could only be read ",
+   "source": "https://mypolkcity.org/?p=88 (city site, excerpts via search), read 2026-10-26",
+   "state": "sourced public"
+  },
+  {
+   "id": "page:city_served",
+   "label": "city served",
+   "status": "Client Confirmed",
+   "value": "Polk City is served: the client confirmed all 20 Polk County places on the proof sheet, Polk City among them; no town excluded.",
+   "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded",
    "state": "confirmed"
   }
  ],
@@ -652,35 +708,64 @@
   }
  ],
  "public": [],
- "research": [],
- "place": [],
- "settled": [],
- "gaps": [
+ "research": [
   {
-   "key": "neighborhoods",
-   "label": "Up to 12 real neighborhoods (fewer than 3: the section is dropped and they are named in local context)",
-   "need": "required",
-   "from": "page:neighborhoods",
+   "id": "RL-locations-west-1",
+   "page": "loc-polk-city",
+   "gap": "fact:loc-polk-city:local_context",
    "kind": "public",
-   "fact_key": "fact:loc-polk-city:neighborhoods"
+   "queries": "NWS Tampa Bay rainy season thunderstorm climatology || Polk City Florida Wikipedia climate terrain elevation || Polk County Florida weather.gov zone forecast",
+   "sources_tried": "methodology/places/ (empty) || https://www.weather.gov/tbw/rainyseason || Wikipedia: Polk City, Florida",
+   "result": "found",
+   "excerpt": "May 25 to October 10 rainy season, peak July-early Sept; heavy rain, lightning, wind",
+   "url": "https://www.weather.gov/tbw/rainyseason",
+   "date": "2026-10-26",
+   "run": "20261026-113830-build-374a"
   },
   {
-   "key": "place_entities",
-   "label": "3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections)",
-   "need": "supporting",
-   "from": "page:place_entities",
+   "id": "RL-locations-west-2",
+   "page": "loc-polk-city",
+   "gap": "fact:loc-polk-city:place_entities",
    "kind": "public",
-   "fact_key": "fact:loc-polk-city:place_entities"
+   "queries": "Polk City Florida parks landmarks Wikipedia || Polk City Florida Wikidata entities || Polk County parks Polk City",
+   "sources_tried": "methodology/places/ (empty) || Wikipedia: Polk City, Florida || Wikidata",
+   "result": "found",
+   "excerpt": "named places with Wikipedia/Wikidata ids",
+   "url": "https://en.wikipedia.org/wiki/Polk_City,_Florida",
+   "date": "2026-10-26",
+   "run": "20261026-113830-build-374a"
   },
   {
-   "key": "permit_office",
-   "label": "Which office issues permits here, with its official page (for the Serving section)",
-   "need": "supporting",
-   "from": "page:permit_office",
+   "id": "RL-locations-west-3",
+   "page": "loc-polk-city",
+   "gap": "fact:loc-polk-city:permit_office",
    "kind": "public",
-   "fact_key": "fact:loc-polk-city:permit_office"
+   "queries": "Polk City Florida building permits City of Polk City Community Development permit page || Polk County Florida Building Division unincorporated permits || Polk City Florida Accela Polk County permits",
+   "sources_tried": "methodology/places/ (empty) || https://mypolkcity.org/?p=88 || Wikipedia: Polk City, Florida",
+   "result": "found",
+   "excerpt": "City of Polk City Community Development permit page issues residential permits",
+   "url": "https://mypolkcity.org/?p=88",
+   "date": "2026-10-26",
+   "run": "20261026-113830-build-374a"
+  },
+  {
+   "id": "RL-locations-west-4",
+   "page": "loc-polk-city",
+   "gap": "fact:loc-polk-city:neighborhoods",
+   "kind": "public",
+   "queries": "Polk City Florida subdivisions neighborhoods || Polk City FL neighborhoods Redfin Niche || Polk City Polk County subdivision City of Polk City Community Development permit page",
+   "sources_tried": "methodology/places/ (empty) || Wikipedia: Polk City, Florida || https://www.redfin.com",
+   "result": "partial",
+   "excerpt": "fewer than 4 neighborhoods from non-official sources",
+   "url": "https://en.wikipedia.org/wiki/Polk_City,_Florida",
+   "date": "2026-10-26",
+   "run": "20261026-113830-build-374a"
   }
  ],
+ "place": [],
+ "settled": [],
+ "gaps": [],
+ "standard": {},
  "excerpts": [
   {
    "id": "R1",
@@ -989,6 +1074,34 @@
    "topic": "site/GBP",
    "tier": "site_stated",
    "text": "Gutter Downspouts in Lakeland, FL – Serving Polk City, Auburndale & Surrounding Areas Properly functioning downspouts are critical for directing water away from your home."
+  },
+  {
+   "id": "P45",
+   "kind": "public",
+   "topic": "fact:loc-polk-city:local_context",
+   "tier": "official",
+   "text": "May 25 to October 10 rainy season, peak July-early Sept; heavy rain, lightning, wind"
+  },
+  {
+   "id": "P46",
+   "kind": "public",
+   "topic": "fact:loc-polk-city:place_entities",
+   "tier": "official",
+   "text": "named places with Wikipedia/Wikidata ids"
+  },
+  {
+   "id": "P47",
+   "kind": "public",
+   "topic": "fact:loc-polk-city:permit_office",
+   "tier": "official",
+   "text": "City of Polk City Community Development permit page issues residential permits"
+  },
+  {
+   "id": "P48",
+   "kind": "public",
+   "topic": "fact:loc-polk-city:neighborhoods",
+   "tier": "official",
+   "text": "fewer than 4 neighborhoods from non-official sources"
   }
  ],
  "known": [
@@ -1018,11 +1131,6 @@
    "value": "First Choice Seamless Gutters Inc. (BBB: Corporation, incorporated 11/24/2021) — Sunbiz record not read (403), Gwen manual_lookup"
   },
   {
-   "id": "d-founding-year-years-in-business",
-   "label": "Founding year / years in business",
-   "value": "In business 'well over 25 plus years' (client). Client says BBB 'Business Started: 11/24/2021' is not when they started trading (2021 is the BBB/incorporation date). Exact founding year: [NEED: founding year]"
-  },
-  {
    "id": "d-legal-entity-dba",
    "label": "Legal entity + DBA",
    "value": "First Choice Seamless Gutters Inc., a corporation (client confirmed); BBB primary name 'First Choice Seamless Gutters'; site also 'First Choice Seamless Gutter Inc' (typo, singular)"
@@ -1035,7 +1143,7 @@
   {
    "id": "d-insurance-bonded-status",
    "label": "Insurance / bonded status",
-   "value": "Insured: client confirms the insurance part of 'fully licensed and insured'. Carrier and certificate: [NEED: certificate of insurance — not sent]"
+   "value": "Insured (confirmed by Paul from a Google review, 2026-10-25). Certificate of insurance: not on file."
   },
   {
    "id": "d-association-memberships",
@@ -1045,7 +1153,7 @@
   {
    "id": "d-warranty-terms",
    "label": "Warranty terms",
-   "value": "10-Year Workmanship Guarantee, in writing (client). Owner's public review response: problems with its gutters corrected free of cost. Written terms not on file: [NEED: copy of the written warranty]"
+   "value": "10-Year Workmanship Guarantee, in writing (confirmed by Paul from a Google review, 2026-10-25). Written copy: not on file."
   },
   {
    "id": "d-guarantees-response-time-on-time-satisfaction",
@@ -1068,9 +1176,14 @@
    "value": "Free on-site inspection and detailed estimate, free whether or not the customer books (client confirmed); site also says no-obligation, 'no hidden fees'"
   },
   {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "value": "Available 7 days a week; emergency after-hours service available. GBP hours 7 AM to 8 PM Mon-Sun correct."
+  },
+  {
    "id": "d-named-staff-for-on-page-use",
    "label": "Named staff for on-page use",
-   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Roles of April, Matt, Isaac, James: [NEED: staff roles — client wrote 'answers follow']"
+   "value": "Owners: Adrian Buehl and Rachel Buehl (client confirmed). Other staff roles: see row 'Roles of April, Matt, Isaac, James'."
   },
   {
    "id": "d-blog-author-a-real-person-cm-039-from-the-decision-sheet",
@@ -1126,6 +1239,31 @@
    "id": "gutter-maintenance-consolidated",
    "label": "Gutter Maintenance (standalone service)",
    "value": "Not a standalone service. Its maintenance scope is folded into the Gutter Repair and Gutter Cleaning pages; no /services/gutter-maintenance/ page. The old URL is redirected (never deleted) to the closer of the two."
+  },
+  {
+   "id": "page:local_context",
+   "label": "local context",
+   "value": "NWS Tampa Bay: the rainy season runs May 25 to October 10 for West Central Florida outside Southwest Florida, peaks July through early September; heavy rainfall, frequent lightning, and from late May through June hail and damaging winds are common. Wikipedia ("
+  },
+  {
+   "id": "page:neighborhoods",
+   "label": "neighborhoods",
+   "value": "Mount Olive Shores, Mount Olive Shores North, Country Trails (named as Polk City neighborhoods on Redfin's Polk City pages; not confirmed by an official page; Polk City has fewer than 4 verified, so name them in local context only)"
+  },
+  {
+   "id": "page:place_entities",
+   "label": "place entities",
+   "value": "Fantasy of Flight (aviation attraction, closed as a daily attraction April 2014; Wikipedia https://en.wikipedia.org/wiki/Fantasy_of_Flight, Wikidata Q1395903); General James A. Van Fleet State Trail (southern trailhead in Polk City, 7683 Berkley Road; Wikipedi"
+  },
+  {
+   "id": "page:permit_office",
+   "label": "permit office",
+   "value": "The City of Polk City's own Community Development (building) department issues building permits inside city limits; it processes permits electronically on Polk County's Accela portal (aca-prod.accela.com/POLKCO/). Official city page content could only be read "
+  },
+  {
+   "id": "page:city_served",
+   "label": "city served",
+   "value": "Polk City is served: the client confirmed all 20 Polk County places on the proof sheet, Polk City among them; no town excluded."
   }
  ]
 }

@@ -1,0 +1,29 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "NWS Tampa Bay: the rainy season runs May 25 to October 10 for West Central Florida outside Southwest Florida, peaks July through early September; heavy rainfall, frequent lightning, and from late May through June hail and damaging winds are common. Wikipedia (Kathleen, Florida) lists Kathleen as a census-designated place (not an incorporated city) in Polk County at 118 ft (36 m) elevation; a post office named Kathleen has operated since 1886. No official source found for housing-stock age or local drainage.",
+      "status": "Internally Verified",
+      "source": "https://www.weather.gov/tbw/rainyseason ; https://en.wikipedia.org/wiki/Kathleen,_Florida, read 2026-10-26"
+    },
+    "neighborhoods": {
+      "value": "Meadow View Oaks (manufactured and single-family homes, built 2005-2022 per a real-estate listing site), Pine Meadow Acres (rural acreage community, Pine Meadow Road), Fox Branch (planned community on west side of Kathleen Road, 952 units approved per commercial listing). Real-estate sources only; no official list found; fewer than 4 verified.",
+      "status": "Internally Verified",
+      "source": "https://www.homesbymarco.com/subdivisions/meadow-view-oaks-in-lakeland-fl ; https://movewithmomentum.com/neighborhoods/pine-meadow-acres ; https://www.rofo.com/commercial-real-estate/building/FL/Lakeland/8350-Kathleen-Rd-524487.html, read 2026-10-26"
+    },
+    "place_entities": {
+      "value": "Partial: Kathleen Senior High School (1100 Red Devil Way; Wikipedia places it in Lakeland, 33805; Wikipedia https://en.wikipedia.org/wiki/Kathleen_Senior_High_School, Wikidata Q6376747); Kathleen Middle School (3627 Kathleen Pines Avenue, Lakeland; no Wikipedia article); Kathleen Elementary School (Lakeland; no Wikipedia article). Kathleen CDP itself Wikidata Q602145. No named park found. Fewer than 3 solid entities; all schools are addressed Lakeland.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Kathleen_Senior_High_School ; https://en.wikipedia.org/wiki/Kathleen,_Florida, read 2026-10-26"
+    },
+    "permit_office": {
+      "value": "Kathleen is an unincorporated CDP, so residential building permits come from the Polk County Building Division (County Administration Building, 330 W. Church St., Bartow; (863) 534-6080; applications online through the county's Accela portal). Basis: Polk County Building Division page title/search excerpts plus the CDP's non-municipal status; the official page text itself could not be fetched.",
+      "status": "Internally Verified",
+      "source": "https://www.polkfl.gov/services/building, read 2026-10-26"
+    },
+    "city_served": {
+      "value": "Kathleen is served: the client confirmed all 20 Polk County places on the proof sheet, Kathleen among them; no town excluded.",
+      "status": "Client Confirmed",
+      "source": "Client proof sheet returned 2026-10-24 (discovery/First Choice Seamless Gutters - Client Proof Sheet - RETURNED.json, confirm_Where_you_work_0-2; towns_excluded) - facts.json towns-served-client"
+    }
+  }
+}
