@@ -423,3 +423,5 @@ Paul, 2026-10-25: NEED items are fine to keep, but the system should research in
 ---
 
 - CR-047 · 2026-10-25 · ACCEPTED · Paul · Paul, 2026-10-25: asked for it in the system session
+
+- CR-047 · 2026-10-25 · DONE · system session · commit 321d474
