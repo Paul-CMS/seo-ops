@@ -764,3 +764,10 @@ These new claims are Paul's words, not yet in facts.json or confirmed by the cli
   approvals; then `/build first-choice-seamless-gutters ship`.
 - Not blocking writing (P8): the technical blocker handoff H-2026-10-23-03 (11 items) is still issued; /verify when Jonie returns it.
 
+## /interview · 2026-10-26 · run 20261026-111314-interview-9c3d
+
+- Ran interview facts for batch locations-west (9 blocked pages: loc-winter-haven, loc-auburndale, loc-bartow, loc-polk-city, loc-kathleen, loc-highland-city, loc-mulberry, loc-eagle-lake, loc-wahneta).
+- Question pack generated with 0 owner questions. Every gap is a public fact for the researcher (build/evidence/research-locations-west.md), or was already answered (plant-city-served).
+- Nothing to send to the client from this batch. The pack file is kept as a record only.
+- Next: the evidence gate still blocks these pages until the researcher facts are in or Paul waives them with an approve line for evidence of each page.
+
