@@ -316,6 +316,9 @@ def main():
     s.add_argument("--source"); s.add_argument("--quote"); s.add_argument("--label"); s.add_argument("--section")
     s.add_argument("--who", default="Paul"); s.add_argument("--count", type=int)
     s.add_argument("--status-text", help="the status cell exactly as the Brand Guide shows it")
+    s = sub.add_parser("update", help="CM-066: a Brand Guide line Paul dictated, added as an Updated line")
+    s.add_argument("slug"); s.add_argument("run_id"); s.add_argument("--text", required=True)
+    s.add_argument("--by", default="Paul")
     s = sub.add_parser("unlock"); s.add_argument("slug")
     s = sub.add_parser("check"); s.add_argument("slug")
     s = sub.add_parser("steps"); s.add_argument("command", nargs="?")
@@ -330,7 +333,7 @@ def main():
                   + f"\n{'':26} produces: {', '.join(v.get('produces', [])) or '—'}")
         return
     d = client_dir(a.slug)
-    if a.cmd in ("start", "abort", "finish", "note", "decision", "change", "fact", "flag"):
+    if a.cmd in ("start", "abort", "finish", "note", "decision", "change", "fact", "flag", "update"):
         require_client_folder(a.slug)   # §00: never client work in the main folder
 
     if a.cmd == "unlock":   # P2: Paul only, in his own terminal (the guard blocks Claude from running it)
@@ -455,6 +458,7 @@ def main():
     elif a.cmd == "fact":   # P4: the one way a fact enters facts.json — every answer, wherever it came from
         open_run(a.slug, a.run_id)
         import facts
+        held = S.bg_held(S.load(a.slug), a.slug)   # CM-066: approvals standing before this answer
         row, old = facts.set_fact(a.slug, a.id, value=a.value, status=a.status, source=a.source, quote=a.quote,
                                   label=a.label, section=a.section, who=a.who, count=a.count)
         if a.status_text is not None:   # the status cell as shown (statuses are never fingerprinted, so no approval moves)
@@ -472,6 +476,20 @@ def main():
         append(d / "log.md", f"- FACT {now()[:16]} · run {a.run_id} · {a.id} ({what}) · {row['status']} · "
                f"{redact(str(row['value']))[:200]} · source {redact(str(row.get('source') or '—'))[:120]} · by {a.who}\n")
         print(f"fact {a.id}: {what} — {row['status']}" + (f" · closed open question(s): {', '.join(k for k, _ in closed)}" if closed else ""))
+        if held and (not old or "value" in what or "status" in what):   # CM-066: Paul's own answer — an Updated line, approval kept
+            was = f"{facts.LABELS.get(old.get('status'), old.get('status'))}: {str(old.get('value') or '—')[:80]}" if old else "new"
+            kept = S.bg_update(a.slug, held, f"{row['label']} — was {was} → now {facts.LABELS.get(row['status'], row['status'])}: "
+                               f"{str(row['value'])[:160]} (source: {str(row.get('source') or '—')[:100]}; by {a.who})",
+                               f"fact {a.id} by {a.who}", a.run_id)
+            drafted = [pid for pid, p in S.load(a.slug)["pages"].items() if (p.get("files") or {}).get("draft")]
+            print(f"Brand Guide: Updated line added; approval kept ({', '.join(kept) or 'nothing it changed was approved'})."
+                  + (f" {len(drafted)} draft(s) were written before this answer — check which of them state "
+                     f"'{row['label']}' and fix only those (/build {a.slug} revise <section>)." if drafted else ""))
+    elif a.cmd == "update":   # CM-066: a Brand Guide line Paul dictated — added as an Updated line, his approval kept
+        open_run(a.slug, a.run_id)
+        held = S.bg_held(S.load(a.slug), a.slug)
+        kept = S.bg_update(a.slug, held, f"{a.text} (by {a.by})", f"a Brand Guide line {a.by} dictated", a.run_id)
+        print(f"Brand Guide: Updated line added; approval kept ({', '.join(kept) or 'nothing it changed was approved'}).")
     elif a.cmd == "flag":   # P3: a client session never changes the workflow — it flags the issue for Paul
         open_run(a.slug, a.run_id)
         import changereq

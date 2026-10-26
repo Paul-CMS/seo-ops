@@ -234,6 +234,113 @@ def files_ok(files):
     return True, ""
 
 
+# ------------------------------------------------------------------ CM-066: Paul's own changes keep his approval
+BG_UPDATES = "## Updates since approval"
+BG_DECIDED = ("A", "D", "E", "G")   # what brand_guide_approved covers (stage-4 reconcile): never B3/C (the write-back's) nor F (the handoff's)
+
+
+def bg_ref(slug):
+    return f"clients/{slug}/brand-guide.md"
+
+
+def bg_sections_ref(slug):
+    """brand-guide.md#A+D+… — every section of this guide that Paul decides (never B or C, the write-back's sections)."""
+    from lib import _md_section
+    text = (ROOT / bg_ref(slug)).read_text(encoding="utf-8")
+    return bg_ref(slug) + "#" + "+".join(s for s in BG_DECIDED if _md_section(text, s) is not None)
+
+
+def bg_held(st, slug):
+    """The approvals covering the Brand Guide that stand right now — taken just before a change Paul makes himself."""
+    out = []
+    for g, rec in (st.get("gates") or {}).items():
+        files = rec.get("files") or {}
+        if rec.get("state") in GATES["met_decisions"] and any(f.split("#")[0] == bg_ref(slug) for f in files) \
+                and files_ok(files)[0]:
+            out.append(g)
+    return out
+
+
+def _bg_restamp(slug, gate, files):
+    """{ref: sha} with every Brand Guide ref at today's version; a whole-file brand_guide_approved becomes its sections."""
+    new = {}
+    for f, h in files.items():
+        if f.split("#")[0] != bg_ref(slug):
+            new[f] = h
+        else:
+            nf = bg_sections_ref(slug) if (gate == "brand_guide_approved" and "#" not in f) else f
+            new[nf] = ref_sha(nf)
+    return new
+
+
+def bg_keep(slug, held, why, run_id):
+    """CM-066: carry each approval in `held` (it stood before a change Paul made himself, or the system's own write-back)
+    forward to the guide's new version, logged. Only the Brand Guide refs move; any other changed file still voids it."""
+    st = load(slug)
+    carried = []
+    for g in held:
+        rec = st["gates"].get(g) or {}
+        if files_ok(rec.get("files"))[0]:
+            continue
+        old = dict(rec.get("files") or {})
+        new = _bg_restamp(slug, g, old)
+        if not files_ok(new)[0]:
+            continue   # something else changed too: that still needs Paul
+        rec["files"] = new
+        rec.setdefault("carried", []).append({"at": now(), "run": run_id, "why": why, "old": old, "new": new})
+        for m in (st.get("marks") or {}).values():   # the mark the approval came from moves with it
+            mf = m.get("files") or {}
+            if any(f in old and h == old[f] and f.split("#")[0] == bg_ref(slug) for f, h in mf.items()):
+                m["files"] = _bg_restamp(slug, g, dict(mf))
+        carried.append(g)
+    if carried:
+        save(slug, st)
+        append(client_dir(slug) / "log.md", f"- APPROVAL KEPT {now()[:16]} · run {run_id} · {', '.join(carried)} · {why} (CM-066)\n")
+    return carried
+
+
+def bg_update(slug, held, line, why, run_id):
+    """CM-066: a change Paul made himself — a fact he gave, a Brand Guide line he dictated — is one dated line under
+    'Updates since approval' (it overrides earlier text on the same point), and his approvals stand (bg_keep)."""
+    p = ROOT / bg_ref(slug)
+    text = p.read_text(encoding="utf-8")
+    entry = f"- Updated {now()[:10]} · {' '.join(str(line).split())}\n"
+    if BG_UPDATES not in text:
+        block = (f"{BG_UPDATES}\n*Changes Paul made after approving this guide (CM-066). A line here overrides any earlier "
+                 "text in the guide on the same point; his approval stands.*\n\n" + entry)
+        i = text.find("\n## Maintenance")
+        text = text[:i + 1] + block + "\n" + text[i + 1:] if i >= 0 else text.rstrip("\n") + "\n\n" + block
+    else:
+        start = text.index(BG_UPDATES)
+        nxt = text.find("\n## ", start + 1)
+        end = nxt + 1 if nxt >= 0 else len(text)
+        text = text[:start] + text[start:end].rstrip("\n") + "\n" + entry + ("\n" if nxt >= 0 else "") + text[end:]
+    p.write_text(text, encoding="utf-8")
+    append(client_dir(slug) / "log.md", f"- UPDATED {now()[:16]} · run {run_id} · Brand Guide · {' '.join(str(line).split())}\n")
+    return bg_keep(slug, held, why, run_id)
+
+
+def bg_writeback_keep(slug, st, run_id):
+    """CM-066: the section's write-back (B3, C1–C3) never voids brand_guide_approved. An approval of the whole file made
+    before CM-066 is kept when the guide was unchanged up to this run (git HEAD) and every section Paul decides still
+    holds the same values; it then covers those sections."""
+    import subprocess
+    from lib import _md_section, _values_only
+    rec = (st.get("gates") or {}).get("brand_guide_approved") or {}
+    files = rec.get("files") or {}
+    ref = bg_ref(slug)
+    if rec.get("state") not in GATES["met_decisions"] or ref not in files or files_ok(files)[0]:
+        return []
+    head = subprocess.run(["git", "show", f"HEAD:{ref}"], cwd=ROOT, capture_output=True)
+    if head.returncode or __import__("hashlib").sha256(head.stdout).hexdigest()[:12] != files[ref]:
+        return []
+    old, cur = head.stdout.decode("utf-8"), (ROOT / ref).read_text(encoding="utf-8")
+    if any(_values_only(_md_section(old, s) or "") != _values_only(_md_section(cur, s) or "") for s in BG_DECIDED):
+        return []
+    return bg_keep(slug, ["brand_guide_approved"], "the section's write-back changed only B3 and C (the system's own "
+                   "sections); the approval now covers the sections Paul decides", run_id)
+
+
 def mark_files(st, name):
     return list(((st.get("marks") or {}).get(name) or {}).get("files") or {})
 
@@ -1402,6 +1509,8 @@ def main():
         print(f"batch {a.batch_id}: {a.state}")
     elif a.cmd == "mark":
         files = {}
+        if a.name == "reconciled":   # CM-066: what brand_guide_approved covers — never B or C, the write-back's own
+            a.file = [bg_sections_ref(a.slug) if f == bg_ref(a.slug) else f for f in a.file]
         for f in a.file:
             gone = ref_missing(f)
             if gone:
@@ -1518,6 +1627,8 @@ def main():
                 "review and ship never write it.", 4)
         b["content_written_back"] = {"at": now(), "run": a.run}
         save(a.slug, st)
+        if bg_writeback_keep(a.slug, st, a.run):   # CM-066: the write-back never voids Paul's Brand Guide approval
+            print("brand_guide_approved kept: the write-back changed only B3 and C")
         append(client_dir(a.slug) / "log.md", f"- WRITE-BACK {now()[:16]} · run {a.run} · batch {a.batch_id}: Brand Guide "
                "B3, C1/C2, C3 updated once for the section, from its "
                + ("reviewed drafts" if route(b) == "outline" else "approved briefs") + "\n")

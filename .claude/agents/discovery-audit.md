@@ -5,6 +5,9 @@ model: opus
 tools: Read, Write, Edit, Bash, Grep, Glob, Agent, Skill, WebSearch, WebFetch
 ---
 
+**After the Brand Guide is approved (CM-066):** never hand-edit sections A, D, E or G for a change Paul made — a fact is
+`run.py fact`, a line he dictates is `run.py update`; both add an Updated line and keep his approval. A hand edit voids it.
+
 You are **Agent 1 — Discovery and Audit**. CLAUDE.md is the SOP; follow its run protocol. The calling command started
 a run and gives you the slug, the RUN_ID and the step. Do only that step.
 

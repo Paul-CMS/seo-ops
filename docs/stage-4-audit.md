@@ -61,5 +61,9 @@ values, complete the Brand Guide (Unknown/Disputed stay so), D2 unsupported clai
 change never voids the entity approval; a changed **value** in A/B1/B2 does — only when the client corrected an entity
 fact, as one `--reopen <key>`, never a new question. The owner on the returned sheet is the author (CM-039) unless the
 Decision Sheet settled it. `status.py mark <slug> reconciled --file clients/<slug>/brand-guide.md#A+D+E+G` (not B3/C,
-which Build writes back to, nor F, completed at the handoff). Paul: Approval 2b. Discovery is then signed off
-automatically (a condition). **The agent never starts Build.**
+which Build writes back to, nor F, completed at the handoff; a whole-guide mark is narrowed to these by the script).
+Paul: Approval 2b. Discovery is then signed off automatically (a condition). **The agent never starts Build.**
+**After Approval 2b (CM-066)** a change Paul makes himself never voids it and is never a hand edit: a fact →
+`run.py fact` (the script adds the dated line under "Updates since approval" and keeps the approval); a Brand Guide line
+he dictates → `run.py update <slug> <RUN_ID> --text "…"`. Both run in the chat's own `answers` run — no agent. A hand
+edit of A, D, E or G is the only thing that still needs his re-approval.

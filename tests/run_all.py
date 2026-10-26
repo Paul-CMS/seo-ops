@@ -2216,7 +2216,8 @@ def t_facts_store():
     check("P4: a fact whose id is not its label's is rendered once, however often the records are regenerated",
           bg.count("| Who does the work on the roof |") == 1, bg[-600:])
     sh(f'python3 scripts/run.py fact {S} {rid} --id a-phone --value "(417) 555-0199"')
-    check("P4: a changed value voids the approval, as it should", not met())
+    check("P4 → CM-066 (Paul, 2026-10-25): a value Paul changes with run.py fact keeps his approval, with an Updated line",
+          met() and "Phone — was Client Confirmed: (417) 555-0100" in (ag.c / "brand-guide.md").read_text())
     sh(f'python3 scripts/run.py decision {S} {rid} --settle w25_who_goes_on_the_roof --text "Pat and Sam both get on the roof"')
     qs = [{"key": "w25_who_goes_on_the_roof", "text": "Who goes on the roof?"},
           {"fact_id": "d-warranty-terms", "text": "What are the warranty terms?"},

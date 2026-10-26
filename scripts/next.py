@@ -82,8 +82,8 @@ def decision_step(command):
     return stages.step_of_command((spec or {}).get("producer", "").replace("{slug}", SLUG)) if spec else (None, None)
 
 
-def out(kind, command, why):
-    step, batch = stages.step_of_command(command)
+def out(kind, command, why, at=None):
+    step, batch = (at, None) if at else stages.step_of_command(command)
     if kind == "run" and PAUSE:
         kind, why = "review", (f"{PAUSE['step']} finished (run {PAUSE['run_id']}) and that stage is in review mode — "
                                f"look at what it produced, then type /next to go on. Next would be: {command} ({why})")
@@ -115,6 +115,16 @@ def bg_reapproval(st):
     """CM-061 §6: approvals stay value-only; when the section's one write-back changed a value brand_guide_approved
     covers, its re-approval rides on the section's approval line — still one line for Paul."""
     return " brand_guide_approved" if not S.check(st, "brand_guide_approved")[0] else ""
+
+
+def bg_before_ship(st, slug):
+    """CM-066: Build under way and the Brand Guide edited after Paul approved it (not by his own answers — those keep the
+    approval): the re-approval is asked at Build's stage, before ship, never as a step back to Stage 4."""
+    if S._decided(st, "brand_guide_approved") and not S.gate_met(st, "brand_guide_approved")[0]:
+        why = "; ".join(S.gate_met(st, "brand_guide_approved")[1])
+        out("decision", approve_line(st, slug, ["brand_guide_approved"]),
+            f"the Brand Guide was edited after you approved it ({why}) — look at what changed and approve it again. "
+            "Build's work stands; ship waits for this one line", at="build:ship")
 
 
 def extras(st):
@@ -252,6 +262,9 @@ def approval_two(st, slug):
             "the audit wrote) — they are fixed while the client's facts come back")
     if S.gate_met(st, "brand_guide_approved")[0]:
         return
+    if S._decided(st, "brand_guide_approved") and st.get("build"):
+        return   # CM-066: approved once and Build under way — a later edit never sends the client back to Stage 4; the
+        # re-approval rides on Build's next approval line (bg_reapproval) or comes just before ship (bg_before_ship)
     if not S.condition_met(st, "proof_sheet_returned")[0]:
         out("wait", f"/discovery {slug} sheet-returned",
             "waiting for the client's facts (the returned proof sheet) — when they arrive, this records them, then "
@@ -582,6 +595,7 @@ def _walk(slug, cont):
     # CM-055: batches are drafted one after another and never wait on publishing; every page goes to Jonie together.
     for b in S.batches(st):
         soft(build_batch, st, slug, b)
+    bg_before_ship(st, slug)
     soft(ship_all, st, slug)
     if S.batches(st) and S.condition_met(st, "pages_drafted")[0]:
         if any(b.get("state") == "drafted" for b in S.batches(st)):
