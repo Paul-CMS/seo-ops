@@ -882,3 +882,11 @@ Open: permit responsibility per town; named HOA communities; named historic dist
 - Next: the researcher must look up the public facts for these 9 pages (fact:<page>:local_context, :neighborhoods, :place_entities, :permit_office), then the gate re-runs. Waiver remains open to Paul via /approve evidence:<page> --reason.
 - Open waits (not changed here): the facts-answers round for the owner (20 open facts) and the blocker handoff from Jonie (/verify).
 
+## /build · 2026-10-27 · run 20261027-120406-build-cccb
+
+Run 20261027-120406-build-cccb (build facts, batch locations-east), finished by the orchestrator.
+Researcher checked public facts for the 9 blocked pages: 18 gaps logged (RL-locations-east-1 to 18), plus RL-locations-east-19 for loc-waverly neighborhoods (not found, minimum effort met).
+Wrote build/evidence/<page>.facts.json for all 9 (Internally Verified = official or Wikipedia; Needs Review = partial or listing-site only).
+Evidence gate re-run: 8 pages WARN (the brief lists their gaps); loc-waverly BLOCKS (2 required facts unknown). Paul decides: owner facts interview for loc-waverly, or /approve evidence:loc-waverly --reason.
+Open: methodology/sources/fl-polk.md needs a system session (suggested by researcher; not flagged).
+

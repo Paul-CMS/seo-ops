@@ -1,16 +1,17 @@
 # First Choice Seamless Gutters - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch locations-east)**
-- **What is happening now:** ready to start: the evidence gate blocked loc-davenport, loc-haines-city, loc-lake-alfred, loc-lake-hamilton, loc-dundee, loc-lake-wales, loc-waverly, loc-frostproof, loc-fort-meade — targeted questions for the owner (you send them). Or waive instead: /approve first-choice-seamless-gutters evidence:loc-davenport --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-haines-city --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lake-alfred --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lake-hamilton --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-dundee --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-lake-wales --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-waverly --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-frostproof --reason "<why you waive it>" · /approve first-choice-seamless-gutters evidence:loc-fort-meade --reason "<why you waive it>"
-- **Waiting on:** Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7
-- **Next action:** `/interview first-choice-seamless-gutters facts locations-east` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), draft-writer (opus), brief-writer (sonnet)) · model: Haiku chat
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — build:facts finished (run 20261027-120406-build-cccb) and that stage is in review mode — l; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe
+- **Next action:** `/next first-choice-seamless-gutters` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-27T10:32 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-27T12:09 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
+| Paul | build:facts finished (run 20261027-120406-build-cccb) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /interview first-choice-seamless-gutters facts locations-east (the evidence gate blocked loc-waverly — targeted questions for the owner (you send them). Or waive instead: /approve first-choice-seamless-gutters evidence:loc-waverly --reason "<why you waive it>") | 2026-10-27 | /next first-choice-seamless-gutters |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-seamless-gutter-installation:timeframe |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "free estimates We offer honest pricing with no hidden fees, starting with a free, no-obligation estimate." (+72 more) (client site https://www.firstchoiceseamlessgutters.net/ (data/crawl/page-text.csv row 2)). Still true? yes / no — | 2026-10-24 | fact:svc-seamless-gutter-installation:pricing |
 | Client (via Paul) | Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7 Days a Week get free estimate We Provide Gutter Services Across Polk County and Nearby Areas First Choice Seamless Gutters offers installation, repair, and maintenance services throughout Po…" (+8 more) (clien | 2026-10-24 | fact:svc-gutter-installation:timeframe |
@@ -38,7 +39,6 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Client (via Paul) | waiting for the answers to the facts round (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - all - 2026-10-26 - REVIEW.md; 20 fact(s) open) — when they arrive, each is recorded once (run.py fact / --settle) and the grids re-run | 2026-10-27 | /interview first-choice-seamless-gutters facts-answers all |
 | Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-27 | /verify first-choice-seamless-gutters |
 | Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
 | Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
@@ -188,10 +188,10 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 2 · Discovery | 3 | 11,117,410 | $3.80 | $0.00 |
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 6 | 28,801,394 | $10.27 | $0.00 |
-| 5 · Build plan and blockers | 5 | 18,662,785 | $5.58 | $0.00 |
+| 5 · Build plan and blockers | 6 | 23,172,148 | $6.02 | $0.00 |
 | 6 · Pilot, services, locations, ship (one session each) | 25 | 86,265,591 | $35.48 | $0.00 |
 | any stage | 10 | 9,539,058 | $1.69 | $0.00 |
-| **total** | 52 | 156,160,240 | $57.48 | $0.00 |
+| **total** | 53 | 160,669,603 | $57.91 | $0.00 |
 
 ## Spend by step (model)
 
@@ -201,9 +201,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:audit | 1 | 17,111,940 | $6.47 | $0.00 |
 | discovery:reconcile | 4 | 10,908,601 | $3.79 | $0.00 |
 | build:plan | 2 | 11,232,842 | $3.51 | $0.00 |
+| build:facts | 2 | 10,321,975 | $2.48 | $0.00 |
 | build:writeback | 3 | 6,637,758 | $2.44 | $0.00 |
 | build:review | 4 | 6,837,776 | $2.11 | $0.00 |
-| build:facts | 1 | 5,812,612 | $2.05 | $0.00 |
 | discovery:discovery | 1 | 6,414,949 | $1.98 | $0.00 |
 | discovery:proof-sheet | 2 | 4,702,461 | $1.82 | $0.00 |
 | discovery:sheet-returned | 1 | 4,068,734 | $1.41 | $0.00 |
@@ -220,6 +220,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 52 | 156,160,240 | $57.48 | $0.00 |
+| **total** | 53 | 160,669,603 | $57.91 | $0.00 |
 
-Last run: /interview 2026-10-27T10:32 — Facts interview locations-east: 0 client questions (all 9 blocks are public facts for the researcher); gate still blocks 9 pages
+Last run: /build 2026-10-27T12:09 — Facts round: researcher checked 9 locations-east gaps; facts files written; evidence gate --all: blocked pages listed; 0 owner questions generated.

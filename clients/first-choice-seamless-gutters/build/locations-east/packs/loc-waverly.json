@@ -3,7 +3,7 @@
  "type": "location",
  "url": "https://www.firstchoiceseamlessgutters.net/waverly-fl/",
  "section": "locations-east",
- "built": "2026-10-27T10:32:17-05:00",
+ "built": "2026-10-27T12:09:03-05:00",
  "services": [],
  "places": [
   "Waverly"
@@ -368,6 +368,38 @@
    "value": "Unknown — not provided by client (Paul, 2026-10-25)",
    "source": "Paul, 2026-10-25: set fully Unknown until the client returns it (returned proof sheet towns_excluded / question_0)",
    "state": "unknown"
+  },
+  {
+   "id": "page:local_context",
+   "label": "local context",
+   "status": "Needs Review",
+   "value": "Census-designated place in east-central Polk County, elevation 128 ft. No terrain or history text; no housing source found. Thin.",
+   "source": "https://en.wikipedia.org/wiki/Waverly,_Florida ; research 20261027-120406-build-cccb",
+   "state": "unknown"
+  },
+  {
+   "id": "page:neighborhoods",
+   "label": "neighborhoods",
+   "status": "Needs Review",
+   "value": "NOT FOUND: CDP with no named neighborhoods (Waverly Road and Waverly Loop only). Fewer than 3, so the section is dropped.",
+   "source": "Search, no source names a neighbourhood ; research 20261027-120406-build-cccb",
+   "state": "unknown"
+  },
+  {
+   "id": "page:place_entities",
+   "label": "place entities",
+   "status": "Needs Review",
+   "value": "NOT ENOUGH: Waverly Post Office (Wikipedia photo caption). Lake Lee nearby (weak source). Fewer than 3 verified. ZIP 33859.",
+   "source": "https://en.wikipedia.org/wiki/Waverly,_Florida ; research 20261027-120406-build-cccb",
+   "state": "unknown"
+  },
+  {
+   "id": "page:permit_office",
+   "label": "permit office",
+   "status": "Needs Review",
+   "value": "Unincorporated CDP, so Polk County Building Division, 330 West Church Street, Bartow FL 33830, (863) 534-6080. Basis is CDP status; county page text not retrievable.",
+   "source": "https://www.polkflpa.gov/PermitAgencies.aspx (Polk PA permit agencies list) ; research 20261027-120406-build-cccb",
+   "state": "unknown"
   }
  ],
  "reviews": {
@@ -653,7 +685,21 @@
   }
  ],
  "public": [],
- "research": [],
+ "research": [
+  {
+   "id": "RL-locations-east-8",
+   "page": "loc-waverly",
+   "gap": "fact:loc-waverly:permit_office",
+   "kind": "public",
+   "queries": "waverly Florida permit Polk County official || waverly FL city government site || waverly Florida Wikipedia permit",
+   "sources_tried": "methodology/places/ || methodology/sources/ (no FL file) || https://www.polkflpa.gov/PermitAgencies.aspx || Wikipedia: waverly, Florida",
+   "result": "partial",
+   "excerpt": "Waverly has no separate entry in the Polk PA municipal list; census-designated place, so Polk County, 330 West Church Street, Bartow, (863) 534-6080",
+   "url": "https://www.polkflpa.gov/PermitAgencies.aspx",
+   "date": "2026-10-27",
+   "run": "20261027-120406-build-cccb"
+  }
+ ],
  "place": [],
  "settled": [
   {
@@ -672,24 +718,7 @@
    "at": "2026-10-26"
   }
  ],
- "gaps": [
-  {
-   "key": "place_entities",
-   "label": "3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections)",
-   "need": "supporting",
-   "from": "page:place_entities",
-   "kind": "public",
-   "fact_key": "fact:loc-waverly:place_entities"
-  },
-  {
-   "key": "permit_office",
-   "label": "Which office issues permits here, with its official page (for the Serving section)",
-   "need": "supporting",
-   "from": "page:permit_office",
-   "kind": "public",
-   "fact_key": "fact:loc-waverly:permit_office"
-  }
- ],
+ "gaps": [],
  "standard": {},
  "excerpts": [
   {
@@ -978,6 +1007,13 @@
    "topic": "site/GBP",
    "tier": "site_stated",
    "text": "Gutter Services in Waverly, FL We offer professional gutter services in Waverly, FL backed by skilled workmanship and trusted materials."
+  },
+  {
+   "id": "P42",
+   "kind": "public",
+   "topic": "fact:loc-waverly:permit_office",
+   "tier": "official",
+   "text": "Waverly has no separate entry in the Polk PA municipal list; census-designated place, so Polk County, 330 West Church Street, Bartow, (863) 534-6080"
   }
  ],
  "known": [

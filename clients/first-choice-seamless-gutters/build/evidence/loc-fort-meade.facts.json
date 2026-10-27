@@ -1,0 +1,24 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "Oldest city in Polk County (incorporated 1885), elevation 144 ft, flat with gently rolling hills; 5,100 people (2020); Fort Meade Historic District. Median year built 1974 from an aggregator (not official).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Fort_Meade,_Florida ; TopHap street data ; research 20261027-120406-build-cccb"
+    },
+    "neighborhoods": {
+      "value": "PARTIAL, Redfin listings only (not official): Downtown Fort Meade, Stoneybrook Golf and Country Club. Fewer than 3, so the section is dropped.",
+      "status": "Needs Review",
+      "source": "Redfin listings ; research 20261027-120406-build-cccb"
+    },
+    "place_entities": {
+      "value": "1) Patterson Park. 2) Fort Meade Outdoor Recreation Area. 3) Old Fort Meade School House Museum. 4) Christ Church (Episcopal, 1889; used in the 1990 HBO film Judgment). Also Fort Meade Public Library, 75 East Broadway.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Fort_Meade,_Florida ; research 20261027-120406-build-cccb"
+    },
+    "permit_office": {
+      "value": "City of Fort Meade, PO Box 856, (863) 285-1119, https://www.cityoffortmeade.org/. Issuing department unconfirmed (shed-vendor pages say city hall); no official permit page found.",
+      "status": "Needs Review",
+      "source": "https://www.polkflpa.gov/PermitAgencies.aspx (Polk PA permit agencies list) ; research 20261027-120406-build-cccb"
+    }
+  }
+}

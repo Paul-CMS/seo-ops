@@ -1,6 +1,6 @@
 # Evidence pack — Bartow (location)
 
-Section **locations-west** · https://www.firstchoiceseamlessgutters.net/bartow-fl/ · built 2026-10-26T12:04 by evidence_pack.py (CM-061).
+Section **locations-west** · https://www.firstchoiceseamlessgutters.net/bartow-fl/ · built 2026-10-27T12:09 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 

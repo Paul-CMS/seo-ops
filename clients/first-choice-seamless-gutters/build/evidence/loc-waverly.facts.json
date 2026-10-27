@@ -1,0 +1,24 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "Census-designated place in east-central Polk County, elevation 128 ft. No terrain or history text; no housing source found. Thin.",
+      "status": "Needs Review",
+      "source": "https://en.wikipedia.org/wiki/Waverly,_Florida ; research 20261027-120406-build-cccb"
+    },
+    "neighborhoods": {
+      "value": "NOT FOUND: CDP with no named neighborhoods (Waverly Road and Waverly Loop only). Fewer than 3, so the section is dropped.",
+      "status": "Needs Review",
+      "source": "Search, no source names a neighbourhood ; research 20261027-120406-build-cccb"
+    },
+    "place_entities": {
+      "value": "NOT ENOUGH: Waverly Post Office (Wikipedia photo caption). Lake Lee nearby (weak source). Fewer than 3 verified. ZIP 33859.",
+      "status": "Needs Review",
+      "source": "https://en.wikipedia.org/wiki/Waverly,_Florida ; research 20261027-120406-build-cccb"
+    },
+    "permit_office": {
+      "value": "Unincorporated CDP, so Polk County Building Division, 330 West Church Street, Bartow FL 33830, (863) 534-6080. Basis is CDP status; county page text not retrievable.",
+      "status": "Needs Review",
+      "source": "https://www.polkflpa.gov/PermitAgencies.aspx (Polk PA permit agencies list) ; research 20261027-120406-build-cccb"
+    }
+  }
+}

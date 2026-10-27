@@ -1,6 +1,6 @@
 # Evidence pack — Dundee (location)
 
-Section **locations-east** · https://www.firstchoiceseamlessgutters.net/dundee-fl/ · built 2026-10-27T10:32 by evidence_pack.py (CM-061).
+Section **locations-east** · https://www.firstchoiceseamlessgutters.net/dundee-fl/ · built 2026-10-27T12:09 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -44,6 +44,7 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | a-primary-domain-canonical-host-form | Primary domain (canonical host form) | https://www.firstchoiceseamlessgutters.net/ (non-www 301 → www; canonical tag www) | live HTTP check 2026-10-22 |
 | d-association-memberships | Association memberships | BBB Accredited Business since 8/12/2025, A+ rating | BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22 |
 | d-google-rating-and-review-count-exactly-as-google-shows-the | Google rating and review count — exactly as Google shows them on the day, with the date ("4.9 · 67 reviews, 2026-10-07"; never a rounded 5.0) | 5 out of 5 (138 reviews), 2026-10-22 (site says '95+ 5 Star Google Reviews') | GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22 |
+| page:local_context | local context | Town settled 1911, incorporated 1925, elevation 213 ft (highest of the nine Polk locations); humid subtropical. April 2024 referendum kept town status. SR 17 runs through the centre. | https://en.wikipedia.org/wiki/Dundee,_Florida ; research 20261027-120406-build-cccb |
 
 ### Unknown — never claimed: write [NEED: …] where the page needs it, or leave it out
 
@@ -67,6 +68,9 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | gsc-access | Google Search Console access | Access exists (Paul reports) | Paul, intake answer |
 | d-staff-roles | Roles of April, Matt, Isaac, James | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns them (returned proof sheet question_5) |
 | d-travel-fee | Travel fee | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns it (returned proof sheet towns_excluded / question_0) |
+| page:neighborhoods | neighborhoods | PARTIAL, listing-site sources only (not official): Ridge of Dundee, The Ridge at Swan Lake, Lake Ruth Estates, Mabel Loop Ridge. County-record names also include Bluffs Dundee, Crystal Lake Preserve, Dell Lake Village. | Listing sites; county records ; research 20261027-120406-build-cccb |
+| page:place_entities | place entities | PARTIAL: Dundee Town Hall and Library; Lake Marie Park (listing-site mention only); Ridge Scenic Highway (SR 17). Fewer than 3 verified. | https://en.wikipedia.org/wiki/Dundee,_Florida ; research 20261027-120406-build-cccb |
+| page:permit_office | permit office | Town of Dundee Development Services Department, 124 Dundee Road, (863) 438-8330 ext. 223 or 438-8335 (town pages differ). CO requests: co-info@townofdundee.com. | https://townofdundee.com/departments/building-services/ ; research 20261027-120406-build-cccb |
 
 
 ## Reviews
@@ -159,7 +163,8 @@ _None tagged to this page._
 
 ## Public facts
 
-_No area source list rows or research results for this place yet._
+- research-log: fact:loc-dundee:permit_office — "Town of Dundee, PO Box 1000, Telephone: (863) 438-8330; Development Services Department 124 Dundee Road" (https://www.polkflpa.gov/PermitAgencies.aspx, 2026-10-27)
+- research-log: fact:loc-dundee:place_entities — "Dundee Town Hall and Library; article names no parks, schools or historic sites" (https://en.wikipedia.org/wiki/Dundee,_Florida, 2026-10-27)
 
 ## Place research (the place store: official facts are plain statements; context only for area character)
 
@@ -178,5 +183,4 @@ _None for this page — its scope and process come from the client, or stay a `[
 
 ## Gaps — the only things research looks for
 
-- 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) (supporting, `page:place_entities`) → researcher (public fact — never asked)
-- Which office issues permits here, with its official page (for the Serving section) (supporting, `page:permit_office`) → researcher (public fact — never asked)
+_None._

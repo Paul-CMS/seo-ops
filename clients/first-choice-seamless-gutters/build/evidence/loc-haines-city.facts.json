@@ -1,0 +1,24 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "On the sandy Lake Wales Ridge: low ridge of gently rolling hills, porous sandy soil, elevation 157 ft. 11,006 housing units (2020); fast growth at city edges (Orlando and Disney access). No official drainage source.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Haines_City,_Florida ; research 20261027-120406-build-cccb"
+    },
+    "neighborhoods": {
+      "value": "PARTIAL: Oakland (historic district), Randa Ridge, Southern Dunes (golf, developed 1995-2005), Posner Park (Wikipedia); Hamilton Bluff (new-home community, listing site). Fewer than 3 from official sources.",
+      "status": "Needs Review",
+      "source": "https://en.wikipedia.org/wiki/Haines_City,_Florida ; Lennar listing ; research 20261027-120406-build-cccb"
+    },
+    "place_entities": {
+      "value": "1) Lake Eva Park (2009, with Aquatics Center). 2) Polk Hotel (now Landmark Baptist College). 3) Historic Oakland district. 4) Haines City Public Library, 111 N. 6th St.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Haines_City,_Florida ; research 20261027-120406-build-cccb"
+    },
+    "permit_office": {
+      "value": "Building Division, Development Services Dept., 620 East Main Street, Haines City FL 33844, 863-421-3600. Contractors must register first.",
+      "status": "Internally Verified",
+      "source": "https://www.hainescity.com/159/Contractor-Requirements (read 2026-10-27) ; research 20261027-120406-build-cccb"
+    }
+  }
+}

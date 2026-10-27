@@ -2371,3 +2371,114 @@ Spend: 609603 tokens · $0.01 (measured)
 - CHANGE #508 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (13).md | new: First Choice Seamless Gutters - Status.md · sha 497e233fab29 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #509 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-26.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | new: _Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-26.md | result: done · renamed and moved, nothing deleted
 - CHANGE #510 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | upload | old: previous version archived as First Choice Seamless Gutters - VA Worklist - 2026-10-26.md | new: First Choice Seamless Gutters - VA Worklist.md · sha 18f2d25a52b1 | result: done · copied (Drive for desktop syncs it)
+- PAUL SAID 2026-10-27T11:22 · carried to the next chat · Run the researcher on the 9 blocked locations-east pages to look up the public facts
+
+## RUN 20261027-120406-build-cccb · STARTED · /build · 2026-10-27T12:04:06-05:00
+Step: build:facts · batch locations-east · session 43eb75a6-9346-46e0-94eb-0d9c46f76fba
+Gates checked: discovery_signed_off, site_plan, page_specs_approved
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-1 · fact:loc-waverly:place_entities (public): not_found
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-2 · fact:loc-davenport:permit_office (public): found
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-3 · fact:loc-haines-city:permit_office (public): found
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-4 · fact:loc-lake-alfred:permit_office (public): found
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-5 · fact:loc-lake-hamilton:permit_office (public): found
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-6 · fact:loc-dundee:permit_office (public): found
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-7 · fact:loc-lake-wales:permit_office (public): found
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-8 · fact:loc-waverly:permit_office (public): partial
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-9 · fact:loc-frostproof:permit_office (public): found
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-10 · fact:loc-fort-meade:permit_office (public): partial
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-11 · fact:loc-davenport:place_entities (public): found
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-12 · fact:loc-haines-city:place_entities (public): found
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-13 · fact:loc-lake-alfred:place_entities (public): found
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-14 · fact:loc-lake-hamilton:place_entities (public): partial
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-15 · fact:loc-dundee:place_entities (public): partial
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-16 · fact:loc-lake-wales:place_entities (public): found
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-17 · fact:loc-frostproof:place_entities (public): found
+- RESEARCH 2026-10-27T12:06 · run 20261027-120406-build-cccb · RL-locations-east-18 · fact:loc-fort-meade:place_entities (public): found
+- RESEARCH 2026-10-27T12:08 · run 20261027-120406-build-cccb · RL-locations-east-19 · fact:loc-waverly:neighborhoods (public): not_found
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-davenport: WARN (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-haines-city: WARN (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-lake-alfred: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-lake-hamilton: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-dundee: WARN (known 7, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-lake-wales: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-waverly: BLOCK (known 6, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-frostproof: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-fort-meade: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- PAUL SAID 2026-10-27T12:08 · done in this chat · 1 item(s)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · svc-gutter-cleaning: PASS (known 11, unknown 1, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-lakeland: PASS (known 8, unknown 2, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · svc-seamless-gutter-installation: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · svc-gutter-installation: BLOCK (known 7, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · svc-gutter-repair: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · svc-commercial-gutters: WARN (known 8, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · svc-gutter-downspouts: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · svc-gutter-guards: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · svc-copper-gutters: WARN (known 9, unknown 1, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · svc-galvalume-gutters: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · svc-aluminum-gutters: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-winter-haven: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-auburndale: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-bartow: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-polk-city: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-kathleen: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-highland-city: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-mulberry: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-eagle-lake: WARN (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-wahneta: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-davenport: WARN (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-haines-city: WARN (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-lake-alfred: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-lake-hamilton: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-dundee: WARN (known 7, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-lake-wales: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-waverly: BLOCK (known 6, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-frostproof: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · loc-fort-meade: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:08 · run 20261027-120406-build-cccb · about: BLOCK (known 4, unknown 2, unverified 2, conflict 0)
+- FACTS INTERVIEW 2026-10-27T12:08 · run 20261027-120406-build-cccb · facts round (all pages) · 0 question(s) for svc-seamless-gutter-installation, svc-gutter-installation, svc-gutter-repair, svc-commercial-gutters, svc-gutter-downspouts, svc-gutter-guards, svc-copper-gutters, svc-galvalume-gutters, svc-aluminum-gutters, loc-mulberry, loc-eagle-lake, loc-wahneta, loc-davenport, loc-haines-city, loc-lake-alfred, loc-lake-hamilton, loc-dundee, loc-lake-wales, loc-waverly, loc-frostproof, loc-fort-meade, about · clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - all - 2026-10-27 - REVIEW.md
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · svc-gutter-cleaning: PASS (known 11, unknown 1, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-lakeland: PASS (known 8, unknown 2, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · svc-seamless-gutter-installation: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · svc-gutter-installation: BLOCK (known 7, unknown 2, unverified 3, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · svc-gutter-repair: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · svc-commercial-gutters: WARN (known 8, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · svc-gutter-downspouts: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · svc-gutter-guards: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · svc-copper-gutters: WARN (known 9, unknown 1, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · svc-galvalume-gutters: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · svc-aluminum-gutters: BLOCK (known 7, unknown 3, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-winter-haven: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-auburndale: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-bartow: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-polk-city: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-kathleen: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-highland-city: PASS (known 10, unknown 0, unverified 0, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-mulberry: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-eagle-lake: WARN (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-wahneta: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-davenport: WARN (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-haines-city: WARN (known 9, unknown 0, unverified 1, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-lake-alfred: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-lake-hamilton: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-dundee: WARN (known 7, unknown 0, unverified 3, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-lake-wales: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-waverly: BLOCK (known 6, unknown 0, unverified 4, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-frostproof: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · loc-fort-meade: WARN (known 8, unknown 0, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T12:09 · run 20261027-120406-build-cccb · about: BLOCK (known 4, unknown 2, unverified 2, conflict 0)
+### HANDOFF · /build · 2026-10-27 · run 20261027-120406-build-cccb
+Run 20261027-120406-build-cccb (build facts, batch locations-east), finished by the orchestrator.
+Researcher checked public facts for the 9 blocked pages: 18 gaps logged (RL-locations-east-1 to 18), plus RL-locations-east-19 for loc-waverly neighborhoods (not found, minimum effort met).
+Wrote build/evidence/<page>.facts.json for all 9 (Internally Verified = official or Wikipedia; Needs Review = partial or listing-site only).
+Evidence gate re-run: 8 pages WARN (the brief lists their gaps); loc-waverly BLOCKS (2 required facts unknown). Paul decides: owner facts interview for loc-waverly, or /approve evidence:loc-waverly --reason.
+Open: methodology/sources/fl-polk.md needs a system session (suggested by researcher; not flagged).
+### END HANDOFF
+## RUN 20261027-120406-build-cccb · FINISHED · 2026-10-27T12:09:03-05:00
+Changes: 0 · Summary: Facts round: researcher checked 9 locations-east gaps; facts files written; evidence gate --all: blocked pages listed; 0 owner questions generated.
+Spend: 4509363 tokens · $0.43 (measured)
+- CHANGE #511 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-27.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-27.md | result: done · renamed and moved, nothing deleted
+- CHANGE #512 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-27.md | new: First Choice Seamless Gutters - Handoff Log.md · sha da96d44768ae | result: done · copied (Drive for desktop syncs it)
+- CHANGE #513 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-27.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-27.md | result: done · renamed and moved, nothing deleted
+- CHANGE #514 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-27.md | new: First Choice Seamless Gutters - Document Checklist.md · sha 4bff8f508a2d | result: done · copied (Drive for desktop syncs it)
+- CHANGE #515 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-27.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-27.md | result: done · renamed and moved, nothing deleted
+- CHANGE #516 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-27.md | new: First Choice Seamless Gutters - Status.md · sha 22e1cfbbdcd5 | result: done · copied (Drive for desktop syncs it)

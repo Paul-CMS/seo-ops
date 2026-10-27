@@ -170,8 +170,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-seamless-gutter-installation.grid.md",
         "sha": "98dfec23886a",
-        "at": "2026-10-26T11:46:55-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-27T12:09:01-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "service_scope",
           "service_process",
@@ -196,9 +196,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-seamless-gutter-installation.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-seamless-gutter-installation.json",
-        "sha": "d1e58a182ae1",
-        "at": "2026-10-26T11:46:55-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "704904ae804e",
+        "at": "2026-10-27T12:09:01-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "services",
         "counts": {
           "facts": 44,
@@ -267,8 +267,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-installation.grid.md",
         "sha": "f463640e872a",
-        "at": "2026-10-26T11:46:55-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-27T12:09:01-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "service_scope",
           "service_process",
@@ -293,9 +293,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-installation.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-installation.json",
-        "sha": "0fef7f8db5da",
-        "at": "2026-10-26T11:46:55-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "d01147298f98",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "services",
         "counts": {
           "facts": 44,
@@ -364,8 +364,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-repair.grid.md",
         "sha": "d4e2138189c0",
-        "at": "2026-10-26T11:46:55-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "service_scope",
           "service_process",
@@ -390,9 +390,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-repair.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-repair.json",
-        "sha": "c1796a6d7362",
-        "at": "2026-10-26T11:46:55-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "860592c94f81",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "services",
         "counts": {
           "facts": 44,
@@ -460,8 +460,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-commercial-gutters.grid.md",
         "sha": "0ad14fffdec4",
-        "at": "2026-10-26T11:46:55-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "service_process",
           "timeframe",
@@ -472,9 +472,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-commercial-gutters.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-commercial-gutters.json",
-        "sha": "4071ca416601",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "c6e9265d6e6e",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "services",
         "counts": {
           "facts": 44,
@@ -543,8 +543,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-downspouts.grid.md",
         "sha": "f5d90dc6bb70",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "service_scope",
           "service_process",
@@ -569,9 +569,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-downspouts.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-downspouts.json",
-        "sha": "485705b0d8b4",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "3602abafd0e0",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "services",
         "counts": {
           "facts": 44,
@@ -639,8 +639,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-guards.grid.md",
         "sha": "d7bd1dd79f11",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "service_scope",
           "service_process",
@@ -665,9 +665,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-guards.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-gutter-guards.json",
-        "sha": "f2cd8128b73a",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "99c9cecba5a2",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "services",
         "counts": {
           "facts": 44,
@@ -735,8 +735,8 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-gutter-cleaning.grid.md",
         "sha": "44f8e35b72cf",
-        "at": "2026-10-26T11:46:55-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-27T12:09:01-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "certifications"
         ]
@@ -744,9 +744,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/pilot/packs/svc-gutter-cleaning.md",
         "json": "clients/first-choice-seamless-gutters/build/pilot/packs/svc-gutter-cleaning.json",
-        "sha": "cb4bbd54c0d5",
-        "at": "2026-10-26T11:46:55-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "eb55ca6b29e1",
+        "at": "2026-10-27T12:09:01-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "pilot",
         "counts": {
           "facts": 44,
@@ -814,8 +814,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-copper-gutters.grid.md",
         "sha": "5703ca472ae7",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "timeframe",
           "pricing",
@@ -825,9 +825,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-copper-gutters.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-copper-gutters.json",
-        "sha": "bbffc72f63e6",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "60cc232d0106",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "services",
         "counts": {
           "facts": 44,
@@ -895,8 +895,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-galvalume-gutters.grid.md",
         "sha": "fb89511e08e2",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "service_scope",
           "service_process",
@@ -921,9 +921,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-galvalume-gutters.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-galvalume-gutters.json",
-        "sha": "c020e3a8a5b8",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "f9b0214aa56d",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "services",
         "counts": {
           "facts": 44,
@@ -991,8 +991,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/svc-aluminum-gutters.grid.md",
         "sha": "ae12fa8ffdbf",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "service_scope",
           "service_process",
@@ -1017,9 +1017,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/services/packs/svc-aluminum-gutters.md",
         "json": "clients/first-choice-seamless-gutters/build/services/packs/svc-aluminum-gutters.json",
-        "sha": "bfe1c1c8b95e",
-        "at": "2026-10-26T11:46:56-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "0eebd48f7ccd",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "services",
         "counts": {
           "facts": 44,
@@ -1084,8 +1084,8 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lakeland.grid.md",
         "sha": "cb4317841434",
-        "at": "2026-10-26T11:46:55-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-27T12:09:01-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "place_entities",
           "permit_office"
@@ -1094,9 +1094,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/pilot/packs/loc-lakeland.md",
         "json": "clients/first-choice-seamless-gutters/build/pilot/packs/loc-lakeland.json",
-        "sha": "a1d2b414282c",
-        "at": "2026-10-26T11:46:55-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "2930a476adec",
+        "at": "2026-10-27T12:09:01-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "pilot",
         "counts": {
           "facts": 45,
@@ -1161,16 +1161,16 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-winter-haven.grid.md",
         "sha": "1715c8618dc7",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "at": "2026-10-27T12:09:02-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": []
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-winter-haven.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-winter-haven.json",
-        "sha": "bca629fd6d58",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "sha": "4e15e1f85a94",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-west",
         "counts": {
           "facts": 51,
@@ -1235,16 +1235,16 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-auburndale.grid.md",
         "sha": "6f2dd01fda89",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": []
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-auburndale.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-auburndale.json",
-        "sha": "e4d7616914e0",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "sha": "11e54687eb1a",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1309,16 +1309,16 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-bartow.grid.md",
         "sha": "7bfca8889a3f",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": []
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-bartow.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-bartow.json",
-        "sha": "b76f1c01aec5",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "sha": "7afa6d34a3ef",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1383,16 +1383,16 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-polk-city.grid.md",
         "sha": "510f462dc781",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": []
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-polk-city.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-polk-city.json",
-        "sha": "62caef9ace3e",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "sha": "3b7a4fe49066",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1457,16 +1457,16 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-kathleen.grid.md",
         "sha": "ba292c8751d6",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": []
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-kathleen.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-kathleen.json",
-        "sha": "3b2cd330557b",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "sha": "9756320ecaed",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1531,16 +1531,16 @@
         "why": [],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-highland-city.grid.md",
         "sha": "7c68ebd21d58",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": []
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-highland-city.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-highland-city.json",
-        "sha": "8d687d26f4e4",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "sha": "0c43c6ee7e52",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1607,8 +1607,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-mulberry.grid.md",
         "sha": "a11c161b2dce",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "neighborhoods",
           "permit_office"
@@ -1617,9 +1617,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-mulberry.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-mulberry.json",
-        "sha": "9006fb6ad58c",
-        "at": "2026-10-26T12:04:40-05:00",
-        "run": "20261026-120219-build-bc47",
+        "sha": "cf67cb62a2c2",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1686,8 +1686,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-eagle-lake.grid.md",
         "sha": "b0a747242345",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "neighborhoods"
         ]
@@ -1695,9 +1695,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-eagle-lake.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-eagle-lake.json",
-        "sha": "5ff233e5c91a",
-        "at": "2026-10-26T12:04:40-05:00",
-        "run": "20261026-120219-build-bc47",
+        "sha": "1f81cc12c553",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1764,8 +1764,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-wahneta.grid.md",
         "sha": "d6cacef9e407",
-        "at": "2026-10-26T12:04:39-05:00",
-        "run": "20261026-120219-build-bc47",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "neighborhoods",
           "place_entities"
@@ -1774,9 +1774,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-wahneta.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-west/packs/loc-wahneta.json",
-        "sha": "352d39b775ad",
-        "at": "2026-10-26T12:04:40-05:00",
-        "run": "20261026-120219-build-bc47",
+        "sha": "0e69fa88324d",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-west",
         "counts": {
           "facts": 50,
@@ -1831,36 +1831,33 @@
         "3 · Trust here: How do Davenport rental-home owners keep gutters maintained while away?"
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 6,
-          "Unknown": 2,
-          "Unverified": 2,
+          "Known": 9,
+          "Unknown": 0,
+          "Unverified": 1,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "1 required and 0 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-davenport.grid.md",
-        "sha": "6de80295325a",
-        "at": "2026-10-27T10:32:17-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "a8633dc2c541",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
-          "local_context",
-          "neighborhoods",
-          "place_entities",
-          "permit_office"
+          "neighborhoods"
         ]
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-davenport.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-davenport.json",
-        "sha": "118b04854810",
-        "at": "2026-10-27T10:32:17-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "391862346a5f",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-east",
         "counts": {
-          "facts": 45,
+          "facts": 49,
           "review_topics": 9,
           "review_excerpts": 38,
           "questions": 0,
@@ -1868,8 +1865,8 @@
           "public": 0,
           "place": 0,
           "settled": 2,
-          "gaps": 2,
-          "excerpts": 42
+          "gaps": 0,
+          "excerpts": 44
         }
       }
     },
@@ -1893,36 +1890,33 @@
         "3 · Trust here: What do Haines City homeowners ask most about gutter overflow?"
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 6,
-          "Unknown": 2,
-          "Unverified": 2,
+          "Known": 9,
+          "Unknown": 0,
+          "Unverified": 1,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "1 required and 0 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-haines-city.grid.md",
-        "sha": "35abdd9c9078",
-        "at": "2026-10-27T10:32:17-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "cd4ceabce3a3",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
-          "local_context",
-          "neighborhoods",
-          "place_entities",
-          "permit_office"
+          "neighborhoods"
         ]
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-haines-city.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-haines-city.json",
-        "sha": "ed0a88f50cf9",
-        "at": "2026-10-27T10:32:17-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "3d9c1a57c564",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-east",
         "counts": {
-          "facts": 45,
+          "facts": 49,
           "review_topics": 9,
           "review_excerpts": 38,
           "questions": 0,
@@ -1930,8 +1924,8 @@
           "public": 0,
           "place": 0,
           "settled": 2,
-          "gaps": 2,
-          "excerpts": 44
+          "gaps": 0,
+          "excerpts": 46
         }
       }
     },
@@ -1955,36 +1949,34 @@
         "3 · Trust here: How do Lake Alfred storms and citrus-belt trees affect gutters?"
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 6,
-          "Unknown": 2,
+          "Known": 8,
+          "Unknown": 0,
           "Unverified": 2,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "1 required and 1 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lake-alfred.grid.md",
-        "sha": "9b1162adbcc5",
-        "at": "2026-10-27T10:32:17-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "88c13cc119dd",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
-          "local_context",
           "neighborhoods",
-          "place_entities",
           "permit_office"
         ]
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-alfred.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-alfred.json",
-        "sha": "0e0ba76b1a59",
-        "at": "2026-10-27T10:32:17-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "50e0f5c852b6",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-east",
         "counts": {
-          "facts": 45,
+          "facts": 49,
           "review_topics": 9,
           "review_excerpts": 38,
           "questions": 0,
@@ -1992,8 +1984,8 @@
           "public": 0,
           "place": 0,
           "settled": 2,
-          "gaps": 2,
-          "excerpts": 42
+          "gaps": 0,
+          "excerpts": 44
         }
       }
     },
@@ -2017,36 +2009,34 @@
         "3 · Trust here: What gutter problems are common around Lake Hamilton?"
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 6,
-          "Unknown": 2,
+          "Known": 8,
+          "Unknown": 0,
           "Unverified": 2,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "1 required and 1 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lake-hamilton.grid.md",
-        "sha": "7430d66258d7",
-        "at": "2026-10-27T10:32:17-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "6e0e37f95a95",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
-          "local_context",
           "neighborhoods",
-          "place_entities",
-          "permit_office"
+          "place_entities"
         ]
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-hamilton.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-hamilton.json",
-        "sha": "9567baea1a4c",
-        "at": "2026-10-27T10:32:17-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "e3159c6d3cca",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-east",
         "counts": {
-          "facts": 45,
+          "facts": 49,
           "review_topics": 9,
           "review_excerpts": 38,
           "questions": 0,
@@ -2054,8 +2044,8 @@
           "public": 0,
           "place": 0,
           "settled": 2,
-          "gaps": 2,
-          "excerpts": 42
+          "gaps": 0,
+          "excerpts": 44
         }
       }
     },
@@ -2079,22 +2069,21 @@
         "3 · Trust here: How do Dundee's summer storms affect gutters on ridge-top homes?"
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 6,
-          "Unknown": 2,
-          "Unverified": 2,
+          "Known": 7,
+          "Unknown": 0,
+          "Unverified": 3,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "1 required and 2 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-dundee.grid.md",
-        "sha": "a041b20e5b4f",
-        "at": "2026-10-27T10:32:17-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "9d8e589a38de",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
-          "local_context",
           "neighborhoods",
           "place_entities",
           "permit_office"
@@ -2103,12 +2092,12 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-dundee.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-dundee.json",
-        "sha": "65532bf6e3b1",
-        "at": "2026-10-27T10:32:17-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "440c6e59aa5f",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-east",
         "counts": {
-          "facts": 45,
+          "facts": 49,
           "review_topics": 9,
           "review_excerpts": 38,
           "questions": 0,
@@ -2116,8 +2105,8 @@
           "public": 0,
           "place": 0,
           "settled": 2,
-          "gaps": 2,
-          "excerpts": 43
+          "gaps": 0,
+          "excerpts": 45
         }
       }
     },
@@ -2141,36 +2130,34 @@
         "3 · Trust here: Why do Lake Wales Ridge homes see more wind-driven rain at the gutters?"
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 6,
-          "Unknown": 2,
+          "Known": 8,
+          "Unknown": 0,
           "Unverified": 2,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "1 required and 1 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lake-wales.grid.md",
-        "sha": "4af249b18e1e",
-        "at": "2026-10-27T10:32:17-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "634c80d32710",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
-          "local_context",
           "neighborhoods",
-          "place_entities",
           "permit_office"
         ]
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-wales.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-wales.json",
-        "sha": "eae5acdc2f1f",
-        "at": "2026-10-27T10:32:17-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "f8a106555ff1",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-east",
         "counts": {
-          "facts": 45,
+          "facts": 49,
           "review_topics": 9,
           "review_excerpts": 38,
           "questions": 0,
@@ -2178,8 +2165,8 @@
           "public": 0,
           "place": 0,
           "settled": 2,
-          "gaps": 2,
-          "excerpts": 45
+          "gaps": 0,
+          "excerpts": 47
         }
       }
     },
@@ -2206,17 +2193,17 @@
         "result": "block",
         "counts": {
           "Known": 6,
-          "Unknown": 2,
-          "Unverified": 2,
+          "Unknown": 0,
+          "Unverified": 4,
           "Conflict": 0
         },
         "why": [
           "2 required facts are not known (block at 2)"
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-waverly.grid.md",
-        "sha": "88eb292fbb8c",
-        "at": "2026-10-27T10:32:17-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "4943e1182c10",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "local_context",
           "neighborhoods",
@@ -2227,12 +2214,12 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-waverly.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-waverly.json",
-        "sha": "370b65c866ab",
-        "at": "2026-10-27T10:32:18-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "673d27636e04",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-east",
         "counts": {
-          "facts": 45,
+          "facts": 49,
           "review_topics": 9,
           "review_excerpts": 38,
           "questions": 0,
@@ -2240,8 +2227,8 @@
           "public": 0,
           "place": 0,
           "settled": 3,
-          "gaps": 2,
-          "excerpts": 41
+          "gaps": 0,
+          "excerpts": 42
         }
       }
     },
@@ -2265,36 +2252,34 @@
         "3 · Trust here: Does First Choice serve Frostproof at the south edge of Polk County? (client facts only)"
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 6,
-          "Unknown": 2,
+          "Known": 8,
+          "Unknown": 0,
           "Unverified": 2,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "1 required and 1 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-frostproof.grid.md",
-        "sha": "283b97d05eaf",
-        "at": "2026-10-27T10:32:18-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "985891334349",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
-          "local_context",
           "neighborhoods",
-          "place_entities",
           "permit_office"
         ]
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-frostproof.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-frostproof.json",
-        "sha": "a9eefb069a77",
-        "at": "2026-10-27T10:32:18-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "b6adc157d05d",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-east",
         "counts": {
-          "facts": 45,
+          "facts": 49,
           "review_topics": 9,
           "review_excerpts": 38,
           "questions": 0,
@@ -2302,8 +2287,8 @@
           "public": 0,
           "place": 0,
           "settled": 2,
-          "gaps": 2,
-          "excerpts": 42
+          "gaps": 0,
+          "excerpts": 44
         }
       }
     },
@@ -2327,36 +2312,34 @@
         "3 · Trust here: What gutter problems are common in Fort Meade homes?"
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 6,
-          "Unknown": 2,
+          "Known": 8,
+          "Unknown": 0,
           "Unverified": 2,
           "Conflict": 0
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "1 required and 1 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-fort-meade.grid.md",
-        "sha": "7b1248703b03",
-        "at": "2026-10-27T10:32:18-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "d52cf53aa89d",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
-          "local_context",
           "neighborhoods",
-          "place_entities",
           "permit_office"
         ]
       },
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-fort-meade.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-fort-meade.json",
-        "sha": "0c2b09da2b4d",
-        "at": "2026-10-27T10:32:18-05:00",
-        "run": "20261027-103205-interview-d789",
+        "sha": "23327c7065fb",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "locations-east",
         "counts": {
-          "facts": 45,
+          "facts": 49,
           "review_topics": 9,
           "review_excerpts": 38,
           "questions": 0,
@@ -2364,8 +2347,8 @@
           "public": 0,
           "place": 0,
           "settled": 2,
-          "gaps": 2,
-          "excerpts": 43
+          "gaps": 0,
+          "excerpts": 45
         }
       }
     },
@@ -2391,8 +2374,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/about.grid.md",
         "sha": "3d46aa5d89eb",
-        "at": "2026-10-26T11:46:57-05:00",
-        "run": "20261026-113830-build-374a",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "gaps": [
           "founding",
           "company_story",
@@ -2403,9 +2386,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/about/packs/about.md",
         "json": "clients/first-choice-seamless-gutters/build/about/packs/about.json",
-        "sha": "8a4721097df8",
-        "at": "2026-10-26T11:46:58-05:00",
-        "run": "20261026-113830-build-374a",
+        "sha": "8164ad920960",
+        "at": "2026-10-27T12:09:03-05:00",
+        "run": "20261027-120406-build-cccb",
         "section": "about",
         "counts": {
           "facts": 44,
@@ -2770,9 +2753,9 @@
       "none": true
     },
     "facts_round": {
-      "file": "clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - all - 2026-10-26 - REVIEW.md",
-      "at": "2026-10-26T11:46:59-05:00",
-      "run": "20261026-113830-build-374a",
+      "file": "clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - all - 2026-10-27 - REVIEW.md",
+      "at": "2026-10-27T12:08:58-05:00",
+      "run": "20261027-120406-build-cccb",
       "pages": [
         "svc-seamless-gutter-installation",
         "svc-gutter-installation",
@@ -2797,8 +2780,8 @@
         "loc-fort-meade",
         "about"
       ],
-      "questions": 4,
-      "research": 42,
+      "questions": 0,
+      "research": 25,
       "need_search": 15
     }
   },
@@ -2984,12 +2967,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261027-103205-interview-d789",
-    "command": "interview",
-    "finished": "2026-10-27T10:32:30-05:00",
-    "result": "Facts interview locations-east: 0 client questions (all 9 blocks are public facts for the researcher); gate still blocks 9 pages",
+    "run_id": "20261027-120406-build-cccb",
+    "command": "build",
+    "finished": "2026-10-27T12:09:03-05:00",
+    "result": "Facts round: researcher checked 9 locations-east gaps; facts files written; evidence gate --all: blocked pages listed; 0 owner questions generated.",
     "changes": 0,
-    "step": "interview:facts",
+    "step": "build:facts",
     "batch": "locations-east"
   },
   "spend": {
@@ -3011,7 +2994,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-27T10:32:30-05:00",
+  "updated": "2026-10-27T12:09:03-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -4254,6 +4237,34 @@
       "by_agent": {
         "main": 0.0103
       }
+    },
+    {
+      "run": "20261027-120406-build-cccb",
+      "step": "build:facts",
+      "tokens": 4509363,
+      "usd": 0.4312,
+      "at": "2026-10-27T12:09:03-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0529,
+          "in": 64,
+          "out": 18988,
+          "cache_read": 3524890,
+          "cache_write": 40926
+        },
+        "claude-sonnet-5-5": {
+          "usd": 0.3783,
+          "in": 36,
+          "out": 226,
+          "cache_read": 841124,
+          "cache_write": 83109
+        }
+      },
+      "by_agent": {
+        "main": 0.0529,
+        "researcher": 0.3783
+      }
     }
   ],
   "sessions": {
@@ -4364,6 +4375,12 @@
       "step": "interview:facts",
       "first_run": "20261027-103205-interview-d789",
       "at": "2026-10-27T10:32:30-05:00"
+    },
+    "43eb75a6-9346-46e0-94eb-0d9c46f76fba": {
+      "key": "build-plan",
+      "step": "build:facts",
+      "first_run": "20261027-120406-build-cccb",
+      "at": "2026-10-27T12:09:03-05:00"
     }
   },
   "wordpress": {
@@ -4409,5 +4426,10 @@
   "blocker_handoffs": [
     "H-2026-10-23-03-broken_link",
     "H-2026-10-23-04-other"
-  ]
+  ],
+  "review_pause": {
+    "run_id": "20261027-120406-build-cccb",
+    "step": "build:facts",
+    "at": "2026-10-27T12:09:03-05:00"
+  }
 }

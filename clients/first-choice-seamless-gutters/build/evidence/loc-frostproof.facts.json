@@ -1,0 +1,24 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "On the Lake Wales Ridge between Lake Clinch and Lake Reedy, elevation 82 ft; the name comes from the 1894-95 freeze that destroyed citrus; city since 1960. A real-estate page flags flood and drainage exposure near Lake Clinch (not official).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Frostproof,_Florida ; Clinchwood real-estate profile ; research 20261027-120406-build-cccb"
+    },
+    "neighborhoods": {
+      "value": "PARTIAL, listing-site sources only (not official): Clinchwood, North Reedy Shore, Lake Reedy Hills, Lake Reedy Cove, Lake Side Terrace, Oakridge Estates.",
+      "status": "Needs Review",
+      "source": "Listing sites ; research 20261027-120406-build-cccb"
+    },
+    "place_entities": {
+      "value": "1) Historic Ramon Theater (1925). 2) Historic Atlantic Coast Line depot (1912). 3) Lake Clinch. 4) Lake Reedy. Also Frostproof Middle-Senior High School.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Frostproof,_Florida ; research 20261027-120406-build-cccb"
+    },
+    "permit_office": {
+      "value": "City of Frostproof Building Department, main (863) 635-7850; building line 635-7854 or 635-7855 (sources disagree). Contractors must register. https://cityoffrostproof.com/departments/building/",
+      "status": "Needs Review",
+      "source": "https://cityoffrostproof.com/departments/building/ ; research 20261027-120406-build-cccb"
+    }
+  }
+}

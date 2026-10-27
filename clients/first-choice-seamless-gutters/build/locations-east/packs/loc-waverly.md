@@ -1,6 +1,6 @@
 # Evidence pack — Waverly (location)
 
-Section **locations-east** · https://www.firstchoiceseamlessgutters.net/waverly-fl/ · built 2026-10-27T10:32 by evidence_pack.py (CM-061).
+Section **locations-east** · https://www.firstchoiceseamlessgutters.net/waverly-fl/ · built 2026-10-27T12:09 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -67,6 +67,10 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | gsc-access | Google Search Console access | Access exists (Paul reports) | Paul, intake answer |
 | d-staff-roles | Roles of April, Matt, Isaac, James | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns them (returned proof sheet question_5) |
 | d-travel-fee | Travel fee | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns it (returned proof sheet towns_excluded / question_0) |
+| page:local_context | local context | Census-designated place in east-central Polk County, elevation 128 ft. No terrain or history text; no housing source found. Thin. | https://en.wikipedia.org/wiki/Waverly,_Florida ; research 20261027-120406-build-cccb |
+| page:neighborhoods | neighborhoods | NOT FOUND: CDP with no named neighborhoods (Waverly Road and Waverly Loop only). Fewer than 3, so the section is dropped. | Search, no source names a neighbourhood ; research 20261027-120406-build-cccb |
+| page:place_entities | place entities | NOT ENOUGH: Waverly Post Office (Wikipedia photo caption). Lake Lee nearby (weak source). Fewer than 3 verified. ZIP 33859. | https://en.wikipedia.org/wiki/Waverly,_Florida ; research 20261027-120406-build-cccb |
+| page:permit_office | permit office | Unincorporated CDP, so Polk County Building Division, 330 West Church Street, Bartow FL 33830, (863) 534-6080. Basis is CDP status; county page text not retrievable. | https://www.polkflpa.gov/PermitAgencies.aspx (Polk PA permit agencies list) ; research 20261027-120406-build-cccb |
 
 
 ## Reviews
@@ -157,7 +161,7 @@ _None tagged to this page._
 
 ## Public facts
 
-_No area source list rows or research results for this place yet._
+- research-log: fact:loc-waverly:permit_office — "Waverly has no separate entry in the Polk PA municipal list; census-designated place, so Polk County, 330 West Church Street, Bartow, (863) 534-6080" (https://www.polkflpa.gov/PermitAgencies.aspx, 2026-10-27)
 
 ## Place research (the place store: official facts are plain statements; context only for area character)
 
@@ -177,5 +181,4 @@ _None for this page — its scope and process come from the client, or stay a `[
 
 ## Gaps — the only things research looks for
 
-- 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) (supporting, `page:place_entities`) → researcher (public fact — never asked)
-- Which office issues permits here, with its official page (for the Serving section) (supporting, `page:permit_office`) → researcher (public fact — never asked)
+_None._

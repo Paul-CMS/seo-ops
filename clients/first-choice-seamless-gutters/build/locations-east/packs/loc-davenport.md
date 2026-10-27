@@ -1,6 +1,6 @@
 # Evidence pack — Davenport (location)
 
-Section **locations-east** · https://www.firstchoiceseamlessgutters.net/davenport-fl/ · built 2026-10-27T10:32 by evidence_pack.py (CM-061).
+Section **locations-east** · https://www.firstchoiceseamlessgutters.net/davenport-fl/ · built 2026-10-27T12:09 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -44,6 +44,9 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | a-primary-domain-canonical-host-form | Primary domain (canonical host form) | https://www.firstchoiceseamlessgutters.net/ (non-www 301 → www; canonical tag www) | live HTTP check 2026-10-22 |
 | d-association-memberships | Association memberships | BBB Accredited Business since 8/12/2025, A+ rating | BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22 |
 | d-google-rating-and-review-count-exactly-as-google-shows-the | Google rating and review count — exactly as Google shows them on the day, with the date ("4.9 · 67 reviews, 2026-10-07"; never a rounded 5.0) | 5 out of 5 (138 reviews), 2026-10-22 (site says '95+ 5 Star Google Reviews') | GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22 |
+| page:local_context | local context | Incorporated 1915, Polk County, elevation 135 ft; flatland with gently rolling hills; humid subtropical. Population 2,888 (2010) to 9,043 (2020); 3,739 housing units in 2020, mostly recent fast-growth stock. No official drainage or failure-pattern source found | https://en.wikipedia.org/wiki/Davenport,_Florida ; research 20261027-120406-build-cccb |
+| page:place_entities | place entities | 1) Posner Park. 2) Davenport City Hall, 1 Allapaha St. 3) Horse Creek. 4) AdventHealth Heart of Florida (only hospital in the city). No Wikidata IDs checked. | https://en.wikipedia.org/wiki/Davenport,_Florida ; research 20261027-120406-build-cccb |
+| page:permit_office | permit office | City of Davenport, 1 Allapaha St., (863) 419-3300, https://www.mydavenport.org/. Official permit page not fetched; third-party sites say Building and Planning or Building Services. | https://www.polkflpa.gov/PermitAgencies.aspx (Polk PA permit agencies list) ; research 20261027-120406-build-cccb |
 
 ### Unknown — never claimed: write [NEED: …] where the page needs it, or leave it out
 
@@ -67,6 +70,7 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | gsc-access | Google Search Console access | Access exists (Paul reports) | Paul, intake answer |
 | d-staff-roles | Roles of April, Matt, Isaac, James | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns them (returned proof sheet question_5) |
 | d-travel-fee | Travel fee | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns it (returned proof sheet towns_excluded / question_0) |
+| page:neighborhoods | neighborhoods | PARTIAL, listing-site sources only (not official): ChampionsGate (master-planned, 11 subdivisions), Providence (gated golf), Solterra Resort, Highlands Reserve, Legacy Park. Whether ChampionsGate and Solterra are inside city limits was not checked. | https://www.homesbymarco.com/neighborhoods/champions-gate-in-davenport-fl ; Wikipedia (Posner Park) ; research 20261027-120406-build-cccb |
 
 
 ## Reviews
@@ -158,7 +162,8 @@ _None tagged to this page._
 
 ## Public facts
 
-_No area source list rows or research results for this place yet._
+- research-log: fact:loc-davenport:permit_office — "City of Davenport, 1 Allapaha St., Davenport FL 33836, Telephone: (863) 419-3300" (https://www.polkflpa.gov/PermitAgencies.aspx, 2026-10-27)
+- research-log: fact:loc-davenport:place_entities — "Posner Park: a large outdoor shopping mall; Davenport City Hall; Horse Creek; AdventHealth Heart of Florida" (https://en.wikipedia.org/wiki/Davenport,_Florida, 2026-10-27)
 
 ## Place research (the place store: official facts are plain statements; context only for area character)
 
@@ -177,5 +182,4 @@ _None for this page — its scope and process come from the client, or stay a `[
 
 ## Gaps — the only things research looks for
 
-- 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) (supporting, `page:place_entities`) → researcher (public fact — never asked)
-- Which office issues permits here, with its official page (for the Serving section) (supporting, `page:permit_office`) → researcher (public fact — never asked)
+_None._

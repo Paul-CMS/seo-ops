@@ -1,6 +1,6 @@
 # Evidence pack — Haines City (location)
 
-Section **locations-east** · https://www.firstchoiceseamlessgutters.net/haines-city-fl/ · built 2026-10-27T10:32 by evidence_pack.py (CM-061).
+Section **locations-east** · https://www.firstchoiceseamlessgutters.net/haines-city-fl/ · built 2026-10-27T12:09 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -44,6 +44,9 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | a-primary-domain-canonical-host-form | Primary domain (canonical host form) | https://www.firstchoiceseamlessgutters.net/ (non-www 301 → www; canonical tag www) | live HTTP check 2026-10-22 |
 | d-association-memberships | Association memberships | BBB Accredited Business since 8/12/2025, A+ rating | BBB profile bbb.org/us/fl/winter-haven/profile/gutter-contractor/first-choice-seamless-gutters-0733-235974573, read 2026-10-22 |
 | d-google-rating-and-review-count-exactly-as-google-shows-the | Google rating and review count — exactly as Google shows them on the day, with the date ("4.9 · 67 reviews, 2026-10-07"; never a rounded 5.0) | 5 out of 5 (138 reviews), 2026-10-22 (site says '95+ 5 Star Google Reviews') | GBP (business.google.com/v/first-choice-seamless-gutters-inc/05119577617315017912/2948/_), read 2026-10-22 |
+| page:local_context | local context | On the sandy Lake Wales Ridge: low ridge of gently rolling hills, porous sandy soil, elevation 157 ft. 11,006 housing units (2020); fast growth at city edges (Orlando and Disney access). No official drainage source. | https://en.wikipedia.org/wiki/Haines_City,_Florida ; research 20261027-120406-build-cccb |
+| page:place_entities | place entities | 1) Lake Eva Park (2009, with Aquatics Center). 2) Polk Hotel (now Landmark Baptist College). 3) Historic Oakland district. 4) Haines City Public Library, 111 N. 6th St. | https://en.wikipedia.org/wiki/Haines_City,_Florida ; research 20261027-120406-build-cccb |
+| page:permit_office | permit office | Building Division, Development Services Dept., 620 East Main Street, Haines City FL 33844, 863-421-3600. Contractors must register first. | https://www.hainescity.com/159/Contractor-Requirements (read 2026-10-27) ; research 20261027-120406-build-cccb |
 
 ### Unknown — never claimed: write [NEED: …] where the page needs it, or leave it out
 
@@ -67,6 +70,7 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | gsc-access | Google Search Console access | Access exists (Paul reports) | Paul, intake answer |
 | d-staff-roles | Roles of April, Matt, Isaac, James | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns them (returned proof sheet question_5) |
 | d-travel-fee | Travel fee | Unknown — not provided by client (Paul, 2026-10-25) | Paul, 2026-10-25: set fully Unknown until the client returns it (returned proof sheet towns_excluded / question_0) |
+| page:neighborhoods | neighborhoods | PARTIAL: Oakland (historic district), Randa Ridge, Southern Dunes (golf, developed 1995-2005), Posner Park (Wikipedia); Hamilton Bluff (new-home community, listing site). Fewer than 3 from official sources. | https://en.wikipedia.org/wiki/Haines_City,_Florida ; Lennar listing ; research 20261027-120406-build-cccb |
 
 
 ## Reviews
@@ -160,7 +164,8 @@ _None tagged to this page._
 
 ## Public facts
 
-_No area source list rows or research results for this place yet._
+- research-log: fact:loc-haines-city:permit_office — "The Building Division, within the Development Services Department, issues building permits; 620 East Main Street; 863-421-3600" (https://www.hainescity.com/159/Contractor-Requirements, 2026-10-27)
+- research-log: fact:loc-haines-city:place_entities — "Lake Eva Park completed in 2009; Polk Hotel; Haines City Public Library at 111 N. 6th Street" (https://en.wikipedia.org/wiki/Haines_City,_Florida, 2026-10-27)
 
 ## Place research (the place store: official facts are plain statements; context only for area character)
 
@@ -179,5 +184,4 @@ _None for this page — its scope and process come from the client, or stay a `[
 
 ## Gaps — the only things research looks for
 
-- 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) (supporting, `page:place_entities`) → researcher (public fact — never asked)
-- Which office issues permits here, with its official page (for the Serving section) (supporting, `page:permit_office`) → researcher (public fact — never asked)
+_None._

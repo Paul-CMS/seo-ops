@@ -1,0 +1,24 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "Incorporated 1915, elevation 131 ft; Central Florida Highlands, flatland with gently rolling hills. Citrus-research town (UF/IFAS Citrus Research and Education Center, 1917). No housing-age source found.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Lake_Alfred,_Florida ; research 20261027-120406-build-cccb"
+    },
+    "neighborhoods": {
+      "value": "PARTIAL, listing-site and Redfin sources only (not official): Downtown Lake Alfred, Lucerne Park, Sweetwater Golf and Tennis Club, Water Ridge, Golf Grounds Estates-Aqua Vista, Lake Mariana Shores.",
+      "status": "Needs Review",
+      "source": "Redfin and listing pages ; research 20261027-120406-build-cccb"
+    },
+    "place_entities": {
+      "value": "1) Mackay Gardens and Lakeside Preserve. 2) UF/IFAS Citrus Research and Education Center. 3) Lake Alfred Public Library, 245 N. Seminole Ave. 4) Lake Alfred Historical Society.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Lake_Alfred,_Florida ; research 20261027-120406-build-cccb"
+    },
+    "permit_office": {
+      "value": "City of Lake Alfred Building Inspection Division / Community Development, 120 E Pomelo St., (863) 291-5748, permits@mylakealfred.com. Accela portal https://aca-prod.accela.com/COLA. Page text not fetched (search summary).",
+      "status": "Needs Review",
+      "source": "https://mylakealfred.com/262/Building-Permit ; Polk PA list ; research 20261027-120406-build-cccb"
+    }
+  }
+}

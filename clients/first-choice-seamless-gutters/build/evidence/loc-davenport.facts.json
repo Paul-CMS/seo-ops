@@ -1,0 +1,24 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "Incorporated 1915, Polk County, elevation 135 ft; flatland with gently rolling hills; humid subtropical. Population 2,888 (2010) to 9,043 (2020); 3,739 housing units in 2020, mostly recent fast-growth stock. No official drainage or failure-pattern source found.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Davenport,_Florida ; research 20261027-120406-build-cccb"
+    },
+    "neighborhoods": {
+      "value": "PARTIAL, listing-site sources only (not official): ChampionsGate (master-planned, 11 subdivisions), Providence (gated golf), Solterra Resort, Highlands Reserve, Legacy Park. Whether ChampionsGate and Solterra are inside city limits was not checked.",
+      "status": "Needs Review",
+      "source": "https://www.homesbymarco.com/neighborhoods/champions-gate-in-davenport-fl ; Wikipedia (Posner Park) ; research 20261027-120406-build-cccb"
+    },
+    "place_entities": {
+      "value": "1) Posner Park. 2) Davenport City Hall, 1 Allapaha St. 3) Horse Creek. 4) AdventHealth Heart of Florida (only hospital in the city). No Wikidata IDs checked.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Davenport,_Florida ; research 20261027-120406-build-cccb"
+    },
+    "permit_office": {
+      "value": "City of Davenport, 1 Allapaha St., (863) 419-3300, https://www.mydavenport.org/. Official permit page not fetched; third-party sites say Building and Planning or Building Services.",
+      "status": "Internally Verified",
+      "source": "https://www.polkflpa.gov/PermitAgencies.aspx (Polk PA permit agencies list) ; research 20261027-120406-build-cccb"
+    }
+  }
+}

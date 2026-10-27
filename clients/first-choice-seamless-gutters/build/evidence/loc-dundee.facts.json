@@ -1,0 +1,24 @@
+{
+  "facts": {
+    "local_context": {
+      "value": "Town settled 1911, incorporated 1925, elevation 213 ft (highest of the nine Polk locations); humid subtropical. April 2024 referendum kept town status. SR 17 runs through the centre.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Dundee,_Florida ; research 20261027-120406-build-cccb"
+    },
+    "neighborhoods": {
+      "value": "PARTIAL, listing-site sources only (not official): Ridge of Dundee, The Ridge at Swan Lake, Lake Ruth Estates, Mabel Loop Ridge. County-record names also include Bluffs Dundee, Crystal Lake Preserve, Dell Lake Village.",
+      "status": "Needs Review",
+      "source": "Listing sites; county records ; research 20261027-120406-build-cccb"
+    },
+    "place_entities": {
+      "value": "PARTIAL: Dundee Town Hall and Library; Lake Marie Park (listing-site mention only); Ridge Scenic Highway (SR 17). Fewer than 3 verified.",
+      "status": "Needs Review",
+      "source": "https://en.wikipedia.org/wiki/Dundee,_Florida ; research 20261027-120406-build-cccb"
+    },
+    "permit_office": {
+      "value": "Town of Dundee Development Services Department, 124 Dundee Road, (863) 438-8330 ext. 223 or 438-8335 (town pages differ). CO requests: co-info@townofdundee.com.",
+      "status": "Needs Review",
+      "source": "https://townofdundee.com/departments/building-services/ ; research 20261027-120406-build-cccb"
+    }
+  }
+}
