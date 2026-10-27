@@ -1843,8 +1843,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-davenport.grid.md",
         "sha": "6de80295325a",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "at": "2026-10-27T10:32:17-05:00",
+        "run": "20261027-103205-interview-d789",
         "gaps": [
           "local_context",
           "neighborhoods",
@@ -1855,9 +1855,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-davenport.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-davenport.json",
-        "sha": "51b7fc255d47",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "sha": "118b04854810",
+        "at": "2026-10-27T10:32:17-05:00",
+        "run": "20261027-103205-interview-d789",
         "section": "locations-east",
         "counts": {
           "facts": 45,
@@ -1905,8 +1905,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-haines-city.grid.md",
         "sha": "35abdd9c9078",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "at": "2026-10-27T10:32:17-05:00",
+        "run": "20261027-103205-interview-d789",
         "gaps": [
           "local_context",
           "neighborhoods",
@@ -1917,9 +1917,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-haines-city.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-haines-city.json",
-        "sha": "1c05dfcf5bfa",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "sha": "ed0a88f50cf9",
+        "at": "2026-10-27T10:32:17-05:00",
+        "run": "20261027-103205-interview-d789",
         "section": "locations-east",
         "counts": {
           "facts": 45,
@@ -1967,8 +1967,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lake-alfred.grid.md",
         "sha": "9b1162adbcc5",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "at": "2026-10-27T10:32:17-05:00",
+        "run": "20261027-103205-interview-d789",
         "gaps": [
           "local_context",
           "neighborhoods",
@@ -1979,9 +1979,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-alfred.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-alfred.json",
-        "sha": "6144168c1fbf",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "sha": "0e0ba76b1a59",
+        "at": "2026-10-27T10:32:17-05:00",
+        "run": "20261027-103205-interview-d789",
         "section": "locations-east",
         "counts": {
           "facts": 45,
@@ -2029,8 +2029,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lake-hamilton.grid.md",
         "sha": "7430d66258d7",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "at": "2026-10-27T10:32:17-05:00",
+        "run": "20261027-103205-interview-d789",
         "gaps": [
           "local_context",
           "neighborhoods",
@@ -2041,9 +2041,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-hamilton.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-hamilton.json",
-        "sha": "7df1d2f8cc9c",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "sha": "9567baea1a4c",
+        "at": "2026-10-27T10:32:17-05:00",
+        "run": "20261027-103205-interview-d789",
         "section": "locations-east",
         "counts": {
           "facts": 45,
@@ -2091,8 +2091,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-dundee.grid.md",
         "sha": "a041b20e5b4f",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "at": "2026-10-27T10:32:17-05:00",
+        "run": "20261027-103205-interview-d789",
         "gaps": [
           "local_context",
           "neighborhoods",
@@ -2103,9 +2103,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-dundee.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-dundee.json",
-        "sha": "6f4c20e2c57d",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "sha": "65532bf6e3b1",
+        "at": "2026-10-27T10:32:17-05:00",
+        "run": "20261027-103205-interview-d789",
         "section": "locations-east",
         "counts": {
           "facts": 45,
@@ -2153,8 +2153,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-lake-wales.grid.md",
         "sha": "4af249b18e1e",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "at": "2026-10-27T10:32:17-05:00",
+        "run": "20261027-103205-interview-d789",
         "gaps": [
           "local_context",
           "neighborhoods",
@@ -2165,9 +2165,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-wales.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-lake-wales.json",
-        "sha": "fa99cbf0ae7a",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "sha": "eae5acdc2f1f",
+        "at": "2026-10-27T10:32:17-05:00",
+        "run": "20261027-103205-interview-d789",
         "section": "locations-east",
         "counts": {
           "facts": 45,
@@ -2215,8 +2215,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-waverly.grid.md",
         "sha": "88eb292fbb8c",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "at": "2026-10-27T10:32:17-05:00",
+        "run": "20261027-103205-interview-d789",
         "gaps": [
           "local_context",
           "neighborhoods",
@@ -2227,9 +2227,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-waverly.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-waverly.json",
-        "sha": "a377b6af0bf3",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "sha": "370b65c866ab",
+        "at": "2026-10-27T10:32:18-05:00",
+        "run": "20261027-103205-interview-d789",
         "section": "locations-east",
         "counts": {
           "facts": 45,
@@ -2277,8 +2277,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-frostproof.grid.md",
         "sha": "283b97d05eaf",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "at": "2026-10-27T10:32:18-05:00",
+        "run": "20261027-103205-interview-d789",
         "gaps": [
           "local_context",
           "neighborhoods",
@@ -2289,9 +2289,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-frostproof.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-frostproof.json",
-        "sha": "a9b56135a356",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "sha": "a9eefb069a77",
+        "at": "2026-10-27T10:32:18-05:00",
+        "run": "20261027-103205-interview-d789",
         "section": "locations-east",
         "counts": {
           "facts": 45,
@@ -2339,8 +2339,8 @@
         ],
         "grid": "clients/first-choice-seamless-gutters/build/evidence/loc-fort-meade.grid.md",
         "sha": "7b1248703b03",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "at": "2026-10-27T10:32:18-05:00",
+        "run": "20261027-103205-interview-d789",
         "gaps": [
           "local_context",
           "neighborhoods",
@@ -2351,9 +2351,9 @@
       "pack": {
         "file": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-fort-meade.md",
         "json": "clients/first-choice-seamless-gutters/build/locations-east/packs/loc-fort-meade.json",
-        "sha": "da3d74b9b3f6",
-        "at": "2026-10-26T16:44:15-05:00",
-        "run": "20261026-164329-answers-12fd",
+        "sha": "0c2b09da2b4d",
+        "at": "2026-10-27T10:32:18-05:00",
+        "run": "20261027-103205-interview-d789",
         "section": "locations-east",
         "counts": {
           "facts": 45,
@@ -2731,9 +2731,9 @@
         "route": "outline",
         "files": {},
         "facts_interview": {
-          "file": "clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - locations-east - 2026-10-26 - REVIEW.md",
-          "at": "2026-10-26T16:30:15-05:00",
-          "run": "20261026-163013-interview-7173",
+          "file": "clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - locations-east - 2026-10-27 - REVIEW.md",
+          "at": "2026-10-27T10:32:09-05:00",
+          "run": "20261027-103205-interview-d789",
           "pages": [
             "loc-davenport",
             "loc-haines-city",
@@ -2984,13 +2984,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261026-164329-answers-12fd",
-    "command": "answers",
-    "finished": "2026-10-26T16:44:24-05:00",
-    "result": "Paul confirmed city served for the 9 east pages; gate still blocks on local context and neighborhoods (research)",
+    "run_id": "20261027-103205-interview-d789",
+    "command": "interview",
+    "finished": "2026-10-27T10:32:30-05:00",
+    "result": "Facts interview locations-east: 0 client questions (all 9 blocks are public facts for the researcher); gate still blocks 9 pages",
     "changes": 0,
-    "step": "answers",
-    "batch": null
+    "step": "interview:facts",
+    "batch": "locations-east"
   },
   "spend": {
     "dataforseo_usd": 0.262668
@@ -3011,7 +3011,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-22T07:34:19-05:00",
-  "updated": "2026-10-26T16:44:24-05:00",
+  "updated": "2026-10-27T10:32:30-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-22T07:34:20-05:00",
@@ -4234,6 +4234,26 @@
       "by_agent": {
         "main": 0.022
       }
+    },
+    {
+      "run": "20261027-103205-interview-d789",
+      "step": "interview:facts",
+      "tokens": 609603,
+      "usd": 0.0103,
+      "at": "2026-10-27T10:32:30-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0103,
+          "in": 12,
+          "out": 3391,
+          "cache_read": 592790,
+          "cache_write": 13410
+        }
+      },
+      "by_agent": {
+        "main": 0.0103
+      }
     }
   ],
   "sessions": {
@@ -4338,6 +4358,12 @@
       "step": "interview:facts",
       "first_run": "20261026-163013-interview-7173",
       "at": "2026-10-26T16:30:30-05:00"
+    },
+    "8774ec83-4c59-4210-8a63-e9b92a1a7345": {
+      "key": "batches:locations-east",
+      "step": "interview:facts",
+      "first_run": "20261027-103205-interview-d789",
+      "at": "2026-10-27T10:32:30-05:00"
     }
   },
   "wordpress": {

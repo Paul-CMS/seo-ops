@@ -872,3 +872,13 @@ Open: permit responsibility per town; named HOA communities; named historic dist
 - Remaining required gaps per page: local context (city-specific conditions) and neighborhoods. Both are public facts for the researcher (build/evidence/research-locations-east.md), not owner questions.
 - Supporting gaps (named places, permit office) are also public-fact research items.
 
+## /interview · 2026-10-27 · run 20261027-103205-interview-d789
+
+- Evidence gate blocked 9 pages in batch locations-east (loc-davenport, loc-haines-city, loc-lake-alfred, loc-lake-hamilton, loc-dundee, loc-lake-wales, loc-waverly, loc-frostproof, loc-fort-meade).
+- Each block is two required facts per page: City-specific conditions (local_context) and Up to 12 real neighborhoods (neighborhoods); supporting gaps are place_entities and permit_office.
+- evidence.py questions wrote the pack with 0 client questions: every gap is a public fact listed in build/evidence/research-locations-east.md (P6, CM-057), so none goes to the owner.
+- Pack written: clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - locations-east - 2026-10-27 - REVIEW.md — nothing for Paul to send.
+- Gate re-run (evidence.py run): still 9 BLOCK. No page is cleared by this run.
+- Next: the researcher must look up the public facts for these 9 pages (fact:<page>:local_context, :neighborhoods, :place_entities, :permit_office), then the gate re-runs. Waiver remains open to Paul via /approve evidence:<page> --reason.
+- Open waits (not changed here): the facts-answers round for the owner (20 open facts) and the blocker handoff from Jonie (/verify).
+

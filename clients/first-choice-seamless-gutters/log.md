@@ -2337,3 +2337,37 @@ Spend: 1663939 tokens · $0.02 (measured)
 - CHANGE #500 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26 (12).md | new: First Choice Seamless Gutters - Document Checklist.md · sha b24b0b0e3953 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #501 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26 (12).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26 (12).md | result: done · renamed and moved, nothing deleted
 - CHANGE #502 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (12).md | new: First Choice Seamless Gutters - Status.md · sha e1d3a4568320 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261027-103205-interview-d789 · STARTED · /interview · 2026-10-27T10:32:06-05:00
+Step: interview:facts · batch locations-east · session 8774ec83-4c59-4210-8a63-e9b92a1a7345
+Gates checked: discovery_signed_off
+- FACTS INTERVIEW 2026-10-27T10:32 · run 20261027-103205-interview-d789 · batch locations-east · 0 question(s) for loc-davenport, loc-haines-city, loc-lake-alfred, loc-lake-hamilton, loc-dundee, loc-lake-wales, loc-waverly, loc-frostproof, loc-fort-meade · clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - locations-east - 2026-10-27 - REVIEW.md
+- EVIDENCE 2026-10-27T10:32 · run 20261027-103205-interview-d789 · loc-davenport: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T10:32 · run 20261027-103205-interview-d789 · loc-haines-city: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T10:32 · run 20261027-103205-interview-d789 · loc-lake-alfred: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T10:32 · run 20261027-103205-interview-d789 · loc-lake-hamilton: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T10:32 · run 20261027-103205-interview-d789 · loc-dundee: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T10:32 · run 20261027-103205-interview-d789 · loc-lake-wales: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T10:32 · run 20261027-103205-interview-d789 · loc-waverly: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T10:32 · run 20261027-103205-interview-d789 · loc-frostproof: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+- EVIDENCE 2026-10-27T10:32 · run 20261027-103205-interview-d789 · loc-fort-meade: BLOCK (known 6, unknown 2, unverified 2, conflict 0)
+### HANDOFF · /interview · 2026-10-27 · run 20261027-103205-interview-d789
+- Evidence gate blocked 9 pages in batch locations-east (loc-davenport, loc-haines-city, loc-lake-alfred, loc-lake-hamilton, loc-dundee, loc-lake-wales, loc-waverly, loc-frostproof, loc-fort-meade).
+- Each block is two required facts per page: City-specific conditions (local_context) and Up to 12 real neighborhoods (neighborhoods); supporting gaps are place_entities and permit_office.
+- evidence.py questions wrote the pack with 0 client questions: every gap is a public fact listed in build/evidence/research-locations-east.md (P6, CM-057), so none goes to the owner.
+- Pack written: clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - locations-east - 2026-10-27 - REVIEW.md — nothing for Paul to send.
+- Gate re-run (evidence.py run): still 9 BLOCK. No page is cleared by this run.
+- Next: the researcher must look up the public facts for these 9 pages (fact:<page>:local_context, :neighborhoods, :place_entities, :permit_office), then the gate re-runs. Waiver remains open to Paul via /approve evidence:<page> --reason.
+- Open waits (not changed here): the facts-answers round for the owner (20 open facts) and the blocker handoff from Jonie (/verify).
+### END HANDOFF
+## RUN 20261027-103205-interview-d789 · FINISHED · 2026-10-27T10:32:30-05:00
+Changes: 0 · Summary: Facts interview locations-east: 0 client questions (all 9 blocks are public facts for the researcher); gate still blocks 9 pages
+Spend: 609603 tokens · $0.01 (measured)
+- CHANGE #503 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-26 (10).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | new: _Archive/First Choice Seamless Gutters - Handoff Log - 2026-10-26 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #504 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Handoff Log.md | upload | old: previous version archived as First Choice Seamless Gutters - Handoff Log - 2026-10-26 (10).md | new: First Choice Seamless Gutters - Handoff Log.md · sha aa8d1b34c036 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #505 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (13).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | new: _Archive/First Choice Seamless Gutters - Document Checklist - 2026-10-26 (13).md | result: done · renamed and moved, nothing deleted
+- CHANGE #506 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Document Checklist.md | upload | old: previous version archived as First Choice Seamless Gutters - Document Checklist - 2026-10-26 (13).md | new: First Choice Seamless Gutters - Document Checklist.md · sha 15e0f39269c5 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #507 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - Status - 2026-10-26 (13).md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | new: _Archive/First Choice Seamless Gutters - Status - 2026-10-26 (13).md | result: done · renamed and moved, nothing deleted
+- CHANGE #508 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - Status.md | upload | old: previous version archived as First Choice Seamless Gutters - Status - 2026-10-26 (13).md | new: First Choice Seamless Gutters - Status.md · sha 497e233fab29 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #509 [drive_file] drive:First Choice Seamless Gutters - TMS/_Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-26.md | archive | old: drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | new: _Archive/First Choice Seamless Gutters - VA Worklist - 2026-10-26.md | result: done · renamed and moved, nothing deleted
+- CHANGE #510 [drive_file] drive:First Choice Seamless Gutters - TMS/First Choice Seamless Gutters - VA Worklist.md | upload | old: previous version archived as First Choice Seamless Gutters - VA Worklist - 2026-10-26.md | new: First Choice Seamless Gutters - VA Worklist.md · sha 18f2d25a52b1 | result: done · copied (Drive for desktop syncs it)

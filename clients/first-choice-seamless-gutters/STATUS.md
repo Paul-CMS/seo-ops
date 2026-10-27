@@ -5,7 +5,7 @@
 - **Waiting on:** Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7; Client (via Paul) — Your website says this about Price range, or what drives the cost: "free estimates We offe; Client (via Paul) — Your website says this about Typical job duration or timeline: "(863) 330-3243 Available 7
 - **Next action:** `/interview first-choice-seamless-gutters facts locations-east` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open first-choice-seamless-gutters`) and types `/next first-choice-seamless-gutters` (agents: build (opus), draft-writer (opus), brief-writer (sonnet)) · model: Haiku chat
 
-_Generated 2026-10-26T16:44 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-27T10:32 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -38,8 +38,8 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Client (via Paul) | waiting for the answers to the facts round (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - all - 2026-10-26 - REVIEW.md; 20 fact(s) open) — when they arrive, each is recorded once (run.py fact / --settle) and the grids re-run | 2026-10-26 | /interview first-choice-seamless-gutters facts-answers all |
-| Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-26 | /verify first-choice-seamless-gutters |
+| Client (via Paul) | waiting for the answers to the facts round (clients/first-choice-seamless-gutters/interviews/facts/First Choice Seamless Gutters - Facts Interview - all - 2026-10-26 - REVIEW.md; 20 fact(s) open) — when they arrive, each is recorded once (run.py fact / --settle) and the grids re-run | 2026-10-27 | /interview first-choice-seamless-gutters facts-answers all |
+| Jonie | blockers not cleared: H-2026-10-23-03-broken_link-01 is issued; H-2026-10-23-03-broken_link-02 is issued; H-2026-10-23-03-broken_link-03 is issued; H-2026-10-23-03-broken_link-04 is issued; H-2026-10-23-03-broken_link-05 is issued (+6 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-27 | /verify first-choice-seamless-gutters |
 | Jonie | seopress settings handoff — 4 of 4 item(s) open | 2026-10-22 | H-2026-10-22-01-seopress_settings |
 | Gwen | manual lookup handoff — 8 of 8 item(s) open | 2026-10-22 | H-2026-10-22-02-manual_lookup |
 | Jonie | broken link handoff — 10 of 10 item(s) open | 2026-10-23 | H-2026-10-23-03-broken_link |
@@ -189,9 +189,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 2 | 0 | $0.63 | $0.00 |
 | 4 · Audit | 6 | 28,801,394 | $10.27 | $0.00 |
 | 5 · Build plan and blockers | 5 | 18,662,785 | $5.58 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 24 | 85,655,988 | $35.47 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 25 | 86,265,591 | $35.48 | $0.00 |
 | any stage | 10 | 9,539,058 | $1.69 | $0.00 |
-| **total** | 51 | 155,550,637 | $57.47 | $0.00 |
+| **total** | 52 | 156,160,240 | $57.48 | $0.00 |
 
 ## Spend by step (model)
 
@@ -211,7 +211,7 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:data | 1 | 0 | $0.62 | $0.00 |
 | build:ship | 1 | 851,430 | $0.29 | $0.00 |
 | build:pilot-corrections | 1 | 680,899 | $0.21 | $0.00 |
-| interview:facts | 8 | 6,806,372 | $0.19 | $0.00 |
+| interview:facts | 9 | 7,415,975 | $0.20 | $0.00 |
 | interview:facts-answers | 4 | 2,204,142 | $0.04 | $0.00 |
 | build:revise | 1 | 1,680,724 | $0.03 | $0.00 |
 | build:blockers | 2 | 1,617,331 | $0.03 | $0.00 |
@@ -220,6 +220,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | wp-check | 5 | 1,178,180 | $0.01 | $0.00 |
 | discovery:review | 1 | 780,853 | $0.01 | $0.00 |
 | crawl | 1 | 0 | $0.01 | $0.00 |
-| **total** | 51 | 155,550,637 | $57.47 | $0.00 |
+| **total** | 52 | 156,160,240 | $57.48 | $0.00 |
 
-Last run: /answers 2026-10-26T16:44 — Paul confirmed city served for the 9 east pages; gate still blocks on local context and neighborhoods (research)
+Last run: /interview 2026-10-27T10:32 — Facts interview locations-east: 0 client questions (all 9 blocks are public facts for the researcher); gate still blocks 9 pages
