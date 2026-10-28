@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "client": {
+    "name": "Example Gutter Co",
+    "slug": "example-gutter-co",
+    "domain": "https://example.com",
+    "brand": "Example Gutter Co"
+  },
+  "approved": { "by": "", "date": "" },
+  "backup": { "confirmed": false, "tool": "ManageWP", "timestamp": "" },
+  "review": { "confirmed": false, "by": "", "date": "" },
+  "settings": { "author_id": null },
+  "pages": [
+    {
+      "id": "svc-gutter-installation",
+      "action": "update",
+      "route": "build",
+      "post_id": 123,
+      "url": "/gutter-installation/",
+      "post_type": "page",
+      "seo_title": "Gutter Installation - Example Gutter Co - Hilton Head Island Metro Area",
+      "h1": "Seamless Rain Gutter Installation in the Hilton Head Island-Bluffton, South Carolina MSA",
+      "meta_description": "Example Gutter Co installs seamless gutters across the South Carolina Lowcountry. Free estimates: (843) 555-0100.",
+      "content_file": "content/svc-gutter-installation.md",
+      "rule_refs": ["TTL-02", "H1-02", "META-02"],
+      "finding_ids": ["F-012"],
+      "placeholders": []
+    },
+    {
+      "id": "loc-bluffton",
+      "action": "create",
+      "route": "build",
+      "url": "/bluffton/",
+      "seo_title": "Gutter Contractor - Bluffton, South Carolina - Example Gutter Co",
+      "h1": "The Best Rain Gutter Services in Bluffton",
+      "the_best_reason": "rank4-20",
+      "meta_description": "Seamless gutters, guards and repairs for Bluffton homes, built for Lowcountry storms. Call Example Gutter Co for a free estimate.",
+      "content_file": "content/loc-bluffton.md",
+      "rule_refs": ["TTL-03", "H1-04", "H1-05"],
+      "finding_ids": ["F-020"],
+      "placeholders": []
+    },
+    {
+      "id": "svc-gutter-repair",
+      "action": "update",
+      "route": "spo",
+      "post_id": 130,
+      "url": "/gutter-repair/",
+      "seo_title": "Gutter Repair - Example Gutter Co - South Carolina Lowcountry",
+      "h1": "Rain Gutter Repair Across the Hilton Head Island Metropolitan Area",
+      "meta_description": "Leaking seams, sagging runs and storm damage fixed fast across the Lowcountry. Free estimates from Example Gutter Co.",
+      "rule_refs": ["SVC-15", "META-01"],
+      "finding_ids": ["F-014"]
+    }
+  ],
+  "redirects": [
+    {
+      "from": "/service-area/bluffton/",
+      "to": "/bluffton/",
+      "type": 301,
+      "reason": "URL-01: strip /service-area/ prefix; page rebuilt at root",
+      "finding_id": "F-020",
+      "has_backlinks_or_traffic": true,
+      "retire_source": true
+    }
+  ],
+  "noindex": [
+    { "url": "/privacy-policy/", "reason": "IDX-03 utility page", "finding_id": "F-031" }
+  ],
+  "link_updates": [
+    { "old_url": "/service-area/bluffton/", "new_url": "/bluffton/" }
+  ]
+}
