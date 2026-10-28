@@ -16,26 +16,30 @@ publication.
 
 | # | Field | Value | Status |
 |---|---|---|---|
-| 1 | Brand entity (GBP name, exactly) | | |
-| 2 | GBP primary category = the category entity | | |
-| 3 | Category variants (4–6) | | |
+| 1 | Brand entity (GBP name, exactly) | Carolina Carpet Cleaning | Submitted 2026-10-28 · was: Unknown |
+| 2 | GBP primary category = the category entity | Proposed: Carpet cleaning service → Wikipedia 'Carpet cleaning' (Q5045777). GBP primary category not yet read (dashboard/Maps not machine-readable; Gwen manual lookup) | Submitted 2026-10-28 · was: Unknown |
+| 3 | Category variants (4–6) | Proposed: carpet cleaning · carpet cleaning service · carpet cleaners · carpet cleaning company · carpet cleaner (search volume checked in the data step) | Submitted 2026-10-28 · was: Unknown |
 | 4 | Storefront or SAB | SAB (service-area business); the address still appears on the website (helps map rankings) | Paul Approved 2026-10-28 · was: Unknown |
-| 5 | Area entity | | |
-| 6 | Area variants (3–5) | | |
-| 7 | Separator standard | ` - ` | |
-| 8 | Phone | | |
-| 9 | Primary domain (canonical host form) | | |
+| 5 | Area entity | Proposed: Hilton Head Island metropolitan area (officially Hilton Head Island–Bluffton–Port Royal, SC Metropolitan Statistical Area; Beaufort + Jasper counties; Q17020871). Exception: Yemassee lies partly in Hampton County (outside the MSA); strict alternative: South Carolina Lowcountry (Q3885311) | Submitted 2026-10-28 · was: Unknown |
+| 6 | Area variants (3–5) | Proposed: Hilton Head Island Metro Area (reserved: homepage title; full form 'Hilton Head Island metropolitan area') · South Carolina Lowcountry (homepage H1; rotation) · Hilton Head Island–Bluffton–Port Royal area (rotation) · Lowcountry (rotation) | Submitted 2026-10-28 · was: Unknown |
+| 7 | Separator standard | ' - ' | Submitted 2026-10-28 · was: Unknown |
+| 8 | Phone | CONFLICT: (843) 575-6286 [footer, header, contact page, schema, press release] vs (843) 525-6288 [homepage hero Call button tel:8435256288; carpetcleaningbeaufortsc.yolasite.com] | Disputed 2026-10-28 · was: Unknown |
+| 9 | Primary domain (canonical host form) | https://carpetcleaningblufftonsc.com/ (http and www 301 to it; rel=canonical matches) | Internally Verified 2026-10-28 · was: Unknown |
 | 10 | Legal entity name | | |
 | 11 | Exact URL in the GBP Website field | https://carpetcleaningblufftonsc.com/ | Paul Approved 2026-10-28 · was: Unknown |
 
 **Area entity derivation** (BB-105) — record the path, not just the answer:
 
 ```
-City served:
--> County:
--> Region:
-Contains all N cities served? yes / no
-Smallest true container:
+City served: Bluffton, SC (Q3243593) — "Bluffton is a town in southern Beaufort County"
+-> County: Beaufort County, SC (Q495682); also served: Jasper County, SC (Q112957); Yemassee touches Hampton County (Q497880)
+-> Region: Hilton Head Island metropolitan area (Q17020871) — "officially the Hilton Head Island–Bluffton–Port Royal, SC
+   Metropolitan Statistical Area ... the two southernmost counties in the South Carolina Lowcountry" (Beaufort + Jasper)
+Contains all 18 towns served? 17 of 18 wholly; Yemassee only in its Beaufort County part ("a town in Hampton and Beaufort counties")
+Next level up: South Carolina Lowcountry (Q3885311) — contains Beaufort, Jasper and Hampton
+Smallest true container: PROPOSED Hilton Head Island metropolitan area (Paul decides: MSA, or the Lowcountry if Yemassee
+   must sit wholly inside) — Decision Sheet row area_entity
+State: South Carolina (Q1456)
 ```
 
 **Paul approved this section on:** ____________
@@ -44,19 +48,20 @@ Smallest true container:
 
 ### B1 · Reserved for the homepage
 ```
-HOMEPAGE AREA VARIANT:      ________________ [status]
-HOMEPAGE CATEGORY VARIANT:  ________________ [status]
+HOMEPAGE AREA VARIANT:      Hilton Head Island Metro Area (title) · South Carolina Lowcountry (H1) [Submitted 2026-10-28, proposal]
+HOMEPAGE CATEGORY VARIANT:  Carpet Cleaning [Submitted 2026-10-28, proposal]
 ```
 No other page may claim the reserved area variant. This is the only cross-page variant rule.
 
 ### B2 · Rotation pool
 Every area variant except the reserved one. Reuse across service pages is correct.
 ```
-1.
-2.
-3.
-4.
+1. South Carolina Lowcountry
+2. Hilton Head Island–Bluffton–Port Royal area
+3. Lowcountry
 ```
+_"Hilton Head Island metropolitan area" is left out of the pool: it is the reserved title variant in its full form._
+_Proposed 2026-10-28 (discovery); settled at Approval 1._
 
 ### B3 · Assignment log — the write-back target
 | Page URL | Page type | Category variant | Area variant | Content file (SD/LD) | Shipped |
@@ -90,7 +95,7 @@ Everything a writer may state. **Not here = does not exist.**
 
 | Fact | Value | Status | Source |
 |---|---|---|---|
-| Founding year / years in business | | | |
+| Founding year / years in business | 1993 (claimed) | Submitted 2026-10-28 · was: Unknown | https://carpetcleaningblufftonsc.com/ ; https://carpetcleaningblufftonsc.com/about/ ; press release 2026-04-30 (marketersmedia) — "'In Business Since 1993' (home); 'has served the South Carolina Lowcountry since 1993' (about); 'Founded in 1993' (press release). Domain registered 2019-11-12; SOS date not yet read." |
 | Legal entity + DBA | | | |
 | Licence numbers and classes | | | |
 | Insurance / bonded status | | | |
@@ -102,12 +107,12 @@ Everything a writer may state. **Not here = does not exist.**
 | Google rating and review count — exactly as Google shows them on the day, with the date ("4.9 · 67 reviews, 2026-10-07"; never a rounded 5.0) | | | |
 | Team size / trucks / jobs completed | | | |
 | Financing — available, provider, terms | | | |
-| Free estimate — and what free means | | | |
+| Free estimate — and what free means | Free estimate before work begins; no deposit to schedule (what 'free' covers not stated) | Submitted 2026-10-28 · was: Unknown | https://carpetcleaningblufftonsc.com/ — "No deposit is required to schedule an appointment" |
 | Emergency / after-hours reality | | | |
 | Minimum service call or trip charge | | | |
 | Payment methods | | | |
 | Services subcontracted out | | | |
-| Named staff for on-page use | | | |
+| Named staff for on-page use | Kevin Snow (owner, per press release contact; reviews name 'Kevin') | Submitted 2026-10-28 · was: Unknown | press release 2026-04-30 https://news.marketersmedia.com/carolina-carpet-cleaning-celebrates-32-years-of-professional-floor-and-carpet-cleaning-in-bluffton-and-the-lowcountry/89190379 ; About page image file Owner-Kevin-Snow — "Contact Info: Name: Kevin Snow; 'you're getting the owner on every job'" |
 | Licensed practitioner for health-claim sign-off *(medical / chiropractic)* | | | |
 | Blog author — a real person (CM-039; from the Decision Sheet) | | | |
 | GBP link | https://maps.app.goo.gl/vvsrqH6TxL815KWB6 | Paul Approved 2026-10-28 · was: Unknown | Paul, chat 2026-10-28 |
@@ -147,10 +152,10 @@ TRAVEL FEE BEYOND:
 | Confirmed GBP category → schema subtype | | |
 | Logo files with pixel dimensions | | |
 | Owner name + photo | | |
-| **Wikidata URI — category entity** | | |
-| **Wikidata URI — area entity** | | |
-| **Wikidata URI — county** (one per county the area entity covers) | | |
-| **Wikidata URI — state** | | |
+| **Wikidata URI — category entity** | https://www.wikidata.org/wiki/Q5045777 (carpet cleaning) — proposed, pending the GBP primary category | Submitted 2026-10-28 |
+| **Wikidata URI — area entity** | https://www.wikidata.org/wiki/Q17020871 (Hilton Head Island metropolitan area) — proposed; alternative Q3885311 (South Carolina Lowcountry) | Submitted 2026-10-28 |
+| **Wikidata URI — county** (one per county the area entity covers) | https://www.wikidata.org/wiki/Q495682 (Beaufort County) · https://www.wikidata.org/wiki/Q112957 (Jasper County) · [Q497880 Hampton County only if the area entity is the Lowcountry] | Submitted 2026-10-28 |
+| **Wikidata URI — state** | https://www.wikidata.org/wiki/Q1456 (South Carolina) | Submitted 2026-10-28 |
 
 ## Section G — Positioning (client's own words)
 ```

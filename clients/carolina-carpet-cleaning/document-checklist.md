@@ -1,14 +1,14 @@
 # Carolina Carpet Cleaning - Document Checklist
 
-Generated 2026-10-28T15:38 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-28T15:50 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
 | | Step | Outcome | Reason / output |
 |---|---|---|---|
-| [ ] | S01 Intake facts: website, GBP link, storefront/SAB, exact GBP Website-fie | — |  |
-| [ ] | S02 Public discovery: live site, GBP, social, review profiles, Secretary o | — |  |
-| [ ] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | — |  |
+| [x] | S01 Intake facts: website, GBP link, storefront/SAB, exact GBP Website-fie | done | intake facts read from facts.json/status; nothing missing for discovery |
+| [x] | S02 Public discovery: live site, GBP, social, review profiles, Secretary o | done | site, press release, Birdeye, Wikipedia, WHOIS read; SOS, GBP, Yelp, Facebook, Yola go to Gwen (H-2026-10-28-01) |
+| [x] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | done | entity foundation proposed: category, MSA area entity via Russian Doll, variants, reserved homepage variant, Wikidata URIs |
 | [ ] | S04 Proof sheet built (Markdown + client Google Doc) | — |  |
 | [ ] | S05 Site crawl (max pages = sitemap size × 1.5, min 20, max 1000; 1000 whe | — |  |
 | [ ] | S05b Page text capture: the body text of every crawled HTML page (the basic | — |  |
