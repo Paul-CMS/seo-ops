@@ -20,13 +20,14 @@ publication.
 | 2 | GBP primary category = the category entity | Proposed: Carpet cleaning service → Wikipedia 'Carpet cleaning' (Q5045777). GBP primary category not yet read (dashboard/Maps not machine-readable; Gwen manual lookup) | Submitted 2026-10-28 · was: Unknown |
 | 3 | Category variants (4–6) | Proposed: carpet cleaning · carpet cleaning service · carpet cleaners · carpet cleaning company · carpet cleaner (search volume checked in the data step) | Submitted 2026-10-28 · was: Unknown |
 | 4 | Storefront or SAB | SAB (service-area business); the address still appears on the website (helps map rankings) | Paul Approved 2026-10-28 · was: Unknown |
-| 5 | Area entity | Proposed: Hilton Head Island metropolitan area (officially Hilton Head Island–Bluffton–Port Royal, SC Metropolitan Statistical Area; Beaufort + Jasper counties; Q17020871). Exception: Yemassee lies partly in Hampton County (outside the MSA); strict alternative: South Carolina Lowcountry (Q3885311) | Submitted 2026-10-28 · was: Unknown |
-| 6 | Area variants (3–5) | Proposed: Hilton Head Island Metro Area (reserved: homepage title; full form 'Hilton Head Island metropolitan area') · South Carolina Lowcountry (homepage H1; rotation) · Hilton Head Island–Bluffton–Port Royal area (rotation) · Lowcountry (rotation) | Submitted 2026-10-28 · was: Unknown |
+| 5 | Area entity | Hilton Head Island metropolitan area | Paul Approved 2026-10-28 · was: Submitted |
+| 6 | Area variants (3–5) | SEO titles: Hilton Head Island Metro Area · user-facing titles and homepage H1: South Carolina Lowcountry | Paul Approved 2026-10-28 · was: Submitted |
 | 7 | Separator standard | ' - ' | Submitted 2026-10-28 · was: Unknown |
-| 8 | Phone | CONFLICT: (843) 575-6286 [footer, header, contact page, schema, press release] vs (843) 525-6288 [homepage hero Call button tel:8435256288; carpetcleaningbeaufortsc.yolasite.com] | Disputed 2026-10-28 · was: Unknown |
+| 8 | Phone | (843) 575-6286 | Paul Approved 2026-10-28 · was: Disputed |
 | 9 | Primary domain (canonical host form) | https://carpetcleaningblufftonsc.com/ (http and www 301 to it; rel=canonical matches) | Internally Verified 2026-10-28 · was: Unknown |
 | 10 | Legal entity name | | |
 | 11 | Exact URL in the GBP Website field | https://carpetcleaningblufftonsc.com/ | Paul Approved 2026-10-28 · was: Unknown |
+| | Facebook page (Beaufort) | https://www.facebook.com/carpetcleaningbeaufortsc | Paul Approved 2026-10-28 · was: Unknown |
 
 **Area entity derivation** (BB-105) — record the path, not just the answer:
 

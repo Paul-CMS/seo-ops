@@ -55,3 +55,16 @@ Generated from the safety log (clients/carolina-carpet-cleaning/log.md) — do n
 - … and 6 more decision/fact/flag line(s) in log.md
 **Steps recorded (script):** S01 done, S02 done, S03 done
 
+## /answers · 2026-10-28 · run 20261028-155947-answers-b36e
+
+- Paul's answers recorded: phone (843) 575-6286; area entity Hilton Head Island metropolitan area; SEO titles "Hilton Head Island Metro Area", user-facing titles and H1 "South Carolina Lowcountry"; Beaufort Facebook page.
+- Scope decision: only the 6 live location pages are kept for now (not 18 towns).
+- Redirect plan: all three client URLs redirect to carpetcleaningblufftonsc.com; the Beaufort and Hilton Head Island GBPs redirect to their location pages on the Bluffton site.
+- Still open: Birdeye/Bluffton address conflict (Paul did not answer); Gwen's lookup handoff H-2026-10-28-01; legal entity name and the d-* client facts.
+
+- FACT 2026-10-28T15:59 · run 20261028-155947-answers-b36e · a-phone (value, status, source) · paul_approved · (843) 575-6286 · source Paul, chat 2026-10-28 · by Paul
+- FACT 2026-10-28T15:59 · run 20261028-155947-answers-b36e · a-area-entity (value, status, source) · paul_approved · Hilton Head Island metropolitan area · source Paul, chat 2026-10-28 · by Paul
+- FACT 2026-10-28T15:59 · run 20261028-155947-answers-b36e · a-area-variants-3-5 (value, status, source) · paul_approved · SEO titles: Hilton Head Island Metro Area · user-facing titles and homepage …
+- DECISION 2026-10-28T15:59 · run 20261028-155947-answers-b36e · Paul 2026-10-28: only the 6 currently live location pages are kept for now (not 18 towns). Area naming: SEO titles use 'Hilton Head Is…
+- FACT 2026-10-28T16:00 · run 20261028-155947-answers-b36e · a-facebook-beaufort (new) · paul_approved · https://www.facebook.com/carpetcleaningbeaufortsc · source Paul, chat 2026-10-28 · by Paul
+

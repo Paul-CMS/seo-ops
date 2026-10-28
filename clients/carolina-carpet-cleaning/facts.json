@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-28T15:48:25-05:00",
+  "updated": "2026-10-28T16:00:01-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -67,30 +67,30 @@
       "section": "A",
       "num": "5",
       "label": "Area entity",
-      "value": "Proposed: Hilton Head Island metropolitan area (officially Hilton Head Island–Bluffton–Port Royal, SC Metropolitan Statistical Area; Beaufort + Jasper counties; Q17020871). Exception: Yemassee lies partly in Hampton County (outside the MSA); strict alternative: South Carolina Lowcountry (Q3885311)",
-      "status": "submitted",
+      "value": "Hilton Head Island metropolitan area",
+      "status": "paul_approved",
       "status_text": null,
-      "source": "https://en.wikipedia.org/wiki/Hilton_Head_Island_metropolitan_area ; https://en.wikipedia.org/wiki/Yemassee,_South_Carolina",
+      "source": "Paul, chat 2026-10-28",
       "quote": "officially the Hilton Head Island–Bluffton–Port Royal, SC Metropolitan Statistical Area ... consisting of the two southernmost counties in the South Carolina Lowcountry",
       "date": "2026-10-28",
-      "who": "discovery agent",
+      "who": "Paul",
       "count": null,
-      "was": "Unknown"
+      "was": "Submitted"
     },
     {
       "id": "a-area-variants-3-5",
       "section": "A",
       "num": "6",
       "label": "Area variants (3–5)",
-      "value": "Proposed: Hilton Head Island Metro Area (reserved: homepage title; full form 'Hilton Head Island metropolitan area') · South Carolina Lowcountry (homepage H1; rotation) · Hilton Head Island–Bluffton–Port Royal area (rotation) · Lowcountry (rotation)",
-      "status": "submitted",
+      "value": "SEO titles: Hilton Head Island Metro Area · user-facing titles and homepage H1: South Carolina Lowcountry",
+      "status": "paul_approved",
       "status_text": null,
-      "source": "Wikipedia (MSA article; South Carolina Lowcountry article); live homepage title and H1",
+      "source": "Paul, chat 2026-10-28",
       "quote": "",
       "date": "2026-10-28",
-      "who": "discovery agent",
+      "who": "Paul",
       "count": null,
-      "was": "Unknown"
+      "was": "Submitted"
     },
     {
       "id": "a-separator-standard",
@@ -112,15 +112,15 @@
       "section": "A",
       "num": "8",
       "label": "Phone",
-      "value": "CONFLICT: (843) 575-6286 [footer, header, contact page, schema, press release] vs (843) 525-6288 [homepage hero Call button tel:8435256288; carpetcleaningbeaufortsc.yolasite.com]",
-      "status": "disputed",
+      "value": "(843) 575-6286",
+      "status": "paul_approved",
       "status_text": null,
-      "source": "https://carpetcleaningblufftonsc.com/ ; https://carpetcleaningblufftonsc.com/contact-us/ ; https://news.marketersmedia.com/carolina-carpet-cleaning-celebrates-32-years-of-professional-floor-and-carpet-cleaning-in-bluffton-and-the-lowcountry/89190379",
+      "source": "Paul, chat 2026-10-28",
       "quote": "'(843)-575-6286' (footer); href='tel:8435256288' (homepage hero); 'Call us today! 843-525-6288' (yolasite)",
       "date": "2026-10-28",
-      "who": "discovery agent",
+      "who": "Paul",
       "count": null,
-      "was": "Unknown"
+      "was": "Disputed"
     },
     {
       "id": "a-primary-domain-canonical-host-form",
@@ -470,6 +470,21 @@
       "num": "",
       "label": "GA4 access",
       "value": "none",
+      "status": "paul_approved",
+      "source": "Paul, chat 2026-10-28",
+      "quote": "",
+      "date": "2026-10-28",
+      "who": "Paul",
+      "count": null,
+      "was": "Unknown",
+      "status_text": null
+    },
+    {
+      "id": "a-facebook-beaufort",
+      "section": "A",
+      "num": "",
+      "label": "Facebook page (Beaufort)",
+      "value": "https://www.facebook.com/carpetcleaningbeaufortsc",
       "status": "paul_approved",
       "source": "Paul, chat 2026-10-28",
       "quote": "",

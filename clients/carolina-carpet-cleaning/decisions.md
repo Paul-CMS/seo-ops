@@ -10,7 +10,8 @@ Generated from status.json and the safety log — do not edit. Record a decision
 
 ## Decisions logged during runs
 
-_None yet._
+- 2026-10-28T15:59 · run 20261028-155947-answers-b36e · Paul 2026-10-28: only the 6 currently live location pages are kept for now (not 18 towns). Area naming: SEO titles use 'Hilton Head Island Metro Area'; user-facing titles and homepage H1 use 'South Carolina Lowcountry'. Phone (843) 575-6286 is the one to use. Client has three website URLs and multiple GBPs/addresses: all URLs redirect to carpetcleaningblufftonsc.com. The Beaufort and Hilton Head Island GBPs redirect to their respective location pages on the Bluffton website. Beaufort Facebook page: https://www.facebook.com/carpetcleaningbeaufortsc
+- 2026-10-28T15:59 · run 20261028-155947-answers-b36e · Paul 2026-10-28: only the 6 currently live location pages are kept for now (not 18 towns). Area naming: SEO titles use 'Hilton Head Is…
 
 ## Conditions met (system-verified)
 
