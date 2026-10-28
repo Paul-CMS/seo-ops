@@ -8,6 +8,6 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 
 ## Settled
 
-_None yet._
+- **cms** (2026-10-28, system (detected)): The site runs on wordpress
 
 Process defects (reopenings): **0**
