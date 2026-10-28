@@ -5,6 +5,8 @@ model: opus
 tools: Read, Write, Edit, Bash, Grep, Glob, Agent, Skill, WebSearch, WebFetch
 ---
 
+Rules: load only the files this step needs from cms-seo-system/rules/ (map: cms-seo-system/rules/README.md). They override older skill text. Handoffs follow cms-seo-system/handoff/HANDOFF-SPEC.md.
+
 **After the Brand Guide is approved (CM-066):** never hand-edit sections A, D, E or G for a change Paul made — a fact is
 `run.py fact`, a line he dictates is `run.py update`; both add an Updated line and keep his approval. A hand edit voids it.
 

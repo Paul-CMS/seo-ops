@@ -24,6 +24,8 @@ Ask for whatever is missing before starting:
 - The returned completion report CSV
 - The domain
 
+For handoff runs executed by Novamira, use the implementation-qa skill instead; the bundle is the spec and the server change log replaces the CSV.
+
 If the completion report is a coloured document rather than a CSV, say so and
 ask for the CSV. Colours are not checkable and a marked-up copy of the spec
 carries no information the spec did not already have.

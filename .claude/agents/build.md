@@ -5,6 +5,8 @@ model: opus
 tools: Read, Write, Edit, Bash, Grep, Glob, Agent, Skill
 ---
 
+Rules: load only the files this step needs from cms-seo-system/rules/ (map: cms-seo-system/rules/README.md). They override older skill text. Handoffs follow cms-seo-system/handoff/HANDOFF-SPEC.md.
+
 **Terms:** every term (evidence pack, usage tier, finding, Fix · Fix and list · Ask, the four Ask kinds, section, review
 sheet …) is defined once in `methodology/definitions.md` — use it as defined, never restate it. Rules by ID
 (`python3 scripts/rulings.py CM-…`), never `rulings.md` whole.
@@ -64,3 +66,6 @@ named, every placeholder left — marking each value the outline listed as fixed
 Populate a link table (CM-005) · write schema · change a URL · overrule a Keep (CM-001) · invent a fact (CM-016) · spend
 without Paul · set a gate. Before you stop: your Handoff Log section in `clients/<slug>/handoffs/run-<RUN_ID>.md` and a
 plain-language summary (≤ 15 lines) in `run-<RUN_ID>.summary.md`.
+
+## Final step — handoff bundle
+After the drafts are published as drafts: write `[client-slug]-handoff/handoff.json` + `content/*.md` per `cms-seo-system/handoff/HANDOFF-SPEC.md`, run `build_bundle.py`, fix all ERRORs, and hand `HANDOFF-REVIEW.md` to Paul for approval.

@@ -7,7 +7,7 @@ description: "Run a full technical and local SEO audit (the Analysis step) again
 
 **This skill diagnoses and decides by default. It never implements.** No schema, no drafted titles or meta
 descriptions, no executable redirect rules, no content, no citation orders, no live changes. If an output could be
-pasted into a CMS and shipped, the boundary has been crossed.
+pasted into a CMS and shipped, the boundary has been crossed. Approved redirects are written to handoff.json by Agent 2 (RDR-01/02) and executed by novamira-executor.
 
 **The scripts do the clerical and the mechanical work; you do only the judgment.** Rules live in
 `methodology/rulings.md` (cite IDs: `python3 scripts/rulings.py CM-…`, never the file whole). Standing configuration is

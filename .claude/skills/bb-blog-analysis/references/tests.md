@@ -102,7 +102,8 @@ counts with a shared H2 skeleton is *mandated* by the methodology. Do not flag i
 means is that the human layer is the only differentiator, so each needs the portability test
 applied — that is a content finding, not a cannibalization one.
 
-**A low indexed-to-published ratio is not a technical problem.** It is Google judging pages
+**Rule out technical causes first (IDX-01: noindex, canonical, robots.txt, sitemap, status codes).** If clean, a low
+indexed-to-published ratio is Google judging pages
 redundant, low-quality or self-competing — which means the classifications above are the
 cause, not a separate issue. *(BB-210)*
 

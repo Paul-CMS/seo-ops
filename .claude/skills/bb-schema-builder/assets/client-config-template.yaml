@@ -7,7 +7,7 @@ business:
   url: https://woodlawntrees.com
   telephone: "+1-304-844-0054"
   email: matt@woodlawntrees.com
-  schema_type: HomeAndConstructionBusiness    # most specific applicable subtype
+  schema_type: HomeAndConstructionBusiness    # most specific type matching the GBP category (SCH-04); HomeAndConstructionBusiness only for home-service clients. Final rule decided at the first schema step.
   id_page_url: https://s3.amazonaws.com/slstacks/woodlawntrees/id.html
   founding_date: 2012
   description: >-
