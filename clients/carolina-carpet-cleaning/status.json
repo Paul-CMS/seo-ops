@@ -51,12 +51,12 @@
   "build": null,
   "audit_steps": {},
   "last_run": {
-    "run_id": "20261028-151835-new-client-df5d",
-    "command": "new-client",
-    "finished": "2026-10-28T15:20:51-05:00",
-    "result": "Client set up; evidence identified and copied under the naming convention",
-    "changes": 3,
-    "step": "new-client",
+    "run_id": "20261028-153804-answers-90b6",
+    "command": "answers",
+    "finished": "2026-10-28T15:38:19-05:00",
+    "result": "Intake answers recorded",
+    "changes": 0,
+    "step": "answers",
     "batch": null
   },
   "spend": {
@@ -70,7 +70,7 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-28T15:20:51-05:00",
+  "updated": "2026-10-28T15:38:19-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00"
@@ -104,6 +104,26 @@
       },
       "by_agent": {
         "main": 0.8016
+      }
+    },
+    {
+      "run": "20261028-153804-answers-90b6",
+      "step": "answers",
+      "tokens": 384263,
+      "usd": 0.1222,
+      "at": "2026-10-28T15:38:19-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-opus-5-5": {
+          "usd": 0.1222,
+          "in": 6,
+          "out": 1586,
+          "cache_read": 380883,
+          "cache_write": 1788
+        }
+      },
+      "by_agent": {
+        "main": 0.1222
       }
     }
   ],

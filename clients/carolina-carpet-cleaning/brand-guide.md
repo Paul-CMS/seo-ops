@@ -19,14 +19,14 @@ publication.
 | 1 | Brand entity (GBP name, exactly) | | |
 | 2 | GBP primary category = the category entity | | |
 | 3 | Category variants (4–6) | | |
-| 4 | Storefront or SAB | | |
+| 4 | Storefront or SAB | SAB (service-area business); the address still appears on the website (helps map rankings) | Paul Approved 2026-10-28 · was: Unknown |
 | 5 | Area entity | | |
 | 6 | Area variants (3–5) | | |
 | 7 | Separator standard | ` - ` | |
 | 8 | Phone | | |
 | 9 | Primary domain (canonical host form) | | |
 | 10 | Legal entity name | | |
-| 11 | Exact URL in the GBP Website field | | |
+| 11 | Exact URL in the GBP Website field | https://carpetcleaningblufftonsc.com/ | Paul Approved 2026-10-28 · was: Unknown |
 
 **Area entity derivation** (BB-105) — record the path, not just the answer:
 
@@ -110,6 +110,8 @@ Everything a writer may state. **Not here = does not exist.**
 | Named staff for on-page use | | | |
 | Licensed practitioner for health-claim sign-off *(medical / chiropractic)* | | | |
 | Blog author — a real person (CM-039; from the Decision Sheet) | | | |
+| GBP link | https://maps.app.goo.gl/vvsrqH6TxL815KWB6 | Paul Approved 2026-10-28 · was: Unknown | Paul, chat 2026-10-28 |
+| GA4 access | none | Paul Approved 2026-10-28 · was: Unknown | Paul, chat 2026-10-28 |
 
 ### D2 · Unsupported claims
 Claims the site makes publicly that the client could not substantiate. Writers must not repeat

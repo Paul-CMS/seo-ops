@@ -17,3 +17,14 @@ Generated from the safety log (clients/carolina-carpet-cleaning/log.md) — do n
 
 **Changes (script):** 3 — file ×2, drive_folder ×1
 
+## /answers · 2026-10-28 · run 20261028-153804-answers-90b6
+
+- Facts: SAB (address stays on the site), GBP Website URL = homepage, GBP link, no GA4.
+- Settled: site connection is Novamira MCP, read-only until handoff approval.
+- Next: /discovery carolina-carpet-cleaning discovery.
+
+- FACT 2026-10-28T15:38 · run 20261028-153804-answers-90b6 · a-storefront-or-sab (value, status, source, quote) · paul_approved · SAB (service-area business); the address still appears on the website…
+- FACT 2026-10-28T15:38 · run 20261028-153804-answers-90b6 · a-exact-url-in-the-gbp-website-field (value, status, source) · paul_approved · https://carpetcleaningblufftonsc.com/ · source Paul, chat 2…
+- FACT 2026-10-28T15:38 · run 20261028-153804-answers-90b6 · gbp-link (new) · paul_approved · https://maps.app.goo.gl/vvsrqH6TxL815KWB6 · source Paul, chat 2026-10-28 · by Paul
+- FACT 2026-10-28T15:38 · run 20261028-153804-answers-90b6 · ga4-access (new) · paul_approved · none · source Paul, chat 2026-10-28 · by Paul
+

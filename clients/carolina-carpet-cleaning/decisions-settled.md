@@ -9,5 +9,6 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 ## Settled
 
 - **cms** (2026-10-28, system (detected)): The site runs on wordpress
+- **wp-connection** (2026-10-28, Paul): Site connection: Novamira MCP, read-only until the handoff is approved; no Application Password setup
 
 Process defects (reopenings): **0**
