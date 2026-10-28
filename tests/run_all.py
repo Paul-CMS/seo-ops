@@ -48,6 +48,9 @@ def make_sandbox():
     cfg["client_work_in_main_folder"] = True   # §00: the sandbox is one folder; real installs refuse client work in the main folder
     cfg["build_route"] = "briefs"   # the legacy walkthroughs keep the brief route; the Rewrite 4 checks set "route": "outline"
     cfg.pop("specs_approval", None)   # a fresh install: Paul's real global specs approval is not the sandbox's
+    cfg["stage_modes"] = {}           # nor are his real global stage modes ...
+    cfg.pop("model_overrides", None)  # ... or global model switches
+    cfg.pop("global_approvals", None) # ... or his log of global approvals (each is written into every client's log.md as GLOBAL/## MODEL)
     # R4: a fake local v3 folder (Drive for desktop) inside the sandbox — never the real Drive
     v3 = SB / "fake-drive" / "v3"
     tpl = v3 / cfg["drive"]["template_folder_name"]

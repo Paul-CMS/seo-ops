@@ -49,8 +49,3 @@ Scripts, gates, methodology, specs, CLAUDE.md, docs, agents, commands, skills, t
 only in a system session (Paul types `/system`). Otherwise flag it and carry on:
 `python3 scripts/run.py flag <slug> <RUN_ID> --text "…" --workaround "…"`. After every system change:
 `python3 tests/run_all.py` (fast, under a minute); before every system commit `--full`; never commit a failing change.
-
-## Rules
-   Bradley rules live in cms-seo-system/rules/. Load only the files the current step needs
-   (map: cms-seo-system/rules/README.md). They override older skill text.
-   Handoffs follow cms-seo-system/handoff/HANDOFF-SPEC.md.
