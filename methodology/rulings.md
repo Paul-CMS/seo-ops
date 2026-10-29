@@ -429,7 +429,7 @@ Decided by Paul.
 ## CM-044 · Review or auto, per stage
 **ID** CM-044 · **Status** APPROVED · **Date** 2026-10-05 · **Enforced by** `scripts/approve.py` (`mode:<stage>=auto|review`), `run.py`, `status.py` (gates.json → `modes`) · **Proved by** `tests/run_all.py` t_modes · full text: `methodology/archive/rulings-full-2026-10-21.md`
 
-Every producing stage starts in review; auto only after its pilot and only by Paul; a decision is never auto.
+Every producing stage starts in review; auto only after its pilot and only by Paul; a decision is never auto (amended by CM-069: after the pilot and Paul's switch, a batch's briefs are a condition).
 
 ## CM-045 · Query fan-out is coverage research, not demand
 **ID** CM-045 · **Status** APPROVED · **Date** 2026-10-05 · **Reason** People Also Ask shows only the questions Google chooses to display; an LLM fan-out of likely searches finds more angles a page or post should answer. It is a brainstorm, so it must never pass as measured demand. · **Source** Semantic Mastery Content Pipeline Suite (dataforseo-fanout-queries), adapted · **Supersedes** — (extends CM-012)
@@ -637,6 +637,11 @@ When a chat cannot do what Paul asked (its stage is done), it hands his words on
 **ID** CM-068 · **Status** APPROVED · **Date** 2026-10-25 · **Reason** first-choice-seamless-gutters: seven service pages blocked on the client's scope and process and needed seven waivers, then 20 `[NEED]` lines and a gap fill from competitor text; Paul: research what the trade does, nothing invented (CR-047) · **Enforced by** `methodology/evidence-requirements.json` (`standard_fill`), `evidence.py` (standard_rows; a filled gap is not a hold), `evidence_pack.py` (the Industry standard section) · **Proved by** `tests/checks/cm068_standard.py`
 
 When a page's service scope or process is a client gap, the researcher writes what the trade itself says — from manufacturer guides, trade associations, the state building code and official data for the place, each statement cited — and the writer uses it as how the work is done, never as the client's own claim, with no number or step the source lacks. It is not a hold at the evidence gate. Pricing, timeframes, licence, insurance, warranty, years, staff and certifications are never filled (CM-016 holds). The client's answer replaces the fill (later-rewrites.md; a run.py fact Updated line, CM-066).
+
+## CM-069 · Approve less: two discovery approvals, conditions met from evidence, batch briefs after the pilot
+**ID** CM-069 · **Status** APPROVED · **Date** 2026-10-29 · **Reason** Apex Roofing of the Lowcountry needed 7 approvals for discovery and the audit, three of them re-approvals caused by decisions asked before the information that shaped them existed (REWRITE-HANDOFF.md §1, R6; L-010; CR-003) · **Source** Paul's written requirement of 2026-10-08 (R3), accepted as a ruling 2026-10-29 · **Supersedes** — (amends CM-044: "a decision is never auto" now reads as below) · **Enforced by** gates.json (`gates`, `conditions`, `modes`), `status.py` (`briefs_need_approval`, `batch_stage_ok`), `next.py` · **Proved by** `tests/run_all.py` t_modes, t_briefs_after_pilot
+
+Discovery and the audit take two approvals: Approval 1 is the entity and the client facts (entity + proof sheet, one /approve line); Approval 2 is the audit, then the reconciled Brand Guide. `discovery_signed_off` and `blockers_cleared` are conditions the scripts meet from evidence, never approved; the page specs are approved once, for every client (`/approve global specs`). After the pilot has passed and Paul has switched `build:brief` to auto, a batch's briefs are a condition, not a stop — each page's brief written in its own run and its evidence gate cleared — and Paul approves the drafts only; the pilot's briefs are always his. A section on the outline route has no briefs. Every other decision stays Paul's and is never auto.
 
 ---
 
@@ -888,7 +893,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-041 | APPROVED (evidence gate; thresholds are starting values) |
 | CM-042 | APPROVED |
 | CM-043 | APPROVED |
-| CM-044 | APPROVED |
+| CM-044 | APPROVED (batch briefs after the pilot amended by CM-069) |
 | CM-045 | APPROVED |
 | CM-046 | APPROVED |
 | CM-047 | APPROVED (thresholds are starting values) |
@@ -913,6 +918,7 @@ conflicts follow PROC-01 and are ruled here).
 | CM-066 | APPROVED (Paul's own changes keep his approval: Updated lines, write-back never voids, no step back to Stage 4) |
 | CM-067 | APPROVED (Paul's words carry across chats; drafts change only in a revision run) |
 | CM-068 | APPROVED (industry-standard fill for a client's scope and process, cited, until the client answers) |
+| CM-069 | APPROVED (two discovery approvals, conditions from evidence, batch briefs a condition after the pilot — amends CM-044) |
 | RULE-001–004, 006, 009, 010, 012, 014, 015 | APPROVED |
 | RULE-005, RULE-007 | REJECTED (the stated claim) |
 | RULE-008 | DEFERRED |

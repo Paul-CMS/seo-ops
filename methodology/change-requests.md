@@ -697,3 +697,7 @@ Workaround used: Draft writers read the full value of each page: key from build/
 - CR-049 · 2026-10-28 · ACCEPTED · Paul · Accepted as proposed (covers carolina F-003): 1) on_page/summary 40602 Task In Queue = still waiting, exit 10 with a queued note, not exit 8; 2) --new-crawl refuses (exit 4) when the current task is fresh, same domain and not finished, or when this run already posted a task; 3) crawl.py cancel <slug> --run R [--include-archived] calls the free on_page/force_stop and marks the state cancelled, reporting DataforSEO's answer per task; 4) new checks with the fake DataforSEO.
 
 - CR-048 · 2026-10-28 · DONE · system session · commit 48a86ea
+
+- CR-049 · 2026-10-28 · DONE · system session · commit 4015d52
+
+- CR-003 · 2026-10-29 · ACCEPTED · Paul · Paul accepted 2026-10-29: amend CM-044 — batch briefs become a condition after the pilot passed and Paul switched build:brief to auto; every other decision stays Paul's.

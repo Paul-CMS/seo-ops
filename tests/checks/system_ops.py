@@ -165,4 +165,20 @@ def t_cm060(h):
             "first answer paragraph" in body and "40–60 words" in body and "| CM-060 | APPROVED" in rul, body[:300])
 
 
-SCENARIOS = [t_where_rename, t_sync_main, t_pycache_ignored, t_drive_shared_root, t_lowcountry_sources, t_readability_terms, t_cm060]
+def t_cm069(h):
+    rul = (REPO / "methodology" / "rulings.md").read_text()
+    body = rul.split("## CM-069 ·", 1)[1].split("\n## ", 1)[0] if "## CM-069 ·" in rul else ""
+    cm044 = rul.split("## CM-044 ·", 1)[1].split("\n## ", 1)[0]
+    h.check("CM-069 (CR-003): a numbered ruling amending CM-044 — batch briefs a condition after the pilot, in the status table",
+            "amends CM-044" in body and "pilot's briefs are always his" in body and "| CM-069 | APPROVED" in rul
+            and "amended by CM-069" in cm044, body[:300])
+    import sys
+    sys.path.insert(0, str(REPO / "scripts"))
+    import status as S
+    h.check("CM-069: the code it cites exists — status.briefs_need_approval and the t_briefs_after_pilot check",
+            callable(getattr(S, "briefs_need_approval", None))
+            and "def t_briefs_after_pilot" in (REPO / "tests" / "run_all.py").read_text())
+
+
+SCENARIOS = [t_where_rename, t_sync_main, t_pycache_ignored, t_drive_shared_root, t_lowcountry_sources, t_readability_terms, t_cm060,
+             t_cm069]
