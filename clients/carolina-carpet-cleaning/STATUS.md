@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the site plan is ready for your approval
 - **Next action:** Paul types `/approve carolina-carpet-cleaning site_plan --files "clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Site Plan - REVIEW.md"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-29T10:39 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T10:42 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -66,6 +66,8 @@ _Open, but the next action above goes ahead without them._
 - 3. Brand, entity and verified truth (F-004): Keep: the sentence stays live. The owner guarantees quality cleaning
 - 3. Brand, entity and verified truth (F-005): carpets dry in under one hour on a typical job
 - 3. Brand, entity and verified truth (F-006): Keep the claims: pH-neutral
+- Site plan A1 (Lady's Island): merge into /beaufort/ with a 301 from /ladys-island/ (Paul chose the recommended option a). Beaufort's page names Lady's Island as served; the 301 is a VA handoff at publish.
+- Site plan A2 (homepage services): link every service page from the homepage, all 8 (Paul chose option b, not the recommended first 6).
 
 ## Open VA items
 
@@ -114,8 +116,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 3 | 4,864,287 | $0.30 | $0.00 |
 | 4 · Audit | 2 | 23,152,524 | $9.42 | $0.00 |
 | 5 · Build plan and blockers | 2 | 3,944,934 | $2.34 | $0.00 |
-| any stage | 5 | 2,651,602 | $0.16 | $0.00 |
-| **total** | 15 | 41,276,867 | $15.07 | $0.00 |
+| any stage | 6 | 2,868,263 | $0.16 | $0.00 |
+| **total** | 16 | 41,493,528 | $15.07 | $0.00 |
 
 ## Spend by step (model)
 
@@ -128,9 +130,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
 | build:blockers | 1 | 1,108,757 | $0.70 | $0.00 |
 | discovery:data | 1 | 0 | $0.22 | $0.00 |
-| answers | 5 | 2,651,602 | $0.16 | $0.00 |
+| answers | 6 | 2,868,263 | $0.16 | $0.00 |
 | crawl | 2 | 4,864,287 | $0.08 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
-| **total** | 15 | 41,276,867 | $15.07 | $0.00 |
+| **total** | 16 | 41,493,528 | $15.07 | $0.00 |
 
-Last run: /build 2026-10-29T10:39 — Site plan written: 16 pages (8 service, 6 location, homepage, about), pilot needed; Asks A1 Lady's Island merge, A2 homepage service links
+Last run: /answers 2026-10-29T10:42 — Paul answered site plan A1 (merge Lady's Island into /beaufort/) and A2 (all 8 services on homepage); both settled.

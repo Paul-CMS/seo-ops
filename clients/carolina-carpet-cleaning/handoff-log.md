@@ -239,3 +239,8 @@ Generated from the safety log (clients/carolina-carpet-cleaning/log.md) — do n
 
 **Changes (script):** 2 — site_plan ×2
 
+## /answers · 2026-10-29 · run 20261029-104241-answers-da5a
+
+- Paul chose A1 (Lady's Island merge into /beaufort/, 301) and A2 (all 8 services on the homepage, not 6).
+- Both settled: site_plan_a1_ladys_island, site_plan_a2_homepage_services. Next: revise the site plan for these two.
+

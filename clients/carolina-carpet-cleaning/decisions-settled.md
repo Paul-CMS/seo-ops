@@ -46,5 +46,7 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **audit_guarantee_claim_blog** (2026-10-29, Paul): 3. Brand, entity and verified truth (F-004): Keep: the sentence stays live. The owner guarantees quality cleaning
 - **fact_drying_time** (2026-10-29, Paul): 3. Brand, entity and verified truth (F-005): carpets dry in under one hour on a typical job
 - **fact_cleaning_solution_product** (2026-10-29, Paul): 3. Brand, entity and verified truth (F-006): Keep the claims: pH-neutral
+- **site_plan_a1_ladys_island** (2026-10-29, Paul): Site plan A1 (Lady's Island): merge into /beaufort/ with a 301 from /ladys-island/ (Paul chose the recommended option a). Beaufort's page names Lady's Island as served; the 301 is a VA handoff at publish.
+- **site_plan_a2_homepage_services** (2026-10-29, Paul): Site plan A2 (homepage services): link every service page from the homepage, all 8 (Paul chose option b, not the recommended first 6).
 
 Process defects (reopenings): **0**
