@@ -18,7 +18,13 @@ Generated from the seo-ops system (clients/carolina-carpet-cleaning/status.json)
 
 ## Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here)
 
-- Decision: **pending**
+- Decision: **approved**
+- Decided by: Paul · 2026-10-29T10:13:48-05:00
+- Approved version: `clients/carolina-carpet-cleaning/audit/2026-10-28/audit-review.csv` (sha 4dc741876bf0)
+- Approved version: `clients/carolina-carpet-cleaning/audit/2026-10-28/findings.csv` (sha 82828436cb0a)
+- Approved version: `clients/carolina-carpet-cleaning/audit/2026-10-28/url-decision-map.csv` (sha 5a9641e3cbf7)
+- Approved version: `clients/carolina-carpet-cleaning/audit/2026-10-28/deliverables/Carolina Carpet Cleaning - Audit Review Sheet - REVIEW.md` (sha 76453611386c)
+- Approved version: `clients/carolina-carpet-cleaning/audit/2026-10-28/deliverables/Carolina Carpet Cleaning - Evidence Manifest - REVIEW.md` (sha 603ef08695f1)
 
 ## Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 

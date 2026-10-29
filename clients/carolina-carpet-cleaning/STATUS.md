@@ -1,17 +1,17 @@
 # Carolina Carpet Cleaning - Status
 
-- **Stage 4 of 8 — Audit**
-- **What is happening now:** waiting for Paul's approval — the audit is ready for your approval on its own — the audit (its review sheet, registers and Evidence Manifest): audit-review.csv, findings.csv, url-decision-map.csv, Carolina Carpet Cleaning - Audit Review Sheet - REVIEW.md, Carolina Carpet Cleaning - Evidence Manifest - REVIEW.md. Safe fixes and the technical blocker handoff start at once; the Brand Guide follows when the client's facts are back
-- **Waiting on:** Paul — the audit is ready for your approval on its own — the audit (its review sheet, registers a
-- **Next action:** Paul types `/approve carolina-carpet-cleaning audit_approved --files "clients/carolina-carpet-cleaning/audit/2026-10-28/audit-review.csv,clients/carolina-carpet-cleaning/audit/2026-10-28/findings.csv,clients/carolina-carpet-cleaning/audit/2026-10-28/url-decision-map.csv,clients/carolina-carpet-cleaning/audit/2026-10-28/deliverables/Carolina Carpet Cleaning - Audit Review Sheet - REVIEW.md,clients/carolina-carpet-cleaning/audit/2026-10-28/deliverables/Carolina Carpet Cleaning - Evidence Manifest - REVIEW.md"` (or asks for changes first) · model: Haiku chat
+- **Stage 5 of 8 — Build plan and blockers**
+- **What is happening now:** Stage 4 (Audit) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open carolina-carpet-cleaning) and type /next carolina-carpet-cleaning. Next there: /build carolina-carpet-cleaning blockers (hand the technical blockers to Jonie (one handoff from the checklist the audit wrote) — they are fixed while the client's facts come back)
+- **Waiting on:** nobody
+- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-29T10:11 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T10:13 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the audit is ready for your approval on its own — the audit (its review sheet, registers and Evidence Manifest): audit-review.csv, findings.csv, url-decision-map.csv, Carolina Carpet Cleaning - Audit Review Sheet - REVIEW.md, Carolina Carpet Cleaning - Evidence Manifest - REVIEW.md. Safe fixes and the technical blocker handoff start at once; the Brand Guide follows when the client's facts are back | 2026-10-29 | /approve carolina-carpet-cleaning audit_approved |
+| — | nothing | | |
 
 ## Waiting on (not blocking)
 
@@ -26,6 +26,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-14: page specs (global: location) — approved
 - 2026-10-28: Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant) — approved
 - 2026-10-28: Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly — approved
+- 2026-10-29: Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here) — approved
 - The site runs on wordpress
 - Site connection: Novamira MCP, read-only until the handoff is approved; no Application Password setup
 - GBP primary category = the category entity: **Carpet cleaning service** → Wikipedia "Carpet cleaning" (Q5045777) — provisional until Gwen reads the GBP primary category (H-2026-10-28-01); if GBP shows another category, that category stands and this row reopens (recommended default)
