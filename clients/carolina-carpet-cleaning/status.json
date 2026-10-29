@@ -85,6 +85,24 @@
       },
       "at": "2026-10-28T19:04:48-05:00",
       "ts": 1793232288.358152
+    },
+    "audit_deliverables": {
+      "files": {
+        "clients/carolina-carpet-cleaning/audit/2026-10-28/audit-review.csv": "88d53cafdb03",
+        "clients/carolina-carpet-cleaning/audit/2026-10-28/findings.csv": "82828436cb0a",
+        "clients/carolina-carpet-cleaning/audit/2026-10-28/url-decision-map.csv": "5a9641e3cbf7",
+        "clients/carolina-carpet-cleaning/audit/2026-10-28/deliverables/Carolina Carpet Cleaning - Audit Review Sheet - REVIEW.md": "76453611386c",
+        "clients/carolina-carpet-cleaning/audit/2026-10-28/deliverables/Carolina Carpet Cleaning - Evidence Manifest - REVIEW.md": "603ef08695f1"
+      },
+      "at": "2026-10-29T08:18:05-05:00",
+      "ts": 1793279885.782688
+    },
+    "blocker_checklist": {
+      "files": {
+        "clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Technical Blocker Checklist - REVIEW.md": "19fd9f27834a"
+      },
+      "at": "2026-10-29T08:18:05-05:00",
+      "ts": 1793279885.830498
     }
   },
   "pages": {},
@@ -212,22 +230,76 @@
       "run": "20261028-191341-discovery-ec47"
     },
     "S12": {
-      "outcome": "failed",
-      "reason": "The S05 crawl tables are for the wrong site: carolinacarpetcleaning.com (a different West Columbia SC business, (803) 606-0154, since 1997), not the client's carpetcleaningblufftonsc.com. Cross-checks, crawl-summary and page-text describe that other business; no audit can rest on them. Re-crawl the right domain, then re-run S12.",
+      "outcome": "done",
+      "reason": "ingest + cross-checks (0 contradicted) + screen 109 URLs (0 pass, 6 fail, 103 needs evidence) + manifest; 3 free MANUAL captures added",
       "outputs": [
-        "clients/carolina-carpet-cleaning/audit/2026-10-28/00-crosschecks.md"
+        "clients/carolina-carpet-cleaning/audit/2026-10-28/00-manifest.csv"
       ],
-      "at": "2026-10-28T19:36:53-05:00",
-      "run": "20261028-193504-discovery-da8a"
+      "at": "2026-10-29T08:11:13-05:00",
+      "run": "20261029-075525-discovery-0474"
+    },
+    "S13": {
+      "outcome": "done",
+      "reason": "entity vs Brand Guide: wrong hero phone (F-001), review count (F-002), brand collision (F-003), 3 claim Asks (F-004..F-006)",
+      "outputs": [
+        "clients/carolina-carpet-cleaning/audit/2026-10-28/findings.csv"
+      ],
+      "at": "2026-10-29T08:11:13-05:00",
+      "run": "20261029-075525-discovery-0474"
+    },
+    "S14": {
+      "outcome": "done",
+      "reason": "URL Decision Map 109 rows; no destructive row; screen --check passed",
+      "outputs": [
+        "clients/carolina-carpet-cleaning/audit/2026-10-28/url-decision-map.csv"
+      ],
+      "at": "2026-10-29T08:11:13-05:00",
+      "run": "20261029-075525-discovery-0474"
+    },
+    "S15": {
+      "outcome": "done",
+      "reason": "judge on agent route (no API key) + triage: 15 rebuild, 74 light fix, 12 keep, 8 redirected; COM-N contradicted (flag F-004)",
+      "outputs": [
+        "clients/carolina-carpet-cleaning/audit/conformance-triage.csv"
+      ],
+      "at": "2026-10-29T08:11:13-05:00",
+      "run": "20261029-075525-discovery-0474"
+    },
+    "S16": {
+      "outcome": "done",
+      "reason": "10 Fix rows rendered into the Technical Blocker Checklist",
+      "outputs": [
+        "clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Technical Blocker Checklist - REVIEW.md"
+      ],
+      "at": "2026-10-29T08:11:13-05:00",
+      "run": "20261029-075525-discovery-0474"
+    },
+    "S17": {
+      "outcome": "done",
+      "reason": "",
+      "outputs": [
+        "clients/carolina-carpet-cleaning/audit/2026-10-28/review-s17.csv"
+      ],
+      "at": "2026-10-29T08:16:13-05:00",
+      "run": "20261029-075525-discovery-0474"
+    },
+    "S18": {
+      "outcome": "done",
+      "reason": "review.py sheet (2 Paul Asks, 2 client questions, 16 decided, 10 Fix) + render.py all",
+      "outputs": [
+        "clients/carolina-carpet-cleaning/audit/2026-10-28/audit-review.csv"
+      ],
+      "at": "2026-10-29T08:17:57-05:00",
+      "run": "20261029-075525-discovery-0474"
     }
   },
   "last_run": {
-    "run_id": "20261028-204638-crawl-94cd",
-    "command": "crawl",
-    "finished": "2026-10-29T07:50:27-05:00",
-    "result": "Crawled 92 pages of carpetcleaningblufftonsc.com (task 10290153, basic), $0.0198; 89 page texts captured; files uploaded to Drive",
-    "changes": 27,
-    "step": "crawl",
+    "run_id": "20261029-075525-discovery-0474",
+    "command": "discovery",
+    "finished": "2026-10-29T08:18:49-05:00",
+    "result": "Audit done: 31 findings (9 Fix, 18 Fix and list, 4 Ask), 109-URL decision map, S17 review (5 confirmed, 6 revised, 1 withdrawn), review sheet rendered. Awaiting Paul's answer line, then Approval 2a.",
+    "changes": 37,
+    "step": "discovery:audit",
     "batch": null
   },
   "spend": {
@@ -245,7 +317,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-29T07:50:27-05:00",
+  "updated": "2026-10-29T08:18:49-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
@@ -436,6 +508,35 @@
       "by_agent": {
         "main": 0.0576
       }
+    },
+    {
+      "run": "20261029-075525-discovery-0474",
+      "step": "discovery:audit",
+      "tokens": 20954553,
+      "usd": 8.3937,
+      "at": "2026-10-29T08:18:49-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0172,
+          "in": 28,
+          "out": 6341,
+          "cache_read": 1066257,
+          "cache_write": 17036
+        },
+        "claude-opus-5-5": {
+          "usd": 8.3765,
+          "in": 314,
+          "out": 120961,
+          "cache_read": 19325432,
+          "cache_write": 418184
+        }
+      },
+      "by_agent": {
+        "main": 0.0172,
+        "discovery-audit": 7.0789,
+        "audit-reviewer": 1.2975
+      }
     }
   ],
   "sessions": {
@@ -462,6 +563,12 @@
       "step": "crawl",
       "first_run": "20261028-204638-crawl-94cd",
       "at": "2026-10-29T07:50:27-05:00"
+    },
+    "51d7a29b-a059-48bb-9a4e-7decca349489": {
+      "key": "audit",
+      "step": "discovery:audit",
+      "first_run": "20261029-075525-discovery-0474",
+      "at": "2026-10-29T08:18:49-05:00"
     }
   },
   "rewrite4_routes": {
@@ -476,5 +583,20 @@
       "source": "DataforSEO Business Data",
       "pulled": 29
     }
+  },
+  "audit_review": {
+    "sheet": "clients/carolina-carpet-cleaning/audit/2026-10-28/audit-review.csv",
+    "at": "2026-10-29T08:16:53-05:00",
+    "run": "20261029-075525-discovery-0474",
+    "asks": 4,
+    "client": 2,
+    "listed": 16,
+    "fixes": 10,
+    "applied": null
+  },
+  "review_pause": {
+    "run_id": "20261029-075525-discovery-0474",
+    "step": "discovery:audit",
+    "at": "2026-10-29T08:18:49-05:00"
   }
 }

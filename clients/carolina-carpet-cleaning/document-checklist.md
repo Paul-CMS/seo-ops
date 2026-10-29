@@ -1,6 +1,6 @@
 # Carolina Carpet Cleaning - Document Checklist
 
-Generated 2026-10-29T07:50 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-29T08:18 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -21,13 +21,13 @@ Generated 2026-10-29T07:50 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S19 People Also Ask: core services × primary city + top 3 cities, capped ( | done | clients/carolina-carpet-cleaning/data/paa/ |
 | [-] | S20 SEOPress site-wide settings (title templates, sitemap, noindexed post  | skipped | WordPress check (wp-check) not run in this pass |
 | [-] | S21 Query fan-out (CM-045): core services × primary city + top 3 cities, c | skipped | query fan-out only with --fanout; not requested |
-| [!] | S12 Ingest + cross-checks + redirect pre-screen | failed | The S05 crawl tables are for the wrong site: carolinacarpetcleaning.com (a different West Columbia SC business, (803) 606-0154, since 1997), not the client's carpetcleaningblufftonsc.com. Cross-checks, crawl-summary and page-text describe that other business; no audit can rest on them. Re-crawl the right domain, then re-run S12. |
-| [ ] | S13 Entity analysis: site vs Brand Guide (triple, NAP, brand search, suppo | — |  |
-| [ ] | S14 Architecture: every page typed; the screen decides CM-019 C1–C3, the a | — |  |
-| [ ] | S15 Page conformance triage (CM-063): rebuild / light fix / keep; only pag | — |  |
-| [ ] | S16 Technical findings (Fix rows → the Technical Blocker Checklist, writte | — |  |
-| [ ] | S17 Fresh-context review: every destructive URL row, every Ask, a sample o | — |  |
-| [ ] | S18 The audit review sheet + render | — |  |
+| [x] | S12 Ingest + cross-checks + redirect pre-screen | done | ingest + cross-checks (0 contradicted) + screen 109 URLs (0 pass, 6 fail, 103 needs evidence) + manifest; 3 free MANUAL captures added |
+| [x] | S13 Entity analysis: site vs Brand Guide (triple, NAP, brand search, suppo | done | entity vs Brand Guide: wrong hero phone (F-001), review count (F-002), brand collision (F-003), 3 claim Asks (F-004..F-006) |
+| [x] | S14 Architecture: every page typed; the screen decides CM-019 C1–C3, the a | done | URL Decision Map 109 rows; no destructive row; screen --check passed |
+| [x] | S15 Page conformance triage (CM-063): rebuild / light fix / keep; only pag | done | judge on agent route (no API key) + triage: 15 rebuild, 74 light fix, 12 keep, 8 redirected; COM-N contradicted (flag F-004) |
+| [x] | S16 Technical findings (Fix rows → the Technical Blocker Checklist, writte | done | 10 Fix rows rendered into the Technical Blocker Checklist |
+| [x] | S17 Fresh-context review: every destructive URL row, every Ask, a sample o | done | clients/carolina-carpet-cleaning/audit/2026-10-28/review-s17.csv |
+| [x] | S18 The audit review sheet + render | done | review.py sheet (2 Paul Asks, 2 client questions, 16 decided, 10 Fix) + render.py all |
 
 ## Intake documents
 
@@ -40,7 +40,7 @@ Generated 2026-10-29T07:50 from status.json — do not edit. `[x]` done · `[-]`
 - [ ] Every page in the site plan is built, verified and written back — no site plan yet
 - [ ] WordPress connected (/wp-check passed in the last 30 days) — WordPress is not connected yet — run /wp-check carolina-carpet-cleaning
 - [ ] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — discovery is not signed off yet — still open: the audit (its review sheet, registers and Evidence Manifest), the reconciled Brand Guide
-- [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — the technical blocker checklist is not written yet
+- [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — the blocker items have not been handed to Jonie yet (handoff.py create … --blockers)
 - [x] Page specs approved by Paul once, globally (methodology/specs) and unchanged since
 
 ## Decisions (Paul)

@@ -1,0 +1,12 @@
+register,id,why,what
+findings,F-004,ask,"The post states ""We are an expert team of professionals that guarantee quality c"
+findings,F-005,ask,"The site claims ""Carpets Dry in Under 1 Hour"" / ""dry in under one hour"" (homepag"
+findings,F-006,ask,"The site says the cleaning solution is ""pH-neutral and biodegradable"" and ""safe "
+findings,F-008,ask,"Four published WordPress pages (1,290–1,623 words) answer 301 live: residential,"
+findings,F-001,sample,"The homepage hero shows ""Call (843) 525-6288"" with href=""tel:8435256288""; every "
+findings,F-009,sample,"22 ""Know the Area"" posts sit beside 30 carpet posts. Three describe Savannah, GA"
+findings,F-014,sample,18 internal links point at three URLs that 301: 8 posts link /permanent-pet-urin
+findings,F-018,sample,/services/boat-auto-interior-cleaning/ and /location/carolina-carpet-cleaning/ a
+findings,F-022,sample,"Blog posts read above grade 8.9 (Flesch-Kincaid, readability.py on the captured "
+findings,F-027,sample,"Homepage opening paragraph is about Hilton Head Island upholstery, not who/what/"
+findings,F-031,sample,"Homepage schema: invalid JSON, no WebSite node, sameAs and geo mismatches (F-019"

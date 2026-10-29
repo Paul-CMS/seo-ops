@@ -1,0 +1,13 @@
+register,id,reviewed_revision,outcome,new_revision,reason
+findings,F-004,1,confirmed,,"Guarantee sentence is in SRC-023; Section D Guarantees = N/A (Client Confirmed). Ask kind 2, default a usable."
+findings,F-005,1,revised,2,"Claim is on 17 URLs in three forms, not 3; /about/ not supported by its locator; default moved from the unconfirmed absolute claim to the hedged wording most pages use (CM-016)."
+findings,F-006,1,revised,2,"pH/safety claims also on hardwood, tile and pet-odor pages; r1 default (name the product) cannot ship unanswered — interim default is not to repeat the claims."
+findings,F-008,1,revised,2,"Low-moisture last crawled 2026-09-08 (SRC-047), not 10-12..16; only 2 of 4 pages modified 2026-10-27 (SRC-024). Ask kind 1, default a usable; matches settled service_list."
+findings,F-001,1,revised,2,Confirmed (no call-tracking number on file); added the malformed tel:(843)5756286 link seen in SRC-059 to the same finding.
+findings,F-009,1,confirmed,,"24 area-category posts in SRC-042, 2 of them 301 → 22 live; 17 discovered-not-indexed matches SRC-046; keep-live per CM-019/CM-021."
+findings,F-014,1,confirmed,,"SRC-062: 8, 8 and 2 distinct sources link to the three 301 URLs."
+findings,F-018,1,confirmed,,"SRC-060 rows: 404, 404, 301 with 0 hops; SRC-043 last crawled 2026-10-23."
+findings,F-022,1,revised,2,"Reading grade is form-only = Fix (definitions.md Severity), not Fix and list; locator corrected — BLG-20 rows are in conformance-judgment.csv only."
+findings,F-027,1,confirmed,,SRC-023 homepage text opens on Hilton Head upholstery under the H1; HP-10 judgment row stands.
+findings,F-031,1,withdrawn,2,"Duplicate of F-019 (same issue, URL and locator)."
+url-decision-map,"U-011..U-016, U-044",1,revised,2,"Triage light fix rests on COM-N alone, a capture artefact (DEC-LOCAL-002; page-text.csv has no footer); set to keep. /contact-us/: check at Build that the footer NAP renders."

@@ -135,3 +135,23 @@ Generated from the safety log (clients/carolina-carpet-cleaning/log.md) — do n
 - FLAG 2026-10-28T20:50 · run 20261028-204638-crawl-94cd · F-003 · DataforSEO task 10290139 (carpetcleaningblufftonsc.com, basic, 132 pages) stays 'In Queue' (error 40602); resume returns exit 8 on e…
 **Steps recorded (script):** S05 done, S05b done
 
+## /discovery · 2026-10-29 · run 20261029-075525-discovery-0474
+
+- S12: pipeline ingest re-run on the correct crawl (carpetcleaningblufftonsc.com); 0 contradicted cross-checks. Screen: 109 URLs, 0 pass, 6 fail, 103 needs evidence (no backlinks pull, S08 → C2 open everywhere).
+- Free live captures added as MANUAL evidence: sitemap URLs (SRC-061), live redirect check (SRC-060), homepage capture (SRC-059). No DataforSEO spend.
+- S14: url-decision-map.csv, 109 rows (8 service, 6 location, homepage, about, 52 blog posts, 27 archives, 5 utility, 1 supporting, 8 existing 301s). No destructive row; `pagedec.py screen --check` passed.
+- S15: judge had no API key → agent scored 53 kept pages into audit/conformance-judgment.csv; triage: 15 rebuild, 74 light fix, 12 keep, 8 redirected.
+- S13/S16: findings.csv 31 rows — 9 Fix, 18 Fix and list, 4 Ask (F-008 kind 1 fold four services; F-004 kind 2 guarantee claim; F-005, F-006 kind 3 drying time, cleaning product).
+- Technical Blocker Checklist rendered (build/… - Technical Blocker Checklist - REVIEW.md).
+- Key Fix rows: homepage hero phone (843) 525-6288 (F-001), invalid homepage JSON-LD (F-019), 27 redirect chains (F-010), search-spam URLs (F-016), 3 broken legacy URLs (F-018).
+- System flag #4 (flags.jsonl; not finding F-004): COM-N false failures (page-text truncated); COM-N not written as findings (DEC-LOCAL-002).
+- S17 done (review-s17.csv, DEC-LOCAL-006). S18: review.py sheet → audit-review.csv (2 Paul Asks, 2 client, 16 decided, 10 Fix) + client-questions.csv; render.py all; S18 recorded; audit_deliverables and blocker_checklist marked.
+- Defaults: F-008 a, F-004 a, F-005 b, F-006 b (interim). DEC-LOCAL-007: flag/finding ID clash, triage file stale for U-011..U-016/U-044 (map rev 2 governs), Build check footer phone on /contact-us/.
+- System flags #5 (flag/finding ID namespace) and #6 (client table lacks defaults; client-questions.csv truncated mid-word — Paul rewords before sending).
+
+**Changes (script):** 37 — rendered ×13, audit_step ×11, audit_screen ×6, evidence_capture ×3, audit_register ×3, audit_triage ×1
+- FLAG 2026-10-29T08:07 · run 20261029-075525-discovery-0474 · F-004 · conformance.py COM-N (Brand Guide phone in page text) reads data/crawl/page-text.csv, which is truncated and/or excludes the foo…
+- FLAG 2026-10-29T08:17 · run 20261029-075525-discovery-0474 · F-005 · Flag IDs and finding IDs share one namespace (F-###): system flag F-004 (flags.jsonl, the COM-N phone check reading a footer-les…
+- FLAG 2026-10-29T08:17 · run 20261029-075525-discovery-0474 · F-006 · render.py auditsheet: the 'For the client to confirm' table has no Recommended/default column and cuts the question at 260 and o…
+**Steps recorded (script):** S12 done, S13 done, S14 done, S15 done, S16 done, S17 done, S18 done
+

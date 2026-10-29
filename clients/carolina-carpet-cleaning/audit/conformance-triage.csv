@@ -1,0 +1,110 @@
+url_id,url,action,type,triage,why,failed_checks
+U-001,https://carpetcleaningblufftonsc.com/,Keep — H1 lock (HP-08); light fixes only,Homepage,light fix,"homepage under the H1 lock (HP-08) — kept, scored in full",COM-M COM-T HP-09 HP-10 HP-11 HP-13 HP-19 HP-24
+U-002,https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-05 COM-N COM-T
+U-003,https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-16 COM-M COM-N COM-T
+U-004,https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-05 BLG-20 COM-M COM-N COM-T
+U-005,https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-carpet-cleaning-systems-cause-more-harm-than-good/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-M COM-N COM-T
+U-006,https://carpetcleaningblufftonsc.com/about/,Improve — rebuild to the about spec,About,rebuild,Build rewrites it to its spec,
+U-007,https://carpetcleaningblufftonsc.com/american-prohibition-museum/,Keep — disposition in Blog Decision Map; Needs Evidence - keep live (C2 backlinks not on file),Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-N
+U-008,https://carpetcleaningblufftonsc.com/beach-sand-carpet-damage-bluffton-sc/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-M COM-N
+U-009,https://carpetcleaningblufftonsc.com/beaufort/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U-010,https://carpetcleaningblufftonsc.com/best-times-to-get-your-carpet-cleaned-from-us-at-carolina-carpet-cleaning/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-N COM-T
+U-011,https://carpetcleaningblufftonsc.com/blog/,Keep,Archive — blog index,light fix,kept utility page (auto checks only),COM-N
+U-012,https://carpetcleaningblufftonsc.com/blog/page/2/,Keep,Archive — blog index,light fix,kept utility page (auto checks only),COM-N
+U-013,https://carpetcleaningblufftonsc.com/blog/page/3/,Keep,Archive — blog index,light fix,kept utility page (auto checks only),COM-N
+U-014,https://carpetcleaningblufftonsc.com/blog/page/4/,Keep,Archive — blog index,light fix,kept utility page (auto checks only),COM-N
+U-015,https://carpetcleaningblufftonsc.com/blog/page/5/,Keep,Archive — blog index,light fix,kept utility page (auto checks only),COM-N
+U-016,https://carpetcleaningblufftonsc.com/blog/page/6/,Keep,Archive — blog index,light fix,kept utility page (auto checks only),COM-N
+U-017,https://carpetcleaningblufftonsc.com/bluffton-oyster-factory-park/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-05 BLG-20 COM-M COM-N
+U-018,https://carpetcleaningblufftonsc.com/bluffton/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U-019,https://carpetcleaningblufftonsc.com/boat-and-auto-interior-cleaning/,Improve — rebuild to the service spec,Service,rebuild,Build rewrites it to its spec,
+U-020,https://carpetcleaningblufftonsc.com/boat-mold-mildew-smell-removal-bluffton-sc/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-M COM-N COM-T
+U-021,https://carpetcleaningblufftonsc.com/carpet-cleaning-asthma-indoor-air-quality-bluffton-sc/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-M COM-N COM-T
+U-022,https://carpetcleaningblufftonsc.com/carpet-cleaning-for-allergy-relief/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-M COM-N
+U-023,https://carpetcleaningblufftonsc.com/carpet-cleaning-pollen-allergies-bluffton-sc/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-M COM-N COM-T
+U-024,https://carpetcleaningblufftonsc.com/carpet-cleaning/,Improve — rebuild to the service spec,Service,rebuild,Build rewrites it to its spec,
+U-025,https://carpetcleaningblufftonsc.com/category/area-carpets/,Keep,Archive — category,light fix,kept utility page (auto checks only),COM-M COM-N
+U-026,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/,Keep,Archive — category,light fix,kept utility page (auto checks only),COM-M COM-N
+U-027,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/2/,Keep,Archive — category,light fix,kept utility page (auto checks only),COM-M COM-N
+U-028,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/3/,Keep,Archive — category,light fix,kept utility page (auto checks only),COM-M COM-N
+U-029,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/4/,Keep,Archive — category,light fix,kept utility page (auto checks only),COM-M COM-N
+U-030,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/5/,Keep,Archive — category,light fix,kept utility page (auto checks only),COM-M COM-N
+U-031,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/,Keep,Archive — category,light fix,kept utility page (auto checks only),COM-M COM-N
+U-032,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/2/,Keep,Archive — category,light fix,kept utility page (auto checks only),COM-M COM-N
+U-033,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/3/,Keep,Archive — category,light fix,kept utility page (auto checks only),COM-M COM-N
+U-034,https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/,Keep,Archive — category,light fix,kept utility page (auto checks only),COM-M COM-N
+U-035,https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/page/2/,Keep,Archive — category,light fix,kept utility page (auto checks only),COM-M COM-N
+U-036,https://carpetcleaningblufftonsc.com/category/uncategorized/,Keep,Archive — category,light fix,kept utility page (auto checks only),COM-M COM-N
+U-037,https://carpetcleaningblufftonsc.com/category/upholstery/,Keep,Archive — category,light fix,kept utility page (auto checks only),COM-M COM-N
+U-038,https://carpetcleaningblufftonsc.com/charles-cotesworth-pinckney-historical-marker/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-M COM-N
+U-039,https://carpetcleaningblufftonsc.com/church-of-the-cross/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 COM-M COM-N
+U-040,https://carpetcleaningblufftonsc.com/clean-carpets-matter-more-than-you-think/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 COM-M COM-N COM-T
+U-041,https://carpetcleaningblufftonsc.com/clean-carpets-the-secret-to-a-healthy-home/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-N
+U-042,https://carpetcleaningblufftonsc.com/coastal-discovery-museum/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-M COM-N
+U-043,https://carpetcleaningblufftonsc.com/commercial-carpet-cleaning/,Improve — rebuild to the service spec,Service,rebuild,Build rewrites it to its spec,
+U-044,https://carpetcleaningblufftonsc.com/contact-us/,Keep,Utility — conversion,light fix,kept utility page (auto checks only),COM-N
+U-045,https://carpetcleaningblufftonsc.com/forsyth-park/,Keep — disposition in Blog Decision Map; Needs Evidence - keep live (C2 backlinks not on file),Blog post,light fix,blog post — Build does not rewrite it,BLG-05 COM-M COM-N
+U-046,https://carpetcleaningblufftonsc.com/garvin-garvey-house/,"Keep — disposition in Blog Decision Map (fails C1: 4 keyword(s) in top 100, best position 30, volume 560)",Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-N
+U-047,https://carpetcleaningblufftonsc.com/gullah-museum-of-hilton-head-island/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 COM-N
+U-048,https://carpetcleaningblufftonsc.com/harbour-town-lighthouse/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 COM-N
+U-049,https://carpetcleaningblufftonsc.com/hardeeville/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U-050,https://carpetcleaningblufftonsc.com/hardwood-floor-cleaning/,Improve — rebuild to the service spec,Service,rebuild,Build rewrites it to its spec,
+U-051,https://carpetcleaningblufftonsc.com/hardwood-floor-cupping-warping-bluffton-sc/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-M COM-N
+U-052,https://carpetcleaningblufftonsc.com/harper-fowlkes-house/,"Keep — disposition in Blog Decision Map (fails C1: 4 keyword(s) in top 100, best position 20, volume 2560)",Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 COM-M COM-N
+U-053,https://carpetcleaningblufftonsc.com/heyward-house-museum-and-welcome-center/,Keep — disposition in Blog Decision Map; Needs Evidence - keep live (C2 backlinks not on file),Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-N
+U-054,https://carpetcleaningblufftonsc.com/heyward-house-museum-welcome-center/,Keep — disposition in Blog Decision Map; Needs Evidence - keep live (C2 backlinks not on file),Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-M COM-N
+U-055,https://carpetcleaningblufftonsc.com/hilton-head/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U-056,https://carpetcleaningblufftonsc.com/how-to-get-the-musty-smell-out-of-the-carpet/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-N
+U-057,https://carpetcleaningblufftonsc.com/how-to-get-the-smell-of-pet-urine-out-of-your-carpet/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-05 BLG-20 COM-M COM-N COM-T
+U-058,https://carpetcleaningblufftonsc.com/if-you-dont-hire-a-carpet-cleaning-company-now-youll-regret-it-later/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-05 BLG-16 BLG-20 COM-M COM-N COM-T
+U-059,https://carpetcleaningblufftonsc.com/is-it-worth-it-to-stretch-your-carpets/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 COM-N
+U-060,https://carpetcleaningblufftonsc.com/ladys-island/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U-061,https://carpetcleaningblufftonsc.com/move-furniture-before-carpet-cleaning-bluffton-sc/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-N COM-T
+U-062,https://carpetcleaningblufftonsc.com/old-town-bluffton/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-M COM-N
+U-063,https://carpetcleaningblufftonsc.com/palmetto-oaks-sculpture-garden/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 COM-M COM-N
+U-064,https://carpetcleaningblufftonsc.com/pet-odor-removal/,Improve — rebuild to the service spec,Service,rebuild,Build rewrites it to its spec,
+U-065,https://carpetcleaningblufftonsc.com/port-royal-sound-foundation-maritime-center/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-M COM-N
+U-066,https://carpetcleaningblufftonsc.com/practical-guide-when-should-you-get-your-carpet-professionally-cleaned/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-M COM-N
+U-067,https://carpetcleaningblufftonsc.com/ridgeland/,Improve — rebuild to the location spec,Location,rebuild,Build rewrites it to its spec,
+U-068,https://carpetcleaningblufftonsc.com/rose-hill-mansion/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-N
+U-069,https://carpetcleaningblufftonsc.com/rug-cleaning/,Improve — rebuild to the service spec,Service,rebuild,Build rewrites it to its spec,
+U-070,https://carpetcleaningblufftonsc.com/savannah-national-wildlife-refuge/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-M COM-N
+U-071,https://carpetcleaningblufftonsc.com/seven-oaks/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-N
+U-072,https://carpetcleaningblufftonsc.com/society-of-bluffton-artists/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 COM-M COM-N
+U-073,https://carpetcleaningblufftonsc.com/steam-cleaning-humidity-bluffton-sc/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-M COM-N
+U-074,https://carpetcleaningblufftonsc.com/terms-of-service/,Keep,Utility — legal,light fix,kept utility page (auto checks only),COM-M COM-N
+U-075,https://carpetcleaningblufftonsc.com/the-4-main-factors-affecting-carpet-cleaning-costs/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-05 BLG-16 BLG-20 COM-N COM-T
+U-076,https://carpetcleaningblufftonsc.com/the-best-carpet-cleaning-tips/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 COM-M COM-N COM-T
+U-077,https://carpetcleaningblufftonsc.com/the-best-way-to-maintain-your-area-rug/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 COM-M COM-N
+U-078,https://carpetcleaningblufftonsc.com/the-card-house/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-M COM-N
+U-079,https://carpetcleaningblufftonsc.com/the-essential-things-for-carpet-stain-removal/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 COM-M COM-N
+U-080,https://carpetcleaningblufftonsc.com/the-fripp-house/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-N
+U-081,https://carpetcleaningblufftonsc.com/the-health-benefits-of-clean-carpets/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-N
+U-082,https://carpetcleaningblufftonsc.com/the-heyward-house/,Keep — disposition in Blog Decision Map; Needs Evidence - keep live (C2 backlinks not on file),Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-N
+U-083,https://carpetcleaningblufftonsc.com/tile-grout-cleaning/,Improve — rebuild to the service spec,Service,rebuild,Build rewrites it to its spec,
+U-084,https://carpetcleaningblufftonsc.com/top-5-benefits-of-upholstery-cleaning/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-05 BLG-20 COM-M COM-N COM-T
+U-085,https://carpetcleaningblufftonsc.com/upholstery-cleaning-on-hilton-head-island/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-M COM-T
+U-086,https://carpetcleaningblufftonsc.com/upholstery-cleaning/,Improve — rebuild to the service spec,Service,rebuild,Build rewrites it to its spec,
+U-087,https://carpetcleaningblufftonsc.com/vacation-rental-carpet-cleaning-frequency-bluffton-sc/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-M COM-N COM-T
+U-088,https://carpetcleaningblufftonsc.com/when-should-i-get-my-carpets-cleaned/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-05 BLG-20 COM-N
+U-089,https://carpetcleaningblufftonsc.com/why-carpet-takes-so-long-to-dry-bluffton-humidity/,Keep — disposition in Blog Decision Map,Blog post,light fix,blog post — Build does not rewrite it,BLG-03 BLG-20 COM-M COM-N
+U-090,https://carpetcleaningblufftonsc.com/permanent-pet-urine-odor-removal-bluffton-sc/,Keep existing 301,Redirect (existing 301),,the URL is redirected or held — not scored,
+U-091,https://carpetcleaningblufftonsc.com/the-church-of-the-cross/,Keep existing 301,Redirect (existing 301),,the URL is redirected or held — not scored,
+U-092,https://carpetcleaningblufftonsc.com/travelers-should-know-about-safety-inside-vacation-rentals/,Keep existing 301,Redirect (existing 301),,the URL is redirected or held — not scored,
+U-093,https://carpetcleaningblufftonsc.com/terms-of-service/dmca-policy/,Keep,Utility — legal,keep,kept utility page (auto checks only),
+U-094,https://carpetcleaningblufftonsc.com/author/author-profile/,Keep,Archive — author,keep,kept utility page (auto checks only),
+U-095,https://carpetcleaningblufftonsc.com/author/author-profile/page/2/,Keep,Archive — author,keep,kept utility page (auto checks only),
+U-096,https://carpetcleaningblufftonsc.com/author/author-profile/page/3/,Keep,Archive — author,keep,kept utility page (auto checks only),
+U-097,https://carpetcleaningblufftonsc.com/author/author-profile/page/4/,Keep,Archive — author,keep,kept utility page (auto checks only),
+U-098,https://carpetcleaningblufftonsc.com/category/know-the-area/,Keep,Archive — category,keep,kept utility page (auto checks only),
+U-099,https://carpetcleaningblufftonsc.com/category/know-the-area/page/4/,Keep,Archive — category,keep,kept utility page (auto checks only),
+U-100,https://carpetcleaningblufftonsc.com/category/know-the-area/page/3/,Keep,Archive — category,keep,kept utility page (auto checks only),
+U-101,https://carpetcleaningblufftonsc.com/category/know-the-area/page/2/,Keep,Archive — category,keep,kept utility page (auto checks only),
+U-102,https://carpetcleaningblufftonsc.com/upholstery-cleaning-services/,Keep existing 301,Redirect (existing 301),,the URL is redirected or held — not scored,
+U-103,https://carpetcleaningblufftonsc.com/area-rug-cleaning/,Keep existing 301,Redirect (existing 301),,the URL is redirected or held — not scored,
+U-104,https://carpetcleaningblufftonsc.com/residential-carpet-cleaning/,Keep existing 301,Redirect (existing 301),,the URL is redirected or held — not scored,
+U-105,https://carpetcleaningblufftonsc.com/carpet-stain-removal/,Keep existing 301,Redirect (existing 301),,the URL is redirected or held — not scored,
+U-106,https://carpetcleaningblufftonsc.com/low-moisture-carpet-cleaning/,Keep existing 301,Redirect (existing 301),,the URL is redirected or held — not scored,
+U-107,https://carpetcleaningblufftonsc.com/bluffton-neighborhoods/,Needs Evidence - keep live (C2 backlinks not on file); Build links it from /bluffton/ (F-012),Supporting page — Bluffton neighborhoods,keep,kept utility page (auto checks only),
+U-108,https://carpetcleaningblufftonsc.com/leave-us-a-review/,Keep,Utility — conversion,keep,kept utility page (auto checks only),
+U-109,https://carpetcleaningblufftonsc.com/terms-of-service/privacy-policy/,Keep,Utility — legal,keep,kept utility page (auto checks only),

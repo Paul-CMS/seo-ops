@@ -1,18 +1,166 @@
 # Carolina Carpet Cleaning - Conformance (auto checks)
 
-Made by scripts/conformance.py (2026-10-28) from the crawl. Only the checks with no judgment (methodology/specs/check-kinds.json); every other check is the audit agent's.
+Made by scripts/conformance.py (2026-10-29) from the crawl. Only the checks with no judgment (methodology/specs/check-kinds.json); every other check is the audit agent's.
 
 | Check | What | Pass | Fail | N/A |
 |---|---|---|---|---|
-| COM-M | meta description 120-160 characters | 4 | 0 | 0 |
-| COM-N | the Brand Guide phone number appears in the page text | 0 | 4 | 0 |
-| COM-T | SEO title 60 characters or fewer | 3 | 1 | 0 |
-| COM-W | word count recorded (for the judgment columns) | 0 | 0 | 4 |
+| COM-M | meta description 120-160 characters | 28 | 61 | 0 |
+| COM-N | the Brand Guide phone number appears in the page text | 16 | 73 | 0 |
+| COM-T | SEO title 60 characters or fewer | 70 | 19 | 0 |
+| COM-W | word count recorded (for the judgment columns) | 0 | 0 | 89 |
 
 ## Failures
 
-- https://carolinacarpetcleaning.com/ (unknown) COM-T: 78 characters
-- https://carolinacarpetcleaning.com/ (unknown) COM-N: 
-- https://carolinacarpetcleaning.com/about/ (unknown) COM-N: 
-- https://carolinacarpetcleaning.com/contact/ (unknown) COM-N: 
-- https://carolinacarpetcleaning.com/services/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/ (unknown) COM-T: 75 characters
+- https://carpetcleaningblufftonsc.com/ (unknown) COM-M: 182 characters
+- https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/ (unknown) COM-T: 64 characters
+- https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/ (unknown) COM-T: 93 characters
+- https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/ (unknown) COM-M: 228 characters
+- https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/ (unknown) COM-T: 88 characters
+- https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/ (unknown) COM-M: 246 characters
+- https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-carpet-cleaning-systems-cause-more-harm-than-good/ (unknown) COM-T: 76 characters
+- https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-carpet-cleaning-systems-cause-more-harm-than-good/ (unknown) COM-M: 289 characters
+- https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-carpet-cleaning-systems-cause-more-harm-than-good/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/about/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/american-prohibition-museum/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/beach-sand-carpet-damage-bluffton-sc/ (unknown) COM-M: 195 characters
+- https://carpetcleaningblufftonsc.com/beach-sand-carpet-damage-bluffton-sc/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/beaufort/ (unknown) COM-M: 180 characters
+- https://carpetcleaningblufftonsc.com/best-times-to-get-your-carpet-cleaned-from-us-at-carolina-carpet-cleaning/ (unknown) COM-T: 83 characters
+- https://carpetcleaningblufftonsc.com/best-times-to-get-your-carpet-cleaned-from-us-at-carolina-carpet-cleaning/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/blog/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/blog/page/2/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/blog/page/3/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/blog/page/4/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/blog/page/5/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/blog/page/6/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/bluffton-oyster-factory-park/ (unknown) COM-M: 288 characters
+- https://carpetcleaningblufftonsc.com/bluffton-oyster-factory-park/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/bluffton/ (unknown) COM-M: 180 characters
+- https://carpetcleaningblufftonsc.com/boat-and-auto-interior-cleaning/ (unknown) COM-M: 181 characters
+- https://carpetcleaningblufftonsc.com/boat-mold-mildew-smell-removal-bluffton-sc/ (unknown) COM-T: 65 characters
+- https://carpetcleaningblufftonsc.com/boat-mold-mildew-smell-removal-bluffton-sc/ (unknown) COM-M: 204 characters
+- https://carpetcleaningblufftonsc.com/boat-mold-mildew-smell-removal-bluffton-sc/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/carpet-cleaning-asthma-indoor-air-quality-bluffton-sc/ (unknown) COM-T: 73 characters
+- https://carpetcleaningblufftonsc.com/carpet-cleaning-asthma-indoor-air-quality-bluffton-sc/ (unknown) COM-M: 202 characters
+- https://carpetcleaningblufftonsc.com/carpet-cleaning-asthma-indoor-air-quality-bluffton-sc/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/carpet-cleaning-for-allergy-relief/ (unknown) COM-M: 331 characters
+- https://carpetcleaningblufftonsc.com/carpet-cleaning-for-allergy-relief/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/carpet-cleaning-pollen-allergies-bluffton-sc/ (unknown) COM-T: 63 characters
+- https://carpetcleaningblufftonsc.com/carpet-cleaning-pollen-allergies-bluffton-sc/ (unknown) COM-M: 194 characters
+- https://carpetcleaningblufftonsc.com/carpet-cleaning-pollen-allergies-bluffton-sc/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/carpet-cleaning/ (unknown) COM-M: 196 characters
+- https://carpetcleaningblufftonsc.com/category/area-carpets/ (unknown) COM-M: 0 characters
+- https://carpetcleaningblufftonsc.com/category/area-carpets/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/category/carpet-cleaning/ (unknown) COM-M: 0 characters
+- https://carpetcleaningblufftonsc.com/category/carpet-cleaning/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/2/ (unknown) COM-M: 0 characters
+- https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/2/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/3/ (unknown) COM-M: 0 characters
+- https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/3/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/4/ (unknown) COM-M: 0 characters
+- https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/4/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/5/ (unknown) COM-M: 0 characters
+- https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/5/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/ (unknown) COM-M: 0 characters
+- https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/2/ (unknown) COM-M: 0 characters
+- https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/2/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/3/ (unknown) COM-M: 0 characters
+- https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/3/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/ (unknown) COM-M: 0 characters
+- https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/page/2/ (unknown) COM-M: 0 characters
+- https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/page/2/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/category/uncategorized/ (unknown) COM-M: 0 characters
+- https://carpetcleaningblufftonsc.com/category/uncategorized/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/category/upholstery/ (unknown) COM-M: 0 characters
+- https://carpetcleaningblufftonsc.com/category/upholstery/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/charles-cotesworth-pinckney-historical-marker/ (unknown) COM-M: 163 characters
+- https://carpetcleaningblufftonsc.com/charles-cotesworth-pinckney-historical-marker/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/church-of-the-cross/ (unknown) COM-M: 180 characters
+- https://carpetcleaningblufftonsc.com/church-of-the-cross/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/clean-carpets-matter-more-than-you-think/ (unknown) COM-T: 72 characters
+- https://carpetcleaningblufftonsc.com/clean-carpets-matter-more-than-you-think/ (unknown) COM-M: 168 characters
+- https://carpetcleaningblufftonsc.com/clean-carpets-matter-more-than-you-think/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/clean-carpets-the-secret-to-a-healthy-home/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/coastal-discovery-museum/ (unknown) COM-M: 189 characters
+- https://carpetcleaningblufftonsc.com/coastal-discovery-museum/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/commercial-carpet-cleaning/ (unknown) COM-M: 183 characters
+- https://carpetcleaningblufftonsc.com/contact-us/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/forsyth-park/ (unknown) COM-M: 255 characters
+- https://carpetcleaningblufftonsc.com/forsyth-park/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/garvin-garvey-house/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/gullah-museum-of-hilton-head-island/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/harbour-town-lighthouse/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/hardeeville/ (unknown) COM-M: 181 characters
+- https://carpetcleaningblufftonsc.com/hardwood-floor-cupping-warping-bluffton-sc/ (unknown) COM-M: 213 characters
+- https://carpetcleaningblufftonsc.com/hardwood-floor-cupping-warping-bluffton-sc/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/harper-fowlkes-house/ (unknown) COM-M: 162 characters
+- https://carpetcleaningblufftonsc.com/harper-fowlkes-house/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/heyward-house-museum-and-welcome-center/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/heyward-house-museum-welcome-center/ (unknown) COM-M: 110 characters
+- https://carpetcleaningblufftonsc.com/heyward-house-museum-welcome-center/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/hilton-head/ (unknown) COM-T: 61 characters
+- https://carpetcleaningblufftonsc.com/hilton-head/ (unknown) COM-M: 190 characters
+- https://carpetcleaningblufftonsc.com/how-to-get-the-musty-smell-out-of-the-carpet/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/how-to-get-the-smell-of-pet-urine-out-of-your-carpet/ (unknown) COM-T: 79 characters
+- https://carpetcleaningblufftonsc.com/how-to-get-the-smell-of-pet-urine-out-of-your-carpet/ (unknown) COM-M: 198 characters
+- https://carpetcleaningblufftonsc.com/how-to-get-the-smell-of-pet-urine-out-of-your-carpet/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/if-you-dont-hire-a-carpet-cleaning-company-now-youll-regret-it-later/ (unknown) COM-T: 98 characters
+- https://carpetcleaningblufftonsc.com/if-you-dont-hire-a-carpet-cleaning-company-now-youll-regret-it-later/ (unknown) COM-M: 252 characters
+- https://carpetcleaningblufftonsc.com/if-you-dont-hire-a-carpet-cleaning-company-now-youll-regret-it-later/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/is-it-worth-it-to-stretch-your-carpets/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/ladys-island/ (unknown) COM-M: 185 characters
+- https://carpetcleaningblufftonsc.com/move-furniture-before-carpet-cleaning-bluffton-sc/ (unknown) COM-T: 69 characters
+- https://carpetcleaningblufftonsc.com/move-furniture-before-carpet-cleaning-bluffton-sc/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/old-town-bluffton/ (unknown) COM-M: 105 characters
+- https://carpetcleaningblufftonsc.com/old-town-bluffton/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/palmetto-oaks-sculpture-garden/ (unknown) COM-M: 163 characters
+- https://carpetcleaningblufftonsc.com/palmetto-oaks-sculpture-garden/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/port-royal-sound-foundation-maritime-center/ (unknown) COM-M: 115 characters
+- https://carpetcleaningblufftonsc.com/port-royal-sound-foundation-maritime-center/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/practical-guide-when-should-you-get-your-carpet-professionally-cleaned/ (unknown) COM-M: 282 characters
+- https://carpetcleaningblufftonsc.com/practical-guide-when-should-you-get-your-carpet-professionally-cleaned/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/ridgeland/ (unknown) COM-M: 179 characters
+- https://carpetcleaningblufftonsc.com/rose-hill-mansion/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/rug-cleaning/ (unknown) COM-M: 161 characters
+- https://carpetcleaningblufftonsc.com/savannah-national-wildlife-refuge/ (unknown) COM-M: 167 characters
+- https://carpetcleaningblufftonsc.com/savannah-national-wildlife-refuge/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/seven-oaks/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/society-of-bluffton-artists/ (unknown) COM-M: 256 characters
+- https://carpetcleaningblufftonsc.com/society-of-bluffton-artists/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/steam-cleaning-humidity-bluffton-sc/ (unknown) COM-M: 201 characters
+- https://carpetcleaningblufftonsc.com/steam-cleaning-humidity-bluffton-sc/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/terms-of-service/ (unknown) COM-M: 332 characters
+- https://carpetcleaningblufftonsc.com/terms-of-service/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/the-4-main-factors-affecting-carpet-cleaning-costs/ (unknown) COM-T: 77 characters
+- https://carpetcleaningblufftonsc.com/the-4-main-factors-affecting-carpet-cleaning-costs/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/the-best-carpet-cleaning-tips/ (unknown) COM-T: 74 characters
+- https://carpetcleaningblufftonsc.com/the-best-carpet-cleaning-tips/ (unknown) COM-M: 395 characters
+- https://carpetcleaningblufftonsc.com/the-best-carpet-cleaning-tips/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/the-best-way-to-maintain-your-area-rug/ (unknown) COM-M: 172 characters
+- https://carpetcleaningblufftonsc.com/the-best-way-to-maintain-your-area-rug/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/the-card-house/ (unknown) COM-M: 99 characters
+- https://carpetcleaningblufftonsc.com/the-card-house/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/the-essential-things-for-carpet-stain-removal/ (unknown) COM-M: 167 characters
+- https://carpetcleaningblufftonsc.com/the-essential-things-for-carpet-stain-removal/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/the-fripp-house/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/the-health-benefits-of-clean-carpets/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/the-heyward-house/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/tile-grout-cleaning/ (unknown) COM-M: 164 characters
+- https://carpetcleaningblufftonsc.com/top-5-benefits-of-upholstery-cleaning/ (unknown) COM-T: 64 characters
+- https://carpetcleaningblufftonsc.com/top-5-benefits-of-upholstery-cleaning/ (unknown) COM-M: 182 characters
+- https://carpetcleaningblufftonsc.com/top-5-benefits-of-upholstery-cleaning/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/upholstery-cleaning-on-hilton-head-island/ (unknown) COM-T: 85 characters
+- https://carpetcleaningblufftonsc.com/upholstery-cleaning-on-hilton-head-island/ (unknown) COM-M: 188 characters
+- https://carpetcleaningblufftonsc.com/upholstery-cleaning/ (unknown) COM-M: 163 characters
+- https://carpetcleaningblufftonsc.com/vacation-rental-carpet-cleaning-frequency-bluffton-sc/ (unknown) COM-T: 67 characters
+- https://carpetcleaningblufftonsc.com/vacation-rental-carpet-cleaning-frequency-bluffton-sc/ (unknown) COM-M: 205 characters
+- https://carpetcleaningblufftonsc.com/vacation-rental-carpet-cleaning-frequency-bluffton-sc/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/when-should-i-get-my-carpets-cleaned/ (unknown) COM-N: 
+- https://carpetcleaningblufftonsc.com/why-carpet-takes-so-long-to-dry-bluffton-humidity/ (unknown) COM-M: 217 characters
+- https://carpetcleaningblufftonsc.com/why-carpet-takes-so-long-to-dry-bluffton-humidity/ (unknown) COM-N: 

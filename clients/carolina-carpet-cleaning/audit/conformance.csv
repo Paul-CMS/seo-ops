@@ -1,17 +1,357 @@
 page,url,type,check,result,detail
-https://carolinacarpetcleaning.com/,https://carolinacarpetcleaning.com/,unknown,COM-T,FAIL,78 characters
-https://carolinacarpetcleaning.com/,https://carolinacarpetcleaning.com/,unknown,COM-M,PASS,142 characters
-https://carolinacarpetcleaning.com/,https://carolinacarpetcleaning.com/,unknown,COM-W,N/A,263 words
-https://carolinacarpetcleaning.com/,https://carolinacarpetcleaning.com/,unknown,COM-N,FAIL,
-https://carolinacarpetcleaning.com/about/,https://carolinacarpetcleaning.com/about/,unknown,COM-T,PASS,35 characters
-https://carolinacarpetcleaning.com/about/,https://carolinacarpetcleaning.com/about/,unknown,COM-M,PASS,142 characters
-https://carolinacarpetcleaning.com/about/,https://carolinacarpetcleaning.com/about/,unknown,COM-W,N/A,219 words
-https://carolinacarpetcleaning.com/about/,https://carolinacarpetcleaning.com/about/,unknown,COM-N,FAIL,
-https://carolinacarpetcleaning.com/contact/,https://carolinacarpetcleaning.com/contact/,unknown,COM-T,PASS,34 characters
-https://carolinacarpetcleaning.com/contact/,https://carolinacarpetcleaning.com/contact/,unknown,COM-M,PASS,142 characters
-https://carolinacarpetcleaning.com/contact/,https://carolinacarpetcleaning.com/contact/,unknown,COM-W,N/A,73 words
-https://carolinacarpetcleaning.com/contact/,https://carolinacarpetcleaning.com/contact/,unknown,COM-N,FAIL,
-https://carolinacarpetcleaning.com/services/,https://carolinacarpetcleaning.com/services/,unknown,COM-T,PASS,35 characters
-https://carolinacarpetcleaning.com/services/,https://carolinacarpetcleaning.com/services/,unknown,COM-M,PASS,142 characters
-https://carolinacarpetcleaning.com/services/,https://carolinacarpetcleaning.com/services/,unknown,COM-W,N/A,305 words
-https://carolinacarpetcleaning.com/services/,https://carolinacarpetcleaning.com/services/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/,https://carpetcleaningblufftonsc.com/,unknown,COM-T,FAIL,75 characters
+https://carpetcleaningblufftonsc.com/,https://carpetcleaningblufftonsc.com/,unknown,COM-M,FAIL,182 characters
+https://carpetcleaningblufftonsc.com/,https://carpetcleaningblufftonsc.com/,unknown,COM-W,N/A,1002 words
+https://carpetcleaningblufftonsc.com/,https://carpetcleaningblufftonsc.com/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/,https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/,unknown,COM-T,FAIL,64 characters
+https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/,https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/,unknown,COM-M,PASS,146 characters
+https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/,https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/,unknown,COM-W,N/A,898 words
+https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/,https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/,https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/,unknown,COM-T,FAIL,93 characters
+https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/,https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/,unknown,COM-M,FAIL,228 characters
+https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/,https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/,unknown,COM-W,N/A,693 words
+https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/,https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/,https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/,unknown,COM-T,FAIL,88 characters
+https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/,https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/,unknown,COM-M,FAIL,246 characters
+https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/,https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/,unknown,COM-W,N/A,943 words
+https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/,https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-carpet-cleaning-systems-cause-more-harm-than-good/,https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-carpet-cleaning-systems-cause-more-harm-than-good/,unknown,COM-T,FAIL,76 characters
+https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-carpet-cleaning-systems-cause-more-harm-than-good/,https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-carpet-cleaning-systems-cause-more-harm-than-good/,unknown,COM-M,FAIL,289 characters
+https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-carpet-cleaning-systems-cause-more-harm-than-good/,https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-carpet-cleaning-systems-cause-more-harm-than-good/,unknown,COM-W,N/A,1520 words
+https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-carpet-cleaning-systems-cause-more-harm-than-good/,https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-carpet-cleaning-systems-cause-more-harm-than-good/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/about/,https://carpetcleaningblufftonsc.com/about/,unknown,COM-T,PASS,30 characters
+https://carpetcleaningblufftonsc.com/about/,https://carpetcleaningblufftonsc.com/about/,unknown,COM-M,PASS,122 characters
+https://carpetcleaningblufftonsc.com/about/,https://carpetcleaningblufftonsc.com/about/,unknown,COM-W,N/A,271 words
+https://carpetcleaningblufftonsc.com/about/,https://carpetcleaningblufftonsc.com/about/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/american-prohibition-museum/,https://carpetcleaningblufftonsc.com/american-prohibition-museum/,unknown,COM-T,PASS,27 characters
+https://carpetcleaningblufftonsc.com/american-prohibition-museum/,https://carpetcleaningblufftonsc.com/american-prohibition-museum/,unknown,COM-M,PASS,139 characters
+https://carpetcleaningblufftonsc.com/american-prohibition-museum/,https://carpetcleaningblufftonsc.com/american-prohibition-museum/,unknown,COM-W,N/A,956 words
+https://carpetcleaningblufftonsc.com/american-prohibition-museum/,https://carpetcleaningblufftonsc.com/american-prohibition-museum/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/beach-sand-carpet-damage-bluffton-sc/,https://carpetcleaningblufftonsc.com/beach-sand-carpet-damage-bluffton-sc/,unknown,COM-T,PASS,52 characters
+https://carpetcleaningblufftonsc.com/beach-sand-carpet-damage-bluffton-sc/,https://carpetcleaningblufftonsc.com/beach-sand-carpet-damage-bluffton-sc/,unknown,COM-M,FAIL,195 characters
+https://carpetcleaningblufftonsc.com/beach-sand-carpet-damage-bluffton-sc/,https://carpetcleaningblufftonsc.com/beach-sand-carpet-damage-bluffton-sc/,unknown,COM-W,N/A,4401 words
+https://carpetcleaningblufftonsc.com/beach-sand-carpet-damage-bluffton-sc/,https://carpetcleaningblufftonsc.com/beach-sand-carpet-damage-bluffton-sc/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/beaufort/,https://carpetcleaningblufftonsc.com/beaufort/,unknown,COM-T,PASS,51 characters
+https://carpetcleaningblufftonsc.com/beaufort/,https://carpetcleaningblufftonsc.com/beaufort/,unknown,COM-M,FAIL,180 characters
+https://carpetcleaningblufftonsc.com/beaufort/,https://carpetcleaningblufftonsc.com/beaufort/,unknown,COM-W,N/A,642 words
+https://carpetcleaningblufftonsc.com/beaufort/,https://carpetcleaningblufftonsc.com/beaufort/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/best-times-to-get-your-carpet-cleaned-from-us-at-carolina-carpet-cleaning/,https://carpetcleaningblufftonsc.com/best-times-to-get-your-carpet-cleaned-from-us-at-carolina-carpet-cleaning/,unknown,COM-T,FAIL,83 characters
+https://carpetcleaningblufftonsc.com/best-times-to-get-your-carpet-cleaned-from-us-at-carolina-carpet-cleaning/,https://carpetcleaningblufftonsc.com/best-times-to-get-your-carpet-cleaned-from-us-at-carolina-carpet-cleaning/,unknown,COM-M,PASS,150 characters
+https://carpetcleaningblufftonsc.com/best-times-to-get-your-carpet-cleaned-from-us-at-carolina-carpet-cleaning/,https://carpetcleaningblufftonsc.com/best-times-to-get-your-carpet-cleaned-from-us-at-carolina-carpet-cleaning/,unknown,COM-W,N/A,1484 words
+https://carpetcleaningblufftonsc.com/best-times-to-get-your-carpet-cleaned-from-us-at-carolina-carpet-cleaning/,https://carpetcleaningblufftonsc.com/best-times-to-get-your-carpet-cleaned-from-us-at-carolina-carpet-cleaning/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/blog/,https://carpetcleaningblufftonsc.com/blog/,unknown,COM-T,PASS,29 characters
+https://carpetcleaningblufftonsc.com/blog/,https://carpetcleaningblufftonsc.com/blog/,unknown,COM-M,PASS,134 characters
+https://carpetcleaningblufftonsc.com/blog/,https://carpetcleaningblufftonsc.com/blog/,unknown,COM-W,N/A,408 words
+https://carpetcleaningblufftonsc.com/blog/,https://carpetcleaningblufftonsc.com/blog/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/blog/page/2/,https://carpetcleaningblufftonsc.com/blog/page/2/,unknown,COM-T,PASS,29 characters
+https://carpetcleaningblufftonsc.com/blog/page/2/,https://carpetcleaningblufftonsc.com/blog/page/2/,unknown,COM-M,PASS,134 characters
+https://carpetcleaningblufftonsc.com/blog/page/2/,https://carpetcleaningblufftonsc.com/blog/page/2/,unknown,COM-W,N/A,413 words
+https://carpetcleaningblufftonsc.com/blog/page/2/,https://carpetcleaningblufftonsc.com/blog/page/2/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/blog/page/3/,https://carpetcleaningblufftonsc.com/blog/page/3/,unknown,COM-T,PASS,29 characters
+https://carpetcleaningblufftonsc.com/blog/page/3/,https://carpetcleaningblufftonsc.com/blog/page/3/,unknown,COM-M,PASS,134 characters
+https://carpetcleaningblufftonsc.com/blog/page/3/,https://carpetcleaningblufftonsc.com/blog/page/3/,unknown,COM-W,N/A,362 words
+https://carpetcleaningblufftonsc.com/blog/page/3/,https://carpetcleaningblufftonsc.com/blog/page/3/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/blog/page/4/,https://carpetcleaningblufftonsc.com/blog/page/4/,unknown,COM-T,PASS,29 characters
+https://carpetcleaningblufftonsc.com/blog/page/4/,https://carpetcleaningblufftonsc.com/blog/page/4/,unknown,COM-M,PASS,134 characters
+https://carpetcleaningblufftonsc.com/blog/page/4/,https://carpetcleaningblufftonsc.com/blog/page/4/,unknown,COM-W,N/A,317 words
+https://carpetcleaningblufftonsc.com/blog/page/4/,https://carpetcleaningblufftonsc.com/blog/page/4/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/blog/page/5/,https://carpetcleaningblufftonsc.com/blog/page/5/,unknown,COM-T,PASS,29 characters
+https://carpetcleaningblufftonsc.com/blog/page/5/,https://carpetcleaningblufftonsc.com/blog/page/5/,unknown,COM-M,PASS,134 characters
+https://carpetcleaningblufftonsc.com/blog/page/5/,https://carpetcleaningblufftonsc.com/blog/page/5/,unknown,COM-W,N/A,274 words
+https://carpetcleaningblufftonsc.com/blog/page/5/,https://carpetcleaningblufftonsc.com/blog/page/5/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/blog/page/6/,https://carpetcleaningblufftonsc.com/blog/page/6/,unknown,COM-T,PASS,29 characters
+https://carpetcleaningblufftonsc.com/blog/page/6/,https://carpetcleaningblufftonsc.com/blog/page/6/,unknown,COM-M,PASS,134 characters
+https://carpetcleaningblufftonsc.com/blog/page/6/,https://carpetcleaningblufftonsc.com/blog/page/6/,unknown,COM-W,N/A,130 words
+https://carpetcleaningblufftonsc.com/blog/page/6/,https://carpetcleaningblufftonsc.com/blog/page/6/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/bluffton-oyster-factory-park/,https://carpetcleaningblufftonsc.com/bluffton-oyster-factory-park/,unknown,COM-T,PASS,55 characters
+https://carpetcleaningblufftonsc.com/bluffton-oyster-factory-park/,https://carpetcleaningblufftonsc.com/bluffton-oyster-factory-park/,unknown,COM-M,FAIL,288 characters
+https://carpetcleaningblufftonsc.com/bluffton-oyster-factory-park/,https://carpetcleaningblufftonsc.com/bluffton-oyster-factory-park/,unknown,COM-W,N/A,932 words
+https://carpetcleaningblufftonsc.com/bluffton-oyster-factory-park/,https://carpetcleaningblufftonsc.com/bluffton-oyster-factory-park/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/bluffton/,https://carpetcleaningblufftonsc.com/bluffton/,unknown,COM-T,PASS,51 characters
+https://carpetcleaningblufftonsc.com/bluffton/,https://carpetcleaningblufftonsc.com/bluffton/,unknown,COM-M,FAIL,180 characters
+https://carpetcleaningblufftonsc.com/bluffton/,https://carpetcleaningblufftonsc.com/bluffton/,unknown,COM-W,N/A,660 words
+https://carpetcleaningblufftonsc.com/bluffton/,https://carpetcleaningblufftonsc.com/bluffton/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/boat-and-auto-interior-cleaning/,https://carpetcleaningblufftonsc.com/boat-and-auto-interior-cleaning/,unknown,COM-T,PASS,58 characters
+https://carpetcleaningblufftonsc.com/boat-and-auto-interior-cleaning/,https://carpetcleaningblufftonsc.com/boat-and-auto-interior-cleaning/,unknown,COM-M,FAIL,181 characters
+https://carpetcleaningblufftonsc.com/boat-and-auto-interior-cleaning/,https://carpetcleaningblufftonsc.com/boat-and-auto-interior-cleaning/,unknown,COM-W,N/A,512 words
+https://carpetcleaningblufftonsc.com/boat-and-auto-interior-cleaning/,https://carpetcleaningblufftonsc.com/boat-and-auto-interior-cleaning/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/boat-mold-mildew-smell-removal-bluffton-sc/,https://carpetcleaningblufftonsc.com/boat-mold-mildew-smell-removal-bluffton-sc/,unknown,COM-T,FAIL,65 characters
+https://carpetcleaningblufftonsc.com/boat-mold-mildew-smell-removal-bluffton-sc/,https://carpetcleaningblufftonsc.com/boat-mold-mildew-smell-removal-bluffton-sc/,unknown,COM-M,FAIL,204 characters
+https://carpetcleaningblufftonsc.com/boat-mold-mildew-smell-removal-bluffton-sc/,https://carpetcleaningblufftonsc.com/boat-mold-mildew-smell-removal-bluffton-sc/,unknown,COM-W,N/A,2794 words
+https://carpetcleaningblufftonsc.com/boat-mold-mildew-smell-removal-bluffton-sc/,https://carpetcleaningblufftonsc.com/boat-mold-mildew-smell-removal-bluffton-sc/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/carpet-cleaning-asthma-indoor-air-quality-bluffton-sc/,https://carpetcleaningblufftonsc.com/carpet-cleaning-asthma-indoor-air-quality-bluffton-sc/,unknown,COM-T,FAIL,73 characters
+https://carpetcleaningblufftonsc.com/carpet-cleaning-asthma-indoor-air-quality-bluffton-sc/,https://carpetcleaningblufftonsc.com/carpet-cleaning-asthma-indoor-air-quality-bluffton-sc/,unknown,COM-M,FAIL,202 characters
+https://carpetcleaningblufftonsc.com/carpet-cleaning-asthma-indoor-air-quality-bluffton-sc/,https://carpetcleaningblufftonsc.com/carpet-cleaning-asthma-indoor-air-quality-bluffton-sc/,unknown,COM-W,N/A,3245 words
+https://carpetcleaningblufftonsc.com/carpet-cleaning-asthma-indoor-air-quality-bluffton-sc/,https://carpetcleaningblufftonsc.com/carpet-cleaning-asthma-indoor-air-quality-bluffton-sc/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/carpet-cleaning-for-allergy-relief/,https://carpetcleaningblufftonsc.com/carpet-cleaning-for-allergy-relief/,unknown,COM-T,PASS,34 characters
+https://carpetcleaningblufftonsc.com/carpet-cleaning-for-allergy-relief/,https://carpetcleaningblufftonsc.com/carpet-cleaning-for-allergy-relief/,unknown,COM-M,FAIL,331 characters
+https://carpetcleaningblufftonsc.com/carpet-cleaning-for-allergy-relief/,https://carpetcleaningblufftonsc.com/carpet-cleaning-for-allergy-relief/,unknown,COM-W,N/A,1318 words
+https://carpetcleaningblufftonsc.com/carpet-cleaning-for-allergy-relief/,https://carpetcleaningblufftonsc.com/carpet-cleaning-for-allergy-relief/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/carpet-cleaning-pollen-allergies-bluffton-sc/,https://carpetcleaningblufftonsc.com/carpet-cleaning-pollen-allergies-bluffton-sc/,unknown,COM-T,FAIL,63 characters
+https://carpetcleaningblufftonsc.com/carpet-cleaning-pollen-allergies-bluffton-sc/,https://carpetcleaningblufftonsc.com/carpet-cleaning-pollen-allergies-bluffton-sc/,unknown,COM-M,FAIL,194 characters
+https://carpetcleaningblufftonsc.com/carpet-cleaning-pollen-allergies-bluffton-sc/,https://carpetcleaningblufftonsc.com/carpet-cleaning-pollen-allergies-bluffton-sc/,unknown,COM-W,N/A,5286 words
+https://carpetcleaningblufftonsc.com/carpet-cleaning-pollen-allergies-bluffton-sc/,https://carpetcleaningblufftonsc.com/carpet-cleaning-pollen-allergies-bluffton-sc/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/carpet-cleaning/,https://carpetcleaningblufftonsc.com/carpet-cleaning/,unknown,COM-T,PASS,42 characters
+https://carpetcleaningblufftonsc.com/carpet-cleaning/,https://carpetcleaningblufftonsc.com/carpet-cleaning/,unknown,COM-M,FAIL,196 characters
+https://carpetcleaningblufftonsc.com/carpet-cleaning/,https://carpetcleaningblufftonsc.com/carpet-cleaning/,unknown,COM-W,N/A,775 words
+https://carpetcleaningblufftonsc.com/carpet-cleaning/,https://carpetcleaningblufftonsc.com/carpet-cleaning/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/category/area-carpets/,https://carpetcleaningblufftonsc.com/category/area-carpets/,unknown,COM-T,PASS,40 characters
+https://carpetcleaningblufftonsc.com/category/area-carpets/,https://carpetcleaningblufftonsc.com/category/area-carpets/,unknown,COM-M,FAIL,0 characters
+https://carpetcleaningblufftonsc.com/category/area-carpets/,https://carpetcleaningblufftonsc.com/category/area-carpets/,unknown,COM-W,N/A,169 words
+https://carpetcleaningblufftonsc.com/category/area-carpets/,https://carpetcleaningblufftonsc.com/category/area-carpets/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/,unknown,COM-T,PASS,43 characters
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/,unknown,COM-M,FAIL,0 characters
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/,unknown,COM-W,N/A,409 words
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/2/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/2/,unknown,COM-T,PASS,44 characters
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/2/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/2/,unknown,COM-M,FAIL,0 characters
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/2/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/2/,unknown,COM-W,N/A,425 words
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/2/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/2/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/3/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/3/,unknown,COM-T,PASS,44 characters
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/3/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/3/,unknown,COM-M,FAIL,0 characters
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/3/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/3/,unknown,COM-W,N/A,323 words
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/3/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/3/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/4/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/4/,unknown,COM-T,PASS,44 characters
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/4/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/4/,unknown,COM-M,FAIL,0 characters
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/4/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/4/,unknown,COM-W,N/A,310 words
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/4/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/4/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/5/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/5/,unknown,COM-T,PASS,44 characters
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/5/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/5/,unknown,COM-M,FAIL,0 characters
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/5/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/5/,unknown,COM-W,N/A,131 words
+https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/5/,https://carpetcleaningblufftonsc.com/category/carpet-cleaning/page/5/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/,unknown,COM-T,PASS,45 characters
+https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/,unknown,COM-M,FAIL,0 characters
+https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/,unknown,COM-W,N/A,408 words
+https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/2/,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/2/,unknown,COM-T,PASS,46 characters
+https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/2/,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/2/,unknown,COM-M,FAIL,0 characters
+https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/2/,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/2/,unknown,COM-W,N/A,406 words
+https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/2/,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/2/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/3/,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/3/,unknown,COM-T,PASS,46 characters
+https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/3/,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/3/,unknown,COM-M,FAIL,0 characters
+https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/3/,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/3/,unknown,COM-W,N/A,128 words
+https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/3/,https://carpetcleaningblufftonsc.com/category/know-the-area/local-information/page/3/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/,https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/,unknown,COM-T,PASS,41 characters
+https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/,https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/,unknown,COM-M,FAIL,0 characters
+https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/,https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/,unknown,COM-W,N/A,409 words
+https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/,https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/page/2/,https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/page/2/,unknown,COM-T,PASS,42 characters
+https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/page/2/,https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/page/2/,unknown,COM-M,FAIL,0 characters
+https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/page/2/,https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/page/2/,unknown,COM-W,N/A,295 words
+https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/page/2/,https://carpetcleaningblufftonsc.com/category/know-the-area/whats-nearby/page/2/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/category/uncategorized/,https://carpetcleaningblufftonsc.com/category/uncategorized/,unknown,COM-T,PASS,41 characters
+https://carpetcleaningblufftonsc.com/category/uncategorized/,https://carpetcleaningblufftonsc.com/category/uncategorized/,unknown,COM-M,FAIL,0 characters
+https://carpetcleaningblufftonsc.com/category/uncategorized/,https://carpetcleaningblufftonsc.com/category/uncategorized/,unknown,COM-W,N/A,274 words
+https://carpetcleaningblufftonsc.com/category/uncategorized/,https://carpetcleaningblufftonsc.com/category/uncategorized/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/category/upholstery/,https://carpetcleaningblufftonsc.com/category/upholstery/,unknown,COM-T,PASS,38 characters
+https://carpetcleaningblufftonsc.com/category/upholstery/,https://carpetcleaningblufftonsc.com/category/upholstery/,unknown,COM-M,FAIL,0 characters
+https://carpetcleaningblufftonsc.com/category/upholstery/,https://carpetcleaningblufftonsc.com/category/upholstery/,unknown,COM-W,N/A,208 words
+https://carpetcleaningblufftonsc.com/category/upholstery/,https://carpetcleaningblufftonsc.com/category/upholstery/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/charles-cotesworth-pinckney-historical-marker/,https://carpetcleaningblufftonsc.com/charles-cotesworth-pinckney-historical-marker/,unknown,COM-T,PASS,45 characters
+https://carpetcleaningblufftonsc.com/charles-cotesworth-pinckney-historical-marker/,https://carpetcleaningblufftonsc.com/charles-cotesworth-pinckney-historical-marker/,unknown,COM-M,FAIL,163 characters
+https://carpetcleaningblufftonsc.com/charles-cotesworth-pinckney-historical-marker/,https://carpetcleaningblufftonsc.com/charles-cotesworth-pinckney-historical-marker/,unknown,COM-W,N/A,720 words
+https://carpetcleaningblufftonsc.com/charles-cotesworth-pinckney-historical-marker/,https://carpetcleaningblufftonsc.com/charles-cotesworth-pinckney-historical-marker/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/church-of-the-cross/,https://carpetcleaningblufftonsc.com/church-of-the-cross/,unknown,COM-T,PASS,19 characters
+https://carpetcleaningblufftonsc.com/church-of-the-cross/,https://carpetcleaningblufftonsc.com/church-of-the-cross/,unknown,COM-M,FAIL,180 characters
+https://carpetcleaningblufftonsc.com/church-of-the-cross/,https://carpetcleaningblufftonsc.com/church-of-the-cross/,unknown,COM-W,N/A,922 words
+https://carpetcleaningblufftonsc.com/church-of-the-cross/,https://carpetcleaningblufftonsc.com/church-of-the-cross/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/clean-carpets-matter-more-than-you-think/,https://carpetcleaningblufftonsc.com/clean-carpets-matter-more-than-you-think/,unknown,COM-T,FAIL,72 characters
+https://carpetcleaningblufftonsc.com/clean-carpets-matter-more-than-you-think/,https://carpetcleaningblufftonsc.com/clean-carpets-matter-more-than-you-think/,unknown,COM-M,FAIL,168 characters
+https://carpetcleaningblufftonsc.com/clean-carpets-matter-more-than-you-think/,https://carpetcleaningblufftonsc.com/clean-carpets-matter-more-than-you-think/,unknown,COM-W,N/A,1745 words
+https://carpetcleaningblufftonsc.com/clean-carpets-matter-more-than-you-think/,https://carpetcleaningblufftonsc.com/clean-carpets-matter-more-than-you-think/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/clean-carpets-the-secret-to-a-healthy-home/,https://carpetcleaningblufftonsc.com/clean-carpets-the-secret-to-a-healthy-home/,unknown,COM-T,PASS,43 characters
+https://carpetcleaningblufftonsc.com/clean-carpets-the-secret-to-a-healthy-home/,https://carpetcleaningblufftonsc.com/clean-carpets-the-secret-to-a-healthy-home/,unknown,COM-M,PASS,148 characters
+https://carpetcleaningblufftonsc.com/clean-carpets-the-secret-to-a-healthy-home/,https://carpetcleaningblufftonsc.com/clean-carpets-the-secret-to-a-healthy-home/,unknown,COM-W,N/A,911 words
+https://carpetcleaningblufftonsc.com/clean-carpets-the-secret-to-a-healthy-home/,https://carpetcleaningblufftonsc.com/clean-carpets-the-secret-to-a-healthy-home/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/coastal-discovery-museum/,https://carpetcleaningblufftonsc.com/coastal-discovery-museum/,unknown,COM-T,PASS,24 characters
+https://carpetcleaningblufftonsc.com/coastal-discovery-museum/,https://carpetcleaningblufftonsc.com/coastal-discovery-museum/,unknown,COM-M,FAIL,189 characters
+https://carpetcleaningblufftonsc.com/coastal-discovery-museum/,https://carpetcleaningblufftonsc.com/coastal-discovery-museum/,unknown,COM-W,N/A,943 words
+https://carpetcleaningblufftonsc.com/coastal-discovery-museum/,https://carpetcleaningblufftonsc.com/coastal-discovery-museum/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/commercial-carpet-cleaning/,https://carpetcleaningblufftonsc.com/commercial-carpet-cleaning/,unknown,COM-T,PASS,53 characters
+https://carpetcleaningblufftonsc.com/commercial-carpet-cleaning/,https://carpetcleaningblufftonsc.com/commercial-carpet-cleaning/,unknown,COM-M,FAIL,183 characters
+https://carpetcleaningblufftonsc.com/commercial-carpet-cleaning/,https://carpetcleaningblufftonsc.com/commercial-carpet-cleaning/,unknown,COM-W,N/A,644 words
+https://carpetcleaningblufftonsc.com/commercial-carpet-cleaning/,https://carpetcleaningblufftonsc.com/commercial-carpet-cleaning/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/contact-us/,https://carpetcleaningblufftonsc.com/contact-us/,unknown,COM-T,PASS,32 characters
+https://carpetcleaningblufftonsc.com/contact-us/,https://carpetcleaningblufftonsc.com/contact-us/,unknown,COM-M,PASS,141 characters
+https://carpetcleaningblufftonsc.com/contact-us/,https://carpetcleaningblufftonsc.com/contact-us/,unknown,COM-W,N/A,113 words
+https://carpetcleaningblufftonsc.com/contact-us/,https://carpetcleaningblufftonsc.com/contact-us/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/forsyth-park/,https://carpetcleaningblufftonsc.com/forsyth-park/,unknown,COM-T,PASS,39 characters
+https://carpetcleaningblufftonsc.com/forsyth-park/,https://carpetcleaningblufftonsc.com/forsyth-park/,unknown,COM-M,FAIL,255 characters
+https://carpetcleaningblufftonsc.com/forsyth-park/,https://carpetcleaningblufftonsc.com/forsyth-park/,unknown,COM-W,N/A,921 words
+https://carpetcleaningblufftonsc.com/forsyth-park/,https://carpetcleaningblufftonsc.com/forsyth-park/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/garvin-garvey-house/,https://carpetcleaningblufftonsc.com/garvin-garvey-house/,unknown,COM-T,PASS,21 characters
+https://carpetcleaningblufftonsc.com/garvin-garvey-house/,https://carpetcleaningblufftonsc.com/garvin-garvey-house/,unknown,COM-M,PASS,145 characters
+https://carpetcleaningblufftonsc.com/garvin-garvey-house/,https://carpetcleaningblufftonsc.com/garvin-garvey-house/,unknown,COM-W,N/A,1059 words
+https://carpetcleaningblufftonsc.com/garvin-garvey-house/,https://carpetcleaningblufftonsc.com/garvin-garvey-house/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/gullah-museum-of-hilton-head-island/,https://carpetcleaningblufftonsc.com/gullah-museum-of-hilton-head-island/,unknown,COM-T,PASS,35 characters
+https://carpetcleaningblufftonsc.com/gullah-museum-of-hilton-head-island/,https://carpetcleaningblufftonsc.com/gullah-museum-of-hilton-head-island/,unknown,COM-M,PASS,151 characters
+https://carpetcleaningblufftonsc.com/gullah-museum-of-hilton-head-island/,https://carpetcleaningblufftonsc.com/gullah-museum-of-hilton-head-island/,unknown,COM-W,N/A,919 words
+https://carpetcleaningblufftonsc.com/gullah-museum-of-hilton-head-island/,https://carpetcleaningblufftonsc.com/gullah-museum-of-hilton-head-island/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/harbour-town-lighthouse/,https://carpetcleaningblufftonsc.com/harbour-town-lighthouse/,unknown,COM-T,PASS,23 characters
+https://carpetcleaningblufftonsc.com/harbour-town-lighthouse/,https://carpetcleaningblufftonsc.com/harbour-town-lighthouse/,unknown,COM-M,PASS,154 characters
+https://carpetcleaningblufftonsc.com/harbour-town-lighthouse/,https://carpetcleaningblufftonsc.com/harbour-town-lighthouse/,unknown,COM-W,N/A,939 words
+https://carpetcleaningblufftonsc.com/harbour-town-lighthouse/,https://carpetcleaningblufftonsc.com/harbour-town-lighthouse/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/hardeeville/,https://carpetcleaningblufftonsc.com/hardeeville/,unknown,COM-T,PASS,54 characters
+https://carpetcleaningblufftonsc.com/hardeeville/,https://carpetcleaningblufftonsc.com/hardeeville/,unknown,COM-M,FAIL,181 characters
+https://carpetcleaningblufftonsc.com/hardeeville/,https://carpetcleaningblufftonsc.com/hardeeville/,unknown,COM-W,N/A,600 words
+https://carpetcleaningblufftonsc.com/hardeeville/,https://carpetcleaningblufftonsc.com/hardeeville/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/hardwood-floor-cleaning/,https://carpetcleaningblufftonsc.com/hardwood-floor-cleaning/,unknown,COM-T,PASS,50 characters
+https://carpetcleaningblufftonsc.com/hardwood-floor-cleaning/,https://carpetcleaningblufftonsc.com/hardwood-floor-cleaning/,unknown,COM-M,PASS,149 characters
+https://carpetcleaningblufftonsc.com/hardwood-floor-cleaning/,https://carpetcleaningblufftonsc.com/hardwood-floor-cleaning/,unknown,COM-W,N/A,701 words
+https://carpetcleaningblufftonsc.com/hardwood-floor-cleaning/,https://carpetcleaningblufftonsc.com/hardwood-floor-cleaning/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/hardwood-floor-cupping-warping-bluffton-sc/,https://carpetcleaningblufftonsc.com/hardwood-floor-cupping-warping-bluffton-sc/,unknown,COM-T,PASS,59 characters
+https://carpetcleaningblufftonsc.com/hardwood-floor-cupping-warping-bluffton-sc/,https://carpetcleaningblufftonsc.com/hardwood-floor-cupping-warping-bluffton-sc/,unknown,COM-M,FAIL,213 characters
+https://carpetcleaningblufftonsc.com/hardwood-floor-cupping-warping-bluffton-sc/,https://carpetcleaningblufftonsc.com/hardwood-floor-cupping-warping-bluffton-sc/,unknown,COM-W,N/A,2910 words
+https://carpetcleaningblufftonsc.com/hardwood-floor-cupping-warping-bluffton-sc/,https://carpetcleaningblufftonsc.com/hardwood-floor-cupping-warping-bluffton-sc/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/harper-fowlkes-house/,https://carpetcleaningblufftonsc.com/harper-fowlkes-house/,unknown,COM-T,PASS,20 characters
+https://carpetcleaningblufftonsc.com/harper-fowlkes-house/,https://carpetcleaningblufftonsc.com/harper-fowlkes-house/,unknown,COM-M,FAIL,162 characters
+https://carpetcleaningblufftonsc.com/harper-fowlkes-house/,https://carpetcleaningblufftonsc.com/harper-fowlkes-house/,unknown,COM-W,N/A,938 words
+https://carpetcleaningblufftonsc.com/harper-fowlkes-house/,https://carpetcleaningblufftonsc.com/harper-fowlkes-house/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/heyward-house-museum-and-welcome-center/,https://carpetcleaningblufftonsc.com/heyward-house-museum-and-welcome-center/,unknown,COM-T,PASS,39 characters
+https://carpetcleaningblufftonsc.com/heyward-house-museum-and-welcome-center/,https://carpetcleaningblufftonsc.com/heyward-house-museum-and-welcome-center/,unknown,COM-M,PASS,149 characters
+https://carpetcleaningblufftonsc.com/heyward-house-museum-and-welcome-center/,https://carpetcleaningblufftonsc.com/heyward-house-museum-and-welcome-center/,unknown,COM-W,N/A,954 words
+https://carpetcleaningblufftonsc.com/heyward-house-museum-and-welcome-center/,https://carpetcleaningblufftonsc.com/heyward-house-museum-and-welcome-center/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/heyward-house-museum-welcome-center/,https://carpetcleaningblufftonsc.com/heyward-house-museum-welcome-center/,unknown,COM-T,PASS,37 characters
+https://carpetcleaningblufftonsc.com/heyward-house-museum-welcome-center/,https://carpetcleaningblufftonsc.com/heyward-house-museum-welcome-center/,unknown,COM-M,FAIL,110 characters
+https://carpetcleaningblufftonsc.com/heyward-house-museum-welcome-center/,https://carpetcleaningblufftonsc.com/heyward-house-museum-welcome-center/,unknown,COM-W,N/A,924 words
+https://carpetcleaningblufftonsc.com/heyward-house-museum-welcome-center/,https://carpetcleaningblufftonsc.com/heyward-house-museum-welcome-center/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/hilton-head/,https://carpetcleaningblufftonsc.com/hilton-head/,unknown,COM-T,FAIL,61 characters
+https://carpetcleaningblufftonsc.com/hilton-head/,https://carpetcleaningblufftonsc.com/hilton-head/,unknown,COM-M,FAIL,190 characters
+https://carpetcleaningblufftonsc.com/hilton-head/,https://carpetcleaningblufftonsc.com/hilton-head/,unknown,COM-W,N/A,667 words
+https://carpetcleaningblufftonsc.com/hilton-head/,https://carpetcleaningblufftonsc.com/hilton-head/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/how-to-get-the-musty-smell-out-of-the-carpet/,https://carpetcleaningblufftonsc.com/how-to-get-the-musty-smell-out-of-the-carpet/,unknown,COM-T,PASS,44 characters
+https://carpetcleaningblufftonsc.com/how-to-get-the-musty-smell-out-of-the-carpet/,https://carpetcleaningblufftonsc.com/how-to-get-the-musty-smell-out-of-the-carpet/,unknown,COM-M,PASS,147 characters
+https://carpetcleaningblufftonsc.com/how-to-get-the-musty-smell-out-of-the-carpet/,https://carpetcleaningblufftonsc.com/how-to-get-the-musty-smell-out-of-the-carpet/,unknown,COM-W,N/A,1234 words
+https://carpetcleaningblufftonsc.com/how-to-get-the-musty-smell-out-of-the-carpet/,https://carpetcleaningblufftonsc.com/how-to-get-the-musty-smell-out-of-the-carpet/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/how-to-get-the-smell-of-pet-urine-out-of-your-carpet/,https://carpetcleaningblufftonsc.com/how-to-get-the-smell-of-pet-urine-out-of-your-carpet/,unknown,COM-T,FAIL,79 characters
+https://carpetcleaningblufftonsc.com/how-to-get-the-smell-of-pet-urine-out-of-your-carpet/,https://carpetcleaningblufftonsc.com/how-to-get-the-smell-of-pet-urine-out-of-your-carpet/,unknown,COM-M,FAIL,198 characters
+https://carpetcleaningblufftonsc.com/how-to-get-the-smell-of-pet-urine-out-of-your-carpet/,https://carpetcleaningblufftonsc.com/how-to-get-the-smell-of-pet-urine-out-of-your-carpet/,unknown,COM-W,N/A,824 words
+https://carpetcleaningblufftonsc.com/how-to-get-the-smell-of-pet-urine-out-of-your-carpet/,https://carpetcleaningblufftonsc.com/how-to-get-the-smell-of-pet-urine-out-of-your-carpet/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/if-you-dont-hire-a-carpet-cleaning-company-now-youll-regret-it-later/,https://carpetcleaningblufftonsc.com/if-you-dont-hire-a-carpet-cleaning-company-now-youll-regret-it-later/,unknown,COM-T,FAIL,98 characters
+https://carpetcleaningblufftonsc.com/if-you-dont-hire-a-carpet-cleaning-company-now-youll-regret-it-later/,https://carpetcleaningblufftonsc.com/if-you-dont-hire-a-carpet-cleaning-company-now-youll-regret-it-later/,unknown,COM-M,FAIL,252 characters
+https://carpetcleaningblufftonsc.com/if-you-dont-hire-a-carpet-cleaning-company-now-youll-regret-it-later/,https://carpetcleaningblufftonsc.com/if-you-dont-hire-a-carpet-cleaning-company-now-youll-regret-it-later/,unknown,COM-W,N/A,944 words
+https://carpetcleaningblufftonsc.com/if-you-dont-hire-a-carpet-cleaning-company-now-youll-regret-it-later/,https://carpetcleaningblufftonsc.com/if-you-dont-hire-a-carpet-cleaning-company-now-youll-regret-it-later/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/is-it-worth-it-to-stretch-your-carpets/,https://carpetcleaningblufftonsc.com/is-it-worth-it-to-stretch-your-carpets/,unknown,COM-T,PASS,39 characters
+https://carpetcleaningblufftonsc.com/is-it-worth-it-to-stretch-your-carpets/,https://carpetcleaningblufftonsc.com/is-it-worth-it-to-stretch-your-carpets/,unknown,COM-M,PASS,154 characters
+https://carpetcleaningblufftonsc.com/is-it-worth-it-to-stretch-your-carpets/,https://carpetcleaningblufftonsc.com/is-it-worth-it-to-stretch-your-carpets/,unknown,COM-W,N/A,1874 words
+https://carpetcleaningblufftonsc.com/is-it-worth-it-to-stretch-your-carpets/,https://carpetcleaningblufftonsc.com/is-it-worth-it-to-stretch-your-carpets/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/ladys-island/,https://carpetcleaningblufftonsc.com/ladys-island/,unknown,COM-T,PASS,56 characters
+https://carpetcleaningblufftonsc.com/ladys-island/,https://carpetcleaningblufftonsc.com/ladys-island/,unknown,COM-M,FAIL,185 characters
+https://carpetcleaningblufftonsc.com/ladys-island/,https://carpetcleaningblufftonsc.com/ladys-island/,unknown,COM-W,N/A,641 words
+https://carpetcleaningblufftonsc.com/ladys-island/,https://carpetcleaningblufftonsc.com/ladys-island/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/move-furniture-before-carpet-cleaning-bluffton-sc/,https://carpetcleaningblufftonsc.com/move-furniture-before-carpet-cleaning-bluffton-sc/,unknown,COM-T,FAIL,69 characters
+https://carpetcleaningblufftonsc.com/move-furniture-before-carpet-cleaning-bluffton-sc/,https://carpetcleaningblufftonsc.com/move-furniture-before-carpet-cleaning-bluffton-sc/,unknown,COM-M,PASS,144 characters
+https://carpetcleaningblufftonsc.com/move-furniture-before-carpet-cleaning-bluffton-sc/,https://carpetcleaningblufftonsc.com/move-furniture-before-carpet-cleaning-bluffton-sc/,unknown,COM-W,N/A,1961 words
+https://carpetcleaningblufftonsc.com/move-furniture-before-carpet-cleaning-bluffton-sc/,https://carpetcleaningblufftonsc.com/move-furniture-before-carpet-cleaning-bluffton-sc/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/old-town-bluffton/,https://carpetcleaningblufftonsc.com/old-town-bluffton/,unknown,COM-T,PASS,17 characters
+https://carpetcleaningblufftonsc.com/old-town-bluffton/,https://carpetcleaningblufftonsc.com/old-town-bluffton/,unknown,COM-M,FAIL,105 characters
+https://carpetcleaningblufftonsc.com/old-town-bluffton/,https://carpetcleaningblufftonsc.com/old-town-bluffton/,unknown,COM-W,N/A,743 words
+https://carpetcleaningblufftonsc.com/old-town-bluffton/,https://carpetcleaningblufftonsc.com/old-town-bluffton/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/palmetto-oaks-sculpture-garden/,https://carpetcleaningblufftonsc.com/palmetto-oaks-sculpture-garden/,unknown,COM-T,PASS,30 characters
+https://carpetcleaningblufftonsc.com/palmetto-oaks-sculpture-garden/,https://carpetcleaningblufftonsc.com/palmetto-oaks-sculpture-garden/,unknown,COM-M,FAIL,163 characters
+https://carpetcleaningblufftonsc.com/palmetto-oaks-sculpture-garden/,https://carpetcleaningblufftonsc.com/palmetto-oaks-sculpture-garden/,unknown,COM-W,N/A,943 words
+https://carpetcleaningblufftonsc.com/palmetto-oaks-sculpture-garden/,https://carpetcleaningblufftonsc.com/palmetto-oaks-sculpture-garden/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/pet-odor-removal/,https://carpetcleaningblufftonsc.com/pet-odor-removal/,unknown,COM-T,PASS,43 characters
+https://carpetcleaningblufftonsc.com/pet-odor-removal/,https://carpetcleaningblufftonsc.com/pet-odor-removal/,unknown,COM-M,PASS,159 characters
+https://carpetcleaningblufftonsc.com/pet-odor-removal/,https://carpetcleaningblufftonsc.com/pet-odor-removal/,unknown,COM-W,N/A,810 words
+https://carpetcleaningblufftonsc.com/pet-odor-removal/,https://carpetcleaningblufftonsc.com/pet-odor-removal/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/port-royal-sound-foundation-maritime-center/,https://carpetcleaningblufftonsc.com/port-royal-sound-foundation-maritime-center/,unknown,COM-T,PASS,43 characters
+https://carpetcleaningblufftonsc.com/port-royal-sound-foundation-maritime-center/,https://carpetcleaningblufftonsc.com/port-royal-sound-foundation-maritime-center/,unknown,COM-M,FAIL,115 characters
+https://carpetcleaningblufftonsc.com/port-royal-sound-foundation-maritime-center/,https://carpetcleaningblufftonsc.com/port-royal-sound-foundation-maritime-center/,unknown,COM-W,N/A,964 words
+https://carpetcleaningblufftonsc.com/port-royal-sound-foundation-maritime-center/,https://carpetcleaningblufftonsc.com/port-royal-sound-foundation-maritime-center/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/practical-guide-when-should-you-get-your-carpet-professionally-cleaned/,https://carpetcleaningblufftonsc.com/practical-guide-when-should-you-get-your-carpet-professionally-cleaned/,unknown,COM-T,PASS,54 characters
+https://carpetcleaningblufftonsc.com/practical-guide-when-should-you-get-your-carpet-professionally-cleaned/,https://carpetcleaningblufftonsc.com/practical-guide-when-should-you-get-your-carpet-professionally-cleaned/,unknown,COM-M,FAIL,282 characters
+https://carpetcleaningblufftonsc.com/practical-guide-when-should-you-get-your-carpet-professionally-cleaned/,https://carpetcleaningblufftonsc.com/practical-guide-when-should-you-get-your-carpet-professionally-cleaned/,unknown,COM-W,N/A,1214 words
+https://carpetcleaningblufftonsc.com/practical-guide-when-should-you-get-your-carpet-professionally-cleaned/,https://carpetcleaningblufftonsc.com/practical-guide-when-should-you-get-your-carpet-professionally-cleaned/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/ridgeland/,https://carpetcleaningblufftonsc.com/ridgeland/,unknown,COM-T,PASS,52 characters
+https://carpetcleaningblufftonsc.com/ridgeland/,https://carpetcleaningblufftonsc.com/ridgeland/,unknown,COM-M,FAIL,179 characters
+https://carpetcleaningblufftonsc.com/ridgeland/,https://carpetcleaningblufftonsc.com/ridgeland/,unknown,COM-W,N/A,613 words
+https://carpetcleaningblufftonsc.com/ridgeland/,https://carpetcleaningblufftonsc.com/ridgeland/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/rose-hill-mansion/,https://carpetcleaningblufftonsc.com/rose-hill-mansion/,unknown,COM-T,PASS,17 characters
+https://carpetcleaningblufftonsc.com/rose-hill-mansion/,https://carpetcleaningblufftonsc.com/rose-hill-mansion/,unknown,COM-M,PASS,131 characters
+https://carpetcleaningblufftonsc.com/rose-hill-mansion/,https://carpetcleaningblufftonsc.com/rose-hill-mansion/,unknown,COM-W,N/A,799 words
+https://carpetcleaningblufftonsc.com/rose-hill-mansion/,https://carpetcleaningblufftonsc.com/rose-hill-mansion/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/rug-cleaning/,https://carpetcleaningblufftonsc.com/rug-cleaning/,unknown,COM-T,PASS,39 characters
+https://carpetcleaningblufftonsc.com/rug-cleaning/,https://carpetcleaningblufftonsc.com/rug-cleaning/,unknown,COM-M,FAIL,161 characters
+https://carpetcleaningblufftonsc.com/rug-cleaning/,https://carpetcleaningblufftonsc.com/rug-cleaning/,unknown,COM-W,N/A,523 words
+https://carpetcleaningblufftonsc.com/rug-cleaning/,https://carpetcleaningblufftonsc.com/rug-cleaning/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/savannah-national-wildlife-refuge/,https://carpetcleaningblufftonsc.com/savannah-national-wildlife-refuge/,unknown,COM-T,PASS,33 characters
+https://carpetcleaningblufftonsc.com/savannah-national-wildlife-refuge/,https://carpetcleaningblufftonsc.com/savannah-national-wildlife-refuge/,unknown,COM-M,FAIL,167 characters
+https://carpetcleaningblufftonsc.com/savannah-national-wildlife-refuge/,https://carpetcleaningblufftonsc.com/savannah-national-wildlife-refuge/,unknown,COM-W,N/A,994 words
+https://carpetcleaningblufftonsc.com/savannah-national-wildlife-refuge/,https://carpetcleaningblufftonsc.com/savannah-national-wildlife-refuge/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/seven-oaks/,https://carpetcleaningblufftonsc.com/seven-oaks/,unknown,COM-T,PASS,10 characters
+https://carpetcleaningblufftonsc.com/seven-oaks/,https://carpetcleaningblufftonsc.com/seven-oaks/,unknown,COM-M,PASS,122 characters
+https://carpetcleaningblufftonsc.com/seven-oaks/,https://carpetcleaningblufftonsc.com/seven-oaks/,unknown,COM-W,N/A,838 words
+https://carpetcleaningblufftonsc.com/seven-oaks/,https://carpetcleaningblufftonsc.com/seven-oaks/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/society-of-bluffton-artists/,https://carpetcleaningblufftonsc.com/society-of-bluffton-artists/,unknown,COM-T,PASS,27 characters
+https://carpetcleaningblufftonsc.com/society-of-bluffton-artists/,https://carpetcleaningblufftonsc.com/society-of-bluffton-artists/,unknown,COM-M,FAIL,256 characters
+https://carpetcleaningblufftonsc.com/society-of-bluffton-artists/,https://carpetcleaningblufftonsc.com/society-of-bluffton-artists/,unknown,COM-W,N/A,971 words
+https://carpetcleaningblufftonsc.com/society-of-bluffton-artists/,https://carpetcleaningblufftonsc.com/society-of-bluffton-artists/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/steam-cleaning-humidity-bluffton-sc/,https://carpetcleaningblufftonsc.com/steam-cleaning-humidity-bluffton-sc/,unknown,COM-T,PASS,50 characters
+https://carpetcleaningblufftonsc.com/steam-cleaning-humidity-bluffton-sc/,https://carpetcleaningblufftonsc.com/steam-cleaning-humidity-bluffton-sc/,unknown,COM-M,FAIL,201 characters
+https://carpetcleaningblufftonsc.com/steam-cleaning-humidity-bluffton-sc/,https://carpetcleaningblufftonsc.com/steam-cleaning-humidity-bluffton-sc/,unknown,COM-W,N/A,3227 words
+https://carpetcleaningblufftonsc.com/steam-cleaning-humidity-bluffton-sc/,https://carpetcleaningblufftonsc.com/steam-cleaning-humidity-bluffton-sc/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/terms-of-service/,https://carpetcleaningblufftonsc.com/terms-of-service/,unknown,COM-T,PASS,43 characters
+https://carpetcleaningblufftonsc.com/terms-of-service/,https://carpetcleaningblufftonsc.com/terms-of-service/,unknown,COM-M,FAIL,332 characters
+https://carpetcleaningblufftonsc.com/terms-of-service/,https://carpetcleaningblufftonsc.com/terms-of-service/,unknown,COM-W,N/A,629 words
+https://carpetcleaningblufftonsc.com/terms-of-service/,https://carpetcleaningblufftonsc.com/terms-of-service/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/the-4-main-factors-affecting-carpet-cleaning-costs/,https://carpetcleaningblufftonsc.com/the-4-main-factors-affecting-carpet-cleaning-costs/,unknown,COM-T,FAIL,77 characters
+https://carpetcleaningblufftonsc.com/the-4-main-factors-affecting-carpet-cleaning-costs/,https://carpetcleaningblufftonsc.com/the-4-main-factors-affecting-carpet-cleaning-costs/,unknown,COM-M,PASS,125 characters
+https://carpetcleaningblufftonsc.com/the-4-main-factors-affecting-carpet-cleaning-costs/,https://carpetcleaningblufftonsc.com/the-4-main-factors-affecting-carpet-cleaning-costs/,unknown,COM-W,N/A,929 words
+https://carpetcleaningblufftonsc.com/the-4-main-factors-affecting-carpet-cleaning-costs/,https://carpetcleaningblufftonsc.com/the-4-main-factors-affecting-carpet-cleaning-costs/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/the-best-carpet-cleaning-tips/,https://carpetcleaningblufftonsc.com/the-best-carpet-cleaning-tips/,unknown,COM-T,FAIL,74 characters
+https://carpetcleaningblufftonsc.com/the-best-carpet-cleaning-tips/,https://carpetcleaningblufftonsc.com/the-best-carpet-cleaning-tips/,unknown,COM-M,FAIL,395 characters
+https://carpetcleaningblufftonsc.com/the-best-carpet-cleaning-tips/,https://carpetcleaningblufftonsc.com/the-best-carpet-cleaning-tips/,unknown,COM-W,N/A,1079 words
+https://carpetcleaningblufftonsc.com/the-best-carpet-cleaning-tips/,https://carpetcleaningblufftonsc.com/the-best-carpet-cleaning-tips/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/the-best-way-to-maintain-your-area-rug/,https://carpetcleaningblufftonsc.com/the-best-way-to-maintain-your-area-rug/,unknown,COM-T,PASS,38 characters
+https://carpetcleaningblufftonsc.com/the-best-way-to-maintain-your-area-rug/,https://carpetcleaningblufftonsc.com/the-best-way-to-maintain-your-area-rug/,unknown,COM-M,FAIL,172 characters
+https://carpetcleaningblufftonsc.com/the-best-way-to-maintain-your-area-rug/,https://carpetcleaningblufftonsc.com/the-best-way-to-maintain-your-area-rug/,unknown,COM-W,N/A,787 words
+https://carpetcleaningblufftonsc.com/the-best-way-to-maintain-your-area-rug/,https://carpetcleaningblufftonsc.com/the-best-way-to-maintain-your-area-rug/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/the-card-house/,https://carpetcleaningblufftonsc.com/the-card-house/,unknown,COM-T,PASS,14 characters
+https://carpetcleaningblufftonsc.com/the-card-house/,https://carpetcleaningblufftonsc.com/the-card-house/,unknown,COM-M,FAIL,99 characters
+https://carpetcleaningblufftonsc.com/the-card-house/,https://carpetcleaningblufftonsc.com/the-card-house/,unknown,COM-W,N/A,632 words
+https://carpetcleaningblufftonsc.com/the-card-house/,https://carpetcleaningblufftonsc.com/the-card-house/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/the-essential-things-for-carpet-stain-removal/,https://carpetcleaningblufftonsc.com/the-essential-things-for-carpet-stain-removal/,unknown,COM-T,PASS,45 characters
+https://carpetcleaningblufftonsc.com/the-essential-things-for-carpet-stain-removal/,https://carpetcleaningblufftonsc.com/the-essential-things-for-carpet-stain-removal/,unknown,COM-M,FAIL,167 characters
+https://carpetcleaningblufftonsc.com/the-essential-things-for-carpet-stain-removal/,https://carpetcleaningblufftonsc.com/the-essential-things-for-carpet-stain-removal/,unknown,COM-W,N/A,1042 words
+https://carpetcleaningblufftonsc.com/the-essential-things-for-carpet-stain-removal/,https://carpetcleaningblufftonsc.com/the-essential-things-for-carpet-stain-removal/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/the-fripp-house/,https://carpetcleaningblufftonsc.com/the-fripp-house/,unknown,COM-T,PASS,15 characters
+https://carpetcleaningblufftonsc.com/the-fripp-house/,https://carpetcleaningblufftonsc.com/the-fripp-house/,unknown,COM-M,PASS,140 characters
+https://carpetcleaningblufftonsc.com/the-fripp-house/,https://carpetcleaningblufftonsc.com/the-fripp-house/,unknown,COM-W,N/A,635 words
+https://carpetcleaningblufftonsc.com/the-fripp-house/,https://carpetcleaningblufftonsc.com/the-fripp-house/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/the-health-benefits-of-clean-carpets/,https://carpetcleaningblufftonsc.com/the-health-benefits-of-clean-carpets/,unknown,COM-T,PASS,36 characters
+https://carpetcleaningblufftonsc.com/the-health-benefits-of-clean-carpets/,https://carpetcleaningblufftonsc.com/the-health-benefits-of-clean-carpets/,unknown,COM-M,PASS,142 characters
+https://carpetcleaningblufftonsc.com/the-health-benefits-of-clean-carpets/,https://carpetcleaningblufftonsc.com/the-health-benefits-of-clean-carpets/,unknown,COM-W,N/A,1441 words
+https://carpetcleaningblufftonsc.com/the-health-benefits-of-clean-carpets/,https://carpetcleaningblufftonsc.com/the-health-benefits-of-clean-carpets/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/the-heyward-house/,https://carpetcleaningblufftonsc.com/the-heyward-house/,unknown,COM-T,PASS,17 characters
+https://carpetcleaningblufftonsc.com/the-heyward-house/,https://carpetcleaningblufftonsc.com/the-heyward-house/,unknown,COM-M,PASS,127 characters
+https://carpetcleaningblufftonsc.com/the-heyward-house/,https://carpetcleaningblufftonsc.com/the-heyward-house/,unknown,COM-W,N/A,700 words
+https://carpetcleaningblufftonsc.com/the-heyward-house/,https://carpetcleaningblufftonsc.com/the-heyward-house/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/tile-grout-cleaning/,https://carpetcleaningblufftonsc.com/tile-grout-cleaning/,unknown,COM-T,PASS,50 characters
+https://carpetcleaningblufftonsc.com/tile-grout-cleaning/,https://carpetcleaningblufftonsc.com/tile-grout-cleaning/,unknown,COM-M,FAIL,164 characters
+https://carpetcleaningblufftonsc.com/tile-grout-cleaning/,https://carpetcleaningblufftonsc.com/tile-grout-cleaning/,unknown,COM-W,N/A,783 words
+https://carpetcleaningblufftonsc.com/tile-grout-cleaning/,https://carpetcleaningblufftonsc.com/tile-grout-cleaning/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/top-5-benefits-of-upholstery-cleaning/,https://carpetcleaningblufftonsc.com/top-5-benefits-of-upholstery-cleaning/,unknown,COM-T,FAIL,64 characters
+https://carpetcleaningblufftonsc.com/top-5-benefits-of-upholstery-cleaning/,https://carpetcleaningblufftonsc.com/top-5-benefits-of-upholstery-cleaning/,unknown,COM-M,FAIL,182 characters
+https://carpetcleaningblufftonsc.com/top-5-benefits-of-upholstery-cleaning/,https://carpetcleaningblufftonsc.com/top-5-benefits-of-upholstery-cleaning/,unknown,COM-W,N/A,699 words
+https://carpetcleaningblufftonsc.com/top-5-benefits-of-upholstery-cleaning/,https://carpetcleaningblufftonsc.com/top-5-benefits-of-upholstery-cleaning/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/upholstery-cleaning-on-hilton-head-island/,https://carpetcleaningblufftonsc.com/upholstery-cleaning-on-hilton-head-island/,unknown,COM-T,FAIL,85 characters
+https://carpetcleaningblufftonsc.com/upholstery-cleaning-on-hilton-head-island/,https://carpetcleaningblufftonsc.com/upholstery-cleaning-on-hilton-head-island/,unknown,COM-M,FAIL,188 characters
+https://carpetcleaningblufftonsc.com/upholstery-cleaning-on-hilton-head-island/,https://carpetcleaningblufftonsc.com/upholstery-cleaning-on-hilton-head-island/,unknown,COM-W,N/A,850 words
+https://carpetcleaningblufftonsc.com/upholstery-cleaning-on-hilton-head-island/,https://carpetcleaningblufftonsc.com/upholstery-cleaning-on-hilton-head-island/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/upholstery-cleaning/,https://carpetcleaningblufftonsc.com/upholstery-cleaning/,unknown,COM-T,PASS,46 characters
+https://carpetcleaningblufftonsc.com/upholstery-cleaning/,https://carpetcleaningblufftonsc.com/upholstery-cleaning/,unknown,COM-M,FAIL,163 characters
+https://carpetcleaningblufftonsc.com/upholstery-cleaning/,https://carpetcleaningblufftonsc.com/upholstery-cleaning/,unknown,COM-W,N/A,552 words
+https://carpetcleaningblufftonsc.com/upholstery-cleaning/,https://carpetcleaningblufftonsc.com/upholstery-cleaning/,unknown,COM-N,PASS,
+https://carpetcleaningblufftonsc.com/vacation-rental-carpet-cleaning-frequency-bluffton-sc/,https://carpetcleaningblufftonsc.com/vacation-rental-carpet-cleaning-frequency-bluffton-sc/,unknown,COM-T,FAIL,67 characters
+https://carpetcleaningblufftonsc.com/vacation-rental-carpet-cleaning-frequency-bluffton-sc/,https://carpetcleaningblufftonsc.com/vacation-rental-carpet-cleaning-frequency-bluffton-sc/,unknown,COM-M,FAIL,205 characters
+https://carpetcleaningblufftonsc.com/vacation-rental-carpet-cleaning-frequency-bluffton-sc/,https://carpetcleaningblufftonsc.com/vacation-rental-carpet-cleaning-frequency-bluffton-sc/,unknown,COM-W,N/A,3118 words
+https://carpetcleaningblufftonsc.com/vacation-rental-carpet-cleaning-frequency-bluffton-sc/,https://carpetcleaningblufftonsc.com/vacation-rental-carpet-cleaning-frequency-bluffton-sc/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/when-should-i-get-my-carpets-cleaned/,https://carpetcleaningblufftonsc.com/when-should-i-get-my-carpets-cleaned/,unknown,COM-T,PASS,37 characters
+https://carpetcleaningblufftonsc.com/when-should-i-get-my-carpets-cleaned/,https://carpetcleaningblufftonsc.com/when-should-i-get-my-carpets-cleaned/,unknown,COM-M,PASS,146 characters
+https://carpetcleaningblufftonsc.com/when-should-i-get-my-carpets-cleaned/,https://carpetcleaningblufftonsc.com/when-should-i-get-my-carpets-cleaned/,unknown,COM-W,N/A,1579 words
+https://carpetcleaningblufftonsc.com/when-should-i-get-my-carpets-cleaned/,https://carpetcleaningblufftonsc.com/when-should-i-get-my-carpets-cleaned/,unknown,COM-N,FAIL,
+https://carpetcleaningblufftonsc.com/why-carpet-takes-so-long-to-dry-bluffton-humidity/,https://carpetcleaningblufftonsc.com/why-carpet-takes-so-long-to-dry-bluffton-humidity/,unknown,COM-T,PASS,59 characters
+https://carpetcleaningblufftonsc.com/why-carpet-takes-so-long-to-dry-bluffton-humidity/,https://carpetcleaningblufftonsc.com/why-carpet-takes-so-long-to-dry-bluffton-humidity/,unknown,COM-M,FAIL,217 characters
+https://carpetcleaningblufftonsc.com/why-carpet-takes-so-long-to-dry-bluffton-humidity/,https://carpetcleaningblufftonsc.com/why-carpet-takes-so-long-to-dry-bluffton-humidity/,unknown,COM-W,N/A,2086 words
+https://carpetcleaningblufftonsc.com/why-carpet-takes-so-long-to-dry-bluffton-humidity/,https://carpetcleaningblufftonsc.com/why-carpet-takes-so-long-to-dry-bluffton-humidity/,unknown,COM-N,FAIL,

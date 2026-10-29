@@ -1,17 +1,17 @@
 # Carolina Carpet Cleaning - Status
 
 - **Stage 4 of 8 — Audit**
-- **What is happening now:** Stage 3 (Data) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open carolina-carpet-cleaning) and type /next carolina-carpet-cleaning. Next there: /discovery carolina-carpet-cleaning audit (the audit: entity → architecture → page conformance → technical, then the fresh-context review)
-- **Waiting on:** nobody
-- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
+- **What is happening now:** waiting for Paul's approval — the audit review sheet has 4 question(s) (2 for the client — Paul sends client-questions.csv) and 16 decided for you (clients/carolina-carpet-cleaning/audit/2026-10-28/audit-review.csv): reply "accept all", or "accept all except 3b" — an empty answer takes the recommended option; the client's questions wait for the client
+- **Waiting on:** Paul — the audit review sheet has 4 question(s) (2 for the client — Paul sends client-questions.c
+- **Next action:** Paul types `/discovery carolina-carpet-cleaning review "accept all"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-29T07:50 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T08:18 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Paul | the audit review sheet has 4 question(s) (2 for the client — Paul sends client-questions.csv) and 16 decided for you (clients/carolina-carpet-cleaning/audit/2026-10-28/audit-review.csv): reply "accept all", or "accept all except 3b" — an empty answer takes the recommended option; the client's questions wait for the client | 2026-10-29 | /discovery carolina-carpet-cleaning review "accept all" |
 
 ## Waiting on (not blocking)
 
@@ -67,17 +67,10 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **reviews-raw** (2 file(s), e.g. `data/reviews/raw/reviews.json`) — read by the step that reads reviews
 - **review-mentions** (1 file(s), e.g. `data/reviews/mentions.csv`) — read by build:evidence, build:facts
 - **review-facts** (1 file(s), e.g. `data/reviews/review-facts.json`) — read by build:evidence, build:facts
-- **customer-language** (2 file(s), e.g. `data/reviews/customer-language.md`) — read by discovery:audit, build:brief, build:write
 - **paa-questions** (2 file(s), e.g. `data/paa/paa-questions.csv`) — read by build:evidence, discovery:fanout
 - **paa-raw** (20 file(s), e.g. `data/paa/raw/area-rug-cleaning-hilton-head-island.json`) — read by the step that reads paa-questions
 - **paa-routing** (1 file(s), e.g. `data/paa/paa-routing.md`) — read by build:plan, blog:map, build:brief, build:write
-- **rankings** (5 file(s), e.g. `data/rankings/best-variants.csv`) — read by build:plan, discovery:audit
-- **rankings-raw** (2 file(s), e.g. `data/rankings/raw/best-variants.json`) — read by the step that reads rankings
 - **competitors** (2 file(s), e.g. `data/competitors/coverage.json`) — read by build:plan
-- **crawl-page-text** (2 file(s), e.g. `data/crawl/crawl-summary.csv`) — read by discovery:audit, build:evidence
-- **crawl-raw** (36 file(s), e.g. `inputs/crawl/crawl-state-2026-10-28-10290009.json`) — read by the step that reads crawl-page-text
-- **imported-exports** (32 file(s), e.g. `inputs/Carolina Carpet Cleaning - CMS - export-all-urls - 2026-10-28.csv`) — read by discovery:audit
-- **cms-page-inventory** (1 file(s), e.g. `data/novamira-page-inventory-2026-10-28.md`) — read by discovery:audit
 - **discovery-record** (2 file(s), e.g. `discovery/Carolina Carpet Cleaning - Discovery Record - REVIEW.md`) — read by build:evidence, build:facts
 - **facts** (1 file(s), e.g. `facts.json`) — read by build:evidence, build:facts
 - **settled** (1 file(s), e.g. `decisions-settled.md`) — read by build:evidence, build:facts, build:brief, build:draft, build:drafts, build:write, build:plan
@@ -85,6 +78,9 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 ## Flagged for Paul (system)
 
 - **F-003** (open, not yet reviewed) 2026-10-28 · crawl: DataforSEO task 10290139 (carpetcleaningblufftonsc.com, basic, 132 pages) stays 'In Queue' (error 40602); resume returns exit 8 on every call. Earlier retries posted 34 paid tasks (about $0.67) because crawl.py run does not stop on exit 8 before reposting; see F-002. — workaround: Stopped after three free resume attempts. No new paid task posted. Run 20261028-204638-crawl-94cd left open for Paul's decision.
+- **F-004** (open, not yet reviewed) 2026-10-29 · discovery:audit: conformance.py COM-N (Brand Guide phone in page text) reads data/crawl/page-text.csv, which is truncated and/or excludes the footer: 73 of 89 pages FAIL COM-N although the live HTML carries (843) 575-6286 and tel:8435756286 in the footer on every sampled page (/, /bluffton/, /contact-us/, /carpet-cleaning/, /about/, a blog post). Triage then marks pages 'light fix' on COM-N alone (7 pages: /blog/ + 5 pagination pages, /contact-us/). — workaround: COM-N failures are treated as contradicted by the live check (SRC-059 capture) and are not written as findings; the 7 COM-N-only 'light fix' rows carry no finding. Fix in a system session: score COM-N on the full HTML (footer included) or mark NE when the capture is truncated.
+- **F-005** (open, not yet reviewed) 2026-10-29 · discovery:audit: Flag IDs and finding IDs share one namespace (F-###): system flag F-004 (flags.jsonl, the COM-N phone check reading a footer-less page-text.csv) carries the same label as audit finding F-004 (the blog guarantee claim). DEC-LOCAL-002 and the run summary say 'flag F-004', which Paul can read as the finding. — workaround: In every Paul-facing line the system flag is called 'the phone-check system flag (COM-N, flags.jsonl #4)', never 'F-004'; DEC-LOCAL-007 records the clarification. Fix in a system session: give flags their own prefix (e.g. FL-###).
+- **F-006** (open, not yet reviewed) 2026-10-29 · discovery:audit: render.py auditsheet: the 'For the client to confirm' table has no Recommended/default column and cuts the question at 260 and options at 120 characters mid-word; review.py sheet writes the finding's observation (also cut mid-word, e.g. '/u', 'pH-') into client-questions.csv as the 'question', so the client file Paul sends has no actual question and broken text. The S17 interim defaults (F-005 b, F-006 b) therefore do not show on the rendered sheet. — workaround: Defaults are in audit-review.csv (recommended = b, b) and stated in the run summary; Paul should not send client-questions.csv as written — reword the two questions in his own message until a system session fixes review.py/render.py.
 
 ## Spend so far
 
@@ -100,19 +96,21 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 1 · Setup | 1 | 1,944,639 | $0.80 | $0.00 |
 | 2 · Discovery | 2 | 4,718,881 | $2.04 | $0.00 |
 | 3 · Data | 3 | 4,864,287 | $0.30 | $0.00 |
+| 4 · Audit | 1 | 20,954,553 | $8.39 | $0.00 |
 | any stage | 3 | 816,224 | $0.13 | $0.00 |
-| **total** | 9 | 12,344,031 | $3.27 | $0.00 |
+| **total** | 10 | 33,298,584 | $11.67 | $0.00 |
 
 ## Spend by step (model)
 
 | Step | Runs | Tokens | Session USD | API USD |
 |---|---|---|---|---|
+| discovery:audit | 1 | 20,954,553 | $8.39 | $0.00 |
 | discovery:discovery | 1 | 3,941,016 | $2.03 | $0.00 |
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
 | discovery:data | 1 | 0 | $0.22 | $0.00 |
 | answers | 3 | 816,224 | $0.13 | $0.00 |
 | crawl | 2 | 4,864,287 | $0.08 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
-| **total** | 9 | 12,344,031 | $3.27 | $0.00 |
+| **total** | 10 | 33,298,584 | $11.67 | $0.00 |
 
-Last run: /crawl 2026-10-29T07:50 — Crawled 92 pages of carpetcleaningblufftonsc.com (task 10290153, basic), $0.0198; 89 page texts captured; files uploaded to Drive
+Last run: /discovery 2026-10-29T08:18 — Audit done: 31 findings (9 Fix, 18 Fix and list, 4 Ask), 109-URL decision map, S17 review (5 confirmed, 6 revised, 1 withdrawn), review sheet rendered. Awaiting Paul's answer line, then Approval 2a.
