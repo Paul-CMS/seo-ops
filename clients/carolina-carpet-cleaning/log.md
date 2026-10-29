@@ -1085,3 +1085,33 @@ SEM items to apply: none
 - CHANGE #352 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | upload | old: previous version archived as Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (17).md | new: Carolina Carpet Cleaning - Document Checklist.md · sha b741a2abc458 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #353 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (18).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (18).md | result: done · renamed and moved, nothing deleted
 - CHANGE #354 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (18).md | new: Carolina Carpet Cleaning - Status.md · sha 0ce37d05f0dc | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261029-144651-build-2af3 · STARTED · /build · 2026-10-29T14:46:51-05:00
+Step: build:pilot-corrections · session 1076632d-28b5-4ec6-b4a9-683026349719
+Gates checked: discovery_signed_off, batch:pilot:briefs
+- FLAG 2026-10-29T14:47 · run 20261029-144651-build-2af3 · F-015 · outline.py: outlines mark the homepage H1 area variant 'South Carolina Lowcountry' as 'never on this page' while the approved site plan fixes it in 4 service H1s (carpet, rug, tile & grout, pet odor); the review raised it as an Ask (pilot row 1) and will again each section · workaround: Pilot decision (row 1 = a, accepted by Paul): the site plan H1 wins; recorded in build/pilot-corrections.md so later sections do not re-raise it
+### HANDOFF · /build · 2026-10-29 · run 20261029-144651-build-2af3
+- Sources read: decisions.md, approval-record.md, decisions-settled.md, build/pilot/drafts-review.md/.csv, drafts-apply.json, log.md (pilot runs).
+- Finding: Paul answered the pilot review with "accept all" (15 rows, 0 answered by Paul, all by default) and approved
+  `batch:pilot:drafts` at 2026-10-29T14:44. He corrected nothing himself.
+- Wrote build/pilot-corrections.md. It says no corrections by Paul, then gives one line per accepted review fix carried
+  to the next batches: H1 plan wins (row 1), HOA swap-test rewrite (2), no address on non-GBP location (4), settled
+  title format (5), "Recent work" dropped with no town review (6), trade-practice process + [NEED] (9), drop all-[NEED]
+  FAQ (11), no unsourced price drivers (12), CRI authority link (13), no unconfirmed method claim (15).
+- Recorded: `status.py pilot-corrections --none` with a note.
+- Flag F-015 (system session): outline.py marks "South Carolina Lowcountry" as homepage-only while the approved site plan
+  uses it in 4 service H1s. Workaround: the pilot decision (plan H1 wins) is carried in pilot-corrections.md.
+- No spec, gate, WordPress or publish action. No /approve line. No facts added.
+- Open client questions unchanged: service_scope, google_rating, pricing, city_served.
+
+- FLAG 2026-10-29T14:47 · run 20261029-144651-build-2af3 · F-015 · outline.py: outlines mark the homepage H1 area variant 'South Carolina Lowcountry' as 'never on this page' while the approved site p…
+### END HANDOFF
+## RUN 20261029-144651-build-2af3 · FINISHED · 2026-10-29T14:48:06-05:00
+Changes: 0 · Summary: Pilot corrections: none by Paul (accept all, drafts approved); accepted fixes carried forward in build/pilot-corrections.md; F-015 flagged (outline H1 reservation vs site plan)
+Spend: 886716 tokens · $0.47 (measured)
+- CHANGE #355 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (12).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | new: _Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (12).md | result: done · renamed and moved, nothing deleted
+- CHANGE #356 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | upload | old: previous version archived as Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (12).md | new: Carolina Carpet Cleaning - Handoff Log.md · sha 1121c14fb8c0 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #357 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (18).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | new: _Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (18).md | result: done · renamed and moved, nothing deleted
+- CHANGE #358 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | upload | old: previous version archived as Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (18).md | new: Carolina Carpet Cleaning - Document Checklist.md · sha 605b3c90e285 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #359 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (19).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (19).md | result: done · renamed and moved, nothing deleted
+- CHANGE #360 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (19).md | new: Carolina Carpet Cleaning - Status.md · sha 7fb8419de191 | result: done · copied (Drive for desktop syncs it)

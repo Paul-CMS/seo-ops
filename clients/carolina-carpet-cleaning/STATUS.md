@@ -1,11 +1,11 @@
 # Carolina Carpet Cleaning - Status
 
-- **Stage —**
-- **What is happening now:** ready to start: apply your pilot corrections to the specs before the next batch
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch services)**
+- **What is happening now:** Stage 6 (Pilot, services, locations, ship (one session each)) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open carolina-carpet-cleaning) and type /next carolina-carpet-cleaning. Next there: /interview carolina-carpet-cleaning facts services (the evidence gate blocked svc-commercial-carpet-cleaning, svc-rug-cleaning, svc-upholstery-cleaning, svc-tile-grout-cleaning, svc-hardwood-floor-cleaning, svc-pet-odor-removal, svc-boat-auto-interior-cleaning — targeted questions for the owner (you send them). Or waive instead: /approve carolina-carpet-cleaning evidence:svc-commercial-carpet-cleaning --reason "<why you waive it>" · /approve carolina-carpet-cleaning evidence:svc-rug-cleaning --reason "<why you waive it>" · /approve carolina-carpet-cleaning evidence:svc-upholstery-cleaning --reason "<why you waive it>" · /approve carolina-carpet-cleaning evidence:svc-tile-grout-cleaning --reason "<why you waive it>" · /approve carolina-carpet-cleaning evidence:svc-hardwood-floor-cleaning --reason "<why you waive it>" · /approve carolina-carpet-cleaning evidence:svc-pet-odor-removal --reason "<why you waive it>" · /approve carolina-carpet-cleaning evidence:svc-boat-auto-interior-cleaning --reason "<why you waive it>")
 - **Waiting on:** Client (via Paul) — Your website says this about What the service includes (scope, inclusions): "Professional ; Client (via Paul) — We found different versions of Google rating and review count (date checked): "Disputed: c; Client (via Paul) — Your website says this about Price range, or what drives the cost: "People Also Ask How Mu
-- **Next action:** `/build carolina-carpet-cleaning pilot-corrections` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open carolina-carpet-cleaning`) and types `/next carolina-carpet-cleaning` · model: Haiku chat
+- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-29T14:44 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T14:48 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -111,6 +111,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-012** (open, not yet reviewed) 2026-10-29 · build:write: evidence_pack.py review_topics gives 'service: <name>' topics no meaning-check key (keys=[]), so reviews.py checked cannot lift 'service: Carpet Cleaning' (9 reviewers, checked by meaning) out of 'keyword match only'; also reviews.py extract re-run wipes earlier meaning_checked rows (had to re-record 9 from log) — workaround: recorded service:Carpet Cleaning count 9 and re-recorded prior checks; writer treats service topic as attributed example
 - **F-013** (open, not yet reviewed) 2026-10-29 · build:write: outline.py: outlines still list /ladys-island/ in the location link lists (svc service-areas wheel, loc-bluffton sibling wheel) although site_plan_a1_ladys_island merges it into /beaufort/; and the formula-assigned category variant carries the 'Proposed:' prefix ('Proposed: carpet cleaning') — workaround: Drafts keep the wheel placeholder rows untouched; wheel.py at ship must drop /ladys-island/; writer used 'carpet cleaning'.
 - **F-014** (open, not yet reviewed) 2026-10-29 · build:write: reviews.py extract wipes earlier meaning checks, and evidence_pack.py gives 'service:' review topics no key a reviews.py checked entry can attach to (researcher F-012) — svc 'service: Carpet Cleaning' stays keyword-match-only after being checked (9 reviewers) — workaround: Researcher re-recorded the earlier checks from the log; writer used the topic only as attributed examples.
+- **F-015** (open, not yet reviewed) 2026-10-29 · build:pilot-corrections: outline.py: outlines mark the homepage H1 area variant 'South Carolina Lowcountry' as 'never on this page' while the approved site plan fixes it in 4 service H1s (carpet, rug, tile & grout, pet odor); the review raised it as an Ask (pilot row 1) and will again each section — workaround: Pilot decision (row 1 = a, accepted by Paul): the site plan H1 wins; recorded in build/pilot-corrections.md so later sections do not re-raise it
 
 ## Spend so far
 
@@ -129,8 +130,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 4 · Audit | 2 | 23,152,524 | $9.42 | $0.00 |
 | 5 · Build plan and blockers | 3 | 6,366,697 | $3.46 | $0.00 |
 | 6 · Pilot, services, locations, ship (one session each) | 3 | 7,741,107 | $4.63 | $0.00 |
-| any stage | 6 | 2,868,263 | $0.16 | $0.00 |
-| **total** | 20 | 51,656,398 | $20.82 | $0.00 |
+| any stage | 7 | 3,754,979 | $0.63 | $0.00 |
+| **total** | 21 | 52,543,114 | $21.29 | $0.00 |
 
 ## Spend by step (model)
 
@@ -144,11 +145,12 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | build:review | 1 | 1,925,124 | $0.88 | $0.00 |
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
 | build:blockers | 1 | 1,108,757 | $0.70 | $0.00 |
+| build:pilot-corrections | 1 | 886,716 | $0.47 | $0.00 |
 | discovery:data | 1 | 0 | $0.22 | $0.00 |
 | answers | 6 | 2,868,263 | $0.16 | $0.00 |
 | crawl | 2 | 4,864,287 | $0.08 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
 | interview:facts | 1 | 379,500 | $0.01 | $0.00 |
-| **total** | 20 | 51,656,398 | $20.82 | $0.00 |
+| **total** | 21 | 52,543,114 | $21.29 | $0.00 |
 
-Last run: /build 2026-10-29T14:38 — Pilot drafts review applied (accept all, 15 rows): svc rows 12, 13 + silent E1 fix, Bluffton row 2; drafts re-recorded; Brand Guide write-back B3/C1/C2/C3 done; awaiting pilot drafts approval
+Last run: /build 2026-10-29T14:48 — Pilot corrections: none by Paul (accept all, drafts approved); accepted fixes carried forward in build/pilot-corrections.md; F-015 flagged (outline H1 reservation vs site plan)
