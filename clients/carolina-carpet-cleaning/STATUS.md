@@ -1,17 +1,16 @@
 # Carolina Carpet Cleaning - Status
 
-- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** waiting for Paul's approval — the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): svc-carpet-cleaning.md: line 22 [NEED: Kevin's own description of his cleaning process and equipment, ; line 32 [NEED: what the service includes, in Kevin's words (open question fact; line 36 [NEED: Kevin's description of low-moisture cleaning, in his words: wha; line 40 [NEED: how Kevin treats stains, which stains he takes on, and what he ; line 46 [NEED: what Kevin prices by (per room, per square foot or per job), in; line 62 [NEED: how low-moisture cleaning works and how it differs from hot wat | loc-bluffton.md: line 24 [NEED: typical response time for a Bluffton booking, and the business ; line 24 [NEED: how Kevin handles gate access and HOA rules in Bluffton communi; line 38 [NEED: typical lead time for a Bluffton booking.]; line 60 [NEED: city-level map embed of Bluffton, SC]; line 66 [NEED: business hours exactly as the GBP shows them]
-- **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (nothing ; Client (via Paul) — Your website says this about What the service includes (scope, inclusions): "Professional ; Client (via Paul) — We found different versions of Google rating and review count (date checked): "Disputed: c
-- **Next action:** Paul types `/approve carolina-carpet-cleaning batch:pilot:drafts` (or asks for changes first) · model: Haiku chat
+- **Stage —**
+- **What is happening now:** ready to start: apply your pilot corrections to the specs before the next batch
+- **Waiting on:** Client (via Paul) — Your website says this about What the service includes (scope, inclusions): "Professional ; Client (via Paul) — We found different versions of Google rating and review count (date checked): "Disputed: c; Client (via Paul) — Your website says this about Price range, or what drives the cost: "People Also Ask How Mu
+- **Next action:** `/build carolina-carpet-cleaning pilot-corrections` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open carolina-carpet-cleaning`) and types `/next carolina-carpet-cleaning` · model: Haiku chat
 
-_Generated 2026-10-29T14:38 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T14:44 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): svc-carpet-cleaning.md: line 22 [NEED: Kevin's own description of his cleaning process and equipment, ; line 32 [NEED: what the service includes, in Kevin's words (open question fact; line 36 [NEED: Kevin's description of low-moisture cleaning, in his words: wha; line 40 [NEED: how Kevin treats stains, which stains he takes on, and what he ; line 46 [NEED: what Kevin prices by (per room, per square foot or per job), in; line 62 [NEED: how low-moisture cleaning works and how it differs from hot wat | loc-bluffton.md: line 24 [NEED: typical response time for a Bluffton booking, and the business ; line 24 [NEED: how Kevin handles gate access and HOA rules in Bluffton communi; line 38 [NEED: typical lead time for a Bluffton booking.]; line 60 [NEED: city-level map embed of Bluffton, SC]; line 66 [NEED: business hours exactly as the GBP shows them] | 2026-10-29 | /approve carolina-carpet-cleaning batch:pilot:drafts |
 | Client (via Paul) | Your website says this about What the service includes (scope, inclusions): "Professional Home Carpet Cleaning is an excellent investment in the appearance of your home and feel." (client site https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/ (data/c | 2026-10-29 | fact:svc-carpet-cleaning:service_scope |
 | Client (via Paul) | We found different versions of Google rating and review count (date checked): "Disputed: client stated 6 Google reviews, all 5 stars (2026-10-28); the DataforSEO Google reviews pull shows rating 5 from 29 reviews (2022-04-18 to 2026-06-01), Birdeye also 29. [NEED: the figure exactly as Google shows  | 2026-10-29 | fact:d:google_rating |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "People Also Ask How Much Does It Cost To Have An Oriental Rug Cleaned?" (+19 more) (client site https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/ (dat | 2026-10-29 | fact:svc-carpet-cleaning:pricing |
@@ -37,6 +36,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-29: Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here) — approved
 - 2026-10-29: Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims) — approved
 - 2026-10-29: site plan — approved
+- 2026-10-29: batch pilot drafts — approved
 - The site runs on wordpress
 - Site connection: Novamira MCP, read-only until the handoff is approved; no Application Password setup
 - GBP primary category = the category entity: **Carpet cleaning service** → Wikipedia "Carpet cleaning" (Q5045777) — provisional until Gwen reads the GBP primary category (H-2026-10-28-01); if GBP shows another category, that category stands and this row reopens (recommended default)

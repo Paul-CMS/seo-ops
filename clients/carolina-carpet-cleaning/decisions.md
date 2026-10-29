@@ -12,6 +12,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 | 2026-10-29T10:13 | audit_approved | approved |
 | 2026-10-29T10:34 | brand_guide_approved | approved |
 | 2026-10-29T10:47 | site plan | approved |
+| 2026-10-29T14:44 | batch pilot drafts | approved |
 
 ## Decisions logged during runs
 

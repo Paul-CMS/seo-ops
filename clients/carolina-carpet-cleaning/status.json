@@ -1176,7 +1176,22 @@
         ],
         "state": "drafts_written",
         "briefs": null,
-        "drafts": null,
+        "drafts": {
+          "state": "approved",
+          "by": "Paul",
+          "at": "2026-10-29T14:44:52-05:00",
+          "note": null,
+          "files": {
+            "clients/carolina-carpet-cleaning/build/pilot/drafts/svc-carpet-cleaning.md": "db89cacf75e3",
+            "clients/carolina-carpet-cleaning/build/pilot/drafts/loc-bluffton.md": "d997d1b16232",
+            "clients/carolina-carpet-cleaning/build/pilot/drafts-review.csv": "ea6189235a9b"
+          },
+          "conditions": [],
+          "sensitive_review": null,
+          "practitioner": null,
+          "sem_ids": [],
+          "writing_fp": "66993249914c"
+        },
         "route": "outline",
         "files": {
           "drafts": [
@@ -1489,7 +1504,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-29T14:38:40-05:00",
+  "updated": "2026-10-29T14:44:52-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
@@ -2058,10 +2073,5 @@
     "H-2026-10-29-02-broken_link",
     "H-2026-10-29-03-sitemap",
     "H-2026-10-29-04-robots_txt"
-  ],
-  "review_pause": {
-    "run_id": "20261029-142210-build-b1dd",
-    "step": "build:write",
-    "at": "2026-10-29T14:32:37-05:00"
-  }
+  ]
 }
