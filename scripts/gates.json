@@ -438,7 +438,8 @@
         "clients/<slug>/data/backlinks/backlinks-per-url.csv",
         "clients/<slug>/data/local-grid/local-grid-summary.md",
         "clients/<slug>/data/rankings/rankings-summary.md",
-        "clients/<slug>/inputs/ (an imported client's exports: crawl tables, technical audit, citation tracker, grid links, old URL map)"
+        "clients/<slug>/inputs/ (an imported client's exports: crawl tables, technical audit, citation tracker, grid links, old URL map)",
+        "clients/<slug>/data/novamira-page-inventory-<date>.md (the WordPress page list read through Novamira, when on file)"
       ]
     },
     "discovery:review": {
