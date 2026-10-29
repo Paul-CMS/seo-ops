@@ -1,0 +1,874 @@
+{
+ "page": "loc-ladys-island",
+ "type": "location",
+ "url": "/ladys-island/",
+ "section": "locations",
+ "built": "2026-10-29T10:38:52-05:00",
+ "services": [],
+ "places": [
+  "Lady's Island"
+ ],
+ "facts": [
+  {
+   "id": "a-brand-entity-gbp-name-exactly",
+   "label": "Brand entity (GBP name, exactly)",
+   "status": "submitted",
+   "value": "Carolina Carpet Cleaning",
+   "source": "GBP place URL (cid 3992053166300574362) https://maps.app.goo.gl/vvsrqH6TxL815KWB6; site footer",
+   "state": "unknown"
+  },
+  {
+   "id": "a-gbp-primary-category-the-category-entity",
+   "label": "GBP primary category = the category entity",
+   "status": "client_confirmed",
+   "value": "Carpet cleaning service",
+   "source": "Paul, chat 2026-10-28 (GBP category read)",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-category-variants-4-6",
+   "label": "Category variants (4–6)",
+   "status": "submitted",
+   "value": "Proposed: carpet cleaning · carpet cleaning service · carpet cleaners · carpet cleaning company · carpet cleaner (search volume checked in the data step)",
+   "source": "Decision Sheet proposal; Wikipedia 'Carpet cleaning'",
+   "state": "unknown"
+  },
+  {
+   "id": "a-storefront-or-sab",
+   "label": "Storefront or SAB",
+   "status": "paul_approved",
+   "value": "SAB; address on website only (273 Club Gate, Bluffton, SC 29910) matches GBP",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-area-entity",
+   "label": "Area entity",
+   "status": "paul_approved",
+   "value": "Hilton Head Island metropolitan area",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-area-variants-3-5",
+   "label": "Area variants (3–5)",
+   "status": "paul_approved",
+   "value": "SEO titles: Hilton Head Island Metro Area · user-facing titles and homepage H1: South Carolina Lowcountry",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-separator-standard",
+   "label": "Separator standard",
+   "status": "submitted",
+   "value": "' - '",
+   "source": "template default; live homepage title uses ' - '",
+   "state": "unknown"
+  },
+  {
+   "id": "a-phone",
+   "label": "Phone",
+   "status": "paul_approved",
+   "value": "(843) 575-6286",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-primary-domain-canonical-host-form",
+   "label": "Primary domain (canonical host form)",
+   "status": "internally_verified",
+   "value": "https://carpetcleaningblufftonsc.com/ (http and www 301 to it; rel=canonical matches)",
+   "source": "live HTTP check 2026-10-28",
+   "state": "sourced public"
+  },
+  {
+   "id": "a-legal-entity-name",
+   "label": "Legal entity name",
+   "status": "client_confirmed",
+   "value": "Carolina Floor Cleaning Pros",
+   "source": "Owner note, passed on by Paul 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-exact-url-in-the-gbp-website-field",
+   "label": "Exact URL in the GBP Website field",
+   "status": "paul_approved",
+   "value": "https://carpetcleaningblufftonsc.com/",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-founding-year-years-in-business",
+   "label": "Founding year / years in business",
+   "status": "client_confirmed",
+   "value": "1993 - operated locally as a family-owned business since 1993",
+   "source": "Owner note, passed on by Paul 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-legal-entity-dba",
+   "label": "Legal entity + DBA",
+   "status": "client_confirmed",
+   "value": "Carolina Carpet Cleaning (DBA / trade name)",
+   "source": "Owner note, passed on by Paul 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-licence-numbers-and-classes",
+   "label": "Licence numbers and classes",
+   "status": "client_confirmed",
+   "value": "No current licence number provided",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-insurance-bonded-status",
+   "label": "Insurance / bonded status",
+   "status": "client_confirmed",
+   "value": "General workmanship insurance",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-certifications-authorizations-factory-training",
+   "label": "Certifications, authorizations, factory training",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-association-memberships",
+   "label": "Association memberships",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-warranty-terms",
+   "label": "Warranty terms",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-guarantees-response-time-on-time-satisfaction",
+   "label": "Guarantees (response time, on-time, satisfaction)",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-awards-and-rankings",
+   "label": "Awards and rankings",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-google-rating-and-review-count-exactly-as-google-shows-the",
+   "label": "Google rating and review count — exactly as Google shows them on the day, with the date (\"4.9 · 67 reviews, 2026-10-07\"; never a rounded 5.0)",
+   "status": "disputed",
+   "value": "Disputed: client stated 6 Google reviews, all 5 stars (2026-10-28); the DataforSEO Google reviews pull shows rating 5 from 29 reviews (2022-04-18 to 2026-06-01), Birdeye also 29. [NEED: the figure exactly as Google shows it on the day, with the date — Paul rec",
+   "source": "Owner note 2026-10-28 vs DataforSEO reviews pull (data/reviews); audit F-002",
+   "state": "unknown"
+  },
+  {
+   "id": "d-team-size-trucks-jobs-completed",
+   "label": "Team size / trucks / jobs completed",
+   "status": "client_confirmed",
+   "value": "Kevin is the team; one truck; thousands of jobs completed",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-financing-available-provider-terms",
+   "label": "Financing — available, provider, terms",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-free-estimate-and-what-free-means",
+   "label": "Free estimate — and what free means",
+   "status": "client_confirmed",
+   "value": "Free estimate; no deposit to schedule",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-minimum-service-call-or-trip-charge",
+   "label": "Minimum service call or trip charge",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-payment-methods",
+   "label": "Payment methods",
+   "status": "client_confirmed",
+   "value": "Normal payment methods",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-services-subcontracted-out",
+   "label": "Services subcontracted out",
+   "status": "client_confirmed",
+   "value": "Not subcontracted out",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-named-staff-for-on-page-use",
+   "label": "Named staff for on-page use",
+   "status": "client_confirmed",
+   "value": "Kevin Snow (owner)",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-licensed-practitioner-for-health-claim-sign-off-medical-ch",
+   "label": "Licensed practitioner for health-claim sign-off *(medical / chiropractic)*",
+   "status": "unknown",
+   "value": "",
+   "source": "",
+   "state": "unknown"
+  },
+  {
+   "id": "d-blog-author-a-real-person-cm-039-from-the-decision-sheet",
+   "label": "Blog author — a real person (CM-039; from the Decision Sheet)",
+   "status": "paul_approved",
+   "value": "Kevin Snow (owner)",
+   "source": "Paul, chat 2026-10-28: Kevin Snow confirmed as author",
+   "state": "confirmed"
+  },
+  {
+   "id": "gbp-link",
+   "label": "GBP link",
+   "status": "paul_approved",
+   "value": "https://maps.app.goo.gl/vvsrqH6TxL815KWB6",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "ga4-access",
+   "label": "GA4 access",
+   "status": "paul_approved",
+   "value": "none",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-facebook-beaufort",
+   "label": "Facebook page (Beaufort)",
+   "status": "paul_approved",
+   "value": "https://www.facebook.com/carpetcleaningbeaufortsc",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-drying-time",
+   "label": "Drying time",
+   "status": "paul_approved",
+   "value": "Carpets dry in under one hour on a typical job",
+   "source": "Paul, audit review 2026-10-29 (F-005, decision fact_drying_time)",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-cleaning-solution-safety-claims",
+   "label": "Cleaning solution — safety claims",
+   "status": "paul_approved",
+   "value": "pH-neutral, biodegradable, non-toxic; safe for pets and children (owner's claims; product names not recorded)",
+   "source": "Paul, audit review 2026-10-29 (F-006, decision fact_cleaning_solution_product)",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-quality-commitment",
+   "label": "Quality commitment (not a guarantee)",
+   "status": "paul_approved",
+   "value": "The owner commits to quality cleaning at a reasonable price; no refund, warranty or satisfaction guarantee is offered",
+   "source": "Paul, audit review 2026-10-29 (F-004, decision audit-f004-keep-quality-sentence)",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-travel-fee-beyond-six-towns",
+   "label": "Travel fee beyond the six towns",
+   "status": "paul_approved",
+   "value": "None — no travel fee",
+   "source": "Paul, chat 2026-10-29 (answer 2)",
+   "state": "confirmed"
+  },
+  {
+   "id": "g-positioning-owner-words",
+   "label": "Section G positioning lines (owner's words)",
+   "status": "unknown",
+   "value": "Skipped — Paul chose to leave question 25 unanswered; no owner words recorded",
+   "source": "Paul, chat 2026-10-29 (answer 3)",
+   "state": "unknown"
+  }
+ ],
+ "reviews": {
+  "practice: communication": {
+   "reviewers": 2,
+   "quotes": [
+    {
+     "date": "2025-12-03",
+     "quote": "Very friendly, thorough and explained what he was doing and what to expect.",
+     "row": "reviews.csv row 5"
+    },
+    {
+     "date": "2022-04-29",
+     "quote": "Kevin was very professional and responsive with scheduling and we really appreciated his recommendations.",
+     "row": "reviews.csv row 21"
+    }
+   ],
+   "tier": "example",
+   "checked": true,
+   "checked_at": "2026-10-28"
+  },
+  "practice: speed": {
+   "reviewers": 14,
+   "quotes": [
+    {
+     "date": "2026-02-17",
+     "quote": "Kevin showed up on time and got the job done efficiently!",
+     "row": "reviews.csv row 3"
+    },
+    {
+     "date": "2026-01-14",
+     "quote": "Kevin showed up on-time, was quick/efficient and left everything looking fresh and smelling clean.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2025-12-03",
+     "quote": "I reached out to Kevin based off of other reviews and he responded quickly and got the job done.",
+     "row": "reviews.csv row 5"
+    },
+    {
+     "date": "2025-06-02",
+     "quote": "Kevin called me almost immediately and said that he could clean the carpet the next day as he was booked solid for the next week.",
+     "row": "reviews.csv row 6"
+    },
+    {
+     "date": "2025-01-11",
+     "quote": "Very prompt with scheduling and did a great job!",
+     "row": "reviews.csv row 7"
+    }
+   ],
+   "tier": "known",
+   "checked": true,
+   "checked_at": "2026-10-28"
+  },
+  "named staff: Kevin": {
+   "reviewers": 11,
+   "quotes": [
+    {
+     "date": "2026-06-01",
+     "quote": "Kevin is super professional and fast.",
+     "row": "reviews.csv row 2"
+    },
+    {
+     "date": "2026-02-17",
+     "quote": "Kevin showed up on time and got the job done efficiently!",
+     "row": "reviews.csv row 3"
+    },
+    {
+     "date": "2026-01-14",
+     "quote": "Kevin showed up on-time, was quick/efficient and left everything looking fresh and smelling clean.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2025-12-03",
+     "quote": "I reached out to Kevin based off of other reviews and he responded quickly and got the job done.",
+     "row": "reviews.csv row 5"
+    },
+    {
+     "date": "2025-06-02",
+     "quote": "Kevin called me almost immediately and said that he could clean the carpet the next day as he was booked solid for the next week.",
+     "row": "reviews.csv row 6"
+    }
+   ],
+   "tier": "known",
+   "checked": true,
+   "checked_at": "2026-10-28"
+  }
+ },
+ "questions": [],
+ "site_gbp": [
+  {
+   "kind": "site",
+   "quote": "Bluffton Hilton Head Island Beaufort Hardeeville Ridgeland Lady’s Island Also serving the Lowcountry communities listed above.",
+   "label": "client site https://carpetcleaningblufftonsc.com/beaufort/ (data/crawl/page-text.csv row 10)"
+  },
+  {
+   "kind": "site",
+   "quote": "Bluffton Hilton Head Island Beaufort Hardeeville Ridgeland Lady’s Island Also serving the Lowcountry communities listed above.",
+   "label": "client site https://carpetcleaningblufftonsc.com/bluffton/ (data/crawl/page-text.csv row 19)"
+  },
+  {
+   "kind": "site",
+   "quote": "Bluffton Hilton Head Island, Beaufort, Hardeeville, Lady’s Island and Ridgeland are served from our Bluffton base.",
+   "label": "client site https://carpetcleaningblufftonsc.com/boat-and-auto-interior-cleaning/ (data/crawl/page-text.csv row 20)"
+  },
+  {
+   "kind": "site",
+   "quote": "Select your area: Bluffton Hilton Head Island, Beaufort, Hardeeville, Lady’s Island and Ridgeland are also served.",
+   "label": "client site https://carpetcleaningblufftonsc.com/carpet-cleaning/ (data/crawl/page-text.csv row 25)"
+  },
+  {
+   "kind": "site",
+   "quote": "Select your area: Bluffton Hilton Head Island, Beaufort, Hardeeville, Lady’s Island and Ridgeland are also served.",
+   "label": "client site https://carpetcleaningblufftonsc.com/commercial-carpet-cleaning/ (data/crawl/page-text.csv row 44)"
+  },
+  {
+   "kind": "site",
+   "quote": "Bluffton Hilton Head Island Beaufort Hardeeville Ridgeland Lady’s Island Also serving the Lowcountry communities listed above.",
+   "label": "client site https://carpetcleaningblufftonsc.com/hardeeville/ (data/crawl/page-text.csv row 50)"
+  },
+  {
+   "kind": "site",
+   "quote": "Bluffton Hilton Head Island, Beaufort, Hardeeville, Lady’s Island and Ridgeland are served from our Bluffton base.",
+   "label": "client site https://carpetcleaningblufftonsc.com/hardwood-floor-cleaning/ (data/crawl/page-text.csv row 51)"
+  },
+  {
+   "kind": "site",
+   "quote": "Bluffton Hilton Head Island Beaufort Hardeeville Ridgeland Lady’s Island Also serving the Lowcountry communities listed above.",
+   "label": "client site https://carpetcleaningblufftonsc.com/hilton-head/ (data/crawl/page-text.csv row 56)"
+  },
+  {
+   "kind": "site",
+   "quote": "Carpet Cleaning Service in Lady’s Island, SC Carolina Carpet Cleaning serves Lady’s Island from our Bluffton office.",
+   "label": "client site https://carpetcleaningblufftonsc.com/ladys-island/ (data/crawl/page-text.csv row 61)"
+  },
+  {
+   "kind": "site",
+   "quote": "Select your area: Bluffton Hilton Head Island, Beaufort, Hardeeville, Lady’s Island and Ridgeland are also served.",
+   "label": "client site https://carpetcleaningblufftonsc.com/pet-odor-removal/ (data/crawl/page-text.csv row 65)"
+  },
+  {
+   "kind": "site",
+   "quote": "Bluffton Hilton Head Island Beaufort Hardeeville Ridgeland Lady’s Island Also serving the Lowcountry communities listed above.",
+   "label": "client site https://carpetcleaningblufftonsc.com/ridgeland/ (data/crawl/page-text.csv row 68)"
+  },
+  {
+   "kind": "site",
+   "quote": "Bluffton Hilton Head Island, Beaufort, Hardeeville, Lady’s Island and Ridgeland are served from our Bluffton base.",
+   "label": "client site https://carpetcleaningblufftonsc.com/rug-cleaning/ (data/crawl/page-text.csv row 70)"
+  }
+ ],
+ "public": [],
+ "research": [],
+ "place": [],
+ "settled": [
+  {
+   "key": "towns_served",
+   "text": "Towns served: **The 6 live location towns only:** Hilton Head Island, Bluffton, Beaufort, Ridgeland, Hardeeville, Lady's Island. The other towns are not kept for now. (recommended default)",
+   "at": "2026-10-28"
+  }
+ ],
+ "gaps": [
+  {
+   "key": "city_served",
+   "label": "The city is actually served (Section E / proof sheet)",
+   "need": "required",
+   "from": "page:city_served",
+   "kind": "client",
+   "fact_key": "fact:loc-ladys-island:city_served"
+  },
+  {
+   "key": "local_context",
+   "label": "City-specific conditions (housing stock, terrain, weather, failure patterns)",
+   "need": "required",
+   "from": "page:local_context",
+   "kind": "public",
+   "fact_key": "fact:loc-ladys-island:local_context"
+  },
+  {
+   "key": "neighborhoods",
+   "label": "Up to 12 real neighborhoods (fewer than 3: the section is dropped and they are named in local context)",
+   "need": "required",
+   "from": "page:neighborhoods",
+   "kind": "public",
+   "fact_key": "fact:loc-ladys-island:neighborhoods"
+  },
+  {
+   "key": "place_entities",
+   "label": "3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections)",
+   "need": "supporting",
+   "from": "page:place_entities",
+   "kind": "public",
+   "fact_key": "fact:loc-ladys-island:place_entities"
+  },
+  {
+   "key": "permit_office",
+   "label": "Which office issues permits here, with its official page (for the Serving section)",
+   "need": "supporting",
+   "from": "page:permit_office",
+   "kind": "public",
+   "fact_key": "fact:loc-ladys-island:permit_office"
+  }
+ ],
+ "standard": {},
+ "excerpts": [
+  {
+   "id": "R1",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "example",
+   "text": "Very friendly, thorough and explained what he was doing and what to expect."
+  },
+  {
+   "id": "R2",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "example",
+   "text": "Kevin was very professional and responsive with scheduling and we really appreciated his recommendations."
+  },
+  {
+   "id": "R3",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "Kevin showed up on time and got the job done efficiently!"
+  },
+  {
+   "id": "R4",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "Kevin showed up on-time, was quick/efficient and left everything looking fresh and smelling clean."
+  },
+  {
+   "id": "R5",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "I reached out to Kevin based off of other reviews and he responded quickly and got the job done."
+  },
+  {
+   "id": "R6",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "Kevin called me almost immediately and said that he could clean the carpet the next day as he was booked solid for the next week."
+  },
+  {
+   "id": "R7",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "Very prompt with scheduling and did a great job!"
+  },
+  {
+   "id": "R8",
+   "kind": "review",
+   "topic": "named staff: Kevin",
+   "tier": "known",
+   "text": "Kevin is super professional and fast."
+  },
+  {
+   "id": "R9",
+   "kind": "review",
+   "topic": "named staff: Kevin",
+   "tier": "known",
+   "text": "Kevin showed up on time and got the job done efficiently!"
+  },
+  {
+   "id": "R10",
+   "kind": "review",
+   "topic": "named staff: Kevin",
+   "tier": "known",
+   "text": "Kevin showed up on-time, was quick/efficient and left everything looking fresh and smelling clean."
+  },
+  {
+   "id": "R11",
+   "kind": "review",
+   "topic": "named staff: Kevin",
+   "tier": "known",
+   "text": "I reached out to Kevin based off of other reviews and he responded quickly and got the job done."
+  },
+  {
+   "id": "R12",
+   "kind": "review",
+   "topic": "named staff: Kevin",
+   "tier": "known",
+   "text": "Kevin called me almost immediately and said that he could clean the carpet the next day as he was booked solid for the next week."
+  },
+  {
+   "id": "S13",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Bluffton Hilton Head Island Beaufort Hardeeville Ridgeland Lady’s Island Also serving the Lowcountry communities listed above."
+  },
+  {
+   "id": "S14",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Bluffton Hilton Head Island Beaufort Hardeeville Ridgeland Lady’s Island Also serving the Lowcountry communities listed above."
+  },
+  {
+   "id": "S15",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Bluffton Hilton Head Island, Beaufort, Hardeeville, Lady’s Island and Ridgeland are served from our Bluffton base."
+  },
+  {
+   "id": "S16",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Select your area: Bluffton Hilton Head Island, Beaufort, Hardeeville, Lady’s Island and Ridgeland are also served."
+  },
+  {
+   "id": "S17",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Select your area: Bluffton Hilton Head Island, Beaufort, Hardeeville, Lady’s Island and Ridgeland are also served."
+  },
+  {
+   "id": "S18",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Bluffton Hilton Head Island Beaufort Hardeeville Ridgeland Lady’s Island Also serving the Lowcountry communities listed above."
+  },
+  {
+   "id": "S19",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Bluffton Hilton Head Island, Beaufort, Hardeeville, Lady’s Island and Ridgeland are served from our Bluffton base."
+  },
+  {
+   "id": "S20",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Bluffton Hilton Head Island Beaufort Hardeeville Ridgeland Lady’s Island Also serving the Lowcountry communities listed above."
+  },
+  {
+   "id": "S21",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Carpet Cleaning Service in Lady’s Island, SC Carolina Carpet Cleaning serves Lady’s Island from our Bluffton office."
+  },
+  {
+   "id": "S22",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Select your area: Bluffton Hilton Head Island, Beaufort, Hardeeville, Lady’s Island and Ridgeland are also served."
+  },
+  {
+   "id": "S23",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Bluffton Hilton Head Island Beaufort Hardeeville Ridgeland Lady’s Island Also serving the Lowcountry communities listed above."
+  },
+  {
+   "id": "S24",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Bluffton Hilton Head Island, Beaufort, Hardeeville, Lady’s Island and Ridgeland are served from our Bluffton base."
+  }
+ ],
+ "known": [
+  {
+   "id": "a-gbp-primary-category-the-category-entity",
+   "label": "GBP primary category = the category entity",
+   "value": "Carpet cleaning service"
+  },
+  {
+   "id": "a-storefront-or-sab",
+   "label": "Storefront or SAB",
+   "value": "SAB; address on website only (273 Club Gate, Bluffton, SC 29910) matches GBP"
+  },
+  {
+   "id": "a-area-entity",
+   "label": "Area entity",
+   "value": "Hilton Head Island metropolitan area"
+  },
+  {
+   "id": "a-area-variants-3-5",
+   "label": "Area variants (3–5)",
+   "value": "SEO titles: Hilton Head Island Metro Area · user-facing titles and homepage H1: South Carolina Lowcountry"
+  },
+  {
+   "id": "a-phone",
+   "label": "Phone",
+   "value": "(843) 575-6286"
+  },
+  {
+   "id": "a-primary-domain-canonical-host-form",
+   "label": "Primary domain (canonical host form)",
+   "value": "https://carpetcleaningblufftonsc.com/ (http and www 301 to it; rel=canonical matches)"
+  },
+  {
+   "id": "a-legal-entity-name",
+   "label": "Legal entity name",
+   "value": "Carolina Floor Cleaning Pros"
+  },
+  {
+   "id": "a-exact-url-in-the-gbp-website-field",
+   "label": "Exact URL in the GBP Website field",
+   "value": "https://carpetcleaningblufftonsc.com/"
+  },
+  {
+   "id": "d-founding-year-years-in-business",
+   "label": "Founding year / years in business",
+   "value": "1993 - operated locally as a family-owned business since 1993"
+  },
+  {
+   "id": "d-legal-entity-dba",
+   "label": "Legal entity + DBA",
+   "value": "Carolina Carpet Cleaning (DBA / trade name)"
+  },
+  {
+   "id": "d-licence-numbers-and-classes",
+   "label": "Licence numbers and classes",
+   "value": "No current licence number provided"
+  },
+  {
+   "id": "d-insurance-bonded-status",
+   "label": "Insurance / bonded status",
+   "value": "General workmanship insurance"
+  },
+  {
+   "id": "d-certifications-authorizations-factory-training",
+   "label": "Certifications, authorizations, factory training",
+   "value": "N/A"
+  },
+  {
+   "id": "d-association-memberships",
+   "label": "Association memberships",
+   "value": "N/A"
+  },
+  {
+   "id": "d-warranty-terms",
+   "label": "Warranty terms",
+   "value": "N/A"
+  },
+  {
+   "id": "d-guarantees-response-time-on-time-satisfaction",
+   "label": "Guarantees (response time, on-time, satisfaction)",
+   "value": "N/A"
+  },
+  {
+   "id": "d-awards-and-rankings",
+   "label": "Awards and rankings",
+   "value": "N/A"
+  },
+  {
+   "id": "d-team-size-trucks-jobs-completed",
+   "label": "Team size / trucks / jobs completed",
+   "value": "Kevin is the team; one truck; thousands of jobs completed"
+  },
+  {
+   "id": "d-financing-available-provider-terms",
+   "label": "Financing — available, provider, terms",
+   "value": "N/A"
+  },
+  {
+   "id": "d-free-estimate-and-what-free-means",
+   "label": "Free estimate — and what free means",
+   "value": "Free estimate; no deposit to schedule"
+  },
+  {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "value": "N/A"
+  },
+  {
+   "id": "d-minimum-service-call-or-trip-charge",
+   "label": "Minimum service call or trip charge",
+   "value": "N/A"
+  },
+  {
+   "id": "d-payment-methods",
+   "label": "Payment methods",
+   "value": "Normal payment methods"
+  },
+  {
+   "id": "d-services-subcontracted-out",
+   "label": "Services subcontracted out",
+   "value": "Not subcontracted out"
+  },
+  {
+   "id": "d-named-staff-for-on-page-use",
+   "label": "Named staff for on-page use",
+   "value": "Kevin Snow (owner)"
+  },
+  {
+   "id": "d-blog-author-a-real-person-cm-039-from-the-decision-sheet",
+   "label": "Blog author — a real person (CM-039; from the Decision Sheet)",
+   "value": "Kevin Snow (owner)"
+  },
+  {
+   "id": "gbp-link",
+   "label": "GBP link",
+   "value": "https://maps.app.goo.gl/vvsrqH6TxL815KWB6"
+  },
+  {
+   "id": "ga4-access",
+   "label": "GA4 access",
+   "value": "none"
+  },
+  {
+   "id": "a-facebook-beaufort",
+   "label": "Facebook page (Beaufort)",
+   "value": "https://www.facebook.com/carpetcleaningbeaufortsc"
+  },
+  {
+   "id": "d-drying-time",
+   "label": "Drying time",
+   "value": "Carpets dry in under one hour on a typical job"
+  },
+  {
+   "id": "d-cleaning-solution-safety-claims",
+   "label": "Cleaning solution — safety claims",
+   "value": "pH-neutral, biodegradable, non-toxic; safe for pets and children (owner's claims; product names not recorded)"
+  },
+  {
+   "id": "d-quality-commitment",
+   "label": "Quality commitment (not a guarantee)",
+   "value": "The owner commits to quality cleaning at a reasonable price; no refund, warranty or satisfaction guarantee is offered"
+  },
+  {
+   "id": "a-travel-fee-beyond-six-towns",
+   "label": "Travel fee beyond the six towns",
+   "value": "None — no travel fee"
+  },
+  {
+   "id": "practice: speed",
+   "label": "practice: speed",
+   "value": "Kevin showed up on time and got the job done efficiently!"
+  },
+  {
+   "id": "named staff: Kevin",
+   "label": "named staff: Kevin",
+   "value": "Kevin is super professional and fast."
+  }
+ ]
+}

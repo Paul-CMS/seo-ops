@@ -145,10 +145,1018 @@
       },
       "at": "2026-10-29T10:31:20-05:00",
       "ts": 1793287880.69791
+    },
+    "site_plan": {
+      "files": {
+        "clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Site Plan - REVIEW.md": "ce5dafa5d808"
+      },
+      "at": "2026-10-29T10:39:09-05:00",
+      "ts": 1793288349.958931
     }
   },
-  "pages": {},
-  "build": null,
+  "pages": {
+    "svc-carpet-cleaning": {
+      "state": "planned",
+      "type": "service",
+      "name": "Carpet Cleaning",
+      "url": "/carpet-cleaning/",
+      "service_variant": "home carpet cleaning",
+      "h1": "Home Carpet Cleaning in the South Carolina Lowcountry",
+      "claims": [],
+      "keyword": "carpet cleaning",
+      "area_variant": "South Carolina Lowcountry",
+      "faq": [
+        "How much does it cost to have carpet professionally cleaned? — PAA #12; what changes the price, no figure (pricing not in Section D)",
+        "How do I get brown stains out of my carpet? — PAA #2; stain removal is folded into this page (F-008)",
+        "How long does carpet take to dry after cleaning? — settled fact_drying_time (under one hour, typical job); competitor coverage",
+        "Do you move furniture before cleaning the carpet? — competitor coverage; client practice is a facts-round question",
+        "Is the cleaning solution safe for children and pets? — Section D safety claims (F-006, Paul approved)",
+        "How is low-moisture cleaning different from steam cleaning? — low-moisture is folded into this page (F-008)"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 2,
+          "Conflict": 1
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/svc-carpet-cleaning.grid.md",
+        "sha": "d5d869d803ef",
+        "at": "2026-10-29T10:38:50-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "pricing",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/pilot/packs/svc-carpet-cleaning.md",
+        "json": "clients/carolina-carpet-cleaning/build/pilot/packs/svc-carpet-cleaning.json",
+        "sha": "31071fa0445d",
+        "at": "2026-10-29T10:38:50-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "pilot",
+        "counts": {
+          "facts": 39,
+          "review_topics": 5,
+          "review_excerpts": 18,
+          "questions": 0,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 7,
+          "gaps": 1,
+          "excerpts": 30
+        }
+      }
+    },
+    "svc-commercial-carpet-cleaning": {
+      "state": "planned",
+      "type": "service",
+      "name": "Commercial Carpet Cleaning",
+      "url": "/commercial-carpet-cleaning/",
+      "service_variant": "business carpet cleaning",
+      "h1": "Business Carpet Cleaning in the Lowcountry",
+      "claims": [],
+      "keyword": "commercial carpet cleaning",
+      "area_variant": "Lowcountry",
+      "faq": [
+        "Can carpet cleaning be scheduled outside business hours? — the commercial buyer's main concern; client hours are a facts-round question",
+        "Can my business stay open while the carpets are cleaned? — drying fact (under one hour) applied to a working space",
+        "How often should commercial carpet be cleaned? — trade standard by traffic level",
+        "Do you clean carpets in vacation rentals between guests? — a large rental market in the area; client practice is a facts-round question"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 8,
+          "Unknown": 2,
+          "Unverified": 1,
+          "Conflict": 1
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/svc-commercial-carpet-cleaning.grid.md",
+        "sha": "71ccafedd38f",
+        "at": "2026-10-29T10:38:51-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "pricing",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/services/packs/svc-commercial-carpet-cleaning.md",
+        "json": "clients/carolina-carpet-cleaning/build/services/packs/svc-commercial-carpet-cleaning.json",
+        "sha": "9cba9c6fb3bf",
+        "at": "2026-10-29T10:38:51-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "services",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 0,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 2,
+          "excerpts": 24
+        }
+      }
+    },
+    "svc-rug-cleaning": {
+      "state": "planned",
+      "type": "service",
+      "name": "Rug Cleaning",
+      "url": "/rug-cleaning/",
+      "service_variant": "area and oriental rug cleaning",
+      "h1": "Area and Oriental Rug Cleaning in the South Carolina Lowcountry",
+      "claims": [],
+      "keyword": "rug cleaning",
+      "area_variant": "South Carolina Lowcountry",
+      "faq": [
+        "Can you use a carpet cleaner on an oriental rug? — PAA #10 (#13 'Can you carpet clean an area rug?' is answered inside it)",
+        "How much does it cost to clean an 8x10 area rug or oriental rug? — PAA #11 + #15 merged; no figure (pricing not in Section D; the blog's $2–$5 range is D2, never repeated)",
+        "Do you clean rugs in the home or take them away? — client practice, facts-round question",
+        "How often should a wool or oriental rug be cleaned? — trade standard"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 8,
+          "Unknown": 2,
+          "Unverified": 1,
+          "Conflict": 1
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/svc-rug-cleaning.grid.md",
+        "sha": "d260ff3b0635",
+        "at": "2026-10-29T10:38:51-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "pricing",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/services/packs/svc-rug-cleaning.md",
+        "json": "clients/carolina-carpet-cleaning/build/services/packs/svc-rug-cleaning.json",
+        "sha": "89e1a4e9b6f5",
+        "at": "2026-10-29T10:38:51-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "services",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 7,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 3,
+          "gaps": 2,
+          "excerpts": 24
+        }
+      }
+    },
+    "svc-upholstery-cleaning": {
+      "state": "planned",
+      "type": "service",
+      "name": "Upholstery Cleaning",
+      "url": "/upholstery-cleaning/",
+      "service_variant": "furniture upholstery cleaning",
+      "h1": "Furniture Upholstery Cleaning in the Lowcountry",
+      "claims": [],
+      "keyword": "upholstery cleaning",
+      "area_variant": "Lowcountry",
+      "faq": [
+        "Which upholstery fabrics can be cleaned with water? — trade standard (fabric cleaning codes W, S, WS, X)",
+        "Can old stains come out of a sofa? — buyer concern; what is realistic",
+        "How often should upholstered furniture be cleaned? — trade standard",
+        "Can you clean dining chairs and small pieces in the same visit? — client practice, facts-round question"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 8,
+          "Unknown": 2,
+          "Unverified": 1,
+          "Conflict": 1
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/svc-upholstery-cleaning.grid.md",
+        "sha": "3fa331bafac4",
+        "at": "2026-10-29T10:38:51-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "pricing",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/services/packs/svc-upholstery-cleaning.md",
+        "json": "clients/carolina-carpet-cleaning/build/services/packs/svc-upholstery-cleaning.json",
+        "sha": "736026dbc953",
+        "at": "2026-10-29T10:38:51-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "services",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 4,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 2,
+          "excerpts": 24
+        }
+      }
+    },
+    "svc-tile-grout-cleaning": {
+      "state": "planned",
+      "type": "service",
+      "name": "Tile & Grout Cleaning",
+      "url": "/tile-grout-cleaning/",
+      "service_variant": "tile floor and grout cleaning",
+      "h1": "Tile Floor and Grout Cleaning in the South Carolina Lowcountry",
+      "claims": [],
+      "keyword": "tile and grout cleaning",
+      "area_variant": "South Carolina Lowcountry",
+      "faq": [
+        "Can dirty grout be cleaned without regrouting? — trade standard; the buyer's main decision",
+        "Do you seal grout after cleaning? — client service, facts-round question",
+        "Which tile surfaces can you clean? — porcelain, ceramic, natural stone; client practice is a facts-round question",
+        "How often should tile and grout be cleaned in a humid climate? — competitor coverage (how often) + local humidity"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 8,
+          "Unknown": 2,
+          "Unverified": 1,
+          "Conflict": 1
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/svc-tile-grout-cleaning.grid.md",
+        "sha": "9f724aac52bb",
+        "at": "2026-10-29T10:38:51-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "pricing",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/services/packs/svc-tile-grout-cleaning.md",
+        "json": "clients/carolina-carpet-cleaning/build/services/packs/svc-tile-grout-cleaning.json",
+        "sha": "b0c007e99e98",
+        "at": "2026-10-29T10:38:51-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "services",
+        "counts": {
+          "facts": 39,
+          "review_topics": 4,
+          "review_excerpts": 13,
+          "questions": 0,
+          "site_gbp": 8,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 2,
+          "excerpts": 21
+        }
+      }
+    },
+    "svc-hardwood-floor-cleaning": {
+      "state": "planned",
+      "type": "service",
+      "name": "Hardwood Floor Cleaning",
+      "url": "/hardwood-floor-cleaning/",
+      "service_variant": "wood floor cleaning",
+      "h1": "Wood Floor Cleaning in the Lowcountry",
+      "claims": [],
+      "keyword": "hardwood floor cleaning",
+      "area_variant": "Lowcountry",
+      "faq": [
+        "How much does it cost to have hardwood floors cleaned? — PAA #6; no figure (pricing not in Section D)",
+        "Is professional hardwood floor cleaning worth it? — PAA #7",
+        "Is the process safe for engineered wood and floor finishes? — trade standard + Section D pH-neutral claim",
+        "How soon can furniture go back on the floor? — client practice, facts-round question"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 2,
+          "Conflict": 1
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/svc-hardwood-floor-cleaning.grid.md",
+        "sha": "60dac54cc9bd",
+        "at": "2026-10-29T10:38:51-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "pricing",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/services/packs/svc-hardwood-floor-cleaning.md",
+        "json": "clients/carolina-carpet-cleaning/build/services/packs/svc-hardwood-floor-cleaning.json",
+        "sha": "e19df7f76258",
+        "at": "2026-10-29T10:38:51-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "services",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 4,
+          "site_gbp": 9,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 1,
+          "excerpts": 21
+        }
+      }
+    },
+    "svc-pet-odor-removal": {
+      "state": "planned",
+      "type": "service",
+      "name": "Pet Odor Removal",
+      "url": "/pet-odor-removal/",
+      "service_variant": "pet urine odor removal",
+      "h1": "Pet Urine Odor Removal in the South Carolina Lowcountry",
+      "claims": [],
+      "keyword": "pet odor removal",
+      "area_variant": "South Carolina Lowcountry",
+      "faq": [
+        "Can pet urine odor be removed from carpet for good? — the 301'd blog URL /permanent-pet-urine-odor-removal-bluffton-sc/ lands here",
+        "Why does pet odor come back on humid days? — local humidity + trade standard",
+        "Does urine soak into the carpet pad, and can the pad be treated? — trade standard; client practice is a facts-round question",
+        "When is a store-bought enzyme cleaner not enough? — decision point before calling"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 8,
+          "Unknown": 2,
+          "Unverified": 1,
+          "Conflict": 1
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/svc-pet-odor-removal.grid.md",
+        "sha": "66d2495a8f57",
+        "at": "2026-10-29T10:38:51-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "pricing",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/services/packs/svc-pet-odor-removal.md",
+        "json": "clients/carolina-carpet-cleaning/build/services/packs/svc-pet-odor-removal.json",
+        "sha": "31d0a1729864",
+        "at": "2026-10-29T10:38:51-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "services",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 0,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 2,
+          "excerpts": 24
+        }
+      }
+    },
+    "svc-boat-auto-interior-cleaning": {
+      "state": "planned",
+      "type": "service",
+      "name": "Boat & Auto Interior Cleaning",
+      "url": "/boat-and-auto-interior-cleaning/",
+      "service_variant": "boat and car interior cleaning",
+      "h1": "Boat and Car Interior Cleaning in the Lowcountry",
+      "claims": [],
+      "keyword": "boat and auto interior cleaning",
+      "area_variant": "Lowcountry",
+      "faq": [
+        "Do you clean boat interiors at the marina or dock? — client practice, facts-round question",
+        "Which parts of a car interior do you clean? — client practice, facts-round question",
+        "Do you clean RV and camper interiors? — named in the press release only; facts-round question before it is stated",
+        "How long does a vehicle interior take to dry? — client practice; the under-one-hour fact covers carpets only"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 8,
+          "Unknown": 2,
+          "Unverified": 1,
+          "Conflict": 1
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/svc-boat-auto-interior-cleaning.grid.md",
+        "sha": "e711bdde0fde",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "service_scope",
+          "service_process",
+          "pricing",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/services/packs/svc-boat-auto-interior-cleaning.md",
+        "json": "clients/carolina-carpet-cleaning/build/services/packs/svc-boat-auto-interior-cleaning.json",
+        "sha": "cb895500a7f4",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "services",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 0,
+          "site_gbp": 8,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 2,
+          "excerpts": 20
+        }
+      }
+    },
+    "loc-bluffton": {
+      "state": "planned",
+      "type": "location",
+      "name": "Bluffton, SC",
+      "url": "/bluffton/",
+      "city": "Bluffton",
+      "h1": "Carpet Cleaners in Bluffton",
+      "claims": [],
+      "keyword": "carpet cleaning bluffton sc",
+      "faq": [
+        "1 · Local cost or decision: do HOA or gated-community rules in Bluffton change how a cleaning visit is booked — many Bluffton homes sit in gated communities",
+        "2 · Logistics: how soon can a cleaning be scheduled in Bluffton — the business is based in Bluffton (273 Club Gate)",
+        "3 · Trust: why carpets in Bluffton homes smell musty in summer — marsh-side humidity; review language at its tier"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 3,
+          "Conflict": 1
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/loc-bluffton.grid.md",
+        "sha": "23cdbe262030",
+        "at": "2026-10-29T10:38:50-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/pilot/packs/loc-bluffton.md",
+        "json": "clients/carolina-carpet-cleaning/build/pilot/packs/loc-bluffton.json",
+        "sha": "8e5d5429d44f",
+        "at": "2026-10-29T10:38:50-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "pilot",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 0,
+          "site_gbp": 12,
+          "public": 4,
+          "place": 0,
+          "settled": 4,
+          "gaps": 2,
+          "excerpts": 24
+        }
+      }
+    },
+    "loc-hilton-head": {
+      "state": "planned",
+      "type": "location",
+      "name": "Hilton Head Island, SC",
+      "url": "/hilton-head/",
+      "city": "Hilton Head Island",
+      "h1": "Carpet Cleaners in Hilton Head Island",
+      "claims": [],
+      "keyword": "carpet cleaning hilton head",
+      "faq": [
+        "1 · Local cost or decision: how vacation-rental turnovers on the island change when and how carpets are cleaned",
+        "2 · Logistics: what gate passes the island's private communities need for a service visit",
+        "3 · Trust: how beach sand and salt air wear island carpets"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 3,
+          "Conflict": 1
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/loc-hilton-head.grid.md",
+        "sha": "a2140757a208",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/locations/packs/loc-hilton-head.md",
+        "json": "clients/carolina-carpet-cleaning/build/locations/packs/loc-hilton-head.json",
+        "sha": "a1e69cd32200",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "locations",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 15,
+          "site_gbp": 12,
+          "public": 1,
+          "place": 0,
+          "settled": 4,
+          "gaps": 2,
+          "excerpts": 24
+        }
+      }
+    },
+    "loc-beaufort": {
+      "state": "planned",
+      "type": "location",
+      "name": "Beaufort, SC",
+      "url": "/beaufort/",
+      "city": "Beaufort",
+      "h1": "Carpet Cleaners in Beaufort",
+      "claims": [],
+      "keyword": "carpet cleaning beaufort sc",
+      "faq": [
+        "1 · Local cost or decision: what older homes in Beaufort's historic district change about rug and floor cleaning",
+        "2 · Logistics: how far ahead to book from Beaufort — travel from the Bluffton base, no travel fee (Paul 2026-10-29)",
+        "3 · Trust: move-out carpet cleaning for military households (MCAS Beaufort, Parris Island) — researcher confirms the local fit"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 2,
+          "Unverified": 3,
+          "Conflict": 1
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/loc-beaufort.grid.md",
+        "sha": "5cd29673292c",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/locations/packs/loc-beaufort.md",
+        "json": "clients/carolina-carpet-cleaning/build/locations/packs/loc-beaufort.json",
+        "sha": "9e121207c24c",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "locations",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 0,
+          "site_gbp": 12,
+          "public": 6,
+          "place": 0,
+          "settled": 2,
+          "gaps": 2,
+          "excerpts": 24
+        }
+      }
+    },
+    "loc-ladys-island": {
+      "state": "planned",
+      "type": "location",
+      "name": "Lady's Island, SC",
+      "url": "/ladys-island/",
+      "city": "Lady's Island",
+      "h1": "Carpet Cleaners in Lady's Island",
+      "claims": [],
+      "keyword": "carpet cleaning lady's island sc",
+      "faq": [
+        "1 · Local cost or decision: what waterfront and marsh-front homes on Lady's Island need from a carpet cleaning",
+        "2 · Logistics: scheduling a visit across the bridge from Beaufort — no travel fee",
+        "3 · Trust: humidity and mildew in island homes — review language at its tier"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 5,
+          "Unverified": 0,
+          "Conflict": 1
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/loc-ladys-island.grid.md",
+        "sha": "86392940f93f",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/locations/packs/loc-ladys-island.md",
+        "json": "clients/carolina-carpet-cleaning/build/locations/packs/loc-ladys-island.json",
+        "sha": "4ef0c06e83b4",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "locations",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 0,
+          "site_gbp": 12,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 5,
+          "excerpts": 24
+        }
+      }
+    },
+    "loc-ridgeland": {
+      "state": "planned",
+      "type": "location",
+      "name": "Ridgeland, SC",
+      "url": "/ridgeland/",
+      "city": "Ridgeland",
+      "h1": "Carpet Cleaners in Ridgeland",
+      "claims": [],
+      "keyword": "carpet cleaning ridgeland sc",
+      "faq": [
+        "1 · Local cost or decision: what Ridgeland's rural and older homes change about a carpet cleaning",
+        "2 · Logistics: how a Ridgeland visit is scheduled from Bluffton — no travel fee",
+        "3 · Trust: humidity, red clay and pollen tracked into Jasper County homes"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 3,
+          "Unverified": 2,
+          "Conflict": 1
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/loc-ridgeland.grid.md",
+        "sha": "5770ccd6a187",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/locations/packs/loc-ridgeland.md",
+        "json": "clients/carolina-carpet-cleaning/build/locations/packs/loc-ridgeland.json",
+        "sha": "70e75935c9c6",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "locations",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 0,
+          "site_gbp": 12,
+          "public": 1,
+          "place": 0,
+          "settled": 1,
+          "gaps": 3,
+          "excerpts": 24
+        }
+      }
+    },
+    "loc-hardeeville": {
+      "state": "planned",
+      "type": "location",
+      "name": "Hardeeville, SC",
+      "url": "/hardeeville/",
+      "city": "Hardeeville",
+      "h1": "Carpet Cleaners in Hardeeville",
+      "claims": [],
+      "keyword": "carpet cleaning hardeeville sc",
+      "faq": [
+        "1 · Local cost or decision: caring for new carpet in Hardeeville's new-construction communities",
+        "2 · Logistics: how a Hardeeville visit is scheduled from Bluffton — no travel fee",
+        "3 · Trust: humidity and pollen near the Savannah River — review language at its tier"
+      ],
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 4,
+          "Unknown": 3,
+          "Unverified": 2,
+          "Conflict": 1
+        },
+        "why": [
+          "3 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/loc-hardeeville.grid.md",
+        "sha": "d91af217dea7",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "city_served",
+          "local_context",
+          "neighborhoods",
+          "place_entities",
+          "permit_office",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/locations/packs/loc-hardeeville.md",
+        "json": "clients/carolina-carpet-cleaning/build/locations/packs/loc-hardeeville.json",
+        "sha": "6487c0137555",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "locations",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 0,
+          "site_gbp": 12,
+          "public": 1,
+          "place": 0,
+          "settled": 1,
+          "gaps": 3,
+          "excerpts": 24
+        }
+      }
+    },
+    "home": {
+      "state": "planned",
+      "type": "homepage",
+      "name": "Homepage",
+      "url": "/",
+      "h1": "Carpet Cleaning in the South Carolina Lowcountry",
+      "claims": [],
+      "keyword": "carpet cleaning bluffton sc",
+      "evidence": {
+        "result": "block",
+        "counts": {
+          "Known": 8,
+          "Unknown": 1,
+          "Unverified": 1,
+          "Conflict": 1
+        },
+        "why": [
+          "2 required facts are not known (block at 2)"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/home.grid.md",
+        "sha": "82a6675ad80f",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "brand",
+          "core_services",
+          "rating"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/home-about/packs/home.md",
+        "json": "clients/carolina-carpet-cleaning/build/home-about/packs/home.json",
+        "sha": "9ae8401d06fa",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "home-about",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 3,
+          "gaps": 1,
+          "excerpts": 12
+        }
+      }
+    },
+    "about": {
+      "state": "planned",
+      "type": "about",
+      "name": "About",
+      "url": "/about/",
+      "h1": "About Our Carpet Cleaning Company in the Lowcountry",
+      "claims": [],
+      "keyword": "carolina carpet cleaning",
+      "category_variant": "carpet cleaning company",
+      "area_variant": "Lowcountry",
+      "evidence": {
+        "result": "warn",
+        "counts": {
+          "Known": 7,
+          "Unknown": 0,
+          "Unverified": 1,
+          "Conflict": 0
+        },
+        "why": [
+          "1 required and 0 supporting gap(s), 0 conflict(s) — the brief must list them under 'Evidence gaps'"
+        ],
+        "grid": "clients/carolina-carpet-cleaning/build/evidence/about.grid.md",
+        "sha": "d002612bb5ca",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "gaps": [
+          "company_story"
+        ]
+      },
+      "pack": {
+        "file": "clients/carolina-carpet-cleaning/build/home-about/packs/about.md",
+        "json": "clients/carolina-carpet-cleaning/build/home-about/packs/about.json",
+        "sha": "607ab4031624",
+        "at": "2026-10-29T10:38:52-05:00",
+        "run": "20261029-103448-build-a20e",
+        "section": "home-about",
+        "counts": {
+          "facts": 39,
+          "review_topics": 3,
+          "review_excerpts": 12,
+          "questions": 0,
+          "site_gbp": 0,
+          "public": 0,
+          "place": 0,
+          "settled": 1,
+          "gaps": 0,
+          "excerpts": 12
+        }
+      }
+    }
+  },
+  "build": {
+    "site_plan": {
+      "file": "clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Site Plan - REVIEW.md",
+      "approval": null
+    },
+    "batches": [
+      {
+        "id": "pilot",
+        "kind": "pilot",
+        "label": "Pilot — Carpet Cleaning + Bluffton",
+        "pages": [
+          "svc-carpet-cleaning",
+          "loc-bluffton"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "route": "outline",
+        "files": {}
+      },
+      {
+        "id": "services",
+        "kind": "service",
+        "label": "Service pages",
+        "pages": [
+          "svc-commercial-carpet-cleaning",
+          "svc-rug-cleaning",
+          "svc-upholstery-cleaning",
+          "svc-tile-grout-cleaning",
+          "svc-hardwood-floor-cleaning",
+          "svc-pet-odor-removal",
+          "svc-boat-auto-interior-cleaning"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "route": "outline",
+        "files": {}
+      },
+      {
+        "id": "locations",
+        "kind": "location",
+        "label": "Location pages",
+        "pages": [
+          "loc-hilton-head",
+          "loc-beaufort",
+          "loc-ladys-island",
+          "loc-ridgeland",
+          "loc-hardeeville"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "route": "outline",
+        "files": {}
+      },
+      {
+        "id": "home-about",
+        "kind": "homepage",
+        "label": "Homepage (light fixes) and About",
+        "pages": [
+          "home",
+          "about"
+        ],
+        "state": "planned",
+        "briefs": null,
+        "drafts": null,
+        "route": "outline",
+        "files": {}
+      }
+    ],
+    "pilot_corrections_applied": null
+  },
   "audit_steps": {
     "S01": {
       "outcome": "done",
@@ -336,12 +1344,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261029-103335-answers-228b",
-    "command": "answers",
-    "finished": "2026-10-29T10:33:41-05:00",
-    "result": "Paul's answers recorded: no travel fee; Section G lines skipped; review figure skipped (stays Disputed)",
-    "changes": 0,
-    "step": "answers",
+    "run_id": "20261029-103448-build-a20e",
+    "command": "build",
+    "finished": "2026-10-29T10:39:27-05:00",
+    "result": "Site plan written: 16 pages (8 service, 6 location, homepage, about), pilot needed; Asks A1 Lady's Island merge, A2 homepage service links",
+    "changes": 2,
+    "step": "build:plan",
     "batch": null
   },
   "spend": {
@@ -362,7 +1370,7 @@
     "next": "We are planning every service and location page."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-29T10:34:00-05:00",
+  "updated": "2026-10-29T10:39:27-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
@@ -679,6 +1687,34 @@
       "by_agent": {
         "main": 0.0029
       }
+    },
+    {
+      "run": "20261029-103448-build-a20e",
+      "step": "build:plan",
+      "tokens": 2836177,
+      "usd": 1.6403,
+      "at": "2026-10-29T10:39:27-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0039,
+          "in": 6,
+          "out": 1341,
+          "cache_read": 276476,
+          "cache_write": 2311
+        },
+        "claude-opus-5-5": {
+          "usd": 1.6364,
+          "in": 68,
+          "out": 27872,
+          "cache_read": 2408720,
+          "cache_write": 119383
+        }
+      },
+      "by_agent": {
+        "main": 0.0039,
+        "build": 1.6364
+      }
     }
   ],
   "sessions": {
@@ -723,6 +1759,12 @@
       "step": "discovery:reconcile",
       "first_run": "20261029-102911-discovery-e12b",
       "at": "2026-10-29T10:31:48-05:00"
+    },
+    "7721f18e-aaaf-4438-bff6-dd5e699dfd3a": {
+      "key": "build-plan",
+      "step": "build:plan",
+      "first_run": "20261029-103448-build-a20e",
+      "at": "2026-10-29T10:39:27-05:00"
     }
   },
   "rewrite4_routes": {
@@ -758,5 +1800,10 @@
     "H-2026-10-29-02-broken_link",
     "H-2026-10-29-03-sitemap",
     "H-2026-10-29-04-robots_txt"
-  ]
+  ],
+  "review_pause": {
+    "run_id": "20261029-103448-build-a20e",
+    "step": "build:plan",
+    "at": "2026-10-29T10:39:27-05:00"
+  }
 }

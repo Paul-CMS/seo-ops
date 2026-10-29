@@ -48,3 +48,23 @@ Generated from the seo-ops system (clients/carolina-carpet-cleaning/status.json)
 
 - Decision: **pending**
 
+## Page content approvals
+
+| Page | Type | Decision | By | Date | Human review | Practitioner |
+|---|---|---|---|---|---|---|
+| Carpet Cleaning | service | pending |  |  |  |  |
+| Commercial Carpet Cleaning | service | pending |  |  |  |  |
+| Rug Cleaning | service | pending |  |  |  |  |
+| Upholstery Cleaning | service | pending |  |  |  |  |
+| Tile & Grout Cleaning | service | pending |  |  |  |  |
+| Hardwood Floor Cleaning | service | pending |  |  |  |  |
+| Pet Odor Removal | service | pending |  |  |  |  |
+| Boat & Auto Interior Cleaning | service | pending |  |  |  |  |
+| Bluffton, SC | location | pending |  |  |  |  |
+| Hilton Head Island, SC | location | pending |  |  |  |  |
+| Beaufort, SC | location | pending |  |  |  |  |
+| Lady's Island, SC | location | pending |  |  |  |  |
+| Ridgeland, SC | location | pending |  |  |  |  |
+| Hardeeville, SC | location | pending |  |  |  |  |
+| Homepage | homepage | pending |  |  |  |  |
+| About | about | pending |  |  |  |  |

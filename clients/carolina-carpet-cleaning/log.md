@@ -806,3 +806,57 @@ Approved version: clients/carolina-carpet-cleaning/brand-guide.md#A+D+E+G (sha 9
 - CHANGE #286 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | upload | old: previous version archived as Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (8).md | new: Carolina Carpet Cleaning - Document Checklist.md · sha 16772a92a8ee | result: done · copied (Drive for desktop syncs it)
 - CHANGE #287 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (8).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (8).md | result: done · renamed and moved, nothing deleted
 - CHANGE #288 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (8).md | new: Carolina Carpet Cleaning - Status.md · sha a3f938191e0e | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261029-103448-build-a20e · STARTED · /build · 2026-10-29T10:34:48-05:00
+Step: build:plan · session 7721f18e-aaaf-4438-bff6-dd5e699dfd3a
+Gates checked: discovery_signed_off
+- CHANGE #289 [site_plan] clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Site Plan - REVIEW.md | site_plan | old:  | new:  | result: written: 16 pages (8 service, 6 location, homepage, about), 4 batches incl. pilot
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · svc-carpet-cleaning: BLOCK (known 8, unknown 1, unverified 2, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · loc-bluffton: BLOCK (known 4, unknown 2, unverified 3, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · svc-commercial-carpet-cleaning: BLOCK (known 8, unknown 2, unverified 1, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · svc-rug-cleaning: BLOCK (known 8, unknown 2, unverified 1, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · svc-upholstery-cleaning: BLOCK (known 8, unknown 2, unverified 1, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · svc-tile-grout-cleaning: BLOCK (known 8, unknown 2, unverified 1, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · svc-hardwood-floor-cleaning: BLOCK (known 8, unknown 1, unverified 2, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · svc-pet-odor-removal: BLOCK (known 8, unknown 2, unverified 1, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · svc-boat-auto-interior-cleaning: BLOCK (known 8, unknown 2, unverified 1, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · loc-hilton-head: BLOCK (known 4, unknown 2, unverified 3, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · loc-beaufort: BLOCK (known 4, unknown 2, unverified 3, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · loc-ladys-island: BLOCK (known 4, unknown 5, unverified 0, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · loc-ridgeland: BLOCK (known 4, unknown 3, unverified 2, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · loc-hardeeville: BLOCK (known 4, unknown 3, unverified 2, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · home: BLOCK (known 8, unknown 1, unverified 1, conflict 1)
+- EVIDENCE 2026-10-29T10:38 · run 20261029-103448-build-a20e · about: WARN (known 7, unknown 0, unverified 1, conflict 0)
+- CHANGE #290 [site_plan] clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Site Plan - REVIEW.md | ask_rows | old:  | new:  | result: added A1 (Lady's Island merge, viability 1/7) and A2 (homepage service links HP-11); plan re-marked
+### HANDOFF · /build · 2026-10-29 · run 20261029-103448-build-a20e
+**Agent:** build (Agent 2) · **Date:** 2026-10-29 · **Route:** A (status.json) · sections on the outline route
+
+- Site plan written and registered: `build/Carolina Carpet Cleaning - Site Plan - REVIEW.md` + `build/site-plan.json`
+  (`status.py plan`, urlcheck passed). 16 pages: 8 service, 6 location, 0 hub, homepage (light fixes, H1 locked), about.
+- Batches: pilot (Carpet Cleaning + Bluffton; pilot needed — new industry), services (7), locations (5), home-about (2).
+- No URL changes; the four folded services stay folded (settled F-008).
+- "The Best" (CM-020): no on every page — condition 3 fails (Google rating Disputed F-002, no awards). No DFS spend.
+- CM-049 claims: none. PAA: 9 service-routed rows all homed. Fan-out: no `data/fanout/fanout-routing.md` (S21 not run).
+- `wheel.py check`: 0 errors, 1 Ask (homepage HP-11, 8 services vs max 6) → `build/link-asks.json`.
+- Evidence grids built for all 16 (`evidence.py run --all`): 15 BLOCK, about WARN — expected; the facts round is next.
+- Viability: Bluffton, Hilton Head, Beaufort, Ridgeland, Hardeeville 6/7; Lady's Island 1/7 → merge proposal.
+- Ask rows on the plan: A1 Lady's Island merge into /beaufort/ (rec a) · A2 homepage links first 6 services (rec a).
+- Changes logged: #289, #290.
+
+**Open for Paul:** answer A1/A2, then approve `site_plan`.
+**Next after approval:** `/build carolina-carpet-cleaning facts` (one facts round for every page).
+**Blockers:** the technical blocker handoff to Jonie (28 items) is still open — gates release only, not writing.
+
+**Changes (script):** 2 — site_plan ×2
+### END HANDOFF
+## RUN 20261029-103448-build-a20e · FINISHED · 2026-10-29T10:39:27-05:00
+Changes: 2 · Summary: Site plan written: 16 pages (8 service, 6 location, homepage, about), pilot needed; Asks A1 Lady's Island merge, A2 homepage service links
+Spend: 2836177 tokens · $1.64 (measured)
+- CHANGE #291 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (6).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | new: _Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (6).md | result: done · renamed and moved, nothing deleted
+- CHANGE #292 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | upload | old: previous version archived as Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (6).md | new: Carolina Carpet Cleaning - Handoff Log.md · sha 4d71008aec75 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #293 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Approval Record - 2026-10-29 (3).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Approval Record.md | new: _Archive/Carolina Carpet Cleaning - Approval Record - 2026-10-29 (3).md | result: done · renamed and moved, nothing deleted
+- CHANGE #294 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Approval Record.md | upload | old: previous version archived as Carolina Carpet Cleaning - Approval Record - 2026-10-29 (3).md | new: Carolina Carpet Cleaning - Approval Record.md · sha b7a5a64af56d | result: done · copied (Drive for desktop syncs it)
+- CHANGE #295 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (9).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | new: _Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #296 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | upload | old: previous version archived as Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (9).md | new: Carolina Carpet Cleaning - Document Checklist.md · sha 0d4827cea1f8 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #297 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (9).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (9).md | result: done · renamed and moved, nothing deleted
+- CHANGE #298 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (9).md | new: Carolina Carpet Cleaning - Status.md · sha bf855887962a | result: done · copied (Drive for desktop syncs it)

@@ -1,17 +1,17 @@
 # Carolina Carpet Cleaning - Status
 
 - **Stage 5 of 8 — Build plan and blockers**
-- **What is happening now:** Stage 4 (Audit) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open carolina-carpet-cleaning) and type /next carolina-carpet-cleaning. Next there: /build carolina-carpet-cleaning plan (site plan for every service and location page, in one pass)
-- **Waiting on:** nobody
-- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
+- **What is happening now:** waiting for Paul's approval — the site plan is ready for your approval
+- **Waiting on:** Paul — the site plan is ready for your approval
+- **Next action:** Paul types `/approve carolina-carpet-cleaning site_plan --files "clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Site Plan - REVIEW.md"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-29T10:34 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T10:39 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Paul | the site plan is ready for your approval | 2026-10-29 | /approve carolina-carpet-cleaning site_plan |
 
 ## Waiting on (not blocking)
 
@@ -19,6 +19,7 @@ _Open, but the next action above goes ahead without them._
 
 | Who | What | Since | Reference |
 |---|---|---|---|
+| Jonie | blockers not cleared: H-2026-10-29-02-broken_link-01 is issued; H-2026-10-29-02-broken_link-02 is issued; H-2026-10-29-02-broken_link-03 is issued; H-2026-10-29-02-broken_link-04 is issued; H-2026-10-29-02-broken_link-05 is issued (+23 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-29 | /verify carolina-carpet-cleaning |
 | Gwen | manual lookup handoff — 9 of 9 item(s) open | 2026-10-28 | H-2026-10-28-01-manual_lookup |
 | Jonie | broken link handoff — 20 of 20 item(s) open | 2026-10-29 | H-2026-10-29-02-broken_link |
 | Jonie | sitemap handoff — 7 of 7 item(s) open | 2026-10-29 | H-2026-10-29-03-sitemap |
@@ -85,11 +86,8 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **review-facts** (1 file(s), e.g. `data/reviews/review-facts.json`) — read by build:evidence, build:facts
 - **paa-questions** (2 file(s), e.g. `data/paa/paa-questions.csv`) — read by build:evidence, discovery:fanout
 - **paa-raw** (20 file(s), e.g. `data/paa/raw/area-rug-cleaning-hilton-head-island.json`) — read by the step that reads paa-questions
-- **paa-routing** (1 file(s), e.g. `data/paa/paa-routing.md`) — read by build:plan, blog:map, build:brief, build:write
-- **competitors** (2 file(s), e.g. `data/competitors/coverage.json`) — read by build:plan
 - **discovery-record** (2 file(s), e.g. `discovery/Carolina Carpet Cleaning - Discovery Record - REVIEW.md`) — read by build:evidence, build:facts
 - **facts** (1 file(s), e.g. `facts.json`) — read by build:evidence, build:facts
-- **settled** (1 file(s), e.g. `decisions-settled.md`) — read by build:evidence, build:facts, build:brief, build:draft, build:drafts, build:write, build:plan
 
 ## Flagged for Paul (system)
 
@@ -115,9 +113,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 2 · Discovery | 2 | 4,718,881 | $2.04 | $0.00 |
 | 3 · Data | 3 | 4,864,287 | $0.30 | $0.00 |
 | 4 · Audit | 2 | 23,152,524 | $9.42 | $0.00 |
-| 5 · Build plan and blockers | 1 | 1,108,757 | $0.70 | $0.00 |
+| 5 · Build plan and blockers | 2 | 3,944,934 | $2.34 | $0.00 |
 | any stage | 5 | 2,651,602 | $0.16 | $0.00 |
-| **total** | 14 | 38,440,690 | $13.43 | $0.00 |
+| **total** | 15 | 41,276,867 | $15.07 | $0.00 |
 
 ## Spend by step (model)
 
@@ -125,6 +123,7 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 |---|---|---|---|---|
 | discovery:audit | 1 | 20,954,553 | $8.39 | $0.00 |
 | discovery:discovery | 1 | 3,941,016 | $2.03 | $0.00 |
+| build:plan | 1 | 2,836,177 | $1.64 | $0.00 |
 | discovery:reconcile | 1 | 2,197,971 | $1.03 | $0.00 |
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
 | build:blockers | 1 | 1,108,757 | $0.70 | $0.00 |
@@ -132,6 +131,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | answers | 5 | 2,651,602 | $0.16 | $0.00 |
 | crawl | 2 | 4,864,287 | $0.08 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
-| **total** | 14 | 38,440,690 | $13.43 | $0.00 |
+| **total** | 15 | 41,276,867 | $15.07 | $0.00 |
 
-Last run: /answers 2026-10-29T10:33 — Paul's answers recorded: no travel fee; Section G lines skipped; review figure skipped (stays Disputed)
+Last run: /build 2026-10-29T10:39 — Site plan written: 16 pages (8 service, 6 location, homepage, about), pilot needed; Asks A1 Lady's Island merge, A2 homepage service links

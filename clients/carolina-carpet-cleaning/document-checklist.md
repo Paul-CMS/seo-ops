@@ -1,6 +1,6 @@
 # Carolina Carpet Cleaning - Document Checklist
 
-Generated 2026-10-29T10:34 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-29T10:39 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -36,8 +36,8 @@ Generated 2026-10-29T10:34 from status.json — do not edit. `[x]` done · `[-]`
 ## Conditions
 
 - [x] The client's facts are in — the returned proof sheet is recorded, or Paul approved the client's direct answers
-- [ ] Every page in the site plan is a WordPress draft — ready for the one living publish handoff (CM-055) — no site plan yet
-- [ ] Every page in the site plan is built, verified and written back — no site plan yet
+- [ ] Every page in the site plan is a WordPress draft — ready for the one living publish handoff (CM-055) — batches not yet in WordPress as drafts: pilot, services, locations
+- [ ] Every page in the site plan is built, verified and written back — batches not yet built and written back: pilot, services, locations, home-about
 - [ ] WordPress connected (/wp-check passed in the last 30 days) — WordPress is not connected yet — run /wp-check carolina-carpet-cleaning
 - [x] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded)
 - [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — blockers not cleared: H-2026-10-29-02-broken_link-01 is issued; H-2026-10-29-02-broken_link-02 is issued; H-2026-10-29-02-broken_link-03 is issued; H-2026-10-29-02-broken_link-04 is issued; H-2026-10-29-02-broken_link-05 is issued (+23 more)

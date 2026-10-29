@@ -1,0 +1,961 @@
+{
+ "page": "svc-carpet-cleaning",
+ "type": "service",
+ "url": "/carpet-cleaning/",
+ "section": "pilot",
+ "built": "2026-10-29T10:38:50-05:00",
+ "services": [
+  "Carpet Cleaning",
+  "home carpet cleaning"
+ ],
+ "places": [],
+ "facts": [
+  {
+   "id": "a-brand-entity-gbp-name-exactly",
+   "label": "Brand entity (GBP name, exactly)",
+   "status": "submitted",
+   "value": "Carolina Carpet Cleaning",
+   "source": "GBP place URL (cid 3992053166300574362) https://maps.app.goo.gl/vvsrqH6TxL815KWB6; site footer",
+   "state": "unknown"
+  },
+  {
+   "id": "a-gbp-primary-category-the-category-entity",
+   "label": "GBP primary category = the category entity",
+   "status": "client_confirmed",
+   "value": "Carpet cleaning service",
+   "source": "Paul, chat 2026-10-28 (GBP category read)",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-category-variants-4-6",
+   "label": "Category variants (4–6)",
+   "status": "submitted",
+   "value": "Proposed: carpet cleaning · carpet cleaning service · carpet cleaners · carpet cleaning company · carpet cleaner (search volume checked in the data step)",
+   "source": "Decision Sheet proposal; Wikipedia 'Carpet cleaning'",
+   "state": "unknown"
+  },
+  {
+   "id": "a-storefront-or-sab",
+   "label": "Storefront or SAB",
+   "status": "paul_approved",
+   "value": "SAB; address on website only (273 Club Gate, Bluffton, SC 29910) matches GBP",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-area-entity",
+   "label": "Area entity",
+   "status": "paul_approved",
+   "value": "Hilton Head Island metropolitan area",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-area-variants-3-5",
+   "label": "Area variants (3–5)",
+   "status": "paul_approved",
+   "value": "SEO titles: Hilton Head Island Metro Area · user-facing titles and homepage H1: South Carolina Lowcountry",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-separator-standard",
+   "label": "Separator standard",
+   "status": "submitted",
+   "value": "' - '",
+   "source": "template default; live homepage title uses ' - '",
+   "state": "unknown"
+  },
+  {
+   "id": "a-phone",
+   "label": "Phone",
+   "status": "paul_approved",
+   "value": "(843) 575-6286",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-primary-domain-canonical-host-form",
+   "label": "Primary domain (canonical host form)",
+   "status": "internally_verified",
+   "value": "https://carpetcleaningblufftonsc.com/ (http and www 301 to it; rel=canonical matches)",
+   "source": "live HTTP check 2026-10-28",
+   "state": "sourced public"
+  },
+  {
+   "id": "a-legal-entity-name",
+   "label": "Legal entity name",
+   "status": "client_confirmed",
+   "value": "Carolina Floor Cleaning Pros",
+   "source": "Owner note, passed on by Paul 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-exact-url-in-the-gbp-website-field",
+   "label": "Exact URL in the GBP Website field",
+   "status": "paul_approved",
+   "value": "https://carpetcleaningblufftonsc.com/",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-founding-year-years-in-business",
+   "label": "Founding year / years in business",
+   "status": "client_confirmed",
+   "value": "1993 - operated locally as a family-owned business since 1993",
+   "source": "Owner note, passed on by Paul 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-legal-entity-dba",
+   "label": "Legal entity + DBA",
+   "status": "client_confirmed",
+   "value": "Carolina Carpet Cleaning (DBA / trade name)",
+   "source": "Owner note, passed on by Paul 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-licence-numbers-and-classes",
+   "label": "Licence numbers and classes",
+   "status": "client_confirmed",
+   "value": "No current licence number provided",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-insurance-bonded-status",
+   "label": "Insurance / bonded status",
+   "status": "client_confirmed",
+   "value": "General workmanship insurance",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-certifications-authorizations-factory-training",
+   "label": "Certifications, authorizations, factory training",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-association-memberships",
+   "label": "Association memberships",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-warranty-terms",
+   "label": "Warranty terms",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-guarantees-response-time-on-time-satisfaction",
+   "label": "Guarantees (response time, on-time, satisfaction)",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-awards-and-rankings",
+   "label": "Awards and rankings",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-google-rating-and-review-count-exactly-as-google-shows-the",
+   "label": "Google rating and review count — exactly as Google shows them on the day, with the date (\"4.9 · 67 reviews, 2026-10-07\"; never a rounded 5.0)",
+   "status": "disputed",
+   "value": "Disputed: client stated 6 Google reviews, all 5 stars (2026-10-28); the DataforSEO Google reviews pull shows rating 5 from 29 reviews (2022-04-18 to 2026-06-01), Birdeye also 29. [NEED: the figure exactly as Google shows it on the day, with the date — Paul rec",
+   "source": "Owner note 2026-10-28 vs DataforSEO reviews pull (data/reviews); audit F-002",
+   "state": "unknown"
+  },
+  {
+   "id": "d-team-size-trucks-jobs-completed",
+   "label": "Team size / trucks / jobs completed",
+   "status": "client_confirmed",
+   "value": "Kevin is the team; one truck; thousands of jobs completed",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-financing-available-provider-terms",
+   "label": "Financing — available, provider, terms",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-free-estimate-and-what-free-means",
+   "label": "Free estimate — and what free means",
+   "status": "client_confirmed",
+   "value": "Free estimate; no deposit to schedule",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-minimum-service-call-or-trip-charge",
+   "label": "Minimum service call or trip charge",
+   "status": "client_confirmed",
+   "value": "N/A",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-payment-methods",
+   "label": "Payment methods",
+   "status": "client_confirmed",
+   "value": "Normal payment methods",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-services-subcontracted-out",
+   "label": "Services subcontracted out",
+   "status": "client_confirmed",
+   "value": "Not subcontracted out",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-named-staff-for-on-page-use",
+   "label": "Named staff for on-page use",
+   "status": "client_confirmed",
+   "value": "Kevin Snow (owner)",
+   "source": "Owner note, 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-licensed-practitioner-for-health-claim-sign-off-medical-ch",
+   "label": "Licensed practitioner for health-claim sign-off *(medical / chiropractic)*",
+   "status": "unknown",
+   "value": "",
+   "source": "",
+   "state": "unknown"
+  },
+  {
+   "id": "d-blog-author-a-real-person-cm-039-from-the-decision-sheet",
+   "label": "Blog author — a real person (CM-039; from the Decision Sheet)",
+   "status": "paul_approved",
+   "value": "Kevin Snow (owner)",
+   "source": "Paul, chat 2026-10-28: Kevin Snow confirmed as author",
+   "state": "confirmed"
+  },
+  {
+   "id": "gbp-link",
+   "label": "GBP link",
+   "status": "paul_approved",
+   "value": "https://maps.app.goo.gl/vvsrqH6TxL815KWB6",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "ga4-access",
+   "label": "GA4 access",
+   "status": "paul_approved",
+   "value": "none",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-facebook-beaufort",
+   "label": "Facebook page (Beaufort)",
+   "status": "paul_approved",
+   "value": "https://www.facebook.com/carpetcleaningbeaufortsc",
+   "source": "Paul, chat 2026-10-28",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-drying-time",
+   "label": "Drying time",
+   "status": "paul_approved",
+   "value": "Carpets dry in under one hour on a typical job",
+   "source": "Paul, audit review 2026-10-29 (F-005, decision fact_drying_time)",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-cleaning-solution-safety-claims",
+   "label": "Cleaning solution — safety claims",
+   "status": "paul_approved",
+   "value": "pH-neutral, biodegradable, non-toxic; safe for pets and children (owner's claims; product names not recorded)",
+   "source": "Paul, audit review 2026-10-29 (F-006, decision fact_cleaning_solution_product)",
+   "state": "confirmed"
+  },
+  {
+   "id": "d-quality-commitment",
+   "label": "Quality commitment (not a guarantee)",
+   "status": "paul_approved",
+   "value": "The owner commits to quality cleaning at a reasonable price; no refund, warranty or satisfaction guarantee is offered",
+   "source": "Paul, audit review 2026-10-29 (F-004, decision audit-f004-keep-quality-sentence)",
+   "state": "confirmed"
+  },
+  {
+   "id": "a-travel-fee-beyond-six-towns",
+   "label": "Travel fee beyond the six towns",
+   "status": "paul_approved",
+   "value": "None — no travel fee",
+   "source": "Paul, chat 2026-10-29 (answer 2)",
+   "state": "confirmed"
+  },
+  {
+   "id": "g-positioning-owner-words",
+   "label": "Section G positioning lines (owner's words)",
+   "status": "unknown",
+   "value": "Skipped — Paul chose to leave question 25 unanswered; no owner words recorded",
+   "source": "Paul, chat 2026-10-29 (answer 3)",
+   "state": "unknown"
+  }
+ ],
+ "reviews": {
+  "service: Carpet Cleaning": {
+   "reviewers": 9,
+   "quotes": [
+    {
+     "date": "2025-06-02",
+     "quote": "I had a last minute need for the carpet needing cleaned in a house I was moving out of.",
+     "row": "reviews.csv row 6"
+    },
+    {
+     "date": "2024-05-14",
+     "quote": "Attention to cleaning, carpets came out very nicely.",
+     "row": "reviews.csv row 10"
+    },
+    {
+     "date": "2024-01-05",
+     "quote": "When my original carpet cleaning service cancelled on me, Kevin was able to squeeze me in the same day!",
+     "row": "reviews.csv row 12"
+    },
+    {
+     "date": "2023-03-08",
+     "quote": "I have used their service many times and will call them for all my carpet cleaning needs.",
+     "row": "reviews.csv row 17"
+    },
+    {
+     "date": "2022-04-29",
+     "quote": "Carolina Carpet Cleaning Services came out to our facility and residences and performed their special Covid cleaning services for us.",
+     "row": "reviews.csv row 21"
+    }
+   ],
+   "tier": "unchecked",
+   "checked": false,
+   "checked_at": ""
+  },
+  "service: home carpet cleaning": {
+   "reviewers": 1,
+   "quotes": [
+    {
+     "date": "2022-04-22",
+     "quote": "Carolina Carpet Cleaning has helped us several times at our vacation home over the years.",
+     "row": "reviews.csv row 23"
+    }
+   ],
+   "tier": "example",
+   "checked": false,
+   "checked_at": ""
+  },
+  "practice: communication": {
+   "reviewers": 2,
+   "quotes": [
+    {
+     "date": "2025-12-03",
+     "quote": "Very friendly, thorough and explained what he was doing and what to expect.",
+     "row": "reviews.csv row 5"
+    },
+    {
+     "date": "2022-04-29",
+     "quote": "Kevin was very professional and responsive with scheduling and we really appreciated his recommendations.",
+     "row": "reviews.csv row 21"
+    }
+   ],
+   "tier": "example",
+   "checked": true,
+   "checked_at": "2026-10-28"
+  },
+  "practice: speed": {
+   "reviewers": 14,
+   "quotes": [
+    {
+     "date": "2026-02-17",
+     "quote": "Kevin showed up on time and got the job done efficiently!",
+     "row": "reviews.csv row 3"
+    },
+    {
+     "date": "2026-01-14",
+     "quote": "Kevin showed up on-time, was quick/efficient and left everything looking fresh and smelling clean.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2025-12-03",
+     "quote": "I reached out to Kevin based off of other reviews and he responded quickly and got the job done.",
+     "row": "reviews.csv row 5"
+    },
+    {
+     "date": "2025-06-02",
+     "quote": "Kevin called me almost immediately and said that he could clean the carpet the next day as he was booked solid for the next week.",
+     "row": "reviews.csv row 6"
+    },
+    {
+     "date": "2025-01-11",
+     "quote": "Very prompt with scheduling and did a great job!",
+     "row": "reviews.csv row 7"
+    }
+   ],
+   "tier": "known",
+   "checked": true,
+   "checked_at": "2026-10-28"
+  },
+  "named staff: Kevin": {
+   "reviewers": 11,
+   "quotes": [
+    {
+     "date": "2026-06-01",
+     "quote": "Kevin is super professional and fast.",
+     "row": "reviews.csv row 2"
+    },
+    {
+     "date": "2026-02-17",
+     "quote": "Kevin showed up on time and got the job done efficiently!",
+     "row": "reviews.csv row 3"
+    },
+    {
+     "date": "2026-01-14",
+     "quote": "Kevin showed up on-time, was quick/efficient and left everything looking fresh and smelling clean.",
+     "row": "reviews.csv row 4"
+    },
+    {
+     "date": "2025-12-03",
+     "quote": "I reached out to Kevin based off of other reviews and he responded quickly and got the job done.",
+     "row": "reviews.csv row 5"
+    },
+    {
+     "date": "2025-06-02",
+     "quote": "Kevin called me almost immediately and said that he could clean the carpet the next day as he was booked solid for the next week.",
+     "row": "reviews.csv row 6"
+    }
+   ],
+   "tier": "known",
+   "checked": true,
+   "checked_at": "2026-10-28"
+  }
+ },
+ "questions": [],
+ "site_gbp": [
+  {
+   "kind": "site",
+   "quote": "Bluffton’s Trusted Low-Moisture Cleaning Specialist Since 1993 Carpet Cleaning in the South Carolina Lowcountry Hilton Head Island upholstery has a unique set of adversaries.",
+   "label": "client site https://carpetcleaningblufftonsc.com/ (data/crawl/page-text.csv row 2)"
+  },
+  {
+   "kind": "site",
+   "quote": "Avoid using standard cleaning products on the carpet since this can damage the fibers.",
+   "label": "client site https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/ (data/crawl/page-text.csv row 3)"
+  },
+  {
+   "kind": "site",
+   "quote": "Upon getting your oriental carpet(s), it is necessary to clean and care for them.",
+   "label": "client site https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/ (data/crawl/page-text.csv row 4)"
+  },
+  {
+   "kind": "site",
+   "quote": "Regular cleaning and vacuuming is a great way to maintain your carpet.",
+   "label": "client site https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/ (data/crawl/page-text.csv row 5)"
+  },
+  {
+   "kind": "site",
+   "quote": "Do the carpets throughout your home need a good cleaning?",
+   "label": "client site https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-carpet-cleaning-systems-cause-more-harm-than-good/ (data/crawl/page-text.csv row 6)"
+  },
+  {
+   "kind": "site",
+   "quote": "Welcome to Carolina Carpet Cleaning We Are Founded on Trust, Service, & Quality Work We are really good at what we do because we love what we do.",
+   "label": "client site https://carpetcleaningblufftonsc.com/about/ (data/crawl/page-text.csv row 7)"
+  },
+  {
+   "kind": "site",
+   "quote": "A fantastic to read is Carpet Cleaning Bluffton The American Prohibition Museum aptly bears the name of Savannah’s favorite cocktail, which is a beer and a shot.",
+   "label": "client site https://carpetcleaningblufftonsc.com/american-prohibition-museum/ (data/crawl/page-text.csv row 8)"
+  },
+  {
+   "kind": "site",
+   "quote": "In reality, the particles that remain after routine cleaning gradually work their way between the carpet fibers.",
+   "label": "client site https://carpetcleaningblufftonsc.com/beach-sand-carpet-damage-bluffton-sc/ (data/crawl/page-text.csv row 9)"
+  },
+  {
+   "kind": "site",
+   "quote": "Carpet Cleaning Service in Beaufort, SC Carolina Carpet Cleaning serves Beaufort from our Bluffton office.",
+   "label": "client site https://carpetcleaningblufftonsc.com/beaufort/ (data/crawl/page-text.csv row 10)"
+  },
+  {
+   "kind": "site",
+   "quote": "Most carpet cleaning advice tells you to schedule around spring and fall — the same two-season rule that applies to a home in Ohio or Minnesota.",
+   "label": "client site https://carpetcleaningblufftonsc.com/best-times-to-get-your-carpet-cleaned-from-us-at-carolina-carpet-cleaning/ (data/crawl/page-text.csv row 11)"
+  },
+  {
+   "kind": "site",
+   "quote": "Professional carpet cleaning can help reduce indoor pollen exposure by removing particles that have settled deep within the carpet pile and are no longer being fully captured by routine vacuuming.",
+   "label": "client site https://carpetcleaningblufftonsc.com/blog/ (data/crawl/page-text.csv row 12)"
+  },
+  {
+   "kind": "site",
+   "quote": "Vacation rental carpets should be vacuumed and inspected after every guest, but they do not necessarily need professional deep cleaning after every checkout.",
+   "label": "client site https://carpetcleaningblufftonsc.com/blog/page/2/ (data/crawl/page-text.csv row 13)"
+  }
+ ],
+ "public": [],
+ "research": [],
+ "place": [],
+ "settled": [
+  {
+   "key": "category_entity",
+   "text": "GBP primary category = the category entity: **Carpet cleaning service** → Wikipedia \"Carpet cleaning\" (Q5045777) — provisional until Gwen reads the GBP primary category (H-2026-10-28-01); if GBP shows another category, that category stands and this row reopens (recommended default)",
+   "at": "2026-10-28"
+  },
+  {
+   "key": "category_variants",
+   "text": "Category variants (4–6): carpet cleaning · carpet cleaning service · carpet cleaners · carpet cleaning company · carpet cleaner (recommended default)",
+   "at": "2026-10-28"
+  },
+  {
+   "key": "brand_in_titles",
+   "text": "Brand written in full in every title: yes — \"Carolina Carpet Cleaning\" (recommended default)",
+   "at": "2026-10-28"
+  },
+  {
+   "key": "service_list",
+   "text": "Services offered: Carpet Cleaning · Residential Carpet Cleaning · Commercial Carpet Cleaning · Low-Moisture Carpet Cleaning · Carpet Stain Removal · Pet Odor Removal · Upholstery Cleaning · Tile & Grout Cleaning · Hardwood Floor Cleaning · Oriental Rug Cleaning · Area Rug Cleaning · Boat & Auto Inte",
+   "at": "2026-10-28"
+  },
+  {
+   "key": "audit-f008-service-pages-folded",
+   "text": "F-008: Paul chose a — keep Residential, Low-Moisture, Stain Removal folded into Carpet Cleaning and Area Rug into Rug Cleaning (the live 301s stay).",
+   "at": "2026-10-29"
+  },
+  {
+   "key": "audit-f004-keep-quality-sentence",
+   "text": "F-004: Paul chose to keep the sentence 'We are an expert team of professionals that guarantee quality carpet cleaning at a reasonable price.' The owner guarantees quality cleaning; that is not an offered guarantee (no refund/warranty). Keep it live; do not remove.",
+   "at": "2026-10-29"
+  },
+  {
+   "key": "url_fold_four_services",
+   "text": "5. Architecture, services, locations, page types (F-008): keep the four services folded into Carpet Cleaning and Rug Cleaning (the live 301s stay)",
+   "at": "2026-10-29"
+  }
+ ],
+ "gaps": [
+  {
+   "key": "service_process",
+   "label": "How the service is delivered (steps, methods, equipment)",
+   "need": "required",
+   "from": "page:service_process",
+   "kind": "client",
+   "fact_key": "fact:svc-carpet-cleaning:service_process"
+  }
+ ],
+ "standard": {},
+ "excerpts": [
+  {
+   "id": "R1",
+   "kind": "review",
+   "topic": "service: Carpet Cleaning",
+   "tier": "unchecked",
+   "text": "I had a last minute need for the carpet needing cleaned in a house I was moving out of."
+  },
+  {
+   "id": "R2",
+   "kind": "review",
+   "topic": "service: Carpet Cleaning",
+   "tier": "unchecked",
+   "text": "Attention to cleaning, carpets came out very nicely."
+  },
+  {
+   "id": "R3",
+   "kind": "review",
+   "topic": "service: Carpet Cleaning",
+   "tier": "unchecked",
+   "text": "When my original carpet cleaning service cancelled on me, Kevin was able to squeeze me in the same day!"
+  },
+  {
+   "id": "R4",
+   "kind": "review",
+   "topic": "service: Carpet Cleaning",
+   "tier": "unchecked",
+   "text": "I have used their service many times and will call them for all my carpet cleaning needs."
+  },
+  {
+   "id": "R5",
+   "kind": "review",
+   "topic": "service: Carpet Cleaning",
+   "tier": "unchecked",
+   "text": "Carolina Carpet Cleaning Services came out to our facility and residences and performed their special Covid cleaning services for us."
+  },
+  {
+   "id": "R6",
+   "kind": "review",
+   "topic": "service: home carpet cleaning",
+   "tier": "example",
+   "text": "Carolina Carpet Cleaning has helped us several times at our vacation home over the years."
+  },
+  {
+   "id": "R7",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "example",
+   "text": "Very friendly, thorough and explained what he was doing and what to expect."
+  },
+  {
+   "id": "R8",
+   "kind": "review",
+   "topic": "practice: communication",
+   "tier": "example",
+   "text": "Kevin was very professional and responsive with scheduling and we really appreciated his recommendations."
+  },
+  {
+   "id": "R9",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "Kevin showed up on time and got the job done efficiently!"
+  },
+  {
+   "id": "R10",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "Kevin showed up on-time, was quick/efficient and left everything looking fresh and smelling clean."
+  },
+  {
+   "id": "R11",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "I reached out to Kevin based off of other reviews and he responded quickly and got the job done."
+  },
+  {
+   "id": "R12",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "Kevin called me almost immediately and said that he could clean the carpet the next day as he was booked solid for the next week."
+  },
+  {
+   "id": "R13",
+   "kind": "review",
+   "topic": "practice: speed",
+   "tier": "known",
+   "text": "Very prompt with scheduling and did a great job!"
+  },
+  {
+   "id": "R14",
+   "kind": "review",
+   "topic": "named staff: Kevin",
+   "tier": "known",
+   "text": "Kevin is super professional and fast."
+  },
+  {
+   "id": "R15",
+   "kind": "review",
+   "topic": "named staff: Kevin",
+   "tier": "known",
+   "text": "Kevin showed up on time and got the job done efficiently!"
+  },
+  {
+   "id": "R16",
+   "kind": "review",
+   "topic": "named staff: Kevin",
+   "tier": "known",
+   "text": "Kevin showed up on-time, was quick/efficient and left everything looking fresh and smelling clean."
+  },
+  {
+   "id": "R17",
+   "kind": "review",
+   "topic": "named staff: Kevin",
+   "tier": "known",
+   "text": "I reached out to Kevin based off of other reviews and he responded quickly and got the job done."
+  },
+  {
+   "id": "R18",
+   "kind": "review",
+   "topic": "named staff: Kevin",
+   "tier": "known",
+   "text": "Kevin called me almost immediately and said that he could clean the carpet the next day as he was booked solid for the next week."
+  },
+  {
+   "id": "S19",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Bluffton’s Trusted Low-Moisture Cleaning Specialist Since 1993 Carpet Cleaning in the South Carolina Lowcountry Hilton Head Island upholstery has a unique set of adversaries."
+  },
+  {
+   "id": "S20",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Avoid using standard cleaning products on the carpet since this can damage the fibers."
+  },
+  {
+   "id": "S21",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Upon getting your oriental carpet(s), it is necessary to clean and care for them."
+  },
+  {
+   "id": "S22",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Regular cleaning and vacuuming is a great way to maintain your carpet."
+  },
+  {
+   "id": "S23",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Do the carpets throughout your home need a good cleaning?"
+  },
+  {
+   "id": "S24",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Welcome to Carolina Carpet Cleaning We Are Founded on Trust, Service, & Quality Work We are really good at what we do because we love what we do."
+  },
+  {
+   "id": "S25",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "A fantastic to read is Carpet Cleaning Bluffton The American Prohibition Museum aptly bears the name of Savannah’s favorite cocktail, which is a beer and a shot."
+  },
+  {
+   "id": "S26",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "In reality, the particles that remain after routine cleaning gradually work their way between the carpet fibers."
+  },
+  {
+   "id": "S27",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Carpet Cleaning Service in Beaufort, SC Carolina Carpet Cleaning serves Beaufort from our Bluffton office."
+  },
+  {
+   "id": "S28",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Most carpet cleaning advice tells you to schedule around spring and fall — the same two-season rule that applies to a home in Ohio or Minnesota."
+  },
+  {
+   "id": "S29",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Professional carpet cleaning can help reduce indoor pollen exposure by removing particles that have settled deep within the carpet pile and are no longer being fully captured by routine vacuuming."
+  },
+  {
+   "id": "S30",
+   "kind": "site",
+   "topic": "site/GBP",
+   "tier": "site_stated",
+   "text": "Vacation rental carpets should be vacuumed and inspected after every guest, but they do not necessarily need professional deep cleaning after every checkout."
+  }
+ ],
+ "known": [
+  {
+   "id": "a-gbp-primary-category-the-category-entity",
+   "label": "GBP primary category = the category entity",
+   "value": "Carpet cleaning service"
+  },
+  {
+   "id": "a-storefront-or-sab",
+   "label": "Storefront or SAB",
+   "value": "SAB; address on website only (273 Club Gate, Bluffton, SC 29910) matches GBP"
+  },
+  {
+   "id": "a-area-entity",
+   "label": "Area entity",
+   "value": "Hilton Head Island metropolitan area"
+  },
+  {
+   "id": "a-area-variants-3-5",
+   "label": "Area variants (3–5)",
+   "value": "SEO titles: Hilton Head Island Metro Area · user-facing titles and homepage H1: South Carolina Lowcountry"
+  },
+  {
+   "id": "a-phone",
+   "label": "Phone",
+   "value": "(843) 575-6286"
+  },
+  {
+   "id": "a-primary-domain-canonical-host-form",
+   "label": "Primary domain (canonical host form)",
+   "value": "https://carpetcleaningblufftonsc.com/ (http and www 301 to it; rel=canonical matches)"
+  },
+  {
+   "id": "a-legal-entity-name",
+   "label": "Legal entity name",
+   "value": "Carolina Floor Cleaning Pros"
+  },
+  {
+   "id": "a-exact-url-in-the-gbp-website-field",
+   "label": "Exact URL in the GBP Website field",
+   "value": "https://carpetcleaningblufftonsc.com/"
+  },
+  {
+   "id": "d-founding-year-years-in-business",
+   "label": "Founding year / years in business",
+   "value": "1993 - operated locally as a family-owned business since 1993"
+  },
+  {
+   "id": "d-legal-entity-dba",
+   "label": "Legal entity + DBA",
+   "value": "Carolina Carpet Cleaning (DBA / trade name)"
+  },
+  {
+   "id": "d-licence-numbers-and-classes",
+   "label": "Licence numbers and classes",
+   "value": "No current licence number provided"
+  },
+  {
+   "id": "d-insurance-bonded-status",
+   "label": "Insurance / bonded status",
+   "value": "General workmanship insurance"
+  },
+  {
+   "id": "d-certifications-authorizations-factory-training",
+   "label": "Certifications, authorizations, factory training",
+   "value": "N/A"
+  },
+  {
+   "id": "d-association-memberships",
+   "label": "Association memberships",
+   "value": "N/A"
+  },
+  {
+   "id": "d-warranty-terms",
+   "label": "Warranty terms",
+   "value": "N/A"
+  },
+  {
+   "id": "d-guarantees-response-time-on-time-satisfaction",
+   "label": "Guarantees (response time, on-time, satisfaction)",
+   "value": "N/A"
+  },
+  {
+   "id": "d-awards-and-rankings",
+   "label": "Awards and rankings",
+   "value": "N/A"
+  },
+  {
+   "id": "d-team-size-trucks-jobs-completed",
+   "label": "Team size / trucks / jobs completed",
+   "value": "Kevin is the team; one truck; thousands of jobs completed"
+  },
+  {
+   "id": "d-financing-available-provider-terms",
+   "label": "Financing — available, provider, terms",
+   "value": "N/A"
+  },
+  {
+   "id": "d-free-estimate-and-what-free-means",
+   "label": "Free estimate — and what free means",
+   "value": "Free estimate; no deposit to schedule"
+  },
+  {
+   "id": "d-emergency-after-hours-reality",
+   "label": "Emergency / after-hours reality",
+   "value": "N/A"
+  },
+  {
+   "id": "d-minimum-service-call-or-trip-charge",
+   "label": "Minimum service call or trip charge",
+   "value": "N/A"
+  },
+  {
+   "id": "d-payment-methods",
+   "label": "Payment methods",
+   "value": "Normal payment methods"
+  },
+  {
+   "id": "d-services-subcontracted-out",
+   "label": "Services subcontracted out",
+   "value": "Not subcontracted out"
+  },
+  {
+   "id": "d-named-staff-for-on-page-use",
+   "label": "Named staff for on-page use",
+   "value": "Kevin Snow (owner)"
+  },
+  {
+   "id": "d-blog-author-a-real-person-cm-039-from-the-decision-sheet",
+   "label": "Blog author — a real person (CM-039; from the Decision Sheet)",
+   "value": "Kevin Snow (owner)"
+  },
+  {
+   "id": "gbp-link",
+   "label": "GBP link",
+   "value": "https://maps.app.goo.gl/vvsrqH6TxL815KWB6"
+  },
+  {
+   "id": "ga4-access",
+   "label": "GA4 access",
+   "value": "none"
+  },
+  {
+   "id": "a-facebook-beaufort",
+   "label": "Facebook page (Beaufort)",
+   "value": "https://www.facebook.com/carpetcleaningbeaufortsc"
+  },
+  {
+   "id": "d-drying-time",
+   "label": "Drying time",
+   "value": "Carpets dry in under one hour on a typical job"
+  },
+  {
+   "id": "d-cleaning-solution-safety-claims",
+   "label": "Cleaning solution — safety claims",
+   "value": "pH-neutral, biodegradable, non-toxic; safe for pets and children (owner's claims; product names not recorded)"
+  },
+  {
+   "id": "d-quality-commitment",
+   "label": "Quality commitment (not a guarantee)",
+   "value": "The owner commits to quality cleaning at a reasonable price; no refund, warranty or satisfaction guarantee is offered"
+  },
+  {
+   "id": "a-travel-fee-beyond-six-towns",
+   "label": "Travel fee beyond the six towns",
+   "value": "None — no travel fee"
+  },
+  {
+   "id": "practice: speed",
+   "label": "practice: speed",
+   "value": "Kevin showed up on time and got the job done efficiently!"
+  },
+  {
+   "id": "named staff: Kevin",
+   "label": "named staff: Kevin",
+   "value": "Kevin is super professional and fast."
+  }
+ ]
+}

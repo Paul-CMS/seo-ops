@@ -1,0 +1,19 @@
+[
+  {
+    "page": "home",
+    "url": "/",
+    "rule": "HP-11",
+    "item": "service link count",
+    "severity": "ask",
+    "kind": "1",
+    "category": "ask",
+    "decision_key": "wheel:home:services",
+    "finding": "8 service pages but the homepage links at most 6 (HP-11)",
+    "plain_why": "the homepage lists 5–6 service links (BB-313 §6)",
+    "options": [
+      "link the first 6 in plan order",
+      "link every service page"
+    ],
+    "recommended": "a"
+  }
+]
