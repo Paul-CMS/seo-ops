@@ -1153,3 +1153,9 @@ Grid: clients/carolina-carpet-cleaning/build/evidence/svc-rug-cleaning.grid.md (
 Reason: Paul: n/a to all facts for content creation; facts to come from the research pass, not the interview
 - CHANGE #373 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (25).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (25).md | result: done · renamed and moved, nothing deleted
 - CHANGE #374 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (25).md | new: Carolina Carpet Cleaning - Status.md · sha a6ee3517f46e | result: done · copied (Drive for desktop syncs it)
+
+## WAIVER · 2026-10-29T14:54:49-05:00 · evidence gate · page svc-upholstery-cleaning · by Paul
+Grid: clients/carolina-carpet-cleaning/build/evidence/svc-upholstery-cleaning.grid.md (sha 3fa331bafac4) · was BLOCK: 2 required facts are not known (block at 2)
+Reason: Paul: n/a to all facts for content creation; facts to come from the research pass, not the interview
+- CHANGE #375 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (26).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (26).md | result: done · renamed and moved, nothing deleted
+- CHANGE #376 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (26).md | new: Carolina Carpet Cleaning - Status.md · sha 5a5c387f8c31 | result: done · copied (Drive for desktop syncs it)
