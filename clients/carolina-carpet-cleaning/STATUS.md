@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the site plan is ready for your approval
 - **Next action:** Paul types `/approve carolina-carpet-cleaning site_plan --files "clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Site Plan - REVIEW.md"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-29T10:42 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T10:46 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -99,6 +99,9 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-006** (open, not yet reviewed) 2026-10-29 · discovery:audit: render.py auditsheet: the 'For the client to confirm' table has no Recommended/default column and cuts the question at 260 and options at 120 characters mid-word; review.py sheet writes the finding's observation (also cut mid-word, e.g. '/u', 'pH-') into client-questions.csv as the 'question', so the client file Paul sends has no actual question and broken text. The S17 interim defaults (F-005 b, F-006 b) therefore do not show on the rendered sheet. — workaround: Defaults are in audit-review.csv (recommended = b, b) and stated in the run summary; Paul should not send client-questions.csv as written — reword the two questions in his own message until a system session fixes review.py/render.py.
 - **F-007** (open, not yet reviewed) 2026-10-29 · build:blockers: Stage 5 blockers step (D3) says the whole checklist section 1 goes to Jonie as soon as the audit is approved, but 5 of its 9 VA rows map to change kinds gated on later decisions: F-010 and F-018 (redirect) and F-019 (schema) need brand_guide_approved; F-013 (navigation) needs discovery_signed_off; F-017 (pagination title/description template) has no audit_approved kind (seo_title is gated; seopress_settings is record-only). handoff.py create --blockers refuses them (exit 4). blockers_cleared may then read as met from the 3 issued handoffs alone. — workaround: Issued the 3 kinds the audit unlocks (broken_link F-001+F-014, sitemap F-015, robots_txt F-016) as blocker handoffs; held F-010, F-013, F-017, F-018, F-019 for a second blocker handoff once brand_guide_approved / discovery_signed_off are met; F-022 is Build-owned, no VA row.
 - **F-008** (open, not yet reviewed) 2026-10-29 · discovery:reconcile: run.py fact adds an 'Updates since approval' section and lines to the Brand Guide even when brand_guide_approved is not yet set (pre-approval reconcile); the D row value also gets a doubled 'Disputed: Disputed:' in the update line when the value starts with the status word. — workaround: Left the generated section in place; it lists the 4 facts recorded at reconcile. Paul approves the whole guide at 2b.
+- **F-009** (open, not yet reviewed) 2026-10-29 · build:plan: status.py plan only adds/updates pages (setdefault); a page removed from the plan (loc-ladys-island, merged into /beaufort/ by settled site_plan_a1_ladys_island) stays in status.json pages as type location/planned. wheel.py plan/check reads status.json pages, so every service page and every location sibling table still links /ladys-island/ (wheel.py show svc-carpet-cleaning: 'Home Carpet Cleaning in Lady's Island -> /ladys-island/'). wheel.py check passes (0 errors) without seeing it. No client-session script removes or marks a page merged. — workaround: Plan JSON and review sheet are correct (5 locations, Beaufort replaces /ladys-island/). Needs a system fix before the wheel is generated for drafts: status.py plan should drop (or mark merged) pages no longer in the plan, and wheel.py should skip them. Not hand-editing status.json.
+- **F-010** (open, not yet reviewed) 2026-10-29 · build:plan: wheel.py check/asks keep reporting 'ASK home: 8 service pages but the homepage links at most 6 (HP-11)' after Paul settled it: asks() uses decision key wheel:home:services and never reads settled.py; the settled key is site_plan_a2_homepage_services. link-asks.json still lists it. — workaround: Review sheet records A2 as settled (b, all 8); the wheel already emits all 8 homepage service rows, so output is correct; the ASK line is noise.
+- **F-011** (open, not yet reviewed) 2026-10-29 · build:plan: render.py siteplan writes '<Client> - Site Plan - REVIEW.md' (the same name as the agent-written review sheet the stage doc asks for) from build/site-plan*.plan.json; this client's plan is build/site-plan.json, so the renderer cannot run, and if it did it would overwrite the sheet's Ask rows and checks with a bare view. — workaround: Review sheet written by the build agent per docs/stage-5-build-plan.md and registered with status.py plan; it matches site-plan.json page for page.
 
 ## Spend so far
 
@@ -115,17 +118,17 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 2 · Discovery | 2 | 4,718,881 | $2.04 | $0.00 |
 | 3 · Data | 3 | 4,864,287 | $0.30 | $0.00 |
 | 4 · Audit | 2 | 23,152,524 | $9.42 | $0.00 |
-| 5 · Build plan and blockers | 2 | 3,944,934 | $2.34 | $0.00 |
+| 5 · Build plan and blockers | 3 | 6,366,697 | $3.46 | $0.00 |
 | any stage | 6 | 2,868,263 | $0.16 | $0.00 |
-| **total** | 16 | 41,493,528 | $15.07 | $0.00 |
+| **total** | 17 | 43,915,291 | $16.19 | $0.00 |
 
 ## Spend by step (model)
 
 | Step | Runs | Tokens | Session USD | API USD |
 |---|---|---|---|---|
 | discovery:audit | 1 | 20,954,553 | $8.39 | $0.00 |
+| build:plan | 2 | 5,257,940 | $2.76 | $0.00 |
 | discovery:discovery | 1 | 3,941,016 | $2.03 | $0.00 |
-| build:plan | 1 | 2,836,177 | $1.64 | $0.00 |
 | discovery:reconcile | 1 | 2,197,971 | $1.03 | $0.00 |
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
 | build:blockers | 1 | 1,108,757 | $0.70 | $0.00 |
@@ -133,6 +136,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | answers | 6 | 2,868,263 | $0.16 | $0.00 |
 | crawl | 2 | 4,864,287 | $0.08 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
-| **total** | 16 | 41,493,528 | $15.07 | $0.00 |
+| **total** | 17 | 43,915,291 | $16.19 | $0.00 |
 
-Last run: /answers 2026-10-29T10:42 — Paul answered site plan A1 (merge Lady's Island into /beaufort/) and A2 (all 8 services on homepage); both settled.
+Last run: /build 2026-10-29T10:46 — Site plan revised: Lady's Island merged into Beaufort (301 at publish), homepage links all 8 services; 15 pages; urlcheck pass; wheel check 0 errors; flags F-009 to F-011

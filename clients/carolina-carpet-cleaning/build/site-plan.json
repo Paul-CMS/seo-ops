@@ -1,7 +1,9 @@
 {
   "client": "carolina-carpet-cleaning",
-  "run": "20261029-103448-build-a20e",
+  "run": "20261029-104257-build-f364",
+  "revises": "20261029-103448-build-a20e",
   "made": "2026-10-29",
+  "merges": [{"from": "/ladys-island/", "into": "loc-beaufort", "redirect": "301, VA handoff at publish", "why": "settled site_plan_a1_ladys_island (viability 1/7)"}],
   "source": "audit/2026-10-28/url-decision-map.csv (approved 2026-10-29)",
   "pages": [
     {"id": "svc-carpet-cleaning", "type": "service", "name": "Carpet Cleaning", "url": "/carpet-cleaning/", "live_url": "/carpet-cleaning/", "map_row": "U-024",
@@ -90,16 +92,10 @@
      "keyword": "carpet cleaning beaufort sc", "h1": "Carpet Cleaners in Beaufort",
      "the_best": "no — CM-020 condition 3 fails; homepage ranks 25 for the keyword (no lock)",
      "faq": ["1 · Local cost or decision: what older homes in Beaufort's historic district change about rug and floor cleaning",
-             "2 · Logistics: how far ahead to book from Beaufort — travel from the Bluffton base, no travel fee (Paul 2026-10-29)",
+             "2 · Logistics: how far ahead to book from Beaufort or Lady's Island — travel from the Bluffton base, no travel fee (Paul 2026-10-29)",
              "3 · Trust: move-out carpet cleaning for military households (MCAS Beaufort, Parris Island) — researcher confirms the local fit"],
-     "claims": []},
-    {"id": "loc-ladys-island", "type": "location", "name": "Lady's Island, SC", "city": "Lady's Island", "url": "/ladys-island/", "live_url": "/ladys-island/", "map_row": "U-060",
-     "keyword": "carpet cleaning lady's island sc", "h1": "Carpet Cleaners in Lady's Island",
-     "the_best": "no — CM-020 condition 3 fails",
-     "faq": ["1 · Local cost or decision: what waterfront and marsh-front homes on Lady's Island need from a carpet cleaning",
-             "2 · Logistics: scheduling a visit across the bridge from Beaufort — no travel fee",
-             "3 · Trust: humidity and mildew in island homes — review language at its tier"],
-     "notes": "Smallest place; watch the viability check (a merge into /beaufort/ would be a kind-1 Ask)",
+     "replaces": ["/ladys-island/"],
+     "notes": "Settled site_plan_a1_ladys_island: Lady's Island (U-060) merges here — the page names Lady's Island as a town served (towns_served); the 301 /ladys-island/ → /beaufort/ is a VA handoff at publish, generated from 'replaces'",
      "claims": []},
     {"id": "loc-ridgeland", "type": "location", "name": "Ridgeland, SC", "city": "Ridgeland", "url": "/ridgeland/", "live_url": "/ridgeland/", "map_row": "U-067",
      "keyword": "carpet cleaning ridgeland sc", "h1": "Carpet Cleaners in Ridgeland",
@@ -119,7 +115,7 @@
     {"id": "home", "type": "homepage", "name": "Homepage", "url": "/", "live_url": "/", "map_row": "U-001",
      "keyword": "carpet cleaning bluffton sc", "h1": "Carpet Cleaning in the South Carolina Lowcountry",
      "the_best": "n/a — H1 locked (HP-08, settled homepage_h1_variant)",
-     "notes": "Keep — H1 lock; light fixes only (F-026 to F-030): opening paragraph, 5–6 service H3s, decorative headers, testimonials heading; no review count until Paul records the Google figure (F-002)",
+     "notes": "Keep — H1 lock; light fixes only (F-026 to F-030): opening paragraph, one service H3 per service page — all 8 (settled site_plan_a2_homepage_services, HP-11 count waived by Paul), decorative headers, testimonials heading; no review count until Paul records the Google figure (F-002)",
      "claims": []},
     {"id": "about", "type": "about", "name": "About", "url": "/about/", "live_url": "/about/", "map_row": "U-006",
      "keyword": "carolina carpet cleaning", "h1": "About Our Carpet Cleaning Company in the Lowcountry", "category_variant": "carpet cleaning company", "area_variant": "Lowcountry",
@@ -130,7 +126,7 @@
   "batches": [
     {"id": "pilot", "kind": "pilot", "label": "Pilot — Carpet Cleaning + Bluffton", "pages": ["svc-carpet-cleaning", "loc-bluffton"]},
     {"id": "services", "kind": "service", "label": "Service pages", "pages": ["svc-commercial-carpet-cleaning", "svc-rug-cleaning", "svc-upholstery-cleaning", "svc-tile-grout-cleaning", "svc-hardwood-floor-cleaning", "svc-pet-odor-removal", "svc-boat-auto-interior-cleaning"]},
-    {"id": "locations", "kind": "location", "label": "Location pages", "pages": ["loc-hilton-head", "loc-beaufort", "loc-ladys-island", "loc-ridgeland", "loc-hardeeville"]},
+    {"id": "locations", "kind": "location", "label": "Location pages", "pages": ["loc-hilton-head", "loc-beaufort", "loc-ridgeland", "loc-hardeeville"]},
     {"id": "home-about", "kind": "homepage", "label": "Homepage (light fixes) and About", "pages": ["home", "about"]}
   ]
 }

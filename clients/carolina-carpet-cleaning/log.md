@@ -878,3 +878,54 @@ Spend: 216661 tokens · $0.00 (measured)
 - CHANGE #302 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | upload | old: previous version archived as Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (10).md | new: Carolina Carpet Cleaning - Document Checklist.md · sha e72b7e33d1c0 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #303 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (10).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (10).md | result: done · renamed and moved, nothing deleted
 - CHANGE #304 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (10).md | new: Carolina Carpet Cleaning - Status.md · sha ab57f6624995 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261029-104257-build-f364 · STARTED · /build · 2026-10-29T10:42:57-05:00
+Step: build:plan · session 7721f18e-aaaf-4438-bff6-dd5e699dfd3a
+Gates checked: discovery_signed_off
+- CHANGE #305 [site_plan] /ladys-island/ | page | old: loc-ladys-island (location page) | new: merged into loc-beaufort; 301 /ladys-island/ -> /beaufort/ at publish (VA handoff) | result: APPLIED · plan only · settled site_plan_a1_ladys_island | ref loc-ladys-island
+- CHANGE #306 [site_plan] /beaufort/ | replaces | old:  | new: /ladys-island/; notes + FAQ 2 name Lady's Island as served | result: APPLIED · plan only · settled site_plan_a1_ladys_island | ref loc-beaufort
+- CHANGE #307 [site_plan] / | homepage_services | old: first 6 service links (HP-11) | new: all 8 service pages | result: APPLIED · plan only · settled site_plan_a2_homepage_services | ref home
+- CHANGE #308 [site_plan] build/site-plan.json + Site Plan - REVIEW.md | batches | old: 16 pages; locations batch 5 | new: 15 pages; locations batch 4 (+ Bluffton in pilot = 5 locations) | result: APPLIED · registered with status.py plan; urlcheck pass | ref site_plan
+- FLAG 2026-10-29T10:45 · run 20261029-104257-build-f364 · F-009 · status.py plan only adds/updates pages (setdefault); a page removed from the plan (loc-ladys-island, merged into /beaufort/ by settled site_plan_a1_ladys_island) stays in status.json pages as type location/planned. wheel.py plan/check reads status.json pages, so every service page and every location sibling table still links /ladys-island/ (wheel.py show svc-carpet-cleaning: 'Home Carpet Cleaning in Lady's Island -> /ladys-island/'). wheel.py check passes (0 errors) without seeing it. No client-session script removes or marks a page merged. · workaround: Plan JSON and review sheet are correct (5 locations, Beaufort replaces /ladys-island/). Needs a system fix before the wheel is generated for drafts: status.py plan should drop (or mark merged) pages no longer in the plan, and wheel.py should skip them. Not hand-editing status.json.
+- FLAG 2026-10-29T10:45 · run 20261029-104257-build-f364 · F-010 · wheel.py check/asks keep reporting 'ASK home: 8 service pages but the homepage links at most 6 (HP-11)' after Paul settled it: asks() uses decision key wheel:home:services and never reads settled.py; the settled key is site_plan_a2_homepage_services. link-asks.json still lists it. · workaround: Review sheet records A2 as settled (b, all 8); the wheel already emits all 8 homepage service rows, so output is correct; the ASK line is noise.
+- FLAG 2026-10-29T10:45 · run 20261029-104257-build-f364 · F-011 · render.py siteplan writes '<Client> - Site Plan - REVIEW.md' (the same name as the agent-written review sheet the stage doc asks for) from build/site-plan*.plan.json; this client's plan is build/site-plan.json, so the renderer cannot run, and if it did it would overwrite the sheet's Ask rows and checks with a bare view. · workaround: Review sheet written by the build agent per docs/stage-5-build-plan.md and registered with status.py plan; it matches site-plan.json page for page.
+### HANDOFF · /build · 2026-10-29 · run 20261029-104257-build-f364
+**Did:** applied Paul's settled A1 and A2 to the site plan (revises run 20261029-103448-build-a20e).
+- A1 `site_plan_a1_ladys_island`: loc-ladys-island removed from pages and the locations batch; loc-beaufort carries
+  `replaces: /ladys-island/` (301 generated as a VA row at publish); Beaufort notes + FAQ 2 name Lady's Island as served.
+- A2 `site_plan_a2_homepage_services`: homepage lists all 8 service pages; HP-11 drop removed from the home row.
+- Registered with `status.py plan` (sheet + JSON agree). Changes #305–#308 logged.
+
+**Counts:** service 8 · location 5 · hub 0 · homepage 1 · about 1 = 15. Batches: pilot 2 (Carpet Cleaning + Bluffton),
+services 7, locations 4, home-about 2.
+
+**Checks:** urlcheck — pass ("every planned URL follows the URL rule"). wheel.py check — exit 0, 0 errors, 1 other
+(HP-11 homepage line, answered by A2). wheel.py asks — 1 row (the same HP-11 line) in link-asks.json.
+
+**Flags (system session):**
+- F-009: status.py plan keeps the dropped loc-ladys-island in status.json; the wheel still links /ladys-island/ from
+  every service page and location sibling table. The wheel must not be generated for drafts until fixed.
+- F-010: wheel.py asks/check ignore the settled key, so the answered HP-11 line keeps showing.
+- F-011: render.py siteplan would overwrite the review sheet name and needs site-plan*.plan.json; not used.
+
+**Not done:** no viability/evidence re-run (kept towns unchanged at 6/7); nothing published; no /approve.
+
+**Files:** clients/carolina-carpet-cleaning/build/site-plan.json ·
+clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Site Plan - REVIEW.md
+
+**Next:** Paul reviews the sheet and approves `site_plan`; F-009 fixed in a system session before the wheel is built.
+
+**Changes (script):** 4 — site_plan ×4
+- FLAG 2026-10-29T10:45 · run 20261029-104257-build-f364 · F-009 · status.py plan only adds/updates pages (setdefault); a page removed from the plan (loc-ladys-island, merged into /beaufort/ by settl…
+- FLAG 2026-10-29T10:45 · run 20261029-104257-build-f364 · F-010 · wheel.py check/asks keep reporting 'ASK home: 8 service pages but the homepage links at most 6 (HP-11)' after Paul settled it: asks(…
+- FLAG 2026-10-29T10:45 · run 20261029-104257-build-f364 · F-011 · render.py siteplan writes '<Client> - Site Plan - REVIEW.md' (the same name as the agent-written review sheet the stage doc asks for…
+### END HANDOFF
+## RUN 20261029-104257-build-f364 · FINISHED · 2026-10-29T10:46:02-05:00
+Changes: 4 · Summary: Site plan revised: Lady's Island merged into Beaufort (301 at publish), homepage links all 8 services; 15 pages; urlcheck pass; wheel check 0 errors; flags F-009 to F-011
+Spend: 2421763 tokens · $1.12 (measured)
+- CHANGE #309 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (8).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | new: _Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (8).md | result: done · renamed and moved, nothing deleted
+- CHANGE #310 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | upload | old: previous version archived as Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (8).md | new: Carolina Carpet Cleaning - Handoff Log.md · sha c458e461bb9a | result: done · copied (Drive for desktop syncs it)
+- CHANGE #311 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (11).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | new: _Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (11).md | result: done · renamed and moved, nothing deleted
+- CHANGE #312 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | upload | old: previous version archived as Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (11).md | new: Carolina Carpet Cleaning - Document Checklist.md · sha 4aa0c69200b1 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #313 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (11).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (11).md | result: done · renamed and moved, nothing deleted
+- CHANGE #314 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (11).md | new: Carolina Carpet Cleaning - Status.md · sha c85afdd50cae | result: done · copied (Drive for desktop syncs it)

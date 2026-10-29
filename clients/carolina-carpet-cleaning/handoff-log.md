@@ -244,3 +244,35 @@ Generated from the safety log (clients/carolina-carpet-cleaning/log.md) — do n
 - Paul chose A1 (Lady's Island merge into /beaufort/, 301) and A2 (all 8 services on the homepage, not 6).
 - Both settled: site_plan_a1_ladys_island, site_plan_a2_homepage_services. Next: revise the site plan for these two.
 
+## /build · 2026-10-29 · run 20261029-104257-build-f364
+
+**Did:** applied Paul's settled A1 and A2 to the site plan (revises run 20261029-103448-build-a20e).
+- A1 `site_plan_a1_ladys_island`: loc-ladys-island removed from pages and the locations batch; loc-beaufort carries
+  `replaces: /ladys-island/` (301 generated as a VA row at publish); Beaufort notes + FAQ 2 name Lady's Island as served.
+- A2 `site_plan_a2_homepage_services`: homepage lists all 8 service pages; HP-11 drop removed from the home row.
+- Registered with `status.py plan` (sheet + JSON agree). Changes #305–#308 logged.
+
+**Counts:** service 8 · location 5 · hub 0 · homepage 1 · about 1 = 15. Batches: pilot 2 (Carpet Cleaning + Bluffton),
+services 7, locations 4, home-about 2.
+
+**Checks:** urlcheck — pass ("every planned URL follows the URL rule"). wheel.py check — exit 0, 0 errors, 1 other
+(HP-11 homepage line, answered by A2). wheel.py asks — 1 row (the same HP-11 line) in link-asks.json.
+
+**Flags (system session):**
+- F-009: status.py plan keeps the dropped loc-ladys-island in status.json; the wheel still links /ladys-island/ from
+  every service page and location sibling table. The wheel must not be generated for drafts until fixed.
+- F-010: wheel.py asks/check ignore the settled key, so the answered HP-11 line keeps showing.
+- F-011: render.py siteplan would overwrite the review sheet name and needs site-plan*.plan.json; not used.
+
+**Not done:** no viability/evidence re-run (kept towns unchanged at 6/7); nothing published; no /approve.
+
+**Files:** clients/carolina-carpet-cleaning/build/site-plan.json ·
+clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Site Plan - REVIEW.md
+
+**Next:** Paul reviews the sheet and approves `site_plan`; F-009 fixed in a system session before the wheel is built.
+
+**Changes (script):** 4 — site_plan ×4
+- FLAG 2026-10-29T10:45 · run 20261029-104257-build-f364 · F-009 · status.py plan only adds/updates pages (setdefault); a page removed from the plan (loc-ladys-island, merged into /beaufort/ by settl…
+- FLAG 2026-10-29T10:45 · run 20261029-104257-build-f364 · F-010 · wheel.py check/asks keep reporting 'ASK home: 8 service pages but the homepage links at most 6 (HP-11)' after Paul settled it: asks(…
+- FLAG 2026-10-29T10:45 · run 20261029-104257-build-f364 · F-011 · render.py siteplan writes '<Client> - Site Plan - REVIEW.md' (the same name as the agent-written review sheet the stage doc asks for…
+
