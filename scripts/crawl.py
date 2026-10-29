@@ -4,6 +4,9 @@
     crawl.py estimate <slug> --domain D [--max-pages N] [--mode basic|javascript]
     crawl.py run      <slug> --run RUN_ID --domain D [--max-pages N] [--mode basic]
                       [--crawl-delay 2000] [--confirmed] [--new-crawl] [--max-wait 540]
+    crawl.py cancel   <slug> --run RUN_ID [--include-archived]
+                                             CR-049: stop the unfinished task at DataforSEO (free on_page/force_stop);
+                                             --include-archived also stops the unfinished tasks of set-aside states
     crawl.py status   <slug>
     crawl.py summary  <slug>                 (re)build data/crawl/crawl-summary.csv from the crawl tables
     crawl.py competitors estimate|run <slug> …   P6: top competitor pages per service keyword — coverage ideas only (competitors.py)
@@ -27,12 +30,16 @@ exports (R5).
                             checkpointed so an interruption resumes where it stopped
   - downloaded           -> convert into the Screaming Frog-shaped tables the audit
                             skill expects
-A second paid crawl for the same domain needs --new-crawl (and Paul's confirmation).
+A second paid crawl for the same domain needs --new-crawl (and Paul's confirmation). --new-crawl is refused while
+the current task is unfinished (still queued or crawling: resume it, or cancel it first) and when this run has
+already paid for a task (CR-049). A task DataforSEO has not started yet (40601 handed, 40602 in queue) is waited
+for like a crawling one — exit 10, never an error.
 
 --domain must be the client's domain (status.json client.domain, www. ignored); another domain only with
 --other-domain, on Paul's word (CR-048).
 
-Exit codes: 4 refused · 5 needs Paul's cost confirmation · 6 would exceed balance · 10 still crawling.
+Exit codes: 4 refused · 5 needs Paul's cost confirmation · 6 would exceed balance · 8 API or network error ·
+10 still queued or crawling.
 """
 import argparse
 import csv
@@ -60,6 +67,8 @@ PACE = 0.25  # seconds between result calls — well under the 2000/min API limi
 WEB_PACE = 1.0  # seconds between our own fetches of the client's public site (sitemaps)
 DEFAULT_MAX_PAGES, MIN_MAX_PAGES, CAP_MAX_PAGES = 1000, 20, 1000
 MAX_CHILD_SITEMAPS = 50
+WAITING = (40601, 40602)   # Task Handed / Task In Queue: posted and paid, not started yet — wait (CR-049)
+DONE_PHASES = ("converted", "cancelled")
 
 
 def crawl_dir(slug):
@@ -195,9 +204,20 @@ def post_task(slug, run_id, st, domain, max_pages, mode, delay, confirmed, reaso
 
 
 def poll(slug, run_id, st, max_wait):
+    """True when the crawl finished; False when --max-wait ran out while crawling, None while still queued."""
     start, last_pct, last_note = time.time(), -1, 0
     while True:
         r = dfs.request(f"on_page/summary/{st['task_id']}", method="GET")
+        t = (r.get("tasks") or [{}])[0]
+        if t.get("status_code") in WAITING:
+            if not last_note or time.time() - last_note > 600:
+                note(slug, run_id, f"task {st['task_id']} queued at DataforSEO ({t.get('status_code')} "
+                     f"{t.get('status_message')}) — waiting, no new charge")
+                last_note = time.time()
+            if time.time() - start > max_wait:
+                return None
+            time.sleep(30)
+            continue
         res = (dfs.task_result(r).get("result") or [{}])[0]
         cs = res.get("crawl_status") or {}
         crawled, mx = cs.get("pages_crawled") or 0, cs.get("max_crawl_pages") or st["max_pages"]
@@ -595,6 +615,50 @@ def capture_text(slug, run_id, delay, max_words):
 
 
 # ---------------------------------------------------------------- CLI
+# ---------------------------------------------------------------- cancel (CR-049)
+def run_posted(slug, run_id):
+    """Task ids this run has already paid for (the cost ledger, which survives a set-aside state)."""
+    p = client_dir(slug) / "dfs-costs.jsonl"
+    rows = [json.loads(l) for l in p.read_text().splitlines() if l.strip()] if p.exists() else []
+    return [r for r in rows if r.get("run_id") == run_id and r.get("endpoint") == "on_page/task_post"]
+
+
+def cancel(slug, run_id, include_archived):
+    """Stop every unfinished task (free on_page/force_stop) and mark its state file cancelled."""
+    R.open_run(slug, run_id)
+    files = [state_path(slug)] + (sorted(crawl_dir(slug).glob("crawl-state-*.json")) if include_archived else [])
+    todo = []
+    for f in files:
+        st = read_json(f, {})
+        if st.get("task_id") and st.get("phase") not in DONE_PHASES:
+            todo.append((f, st))
+    if not todo:
+        print("nothing to cancel — no unfinished crawl task" + ("" if include_archived else
+              " in crawl-state.json (--include-archived also looks at the set-aside states)"))
+        return
+    stopped = 0
+    for i in range(0, len(todo), 100):
+        part = todo[i:i + 100]
+        resp = dfs.request("on_page/force_stop", [{"id": st["task_id"]} for _, st in part])
+        if resp.get("cost"):
+            print(f"WARNING: on_page/force_stop cost ${resp['cost']} — it should be free.", file=sys.stderr)
+        tasks = resp.get("tasks") or []
+        for j, (f, st) in enumerate(part):
+            t = tasks[j] if j < len(tasks) else {}
+            ok = t.get("status_code") == 20000
+            answer = f"{t.get('status_code')} {t.get('status_message')}"
+            print(f"{'stopped' if ok else 'NOT stopped'}  {st['task_id']}  ({f.name}) — DataforSEO: {answer}")
+            if ok:
+                st.update(phase="cancelled", cancelled_at=now(), cancelled_by_run=run_id, cancel_answer=answer)
+                write_json(f, st)
+                stopped += 1
+    note(slug, run_id, f"cancel: {stopped} of {len(todo)} unfinished task(s) stopped at DataforSEO "
+         f"(on_page/force_stop, no charge)")
+    print(f"{stopped} of {len(todo)} stopped. A new crawl now needs --new-crawl and Paul's OK.")
+    if stopped < len(todo):
+        sys.exit(8)
+
+
 def main():
     if len(sys.argv) > 1 and sys.argv[1] == "competitors":   # P6: crawl.py competitors <estimate|run> <slug> …
         import competitors
@@ -613,6 +677,8 @@ def main():
             s.add_argument("--run", required=True); s.add_argument("--crawl-delay", type=int, default=2000)
             s.add_argument("--confirmed", action="store_true"); s.add_argument("--new-crawl", action="store_true")
             s.add_argument("--max-wait", type=int, default=540)
+    s = sub.add_parser("cancel"); s.add_argument("slug"); s.add_argument("--run", required=True)
+    s.add_argument("--include-archived", action="store_true")
     s = sub.add_parser("status"); s.add_argument("slug")
     s = sub.add_parser("summary"); s.add_argument("slug")
     s = sub.add_parser("text"); s.add_argument("slug"); s.add_argument("--run", required=True)
@@ -634,6 +700,12 @@ def main():
         if a.max_words < 50:
             die("--max-words below 50 keeps too little text to be useful.")
         capture_text(a.slug, a.run, a.delay, a.max_words)
+        return
+    if a.cmd == "cancel":
+        try:
+            cancel(a.slug, a.run, a.include_archived)
+        except dfs.DfsError as e:
+            die(f"DataforSEO error: {e}. Nothing was marked cancelled — run the same command again.", 8)
         return
 
     domain = clean_domain(a.domain)
@@ -666,10 +738,23 @@ def main():
         if a.crawl_delay < 1000:
             die("crawl delay below 1000 ms is not polite; minimum is 1000.")
         st = read_json(state_path(a.slug), {})
-        reuse = st.get("task_id") and st.get("domain") == domain and _fresh(st) and not a.new_crawl
+        reuse = (st.get("task_id") and st.get("domain") == domain and _fresh(st) and st.get("phase") != "cancelled"
+                 and not a.new_crawl)
         if st.get("task_id") and not reuse and not a.new_crawl:
-            why = "older than 29 days (results expired)" if not _fresh(st) else f"for {st.get('domain')}"
+            why = ("older than 29 days (results expired)" if not _fresh(st) else
+                   f"(task {st['task_id']}, cancelled)" if st.get("phase") == "cancelled" else f"for {st.get('domain')}")
             die(f"An earlier crawl exists {why}. A new paid crawl needs --new-crawl and Paul's OK.")
+        if a.new_crawl and st.get("task_id") and st.get("domain") == domain and _fresh(st) \
+                and st.get("phase") not in DONE_PHASES:
+            die(f"REFUSED — task {st['task_id']} for {domain} (posted {st.get('posted_at', '')[:16]}) is not "
+                f"finished (phase '{st.get('phase')}'); --new-crawl would pay for a second crawl of the same site. "
+                f"Run the same command without --new-crawl to keep waiting (no charge), or stop it first with "
+                f"crawl.py cancel {a.slug} --run {a.run} (CR-049).", 4)
+        paid = run_posted(a.slug, a.run) if not reuse else []
+        if paid:
+            die(f"REFUSED — run {a.run} has already paid for {len(paid)} crawl task(s) "
+                f"(last {paid[-1].get('at', '')[:16]}). One paid crawl per run: resume it, or finish this run "
+                f"and start a new one with Paul's OK (CR-049).", 4)
         if not reuse:
             if a.new_crawl and st.get("task_id"):
                 old = state_path(a.slug)
@@ -686,9 +771,15 @@ def main():
         else:
             note(a.slug, a.run, f"resuming existing task {st['task_id']} at phase '{st['phase']}' — no new charge")
 
-        if st["phase"] == "crawling" and not poll(a.slug, a.run, st, a.max_wait):
-            print("STILL CRAWLING — run the same command again to keep waiting (no new charge).")
-            sys.exit(10)
+        if st["phase"] == "crawling":
+            done = poll(a.slug, a.run, st, a.max_wait)
+            if done is None:
+                print(f"QUEUED — task {st['task_id']} is posted and paid but DataforSEO has not started it yet. "
+                      "Run the same command (without --new-crawl) later to keep waiting (no new charge).")
+                sys.exit(10)
+            if not done:
+                print("STILL CRAWLING — run the same command again to keep waiting (no new charge).")
+                sys.exit(10)
         if st["phase"] == "downloading":
             download(a.slug, a.run, st)
         if st["phase"] in ("converting", "converted"):

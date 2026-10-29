@@ -18,9 +18,14 @@ Follow CLAUDE.md and `docs/stage-3-data.md`. Defaults: domain = the client's dom
    - Polite: 2,000 ms between hits by default (never below 1,000).
    - `--domain` must be the client's domain (status.json); exit 4 names both. Another domain only when Paul says so,
      with `--other-domain` (CR-048).
-   - exit 10 = still crawling. Run the same command again (each call waits up to ~9 minutes
-     and logs progress to log.md). It never posts a second task.
-   - exit 8 = an API or network error. Nothing is lost; run the same command again to resume.
+   - exit 10 = still crawling, or QUEUED (posted and paid, DataforSEO has not started it yet). Run the same command
+     again **without `--new-crawl`** (each call waits up to ~9 minutes and logs progress to log.md). It never posts a
+     second task.
+   - exit 8 = an API or network error. Nothing is lost; run the same command again to resume. Never add `--new-crawl`
+     to a retry: it is refused while the task is unfinished and once this run has paid for a task (exit 4, CR-049).
+   - A task that stays queued: ask Paul. On his word, `python3 scripts/crawl.py cancel <slug> --run <RUN_ID>
+     [--include-archived]` stops it at DataforSEO for free (with the flag, also the unfinished tasks of set-aside
+     `crawl-state-*.json` files); a new crawl then needs a new run, `--new-crawl` and Paul's OK.
    - If the session is interrupted, `/crawl` again resumes from `crawl-state.json` —
      downloads are free for 30 days, so it never pays twice.
 5. When it completes: files are in `clients/<slug>/inputs/crawl/` (git-ignored) —

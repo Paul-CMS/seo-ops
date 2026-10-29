@@ -226,4 +226,68 @@ def t_domain_check(h):
     ag.fin(rid, "domain check (fake)")
 
 
-SCENARIOS = [t_max_pages_fallback, t_max_pages_sitemap, t_summary_and_text, t_domain_check]
+def t_queue_guard_cancel(h):
+    S = "cq-co"
+    ag = _client(h, S)
+    st_dir = h.SB / "tests" / ".state"
+    dj = st_dir / "dfs.json"
+    dj.write_text(json.dumps({"balance": 10.0, "cost": 0.0198, "onpage_queued": True}))
+    cd = h.SB / "clients" / S / "inputs" / "crawl"
+    run = f"python3 tests/fakes.py crawl run {S} --domain test.example --confirmed --max-pages 20 --max-wait 0"
+    try:
+        rid = ag.start("crawl")
+        code, out = h.sh(f"{run} --run {rid}")
+        log = (ag.c / "log.md").read_text()
+        h.check("CR-049: a task DataforSEO has not started (40602) is waited for — exit 10 QUEUED, not exit 8",
+                code == 10 and "QUEUED" in out and "DataforSEO error" not in out and len(_posts(h, S)) == 1
+                and "queued at DataforSEO (40602 Task In Queue.)" in log, (code, out, log[-300:]))
+        code, out = h.sh(f"{run} --run {rid}")
+        h.check("CR-049: running it again resumes the same task for free", code == 10 and len(_posts(h, S)) == 1, (code, out))
+        code, out = h.sh(f"{run} --run {rid} --new-crawl")
+        h.check("CR-049: --new-crawl on an unfinished task of the same site is refused (exit 4) and posts nothing",
+                code == 4 and "is not finished" in out and "crawl.py cancel" in out and len(_posts(h, S)) == 1
+                and not list(cd.glob("crawl-state-*.json")), (code, out, len(_posts(h, S))))
+
+        code, out = h.sh(f"python3 tests/fakes.py crawl cancel {S} --run {rid}")
+        st = json.loads((cd / "crawl-state.json").read_text())
+        stops = (st_dir / "force_stop.txt").read_text().split() if (st_dir / "force_stop.txt").exists() else []
+        h.check("CR-049: crawl.py cancel stops the task with the free on_page/force_stop and marks the state cancelled",
+                code == 0 and "stopped  fake-task" in out and stops == ["fake-task"] and st.get("phase") == "cancelled"
+                and "20000 Ok." in st.get("cancel_answer", "") and "no charge" in (ag.c / "log.md").read_text()
+                and len(_posts(h, S)) == 1, (code, out, stops, st.get("phase")))
+        code, out = h.sh(f"{run} --run {rid}")
+        h.check("CR-049: a cancelled task is never resumed; a new crawl needs --new-crawl",
+                code != 0 and "cancelled" in out and len(_posts(h, S)) == 1, (code, out))
+        code, out = h.sh(f"{run} --run {rid} --new-crawl")
+        h.check("CR-049: a run that already paid for a crawl task cannot post a second one (exit 4)",
+                code == 4 and "already paid for 1 crawl task" in out and len(_posts(h, S)) == 1, (code, out))
+
+        for tid, phase in (("old-1", "crawling"), ("old-2", "converted"), ("old-3", "crawling")):
+            (cd / f"crawl-state-2026-10-28-{tid}.json").write_text(json.dumps(
+                {"task_id": tid, "domain": "test.example", "phase": phase, "posted_at": "2026-10-28T19:00:00-05:00"}))
+        dj.write_text(json.dumps({"balance": 10.0, "cost": 0.0198, "onpage_queued": True, "onpage_stop_fail": ["old-3"]}))
+        (st_dir / "force_stop.txt").unlink(missing_ok=True)
+        code, out = h.sh(f"python3 tests/fakes.py crawl cancel {S} --run {rid} --include-archived")
+        ph = {t: json.loads((cd / f"crawl-state-2026-10-28-{t}.json").read_text())["phase"] for t in ("old-1", "old-2", "old-3")}
+        stops = (st_dir / "force_stop.txt").read_text().split()
+        h.check("CR-049: --include-archived stops the unfinished set-aside tasks only, and reports DataforSEO's answer "
+                "for each (a refusal exits 8 and stays unfinished)",
+                code == 8 and stops == ["old-1", "old-3"] and ph == {"old-1": "cancelled", "old-2": "converted",
+                                                                       "old-3": "crawling"}
+                and "NOT stopped  old-3" in out and "40400 Not Found." in out and "1 of 2 stopped" in out,
+                (code, out, stops, ph))
+        ag.step(rid, "S05", "skipped", "queued test")
+        ag.fin(rid, "queued crawl cancelled (fake)")
+
+        rid = ag.start("crawl")
+        code, out = h.sh(f"{run} --run {rid} --new-crawl")
+        h.check("CR-049: after a cancel, a new run may post a new crawl with --new-crawl",
+                code == 10 and len(_posts(h, S)) == 2, (code, out))
+        ag.step(rid, "S05", "skipped", "queued test")
+        ag.fin(rid, "new crawl posted (fake)")
+    finally:
+        dj.unlink(missing_ok=True)
+        (st_dir / "force_stop.txt").unlink(missing_ok=True)
+
+
+SCENARIOS = [t_max_pages_fallback, t_max_pages_sitemap, t_summary_and_text, t_domain_check, t_queue_guard_cancel]

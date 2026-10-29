@@ -209,6 +209,15 @@ def dfs_request(endpoint, body=None, method=None, timeout=90, retries=3):
         if cfg.get("serp_organic"):   # P6: organic results for the competitor coverage test
             return {"status_code": 20000, "cost": cfg.get("cost", 0.002), "tasks": [{"status_code": 20000, "id": "fake",
                     "result": [{"items": [{"type": "organic", "url": u} for u in cfg["serp_organic"]]}]}]}
+    if endpoint.startswith("on_page/summary/") and cfg.get("onpage_queued"):   # CR-049: posted, not started yet
+        return {"status_code": 20000, "cost": 0, "tasks": [{"status_code": 40602, "status_message": "Task In Queue."}]}
+    if endpoint == "on_page/force_stop":   # CR-049: free; the ids sent are recorded, onpage_stop_fail ids are refused
+        with open(STATE / "force_stop.txt", "a") as fh:
+            fh.write("".join(f"{t['id']}\n" for t in body))
+        bad = set(cfg.get("onpage_stop_fail", []))
+        return {"status_code": 20000, "cost": 0, "tasks": [
+            {"status_code": 40400, "status_message": "Not Found."} if t["id"] in bad else
+            {"status_code": 20000, "status_message": "Ok.", "data": t} for t in body]}
     if endpoint.startswith("appendix/user_data"):
         return {"status_code": 20000, "tasks": [{"status_code": 20000,
                 "result": [{"money": {"balance": cfg.get("balance", 10.0)}}]}]}
