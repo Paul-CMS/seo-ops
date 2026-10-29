@@ -1,9 +1,9 @@
 # Carolina Carpet Cleaning - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** waiting for the owner's answers to the facts interview (clients/carolina-carpet-cleaning/interviews/facts/Carolina Carpet Cleaning - Facts Interview - pilot - 2026-10-29 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve carolina-carpet-cleaning evidence:loc-bluffton --reason "<why you waive it>"
-- **Waiting on:** Client (via Paul) — waiting for the owner's answers to the facts interview (clients/carolina-carpet-cleaning/i; Client (via Paul) — Your website says this about What the service includes (scope, inclusions): "Professional ; Client (via Paul) — We found different versions of Google rating and review count (date checked): "Disputed: c
-- **Next action:** `/interview carolina-carpet-cleaning facts-answers pilot` once the wait above is over · model: Haiku chat
+- **What is happening now:** ready to start: section pilot in one run: an outline per page by script from the approved plan and the spec (no brief), one draft per page (each from its own fresh sub-agent, CM-043), then the one draft review sheet
+- **Waiting on:** Client (via Paul) — Your website says this about What the service includes (scope, inclusions): "Professional ; Client (via Paul) — We found different versions of Google rating and review count (date checked): "Disputed: c; Client (via Paul) — Your website says this about Price range, or what drives the cost: "People Also Ask How Mu
+- **Next action:** `/build carolina-carpet-cleaning write pilot` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open carolina-carpet-cleaning`) and types `/next carolina-carpet-cleaning` (agents: build (opus), draft-writer (opus), brief-writer (sonnet)) · model: Haiku chat
 
 _Generated 2026-10-29T14:13 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
@@ -11,15 +11,10 @@ _Generated 2026-10-29T14:13 by the system — do not edit. Start every session i
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Client (via Paul) | waiting for the owner's answers to the facts interview (clients/carolina-carpet-cleaning/interviews/facts/Carolina Carpet Cleaning - Facts Interview - pilot - 2026-10-29 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve carolina-carpet-cleaning evidence:loc-bluffton --reason "<why you waive it>" | 2026-10-29 | /interview carolina-carpet-cleaning facts-answers pilot |
 | Client (via Paul) | Your website says this about What the service includes (scope, inclusions): "Professional Home Carpet Cleaning is an excellent investment in the appearance of your home and feel." (client site https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/ (data/c | 2026-10-29 | fact:svc-carpet-cleaning:service_scope |
 | Client (via Paul) | We found different versions of Google rating and review count (date checked): "Disputed: client stated 6 Google reviews, all 5 stars (2026-10-28); the DataforSEO Google reviews pull shows rating 5 from 29 reviews (2022-04-18 to 2026-06-01), Birdeye also 29. [NEED: the figure exactly as Google shows  | 2026-10-29 | fact:d:google_rating |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "People Also Ask How Much Does It Cost To Have An Oriental Rug Cleaned?" (+19 more) (client site https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/ (dat | 2026-10-29 | fact:svc-carpet-cleaning:pricing |
 | Client (via Paul) | Your website says this about The city is actually served (Section E / proof sheet): "Bluffton’s Trusted Low-Moisture Cleaning Specialist Since 1993 Carpet Cleaning in the South Carolina Lowcountry Hilton Head Island upholstery has a unique set of adversaries." (+66 more) (client site https://carpetc | 2026-10-29 | fact:loc-bluffton:city_served |
-| Gwen | manual lookup handoff — 9 of 9 item(s) open | 2026-10-28 | H-2026-10-28-01-manual_lookup |
-| Jonie | broken link handoff — 20 of 20 item(s) open | 2026-10-29 | H-2026-10-29-02-broken_link |
-| Jonie | sitemap handoff — 7 of 7 item(s) open | 2026-10-29 | H-2026-10-29-03-sitemap |
-| Jonie | robots txt handoff — 1 of 1 item(s) open | 2026-10-29 | H-2026-10-29-04-robots_txt |
 
 ## Waiting on (not blocking)
 
@@ -28,7 +23,10 @@ _Open, but the next action above goes ahead without them._
 | Who | What | Since | Reference |
 |---|---|---|---|
 | Jonie | blockers not cleared: H-2026-10-29-02-broken_link-01 is issued; H-2026-10-29-02-broken_link-02 is issued; H-2026-10-29-02-broken_link-03 is issued; H-2026-10-29-02-broken_link-04 is issued; H-2026-10-29-02-broken_link-05 is issued (+23 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-29 | /verify carolina-carpet-cleaning |
-| Paul | batches not yet built and written back: pilot, services, locations, home-about | 2026-10-29 | /where carolina-carpet-cleaning |
+| Gwen | manual lookup handoff — 9 of 9 item(s) open | 2026-10-28 | H-2026-10-28-01-manual_lookup |
+| Jonie | broken link handoff — 20 of 20 item(s) open | 2026-10-29 | H-2026-10-29-02-broken_link |
+| Jonie | sitemap handoff — 7 of 7 item(s) open | 2026-10-29 | H-2026-10-29-03-sitemap |
+| Jonie | robots txt handoff — 1 of 1 item(s) open | 2026-10-29 | H-2026-10-29-04-robots_txt |
 
 ## Settled decisions — never re-raised
 
