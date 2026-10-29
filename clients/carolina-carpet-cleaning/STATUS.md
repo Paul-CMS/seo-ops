@@ -1,17 +1,17 @@
 # Carolina Carpet Cleaning - Status
 
 - **Stage 4 of 8 — Audit**
-- **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — discovery:data finished (run 20261028-191341-discovery-ec47) and that stage is in review m
-- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
+- **What is happening now:** ready to start: the audit: entity → architecture → page conformance → technical, then the fresh-context review
+- **Waiting on:** nobody
+- **Next action:** `/discovery carolina-carpet-cleaning audit` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open carolina-carpet-cleaning`) and types `/next carolina-carpet-cleaning` (agents: discovery-audit (opus), audit-reviewer (opus)) · model: Haiku chat
 
-_Generated 2026-10-28T19:27 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-28T19:52 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | discovery:data finished (run 20261028-191341-discovery-ec47) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /discovery carolina-carpet-cleaning audit (the audit: entity → architecture → page conformance → technical, then the fresh-context review) | 2026-10-28 | /next carolina-carpet-cleaning |
+| — | nothing | | |
 
 ## Waiting on (not blocking)
 
@@ -83,7 +83,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 
 ## Flagged for Paul (system)
 
-_None._
+- **F-001** (open, not yet reviewed) 2026-10-28 · discovery:audit: crawl.py run/estimate accept any --domain without checking it against the client's recorded primary domain; run 20261028-190920-crawl-36cb crawled carolinacarpetcleaning.com (another business) instead of carpetcleaningblufftonsc.com, and pipeline S12 then mixed that crawl with the right site's Screaming Frog export without warning (crosschecks host = carolinacarpetcleaning.com, redirect screen host = carpetcleaningblufftonsc.com). — workaround: Audit stopped before any finding; S05, S05b, S12 recorded failed; Paul re-runs /crawl with --domain carpetcleaningblufftonsc.com, then /discovery audit.
 
 ## Spend so far
 

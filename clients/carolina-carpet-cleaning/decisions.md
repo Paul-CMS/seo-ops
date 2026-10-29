@@ -20,3 +20,7 @@ Generated from status.json and the safety log — do not edit. Record a decision
 
 - 2026-10-28T15:18 — Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)
 - 2026-10-28T19:08 — The client's facts are in — the returned proof sheet is recorded, or Paul approved the client's direct answers — met (system-verified)
+
+## Runs aborted (Paul's call)
+
+- 2026-10-28T19:52 20261028-193504-discovery-da8a — Crawl pointed at carolinacarpetcleaning.com (wrong business). Aborted on Paul's instruction to re-crawl carpetcleaningblufftonsc.com.

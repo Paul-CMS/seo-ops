@@ -1,0 +1,17 @@
+page,url,type,check,result,detail
+https://carolinacarpetcleaning.com/,https://carolinacarpetcleaning.com/,unknown,COM-T,FAIL,78 characters
+https://carolinacarpetcleaning.com/,https://carolinacarpetcleaning.com/,unknown,COM-M,PASS,142 characters
+https://carolinacarpetcleaning.com/,https://carolinacarpetcleaning.com/,unknown,COM-W,N/A,263 words
+https://carolinacarpetcleaning.com/,https://carolinacarpetcleaning.com/,unknown,COM-N,FAIL,
+https://carolinacarpetcleaning.com/about/,https://carolinacarpetcleaning.com/about/,unknown,COM-T,PASS,35 characters
+https://carolinacarpetcleaning.com/about/,https://carolinacarpetcleaning.com/about/,unknown,COM-M,PASS,142 characters
+https://carolinacarpetcleaning.com/about/,https://carolinacarpetcleaning.com/about/,unknown,COM-W,N/A,219 words
+https://carolinacarpetcleaning.com/about/,https://carolinacarpetcleaning.com/about/,unknown,COM-N,FAIL,
+https://carolinacarpetcleaning.com/contact/,https://carolinacarpetcleaning.com/contact/,unknown,COM-T,PASS,34 characters
+https://carolinacarpetcleaning.com/contact/,https://carolinacarpetcleaning.com/contact/,unknown,COM-M,PASS,142 characters
+https://carolinacarpetcleaning.com/contact/,https://carolinacarpetcleaning.com/contact/,unknown,COM-W,N/A,73 words
+https://carolinacarpetcleaning.com/contact/,https://carolinacarpetcleaning.com/contact/,unknown,COM-N,FAIL,
+https://carolinacarpetcleaning.com/services/,https://carolinacarpetcleaning.com/services/,unknown,COM-T,PASS,35 characters
+https://carolinacarpetcleaning.com/services/,https://carolinacarpetcleaning.com/services/,unknown,COM-M,PASS,142 characters
+https://carolinacarpetcleaning.com/services/,https://carolinacarpetcleaning.com/services/,unknown,COM-W,N/A,305 words
+https://carolinacarpetcleaning.com/services/,https://carolinacarpetcleaning.com/services/,unknown,COM-N,FAIL,

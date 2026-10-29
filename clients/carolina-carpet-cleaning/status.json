@@ -125,20 +125,22 @@
       "run": "20261028-190432-discovery-30f8"
     },
     "S05": {
-      "outcome": "done",
-      "reason": "",
+      "outcome": "failed",
+      "reason": "Crawled the wrong domain (carolinacarpetcleaning.com, task 10290009-1266-0216-0000-9b27d219671b) instead of the settled primary domain carpetcleaningblufftonsc.com (Brand Guide A9). Re-crawl needed: estimate 132 pages, about $0.02.",
       "outputs": [
-        "clients/carolina-carpet-cleaning/inputs/crawl/"
+        "clients/carolina-carpet-cleaning/inputs/crawl/Carolina Carpet Cleaning - DFS - crawl-config - 2026-10-28.md"
       ],
-      "at": "2026-10-28T19:11:02-05:00",
-      "run": "20261028-190920-crawl-36cb"
+      "at": "2026-10-28T19:36:53-05:00",
+      "run": "20261028-193504-discovery-da8a"
     },
     "S05b": {
-      "outcome": "done",
-      "reason": "",
-      "outputs": [],
-      "at": "2026-10-28T19:11:02-05:00",
-      "run": "20261028-190920-crawl-36cb"
+      "outcome": "failed",
+      "reason": "Page text is for the wrong site (carolinacarpetcleaning.com, 4 pages); re-capture after the S05 re-crawl of carpetcleaningblufftonsc.com.",
+      "outputs": [
+        "clients/carolina-carpet-cleaning/data/crawl/page-text.csv"
+      ],
+      "at": "2026-10-28T19:36:53-05:00",
+      "run": "20261028-193504-discovery-da8a"
     },
     "S06": {
       "outcome": "done",
@@ -208,6 +210,15 @@
       "outputs": [],
       "at": "2026-10-28T19:27:11-05:00",
       "run": "20261028-191341-discovery-ec47"
+    },
+    "S12": {
+      "outcome": "failed",
+      "reason": "The S05 crawl tables are for the wrong site: carolinacarpetcleaning.com (a different West Columbia SC business, (803) 606-0154, since 1997), not the client's carpetcleaningblufftonsc.com. Cross-checks, crawl-summary and page-text describe that other business; no audit can rest on them. Re-crawl the right domain, then re-run S12.",
+      "outputs": [
+        "clients/carolina-carpet-cleaning/audit/2026-10-28/00-crosschecks.md"
+      ],
+      "at": "2026-10-28T19:36:53-05:00",
+      "run": "20261028-193504-discovery-da8a"
     }
   },
   "last_run": {
@@ -234,7 +245,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-28T19:27:12-05:00",
+  "updated": "2026-10-28T19:52:00-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
@@ -439,10 +450,5 @@
       "source": "DataforSEO Business Data",
       "pulled": 29
     }
-  },
-  "review_pause": {
-    "run_id": "20261028-191341-discovery-ec47",
-    "step": "discovery:data",
-    "at": "2026-10-28T19:27:12-05:00"
   }
 }

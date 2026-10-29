@@ -1,6 +1,6 @@
 # Carolina Carpet Cleaning - Document Checklist
 
-Generated 2026-10-28T19:27 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-28T19:52 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -10,8 +10,8 @@ Generated 2026-10-28T19:27 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S02 Public discovery: live site, GBP, social, review profiles, Secretary o | done | site, press release, Birdeye, Wikipedia, WHOIS read; SOS, GBP, Yelp, Facebook, Yola go to Gwen (H-2026-10-28-01) |
 | [x] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | done | entity foundation proposed: category, MSA area entity via Russian Doll, variants, reserved homepage variant, Wikidata URIs |
 | [x] | S04 Proof sheet built (Markdown + client Google Doc) | done |  |
-| [x] | S05 Site crawl (max pages = sitemap size × 1.5, min 20, max 1000; 1000 whe | done | clients/carolina-carpet-cleaning/inputs/crawl/ |
-| [x] | S05b Page text capture: the body text of every crawled HTML page (the basic | done |  |
+| [!] | S05 Site crawl (max pages = sitemap size × 1.5, min 20, max 1000; 1000 whe | failed | Crawled the wrong domain (carolinacarpetcleaning.com, task 10290009-1266-0216-0000-9b27d219671b) instead of the settled primary domain carpetcleaningblufftonsc.com (Brand Guide A9). Re-crawl needed: estimate 132 pages, about $0.02. |
+| [!] | S05b Page text capture: the body text of every crawled HTML page (the basic | failed | Page text is for the wrong site (carolinacarpetcleaning.com, 4 pages); re-capture after the S05 re-crawl of carpetcleaningblufftonsc.com. |
 | [x] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | done | clients/carolina-carpet-cleaning/data/reviews/ |
 | [x] | S07 Rankings + cannibalization: every ranked keyword per URL (top 100), co | done | clients/carolina-carpet-cleaning/data/rankings/ |
 | [-] | S08 Backlinks pull: referring domains per URL | skipped | backlinks not in the approved data pulls; run in a later pass |
@@ -21,7 +21,7 @@ Generated 2026-10-28T19:27 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S19 People Also Ask: core services × primary city + top 3 cities, capped ( | done | clients/carolina-carpet-cleaning/data/paa/ |
 | [-] | S20 SEOPress site-wide settings (title templates, sitemap, noindexed post  | skipped | WordPress check (wp-check) not run in this pass |
 | [-] | S21 Query fan-out (CM-045): core services × primary city + top 3 cities, c | skipped | query fan-out only with --fanout; not requested |
-| [ ] | S12 Ingest + cross-checks + redirect pre-screen | — |  |
+| [!] | S12 Ingest + cross-checks + redirect pre-screen | failed | The S05 crawl tables are for the wrong site: carolinacarpetcleaning.com (a different West Columbia SC business, (803) 606-0154, since 1997), not the client's carpetcleaningblufftonsc.com. Cross-checks, crawl-summary and page-text describe that other business; no audit can rest on them. Re-crawl the right domain, then re-run S12. |
 | [ ] | S13 Entity analysis: site vs Brand Guide (triple, NAP, brand search, suppo | — |  |
 | [ ] | S14 Architecture: every page typed; the screen decides CM-019 C1–C3, the a | — |  |
 | [ ] | S15 Page conformance triage (CM-063): rebuild / light fix / keep; only pag | — |  |
