@@ -114,6 +114,13 @@
       },
       "at": "2026-10-29T08:18:05-05:00",
       "ts": 1793279885.830498
+    },
+    "reconciled": {
+      "files": {
+        "clients/carolina-carpet-cleaning/brand-guide.md#A+D+E+G": "47d7a6fffdf8"
+      },
+      "at": "2026-10-29T10:31:20-05:00",
+      "ts": 1793287880.69791
     }
   },
   "pages": {},
@@ -305,12 +312,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261029-102519-build-07a3",
-    "command": "build",
-    "finished": "2026-10-29T10:27:17-05:00",
-    "result": "Blockers: 3 blocker handoffs to Jonie (broken_link 20, sitemap 7, robots_txt 1); F-010/F-013/F-017/F-018/F-019 held behind later gates (flag F-007)",
-    "changes": 28,
-    "step": "build:blockers",
+    "run_id": "20261029-102911-discovery-e12b",
+    "command": "discovery",
+    "finished": "2026-10-29T10:31:48-05:00",
+    "result": "Reconciled returned answers and audit decisions into the Brand Guide; 3 facts added; review count disputed; 3 open [NEED] items for Paul",
+    "changes": 1,
+    "step": "discovery:reconcile",
     "batch": null
   },
   "spend": {
@@ -329,7 +336,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-29T10:27:17-05:00",
+  "updated": "2026-10-29T10:31:48-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
@@ -597,6 +604,34 @@
         "main": 0.0029,
         "build": 0.6999
       }
+    },
+    {
+      "run": "20261029-102911-discovery-e12b",
+      "step": "discovery:reconcile",
+      "tokens": 2197971,
+      "usd": 1.0279,
+      "at": "2026-10-29T10:31:48-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.007,
+          "in": 12,
+          "out": 2246,
+          "cache_read": 460916,
+          "cache_write": 6323
+        },
+        "claude-opus-5-5": {
+          "usd": 1.0209,
+          "in": 54,
+          "out": 13714,
+          "cache_read": 1630654,
+          "cache_write": 84052
+        }
+      },
+      "by_agent": {
+        "main": 0.007,
+        "discovery-audit": 1.0209
+      }
     }
   ],
   "sessions": {
@@ -635,6 +670,12 @@
       "step": "build:blockers",
       "first_run": "20261029-102519-build-07a3",
       "at": "2026-10-29T10:27:17-05:00"
+    },
+    "e3c15f71-b632-4580-bfbc-ef0950966f1a": {
+      "key": "audit",
+      "step": "discovery:reconcile",
+      "first_run": "20261029-102911-discovery-e12b",
+      "at": "2026-10-29T10:31:48-05:00"
     }
   },
   "rewrite4_routes": {
@@ -672,8 +713,8 @@
     "H-2026-10-29-04-robots_txt"
   ],
   "review_pause": {
-    "run_id": "20261029-102519-build-07a3",
-    "step": "build:blockers",
-    "at": "2026-10-29T10:27:17-05:00"
+    "run_id": "20261029-102911-discovery-e12b",
+    "step": "discovery:reconcile",
+    "at": "2026-10-29T10:31:48-05:00"
   }
 }

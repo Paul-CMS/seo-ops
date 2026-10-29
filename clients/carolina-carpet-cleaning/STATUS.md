@@ -1,17 +1,17 @@
 # Carolina Carpet Cleaning - Status
 
 - **Stage 4 of 8 — Audit**
-- **What is happening now:** Paul is reviewing what the last step produced; /next continues
-- **Waiting on:** Paul — build:blockers finished (run 20261029-102519-build-07a3) and that stage is in review mode 
-- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
+- **What is happening now:** waiting for Paul's approval — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts
+- **Waiting on:** Paul — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-
+- **Next action:** Paul types `/approve carolina-carpet-cleaning brand_guide_approved --files "clients/carolina-carpet-cleaning/brand-guide.md#A+D+E+G"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-29T10:27 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T10:31 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | build:blockers finished (run 20261029-102519-build-07a3) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /discovery carolina-carpet-cleaning reconcile (reconcile the client's facts into the Brand Guide) | 2026-10-29 | /next carolina-carpet-cleaning |
+| Paul | the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-guide.md#A+D+E+G. Discovery is then signed off automatically and Build starts | 2026-10-29 | /approve carolina-carpet-cleaning brand_guide_approved |
 
 ## Waiting on (not blocking)
 
@@ -97,6 +97,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-005** (open, not yet reviewed) 2026-10-29 · discovery:audit: Flag IDs and finding IDs share one namespace (F-###): system flag F-004 (flags.jsonl, the COM-N phone check reading a footer-less page-text.csv) carries the same label as audit finding F-004 (the blog guarantee claim). DEC-LOCAL-002 and the run summary say 'flag F-004', which Paul can read as the finding. — workaround: In every Paul-facing line the system flag is called 'the phone-check system flag (COM-N, flags.jsonl #4)', never 'F-004'; DEC-LOCAL-007 records the clarification. Fix in a system session: give flags their own prefix (e.g. FL-###).
 - **F-006** (open, not yet reviewed) 2026-10-29 · discovery:audit: render.py auditsheet: the 'For the client to confirm' table has no Recommended/default column and cuts the question at 260 and options at 120 characters mid-word; review.py sheet writes the finding's observation (also cut mid-word, e.g. '/u', 'pH-') into client-questions.csv as the 'question', so the client file Paul sends has no actual question and broken text. The S17 interim defaults (F-005 b, F-006 b) therefore do not show on the rendered sheet. — workaround: Defaults are in audit-review.csv (recommended = b, b) and stated in the run summary; Paul should not send client-questions.csv as written — reword the two questions in his own message until a system session fixes review.py/render.py.
 - **F-007** (open, not yet reviewed) 2026-10-29 · build:blockers: Stage 5 blockers step (D3) says the whole checklist section 1 goes to Jonie as soon as the audit is approved, but 5 of its 9 VA rows map to change kinds gated on later decisions: F-010 and F-018 (redirect) and F-019 (schema) need brand_guide_approved; F-013 (navigation) needs discovery_signed_off; F-017 (pagination title/description template) has no audit_approved kind (seo_title is gated; seopress_settings is record-only). handoff.py create --blockers refuses them (exit 4). blockers_cleared may then read as met from the 3 issued handoffs alone. — workaround: Issued the 3 kinds the audit unlocks (broken_link F-001+F-014, sitemap F-015, robots_txt F-016) as blocker handoffs; held F-010, F-013, F-017, F-018, F-019 for a second blocker handoff once brand_guide_approved / discovery_signed_off are met; F-022 is Build-owned, no VA row.
+- **F-008** (open, not yet reviewed) 2026-10-29 · discovery:reconcile: run.py fact adds an 'Updates since approval' section and lines to the Brand Guide even when brand_guide_approved is not yet set (pre-approval reconcile); the D row value also gets a doubled 'Disputed: Disputed:' in the update line when the value starts with the status word. — workaround: Left the generated section in place; it lists the 4 facts recorded at reconcile. Paul approves the whole guide at 2b.
 
 ## Spend so far
 
@@ -112,10 +113,10 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 1 · Setup | 1 | 1,944,639 | $0.80 | $0.00 |
 | 2 · Discovery | 2 | 4,718,881 | $2.04 | $0.00 |
 | 3 · Data | 3 | 4,864,287 | $0.30 | $0.00 |
-| 4 · Audit | 1 | 20,954,553 | $8.39 | $0.00 |
+| 4 · Audit | 2 | 23,152,524 | $9.42 | $0.00 |
 | 5 · Build plan and blockers | 1 | 1,108,757 | $0.70 | $0.00 |
 | any stage | 4 | 2,441,508 | $0.15 | $0.00 |
-| **total** | 12 | 36,032,625 | $12.39 | $0.00 |
+| **total** | 13 | 38,230,596 | $13.42 | $0.00 |
 
 ## Spend by step (model)
 
@@ -123,12 +124,13 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 |---|---|---|---|---|
 | discovery:audit | 1 | 20,954,553 | $8.39 | $0.00 |
 | discovery:discovery | 1 | 3,941,016 | $2.03 | $0.00 |
+| discovery:reconcile | 1 | 2,197,971 | $1.03 | $0.00 |
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
 | build:blockers | 1 | 1,108,757 | $0.70 | $0.00 |
 | discovery:data | 1 | 0 | $0.22 | $0.00 |
 | answers | 4 | 2,441,508 | $0.15 | $0.00 |
 | crawl | 2 | 4,864,287 | $0.08 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
-| **total** | 12 | 36,032,625 | $12.39 | $0.00 |
+| **total** | 13 | 38,230,596 | $13.42 | $0.00 |
 
-Last run: /build 2026-10-29T10:27 — Blockers: 3 blocker handoffs to Jonie (broken_link 20, sitemap 7, robots_txt 1); F-010/F-013/F-017/F-018/F-019 held behind later gates (flag F-007)
+Last run: /discovery 2026-10-29T10:31 — Reconciled returned answers and audit decisions into the Brand Guide; 3 facts added; review count disputed; 3 open [NEED] items for Paul

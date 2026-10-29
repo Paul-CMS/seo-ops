@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-28T19:25:46-05:00",
+  "updated": "2026-10-29T10:30:14-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -307,15 +307,15 @@
       "section": "D",
       "num": "",
       "label": "Google rating and review count — exactly as Google shows them on the day, with the date (\"4.9 · 67 reviews, 2026-10-07\"; never a rounded 5.0)",
-      "value": "6 Google reviews, all 5 stars (as of 2026-10-28; client-stated, re-check on Google when pulled)",
-      "status": "client_confirmed",
+      "value": "Disputed: client stated 6 Google reviews, all 5 stars (2026-10-28); the DataforSEO Google reviews pull shows rating 5 from 29 reviews (2022-04-18 to 2026-06-01), Birdeye also 29. [NEED: the figure exactly as Google shows it on the day, with the date — Paul records it (audit F-002)]",
+      "status": "disputed",
       "status_text": null,
-      "source": "Owner note, 2026-10-28",
+      "source": "Owner note 2026-10-28 vs DataforSEO reviews pull (data/reviews); audit F-002",
       "quote": "",
-      "date": "2026-10-28",
-      "who": "Paul",
+      "date": "2026-10-29",
+      "who": "discovery agent",
       "count": null,
-      "was": "Unknown"
+      "was": "Client Confirmed"
     },
     {
       "id": "d-team-size-trucks-jobs-completed",
@@ -646,6 +646,51 @@
       "meaning_checked": true,
       "checked_at": "2026-10-28T19:25:46-05:00",
       "checked_note": "11 reviewers name Kevin as the technician who did the work (a 12th says 'Mr. Snow'; same person only if the client confirms Kevin Snow)"
+    },
+    {
+      "id": "d-drying-time",
+      "section": "D",
+      "num": "",
+      "label": "Drying time",
+      "value": "Carpets dry in under one hour on a typical job",
+      "status": "paul_approved",
+      "source": "Paul, audit review 2026-10-29 (F-005, decision fact_drying_time)",
+      "quote": "",
+      "date": "2026-10-29",
+      "who": "discovery agent",
+      "count": null,
+      "was": "Unknown",
+      "status_text": null
+    },
+    {
+      "id": "d-cleaning-solution-safety-claims",
+      "section": "D",
+      "num": "",
+      "label": "Cleaning solution — safety claims",
+      "value": "pH-neutral, biodegradable, non-toxic; safe for pets and children (owner's claims; product names not recorded)",
+      "status": "paul_approved",
+      "source": "Paul, audit review 2026-10-29 (F-006, decision fact_cleaning_solution_product)",
+      "quote": "",
+      "date": "2026-10-29",
+      "who": "discovery agent",
+      "count": null,
+      "was": "Unknown",
+      "status_text": null
+    },
+    {
+      "id": "d-quality-commitment",
+      "section": "D",
+      "num": "",
+      "label": "Quality commitment (not a guarantee)",
+      "value": "The owner commits to quality cleaning at a reasonable price; no refund, warranty or satisfaction guarantee is offered",
+      "status": "paul_approved",
+      "source": "Paul, audit review 2026-10-29 (F-004, decision audit-f004-keep-quality-sentence)",
+      "quote": "",
+      "date": "2026-10-29",
+      "who": "discovery agent",
+      "count": null,
+      "was": "Unknown",
+      "status_text": null
     }
   ]
 }

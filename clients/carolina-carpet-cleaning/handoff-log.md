@@ -189,3 +189,22 @@ Generated from the safety log (clients/carolina-carpet-cleaning/log.md) — do n
 **Changes (script):** 28 — broken_link ×20, sitemap ×7, robots_txt ×1
 - FLAG 2026-10-29T10:26 · run 20261029-102519-build-07a3 · F-007 · Stage 5 blockers step (D3) says the whole checklist section 1 goes to Jonie as soon as the audit is approved, but 5 of its 9 VA rows…
 
+## /discovery · 2026-10-29 · run 20261029-102911-discovery-e12b
+
+- Step: reconcile (Stage 4). Input: discovery/Carolina Carpet Cleaning - MANUAL - client-answers - 2026-10-28.md (proof_sheet_returned met via Paul's direct answers), audit 2026-10-28 findings + review answers.
+- Facts (run.py fact): d-drying-time, d-cleaning-solution-safety-claims, d-quality-commitment (paul_approved, from settled F-005/F-006/F-004); review count -> disputed (F-002: client 6 vs Google data 29).
+- Hand-filled (pre-approval): title, D2 (4 rows), D3 (4 rows), E, G. Change #264.
+- No A/B1/B2 value changed -> no --reopen; entity approval stands. Author = Kevin Snow (settled blog_author).
+- [NEED:] travel fee beyond the six towns; Section G x3 (question 25 blank); Google review figure on the day (Paul records).
+- D3: F-023 blog edits (price range, "personnel") have no VA handoff yet; F-001 is in H-2026-10-29-02.
+- Pending outside this step: Gwen's lookups H-2026-10-28-01 (SOS legal name/1993, Birdeye Beaufort address).
+- Marked: status.py mark reconciled --file brand-guide.md#A+D+E+G. Next: Paul Approval 2b (brand_guide_approved).
+- Flag F-008: run.py fact writes "Updates since approval" before approval exists; carried on.
+
+**Changes (script):** 1 — brand_guide ×1
+- FACT 2026-10-29T10:30 · run 20261029-102911-discovery-e12b · d-drying-time (new) · paul_approved · Carpets dry in under one hour on a typical job · source Paul, audit review 2026-10-29 (F-005, deci…
+- FACT 2026-10-29T10:30 · run 20261029-102911-discovery-e12b · d-cleaning-solution-safety-claims (new) · paul_approved · pH-neutral, biodegradable, non-toxic; safe for pets and children (owner's clai…
+- FACT 2026-10-29T10:30 · run 20261029-102911-discovery-e12b · d-quality-commitment (new) · paul_approved · The owner commits to quality cleaning at a reasonable price; no refund, warranty or satisfa…
+- FACT 2026-10-29T10:30 · run 20261029-102911-discovery-e12b · d-google-rating-and-review-count-exactly-as-google-shows-the (value, status, source) · disputed · Disputed: client stated 6 Google revie…
+- FLAG 2026-10-29T10:31 · run 20261029-102911-discovery-e12b · F-008 · run.py fact adds an 'Updates since approval' section and lines to the Brand Guide even when brand_guide_approved is not yet set …
+
