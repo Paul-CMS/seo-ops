@@ -92,3 +92,16 @@ Generated from the safety log (clients/carolina-carpet-cleaning/log.md) — do n
 **Changes (script):** 2 — drive_file ×1, audit_step ×1
 **Steps recorded (script):** S04 done
 
+## /crawl · 2026-10-28 · run 20261028-190920-crawl-36cb
+
+- Crawled carolinacarpetcleaning.com in basic mode, max 20 pages (confirmed by Paul). Cost about $0.003.
+- DataforSEO returned "Task In Queue" (task 40602) three times, then completed on the fourth try. Nothing lost.
+- Tables in clients/carolina-carpet-cleaning/inputs/crawl/ (git-ignored). Summary the agents read: data/crawl/crawl-summary.csv (8 rows). Page text: data/crawl/page-text.csv (4 of 4 pages).
+- S05 and S05b recorded done.
+- 14 DFS tables and the crawl-config copied to Drive, 01 - Discovery and Audit/Evidence/.
+- Notes from the tables: 4 duplicate meta descriptions, 1 non-indexable URL, 3 external links, 0 duplicate titles, 0 duplicate content, 0 redirect chains.
+- Next: the discovery-audit agent reads the crawl summary as part of the audit.
+
+**Changes (script):** 16 — drive_file ×14, audit_step ×2
+**Steps recorded (script):** S05 done, S05b done
+

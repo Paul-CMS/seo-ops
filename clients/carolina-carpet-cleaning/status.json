@@ -123,19 +123,35 @@
       "outputs": [],
       "at": "2026-10-28T19:04:56-05:00",
       "run": "20261028-190432-discovery-30f8"
+    },
+    "S05": {
+      "outcome": "done",
+      "reason": "",
+      "outputs": [
+        "clients/carolina-carpet-cleaning/inputs/crawl/"
+      ],
+      "at": "2026-10-28T19:11:02-05:00",
+      "run": "20261028-190920-crawl-36cb"
+    },
+    "S05b": {
+      "outcome": "done",
+      "reason": "",
+      "outputs": [],
+      "at": "2026-10-28T19:11:02-05:00",
+      "run": "20261028-190920-crawl-36cb"
     }
   },
   "last_run": {
-    "run_id": "20261028-190432-discovery-30f8",
-    "command": "discovery",
-    "finished": "2026-10-28T19:04:56-05:00",
-    "result": "facts-direct: owner's answers saved verbatim and marked as facts_direct and proof_sheet",
-    "changes": 2,
-    "step": "discovery:facts-direct",
+    "run_id": "20261028-190920-crawl-36cb",
+    "command": "crawl",
+    "finished": "2026-10-28T19:11:13-05:00",
+    "result": "Crawled 8 pages, $0.003",
+    "changes": 16,
+    "step": "crawl",
     "batch": null
   },
   "spend": {
-    "dataforseo_usd": 0.0
+    "dataforseo_usd": 0.003
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
@@ -149,7 +165,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-28T19:08:23-05:00",
+  "updated": "2026-10-28T19:11:13-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
@@ -293,6 +309,26 @@
       "by_agent": {
         "main": 0.0104
       }
+    },
+    {
+      "run": "20261028-190920-crawl-36cb",
+      "step": "crawl",
+      "tokens": 1517474,
+      "usd": 0.0201,
+      "at": "2026-10-28T19:11:13-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0201,
+          "in": 32,
+          "out": 6037,
+          "cache_read": 1501256,
+          "cache_write": 10149
+        }
+      },
+      "by_agent": {
+        "main": 0.0201
+      }
     }
   ],
   "sessions": {
@@ -307,6 +343,12 @@
       "step": "discovery:discovery",
       "first_run": "20261028-154310-discovery-622b",
       "at": "2026-10-28T15:50:49-05:00"
+    },
+    "fee0d35b-3e97-48a1-9488-066aeeec24d6": {
+      "key": "data",
+      "step": "crawl",
+      "first_run": "20261028-190920-crawl-36cb",
+      "at": "2026-10-28T19:11:13-05:00"
     }
   },
   "rewrite4_routes": {

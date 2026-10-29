@@ -1,11 +1,11 @@
 # Carolina Carpet Cleaning - Status
 
 - **Stage 3 of 8 — Data**
-- **What is happening now:** Stage 2 (Discovery) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open carolina-carpet-cleaning) and type /next carolina-carpet-cleaning. Next there: /crawl carolina-carpet-cleaning (crawl the site while the client has the proof sheet)
+- **What is happening now:** ready to start: reviews, rankings, People Also Ask, backlinks, citations, grid, GSC — one cost yes for the whole step
 - **Waiting on:** nobody
-- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
+- **Next action:** `/discovery carolina-carpet-cleaning data` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open carolina-carpet-cleaning`) and types `/next carolina-carpet-cleaning` (agents: researcher (sonnet), discovery-audit (opus)) · model: Haiku chat
 
-_Generated 2026-10-28T19:08 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-28T19:11 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -63,7 +63,9 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Car
 
 _Inputs the data manifest (methodology/data-manifest.json) says a step must read, where that step has not finished for this client yet._
 
-- **imported-exports** (18 file(s), e.g. `inputs/Carolina Carpet Cleaning - CMS - export-all-urls - 2026-10-28.csv`) — read by discovery:audit
+- **crawl-page-text** (2 file(s), e.g. `data/crawl/crawl-summary.csv`) — read by discovery:audit, build:evidence
+- **crawl-raw** (1 file(s), e.g. `inputs/crawl/crawl-state.json`) — read by the step that reads crawl-page-text
+- **imported-exports** (32 file(s), e.g. `inputs/Carolina Carpet Cleaning - CMS - export-all-urls - 2026-10-28.csv`) — read by discovery:audit
 - **discovery-record** (2 file(s), e.g. `discovery/Carolina Carpet Cleaning - Discovery Record - REVIEW.md`) — read by build:evidence, build:facts
 - **facts** (1 file(s), e.g. `facts.json`) — read by build:evidence, build:facts
 - **settled** (1 file(s), e.g. `decisions-settled.md`) — read by build:evidence, build:facts, build:brief, build:draft, build:drafts, build:write, build:plan
@@ -85,8 +87,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 |---|---|---|---|---|
 | 1 · Setup | 1 | 1,944,639 | $0.80 | $0.00 |
 | 2 · Discovery | 2 | 4,718,881 | $2.04 | $0.00 |
+| 3 · Data | 1 | 1,517,474 | $0.02 | $0.00 |
 | any stage | 3 | 816,224 | $0.13 | $0.00 |
-| **total** | 6 | 7,479,744 | $2.98 | $0.00 |
+| **total** | 7 | 8,997,218 | $3.00 | $0.00 |
 
 ## Spend by step (model)
 
@@ -95,7 +98,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:discovery | 1 | 3,941,016 | $2.03 | $0.00 |
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
 | answers | 3 | 816,224 | $0.13 | $0.00 |
+| crawl | 1 | 1,517,474 | $0.02 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
-| **total** | 6 | 7,479,744 | $2.98 | $0.00 |
+| **total** | 7 | 8,997,218 | $3.00 | $0.00 |
 
-Last run: /discovery 2026-10-28T19:04 — facts-direct: owner's answers saved verbatim and marked as facts_direct and proof_sheet
+Last run: /crawl 2026-10-28T19:11 — Crawled 8 pages, $0.003

@@ -1,6 +1,6 @@
 # Carolina Carpet Cleaning - Document Checklist
 
-Generated 2026-10-28T19:08 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-28T19:11 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -10,8 +10,8 @@ Generated 2026-10-28T19:08 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S02 Public discovery: live site, GBP, social, review profiles, Secretary o | done | site, press release, Birdeye, Wikipedia, WHOIS read; SOS, GBP, Yelp, Facebook, Yola go to Gwen (H-2026-10-28-01) |
 | [x] | S03 Entity research: category entity (Wikipedia), area entity (Russian Dol | done | entity foundation proposed: category, MSA area entity via Russian Doll, variants, reserved homepage variant, Wikidata URIs |
 | [x] | S04 Proof sheet built (Markdown + client Google Doc) | done |  |
-| [ ] | S05 Site crawl (max pages = sitemap size × 1.5, min 20, max 1000; 1000 whe | — |  |
-| [ ] | S05b Page text capture: the body text of every crawled HTML page (the basic | — |  |
+| [x] | S05 Site crawl (max pages = sitemap size × 1.5, min 20, max 1000; 1000 whe | done | clients/carolina-carpet-cleaning/inputs/crawl/ |
+| [x] | S05b Page text capture: the body text of every crawled HTML page (the basic | done |  |
 | [ ] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | — |  |
 | [ ] | S07 Rankings + cannibalization: every ranked keyword per URL (top 100), co | — |  |
 | [ ] | S08 Backlinks pull: referring domains per URL | — |  |
