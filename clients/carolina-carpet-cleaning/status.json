@@ -461,7 +461,20 @@
           "service_process",
           "pricing",
           "rating"
-        ]
+        ],
+        "waiver": {
+          "by": "Paul",
+          "at": "2026-10-29T14:54:27-05:00",
+          "reason": "Paul: n/a to all facts for content creation; facts to come from the research pass, not the interview",
+          "grid": "clients/carolina-carpet-cleaning/build/evidence/svc-tile-grout-cleaning.grid.md",
+          "grid_sha": "9f724aac52bb",
+          "counts": {
+            "Known": 8,
+            "Unknown": 2,
+            "Unverified": 1,
+            "Conflict": 1
+          }
+        }
       },
       "pack": {
         "file": "clients/carolina-carpet-cleaning/build/services/packs/svc-tile-grout-cleaning.md",
@@ -1547,7 +1560,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-29T14:54:20-05:00",
+  "updated": "2026-10-29T14:54:27-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
