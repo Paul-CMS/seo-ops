@@ -28,6 +28,7 @@ publication.
 | 10 | Legal entity name | Carolina Floor Cleaning Pros | Client Confirmed 2026-10-28 · was: Unknown |
 | 11 | Exact URL in the GBP Website field | https://carpetcleaningblufftonsc.com/ | Paul Approved 2026-10-28 · was: Unknown |
 | | Facebook page (Beaufort) | https://www.facebook.com/carpetcleaningbeaufortsc | Paul Approved 2026-10-28 · was: Unknown |
+| | Travel fee beyond the six towns | None — no travel fee | Paul Approved 2026-10-29 · was: Unknown |
 
 **Area entity derivation** (BB-105) — record the path, not just the answer:
 
@@ -121,6 +122,7 @@ Everything a writer may state. **Not here = does not exist.**
 | Drying time | Carpets dry in under one hour on a typical job | Paul Approved 2026-10-29 · was: Unknown | Paul, audit review 2026-10-29 (F-005, decision fact_drying_time) |
 | Cleaning solution — safety claims | pH-neutral, biodegradable, non-toxic; safe for pets and children (owner's claims; product names not recorded) | Paul Approved 2026-10-29 · was: Unknown | Paul, audit review 2026-10-29 (F-006, decision fact_cleaning_solution_product) |
 | Quality commitment (not a guarantee) | The owner commits to quality cleaning at a reasonable price; no refund, warranty or satisfaction guarantee is offered | Paul Approved 2026-10-29 · was: Unknown | Paul, audit review 2026-10-29 (F-004, decision audit-f004-keep-quality-sentence) |
+| Section G positioning lines (owner's words) | Skipped — Paul chose to leave question 25 unanswered; no owner words recorded | Unknown 2026-10-29 | Paul, chat 2026-10-29 (answer 3) |
 
 ### D2 · Unsupported claims
 Claims the site makes publicly that the client could not substantiate. Writers must not repeat
@@ -198,6 +200,8 @@ MOST COMMON THING CUSTOMERS GET WRONG ABOUT THIS TRADE: [NEED: the owner's own w
 - Updated 2026-10-29 · Cleaning solution — safety claims — was new → now Paul Approved: pH-neutral, biodegradable, non-toxic; safe for pets and children (owner's claims; product names not recorded) (source: Paul, audit review 2026-10-29 (F-006, decision fact_cleaning_solution_product); by discovery agent)
 - Updated 2026-10-29 · Quality commitment (not a guarantee) — was new → now Paul Approved: The owner commits to quality cleaning at a reasonable price; no refund, warranty or satisfaction guarantee is offered (source: Paul, audit review 2026-10-29 (F-004, decision audit-f004-keep-quality-sentence); by discovery agent)
 - Updated 2026-10-29 · Google rating and review count — exactly as Google shows them on the day, with the date ("4.9 · 67 reviews, 2026-10-07"; never a rounded 5.0) — was Client Confirmed: 6 Google reviews, all 5 stars (as of 2026-10-28; client-stated, re-check on Goog → now Disputed: Disputed: client stated 6 Google reviews, all 5 stars (2026-10-28); the DataforSEO Google reviews pull shows rating 5 from 29 reviews (2022-04-18 to 2026-06-01) (source: Owner note 2026-10-28 vs DataforSEO reviews pull (data/reviews); audit F-002; by discovery agent)
+- Updated 2026-10-29 · Travel fee beyond the six towns — was new → now Paul Approved: None — no travel fee (source: Paul, chat 2026-10-29 (answer 2); by Paul)
+- Updated 2026-10-29 · Section G positioning lines (owner's words) — was new → now Unknown: Skipped — Paul chose to leave question 25 unanswered; no owner words recorded (source: Paul, chat 2026-10-29 (answer 3); by Paul)
 
 ## Maintenance
 

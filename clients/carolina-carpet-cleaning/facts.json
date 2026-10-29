@@ -1,6 +1,6 @@
 {
   "_about": "rewrite 2 P4 — the single source for every fact about the client. Written only by run.py fact (and migrate.py); the Brand Guide rows are generated from it.",
-  "updated": "2026-10-29T10:30:14-05:00",
+  "updated": "2026-10-29T10:33:38-05:00",
   "facts": [
     {
       "id": "a-brand-entity-gbp-name-exactly",
@@ -690,6 +690,35 @@
       "who": "discovery agent",
       "count": null,
       "was": "Unknown",
+      "status_text": null
+    },
+    {
+      "id": "a-travel-fee-beyond-six-towns",
+      "section": "A",
+      "num": "",
+      "label": "Travel fee beyond the six towns",
+      "value": "None — no travel fee",
+      "status": "paul_approved",
+      "source": "Paul, chat 2026-10-29 (answer 2)",
+      "quote": "",
+      "date": "2026-10-29",
+      "who": "Paul",
+      "count": null,
+      "was": "Unknown",
+      "status_text": null
+    },
+    {
+      "id": "g-positioning-owner-words",
+      "section": "D",
+      "num": "",
+      "label": "Section G positioning lines (owner's words)",
+      "value": "Skipped — Paul chose to leave question 25 unanswered; no owner words recorded",
+      "status": "unknown",
+      "source": "Paul, chat 2026-10-29 (answer 3)",
+      "quote": "",
+      "date": "2026-10-29",
+      "who": "Paul",
+      "count": null,
       "status_text": null
     }
   ]

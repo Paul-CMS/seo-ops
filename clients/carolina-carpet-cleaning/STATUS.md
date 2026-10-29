@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — the reconciled Brand Guide is ready for your approval — the reconciled Brand Guide: brand-
 - **Next action:** Paul types `/approve carolina-carpet-cleaning brand_guide_approved --files "clients/carolina-carpet-cleaning/brand-guide.md#A+D+E+G"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-29T10:31 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T10:33 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -115,8 +115,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 3 | 4,864,287 | $0.30 | $0.00 |
 | 4 · Audit | 2 | 23,152,524 | $9.42 | $0.00 |
 | 5 · Build plan and blockers | 1 | 1,108,757 | $0.70 | $0.00 |
-| any stage | 4 | 2,441,508 | $0.15 | $0.00 |
-| **total** | 13 | 38,230,596 | $13.42 | $0.00 |
+| any stage | 5 | 2,651,602 | $0.16 | $0.00 |
+| **total** | 14 | 38,440,690 | $13.43 | $0.00 |
 
 ## Spend by step (model)
 
@@ -128,9 +128,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
 | build:blockers | 1 | 1,108,757 | $0.70 | $0.00 |
 | discovery:data | 1 | 0 | $0.22 | $0.00 |
-| answers | 4 | 2,441,508 | $0.15 | $0.00 |
+| answers | 5 | 2,651,602 | $0.16 | $0.00 |
 | crawl | 2 | 4,864,287 | $0.08 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
-| **total** | 13 | 38,230,596 | $13.42 | $0.00 |
+| **total** | 14 | 38,440,690 | $13.43 | $0.00 |
 
-Last run: /discovery 2026-10-29T10:31 — Reconciled returned answers and audit decisions into the Brand Guide; 3 facts added; review count disputed; 3 open [NEED] items for Paul
+Last run: /answers 2026-10-29T10:33 — Paul's answers recorded: no travel fee; Section G lines skipped; review figure skipped (stays Disputed)

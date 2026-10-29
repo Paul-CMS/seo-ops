@@ -208,3 +208,12 @@ Generated from the safety log (clients/carolina-carpet-cleaning/log.md) — do n
 - FACT 2026-10-29T10:30 · run 20261029-102911-discovery-e12b · d-google-rating-and-review-count-exactly-as-google-shows-the (value, status, source) · disputed · Disputed: client stated 6 Google revie…
 - FLAG 2026-10-29T10:31 · run 20261029-102911-discovery-e12b · F-008 · run.py fact adds an 'Updates since approval' section and lines to the Brand Guide even when brand_guide_approved is not yet set …
 
+## /answers · 2026-10-29 · run 20261029-103335-answers-228b
+
+- Travel fee beyond six towns: none (fact a-travel-fee-beyond-six-towns).
+- Section G positioning lines: skipped by Paul (fact g-positioning-owner-words, unknown).
+- Google review figure: skipped by Paul; stays Disputed, no count on any page.
+
+- FACT 2026-10-29T10:33 · run 20261029-103335-answers-228b · a-travel-fee-beyond-six-towns (new) · paul_approved · None — no travel fee · source Paul, chat 2026-10-29 (answer 2) · by Paul
+- FACT 2026-10-29T10:33 · run 20261029-103335-answers-228b · g-positioning-owner-words (new) · unknown · Skipped — Paul chose to leave question 25 unanswered; no owner words recorded · source Paul, c…
+
