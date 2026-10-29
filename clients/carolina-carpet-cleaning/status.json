@@ -240,10 +240,10 @@
         },
         "draft": {
           "file": "clients/carolina-carpet-cleaning/build/pilot/drafts/svc-carpet-cleaning.md",
-          "run": "20261029-142210-build-b1dd",
-          "at": "2026-10-29T14:30:36-05:00",
-          "sha": "ce9ab97acaf3",
-          "ts": 1793302236.877038,
+          "run": "20261029-143605-build-7454",
+          "at": "2026-10-29T14:37:09-05:00",
+          "sha": "db89cacf75e3",
+          "ts": 1793302629.806082,
           "agent": "ab76495860cae9bb5"
         }
       }
@@ -742,10 +742,10 @@
         },
         "draft": {
           "file": "clients/carolina-carpet-cleaning/build/pilot/drafts/loc-bluffton.md",
-          "run": "20261029-142210-build-b1dd",
-          "at": "2026-10-29T14:30:36-05:00",
-          "sha": "aadaa1c5a49d",
-          "ts": 1793302236.957986,
+          "run": "20261029-143605-build-7454",
+          "at": "2026-10-29T14:37:09-05:00",
+          "sha": "d997d1b16232",
+          "ts": 1793302629.8854241,
           "agent": "a204717377da26fc2"
         }
       }
@@ -1207,10 +1207,21 @@
             "listed": 14,
             "fixes": 1,
             "dropped": 0,
-            "applied": null
+            "applied": {
+              "at": "2026-10-29T14:36:32-05:00",
+              "ts": 1793302592.426243,
+              "run": "20261029-143605-build-7454",
+              "answers": "accept all",
+              "explicit": 0,
+              "file": "clients/carolina-carpet-cleaning/build/pilot/drafts-apply.json"
+            }
           }
         },
-        "sem_findings": 0
+        "sem_findings": 0,
+        "content_written_back": {
+          "at": "2026-10-29T14:38:18-05:00",
+          "run": "20261029-143605-build-7454"
+        }
       },
       {
         "id": "services",
@@ -1451,12 +1462,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261029-142210-build-b1dd",
+    "run_id": "20261029-143605-build-7454",
     "command": "build",
-    "finished": "2026-10-29T14:32:37-05:00",
-    "result": "Pilot drafts written (svc-carpet-cleaning, loc-bluffton) after researcher fills; review sheet: 1 Ask (H1 variant, kind 4), 14 decided for you; Kevin's process left [NEED] for Paul's own words",
-    "changes": 1,
-    "step": "build:write",
+    "finished": "2026-10-29T14:38:40-05:00",
+    "result": "Pilot drafts review applied (accept all, 15 rows): svc rows 12, 13 + silent E1 fix, Bluffton row 2; drafts re-recorded; Brand Guide write-back B3/C1/C2/C3 done; awaiting pilot drafts approval",
+    "changes": 4,
+    "step": "build:review",
     "batch": "pilot"
   },
   "spend": {
@@ -1478,7 +1489,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-29T14:32:37-05:00",
+  "updated": "2026-10-29T14:38:40-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
@@ -1927,6 +1938,34 @@
         "draft-writer": 1.655,
         "researcher": 0.592,
         "build": 1.4975
+      }
+    },
+    {
+      "run": "20261029-143605-build-7454",
+      "step": "build:review",
+      "tokens": 1925124,
+      "usd": 0.878,
+      "at": "2026-10-29T14:38:40-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0046,
+          "in": 6,
+          "out": 1087,
+          "cache_read": 362069,
+          "cache_write": 1955
+        },
+        "claude-opus-5-5": {
+          "usd": 0.8734,
+          "in": 58,
+          "out": 12652,
+          "cache_read": 1482565,
+          "cache_write": 64732
+        }
+      },
+      "by_agent": {
+        "main": 0.0046,
+        "build": 0.8734
       }
     }
   ],

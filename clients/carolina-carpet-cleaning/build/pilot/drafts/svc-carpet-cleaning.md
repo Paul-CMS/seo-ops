@@ -11,7 +11,7 @@ Carolina Carpet Cleaning is a family-owned carpet cleaning company that has work
 
 ## How Do Professional Carpet Cleaners Clean a Carpet?
 
-Professional carpet cleaners work in a set order: remove the dry soil, loosen the rest, pull the loosened soil out, groom the pile and dry the carpet. The Carpet and Rug Institute (CRI) lists these steps from the IICRC S100 cleaning standard.
+Professional carpet cleaners work in a set order: remove the dry soil, loosen the rest, pull the loosened soil out, groom the pile and dry the carpet. The [Carpet and Rug Institute (CRI)](https://carpet-rug.org/wp-content/uploads/2018/08/Carpet-Preconditioning-Its-Impact-on-Cleaning.pdf) lists these steps from the IICRC S100 cleaning standard.
 
 The work starts with dry soil removal. Dry grit that is not vacuumed up gets heavier and harder to remove once the carpet is wet.
 
@@ -21,7 +21,7 @@ In hot water extraction, the method the CRI paper describes, hot water under pre
 
 How Carolina Carpet Cleaning does the work: [NEED: Kevin's own description of his cleaning process and equipment, in his words]
 
-Kevin Snow does every job himself, and no work is subcontracted. His cleaning solution is pH-neutral, biodegradable and non-toxic. On a typical job, carpets are dry in under one hour. Carolina Carpet Cleaning carries general workmanship insurance. Customers mention that Kevin shows up on time and works fast. One customer said Kevin explained what he was doing and what to expect.
+No work is subcontracted. Carolina Carpet Cleaning carries general workmanship insurance. Customers mention that Kevin shows up on time and works fast. One customer said Kevin explained what he was doing and what to expect.
 
 ## Which Carpet Cleaning Services Does Carolina Carpet Cleaning Offer?
 
@@ -43,7 +43,7 @@ Carpet stain removal deals with the spots a spill leaves behind. For a fresh spi
 
 ### How much does it cost to have carpet professionally cleaned?
 
-The price of professional carpet cleaning depends on how much carpet needs cleaning, how dirty it is and whether stains need extra work, so the fair way to price it is to look at your rooms first. Carolina Carpet Cleaning gives a free estimate, asks for no deposit to book and charges no travel fee. [NEED: what Kevin prices by (per room, per square foot or per job), in his words]
+Carolina Carpet Cleaning gives a free estimate, asks for no deposit to book and charges no travel fee. [NEED: what Kevin prices by (per room, per square foot or per job), in his words]
 
 ### How do I get brown stains out of my carpet?
 

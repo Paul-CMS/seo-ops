@@ -304,3 +304,16 @@ clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Site Plan - RE
 - FLAG 2026-10-29T14:32 · run 20261029-142210-build-b1dd · F-013 · outline.py: outlines still list /ladys-island/ in the location link lists (svc service-areas wheel, loc-bluffton sibling wheel) alth…
 - FLAG 2026-10-29T14:32 · run 20261029-142210-build-b1dd · F-014 · reviews.py extract wipes earlier meaning checks, and evidence_pack.py gives 'service:' review topics no key a reviews.py checked ent…
 
+## /build · 2026-10-29 · run 20261029-143605-build-7454
+
+- Paul's answer line: "accept all". `review.py apply` recorded all 15 rows on build/pilot/drafts-apply.json (row 1 = a: keep the site plan's H1 "Home Carpet Cleaning in the South Carolina Lowcountry").
+- Applied to svc-carpet-cleaning: row 12 (cost FAQ: unsourced price-drivers sentence cut; leads with free estimate, no deposit, no travel fee, then [NEED: what Kevin prices by]); row 13 (CRI linked to the pack's CRI preconditioning white paper); the silent E1 fix (repeated opening facts trimmed; insurance and review lines kept).
+- Applied to loc-bluffton: row 2 (HOA FAQ now names Palmetto Bluff, Hampton Hall, Hampton Lake from the Town list; no gate-rule claim; Kevin's HOA practice stays the existing [NEED]).
+- Rows 1, 3-11, 14, 15: keep-as-written decisions, no text change needed (furniture FAQ and the low-moisture specialist line were already absent).
+- Placeholders after apply: svc 6 [NEED], Bluffton 5 [NEED] (placeholders.py scan clean of any other form). Both drafts re-recorded with status.py page-stage.
+- Write-back (outline route, due before the drafts approval): Brand Guide B3 (2 rows), C1 /carpet-cleaning/, C2 /bluffton/ (not GBP landing), C3 10 H2 + 8 FAQ. records.py render; Brand Guide uploaded to Drive; status.py writeback pilot recorded. brand_guide_approved kept (CM-066).
+- No WordPress, no publish, no approval, no system file changed, no spend. No facts invented.
+- Next: Paul reviews the drafts and decides the pilot drafts approval (`/approve carolina-carpet-cleaning batch:pilot:drafts`), then pilot-corrections.
+
+**Changes (script):** 4 — draft ×2, brand_guide ×1, drive_file ×1
+

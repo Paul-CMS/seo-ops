@@ -1040,3 +1040,38 @@ Spend: 5436483 tokens · $3.75 (measured)
 - CHANGE #336 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | upload | old: previous version archived as Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (15).md | new: Carolina Carpet Cleaning - Document Checklist.md · sha 9b0e4dbe1fe8 | result: done · copied (Drive for desktop syncs it)
 - CHANGE #337 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (16).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (16).md | result: done · renamed and moved, nothing deleted
 - CHANGE #338 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (16).md | new: Carolina Carpet Cleaning - Status.md · sha 04312cccfc6c | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261029-143605-build-7454 · STARTED · /build · 2026-10-29T14:36:05-05:00
+Step: build:review · batch pilot · session 1076632d-28b5-4ec6-b4a9-683026349719
+Gates checked: discovery_signed_off
+- REVIEW APPLIED 2026-10-29T14:36 · run 20261029-143605-build-7454 · pilot drafts: 15 row(s) (0 answered by Paul, the rest by default) · clients/carolina-carpet-cleaning/build/pilot/drafts-apply.json
+- DRAFT 2026-10-29T14:37 · run 20261029-143605-build-7454 · svc-carpet-cleaning · clients/carolina-carpet-cleaning/build/pilot/drafts/svc-carpet-cleaning.md · agent ab76495860cae9bb5
+- DRAFT 2026-10-29T14:37 · run 20261029-143605-build-7454 · loc-bluffton · clients/carolina-carpet-cleaning/build/pilot/drafts/loc-bluffton.md · agent a204717377da26fc2
+- CHANGE #339 [draft] /carpet-cleaning/ | body | old: review draft | new: sheet rows 12, 13 + silent E1 fix applied: cost FAQ drivers sentence cut; CRI linked to its preconditioning white paper; repeated opening facts trimmed | result: done
+- CHANGE #340 [draft] /bluffton/ | body | old: generic HOA FAQ | new: sheet row 2 applied: HOA FAQ names Palmetto Bluff, Hampton Hall, Hampton Lake from the Town list; no gate-rule claims; HOA practice stays [NEED] | result: done
+- CHANGE #341 [brand_guide] clients/carolina-carpet-cleaning/brand-guide.md | B3, C1, C2, C3 | old: empty | new: pilot write-back: 2 B3 rows, C1 /carpet-cleaning/, C2 /bluffton/, C3 10 H2 + 8 FAQ | result: done
+- CHANGE #342 [drive_file] drive:Carolina Carpet Cleaning - TMS/brand-guide.md | upload | old: (new file) | new: brand-guide.md · sha d558931d5173 | result: done · copied (Drive for desktop syncs it)
+- WRITE-BACK 2026-10-29T14:38 · run 20261029-143605-build-7454 · batch pilot: Brand Guide B3, C1/C2, C3 updated once for the section, from its reviewed drafts
+### HANDOFF · /build · 2026-10-29 · run 20261029-143605-build-7454
+- Paul's answer line: "accept all". `review.py apply` recorded all 15 rows on build/pilot/drafts-apply.json (row 1 = a: keep the site plan's H1 "Home Carpet Cleaning in the South Carolina Lowcountry").
+- Applied to svc-carpet-cleaning: row 12 (cost FAQ: unsourced price-drivers sentence cut; leads with free estimate, no deposit, no travel fee, then [NEED: what Kevin prices by]); row 13 (CRI linked to the pack's CRI preconditioning white paper); the silent E1 fix (repeated opening facts trimmed; insurance and review lines kept).
+- Applied to loc-bluffton: row 2 (HOA FAQ now names Palmetto Bluff, Hampton Hall, Hampton Lake from the Town list; no gate-rule claim; Kevin's HOA practice stays the existing [NEED]).
+- Rows 1, 3-11, 14, 15: keep-as-written decisions, no text change needed (furniture FAQ and the low-moisture specialist line were already absent).
+- Placeholders after apply: svc 6 [NEED], Bluffton 5 [NEED] (placeholders.py scan clean of any other form). Both drafts re-recorded with status.py page-stage.
+- Write-back (outline route, due before the drafts approval): Brand Guide B3 (2 rows), C1 /carpet-cleaning/, C2 /bluffton/ (not GBP landing), C3 10 H2 + 8 FAQ. records.py render; Brand Guide uploaded to Drive; status.py writeback pilot recorded. brand_guide_approved kept (CM-066).
+- No WordPress, no publish, no approval, no system file changed, no spend. No facts invented.
+- Next: Paul reviews the drafts and decides the pilot drafts approval (`/approve carolina-carpet-cleaning batch:pilot:drafts`), then pilot-corrections.
+
+**Changes (script):** 4 — draft ×2, brand_guide ×1, drive_file ×1
+### END HANDOFF
+## RUN 20261029-143605-build-7454 · FINISHED · 2026-10-29T14:38:40-05:00
+Changes: 4 · Summary: Pilot drafts review applied (accept all, 15 rows): svc rows 12, 13 + silent E1 fix, Bluffton row 2; drafts re-recorded; Brand Guide write-back B3/C1/C2/C3 done; awaiting pilot drafts approval
+Spend: 1925124 tokens · $0.88 (measured)
+- CHANGE #343 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (11).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | new: _Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (11).md | result: done · renamed and moved, nothing deleted
+- CHANGE #344 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | upload | old: previous version archived as Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (11).md | new: Carolina Carpet Cleaning - Handoff Log.md · sha da177e07b851 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #345 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (16).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | new: _Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (16).md | result: done · renamed and moved, nothing deleted
+- CHANGE #346 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | upload | old: previous version archived as Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (16).md | new: Carolina Carpet Cleaning - Document Checklist.md · sha 222719e34ccc | result: done · copied (Drive for desktop syncs it)
+- CHANGE #347 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Brand Guide - 2026-10-29 (2).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Brand Guide.md | new: _Archive/Carolina Carpet Cleaning - Brand Guide - 2026-10-29 (2).md | result: done · renamed and moved, nothing deleted
+- CHANGE #348 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Brand Guide.md | upload | old: previous version archived as Carolina Carpet Cleaning - Brand Guide - 2026-10-29 (2).md | new: Carolina Carpet Cleaning - Brand Guide.md · sha d558931d5173 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #349 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (17).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (17).md | result: done · renamed and moved, nothing deleted
+- CHANGE #350 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (17).md | new: Carolina Carpet Cleaning - Status.md · sha cbd1f7d3b43a | result: done · copied (Drive for desktop syncs it)

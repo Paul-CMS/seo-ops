@@ -69,6 +69,8 @@ _Proposed 2026-10-28 (discovery); settled at Approval 1._
 | Page URL | Page type | Category variant | Area variant | Content file (SD/LD) | Shipped |
 |---|---|---|---|---|---|
 | / | homepage | | *(reserved)* | | |
+| /carpet-cleaning/ | service | home carpet cleaning (H1) · carpet cleaners (first H2) · carpet cleaning service (FAQ H2) | South Carolina Lowcountry (H1, site plan; sheet row 1 = a) · Lowcountry (FAQ H2) | build/pilot/drafts/svc-carpet-cleaning.md | |
+| /bluffton/ | location | carpet cleaners (H1) · carpet cleaning (title) | Bluffton (city) | build/pilot/drafts/loc-bluffton.md | |
 
 ## Section C — Page inventory
 
@@ -79,10 +81,12 @@ _Proposed 2026-10-28 (discovery); settled at Approval 1._
 ### C1 · Service pages
 | URL | Service name | H1 service variant | Status |
 |---|---|---|---|
+| /carpet-cleaning/ | Carpet Cleaning | home carpet cleaning | draft reviewed (pilot), awaiting drafts approval |
 
 ### C2 · Location pages
 | URL | City | GBP landing page? | Status |
 |---|---|---|---|
+| /bluffton/ | Bluffton | No (the GBP landing page is the homepage) | draft reviewed (pilot), awaiting drafts approval |
 
 Only a verified GBP's actual landing URL gets LocalBusiness-type schema (BB-604).
 
@@ -91,6 +95,24 @@ Every FAQ question and H2 live on the site, with the page that owns it. No quest
 
 | Question or H2 | Page that owns it |
 |---|---|
+| H2: How Do Professional Carpet Cleaners Clean a Carpet? | /carpet-cleaning/ |
+| H2: Which Carpet Cleaning Services Does Carolina Carpet Cleaning Offer? | /carpet-cleaning/ |
+| H2: What Do Lowcountry Homeowners Ask About a Carpet Cleaning Service? | /carpet-cleaning/ |
+| H2: Which Towns Does Carolina Carpet Cleaning Serve? | /carpet-cleaning/ |
+| FAQ: How much does it cost to have carpet professionally cleaned? | /carpet-cleaning/ |
+| FAQ: How do I get brown stains out of my carpet? | /carpet-cleaning/ |
+| FAQ: How long does carpet take to dry after cleaning? | /carpet-cleaning/ |
+| FAQ: Is the cleaning solution safe for children and pets? | /carpet-cleaning/ |
+| FAQ: How is low-moisture cleaning different from steam cleaning? | /carpet-cleaning/ |
+| H2: What floor and fabric cleaning services are available in Bluffton? | /bluffton/ |
+| H2: Why is carpet hard to keep fresh in Bluffton? | /bluffton/ |
+| H2: How does Carolina Carpet Cleaning work in Bluffton? | /bluffton/ |
+| H2: What do Bluffton homeowners ask about carpet cleaning? | /bluffton/ |
+| H2: Which Bluffton neighborhoods does Carolina Carpet Cleaning serve? | /bluffton/ |
+| H2: Which other South Carolina Lowcountry towns does Carolina Carpet Cleaning serve? | /bluffton/ |
+| FAQ: Do HOA or gated-community rules in Bluffton change how a carpet cleaning visit is booked? | /bluffton/ |
+| FAQ: How soon can a carpet cleaning be scheduled in Bluffton? | /bluffton/ |
+| FAQ: Why do carpets in Bluffton homes smell musty in summer? | /bluffton/ |
 
 ## Section D — Verified facts
 Everything a writer may state. **Not here = does not exist.**

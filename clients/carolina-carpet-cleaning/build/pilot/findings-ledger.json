@@ -1,0 +1,107 @@
+{
+  "svc-carpet-cleaning|bg-b1|h1-area-variant": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Keep the site plan's H1 (only the homepage title variant is marked exclusive in the settled decisions)",
+    "by": "default"
+  },
+  "loc-bluffton|cm-062-swap|faq-hoa": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Rewrite it around communities on the Town of Bluffton's neighborhood list already named on the page (Palmetto Bluff, Hampton Hall, Hampton Lake), without claiming any community's gate rules; Kevin's H",
+    "by": "default"
+  },
+  "loc-bluffton|cm-016|served-since-1993": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Keep it; replace if the client's answer differs.",
+    "by": "default"
+  },
+  "loc-bluffton|spec-location-14|address": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "No address on /bluffton/.",
+    "by": "default"
+  },
+  "loc-bluffton|spec-location-2|seo-title": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Keep the title as written.",
+    "by": "default"
+  },
+  "loc-bluffton|spec-location-11|recent-work": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Dropped.",
+    "by": "default"
+  },
+  "loc-bluffton|cm-016|open-needs": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Leave each [NEED] until supplied.",
+    "by": "default"
+  },
+  "loc-bluffton|cm-061|writer-choices": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Keep as written.",
+    "by": "default"
+  },
+  "svc-carpet-cleaning|cm-068|service-process": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Ship with the trade-practice text and the [NEED] line; Paul describes Kevin's process in his own words after review and it replaces the [NEED] (listed in later-rewrites.md).",
+    "by": "default"
+  },
+  "svc-carpet-cleaning|cm-016|open-needs": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Leave each [NEED] in place until Paul or the client supplies the words.",
+    "by": "default"
+  },
+  "svc-carpet-cleaning|spec-service-8|faq-furniture": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Drop it; add it back when Kevin says how he handles furniture.",
+    "by": "default"
+  },
+  "svc-carpet-cleaning|cm-016|faq-cost-drivers": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Cut the unsourced drivers sentence; the answer leads with the confirmed free estimate, no deposit and no travel fee, then the existing [NEED: what Kevin prices by].",
+    "by": "default"
+  },
+  "svc-carpet-cleaning|spec-service-outbound|authority-link": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Link 'Carpet and Rug Institute (CRI)' in the process H2 to the CRI preconditioning white paper (the pack's cited source).",
+    "by": "default"
+  },
+  "svc-carpet-cleaning|cm-061|writer-choices": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Keep as written.",
+    "by": "default"
+  },
+  "svc-carpet-cleaning|cm-016|low-moisture-specialist": {
+    "step": "drafts",
+    "at": "2026-10-29T14:36:32-05:00",
+    "choice": "a",
+    "action": "Leave it out until Kevin describes his method.",
+    "by": "default"
+  }
+}

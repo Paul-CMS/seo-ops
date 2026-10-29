@@ -29,7 +29,7 @@ Building and renovation permits in Bluffton come from the Town of Bluffton's Gro
 
 ### Do HOA or gated-community rules in Bluffton change how a carpet cleaning visit is booked?
 
-They can change the booking steps, but not the cleaning itself. In a gated Bluffton community, the cleaner often has to be on the gate or visitor list before the visit. Some HOAs also set hours for service vehicles. Check your community's rules before you pick a date.
+They can change the booking steps, but not the cleaning itself. If your home is in Palmetto Bluff, Hampton Hall, Hampton Lake or another community on the Town of Bluffton's neighborhood list, check your community's rules for visitors and service vehicles before you pick a date.
 
 Tell Carolina Carpet Cleaning about any gate or HOA rule when you book, so the visit fits it.
 

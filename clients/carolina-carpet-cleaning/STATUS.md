@@ -1,17 +1,17 @@
 # Carolina Carpet Cleaning - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** waiting for Paul's approval — the pilot drafts review sheet has 1 question(s) for you and 14 decided for you (clients/carolina-carpet-cleaning/build/pilot/drafts-review.md): reply "accept all", or "accept all except 7b, 12c" — an empty answer takes the recommended option
-- **Waiting on:** Paul — the pilot drafts review sheet has 1 question(s) for you and 14 decided for you (clients/ca; Client (via Paul) — Your website says this about What the service includes (scope, inclusions): "Professional ; Client (via Paul) — We found different versions of Google rating and review count (date checked): "Disputed: c
-- **Next action:** Paul types `/build carolina-carpet-cleaning review pilot drafts "accept all"` (or asks for changes first) · model: Haiku chat
+- **What is happening now:** waiting for Paul's approval — the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): svc-carpet-cleaning.md: line 22 [NEED: Kevin's own description of his cleaning process and equipment, ; line 32 [NEED: what the service includes, in Kevin's words (open question fact; line 36 [NEED: Kevin's description of low-moisture cleaning, in his words: wha; line 40 [NEED: how Kevin treats stains, which stains he takes on, and what he ; line 46 [NEED: what Kevin prices by (per room, per square foot or per job), in; line 62 [NEED: how low-moisture cleaning works and how it differs from hot wat | loc-bluffton.md: line 24 [NEED: typical response time for a Bluffton booking, and the business ; line 24 [NEED: how Kevin handles gate access and HOA rules in Bluffton communi; line 38 [NEED: typical lead time for a Bluffton booking.]; line 60 [NEED: city-level map embed of Bluffton, SC]; line 66 [NEED: business hours exactly as the GBP shows them]
+- **Waiting on:** Paul — the drafts for batch pilot are ready: review each with the semantic review table (nothing ; Client (via Paul) — Your website says this about What the service includes (scope, inclusions): "Professional ; Client (via Paul) — We found different versions of Google rating and review count (date checked): "Disputed: c
+- **Next action:** Paul types `/approve carolina-carpet-cleaning batch:pilot:drafts` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-29T14:32 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T14:38 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the pilot drafts review sheet has 1 question(s) for you and 14 decided for you (clients/carolina-carpet-cleaning/build/pilot/drafts-review.md): reply "accept all", or "accept all except 7b, 12c" — an empty answer takes the recommended option | 2026-10-29 | /build carolina-carpet-cleaning review pilot drafts "accept all" |
+| Paul | the drafts for batch pilot are ready: review each with the semantic review table (nothing found) and approve them together. Placeholders still in the drafts (each becomes an 'Open items' notice on the WordPress draft and a row for Jonie): svc-carpet-cleaning.md: line 22 [NEED: Kevin's own description of his cleaning process and equipment, ; line 32 [NEED: what the service includes, in Kevin's words (open question fact; line 36 [NEED: Kevin's description of low-moisture cleaning, in his words: wha; line 40 [NEED: how Kevin treats stains, which stains he takes on, and what he ; line 46 [NEED: what Kevin prices by (per room, per square foot or per job), in; line 62 [NEED: how low-moisture cleaning works and how it differs from hot wat | loc-bluffton.md: line 24 [NEED: typical response time for a Bluffton booking, and the business ; line 24 [NEED: how Kevin handles gate access and HOA rules in Bluffton communi; line 38 [NEED: typical lead time for a Bluffton booking.]; line 60 [NEED: city-level map embed of Bluffton, SC]; line 66 [NEED: business hours exactly as the GBP shows them] | 2026-10-29 | /approve carolina-carpet-cleaning batch:pilot:drafts |
 | Client (via Paul) | Your website says this about What the service includes (scope, inclusions): "Professional Home Carpet Cleaning is an excellent investment in the appearance of your home and feel." (client site https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/ (data/c | 2026-10-29 | fact:svc-carpet-cleaning:service_scope |
 | Client (via Paul) | We found different versions of Google rating and review count (date checked): "Disputed: client stated 6 Google reviews, all 5 stars (2026-10-28); the DataforSEO Google reviews pull shows rating 5 from 29 reviews (2022-04-18 to 2026-06-01), Birdeye also 29. [NEED: the figure exactly as Google shows  | 2026-10-29 | fact:d:google_rating |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "People Also Ask How Much Does It Cost To Have An Oriental Rug Cleaned?" (+19 more) (client site https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/ (dat | 2026-10-29 | fact:svc-carpet-cleaning:pricing |
@@ -128,9 +128,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 3 | 4,864,287 | $0.30 | $0.00 |
 | 4 · Audit | 2 | 23,152,524 | $9.42 | $0.00 |
 | 5 · Build plan and blockers | 3 | 6,366,697 | $3.46 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 2 | 5,815,983 | $3.76 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 3 | 7,741,107 | $4.63 | $0.00 |
 | any stage | 6 | 2,868,263 | $0.16 | $0.00 |
-| **total** | 19 | 49,731,274 | $19.94 | $0.00 |
+| **total** | 20 | 51,656,398 | $20.82 | $0.00 |
 
 ## Spend by step (model)
 
@@ -141,6 +141,7 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | build:plan | 2 | 5,257,940 | $2.76 | $0.00 |
 | discovery:discovery | 1 | 3,941,016 | $2.03 | $0.00 |
 | discovery:reconcile | 1 | 2,197,971 | $1.03 | $0.00 |
+| build:review | 1 | 1,925,124 | $0.88 | $0.00 |
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
 | build:blockers | 1 | 1,108,757 | $0.70 | $0.00 |
 | discovery:data | 1 | 0 | $0.22 | $0.00 |
@@ -148,6 +149,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | crawl | 2 | 4,864,287 | $0.08 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
 | interview:facts | 1 | 379,500 | $0.01 | $0.00 |
-| **total** | 19 | 49,731,274 | $19.94 | $0.00 |
+| **total** | 20 | 51,656,398 | $20.82 | $0.00 |
 
-Last run: /build 2026-10-29T14:32 — Pilot drafts written (svc-carpet-cleaning, loc-bluffton) after researcher fills; review sheet: 1 Ask (H1 variant, kind 4), 14 decided for you; Kevin's process left [NEED] for Paul's own words
+Last run: /build 2026-10-29T14:38 — Pilot drafts review applied (accept all, 15 rows): svc rows 12, 13 + silent E1 fix, Bluffton row 2; drafts re-recorded; Brand Guide write-back B3/C1/C2/C3 done; awaiting pilot drafts approval
