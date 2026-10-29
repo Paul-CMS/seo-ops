@@ -1,17 +1,17 @@
 # Carolina Carpet Cleaning - Status
 
 - **Stage 4 of 8 — Audit**
-- **What is happening now:** waiting for Paul's approval — the audit review sheet has 4 question(s) (2 for the client — Paul sends client-questions.csv) and 16 decided for you (clients/carolina-carpet-cleaning/audit/2026-10-28/audit-review.csv): reply "accept all", or "accept all except 3b" — an empty answer takes the recommended option; the client's questions wait for the client
-- **Waiting on:** Paul — the audit review sheet has 4 question(s) (2 for the client — Paul sends client-questions.c
-- **Next action:** Paul types `/discovery carolina-carpet-cleaning review "accept all"` (or asks for changes first) · model: Haiku chat
+- **What is happening now:** waiting for Paul's approval — the audit is ready for your approval on its own — the audit (its review sheet, registers and Evidence Manifest): audit-review.csv, findings.csv, url-decision-map.csv, Carolina Carpet Cleaning - Audit Review Sheet - REVIEW.md, Carolina Carpet Cleaning - Evidence Manifest - REVIEW.md. Safe fixes and the technical blocker handoff start at once; the Brand Guide follows when the client's facts are back
+- **Waiting on:** Paul — the audit is ready for your approval on its own — the audit (its review sheet, registers a
+- **Next action:** Paul types `/approve carolina-carpet-cleaning audit_approved --files "clients/carolina-carpet-cleaning/audit/2026-10-28/audit-review.csv,clients/carolina-carpet-cleaning/audit/2026-10-28/findings.csv,clients/carolina-carpet-cleaning/audit/2026-10-28/url-decision-map.csv,clients/carolina-carpet-cleaning/audit/2026-10-28/deliverables/Carolina Carpet Cleaning - Audit Review Sheet - REVIEW.md,clients/carolina-carpet-cleaning/audit/2026-10-28/deliverables/Carolina Carpet Cleaning - Evidence Manifest - REVIEW.md"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-29T08:18 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T10:11 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the audit review sheet has 4 question(s) (2 for the client — Paul sends client-questions.csv) and 16 decided for you (clients/carolina-carpet-cleaning/audit/2026-10-28/audit-review.csv): reply "accept all", or "accept all except 3b" — an empty answer takes the recommended option; the client's questions wait for the client | 2026-10-29 | /discovery carolina-carpet-cleaning review "accept all" |
+| Paul | the audit is ready for your approval on its own — the audit (its review sheet, registers and Evidence Manifest): audit-review.csv, findings.csv, url-decision-map.csv, Carolina Carpet Cleaning - Audit Review Sheet - REVIEW.md, Carolina Carpet Cleaning - Evidence Manifest - REVIEW.md. Safe fixes and the technical blocker handoff start at once; the Brand Guide follows when the client's facts are back | 2026-10-29 | /approve carolina-carpet-cleaning audit_approved |
 
 ## Waiting on (not blocking)
 
@@ -52,6 +52,14 @@ _Open, but the next action above goes ahead without them._
 - Citations data this audit: BrightLocal citation tracker (VA uploads the CSV) (recommended default)
 - Local grid tool: BrightLocal (recommended default)
 - Search Console / Analytics: **Search Console: use the exports already supplied** (coverage + per-page performance, 2026-10-28); **GA4: not used** (none) (recommended default)
+- F-008: Paul chose a — keep Residential, Low-Moisture, Stain Removal folded into Carpet Cleaning and Area Rug into Rug Cleaning (the live 301s stay).
+- F-004: Paul chose to keep the sentence 'We are an expert team of professionals that guarantee quality carpet cleaning at a reasonable price.' The owner guarantees quality cleaning; that is not an offered guarantee (no refund/warranty). Keep it live; do not remove.
+- F-005: Paul chose a — carpets dry in under one hour on a typical job. Supported by a customer review saying carpets were clean in a couple of minutes.
+- F-006: Paul chose to keep the pet/child-safe, pH-neutral and non-toxic claims. They are the owner's own claims; Paul says they are not harmful to kids or pets. Product names not required; the claims stay on the pages.
+- 5. Architecture, services, locations, page types (F-008): keep the four services folded into Carpet Cleaning and Rug Cleaning (the live 301s stay)
+- 3. Brand, entity and verified truth (F-004): Keep: the sentence stays live. The owner guarantees quality cleaning
+- 3. Brand, entity and verified truth (F-005): carpets dry in under one hour on a typical job
+- 3. Brand, entity and verified truth (F-006): Keep the claims: pH-neutral
 
 ## Open VA items
 
@@ -97,8 +105,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 2 · Discovery | 2 | 4,718,881 | $2.04 | $0.00 |
 | 3 · Data | 3 | 4,864,287 | $0.30 | $0.00 |
 | 4 · Audit | 1 | 20,954,553 | $8.39 | $0.00 |
-| any stage | 3 | 816,224 | $0.13 | $0.00 |
-| **total** | 10 | 33,298,584 | $11.67 | $0.00 |
+| any stage | 4 | 2,441,508 | $0.15 | $0.00 |
+| **total** | 11 | 34,923,868 | $11.69 | $0.00 |
 
 ## Spend by step (model)
 
@@ -108,9 +116,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:discovery | 1 | 3,941,016 | $2.03 | $0.00 |
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
 | discovery:data | 1 | 0 | $0.22 | $0.00 |
-| answers | 3 | 816,224 | $0.13 | $0.00 |
+| answers | 4 | 2,441,508 | $0.15 | $0.00 |
 | crawl | 2 | 4,864,287 | $0.08 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
-| **total** | 10 | 33,298,584 | $11.67 | $0.00 |
+| **total** | 11 | 34,923,868 | $11.69 | $0.00 |
 
-Last run: /discovery 2026-10-29T08:18 — Audit done: 31 findings (9 Fix, 18 Fix and list, 4 Ask), 109-URL decision map, S17 review (5 confirmed, 6 revised, 1 withdrawn), review sheet rendered. Awaiting Paul's answer line, then Approval 2a.
+Last run: /answers 2026-10-29T10:11 — Paul answered audit Asks: F-008 a (keep folded); F-004 keep the quality sentence; F-005 a (under one hour, review supports); F-006 keep the owner's safety claims. Four decisions settled; review sheet applied.

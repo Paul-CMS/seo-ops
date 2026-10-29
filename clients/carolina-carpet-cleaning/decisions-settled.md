@@ -36,5 +36,13 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **tools.citations** (2026-10-28, Paul (Approval 1)): Citations data this audit: BrightLocal citation tracker (VA uploads the CSV) (recommended default)
 - **tools.grid** (2026-10-28, Paul (Approval 1)): Local grid tool: BrightLocal (recommended default)
 - **tools.gsc_ga4** (2026-10-28, Paul (Approval 1)): Search Console / Analytics: **Search Console: use the exports already supplied** (coverage + per-page performance, 2026-10-28); **GA4: not used** (none) (recommended default)
+- **audit-f008-service-pages-folded** (2026-10-29, Paul): F-008: Paul chose a — keep Residential, Low-Moisture, Stain Removal folded into Carpet Cleaning and Area Rug into Rug Cleaning (the live 301s stay).
+- **audit-f004-keep-quality-sentence** (2026-10-29, Paul): F-004: Paul chose to keep the sentence 'We are an expert team of professionals that guarantee quality carpet cleaning at a reasonable price.' The owner guarantees quality cleaning; that is not an offered guarantee (no refund/warranty). Keep it live; do not remove.
+- **audit-f005-dry-under-one-hour** (2026-10-29, Paul): F-005: Paul chose a — carpets dry in under one hour on a typical job. Supported by a customer review saying carpets were clean in a couple of minutes.
+- **audit-f006-keep-safety-claims** (2026-10-29, Paul): F-006: Paul chose to keep the pet/child-safe, pH-neutral and non-toxic claims. They are the owner's own claims; Paul says they are not harmful to kids or pets. Product names not required; the claims stay on the pages.
+- **url_fold_four_services** (2026-10-29, Paul): 5. Architecture, services, locations, page types (F-008): keep the four services folded into Carpet Cleaning and Rug Cleaning (the live 301s stay)
+- **audit_guarantee_claim_blog** (2026-10-29, Paul): 3. Brand, entity and verified truth (F-004): Keep: the sentence stays live. The owner guarantees quality cleaning
+- **fact_drying_time** (2026-10-29, Paul): 3. Brand, entity and verified truth (F-005): carpets dry in under one hour on a typical job
+- **fact_cleaning_solution_product** (2026-10-29, Paul): 3. Brand, entity and verified truth (F-006): Keep the claims: pH-neutral
 
 Process defects (reopenings): **0**

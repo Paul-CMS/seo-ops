@@ -1,0 +1,227 @@
+{
+  "made": "2026-10-29T10:10:59-05:00",
+  "run": "20261029-101014-answers-f43a",
+  "answers": "1a 3a",
+  "items": [
+    {
+      "id": "1",
+      "page": "F-008",
+      "url": "https://carpetcleaningblufftonsc.com/residential-carpet-cleaning/ ; https://carpetcleaningblufftonsc.com/low-moisture-carpet-cleaning/ ; https://carpetcleaningblufftonsc.com/carpet-stain-removal/ ; ht",
+      "item": "5. Architecture, services, locations, page types",
+      "severity": "ask",
+      "kind": "1",
+      "choice": "a",
+      "action": "keep the four services folded into Carpet Cleaning and Rug Cleaning (the live 301s stay)",
+      "by": "Paul"
+    },
+    {
+      "id": "2",
+      "page": "F-004",
+      "url": "https://carpetcleaningblufftonsc.com/the-4-main-factors-affecting-carpet-cleaning-costs/",
+      "item": "3. Brand, entity and verified truth",
+      "severity": "ask",
+      "kind": "2",
+      "choice": "other",
+      "action": "Keep: the sentence stays live. The owner guarantees quality cleaning",
+      "by": "Paul"
+    },
+    {
+      "id": "3",
+      "page": "F-005",
+      "url": "https://carpetcleaningblufftonsc.com/ ; https://carpetcleaningblufftonsc.com/carpet-cleaning/ ; https://carpetcleaningblufftonsc.com/commercial-carpet-cleaning/ ; https://carpetcleaningblufftonsc.com/",
+      "item": "3. Brand, entity and verified truth",
+      "severity": "ask",
+      "kind": "3",
+      "choice": "a",
+      "action": "carpets dry in under one hour on a typical job",
+      "by": "Paul"
+    },
+    {
+      "id": "4",
+      "page": "F-006",
+      "url": "https://carpetcleaningblufftonsc.com/ ; https://carpetcleaningblufftonsc.com/carpet-cleaning/ ; https://carpetcleaningblufftonsc.com/upholstery-cleaning-on-hilton-head-island/ ; https://carpetcleaning",
+      "item": "3. Brand, entity and verified truth",
+      "severity": "ask",
+      "kind": "3",
+      "choice": "other",
+      "action": "Keep the claims: pH-neutral",
+      "by": "Paul"
+    },
+    {
+      "id": "5",
+      "page": "F-002",
+      "url": "Brand Guide Section D — Google rating and review count",
+      "item": "3. Brand, entity and verified truth",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "At reconcile, Paul records the Google figure as shown on the day (\"5.0",
+      "by": "default"
+    },
+    {
+      "id": "6",
+      "page": "F-003",
+      "url": "https://carpetcleaningblufftonsc.com/ ; https://carpetcleaningblufftonsc.com/about/",
+      "item": "3. Brand, entity and verified truth",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Build ties the brand to Bluffton, the Lowcountry and Kevin Snow on the homepage and About page (already in the rebuild specs); no separate action.",
+      "by": "default"
+    },
+    {
+      "id": "7",
+      "page": "F-007",
+      "url": "https://carpetcleaningblufftonsc.com/carpet-cleaning/ ; https://carpetcleaningblufftonsc.com/commercial-carpet-cleaning/ ; https://carpetcleaningblufftonsc.com/rug-cleaning/ ; https://carpetcleaningbl",
+      "item": "5. Architecture, services, locations, page types",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "The rebuild sets every title, H1 and meta description to the settled formats (one row, decided for you); \"The Best\" only by CM-020.",
+      "by": "default"
+    },
+    {
+      "id": "8",
+      "page": "F-009",
+      "url": "https://carpetcleaningblufftonsc.com/forsyth-park/ ; https://carpetcleaningblufftonsc.com/american-prohibition-museum/ ; https://carpetcleaningblufftonsc.com/harper-fowlkes-house/ ; https://carpetclea",
+      "item": "5. Architecture, services, locations, page types",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Keep all live; the Blog Decision Map (bb-blog-analysis) decides each. No redirect in the audit: no backlinks evidence (C2) and no observed conflict (CM-021).",
+      "by": "default"
+    },
+    {
+      "id": "9",
+      "page": "F-011",
+      "url": "https://carpetcleaningblufftonsc.com/location/bluffton-sc/ ; https://carpetcleaningblufftonsc.com/service-area/bluffton/ ; https://carpetcleaningblufftonsc.com/bluffton/commercial-carpet-cleaning-serv",
+      "item": "2. Technical and crawl",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Retarget: /service-area/bluffton/ and /location/bluffton-sc/ → /bluffton/ (301); /bluffton/<service>/ → the matching service page (301).",
+      "by": "default"
+    },
+    {
+      "id": "10",
+      "page": "F-012",
+      "url": "https://carpetcleaningblufftonsc.com/bluffton-neighborhoods/ ; https://carpetcleaningblufftonsc.com/leave-us-a-review/",
+      "item": "5. Architecture, services, locations, page types",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Keep both live; Build links /bluffton-neighborhoods/ from /bluffton/ and /leave-us-a-review/ from /contact-us/ in the rebuild.",
+      "by": "default"
+    },
+    {
+      "id": "11",
+      "page": "F-020",
+      "url": "https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/ ; https://carpetcleaningblufftonsc.com/5-reasons-why-store-rental-ca",
+      "item": "6. On-page and content structure",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Add \" - Carolina Carpet Cleaning\" to each post title (SEOPress title, VA); keep the post wording.",
+      "by": "default"
+    },
+    {
+      "id": "12",
+      "page": "F-021",
+      "url": "https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/ ; https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-orie",
+      "item": "3. Brand, entity and verified truth",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Reassign these posts to the Kevin Snow user (VA, bulk edit).",
+      "by": "default"
+    },
+    {
+      "id": "13",
+      "page": "F-023",
+      "url": "https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/ ; https://carpetcleaningblufftonsc.com/if-you-dont-hire-a-carpet-cle",
+      "item": "3. Brand, entity and verified truth",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Remove the price range and the \"personnel\" sentence (VA); the guarantee sentence follows F-004.",
+      "by": "default"
+    },
+    {
+      "id": "14",
+      "page": "F-024",
+      "url": "https://carpetcleaningblufftonsc.com/ ; https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/ ; https://carpetcleaningbluf",
+      "item": "6. On-page and content structure",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Rewrite to 120–160 characters (VA, SEOPress; archives via the taxonomy template); the homepage description keeps its facts.",
+      "by": "default"
+    },
+    {
+      "id": "15",
+      "page": "F-025",
+      "url": "https://carpetcleaningblufftonsc.com/10-tips-for-maintaining-oriental-rugs/ ; https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-orie",
+      "item": "6. On-page and content structure",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Shorten to 60 characters or fewer when adding the brand (BLG-03), keeping the post topic first (VA).",
+      "by": "default"
+    },
+    {
+      "id": "16",
+      "page": "F-026",
+      "url": "https://carpetcleaningblufftonsc.com/",
+      "item": "3. Brand, entity and verified truth",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Rename the first H2 with another variant (e.g. \"Carpet Cleaners and Floor Care Services\") — H1 unchanged (HP-08).",
+      "by": "default"
+    },
+    {
+      "id": "17",
+      "page": "F-027",
+      "url": "https://carpetcleaningblufftonsc.com/",
+      "item": "6. On-page and content structure",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Replace the opening with one paragraph naming Carolina Carpet Cleaning, carpet cleaning, the Lowcountry, the phone and the free estimate (Build drafts the passage; H1 unchanged).",
+      "by": "default"
+    },
+    {
+      "id": "18",
+      "page": "F-028",
+      "url": "https://carpetcleaningblufftonsc.com/",
+      "item": "5. Architecture, services, locations, page types",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Keep 6 as H3 links and fold the rest into a text line (Build, light edit).",
+      "by": "default"
+    },
+    {
+      "id": "19",
+      "page": "F-029",
+      "url": "https://carpetcleaningblufftonsc.com/",
+      "item": "6. On-page and content structure",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Remove the H tag from the review section heading (styled text) and show Google's figure once F-002 is recorded.",
+      "by": "default"
+    },
+    {
+      "id": "20",
+      "page": "F-030",
+      "url": "https://carpetcleaningblufftonsc.com/",
+      "item": "6. On-page and content structure",
+      "severity": "fix_and_list",
+      "kind": "",
+      "choice": "a",
+      "action": "Turn them into styled text or descriptive headings (Build, light edit).",
+      "by": "default"
+    }
+  ]
+}

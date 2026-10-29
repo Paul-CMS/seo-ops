@@ -155,3 +155,15 @@ Generated from the safety log (clients/carolina-carpet-cleaning/log.md) — do n
 - FLAG 2026-10-29T08:17 · run 20261029-075525-discovery-0474 · F-006 · render.py auditsheet: the 'For the client to confirm' table has no Recommended/default column and cuts the question at 260 and o…
 **Steps recorded (script):** S12 done, S13 done, S14 done, S15 done, S16 done, S17 done, S18 done
 
+## /answers · 2026-10-29 · run 20261029-101014-answers-f43a
+
+- Paul's audit answers (review sheet, Asks 1–4):
+  - F-008 (service pages): a — keep the four services folded into Carpet Cleaning and Rug Cleaning.
+  - F-004 (guarantee sentence): keep it live. Paul: the owner guarantees quality cleaning; that is not an offered guarantee.
+  - F-005 (drying time): a — carpets dry in under one hour on a typical job. A customer review says carpets were clean in a couple of minutes.
+  - F-006 (product safety claims): keep the claims — pH-neutral, biodegradable, safe for pets and children; the owner's claims.
+- Settled: audit-f008-service-pages-folded, audit-f004-keep-quality-sentence, audit-f005-dry-under-one-hour, audit-f006-keep-safety-claims.
+- audit-review.csv: answers entered (rows 1 and 3 as letters, rows 2 and 4 as text); review.py apply recorded 20 rows → audit-apply.json.
+- Not yet: the audit is not approved. No /approve line is typed. Check that the findings, decision map and blocker checklist written under the defaults (F-004 removal, F-006 claim removal, F-005 hedged wording) match these answers before Approval 2a; the audit-apply items are the record.
+- Open: client questions (drying time, product names) are answered by Paul, so no client question needs to go out for F-005 or F-006 unless Paul wants one.
+
