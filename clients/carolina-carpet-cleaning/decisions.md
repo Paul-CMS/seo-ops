@@ -7,6 +7,8 @@ Generated from status.json and the safety log — do not edit. Record a decision
 | When | What | Decision |
 |---|---|---|
 | 2026-10-14T10:00 | page specs (global: location) | approved |
+| 2026-10-28T19:08 | entity_approved | approved |
+| 2026-10-28T19:08 | proof_sheet_approved | approved |
 
 ## Decisions logged during runs
 
@@ -17,3 +19,4 @@ Generated from status.json and the safety log — do not edit. Record a decision
 ## Conditions met (system-verified)
 
 - 2026-10-28T15:18 — Page specs approved by Paul once, globally (methodology/specs) and unchanged since — met (system-verified)
+- 2026-10-28T19:08 — The client's facts are in — the returned proof sheet is recorded, or Paul approved the client's direct answers — met (system-verified)

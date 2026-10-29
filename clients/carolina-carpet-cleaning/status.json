@@ -22,10 +22,26 @@
   },
   "gates": {
     "entity_approved": {
-      "state": "pending"
+      "state": "approved",
+      "by": "Paul",
+      "at": "2026-10-28T19:08:23-05:00",
+      "note": null,
+      "conditions": [],
+      "files": {
+        "clients/carolina-carpet-cleaning/discovery/Carolina Carpet Cleaning - Decision Sheet - REVIEW.md": "f2d57851a14b",
+        "clients/carolina-carpet-cleaning/discovery/Carolina Carpet Cleaning - Discovery Record - REVIEW.md": "6cb4655ca61f",
+        "clients/carolina-carpet-cleaning/brand-guide.md#A+B1+B2": "4f28f770517d"
+      }
     },
     "proof_sheet_approved": {
-      "state": "pending"
+      "state": "approved",
+      "by": "Paul",
+      "at": "2026-10-28T19:08:23-05:00",
+      "note": null,
+      "conditions": [],
+      "files": {
+        "clients/carolina-carpet-cleaning/discovery/Carolina Carpet Cleaning - MANUAL - client-answers - 2026-10-28.md": "0449fe669c79"
+      }
     },
     "audit_approved": {
       "state": "pending"
@@ -123,16 +139,21 @@
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
-    "phase": "Getting started",
-    "done": [],
+    "phase": "Reviewing your website",
+    "done": [
+      "We confirmed how search engines should understand your business",
+      "We prepared a fact sheet for you to confirm",
+      "You returned the fact sheet — thank you"
+    ],
     "waiting_on_client": [],
-    "next": "We are researching your business before we ask you anything."
+    "next": "We are finishing the review of your website."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-28T19:04:56-05:00",
+  "updated": "2026-10-28T19:08:23-05:00",
   "global_seen": 2,
   "conditions_logged": {
-    "page_specs_approved": "2026-10-28T15:18:29-05:00"
+    "page_specs_approved": "2026-10-28T15:18:29-05:00",
+    "proof_sheet_returned": "2026-10-28T19:08:23-05:00"
   },
   "specs_pinned": {
     "methodology/specs/README.md": "13bde3165a59",
@@ -291,10 +312,5 @@
   "rewrite4_routes": {
     "at": "2026-10-28T19:03:00-05:00",
     "rule": "REWRITE-4-PLAN.md D5"
-  },
-  "review_pause": {
-    "run_id": "20261028-190432-discovery-30f8",
-    "step": "discovery:facts-direct",
-    "at": "2026-10-28T19:04:56-05:00"
   }
 }

@@ -1,17 +1,17 @@
 # Carolina Carpet Cleaning - Status
 
-- **Stage 2 of 8 — Discovery**
-- **What is happening now:** waiting for Paul's approval — Discovery is ready for your approval in one line — the Decision Sheet and the entity foundation: Carolina Carpet Cleaning - Decision Sheet - REVIEW.md, Carolina Carpet Cleaning - Discovery Record - REVIEW.md, brand-guide.md#A+B1+B2; the client proof sheet (or the client's direct answers): Carolina Carpet Cleaning - MANUAL - client-answers - 2026-10-28.md. Once approved, every Decision Sheet answer is settled for good and the data pulls can start
-- **Waiting on:** Paul — Discovery is ready for your approval in one line — the Decision Sheet and the entity found
-- **Next action:** Paul types `/approve carolina-carpet-cleaning entity_approved proof_sheet_approved` (or asks for changes first) · model: Haiku chat
+- **Stage 3 of 8 — Data**
+- **What is happening now:** Stage 2 (Discovery) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open carolina-carpet-cleaning) and type /next carolina-carpet-cleaning. Next there: /crawl carolina-carpet-cleaning (crawl the site while the client has the proof sheet)
+- **Waiting on:** nobody
+- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-28T19:04 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-28T19:08 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | Discovery is ready for your approval in one line — the Decision Sheet and the entity foundation: Carolina Carpet Cleaning - Decision Sheet - REVIEW.md, Carolina Carpet Cleaning - Discovery Record - REVIEW.md, brand-guide.md#A+B1+B2; the client proof sheet (or the client's direct answers): Carolina Carpet Cleaning - MANUAL - client-answers - 2026-10-28.md. Once approved, every Decision Sheet answer is settled for good and the data pulls can start | 2026-10-28 | /approve carolina-carpet-cleaning entity_approved proof_sheet_approved |
+| — | nothing | | |
 
 ## Waiting on (not blocking)
 
@@ -24,8 +24,34 @@ _Open, but the next action above goes ahead without them._
 ## Settled decisions — never re-raised
 
 - 2026-10-14: page specs (global: location) — approved
+- 2026-10-28: Discovery approved — the Decision Sheet (every identity and format decision) and the entity foundation (category, area, variants, reserved homepage variant) — approved
+- 2026-10-28: Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly — approved
 - The site runs on wordpress
 - Site connection: Novamira MCP, read-only until the handoff is approved; no Application Password setup
+- GBP primary category = the category entity: **Carpet cleaning service** → Wikipedia "Carpet cleaning" (Q5045777) — provisional until Gwen reads the GBP primary category (H-2026-10-28-01); if GBP shows another category, that category stands and this row reopens (recommended default)
+- Category variants (4–6): carpet cleaning · carpet cleaning service · carpet cleaners · carpet cleaning company · carpet cleaner (recommended default)
+- Scope descriptor: **residential and commercial** (description only, never a category variant) (recommended default)
+- Area entity: **Hilton Head Island metropolitan area** (official: Hilton Head Island–Bluffton–Port Royal, SC MSA; Q17020871). Alternative: **South Carolina Lowcountry** (Q3885311) if Yemassee must sit wholly inside (recommended default)
+- Area variants (3–5): Hilton Head Island Metro Area · South Carolina Lowcountry · Hilton Head Island–Bluffton–Port Royal area · Lowcountry (recommended default)
+- Area variant reserved for the homepage SEO title: **Hilton Head Island Metro Area** (exclusive; the live title already uses it) (recommended default)
+- Area variant for the homepage H1: **South Carolina Lowcountry** (the live H1) (recommended default)
+- SEO-title format — homepage: `Category Variant in Area - Brand` (recommended default)
+- SEO-title format — service pages: `Service Name - Brand` (recommended default)
+- SEO-title format — location pages: `Category Variant in City, ST - Brand` (recommended default)
+- SEO-title format — about page: `About Brand - Category in Area` (recommended default)
+- SEO-title format — blog posts: `Post Title - Brand` (recommended default)
+- Brand written in full in every title: yes — "Carolina Carpet Cleaning" (recommended default)
+- Services offered: Carpet Cleaning · Residential Carpet Cleaning · Commercial Carpet Cleaning · Low-Moisture Carpet Cleaning · Carpet Stain Removal · Pet Odor Removal · Upholstery Cleaning · Tile & Grout Cleaning · Hardwood Floor Cleaning · Oriental Rug Cleaning · Area Rug Cleaning · Boat & Auto Interior Cleaning (RV/camper per press release) — which become pages or fold together is the audit's URL decision (recommended default)
+- Towns served: **The 6 live location towns only:** Hilton Head Island, Bluffton, Beaufort, Ridgeland, Hardeeville, Lady's Island. The other towns are not kept for now. (recommended default)
+- Street address on GBP?: **No** (service-area business) (recommended default)
+- Street address on the website?: **Yes** — 273 Club Gate, Bluffton, SC 29910 (pending the client's confirmation of the Birdeye Beaufort address conflict) (recommended default)
+- "The Best" in H1s: per page, by CM-020 (recommended default)
+- Blog author (a real person, CM-039): **Kevin Snow**, owner — once the returned facts confirm him (recommended default)
+- Sensitive category: **No** (recommended default)
+- WordPress access for the system: **N/A — settled**: Novamira MCP, read-only until the handoff is approved; no Application Password (recommended default)
+- Citations data this audit: BrightLocal citation tracker (VA uploads the CSV) (recommended default)
+- Local grid tool: BrightLocal (recommended default)
+- Search Console / Analytics: **Search Console: use the exports already supplied** (coverage + per-page performance, 2026-10-28); **GA4: not used** (none) (recommended default)
 
 ## Open VA items
 

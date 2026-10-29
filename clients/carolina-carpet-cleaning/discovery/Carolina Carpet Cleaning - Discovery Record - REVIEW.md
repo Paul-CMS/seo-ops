@@ -53,9 +53,8 @@ Cleaning · Low-Moisture Carpet Cleaning · Carpet Stain Removal · Pet Odor Rem
 Cleaning · Hardwood Floor Cleaning · Oriental Rug Cleaning ("Oriental & Area Rug Cleaning" in schema) · Area Rug
 Cleaning · Boat & Auto Interior Cleaning. Press release adds "RV, and camper interiors".
 
-Towns named on the homepage (18): Bluffton, Hilton Head Island, Beaufort, Hardeeville, Ridgeland, Lady's Island
-(published location pages) · Okatie, Port Royal, St. Helena Island, Burton, Lobeco, Frogmore, Dale, Fripp Island, Sun
-City, Daufuskie Island, Seabrook, Yemassee (WordPress drafts, 2026-10-27). Also a published "Bluffton Neighborhoods" page.
+Towns kept (Paul, 2026-10-28): 6 — Hilton Head Island, Bluffton, Beaufort, Ridgeland, Hardeeville, Lady's Island (the
+published location pages). The homepage once named 18 towns; the other 12 (WordPress drafts, 2026-10-27) are not kept for now.
 
 ### Google Business Profile
 Not machine-readable (Maps returns an empty shell). Known from the URL only: place name "Carolina Carpet Cleaning",
@@ -108,6 +107,7 @@ rating are not read yet.
 - **Variants and the reserved homepage variant:** see the Decision Sheet and Brand Guide B1/B2.
 
 ## Open (not client questions yet — the proof sheet step decides what to ask)
-Legal entity name and formation date · GBP categories, rating, hours · which phone is current · Birdeye address ·
-"family-owned" wording · insurance, local business licence, certifications (e.g. IICRC) · who owns the two Facebook
-pages, the Yola site and the "Carolina Carpet, Hardwood, & Tile" listing.
+Legal name check (SOS: "Carolina Floor Cleaning Pros", DBA "Carolina Carpet Cleaning"; founded 1993 per owner) · GBP
+hours and service-area list · Birdeye address · who owns the Yola site and the "Carolina Carpet, Hardwood, & Tile"
+listing. Settled since: phone (843) 575-6286; the 6 towns; family-owned wording; insurance (general workmanship); no
+current licence number.
