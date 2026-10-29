@@ -75,7 +75,14 @@
       }
     },
     "brand_guide_approved": {
-      "state": "pending"
+      "state": "approved",
+      "by": "Paul",
+      "at": "2026-10-29T10:34:00-05:00",
+      "note": null,
+      "conditions": [],
+      "files": {
+        "clients/carolina-carpet-cleaning/brand-guide.md#A+D+E+G": "91f14f978be5"
+      }
     },
     "release_approved": {
       "state": "pending"
@@ -342,22 +349,25 @@
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
-    "phase": "Reviewing your website",
+    "phase": "Planning your new pages",
     "done": [
       "We confirmed how search engines should understand your business",
       "We prepared a fact sheet for you to confirm",
       "You returned the fact sheet — thank you",
-      "We finished reviewing your website"
+      "We finished reviewing your website",
+      "Your business details are confirmed",
+      "Research is complete and page work has started"
     ],
     "waiting_on_client": [],
-    "next": "We are finishing the review of your website."
+    "next": "We are planning every service and location page."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-29T10:33:41-05:00",
+  "updated": "2026-10-29T10:34:00-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
-    "proof_sheet_returned": "2026-10-28T19:08:23-05:00"
+    "proof_sheet_returned": "2026-10-28T19:08:23-05:00",
+    "discovery_signed_off": "2026-10-29T10:34:00-05:00"
   },
   "specs_pinned": {
     "methodology/specs/README.md": "13bde3165a59",
@@ -748,10 +758,5 @@
     "H-2026-10-29-02-broken_link",
     "H-2026-10-29-03-sitemap",
     "H-2026-10-29-04-robots_txt"
-  ],
-  "review_pause": {
-    "run_id": "20261029-102911-discovery-e12b",
-    "step": "discovery:reconcile",
-    "at": "2026-10-29T10:31:48-05:00"
-  }
+  ]
 }

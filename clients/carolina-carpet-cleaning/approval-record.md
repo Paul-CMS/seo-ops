@@ -28,7 +28,9 @@ Generated from the seo-ops system (clients/carolina-carpet-cleaning/status.json)
 
 ## Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims)
 
-- Decision: **pending**
+- Decision: **approved**
+- Decided by: Paul · 2026-10-29T10:34:00-05:00
+- Approved version: `clients/carolina-carpet-cleaning/brand-guide.md#A+D+E+G` (sha 91f14f978be5)
 
 ## Release — the published pages pass QA (schema built at the handoff)
 
