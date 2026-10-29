@@ -1,17 +1,17 @@
 # Carolina Carpet Cleaning - Status
 
-- **Stage 5 of 8 — Build plan and blockers**
-- **What is happening now:** waiting for Paul's approval — the site plan is ready for your approval
-- **Waiting on:** Paul — the site plan is ready for your approval
-- **Next action:** Paul types `/approve carolina-carpet-cleaning site_plan --files "clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Site Plan - REVIEW.md"` (or asks for changes first) · model: Haiku chat
+- **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
+- **What is happening now:** Stage 5 (Build plan and blockers) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open carolina-carpet-cleaning) and type /next carolina-carpet-cleaning. Next there: /interview carolina-carpet-cleaning facts pilot (the evidence gate blocked svc-carpet-cleaning, loc-bluffton — targeted questions for the owner (you send them). Or waive instead: /approve carolina-carpet-cleaning evidence:svc-carpet-cleaning --reason "<why you waive it>" · /approve carolina-carpet-cleaning evidence:loc-bluffton --reason "<why you waive it>")
+- **Waiting on:** nobody
+- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-29T10:46 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T10:47 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| Paul | the site plan is ready for your approval | 2026-10-29 | /approve carolina-carpet-cleaning site_plan |
+| — | nothing | | |
 
 ## Waiting on (not blocking)
 
@@ -32,6 +32,7 @@ _Open, but the next action above goes ahead without them._
 - 2026-10-28: Client facts approved — the proof sheet ready for Paul to send, or the client's answers taken directly — approved
 - 2026-10-29: Audit approved — its one review sheet answered (URL decisions), the registers and the Evidence Manifest (D3: on its own, as soon as the audit is done; safe fixes and the blocker handoff unlock here) — approved
 - 2026-10-29: Brand Guide approved: the client's returned proof sheet reconciled (verified facts separated from unsupported claims) — approved
+- 2026-10-29: site plan — approved
 - The site runs on wordpress
 - Site connection: Novamira MCP, read-only until the handoff is approved; no Application Password setup
 - GBP primary category = the category entity: **Carpet cleaning service** → Wikipedia "Carpet cleaning" (Q5045777) — provisional until Gwen reads the GBP primary category (H-2026-10-28-01); if GBP shows another category, that category stands and this row reopens (recommended default)
