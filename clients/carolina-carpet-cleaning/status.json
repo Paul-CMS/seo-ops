@@ -231,7 +231,7 @@
     "batch": null
   },
   "spend": {
-    "dataforseo_usd": 0.21924
+    "dataforseo_usd": 1.01124
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
@@ -245,7 +245,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-28T19:52:00-05:00",
+  "updated": "2026-10-28T20:46:35-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",

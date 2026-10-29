@@ -24,3 +24,4 @@ Generated from status.json and the safety log — do not edit. Record a decision
 ## Runs aborted (Paul's call)
 
 - 2026-10-28T19:52 20261028-193504-discovery-da8a — Crawl pointed at carolinacarpetcleaning.com (wrong business). Aborted on Paul's instruction to re-crawl carpetcleaningblufftonsc.com.
+- 2026-10-28T20:46 20261028-195204-crawl-e445 — Paul chose to abort: DataforSEO task 40602 stuck In Queue across retries; new crawl run starts from the existing task 10290139 (resume, no new charge)
