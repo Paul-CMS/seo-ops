@@ -194,4 +194,36 @@ def t_summary_and_text(h):
     h.check("S05b: registered in methodology/audit-steps.md", "| S05b |" in reg and "page-text.csv" in reg)
 
 
-SCENARIOS = [t_max_pages_fallback, t_max_pages_sitemap, t_summary_and_text]
+def _client(h, slug):
+    h.sh(f'python3 scripts/status.py init {slug} --name "{slug}" --domain test.example --type full --industry roofing')
+    ag = h.Agent(slug)
+    ag.fin(ag.start("new-client"), "set up")
+    return ag
+
+
+def _posts(h, slug):
+    p = h.SB / "clients" / slug / "dfs-costs.jsonl"
+    rows = [json.loads(l) for l in p.read_text().splitlines() if l.strip()] if p.exists() else []
+    return [r for r in rows if r.get("endpoint") == "on_page/task_post"]
+
+
+def t_domain_check(h):
+    S = "cd-co"
+    ag = _client(h, S)
+    code, out = h.sh(f"python3 tests/fakes.py crawl estimate {S} --domain other.example")
+    h.check("CR-048: crawl estimate refuses (exit 4) a domain that is not the client's, naming both",
+            code == 4 and "other.example is not this client's domain (test.example" in out, (code, out))
+    code, out = h.sh(f"python3 tests/fakes.py crawl estimate {S} --domain https://www.test.example/")
+    h.check("CR-048: the client's domain with www. and a scheme is accepted", code == 0 and "Estimate:" in out, out)
+    code, out = h.sh(f"python3 tests/fakes.py crawl estimate {S} --domain other.example --other-domain")
+    h.check("CR-048: --other-domain lets a deliberate second domain through", code == 0 and "Estimate:" in out, out)
+    rid = ag.start("crawl")
+    code, out = h.sh(f"python3 tests/fakes.py crawl run {S} --run {rid} --domain other.example --confirmed "
+                     f"--max-pages 20 --max-wait 0")
+    h.check("CR-048: crawl run on another domain is refused before any paid call",
+            code == 4 and "not this client's domain" in out and not _posts(h, S), (code, out, _posts(h, S)))
+    ag.step(rid, "S05", "skipped", "domain check test")
+    ag.fin(rid, "domain check (fake)")
+
+
+SCENARIOS = [t_max_pages_fallback, t_max_pages_sitemap, t_summary_and_text, t_domain_check]

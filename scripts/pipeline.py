@@ -36,6 +36,8 @@ import shlex
 import subprocess
 import sys
 import tempfile
+import urllib.parse
+from collections import Counter
 from pathlib import Path
 
 import run as R
@@ -272,6 +274,36 @@ def evidence_dir(x):
     return d
 
 
+def _host(url):
+    h = (urllib.parse.urlsplit(url.strip()).hostname or "").lower()
+    return h[4:] if h.startswith("www.") else h
+
+
+def crawl_hosts(slug):
+    """{table: host} for the newest internal_all table of each tool (DFS crawl, SF export …) in inputs/ — the host
+    most of its Address rows are on (CR-048)."""
+    base = client_dir(slug) / "inputs"
+    newest = {}
+    for f in list(base.glob("*internal_all*.csv")) + list((base / "crawl").glob("*internal_all*.csv")):
+        m = re.search(r" - ([A-Za-z]+) - internal_all - (\d{4}-\d{2}-\d{2})\.csv$", f.name)
+        tool, date = (m.group(1), m.group(2)) if m else (f.name, "")
+        if tool not in newest or date > newest[tool][0]:
+            newest[tool] = (date, f)
+    out = {}
+    for _, f in sorted(newest.values()):
+        with open(f, newline="", encoding="utf-8-sig") as fh:
+            hosts = Counter(_host(r["Address"]) for r in csv.DictReader(fh) if (r.get("Address") or "").strip())
+        if hosts:
+            out[f.name] = hosts.most_common(1)[0][0]
+    return out
+
+
+def host_gap(slug):
+    """'' when the crawl tables are all for one site, else the tables and their hosts."""
+    hosts = crawl_hosts(slug)
+    return "" if len(set(hosts.values())) <= 1 else "; ".join(f"{n} → {h}" for n, h in hosts.items())
+
+
 def s12(x, out_dir):
     """ingest -> crosscheck into out_dir. Returns ((exit, output), (exit, output))."""
     ev = str(evidence_dir(x))
@@ -345,6 +377,12 @@ def run_audit(x, rid):
     keep = Path(tempfile.mkdtemp(prefix="manifest-prev-")) / "m.csv"
     if prev.is_file():
         keep.write_bytes(prev.read_bytes())
+    gap = host_gap(x.slug)
+    if gap:
+        record(x.slug, rid, "S12", "failed", f"the crawl tables are for different sites: {gap}")
+        print(f"STOPPED at S12: the crawl tables are for different sites — {gap}. Re-crawl or re-export the client's "
+              "domain so every table is for one site, then run the audit again (CR-048).")
+        sys.exit(4)
     (c1, o1), (c2, o2) = s12(x, ad)
     if c1 or c2:
         record(x.slug, rid, "S12", "failed", f"ingest exit {c1}, cross-checks exit {c2}: {(o1 + o2)[-200:]}")
@@ -414,6 +452,8 @@ def inventory(a):
         out = Path(a.out) if a.out else Path(tempfile.mkdtemp(prefix=f"pipeline-dry-{a.slug}-"))
         (c1, o1), (c2, o2) = s12(x, out)
         lines.append(f"dry run: no paid call, nothing written in clients/{a.slug}/ — S12 free steps into {out}")
+        if host_gap(a.slug):
+            lines.append(f"S12 would STOP: the crawl tables are for different sites — {host_gap(a.slug)} (CR-048)")
         ad = audit_dir(x)
         lines += compare(ad, out) if ad else [f"manifest + cross-checks written ({'ok' if not (c1 or c2) else 'FAILED'})"]
         print("\n".join(lines[:10]))

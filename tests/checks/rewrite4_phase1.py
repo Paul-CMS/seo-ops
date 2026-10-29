@@ -301,6 +301,24 @@ def t_pipeline_audit(h):
     ag.fin(rid, "inventory audit")
 
 
+def t_pipeline_audit_hosts(h):
+    S = "pl-host"
+    ag = _pl_client(h, S)
+    ag.w("inputs/crawl/Pl Co - SF - internal_all - 2026-10-02.csv", _csv(SF, [
+        {"Address": f"https://www.other.example/{p}", "Content Type": "text/html", "Status Code": "200"} for p in ("", "a/")]))
+    rid = ag.start("crawl")
+    code, out = _pl(h, S, f"--run {rid} --phase audit")
+    s12 = (h.status(S).get("audit_steps") or {}).get("S12") or {}
+    h.check("CR-048: S12 stops (exit 4) when the crawl tables are for different sites, naming each table's host",
+            code == 4 and "different sites" in out and "DFS - internal_all" in out and "→ test.example" in out
+            and "→ other.example" in out and s12.get("outcome") == "failed" and "S12 done" not in out, (code, out, s12))
+    ag.w("inputs/crawl/Pl Co - SF - internal_all - 2026-10-02.csv", _csv(SF, [
+        {"Address": f"https://www.test.example/{p}", "Content Type": "text/html", "Status Code": "200"} for p in ("", "a/")]))
+    code, out = _pl(h, S, f"--run {rid} --phase audit")
+    h.check("CR-048: the same site with and without www. is one site — S12 runs", code == 0 and "S12 done" in out, out)
+    ag.fin(rid, "host check")
+
+
 def t_clerk_retired(h):
     SB = h.SB
     g = json.loads((SB / "scripts" / "gates.json").read_text())
@@ -432,4 +450,4 @@ def t_outline_formula(h):
     ag.sh(f"python3 scripts/run.py abort {S} {rid} --reason test")
 
 
-SCENARIOS = [t_render, t_pipeline_data, t_pipeline_audit, t_clerk_retired, t_handoff_cap_and_record, t_outline_formula]
+SCENARIOS = [t_render, t_pipeline_data, t_pipeline_audit, t_pipeline_audit_hosts, t_clerk_retired, t_handoff_cap_and_record, t_outline_formula]

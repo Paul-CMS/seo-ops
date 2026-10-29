@@ -425,3 +425,273 @@ Paul, 2026-10-25: NEED items are fine to keep, but the system should research in
 - CR-047 · 2026-10-25 · ACCEPTED · Paul · Paul, 2026-10-25: asked for it in the system session
 
 - CR-047 · 2026-10-25 · DONE · system session · commit 321d474
+
+## CR-048 · 2026-10-28 · crawl.py run/estimate accept any --domain without checking it against the client
+Flag: carolina-carpet-cleaning F-001 · step discovery:audit · run 20261028-193504-discovery-da8a · flagged by Claude (2026-10-28T19:36)
+What: crawl.py run/estimate accept any --domain without checking it against the client's recorded primary domain; run 20261028-190920-crawl-36cb crawled carolinacarpetcleaning.com (another business) instead of carpetcleaningblufftonsc.com, and pipeline S12 then mixed that crawl with the right site's Screaming Frog export without warning (crosschecks host = carolinacarpetcleaning.com, redirect screen host = carpetcleaningblufftonsc.com).
+Workaround used: Audit stopped before any finding; S05, S05b, S12 recorded failed; Paul re-runs /crawl with --domain carpetcleaningblufftonsc.com, then /discovery audit.
+
+---
+
+## CR-049 · 2026-10-28 · crawl.py run with --new-crawl posts a new on_page/task_post on every call (34 st
+Flag: carolina-carpet-cleaning F-002 · step crawl · run 20261028-195204-crawl-e445 · flagged by Claude (2026-10-28T20:40)
+What: crawl.py run with --new-crawl posts a new on_page/task_post on every call (34 state files, all carpetcleaningblufftonsc.com, ~$0.0198 each, ~$0.67 total) instead of resuming the one queued task 40602; the 'never posts a second task' rule does not hold.
+Workaround used: Stopped retrying. No further crawl calls until Paul approves a fresh start; crawl.py needs a system fix (resume existing state without --new-crawl).
+
+---
+
+## CR-050 · 2026-10-22 · config.json drive.local_root points at My Drive/v3. CMS Technical SEO Audit 2026
+Flag: first-choice-seamless-gutters F-001 · step crawl · run 20261022-200953-crawl-ecac · flagged by Claude (2026-10-22T20:26)
+What: config.json drive.local_root points at My Drive/v3. CMS Technical SEO Audit 2026, but the folder is under Shared drives/CMS SERVICE PAGE AUDITS/, so drive.py cannot find it and uploads stay pending
+Workaround used: Paul to fix local_root in a system session (/system); crawl files stay local until then
+
+---
+
+## CR-051 · 2026-10-23 · pipeline.py inventory S06 reviews fails: DataforSEO task 40501 Invalid Field 'lo
+Flag: first-choice-seamless-gutters F-002 · step discovery:data · run 20261023-064343-discovery-0e30 · flagged by Claude (2026-10-23T06:53)
+What: pipeline.py inventory S06 reviews fails: DataforSEO task 40501 Invalid Field 'location_name' ($0 spent). Steps S07, S08, S19 and competitor coverage were not run.
+Workaround used: Paul to fix the reviews request field in a system session (/system); no client data affected
+
+---
+
+## CR-052 · 2026-10-23 · pipeline.py inventory S08 backlinks fails: No such file or directory clients/fir
+Flag: first-choice-seamless-gutters F-003 · step discovery:data · run 20261023-064343-discovery-0e30 · flagged by Claude (2026-10-23T12:20)
+What: pipeline.py inventory S08 backlinks fails: No such file or directory clients/first-choice-seamless-gutters/data/backlinks/raw/backlinks-2026-10-23.json (the raw folder is not created before the write). The DataforSEO call ran ($0.0272) and its result was not saved. S19 and competitor coverage not run.
+Workaround used: Paul to make the script create the backlinks raw folder before writing, in a system session; check whether the $0.0272 backlinks response can be re-downloaded free before any retry
+
+---
+
+## CR-053 · 2026-10-23 · pagedec.py screen marks C3 'pass' when no citation tracker export is on file ('n
+Flag: first-choice-seamless-gutters F-004 · step discovery:audit · run 20261023-125720-discovery-f174 · flagged by Claude (2026-10-23T13:09)
+What: pagedec.py screen marks C3 'pass' when no citation tracker export is on file ('no citation tracker on file'), while CM-019 says any missing condition is Needs Evidence; C1 likewise passes on rankings alone with no GSC on file.
+Workaround used: Audit proposes no redirect except Plant City (held, C4 still required); recorded as DEC-LOCAL-003 in audit/2026-10-23/decisions.md.
+
+---
+
+## CR-054 · 2026-10-23 · COM-T (titles 60 characters or fewer) cannot be met by the settled title formats
+Flag: first-choice-seamless-gutters F-005 · step discovery:audit · run 20261023-125720-discovery-f174 · flagged by Claude (2026-10-23T13:15)
+What: COM-T (titles 60 characters or fewer) cannot be met by the settled title formats with the settled variants: the homepage title 'Gutter Service in Polk County, FL - First Choice Seamless Gutters' is 65 characters, and location titles 'Gutter Service in <Town>, FL - First Choice Seamless Gutters' run about 60-68. HP-03 forbids dropping an entity term for length. The check gives no precedence rule.
+Workaround used: S17 review keeps the settled title as the default and states that COM-T still fails (F-020 r2); anyone may override.
+
+---
+
+## CR-055 · 2026-10-24 · naming-convention §2 names the returned proof sheet '<Client> - Client Proof She
+Flag: first-choice-seamless-gutters F-006 · step discovery:sheet-returned · run 20261024-195727-discovery-1534 · flagged by Claude (2026-10-24T20:02)
+What: naming-convention §2 names the returned proof sheet '<Client> - Client Proof Sheet - RETURNED.md', but returns can arrive as a form JSON export; no rule for a non-Markdown return.
+Workaround used: Saved verbatim with its own extension: '<Client> - Client Proof Sheet - RETURNED.json'; marked proof_sheet_returned with it.
+
+---
+
+## CR-056 · 2026-10-24 · Viability check (evidence_pack.py viability) runs in build:plan before the facts
+Flag: first-choice-seamless-gutters F-007 · step build:plan · run 20261024-202120-build-2ab2 · flagged by Claude (2026-10-24T20:30)
+What: Viability check (evidence_pack.py viability) runs in build:plan before the facts round's research, with no place store (methodology/places/ missing) and no FL source list; it proposed merges for 17 of 19 unresearched Polk towns. location-faq.md §8 allows a merge only when public facts are logged not_found — the order is wrong for a new state/industry.
+Workaround used: Kept all 19 locations in the plan; merge proposals reported as premature; re-run viability after /build facts and bring any real merge to Paul as a kind-1 Ask.
+
+---
+
+## CR-057 · 2026-10-24 · evidence.py questions returns 0 questions for svc-gutter-cleaning scope and proc
+Flag: first-choice-seamless-gutters F-008 · step interview:facts · run 20261024-205237-interview-c961 · flagged by Claude (2026-10-24T20:53)
+What: evidence.py questions returns 0 questions for svc-gutter-cleaning scope and process after research.py log records them as partial, so the gate's gaps never reach the owner pack
+Workaround used: pack hand-written with the two site-text questions; check before Paul sends
+
+---
+
+## CR-058 · 2026-10-24 · evidence_pack.py review_topics gives 'service: <name>' topics no facts.json R ke
+Flag: first-choice-seamless-gutters F-009 · step build:write · run 20261024-210703-build-c2ee · flagged by Claude (2026-10-24T21:41)
+What: evidence_pack.py review_topics gives 'service: <name>' topics no facts.json R key, so a service review topic can never be checked by meaning and stays 'unchecked'; for svc-gutter-cleaning most of its 9 matches are installation clean-up, not the gutter-cleaning service. Also staff_names() took 'Inc' (from 'Inc.' in company names) as a staff member.
+Workaround used: Researcher recorded staff:Inc count 0; the service topic stays at the keyword-match tier (attributed example only) and the writer is told not to treat it as reviewers praising gutter cleaning.
+
+---
+
+## CR-059 · 2026-10-24 · Spec LOC-02 (location SEO title 'Brand - GB Category - City, Full State Name') c
+Flag: first-choice-seamless-gutters F-010 · step build:write · run 20261024-210703-build-c2ee · flagged by Claude (2026-10-24T21:48)
+What: Spec LOC-02 (location SEO title 'Brand - GB Category - City, Full State Name') conflicts with Paul's settled title_format.location ('Category Variant in City, ST - Brand'); also the GB category is the homepage's reserved variant (CM-024). And P11 allows no placeholder form for the spec's city-level map embed.
+Workaround used: Pilot uses the settled title format; the map embed is a [NEED: …] open item for ship; both listed on the pilot draft review sheet.
+
+---
+
+## CR-060 · 2026-10-24 · evidence.py questions (facts pack, batch services) repeats the same wording for 
+Flag: first-choice-seamless-gutters F-011 · step interview:facts · run 20261024-220530-interview-f675 · flagged by Claude (2026-10-24T22:05)
+What: evidence.py questions (facts pack, batch services) repeats the same wording for every page: 'Typical job duration' and 'Price range' each appear 6 times quoting the same site text, and the first one quotes the phone number and nav text. Duplicate-by-wording should be collapsed in the pack, keeping one settle key per fact.
+Workaround used: Pack left as generated; Paul told to review before sending and may waive instead of sending.
+
+---
+
+## CR-061 · 2026-10-24 · evidence_pack.review_topics gives 'service: <name>' topics an empty key list, so
+Flag: first-choice-seamless-gutters F-012 · step build:write · run 20261024-221856-build-c8ed · flagged by Claude (2026-10-24T22:20)
+What: evidence_pack.review_topics gives 'service: <name>' topics an empty key list, so a researcher's reviews.py checked can never move them from 'keyword match only' to known (4 service topics with 3+ reviewers in the services packs: Gutter Installation 32, Gutter Downspouts 4, Gutter Guards 4, Seamless Gutter Installation 3). reviews.py meaning has no API key and falls back to the researcher.
+Workaround used: Writers use those topics only at the pack's stated tier (attributed customer example, no company claim); no researcher check run this time since it cannot change the packs.
+
+---
+
+## CR-062 · 2026-10-24 · Approved site plan fixes service-page H1 area variant 'Lakeland–Winter Haven' (B
+Flag: first-choice-seamless-gutters F-013 · step build:write · run 20261024-221856-build-c8ed · flagged by Claude (2026-10-24T22:37)
+What: Approved site plan fixes service-page H1 area variant 'Lakeland–Winter Haven' (B2 pool) on 5 service pages; it contains city names, which spec service.md SVC-07/SVC-12 forbid in H tags. The B2 pool itself offers this variant.
+Workaround used: Kept the approved plan H1s (never overrule the plan in a client session); noted in the review findings for Paul.
+
+---
+
+## CR-063 · 2026-10-25 · status.py show reports discovery_signed_off MET while brand_guide_approved is VO
+Flag: first-choice-seamless-gutters F-014 · step discovery:reconcile · run 20261025-201113-discovery-816f · flagged by Claude (2026-10-25T20:14)
+What: status.py show reports discovery_signed_off MET while brand_guide_approved is VOID (Brand Guide changed after approval); the condition says it needs the Brand Guide approved
+Workaround used: Treat Discovery as not signed off until Paul re-approves brand_guide_approved; reported to Paul
+
+---
+
+## CR-064 · 2026-10-26 · next.py --continue crashed with AttributeError: module 'status' has no attribute
+Flag: first-choice-seamless-gutters F-015 · step build:revise · run 20261026-110346-build-402f · flagged by Claude (2026-10-26T11:04)
+What: next.py --continue crashed with AttributeError: module 'status' has no attribute 'drafts_drifted' (next.py -> records.py -> status_md -> next.py circular import during STATUS.md render). A second plain next.py run worked.
+Workaround used: Ran plain next.py again; it printed the next step. Check whether --continue was logged before re-running it.
+
+---
+
+## CR-065 · 2026-10-26 · run.py start build --step write --batch pilot passed its gates although batch pi
+Flag: first-choice-seamless-gutters F-016 · step build:write · run 20261026-112857-build-c842 · flagged by Claude (2026-10-26T11:29)
+What: run.py start build --step write --batch pilot passed its gates although batch pilot drafts were approved by Paul 2026-10-24 (both pages draft_written, approved=yes); a write would overwrite approved drafts. The write step should refuse on an approved batch (use revise for changes, CM-067).
+Workaround used: Build agent wrote nothing; run finished with 0 changes; pilot drafts untouched.
+
+---
+
+## CR-066 · 2026-10-26 · Facts interview review files for locations-west and locations-east (interviews/f
+Flag: first-choice-seamless-gutters F-017 · step build:facts · run 20261026-113830-build-374a · flagged by Claude (client chat) (2026-10-26T11:38)
+What: Facts interview review files for locations-west and locations-east (interviews/facts/*REVIEW.md, 2026-10-26) contain no question text, only system notes. Paul could not see the questions to answer, and Claude wrongly said nothing was answerable. Fix: the facts step must write each owner-facing question into the review file. Also: run.py start let a write run start on an already-approved batch (pilot), F-016.
+Workaround used: Paul gives facts directly via run.py fact; drafts wait until the question text is in the file
+
+---
+
+## CR-067 · 2026-10-26 · Parallel researchers writing research.py log at once lost 7 rows of build/locati
+Flag: first-choice-seamless-gutters F-018 · step build:facts · run 20261026-113830-build-374a · flagged by Claude (2026-10-26T11:46)
+What: Parallel researchers writing research.py log at once lost 7 rows of build/locations-west/research-log.csv (mulberry/eagle-lake place+permit, wahneta neighborhoods/place/permit); research.py log needs a file lock.
+Workaround used: Build agent re-logged the 7 rows from the researchers' facts files and reports (RL-locations-west-30..36).
+
+---
+
+## CR-068 · 2026-10-26 · evidence.py questions writes nothing when no page blocks, so owner-only Serving-
+Flag: first-choice-seamless-gutters F-019 · step build:facts · run 20261026-113830-build-374a · flagged by Claude (2026-10-26T11:46)
+What: evidence.py questions writes nothing when no page blocks, so owner-only Serving-section facts (permit handling, HOA approval, neighbourhoods worked) get no question set; the earlier REVIEW file shipped with no question text.
+Workaround used: Question set written by hand to the locations-west REVIEW file after settled.py filter and questions.py check (build/locations-west/questions.json).
+
+---
+
+## CR-069 · 2026-10-26 · No Florida area source list: suggest methodology/sources/fl-polk.md with Polk Co
+Flag: first-choice-seamless-gutters F-020 · step build:facts · run 20261026-113830-build-374a · flagged by Claude (2026-10-26T11:46)
+What: No Florida area source list: suggest methodology/sources/fl-polk.md with Polk County Building Division https://www.polkfl.gov/services/building, NWS Tampa Bay https://www.weather.gov/tbw/rainyseason, Polk County parks https://www.polkfl.gov/park/, and the city building pages found this run.
+Workaround used: Researchers used .gov and Wikipedia directly.
+
+---
+
+## CR-070 · 2026-10-26 · Review meaning checks recorded at run c2ee (reviews.py checked → facts.json R ro
+Flag: first-choice-seamless-gutters F-021 · step build:write · run 20261026-120219-build-bc47 · flagged by Claude (2026-10-26T12:15)
+What: Review meaning checks recorded at run c2ee (reviews.py checked → facts.json R rows meaning_checked) were gone by this run: every R row had meaning_checked None, so packs showed speed/communication/staff topics as 'keyword match only'. Likely reviews.py extract (facts run 374a) rewrites the R rows without keeping meaning_checked.
+Workaround used: Researcher re-checked all 8 keys by meaning this run (response_time 56, explains 41, clean-up 12, James 26, Adrian 8, Landon 5, Randall 3, Inc 0); packs rebuilt.
+
+---
+
+## CR-071 · 2026-10-26 · evidence_pack.py cuts long page-fact values (local_context, neighborhoods, place
+Flag: first-choice-seamless-gutters F-022 · step build:write · run 20261026-120219-build-bc47 · flagged by Claude (2026-10-26T12:15)
+What: evidence_pack.py cuts long page-fact values (local_context, neighborhoods, place_entities, permit_office) mid-sentence in packs/<page>.md and .json; four writers had to read build/evidence/<page>.facts.json for the full values, outside the pack.
+Workaround used: Writers used the facts.json values (same facts, same sources); no fact added beyond them.
+
+---
+
+## CR-072 · 2026-10-26 · similarity.py (LOC-31) raised 82 silent sentence fixes across 9 location drafts,
+Flag: first-choice-seamless-gutters F-023 · step build:write · run 20261026-120219-build-bc47 · flagged by Claude (2026-10-26T12:15)
+What: similarity.py (LOC-31) raised 82 silent sentence fixes across 9 location drafts, most of them the client's confirmed boilerplate (guarantee, $150 offer, hours, CTA, form reply) that cannot carry a city fact; the swap test is meant for place claims. It also flags both pages of a pair.
+Workaround used: Each page's apply agent reworded its flagged sentences, keeping every confirmed fact; no facts changed.
+
+---
+
+## CR-073 · 2026-10-14 · methodology/sources/sc-lowcountry.md: no rows for Charleston County, Berkeley/Do
+Flag: home-mobile-medical F-001 · step build:facts · run 20261014-100458-build-2be7 · flagged by Claude (2026-10-14T10:19)
+What: methodology/sources/sc-lowcountry.md: no rows for Charleston County, Berkeley/Dorchester/Colleton/Hampton counties or their towns (researchers found official permit pages: charleston-sc.gov/856/Permit-Center, charlestoncounty.gov/departments/building-inspection-services, northcharleston.org Building-and-Permit-Inspections, tompsc.com/151/Permit, kiawahisland.gov/building_services.php, cityoffollybeach.com building_planning, goosecreeksc.gov building-permits, cityofhanahan.com/node/86, summervillesc.gov/289/Permitting); HHI permit URL listed returns 404 to fetch (hiltonheadislandsc.gov/permits works); Bluffton Neighborhoods PDF row has no URL; Census QuickFacts returns 403 to the fetch tool and the Census API needs a key, so 65+ shares come via Wikipedia (2020 census).
+Workaround used: Researchers cited the official pages directly and Wikipedia for census figures; Paul adds the rows at /system-review.
+
+---
+
+## CR-074 · 2026-10-14 · Approved site plan (REVISED md + site-plan-revised.plan.json) carries no keyword
+Flag: home-mobile-medical F-002 · step build:write · run 20261014-125319-build-9170 · flagged by Claude (2026-10-14T12:54)
+What: Approved site plan (REVISED md + site-plan-revised.plan.json) carries no keyword, area variant, category variant, H1 decision, FAQ topics or link targets per page — the build:plan step requires them; the plan was imported. Briefs have no planned keyword/variant to take.
+Workaround used: Pilot briefs propose keyword (data/rankings), area variant (B2, never B1) and H1 per page, marked 'proposed — confirm at brief approval'; Paul confirms with the briefs approval.
+
+---
+
+## CR-075 · 2026-10-14 · PAA/fan-out routing tables route to the old URLs (/services/stair-lifts/, /servi
+Flag: home-mobile-medical F-003 · step build:write · run 20261014-125319-build-9170 · flagged by Claude (2026-10-14T12:54)
+What: PAA/fan-out routing tables route to the old URLs (/services/stair-lifts/, /service-area/<city>/), so evidence_pack.py tags no question to the new root-slug pages (packs say 'None tagged to this page').
+Workaround used: Brief-writers read paa-routing.md/fanout-routing.md rows routed to the page's live_url as candidates.
+
+---
+
+## CR-076 · 2026-10-14 · status.json client.route is null for a full client; build.md says ask Paul when 
+Flag: home-mobile-medical F-004 · step build:write · run 20261014-125319-build-9170 · flagged by Claude (2026-10-14T12:54)
+What: status.json client.route is null for a full client; build.md says ask Paul when missing.
+Workaround used: Ran the pilot as Route A (system writes): the run brief asks for briefs and drafts, and no Paul-written content exists on disk. Paul to confirm route A.
+
+---
+
+## CR-077 · 2026-10-14 · Draft writers put a '## Writer notes' section in the page file and publish.py dr
+Flag: home-mobile-medical F-005 · step build:write · run 20261014-125319-build-9170 · flagged by Claude (2026-10-14T13:07)
+What: Draft writers put a '## Writer notes' section in the page file and publish.py drafts does not strip it, so the notes would reach the WordPress draft. Also: review.py sheet counts Fix rows as 'fixed silently' before review.py apply has run.
+Workaround used: Recorded as Fix rows (formatting) in the pilot drafts findings; remove the Writer notes section when review.py apply runs after Paul's answer, before ship.
+
+---
+
+## CR-078 · 2026-10-14 · review.py apply crashes (ValueError in LETTERS.index) when a row's 'recommended'
+Flag: home-mobile-medical F-006 · step build:review · run 20261014-131553-build-b121 · flagged by Claude (2026-10-14T13:16)
+What: review.py apply crashes (ValueError in LETTERS.index) when a row's 'recommended' is an uppercase letter (pilot drafts row 1 had 'A'); defaults are not lowercased before lookup.
+Workaround used: Passed Paul's answer explicitly as '1a' in --answers ('accept all, 1a'), which parse_answers lowercases.
+
+---
+
+## CR-079 · 2026-10-14 · evidence.py questions --all overwrote the open facts-round file 'Home Mobile Med
+Flag: home-mobile-medical F-007 · step build:facts · run 20261014-140654-build-4002 · flagged by Claude (2026-10-14T14:08)
+What: evidence.py questions --all overwrote the open facts-round file 'Home Mobile Medical - Facts Interview - all - 2026-10-14 - REVIEW.md' (Q1-Q3, already asked and waiting) with an empty 0-question version on a same-day re-run; it should not replace a set that is still open. Also settled.py filter reports the still-open fact:svc-repair-maintenance:service_process as 'already answered'.
+Workaround used: Left the file changed (restore was blocked by the permission system); the sent version is intact in git HEAD (f5c00c6) and in facts-round-all-2026-10-14.questions.json. Paul or the main chat can restore it with git checkout of that one file.
+
+---
+
+## CR-080 · 2026-10-14 · Build agent started per-page brief agents in the background and stopped before t
+Flag: home-mobile-medical F-008 · step build:write · run 20261014-144852-build-6004 · flagged by Claude (2026-10-14T14:58)
+What: Build agent started per-page brief agents in the background and stopped before they finished, leaving the run unrecorded (briefs on disk, none recorded, no review, run not finished).
+Workaround used: Resume the write step in a fresh build agent that records the briefs first; do not start new background brief agents without waiting for their results.
+
+---
+
+## CR-081 · 2026-10-14 · Main chat relayed the same interim status about eight times (subagent hand-backs
+Flag: home-mobile-medical F-009 · step build:write · run 20261014-144852-build-6004 · flagged by Claude (2026-10-14T14:58)
+What: Main chat relayed the same interim status about eight times (subagent hand-backs repeated).
+Workaround used: Relay each agent hand-back once; report only changes in state.
+
+---
+
+## CR-082 · 2026-10-14 · Main chat could not see the child agents' results (brief-writer reports arrived 
+Flag: home-mobile-medical F-010 · step build:write · run 20261014-144852-build-6004 · flagged by Claude (2026-10-14T14:58)
+What: Main chat could not see the child agents' results (brief-writer reports arrived only as hand-backs to the build agent).
+Workaround used: Have the build agent write each child result to a file and report the file path to the main chat.
+
+---
+
+## CR-083 · 2026-10-14 · After the batch briefs revise decision was committed, status.py page-stage still
+Flag: home-mobile-medical F-011 · step build:write · run 20261014-144852-build-6004 · flagged by Claude (2026-10-14T15:14)
+What: After the batch briefs revise decision was committed, status.py page-stage still refuses the other three briefs with 'batch services briefs are already approved'. Only the curved brief recorded; batch shows briefs_written.
+Workaround used: Stop; do not record the other briefs or start drafts until the revise state is fixed in the system session.
+
+---
+
+## CR-084 · 2026-10-14 · review.py usage check (§3.4) recommends using 'the strongest excerpt' even when 
+Flag: home-mobile-medical F-012 · step build:drafts · run 20261014-164325-build-3b84 · flagged by Claude (2026-10-14T16:46)
+What: review.py usage check (§3.4) recommends using 'the strongest excerpt' even when every pack excerpt is off-service (general wheelchairs, lift chairs, rentals — not offered) or a negative review; evidence_pack keyword matching put the same 4 off-topic excerpts on all four service packs.
+Workaround used: Pre-empted the auto usage rows with page+usage+review-evidence findings decided 'leave as written' (drafts-findings.json); review.py dropped its own rows as duplicates.
+
+---
+
+## CR-085 · 2026-10-14 · evidence_pack.py truncates page: fact values at about 250 characters in packs/<p
+Flag: home-mobile-medical F-013 · step build:write · run 20261014-215429-build-9289 · flagged by Claude (2026-10-14T22:03)
+What: evidence_pack.py truncates page: fact values at about 250 characters in packs/<page>.md and .json (e.g. loc-hilton-head-island-sc local_context cut at 'the 1893 Sea Island'); the full value is in build/evidence/<page>.facts.json. Brief writers lost facts (place entities, permit URLs, neighbourhoods) on 8 of 12 loc-hhi pages.
+Workaround used: Draft writers read the full value of each page: key from build/evidence/<page>.facts.json (the pack's own source); nothing else added.
+
+---
+
+- CR-048 · 2026-10-28 · ACCEPTED · Paul · Accepted as proposed: crawl.py run/estimate refuse (exit 4) when --domain differs from status.json client.domain (www. ignored), naming both; --other-domain allows a deliberate second domain on Paul's word. S12 ingest refuses when crawl tables and the Screaming Frog export come from different hosts. New checks for both.
+
+- CR-049 · 2026-10-28 · ACCEPTED · Paul · Accepted as proposed (covers carolina F-003): 1) on_page/summary 40602 Task In Queue = still waiting, exit 10 with a queued note, not exit 8; 2) --new-crawl refuses (exit 4) when the current task is fresh, same domain and not finished, or when this run already posted a task; 3) crawl.py cancel <slug> --run R [--include-archived] calls the free on_page/force_stop and marks the state cancelled, reporting DataforSEO's answer per task; 4) new checks with the fake DataforSEO.

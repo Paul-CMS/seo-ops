@@ -29,7 +29,10 @@ exports (R5).
                             skill expects
 A second paid crawl for the same domain needs --new-crawl (and Paul's confirmation).
 
-Exit codes: 5 needs Paul's cost confirmation · 6 would exceed balance · 10 still crawling.
+--domain must be the client's domain (status.json client.domain, www. ignored); another domain only with
+--other-domain, on Paul's word (CR-048).
+
+Exit codes: 4 refused · 5 needs Paul's cost confirmation · 6 would exceed balance · 10 still crawling.
 """
 import argparse
 import csv
@@ -604,6 +607,8 @@ def main():
         s.add_argument("--max-pages", type=int, default=None,
                        help="default: sitemap size x 1.5 (min 20, max 1000); 1000 if no sitemap")
         s.add_argument("--mode", choices=["basic", "javascript"], default="basic")
+        s.add_argument("--other-domain", action="store_true",
+                       help="crawl a domain that is not the client's recorded one — only on Paul's word (CR-048)")
         if name == "run":
             s.add_argument("--run", required=True); s.add_argument("--crawl-delay", type=int, default=2000)
             s.add_argument("--confirmed", action="store_true"); s.add_argument("--new-crawl", action="store_true")
@@ -632,6 +637,10 @@ def main():
         return
 
     domain = clean_domain(a.domain)
+    known = clean_domain(S.load(a.slug)["client"].get("domain") or "")
+    if known and domain != known and not a.other_domain:
+        die(f"REFUSED — --domain {domain} is not this client's domain ({known}, status.json client.domain). "
+            f"Crawl {known}; another domain only on Paul's word, with --other-domain (CR-048).", 4)
     if a.max_pages is not None and not (1 <= a.max_pages <= 100000):
         die("--max-pages must be between 1 and 100000")
     try:

@@ -16,6 +16,8 @@ Follow CLAUDE.md and `docs/stage-3-data.md`. Defaults: domain = the client's dom
    is 10× the price). Wait for his yes. This step is never skipped, even under $2.
 4. `python3 scripts/crawl.py run <slug> --run <RUN_ID> --domain <d> --mode <m> --confirmed` (same max pages as the estimate)
    - Polite: 2,000 ms between hits by default (never below 1,000).
+   - `--domain` must be the client's domain (status.json); exit 4 names both. Another domain only when Paul says so,
+     with `--other-domain` (CR-048).
    - exit 10 = still crawling. Run the same command again (each call waits up to ~9 minutes
      and logs progress to log.md). It never posts a second task.
    - exit 8 = an API or network error. Nothing is lost; run the same command again to resume.
