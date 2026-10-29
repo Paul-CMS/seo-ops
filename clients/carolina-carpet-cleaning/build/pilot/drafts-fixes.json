@@ -1,0 +1,17 @@
+{
+  "made": "2026-10-29T14:31:45-05:00",
+  "run": "20261029-142210-build-b1dd",
+  "fixes": [
+    {
+      "page": "svc-carpet-cleaning",
+      "rule": "E1",
+      "item": "repeat-opening-facts",
+      "severity": "fix",
+      "category": "wording",
+      "finding": "The paragraph after the [NEED] line repeats the opening's sole-operator, solution and drying facts.",
+      "plain_why": "Repetition.",
+      "decided_for_you": "Trim the repeats; keep insurance and the review lines.",
+      "url": "/carpet-cleaning/"
+    }
+  ]
+}

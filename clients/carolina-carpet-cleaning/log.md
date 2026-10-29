@@ -977,3 +977,66 @@ Grid: clients/carolina-carpet-cleaning/build/evidence/loc-bluffton.grid.md (sha 
 Reason: Paul: n/a to all facts for content creation; city and neighborhood facts to come from the research pass, not the interview
 - CHANGE #330 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (15).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (15).md | result: done · renamed and moved, nothing deleted
 - CHANGE #331 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (15).md | new: Carolina Carpet Cleaning - Status.md · sha 65458febfe7d | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261029-142210-build-b1dd · STARTED · /build · 2026-10-29T14:22:10-05:00
+Step: build:write · batch pilot · session 1076632d-28b5-4ec6-b4a9-683026349719
+Gates checked: discovery_signed_off, batch:pilot:briefs_ready, page_specs_approved
+- EVIDENCE 2026-10-29T14:22 · run 20261029-142210-build-b1dd · svc-carpet-cleaning: BLOCK (known 8, unknown 1, unverified 2, conflict 1)
+- EVIDENCE 2026-10-29T14:22 · run 20261029-142210-build-b1dd · loc-bluffton: BLOCK (known 4, unknown 2, unverified 3, conflict 1)
+- REVIEW FACTS 2026-10-29T14:23 · run 20261029-142210-build-b1dd · 8 fact(s)/topic(s) found in reviews, 6 with 3+ different reviewers (customer_reported, CM-057) · data/reviews/review-facts.json
+- REVIEW FACT CHECKED 2026-10-29T14:24 · run 20261029-142210-build-b1dd · service:Carpet Cleaning: 9 different reviewer(s) after reading by meaning (researcher) · Nine different reviewers say Carolina Carpet Cleaning cleaned their carpets (e.g. carpets came out very nicely; carpet looks and feels new; removed stains and smell)
+- EVIDENCE PACKS 2026-10-29T14:24 · run 20261029-142210-build-b1dd · section pilot · 2 page(s) · build/pilot/packs/
+- REVIEW FACT CHECKED 2026-10-29T14:24 · run 20261029-142210-build-b1dd · staff:Kevin: 11 different reviewer(s) after reading by meaning (researcher) · 11 reviewers name Kevin as the technician who did the work (a 12th says 'Mr. Snow'; same person only if the client confirms Kevin Snow)
+- REVIEW FACT CHECKED 2026-10-29T14:24 · run 20261029-142210-build-b1dd · fact:staff: 11 different reviewer(s) after reading by meaning (researcher) · 11 reviewers name Kevin as the technician who did the work
+- REVIEW FACT CHECKED 2026-10-29T14:24 · run 20261029-142210-build-b1dd · fact:guarantees: 0 different reviewer(s) after reading by meaning (researcher) · False match: the sentences are about arriving on time, not a guarantee or warranty. No reviewer mentions one.
+- REVIEW FACT CHECKED 2026-10-29T14:24 · run 20261029-142210-build-b1dd · fact:pricing: 0 different reviewer(s) after reading by meaning (researcher) · No price, rate or pricing method stated. 8 reviewers call the price fair: opinion for customer language, not a pricing fact
+- REVIEW FACT CHECKED 2026-10-29T14:24 · run 20261029-142210-build-b1dd · fact:timeframe: 4 different reviewer(s) after reading by meaning (researcher) · Customer examples of quick booking: same day (2), next day on a weekend (1), same week (1). Cited customer examples only, never a company promise
+- REVIEW FACT CHECKED 2026-10-29T14:24 · run 20261029-142210-build-b1dd · fact:response_time: 6 different reviewer(s) after reading by meaning (researcher) · Customers say he replied or booked quickly: responded quickly, called back almost at once, came the same day (2), prompt/responsive with scheduling (2). Customer examples only
+- REVIEW FACT CHECKED 2026-10-29T14:24 · run 20261029-142210-build-b1dd · practice:clean-up: 0 different reviewer(s) after reading by meaning (researcher) · False match: the sentences describe the cleaned carpet, not tidying up after the job.
+- REVIEW FACT CHECKED 2026-10-29T14:24 · run 20261029-142210-build-b1dd · practice:explains: 2 different reviewer(s) after reading by meaning (researcher) · explained what he was doing and what to expect (1); honest appraisal of the problem (1); a third borderline, not counted
+- REVIEW FACT CHECKED 2026-10-29T14:24 · run 20261029-142210-build-b1dd · materials: 1 different reviewer(s) after reading by meaning (researcher) · Surfaces besides carpet, each below 3: sofas/upholstery (2), tile and grout (1), marble floor (1)
+- EVIDENCE PACKS 2026-10-29T14:24 · run 20261029-142210-build-b1dd · section pilot · 2 page(s) · build/pilot/packs/
+- RESEARCH 2026-10-29T14:25 · run 20261029-142210-build-b1dd · RL-pilot-1 · fact:svc-carpet-cleaning:service_process (public): found
+- RESEARCH 2026-10-29T14:26 · run 20261029-142210-build-b1dd · RL-pilot-2 · fact:loc-bluffton:local_context (public): partial
+- RESEARCH 2026-10-29T14:26 · run 20261029-142210-build-b1dd · RL-pilot-3 · fact:loc-bluffton:neighborhoods (public): found
+- RESEARCH 2026-10-29T14:26 · run 20261029-142210-build-b1dd · RL-pilot-4 · fact:loc-bluffton:place_entities (public): found
+- RESEARCH 2026-10-29T14:26 · run 20261029-142210-build-b1dd · RL-pilot-5 · fact:loc-bluffton:permit_office (public): found
+- EVIDENCE 2026-10-29T14:26 · run 20261029-142210-build-b1dd · svc-carpet-cleaning: WARN (known 8, unknown 1, unverified 2, conflict 1)
+- EVIDENCE 2026-10-29T14:26 · run 20261029-142210-build-b1dd · loc-bluffton: WARN (known 8, unknown 0, unverified 1, conflict 1)
+- EVIDENCE PACKS 2026-10-29T14:26 · run 20261029-142210-build-b1dd · section pilot · 2 page(s) · build/pilot/packs/
+- FLAG 2026-10-29T14:26 · run 20261029-142210-build-b1dd · F-012 · evidence_pack.py review_topics gives 'service: <name>' topics no meaning-check key (keys=[]), so reviews.py checked cannot lift 'service: Carpet Cleaning' (9 reviewers, checked by meaning) out of 'keyword match only'; also reviews.py extract re-run wipes earlier meaning_checked rows (had to re-record 9 from log) · workaround: recorded service:Carpet Cleaning count 9 and re-recorded prior checks; writer treats service topic as attributed example
+- OUTLINES 2026-10-29T14:26 · run 20261029-142210-build-b1dd · section pilot · 2 page(s) by outline.py (no brief, Rewrite 4)
+- DRAFT 2026-10-29T14:30 · run 20261029-142210-build-b1dd · loc-bluffton · clients/carolina-carpet-cleaning/build/pilot/drafts/loc-bluffton.md · agent draft-writer
+- DRAFT 2026-10-29T14:30 · run 20261029-142210-build-b1dd · svc-carpet-cleaning · clients/carolina-carpet-cleaning/build/pilot/drafts/svc-carpet-cleaning.md · agent ab76495860cae9bb5
+- DRAFT 2026-10-29T14:30 · run 20261029-142210-build-b1dd · loc-bluffton · clients/carolina-carpet-cleaning/build/pilot/drafts/loc-bluffton.md · agent a204717377da26fc2
+- REVIEW SHEET 2026-10-29T14:31 · run 20261029-142210-build-b1dd · pilot drafts: 1 Ask, 14 decided for you, 1 fixed silently, 0 not raised (duplicate, decided or answered) · clients/carolina-carpet-cleaning/build/pilot/drafts-review.csv
+- CHANGE #332 [drive_file] drive:Carolina Carpet Cleaning - TMS/02 - Build/drafts-review.md | upload | old: (new file) | new: drafts-review.md · sha 9f22b53b8266 | result: done · copied (Drive for desktop syncs it)
+- FLAG 2026-10-29T14:32 · run 20261029-142210-build-b1dd · F-013 · outline.py: outlines still list /ladys-island/ in the location link lists (svc service-areas wheel, loc-bluffton sibling wheel) although site_plan_a1_ladys_island merges it into /beaufort/; and the formula-assigned category variant carries the 'Proposed:' prefix ('Proposed: carpet cleaning') · workaround: Drafts keep the wheel placeholder rows untouched; wheel.py at ship must drop /ladys-island/; writer used 'carpet cleaning'.
+- FLAG 2026-10-29T14:32 · run 20261029-142210-build-b1dd · F-014 · reviews.py extract wipes earlier meaning checks, and evidence_pack.py gives 'service:' review topics no key a reviews.py checked entry can attach to (researcher F-012) — svc 'service: Carpet Cleaning' stays keyword-match-only after being checked (9 reviewers) · workaround: Researcher re-recorded the earlier checks from the log; writer used the topic only as attributed examples.
+### HANDOFF · /build · 2026-10-29 · run 20261029-142210-build-b1dd
+- Evidence gate: both pages BLOCK at start (waived by Paul). Researcher (Sonnet) then filled public facts for loc-bluffton (climate, 12 neighbourhoods, place entities, permit office) and the CM-068 industry standard for svc-carpet-cleaning service_process (CRI/IICRC S100, Shaw Floors); both pages now WARN (rating conflict open). Reviews re-checked by meaning.
+- Outlines: outline.py build, 2 outlines (build/pilot/outlines/). No FAQ candidates from PAA/fan-out; plan picks used.
+- Drafts: one fresh draft-writer (Opus) per page, recorded with status.py page-stage:
+  - svc-carpet-cleaning (ab76495860cae9bb5) — 6 [NEED]; furniture FAQ dropped (5 FAQs); process H2 = trade practice + [NEED: Kevin's own process, in his words]; client method never stated.
+  - loc-bluffton (a204717377da26fc2) — 5 [NEED] (hours, response/lead time, HOA practice, map); no address (spec §14); recent work dropped.
+- Review: build/pilot/drafts-review.md/.csv — 1 Ask (kind 4: H1 "South Carolina Lowcountry" on svc page vs homepage H1 reservation; recommended a = keep plan H1), 14 decided for you, 1 fixed silently. Uploaded to Drive 02 - Build. Batch pilot = drafts_written.
+- Not applied yet: review.py apply and the write-back wait for Paul's answer line (Ask row present).
+- later-rewrites.md created: svc-carpet-cleaning service_process standard fill → Paul to describe Kevin's process in his own words.
+- Flags: F-012 (researcher: reviews extract wipes meaning checks / service topics unkeyed), F-013 (outline lists /ladys-island/ though merged into /beaufort/; "Proposed:" prefix on assigned category variant), F-014 (same as F-012, from this run).
+- No WordPress, no publish, no approval, no system file changed. No spend.
+- Next: Paul answers the sheet → `/build carolina-carpet-cleaning review pilot drafts "<his line>"`, then write-back, then `/approve carolina-carpet-cleaning batch:pilot:drafts`.
+
+**Changes (script):** 1 — drive_file ×1
+- FLAG 2026-10-29T14:26 · run 20261029-142210-build-b1dd · F-012 · evidence_pack.py review_topics gives 'service: <name>' topics no meaning-check key (keys=[]), so reviews.py checked cannot lift 'ser…
+- FLAG 2026-10-29T14:32 · run 20261029-142210-build-b1dd · F-013 · outline.py: outlines still list /ladys-island/ in the location link lists (svc service-areas wheel, loc-bluffton sibling wheel) alth…
+- FLAG 2026-10-29T14:32 · run 20261029-142210-build-b1dd · F-014 · reviews.py extract wipes earlier meaning checks, and evidence_pack.py gives 'service:' review topics no key a reviews.py checked ent…
+### END HANDOFF
+## RUN 20261029-142210-build-b1dd · FINISHED · 2026-10-29T14:32:37-05:00
+Changes: 1 · Summary: Pilot drafts written (svc-carpet-cleaning, loc-bluffton) after researcher fills; review sheet: 1 Ask (H1 variant, kind 4), 14 decided for you; Kevin's process left [NEED] for Paul's own words
+Spend: 5436483 tokens · $3.75 (measured)
+- CHANGE #333 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (10).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | new: _Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (10).md | result: done · renamed and moved, nothing deleted
+- CHANGE #334 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | upload | old: previous version archived as Carolina Carpet Cleaning - Handoff Log - 2026-10-29 (10).md | new: Carolina Carpet Cleaning - Handoff Log.md · sha 63e8fcee8280 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #335 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (15).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | new: _Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (15).md | result: done · renamed and moved, nothing deleted
+- CHANGE #336 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | upload | old: previous version archived as Carolina Carpet Cleaning - Document Checklist - 2026-10-29 (15).md | new: Carolina Carpet Cleaning - Document Checklist.md · sha 9b0e4dbe1fe8 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #337 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (16).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (16).md | result: done · renamed and moved, nothing deleted
+- CHANGE #338 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (16).md | new: Carolina Carpet Cleaning - Status.md · sha 04312cccfc6c | result: done · copied (Drive for desktop syncs it)

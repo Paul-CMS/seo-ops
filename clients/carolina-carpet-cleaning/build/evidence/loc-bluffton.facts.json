@@ -1,0 +1,26 @@
+{
+  "page": "loc-bluffton",
+  "recorded_by_run": "20261029-142210-build-b1dd",
+  "facts": {
+    "local_context": {
+      "value": "Humid subtropical climate (Koppen Cfa) with very mild winters and hot, humid summers; mean daily highs 90 F in July and 88 F in August; about 50.4 inches of rain a year, August the wettest month, with nearly half of the annual rain falling in summer, mostly as thundershowers; hurricanes are a major threat in summer and early fall. Elevation about 20 ft. The May River winds through the centre of town and the New River forms the southwest boundary. Most of the town was undeveloped until the early-2000s housing boom, which brought many planned unit developments; housing units grew 976.4% from 2000 to 2010, and the 2020 count was 11,282 housing units, 9.5% vacant. Old Town Bluffton is the original one-square-mile area on a bluff above the May River, with eight antebellum homes still standing, and was named a National Historic District in 1996.",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Bluffton,_South_Carolina (read 2026-10-29)"
+    },
+    "neighborhoods": {
+      "value": "Inside the Town of Bluffton limits (Town list): Palmetto Bluff, Hampton Hall, Hampton Lake, Buckwalter Place, Bluffton Park, Rose Dhu Creek Plantation. In Greater Bluffton, outside the Town limits, unincorporated Beaufort County (Town list): Belfair Plantation, Berkeley Hall Plantation, Colleton River Plantation, Moss Creek, Sun City, May River Plantation.",
+      "status": "Internally Verified",
+      "source": "https://www.townofbluffton.sc.gov/371/Neighborhoods-PDF (Town of Bluffton Neighborhoods PDF: 54 in-Town and 57 unincorporated neighbourhoods; read 2026-10-29)"
+    },
+    "place_entities": {
+      "value": "Church of the Cross (designed by Edward Brickell White; construction began 1854, first services held July 17, 1857; 110 Calhoun Street); Heyward House and Historical Center (opened to the public in 1998 by the Bluffton Historical Preservation Society, the town's welcome center since 2000; 70 Boundary Street); Bluffton Oyster Co. at Oyster Factory Park on the May River (first opened 1899, South Carolina's last full-time oyster shucking business); Old Town Bluffton historic district (National Register of Historic Places).",
+      "status": "Internally Verified",
+      "source": "https://en.wikipedia.org/wiki/Bluffton,_South_Carolina (read 2026-10-29; street addresses are from secondary web results and not recorded as verified)"
+    },
+    "permit_office": {
+      "value": "Town of Bluffton, Growth Management department (Building Safety section): Residential and Commercial Building Permit Application forms; Contact: 20 Bridge Street, P.O. Box 386, Bluffton, SC 29910; 843-706-4500. Recorded for the Serving section only.",
+      "status": "Internally Verified",
+      "source": "https://www.townofbluffton.sc.gov/228/Applications-Certificates-Forms-and-Perm (read 2026-10-29)"
+    }
+  }
+}

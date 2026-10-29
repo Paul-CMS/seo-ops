@@ -3,7 +3,7 @@
  "type": "location",
  "url": "/bluffton/",
  "section": "pilot",
- "built": "2026-10-29T10:38:50-05:00",
+ "built": "2026-10-29T14:26:26-05:00",
  "services": [],
  "places": [
   "Bluffton"
@@ -320,6 +320,38 @@
    "value": "Skipped — Paul chose to leave question 25 unanswered; no owner words recorded",
    "source": "Paul, chat 2026-10-29 (answer 3)",
    "state": "unknown"
+  },
+  {
+   "id": "page:local_context",
+   "label": "local context",
+   "status": "Internally Verified",
+   "value": "Humid subtropical climate (Koppen Cfa) with very mild winters and hot, humid summers; mean daily highs 90 F in July and 88 F in August; about 50.4 inches of rain a year, August the wettest month, with nearly half of the annual rain falling in summer, mostly as",
+   "source": "https://en.wikipedia.org/wiki/Bluffton,_South_Carolina (read 2026-10-29)",
+   "state": "sourced public"
+  },
+  {
+   "id": "page:neighborhoods",
+   "label": "neighborhoods",
+   "status": "Internally Verified",
+   "value": "Inside the Town of Bluffton limits (Town list): Palmetto Bluff, Hampton Hall, Hampton Lake, Buckwalter Place, Bluffton Park, Rose Dhu Creek Plantation. In Greater Bluffton, outside the Town limits, unincorporated Beaufort County (Town list): Belfair Plantation",
+   "source": "https://www.townofbluffton.sc.gov/371/Neighborhoods-PDF (Town of Bluffton Neighborhoods PDF: 54 in-Town and 57 unincorporated neighbourhoods; read 2026-10-29)",
+   "state": "sourced public"
+  },
+  {
+   "id": "page:place_entities",
+   "label": "place entities",
+   "status": "Internally Verified",
+   "value": "Church of the Cross (designed by Edward Brickell White; construction began 1854, first services held July 17, 1857; 110 Calhoun Street); Heyward House and Historical Center (opened to the public in 1998 by the Bluffton Historical Preservation Society, the town",
+   "source": "https://en.wikipedia.org/wiki/Bluffton,_South_Carolina (read 2026-10-29; street addresses are from secondary web results and not recorded as verified)",
+   "state": "sourced public"
+  },
+  {
+   "id": "page:permit_office",
+   "label": "permit office",
+   "status": "Internally Verified",
+   "value": "Town of Bluffton, Growth Management department (Building Safety section): Residential and Commercial Building Permit Application forms; Contact: 20 Bridge Street, P.O. Box 386, Bluffton, SC 29910; 843-706-4500. Recorded for the Serving section only.",
+   "source": "https://www.townofbluffton.sc.gov/228/Applications-Certificates-Forms-and-Perm (read 2026-10-29)",
+   "state": "sourced public"
   }
  ],
  "reviews": {
@@ -339,7 +371,7 @@
    ],
    "tier": "example",
    "checked": true,
-   "checked_at": "2026-10-28"
+   "checked_at": "2026-10-29"
   },
   "practice: speed": {
    "reviewers": 14,
@@ -372,7 +404,7 @@
    ],
    "tier": "known",
    "checked": true,
-   "checked_at": "2026-10-28"
+   "checked_at": "2026-10-29"
   },
   "named staff: Kevin": {
    "reviewers": 11,
@@ -405,7 +437,7 @@
    ],
    "tier": "known",
    "checked": true,
-   "checked_at": "2026-10-28"
+   "checked_at": "2026-10-29"
   }
  },
  "questions": [],
@@ -497,7 +529,60 @@
    "source": "Bluffton Explorer GIS — http://www.townofbluffton.us/gis/"
   }
  ],
- "research": [],
+ "research": [
+  {
+   "id": "RL-pilot-2",
+   "page": "loc-bluffton",
+   "gap": "fact:loc-bluffton:local_context",
+   "kind": "public",
+   "queries": "Wikipedia Bluffton South Carolina climate housing || Town of Bluffton Beaufort County housing climate",
+   "sources_tried": "methodology/places/ || methodology/sources/sc-lowcountry.md || Wikipedia: Bluffton, South Carolina || https://en.wikipedia.org/wiki/Bluffton,_South_Carolina",
+   "result": "partial",
+   "excerpt": "humid, hot summers; nearly half of the annual rain falls in summer; Housing units grew 976.4% from 2000 to 2010",
+   "url": "https://en.wikipedia.org/wiki/Bluffton,_South_Carolina",
+   "date": "2026-10-29",
+   "run": "20261029-142210-build-b1dd"
+  },
+  {
+   "id": "RL-pilot-3",
+   "page": "loc-bluffton",
+   "gap": "fact:loc-bluffton:neighborhoods",
+   "kind": "public",
+   "queries": "Town of Bluffton neighborhoods list Palmetto Bluff Hampton Hall",
+   "sources_tried": "methodology/places/ || methodology/sources/sc-lowcountry.md || https://www.townofbluffton.sc.gov/371/Neighborhoods-PDF || Wikipedia: Bluffton, South Carolina",
+   "result": "found",
+   "excerpt": "Neighborhoods on this list are in the corporate limits of the Town of Bluffton",
+   "url": "https://www.townofbluffton.sc.gov/371/Neighborhoods-PDF",
+   "date": "2026-10-29",
+   "run": "20261029-142210-build-b1dd"
+  },
+  {
+   "id": "RL-pilot-4",
+   "page": "loc-bluffton",
+   "gap": "fact:loc-bluffton:place_entities",
+   "kind": "public",
+   "queries": "Bluffton SC Heyward House Church of the Cross Oyster Factory Park",
+   "sources_tried": "methodology/places/ || methodology/sources/sc-lowcountry.md || Wikipedia: Bluffton, South Carolina || https://en.wikipedia.org/wiki/Bluffton,_South_Carolina",
+   "result": "found",
+   "excerpt": "Church of the Cross... first services were held July 17, 1857",
+   "url": "https://en.wikipedia.org/wiki/Bluffton,_South_Carolina",
+   "date": "2026-10-29",
+   "run": "20261029-142210-build-b1dd"
+  },
+  {
+   "id": "RL-pilot-5",
+   "page": "loc-bluffton",
+   "gap": "fact:loc-bluffton:permit_office",
+   "kind": "public",
+   "queries": "Town of Bluffton building permit applications Growth Management",
+   "sources_tried": "methodology/places/ || methodology/sources/sc-lowcountry.md || https://www.townofbluffton.sc.gov/228/Applications-Certificates-Forms-and-Perm || Wikipedia: Bluffton, South Carolina",
+   "result": "found",
+   "excerpt": "Applications, Certificates, Forms and Permitting — Building Safety",
+   "url": "https://www.townofbluffton.sc.gov/228/Applications-Certificates-Forms-and-Perm",
+   "date": "2026-10-29",
+   "run": "20261029-142210-build-b1dd"
+  }
+ ],
  "place": [],
  "settled": [
   {
@@ -521,24 +606,7 @@
    "at": "2026-10-28"
   }
  ],
- "gaps": [
-  {
-   "key": "place_entities",
-   "label": "3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections)",
-   "need": "supporting",
-   "from": "page:place_entities",
-   "kind": "public",
-   "fact_key": "fact:loc-bluffton:place_entities"
-  },
-  {
-   "key": "permit_office",
-   "label": "Which office issues permits here, with its official page (for the Serving section)",
-   "need": "supporting",
-   "from": "page:permit_office",
-   "kind": "public",
-   "fact_key": "fact:loc-bluffton:permit_office"
-  }
- ],
+ "gaps": [],
  "standard": {},
  "excerpts": [
   {
@@ -708,6 +776,34 @@
    "topic": "site/GBP",
    "tier": "site_stated",
    "text": "Carpet Cleaning Service in Bluffton, SC Carolina Carpet Cleaning is based in Bluffton and has served homes and businesses across the town since 1993."
+  },
+  {
+   "id": "P25",
+   "kind": "public",
+   "topic": "fact:loc-bluffton:local_context",
+   "tier": "official",
+   "text": "humid, hot summers; nearly half of the annual rain falls in summer; Housing units grew 976.4% from 2000 to 2010"
+  },
+  {
+   "id": "P26",
+   "kind": "public",
+   "topic": "fact:loc-bluffton:neighborhoods",
+   "tier": "official",
+   "text": "Neighborhoods on this list are in the corporate limits of the Town of Bluffton"
+  },
+  {
+   "id": "P27",
+   "kind": "public",
+   "topic": "fact:loc-bluffton:place_entities",
+   "tier": "official",
+   "text": "Church of the Cross... first services were held July 17, 1857"
+  },
+  {
+   "id": "P28",
+   "kind": "public",
+   "topic": "fact:loc-bluffton:permit_office",
+   "tier": "official",
+   "text": "Applications, Certificates, Forms and Permitting — Building Safety"
   }
  ],
  "known": [
@@ -875,6 +971,26 @@
    "id": "a-travel-fee-beyond-six-towns",
    "label": "Travel fee beyond the six towns",
    "value": "None — no travel fee"
+  },
+  {
+   "id": "page:local_context",
+   "label": "local context",
+   "value": "Humid subtropical climate (Koppen Cfa) with very mild winters and hot, humid summers; mean daily highs 90 F in July and 88 F in August; about 50.4 inches of rain a year, August the wettest month, with nearly half of the annual rain falling in summer, mostly as"
+  },
+  {
+   "id": "page:neighborhoods",
+   "label": "neighborhoods",
+   "value": "Inside the Town of Bluffton limits (Town list): Palmetto Bluff, Hampton Hall, Hampton Lake, Buckwalter Place, Bluffton Park, Rose Dhu Creek Plantation. In Greater Bluffton, outside the Town limits, unincorporated Beaufort County (Town list): Belfair Plantation"
+  },
+  {
+   "id": "page:place_entities",
+   "label": "place entities",
+   "value": "Church of the Cross (designed by Edward Brickell White; construction began 1854, first services held July 17, 1857; 110 Calhoun Street); Heyward House and Historical Center (opened to the public in 1998 by the Bluffton Historical Preservation Society, the town"
+  },
+  {
+   "id": "page:permit_office",
+   "label": "permit office",
+   "value": "Town of Bluffton, Growth Management department (Building Safety section): Residential and Commercial Building Permit Application forms; Contact: 20 Bridge Street, P.O. Box 386, Bluffton, SC 29910; 843-706-4500. Recorded for the Serving section only."
   },
   {
    "id": "practice: speed",

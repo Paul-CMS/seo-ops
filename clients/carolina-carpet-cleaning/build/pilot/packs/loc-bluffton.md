@@ -1,6 +1,6 @@
 # Evidence pack — Bluffton, SC (location)
 
-Section **pilot** · /bluffton/ · built 2026-10-29T10:38 by evidence_pack.py (CM-061).
+Section **pilot** · /bluffton/ · built 2026-10-29T14:26 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -50,6 +50,10 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 | Id | Fact | Value | Source |
 |---|---|---|---|
 | a-primary-domain-canonical-host-form | Primary domain (canonical host form) | https://carpetcleaningblufftonsc.com/ (http and www 301 to it; rel=canonical matches) | live HTTP check 2026-10-28 |
+| page:local_context | local context | Humid subtropical climate (Koppen Cfa) with very mild winters and hot, humid summers; mean daily highs 90 F in July and 88 F in August; about 50.4 inches of rain a year, August the wettest month, with nearly half of the annual rain falling in summer, mostly as | https://en.wikipedia.org/wiki/Bluffton,_South_Carolina (read 2026-10-29) |
+| page:neighborhoods | neighborhoods | Inside the Town of Bluffton limits (Town list): Palmetto Bluff, Hampton Hall, Hampton Lake, Buckwalter Place, Bluffton Park, Rose Dhu Creek Plantation. In Greater Bluffton, outside the Town limits, unincorporated Beaufort County (Town list): Belfair Plantation | https://www.townofbluffton.sc.gov/371/Neighborhoods-PDF (Town of Bluffton Neighborhoods PDF: 54 in-Town and 57 unincorporated neighbourhoods; read 2026-10-29) |
+| page:place_entities | place entities | Church of the Cross (designed by Edward Brickell White; construction began 1854, first services held July 17, 1857; 110 Calhoun Street); Heyward House and Historical Center (opened to the public in 1998 by the Bluffton Historical Preservation Society, the town | https://en.wikipedia.org/wiki/Bluffton,_South_Carolina (read 2026-10-29; street addresses are from secondary web results and not recorded as verified) |
+| page:permit_office | permit office | Town of Bluffton, Growth Management department (Building Safety section): Residential and Commercial Building Permit Application forms; Contact: 20 Bridge Street, P.O. Box 386, Bluffton, SC 29910; 843-706-4500. Recorded for the Serving section only. | https://www.townofbluffton.sc.gov/228/Applications-Certificates-Forms-and-Perm (read 2026-10-29) |
 
 ### Unknown — never claimed: write [NEED: …] where the page needs it, or leave it out
 
@@ -65,7 +69,7 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 
 ## Reviews
 
-### practice: speed — 14 independent reviewer(s) · checked by meaning 2026-10-28
+### practice: speed — 14 independent reviewer(s) · checked by meaning 2026-10-29
 Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 
 - "Kevin showed up on time and got the job done efficiently!" (2026-02-17; reviews.csv row 3)
@@ -74,7 +78,7 @@ Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 - "Kevin called me almost immediately and said that he could clean the carpet the next day as he was booked solid for the next week." (2025-06-02; reviews.csv row 6)
 - "Very prompt with scheduling and did a great job!" (2025-01-11; reviews.csv row 7)
 
-### named staff: Kevin — 11 independent reviewer(s) · checked by meaning 2026-10-28
+### named staff: Kevin — 11 independent reviewer(s) · checked by meaning 2026-10-29
 Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 
 - "Kevin is super professional and fast." (2026-06-01; reviews.csv row 2)
@@ -83,7 +87,7 @@ Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 - "I reached out to Kevin based off of other reviews and he responded quickly and got the job done." (2025-12-03; reviews.csv row 5)
 - "Kevin called me almost immediately and said that he could clean the carpet the next day as he was booked solid for the next week." (2025-06-02; reviews.csv row 6)
 
-### practice: communication — 2 independent reviewer(s) · checked by meaning 2026-10-28
+### practice: communication — 2 independent reviewer(s) · checked by meaning 2026-10-29
 Usage tier: attributed customer example only — no company claim
 
 - "Very friendly, thorough and explained what he was doing and what to expect." (2025-12-03; reviews.csv row 5)
@@ -114,6 +118,10 @@ _None tagged to this page._
 - Town of Bluffton: Which permit a job needs — Permit Application Finder — http://www.townofbluffton.us/permit/ (methodology/sources/sc-lowcountry.md)
 - Town of Bluffton: Neighbourhoods inside the Town limits — Town of Bluffton Neighborhoods PDF (used for Apex, 2026-10-09; add its URL when the researcher next reads it) (methodology/sources/sc-lowcountry.md)
 - Town of Bluffton: Property and zoning lookups — Bluffton Explorer GIS — http://www.townofbluffton.us/gis/ (methodology/sources/sc-lowcountry.md)
+- research-log: fact:loc-bluffton:local_context — "humid, hot summers; nearly half of the annual rain falls in summer; Housing units grew 976.4% from 2000 to 2010" (https://en.wikipedia.org/wiki/Bluffton,_South_Carolina, 2026-10-29)
+- research-log: fact:loc-bluffton:neighborhoods — "Neighborhoods on this list are in the corporate limits of the Town of Bluffton" (https://www.townofbluffton.sc.gov/371/Neighborhoods-PDF, 2026-10-29)
+- research-log: fact:loc-bluffton:place_entities — "Church of the Cross... first services were held July 17, 1857" (https://en.wikipedia.org/wiki/Bluffton,_South_Carolina, 2026-10-29)
+- research-log: fact:loc-bluffton:permit_office — "Applications, Certificates, Forms and Permitting — Building Safety" (https://www.townofbluffton.sc.gov/228/Applications-Certificates-Forms-and-Perm, 2026-10-29)
 
 ## Place research (the place store: official facts are plain statements; context only for area character)
 
@@ -134,5 +142,4 @@ _None for this page — its scope and process come from the client, or stay a `[
 
 ## Gaps — the only things research looks for
 
-- 3-4 named, verifiable places woven into the text and the schema (CM-062; no Things to Do or Top Sites sections) (supporting, `page:place_entities`) → researcher (public fact — never asked)
-- Which office issues permits here, with its official page (for the Serving section) (supporting, `page:permit_office`) → researcher (public fact — never asked)
+_None._

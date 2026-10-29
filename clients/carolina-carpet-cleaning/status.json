@@ -156,7 +156,7 @@
   },
   "pages": {
     "svc-carpet-cleaning": {
-      "state": "planned",
+      "state": "draft_written",
       "type": "service",
       "name": "Carpet Cleaning",
       "url": "/carpet-cleaning/",
@@ -174,7 +174,7 @@
         "How is low-moisture cleaning different from steam cleaning? — low-moisture is folded into this page (F-008)"
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
           "Known": 8,
           "Unknown": 1,
@@ -182,12 +182,12 @@
           "Conflict": 1
         },
         "why": [
-          "2 required facts are not known (block at 2)"
+          "1 required and 2 supporting gap(s), 1 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/carolina-carpet-cleaning/build/evidence/svc-carpet-cleaning.grid.md",
-        "sha": "d5d869d803ef",
-        "at": "2026-10-29T10:38:50-05:00",
-        "run": "20261029-103448-build-a20e",
+        "sha": "50b0071fd10b",
+        "at": "2026-10-29T14:26:19-05:00",
+        "run": "20261029-142210-build-b1dd",
         "gaps": [
           "service_scope",
           "service_process",
@@ -211,9 +211,9 @@
       "pack": {
         "file": "clients/carolina-carpet-cleaning/build/pilot/packs/svc-carpet-cleaning.md",
         "json": "clients/carolina-carpet-cleaning/build/pilot/packs/svc-carpet-cleaning.json",
-        "sha": "31071fa0445d",
-        "at": "2026-10-29T10:38:50-05:00",
-        "run": "20261029-103448-build-a20e",
+        "sha": "d408f4e68038",
+        "at": "2026-10-29T14:26:26-05:00",
+        "run": "20261029-142210-build-b1dd",
         "section": "pilot",
         "counts": {
           "facts": 39,
@@ -225,7 +225,26 @@
           "place": 0,
           "settled": 7,
           "gaps": 1,
-          "excerpts": 30
+          "excerpts": 31
+        }
+      },
+      "assigned": {},
+      "files": {
+        "outline": {
+          "file": "clients/carolina-carpet-cleaning/build/pilot/outlines/svc-carpet-cleaning.md",
+          "run": "20261029-142210-build-b1dd",
+          "at": "2026-10-29T14:26:40-05:00",
+          "sha": "a8dd1b3b5d9e",
+          "ts": 1793302000.5046551,
+          "pack_sha": "d408f4e68038"
+        },
+        "draft": {
+          "file": "clients/carolina-carpet-cleaning/build/pilot/drafts/svc-carpet-cleaning.md",
+          "run": "20261029-142210-build-b1dd",
+          "at": "2026-10-29T14:30:36-05:00",
+          "sha": "ce9ab97acaf3",
+          "ts": 1793302236.877038,
+          "agent": "ab76495860cae9bb5"
         }
       }
     },
@@ -643,7 +662,7 @@
       }
     },
     "loc-bluffton": {
-      "state": "planned",
+      "state": "draft_written",
       "type": "location",
       "name": "Bluffton, SC",
       "url": "/bluffton/",
@@ -657,26 +676,22 @@
         "3 · Trust: why carpets in Bluffton homes smell musty in summer — marsh-side humidity; review language at its tier"
       ],
       "evidence": {
-        "result": "block",
+        "result": "warn",
         "counts": {
-          "Known": 4,
-          "Unknown": 2,
-          "Unverified": 3,
+          "Known": 8,
+          "Unknown": 0,
+          "Unverified": 1,
           "Conflict": 1
         },
         "why": [
-          "3 required facts are not known (block at 2)"
+          "1 required and 1 supporting gap(s), 1 conflict(s) — the brief must list them under 'Evidence gaps'"
         ],
         "grid": "clients/carolina-carpet-cleaning/build/evidence/loc-bluffton.grid.md",
-        "sha": "23cdbe262030",
-        "at": "2026-10-29T10:38:50-05:00",
-        "run": "20261029-103448-build-a20e",
+        "sha": "f1f83bc24f63",
+        "at": "2026-10-29T14:26:20-05:00",
+        "run": "20261029-142210-build-b1dd",
         "gaps": [
           "city_served",
-          "local_context",
-          "neighborhoods",
-          "place_entities",
-          "permit_office",
           "rating"
         ],
         "waiver": {
@@ -696,12 +711,12 @@
       "pack": {
         "file": "clients/carolina-carpet-cleaning/build/pilot/packs/loc-bluffton.md",
         "json": "clients/carolina-carpet-cleaning/build/pilot/packs/loc-bluffton.json",
-        "sha": "8e5d5429d44f",
-        "at": "2026-10-29T10:38:50-05:00",
-        "run": "20261029-103448-build-a20e",
+        "sha": "b87cf6f5152d",
+        "at": "2026-10-29T14:26:26-05:00",
+        "run": "20261029-142210-build-b1dd",
         "section": "pilot",
         "counts": {
-          "facts": 39,
+          "facts": 43,
           "review_topics": 3,
           "review_excerpts": 12,
           "questions": 0,
@@ -709,8 +724,29 @@
           "public": 4,
           "place": 0,
           "settled": 4,
-          "gaps": 2,
-          "excerpts": 24
+          "gaps": 0,
+          "excerpts": 28
+        }
+      },
+      "assigned": {
+        "category_variant": "Proposed: carpet cleaning"
+      },
+      "files": {
+        "outline": {
+          "file": "clients/carolina-carpet-cleaning/build/pilot/outlines/loc-bluffton.md",
+          "run": "20261029-142210-build-b1dd",
+          "at": "2026-10-29T14:26:40-05:00",
+          "sha": "c0c7997bf7e0",
+          "ts": 1793302000.506463,
+          "pack_sha": "b87cf6f5152d"
+        },
+        "draft": {
+          "file": "clients/carolina-carpet-cleaning/build/pilot/drafts/loc-bluffton.md",
+          "run": "20261029-142210-build-b1dd",
+          "at": "2026-10-29T14:30:36-05:00",
+          "sha": "aadaa1c5a49d",
+          "ts": 1793302236.957986,
+          "agent": "a204717377da26fc2"
         }
       }
     },
@@ -1138,11 +1174,17 @@
           "svc-carpet-cleaning",
           "loc-bluffton"
         ],
-        "state": "planned",
+        "state": "drafts_written",
         "briefs": null,
         "drafts": null,
         "route": "outline",
-        "files": {},
+        "files": {
+          "drafts": [
+            "clients/carolina-carpet-cleaning/build/pilot/drafts/svc-carpet-cleaning.md",
+            "clients/carolina-carpet-cleaning/build/pilot/drafts/loc-bluffton.md"
+          ],
+          "review_sheet": "clients/carolina-carpet-cleaning/build/pilot/drafts-review.csv"
+        },
         "facts_interview": {
           "file": "clients/carolina-carpet-cleaning/interviews/facts/Carolina Carpet Cleaning - Facts Interview - pilot - 2026-10-29 - REVIEW.md",
           "at": "2026-10-29T13:47:18-05:00",
@@ -1154,7 +1196,21 @@
           "questions": 4,
           "research": 4,
           "need_search": 1
-        }
+        },
+        "review": {
+          "drafts": {
+            "sheet": "clients/carolina-carpet-cleaning/build/pilot/drafts-review.csv",
+            "md": "clients/carolina-carpet-cleaning/build/pilot/drafts-review.md",
+            "at": "2026-10-29T14:31:45-05:00",
+            "run": "20261029-142210-build-b1dd",
+            "asks": 1,
+            "listed": 14,
+            "fixes": 1,
+            "dropped": 0,
+            "applied": null
+          }
+        },
+        "sem_findings": 0
       },
       {
         "id": "services",
@@ -1395,12 +1451,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261029-134716-interview-5a97",
-    "command": "interview",
-    "finished": "2026-10-29T13:47:37-05:00",
-    "result": "Facts interview pack for pilot batch (2 blocked pages, 4 questions) written and cleaned for the owner; Paul to send",
-    "changes": 0,
-    "step": "interview:facts",
+    "run_id": "20261029-142210-build-b1dd",
+    "command": "build",
+    "finished": "2026-10-29T14:32:37-05:00",
+    "result": "Pilot drafts written (svc-carpet-cleaning, loc-bluffton) after researcher fills; review sheet: 1 Ask (H1 variant, kind 4), 14 decided for you; Kevin's process left [NEED] for Paul's own words",
+    "changes": 1,
+    "step": "build:write",
     "batch": "pilot"
   },
   "spend": {
@@ -1422,7 +1478,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-29T14:13:57-05:00",
+  "updated": "2026-10-29T14:32:37-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
@@ -1835,6 +1891,43 @@
       "by_agent": {
         "main": 0.0073
       }
+    },
+    {
+      "run": "20261029-142210-build-b1dd",
+      "step": "build:write",
+      "tokens": 5436483,
+      "usd": 3.749,
+      "at": "2026-10-29T14:32:37-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0045,
+          "in": 6,
+          "out": 1226,
+          "cache_read": 336220,
+          "cache_write": 2443
+        },
+        "claude-opus-5-5": {
+          "usd": 3.1525,
+          "in": 122,
+          "out": 61625,
+          "cache_read": 3464975,
+          "cache_write": 245306
+        },
+        "claude-sonnet-5-5": {
+          "usd": 0.592,
+          "in": 58,
+          "out": 13416,
+          "cache_read": 1226096,
+          "cache_write": 84990
+        }
+      },
+      "by_agent": {
+        "main": 0.0045,
+        "draft-writer": 1.655,
+        "researcher": 0.592,
+        "build": 1.4975
+      }
     }
   ],
   "sessions": {
@@ -1926,5 +2019,10 @@
     "H-2026-10-29-02-broken_link",
     "H-2026-10-29-03-sitemap",
     "H-2026-10-29-04-robots_txt"
-  ]
+  ],
+  "review_pause": {
+    "run_id": "20261029-142210-build-b1dd",
+    "step": "build:write",
+    "at": "2026-10-29T14:32:37-05:00"
+  }
 }

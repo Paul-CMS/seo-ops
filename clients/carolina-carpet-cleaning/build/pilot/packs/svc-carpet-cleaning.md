@@ -1,6 +1,6 @@
 # Evidence pack — Carpet Cleaning (service)
 
-Section **pilot** · /carpet-cleaning/ · built 2026-10-29T10:38 by evidence_pack.py (CM-061).
+Section **pilot** · /carpet-cleaning/ · built 2026-10-29T14:26 by evidence_pack.py (CM-061).
 
 _The only place the writer looks for facts. Write every excerpt at its usage tier (methodology/writing-commercial.md, "Usage tiers"). Reviewer names never appear on a page._
 
@@ -65,7 +65,7 @@ _Three states (Rewrite 4): the usage tier is already applied — write each fact
 
 ## Reviews
 
-### practice: speed — 14 independent reviewer(s) · checked by meaning 2026-10-28
+### practice: speed — 14 independent reviewer(s) · checked by meaning 2026-10-29
 Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 
 - "Kevin showed up on time and got the job done efficiently!" (2026-02-17; reviews.csv row 3)
@@ -74,7 +74,7 @@ Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 - "Kevin called me almost immediately and said that he could clean the carpet the next day as he was booked solid for the next week." (2025-06-02; reviews.csv row 6)
 - "Very prompt with scheduling and did a great job!" (2025-01-11; reviews.csv row 7)
 
-### named staff: Kevin — 11 independent reviewer(s) · checked by meaning 2026-10-28
+### named staff: Kevin — 11 independent reviewer(s) · checked by meaning 2026-10-29
 Usage tier: Customers mention… (3+ independent reviewers, checked by meaning)
 
 - "Kevin is super professional and fast." (2026-06-01; reviews.csv row 2)
@@ -92,7 +92,7 @@ Usage tier: keyword match only — an attributed example until the researcher ch
 - "I have used their service many times and will call them for all my carpet cleaning needs." (2023-03-08; reviews.csv row 17)
 - "Carolina Carpet Cleaning Services came out to our facility and residences and performed their special Covid cleaning services for us." (2022-04-29; reviews.csv row 21)
 
-### practice: communication — 2 independent reviewer(s) · checked by meaning 2026-10-28
+### practice: communication — 2 independent reviewer(s) · checked by meaning 2026-10-29
 Usage tier: attributed customer example only — no company claim
 
 - "Very friendly, thorough and explained what he was doing and what to expect." (2025-12-03; reviews.csv row 5)
@@ -124,7 +124,7 @@ _None tagged to this page._
 
 ## Public facts
 
-_No area source list rows or research results for this place yet._
+- research-log: fact:svc-carpet-cleaning:service_process — "Carpet cleaning principles include: dry soil removal, soil suspension, suspended-soil removal, grooming as necessary, and drying." (https://carpet-rug.org/wp-content/uploads/2018/08/Carpet-Preconditioning-Its-Impact-on-Cleaning.pdf, 2026-10-29)
 
 ## Place research (the place store: official facts are plain statements; context only for area character)
 
@@ -134,7 +134,10 @@ _Nothing in the place store yet for this page's place (places.py status lists wh
 
 _How the trade does this work, from the cited sources. Write it as standard practice ("a seamless gutter install starts with …"), never as the client's own claim ("we always …"), and add no number or material the source does not give. The client's answer replaces it (later-rewrites.md)._
 
-_None for this page — its scope and process come from the client, or stay a `[NEED: …]`._
+- **service_process** — Professional carpet cleaning begins with dry soil removal, because dry particles that are not vacuumed up become heavier and harder to remove once the carpet is wetted. — Carpet and Rug Institute (CRI), white paper "Carpet Preconditioning: Its Impact on Cleaning" (citing the IICRC S100 principles of cleaning), https://carpet-rug.org/wp-content/uploads/2018/08/Carpet-Preconditioning-Its-Impact-on-Cleaning.pdf (2026-10-29)
+- **service_process** — Preconditioning means applying a detergent solution to the soiled carpet before soil removal so the soil separates from the fibres. It is applied by sprayer, an in-line unit on the extraction machine or brush agitators, and it is then agitated so the chemical spreads evenly through the pile. — Carpet and Rug Institute (CRI), white paper "Carpet Preconditioning: Its Impact on Cleaning", https://carpet-rug.org/wp-content/uploads/2018/08/Carpet-Preconditioning-Its-Impact-on-Cleaning.pdf (2026-10-29)
+- **service_process** — In hot water extraction, pressurized hot water is spray-injected into the carpet pile and almost immediately vacuum-extracted, flushing out the loosened soil and excess moisture; the standard's last principles are grooming the pile as necessary and drying the carpet as quickly as is practical, which also prevents musty odours from prolonged dampness. — Carpet and Rug Institute (CRI), white paper "Carpet Preconditioning: Its Impact on Cleaning", https://carpet-rug.org/wp-content/uploads/2018/08/Carpet-Preconditioning-Its-Impact-on-Cleaning.pdf (2026-10-29)
+- **service_process** — Carpet manufacturer Shaw Floors recommends professional hot water extraction (steam cleaning) every 6 to 18 months depending on traffic, and says to blot spills rather than rub them and to call a professional carpet cleaner for deep stains that spot cleaning cannot remove. — Shaw Floors, Carpet Cleaning (carpet care and maintenance), https://shawfloors.com/flooring/how-to/carpet/carpet-care-maintenance/carpet-cleaning (2026-10-29)
 
 ## Settled decisions touching this page
 
@@ -148,4 +151,4 @@ _None for this page — its scope and process come from the client, or stay a `[
 
 ## Gaps — the only things research looks for
 
-- How the service is delivered (steps, methods, equipment) (required, `page:service_process`) → client search order, then an Ask (kind 3) only with a research-log entry
+- How the service is delivered (steps, methods, equipment) (required, `page:service_process`) → industry standard filled it (see that section) — not a hold; the client's answer replaces it

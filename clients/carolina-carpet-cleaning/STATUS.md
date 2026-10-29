@@ -1,16 +1,17 @@
 # Carolina Carpet Cleaning - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** ready to start: section pilot in one run: an outline per page by script from the approved plan and the spec (no brief), one draft per page (each from its own fresh sub-agent, CM-043), then the one draft review sheet
-- **Waiting on:** Client (via Paul) — Your website says this about What the service includes (scope, inclusions): "Professional ; Client (via Paul) — We found different versions of Google rating and review count (date checked): "Disputed: c; Client (via Paul) — Your website says this about Price range, or what drives the cost: "People Also Ask How Mu
-- **Next action:** `/build carolina-carpet-cleaning write pilot` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open carolina-carpet-cleaning`) and types `/next carolina-carpet-cleaning` (agents: build (opus), draft-writer (opus), brief-writer (sonnet)) · model: Haiku chat
+- **What is happening now:** waiting for Paul's approval — the pilot drafts review sheet has 1 question(s) for you and 14 decided for you (clients/carolina-carpet-cleaning/build/pilot/drafts-review.md): reply "accept all", or "accept all except 7b, 12c" — an empty answer takes the recommended option
+- **Waiting on:** Paul — the pilot drafts review sheet has 1 question(s) for you and 14 decided for you (clients/ca; Client (via Paul) — Your website says this about What the service includes (scope, inclusions): "Professional ; Client (via Paul) — We found different versions of Google rating and review count (date checked): "Disputed: c
+- **Next action:** Paul types `/build carolina-carpet-cleaning review pilot drafts "accept all"` (or asks for changes first) · model: Haiku chat
 
-_Generated 2026-10-29T14:13 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T14:32 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
+| Paul | the pilot drafts review sheet has 1 question(s) for you and 14 decided for you (clients/carolina-carpet-cleaning/build/pilot/drafts-review.md): reply "accept all", or "accept all except 7b, 12c" — an empty answer takes the recommended option | 2026-10-29 | /build carolina-carpet-cleaning review pilot drafts "accept all" |
 | Client (via Paul) | Your website says this about What the service includes (scope, inclusions): "Professional Home Carpet Cleaning is an excellent investment in the appearance of your home and feel." (client site https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/ (data/c | 2026-10-29 | fact:svc-carpet-cleaning:service_scope |
 | Client (via Paul) | We found different versions of Google rating and review count (date checked): "Disputed: client stated 6 Google reviews, all 5 stars (2026-10-28); the DataforSEO Google reviews pull shows rating 5 from 29 reviews (2022-04-18 to 2026-06-01), Birdeye also 29. [NEED: the figure exactly as Google shows  | 2026-10-29 | fact:d:google_rating |
 | Client (via Paul) | Your website says this about Price range, or what drives the cost: "People Also Ask How Much Does It Cost To Have An Oriental Rug Cleaned?" (+19 more) (client site https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/ (dat | 2026-10-29 | fact:svc-carpet-cleaning:pricing |
@@ -107,6 +108,9 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-009** (open, not yet reviewed) 2026-10-29 · build:plan: status.py plan only adds/updates pages (setdefault); a page removed from the plan (loc-ladys-island, merged into /beaufort/ by settled site_plan_a1_ladys_island) stays in status.json pages as type location/planned. wheel.py plan/check reads status.json pages, so every service page and every location sibling table still links /ladys-island/ (wheel.py show svc-carpet-cleaning: 'Home Carpet Cleaning in Lady's Island -> /ladys-island/'). wheel.py check passes (0 errors) without seeing it. No client-session script removes or marks a page merged. — workaround: Plan JSON and review sheet are correct (5 locations, Beaufort replaces /ladys-island/). Needs a system fix before the wheel is generated for drafts: status.py plan should drop (or mark merged) pages no longer in the plan, and wheel.py should skip them. Not hand-editing status.json.
 - **F-010** (open, not yet reviewed) 2026-10-29 · build:plan: wheel.py check/asks keep reporting 'ASK home: 8 service pages but the homepage links at most 6 (HP-11)' after Paul settled it: asks() uses decision key wheel:home:services and never reads settled.py; the settled key is site_plan_a2_homepage_services. link-asks.json still lists it. — workaround: Review sheet records A2 as settled (b, all 8); the wheel already emits all 8 homepage service rows, so output is correct; the ASK line is noise.
 - **F-011** (open, not yet reviewed) 2026-10-29 · build:plan: render.py siteplan writes '<Client> - Site Plan - REVIEW.md' (the same name as the agent-written review sheet the stage doc asks for) from build/site-plan*.plan.json; this client's plan is build/site-plan.json, so the renderer cannot run, and if it did it would overwrite the sheet's Ask rows and checks with a bare view. — workaround: Review sheet written by the build agent per docs/stage-5-build-plan.md and registered with status.py plan; it matches site-plan.json page for page.
+- **F-012** (open, not yet reviewed) 2026-10-29 · build:write: evidence_pack.py review_topics gives 'service: <name>' topics no meaning-check key (keys=[]), so reviews.py checked cannot lift 'service: Carpet Cleaning' (9 reviewers, checked by meaning) out of 'keyword match only'; also reviews.py extract re-run wipes earlier meaning_checked rows (had to re-record 9 from log) — workaround: recorded service:Carpet Cleaning count 9 and re-recorded prior checks; writer treats service topic as attributed example
+- **F-013** (open, not yet reviewed) 2026-10-29 · build:write: outline.py: outlines still list /ladys-island/ in the location link lists (svc service-areas wheel, loc-bluffton sibling wheel) although site_plan_a1_ladys_island merges it into /beaufort/; and the formula-assigned category variant carries the 'Proposed:' prefix ('Proposed: carpet cleaning') — workaround: Drafts keep the wheel placeholder rows untouched; wheel.py at ship must drop /ladys-island/; writer used 'carpet cleaning'.
+- **F-014** (open, not yet reviewed) 2026-10-29 · build:write: reviews.py extract wipes earlier meaning checks, and evidence_pack.py gives 'service:' review topics no key a reviews.py checked entry can attach to (researcher F-012) — svc 'service: Carpet Cleaning' stays keyword-match-only after being checked (9 reviewers) — workaround: Researcher re-recorded the earlier checks from the log; writer used the topic only as attributed examples.
 
 ## Spend so far
 
@@ -124,15 +128,16 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 3 | 4,864,287 | $0.30 | $0.00 |
 | 4 · Audit | 2 | 23,152,524 | $9.42 | $0.00 |
 | 5 · Build plan and blockers | 3 | 6,366,697 | $3.46 | $0.00 |
-| 6 · Pilot, services, locations, ship (one session each) | 1 | 379,500 | $0.01 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 2 | 5,815,983 | $3.76 | $0.00 |
 | any stage | 6 | 2,868,263 | $0.16 | $0.00 |
-| **total** | 18 | 44,294,791 | $16.19 | $0.00 |
+| **total** | 19 | 49,731,274 | $19.94 | $0.00 |
 
 ## Spend by step (model)
 
 | Step | Runs | Tokens | Session USD | API USD |
 |---|---|---|---|---|
 | discovery:audit | 1 | 20,954,553 | $8.39 | $0.00 |
+| build:write | 1 | 5,436,483 | $3.75 | $0.00 |
 | build:plan | 2 | 5,257,940 | $2.76 | $0.00 |
 | discovery:discovery | 1 | 3,941,016 | $2.03 | $0.00 |
 | discovery:reconcile | 1 | 2,197,971 | $1.03 | $0.00 |
@@ -143,6 +148,6 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | crawl | 2 | 4,864,287 | $0.08 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
 | interview:facts | 1 | 379,500 | $0.01 | $0.00 |
-| **total** | 18 | 44,294,791 | $16.19 | $0.00 |
+| **total** | 19 | 49,731,274 | $19.94 | $0.00 |
 
-Last run: /interview 2026-10-29T13:47 — Facts interview pack for pilot batch (2 blocked pages, 4 questions) written and cleaned for the owner; Paul to send
+Last run: /build 2026-10-29T14:32 — Pilot drafts written (svc-carpet-cleaning, loc-bluffton) after researcher fills; review sheet: 1 Ask (H1 variant, kind 4), 14 decided for you; Kevin's process left [NEED] for Paul's own words
