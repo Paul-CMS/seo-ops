@@ -222,3 +222,27 @@ Spend: 120080 tokens · $0.00 (measured)
 - CHANGE #57 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Brand Guide.md | upload | old: previous version archived as Carolina Carpet Cleaning - Brand Guide - 2026-10-28 (4).md | new: Carolina Carpet Cleaning - Brand Guide.md · sha 81141522517a | result: done · copied (Drive for desktop syncs it)
 - CHANGE #58 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-28 (4).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-28 (4).md | result: done · renamed and moved, nothing deleted
 - CHANGE #59 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-28 (4).md | new: Carolina Carpet Cleaning - Status.md · sha a265f24d9a6a | result: done · copied (Drive for desktop syncs it)
+- REVIEW CONTINUED 2026-10-28T19:03 · after discovery:discovery (run 20261028-154310-discovery-622b) · Paul typed /next
+
+## RUN 20261028-190432-discovery-30f8 · STARTED · /discovery · 2026-10-28T19:04:32-05:00
+Step: discovery:facts-direct · session 7c6ef478-b294-4dd5-856f-1ccaf193e356
+Gates checked: marked:entity_record
+- CHANGE #60 [drive_file] drive:Carolina Carpet Cleaning - TMS/01 - Discovery and Audit/Deliverables/Carolina Carpet Cleaning - MANUAL - client-answers - 2026-10-28.md | upload | old: (new file) | new: Carolina Carpet Cleaning - MANUAL - client-answers - 2026-10-28.md · sha 0449fe669c79 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #61 [audit_step] S04 | Proof sheet built (Markdown + client Google Doc) | old:  | new: done | result: DONE
+### HANDOFF · /discovery · 2026-10-28 · run 20261028-190432-discovery-30f8
+- Paul chose facts-direct: no proof sheet to send; the owner's answers go straight into the record.
+- Owner's answers saved verbatim to `clients/carolina-carpet-cleaning/discovery/Carolina Carpet Cleaning - MANUAL - client-answers - 2026-10-28.md` and copied to Drive; marked as facts_direct and proof_sheet.
+- Approval 1 (`entity_approved proof_sheet_approved`) now covers the entity, the Decision Sheet and these client facts. Question 25 is still blank.
+
+**Changes (script):** 2 — drive_file ×1, audit_step ×1
+**Steps recorded (script):** S04 done
+### END HANDOFF
+## RUN 20261028-190432-discovery-30f8 · FINISHED · 2026-10-28T19:04:56-05:00
+Changes: 2 · Summary: facts-direct: owner's answers saved verbatim and marked as facts_direct and proof_sheet
+Spend: 777865 tokens · $0.01 (measured)
+- CHANGE #62 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-28 (5).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | new: _Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-28 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #63 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | upload | old: previous version archived as Carolina Carpet Cleaning - Handoff Log - 2026-10-28 (5).md | new: Carolina Carpet Cleaning - Handoff Log.md · sha d1e8a4dc9106 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #64 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-28 (5).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | new: _Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-28 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #65 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | upload | old: previous version archived as Carolina Carpet Cleaning - Document Checklist - 2026-10-28 (5).md | new: Carolina Carpet Cleaning - Document Checklist.md · sha 47f2d467e675 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #66 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-28 (5).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-28 (5).md | result: done · renamed and moved, nothing deleted
+- CHANGE #67 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-28 (5).md | new: Carolina Carpet Cleaning - Status.md · sha 6346b6337b7b | result: done · copied (Drive for desktop syncs it)

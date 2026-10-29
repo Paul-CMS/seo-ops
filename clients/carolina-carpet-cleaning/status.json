@@ -55,6 +55,20 @@
       },
       "at": "2026-10-28T15:50:29-05:00",
       "ts": 1793220629.408948
+    },
+    "facts_direct": {
+      "files": {
+        "clients/carolina-carpet-cleaning/discovery/Carolina Carpet Cleaning - MANUAL - client-answers - 2026-10-28.md": "0449fe669c79"
+      },
+      "at": "2026-10-28T19:04:48-05:00",
+      "ts": 1793232288.301461
+    },
+    "proof_sheet": {
+      "files": {
+        "clients/carolina-carpet-cleaning/discovery/Carolina Carpet Cleaning - MANUAL - client-answers - 2026-10-28.md": "0449fe669c79"
+      },
+      "at": "2026-10-28T19:04:48-05:00",
+      "ts": 1793232288.358152
     }
   },
   "pages": {},
@@ -86,15 +100,22 @@
       ],
       "at": "2026-10-28T15:50:29-05:00",
       "run": "20261028-154310-discovery-622b"
+    },
+    "S04": {
+      "outcome": "done",
+      "reason": "",
+      "outputs": [],
+      "at": "2026-10-28T19:04:56-05:00",
+      "run": "20261028-190432-discovery-30f8"
     }
   },
   "last_run": {
-    "run_id": "20261028-190054-answers-2d3d",
-    "command": "answers",
-    "finished": "2026-10-28T19:01:01-05:00",
-    "result": "Paul's open-question answers and owner note (legal name, DBA, client facts) recorded",
-    "changes": 0,
-    "step": "answers",
+    "run_id": "20261028-190432-discovery-30f8",
+    "command": "discovery",
+    "finished": "2026-10-28T19:04:56-05:00",
+    "result": "facts-direct: owner's answers saved verbatim and marked as facts_direct and proof_sheet",
+    "changes": 2,
+    "step": "discovery:facts-direct",
     "batch": null
   },
   "spend": {
@@ -108,7 +129,7 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-28T19:01:01-05:00",
+  "updated": "2026-10-28T19:04:56-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00"
@@ -231,6 +252,26 @@
       "by_agent": {
         "main": 0.0025
       }
+    },
+    {
+      "run": "20261028-190432-discovery-30f8",
+      "step": "discovery:facts-direct",
+      "tokens": 777865,
+      "usd": 0.0104,
+      "at": "2026-10-28T19:04:56-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0104,
+          "in": 12,
+          "out": 3414,
+          "cache_read": 769480,
+          "cache_write": 4959
+        }
+      },
+      "by_agent": {
+        "main": 0.0104
+      }
     }
   ],
   "sessions": {
@@ -247,9 +288,13 @@
       "at": "2026-10-28T15:50:49-05:00"
     }
   },
+  "rewrite4_routes": {
+    "at": "2026-10-28T19:03:00-05:00",
+    "rule": "REWRITE-4-PLAN.md D5"
+  },
   "review_pause": {
-    "run_id": "20261028-154310-discovery-622b",
-    "step": "discovery:discovery",
-    "at": "2026-10-28T15:50:49-05:00"
+    "run_id": "20261028-190432-discovery-30f8",
+    "step": "discovery:facts-direct",
+    "at": "2026-10-28T19:04:56-05:00"
   }
 }

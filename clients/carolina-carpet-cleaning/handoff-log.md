@@ -83,3 +83,12 @@ Generated from the safety log (clients/carolina-carpet-cleaning/log.md) — do n
 - FACT 2026-10-28T19:00 · run 20261028-190054-answers-2d3d · d-certifications-authorizations-factory-training (value, status, source) · client_confirmed · N/A · source Owner note, 2026-10-28 · by Paul
 - … and 18 more decision/fact/flag line(s) in log.md
 
+## /discovery · 2026-10-28 · run 20261028-190432-discovery-30f8
+
+- Paul chose facts-direct: no proof sheet to send; the owner's answers go straight into the record.
+- Owner's answers saved verbatim to `clients/carolina-carpet-cleaning/discovery/Carolina Carpet Cleaning - MANUAL - client-answers - 2026-10-28.md` and copied to Drive; marked as facts_direct and proof_sheet.
+- Approval 1 (`entity_approved proof_sheet_approved`) now covers the entity, the Decision Sheet and these client facts. Question 25 is still blank.
+
+**Changes (script):** 2 — drive_file ×1, audit_step ×1
+**Steps recorded (script):** S04 done
+
