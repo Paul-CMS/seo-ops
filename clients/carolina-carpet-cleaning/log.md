@@ -1141,3 +1141,9 @@ Grid: clients/carolina-carpet-cleaning/build/evidence/svc-tile-grout-cleaning.gr
 Reason: Paul: n/a to all facts for content creation; facts to come from the research pass, not the interview
 - CHANGE #369 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (23).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (23).md | result: done · renamed and moved, nothing deleted
 - CHANGE #370 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (23).md | new: Carolina Carpet Cleaning - Status.md · sha 6bdf719efaba | result: done · copied (Drive for desktop syncs it)
+
+## WAIVER · 2026-10-29T14:54:35-05:00 · evidence gate · page svc-commercial-carpet-cleaning · by Paul
+Grid: clients/carolina-carpet-cleaning/build/evidence/svc-commercial-carpet-cleaning.grid.md (sha 71ccafedd38f) · was BLOCK: 2 required facts are not known (block at 2)
+Reason: Paul: n/a to all facts for content creation; facts to come from the research pass, not the interview
+- CHANGE #371 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (24).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-29 (24).md | result: done · renamed and moved, nothing deleted
+- CHANGE #372 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-29 (24).md | new: Carolina Carpet Cleaning - Status.md · sha d361e49297bb | result: done · copied (Drive for desktop syncs it)
