@@ -125,22 +125,22 @@
       "run": "20261028-190432-discovery-30f8"
     },
     "S05": {
-      "outcome": "failed",
-      "reason": "Crawled the wrong domain (carolinacarpetcleaning.com, task 10290009-1266-0216-0000-9b27d219671b) instead of the settled primary domain carpetcleaningblufftonsc.com (Brand Guide A9). Re-crawl needed: estimate 132 pages, about $0.02.",
+      "outcome": "done",
+      "reason": "",
       "outputs": [
-        "clients/carolina-carpet-cleaning/inputs/crawl/Carolina Carpet Cleaning - DFS - crawl-config - 2026-10-28.md"
+        "clients/carolina-carpet-cleaning/inputs/crawl/"
       ],
-      "at": "2026-10-28T19:36:53-05:00",
-      "run": "20261028-193504-discovery-da8a"
+      "at": "2026-10-29T07:50:17-05:00",
+      "run": "20261028-204638-crawl-94cd"
     },
     "S05b": {
-      "outcome": "failed",
-      "reason": "Page text is for the wrong site (carolinacarpetcleaning.com, 4 pages); re-capture after the S05 re-crawl of carpetcleaningblufftonsc.com.",
+      "outcome": "done",
+      "reason": "",
       "outputs": [
-        "clients/carolina-carpet-cleaning/data/crawl/page-text.csv"
+        "data/crawl/page-text.csv"
       ],
-      "at": "2026-10-28T19:36:53-05:00",
-      "run": "20261028-193504-discovery-da8a"
+      "at": "2026-10-29T07:50:17-05:00",
+      "run": "20261028-204638-crawl-94cd"
     },
     "S06": {
       "outcome": "done",
@@ -222,16 +222,16 @@
     }
   },
   "last_run": {
-    "run_id": "20261028-191341-discovery-ec47",
-    "command": "discovery",
-    "finished": "2026-10-28T19:27:12-05:00",
-    "result": "Data pulls: rankings, PAA (15 questions), reviews (29), competitor coverage (36 pages); PAA routed and reviews checked by meaning",
-    "changes": 12,
-    "step": "discovery:data",
+    "run_id": "20261028-204638-crawl-94cd",
+    "command": "crawl",
+    "finished": "2026-10-29T07:50:27-05:00",
+    "result": "Crawled 92 pages of carpetcleaningblufftonsc.com (task 10290153, basic), $0.0198; 89 page texts captured; files uploaded to Drive",
+    "changes": 27,
+    "step": "crawl",
     "batch": null
   },
   "spend": {
-    "dataforseo_usd": 1.01124
+    "dataforseo_usd": 1.03104
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
@@ -245,7 +245,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-28T20:46:35-05:00",
+  "updated": "2026-10-29T07:50:27-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
@@ -416,6 +416,26 @@
       "tokens": 0,
       "usd": 0.22,
       "at": "2026-10-28T19:27:12-05:00"
+    },
+    {
+      "run": "20261028-204638-crawl-94cd",
+      "step": "crawl",
+      "tokens": 3346813,
+      "usd": 0.0576,
+      "at": "2026-10-29T07:50:27-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0576,
+          "in": 60,
+          "out": 14067,
+          "cache_read": 3241824,
+          "cache_write": 90862
+        }
+      },
+      "by_agent": {
+        "main": 0.0576
+      }
     }
   ],
   "sessions": {
@@ -436,6 +456,12 @@
       "step": "crawl",
       "first_run": "20261028-190920-crawl-36cb",
       "at": "2026-10-28T19:11:13-05:00"
+    },
+    "37d972bc-8107-49b9-97e5-88ffbc585ad1": {
+      "key": "data",
+      "step": "crawl",
+      "first_run": "20261028-204638-crawl-94cd",
+      "at": "2026-10-29T07:50:27-05:00"
     }
   },
   "rewrite4_routes": {

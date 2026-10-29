@@ -120,3 +120,18 @@ Generated from the safety log (clients/carolina-carpet-cleaning/log.md) — do n
 **Changes (script):** 12 — audit_step ×9, data_pull ×3
 **Steps recorded (script):** S06 done, S07 done, S19 done, S08 skipped, S09 skipped, S10 skipped, S11 skipped, S20 skipped, S21 skipped
 
+## /crawl · 2026-10-29 · run 20261028-204638-crawl-94cd
+
+- Crawl of carpetcleaningblufftonsc.com finished: 92 pages crawled, stop reason empty_queue, DataforSEO task 10290153, basic mode, max 132 pages.
+- Cost: $0.0198 for the one paid post this run (task 10290153). Earlier task 10290139 was stuck in queue (error 40602) and was never completed.
+- Output domain confirmed: carpetcleaningblufftonsc.com (crawl-state and crawl-config match).
+- Files in clients/carolina-carpet-cleaning/inputs/crawl/ (15) uploaded to Drive 01 - Discovery and Audit/Evidence/. Two were already unchanged on Drive.
+- data/crawl/page-text.csv: 89 of 89 pages captured, 0 failed, 0 disallowed by robots.txt. No charge.
+- Steps recorded: S05 done, S05b done.
+- Not done: the audit. Nothing was started past the crawl.
+- Open issue: DataforSEO queue delays (F-002, F-003). Retries of the same run may post new paid tasks until the script is fixed in a system session.
+
+**Changes (script):** 27 — drive_file ×25, audit_step ×2
+- FLAG 2026-10-28T20:50 · run 20261028-204638-crawl-94cd · F-003 · DataforSEO task 10290139 (carpetcleaningblufftonsc.com, basic, 132 pages) stays 'In Queue' (error 40602); resume returns exit 8 on e…
+**Steps recorded (script):** S05 done, S05b done
+

@@ -1,11 +1,11 @@
 # Carolina Carpet Cleaning - Status
 
 - **Stage 4 of 8 — Audit**
-- **What is happening now:** ready to start: the audit: entity → architecture → page conformance → technical, then the fresh-context review
+- **What is happening now:** Stage 3 (Data) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open carolina-carpet-cleaning) and type /next carolina-carpet-cleaning. Next there: /discovery carolina-carpet-cleaning audit (the audit: entity → architecture → page conformance → technical, then the fresh-context review)
 - **Waiting on:** nobody
-- **Next action:** `/discovery carolina-carpet-cleaning audit` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open carolina-carpet-cleaning`) and types `/next carolina-carpet-cleaning` (agents: discovery-audit (opus), audit-reviewer (opus)) · model: Haiku chat
+- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-28T20:46 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T07:50 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -75,20 +75,20 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **rankings-raw** (2 file(s), e.g. `data/rankings/raw/best-variants.json`) — read by the step that reads rankings
 - **competitors** (2 file(s), e.g. `data/competitors/coverage.json`) — read by build:plan
 - **crawl-page-text** (2 file(s), e.g. `data/crawl/crawl-summary.csv`) — read by discovery:audit, build:evidence
-- **crawl-raw** (35 file(s), e.g. `inputs/crawl/crawl-state-2026-10-28-10290009.json`) — read by the step that reads crawl-page-text
+- **crawl-raw** (36 file(s), e.g. `inputs/crawl/crawl-state-2026-10-28-10290009.json`) — read by the step that reads crawl-page-text
 - **imported-exports** (32 file(s), e.g. `inputs/Carolina Carpet Cleaning - CMS - export-all-urls - 2026-10-28.csv`) — read by discovery:audit
+- **cms-page-inventory** (1 file(s), e.g. `data/novamira-page-inventory-2026-10-28.md`) — read by discovery:audit
 - **discovery-record** (2 file(s), e.g. `discovery/Carolina Carpet Cleaning - Discovery Record - REVIEW.md`) — read by build:evidence, build:facts
 - **facts** (1 file(s), e.g. `facts.json`) — read by build:evidence, build:facts
 - **settled** (1 file(s), e.g. `decisions-settled.md`) — read by build:evidence, build:facts, build:brief, build:draft, build:drafts, build:write, build:plan
 
 ## Flagged for Paul (system)
 
-- **F-001** (open, not yet reviewed) 2026-10-28 · discovery:audit: crawl.py run/estimate accept any --domain without checking it against the client's recorded primary domain; run 20261028-190920-crawl-36cb crawled carolinacarpetcleaning.com (another business) instead of carpetcleaningblufftonsc.com, and pipeline S12 then mixed that crawl with the right site's Screaming Frog export without warning (crosschecks host = carolinacarpetcleaning.com, redirect screen host = carpetcleaningblufftonsc.com). — workaround: Audit stopped before any finding; S05, S05b, S12 recorded failed; Paul re-runs /crawl with --domain carpetcleaningblufftonsc.com, then /discovery audit.
-- **F-002** (open, not yet reviewed) 2026-10-28 · crawl: crawl.py run with --new-crawl posts a new on_page/task_post on every call (34 state files, all carpetcleaningblufftonsc.com, ~$0.0198 each, ~$0.67 total) instead of resuming the one queued task 40602; the 'never posts a second task' rule does not hold. — workaround: Stopped retrying. No further crawl calls until Paul approves a fresh start; crawl.py needs a system fix (resume existing state without --new-crawl).
+- **F-003** (open, not yet reviewed) 2026-10-28 · crawl: DataforSEO task 10290139 (carpetcleaningblufftonsc.com, basic, 132 pages) stays 'In Queue' (error 40602); resume returns exit 8 on every call. Earlier retries posted 34 paid tasks (about $0.67) because crawl.py run does not stop on exit 8 before reposting; see F-002. — workaround: Stopped after three free resume attempts. No new paid task posted. Run 20261028-204638-crawl-94cd left open for Paul's decision.
 
 ## Spend so far
 
-- DataforSEO: $1.01 (of which failed tasks $0.01)
+- DataforSEO: $1.03 (of which failed tasks $0.01)
 - Claude API (llm.py): $0.00 over 0 call(s)
 
 ## Spend by stage (model)
@@ -99,9 +99,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 |---|---|---|---|---|
 | 1 · Setup | 1 | 1,944,639 | $0.80 | $0.00 |
 | 2 · Discovery | 2 | 4,718,881 | $2.04 | $0.00 |
-| 3 · Data | 2 | 1,517,474 | $0.24 | $0.00 |
+| 3 · Data | 3 | 4,864,287 | $0.30 | $0.00 |
 | any stage | 3 | 816,224 | $0.13 | $0.00 |
-| **total** | 8 | 8,997,218 | $3.22 | $0.00 |
+| **total** | 9 | 12,344,031 | $3.27 | $0.00 |
 
 ## Spend by step (model)
 
@@ -111,8 +111,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
 | discovery:data | 1 | 0 | $0.22 | $0.00 |
 | answers | 3 | 816,224 | $0.13 | $0.00 |
-| crawl | 1 | 1,517,474 | $0.02 | $0.00 |
+| crawl | 2 | 4,864,287 | $0.08 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
-| **total** | 8 | 8,997,218 | $3.22 | $0.00 |
+| **total** | 9 | 12,344,031 | $3.27 | $0.00 |
 
-Last run: /discovery 2026-10-28T19:27 — Data pulls: rankings, PAA (15 questions), reviews (29), competitor coverage (36 pages); PAA routed and reviews checked by meaning
+Last run: /crawl 2026-10-29T07:50 — Crawled 92 pages of carpetcleaningblufftonsc.com (task 10290153, basic), $0.0198; 89 page texts captured; files uploaded to Drive
