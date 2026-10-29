@@ -26,3 +26,4 @@ Generated from status.json and the safety log — do not edit. Record a decision
 
 - 2026-10-28T19:52 20261028-193504-discovery-da8a — Crawl pointed at carolinacarpetcleaning.com (wrong business). Aborted on Paul's instruction to re-crawl carpetcleaningblufftonsc.com.
 - 2026-10-28T20:46 20261028-195204-crawl-e445 — Paul chose to abort: DataforSEO task 40602 stuck In Queue across retries; new crawl run starts from the existing task 10290139 (resume, no new charge)
+- 2026-10-29T10:25 20261029-101522-build-f36f — Stopped before any change: route was unset; Paul set route A and chose abort to restart blockers fresh

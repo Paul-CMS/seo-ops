@@ -1,11 +1,11 @@
 # Carolina Carpet Cleaning - Status
 
 - **Stage 5 of 8 — Build plan and blockers**
-- **What is happening now:** Stage 4 (Audit) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open carolina-carpet-cleaning) and type /next carolina-carpet-cleaning. Next there: /build carolina-carpet-cleaning blockers (hand the technical blockers to Jonie (one handoff from the checklist the audit wrote) — they are fixed while the client's facts come back)
+- **What is happening now:** ready to start: hand the technical blockers to Jonie (one handoff from the checklist the audit wrote) — they are fixed while the client's facts come back
 - **Waiting on:** nobody
-- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
+- **Next action:** `/build carolina-carpet-cleaning blockers` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open carolina-carpet-cleaning`) and types `/next carolina-carpet-cleaning` (agents: build (opus), researcher (sonnet)) · model: Haiku chat
 
-_Generated 2026-10-29T10:13 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T10:25 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
