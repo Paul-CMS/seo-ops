@@ -17,15 +17,15 @@ publication.
 | # | Field | Value | Status |
 |---|---|---|---|
 | 1 | Brand entity (GBP name, exactly) | Carolina Carpet Cleaning | Submitted 2026-10-28 · was: Unknown |
-| 2 | GBP primary category = the category entity | Proposed: Carpet cleaning service → Wikipedia 'Carpet cleaning' (Q5045777). GBP primary category not yet read (dashboard/Maps not machine-readable; Gwen manual lookup) | Submitted 2026-10-28 · was: Unknown |
+| 2 | GBP primary category = the category entity | Carpet cleaning service | Client Confirmed 2026-10-28 · was: Submitted |
 | 3 | Category variants (4–6) | Proposed: carpet cleaning · carpet cleaning service · carpet cleaners · carpet cleaning company · carpet cleaner (search volume checked in the data step) | Submitted 2026-10-28 · was: Unknown |
-| 4 | Storefront or SAB | SAB (service-area business); the address still appears on the website (helps map rankings) | Paul Approved 2026-10-28 · was: Unknown |
+| 4 | Storefront or SAB | SAB; address on website only (273 Club Gate, Bluffton, SC 29910) matches GBP | Paul Approved 2026-10-28 · was: Unknown |
 | 5 | Area entity | Hilton Head Island metropolitan area | Paul Approved 2026-10-28 · was: Submitted |
 | 6 | Area variants (3–5) | SEO titles: Hilton Head Island Metro Area · user-facing titles and homepage H1: South Carolina Lowcountry | Paul Approved 2026-10-28 · was: Submitted |
 | 7 | Separator standard | ' - ' | Submitted 2026-10-28 · was: Unknown |
 | 8 | Phone | (843) 575-6286 | Paul Approved 2026-10-28 · was: Disputed |
 | 9 | Primary domain (canonical host form) | https://carpetcleaningblufftonsc.com/ (http and www 301 to it; rel=canonical matches) | Internally Verified 2026-10-28 · was: Unknown |
-| 10 | Legal entity name | | |
+| 10 | Legal entity name | Carolina Floor Cleaning Pros | Client Confirmed 2026-10-28 · was: Unknown |
 | 11 | Exact URL in the GBP Website field | https://carpetcleaningblufftonsc.com/ | Paul Approved 2026-10-28 · was: Unknown |
 | | Facebook page (Beaufort) | https://www.facebook.com/carpetcleaningbeaufortsc | Paul Approved 2026-10-28 · was: Unknown |
 
@@ -96,26 +96,26 @@ Everything a writer may state. **Not here = does not exist.**
 
 | Fact | Value | Status | Source |
 |---|---|---|---|
-| Founding year / years in business | 1993 (claimed) | Submitted 2026-10-28 · was: Unknown | https://carpetcleaningblufftonsc.com/ ; https://carpetcleaningblufftonsc.com/about/ ; press release 2026-04-30 (marketersmedia) — "'In Business Since 1993' (home); 'has served the South Carolina Lowcountry since 1993' (about); 'Founded in 1993' (press release). Domain registered 2019-11-12; SOS date not yet read." |
-| Legal entity + DBA | | | |
-| Licence numbers and classes | | | |
-| Insurance / bonded status | | | |
-| Certifications, authorizations, factory training | | | |
-| Association memberships | | | |
-| Warranty terms | | | |
-| Guarantees (response time, on-time, satisfaction) | | | |
-| Awards and rankings | | | |
-| Google rating and review count — exactly as Google shows them on the day, with the date ("4.9 · 67 reviews, 2026-10-07"; never a rounded 5.0) | | | |
-| Team size / trucks / jobs completed | | | |
-| Financing — available, provider, terms | | | |
-| Free estimate — and what free means | Free estimate before work begins; no deposit to schedule (what 'free' covers not stated) | Submitted 2026-10-28 · was: Unknown | https://carpetcleaningblufftonsc.com/ — "No deposit is required to schedule an appointment" |
-| Emergency / after-hours reality | | | |
-| Minimum service call or trip charge | | | |
-| Payment methods | | | |
-| Services subcontracted out | | | |
-| Named staff for on-page use | Kevin Snow (owner, per press release contact; reviews name 'Kevin') | Submitted 2026-10-28 · was: Unknown | press release 2026-04-30 https://news.marketersmedia.com/carolina-carpet-cleaning-celebrates-32-years-of-professional-floor-and-carpet-cleaning-in-bluffton-and-the-lowcountry/89190379 ; About page image file Owner-Kevin-Snow — "Contact Info: Name: Kevin Snow; 'you're getting the owner on every job'" |
+| Founding year / years in business | 1993 - operated locally as a family-owned business since 1993 | Client Confirmed 2026-10-28 · was: Submitted | Owner note, passed on by Paul 2026-10-28 — "'In Business Since 1993' (home); 'has served the South Carolina Lowcountry since 1993' (about); 'Founded in 1993' (press release). Domain registered 2019-11-12; SOS date not yet read." |
+| Legal entity + DBA | Carolina Carpet Cleaning (DBA / trade name) | Client Confirmed 2026-10-28 · was: Unknown | Owner note, passed on by Paul 2026-10-28 |
+| Licence numbers and classes | No current licence number provided | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Insurance / bonded status | General workmanship insurance | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Certifications, authorizations, factory training | N/A | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Association memberships | N/A | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Warranty terms | N/A | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Guarantees (response time, on-time, satisfaction) | N/A | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Awards and rankings | N/A | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Google rating and review count — exactly as Google shows them on the day, with the date ("4.9 · 67 reviews, 2026-10-07"; never a rounded 5.0) | 6 Google reviews, all 5 stars (as of 2026-10-28; client-stated, re-check on Google when pulled) | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Team size / trucks / jobs completed | Kevin is the team; one truck; thousands of jobs completed | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Financing — available, provider, terms | N/A | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Free estimate — and what free means | Free estimate; no deposit to schedule | Client Confirmed 2026-10-28 · was: Submitted | Owner note, 2026-10-28 — "No deposit is required to schedule an appointment" |
+| Emergency / after-hours reality | N/A | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Minimum service call or trip charge | N/A | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Payment methods | Normal payment methods | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Services subcontracted out | Not subcontracted out | Client Confirmed 2026-10-28 · was: Unknown | Owner note, 2026-10-28 |
+| Named staff for on-page use | Kevin Snow (owner) | Client Confirmed 2026-10-28 · was: Submitted | Owner note, 2026-10-28 — "Contact Info: Name: Kevin Snow; 'you're getting the owner on every job'" |
 | Licensed practitioner for health-claim sign-off *(medical / chiropractic)* | | | |
-| Blog author — a real person (CM-039; from the Decision Sheet) | | | |
+| Blog author — a real person (CM-039; from the Decision Sheet) | Kevin Snow (owner) | Paul Approved 2026-10-28 · was: Unknown | Paul, chat 2026-10-28: Kevin Snow confirmed as author |
 | GBP link | https://maps.app.goo.gl/vvsrqH6TxL815KWB6 | Paul Approved 2026-10-28 · was: Unknown | Paul, chat 2026-10-28 |
 | GA4 access | none | Paul Approved 2026-10-28 · was: Unknown | Paul, chat 2026-10-28 |
 

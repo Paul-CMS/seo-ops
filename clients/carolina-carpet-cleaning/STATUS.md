@@ -5,7 +5,7 @@
 - **Waiting on:** Paul — discovery:discovery finished (run 20261028-154310-discovery-622b) and that stage is in rev
 - **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-28T16:00 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-28T19:01 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
@@ -59,8 +59,8 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 |---|---|---|---|---|
 | 1 · Setup | 1 | 1,944,639 | $0.80 | $0.00 |
 | 2 · Discovery | 1 | 3,941,016 | $2.03 | $0.00 |
-| any stage | 2 | 696,144 | $0.13 | $0.00 |
-| **total** | 4 | 6,581,799 | $2.96 | $0.00 |
+| any stage | 3 | 816,224 | $0.13 | $0.00 |
+| **total** | 5 | 6,701,879 | $2.97 | $0.00 |
 
 ## Spend by step (model)
 
@@ -68,7 +68,7 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 |---|---|---|---|---|
 | discovery:discovery | 1 | 3,941,016 | $2.03 | $0.00 |
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
-| answers | 2 | 696,144 | $0.13 | $0.00 |
-| **total** | 4 | 6,581,799 | $2.96 | $0.00 |
+| answers | 3 | 816,224 | $0.13 | $0.00 |
+| **total** | 5 | 6,701,879 | $2.97 | $0.00 |
 
-Last run: /answers 2026-10-28T16:00 — Paul's answers recorded: phone, area naming, 6 live location pages, redirect plan, Beaufort Facebook
+Last run: /answers 2026-10-28T19:01 — Paul's open-question answers and owner note (legal name, DBA, client facts) recorded

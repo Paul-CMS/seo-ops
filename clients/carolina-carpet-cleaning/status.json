@@ -89,10 +89,10 @@
     }
   },
   "last_run": {
-    "run_id": "20261028-155947-answers-b36e",
+    "run_id": "20261028-190054-answers-2d3d",
     "command": "answers",
-    "finished": "2026-10-28T16:00:04-05:00",
-    "result": "Paul's answers recorded: phone, area naming, 6 live location pages, redirect plan, Beaufort Facebook",
+    "finished": "2026-10-28T19:01:01-05:00",
+    "result": "Paul's open-question answers and owner note (legal name, DBA, client facts) recorded",
     "changes": 0,
     "step": "answers",
     "batch": null
@@ -108,7 +108,7 @@
     "next": "We are researching your business before we ask you anything."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-28T16:00:04-05:00",
+  "updated": "2026-10-28T19:01:01-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00"
@@ -210,6 +210,26 @@
       },
       "by_agent": {
         "main": 0.0055
+      }
+    },
+    {
+      "run": "20261028-190054-answers-2d3d",
+      "step": "answers",
+      "tokens": 120080,
+      "usd": 0.0025,
+      "at": "2026-10-28T19:01:01-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0025,
+          "in": 2,
+          "out": 1060,
+          "cache_read": 115123,
+          "cache_write": 3895
+        }
+      },
+      "by_agent": {
+        "main": 0.0025
       }
     }
   ],
