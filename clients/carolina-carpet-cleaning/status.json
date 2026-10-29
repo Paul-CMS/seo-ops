@@ -139,19 +139,88 @@
       "outputs": [],
       "at": "2026-10-28T19:11:02-05:00",
       "run": "20261028-190920-crawl-36cb"
+    },
+    "S06": {
+      "outcome": "done",
+      "reason": "",
+      "outputs": [
+        "clients/carolina-carpet-cleaning/data/reviews/"
+      ],
+      "at": "2026-10-28T19:24:30-05:00",
+      "run": "20261028-191341-discovery-ec47"
+    },
+    "S07": {
+      "outcome": "done",
+      "reason": "",
+      "outputs": [
+        "clients/carolina-carpet-cleaning/data/rankings/"
+      ],
+      "at": "2026-10-28T19:24:30-05:00",
+      "run": "20261028-191341-discovery-ec47"
+    },
+    "S19": {
+      "outcome": "done",
+      "reason": "",
+      "outputs": [
+        "clients/carolina-carpet-cleaning/data/paa/"
+      ],
+      "at": "2026-10-28T19:24:30-05:00",
+      "run": "20261028-191341-discovery-ec47"
+    },
+    "S08": {
+      "outcome": "skipped",
+      "reason": "backlinks not in the approved data pulls; run in a later pass",
+      "outputs": [],
+      "at": "2026-10-28T19:27:10-05:00",
+      "run": "20261028-191341-discovery-ec47"
+    },
+    "S09": {
+      "outcome": "skipped",
+      "reason": "no BrightLocal or Local Dominator grid files on file yet",
+      "outputs": [],
+      "at": "2026-10-28T19:27:10-05:00",
+      "run": "20261028-191341-discovery-ec47"
+    },
+    "S10": {
+      "outcome": "skipped",
+      "reason": "no Local Dominator grid PDFs on file yet",
+      "outputs": [],
+      "at": "2026-10-28T19:27:11-05:00",
+      "run": "20261028-191341-discovery-ec47"
+    },
+    "S11": {
+      "outcome": "skipped",
+      "reason": "GSC exports are on file; analysis is a later pass",
+      "outputs": [],
+      "at": "2026-10-28T19:27:11-05:00",
+      "run": "20261028-191341-discovery-ec47"
+    },
+    "S20": {
+      "outcome": "skipped",
+      "reason": "WordPress check (wp-check) not run in this pass",
+      "outputs": [],
+      "at": "2026-10-28T19:27:11-05:00",
+      "run": "20261028-191341-discovery-ec47"
+    },
+    "S21": {
+      "outcome": "skipped",
+      "reason": "query fan-out only with --fanout; not requested",
+      "outputs": [],
+      "at": "2026-10-28T19:27:11-05:00",
+      "run": "20261028-191341-discovery-ec47"
     }
   },
   "last_run": {
-    "run_id": "20261028-190920-crawl-36cb",
-    "command": "crawl",
-    "finished": "2026-10-28T19:11:13-05:00",
-    "result": "Crawled 8 pages, $0.003",
-    "changes": 16,
-    "step": "crawl",
+    "run_id": "20261028-191341-discovery-ec47",
+    "command": "discovery",
+    "finished": "2026-10-28T19:27:12-05:00",
+    "result": "Data pulls: rankings, PAA (15 questions), reviews (29), competitor coverage (36 pages); PAA routed and reviews checked by meaning",
+    "changes": 12,
+    "step": "discovery:data",
     "batch": null
   },
   "spend": {
-    "dataforseo_usd": 0.003
+    "dataforseo_usd": 0.21924
   },
   "client_view": {
     "_note": "The only client-facing part of this file, built from methodology/client-phrases.json. Nothing else here is ever shown to a client.",
@@ -165,7 +234,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-28T19:11:13-05:00",
+  "updated": "2026-10-28T19:27:12-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
@@ -329,6 +398,13 @@
       "by_agent": {
         "main": 0.0201
       }
+    },
+    {
+      "run": "20261028-191341-discovery-ec47",
+      "step": "discovery:data",
+      "tokens": 0,
+      "usd": 0.22,
+      "at": "2026-10-28T19:27:12-05:00"
     }
   ],
   "sessions": {
@@ -354,5 +430,19 @@
   "rewrite4_routes": {
     "at": "2026-10-28T19:03:00-05:00",
     "rule": "REWRITE-4-PLAN.md D5"
+  },
+  "evidence": {
+    "google_rating": {
+      "rating": 5,
+      "reviews_count": 29,
+      "checked": "2026-10-28",
+      "source": "DataforSEO Business Data",
+      "pulled": 29
+    }
+  },
+  "review_pause": {
+    "run_id": "20261028-191341-discovery-ec47",
+    "step": "discovery:data",
+    "at": "2026-10-28T19:27:12-05:00"
   }
 }

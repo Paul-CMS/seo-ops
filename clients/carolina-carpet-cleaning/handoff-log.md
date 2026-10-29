@@ -105,3 +105,18 @@ Generated from the safety log (clients/carolina-carpet-cleaning/log.md) — do n
 **Changes (script):** 16 — drive_file ×14, audit_step ×2
 **Steps recorded (script):** S05 done, S05b done
 
+## /discovery · 2026-10-28 · run 20261028-191341-discovery-ec47
+
+- Paul approved the data pulls at about $0.57 (free estimates). Actual spend about $0.22.
+- Rankings (Hilton Head Island, Bluffton, Beaufort, Ridgeland, Hardeeville, Lady's Island): 27 keyword rows, 0 cannibalization clusters. data/rankings/.
+- PAA (4 cities, cap 20): 15 distinct questions. Two queries hit DataforSEO server errors; the retry worked. Rows routed by hand on the agent route (paa-routing.md): 8 service FAQs, 4 blog topics, 3 dropped, 0 location FAQs. Four cost questions need the client's own prices.
+- Reviews: 29 pulled, rating 5. Meaning check done with reviews.py checked. Known themes: technician named Kevin (11), fast response (6), booking timing (4). Below threshold: explains the work (2), other surfaces (1). Guarantees, pricing and clean-up were false keyword matches (0).
+- Competitor coverage: 36 pages across 12 services, data/competitors/coverage.md. One SERP hit a server error; the retry worked.
+- Steps: S06, S07 and S19 recorded done. Competitor coverage has no numbered step.
+- Watch: the "Facts customers report" table in customer-language.md still shows the old keyword counts. The checked counts are in facts.json section R. Review row 20 ends with a reviewer's first name; never quote it.
+- Not run (outside the approval): backlinks (S08), citations, local grid (S09/S10), GSC (S11).
+- Summary for Paul: clients/carolina-carpet-cleaning/handoffs/run-20261028-191341-discovery-ec47.summary.md
+
+**Changes (script):** 12 — audit_step ×9, data_pull ×3
+**Steps recorded (script):** S06 done, S07 done, S19 done, S08 skipped, S09 skipped, S10 skipped, S11 skipped, S20 skipped, S21 skipped
+

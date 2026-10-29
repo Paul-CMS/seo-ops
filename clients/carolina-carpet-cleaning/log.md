@@ -340,3 +340,51 @@ Spend: 1517474 tokens · $0.02 (measured)
 - CHANGE #95 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | upload | old: previous version archived as Carolina Carpet Cleaning - Document Checklist - 2026-10-28 (7).md | new: Carolina Carpet Cleaning - Document Checklist.md · sha f5ea4b5b130a | result: done · copied (Drive for desktop syncs it)
 - CHANGE #96 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-28 (7).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-28 (7).md | result: done · renamed and moved, nothing deleted
 - CHANGE #97 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-28 (7).md | new: Carolina Carpet Cleaning - Status.md · sha 7caa24c74041 | result: done · copied (Drive for desktop syncs it)
+
+## RUN 20261028-191341-discovery-ec47 · STARTED · /discovery · 2026-10-28T19:13:41-05:00
+Step: discovery:data · session fee0d35b-3e97-48a1-9488-066aeeec24d6
+Gates checked: proof_sheet_approved
+- CHANGE #98 [data_pull] carpetcleaningblufftonsc.com | rankings | old:  | new: 27 rows, 0 clusters | result: DONE
+- CHANGE #99 [data_pull] Carolina Carpet Cleaning | reviews task | old:  | new: 10290014-1266-0298-0000-a4159a7e0360 | result: POSTED
+- CHANGE #100 [data_pull] Hilton Head Island,Bluffton,Beaufort,Ridgeland | PAA | old:  | new: 20 queries, 15 questions | result: DONE
+- CHANGE #101 [audit_step] S06 | Reviews pull: Google rating, count, recent review text (no r | old:  | new: done | result: DONE
+- CHANGE #102 [audit_step] S07 | Rankings + cannibalization: every ranked keyword per URL (to | old:  | new: done | result: DONE
+- CHANGE #103 [audit_step] S19 | People Also Ask: core services × primary city + top 3 cities | old:  | new: done | result: DONE
+- REVIEW FACTS 2026-10-28T19:25 · run 20261028-191341-discovery-ec47 · 8 fact(s)/topic(s) found in reviews, 6 with 3+ different reviewers (customer_reported, CM-057) · data/reviews/review-facts.json
+- REVIEW FACT CHECKED 2026-10-28T19:25 · run 20261028-191341-discovery-ec47 · staff:Kevin: 11 different reviewer(s) after reading by meaning (researcher) · 11 reviewers name Kevin as the technician who did the work (a 12th says 'Mr. Snow'; same person only if the client confirms Kevin Snow)
+- REVIEW FACT CHECKED 2026-10-28T19:25 · run 20261028-191341-discovery-ec47 · fact:guarantees: 0 different reviewer(s) after reading by meaning (researcher) · False match: the sentences are about arriving on time, not a guarantee or warranty. No reviewer mentions one.
+- REVIEW FACT CHECKED 2026-10-28T19:25 · run 20261028-191341-discovery-ec47 · fact:pricing: 0 different reviewer(s) after reading by meaning (researcher) · No price, rate or pricing method stated. 8 reviewers call the price fair/reasonable/good value: an opinion for customer language, not a pricing fact
+- REVIEW FACT CHECKED 2026-10-28T19:25 · run 20261028-191341-discovery-ec47 · fact:timeframe: 4 different reviewer(s) after reading by meaning (researcher) · Customer examples of quick booking: same day (2), next day on a weekend (1), same week (1). Use only as cited customer examples, never as a company promise
+- REVIEW FACT CHECKED 2026-10-28T19:25 · run 20261028-191341-discovery-ec47 · fact:response_time: 6 different reviewer(s) after reading by meaning (researcher) · Customers say he replied or booked quickly: responded quickly, called back almost at once on a Saturday, came the same day (2), prompt/responsive with scheduling (2). Customer examples only
+- REVIEW FACT CHECKED 2026-10-28T19:25 · run 20261028-191341-discovery-ec47 · practice:clean-up: 0 different reviewer(s) after reading by meaning (researcher) · False match: the sentences describe the cleaned carpet, not tidying up after the job. No reviewer mentions it.
+- REVIEW FACT CHECKED 2026-10-28T19:25 · run 20261028-191341-discovery-ec47 · practice:explains: 2 different reviewer(s) after reading by meaning (researcher) · explained what he was doing and what to expect (1); honest appraisal of the problem (1); a third (appreciated his recommendations) is borderline, not counted
+- REVIEW FACT CHECKED 2026-10-28T19:25 · run 20261028-191341-discovery-ec47 · materials: 1 different reviewer(s) after reading by meaning (researcher) · Surfaces besides carpet, each below 3: sofas/upholstery (2 reviewers), tile and grout (1), marble floor (1)
+- CHANGE #104 [audit_step] S08 | Backlinks pull: referring domains per URL | old:  | new: skipped | result: SKIPPED — backlinks not in the approved data pulls; run in a later pass
+- CHANGE #105 [audit_step] S09 | Citations | old:  | new: skipped | result: SKIPPED — no BrightLocal or Local Dominator grid files on file yet
+- CHANGE #106 [audit_step] S10 | Local grid | old:  | new: skipped | result: SKIPPED — no Local Dominator grid PDFs on file yet
+- CHANGE #107 [audit_step] S11 | Search Console / GA4 | old:  | new: skipped | result: SKIPPED — GSC exports are on file; analysis is a later pass
+- CHANGE #108 [audit_step] S20 | SEOPress site-wide settings (title templates, sitemap, noind | old:  | new: skipped | result: SKIPPED — WordPress check (wp-check) not run in this pass
+- CHANGE #109 [audit_step] S21 | Query fan-out (CM-045): core services × primary city + top 3 | old:  | new: skipped | result: SKIPPED — query fan-out only with --fanout; not requested
+### HANDOFF · /discovery · 2026-10-28 · run 20261028-191341-discovery-ec47
+- Paul approved the data pulls at about $0.57 (free estimates). Actual spend about $0.22.
+- Rankings (Hilton Head Island, Bluffton, Beaufort, Ridgeland, Hardeeville, Lady's Island): 27 keyword rows, 0 cannibalization clusters. data/rankings/.
+- PAA (4 cities, cap 20): 15 distinct questions. Two queries hit DataforSEO server errors; the retry worked. Rows routed by hand on the agent route (paa-routing.md): 8 service FAQs, 4 blog topics, 3 dropped, 0 location FAQs. Four cost questions need the client's own prices.
+- Reviews: 29 pulled, rating 5. Meaning check done with reviews.py checked. Known themes: technician named Kevin (11), fast response (6), booking timing (4). Below threshold: explains the work (2), other surfaces (1). Guarantees, pricing and clean-up were false keyword matches (0).
+- Competitor coverage: 36 pages across 12 services, data/competitors/coverage.md. One SERP hit a server error; the retry worked.
+- Steps: S06, S07 and S19 recorded done. Competitor coverage has no numbered step.
+- Watch: the "Facts customers report" table in customer-language.md still shows the old keyword counts. The checked counts are in facts.json section R. Review row 20 ends with a reviewer's first name; never quote it.
+- Not run (outside the approval): backlinks (S08), citations, local grid (S09/S10), GSC (S11).
+- Summary for Paul: clients/carolina-carpet-cleaning/handoffs/run-20261028-191341-discovery-ec47.summary.md
+
+**Changes (script):** 12 — audit_step ×9, data_pull ×3
+**Steps recorded (script):** S06 done, S07 done, S19 done, S08 skipped, S09 skipped, S10 skipped, S11 skipped, S20 skipped, S21 skipped
+### END HANDOFF
+## RUN 20261028-191341-discovery-ec47 · FINISHED · 2026-10-28T19:27:12-05:00
+Changes: 12 · Summary: Data pulls: rankings, PAA (15 questions), reviews (29), competitor coverage (36 pages); PAA routed and reviews checked by meaning
+Spend: 0 tokens · $0.22
+- CHANGE #110 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-28 (7).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | new: _Archive/Carolina Carpet Cleaning - Handoff Log - 2026-10-28 (7).md | result: done · renamed and moved, nothing deleted
+- CHANGE #111 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Handoff Log.md | upload | old: previous version archived as Carolina Carpet Cleaning - Handoff Log - 2026-10-28 (7).md | new: Carolina Carpet Cleaning - Handoff Log.md · sha 06d978d692d4 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #112 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-28 (8).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | new: _Archive/Carolina Carpet Cleaning - Document Checklist - 2026-10-28 (8).md | result: done · renamed and moved, nothing deleted
+- CHANGE #113 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Document Checklist.md | upload | old: previous version archived as Carolina Carpet Cleaning - Document Checklist - 2026-10-28 (8).md | new: Carolina Carpet Cleaning - Document Checklist.md · sha b4c9a82647d2 | result: done · copied (Drive for desktop syncs it)
+- CHANGE #114 [drive_file] drive:Carolina Carpet Cleaning - TMS/_Archive/Carolina Carpet Cleaning - Status - 2026-10-28 (8).md | archive | old: drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | new: _Archive/Carolina Carpet Cleaning - Status - 2026-10-28 (8).md | result: done · renamed and moved, nothing deleted
+- CHANGE #115 [drive_file] drive:Carolina Carpet Cleaning - TMS/Carolina Carpet Cleaning - Status.md | upload | old: previous version archived as Carolina Carpet Cleaning - Status - 2026-10-28 (8).md | new: Carolina Carpet Cleaning - Status.md · sha 1540bd838c67 | result: done · copied (Drive for desktop syncs it)

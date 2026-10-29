@@ -1,17 +1,17 @@
 # Carolina Carpet Cleaning - Status
 
-- **Stage 3 of 8 — Data**
-- **What is happening now:** ready to start: reviews, rankings, People Also Ask, backlinks, citations, grid, GSC — one cost yes for the whole step
-- **Waiting on:** nobody
-- **Next action:** `/discovery carolina-carpet-cleaning data` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open carolina-carpet-cleaning`) and types `/next carolina-carpet-cleaning` (agents: researcher (sonnet), discovery-audit (opus)) · model: Haiku chat
+- **Stage 4 of 8 — Audit**
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — discovery:data finished (run 20261028-191341-discovery-ec47) and that stage is in review m
+- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-28T19:11 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-28T19:27 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Paul | discovery:data finished (run 20261028-191341-discovery-ec47) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /discovery carolina-carpet-cleaning audit (the audit: entity → architecture → page conformance → technical, then the fresh-context review) | 2026-10-28 | /next carolina-carpet-cleaning |
 
 ## Waiting on (not blocking)
 
@@ -63,6 +63,17 @@ _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Car
 
 _Inputs the data manifest (methodology/data-manifest.json) says a step must read, where that step has not finished for this client yet._
 
+- **reviews** (1 file(s), e.g. `data/reviews/reviews.csv`) — read by build:evidence, build:facts
+- **reviews-raw** (2 file(s), e.g. `data/reviews/raw/reviews.json`) — read by the step that reads reviews
+- **review-mentions** (1 file(s), e.g. `data/reviews/mentions.csv`) — read by build:evidence, build:facts
+- **review-facts** (1 file(s), e.g. `data/reviews/review-facts.json`) — read by build:evidence, build:facts
+- **customer-language** (2 file(s), e.g. `data/reviews/customer-language.md`) — read by discovery:audit, build:brief, build:write
+- **paa-questions** (2 file(s), e.g. `data/paa/paa-questions.csv`) — read by build:evidence, discovery:fanout
+- **paa-raw** (20 file(s), e.g. `data/paa/raw/area-rug-cleaning-hilton-head-island.json`) — read by the step that reads paa-questions
+- **paa-routing** (1 file(s), e.g. `data/paa/paa-routing.md`) — read by build:plan, blog:map, build:brief, build:write
+- **rankings** (5 file(s), e.g. `data/rankings/best-variants.csv`) — read by build:plan, discovery:audit
+- **rankings-raw** (2 file(s), e.g. `data/rankings/raw/best-variants.json`) — read by the step that reads rankings
+- **competitors** (2 file(s), e.g. `data/competitors/coverage.json`) — read by build:plan
 - **crawl-page-text** (2 file(s), e.g. `data/crawl/crawl-summary.csv`) — read by discovery:audit, build:evidence
 - **crawl-raw** (1 file(s), e.g. `inputs/crawl/crawl-state.json`) — read by the step that reads crawl-page-text
 - **imported-exports** (32 file(s), e.g. `inputs/Carolina Carpet Cleaning - CMS - export-all-urls - 2026-10-28.csv`) — read by discovery:audit
@@ -76,7 +87,7 @@ _None._
 
 ## Spend so far
 
-- DataforSEO: $0.00
+- DataforSEO: $0.22 (of which failed tasks $0.01)
 - Claude API (llm.py): $0.00 over 0 call(s)
 
 ## Spend by stage (model)
@@ -87,9 +98,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 |---|---|---|---|---|
 | 1 · Setup | 1 | 1,944,639 | $0.80 | $0.00 |
 | 2 · Discovery | 2 | 4,718,881 | $2.04 | $0.00 |
-| 3 · Data | 1 | 1,517,474 | $0.02 | $0.00 |
+| 3 · Data | 2 | 1,517,474 | $0.24 | $0.00 |
 | any stage | 3 | 816,224 | $0.13 | $0.00 |
-| **total** | 7 | 8,997,218 | $3.00 | $0.00 |
+| **total** | 8 | 8,997,218 | $3.22 | $0.00 |
 
 ## Spend by step (model)
 
@@ -97,9 +108,10 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 |---|---|---|---|---|
 | discovery:discovery | 1 | 3,941,016 | $2.03 | $0.00 |
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
+| discovery:data | 1 | 0 | $0.22 | $0.00 |
 | answers | 3 | 816,224 | $0.13 | $0.00 |
 | crawl | 1 | 1,517,474 | $0.02 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
-| **total** | 7 | 8,997,218 | $3.00 | $0.00 |
+| **total** | 8 | 8,997,218 | $3.22 | $0.00 |
 
-Last run: /crawl 2026-10-28T19:11 — Crawled 8 pages, $0.003
+Last run: /discovery 2026-10-28T19:27 — Data pulls: rankings, PAA (15 questions), reviews (29), competitor coverage (36 pages); PAA routed and reviews checked by meaning

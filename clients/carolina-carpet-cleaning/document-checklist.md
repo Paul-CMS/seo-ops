@@ -1,6 +1,6 @@
 # Carolina Carpet Cleaning - Document Checklist
 
-Generated 2026-10-28T19:11 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-28T19:27 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -12,15 +12,15 @@ Generated 2026-10-28T19:11 from status.json — do not edit. `[x]` done · `[-]`
 | [x] | S04 Proof sheet built (Markdown + client Google Doc) | done |  |
 | [x] | S05 Site crawl (max pages = sitemap size × 1.5, min 20, max 1000; 1000 whe | done | clients/carolina-carpet-cleaning/inputs/crawl/ |
 | [x] | S05b Page text capture: the body text of every crawled HTML page (the basic | done |  |
-| [ ] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | — |  |
-| [ ] | S07 Rankings + cannibalization: every ranked keyword per URL (top 100), co | — |  |
-| [ ] | S08 Backlinks pull: referring domains per URL | — |  |
-| [ ] | S09 Citations | — |  |
-| [ ] | S10 Local grid | — |  |
-| [ ] | S11 Search Console / GA4 | — |  |
-| [ ] | S19 People Also Ask: core services × primary city + top 3 cities, capped ( | — |  |
-| [ ] | S20 SEOPress site-wide settings (title templates, sitemap, noindexed post  | — |  |
-| [ ] | S21 Query fan-out (CM-045): core services × primary city + top 3 cities, c | — |  |
+| [x] | S06 Reviews pull: Google rating, count, recent review text (no reviewer na | done | clients/carolina-carpet-cleaning/data/reviews/ |
+| [x] | S07 Rankings + cannibalization: every ranked keyword per URL (top 100), co | done | clients/carolina-carpet-cleaning/data/rankings/ |
+| [-] | S08 Backlinks pull: referring domains per URL | skipped | backlinks not in the approved data pulls; run in a later pass |
+| [-] | S09 Citations | skipped | no BrightLocal or Local Dominator grid files on file yet |
+| [-] | S10 Local grid | skipped | no Local Dominator grid PDFs on file yet |
+| [-] | S11 Search Console / GA4 | skipped | GSC exports are on file; analysis is a later pass |
+| [x] | S19 People Also Ask: core services × primary city + top 3 cities, capped ( | done | clients/carolina-carpet-cleaning/data/paa/ |
+| [-] | S20 SEOPress site-wide settings (title templates, sitemap, noindexed post  | skipped | WordPress check (wp-check) not run in this pass |
+| [-] | S21 Query fan-out (CM-045): core services × primary city + top 3 cities, c | skipped | query fan-out only with --fanout; not requested |
 | [ ] | S12 Ingest + cross-checks + redirect pre-screen | — |  |
 | [ ] | S13 Entity analysis: site vs Brand Guide (triple, NAP, brand search, suppo | — |  |
 | [ ] | S14 Architecture: every page typed; the screen decides CM-019 C1–C3, the a | — |  |
