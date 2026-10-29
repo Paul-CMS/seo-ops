@@ -1,0 +1,2 @@
+ref,url,field,old,new,reason,decision_map_ref,status,note
+H-2026-10-29-04-robots_txt-01,https://carpetcleaningblufftonsc.com/robots.txt,robots.txt rules,no Disallow for search URLs,add two lines under User-agent: *  →  Disallow: /?s=  and  Disallow: /search/  (keep every existing line; keep the search redirect),F-016: spam internal-search URLs fill Search Console,F-016,issued,

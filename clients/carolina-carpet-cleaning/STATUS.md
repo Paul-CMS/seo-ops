@@ -1,17 +1,17 @@
 # Carolina Carpet Cleaning - Status
 
-- **Stage 5 of 8 — Build plan and blockers**
-- **What is happening now:** ready to start: hand the technical blockers to Jonie (one handoff from the checklist the audit wrote) — they are fixed while the client's facts come back
-- **Waiting on:** nobody
-- **Next action:** `/build carolina-carpet-cleaning blockers` — Paul opens a **new session on Haiku** in the client folder (`python3 scripts/worktree.py open carolina-carpet-cleaning`) and types `/next carolina-carpet-cleaning` (agents: build (opus), researcher (sonnet)) · model: Haiku chat
+- **Stage 4 of 8 — Audit**
+- **What is happening now:** Paul is reviewing what the last step produced; /next continues
+- **Waiting on:** Paul — build:blockers finished (run 20261029-102519-build-07a3) and that stage is in review mode 
+- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-29T10:25 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T10:27 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Paul | build:blockers finished (run 20261029-102519-build-07a3) and that stage is in review mode — look at what it produced, then type /next to go on. Next would be: /discovery carolina-carpet-cleaning reconcile (reconcile the client's facts into the Brand Guide) | 2026-10-29 | /next carolina-carpet-cleaning |
 
 ## Waiting on (not blocking)
 
@@ -20,6 +20,9 @@ _Open, but the next action above goes ahead without them._
 | Who | What | Since | Reference |
 |---|---|---|---|
 | Gwen | manual lookup handoff — 9 of 9 item(s) open | 2026-10-28 | H-2026-10-28-01-manual_lookup |
+| Jonie | broken link handoff — 20 of 20 item(s) open | 2026-10-29 | H-2026-10-29-02-broken_link |
+| Jonie | sitemap handoff — 7 of 7 item(s) open | 2026-10-29 | H-2026-10-29-03-sitemap |
+| Jonie | robots txt handoff — 1 of 1 item(s) open | 2026-10-29 | H-2026-10-29-04-robots_txt |
 
 ## Settled decisions — never re-raised
 
@@ -67,6 +70,9 @@ _Open, but the next action above goes ahead without them._
 _Every VA item is in one living worklist: `handoffs/VA-WORKLIST.md` (Drive: "Carolina Carpet Cleaning - VA Worklist")._
 
 - **H-2026-10-28-01-manual_lookup** (Gwen) — manual lookup: 9 of 9 open, issued 2026-10-28
+- **H-2026-10-29-02-broken_link** (Jonie) — broken link: 20 of 20 open, issued 2026-10-29
+- **H-2026-10-29-03-sitemap** (Jonie) — sitemap: 7 of 7 open, issued 2026-10-29
+- **H-2026-10-29-04-robots_txt** (Jonie) — robots txt: 1 of 1 open, issued 2026-10-29
 
 ## Data on file not used yet
 
@@ -90,6 +96,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **F-004** (open, not yet reviewed) 2026-10-29 · discovery:audit: conformance.py COM-N (Brand Guide phone in page text) reads data/crawl/page-text.csv, which is truncated and/or excludes the footer: 73 of 89 pages FAIL COM-N although the live HTML carries (843) 575-6286 and tel:8435756286 in the footer on every sampled page (/, /bluffton/, /contact-us/, /carpet-cleaning/, /about/, a blog post). Triage then marks pages 'light fix' on COM-N alone (7 pages: /blog/ + 5 pagination pages, /contact-us/). — workaround: COM-N failures are treated as contradicted by the live check (SRC-059 capture) and are not written as findings; the 7 COM-N-only 'light fix' rows carry no finding. Fix in a system session: score COM-N on the full HTML (footer included) or mark NE when the capture is truncated.
 - **F-005** (open, not yet reviewed) 2026-10-29 · discovery:audit: Flag IDs and finding IDs share one namespace (F-###): system flag F-004 (flags.jsonl, the COM-N phone check reading a footer-less page-text.csv) carries the same label as audit finding F-004 (the blog guarantee claim). DEC-LOCAL-002 and the run summary say 'flag F-004', which Paul can read as the finding. — workaround: In every Paul-facing line the system flag is called 'the phone-check system flag (COM-N, flags.jsonl #4)', never 'F-004'; DEC-LOCAL-007 records the clarification. Fix in a system session: give flags their own prefix (e.g. FL-###).
 - **F-006** (open, not yet reviewed) 2026-10-29 · discovery:audit: render.py auditsheet: the 'For the client to confirm' table has no Recommended/default column and cuts the question at 260 and options at 120 characters mid-word; review.py sheet writes the finding's observation (also cut mid-word, e.g. '/u', 'pH-') into client-questions.csv as the 'question', so the client file Paul sends has no actual question and broken text. The S17 interim defaults (F-005 b, F-006 b) therefore do not show on the rendered sheet. — workaround: Defaults are in audit-review.csv (recommended = b, b) and stated in the run summary; Paul should not send client-questions.csv as written — reword the two questions in his own message until a system session fixes review.py/render.py.
+- **F-007** (open, not yet reviewed) 2026-10-29 · build:blockers: Stage 5 blockers step (D3) says the whole checklist section 1 goes to Jonie as soon as the audit is approved, but 5 of its 9 VA rows map to change kinds gated on later decisions: F-010 and F-018 (redirect) and F-019 (schema) need brand_guide_approved; F-013 (navigation) needs discovery_signed_off; F-017 (pagination title/description template) has no audit_approved kind (seo_title is gated; seopress_settings is record-only). handoff.py create --blockers refuses them (exit 4). blockers_cleared may then read as met from the 3 issued handoffs alone. — workaround: Issued the 3 kinds the audit unlocks (broken_link F-001+F-014, sitemap F-015, robots_txt F-016) as blocker handoffs; held F-010, F-013, F-017, F-018, F-019 for a second blocker handoff once brand_guide_approved / discovery_signed_off are met; F-022 is Build-owned, no VA row.
 
 ## Spend so far
 
@@ -106,8 +113,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 2 · Discovery | 2 | 4,718,881 | $2.04 | $0.00 |
 | 3 · Data | 3 | 4,864,287 | $0.30 | $0.00 |
 | 4 · Audit | 1 | 20,954,553 | $8.39 | $0.00 |
+| 5 · Build plan and blockers | 1 | 1,108,757 | $0.70 | $0.00 |
 | any stage | 4 | 2,441,508 | $0.15 | $0.00 |
-| **total** | 11 | 34,923,868 | $11.69 | $0.00 |
+| **total** | 12 | 36,032,625 | $12.39 | $0.00 |
 
 ## Spend by step (model)
 
@@ -116,10 +124,11 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | discovery:audit | 1 | 20,954,553 | $8.39 | $0.00 |
 | discovery:discovery | 1 | 3,941,016 | $2.03 | $0.00 |
 | new-client | 1 | 1,944,639 | $0.80 | $0.00 |
+| build:blockers | 1 | 1,108,757 | $0.70 | $0.00 |
 | discovery:data | 1 | 0 | $0.22 | $0.00 |
 | answers | 4 | 2,441,508 | $0.15 | $0.00 |
 | crawl | 2 | 4,864,287 | $0.08 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
-| **total** | 11 | 34,923,868 | $11.69 | $0.00 |
+| **total** | 12 | 36,032,625 | $12.39 | $0.00 |
 
-Last run: /answers 2026-10-29T10:11 — Paul answered audit Asks: F-008 a (keep folded); F-004 keep the quality sentence; F-005 a (under one hour, review supports); F-006 keep the owner's safety claims. Four decisions settled; review sheet applied.
+Last run: /build 2026-10-29T10:27 — Blockers: 3 blocker handoffs to Jonie (broken_link 20, sitemap 7, robots_txt 1); F-010/F-013/F-017/F-018/F-019 held behind later gates (flag F-007)

@@ -1,6 +1,6 @@
 # Carolina Carpet Cleaning - Document Checklist
 
-Generated 2026-10-29T10:25 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
+Generated 2026-10-29T10:27 from status.json — do not edit. `[x]` done · `[-]` skipped (reason) · `[!]` failed · `[ ]` not yet.
 
 ## Evidence and data steps (methodology/audit-steps.md)
 
@@ -40,7 +40,7 @@ Generated 2026-10-29T10:25 from status.json — do not edit. `[x]` done · `[-]`
 - [ ] Every page in the site plan is built, verified and written back — no site plan yet
 - [ ] WordPress connected (/wp-check passed in the last 30 days) — WordPress is not connected yet — run /wp-check carolina-carpet-cleaning
 - [ ] Discovery and audit signed off — Build may start (met when the Decision Sheet, entity, client facts, audit and Brand Guide are approved and the client's facts are recorded) — discovery is not signed off yet — still open: the reconciled Brand Guide
-- [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — the blocker items have not been handed to Jonie yet (handoff.py create … --blockers)
+- [ ] Technical blockers cleared — every blocker handoff returned done and /verify passed it — blockers not cleared: H-2026-10-29-02-broken_link-01 is issued; H-2026-10-29-02-broken_link-02 is issued; H-2026-10-29-02-broken_link-03 is issued; H-2026-10-29-02-broken_link-04 is issued; H-2026-10-29-02-broken_link-05 is issued (+23 more)
 - [x] Page specs approved by Paul once, globally (methodology/specs) and unchanged since
 
 ## Decisions (Paul)

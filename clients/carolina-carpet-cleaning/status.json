@@ -305,12 +305,12 @@
     }
   },
   "last_run": {
-    "run_id": "20261029-101014-answers-f43a",
-    "command": "answers",
-    "finished": "2026-10-29T10:11:11-05:00",
-    "result": "Paul answered audit Asks: F-008 a (keep folded); F-004 keep the quality sentence; F-005 a (under one hour, review supports); F-006 keep the owner's safety claims. Four decisions settled; review sheet applied.",
-    "changes": 0,
-    "step": "answers",
+    "run_id": "20261029-102519-build-07a3",
+    "command": "build",
+    "finished": "2026-10-29T10:27:17-05:00",
+    "result": "Blockers: 3 blocker handoffs to Jonie (broken_link 20, sitemap 7, robots_txt 1); F-010/F-013/F-017/F-018/F-019 held behind later gates (flag F-007)",
+    "changes": 28,
+    "step": "build:blockers",
     "batch": null
   },
   "spend": {
@@ -329,7 +329,7 @@
     "next": "We are finishing the review of your website."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-29T10:25:13-05:00",
+  "updated": "2026-10-29T10:27:17-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
@@ -569,6 +569,34 @@
       "by_agent": {
         "main": 0.0242
       }
+    },
+    {
+      "run": "20261029-102519-build-07a3",
+      "step": "build:blockers",
+      "tokens": 1108757,
+      "usd": 0.7028,
+      "at": "2026-10-29T10:27:17-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0029,
+          "in": 4,
+          "out": 943,
+          "cache_read": 207113,
+          "cache_write": 1574
+        },
+        "claude-opus-5-5": {
+          "usd": 0.6999,
+          "in": 36,
+          "out": 10689,
+          "cache_read": 824173,
+          "cache_write": 64225
+        }
+      },
+      "by_agent": {
+        "main": 0.0029,
+        "build": 0.6999
+      }
     }
   ],
   "sessions": {
@@ -601,6 +629,12 @@
       "step": "discovery:audit",
       "first_run": "20261029-075525-discovery-0474",
       "at": "2026-10-29T08:18:49-05:00"
+    },
+    "95a735a7-ceb2-40ef-9c33-25be8d550677": {
+      "key": "build-plan",
+      "step": "build:blockers",
+      "first_run": "20261029-102519-build-07a3",
+      "at": "2026-10-29T10:27:17-05:00"
     }
   },
   "rewrite4_routes": {
@@ -631,5 +665,15 @@
       "explicit": 4,
       "file": "clients/carolina-carpet-cleaning/audit/2026-10-28/audit-apply.json"
     }
+  },
+  "blocker_handoffs": [
+    "H-2026-10-29-02-broken_link",
+    "H-2026-10-29-03-sitemap",
+    "H-2026-10-29-04-robots_txt"
+  ],
+  "review_pause": {
+    "run_id": "20261029-102519-build-07a3",
+    "step": "build:blockers",
+    "at": "2026-10-29T10:27:17-05:00"
   }
 }

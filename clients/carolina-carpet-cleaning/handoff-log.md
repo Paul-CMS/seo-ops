@@ -167,3 +167,25 @@ Generated from the safety log (clients/carolina-carpet-cleaning/log.md) — do n
 - Not yet: the audit is not approved. No /approve line is typed. Check that the findings, decision map and blocker checklist written under the defaults (F-004 removal, F-006 claim removal, F-005 hedged wording) match these answers before Approval 2a; the audit-apply items are the record.
 - Open: client questions (drying time, product names) are answered by Paul, so no client question needs to go out for F-005 or F-006 unless Paul wants one.
 
+## /build · 2026-10-29 · run 20261029-102519-build-07a3
+
+**Done:** checklist section 1 issued to Jonie as blocker handoffs (`handoff.py create --blockers`, one per change kind):
+- H-2026-10-29-02-broken_link — 20 rows: F-001 homepage phone (hero button + tel: format, 2 rows), F-014 18 links to 301 URLs.
+- H-2026-10-29-03-sitemap — 7 rows: F-015, exclude the redirected pages/posts in SEOPress; 301s stay (F-008 settled); nothing drafted or deleted.
+- H-2026-10-29-04-robots_txt — 1 row: F-016, Disallow /?s= and /search/.
+- VA Worklist rebuilt (37 rows, incl. Gwen's 9 open manual lookups); `worklist.py check` passes (0 errors).
+
+**Held, refused by gate (exit 4), flagged F-007:**
+- F-010, F-018 (redirect) and F-019 (schema) need brand_guide_approved.
+- F-013 (navigation, footer privacy link) needs discovery_signed_off.
+- F-017 (blog pagination title/description template) has no kind the audit unlocks.
+→ A second blocker handoff when those gates are met. Until then blockers_cleared may read as met from the 3 issued handoffs alone. Paul: please watch for this.
+- F-022 is owned by Build (Blog Decision Map), so it gets no VA row.
+
+**Notes for Jonie:** F-014 archive rows (/blog/, /category/carpet-cleaning/, /category/know-the-area/whats-nearby/): if the theme generates the link, mark the row blocked.
+**Not done:** no WordPress, no publishing, no DataforSEO spend, no status.py blockers-none.
+**Next:** Jonie works the worklist and then /verify. Brand Guide reconcile → second blocker handoff → `/build plan`.
+
+**Changes (script):** 28 — broken_link ×20, sitemap ×7, robots_txt ×1
+- FLAG 2026-10-29T10:26 · run 20261029-102519-build-07a3 · F-007 · Stage 5 blockers step (D3) says the whole checklist section 1 goes to Jonie as soon as the audit is approved, but 5 of its 9 VA rows…
+
