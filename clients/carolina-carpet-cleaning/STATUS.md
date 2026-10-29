@@ -1,17 +1,25 @@
 # Carolina Carpet Cleaning - Status
 
 - **Stage 6 of 8 — Pilot, services, locations, ship (one session each) (batch pilot)**
-- **What is happening now:** Stage 5 (Build plan and blockers) is done in this session. Start a new session (new chat, model: Haiku) in the client folder (python3 scripts/worktree.py open carolina-carpet-cleaning) and type /next carolina-carpet-cleaning. Next there: /interview carolina-carpet-cleaning facts pilot (the evidence gate blocked svc-carpet-cleaning, loc-bluffton — targeted questions for the owner (you send them). Or waive instead: /approve carolina-carpet-cleaning evidence:svc-carpet-cleaning --reason "<why you waive it>" · /approve carolina-carpet-cleaning evidence:loc-bluffton --reason "<why you waive it>")
-- **Waiting on:** nobody
-- **Next action:** `/next carolina-carpet-cleaning` once the wait above is over · model: Haiku chat
+- **What is happening now:** waiting for the owner's answers to the facts interview (clients/carolina-carpet-cleaning/interviews/facts/Carolina Carpet Cleaning - Facts Interview - pilot - 2026-10-29 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve carolina-carpet-cleaning evidence:svc-carpet-cleaning --reason "<why you waive it>" · /approve carolina-carpet-cleaning evidence:loc-bluffton --reason "<why you waive it>"
+- **Waiting on:** Client (via Paul) — waiting for the owner's answers to the facts interview (clients/carolina-carpet-cleaning/i; Client (via Paul) — Your website says this about What the service includes (scope, inclusions): "Professional ; Client (via Paul) — We found different versions of Google rating and review count (date checked): "Disputed: c
+- **Next action:** `/interview carolina-carpet-cleaning facts-answers pilot` once the wait above is over · model: Haiku chat
 
-_Generated 2026-10-29T10:47 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
+_Generated 2026-10-29T13:47 by the system — do not edit. Start every session in the client folder (`python3 scripts/worktree.py open <slug>`), one session per stage._
 
 ## Waiting on
 
 | Who | What | Since | Reference |
 |---|---|---|---|
-| — | nothing | | |
+| Client (via Paul) | waiting for the owner's answers to the facts interview (clients/carolina-carpet-cleaning/interviews/facts/Carolina Carpet Cleaning - Facts Interview - pilot - 2026-10-29 - REVIEW.md) — when they arrive, this records them in the Brand Guide and re-runs the gate. Or waive instead: /approve carolina-carpet-cleaning evidence:svc-carpet-cleaning --reason "<why you waive it>" · /approve carolina-carpet-cleaning evidence:loc-bluffton --reason "<why you waive it>" | 2026-10-29 | /interview carolina-carpet-cleaning facts-answers pilot |
+| Client (via Paul) | Your website says this about What the service includes (scope, inclusions): "Professional Home Carpet Cleaning is an excellent investment in the appearance of your home and feel." (client site https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/ (data/c | 2026-10-29 | fact:svc-carpet-cleaning:service_scope |
+| Client (via Paul) | We found different versions of Google rating and review count (date checked): "Disputed: client stated 6 Google reviews, all 5 stars (2026-10-28); the DataforSEO Google reviews pull shows rating 5 from 29 reviews (2022-04-18 to 2026-06-01), Birdeye also 29. [NEED: the figure exactly as Google shows  | 2026-10-29 | fact:d:google_rating |
+| Client (via Paul) | Your website says this about Price range, or what drives the cost: "People Also Ask How Much Does It Cost To Have An Oriental Rug Cleaned?" (+19 more) (client site https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/ (dat | 2026-10-29 | fact:svc-carpet-cleaning:pricing |
+| Client (via Paul) | Your website says this about The city is actually served (Section E / proof sheet): "Bluffton’s Trusted Low-Moisture Cleaning Specialist Since 1993 Carpet Cleaning in the South Carolina Lowcountry Hilton Head Island upholstery has a unique set of adversaries." (+66 more) (client site https://carpetc | 2026-10-29 | fact:loc-bluffton:city_served |
+| Gwen | manual lookup handoff — 9 of 9 item(s) open | 2026-10-28 | H-2026-10-28-01-manual_lookup |
+| Jonie | broken link handoff — 20 of 20 item(s) open | 2026-10-29 | H-2026-10-29-02-broken_link |
+| Jonie | sitemap handoff — 7 of 7 item(s) open | 2026-10-29 | H-2026-10-29-03-sitemap |
+| Jonie | robots txt handoff — 1 of 1 item(s) open | 2026-10-29 | H-2026-10-29-04-robots_txt |
 
 ## Waiting on (not blocking)
 
@@ -20,10 +28,7 @@ _Open, but the next action above goes ahead without them._
 | Who | What | Since | Reference |
 |---|---|---|---|
 | Jonie | blockers not cleared: H-2026-10-29-02-broken_link-01 is issued; H-2026-10-29-02-broken_link-02 is issued; H-2026-10-29-02-broken_link-03 is issued; H-2026-10-29-02-broken_link-04 is issued; H-2026-10-29-02-broken_link-05 is issued (+23 more). When Jonie returns the blocker handoff, /verify checks every item; the blockers count as cleared when all are done and verified — no approval | 2026-10-29 | /verify carolina-carpet-cleaning |
-| Gwen | manual lookup handoff — 9 of 9 item(s) open | 2026-10-28 | H-2026-10-28-01-manual_lookup |
-| Jonie | broken link handoff — 20 of 20 item(s) open | 2026-10-29 | H-2026-10-29-02-broken_link |
-| Jonie | sitemap handoff — 7 of 7 item(s) open | 2026-10-29 | H-2026-10-29-03-sitemap |
-| Jonie | robots txt handoff — 1 of 1 item(s) open | 2026-10-29 | H-2026-10-29-04-robots_txt |
+| Paul | batches not yet built and written back: pilot, services, locations, home-about | 2026-10-29 | /where carolina-carpet-cleaning |
 
 ## Settled decisions — never re-raised
 
@@ -90,6 +95,7 @@ _Inputs the data manifest (methodology/data-manifest.json) says a step must read
 - **paa-questions** (2 file(s), e.g. `data/paa/paa-questions.csv`) — read by build:evidence, discovery:fanout
 - **paa-raw** (20 file(s), e.g. `data/paa/raw/area-rug-cleaning-hilton-head-island.json`) — read by the step that reads paa-questions
 - **discovery-record** (2 file(s), e.g. `discovery/Carolina Carpet Cleaning - Discovery Record - REVIEW.md`) — read by build:evidence, build:facts
+- **interviews** (1 file(s), e.g. `interviews/facts/Carolina Carpet Cleaning - Facts Interview - pilot - 2026-10-29 - REVIEW.md`) — read by build:evidence, interview:facts-answers
 - **facts** (1 file(s), e.g. `facts.json`) — read by build:evidence, build:facts
 
 ## Flagged for Paul (system)
@@ -120,8 +126,9 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | 3 · Data | 3 | 4,864,287 | $0.30 | $0.00 |
 | 4 · Audit | 2 | 23,152,524 | $9.42 | $0.00 |
 | 5 · Build plan and blockers | 3 | 6,366,697 | $3.46 | $0.00 |
+| 6 · Pilot, services, locations, ship (one session each) | 1 | 379,500 | $0.01 | $0.00 |
 | any stage | 6 | 2,868,263 | $0.16 | $0.00 |
-| **total** | 17 | 43,915,291 | $16.19 | $0.00 |
+| **total** | 18 | 44,294,791 | $16.19 | $0.00 |
 
 ## Spend by step (model)
 
@@ -137,6 +144,7 @@ _Session = the chats and their agents; API = llm.py's direct calls._
 | answers | 6 | 2,868,263 | $0.16 | $0.00 |
 | crawl | 2 | 4,864,287 | $0.08 | $0.00 |
 | discovery:facts-direct | 1 | 777,865 | $0.01 | $0.00 |
-| **total** | 17 | 43,915,291 | $16.19 | $0.00 |
+| interview:facts | 1 | 379,500 | $0.01 | $0.00 |
+| **total** | 18 | 44,294,791 | $16.19 | $0.00 |
 
-Last run: /build 2026-10-29T10:46 — Site plan revised: Lady's Island merged into Beaufort (301 at publish), homepage links all 8 services; 15 pages; urlcheck pass; wheel check 0 errors; flags F-009 to F-011
+Last run: /interview 2026-10-29T13:47 — Facts interview pack for pilot batch (2 blocked pages, 4 questions) written and cleaned for the owner; Paul to send

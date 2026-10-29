@@ -276,3 +276,12 @@ clients/carolina-carpet-cleaning/build/Carolina Carpet Cleaning - Site Plan - RE
 - FLAG 2026-10-29T10:45 · run 20261029-104257-build-f364 · F-010 · wheel.py check/asks keep reporting 'ASK home: 8 service pages but the homepage links at most 6 (HP-11)' after Paul settled it: asks(…
 - FLAG 2026-10-29T10:45 · run 20261029-104257-build-f364 · F-011 · render.py siteplan writes '<Client> - Site Plan - REVIEW.md' (the same name as the agent-written review sheet the stage doc asks for…
 
+## /interview · 2026-10-29 · run 20261029-134716-interview-5a97
+
+- Facts interview pack written for pilot batch: svc-carpet-cleaning, loc-bluffton (evidence gate blocked both).
+- 4 questions: service scope (required), Google rating/review count (supporting), pricing (supporting), Bluffton city served (required).
+- Generated wording cleaned for the owner: quotes removed, internal [NEED:] note removed from Q2, crawl fragments removed. Same gaps and keys.
+- Paul to send the pack. Nothing sent to the client.
+- Waiting: owner's answers, then /interview carolina-carpet-cleaning facts-answers pilot. Or waive with /approve evidence:<page> --reason.
+- Not blocking: H-2026-10-29-02 broken_link blockers still issued (Jonie's handoff, /verify later).
+

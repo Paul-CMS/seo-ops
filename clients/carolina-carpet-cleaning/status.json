@@ -1116,7 +1116,19 @@
         "briefs": null,
         "drafts": null,
         "route": "outline",
-        "files": {}
+        "files": {},
+        "facts_interview": {
+          "file": "clients/carolina-carpet-cleaning/interviews/facts/Carolina Carpet Cleaning - Facts Interview - pilot - 2026-10-29 - REVIEW.md",
+          "at": "2026-10-29T13:47:18-05:00",
+          "run": "20261029-134716-interview-5a97",
+          "pages": [
+            "svc-carpet-cleaning",
+            "loc-bluffton"
+          ],
+          "questions": 4,
+          "research": 4,
+          "need_search": 1
+        }
       },
       {
         "id": "services",
@@ -1357,13 +1369,13 @@
     }
   },
   "last_run": {
-    "run_id": "20261029-104257-build-f364",
-    "command": "build",
-    "finished": "2026-10-29T10:46:02-05:00",
-    "result": "Site plan revised: Lady's Island merged into Beaufort (301 at publish), homepage links all 8 services; 15 pages; urlcheck pass; wheel check 0 errors; flags F-009 to F-011",
-    "changes": 4,
-    "step": "build:plan",
-    "batch": null
+    "run_id": "20261029-134716-interview-5a97",
+    "command": "interview",
+    "finished": "2026-10-29T13:47:37-05:00",
+    "result": "Facts interview pack for pilot batch (2 blocked pages, 4 questions) written and cleaned for the owner; Paul to send",
+    "changes": 0,
+    "step": "interview:facts",
+    "batch": "pilot"
   },
   "spend": {
     "dataforseo_usd": 1.03104
@@ -1384,7 +1396,7 @@
     "next": "We are writing your service and location pages."
   },
   "created": "2026-10-28T15:18:28-05:00",
-  "updated": "2026-10-29T10:47:03-05:00",
+  "updated": "2026-10-29T13:47:37-05:00",
   "global_seen": 2,
   "conditions_logged": {
     "page_specs_approved": "2026-10-28T15:18:29-05:00",
@@ -1777,6 +1789,26 @@
         "main": 0.0047,
         "build": 1.1131
       }
+    },
+    {
+      "run": "20261029-134716-interview-5a97",
+      "step": "interview:facts",
+      "tokens": 379500,
+      "usd": 0.0073,
+      "at": "2026-10-29T13:47:37-05:00",
+      "measured": true,
+      "by_model": {
+        "claude-haiku-5-5": {
+          "usd": 0.0073,
+          "in": 8,
+          "out": 4331,
+          "cache_read": 367990,
+          "cache_write": 7171
+        }
+      },
+      "by_agent": {
+        "main": 0.0073
+      }
     }
   ],
   "sessions": {
@@ -1827,6 +1859,12 @@
       "step": "build:plan",
       "first_run": "20261029-103448-build-a20e",
       "at": "2026-10-29T10:39:27-05:00"
+    },
+    "1076632d-28b5-4ec6-b4a9-683026349719": {
+      "key": "batches:pilot",
+      "step": "interview:facts",
+      "first_run": "20261029-134716-interview-5a97",
+      "at": "2026-10-29T13:47:37-05:00"
     }
   },
   "rewrite4_routes": {

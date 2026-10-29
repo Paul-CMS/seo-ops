@@ -50,4 +50,11 @@ Generated from the safety log — do not edit. **Settled means settled: no agent
 - **site_plan_a1_ladys_island** (2026-10-29, Paul): Site plan A1 (Lady's Island): merge into /beaufort/ with a 301 from /ladys-island/ (Paul chose the recommended option a). Beaufort's page names Lady's Island as served; the 301 is a VA handoff at publish.
 - **site_plan_a2_homepage_services** (2026-10-29, Paul): Site plan A2 (homepage services): link every service page from the homepage, all 8 (Paul chose option b, not the recommended first 6).
 
+## Open questions — asked once, waiting for an answer
+
+- **fact:svc-carpet-cleaning:service_scope** (asked 2026-10-29, waiting on Client (via Paul)): Your website says this about What the service includes (scope, inclusions): "Professional Home Carpet Cleaning is an excellent investment in the appearance of your home and feel." (client site https://carpetcleaningblufftonsc.com/5-benefits-of-professional-carpet-cleaning-you-might-not-know/ (data/c
+- **fact:d:google_rating** (asked 2026-10-29, waiting on Client (via Paul)): We found different versions of Google rating and review count (date checked): "Disputed: client stated 6 Google reviews, all 5 stars (2026-10-28); the DataforSEO Google reviews pull shows rating 5 from 29 reviews (2022-04-18 to 2026-06-01), Birdeye also 29. [NEED: the figure exactly as Google shows 
+- **fact:svc-carpet-cleaning:pricing** (asked 2026-10-29, waiting on Client (via Paul)): Your website says this about Price range, or what drives the cost: "People Also Ask How Much Does It Cost To Have An Oriental Rug Cleaned?" (+19 more) (client site https://carpetcleaningblufftonsc.com/3-reasons-why-you-should-try-a-professional-carbonated-cleaning-service-for-your-oriental-rug/ (dat
+- **fact:loc-bluffton:city_served** (asked 2026-10-29, waiting on Client (via Paul)): Your website says this about The city is actually served (Section E / proof sheet): "Bluffton’s Trusted Low-Moisture Cleaning Specialist Since 1993 Carpet Cleaning in the South Carolina Lowcountry Hilton Head Island upholstery has a unique set of adversaries." (+66 more) (client site https://carpetc
+
 Process defects (reopenings): **0**
